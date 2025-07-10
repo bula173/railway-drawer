@@ -4,7 +4,9 @@ import Toolbox from "./components/Toolbox";
 import type { ToolboxItem } from "./components/Toolbox";
 import PropertiesPanel from "./components/PropertiesPanel";
 import DrawArea, { type DrawAreaRef } from "./components/DrawArea";
+import TabPanel, { type DrawAreaTab } from "./components/TabPanel";
 import type { DrawElement } from "./components/Elements";
+import "./styles/tabpanel.css";
 
 // Grid settings
 const GRID_SIZE = 40;
@@ -23,8 +25,24 @@ const RailwayDrawerApp = () => {
   // Ref for the DrawArea component instance
   const drawAreaRef = useRef<DrawAreaRef>(null);
 
+  // Missing refs - add these
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const toolboxInputRef = useRef<HTMLInputElement>(null);
+
   // Selected element state
   const [selectedElement, setSelectedElement] = useState<DrawElement | undefined>(undefined);
+
+  // Tab management state
+  const [tabs, setTabs] = useState<DrawAreaTab[]>([
+    {
+      id: 'tab-1',
+      name: 'Drawing 1',
+      elements: [],
+      gridVisible: true,
+      backgroundColor: '#ffffff'
+    }
+  ]);
+  const [activeTabId, setActiveTabId] = useState('tab-1');
 
   // Export format state
   const [exportFormat, setExportFormat] = useState<"png" | "jpg" | "svg" | "pdf">("png");
@@ -32,19 +50,95 @@ const RailwayDrawerApp = () => {
   // Panel widths and layout
   const [toolboxWidth, setToolboxWidth] = useState(148); // 3*44 + 2*8
   const [propertiesWidth, setPropertiesWidth] = useState(220);
-  const minPanelWidth = 148; // 3*44 + 2*8
-  const [drawAreaSize, setDrawAreaSize] = useState({ width: 1200, height: 800 });
-  const drawAreaPanelRef = useRef<HTMLDivElement>(null);
+  const [tabPanelHeight, setTabPanelHeight] = useState(40);
 
-  // Zoom state
+  // Missing state variables - add these
+  const [showEditor, setShowEditor] = useState(false);
+  const [drawAreaSize, setDrawAreaSize] = useState({ width: 2000, height: 1500 });
   const [zoom, setZoom] = useState(1);
 
-  // File input refs
-  const fileInputRef = useRef<HTMLInputElement>(null);
-  const toolboxInputRef = useRef<HTMLInputElement>(null);
+  // Get current active tab
+  const activeTab = tabs.find(tab => tab.id === activeTabId) || tabs[0];
 
-  // Show shape editor modal
-  const [showEditor, setShowEditor] = useState(false);
+  // Tab management functions
+  const handleTabCreate = () => {
+    const newTabId = `tab-${Date.now()}`;
+    const newTab: DrawAreaTab = {
+      id: newTabId,
+      name: `Drawing ${tabs.length + 1}`,
+      elements: [],
+      gridVisible: true,
+      backgroundColor: '#ffffff'
+    };
+    setTabs(prev => [...prev, newTab]);
+    setActiveTabId(newTabId);
+    setSelectedElement(undefined);
+  };
+
+  const handleTabClose = (tabId: string) => {
+    if (tabs.length <= 1) return; // Prevent closing last tab
+    
+    const newTabs = tabs.filter(tab => tab.id !== tabId);
+    setTabs(newTabs);
+    
+    if (activeTabId === tabId) {
+      setActiveTabId(newTabs[0].id);
+    }
+    setSelectedElement(undefined);
+  };
+
+  const handleTabChange = (tabId: string) => {
+    // Save current tab state before switching
+    if (drawAreaRef.current && activeTab) {
+      const currentElements = drawAreaRef.current.getElements();
+      const currentGridVisible = drawAreaRef.current.getGridVisible();
+      const currentBgColor = drawAreaRef.current.getSvgElement()?.style.backgroundColor || '#ffffff';
+      
+      setTabs(prev => prev.map(tab => 
+        tab.id === activeTabId 
+          ? { 
+              ...tab, 
+              elements: currentElements,
+              gridVisible: currentGridVisible,
+              backgroundColor: currentBgColor
+            }
+          : tab
+      ));
+    }
+    
+    setActiveTabId(tabId);
+    setSelectedElement(undefined);
+  };
+
+  const handleTabRename = (tabId: string, newName: string) => {
+    setTabs(prev => prev.map(tab => 
+      tab.id === tabId ? { ...tab, name: newName } : tab
+    ));
+  };
+
+  // Update DrawArea when tab changes
+  useEffect(() => {
+    if (drawAreaRef.current && activeTab) {
+      drawAreaRef.current.setElements(activeTab.elements);
+      drawAreaRef.current.setGridVisible(activeTab.gridVisible);
+      const svgElement = drawAreaRef.current.getSvgElement();
+      if (svgElement) {
+        svgElement.style.backgroundColor = activeTab.backgroundColor;
+      }
+    }
+  }, [activeTabId, activeTab]);
+
+  // Save current tab state when elements change
+  const handleElementsChange = () => {
+    if (drawAreaRef.current && activeTab) {
+      const currentElements = drawAreaRef.current.getElements();
+      setTabs(prev => prev.map(tab => 
+        tab.id === activeTabId 
+          ? { ...tab, elements: currentElements }
+          : tab
+      ));
+    }
+  };
 
   // Dummy setter for dragged item (required by Toolbox)
   const setDraggedItem = () => {};
@@ -177,7 +271,7 @@ const RailwayDrawerApp = () => {
     const startX = e.clientX;
     const startWidth = toolboxWidth;
     const onMove = (moveEvent: MouseEvent) => {
-      setToolboxWidth(Math.max(minPanelWidth, startWidth + (moveEvent.clientX - startX)));
+      setToolboxWidth(Math.max(120, startWidth + (moveEvent.clientX - startX)));
     };
     const onUp = () => {
       window.removeEventListener("mousemove", onMove);
@@ -190,7 +284,7 @@ const RailwayDrawerApp = () => {
     const startX = e.clientX;
     const startWidth = propertiesWidth;
     const onMove = (moveEvent: MouseEvent) => {
-      setPropertiesWidth(Math.max(minPanelWidth, startWidth - (moveEvent.clientX - startX)));
+      setPropertiesWidth(Math.max(180, startWidth - (moveEvent.clientX - startX)));
     };
     const onUp = () => {
       window.removeEventListener("mousemove", onMove);
@@ -200,9 +294,12 @@ const RailwayDrawerApp = () => {
     window.addEventListener("mouseup", onUp);
   };
 
-  // Resize observer for draw area
+  // Add a new ref for the draw area container DOM element
+  const drawAreaPanelRef = useRef<HTMLDivElement>(null);
+
+  // Fix the resize observer to observe the DOM element, not the DrawAreaRef
   useEffect(() => {
-    const node = drawAreaPanelRef.current;
+    const node = drawAreaPanelRef.current; // This is the DOM element
     if (!node) return;
     const observer = new window.ResizeObserver(entries => {
       for (let entry of entries) {
@@ -267,10 +364,10 @@ const RailwayDrawerApp = () => {
         </div>
       </div>
       {/* Main Layout */}
-      <div className="layout-main">
+      <div className="layout-main" style={{ height: `calc(100vh - ${tabPanelHeight}px)` }}>
         <div
           className="toolbox-panel"
-          style={{ width: toolboxWidth, minWidth: minPanelWidth }}
+          style={{ width: toolboxWidth, minWidth: 120 }}
         >
           <Toolbox
             toolbox={toolbox}
@@ -278,9 +375,9 @@ const RailwayDrawerApp = () => {
             showEditor={showEditor}
             setShowEditor={setShowEditor}
             setDraggedItem={setDraggedItem}
-            drawAreaRef={drawAreaRef}
           />
         </div>
+        
         <div
           style={{
             width: 6,
@@ -290,9 +387,10 @@ const RailwayDrawerApp = () => {
           }}
           onMouseDown={startResizeToolbox}
         />
+        
         <div
+          ref={drawAreaPanelRef} // Add this ref to the container
           className="draw-area-panel"
-          ref={drawAreaPanelRef}
           style={{
             flex: 1,
             minWidth: 0,
@@ -316,6 +414,7 @@ const RailwayDrawerApp = () => {
             setSelectedElement={setSelectedElement}
           />
         </div>
+        
         <div
           style={{
             width: 6,
@@ -325,9 +424,10 @@ const RailwayDrawerApp = () => {
           }}
           onMouseDown={startResizeProperties}
         />
+        
         <div
           className="properties-panel"
-          style={{ width: propertiesWidth, minWidth: minPanelWidth }}
+          style={{ width: propertiesWidth, minWidth: 180 }}
         >
           <PropertiesPanel
             drawAreaRef={drawAreaRef}
@@ -335,6 +435,18 @@ const RailwayDrawerApp = () => {
             onElementChange={setSelectedElement}
           />
         </div>
+      </div>
+
+      {/* Bottom Tab Panel */}
+      <div style={{ height: tabPanelHeight }}>
+        <TabPanel
+          tabs={tabs}
+          activeTabId={activeTabId}
+          onTabChange={handleTabChange}
+          onTabCreate={handleTabCreate}
+          onTabClose={handleTabClose}
+          onTabRename={handleTabRename}
+        />
       </div>
     </div>
   );

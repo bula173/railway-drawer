@@ -38,9 +38,36 @@ body {
 .layout-main {
   display: flex;
   flex-direction: row;
-  height: 100vh;
+  /* Remove height: 100vh; - now controlled by inline style */
   width: 100vw;
   min-width: 0;
+  flex: 1; /* Add this to make it flexible */
+}
+
+/* Ensure the root container uses flexbox properly */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.w-screen {
+  width: 100vw;
+}
+
+/* Make sure the draw area panel doesn't overflow */
+.draw-area-panel {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Change from auto to hidden */
 }
 .menu-bar {
   display: flex;
@@ -185,11 +212,4 @@ body {
 
 .modal-content button:hover {
   filter: brightness(0.95);
-}
-.draw-area-panel {
-  flex: 1 1 0;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  overflow: auto; /* <-- Add this line */
 }
