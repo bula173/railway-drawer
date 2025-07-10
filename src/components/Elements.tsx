@@ -12,10 +12,8 @@
  * @date
  */
 
-import * as LucideIcons from "lucide-react";
 import React, { useRef } from "react";
 import { RotateCw } from "lucide-react";
-
 // --- Types ---
 
 /**
@@ -27,10 +25,7 @@ export interface DrawElement {
   id: string;
   name?: string;
   type: string;
-  iconName?: string;
-  iconSource?: string;
   iconSvg?: string;
-  draw?: any;
   shape?: string;
   width?: number;
   height?: number;
@@ -50,72 +45,9 @@ export interface DrawElement {
  * @returns JSX.Element
  */
 export const ElementSVG: React.FC<{ el: DrawElement }> = ({ el }) => {
-  const draw = el.draw || {};
 
-  switch (draw.type) {
-    case "line":
-      return (
-        <line
-          x1={el.start.x}
-          y1={el.start.y}
-          x2={el.end.x}
-          y2={el.start.y}
-          stroke={draw.stroke || "black"}
-          strokeWidth={draw.strokeWidth || 4}
-        />
-      );
-    case "lines": {
-      // Determine the original bounding box of the lines
-      const lines = draw.lines || [];
-      // Find min/max for x and y among all line endpoints
-      const xs = lines.flatMap(l => [l.x1, l.x2]);
-      const ys = lines.flatMap(l => [l.y1, l.y2]);
-      const minX = Math.min(...xs);
-      const maxX = Math.max(...xs);
-      const minY = Math.min(...ys);
-      const maxY = Math.max(...ys);
-      const shapeWidth = maxX - minX || 1;
-      const shapeHeight = maxY - minY || 1;
-
-      // Target bounding box
-      const width = Math.abs(el.end.x - el.start.x);
-      const height = Math.abs(el.end.y - el.start.y);
-      const cx = (el.start.x + el.end.x) / 2;
-      const cy = (el.start.y + el.end.y) / 2;
-
-      const scaleX = width / shapeWidth;
-      const scaleY = height / shapeHeight;
-
-      // Mirroring support
-      const mirrorScaleX = el.mirrorX ? -1 : 1;
-      const mirrorScaleY = el.mirrorY ? -1 : 1;
-      const mirrorTranslateX = el.mirrorX ? shapeWidth : 0;
-      const mirrorTranslateY = el.mirrorY ? shapeHeight : 0;
-
-      return (
-        <g
-          transform={`
-        translate(${cx - width / 2},${cy - height / 2})
-        scale(${scaleX},${scaleY})
-        translate(${mirrorTranslateX},${mirrorTranslateY})
-        scale(${mirrorScaleX},${mirrorScaleY})
-        translate(${-minX},${-minY})
-      `}
-        >
-          {lines.map((l: any, i: number) => (
-            <line
-              key={i}
-              x1={l.x1}
-              y1={l.y1}
-              x2={l.x2}
-              y2={l.y2}
-              stroke={draw.stroke || "black"}
-              strokeWidth={draw.strokeWidth || 4 / Math.max(scaleX, scaleY)}
-            />
-          ))}
-        </g>
-      );
-    }
+  switch (el.type) {
+   
     case "custom":
       if (el.shape) {
         // Use fallback size if missing or zero
@@ -149,22 +81,12 @@ export const ElementSVG: React.FC<{ el: DrawElement }> = ({ el }) => {
         console.warn("Custom SVG element has no SVG content");
         return null;
       }
-    case "icon":
-      console.log("cocol icon", { iconName: el.iconName, el });
-      const Icon = LucideIcons[el.iconName as keyof typeof LucideIcons];
-      const width = Math.abs(el.end.x - el.start.x);
-      const height = Math.abs(el.end.y - el.start.y);
-      const cx = (el.start.x + el.end.x) / 2;
-      const cy = (el.start.y + el.end.y) / 2;
-      return Icon ? (
-        <Icon x={cx - width / 2} y={cy - height / 2} size={Math.max(width, height)} />
-      ) : null;
     case "text":
       const textCx = (el.start.x + el.end.x) / 2;
       const textCy = (el.start.y + el.end.y) / 2;
       return (
         <text x={textCx} y={textCy} fontSize={18} textAnchor="middle" dominantBaseline="middle">
-          {el.text || draw.defaultText || "Text"}
+          {"Text"}
         </text>
       );
     default:
@@ -530,7 +452,7 @@ export function RenderElement({
             setEditTextValue(el.text || "");
           }}
         >
-          {el.text || el.draw?.defaultText || "Text"}
+          {"Text"}
         </text>
       )}
       {el.type === "text" && editingText && (

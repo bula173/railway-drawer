@@ -11,27 +11,6 @@ body {
   margin: 0;
   color: #222;
 }
-.toolbox-title {
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: var(--primary);
-  text-align: center;
-  width: 100%;
-}
-.toolbox-card {
-  transition: box-shadow 0.2s;
-  border: 1px solid var(--border);
-  background: var(--card-bg);
-  border-radius: 8px;
-  box-shadow: var(--shadow);
-  margin-bottom: 12px;
-  cursor: grab;
-}
-.toolbox-card:active {
-  cursor: grabbing;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-}
 .svg-area {
   background: #eaf0f6;
   border-radius: 12px;
@@ -206,37 +185,6 @@ body {
 
 .modal-content button:hover {
   filter: brightness(0.95);
-}
-.toolbox-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(44px, 1fr));
-  min-width: 148px; /* 3 * 44px + 2 * 8px gap */
-  gap: 8px;
-  width: 100%;
-  justify-items: start;
-  align-items: start;
-  margin-bottom: 8px;
-}
-.toolbox-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 8px;
-  background: #fff;
-  border: 1px solid #e0e0e0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.07);
-  cursor: grab;
-}
-/* Add this if your toolbox container has a class, e.g. .toolbox-panel */
-.toolbox-panel {
-  min-width: 148px;
-  max-width: 40vw;
-  resize: horizontal;
-  overflow: auto;
-  background: #f4f6fa;
-  border-right: 1px solid #e0e0e0;
 }
 .draw-area-panel {
   flex: 1 1 0;

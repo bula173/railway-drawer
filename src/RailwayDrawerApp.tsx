@@ -1,39 +1,100 @@
 import React, { useState, useRef, useEffect } from "react";
-import toolboxConfig from "./toolboxConfig.json";
+import toolboxConfig from "./assets/toolboxConfig.json";
 import Toolbox from "./components/Toolbox";
+import type { ToolboxItem } from "./components/Toolbox";
 import PropertiesPanel from "./components/PropertiesPanel";
 import DrawArea from "./components/DrawArea";
 import type { DrawElement } from "./components/Elements";
-import * as LucideIcons from "lucide-react";
 
 // Grid settings
 const GRID_SIZE = 40;
 
+/**
+ * Main application component for the Railway Drawer.
+ * Handles toolbox, drawing area, properties panel, file operations, and layout.
+ * 
+ * @component
+ * @returns {JSX.Element} The rendered RailwayDrawerApp component.
+ */
 const RailwayDrawerApp = () => {
-  const [showEditor, setShowEditor] = useState(false);
-  const [toolbox, setToolbox] = useState(toolboxConfig);
+  /**
+   * State for toolbox items.
+   * @type {[ToolboxItem[], Function]}
+   */
+  const [toolbox, setToolbox] = useState<ToolboxItem[]>(toolboxConfig as ToolboxItem[]);
+
+  /**
+   * State for drawn elements.
+   * @type {[DrawElement[], Function]}
+   */
   const [elements, setElements] = useState<DrawElement[]>([]);
+
+  /**
+   * Ref for the SVG element in the draw area.
+   * @type {React.RefObject<SVGSVGElement>}
+   */
   const svgRef = useRef<SVGSVGElement>(null);
-  const [draggedItem, setDraggedItem] = useState<any>(null);
-  const [showGrid, setShowGrid] = useState(true);
+
+  /**
+   * State for export format.
+   * @type {["png" | "jpg" | "svg" | "pdf", Function]}
+   */
   const [exportFormat, setExportFormat] = useState<"png" | "jpg" | "svg" | "pdf">("png");
 
   // UI state
+  /**
+   * State for hovered element ID.
+   * @type {[string | null, Function]}
+   */
   const [hoveredElementId, setHoveredElementId] = useState<string | null>(null);
-  const [selectedElementId, setSelectedElementId] = useState<string | null>(null);
-  const [toolboxWidth, setToolboxWidth] = useState(148); // 3*44 + 2*8
-  const [propertiesWidth, setPropertiesWidth] = useState(220);
-  const [drawAreaWidth, setDrawAreaWidth] = useState<number | undefined>(undefined);
-  const minPanelWidth = 148; // 3*44 + 2*8
-  const minDrawAreaWidth = 300; // (and any logic using these)
 
+  /**
+   * State for selected element ID.
+   * @type {[string | null, Function]}
+   */
+  const [selectedElementId, setSelectedElementId] = useState<string | null>(null);
+
+  /**
+   * State for toolbox panel width.
+   * @type {[number, Function]}
+   */
+  const [toolboxWidth, setToolboxWidth] = useState(148); // 3*44 + 2*8
+
+  /**
+   * State for properties panel width.
+   * @type {[number, Function]}
+   */
+  const [propertiesWidth, setPropertiesWidth] = useState(220);
+
+  /**
+   * Minimum panel width.
+   * @type {number}
+   */
+  const minPanelWidth = 148; // 3*44 + 2*8
+
+  /**
+   * State for draw area size.
+   * @type {[{width: number, height: number}, Function]}
+   */
   const [drawAreaSize, setDrawAreaSize] = useState({ width: 1200, height: 800 });
+
+  /**
+   * Ref for the draw area panel div.
+   * @type {React.RefObject<HTMLDivElement>}
+   */
   const drawAreaPanelRef = useRef<HTMLDivElement>(null);
 
   // Zoom state
+  /**
+   * State for zoom level.
+   * @type {[number, Function]}
+   */
   const [zoom, setZoom] = useState(1);
 
-  // Save/load/export logic
+  /**
+   * Save the current elements as a JSON file.
+   * @function
+   */
   const saveAsJson = () => {
     console.log("[SAVE] Saving elements:", elements);
     const data = JSON.stringify({ elements }, null, 2);
@@ -44,6 +105,11 @@ const RailwayDrawerApp = () => {
     link.click();
   };
 
+  /**
+   * Load elements from a JSON file.
+   * @function
+   * @param {React.ChangeEvent<HTMLInputElement>} e - The file input change event.
+   */
   const loadFromJson = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
@@ -66,6 +132,10 @@ const RailwayDrawerApp = () => {
     }
   };
 
+  /**
+   * Export the drawing as an image (PNG, JPG, SVG, or PDF).
+   * @function
+   */
   const exportToImage = () => {
     const node = svgRef.current;
     if (!node) return;
@@ -85,7 +155,7 @@ const RailwayDrawerApp = () => {
     if (exportFormat === "pdf") {
       import("jspdf").then(jsPDF => {
         import("html-to-image").then(htmlToImage => {
-          htmlToImage.toPng(node).then((dataUrl: string) => {
+          htmlToImage.toSvg(node as unknown as HTMLElement).then((dataUrl: string) => {
             const pdf = new jsPDF.jsPDF({
               orientation: "landscape",
               unit: "px",
@@ -111,8 +181,8 @@ const RailwayDrawerApp = () => {
       const fn =
         exportFormat === "jpg"
           ? htmlToImage.toJpeg
-          : htmlToImage.toPng;
-      fn(node).then((dataUrl: string) => {
+          : htmlToImage.toSvg; // Use toSvg for SVG elements
+      fn(node as unknown as HTMLElement).then((dataUrl: string) => {
         const link = document.createElement("a");
         link.href = dataUrl;
         link.download = `railway_drawing.${exportFormat}`;
@@ -121,6 +191,10 @@ const RailwayDrawerApp = () => {
     });
   };
 
+  /**
+   * Save the toolbox configuration as a JSON file.
+   * @function
+   */
   const saveToolboxAsJson = () => {
     console.log("[SAVE] Saving toolbox config:", toolbox);
     const data = JSON.stringify(
@@ -135,6 +209,11 @@ const RailwayDrawerApp = () => {
     link.click();
   };
 
+  /**
+   * Load toolbox configuration from a JSON file.
+   * @function
+   * @param {React.ChangeEvent<HTMLInputElement>} e - The file input change event.
+   */
   const loadToolboxFromJson = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
@@ -162,6 +241,12 @@ const RailwayDrawerApp = () => {
     }
   };
 
+  /**
+   * Handle changing the name of an element.
+   * @function
+   * @param {string} id - The element ID.
+   * @param {string} name - The new name.
+   */
   function handleChangeElementName(id: string, name: string): void {
     console.log("[PROPERTIES] Change name:", { id, name });
     setElements(prev =>
@@ -171,7 +256,11 @@ const RailwayDrawerApp = () => {
     );
   }
 
-  // Panel resizing
+  /**
+   * Start resizing the toolbox panel.
+   * @function
+   * @param {React.MouseEvent} e - The mouse event.
+   */
   const startResizeToolbox = (e: React.MouseEvent) => {
     console.log("[RESIZE] Start resizing toolbox panel");
     const startX = e.clientX;
@@ -188,6 +277,11 @@ const RailwayDrawerApp = () => {
     window.addEventListener("mouseup", onUp);
   };
 
+  /**
+   * Start resizing the properties panel.
+   * @function
+   * @param {React.MouseEvent} e - The mouse event.
+   */
   const startResizeProperties = (e: React.MouseEvent) => {
     console.log("[RESIZE] Start resizing properties panel");
     const startX = e.clientX;
@@ -204,48 +298,45 @@ const RailwayDrawerApp = () => {
     window.addEventListener("mouseup", onUp);
   };
 
-  const startResizeDrawArea = (e: React.MouseEvent) => {
-    const startX = e.clientX;
-    const startDrawWidth = drawAreaWidth ?? (window.innerWidth - toolboxWidth - propertiesWidth - 12);
-    const startPropsWidth = propertiesWidth;
-
-    const onMove = (moveEvent: MouseEvent) => {
-      const delta = moveEvent.clientX - startX;
-      let newDrawWidth = startDrawWidth + delta;
-      let newPropsWidth = startPropsWidth - delta;
-
-      // Enforce minimums
-      if (newDrawWidth < minDrawAreaWidth) {
-        newPropsWidth -= (minDrawAreaWidth - newDrawWidth);
-        newDrawWidth = minDrawAreaWidth;
-      }
-      if (newPropsWidth < minPanelWidth) {
-        newDrawWidth -= (minPanelWidth - newPropsWidth);
-        newPropsWidth = minPanelWidth;
-      }
-
-      setDrawAreaWidth(newDrawWidth);
-      setPropertiesWidth(newPropsWidth);
-    };
-
-    const onUp = () => {
-      window.removeEventListener("mousemove", onMove);
-      window.removeEventListener("mouseup", onUp);
-    };
-
-    window.addEventListener("mousemove", onMove);
-    window.addEventListener("mouseup", onUp);
-  };
-
+  /**
+   * The currently hovered element.
+   * @type {DrawElement | undefined}
+   */
   const hoveredElement = elements.find(el => el.id === hoveredElementId);
+
+  /**
+   * The IDs of selected elements.
+   * @type {string[]}
+   */
   const selectedElementIds = elements.filter(el => el.id === selectedElementId).map(el => el.id);
+
+  /**
+   * The last selected element ID.
+   * @type {string | null}
+   */
   const lastSelectedId = selectedElementIds[selectedElementIds.length - 1] || null;
+
+  /**
+   * The currently selected element.
+   * @type {DrawElement | null}
+   */
   const selectedElement = elements.find(el => el.id === lastSelectedId) || null;
 
-  // Add this helper for file input refs
+  /**
+   * Ref for the file input (drawing).
+   * @type {React.RefObject<HTMLInputElement>}
+   */
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  /**
+   * Ref for the file input (toolbox).
+   * @type {React.RefObject<HTMLInputElement>}
+   */
   const toolboxInputRef = useRef<HTMLInputElement>(null);
 
+  /**
+   * Effect to observe and update draw area size on resize.
+   */
   useEffect(() => {
     const node = drawAreaPanelRef.current;
     if (!node) return;
@@ -259,17 +350,41 @@ const RailwayDrawerApp = () => {
     return () => observer.disconnect();
   }, []);
 
+  /**
+   * Zoom in handler.
+   * @function
+   */
   const handleZoomIn = () => {
     setZoom(prev => Math.min(prev * 1.2, 5));
   };
 
+  /**
+   * Zoom out handler.
+   * @function
+   */
   const handleZoomOut = () => {
     setZoom(prev => Math.max(prev / 1.2, 0.2));
   };
 
+  /**
+   * Zoom reset handler.
+   * @function
+   */
   const handleZoomReset = () => {
     setZoom(1);
   };
+
+  /**
+   * State for showing the shape editor modal.
+   * @type {[boolean, Function]}
+   */
+  const [showEditor, setShowEditor] = useState(false);
+
+  /**
+   * Dummy setter for dragged item (required by Toolbox).
+   * @function
+   */
+  const setDraggedItem = () => {};
 
   return (
     <div className="flex flex-col h-screen w-screen">
@@ -327,9 +442,9 @@ const RailwayDrawerApp = () => {
           <Toolbox
             toolbox={toolbox}
             setToolbox={setToolbox}
-            setDraggedItem={setDraggedItem}
             showEditor={showEditor}
             setShowEditor={setShowEditor}
+            setDraggedItem={setDraggedItem}
           />
         </div>
         <div
@@ -367,11 +482,9 @@ const RailwayDrawerApp = () => {
             setElements={setElements}
             hoveredElementId={hoveredElementId}
             setHoveredElementId={setHoveredElementId}
-            selectedElementId={selectedElementId}
-            setSelectedElementId={setSelectedElementId}
             selectedElementIds={selectedElementId ? [selectedElementId] : []}
             setSelectedElementIds={ids => setSelectedElementId(ids.at(-1) || null)}
-            showGrid={showGrid}
+            showGrid={true}
           />
         </div>
         <div
@@ -388,7 +501,7 @@ const RailwayDrawerApp = () => {
           style={{ width: propertiesWidth, minWidth: minPanelWidth }}
         >
           <PropertiesPanel
-            element={hoveredElement || selectedElement}
+            element={hoveredElement || selectedElement || undefined}
             onChangeName={handleChangeElementName}
           />
         </div>

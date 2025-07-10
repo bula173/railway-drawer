@@ -2,9 +2,24 @@ import React, { useEffect, useRef, useState } from "react";
 import { RenderElement } from "./Elements";
 import type { DrawElement } from "./Elements";
 
-// --- Types ---
+/**
+ * Props for the DrawArea component.
+ * @interface DrawAreaProps
+ * @property svgRef - Ref to the SVG element.
+ * @property GRID_WIDTH - Width of the grid/SVG area.
+ * @property GRID_HEIGHT - Height of the grid/SVG area.
+ * @property GRID_SIZE - Size of each grid cell.
+ * @property elements - Array of drawn elements.
+ * @property setElements - Setter for elements.
+ * @property hoveredElementId - ID of the currently hovered element.
+ * @property setHoveredElementId - Setter for hovered element ID.
+ * @property selectedElementIds - Array of selected element IDs.
+ * @property setSelectedElementIds - Setter for selected element IDs.
+ * @property showGrid - Whether to show the grid.
+ * @property zoom - Zoom level (optional).
+ */
 export interface DrawAreaProps {
-  svgRef: React.RefObject<SVGSVGElement>;
+  svgRef: React.RefObject<SVGSVGElement | null>;
   GRID_WIDTH: number;
   GRID_HEIGHT: number;
   GRID_SIZE: number;
@@ -15,9 +30,17 @@ export interface DrawAreaProps {
   selectedElementIds: string[];
   setSelectedElementIds: (ids: string[]) => void;
   showGrid: boolean;
-  zoom?: number; // <-- add zoom prop
+  zoom?: number;
 }
 
+/**
+ * DrawArea component for rendering and interacting with the drawing canvas.
+ * Handles selection, dragging, dropping, grid rendering, and zoom.
+ * 
+ * @component
+ * @param {DrawAreaProps} props - The props for DrawArea.
+ * @returns {JSX.Element} The rendered SVG drawing area.
+ */
 const DrawArea: React.FC<DrawAreaProps> = ({
   svgRef,
   GRID_WIDTH,
@@ -30,21 +53,48 @@ const DrawArea: React.FC<DrawAreaProps> = ({
   selectedElementIds,
   setSelectedElementIds,
   showGrid,
-  zoom = 1, // <-- default zoom to 1
+  zoom = 1,
 }) => {
-  // --- State and Refs ---
+  /**
+   * State for the currently dragged element ID.
+   * @type {[string | null, Function]}
+   */
   const [draggingId, setDraggingId] = useState<string | null>(null);
-  const [history, setHistory] = useState<DrawElement[][]>([]);
+
+  /**
+   * Ref for drag offset.
+   * @type {React.MutableRefObject<{x: number, y: number}>}
+   */
   const dragOffset = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
+
+  /**
+   * Ref for the currently dragging element ID.
+   * @type {React.MutableRefObject<string | null>}
+   */
   const draggingIdRef = useRef<string | null>(null);
+
+  /**
+   * Ref to track if history was pushed during drag.
+   * @type {React.MutableRefObject<boolean>}
+   */
   const hasPushedToHistory = useRef(false);
 
-  // --- Effects ---
+  /**
+   * State for undo/redo history (not used directly).
+   * @type {Function}
+   */
+  const [, setHistory] = useState<DrawElement[][]>([]);
+
+  /**
+   * Effect to keep draggingIdRef in sync with draggingId.
+   */
   useEffect(() => {
     draggingIdRef.current = draggingId;
   }, [draggingId]);
 
-  // --- Undo/Redo and Delete ---
+  /**
+   * Effect to handle keyboard shortcuts for delete and undo.
+   */
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
       // Delete selected elements
@@ -67,22 +117,29 @@ const DrawArea: React.FC<DrawAreaProps> = ({
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [selectedElementIds, elements]);
 
-  // --- History Helper ---
+  /**
+   * Pushes the current elements to history and updates elements.
+   * @function
+   * @param {React.SetStateAction<DrawElement[]>} updater - The updater for elements.
+   */
   function pushToHistoryAndSetElements(updater: React.SetStateAction<DrawElement[]>) {
     setHistory(prev => [...prev, elements.map(el => ({ ...el }))]);
     setElements(updater);
   }
 
-  // --- Selection Handler ---
+  /**
+   * Handles pointer down for selection and drag start.
+   * @function
+   * @param {React.PointerEvent} e - The pointer event.
+   * @param {DrawElement} el - The element being interacted with.
+   */
   function handlePointerDown(e: React.PointerEvent, el: DrawElement) {
     if (e.ctrlKey || e.metaKey) {
-      setSelectedElementIds((prev: string[]) => {
-        if (prev.includes(el.id)) {
-          return prev.filter((id: string) => id !== el.id);
-        } else {
-          return [...prev, el.id];
-        }
-      });
+      setSelectedElementIds(
+        selectedElementIds.includes(el.id)
+          ? selectedElementIds.filter((id: string) => id !== el.id)
+          : [...selectedElementIds, el.id]
+      );
     } else {
       setSelectedElementIds([el.id]);
     }
@@ -97,7 +154,11 @@ const DrawArea: React.FC<DrawAreaProps> = ({
     window.addEventListener("pointerup", handlePointerUp);
   }
 
-  // --- Dragging Logic ---
+  /**
+   * Handles pointer move for dragging elements.
+   * @function
+   * @param {PointerEvent} e - The pointer event.
+   */
   function handlePointerMove(e: PointerEvent) {
     const currentDraggingId = draggingIdRef.current;
     if (!currentDraggingId) return;
@@ -127,20 +188,31 @@ const DrawArea: React.FC<DrawAreaProps> = ({
     );
   }
 
+  /**
+   * Handles pointer up to end dragging.
+   * @function
+   */
   function handlePointerUp() {
     setDraggingId(null);
     window.removeEventListener("pointermove", handlePointerMove);
     window.removeEventListener("pointerup", handlePointerUp);
   }
 
-  // --- SVG Click Handler (deselect) ---
+  /**
+   * Handles SVG background click to deselect all.
+   * @function
+   */
   function handleSvgClick() {
     setSelectedElementIds([]);
     setDraggingId(null);
     setHoveredElementId(null);
   }
 
-  // --- Grid Rendering ---
+  /**
+   * Renders the grid lines for the SVG area.
+   * @function
+   * @returns {JSX.Element} The rendered grid.
+   */
   function renderGrid() {
     return (
       <g>
@@ -170,7 +242,11 @@ const DrawArea: React.FC<DrawAreaProps> = ({
     );
   }
 
-  // --- Drop Handler: Create and center element here ---
+  /**
+   * Handles drop event to create a new element at the drop position.
+   * @function
+   * @param {React.DragEvent<SVGSVGElement>} e - The drag event.
+   */
   function handleDrop(e: React.DragEvent<SVGSVGElement>) {
     e.preventDefault();
     const svgRect = svgRef.current?.getBoundingClientRect();
@@ -191,15 +267,19 @@ const DrawArea: React.FC<DrawAreaProps> = ({
     });
   }
 
-  // --- Helper: Center element based on type ---
+  /**
+   * Helper to create a new element centered at (x, y) based on item type.
+   * @function
+   * @param {any} item - The toolbox item data.
+   * @param {number} x - X coordinate.
+   * @param {number} y - Y coordinate.
+   * @returns {DrawElement} The new element.
+   */
   function createCenteredElement(item: any, x: number, y: number): DrawElement {
-
-    // Handle by draw type
     switch (item.draw?.type) {
       case "line":
         // Center a horizontal line at (x, y)
         const lineElement = {
-        // Toolbox item properties
           id: `${item.type}_${Date.now()}`,
           name: item.name,
           type: item.type,
@@ -210,17 +290,14 @@ const DrawArea: React.FC<DrawAreaProps> = ({
           shape: item.shape,
           width: item.width,
           height: item.heigh,
-        // Element properties
           start: { x: x - item.width / 2, y },
           end: { x: x + item.width / 2, y },
           rotation: 0,
         };
-        console.log("[CREATE] Centered line element:", lineElement);
         return lineElement;
       case "lines":
         // Center a bounding box for multi-line shapes
         const linesElement = {
-        // Toolbox item properties
           id: `${item.type}_${Date.now()}`,
           name: item.name,
           type: item.type,
@@ -231,19 +308,14 @@ const DrawArea: React.FC<DrawAreaProps> = ({
           shape: item.shape,
           width: item.width,
           height: item.heigh,
-        // Element properties
           start: { x: x - item.width / 2, y: y - item.height / 2 },
           end: { x: x + item.width / 2, y: y + item.height / 2 },
           rotation: 0,
         };
-        console.log("[CREATE] Centered lines element:", linesElement);
         return linesElement;
       case "icon":
         // Center a rectangle for icons and text
-              console.log("draw icon", { iconName: item.iconName });
-
         const iconElement = {
-        // Toolbox item properties
           id: `${item.type}_${Date.now()}`,
           name: item.name,
           type: item.type,
@@ -254,16 +326,13 @@ const DrawArea: React.FC<DrawAreaProps> = ({
           shape: item.shape,
           width: item.width,
           height: item.heigh,
-        // Element properties
           start: { x: x - item.width / 2, y: y - item.height / 2 },
           end: { x: x + item.width / 2, y: y + item.height / 2 },
           rotation: 0,
         };
-        console.log("[CREATE] Centered icon element:", iconElement);
         return iconElement;
       case "text":
         const textElement = {
-        // Toolbox item properties
           id: `${item.type}_${Date.now()}`,
           name: item.name,
           type: item.type,
@@ -274,17 +343,14 @@ const DrawArea: React.FC<DrawAreaProps> = ({
           shape: item.shape,
           width: item.width,
           height: item.heigh,
-        // Element properties
           start: { x: x, y: y - item.height },
           end: { x: x + item.width, y: y + item.height },
           rotation: 0,
         };
-        console.log("[CREATE] Centered text element:", textElement);
         return textElement;
       default:
         // Fallback: centered rectangle
         const defaultElement = {
-        // Toolbox item properties
           id: `${item.type}_${Date.now()}`,
           name: item.name,
           type: item.type,
@@ -295,18 +361,20 @@ const DrawArea: React.FC<DrawAreaProps> = ({
           shape: item.shape,
           width: item.width,
           height: item.heigh,
-        // Element properties
           start: { x: x, y: y },
           end: { x: x + item.width, y: y + item.height },
         };
-        console.log("[CREATE] Centered default element:", defaultElement);
         return defaultElement;
     }
   }
 
-  // --- Main Render ---
+  /**
+   * The last selected element ID.
+   * @type {string | null}
+   */
   const lastSelectedId = selectedElementIds.length > 0 ? selectedElementIds[selectedElementIds.length - 1] : null;
 
+  // --- Main Render ---
   return (
     <svg
       ref={svgRef}
@@ -334,7 +402,7 @@ const DrawArea: React.FC<DrawAreaProps> = ({
             updateElement={updated =>
               setElements(prev => prev.map(e => e.id === updated.id ? updated : e))
             }
-            handlePointerDown={handlePointerDown} // <-- pass this!
+            handlePointerDown={handlePointerDown}
           />
         ))}
       </g>

@@ -1,0 +1,139 @@
+.toolbox-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--primary);
+  text-align: center;
+  width: 100%;
+}
+
+.toolbox-card {
+  transition: box-shadow 0.2s;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  margin-bottom: 12px;
+  cursor: grab;
+}
+.toolbox-card:active {
+  cursor: grabbing;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.toolbox-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(44px, 1fr));
+  min-width: 148px; /* 3 * 44px + 2 * 8px gap */
+  gap: 8px;
+  width: 100%;
+  justify-items: start;
+  align-items: start;
+  margin-bottom: 8px;
+}
+
+.toolbox-icon,
+.toolbox-item {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+  cursor: grab;
+}
+
+.toolbox-panel {
+  min-width: 148px;
+  max-width: 40vw;
+  resize: horizontal;
+  overflow: auto;
+  background: #f4f6fa;
+  border-right: 1px solid #e0e0e0;
+}
+
+.toolbox-group {
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.toolbox-group-title {
+  font-weight: 600;
+  color: #1976d2;
+  font-size: 1rem;
+  margin: 8px 0 4px 4px;
+}
+
+.toolbox-add-btn {
+  width: 100%;
+  height: 44px;
+  border-radius: 8px;
+  padding: 0;
+  margin-top: 8px;
+  background: #e0e0e0;
+  color: #333;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+.toolbox-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.2);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toolbox-modal {
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  min-width: 320px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.15);
+  position: relative;
+}
+
+.toolbox-modal-title {
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.toolbox-modal-fields label {
+  font-weight: 500;
+  display: block;
+  margin-top: 8px;
+}
+
+.toolbox-modal-fields input,
+.toolbox-modal-fields textarea {
+  width: 100%;
+  margin-top: 4px;
+  margin-bottom: 8px;
+  padding: 6px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.toolbox-modal-fields textarea {
+  min-height: 40px;
+}
+
+.toolbox-modal-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-top: 10px;
+}

@@ -1,10 +1,78 @@
 import React from "react";
-import type { DrawElement } from "../types/Element";
+import type { DrawElement } from "./Elements";
 
-const PropertiesPanel: React.FC<{ element?: DrawElement; onChangeName?: (id: string, name: string) => void }> = ({ element, onChangeName }) => {
+/**
+ * PropertiesPanel component for displaying and editing properties of a selected drawing element.
+ *
+ * @component
+ * @param {Object} props - The component props.
+ * @param {DrawElement} [props.element] - The element whose properties are shown.
+ * @param {(id: string, name: string) => void} [props.onChangeName] - Handler for name change.
+ * @returns {JSX.Element} The rendered properties panel.
+ */
+const PropertiesPanel: React.FC<{
+  element?: DrawElement;
+  onChangeName?: (id: string, name: string) => void;
+}> = ({
+  element,
+  onChangeName,
+}) => {
+  /**
+   * If no element is provided, use a default empty element.
+   * @type {DrawElement}
+   */
   if (!element) {
-    element = { id: "", type: "", x: 0, y: 0, name: "", icon: "", draw: {}, length: 0, rotation: 0 } as DrawElement; // Default empty element
+    element = {
+      id: "",
+      type: "",
+      name: "",
+      iconSvg: "",
+      shape: "",
+      width: 0,
+      height: 0,
+      start: { x: 0, y: 0 },
+      end: { x: 0, y: 0 },
+      rotation: 0,
+      text: "",
+    } as DrawElement;
   }
+
+  /**
+   * The X coordinate of the start point.
+   * @type {number}
+   */
+  const x = Math.round(element.start?.x ?? 0);
+
+  /**
+   * The Y coordinate of the start point.
+   * @type {number}
+   */
+  const y = Math.round(element.start?.y ?? 0);
+
+  /**
+   * The X coordinate of the end point.
+   * @type {number}
+   */
+  const x2 = Math.round(element.end?.x ?? 0);
+
+  /**
+   * The Y coordinate of the end point.
+   * @type {number}
+   */
+  const y2 = Math.round(element.end?.y ?? 0);
+
+  /**
+   * The width of the element (absolute difference between x2 and x).
+   * @type {number}
+   */
+  const width = Math.abs(x2 - x);
+
+  /**
+   * The height of the element (absolute difference between y2 and y).
+   * @type {number}
+   */
+  const height = Math.abs(y2 - y);
+
   return (
     <div
       className="flex flex-col p-4"
@@ -31,12 +99,27 @@ const PropertiesPanel: React.FC<{ element?: DrawElement; onChangeName?: (id: str
           />
         </div>
         <div>
-          <b>X:</b> {Math.round(element.x)}
+          <b>Start:</b> ({x}, {y})
         </div>
         <div>
-          <b>Y:</b> {Math.round(element.y)}
+          <b>End:</b> ({x2}, {y2})
         </div>
-        {/* Add more properties as needed */}
+        <div>
+          <b>Width:</b> {width}
+        </div>
+        <div>
+          <b>Height:</b> {height}
+        </div>
+        {typeof element.rotation === "number" && (
+          <div>
+            <b>Rotation:</b> {element.rotation}°
+          </div>
+        )}
+        {typeof element.text === "string" && element.type === "text" && (
+          <div>
+            <b>Text:</b> {element.text}
+          </div>
+        )}
       </div>
     </div>
   );
