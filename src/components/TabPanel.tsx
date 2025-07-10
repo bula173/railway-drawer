@@ -7,6 +7,7 @@ export interface DrawAreaTab {
   elements: DrawElement[];
   gridVisible: boolean;
   backgroundColor: string;
+  selectedElementIds?: string[]; // Add this property
 }
 
 interface TabPanelProps {

@@ -39,7 +39,8 @@ const RailwayDrawerApp = () => {
       name: 'Drawing 1',
       elements: [],
       gridVisible: true,
-      backgroundColor: '#ffffff'
+      backgroundColor: '#ffffff',
+      selectedElementIds: [] // Add this line
     }
   ]);
   const [activeTabId, setActiveTabId] = useState('tab-1');
@@ -68,7 +69,8 @@ const RailwayDrawerApp = () => {
       name: `Drawing ${tabs.length + 1}`,
       elements: [],
       gridVisible: true,
-      backgroundColor: '#ffffff'
+      backgroundColor: '#ffffff',
+      selectedElementIds: [] // Add this line
     };
     setTabs(prev => [...prev, newTab]);
     setActiveTabId(newTabId);
@@ -94,13 +96,18 @@ const RailwayDrawerApp = () => {
       const currentGridVisible = drawAreaRef.current.getGridVisible();
       const currentBgColor = drawAreaRef.current.getSvgElement()?.style.backgroundColor || '#ffffff';
       
+      // You'll also need to get the current selected element IDs from DrawArea
+      // For now, we'll use an empty array, but you might want to expose this from DrawArea ref
+      const currentSelectedIds: string[] = []; // TODO: Get from DrawArea ref if needed
+      
       setTabs(prev => prev.map(tab => 
         tab.id === activeTabId 
           ? { 
               ...tab, 
               elements: currentElements,
               gridVisible: currentGridVisible,
-              backgroundColor: currentBgColor
+              backgroundColor: currentBgColor,
+              selectedElementIds: currentSelectedIds // Add this line
             }
           : tab
       ));
@@ -129,15 +136,21 @@ const RailwayDrawerApp = () => {
   }, [activeTabId, activeTab]);
 
   // Save current tab state when elements change
-  const handleElementsChange = () => {
-    if (drawAreaRef.current && activeTab) {
-      const currentElements = drawAreaRef.current.getElements();
-      setTabs(prev => prev.map(tab => 
-        tab.id === activeTabId 
-          ? { ...tab, elements: currentElements }
-          : tab
-      ));
-    }
+  const handleElementsChange = (newElements: DrawElement[]) => {
+    setTabs(prev => prev.map(tab => 
+      tab.id === activeTabId 
+        ? { ...tab, elements: newElements }
+        : tab
+    ));
+  };
+
+  // Add this function after handleElementsChange
+  const handleSelectedIdsChange = (newSelectedIds: string[]) => {
+    setTabs(prev => prev.map(tab => 
+      tab.id === activeTabId 
+        ? { ...tab, selectedElementIds: newSelectedIds }
+        : tab
+    ));
   };
 
   // Dummy setter for dragged item (required by Toolbox)
@@ -410,6 +423,10 @@ const RailwayDrawerApp = () => {
             GRID_HEIGHT={drawAreaSize.height}
             GRID_SIZE={GRID_SIZE}
             zoom={zoom}
+            elements={activeTab.elements}
+            onElementsChange={handleElementsChange}
+            selectedElementIds={activeTab.selectedElementIds}
+            onSelectedElementIdsChange={handleSelectedIdsChange}
             selectedElement={selectedElement}
             setSelectedElement={setSelectedElement}
           />
