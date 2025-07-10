@@ -1,108 +1,90 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, forwardRef, useImperativeHandle } from "react";
 import { RenderElement } from "./Elements";
 import type { DrawElement } from "./Elements";
 
 /**
+ * Methods exposed by DrawArea component through ref
+ */
+export interface DrawAreaRef {
+  getSvgElement: () => SVGSVGElement | null;
+  getElements: () => DrawElement[];
+  setElements: (elements: DrawElement[]) => void;
+  setGridVisible: (visible: boolean) => void;
+  getGridVisible: () => boolean;
+  getSelectedElement: () => DrawElement | undefined;
+}
+
+/**
  * Props for the DrawArea component.
- * @interface DrawAreaProps
- * @property svgRef - Ref to the SVG element.
- * @property GRID_WIDTH - Width of the grid/SVG area.
- * @property GRID_HEIGHT - Height of the grid/SVG area.
- * @property GRID_SIZE - Size of each grid cell.
- * @property elements - Array of drawn elements.
- * @property setElements - Setter for elements.
- * @property hoveredElementId - ID of the currently hovered element.
- * @property setHoveredElementId - Setter for hovered element ID.
- * @property selectedElementIds - Array of selected element IDs.
- * @property setSelectedElementIds - Setter for selected element IDs.
- * @property showGrid - Whether to show the grid.
- * @property setShowGrid - Setter for showGrid.
- * @property zoom - Zoom level (optional).
+ * Only layout/grid/zoom props are needed after refactor.
  */
 export interface DrawAreaProps {
-  svgRef: React.RefObject<SVGSVGElement | null>;
   GRID_WIDTH: number;
   GRID_HEIGHT: number;
   GRID_SIZE: number;
-  elements: DrawElement[];
-  setElements: React.Dispatch<React.SetStateAction<DrawElement[]>>;
-  hoveredElementId: string | null;
-  setHoveredElementId: (id: string | null) => void;
-  selectedElementIds: string[];
-  setSelectedElementIds: (ids: string[]) => void;
-  showGrid: boolean;
-  setShowGrid: React.Dispatch<React.SetStateAction<boolean>>; // Added setter for showGrid
   zoom?: number;
+  selectedElement?: DrawElement;
+  setSelectedElement?: (el?: DrawElement) => void;
 }
 
 /**
  * DrawArea component for rendering and interacting with the drawing canvas.
  * Handles selection, dragging, dropping, grid rendering, and zoom.
+ * Creates and manages its own SVG element internally.
  * 
  * @component
  * @param {DrawAreaProps} props - The props for DrawArea.
+ * @param {React.Ref<DrawAreaRef>} ref - Ref to expose DrawArea methods.
  * @returns {JSX.Element} The rendered SVG drawing area.
  */
-const DrawArea: React.FC<DrawAreaProps> = ({
-  svgRef,
+const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
   GRID_WIDTH,
   GRID_HEIGHT,
   GRID_SIZE,
-  elements,
-  setElements,
-  hoveredElementId,
-  setHoveredElementId,
-  selectedElementIds,
-  setSelectedElementIds,
-  showGrid,
-  setShowGrid,
   zoom = 1,
-}) => {
-  /**
-   * State for the currently dragged element ID.
-   * @type {[string | null, Function]}
-   */
+  selectedElement,
+  setSelectedElement,
+}, ref) => {
+  // Internal state for elements and UI
+  const [elements, setElements] = useState<DrawElement[]>([]);
+  const [selectedElementIds, setSelectedElementIds] = useState<string[]>([]);
+  const [hoveredElementId, setHoveredElementId] = useState<string | null>(null);
   const [draggingId, setDraggingId] = useState<string | null>(null);
-
-  /**
-   * Ref for drag offset.
-   * @type {React.MutableRefObject<{x: number, y: number}>}
-   */
-  const dragOffset = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
-
-  /**
-   * Ref for the currently dragging element ID.
-   * @type {React.MutableRefObject<string | null>}
-   */
   const draggingIdRef = useRef<string | null>(null);
-
-  /**
-   * Ref to track if history was pushed during drag.
-   * @type {React.MutableRefObject<boolean>}
-   */
+  const dragOffset = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
+  const [backgroundColor, setBackgroundColor] = useState<string>("#ffffff");
+  const [showGrid, setShowGrid] = useState<boolean>(true);
+  const [, setHistory] = useState<DrawElement[][]>([]);
+  const svgRef = useRef<SVGSVGElement | null>(null);
   const hasPushedToHistory = useRef(false);
 
   /**
-   * State for undo/redo history (not used directly).
-   * @type {Function}
+   * Expose methods through ref
    */
-  const [, setHistory] = useState<DrawElement[][]>([]);
+  useImperativeHandle(ref, () => ({
+    getSvgElement: () => svgRef.current,
+    getElements: () => elements,
+    setElements: (els: DrawElement[]) => setElements(els),
+    setGridVisible: (visible: boolean) => setShowGrid(visible),
+    getGridVisible: () => showGrid, // Make sure this returns the actual showGrid state
+    getSelectedElement: () => {
+      if (!selectedElementIds.length) return undefined;
+      return elements.find(el => el.id === selectedElementIds[selectedElementIds.length - 1]);
+    },
+  }), [elements, showGrid, selectedElementIds]); // Make sure showGrid is in the dependency array
 
   /**
-   * State for draw area properties
-   * @type {[boolean, Function]}
+   * Sync elements with grid visibility state
    */
-  const [backgroundColor, setBackgroundColor] = useState<string>("#ffffff");
-
   useEffect(() => {
     setElements(prev => prev.map(el => ({ ...el, gridEnabled: showGrid })));
-  }, [showGrid, setElements]);
+  }, [showGrid]);
 
   // Pass these properties to elements
   elements.forEach((el) => {
     el.gridEnabled = showGrid;
     el.backgroundColor = backgroundColor;
-    el.setGridEnabled = setShowGrid; // Use setShowGrid directly
+    el.setGridEnabled = setShowGrid;
     el.setBackgroundColor = setBackgroundColor;
   });
 
@@ -164,7 +146,12 @@ const DrawArea: React.FC<DrawAreaProps> = ({
     } else {
       setSelectedElementIds([el.id]);
     }
+    
+    // Update external selection context
+    setSelectedElement?.(el);
+    
     setDraggingId(el.id);
+
     hasPushedToHistory.current = false;
     const svgRect = svgRef.current?.getBoundingClientRect();
     dragOffset.current = {
@@ -227,6 +214,9 @@ const DrawArea: React.FC<DrawAreaProps> = ({
     setSelectedElementIds([]);
     setDraggingId(null);
     setHoveredElementId(null);
+    
+    // Clear external selection when clicking on empty space
+    setSelectedElement?.(undefined);
   }
 
   /**
@@ -358,38 +348,36 @@ const DrawArea: React.FC<DrawAreaProps> = ({
 
   // --- Main Render ---
   return (
-    <svg
-      ref={svgRef}
-      width={GRID_WIDTH}
-      height={GRID_HEIGHT}
-      className="svg-area"
-      style={{ width: "100%", height: "100%", display: "block" }}
-      onPointerDown={e => {
-        if (e.target === svgRef.current) {
-          handleSvgClick();
-        }
-      }}
-      onDragOver={e => e.preventDefault()}
-      onDrop={handleDrop}
-    >
-      <g transform={`scale(${zoom})`}>
-        {showGrid && renderGrid()}
-        {elements.map(el => (
-          <RenderElement
-            key={el.id}
-            el={el}
-            isSelected={el.id === lastSelectedId}
-            hoveredElementId={hoveredElementId}
-            setHoveredElementId={setHoveredElementId}
-            updateElement={updated =>
-              setElements(prev => prev.map(e => e.id === updated.id ? updated : e))
-            }
-            handlePointerDown={handlePointerDown}
-          />
-        ))}
-      </g>
-    </svg>
+      <svg
+        ref={svgRef}
+        width={GRID_WIDTH}
+        height={GRID_HEIGHT}
+        style={{ background: backgroundColor, width: "100%", height: "100%", display: "block" }}
+        tabIndex={0}
+        onClick={handleSvgClick}
+        onDragOver={e => e.preventDefault()}
+        onDrop={handleDrop}
+      >
+        <g transform={`scale(${zoom})`}>
+          {showGrid && renderGrid()}
+          {elements.map(el => (
+            <RenderElement
+              key={el.id}
+              el={el}
+              isSelected={selectedElementIds.includes(el.id)}
+              hoveredElementId={hoveredElementId}
+              setHoveredElementId={setHoveredElementId}
+              updateElement={updated =>
+                setElements(prev => prev.map(e => e.id === updated.id ? updated : e))
+              }
+              handlePointerDown={handlePointerDown}
+            />
+          ))}
+        </g>
+      </svg>
   );
-};
+});
+
+DrawArea.displayName = 'DrawArea';
 
 export default DrawArea;

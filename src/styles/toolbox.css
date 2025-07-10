@@ -7,24 +7,6 @@
   width: 100%;
 }
 
-.toolbox-card {
-  transition: box-shadow 0.2s;
-  border: 1px solid var(--border);
-  background: var(--card-bg);
-  border-radius: 8px;
-  padding: 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: var(--shadow);
-  margin-bottom: 12px;
-  cursor: grab;
-}
-.toolbox-card:active {
-  cursor: grabbing;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-}
-
 .toolbox-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(44px, 1fr));
@@ -38,8 +20,8 @@
 
 .toolbox-icon,
 .toolbox-item {
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   border-radius: 8px;
   background: #fff;
   border: 1px solid #e0e0e0;
@@ -150,4 +132,24 @@
   gap: 8px;
   justify-content: flex-end;
   margin-top: 10px;
+}
+
+.toolbox-tooltip {
+  display: none;
+  position: absolute;
+  left: 50%;
+  bottom: -28px;
+  transform: translateX(-50%);
+  background: #222;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.toolbox-card:hover .toolbox-tooltip {
+  display: block;
 }

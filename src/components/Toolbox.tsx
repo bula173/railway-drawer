@@ -74,7 +74,6 @@ const Toolbox: React.FC<ToolboxProps> = ({
     name: "",
     group: "",
     iconSvg: "",
-    svg: "",
     width: 48,
     height: 48, // <-- fix here
   });
@@ -99,7 +98,7 @@ const Toolbox: React.FC<ToolboxProps> = ({
   return (
     <div className="toolbox-panel">
       <div className="toolbox-title">Toolbox</div>
-      {Object.entries(grouped).map(([group, items]) => (
+            {Object.entries(grouped).map(([group, items]) => (
         <div
           key={group}
           className={`toolbox-group ${collapsedGroups[group] ? "collapsed" : ""}`}
@@ -242,7 +241,6 @@ const Toolbox: React.FC<ToolboxProps> = ({
                     name: "",
                     group: "",
                     iconSvg: "",
-                    svg: "",
                     width: 48,
                     height: 48,
                   });

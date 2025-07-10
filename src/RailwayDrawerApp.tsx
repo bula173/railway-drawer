@@ -3,7 +3,7 @@ import toolboxConfig from "./assets/toolboxConfig.json";
 import Toolbox from "./components/Toolbox";
 import type { ToolboxItem } from "./components/Toolbox";
 import PropertiesPanel from "./components/PropertiesPanel";
-import DrawArea from "./components/DrawArea";
+import DrawArea, { type DrawAreaRef } from "./components/DrawArea";
 import type { DrawElement } from "./components/Elements";
 
 // Grid settings
@@ -17,86 +17,42 @@ const GRID_SIZE = 40;
  * @returns {JSX.Element} The rendered RailwayDrawerApp component.
  */
 const RailwayDrawerApp = () => {
-  /**
-   * State for toolbox items.
-   * @type {[ToolboxItem[], Function]}
-   */
+  // Toolbox state
   const [toolbox, setToolbox] = useState<ToolboxItem[]>(toolboxConfig as ToolboxItem[]);
 
-  /**
-   * State for drawn elements.
-   * @type {[DrawElement[], Function]}
-   */
-  const [elements, setElements] = useState<DrawElement[]>([]);
+  // Ref for the DrawArea component instance
+  const drawAreaRef = useRef<DrawAreaRef>(null);
 
-  /**
-   * Ref for the SVG element in the draw area.
-   * @type {React.RefObject<SVGSVGElement>}
-   */
-  const svgRef = useRef<SVGSVGElement>(null);
+  // Selected element state
+  const [selectedElement, setSelectedElement] = useState<DrawElement | undefined>(undefined);
 
-  /**
-   * State for export format.
-   * @type {["png" | "jpg" | "svg" | "pdf", Function]}
-   */
+  // Export format state
   const [exportFormat, setExportFormat] = useState<"png" | "jpg" | "svg" | "pdf">("png");
 
-  // UI state
-  /**
-   * State for hovered element ID.
-   * @type {[string | null, Function]}
-   */
-  const [hoveredElementId, setHoveredElementId] = useState<string | null>(null);
-
-  /**
-   * State for selected element IDs (supports multi-selection).
-   * @type {[string[], Function]}
-   */
-  const [selectedElementIds, setSelectedElementIds] = useState<string[]>([]);
-
-  /**
-   * State for toolbox panel width.
-   * @type {[number, Function]}
-   */
+  // Panel widths and layout
   const [toolboxWidth, setToolboxWidth] = useState(148); // 3*44 + 2*8
-
-  /**
-   * State for properties panel width.
-   * @type {[number, Function]}
-   */
   const [propertiesWidth, setPropertiesWidth] = useState(220);
-
-  /**
-   * Minimum panel width.
-   * @type {number}
-   */
   const minPanelWidth = 148; // 3*44 + 2*8
-
-  /**
-   * State for draw area size.
-   * @type {[{width: number, height: number}, Function]}
-   */
   const [drawAreaSize, setDrawAreaSize] = useState({ width: 1200, height: 800 });
-
-  /**
-   * Ref for the draw area panel div.
-   * @type {React.RefObject<HTMLDivElement>}
-   */
   const drawAreaPanelRef = useRef<HTMLDivElement>(null);
 
   // Zoom state
-  /**
-   * State for zoom level.
-   * @type {[number, Function]}
-   */
   const [zoom, setZoom] = useState(1);
 
-  /**
-   * Save the current elements as a JSON file.
-   * @function
-   */
+  // File input refs
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const toolboxInputRef = useRef<HTMLInputElement>(null);
+
+  // Show shape editor modal
+  const [showEditor, setShowEditor] = useState(false);
+
+  // Dummy setter for dragged item (required by Toolbox)
+  const setDraggedItem = () => {};
+
+  // Save the current elements as a JSON file using DrawArea ref
   const saveAsJson = () => {
-    console.log("[SAVE] Saving elements:", elements);
+    const elements = drawAreaRef.current?.getElements?.();
+    if (!elements) return;
     const data = JSON.stringify({ elements }, null, 2);
     const blob = new Blob([data], { type: "application/json" });
     const link = document.createElement("a");
@@ -105,26 +61,19 @@ const RailwayDrawerApp = () => {
     link.click();
   };
 
-  /**
-   * Load elements from a JSON file.
-   * @function
-   * @param {React.ChangeEvent<HTMLInputElement>} e - The file input change event.
-   */
+  // Load elements from a JSON file using DrawArea ref
   const loadFromJson = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
-      console.log("[LOAD] Loading drawing JSON file:", file.name);
       const reader = new FileReader();
       reader.onload = (ev) => {
         const content = ev.target?.result;
         if (typeof content === "string") {
           try {
             const parsed = JSON.parse(content);
-            console.log("[LOAD] Loaded elements:", parsed.elements);
-            setElements(parsed.elements || []);
+            drawAreaRef.current?.setElements?.(parsed.elements || []);
           } catch (err) {
-            console.error("[LOAD] Failed to parse drawing JSON", err);
-            setElements([]);
+            drawAreaRef.current?.setElements?.([]);
           }
         }
       };
@@ -132,16 +81,11 @@ const RailwayDrawerApp = () => {
     }
   };
 
-  /**
-   * Export the drawing as an image (PNG, JPG, SVG, or PDF).
-   * @function
-   */
+  // Export the drawing as an image (PNG, JPG, SVG, or PDF)
   const exportToImage = () => {
-    const node = svgRef.current;
+    const node = drawAreaRef.current?.getSvgElement?.();
     if (!node) return;
-
     if (exportFormat === "svg") {
-      // Export SVG source
       const serializer = new XMLSerializer();
       const svgString = serializer.serializeToString(node);
       const blob = new Blob([svgString], { type: "image/svg+xml" });
@@ -151,7 +95,6 @@ const RailwayDrawerApp = () => {
       link.click();
       return;
     }
-
     if (exportFormat === "pdf") {
       import("jspdf").then(jsPDF => {
         import("html-to-image").then(htmlToImage => {
@@ -175,13 +118,11 @@ const RailwayDrawerApp = () => {
       });
       return;
     }
-
-    // PNG or JPG
     import("html-to-image").then(htmlToImage => {
       const fn =
         exportFormat === "jpg"
           ? htmlToImage.toJpeg
-          : htmlToImage.toSvg; // Use toSvg for SVG elements
+          : htmlToImage.toSvg;
       fn(node as unknown as HTMLElement).then((dataUrl: string) => {
         const link = document.createElement("a");
         link.href = dataUrl;
@@ -191,14 +132,10 @@ const RailwayDrawerApp = () => {
     });
   };
 
-  /**
-   * Save the toolbox configuration as a JSON file.
-   * @function
-   */
+  // Save the toolbox configuration as a JSON file
   const saveToolboxAsJson = () => {
-    console.log("[SAVE] Saving toolbox config:", toolbox);
     const data = JSON.stringify(
-      toolbox.map(({ ...rest }) => ({ ...rest})),
+      toolbox.map(({ ...rest }) => ({ ...rest })),
       null,
       2
     );
@@ -209,22 +146,16 @@ const RailwayDrawerApp = () => {
     link.click();
   };
 
-  /**
-   * Load toolbox configuration from a JSON file.
-   * @function
-   * @param {React.ChangeEvent<HTMLInputElement>} e - The file input change event.
-   */
+  // Load toolbox configuration from a JSON file
   const loadToolboxFromJson = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
-      console.log("[LOAD] Loading toolbox JSON file:", file.name);
       const reader = new FileReader();
       reader.onload = (ev) => {
         const content = ev.target?.result;
         if (typeof content === "string") {
           try {
             const parsed = JSON.parse(content);
-            console.log("[LOAD] Loaded toolbox config:", parsed);
             setToolbox(
               parsed.map((item: any) => ({
                 ...item,
@@ -233,7 +164,7 @@ const RailwayDrawerApp = () => {
               }))
             );
           } catch (err) {
-            console.error("[LOAD] Failed to parse toolbox", err);
+            // ignore
           }
         }
       };
@@ -241,13 +172,8 @@ const RailwayDrawerApp = () => {
     }
   };
 
-  /**
-   * Start resizing the toolbox panel.
-   * @function
-   * @param {React.MouseEvent} e - The mouse event.
-   */
+  // Panel resizing handlers
   const startResizeToolbox = (e: React.MouseEvent) => {
-    console.log("[RESIZE] Start resizing toolbox panel");
     const startX = e.clientX;
     const startWidth = toolboxWidth;
     const onMove = (moveEvent: MouseEvent) => {
@@ -256,19 +182,11 @@ const RailwayDrawerApp = () => {
     const onUp = () => {
       window.removeEventListener("mousemove", onMove);
       window.removeEventListener("mouseup", onUp);
-      console.log("[RESIZE] Toolbox panel resize finished");
     };
     window.addEventListener("mousemove", onMove);
     window.addEventListener("mouseup", onUp);
   };
-
-  /**
-   * Start resizing the properties panel.
-   * @function
-   * @param {React.MouseEvent} e - The mouse event.
-   */
   const startResizeProperties = (e: React.MouseEvent) => {
-    console.log("[RESIZE] Start resizing properties panel");
     const startX = e.clientX;
     const startWidth = propertiesWidth;
     const onMove = (moveEvent: MouseEvent) => {
@@ -277,34 +195,12 @@ const RailwayDrawerApp = () => {
     const onUp = () => {
       window.removeEventListener("mousemove", onMove);
       window.removeEventListener("mouseup", onUp);
-      console.log("[RESIZE] Properties panel resize finished");
     };
     window.addEventListener("mousemove", onMove);
     window.addEventListener("mouseup", onUp);
   };
 
-  /**
-   * Global draw area properties
-   * @type {[boolean, Function]}
-   */
-  const [gridEnabled, setGridEnabled] = useState(true);
-  const [backgroundColor, setBackgroundColor] = useState("#ffffff");
-
-  /**
-   * Ref for the file input (drawing).
-   * @type {React.RefObject<HTMLInputElement>}
-   */
-  const fileInputRef = useRef<HTMLInputElement>(null);
-
-  /**
-   * Ref for the file input (toolbox).
-   * @type {React.RefObject<HTMLInputElement>}
-   */
-  const toolboxInputRef = useRef<HTMLInputElement>(null);
-
-  /**
-   * Effect to observe and update draw area size on resize.
-   */
+  // Resize observer for draw area
   useEffect(() => {
     const node = drawAreaPanelRef.current;
     if (!node) return;
@@ -318,41 +214,10 @@ const RailwayDrawerApp = () => {
     return () => observer.disconnect();
   }, []);
 
-  /**
-   * Zoom in handler.
-   * @function
-   */
-  const handleZoomIn = () => {
-    setZoom(prev => Math.min(prev * 1.2, 5));
-  };
-
-  /**
-   * Zoom out handler.
-   * @function
-   */
-  const handleZoomOut = () => {
-    setZoom(prev => Math.max(prev / 1.2, 0.2));
-  };
-
-  /**
-   * Zoom reset handler.
-   * @function
-   */
-  const handleZoomReset = () => {
-    setZoom(1);
-  };
-
-  /**
-   * State for showing the shape editor modal.
-   * @type {[boolean, Function]}
-   */
-  const [showEditor, setShowEditor] = useState(false);
-
-  /**
-   * Dummy setter for dragged item (required by Toolbox).
-   * @function
-   */
-  const setDraggedItem = () => {};
+  // Zoom handlers
+  const handleZoomIn = () => setZoom(prev => Math.min(prev * 1.2, 5));
+  const handleZoomOut = () => setZoom(prev => Math.max(prev / 1.2, 0.2));
+  const handleZoomReset = () => setZoom(1);
 
   return (
     <div className="flex flex-col h-screen w-screen">
@@ -413,6 +278,7 @@ const RailwayDrawerApp = () => {
             showEditor={showEditor}
             setShowEditor={setShowEditor}
             setDraggedItem={setDraggedItem}
+            drawAreaRef={drawAreaRef}
           />
         </div>
         <div
@@ -441,19 +307,13 @@ const RailwayDrawerApp = () => {
             <button onClick={handleZoomReset}>Reset</button>
           </div>
           <DrawArea
-            svgRef={svgRef}
+            ref={drawAreaRef}
             GRID_WIDTH={drawAreaSize.width}
             GRID_HEIGHT={drawAreaSize.height}
             GRID_SIZE={GRID_SIZE}
-            elements={elements}
-            setElements={setElements}
-            hoveredElementId={hoveredElementId}
-            setHoveredElementId={setHoveredElementId}
-            selectedElementIds={selectedElementIds}
-            setSelectedElementIds={setSelectedElementIds}
-            showGrid={gridEnabled} // Pass gridEnabled state
-            setShowGrid={setGridEnabled} // Pass setGridEnabled function
             zoom={zoom}
+            selectedElement={selectedElement}
+            setSelectedElement={setSelectedElement}
           />
         </div>
         <div
@@ -470,24 +330,9 @@ const RailwayDrawerApp = () => {
           style={{ width: propertiesWidth, minWidth: minPanelWidth }}
         >
           <PropertiesPanel
-            element={
-              selectedElementIds.length > 0
-                ? elements.find(el => el.id === selectedElementIds[selectedElementIds.length - 1])
-                : {
-                    id: "global",
-                    type: "global",
-                    start: { x: 0, y: 0 },
-                    end: { x: 0, y: 0 },
-                    gridEnabled,
-                    setGridEnabled,
-                    backgroundColor,
-                    setBackgroundColor,
-                  }
-            }
-            drawAreaRef={svgRef}
-            onChangeName={(id, name) => {
-              setElements(prev => prev.map(el => (el.id === id ? { ...el, name } : el)));
-            }}
+            drawAreaRef={drawAreaRef}
+            selectedElement={selectedElement}
+            onElementChange={setSelectedElement}
           />
         </div>
       </div>
