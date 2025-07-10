@@ -49,10 +49,10 @@ const RailwayDrawerApp = () => {
   const [hoveredElementId, setHoveredElementId] = useState<string | null>(null);
 
   /**
-   * State for selected element ID.
-   * @type {[string | null, Function]}
+   * State for selected element IDs (supports multi-selection).
+   * @type {[string[], Function]}
    */
-  const [selectedElementId, setSelectedElementId] = useState<string | null>(null);
+  const [selectedElementIds, setSelectedElementIds] = useState<string[]>([]);
 
   /**
    * State for toolbox panel width.
@@ -242,21 +242,6 @@ const RailwayDrawerApp = () => {
   };
 
   /**
-   * Handle changing the name of an element.
-   * @function
-   * @param {string} id - The element ID.
-   * @param {string} name - The new name.
-   */
-  function handleChangeElementName(id: string, name: string): void {
-    console.log("[PROPERTIES] Change name:", { id, name });
-    setElements(prev =>
-      prev.map(el =>
-        el.id === id ? { ...el, name } : el
-      )
-    );
-  }
-
-  /**
    * Start resizing the toolbox panel.
    * @function
    * @param {React.MouseEvent} e - The mouse event.
@@ -299,28 +284,11 @@ const RailwayDrawerApp = () => {
   };
 
   /**
-   * The currently hovered element.
-   * @type {DrawElement | undefined}
+   * Global draw area properties
+   * @type {[boolean, Function]}
    */
-  const hoveredElement = elements.find(el => el.id === hoveredElementId);
-
-  /**
-   * The IDs of selected elements.
-   * @type {string[]}
-   */
-  const selectedElementIds = elements.filter(el => el.id === selectedElementId).map(el => el.id);
-
-  /**
-   * The last selected element ID.
-   * @type {string | null}
-   */
-  const lastSelectedId = selectedElementIds[selectedElementIds.length - 1] || null;
-
-  /**
-   * The currently selected element.
-   * @type {DrawElement | null}
-   */
-  const selectedElement = elements.find(el => el.id === lastSelectedId) || null;
+  const [gridEnabled, setGridEnabled] = useState(true);
+  const [backgroundColor, setBackgroundColor] = useState("#ffffff");
 
   /**
    * Ref for the file input (drawing).
@@ -474,7 +442,6 @@ const RailwayDrawerApp = () => {
           </div>
           <DrawArea
             svgRef={svgRef}
-            zoom={zoom}
             GRID_WIDTH={drawAreaSize.width}
             GRID_HEIGHT={drawAreaSize.height}
             GRID_SIZE={GRID_SIZE}
@@ -482,9 +449,11 @@ const RailwayDrawerApp = () => {
             setElements={setElements}
             hoveredElementId={hoveredElementId}
             setHoveredElementId={setHoveredElementId}
-            selectedElementIds={selectedElementId ? [selectedElementId] : []}
-            setSelectedElementIds={ids => setSelectedElementId(ids.at(-1) || null)}
-            showGrid={true}
+            selectedElementIds={selectedElementIds}
+            setSelectedElementIds={setSelectedElementIds}
+            showGrid={gridEnabled} // Pass gridEnabled state
+            setShowGrid={setGridEnabled} // Pass setGridEnabled function
+            zoom={zoom}
           />
         </div>
         <div
@@ -501,8 +470,24 @@ const RailwayDrawerApp = () => {
           style={{ width: propertiesWidth, minWidth: minPanelWidth }}
         >
           <PropertiesPanel
-            element={hoveredElement || selectedElement || undefined}
-            onChangeName={handleChangeElementName}
+            element={
+              selectedElementIds.length > 0
+                ? elements.find(el => el.id === selectedElementIds[selectedElementIds.length - 1])
+                : {
+                    id: "global",
+                    type: "global",
+                    start: { x: 0, y: 0 },
+                    end: { x: 0, y: 0 },
+                    gridEnabled,
+                    setGridEnabled,
+                    backgroundColor,
+                    setBackgroundColor,
+                  }
+            }
+            drawAreaRef={svgRef}
+            onChangeName={(id, name) => {
+              setElements(prev => prev.map(el => (el.id === id ? { ...el, name } : el)));
+            }}
           />
         </div>
       </div>

@@ -193,10 +193,3 @@ body {
   flex-direction: column;
   overflow: auto; /* <-- Add this line */
 }
-.properties-panel {
-  min-width: 148px;
-  max-width: 40vw;
-  background: #fff;
-  border-left: 1px solid #e0e0e0;
-  overflow: auto;
-}

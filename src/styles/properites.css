@@ -1,0 +1,46 @@
+.properties-panel {
+  width: 100%;
+  min-width: 240px;
+  resize: horizontal;
+  overflow: auto;
+  background: #ffffff;
+  border-left: 1px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 16px;
+  font-family: Arial, sans-serif;
+  height: 100%;
+}
+
+.properties-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.properties-content {
+  font-size: 14px;
+  color: #555;
+}
+
+.properties-item {
+  margin-bottom: 8px;
+}
+
+.properties-textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+.properties-text-regions {
+  margin-top: 16px;
+}
+
+.properties-text-region-item {
+  margin-bottom: 8px;
+}

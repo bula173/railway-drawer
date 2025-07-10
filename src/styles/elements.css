@@ -1,0 +1,118 @@
+/* Element styles */
+.element-container {
+  cursor: pointer;
+}
+
+.element-container.selected {
+  cursor: grab;
+}
+
+.element-selection-highlight {
+  fill: none;
+  stroke-width: 2;
+  rx: 8;
+  pointer-events: none;
+}
+
+.element-selection-highlight.selected {
+  stroke: #1976d2;
+}
+
+.element-selection-highlight.hovered {
+  stroke: #2196f3;
+}
+
+.resize-handle {
+  width: 12px;
+  height: 12px;
+  fill: #fff;
+  stroke: #1976d2;
+  stroke-width: 2;
+}
+
+.resize-handle.nwse-resize {
+  cursor: nwse-resize;
+}
+
+.resize-handle.nesw-resize {
+  cursor: nesw-resize;
+}
+
+.rotation-handle-container {
+  cursor: pointer;
+}
+
+.rotation-handle-bg {
+  width: 24px;
+  height: 24px;
+  rx: 12px;
+  fill: #fff;
+  stroke: #1976d2;
+  stroke-width: 1.5;
+  opacity: 0.95;
+}
+
+.element-label {
+  font-size: 14px;
+  text-anchor: middle;
+  fill: #333;
+  cursor: move;
+  user-select: none;
+}
+
+.element-label-background {
+  fill: #fff;
+  stroke: #1976d2;
+  stroke-width: 1.5;
+  rx: 6;
+  ry: 6;
+  pointer-events: none;
+}
+
+.element-text-content {
+  font-size: 18px;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  cursor: pointer;
+  user-select: none;
+}
+
+.label-input {
+  width: 100%;
+  font-size: 14px;
+  text-align: center;
+  border: 1px solid #1976d2;
+  border-radius: 4px;
+  padding: 2px 4px;
+}
+
+.text-input {
+  width: 100%;
+  font-size: 18px;
+  text-align: center;
+  border: 1px solid #1976d2;
+  border-radius: 4px;
+  padding: 2px 4px;
+}
+
+.foreign-object-container {
+  width: 100px;
+  height: 30px;
+}
+
+.shape-text-region {
+  cursor: text;
+  user-select: none;
+}
+
+.text-region-clickable {
+  cursor: text;
+}
+
+.text-region-input {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #1976d2;
+  border-radius: 2px;
+  padding: 2px;
+  outline: none;
+}

@@ -82,50 +82,77 @@ const Toolbox: React.FC<ToolboxProps> = ({
   // Group tools by 'group' property
   const grouped = groupBy(initialToolbox, item => item.group || "Other");
 
+  const [collapsedGroups, setCollapsedGroups] = useState<Record<string, boolean>>(
+    Object.keys(grouped).reduce((acc, group, index) => {
+      acc[group] = index !== 0; // Collapse all groups except the first one
+      return acc;
+    }, {} as Record<string, boolean>)
+  );
+
+  const toggleGroup = (group: string) => {
+    setCollapsedGroups((prev) => ({
+      ...prev,
+      [group]: !prev[group],
+    }));
+  };
+
   return (
     <div className="toolbox-panel">
       <div className="toolbox-title">Toolbox</div>
       {Object.entries(grouped).map(([group, items]) => (
-        <div key={group} className="toolbox-group">
-          <div className="toolbox-group-title">{group}</div>
-          <div className="toolbox-grid">
-            {items.map((item) => {
-              return (
-                <div
-                  key={item.id}
-                  draggable
-                  onDragStart={(e) => {
-                    const { iconSvg, ...rest } = item;
-                    e.dataTransfer.setData(
-                      "application/railway-item",
-                      JSON.stringify({
-                        ...rest,
-                        iconSvg,
-                        svg: iconSvg,
-                      })
-                    );
-                  }}
-                  onDragEnd={() => setDraggedItem(null)}
-                  className="toolbox-item"
-                  title={item.name}
-                >
-                  {/* If iconSvg is "default", render the shape SVG scaled to 24x24, else use iconSvg */}
-                  {item.iconSvg === "default" && item.shape ? (
-                    <svg
-                      width={24}
-                      height={24}
-                      viewBox={`0 0 ${item.width || 48} ${item.height || 48}`}
-                      dangerouslySetInnerHTML={{ __html: item.shape }}
-                    />
-                  ) : item.iconSvg ? (
-                    <span
-                      style={{ display: "inline-block", width: 24, height: 24 }}
-                      dangerouslySetInnerHTML={{ __html: item.iconSvg }}
-                    />
-                  ) : null}
-                </div>
-              );
-            })}
+        <div
+          key={group}
+          className={`toolbox-group ${collapsedGroups[group] ? "collapsed" : ""}`}
+        >
+          <div
+            className="toolbox-group-title"
+            onClick={() => toggleGroup(group)}
+          >
+            <span className="toolbox-group-arrow">
+              {collapsedGroups[group] ? "▼" : "▲"}
+            </span>
+            {group}
+          </div>
+          <div className="toolbox-group-content">
+            <div className="toolbox-grid">
+              {items.map((item) => {
+                return (
+                  <div
+                    key={item.id}
+                    draggable
+                    onDragStart={(e) => {
+                      const { iconSvg, ...rest } = item;
+                      e.dataTransfer.setData(
+                        "application/railway-item",
+                        JSON.stringify({
+                          ...rest,
+                          iconSvg,
+                          svg: iconSvg,
+                        })
+                      );
+                    }}
+                    onDragEnd={() => setDraggedItem(null)}
+                    className="toolbox-item"
+                    title={item.name}
+                  >
+                    {/* If iconSvg is "default", render the shape SVG scaled to 24x24, else use iconSvg */}
+                    {item.iconSvg === "default" && item.shape ? (
+                      <svg
+                        width={24}
+                        height={24}
+                        viewBox={`0 0 ${item.width || 48} ${item.height || 48}`}
+                        dangerouslySetInnerHTML={{ __html: item.shape }}
+                      />
+                    ) : item.iconSvg ? (
+                      <span
+                        style={{ display: "inline-block", width: 24, height: 24 }}
+                        dangerouslySetInnerHTML={{ __html: item.iconSvg }}
+                      />
+                    ) : null}
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       ))}
@@ -137,49 +164,61 @@ const Toolbox: React.FC<ToolboxProps> = ({
         <Plus size={24} />
       </Button>
       {showEditor && (
-        <div className="toolbox-modal-backdrop" onClick={() => setShowEditor(false)}>
-          <div
-            className="toolbox-modal"
-            onClick={e => e.stopPropagation()}
-          >
+        <div
+          className="toolbox-modal-backdrop"
+          onClick={() => setShowEditor(false)}
+        >
+          <div className="toolbox-modal" onClick={(e) => e.stopPropagation()}>
             <div className="toolbox-modal-title">Add New Shape</div>
             <div className="toolbox-modal-fields">
               <label>Name</label>
               <input
                 type="text"
                 value={customData.name}
-                onChange={e => setCustomData({ ...customData, name: e.target.value })}
+                onChange={(e) =>
+                  setCustomData({ ...customData, name: e.target.value })
+                }
               />
               <label>Group</label>
               <input
                 type="text"
                 value={customData.group}
-                onChange={e => setCustomData({ ...customData, group: e.target.value })}
+                onChange={(e) =>
+                  setCustomData({ ...customData, group: e.target.value })
+                }
                 placeholder="e.g. Tracks, Signals"
               />
               <label>Icon SVG</label>
               <textarea
                 value={customData.iconSvg}
-                onChange={e => setCustomData({ ...customData, iconSvg: e.target.value })}
+                onChange={(e) =>
+                  setCustomData({ ...customData, iconSvg: e.target.value })
+                }
                 placeholder="<svg ...>...</svg>"
               />
               <label>SVG (optional)</label>
               <textarea
                 value={customData.svg}
-                onChange={e => setCustomData({ ...customData, svg: e.target.value })}
+                onChange={(e) =>
+                  setCustomData({ ...customData, svg: e.target.value })
+                }
                 placeholder="<svg ...>...</svg>"
               />
               <label>Width</label>
               <input
                 type="number"
                 value={customData.width}
-                onChange={e => setCustomData({ ...customData, width: Number(e.target.value) })}
+                onChange={(e) =>
+                  setCustomData({ ...customData, width: Number(e.target.value) })
+                }
               />
               <label>Height</label>
               <input
                 type="number"
                 value={customData.height}
-                onChange={e => setCustomData({ ...customData, height: Number(e.target.value) })} // <-- fix here
+                onChange={(e) =>
+                  setCustomData({ ...customData, height: Number(e.target.value) })
+                }
               />
             </div>
             <div className="toolbox-modal-actions">
@@ -191,7 +230,12 @@ const Toolbox: React.FC<ToolboxProps> = ({
                     ...prev,
                     {
                       ...customData,
-                      id: customData.name.toLowerCase().replace(/\s+/g, "_") + "_" + Math.random().toString(36).slice(2, 7),
+                      id:
+                        customData.name
+                          .toLowerCase()
+                          .replace(/\s+/g, "_") +
+                        "_" +
+                        Math.random().toString(36).slice(2, 7),
                     } as ToolboxItem,
                   ]);
                   setCustomData({
@@ -200,7 +244,7 @@ const Toolbox: React.FC<ToolboxProps> = ({
                     iconSvg: "",
                     svg: "",
                     width: 48,
-                    height: 48, // <-- fix here
+                    height: 48,
                   });
                   setShowEditor(false);
                 }}

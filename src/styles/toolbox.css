@@ -2,7 +2,7 @@
   font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: var(--primary);
+  color: black;
   text-align: center;
   width: 100%;
 }
@@ -12,6 +12,10 @@
   border: 1px solid var(--border);
   background: var(--card-bg);
   border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   box-shadow: var(--shadow);
   margin-bottom: 12px;
   cursor: grab;
@@ -60,11 +64,20 @@
   margin-bottom: 12px;
 }
 
+.toolbox-group.collapsed .toolbox-group-content {
+  display: none;
+}
+
 .toolbox-group-title {
   font-weight: 600;
-  color: #1976d2;
+  color: black;
   font-size: 1rem;
   margin: 8px 0 4px 4px;
+  cursor: pointer;
+}
+
+.toolbox-group-content {
+  padding-left: 8px;
 }
 
 .toolbox-add-btn {
@@ -114,6 +127,7 @@
   font-weight: 500;
   display: block;
   margin-top: 8px;
+  margin-left: 12px; /* Added left margin */
 }
 
 .toolbox-modal-fields input,

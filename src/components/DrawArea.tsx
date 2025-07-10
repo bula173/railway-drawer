@@ -16,6 +16,7 @@ import type { DrawElement } from "./Elements";
  * @property selectedElementIds - Array of selected element IDs.
  * @property setSelectedElementIds - Setter for selected element IDs.
  * @property showGrid - Whether to show the grid.
+ * @property setShowGrid - Setter for showGrid.
  * @property zoom - Zoom level (optional).
  */
 export interface DrawAreaProps {
@@ -30,6 +31,7 @@ export interface DrawAreaProps {
   selectedElementIds: string[];
   setSelectedElementIds: (ids: string[]) => void;
   showGrid: boolean;
+  setShowGrid: React.Dispatch<React.SetStateAction<boolean>>; // Added setter for showGrid
   zoom?: number;
 }
 
@@ -53,6 +55,7 @@ const DrawArea: React.FC<DrawAreaProps> = ({
   selectedElementIds,
   setSelectedElementIds,
   showGrid,
+  setShowGrid,
   zoom = 1,
 }) => {
   /**
@@ -84,6 +87,24 @@ const DrawArea: React.FC<DrawAreaProps> = ({
    * @type {Function}
    */
   const [, setHistory] = useState<DrawElement[][]>([]);
+
+  /**
+   * State for draw area properties
+   * @type {[boolean, Function]}
+   */
+  const [backgroundColor, setBackgroundColor] = useState<string>("#ffffff");
+
+  useEffect(() => {
+    setElements(prev => prev.map(el => ({ ...el, gridEnabled: showGrid })));
+  }, [showGrid, setElements]);
+
+  // Pass these properties to elements
+  elements.forEach((el) => {
+    el.gridEnabled = showGrid;
+    el.backgroundColor = backgroundColor;
+    el.setGridEnabled = setShowGrid; // Use setShowGrid directly
+    el.setBackgroundColor = setBackgroundColor;
+  });
 
   /**
    * Effect to keep draggingIdRef in sync with draggingId.
@@ -276,95 +297,56 @@ const DrawArea: React.FC<DrawAreaProps> = ({
    * @returns {DrawElement} The new element.
    */
   function createCenteredElement(item: any, x: number, y: number): DrawElement {
+    const baseElement = {
+      id: `${item.type}_${Date.now()}`,
+      name: item.name,
+      type: item.type,
+      iconName: item.iconName,
+      iconSource: item.iconSource,
+      iconSvg: item.iconSvg,
+      draw: item.draw,
+      shape: item.shape,
+      width: item.width,
+      height: item.height,
+      rotation: 0,
+      gridEnabled: showGrid,
+      backgroundColor,
+      setGridEnabled: setShowGrid,
+      setBackgroundColor,
+      ...(item.textRegions && { textRegions: item.textRegions }),
+    };
+
     switch (item.draw?.type) {
       case "line":
-        // Center a horizontal line at (x, y)
-        const lineElement = {
-          id: `${item.type}_${Date.now()}`,
-          name: item.name,
-          type: item.type,
-          iconName: item.iconName,
-          iconSource: item.iconSource,
-          iconSvg: item.iconSvg,
-          draw: item.draw,
-          shape: item.shape,
-          width: item.width,
-          height: item.heigh,
+        return {
+          ...baseElement,
           start: { x: x - item.width / 2, y },
           end: { x: x + item.width / 2, y },
-          rotation: 0,
         };
-        return lineElement;
       case "lines":
-        // Center a bounding box for multi-line shapes
-        const linesElement = {
-          id: `${item.type}_${Date.now()}`,
-          name: item.name,
-          type: item.type,
-          iconName: item.iconName,
-          iconSource: item.iconSource,
-          iconSvg: item.iconSvg,
-          draw: item.draw,
-          shape: item.shape,
-          width: item.width,
-          height: item.heigh,
+        return {
+          ...baseElement,
           start: { x: x - item.width / 2, y: y - item.height / 2 },
           end: { x: x + item.width / 2, y: y + item.height / 2 },
-          rotation: 0,
         };
-        return linesElement;
       case "icon":
-        // Center a rectangle for icons and text
-        const iconElement = {
-          id: `${item.type}_${Date.now()}`,
-          name: item.name,
-          type: item.type,
-          iconName: item.iconName,
-          iconSource: item.iconSource,
-          iconSvg: item.iconSvg,
-          draw: item.draw,
-          shape: item.shape,
-          width: item.width,
-          height: item.heigh,
+        return {
+          ...baseElement,
           start: { x: x - item.width / 2, y: y - item.height / 2 },
           end: { x: x + item.width / 2, y: y + item.height / 2 },
-          rotation: 0,
         };
-        return iconElement;
       case "text":
-        const textElement = {
-          id: `${item.type}_${Date.now()}`,
-          name: item.name,
-          type: item.type,
-          iconName: item.iconName,
-          iconSource: item.iconSource,
-          iconSvg: item.iconSvg,
-          draw: item.draw,
-          shape: item.shape,
-          width: item.width,
-          height: item.heigh,
+        return {
+          ...baseElement,
           start: { x: x, y: y - item.height },
           end: { x: x + item.width, y: y + item.height },
-          rotation: 0,
         };
-        return textElement;
       default:
-        // Fallback: centered rectangle
-        const defaultElement = {
-          id: `${item.type}_${Date.now()}`,
-          name: item.name,
-          type: item.type,
-          iconName: item.iconName,
-          iconSource: item.iconSource,
-          iconSvg: item.iconSvg,
-          draw: item.draw,
-          shape: item.shape,
-          width: item.width,
-          height: item.heigh,
+        return {
+          ...baseElement,
           start: { x: x, y: y },
           end: { x: x + item.width, y: y + item.height },
         };
-        return defaultElement;
     }
   }
 
