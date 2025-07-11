@@ -27,7 +27,6 @@ export interface DrawAreaProps {
   GRID_HEIGHT: number;
   GRID_SIZE: number;
   zoom?: number;
-  selectedElement?: DrawElement;
   setSelectedElement?: (el?: DrawElement) => void;
 }
 
@@ -46,7 +45,6 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
   GRID_HEIGHT,
   GRID_SIZE,
   zoom = 1,
-  selectedElement,
   setSelectedElement,
 }, ref) => {
   // Internal state for elements and UI
@@ -72,7 +70,6 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
   const [isPanning, setIsPanning] = useState(false);
   const [panStart, setPanStart] = useState<{ x: number; y: number } | null>(null);
   const [panOffset, setPanOffset] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
-  const lastClickTime = useRef<number>(0);
 
   // Add this ref to store initial positions of all selected elements
   const initialSelectedPositions = useRef<Map<string, { start: { x: number; y: number }, end: { x: number; y: number } }>>(new Map());
@@ -313,7 +310,6 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
 
       // Create closures that use local variables instead of state
       const areaSelectionMove = (e: PointerEvent) => {
-        console.log("handleAreaSelectionMove called");
         
         if (!isSelecting || isPanning) {
           console.log("Area selection move blocked:", { isSelecting, isPanning });
@@ -413,29 +409,6 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
   }
 
   /**
-   * Update the area selection move to not conflict with panning
-   */
-  function handleAreaSelectionMove(e: PointerEvent) {
-    console.log("handleAreaSelectionMove called");
-    
-    if (!isAreaSelecting || !selectionStart || isPanning) {
-      console.log("Area selection move blocked:", { isAreaSelecting, hasStart: !!selectionStart, isPanning });
-      return;
-    }
-
-    const svgRect = svgRef.current?.getBoundingClientRect();
-    if (!svgRect) return;
-
-    const clientX = e.clientX - svgRect.left;
-    const clientY = e.clientY - svgRect.top;
-    const x = (clientX - panOffset.x) / zoom;
-    const y = (clientY - panOffset.y) / zoom;
-
-    console.log("Selection end coordinates:", { x, y });
-    setSelectionEnd({ x, y });
-  }
-
-  /**
    * Handles panning movement
    */
   function handlePanMove(e: PointerEvent) {
@@ -462,85 +435,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     window.removeEventListener("pointerup", handlePanUp);
   }
 
-  /**
-   * Update the area selection up to handle single clicks properly
-   */
-  function handleAreaSelectionUp(e: PointerEvent) {
-    console.log("handleAreaSelectionUp called");
-    
-    if (isPanning) return; // Don't process if we're panning
-
-    if (!isAreaSelecting || !selectionStart || !selectionEnd) {
-      console.log("Area selection up - cleaning up");
-      setIsAreaSelecting(false);
-      setSelectionStart(null);
-      setSelectionEnd(null);
-      window.removeEventListener("pointermove", handleAreaSelectionMove);
-      window.removeEventListener("pointerup", handleAreaSelectionUp);
-      return;
-    }
-
-    // Calculate selection rectangle
-    const selRect = {
-      x: Math.min(selectionStart.x, selectionEnd.x),
-      y: Math.min(selectionStart.y, selectionEnd.y),
-      width: Math.abs(selectionEnd.x - selectionStart.x),
-      height: Math.abs(selectionEnd.y - selectionStart.y)
-    };
-
-    console.log("Selection completed:", selRect);
-
-    // Check if this was just a click (very small movement)
-    const isClick = selRect.width < 5 && selRect.height < 5;
-
-    if (isClick) {
-      console.log("Detected as click - clearing selection");
-      // Handle as a click - clear selection
-      if (!e.ctrlKey && !e.metaKey) {
-        setSelectedElementIds([]);
-        setSelectedElement?.(undefined);
-        setHoveredElementId(null);
-        setDraggingId(null);
-      }
-    } else {
-      console.log("Detected as area selection");
-      // Handle as area selection
-      const elementsInSelection = elements.filter(el => isElementInSelection(el, selRect));
-      const newSelectedIds = elementsInSelection.map(el => el.id);
-
-      console.log("Elements in selection:", newSelectedIds);
-
-      if (e.ctrlKey || e.metaKey) {
-        // Add to existing selection
-        const combinedSelection = [...new Set([...selectedElementIds, ...newSelectedIds])];
-        setSelectedElementIds(combinedSelection);
-        if (combinedSelection.length === 1) {
-          const selectedEl = elements.find(el => el.id === combinedSelection[0]);
-          setSelectedElement?.(selectedEl);
-        } else {
-          setSelectedElement?.(undefined);
-        }
-      } else {
-        // Replace selection
-        setSelectedElementIds(newSelectedIds);
-        if (newSelectedIds.length === 1) {
-          const selectedEl = elements.find(el => el.id === newSelectedIds[0]);
-          setSelectedElement?.(selectedEl);
-        } else {
-          setSelectedElement?.(undefined);
-        }
-      }
-    }
-
-    // Clean up
-    console.log("Area selection cleanup");
-    setIsAreaSelecting(false);
-    setSelectionStart(null);
-    setSelectionEnd(null);
-    window.removeEventListener("pointermove", handleAreaSelectionMove);
-    window.removeEventListener("pointerup", handleAreaSelectionUp);
-  }
-
+  
   /**
    * Handles pointer move to update dragging elements.
    * @function
@@ -877,9 +772,6 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       pasteElements({ x, y });
     }
   }
-
-  // The last selected element ID.
-  const lastSelectedId = selectedElementIds.length > 0 ? selectedElementIds[selectedElementIds.length - 1] : null;
 
   // --- Main Render ---
   return (

@@ -73,7 +73,8 @@ const Toolbox: React.FC<ToolboxProps> = ({
   const [customData, setCustomData] = useState({
     name: "",
     group: "",
-    iconSvg: "",
+    iconSvg: "default", // Use "default" to indicate using shape as icon
+    shape: "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect width='24' height='24' fill='none'/></svg>",
     width: 48,
     height: 48, // <-- fix here
   });
@@ -193,13 +194,13 @@ const Toolbox: React.FC<ToolboxProps> = ({
                 onChange={(e) =>
                   setCustomData({ ...customData, iconSvg: e.target.value })
                 }
-                placeholder="<svg ...>...</svg>"
+                placeholder="<svg ...>...</svg> OR default to use shape as icon."
               />
-              <label>SVG (optional)</label>
+              <label>Shape SVG</label>
               <textarea
-                value={customData.svg}
+                value={customData.shape}
                 onChange={(e) =>
-                  setCustomData({ ...customData, svg: e.target.value })
+                  setCustomData({ ...customData, shape: e.target.value })
                 }
                 placeholder="<svg ...>...</svg>"
               />
@@ -238,9 +239,10 @@ const Toolbox: React.FC<ToolboxProps> = ({
                     } as ToolboxItem,
                   ]);
                   setCustomData({
-                    name: "",
-                    group: "",
-                    iconSvg: "",
+                    name: "Default",
+                    group: "Other",
+                    iconSvg: "default",
+                    shape: "<svg><rect width='48' height='48' fill='none'/></svg>",
                     width: 48,
                     height: 48,
                   });

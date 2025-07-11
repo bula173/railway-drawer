@@ -51,7 +51,7 @@ const RailwayDrawerApp = () => {
   // Panel widths and layout
   const [toolboxWidth, setToolboxWidth] = useState(148); // 3*44 + 2*8
   const [propertiesWidth, setPropertiesWidth] = useState(220);
-  const [tabPanelHeight, setTabPanelHeight] = useState(40);
+  const tabPanelHeight= 40;
 
   // Missing state variables - add these
   const [showEditor, setShowEditor] = useState(false);
@@ -134,24 +134,6 @@ const RailwayDrawerApp = () => {
       }
     }
   }, [activeTabId, activeTab]);
-
-  // Save current tab state when elements change
-  const handleElementsChange = (newElements: DrawElement[]) => {
-    setTabs(prev => prev.map(tab => 
-      tab.id === activeTabId 
-        ? { ...tab, elements: newElements }
-        : tab
-    ));
-  };
-
-  // Add this function after handleElementsChange
-  const handleSelectedIdsChange = (newSelectedIds: string[]) => {
-    setTabs(prev => prev.map(tab => 
-      tab.id === activeTabId 
-        ? { ...tab, selectedElementIds: newSelectedIds }
-        : tab
-    ));
-  };
 
   // Dummy setter for dragged item (required by Toolbox)
   const setDraggedItem = () => {};
@@ -423,11 +405,6 @@ const RailwayDrawerApp = () => {
             GRID_HEIGHT={drawAreaSize.height}
             GRID_SIZE={GRID_SIZE}
             zoom={zoom}
-            elements={activeTab.elements}
-            onElementsChange={handleElementsChange}
-            selectedElementIds={activeTab.selectedElementIds}
-            onSelectedElementIdsChange={handleSelectedIdsChange}
-            selectedElement={selectedElement}
             setSelectedElement={setSelectedElement}
           />
         </div>
