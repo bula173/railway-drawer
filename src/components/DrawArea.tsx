@@ -30,6 +30,10 @@ export interface DrawAreaRef {
   setGridVisible: (visible: boolean) => void;
   /** @brief Gets grid visibility state */
   getGridVisible: () => boolean;
+  /** @brief Sets background color */
+  setBackgroundColor: (color: string) => void;
+  /** @brief Gets background color */
+  getBackgroundColor: () => string;
   /** @brief Gets currently selected element */
   getSelectedElement: () => DrawElement | undefined;
   /** @brief Gets all selected element IDs */
@@ -145,6 +149,13 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     setElements: (els: DrawElement[]) => setElements(els),
     setGridVisible: (visible: boolean) => setShowGrid(visible),
     getGridVisible: () => showGrid,
+    setBackgroundColor: (color: string) => {
+      setBackgroundColor(color);
+      if (svgRef.current) {
+        svgRef.current.style.backgroundColor = color;
+      }
+    },
+    getBackgroundColor: () => backgroundColor,
     getSelectedElement: () => {
       if (!selectedElementIds.length) return undefined;
       return elements.find(el => el.id === selectedElementIds[selectedElementIds.length - 1]);
@@ -641,6 +652,14 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
    * @returns {DrawElement} The new element.
    */
   function createCenteredElement(item: any, x: number, y: number): DrawElement {
+    // Default styles for new elements
+    const defaultStyles = {
+      fill: "#3b82f6", // blue-500
+      stroke: "#1e293b", // slate-800
+      strokeWidth: 2,
+      opacity: 1,
+    };
+
     const baseElement = {
       id: `${item.type}_${Date.now()}`,
       name: item.name,
@@ -657,6 +676,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       backgroundColor,
       setGridEnabled: setShowGrid,
       setBackgroundColor,
+      styles: defaultStyles,
       ...(item.textRegions && { textRegions: item.textRegions }),
     };
 

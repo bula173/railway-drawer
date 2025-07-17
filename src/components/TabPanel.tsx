@@ -53,13 +53,17 @@ const TabPanel: React.FC<TabPanelProps> = ({
   };
 
   return (
-    <div className="tab-panel">
-      <div className="tab-header">
-        <div className="tab-list">
+    <div className="w-full h-full bg-slate-100 border-t border-slate-200 flex items-center">
+      <div className="flex items-center h-full">
+        <div className="flex items-center gap-0.5 px-2 h-full">
           {tabs.map(tab => (
             <div
               key={tab.id}
-              className={`tab ${tab.id === activeTabId ? 'active' : ''}`}
+              className={`flex items-center gap-2 px-3 py-1.5 cursor-pointer transition-colors duration-200 rounded-t-md border-b-2 min-w-[100px] max-w-[200px] ${
+                tab.id === activeTabId 
+                  ? 'bg-white border-blue-500 text-slate-900' 
+                  : 'bg-slate-50 border-transparent text-slate-600 hover:bg-slate-100 hover:text-slate-800'
+              }`}
               onClick={() => onTabChange(tab.id)}
               onDoubleClick={() => handleTabDoubleClick(tab)}
             >
@@ -71,14 +75,14 @@ const TabPanel: React.FC<TabPanelProps> = ({
                   onBlur={handleNameSubmit}
                   onKeyDown={handleKeyDown}
                   autoFocus
-                  className="tab-name-input"
+                  className="bg-transparent outline-none text-sm font-medium w-full"
                 />
               ) : (
-                <span className="tab-name">{tab.name}</span>
+                <span className="text-sm font-medium truncate">{tab.name}</span>
               )}
               {tabs.length > 1 && (
                 <button
-                  className="tab-close-btn"
+                  className="w-4 h-4 rounded-full hover:bg-slate-200 flex items-center justify-center text-slate-400 hover:text-slate-600 transition-colors duration-200 text-xs"
                   onClick={(e) => {
                     e.stopPropagation();
                     onTabClose(tab.id);
@@ -91,7 +95,7 @@ const TabPanel: React.FC<TabPanelProps> = ({
             </div>
           ))}
           <button
-            className="tab-create-btn"
+            className="w-8 h-8 rounded-md hover:bg-slate-200 flex items-center justify-center text-slate-500 hover:text-slate-700 transition-colors duration-200 ml-1"
             onClick={onTabCreate}
             title="Create new tab"
           >

@@ -18,6 +18,75 @@ import "../styles/elements.css";
 // --- Types ---
 
 /**
+ * @interface ElementStyles
+ * @brief Represents styling properties for drawable elements.
+ */
+export interface ElementStyles {
+  fill?: string;
+  stroke?: string;
+  strokeWidth?: number;
+  strokeDasharray?: string;
+  opacity?: number;
+  strokeOpacity?: number;
+  fillOpacity?: number;
+}
+
+/**
+ * @function getElementStyleProps
+ * @brief Converts ElementStyles to SVG style props
+ * @param styles The element styles
+ * @returns SVG style props object
+ */
+export function getElementStyleProps(styles?: ElementStyles): Record<string, any> {
+  if (!styles) return {};
+  
+  const styleProps: Record<string, any> = {};
+  if (styles.fill !== undefined) styleProps.fill = styles.fill;
+  if (styles.stroke !== undefined) styleProps.stroke = styles.stroke;
+  if (styles.strokeWidth !== undefined) styleProps.strokeWidth = styles.strokeWidth;
+  if (styles.strokeDasharray !== undefined) styleProps.strokeDasharray = styles.strokeDasharray;
+  if (styles.opacity !== undefined) styleProps.opacity = styles.opacity;
+  if (styles.strokeOpacity !== undefined) styleProps.strokeOpacity = styles.strokeOpacity;
+  if (styles.fillOpacity !== undefined) styleProps.fillOpacity = styles.fillOpacity;
+  
+  return styleProps;
+}
+
+/**
+ * @function applyStylesToSVGString
+ * @brief Applies styles to SVG string content
+ * @param svgContent The SVG content as string
+ * @param styles The styles to apply
+ * @returns Modified SVG content
+ */
+export function applyStylesToSVGString(svgContent: string, styles?: ElementStyles): string {
+  if (!styles || !svgContent) return svgContent;
+  
+  // Parse SVG and apply styles
+  const parser = new DOMParser();
+  const svgDoc = parser.parseFromString(`<svg>${svgContent}</svg>`, "image/svg+xml");
+  const svgElement = svgDoc.querySelector("svg");
+  
+  if (svgElement) {
+    // Apply styles to all shape elements
+    const shapeElements = svgElement.querySelectorAll("rect, circle, ellipse, line, polyline, polygon, path");
+    shapeElements.forEach(elem => {
+      if (styles.fill !== undefined) elem.setAttribute("fill", styles.fill);
+      if (styles.stroke !== undefined) elem.setAttribute("stroke", styles.stroke);
+      if (styles.strokeWidth !== undefined) elem.setAttribute("stroke-width", styles.strokeWidth.toString());
+      if (styles.strokeDasharray !== undefined) elem.setAttribute("stroke-dasharray", styles.strokeDasharray);
+      if (styles.opacity !== undefined) elem.setAttribute("opacity", styles.opacity.toString());
+      if (styles.strokeOpacity !== undefined) elem.setAttribute("stroke-opacity", styles.strokeOpacity.toString());
+      if (styles.fillOpacity !== undefined) elem.setAttribute("fill-opacity", styles.fillOpacity.toString());
+    });
+    
+    return svgElement.innerHTML;
+  }
+  
+  return svgContent;
+}
+
+/**
  * @interface DrawElement
  * @brief Represents a drawable element with geometry, style, and metadata.
  */
@@ -26,6 +95,9 @@ export interface DrawElement {
   id: string;
   name?: string;
   type: string;
+  
+  // Styling properties
+  styles?: ElementStyles;
   
   // Toolbox properties
   iconSvg?: string;
@@ -97,6 +169,9 @@ export const ElementSVG: React.FC<{ el: DrawElement }> = ({ el }) => {
         const mirrorTranslateX = el.mirrorX ? shapeWidth : 0;
         const mirrorTranslateY = el.mirrorY ? shapeHeight : 0;
 
+        // Apply styles to the SVG content
+        const styledShape = applyStylesToSVGString(el.shape, el.styles);
+
         return (
           <g
             transform={`
@@ -106,7 +181,7 @@ export const ElementSVG: React.FC<{ el: DrawElement }> = ({ el }) => {
       scale(${mirrorScaleX},${mirrorScaleY})
     `}
           >
-            <g dangerouslySetInnerHTML={{ __html: el.shape }} />
+            <g dangerouslySetInnerHTML={{ __html: styledShape }} />
           </g>
         );
       } else {
@@ -117,7 +192,14 @@ export const ElementSVG: React.FC<{ el: DrawElement }> = ({ el }) => {
       const textCx = (el.start.x + el.end.x) / 2;
       const textCy = (el.start.y + el.end.y) / 2;
       return (
-        <text x={textCx} y={textCy} fontSize={18} textAnchor="middle" dominantBaseline="middle">
+        <text 
+          x={textCx} 
+          y={textCy} 
+          fontSize={18} 
+          textAnchor="middle" 
+          dominantBaseline="middle"
+          {...getElementStyleProps(el.styles)}
+        >
           {"Text"}
         </text>
       );

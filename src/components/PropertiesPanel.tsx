@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import type { DrawElement } from "./Elements";
 import type { DrawAreaRef } from "./DrawArea";
-import "../styles/properites.css";
 
 /**
  * PropertiesPanel component for displaying and editing properties of a selected drawing element.
@@ -23,20 +22,22 @@ const PropertiesPanel: React.FC<{
   onElementChange,
   onChangeName,
 }) => {
-  const [gridEnabled, setGridEnabled] = useState(false);
+  const [gridEnabled, setGridEnabled] = useState(true);
+  const [backgroundColor, setLocalBackgroundColor] = useState("#ffffff");
 
   // Update local grid state when component mounts or drawAreaRef changes
   useEffect(() => {
-    const updateGridState = () => {
+    const updateState = () => {
       if (drawAreaRef?.current) {
         setGridEnabled(drawAreaRef.current.getGridVisible());
+        if (drawAreaRef.current.getBackgroundColor) {
+          setLocalBackgroundColor(drawAreaRef.current.getBackgroundColor());
+        }
       }
     };
-    updateGridState();
+    updateState();
     
-    // Set up interval to check for changes (alternative approach)
-    const interval = setInterval(updateGridState, 100);
-    return () => clearInterval(interval);
+    // Only update once when the ref changes, no polling
   }, [drawAreaRef]);
 
   // Helper function to update element both in DrawArea and callback
@@ -57,41 +58,48 @@ const PropertiesPanel: React.FC<{
   if (!element || !element.id) {
     // Show DrawArea/global properties if nothing is selected
     return (
-      <div className="properties-panel">
-        <h2 className="properties-title">Draw Area Properties</h2>
-        <div className="properties-content">
-          <div className="properties-item">
-            <b>Grid Enabled:</b>
-            <input
-              type="checkbox"
-              checked={gridEnabled}
-              onChange={e => {
-                const newValue = e.target.checked;
-                drawAreaRef?.current?.setGridVisible(newValue);
-                setGridEnabled(newValue);
-              }}
-            />
+      <div className="w-full h-full bg-white border-l border-slate-200 p-4 overflow-auto">
+        <h2 className="text-lg font-semibold mb-4 text-slate-900">Canvas Settings</h2>
+        <div className="space-y-4 text-sm text-slate-600">
+          <div className="flex flex-col gap-2">
+            <label className="flex items-center gap-2 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={gridEnabled}
+                onChange={e => {
+                  const enabled = e.target.checked;
+                  setGridEnabled(enabled);
+                  if (drawAreaRef?.current) {
+                    drawAreaRef.current.setGridVisible(enabled);
+                  }
+                }}
+                className="w-4 h-4 text-blue-600 rounded focus:ring-blue-500"
+              />
+              <span className="font-medium text-slate-700">Show Grid</span>
+            </label>
           </div>
-          <div className="properties-item">
-            <b>Background Color:</b>
+          <div className="flex flex-col gap-2">
+            <label className="font-medium text-slate-700">Background Color:</label>
             <input
               type="color"
-              value={drawAreaRef?.current?.getSvgElement()?.style.backgroundColor || "#ffffff"}
+              value={backgroundColor}
+              className="w-12 h-8 border border-slate-300 rounded cursor-pointer"
               onChange={e => {
-                const svgElement = drawAreaRef?.current?.getSvgElement();
-                if (svgElement) {
-                  svgElement.style.backgroundColor = e.target.value;
+                const newColor = e.target.value;
+                setLocalBackgroundColor(newColor);
+                if (drawAreaRef?.current?.setBackgroundColor) {
+                  drawAreaRef.current.setBackgroundColor(newColor);
                 }
               }}
             />
           </div>
-          <div className="properties-item">
-            <b>Elements Count:</b> {drawAreaRef?.current?.getElements()?.length || 0}
-          </div>
-          <div className="properties-item">
-            <b>Canvas Size:</b> 
-            <div>Width: {drawAreaRef?.current?.getSvgElement()?.getAttribute('width') || 'N/A'}</div>
-            <div>Height: {drawAreaRef?.current?.getSvgElement()?.getAttribute('height') || 'N/A'}</div>
+          <div className="p-3 bg-slate-50 rounded-lg">
+            <div className="font-medium text-slate-700 mb-2">Canvas Info</div>
+            <div className="space-y-1 text-xs">
+              <div><span className="font-medium">Elements:</span> {drawAreaRef?.current?.getElements()?.length || 0}</div>
+              <div><span className="font-medium">Width:</span> {drawAreaRef?.current?.getSvgElement()?.getAttribute('width') || 'N/A'}</div>
+              <div><span className="font-medium">Height:</span> {drawAreaRef?.current?.getSvgElement()?.getAttribute('height') || 'N/A'}</div>
+            </div>
           </div>
         </div>
       </div>
@@ -108,17 +116,20 @@ const PropertiesPanel: React.FC<{
 
   // Show selected element properties
   return (
-    <div className="properties-panel">
-      <h2 className="properties-title">Element Properties</h2>
-      <div className="properties-content">
-        <div className="properties-item">
-          <b>ID:</b> {element.id}
+    <div className="w-full h-full bg-white border-l border-slate-200 p-4 overflow-auto">
+      <h2 className="text-lg font-semibold mb-4 text-slate-900">Element Properties</h2>
+      <div className="space-y-4 text-sm">
+        <div className="p-3 bg-slate-50 rounded-lg">
+          <div className="space-y-2 text-xs">
+            <div><span className="font-medium text-slate-700">ID:</span> <span className="text-slate-600">{element.id}</span></div>
+            <div><span className="font-medium text-slate-700">Type:</span> <span className="text-slate-600">{element.type}</span></div>
+            <div><span className="font-medium text-slate-700">Position:</span> <span className="text-slate-600">({x}, {y})</span></div>
+            <div><span className="font-medium text-slate-700">Size:</span> <span className="text-slate-600">{width} × {height}</span></div>
+          </div>
         </div>
-        <div className="properties-item">
-          <b>Type:</b> {element.type}
-        </div>
-        <div className="properties-item">
-          <b>Name:</b>
+        
+        <div className="flex flex-col gap-2">
+          <label className="font-medium text-slate-700">Name:</label>
           <textarea
             value={element.name || ""}
             onChange={(e) => {
@@ -127,23 +138,169 @@ const PropertiesPanel: React.FC<{
               onChangeName?.(element.id, e.target.value);
             }}
             rows={2}
-            className="properties-textarea"
+            className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 text-sm"
+            placeholder="Enter element name..."
           />
         </div>
-        <div className="properties-item">
-          <b>Position:</b> ({x}, {y})
+        
+        {/* Element Styles Section */}
+        <div className="border-t border-slate-200 pt-4">
+          <div className="font-medium text-slate-700 mb-3">Element Styles</div>
+          <div className="space-y-3">
+            <div className="grid grid-cols-2 gap-3">
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-1">Fill Color:</label>
+                <input
+                  type="color"
+                  value={element.styles?.fill || "#3b82f6"}
+                  onChange={(e) => {
+                    const defaultStyles = {
+                      fill: "#3b82f6",
+                      stroke: "#1e293b", 
+                      strokeWidth: 2,
+                      opacity: 1
+                    };
+                    const updatedElement = { 
+                      ...element, 
+                      styles: { 
+                        ...defaultStyles,
+                        ...element.styles, 
+                        fill: e.target.value 
+                      }
+                    };
+                    updateElement(updatedElement);
+                  }}
+                  className="w-full h-8 border border-slate-300 rounded cursor-pointer"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-1">Stroke Color:</label>
+                <input
+                  type="color"
+                  value={element.styles?.stroke || "#1e293b"}
+                  onChange={(e) => {
+                    const defaultStyles = {
+                      fill: "#3b82f6",
+                      stroke: "#1e293b", 
+                      strokeWidth: 2,
+                      opacity: 1
+                    };
+                    const updatedElement = { 
+                      ...element, 
+                      styles: { 
+                        ...defaultStyles,
+                        ...element.styles, 
+                        stroke: e.target.value 
+                      }
+                    };
+                    updateElement(updatedElement);
+                  }}
+                  className="w-full h-8 border border-slate-300 rounded cursor-pointer"
+                />
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-2 gap-3">
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-1">Stroke Width:</label>
+                <input
+                  type="number"
+                  min="0"
+                  step="0.5"
+                  value={element.styles?.strokeWidth || 2}
+                  onChange={(e) => {
+                    const defaultStyles = {
+                      fill: "#3b82f6",
+                      stroke: "#1e293b", 
+                      strokeWidth: 2,
+                      opacity: 1
+                    };
+                    const updatedElement = { 
+                      ...element, 
+                      styles: { 
+                        ...defaultStyles,
+                        ...element.styles, 
+                        strokeWidth: parseFloat(e.target.value) || 2 
+                      }
+                    };
+                    updateElement(updatedElement);
+                  }}
+                  className="w-full px-2 py-1 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 text-sm"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-1">Opacity:</label>
+                <input
+                  type="number"
+                  min="0"
+                  max="1"
+                  step="0.1"
+                  value={element.styles?.opacity || 1}
+                  onChange={(e) => {
+                    const defaultStyles = {
+                      fill: "#3b82f6",
+                      stroke: "#1e293b", 
+                      strokeWidth: 2,
+                      opacity: 1
+                    };
+                    const updatedElement = { 
+                      ...element, 
+                      styles: { 
+                        ...defaultStyles,
+                        ...element.styles, 
+                        opacity: parseFloat(e.target.value) || 1 
+                      }
+                    };
+                    updateElement(updatedElement);
+                  }}
+                  className="w-full px-2 py-1 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 text-sm"
+                />
+              </div>
+            </div>
+            
+            <div>
+              <label className="block text-sm font-medium text-slate-700 mb-1">Stroke Style:</label>
+              <select
+                value={element.styles?.strokeDasharray || "none"}
+                onChange={(e) => {
+                  const value = e.target.value === "none" ? undefined : e.target.value;
+                  const defaultStyles = {
+                    fill: "#3b82f6",
+                    stroke: "#1e293b", 
+                    strokeWidth: 2,
+                    opacity: 1
+                  };
+                  const updatedElement = { 
+                    ...element, 
+                    styles: { 
+                      ...defaultStyles,
+                      ...element.styles, 
+                      strokeDasharray: value 
+                    }
+                  };
+                  updateElement(updatedElement);
+                }}
+                className="w-full px-2 py-1 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 text-sm"
+              >
+                <option value="none">Solid</option>
+                <option value="5,5">Dashed</option>
+                <option value="2,2">Dotted</option>
+                <option value="10,5,2,5">Dash-Dot</option>
+              </select>
+            </div>
+          </div>
         </div>
-        <div className="properties-item">
-          <b>Size:</b> {width} × {height}
-        </div>
-        {/* Add more element properties as needed */}
+        
+        {/* Text Regions Section */}
         {element.textRegions && element.textRegions.length > 0 && (
-          <div className="properties-text-regions">
-            <b>Text Regions:</b>
-            <ul>
+          <div className="border-t border-slate-200 pt-4">
+            <div className="font-medium text-slate-700 mb-3">Text Regions</div>
+            <div className="space-y-3">
               {element.textRegions.map((region, index) => (
-                <li key={index} className="properties-text-region-item">
-                  <b>ID:</b> {region.id}, <b>Text:</b>
+                <div key={index} className="p-3 bg-slate-50 rounded-lg">
+                  <div className="text-xs text-slate-600 mb-2">
+                    <span className="font-medium">Region {index + 1}:</span> {region.id}
+                  </div>
                   <textarea
                     value={region.text}
                     onChange={(e) => {
@@ -156,11 +313,12 @@ const PropertiesPanel: React.FC<{
                       }
                     }}
                     rows={3}
-                    className="properties-textarea"
+                    className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 text-sm"
+                    placeholder="Enter text content..."
                   />
-                </li>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
         )}
       </div>

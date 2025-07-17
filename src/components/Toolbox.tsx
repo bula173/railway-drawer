@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Button from "./Button";
 import { Plus } from "lucide-react";
-import "../styles/toolbox.css";
 
 /**
  * Groups an array of items by a key function.
@@ -97,133 +96,187 @@ const Toolbox: React.FC<ToolboxProps> = ({
   };
 
   return (
-    <div className="toolbox-panel">
-      <div className="toolbox-title">Toolbox</div>
-            {Object.entries(grouped).map(([group, items]) => (
+    <div className="h-full bg-white border-r border-slate-200 p-4 overflow-auto">
+      <div className="text-lg font-semibold mb-4 text-slate-900 text-center">
+        Toolbox
+      </div>
+      {Object.entries(grouped).map(([group, items]) => (
         <div
           key={group}
-          className={`toolbox-group ${collapsedGroups[group] ? "collapsed" : ""}`}
+          className={`w-full mb-3 ${collapsedGroups[group] ? "collapsed" : ""}`}
         >
           <div
-            className="toolbox-group-title"
+            className="font-semibold text-slate-800 text-base my-2 ml-1 cursor-pointer hover:text-slate-600 transition-colors flex items-center gap-2"
             onClick={() => toggleGroup(group)}
           >
-            <span className="toolbox-group-arrow">
+            <span className="text-sm text-slate-500">
               {collapsedGroups[group] ? "▼" : "▲"}
             </span>
             {group}
           </div>
-          <div className="toolbox-group-content">
-            <div className="toolbox-grid">
-              {items.map((item) => {
-                return (
-                  <div
-                    key={item.id}
-                    draggable
-                    onDragStart={(e) => {
-                      const { iconSvg, ...rest } = item;
-                      e.dataTransfer.setData(
-                        "application/railway-item",
-                        JSON.stringify({
-                          ...rest,
-                          iconSvg,
-                          svg: iconSvg,
-                        })
-                      );
-                    }}
-                    onDragEnd={() => setDraggedItem(null)}
-                    className="toolbox-item"
-                    title={item.name}
-                  >
-                    {/* If iconSvg is "default", render the shape SVG scaled to 24x24, else use iconSvg */}
-                    {item.iconSvg === "default" && item.shape ? (
-                      <svg
-                        width={24}
-                        height={24}
-                        viewBox={`0 0 ${item.width || 48} ${item.height || 48}`}
-                        dangerouslySetInnerHTML={{ __html: item.shape }}
-                      />
-                    ) : item.iconSvg ? (
-                      <span
-                        style={{ display: "inline-block", width: 24, height: 24 }}
-                        dangerouslySetInnerHTML={{ __html: item.iconSvg }}
-                      />
-                    ) : null}
-                  </div>
-                );
-              })}
+          {!collapsedGroups[group] && (
+            <div className="mb-4">
+              <div className="grid grid-cols-3 gap-2 w-full">
+                {items.map((item) => {
+                  return (
+                    <div
+                      key={item.id}
+                      draggable
+                      onDragStart={(e) => {
+                        const { iconSvg, ...rest } = item;
+                        e.dataTransfer.setData(
+                          "application/railway-item",
+                          JSON.stringify({
+                            ...rest,
+                            iconSvg,
+                            svg: iconSvg,
+                          })
+                        );
+                      }}
+                      onDragEnd={() => setDraggedItem(null)}
+                      className="aspect-square rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-center shadow-sm cursor-grab hover:shadow-md hover:border-slate-300 hover:bg-white transition-all duration-200 relative group"
+                      title={item.name}
+                    >
+                      {/* Tooltip */}
+                      <div className="absolute left-1/2 bottom-[-32px] transform -translate-x-1/2 bg-slate-800 text-white px-2 py-1 rounded text-xs whitespace-nowrap pointer-events-none z-20 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                        {item.name}
+                      </div>
+                      
+                      {/* Icon */}
+                      {item.iconSvg === "default" && item.shape ? (
+                        <svg
+                          width={24}
+                          height={24}
+                          viewBox={`0 0 ${item.width || 48} ${item.height || 48}`}
+                          dangerouslySetInnerHTML={{ __html: item.shape }}
+                        />
+                      ) : item.iconSvg ? (
+                        <span
+                          style={{ display: "inline-block", width: 24, height: 24 }}
+                          dangerouslySetInnerHTML={{ __html: item.iconSvg }}
+                        />
+                      ) : null}
+                    </div>
+                  );
+                })}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       ))}
       <Button
-        className="toolbox-add-btn"
+        className="w-full h-10 rounded-lg mt-6 bg-blue-500 hover:bg-blue-600 text-white border-none flex items-center justify-center gap-2 text-sm font-medium transition-colors duration-200 shadow-sm"
         onClick={() => setShowEditor(true)}
         title="Add new shape"
       >
-        <Plus size={24} />
+        <Plus size={16} />
+        Add Shape
       </Button>
+      
       {showEditor && (
         <div
-          className="toolbox-modal-backdrop"
+          className="fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-20 z-[1000] flex items-center justify-center"
           onClick={() => setShowEditor(false)}
         >
-          <div className="toolbox-modal" onClick={(e) => e.stopPropagation()}>
-            <div className="toolbox-modal-title">Add New Shape</div>
-            <div className="toolbox-modal-fields">
-              <label>Name</label>
-              <input
-                type="text"
-                value={customData.name}
-                onChange={(e) =>
-                  setCustomData({ ...customData, name: e.target.value })
-                }
-              />
-              <label>Group</label>
-              <input
-                type="text"
-                value={customData.group}
-                onChange={(e) =>
-                  setCustomData({ ...customData, group: e.target.value })
-                }
-                placeholder="e.g. Tracks, Signals"
-              />
-              <label>Icon SVG</label>
-              <textarea
-                value={customData.iconSvg}
-                onChange={(e) =>
-                  setCustomData({ ...customData, iconSvg: e.target.value })
-                }
-                placeholder="<svg ...>...</svg> OR default to use shape as icon."
-              />
-              <label>Shape SVG</label>
-              <textarea
-                value={customData.shape}
-                onChange={(e) =>
-                  setCustomData({ ...customData, shape: e.target.value })
-                }
-                placeholder="<svg ...>...</svg>"
-              />
-              <label>Width</label>
-              <input
-                type="number"
-                value={customData.width}
-                onChange={(e) =>
-                  setCustomData({ ...customData, width: Number(e.target.value) })
-                }
-              />
-              <label>Height</label>
-              <input
-                type="number"
-                value={customData.height}
-                onChange={(e) =>
-                  setCustomData({ ...customData, height: Number(e.target.value) })
-                }
-              />
+          <div 
+            className="bg-white p-6 rounded-xl min-w-[320px] shadow-2xl relative"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="font-semibold text-lg mb-3 text-slate-900">
+              Add New Shape
             </div>
-            <div className="toolbox-modal-actions">
+            <div className="space-y-4">
+              <div>
+                <label className="block font-medium text-sm text-slate-700 mb-1 ml-0">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  value={customData.name}
+                  onChange={(e) =>
+                    setCustomData({ ...customData, name: e.target.value })
+                  }
+                  className="input"
+                />
+              </div>
+              
+              <div>
+                <label className="block font-medium text-sm text-slate-700 mb-1 ml-0">
+                  Group
+                </label>
+                <input
+                  type="text"
+                  value={customData.group}
+                  onChange={(e) =>
+                    setCustomData({ ...customData, group: e.target.value })
+                  }
+                  placeholder="e.g. Tracks, Signals"
+                  className="input"
+                />
+              </div>
+              
+              <div>
+                <label className="block font-medium text-sm text-slate-700 mb-1 ml-0">
+                  Icon SVG
+                </label>
+                <textarea
+                  value={customData.iconSvg}
+                  onChange={(e) =>
+                    setCustomData({ ...customData, iconSvg: e.target.value })
+                  }
+                  placeholder="<svg ...>...</svg> OR default to use shape as icon."
+                  className="input min-h-[40px] resize-y"
+                />
+              </div>
+              
+              <div>
+                <label className="block font-medium text-sm text-slate-700 mb-1 ml-0">
+                  Shape SVG
+                </label>
+                <textarea
+                  value={customData.shape}
+                  onChange={(e) =>
+                    setCustomData({ ...customData, shape: e.target.value })
+                  }
+                  placeholder="<svg ...>...</svg>"
+                  className="input min-h-[40px] resize-y"
+                />
+              </div>
+              
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block font-medium text-sm text-slate-700 mb-1 ml-0">
+                    Width
+                  </label>
+                  <input
+                    type="number"
+                    value={customData.width}
+                    onChange={(e) =>
+                      setCustomData({ ...customData, width: Number(e.target.value) })
+                    }
+                    className="input"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block font-medium text-sm text-slate-700 mb-1 ml-0">
+                    Height
+                  </label>
+                  <input
+                    type="number"
+                    value={customData.height}
+                    onChange={(e) =>
+                      setCustomData({ ...customData, height: Number(e.target.value) })
+                    }
+                    className="input"
+                  />
+                </div>
+              </div>
+            </div>
+            
+            <div className="flex gap-3 justify-end mt-6">
               <Button
-                style={{ background: "#1976d2", color: "#fff" }}
+                className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg transition-colors duration-200 shadow-sm hover:shadow-md"
                 onClick={() => {
                   if (!customData.name) return;
                   setToolbox((prev: ToolboxItem[]) => [
@@ -252,7 +305,7 @@ const Toolbox: React.FC<ToolboxProps> = ({
                 Add
               </Button>
               <Button
-                style={{ background: "#e0e0e0", color: "#333" }}
+                className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium rounded-lg transition-colors duration-200 border border-slate-200"
                 onClick={() => setShowEditor(false)}
               >
                 Cancel

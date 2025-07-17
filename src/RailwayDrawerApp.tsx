@@ -18,7 +18,6 @@ import PropertiesPanel from "./components/PropertiesPanel";
 import DrawArea, { type DrawAreaRef } from "./components/DrawArea";
 import TabPanel, { type DrawAreaTab } from "./components/TabPanel";
 import type { DrawElement } from "./components/Elements";
-import "./styles/tabpanel.css";
 
 /** @brief Grid size for snap-to-grid functionality */
 const GRID_SIZE = 40;
@@ -36,14 +35,12 @@ const RailwayDrawerApp = () => {
 
   // Ref for the DrawArea component instances (one per tab)
   const drawAreaRefs = useRef<Map<string, DrawAreaRef>>(new Map());
+  
+  // Create a stable ref object for PropertiesPanel
+  const currentDrawAreaRefObject = useRef<DrawAreaRef | null>(null);
 
   /** @brief Get the current active DrawArea ref */
   const getCurrentDrawAreaRef = () => drawAreaRefs.current.get(activeTabId);
-
-  /** @brief Get the current active DrawArea ref as a RefObject for components that expect it */
-  const getCurrentDrawAreaRefObject = (): React.RefObject<DrawAreaRef | null> => ({
-    current: getCurrentDrawAreaRef() || null
-  });
 
   /** @brief Set a DrawArea ref for a specific tab */
   const setDrawAreaRef = (tabId: string, ref: DrawAreaRef | null) => {
@@ -76,6 +73,10 @@ const RailwayDrawerApp = () => {
 
   // Export format state
   const [exportFormat, setExportFormat] = useState<"png" | "jpg" | "svg" | "pdf">("png");
+  
+  // Menu state
+  const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const [activeSubMenu, setActiveSubMenu] = useState<string | null>(null);
 
   /** @brief Panel widths and layout dimensions */
   const [toolboxWidth, setToolboxWidth] = useState(148); // 3*44 + 2*8
@@ -89,6 +90,11 @@ const RailwayDrawerApp = () => {
 
   /** @brief Global clipboard state shared between all tabs */
   const [globalCopiedElements, setGlobalCopiedElements] = useState<DrawElement[]>([]);
+
+  // Update the stable ref when active tab changes
+  useEffect(() => {
+    currentDrawAreaRefObject.current = getCurrentDrawAreaRef() || null;
+  }, [activeTabId]);
 
   /** @brief Get current active tab from tabs array */
   const activeTab = tabs.find(tab => tab.id === activeTabId) || tabs[0];
@@ -637,56 +643,109 @@ const RailwayDrawerApp = () => {
   const handleZoomReset = () => setZoom(1);
 
   return (
-    <div className="flex flex-col h-screen w-screen">
-      {/* --- Standard Menu Bar --- */}
-      <div className="menu-bar" style={{ position: "relative", zIndex: 100 }}>
-        <div className="menu-dropdown">
-          <button className="custom-btn" style={{ borderRadius: 0, borderRight: "1px solid #e0e0e0" }}>
+    <div className="flex flex-col h-screen w-screen bg-slate-50">
+      {/* --- Modern Menu Bar --- */}
+      <div className="flex bg-white border-b border-slate-200 h-10 items-stretch relative z-50 shadow-sm">
+        {/* File Menu */}
+        <div className="relative">
+          <button 
+            className="bg-white hover:bg-slate-50 text-slate-700 border-none px-4 h-10 text-sm font-medium cursor-pointer outline-none border-r border-slate-200 transition-colors duration-200"
+            onMouseEnter={() => setActiveMenu('file')}
+            onMouseLeave={() => {
+              setActiveMenu(null);
+              setActiveSubMenu(null);
+            }}
+          >
             File
           </button>
-          <div className="menu-dropdown-content">
-            <div onClick={() => fileInputRef.current?.click()}>Open...</div>
-            <div onClick={saveAsJson}>Save</div>
-            <div>
-              Export As
-              <div className="menu-sub-dropdown">
-                <div onClick={() => { setExportFormat("png"); exportToImage(); }}>PNG</div>
-                <div onClick={() => { setExportFormat("jpg"); exportToImage(); }}>JPG</div>
-                <div onClick={() => { setExportFormat("svg"); exportToImage(); }}>SVG</div>
-                <div onClick={() => { setExportFormat("pdf"); exportToImage(); }}>PDF</div>
+          {activeMenu === 'file' && (
+            <div 
+              className="absolute bg-white min-w-[180px] shadow-lg border border-slate-200 z-50 left-0 top-10 rounded-b-lg overflow-hidden"
+              onMouseEnter={() => setActiveMenu('file')}
+              onMouseLeave={() => {
+                setActiveMenu(null);
+                setActiveSubMenu(null);
+              }}
+            >
+              <div className="px-4 py-2 hover:bg-slate-50 cursor-pointer text-sm text-slate-700 transition-colors" onClick={() => { fileInputRef.current?.click(); setActiveMenu(null); }}>
+                Open...
+              </div>
+              <div className="px-4 py-2 hover:bg-slate-50 cursor-pointer text-sm text-slate-700 transition-colors" onClick={() => { saveAsJson(); setActiveMenu(null); }}>
+                Save
+              </div>
+              <div 
+                className="relative group"
+                onMouseEnter={() => setActiveSubMenu('export')}
+                onMouseLeave={() => setActiveSubMenu(null)}
+              >
+                <div className="px-4 py-2 hover:bg-slate-50 cursor-pointer text-sm text-slate-700 transition-colors flex items-center justify-between">
+                  Export As
+                  <span className="text-slate-400">›</span>
+                </div>
+                {activeSubMenu === 'export' && (
+                  <div className="absolute left-full top-0 bg-white min-w-[120px] shadow-lg border border-slate-200 rounded-lg overflow-hidden z-50">
+                    <div className="px-3 py-2 hover:bg-slate-50 cursor-pointer text-sm text-slate-700 transition-colors" onClick={() => { setExportFormat("png"); exportToImage(); setActiveMenu(null); setActiveSubMenu(null); }}>PNG</div>
+                    <div className="px-3 py-2 hover:bg-slate-50 cursor-pointer text-sm text-slate-700 transition-colors" onClick={() => { setExportFormat("jpg"); exportToImage(); setActiveMenu(null); setActiveSubMenu(null); }}>JPG</div>
+                    <div className="px-3 py-2 hover:bg-slate-50 cursor-pointer text-sm text-slate-700 transition-colors" onClick={() => { setExportFormat("svg"); exportToImage(); setActiveMenu(null); setActiveSubMenu(null); }}>SVG</div>
+                    <div className="px-3 py-2 hover:bg-slate-50 cursor-pointer text-sm text-slate-700 transition-colors" onClick={() => { setExportFormat("pdf"); exportToImage(); setActiveMenu(null); setActiveSubMenu(null); }}>PDF</div>
+                  </div>
+                )}
               </div>
             </div>
-          </div>
+          )}
           <input
             ref={fileInputRef}
             type="file"
             accept="application/json"
-            style={{ display: "none" }}
+            className="hidden"
             onChange={loadFromJson}
           />
         </div>
-        <div className="menu-dropdown">
-          <button className="custom-btn" style={{ borderRadius: 0, borderRight: "1px solid #e0e0e0" }}>
+        
+        {/* Toolbox Menu */}
+        <div className="relative">
+          <button 
+            className="bg-white hover:bg-slate-50 text-slate-700 border-none px-4 h-10 text-sm font-medium cursor-pointer outline-none border-r border-slate-200 transition-colors duration-200"
+            onMouseEnter={() => setActiveMenu('toolbox')}
+            onMouseLeave={() => setActiveMenu(null)}
+          >
             Toolbox
           </button>
-          <div className="menu-dropdown-content">
-            <div onClick={saveToolboxAsJson}>Save Toolbox</div>
-            <div onClick={() => toolboxInputRef.current?.click()}>Open Toolbox Config</div>
-            <div onClick={() => setShowEditor(true)}>Add new shape</div>
-          </div>
+          {activeMenu === 'toolbox' && (
+            <div 
+              className="absolute bg-white min-w-[180px] shadow-lg border border-slate-200 z-50 left-0 top-10 rounded-b-lg overflow-hidden"
+              onMouseEnter={() => setActiveMenu('toolbox')}
+              onMouseLeave={() => setActiveMenu(null)}
+            >
+              <div className="px-4 py-2 hover:bg-slate-50 cursor-pointer text-sm text-slate-700 transition-colors" onClick={() => { saveToolboxAsJson(); setActiveMenu(null); }}>
+                Save Toolbox
+              </div>
+              <div className="px-4 py-2 hover:bg-slate-50 cursor-pointer text-sm text-slate-700 transition-colors" onClick={() => { toolboxInputRef.current?.click(); setActiveMenu(null); }}>
+                Open Toolbox Config
+              </div>
+              <div className="px-4 py-2 hover:bg-slate-50 cursor-pointer text-sm text-slate-700 transition-colors" onClick={() => { setShowEditor(true); setActiveMenu(null); }}>
+                Add new shape
+              </div>
+            </div>
+          )}
           <input
             ref={toolboxInputRef}
             type="file"
             accept="application/json"
-            style={{ display: "none" }}
+            className="hidden"
             onChange={loadToolboxFromJson}
           />
         </div>
+        
+        {/* App Title */}
+        <div className="flex-1 flex items-center justify-center">
+          <h1 className="text-sm font-semibold text-slate-700">Railway Drawer</h1>
+        </div>
       </div>
+      
       {/* Main Layout */}
-      <div className="layout-main" style={{ height: `calc(100vh - ${tabPanelHeight}px)` }}>
+      <div className="flex flex-row w-screen min-w-0 flex-1 overflow-hidden" style={{ height: `calc(100vh - ${tabPanelHeight}px)` }}>
         <div
-          className="toolbox-panel"
           style={{ width: toolboxWidth, minWidth: 120 }}
         >
           <Toolbox
@@ -699,36 +758,42 @@ const RailwayDrawerApp = () => {
         </div>
         
         <div
-          style={{
-            width: 6,
-            cursor: "ew-resize",
-            background: "#e0e0e0",
-            zIndex: 10,
-          }}
+          className="w-1.5 cursor-ew-resize bg-slate-300 hover:bg-slate-400 transition-colors duration-200 z-10"
           onMouseDown={startResizeToolbox}
         />
         
         <div
-          ref={drawAreaPanelRef} // Add this ref to the container
-          className="draw-area-panel"
-          style={{
-            flex: 1,
-            minWidth: 0,
-            display: "flex",
-            flexDirection: "column",
-          }}
+          ref={drawAreaPanelRef}
+          className="flex-1 min-w-0 flex flex-col bg-white"
         >
-          <div style={{ display: "flex", gap: 8, alignItems: "center", margin: 8 }}>
-            <button onClick={handleZoomOut}>-</button>
-            <span>{Math.round(zoom * 100)}%</span>
-            <button onClick={handleZoomIn}>+</button>
-            <button onClick={handleZoomReset}>Reset</button>
+          <div className="flex gap-2 items-center p-2 bg-slate-50 border-b border-slate-200">
+            <button 
+              onClick={handleZoomOut}
+              className="w-8 h-8 rounded-md bg-white border border-slate-300 hover:bg-slate-50 flex items-center justify-center text-slate-600 font-medium transition-colors duration-200"
+            >
+              -
+            </button>
+            <span className="text-sm font-medium text-slate-700 min-w-[3rem] text-center">
+              {Math.round(zoom * 100)}%
+            </span>
+            <button 
+              onClick={handleZoomIn}
+              className="w-8 h-8 rounded-md bg-white border border-slate-300 hover:bg-slate-50 flex items-center justify-center text-slate-600 font-medium transition-colors duration-200"
+            >
+              +
+            </button>
+            <button 
+              onClick={handleZoomReset}
+              className="px-3 h-8 rounded-md bg-white border border-slate-300 hover:bg-slate-50 text-sm text-slate-600 font-medium transition-colors duration-200"
+            >
+              Reset
+            </button>
           </div>
           {/* Render DrawArea for each tab, toggling visibility based on activeTabId */}
           {tabs.map((tab) => (
             <div
               key={tab.id}
-              style={{ display: tab.id === activeTabId ? 'block' : 'none' }}
+              className={tab.id === activeTabId ? 'block flex-1' : 'hidden'}
             >
               <DrawArea
                 ref={(ref) => setDrawAreaRef(tab.id, ref)}
@@ -744,21 +809,16 @@ const RailwayDrawerApp = () => {
         </div>
         
         <div
-          style={{
-            width: 6,
-            cursor: "ew-resize",
-            background: "#e0e0e0",
-            zIndex: 10,
-          }}
+          className="w-1.5 cursor-ew-resize bg-slate-300 hover:bg-slate-400 transition-colors duration-200 z-10"
           onMouseDown={startResizeProperties}
         />
         
         <div
-          className="properties-panel"
+          className="panel bg-white"
           style={{ width: propertiesWidth, minWidth: 180 }}
         >
           <PropertiesPanel
-            drawAreaRef={getCurrentDrawAreaRefObject()}
+            drawAreaRef={currentDrawAreaRefObject}
             selectedElement={selectedElement}
             onElementChange={setSelectedElement}
           />
@@ -766,7 +826,7 @@ const RailwayDrawerApp = () => {
       </div>
 
       {/* Bottom Tab Panel */}
-      <div style={{ height: tabPanelHeight }}>
+      <div style={{ height: tabPanelHeight }} className="bg-slate-100 border-t border-slate-200">
         <TabPanel
           tabs={tabs}
           activeTabId={activeTabId}
