@@ -62,25 +62,59 @@ export function getElementStyleProps(styles?: ElementStyles): Record<string, any
 export function applyStylesToSVGString(svgContent: string, styles?: ElementStyles): string {
   if (!styles || !svgContent) return svgContent;
   
-  // Parse SVG and apply styles
-  const parser = new DOMParser();
-  const svgDoc = parser.parseFromString(`<svg>${svgContent}</svg>`, "image/svg+xml");
-  const svgElement = svgDoc.querySelector("svg");
-  
-  if (svgElement) {
-    // Apply styles to all shape elements
-    const shapeElements = svgElement.querySelectorAll("rect, circle, ellipse, line, polyline, polygon, path");
-    shapeElements.forEach(elem => {
-      if (styles.fill !== undefined) elem.setAttribute("fill", styles.fill);
-      if (styles.stroke !== undefined) elem.setAttribute("stroke", styles.stroke);
-      if (styles.strokeWidth !== undefined) elem.setAttribute("stroke-width", styles.strokeWidth.toString());
-      if (styles.strokeDasharray !== undefined) elem.setAttribute("stroke-dasharray", styles.strokeDasharray);
-      if (styles.opacity !== undefined) elem.setAttribute("opacity", styles.opacity.toString());
-      if (styles.strokeOpacity !== undefined) elem.setAttribute("stroke-opacity", styles.strokeOpacity.toString());
-      if (styles.fillOpacity !== undefined) elem.setAttribute("fill-opacity", styles.fillOpacity.toString());
-    });
+  try {
+    // Clean up the SVG content - remove any trailing commas or invalid characters
+    let cleanSvgContent = svgContent.trim();
+    if (cleanSvgContent.endsWith(',')) {
+      cleanSvgContent = cleanSvgContent.slice(0, -1);
+    }
     
-    return svgElement.innerHTML;
+    // Parse SVG and apply styles
+    const parser = new DOMParser();
+    const svgDoc = parser.parseFromString(`<svg xmlns="http://www.w3.org/2000/svg">${cleanSvgContent}</svg>`, "image/svg+xml");
+    
+    // Check for parsing errors
+    const parserError = svgDoc.querySelector("parsererror");
+    if (parserError) {
+      console.warn("SVG parsing error, returning original content:", parserError.textContent);
+      return svgContent;
+    }
+    
+    const svgElement = svgDoc.querySelector("svg");
+    
+    if (svgElement) {
+      // Apply styles to all shape elements
+      const shapeElements = svgElement.querySelectorAll("rect, circle, ellipse, line, polyline, polygon, path");
+      shapeElements.forEach(elem => {
+        // Only override attributes if the style value is explicitly set
+        if (styles.fill !== undefined && styles.fill !== "") {
+          elem.setAttribute("fill", styles.fill);
+        }
+        if (styles.stroke !== undefined && styles.stroke !== "") {
+          elem.setAttribute("stroke", styles.stroke);
+        }
+        if (styles.strokeWidth !== undefined) {
+          elem.setAttribute("stroke-width", styles.strokeWidth.toString());
+        }
+        if (styles.strokeDasharray !== undefined && styles.strokeDasharray !== "") {
+          elem.setAttribute("stroke-dasharray", styles.strokeDasharray);
+        }
+        if (styles.opacity !== undefined) {
+          elem.setAttribute("opacity", styles.opacity.toString());
+        }
+        if (styles.strokeOpacity !== undefined) {
+          elem.setAttribute("stroke-opacity", styles.strokeOpacity.toString());
+        }
+        if (styles.fillOpacity !== undefined) {
+          elem.setAttribute("fill-opacity", styles.fillOpacity.toString());
+        }
+      });
+      
+      return svgElement.innerHTML;
+    }
+  } catch (error) {
+    console.warn("Error applying styles to SVG:", error);
+    return svgContent;
   }
   
   return svgContent;
@@ -171,6 +205,11 @@ export const ElementSVG: React.FC<{ el: DrawElement }> = ({ el }) => {
 
         // Apply styles to the SVG content
         const styledShape = applyStylesToSVGString(el.shape, el.styles);
+        
+        // Debug logging
+        if (el.styles) {
+          console.log("Element with styles:", el.id, "Original:", el.shape?.slice(0, 100), "Styled:", styledShape.slice(0, 100));
+        }
 
         return (
           <g
