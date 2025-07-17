@@ -146,6 +146,14 @@ const PropertiesPanel: React.FC<{
         {/* Element Styles Section */}
         <div className="border-t border-slate-200 pt-4">
           <div className="font-medium text-slate-700 mb-3">Element Styles</div>
+          {element.type === "custom" && element.shape && !element.styles ? (
+            <div className="p-3 bg-yellow-50 border border-yellow-200 rounded-lg">
+              <div className="text-sm text-yellow-800">
+                <div className="font-medium mb-1">Custom SVG Element</div>
+                <div>This element uses embedded SVG styling. Colors and styles are defined in the SVG shape itself.</div>
+              </div>
+            </div>
+          ) : (
           <div className="space-y-3">
             <div className="grid grid-cols-2 gap-3">
               <div>
@@ -254,6 +262,7 @@ const PropertiesPanel: React.FC<{
               </select>
             </div>
           </div>
+          )}
         </div>
         
         {/* Text Regions Section */}

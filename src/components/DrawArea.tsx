@@ -652,8 +652,11 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
    * @returns {DrawElement} The new element.
    */
   function createCenteredElement(item: any, x: number, y: number): DrawElement {
-    // Default styles for new elements
-    const defaultStyles = {
+    // Only apply default styles for elements that don't have their own styling
+    // Custom elements with SVG shapes should preserve their original colors
+    const hasCustomShape = item.shape && item.type === "custom";
+    
+    const defaultStyles = hasCustomShape ? undefined : {
       fill: "#3b82f6", // blue-500
       stroke: "#1e293b", // slate-800
       strokeWidth: 2,
@@ -676,7 +679,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       backgroundColor,
       setGridEnabled: setShowGrid,
       setBackgroundColor,
-      styles: defaultStyles,
+      ...(defaultStyles && { styles: defaultStyles }),
       ...(item.textRegions && { textRegions: item.textRegions }),
     };
 
