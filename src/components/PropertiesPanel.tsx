@@ -146,14 +146,14 @@ const PropertiesPanel: React.FC<{
         {/* Element Styles Section */}
         <div className="border-t border-slate-200 pt-4">
           <div className="font-medium text-slate-700 mb-3">Element Styles</div>
-          {element.type === "custom" && element.shape && !element.styles ? (
-            <div className="p-3 bg-yellow-50 border border-yellow-200 rounded-lg">
-              <div className="text-sm text-yellow-800">
-                <div className="font-medium mb-1">Custom SVG Element</div>
-                <div>This element uses embedded SVG styling. Colors and styles are defined in the SVG shape itself.</div>
+          {element.type === "custom" && element.shape && !element.styles && (
+            <div className="p-3 bg-blue-50 border border-blue-200 rounded-lg mb-3">
+              <div className="text-sm text-blue-800">
+                <div className="font-medium mb-1">Original Toolbox Styling</div>
+                <div>This element uses its original toolbox colors. You can override them below if needed.</div>
               </div>
             </div>
-          ) : (
+          )}
           <div className="space-y-3">
             <div className="grid grid-cols-2 gap-3">
               <div>
@@ -173,6 +173,9 @@ const PropertiesPanel: React.FC<{
                   }}
                   className="w-full h-8 border border-slate-300 rounded cursor-pointer"
                 />
+                <div className="text-xs text-slate-500 mt-1">
+                  {element.styles?.fill ? "Custom override" : "Default/Original"}
+                </div>
               </div>
               <div>
                 <label className="block text-sm font-medium text-slate-700 mb-1">Stroke Color:</label>
@@ -191,6 +194,9 @@ const PropertiesPanel: React.FC<{
                   }}
                   className="w-full h-8 border border-slate-300 rounded cursor-pointer"
                 />
+                <div className="text-xs text-slate-500 mt-1">
+                  {element.styles?.stroke ? "Custom override" : "Default/Original"}
+                </div>
               </div>
             </div>
             
@@ -261,8 +267,22 @@ const PropertiesPanel: React.FC<{
                 <option value="10,5,2,5">Dash-Dot</option>
               </select>
             </div>
+            
+            {/* Reset to Original Button */}
+            {element.styles && (
+              <div className="pt-2 border-t border-slate-200">
+                <button
+                  onClick={() => {
+                    const updatedElement = { ...element, styles: undefined };
+                    updateElement(updatedElement);
+                  }}
+                  className="w-full px-3 py-2 text-sm bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg transition-colors duration-200 border border-slate-300"
+                >
+                  Reset to Original Toolbox Style
+                </button>
+              </div>
+            )}
           </div>
-          )}
         </div>
         
         {/* Text Regions Section */}
