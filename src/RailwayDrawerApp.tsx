@@ -18,6 +18,7 @@ import PropertiesPanel from "./components/PropertiesPanel";
 import DrawArea, { type DrawAreaRef } from "./components/DrawArea";
 import TabPanel, { type DrawAreaTab } from "./components/TabPanel";
 import type { DrawElement } from "./components/Elements";
+import ElementStateDebugger from "./components/ElementStateDebugger";
 
 /** @brief Grid size for snap-to-grid functionality */
 const GRID_SIZE = 40;
@@ -30,6 +31,9 @@ const GRID_SIZE = 40;
  * @returns {JSX.Element} The rendered RailwayDrawerApp component.
  */
 const RailwayDrawerApp = () => {
+  // Debug mode toggle
+  const [debugMode, setDebugMode] = useState(false);
+  
   // Toolbox state
   const [toolbox, setToolbox] = useState<ToolboxItem[]>(toolboxConfig as ToolboxItem[]);
 
@@ -93,8 +97,26 @@ const RailwayDrawerApp = () => {
 
   // Update the stable ref when active tab changes
   useEffect(() => {
-    currentDrawAreaRefObject.current = getCurrentDrawAreaRef() || null;
-  }, [activeTabId]);
+    const newRef = getCurrentDrawAreaRef() || null;
+    console.log("🔄 Active tab changed:", {
+      activeTabId,
+      hasRef: !!newRef,
+      elementsCount: newRef?.getElements()?.length || 0,
+      selectedElementId: selectedElement?.id
+    });
+    
+    currentDrawAreaRefObject.current = newRef;
+    
+    // Clear selected element if it doesn't exist in the new tab
+    if (selectedElement && newRef) {
+      const elements = newRef.getElements();
+      const elementExists = elements.find(el => el.id === selectedElement.id);
+      if (!elementExists) {
+        console.log("🧹 Clearing stale selected element on tab switch");
+        setSelectedElement(undefined);
+      }
+    }
+  }, [activeTabId, selectedElement]);
 
   /** @brief Get current active tab from tabs array */
   const activeTab = tabs.find(tab => tab.id === activeTabId) || tabs[0];
@@ -451,7 +473,7 @@ const RailwayDrawerApp = () => {
             if (currentDrawAreaRef) {
               currentDrawAreaRef.setElements(parsed.elements || []);
             }
-          } catch (err) {
+          } catch {
             // On parse error, clear elements
             const currentDrawAreaRef = getCurrentDrawAreaRef();
             if (currentDrawAreaRef) {
@@ -560,7 +582,7 @@ const RailwayDrawerApp = () => {
                 iconName: item.iconName,
               }))
             );
-          } catch (err) {
+          } catch {
             // Silently ignore parse errors
           }
         }
@@ -618,7 +640,7 @@ const RailwayDrawerApp = () => {
     const node = drawAreaPanelRef.current; // This is the DOM element
     if (!node) return;
     const observer = new window.ResizeObserver(entries => {
-      for (let entry of entries) {
+      for (const entry of entries) {
         const { width, height } = entry.contentRect;
         setDrawAreaSize({ width, height });
       }
@@ -641,6 +663,23 @@ const RailwayDrawerApp = () => {
    * @brief Resets zoom level to 100%
    */
   const handleZoomReset = () => setZoom(1);
+
+  // Debug mode - show simple debugger instead of full app
+  if (debugMode) {
+    return (
+      <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
+        <div style={{ padding: '10px', backgroundColor: '#f8f9fa', borderBottom: '1px solid #dee2e6' }}>
+          <button 
+            onClick={() => setDebugMode(false)}
+            style={{ padding: '8px 16px', backgroundColor: '#6c757d', color: 'white', border: 'none', borderRadius: '4px' }}
+          >
+            ← Back to Main App
+          </button>
+        </div>
+        <ElementStateDebugger />
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col h-screen w-screen bg-slate-50">
@@ -735,6 +774,28 @@ const RailwayDrawerApp = () => {
             className="hidden"
             onChange={loadToolboxFromJson}
           />
+        </div>
+        
+        {/* Debug Menu */}
+        <div className="relative">
+          <button 
+            className="bg-white hover:bg-slate-50 text-slate-700 border-none px-4 h-10 text-sm font-medium cursor-pointer outline-none border-r border-slate-200 transition-colors duration-200"
+            onMouseEnter={() => setActiveMenu('debug')}
+            onMouseLeave={() => setActiveMenu(null)}
+          >
+            Debug
+          </button>
+          {activeMenu === 'debug' && (
+            <div 
+              className="absolute bg-white min-w-[180px] shadow-lg border border-slate-200 z-50 left-0 top-10 rounded-b-lg overflow-hidden"
+              onMouseEnter={() => setActiveMenu('debug')}
+              onMouseLeave={() => setActiveMenu(null)}
+            >
+              <div className="px-4 py-2 hover:bg-slate-50 cursor-pointer text-sm text-slate-700 transition-colors" onClick={() => { setDebugMode(true); setActiveMenu(null); }}>
+                Element State Debugger
+              </div>
+            </div>
+          )}
         </div>
         
         {/* App Title */}

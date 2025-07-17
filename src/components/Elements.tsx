@@ -60,63 +60,26 @@ export function getElementStyleProps(styles?: ElementStyles): Record<string, any
  * @returns Modified SVG content
  */
 export function applyStylesToSVGString(svgContent: string, styles?: ElementStyles): string {
-  if (!styles || !svgContent) return svgContent;
+  // DETAILED DEBUGGING: Log every call to this function
+  console.log("🎨 applyStylesToSVGString called with:", {
+    svgContentLength: svgContent?.length || 0,
+    svgContentPreview: svgContent?.substring(0, 100) + "...",
+    styles: styles,
+    hasStyles: !!styles
+  });
   
-  try {
-    // Clean up the SVG content - remove any trailing commas or invalid characters
-    let cleanSvgContent = svgContent.trim();
-    if (cleanSvgContent.endsWith(',')) {
-      cleanSvgContent = cleanSvgContent.slice(0, -1);
-    }
-    
-    // Parse SVG and apply styles
-    const parser = new DOMParser();
-    const svgDoc = parser.parseFromString(`<svg xmlns="http://www.w3.org/2000/svg">${cleanSvgContent}</svg>`, "image/svg+xml");
-    
-    // Check for parsing errors
-    const parserError = svgDoc.querySelector("parsererror");
-    if (parserError) {
-      console.warn("SVG parsing error, returning original content:", parserError.textContent);
-      return svgContent;
-    }
-    
-    const svgElement = svgDoc.querySelector("svg");
-    
-    if (svgElement) {
-      // Apply styles to all shape elements
-      const shapeElements = svgElement.querySelectorAll("rect, circle, ellipse, line, polyline, polygon, path");
-      shapeElements.forEach(elem => {
-        // Only override attributes if the style value is explicitly set
-        if (styles.fill !== undefined && styles.fill !== "") {
-          elem.setAttribute("fill", styles.fill);
-        }
-        if (styles.stroke !== undefined && styles.stroke !== "") {
-          elem.setAttribute("stroke", styles.stroke);
-        }
-        if (styles.strokeWidth !== undefined) {
-          elem.setAttribute("stroke-width", styles.strokeWidth.toString());
-        }
-        if (styles.strokeDasharray !== undefined && styles.strokeDasharray !== "") {
-          elem.setAttribute("stroke-dasharray", styles.strokeDasharray);
-        }
-        if (styles.opacity !== undefined) {
-          elem.setAttribute("opacity", styles.opacity.toString());
-        }
-        if (styles.strokeOpacity !== undefined) {
-          elem.setAttribute("stroke-opacity", styles.strokeOpacity.toString());
-        }
-        if (styles.fillOpacity !== undefined) {
-          elem.setAttribute("fill-opacity", styles.fillOpacity.toString());
-        }
-      });
-      
-      return svgElement.innerHTML;
-    }
-  } catch (error) {
-    console.warn("Error applying styles to SVG:", error);
+  // Check if SVG content is valid
+  if (!svgContent || svgContent.trim() === '') {
+    console.error("❌ EMPTY SVG CONTENT passed to applyStylesToSVGString!");
     return svgContent;
   }
   
+  // For now, still bypass styling but with detailed logging
+  if (styles) {
+    console.log("🔄 BYPASSING style application, returning original content");
+  }
+  
+  console.log("✅ Returning SVG content, length:", svgContent.length);
   return svgContent;
 }
 
@@ -182,6 +145,14 @@ export interface DrawElement {
  * @returns JSX.Element
  */
 export const ElementSVG: React.FC<{ el: DrawElement }> = ({ el }) => {
+  console.log("🖼️ ElementSVG rendering element:", {
+    id: el.id,
+    type: el.type,
+    hasShape: !!el.shape,
+    shapeLength: el.shape?.length || 0,
+    hasStyles: !!el.styles,
+    styles: el.styles
+  });
 
   switch (el.type) {
    
@@ -206,9 +177,29 @@ export const ElementSVG: React.FC<{ el: DrawElement }> = ({ el }) => {
         // Apply styles to the SVG content
         const styledShape = applyStylesToSVGString(el.shape, el.styles);
         
-        // Debug logging
-        if (el.styles) {
-          console.log("Element with styles:", el.id, "Original:", el.shape?.slice(0, 100), "Styled:", styledShape.slice(0, 100));
+        console.log("🎯 Custom element rendering:", {
+          elementId: el.id,
+          originalShapeLength: el.shape?.length || 0,
+          styledShapeLength: styledShape?.length || 0,
+          shapesEqual: el.shape === styledShape,
+          styles: el.styles
+        });
+        
+        // Validate the styled shape before rendering
+        if (!styledShape || styledShape.trim() === '') {
+          console.error("❌ Empty or null styled shape for element:", el.id, "falling back to original");
+          return (
+            <g
+              transform={`
+        translate(${el.start.x},${el.start.y})
+        scale(${scaleX},${scaleY})
+        translate(${mirrorTranslateX},${mirrorTranslateY})
+        scale(${mirrorScaleX},${mirrorScaleY})
+      `}
+            >
+              <g dangerouslySetInnerHTML={{ __html: el.shape }} />
+            </g>
+          );
         }
 
         return (
@@ -227,7 +218,7 @@ export const ElementSVG: React.FC<{ el: DrawElement }> = ({ el }) => {
         console.warn("Custom SVG element has no SVG content");
         return null;
       }
-    case "text":
+    case "text": {
       const textCx = (el.start.x + el.end.x) / 2;
       const textCy = (el.start.y + el.end.y) / 2;
       return (
@@ -242,6 +233,7 @@ export const ElementSVG: React.FC<{ el: DrawElement }> = ({ el }) => {
           {"Text"}
         </text>
       );
+    }
     default:
       return null;
   }
@@ -279,30 +271,33 @@ export function getElementBoundingRect(el: DrawElement) {
         let elemBounds = { minX: 0, minY: 0, maxX: 0, maxY: 0 };
         
         switch (tagName) {
-          case "rect":
+          case "rect": {
             const rectX = parseFloat(elem.getAttribute("x") || "0");
             const rectY = parseFloat(elem.getAttribute("y") || "0");
             const rectW = parseFloat(elem.getAttribute("width") || "0");
             const rectH = parseFloat(elem.getAttribute("height") || "0");
             elemBounds = { minX: rectX, minY: rectY, maxX: rectX + rectW, maxY: rectY + rectH };
             break;
+          }
             
-          case "circle":
+          case "circle": {
             const cx = parseFloat(elem.getAttribute("cx") || "0");
             const cy = parseFloat(elem.getAttribute("cy") || "0");
             const r = parseFloat(elem.getAttribute("r") || "0");
             elemBounds = { minX: cx - r, minY: cy - r, maxX: cx + r, maxY: cy + r };
             break;
+          }
             
-          case "line":
+          case "line": {
             const x1 = parseFloat(elem.getAttribute("x1") || "0");
             const y1 = parseFloat(elem.getAttribute("y1") || "0");
             const x2 = parseFloat(elem.getAttribute("x2") || "0");
             const y2 = parseFloat(elem.getAttribute("y2") || "0");
             elemBounds = { minX: Math.min(x1, x2), minY: Math.min(y1, y2), maxX: Math.max(x1, x2), maxY: Math.max(y1, y2) };
             break;
+          }
             
-          case "polygon":
+          case "polygon": {
             const points = elem.getAttribute("points") || "";
             const coords = points.split(/[\s,]+/).filter(p => p).map(parseFloat);
             if (coords.length >= 2) {
@@ -311,14 +306,16 @@ export function getElementBoundingRect(el: DrawElement) {
               elemBounds = { minX: Math.min(...xs), minY: Math.min(...ys), maxX: Math.max(...xs), maxY: Math.max(...ys) };
             }
             break;
+          }
             
-          case "ellipse":
+          case "ellipse": {
             const ecx = parseFloat(elem.getAttribute("cx") || "0");
             const ecy = parseFloat(elem.getAttribute("cy") || "0");
             const erx = parseFloat(elem.getAttribute("rx") || "0");
             const ery = parseFloat(elem.getAttribute("ry") || "0");
             elemBounds = { minX: ecx - erx, minY: ecy - ery, maxX: ecx + erx, maxY: ecy + ery };
             break;
+          }
         }
         
         minX = Math.min(minX, elemBounds.minX);

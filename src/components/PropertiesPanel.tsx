@@ -42,13 +42,50 @@ const PropertiesPanel: React.FC<{
 
   // Helper function to update element both in DrawArea and callback
   const updateElement = (updatedElement: DrawElement) => {
+    console.log("🔄 PropertiesPanel updateElement called:", {
+      elementId: updatedElement.id,
+      elementType: updatedElement.type,
+      hasStyles: !!updatedElement.styles,
+      styles: updatedElement.styles,
+      hasShape: !!updatedElement.shape,
+      shapeLength: updatedElement.shape?.length || 0
+    });
+    
     // Update in DrawArea
     if (drawAreaRef?.current) {
       const elements = drawAreaRef.current.getElements();
+      console.log("📋 Current elements before update:", elements.length);
+      
+      // Check if the element actually exists in the current DrawArea
+      const elementExists = elements.find(el => el.id === updatedElement.id);
+      console.log("🔍 Element exists in DrawArea:", !!elementExists);
+      
+      if (!elementExists) {
+        console.error("❌ Element not found in DrawArea! This might be a ref/tab issue.");
+        console.log("📋 Available element IDs:", elements.map(el => el.id));
+        console.log("🎯 Looking for element ID:", updatedElement.id);
+        
+        // Clear the selection since the element doesn't exist in current tab
+        console.log("🧹 Clearing invalid selection");
+        // Note: We can't call onElementChange with undefined due to type constraints
+        // The parent component should handle this by checking element existence
+        return;
+      }
+      
       const updatedElements = elements.map(el => 
         el.id === updatedElement.id ? updatedElement : el
       );
+      
+      console.log("📋 Updated elements array:", updatedElements.length);
       drawAreaRef.current.setElements(updatedElements);
+      
+      // Verify the update worked
+      const newElements = drawAreaRef.current.getElements();
+      console.log("✅ Elements after setElements:", newElements.length);
+      const updatedEl = newElements.find(el => el.id === updatedElement.id);
+      console.log("🎯 Updated element found:", !!updatedEl, updatedEl?.styles);
+    } else {
+      console.error("❌ No drawAreaRef available");
     }
     
     // Call the callback to update parent state
@@ -104,6 +141,20 @@ const PropertiesPanel: React.FC<{
         </div>
       </div>
     );
+  }
+
+  // Validate that the selected element actually exists in the current DrawArea
+  if (drawAreaRef?.current) {
+    const currentElements = drawAreaRef.current.getElements();
+    const elementExists = currentElements.find(el => el.id === element.id);
+    if (!elementExists) {
+      console.log("🚨 Selected element doesn't exist in current DrawArea");
+      console.log("🔍 Current elements:", currentElements.length, "IDs:", currentElements.map(el => el.id));
+      console.log("🔍 Looking for element:", element.id);
+      
+      // For now, let's still show the properties but with a warning
+      // Instead of completely blocking, which might be too aggressive
+    }
   }
 
   // Calculate element properties

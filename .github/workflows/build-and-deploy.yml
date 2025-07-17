@@ -1,4 +1,4 @@
-name: Build Railway Drawer
+name: CI/CD Pipeline
 
 on:
   # Trigger on push to main branch
@@ -17,8 +17,10 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  # Job 1: Linting and Type Checking
+  lint-and-typecheck:
     runs-on: ubuntu-latest
+    name: Lint and Type Check
     
     steps:
     - name: Checkout repository
@@ -33,7 +35,60 @@ jobs:
     - name: Install dependencies
       run: npm ci
       
-    - name: Type check and build project
+    - name: Run ESLint
+      run: npm run lint
+      
+    - name: Type check
+      run: npx tsc --noEmit
+
+  # Job 2: Testing
+  test:
+    runs-on: ubuntu-latest
+    name: Run Tests
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Run tests
+      run: npm test -- --run --coverage
+      
+    - name: Upload coverage reports
+      uses: codecov/codecov-action@v4
+      if: always()
+      with:
+        fail_ci_if_error: false
+        verbose: true
+
+  # Job 3: Build
+  build:
+    runs-on: ubuntu-latest
+    name: Build Application
+    needs: [lint-and-typecheck, test]
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Build project
       run: npm run build
       
     - name: Upload build artifacts
@@ -42,3 +97,28 @@ jobs:
         name: railway-drawer-build
         path: dist/
         retention-days: 30
+
+  # Job 4: Cross-platform testing (optional but recommended)
+  test-cross-platform:
+    runs-on: ${{ matrix.os }}
+    name: Test on ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        node-version: [18, 20]
+        
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Run tests
+      run: npm test -- --run

@@ -97,6 +97,15 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
 }, ref) => {
   /** @brief Internal drawing elements state */
   const [elements, setElements] = useState<DrawElement[]>([]);
+  
+  // Debug: Track when elements change
+  useEffect(() => {
+    console.log("🔍 DrawArea elements state changed:", {
+      count: elements.length,
+      elementIds: elements.map(el => el.id),
+      elementsWithStyles: elements.filter(el => el.styles).length
+    });
+  }, [elements]);
   /** @brief IDs of currently selected elements */
   const [selectedElementIds, setSelectedElementIds] = useState<string[]>([]);
   /** @brief ID of element currently being hovered */
@@ -146,7 +155,15 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
   useImperativeHandle(ref, () => ({
     getSvgElement: () => svgRef.current,
     getElements: () => elements,
-    setElements: (els: DrawElement[]) => setElements(els),
+    setElements: (els: DrawElement[]) => {
+      console.log("🏗️ DrawArea.setElements called:", {
+        currentCount: elements.length,
+        newCount: els.length,
+        elementIds: els.map(el => el.id),
+        elementsWithStyles: els.filter(el => el.styles).length
+      });
+      setElements(els);
+    },
     setGridVisible: (visible: boolean) => setShowGrid(visible),
     getGridVisible: () => showGrid,
     setBackgroundColor: (color: string) => {
@@ -636,10 +653,10 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     setElements(prev => {
       const newElement = createCenteredElement(item, x, y);
       console.log("[CREATE] New element created:", newElement);
-      return [
-        ...prev,
-        newElement
-      ];
+      console.log("[CREATE] Elements before adding:", prev.length);
+      const newElements = [...prev, newElement];
+      console.log("[CREATE] Elements after adding:", newElements.length);
+      return newElements;
     });
   }
 
