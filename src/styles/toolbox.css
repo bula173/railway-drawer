@@ -153,39 +153,3 @@
 .toolbox-card:hover .toolbox-tooltip {
   display: block;
 }
-
-/* Update the menu bar height constant */
-const MENU_BAR_HEIGHT = 40;
-
-return (
-  <div className="flex flex-col h-screen w-screen">
-    {/* Menu Bar */}
-    <div className="menu-bar" style={{ height: MENU_BAR_HEIGHT }}>
-      {/* ...existing menu content... */}
-    </div>
-    
-    {/* Main Layout - subtract both menu bar and tab panel heights */}
-    <div 
-      className="layout-main" 
-      style={{ 
-        height: `calc(100vh - ${MENU_BAR_HEIGHT}px - ${tabPanelHeight}px)`,
-        display: 'flex',
-        flexDirection: 'row'
-      }}
-    >
-      {/* ...existing layout content... */}
-    </div>
-
-    {/* Bottom Tab Panel - fixed height */}
-    <div style={{ height: tabPanelHeight, flexShrink: 0 }}>
-      <TabPanel
-        tabs={tabs}
-        activeTabId={activeTabId}
-        onTabChange={handleTabChange}
-        onTabCreate={handleTabCreate}
-        onTabClose={handleTabClose}
-        onTabRename={handleTabRename}
-      />
-    </div>
-  </div>
-);

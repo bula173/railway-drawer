@@ -1,44 +1,87 @@
+/**
+ * @file DrawArea.tsx
+ * @brief Interactive SVG drawing area component for railway diagram creation.
+ * 
+ * This component provides a full-featured drawing canvas with element manipulation,
+ * selection, drag-and-drop, copy/paste, zoom, pan, and area selection capabilities.
+ * 
+ * @author Railway Drawer Team
+ * @date 2025
+ * @version 1.0
+ */
+
 import React, { useEffect, useRef, useState, forwardRef, useImperativeHandle } from "react";
 import { RenderElement } from "./Elements";
 import type { DrawElement } from "./Elements";
 
 /**
- * Methods exposed by DrawArea component through ref
+ * @interface DrawAreaRef
+ * @brief Methods exposed by DrawArea component through ref
+ * @details Provides external access to DrawArea's internal functionality
  */
 export interface DrawAreaRef {
+  /** @brief Gets the underlying SVG element */
   getSvgElement: () => SVGSVGElement | null;
+  /** @brief Gets all drawing elements */
   getElements: () => DrawElement[];
+  /** @brief Sets drawing elements */
   setElements: (elements: DrawElement[]) => void;
+  /** @brief Sets grid visibility */
   setGridVisible: (visible: boolean) => void;
+  /** @brief Gets grid visibility state */
   getGridVisible: () => boolean;
+  /** @brief Gets currently selected element */
   getSelectedElement: () => DrawElement | undefined;
-  copySelectedElements: () => void;
+  /** @brief Gets all selected element IDs */
+  getSelectedElementIds: () => string[];
+  /** @brief Copies selected elements to internal clipboard and returns them */
+  copySelectedElements: () => DrawElement[] | undefined;
+  /** @brief Cuts selected elements to internal clipboard and returns them */
+  cutSelectedElements: () => DrawElement[] | undefined;
+  /** @brief Pastes elements from internal clipboard */
   pasteElements: (position?: { x: number; y: number }) => void;
+  /** @brief Gets copied elements */
   getCopiedElements: () => DrawElement[];
+  /** @brief Sets copied elements */
   setCopiedElements: (elements: DrawElement[]) => void;
 }
 
 /**
- * Props for the DrawArea component.
- * Only layout/grid/zoom props are needed after refactor.
+ * @interface DrawAreaProps
+ * @brief Props for the DrawArea component
+ * @details Contains layout, grid, and zoom configuration for the drawing area
  */
 export interface DrawAreaProps {
+  /** @brief Width of the drawing grid */
   GRID_WIDTH: number;
+  /** @brief Height of the drawing grid */
   GRID_HEIGHT: number;
+  /** @brief Size of each grid cell */
   GRID_SIZE: number;
+  /** @brief Current zoom level (optional, defaults to 1.0) */
   zoom?: number;
+  /** @brief Callback for when element selection changes */
   setSelectedElement?: (el?: DrawElement) => void;
+  /** @brief Whether to disable internal keyboard handlers (for global handling) */
+  disableKeyboardHandlers?: boolean;
 }
 
 /**
- * DrawArea component for rendering and interacting with the drawing canvas.
- * Handles selection, dragging, dropping, grid rendering, and zoom.
- * Creates and manages its own SVG element internally.
+ * @component DrawArea
+ * @brief Interactive SVG drawing canvas for railway diagrams
  * 
- * @component
- * @param {DrawAreaProps} props - The props for DrawArea.
- * @param {React.Ref<DrawAreaRef>} ref - Ref to expose DrawArea methods.
- * @returns {JSX.Element} The rendered SVG drawing area.
+ * Provides comprehensive drawing functionality including:
+ * - Element selection and manipulation
+ * - Drag and drop from toolbox
+ * - Copy/paste with keyboard shortcuts
+ * - Area selection with rectangle
+ * - Zoom and pan capabilities
+ * - Grid display and snapping
+ * - Undo/redo history
+ * 
+ * @param props Component properties
+ * @param ref Forwarded ref for external access to component methods
+ * @returns JSX.Element The rendered SVG drawing area
  */
 const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
   GRID_WIDTH,
@@ -46,37 +89,55 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
   GRID_SIZE,
   zoom = 1,
   setSelectedElement,
+  disableKeyboardHandlers = false,
 }, ref) => {
-  // Internal state for elements and UI
+  /** @brief Internal drawing elements state */
   const [elements, setElements] = useState<DrawElement[]>([]);
+  /** @brief IDs of currently selected elements */
   const [selectedElementIds, setSelectedElementIds] = useState<string[]>([]);
+  /** @brief ID of element currently being hovered */
   const [hoveredElementId, setHoveredElementId] = useState<string | null>(null);
+  /** @brief ID of element currently being dragged */
   const [draggingId, setDraggingId] = useState<string | null>(null);
+  /** @brief Ref to track dragging ID across renders */
   const draggingIdRef = useRef<string | null>(null);
+  /** @brief Offset for drag operations */
   const dragOffset = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
+  /** @brief Background color of the drawing area */
   const [backgroundColor, setBackgroundColor] = useState<string>("#ffffff");
+  /** @brief Whether grid is visible */
   const [showGrid, setShowGrid] = useState<boolean>(true);
+  /** @brief Undo/redo history stack */
   const [, setHistory] = useState<DrawElement[][]>([]);
+  /** @brief Reference to the SVG element */
   const svgRef = useRef<SVGSVGElement | null>(null);
+  /** @brief Flag to prevent duplicate history entries */
   const hasPushedToHistory = useRef(false);
 
-  // Area selection state
+  /** @brief Area selection state */
   const [isAreaSelecting, setIsAreaSelecting] = useState(false);
+  /** @brief Start position of area selection */
   const [selectionStart, setSelectionStart] = useState<{ x: number; y: number } | null>(null);
+  /** @brief End position of area selection */
   const [selectionEnd, setSelectionEnd] = useState<{ x: number; y: number } | null>(null);
-  const selectionEndRef = useRef<{ x: number; y: number } | null>(null); // Add this ref
+  /** @brief Ref for selection end position to avoid stale closures */
+  const selectionEndRef = useRef<{ x: number; y: number } | null>(null);
 
-  // Add panning state to the existing state variables
+  /** @brief Panning state */
   const [isPanning, setIsPanning] = useState(false);
+  /** @brief Start position of pan operation */
   const [panStart, setPanStart] = useState<{ x: number; y: number } | null>(null);
+  /** @brief Current pan offset */
   const [panOffset, setPanOffset] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
 
-  // Add this ref to store initial positions of all selected elements
+  /** @brief Map storing initial positions during multi-element drag */
   const initialSelectedPositions = useRef<Map<string, { start: { x: number; y: number }, end: { x: number; y: number } }>>(new Map());
+  /** @brief Elements stored in clipboard for copy/paste */
   const [copiedElements, setCopiedElements] = useState<DrawElement[]>([]);
 
   /**
-   * Expose methods through ref
+   * @brief Expose methods through ref for external component access
+   * @details Provides imperative access to DrawArea functionality from parent components
    */
   useImperativeHandle(ref, () => ({
     getSvgElement: () => svgRef.current,
@@ -88,20 +149,23 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       if (!selectedElementIds.length) return undefined;
       return elements.find(el => el.id === selectedElementIds[selectedElementIds.length - 1]);
     },
+    getSelectedElementIds: () => selectedElementIds,
     copySelectedElements,
+    cutSelectedElements,
     pasteElements,
     getCopiedElements: () => copiedElements,
     setCopiedElements: (els: DrawElement[]) => setCopiedElements(els),
   }), [elements, showGrid, selectedElementIds, copiedElements]);
 
   /**
-   * Sync elements with grid visibility state
+   * @brief Synchronize elements with grid visibility state
+   * @details Updates all elements when grid visibility changes
    */
   useEffect(() => {
     setElements(prev => prev.map(el => ({ ...el, gridEnabled: showGrid })));
   }, [showGrid]);
 
-  // Pass these properties to elements
+  // Pass global properties to all elements
   elements.forEach((el) => {
     el.gridEnabled = showGrid;
     el.backgroundColor = backgroundColor;
@@ -110,16 +174,21 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
   });
 
   /**
-   * Effect to keep draggingIdRef in sync with draggingId.
+   * @brief Keep draggingIdRef in sync with draggingId state
+   * @details Prevents stale closure issues in event handlers
    */
   useEffect(() => {
     draggingIdRef.current = draggingId;
   }, [draggingId]);
 
   /**
-   * Effect to handle keyboard shortcuts for delete and undo.
+   * @brief Handle keyboard shortcuts for element operations
+   * @details Implements Delete, Ctrl+C (copy), Ctrl+V (paste), and Ctrl+Z (undo)
    */
   useEffect(() => {
+    // Skip adding keyboard handlers if disabled (global handling enabled)
+    if (disableKeyboardHandlers) return;
+
     function handleKeyDown(e: KeyboardEvent) {
       // Delete selected elements
       if ((e.key === "Delete") && selectedElementIds.length > 0) {
@@ -153,10 +222,12 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     }
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [selectedElementIds, elements, setSelectedElement, copiedElements]);
+  }, [selectedElementIds, elements, setSelectedElement, copiedElements, disableKeyboardHandlers]);
 
   /**
-   * Pushes the current elements to history and updates elements.
+   * @brief Add current state to history and update elements
+   * @param updater Function or value to update elements state
+   * @details Creates a snapshot of current elements before making changes for undo functionality
    */
   function pushToHistoryAndSetElements(updater: React.SetStateAction<DrawElement[]>) {
     setHistory(prev => [...prev, elements.map(el => ({ ...el }))]);
@@ -164,7 +235,10 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
   }
 
   /**
-   * Check if an element intersects with the selection rectangle
+   * @brief Check if an element intersects with a selection rectangle
+   * @param element The element to test
+   * @param selRect The selection rectangle with x, y, width, height
+   * @returns True if element intersects with selection rectangle
    */
   function isElementInSelection(element: DrawElement, selRect: { x: number; y: number; width: number; height: number }): boolean {
     const elLeft = Math.min(element.start.x, element.end.x);
@@ -250,8 +324,8 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
         y={y}
         width={width}
         height={height}
-        fill="rgba(255, 0, 0, 0.3)" // Change to red to make it more visible
-        stroke="rgba(255, 0, 0, 0.8)"
+        fill="rgba(121, 141, 242, 0.3)" // Change to make it more visible
+        stroke="rgba(21, 79, 225, 0.8)"
         strokeWidth={3} // Make it thicker
         strokeDasharray="10,5" // Make dashes bigger
         pointerEvents="none"
@@ -620,23 +694,52 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     }
   }
 
-  // Move these functions INSIDE the DrawArea component, before the return statement
-
   /**
-   * Copy selected elements to clipboard
+   * @brief Copy selected elements to internal clipboard
+   * @details Creates deep copies of selected elements and stores them for pasting.
+   * Also attempts to store in system clipboard for cross-application copying.
    */
   function copySelectedElements() {
     const elementsToCopy = elements.filter(el => selectedElementIds.includes(el.id));
     
-    if (elementsToCopy.length === 0) return;
+    if (elementsToCopy.length === 0) {
+      console.warn('No elements selected for copying');
+      return;
+    }
     
-    // Create deep copies with new IDs but preserve relative positions
-    const copiedElementsData = elementsToCopy.map(el => ({
-      ...el,
-      // Don't change ID yet - will be done during paste
-      originalId: el.id
-    }));
+    // Create deep copies preserving all element properties
+    const copiedElementsData = elementsToCopy.map(el => {
+      // Create a clean deep copy of the element
+      const elementCopy = {
+        ...el,
+        // Preserve all properties including functions (use current context functions)
+        gridEnabled: el.gridEnabled ?? showGrid,
+        backgroundColor: el.backgroundColor ?? backgroundColor,
+        setGridEnabled: setShowGrid,
+        setBackgroundColor: setBackgroundColor,
+        // Deep copy start and end positions
+        start: { ...el.start },
+        end: { ...el.end },
+        // Preserve other properties with safe defaults
+        textRegions: el.textRegions ? [...el.textRegions] : undefined,
+        rotation: el.rotation ?? 0,
+        width: el.width,
+        height: el.height,
+        type: el.type,
+        name: el.name,
+        iconName: el.iconName,
+        iconSource: el.iconSource,
+        iconSvg: el.iconSvg,
+        draw: el.draw,
+        shape: el.shape,
+        // Don't change ID yet - will be done during paste
+        originalId: el.id
+      };
+      
+      return elementCopy;
+    });
     
+    // Update state synchronously 
     setCopiedElements(copiedElementsData);
     
     // Also put in system clipboard for cross-application copying
@@ -647,14 +750,86 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
         timestamp: Date.now()
       };
       navigator.clipboard.writeText(JSON.stringify(clipboardData));
-      console.log(`Copied ${elementsToCopy.length} elements`);
+      console.log(`Copied ${elementsToCopy.length} elements to clipboard`);
     } catch (error) {
       console.warn('Could not write to system clipboard:', error);
     }
+    
+    // Return the copied elements for immediate use
+    return copiedElementsData;
   }
 
   /**
-   * Calculate bounding box of multiple elements
+   * @brief Cut selected elements to internal clipboard
+   * @details Creates deep copies of selected elements, stores them for pasting, and removes originals.
+   * Also attempts to store in system clipboard for cross-application cutting.
+   */
+  function cutSelectedElements() {
+    const elementsToCopy = elements.filter(el => selectedElementIds.includes(el.id));
+    
+    if (elementsToCopy.length === 0) {
+      console.warn('No elements selected for cutting');
+      return;
+    }
+    
+    // Create deep copies preserving all element properties (same as copy)
+    const copiedElementsData = elementsToCopy.map(el => {
+      const elementCopy = {
+        ...el,
+        gridEnabled: el.gridEnabled ?? showGrid,
+        backgroundColor: el.backgroundColor ?? backgroundColor,
+        setGridEnabled: setShowGrid,
+        setBackgroundColor: setBackgroundColor,
+        start: { ...el.start },
+        end: { ...el.end },
+        textRegions: el.textRegions ? [...el.textRegions] : undefined,
+        rotation: el.rotation ?? 0,
+        width: el.width,
+        height: el.height,
+        type: el.type,
+        name: el.name,
+        iconName: el.iconName,
+        iconSource: el.iconSource,
+        iconSvg: el.iconSvg,
+        draw: el.draw,
+        shape: el.shape,
+        originalId: el.id
+      };
+      
+      return elementCopy;
+    });
+    
+    // Update clipboard state
+    setCopiedElements(copiedElementsData);
+    
+    // Remove the original elements (this is what makes it "cut" instead of "copy")
+    pushToHistoryAndSetElements(prev => prev.filter(el => !selectedElementIds.includes(el.id)));
+    setSelectedElementIds([]);
+    setHoveredElementId(null);
+    setSelectedElement?.(undefined);
+    
+    // Also put in system clipboard
+    try {
+      const clipboardData = {
+        type: 'railway-drawer-elements',
+        elements: copiedElementsData,
+        timestamp: Date.now(),
+        operation: 'cut' // Mark as cut operation
+      };
+      navigator.clipboard.writeText(JSON.stringify(clipboardData));
+      console.log(`Cut ${elementsToCopy.length} elements to clipboard`);
+    } catch (error) {
+      console.warn('Could not write to system clipboard:', error);
+    }
+    
+    // Return the cut elements for immediate use
+    return copiedElementsData;
+  }
+
+  /**
+   * @brief Calculate bounding box of multiple elements
+   * @param elements Array of elements to calculate bounds for
+   * @returns Rectangle with x, y, width, height of bounding box
    */
   function calculateElementsBounds(elements: DrawElement[]) {
     if (elements.length === 0) {
@@ -667,6 +842,14 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     let maxY = -Infinity;
     
     elements.forEach(el => {
+      // Validate element has required properties
+      if (!el.start || !el.end || 
+          typeof el.start.x !== 'number' || typeof el.start.y !== 'number' ||
+          typeof el.end.x !== 'number' || typeof el.end.y !== 'number') {
+        console.warn('Invalid element found while calculating bounds:', el);
+        return;
+      }
+      
       const left = Math.min(el.start.x, el.end.x);
       const right = Math.max(el.start.x, el.end.x);
       const top = Math.min(el.start.y, el.end.y);
@@ -678,6 +861,11 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       maxY = Math.max(maxY, bottom);
     });
     
+    // Handle case where no valid elements were found
+    if (minX === Infinity || minY === Infinity || maxX === -Infinity || maxY === -Infinity) {
+      return { x: 0, y: 0, width: 0, height: 0 };
+    }
+    
     return {
       x: minX,
       y: minY,
@@ -687,10 +875,16 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
   }
 
   /**
-   * Paste elements at current mouse position or center of viewport
+   * @brief Paste elements from clipboard at specified position
+   * @param pastePosition Optional position to paste at, defaults to center of viewport
+   * @details Creates new elements with unique IDs, centers them at target position,
+   * and adds them to the drawing area while selecting them.
    */
   function pasteElements(pastePosition?: { x: number; y: number }) {
-    if (copiedElements.length === 0) return;
+    if (copiedElements.length === 0) {
+      console.warn('No elements in clipboard to paste');
+      return;
+    }
     
     // Calculate paste position
     let targetX, targetY;
@@ -722,7 +916,9 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     // Create new elements with new IDs and offset positions
     const newElements = copiedElements.map(el => {
       const newId = `${el.type}_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-      return {
+      
+      // Create new element preserving all properties
+      const newElement = {
         ...el,
         id: newId,
         start: {
@@ -733,34 +929,61 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
           x: el.end.x + offsetX,
           y: el.end.y + offsetY
         },
+        // Ensure all properties are preserved
+        gridEnabled: showGrid, // Use current grid state
+        backgroundColor: backgroundColor, // Use current background
+        setGridEnabled: setShowGrid,
+        setBackgroundColor: setBackgroundColor,
+        // Deep copy text regions if they exist
+        textRegions: el.textRegions ? el.textRegions.map(region => ({ ...region })) : undefined,
         // Remove the originalId property
         originalId: undefined
       };
+      
+      return newElement;
     });
     
+    // Validate elements before adding
+    const validElements = newElements.filter(el => 
+      el.id && el.type && el.start && el.end &&
+      typeof el.start.x === 'number' && typeof el.start.y === 'number' &&
+      typeof el.end.x === 'number' && typeof el.end.y === 'number'
+    );
+    
+    if (validElements.length !== newElements.length) {
+      console.warn(`${newElements.length - validElements.length} invalid elements filtered out during paste`);
+    }
+    
+    if (validElements.length === 0) {
+      console.error('No valid elements to paste');
+      return;
+    }
+    
     // Add to history before making changes
-    pushToHistoryAndSetElements(prev => [...prev, ...newElements]);
+    pushToHistoryAndSetElements(prev => [...prev, ...validElements]);
     
     // Select the newly pasted elements
-    const newElementIds = newElements.map(el => el.id);
+    const newElementIds = validElements.map(el => el.id);
     setSelectedElementIds(newElementIds);
     
     if (newElementIds.length === 1) {
-      setSelectedElement?.(newElements[0]);
+      setSelectedElement?.(validElements[0]);
     } else {
       setSelectedElement?.(undefined);
     }
     
-    console.log(`Pasted ${newElements.length} elements at (${targetX.toFixed(1)}, ${targetY.toFixed(1)})`);
+    console.log(`Pasted ${validElements.length} elements at (${targetX.toFixed(1)}, ${targetY.toFixed(1)})`);
   }
 
   /**
-   * Handle context menu (right-click)
+   * @brief Handle right-click context menu
+   * @param e The mouse event
+   * @details Shows context menu and allows pasting at right-click position
    */
   function handleContextMenu(e: React.MouseEvent) {
     e.preventDefault();
     
-    // You can implement a context menu here
+    // Calculate click position in drawing coordinates
     const svgRect = svgRef.current?.getBoundingClientRect();
     if (!svgRect) return;
     
@@ -773,7 +996,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     }
   }
 
-  // --- Main Render ---
+  /** @brief Main SVG render with all interactive features */
   return (
     <svg
       ref={svgRef}
@@ -792,10 +1015,12 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       onDragOver={e => e.preventDefault()}
       onDrop={handleDrop}
     >
+      {/* Main drawing transform group - handles pan and zoom */}
       <g transform={`translate(${panOffset.x}, ${panOffset.y}) scale(${zoom})`}>
+        {/* Grid lines */}
         {showGrid && renderGrid()}
         
-        {/* Render elements */}
+        {/* Render all drawing elements */}
         {elements.map(el => (
           <RenderElement
             key={el.id}
@@ -810,7 +1035,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
           />
         ))}
         
-        {/* Render invisible bounding rectangles for selected elements */}
+        {/* Invisible bounding rectangles for easier selection of selected elements */}
         {elements.map(el => {
           if (!selectedElementIds.includes(el.id)) return null;
           
@@ -822,7 +1047,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
           return (
             <rect
               key={`bounding-${el.id}`}
-              x={left - 5} // Add 5px padding
+              x={left - 5} // Add 5px padding for easier clicking
               y={top - 5}
               width={width + 10}
               height={height + 10}
@@ -834,7 +1059,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
           );
         })}
         
-        {/* Render selection outline rectangles for visual feedback */}
+        {/* Visual selection outline rectangles */}
         {elements.map(el => {
           if (!selectedElementIds.includes(el.id)) return null;
           
@@ -852,14 +1077,14 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
               height={height + 4}
               fill="none"
               stroke="rgba(0, 123, 255, 0.8)"
-              strokeWidth={1 / zoom} // Adjust for zoom
+              strokeWidth={1 / zoom} // Adjust stroke width for zoom
               strokeDasharray={`${3 / zoom},${3 / zoom}`}
               pointerEvents="none"
             />
           );
         })}
         
-        {/* Render area selection rectangle */}
+        {/* Area selection rectangle */}
         {renderSelectionRectangle()}
       </g>
     </svg>
