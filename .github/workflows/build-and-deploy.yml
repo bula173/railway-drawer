@@ -47,10 +47,7 @@ jobs:
     - name: Install dependencies
       run: npm ci
       
-    - name: Run type check
-      run: npm run build
-      
-    - name: Build project
+    - name: Type check and build project
       run: npm run build
       
     - name: Setup Pages
@@ -73,7 +70,7 @@ jobs:
   deploy:
     if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.deploy_to_pages == 'true'))
     environment:
-      name: GitHub Pages
+      name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
