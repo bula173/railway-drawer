@@ -154,16 +154,9 @@ const PropertiesPanel: React.FC<{
                   type="color"
                   value={element.styles?.fill || "#3b82f6"}
                   onChange={(e) => {
-                    const defaultStyles = {
-                      fill: "#3b82f6",
-                      stroke: "#1e293b", 
-                      strokeWidth: 2,
-                      opacity: 1
-                    };
                     const updatedElement = { 
                       ...element, 
                       styles: { 
-                        ...defaultStyles,
                         ...element.styles, 
                         fill: e.target.value 
                       }
@@ -179,16 +172,9 @@ const PropertiesPanel: React.FC<{
                   type="color"
                   value={element.styles?.stroke || "#1e293b"}
                   onChange={(e) => {
-                    const defaultStyles = {
-                      fill: "#3b82f6",
-                      stroke: "#1e293b", 
-                      strokeWidth: 2,
-                      opacity: 1
-                    };
                     const updatedElement = { 
                       ...element, 
                       styles: { 
-                        ...defaultStyles,
                         ...element.styles, 
                         stroke: e.target.value 
                       }
@@ -209,16 +195,9 @@ const PropertiesPanel: React.FC<{
                   step="0.5"
                   value={element.styles?.strokeWidth || 2}
                   onChange={(e) => {
-                    const defaultStyles = {
-                      fill: "#3b82f6",
-                      stroke: "#1e293b", 
-                      strokeWidth: 2,
-                      opacity: 1
-                    };
                     const updatedElement = { 
                       ...element, 
                       styles: { 
-                        ...defaultStyles,
                         ...element.styles, 
                         strokeWidth: parseFloat(e.target.value) || 2 
                       }
@@ -237,16 +216,9 @@ const PropertiesPanel: React.FC<{
                   step="0.1"
                   value={element.styles?.opacity || 1}
                   onChange={(e) => {
-                    const defaultStyles = {
-                      fill: "#3b82f6",
-                      stroke: "#1e293b", 
-                      strokeWidth: 2,
-                      opacity: 1
-                    };
                     const updatedElement = { 
                       ...element, 
                       styles: { 
-                        ...defaultStyles,
                         ...element.styles, 
                         opacity: parseFloat(e.target.value) || 1 
                       }
@@ -264,16 +236,9 @@ const PropertiesPanel: React.FC<{
                 value={element.styles?.strokeDasharray || "none"}
                 onChange={(e) => {
                   const value = e.target.value === "none" ? undefined : e.target.value;
-                  const defaultStyles = {
-                    fill: "#3b82f6",
-                    stroke: "#1e293b", 
-                    strokeWidth: 2,
-                    opacity: 1
-                  };
                   const updatedElement = { 
                     ...element, 
                     styles: { 
-                      ...defaultStyles,
                       ...element.styles, 
                       strokeDasharray: value 
                     }
