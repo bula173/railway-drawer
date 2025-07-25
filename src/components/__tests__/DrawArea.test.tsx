@@ -144,8 +144,14 @@ describe('DrawArea Element State Management', () => {
     render(<DrawArea ref={drawAreaRef} {...defaultProps} />);
     
     const originalElement = createTestElement('preserve-test');
-    originalElement.textRegions = [
-      { id: 'text-1', text: 'Original text', x: 10, y: 20, width: 100, height: 30 }
+    originalElement.shapeElements = [
+      {
+        id: 'main-shape',
+        svg: '<rect width="50" height="50" fill="blue"/>',
+        textRegions: [
+          { id: 'text-1', text: 'Original text', x: 10, y: 20, width: 100, height: 30 }
+        ]
+      }
     ];
     
     drawAreaRef.current?.setElements([originalElement]);
@@ -170,8 +176,9 @@ describe('DrawArea Element State Management', () => {
       expect(element.id).toBe('preserve-test');
       expect(element.name).toBe('Test Element');
       expect(element.shape).toBe('<rect width="50" height="50" fill="blue"/>');
-      expect(element.textRegions).toHaveLength(1);
-      expect(element.textRegions?.[0].text).toBe('Original text');
+      expect(element.shapeElements).toHaveLength(1);
+      expect(element.shapeElements?.[0].textRegions).toHaveLength(1);
+      expect(element.shapeElements?.[0].textRegions?.[0].text).toBe('Original text');
       expect(element.styles?.fill).toBe('#purple');
       expect(element.styles?.strokeWidth).toBe(3);
     });

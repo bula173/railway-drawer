@@ -733,7 +733,6 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       setGridEnabled: setShowGrid,
       setBackgroundColor,
       ...(defaultStyles && { styles: defaultStyles }),
-      ...(item.textRegions && { textRegions: item.textRegions }),
     };
 
     switch (item.draw?.type) {

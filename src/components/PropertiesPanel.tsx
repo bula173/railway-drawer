@@ -460,35 +460,58 @@ const PropertiesPanel: React.FC<{
         </div>
         
         {/* Text Regions Section */}
-        {element.textRegions && element.textRegions.length > 0 && (
-          <div className="border-t border-slate-200 pt-4">
-            <div className="font-medium text-slate-700 mb-3">Text Regions</div>
-            <div className="space-y-3">
-              {element.textRegions.map((region, index) => (
-                <div key={index} className="p-3 bg-slate-50 rounded-lg">
-                  <div className="text-xs text-slate-600 mb-2">
-                    <span className="font-medium">Region {index + 1}:</span> {region.id}
+        {(() => {
+          // Collect all textRegions from shapeElements
+          const allTextRegions = element.shapeElements?.flatMap((shapeElement, shapeIndex) => 
+            shapeElement.textRegions?.map((region, regionIndex) => ({
+              ...region,
+              shapeElementIndex: shapeIndex,
+              regionIndex,
+              shapeElementId: shapeElement.id
+            })) || []
+          ) || [];
+
+          return allTextRegions.length > 0 && (
+            <div className="border-t border-slate-200 pt-4">
+              <div className="font-medium text-slate-700 mb-3">Text Regions</div>
+              <div className="space-y-3">
+                {allTextRegions.map((region, index) => (
+                  <div key={`${region.shapeElementId}-${region.regionIndex}`} className="p-3 bg-slate-50 rounded-lg">
+                    <div className="text-xs text-slate-600 mb-2">
+                      <span className="font-medium">Region {index + 1}:</span> {region.id} 
+                      <span className="text-slate-400 ml-2">({region.shapeElementId})</span>
+                    </div>
+                    <textarea
+                      value={region.text}
+                      onChange={(e) => {
+                        // Update the specific textRegion in the specific shapeElement
+                        const updatedShapeElements = element.shapeElements?.map((shapeElement, shapeIndex) => {
+                          if (shapeIndex === region.shapeElementIndex) {
+                            return {
+                              ...shapeElement,
+                              textRegions: shapeElement.textRegions?.map((r, regionIndex) =>
+                                regionIndex === region.regionIndex ? { ...r, text: e.target.value } : r
+                              )
+                            };
+                          }
+                          return shapeElement;
+                        });
+                        
+                        if (updatedShapeElements) {
+                          const updatedElement = { ...element, shapeElements: updatedShapeElements };
+                          updateElement(updatedElement);
+                        }
+                      }}
+                      rows={3}
+                      className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 text-sm"
+                      placeholder="Enter text content..."
+                    />
                   </div>
-                  <textarea
-                    value={region.text}
-                    onChange={(e) => {
-                      const updatedRegions = element.textRegions?.map((r, i) =>
-                        i === index ? { ...r, text: e.target.value } : r
-                      );
-                      if (updatedRegions) {
-                        const updatedElement = { ...element, textRegions: updatedRegions };
-                        updateElement(updatedElement);
-                      }
-                    }}
-                    rows={3}
-                    className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 text-sm"
-                    placeholder="Enter text content..."
-                  />
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-        )}
+          );
+        })()}
       </div>
     </div>
   );

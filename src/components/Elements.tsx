@@ -178,16 +178,6 @@ export interface DrawElement {
   
   // Content properties
   text?: string;
-  textRegions?: {
-    id: string;
-    x: number;
-    y: number;
-    width: number;
-    height: number;
-    text: string;
-    fontSize?: number;
-    align?: 'left' | 'center' | 'right';
-  }[];
   
   // Global properties (for draw area)
   gridEnabled?: boolean;
@@ -235,10 +225,14 @@ export const ElementSVG: React.FC<{ el: DrawElement }> = ({ el }) => {
         let shapeToRender = '';
         
         // Priority: dynamic UML class > shapeElements > shape
-        if (el.id === "uml_class" && el.textRegions && el.textRegions.length >= 3) {
-          const dynamicUML = generateDynamicUMLClassSVG(el);
-          if (dynamicUML.shape) {
-            shapeToRender = dynamicUML.shape;
+        if (el.id === "uml_class" && el.shapeElements) {
+          // Check if UML class has enough textRegions across all shapeElements
+          const allTextRegions = calculateAdjustedTextRegions(el);
+          if (allTextRegions.length >= 3) {
+            const dynamicUML = generateDynamicUMLClassSVG(el);
+            if (dynamicUML.shape) {
+              shapeToRender = dynamicUML.shape;
+            }
           }
         } else if (el.shapeElements && el.shapeElements.length > 0) {
           // Generate SVG from shape elements (only if there are elements)
@@ -433,14 +427,12 @@ export function getElementBoundingRect(el: DrawElement) {
   }
   
   // Check if element has text regions that might extend beyond current bounds
-  const allTextRegions = (el.textRegions && el.textRegions.length > 0) 
-    ? el.textRegions 
-    : (el.shapeElements ? collectTextRegionsFromShapeElements(el.shapeElements) : []);
+  const allTextRegions = el.shapeElements ? collectTextRegionsFromShapeElements(el.shapeElements) : [];
     
   if (allTextRegions.length > 0) {
     const adjustedRegions = calculateAdjustedTextRegions(el);
     
-    adjustedRegions.forEach(adjustedRegion => {
+    adjustedRegions.forEach((adjustedRegion: any) => {
       // Center the text within the region and calculate actual bounds
       let textLeft = adjustedRegion.scaledX;
       let textRight = adjustedRegion.scaledX + adjustedRegion.effectiveWidth;
@@ -479,12 +471,11 @@ export function getElementBoundingRect(el: DrawElement) {
  * @param el The element containing text regions.
  * @returns Array of adjusted region data with positions and dimensions.
  */
-export function calculateAdjustedTextRegions(el: DrawElement) {
-  // First check for legacy textRegions on element level
-  let textRegions = el.textRegions || [];
+export function calculateAdjustedTextRegions(el: DrawElement): any[] {
+  // Collect textRegions from shapeElements (standardized approach)
+  let textRegions: any[] = [];
   
-  // If no legacy text regions, collect from shapeElements
-  if (textRegions.length === 0 && el.shapeElements) {
+  if (el.shapeElements) {
     const shapeElementRegions = collectTextRegionsFromShapeElements(el.shapeElements);
     textRegions = shapeElementRegions || [];
   }
@@ -503,7 +494,7 @@ export function calculateAdjustedTextRegions(el: DrawElement) {
       const scaleX = width / originalWidth;
       const scaleY = height / originalHeight;
       
-      return dynamicUML.textRegions.map((region, index) => {
+      return dynamicUML.textRegions.map((region: any, index: number) => {
         const scaledX = el.start.x + (region.x * scaleX);
         const scaledY = el.start.y + (region.y * scaleY);
         const scaledWidth = region.width * scaleX;
@@ -547,7 +538,7 @@ export function calculateAdjustedTextRegions(el: DrawElement) {
     // Estimate text bounds based on content
     const fontSize = (region.fontSize || 12) * Math.min(scaleX, scaleY);
     const lines = (region.text || '').split('\n');
-    const maxLineLength = Math.max(...lines.map(line => line.length));
+    const maxLineLength = Math.max(...lines.map((line: string) => line.length));
     
     // Rough text width estimation (chars * fontSize * 0.6)
     const estimatedTextWidth = maxLineLength * fontSize * 0.6;
@@ -652,12 +643,15 @@ export function generateSVGFromElements(shapeElements: ShapeElement[]): string {
  * @param el The UML class element
  * @returns Object containing the SVG shape and adjusted text regions
  */
-export function generateDynamicUMLClassSVG(el: DrawElement) {
-  if (!el.textRegions || el.textRegions.length < 3) {
+export function generateDynamicUMLClassSVG(el: DrawElement): any {
+  // Get textRegions from shapeElements using the standardized approach
+  const allTextRegions = calculateAdjustedTextRegions(el);
+  
+  if (!allTextRegions || allTextRegions.length < 3) {
     // Fallback to original shape if no text regions
     return {
       shape: el.shape,
-      textRegions: el.textRegions
+      textRegions: allTextRegions
     };
   }
 
@@ -669,7 +663,7 @@ export function generateDynamicUMLClassSVG(el: DrawElement) {
   const scaleY = height / originalHeight;
   
   // Calculate required heights for each section based on text content
-  const sections = el.textRegions.map((region, index) => {
+  const sections = allTextRegions.map((region: any, index: number) => {
     const fontSize = (region.fontSize || 12) * Math.min(scaleX, scaleY);
     const lines = (region.text || '').split('\n');
     const textHeight = lines.length * fontSize * 1.4; // Line height factor
@@ -685,7 +679,7 @@ export function generateDynamicUMLClassSVG(el: DrawElement) {
 
   // Calculate section positions and total height
   let currentY = 0;
-  const adjustedSections = sections.map((section) => {
+  const adjustedSections = sections.map((section: any) => {
     const sectionY = currentY;
     const sectionHeight = section.requiredHeight;
     currentY += sectionHeight;
@@ -745,7 +739,7 @@ export function generateDynamicUMLClassSVG(el: DrawElement) {
   return {
     shape: svgShape,
     shapeElements: shapeElements,
-    textRegions: adjustedSections.map(section => section.adjustedRegion),
+    textRegions: adjustedSections.map((section: any) => section.adjustedRegion),
     adjustedHeight: totalHeight
   };
 }
@@ -1350,10 +1344,9 @@ export function RenderElement({
    */
   function handleTextRegionDoubleClick(regionIndex: number, e: React.MouseEvent) {
     e.stopPropagation();
-    if (!el.textRegions) return;
-    
-    setEditingTextRegion(regionIndex);
-    setEditRegionValue(el.textRegions[regionIndex].text);
+    // Text editing with new structure requires more complex logic
+    // For now, disable direct editing - use PropertiesPanel instead
+    console.log('Text editing for element with standardized textRegions not yet implemented', regionIndex);
   }
 
   /**
@@ -1363,12 +1356,9 @@ export function RenderElement({
    * @param newValue The new text value.
    */
   function handleTextRegionEdit(regionIndex: number, newValue: string) {
-    if (!el.textRegions) return;
-    
-    const updatedRegions = [...el.textRegions];
-    updatedRegions[regionIndex] = { ...updatedRegions[regionIndex], text: newValue };
-    
-    updateElement({ ...el, textRegions: updatedRegions });
+    // Text editing with new structure requires more complex logic
+    // For now, disable direct editing - use PropertiesPanel instead
+    console.log('Text editing for element with standardized textRegions not yet implemented', regionIndex, newValue);
     setEditingTextRegion(null);
   }
 
@@ -1378,16 +1368,14 @@ export function RenderElement({
    * @returns Array of JSX elements for text regions.
    */
   function renderTextRegions() {
-    // Get text regions from either legacy property or shapeElements
-    const allTextRegions = (el.textRegions && el.textRegions.length > 0) 
-      ? el.textRegions 
-      : (el.shapeElements ? collectTextRegionsFromShapeElements(el.shapeElements) || [] : []);
+    // Get text regions from shapeElements (standardized approach)
+    const allTextRegions = el.shapeElements ? collectTextRegionsFromShapeElements(el.shapeElements) || [] : [];
       
     if (allTextRegions.length === 0) return null;
 
     const adjustedRegions = calculateAdjustedTextRegions(el);
 
-    return adjustedRegions.map((adjustedRegion) => {
+    return adjustedRegions.map((adjustedRegion: any) => {
       if (editingTextRegion === adjustedRegion.index) {
         // Render textarea for editing
         return (

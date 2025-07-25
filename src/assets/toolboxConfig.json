@@ -427,7 +427,39 @@
     "shapeElements": [
       {
         "id": "mainRect",
-        "svg": "<rect x='0' y='0' width='120' height='80' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<rect x='0' y='0' width='120' height='80' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>",
+        "textRegions": [
+          {
+            "id": "className",
+            "x": 10,
+            "y": 5,
+            "width": 100,
+            "height": 15,
+            "text": "ClassName",
+            "fontSize": 12,
+            "align": "center"
+          },
+          {
+            "id": "attributes",
+            "x": 10,
+            "y": 25,
+            "width": 100,
+            "height": 20,
+            "text": "+ attribute: type",
+            "fontSize": 10,
+            "align": "left"
+          },
+          {
+            "id": "methods",
+            "x": 10,
+            "y": 55,
+            "width": 100,
+            "height": 20,
+            "text": "+ method(): type",
+            "fontSize": 10,
+            "align": "left"
+          }
+        ]
       },
       {
         "id": "divider1",
@@ -436,38 +468,6 @@
       {
         "id": "divider2",
         "svg": "<line x1='0' y1='50' x2='120' y2='50' stroke='#000' stroke-width='1' vector-effect='non-scaling-stroke'/>"
-      }
-    ],
-    "textRegions": [
-      {
-        "id": "className",
-        "x": 10,
-        "y": 5,
-        "width": 100,
-        "height": 15,
-        "text": "ClassName",
-        "fontSize": 12,
-        "align": "center"
-      },
-      {
-        "id": "attributes",
-        "x": 10,
-        "y": 25,
-        "width": 100,
-        "height": 20,
-        "text": "+ attribute: type",
-        "fontSize": 10,
-        "align": "left"
-      },
-      {
-        "id": "methods",
-        "x": 10,
-        "y": 55,
-        "width": 100,
-        "height": 20,
-        "text": "+ method(): type",
-        "fontSize": 10,
-        "align": "left"
       }
     ]
   },
@@ -490,33 +490,33 @@
       },
       {
         "id": "methodsRect",
-        "svg": "<rect x='10' y='120' width='100' height='60' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<rect x='10' y='120' width='100' height='60' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>",
+        "textRegions": [
+          {
+            "id": "interfaceName",
+            "x": 10,
+            "y": 125,
+            "width": 100,
+            "height": 15,
+            "text": "<<interface>>",
+            "fontSize": 10,
+            "align": "center"
+          },
+          {
+            "id": "methods",
+            "x": 10,
+            "y": 145,
+            "width": 100,
+            "height": 30,
+            "text": "+ method(): type",
+            "fontSize": 10,
+            "align": "left"
+          }
+        ]
       },
       {
         "id": "divider",
         "svg": "<line x1='10' y1='140' x2='110' y2='140' stroke='#000' stroke-width='1' vector-effect='non-scaling-stroke'/>"
-      }
-    ],
-    "textRegions": [
-      {
-        "id": "interfaceName",
-        "x": 10,
-        "y": 125,
-        "width": 100,
-        "height": 15,
-        "text": "<<interface>>",
-        "fontSize": 10,
-        "align": "center"
-      },
-      {
-        "id": "methods",
-        "x": 10,
-        "y": 145,
-        "width": 100,
-        "height": 30,
-        "text": "+ method(): type",
-        "fontSize": 10,
-        "align": "left"
       }
     ]
   },
