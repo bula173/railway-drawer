@@ -224,17 +224,11 @@ export const ElementSVG: React.FC<{ el: DrawElement }> = ({ el }) => {
         // Determine the shape to render
         let shapeToRender = '';
         
-        // Priority: dynamic UML class > shapeElements > shape
-        if (el.id === "uml_class" && el.shapeElements) {
-          // Check if UML class has enough textRegions across all shapeElements
-          const allTextRegions = calculateAdjustedTextRegions(el);
-          if (allTextRegions.length >= 3) {
-            const dynamicUML = generateDynamicUMLClassSVG(el);
-            if (dynamicUML.shape) {
-              shapeToRender = dynamicUML.shape;
-            }
-          }
-        } else if (el.shapeElements && el.shapeElements.length > 0) {
+        // Use shapeElements for all custom elements (including UML classes)
+        if (el.shapeElements && el.shapeElements.length > 0) {
+          // Generate SVG from shape elements (only if there are elements)
+          shapeToRender = generateSVGFromElements(el.shapeElements!);
+        } else if (el.shape) {
           // Generate SVG from shape elements (only if there are elements)
           shapeToRender = generateSVGFromElements(el.shapeElements);
         } else if (el.shape) {
@@ -482,42 +476,7 @@ export function calculateAdjustedTextRegions(el: DrawElement): any[] {
   
   if (textRegions.length === 0) return [];
   
-  // Special handling for UML class elements
-  if (el.id === "uml_class" && textRegions.length >= 3) {
-    const dynamicUML = generateDynamicUMLClassSVG(el);
-    if (dynamicUML.textRegions) {
-      // Use the dynamically calculated text regions
-      const width = Math.abs(el.end.x - el.start.x);
-      const height = Math.abs(el.end.y - el.start.y);
-      const originalWidth = el.width || 120;
-      const originalHeight = el.height || 80;
-      const scaleX = width / originalWidth;
-      const scaleY = height / originalHeight;
-      
-      return dynamicUML.textRegions.map((region: any, index: number) => {
-        const scaledX = el.start.x + (region.x * scaleX);
-        const scaledY = el.start.y + (region.y * scaleY);
-        const scaledWidth = region.width * scaleX;
-        const scaledHeight = region.height * scaleY;
-        const fontSize = (region.fontSize || 12) * Math.min(scaleX, scaleY);
-        const lines = (region.text || '').split('\n');
-        
-        return {
-          ...region,
-          index,
-          scaledX,
-          scaledY,
-          scaledWidth,
-          scaledHeight,
-          effectiveWidth: scaledWidth,
-          effectiveHeight: scaledHeight,
-          fontSize,
-          lines
-        };
-      });
-    }
-  }
-  
+  // Process all textRegions with standard scaling and positioning
   const shapeWidth = el.width && el.width > 0 ? el.width : 48;
   const shapeHeight = el.height && el.height > 0 ? el.height : 48;
   const width = Math.abs(el.end.x - el.start.x);
@@ -526,8 +485,8 @@ export function calculateAdjustedTextRegions(el: DrawElement): any[] {
   const scaleY = shapeHeight ? height / shapeHeight : 1;
   
   let cumulativeYOffset = 0;
-  
-  return textRegions.map((region, index) => {
+
+  return textRegions.map((region: any, index: number) => {
     // Calculate scaled text region bounds with cumulative offset
     const scaledX = el.start.x + (region.x * scaleX);
     const originalScaledY = el.start.y + (region.y * scaleY);

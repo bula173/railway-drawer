@@ -426,48 +426,52 @@
     "width": 120,
     "shapeElements": [
       {
-        "id": "mainRect",
-        "svg": "<rect x='0' y='0' width='120' height='80' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>",
+        "id": "classNameRect",
+        "svg": "<rect x='0' y='0' width='120' height='20' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>",
         "textRegions": [
           {
             "id": "className",
-            "x": 10,
+            "x": 5,
             "y": 5,
-            "width": 100,
-            "height": 15,
+            "width": 110,
+            "height": 10,
             "text": "ClassName",
             "fontSize": 12,
             "align": "center"
-          },
+          }
+        ]
+      },
+      {
+        "id": "attributesRect",
+        "svg": "<rect x='0' y='20' width='120' height='30' fill='#fff' stroke='#000' stroke-width='2' stroke-dasharray='0' vector-effect='non-scaling-stroke'/>",
+        "textRegions": [
           {
             "id": "attributes",
-            "x": 10,
+            "x": 5,
             "y": 25,
-            "width": 100,
+            "width": 110,
             "height": 20,
-            "text": "+ attribute: type",
-            "fontSize": 10,
-            "align": "left"
-          },
-          {
-            "id": "methods",
-            "x": 10,
-            "y": 55,
-            "width": 100,
-            "height": 20,
-            "text": "+ method(): type",
+            "text": "+ attribute1: type\n+ attribute2: type",
             "fontSize": 10,
             "align": "left"
           }
         ]
       },
       {
-        "id": "divider1",
-        "svg": "<line x1='0' y1='20' x2='120' y2='20' stroke='#000' stroke-width='1' vector-effect='non-scaling-stroke'/>"
-      },
-      {
-        "id": "divider2",
-        "svg": "<line x1='0' y1='50' x2='120' y2='50' stroke='#000' stroke-width='1' vector-effect='non-scaling-stroke'/>"
+        "id": "methodsRect",
+        "svg": "<rect x='0' y='50' width='120' height='30' fill='#fff' stroke='#000' stroke-width='2' stroke-dasharray='0' vector-effect='non-scaling-stroke'/>",
+        "textRegions": [
+          {
+            "id": "methods",
+            "x": 5,
+            "y": 55,
+            "width": 110,
+            "height": 20,
+            "text": "+ method1(): type\n+ method2(): type",
+            "fontSize": 10,
+            "align": "left"
+          }
+        ]
       }
     ]
   },
@@ -489,34 +493,36 @@
         "svg": "<line x1='60' y1='70' x2='60' y2='120' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       },
       {
-        "id": "methodsRect",
-        "svg": "<rect x='10' y='120' width='100' height='60' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>",
+        "id": "interfaceNameRect",
+        "svg": "<rect x='10' y='120' width='100' height='20' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>",
         "textRegions": [
           {
             "id": "interfaceName",
-            "x": 10,
+            "x": 15,
             "y": 125,
-            "width": 100,
-            "height": 15,
+            "width": 90,
+            "height": 10,
             "text": "<<interface>>",
             "fontSize": 10,
             "align": "center"
-          },
-          {
-            "id": "methods",
-            "x": 10,
-            "y": 145,
-            "width": 100,
-            "height": 30,
-            "text": "+ method(): type",
-            "fontSize": 10,
-            "align": "left"
           }
         ]
       },
       {
-        "id": "divider",
-        "svg": "<line x1='10' y1='140' x2='110' y2='140' stroke='#000' stroke-width='1' vector-effect='non-scaling-stroke'/>"
+        "id": "methodsRect",
+        "svg": "<rect x='10' y='140' width='100' height='40' fill='#fff' stroke='#000' stroke-width='2' stroke-dasharray='0' vector-effect='non-scaling-stroke'/>",
+        "textRegions": [
+          {
+            "id": "methods",
+            "x": 15,
+            "y": 145,
+            "width": 90,
+            "height": 30,
+            "text": "+ method1(): type\n+ method2(): type",
+            "fontSize": 10,
+            "align": "left"
+          }
+        ]
       }
     ]
   },
