@@ -209,44 +209,92 @@ const PropertiesPanel: React.FC<{
             <div className="grid grid-cols-2 gap-3">
               <div>
                 <label className="block text-sm font-medium text-slate-700 mb-1">Fill Color:</label>
-                <input
-                  type="color"
-                  value={element.styles?.fill || "#3b82f6"}
-                  onChange={(e) => {
-                    const updatedElement = { 
-                      ...element, 
-                      styles: { 
-                        ...element.styles, 
-                        fill: e.target.value 
+                <div className="relative">
+                  <input
+                    type="color"
+                    value={element.styles?.fill || "#3b82f6"}
+                    onChange={(e) => {
+                      // Only create styles object if the value is actually different from the fallback
+                      const newValue = e.target.value;
+                      if (newValue !== "#3b82f6" || element.styles?.fill) {
+                        const updatedElement = { 
+                          ...element, 
+                          styles: { 
+                            ...element.styles, 
+                            fill: newValue 
+                          }
+                        };
+                        updateElement(updatedElement);
                       }
-                    };
-                    updateElement(updatedElement);
-                  }}
-                  className="w-full h-8 border border-slate-300 rounded cursor-pointer"
-                />
+                    }}
+                    className="w-full h-8 border border-slate-300 rounded cursor-pointer"
+                    disabled={!element.styles?.fill}
+                  />
+                  {!element.styles?.fill && (
+                    <button
+                      onClick={() => {
+                        const updatedElement = { 
+                          ...element, 
+                          styles: { 
+                            ...element.styles, 
+                            fill: "#3b82f6" 
+                          }
+                        };
+                        updateElement(updatedElement);
+                      }}
+                      className="absolute inset-0 bg-transparent border-2 border-dashed border-blue-300 rounded flex items-center justify-center text-xs text-blue-600 hover:bg-blue-50 transition-colors"
+                    >
+                      Override
+                    </button>
+                  )}
+                </div>
                 <div className="text-xs text-slate-500 mt-1">
-                  {element.styles?.fill ? "Custom override" : "Default/Original"}
+                  {element.styles?.fill ? "Custom override" : "Using original colors"}
                 </div>
               </div>
               <div>
                 <label className="block text-sm font-medium text-slate-700 mb-1">Stroke Color:</label>
-                <input
-                  type="color"
-                  value={element.styles?.stroke || "#1e293b"}
-                  onChange={(e) => {
-                    const updatedElement = { 
-                      ...element, 
-                      styles: { 
-                        ...element.styles, 
-                        stroke: e.target.value 
+                <div className="relative">
+                  <input
+                    type="color"
+                    value={element.styles?.stroke || "#1e293b"}
+                    onChange={(e) => {
+                      // Only create styles object if the value is actually different from the fallback
+                      const newValue = e.target.value;
+                      if (newValue !== "#1e293b" || element.styles?.stroke) {
+                        const updatedElement = { 
+                          ...element, 
+                          styles: { 
+                            ...element.styles, 
+                            stroke: newValue 
+                          }
+                        };
+                        updateElement(updatedElement);
                       }
-                    };
-                    updateElement(updatedElement);
-                  }}
-                  className="w-full h-8 border border-slate-300 rounded cursor-pointer"
-                />
+                    }}
+                    className="w-full h-8 border border-slate-300 rounded cursor-pointer"
+                    disabled={!element.styles?.stroke}
+                  />
+                  {!element.styles?.stroke && (
+                    <button
+                      onClick={() => {
+                        const updatedElement = { 
+                          ...element, 
+                          styles: { 
+                            ...element.styles, 
+                            stroke: "#1e293b" 
+                          }
+                        };
+                        updateElement(updatedElement);
+                      }}
+                      className="absolute inset-0 bg-transparent border-2 border-dashed border-blue-300 rounded flex items-center justify-center text-xs text-blue-600 hover:bg-blue-50 transition-colors"
+                    >
+                      Override
+                    </button>
+                  )}
+                </div>
                 <div className="text-xs text-slate-500 mt-1">
-                  {element.styles?.stroke ? "Custom override" : "Default/Original"}
+                  {element.styles?.stroke ? "Custom override" : "Using original colors"}
                 </div>
               </div>
             </div>
@@ -254,69 +302,144 @@ const PropertiesPanel: React.FC<{
             <div className="grid grid-cols-2 gap-3">
               <div>
                 <label className="block text-sm font-medium text-slate-700 mb-1">Stroke Width:</label>
-                <input
-                  type="number"
-                  min="0"
-                  step="0.5"
-                  value={element.styles?.strokeWidth || 2}
-                  onChange={(e) => {
-                    const updatedElement = { 
-                      ...element, 
-                      styles: { 
-                        ...element.styles, 
-                        strokeWidth: parseFloat(e.target.value) || 2 
+                <div className="relative">
+                  <input
+                    type="number"
+                    min="0"
+                    step="0.5"
+                    value={element.styles?.strokeWidth || 2}
+                    onChange={(e) => {
+                      const newValue = parseFloat(e.target.value) || 2;
+                      if (newValue !== 2 || element.styles?.strokeWidth !== undefined) {
+                        const updatedElement = { 
+                          ...element, 
+                          styles: { 
+                            ...element.styles, 
+                            strokeWidth: newValue 
+                          }
+                        };
+                        updateElement(updatedElement);
                       }
-                    };
-                    updateElement(updatedElement);
-                  }}
-                  className="w-full px-2 py-1 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 text-sm"
-                />
+                    }}
+                    className="w-full px-2 py-1 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 text-sm"
+                    disabled={element.styles?.strokeWidth === undefined}
+                  />
+                  {element.styles?.strokeWidth === undefined && (
+                    <button
+                      onClick={() => {
+                        const updatedElement = { 
+                          ...element, 
+                          styles: { 
+                            ...element.styles, 
+                            strokeWidth: 2 
+                          }
+                        };
+                        updateElement(updatedElement);
+                      }}
+                      className="absolute inset-0 bg-transparent border-2 border-dashed border-blue-300 rounded flex items-center justify-center text-xs text-blue-600 hover:bg-blue-50 transition-colors"
+                    >
+                      Override
+                    </button>
+                  )}
+                </div>
+                <div className="text-xs text-slate-500 mt-1">
+                  {element.styles?.strokeWidth !== undefined ? "Custom override" : "Using original width"}
+                </div>
               </div>
               <div>
                 <label className="block text-sm font-medium text-slate-700 mb-1">Opacity:</label>
-                <input
-                  type="number"
-                  min="0"
-                  max="1"
-                  step="0.1"
-                  value={element.styles?.opacity || 1}
-                  onChange={(e) => {
-                    const updatedElement = { 
-                      ...element, 
-                      styles: { 
-                        ...element.styles, 
-                        opacity: parseFloat(e.target.value) || 1 
+                <div className="relative">
+                  <input
+                    type="number"
+                    min="0"
+                    max="1"
+                    step="0.1"
+                    value={element.styles?.opacity || 1}
+                    onChange={(e) => {
+                      const newValue = parseFloat(e.target.value) || 1;
+                      if (newValue !== 1 || element.styles?.opacity !== undefined) {
+                        const updatedElement = { 
+                          ...element, 
+                          styles: { 
+                            ...element.styles, 
+                            opacity: newValue 
+                          }
+                        };
+                        updateElement(updatedElement);
                       }
-                    };
-                    updateElement(updatedElement);
-                  }}
-                  className="w-full px-2 py-1 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 text-sm"
-                />
+                    }}
+                    className="w-full px-2 py-1 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 text-sm"
+                    disabled={element.styles?.opacity === undefined}
+                  />
+                  {element.styles?.opacity === undefined && (
+                    <button
+                      onClick={() => {
+                        const updatedElement = { 
+                          ...element, 
+                          styles: { 
+                            ...element.styles, 
+                            opacity: 1 
+                          }
+                        };
+                        updateElement(updatedElement);
+                      }}
+                      className="absolute inset-0 bg-transparent border-2 border-dashed border-blue-300 rounded flex items-center justify-center text-xs text-blue-600 hover:bg-blue-50 transition-colors"
+                    >
+                      Override
+                    </button>
+                  )}
+                </div>
+                <div className="text-xs text-slate-500 mt-1">
+                  {element.styles?.opacity !== undefined ? "Custom override" : "Using original opacity"}
+                </div>
               </div>
             </div>
             
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-1">Stroke Style:</label>
-              <select
-                value={element.styles?.strokeDasharray || "none"}
-                onChange={(e) => {
-                  const value = e.target.value === "none" ? undefined : e.target.value;
-                  const updatedElement = { 
-                    ...element, 
-                    styles: { 
-                      ...element.styles, 
-                      strokeDasharray: value 
-                    }
-                  };
-                  updateElement(updatedElement);
-                }}
-                className="w-full px-2 py-1 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 text-sm"
-              >
-                <option value="none">Solid</option>
-                <option value="5,5">Dashed</option>
-                <option value="2,2">Dotted</option>
-                <option value="10,5,2,5">Dash-Dot</option>
-              </select>
+              <div className="relative">
+                <select
+                  value={element.styles?.strokeDasharray || "none"}
+                  onChange={(e) => {
+                    const value = e.target.value === "none" ? undefined : e.target.value;
+                    const updatedElement = { 
+                      ...element, 
+                      styles: { 
+                        ...element.styles, 
+                        strokeDasharray: value 
+                      }
+                    };
+                    updateElement(updatedElement);
+                  }}
+                  className="w-full px-2 py-1 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 text-sm"
+                  disabled={element.styles?.strokeDasharray === undefined}
+                >
+                  <option value="none">Solid</option>
+                  <option value="5,5">Dashed</option>
+                  <option value="2,2">Dotted</option>
+                  <option value="10,5,2,5">Dash-Dot</option>
+                </select>
+                {element.styles?.strokeDasharray === undefined && (
+                  <button
+                    onClick={() => {
+                      const updatedElement = { 
+                        ...element, 
+                        styles: { 
+                          ...element.styles, 
+                          strokeDasharray: "none" 
+                        }
+                      };
+                      updateElement(updatedElement);
+                    }}
+                    className="absolute inset-0 bg-transparent border-2 border-dashed border-blue-300 rounded flex items-center justify-center text-xs text-blue-600 hover:bg-blue-50 transition-colors"
+                  >
+                    Override
+                  </button>
+                )}
+              </div>
+              <div className="text-xs text-slate-500 mt-1">
+                {element.styles?.strokeDasharray !== undefined ? "Custom override" : "Using original style"}
+              </div>
             </div>
             
             {/* Reset to Original Button */}

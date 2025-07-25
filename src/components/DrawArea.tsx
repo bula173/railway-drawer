@@ -687,13 +687,17 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     // Only apply default styles for elements that don't have their own styling
     // Custom elements with SVG shapes should preserve their original colors
     const hasCustomShape = item.shape && item.type === "custom";
+    const hasShapeElements = item.shapeElements && item.shapeElements.length > 0;
     
-    const defaultStyles = hasCustomShape ? undefined : {
+    // Don't apply default styles to custom elements or elements with shapeElements
+    const shouldApplyDefaultStyles = !hasCustomShape && !hasShapeElements;
+    
+    const defaultStyles = shouldApplyDefaultStyles ? {
       fill: "#3b82f6", // blue-500
       stroke: "#1e293b", // slate-800
       strokeWidth: 2,
       opacity: 1,
-    };
+    } : undefined;
 
     console.log("🔧 Creating element from toolbox item:", {
       itemId: item.id,

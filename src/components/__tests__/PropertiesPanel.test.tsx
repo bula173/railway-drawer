@@ -152,7 +152,8 @@ describe('PropertiesPanel Component', () => {
       ...mockElement,
       styles: {
         fill: 'blue',
-        stroke: 'black'
+        stroke: 'black',
+        opacity: 1 // Add opacity to enable the input
       }
     }
     
