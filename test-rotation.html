@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Rotation Logic</title>
+</head>
+<body>
+    <h1>Testing Rotation Logic</h1>
+    <div id="results"></div>
+    
+    <script>
+        function testRotation() {
+            const results = [];
+            
+            // Test rotation increments from 0 to 360
+            let rotation = 0;
+            for (let i = 0; i < 25; i++) { // 25 steps of 15 degrees = 375 degrees (full rotation + extra)
+                const current = rotation;
+                const next = (current + 15) % 360;
+                
+                results.push(`Step ${i + 1}: ${current}° → ${next}°`);
+                
+                // Simulate what happens at problematic angles
+                if (current >= 90 && current <= 105) {
+                    results.push(`  → Around 95°: cos=${Math.cos(current * Math.PI / 180).toFixed(3)}, sin=${Math.sin(current * Math.PI / 180).toFixed(3)}`);
+                }
+                
+                rotation = next;
+                
+                // Break if we've completed a full rotation
+                if (i > 0 && next === 0) {
+                    results.push(`  → Completed full rotation at step ${i + 1}`);
+                    break;
+                }
+            }
+            
+            document.getElementById('results').innerHTML = results.join('<br>');
+        }
+        
+        testRotation();
+    </script>
+</body>
+</html>

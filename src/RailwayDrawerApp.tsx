@@ -35,7 +35,15 @@ const RailwayDrawerApp = () => {
   const [debugMode, setDebugMode] = useState(false);
   
   // Toolbox state
-  const [toolbox, setToolbox] = useState<ToolboxItem[]>(toolboxConfig as ToolboxItem[]);
+  const [toolbox, setToolbox] = useState<ToolboxItem[]>(() => {
+    const config = toolboxConfig as ToolboxItem[];
+    console.log("🔧 Loading toolbox config:", {
+      totalItems: config.length,
+      pointElement: config.find(item => item.id === 'point'),
+      trackElement: config.find(item => item.id === 'track')
+    });
+    return config;
+  });
 
   // Ref for the DrawArea component instances (one per tab)
   const drawAreaRefs = useRef<Map<string, DrawAreaRef>>(new Map());

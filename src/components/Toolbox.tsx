@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Button from "./Button";
 import { Plus } from "lucide-react";
+import { generateSVGFromElements } from "./Elements";
 
 /**
  * Groups an array of items by a key function.
@@ -28,8 +29,50 @@ export interface ToolboxItem {
   iconSvg?: string;
   shape?: string;
   svg?: string;
+  shapeElements?: Array<{
+    id: string;
+    svg: string;
+    textRegions?: Array<{
+      id: string;
+      x: number;
+      y: number;
+      width: number;
+      height: number;
+      text: string;
+      fontSize?: number;
+      align?: 'left' | 'center' | 'right';
+    }>;
+  }>;
   width: number;
   height: number; // <-- fix here
+}
+
+/**
+ * @function generateIconFromShapeElements
+ * @brief Generates icon SVG content from shapeElements for toolbox display
+ * @param shapeElements Array of shape elements
+ * @returns SVG content as string suitable for icon display
+ */
+function generateIconFromShapeElements(
+  shapeElements: ToolboxItem['shapeElements']
+): string {
+  if (!shapeElements || shapeElements.length === 0) {
+    return '';
+  }
+  
+  try {
+    // Generate SVG content from shape elements
+    const svgContent = generateSVGFromElements(shapeElements);
+    
+    if (!svgContent || svgContent.trim() === '') {
+      return '';
+    }
+    
+    return svgContent;
+  } catch (error) {
+    console.error("Error generating icon from shapeElements:", error);
+    return '';
+  }
 }
 
 /**
@@ -143,19 +186,45 @@ const Toolbox: React.FC<ToolboxProps> = ({
                       </div>
                       
                       {/* Icon */}
-                      {item.iconSvg === "default" && item.shape ? (
-                        <svg
-                          width={24}
-                          height={24}
-                          viewBox={`0 0 ${item.width || 48} ${item.height || 48}`}
-                          dangerouslySetInnerHTML={{ __html: item.shape }}
-                        />
-                      ) : item.iconSvg ? (
-                        <span
-                          style={{ display: "inline-block", width: 24, height: 24 }}
-                          dangerouslySetInnerHTML={{ __html: item.iconSvg }}
-                        />
-                      ) : null}
+                      {(() => {
+                        // Handle "default" iconSvg - generate from shape or shapeElements
+                        if (item.iconSvg === "default") {
+                          if (item.shapeElements && item.shapeElements.length > 0) {
+                            // Generate icon from shapeElements
+                            const iconContent = generateIconFromShapeElements(item.shapeElements);
+                            if (iconContent) {
+                              return (
+                                <svg
+                                  width={24}
+                                  height={24}
+                                  viewBox={`0 0 ${item.width || 48} ${item.height || 48}`}
+                                  dangerouslySetInnerHTML={{ __html: iconContent }}
+                                />
+                              );
+                            }
+                          } else if (item.shape) {
+                            // Fallback to legacy shape property
+                            return (
+                              <svg
+                                width={24}
+                                height={24}
+                                viewBox={`0 0 ${item.width || 48} ${item.height || 48}`}
+                                dangerouslySetInnerHTML={{ __html: item.shape }}
+                              />
+                            );
+                          }
+                          return null;
+                        } else if (item.iconSvg) {
+                          // Use explicitly defined iconSvg
+                          return (
+                            <span
+                              style={{ display: "inline-block", width: 24, height: 24 }}
+                              dangerouslySetInnerHTML={{ __html: item.iconSvg }}
+                            />
+                          );
+                        }
+                        return null;
+                      })()}
                     </div>
                   );
                 })}

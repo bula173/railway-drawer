@@ -11,7 +11,7 @@
  */
 
 import React, { useEffect, useRef, useState, forwardRef, useImperativeHandle } from "react";
-import { RenderElement } from "./Elements";
+import { RenderElement, getRotatedBoundingRect } from "./Elements";
 import type { DrawElement } from "./Elements";
 
 /**
@@ -98,12 +98,11 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
   /** @brief Internal drawing elements state */
   const [elements, setElements] = useState<DrawElement[]>([]);
   
-  // Debug: Track when elements change
+  // Debug: Track when elements actually change
   useEffect(() => {
-    console.log("🔍 DrawArea elements state changed:", {
+    console.log("🔥 ELEMENTS STATE:", {
       count: elements.length,
-      elementIds: elements.map(el => el.id),
-      elementsWithStyles: elements.filter(el => el.styles).length
+      elementIds: elements.map(el => el.id)
     });
   }, [elements]);
   /** @brief IDs of currently selected elements */
@@ -147,6 +146,10 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
   const initialSelectedPositions = useRef<Map<string, { start: { x: number; y: number }, end: { x: number; y: number } }>>(new Map());
   /** @brief Elements stored in clipboard for copy/paste */
   const [copiedElements, setCopiedElements] = useState<DrawElement[]>([]);
+  /** @brief Ref to track the last drop operation to prevent React StrictMode duplicates */
+  const lastDropRef = useRef<{ timestamp: number; itemType: string; x: number; y: number } | null>(null);
+  /** @brief Ref to track processed element IDs to prevent React StrictMode duplicates */
+  const processedElementIds = useRef<Set<string>>(new Set());
 
   /**
    * @brief Expose methods through ref for external component access
@@ -156,12 +159,6 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     getSvgElement: () => svgRef.current,
     getElements: () => elements,
     setElements: (els: DrawElement[]) => {
-      console.log("🏗️ DrawArea.setElements called:", {
-        currentCount: elements.length,
-        newCount: els.length,
-        elementIds: els.map(el => el.id),
-        elementsWithStyles: els.filter(el => el.styles).length
-      });
       setElements(els);
     },
     setGridVisible: (visible: boolean) => setShowGrid(visible),
@@ -331,12 +328,6 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
    * Renders the selection rectangle during area selection
    */
   function renderSelectionRectangle() {
-    console.log("renderSelectionRectangle called:", { 
-      isAreaSelecting, 
-      selectionStart, 
-      selectionEnd 
-    });
-
     if (!isAreaSelecting || !selectionStart || !selectionEnd) return null;
 
     const x = Math.min(selectionStart.x, selectionEnd.x);
@@ -344,18 +335,16 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     const width = Math.abs(selectionEnd.x - selectionStart.x);
     const height = Math.abs(selectionEnd.y - selectionStart.y);
 
-    console.log("Selection rectangle:", { x, y, width, height });
-
     return (
       <rect
         x={x}
         y={y}
         width={width}
         height={height}
-        fill="rgba(121, 141, 242, 0.3)" // Change to make it more visible
+        fill="rgba(121, 141, 242, 0.3)"
         stroke="rgba(21, 79, 225, 0.8)"
-        strokeWidth={3} // Make it thicker
-        strokeDasharray="10,5" // Make dashes bigger
+        strokeWidth={3}
+        strokeDasharray="10,5"
         pointerEvents="none"
       />
     );
@@ -365,10 +354,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
    * Handles double click detection and panning start
    */
   function handleSvgPointerDown(e: React.PointerEvent) {
-    console.log("handleSvgPointerDown called");
-    
     if (e.target !== svgRef.current && e.target !== e.currentTarget) {
-      console.log("Click not on SVG background");
       return;
     }
 
@@ -376,7 +362,6 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     const shouldPan = e.button === 1 || e.shiftKey; // Middle mouse or Shift key for panning
 
     if (shouldPan) {
-      console.log("Starting panning");
       setIsPanning(true);
       setPanStart({ x: e.clientX, y: e.clientY });
       window.addEventListener("pointermove", handlePanMove);
@@ -385,7 +370,6 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     }
 
     if (!isPanning) {
-      console.log("Starting area selection");
       const svgRect = svgRef.current?.getBoundingClientRect();
       if (!svgRect) return;
 
@@ -393,8 +377,6 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       const clientY = e.clientY - svgRect.top;
       const x = (clientX - panOffset.x) / zoom;
       const y = (clientY - panOffset.y) / zoom;
-
-      console.log("Selection start coordinates:", { x, y });
 
       // Set state
       setIsAreaSelecting(true);
@@ -412,9 +394,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
 
       // Create closures that use local variables instead of state
       const areaSelectionMove = (e: PointerEvent) => {
-        
         if (!isSelecting || isPanning) {
-          console.log("Area selection move blocked:", { isSelecting, isPanning });
           return;
         }
 
@@ -425,8 +405,6 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
         const clientY = e.clientY - svgRect.top;
         const x = (clientX - panOffset.x) / zoom;
         const y = (clientY - panOffset.y) / zoom;
-
-        console.log("Selection end coordinates:", { x, y });
         
         // Store in both state and ref
         setSelectionEnd({ x, y });
@@ -434,8 +412,6 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       };
 
       const areaSelectionUp = (e: PointerEvent) => {
-        console.log("handleAreaSelectionUp called");
-        
         if (isPanning) return; // Don't process if we're panning
 
         const currentStart = selectionData;
@@ -448,13 +424,10 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
           height: Math.abs(currentEnd.y - currentStart.y)
         };
 
-        console.log("Selection completed:", selRect);
-
         // Check if this was just a click (very small movement)
         const isClick = selRect.width < 5 && selRect.height < 5;
 
         if (isClick) {
-          console.log("Detected as click - clearing selection");
           if (!e.ctrlKey && !e.metaKey) {
             setSelectedElementIds([]);
             setSelectedElement?.(undefined);
@@ -462,13 +435,9 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
             setDraggingId(null);
           }
         } else {
-          console.log("Detected as area selection");
-          
           // Find all elements that intersect with the selection rectangle
           const elementsInSelection = elements.filter(el => isElementInSelection(el, selRect));
           const newSelectedIds = elementsInSelection.map(el => el.id);
-
-          console.log("Elements in selection:", newSelectedIds);
 
           if (e.ctrlKey || e.metaKey) {
             // Add to existing selection
@@ -493,7 +462,6 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
         }
 
         // Clean up
-        console.log("Area selection cleanup");
         isSelecting = false;
         selectionEndRef.current = null;
         setIsAreaSelecting(false);
@@ -504,7 +472,6 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       };
 
       // Add event listeners with the closure functions
-      console.log("Adding event listeners for area selection");
       window.addEventListener("pointermove", areaSelectionMove);
       window.addEventListener("pointerup", areaSelectionUp);
     }
@@ -649,14 +616,62 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     const item = JSON.parse(data);
     const x = (e.clientX - svgRect.left) / zoom;
     const y = (e.clientY - svgRect.top) / zoom;
-    console.log("[DROP] Dropped item:", item, "at", { x, y });
+    
+    const currentTimestamp = Date.now();
+    const dropOperation = {
+      timestamp: currentTimestamp,
+      itemType: item.type,
+      x: Math.round(x),
+      y: Math.round(y)
+    };
+    
+    // Check if this is a duplicate drop operation (React StrictMode protection)
+    if (lastDropRef.current && 
+        Math.abs(currentTimestamp - lastDropRef.current.timestamp) < 100 && // Within 100ms
+        dropOperation.itemType === lastDropRef.current.itemType &&
+        Math.abs(dropOperation.x - lastDropRef.current.x) < 5 && // Within 5px
+        Math.abs(dropOperation.y - lastDropRef.current.y) < 5) {
+      return;
+    }
+    
+    lastDropRef.current = dropOperation;
+    
+    // Create the element
+    const newElement = createCenteredElement(item, x, y);
+    
+    console.log("🚀 CREATING NEW ELEMENT:", {
+      elementId: newElement.id,
+      elementType: newElement.type,
+      hasShapeElements: !!newElement.shapeElements,
+      shapeElementsCount: newElement.shapeElements?.length || 0,
+      fullShapeElementsData: newElement.shapeElements ? {
+        elementRef: newElement.shapeElements,
+        elements: newElement.shapeElements.map((se, index) => ({
+          index: index,
+          id: se.id,
+          svg: se.svg, // Full SVG content
+          svgLength: se.svg.length,
+          elementRef: se
+        }))
+      } : null
+    });
+    
     setElements(prev => {
-      const newElement = createCenteredElement(item, x, y);
-      console.log("[CREATE] New element created:", newElement);
-      console.log("[CREATE] Elements before adding:", prev.length);
-      const newElements = [...prev, newElement];
-      console.log("[CREATE] Elements after adding:", newElements.length);
-      return newElements;
+      // Check if we've already processed this specific element ID (React StrictMode protection)
+      if (processedElementIds.current.has(newElement.id)) {
+        return prev;
+      }
+      
+      // Mark this element as processed
+      processedElementIds.current.add(newElement.id);
+      
+      // Clean up old processed IDs periodically to prevent memory leaks
+      if (processedElementIds.current.size > 100) {
+        processedElementIds.current.clear();
+        processedElementIds.current.add(newElement.id);
+      }
+      
+      return [...prev, newElement];
     });
   }
 
@@ -680,8 +695,24 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       opacity: 1,
     };
 
+    console.log("🔧 Creating element from toolbox item:", {
+      itemId: item.id,
+      itemName: item.name,
+      originalShapeElements: item.shapeElements ? {
+        count: item.shapeElements.length,
+        arrayReference: item.shapeElements, // Log the actual reference
+        elements: item.shapeElements.map((el: any, index: number) => ({
+          index: index,
+          id: el.id,
+          svgLength: el.svg.length,
+          svg: el.svg, // Show full SVG content to see if they're identical
+          elementReference: el // Log the actual element reference
+        }))
+      } : null
+    });
+
     const baseElement = {
-      id: `${item.type}_${Date.now()}`,
+      id: `${item.type}_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
       name: item.name,
       type: item.type,
       iconName: item.iconName,
@@ -689,6 +720,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       iconSvg: item.iconSvg,
       draw: item.draw,
       shape: item.shape,
+      shapeElements: item.shapeElements ? JSON.parse(JSON.stringify(item.shapeElements)) : undefined, // Deep copy to avoid reference sharing
       width: item.width,
       height: item.height,
       rotation: 0,
@@ -1061,67 +1093,143 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
         {showGrid && renderGrid()}
         
         {/* Render all drawing elements */}
-        {elements.map(el => (
-          <RenderElement
-            key={el.id}
-            el={el}
-            isSelected={selectedElementIds.includes(el.id)}
-            hoveredElementId={hoveredElementId}
-            setHoveredElementId={setHoveredElementId}
-            updateElement={updated =>
-              setElements(prev => prev.map(e => e.id === updated.id ? updated : e))
-            }
-            handlePointerDown={handlePointerDown}
-          />
-        ))}
+        {elements.map(el => {
+          return (
+            <RenderElement
+              key={el.id}
+              el={el}
+              isSelected={selectedElementIds.includes(el.id)}
+              hoveredElementId={hoveredElementId}
+              setHoveredElementId={setHoveredElementId}
+              updateElement={updated =>
+                setElements(prev => prev.map(e => e.id === updated.id ? updated : e))
+              }
+              handlePointerDown={handlePointerDown}
+            />
+          );
+        })}
         
         {/* Invisible bounding rectangles for easier selection of selected elements */}
         {elements.map(el => {
           if (!selectedElementIds.includes(el.id)) return null;
           
-          const left = Math.min(el.start.x, el.end.x);
-          const top = Math.min(el.start.y, el.end.y);
-          const width = Math.abs(el.end.x - el.start.x);
-          const height = Math.abs(el.end.y - el.start.y);
-          
-          return (
-            <rect
-              key={`bounding-${el.id}`}
-              x={left - 5} // Add 5px padding for easier clicking
-              y={top - 5}
-              width={width + 10}
-              height={height + 10}
-              fill="transparent"
-              stroke="none"
-              style={{ cursor: 'move' }}
-              onPointerDown={(e) => handlePointerDown(e, el)}
-            />
-          );
+          if (el.rotation) {
+            // For rotated elements, calculate axis-aligned bounds that encompass the rotated element
+            const rotatedRect = getRotatedBoundingRect(el);
+            const corners = [
+              rotatedRect.topLeft,
+              rotatedRect.topRight,
+              rotatedRect.bottomLeft,
+              rotatedRect.bottomRight
+            ];
+            
+            const minX = Math.min(...corners.map(c => c.x));
+            const minY = Math.min(...corners.map(c => c.y));
+            const maxX = Math.max(...corners.map(c => c.x));
+            const maxY = Math.max(...corners.map(c => c.y));
+            
+            return (
+              <rect
+                key={`bounding-${el.id}`}
+                x={minX - 5} // Add 5px padding for easier clicking
+                y={minY - 5}
+                width={maxX - minX + 10}
+                height={maxY - minY + 10}
+                fill="transparent"
+                stroke="none"
+                style={{ cursor: 'move' }}
+                onPointerDown={(e) => handlePointerDown(e, el)}
+              />
+            );
+          } else {
+            // For non-rotated elements, use the original approach
+            const left = Math.min(el.start.x, el.end.x);
+            const top = Math.min(el.start.y, el.end.y);
+            const width = Math.abs(el.end.x - el.start.x);
+            const height = Math.abs(el.end.y - el.start.y);
+            
+            return (
+              <rect
+                key={`bounding-${el.id}`}
+                x={left - 5} // Add 5px padding for easier clicking
+                y={top - 5}
+                width={width + 10}
+                height={height + 10}
+                fill="transparent"
+                stroke="none"
+                style={{ cursor: 'move' }}
+                onPointerDown={(e) => handlePointerDown(e, el)}
+              />
+            );
+          }
         })}
         
         {/* Visual selection outline rectangles */}
         {elements.map(el => {
           if (!selectedElementIds.includes(el.id)) return null;
           
-          const left = Math.min(el.start.x, el.end.x);
-          const top = Math.min(el.start.y, el.end.y);
-          const width = Math.abs(el.end.x - el.start.x);
-          const height = Math.abs(el.end.y - el.start.y);
-          
-          return (
-            <rect
-              key={`selection-outline-${el.id}`}
-              x={left - 2}
-              y={top - 2}
-              width={width + 4}
-              height={height + 4}
-              fill="none"
-              stroke="rgba(0, 123, 255, 0.8)"
-              strokeWidth={1 / zoom} // Adjust stroke width for zoom
-              strokeDasharray={`${3 / zoom},${3 / zoom}`}
-              pointerEvents="none"
-            />
-          );
+          if (el.rotation) {
+            // For rotated elements, use a polygon to show proper rotated outline
+            const rotatedRect = getRotatedBoundingRect(el);
+            const padding = 2;
+            
+            // Calculate padded corners (expand outward from center)
+            const center = rotatedRect.center;
+            const corners = [
+              rotatedRect.topLeft,
+              rotatedRect.topRight, 
+              rotatedRect.bottomRight,
+              rotatedRect.bottomLeft
+            ];
+            
+            // Expand each corner outward from center by padding amount
+            const paddedCorners = corners.map(corner => {
+              const dx = corner.x - center.x;
+              const dy = corner.y - center.y;
+              const length = Math.sqrt(dx * dx + dy * dy);
+              if (length === 0) return corner;
+              const scale = (length + padding) / length;
+              return {
+                x: center.x + dx * scale,
+                y: center.y + dy * scale
+              };
+            });
+            
+            const points = paddedCorners.map(p => `${p.x},${p.y}`).join(' ');
+            
+            return (
+              <polygon
+                key={`selection-outline-${el.id}`}
+                points={points}
+                fill="none"
+                stroke="rgba(0, 123, 255, 0.8)"
+                strokeWidth={1 / zoom} // Adjust stroke width for zoom
+                strokeDasharray={`${3 / zoom},${3 / zoom}`}
+                pointerEvents="none"
+              />
+            );
+          } else {
+            // For non-rotated elements, use the original rect approach
+            const left = Math.min(el.start.x, el.end.x);
+            const top = Math.min(el.start.y, el.end.y);
+            const width = Math.abs(el.end.x - el.start.x);
+            const height = Math.abs(el.end.y - el.start.y);
+            
+            return (
+              <rect
+                key={`selection-outline-${el.id}`}
+                x={left - 2}
+                y={top - 2}
+                width={width + 4}
+                height={height + 4}
+                fill="none"
+                stroke="rgba(0, 123, 255, 0.8)"
+                strokeWidth={1 / zoom} // Adjust stroke width for zoom
+                strokeDasharray={`${3 / zoom},${3 / zoom}`}
+                pointerEvents="none"
+              />
+            );
+          }
         })}
         
         {/* Area selection rectangle */}

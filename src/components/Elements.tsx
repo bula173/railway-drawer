@@ -60,27 +60,91 @@ export function getElementStyleProps(styles?: ElementStyles): Record<string, any
  * @returns Modified SVG content
  */
 export function applyStylesToSVGString(svgContent: string, styles?: ElementStyles): string {
-  // DETAILED DEBUGGING: Log every call to this function
-  console.log("🎨 applyStylesToSVGString called with:", {
-    svgContentLength: svgContent?.length || 0,
-    svgContentPreview: svgContent?.substring(0, 100) + "...",
-    styles: styles,
-    hasStyles: !!styles
-  });
-  
   // Check if SVG content is valid
   if (!svgContent || svgContent.trim() === '') {
     console.error("❌ EMPTY SVG CONTENT passed to applyStylesToSVGString!");
     return svgContent;
   }
   
-  // For now, still bypass styling but with detailed logging
-  if (styles) {
-    console.log("🔄 BYPASSING style application, returning original content");
+  // If no styles to apply, return original content
+  if (!styles) {
+    return svgContent;
   }
   
-  console.log("✅ Returning SVG content, length:", svgContent.length);
-  return svgContent;
+  try {
+    // Parse the SVG content using DOMParser
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(`<svg>${svgContent}</svg>`, 'image/svg+xml');
+    
+    // Check for parsing errors
+    const parserError = doc.querySelector('parsererror');
+    if (parserError) {
+      console.error("❌ SVG parsing error:", parserError.textContent);
+      return svgContent;
+    }
+    
+    // Get all drawable SVG elements
+    const drawableElements = doc.querySelectorAll('rect, circle, ellipse, line, polyline, polygon, path, text');
+    
+    // Apply styles to each drawable element
+    drawableElements.forEach(element => {
+      if (styles.fill !== undefined) {
+        element.setAttribute('fill', styles.fill);
+      }
+      if (styles.stroke !== undefined) {
+        element.setAttribute('stroke', styles.stroke);
+      }
+      if (styles.strokeWidth !== undefined) {
+        element.setAttribute('stroke-width', styles.strokeWidth.toString());
+      }
+      if (styles.strokeDasharray !== undefined) {
+        element.setAttribute('stroke-dasharray', styles.strokeDasharray);
+      }
+      if (styles.opacity !== undefined) {
+        element.setAttribute('opacity', styles.opacity.toString());
+      }
+      if (styles.strokeOpacity !== undefined) {
+        element.setAttribute('stroke-opacity', styles.strokeOpacity.toString());
+      }
+      if (styles.fillOpacity !== undefined) {
+        element.setAttribute('fill-opacity', styles.fillOpacity.toString());
+      }
+    });
+    
+    // Extract the modified content (everything inside the wrapper <svg> tag)
+    const svgElement = doc.querySelector('svg');
+    if (!svgElement) {
+      console.error("❌ No SVG element found after parsing");
+      return svgContent;
+    }
+    
+    const modifiedContent = svgElement.innerHTML;
+    
+    return modifiedContent;
+    
+  } catch (error) {
+    console.error("❌ Error applying styles to SVG:", error);
+    return svgContent; // Fallback to original content on error
+  }
+}
+
+/**
+ * @interface ShapeElement
+ * @brief Represents a single shape element with optional text regions.
+ */
+export interface ShapeElement {
+  id: string;
+  svg: string; // Direct SVG content
+  textRegions?: {
+    id: string;
+    x: number;
+    y: number;
+    width: number;
+    height: number;
+    text: string;
+    fontSize?: number;
+    align?: 'left' | 'center' | 'right';
+  }[];
 }
 
 /**
@@ -101,6 +165,7 @@ export interface DrawElement {
   iconName?: string;
   iconSource?: string;
   shape?: string;
+  shapeElements?: ShapeElement[]; // Array of shape element definitions
   width?: number;
   height?: number;
   draw?: any;
@@ -145,19 +210,11 @@ export interface DrawElement {
  * @returns JSX.Element
  */
 export const ElementSVG: React.FC<{ el: DrawElement }> = ({ el }) => {
-  console.log("🖼️ ElementSVG rendering element:", {
-    id: el.id,
-    type: el.type,
-    hasShape: !!el.shape,
-    shapeLength: el.shape?.length || 0,
-    hasStyles: !!el.styles,
-    styles: el.styles
-  });
 
   switch (el.type) {
    
     case "custom":
-      if (el.shape) {
+      if (el.shape || el.shapeElements) {
         // Use fallback size if missing or zero
         const shapeWidth = el.width && el.width > 0 ? el.width : 48;
         const shapeHeight = el.height && el.height > 0 ? el.height : 48;
@@ -174,16 +231,36 @@ export const ElementSVG: React.FC<{ el: DrawElement }> = ({ el }) => {
         const mirrorTranslateX = el.mirrorX ? shapeWidth : 0;
         const mirrorTranslateY = el.mirrorY ? shapeHeight : 0;
 
-        // Apply styles to the SVG content
-        const styledShape = applyStylesToSVGString(el.shape, el.styles);
+        // Determine the shape to render
+        let shapeToRender = '';
         
-        console.log("🎯 Custom element rendering:", {
-          elementId: el.id,
-          originalShapeLength: el.shape?.length || 0,
-          styledShapeLength: styledShape?.length || 0,
-          shapesEqual: el.shape === styledShape,
-          styles: el.styles
-        });
+        // Priority: dynamic UML class > shapeElements > shape
+        if (el.id === "uml_class" && el.textRegions && el.textRegions.length >= 3) {
+          const dynamicUML = generateDynamicUMLClassSVG(el);
+          if (dynamicUML.shape) {
+            shapeToRender = dynamicUML.shape;
+          }
+        } else if (el.shapeElements && el.shapeElements.length > 0) {
+          // Generate SVG from shape elements (only if there are elements)
+          shapeToRender = generateSVGFromElements(el.shapeElements);
+        } else if (el.shape) {
+          // Use legacy shape property
+          let rawShape = el.shape;
+          // Remove outer <svg> wrapper if present
+          if (rawShape.includes('<svg>') && rawShape.includes('</svg>')) {
+            rawShape = rawShape.replace(/<svg[^>]*>/, '').replace(/<\/svg>/, '');
+          }
+          shapeToRender = rawShape;
+        }
+
+        // Check if we have any content to render
+        if (!shapeToRender || shapeToRender.trim() === '') {
+          console.warn("Custom SVG element has no SVG content or shape elements:", el.id);
+          return null;
+        }
+
+        // Apply styles to the SVG content
+        const styledShape = applyStylesToSVGString(shapeToRender, el.styles);
         
         // Validate the styled shape before rendering
         if (!styledShape || styledShape.trim() === '') {
@@ -197,7 +274,7 @@ export const ElementSVG: React.FC<{ el: DrawElement }> = ({ el }) => {
         scale(${mirrorScaleX},${mirrorScaleY})
       `}
             >
-              <g dangerouslySetInnerHTML={{ __html: el.shape }} />
+              <g dangerouslySetInnerHTML={{ __html: shapeToRender }} />
             </g>
           );
         }
@@ -214,10 +291,9 @@ export const ElementSVG: React.FC<{ el: DrawElement }> = ({ el }) => {
             <g dangerouslySetInnerHTML={{ __html: styledShape }} />
           </g>
         );
-      } else {
-        console.warn("Custom SVG element has no SVG content");
-        return null;
       }
+      break;
+      
     case "text": {
       const textCx = (el.start.x + el.end.x) / 2;
       const textCy = (el.start.y + el.end.y) / 2;
@@ -251,6 +327,12 @@ export function getElementBoundingRect(el: DrawElement) {
   const width = Math.abs(el.end.x - el.start.x);
   const height = Math.abs(el.end.y - el.start.y);
   
+  // Start with the basic element bounds
+  let minX = x;
+  let minY = y;
+  let maxX = x + width;
+  let maxY = y + height;
+  
   // For custom elements, check if the shape extends beyond the defined bounds
   if (el.type === "custom" && el.shape) {
     // Parse SVG content to find actual bounds
@@ -262,7 +344,7 @@ export function getElementBoundingRect(el: DrawElement) {
     if (svgElement) {
       // Get all elements and calculate their bounds
       const elements = svgElement.querySelectorAll("*");
-      let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+      let shapeMinX = Infinity, shapeMinY = Infinity, shapeMaxX = -Infinity, shapeMaxY = -Infinity;
       
       elements.forEach(elem => {
         const tagName = elem.tagName.toLowerCase();
@@ -318,18 +400,18 @@ export function getElementBoundingRect(el: DrawElement) {
           }
         }
         
-        minX = Math.min(minX, elemBounds.minX);
-        minY = Math.min(minY, elemBounds.minY);
-        maxX = Math.max(maxX, elemBounds.maxX);
-        maxY = Math.max(maxY, elemBounds.maxY);
+        shapeMinX = Math.min(shapeMinX, elemBounds.minX);
+        shapeMinY = Math.min(shapeMinY, elemBounds.minY);
+        shapeMaxX = Math.max(shapeMaxX, elemBounds.maxX);
+        shapeMaxY = Math.max(shapeMaxY, elemBounds.maxY);
       });
       
       // If we found actual bounds, use them to adjust the bounding rect
-      if (minX !== Infinity && maxX !== -Infinity) {
+      if (shapeMinX !== Infinity && shapeMaxX !== -Infinity) {
         const originalWidth = el.width || 48;
         const originalHeight = el.height || 48;
-        const actualWidth = maxX - minX;
-        const actualHeight = maxY - minY;
+        const actualWidth = shapeMaxX - shapeMinX;
+        const actualHeight = shapeMaxY - shapeMinY;
         
         // Calculate scale factors
         const scaleX = width / originalWidth;
@@ -338,21 +420,334 @@ export function getElementBoundingRect(el: DrawElement) {
         // Apply scale to actual bounds
         const scaledActualWidth = actualWidth * scaleX;
         const scaledActualHeight = actualHeight * scaleY;
-        const scaledMinX = minX * scaleX;
-        const scaledMinY = minY * scaleY;
+        const scaledMinX = shapeMinX * scaleX;
+        const scaledMinY = shapeMinY * scaleY;
         
-        // Adjust bounding rect to include actual content
-        return {
-          x: x + scaledMinX,
-          y: y + scaledMinY,
-          width: scaledActualWidth,
-          height: scaledActualHeight
-        };
+        // Update bounds to include scaled shape content
+        minX = Math.min(minX, x + scaledMinX);
+        minY = Math.min(minY, y + scaledMinY);
+        maxX = Math.max(maxX, x + scaledMinX + scaledActualWidth);
+        maxY = Math.max(maxY, y + scaledMinY + scaledActualHeight);
       }
     }
   }
   
-  return { x, y, width, height };
+  // Check if element has text regions that might extend beyond current bounds
+  const allTextRegions = (el.textRegions && el.textRegions.length > 0) 
+    ? el.textRegions 
+    : (el.shapeElements ? collectTextRegionsFromShapeElements(el.shapeElements) : []);
+    
+  if (allTextRegions.length > 0) {
+    const adjustedRegions = calculateAdjustedTextRegions(el);
+    
+    adjustedRegions.forEach(adjustedRegion => {
+      // Center the text within the region and calculate actual bounds
+      let textLeft = adjustedRegion.scaledX;
+      let textRight = adjustedRegion.scaledX + adjustedRegion.effectiveWidth;
+      const textTop = adjustedRegion.scaledY;
+      const textBottom = adjustedRegion.scaledY + adjustedRegion.effectiveHeight;
+      
+      // Adjust for text alignment
+      if (adjustedRegion.align === 'center') {
+        const centerX = adjustedRegion.scaledX + adjustedRegion.scaledWidth / 2;
+        textLeft = centerX - adjustedRegion.effectiveWidth / 2;
+        textRight = centerX + adjustedRegion.effectiveWidth / 2;
+      } else if (adjustedRegion.align === 'right') {
+        textLeft = adjustedRegion.scaledX + adjustedRegion.scaledWidth - adjustedRegion.effectiveWidth;
+        textRight = adjustedRegion.scaledX + adjustedRegion.scaledWidth;
+      }
+      
+      // Expand element bounds to include text region
+      minX = Math.min(minX, textLeft);
+      minY = Math.min(minY, textTop);
+      maxX = Math.max(maxX, textRight);
+      maxY = Math.max(maxY, textBottom);
+    });
+  }
+  
+  return { 
+    x: minX, 
+    y: minY, 
+    width: maxX - minX, 
+    height: maxY - minY 
+  };
+}
+
+/**
+ * @function calculateAdjustedTextRegions
+ * @brief Calculates adjusted positions for text regions to prevent overlap when text overflows.
+ * @param el The element containing text regions.
+ * @returns Array of adjusted region data with positions and dimensions.
+ */
+export function calculateAdjustedTextRegions(el: DrawElement) {
+  // First check for legacy textRegions on element level
+  let textRegions = el.textRegions || [];
+  
+  // If no legacy text regions, collect from shapeElements
+  if (textRegions.length === 0 && el.shapeElements) {
+    const shapeElementRegions = collectTextRegionsFromShapeElements(el.shapeElements);
+    textRegions = shapeElementRegions || [];
+  }
+  
+  if (textRegions.length === 0) return [];
+  
+  // Special handling for UML class elements
+  if (el.id === "uml_class" && textRegions.length >= 3) {
+    const dynamicUML = generateDynamicUMLClassSVG(el);
+    if (dynamicUML.textRegions) {
+      // Use the dynamically calculated text regions
+      const width = Math.abs(el.end.x - el.start.x);
+      const height = Math.abs(el.end.y - el.start.y);
+      const originalWidth = el.width || 120;
+      const originalHeight = el.height || 80;
+      const scaleX = width / originalWidth;
+      const scaleY = height / originalHeight;
+      
+      return dynamicUML.textRegions.map((region, index) => {
+        const scaledX = el.start.x + (region.x * scaleX);
+        const scaledY = el.start.y + (region.y * scaleY);
+        const scaledWidth = region.width * scaleX;
+        const scaledHeight = region.height * scaleY;
+        const fontSize = (region.fontSize || 12) * Math.min(scaleX, scaleY);
+        const lines = (region.text || '').split('\n');
+        
+        return {
+          ...region,
+          index,
+          scaledX,
+          scaledY,
+          scaledWidth,
+          scaledHeight,
+          effectiveWidth: scaledWidth,
+          effectiveHeight: scaledHeight,
+          fontSize,
+          lines
+        };
+      });
+    }
+  }
+  
+  const shapeWidth = el.width && el.width > 0 ? el.width : 48;
+  const shapeHeight = el.height && el.height > 0 ? el.height : 48;
+  const width = Math.abs(el.end.x - el.start.x);
+  const height = Math.abs(el.end.y - el.start.y);
+  const scaleX = shapeWidth ? width / shapeWidth : 1;
+  const scaleY = shapeHeight ? height / shapeHeight : 1;
+  
+  let cumulativeYOffset = 0;
+  
+  return textRegions.map((region, index) => {
+    // Calculate scaled text region bounds with cumulative offset
+    const scaledX = el.start.x + (region.x * scaleX);
+    const originalScaledY = el.start.y + (region.y * scaleY);
+    const adjustedScaledY = originalScaledY + cumulativeYOffset;
+    const scaledWidth = region.width * scaleX;
+    const scaledHeight = region.height * scaleY;
+    
+    // Estimate text bounds based on content
+    const fontSize = (region.fontSize || 12) * Math.min(scaleX, scaleY);
+    const lines = (region.text || '').split('\n');
+    const maxLineLength = Math.max(...lines.map(line => line.length));
+    
+    // Rough text width estimation (chars * fontSize * 0.6)
+    const estimatedTextWidth = maxLineLength * fontSize * 0.6;
+    const estimatedTextHeight = lines.length * fontSize * 1.2; // Line height factor
+    
+    // Expand region bounds if text is larger than region
+    const effectiveWidth = Math.max(scaledWidth, estimatedTextWidth);
+    const effectiveHeight = Math.max(scaledHeight, estimatedTextHeight);
+    
+    // Calculate overflow from this region to adjust subsequent regions
+    const textOverflow = Math.max(0, effectiveHeight - scaledHeight);
+    cumulativeYOffset += textOverflow;
+    
+    return {
+      ...region,
+      index,
+      scaledX,
+      scaledY: adjustedScaledY,
+      scaledWidth,
+      scaledHeight,
+      effectiveWidth,
+      effectiveHeight,
+      fontSize,
+      lines
+    };
+  });
+}
+
+/**
+ * @function getRotatedBoundingRect
+ * @brief Calculates the rotated bounding rectangle for a DrawElement.
+ * @param el The element to calculate for.
+ * @returns An object with corner points of the rotated rectangle.
+ */
+export function getRotatedBoundingRect(el: DrawElement) {
+  const rect = getElementBoundingRect(el);
+  
+  if (!el.rotation) {
+    // No rotation, return corners of axis-aligned rectangle
+    return {
+      topLeft: { x: rect.x, y: rect.y },
+      topRight: { x: rect.x + rect.width, y: rect.y },
+      bottomLeft: { x: rect.x, y: rect.y + rect.height },
+      bottomRight: { x: rect.x + rect.width, y: rect.y + rect.height },
+      center: { x: rect.x + rect.width / 2, y: rect.y + rect.height / 2 }
+    };
+  }
+  
+  // Calculate rotation center
+  const centerX = (el.start.x + el.end.x) / 2;
+  const centerY = (el.start.y + el.end.y) / 2;
+  const rotation = (el.rotation * Math.PI) / 180; // Convert to radians
+  
+  // Original corners relative to center
+  const corners = [
+    { x: rect.x - centerX, y: rect.y - centerY }, // top-left
+    { x: rect.x + rect.width - centerX, y: rect.y - centerY }, // top-right
+    { x: rect.x - centerX, y: rect.y + rect.height - centerY }, // bottom-left
+    { x: rect.x + rect.width - centerX, y: rect.y + rect.height - centerY } // bottom-right
+  ];
+  
+  // Rotate corners around center
+  const rotatedCorners = corners.map(corner => ({
+    x: centerX + corner.x * Math.cos(rotation) - corner.y * Math.sin(rotation),
+    y: centerY + corner.x * Math.sin(rotation) + corner.y * Math.cos(rotation)
+  }));
+  
+  return {
+    topLeft: rotatedCorners[0],
+    topRight: rotatedCorners[1],
+    bottomLeft: rotatedCorners[2],
+    bottomRight: rotatedCorners[3],
+    center: { x: centerX, y: centerY }
+  };
+}
+
+/**
+ * @function generateSVGFromElements
+ * @brief Generates SVG content from an array of shape elements.
+ * @param shapeElements Array of element definitions
+ * @returns SVG content as string
+ */
+export function generateSVGFromElements(shapeElements: ShapeElement[]): string {
+  if (!shapeElements || shapeElements.length === 0) {
+    return '';
+  }
+  
+  // Create a copy to avoid any potential mutation
+  const elementsCopy = [...shapeElements];
+  
+  const result = elementsCopy.map((element) => {
+    // Simply return the SVG content directly
+    return element.svg;
+  }).join('');
+  
+  return result;
+}
+
+/**
+ * @function generateDynamicUMLClassSVG
+ * @brief Generates a UML class SVG with sections sized according to text content.
+ * @param el The UML class element
+ * @returns Object containing the SVG shape and adjusted text regions
+ */
+export function generateDynamicUMLClassSVG(el: DrawElement) {
+  if (!el.textRegions || el.textRegions.length < 3) {
+    // Fallback to original shape if no text regions
+    return {
+      shape: el.shape,
+      textRegions: el.textRegions
+    };
+  }
+
+  const width = Math.abs(el.end.x - el.start.x);
+  const height = Math.abs(el.end.y - el.start.y);
+  const originalWidth = el.width || 120;
+  const originalHeight = el.height || 80;
+  const scaleX = width / originalWidth;
+  const scaleY = height / originalHeight;
+  
+  // Calculate required heights for each section based on text content
+  const sections = el.textRegions.map((region, index) => {
+    const fontSize = (region.fontSize || 12) * Math.min(scaleX, scaleY);
+    const lines = (region.text || '').split('\n');
+    const textHeight = lines.length * fontSize * 1.4; // Line height factor
+    const padding = 10; // Padding within each section
+    const minHeight = fontSize + padding; // Minimum height
+    
+    return {
+      index,
+      requiredHeight: Math.max(minHeight, textHeight + padding),
+      originalRegion: region
+    };
+  });
+
+  // Calculate section positions and total height
+  let currentY = 0;
+  const adjustedSections = sections.map((section) => {
+    const sectionY = currentY;
+    const sectionHeight = section.requiredHeight;
+    currentY += sectionHeight;
+    
+    return {
+      ...section,
+      y: sectionY,
+      height: sectionHeight,
+      adjustedRegion: {
+        ...section.originalRegion,
+        x: 10,
+        y: sectionY + 5, // Small padding from top
+        width: originalWidth - 20, // 10px padding on each side
+        height: sectionHeight - 10, // Account for padding
+      }
+    };
+  });
+
+  const totalHeight = currentY;
+  const scaledWidth = originalWidth;
+
+  // Generate dynamic shape elements
+  const shapeElements: any[] = [
+    {
+      type: 'rect',
+      id: 'mainRect',
+      x: 0,
+      y: 0,
+      width: scaledWidth,
+      height: totalHeight,
+      fill: '#fff',
+      stroke: '#000',
+      strokeWidth: 2,
+      vectorEffect: 'non-scaling-stroke'
+    }
+  ];
+
+  // Add divider lines between sections (but not after the last section)
+  for (let i = 0; i < adjustedSections.length - 1; i++) {
+    const dividerY = adjustedSections[i].y + adjustedSections[i].height;
+    shapeElements.push({
+      type: 'line',
+      id: `divider${i + 1}`,
+      x1: 0,
+      y1: dividerY,
+      x2: scaledWidth,
+      y2: dividerY,
+      stroke: '#000',
+      strokeWidth: 1,
+      vectorEffect: 'non-scaling-stroke'
+    });
+  }
+
+  // Generate SVG from elements
+  const svgShape = generateSVGFromElements(shapeElements);
+
+  return {
+    shape: svgShape,
+    shapeElements: shapeElements,
+    textRegions: adjustedSections.map(section => section.adjustedRegion),
+    adjustedHeight: totalHeight
+  };
 }
 
 /**
@@ -386,6 +781,9 @@ export function RenderElement({
   // Text region editing state
   const [editingTextRegion, setEditingTextRegion] = React.useState<number | null>(null);
   const [editRegionValue, setEditRegionValue] = React.useState("");
+  // Shape element editing state
+  const [editingShapeElement, setEditingShapeElement] = React.useState<string | null>(null);
+  const [editShapeElementData, setEditShapeElementData] = React.useState<any>(null);
 
   // --- Resize Logic ---
   const resizingRef = useRef<{
@@ -402,21 +800,42 @@ export function RenderElement({
    * @returns Array of JSX elements representing resize handles.
    */
   function renderResizeHandles(rect: { x: number, y: number, width: number, height: number }) {
-    const handles = [
-      { x: rect.x, y: rect.y, cursor: "nwse-resize", name: "topLeft" },
-      { x: rect.x + rect.width, y: rect.y, cursor: "nesw-resize", name: "topRight" },
-      { x: rect.x, y: rect.y + rect.height, cursor: "nesw-resize", name: "bottomLeft" },
-      { x: rect.x + rect.width, y: rect.y + rect.height, cursor: "nwse-resize", name: "bottomRight" },
-    ];
-    return handles.map(h => (
-      <rect
-        key={h.name}
-        className={`resize-handle ${h.cursor.replace('-resize', '-resize')}`}
-        x={h.x - 6}
-        y={h.y - 6}
-        onPointerDown={e => handleResizePointerDown(e, h.name)}
-      />
-    ));
+    if (el.rotation) {
+      // For rotated elements, use the rotated corner positions
+      const rotatedRect = getRotatedBoundingRect(el);
+      const handles = [
+        { pos: rotatedRect.topLeft, cursor: "nwse-resize", name: "topLeft" },
+        { pos: rotatedRect.topRight, cursor: "nesw-resize", name: "topRight" },
+        { pos: rotatedRect.bottomLeft, cursor: "nesw-resize", name: "bottomLeft" },
+        { pos: rotatedRect.bottomRight, cursor: "nwse-resize", name: "bottomRight" },
+      ];
+      return handles.map(h => (
+        <rect
+          key={h.name}
+          className={`resize-handle ${h.cursor.replace('-resize', '-resize')}`}
+          x={h.pos.x - 6}
+          y={h.pos.y - 6}
+          onPointerDown={e => handleResizePointerDown(e, h.name)}
+        />
+      ));
+    } else {
+      // For non-rotated elements, use the original approach
+      const handles = [
+        { x: rect.x, y: rect.y, cursor: "nwse-resize", name: "topLeft" },
+        { x: rect.x + rect.width, y: rect.y, cursor: "nesw-resize", name: "topRight" },
+        { x: rect.x, y: rect.y + rect.height, cursor: "nesw-resize", name: "bottomLeft" },
+        { x: rect.x + rect.width, y: rect.y + rect.height, cursor: "nwse-resize", name: "bottomRight" },
+      ];
+      return handles.map(h => (
+        <rect
+          key={h.name}
+          className={`resize-handle ${h.cursor.replace('-resize', '-resize')}`}
+          x={h.x - 6}
+          y={h.y - 6}
+          onPointerDown={e => handleResizePointerDown(e, h.name)}
+        />
+      ));
+    }
   }
 
   /**
@@ -525,35 +944,97 @@ export function RenderElement({
    * @function renderSelectionHighlight
    * @brief Renders a blue outline around the element when hovered or selected.
    * @returns JSX element for the selection highlight or null if not shown.
-   * @description Shows different colors for selected vs hovered states.
+   * @description Shows different colors for selected vs hovered states. Handles rotation correctly.
    */
   function renderSelectionHighlight() {
-    const rect = getElementBoundingRect(el);
     const shouldShow = hoveredElementId === el.id || isSelected || labelHovered;
     
     if (!shouldShow) return null;
     
-    return (
-      <rect
-        className={`element-selection-highlight ${isSelected ? 'selected' : 'hovered'}`}
-        x={rect.x - 4}
-        y={rect.y - 4}
-        width={rect.width + 8}
-        height={rect.height + 8}
-      />
-    );
+    if (el.rotation) {
+      // For rotated elements, use a polygon to show proper rotated outline
+      const rotatedRect = getRotatedBoundingRect(el);
+      const padding = 4;
+      
+      // Calculate padded corners (expand outward from center)
+      const center = rotatedRect.center;
+      const corners = [
+        rotatedRect.topLeft,
+        rotatedRect.topRight, 
+        rotatedRect.bottomRight,
+        rotatedRect.bottomLeft
+      ];
+      
+      // Expand each corner outward from center by padding amount
+      const paddedCorners = corners.map(corner => {
+        const dx = corner.x - center.x;
+        const dy = corner.y - center.y;
+        const length = Math.sqrt(dx * dx + dy * dy);
+        if (length === 0) return corner;
+        const scale = (length + padding) / length;
+        return {
+          x: center.x + dx * scale,
+          y: center.y + dy * scale
+        };
+      });
+      
+      const points = paddedCorners.map(p => `${p.x},${p.y}`).join(' ');
+      
+      return (
+        <polygon
+          className={`element-selection-highlight ${isSelected ? 'selected' : 'hovered'}`}
+          points={points}
+        />
+      );
+    } else {
+      // For non-rotated elements, use the original rect approach
+      const rect = getElementBoundingRect(el);
+      return (
+        <rect
+          className={`element-selection-highlight ${isSelected ? 'selected' : 'hovered'}`}
+          x={rect.x - 4}
+          y={rect.y - 4}
+          width={rect.width + 8}
+          height={rect.height + 8}
+        />
+      );
+    }
   }
 
   /**
    * @function renderRotationHandle
    * @brief Renders a rotation button for selected elements.
    * @returns JSX element for the rotation handle or null if element is not selected.
-   * @description Positioned at the top-right of the element's bounding box.
+   * @description Positioned at the top-right of the element's bounding box, accounting for rotation.
    */
   function renderRotationHandle() {
     if (!isSelected) return null;
     
-    const rect = getElementBoundingRect(el);
+    let handlePosition;
+    
+    if (el.rotation) {
+      // For rotated elements, position handle at a fixed offset from the center
+      // This ensures it's always accessible regardless of rotation
+      const centerX = (el.start.x + el.end.x) / 2;
+      const centerY = (el.start.y + el.end.y) / 2;
+      
+      // Position handle at a fixed distance from center, slightly outside the element
+      const rect = getElementBoundingRect(el);
+      const maxDimension = Math.max(rect.width, rect.height);
+      const handleDistance = maxDimension / 2 + 30; // 30px outside the element
+      
+      handlePosition = {
+        x: centerX + handleDistance,
+        y: centerY - 24
+      };
+    } else {
+      // For non-rotated elements, use the original positioning
+      const rect = getElementBoundingRect(el);
+      handlePosition = {
+        x: rect.x + rect.width + 10,
+        y: rect.y - 24
+      };
+    }
     
     return (
       <g
@@ -564,10 +1045,29 @@ export function RenderElement({
           const next = (current + 15) % 360;
           updateElement({ ...el, rotation: next });
         }}
-        transform={`translate(${rect.x + rect.width + 10}, ${rect.y - 24})`}
+        transform={`translate(${handlePosition.x}, ${handlePosition.y})`}
       >
+        {/* Larger invisible clickable area */}
+        <rect 
+          x={-4} 
+          y={-4} 
+          width={32} 
+          height={32} 
+          fill="transparent" 
+          style={{ cursor: "pointer" }}
+        />
         <rect className="rotation-handle-bg" />
         <RotateCw x={4} y={4} size={16} color="#1976d2" />
+        {/* Show current rotation angle */}
+        <text 
+          x={30} 
+          y={16} 
+          fontSize={10} 
+          fill="#1976d2" 
+          textAnchor="start"
+        >
+          {Math.round(el.rotation || 0)}°
+        </text>
       </g>
     );
   }
@@ -825,6 +1325,24 @@ export function RenderElement({
   }
 
   /**
+   * @function handleShapeElementEdit
+   * @brief Updates a shape element's properties and exits edit mode.
+   * @param shapeElementId The ID of the shape element being edited.
+   * @param newData The new shape element data.
+   */
+  function handleShapeElementEdit(shapeElementId: string, newData: any) {
+    if (!updateElement || !el.shapeElements) return;
+    
+    const updatedShapeElements = el.shapeElements.map((se: ShapeElement) => 
+      se.id === shapeElementId ? { ...se, ...newData } : se
+    );
+    
+    updateElement({ ...el, shapeElements: updatedShapeElements });
+    setEditingShapeElement(null);
+    setEditShapeElementData(null);
+  }
+
+  /**
    * @function handleTextRegionDoubleClick
    * @brief Handles double-click on text regions to enter edit mode.
    * @param regionIndex The index of the text region being edited.
@@ -860,39 +1378,33 @@ export function RenderElement({
    * @returns Array of JSX elements for text regions.
    */
   function renderTextRegions() {
-    if (!el.textRegions) return null;
+    // Get text regions from either legacy property or shapeElements
+    const allTextRegions = (el.textRegions && el.textRegions.length > 0) 
+      ? el.textRegions 
+      : (el.shapeElements ? collectTextRegionsFromShapeElements(el.shapeElements) || [] : []);
+      
+    if (allTextRegions.length === 0) return null;
 
-    const shapeWidth = el.width && el.width > 0 ? el.width : 48;
-    const shapeHeight = el.height && el.height > 0 ? el.height : 48;
-    const width = Math.abs(el.end.x - el.start.x);
-    const height = Math.abs(el.end.y - el.start.y);
-    const scaleX = shapeWidth ? width / shapeWidth : 1;
-    const scaleY = shapeHeight ? height / shapeHeight : 1;
-    const scaleFactor = Math.min(scaleX, scaleY); // Use uniform scaling to avoid distortion
+    const adjustedRegions = calculateAdjustedTextRegions(el);
 
-    return el.textRegions.map((region, index) => {
-      const scaledX = el.start.x + (region.x * scaleX);
-      const scaledY = el.start.y + (region.y * scaleY);
-      const scaledWidth = region.width * scaleX;
-      const scaledHeight = region.height * scaleY;
-
-      if (editingTextRegion === index) {
+    return adjustedRegions.map((adjustedRegion) => {
+      if (editingTextRegion === adjustedRegion.index) {
         // Render textarea for editing
         return (
           <foreignObject
-            key={`region-edit-${index}`}
-            x={scaledX}
-            y={scaledY - 5}
-            width={scaledWidth}
-            height={Math.max(scaledHeight, 20)}
+            key={`region-edit-${adjustedRegion.index}`}
+            x={adjustedRegion.scaledX}
+            y={adjustedRegion.scaledY - 5}
+            width={adjustedRegion.scaledWidth}
+            height={Math.max(adjustedRegion.scaledHeight, 20)}
           >
             <textarea
               className="label-input"
               value={editRegionValue}
               autoFocus
               style={{
-                fontSize: `${(region.fontSize || 12) * scaleFactor}px`,
-                textAlign: region.align || 'center',
+                fontSize: `${adjustedRegion.fontSize}px`,
+                textAlign: adjustedRegion.align || 'center',
                 background: 'rgba(255, 255, 255, 0.9)',
                 border: '1px solid #1976d2',
                 width: '100%',
@@ -900,7 +1412,7 @@ export function RenderElement({
                 resize: 'none',
               }}
               onChange={e => setEditRegionValue(e.target.value)}
-              onBlur={() => handleTextRegionEdit(index, editRegionValue)}
+              onBlur={() => handleTextRegionEdit(adjustedRegion.index, editRegionValue)}
               onKeyDown={e => {
                 if (e.key === "Escape") setEditingTextRegion(null);
               }}
@@ -910,29 +1422,27 @@ export function RenderElement({
       }
 
       // Render clickable text region
-      const lines: string[] = (region.text || '').split('\n');
       return (
-        <g key={`region-${index}`}>
+        <g key={`region-${adjustedRegion.index}`}>
           {/* Invisible clickable area */}
           <rect
-            x={scaledX}
-            y={scaledY}
-            width={scaledWidth}
-            height={scaledHeight}
+            x={adjustedRegion.scaledX}
+            y={adjustedRegion.scaledY}
+            width={adjustedRegion.scaledWidth}
+            height={adjustedRegion.scaledHeight}
             fill="transparent"
             style={{ cursor: "text" }}
-            onDoubleClick={e => handleTextRegionDoubleClick(index, e)}
+            onDoubleClick={e => handleTextRegionDoubleClick(adjustedRegion.index, e)}
           />
           {/* Text content */}
-          {/* Render multi-line text content */}
-          <g key={`region-${index}-lines`}>
-            {lines.map((line: string, lineIndex: number) => (
+          <g key={`region-${adjustedRegion.index}-lines`}>
+            {adjustedRegion.lines.map((line: string, lineIndex: number) => (
               <text
-                key={`region-${index}-line-${lineIndex}`}
-                x={scaledX + (region.align === 'left' ? 5 : region.align === 'right' ? scaledWidth - 5 : scaledWidth / 2)}
-                y={scaledY + scaledHeight / 2 + lineIndex * (region.fontSize || 12) * Math.min(scaleX, scaleY)}
-                fontSize={(region.fontSize || 12) * Math.min(scaleX, scaleY)}
-                textAnchor={region.align || 'center'}
+                key={`region-${adjustedRegion.index}-line-${lineIndex}`}
+                x={adjustedRegion.scaledX + (adjustedRegion.align === 'left' ? 5 : adjustedRegion.align === 'right' ? adjustedRegion.scaledWidth - 5 : adjustedRegion.scaledWidth / 2)}
+                y={adjustedRegion.scaledY + adjustedRegion.scaledHeight / 2 + lineIndex * adjustedRegion.fontSize}
+                fontSize={adjustedRegion.fontSize}
+                textAnchor={adjustedRegion.align || 'center'}
                 dominantBaseline="middle"
                 fill="#000"
                 className="shape-text-region"
@@ -941,9 +1451,97 @@ export function RenderElement({
               </text>
             ))}
           </g>
-        </g>
-      );
+        </g>      );
     });
+  }
+
+  /**
+   * @function renderShapeElementEditor
+   * @brief Renders a simple property editor for shape elements.
+   * @returns JSX element for the shape element editor or null.
+   */
+  function renderShapeElementEditor() {
+    if (!editingShapeElement || !editShapeElementData) return null;
+
+    return (
+      <foreignObject
+        x={el.start.x + 10}
+        y={el.start.y + 10}
+        width={300}
+        height={150}
+      >
+        <div 
+          style={{
+            background: 'white',
+            border: '1px solid #ccc',
+            borderRadius: '4px',
+            padding: '10px',
+            fontSize: '12px',
+            fontFamily: 'Arial, sans-serif'
+          }}
+        >
+          <div style={{ marginBottom: '10px', fontWeight: 'bold' }}>
+            Edit SVG element: {editingShapeElement}
+          </div>
+          
+          {/* SVG Content Editor */}
+          <div style={{ marginBottom: '10px' }}>
+            <label style={{ display: 'block', marginBottom: '5px' }}>SVG Content:</label>
+            <textarea
+              value={editShapeElementData.svg || ''}
+              onChange={(e) => setEditShapeElementData({
+                ...editShapeElementData,
+                svg: e.target.value
+              })}
+              style={{
+                width: '100%',
+                height: '60px',
+                fontSize: '11px',
+                fontFamily: 'monospace',
+                border: '1px solid #ccc',
+                borderRadius: '3px',
+                padding: '5px'
+              }}
+              placeholder="Enter SVG content (e.g., <rect x='0' y='0' width='10' height='10' fill='red'/>)"
+            />
+          </div>
+
+          {/* Buttons */}
+          <div style={{ marginTop: '10px' }}>
+            <button
+              onClick={() => handleShapeElementEdit(editingShapeElement, editShapeElementData)}
+              style={{
+                marginRight: '5px',
+                padding: '4px 8px',
+                background: '#007bff',
+                color: 'white',
+                border: 'none',
+                borderRadius: '3px',
+                cursor: 'pointer'
+              }}
+            >
+              Save
+            </button>
+            <button
+              onClick={() => {
+                setEditingShapeElement(null);
+                setEditShapeElementData(null);
+              }}
+              style={{
+                padding: '4px 8px',
+                background: '#6c757d',
+                color: 'white',
+                border: 'none',
+                borderRadius: '3px',
+                cursor: 'pointer'
+              }}
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </foreignObject>
+    );
   }
 
   // --- Main Render ---
@@ -962,6 +1560,7 @@ export function RenderElement({
       {isSelected && renderResizeHandles(rect)}
       {renderElementContent()}
       {renderTextRegions()}
+      {renderShapeElementEditor()}
       {renderLabelBackground()}
       {renderLabel()}
       {renderLabelEditor()}
@@ -970,5 +1569,40 @@ export function RenderElement({
       {renderTextEditor()}
     </g>
   );
+}
+
+/**
+ * @function collectTextRegionsFromShapeElements
+ * @brief Collects all text regions from shape elements.
+ * @param shapeElements Array of shape elements
+ * @returns Combined array of text regions with shape element reference
+ */
+export function collectTextRegionsFromShapeElements(shapeElements: ShapeElement[]) {
+  if (!shapeElements || shapeElements.length === 0) return [];
+  
+  const allTextRegions: Array<{
+    id: string;
+    x: number;
+    y: number;
+    width: number;
+    height: number;
+    text: string;
+    fontSize?: number;
+    align?: 'left' | 'center' | 'right';
+    shapeElementId: string; // Reference to the parent shape element
+  }> = [];
+  
+  shapeElements.forEach(shapeElement => {
+    if (shapeElement.textRegions && shapeElement.textRegions.length > 0) {
+      shapeElement.textRegions.forEach(region => {
+        allTextRegions.push({
+          ...region,
+          shapeElementId: shapeElement.id
+        });
+      });
+    }
+  });
+  
+  return allTextRegions;
 }
 
