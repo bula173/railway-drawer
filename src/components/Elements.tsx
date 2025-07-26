@@ -157,6 +157,10 @@ export interface DrawElement {
   name?: string;
   type: string;
   
+  // Element behavior properties
+  unified?: boolean; // If true, treat as single object despite multiple shapeElements
+  complex?: boolean; // If true, allow individual shapeElement resizing with proportional scaling
+  
   // Styling properties
   styles?: ElementStyles;
   
@@ -194,6 +198,439 @@ export interface DrawElement {
 }
 
 /**
+ * @function syncShapeElementsForUMLClass
+ * @brief Synchronizes UML class rectangle shapes so they all have the same width, expanding and contracting as needed
+ * @param element The UML class element
+ * @returns Updated element with synchronized shape elements
+ */
+/**
+ * @function syncUnifiedElement
+ * @brief Synchronizes unified elements where all shapeElements should be treated as a single cohesive object
+ * @param element The unified element to synchronize
+ * @returns Updated element with synchronized shape elements
+ */
+export function syncUnifiedElement(element: DrawElement): DrawElement {
+  if (!element.unified || !element.shapeElements) {
+    return element;
+  }
+
+  console.log(`🔄 Unified Element Sync called for:`, element.name || element.id);
+
+  // Calculate required width based on text content
+  const minWidth = 80;
+  let maxRequiredWidth = minWidth;
+
+  element.shapeElements.forEach(shapeEl => {
+    if (shapeEl.textRegions) {
+      shapeEl.textRegions.forEach((textRegion: any) => {
+        const fontSize = textRegion.fontSize || 12;
+        const text = textRegion.text || '';
+        
+        if (text.trim() === '') return;
+        
+        const lines = text.split('\n').filter((line: string) => line.trim() !== '');
+        if (lines.length === 0) return;
+        
+        const maxLineLength = Math.max(...lines.map((line: string) => line.trim().length));
+        const charWidth = fontSize * 0.65;
+        const estimatedTextWidth = maxLineLength * charWidth + 20;
+        maxRequiredWidth = Math.max(maxRequiredWidth, estimatedTextWidth);
+      });
+    }
+  });
+
+  maxRequiredWidth = Math.max(maxRequiredWidth, minWidth);
+
+  // For UML classes, maintain specific layout
+  if (element.id === 'uml_class') {
+    return syncUMLClassLayout(element, maxRequiredWidth);
+  }
+
+  // For other unified elements, just synchronize width
+  const updatedShapeElements = element.shapeElements.map((shapeEl) => {
+    // Parse current SVG to get dimensions
+    const rectMatch = shapeEl.svg.match(/width=['"]([^'"]+)['"]/);
+    if (rectMatch) {
+      const newSvg = shapeEl.svg.replace(/width=['"][^'"]*['"]/, `width='${maxRequiredWidth}'`);
+      
+      const updatedTextRegions = shapeEl.textRegions?.map((textRegion: any) => ({
+        ...textRegion,
+        width: maxRequiredWidth - 10,
+        x: 5
+      }));
+
+      return {
+        ...shapeEl,
+        svg: newSvg,
+        textRegions: updatedTextRegions
+      };
+    }
+    return shapeEl;
+  });
+
+  return {
+    ...element,
+    shapeElements: updatedShapeElements,
+    width: maxRequiredWidth
+  };
+}
+
+/**
+ * @function syncUMLClassLayout
+ * @brief Specific synchronization for UML class layout with proper rectangle positioning
+ * @param element The UML class element
+ * @param requiredWidth The calculated required width
+ * @returns Updated element with proper UML class layout
+ */
+function syncUMLClassLayout(element: DrawElement, requiredWidth: number): DrawElement {
+  console.log(`🎯 UML Class Layout Sync - width: ${requiredWidth}`);
+
+  // Define the fixed UML class structure
+  const sections = [
+    { id: 'classNameRect', y: 0, height: 20 },
+    { id: 'attributesRect', y: 20, height: 30 },
+    { id: 'methodsRect', y: 50, height: 30 }
+  ];
+
+  const updatedShapeElements = element.shapeElements!.map((shapeEl) => {
+    const section = sections.find(s => s.id === shapeEl.id);
+    if (!section) return shapeEl;
+
+    console.log(`🔧 Updating ${shapeEl.id}: y=${section.y}, height=${section.height}, width=${requiredWidth}`);
+
+    // Generate new SVG with correct positioning
+    const newSvg = `<rect x='0' y='${section.y}' width='${requiredWidth}' height='${section.height}' fill='#fff' stroke='#000' stroke-width='2'${shapeEl.id !== 'classNameRect' ? " stroke-dasharray='0'" : ''} vector-effect='non-scaling-stroke'/>`;
+
+    // Update text regions
+    const updatedTextRegions = shapeEl.textRegions?.map((textRegion: any) => ({
+      ...textRegion,
+      width: requiredWidth - 10,
+      x: 5,
+      y: section.y + 5,
+      height: section.height - 10
+    }));
+
+    return {
+      ...shapeEl,
+      svg: newSvg,
+      textRegions: updatedTextRegions
+    };
+  });
+
+  return {
+    ...element,
+    shapeElements: updatedShapeElements,
+    width: requiredWidth,
+    height: 80, // Keep original proportions
+    // Update end coordinates to match new width
+    end: {
+      ...element.end,
+      x: element.start.x + requiredWidth
+    }
+  };
+}
+
+export function syncShapeElementsForUMLClass(element: DrawElement): DrawElement {
+  if (element.id !== 'uml_class' || !element.shapeElements) {
+    return element;
+  }
+
+  console.log(`🔄 UML Class Sync called for element:`, element.name || 'unnamed', 'with', element.shapeElements.length, 'shape elements');
+
+  // Calculate required width based on current text content in all sections
+  const minWidth = 80; // Absolute minimum width for UML classes
+  let maxRequiredWidth = minWidth;
+
+  element.shapeElements.forEach(shapeEl => {
+    if (shapeEl.textRegions) {
+      shapeEl.textRegions.forEach((textRegion: any) => {
+        // Estimate text width based on content and font size
+        const fontSize = textRegion.fontSize || 12;
+        const text = textRegion.text || '';
+        
+        if (text.trim() === '') {
+          return;
+        }
+        
+        const lines = text.split('\n').filter((line: string) => line.trim() !== '');
+        if (lines.length === 0) {
+          return;
+        }
+        
+        const maxLineLength = Math.max(...lines.map((line: string) => line.trim().length));
+        
+        // Improved text width estimation based on font size
+        const charWidth = fontSize * 0.65;
+        const estimatedTextWidth = maxLineLength * charWidth + 20; // 10px padding on each side
+        maxRequiredWidth = Math.max(maxRequiredWidth, estimatedTextWidth);
+      });
+    }
+  });
+
+  // Ensure we don't go below minimum width
+  maxRequiredWidth = Math.max(maxRequiredWidth, minWidth);
+
+  // Work with the ORIGINAL coordinate system that scaling will be applied to
+  // The original UML class design has fixed proportions that we should maintain
+  const originalTotalHeight = 80; // From toolbox config
+  
+  // Use the original proportional layout but with synchronized width
+  const classNameHeight = 20;  // Original: 20px
+  const attributesHeight = 30; // Original: 30px  
+  const methodsHeight = 30;    // Original: 30px
+
+  // Update the element's intrinsic width to match our required width
+  // This ensures scaling calculations work correctly
+  const updatedElement = {
+    ...element,
+    width: maxRequiredWidth, // Update the element's intrinsic width
+    height: originalTotalHeight // Keep original height for proper scaling
+  };
+
+  // Rebuild the UML class with synchronized width but original y coordinates
+  const updatedShapeElements = element.shapeElements.map((shapeEl) => {
+    // Use original coordinate system - scaling will handle the rest
+    let y = 0;
+    let height = classNameHeight;
+    
+    if (shapeEl.id === 'classNameRect') {
+      y = 0;
+      height = classNameHeight;
+    } else if (shapeEl.id === 'attributesRect') {
+      y = classNameHeight; // y = 20
+      height = attributesHeight;
+    } else if (shapeEl.id === 'methodsRect') {
+      y = classNameHeight + attributesHeight; // y = 50
+      height = methodsHeight;
+    }
+    
+    // Debug logging
+    console.log(`🔧 UML Class Sync - ${shapeEl.id}: y=${y}, height=${height}, width=${maxRequiredWidth}`);
+    
+    // Use the synchronized width but original coordinate system
+    const newSvg = `<rect x='0' y='${y}' width='${maxRequiredWidth}' height='${height}' fill='#fff' stroke='#000' stroke-width='2'${shapeEl.id !== 'classNameRect' ? " stroke-dasharray='0'" : ''} vector-effect='non-scaling-stroke'/>`;
+    
+    // Debug the generated SVG
+    console.log(`🔧 UML Class SVG - ${shapeEl.id}: ${newSvg}`);
+    
+    // Update textRegions to match new width
+    const updatedTextRegions = shapeEl.textRegions?.map((textRegion: any) => ({
+      ...textRegion,
+      width: maxRequiredWidth - 10, // Leave 5px padding on each side
+      x: 5 // Ensure consistent left padding
+    }));
+
+    return {
+      ...shapeEl,
+      svg: newSvg,
+      textRegions: updatedTextRegions
+    };
+  });
+
+  return {
+    ...updatedElement,
+    shapeElements: updatedShapeElements
+  };
+}/**
+ * @function syncTextRegionsWithSVG
+ * @brief Synchronizes textRegion coordinates with their corresponding SVG elements
+ * @param element The element to synchronize
+ * @returns Updated element with synchronized coordinates
+ */
+export function syncTextRegionsWithSVG(element: DrawElement): DrawElement {
+  if (!element.shapeElements) {
+    return element;
+  }
+
+  const updatedShapeElements = element.shapeElements.map(shapeEl => {
+    if (!shapeEl.textRegions) {
+      return shapeEl;
+    }
+
+    // For rectangles, ensure textRegions are positioned relative to the rect
+    const rect = parseSVGRect(shapeEl.svg);
+    if (rect) {
+      const updatedTextRegions = shapeEl.textRegions.map((textRegion: any) => ({
+        ...textRegion,
+        x: rect.x + 5, // 5px padding from left edge
+        width: rect.width - 10, // 5px padding on each side
+      }));
+      
+      return {
+        ...shapeEl,
+        textRegions: updatedTextRegions
+      };
+    }
+    
+    return shapeEl;
+  });
+
+  return {
+    ...element,
+    shapeElements: updatedShapeElements
+  };
+}
+
+/**
+ * @function parseSVGRect
+ * @brief Parses SVG rect element to extract coordinates and dimensions
+ * @param svgString The SVG string containing the rect element
+ * @returns Object with x, y, width, height or null if parsing fails
+ */
+function parseSVGRect(svgString: string): { x: number; y: number; width: number; height: number } | null {
+  try {
+    const rectMatch = svgString.match(/<rect[^>]*>/);
+    if (!rectMatch) return null;
+    
+    const rectTag = rectMatch[0];
+    const xMatch = rectTag.match(/x=['"]([^'"]+)['"]/);
+    const yMatch = rectTag.match(/y=['"]([^'"]+)['"]/);
+    const widthMatch = rectTag.match(/width=['"]([^'"]+)['"]/);
+    const heightMatch = rectTag.match(/height=['"]([^'"]+)['"]/);
+    
+    if (!xMatch || !yMatch || !widthMatch || !heightMatch) return null;
+    
+    return {
+      x: parseFloat(xMatch[1]),
+      y: parseFloat(yMatch[1]),
+      width: parseFloat(widthMatch[1]),
+      height: parseFloat(heightMatch[1])
+    };
+  } catch (error) {
+    console.error("Error parsing SVG rect:", error);
+    return null;
+  }
+}
+
+/**
+ * @function updateSVGRect
+ * @brief Updates SVG rect element coordinates and dimensions
+ * @param svgString The SVG string to update
+ * @param x New x coordinate
+ * @param y New y coordinate  
+ * @param width New width
+ * @param height New height
+ * @returns Updated SVG string
+ */
+function updateSVGRect(svgString: string, x: number, y: number, width: number, height: number): string {
+  try {
+    return svgString.replace(
+      /<rect([^>]*)\s*\/?>/, 
+      (_, attributes) => {
+        // Update or add coordinates and dimensions
+        let updatedAttributes = attributes;
+        
+        updatedAttributes = updatedAttributes.replace(/x=['"][^'"]*['"]/, `x='${x}'`);
+        if (!updatedAttributes.includes('x=')) updatedAttributes += ` x='${x}'`;
+        
+        updatedAttributes = updatedAttributes.replace(/y=['"][^'"]*['"]/, `y='${y}'`);
+        if (!updatedAttributes.includes('y=')) updatedAttributes += ` y='${y}'`;
+        
+        updatedAttributes = updatedAttributes.replace(/width=['"][^'"]*['"]/, `width='${width}'`);
+        if (!updatedAttributes.includes('width=')) updatedAttributes += ` width='${width}'`;
+        
+        updatedAttributes = updatedAttributes.replace(/height=['"][^'"]*['"]/, `height='${height}'`);
+        if (!updatedAttributes.includes('height=')) updatedAttributes += ` height='${height}'`;
+        
+        return `<rect${updatedAttributes}/>`;
+      }
+    );
+  } catch (error) {
+    console.error("Error updating SVG rect:", error);
+    return svgString;
+  }
+}
+
+/**
+ * @function synchronizeTextRegionsWithSVG
+ * @brief Synchronizes textRegions coordinates with their corresponding SVG rectangles
+ * @param shapeElement The shape element to synchronize
+ * @returns Updated shape element with synchronized coordinates
+ */
+export function synchronizeTextRegionsWithSVG(shapeElement: ShapeElement): ShapeElement {
+  if (!shapeElement.textRegions || shapeElement.textRegions.length === 0) {
+    return shapeElement;
+  }
+  
+  const rectInfo = parseSVGRect(shapeElement.svg);
+  if (!rectInfo) {
+    return shapeElement; // No rect found, return unchanged
+  }
+  
+  // Update textRegions to be properly positioned within the rectangle
+  const updatedTextRegions = shapeElement.textRegions.map(region => {
+    const padding = 5; // Standard padding from rectangle edges
+    
+    return {
+      ...region,
+      x: rectInfo.x + padding,
+      y: rectInfo.y + padding,
+      width: Math.max(rectInfo.width - 2 * padding, 10), // Ensure minimum width
+      height: Math.max(rectInfo.height - 2 * padding, 10) // Ensure minimum height
+    };
+  });
+  
+  return {
+    ...shapeElement,
+    textRegions: updatedTextRegions
+  };
+}
+
+/**
+ * @function expandSVGRectForText
+ * @brief Expands SVG rectangle if text content requires more space
+ * @param shapeElement The shape element to check and potentially expand
+ * @param minWidth Minimum width for the rectangle
+ * @param minHeight Minimum height for the rectangle
+ * @returns Updated shape element with expanded rectangle if needed
+ */
+export function expandSVGRectForText(shapeElement: ShapeElement, minWidth = 120, minHeight = 20): ShapeElement {
+  if (!shapeElement.textRegions || shapeElement.textRegions.length === 0) {
+    return shapeElement;
+  }
+  
+  const rectInfo = parseSVGRect(shapeElement.svg);
+  if (!rectInfo) {
+    return shapeElement;
+  }
+  
+  let maxRequiredWidth = minWidth;
+  let maxRequiredHeight = minHeight;
+  
+  // Calculate required space based on text content
+  shapeElement.textRegions.forEach(region => {
+    const lines = (region.text || '').split('\n');
+    const fontSize = region.fontSize || 10;
+    const padding = 10;
+    
+    // Estimate text width (rough calculation)
+    const maxLineLength = Math.max(...lines.map((line: string) => line.length));
+    const estimatedTextWidth = maxLineLength * fontSize * 0.6; // Rough character width
+    const estimatedTextHeight = lines.length * fontSize * 1.2; // Line height
+    
+    const requiredWidth = estimatedTextWidth + 2 * padding;
+    const requiredHeight = estimatedTextHeight + 2 * padding;
+    
+    maxRequiredWidth = Math.max(maxRequiredWidth, requiredWidth);
+    maxRequiredHeight = Math.max(maxRequiredHeight, requiredHeight);
+  });
+  
+  // Only expand if current rectangle is too small
+  const newWidth = Math.max(rectInfo.width, maxRequiredWidth);
+  const newHeight = Math.max(rectInfo.height, maxRequiredHeight);
+  
+  if (newWidth !== rectInfo.width || newHeight !== rectInfo.height) {
+    const updatedSVG = updateSVGRect(shapeElement.svg, rectInfo.x, rectInfo.y, newWidth, newHeight);
+    
+    // Also update textRegions to match new rectangle size
+    const updatedShapeElement = { ...shapeElement, svg: updatedSVG };
+    return synchronizeTextRegionsWithSVG(updatedShapeElement);
+  }
+  
+  return shapeElement;
+}
+
+/**
  * @function ElementSVG
  * @brief Renders the SVG for a given DrawElement.
  * @param el The element to render.
@@ -228,9 +665,6 @@ export const ElementSVG: React.FC<{ el: DrawElement }> = ({ el }) => {
         if (el.shapeElements && el.shapeElements.length > 0) {
           // Generate SVG from shape elements (only if there are elements)
           shapeToRender = generateSVGFromElements(el.shapeElements!);
-        } else if (el.shape) {
-          // Generate SVG from shape elements (only if there are elements)
-          shapeToRender = generateSVGFromElements(el.shapeElements);
         } else if (el.shape) {
           // Use legacy shape property
           let rawShape = el.shape;
@@ -737,6 +1171,16 @@ export function RenderElement({
   // Shape element editing state
   const [editingShapeElement, setEditingShapeElement] = React.useState<string | null>(null);
   const [editShapeElementData, setEditShapeElementData] = React.useState<any>(null);
+  const [selectedShapeElementId, setSelectedShapeElementId] = React.useState<string | null>(null);
+  const [hoveredShapeElementId, setHoveredShapeElementId] = React.useState<string | null>(null);
+
+  // Clear hover state when element is not selected
+  React.useEffect(() => {
+    if (!isSelected) {
+      setHoveredShapeElementId(null);
+      setSelectedShapeElementId(null);
+    }
+  }, [isSelected]);
 
   // --- Resize Logic ---
   const resizingRef = useRef<{
@@ -1030,17 +1474,409 @@ export function RenderElement({
    * @brief Renders the main SVG content of the element with optional rotation.
    * @returns JSX element containing the ElementSVG component.
    * @description Applies rotation transform around the element's center if rotation is set.
+   * For complex elements, renders individual shape elements with separate click detection.
    */
   function renderElementContent() {
     const transform = el.rotation
       ? `rotate(${el.rotation}, ${(el.start.x + el.end.x) / 2}, ${(el.start.y + el.end.y) / 2})`
       : undefined;
     
+    // Debug logging for complex elements
+    if (el.complex) {
+      console.log('🔧 Rendering complex element:', el.id, 'with', el.shapeElements?.length || 0, 'shape elements');
+    }
+    
+    // For complex elements, render individual shape elements
+    if (el.complex && el.shapeElements) {
+      console.log('✅ Using complex element rendering for:', el.id);
+      return (
+        <g transform={transform}>
+          {renderComplexShapeElements()}
+        </g>
+      );
+    }
+    
+    // For regular elements, use the standard ElementSVG component
+    console.log('🔄 Using standard ElementSVG rendering for:', el.id);
     return (
       <g transform={transform}>
         <ElementSVG el={el} />
       </g>
     );
+  }
+
+  /**
+   * @function renderComplexShapeElements
+   * @brief Renders individual shape elements for complex elements with separate interaction
+   * @returns JSX elements for each shape element with click detection
+   */
+  function renderComplexShapeElements() {
+    if (!el.shapeElements) return null;
+
+    console.log('🎯 Rendering complex shape elements for:', el.id, el.shapeElements.map(se => se.id));
+
+    const shapeWidth = el.width && el.width > 0 ? el.width : 48;
+    const shapeHeight = el.height && el.height > 0 ? el.height : 48;
+    const width = Math.abs(el.end.x - el.start.x);
+    const height = Math.abs(el.end.y - el.start.y);
+    const scaleX = shapeWidth ? width / shapeWidth : 1;
+    const scaleY = shapeHeight ? height / shapeHeight : 1;
+
+    return el.shapeElements.map((shapeEl, index) => {
+      const styledShape = applyStylesToSVGString(shapeEl.svg, el.styles);
+      const isShapeSelected = selectedShapeElementId === shapeEl.id;
+      const isShapeHovered = hoveredShapeElementId === shapeEl.id;
+      
+      console.log(`🔧 Rendering shape element ${index}: ${shapeEl.id} (selected: ${isShapeSelected})`);
+      
+      return (
+        <g
+          key={`shape-${index}-${shapeEl.id}`}
+          transform={`translate(${el.start.x},${el.start.y}) scale(${scaleX},${scaleY})`}
+          className={`complex-shape-element ${isShapeSelected ? 'selected' : ''} ${isShapeHovered ? 'hovered' : ''}`}
+          onPointerDown={(e) => handleShapeElementClick(e, shapeEl.id, index)}
+          onPointerEnter={() => setHoveredShapeElementId(shapeEl.id)}
+          onPointerLeave={() => setHoveredShapeElementId(null)}
+          style={{ cursor: 'pointer' }}
+        >
+          <g dangerouslySetInnerHTML={{ __html: styledShape }} />
+          {isShapeSelected && renderIndividualShapeResizeHandles(shapeEl, scaleX, scaleY)}
+          {isShapeHovered && !isShapeSelected && renderHoverIndicator(shapeEl, scaleX, scaleY)}
+        </g>
+      );
+    });
+  }
+
+  /**
+   * @function handleShapeElementClick
+   * @brief Handles clicking on individual shape elements in complex elements
+   * @param e The pointer event
+   * @param shapeElementId The ID of the clicked shape element
+   * @param shapeIndex The index of the shape element (0 = first)
+   */
+  function handleShapeElementClick(e: React.PointerEvent, shapeElementId: string, shapeIndex: number) {
+    console.log('Shape element clicked:', shapeElementId, 'index:', shapeIndex);
+    
+    // First shape element (index 0) - select entire element for normal resizing
+    if (shapeIndex === 0) {
+      console.log('First shape clicked - selecting entire element');
+      setSelectedShapeElementId(null); // Clear individual selection
+      // Don't stop propagation so the parent element gets selected normally
+      return;
+    }
+    
+    // Subsequent shape elements - stop propagation and allow individual selection
+    e.stopPropagation();
+    console.log('Individual shape element selected:', shapeElementId);
+    setSelectedShapeElementId(selectedShapeElementId === shapeElementId ? null : shapeElementId);
+  }
+
+  /**
+   * @function renderHoverIndicator
+   * @brief Renders hover indicators for shape elements (lighter/subtle version of resize handles)
+   * @param shapeEl The shape element to render hover indicator for
+   * @param _scaleX The X scale factor applied to the element
+   * @param _scaleY The Y scale factor applied to the element
+   * @returns JSX elements for hover indicators
+   */
+  function renderHoverIndicator(shapeEl: any, _scaleX: number, _scaleY: number) {
+    // Parse the SVG to get approximate bounds for hover indicators
+    const svg = shapeEl.svg;
+    
+    if (svg.includes('<line')) {
+      // For lines, extract x1, y1, x2, y2 coordinates
+      const x1Match = svg.match(/x1=['"]([^'"]+)['"]/);
+      const y1Match = svg.match(/y1=['"]([^'"]+)['"]/);
+      const x2Match = svg.match(/x2=['"]([^'"]+)['"]/);
+      const y2Match = svg.match(/y2=['"]([^'"]+)['"]/);
+      
+      if (x1Match && y1Match && x2Match && y2Match) {
+        const x1 = parseFloat(x1Match[1]);
+        const y1 = parseFloat(y1Match[1]);
+        const x2 = parseFloat(x2Match[1]);
+        const y2 = parseFloat(y2Match[1]);
+        
+        return (
+          <g>
+            {/* Start point hover indicator */}
+            <rect
+              x={x1 - 6}
+              y={y1 - 6}
+              width="12"
+              height="12"
+              fill="none"
+              stroke="#4f9eff"
+              strokeWidth="2"
+              strokeDasharray="3,3"
+              vectorEffect="non-scaling-stroke"
+              style={{ cursor: 'nwse-resize', opacity: 0.7 }}
+              pointerEvents="none"
+            />
+            {/* End point hover indicator */}
+            <rect
+              x={x2 - 6}
+              y={y2 - 6}
+              width="12"
+              height="12"
+              fill="none"
+              stroke="#4f9eff"
+              strokeWidth="2"
+              strokeDasharray="3,3"
+              vectorEffect="non-scaling-stroke"
+              style={{ cursor: 'nwse-resize', opacity: 0.7 }}
+              pointerEvents="none"
+            />
+          </g>
+        );
+      }
+    }
+    
+    // For other shapes, show a subtle bounding box indicator
+    return (
+      <rect
+        x="0"
+        y="0"
+        width={el.width || 48}
+        height={el.height || 48}
+        fill="none"
+        stroke="#4f9eff"
+        strokeWidth="1"
+        strokeDasharray="5,5"
+        vectorEffect="non-scaling-stroke"
+        pointerEvents="none"
+        style={{ opacity: 0.5 }}
+      />
+    );
+  }
+
+  /**
+   * @function renderIndividualShapeResizeHandles
+   * @brief Renders resize handles for individual shape elements (not the first one)
+   * @param shapeEl The shape element to render handles for
+   * @param _scaleX The X scale factor applied to the element
+   * @param _scaleY The Y scale factor applied to the element
+   * @returns JSX elements for individual resize handles
+   */
+  function renderIndividualShapeResizeHandles(shapeEl: any, _scaleX: number, _scaleY: number) {
+    // Parse the SVG to get approximate bounds for resize handles
+    // This is a simplified implementation - for lines we'll show handles at endpoints
+    const svg = shapeEl.svg;
+    
+    if (svg.includes('<line')) {
+      // For lines, extract x1, y1, x2, y2 coordinates
+      const x1Match = svg.match(/x1=['"]([^'"]+)['"]/);
+      const y1Match = svg.match(/y1=['"]([^'"]+)['"]/);
+      const x2Match = svg.match(/x2=['"]([^'"]+)['"]/);
+      const y2Match = svg.match(/y2=['"]([^'"]+)['"]/);
+      
+      if (x1Match && y1Match && x2Match && y2Match) {
+        const x1 = parseFloat(x1Match[1]);
+        const y1 = parseFloat(y1Match[1]);
+        const x2 = parseFloat(x2Match[1]);
+        const y2 = parseFloat(y2Match[1]);
+        
+        return (
+          <g>
+            {/* Start point handle */}
+            <rect
+              x={x1 - 4}
+              y={y1 - 4}
+              width="8"
+              height="8"
+              fill="#ff6b6b"
+              stroke="#fff"
+              strokeWidth="1"
+              vectorEffect="non-scaling-stroke"
+              style={{ cursor: 'nwse-resize' }}
+              onPointerDown={(e) => handleIndividualResizeStart(e, shapeEl.id, 'start')}
+            />
+            {/* End point handle */}
+            <rect
+              x={x2 - 4}
+              y={y2 - 4}
+              width="8"
+              height="8"
+              fill="#ff6b6b"
+              stroke="#fff"
+              strokeWidth="1"
+              vectorEffect="non-scaling-stroke"
+              style={{ cursor: 'nwse-resize' }}
+              onPointerDown={(e) => handleIndividualResizeStart(e, shapeEl.id, 'end')}
+            />
+          </g>
+        );
+      }
+    }
+    
+    // For rectangles and other shapes, show a selection outline (not handles for now)
+    return (
+      <rect
+        x="0"
+        y="0"
+        width={el.width || 48}
+        height={el.height || 48}
+        fill="none"
+        stroke="#ff6b6b"
+        strokeWidth="2"
+        strokeDasharray="3,3"
+        vectorEffect="non-scaling-stroke"
+        pointerEvents="none"
+        style={{ opacity: 0.8 }}
+      />
+    );
+  }
+
+  /**
+   * @function handleIndividualResizeStart
+   * @brief Handles the start of resizing an individual shape element
+   * @param e The pointer event
+   * @param shapeElementId The ID of the shape element being resized
+   * @param handleType Whether it's the 'start' or 'end' handle
+   */
+  function handleIndividualResizeStart(e: React.PointerEvent, shapeElementId: string, handleType: 'start' | 'end') {
+    e.stopPropagation();
+    console.log('Individual resize started for:', shapeElementId, 'handle:', handleType);
+    
+    // Store resize state
+    const resizeState = {
+      shapeElementId,
+      handleType,
+      startX: e.clientX,
+      startY: e.clientY,
+      element: { ...el }
+    };
+    
+    // Add mouse move and up listeners
+    const handleMouseMove = (e: MouseEvent) => handleIndividualResizeMove(e, resizeState);
+    const handleMouseUp = () => {
+      window.removeEventListener('pointermove', handleMouseMove);
+      window.removeEventListener('pointerup', handleMouseUp);
+    };
+    
+    window.addEventListener('pointermove', handleMouseMove);
+    window.addEventListener('pointerup', handleMouseUp);
+  }
+
+  /**
+   * @function handleIndividualResizeMove
+   * @brief Handles mouse movement during individual shape element resizing
+   * @param e The mouse event
+   * @param resizeState The resize state object
+   */
+  function handleIndividualResizeMove(e: MouseEvent, resizeState: any) {
+    const svg = document.querySelector('svg');
+    if (!svg) return;
+    
+    const svgRect = svg.getBoundingClientRect();
+    const mouseX = e.clientX - svgRect.left;
+    const mouseY = e.clientY - svgRect.top;
+    const dx = mouseX - (resizeState.startX - svgRect.left);
+    const dy = mouseY - (resizeState.startY - svgRect.top);
+    
+    // Find the shape element to update
+    const updatedShapeElements = el.shapeElements?.map(shapeEl => {
+      if (shapeEl.id === resizeState.shapeElementId) {
+        // Update the SVG coordinates based on the handle being dragged
+        let updatedSvg = shapeEl.svg;
+        
+        if (updatedSvg.includes('<line')) {
+          if (resizeState.handleType === 'start') {
+            // Update x1, y1
+            const x1Match = updatedSvg.match(/x1=['"]([^'"]+)['"]/);
+            const y1Match = updatedSvg.match(/y1=['"]([^'"]+)['"]/);
+            if (x1Match && y1Match) {
+              const newX1 = parseFloat(x1Match[1]) + dx / (Math.abs(el.end.x - el.start.x) / (el.width || 48));
+              const newY1 = parseFloat(y1Match[1]) + dy / (Math.abs(el.end.y - el.start.y) / (el.height || 48));
+              updatedSvg = updatedSvg.replace(/x1=['"][^'"]+['"]/, `x1='${newX1}'`);
+              updatedSvg = updatedSvg.replace(/y1=['"][^'"]+['"]/, `y1='${newY1}'`);
+            }
+          } else {
+            // Update x2, y2
+            const x2Match = updatedSvg.match(/x2=['"]([^'"]+)['"]/);
+            const y2Match = updatedSvg.match(/y2=['"]([^'"]+)['"]/);
+            if (x2Match && y2Match) {
+              const newX2 = parseFloat(x2Match[1]) + dx / (Math.abs(el.end.x - el.start.x) / (el.width || 48));
+              const newY2 = parseFloat(y2Match[1]) + dy / (Math.abs(el.end.y - el.start.y) / (el.height || 48));
+              updatedSvg = updatedSvg.replace(/x2=['"][^'"]+['"]/, `x2='${newX2}'`);
+              updatedSvg = updatedSvg.replace(/y2=['"][^'"]+['"]/, `y2='${newY2}'`);
+            }
+          }
+        }
+        
+        return {
+          ...shapeEl,
+          svg: updatedSvg
+        };
+      }
+      return shapeEl;
+    });
+    
+    // Calculate new bounding box based on all shape elements to update element dimensions
+    let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+    
+    updatedShapeElements?.forEach(shapeEl => {
+      const svg = shapeEl.svg;
+      if (svg.includes('<line')) {
+        const x1Match = svg.match(/x1=['"]([^'"]+)['"]/);
+        const y1Match = svg.match(/y1=['"]([^'"]+)['"]/);
+        const x2Match = svg.match(/x2=['"]([^'"]+)['"]/);
+        const y2Match = svg.match(/y2=['"]([^'"]+)['"]/);
+        
+        if (x1Match && y1Match && x2Match && y2Match) {
+          const x1 = parseFloat(x1Match[1]);
+          const y1 = parseFloat(y1Match[1]);
+          const x2 = parseFloat(x2Match[1]);
+          const y2 = parseFloat(y2Match[1]);
+          
+          minX = Math.min(minX, x1, x2);
+          minY = Math.min(minY, y1, y2);
+          maxX = Math.max(maxX, x1, x2);
+          maxY = Math.max(maxY, y1, y2);
+        }
+      } else if (svg.includes('<rect')) {
+        const xMatch = svg.match(/x=['"]([^'"]+)['"]/);
+        const yMatch = svg.match(/y=['"]([^'"]+)['"]/);
+        const widthMatch = svg.match(/width=['"]([^'"]+)['"]/);
+        const heightMatch = svg.match(/height=['"]([^'"]+)['"]/);
+        
+        if (xMatch && yMatch && widthMatch && heightMatch) {
+          const x = parseFloat(xMatch[1]);
+          const y = parseFloat(yMatch[1]);
+          const width = parseFloat(widthMatch[1]);
+          const height = parseFloat(heightMatch[1]);
+          
+          minX = Math.min(minX, x);
+          minY = Math.min(minY, y);
+          maxX = Math.max(maxX, x + width);
+          maxY = Math.max(maxY, y + height);
+        }
+      }
+    });
+    
+    // Update element dimensions if we found valid bounds
+    let updatedElement = {
+      ...el,
+      shapeElements: updatedShapeElements
+    };
+    
+    if (minX !== Infinity && maxX !== -Infinity) {
+      const newWidth = maxX - minX;
+      const newHeight = maxY - minY;
+      
+      // Update the element's end coordinates to reflect the new size
+      updatedElement = {
+        ...updatedElement,
+        width: newWidth,
+        height: newHeight,
+        end: {
+          x: el.start.x + newWidth,
+          y: el.start.y + newHeight
+        }
+      };
+    }
+    
+    // Update the element with the modified shape elements and dimensions
+    updateElement(updatedElement);
   }
 
   /**
@@ -1501,7 +2337,10 @@ export function RenderElement({
         if (!labelDragging) handlePointerDown(e, el);
       }}
       onPointerEnter={() => setHoveredElementId(el.id)}
-      onPointerLeave={() => setHoveredElementId(null)}
+      onPointerLeave={() => {
+        setHoveredElementId(null);
+        setHoveredShapeElementId(null); // Clear shape element hover state when leaving the entire element
+      }}
     >
       {renderSelectionHighlight()}
       {isSelected && renderResizeHandles(rect)}

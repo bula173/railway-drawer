@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import type { DrawElement } from "./Elements";
+import { synchronizeTextRegionsWithSVG, expandSVGRectForText, syncTextRegionsWithSVG, syncUnifiedElement } from "./Elements";
 import type { DrawAreaRef } from "./DrawArea";
 
 /**
@@ -487,18 +488,34 @@ const PropertiesPanel: React.FC<{
                         // Update the specific textRegion in the specific shapeElement
                         const updatedShapeElements = element.shapeElements?.map((shapeElement, shapeIndex) => {
                           if (shapeIndex === region.shapeElementIndex) {
-                            return {
+                            // Update the text content
+                            const updatedShapeElement = {
                               ...shapeElement,
                               textRegions: shapeElement.textRegions?.map((r, regionIndex) =>
                                 regionIndex === region.regionIndex ? { ...r, text: e.target.value } : r
                               )
                             };
+                            
+                            // Synchronize coordinates and expand SVG if needed
+                            const expandedShapeElement = expandSVGRectForText(updatedShapeElement);
+                            return synchronizeTextRegionsWithSVG(expandedShapeElement);
                           }
                           return shapeElement;
                         });
                         
                         if (updatedShapeElements) {
-                          const updatedElement = { ...element, shapeElements: updatedShapeElements };
+                          let updatedElement: DrawElement = { ...element, shapeElements: updatedShapeElements };
+                          
+                          // Apply unified element synchronization if needed
+                          if (updatedElement.unified && updatedElement.shapeElements) {
+                            updatedElement = syncUnifiedElement(updatedElement);
+                          }
+                          
+                          // Apply general textRegion synchronization
+                          if (updatedElement.shapeElements) {
+                            updatedElement = syncTextRegionsWithSVG(updatedElement);
+                          }
+                          
                           updateElement(updatedElement);
                         }
                       }}

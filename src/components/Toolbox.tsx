@@ -45,6 +45,7 @@ export interface ToolboxItem {
   }>;
   width: number;
   height: number; // <-- fix here
+  complex?: boolean; // If true, enable complex element behavior with individual shape resizing
 }
 
 /**

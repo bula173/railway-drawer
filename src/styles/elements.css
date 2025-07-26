@@ -7,6 +7,21 @@
   cursor: grab;
 }
 
+/* Complex shape element styles */
+.complex-shape-element {
+  cursor: pointer;
+}
+
+/* Note: Selected and hovered states use SVG indicators instead of CSS outlines */
+
+.complex-shape-element.hovered {
+  opacity: 0.9;
+}
+
+.complex-shape-element:hover {
+  opacity: 0.8;
+}
+
 .element-selection-highlight {
   fill: none;
   stroke-width: 2;

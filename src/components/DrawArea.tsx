@@ -11,7 +11,7 @@
  */
 
 import React, { useEffect, useRef, useState, forwardRef, useImperativeHandle } from "react";
-import { RenderElement, getRotatedBoundingRect } from "./Elements";
+import { RenderElement, getRotatedBoundingRect, synchronizeTextRegionsWithSVG, expandSVGRectForText, syncTextRegionsWithSVG, syncUnifiedElement } from "./Elements";
 import type { DrawElement } from "./Elements";
 
 /**
@@ -724,7 +724,18 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       iconSvg: item.iconSvg,
       draw: item.draw,
       shape: item.shape,
-      shapeElements: item.shapeElements ? JSON.parse(JSON.stringify(item.shapeElements)) : undefined, // Deep copy to avoid reference sharing
+      shapeElements: item.shapeElements ? (() => {
+        // Deep copy and synchronize textRegions with SVG coordinates
+        const copiedShapeElements = JSON.parse(JSON.stringify(item.shapeElements));
+        return copiedShapeElements.map((shapeElement: any) => {
+          if (shapeElement.textRegions && shapeElement.textRegions.length > 0) {
+            // Apply synchronization and expansion for text regions
+            const expandedShapeElement = expandSVGRectForText(shapeElement);
+            return synchronizeTextRegionsWithSVG(expandedShapeElement);
+          }
+          return shapeElement;
+        });
+      })() : undefined,
       width: item.width,
       height: item.height,
       rotation: 0,
@@ -732,40 +743,75 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       backgroundColor,
       setGridEnabled: setShowGrid,
       setBackgroundColor,
+      // Transfer complex property from toolbox item to element
+      complex: item.complex,
       ...(defaultStyles && { styles: defaultStyles }),
     };
 
     switch (item.draw?.type) {
-      case "line":
-        return {
+      case "line": {
+        let lineElement: DrawElement = {
           ...baseElement,
           start: { x: x - item.width / 2, y },
           end: { x: x + item.width / 2, y },
         };
-      case "lines":
-        return {
+        if (lineElement.shapeElements) {
+          lineElement = syncTextRegionsWithSVG(lineElement);
+        }
+        return lineElement;
+      }
+      case "lines": {
+        let linesElement: DrawElement = {
           ...baseElement,
           start: { x: x - item.width / 2, y: y - item.height / 2 },
           end: { x: x + item.width / 2, y: y + item.height / 2 },
         };
-      case "icon":
-        return {
+        if (linesElement.shapeElements) {
+          linesElement = syncTextRegionsWithSVG(linesElement);
+        }
+        return linesElement;
+      }
+      case "icon": {
+        let iconElement: DrawElement = {
           ...baseElement,
           start: { x: x - item.width / 2, y: y - item.height / 2 },
           end: { x: x + item.width / 2, y: y + item.height / 2 },
         };
-      case "text":
-        return {
+        if (iconElement.shapeElements) {
+          iconElement = syncTextRegionsWithSVG(iconElement);
+        }
+        return iconElement;
+      }
+      case "text": {
+        let textElement: DrawElement = {
           ...baseElement,
           start: { x: x, y: y - item.height },
           end: { x: x + item.width, y: y + item.height },
         };
-      default:
-        return {
+        if (textElement.shapeElements) {
+          textElement = syncTextRegionsWithSVG(textElement);
+        }
+        return textElement;
+      }
+      default: {
+        let newElement: DrawElement = {
           ...baseElement,
           start: { x: x, y: y },
           end: { x: x + item.width, y: y + item.height },
         };
+        
+        // Apply synchronization for unified elements (like UML classes)
+        if (newElement.unified && newElement.shapeElements) {
+          newElement = syncUnifiedElement(newElement);
+        }
+        
+        // Apply general textRegion synchronization
+        if (newElement.shapeElements) {
+          newElement = syncTextRegionsWithSVG(newElement);
+        }
+        
+        return newElement;
+      }
     }
   }
 
@@ -1010,7 +1056,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
         setGridEnabled: setShowGrid,
         setBackgroundColor: setBackgroundColor,
         // Deep copy text regions if they exist
-        textRegions: el.textRegions ? el.textRegions.map(region => ({ ...region })) : undefined,
+        textRegions: el.textRegions ? el.textRegions.map((region: any) => ({ ...region })) : undefined,
         // Remove the originalId property
         originalId: undefined
       };
