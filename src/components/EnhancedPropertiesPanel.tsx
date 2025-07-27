@@ -354,26 +354,28 @@ const EnhancedPropertiesPanel: React.FC<EnhancedPropertiesPanelProps> = ({
         {/* General Tab */}
         {activeTab === 'general' && (
           <div className="p-4 space-y-4">
-            <div className="grid grid-cols-2 gap-4 text-sm">
+            <div className="space-y-2 text-sm">
               <div>
                 <span className="font-medium text-slate-700">ID:</span>
-                <span className="ml-2 text-slate-600 font-mono">{selectedElement.id}</span>
+                <span className="ml-2 text-slate-600 font-mono break-all">{selectedElement.id}</span>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <span className="font-medium text-slate-700">Position:</span>
+                  <span className="ml-2 text-slate-600">
+                    ({Math.round(selectedElement.start.x)}, {Math.round(selectedElement.start.y)})
+                  </span>
+                </div>
+                <div>
+                  <span className="font-medium text-slate-700">Size:</span>
+                  <span className="ml-2 text-slate-600">
+                    {Math.round(selectedElement.width || 0)} × {Math.round(selectedElement.height || 0)}
+                  </span>
+                </div>
               </div>
               <div>
                 <span className="font-medium text-slate-700">Type:</span>
                 <span className="ml-2 text-slate-600">{selectedElement.type}</span>
-              </div>
-              <div>
-                <span className="font-medium text-slate-700">Position:</span>
-                <span className="ml-2 text-slate-600">
-                  ({Math.round(selectedElement.start.x)}, {Math.round(selectedElement.start.y)})
-                </span>
-              </div>
-              <div>
-                <span className="font-medium text-slate-700">Size:</span>
-                <span className="ml-2 text-slate-600">
-                  {Math.round(selectedElement.width || 0)} × {Math.round(selectedElement.height || 0)}
-                </span>
               </div>
             </div>
 
