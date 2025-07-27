@@ -10,7 +10,7 @@
  * @version 1.0
  */
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import toolboxConfig from "./assets/toolboxConfig.json";
 import Toolbox from "./components/Toolbox";
 import type { ToolboxItem } from "./components/Toolbox";
@@ -51,9 +51,6 @@ const RailwayDrawerApp = () => {
   // Create a stable ref object for PropertiesPanel
   const currentDrawAreaRefObject = useRef<DrawAreaRef | null>(null);
 
-  /** @brief Get the current active DrawArea ref */
-  const getCurrentDrawAreaRef = () => drawAreaRefs.current.get(activeTabId);
-
   /** @brief Set a DrawArea ref for a specific tab */
   const setDrawAreaRef = (tabId: string, ref: DrawAreaRef | null) => {
     if (ref) {
@@ -82,6 +79,9 @@ const RailwayDrawerApp = () => {
     }
   ]);
   const [activeTabId, setActiveTabId] = useState('tab-1');
+
+  /** @brief Get the current active DrawArea ref */
+  const getCurrentDrawAreaRef = useCallback(() => drawAreaRefs.current.get(activeTabId), [activeTabId]);
 
   // Export format state
   const [exportFormat, setExportFormat] = useState<"png" | "jpg" | "svg" | "pdf">("png");
@@ -124,7 +124,7 @@ const RailwayDrawerApp = () => {
         setSelectedElement(undefined);
       }
     }
-  }, [activeTabId, selectedElement]);
+  }, [activeTabId, selectedElement, getCurrentDrawAreaRef]);
 
   /** @brief Get current active tab from tabs array */
   const activeTab = tabs.find(tab => tab.id === activeTabId) || tabs[0];
@@ -304,7 +304,7 @@ const RailwayDrawerApp = () => {
       currentDrawAreaRef.setCopiedElements(globalCopiedElements);
       console.log(`Clipboard sync: Updated DrawArea clipboard with ${globalCopiedElements.length} elements`);
     }
-  }, [globalCopiedElements, activeTabId]);
+  }, [globalCopiedElements, activeTabId, getCurrentDrawAreaRef]);
 
   /**
    * @brief Dummy setter for dragged item (required by Toolbox component)
@@ -316,7 +316,7 @@ const RailwayDrawerApp = () => {
    * @brief Handle global copy/paste operations that work across tabs
    * @details Maintains clipboard state at app level for cross-tab functionality
    */
-  const handleGlobalCopy = () => {
+  const handleGlobalCopy = useCallback(() => {
     const currentDrawAreaRef = getCurrentDrawAreaRef();
     if (currentDrawAreaRef) {
       try {
@@ -344,9 +344,9 @@ const RailwayDrawerApp = () => {
     } else {
       console.warn('Global copy: No active DrawArea ref found');
     }
-  };
+  }, [getCurrentDrawAreaRef, setGlobalCopiedElements]);
 
-  const handleGlobalPaste = () => {
+  const handleGlobalPaste = useCallback(() => {
     const currentDrawAreaRef = getCurrentDrawAreaRef();
     
     // First check if we have elements in the global clipboard
@@ -381,9 +381,9 @@ const RailwayDrawerApp = () => {
         console.warn('Global paste: No active DrawArea ref found');
       }
     }
-  };
+  }, [globalCopiedElements, getCurrentDrawAreaRef]);
 
-  const handleGlobalCut = () => {
+  const handleGlobalCut = useCallback(() => {
     const currentDrawAreaRef = getCurrentDrawAreaRef();
     if (currentDrawAreaRef) {
       try {
@@ -411,7 +411,7 @@ const RailwayDrawerApp = () => {
     } else {
       console.warn('Global cut: No active DrawArea ref found');
     }
-  };
+  }, [getCurrentDrawAreaRef, setGlobalCopiedElements]);
 
   /**
    * @brief Effect to handle global keyboard shortcuts for copy/paste
@@ -445,7 +445,7 @@ const RailwayDrawerApp = () => {
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [globalCopiedElements, activeTabId]); // Add activeTabId to dependencies
+  }, [globalCopiedElements, activeTabId, handleGlobalCopy, handleGlobalCut, handleGlobalPaste]); // Add function dependencies
 
   /**
    * @brief Saves current drawing elements as a JSON file
@@ -584,11 +584,14 @@ const RailwayDrawerApp = () => {
           try {
             const parsed = JSON.parse(content);
             setToolbox(
-              parsed.map((item: any) => ({
-                ...item,
-                iconSvg: item.iconSource === "custom" ? item.iconSvg || item.shape : undefined,
-                iconName: item.iconName,
-              }))
+              parsed.map((item: unknown) => {
+                const toolboxItem = item as { iconSource?: string; iconSvg?: string; shape?: string; iconName?: string };
+                return {
+                  ...toolboxItem,
+                  iconSvg: toolboxItem.iconSource === "custom" ? toolboxItem.iconSvg || toolboxItem.shape : undefined,
+                  iconName: toolboxItem.iconName,
+                };
+              })
             );
           } catch {
             // Silently ignore parse errors

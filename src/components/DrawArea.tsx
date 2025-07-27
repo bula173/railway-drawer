@@ -10,7 +10,7 @@
  * @version 1.0
  */
 
-import React, { useEffect, useRef, useState, forwardRef, useImperativeHandle } from "react";
+import React, { useEffect, useRef, useState, forwardRef, useImperativeHandle, useCallback } from "react";
 import { RenderElement, getRotatedBoundingRect, synchronizeTextRegionsWithSVG, expandSVGRectForText, syncTextRegionsWithSVG, syncUnifiedElement } from "./Elements";
 import type { DrawElement } from "./Elements";
 
@@ -180,7 +180,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     pasteElements,
     getCopiedElements: () => copiedElements,
     setCopiedElements: (els: DrawElement[]) => setCopiedElements(els),
-  }), [elements, showGrid, selectedElementIds, copiedElements]);
+  }), [elements, showGrid, backgroundColor, selectedElementIds, copiedElements, copySelectedElements, cutSelectedElements, pasteElements]);
 
   /**
    * @brief Synchronize elements with grid visibility state
@@ -205,6 +205,16 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
   useEffect(() => {
     draggingIdRef.current = draggingId;
   }, [draggingId]);
+
+  /**
+   * @brief Add current state to history and update elements
+   * @param updater Function or value to update elements state
+   * @details Creates a snapshot of current elements before making changes for undo functionality
+   */
+  const pushToHistoryAndSetElements = useCallback((updater: React.SetStateAction<DrawElement[]>) => {
+    setHistory(prev => [...prev, elements.map(el => ({ ...el }))]);
+    setElements(updater);
+  }, [elements]);
 
   /**
    * @brief Handle keyboard shortcuts for element operations
@@ -247,17 +257,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     }
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [selectedElementIds, elements, setSelectedElement, copiedElements, disableKeyboardHandlers]);
-
-  /**
-   * @brief Add current state to history and update elements
-   * @param updater Function or value to update elements state
-   * @details Creates a snapshot of current elements before making changes for undo functionality
-   */
-  function pushToHistoryAndSetElements(updater: React.SetStateAction<DrawElement[]>) {
-    setHistory(prev => [...prev, elements.map(el => ({ ...el }))]);
-    setElements(updater);
-  }
+  }, [selectedElementIds, elements, setSelectedElement, copiedElements, disableKeyboardHandlers, copySelectedElements, pasteElements, pushToHistoryAndSetElements]);
 
   /**
    * @brief Check if an element intersects with a selection rectangle

@@ -36,7 +36,7 @@ class Logger {
     return this.levels[level] >= this.levels[this.config.level];
   }
 
-  private formatMessage(level: LogLevel, category: string, message: string, data?: any): string {
+  private formatMessage(level: LogLevel, category: string, message: string, data?: unknown): string {
     const timestamp = this.config.enableTimestamp ? new Date().toISOString() : '';
     const prefix = timestamp ? `[${timestamp}]` : '';
     const emoji = this.getEmoji(level);
@@ -60,7 +60,7 @@ class Logger {
     }
   }
 
-  private log(level: LogLevel, category: string, message: string, data?: any): void {
+  private log(level: LogLevel, category: string, message: string, data?: unknown): void {
     if (!this.shouldLog(level) || !this.config.enableConsole) {
       return;
     }
@@ -83,19 +83,19 @@ class Logger {
     }
   }
 
-  debug(category: string, message: string, data?: any): void {
+  debug(category: string, message: string, data?: unknown): void {
     this.log('debug', category, message, data);
   }
 
-  info(category: string, message: string, data?: any): void {
+  info(category: string, message: string, data?: unknown): void {
     this.log('info', category, message, data);
   }
 
-  warn(category: string, message: string, data?: any): void {
+  warn(category: string, message: string, data?: unknown): void {
     this.log('warn', category, message, data);
   }
 
-  error(category: string, message: string, data?: any): void {
+  error(category: string, message: string, data?: unknown): void {
     this.log('error', category, message, data);
   }
 
@@ -108,11 +108,11 @@ class Logger {
 export const logger = new Logger();
 
 // Export convenience functions for common logging patterns
-export const logToolboxConfig = (config: any) => 
+export const logToolboxConfig = (config: unknown[]) => 
   logger.info('toolbox', 'Loading toolbox configuration', {
-    totalItems: config.length,
-    pointElement: config.find((item: any) => item.id === 'point'),
-    trackElement: config.find((item: any) => item.id === 'track')
+    totalItems: (config as any[]).length,
+    pointElement: (config as any[]).find((item: any) => item.id === 'point'),
+    trackElement: (config as any[]).find((item: any) => item.id === 'track')
   });
 
 export const logTabChange = (activeTabId: string, hasRef: boolean, elementsCount: number, selectedElementId?: string) =>
@@ -123,11 +123,11 @@ export const logTabChange = (activeTabId: string, hasRef: boolean, elementsCount
     selectedElementId
   });
 
-export const logElementSync = (operation: string, count: number, details?: any) =>
+export const logElementSync = (operation: string, count: number, details?: unknown) =>
   logger.debug('elements', `${operation}: ${count} elements`, details);
 
 export const logClipboard = (operation: 'copy' | 'paste', count: number, source: 'global' | 'local' = 'global') =>
   logger.debug('clipboard', `${operation} (${source}): ${count} elements`);
 
-export const logError = (category: string, message: string, error: Error | any) =>
-  logger.error(category, message, { error: error.message || error, stack: error.stack });
+export const logError = (category: string, message: string, error: Error | unknown) =>
+  logger.error(category, message, { error: (error as Error).message || error, stack: (error as Error).stack });

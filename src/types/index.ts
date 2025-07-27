@@ -68,7 +68,7 @@ export interface FileData {
   metadata?: {
     appVersion: string;
     createdBy: string;
-    [key: string]: any;
+    [key: string]: unknown;
   };
 }
 
@@ -77,7 +77,7 @@ export interface AppError {
   code: string;
   message: string;
   category: 'file' | 'element' | 'clipboard' | 'ui' | 'validation';
-  details?: any;
+  details?: unknown;
 }
 
 // Event types
@@ -135,7 +135,7 @@ export interface PerformanceMetric {
   name: string;
   duration: number;
   timestamp: number;
-  metadata?: Record<string, any>;
+  metadata?: Record<string, unknown>;
 }
 
 // Feature flags (for gradual rollouts)
