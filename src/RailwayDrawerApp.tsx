@@ -10,7 +10,8 @@
  * @version 1.0
  */
 
-import React, { useState, useRef, useEffect, useCallback } from "react";
+import React, { useState, useRef, useEffect, useCallback, Fragment } from "react";
+import { Menu, Transition } from "@headlessui/react";
 import toolboxConfig from "./assets/toolboxConfig.json";
 import Toolbox from "./components/Toolbox";
 import type { ToolboxItem } from "./components/Toolbox";
@@ -18,7 +19,6 @@ import EnhancedPropertiesPanel from "./components/EnhancedPropertiesPanel";
 import DrawArea, { type DrawAreaRef } from "./components/DrawArea";
 import TabPanel, { type DrawAreaTab } from "./components/TabPanel";
 import type { DrawElement } from "./components/Elements";
-import ElementStateDebugger from "./components/ElementStateDebugger";
 
 /** @brief Grid size for snap-to-grid functionality */
 const GRID_SIZE = 40;
@@ -31,9 +31,6 @@ const GRID_SIZE = 40;
  * @returns {JSX.Element} The rendered RailwayDrawerApp component.
  */
 const RailwayDrawerApp = () => {
-  // Debug mode toggle
-  const [debugMode, setDebugMode] = useState(false);
-  
   // Toolbox state
   const [toolbox, setToolbox] = useState<ToolboxItem[]>(() => {
     const config = toolboxConfig as ToolboxItem[];
@@ -661,6 +658,26 @@ const RailwayDrawerApp = () => {
   }, []);
 
   /**
+   * @brief Effect to handle clicking outside menus to close them
+   */
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      // If we have an active menu and the click wasn't on a menu element, close the menu
+      if (activeMenu) {
+        const target = event.target as Element;
+        const isMenuClick = target.closest('.menu-bar') || target.closest('[data-menu]');
+        if (!isMenuClick) {
+          setActiveMenu(null);
+          setActiveSubMenu(null);
+        }
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [activeMenu]);
+
+  /**
    * @brief Increases zoom level by 20% up to maximum of 500%
    */
   const handleZoomIn = () => setZoom(prev => Math.min(prev * 1.2, 5));
@@ -675,139 +692,188 @@ const RailwayDrawerApp = () => {
    */
   const handleZoomReset = () => setZoom(1);
 
-  // Debug mode - show simple debugger instead of full app
-  if (debugMode) {
-    return (
-      <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
-        <div style={{ padding: '10px', backgroundColor: '#f8f9fa', borderBottom: '1px solid #dee2e6' }}>
-          <button 
-            onClick={() => setDebugMode(false)}
-            style={{ padding: '8px 16px', backgroundColor: '#6c757d', color: 'white', border: 'none', borderRadius: '4px' }}
-          >
-            ← Back to Main App
-          </button>
-        </div>
-        <ElementStateDebugger />
-      </div>
-    );
-  }
-
   return (
     <div className="flex flex-col h-screen w-screen bg-slate-50">
       {/* --- Modern Menu Bar --- */}
-      <div className="flex bg-white border-b border-slate-200 h-10 items-stretch relative z-50 shadow-sm">
+      <div className="flex bg-white border-b border-slate-200 h-10 items-stretch relative z-50 shadow-sm menu-bar">
         {/* File Menu */}
-        <div className="relative">
-          <button 
-            className="bg-white hover:bg-slate-50 text-slate-700 border-none px-4 h-10 text-sm font-medium cursor-pointer outline-none border-r border-slate-200 transition-colors duration-200"
-            onMouseEnter={() => setActiveMenu('file')}
-            onMouseLeave={() => {
-              setActiveMenu(null);
-              setActiveSubMenu(null);
-            }}
-          >
+        <Menu as="div" className="relative">
+          <Menu.Button className="bg-white hover:bg-slate-50 text-slate-700 border-none px-4 h-10 text-sm font-medium cursor-pointer outline-none border-r border-slate-200 transition-colors duration-200 flex items-center">
             File
-          </button>
-          {activeMenu === 'file' && (
-            <div 
-              className="absolute bg-white min-w-[180px] shadow-lg border border-slate-200 z-50 left-0 top-10 rounded-b-lg overflow-hidden"
-              onMouseEnter={() => setActiveMenu('file')}
-              onMouseLeave={() => {
-                setActiveMenu(null);
-                setActiveSubMenu(null);
-              }}
-            >
-              <div className="px-4 py-2 hover:bg-slate-50 cursor-pointer text-sm text-slate-700 transition-colors" onClick={() => { fileInputRef.current?.click(); setActiveMenu(null); }}>
-                Open...
+          </Menu.Button>
+          <Transition
+            as={Fragment}
+            enter="transition ease-out duration-100"
+            enterFrom="transform opacity-0 scale-95"
+            enterTo="transform opacity-100 scale-100"
+            leave="transition ease-in duration-75"
+            leaveFrom="transform opacity-100 scale-100"
+            leaveTo="transform opacity-0 scale-95"
+          >
+            <Menu.Items className="absolute left-0 mt-2 w-56 origin-top-right bg-white divide-y divide-slate-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-[9999]">
+              <div className="px-1 py-1 ">
+                <Menu.Item>
+                  {({ active }) => (
+                    <button
+                      onClick={() => fileInputRef.current?.click()}
+                      className={`${
+                        active ? 'bg-blue-500 text-white' : 'text-slate-900'
+                      } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                    >
+                      Open...
+                    </button>
+                  )}
+                </Menu.Item>
+                <Menu.Item>
+                  {({ active }) => (
+                    <button
+                      onClick={saveAsJson}
+                      className={`${
+                        active ? 'bg-blue-500 text-white' : 'text-slate-900'
+                      } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                    >
+                      Save
+                    </button>
+                  )}
+                </Menu.Item>
               </div>
-              <div className="px-4 py-2 hover:bg-slate-50 cursor-pointer text-sm text-slate-700 transition-colors" onClick={() => { saveAsJson(); setActiveMenu(null); }}>
-                Save
-              </div>
-              <div 
-                className="relative group"
-                onMouseEnter={() => setActiveSubMenu('export')}
-                onMouseLeave={() => setActiveSubMenu(null)}
-              >
-                <div className="px-4 py-2 hover:bg-slate-50 cursor-pointer text-sm text-slate-700 transition-colors flex items-center justify-between">
-                  Export As
-                  <span className="text-slate-400">›</span>
+              <div className="px-1 py-1" onMouseLeave={() => setActiveSubMenu(null)}>
+                <div className="relative">
+                  <Menu.Item>
+                    {({ active }) => (
+                      <button
+                        onMouseEnter={() => setActiveSubMenu('export')}
+                        className={`${
+                          active ? 'bg-blue-500 text-white' : ''
+                        } text-slate-900 group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                      >
+                        Export As
+                        <span className="ml-auto">›</span>
+                      </button>
+                    )}
+                  </Menu.Item>
+                  <Transition
+                    as={Fragment}
+                    show={activeSubMenu === 'export'}
+                    enter="transition ease-out duration-100"
+                    enterFrom="transform opacity-0 scale-95"
+                    enterTo="transform opacity-100 scale-100"
+                    leave="transition ease-in duration-75"
+                    leaveFrom="transform opacity-100 scale-100"
+                    leaveTo="transform opacity-0 scale-95"
+                  >
+                    <div 
+                      className="absolute left-full -top-1 w-56 origin-top-left bg-white divide-y divide-slate-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                      onMouseEnter={() => setActiveSubMenu('export')}
+                    >
+                      <div className="px-1 py-1">
+                        <Menu.Item>
+                          {({ active }) => (
+                            <button onClick={() => { setExportFormat("png"); exportToImage(); setActiveMenu(null); setActiveSubMenu(null); }} className={`${ active ? 'bg-blue-500 text-white' : 'text-slate-900' } group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
+                              PNG
+                            </button>
+                          )}
+                        </Menu.Item>
+                        <Menu.Item>
+                          {({ active }) => (
+                            <button onClick={() => { setExportFormat("jpg"); exportToImage(); setActiveMenu(null); setActiveSubMenu(null); }} className={`${ active ? 'bg-blue-500 text-white' : 'text-slate-900' } group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
+                              JPG
+                            </button>
+                          )}
+                        </Menu.Item>
+                         <Menu.Item>
+                          {({ active }) => (
+                            <button onClick={() => { setExportFormat("svg"); exportToImage(); setActiveMenu(null); setActiveSubMenu(null); }} className={`${ active ? 'bg-blue-500 text-white' : 'text-slate-900' } group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
+                              SVG
+                            </button>
+                          )}
+                        </Menu.Item>
+                        <Menu.Item>
+                          {({ active }) => (
+                            <button onClick={() => { setExportFormat("pdf"); exportToImage(); setActiveMenu(null); setActiveSubMenu(null); }} className={`${ active ? 'bg-blue-500 text-white' : 'text-slate-900' } group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
+                              PDF
+                            </button>
+                          )}
+                        </Menu.Item>
+                      </div>
+                    </div>
+                  </Transition>
                 </div>
-                {activeSubMenu === 'export' && (
-                  <div className="absolute left-full top-0 bg-white min-w-[120px] shadow-lg border border-slate-200 rounded-lg overflow-hidden z-50">
-                    <div className="px-3 py-2 hover:bg-slate-50 cursor-pointer text-sm text-slate-700 transition-colors" onClick={() => { setExportFormat("png"); exportToImage(); setActiveMenu(null); setActiveSubMenu(null); }}>PNG</div>
-                    <div className="px-3 py-2 hover:bg-slate-50 cursor-pointer text-sm text-slate-700 transition-colors" onClick={() => { setExportFormat("jpg"); exportToImage(); setActiveMenu(null); setActiveSubMenu(null); }}>JPG</div>
-                    <div className="px-3 py-2 hover:bg-slate-50 cursor-pointer text-sm text-slate-700 transition-colors" onClick={() => { setExportFormat("svg"); exportToImage(); setActiveMenu(null); setActiveSubMenu(null); }}>SVG</div>
-                    <div className="px-3 py-2 hover:bg-slate-50 cursor-pointer text-sm text-slate-700 transition-colors" onClick={() => { setExportFormat("pdf"); exportToImage(); setActiveMenu(null); setActiveSubMenu(null); }}>PDF</div>
-                  </div>
-                )}
               </div>
-            </div>
-          )}
-          <input
+            </Menu.Items>
+          </Transition>
+        </Menu>
+        <input
             ref={fileInputRef}
             type="file"
             accept="application/json"
             className="hidden"
             onChange={loadFromJson}
-          />
-        </div>
+        />
         
         {/* Toolbox Menu */}
-        <div className="relative">
-          <button 
-            className="bg-white hover:bg-slate-50 text-slate-700 border-none px-4 h-10 text-sm font-medium cursor-pointer outline-none border-r border-slate-200 transition-colors duration-200"
-            onMouseEnter={() => setActiveMenu('toolbox')}
-            onMouseLeave={() => setActiveMenu(null)}
-          >
+        <Menu as="div" className="relative">
+          <Menu.Button className="bg-white hover:bg-slate-50 text-slate-700 border-none px-4 h-10 text-sm font-medium cursor-pointer outline-none border-r border-slate-200 transition-colors duration-200 flex items-center">
             Toolbox
-          </button>
-          {activeMenu === 'toolbox' && (
-            <div 
-              className="absolute bg-white min-w-[180px] shadow-lg border border-slate-200 z-50 left-0 top-10 rounded-b-lg overflow-hidden"
-              onMouseEnter={() => setActiveMenu('toolbox')}
-              onMouseLeave={() => setActiveMenu(null)}
-            >
-              <div className="px-4 py-2 hover:bg-slate-50 cursor-pointer text-sm text-slate-700 transition-colors" onClick={() => { saveToolboxAsJson(); setActiveMenu(null); }}>
-                Save Toolbox
+          </Menu.Button>
+          <Transition
+            as={Fragment}
+            enter="transition ease-out duration-100"
+            enterFrom="transform opacity-0 scale-95"
+            enterTo="transform opacity-100 scale-100"
+            leave="transition ease-in duration-75"
+            leaveFrom="transform opacity-100 scale-100"
+            leaveTo="transform opacity-0 scale-95"
+          >
+            <Menu.Items className="absolute left-0 mt-2 w-56 origin-top-right bg-white divide-y divide-slate-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+              <div className="px-1 py-1">
+                <Menu.Item>
+                  {({ active }) => (
+                    <button
+                      onClick={() => saveToolboxAsJson()}
+                      className={`${
+                        active ? 'bg-blue-500 text-white' : 'text-slate-900'
+                      } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                    >
+                      Save Toolbox
+                    </button>
+                  )}
+                </Menu.Item>
+                <Menu.Item>
+                  {({ active }) => (
+                    <button
+                      onClick={() => toolboxInputRef.current?.click()}
+                      className={`${
+                        active ? 'bg-blue-500 text-white' : 'text-slate-900'
+                      } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                    >
+                      Open Toolbox Config
+                    </button>
+                  )}
+                </Menu.Item>
+                <Menu.Item>
+                  {({ active }) => (
+                    <button
+                      onClick={() => setShowEditor(true)}
+                      className={`${
+                        active ? 'bg-blue-500 text-white' : 'text-slate-900'
+                      } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                    >
+                      Add new shape
+                    </button>
+                  )}
+                </Menu.Item>
               </div>
-              <div className="px-4 py-2 hover:bg-slate-50 cursor-pointer text-sm text-slate-700 transition-colors" onClick={() => { toolboxInputRef.current?.click(); setActiveMenu(null); }}>
-                Open Toolbox Config
-              </div>
-              <div className="px-4 py-2 hover:bg-slate-50 cursor-pointer text-sm text-slate-700 transition-colors" onClick={() => { setShowEditor(true); setActiveMenu(null); }}>
-                Add new shape
-              </div>
-            </div>
-          )}
-          <input
+            </Menu.Items>
+          </Transition>
+        </Menu>
+        <input
             ref={toolboxInputRef}
             type="file"
             accept="application/json"
             className="hidden"
             onChange={loadToolboxFromJson}
-          />
-        </div>
-        
-        {/* Debug Menu */}
-        <div className="relative">
-          <button 
-            className="bg-white hover:bg-slate-50 text-slate-700 border-none px-4 h-10 text-sm font-medium cursor-pointer outline-none border-r border-slate-200 transition-colors duration-200"
-            onMouseEnter={() => setActiveMenu('debug')}
-            onMouseLeave={() => setActiveMenu(null)}
-          >
-            Debug
-          </button>
-          {activeMenu === 'debug' && (
-            <div 
-              className="absolute bg-white min-w-[180px] shadow-lg border border-slate-200 z-50 left-0 top-10 rounded-b-lg overflow-hidden"
-              onMouseEnter={() => setActiveMenu('debug')}
-              onMouseLeave={() => setActiveMenu(null)}
-            >
-              <div className="px-4 py-2 hover:bg-slate-50 cursor-pointer text-sm text-slate-700 transition-colors" onClick={() => { setDebugMode(true); setActiveMenu(null); }}>
-                Element State Debugger
-              </div>
-            </div>
-          )}
-        </div>
+        />
         
         {/* App Title */}
         <div className="flex-1 flex items-center justify-center">

@@ -46,13 +46,12 @@ export const APP_CONSTANTS = {
 } as const;
 
 // Menu and UI types
-export type MenuType = 'file' | 'toolbox' | 'debug' | null;
+export type MenuType = 'file' | 'toolbox' | null;
 
 export type PropertiesTabType = 'general' | 'style' | 'text' | 'arrange';
 
 // Application state interfaces
 export interface AppState {
-  debugMode: boolean;
   activeMenu: MenuType;
   selectedElement: DrawElement | null;
   globalCopiedElements: DrawElement[];

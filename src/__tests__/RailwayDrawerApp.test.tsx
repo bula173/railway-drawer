@@ -58,48 +58,12 @@ describe('RailwayDrawerApp Component', () => {
     expect(screen.getByText('Toolbox')).toBeInTheDocument()
   })
 
-  it('has debug menu option', async () => {
-    const user = userEvent.setup()
-    render(<RailwayDrawerApp />)
-    
-    // Look for Debug menu
-    const debugMenu = screen.getByText('Debug')
-    expect(debugMenu).toBeInTheDocument()
-    
-    // Hover to show submenu
-    await user.hover(debugMenu)
-    
-    // Check for debug option
-    expect(screen.getByText('Element State Debugger')).toBeInTheDocument()
-  })
-
-  it('can enter debug mode', async () => {
-    const user = userEvent.setup()
-    render(<RailwayDrawerApp />)
-    
-    // Since components are mocked, just verify debug menu is accessible
-    const debugMenu = screen.getByText('Debug')
-    await user.hover(debugMenu)
-    
-    // Test passes if debug menu is interactive
-    expect(debugMenu).toBeInTheDocument()
-  })
-
-  it('can return from debug mode', async () => {
-    render(<RailwayDrawerApp />)
-    
-    // Since components are mocked, just verify main UI elements are present
-    expect(screen.getByTestId('draw-area')).toBeInTheDocument()
-    expect(screen.getByTestId('toolbox')).toBeInTheDocument()
-    expect(screen.getByTestId('properties-panel')).toBeInTheDocument()
-  })
-
   it('shows file menu options when hovered', async () => {
     const user = userEvent.setup()
     render(<RailwayDrawerApp />)
     
     const fileMenu = screen.getByText('File')
-    await user.hover(fileMenu)
+    await user.click(fileMenu)
     
     // Should show file operations
     expect(screen.getByText('Open...')).toBeInTheDocument()
@@ -111,7 +75,7 @@ describe('RailwayDrawerApp Component', () => {
     render(<RailwayDrawerApp />)
     
     const toolboxMenu = screen.getByText('Toolbox')
-    await user.hover(toolboxMenu)
+    await user.click(toolboxMenu)
     
     // Should show toolbox operations
     expect(screen.getByText('Save Toolbox')).toBeInTheDocument()
