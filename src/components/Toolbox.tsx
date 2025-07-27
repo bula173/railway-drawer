@@ -176,6 +176,52 @@ const Toolbox: React.FC<ToolboxProps> = ({
                             svg: iconSvg,
                           })
                         );
+                        
+                        // Create a custom drag image showing only the single item
+                        const dragImageContainer = document.createElement('div');
+                        dragImageContainer.style.cssText = `
+                          position: absolute;
+                          top: -1000px;
+                          left: -1000px;
+                          width: 64px;
+                          height: 64px;
+                          background: white;
+                          border: 2px solid #3b82f6;
+                          border-radius: 8px;
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+                          z-index: 10000;
+                        `;
+                        
+                        // Create the icon content for drag image
+                        let iconHtml = '';
+                        if (item.iconSvg === "default") {
+                          if (item.shapeElements && item.shapeElements.length > 0) {
+                            const iconContent = generateIconFromShapeElements(item.shapeElements);
+                            if (iconContent) {
+                              iconHtml = `<svg width="32" height="32" viewBox="0 0 ${item.width || 48} ${item.height || 48}">${iconContent}</svg>`;
+                            }
+                          } else if (item.shape) {
+                            iconHtml = `<svg width="32" height="32" viewBox="0 0 ${item.width || 48} ${item.height || 48}">${item.shape}</svg>`;
+                          }
+                        } else if (item.iconSvg) {
+                          iconHtml = `<div style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">${item.iconSvg}</div>`;
+                        }
+                        
+                        dragImageContainer.innerHTML = iconHtml;
+                        document.body.appendChild(dragImageContainer);
+                        
+                        // Set the custom drag image
+                        e.dataTransfer.setDragImage(dragImageContainer, 32, 32);
+                        
+                        // Clean up the temporary element after a short delay
+                        setTimeout(() => {
+                          if (document.body.contains(dragImageContainer)) {
+                            document.body.removeChild(dragImageContainer);
+                          }
+                        }, 100);
                       }}
                       onDragEnd={() => setDraggedItem(null)}
                       className="aspect-square rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-center shadow-sm cursor-grab hover:shadow-md hover:border-slate-300 hover:bg-white transition-all duration-200 relative group"
