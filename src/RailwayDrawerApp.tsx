@@ -14,7 +14,7 @@ import React, { useState, useRef, useEffect } from "react";
 import toolboxConfig from "./assets/toolboxConfig.json";
 import Toolbox from "./components/Toolbox";
 import type { ToolboxItem } from "./components/Toolbox";
-import PropertiesPanel from "./components/PropertiesPanel";
+import EnhancedPropertiesPanel from "./components/EnhancedPropertiesPanel";
 import DrawArea, { type DrawAreaRef } from "./components/DrawArea";
 import TabPanel, { type DrawAreaTab } from "./components/TabPanel";
 import type { DrawElement } from "./components/Elements";
@@ -886,7 +886,7 @@ const RailwayDrawerApp = () => {
           className="panel bg-white"
           style={{ width: propertiesWidth, minWidth: 180 }}
         >
-          <PropertiesPanel
+          <EnhancedPropertiesPanel
             drawAreaRef={currentDrawAreaRefObject}
             selectedElement={selectedElement}
             onElementChange={setSelectedElement}

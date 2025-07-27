@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, waitFor } from '@testing-library/react';
+import { render, waitFor, act } from '@testing-library/react';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import DrawArea, { type DrawAreaRef } from '../DrawArea';
 import type { DrawElement } from '../Elements';
@@ -49,7 +49,9 @@ describe('DrawArea Element State Management', () => {
     
     // Test 1: Add element
     const testElement = createTestElement('test-1');
-    drawAreaRef.current?.setElements([testElement]);
+    act(() => {
+      drawAreaRef.current?.setElements([testElement]);
+    });
     
     await waitFor(() => {
       expect(drawAreaRef.current?.getElements()).toHaveLength(1);
@@ -65,7 +67,9 @@ describe('DrawArea Element State Management', () => {
       }
     };
 
-    drawAreaRef.current?.setElements([updatedElement]);
+    act(() => {
+      drawAreaRef.current?.setElements([updatedElement]);
+    });
     
     await waitFor(() => {
       const elements = drawAreaRef.current?.getElements();
@@ -85,7 +89,9 @@ describe('DrawArea Element State Management', () => {
         }
       };
 
-      drawAreaRef.current?.setElements([multiUpdatedElement]);
+      act(() => {
+        drawAreaRef.current?.setElements([multiUpdatedElement]);
+      });
       
       await waitFor(() => {
         const elements = drawAreaRef.current?.getElements();
@@ -103,7 +109,9 @@ describe('DrawArea Element State Management', () => {
     const element2 = createTestElement('multi-2', 'Element 2');
     
     // Add both elements
-    drawAreaRef.current?.setElements([element1, element2]);
+    act(() => {
+      drawAreaRef.current?.setElements([element1, element2]);
+    });
     
     await waitFor(() => {
       expect(drawAreaRef.current?.getElements()).toHaveLength(2);
@@ -115,7 +123,9 @@ describe('DrawArea Element State Management', () => {
       styles: { fill: '#00ff00' }
     };
 
-    drawAreaRef.current?.setElements([updatedElement1, element2]);
+    act(() => {
+      drawAreaRef.current?.setElements([updatedElement1, element2]);
+    });
     
     await waitFor(() => {
       const elements = drawAreaRef.current?.getElements();
@@ -130,7 +140,9 @@ describe('DrawArea Element State Management', () => {
       styles: { fill: '#0000ff' }
     };
 
-    drawAreaRef.current?.setElements([updatedElement1, updatedElement2]);
+    act(() => {
+      drawAreaRef.current?.setElements([updatedElement1, updatedElement2]);
+    });
     
     await waitFor(() => {
       const elements = drawAreaRef.current?.getElements();
@@ -154,7 +166,9 @@ describe('DrawArea Element State Management', () => {
       }
     ];
     
-    drawAreaRef.current?.setElements([originalElement]);
+    act(() => {
+      drawAreaRef.current?.setElements([originalElement]);
+    });
     
     await waitFor(() => {
       expect(drawAreaRef.current?.getElements()).toHaveLength(1);
@@ -166,7 +180,9 @@ describe('DrawArea Element State Management', () => {
       styles: { fill: '#purple', strokeWidth: 3 }
     };
 
-    drawAreaRef.current?.setElements([updatedElement]);
+    act(() => {
+      drawAreaRef.current?.setElements([updatedElement]);
+    });
     
     await waitFor(() => {
       const elements = drawAreaRef.current?.getElements();
