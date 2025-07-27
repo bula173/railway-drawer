@@ -289,7 +289,7 @@ const RailwayDrawerApp = () => {
     }, 50); // Small delay to ensure component is mounted
 
     return () => clearTimeout(timer);
-  }, [activeTabId, activeTab, getCurrentDrawAreaRef, globalCopiedElements]); // Add missing dependencies
+  }, [activeTabId, activeTab, getCurrentDrawAreaRef]); // Removed globalCopiedElements dependency
 
   /**
    * @brief Effect to sync global clipboard with the current DrawArea
@@ -421,28 +421,37 @@ const RailwayDrawerApp = () => {
         return;
       }
 
+      // Skip if any menu is currently open
+      if (activeMenu || activeSubMenu) {
+        return;
+      }
+
       // Global Copy (Ctrl+C)
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "c") {
         e.preventDefault();
+        e.stopPropagation();
         handleGlobalCopy();
       }
       
-      // Global Cut (Ctrl+X)
+      // Global Cut (Ctrl+X)  
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "x") {
         e.preventDefault();
+        e.stopPropagation();
         handleGlobalCut();
       }
       
       // Global Paste (Ctrl+V)
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "v") {
         e.preventDefault();
+        e.stopPropagation();
         handleGlobalPaste();
       }
     }
 
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [globalCopiedElements, activeTabId, handleGlobalCopy, handleGlobalCut, handleGlobalPaste]); // Add function dependencies
+    // Use capture phase to ensure we get the event before other handlers
+    document.addEventListener("keydown", handleKeyDown, true);
+    return () => document.removeEventListener("keydown", handleKeyDown, true);
+  }, [globalCopiedElements, activeTabId, handleGlobalCopy, handleGlobalCut, handleGlobalPaste, activeMenu, activeSubMenu]);
 
   /**
    * @brief Saves current drawing elements as a JSON file

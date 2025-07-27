@@ -1129,6 +1129,8 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
   return (
     <svg
       ref={svgRef}
+      className="draw-area"
+      data-testid="draw-area"
       width={GRID_WIDTH}
       height={GRID_HEIGHT}
       style={{ 
