@@ -292,7 +292,7 @@ const RailwayDrawerApp = () => {
     }, 50); // Small delay to ensure component is mounted
 
     return () => clearTimeout(timer);
-  }, [activeTabId, activeTab]); // Removed globalCopiedElements from dependencies
+  }, [activeTabId, activeTab, getCurrentDrawAreaRef, globalCopiedElements]); // Add missing dependencies
 
   /**
    * @brief Effect to sync global clipboard with the current DrawArea

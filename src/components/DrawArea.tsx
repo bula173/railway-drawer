@@ -13,6 +13,7 @@
 import React, { useEffect, useRef, useState, forwardRef, useImperativeHandle, useCallback } from "react";
 import { RenderElement, getRotatedBoundingRect, synchronizeTextRegionsWithSVG, expandSVGRectForText, syncTextRegionsWithSVG, syncUnifiedElement } from "./Elements";
 import type { DrawElement } from "./Elements";
+import type { ToolboxItem } from "./Toolbox";
 
 /**
  * @interface DrawAreaRef
@@ -152,6 +153,318 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
   const processedElementIds = useRef<Set<string>>(new Set());
 
   /**
+   * @brief Add current state to history and update elements
+   * @param updater Function or value to update elements state
+   * @details Creates a snapshot of current elements before making changes for undo functionality
+   */
+  const pushToHistoryAndSetElements = useCallback((updater: React.SetStateAction<DrawElement[]>) => {
+    setHistory(prev => [...prev, elements.map(el => ({ ...el }))]);
+    setElements(updater);
+  }, [elements]);
+
+  /**
+   * @brief Copy selected elements to internal clipboard
+   * @details Creates deep copies of selected elements and stores them for pasting.
+   * Also attempts to store in system clipboard for cross-application copying.
+   */
+  const copySelectedElements = useCallback(() => {
+    const elementsToCopy = elements.filter(el => selectedElementIds.includes(el.id));
+    
+    if (elementsToCopy.length === 0) {
+      console.warn('No elements selected for copying');
+      return;
+    }
+    
+    // Create deep copies preserving all element properties
+    const copiedElementsData = elementsToCopy.map(el => {
+      // Create a clean deep copy of the element
+      const elementCopy = {
+        ...el,
+        // Preserve all properties including functions (use current context functions)
+        gridEnabled: el.gridEnabled ?? showGrid,
+        backgroundColor: el.backgroundColor ?? backgroundColor,
+        setGridEnabled: setShowGrid,
+        setBackgroundColor: setBackgroundColor,
+        // Deep copy start and end positions
+        start: { ...el.start },
+        end: { ...el.end },
+        // Preserve other properties with safe defaults
+        textRegions: el.textRegions ? [...el.textRegions] : undefined,
+        rotation: el.rotation ?? 0,
+        width: el.width,
+        height: el.height,
+        type: el.type,
+        name: el.name,
+        iconName: el.iconName,
+        iconSource: el.iconSource,
+        iconSvg: el.iconSvg,
+        draw: el.draw,
+        shape: el.shape,
+        // Don't change ID yet - will be done during paste
+        originalId: el.id
+      };
+      
+      return elementCopy;
+    });
+    
+    // Update state synchronously 
+    setCopiedElements(copiedElementsData);
+    
+    // Also put in system clipboard for cross-application copying
+    try {
+      const clipboardData = {
+        type: 'railway-drawer-elements',
+        elements: copiedElementsData,
+        timestamp: Date.now()
+      };
+      navigator.clipboard.writeText(JSON.stringify(clipboardData));
+      console.log(`Copied ${elementsToCopy.length} elements to clipboard`);
+    } catch (error) {
+      console.warn('Could not write to system clipboard:', error);
+    }
+    
+    // Return the copied elements for immediate use
+    return copiedElementsData;
+  }, [elements, selectedElementIds, showGrid, backgroundColor, setShowGrid, setBackgroundColor, setCopiedElements]);
+
+  /**
+   * @brief Cut selected elements to internal clipboard
+   * @details Creates deep copies of selected elements, stores them for pasting, and removes originals.
+   * Also attempts to store in system clipboard for cross-application cutting.
+   */
+  const cutSelectedElements = useCallback(() => {
+    const elementsToCopy = elements.filter(el => selectedElementIds.includes(el.id));
+    
+    if (elementsToCopy.length === 0) {
+      console.warn('No elements selected for cutting');
+      return;
+    }
+    
+    // Create deep copies preserving all element properties (same as copy)
+    const copiedElementsData = elementsToCopy.map(el => {
+      const elementCopy = {
+        ...el,
+        gridEnabled: el.gridEnabled ?? showGrid,
+        backgroundColor: el.backgroundColor ?? backgroundColor,
+        setGridEnabled: setShowGrid,
+        setBackgroundColor: setBackgroundColor,
+        start: { ...el.start },
+        end: { ...el.end },
+        textRegions: el.textRegions ? [...el.textRegions] : undefined,
+        rotation: el.rotation ?? 0,
+        width: el.width,
+        height: el.height,
+        type: el.type,
+        name: el.name,
+        iconName: el.iconName,
+        iconSource: el.iconSource,
+        iconSvg: el.iconSvg,
+        draw: el.draw,
+        shape: el.shape,
+        originalId: el.id
+      };
+      
+      return elementCopy;
+    });
+    
+    // Update clipboard state
+    setCopiedElements(copiedElementsData);
+    
+    // Remove the original elements (this is what makes it "cut" instead of "copy")
+    pushToHistoryAndSetElements(prev => prev.filter(el => !selectedElementIds.includes(el.id)));
+    setSelectedElementIds([]);
+    setHoveredElementId(null);
+    setSelectedElement?.(undefined);
+    
+    // Also put in system clipboard
+    try {
+      const clipboardData = {
+        type: 'railway-drawer-elements',
+        elements: copiedElementsData,
+        timestamp: Date.now(),
+        operation: 'cut' // Mark as cut operation
+      };
+      navigator.clipboard.writeText(JSON.stringify(clipboardData));
+      console.log(`Cut ${elementsToCopy.length} elements to clipboard`);
+    } catch (error) {
+      console.warn('Could not write to system clipboard:', error);
+    }
+    
+    // Return the cut elements for immediate use
+    return copiedElementsData;
+  }, [elements, selectedElementIds, showGrid, backgroundColor, setShowGrid, setBackgroundColor, setCopiedElements, pushToHistoryAndSetElements, setSelectedElementIds, setHoveredElementId, setSelectedElement]);
+
+  /**
+   * @brief Calculate bounding box of multiple elements
+   * @param elements Array of elements to calculate bounds for
+   * @returns Rectangle with x, y, width, height of bounding box
+   */
+  const calculateElementsBounds = useCallback((elements: DrawElement[]) => {
+    if (elements.length === 0) {
+      return { x: 0, y: 0, width: 0, height: 0 };
+    }
+    
+    let minX = Infinity;
+    let minY = Infinity;
+    let maxX = -Infinity;
+    let maxY = -Infinity;
+    
+    elements.forEach(el => {
+      // Validate element has required properties
+      if (!el.start || !el.end || 
+          typeof el.start.x !== 'number' || typeof el.start.y !== 'number' ||
+          typeof el.end.x !== 'number' || typeof el.end.y !== 'number') {
+        console.warn('Invalid element found while calculating bounds:', el);
+        return;
+      }
+      
+      const left = Math.min(el.start.x, el.end.x);
+      const right = Math.max(el.start.x, el.end.x);
+      const top = Math.min(el.start.y, el.end.y);
+      const bottom = Math.max(el.start.y, el.end.y);
+      
+      minX = Math.min(minX, left);
+      minY = Math.min(minY, top);
+      maxX = Math.max(maxX, right);
+      maxY = Math.max(maxY, bottom);
+    });
+    
+    // Handle case where no valid elements were found
+    if (minX === Infinity || minY === Infinity || maxX === -Infinity || maxY === -Infinity) {
+      return { x: 0, y: 0, width: 0, height: 0 };
+    }
+    
+    return {
+      x: minX,
+      y: minY,
+      width: maxX - minX,
+      height: maxY - minY
+    };
+  }, []);
+
+  /**
+   * @brief Paste elements from clipboard at specified position
+   * @param pastePosition Optional position to paste at, defaults to center of viewport
+   * @details Creates new elements with unique IDs, centers them at target position,
+   * and adds them to the drawing area while selecting them.
+   */
+  const pasteElements = useCallback((pastePosition?: { x: number; y: number }) => {
+    if (copiedElements.length === 0) {
+      console.warn('No elements in clipboard to paste');
+      return;
+    }
+    
+    // Calculate paste position
+    let targetX, targetY;
+    
+    if (pastePosition) {
+      targetX = pastePosition.x;
+      targetY = pastePosition.y;
+    } else {
+      // Default to center of visible area
+      const svgRect = svgRef.current?.getBoundingClientRect();
+      if (svgRect) {
+        targetX = (svgRect.width / 2 - panOffset.x) / zoom;
+        targetY = (svgRect.height / 2 - panOffset.y) / zoom;
+      } else {
+        targetX = GRID_WIDTH / 2;
+        targetY = GRID_HEIGHT / 2;
+      }
+    }
+    
+    // Calculate the bounding box of copied elements
+    const bounds = calculateElementsBounds(copiedElements);
+    const centerX = bounds.x + bounds.width / 2;
+    const centerY = bounds.y + bounds.height / 2;
+    
+    // Calculate offset to center the group at target position
+    const offsetX = targetX - centerX;
+    const offsetY = targetY - centerY;
+    
+    // Create new elements with new IDs and offset positions
+    const newElements = copiedElements.map(el => {
+      const newId = `${el.type}_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+      
+      // Create new element preserving all properties
+      const newElement = {
+        ...el,
+        id: newId,
+        start: {
+          x: el.start.x + offsetX,
+          y: el.start.y + offsetY
+        },
+        end: {
+          x: el.end.x + offsetX,
+          y: el.end.y + offsetY
+        },
+        // Ensure all properties are preserved
+        gridEnabled: showGrid, // Use current grid state
+        backgroundColor: backgroundColor, // Use current background
+        setGridEnabled: setShowGrid,
+        setBackgroundColor: setBackgroundColor,
+        // Deep copy text regions if they exist
+        textRegions: el.textRegions ? el.textRegions.map((region: unknown) => ({ ...(region as Record<string, unknown>) })) : undefined,
+        // Remove the originalId property
+        originalId: undefined
+      };
+      
+      return newElement;
+    });
+    
+    // Validate elements before adding
+    const validElements = newElements.filter(el => 
+      el.id && el.type && el.start && el.end &&
+      typeof el.start.x === 'number' && typeof el.start.y === 'number' &&
+      typeof el.end.x === 'number' && typeof el.end.y === 'number'
+    );
+    
+    if (validElements.length !== newElements.length) {
+      console.warn(`${newElements.length - validElements.length} invalid elements filtered out during paste`);
+    }
+    
+    if (validElements.length === 0) {
+      console.error('No valid elements to paste');
+      return;
+    }
+    
+    // Add to history before making changes
+    pushToHistoryAndSetElements(prev => [...prev, ...validElements]);
+    
+    // Select the newly pasted elements
+    const newElementIds = validElements.map(el => el.id);
+    setSelectedElementIds(newElementIds);
+    
+    if (newElementIds.length === 1) {
+      setSelectedElement?.(validElements[0]);
+    } else {
+      setSelectedElement?.(undefined);
+    }
+    
+    console.log(`Pasted ${validElements.length} elements at (${targetX.toFixed(1)}, ${targetY.toFixed(1)})`);
+  }, [copiedElements, calculateElementsBounds, pushToHistoryAndSetElements, setSelectedElementIds, setSelectedElement, svgRef, panOffset, zoom, showGrid, backgroundColor, setShowGrid, setBackgroundColor, GRID_WIDTH, GRID_HEIGHT]);
+
+  /**
+   * @brief Handle right-click context menu
+   * @param e The mouse event
+   * @details Shows context menu and allows pasting at right-click position
+   */
+  const handleContextMenu = useCallback((e: React.MouseEvent) => {
+    e.preventDefault();
+    
+    // Calculate click position in drawing coordinates
+    const svgRect = svgRef.current?.getBoundingClientRect();
+    if (!svgRect) return;
+    
+    const x = (e.clientX - svgRect.left - panOffset.x) / zoom;
+    const y = (e.clientY - svgRect.top - panOffset.y) / zoom;
+    
+    // For now, just paste at right-click position if we have copied elements
+    if (copiedElements.length > 0) {
+      pasteElements({ x, y });
+    }
+  }, [svgRef, panOffset, zoom, copiedElements, pasteElements]);
+
+  /**
    * @brief Expose methods through ref for external component access
    * @details Provides imperative access to DrawArea functionality from parent components
    */
@@ -205,16 +518,6 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
   useEffect(() => {
     draggingIdRef.current = draggingId;
   }, [draggingId]);
-
-  /**
-   * @brief Add current state to history and update elements
-   * @param updater Function or value to update elements state
-   * @details Creates a snapshot of current elements before making changes for undo functionality
-   */
-  const pushToHistoryAndSetElements = useCallback((updater: React.SetStateAction<DrawElement[]>) => {
-    setHistory(prev => [...prev, elements.map(el => ({ ...el }))]);
-    setElements(updater);
-  }, [elements]);
 
   /**
    * @brief Handle keyboard shortcuts for element operations
@@ -683,11 +986,17 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
    * @param {number} y - Y coordinate.
    * @returns {DrawElement} The new element.
    */
-  function createCenteredElement(item: any, x: number, y: number): DrawElement {
+  function createCenteredElement(item: unknown, x: number, y: number): DrawElement {
+    const toolboxItem = item as ToolboxItem & {
+      type?: string;
+      iconName?: string;
+      iconSource?: string;
+      draw?: unknown;
+    };
     // Only apply default styles for elements that don't have their own styling
     // Custom elements with SVG shapes should preserve their original colors
-    const hasCustomShape = item.shape && item.type === "custom";
-    const hasShapeElements = item.shapeElements && item.shapeElements.length > 0;
+    const hasCustomShape = toolboxItem.shape && toolboxItem.type === "custom";
+    const hasShapeElements = toolboxItem.shapeElements && toolboxItem.shapeElements.length > 0;
     
     // Don't apply default styles to custom elements or elements with shapeElements
     const shouldApplyDefaultStyles = !hasCustomShape && !hasShapeElements;
@@ -700,60 +1009,61 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     } : undefined;
 
     console.log("🔧 Creating element from toolbox item:", {
-      itemId: item.id,
-      itemName: item.name,
-      originalShapeElements: item.shapeElements ? {
-        count: item.shapeElements.length,
-        arrayReference: item.shapeElements, // Log the actual reference
-        elements: item.shapeElements.map((el: any, index: number) => ({
+      itemId: toolboxItem.id,
+      itemName: toolboxItem.name,
+      originalShapeElements: toolboxItem.shapeElements ? {
+        count: toolboxItem.shapeElements.length,
+        arrayReference: toolboxItem.shapeElements, // Log the actual reference
+        elements: toolboxItem.shapeElements.map((el: unknown, index: number) => ({
           index: index,
-          id: el.id,
-          svgLength: el.svg.length,
-          svg: el.svg, // Show full SVG content to see if they're identical
+          id: (el as Record<string, unknown>).id,
+          svgLength: ((el as Record<string, unknown>).svg as string)?.length,
+          svg: (el as Record<string, unknown>).svg, // Show full SVG content to see if they're identical
           elementReference: el // Log the actual element reference
         }))
       } : null
     });
 
     const baseElement = {
-      id: `${item.type}_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
-      name: item.name,
-      type: item.type,
-      iconName: item.iconName,
-      iconSource: item.iconSource,
-      iconSvg: item.iconSvg,
-      draw: item.draw,
-      shape: item.shape,
-      shapeElements: item.shapeElements ? (() => {
+      id: `${toolboxItem.type || 'element'}_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+      name: toolboxItem.name,
+      type: toolboxItem.type || 'unknown',
+      iconName: toolboxItem.iconName,
+      iconSource: toolboxItem.iconSource,
+      iconSvg: toolboxItem.iconSvg,
+      draw: toolboxItem.draw,
+      shape: toolboxItem.shape,
+      shapeElements: toolboxItem.shapeElements ? (() => {
         // Deep copy and synchronize textRegions with SVG coordinates
-        const copiedShapeElements = JSON.parse(JSON.stringify(item.shapeElements));
-        return copiedShapeElements.map((shapeElement: any) => {
-          if (shapeElement.textRegions && shapeElement.textRegions.length > 0) {
+        const copiedShapeElements = JSON.parse(JSON.stringify(toolboxItem.shapeElements));
+        return copiedShapeElements.map((shapeElement: unknown) => {
+          const element = shapeElement as Record<string, unknown>;
+          if (element.textRegions && Array.isArray(element.textRegions) && element.textRegions.length > 0) {
             // Apply synchronization and expansion for text regions
-            const expandedShapeElement = expandSVGRectForText(shapeElement);
+            const expandedShapeElement = expandSVGRectForText(shapeElement as Parameters<typeof expandSVGRectForText>[0]);
             return synchronizeTextRegionsWithSVG(expandedShapeElement);
           }
           return shapeElement;
         });
       })() : undefined,
-      width: item.width,
-      height: item.height,
+      width: toolboxItem.width,
+      height: toolboxItem.height,
       rotation: 0,
       gridEnabled: showGrid,
       backgroundColor,
       setGridEnabled: setShowGrid,
       setBackgroundColor,
       // Transfer complex property from toolbox item to element
-      complex: item.complex,
+      complex: toolboxItem.complex,
       ...(defaultStyles && { styles: defaultStyles }),
     };
 
-    switch (item.draw?.type) {
+    switch ((toolboxItem.draw as Record<string, unknown>)?.type) {
       case "line": {
         let lineElement: DrawElement = {
           ...baseElement,
-          start: { x: x - item.width / 2, y },
-          end: { x: x + item.width / 2, y },
+          start: { x: x - toolboxItem.width / 2, y },
+          end: { x: x + toolboxItem.width / 2, y },
         };
         if (lineElement.shapeElements) {
           lineElement = syncTextRegionsWithSVG(lineElement);
@@ -763,8 +1073,8 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       case "lines": {
         let linesElement: DrawElement = {
           ...baseElement,
-          start: { x: x - item.width / 2, y: y - item.height / 2 },
-          end: { x: x + item.width / 2, y: y + item.height / 2 },
+          start: { x: x - toolboxItem.width / 2, y: y - toolboxItem.height / 2 },
+          end: { x: x + toolboxItem.width / 2, y: y + toolboxItem.height / 2 },
         };
         if (linesElement.shapeElements) {
           linesElement = syncTextRegionsWithSVG(linesElement);
@@ -774,8 +1084,8 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       case "icon": {
         let iconElement: DrawElement = {
           ...baseElement,
-          start: { x: x - item.width / 2, y: y - item.height / 2 },
-          end: { x: x + item.width / 2, y: y + item.height / 2 },
+          start: { x: x - toolboxItem.width / 2, y: y - toolboxItem.height / 2 },
+          end: { x: x + toolboxItem.width / 2, y: y + toolboxItem.height / 2 },
         };
         if (iconElement.shapeElements) {
           iconElement = syncTextRegionsWithSVG(iconElement);
@@ -785,8 +1095,8 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       case "text": {
         let textElement: DrawElement = {
           ...baseElement,
-          start: { x: x, y: y - item.height },
-          end: { x: x + item.width, y: y + item.height },
+          start: { x: x, y: y - toolboxItem.height },
+          end: { x: x + toolboxItem.width, y: y + toolboxItem.height },
         };
         if (textElement.shapeElements) {
           textElement = syncTextRegionsWithSVG(textElement);
@@ -797,7 +1107,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
         let newElement: DrawElement = {
           ...baseElement,
           start: { x: x, y: y },
-          end: { x: x + item.width, y: y + item.height },
+          end: { x: x + toolboxItem.width, y: y + toolboxItem.height },
         };
         
         // Apply synchronization for unified elements (like UML classes)
@@ -812,308 +1122,6 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
         
         return newElement;
       }
-    }
-  }
-
-  /**
-   * @brief Copy selected elements to internal clipboard
-   * @details Creates deep copies of selected elements and stores them for pasting.
-   * Also attempts to store in system clipboard for cross-application copying.
-   */
-  function copySelectedElements() {
-    const elementsToCopy = elements.filter(el => selectedElementIds.includes(el.id));
-    
-    if (elementsToCopy.length === 0) {
-      console.warn('No elements selected for copying');
-      return;
-    }
-    
-    // Create deep copies preserving all element properties
-    const copiedElementsData = elementsToCopy.map(el => {
-      // Create a clean deep copy of the element
-      const elementCopy = {
-        ...el,
-        // Preserve all properties including functions (use current context functions)
-        gridEnabled: el.gridEnabled ?? showGrid,
-        backgroundColor: el.backgroundColor ?? backgroundColor,
-        setGridEnabled: setShowGrid,
-        setBackgroundColor: setBackgroundColor,
-        // Deep copy start and end positions
-        start: { ...el.start },
-        end: { ...el.end },
-        // Preserve other properties with safe defaults
-        textRegions: el.textRegions ? [...el.textRegions] : undefined,
-        rotation: el.rotation ?? 0,
-        width: el.width,
-        height: el.height,
-        type: el.type,
-        name: el.name,
-        iconName: el.iconName,
-        iconSource: el.iconSource,
-        iconSvg: el.iconSvg,
-        draw: el.draw,
-        shape: el.shape,
-        // Don't change ID yet - will be done during paste
-        originalId: el.id
-      };
-      
-      return elementCopy;
-    });
-    
-    // Update state synchronously 
-    setCopiedElements(copiedElementsData);
-    
-    // Also put in system clipboard for cross-application copying
-    try {
-      const clipboardData = {
-        type: 'railway-drawer-elements',
-        elements: copiedElementsData,
-        timestamp: Date.now()
-      };
-      navigator.clipboard.writeText(JSON.stringify(clipboardData));
-      console.log(`Copied ${elementsToCopy.length} elements to clipboard`);
-    } catch (error) {
-      console.warn('Could not write to system clipboard:', error);
-    }
-    
-    // Return the copied elements for immediate use
-    return copiedElementsData;
-  }
-
-  /**
-   * @brief Cut selected elements to internal clipboard
-   * @details Creates deep copies of selected elements, stores them for pasting, and removes originals.
-   * Also attempts to store in system clipboard for cross-application cutting.
-   */
-  function cutSelectedElements() {
-    const elementsToCopy = elements.filter(el => selectedElementIds.includes(el.id));
-    
-    if (elementsToCopy.length === 0) {
-      console.warn('No elements selected for cutting');
-      return;
-    }
-    
-    // Create deep copies preserving all element properties (same as copy)
-    const copiedElementsData = elementsToCopy.map(el => {
-      const elementCopy = {
-        ...el,
-        gridEnabled: el.gridEnabled ?? showGrid,
-        backgroundColor: el.backgroundColor ?? backgroundColor,
-        setGridEnabled: setShowGrid,
-        setBackgroundColor: setBackgroundColor,
-        start: { ...el.start },
-        end: { ...el.end },
-        textRegions: el.textRegions ? [...el.textRegions] : undefined,
-        rotation: el.rotation ?? 0,
-        width: el.width,
-        height: el.height,
-        type: el.type,
-        name: el.name,
-        iconName: el.iconName,
-        iconSource: el.iconSource,
-        iconSvg: el.iconSvg,
-        draw: el.draw,
-        shape: el.shape,
-        originalId: el.id
-      };
-      
-      return elementCopy;
-    });
-    
-    // Update clipboard state
-    setCopiedElements(copiedElementsData);
-    
-    // Remove the original elements (this is what makes it "cut" instead of "copy")
-    pushToHistoryAndSetElements(prev => prev.filter(el => !selectedElementIds.includes(el.id)));
-    setSelectedElementIds([]);
-    setHoveredElementId(null);
-    setSelectedElement?.(undefined);
-    
-    // Also put in system clipboard
-    try {
-      const clipboardData = {
-        type: 'railway-drawer-elements',
-        elements: copiedElementsData,
-        timestamp: Date.now(),
-        operation: 'cut' // Mark as cut operation
-      };
-      navigator.clipboard.writeText(JSON.stringify(clipboardData));
-      console.log(`Cut ${elementsToCopy.length} elements to clipboard`);
-    } catch (error) {
-      console.warn('Could not write to system clipboard:', error);
-    }
-    
-    // Return the cut elements for immediate use
-    return copiedElementsData;
-  }
-
-  /**
-   * @brief Calculate bounding box of multiple elements
-   * @param elements Array of elements to calculate bounds for
-   * @returns Rectangle with x, y, width, height of bounding box
-   */
-  function calculateElementsBounds(elements: DrawElement[]) {
-    if (elements.length === 0) {
-      return { x: 0, y: 0, width: 0, height: 0 };
-    }
-    
-    let minX = Infinity;
-    let minY = Infinity;
-    let maxX = -Infinity;
-    let maxY = -Infinity;
-    
-    elements.forEach(el => {
-      // Validate element has required properties
-      if (!el.start || !el.end || 
-          typeof el.start.x !== 'number' || typeof el.start.y !== 'number' ||
-          typeof el.end.x !== 'number' || typeof el.end.y !== 'number') {
-        console.warn('Invalid element found while calculating bounds:', el);
-        return;
-      }
-      
-      const left = Math.min(el.start.x, el.end.x);
-      const right = Math.max(el.start.x, el.end.x);
-      const top = Math.min(el.start.y, el.end.y);
-      const bottom = Math.max(el.start.y, el.end.y);
-      
-      minX = Math.min(minX, left);
-      minY = Math.min(minY, top);
-      maxX = Math.max(maxX, right);
-      maxY = Math.max(maxY, bottom);
-    });
-    
-    // Handle case where no valid elements were found
-    if (minX === Infinity || minY === Infinity || maxX === -Infinity || maxY === -Infinity) {
-      return { x: 0, y: 0, width: 0, height: 0 };
-    }
-    
-    return {
-      x: minX,
-      y: minY,
-      width: maxX - minX,
-      height: maxY - minY
-    };
-  }
-
-  /**
-   * @brief Paste elements from clipboard at specified position
-   * @param pastePosition Optional position to paste at, defaults to center of viewport
-   * @details Creates new elements with unique IDs, centers them at target position,
-   * and adds them to the drawing area while selecting them.
-   */
-  function pasteElements(pastePosition?: { x: number; y: number }) {
-    if (copiedElements.length === 0) {
-      console.warn('No elements in clipboard to paste');
-      return;
-    }
-    
-    // Calculate paste position
-    let targetX, targetY;
-    
-    if (pastePosition) {
-      targetX = pastePosition.x;
-      targetY = pastePosition.y;
-    } else {
-      // Default to center of visible area
-      const svgRect = svgRef.current?.getBoundingClientRect();
-      if (svgRect) {
-        targetX = (svgRect.width / 2 - panOffset.x) / zoom;
-        targetY = (svgRect.height / 2 - panOffset.y) / zoom;
-      } else {
-        targetX = GRID_WIDTH / 2;
-        targetY = GRID_HEIGHT / 2;
-      }
-    }
-    
-    // Calculate the bounding box of copied elements
-    const bounds = calculateElementsBounds(copiedElements);
-    const centerX = bounds.x + bounds.width / 2;
-    const centerY = bounds.y + bounds.height / 2;
-    
-    // Calculate offset to center the group at target position
-    const offsetX = targetX - centerX;
-    const offsetY = targetY - centerY;
-    
-    // Create new elements with new IDs and offset positions
-    const newElements = copiedElements.map(el => {
-      const newId = `${el.type}_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-      
-      // Create new element preserving all properties
-      const newElement = {
-        ...el,
-        id: newId,
-        start: {
-          x: el.start.x + offsetX,
-          y: el.start.y + offsetY
-        },
-        end: {
-          x: el.end.x + offsetX,
-          y: el.end.y + offsetY
-        },
-        // Ensure all properties are preserved
-        gridEnabled: showGrid, // Use current grid state
-        backgroundColor: backgroundColor, // Use current background
-        setGridEnabled: setShowGrid,
-        setBackgroundColor: setBackgroundColor,
-        // Deep copy text regions if they exist
-        textRegions: el.textRegions ? el.textRegions.map((region: any) => ({ ...region })) : undefined,
-        // Remove the originalId property
-        originalId: undefined
-      };
-      
-      return newElement;
-    });
-    
-    // Validate elements before adding
-    const validElements = newElements.filter(el => 
-      el.id && el.type && el.start && el.end &&
-      typeof el.start.x === 'number' && typeof el.start.y === 'number' &&
-      typeof el.end.x === 'number' && typeof el.end.y === 'number'
-    );
-    
-    if (validElements.length !== newElements.length) {
-      console.warn(`${newElements.length - validElements.length} invalid elements filtered out during paste`);
-    }
-    
-    if (validElements.length === 0) {
-      console.error('No valid elements to paste');
-      return;
-    }
-    
-    // Add to history before making changes
-    pushToHistoryAndSetElements(prev => [...prev, ...validElements]);
-    
-    // Select the newly pasted elements
-    const newElementIds = validElements.map(el => el.id);
-    setSelectedElementIds(newElementIds);
-    
-    if (newElementIds.length === 1) {
-      setSelectedElement?.(validElements[0]);
-    } else {
-      setSelectedElement?.(undefined);
-    }
-    
-    console.log(`Pasted ${validElements.length} elements at (${targetX.toFixed(1)}, ${targetY.toFixed(1)})`);
-  }
-
-  /**
-   * @brief Handle right-click context menu
-   * @param e The mouse event
-   * @details Shows context menu and allows pasting at right-click position
-   */
-  function handleContextMenu(e: React.MouseEvent) {
-    e.preventDefault();
-    
-    // Calculate click position in drawing coordinates
-    const svgRect = svgRef.current?.getBoundingClientRect();
-    if (!svgRect) return;
-    
-    const x = (e.clientX - svgRect.left - panOffset.x) / zoom;
-    const y = (e.clientY - svgRect.top - panOffset.y) / zoom;
-    
-    // For now, just paste at right-click position if we have copied elements
-    if (copiedElements.length > 0) {
-      pasteElements({ x, y });
     }
   }
 
