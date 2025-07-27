@@ -29,13 +29,13 @@ vi.mock('../../utils/logger', () => ({
 
 // Mock utils
 vi.mock('../../utils', () => ({
-  debounce: (fn: Function) => {
+  debounce: (fn: (...args: unknown[]) => unknown) => {
     // Return a function that calls the original immediately for tests
-    return (...args: any[]) => fn(...args);
+    return (...args: unknown[]) => fn(...args);
   },
-  isDefined: (value: any) => value !== undefined && value !== null,
-  removeUndefined: (obj: any) => {
-    const cleaned: any = {};
+  isDefined: (value: unknown) => value !== undefined && value !== null,
+  removeUndefined: (obj: Record<string, unknown>) => {
+    const cleaned: Record<string, unknown> = {};
     Object.keys(obj).forEach(key => {
       if (obj[key] !== undefined) cleaned[key] = obj[key];
     });
