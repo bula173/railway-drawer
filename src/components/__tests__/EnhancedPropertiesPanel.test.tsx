@@ -90,19 +90,27 @@ describe('EnhancedPropertiesPanel', () => {
     mockDrawAreaRef = {
       current: {
         getSvgElement: vi.fn().mockReturnValue(null),
-        getElements: vi.fn().mockReturnValue([mockElement]),
+        getElements: vi.fn().mockReturnValue([]),
         setElements: vi.fn(),
+        updateElements: vi.fn(),
         setGridVisible: vi.fn(),
         getGridVisible: vi.fn().mockReturnValue(true),
         setBackgroundColor: vi.fn(),
         getBackgroundColor: vi.fn().mockReturnValue('#ffffff'),
-        getSelectedElement: vi.fn().mockReturnValue(mockElement),
-        getSelectedElementIds: vi.fn().mockReturnValue(['test-element-123']),
-        copySelectedElements: vi.fn().mockReturnValue([mockElement]),
-        cutSelectedElements: vi.fn().mockReturnValue([mockElement]),
+        getSelectedElement: vi.fn().mockReturnValue(undefined),
+        getSelectedElementIds: vi.fn().mockReturnValue([]),
+        copySelectedElements: vi.fn(),
+        cutSelectedElements: vi.fn(),
         pasteElements: vi.fn(),
         getCopiedElements: vi.fn().mockReturnValue([]),
         setCopiedElements: vi.fn(),
+        // Edit operations
+        undo: vi.fn(),
+        redo: vi.fn(),
+        deleteSelectedElements: vi.fn(),
+        selectAllElements: vi.fn(),
+        canUndo: vi.fn().mockReturnValue(false),
+        canRedo: vi.fn().mockReturnValue(false),
       } as DrawAreaRef,
     };
   });
@@ -163,7 +171,7 @@ describe('EnhancedPropertiesPanel', () => {
       fireEvent.change(nameInput, { target: { value: 'Updated Rectangle' } });
 
       await waitFor(() => {
-        expect(mockDrawAreaRef.current?.setElements).toHaveBeenCalled();
+        expect(mockDrawAreaRef.current?.updateElements).toHaveBeenCalled();
       });
     });
   });
@@ -216,7 +224,7 @@ describe('EnhancedPropertiesPanel', () => {
       fireEvent.change(fillInput, { target: { value: '#ff0000' } });
 
       await waitFor(() => {
-        expect(mockDrawAreaRef.current?.setElements).toHaveBeenCalled();
+        expect(mockDrawAreaRef.current?.updateElements).toHaveBeenCalled();
       });
     });
 
@@ -226,7 +234,7 @@ describe('EnhancedPropertiesPanel', () => {
       fireEvent.change(strokeInput, { target: { value: '#00ff00' } });
 
       await waitFor(() => {
-        expect(mockDrawAreaRef.current?.setElements).toHaveBeenCalled();
+        expect(mockDrawAreaRef.current?.updateElements).toHaveBeenCalled();
       });
     });
   });
@@ -255,7 +263,7 @@ describe('EnhancedPropertiesPanel', () => {
       fireEvent.change(textInput, { target: { value: 'Updated text' } });
 
       await waitFor(() => {
-        expect(mockDrawAreaRef.current?.setElements).toHaveBeenCalled();
+        expect(mockDrawAreaRef.current?.updateElements).toHaveBeenCalled();
       });
     });
   });
@@ -287,7 +295,7 @@ describe('EnhancedPropertiesPanel', () => {
       fireEvent.change(xInput, { target: { value: '50' } });
 
       await waitFor(() => {
-        expect(mockDrawAreaRef.current?.setElements).toHaveBeenCalled();
+        expect(mockDrawAreaRef.current?.updateElements).toHaveBeenCalled();
       });
     });
   });

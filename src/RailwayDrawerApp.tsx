@@ -18,6 +18,7 @@ import type { ToolboxItem } from "./components/Toolbox";
 import EnhancedPropertiesPanel from "./components/EnhancedPropertiesPanel";
 import DrawArea, { type DrawAreaRef } from "./components/DrawArea";
 import TabPanel, { type DrawAreaTab } from "./components/TabPanel";
+import { EditMenu } from "./components/EditMenu";
 import type { DrawElement } from "./components/Elements";
 
 /** @brief Grid size for snap-to-grid functionality */
@@ -76,6 +77,39 @@ const RailwayDrawerApp = () => {
     }
   ]);
   const [activeTabId, setActiveTabId] = useState('tab-1');
+
+  // Edit menu state
+  const [editMenuState, setEditMenuState] = useState({
+    canUndo: false,
+    canRedo: false,
+    hasSelection: false,
+    hasCopiedElements: false
+  });
+
+  /** @brief Update edit menu state based on current DrawArea */
+  const updateEditMenuState = useCallback(() => {
+    const currentRef = currentDrawAreaRefObject.current;
+    console.log('🔄 updateEditMenuState called', {
+      hasCurrentRef: !!currentRef,
+      canUndo: currentRef?.canUndo?.(),
+      canRedo: currentRef?.canRedo?.(),
+      selectedIds: currentRef?.getSelectedElementIds?.(),
+      copiedElements: currentRef?.getCopiedElements?.()
+    });
+    if (currentRef) {
+      setEditMenuState({
+        canUndo: currentRef.canUndo(),
+        canRedo: currentRef.canRedo(),
+        hasSelection: currentRef.getSelectedElementIds().length > 0,
+        hasCopiedElements: currentRef.getCopiedElements().length > 0
+      });
+    }
+  }, []);
+
+  // Update edit menu state when selection or tab changes
+  useEffect(() => {
+    updateEditMenuState();
+  }, [selectedElement, activeTabId, updateEditMenuState]);
 
   /** @brief Get the current active DrawArea ref */
   const getCurrentDrawAreaRef = useCallback(() => drawAreaRefs.current.get(activeTabId), [activeTabId]);
@@ -820,6 +854,49 @@ const RailwayDrawerApp = () => {
             onChange={loadFromJson}
         />
         
+        {/* Edit Menu */}
+        <EditMenu
+          canUndo={editMenuState.canUndo}
+          canRedo={editMenuState.canRedo}
+          hasSelection={editMenuState.hasSelection}
+          hasCopiedElements={editMenuState.hasCopiedElements}
+          onUndo={() => {
+            console.log('🔙 Undo clicked', { hasRef: !!currentDrawAreaRefObject.current });
+            currentDrawAreaRefObject.current?.undo();
+            updateEditMenuState();
+          }}
+          onRedo={() => {
+            console.log('🔄 Redo clicked', { hasRef: !!currentDrawAreaRefObject.current });
+            currentDrawAreaRefObject.current?.redo();
+            updateEditMenuState();
+          }}
+          onCopy={() => {
+            console.log('📋 Copy clicked', { hasRef: !!currentDrawAreaRefObject.current });
+            currentDrawAreaRefObject.current?.copySelectedElements();
+            updateEditMenuState();
+          }}
+          onCut={() => {
+            console.log('✂️ Cut clicked', { hasRef: !!currentDrawAreaRefObject.current });
+            currentDrawAreaRefObject.current?.cutSelectedElements();
+            updateEditMenuState();
+          }}
+          onPaste={() => {
+            console.log('📌 Paste clicked', { hasRef: !!currentDrawAreaRefObject.current });
+            currentDrawAreaRefObject.current?.pasteElements();
+            updateEditMenuState();
+          }}
+          onDelete={() => {
+            console.log('🗑️ Delete clicked', { hasRef: !!currentDrawAreaRefObject.current });
+            currentDrawAreaRefObject.current?.deleteSelectedElements();
+            updateEditMenuState();
+          }}
+          onSelectAll={() => {
+            console.log('🎯 Select All clicked', { hasRef: !!currentDrawAreaRefObject.current });
+            currentDrawAreaRefObject.current?.selectAllElements();
+            updateEditMenuState();
+          }}
+        />
+        
         {/* Toolbox Menu */}
         <Menu as="div" className="relative">
           <Menu.Button className="bg-white hover:bg-slate-50 text-slate-700 border-none px-4 h-10 text-sm font-medium cursor-pointer outline-none border-r border-slate-200 transition-colors duration-200 flex items-center">
@@ -949,7 +1026,7 @@ const RailwayDrawerApp = () => {
                 GRID_SIZE={GRID_SIZE}
                 zoom={zoom}
                 setSelectedElement={setSelectedElement}
-                disableKeyboardHandlers={true}
+                onStateChange={updateEditMenuState}
               />
             </div>
           ))}

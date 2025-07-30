@@ -14,6 +14,7 @@ import React, { useEffect, useRef, useState, forwardRef, useImperativeHandle, us
 import { RenderElement, getRotatedBoundingRect, synchronizeTextRegionsWithSVG, expandSVGRectForText, syncTextRegionsWithSVG, syncUnifiedElement } from "./Elements";
 import type { DrawElement } from "./Elements";
 import type { ToolboxItem } from "./Toolbox";
+import { logger } from "../utils/logger";
 
 /**
  * @interface DrawAreaRef
@@ -27,6 +28,8 @@ export interface DrawAreaRef {
   getElements: () => DrawElement[];
   /** @brief Sets drawing elements */
   setElements: (elements: DrawElement[]) => void;
+  /** @brief Updates drawing elements with history tracking for undo/redo */
+  updateElements: (elements: DrawElement[]) => void;
   /** @brief Sets grid visibility */
   setGridVisible: (visible: boolean) => void;
   /** @brief Gets grid visibility state */
@@ -45,10 +48,23 @@ export interface DrawAreaRef {
   cutSelectedElements: () => DrawElement[] | undefined;
   /** @brief Pastes elements from internal clipboard */
   pasteElements: (position?: { x: number; y: number }) => void;
-  /** @brief Gets copied elements */
+    /** @brief Gets copied elements */
   getCopiedElements: () => DrawElement[];
   /** @brief Sets copied elements */
-  setCopiedElements: (elements: DrawElement[]) => void;
+  setCopiedElements: (els: DrawElement[]) => void;
+  // Edit operations
+  /** @brief Undo the last action */
+  undo: () => void;
+  /** @brief Redo the last undone action */
+  redo: () => void;
+  /** @brief Delete selected elements */
+  deleteSelectedElements: () => void;
+  /** @brief Select all elements */
+  selectAllElements: () => void;
+  /** @brief Check if undo is available */
+  canUndo: () => boolean;
+  /** @brief Check if redo is available */
+  canRedo: () => boolean;
 }
 
 /**
@@ -69,6 +85,8 @@ export interface DrawAreaProps {
   setSelectedElement?: (el?: DrawElement) => void;
   /** @brief Whether to disable internal keyboard handlers (for global handling) */
   disableKeyboardHandlers?: boolean;
+  /** @brief Callback for when internal state changes (for edit menu updates) */
+  onStateChange?: () => void;
 }
 
 /**
@@ -95,6 +113,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
   zoom = 1,
   setSelectedElement,
   disableKeyboardHandlers = false,
+  onStateChange,
 }, ref) => {
   /** @brief Internal drawing elements state */
   const [elements, setElements] = useState<DrawElement[]>([]);
@@ -121,7 +140,36 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
   /** @brief Whether grid is visible */
   const [showGrid, setShowGrid] = useState<boolean>(true);
   /** @brief Undo/redo history stack */
-  const [, setHistory] = useState<DrawElement[][]>([]);
+  const [history, setHistory] = useState<DrawElement[][]>([]);
+  /** @brief Current position in history for redo functionality */
+  const [historyIndex, setHistoryIndex] = useState<number>(-1);
+
+  // Initialize history with current elements on mount
+  useEffect(() => {
+    if (history.length === 0) {
+      logger.info("DrawArea", "🔧 Initializing history", {
+        currentElements: elements.length,
+        elementIds: elements.map(el => el.id)
+      });
+      const initialSnapshot = createDeepElementsSnapshot(elements);
+      setHistory([initialSnapshot]);
+      setHistoryIndex(0);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // Only run once on mount
+
+  // Validate and fix history state inconsistencies
+  useEffect(() => {
+    if (history.length > 0 && historyIndex >= history.length) {
+      logger.warn("DrawArea", "🔧 Fixing corrupted history state", {
+        historyIndex,
+        historyLength: history.length,
+        fixingTo: Math.max(0, history.length - 1)
+      });
+      setHistoryIndex(Math.max(0, history.length - 1));
+    }
+  }, [history.length, historyIndex]);
+
   /** @brief Reference to the SVG element */
   const svgRef = useRef<SVGSVGElement | null>(null);
   /** @brief Flag to prevent duplicate history entries */
@@ -153,14 +201,233 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
   const processedElementIds = useRef<Set<string>>(new Set());
 
   /**
+   * @brief Create a deep copy of a DrawElement preserving all properties
+   * @param element The element to deep copy
+   * @returns A complete deep copy of the element
+   */
+  const createDeepElementCopy = useCallback((element: DrawElement): DrawElement => {
+    return {
+      ...element,
+      // Deep copy coordinate objects
+      start: { ...element.start },
+      end: { ...element.end },
+      // Deep copy arrays if they exist
+      textRegions: element.textRegions ? element.textRegions.map((region: any) => ({ ...region })) : undefined,
+      shapeElements: element.shapeElements ? element.shapeElements.map((shape: any) => ({ ...shape })) : undefined,
+      // Preserve functions by binding to current context
+      setGridEnabled: setShowGrid,
+      setBackgroundColor: setBackgroundColor,
+      // Preserve all other properties
+      gridEnabled: showGrid,
+      backgroundColor: backgroundColor,
+    };
+  }, [showGrid, backgroundColor, setShowGrid, setBackgroundColor]);
+
+  /**
+   * @brief Create a complete deep copy of the entire elements array
+   * @param elements The elements array to deep copy
+   * @returns A complete deep copy of all elements with proper preservation
+   */
+  const createDeepElementsSnapshot = useCallback((elements: DrawElement[]): DrawElement[] => {
+    return elements.map(element => createDeepElementCopy(element));
+  }, [createDeepElementCopy]);
+
+  /**
    * @brief Add current state to history and update elements
    * @param updater Function or value to update elements state
-   * @details Creates a snapshot of current elements before making changes for undo functionality
+   * @details Creates a complete snapshot of current elements, then updates elements, ensuring proper undo functionality
    */
   const pushToHistoryAndSetElements = useCallback((updater: React.SetStateAction<DrawElement[]>) => {
-    setHistory(prev => [...prev, elements.map(el => ({ ...el }))]);
-    setElements(updater);
-  }, [elements]);
+    // Calculate the new state first
+    const newElements = typeof updater === 'function' ? updater(elements) : updater;
+    
+    logger.info("DrawArea", "📝 Adding to history and updating elements", {
+      currentHistoryIndex: historyIndex,
+      currentHistoryLength: history.length,
+      currentElements: elements.length,
+      newElements: newElements.length,
+      elementIds: elements.map(el => el.id).slice(0, 5) // Show first 5 IDs for debugging
+    });
+    
+    // Create a complete deep snapshot of current state before making changes
+    const currentSnapshot = createDeepElementsSnapshot(elements);
+    
+    // Check for changes
+    const hasLengthChange = currentSnapshot.length !== newElements.length;
+    const hasIdChange = !currentSnapshot.every((el, idx) => el.id === newElements[idx]?.id);
+    const isChange = hasLengthChange || hasIdChange;
+    
+    logger.info("DrawArea", "📝 Change detection", {
+      currentSnapshotLength: currentSnapshot.length,
+      newElementsLength: newElements.length,
+      hasLengthChange,
+      hasIdChange,
+      isChange,
+      currentIds: currentSnapshot.map(el => el.id),
+      newIds: newElements.map(el => el.id)
+    });
+    
+    // Only add to history if this is actually a change
+    if (isChange) {
+      
+      // Add current state to history before making changes
+      setHistory(prev => {
+        const newHistory = [...prev.slice(0, historyIndex + 1), currentSnapshot];
+        logger.info("DrawArea", "📝 History updated with current state", {
+          previousLength: prev.length,
+          newLength: newHistory.length,
+          snapshotElements: currentSnapshot.length
+        });
+        return newHistory;
+      });
+      setHistoryIndex(prev => prev + 1);
+      
+      // Update elements immediately
+      logger.info("DrawArea", "📝 Updating elements immediately", {
+        newElementsLength: newElements.length,
+        newElementIds: newElements.map(el => el.id)
+      });
+      setElements(newElements);
+      
+      // Schedule capturing the final state after the change is complete
+      setTimeout(() => {
+        const finalSnapshot = createDeepElementsSnapshot(newElements);
+        setHistory(prevHistory => {
+          const updatedHistory = [...prevHistory, finalSnapshot];
+          logger.info("DrawArea", "📝 Final state captured in history", {
+            finalElements: finalSnapshot.length,
+            totalHistoryLength: updatedHistory.length,
+            finalElementIds: finalSnapshot.map(el => el.id).slice(0, 5)
+          });
+          return updatedHistory;
+        });
+        setHistoryIndex(prev => prev + 1);
+        onStateChange?.();
+      }, 0);
+    } else {
+      // Update elements even if no history change
+      logger.info("DrawArea", "📝 No change detected, updating elements without history", {
+        newElementsLength: newElements.length
+      });
+      setElements(newElements);
+      onStateChange?.();
+    }
+  }, [elements, historyIndex, onStateChange, createDeepElementsSnapshot]);
+
+  /**
+   * @brief Undo the last action
+   * @details Restores the previous state from history
+   */
+  const undo = useCallback(() => {
+    logger.info("DrawArea", "🔄 Undo called", { 
+      historyIndex, 
+      historyLength: history.length,
+      canUndo: historyIndex > 0,
+      currentElements: elements.length 
+    });
+    
+    // Validate history state and fix if corrupted
+    if (historyIndex >= history.length) {
+      logger.warn("DrawArea", "🔧 History index out of bounds, resetting", {
+        historyIndex,
+        historyLength: history.length
+      });
+      setHistoryIndex(Math.max(0, history.length - 1));
+      return;
+    }
+    
+    if (historyIndex > 0 && history[historyIndex - 1]) {
+      const previousState = history[historyIndex - 1];
+      logger.info("DrawArea", "🔄 Applying undo", {
+        previousStateElements: previousState?.length || 0,
+        newHistoryIndex: historyIndex - 1,
+        restoringElementIds: previousState?.map(el => el.id).slice(0, 5) // Show first 5 IDs
+      });
+      
+      // Create deep copies of the restored elements to ensure proper function binding
+      const restoredElements = createDeepElementsSnapshot(previousState);
+      setElements(restoredElements);
+      setHistoryIndex(prev => prev - 1);
+      onStateChange?.();
+    } else {
+      logger.warn("DrawArea", "🔄 Cannot undo - no history available");
+    }
+  }, [history, historyIndex, onStateChange, createDeepElementsSnapshot]);
+
+  /**
+   * @brief Delete selected elements
+   * @details Removes all selected elements from the canvas and adds to history
+   */
+  const deleteSelectedElements = useCallback(() => {
+    logger.info("DrawArea", "🗑️ Delete selected elements called", {
+      selectedCount: selectedElementIds.length,
+      selectedIds: selectedElementIds
+    });
+    
+    if (selectedElementIds.length > 0) {
+      pushToHistoryAndSetElements(prev => 
+        prev.filter(element => !selectedElementIds.includes(element.id))
+      );
+      setSelectedElementIds([]);
+      setHoveredElementId(null);
+      if (setSelectedElement) {
+        setSelectedElement(undefined);
+      }
+      onStateChange?.();
+      logger.info("DrawArea", "🗑️ Delete completed");
+    } else {
+      logger.warn("DrawArea", "🗑️ No elements selected for deletion");
+    }
+  }, [selectedElementIds, pushToHistoryAndSetElements, setSelectedElement, onStateChange]);
+
+  /**
+   * @brief Select all elements
+   * @details Selects all elements on the canvas
+   */
+  const selectAllElements = useCallback(() => {
+    const allIds = elements.map(el => el.id);
+    setSelectedElementIds(allIds);
+    onStateChange?.();
+  }, [elements, onStateChange]);
+
+  /**
+   * @brief Redo the last undone action
+   * @details Restores the next state from history
+   */
+  const redo = useCallback(() => {
+    logger.info("DrawArea", "🔄 Redo called", {
+      historyIndex,
+      historyLength: history.length,
+      canRedo: historyIndex < history.length - 1
+    });
+    
+    // Validate history state and fix if corrupted
+    if (historyIndex >= history.length) {
+      logger.warn("DrawArea", "🔧 History index out of bounds for redo, resetting", {
+        historyIndex,
+        historyLength: history.length
+      });
+      setHistoryIndex(Math.max(0, history.length - 1));
+      return;
+    }
+    
+    if (historyIndex < history.length - 1 && history[historyIndex + 1]) {
+      const nextState = history[historyIndex + 1];
+      logger.info("DrawArea", "🔄 Applying redo", {
+        nextStateElements: nextState?.length || 0,
+        newHistoryIndex: historyIndex + 1,
+        restoringElementIds: nextState?.map(el => el.id).slice(0, 5) // Show first 5 IDs
+      });
+      
+      // Create deep copies of the restored elements to ensure proper function binding
+      const restoredElements = createDeepElementsSnapshot(nextState);
+      setElements(restoredElements);
+      setHistoryIndex(prev => prev + 1);
+      onStateChange?.();
+    } else {
+      logger.warn("DrawArea", "🔄 Cannot redo - no future history available");
+    }
+  }, [history, historyIndex, onStateChange, createDeepElementsSnapshot]);
 
   /**
    * @brief Copy selected elements to internal clipboard
@@ -209,6 +476,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     
     // Update state synchronously 
     setCopiedElements(copiedElementsData);
+    onStateChange?.();
     
     // Also put in system clipboard for cross-application copying
     try {
@@ -225,7 +493,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     
     // Return the copied elements for immediate use
     return copiedElementsData;
-  }, [elements, selectedElementIds, showGrid, backgroundColor, setShowGrid, setBackgroundColor, setCopiedElements]);
+  }, [elements, selectedElementIds, showGrid, backgroundColor, setShowGrid, setBackgroundColor, setCopiedElements, onStateChange]);
 
   /**
    * @brief Cut selected elements to internal clipboard
@@ -292,7 +560,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     
     // Return the cut elements for immediate use
     return copiedElementsData;
-  }, [elements, selectedElementIds, showGrid, backgroundColor, setShowGrid, setBackgroundColor, setCopiedElements, pushToHistoryAndSetElements, setSelectedElementIds, setHoveredElementId, setSelectedElement]);
+  }, [elements, selectedElementIds, showGrid, backgroundColor, setShowGrid, setBackgroundColor, setCopiedElements, pushToHistoryAndSetElements, setSelectedElementIds, setHoveredElementId, setSelectedElement, onStateChange]);
 
   /**
    * @brief Calculate bounding box of multiple elements
@@ -474,6 +742,9 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     setElements: (els: DrawElement[]) => {
       setElements(els);
     },
+    updateElements: (els: DrawElement[]) => {
+      pushToHistoryAndSetElements(els);
+    },
     setGridVisible: (visible: boolean) => setShowGrid(visible),
     getGridVisible: () => showGrid,
     setBackgroundColor: (color: string) => {
@@ -493,7 +764,30 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     pasteElements,
     getCopiedElements: () => copiedElements,
     setCopiedElements: (els: DrawElement[]) => setCopiedElements(els),
-  }), [elements, showGrid, backgroundColor, selectedElementIds, copiedElements, copySelectedElements, cutSelectedElements, pasteElements]);
+    // Edit operations
+    undo,
+    redo,
+    deleteSelectedElements,
+    selectAllElements,
+    canUndo: () => {
+      const result = historyIndex > 0 && history.length > 1;
+      logger.info("DrawArea", "🔍 canUndo check", {
+        historyIndex,
+        historyLength: history.length,
+        result
+      });
+      return result;
+    },
+    canRedo: () => {
+      const result = historyIndex >= 0 && historyIndex < history.length - 1;
+      logger.info("DrawArea", "🔍 canRedo check", {
+        historyIndex,
+        historyLength: history.length,
+        result
+      });
+      return result;
+    },
+  }), [elements, showGrid, backgroundColor, selectedElementIds, copiedElements, copySelectedElements, cutSelectedElements, pasteElements, undo, redo, deleteSelectedElements, selectAllElements, historyIndex, history]);
 
   /**
    * @brief Synchronize elements with grid visibility state
@@ -529,17 +823,21 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
 
     function handleKeyDown(e: KeyboardEvent) {
       // Delete selected elements
-      if ((e.key === "Delete") && selectedElementIds.length > 0) {
-        pushToHistoryAndSetElements(prev => prev.filter(el => !selectedElementIds.includes(el.id)));
-        setSelectedElementIds([]);
-        setHoveredElementId(null);
-        setSelectedElement?.(undefined);
+      if (e.key === "Delete") {
+        e.preventDefault();
+        deleteSelectedElements();
       }
       
       // Copy selected elements (Ctrl+C)
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "c" && selectedElementIds.length > 0) {
         e.preventDefault();
         copySelectedElements();
+      }
+      
+      // Cut selected elements (Ctrl+X)
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "x" && selectedElementIds.length > 0) {
+        e.preventDefault();
+        cutSelectedElements();
       }
       
       // Paste elements (Ctrl+V)
@@ -550,17 +848,25 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       
       // Undo (Ctrl+Z)
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "z" && !e.shiftKey) {
-        setHistory(prev => {
-          if (prev.length === 0) return prev;
-          const last = prev[prev.length - 1];
-          setElements(last);
-          return prev.slice(0, -1);
-        });
+        e.preventDefault();
+        undo();
+      }
+      
+      // Redo (Ctrl+Shift+Z or Ctrl+Y)
+      if ((e.ctrlKey || e.metaKey) && ((e.key.toLowerCase() === "z" && e.shiftKey) || e.key.toLowerCase() === "y")) {
+        e.preventDefault();
+        redo();
+      }
+
+      // Select All (Ctrl+A)
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "a") {
+        e.preventDefault();
+        selectAllElements();
       }
     }
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [selectedElementIds, elements, setSelectedElement, copiedElements, disableKeyboardHandlers, copySelectedElements, pasteElements, pushToHistoryAndSetElements]);
+  }, [selectedElementIds, elements, setSelectedElement, copiedElements, disableKeyboardHandlers, copySelectedElements, cutSelectedElements, pasteElements, pushToHistoryAndSetElements, undo, redo, deleteSelectedElements, selectAllElements]);
 
   /**
    * @brief Check if an element intersects with a selection rectangle
@@ -819,8 +1125,15 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     const svgRect = svgRef.current?.getBoundingClientRect();
     if (!svgRect) return;
 
+    // Add the pre-drag state to history only once when we start moving
     if (!hasPushedToHistory.current) {
-      setHistory(prev => [...prev, elements.map(el => ({ ...el }))]);
+      logger.info("DrawArea", "🎯 Drag started, adding pre-drag state to history", {
+        draggedElementId: currentDraggingId,
+        selectedCount: selectedElementIds.length
+      });
+      
+      // Store the current state (before any changes) to history
+      pushToHistoryAndSetElements(prev => prev);
       hasPushedToHistory.current = true;
     }
 
@@ -865,6 +1178,15 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
    * @function
    */
   function handlePointerUp() {
+    // Clean up drag state - history was already handled in handlePointerMove
+    if (draggingId) {
+      logger.info("DrawArea", "🎯 Drag operation completed", {
+        draggedElementId: draggingId,
+        selectedCount: selectedElementIds.length,
+        historyAlreadyUpdated: hasPushedToHistory.current
+      });
+    }
+    
     setDraggingId(null);
     initialSelectedPositions.current.clear(); // Clear stored positions
     window.removeEventListener("pointermove", handlePointerMove);
@@ -959,7 +1281,8 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       } : null
     });
     
-    setElements(prev => {
+    // Use pushToHistoryAndSetElements to ensure proper undo/redo tracking
+    pushToHistoryAndSetElements(prev => {
       // Check if we've already processed this specific element ID (React StrictMode protection)
       if (processedElementIds.current.has(newElement.id)) {
         return prev;
@@ -1160,9 +1483,14 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
               isSelected={selectedElementIds.includes(el.id)}
               hoveredElementId={hoveredElementId}
               setHoveredElementId={setHoveredElementId}
-              updateElement={updated =>
-                setElements(prev => prev.map(e => e.id === updated.id ? updated : e))
-              }
+              updateElement={updated => {
+                // Use pushToHistoryAndSetElements for property changes to enable undo
+                logger.info("DrawArea", "🔧 Element property updated", {
+                  elementId: updated.id,
+                  elementType: updated.type
+                });
+                pushToHistoryAndSetElements(prev => prev.map(e => e.id === updated.id ? updated : e));
+              }}
               handlePointerDown={handlePointerDown}
             />
           );

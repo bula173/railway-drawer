@@ -68,7 +68,7 @@ const EnhancedPropertiesPanel: React.FC<EnhancedPropertiesPanelProps> = ({
           el.id === updatedElement.id ? updatedElement : el
         );
         
-        drawAreaRef.current.setElements(updatedElements);
+        drawAreaRef.current.updateElements(updatedElements);
         onElementChange?.(updatedElement);
         
         logger.debug('properties', 'Element updated successfully', {
