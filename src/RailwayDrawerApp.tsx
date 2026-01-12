@@ -579,8 +579,39 @@ const RailwayDrawerApp = () => {
           try {
             const parsed = JSON.parse(content);
             const currentDrawAreaRef = getCurrentDrawAreaRef();
-            if (currentDrawAreaRef) {
+            if (currentDrawAreaRef && parsed.elements) {
               currentDrawAreaRef.setElements(parsed.elements || []);
+              
+              // Calculate bounds of all loaded elements and expand canvas if needed
+              if (parsed.elements.length > 0) {
+                let maxX = 0;
+                let maxY = 0;
+                const padding = 200; // Extra padding around elements
+                
+                parsed.elements.forEach((el: DrawElement) => {
+                  // Calculate the maximum extent of each element
+                  const endX = Math.max(el.start.x, el.end?.x || el.start.x);
+                  const endY = Math.max(el.start.y, el.end?.y || el.start.y);
+                  
+                  // Add element width/height if available
+                  const elementMaxX = endX + (el.width || 0);
+                  const elementMaxY = endY + (el.height || 0);
+                  
+                  maxX = Math.max(maxX, elementMaxX);
+                  maxY = Math.max(maxY, elementMaxY);
+                });
+                
+                // Expand canvas size if loaded content is larger
+                const requiredWidth = Math.max(maxX + padding, drawAreaSize.width);
+                const requiredHeight = Math.max(maxY + padding, drawAreaSize.height);
+                
+                if (requiredWidth > drawAreaSize.width || requiredHeight > drawAreaSize.height) {
+                  setDrawAreaSize({
+                    width: requiredWidth,
+                    height: requiredHeight
+                  });
+                }
+              }
             }
           } catch {
             // On parse error, clear elements
