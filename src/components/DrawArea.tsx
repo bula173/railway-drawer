@@ -1406,6 +1406,12 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       iconName?: string;
       iconSource?: string;
       draw?: unknown;
+      properties?: Record<string, {
+        type: string;
+        label?: string;
+        default?: any;
+        options?: string[];
+      }>;
     };
     // Only apply default styles for elements that don't have their own styling
     // Custom elements with SVG shapes should preserve their original colors
