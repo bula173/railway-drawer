@@ -195,6 +195,13 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
   const initialSelectedPositions = useRef<Map<string, { start: { x: number; y: number }, end: { x: number; y: number } }>>(new Map());
   /** @brief Elements stored in clipboard for copy/paste */
   const [copiedElements, setCopiedElements] = useState<DrawElement[]>([]);
+  /** @brief Context menu state */
+  const [contextMenu, setContextMenu] = useState<{
+    x: number;
+    y: number;
+    elementId: string | null;
+    type: 'element' | 'canvas';
+  } | null>(null);
   /** @brief Ref to track the last drop operation to prevent React StrictMode duplicates */
   const lastDropRef = useRef<{ timestamp: number; itemType: string; x: number; y: number } | null>(null);
   /** @brief Ref to track processed element IDs to prevent React StrictMode duplicates */
@@ -714,23 +721,102 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
   /**
    * @brief Handle right-click context menu
    * @param e The mouse event
-   * @details Shows context menu and allows pasting at right-click position
+   * @details Shows context menu with cut, copy, delete, and z-order options
    */
-  const handleContextMenu = useCallback((e: React.MouseEvent) => {
+  const handleContextMenu = useCallback((e: React.MouseEvent, elementId?: string) => {
     e.preventDefault();
     
-    // Calculate click position in drawing coordinates
-    const svgRect = svgRef.current?.getBoundingClientRect();
-    if (!svgRect) return;
+    // Close any existing context menu first
+    setContextMenu(null);
     
-    const x = (e.clientX - svgRect.left - panOffset.x) / zoom;
-    const y = (e.clientY - svgRect.top - panOffset.y) / zoom;
-    
-    // For now, just paste at right-click position if we have copied elements
-    if (copiedElements.length > 0) {
-      pasteElements({ x, y });
+    // If right-clicking on an element, show element context menu
+    if (elementId) {
+      setContextMenu({
+        x: e.clientX,
+        y: e.clientY,
+        elementId,
+        type: 'element',
+      });
+    } else {
+      // Right-clicking on empty canvas - show canvas menu
+      setContextMenu({
+        x: e.clientX,
+        y: e.clientY,
+        elementId: null,
+        type: 'canvas',
+      });
     }
-  }, [svgRef, panOffset, zoom, copiedElements, pasteElements]);
+  }, []);
+
+  /**
+   * @brief Close context menu when clicking elsewhere
+   */
+  useEffect(() => {
+    const handleClick = () => setContextMenu(null);
+    document.addEventListener('click', handleClick);
+    return () => document.removeEventListener('click', handleClick);
+  }, []);
+
+  /**
+   * @brief Handle cut operation from context menu
+   */
+  const handleCut = useCallback((elementId: string) => {
+    const element = elements.find(el => el.id === elementId);
+    if (!element) return;
+    
+    setCopiedElements([createDeepElementCopy(element)]);
+    setElements(prev => prev.filter(el => el.id !== elementId));
+    setSelectedElementIds([]);
+    setContextMenu(null);
+  }, [elements, createDeepElementCopy]);
+
+  /**
+   * @brief Handle copy operation from context menu
+   */
+  const handleCopy = useCallback((elementId: string) => {
+    const element = elements.find(el => el.id === elementId);
+    if (!element) return;
+    
+    setCopiedElements([createDeepElementCopy(element)]);
+    setContextMenu(null);
+  }, [elements, createDeepElementCopy]);
+
+  /**
+   * @brief Handle delete operation from context menu
+   */
+  const handleDelete = useCallback((elementId: string) => {
+    setElements(prev => prev.filter(el => el.id !== elementId));
+    setSelectedElementIds([]);
+    setContextMenu(null);
+  }, []);
+
+  /**
+   * @brief Handle send to back operation from context menu
+   */
+  const handleSendToBack = useCallback((elementId: string) => {
+    setElements(prev => {
+      const element = prev.find(el => el.id === elementId);
+      if (!element) return prev;
+      
+      const filtered = prev.filter(el => el.id !== elementId);
+      return [element, ...filtered];
+    });
+    setContextMenu(null);
+  }, []);
+
+  /**
+   * @brief Handle send to front operation from context menu
+   */
+  const handleSendToFront = useCallback((elementId: string) => {
+    setElements(prev => {
+      const element = prev.find(el => el.id === elementId);
+      if (!element) return prev;
+      
+      const filtered = prev.filter(el => el.id !== elementId);
+      return [...filtered, element];
+    });
+    setContextMenu(null);
+  }, []);
 
   /**
    * @brief Expose methods through ref for external component access
@@ -975,6 +1061,11 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       setPanStart({ x: e.clientX, y: e.clientY });
       window.addEventListener("pointermove", handlePanMove);
       window.addEventListener("pointerup", handlePanUp);
+      return;
+    }
+
+    // Only handle left mouse button for selection
+    if (e.button !== 0) {
       return;
     }
 
@@ -1378,8 +1469,19 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       setBackgroundColor,
       // Transfer complex property from toolbox item to element
       complex: toolboxItem.complex,
+      // Store element definition for properties panel
+      elementDefinition: toolboxItem.properties ? { properties: toolboxItem.properties } : undefined,
       ...(defaultStyles && { styles: defaultStyles }),
     };
+    
+    // Initialize custom properties with their default values
+    if (toolboxItem.properties) {
+      Object.entries(toolboxItem.properties).forEach(([key, propDef]: [string, any]) => {
+        if (propDef.default !== undefined) {
+          (baseElement as any)[key] = propDef.default;
+        }
+      });
+    }
 
     switch ((toolboxItem.draw as Record<string, unknown>)?.type) {
       case "line": {
@@ -1450,6 +1552,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
 
   /** @brief Main SVG render with all interactive features */
   return (
+    <>
     <svg
       ref={svgRef}
       className="draw-area"
@@ -1492,6 +1595,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
                 pushToHistoryAndSetElements(prev => prev.map(e => e.id === updated.id ? updated : e));
               }}
               handlePointerDown={handlePointerDown}
+              onContextMenu={(e) => handleContextMenu(e, el.id)}
             />
           );
         })}
@@ -1602,6 +1706,23 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
             const width = Math.abs(el.end.x - el.start.x);
             const height = Math.abs(el.end.y - el.start.y);
             
+            // For line-based elements, just show the line itself highlighted
+            if (el.isLineBased) {
+              return (
+                <line
+                  key={`selection-outline-${el.id}`}
+                  x1={el.start.x}
+                  y1={el.start.y}
+                  x2={el.end.x}
+                  y2={el.end.y}
+                  stroke="rgba(0, 123, 255, 0.8)"
+                  strokeWidth={3 / zoom}
+                  strokeDasharray={`${3 / zoom},${3 / zoom}`}
+                  pointerEvents="none"
+                />
+              );
+            }
+            
             return (
               <rect
                 key={`selection-outline-${el.id}`}
@@ -1623,6 +1744,73 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
         {renderSelectionRectangle()}
       </g>
     </svg>
+    
+    {/* Context Menu */}
+    {contextMenu && (
+      <div
+        style={{
+          position: 'fixed',
+          left: contextMenu.x,
+          top: contextMenu.y,
+          zIndex: 10000,
+        }}
+        className="bg-white rounded-lg shadow-2xl border border-slate-200 py-1 min-w-[160px]"
+        onContextMenu={(e) => e.preventDefault()}
+      >
+        {contextMenu.type === 'element' && contextMenu.elementId && (
+          <>
+            <button
+              onClick={() => handleCut(contextMenu.elementId!)}
+              className="w-full px-4 py-2 text-left text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-600 flex items-center gap-2"
+            >
+              <span>✂️</span> Cut
+            </button>
+            <button
+              onClick={() => handleCopy(contextMenu.elementId!)}
+              className="w-full px-4 py-2 text-left text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-600 flex items-center gap-2"
+            >
+              <span>📋</span> Copy
+            </button>
+            <div className="border-t border-slate-200 my-1" />
+            <button
+              onClick={() => handleDelete(contextMenu.elementId!)}
+              className="w-full px-4 py-2 text-left text-sm text-red-600 hover:bg-red-50 flex items-center gap-2"
+            >
+              <span>🗑️</span> Delete
+            </button>
+            <div className="border-t border-slate-200 my-1" />
+            <button
+              onClick={() => handleSendToFront(contextMenu.elementId!)}
+              className="w-full px-4 py-2 text-left text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-600 flex items-center gap-2"
+            >
+              <span>⬆️</span> Send to Front
+            </button>
+            <button
+              onClick={() => handleSendToBack(contextMenu.elementId!)}
+              className="w-full px-4 py-2 text-left text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-600 flex items-center gap-2"
+            >
+              <span>⬇️</span> Send to Back
+            </button>
+          </>
+        )}
+        {contextMenu.type === 'canvas' && copiedElements.length > 0 && (
+          <button
+            onClick={() => {
+              const svgRect = svgRef.current?.getBoundingClientRect();
+              if (!svgRect) return;
+              const x = (contextMenu.x - svgRect.left - panOffset.x) / zoom;
+              const y = (contextMenu.y - svgRect.top - panOffset.y) / zoom;
+              pasteElements({ x, y });
+              setContextMenu(null);
+            }}
+            className="w-full px-4 py-2 text-left text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-600 flex items-center gap-2"
+          >
+            <span>📋</span> Paste
+          </button>
+        )}
+      </div>
+    )}
+    </>
   );
 });
 

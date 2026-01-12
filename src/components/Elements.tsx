@@ -160,6 +160,7 @@ export interface DrawElement {
   // Element behavior properties
   unified?: boolean; // If true, treat as single object despite multiple shapeElements
   complex?: boolean; // If true, allow individual shapeElement resizing with proportional scaling
+  isLineBased?: boolean; // If true, only show endpoint resize handles (for lines, arrows, tracks)
   
   // Styling properties
   styles?: ElementStyles;
@@ -663,8 +664,8 @@ export const ElementSVG: React.FC<{ el: DrawElement }> = ({ el }) => {
         
         // Use shapeElements for all custom elements (including UML classes)
         if (el.shapeElements && el.shapeElements.length > 0) {
-          // Generate SVG from shape elements (only if there are elements)
-          shapeToRender = generateSVGFromElements(el.shapeElements!);
+          // Generate SVG from shape elements, passing element properties for substitution
+          shapeToRender = generateSVGFromElements(el.shapeElements!, el);
         } else if (el.shape) {
           // Use legacy shape property
           let rawShape = el.shape;
@@ -1012,9 +1013,10 @@ export function getRotatedBoundingRect(el: DrawElement) {
  * @function generateSVGFromElements
  * @brief Generates SVG content from an array of shape elements.
  * @param shapeElements Array of element definitions
+ * @param elementProperties Optional properties to substitute in SVG (e.g., {topLight: 'red'})
  * @returns SVG content as string
  */
-export function generateSVGFromElements(shapeElements: ShapeElement[]): string {
+export function generateSVGFromElements(shapeElements: ShapeElement[], elementProperties?: Record<string, any>): string {
   if (!shapeElements || shapeElements.length === 0) {
     return '';
   }
@@ -1023,8 +1025,18 @@ export function generateSVGFromElements(shapeElements: ShapeElement[]): string {
   const elementsCopy = [...shapeElements];
   
   const result = elementsCopy.map((element) => {
-    // Simply return the SVG content directly
-    return element.svg;
+    let svg = element.svg;
+    
+    // Substitute properties if provided (e.g., {topLight} -> actual color value)
+    if (elementProperties) {
+      Object.keys(elementProperties).forEach(key => {
+        const value = elementProperties[key];
+        const pattern = new RegExp(`\\{${key}\\}`, 'g');
+        svg = svg.replace(pattern, value);
+      });
+    }
+    
+    return svg;
   }).join('');
   
   return result;
@@ -1150,6 +1162,7 @@ export function RenderElement({
   setHoveredElementId,
   updateElement,
   handlePointerDown,
+  onContextMenu,
 }: {
   el: DrawElement;
   isSelected: boolean;
@@ -1157,6 +1170,7 @@ export function RenderElement({
   setHoveredElementId: (id: string | null) => void;
   updateElement: (el: DrawElement) => void;
   handlePointerDown: (e: React.PointerEvent, el: DrawElement) => void;
+  onContextMenu?: (e: React.MouseEvent) => void;
 }) {
   // --- State ---
   const [labelDragging, setLabelDragging] = React.useState(false);
@@ -1197,6 +1211,48 @@ export function RenderElement({
    * @returns Array of JSX elements representing resize handles.
    */
   function renderResizeHandles(rect: { x: number, y: number, width: number, height: number }) {
+    // Check if this is a line-based element (only show endpoint handles)
+    if (el.isLineBased) {
+      const left = Math.min(el.start.x, el.end.x);
+      const right = Math.max(el.start.x, el.end.x);
+      const top = Math.min(el.start.y, el.end.y);
+      const bottom = Math.max(el.start.y, el.end.y);
+      
+      // Determine which corners correspond to start and end based on actual coordinates
+      const startIsTopLeft = el.start.x === left && el.start.y === top;
+      const startIsTopRight = el.start.x === right && el.start.y === top;
+      const startIsBottomLeft = el.start.x === left && el.start.y === bottom;
+      
+      let startHandle, endHandle;
+      
+      if (startIsTopLeft) {
+        startHandle = { x: left, y: top, name: "topLeft" };
+        endHandle = { x: right, y: bottom, name: "bottomRight" };
+      } else if (startIsTopRight) {
+        startHandle = { x: right, y: top, name: "topRight" };
+        endHandle = { x: left, y: bottom, name: "bottomLeft" };
+      } else if (startIsBottomLeft) {
+        startHandle = { x: left, y: bottom, name: "bottomLeft" };
+        endHandle = { x: right, y: top, name: "topRight" };
+      } else {
+        startHandle = { x: right, y: bottom, name: "bottomRight" };
+        endHandle = { x: left, y: top, name: "topLeft" };
+      }
+      
+      const handles = [startHandle, endHandle];
+      
+      return handles.map(h => (
+        <rect
+          key={h.name}
+          className={`resize-handle nwse-resize`}
+          x={h.x - 6}
+          y={h.y - 6}
+          onPointerDown={e => handleResizePointerDown(e, h.name)}
+        />
+      ));
+    }
+    
+    // For regular elements, show all corner handles
     if (el.rotation) {
       // For rotated elements, use the rotated corner positions
       const rotatedRect = getRotatedBoundingRect(el);
@@ -1277,6 +1333,41 @@ export function RenderElement({
     let newStart = { ...resize.startEl.start };
     let newEnd = { ...resize.startEl.end };
 
+    // Special handling for line-based elements - only move the endpoint being dragged
+    if (el.isLineBased) {
+      // Determine which endpoint is being dragged based on handle name
+      const left = Math.min(resize.startEl.start.x, resize.startEl.end.x);
+      const right = Math.max(resize.startEl.start.x, resize.startEl.end.x);
+      const top = Math.min(resize.startEl.start.y, resize.startEl.end.y);
+      const bottom = Math.max(resize.startEl.start.y, resize.startEl.end.y);
+      
+      const startIsTopLeft = resize.startEl.start.x === left && resize.startEl.start.y === top;
+      const startIsTopRight = resize.startEl.start.x === right && resize.startEl.start.y === top;
+      const startIsBottomLeft = resize.startEl.start.x === left && resize.startEl.start.y === bottom;
+      
+      let isStartHandle = false;
+      if ((startIsTopLeft && resize.handle === "topLeft") ||
+          (startIsTopRight && resize.handle === "topRight") ||
+          (startIsBottomLeft && resize.handle === "bottomLeft") ||
+          (!startIsTopLeft && !startIsTopRight && !startIsBottomLeft && resize.handle === "bottomRight")) {
+        isStartHandle = true;
+      }
+      
+      if (isStartHandle) {
+        // Move start point - only horizontal (X) movement
+        newStart = { x: resize.startEl.start.x + dx, y: resize.startEl.start.y };
+        newEnd = { ...resize.startEl.end };
+      } else {
+        // Move end point - only horizontal (X) movement
+        newStart = { ...resize.startEl.start };
+        newEnd = { x: resize.startEl.end.x + dx, y: resize.startEl.end.y };
+      }
+      
+      // Update the element directly without further processing
+      updateElement({ ...el, start: newStart, end: newEnd });
+      return;
+    }
+
     switch (resize.handle) {
       case "topLeft":
         newStart = { x: resize.startEl.start.x + dx, y: resize.startEl.start.y + dy };
@@ -1316,7 +1407,127 @@ export function RenderElement({
         [newStart.y, newEnd.y] = [newEnd.y, newStart.y];
         height = -height;
       }
-      updateElement({ ...el, start: newStart, end: newEnd, mirrorX, mirrorY });
+      
+      // Special handling for arrow elements to keep arrow head at fixed size
+      const isArrow = el.shapeElements?.some(s => s.id.includes('arrowHead') || s.id.includes('Arrow'));
+      if (isArrow && el.shapeElements) {
+        const scaleX = width / (el.width || 48);
+        const scaleY = height / (el.height || 48);
+        
+        // First pass: scale the line and get its new start and end coordinates
+        let lineStartX = 0, lineStartY = 0, lineEndX = 0, lineEndY = 0;
+        const lineSVG = el.shapeElements.find(s => s.svg.includes('<line'));
+        if (lineSVG) {
+          const x1Match = lineSVG.svg.match(/x1=['"]([^'"]+)['"]/);
+          const y1Match = lineSVG.svg.match(/y1=['"]([^'"]+)['"]/);
+          const x2Match = lineSVG.svg.match(/x2=['"]([^'"]+)['"]/);
+          const y2Match = lineSVG.svg.match(/y2=['"]([^'"]+)['"]/);
+          if (x1Match && y1Match && x2Match && y2Match) {
+            lineStartX = parseFloat(x1Match[1]) * scaleX;
+            lineStartY = parseFloat(y1Match[1]) * scaleY;
+            lineEndX = parseFloat(x2Match[1]) * scaleX;
+            lineEndY = parseFloat(y2Match[1]) * scaleY;
+          }
+        }
+        
+        const updatedShapeElements = el.shapeElements.map(shapeEl => {
+          // Only scale the line, keep arrow head/polygon at original size but reposition
+          if (shapeEl.svg.includes('<line') && (shapeEl.id.includes('arrowLine') || shapeEl.id.includes('Line'))) {
+            // Scale the line coordinates
+            let svg = shapeEl.svg;
+            const x1Match = svg.match(/x1=['"]([^'"]+)['"]/);
+            const y1Match = svg.match(/y1=['"]([^'"]+)['"]/);
+            const x2Match = svg.match(/x2=['"]([^'"]+)['"]/);
+            const y2Match = svg.match(/y2=['"]([^'"]+)['"]/);
+            
+            if (x1Match && y1Match && x2Match && y2Match) {
+              const origX1 = parseFloat(x1Match[1]);
+              const origY1 = parseFloat(y1Match[1]);
+              const origX2 = parseFloat(x2Match[1]);
+              const origY2 = parseFloat(y2Match[1]);
+              
+              const newX1 = origX1 * scaleX;
+              const newY1 = origY1 * scaleY;
+              const newX2 = origX2 * scaleX;
+              const newY2 = origY2 * scaleY;
+              
+              svg = svg.replace(/x1=['"][^'"]+['"]/, `x1='${newX1}'`);
+              svg = svg.replace(/y1=['"][^'"]+['"]/, `y1='${newY1}'`);
+              svg = svg.replace(/x2=['"][^'"]+['"]/, `x2='${newX2}'`);
+              svg = svg.replace(/y2=['"][^'"]+['"]/, `y2='${newY2}'`);
+            }
+            
+            return { ...shapeEl, svg };
+          } else if (shapeEl.svg.includes('<polygon') && (shapeEl.id.includes('arrowHead') || shapeEl.id.includes('Head'))) {
+            // Reposition the arrow head to the end of the line but keep its size
+            let svg = shapeEl.svg;
+            const pointsMatch = svg.match(/points=['"]([^'"]+)['"]/);
+            
+            if (pointsMatch) {
+              const points = pointsMatch[1].split(/[\s,]+/).map(p => parseFloat(p));
+              
+              // Get original arrow head tip position (first point)
+              const origTipX = points[0];
+              const origTipY = points[1];
+              
+              // Calculate the offset from line end to arrow tip in original
+              const origLineEnd = el.shapeElements?.find(s => s.svg.includes('<line'));
+              if (origLineEnd) {
+                const origX1Match = origLineEnd.svg.match(/x1=['"]([^'"]+)['"]/);
+                const origY1Match = origLineEnd.svg.match(/y1=['"]([^'"]+)['"]/);
+                const origX2Match = origLineEnd.svg.match(/x2=['"]([^'"]+)['"]/);
+                const origY2Match = origLineEnd.svg.match(/y2=['"]([^'"]+)['"]/);
+                
+                if (origX1Match && origY1Match && origX2Match && origY2Match) {
+                  const origLineStartX = parseFloat(origX1Match[1]);
+                  const origLineStartY = parseFloat(origY1Match[1]);
+                  const origLineEndX = parseFloat(origX2Match[1]);
+                  const origLineEndY = parseFloat(origY2Match[1]);
+                  
+                  // Determine if this is left or right arrow head based on tip position
+                  const isLeftArrow = Math.abs(origTipX - origLineStartX) < Math.abs(origTipX - origLineEndX);
+                  
+                  let newTipX, newTipY;
+                  if (isLeftArrow) {
+                    // Left arrow head - position at line start
+                    const offsetX = origTipX - origLineStartX;
+                    const offsetY = origTipY - origLineStartY;
+                    newTipX = lineStartX + offsetX;
+                    newTipY = lineStartY + offsetY;
+                  } else {
+                    // Right arrow head - position at line end
+                    const offsetX = origTipX - origLineEndX;
+                    const offsetY = origTipY - origLineEndY;
+                    newTipX = lineEndX + offsetX;
+                    newTipY = lineEndY + offsetY;
+                  }
+                  
+                  // Shift all points by the difference
+                  const shiftX = newTipX - origTipX;
+                  const shiftY = newTipY - origTipY;
+                  
+                  const newPoints: number[] = [];
+                  for (let i = 0; i < points.length; i += 2) {
+                    newPoints.push(points[i] + shiftX);
+                    newPoints.push(points[i + 1] + shiftY);
+                  }
+                  
+                  const pointsStr = newPoints.join(',');
+                  svg = svg.replace(/points=['"][^'"]+['"]/, `points='${pointsStr}'`);
+                }
+              }
+            }
+            
+            return { ...shapeEl, svg };
+          }
+          
+          return shapeEl;
+        });
+        
+        updateElement({ ...el, start: newStart, end: newEnd, mirrorX, mirrorY, shapeElements: updatedShapeElements, width, height });
+      } else {
+        updateElement({ ...el, start: newStart, end: newEnd, mirrorX, mirrorY });
+      }
     } else {
       // For non-custom, allow negative width/height (mirroring by coordinates)
       updateElement({ ...el, start: newStart, end: newEnd });
@@ -2334,12 +2545,19 @@ export function RenderElement({
     <g
       className={`element-container ${isSelected ? 'selected' : ''}`}
       onPointerDown={e => {
-        if (!labelDragging) handlePointerDown(e, el);
+        if (e.button === 0 && !labelDragging) handlePointerDown(e, el);
       }}
       onPointerEnter={() => setHoveredElementId(el.id)}
       onPointerLeave={() => {
         setHoveredElementId(null);
         setHoveredShapeElementId(null); // Clear shape element hover state when leaving the entire element
+      }}
+      onContextMenu={(e) => {
+        if (onContextMenu) {
+          e.preventDefault();
+          e.stopPropagation();
+          onContextMenu(e);
+        }
       }}
     >
       {renderSelectionHighlight()}
