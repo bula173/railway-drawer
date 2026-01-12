@@ -15,13 +15,6 @@ on:
 # Basic permissions for building and uploading artifacts
 permissions:
   contents: read
-  pages: write
-  id-token: write
-
-# Allow one concurrent deployment
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
 
 jobs:
   # Job 1: Linting and Type Checking
@@ -98,35 +91,26 @@ jobs:
     - name: Build project
       run: npm run build
       
+    - name: Create zip package
+      run: |
+        cd dist
+        zip -r ../railway-drawer-dist.zip .
+      
     - name: Upload build artifacts
       uses: actions/upload-artifact@v4
       with:
         name: railway-drawer-build
         path: dist/
         retention-days: 30
-    
-    - name: Upload artifact for GitHub Pages
-      uses: actions/upload-pages-artifact@v3
+
+    - name: Upload zipped bundle
+      uses: actions/upload-artifact@v4
       with:
-        path: dist/
+        name: railway-drawer-dist-zip
+        path: railway-drawer-dist.zip
+        retention-days: 30
 
-  # Job 4: Deploy to GitHub Pages
-  deploy:
-    runs-on: ubuntu-latest
-    name: Deploy to GitHub Pages
-    needs: build
-    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
-    
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    
-    steps:
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v4
-
-  # Job 5: Cross-platform testing (optional but recommended)
+  # Job 4: Cross-platform testing (optional but recommended)
   test-cross-platform:
     runs-on: ${{ matrix.os }}
     name: Test on ${{ matrix.os }}
