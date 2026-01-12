@@ -14,6 +14,7 @@
 
 import React, { useRef } from "react";
 import { RotateCw } from "lucide-react";
+import { findSnapPoint } from "../utils/trackUtils";
 import "../styles/elements.css";
 // --- Types ---
 
@@ -156,6 +157,8 @@ export interface DrawElement {
   id: string;
   name?: string;
   type: string;
+  layerId?: string; // ID of the layer this element belongs to
+  groupId?: string; // ID of the group this element belongs to
   
   // Element behavior properties
   unified?: boolean; // If true, treat as single object despite multiple shapeElements
@@ -1202,6 +1205,7 @@ export function RenderElement({
   isSelected,
   hoveredElementId,
   setHoveredElementId,
+  allElements = [],
   updateElement,
   handlePointerDown,
   onContextMenu,
@@ -1210,6 +1214,7 @@ export function RenderElement({
   isSelected: boolean;
   hoveredElementId: string | null;
   setHoveredElementId: (id: string | null) => void;
+  allElements?: DrawElement[]; // Needed for snapping
   updateElement: (el: DrawElement) => void;
   handlePointerDown: (e: React.PointerEvent, el: DrawElement) => void;
   onContextMenu?: (e: React.MouseEvent) => void;
@@ -1398,11 +1403,24 @@ export function RenderElement({
       if (isStartHandle) {
         // Move start point - only horizontal (X) movement
         newStart = { x: resize.startEl.start.x + dx, y: resize.startEl.start.y };
+        
+        // Smart Tracks Snapping
+        const snappedStart = findSnapPoint(newStart, allElements, el.id);
+        if (snappedStart.snapped) {
+          newStart = { x: snappedStart.x, y: snappedStart.y };
+        }
+        
         newEnd = { ...resize.startEl.end };
       } else {
         // Move end point - only horizontal (X) movement
         newStart = { ...resize.startEl.start };
         newEnd = { x: resize.startEl.end.x + dx, y: resize.startEl.end.y };
+        
+        // Smart Tracks Snapping
+        const snappedEnd = findSnapPoint(newEnd, allElements, el.id);
+        if (snappedEnd.snapped) {
+          newEnd = { x: snappedEnd.x, y: snappedEnd.y };
+        }
       }
       
       // Update the element directly without further processing
@@ -1596,7 +1614,7 @@ export function RenderElement({
    * @returns JSX element for the selection highlight or null if not shown.
    * @description Shows different colors for selected vs hovered states. Handles rotation correctly.
    */
-  function renderSelectionHighlight() {
+  function renderSelectionHighlight(rect: ReturnType<typeof getElementBoundingRect>) {
     const shouldShow = hoveredElementId === el.id || isSelected || labelHovered;
     
     if (!shouldShow) return null;
@@ -1636,19 +1654,52 @@ export function RenderElement({
           points={points}
         />
       );
-    } else {
-      // For non-rotated elements, use the original rect approach
-      const rect = getElementBoundingRect(el);
-      return (
-        <rect
-          className={`element-selection-highlight ${isSelected ? 'selected' : 'hovered'}`}
-          x={rect.x - 4}
-          y={rect.y - 4}
-          width={rect.width + 8}
-          height={rect.height + 8}
-        />
-      );
+      } else {
+        // For non-rotated elements, use the original rect approach
+        return (
+          <rect
+            className={`element-selection-highlight ${isSelected ? 'selected' : 'hovered'}`}
+            x={rect.x - 4}
+            y={rect.y - 4}
+            width={rect.width + 8}
+            height={rect.height + 8}
+          />
+        );
     }
+  }
+
+  function renderGroupBadge(rect: ReturnType<typeof getElementBoundingRect>) {
+    if (!el.groupId || (!isSelected && hoveredElementId !== el.id)) return null;
+    const badgeRadius = 5;
+    const badgeX = rect.x + badgeRadius + 4;
+    const badgeY = rect.y + badgeRadius + 4;
+    const fillColor = isSelected ? '#fb923c' : '#f97316';
+
+    return (
+      <g>
+        <circle
+          cx={badgeX}
+          cy={badgeY}
+          r={badgeRadius}
+          fill={fillColor}
+          stroke="#1d4ed8"
+          strokeWidth={1}
+          vectorEffect="non-scaling-stroke"
+        />
+        <text
+          x={badgeX}
+          y={badgeY + 1}
+          textAnchor="middle"
+          dominantBaseline="middle"
+          fontSize={7}
+          fill="#1d1d1f"
+          fontWeight="bold"
+          pointerEvents="none"
+        >
+          G
+        </text>
+      </g>
+    );
   }
 
   /**
@@ -2600,7 +2651,8 @@ export function RenderElement({
         }
       }}
     >
-      {renderSelectionHighlight()}
+      {renderSelectionHighlight(rect)}
+      {renderGroupBadge(rect)}
       {isSelected && renderResizeHandles(rect)}
       {renderElementContent()}
       {renderTextRegions()}

@@ -10,11 +10,14 @@
  * @version 1.0
  */
 
-import React, { useEffect, useRef, useState, forwardRef, useImperativeHandle, useCallback } from "react";
+import React, { useEffect, useRef, useState, forwardRef, useImperativeHandle, useCallback, useMemo } from "react";
 import { RenderElement, getRotatedBoundingRect, synchronizeTextRegionsWithSVG, expandSVGRectForText, syncTextRegionsWithSVG, syncUnifiedElement } from "./Elements";
 import type { DrawElement } from "./Elements";
 import type { ToolboxItem } from "./Toolbox";
+import type { DrawTool, Layer } from "../types";
 import { logger } from "../utils/logger";
+import { snapPointToGrid } from "../utils/index";
+import { findSnapPoint } from "../utils/trackUtils";
 
 /**
  * @interface DrawAreaRef
@@ -87,6 +90,12 @@ export interface DrawAreaProps {
   setSelectedElement?: (el?: DrawElement) => void;
   /** @brief Whether to disable internal keyboard handlers (for global handling) */
   disableKeyboardHandlers?: boolean;
+  /** @brief Currently active drawing tool */
+  activeTool?: DrawTool;
+  /** @brief Available drawing layers */
+  layers?: Layer[];
+  /** @brief ID of the currently active layer */
+  activeLayerId?: string;
   /** @brief Callback for when internal state changes (for edit menu updates) */
   onStateChange?: () => void;
   /** @brief Callback when canvas needs to expand to fit elements */
@@ -117,6 +126,9 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
   zoom = 1,
   setSelectedElement,
   disableKeyboardHandlers = false,
+  activeTool = 'select',
+  layers = [{ id: 'default', name: 'Background Layer', visible: true, locked: false }],
+  activeLayerId = 'default',
   onStateChange,
   onCanvasExpand,
 }, ref) => {
@@ -132,6 +144,9 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
   }, [elements]);
   /** @brief IDs of currently selected elements */
   const [selectedElementIds, setSelectedElementIds] = useState<string[]>([]);
+  const selectedElements = useMemo(() => elements.filter(el => selectedElementIds.includes(el.id)), [elements, selectedElementIds]);
+  const selectionCanGroup = selectedElementIds.length > 1;
+  const selectionCanUngroup = selectedElements.some(el => Boolean(el.groupId));
   /** @brief ID of element currently being hovered */
   const [hoveredElementId, setHoveredElementId] = useState<string | null>(null);
   /** @brief ID of element currently being dragged */
@@ -188,6 +203,11 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
   /** @brief Ref for selection end position to avoid stale closures */
   const selectionEndRef = useRef<{ x: number; y: number } | null>(null);
 
+  /** @brief Measure tool state */
+  const [measureStart, setMeasureStart] = useState<{ x: number; y: number } | null>(null);
+  /** @brief Current measure end position */
+  const [measureEnd, setMeasureEnd] = useState<{ x: number; y: number } | null>(null);
+
   /** @brief Panning state */
   const [isPanning, setIsPanning] = useState(false);
   /** @brief Start position of pan operation */
@@ -204,7 +224,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     x: number;
     y: number;
     elementId: string | null;
-    type: 'element' | 'canvas';
+    type: 'element' | 'canvas' | 'selection';
   } | null>(null);
   /** @brief Ref to track the last drop operation to prevent React StrictMode duplicates */
   const lastDropRef = useRef<{ timestamp: number; itemType: string; x: number; y: number } | null>(null);
@@ -1114,6 +1134,17 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     // Close any existing context menu first
     setContextMenu(null);
     
+    // If right-clicking on a selected group, show selection menu
+    if (elementId && selectedElementIds.includes(elementId) && selectedElementIds.length > 1) {
+      setContextMenu({
+        x: e.clientX,
+        y: e.clientY,
+        elementId: null,
+        type: 'selection',
+      });
+      return;
+    }
+
     // If right-clicking on an element, show element context menu
     if (elementId) {
       setContextMenu({
@@ -1122,8 +1153,24 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
         elementId,
         type: 'element',
       });
-    } else {
-      // Right-clicking on empty canvas - show canvas menu
+    } else if (selectedElementIds.length > 1) {
+      // Right-clicking on empty canvas with a multi-selection should still surface the selection menu
+      setContextMenu({
+        x: e.clientX,
+        y: e.clientY,
+        elementId: null,
+        type: 'selection',
+      });
+    } else if (selectedElementIds.length === 1) {
+      // Right-clicking on empty canvas while a single element is selected should still show element actions
+      setContextMenu({
+        x: e.clientX,
+        y: e.clientY,
+        elementId: selectedElementIds[0],
+        type: 'element',
+      });
+    } else if (selectedElementIds.length === 0) {
+      // Right-clicking on empty canvas with no selection - show canvas menu
       setContextMenu({
         x: e.clientX,
         y: e.clientY,
@@ -1131,7 +1178,28 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
         type: 'canvas',
       });
     }
-  }, []);
+  }, [selectedElementIds]);
+
+  const groupSelectedElements = useCallback(() => {
+    if (selectedElementIds.length <= 1) return;
+    const groupId = `group-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 5)}`;
+    pushToHistoryAndSetElements(prev => prev.map(el => (
+      selectedElementIds.includes(el.id)
+        ? { ...el, groupId }
+        : el
+    )));
+    setContextMenu(null);
+  }, [selectedElementIds, pushToHistoryAndSetElements]);
+
+  const ungroupSelectedElements = useCallback(() => {
+    if (selectedElementIds.length === 0) return;
+    pushToHistoryAndSetElements(prev => prev.map(el => (
+      selectedElementIds.includes(el.id)
+        ? { ...el, groupId: undefined }
+        : el
+    )));
+    setContextMenu(null);
+  }, [selectedElementIds, pushToHistoryAndSetElements]);
 
   /**
    * @brief Close context menu when clicking elsewhere
@@ -1202,6 +1270,54 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     });
     setContextMenu(null);
   }, []);
+
+  /**
+   * @brief Handle cut selection from context menu
+   */
+  const handleCutSelection = useCallback(() => {
+    cutSelectedElements();
+    setContextMenu(null);
+  }, [cutSelectedElements]);
+
+  /**
+   * @brief Handle copy selection from context menu
+   */
+  const handleCopySelection = useCallback(() => {
+    copySelectedElements();
+    setContextMenu(null);
+  }, [copySelectedElements]);
+
+  /**
+   * @brief Handle delete selection from context menu
+   */
+  const handleDeleteSelection = useCallback(() => {
+    deleteSelectedElements();
+    setContextMenu(null);
+  }, [deleteSelectedElements]);
+
+  /**
+   * @brief Handle send selection to front from context menu
+   */
+  const handleSendSelectionToFront = useCallback(() => {
+    setElements(prev => {
+      const selected = prev.filter(el => selectedElementIds.includes(el.id));
+      const nonSelected = prev.filter(el => !selectedElementIds.includes(el.id));
+      return [...nonSelected, ...selected];
+    });
+    setContextMenu(null);
+  }, [selectedElementIds]);
+
+  /**
+   * @brief Handle send selection to back from context menu
+   */
+  const handleSendSelectionToBack = useCallback(() => {
+    setElements(prev => {
+      const selected = prev.filter(el => selectedElementIds.includes(el.id));
+      const nonSelected = prev.filter(el => !selectedElementIds.includes(el.id));
+      return [...selected, ...nonSelected];
+    });
+    setContextMenu(null);
+  }, [selectedElementIds]);
 
   /**
    * @brief Handle paste from context menu - uses unified paste logic
@@ -1414,18 +1530,43 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     
     e.stopPropagation(); // Prevent SVG click handler
 
-    if (e.ctrlKey || e.metaKey) {
-      setSelectedElementIds(
-        selectedElementIds.includes(el.id)
-          ? selectedElementIds.filter((id: string) => id !== el.id)
-          : [...selectedElementIds, el.id]
-      );
+    const groupMemberIds = el.groupId
+      ? elements.filter(member => member.groupId === el.groupId).map(member => member.id)
+      : [];
+
+    let newSelectionIds: string[] = [];
+    const multiSelectClick = selectedElementIds.length > 1 && selectedElementIds.includes(el.id) && !(e.ctrlKey || e.metaKey);
+
+    if (multiSelectClick) {
+      newSelectionIds = selectedElementIds;
+    } else if (groupMemberIds.length > 1) {
+      if (e.ctrlKey || e.metaKey) {
+        const groupFullySelected = groupMemberIds.every(id => selectedElementIds.includes(id));
+        newSelectionIds = groupFullySelected
+          ? selectedElementIds.filter(id => !groupMemberIds.includes(id))
+          : [...new Set([...selectedElementIds, ...groupMemberIds])];
+      } else {
+        newSelectionIds = groupMemberIds;
+      }
     } else {
-      setSelectedElementIds([el.id]);
+      if (e.ctrlKey || e.metaKey) {
+        newSelectionIds = selectedElementIds.includes(el.id)
+          ? selectedElementIds.filter((id: string) => id !== el.id)
+          : [...selectedElementIds, el.id];
+      } else {
+        newSelectionIds = [el.id];
+      }
     }
-    
-    // Update external selection context
-    setSelectedElement?.(el);
+
+    if (newSelectionIds.length === 0) {
+      newSelectionIds = [el.id];
+    }
+
+    setSelectedElementIds(newSelectionIds);
+    const newSelectedElement = newSelectionIds.length === 1
+      ? elements.find(element => element.id === newSelectionIds[0])
+      : undefined;
+    setSelectedElement?.(newSelectedElement);
     
     setDraggingId(el.id);
 
@@ -1437,7 +1578,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     };
 
     // Store initial positions of all selected elements
-    const currentSelectedIds = selectedElementIds.includes(el.id) ? selectedElementIds : [el.id];
+    const currentSelectedIds = newSelectionIds;
     initialSelectedPositions.current.clear();
     elements.forEach(element => {
       if (currentSelectedIds.includes(element.id)) {
@@ -1479,6 +1620,59 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
   }
 
   /**
+   * @brief Renders the measurement line and label
+   */
+  function renderMeasurementGuide() {
+    if (!measureStart || !measureEnd) return null;
+
+    const dx = measureEnd.x - measureStart.x;
+    const dy = measureEnd.y - measureStart.y;
+    const distance = Math.round(Math.sqrt(dx * dx + dy * dy));
+
+    return (
+      <g className="measurement-guide" pointerEvents="none">
+        <line
+          x1={measureStart.x}
+          y1={measureStart.y}
+          x2={measureEnd.x}
+          y2={measureEnd.y}
+          stroke="#ef4444"
+          strokeWidth={2 / zoom}
+          strokeDasharray={`${5 / zoom},${5 / zoom}`}
+        />
+        <circle cx={measureStart.x} cy={measureStart.y} r={4 / zoom} fill="#ef4444" />
+        <circle cx={measureEnd.x} cy={measureEnd.y} r={4 / zoom} fill="#ef4444" />
+        
+        {/* Distance label */}
+        <g transform={`translate(${(measureStart.x + measureEnd.x) / 2}, ${(measureStart.y + measureEnd.y) / 2})`}>
+          <rect
+            x={-30 / zoom}
+            y={-12 / zoom}
+            width={60 / zoom}
+            height={24 / zoom}
+            fill="white"
+            stroke="#ef4444"
+            strokeWidth={1 / zoom}
+            rx={4 / zoom}
+          />
+          <text
+            x={0}
+            y={0}
+            textAnchor="middle"
+            dominantBaseline="middle"
+            fill="#ef4444"
+            fontSize={12 / zoom}
+            fontWeight="bold"
+            style={{ pointerEvents: 'none', userSelect: 'none' }}
+          >
+            {distance}
+          </text>
+        </g>
+      </g>
+    );
+  }
+
+  /**
    * Handles double click detection and panning start
    */
   function handleSvgPointerDown(e: React.PointerEvent) {
@@ -1486,6 +1680,10 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     if (svgRef.current) {
       svgRef.current.focus();
     }
+
+    // Always clear measurement when starting a new action
+    setMeasureStart(null);
+    setMeasureEnd(null);
 
     if (e.target !== svgRef.current && e.target !== e.currentTarget) {
       return;
@@ -1502,8 +1700,43 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       return;
     }
 
-    // Only handle left mouse button for selection
+    // Only handle left mouse button for selection/measurement
     if (e.button !== 0) {
+      return;
+    }
+
+    if (activeTool === 'measure') {
+      const svgRect = svgRef.current?.getBoundingClientRect();
+      if (!svgRect) return;
+
+      const clientX = e.clientX - svgRect.left;
+      const clientY = e.clientY - svgRect.top;
+      const x = (clientX - panOffset.x) / zoom;
+      const y = (clientY - panOffset.y) / zoom;
+      
+      const snapped = snapPointToGrid({ x, y }, GRID_SIZE);
+      setMeasureStart(snapped);
+      setMeasureEnd(snapped);
+
+      const measureMove = (moveEvent: PointerEvent) => {
+        const moveSvgRect = svgRef.current?.getBoundingClientRect();
+        if (!moveSvgRect) return;
+
+        const moveClientX = moveEvent.clientX - moveSvgRect.left;
+        const moveClientY = moveEvent.clientY - moveSvgRect.top;
+        const moveX = (moveClientX - panOffset.x) / zoom;
+        const moveY = (moveClientY - panOffset.y) / zoom;
+        
+        setMeasureEnd(snapPointToGrid({ x: moveX, y: moveY }, GRID_SIZE));
+      };
+
+      const measureUp = () => {
+        window.removeEventListener("pointermove", measureMove);
+        window.removeEventListener("pointerup", measureUp);
+      };
+
+      window.addEventListener("pointermove", measureMove);
+      window.addEventListener("pointerup", measureUp);
       return;
     }
 
@@ -1675,8 +1908,29 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     if (!initialDraggedPos) return;
 
     // Calculate the movement delta
-    const deltaX = dx - initialDraggedPos.start.x;
-    const deltaY = dy - initialDraggedPos.start.y;
+    let deltaX = dx - initialDraggedPos.start.x;
+    let deltaY = dy - initialDraggedPos.start.y;
+
+    // Smart Tracks Snapping
+    const draggedEl = elements.find(el => el.id === currentDraggingId);
+    if (draggedEl?.isLineBased) {
+      // Snap start point
+      const targetStart = { x: initialDraggedPos.start.x + deltaX, y: initialDraggedPos.start.y + deltaY };
+      const snappedStart = findSnapPoint(targetStart, elements, currentDraggingId);
+      
+      if (snappedStart.snapped) {
+        deltaX = snappedStart.x - initialDraggedPos.start.x;
+        deltaY = snappedStart.y - initialDraggedPos.start.y;
+      } else {
+        // Snap end point if start didn't snap
+        const targetEnd = { x: initialDraggedPos.end.x + deltaX, y: initialDraggedPos.end.y + deltaY };
+        const snappedEnd = findSnapPoint(targetEnd, elements, currentDraggingId);
+        if (snappedEnd.snapped) {
+          deltaX = snappedEnd.x - initialDraggedPos.end.x;
+          deltaY = snappedEnd.y - initialDraggedPos.end.y;
+        }
+      }
+    }
 
     // Auto-scroll the parent container when dragging near edges
     const scrollableParent = svgRef.current?.parentElement;
@@ -1940,6 +2194,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       id: `${toolboxItem.type || 'element'}_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
       name: toolboxItem.name,
       type: toolboxItem.type || 'unknown',
+      layerId: activeLayerId,
       iconName: toolboxItem.iconName,
       iconSource: toolboxItem.iconSource,
       iconSvg: toolboxItem.iconSvg,
@@ -2143,6 +2398,10 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
         
         {/* Render all drawing elements */}
         {elements.map(el => {
+          // Layer visibility check
+          const elementLayer = layers.find(l => l.id === (el.layerId || 'default'));
+          if (elementLayer && !elementLayer.visible) return null;
+
           return (
             <RenderElement
               key={el.id}
@@ -2150,7 +2409,14 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
               isSelected={selectedElementIds.includes(el.id)}
               hoveredElementId={hoveredElementId}
               setHoveredElementId={setHoveredElementId}
+              allElements={elements}
               updateElement={updated => {
+                // Layer lock check
+                if (elementLayer?.locked) {
+                  logger.warn("DrawArea", "Attempted to update element on locked layer", { layerId: elementLayer.id });
+                  return;
+                }
+                
                 // Use pushToHistoryAndSetElements for property changes to enable undo
                 logger.info("DrawArea", "🔧 Element property updated", {
                   elementId: updated.id,
@@ -2158,8 +2424,17 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
                 });
                 pushToHistoryAndSetElements(prev => prev.map(e => e.id === updated.id ? updated : e));
               }}
-              handlePointerDown={handlePointerDown}
-              onContextMenu={(e) => handleContextMenu(e, el.id)}
+              handlePointerDown={(e, element) => {
+                // Layer lock check for pointer down
+                if (elementLayer?.locked) {
+                  return;
+                }
+                handlePointerDown(e, element || el);
+              }}
+              onContextMenu={(e) => {
+                if (elementLayer?.locked) return;
+                handleContextMenu(e, el.id);
+              }}
             />
           );
         })}
@@ -2168,6 +2443,10 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
         {elements.map(el => {
           if (!selectedElementIds.includes(el.id)) return null;
           
+          // Layer visibility check
+          const elementLayer = layers.find(l => l.id === (el.layerId || 'default'));
+          if (elementLayer && (!elementLayer.visible || elementLayer.locked)) return null;
+
           if (el.rotation) {
             // For rotated elements, calculate axis-aligned bounds that encompass the rotated element
             const rotatedRect = getRotatedBoundingRect(el);
@@ -2194,6 +2473,10 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
                 stroke="none"
                 style={{ cursor: 'move' }}
                 onPointerDown={(e) => handlePointerDown(e, el)}
+                onContextMenu={(e) => {
+                  if (elementLayer?.locked) return;
+                  handleContextMenu(e, el.id);
+                }}
               />
             );
           } else {
@@ -2214,6 +2497,10 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
                 stroke="none"
                 style={{ cursor: 'move' }}
                 onPointerDown={(e) => handlePointerDown(e, el)}
+                onContextMenu={(e) => {
+                  if (elementLayer?.locked) return;
+                  handleContextMenu(e, el.id);
+                }}
               />
             );
           }
@@ -2223,6 +2510,10 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
         {elements.map(el => {
           if (!selectedElementIds.includes(el.id)) return null;
           
+          // Layer visibility check
+          const elementLayer = layers.find(l => l.id === (el.layerId || 'default'));
+          if (elementLayer && !elementLayer.visible) return null;
+
           if (el.rotation) {
             // For rotated elements, use a polygon to show proper rotated outline
             const rotatedRect = getRotatedBoundingRect(el);
@@ -2306,6 +2597,9 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
         
         {/* Area selection rectangle */}
         {renderSelectionRectangle()}
+
+        {/* Measurement tool guide */}
+        {renderMeasurementGuide()}
       </g>
     </svg>
     
@@ -2357,6 +2651,42 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
             </button>
           </>
         )}
+        {contextMenu.type === 'selection' && (
+          <>
+            <button
+              onClick={handleCutSelection}
+              className="w-full px-4 py-2 text-left text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-600 flex items-center gap-2"
+            >
+              <span>✂️</span> Cut
+            </button>
+            <button
+              onClick={handleCopySelection}
+              className="w-full px-4 py-2 text-left text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-600 flex items-center gap-2"
+            >
+              <span>📋</span> Copy
+            </button>
+            <div className="border-t border-slate-200 my-1" />
+            <button
+              onClick={handleDeleteSelection}
+              className="w-full px-4 py-2 text-left text-sm text-red-600 hover:bg-red-50 flex items-center gap-2"
+            >
+              <span>🗑️</span> Delete
+            </button>
+            <div className="border-t border-slate-200 my-1" />
+            <button
+              onClick={handleSendSelectionToFront}
+              className="w-full px-4 py-2 text-left text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-600 flex items-center gap-2"
+            >
+              <span>⬆️</span> Send to Front
+            </button>
+            <button
+              onClick={handleSendSelectionToBack}
+              className="w-full px-4 py-2 text-left text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-600 flex items-center gap-2"
+            >
+              <span>⬇️</span> Send to Back
+            </button>
+          </>
+        )}
         {contextMenu.type === 'canvas' && (
           <button
             onClick={() => {
@@ -2366,6 +2696,27 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
           >
             <span>📋</span> Paste
           </button>
+        )}
+        {(contextMenu.type === 'element' || contextMenu.type === 'selection') && (
+          <>
+            {((contextMenu.type === 'element' && contextMenu.elementId) || contextMenu.type === 'selection') && (
+              <div className="border-t border-slate-200 my-1" />
+            )}
+            <button
+              onClick={groupSelectedElements}
+              disabled={!selectionCanGroup}
+              className="w-full px-4 py-2 text-left text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-600 flex items-center gap-2 disabled:opacity-40"
+            >
+              <span>🧩</span> Group Selection
+            </button>
+            <button
+              onClick={ungroupSelectedElements}
+              disabled={!selectionCanUngroup}
+              className="w-full px-4 py-2 text-left text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-600 flex items-center gap-2 disabled:opacity-40"
+            >
+              <span>🧵</span> Ungroup Selection
+            </button>
+          </>
         )}
       </div>
     )}

@@ -12,14 +12,17 @@
 
 import React, { useState, useRef, useEffect, useCallback, Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
+import { MousePointer2, Ruler } from "lucide-react";
 import toolboxConfig from "./assets/toolboxConfig.json";
 import Toolbox from "./components/Toolbox";
 import type { ToolboxItem } from "./components/Toolbox";
 import EnhancedPropertiesPanel from "./components/EnhancedPropertiesPanel";
 import DrawArea, { type DrawAreaRef } from "./components/DrawArea";
 import TabPanel, { type DrawAreaTab } from "./components/TabPanel";
+import { LayersPanel } from "./components/LayersPanel";
 import { EditMenu } from "./components/EditMenu";
 import type { DrawElement } from "./components/Elements";
+import type { DrawTool, Layer } from "./types";
 import { logger } from "./utils/logger";
 
 /** @brief Grid size for snap-to-grid functionality */
@@ -29,7 +32,7 @@ const GRID_SIZE = 40;
 // Removed - no longer needed with simplified copy/paste implementation
 
 /** @brief Application version */
-const APP_VERSION = "0.2.0 Beta";
+const APP_VERSION = "0.3.0 Beta";
 
 /** @brief Application author */
 const APP_AUTHOR = "Marcin Kwiatkowski";
@@ -77,6 +80,39 @@ const RailwayDrawerApp = () => {
 
   // Selected element state
   const [selectedElement, setSelectedElement] = useState<DrawElement | undefined>(undefined);
+
+  // Active tool state
+  const [activeTool, setActiveTool] = useState<DrawTool>('select');
+
+  // Layers state
+  const [layers, setLayers] = useState<Layer[]>([
+    { id: 'default', name: 'Background Layer', visible: true, locked: false },
+    { id: 'foreground', name: 'Foreground Layer', visible: true, locked: false }
+  ]);
+  const [activeLayerId, setActiveLayerId] = useState<string>('default');
+
+  /** @brief Toggle layer visibility */
+  const handleLayerToggleVisibility = (id: string) => {
+    setLayers(prev => prev.map(l => l.id === id ? { ...l, visible: !l.visible } : l));
+  };
+
+  /** @brief Toggle layer lock */
+  const handleLayerToggleLock = (id: string) => {
+    setLayers(prev => prev.map(l => l.id === id ? { ...l, locked: !l.locked } : l));
+  };
+
+  /** @brief Add a new layer */
+  const handleAddLayer = () => {
+    const newId = `layer-${Date.now()}`;
+    const newLayer: Layer = {
+      id: newId,
+      name: `Layer ${layers.length + 1}`,
+      visible: true,
+      locked: false
+    };
+    setLayers(prev => [...prev, newLayer]);
+    setActiveLayerId(newId);
+  };
 
   // Tab management state
   const [tabs, setTabs] = useState<DrawAreaTab[]>([
@@ -1182,14 +1218,27 @@ const RailwayDrawerApp = () => {
       <div className="flex flex-row w-screen min-w-0 flex-1 overflow-hidden" style={{ height: `calc(100vh - ${tabPanelHeight}px)` }}>
         <div
           style={{ width: toolboxWidth, minWidth: 120 }}
+          className="flex flex-col"
         >
-          <Toolbox
-            toolbox={toolbox}
-            setToolbox={setToolbox}
-            showEditor={showEditor}
-            setShowEditor={setShowEditor}
-            setDraggedItem={setDraggedItem}
-          />
+          <div className="flex-1 overflow-hidden">
+            <Toolbox
+              toolbox={toolbox}
+              setToolbox={setToolbox}
+              showEditor={showEditor}
+              setShowEditor={setShowEditor}
+              setDraggedItem={setDraggedItem}
+            />
+          </div>
+          <div style={{ height: '200px' }}>
+            <LayersPanel 
+              layers={layers}
+              activeLayerId={activeLayerId}
+              onLayerToggleVisibility={handleLayerToggleVisibility}
+              onLayerToggleLock={handleLayerToggleLock}
+              onLayerSelect={setActiveLayerId}
+              onAddLayer={handleAddLayer}
+            />
+          </div>
         </div>
         
         <div
@@ -1223,6 +1272,33 @@ const RailwayDrawerApp = () => {
             >
               Reset
             </button>
+
+            <div className="h-8 w-px bg-slate-200 mx-1" />
+
+            <div className="flex bg-white rounded-md border border-slate-300 p-0.5 shadow-sm">
+              <button
+                onClick={() => setActiveTool('select')}
+                className={`w-8 h-8 rounded flex items-center justify-center transition-all duration-200 ${
+                  activeTool === 'select' 
+                    ? 'bg-blue-500 text-white shadow-inner' 
+                    : 'text-slate-600 hover:bg-slate-50'
+                }`}
+                title="Selection Tool"
+              >
+                <MousePointer2 size={16} />
+              </button>
+              <button
+                onClick={() => setActiveTool('measure')}
+                className={`w-8 h-8 rounded flex items-center justify-center transition-all duration-200 ${
+                  activeTool === 'measure' 
+                    ? 'bg-blue-500 text-white shadow-inner' 
+                    : 'text-slate-600 hover:bg-slate-50'
+                }`}
+                title="Measurement Tool"
+              >
+                <Ruler size={16} />
+              </button>
+            </div>
           </div>
           {/* Render DrawArea for each tab, toggling visibility based on activeTabId */}
           {tabs.map((tab) => (
@@ -1237,6 +1313,9 @@ const RailwayDrawerApp = () => {
                 GRID_HEIGHT={drawAreaSize.height}
                 GRID_SIZE={GRID_SIZE}
                 zoom={zoom}
+                activeTool={activeTool}
+                layers={layers}
+                activeLayerId={activeLayerId}
                 setSelectedElement={setSelectedElement}
                 onStateChange={updateEditMenuState}
                 disableKeyboardHandlers={true}

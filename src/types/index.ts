@@ -47,6 +47,19 @@ export const APP_CONSTANTS = {
 
 // Menu and UI types
 export type MenuType = 'file' | 'toolbox' | null;
+export type DrawTool = 'select' | 'measure';
+
+/**
+ * @interface Layer
+ * @brief Represents a drawing layer that groups elements
+ */
+export interface Layer {
+  id: string;
+  name: string;
+  visible: boolean;
+  locked: boolean;
+  opacity?: number;
+}
 
 export type PropertiesTabType = 'general' | 'style' | 'text' | 'arrange';
 
