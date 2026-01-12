@@ -158,7 +158,6 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       setHistory([initialSnapshot]);
       setHistoryIndex(0);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []); // Only run once on mount
 
   // Validate and fix history state inconsistencies
