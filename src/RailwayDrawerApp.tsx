@@ -26,10 +26,10 @@ import { logger } from "./utils/logger";
 const GRID_SIZE = 40;
 
 /** @brief Timeout for async clipboard operations (ms) */
-const CLIPBOARD_FALLBACK_TIMEOUT = 10;
+// Removed - no longer needed with simplified copy/paste implementation
 
 /** @brief Application version */
-const APP_VERSION = "0.1.0 Betha";
+const APP_VERSION = "0.1.1 Beta";
 
 /** @brief Application author */
 const APP_AUTHOR = "Marcin Kwiatkowski";
@@ -73,6 +73,7 @@ const RailwayDrawerApp = () => {
   const toolboxInputRef = useRef<HTMLInputElement>(null);
   const isOpeningFileRef = useRef(false);
   const isOpeningToolboxRef = useRef(false);
+  const isSavingRef = useRef(false);
 
   // Selected element state
   const [selectedElement, setSelectedElement] = useState<DrawElement | undefined>(undefined);
@@ -143,7 +144,11 @@ const RailwayDrawerApp = () => {
 
   /** @brief UI state for editor modal and drawing area */
   const [showEditor, setShowEditor] = useState(false);
-  const [drawAreaSize, setDrawAreaSize] = useState({ width: 2000, height: 1500 });
+  
+  // A4 page size at 96 DPI: 210mm × 297mm
+  const A4_WIDTH = 794;  // ~210mm at 96 DPI
+  const A4_HEIGHT = 1123; // ~297mm at 96 DPI
+  const [drawAreaSize, setDrawAreaSize] = useState({ width: A4_WIDTH, height: A4_HEIGHT });
   const [zoom, setZoom] = useState(1);
 
   /** @brief Global clipboard state shared between all tabs */
@@ -341,19 +346,7 @@ const RailwayDrawerApp = () => {
     }, 50); // Small delay to ensure component is mounted
 
     return () => clearTimeout(timer);
-  }, [activeTabId, activeTab, getCurrentDrawAreaRef, globalCopiedElements]);  
-
-  /**
-   * @brief Effect to sync global clipboard with the current DrawArea
-   * @details Updates the DrawArea's local clipboard when global clipboard changes
-   */
-  useEffect(() => {
-    const currentDrawAreaRef = getCurrentDrawAreaRef();
-    if (currentDrawAreaRef && globalCopiedElements.length > 0) {
-      currentDrawAreaRef.setCopiedElements(globalCopiedElements);
-      logger.debug("RailwayDrawerApp", "Clipboard sync", { elementCount: globalCopiedElements.length });
-    }
-  }, [globalCopiedElements, activeTabId, getCurrentDrawAreaRef]);
+  }, [activeTabId, activeTab, getCurrentDrawAreaRef]);
 
   /**
    * @brief Dummy setter for dragged item (required by Toolbox component)
@@ -373,23 +366,22 @@ const RailwayDrawerApp = () => {
     }
 
     try {
-      const copiedElements = currentDrawAreaRef.copySelectedElements();
+      // Get all elements and selected IDs from DrawArea
+      const elements = currentDrawAreaRef.getElements();
+      const selectedIds = currentDrawAreaRef.getSelectedElementIds();
       
-      if (copiedElements?.length) {
-        setGlobalCopiedElements(copiedElements);
-        logger.info("RailwayDrawerApp", "Global copy successful", { elementCount: copiedElements.length });
-      } else {
-        // Fallback for async copy operations
-        setTimeout(() => {
-          const fallbackElements = currentDrawAreaRef.getCopiedElements();
-          if (fallbackElements.length) {
-            setGlobalCopiedElements(fallbackElements);
-            logger.info("RailwayDrawerApp", "Global copy successful (fallback)", { elementCount: fallbackElements.length });
-          } else {
-            logger.warn("RailwayDrawerApp", "No elements selected for copying");
-          }
-        }, CLIPBOARD_FALLBACK_TIMEOUT);
+      if (selectedIds.length === 0) {
+        logger.warn("RailwayDrawerApp", "No elements selected for copying");
+        return;
       }
+      
+      // Get elements to copy
+      const elementsToCopy = elements.filter((el: any) => selectedIds.includes(el.id));
+      
+      // Only sync to global clipboard - don't touch DrawArea's internal clipboard
+      setGlobalCopiedElements(elementsToCopy);
+      
+      logger.info("RailwayDrawerApp", "Global copy successful", { elementCount: elementsToCopy.length });
     } catch (error) {
       logger.error("RailwayDrawerApp", "Error during global copy", error);
     }
@@ -439,23 +431,26 @@ const RailwayDrawerApp = () => {
     }
 
     try {
-      const cutElements = currentDrawAreaRef.cutSelectedElements();
+      // Get all elements and selected IDs from DrawArea
+      const elements = currentDrawAreaRef.getElements();
+      const selectedIds = currentDrawAreaRef.getSelectedElementIds();
       
-      if (cutElements?.length) {
-        setGlobalCopiedElements(cutElements);
-        logger.info("RailwayDrawerApp", "Global cut successful", { elementCount: cutElements.length });
-      } else {
-        // Fallback for async cut operations
-        setTimeout(() => {
-          const fallbackElements = currentDrawAreaRef.getCopiedElements();
-          if (fallbackElements.length) {
-            setGlobalCopiedElements(fallbackElements);
-            logger.info("RailwayDrawerApp", "Global cut successful (fallback)", { elementCount: fallbackElements.length });
-          } else {
-            logger.warn("RailwayDrawerApp", "No elements selected for cutting");
-          }
-        }, CLIPBOARD_FALLBACK_TIMEOUT);
+      if (selectedIds.length === 0) {
+        logger.warn("RailwayDrawerApp", "No elements selected for cutting");
+        return;
       }
+      
+      // Get elements to cut
+      const elementsToCut = elements.filter((el: any) => selectedIds.includes(el.id));
+      
+      // Only sync to global clipboard - don't touch DrawArea's internal clipboard
+      setGlobalCopiedElements(elementsToCut);
+      
+      // Delete the elements using updateElements (which handles history)
+      const remainingElements = elements.filter((el: any) => !selectedIds.includes(el.id));
+      currentDrawAreaRef.updateElements(remainingElements);
+      
+      logger.info("RailwayDrawerApp", "Global cut successful", { elementCount: elementsToCut.length });
     } catch (error) {
       logger.error("RailwayDrawerApp", "Error during global cut", error);
     }
@@ -552,17 +547,32 @@ const RailwayDrawerApp = () => {
    * @brief Saves current drawing elements as a JSON file
    * @details Exports all elements from the current tab to a downloadable JSON file
    */
-  const saveAsJson = () => {
-    const currentDrawAreaRef = getCurrentDrawAreaRef();
-    const elements = currentDrawAreaRef?.getElements?.();
-    if (!elements) return;
-    const data = JSON.stringify({ elements }, null, 2);
-    const blob = new Blob([data], { type: "application/json" });
-    const link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.download = "railway_drawing.json";
-    link.click();
-  };
+  const saveAsJson = useCallback(() => {
+    // Guard against multiple rapid saves
+    if (isSavingRef.current) return;
+    isSavingRef.current = true;
+    
+    setTimeout(() => {
+      const currentDrawAreaRef = getCurrentDrawAreaRef();
+      const elements = currentDrawAreaRef?.getElements?.();
+      if (!elements) {
+        isSavingRef.current = false;
+        return;
+      }
+      const data = JSON.stringify({ elements }, null, 2);
+      const blob = new Blob([data], { type: "application/json" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "railway_drawing.json";
+      link.click();
+      
+      // Clean up and reset flag
+      setTimeout(() => {
+        URL.revokeObjectURL(link.href);
+        isSavingRef.current = false;
+      }, 500);
+    }, 0);
+  }, [getCurrentDrawAreaRef]);
 
   /**
    * @brief Loads drawing elements from a JSON file
@@ -586,7 +596,6 @@ const RailwayDrawerApp = () => {
               if (parsed.elements.length > 0) {
                 let maxX = 0;
                 let maxY = 0;
-                const padding = 200; // Extra padding around elements
                 
                 parsed.elements.forEach((el: DrawElement) => {
                   // Calculate the maximum extent of each element
@@ -601,16 +610,8 @@ const RailwayDrawerApp = () => {
                   maxY = Math.max(maxY, elementMaxY);
                 });
                 
-                // Expand canvas size if loaded content is larger
-                const requiredWidth = Math.max(maxX + padding, drawAreaSize.width);
-                const requiredHeight = Math.max(maxY + padding, drawAreaSize.height);
-                
-                if (requiredWidth > drawAreaSize.width || requiredHeight > drawAreaSize.height) {
-                  setDrawAreaSize({
-                    width: requiredWidth,
-                    height: requiredHeight
-                  });
-                }
+                // Expand canvas using page-based system
+                expandCanvasIfNeeded({ maxX, maxY });
               }
             }
           } catch {
@@ -778,21 +779,67 @@ const RailwayDrawerApp = () => {
   const drawAreaPanelRef = useRef<HTMLDivElement>(null);
 
   /**
-   * @brief Effect to observe draw area container resize and update dimensions
-   * @details Uses ResizeObserver to track container size changes and update drawAreaSize state
+   * @brief Expand canvas to accommodate elements that extend beyond current bounds
+   * @param elementBounds The bounding box of elements {maxX, maxY}
+   */
+  const expandCanvasIfNeeded = useCallback((elementBounds: { maxX: number; maxY: number }) => {
+    const padding = 100; // Padding around elements
+    const requiredWidth = elementBounds.maxX + padding;
+    const requiredHeight = elementBounds.maxY + padding;
+    
+    // Calculate how many A4 pages we need in each direction
+    const pagesWide = Math.ceil(requiredWidth / A4_WIDTH);
+    const pagesTall = Math.ceil(requiredHeight / A4_HEIGHT);
+    
+    // New canvas size is a multiple of A4 pages
+    const newWidth = pagesWide * A4_WIDTH;
+    const newHeight = pagesTall * A4_HEIGHT;
+    
+    // Only update if we need more space
+    if (newWidth > drawAreaSize.width || newHeight > drawAreaSize.height) {
+      setDrawAreaSize({
+        width: Math.max(newWidth, drawAreaSize.width),
+        height: Math.max(newHeight, drawAreaSize.height)
+      });
+      logger.info("RailwayDrawerApp", "Canvas expanded", {
+        pages: { wide: pagesWide, tall: pagesTall },
+        size: { width: newWidth, height: newHeight }
+      });
+    }
+  }, [A4_WIDTH, A4_HEIGHT, drawAreaSize.width, drawAreaSize.height]);
+
+  /**
+   * @brief Effect to monitor container size and expand canvas when zooming
    */
   useEffect(() => {
-    const node = drawAreaPanelRef.current; // This is the DOM element
-    if (!node) return;
-    const observer = new window.ResizeObserver(entries => {
-      for (const entry of entries) {
-        const { width, height } = entry.contentRect;
-        setDrawAreaSize({ width, height });
+    const container = drawAreaPanelRef.current;
+    if (!container) return;
+    
+    const observer = new ResizeObserver(() => {
+      const { width: containerWidth, height: containerHeight } = container.getBoundingClientRect();
+      
+      // Calculate how much canvas space is visible at current zoom
+      const visibleWidth = containerWidth / zoom;
+      const visibleHeight = containerHeight / zoom;
+      
+      // Ensure canvas is at least as large as the visible area
+      const pagesWide = Math.ceil(visibleWidth / A4_WIDTH);
+      const pagesTall = Math.ceil(visibleHeight / A4_HEIGHT);
+      
+      const minWidth = pagesWide * A4_WIDTH;
+      const minHeight = pagesTall * A4_HEIGHT;
+      
+      if (minWidth > drawAreaSize.width || minHeight > drawAreaSize.height) {
+        setDrawAreaSize({
+          width: Math.max(minWidth, drawAreaSize.width),
+          height: Math.max(minHeight, drawAreaSize.height)
+        });
       }
     });
-    observer.observe(node);
+    
+    observer.observe(container);
     return () => observer.disconnect();
-  }, []);
+  }, [zoom, A4_WIDTH, A4_HEIGHT, drawAreaSize.width, drawAreaSize.height]);
 
   /**
    * @brief Effect to handle clicking outside menus to close them
@@ -1178,6 +1225,7 @@ const RailwayDrawerApp = () => {
                 setSelectedElement={setSelectedElement}
                 onStateChange={updateEditMenuState}
                 disableKeyboardHandlers={true}
+                onCanvasExpand={expandCanvasIfNeeded}
               />
             </div>
           ))}

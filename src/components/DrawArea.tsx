@@ -87,6 +87,8 @@ export interface DrawAreaProps {
   disableKeyboardHandlers?: boolean;
   /** @brief Callback for when internal state changes (for edit menu updates) */
   onStateChange?: () => void;
+  /** @brief Callback when canvas needs to expand to fit elements */
+  onCanvasExpand?: (bounds: { maxX: number; maxY: number }) => void;
 }
 
 /**
@@ -114,6 +116,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
   setSelectedElement,
   disableKeyboardHandlers = false,
   onStateChange,
+  onCanvasExpand,
 }, ref) => {
   /** @brief Internal drawing elements state */
   const [elements, setElements] = useState<DrawElement[]>([]);
@@ -206,6 +209,33 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
   const lastDropRef = useRef<{ timestamp: number; itemType: string; x: number; y: number } | null>(null);
   /** @brief Ref to track processed element IDs to prevent React StrictMode duplicates */
   const processedElementIds = useRef<Set<string>>(new Set());
+
+  /**
+   * @brief Check if elements exceed canvas bounds and notify parent to expand
+   * @param elementsToCheck The elements to check bounds for
+   */
+  const checkAndExpandCanvas = useCallback((elementsToCheck: DrawElement[]) => {
+    if (!onCanvasExpand || elementsToCheck.length === 0) return;
+    
+    let maxX = 0;
+    let maxY = 0;
+    
+    elementsToCheck.forEach(el => {
+      const endX = Math.max(el.start.x, el.end?.x || el.start.x);
+      const endY = Math.max(el.start.y, el.end?.y || el.start.y);
+      
+      const elementMaxX = endX + (el.width || 0);
+      const elementMaxY = endY + (el.height || 0);
+      
+      maxX = Math.max(maxX, elementMaxX);
+      maxY = Math.max(maxY, elementMaxY);
+    });
+    
+    // Check if we need to expand (with some margin)
+    if (maxX > GRID_WIDTH - 100 || maxY > GRID_HEIGHT - 100) {
+      onCanvasExpand({ maxX, maxY });
+    }
+  }, [onCanvasExpand, GRID_WIDTH, GRID_HEIGHT]);
 
   /**
    * @brief Create a deep copy of a DrawElement preserving all properties
@@ -619,9 +649,9 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
 
   /**
    * @brief Paste elements from clipboard at specified position
-   * @param pastePosition Optional position to paste at, defaults to center of viewport
-   * @details Creates new elements with unique IDs, centers them at target position,
-   * and adds them to the drawing area while selecting them.
+   * @param pastePosition Optional position to paste at, defaults to offset from original
+   * @details Creates new elements with unique IDs and pastes them with a small offset
+   * from the original elements for easy visibility.
    */
   const pasteElements = useCallback((pastePosition?: { x: number; y: number }) => {
     if (copiedElements.length === 0) {
@@ -630,31 +660,19 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     }
     
     // Calculate paste position
-    let targetX, targetY;
+    let offsetX = 0;
+    let offsetY = 0;
     
     if (pastePosition) {
-      targetX = pastePosition.x;
-      targetY = pastePosition.y;
+      // If explicit position provided, use it
+      offsetX = pastePosition.x;
+      offsetY = pastePosition.y;
     } else {
-      // Default to center of visible area
-      const svgRect = svgRef.current?.getBoundingClientRect();
-      if (svgRect) {
-        targetX = (svgRect.width / 2 - panOffset.x) / zoom;
-        targetY = (svgRect.height / 2 - panOffset.y) / zoom;
-      } else {
-        targetX = GRID_WIDTH / 2;
-        targetY = GRID_HEIGHT / 2;
-      }
+      // Default: offset from original by 30px down and right
+      const PASTE_OFFSET = 30;
+      offsetX = PASTE_OFFSET;
+      offsetY = PASTE_OFFSET;
     }
-    
-    // Calculate the bounding box of copied elements
-    const bounds = calculateElementsBounds(copiedElements);
-    const centerX = bounds.x + bounds.width / 2;
-    const centerY = bounds.y + bounds.height / 2;
-    
-    // Calculate offset to center the group at target position
-    const offsetX = targetX - centerX;
-    const offsetY = targetY - centerY;
     
     // Create new elements with new IDs and offset positions
     const newElements = copiedElements.map(el => {
@@ -703,7 +721,14 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     }
     
     // Add to history before making changes
-    pushToHistoryAndSetElements(prev => [...prev, ...validElements]);
+    pushToHistoryAndSetElements(prev => {
+      const newElements = [...prev, ...validElements];
+      
+      // Check if canvas needs to expand
+      checkAndExpandCanvas(newElements);
+      
+      return newElements;
+    });
     
     // Select the newly pasted elements
     const newElementIds = validElements.map(el => el.id);
@@ -715,7 +740,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       setSelectedElement?.(undefined);
     }
     
-    console.log(`Pasted ${validElements.length} elements at (${targetX.toFixed(1)}, ${targetY.toFixed(1)})`);
+    console.log(`Pasted ${validElements.length} elements with offset (${offsetX.toFixed(1)}, ${offsetY.toFixed(1)})`);
   }, [copiedElements, calculateElementsBounds, pushToHistoryAndSetElements, setSelectedElementIds, setSelectedElement, svgRef, panOffset, zoom, showGrid, backgroundColor, setShowGrid, setBackgroundColor, GRID_WIDTH, GRID_HEIGHT]);
 
   /**
@@ -917,13 +942,26 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       // Copy selected elements (Ctrl+C)
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "c" && selectedElementIds.length > 0) {
         e.preventDefault();
-        copySelectedElements();
+        // Use simple copy logic like context menu
+        const elementsToCopy = elements.filter(el => selectedElementIds.includes(el.id));
+        const copiedElementsData = elementsToCopy.map(el => createDeepElementCopy(el));
+        setCopiedElements(copiedElementsData);
+        onStateChange?.();
       }
       
       // Cut selected elements (Ctrl+X)
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "x" && selectedElementIds.length > 0) {
         e.preventDefault();
-        cutSelectedElements();
+        // Copy first
+        const elementsToCut = elements.filter(el => selectedElementIds.includes(el.id));
+        const copiedElementsData = elementsToCut.map(el => createDeepElementCopy(el));
+        setCopiedElements(copiedElementsData);
+        // Then delete
+        pushToHistoryAndSetElements(prev => prev.filter(el => !selectedElementIds.includes(el.id)));
+        setSelectedElementIds([]);
+        setHoveredElementId(null);
+        setSelectedElement?.(undefined);
+        onStateChange?.();
       }
       
       // Paste elements (Ctrl+V)
@@ -952,7 +990,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     }
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [selectedElementIds, elements, setSelectedElement, copiedElements, disableKeyboardHandlers, copySelectedElements, cutSelectedElements, pasteElements, pushToHistoryAndSetElements, undo, redo, deleteSelectedElements, selectAllElements]);
+  }, [selectedElementIds, elements, setSelectedElement, copiedElements, disableKeyboardHandlers, pasteElements, pushToHistoryAndSetElements, undo, redo, deleteSelectedElements, selectAllElements, createDeepElementCopy, setCopiedElements, setHoveredElementId, onStateChange]);
 
   /**
    * @brief Check if an element intersects with a selection rectangle
@@ -1240,8 +1278,8 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     const deltaX = dx - initialDraggedPos.start.x;
     const deltaY = dy - initialDraggedPos.start.y;
 
-    setElements(prev =>
-      prev.map(el => {
+    setElements(prev => {
+      const updated = prev.map(el => {
         // Move all selected elements by the same delta
         if (selectedElementIds.includes(el.id)) {
           const initialPos = initialSelectedPositions.current.get(el.id);
@@ -1260,8 +1298,13 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
           }
         }
         return el;
-      })
-    );
+      });
+      
+      // Check if canvas needs to expand during drag
+      checkAndExpandCanvas(updated);
+      
+      return updated;
+    });
   }
 
   /**
@@ -1276,6 +1319,9 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
         selectedCount: selectedElementIds.length,
         historyAlreadyUpdated: hasPushedToHistory.current
       });
+      
+      // Check if canvas needs to expand after drag
+      checkAndExpandCanvas(elements);
     }
     
     setDraggingId(null);
@@ -1388,7 +1434,12 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
         processedElementIds.current.add(newElement.id);
       }
       
-      return [...prev, newElement];
+      const newElements = [...prev, newElement];
+      
+      // Check if canvas needs to expand
+      checkAndExpandCanvas(newElements);
+      
+      return newElements;
     });
   }
 
@@ -1580,6 +1631,69 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     >
       {/* Main drawing transform group - handles pan and zoom */}
       <g transform={`translate(${panOffset.x}, ${panOffset.y}) scale(${zoom})`}>
+        {/* Page boundaries - A4 page grid */}
+        {(() => {
+          const A4_WIDTH = 794;
+          const A4_HEIGHT = 1123;
+          
+          // Only show page guides if there are elements that extend beyond the first page
+          let maxX = A4_WIDTH;
+          let maxY = A4_HEIGHT;
+          
+          elements.forEach(el => {
+            const endX = Math.max(el.start.x, el.end?.x || el.start.x);
+            const endY = Math.max(el.start.y, el.end?.y || el.start.y);
+            const elementMaxX = endX + (el.width || 0);
+            const elementMaxY = endY + (el.height || 0);
+            
+            maxX = Math.max(maxX, elementMaxX);
+            maxY = Math.max(maxY, elementMaxY);
+          });
+          
+          const pagesWide = Math.ceil(maxX / A4_WIDTH);
+          const pagesTall = Math.ceil(maxY / A4_HEIGHT);
+          const pageGuides = [];
+          
+          // Only show page guides if we have more than one page
+          if (pagesWide > 1 || pagesTall > 1) {
+            // Vertical page boundaries
+            for (let i = 1; i < pagesWide; i++) {
+              pageGuides.push(
+                <line
+                  key={`page-v-${i}`}
+                  x1={i * A4_WIDTH}
+                  y1={0}
+                  x2={i * A4_WIDTH}
+                  y2={GRID_HEIGHT}
+                  stroke="#3b82f6"
+                  strokeWidth={2 / zoom}
+                  strokeDasharray={`${10 / zoom} ${5 / zoom}`}
+                  opacity={0.3}
+                />
+              );
+            }
+            
+            // Horizontal page boundaries
+            for (let i = 1; i < pagesTall; i++) {
+              pageGuides.push(
+                <line
+                  key={`page-h-${i}`}
+                  x1={0}
+                  y1={i * A4_HEIGHT}
+                  x2={GRID_WIDTH}
+                  y2={i * A4_HEIGHT}
+                  stroke="#3b82f6"
+                  strokeWidth={2 / zoom}
+                  strokeDasharray={`${10 / zoom} ${5 / zoom}`}
+                  opacity={0.3}
+                />
+              );
+            }
+          }
+          
+          return <g className="page-guides">{pageGuides}</g>;
+        })()}
+        
         {/* Grid lines */}
         {showGrid && renderGrid()}
         
