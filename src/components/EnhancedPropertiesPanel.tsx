@@ -402,6 +402,39 @@ const EnhancedPropertiesPanel: React.FC<EnhancedPropertiesPanelProps> = ({
                 <p id="name-error" className="mt-1 text-sm text-red-600">{validationErrors.name}</p>
               )}
             </div>
+
+            {/* Custom Element Properties */}
+            {selectedElement.elementDefinition?.properties && (
+              <div className="space-y-3 border-t border-slate-200 pt-4">
+                <h3 className="text-sm font-semibold text-slate-700">Element Properties</h3>
+                {Object.entries(selectedElement.elementDefinition.properties).map(([propKey, propDef]: [string, any]) => {
+                  if (propDef.type === 'select') {
+                    return (
+                      <div key={propKey}>
+                        <label className="block text-sm font-medium text-slate-700 mb-1">
+                          {propDef.label || propKey}:
+                        </label>
+                        <select
+                          value={selectedElement[propKey] || propDef.default}
+                          onChange={(e) => {
+                            const updatedElement = { ...selectedElement, [propKey]: e.target.value };
+                            updateElement(updatedElement);
+                          }}
+                          className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        >
+                          {propDef.options.map((option: string) => (
+                            <option key={option} value={option}>
+                              {option}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                    );
+                  }
+                  return null;
+                })}
+              </div>
+            )}
           </div>
         )}
 

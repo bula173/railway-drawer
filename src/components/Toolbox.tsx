@@ -46,6 +46,12 @@ export interface ToolboxItem {
   width: number;
   height: number; // <-- fix here
   complex?: boolean; // If true, enable complex element behavior with individual shape resizing
+  properties?: Record<string, {
+    type: string;
+    label?: string;
+    default?: any;
+    options?: string[];
+  }>;
 }
 
 /**
