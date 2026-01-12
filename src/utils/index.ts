@@ -343,3 +343,6 @@ export class PerformanceTimer {
 export function perfTimer(label: string): PerformanceTimer {
   return new PerformanceTimer(label);
 }
+
+// Re-export track utilities
+export { findSnapPoint } from './trackUtils';
