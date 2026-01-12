@@ -165,9 +165,6 @@ const RailwayDrawerApp = () => {
   /** @brief Get the current active DrawArea ref */
   const getCurrentDrawAreaRef = useCallback(() => drawAreaRefs.current.get(activeTabId), [activeTabId]);
 
-  // Export format state
-  const [exportFormat, setExportFormat] = useState<"png" | "jpg" | "svg" | "pdf">("png");
-  
   // Menu state
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [activeSubMenu, setActiveSubMenu] = useState<string | null>(null);
@@ -668,13 +665,13 @@ const RailwayDrawerApp = () => {
    * @brief Exports the drawing as an image file
    * @details Supports PNG, JPG, SVG, and PDF formats using html-to-image and jsPDF libraries
    */
-  const exportToImage = () => {
+  const exportToImage = (format: "png" | "jpg" | "svg" | "pdf") => {
     const currentDrawAreaRef = getCurrentDrawAreaRef();
     const node = currentDrawAreaRef?.getSvgElement?.();
     if (!node) return;
     
     // Handle SVG export directly
-    if (exportFormat === "svg") {
+    if (format === "svg") {
       const serializer = new XMLSerializer();
       const svgString = serializer.serializeToString(node);
       const blob = new Blob([svgString], { type: "image/svg+xml" });
@@ -686,7 +683,7 @@ const RailwayDrawerApp = () => {
     }
     
     // Handle PDF export
-    if (exportFormat === "pdf") {
+    if (format === "pdf") {
       import("jspdf").then(jsPDF => {
         import("html-to-image").then(htmlToImage => {
           htmlToImage.toSvg(node as unknown as HTMLElement).then((dataUrl: string) => {
@@ -712,11 +709,11 @@ const RailwayDrawerApp = () => {
     
     // Handle PNG/JPG export
     import("html-to-image").then(htmlToImage => {
-      const fn = exportFormat === "jpg" ? htmlToImage.toJpeg : htmlToImage.toPng;
+      const fn = format === "jpg" ? htmlToImage.toJpeg : htmlToImage.toPng;
       fn(node as unknown as HTMLElement).then((dataUrl: string) => {
         const link = document.createElement("a");
         link.href = dataUrl;
-        link.download = `railway_drawing.${exportFormat}`;
+        link.download = `railway_drawing.${format}`;
         link.click();
       });
     });
@@ -1015,28 +1012,28 @@ const RailwayDrawerApp = () => {
                       <div className="px-1 py-1">
                         <Menu.Item>
                           {({ active }) => (
-                            <button onClick={() => { setExportFormat("png"); exportToImage(); setActiveMenu(null); setActiveSubMenu(null); }} className={`${ active ? 'bg-blue-500 text-white' : 'text-slate-900' } group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
+                            <button onClick={() => { exportToImage("png"); setActiveMenu(null); setActiveSubMenu(null); }} className={`${ active ? 'bg-blue-500 text-white' : 'text-slate-900' } group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
                               PNG
                             </button>
                           )}
                         </Menu.Item>
                         <Menu.Item>
                           {({ active }) => (
-                            <button onClick={() => { setExportFormat("jpg"); exportToImage(); setActiveMenu(null); setActiveSubMenu(null); }} className={`${ active ? 'bg-blue-500 text-white' : 'text-slate-900' } group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
+                            <button onClick={() => { exportToImage("jpg"); setActiveMenu(null); setActiveSubMenu(null); }} className={`${ active ? 'bg-blue-500 text-white' : 'text-slate-900' } group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
                               JPG
                             </button>
                           )}
                         </Menu.Item>
                          <Menu.Item>
                           {({ active }) => (
-                            <button onClick={() => { setExportFormat("svg"); exportToImage(); setActiveMenu(null); setActiveSubMenu(null); }} className={`${ active ? 'bg-blue-500 text-white' : 'text-slate-900' } group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
+                            <button onClick={() => { exportToImage("svg"); setActiveMenu(null); setActiveSubMenu(null); }} className={`${ active ? 'bg-blue-500 text-white' : 'text-slate-900' } group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
                               SVG
                             </button>
                           )}
                         </Menu.Item>
                         <Menu.Item>
                           {({ active }) => (
-                            <button onClick={() => { setExportFormat("pdf"); exportToImage(); setActiveMenu(null); setActiveSubMenu(null); }} className={`${ active ? 'bg-blue-500 text-white' : 'text-slate-900' } group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
+                            <button onClick={() => { exportToImage("pdf"); setActiveMenu(null); setActiveSubMenu(null); }} className={`${ active ? 'bg-blue-500 text-white' : 'text-slate-900' } group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
                               PDF
                             </button>
                           )}
