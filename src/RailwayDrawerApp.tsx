@@ -71,6 +71,8 @@ const RailwayDrawerApp = () => {
   // Missing refs - add these
   const fileInputRef = useRef<HTMLInputElement>(null);
   const toolboxInputRef = useRef<HTMLInputElement>(null);
+  const isOpeningFileRef = useRef(false);
+  const isOpeningToolboxRef = useRef(false);
 
   // Selected element state
   const [selectedElement, setSelectedElement] = useState<DrawElement | undefined>(undefined);
@@ -591,6 +593,8 @@ const RailwayDrawerApp = () => {
       };
       reader.readAsText(file);
     }
+    // Reset input value to allow selecting the same file again
+    e.target.value = '';
   };
 
   /**
@@ -817,7 +821,18 @@ const RailwayDrawerApp = () => {
                 <Menu.Item>
                   {({ active }) => (
                     <button
-                      onClick={() => fileInputRef.current?.click()}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        if (isOpeningFileRef.current) return;
+                        isOpeningFileRef.current = true;
+                        setTimeout(() => {
+                          fileInputRef.current?.click();
+                          setTimeout(() => {
+                            isOpeningFileRef.current = false;
+                          }, 500);
+                        }, 0);
+                      }}
                       className={`${
                         active ? 'bg-blue-500 text-white' : 'text-slate-900'
                       } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
@@ -987,7 +1002,18 @@ const RailwayDrawerApp = () => {
                 <Menu.Item>
                   {({ active }) => (
                     <button
-                      onClick={() => toolboxInputRef.current?.click()}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        if (isOpeningToolboxRef.current) return;
+                        isOpeningToolboxRef.current = true;
+                        setTimeout(() => {
+                          toolboxInputRef.current?.click();
+                          setTimeout(() => {
+                            isOpeningToolboxRef.current = false;
+                          }, 500);
+                        }, 0);
+                      }}
                       className={`${
                         active ? 'bg-blue-500 text-white' : 'text-slate-900'
                       } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
