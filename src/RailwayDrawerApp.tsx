@@ -712,7 +712,7 @@ const RailwayDrawerApp = () => {
     
     // Handle PNG/JPG export
     import("html-to-image").then(htmlToImage => {
-      const fn = exportFormat === "jpg" ? htmlToImage.toJpeg : htmlToImage.toSvg;
+      const fn = exportFormat === "jpg" ? htmlToImage.toJpeg : htmlToImage.toPng;
       fn(node as unknown as HTMLElement).then((dataUrl: string) => {
         const link = document.createElement("a");
         link.href = dataUrl;
