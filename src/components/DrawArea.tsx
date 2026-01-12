@@ -564,7 +564,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     // Write sentinel to system clipboard to prioritize internal elements during paste
     try {
       navigator.clipboard.writeText('RAILWAY_DRAWER_COPY');
-    } catch (err) {
+    } catch {
       logger.warn('DrawArea', 'Failed to write sentinel to system clipboard');
     }
     
@@ -627,7 +627,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     // Write sentinel to system clipboard to prioritize internal elements during paste
     try {
       navigator.clipboard.writeText('RAILWAY_DRAWER_COPY');
-    } catch (err) {
+    } catch {
       logger.warn('DrawArea', 'Failed to write sentinel to system clipboard');
     }
     
@@ -951,7 +951,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
           try {
             const text = await navigator.clipboard.readText();
             hasSentinel = text === 'RAILWAY_DRAWER_COPY';
-          } catch (err) { /* ignore */ }
+          } catch { /* ignore */ }
         }
       }
 
@@ -1058,7 +1058,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
                 return true;
               }
             }
-          } catch (err) {
+          } catch {
             logger.info("DrawArea", 'clipboard.read failed (normal if no visual content)');
           }
         }
@@ -1072,7 +1072,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
             createImageElementFromSVG(text);
             return true;
           }
-        } catch (err) {
+        } catch {
           logger.info("DrawArea", 'readText failed or was empty');
         }
       } catch (error) {
