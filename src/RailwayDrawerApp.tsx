@@ -20,9 +20,19 @@ import DrawArea, { type DrawAreaRef } from "./components/DrawArea";
 import TabPanel, { type DrawAreaTab } from "./components/TabPanel";
 import { EditMenu } from "./components/EditMenu";
 import type { DrawElement } from "./components/Elements";
+import { logger } from "./utils/logger";
 
 /** @brief Grid size for snap-to-grid functionality */
 const GRID_SIZE = 40;
+
+/** @brief Timeout for async clipboard operations (ms) */
+const CLIPBOARD_FALLBACK_TIMEOUT = 10;
+
+/** @brief Application version */
+const APP_VERSION = "0.1.0 Betha";
+
+/** @brief Application author */
+const APP_AUTHOR = "Marcin Kwiatkowski";
 
 /**
  * Main application component for the Railway Drawer.
@@ -35,10 +45,10 @@ const RailwayDrawerApp = () => {
   // Toolbox state
   const [toolbox, setToolbox] = useState<ToolboxItem[]>(() => {
     const config = toolboxConfig as ToolboxItem[];
-    console.log("🔧 Loading toolbox config:", {
+    logger.debug("RailwayDrawerApp", "Loading toolbox configuration", {
       totalItems: config.length,
-      pointElement: config.find(item => item.id === 'point'),
-      trackElement: config.find(item => item.id === 'track')
+      hasPointElement: !!config.find(item => item.id === 'point'),
+      hasTrackElement: !!config.find(item => item.id === 'track')
     });
     return config;
   });
@@ -85,16 +95,19 @@ const RailwayDrawerApp = () => {
     hasSelection: false,
     hasCopiedElements: false
   });
+  
+  /** @brief About dialog state */
+  const [showAbout, setShowAbout] = useState(false);
 
   /** @brief Update edit menu state based on current DrawArea */
   const updateEditMenuState = useCallback(() => {
     const currentRef = currentDrawAreaRefObject.current;
-    console.log('🔄 updateEditMenuState called', {
+    logger.debug("RailwayDrawerApp", "Updating edit menu state", {
       hasCurrentRef: !!currentRef,
       canUndo: currentRef?.canUndo?.(),
       canRedo: currentRef?.canRedo?.(),
-      selectedIds: currentRef?.getSelectedElementIds?.(),
-      copiedElements: currentRef?.getCopiedElements?.()
+      selectionCount: currentRef?.getSelectedElementIds?.().length || 0,
+      copiedCount: currentRef?.getCopiedElements?.().length || 0
     });
     if (currentRef) {
       setEditMenuState({
@@ -137,7 +150,7 @@ const RailwayDrawerApp = () => {
   // Update the stable ref when active tab changes
   useEffect(() => {
     const newRef = getCurrentDrawAreaRef() || null;
-    console.log("🔄 Active tab changed:", {
+    logger.debug("RailwayDrawerApp", "Active tab changed", {
       activeTabId,
       hasRef: !!newRef,
       elementsCount: newRef?.getElements()?.length || 0,
@@ -151,7 +164,7 @@ const RailwayDrawerApp = () => {
       const elements = newRef.getElements();
       const elementExists = elements.find(el => el.id === selectedElement.id);
       if (!elementExists) {
-        console.log("🧹 Clearing stale selected element on tab switch");
+        logger.debug("RailwayDrawerApp", "Clearing stale selected element on tab switch");
         setSelectedElement(undefined);
       }
     }
@@ -177,7 +190,7 @@ const RailwayDrawerApp = () => {
       const currentCopiedElements = currentDrawAreaRef.getCopiedElements();
       if (currentCopiedElements.length > 0) {
         setGlobalCopiedElements(currentCopiedElements);
-        console.log(`Tab create: Synced ${currentCopiedElements.length} elements to global clipboard`);
+        logger.debug("RailwayDrawerApp", "Tab create: Synced clipboard", { elementCount: currentCopiedElements.length });
       }
 
       // Update current tab with latest state
@@ -250,7 +263,7 @@ const RailwayDrawerApp = () => {
       const currentCopiedElements = currentDrawAreaRef.getCopiedElements();
       if (currentCopiedElements.length > 0) {
         setGlobalCopiedElements(currentCopiedElements);
-        console.log(`Tab switch: Synced ${currentCopiedElements.length} elements to global clipboard`);
+        logger.debug("RailwayDrawerApp", "Tab switch: Synced clipboard", { elementCount: currentCopiedElements.length });
       }
 
       const currentSelectedIds = currentDrawAreaRef.getSelectedElementIds();
@@ -301,7 +314,10 @@ const RailwayDrawerApp = () => {
     const timer = setTimeout(() => {
       const currentDrawAreaRef = getCurrentDrawAreaRef();
       if (currentDrawAreaRef && activeTab) {
-        console.log(`Switching to tab ${activeTab.id}: ${activeTab.elements.length} elements`);
+        logger.debug("RailwayDrawerApp", "Switching to tab", { 
+          tabId: activeTab.id, 
+          elementCount: activeTab.elements.length 
+        });
         
         // Set elements first
         currentDrawAreaRef.setElements(activeTab.elements);
@@ -310,7 +326,7 @@ const RailwayDrawerApp = () => {
         // Sync global clipboard with DrawArea
         if (globalCopiedElements.length > 0) {
           currentDrawAreaRef.setCopiedElements(globalCopiedElements);
-          console.log(`Tab load: Synced ${globalCopiedElements.length} elements from global clipboard`);
+          logger.debug("RailwayDrawerApp", "Tab load: Synced clipboard", { elementCount: globalCopiedElements.length });
         }
         
         const svgElement = currentDrawAreaRef.getSvgElement();
@@ -318,7 +334,7 @@ const RailwayDrawerApp = () => {
           svgElement.style.backgroundColor = activeTab.backgroundColor;
         }
       } else {
-        console.warn(`DrawArea ref not found for tab ${activeTabId}`);
+        logger.warn("RailwayDrawerApp", "DrawArea ref not found", { tabId: activeTabId });
       }
     }, 50); // Small delay to ensure component is mounted
 
@@ -333,7 +349,7 @@ const RailwayDrawerApp = () => {
     const currentDrawAreaRef = getCurrentDrawAreaRef();
     if (currentDrawAreaRef && globalCopiedElements.length > 0) {
       currentDrawAreaRef.setCopiedElements(globalCopiedElements);
-      console.log(`Clipboard sync: Updated DrawArea clipboard with ${globalCopiedElements.length} elements`);
+      logger.debug("RailwayDrawerApp", "Clipboard sync", { elementCount: globalCopiedElements.length });
     }
   }, [globalCopiedElements, activeTabId, getCurrentDrawAreaRef]);
 
@@ -344,103 +360,102 @@ const RailwayDrawerApp = () => {
   const setDraggedItem = () => {};
 
   /**
-   * @brief Handle global copy/paste operations that work across tabs
-   * @details Maintains clipboard state at app level for cross-tab functionality
+   * @brief Handle global copy operation across tabs
+   * @details Copies selected elements to app-level clipboard for cross-tab functionality
    */
   const handleGlobalCopy = useCallback(() => {
     const currentDrawAreaRef = getCurrentDrawAreaRef();
-    if (currentDrawAreaRef) {
-      try {
-        const copiedElements = currentDrawAreaRef.copySelectedElements();
-        
-        // If the copy function returned elements, use them immediately
-        if (copiedElements && copiedElements.length > 0) {
-          setGlobalCopiedElements(copiedElements);
-          console.log(`Global copy: ${copiedElements.length} elements copied to global clipboard`);
-        } else {
-          // Fallback to the async approach with timeout
-          setTimeout(() => {
-            const fallbackCopiedElements = currentDrawAreaRef.getCopiedElements();
-            if (fallbackCopiedElements.length > 0) {
-              setGlobalCopiedElements(fallbackCopiedElements);
-              console.log(`Global copy (fallback): ${fallbackCopiedElements.length} elements copied to global clipboard`);
-            } else {
-              console.warn('Global copy: No elements selected for copying');
-            }
-          }, 10);
-        }
-      } catch (error) {
-        console.error('Error during global copy:', error);
+    if (!currentDrawAreaRef) {
+      logger.warn("RailwayDrawerApp", "Cannot copy: No active DrawArea ref found");
+      return;
+    }
+
+    try {
+      const copiedElements = currentDrawAreaRef.copySelectedElements();
+      
+      if (copiedElements?.length) {
+        setGlobalCopiedElements(copiedElements);
+        logger.info("RailwayDrawerApp", "Global copy successful", { elementCount: copiedElements.length });
+      } else {
+        // Fallback for async copy operations
+        setTimeout(() => {
+          const fallbackElements = currentDrawAreaRef.getCopiedElements();
+          if (fallbackElements.length) {
+            setGlobalCopiedElements(fallbackElements);
+            logger.info("RailwayDrawerApp", "Global copy successful (fallback)", { elementCount: fallbackElements.length });
+          } else {
+            logger.warn("RailwayDrawerApp", "No elements selected for copying");
+          }
+        }, CLIPBOARD_FALLBACK_TIMEOUT);
       }
-    } else {
-      console.warn('Global copy: No active DrawArea ref found');
+    } catch (error) {
+      logger.error("RailwayDrawerApp", "Error during global copy", error);
     }
   }, [getCurrentDrawAreaRef, setGlobalCopiedElements]);
 
+  /**
+   * @brief Handle global paste operation across tabs
+   * @details Pastes elements from app-level clipboard
+   */
   const handleGlobalPaste = useCallback(() => {
     const currentDrawAreaRef = getCurrentDrawAreaRef();
-    
-    // First check if we have elements in the global clipboard
-    if (globalCopiedElements.length > 0) {
-      if (currentDrawAreaRef) {
-        try {
-          // Ensure DrawArea has the latest global clipboard
-          currentDrawAreaRef.setCopiedElements(globalCopiedElements);
+    if (!currentDrawAreaRef) {
+      logger.warn("RailwayDrawerApp", "Cannot paste: No active DrawArea ref found");
+      return;
+    }
+
+    try {
+      // Use global clipboard if available
+      if (globalCopiedElements.length) {
+        currentDrawAreaRef.setCopiedElements(globalCopiedElements);
+        currentDrawAreaRef.pasteElements();
+        logger.info("RailwayDrawerApp", "Global paste successful", { elementCount: globalCopiedElements.length });
+      } else {
+        // Fallback to local DrawArea clipboard
+        const localElements = currentDrawAreaRef.getCopiedElements();
+        if (localElements.length) {
           currentDrawAreaRef.pasteElements();
-          console.log(`Global paste: ${globalCopiedElements.length} elements pasted from global clipboard`);
-        } catch (error) {
-          console.error('Error during global paste:', error);
-        }
-      } else {
-        console.warn('Global paste: No active DrawArea ref found');
-      }
-    } else {
-      // Fallback: try to get elements from current DrawArea's local clipboard
-      if (currentDrawAreaRef) {
-        const localCopiedElements = currentDrawAreaRef.getCopiedElements();
-        if (localCopiedElements.length > 0) {
-          try {
-            currentDrawAreaRef.pasteElements();
-            console.log(`Local paste: ${localCopiedElements.length} elements pasted from local clipboard`);
-          } catch (error) {
-            console.error('Error during local paste:', error);
-          }
+          logger.info("RailwayDrawerApp", "Local paste successful", { elementCount: localElements.length });
         } else {
-          console.warn('Global paste: No elements in clipboard (both global and local are empty)');
+          logger.warn("RailwayDrawerApp", "No elements in clipboard to paste");
         }
-      } else {
-        console.warn('Global paste: No active DrawArea ref found');
       }
+    } catch (error) {
+      logger.error("RailwayDrawerApp", "Error during paste operation", error);
     }
   }, [globalCopiedElements, getCurrentDrawAreaRef]);
 
+  /**
+   * @brief Handle global cut operation across tabs
+   * @details Cuts selected elements to app-level clipboard
+   */
   const handleGlobalCut = useCallback(() => {
     const currentDrawAreaRef = getCurrentDrawAreaRef();
-    if (currentDrawAreaRef) {
-      try {
-        const cutElements = currentDrawAreaRef.cutSelectedElements();
-        
-        // If the cut function returned elements, use them immediately
-        if (cutElements && cutElements.length > 0) {
-          setGlobalCopiedElements(cutElements);
-          console.log(`Global cut: ${cutElements.length} elements cut to global clipboard`);
-        } else {
-          // Fallback to the async approach with timeout
-          setTimeout(() => {
-            const fallbackCopiedElements = currentDrawAreaRef.getCopiedElements();
-            if (fallbackCopiedElements.length > 0) {
-              setGlobalCopiedElements(fallbackCopiedElements);
-              console.log(`Global cut (fallback): ${fallbackCopiedElements.length} elements cut to global clipboard`);
-            } else {
-              console.warn('Global cut: No elements selected for cutting');
-            }
-          }, 10);
-        }
-      } catch (error) {
-        console.error('Error during global cut:', error);
+    if (!currentDrawAreaRef) {
+      logger.warn("RailwayDrawerApp", "Cannot cut: No active DrawArea ref found");
+      return;
+    }
+
+    try {
+      const cutElements = currentDrawAreaRef.cutSelectedElements();
+      
+      if (cutElements?.length) {
+        setGlobalCopiedElements(cutElements);
+        logger.info("RailwayDrawerApp", "Global cut successful", { elementCount: cutElements.length });
+      } else {
+        // Fallback for async cut operations
+        setTimeout(() => {
+          const fallbackElements = currentDrawAreaRef.getCopiedElements();
+          if (fallbackElements.length) {
+            setGlobalCopiedElements(fallbackElements);
+            logger.info("RailwayDrawerApp", "Global cut successful (fallback)", { elementCount: fallbackElements.length });
+          } else {
+            logger.warn("RailwayDrawerApp", "No elements selected for cutting");
+          }
+        }, CLIPBOARD_FALLBACK_TIMEOUT);
       }
-    } else {
-      console.warn('Global cut: No active DrawArea ref found');
+    } catch (error) {
+      logger.error("RailwayDrawerApp", "Error during global cut", error);
     }
   }, [getCurrentDrawAreaRef, setGlobalCopiedElements]);
 
@@ -480,12 +495,56 @@ const RailwayDrawerApp = () => {
         e.stopPropagation();
         handleGlobalPaste();
       }
+      
+      // Global Delete
+      if (e.key === "Delete") {
+        e.preventDefault();
+        e.stopPropagation();
+        const currentRef = getCurrentDrawAreaRef();
+        if (currentRef) {
+          currentRef.deleteSelectedElements();
+          updateEditMenuState();
+        }
+      }
+      
+      // Global Undo (Ctrl+Z)
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "z" && !e.shiftKey) {
+        e.preventDefault();
+        e.stopPropagation();
+        const currentRef = getCurrentDrawAreaRef();
+        if (currentRef) {
+          currentRef.undo();
+          updateEditMenuState();
+        }
+      }
+      
+      // Global Redo (Ctrl+Y or Ctrl+Shift+Z)
+      if ((e.ctrlKey || e.metaKey) && ((e.key.toLowerCase() === "z" && e.shiftKey) || e.key.toLowerCase() === "y")) {
+        e.preventDefault();
+        e.stopPropagation();
+        const currentRef = getCurrentDrawAreaRef();
+        if (currentRef) {
+          currentRef.redo();
+          updateEditMenuState();
+        }
+      }
+      
+      // Global Select All (Ctrl+A)
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "a") {
+        e.preventDefault();
+        e.stopPropagation();
+        const currentRef = getCurrentDrawAreaRef();
+        if (currentRef) {
+          currentRef.selectAllElements();
+          updateEditMenuState();
+        }
+      }
     }
 
     // Use capture phase to ensure we get the event before other handlers
     document.addEventListener("keydown", handleKeyDown, true);
     return () => document.removeEventListener("keydown", handleKeyDown, true);
-  }, [globalCopiedElements, activeTabId, handleGlobalCopy, handleGlobalCut, handleGlobalPaste, activeMenu, activeSubMenu]);
+  }, [globalCopiedElements, activeTabId, handleGlobalCopy, handleGlobalCut, handleGlobalPaste, activeMenu, activeSubMenu, getCurrentDrawAreaRef, updateEditMenuState]);
 
   /**
    * @brief Saves current drawing elements as a JSON file
@@ -861,37 +920,37 @@ const RailwayDrawerApp = () => {
           hasSelection={editMenuState.hasSelection}
           hasCopiedElements={editMenuState.hasCopiedElements}
           onUndo={() => {
-            console.log('🔙 Undo clicked', { hasRef: !!currentDrawAreaRefObject.current });
+            logger.debug("RailwayDrawerApp", "Undo action triggered", { hasRef: !!currentDrawAreaRefObject.current });
             currentDrawAreaRefObject.current?.undo();
             updateEditMenuState();
           }}
           onRedo={() => {
-            console.log('🔄 Redo clicked', { hasRef: !!currentDrawAreaRefObject.current });
+            logger.debug("RailwayDrawerApp", "Redo action triggered", { hasRef: !!currentDrawAreaRefObject.current });
             currentDrawAreaRefObject.current?.redo();
             updateEditMenuState();
           }}
           onCopy={() => {
-            console.log('📋 Copy clicked', { hasRef: !!currentDrawAreaRefObject.current });
+            logger.debug("RailwayDrawerApp", "Copy action triggered", { hasRef: !!currentDrawAreaRefObject.current });
             currentDrawAreaRefObject.current?.copySelectedElements();
             updateEditMenuState();
           }}
           onCut={() => {
-            console.log('✂️ Cut clicked', { hasRef: !!currentDrawAreaRefObject.current });
+            logger.debug("RailwayDrawerApp", "Cut action triggered", { hasRef: !!currentDrawAreaRefObject.current });
             currentDrawAreaRefObject.current?.cutSelectedElements();
             updateEditMenuState();
           }}
           onPaste={() => {
-            console.log('📌 Paste clicked', { hasRef: !!currentDrawAreaRefObject.current });
+            logger.debug("RailwayDrawerApp", "Paste action triggered", { hasRef: !!currentDrawAreaRefObject.current });
             currentDrawAreaRefObject.current?.pasteElements();
             updateEditMenuState();
           }}
           onDelete={() => {
-            console.log('🗑️ Delete clicked', { hasRef: !!currentDrawAreaRefObject.current });
+            logger.debug("RailwayDrawerApp", "Delete action triggered", { hasRef: !!currentDrawAreaRefObject.current });
             currentDrawAreaRefObject.current?.deleteSelectedElements();
             updateEditMenuState();
           }}
           onSelectAll={() => {
-            console.log('🎯 Select All clicked', { hasRef: !!currentDrawAreaRefObject.current });
+            logger.debug("RailwayDrawerApp", "Select All action triggered", { hasRef: !!currentDrawAreaRefObject.current });
             currentDrawAreaRefObject.current?.selectAllElements();
             updateEditMenuState();
           }}
@@ -963,8 +1022,41 @@ const RailwayDrawerApp = () => {
         
         {/* App Title */}
         <div className="flex-1 flex items-center justify-center">
-          <h1 className="text-sm font-semibold text-slate-700">Railway Drawer</h1>
+          <h1 className="text-sm font-semibold text-slate-700">Railway Drawer <span className="text-xs text-slate-500 font-normal">v{APP_VERSION}</span></h1>
         </div>
+        
+        {/* Help Menu */}
+        <Menu as="div" className="relative">
+          <Menu.Button className="bg-white hover:bg-slate-50 text-slate-700 border-none px-4 h-10 text-sm font-medium cursor-pointer outline-none border-l border-slate-200 transition-colors duration-200 flex items-center">
+            Help
+          </Menu.Button>
+          <Transition
+            as={Fragment}
+            enter="transition ease-out duration-100"
+            enterFrom="transform opacity-0 scale-95"
+            enterTo="transform opacity-100 scale-100"
+            leave="transition ease-in duration-75"
+            leaveFrom="transform opacity-100 scale-100"
+            leaveTo="transform opacity-0 scale-95"
+          >
+            <Menu.Items className="absolute right-0 mt-2 w-48 origin-top-right bg-white divide-y divide-slate-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-[9999]">
+              <div className="px-1 py-1">
+                <Menu.Item>
+                  {({ active }) => (
+                    <button
+                      onClick={() => setShowAbout(true)}
+                      className={`${
+                        active ? 'bg-blue-500 text-white' : 'text-slate-900'
+                      } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                    >
+                      About Railway Drawer
+                    </button>
+                  )}
+                </Menu.Item>
+              </div>
+            </Menu.Items>
+          </Transition>
+        </Menu>
       </div>
       
       {/* Main Layout */}
@@ -1017,7 +1109,8 @@ const RailwayDrawerApp = () => {
           {tabs.map((tab) => (
             <div
               key={tab.id}
-              className={tab.id === activeTabId ? 'block flex-1' : 'hidden'}
+              className={tab.id === activeTabId ? 'block flex-1 overflow-auto' : 'hidden'}
+              style={{ position: 'relative' }}
             >
               <DrawArea
                 ref={(ref) => setDrawAreaRef(tab.id, ref)}
@@ -1027,6 +1120,7 @@ const RailwayDrawerApp = () => {
                 zoom={zoom}
                 setSelectedElement={setSelectedElement}
                 onStateChange={updateEditMenuState}
+                disableKeyboardHandlers={true}
               />
             </div>
           ))}
@@ -1060,6 +1154,31 @@ const RailwayDrawerApp = () => {
           onTabRename={handleTabRename}
         />
       </div>
+      
+      {/* About Dialog */}
+      {showAbout && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[10000]" onClick={() => setShowAbout(false)}>
+          <div className="bg-white rounded-lg shadow-xl p-6 max-w-md w-full mx-4" onClick={(e) => e.stopPropagation()}>
+            <h2 className="text-2xl font-bold text-slate-800 mb-4">Railway Drawer</h2>
+            <div className="space-y-3 text-slate-600">
+              <p><strong>Version:</strong> {APP_VERSION}</p>
+              <p><strong>Author:</strong> {APP_AUTHOR}</p>
+              <p className="text-sm mt-4 pt-4 border-t border-slate-200">
+                A modern, interactive railway diagram editor built with React, TypeScript, and Vite.
+              </p>
+              <p className="text-sm">
+                Create professional railway schematics with advanced drawing tools, customizable elements, and comprehensive export capabilities.
+              </p>
+            </div>
+            <button
+              onClick={() => setShowAbout(false)}
+              className="mt-6 w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded transition-colors"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

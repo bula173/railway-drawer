@@ -1454,12 +1454,12 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       ref={svgRef}
       className="draw-area"
       data-testid="draw-area"
-      width={GRID_WIDTH}
-      height={GRID_HEIGHT}
+      width={GRID_WIDTH * zoom}
+      height={GRID_HEIGHT * zoom}
       style={{ 
         background: backgroundColor, 
-        width: "100%", 
-        height: "100%", 
+        minWidth: GRID_WIDTH * zoom,
+        minHeight: GRID_HEIGHT * zoom,
         display: "block",
         cursor: isPanning ? 'grabbing' : 'default'
       }}
