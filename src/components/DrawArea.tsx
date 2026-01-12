@@ -88,7 +88,7 @@ export interface DrawAreaProps {
   /** @brief Callback for when internal state changes (for edit menu updates) */
   onStateChange?: () => void;
   /** @brief Callback when canvas needs to expand to fit elements */
-  onCanvasExpand?: (bounds: { maxX: number; maxY: number }) => void;
+  onCanvasExpand?: (bounds: { maxX: number; maxY: number; minX?: number; minY?: number }) => void;
 }
 
 /**
@@ -209,32 +209,77 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
   /** @brief Ref to track processed element IDs to prevent React StrictMode duplicates */
   const processedElementIds = useRef<Set<string>>(new Set());
 
+  /** @brief State to track pending canvas expansion bounds */
+  const [expansionBounds, setExpansionBounds] = useState<{ maxX: number; maxY: number; minX?: number; minY?: number } | null>(null);
+
   /**
-   * @brief Check if elements exceed canvas bounds and notify parent to expand
+   * @brief Use effect to call parent's onCanvasExpand when bounds change
+   * This defers the parent state update out of the event handler to prevent React warnings
+   */
+  useEffect(() => {
+    if (expansionBounds && onCanvasExpand) {
+      onCanvasExpand(expansionBounds);
+      setExpansionBounds(null);
+    }
+  }, [expansionBounds, onCanvasExpand]);
+
+  /**
+   * @brief Check if elements exceed canvas bounds and queue parent expansion
    * @param elementsToCheck The elements to check bounds for
    */
   const checkAndExpandCanvas = useCallback((elementsToCheck: DrawElement[]) => {
     if (!onCanvasExpand || elementsToCheck.length === 0) return;
     
-    let maxX = 0;
-    let maxY = 0;
+    let maxX = -Infinity;
+    let maxY = -Infinity;
+    let minX = Infinity;
+    let minY = Infinity;
     
     elementsToCheck.forEach(el => {
+      const startX = Math.min(el.start.x, el.end?.x || el.start.x);
+      const startY = Math.min(el.start.y, el.end?.y || el.start.y);
       const endX = Math.max(el.start.x, el.end?.x || el.start.x);
       const endY = Math.max(el.start.y, el.end?.y || el.start.y);
       
+      const elementMinX = startX;
+      const elementMinY = startY;
       const elementMaxX = endX + (el.width || 0);
       const elementMaxY = endY + (el.height || 0);
       
+      minX = Math.min(minX, elementMinX);
+      minY = Math.min(minY, elementMinY);
       maxX = Math.max(maxX, elementMaxX);
       maxY = Math.max(maxY, elementMaxY);
     });
     
-    // Check if we need to expand (with some margin)
-    if (maxX > GRID_WIDTH - 100 || maxY > GRID_HEIGHT - 100) {
-      onCanvasExpand({ maxX, maxY });
+    // Ensure we have valid values
+    if (!isFinite(minX)) minX = 0;
+    if (!isFinite(minY)) minY = 0;
+    if (!isFinite(maxX)) maxX = 0;
+    if (!isFinite(maxY)) maxY = 0;
+    
+    // Check if we need to expand (with smaller margin during drag for responsive expansion)
+    const EXPANSION_MARGIN = draggingId ? 50 : 100;
+    
+    // Log for debugging
+    if (draggingId) {
+      console.log("🎯 Drag bounds check:", {
+        bounds: { minX, minY, maxX, maxY },
+        gridSize: { GRID_WIDTH, GRID_HEIGHT },
+        margin: EXPANSION_MARGIN,
+        shouldExpand: minX < EXPANSION_MARGIN || minY < EXPANSION_MARGIN || 
+                     maxX > GRID_WIDTH - EXPANSION_MARGIN || maxY > GRID_HEIGHT - EXPANSION_MARGIN
+      });
     }
-  }, [onCanvasExpand, GRID_WIDTH, GRID_HEIGHT]);
+    
+    // Expand if elements go beyond any edge (left, right, top, bottom)
+    if (minX < EXPANSION_MARGIN || minY < EXPANSION_MARGIN || 
+        maxX > GRID_WIDTH - EXPANSION_MARGIN || maxY > GRID_HEIGHT - EXPANSION_MARGIN) {
+      console.log("📐 Expanding canvas for bounds:", { minX, minY, maxX, maxY });
+      // Queue the expansion instead of calling directly (prevents React warning)
+      setExpansionBounds({ maxX, maxY, minX, minY });
+    }
+  }, [onCanvasExpand, GRID_WIDTH, GRID_HEIGHT, draggingId]);
 
   /**
    * @brief Create a deep copy of a DrawElement preserving all properties
@@ -1276,6 +1321,47 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     // Calculate the movement delta
     const deltaX = dx - initialDraggedPos.start.x;
     const deltaY = dy - initialDraggedPos.start.y;
+
+    // Auto-scroll the parent container when dragging near edges
+    const scrollableParent = svgRef.current?.parentElement;
+    if (scrollableParent) {
+      const SCROLL_THRESHOLD = 60; // Distance from edge to trigger scrolling
+      const rect = scrollableParent.getBoundingClientRect();
+      
+      // Calculate scroll velocity based on distance from edge (closer = faster)
+      let scrollLeftDelta = 0;
+      let scrollTopDelta = 0;
+      
+      // Horizontal scrolling
+      if (e.clientX > rect.right - SCROLL_THRESHOLD) {
+        // Near right edge
+        const distFromEdge = rect.right - e.clientX;
+        scrollLeftDelta = Math.max(5, 15 - distFromEdge);
+      } else if (e.clientX < rect.left + SCROLL_THRESHOLD) {
+        // Near left edge
+        const distFromEdge = e.clientX - rect.left;
+        scrollLeftDelta = -Math.max(5, 15 - distFromEdge);
+      }
+      
+      // Vertical scrolling (independent of horizontal)
+      if (e.clientY > rect.bottom - SCROLL_THRESHOLD) {
+        // Near bottom edge
+        const distFromEdge = rect.bottom - e.clientY;
+        scrollTopDelta = Math.max(5, 15 - distFromEdge);
+      } else if (e.clientY < rect.top + SCROLL_THRESHOLD) {
+        // Near top edge
+        const distFromEdge = e.clientY - rect.top;
+        scrollTopDelta = -Math.max(5, 15 - distFromEdge);
+      }
+      
+      // Apply scrolling
+      if (scrollLeftDelta !== 0) {
+        scrollableParent.scrollLeft += scrollLeftDelta;
+      }
+      if (scrollTopDelta !== 0) {
+        scrollableParent.scrollTop += scrollTopDelta;
+      }
+    }
 
     setElements(prev => {
       const updated = prev.map(el => {

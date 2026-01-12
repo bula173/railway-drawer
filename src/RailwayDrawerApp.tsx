@@ -782,10 +782,25 @@ const RailwayDrawerApp = () => {
    * @brief Expand canvas to accommodate elements that extend beyond current bounds
    * @param elementBounds The bounding box of elements {maxX, maxY}
    */
-  const expandCanvasIfNeeded = useCallback((elementBounds: { maxX: number; maxY: number }) => {
+  const expandCanvasIfNeeded = useCallback((elementBounds: { maxX: number; maxY: number; minX?: number; minY?: number }) => {
     const padding = 100; // Padding around elements
-    const requiredWidth = elementBounds.maxX + padding;
-    const requiredHeight = elementBounds.maxY + padding;
+    
+    // Handle expansion in all directions
+    const minX = elementBounds.minX !== undefined ? elementBounds.minX : 0;
+    const minY = elementBounds.minY !== undefined ? elementBounds.minY : 0;
+    
+    // Calculate required width and height
+    let requiredWidth = elementBounds.maxX + padding;
+    let requiredHeight = elementBounds.maxY + padding;
+    
+    // If elements go to the left or top (negative), we need to expand left/top
+    // For simplicity, we'll expand canvas to include all content and keep origin at 0
+    if (minX < 0) {
+      requiredWidth = Math.abs(minX) + elementBounds.maxX + padding;
+    }
+    if (minY < 0) {
+      requiredHeight = Math.abs(minY) + elementBounds.maxY + padding;
+    }
     
     // Calculate how many A4 pages we need in each direction
     const pagesWide = Math.ceil(requiredWidth / A4_WIDTH);
@@ -803,7 +818,8 @@ const RailwayDrawerApp = () => {
       });
       logger.info("RailwayDrawerApp", "Canvas expanded", {
         pages: { wide: pagesWide, tall: pagesTall },
-        size: { width: newWidth, height: newHeight }
+        size: { width: newWidth, height: newHeight },
+        elementBounds: { minX, minY, maxX: elementBounds.maxX, maxY: elementBounds.maxY }
       });
     }
   }, [A4_WIDTH, A4_HEIGHT, drawAreaSize.width, drawAreaSize.height]);
