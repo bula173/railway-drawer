@@ -102,6 +102,7 @@ describe('EnhancedPropertiesPanel', () => {
         copySelectedElements: vi.fn(),
         cutSelectedElements: vi.fn(),
         pasteElements: vi.fn(),
+        performUnifiedPaste: vi.fn().mockResolvedValue(true),
         getCopiedElements: vi.fn().mockReturnValue([]),
         setCopiedElements: vi.fn(),
         // Edit operations

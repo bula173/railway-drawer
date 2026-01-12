@@ -716,6 +716,48 @@ export const ElementSVG: React.FC<{ el: DrawElement }> = ({ el }) => {
         );
       }
       break;
+
+    case "image": {
+      const width = Math.abs(el.end.x - el.start.x);
+      const height = Math.abs(el.end.y - el.start.y);
+      const minX = Math.min(el.start.x, el.end.x);
+      const minY = Math.min(el.start.y, el.end.y);
+
+      const data = el.data as any;
+      
+      // Handle SVG images
+      if (data?.svgText) {
+        return (
+          <g>
+            <foreignObject x={minX} y={minY} width={width} height={height}>
+              <div dangerouslySetInnerHTML={{ __html: data.svgText }} style={{
+                width: '100%',
+                height: '100%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }} />
+            </foreignObject>
+          </g>
+        );
+      }
+      
+      // Handle raster images (PNG, JPG, etc.)
+      if (data?.dataUrl) {
+        return (
+          <image
+            x={minX}
+            y={minY}
+            width={width}
+            height={height}
+            href={data.dataUrl}
+            preserveAspectRatio="xMidYMid slice"
+          />
+        );
+      }
+      
+      return null;
+    }
       
     case "text": {
       const textCx = (el.start.x + el.end.x) / 2;
@@ -1707,8 +1749,6 @@ export function RenderElement({
       );
     }
     
-    // For regular elements, use the standard ElementSVG component
-    console.log('🔄 Using standard ElementSVG rendering for:', el.id);
     return (
       <g transform={transform}>
         <ElementSVG el={el} />

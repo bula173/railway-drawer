@@ -23,6 +23,7 @@ const mockDrawAreaRef = {
   copySelectedElements: vi.fn(),
   cutSelectedElements: vi.fn(),
   pasteElements: vi.fn(),
+  performUnifiedPaste: vi.fn(async () => true),
   getCopiedElements: vi.fn(() => []),
   setCopiedElements: vi.fn(),
   undo: vi.fn(),

@@ -29,7 +29,7 @@ const GRID_SIZE = 40;
 // Removed - no longer needed with simplified copy/paste implementation
 
 /** @brief Application version */
-const APP_VERSION = "0.1.1 Beta";
+const APP_VERSION = "0.2.0 Beta";
 
 /** @brief Application author */
 const APP_AUTHOR = "Marcin Kwiatkowski";
@@ -91,6 +91,9 @@ const RailwayDrawerApp = () => {
   ]);
   const [activeTabId, setActiveTabId] = useState('tab-1');
 
+  /** @brief Global clipboard state shared between all tabs */
+  const [globalCopiedElements, setGlobalCopiedElements] = useState<DrawElement[]>([]);
+
   // Edit menu state
   const [editMenuState, setEditMenuState] = useState({
     canUndo: false,
@@ -105,27 +108,23 @@ const RailwayDrawerApp = () => {
   /** @brief Update edit menu state based on current DrawArea */
   const updateEditMenuState = useCallback(() => {
     const currentRef = currentDrawAreaRefObject.current;
-    logger.debug("RailwayDrawerApp", "Updating edit menu state", {
-      hasCurrentRef: !!currentRef,
-      canUndo: currentRef?.canUndo?.(),
-      canRedo: currentRef?.canRedo?.(),
-      selectionCount: currentRef?.getSelectedElementIds?.().length || 0,
-      copiedCount: currentRef?.getCopiedElements?.().length || 0
-    });
+    
     if (currentRef) {
       setEditMenuState({
         canUndo: currentRef.canUndo(),
         canRedo: currentRef.canRedo(),
         hasSelection: currentRef.getSelectedElementIds().length > 0,
-        hasCopiedElements: currentRef.getCopiedElements().length > 0
+        // Always allow paste if we have something in internal clipboard OR 
+        // if we want to allow system clipboard paste attempts (which we do)
+        hasCopiedElements: globalCopiedElements.length > 0 || currentRef.getCopiedElements().length > 0 || true
       });
     }
-  }, []);
+  }, [globalCopiedElements]);
 
   // Update edit menu state when selection or tab changes
   useEffect(() => {
     updateEditMenuState();
-  }, [selectedElement, activeTabId, updateEditMenuState]);
+  }, [selectedElement, activeTabId, updateEditMenuState, globalCopiedElements]);
 
   /** @brief Get the current active DrawArea ref */
   const getCurrentDrawAreaRef = useCallback(() => drawAreaRefs.current.get(activeTabId), [activeTabId]);
@@ -150,9 +149,6 @@ const RailwayDrawerApp = () => {
   const A4_HEIGHT = 1123; // ~297mm at 96 DPI
   const [drawAreaSize, setDrawAreaSize] = useState({ width: A4_WIDTH, height: A4_HEIGHT });
   const [zoom, setZoom] = useState(1);
-
-  /** @brief Global clipboard state shared between all tabs */
-  const [globalCopiedElements, setGlobalCopiedElements] = useState<DrawElement[]>([]);
 
   // Update the stable ref when active tab changes
   useEffect(() => {
@@ -366,21 +362,18 @@ const RailwayDrawerApp = () => {
     }
 
     try {
-      // Get all elements and selected IDs from DrawArea
-      const elements = currentDrawAreaRef.getElements();
-      const selectedIds = currentDrawAreaRef.getSelectedElementIds();
+      // 1. Tell the DrawArea to copy locally first
+      currentDrawAreaRef.copySelectedElements();
       
-      if (selectedIds.length === 0) {
+      // 2. Get the copied elements from DrawArea and sync to global clipboard
+      const elementsToCopy = currentDrawAreaRef.getCopiedElements();
+      
+      if (elementsToCopy.length === 0) {
         logger.warn("RailwayDrawerApp", "No elements selected for copying");
         return;
       }
       
-      // Get elements to copy
-      const elementsToCopy = elements.filter((el: any) => selectedIds.includes(el.id));
-      
-      // Only sync to global clipboard - don't touch DrawArea's internal clipboard
       setGlobalCopiedElements(elementsToCopy);
-      
       logger.info("RailwayDrawerApp", "Global copy successful", { elementCount: elementsToCopy.length });
     } catch (error) {
       logger.error("RailwayDrawerApp", "Error during global copy", error);
@@ -389,35 +382,33 @@ const RailwayDrawerApp = () => {
 
   /**
    * @brief Handle global paste operation across tabs
-   * @details Pastes elements from app-level clipboard
+   * @details Pastes elements from system clipboard or app-level clipboard
    */
-  const handleGlobalPaste = useCallback(() => {
-    const currentDrawAreaRef = getCurrentDrawAreaRef();
-    if (!currentDrawAreaRef) {
+  const handleGlobalPaste = useCallback(async (e?: ClipboardEvent) => {
+    const currentRef = getCurrentDrawAreaRef();
+    if (!currentRef) {
       logger.warn("RailwayDrawerApp", "Cannot paste: No active DrawArea ref found");
       return;
     }
 
     try {
-      // Use global clipboard if available
-      if (globalCopiedElements.length) {
-        currentDrawAreaRef.setCopiedElements(globalCopiedElements);
-        currentDrawAreaRef.pasteElements();
-        logger.info("RailwayDrawerApp", "Global paste successful", { elementCount: globalCopiedElements.length });
-      } else {
-        // Fallback to local DrawArea clipboard
-        const localElements = currentDrawAreaRef.getCopiedElements();
-        if (localElements.length) {
-          currentDrawAreaRef.pasteElements();
-          logger.info("RailwayDrawerApp", "Local paste successful", { elementCount: localElements.length });
-        } else {
-          logger.warn("RailwayDrawerApp", "No elements in clipboard to paste");
-        }
+      // Step 1: prioritize system clipboard and local tab elements via unified paste logic
+      logger.info("RailwayDrawerApp", "🔄 Attempting unified paste logic");
+      const success = await currentRef.performUnifiedPaste(e);
+      
+      // Step 2: if unified paste didn't find anything, try global (cross-tab) elements
+      if (!success && globalCopiedElements.length > 0) {
+        if (e) e.preventDefault();
+        logger.info("RailwayDrawerApp", "🍽️ System/Local empty, using global (cross-tab) clipboard", { count: globalCopiedElements.length });
+        currentRef.setCopiedElements(globalCopiedElements);
+        currentRef.pasteElements();
+      } else if (!success) {
+        logger.warn("RailwayDrawerApp", "No elements in any clipboard to paste");
       }
     } catch (error) {
-      logger.error("RailwayDrawerApp", "Error during paste operation", error);
+      logger.error("RailwayDrawerApp", "Error during global paste", error);
     }
-  }, [globalCopiedElements, getCurrentDrawAreaRef]);
+  }, [getCurrentDrawAreaRef, globalCopiedElements]);
 
   /**
    * @brief Handle global cut operation across tabs
@@ -431,25 +422,18 @@ const RailwayDrawerApp = () => {
     }
 
     try {
-      // Get all elements and selected IDs from DrawArea
-      const elements = currentDrawAreaRef.getElements();
-      const selectedIds = currentDrawAreaRef.getSelectedElementIds();
+      // 1. Tell the DrawArea to cut locally first
+      currentDrawAreaRef.cutSelectedElements();
       
-      if (selectedIds.length === 0) {
+      // 2. Get the cut elements from DrawArea and sync to global clipboard
+      const elementsToCut = currentDrawAreaRef.getCopiedElements();
+      
+      if (elementsToCut.length === 0) {
         logger.warn("RailwayDrawerApp", "No elements selected for cutting");
         return;
       }
       
-      // Get elements to cut
-      const elementsToCut = elements.filter((el: any) => selectedIds.includes(el.id));
-      
-      // Only sync to global clipboard - don't touch DrawArea's internal clipboard
       setGlobalCopiedElements(elementsToCut);
-      
-      // Delete the elements using updateElements (which handles history)
-      const remainingElements = elements.filter((el: any) => !selectedIds.includes(el.id));
-      currentDrawAreaRef.updateElements(remainingElements);
-      
       logger.info("RailwayDrawerApp", "Global cut successful", { elementCount: elementsToCut.length });
     } catch (error) {
       logger.error("RailwayDrawerApp", "Error during global cut", error);
@@ -486,11 +470,16 @@ const RailwayDrawerApp = () => {
         handleGlobalCut();
       }
       
-      // Global Paste (Ctrl+V)
+      // Global Paste (Ctrl+V) - we let the browser fire the 'paste' event
+      // so handlePaste can catch it with the full clipboard data.
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "v") {
-        e.preventDefault();
-        e.stopPropagation();
-        handleGlobalPaste();
+        logger.info("RailwayDrawerApp", "📋 Paste shortcut detected (keydown)");
+        // Optional: ensure SVG is focused to receive the paste event reliably
+        const currentRef = getCurrentDrawAreaRef();
+        if (currentRef && document.activeElement !== currentRef.getSvgElement()) {
+          logger.debug("RailwayDrawerApp", "Focusing SVG to receive paste event");
+          currentRef.getSvgElement()?.focus();
+        }
       }
       
       // Global Delete
@@ -538,9 +527,19 @@ const RailwayDrawerApp = () => {
       }
     }
 
+    const handlePaste = (e: ClipboardEvent) => {
+      // Direct call to global paste handler which now accepts event
+      handleGlobalPaste(e);
+    };
+
     // Use capture phase to ensure we get the event before other handlers
     document.addEventListener("keydown", handleKeyDown, true);
-    return () => document.removeEventListener("keydown", handleKeyDown, true);
+    document.addEventListener("paste", handlePaste as any, true);
+    
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown, true);
+      document.removeEventListener("paste", handlePaste as any, true);
+    };
   }, [globalCopiedElements, activeTabId, handleGlobalCopy, handleGlobalCut, handleGlobalPaste, activeMenu, activeSubMenu, getCurrentDrawAreaRef, updateEditMenuState]);
 
   /**

@@ -48,7 +48,9 @@ export interface DrawAreaRef {
   cutSelectedElements: () => DrawElement[] | undefined;
   /** @brief Pastes elements from internal clipboard */
   pasteElements: (position?: { x: number; y: number }) => void;
-    /** @brief Gets copied elements */
+  /** @brief Unified paste logic that handles system clipboard and internal elements */
+  performUnifiedPaste: (e?: ClipboardEvent) => Promise<boolean>;
+  /** @brief Gets copied elements */
   getCopiedElements: () => DrawElement[];
   /** @brief Sets copied elements */
   setCopiedElements: (els: DrawElement[]) => void;
@@ -123,7 +125,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
   
   // Debug: Track when elements actually change
   useEffect(() => {
-    console.log("🔥 ELEMENTS STATE:", {
+    logger.debug("DrawArea", "🔥 ELEMENTS STATE:", {
       count: elements.length,
       elementIds: elements.map(el => el.id)
     });
@@ -263,7 +265,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     
     // Log for debugging
     if (draggingId) {
-      console.log("🎯 Drag bounds check:", {
+      logger.info("DrawArea", "🎯 Drag bounds check:", {
         bounds: { minX, minY, maxX, maxY },
         gridSize: { GRID_WIDTH, GRID_HEIGHT },
         margin: EXPANSION_MARGIN,
@@ -275,7 +277,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     // Expand if elements go beyond any edge (left, right, top, bottom)
     if (minX < EXPANSION_MARGIN || minY < EXPANSION_MARGIN || 
         maxX > GRID_WIDTH - EXPANSION_MARGIN || maxY > GRID_HEIGHT - EXPANSION_MARGIN) {
-      console.log("📐 Expanding canvas for bounds:", { minX, minY, maxX, maxY });
+      logger.info("DrawArea", "📐 Expanding canvas for bounds:", { minX, minY, maxX, maxY });
       // Queue the expansion instead of calling directly (prevents React warning)
       setExpansionBounds({ maxX, maxY, minX, minY });
     }
@@ -519,7 +521,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     const elementsToCopy = elements.filter(el => selectedElementIds.includes(el.id));
     
     if (elementsToCopy.length === 0) {
-      console.warn('No elements selected for copying');
+      logger.warn('DrawArea', 'No elements selected for copying');
       return;
     }
     
@@ -559,18 +561,14 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     setCopiedElements(copiedElementsData);
     onStateChange?.();
     
-    // Also put in system clipboard for cross-application copying
+    // Write sentinel to system clipboard to prioritize internal elements during paste
     try {
-      const clipboardData = {
-        type: 'railway-drawer-elements',
-        elements: copiedElementsData,
-        timestamp: Date.now()
-      };
-      navigator.clipboard.writeText(JSON.stringify(clipboardData));
-      console.log(`Copied ${elementsToCopy.length} elements to clipboard`);
-    } catch (error) {
-      console.warn('Could not write to system clipboard:', error);
+      navigator.clipboard.writeText('RAILWAY_DRAWER_COPY');
+    } catch (err) {
+      logger.warn('DrawArea', 'Failed to write sentinel to system clipboard');
     }
+    
+    logger.info('DrawArea', `Copied ${elementsToCopy.length} elements to internal clipboard`);
     
     // Return the copied elements for immediate use
     return copiedElementsData;
@@ -585,7 +583,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     const elementsToCopy = elements.filter(el => selectedElementIds.includes(el.id));
     
     if (elementsToCopy.length === 0) {
-      console.warn('No elements selected for cutting');
+      logger.warn('DrawArea', 'No elements selected for cutting');
       return;
     }
     
@@ -624,20 +622,16 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     setSelectedElementIds([]);
     setHoveredElementId(null);
     setSelectedElement?.(undefined);
+    onStateChange?.();
     
-    // Also put in system clipboard
+    // Write sentinel to system clipboard to prioritize internal elements during paste
     try {
-      const clipboardData = {
-        type: 'railway-drawer-elements',
-        elements: copiedElementsData,
-        timestamp: Date.now(),
-        operation: 'cut' // Mark as cut operation
-      };
-      navigator.clipboard.writeText(JSON.stringify(clipboardData));
-      console.log(`Cut ${elementsToCopy.length} elements to clipboard`);
-    } catch (error) {
-      console.warn('Could not write to system clipboard:', error);
+      navigator.clipboard.writeText('RAILWAY_DRAWER_COPY');
+    } catch (err) {
+      logger.warn('DrawArea', 'Failed to write sentinel to system clipboard');
     }
+    
+    logger.info('DrawArea', `Cut ${elementsToCopy.length} elements to internal clipboard`);
     
     // Return the cut elements for immediate use
     return copiedElementsData;
@@ -663,7 +657,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       if (!el.start || !el.end || 
           typeof el.start.x !== 'number' || typeof el.start.y !== 'number' ||
           typeof el.end.x !== 'number' || typeof el.end.y !== 'number') {
-        console.warn('Invalid element found while calculating bounds:', el);
+        logger.warn('DrawArea', 'Invalid element found while calculating bounds:', { el });
         return;
       }
       
@@ -699,7 +693,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
    */
   const pasteElements = useCallback((pastePosition?: { x: number; y: number }) => {
     if (copiedElements.length === 0) {
-      console.warn('No elements in clipboard to paste');
+      logger.warn('DrawArea', 'No elements in clipboard to paste');
       return;
     }
     
@@ -756,11 +750,11 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     );
     
     if (validElements.length !== newElements.length) {
-      console.warn(`${newElements.length - validElements.length} invalid elements filtered out during paste`);
+      logger.warn('DrawArea', `${newElements.length - validElements.length} invalid elements filtered out during paste`);
     }
     
     if (validElements.length === 0) {
-      console.error('No valid elements to paste');
+      logger.error('DrawArea', 'No valid elements to paste');
       return;
     }
     
@@ -784,8 +778,330 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       setSelectedElement?.(undefined);
     }
     
-    console.log(`Pasted ${validElements.length} elements with offset (${offsetX.toFixed(1)}, ${offsetY.toFixed(1)})`);
+    logger.info('DrawArea', `Pasted ${validElements.length} elements with offset (${offsetX.toFixed(1)}, ${offsetY.toFixed(1)})`);
   }, [copiedElements, calculateElementsBounds, pushToHistoryAndSetElements, setSelectedElementIds, setSelectedElement, svgRef, panOffset, zoom, showGrid, backgroundColor, setShowGrid, setBackgroundColor, GRID_WIDTH, GRID_HEIGHT]);
+
+  /**
+   * @brief Create an image element from base64 data URL
+   */
+  const createImageElement = useCallback((dataUrl: string, mimeType: string) => {
+    const img = new Image();
+    img.onload = () => {
+      // Get center of visible canvas area
+      const scrollParent = svgRef.current?.parentElement;
+      
+      const centerX = scrollParent ? scrollParent.scrollLeft + (scrollParent.clientWidth / 2) / zoom : GRID_WIDTH / 2;
+      const centerY = scrollParent ? scrollParent.scrollTop + (scrollParent.clientHeight / 2) / zoom : GRID_HEIGHT / 2;
+      
+      // Create new element with default size (200x200 or scaled to maintain aspect)
+      const defaultSize = 200;
+      let width = defaultSize;
+      let height = defaultSize;
+      
+      // Maintain aspect ratio
+      if (img.width > img.height) {
+        height = (defaultSize * img.height) / img.width;
+      } else {
+        width = (defaultSize * img.width) / img.height;
+      }
+      
+      const newElement: DrawElement = {
+        id: `image_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+        type: 'image',
+        start: {
+          x: centerX - width / 2,
+          y: centerY - height / 2,
+        },
+        end: {
+          x: centerX + width / 2,
+          y: centerY + height / 2,
+        },
+        width,
+        height,
+        strokeColor: '#000000',
+        fillColor: '#ffffff',
+        strokeWidth: 0,
+        data: {
+          dataUrl,
+          mimeType,
+          originalWidth: img.width,
+          originalHeight: img.height,
+        },
+      };
+
+      // Add to elements and history
+      pushToHistoryAndSetElements(prev => [...prev, newElement]);
+      onStateChange?.();
+      
+      logger.info('DrawArea', '🖼️ Image pasted:', {
+        type: mimeType,
+        width,
+        height,
+        position: { x: newElement.start.x, y: newElement.start.y }
+      });
+    };
+    img.src = dataUrl;
+  }, [GRID_WIDTH, GRID_HEIGHT, zoom, pushToHistoryAndSetElements, onStateChange]);
+
+  /**
+   * @brief Create an image element from SVG text
+   */
+  const createImageElementFromSVG = useCallback((svgText: string) => {
+    try {
+      // Parse SVG to get dimensions
+      const parser = new DOMParser();
+      const svgDoc = parser.parseFromString(svgText, 'image/svg+xml');
+      
+      if (svgDoc.documentElement.nodeName === 'parsererror') {
+        logger.error('DrawArea', 'Invalid SVG');
+        return;
+      }
+
+      const svgElement = svgDoc.documentElement;
+      const viewBox = svgElement.getAttribute('viewBox');
+      let width = 200;
+      let height = 200;
+      
+      // Try to get dimensions from viewBox or attributes
+      if (viewBox) {
+        const [, , vbWidth, vbHeight] = viewBox.split(/\s+/).map(Number);
+        width = vbWidth || 200;
+        height = vbHeight || 200;
+      } else {
+        const w = svgElement.getAttribute('width');
+        const h = svgElement.getAttribute('height');
+        if (w && h) {
+          width = parseFloat(w) || 200;
+          height = parseFloat(h) || 200;
+        }
+      }
+
+      // Get center of visible canvas area
+      const scrollParent = svgRef.current?.parentElement;
+      const centerX = scrollParent ? scrollParent.scrollLeft + (scrollParent.clientWidth / 2) / zoom : GRID_WIDTH / 2;
+      const centerY = scrollParent ? scrollParent.scrollTop + (scrollParent.clientHeight / 2) / zoom : GRID_HEIGHT / 2;
+
+      // Scale to reasonable size if too large
+      const maxSize = 300;
+      if (width > maxSize || height > maxSize) {
+        const scale = Math.min(maxSize / width, maxSize / height);
+        width *= scale;
+        height *= scale;
+      }
+
+      const newElement: DrawElement = {
+        id: `svg_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+        type: 'image',
+        start: {
+          x: centerX - width / 2,
+          y: centerY - height / 2,
+        },
+        end: {
+          x: centerX + width / 2,
+          y: centerY + height / 2,
+        },
+        width,
+        height,
+        strokeColor: '#000000',
+        fillColor: '#ffffff',
+        strokeWidth: 0,
+        data: {
+          svgText,
+          mimeType: 'image/svg+xml',
+          originalWidth: width,
+          originalHeight: height,
+        },
+      };
+
+      // Add to elements and history
+      pushToHistoryAndSetElements(prev => [...prev, newElement]);
+      onStateChange?.();
+      
+      logger.info('DrawArea', '🖼️ SVG pasted:', {
+        width,
+        height,
+        position: { x: newElement.start.x, y: newElement.start.y }
+      });
+    } catch (error) {
+      logger.error('DrawArea', 'Error parsing SVG:', { error });
+    }
+  }, [GRID_WIDTH, GRID_HEIGHT, zoom, pushToHistoryAndSetElements, onStateChange]);
+
+  /**
+   * @brief Unified paste function used by both keyboard shortcuts and context menu
+   * @details Priority: event items → system clipboard → local copy
+   * IMPORTANT: Both Ctrl+V and context menu paste use this same logic
+   */
+  /**
+   * @brief Unified paste logic that handles both system clipboard and internal elements
+   * @param e Optional ClipboardEvent (from Ctrl+V/paste event)
+   * @returns Promise<boolean> True if something was pasted
+   */
+  const performUnifiedPaste = useCallback(async (e?: ClipboardEvent): Promise<boolean> => {
+    try {
+      logger.info("DrawArea", "🎯 Unified paste triggered", { hasEvent: !!e });
+      
+      // Step 0: Check if we have internal elements and a "sentinel" on the system clipboard.
+      // If the user just did a "Copy" inside the app, we prioritize those elements.
+      let hasSentinel = false;
+      if (copiedElements.length > 0) {
+        if (e?.clipboardData) {
+          hasSentinel = e.clipboardData.getData('text/plain') === 'RAILWAY_DRAWER_COPY';
+        } else {
+          try {
+            const text = await navigator.clipboard.readText();
+            hasSentinel = text === 'RAILWAY_DRAWER_COPY';
+          } catch (err) { /* ignore */ }
+        }
+      }
+
+      if (hasSentinel) {
+        if (e) e.preventDefault();
+        logger.info("DrawArea", '📌 Sentinel found: Prioritizing internal elements');
+        pasteElements();
+        return true;
+      }
+      
+      // Step 1: Try event clipboard items first (from Ctrl+V)
+      // We must extract files/items synchronously before any 'await'
+      if (e?.clipboardData) {
+        const clipboardData = e.clipboardData;
+        const items = clipboardData.items;
+        const files = clipboardData.files;
+        
+        logger.info("DrawArea", "📦 Paste event data", { 
+          itemCount: items?.length, 
+          fileCount: files?.length,
+          types: clipboardData.types 
+        });
+
+        // 1.1 Priority: Images (as files or items)
+        let imageFile: File | null = null;
+        let imageType: string = '';
+
+        // Check files first (often more reliable for screenshots)
+        if (files && files.length > 0) {
+          for (let i = 0; i < files.length; i++) {
+            if (files[i].type.startsWith('image/')) {
+              imageFile = files[i];
+              imageType = files[i].type;
+              break;
+            }
+          }
+        }
+
+        // Check items if no file found
+        if (!imageFile && items && items.length > 0) {
+          for (let i = 0; i < items.length; i++) {
+            if (items[i].type.startsWith('image/')) {
+              imageFile = items[i].getAsFile();
+              imageType = items[i].type;
+              break;
+            }
+          }
+        }
+
+        if (imageFile) {
+          if (e) e.preventDefault();
+          logger.info("DrawArea", `🖼️ Found image in event clipboard`, { type: imageType });
+          const dataUrl = await new Promise<string>((resolve) => {
+            const reader = new FileReader();
+            reader.onload = (event) => resolve(event.target?.result as string);
+            reader.readAsDataURL(imageFile!);
+          });
+          createImageElement(dataUrl, imageType);
+          return true;
+        }
+
+        // 1.2 Priority: SVG text
+        if (items && items.length > 0) {
+          for (let i = 0; i < items.length; i++) {
+            if (items[i].type === 'text/plain') {
+              // We have to use getAsString, which is async/callback based.
+              // We've already checked for images so it's safe to await here now.
+              const text = await new Promise<string>((resolve) => {
+                items[i].getAsString(resolve);
+              });
+              
+              if (text.trim().startsWith('<svg')) {
+                if (e) e.preventDefault();
+                logger.info("DrawArea", '📊 Found SVG in event clipboard');
+                createImageElementFromSVG(text);
+                return true;
+              }
+            }
+          }
+        }
+      }
+
+      // Step 2: Try system clipboard (Async API)
+      // This is used for menu-initiated paste or if event data was missing
+      logger.info("DrawArea", '📌 Attempting system clipboard');
+      
+      try {
+        // Try images via Clipboard API FIRST (prioritize images)
+        if (navigator.clipboard.read) {
+          try {
+            const clipboardData = await navigator.clipboard.read();
+            for (const item of clipboardData) {
+              const imageType = item.types.find(t => t.startsWith('image/'));
+              if (imageType) {
+                if (e) e.preventDefault();
+                logger.info("DrawArea", `🖼️ Found image in system clipboard`, { type: imageType });
+                const blob = await item.getType(imageType);
+                const dataUrl = await new Promise<string>((resolve) => {
+                  const reader = new FileReader();
+                  reader.onload = (event) => resolve(event.target?.result as string);
+                  reader.readAsDataURL(blob);
+                });
+                createImageElement(dataUrl, imageType);
+                return true;
+              }
+            }
+          } catch (err) {
+            logger.info("DrawArea", 'clipboard.read failed (normal if no visual content)');
+          }
+        }
+
+        // Try SVG text second
+        try {
+          const text = await navigator.clipboard.readText();
+          if (text && text.trim().startsWith('<svg')) {
+            if (e) e.preventDefault();
+            logger.info("DrawArea", '📊 Found SVG in system clipboard');
+            createImageElementFromSVG(text);
+            return true;
+          }
+        } catch (err) {
+          logger.info("DrawArea", 'readText failed or was empty');
+        }
+      } catch (error) {
+        logger.error("DrawArea", 'Error reading system clipboard', { error });
+      }
+
+      // Step 3: Final fallback to local elements
+      if (copiedElements.length > 0) {
+        if (e) e.preventDefault();
+        logger.info("DrawArea", '📌 Fallback: Using local copied elements');
+        pasteElements();
+        return true;
+      }
+      
+      logger.warn("DrawArea", '⚠️ No content found to paste');
+      return false;
+    } catch (error) {
+      logger.error("DrawArea", '❌ Paste error', { error });
+      return false;
+    }
+  }, [copiedElements, createImageElement, createImageElementFromSVG, pasteElements]);
+
+  /**
+   * @brief Handle pasting from system clipboard via Ctrl+V
+   */
+  const handlePasteImage = useCallback(async (e: ClipboardEvent) => {
+    if (disableKeyboardHandlers) return;
+    await performUnifiedPaste(e);
+  }, [disableKeyboardHandlers, performUnifiedPaste]);
 
   /**
    * @brief Handle right-click context menu
@@ -888,6 +1204,17 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
   }, []);
 
   /**
+   * @brief Handle paste from context menu - uses unified paste logic
+   */
+  const handlePasteFromContextMenu = useCallback(async () => {
+    logger.info("DrawArea", '🍽️ Context menu paste clicked');
+    setContextMenu(null);
+    
+    // Use unified paste logic (no event object since it's from menu)
+    await performUnifiedPaste();
+  }, [performUnifiedPaste]);
+
+  /**
    * @brief Expose methods through ref for external component access
    * @details Provides imperative access to DrawArea functionality from parent components
    */
@@ -917,6 +1244,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     copySelectedElements,
     cutSelectedElements,
     pasteElements,
+    performUnifiedPaste,
     getCopiedElements: () => copiedElements,
     setCopiedElements: (els: DrawElement[]) => setCopiedElements(els),
     // Edit operations
@@ -942,7 +1270,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       });
       return result;
     },
-  }), [elements, showGrid, backgroundColor, selectedElementIds, copiedElements, copySelectedElements, cutSelectedElements, pasteElements, undo, redo, deleteSelectedElements, selectAllElements, historyIndex, history]);
+  }), [elements, showGrid, backgroundColor, selectedElementIds, copiedElements, copySelectedElements, cutSelectedElements, pasteElements, performUnifiedPaste, undo, redo, deleteSelectedElements, selectAllElements, historyIndex, history]);
 
   /**
    * @brief Synchronize elements with grid visibility state
@@ -1009,9 +1337,11 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       }
       
       // Paste elements (Ctrl+V)
-      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "v" && copiedElements.length > 0) {
+      // Note: Ctrl+V triggers both keydown AND paste events
+      // The paste event is handled by handlePasteImage, so we just prevent default here
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "v") {
         e.preventDefault();
-        pasteElements();
+        // The paste event will be triggered by the browser and handlePasteImage will catch it
       }
       
       // Undo (Ctrl+Z)
@@ -1032,9 +1362,25 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
         selectAllElements();
       }
     }
+    
+    // Add listener for paste events with focus management
+    const handlePasteWithFocus = (e: ClipboardEvent) => {
+      if (disableKeyboardHandlers) return;
+      
+      // Ensure SVG has focus before processing paste
+      if (svgRef.current && document.activeElement !== svgRef.current) {
+        svgRef.current.focus();
+      }
+      handlePasteImage(e);
+    };
+    
     window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [selectedElementIds, elements, setSelectedElement, copiedElements, disableKeyboardHandlers, pasteElements, pushToHistoryAndSetElements, undo, redo, deleteSelectedElements, selectAllElements, createDeepElementCopy, setCopiedElements, setHoveredElementId, onStateChange]);
+    window.addEventListener("paste", handlePasteWithFocus as any);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("paste", handlePasteWithFocus as any);
+    };
+  }, [selectedElementIds, elements, setSelectedElement, copiedElements, disableKeyboardHandlers, pasteElements, pushToHistoryAndSetElements, undo, redo, deleteSelectedElements, selectAllElements, createDeepElementCopy, setCopiedElements, setHoveredElementId, onStateChange, handlePasteImage]);
 
   /**
    * @brief Check if an element intersects with a selection rectangle
@@ -1061,6 +1407,11 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
    * @param {DrawElement} el - The element being interacted with.
    */
   function handlePointerDown(e: React.PointerEvent, el: DrawElement) {
+    // Focus the SVG to ensure keyboard events and paste commands are received
+    if (svgRef.current) {
+      svgRef.current.focus();
+    }
+    
     e.stopPropagation(); // Prevent SVG click handler
 
     if (e.ctrlKey || e.metaKey) {
@@ -1131,6 +1482,11 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
    * Handles double click detection and panning start
    */
   function handleSvgPointerDown(e: React.PointerEvent) {
+    // Focus the SVG to ensure keyboard events and paste commands are received
+    if (svgRef.current) {
+      svgRef.current.focus();
+    }
+
     if (e.target !== svgRef.current && e.target !== e.currentTarget) {
       return;
     }
@@ -1486,7 +1842,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     // Create the element
     const newElement = createCenteredElement(item, x, y);
     
-    console.log("🚀 CREATING NEW ELEMENT:", {
+    logger.info("DrawArea", "🚀 CREATING NEW ELEMENT:", {
       elementId: newElement.id,
       elementType: newElement.type,
       hasShapeElements: !!newElement.shapeElements,
@@ -1564,7 +1920,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       opacity: 1,
     } : undefined;
 
-    console.log("🔧 Creating element from toolbox item:", {
+    logger.info("DrawArea", "🔧 Creating element from toolbox item:", {
       itemId: toolboxItem.id,
       itemName: toolboxItem.name,
       originalShapeElements: toolboxItem.shapeElements ? {
@@ -1709,7 +2065,10 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
         cursor: isPanning ? 'grabbing' : 'default'
       }}
       tabIndex={0}
-      onPointerDown={handleSvgPointerDown}
+      onPointerDown={(e) => {
+        svgRef.current?.focus();
+        handleSvgPointerDown(e);
+      }}
       onContextMenu={handleContextMenu}
       onDragOver={e => e.preventDefault()}
       onDrop={handleDrop}
@@ -1998,15 +2357,10 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
             </button>
           </>
         )}
-        {contextMenu.type === 'canvas' && copiedElements.length > 0 && (
+        {contextMenu.type === 'canvas' && (
           <button
             onClick={() => {
-              const svgRect = svgRef.current?.getBoundingClientRect();
-              if (!svgRect) return;
-              const x = (contextMenu.x - svgRect.left - panOffset.x) / zoom;
-              const y = (contextMenu.y - svgRect.top - panOffset.y) / zoom;
-              pasteElements({ x, y });
-              setContextMenu(null);
+              handlePasteFromContextMenu();
             }}
             className="w-full px-4 py-2 text-left text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-600 flex items-center gap-2"
           >
