@@ -860,7 +860,7 @@
       },
       {
         "id": "orientationIndicator",
-        "svg": "{orientation === 'left' ? \"<g transform='translate(0,-18)' style='filter: drop-shadow(0px 2px 3px rgba(0,0,0,0.25));'><polygon points='2,6 10,6 6,0' fill='#000'/></g>\" : \"<g transform='translate(0,-18)' style='filter: drop-shadow(0px 2px 3px rgba(0,0,0,0.25));'><polygon points='22,6 14,6 18,0' fill='#000'/></g>\"}"
+        "svg": "{orientation === 'left' ? \"<g transform='translate(0,-18)' style='filter: drop-shadow(0px 2px 3px rgba(0,0,0,0.25));'><polygon points='10,6 2,12 10,18 10,14 22,14 22,10 10,10' fill='#000'/></g>\" : \"<g transform='translate(0,-18)' style='filter: drop-shadow(0px 2px 3px rgba(0,0,0,0.25));'><polygon points='14,6 22,12 14,18 14,14 2,14 2,10 14,10' fill='#000'/></g>\"}"
       },
       {
         "id": "signalPole",
