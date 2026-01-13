@@ -1,16 +1,16 @@
-      {
-        "id": "orientationIndicator",
-        "svg": "{orientation === 'left' ? \"<g transform='translate(0,-24)' style='filter: drop-shadow(0px 3px 4px rgba(0,0,0,0.25));'><polygon points='4,6 20,0 36,6 36,18 4,18' fill='#e6e6e6' stroke='#000' stroke-width='0.6'/><polygon points='4,18 36,18 36,28 4,28' fill='#cccccc' stroke='#000' stroke-width='0.4'/><polygon points='4,6 20,0 20,12 4,18' fill='#f0f0f0' stroke='#000' stroke-width='0.4'/><polygon points='0,14 6,10 6,18 0,22' fill='#000'/></g>\" : \"<g transform='translate(0,-24)' style='filter: drop-shadow(0px 3px 4px rgba(0,0,0,0.25));'><polygon points='4,6 20,0 36,6 36,18 4,18' fill='#e6e6e6' stroke='#000' stroke-width='0.6'/><polygon points='4,18 36,18 36,28 4,28' fill='#cccccc' stroke='#000' stroke-width='0.4'/><polygon points='4,6 20,0 20,12 4,18' fill='#f0f0f0' stroke='#000' stroke-width='0.4'/><polygon points='40,14 34,10 34,18 40,22' fill='#000'/></g>\"}"
-      },
+[
+  {
+    "id": "rectangle_general",
+    "name": "Rectangle",
     "type": "custom",
     "group": "General",
     "iconSvg": "default",
-    "height": 48,
+    "height": 32,
     "width": 48,
     "shapeElements": [
       {
-        "id": "squareShape",
-        "svg": "<rect x='4' y='4' width='40' height='40' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "id": "rectShapeGeneral",
+        "svg": "<rect x='2' y='2' width='44' height='28' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       }
     ]
   },
@@ -844,7 +844,7 @@
     "shapeElements": [
       {
         "id": "signalBox",
-        "svg": "<rect x='2' y='2' width='20' height='44' rx='2' fill='#ddd' stroke='#000' stroke-width='1'/>"
+        "svg": "<g vector-effect='non-scaling-stroke'><path d='M2 6 L12 2 L22 6 L22 44 L2 44 Z' fill='#e6e6e6' stroke='#000' stroke-width='0.8'/><path d='M12 2 L22 6 L18 44 L8 44 Z' fill='#d0d0d0' stroke='none' opacity='0.6'/><rect x='4' y='8' width='14' height='32' rx='2' fill='none' stroke='none'/></g>"
       },
       {
         "id": "topLight",
@@ -860,7 +860,7 @@
       },
       {
         "id": "orientationIndicator",
-        "svg": "{orientation === 'left' ? \"<g transform='translate(0,-18)' style='filter: drop-shadow(0px 2px 3px rgba(0,0,0,0.25));'><polygon points='10,6 2,12 10,18 10,14 22,14 22,10 10,10' fill='#000'/></g>\" : \"<g transform='translate(0,-18)' style='filter: drop-shadow(0px 2px 3px rgba(0,0,0,0.25));'><polygon points='14,6 22,12 14,18 14,14 2,14 2,10 14,10' fill='#000'/></g>\"}"
+        "svg": "{orientation === 'left' ? \"<polygon points='2,46 10,46 6,50' fill='#000'/>\" : \"<polygon points='22,46 14,46 18,50' fill='#000'/>\"}"
       },
       {
         "id": "signalPole",
@@ -2088,7 +2088,7 @@
     "shapeElements": [
       {
         "id": "signalBox",
-        "svg": "<rect x='8' y='4' width='16' height='24' rx='2' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<g vector-effect='non-scaling-stroke'><path d='M8 8 L14 4 L24 8 L24 28 L8 28 Z' fill='#ffffff' stroke='#000' stroke-width='1'/><path d='M14 4 L24 8 L22 28 L12 28 Z' fill='#e6e6e6' stroke='none' opacity='0.6'/></g>"
       },
       {
         "id": "whiteLight",
@@ -2096,7 +2096,7 @@
       },
       {
         "id": "orientationIndicator",
-        "svg": "{orientation === 'left' ? \"<g transform='translate(0,-16)' style='filter: drop-shadow(0px 2px 3px rgba(0,0,0,0.25));'><polygon points='10,6 18,2 26,6 26,14 10,14' fill='#eee' stroke='#000' stroke-width='0.5'/><polygon points='10,14 26,14 26,20 10,20' fill='#ddd' stroke='#000' stroke-width='0.3'/><polygon points='6,12 10,8 10,16 6,20' fill='#000'/></g>\" : \"<g transform='translate(0,-16)' style='filter: drop-shadow(0px 2px 3px rgba(0,0,0,0.25));'><polygon points='10,6 18,2 26,6 26,14 10,14' fill='#eee' stroke='#000' stroke-width='0.5'/><polygon points='10,14 26,14 26,20 10,20' fill='#ddd' stroke='#000' stroke-width='0.3'/><polygon points='30,12 26,8 26,16 30,20' fill='#000'/></g>\"}"
+        "svg": "{orientation === 'left' ? \"<polygon points='8,32 14,32 11,36' fill='#000' style='filter: drop-shadow(0px 2px 3px rgba(0,0,0,0.35));'/>\" : \"<polygon points='24,32 18,32 21,36' fill='#000' style='filter: drop-shadow(0px 2px 3px rgba(0,0,0,0.35));'/>\"}"
       },
       {
         "id": "signalPole",
