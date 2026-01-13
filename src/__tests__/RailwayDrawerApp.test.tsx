@@ -55,7 +55,8 @@ describe('RailwayDrawerApp Component', () => {
     
     // Check for main menu items
     expect(screen.getByText('File')).toBeInTheDocument()
-    expect(screen.getByText('Toolbox')).toBeInTheDocument()
+    expect(screen.getByText('View')).toBeInTheDocument()
+    expect(screen.getByText('Arrange')).toBeInTheDocument()
   })
 
   it('shows file menu options when hovered', async () => {
@@ -66,21 +67,21 @@ describe('RailwayDrawerApp Component', () => {
     await user.click(fileMenu)
     
     // Should show file operations
-    expect(screen.getByText('Open...')).toBeInTheDocument()
-    expect(screen.getByText('Save')).toBeInTheDocument()
+    expect(screen.getByText('Open Project...')).toBeInTheDocument()
+    expect(screen.getByText('Save Project')).toBeInTheDocument()
   })
 
-  it('shows toolbox menu options when hovered', async () => {
+  it('shows view menu options when hovered', async () => {
     const user = userEvent.setup()
     render(<RailwayDrawerApp />)
     
-    const toolboxMenu = screen.getByText('Toolbox')
-    await user.click(toolboxMenu)
+    const viewMenu = screen.getByText('View')
+    await user.click(viewMenu)
     
-    // Should show toolbox operations
-    expect(screen.getByText('Save Toolbox')).toBeInTheDocument()
-    expect(screen.getByText('Open Toolbox Config')).toBeInTheDocument()
-    expect(screen.getByText('Add new shape')).toBeInTheDocument()
+    // Should show view operations (zoom controls)
+    expect(screen.getByText('Zoom In')).toBeInTheDocument()
+    expect(screen.getByText('Zoom Out')).toBeInTheDocument()
+    expect(screen.getByText('Zoom to 100%')).toBeInTheDocument()
   })
 
   it('displays application title', () => {

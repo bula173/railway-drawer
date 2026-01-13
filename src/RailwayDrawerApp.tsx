@@ -955,7 +955,7 @@ const RailwayDrawerApp = () => {
                         active ? 'bg-blue-500 text-white' : 'text-slate-900'
                       } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
                     >
-                      Open...
+                      Open Project...
                     </button>
                   )}
                 </Menu.Item>
@@ -967,7 +967,7 @@ const RailwayDrawerApp = () => {
                         active ? 'bg-blue-500 text-white' : 'text-slate-900'
                       } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
                     >
-                      Save
+                      Save Project
                     </button>
                   )}
                 </Menu.Item>
@@ -1035,6 +1035,88 @@ const RailwayDrawerApp = () => {
                   </Transition>
                 </div>
               </div>
+              <div className="px-1 py-1" onMouseLeave={() => setActiveSubMenu(null)}>
+                <div className="relative">
+                  <Menu.Item>
+                    {({ active }) => (
+                      <button
+                        onMouseEnter={() => setActiveSubMenu('toolbox')}
+                        className={`${
+                          active ? 'bg-blue-500 text-white' : ''
+                        } text-slate-900 group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                      >
+                        Manage Toolbox
+                        <span className="ml-auto">›</span>
+                      </button>
+                    )}
+                  </Menu.Item>
+                  <Transition
+                    as={Fragment}
+                    show={activeSubMenu === 'toolbox'}
+                    enter="transition ease-out duration-100"
+                    enterFrom="transform opacity-0 scale-95"
+                    enterTo="transform opacity-100 scale-100"
+                    leave="transition ease-in duration-75"
+                    leaveFrom="transform opacity-100 scale-100"
+                    leaveTo="transform opacity-0 scale-95"
+                  >
+                    <div 
+                      className="absolute left-full -top-1 w-56 origin-top-left bg-white divide-y divide-slate-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                      onMouseEnter={() => setActiveSubMenu('toolbox')}
+                    >
+                      <div className="px-1 py-1">
+                        <Menu.Item>
+                          {({ active }) => (
+                            <button
+                              onClick={() => saveToolboxAsJson()}
+                              className={`${
+                                active ? 'bg-blue-500 text-white' : 'text-slate-900'
+                              } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                            >
+                              Save Toolbox
+                            </button>
+                          )}
+                        </Menu.Item>
+                        <Menu.Item>
+                          {({ active }) => (
+                            <button
+                              onClick={(e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                if (isOpeningToolboxRef.current) return;
+                                isOpeningToolboxRef.current = true;
+                                setTimeout(() => {
+                                  toolboxInputRef.current?.click();
+                                  setTimeout(() => {
+                                    isOpeningToolboxRef.current = false;
+                                  }, 500);
+                                }, 0);
+                              }}
+                              className={`${
+                                active ? 'bg-blue-500 text-white' : 'text-slate-900'
+                              } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                            >
+                              Load Toolbox
+                            </button>
+                          )}
+                        </Menu.Item>
+                        <Menu.Item>
+                          {({ active }) => (
+                            <button
+                              onClick={() => setShowEditor(true)}
+                              className={`${
+                                active ? 'bg-blue-500 text-white' : 'text-slate-900'
+                              } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                            >
+                              Add New Shape
+                            </button>
+                          )}
+                        </Menu.Item>
+                      </div>
+                    </div>
+                  </Transition>
+                </div>
+              </div>
             </Menu.Items>
           </Transition>
         </Menu>
@@ -1044,6 +1126,13 @@ const RailwayDrawerApp = () => {
             accept="application/json"
             className="hidden"
             onChange={loadFromJson}
+        />
+        <input
+            ref={toolboxInputRef}
+            type="file"
+            accept="application/json"
+            className="hidden"
+            onChange={loadToolboxFromJson}
         />
         
         {/* Edit Menu */}
@@ -1089,10 +1178,10 @@ const RailwayDrawerApp = () => {
           }}
         />
         
-        {/* Toolbox Menu */}
+        {/* View Menu */}
         <Menu as="div" className="relative">
           <Menu.Button className="bg-white hover:bg-slate-50 text-slate-700 border-none px-4 h-10 text-sm font-medium cursor-pointer outline-none border-r border-slate-200 transition-colors duration-200 flex items-center">
-            Toolbox
+            View
           </Menu.Button>
           <Transition
             as={Fragment}
@@ -1103,52 +1192,41 @@ const RailwayDrawerApp = () => {
             leaveFrom="transform opacity-100 scale-100"
             leaveTo="transform opacity-0 scale-95"
           >
-            <Menu.Items className="absolute left-0 mt-2 w-56 origin-top-right bg-white divide-y divide-slate-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+            <Menu.Items className="absolute left-0 mt-2 w-48 origin-top-right bg-white divide-y divide-slate-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-[9999]">
               <div className="px-1 py-1">
                 <Menu.Item>
                   {({ active }) => (
                     <button
-                      onClick={() => saveToolboxAsJson()}
+                      onClick={handleZoomIn}
                       className={`${
                         active ? 'bg-blue-500 text-white' : 'text-slate-900'
                       } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
                     >
-                      Save Toolbox
+                      Zoom In
                     </button>
                   )}
                 </Menu.Item>
                 <Menu.Item>
                   {({ active }) => (
                     <button
-                      onClick={(e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        if (isOpeningToolboxRef.current) return;
-                        isOpeningToolboxRef.current = true;
-                        setTimeout(() => {
-                          toolboxInputRef.current?.click();
-                          setTimeout(() => {
-                            isOpeningToolboxRef.current = false;
-                          }, 500);
-                        }, 0);
-                      }}
+                      onClick={handleZoomOut}
                       className={`${
                         active ? 'bg-blue-500 text-white' : 'text-slate-900'
                       } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
                     >
-                      Open Toolbox Config
+                      Zoom Out
                     </button>
                   )}
                 </Menu.Item>
                 <Menu.Item>
                   {({ active }) => (
                     <button
-                      onClick={() => setShowEditor(true)}
+                      onClick={handleZoomReset}
                       className={`${
                         active ? 'bg-blue-500 text-white' : 'text-slate-900'
                       } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
                     >
-                      Add new shape
+                      Zoom to 100%
                     </button>
                   )}
                 </Menu.Item>
@@ -1156,13 +1234,59 @@ const RailwayDrawerApp = () => {
             </Menu.Items>
           </Transition>
         </Menu>
-        <input
-            ref={toolboxInputRef}
-            type="file"
-            accept="application/json"
-            className="hidden"
-            onChange={loadToolboxFromJson}
-        />
+        
+        {/* Arrange Menu */}
+        <Menu as="div" className="relative">
+          <Menu.Button className="bg-white hover:bg-slate-50 text-slate-700 border-none px-4 h-10 text-sm font-medium cursor-pointer outline-none border-r border-slate-200 transition-colors duration-200 flex items-center">
+            Arrange
+          </Menu.Button>
+          <Transition
+            as={Fragment}
+            enter="transition ease-out duration-100"
+            enterFrom="transform opacity-0 scale-95"
+            enterTo="transform opacity-100 scale-100"
+            leave="transition ease-in duration-75"
+            leaveFrom="transform opacity-100 scale-100"
+            leaveTo="transform opacity-0 scale-95"
+          >
+            <Menu.Items className="absolute left-0 mt-2 w-48 origin-top-right bg-white divide-y divide-slate-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-[9999]">
+              <div className="px-1 py-1">
+                <Menu.Item>
+                  {({ active }) => (
+                    <button
+                      onClick={() => {
+                        currentDrawAreaRefObject.current?.bringToFront();
+                        updateEditMenuState();
+                      }}
+                      disabled={!editMenuState.hasSelection}
+                      className={`${
+                        editMenuState.hasSelection ? (active ? 'bg-blue-500 text-white' : 'text-slate-900') : 'text-slate-400 cursor-not-allowed'
+                      } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                    >
+                      Bring to Front
+                    </button>
+                  )}
+                </Menu.Item>
+                <Menu.Item>
+                  {({ active }) => (
+                    <button
+                      onClick={() => {
+                        currentDrawAreaRefObject.current?.sendToBack();
+                        updateEditMenuState();
+                      }}
+                      disabled={!editMenuState.hasSelection}
+                      className={`${
+                        editMenuState.hasSelection ? (active ? 'bg-blue-500 text-white' : 'text-slate-900') : 'text-slate-400 cursor-not-allowed'
+                      } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                    >
+                      Send to Back
+                    </button>
+                  )}
+                </Menu.Item>
+              </div>
+            </Menu.Items>
+          </Transition>
+        </Menu>
         
         {/* App Title */}
         <div className="flex-1 flex items-center justify-center">
