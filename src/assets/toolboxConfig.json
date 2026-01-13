@@ -848,24 +848,24 @@
       },
       {
         "id": "topLight",
-        "svg": "{orientation === 'left' ? \"<circle cx='12' cy='20' r='6' fill='{topLight}' stroke='#000' stroke-width='1' transform='skewY(-15) scale(1, 0.9)'/>\" : \"<circle cx='12' cy='15' r='6' fill='{topLight}' stroke='#000' stroke-width='1' transform='skewY(15) scale(1, 0.9)'/>\"}"
+        "svg": "{orientation === 'left' ? \"<circle cx='12' cy='20' r='6' fill='{topLight}' stroke='#000' stroke-width='1' transform='translate(12,20) skewY(-15) scale(1,0.9) translate(-12,-20)'/>\" : \"<circle cx='12' cy='15' r='6' fill='{topLight}' stroke='#000' stroke-width='1' transform='translate(12,15) skewY(15) scale(1,0.9) translate(-12,-15)'/>\"}"
       },
       {
         "id": "middleLight",
-        "svg": "{orientation === 'left' ? \"<circle cx='12' cy='34' r='6' fill='{middleLight}' stroke='#000' stroke-width='1' transform='skewY(-15) scale(1, 0.9)'/>\" : \"<circle cx='12' cy='29' r='6' fill='{middleLight}' stroke='#000' stroke-width='1' transform='skewY(15) scale(1, 0.9)'/>\"}"
-      },
-      {
-        "id": "topLight",
-        "svg": "{orientation === 'left' ? \"<circle cx='12' cy='10' r='6' fill='{topLight}' stroke='#000' stroke-width='1' transform='translate(12 10) skewY(-15) scale(1 0.9) translate(-12 -10)'/>\" : \"<circle cx='12' cy='10' r='6' fill='{topLight}' stroke='#000' stroke-width='1' transform='translate(12 10) skewY(15) scale(1 0.9) translate(-12 -10)'/>\"}"
-      },
-      {
-        "id": "middleLight",
-        "svg": "{orientation === 'left' ? \"<circle cx='12' cy='24' r='6' fill='{middleLight}' stroke='#000' stroke-width='1' transform='translate(12 24) skewY(-15) scale(1 0.9) translate(-12 -24)'/>\" : \"<circle cx='12' cy='24' r='6' fill='{middleLight}' stroke='#000' stroke-width='1' transform='translate(12 24) skewY(15) scale(1 0.9) translate(-12 -24)'/>\"}"
+        "svg": "{orientation === 'left' ? \"<circle cx='12' cy='34' r='6' fill='{middleLight}' stroke='#000' stroke-width='1' transform='translate(12,34) skewY(-15) scale(1,0.9) translate(-12,-34)'/>\" : \"<circle cx='12' cy='29' r='6' fill='{middleLight}' stroke='#000' stroke-width='1' transform='translate(12,29) skewY(15) scale(1,0.9) translate(-12,-29)'/>\"}"
       },
       {
         "id": "bottomLight",
-        "svg": "{orientation === 'left' ? \"<circle cx='12' cy='38' r='6' fill='{bottomLight}' stroke='#000' stroke-width='1' transform='translate(12 38) skewY(-15) scale(1 0.9) translate(-12 -38)'/>\" : \"<circle cx='12' cy='38' r='6' fill='{bottomLight}' stroke='#000' stroke-width='1' transform='translate(12 38) skewY(15) scale(1 0.9) translate(-12 -38)'/>\"}"
+        "svg": "{orientation === 'left' ? \"<circle cx='12' cy='48' r='6' fill='{bottomLight}' stroke='#000' stroke-width='1' transform='translate(12,48) skewY(-15) scale(1,0.9) translate(-12,-48)'/>\" : \"<circle cx='12' cy='43' r='6' fill='{bottomLight}' stroke='#000' stroke-width='1' transform='translate(12,43) skewY(15) scale(1,0.9) translate(-12,-43)'/>\"}"
       },
+      {
+        "id": "signalPole",
+        "svg": "<line x1='12' y1='53' x2='12' y2='80' stroke='#000' stroke-width='4' vector-effect='non-scaling-stroke'/>",
+        "textRegions": [
+          {
+            "id": "signalId",
+            "x": 0,
+            "y": 0,
             "width": 18,
             "height": 8,
             "text": "",
