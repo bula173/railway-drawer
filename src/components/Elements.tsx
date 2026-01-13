@@ -1073,6 +1073,18 @@ export function generateSVGFromElements(shapeElements: ShapeElement[], elementPr
     let svg = element.svg;
 
     if (elementProperties) {
+      // Helper function to resolve placeholders in a string
+      const resolvePlaceholders = (str: string): string => {
+        return str.replace(/\{([^}]+)\}/g, (_match, expr) => {
+          const trimmed = expr.trim();
+          if (/^[a-zA-Z0-9_]+$/.test(trimmed)) {
+            const val = elementProperties[trimmed];
+            return val !== undefined && val !== null ? String(val) : '';
+          }
+          return '';
+        });
+      };
+
       // Replace all { ... } patterns. Supports simple placeholders like {topLight}
       // and a basic ternary expression for orientation like:
       // {orientation === 'left' ? "<polygon .../>" : "<polygon .../>"}
@@ -1087,7 +1099,9 @@ export function generateSVGFromElements(shapeElements: ShapeElement[], elementPr
           const leftVal = ternaryMatch[3];
           const rightVal = ternaryMatch[4];
           const actual = elementProperties[key];
-          return actual === expected ? leftVal : rightVal;
+          const selectedVal = actual === expected ? leftVal : rightVal;
+          // Resolve any nested placeholders in the selected value
+          return resolvePlaceholders(selectedVal);
         }
 
         // Simple placeholder fallback: {key}
@@ -1096,16 +1110,6 @@ export function generateSVGFromElements(shapeElements: ShapeElement[], elementPr
           return val !== undefined && val !== null ? String(val) : '';
         }
 
-        return '';
-      });
-
-      // Run placeholder substitution again to handle nested placeholders within ternary results
-      svg = svg.replace(/\{([^}]+)\}/g, (_match, expr) => {
-        const trimmed = expr.trim();
-        if (/^[a-zA-Z0-9_]+$/.test(trimmed)) {
-          const val = elementProperties[trimmed];
-          return val !== undefined && val !== null ? String(val) : '';
-        }
         return '';
       });
     }
