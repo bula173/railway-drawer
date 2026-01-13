@@ -860,7 +860,7 @@
       },
       {
         "id": "orientationIndicator",
-        "svg": "{orientation === 'left' ? \"<g transform='rotate(-8 12 24)' style='filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.35));'><rect x='2' y='2' width='20' height='44' rx='2' fill='#ddd' stroke='#000' stroke-width='1'/><circle cx='12' cy='12' r='6' fill='{topLight}' stroke='#000' stroke-width='1'/><circle cx='12' cy='24' r='6' fill='{middleLight}' stroke='#000' stroke-width='1'/><circle cx='12' cy='36' r='6' fill='{bottomLight}' stroke='#000' stroke-width='1'/></g>\" : \"<g transform='rotate(8 12 24)' style='filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.35));'><rect x='2' y='2' width='20' height='44' rx='2' fill='#ddd' stroke='#000' stroke-width='1'/><circle cx='12' cy='12' r='6' fill='{topLight}' stroke='#000' stroke-width='1'/><circle cx='12' cy='24' r='6' fill='{middleLight}' stroke='#000' stroke-width='1'/><circle cx='12' cy='36' r='6' fill='{bottomLight}' stroke='#000' stroke-width='1'/></g>\"}"
+        "svg": "{orientation === 'left' ? \"<g style='filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.35));'><rect x='2' y='2' width='8' height='20' rx='1' fill='#ddd' stroke='#000' stroke-width='1'/><line x1='10' y1='12' x2='14' y2='12' stroke='#000' stroke-width='2' stroke-linecap='round'/><line x1='14' y1='12' x2='14' y2='40' stroke='#000' stroke-width='2'/></g>\" : \"<g style='filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.35));'><rect x='14' y='2' width='8' height='20' rx='1' fill='#ddd' stroke='#000' stroke-width='1'/><line x1='10' y1='12' x2='14' y2='12' stroke='#000' stroke-width='2' stroke-linecap='round'/><line x1='10' y1='12' x2='10' y2='40' stroke='#000' stroke-width='2'/></g>\"}"
       },
       {
         "id": "signalPole",
@@ -875,10 +875,10 @@
             "text": "",
             "fontSize": 8,
             "align": "center"
-          }
-        ]
-      }
-    ]
+          {
+            "id": "orientationIndicator",
+            "svg": "{orientation === 'left' ? \"<g style='filter: drop-shadow(0px 3px 5px rgba(0,0,0,0.35));'><rect x='6' y='2' width='8' height='16' rx='1' fill='#fff' stroke='#000' stroke-width='2'/><line x1='14' y1='10' x2='18' y2='10' stroke='#000' stroke-width='2' stroke-linecap='round'/><line x1='18' y1='10' x2='18' y2='40' stroke='#000' stroke-width='2'/></g>\" : \"<g style='filter: drop-shadow(0px 3px 5px rgba(0,0,0,0.35));'><rect x='18' y='2' width='8' height='16' rx='1' fill='#fff' stroke='#000' stroke-width='2'/><line x1='14' y1='10' x2='18' y2='10' stroke='#000' stroke-width='2' stroke-linecap='round'/><line x1='14' y1='10' x2='14' y2='40' stroke='#000' stroke-width='2'/></g>\"}"
+          },
   },
 {
     "id": "ertms_double_balise",
@@ -2096,7 +2096,7 @@
       },
       {
         "id": "orientationIndicator",
-        "svg": "{orientation === 'left' ? \"<g transform='rotate(-10 16 20)' style='filter: drop-shadow(0px 3px 5px rgba(0,0,0,0.35));'><rect x='8' y='4' width='16' height='24' rx='2' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/><circle cx='16' cy='12' r='5' fill='{whiteLight}' stroke='#000' stroke-width='1'/></g>\" : \"<g transform='rotate(10 16 20)' style='filter: drop-shadow(0px 3px 5px rgba(0,0,0,0.35));'><rect x='8' y='4' width='16' height='24' rx='2' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/><circle cx='16' cy='12' r='5' fill='{whiteLight}' stroke='#000' stroke-width='1'/></g>\"}"
+        "svg": "{orientation === 'left' ? \"<polygon points='8,32 14,32 11,36' fill='#000' style='filter: drop-shadow(0px 2px 3px rgba(0,0,0,0.35));'/>\" : \"<polygon points='24,32 18,32 21,36' fill='#000' style='filter: drop-shadow(0px 2px 3px rgba(0,0,0,0.35));'/>\"}"
       },
       {
         "id": "signalPole",
