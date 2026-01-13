@@ -25,6 +25,7 @@ import { EditMenu } from "./components/EditMenu";
 import type { DrawElement } from "./components/Elements";
 import type { DrawTool, Layer } from "./types";
 import { logger } from "./utils/logger";
+import { saveToLocalStorage, loadFromLocalStorage, hasSavedProject } from "./utils/storageManager";
 
 /** @brief Grid size for snap-to-grid functionality */
 const GRID_SIZE = 40;
@@ -192,6 +193,22 @@ const RailwayDrawerApp = () => {
   const [zoom, setZoom] = useState(1);
 
   // Update the stable ref when active tab changes
+  useEffect(() => {
+    // Load from localStorage on first mount
+    const savedProject = loadFromLocalStorage();
+    if (savedProject) {
+      setTabs(savedProject.pages);
+      setProjectName(savedProject.projectName);
+      if (savedProject.pages.length > 0) {
+        setActiveTabId(savedProject.pages[0].id);
+      }
+      logger.debug("RailwayDrawerApp", "Loaded project from localStorage", {
+        pagesCount: savedProject.pages.length,
+        timestamp: new Date(savedProject.timestamp).toLocaleString()
+      });
+    }
+  }, []); // Only run on mount
+
   useEffect(() => {
     const newRef = getCurrentDrawAreaRef() || null;
     logger.debug("RailwayDrawerApp", "Active tab changed", {
@@ -932,6 +949,23 @@ const RailwayDrawerApp = () => {
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [activeMenu]);
+
+  /**
+   * @brief Auto-save to localStorage whenever tabs or project name changes
+   * @details Saves all pages to localStorage for quick recovery
+   */
+  useEffect(() => {
+    // Create a debounced save function
+    const timeoutId = setTimeout(() => {
+      saveToLocalStorage(tabs, projectName);
+      logger.debug("RailwayDrawerApp", "Auto-saved to localStorage", {
+        pagesCount: tabs.length,
+        timestamp: new Date().toLocaleString()
+      });
+    }, 1000); // Debounce by 1 second
+
+    return () => clearTimeout(timeoutId);
+  }, [tabs, projectName]);
 
   /**
    * @brief Increases zoom level by 20% up to maximum of 500%

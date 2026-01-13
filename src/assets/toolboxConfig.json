@@ -858,11 +858,11 @@
         "textRegions": [
           {
             "id": "signalId",
-            "x": 3,
-            "y": 82,
+            "x": 0,
+            "y": 0,
             "width": 18,
             "height": 8,
-            "text": "S1",
+            "text": "",
             "fontSize": 8,
             "align": "center"
           }
