@@ -78,6 +78,7 @@ const RailwayDrawerApp = () => {
   const isOpeningFileRef = useRef(false);
   const isOpeningToolboxRef = useRef(false);
   const isSavingRef = useRef(false);
+  const isExportingRef = useRef(false);
 
   // Selected element state
   const [selectedElement, setSelectedElement] = useState<DrawElement | undefined>(undefined);
@@ -670,61 +671,76 @@ const RailwayDrawerApp = () => {
    * @details Supports PNG, JPG, SVG, and PDF formats using html-to-image and jsPDF libraries
    */
   const exportToImage = (format: "png" | "jpg" | "svg" | "pdf") => {
-    const currentDrawAreaRef = getCurrentDrawAreaRef();
-    const node = currentDrawAreaRef?.getSvgElement?.();
-    if (!node) return;
-    
-    // Handle SVG export directly
-    if (format === "svg") {
-      const serializer = new XMLSerializer();
-      const svgString = serializer.serializeToString(node);
-      const blob = new Blob([svgString], { type: "image/svg+xml" });
-      const link = document.createElement("a");
-      link.href = URL.createObjectURL(blob);
-      link.download = "railway_drawing.svg";
-      document.body.appendChild(link);
-      link.dispatchEvent(new MouseEvent('click', { bubbles: true }));
-      document.body.removeChild(link);
-      return;
-    }
-    
-    // Handle PDF export
-    if (format === "pdf") {
-      import("jspdf").then(jsPDF => {
-        import("html-to-image").then(htmlToImage => {
-          htmlToImage.toSvg(node as unknown as HTMLElement).then((dataUrl: string) => {
-            const pdf = new jsPDF.jsPDF({
-              orientation: "landscape",
-              unit: "px",
-              format: [node.width.baseVal.value, node.height.baseVal.value],
-            });
-            pdf.addImage(
-              dataUrl,
-              "PNG",
-              0,
-              0,
-              node.width.baseVal.value,
-              node.height.baseVal.value
-            );
-            pdf.save("railway_drawing.pdf");
-          });
-        });
-      });
-      return;
-    }
-    
-    // Handle PNG/JPG export
-    import("html-to-image").then(htmlToImage => {
-      const fn = format === "jpg" ? htmlToImage.toJpeg : htmlToImage.toPng;
-      fn(node as unknown as HTMLElement).then((dataUrl: string) => {
+    // Prevent multiple simultaneous exports
+    if (isExportingRef.current) return;
+    isExportingRef.current = true;
+
+    try {
+      const currentDrawAreaRef = getCurrentDrawAreaRef();
+      const node = currentDrawAreaRef?.getSvgElement?.();
+      if (!node) {
+        isExportingRef.current = false;
+        return;
+      }
+      
+      // Handle SVG export directly
+      if (format === "svg") {
+        const serializer = new XMLSerializer();
+        const svgString = serializer.serializeToString(node);
+        const blob = new Blob([svgString], { type: "image/svg+xml" });
         const link = document.createElement("a");
-        link.href = dataUrl;
-        link.download = `railway_drawing.${format}`;
+        link.href = URL.createObjectURL(blob);
+        link.download = "railway_drawing.svg";
         document.body.appendChild(link);
         link.dispatchEvent(new MouseEvent('click', { bubbles: true }));
         document.body.removeChild(link);
+        isExportingRef.current = false;
+        return;
+      }
+      
+      // Handle PDF export
+      if (format === "pdf") {
+        import("jspdf").then(jsPDF => {
+          import("html-to-image").then(htmlToImage => {
+            htmlToImage.toSvg(node as unknown as HTMLElement).then((dataUrl: string) => {
+              const pdf = new jsPDF.jsPDF({
+                orientation: "landscape",
+                unit: "px",
+                format: [node.width.baseVal.value, node.height.baseVal.value],
+              });
+              pdf.addImage(
+                dataUrl,
+                "PNG",
+                0,
+                0,
+                node.width.baseVal.value,
+                node.height.baseVal.value
+              );
+              pdf.save("railway_drawing.pdf");
+              isExportingRef.current = false;
+            });
+          });
+        });
+        return;
+      }
+      
+      // Handle PNG/JPG export
+      import("html-to-image").then(htmlToImage => {
+        const fn = format === "jpg" ? htmlToImage.toJpeg : htmlToImage.toPng;
+        fn(node as unknown as HTMLElement).then((dataUrl: string) => {
+          const link = document.createElement("a");
+          link.href = dataUrl;
+          link.download = `railway_drawing.${format}`;
+          document.body.appendChild(link);
+          link.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+          document.body.removeChild(link);
+          isExportingRef.current = false;
+        });
       });
-    });
+    } catch (error) {
+      isExportingRef.current = false;
+      throw error;
+    }
   };
 
   /**
