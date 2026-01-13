@@ -2054,35 +2054,45 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
   }
 
   /**
-   * Renders the grid lines for the SVG area.
+   * Renders the grid lines for the SVG area with major and minor grid lines.
    * @function
-   * @returns {JSX.Element} The rendered grid.
+   * @returns {JSX.Element} The rendered grid with major (darker) and minor (lighter) lines.
    */
   function renderGrid() {
+    const MAJOR_GRID_INTERVAL = 5; // Every 5th line is major
+    
     return (
       <g>
-        {Array.from({ length: Math.ceil(GRID_WIDTH / GRID_SIZE) }).map((_, i) => (
-          <line
-            key={`v-${i}`}
-            x1={i * GRID_SIZE}
-            y1={0}
-            x2={i * GRID_SIZE}
-            y2={GRID_HEIGHT}
-            stroke="#e0e0e0"
-            strokeWidth={1}
-          />
-        ))}
-        {Array.from({ length: Math.ceil(GRID_HEIGHT / GRID_SIZE) }).map((_, i) => (
-          <line
-            key={`h-${i}`}
-            x1={0}
-            y1={i * GRID_SIZE}
-            x2={GRID_WIDTH}
-            y2={i * GRID_SIZE}
-            stroke="#e0e0e0"
-            strokeWidth={1}
-          />
-        ))}
+        {/* Vertical lines */}
+        {Array.from({ length: Math.ceil(GRID_WIDTH / GRID_SIZE) }).map((_, i) => {
+          const isMajor = i % MAJOR_GRID_INTERVAL === 0;
+          return (
+            <line
+              key={`v-${i}`}
+              x1={i * GRID_SIZE}
+              y1={0}
+              x2={i * GRID_SIZE}
+              y2={GRID_HEIGHT}
+              stroke={isMajor ? '#c0c0c0' : '#e8e8e8'}
+              strokeWidth={isMajor ? 1.5 : 1}
+            />
+          );
+        })}
+        {/* Horizontal lines */}
+        {Array.from({ length: Math.ceil(GRID_HEIGHT / GRID_SIZE) }).map((_, i) => {
+          const isMajor = i % MAJOR_GRID_INTERVAL === 0;
+          return (
+            <line
+              key={`h-${i}`}
+              x1={0}
+              y1={i * GRID_SIZE}
+              x2={GRID_WIDTH}
+              y2={i * GRID_SIZE}
+              stroke={isMajor ? '#c0c0c0' : '#e8e8e8'}
+              strokeWidth={isMajor ? 1.5 : 1}
+            />
+          );
+        })}
       </g>
     );
   }
