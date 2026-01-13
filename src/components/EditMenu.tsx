@@ -24,6 +24,8 @@ interface EditMenuProps {
   onDelete: () => void;
   /** Select all callback */
   onSelectAll: () => void;
+  /** Optional external ref to the menu button for programmatic control */
+  buttonRef?: React.Ref<HTMLButtonElement>;
 }
 
 /**
@@ -42,6 +44,7 @@ export const EditMenu: React.FC<EditMenuProps> = ({
   onPaste,
   onDelete,
   onSelectAll
+  , buttonRef
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -55,6 +58,7 @@ export const EditMenu: React.FC<EditMenuProps> = ({
   return (
     <div className="edit-menu">
       <button 
+        ref={buttonRef}
         className="edit-menu-button"
         onClick={() => setIsOpen(!isOpen)}
         aria-haspopup="true"

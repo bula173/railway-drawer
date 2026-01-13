@@ -198,7 +198,7 @@ const Toolbox: React.FC<ToolboxProps> = ({
                 <span className="text-xs text-slate-400 ml-auto">({items.length})</span>
               </button>
               {!collapsedGroups[group] && (
-                <div className="grid grid-cols-4 gap-1.5 mt-2">
+                <div className="mt-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, 40px)', gap: '8px', justifyContent: 'start', paddingLeft: '8px' }}>
                   {items.map((item) => (
                     <div
                       key={item.id}
@@ -214,14 +214,14 @@ const Toolbox: React.FC<ToolboxProps> = ({
                           })
                         );
                         
-                        // Create a custom drag image
+                        // Create a custom drag image (smaller)
                         const dragImageContainer = document.createElement('div');
                         dragImageContainer.style.cssText = `
                           position: absolute;
                           top: -1000px;
                           left: -1000px;
-                          width: 56px;
-                          height: 56px;
+                          width: 36px;
+                          height: 36px;
                           background: white;
                           border: 2px solid #3b82f6;
                           border-radius: 6px;
@@ -238,18 +238,18 @@ const Toolbox: React.FC<ToolboxProps> = ({
                           if (item.shapeElements && item.shapeElements.length > 0) {
                             const iconContent = generateIconFromShapeElements(item.shapeElements);
                             if (iconContent) {
-                              iconHtml = `<svg width="28" height="28" viewBox="0 0 ${item.width || 48} ${item.height || 48}">${iconContent}</svg>`;
+                              iconHtml = `<svg width="16" height="16" viewBox="0 0 ${item.width || 48} ${item.height || 48}">${iconContent}</svg>`;
                             }
                           } else if (item.shape) {
                             iconHtml = `<svg width="28" height="28" viewBox="0 0 ${item.width || 48} ${item.height || 48}">${item.shape}</svg>`;
                           }
                         } else if (item.iconSvg) {
-                          iconHtml = `<div style="width: 28px; height: 28px; display: flex; align-items: center; justify-content: center;">${item.iconSvg}</div>`;
+                            iconHtml = `<div style="width: 16px; height: 16px; display: flex; align-items: center; justify-content: center;">${item.iconSvg}</div>`;
                         }
                         
                         dragImageContainer.innerHTML = iconHtml;
                         document.body.appendChild(dragImageContainer);
-                        e.dataTransfer.setDragImage(dragImageContainer, 28, 28);
+                        e.dataTransfer.setDragImage(dragImageContainer, 18, 18);
                         
                         setTimeout(() => {
                           if (document.body.contains(dragImageContainer)) {
@@ -258,7 +258,7 @@ const Toolbox: React.FC<ToolboxProps> = ({
                         }, 100);
                       }}
                       onDragEnd={() => setDraggedItem(null)}
-                      className="aspect-square rounded-md bg-slate-50 border border-slate-200 flex items-center justify-center shadow-xs cursor-grab hover:shadow-md hover:border-blue-300 hover:bg-blue-50 transition-all duration-150 relative group"
+                      className="w-[40px] h-[40px] rounded-md bg-slate-50 border border-slate-200 flex items-center justify-center shadow-xs cursor-grab hover:shadow-md hover:border-blue-300 hover:bg-blue-50 transition-all duration-150 relative group"
                       title={item.name}
                     >
                       {/* Tooltip */}
@@ -274,8 +274,8 @@ const Toolbox: React.FC<ToolboxProps> = ({
                             if (iconContent) {
                               return (
                                 <svg
-                                  width={20}
-                                  height={20}
+                                  width={16}
+                                  height={16}
                                   viewBox={`0 0 ${item.width || 48} ${item.height || 48}`}
                                   dangerouslySetInnerHTML={{ __html: iconContent }}
                                 />
@@ -284,8 +284,8 @@ const Toolbox: React.FC<ToolboxProps> = ({
                           } else if (item.shape) {
                             return (
                               <svg
-                                width={20}
-                                height={20}
+                                width={16}
+                                height={16}
                                 viewBox={`0 0 ${item.width || 48} ${item.height || 48}`}
                                 dangerouslySetInnerHTML={{ __html: item.shape }}
                               />
@@ -295,7 +295,7 @@ const Toolbox: React.FC<ToolboxProps> = ({
                         } else if (item.iconSvg) {
                           return (
                             <span
-                              style={{ display: "inline-block", width: 20, height: 20 }}
+                              style={{ display: "inline-block", width: 16, height: 16 }}
                               dangerouslySetInnerHTML={{ __html: item.iconSvg }}
                             />
                           );
