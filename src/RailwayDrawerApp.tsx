@@ -594,7 +594,9 @@ const RailwayDrawerApp = () => {
       const link = document.createElement("a");
       link.href = URL.createObjectURL(blob);
       link.download = `${projectName}.json`;
-      link.click();
+      document.body.appendChild(link);
+      link.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+      document.body.removeChild(link);
       
       // Clean up and reset flag
       setTimeout(() => {
@@ -676,7 +678,9 @@ const RailwayDrawerApp = () => {
       const link = document.createElement("a");
       link.href = URL.createObjectURL(blob);
       link.download = "railway_drawing.svg";
-      link.click();
+      document.body.appendChild(link);
+      link.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+      document.body.removeChild(link);
       return;
     }
     
@@ -712,7 +716,9 @@ const RailwayDrawerApp = () => {
         const link = document.createElement("a");
         link.href = dataUrl;
         link.download = `railway_drawing.${format}`;
-        link.click();
+        document.body.appendChild(link);
+        link.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+        document.body.removeChild(link);
       });
     });
   };
@@ -731,7 +737,9 @@ const RailwayDrawerApp = () => {
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
     link.download = "toolbox_config.json";
-    link.click();
+    document.body.appendChild(link);
+    link.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+    document.body.removeChild(link);
   };
 
   /**
