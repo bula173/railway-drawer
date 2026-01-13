@@ -1080,7 +1080,7 @@ export function generateSVGFromElements(shapeElements: ShapeElement[], elementPr
         const trimmed = expr.trim();
 
         // Ternary pattern check: key === 'value' ? "leftSvg" : "rightSvg"
-        const ternaryMatch = trimmed.match(/^([a-zA-Z0-9_]+)\s*===\s*['\"]([^'\"]+)['\"]\s*\?\s*"([\s\S]*)"\s*:\s*"([\s\S]*)"$/);
+        const ternaryMatch = trimmed.match(/^([a-zA-Z0-9_]+)\s*===\s*['"]([^'"]+)['"]\s*\?\s*"([\s\S]*)"\s*:\s*"([\s\S]*)"$/);
         if (ternaryMatch) {
           const key = ternaryMatch[1];
           const expected = ternaryMatch[2];

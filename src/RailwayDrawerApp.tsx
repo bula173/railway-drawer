@@ -1516,7 +1516,10 @@ const RailwayDrawerApp = () => {
                   {({ active }) => (
                     <button
                       onClick={() => {
-                        currentDrawAreaRefObject.current?.handleSendToFront(currentDrawAreaRefObject.current?.getSelectedElementIds()[0]!);
+                        const selectedId = currentDrawAreaRefObject.current?.getSelectedElementIds()[0];
+                        if (selectedId) {
+                          currentDrawAreaRefObject.current?.handleSendToFront(selectedId);
+                        }
                         updateEditMenuState();
                       }}
                       disabled={!editMenuState.hasSelection}
@@ -1532,7 +1535,10 @@ const RailwayDrawerApp = () => {
                   {({ active }) => (
                     <button
                       onClick={() => {
-                        currentDrawAreaRefObject.current?.handleSendToBack(currentDrawAreaRefObject.current?.getSelectedElementIds()[0]!);
+                        const selectedId = currentDrawAreaRefObject.current?.getSelectedElementIds()[0];
+                        if (selectedId) {
+                          currentDrawAreaRefObject.current?.handleSendToBack(selectedId);
+                        }
                         updateEditMenuState();
                       }}
                       disabled={!editMenuState.hasSelection}
