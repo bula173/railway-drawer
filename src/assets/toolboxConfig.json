@@ -1,7 +1,7 @@
-[
-  {
-    "id": "rectangle_general",
-    "name": "Rectangle",
+      {
+        "id": "signalBox",
+        "svg": "{orientation === 'left' ? \"<g transform='rotate(-12 12 24)' vector-effect='non-scaling-stroke'><path d='M2 6 L12 2 L22 6 L22 44 L2 44 Z' fill='#e6e6e6' stroke='#000' stroke-width='0.8'/><path d='M12 2 L22 6 L18 44 L8 44 Z' fill='#d0d0d0' stroke='none' opacity='0.6'/></g>\" : \"<g transform='rotate(12 12 24)' vector-effect='non-scaling-stroke'><path d='M2 6 L12 2 L22 6 L22 44 L2 44 Z' fill='#e6e6e6' stroke='#000' stroke-width='0.8'/><path d='M12 2 L22 6 L18 44 L8 44 Z' fill='#d0d0d0' stroke='none' opacity='0.6'/></g>\"}"
+      },
     "type": "custom",
     "group": "General",
     "iconSvg": "default",
@@ -11,10 +11,10 @@
       {
         "id": "rectShapeGeneral",
         "svg": "<rect x='2' y='2' width='44' height='28' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
-      }
-    ]
-  },
-  {
+      {
+        "id": "signalBox",
+        "svg": "{orientation === 'left' ? \"<g transform='rotate(-12 16 16)' vector-effect='non-scaling-stroke'><path d='M8 8 L14 4 L24 8 L24 28 L8 28 Z' fill='#ffffff' stroke='#000' stroke-width='1'/><path d='M14 4 L24 8 L22 28 L12 28 Z' fill='#e6e6e6' stroke='none' opacity='0.6'/></g>\" : \"<g transform='rotate(12 16 16)' vector-effect='non-scaling-stroke'><path d='M8 8 L14 4 L24 8 L24 28 L8 28 Z' fill='#ffffff' stroke='#000' stroke-width='1'/><path d='M14 4 L24 8 L22 28 L12 28 Z' fill='#e6e6e6' stroke='none' opacity='0.6'/></g>\"}"
+      },
     "id": "rounded_rectangle",
     "name": "Rounded Rectangle",
     "type": "custom",
@@ -844,7 +844,7 @@
     "shapeElements": [
       {
         "id": "signalBox",
-        "svg": "<g vector-effect='non-scaling-stroke'><path d='M2 6 L12 2 L22 6 L22 44 L2 44 Z' fill='#e6e6e6' stroke='#000' stroke-width='0.8'/><path d='M12 2 L22 6 L18 44 L8 44 Z' fill='#d0d0d0' stroke='none' opacity='0.6'/><rect x='4' y='8' width='14' height='32' rx='2' fill='none' stroke='none'/></g>"
+        "svg": "<rect x='2' y='2' width='20' height='44' rx='2' fill='#ddd' stroke='#000' stroke-width='1'/>"
       },
       {
         "id": "topLight",
@@ -2088,7 +2088,7 @@
     "shapeElements": [
       {
         "id": "signalBox",
-        "svg": "<g vector-effect='non-scaling-stroke'><path d='M8 8 L14 4 L24 8 L24 28 L8 28 Z' fill='#ffffff' stroke='#000' stroke-width='1'/><path d='M14 4 L24 8 L22 28 L12 28 Z' fill='#e6e6e6' stroke='none' opacity='0.6'/></g>"
+        "svg": "<rect x='8' y='4' width='16' height='24' rx='2' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       },
       {
         "id": "whiteLight",
