@@ -262,6 +262,12 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
   /** @brief State to track pending canvas expansion bounds */
   const [expansionBounds, setExpansionBounds] = useState<{ maxX: number; maxY: number; minX?: number; minY?: number } | null>(null);
 
+  /** @brief Alignment guides state for auto-positioning */
+  const [alignmentGuides, setAlignmentGuides] = useState<{
+    verticalLines: number[];
+    horizontalLines: number[];
+  }>({ verticalLines: [], horizontalLines: [] });
+
   /**
    * @brief Use effect to call parent's onCanvasExpand when bounds change
    * This defers the parent state update out of the event handler to prevent React warnings
@@ -330,6 +336,89 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       setExpansionBounds({ maxX, maxY, minX, minY });
     }
   }, [onCanvasExpand, GRID_WIDTH, GRID_HEIGHT, draggingId]);
+
+  /**
+   * @brief Detect alignment guides when dragging elements
+   * @details Finds elements within 20px and suggests alignment
+   * @returns Object with suggested position adjustments and visual guides
+   */
+  const detectAlignmentGuides = useCallback((draggedElements: DrawElement[], allElements: DrawElement[], threshold: number = 20) => {
+    const verticalLines: number[] = [];
+    const horizontalLines: number[] = [];
+    let bestAlignmentX: number | null = null;
+    let bestAlignmentY: number | null = null;
+    let bestDistanceX = threshold;
+    let bestDistanceY = threshold;
+
+    // Get bounds of dragged elements
+    let draggedMinX = Infinity, draggedMaxX = -Infinity;
+    let draggedMinY = Infinity, draggedMaxY = -Infinity;
+
+    draggedElements.forEach(el => {
+      const minX = Math.min(el.start.x, el.end?.x || el.start.x);
+      const maxX = Math.max(el.start.x, el.end?.x || el.start.x);
+      const minY = Math.min(el.start.y, el.end?.y || el.start.y);
+      const maxY = Math.max(el.start.y, el.end?.y || el.start.y);
+      
+      draggedMinX = Math.min(draggedMinX, minX);
+      draggedMaxX = Math.max(draggedMaxX, maxX);
+      draggedMinY = Math.min(draggedMinY, minY);
+      draggedMaxY = Math.max(draggedMaxY, maxY);
+    });
+
+    // Check against other elements for alignment
+    allElements.forEach(el => {
+      // Skip dragged elements
+      if (draggedElements.some(d => d.id === el.id)) return;
+
+      const elementMinX = Math.min(el.start.x, el.end?.x || el.start.x);
+      const elementMaxX = Math.max(el.start.x, el.end?.x || el.start.x);
+      const elementMinY = Math.min(el.start.y, el.end?.y || el.start.y);
+      const elementMaxY = Math.max(el.start.y, el.end?.y || el.start.y);
+
+      // Check vertical alignments (left, center, right)
+      [elementMinX, (elementMinX + elementMaxX) / 2, elementMaxX].forEach(alignX => {
+        const distLeft = Math.abs(draggedMinX - alignX);
+        const distCenter = Math.abs((draggedMinX + draggedMaxX) / 2 - alignX);
+        const distRight = Math.abs(draggedMaxX - alignX);
+
+        [distLeft, distCenter, distRight].forEach(dist => {
+          if (dist < bestDistanceX && dist <= threshold) {
+            bestDistanceX = dist;
+            bestAlignmentX = alignX;
+            if (!verticalLines.includes(alignX)) {
+              verticalLines.push(alignX);
+            }
+          }
+        });
+      });
+
+      // Check horizontal alignments (top, center, bottom)
+      [elementMinY, (elementMinY + elementMaxY) / 2, elementMaxY].forEach(alignY => {
+        const distTop = Math.abs(draggedMinY - alignY);
+        const distCenter = Math.abs((draggedMinY + draggedMaxY) / 2 - alignY);
+        const distBottom = Math.abs(draggedMaxY - alignY);
+
+        [distTop, distCenter, distBottom].forEach(dist => {
+          if (dist < bestDistanceY && dist <= threshold) {
+            bestDistanceY = dist;
+            bestAlignmentY = alignY;
+            if (!horizontalLines.includes(alignY)) {
+              horizontalLines.push(alignY);
+            }
+          }
+        });
+      });
+    });
+
+    return {
+      verticalLines,
+      horizontalLines,
+      bestAlignmentX,
+      bestAlignmentY,
+      hasAlignment: bestAlignmentX !== null || bestAlignmentY !== null,
+    };
+  }, []);
 
   /**
    * @brief Create a deep copy of a DrawElement preserving all properties
@@ -1960,6 +2049,17 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       }
     }
 
+    // Detect alignment guides for auto-positioning
+    const draggedElements = selectedElementIds
+      .map(id => elements.find(el => el.id === id))
+      .filter((el): el is DrawElement => el !== undefined);
+    
+    const guides = detectAlignmentGuides(draggedElements, elements);
+    setAlignmentGuides({
+      verticalLines: guides.verticalLines,
+      horizontalLines: guides.horizontalLines,
+    });
+
     // Auto-scroll the parent container when dragging near edges
     const scrollableParent = svgRef.current?.parentElement;
     if (scrollableParent) {
@@ -2048,6 +2148,8 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     }
     
     setDraggingId(null);
+    // Clear alignment guides
+    setAlignmentGuides({ verticalLines: [], horizontalLines: [] });
     initialSelectedPositions.current.clear(); // Clear stored positions
     window.removeEventListener("pointermove", handlePointerMove);
     window.removeEventListener("pointerup", handlePointerUp);
@@ -2452,6 +2554,38 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
         
         {/* Grid lines */}
         {showGrid && renderGrid()}
+        
+        {/* Alignment guides for auto-positioning */}
+        <g className="alignment-guides" pointerEvents="none">
+          {/* Vertical alignment guides */}
+          {alignmentGuides.verticalLines.map((x, idx) => (
+            <line
+              key={`align-v-${idx}`}
+              x1={x}
+              y1={0}
+              x2={x}
+              y2={GRID_HEIGHT}
+              stroke="#f59e0b"
+              strokeWidth={1 / zoom}
+              strokeDasharray={`${4 / zoom},${4 / zoom}`}
+              opacity={0.6}
+            />
+          ))}
+          {/* Horizontal alignment guides */}
+          {alignmentGuides.horizontalLines.map((y, idx) => (
+            <line
+              key={`align-h-${idx}`}
+              x1={0}
+              y1={y}
+              x2={GRID_WIDTH}
+              y2={y}
+              stroke="#f59e0b"
+              strokeWidth={1 / zoom}
+              strokeDasharray={`${4 / zoom},${4 / zoom}`}
+              opacity={0.6}
+            />
+          ))}
+        </g>
         
         {/* Render all drawing elements */}
         {elements.map(el => {
