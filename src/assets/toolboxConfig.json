@@ -1002,15 +1002,15 @@
     "shapeElements": [
       {
         "id": "markerSign",
-        "svg": "<rect x='0' y='0' width='48' height='48' fill='#2d39b4' stroke='white' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<rect x='0' y='0' width='24' height='24' fill='#2d39b4' stroke='white' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       },
       {
         "id": "markerArrow",
-        "svg": "<polygon points='8,12 32,12 32,6 46,24 32,42 32,36 8,36' fill='yellow' stroke='white' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<polygon points='4,6 16,6 16,3 23,12 16,21 16,18 4,18' fill='yellow' stroke='white' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       },
       {
         "id": "markerPole",
-        "svg": "<line x1='24' y1='48' x2='24' y2='80' stroke='#000' stroke-width='4' vector-effect='non-scaling-stroke'/>"
+        "svg": "<line x1='12' y1='24' x2='12' y2='40' stroke='#000' stroke-width='4' vector-effect='non-scaling-stroke'/>"
       }
     ]
   },
