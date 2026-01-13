@@ -2056,43 +2056,62 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
   /**
    * Renders the grid lines for the SVG area with major and minor grid lines.
    * @function
-   * @returns {JSX.Element} The rendered grid with major (darker) and minor (lighter) lines.
+   * @returns {JSX.Element} The rendered grid with major (50x50, darker) and minor (10x10, lighter) lines.
    */
   function renderGrid() {
-    const MAJOR_GRID_INTERVAL = 5; // Every 5th line is major
+    const MINOR_GRID_SIZE = 10; // Lighter grid every 10px
+    const MAJOR_GRID_SIZE = 50; // Darker grid every 50px
     
     return (
       <g>
-        {/* Vertical lines */}
-        {Array.from({ length: Math.ceil(GRID_WIDTH / GRID_SIZE) }).map((_, i) => {
-          const isMajor = i % MAJOR_GRID_INTERVAL === 0;
-          return (
-            <line
-              key={`v-${i}`}
-              x1={i * GRID_SIZE}
-              y1={0}
-              x2={i * GRID_SIZE}
-              y2={GRID_HEIGHT}
-              stroke={isMajor ? '#c0c0c0' : '#e8e8e8'}
-              strokeWidth={isMajor ? 1.5 : 1}
-            />
-          );
-        })}
-        {/* Horizontal lines */}
-        {Array.from({ length: Math.ceil(GRID_HEIGHT / GRID_SIZE) }).map((_, i) => {
-          const isMajor = i % MAJOR_GRID_INTERVAL === 0;
-          return (
-            <line
-              key={`h-${i}`}
-              x1={0}
-              y1={i * GRID_SIZE}
-              x2={GRID_WIDTH}
-              y2={i * GRID_SIZE}
-              stroke={isMajor ? '#c0c0c0' : '#e8e8e8'}
-              strokeWidth={isMajor ? 1.5 : 1}
-            />
-          );
-        })}
+        {/* Minor grid lines - horizontal (10px intervals) */}
+        {Array.from({ length: Math.ceil(GRID_HEIGHT / MINOR_GRID_SIZE) }).map((_, i) => (
+          <line
+            key={`minor-h-${i}`}
+            x1={0}
+            y1={i * MINOR_GRID_SIZE}
+            x2={GRID_WIDTH}
+            y2={i * MINOR_GRID_SIZE}
+            stroke="#f0f0f0"
+            strokeWidth={0.5}
+          />
+        ))}
+        {/* Minor grid lines - vertical (10px intervals) */}
+        {Array.from({ length: Math.ceil(GRID_WIDTH / MINOR_GRID_SIZE) }).map((_, i) => (
+          <line
+            key={`minor-v-${i}`}
+            x1={i * MINOR_GRID_SIZE}
+            y1={0}
+            x2={i * MINOR_GRID_SIZE}
+            y2={GRID_HEIGHT}
+            stroke="#f0f0f0"
+            strokeWidth={0.5}
+          />
+        ))}
+        {/* Major grid lines - horizontal (50px intervals) */}
+        {Array.from({ length: Math.ceil(GRID_HEIGHT / MAJOR_GRID_SIZE) }).map((_, i) => (
+          <line
+            key={`major-h-${i}`}
+            x1={0}
+            y1={i * MAJOR_GRID_SIZE}
+            x2={GRID_WIDTH}
+            y2={i * MAJOR_GRID_SIZE}
+            stroke="#d0d0d0"
+            strokeWidth={1}
+          />
+        ))}
+        {/* Major grid lines - vertical (50px intervals) */}
+        {Array.from({ length: Math.ceil(GRID_WIDTH / MAJOR_GRID_SIZE) }).map((_, i) => (
+          <line
+            key={`major-v-${i}`}
+            x1={i * MAJOR_GRID_SIZE}
+            y1={0}
+            x2={i * MAJOR_GRID_SIZE}
+            y2={GRID_HEIGHT}
+            stroke="#d0d0d0"
+            strokeWidth={1}
+          />
+        ))}
       </g>
     );
   }
