@@ -614,6 +614,10 @@ const RailwayDrawerApp = () => {
   const loadFromJson = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
+      // Extract filename without extension and set as project name
+      const filenameWithoutExtension = file.name.replace(/\.[^/.]+$/, '');
+      setProjectName(filenameWithoutExtension);
+      
       const reader = new FileReader();
       reader.onload = (ev) => {
         const content = ev.target?.result;
