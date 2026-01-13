@@ -1098,6 +1098,16 @@ export function generateSVGFromElements(shapeElements: ShapeElement[], elementPr
 
         return '';
       });
+
+      // Run placeholder substitution again to handle nested placeholders within ternary results
+      svg = svg.replace(/\{([^}]+)\}/g, (_match, expr) => {
+        const trimmed = expr.trim();
+        if (/^[a-zA-Z0-9_]+$/.test(trimmed)) {
+          const val = elementProperties[trimmed];
+          return val !== undefined && val !== null ? String(val) : '';
+        }
+        return '';
+      });
     }
 
     return svg;
