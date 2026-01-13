@@ -1000,11 +1000,6 @@ const RailwayDrawerApp = () => {
       
       {/* --- Modern Menu Bar --- */}
       <div className="flex bg-white border-b border-slate-200 h-10 items-stretch relative z-50 shadow-sm menu-bar">
-        {/* App Icon */}
-        <div className="flex items-center px-3 border-r border-slate-200 bg-slate-50">
-          <Train size={18} className="text-blue-600" />
-        </div>
-        
         {/* File Menu */}
         <Menu as="div" className="relative">
           <Menu.Button className="bg-white hover:bg-slate-50 text-slate-700 border-none px-4 h-10 text-sm font-medium cursor-pointer outline-none border-r border-slate-200 transition-colors duration-200 flex items-center">
