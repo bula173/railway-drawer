@@ -860,7 +860,7 @@
       },
       {
         "id": "orientationIndicator",
-        "svg": "{orientation === 'left' ? \"<polygon points='2,46 10,46 6,50' fill='#000'/>\" : \"<polygon points='22,46 14,46 18,50' fill='#000'/>\"}"
+        "svg": "{orientation === 'left' ? \"<polygon points='2,46 10,46 6,50' fill='#000' transform='rotate(-18 6 48)' style='filter: drop-shadow(0px 2px 3px rgba(0,0,0,0.35));'/>\" : \"<polygon points='22,46 14,46 18,50' fill='#000' transform='rotate(18 18 48)' style='filter: drop-shadow(0px 2px 3px rgba(0,0,0,0.35));'/>\"}"
       },
       {
         "id": "signalPole",
@@ -2096,7 +2096,7 @@
       },
       {
         "id": "orientationIndicator",
-        "svg": "{orientation === 'left' ? \"<polygon points='8,32 14,32 11,36' fill='#000'/>\" : \"<polygon points='24,32 18,32 21,36' fill='#000'/>\"}"
+        "svg": "{orientation === 'left' ? \"<polygon points='8,32 14,32 11,36' fill='#000' transform='rotate(-20 11 34)' style='filter: drop-shadow(0px 2px 3px rgba(0,0,0,0.35));'/>\" : \"<polygon points='24,32 18,32 21,36' fill='#000' transform='rotate(20 21 34)' style='filter: drop-shadow(0px 2px 3px rgba(0,0,0,0.35));'/>\"}"
       },
       {
         "id": "signalPole",
