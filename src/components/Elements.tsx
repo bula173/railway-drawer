@@ -1088,11 +1088,32 @@ export function generateSVGFromElements(shapeElements: ShapeElement[], elementPr
       // Replace all { ... } patterns. Supports simple placeholders like {topLight}
       // and a basic ternary expression for orientation like:
       // {orientation === 'left' ? "<polygon .../>" : "<polygon .../>"}
-      svg = svg.replace(/\{([^}]+)\}/g, (_match, expr) => {
-        const trimmed = expr.trim();
+      
+      // Function to find matching closing brace
+      const findMatchingBrace = (str: string, start: number): number => {
+        let braceCount = 1;
+        let i = start + 1;
+        while (i < str.length && braceCount > 0) {
+          if (str[i] === '{') braceCount++;
+          else if (str[i] === '}') braceCount--;
+          i++;
+        }
+        return braceCount === 0 ? i - 1 : -1;
+      };
 
-        // Ternary pattern check: key === 'value' ? "leftSvg" : "rightSvg"
-        const ternaryMatch = trimmed.match(/^([a-zA-Z0-9_]+)\s*===\s*['"]([^'"]+)['"]\s*\?\s*"([\s\S]*)"\s*:\s*"([\s\S]*)"$/);
+      // Process expressions with proper brace matching
+      let pos = 0;
+      while (pos < svg.length) {
+        const openBrace = svg.indexOf('{', pos);
+        if (openBrace === -1) break;
+        
+        const closeBrace = findMatchingBrace(svg, openBrace);
+        if (closeBrace === -1) break;
+        
+        const expr = svg.substring(openBrace + 1, closeBrace).trim();
+        
+        // Check for ternary pattern
+        const ternaryMatch = expr.match(/^([a-zA-Z0-9_]+)\s*===\s*['"]([^'"]+)['"]\s*\?\s*"([\s\S]*)"\s*:\s*"([\s\S]*)"$/);
         if (ternaryMatch) {
           const key = ternaryMatch[1];
           const expected = ternaryMatch[2];
@@ -1100,18 +1121,21 @@ export function generateSVGFromElements(shapeElements: ShapeElement[], elementPr
           const rightVal = ternaryMatch[4];
           const actual = elementProperties[key];
           const selectedVal = actual === expected ? leftVal : rightVal;
-          // Resolve any nested placeholders in the selected value
-          return resolvePlaceholders(selectedVal);
+          const resolved = resolvePlaceholders(selectedVal);
+          svg = svg.substring(0, openBrace) + resolved + svg.substring(closeBrace + 1);
+          pos = openBrace + resolved.length;
+        } 
+        // Check for simple placeholder
+        else if (/^[a-zA-Z0-9_]+$/.test(expr)) {
+          const val = elementProperties[expr];
+          const replacement = val !== undefined && val !== null ? String(val) : '';
+          svg = svg.substring(0, openBrace) + replacement + svg.substring(closeBrace + 1);
+          pos = openBrace + replacement.length;
+        } 
+        else {
+          pos = closeBrace + 1;
         }
-
-        // Simple placeholder fallback: {key}
-        if (/^[a-zA-Z0-9_]+$/.test(trimmed)) {
-          const val = elementProperties[trimmed];
-          return val !== undefined && val !== null ? String(val) : '';
-        }
-
-        return '';
-      });
+      }
     }
 
     return svg;
