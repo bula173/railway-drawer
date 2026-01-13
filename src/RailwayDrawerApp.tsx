@@ -12,7 +12,7 @@
 
 import React, { useState, useRef, useEffect, useCallback, Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
-import { MousePointer2, Ruler } from "lucide-react";
+import { MousePointer2, Ruler, Train, Edit2, Check, X } from "lucide-react";
 import toolboxConfig from "./assets/toolboxConfig.json";
 import Toolbox from "./components/Toolbox";
 import type { ToolboxItem } from "./components/Toolbox";
@@ -169,6 +169,12 @@ const RailwayDrawerApp = () => {
   // Menu state
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [activeSubMenu, setActiveSubMenu] = useState<string | null>(null);
+
+  /** @brief Project name state */
+  const [projectName, setProjectName] = useState('Untitled Project');
+  const [isEditingProjectName, setIsEditingProjectName] = useState(false);
+  const [projectNameInput, setProjectNameInput] = useState(projectName);
+  const projectNameInputRef = useRef<HTMLInputElement>(null);
 
   /** @brief Panel widths and layout dimensions */
   const [toolboxWidth, setToolboxWidth] = useState(148); // 3*44 + 2*8
@@ -916,10 +922,89 @@ const RailwayDrawerApp = () => {
    */
   const handleZoomReset = () => setZoom(1);
 
+  /**
+   * @brief Handle starting to edit project name
+   */
+  const handleStartEditProjectName = () => {
+    setProjectNameInput(projectName);
+    setIsEditingProjectName(true);
+    setTimeout(() => {
+      projectNameInputRef.current?.focus();
+      projectNameInputRef.current?.select();
+    }, 0);
+  };
+
+  /**
+   * @brief Handle saving the project name
+   */
+  const handleSaveProjectName = () => {
+    const trimmedName = projectNameInput.trim();
+    if (trimmedName) {
+      setProjectName(trimmedName);
+    }
+    setIsEditingProjectName(false);
+  };
+
+  /**
+   * @brief Handle canceling project name edit
+   */
+  const handleCancelEditProjectName = () => {
+    setIsEditingProjectName(false);
+  };
+
   return (
     <div className="flex flex-col h-screen w-screen bg-slate-50">
+      {/* Project Name Header */}
+      <div className="flex bg-white border-b border-slate-200 h-8 items-center px-3 relative z-50 shadow-xs gap-2">
+        <Train size={16} className="text-blue-600 flex-shrink-0" />
+        {isEditingProjectName ? (
+          <div className="flex items-center gap-1 flex-1">
+            <input
+              ref={projectNameInputRef}
+              type="text"
+              value={projectNameInput}
+              onChange={(e) => setProjectNameInput(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') handleSaveProjectName();
+                if (e.key === 'Escape') handleCancelEditProjectName();
+              }}
+              className="flex-1 px-2 py-0.5 text-xs border border-blue-400 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
+              placeholder="Project name..."
+            />
+            <button
+              onClick={handleSaveProjectName}
+              className="p-0.5 hover:bg-green-100 rounded transition-colors"
+              title="Save"
+            >
+              <Check size={14} className="text-green-600" />
+            </button>
+            <button
+              onClick={handleCancelEditProjectName}
+              className="p-0.5 hover:bg-red-100 rounded transition-colors"
+              title="Cancel"
+            >
+              <X size={14} className="text-red-600" />
+            </button>
+          </div>
+        ) : (
+          <button
+            onClick={handleStartEditProjectName}
+            className="flex items-center gap-2 px-2 py-0.5 text-xs font-medium text-slate-700 hover:bg-slate-100 rounded transition-colors flex-1 justify-between"
+            title="Click to edit project name"
+          >
+            <span>{projectName}</span>
+            <Edit2 size={12} className="text-slate-400" />
+          </button>
+        )}
+      </div>
+      
       {/* --- Modern Menu Bar --- */}
       <div className="flex bg-white border-b border-slate-200 h-10 items-stretch relative z-50 shadow-sm menu-bar">
+        {/* App Icon */}
+        <div className="flex items-center px-3 border-r border-slate-200 bg-slate-50">
+          <Train size={18} className="text-blue-600" />
+        </div>
+        
         {/* File Menu */}
         <Menu as="div" className="relative">
           <Menu.Button className="bg-white hover:bg-slate-50 text-slate-700 border-none px-4 h-10 text-sm font-medium cursor-pointer outline-none border-r border-slate-200 transition-colors duration-200 flex items-center">
