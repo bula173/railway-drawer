@@ -23,6 +23,15 @@ export const PageManager: React.FC<PageManagerProps> = ({
 }) => {
   return (
     <div className="h-9 bg-white border-t border-slate-200 flex items-center px-3 gap-2 overflow-x-auto">
+      {/* Add page button - left side */}
+      <button
+        onClick={onAddTab}
+        className="p-1.5 text-slate-600 hover:bg-slate-100 rounded-md transition-colors"
+        title="Add new page"
+      >
+        <Plus size={16} />
+      </button>
+
       {/* Page list */}
       <div className="flex items-center gap-1">
         {tabs.map((tab, index) => (
@@ -53,15 +62,6 @@ export const PageManager: React.FC<PageManagerProps> = ({
           </button>
         ))}
       </div>
-
-      {/* Add page button */}
-      <button
-        onClick={onAddTab}
-        className="ml-auto p-1.5 text-slate-600 hover:bg-slate-100 rounded-md transition-colors"
-        title="Add new page"
-      >
-        <Plus size={16} />
-      </button>
     </div>
   );
 };

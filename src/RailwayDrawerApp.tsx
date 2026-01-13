@@ -33,7 +33,7 @@ const GRID_SIZE = 40;
 // Removed - no longer needed with simplified copy/paste implementation
 
 /** @brief Application version */
-const APP_VERSION = "0.3.0 Beta";
+const APP_VERSION = "0.3.1 Beta";
 
 /** @brief Application author */
 const APP_AUTHOR = "Marcin Kwiatkowski";
