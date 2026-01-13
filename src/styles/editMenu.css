@@ -22,6 +22,15 @@
   border-color: var(--border-hover-color, #9ca3af);
 }
 
+.edit-menu-button:active {
+  background: var(--button-bg, #f3f4f6);
+}
+
+.edit-menu-button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
 .edit-menu-button:focus-visible {
   outline: 2px solid var(--focus-ring-color, #3b82f6);
   outline-offset: 2px;
