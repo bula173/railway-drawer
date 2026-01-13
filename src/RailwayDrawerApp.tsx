@@ -16,10 +16,11 @@ import { MousePointer2, Ruler } from "lucide-react";
 import toolboxConfig from "./assets/toolboxConfig.json";
 import Toolbox from "./components/Toolbox";
 import type { ToolboxItem } from "./components/Toolbox";
+import type { DrawAreaTab } from "./components/TabPanel";
 import EnhancedPropertiesPanel from "./components/EnhancedPropertiesPanel";
 import DrawArea, { type DrawAreaRef } from "./components/DrawArea";
-import TabPanel, { type DrawAreaTab } from "./components/TabPanel";
 import { LayersPanel } from "./components/LayersPanel";
+import { PageManager } from "./components/PageManager";
 import { EditMenu } from "./components/EditMenu";
 import type { DrawElement } from "./components/Elements";
 import type { DrawTool, Layer } from "./types";
@@ -332,15 +333,6 @@ const RailwayDrawerApp = () => {
 
   /**
    * @brief Renames a tab
-   * @param tabId The ID of the tab to rename
-   * @param newName The new name for the tab
-   */
-  const handleTabRename = (tabId: string, newName: string) => {
-    setTabs(prev => prev.map(tab => 
-      tab.id === tabId ? { ...tab, name: newName } : tab
-    ));
-  };
-
   /**
    * @brief Effect to update DrawArea when active tab changes
    * @details Synchronizes DrawArea content with the active tab's elements, grid, and background
@@ -1247,56 +1239,89 @@ const RailwayDrawerApp = () => {
           ref={drawAreaPanelRef}
           className="flex-1 min-w-0 flex flex-col bg-white"
         >
-          <div className="flex gap-2 items-center p-2 bg-slate-50 border-b border-slate-200">
-            <button 
-              onClick={handleZoomOut}
-              className="w-8 h-8 rounded-md bg-white border border-slate-300 hover:bg-slate-50 flex items-center justify-center text-slate-600 font-medium transition-colors duration-200"
-            >
-              -
-            </button>
-            <span className="text-sm font-medium text-slate-700 min-w-[3rem] text-center">
-              {Math.round(zoom * 100)}%
-            </span>
-            <button 
-              onClick={handleZoomIn}
-              className="w-8 h-8 rounded-md bg-white border border-slate-300 hover:bg-slate-50 flex items-center justify-center text-slate-600 font-medium transition-colors duration-200"
-            >
-              +
-            </button>
+          <div className="flex gap-2 items-center p-2 bg-white border-b border-slate-200">
+            {/* Zoom controls */}
+            <div className="flex items-center gap-1 bg-slate-50 rounded-md p-1 border border-slate-200">
+              <button 
+                onClick={handleZoomOut}
+                className="w-7 h-7 rounded bg-white hover:bg-slate-100 flex items-center justify-center text-slate-600 text-sm font-medium transition-colors"
+                title="Zoom out"
+              >
+                −
+              </button>
+              <span className="text-xs font-medium text-slate-700 min-w-[2.5rem] text-center px-1">
+                {Math.round(zoom * 100)}%
+              </span>
+              <button 
+                onClick={handleZoomIn}
+                className="w-7 h-7 rounded bg-white hover:bg-slate-100 flex items-center justify-center text-slate-600 text-sm font-medium transition-colors"
+                title="Zoom in"
+              >
+                +
+              </button>
+            </div>
+
             <button 
               onClick={handleZoomReset}
-              className="px-3 h-8 rounded-md bg-white border border-slate-300 hover:bg-slate-50 text-sm text-slate-600 font-medium transition-colors duration-200"
+              className="px-2 h-7 rounded bg-slate-50 border border-slate-200 hover:bg-slate-100 text-xs text-slate-600 font-medium transition-colors"
+              title="Reset zoom to 100%"
             >
-              Reset
+              Fit
             </button>
 
-            <div className="h-8 w-px bg-slate-200 mx-1" />
+            <div className="h-6 w-px bg-slate-200" />
 
-            <div className="flex bg-white rounded-md border border-slate-300 p-0.5 shadow-sm">
+            {/* Drawing tools */}
+            <div className="flex bg-slate-50 rounded-md border border-slate-200 p-0.5">
               <button
                 onClick={() => setActiveTool('select')}
-                className={`w-8 h-8 rounded flex items-center justify-center transition-all duration-200 ${
+                className={`w-7 h-7 rounded flex items-center justify-center transition-all ${
                   activeTool === 'select' 
-                    ? 'bg-blue-500 text-white shadow-inner' 
-                    : 'text-slate-600 hover:bg-slate-50'
+                    ? 'bg-blue-500 text-white shadow-sm' 
+                    : 'text-slate-600 hover:bg-white'
                 }`}
-                title="Selection Tool"
+                title="Selection Tool (V)"
               >
-                <MousePointer2 size={16} />
+                <MousePointer2 size={14} />
               </button>
               <button
                 onClick={() => setActiveTool('measure')}
-                className={`w-8 h-8 rounded flex items-center justify-center transition-all duration-200 ${
+                className={`w-7 h-7 rounded flex items-center justify-center transition-all ${
                   activeTool === 'measure' 
-                    ? 'bg-blue-500 text-white shadow-inner' 
-                    : 'text-slate-600 hover:bg-slate-50'
+                    ? 'bg-blue-500 text-white shadow-sm' 
+                    : 'text-slate-600 hover:bg-white'
                 }`}
-                title="Measurement Tool"
+                title="Measurement Tool (M)"
               >
-                <Ruler size={16} />
+                <Ruler size={14} />
               </button>
             </div>
+
+            <div className="h-6 w-px bg-slate-200" />
+
+            {/* Additional tools placeholder */}
+            <div className="flex bg-slate-50 rounded-md border border-slate-200 p-0.5">
+              <button
+                className="w-7 h-7 rounded flex items-center justify-center text-slate-400 text-xs hover:text-slate-600"
+                title="More tools"
+                disabled
+              >
+                ⋯
+              </button>
+            </div>
+
+            <div className="h-6 w-px bg-slate-200 ml-auto" />
+
+            {/* Help button */}
+            <button
+              className="px-2 h-7 rounded text-xs text-slate-600 hover:bg-slate-100 transition-colors"
+              onClick={() => setShowAbout(true)}
+              title="About Railway Drawer"
+            >
+              ?
+            </button>
           </div>
+
           {/* Render DrawArea for each tab, toggling visibility based on activeTabId */}
           {tabs.map((tab) => (
             <div
@@ -1339,17 +1364,14 @@ const RailwayDrawerApp = () => {
         </div>
       </div>
 
-      {/* Bottom Tab Panel */}
-      <div style={{ height: tabPanelHeight }} className="bg-slate-100 border-t border-slate-200">
-        <TabPanel
-          tabs={tabs}
-          activeTabId={activeTabId}
-          onTabChange={handleTabChange}
-          onTabCreate={handleTabCreate}
-          onTabClose={handleTabClose}
-          onTabRename={handleTabRename}
-        />
-      </div>
+      {/* Bottom Page Manager */}
+      <PageManager
+        tabs={tabs}
+        activeTabId={activeTabId}
+        onTabChange={handleTabChange}
+        onAddTab={handleTabCreate}
+        onDeleteTab={handleTabClose}
+      />
       
       {/* About Dialog */}
       {showAbout && (

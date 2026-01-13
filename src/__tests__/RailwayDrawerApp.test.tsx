@@ -47,7 +47,7 @@ describe('RailwayDrawerApp Component', () => {
     expect(screen.getByTestId('draw-area')).toBeInTheDocument()
     expect(screen.getByTestId('toolbox')).toBeInTheDocument()
     expect(screen.getByTestId('properties-panel')).toBeInTheDocument()
-    expect(screen.getByTestId('tab-panel')).toBeInTheDocument()
+    // Note: PageManager is used for page/tab management instead of TabPanel
   })
 
   it('shows menu bar with file operations', () => {
@@ -123,7 +123,7 @@ describe('RailwayDrawerApp Component', () => {
     expect(screen.getByTestId('draw-area')).toBeInTheDocument()
     expect(screen.getByTestId('toolbox')).toBeInTheDocument()
     expect(screen.getByTestId('properties-panel')).toBeInTheDocument()
-    expect(screen.getByTestId('tab-panel')).toBeInTheDocument()
+    // Note: PageManager is used for page/tab management instead of TabPanel
     
     // Layout should be flexible (this is basic, real responsive tests would need more setup)
     const container = screen.getByTestId('draw-area').closest('div')
