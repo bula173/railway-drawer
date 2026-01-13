@@ -61,7 +61,7 @@ export const PageManager: React.FC<PageManagerProps> = ({
 
       {/* Page list */}
       <div className="flex items-center gap-1">
-        {tabs.map((tab, index) => (
+        {tabs.map((tab) => (
           <button
             key={tab.id}
             onClick={() => onTabChange(tab.id)}

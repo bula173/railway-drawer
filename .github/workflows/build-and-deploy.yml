@@ -103,13 +103,6 @@ jobs:
         path: dist/
         retention-days: 30
 
-    - name: Upload zipped bundle
-      uses: actions/upload-artifact@v4
-      with:
-        name: railway-drawer-dist-zip
-        path: railway-drawer-dist.zip
-        retention-days: 30
-
   # Job 4: Cross-platform testing (optional but recommended)
   test-cross-platform:
     runs-on: ${{ matrix.os }}

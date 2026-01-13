@@ -1,7 +1,7 @@
 import type { DrawAreaTab } from '../components/TabPanel';
 
 const STORAGE_KEY = 'railway-drawer-project';
-const PROJECT_NAME_KEY = 'railway-drawer-project-name';
+
 
 export interface StoredProject {
   pages: DrawAreaTab[];
@@ -20,9 +20,9 @@ export const saveToLocalStorage = (pages: DrawAreaTab[], projectName: string): v
       timestamp: Date.now(),
     };
     localStorage.setItem(STORAGE_KEY, JSON.stringify(project));
-  } catch (error) {
+  } catch (_error) {
     // Fail silently if storage quota exceeded
-    console.warn('Failed to save to localStorage:', error);
+    console.warn('Failed to save to localStorage:', _error);
   }
 };
 
@@ -57,7 +57,7 @@ export const clearLocalStorage = (): void => {
 export const hasSavedProject = (): boolean => {
   try {
     return localStorage.getItem(STORAGE_KEY) !== null;
-  } catch (error) {
+  } catch {
     return false;
   }
 };

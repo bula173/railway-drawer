@@ -25,7 +25,7 @@ import { EditMenu } from "./components/EditMenu";
 import type { DrawElement } from "./components/Elements";
 import type { DrawTool, Layer } from "./types";
 import { logger } from "./utils/logger";
-import { saveToLocalStorage, loadFromLocalStorage, hasSavedProject } from "./utils/storageManager";
+import { saveToLocalStorage, loadFromLocalStorage, clearLocalStorage } from "./utils/storageManager";
 
 /** @brief Grid size for snap-to-grid functionality */
 const GRID_SIZE = 40;
@@ -64,6 +64,9 @@ const RailwayDrawerApp = () => {
   // Create a stable ref object for PropertiesPanel
   const currentDrawAreaRefObject = useRef<DrawAreaRef | null>(null);
 
+  /** @brief Track current activeTabId in ref to avoid dependency issues */
+  const activeTabIdRef = useRef<string>('tab-1');
+
   /** @brief Set a DrawArea ref for a specific tab */
   const setDrawAreaRef = (tabId: string, ref: DrawAreaRef | null) => {
     if (ref) {
@@ -80,6 +83,7 @@ const RailwayDrawerApp = () => {
   const isOpeningToolboxRef = useRef(false);
   const isSavingRef = useRef(false);
   const isExportingRef = useRef(false);
+  const isCreatingNewProjectRef = useRef(false);
 
   // Selected element state
   const [selectedElement, setSelectedElement] = useState<DrawElement | undefined>(undefined);
@@ -133,6 +137,9 @@ const RailwayDrawerApp = () => {
   /** @brief Global clipboard state shared between all tabs */
   const [globalCopiedElements, setGlobalCopiedElements] = useState<DrawElement[]>([]);
 
+  /** @brief Trigger for auto-save when DrawArea is ready */
+  const [shouldTriggerSave, setShouldTriggerSave] = useState<boolean>(false);
+
   // Edit menu state
   const [editMenuState, setEditMenuState] = useState({
     canUndo: false,
@@ -162,6 +169,15 @@ const RailwayDrawerApp = () => {
       });
     }
   }, [globalCopiedElements]);
+
+  /**
+   * @brief Handle when DrawArea is ready to save
+   * @details Trigger auto-save without syncing to tabs (avoid re-render cycles)
+   */
+  const handleDrawAreaReadyToSave = useCallback(() => {
+    // Just trigger the auto-save effect by toggling state
+    setShouldTriggerSave(prev => !prev);
+  }, []);
 
   // Update edit menu state when selection or tab changes
   useEffect(() => {
@@ -222,6 +238,7 @@ const RailwayDrawerApp = () => {
     });
     
     currentDrawAreaRefObject.current = newRef;
+    activeTabIdRef.current = activeTabId;
     
     // Clear selected element if it doesn't exist in the new tab
     if (selectedElement && newRef) {
@@ -639,6 +656,48 @@ const RailwayDrawerApp = () => {
   }, [tabs, projectName]);
 
   /**
+   * @brief Creates a new project, clearing all data and localStorage
+   * @details Resets to initial state with empty drawing and "Untitled Project" name
+   */
+  const handleNewProject = useCallback(() => {
+    // Guard against multiple rapid clicks
+    if (isCreatingNewProjectRef.current) return;
+    
+    // Confirm before clearing
+    if (confirm('Are you sure you want to create a new project? All unsaved changes will be lost.')) {
+      isCreatingNewProjectRef.current = true;
+      
+      // Clear localStorage
+      clearLocalStorage();
+      
+      // Reset project state
+      setProjectName('Untitled Project');
+      setTabs([{
+        id: 'tab-1',
+        name: 'Drawing 1',
+        elements: [],
+        gridVisible: true,
+        backgroundColor: '#ffffff',
+        selectedElementIds: []
+      }]);
+      setActiveTabId('tab-1');
+      setSelectedElement(undefined);
+      setGlobalCopiedElements([]);
+      
+      // Reset UI state
+      setActiveMenu(null);
+      setActiveSubMenu(null);
+      
+      logger.info("RailwayDrawerApp", "New project created", { timestamp: new Date().toLocaleString() });
+      
+      // Reset flag after a delay
+      setTimeout(() => {
+        isCreatingNewProjectRef.current = false;
+      }, 500);
+    }
+  }, []);
+
+  /**
    * @brief Loads all pages/tabs from a JSON file
    * @param e The file input change event
    * @details Parses JSON file and loads all pages into the app
@@ -701,6 +760,10 @@ const RailwayDrawerApp = () => {
         return;
       }
       
+      // Generate filename from project name and tab name
+      const tabName = activeTab?.name || 'Drawing';
+      const filename = `${projectName} - ${tabName}`;
+      
       // Handle SVG export directly
       if (format === "svg") {
         const serializer = new XMLSerializer();
@@ -708,7 +771,7 @@ const RailwayDrawerApp = () => {
         const blob = new Blob([svgString], { type: "image/svg+xml" });
         const link = document.createElement("a");
         link.href = URL.createObjectURL(blob);
-        link.download = "railway_drawing.svg";
+        link.download = `${filename}.svg`;
         document.body.appendChild(link);
         link.dispatchEvent(new MouseEvent('click', { bubbles: true }));
         document.body.removeChild(link);
@@ -734,7 +797,7 @@ const RailwayDrawerApp = () => {
                 node.width.baseVal.value,
                 node.height.baseVal.value
               );
-              pdf.save("railway_drawing.pdf");
+              pdf.save(`${filename}.pdf`);
               isExportingRef.current = false;
             });
           });
@@ -748,7 +811,7 @@ const RailwayDrawerApp = () => {
         fn(node as unknown as HTMLElement).then((dataUrl: string) => {
           const link = document.createElement("a");
           link.href = dataUrl;
-          link.download = `railway_drawing.${format}`;
+          link.download = `${filename}.${format}`;
           document.body.appendChild(link);
           link.dispatchEvent(new MouseEvent('click', { bubbles: true }));
           document.body.removeChild(link);
@@ -954,8 +1017,8 @@ const RailwayDrawerApp = () => {
   }, [activeMenu]);
 
   /**
-   * @brief Auto-save to localStorage whenever tabs or project name changes
-   * @details Saves all pages to localStorage for quick recovery
+   * @brief Auto-save to localStorage whenever DrawArea signals ready OR tabs/name changes
+   * @details Gets current elements from DrawArea when ready to save, saves to localStorage
    */
   useEffect(() => {
     // Set status to saving
@@ -963,23 +1026,29 @@ const RailwayDrawerApp = () => {
 
     // Create a debounced save function
     const timeoutId = setTimeout(() => {
-      saveToLocalStorage(tabs, projectName);
+      // Get current elements from DrawArea instead of from tabs
+      const tabsToSave = tabs.map(tab => {
+        const tabRef = drawAreaRefs.current.get(tab.id);
+        // Use DrawArea's elements if available, otherwise use tabs elements
+        const elements = tabRef?.getElements?.() || tab.elements;
+        return { ...tab, elements };
+      });
+
+      saveToLocalStorage(tabsToSave, projectName);
       logger.debug("RailwayDrawerApp", "Auto-saved to localStorage", {
-        pagesCount: tabs.length,
+        pagesCount: tabsToSave.length,
         timestamp: new Date().toLocaleString()
       });
       
       // Set status to saved, then reset after 2 seconds
       setSavingStatus('saved');
-      const resetTimeoutId = setTimeout(() => {
+      setTimeout(() => {
         setSavingStatus('idle');
       }, 2000);
-      
-      return () => clearTimeout(resetTimeoutId);
     }, 1000); // Debounce by 1 second
 
     return () => clearTimeout(timeoutId);
-  }, [tabs, projectName]);
+  }, [tabs, projectName, shouldTriggerSave]);
 
   /**
    * @brief Increases zoom level by 20% up to maximum of 500%
@@ -1072,7 +1141,7 @@ const RailwayDrawerApp = () => {
         )}
         
         {/* Saving Status Indicator */}
-        <div className="flex items-center gap-1 ml-auto">
+        <div className="flex items-center gap-1 ml-auto px-2">
           {savingStatus === 'saving' && (
             <span className="text-xs text-slate-500 flex items-center gap-1">
               <span className="inline-block w-1.5 h-1.5 bg-amber-400 rounded-full animate-pulse"></span>
@@ -1083,6 +1152,12 @@ const RailwayDrawerApp = () => {
             <span className="text-xs text-green-600 flex items-center gap-1">
               <Check size={12} />
               Saved
+            </span>
+          )}
+          {savingStatus === 'idle' && (
+            <span className="text-xs text-slate-400 flex items-center gap-1">
+              <span className="inline-block w-1.5 h-1.5 bg-slate-300 rounded-full"></span>
+              Ready
             </span>
           )}
         </div>
@@ -1106,6 +1181,22 @@ const RailwayDrawerApp = () => {
           >
             <Menu.Items className="absolute left-0 mt-2 w-56 origin-top-right bg-white divide-y divide-slate-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-[9999]">
               <div className="px-1 py-1 ">
+                <Menu.Item>
+                  {({ active }) => (
+                    <button
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        handleNewProject();
+                      }}
+                      className={`${
+                        active ? 'bg-blue-500 text-white' : 'text-slate-900'
+                      } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                    >
+                      New Project
+                    </button>
+                  )}
+                </Menu.Item>
                 <Menu.Item>
                   {({ active }) => (
                     <button
@@ -1634,6 +1725,7 @@ const RailwayDrawerApp = () => {
                 activeLayerId={activeLayerId}
                 setSelectedElement={setSelectedElement}
                 onStateChange={updateEditMenuState}
+                onReadyToSave={handleDrawAreaReadyToSave}
                 disableKeyboardHandlers={true}
                 onCanvasExpand={expandCanvasIfNeeded}
               />

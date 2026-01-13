@@ -98,6 +98,8 @@ export interface DrawAreaProps {
   activeLayerId?: string;
   /** @brief Callback for when internal state changes (for edit menu updates) */
   onStateChange?: () => void;
+  /** @brief Callback when DrawArea has unsaved changes ready to persist */
+  onReadyToSave?: () => void;
   /** @brief Callback when canvas needs to expand to fit elements */
   onCanvasExpand?: (bounds: { maxX: number; maxY: number; minX?: number; minY?: number }) => void;
 }
@@ -130,6 +132,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
   layers = [{ id: 'default', name: 'Background Layer', visible: true, locked: false }],
   activeLayerId = 'default',
   onStateChange,
+  onReadyToSave,
   onCanvasExpand,
 }, ref) => {
   /** @brief Internal drawing elements state */
@@ -142,6 +145,29 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       elementIds: elements.map(el => el.id)
     });
   }, [elements]);
+
+  /**
+   * @brief Debounced callback when DrawArea is ready to save
+   * @details Waits 500ms after last element change before notifying parent
+   */
+  useEffect(() => {
+    if (readyToSaveTimerRef.current) {
+      clearTimeout(readyToSaveTimerRef.current);
+    }
+
+    readyToSaveTimerRef.current = setTimeout(() => {
+      if (onReadyToSave) {
+        onReadyToSave();
+      }
+    }, 500);
+
+    return () => {
+      if (readyToSaveTimerRef.current) {
+        clearTimeout(readyToSaveTimerRef.current);
+      }
+    };
+  }, [elements]); // Only depend on elements, not the callback
+
   /** @brief IDs of currently selected elements */
   const [selectedElementIds, setSelectedElementIds] = useState<string[]>([]);
   const selectedElements = useMemo(() => elements.filter(el => selectedElementIds.includes(el.id)), [elements, selectedElementIds]);
@@ -230,6 +256,8 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
   const lastDropRef = useRef<{ timestamp: number; itemType: string; x: number; y: number } | null>(null);
   /** @brief Ref to track processed element IDs to prevent React StrictMode duplicates */
   const processedElementIds = useRef<Set<string>>(new Set());
+  /** @brief Debounce timer for onReadyToSave callback */
+  const readyToSaveTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   /** @brief State to track pending canvas expansion bounds */
   const [expansionBounds, setExpansionBounds] = useState<{ maxX: number; maxY: number; minX?: number; minY?: number } | null>(null);
