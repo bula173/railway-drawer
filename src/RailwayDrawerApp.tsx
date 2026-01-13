@@ -575,7 +575,7 @@ const RailwayDrawerApp = () => {
 
   /**
    * @brief Saves current drawing elements as a JSON file
-   * @details Exports all elements from the current tab to a downloadable JSON file
+   * @details Exports all elements from the current tab to a downloadable JSON file using project name
    */
   const saveAsJson = useCallback(() => {
     // Guard against multiple rapid saves
@@ -593,7 +593,7 @@ const RailwayDrawerApp = () => {
       const blob = new Blob([data], { type: "application/json" });
       const link = document.createElement("a");
       link.href = URL.createObjectURL(blob);
-      link.download = "railway_drawing.json";
+      link.download = `${projectName}.json`;
       link.click();
       
       // Clean up and reset flag
@@ -602,7 +602,7 @@ const RailwayDrawerApp = () => {
         isSavingRef.current = false;
       }, 500);
     }, 0);
-  }, [getCurrentDrawAreaRef]);
+  }, [getCurrentDrawAreaRef, projectName]);
 
   /**
    * @brief Loads drawing elements from a JSON file
