@@ -144,6 +144,9 @@ const RailwayDrawerApp = () => {
   /** @brief About dialog state */
   const [showAbout, setShowAbout] = useState(false);
 
+  /** @brief Saving status state */
+  const [savingStatus, setSavingStatus] = useState<'idle' | 'saving' | 'saved'>('idle');
+
   /** @brief Update edit menu state based on current DrawArea */
   const updateEditMenuState = useCallback(() => {
     const currentRef = currentDrawAreaRefObject.current;
@@ -955,6 +958,9 @@ const RailwayDrawerApp = () => {
    * @details Saves all pages to localStorage for quick recovery
    */
   useEffect(() => {
+    // Set status to saving
+    setSavingStatus('saving');
+
     // Create a debounced save function
     const timeoutId = setTimeout(() => {
       saveToLocalStorage(tabs, projectName);
@@ -962,6 +968,14 @@ const RailwayDrawerApp = () => {
         pagesCount: tabs.length,
         timestamp: new Date().toLocaleString()
       });
+      
+      // Set status to saved, then reset after 2 seconds
+      setSavingStatus('saved');
+      const resetTimeoutId = setTimeout(() => {
+        setSavingStatus('idle');
+      }, 2000);
+      
+      return () => clearTimeout(resetTimeoutId);
     }, 1000); // Debounce by 1 second
 
     return () => clearTimeout(timeoutId);
@@ -1056,6 +1070,22 @@ const RailwayDrawerApp = () => {
             <Edit2 size={12} className="text-slate-400" />
           </button>
         )}
+        
+        {/* Saving Status Indicator */}
+        <div className="flex items-center gap-1 ml-auto">
+          {savingStatus === 'saving' && (
+            <span className="text-xs text-slate-500 flex items-center gap-1">
+              <span className="inline-block w-1.5 h-1.5 bg-amber-400 rounded-full animate-pulse"></span>
+              Saving...
+            </span>
+          )}
+          {savingStatus === 'saved' && (
+            <span className="text-xs text-green-600 flex items-center gap-1">
+              <Check size={12} />
+              Saved
+            </span>
+          )}
+        </div>
       </div>
       
       {/* --- Modern Menu Bar --- */}
