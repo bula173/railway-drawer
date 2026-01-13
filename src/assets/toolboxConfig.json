@@ -816,6 +816,12 @@
     "height": 48,
     "width": 24,
     "properties": {
+      "orientation": {
+        "type": "select",
+        "label": "Orientation",
+        "default": "left",
+        "options": ["left", "right"]
+      },
       "topLight": {
         "type": "select",
         "label": "Top Light",
@@ -851,6 +857,10 @@
       {
         "id": "bottomLight",
         "svg": "<circle cx='12' cy='38' r='6' fill='{bottomLight}' stroke='#000' stroke-width='1'/>"
+      },
+      {
+        "id": "orientationIndicator",
+        "svg": "{orientation === 'left' ? \"<polygon points='2,46 10,46 6,50' fill='#000'/>\" : \"<polygon points='22,46 14,46 18,50' fill='#000'/>\"}"
       },
       {
         "id": "signalPole",
@@ -2067,6 +2077,14 @@
     "iconSvg": "default",
     "height": 48,
     "width": 32,
+    "properties": {
+      "orientation": {
+        "type": "select",
+        "label": "Orientation",
+        "default": "left",
+        "options": ["left", "right"]
+      }
+    },
     "shapeElements": [
       {
         "id": "signalBox",
@@ -2075,6 +2093,10 @@
       {
         "id": "whiteLight",
         "svg": "<circle cx='16' cy='16' r='5' fill='#fff' stroke='#000' stroke-width='1'/>"
+      },
+      {
+        "id": "orientationIndicator",
+        "svg": "{orientation === 'left' ? \"<polygon points='8,32 14,32 11,36' fill='#000'/>\" : \"<polygon points='24,32 18,32 21,36' fill='#000'/>\"}"
       },
       {
         "id": "signalPole",

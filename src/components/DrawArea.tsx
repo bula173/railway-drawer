@@ -70,6 +70,10 @@ export interface DrawAreaRef {
   canUndo: () => boolean;
   /** @brief Check if redo is available */
   canRedo: () => boolean;
+  /** @brief Sends the specified element to the front */
+  handleSendToFront: (elementId: string) => void;
+  /** @brief Sends the specified element to the back */
+  handleSendToBack: (elementId: string) => void;
 }
 
 /**
@@ -1503,6 +1507,10 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       });
       return result;
     },
+    /** @brief Sends the specified element to the front */
+    handleSendToFront: (elementId: string) => handleSendToFront(elementId),
+    /** @brief Sends the specified element to the back */
+    handleSendToBack: (elementId: string) => handleSendToBack(elementId),
   }), [elements, showGrid, backgroundColor, selectedElementIds, copiedElements, copySelectedElements, cutSelectedElements, pasteElements, performUnifiedPaste, undo, redo, deleteSelectedElements, selectAllElements, historyIndex, history]);
 
   /**

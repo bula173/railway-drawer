@@ -112,6 +112,8 @@ describe('EnhancedPropertiesPanel', () => {
         selectAllElements: vi.fn(),
         canUndo: vi.fn().mockReturnValue(false),
         canRedo: vi.fn().mockReturnValue(false),
+        handleSendToFront: vi.fn(),
+        handleSendToBack: vi.fn(),
       } as DrawAreaRef,
     };
   });

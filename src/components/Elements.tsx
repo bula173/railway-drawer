@@ -1071,19 +1071,38 @@ export function generateSVGFromElements(shapeElements: ShapeElement[], elementPr
   
   const result = elementsCopy.map((element) => {
     let svg = element.svg;
-    
-    // Substitute properties if provided (e.g., {topLight} -> actual color value)
+
     if (elementProperties) {
-      Object.keys(elementProperties).forEach(key => {
-        const value = elementProperties[key];
-        const pattern = new RegExp(`\\{${key}\\}`, 'g');
-        svg = svg.replace(pattern, value);
+      // Replace all { ... } patterns. Supports simple placeholders like {topLight}
+      // and a basic ternary expression for orientation like:
+      // {orientation === 'left' ? "<polygon .../>" : "<polygon .../>"}
+      svg = svg.replace(/\{([^}]+)\}/g, (_match, expr) => {
+        const trimmed = expr.trim();
+
+        // Ternary pattern check: key === 'value' ? "leftSvg" : "rightSvg"
+        const ternaryMatch = trimmed.match(/^([a-zA-Z0-9_]+)\s*===\s*['\"]([^'\"]+)['\"]\s*\?\s*"([\s\S]*)"\s*:\s*"([\s\S]*)"$/);
+        if (ternaryMatch) {
+          const key = ternaryMatch[1];
+          const expected = ternaryMatch[2];
+          const leftVal = ternaryMatch[3];
+          const rightVal = ternaryMatch[4];
+          const actual = elementProperties[key];
+          return actual === expected ? leftVal : rightVal;
+        }
+
+        // Simple placeholder fallback: {key}
+        if (/^[a-zA-Z0-9_]+$/.test(trimmed)) {
+          const val = elementProperties[trimmed];
+          return val !== undefined && val !== null ? String(val) : '';
+        }
+
+        return '';
       });
     }
-    
+
     return svg;
   }).join('');
-  
+
   return result;
 }
 

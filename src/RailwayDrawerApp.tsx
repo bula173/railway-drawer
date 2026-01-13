@@ -1516,7 +1516,7 @@ const RailwayDrawerApp = () => {
                   {({ active }) => (
                     <button
                       onClick={() => {
-                        currentDrawAreaRefObject.current?.bringToFront();
+                        currentDrawAreaRefObject.current?.handleSendToFront(currentDrawAreaRefObject.current?.getSelectedElementIds()[0]!);
                         updateEditMenuState();
                       }}
                       disabled={!editMenuState.hasSelection}
@@ -1532,7 +1532,7 @@ const RailwayDrawerApp = () => {
                   {({ active }) => (
                     <button
                       onClick={() => {
-                        currentDrawAreaRefObject.current?.sendToBack();
+                        currentDrawAreaRefObject.current?.handleSendToBack(currentDrawAreaRefObject.current?.getSelectedElementIds()[0]!);
                         updateEditMenuState();
                       }}
                       disabled={!editMenuState.hasSelection}
@@ -1679,19 +1679,6 @@ const RailwayDrawerApp = () => {
                 title="Measurement Tool (M)"
               >
                 <Ruler size={14} />
-              </button>
-            </div>
-
-            <div className="h-6 w-px bg-slate-200" />
-
-            {/* Additional tools placeholder */}
-            <div className="flex bg-slate-50 rounded-md border border-slate-200 p-0.5">
-              <button
-                className="w-7 h-7 rounded flex items-center justify-center text-slate-400 text-xs hover:text-slate-600"
-                title="More tools"
-                disabled
-              >
-                ⋯
               </button>
             </div>
 

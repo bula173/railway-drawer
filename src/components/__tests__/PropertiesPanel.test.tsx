@@ -32,6 +32,8 @@ const mockDrawAreaRef = {
   selectAllElements: vi.fn(),
   canUndo: vi.fn(() => false),
   canRedo: vi.fn(() => false),
+  handleSendToFront: vi.fn(),
+  handleSendToBack: vi.fn(),
 };
 
 // Create a test element
