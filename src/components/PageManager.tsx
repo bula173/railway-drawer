@@ -86,7 +86,7 @@ export const PageManager: React.FC<PageManagerProps> = ({
                 className="bg-transparent outline-none text-xs font-medium w-20"
               />
             ) : (
-              <span>Page-{index + 1}</span>
+              <span>{tab.name}</span>
             )}
             {tabs.length > 1 && (
               <button
