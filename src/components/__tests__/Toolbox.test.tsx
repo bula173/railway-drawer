@@ -88,8 +88,9 @@ describe('Toolbox Component', () => {
       />
     )
     
-    // Should render the toolbox container even if empty
-    expect(screen.getByText('Toolbox')).toBeInTheDocument()
+    // Should render the toolbox container with search and footer
+    expect(screen.getByText('Shapes')).toBeInTheDocument()
+    expect(screen.getByPlaceholderText('Search shapes...')).toBeInTheDocument()
     expect(screen.getByText('Add Shape')).toBeInTheDocument()
   })
 
@@ -186,7 +187,7 @@ describe('Toolbox Component', () => {
       />
     )
     
-    const addButton = screen.getByRole('button')
+    const addButton = screen.getByText('Add Shape')
     expect(addButton).toBeInTheDocument()
   })
 })

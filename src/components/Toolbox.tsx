@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Button from "./Button";
-import { Plus } from "lucide-react";
+import { Plus, Search, ChevronDown } from "lucide-react";
 import { generateSVGFromElements } from "./Elements";
 
 /**
@@ -145,30 +145,61 @@ const Toolbox: React.FC<ToolboxProps> = ({
     }));
   };
 
+  const [searchQuery, setSearchQuery] = useState("");
+
+  // Filter items based on search query
+  const filteredGrouped = searchQuery.trim() === "" 
+    ? grouped 
+    : Object.entries(grouped).reduce((acc, [group, items]) => {
+        const filtered = items.filter(item => 
+          item.name.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+        if (filtered.length > 0) {
+          acc[group] = filtered;
+        }
+        return acc;
+      }, {} as Record<string, typeof initialToolbox>);
+
   return (
-    <div className="h-full bg-white border-r border-slate-200 p-4 overflow-auto">
-      <div className="text-lg font-semibold mb-4 text-slate-900 text-center">
-        Toolbox
+    <div className="h-full bg-white border-r border-slate-200 flex flex-col">
+      {/* Header with search */}
+      <div className="border-b border-slate-200 p-3 flex-shrink-0">
+        <div className="text-sm font-semibold text-slate-700 mb-2">Shapes</div>
+        <div className="relative">
+          <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" />
+          <input
+            type="text"
+            placeholder="Search shapes..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full pl-8 pr-3 py-2 text-sm border border-slate-300 rounded-md bg-white text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          />
+        </div>
       </div>
-      {Object.entries(grouped).map(([group, items]) => (
-        <div
-          key={group}
-          className={`w-full mb-3 ${collapsedGroups[group] ? "collapsed" : ""}`}
-        >
-          <div
-            className="font-semibold text-slate-800 text-base my-2 ml-1 cursor-pointer hover:text-slate-600 transition-colors flex items-center gap-2"
-            onClick={() => toggleGroup(group)}
-          >
-            <span className="text-sm text-slate-500">
-              {collapsedGroups[group] ? "▼" : "▲"}
-            </span>
-            {group}
+
+      {/* Scrollable shapes area */}
+      <div className="flex-1 overflow-y-auto p-3">
+        {Object.entries(filteredGrouped).length === 0 ? (
+          <div className="text-center text-sm text-slate-500 py-8">
+            {searchQuery.trim() === "" ? "No shapes available" : "No shapes found"}
           </div>
-          {!collapsedGroups[group] && (
-            <div className="mb-4">
-              <div className="grid grid-cols-3 gap-2 w-full">
-                {items.map((item) => {
-                  return (
+        ) : (
+          Object.entries(filteredGrouped).map(([group, items]) => (
+            <div key={group} className="mb-4">
+              <button
+                onClick={() => toggleGroup(group)}
+                className="w-full flex items-center gap-2 px-2 py-1.5 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-md transition-colors"
+              >
+                <ChevronDown 
+                  size={14} 
+                  className={`transition-transform ${collapsedGroups[group] ? '-rotate-90' : ''}`}
+                />
+                <span>{group}</span>
+                <span className="text-xs text-slate-400 ml-auto">({items.length})</span>
+              </button>
+              {!collapsedGroups[group] && (
+                <div className="grid grid-cols-4 gap-1.5 mt-2">
+                  {items.map((item) => (
                     <div
                       key={item.id}
                       draggable
@@ -183,17 +214,17 @@ const Toolbox: React.FC<ToolboxProps> = ({
                           })
                         );
                         
-                        // Create a custom drag image showing only the single item
+                        // Create a custom drag image
                         const dragImageContainer = document.createElement('div');
                         dragImageContainer.style.cssText = `
                           position: absolute;
                           top: -1000px;
                           left: -1000px;
-                          width: 64px;
-                          height: 64px;
+                          width: 56px;
+                          height: 56px;
                           background: white;
                           border: 2px solid #3b82f6;
-                          border-radius: 8px;
+                          border-radius: 6px;
                           display: flex;
                           align-items: center;
                           justify-content: center;
@@ -207,22 +238,19 @@ const Toolbox: React.FC<ToolboxProps> = ({
                           if (item.shapeElements && item.shapeElements.length > 0) {
                             const iconContent = generateIconFromShapeElements(item.shapeElements);
                             if (iconContent) {
-                              iconHtml = `<svg width="32" height="32" viewBox="0 0 ${item.width || 48} ${item.height || 48}">${iconContent}</svg>`;
+                              iconHtml = `<svg width="28" height="28" viewBox="0 0 ${item.width || 48} ${item.height || 48}">${iconContent}</svg>`;
                             }
                           } else if (item.shape) {
-                            iconHtml = `<svg width="32" height="32" viewBox="0 0 ${item.width || 48} ${item.height || 48}">${item.shape}</svg>`;
+                            iconHtml = `<svg width="28" height="28" viewBox="0 0 ${item.width || 48} ${item.height || 48}">${item.shape}</svg>`;
                           }
                         } else if (item.iconSvg) {
-                          iconHtml = `<div style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">${item.iconSvg}</div>`;
+                          iconHtml = `<div style="width: 28px; height: 28px; display: flex; align-items: center; justify-content: center;">${item.iconSvg}</div>`;
                         }
                         
                         dragImageContainer.innerHTML = iconHtml;
                         document.body.appendChild(dragImageContainer);
+                        e.dataTransfer.setDragImage(dragImageContainer, 28, 28);
                         
-                        // Set the custom drag image
-                        e.dataTransfer.setDragImage(dragImageContainer, 32, 32);
-                        
-                        // Clean up the temporary element after a short delay
                         setTimeout(() => {
                           if (document.body.contains(dragImageContainer)) {
                             document.body.removeChild(dragImageContainer);
@@ -230,37 +258,34 @@ const Toolbox: React.FC<ToolboxProps> = ({
                         }, 100);
                       }}
                       onDragEnd={() => setDraggedItem(null)}
-                      className="aspect-square rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-center shadow-sm cursor-grab hover:shadow-md hover:border-slate-300 hover:bg-white transition-all duration-200 relative group"
+                      className="aspect-square rounded-md bg-slate-50 border border-slate-200 flex items-center justify-center shadow-xs cursor-grab hover:shadow-md hover:border-blue-300 hover:bg-blue-50 transition-all duration-150 relative group"
                       title={item.name}
                     >
                       {/* Tooltip */}
-                      <div className="absolute left-1/2 bottom-[-32px] transform -translate-x-1/2 bg-slate-800 text-white px-2 py-1 rounded text-xs whitespace-nowrap pointer-events-none z-20 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                      <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-slate-900 text-white px-2 py-1 rounded text-xs whitespace-nowrap pointer-events-none z-20 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                         {item.name}
                       </div>
                       
                       {/* Icon */}
                       {(() => {
-                        // Handle "default" iconSvg - generate from shape or shapeElements
                         if (item.iconSvg === "default") {
                           if (item.shapeElements && item.shapeElements.length > 0) {
-                            // Generate icon from shapeElements
                             const iconContent = generateIconFromShapeElements(item.shapeElements);
                             if (iconContent) {
                               return (
                                 <svg
-                                  width={24}
-                                  height={24}
+                                  width={20}
+                                  height={20}
                                   viewBox={`0 0 ${item.width || 48} ${item.height || 48}`}
                                   dangerouslySetInnerHTML={{ __html: iconContent }}
                                 />
                               );
                             }
                           } else if (item.shape) {
-                            // Fallback to legacy shape property
                             return (
                               <svg
-                                width={24}
-                                height={24}
+                                width={20}
+                                height={20}
                                 viewBox={`0 0 ${item.width || 48} ${item.height || 48}`}
                                 dangerouslySetInnerHTML={{ __html: item.shape }}
                               />
@@ -268,10 +293,9 @@ const Toolbox: React.FC<ToolboxProps> = ({
                           }
                           return null;
                         } else if (item.iconSvg) {
-                          // Use explicitly defined iconSvg
                           return (
                             <span
-                              style={{ display: "inline-block", width: 24, height: 24 }}
+                              style={{ display: "inline-block", width: 20, height: 20 }}
                               dangerouslySetInnerHTML={{ __html: item.iconSvg }}
                             />
                           );
@@ -279,21 +303,25 @@ const Toolbox: React.FC<ToolboxProps> = ({
                         return null;
                       })()}
                     </div>
-                  );
-                })}
-              </div>
+                  ))}
+                </div>
+              )}
             </div>
-          )}
-        </div>
-      ))}
-      <Button
-        className="w-full h-10 rounded-lg mt-6 bg-blue-500 hover:bg-blue-600 text-white border-none flex items-center justify-center gap-2 text-sm font-medium transition-colors duration-200 shadow-sm"
-        onClick={() => setShowEditor(true)}
-        title="Add new shape"
-      >
-        <Plus size={16} />
-        Add Shape
-      </Button>
+          ))
+        )}
+      </div>
+
+      {/* Footer with action buttons */}
+      <div className="border-t border-slate-200 p-3 flex-shrink-0 space-y-2">
+        <Button
+          className="w-full h-9 rounded-md bg-blue-500 hover:bg-blue-600 text-white border-none flex items-center justify-center gap-2 text-sm font-medium transition-colors duration-200"
+          onClick={() => setShowEditor(true)}
+          title="Add new custom shape"
+        >
+          <Plus size={14} />
+          Add Shape
+        </Button>
+      </div>
       
       {showEditor && (
         <div
