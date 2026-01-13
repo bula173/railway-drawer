@@ -2,28 +2,31 @@
 .edit-menu {
   position: relative;
   display: inline-block;
+  height: 100%;
 }
 
 .edit-menu-button {
-  background: var(--button-bg, #f3f4f6);
-  border: 1px solid var(--border-color, #d1d5db);
-  border-radius: 6px;
-  padding: 8px 16px;
+  background: #ffffff;
+  border: none;
+  border-right: 1px solid #e2e8f0;
+  padding: 0 16px;
+  height: 40px;
   font-size: 14px;
   font-weight: 500;
-  color: var(--text-color, #374151);
+  color: #374151;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
   outline: none;
+  display: flex;
+  align-items: center;
 }
 
 .edit-menu-button:hover {
-  background: var(--button-hover-bg, #e5e7eb);
-  border-color: var(--border-hover-color, #9ca3af);
+  background: #f8fafc;
 }
 
 .edit-menu-button:focus-visible {
-  outline: 2px solid var(--focus-ring-color, #3b82f6);
+  outline: 2px solid #3b82f6;
   outline-offset: 2px;
 }
 
