@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Plus, Trash2 } from 'lucide-react';
 import type { DrawAreaTab } from './TabPanel';
 
@@ -8,6 +8,7 @@ interface PageManagerProps {
   onTabChange: (tabId: string) => void;
   onAddTab: () => void;
   onDeleteTab: (tabId: string) => void;
+  onTabRename: (tabId: string, newName: string) => void;
 }
 
 /**
@@ -20,7 +21,33 @@ export const PageManager: React.FC<PageManagerProps> = ({
   onTabChange,
   onAddTab,
   onDeleteTab,
+  onTabRename,
 }) => {
+  const [editingTabId, setEditingTabId] = useState<string | null>(null);
+  const [editingName, setEditingName] = useState('');
+
+  const handleTabDoubleClick = (tab: DrawAreaTab) => {
+    setEditingTabId(tab.id);
+    setEditingName(tab.name);
+  };
+
+  const handleNameSubmit = () => {
+    if (editingTabId && editingName.trim()) {
+      onTabRename(editingTabId, editingName.trim());
+    }
+    setEditingTabId(null);
+    setEditingName('');
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      handleNameSubmit();
+    } else if (e.key === 'Escape') {
+      setEditingTabId(null);
+      setEditingName('');
+    }
+  };
+
   return (
     <div className="h-9 bg-white border-t border-slate-200 flex items-center px-3 gap-2 overflow-x-auto">
       {/* Add page button - left side */}
@@ -38,6 +65,7 @@ export const PageManager: React.FC<PageManagerProps> = ({
           <button
             key={tab.id}
             onClick={() => onTabChange(tab.id)}
+            onDoubleClick={() => handleTabDoubleClick(tab)}
             className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all flex items-center gap-2 whitespace-nowrap ${
               activeTabId === tab.id
                 ? 'bg-blue-100 text-blue-700 border border-blue-300'
@@ -46,7 +74,20 @@ export const PageManager: React.FC<PageManagerProps> = ({
             title={tab.name}
           >
             <span>📄</span>
-            <span>Page-{index + 1}</span>
+            {editingTabId === tab.id ? (
+              <input
+                type="text"
+                value={editingName}
+                onChange={(e) => setEditingName(e.target.value)}
+                onBlur={handleNameSubmit}
+                onKeyDown={handleKeyDown}
+                onClick={(e) => e.stopPropagation()}
+                autoFocus
+                className="bg-transparent outline-none text-xs font-medium w-20"
+              />
+            ) : (
+              <span>Page-{index + 1}</span>
+            )}
             {tabs.length > 1 && (
               <button
                 onClick={(e) => {

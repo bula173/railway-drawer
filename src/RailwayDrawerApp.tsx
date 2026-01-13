@@ -290,7 +290,15 @@ const RailwayDrawerApp = () => {
       setActiveTabId(newTabs[0].id);
     }
     setSelectedElement(undefined);
-  };  /**
+  };
+
+  const handleTabRename = (tabId: string, newName: string) => {
+    setTabs(tabs.map(tab => 
+      tab.id === tabId ? { ...tab, name: newName } : tab
+    ));
+  };
+
+  /**
    * @brief Handles switching between tabs and preserves current tab state
    * @param tabId The ID of the tab to switch to
    * @details Saves current elements, grid visibility, and background color before switching
@@ -1603,6 +1611,7 @@ const RailwayDrawerApp = () => {
         onTabChange={handleTabChange}
         onAddTab={handleTabCreate}
         onDeleteTab={handleTabClose}
+        onTabRename={handleTabRename}
       />
       
       {/* About Dialog */}
