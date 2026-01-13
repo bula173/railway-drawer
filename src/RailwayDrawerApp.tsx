@@ -583,8 +583,8 @@ const RailwayDrawerApp = () => {
   }, [globalCopiedElements, activeTabId, handleGlobalCopy, handleGlobalCut, handleGlobalPaste, activeMenu, activeSubMenu, getCurrentDrawAreaRef, updateEditMenuState]);
 
   /**
-   * @brief Saves current drawing elements as a JSON file
-   * @details Exports all elements from the current tab to a downloadable JSON file using project name
+   * @brief Saves all pages/tabs with their elements as a JSON file
+   * @details Exports all pages to a downloadable JSON file using project name
    */
   const saveAsJson = useCallback(() => {
     // Guard against multiple rapid saves
@@ -592,13 +592,16 @@ const RailwayDrawerApp = () => {
     isSavingRef.current = true;
     
     setTimeout(() => {
-      const currentDrawAreaRef = getCurrentDrawAreaRef();
-      const elements = currentDrawAreaRef?.getElements?.();
-      if (!elements) {
-        isSavingRef.current = false;
-        return;
-      }
-      const data = JSON.stringify({ elements }, null, 2);
+      // Save all pages with their current state
+      const tabsToSave = tabs.map(tab => {
+        const tabRef = drawAreaRefs.current.get(tab.id);
+        return {
+          ...tab,
+          elements: tabRef?.getElements?.() || tab.elements,
+        };
+      });
+      
+      const data = JSON.stringify({ pages: tabsToSave }, null, 2);
       const blob = new Blob([data], { type: "application/json" });
       const link = document.createElement("a");
       link.href = URL.createObjectURL(blob);
@@ -613,12 +616,12 @@ const RailwayDrawerApp = () => {
         isSavingRef.current = false;
       }, 500);
     }, 0);
-  }, [getCurrentDrawAreaRef, projectName]);
+  }, [tabs, projectName]);
 
   /**
-   * @brief Loads drawing elements from a JSON file
+   * @brief Loads all pages/tabs from a JSON file
    * @param e The file input change event
-   * @details Parses JSON file and loads elements into the current drawing area
+   * @details Parses JSON file and loads all pages into the app
    */
   const loadFromJson = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -633,38 +636,25 @@ const RailwayDrawerApp = () => {
         if (typeof content === "string") {
           try {
             const parsed = JSON.parse(content);
-            const currentDrawAreaRef = getCurrentDrawAreaRef();
-            if (currentDrawAreaRef && parsed.elements) {
-              currentDrawAreaRef.setElements(parsed.elements || []);
-              
-              // Calculate bounds of all loaded elements and expand canvas if needed
-              if (parsed.elements.length > 0) {
-                let maxX = 0;
-                let maxY = 0;
-                
-                parsed.elements.forEach((el: DrawElement) => {
-                  // Calculate the maximum extent of each element
-                  const endX = Math.max(el.start.x, el.end?.x || el.start.x);
-                  const endY = Math.max(el.start.y, el.end?.y || el.start.y);
-                  
-                  // Add element width/height if available
-                  const elementMaxX = endX + (el.width || 0);
-                  const elementMaxY = endY + (el.height || 0);
-                  
-                  maxX = Math.max(maxX, elementMaxX);
-                  maxY = Math.max(maxY, elementMaxY);
-                });
-                
-                // Expand canvas using page-based system
-                expandCanvasIfNeeded({ maxX, maxY });
+            
+            // Handle new format with pages
+            if (parsed.pages && Array.isArray(parsed.pages)) {
+              setTabs(parsed.pages);
+              // Set active tab to first page if available
+              if (parsed.pages.length > 0) {
+                setActiveTabId(parsed.pages[0].id);
+              }
+            } 
+            // Handle legacy format with single page elements
+            else if (parsed.elements) {
+              const currentDrawAreaRef = getCurrentDrawAreaRef();
+              if (currentDrawAreaRef) {
+                currentDrawAreaRef.setElements(parsed.elements || []);
               }
             }
           } catch {
-            // On parse error, clear elements
-            const currentDrawAreaRef = getCurrentDrawAreaRef();
-            if (currentDrawAreaRef) {
-              currentDrawAreaRef.setElements([]);
-            }
+            // On parse error, show alert
+            alert('Failed to load project file');
           }
         }
       };
