@@ -1288,14 +1288,9 @@ const RailwayDrawerApp = () => {
           </Transition>
         </Menu>
         
-        {/* App Title */}
-        <div className="flex-1 flex items-center justify-center">
-          <h1 className="text-sm font-semibold text-slate-700">Railway Drawer <span className="text-xs text-slate-500 font-normal">v{APP_VERSION}</span></h1>
-        </div>
-        
         {/* Help Menu */}
         <Menu as="div" className="relative">
-          <Menu.Button className="bg-white hover:bg-slate-50 text-slate-700 border-none px-4 h-10 text-sm font-medium cursor-pointer outline-none border-l border-slate-200 transition-colors duration-200 flex items-center">
+          <Menu.Button className="bg-white hover:bg-slate-50 text-slate-700 border-none px-4 h-10 text-sm font-medium cursor-pointer outline-none border-r border-slate-200 transition-colors duration-200 flex items-center">
             Help
           </Menu.Button>
           <Transition
@@ -1307,7 +1302,7 @@ const RailwayDrawerApp = () => {
             leaveFrom="transform opacity-100 scale-100"
             leaveTo="transform opacity-0 scale-95"
           >
-            <Menu.Items className="absolute right-0 mt-2 w-48 origin-top-right bg-white divide-y divide-slate-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-[9999]">
+            <Menu.Items className="absolute left-0 mt-2 w-48 origin-top-right bg-white divide-y divide-slate-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-[9999]">
               <div className="px-1 py-1">
                 <Menu.Item>
                   {({ active }) => (
@@ -1325,6 +1320,11 @@ const RailwayDrawerApp = () => {
             </Menu.Items>
           </Transition>
         </Menu>
+        
+        {/* App Title */}
+        <div className="flex-1 flex items-center justify-center">
+          <h1 className="text-sm font-semibold text-slate-700">Railway Drawer <span className="text-xs text-slate-500 font-normal">v{APP_VERSION}</span></h1>
+        </div>
       </div>
       
       {/* Main Layout */}
