@@ -201,17 +201,49 @@ export function formatTimestamp(timestamp: number | string | Date): string {
  * Downloads data as a file
  */
 export function downloadFile(data: string, filename: string, mimeType = 'application/json'): void {
-  const blob = new Blob([data], { type: mimeType });
-  const url = URL.createObjectURL(blob);
-  
-  const link = document.createElement('a');
-  link.href = url;
-  link.download = filename;
-  document.body.appendChild(link);
-  link.click();
-  
-  document.body.removeChild(link);
-  URL.revokeObjectURL(url);
+  try {
+    const blob = new Blob([data], { type: mimeType });
+    const url = URL.createObjectURL(blob);
+    
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+    link.style.display = 'none';
+    
+    // Add to DOM and trigger download
+    document.body.appendChild(link);
+    
+    // Use both click() and artificial event for maximum compatibility
+    try {
+      link.click();
+    } catch (clickError) {
+      // Fallback for Edge and other browsers that might block click()
+      const event = new MouseEvent('click', {
+        view: window,
+        bubbles: true,
+        cancelable: true,
+      });
+      link.dispatchEvent(event);
+    }
+    
+    // Clean up
+    document.body.removeChild(link);
+    
+    // Clean up blob URL after a delay to ensure download starts
+    setTimeout(() => {
+      URL.revokeObjectURL(url);
+    }, 1000);
+    
+  } catch (error) {
+    console.error('Download failed:', error);
+    
+    // Fallback: Show alert with data for manual save
+    if (mimeType === 'application/json') {
+      alert('Download failed. Please copy the following data and save it manually:\n\n' + data);
+    } else {
+      alert('Download failed. Please check browser settings and allow downloads from this site.');
+    }
+  }
 }
 
 /**

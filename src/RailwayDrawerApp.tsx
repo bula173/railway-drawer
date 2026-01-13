@@ -34,7 +34,7 @@ const GRID_SIZE = 40;
 // Removed - no longer needed with simplified copy/paste implementation
 
 /** @brief Application version */
-const APP_VERSION = "0.3.1 Beta";
+const APP_VERSION = "0.3.2 Beta";
 
 /** @brief Application author */
 const APP_AUTHOR = "Marcin Kwiatkowski";
@@ -643,8 +643,9 @@ const RailwayDrawerApp = () => {
       const link = document.createElement("a");
       link.href = URL.createObjectURL(blob);
       link.download = `${projectName}.json`;
+      link.style.display = 'none';
       document.body.appendChild(link);
-      link.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+      link.click();
       document.body.removeChild(link);
       
       // Clean up and reset flag
@@ -772,8 +773,9 @@ const RailwayDrawerApp = () => {
         const link = document.createElement("a");
         link.href = URL.createObjectURL(blob);
         link.download = `${filename}.svg`;
+        link.style.display = 'none';
         document.body.appendChild(link);
-        link.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+        link.click();
         document.body.removeChild(link);
         isExportingRef.current = false;
         return;
@@ -812,8 +814,9 @@ const RailwayDrawerApp = () => {
           const link = document.createElement("a");
           link.href = dataUrl;
           link.download = `${filename}.${format}`;
+          link.style.display = 'none';
           document.body.appendChild(link);
-          link.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+          link.click();
           document.body.removeChild(link);
           isExportingRef.current = false;
         });
@@ -838,8 +841,9 @@ const RailwayDrawerApp = () => {
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
     link.download = "toolbox_config.json";
+    link.style.display = 'none';
     document.body.appendChild(link);
-    link.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+    link.click();
     document.body.removeChild(link);
   };
 
