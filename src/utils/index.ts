@@ -216,7 +216,7 @@ export function downloadFile(data: string, filename: string, mimeType = 'applica
     // Use both click() and artificial event for maximum compatibility
     try {
       link.click();
-    } catch (clickError) {
+    } catch {
       // Fallback for Edge and other browsers that might block click()
       const event = new MouseEvent('click', {
         view: window,
