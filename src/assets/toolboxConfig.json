@@ -848,15 +848,15 @@
       },
       {
         "id": "topLight",
-        "svg": "{orientation === 'left' ? \"<circle cx='12' cy='20' r='6' fill='{topLight}' stroke='#000' stroke-width='1' transform='translate(12,20) skewY(-15) scale(1,0.9) translate(-12,-20)'/>\" : \"<circle cx='12' cy='15' r='6' fill='{topLight}' stroke='#000' stroke-width='1' transform='translate(12,15) skewY(15) scale(1,0.9) translate(-12,-15)'/>\"}"
+        "svg": "{orientation === 'left' ? \"<circle cx='12' cy='20' r='6' fill='red' stroke='#000' stroke-width='1' transform='translate(12,20) skewY(-15) scale(1,0.9) translate(-12,-20)'/>\" : \"<circle cx='12' cy='15' r='6' fill='red' stroke='#000' stroke-width='1' transform='translate(12,15) skewY(15) scale(1,0.9) translate(-12,-15)'/>\"}"
       },
       {
         "id": "middleLight",
-        "svg": "{orientation === 'left' ? \"<circle cx='12' cy='34' r='6' fill='{middleLight}' stroke='#000' stroke-width='1' transform='translate(12,34) skewY(-15) scale(1,0.9) translate(-12,-34)'/>\" : \"<circle cx='12' cy='29' r='6' fill='{middleLight}' stroke='#000' stroke-width='1' transform='translate(12,29) skewY(15) scale(1,0.9) translate(-12,-29)'/>\"}"
+        "svg": "{orientation === 'left' ? \"<circle cx='12' cy='34' r='6' fill='white' stroke='#000' stroke-width='1' transform='translate(12,34) skewY(-15) scale(1,0.9) translate(-12,-34)'/>\" : \"<circle cx='12' cy='29' r='6' fill='white' stroke='#000' stroke-width='1' transform='translate(12,29) skewY(15) scale(1,0.9) translate(-12,-29)'/>\"}"
       },
       {
         "id": "bottomLight",
-        "svg": "{orientation === 'left' ? \"<circle cx='12' cy='48' r='6' fill='{bottomLight}' stroke='#000' stroke-width='1' transform='translate(12,48) skewY(-15) scale(1,0.9) translate(-12,-48)'/>\" : \"<circle cx='12' cy='43' r='6' fill='{bottomLight}' stroke='#000' stroke-width='1' transform='translate(12,43) skewY(15) scale(1,0.9) translate(-12,-43)'/>\"}"
+        "svg": "{orientation === 'left' ? \"<circle cx='12' cy='48' r='6' fill='white' stroke='#000' stroke-width='1' transform='translate(12,48) skewY(-15) scale(1,0.9) translate(-12,-48)'/>\" : \"<circle cx='12' cy='43' r='6' fill='white' stroke='#000' stroke-width='1' transform='translate(12,43) skewY(15) scale(1,0.9) translate(-12,-43)'/>\"}"
       },
       {
         "id": "signalPole",
