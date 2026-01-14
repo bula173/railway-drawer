@@ -12,7 +12,7 @@
 
 import React, { useState, useRef, useEffect, useCallback, Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
-import { MousePointer2, Ruler, Train, Edit2, Check, X } from "lucide-react";
+import { MousePointer2, Ruler, Train, Edit2, Check, X, ChevronLeft, ChevronRight, ChevronDown, Plus, Minus } from "lucide-react";
 import toolboxConfig from "./assets/toolboxConfig.json";
 import Toolbox from "./components/Toolbox";
 import type { ToolboxItem } from "./components/Toolbox";
@@ -34,7 +34,7 @@ const GRID_SIZE = 40;
 // Removed - no longer needed with simplified copy/paste implementation
 
 /** @brief Application version */
-const APP_VERSION = "0.3.2 Beta";
+const APP_VERSION = "0.3.3 Beta";
 
 /** @brief Application author */
 const APP_AUTHOR = "Marcin Kwiatkowski";
@@ -198,8 +198,11 @@ const RailwayDrawerApp = () => {
   const projectNameInputRef = useRef<HTMLInputElement>(null);
 
   /** @brief Panel widths and layout dimensions */
-  const [toolboxWidth, setToolboxWidth] = useState(148); // 3*44 + 2*8
+  const [toolboxWidth, setToolboxWidth] = useState(200); // wider default (was 148)
   const [propertiesWidth, setPropertiesWidth] = useState(220);
+  const [layersCollapsed, setLayersCollapsed] = useState(false);
+  const [leftCollapsed, setLeftCollapsed] = useState(false);
+  const [rightCollapsed, setRightCollapsed] = useState(false);
   const tabPanelHeight= 40;
 
   /** @brief UI state for editor modal and drawing area */
@@ -886,6 +889,11 @@ const RailwayDrawerApp = () => {
    * @details Sets up mouse move/up listeners to track resize and update panel width
    */
   const startResizeToolbox = (e: React.MouseEvent) => {
+    // If left panel is collapsed, expand it instead of starting resize
+    if (leftCollapsed) {
+      setLeftCollapsed(false);
+      return;
+    }
     const startX = e.clientX;
     const startWidth = toolboxWidth;
     const onMove = (moveEvent: MouseEvent) => {
@@ -905,6 +913,11 @@ const RailwayDrawerApp = () => {
    * @details Sets up mouse move/up listeners to track resize and update panel width
    */
   const startResizeProperties = (e: React.MouseEvent) => {
+    // If right panel is collapsed, expand it instead of starting resize
+    if (rightCollapsed) {
+      setRightCollapsed(false);
+      return;
+    }
     const startX = e.clientX;
     const startWidth = propertiesWidth;
     const onMove = (moveEvent: MouseEvent) => {
@@ -1601,28 +1614,41 @@ const RailwayDrawerApp = () => {
       {/* Main Layout */}
       <div className="flex flex-row w-screen min-w-0 flex-1 overflow-hidden" style={{ height: `calc(100vh - ${tabPanelHeight}px)` }}>
         <div
-          style={{ width: toolboxWidth, minWidth: 120 }}
-          className="flex flex-col"
+          style={{ width: leftCollapsed ? 36 : toolboxWidth, minWidth: leftCollapsed ? 36 : 160 }}
+          className="flex flex-col relative"
         >
-          <div className="flex-1 overflow-hidden">
-            <Toolbox
-              toolbox={toolbox}
-              setToolbox={setToolbox}
-              showEditor={showEditor}
-              setShowEditor={setShowEditor}
-              setDraggedItem={setDraggedItem}
-            />
-          </div>
-          <div style={{ height: '200px' }}>
-            <LayersPanel 
-              layers={layers}
-              activeLayerId={activeLayerId}
-              onLayerToggleVisibility={handleLayerToggleVisibility}
-              onLayerToggleLock={handleLayerToggleLock}
-              onLayerSelect={setActiveLayerId}
-              onAddLayer={handleAddLayer}
-            />
-          </div>
+          {leftCollapsed ? (
+            <div className="h-full flex items-center justify-center">
+              <button
+                onClick={() => setLeftCollapsed(false)}
+                title="Expand toolbox"
+                className="p-1 rounded hover:bg-slate-100 text-slate-600"
+              >
+                <ChevronRight size={16} />
+              </button>
+            </div>
+          ) : (
+            <>
+              <div className="flex items-center justify-end p-1 border-b border-slate-200">
+                <button
+                  onClick={() => setLeftCollapsed(true)}
+                  title="Collapse toolbox"
+                  className="px-2 py-0.5 text-xs text-slate-600 hover:bg-slate-100 rounded"
+                >
+                  <ChevronDown size={14} />
+                </button>
+              </div>
+              <div className="flex-1 overflow-hidden">
+                <Toolbox
+                  toolbox={toolbox}
+                  setToolbox={setToolbox}
+                  showEditor={showEditor}
+                  setShowEditor={setShowEditor}
+                  setDraggedItem={setDraggedItem}
+                />
+              </div>
+            </>
+          )}
         </div>
         
         <div
@@ -1735,15 +1761,68 @@ const RailwayDrawerApp = () => {
           onMouseDown={startResizeProperties}
         />
         
-        <div
-          className="panel bg-white"
-          style={{ width: propertiesWidth, minWidth: 180 }}
-        >
-          <EnhancedPropertiesPanel
-            drawAreaRef={currentDrawAreaRefObject}
-            selectedElement={selectedElement}
-            onElementChange={setSelectedElement}
-          />
+        <div style={{ width: rightCollapsed ? 36 : propertiesWidth, minWidth: rightCollapsed ? 36 : 180 }}>
+          {rightCollapsed ? (
+            <div className="h-full flex items-center justify-center bg-white border-l border-slate-200">
+              <button
+                onClick={() => setRightCollapsed(false)}
+                title="Expand properties"
+                className="p-1 rounded hover:bg-slate-100 text-slate-600"
+              >
+                <ChevronLeft size={16} />
+              </button>
+            </div>
+          ) : (
+            <div className="panel bg-white" style={{ width: '100%', minWidth: 180 }}>
+              <div className="flex flex-col h-full">
+                <div className={`transition-all border-b border-slate-200 bg-slate-50`}>
+                  <div className="flex items-center justify-between px-2 py-1">
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs font-bold text-slate-700 uppercase tracking-wider">Layers</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <button
+                        onClick={() => setLayersCollapsed(prev => !prev)}
+                        className="px-2 py-1 text-xs text-slate-600 hover:bg-slate-100 rounded transition-colors"
+                        title={layersCollapsed ? 'Expand Layers' : 'Collapse Layers'}
+                      >
+                        {layersCollapsed ? <Plus size={14} /> : <Minus size={14} />}
+                      </button>
+                      <button
+                        onClick={() => setRightCollapsed(true)}
+                        title="Collapse properties"
+                        className="px-2 py-0.5 text-xs text-slate-600 hover:bg-slate-100 rounded"
+                      >
+                        <ChevronDown size={14} />
+                      </button>
+                    </div>
+                  </div>
+                  <div className={`overflow-hidden transition-[height] duration-200`} style={{ height: layersCollapsed ? 0 : 200 }}>
+                    {!layersCollapsed && (
+                      <div className="h-[200px]">
+                        <LayersPanel
+                          layers={layers}
+                          activeLayerId={activeLayerId}
+                          onLayerToggleVisibility={handleLayerToggleVisibility}
+                          onLayerToggleLock={handleLayerToggleLock}
+                          onLayerSelect={setActiveLayerId}
+                          onAddLayer={handleAddLayer}
+                        />
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                <div className="flex-1 overflow-auto">
+                  <EnhancedPropertiesPanel
+                    drawAreaRef={currentDrawAreaRefObject}
+                    selectedElement={selectedElement}
+                    onElementChange={setSelectedElement}
+                  />
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
 
