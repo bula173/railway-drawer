@@ -193,27 +193,78 @@ export const ShapeLibraryProvider: React.FC<ShapeLibraryProviderProps> = ({ chil
   }, []);
 
   /**
+   * Generate unique ID for shapes
+   */
+  const generateShapeId = (): string => `shape-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+
+  /**
    * Get default track shapes
    */
   const getDefaultTrackShapes = (): DrawElement[] => {
     return [
       {
-        id: 'track-straight',
+        id: 'track-straight-h',
         type: 'track',
+        name: 'Straight Track (Horizontal)',
         start: { x: 0, y: 50 },
-        end: { x: 100, y: 50 },
-        fillColor: '#000000',
-        strokeColor: '#000000',
-        strokeWidth: 2,
+        end: { x: 150, y: 50 },
+        styles: { stroke: '#000000', strokeWidth: 2 },
       } as DrawElement,
       {
-        id: 'track-curve-left',
+        id: 'track-straight-v',
+        type: 'track',
+        name: 'Straight Track (Vertical)',
+        start: { x: 50, y: 0 },
+        end: { x: 50, y: 150 },
+        styles: { stroke: '#000000', strokeWidth: 2 },
+      } as DrawElement,
+      {
+        id: 'track-curve-br',
         type: 'track-curve',
-        start: { x: 0, y: 0 },
-        end: { x: 100, y: 100 },
-        fillColor: '#000000',
-        strokeColor: '#000000',
-        strokeWidth: 2,
+        name: 'Curve (Bottom-Right)',
+        start: { x: 0, y: 50 },
+        end: { x: 100, y: 150 },
+        styles: { stroke: '#000000', strokeWidth: 2 },
+      } as DrawElement,
+      {
+        id: 'track-curve-bl',
+        type: 'track-curve',
+        name: 'Curve (Bottom-Left)',
+        start: { x: 150, y: 50 },
+        end: { x: 50, y: 150 },
+        styles: { stroke: '#000000', strokeWidth: 2 },
+      } as DrawElement,
+      {
+        id: 'track-curve-tr',
+        type: 'track-curve',
+        name: 'Curve (Top-Right)',
+        start: { x: 0, y: 150 },
+        end: { x: 100, y: 50 },
+        styles: { stroke: '#000000', strokeWidth: 2 },
+      } as DrawElement,
+      {
+        id: 'track-curve-tl',
+        type: 'track-curve',
+        name: 'Curve (Top-Left)',
+        start: { x: 150, y: 150 },
+        end: { x: 50, y: 50 },
+        styles: { stroke: '#000000', strokeWidth: 2 },
+      } as DrawElement,
+      {
+        id: 'track-double-h',
+        type: 'track-double',
+        name: 'Double Track (Horizontal)',
+        start: { x: 0, y: 40 },
+        end: { x: 150, y: 60 },
+        styles: { stroke: '#000000', strokeWidth: 2 },
+      } as DrawElement,
+      {
+        id: 'track-double-v',
+        type: 'track-double',
+        name: 'Double Track (Vertical)',
+        start: { x: 40, y: 0 },
+        end: { x: 60, y: 150 },
+        styles: { stroke: '#000000', strokeWidth: 2 },
       } as DrawElement,
     ];
   };
@@ -226,11 +277,74 @@ export const ShapeLibraryProvider: React.FC<ShapeLibraryProviderProps> = ({ chil
       {
         id: 'signal-3aspect',
         type: 'signal',
-        start: { x: 50, y: 0 },
-        end: { x: 50, y: 100 },
-        fillColor: '#FF0000',
-        strokeColor: '#000000',
-        strokeWidth: 2,
+        name: '3-Aspect Signal (Red)',
+        start: { x: 40, y: 0 },
+        end: { x: 60, y: 100 },
+        styles: { fill: '#FF0000', stroke: '#000000', strokeWidth: 1 },
+      } as DrawElement,
+      {
+        id: 'signal-3aspect-yellow',
+        type: 'signal',
+        name: '3-Aspect Signal (Yellow)',
+        start: { x: 40, y: 0 },
+        end: { x: 60, y: 100 },
+        styles: { fill: '#FFFF00', stroke: '#000000', strokeWidth: 1 },
+      } as DrawElement,
+      {
+        id: 'signal-3aspect-green',
+        type: 'signal',
+        name: '3-Aspect Signal (Green)',
+        start: { x: 40, y: 0 },
+        end: { x: 60, y: 100 },
+        styles: { fill: '#00AA00', stroke: '#000000', strokeWidth: 1 },
+      } as DrawElement,
+      {
+        id: 'signal-4aspect-red',
+        type: 'signal-4aspect',
+        name: '4-Aspect Signal (Red)',
+        start: { x: 35, y: 0 },
+        end: { x: 65, y: 120 },
+        styles: { fill: '#FF0000', stroke: '#000000', strokeWidth: 1 },
+      } as DrawElement,
+      {
+        id: 'signal-4aspect-yellow1',
+        type: 'signal-4aspect',
+        name: '4-Aspect Signal (Double Yellow)',
+        start: { x: 35, y: 0 },
+        end: { x: 65, y: 120 },
+        styles: { fill: '#FFFF00', stroke: '#000000', strokeWidth: 1 },
+      } as DrawElement,
+      {
+        id: 'signal-4aspect-yellow2',
+        type: 'signal-4aspect',
+        name: '4-Aspect Signal (Single Yellow)',
+        start: { x: 35, y: 0 },
+        end: { x: 65, y: 120 },
+        styles: { fill: '#FFAA00', stroke: '#000000', strokeWidth: 1 },
+      } as DrawElement,
+      {
+        id: 'signal-4aspect-green',
+        type: 'signal-4aspect',
+        name: '4-Aspect Signal (Green)',
+        start: { x: 35, y: 0 },
+        end: { x: 65, y: 120 },
+        styles: { fill: '#00AA00', stroke: '#000000', strokeWidth: 1 },
+      } as DrawElement,
+      {
+        id: 'signal-distant',
+        type: 'signal-distant',
+        name: 'Distant Signal',
+        start: { x: 35, y: 0 },
+        end: { x: 65, y: 80 },
+        styles: { fill: '#FFAA00', stroke: '#000000', strokeWidth: 1 },
+      } as DrawElement,
+      {
+        id: 'signal-shunting',
+        type: 'signal-shunting',
+        name: 'Shunting Signal',
+        start: { x: 45, y: 0 },
+        end: { x: 55, y: 80 },
+        styles: { fill: '#FF00FF', stroke: '#000000', strokeWidth: 1 },
       } as DrawElement,
     ];
   };
@@ -239,21 +353,208 @@ export const ShapeLibraryProvider: React.FC<ShapeLibraryProviderProps> = ({ chil
    * Get default switch shapes
    */
   const getDefaultSwitchShapes = (): DrawElement[] => {
-    return [];
+    return [
+      {
+        id: 'switch-points-left',
+        type: 'switch',
+        name: 'Points (Left)',
+        start: { x: 0, y: 50 },
+        end: { x: 100, y: 30 },
+        styles: { stroke: '#000000', strokeWidth: 2 },
+      } as DrawElement,
+      {
+        id: 'switch-points-right',
+        type: 'switch',
+        name: 'Points (Right)',
+        start: { x: 0, y: 50 },
+        end: { x: 100, y: 70 },
+        styles: { stroke: '#000000', strokeWidth: 2 },
+      } as DrawElement,
+      {
+        id: 'switch-crossover-left',
+        type: 'switch-crossover',
+        name: 'Crossover (Left)',
+        start: { x: 0, y: 40 },
+        end: { x: 100, y: 60 },
+        styles: { stroke: '#000000', strokeWidth: 2 },
+      } as DrawElement,
+      {
+        id: 'switch-crossover-right',
+        type: 'switch-crossover',
+        name: 'Crossover (Right)',
+        start: { x: 0, y: 60 },
+        end: { x: 100, y: 40 },
+        styles: { stroke: '#000000', strokeWidth: 2 },
+      } as DrawElement,
+      {
+        id: 'switch-diamond',
+        type: 'switch-diamond',
+        name: 'Diamond Crossing',
+        start: { x: 0, y: 50 },
+        end: { x: 100, y: 50 },
+        styles: { stroke: '#000000', strokeWidth: 2 },
+      } as DrawElement,
+      {
+        id: 'switch-3way',
+        type: 'switch-3way',
+        name: '3-Way Junction',
+        start: { x: 0, y: 50 },
+        end: { x: 100, y: 50 },
+        styles: { stroke: '#000000', strokeWidth: 2 },
+      } as DrawElement,
+      {
+        id: 'switch-turnout',
+        type: 'switch-turnout',
+        name: 'Turnout',
+        start: { x: 0, y: 50 },
+        end: { x: 80, y: 80 },
+        styles: { stroke: '#000000', strokeWidth: 2 },
+      } as DrawElement,
+    ];
   };
 
   /**
    * Get default structure shapes
    */
   const getDefaultStructureShapes = (): DrawElement[] => {
-    return [];
+    return [
+      {
+        id: 'platform-short',
+        type: 'platform',
+        name: 'Short Platform (60m)',
+        start: { x: 0, y: 30 },
+        end: { x: 60, y: 70 },
+        styles: { fill: '#FFFFCC', stroke: '#FF9900', strokeWidth: 2 },
+      } as DrawElement,
+      {
+        id: 'platform-medium',
+        type: 'platform',
+        name: 'Medium Platform (100m)',
+        start: { x: 0, y: 30 },
+        end: { x: 100, y: 70 },
+        styles: { fill: '#FFFFCC', stroke: '#FF9900', strokeWidth: 2 },
+      } as DrawElement,
+      {
+        id: 'platform-long',
+        type: 'platform',
+        name: 'Long Platform (150m)',
+        start: { x: 0, y: 30 },
+        end: { x: 150, y: 70 },
+        styles: { fill: '#FFFFCC', stroke: '#FF9900', strokeWidth: 2 },
+      } as DrawElement,
+      {
+        id: 'platform-island',
+        type: 'platform-island',
+        name: 'Island Platform',
+        start: { x: 0, y: 20 },
+        end: { x: 100, y: 80 },
+        styles: { fill: '#FFFFCC', stroke: '#FF9900', strokeWidth: 2 },
+      } as DrawElement,
+      {
+        id: 'station-building',
+        type: 'station',
+        name: 'Station Building',
+        start: { x: 10, y: 10 },
+        end: { x: 90, y: 90 },
+        styles: { fill: '#FF6666', stroke: '#000000', strokeWidth: 2 },
+      } as DrawElement,
+      {
+        id: 'depot',
+        type: 'depot',
+        name: 'Depot/Maintenance Facility',
+        start: { x: 0, y: 0 },
+        end: { x: 120, y: 60 },
+        styles: { fill: '#9999FF', stroke: '#000000', strokeWidth: 2 },
+      } as DrawElement,
+      {
+        id: 'warehouse',
+        type: 'warehouse',
+        name: 'Warehouse',
+        start: { x: 0, y: 0 },
+        end: { x: 100, y: 50 },
+        styles: { fill: '#CCCCCC', stroke: '#000000', strokeWidth: 2 },
+      } as DrawElement,
+      {
+        id: 'level-crossing',
+        type: 'level-crossing',
+        name: 'Level Crossing',
+        start: { x: 0, y: 40 },
+        end: { x: 100, y: 60 },
+        styles: { fill: '#CC0000', stroke: '#000000', strokeWidth: 2 },
+      } as DrawElement,
+    ];
   };
 
   /**
    * Get default ERTMS shapes
    */
   const getDefaultERTMSShapes = (): DrawElement[] => {
-    return [];
+    return [
+      {
+        id: 'ertms-balise',
+        type: 'ertms-balise',
+        name: 'Balise (Fixed)',
+        start: { x: 40, y: 0 },
+        end: { x: 60, y: 60 },
+        styles: { fill: '#0099FF', stroke: '#000000', strokeWidth: 2 },
+      } as DrawElement,
+      {
+        id: 'ertms-balise-l2',
+        type: 'ertms-balise',
+        name: 'Balise (Level 2)',
+        start: { x: 40, y: 0 },
+        end: { x: 60, y: 70 },
+        styles: { fill: '#0099FF', stroke: '#0000AA', strokeWidth: 2 },
+      } as DrawElement,
+      {
+        id: 'ertms-balise-l3',
+        type: 'ertms-balise',
+        name: 'Balise (Level 3)',
+        start: { x: 40, y: 0 },
+        end: { x: 60, y: 50 },
+        styles: { fill: '#00FF99', stroke: '#0000AA', strokeWidth: 2 },
+      } as DrawElement,
+      {
+        id: 'ertms-rbc-link',
+        type: 'ertms-rbc',
+        name: 'RBC (Radio Block Center)',
+        start: { x: 0, y: 30 },
+        end: { x: 150, y: 70 },
+        styles: { fill: '#FFCCCC', stroke: '#FF0000', strokeWidth: 2, strokeDasharray: '5,5' },
+      } as DrawElement,
+      {
+        id: 'ertms-gsm-r',
+        type: 'ertms-gsm',
+        name: 'GSM-R Coverage Area',
+        start: { x: 0, y: 30 },
+        end: { x: 150, y: 70 },
+        styles: { fill: '#CCFFCC', stroke: '#00AA00', strokeWidth: 2, strokeDasharray: '5,5' },
+      } as DrawElement,
+      {
+        id: 'ertms-antenna',
+        type: 'ertms-antenna',
+        name: 'GSM-R Antenna',
+        start: { x: 45, y: 0 },
+        end: { x: 55, y: 80 },
+        styles: { stroke: '#FF6600', strokeWidth: 2 },
+      } as DrawElement,
+      {
+        id: 'ertms-hotspot',
+        type: 'ertms-hotspot',
+        name: 'Dead Zone / Hotspot',
+        start: { x: 25, y: 25 },
+        end: { x: 75, y: 75 },
+        styles: { fill: '#FFFF00', stroke: '#FF0000', strokeWidth: 2, opacity: 0.5 },
+      } as DrawElement,
+      {
+        id: 'ertms-link-box',
+        type: 'ertms-link',
+        name: 'Link Box (Trackside)',
+        start: { x: 35, y: 35 },
+        end: { x: 65, y: 65 },
+        styles: { fill: '#FF9999', stroke: '#000000', strokeWidth: 2 },
+      } as DrawElement,
+    ];
   };
 
   /**
