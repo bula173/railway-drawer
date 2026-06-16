@@ -3,6 +3,8 @@ import type { ReactNode } from 'react';
 import { UIProvider } from '../contexts/UIContext';
 import { ClipboardProvider } from '../contexts/ClipboardContext';
 import { DrawingProvider } from '../contexts/DrawingContext';
+import { TemplateProvider } from '../contexts/TemplateContext';
+import { ShapeLibraryProvider } from '../contexts/ShapeLibraryContext';
 import { ErrorBoundary } from './ErrorBoundary';
 
 interface AppProvidersProps {
@@ -19,7 +21,11 @@ export const AppProviders: React.FC<AppProvidersProps> = ({ children }) => {
       <UIProvider>
         <DrawingProvider>
           <ClipboardProvider>
-            {children}
+            <TemplateProvider>
+              <ShapeLibraryProvider>
+                {children}
+              </ShapeLibraryProvider>
+            </TemplateProvider>
           </ClipboardProvider>
         </DrawingProvider>
       </UIProvider>
