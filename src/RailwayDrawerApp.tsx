@@ -1980,6 +1980,24 @@ const RailwayDrawerApp = () => {
               <TemplateGallery
                 onTemplateSelect={(template) => {
                   logger.debug('RailwayDrawerApp', 'Template selected', { templateId: template.id });
+                  // Load template elements into current tab
+                  const currentTab = tabs.find(t => t.id === activeTabId);
+                  if (currentTab) {
+                    const updatedTabs = tabs.map(t =>
+                      t.id === activeTabId
+                        ? { ...t, elements: [...t.elements, ...template.elements] }
+                        : t
+                    );
+                    setTabs(updatedTabs);
+                    // Update the current DrawArea ref if it exists
+                    const currentRef = drawAreaRefs.current.get(activeTabId);
+                    if (currentRef) {
+                      logger.info('RailwayDrawerApp', 'Template loaded into DrawArea', {
+                        templateId: template.id,
+                        elementsAdded: template.elements.length
+                      });
+                    }
+                  }
                   setShowTemplateGallery(false);
                 }}
               />
