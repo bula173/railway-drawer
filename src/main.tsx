@@ -1,10 +1,13 @@
 import "./styles/app.css";
+import React from "react";
 import ReactDOM from "react-dom/client";
 import RailwayDrawerApp from "./RailwayDrawerApp";
+import { ErrorBoundary } from "./components/ErrorBoundary";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  // Temporarily disable StrictMode to prevent double-rendering during development
-  // <React.StrictMode>
-    <RailwayDrawerApp />
-  // </React.StrictMode>
+  <React.StrictMode>
+    <ErrorBoundary>
+      <RailwayDrawerApp />
+    </ErrorBoundary>
+  </React.StrictMode>
 );
