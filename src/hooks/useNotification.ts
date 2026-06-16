@@ -35,10 +35,11 @@ export const useNotification = () => {
       setNotifications(prev => [...prev, fullNotification]);
 
       // Auto-remove after duration
-      if (fullNotification.duration > 0) {
+      const duration = fullNotification.duration ?? 0;
+      if (duration > 0) {
         const timeout = setTimeout(() => {
           removeNotification(id);
-        }, fullNotification.duration);
+        }, duration);
 
         timeoutRef.current.set(id, timeout);
       }

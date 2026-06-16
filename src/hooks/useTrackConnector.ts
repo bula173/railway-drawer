@@ -71,7 +71,7 @@ export const useTrackConnector = (
   const {
     gridSize = 20,
     snapToGrid = true,
-    _snapDistance = 30,
+    snapDistance: _snapDistance = 30,
     autoAvoidObstacles = true,
     routingType = 'orthogonal',
   } = options;

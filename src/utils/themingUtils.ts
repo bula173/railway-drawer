@@ -173,7 +173,7 @@ export const searchCommands = (commands: Command[], query: string): Command[] =>
  */
 export const generateSVGExport = (
   elements: DrawElement[],
-  options: ExportOptions = {}
+  options: Partial<ExportOptions> = {}
 ): string => {
   const width = options.width || 800;
   const height = options.height || 600;
@@ -198,8 +198,8 @@ export const generateSVGExport = (
  * Generate PDF export parameters
  */
 export const generatePDFExportParams = (
-  elements: DrawElement[],
-  options: ExportOptions = {}
+  _elements: DrawElement[],
+  options: Partial<ExportOptions> = {}
 ) => {
   const pageSize = options.pageSize || 'A4';
   const orientation = options.pageOrientation || 'portrait';

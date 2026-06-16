@@ -62,11 +62,10 @@ export const useDrawAreaIntegration = (initialElements: DrawElement[] = []) => {
 
   // Coordinate between managers
   const updateElement = useCallback((element: DrawElement) => {
-    setElements(prev =>
-      prev.map(el => (el.id === element.id ? element : el))
-    );
-    history.pushToHistory(prev => [...prev, element], 'Element updated');
-  }, [history]);
+    const newElements = elements.map(el => (el.id === element.id ? element : el));
+    setElements(newElements);
+    history.pushToHistory(newElements, 'Element updated');
+  }, [elements, history]);
 
   const deleteElements = useCallback((ids: string[]) => {
     const newElements = elements.filter(el => !ids.includes(el.id));

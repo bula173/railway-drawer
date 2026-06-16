@@ -460,11 +460,11 @@ export const snapToGuide = (
 
   // Apply snapping
   if (closestVertical) {
-    deltaX = closestVertical.position - bounds.centerX;
+    deltaX = (closestVertical as SmartGuide).position - bounds.centerX;
   }
 
   if (closestHorizontal) {
-    deltaY = closestHorizontal.position - bounds.centerY;
+    deltaY = (closestHorizontal as SmartGuide).position - bounds.centerY;
   }
 
   if (deltaX !== 0 || deltaY !== 0) {

@@ -107,14 +107,10 @@ export const createDrawElement = (
   overrides: Partial<DrawElement> & { id: string; type: DrawElement['type']; start: Point; end: Point }
 ): DrawElement => {
   return {
-    id: overrides.id,
-    type: overrides.type,
-    start: overrides.start,
-    end: overrides.end,
-    fillColor: overrides.fillColor ?? '#ffffff',
-    strokeColor: overrides.strokeColor ?? '#000000',
-    strokeWidth: overrides.strokeWidth ?? 1,
-    opacity: overrides.opacity ?? 1,
+    fillColor: '#ffffff',
+    strokeColor: '#000000',
+    strokeWidth: 1,
+    opacity: 1,
     ...overrides,
   };
 };
