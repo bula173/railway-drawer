@@ -189,7 +189,7 @@ export const ShapeSearchPanel: React.FC<ShapeSearchPanelProps> = ({
   };
 
   /**
-   * Render search results organized by library
+   * Render search results organized by library with drag support
    */
   const renderResults = () => {
     if (search.isSearching) {
@@ -237,19 +237,29 @@ export const ShapeSearchPanel: React.FC<ShapeSearchPanelProps> = ({
               {results.map(result => (
                 <div
                   key={`${result.libraryId}-${result.shape.id}`}
+                  draggable
+                  onDragStart={(e) => {
+                    logger.info('ShapeSearchPanel', 'Drag started', { shapeId: result.shape.id });
+                    e.dataTransfer.effectAllowed = 'copy';
+                    e.dataTransfer.setData('application/railway-item', JSON.stringify(result.shape));
+                    // Record usage when drag starts
+                    handleShapeSelect(result.shape, result.libraryId);
+                  }}
                   onClick={() => handleShapeSelect(result.shape, result.libraryId)}
                   style={{
                     padding: '10px 8px',
                     marginBottom: '2px',
                     backgroundColor: '#f9f9f9',
                     border: '1px solid #e0e0e0',
-                    cursor: 'pointer',
+                    cursor: 'grab',
                     transition: 'all 0.2s',
                     borderLeft: '3px solid #007bff',
+                    userSelect: 'none',
                   }}
                   onMouseOver={e => {
                     (e.currentTarget as HTMLElement).style.backgroundColor = '#e3f2fd';
                     (e.currentTarget as HTMLElement).style.borderLeftColor = '#0056b3';
+                    (e.currentTarget as HTMLElement).style.cursor = 'grab';
                   }}
                   onMouseOut={e => {
                     (e.currentTarget as HTMLElement).style.backgroundColor = '#f9f9f9';
@@ -261,6 +271,9 @@ export const ShapeSearchPanel: React.FC<ShapeSearchPanelProps> = ({
                   </div>
                   <div style={{ fontSize: '11px', color: '#666', marginTop: '2px' }}>
                     {result.shape.type}
+                  </div>
+                  <div style={{ fontSize: '10px', color: '#999', marginTop: '2px' }}>
+                    Drag to canvas
                   </div>
                 </div>
               ))}
