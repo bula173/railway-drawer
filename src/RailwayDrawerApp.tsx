@@ -22,10 +22,14 @@ import DrawArea, { type DrawAreaRef } from "./components/DrawArea";
 import { LayersPanel } from "./components/LayersPanel";
 import { PageManager } from "./components/PageManager";
 import { EditMenu } from "./components/EditMenu";
+import { ShapeSearchPanel } from "./components/ShapeSearchPanel";
+import { TemplateGallery } from "./components/TemplateGallery";
+import { AlignmentToolbar } from "./components/AlignmentToolbar";
 import type { DrawElement } from "./components/Elements";
 import type { DrawTool, Layer } from "./types";
 import { logger } from "./utils/logger";
 import { saveToLocalStorage, loadFromLocalStorage, clearLocalStorage } from "./utils/storageManager";
+import { getAvailableThemes } from "./utils/themingUtils";
 
 /** @brief Grid size for snap-to-grid functionality */
 const GRID_SIZE = 40;
@@ -154,6 +158,12 @@ const RailwayDrawerApp = () => {
   /** @brief Saving status state */
   const [savingStatus, setSavingStatus] = useState<'idle' | 'saving' | 'saved'>('idle');
 
+  // Draw.io-inspired features state
+  const [showShapePanel, setShowShapePanel] = useState(false);
+  const [showTemplateGallery, setShowTemplateGallery] = useState(false);
+  const [currentTheme, setCurrentTheme] = useState<string>('modern');
+  const [selectedElements, setSelectedElements] = useState<DrawElement[]>([]);
+
   /** @brief Update edit menu state based on current DrawArea */
   const updateEditMenuState = useCallback(() => {
     const currentRef = currentDrawAreaRefObject.current;
@@ -183,6 +193,19 @@ const RailwayDrawerApp = () => {
   useEffect(() => {
     updateEditMenuState();
   }, [selectedElement, activeTabId, updateEditMenuState, globalCopiedElements]);
+
+  // Update selected elements for alignment toolbar
+  useEffect(() => {
+    const currentRef = getCurrentDrawAreaRef();
+    if (currentRef) {
+      const selectedIds = currentRef.getSelectedElementIds();
+      const currentTab = tabs.find(t => t.id === activeTabId);
+      if (currentTab) {
+        const selected = currentTab.elements.filter(el => selectedIds.includes(el.id));
+        setSelectedElements(selected);
+      }
+    }
+  }, [activeTabId, tabs, selectedElement]);
 
   /** @brief Get the current active DrawArea ref */
   const getCurrentDrawAreaRef = useCallback(() => drawAreaRefs.current.get(activeTabId), [activeTabId]);
@@ -1604,7 +1627,73 @@ const RailwayDrawerApp = () => {
             </Menu.Items>
           </Transition>
         </Menu>
-        
+
+        {/* Tools Menu - Draw.io Features */}
+        <Menu as="div" className="relative">
+          <Menu.Button className="bg-white hover:bg-slate-50 text-slate-700 border-none px-4 h-10 text-sm font-medium cursor-pointer outline-none border-r border-slate-200 transition-colors duration-200 flex items-center">
+            Tools
+          </Menu.Button>
+          <Transition
+            as={Fragment}
+            enter="transition ease-out duration-100"
+            enterFrom="transform opacity-0 scale-95"
+            enterTo="transform opacity-100 scale-100"
+            leave="transition ease-in duration-75"
+            leaveFrom="transform opacity-100 scale-100"
+            leaveTo="transform opacity-0 scale-95"
+          >
+            <Menu.Items className="absolute left-0 mt-2 w-56 origin-top-right bg-white divide-y divide-slate-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-[9999]">
+              <div className="px-1 py-1">
+                <Menu.Item>
+                  {({ active }) => (
+                    <button
+                      onClick={() => setShowShapePanel(!showShapePanel)}
+                      className={`${
+                        active ? 'bg-blue-500 text-white' : 'text-slate-900'
+                      } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                    >
+                      {showShapePanel ? '✓ ' : ''}Shape Library (Ctrl+K)
+                    </button>
+                  )}
+                </Menu.Item>
+                <Menu.Item>
+                  {({ active }) => (
+                    <button
+                      onClick={() => setShowTemplateGallery(!showTemplateGallery)}
+                      className={`${
+                        active ? 'bg-blue-500 text-white' : 'text-slate-900'
+                      } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                    >
+                      {showTemplateGallery ? '✓ ' : ''}Templates
+                    </button>
+                  )}
+                </Menu.Item>
+              </div>
+              <div className="px-1 py-1">
+                <Menu.Item>
+                  <div className="px-2 py-2 text-xs font-semibold text-slate-600 uppercase tracking-wider">
+                    Theme
+                  </div>
+                </Menu.Item>
+                {getAvailableThemes().map((themeName) => (
+                  <Menu.Item key={themeName}>
+                    {({ active }) => (
+                      <button
+                        onClick={() => setCurrentTheme(themeName)}
+                        className={`${
+                          active ? 'bg-blue-500 text-white' : 'text-slate-900'
+                        } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                      >
+                        {currentTheme === themeName ? '✓ ' : ''}{themeName.charAt(0).toUpperCase() + themeName.slice(1)}
+                      </button>
+                    )}
+                  </Menu.Item>
+                ))}
+              </div>
+            </Menu.Items>
+          </Transition>
+        </Menu>
+
         {/* App Title */}
         <div className="flex-1 flex items-center justify-center">
           <h1 className="text-sm font-semibold text-slate-700">Railway Drawer <span className="text-xs text-slate-500 font-normal">v{APP_VERSION}</span></h1>
@@ -1629,23 +1718,47 @@ const RailwayDrawerApp = () => {
             </div>
           ) : (
             <>
-              <div className="flex items-center justify-end p-1 border-b border-slate-200">
+              <div className="flex items-center justify-between p-1 border-b border-slate-200">
+                <div className="flex gap-1">
+                  <button
+                    onClick={() => setShowShapePanel(false)}
+                    title="Tools"
+                    className={`px-2 py-1 text-xs rounded transition-colors ${!showShapePanel ? 'bg-blue-100 text-blue-700' : 'text-slate-600 hover:bg-slate-100'}`}
+                  >
+                    Tools
+                  </button>
+                  <button
+                    onClick={() => setShowShapePanel(true)}
+                    title="Shapes"
+                    className={`px-2 py-1 text-xs rounded transition-colors ${showShapePanel ? 'bg-blue-100 text-blue-700' : 'text-slate-600 hover:bg-slate-100'}`}
+                  >
+                    Shapes
+                  </button>
+                </div>
                 <button
                   onClick={() => setLeftCollapsed(true)}
-                  title="Collapse toolbox"
+                  title="Collapse"
                   className="px-2 py-0.5 text-xs text-slate-600 hover:bg-slate-100 rounded"
                 >
                   <ChevronDown size={14} />
                 </button>
               </div>
               <div className="flex-1 overflow-hidden">
-                <Toolbox
-                  toolbox={toolbox}
-                  setToolbox={setToolbox}
-                  showEditor={showEditor}
-                  setShowEditor={setShowEditor}
-                  setDraggedItem={setDraggedItem}
-                />
+                {showShapePanel ? (
+                  <ShapeSearchPanel
+                    onClose={() => setShowShapePanel(false)}
+                    isOpen={true}
+                    position="left"
+                  />
+                ) : (
+                  <Toolbox
+                    toolbox={toolbox}
+                    setToolbox={setToolbox}
+                    showEditor={showEditor}
+                    setShowEditor={setShowEditor}
+                    setDraggedItem={setDraggedItem}
+                  />
+                )}
               </div>
             </>
           )}
@@ -1729,6 +1842,20 @@ const RailwayDrawerApp = () => {
               ?
             </button>
           </div>
+
+          {/* Alignment Toolbar - Show when elements are selected */}
+          {selectedElements.length > 0 && (
+            <div className="px-2 py-1 border-b border-slate-200 bg-slate-50">
+              <AlignmentToolbar
+                selectedElements={selectedElements}
+                onElementsAligned={(elements) => {
+                  logger.debug('RailwayDrawerApp', 'Elements aligned', { count: elements.length });
+                  // Elements are auto-updated in DrawArea through selection
+                }}
+                showLabels={false}
+              />
+            </div>
+          )}
 
           {/* Render DrawArea for each tab, toggling visibility based on activeTabId */}
           {tabs.map((tab) => (
@@ -1835,7 +1962,32 @@ const RailwayDrawerApp = () => {
         onDeleteTab={handleTabClose}
         onTabRename={handleTabRename}
       />
-      
+
+      {/* Template Gallery Modal */}
+      {showTemplateGallery && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[10000]" onClick={() => setShowTemplateGallery(false)}>
+          <div className="bg-white rounded-lg shadow-xl max-w-4xl w-full mx-4 max-h-[90vh] overflow-auto" onClick={(e) => e.stopPropagation()}>
+            <div className="p-6">
+              <div className="flex justify-between items-center mb-6">
+                <h2 className="text-2xl font-bold text-slate-800">Template Gallery</h2>
+                <button
+                  onClick={() => setShowTemplateGallery(false)}
+                  className="text-slate-500 hover:text-slate-700 text-2xl leading-none"
+                >
+                  ×
+                </button>
+              </div>
+              <TemplateGallery
+                onTemplateSelect={(template) => {
+                  logger.debug('RailwayDrawerApp', 'Template selected', { templateId: template.id });
+                  setShowTemplateGallery(false);
+                }}
+              />
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* About Dialog */}
       {showAbout && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[10000]" onClick={() => setShowAbout(false)}>
