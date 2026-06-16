@@ -189,7 +189,7 @@ export const ShapeSearchPanel: React.FC<ShapeSearchPanelProps> = ({
   };
 
   /**
-   * Render search results
+   * Render search results organized by library
    */
   const renderResults = () => {
     if (search.isSearching) {
@@ -201,59 +201,75 @@ export const ShapeSearchPanel: React.FC<ShapeSearchPanelProps> = ({
     }
 
     if (search.results.length === 0) {
-      if (search.query === '' && search.selectedTags.length === 0 && search.category === null) {
-        return renderRecentShapes();
-      }
       return (
         <div style={{ padding: '16px', textAlign: 'center', color: '#999' }}>
-          No shapes found
+          <div>No shapes found</div>
+          <div style={{ fontSize: '12px', marginTop: '8px' }}>
+            Try: "track", "signal", "platform"
+          </div>
         </div>
       );
     }
 
+    // Group results by library
+    const groupedByLibrary = search.results.reduce((acc, result) => {
+      if (!acc[result.libraryId]) {
+        acc[result.libraryId] = [];
+      }
+      acc[result.libraryId].push(result);
+      return acc;
+    }, {} as Record<string, typeof search.results>);
+
     return (
       <div
         style={{
-          maxHeight: '400px',
+          maxHeight: '600px',
           overflowY: 'auto',
           padding: '8px',
         }}
       >
-        {search.results.map(result => (
-          <div
-            key={`${result.libraryId}-${result.shape.id}`}
-            onClick={() => handleShapeSelect(result.shape, result.libraryId)}
-            style={{
-              padding: '8px',
-              marginBottom: '4px',
-              backgroundColor: '#f9f9f9',
-              border: '1px solid #ddd',
-              borderRadius: '3px',
-              cursor: 'pointer',
-              transition: 'all 0.2s',
-            }}
-            onMouseOver={e => {
-              (e.currentTarget as HTMLElement).style.backgroundColor = '#f0f0f0';
-              (e.currentTarget as HTMLElement).style.borderColor = '#007bff';
-            }}
-            onMouseOut={e => {
-              (e.currentTarget as HTMLElement).style.backgroundColor = '#f9f9f9';
-              (e.currentTarget as HTMLElement).style.borderColor = '#ddd';
-            }}
-          >
-            <div style={{ fontSize: '12px', fontWeight: 'bold' }}>
-              {result.shape.id}
+        {Object.entries(groupedByLibrary).map(([libraryId, results]) => (
+          <div key={libraryId} style={{ marginBottom: '12px' }}>
+            <div style={{ fontSize: '11px', fontWeight: 'bold', color: '#666', padding: '4px 8px', backgroundColor: '#f0f0f0' }}>
+              {results[0]?.libraryName}
             </div>
-            <div style={{ fontSize: '11px', color: '#666' }}>
-              {result.libraryName} • Type: {result.shape.type}
+            <div>
+              {results.map(result => (
+                <div
+                  key={`${result.libraryId}-${result.shape.id}`}
+                  onClick={() => handleShapeSelect(result.shape, result.libraryId)}
+                  style={{
+                    padding: '10px 8px',
+                    marginBottom: '2px',
+                    backgroundColor: '#f9f9f9',
+                    border: '1px solid #e0e0e0',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s',
+                    borderLeft: '3px solid #007bff',
+                  }}
+                  onMouseOver={e => {
+                    (e.currentTarget as HTMLElement).style.backgroundColor = '#e3f2fd';
+                    (e.currentTarget as HTMLElement).style.borderLeftColor = '#0056b3';
+                  }}
+                  onMouseOut={e => {
+                    (e.currentTarget as HTMLElement).style.backgroundColor = '#f9f9f9';
+                    (e.currentTarget as HTMLElement).style.borderLeftColor = '#007bff';
+                  }}
+                >
+                  <div style={{ fontSize: '13px', fontWeight: '500', color: '#333' }}>
+                    {result.shape.name || result.shape.id}
+                  </div>
+                  <div style={{ fontSize: '11px', color: '#666', marginTop: '2px' }}>
+                    {result.shape.type}
+                  </div>
+                </div>
+              ))}
             </div>
-            {result.matchScore > 0 && (
-              <div style={{ fontSize: '10px', color: '#999' }}>
-                Match: {result.matchScore}%
-              </div>
-            )}
           </div>
         ))}
+        <div style={{ fontSize: '11px', color: '#999', padding: '8px', textAlign: 'center' }}>
+          {search.results.length} shapes
+        </div>
       </div>
     );
   };

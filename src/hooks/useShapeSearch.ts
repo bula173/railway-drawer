@@ -144,13 +144,6 @@ export const useShapeSearch = (options: UseShapeSearchOptions = {}) => {
     try {
       const trimmedQuery = query.trim();
 
-      // If no query and no category/tags, show nothing
-      if (!trimmedQuery && !category && selectedTags.length === 0) {
-        setResults([]);
-        setIsSearching(false);
-        return;
-      }
-
       // Search across all libraries
       const searchResults: ShapeSearchResult[] = [];
 
@@ -172,13 +165,13 @@ export const useShapeSearch = (options: UseShapeSearchOptions = {}) => {
           // Calculate match score
           const matchScore = calculateMatchScore(shape, trimmedQuery, library);
 
-          // Only include if there's a match (or no query filter)
+          // Include if there's a match, or if no query filter (show all by default)
           if (trimmedQuery === '' || matchScore > 0) {
             searchResults.push({
               shape,
               libraryId: library.id,
               libraryName: library.name,
-              matchScore,
+              matchScore: trimmedQuery === '' ? 0 : matchScore,
               matchedFields: [],
             });
           }
