@@ -624,13 +624,12 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       selectedCount: selectedElementIds.length,
       selectedIds: selectedElementIds
     });
-    
+
     if (selectedElementIds.length > 0) {
-      pushToHistoryAndSetElements(prev => 
+      pushToHistoryAndSetElements(prev =>
         prev.filter(element => !selectedElementIds.includes(element.id))
       );
-      setSelectedElementIds([]);
-      setHoveredElementId(null);
+      selectionManager.clearSelection();
       if (setSelectedElement) {
         setSelectedElement(undefined);
       }
@@ -639,7 +638,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     } else {
       logger.warn("DrawArea", "🗑️ No elements selected for deletion");
     }
-  }, [selectedElementIds, pushToHistoryAndSetElements, setSelectedElement, onStateChange]);
+  }, [selectedElementIds, pushToHistoryAndSetElements, setSelectedElement, onStateChange, selectionManager]);
 
   /**
    * @brief Select all elements
@@ -647,9 +646,9 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
    */
   const selectAllElements = useCallback(() => {
     const allIds = elements.map(el => el.id);
-    setSelectedElementIds(allIds);
+    selectionManager.selectElements(allIds);
     onStateChange?.();
-  }, [elements, onStateChange]);
+  }, [elements, onStateChange, selectionManager]);
 
   /**
    * @brief Redo the last undone action
@@ -948,16 +947,16 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     
     // Select the newly pasted elements
     const newElementIds = validElements.map(el => el.id);
-    setSelectedElementIds(newElementIds);
-    
+    selectionManager.selectElements(newElementIds);
+
     if (newElementIds.length === 1) {
       setSelectedElement?.(validElements[0]);
     } else {
       setSelectedElement?.(undefined);
     }
-    
+
     logger.info('DrawArea', `Pasted ${validElements.length} elements with offset (${offsetX.toFixed(1)}, ${offsetY.toFixed(1)})`);
-  }, [copiedElements, calculateElementsBounds, pushToHistoryAndSetElements, setSelectedElementIds, setSelectedElement, svgRef, panOffset, zoom, showGrid, backgroundColor, setShowGrid, setBackgroundColor, GRID_WIDTH, GRID_HEIGHT]);
+  }, [copiedElements, calculateElementsBounds, pushToHistoryAndSetElements, selectionManager, setSelectedElement, svgRef, panOffset, zoom, showGrid, backgroundColor, setShowGrid, setBackgroundColor, GRID_WIDTH, GRID_HEIGHT]);
 
   /**
    * @brief Create an image element from base64 data URL
@@ -1724,7 +1723,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       newSelectionIds = [el.id];
     }
 
-    setSelectedElementIds(newSelectionIds);
+    selectionManager.selectElements(newSelectionIds);
     const newSelectedElement = newSelectionIds.length === 1
       ? elements.find(element => element.id === newSelectionIds[0])
       : undefined;
@@ -1962,9 +1961,8 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
 
         if (isClick) {
           if (!e.ctrlKey && !e.metaKey) {
-            setSelectedElementIds([]);
+            selectionManager.clearSelection();
             setSelectedElement?.(undefined);
-            setHoveredElementId(null);
             setDraggingId(null);
           }
         } else {
@@ -1975,7 +1973,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
           if (e.ctrlKey || e.metaKey) {
             // Add to existing selection
             const combinedSelection = [...new Set([...selectedElementIds, ...newSelectedIds])];
-            setSelectedElementIds(combinedSelection);
+            selectionManager.selectElements(combinedSelection);
             if (combinedSelection.length === 1) {
               const selectedEl = elements.find(el => el.id === combinedSelection[0]);
               setSelectedElement?.(selectedEl);
@@ -1984,7 +1982,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
             }
           } else {
             // Replace selection
-            setSelectedElementIds(newSelectedIds);
+            selectionManager.selectElements(newSelectedIds);
             if (newSelectedIds.length === 1) {
               const selectedEl = elements.find(el => el.id === newSelectedIds[0]);
               setSelectedElement?.(selectedEl);
