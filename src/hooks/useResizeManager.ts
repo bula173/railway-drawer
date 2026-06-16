@@ -1,5 +1,5 @@
 import { useState, useCallback, useRef } from 'react';
-import type { DrawElement, Point } from '../components/Elements';
+import type { DrawElement } from '../components/Elements';
 import { logger } from '../utils/logger';
 
 type ResizeHandle = 'topLeft' | 'topRight' | 'bottomLeft' | 'bottomRight';
@@ -64,7 +64,7 @@ export const useResizeManager = (options: ResizeOptions = {}) => {
       handle: ResizeHandle,
       currentX: number,
       currentY: number,
-      svgRect: DOMRect
+      _svgRect: DOMRect
     ): DrawElement | null => {
       if (!resizeContextRef.current || !resizeState.startElement) {
         return null;
@@ -184,7 +184,7 @@ export const useResizeManager = (options: ResizeOptions = {}) => {
     logger.debug('ResizeManager', 'Resize ended');
   }, []);
 
-  const getResizeHandles = useCallback((element: DrawElement): ResizeHandle[] => {
+  const getResizeHandles = useCallback((_element: DrawElement): ResizeHandle[] => {
     return ['topLeft', 'topRight', 'bottomLeft', 'bottomRight'];
   }, []);
 

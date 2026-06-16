@@ -11,7 +11,7 @@
  * 3. Compared with original for validation
  */
 
-import React, { useState, useCallback, useRef, useEffect, useMemo } from 'react';
+import React, { useState, useCallback, useRef, useMemo } from 'react';
 import type { DrawElement } from './Elements';
 import { useSelectionManager } from '../hooks/useSelectionManager';
 import { useDragManager } from '../hooks/useDragManager';
@@ -43,16 +43,16 @@ interface DrawAreaRefactoredProps {
 export const DrawAreaRefactored: React.FC<DrawAreaRefactoredProps> = ({
   elements: initialElements,
   onElementsChange,
-  onStateChange,
+  _onStateChange,
 }) => {
   // Core drawing state
   const [elements, setElements] = useState<DrawElement[]>(initialElements);
-  const [backgroundColor, setBackgroundColor] = useState('#ffffff');
-  const [showGrid, setShowGrid] = useState(true);
+  const [_backgroundColor] = useState('#ffffff');
+  const [_showGrid] = useState(true);
 
   // UI state (not extracted to hooks - keep UI state local)
-  const [isPanning, setIsPanning] = useState(false);
-  const [panOffset, setPanOffset] = useState({ x: 0, y: 0 });
+  const [_isPanning] = useState(false);
+  const [_panOffset] = useState({ x: 0, y: 0 });
 
   // Manager hooks
   const selection = useSelectionManager({
@@ -92,13 +92,13 @@ export const DrawAreaRefactored: React.FC<DrawAreaRefactoredProps> = ({
   });
 
   // Derived state
-  const selectedElements = useMemo(
+  const _selectedElements = useMemo(
     () => elements.filter(el => selection.selectedElementIds.includes(el.id)),
     [elements, selection.selectedElementIds]
   );
 
   // Operations
-  const updateElement = useCallback((element: DrawElement) => {
+  const _updateElement = useCallback((element: DrawElement) => {
     const newElements = elements.map(el => (el.id === element.id ? element : el));
     setElements(newElements);
     history.pushToHistory(newElements, 'Element updated');

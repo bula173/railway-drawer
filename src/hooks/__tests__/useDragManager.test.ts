@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { renderHook, act } from '@testing-library/react';
 import { useDragManager } from '../useDragManager';
-import type { DrawElement, Point } from '../../components/Elements';
+import type { DrawElement } from '../../components/Elements';
 
 describe('useDragManager', () => {
   const mockSvgRect = {

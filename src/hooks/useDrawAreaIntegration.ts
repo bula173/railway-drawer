@@ -1,4 +1,4 @@
-import { useCallback, useState, useRef, useEffect } from 'react';
+import { useCallback, useState } from 'react';
 import type { DrawElement } from '../components/Elements';
 import { useSelectionManager } from './useSelectionManager';
 import { useDragManager } from './useDragManager';

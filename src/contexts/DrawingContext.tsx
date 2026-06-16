@@ -1,4 +1,4 @@
-import React, { createContext, useContext, ReactNode, useState, useCallback, useReducer } from 'react';
+import React, { createContext, useContext, ReactNode, useState, useCallback } from 'react';
 import type { DrawElement } from '../components/Elements';
 import type { DrawAreaTab } from '../components/TabPanel';
 

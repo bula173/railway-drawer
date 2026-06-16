@@ -12,7 +12,6 @@
  */
 
 import React, { useCallback, useEffect, useState, useRef } from 'react';
-import { useShapeLibrary } from '../contexts/ShapeLibraryContext';
 import { useShapeSearch } from '../hooks/useShapeSearch';
 import { logger } from '../utils/logger';
 import type { DrawElement } from './Elements';
@@ -45,7 +44,6 @@ export const ShapeSearchPanel: React.FC<ShapeSearchPanelProps> = ({
   onClose,
   position = 'left',
 }) => {
-  const { libraries } = useShapeLibrary();
   const search = useShapeSearch();
   const [isKeyboardOpen, setIsKeyboardOpen] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);

@@ -36,14 +36,11 @@ export interface AlignmentToolbarProps {
 export const AlignmentToolbar: React.FC<AlignmentToolbarProps> = ({
   selectedElements,
   onElementsAligned,
-  position = 'top',
+  _position = 'top',
   showLabels = false,
 }) => {
+  // Always call hooks first (React Hooks Rules)
   const alignment = useAlignment();
-
-  if (selectedElements.length < 2) {
-    return null;
-  }
 
   /**
    * Handle alignment operation
@@ -90,8 +87,14 @@ export const AlignmentToolbar: React.FC<AlignmentToolbarProps> = ({
   /**
    * Get available operations
    */
+  if (selectedElements.length < 2) {
+    return null;
+  }
+
   const info = alignment.getAlignmentInfo(selectedElements);
-  if (!info) return null;
+  if (!info) {
+    return null;
+  }
 
   /**
    * Button style

@@ -57,7 +57,7 @@ export const useShapeSearch = (options: UseShapeSearchOptions = {}) => {
     maxRecent = 10,
   } = options;
 
-  const { libraries, searchShapes: contextSearchShapes } = useShapeLibrary();
+  const { libraries } = useShapeLibrary();
   const [query, setQuery] = useState('');
   const [category, setCategory] = useState<string | null>(null);
   const [selectedTags, setSelectedTags] = useState<string[]>([]);

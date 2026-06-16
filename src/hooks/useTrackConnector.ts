@@ -16,14 +16,11 @@ import {
   validateTrackConnection,
   getConnectionPoint,
   findBestConnectionPoints,
-  isPhysicallyFeasible,
 } from '../utils/trackConnectionValidator';
 import {
   calculateRoute,
   optimizeRoute,
   type RoutingConfig,
-  type RoutingResult,
-  type Point,
 } from '../utils/autoRoutingAlgorithm';
 import { logger } from '../utils/logger';
 
@@ -73,7 +70,7 @@ export const useTrackConnector = (
   const {
     gridSize = 20,
     snapToGrid = true,
-    snapDistance = 30,
+    _snapDistance = 30,
     autoAvoidObstacles = true,
     routingType = 'orthogonal',
   } = options;

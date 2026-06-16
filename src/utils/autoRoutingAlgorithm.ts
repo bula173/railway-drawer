@@ -69,7 +69,7 @@ export const calculateOrthogonalRouting = (
 ): RoutingResult => {
   const finalConfig = { ...DEFAULT_CONFIG, ...config };
 
-  const waypoints: Point[] = [source];
+  const _waypoints: Point[] = [source];
 
   // Try different routing strategies (priority order)
   const strategies = [
@@ -88,7 +88,7 @@ export const calculateOrthogonalRouting = (
     // Strategy 3: Staggered (avoid center)
     () => {
       const midX = (source.x + target.x) / 2;
-      const midY = (source.y + target.y) / 2;
+      const _midY = (source.y + target.y) / 2;
       return [
         source,
         { x: midX, y: source.y },
@@ -148,7 +148,7 @@ export const calculateCurvedRouting = (
   _obstacles: DrawElement[] = [],
   config: Partial<RoutingConfig> = {}
 ): RoutingResult => {
-  const finalConfig = { ...DEFAULT_CONFIG, ...config };
+  const _finalConfig = { ...DEFAULT_CONFIG, ...config };
 
   // For curved routing, we create a bezier-like curve
   // Generate intermediate waypoints

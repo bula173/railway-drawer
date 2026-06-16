@@ -297,7 +297,7 @@ export const useTemplateCreation = () => {
   /**
    * Generate template thumbnail
    */
-  const generateThumbnail = (elements: DrawElement[]): string => {
+  const generateThumbnail = (_elements: DrawElement[]): string => {
     // Simplified thumbnail generation
     // In production, would render elements to canvas and convert to base64
     return 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100" height="100"%3E%3Crect width="100" height="100" fill="%23f0f0f0"/%3E%3C/svg%3E';
