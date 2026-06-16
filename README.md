@@ -3,7 +3,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)](https://typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)](https://reactjs.org/)
 [![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white)](https://vitejs.dev/)
-[![Tests](https://img.shields.io/badge/Tests-53%2F53%20Passing-brightgreen)](#testing)
+[![Tests](https://img.shields.io/badge/Tests-114%2F114%20Passing-brightgreen)](#testing)
 [![Quality](https://img.shields.io/badge/Code%20Quality-Enhanced-blue)](#code-quality)
 
 A modern, interactive railway diagram editor built with React, TypeScript, and Vite. Create professional railway schematics with advanced drawing tools, customizable elements, and comprehensive export capabilities.

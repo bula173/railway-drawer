@@ -1,7 +1,7 @@
 {
   "name": "railway-drawer",
   "private": true,
-  "version": "0.3.3",
+  "version": "0.4.0",
   "author": "Marcin Kwiatkowski",
   "type": "module",
   "scripts": {
