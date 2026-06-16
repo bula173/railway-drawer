@@ -189,6 +189,9 @@ const RailwayDrawerApp = () => {
     setShouldTriggerSave(prev => !prev);
   }, []);
 
+  /** @brief Get the current active DrawArea ref */
+  const getCurrentDrawAreaRef = useCallback(() => drawAreaRefs.current.get(activeTabId), [activeTabId]);
+
   // Update edit menu state when selection or tab changes
   useEffect(() => {
     updateEditMenuState();
@@ -205,10 +208,7 @@ const RailwayDrawerApp = () => {
         setSelectedElements(selected);
       }
     }
-  }, [activeTabId, tabs, selectedElement]);
-
-  /** @brief Get the current active DrawArea ref */
-  const getCurrentDrawAreaRef = useCallback(() => drawAreaRefs.current.get(activeTabId), [activeTabId]);
+  }, [activeTabId, tabs, selectedElement, getCurrentDrawAreaRef]);
 
   // Menu state
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
