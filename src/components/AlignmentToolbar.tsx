@@ -36,7 +36,6 @@ export interface AlignmentToolbarProps {
 export const AlignmentToolbar: React.FC<AlignmentToolbarProps> = ({
   selectedElements,
   onElementsAligned,
-  _position = 'top',
   showLabels = false,
 }) => {
   // Always call hooks first (React Hooks Rules)

@@ -1,5 +1,6 @@
 import { useState, useCallback, useRef } from 'react';
-import type { DrawElement, Point } from '../components/Elements';
+import type { DrawElement } from '../components/Elements';
+import type { Point } from '../utils/autoRoutingAlgorithm';
 import { logger } from '../utils/logger';
 
 interface DragState {

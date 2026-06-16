@@ -21,6 +21,7 @@ import {
   calculateRoute,
   optimizeRoute,
   type RoutingConfig,
+  type Point,
 } from '../utils/autoRoutingAlgorithm';
 import { logger } from '../utils/logger';
 

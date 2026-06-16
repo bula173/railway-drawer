@@ -19,9 +19,6 @@ import { logger } from "../utils/logger";
 import { snapPointToGrid } from "../utils/index";
 import { findSnapPoint } from "../utils/trackUtils";
 import { useSelectionManager } from "../hooks/useSelectionManager";
-import { useDragManager } from "../hooks/useDragManager";
-import { useResizeManager } from "../hooks/useResizeManager";
-import { useHistoryManager } from "../hooks/useHistoryManager";
 
 /**
  * @interface DrawAreaRef
@@ -176,36 +173,11 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     };
   }, [elements]); // Only depend on elements, not the callback
 
-  // Phase 4b: Initialize manager hooks (will replace old state gradually)
+  // Phase 4b: Initialize selection manager (others will be integrated in future work)
   const selectionManager = useSelectionManager({
     elements,
     onSelectionChange: useCallback((ids: string[]) => {
       setSelectedElementIds(ids);
-    }, []),
-  });
-
-  const dragManager = useDragManager({
-    gridSize: GRID_SIZE,
-    snapToGrid: true,
-    onElementsDrag: useCallback((draggedElements: DrawElement[]) => {
-      setElements(prev =>
-        prev.map(el => draggedElements.find(de => de.id === el.id) || el)
-      );
-    }, []),
-  });
-
-  const resizeManager = useResizeManager({
-    minSize: 8,
-    onElementResize: useCallback((element: DrawElement) => {
-      setElements(prev => prev.map(el => (el.id === element.id ? element : el)));
-    }, []),
-  });
-
-  // Note: Will be integrated with existing history state below
-  const historyManager = useHistoryManager(elements, {
-    maxSize: 50,
-    onChange: useCallback((newElements: DrawElement[]) => {
-      setElements(newElements);
     }, []),
   });
 
