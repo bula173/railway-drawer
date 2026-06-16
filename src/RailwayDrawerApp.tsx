@@ -1647,26 +1647,31 @@ const RailwayDrawerApp = () => {
                 <Menu.Item>
                   {({ active }) => (
                     <button
-                      onClick={() => setShowShapePanel(!showShapePanel)}
+                      onClick={() => setShowTemplateGallery(!showTemplateGallery)}
                       className={`${
                         active ? 'bg-blue-500 text-white' : 'text-slate-900'
-                      } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                      } group flex w-full items-center rounded-md px-2 py-2 text-sm font-semibold`}
                     >
-                      {showShapePanel ? '✓ ' : ''}Shape Library (Ctrl+K)
+                      {showTemplateGallery ? '✓ ' : ''}📋 Templates
                     </button>
                   )}
                 </Menu.Item>
                 <Menu.Item>
-                  {({ active }) => (
-                    <button
-                      onClick={() => setShowTemplateGallery(!showTemplateGallery)}
-                      className={`${
-                        active ? 'bg-blue-500 text-white' : 'text-slate-900'
-                      } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                    >
-                      {showTemplateGallery ? '✓ ' : ''}Templates
-                    </button>
-                  )}
+                  <div className="px-2 py-2 text-xs text-slate-500">
+                    Quick-start with pre-built railway diagrams
+                  </div>
+                </Menu.Item>
+              </div>
+              <div className="px-1 py-1">
+                <Menu.Item>
+                  <div className="px-2 py-2 text-xs font-semibold text-slate-600 uppercase tracking-wider">
+                    ✓ Shapes (Left Panel)
+                  </div>
+                </Menu.Item>
+                <Menu.Item>
+                  <div className="px-2 py-2 text-xs text-slate-500">
+                    40+ railway shapes always available in left sidebar
+                  </div>
                 </Menu.Item>
               </div>
               <div className="px-1 py-1">
@@ -1718,23 +1723,8 @@ const RailwayDrawerApp = () => {
             </div>
           ) : (
             <>
-              <div className="flex items-center justify-between p-1 border-b border-slate-200">
-                <div className="flex gap-1">
-                  <button
-                    onClick={() => setShowShapePanel(false)}
-                    title="Tools"
-                    className={`px-2 py-1 text-xs rounded transition-colors ${!showShapePanel ? 'bg-blue-100 text-blue-700' : 'text-slate-600 hover:bg-slate-100'}`}
-                  >
-                    Tools
-                  </button>
-                  <button
-                    onClick={() => setShowShapePanel(true)}
-                    title="Shapes"
-                    className={`px-2 py-1 text-xs rounded transition-colors ${showShapePanel ? 'bg-blue-100 text-blue-700' : 'text-slate-600 hover:bg-slate-100'}`}
-                  >
-                    Shapes
-                  </button>
-                </div>
+              <div className="flex items-center justify-between p-2 border-b border-slate-200 bg-slate-50">
+                <div className="font-bold text-sm text-slate-800">Drawing Tools</div>
                 <button
                   onClick={() => setLeftCollapsed(true)}
                   title="Collapse"
@@ -1743,22 +1733,13 @@ const RailwayDrawerApp = () => {
                   <ChevronDown size={14} />
                 </button>
               </div>
-              <div className="flex-1 overflow-hidden">
-                {showShapePanel ? (
-                  <ShapeSearchPanel
-                    onClose={() => setShowShapePanel(false)}
-                    isOpen={true}
-                    position="left"
-                  />
-                ) : (
-                  <Toolbox
-                    toolbox={toolbox}
-                    setToolbox={setToolbox}
-                    showEditor={showEditor}
-                    setShowEditor={setShowEditor}
-                    setDraggedItem={setDraggedItem}
-                  />
-                )}
+              <div className="flex-1 overflow-hidden flex flex-col">
+                {/* Shapes panel - primary tool interface */}
+                <ShapeSearchPanel
+                  onClose={() => setLeftCollapsed(true)}
+                  isOpen={true}
+                  position="left"
+                />
               </div>
             </>
           )}

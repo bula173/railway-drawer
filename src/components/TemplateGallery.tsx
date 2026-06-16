@@ -90,9 +90,8 @@ export const TemplateGallery: React.FC<TemplateGalleryProps> = ({
   const renderTemplateCard = (tmpl: RailwayTemplate) => (
     <div
       key={tmpl.id}
-      onClick={() => setPreviewTemplate(tmpl)}
       style={{
-        padding: '12px',
+        padding: '16px',
         backgroundColor: '#f9f9f9',
         border: '1px solid #ddd',
         borderRadius: '4px',
@@ -101,37 +100,26 @@ export const TemplateGallery: React.FC<TemplateGalleryProps> = ({
       }}
       onMouseOver={e => {
         (e.currentTarget as HTMLElement).style.boxShadow = '0 2px 8px rgba(0,0,0,0.15)';
-        (e.currentTarget as HTMLElement).style.borderColor = '#007bff';
+        (e.currentTarget as HTMLElement).style.backgroundColor = '#ffffff';
       }}
       onMouseOut={e => {
         (e.currentTarget as HTMLElement).style.boxShadow = 'none';
-        (e.currentTarget as HTMLElement).style.borderColor = '#ddd';
+        (e.currentTarget as HTMLElement).style.backgroundColor = '#f9f9f9';
       }}
     >
-      {/* Thumbnail */}
-      {tmpl.thumbnail && (
-        <img
-          src={tmpl.thumbnail}
-          alt={tmpl.name}
-          style={{
-            width: '100%',
-            height: '120px',
-            objectFit: 'cover',
-            borderRadius: '3px',
-            marginBottom: '8px',
-          }}
-        />
-      )}
-
       {/* Title */}
-      <div style={{ fontSize: '14px', fontWeight: 'bold', marginBottom: '4px' }}>
+      <div style={{ fontSize: '16px', fontWeight: 'bold', marginBottom: '8px', color: '#333' }}>
         {tmpl.name}
       </div>
 
-      {/* Metadata */}
-      <div style={{ fontSize: '12px', color: '#666', marginBottom: '8px' }}>
+      {/* Description */}
+      <div style={{ fontSize: '13px', color: '#555', marginBottom: '12px', lineHeight: '1.5' }}>
+        {tmpl.description}
+      </div>
+
+      {/* Metadata Row */}
+      <div style={{ display: 'flex', gap: '12px', fontSize: '12px', color: '#666', marginBottom: '12px' }}>
         <div>
-          Difficulty:{' '}
           <span
             style={{
               backgroundColor:
@@ -141,33 +129,34 @@ export const TemplateGallery: React.FC<TemplateGalleryProps> = ({
                     ? '#ffc107'
                     : '#dc3545',
               color: 'white',
-              padding: '2px 6px',
+              padding: '3px 8px',
               borderRadius: '3px',
               fontSize: '11px',
               textTransform: 'capitalize',
+              fontWeight: 'bold',
             }}
           >
             {tmpl.difficulty}
           </span>
         </div>
-        <div style={{ marginTop: '4px' }}>Elements: {tmpl.elements.length}</div>
-        <div style={{ marginTop: '4px' }}>Used: {tmpl.usageCount}x</div>
+        <div>📦 {tmpl.elements.length} elements</div>
+        <div>✓ Used {tmpl.usageCount}x</div>
       </div>
 
       {/* Tags */}
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px', marginBottom: '8px' }}>
-        {tmpl.tags.slice(0, 3).map(tag => (
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '12px' }}>
+        {tmpl.tags.slice(0, 4).map(tag => (
           <span
             key={tag}
             style={{
               backgroundColor: '#e7f3ff',
               color: '#004085',
-              padding: '2px 6px',
+              padding: '3px 8px',
               borderRadius: '3px',
               fontSize: '11px',
             }}
           >
-            {tag}
+            #{tag}
           </span>
         ))}
       </div>
@@ -180,17 +169,24 @@ export const TemplateGallery: React.FC<TemplateGalleryProps> = ({
         }}
         style={{
           width: '100%',
-          padding: '6px',
+          padding: '10px',
           backgroundColor: '#007bff',
           color: 'white',
           border: 'none',
           borderRadius: '3px',
           cursor: 'pointer',
-          fontSize: '12px',
+          fontSize: '13px',
           fontWeight: 'bold',
+          transition: 'background-color 0.2s',
+        }}
+        onMouseOver={e => {
+          (e.currentTarget as HTMLButtonElement).style.backgroundColor = '#0056b3';
+        }}
+        onMouseOut={e => {
+          (e.currentTarget as HTMLButtonElement).style.backgroundColor = '#007bff';
         }}
       >
-        Use Template
+        Load Template
       </button>
     </div>
   );
