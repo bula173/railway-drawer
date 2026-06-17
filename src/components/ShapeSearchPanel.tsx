@@ -242,38 +242,73 @@ export const ShapeSearchPanel: React.FC<ShapeSearchPanelProps> = ({
                     logger.info('ShapeSearchPanel', 'Drag started', { shapeId: result.shape.id });
                     e.dataTransfer.effectAllowed = 'copy';
                     e.dataTransfer.setData('application/railway-item', JSON.stringify(result.shape));
-                    // Record usage when drag starts
                     handleShapeSelect(result.shape, result.libraryId);
                   }}
                   onClick={() => handleShapeSelect(result.shape, result.libraryId)}
                   style={{
-                    padding: '10px 8px',
-                    marginBottom: '2px',
+                    padding: '8px',
+                    marginBottom: '4px',
                     backgroundColor: '#f9f9f9',
                     border: '1px solid #e0e0e0',
                     cursor: 'grab',
                     transition: 'all 0.2s',
                     borderLeft: '3px solid #007bff',
                     userSelect: 'none',
+                    display: 'flex',
+                    gap: '8px',
+                    alignItems: 'flex-start',
                   }}
                   onMouseOver={e => {
                     (e.currentTarget as HTMLElement).style.backgroundColor = '#e3f2fd';
                     (e.currentTarget as HTMLElement).style.borderLeftColor = '#0056b3';
-                    (e.currentTarget as HTMLElement).style.cursor = 'grab';
                   }}
                   onMouseOut={e => {
                     (e.currentTarget as HTMLElement).style.backgroundColor = '#f9f9f9';
                     (e.currentTarget as HTMLElement).style.borderLeftColor = '#007bff';
                   }}
                 >
-                  <div style={{ fontSize: '13px', fontWeight: '500', color: '#333' }}>
-                    {result.shape.name || result.shape.id}
+                  {/* SVG Miniature Preview */}
+                  <div
+                    style={{
+                      minWidth: '48px',
+                      width: '48px',
+                      height: '48px',
+                      backgroundColor: '#fff',
+                      border: '1px solid #ddd',
+                      borderRadius: '2px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      flexShrink: 0,
+                    }}
+                  >
+                    {result.shape.shapeElements && result.shape.shapeElements.length > 0 ? (
+                      <svg
+                        width="48"
+                        height="48"
+                        viewBox="0 0 48 48"
+                        style={{ display: 'block' }}
+                      >
+                        {result.shape.shapeElements.map((elem: any) => (
+                          <g key={elem.id} dangerouslySetInnerHTML={{ __html: elem.svg }} />
+                        ))}
+                      </svg>
+                    ) : (
+                      <div style={{ fontSize: '10px', color: '#999' }}>No preview</div>
+                    )}
                   </div>
-                  <div style={{ fontSize: '11px', color: '#666', marginTop: '2px' }}>
-                    {result.shape.type}
-                  </div>
-                  <div style={{ fontSize: '10px', color: '#999', marginTop: '2px' }}>
-                    Drag to canvas
+
+                  {/* Shape Info */}
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <div style={{ fontSize: '12px', fontWeight: '600', color: '#333' }}>
+                      {result.shape.name || result.shape.id}
+                    </div>
+                    <div style={{ fontSize: '10px', color: '#666', marginTop: '2px' }}>
+                      {result.shape.type}
+                    </div>
+                    <div style={{ fontSize: '9px', color: '#999', marginTop: '2px' }}>
+                      📌 Drag to canvas
+                    </div>
                   </div>
                 </div>
               ))}
