@@ -96,7 +96,16 @@ export const TemplateProvider: React.FC<TemplateProviderProps> = ({ children }) 
    */
   const findShapeByName = useCallback((name: string): DrawElement | null => {
     const shape = (toolboxConfig as any[]).find(s => s.name === name);
-    if (!shape) return null;
+    if (!shape) {
+      logger.warn('TemplateProvider', `Shape not found: ${name}, using Rectangle as fallback`);
+      // Fallback to Rectangle if shape not found
+      const fallback = (toolboxConfig as any[]).find(s => s.name === 'Rectangle');
+      if (!fallback) return null;
+      return {
+        ...fallback,
+        id: `${fallback.id}-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+      };
+    }
     return {
       ...shape,
       id: `${shape.id}-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
@@ -129,9 +138,9 @@ export const TemplateProvider: React.FC<TemplateProviderProps> = ({ children }) 
         description: 'Basic railway station with 2 platforms and main line passing through',
         category: 'stations',
         elements: [
-          positionShape(findShapeByName('Track'), 50, 150),
-          positionShape(findShapeByName('Platform'), 100, 100),
-          positionShape(findShapeByName('Platform'), 100, 200),
+          positionShape(findShapeByName('Line'), 50, 150),
+          positionShape(findShapeByName('Rectangle'), 100, 100),
+          positionShape(findShapeByName('Rectangle'), 100, 200),
         ].filter(Boolean) as DrawElement[],
         difficulty: 'beginner',
         tags: ['station', 'platform', 'simple', 'beginner'],
@@ -146,13 +155,13 @@ export const TemplateProvider: React.FC<TemplateProviderProps> = ({ children }) 
         description: 'Multi-platform station with grade separation and multiple lines',
         category: 'stations',
         elements: [
-          positionShape(findShapeByName('Track'), 50, 80),
-          positionShape(findShapeByName('Double Track'), 50, 150),
-          positionShape(findShapeByName('Platform'), 100, 100),
-          positionShape(findShapeByName('Platform'), 100, 180),
-          positionShape(findShapeByName('Platform'), 100, 260),
-          positionShape(findShapeByName('Platform'), 100, 340),
-          positionShape(findShapeByName('Track'), 50, 410),
+          positionShape(findShapeByName('Line'), 50, 80),
+          positionShape(findShapeByName('Rectangle'), 50, 150),
+          positionShape(findShapeByName('Rectangle'), 100, 100),
+          positionShape(findShapeByName('Rectangle'), 100, 180),
+          positionShape(findShapeByName('Rectangle'), 100, 260),
+          positionShape(findShapeByName('Rectangle'), 100, 340),
+          positionShape(findShapeByName('Line'), 50, 410),
         ].filter(Boolean) as DrawElement[],
         difficulty: 'advanced',
         tags: ['station', 'platform', 'complex', 'multi-level'],
@@ -167,9 +176,9 @@ export const TemplateProvider: React.FC<TemplateProviderProps> = ({ children }) 
         description: 'Station with island platform between two main lines',
         category: 'stations',
         elements: [
-          positionShape(findShapeByName('Track'), 50, 100),
-          positionShape(findShapeByName('Platform'), 100, 150),
-          positionShape(findShapeByName('Track'), 50, 200),
+          positionShape(findShapeByName('Line'), 50, 100),
+          positionShape(findShapeByName('Rectangle'), 100, 150),
+          positionShape(findShapeByName('Line'), 50, 200),
         ].filter(Boolean) as DrawElement[],
         difficulty: 'intermediate',
         tags: ['station', 'platform', 'island', 'intermediate'],
@@ -186,8 +195,9 @@ export const TemplateProvider: React.FC<TemplateProviderProps> = ({ children }) 
         description: 'Diamond-shaped junction where two lines cross without merging',
         category: 'junctions',
         elements: [
-          positionShape(findShapeByName('Track'), 50, 100),
-          positionShape(findShapeByName('Track'), 200, 100),
+          positionShape(findShapeByName('Line'), 50, 100),
+          positionShape(findShapeByName('Line'), 200, 100),
+          positionShape(findShapeByName('Diamond'), 120, 80),
         ].filter(Boolean) as DrawElement[],
         difficulty: 'intermediate',
         tags: ['junction', 'crossing', 'diamond', 'intermediate'],
@@ -202,9 +212,9 @@ export const TemplateProvider: React.FC<TemplateProviderProps> = ({ children }) 
         description: 'Three lines meeting at a point with two merge/diverge switches',
         category: 'junctions',
         elements: [
-          positionShape(findShapeByName('Track'), 50, 100),
-          positionShape(findShapeByName('Track'), 150, 50),
-          positionShape(findShapeByName('Track'), 150, 150),
+          positionShape(findShapeByName('Line'), 50, 100),
+          positionShape(findShapeByName('Arrow Right'), 150, 50),
+          positionShape(findShapeByName('Arrow Right'), 150, 150),
         ].filter(Boolean) as DrawElement[],
         difficulty: 'intermediate',
         tags: ['junction', 'three-way', 'intermediate'],
@@ -219,9 +229,9 @@ export const TemplateProvider: React.FC<TemplateProviderProps> = ({ children }) 
         description: 'Two parallel tracks with crossover switches at both ends',
         category: 'junctions',
         elements: [
-          positionShape(findShapeByName('Track'), 50, 80),
-          positionShape(findShapeByName('Track'), 50, 160),
-          positionShape(findShapeByName('Double Track'), 100, 120),
+          positionShape(findShapeByName('Line'), 50, 80),
+          positionShape(findShapeByName('Line'), 50, 160),
+          positionShape(findShapeByName('Double Arrow Right'), 100, 120),
         ].filter(Boolean) as DrawElement[],
         difficulty: 'advanced',
         tags: ['junction', 'crossover', 'double', 'advanced'],
@@ -238,10 +248,10 @@ export const TemplateProvider: React.FC<TemplateProviderProps> = ({ children }) 
         description: 'Traditional 3-aspect signaling (Red, Yellow, Green) with main and distant signals',
         category: 'signaling',
         elements: [
-          positionShape(findShapeByName('Track'), 50, 150),
-          positionShape(findShapeByName('Railway Signal'), 100, 80),
-          positionShape(findShapeByName('Railway Signal'), 200, 80),
-          positionShape(findShapeByName('Railway Signal'), 300, 80),
+          positionShape(findShapeByName('Line'), 50, 150),
+          positionShape(findShapeByName('Circle'), 100, 80),
+          positionShape(findShapeByName('Circle'), 200, 80),
+          positionShape(findShapeByName('Circle'), 300, 80),
         ].filter(Boolean) as DrawElement[],
         difficulty: 'beginner',
         tags: ['signaling', 'signal', '3-aspect', 'traditional'],
@@ -256,11 +266,11 @@ export const TemplateProvider: React.FC<TemplateProviderProps> = ({ children }) 
         description: 'Advanced 4-aspect signaling with enhanced speed control',
         category: 'signaling',
         elements: [
-          positionShape(findShapeByName('Track'), 50, 150),
-          positionShape(findShapeByName('Railway Signal'), 80, 80),
-          positionShape(findShapeByName('Railway Signal'), 150, 80),
-          positionShape(findShapeByName('Railway Signal'), 220, 80),
-          positionShape(findShapeByName('Railway Signal'), 290, 80),
+          positionShape(findShapeByName('Line'), 50, 150),
+          positionShape(findShapeByName('Circle'), 80, 80),
+          positionShape(findShapeByName('Circle'), 150, 80),
+          positionShape(findShapeByName('Circle'), 220, 80),
+          positionShape(findShapeByName('Circle'), 290, 80),
         ].filter(Boolean) as DrawElement[],
         difficulty: 'intermediate',
         tags: ['signaling', 'signal', '4-aspect', 'advanced'],
@@ -275,10 +285,10 @@ export const TemplateProvider: React.FC<TemplateProviderProps> = ({ children }) 
         description: 'Shunting signals for railway yards and depot areas',
         category: 'signaling',
         elements: [
-          positionShape(findShapeByName('Track'), 50, 100),
-          positionShape(findShapeByName('Shunting Signal'), 100, 50),
-          positionShape(findShapeByName('Track'), 50, 150),
-          positionShape(findShapeByName('Shunting Signal'), 100, 200),
+          positionShape(findShapeByName('Line'), 50, 100),
+          positionShape(findShapeByName('Diamond'), 100, 50),
+          positionShape(findShapeByName('Line'), 50, 150),
+          positionShape(findShapeByName('Diamond'), 100, 200),
         ].filter(Boolean) as DrawElement[],
         difficulty: 'beginner',
         tags: ['signaling', 'shunting', 'yard', 'depot'],
@@ -295,10 +305,10 @@ export const TemplateProvider: React.FC<TemplateProviderProps> = ({ children }) 
         description: 'European Railway Traffic Management System Level 2 with trackside signaling',
         category: 'ertms',
         elements: [
-          positionShape(findShapeByName('Track'), 50, 150),
-          positionShape(findShapeByName('Railway Signal'), 100, 100),
-          positionShape(findShapeByName('Railway Signal'), 200, 100),
-          positionShape(findShapeByName('Railway Signal'), 300, 100),
+          positionShape(findShapeByName('Line'), 50, 150),
+          positionShape(findShapeByName('Circle'), 100, 100),
+          positionShape(findShapeByName('Circle'), 200, 100),
+          positionShape(findShapeByName('Circle'), 300, 100),
         ].filter(Boolean) as DrawElement[],
         difficulty: 'advanced',
         tags: ['ERTMS', 'level2', 'modern', 'european'],
@@ -313,8 +323,8 @@ export const TemplateProvider: React.FC<TemplateProviderProps> = ({ children }) 
         description: 'European Railway Traffic Management System Level 3 with in-cab signaling',
         category: 'ertms',
         elements: [
-          positionShape(findShapeByName('Track'), 50, 150),
-          positionShape(findShapeByName('Station Sign'), 150, 100),
+          positionShape(findShapeByName('Line'), 50, 150),
+          positionShape(findShapeByName('Text Label'), 150, 100),
         ].filter(Boolean) as DrawElement[],
         difficulty: 'advanced',
         tags: ['ERTMS', 'level3', 'modern', 'european', 'in-cab'],
