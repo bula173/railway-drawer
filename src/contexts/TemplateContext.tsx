@@ -115,8 +115,8 @@ export const TemplateProvider: React.FC<TemplateProviderProps> = ({ children }) 
   /**
    * Helper to position shapes
    */
-  const positionShape = (shape: DrawElement | null, x: number, y: number): DrawElement | null => {
-    if (!shape) return null;
+  const positionShape = (shape: DrawElement | null | undefined, x: number, y: number): DrawElement | null => {
+    if (!shape || !shape.start || !shape.end) return null;
     const width = Math.abs(shape.end.x - shape.start.x) || 100;
     const height = Math.abs(shape.end.y - shape.start.y) || 50;
     return {
