@@ -18,13 +18,16 @@ interface DrawioPropertiesPanelProps {
   drawAreaRef: any;
   selectedElement?: DrawElement;
   onElementChange?: (element: DrawElement) => void;
+  onCanvasPropertyChange?: (property: string, value: any) => void;
 }
 
 type TabType = 'style' | 'text' | 'arrange';
 
 const DrawioPropertiesPanel: React.FC<DrawioPropertiesPanelProps> = ({
+  drawAreaRef,
   selectedElement,
   onElementChange,
+  onCanvasPropertyChange,
 }) => {
   const [activeTab, setActiveTab] = useState<TabType>('style');
   const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({
@@ -96,13 +99,21 @@ const DrawioPropertiesPanel: React.FC<DrawioPropertiesPanelProps> = ({
                     <input
                       type="color"
                       defaultValue="#ffffff"
+                      onChange={(e) => {
+                        onCanvasPropertyChange?.('backgroundColor', e.target.value);
+                        drawAreaRef?.current?.setBackgroundColor(e.target.value);
+                      }}
                       className="w-full h-8 border border-slate-200 rounded cursor-pointer mt-1"
                     />
                   </div>
-                  <label className="flex items-center gap-2 text-xs">
+                  <label className="flex items-center gap-2 text-xs cursor-pointer">
                     <input
                       type="checkbox"
                       defaultChecked={true}
+                      onChange={(e) => {
+                        onCanvasPropertyChange?.('gridVisible', e.target.checked);
+                        drawAreaRef?.current?.setGridVisible(e.target.checked);
+                      }}
                       className="w-3 h-3"
                     />
                     <span>Show Grid</span>
@@ -114,6 +125,9 @@ const DrawioPropertiesPanel: React.FC<DrawioPropertiesPanelProps> = ({
                       min="5"
                       max="50"
                       defaultValue="20"
+                      onChange={(e) => {
+                        onCanvasPropertyChange?.('gridSize', parseInt(e.target.value));
+                      }}
                       className="w-full text-xs border border-slate-200 rounded px-2 py-1 mt-1"
                     />
                   </div>

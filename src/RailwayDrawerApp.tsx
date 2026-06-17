@@ -1946,6 +1946,12 @@ const RailwayDrawerApp = () => {
                     drawAreaRef={currentDrawAreaRefObject}
                     selectedElement={selectedElement}
                     onElementChange={handleElementChange}
+                    onCanvasPropertyChange={(property, value) => {
+                      logger.debug('RailwayDrawerApp', 'Canvas property changed', {
+                        property,
+                        value,
+                      });
+                    }}
                   />
                 </div>
               </div>
