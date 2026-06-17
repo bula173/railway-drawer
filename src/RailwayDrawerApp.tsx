@@ -92,6 +92,26 @@ const RailwayDrawerApp = () => {
   // Selected element state
   const [selectedElement, setSelectedElement] = useState<DrawElement | undefined>(undefined);
 
+  /**
+   * Handle element property changes from properties panel
+   */
+  const handleElementChange = useCallback((updatedElement: DrawElement) => {
+    setSelectedElement(updatedElement);
+
+    // Update the element in the current DrawArea
+    const currentDrawArea = getCurrentDrawAreaRef();
+    if (currentDrawArea) {
+      const elements = currentDrawArea.getElements();
+      const newElements = elements.map(el =>
+        el.id === updatedElement.id ? updatedElement : el
+      );
+      currentDrawArea.updateElements(newElements);
+      logger.debug('RailwayDrawerApp', 'Element updated via properties panel', {
+        elementId: updatedElement.id,
+      });
+    }
+  }, []);
+
   // Active tool state
   const [activeTool, setActiveTool] = useState<DrawTool>('select');
 
@@ -1925,7 +1945,7 @@ const RailwayDrawerApp = () => {
                   <DrawioPropertiesPanel
                     drawAreaRef={currentDrawAreaRefObject}
                     selectedElement={selectedElement}
-                    onElementChange={setSelectedElement}
+                    onElementChange={handleElementChange}
                   />
                 </div>
               </div>

@@ -45,14 +45,95 @@ const DrawioPropertiesPanel: React.FC<DrawioPropertiesPanelProps> = ({
 
   const updateElementProperty = useCallback((updates: Partial<DrawElement>) => {
     if (!selectedElement) return;
-    const updatedElement = { ...selectedElement, ...updates };
+    const updatedElement = {
+      ...selectedElement,
+      ...updates,
+      styles: {
+        ...selectedElement.styles,
+        ...(updates.styles || {}),
+      },
+    };
+    logger.debug('DrawioPropertiesPanel', 'Element property updated', {
+      elementId: updatedElement.id,
+      updates,
+    });
     onElementChange?.(updatedElement);
   }, [selectedElement, onElementChange]);
 
+  // Show canvas properties when no element is selected
   if (!selectedElement) {
     return (
-      <div className="h-full flex items-center justify-center text-slate-400 text-sm">
-        No element selected
+      <div className="h-full flex flex-col bg-white">
+        {/* Tabs */}
+        <div className="flex border-b border-slate-200 bg-slate-50">
+          {(['style', 'text', 'arrange'] as TabType[]).map(tab => (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              className={`flex-1 px-3 py-2 text-xs font-medium transition-colors ${
+                activeTab === tab
+                  ? 'text-slate-900 border-b-2 border-blue-500 bg-white'
+                  : 'text-slate-600 hover:text-slate-900'
+              }`}
+            >
+              {tab.charAt(0).toUpperCase() + tab.slice(1)}
+            </button>
+          ))}
+        </div>
+
+        {/* Canvas Properties */}
+        <div className="flex-1 overflow-y-auto p-3">
+          {activeTab === 'style' && (
+            <div className="space-y-1">
+              <CollapsibleSection
+                title="Canvas"
+                expanded={expandedSections.fill}
+                onToggle={() => toggleSection('fill')}
+              >
+                <div className="space-y-2 p-2">
+                  <div>
+                    <label className="text-xs text-slate-600">Background</label>
+                    <input
+                      type="color"
+                      defaultValue="#ffffff"
+                      className="w-full h-8 border border-slate-200 rounded cursor-pointer mt-1"
+                    />
+                  </div>
+                  <label className="flex items-center gap-2 text-xs">
+                    <input
+                      type="checkbox"
+                      defaultChecked={true}
+                      className="w-3 h-3"
+                    />
+                    <span>Show Grid</span>
+                  </label>
+                  <div>
+                    <label className="text-xs text-slate-600">Grid Size</label>
+                    <input
+                      type="number"
+                      min="5"
+                      max="50"
+                      defaultValue="20"
+                      className="w-full text-xs border border-slate-200 rounded px-2 py-1 mt-1"
+                    />
+                  </div>
+                </div>
+              </CollapsibleSection>
+            </div>
+          )}
+
+          {activeTab === 'text' && (
+            <div className="text-xs text-slate-500 p-3">
+              No element selected
+            </div>
+          )}
+
+          {activeTab === 'arrange' && (
+            <div className="text-xs text-slate-500 p-3">
+              No element selected
+            </div>
+          )}
+        </div>
       </div>
     );
   }
