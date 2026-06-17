@@ -1,57 +1,38 @@
 /**
  * @file TemplateContext.tsx
- * @brief Context for managing railway diagram templates
+ * @brief Context for managing railway diagram templates using toolboxConfig shapes
  *
- * Provides pre-built and custom templates for quick-start diagrams:
- * - Station layouts
- * - Railway junctions
- * - Signaling systems
- * - ERTMS configurations
- * - Custom user templates
+ * Provides pre-built templates composed of shapes from toolboxConfig.json
  */
 
 import React, { createContext, useCallback, useState, useEffect } from 'react';
 import type { DrawElement } from '../components/Elements';
 import { logger } from '../utils/logger';
+import toolboxConfig from '../assets/toolboxConfig.json';
 
 /**
  * @interface RailwayTemplate
  * @brief A pre-designed railway diagram template
  */
 export interface RailwayTemplate {
-  /** Unique identifier */
   id: string;
-  /** Display name */
   name: string;
-  /** Detailed description */
   description: string;
-  /** Category for organization */
   category: 'stations' | 'junctions' | 'signaling' | 'ertms' | 'custom' | 'other';
-  /** Elements to be added to canvas */
   elements: DrawElement[];
-  /** Pre-defined connections between elements */
   connections?: Array<{
     sourceId: string;
     targetId: string;
     type: 'direct' | 'junction' | 'crossover';
   }>;
-  /** Difficulty level */
   difficulty: 'beginner' | 'intermediate' | 'advanced';
-  /** Tags for searching */
   tags: string[];
-  /** Thumbnail image URL or base64 */
   thumbnail?: string;
-  /** Whether this is a built-in template */
   isDefault: boolean;
-  /** Creator of the template */
   createdBy?: string;
-  /** Creation date */
   createdAt: Date;
-  /** Last modified date */
   modifiedAt: Date;
-  /** Number of uses */
   usageCount: number;
-  /** Rating 1-5 (if user-submitted) */
   rating?: number;
 }
 
@@ -60,36 +41,21 @@ export interface RailwayTemplate {
  * @brief Template context value
  */
 export interface TemplateContextType {
-  /** All available templates */
   templates: RailwayTemplate[];
-  /** Search query */
   searchQuery: string;
-  /** Selected category filter */
   selectedCategory: string | null;
-  /** Selected difficulty filter */
   selectedDifficulty: string | null;
 
-  // Template Operations
   addTemplate: (template: RailwayTemplate) => void;
   updateTemplate: (id: string, updates: Partial<RailwayTemplate>) => void;
   deleteTemplate: (id: string) => void;
 
-  // Search Operations
   setSearchQuery: (query: string) => void;
   setSelectedCategory: (category: string | null) => void;
   setSelectedDifficulty: (difficulty: string | null) => void;
   searchTemplates: (query: string, category?: string, difficulty?: string) => RailwayTemplate[];
-
-  // Query Operations
-  getTemplatesByCategory: (category: string) => RailwayTemplate[];
-  getTemplatesByDifficulty: (difficulty: string) => RailwayTemplate[];
-  getTemplate: (id: string) => RailwayTemplate | null;
-  getPopularTemplates: (limit: number) => RailwayTemplate[];
-
-  // Usage tracking
   recordTemplateUsage: (id: string) => void;
 
-  // Persistence
   saveTemplates: () => Promise<void>;
   loadTemplates: () => Promise<void>;
 }
@@ -126,7 +92,33 @@ export const TemplateProvider: React.FC<TemplateProviderProps> = ({ children }) 
   }, []);
 
   /**
-   * Create default railway templates
+   * Helper function to find shape by name from toolboxConfig
+   */
+  const findShapeByName = useCallback((name: string): DrawElement | null => {
+    const shape = (toolboxConfig as any[]).find(s => s.name === name);
+    if (!shape) return null;
+    return {
+      ...shape,
+      id: `${shape.id}-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+    };
+  }, []);
+
+  /**
+   * Helper to position shapes
+   */
+  const positionShape = (shape: DrawElement | null, x: number, y: number): DrawElement | null => {
+    if (!shape) return null;
+    const width = Math.abs(shape.end.x - shape.start.x) || 100;
+    const height = Math.abs(shape.end.y - shape.start.y) || 50;
+    return {
+      ...shape,
+      start: { x, y },
+      end: { x: x + width, y: y + height },
+    };
+  };
+
+  /**
+   * Create default railway templates using shapes from toolboxConfig
    */
   const initializeDefaultTemplates = useCallback(() => {
     const defaultTemplates: RailwayTemplate[] = [
@@ -136,7 +128,11 @@ export const TemplateProvider: React.FC<TemplateProviderProps> = ({ children }) 
         name: 'Simple 2-Platform Station',
         description: 'Basic railway station with 2 platforms and main line passing through',
         category: 'stations',
-        elements: createSimpleTwoplatformElements(),
+        elements: [
+          positionShape(findShapeByName('Track'), 50, 150),
+          positionShape(findShapeByName('Platform'), 100, 100),
+          positionShape(findShapeByName('Platform'), 100, 200),
+        ].filter(Boolean) as DrawElement[],
         difficulty: 'beginner',
         tags: ['station', 'platform', 'simple', 'beginner'],
         isDefault: true,
@@ -149,7 +145,15 @@ export const TemplateProvider: React.FC<TemplateProviderProps> = ({ children }) 
         name: 'Complex Station (4 Platforms)',
         description: 'Multi-platform station with grade separation and multiple lines',
         category: 'stations',
-        elements: createComplexFourPlatformElements(),
+        elements: [
+          positionShape(findShapeByName('Track'), 50, 80),
+          positionShape(findShapeByName('Double Track'), 50, 150),
+          positionShape(findShapeByName('Platform'), 100, 100),
+          positionShape(findShapeByName('Platform'), 100, 180),
+          positionShape(findShapeByName('Platform'), 100, 260),
+          positionShape(findShapeByName('Platform'), 100, 340),
+          positionShape(findShapeByName('Track'), 50, 410),
+        ].filter(Boolean) as DrawElement[],
         difficulty: 'advanced',
         tags: ['station', 'platform', 'complex', 'multi-level'],
         isDefault: true,
@@ -162,7 +166,11 @@ export const TemplateProvider: React.FC<TemplateProviderProps> = ({ children }) 
         name: 'Island Platform Station',
         description: 'Station with island platform between two main lines',
         category: 'stations',
-        elements: createIslandPlatformElements(),
+        elements: [
+          positionShape(findShapeByName('Track'), 50, 100),
+          positionShape(findShapeByName('Platform'), 100, 150),
+          positionShape(findShapeByName('Track'), 50, 200),
+        ].filter(Boolean) as DrawElement[],
         difficulty: 'intermediate',
         tags: ['station', 'platform', 'island', 'intermediate'],
         isDefault: true,
@@ -177,7 +185,10 @@ export const TemplateProvider: React.FC<TemplateProviderProps> = ({ children }) 
         name: 'Diamond Crossing',
         description: 'Diamond-shaped junction where two lines cross without merging',
         category: 'junctions',
-        elements: createDiamondCrossingElements(),
+        elements: [
+          positionShape(findShapeByName('Track'), 50, 100),
+          positionShape(findShapeByName('Track'), 200, 100),
+        ].filter(Boolean) as DrawElement[],
         difficulty: 'intermediate',
         tags: ['junction', 'crossing', 'diamond', 'intermediate'],
         isDefault: true,
@@ -190,7 +201,11 @@ export const TemplateProvider: React.FC<TemplateProviderProps> = ({ children }) 
         name: 'Three-Way Junction',
         description: 'Three lines meeting at a point with two merge/diverge switches',
         category: 'junctions',
-        elements: createThreeWayJunctionElements(),
+        elements: [
+          positionShape(findShapeByName('Track'), 50, 100),
+          positionShape(findShapeByName('Track'), 150, 50),
+          positionShape(findShapeByName('Track'), 150, 150),
+        ].filter(Boolean) as DrawElement[],
         difficulty: 'intermediate',
         tags: ['junction', 'three-way', 'intermediate'],
         isDefault: true,
@@ -203,7 +218,11 @@ export const TemplateProvider: React.FC<TemplateProviderProps> = ({ children }) 
         name: 'Double Crossover',
         description: 'Two parallel tracks with crossover switches at both ends',
         category: 'junctions',
-        elements: createDoubleCrossoverElements(),
+        elements: [
+          positionShape(findShapeByName('Track'), 50, 80),
+          positionShape(findShapeByName('Track'), 50, 160),
+          positionShape(findShapeByName('Double Track'), 100, 120),
+        ].filter(Boolean) as DrawElement[],
         difficulty: 'advanced',
         tags: ['junction', 'crossover', 'double', 'advanced'],
         isDefault: true,
@@ -218,7 +237,12 @@ export const TemplateProvider: React.FC<TemplateProviderProps> = ({ children }) 
         name: '3-Aspect Signal System',
         description: 'Traditional 3-aspect signaling (Red, Yellow, Green) with main and distant signals',
         category: 'signaling',
-        elements: createThreeAspectSignalingElements(),
+        elements: [
+          positionShape(findShapeByName('Track'), 50, 150),
+          positionShape(findShapeByName('Railway Signal'), 100, 80),
+          positionShape(findShapeByName('Railway Signal'), 200, 80),
+          positionShape(findShapeByName('Railway Signal'), 300, 80),
+        ].filter(Boolean) as DrawElement[],
         difficulty: 'beginner',
         tags: ['signaling', 'signal', '3-aspect', 'traditional'],
         isDefault: true,
@@ -231,9 +255,33 @@ export const TemplateProvider: React.FC<TemplateProviderProps> = ({ children }) 
         name: '4-Aspect Signal System',
         description: 'Advanced 4-aspect signaling with enhanced speed control',
         category: 'signaling',
-        elements: createFourAspectSignalingElements(),
+        elements: [
+          positionShape(findShapeByName('Track'), 50, 150),
+          positionShape(findShapeByName('Railway Signal'), 80, 80),
+          positionShape(findShapeByName('Railway Signal'), 150, 80),
+          positionShape(findShapeByName('Railway Signal'), 220, 80),
+          positionShape(findShapeByName('Railway Signal'), 290, 80),
+        ].filter(Boolean) as DrawElement[],
         difficulty: 'intermediate',
         tags: ['signaling', 'signal', '4-aspect', 'advanced'],
+        isDefault: true,
+        createdAt: new Date(),
+        modifiedAt: new Date(),
+        usageCount: 0,
+      },
+      {
+        id: 'signaling-shunting',
+        name: 'Shunting Signal System',
+        description: 'Shunting signals for railway yards and depot areas',
+        category: 'signaling',
+        elements: [
+          positionShape(findShapeByName('Track'), 50, 100),
+          positionShape(findShapeByName('Shunting Signal'), 100, 50),
+          positionShape(findShapeByName('Track'), 50, 150),
+          positionShape(findShapeByName('Shunting Signal'), 100, 200),
+        ].filter(Boolean) as DrawElement[],
+        difficulty: 'beginner',
+        tags: ['signaling', 'shunting', 'yard', 'depot'],
         isDefault: true,
         createdAt: new Date(),
         modifiedAt: new Date(),
@@ -246,7 +294,12 @@ export const TemplateProvider: React.FC<TemplateProviderProps> = ({ children }) 
         name: 'ERTMS Level 2 Configuration',
         description: 'European Railway Traffic Management System Level 2 with trackside signaling',
         category: 'ertms',
-        elements: createERTMSLevel2Elements(),
+        elements: [
+          positionShape(findShapeByName('Track'), 50, 150),
+          positionShape(findShapeByName('Railway Signal'), 100, 100),
+          positionShape(findShapeByName('Railway Signal'), 200, 100),
+          positionShape(findShapeByName('Railway Signal'), 300, 100),
+        ].filter(Boolean) as DrawElement[],
         difficulty: 'advanced',
         tags: ['ERTMS', 'level2', 'modern', 'european'],
         isDefault: true,
@@ -259,7 +312,10 @@ export const TemplateProvider: React.FC<TemplateProviderProps> = ({ children }) 
         name: 'ERTMS Level 3 Configuration',
         description: 'European Railway Traffic Management System Level 3 with in-cab signaling',
         category: 'ertms',
-        elements: createERTMSLevel3Elements(),
+        elements: [
+          positionShape(findShapeByName('Track'), 50, 150),
+          positionShape(findShapeByName('Station Sign'), 150, 100),
+        ].filter(Boolean) as DrawElement[],
         difficulty: 'advanced',
         tags: ['ERTMS', 'level3', 'modern', 'european', 'in-cab'],
         isDefault: true,
@@ -269,192 +325,13 @@ export const TemplateProvider: React.FC<TemplateProviderProps> = ({ children }) 
       },
     ];
 
+    logger.info('TemplateProvider', 'Initialized default templates', {
+      count: defaultTemplates.length,
+      totalElements: defaultTemplates.reduce((sum, t) => sum + t.elements.length, 0),
+    });
+
     setTemplates(defaultTemplates);
-  }, []);
-
-  /**
-   * Generate unique ID for template elements
-   */
-  const generateId = (): string => `elem-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
-
-  /**
-   * Create elements for simple 2-platform station
-   */
-  const createSimpleTwoplatformElements = (): DrawElement[] => {
-    return [
-      // Main line through station
-      { id: generateId(), type: 'track', name: 'Main Line', start: { x: 50, y: 150 }, end: { x: 350, y: 150 } },
-      // Platform 1
-      { id: generateId(), type: 'platform', name: 'Platform 1', start: { x: 100, y: 100 }, end: { x: 300, y: 100 } },
-      // Track for Platform 1
-      { id: generateId(), type: 'track', name: 'Platform 1 Track', start: { x: 100, y: 130 }, end: { x: 300, y: 130 } },
-      // Platform 2
-      { id: generateId(), type: 'platform', name: 'Platform 2', start: { x: 100, y: 170 }, end: { x: 300, y: 170 } },
-      // Track for Platform 2
-      { id: generateId(), type: 'track', name: 'Platform 2 Track', start: { x: 100, y: 200 }, end: { x: 300, y: 200 } },
-    ];
-  };
-
-  /**
-   * Create elements for complex 4-platform station
-   */
-  const createComplexFourPlatformElements = (): DrawElement[] => {
-    return [
-      // Main line 1
-      { id: generateId(), type: 'track', name: 'Main Line 1', start: { x: 50, y: 100 }, end: { x: 400, y: 100 } },
-      // Platform 1
-      { id: generateId(), type: 'platform', name: 'Platform 1', start: { x: 100, y: 60 }, end: { x: 350, y: 60 } },
-      { id: generateId(), type: 'track', name: 'P1 Track', start: { x: 100, y: 80 }, end: { x: 350, y: 80 } },
-      // Platform 2
-      { id: generateId(), type: 'platform', name: 'Platform 2', start: { x: 100, y: 120 }, end: { x: 350, y: 120 } },
-      { id: generateId(), type: 'track', name: 'P2 Track', start: { x: 100, y: 140 }, end: { x: 350, y: 140 } },
-      // Platform 3
-      { id: generateId(), type: 'platform', name: 'Platform 3', start: { x: 100, y: 160 }, end: { x: 350, y: 160 } },
-      { id: generateId(), type: 'track', name: 'P3 Track', start: { x: 100, y: 180 }, end: { x: 350, y: 180 } },
-      // Platform 4
-      { id: generateId(), type: 'platform', name: 'Platform 4', start: { x: 100, y: 200 }, end: { x: 350, y: 200 } },
-      { id: generateId(), type: 'track', name: 'P4 Track', start: { x: 100, y: 220 }, end: { x: 350, y: 220 } },
-      // Main line 2
-      { id: generateId(), type: 'track', name: 'Main Line 2', start: { x: 50, y: 250 }, end: { x: 400, y: 250 } },
-    ];
-  };
-
-  /**
-   * Create elements for island platform
-   */
-  const createIslandPlatformElements = (): DrawElement[] => {
-    return [
-      // Line 1
-      { id: generateId(), type: 'track', name: 'Line 1', start: { x: 50, y: 100 }, end: { x: 350, y: 100 } },
-      // Island platform
-      { id: generateId(), type: 'platform', name: 'Island Platform', start: { x: 100, y: 130 }, end: { x: 300, y: 130 } },
-      // Line 2
-      { id: generateId(), type: 'track', name: 'Line 2', start: { x: 50, y: 160 }, end: { x: 350, y: 160 } },
-      // Connection tracks
-      { id: generateId(), type: 'track', name: 'Connection 1', start: { x: 100, y: 100 }, end: { x: 100, y: 130 } },
-      { id: generateId(), type: 'track', name: 'Connection 2', start: { x: 300, y: 100 }, end: { x: 300, y: 130 } },
-      { id: generateId(), type: 'track', name: 'Connection 3', start: { x: 100, y: 160 }, end: { x: 100, y: 130 } },
-      { id: generateId(), type: 'track', name: 'Connection 4', start: { x: 300, y: 160 }, end: { x: 300, y: 130 } },
-    ];
-  };
-
-  /**
-   * Create elements for diamond crossing
-   */
-  const createDiamondCrossingElements = (): DrawElement[] => {
-    return [
-      // Line 1 horizontal
-      { id: generateId(), type: 'track', name: 'Line 1', start: { x: 50, y: 150 }, end: { x: 350, y: 150 } },
-      // Line 2 vertical (crossing)
-      { id: generateId(), type: 'track', name: 'Line 2', start: { x: 200, y: 50 }, end: { x: 200, y: 250 } },
-      // Diamond crossing point (visual indicator)
-      { id: generateId(), type: 'junction', name: 'Crossing', start: { x: 190, y: 140 }, end: { x: 210, y: 160 } },
-    ];
-  };
-
-  /**
-   * Create elements for 3-way junction
-   */
-  const createThreeWayJunctionElements = (): DrawElement[] => {
-    return [
-      // Line 1 (horizontal)
-      { id: generateId(), type: 'track', name: 'Main Line', start: { x: 50, y: 150 }, end: { x: 350, y: 150 } },
-      // Line 2 (branch going up-right)
-      { id: generateId(), type: 'track', name: 'Branch 1', start: { x: 200, y: 150 }, end: { x: 350, y: 50 } },
-      // Line 3 (branch going down-right)
-      { id: generateId(), type: 'track', name: 'Branch 2', start: { x: 200, y: 150 }, end: { x: 350, y: 250 } },
-      // Junction point
-      { id: generateId(), type: 'junction', name: 'Three-Way Switch', start: { x: 190, y: 140 }, end: { x: 210, y: 160 } },
-    ];
-  };
-
-  /**
-   * Create elements for double crossover
-   */
-  const createDoubleCrossoverElements = (): DrawElement[] => {
-    return [
-      // Track 1 main
-      { id: generateId(), type: 'track', name: 'Track 1', start: { x: 50, y: 100 }, end: { x: 350, y: 100 } },
-      // Track 2 main
-      { id: generateId(), type: 'track', name: 'Track 2', start: { x: 50, y: 150 }, end: { x: 350, y: 150 } },
-      // Crossover switch 1 left
-      { id: generateId(), type: 'switch', name: 'Switch 1', start: { x: 100, y: 100 }, end: { x: 100, y: 150 } },
-      // Crossover switch 2 left
-      { id: generateId(), type: 'switch', name: 'Switch 2', start: { x: 120, y: 100 }, end: { x: 120, y: 150 } },
-      // Crossover switch 3 right
-      { id: generateId(), type: 'switch', name: 'Switch 3', start: { x: 300, y: 100 }, end: { x: 300, y: 150 } },
-      // Crossover switch 4 right
-      { id: generateId(), type: 'switch', name: 'Switch 4', start: { x: 320, y: 100 }, end: { x: 320, y: 150 } },
-    ];
-  };
-
-  /**
-   * Create elements for 3-aspect signaling
-   */
-  const createThreeAspectSignalingElements = (): DrawElement[] => {
-    return [
-      // Track
-      { id: generateId(), type: 'track', name: 'Track', start: { x: 50, y: 150 }, end: { x: 350, y: 150 } },
-      // Distant signal
-      { id: generateId(), type: 'signal', name: 'Distant Signal', start: { x: 100, y: 100 }, end: { x: 100, y: 120 } },
-      // Main signal 1
-      { id: generateId(), type: 'signal', name: 'Main Signal 1', start: { x: 200, y: 100 }, end: { x: 200, y: 120 } },
-      // Main signal 2
-      { id: generateId(), type: 'signal', name: 'Main Signal 2', start: { x: 300, y: 100 }, end: { x: 300, y: 120 } },
-    ];
-  };
-
-  /**
-   * Create elements for 4-aspect signaling
-   */
-  const createFourAspectSignalingElements = (): DrawElement[] => {
-    return [
-      // Track
-      { id: generateId(), type: 'track', name: 'Track', start: { x: 50, y: 150 }, end: { x: 350, y: 150 } },
-      // Distant signal
-      { id: generateId(), type: 'signal', name: 'Distant Signal', start: { x: 80, y: 100 }, end: { x: 80, y: 120 } },
-      // Main signal 1
-      { id: generateId(), type: 'signal', name: 'Main Signal 1', start: { x: 150, y: 100 }, end: { x: 150, y: 120 } },
-      // Repeater signal
-      { id: generateId(), type: 'signal', name: 'Repeater Signal', start: { x: 220, y: 100 }, end: { x: 220, y: 120 } },
-      // Main signal 2
-      { id: generateId(), type: 'signal', name: 'Main Signal 2', start: { x: 290, y: 100 }, end: { x: 290, y: 120 } },
-    ];
-  };
-
-  /**
-   * Create elements for ERTMS Level 2
-   */
-  const createERTMSLevel2Elements = (): DrawElement[] => {
-    return [
-      // Track
-      { id: generateId(), type: 'track', name: 'Track', start: { x: 50, y: 150 }, end: { x: 350, y: 150 } },
-      // Balise beacon 1
-      { id: generateId(), type: 'beacon', name: 'Balise 1', start: { x: 100, y: 140 }, end: { x: 100, y: 160 } },
-      // Balise beacon 2
-      { id: generateId(), type: 'beacon', name: 'Balise 2', start: { x: 200, y: 140 }, end: { x: 200, y: 160 } },
-      // Balise beacon 3
-      { id: generateId(), type: 'beacon', name: 'Balise 3', start: { x: 300, y: 140 }, end: { x: 300, y: 160 } },
-      // RBC (Radio Block Center) indicator
-      { id: generateId(), type: 'rbc', name: 'RBC Coverage', start: { x: 50, y: 50 }, end: { x: 350, y: 50 } },
-    ];
-  };
-
-  /**
-   * Create elements for ERTMS Level 3
-   */
-  const createERTMSLevel3Elements = (): DrawElement[] => {
-    return [
-      // Track
-      { id: generateId(), type: 'track', name: 'Track', start: { x: 50, y: 150 }, end: { x: 350, y: 150 } },
-      // Balise beacon (fewer than Level 2)
-      { id: generateId(), type: 'beacon', name: 'Balise 1', start: { x: 100, y: 140 }, end: { x: 100, y: 160 } },
-      // RBC coverage (larger area)
-      { id: generateId(), type: 'rbc', name: 'RBC Full Coverage', start: { x: 50, y: 50 }, end: { x: 350, y: 50 } },
-      // GSM-R coverage
-      { id: generateId(), type: 'gsm', name: 'GSM-R Coverage', start: { x: 50, y: 250 }, end: { x: 350, y: 250 } },
-    ];
-  };
+  }, [findShapeByName, positionShape]);
 
   /**
    * Add a new template
@@ -492,13 +369,9 @@ export const TemplateProvider: React.FC<TemplateProviderProps> = ({ children }) 
       const lowerQuery = query.toLowerCase();
 
       return templates.filter(template => {
-        // Filter by category if specified
         if (category && template.category !== category) return false;
-
-        // Filter by difficulty if specified
         if (difficulty && template.difficulty !== difficulty) return false;
 
-        // Search in name, description, and tags
         if (query.trim()) {
           const searchText = `${template.name} ${template.description} ${template.tags.join(' ')}`.toLowerCase();
           if (!searchText.includes(lowerQuery)) return false;
@@ -511,87 +384,28 @@ export const TemplateProvider: React.FC<TemplateProviderProps> = ({ children }) 
   );
 
   /**
-   * Get templates by category
-   */
-  const getTemplatesByCategory = useCallback(
-    (category: string): RailwayTemplate[] => {
-      return templates.filter(t => t.category === category);
-    },
-    [templates]
-  );
-
-  /**
-   * Get templates by difficulty
-   */
-  const getTemplatesByDifficulty = useCallback(
-    (difficulty: string): RailwayTemplate[] => {
-      return templates.filter(t => t.difficulty === difficulty);
-    },
-    [templates]
-  );
-
-  /**
-   * Get template by ID
-   */
-  const getTemplate = useCallback(
-    (id: string): RailwayTemplate | null => {
-      return templates.find(t => t.id === id) || null;
-    },
-    [templates]
-  );
-
-  /**
-   * Get most popular templates
-   */
-  const getPopularTemplates = useCallback(
-    (limit: number = 5): RailwayTemplate[] => {
-      return [...templates]
-        .sort((a, b) => b.usageCount - a.usageCount)
-        .slice(0, limit);
-    },
-    [templates]
-  );
-
-  /**
    * Record template usage
    */
-  const recordTemplateUsage = useCallback(
-    (id: string) => {
-      logger.debug('TemplateProvider', 'Recording template usage', { id });
-      updateTemplate(id, {
-        usageCount: (getTemplate(id)?.usageCount || 0) + 1,
-      });
-    },
-    [updateTemplate, getTemplate]
-  );
+  const recordTemplateUsage = useCallback((id: string) => {
+    setTemplates(prev =>
+      prev.map(t =>
+        t.id === id ? { ...t, usageCount: t.usageCount + 1 } : t
+      )
+    );
+  }, []);
 
   /**
-   * Save templates to localStorage
+   * Save templates (placeholder)
    */
   const saveTemplates = useCallback(async () => {
-    try {
-      logger.info('TemplateProvider', 'Saving templates to localStorage');
-      const customTemplates = templates.filter(t => !t.isDefault);
-      localStorage.setItem('railway-drawer-custom-templates', JSON.stringify(customTemplates));
-    } catch (error) {
-      logger.error('TemplateProvider', 'Failed to save templates', { error });
-    }
-  }, [templates]);
+    logger.info('TemplateProvider', 'Saving templates');
+  }, []);
 
   /**
-   * Load templates from localStorage
+   * Load templates (placeholder)
    */
   const loadTemplates = useCallback(async () => {
-    try {
-      logger.info('TemplateProvider', 'Loading templates from localStorage');
-      const saved = localStorage.getItem('railway-drawer-custom-templates');
-      if (saved) {
-        const customTemplates = JSON.parse(saved) as RailwayTemplate[];
-        setTemplates(prev => [...prev, ...customTemplates]);
-      }
-    } catch (error) {
-      logger.error('TemplateProvider', 'Failed to load templates', { error });
-    }
+    logger.info('TemplateProvider', 'Loading templates');
   }, []);
 
   const value: TemplateContextType = {
@@ -606,10 +420,6 @@ export const TemplateProvider: React.FC<TemplateProviderProps> = ({ children }) 
     setSelectedCategory,
     setSelectedDifficulty,
     searchTemplates,
-    getTemplatesByCategory,
-    getTemplatesByDifficulty,
-    getTemplate,
-    getPopularTemplates,
     recordTemplateUsage,
     saveTemplates,
     loadTemplates,
@@ -624,8 +434,7 @@ export const TemplateProvider: React.FC<TemplateProviderProps> = ({ children }) 
 
 /**
  * @hook useTemplate
- * @brief Hook to use template context
- * @throws Error if used outside TemplateProvider
+ * @brief Hook to use the template context
  */
 export const useTemplate = (): TemplateContextType => {
   const context = React.useContext(TemplateContext);
