@@ -17,7 +17,7 @@ import toolboxConfig from "./assets/toolboxConfig.json";
 import Toolbox from "./components/Toolbox";
 import type { ToolboxItem } from "./components/Toolbox";
 import type { DrawAreaTab } from "./components/TabPanel";
-import EnhancedPropertiesPanel from "./components/EnhancedPropertiesPanel";
+import DrawioPropertiesPanel from "./components/DrawioPropertiesPanel";
 import DrawArea, { type DrawAreaRef } from "./components/DrawArea";
 import { LayersPanel } from "./components/LayersPanel";
 import { PageManager } from "./components/PageManager";
@@ -1922,7 +1922,7 @@ const RailwayDrawerApp = () => {
                 </div>
 
                 <div className="flex-1 overflow-auto">
-                  <EnhancedPropertiesPanel
+                  <DrawioPropertiesPanel
                     drawAreaRef={currentDrawAreaRefObject}
                     selectedElement={selectedElement}
                     onElementChange={setSelectedElement}
