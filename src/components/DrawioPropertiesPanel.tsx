@@ -395,28 +395,149 @@ const DrawioPropertiesPanel: React.FC<DrawioPropertiesPanelProps> = ({
         )}
 
         {activeTab === 'text' && (
-          <div className="p-3">
-            <div className="space-y-3">
-              <div>
-                <label className="text-xs font-medium text-slate-600">Text</label>
+          <div className="p-3 space-y-1">
+            {/* Text Content */}
+            <CollapsibleSection
+              title="Text"
+              expanded={expandedSections.fill}
+              onToggle={() => toggleSection('fill')}
+            >
+              <div className="space-y-2 p-2">
                 <textarea
                   value={selectedElement.text || ''}
                   onChange={(e) => updateElementProperty({ text: e.target.value })}
-                  className="w-full text-xs border border-slate-200 rounded px-2 py-2 mt-1"
-                  rows={3}
+                  placeholder="Enter text content..."
+                  className="w-full text-xs border border-slate-200 rounded px-2 py-2"
+                  rows={4}
                 />
               </div>
-              <div>
-                <label className="text-xs font-medium text-slate-600">Font Size</label>
-                <input
-                  type="number"
-                  min="8"
-                  max="72"
-                  defaultValue="12"
-                  className="w-full text-xs border border-slate-200 rounded px-2 py-1 mt-1"
-                />
+            </CollapsibleSection>
+
+            {/* Font Properties */}
+            <CollapsibleSection
+              title="Font"
+              expanded={expandedSections.stroke}
+              onToggle={() => toggleSection('stroke')}
+            >
+              <div className="space-y-2 p-2">
+                <div>
+                  <label className="text-xs text-slate-600">Font Size</label>
+                  <input
+                    type="number"
+                    min="8"
+                    max="72"
+                    defaultValue="12"
+                    onChange={(e) =>
+                      updateElementProperty({
+                        styles: {
+                          ...selectedElement.styles,
+                          fontSize: parseInt(e.target.value),
+                        },
+                      })
+                    }
+                    className="w-full text-xs border border-slate-200 rounded px-2 py-1 mt-1"
+                  />
+                </div>
+                <div className="flex gap-1">
+                  <button
+                    title="Bold"
+                    className="flex-1 px-2 py-1 text-xs border border-slate-200 rounded hover:bg-slate-100 font-bold"
+                  >
+                    B
+                  </button>
+                  <button
+                    title="Italic"
+                    className="flex-1 px-2 py-1 text-xs border border-slate-200 rounded hover:bg-slate-100 italic"
+                  >
+                    I
+                  </button>
+                  <button
+                    title="Underline"
+                    className="flex-1 px-2 py-1 text-xs border border-slate-200 rounded hover:bg-slate-100 underline"
+                  >
+                    U
+                  </button>
+                </div>
+                <div>
+                  <label className="text-xs text-slate-600">Color</label>
+                  <input
+                    type="color"
+                    defaultValue="#000000"
+                    onChange={(e) =>
+                      updateElementProperty({
+                        styles: {
+                          ...selectedElement.styles,
+                          color: e.target.value,
+                        },
+                      })
+                    }
+                    className="w-full h-8 border border-slate-200 rounded cursor-pointer mt-1"
+                  />
+                </div>
               </div>
-            </div>
+            </CollapsibleSection>
+
+            {/* Text Alignment */}
+            <CollapsibleSection
+              title="Alignment"
+              expanded={expandedSections.size}
+              onToggle={() => toggleSection('size')}
+            >
+              <div className="space-y-2 p-2">
+                <div className="flex gap-1">
+                  <button
+                    title="Align Left"
+                    className="flex-1 px-2 py-1 text-xs border border-slate-200 rounded hover:bg-slate-100"
+                    onClick={() =>
+                      updateElementProperty({
+                        styles: {
+                          ...selectedElement.styles,
+                          textAnchor: 'start',
+                        },
+                      })
+                    }
+                  >
+                    ←
+                  </button>
+                  <button
+                    title="Align Center"
+                    className="flex-1 px-2 py-1 text-xs border border-slate-200 rounded hover:bg-slate-100"
+                    onClick={() =>
+                      updateElementProperty({
+                        styles: {
+                          ...selectedElement.styles,
+                          textAnchor: 'middle',
+                        },
+                      })
+                    }
+                  >
+                    ↔
+                  </button>
+                  <button
+                    title="Align Right"
+                    className="flex-1 px-2 py-1 text-xs border border-slate-200 rounded hover:bg-slate-100"
+                    onClick={() =>
+                      updateElementProperty({
+                        styles: {
+                          ...selectedElement.styles,
+                          textAnchor: 'end',
+                        },
+                      })
+                    }
+                  >
+                    →
+                  </button>
+                </div>
+                <div>
+                  <label className="text-xs text-slate-600">Vertical</label>
+                  <select className="w-full text-xs border border-slate-200 rounded px-2 py-1 mt-1">
+                    <option>Top</option>
+                    <option>Middle</option>
+                    <option>Bottom</option>
+                  </select>
+                </div>
+              </div>
+            </CollapsibleSection>
           </div>
         )}
 

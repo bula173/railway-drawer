@@ -2417,17 +2417,37 @@ export function RenderElement({
    * @description Only shown for text elements when not in edit mode.
    */
   function renderTextContent() {
-    if (el.type !== "text" || editingText) return null;
-    
+    // Render text for any element that has text content
+    if (!el.text || editingText) return null;
+
+    const centerX = (el.start.x + el.end.x) / 2;
+    const centerY = (el.start.y + el.end.y) / 2;
+    const fontSize = (el.styles?.fontSize as number) || 12;
+    const textAnchor = (el.styles?.textAnchor as string) || 'middle';
+    const fill = (el.styles?.color as string) || '#000000';
+
+    // Word wrap for multi-line text
+    const lines = el.text.split('\n');
+    const lineHeight = fontSize * 1.2;
+    const startY = centerY - ((lines.length - 1) * lineHeight) / 2;
+
     return (
-      <text
-        className="element-text-content"
-        x={(el.start.x + el.end.x) / 2}
-        y={(el.start.y + el.end.y) / 2}
-        onDoubleClick={handleTextDoubleClick}
-      >
-        {"Text"}
-      </text>
+      <g onClick={handleTextDoubleClick} style={{ cursor: 'text' }}>
+        {lines.map((line, idx) => (
+          <text
+            key={idx}
+            className="element-text-content"
+            x={centerX}
+            y={startY + idx * lineHeight}
+            textAnchor={textAnchor as any}
+            fontSize={fontSize}
+            fill={fill}
+            onDoubleClick={handleTextDoubleClick}
+          >
+            {line || ' '}
+          </text>
+        ))}
+      </g>
     );
   }
 
@@ -2448,24 +2468,39 @@ export function RenderElement({
    * @description Shows a text input when editing text elements.
    */
   function renderTextEditor() {
-    if (el.type !== "text" || !editingText) return null;
-    
+    if (!editingText) return null;
+
+    const centerX = (el.start.x + el.end.x) / 2;
+    const centerY = (el.start.y + el.end.y) / 2;
+    const width = Math.abs(el.end.x - el.start.x);
+    const height = Math.abs(el.end.y - el.start.y);
+
     return (
       <foreignObject
         className="foreign-object-container"
-        x={(el.start.x + el.end.x) / 2 - 50}
-        y={(el.start.y + el.end.y) / 2 - 15}
+        x={centerX - Math.min(width, 200) / 2}
+        y={centerY - Math.min(height, 100) / 2}
+        width={Math.min(width, 300)}
+        height={Math.min(height, 150)}
       >
-        <input
-          type="text"
+        <textarea
           className="text-input"
           value={editTextValue}
           autoFocus
           onChange={e => setEditTextValue(e.target.value)}
           onBlur={() => handleTextEdit(editTextValue)}
           onKeyDown={e => {
-            if (e.key === "Enter") handleTextEdit(editTextValue);
             if (e.key === "Escape") setEditingText(false);
+          }}
+          style={{
+            width: '100%',
+            height: '100%',
+            padding: '4px',
+            border: '1px solid #007bff',
+            borderRadius: '3px',
+            fontSize: '12px',
+            fontFamily: 'Arial, sans-serif',
+            resize: 'none'
           }}
         />
       </foreignObject>
