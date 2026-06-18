@@ -1568,9 +1568,8 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
         const selectedElement = elements.find(el => el.id === selectedElementIds[0]);
         if (selectedElement) {
           e.preventDefault();
+          console.log('⌨️ Keystroke detected on selected shape:', e.key);
           setEditingStartChar(e.key);
-          // Reset after use
-          setTimeout(() => setEditingStartChar(undefined), 0);
           return;
         }
       }

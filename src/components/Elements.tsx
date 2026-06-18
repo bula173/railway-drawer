@@ -1311,10 +1311,12 @@ export function RenderElement({
   // Auto-enter text editing mode with first character
   React.useEffect(() => {
     if (isSelected && startEditingWithChar) {
+      console.log('🎯 Auto-entering text edit mode with char:', startEditingWithChar, 'element:', el.id);
       setEditingText(true);
       setEditTextValue((el.text || "") + startEditingWithChar);
+      // Note: startEditingWithChar will be reset by parent when undefined is passed again
     }
-  }, [isSelected, startEditingWithChar]);
+  }, [isSelected, startEditingWithChar, el.text]);
 
   // --- Resize Logic ---
   const resizingRef = useRef<{
@@ -2486,37 +2488,53 @@ export function RenderElement({
   function renderTextEditor() {
     if (!editingText) return null;
 
-    const centerX = (el.start.x + el.end.x) / 2;
-    const centerY = (el.start.y + el.end.y) / 2;
     const width = Math.abs(el.end.x - el.start.x);
     const height = Math.abs(el.end.y - el.start.y);
+
+    // Ensure minimum dimensions for text editing
+    const editorWidth = Math.max(width - 8, 60);
+    const editorHeight = Math.max(height - 8, 40);
+
+    const x = el.start.x + 4;
+    const y = el.start.y + 4;
+
+    console.log('📝 Rendering text editor for shape:', el.id, { x, y, editorWidth, editorHeight, width, height });
 
     return (
       <foreignObject
         className="foreign-object-container"
-        x={centerX - Math.min(width, 200) / 2}
-        y={centerY - Math.min(height, 100) / 2}
-        width={Math.min(width, 300)}
-        height={Math.min(height, 150)}
+        x={x}
+        y={y}
+        width={editorWidth}
+        height={editorHeight}
       >
         <textarea
           className="text-input"
           value={editTextValue}
           autoFocus
           onChange={e => setEditTextValue(e.target.value)}
-          onBlur={() => handleTextEdit(editTextValue)}
+          onBlur={() => {
+            console.log('📝 Text editor blur, saving:', editTextValue);
+            handleTextEdit(editTextValue);
+          }}
           onKeyDown={e => {
-            if (e.key === "Escape") setEditingText(false);
+            if (e.key === "Escape") {
+              console.log('📝 Text editor Escape key');
+              setEditingText(false);
+            }
           }}
           style={{
             width: '100%',
             height: '100%',
             padding: '4px',
-            border: '1px solid #007bff',
+            border: '2px solid #007bff',
             borderRadius: '3px',
             fontSize: '12px',
             fontFamily: 'Arial, sans-serif',
-            resize: 'none'
+            resize: 'none',
+            boxSizing: 'border-box',
+            backgroundColor: 'white',
+            zIndex: 1000
           }}
         />
       </foreignObject>
