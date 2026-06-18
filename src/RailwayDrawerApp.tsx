@@ -1907,7 +1907,7 @@ const RailwayDrawerApp = () => {
                 setSelectedElement={setSelectedElement}
                 onStateChange={updateEditMenuState}
                 onReadyToSave={handleDrawAreaReadyToSave}
-                disableKeyboardHandlers={true}
+                disableKeyboardHandlers={false}
                 onCanvasExpand={expandCanvasIfNeeded}
               />
             </div>
