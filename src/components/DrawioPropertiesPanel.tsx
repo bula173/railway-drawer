@@ -396,23 +396,6 @@ const DrawioPropertiesPanel: React.FC<DrawioPropertiesPanelProps> = ({
 
         {activeTab === 'text' && (
           <div className="p-3 space-y-1">
-            {/* Text Content */}
-            <CollapsibleSection
-              title="Text"
-              expanded={expandedSections.fill}
-              onToggle={() => toggleSection('fill')}
-            >
-              <div className="space-y-2 p-2">
-                <textarea
-                  value={selectedElement.text || ''}
-                  onChange={(e) => updateElementProperty({ text: e.target.value })}
-                  placeholder="Enter text content..."
-                  className="w-full text-xs border border-slate-200 rounded px-2 py-2"
-                  rows={4}
-                />
-              </div>
-            </CollapsibleSection>
-
             {/* Font Properties */}
             <CollapsibleSection
               title="Font"

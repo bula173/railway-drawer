@@ -30,6 +30,9 @@ export interface ElementStyles {
   opacity?: number;
   strokeOpacity?: number;
   fillOpacity?: number;
+  fontSize?: number;
+  color?: string;
+  textAnchor?: string;
 }
 
 /**
@@ -40,7 +43,7 @@ export interface ElementStyles {
  */
 export function getElementStyleProps(styles?: ElementStyles): Record<string, any> {
   if (!styles) return {};
-  
+
   const styleProps: Record<string, any> = {};
   if (styles.fill !== undefined) styleProps.fill = styles.fill;
   if (styles.stroke !== undefined) styleProps.stroke = styles.stroke;
@@ -49,6 +52,9 @@ export function getElementStyleProps(styles?: ElementStyles): Record<string, any
   if (styles.opacity !== undefined) styleProps.opacity = styles.opacity;
   if (styles.strokeOpacity !== undefined) styleProps.strokeOpacity = styles.strokeOpacity;
   if (styles.fillOpacity !== undefined) styleProps.fillOpacity = styles.fillOpacity;
+  if (styles.fontSize !== undefined) styleProps.fontSize = styles.fontSize;
+  if (styles.color !== undefined) styleProps.color = styles.color;
+  if (styles.textAnchor !== undefined) styleProps.textAnchor = styles.textAnchor;
   
   return styleProps;
 }
@@ -1266,6 +1272,7 @@ export function RenderElement({
   updateElement,
   handlePointerDown,
   onContextMenu,
+  startEditingWithChar,
 }: {
   el: DrawElement;
   isSelected: boolean;
@@ -1275,6 +1282,7 @@ export function RenderElement({
   updateElement: (el: DrawElement) => void;
   handlePointerDown: (e: React.PointerEvent, el: DrawElement) => void;
   onContextMenu?: (e: React.MouseEvent) => void;
+  startEditingWithChar?: string;
 }) {
   // --- State ---
   const [labelDragging, setLabelDragging] = React.useState(false);
@@ -1299,6 +1307,14 @@ export function RenderElement({
       setSelectedShapeElementId(null);
     }
   }, [isSelected]);
+
+  // Auto-enter text editing mode with first character
+  React.useEffect(() => {
+    if (isSelected && startEditingWithChar) {
+      setEditingText(true);
+      setEditTextValue((el.text || "") + startEditingWithChar);
+    }
+  }, [isSelected, startEditingWithChar]);
 
   // --- Resize Logic ---
   const resizingRef = useRef<{

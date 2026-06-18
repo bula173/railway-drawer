@@ -186,6 +186,8 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
   const selectedElements = useMemo(() => elements.filter(el => selectedElementIds.includes(el.id)), [elements, selectedElementIds]);
   const selectionCanGroup = selectedElementIds.length > 1;
   const selectionCanUngroup = selectedElements.some(el => Boolean(el.groupId));
+  /** @brief Character to start editing with */
+  const [editingStartChar, setEditingStartChar] = useState<string | undefined>(undefined);
   /** @brief ID of element currently being hovered */
   const [hoveredElementId, setHoveredElementId] = useState<string | null>(null);
   /** @brief ID of element currently being dragged */
@@ -1554,12 +1556,31 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     if (disableKeyboardHandlers) return;
 
     function handleKeyDown(e: KeyboardEvent) {
+      // Auto-enter text editing if typing on a selected shape
+      if (
+        selectedElementIds.length === 1 &&
+        !e.ctrlKey &&
+        !e.metaKey &&
+        !e.altKey &&
+        e.key.length === 1 &&
+        e.key !== ' '
+      ) {
+        const selectedElement = elements.find(el => el.id === selectedElementIds[0]);
+        if (selectedElement) {
+          e.preventDefault();
+          setEditingStartChar(e.key);
+          // Reset after use
+          setTimeout(() => setEditingStartChar(undefined), 0);
+          return;
+        }
+      }
+
       // Delete selected elements
       if (e.key === "Delete") {
         e.preventDefault();
         deleteSelectedElements();
       }
-      
+
       // Copy selected elements (Ctrl+C)
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "c" && selectedElementIds.length > 0) {
         e.preventDefault();
@@ -2616,13 +2637,14 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
               hoveredElementId={hoveredElementId}
               setHoveredElementId={setHoveredElementId}
               allElements={elements}
+              startEditingWithChar={selectedElementIds.includes(el.id) ? editingStartChar : undefined}
               updateElement={updated => {
                 // Layer lock check
                 if (elementLayer?.locked) {
                   logger.warn("DrawArea", "Attempted to update element on locked layer", { layerId: elementLayer.id });
                   return;
                 }
-                
+
                 // Use pushToHistoryAndSetElements for property changes to enable undo
                 logger.info("DrawArea", "🔧 Element property updated", {
                   elementId: updated.id,
