@@ -1755,11 +1755,41 @@ const RailwayDrawerApp = () => {
               </div>
               <div className="flex-1 overflow-hidden flex flex-col">
                 {/* Shapes panel - primary tool interface */}
-                <ShapeSearchPanel
-                  onClose={() => setLeftCollapsed(true)}
-                  isOpen={true}
-                  position="left"
-                />
+                <div className="flex-1 overflow-auto border-b border-slate-200">
+                  <ShapeSearchPanel
+                    onClose={() => setLeftCollapsed(true)}
+                    isOpen={true}
+                    position="left"
+                  />
+                </div>
+
+                {/* Layers panel at bottom */}
+                <div className={`transition-all border-t border-slate-200 bg-slate-50`}>
+                  <div className="flex items-center justify-between px-2 py-1">
+                    <span className="text-xs font-bold text-slate-700 uppercase tracking-wider">Layers</span>
+                    <button
+                      onClick={() => setLayersCollapsed(prev => !prev)}
+                      className="px-2 py-1 text-xs text-slate-600 hover:bg-slate-100 rounded transition-colors"
+                      title={layersCollapsed ? 'Expand Layers' : 'Collapse Layers'}
+                    >
+                      {layersCollapsed ? <Plus size={14} /> : <Minus size={14} />}
+                    </button>
+                  </div>
+                  <div className={`overflow-hidden transition-[height] duration-200`} style={{ height: layersCollapsed ? 0 : 150 }}>
+                    {!layersCollapsed && (
+                      <div className="h-[150px]">
+                        <LayersPanel
+                          layers={layers}
+                          activeLayerId={activeLayerId}
+                          onLayerToggleVisibility={handleLayerToggleVisibility}
+                          onLayerToggleLock={handleLayerToggleLock}
+                          onLayerSelect={setActiveLayerId}
+                          onAddLayer={handleAddLayer}
+                        />
+                      </div>
+                    )}
+                  </div>
+                </div>
               </div>
             </>
           )}
@@ -1903,44 +1933,6 @@ const RailwayDrawerApp = () => {
           ) : (
             <div className="panel bg-white" style={{ width: '100%', minWidth: 180 }}>
               <div className="flex flex-col h-full">
-                <div className={`transition-all border-b border-slate-200 bg-slate-50`}>
-                  <div className="flex items-center justify-between px-2 py-1">
-                    <div className="flex items-center gap-2">
-                      <span className="text-xs font-bold text-slate-700 uppercase tracking-wider">Layers</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <button
-                        onClick={() => setLayersCollapsed(prev => !prev)}
-                        className="px-2 py-1 text-xs text-slate-600 hover:bg-slate-100 rounded transition-colors"
-                        title={layersCollapsed ? 'Expand Layers' : 'Collapse Layers'}
-                      >
-                        {layersCollapsed ? <Plus size={14} /> : <Minus size={14} />}
-                      </button>
-                      <button
-                        onClick={() => setRightCollapsed(true)}
-                        title="Collapse properties"
-                        className="px-2 py-0.5 text-xs text-slate-600 hover:bg-slate-100 rounded"
-                      >
-                        <ChevronDown size={14} />
-                      </button>
-                    </div>
-                  </div>
-                  <div className={`overflow-hidden transition-[height] duration-200`} style={{ height: layersCollapsed ? 0 : 200 }}>
-                    {!layersCollapsed && (
-                      <div className="h-[200px]">
-                        <LayersPanel
-                          layers={layers}
-                          activeLayerId={activeLayerId}
-                          onLayerToggleVisibility={handleLayerToggleVisibility}
-                          onLayerToggleLock={handleLayerToggleLock}
-                          onLayerSelect={setActiveLayerId}
-                          onAddLayer={handleAddLayer}
-                        />
-                      </div>
-                    )}
-                  </div>
-                </div>
-
                 <div className="flex-1 overflow-auto">
                   <DrawioPropertiesPanel
                     drawAreaRef={currentDrawAreaRefObject}
