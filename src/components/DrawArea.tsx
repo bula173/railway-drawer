@@ -1556,6 +1556,14 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     if (disableKeyboardHandlers) return;
 
     function handleKeyDown(e: KeyboardEvent) {
+      console.log('🔑 handleKeyDown triggered:', {
+        key: e.key,
+        selectedCount: selectedElementIds.length,
+        ctrlKey: e.ctrlKey,
+        metaKey: e.metaKey,
+        keyLength: e.key.length
+      });
+
       // Auto-enter text editing if typing on a selected shape
       if (
         selectedElementIds.length === 1 &&
@@ -1566,6 +1574,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
         e.key !== ' '
       ) {
         const selectedElement = elements.find(el => el.id === selectedElementIds[0]);
+        console.log('✅ Text edit conditions met, found element:', selectedElement?.id);
         if (selectedElement) {
           e.preventDefault();
           console.log('⌨️ Keystroke detected on selected shape:', e.key);

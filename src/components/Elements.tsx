@@ -1310,13 +1310,20 @@ export function RenderElement({
 
   // Auto-enter text editing mode with first character
   React.useEffect(() => {
+    console.log('🔍 Text edit useEffect triggered:', {
+      elementId: el.id,
+      isSelected,
+      startEditingWithChar,
+      editingText
+    });
+
     if (isSelected && startEditingWithChar) {
       console.log('🎯 Auto-entering text edit mode with char:', startEditingWithChar, 'element:', el.id);
       setEditingText(true);
       setEditTextValue((el.text || "") + startEditingWithChar);
       // Note: startEditingWithChar will be reset by parent when undefined is passed again
     }
-  }, [isSelected, startEditingWithChar, el.text]);
+  }, [isSelected, startEditingWithChar, el.text, el.id]);
 
   // --- Resize Logic ---
   const resizingRef = useRef<{
@@ -2509,49 +2516,37 @@ export function RenderElement({
         y={y}
         width={editorWidth}
         height={editorHeight}
-        style={{
-          overflow: 'visible'
-        }}
       >
-        <div style={{
-          width: '100%',
-          height: '100%',
-          overflow: 'auto',
-          display: 'flex',
-          flexDirection: 'column'
-        }}>
-          <textarea
-            className="text-input"
-            value={editTextValue}
-            autoFocus
-            onChange={e => setEditTextValue(e.target.value)}
-            onBlur={() => {
-              console.log('📝 Text editor blur, saving:', editTextValue);
-              handleTextEdit(editTextValue);
-            }}
-            onKeyDown={e => {
-              if (e.key === "Escape") {
-                console.log('📝 Text editor Escape key');
-                setEditingText(false);
-              }
-            }}
-            style={{
-              flex: 1,
-              width: '100%',
-              padding: '8px',
-              border: '2px solid #007bff',
-              borderRadius: '4px',
-              fontSize: '13px',
-              fontFamily: 'Menlo, Monaco, monospace',
-              resize: 'both',
-              boxSizing: 'border-box',
-              backgroundColor: 'white',
-              color: '#333',
-              lineHeight: '1.4',
-              overflow: 'auto'
-            }}
-          />
-        </div>
+        <textarea
+          className="text-input"
+          value={editTextValue}
+          autoFocus
+          onChange={e => setEditTextValue(e.target.value)}
+          onBlur={() => {
+            console.log('📝 Text editor blur, saving:', editTextValue);
+            handleTextEdit(editTextValue);
+          }}
+          onKeyDown={e => {
+            if (e.key === "Escape") {
+              console.log('📝 Text editor Escape key');
+              setEditingText(false);
+            }
+          }}
+          style={{
+            width: '100%',
+            height: '100%',
+            padding: '8px',
+            border: '2px solid #007bff',
+            borderRadius: '4px',
+            fontSize: '13px',
+            fontFamily: 'Menlo, Monaco, monospace',
+            resize: 'both',
+            boxSizing: 'border-box',
+            backgroundColor: 'white',
+            color: '#333',
+            lineHeight: '1.4'
+          }}
+        />
       </foreignObject>
     );
   }
