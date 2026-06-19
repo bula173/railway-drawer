@@ -2495,29 +2495,23 @@ export function RenderElement({
   function renderTextEditor() {
     if (!editingText) return null;
 
-    // Calculate dimensions from start/end or use stored width/height
-    let width = Math.abs(el.end.x - el.start.x);
-    let height = Math.abs(el.end.y - el.start.y);
+    // Get bounding box
+    const rect = getRotatedBoundingRect(el);
 
-    // Fallback to stored width/height if calculated dimensions are too small
-    if (width < 50 && el.width) width = el.width;
-    if (height < 40 && el.height) height = el.height;
+    // Use bounding box dimensions with large minimums to ensure visibility
+    const minWidth = 250;
+    const minHeight = 150;
+    const editorWidth = Math.max(rect.width, minWidth);
+    const editorHeight = Math.max(rect.height, minHeight);
 
-    // Use full shape dimensions, with minimum size
-    const minWidth = 100;
-    const minHeight = 80;
-    const editorWidth = Math.max(width, minWidth);
-    const editorHeight = Math.max(height, minHeight);
+    // Position at bounding box
+    const x = rect.x;
+    const y = rect.y;
 
-    const x = el.start.x;
-    const y = el.start.y;
-
-    console.log('📝 Rendering text editor for shape:', el.id, {
+    console.log('📝 Rendering text editor:', {
       position: { x, y },
       dimensions: { editorWidth, editorHeight },
-      calculated: { width, height },
-      stored: { elWidth: el.width, elHeight: el.height },
-      startEnd: { start: el.start, end: el.end }
+      boundingBox: rect
     });
 
     return (
