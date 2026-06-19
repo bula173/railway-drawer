@@ -1562,32 +1562,8 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
         return;
       }
 
-      console.log('🔑 handleKeyDown triggered:', {
-        key: e.key,
-        selectedCount: selectedElementIds.length,
-        ctrlKey: e.ctrlKey,
-        metaKey: e.metaKey,
-        keyLength: e.key.length
-      });
-
-      // Auto-enter text editing if typing on a selected shape
-      if (
-        selectedElementIds.length === 1 &&
-        !e.ctrlKey &&
-        !e.metaKey &&
-        !e.altKey &&
-        e.key.length === 1 &&
-        e.key !== ' '
-      ) {
-        const selectedElement = elements.find(el => el.id === selectedElementIds[0]);
-        console.log('✅ Text edit conditions met, found element:', selectedElement?.id);
-        if (selectedElement) {
-          e.preventDefault();
-          console.log('⌨️ Keystroke detected on selected shape:', e.key);
-          setEditingStartChar(e.key);
-          return;
-        }
-      }
+      // Note: Text editing is now triggered by double-click, not keystroke
+      // This allows single-click selection with move/resize capability
 
       // Delete selected elements
       if (e.key === "Delete") {

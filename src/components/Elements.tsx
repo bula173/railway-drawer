@@ -2457,7 +2457,7 @@ export function RenderElement({
     const startY = centerY - ((lines.length - 1) * lineHeight) / 2;
 
     return (
-      <g onClick={handleTextDoubleClick} style={{ cursor: 'text' }}>
+      <g onDoubleClick={handleTextDoubleClick} style={{ cursor: 'text' }}>
         {lines.map((line, idx) => (
           <text
             key={idx}
@@ -2782,6 +2782,11 @@ export function RenderElement({
       className={`element-container ${isSelected ? 'selected' : ''}`}
       onPointerDown={e => {
         if (e.button === 0 && !labelDragging) handlePointerDown(e, el);
+      }}
+      onDoubleClick={e => {
+        e.stopPropagation();
+        setEditingText(true);
+        setEditTextValue(el.text || "");
       }}
       onPointerEnter={() => setHoveredElementId(el.id)}
       onPointerLeave={() => {
