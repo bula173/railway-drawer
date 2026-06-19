@@ -2501,9 +2501,11 @@ export function RenderElement({
     const height = Math.abs(el.end.y - el.start.y);
     const fontSize = (el.styles?.fontSize as number) || 12;
 
-    // Large editor that can expand beyond shape bounds (like draw.io)
-    const editorWidth = Math.max(width, 300);
-    const editorHeight = Math.max(height, 150);
+    // Editor sized to shape, can expand beyond
+    const editorWidth = Math.max(width, 250);
+    const editorHeight = Math.max(height, 100);
+
+    console.log('📝 Text editor rendered');
 
     return (
       <foreignObject
@@ -2513,56 +2515,45 @@ export function RenderElement({
         height={editorHeight}
         style={{ overflow: 'visible' }}
       >
-        <div
-          ref={el => {
-            if (el && editingText) {
-              // Set text content and place cursor at end on first render
-              if (el.textContent !== editTextValue) {
-                el.textContent = editTextValue;
-              }
-              // Focus and place cursor at end
-              if (document.activeElement !== el) {
-                el.focus();
-                const range = document.createRange();
-                const sel = window.getSelection();
-                range.selectNodeContents(el);
-                range.collapse(false);
-                sel?.removeAllRanges();
-                sel?.addRange(range);
-              }
-            }
-          }}
-          contentEditable
-          suppressContentEditableWarning
-          onInput={e => {
-            const text = e.currentTarget.textContent || '';
-            setEditTextValue(text);
-            console.log('📝 Text input:', text);
+        <textarea
+          autoFocus
+          value={editTextValue}
+          onChange={e => {
+            setEditTextValue(e.target.value);
           }}
           onBlur={() => {
             console.log('📝 Save text:', editTextValue);
             handleTextEdit(editTextValue);
           }}
           onKeyDown={e => {
+            // Save with Ctrl+Enter or Cmd+Enter
+            if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+              e.preventDefault();
+              handleTextEdit(editTextValue);
+              setEditingText(false);
+            }
+            // Cancel with Escape
             if (e.key === 'Escape') {
+              e.preventDefault();
               setEditingText(false);
             }
           }}
+          placeholder="Type text... (Ctrl+Enter to save, Esc to cancel)"
           style={{
             width: '100%',
-            minHeight: '100%',
-            padding: '4px 8px',
+            height: '100%',
+            padding: '8px',
             fontSize: `${fontSize}px`,
             fontFamily: 'Arial, sans-serif',
             color: '#000',
-            outline: '2px dashed #007bff',
-            outlineOffset: '2px',
-            backgroundColor: 'transparent',
+            backgroundColor: 'rgba(255, 255, 255, 0.95)',
             border: 'none',
+            outline: '2px dashed #0066cc',
+            outlineOffset: '1px',
             boxSizing: 'border-box',
-            whiteSpace: 'pre-wrap',
-            wordWrap: 'break-word',
-            overflow: 'visible'
+            resize: 'none',
+            fontWeight: 'normal',
+            lineHeight: '1.4'
           }}
         />
       </foreignObject>
