@@ -2501,15 +2501,9 @@ export function RenderElement({
     const height = Math.abs(el.end.y - el.start.y);
     const fontSize = (el.styles?.fontSize as number) || 12;
 
-    // Position editor over the text
-    const editorWidth = Math.max(width - 16, 200);
-    const editorHeight = Math.max(height - 16, 60);
-
-    console.log('📝 Inline text editor:', {
-      position: { centerX, centerY },
-      dimensions: { editorWidth, editorHeight },
-      fontSize
-    });
+    // Large editor that can expand beyond shape bounds (like draw.io)
+    const editorWidth = Math.max(width, 300);
+    const editorHeight = Math.max(height, 150);
 
     return (
       <foreignObject
@@ -2517,45 +2511,60 @@ export function RenderElement({
         y={centerY - editorHeight / 2}
         width={editorWidth}
         height={editorHeight}
-        className="text-editor-container"
+        style={{ overflow: 'visible' }}
       >
         <div
+          ref={el => {
+            if (el && editingText) {
+              // Set text content and place cursor at end on first render
+              if (el.textContent !== editTextValue) {
+                el.textContent = editTextValue;
+              }
+              // Focus and place cursor at end
+              if (document.activeElement !== el) {
+                el.focus();
+                const range = document.createRange();
+                const sel = window.getSelection();
+                range.selectNodeContents(el);
+                range.collapse(false);
+                sel?.removeAllRanges();
+                sel?.addRange(range);
+              }
+            }
+          }}
           contentEditable
           suppressContentEditableWarning
-          autoFocus
           onInput={e => {
             const text = e.currentTarget.textContent || '';
             setEditTextValue(text);
+            console.log('📝 Text input:', text);
           }}
           onBlur={() => {
-            console.log('📝 Text editor blur, saving:', editTextValue);
+            console.log('📝 Save text:', editTextValue);
             handleTextEdit(editTextValue);
           }}
           onKeyDown={e => {
             if (e.key === 'Escape') {
-              console.log('📝 Text editor Escape');
               setEditingText(false);
             }
           }}
           style={{
             width: '100%',
-            height: '100%',
-            padding: '8px',
-            border: '1px solid #007bff',
-            borderRadius: '2px',
+            minHeight: '100%',
+            padding: '4px 8px',
             fontSize: `${fontSize}px`,
             fontFamily: 'Arial, sans-serif',
-            boxSizing: 'border-box',
-            backgroundColor: 'white',
             color: '#000',
-            outline: 'none',
-            overflow: 'auto',
+            outline: '2px dashed #007bff',
+            outlineOffset: '2px',
+            backgroundColor: 'transparent',
+            border: 'none',
+            boxSizing: 'border-box',
             whiteSpace: 'pre-wrap',
-            wordWrap: 'break-word'
+            wordWrap: 'break-word',
+            overflow: 'visible'
           }}
-        >
-          {editTextValue}
-        </div>
+        />
       </foreignObject>
     );
   }
