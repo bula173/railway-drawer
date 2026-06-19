@@ -1317,13 +1317,13 @@ export function RenderElement({
       editingText
     });
 
-    if (isSelected && startEditingWithChar) {
+    // Only initialize on first keystroke, not when already editing
+    if (isSelected && startEditingWithChar && !editingText) {
       console.log('🎯 Auto-entering text edit mode with char:', startEditingWithChar, 'element:', el.id);
       setEditingText(true);
       setEditTextValue((el.text || "") + startEditingWithChar);
-      // Note: startEditingWithChar will be reset by parent when undefined is passed again
     }
-  }, [isSelected, startEditingWithChar, el.text, el.id]);
+  }, [isSelected, startEditingWithChar, editingText, el.text, el.id]);
 
   // --- Resize Logic ---
   const resizingRef = useRef<{
