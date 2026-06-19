@@ -2519,9 +2519,9 @@ export function RenderElement({
               clearTimeout(textEditTimeoutRef.current);
             }
 
-            // Auto-exit after 1 second of inactivity
+            // Auto-save and hide textarea after 1 second of inactivity
             textEditTimeoutRef.current = setTimeout(() => {
-              console.log('⏱️ Auto-exit text editing due to inactivity');
+              console.log('⏱️ Auto-save and hide textarea');
               handleTextEdit(e.target.value);
               setEditingText(false);
             }, 1000);
@@ -2553,7 +2553,7 @@ export function RenderElement({
               setEditingText(false);
             }
           }}
-          placeholder="Type text... (auto-save after 1s, Ctrl+Enter to save, Esc to cancel)"
+          placeholder="Type text... (auto-hide after 1s, Ctrl+Enter to save, Esc to cancel)"
           style={{
             width: '100%',
             height: '100%',
