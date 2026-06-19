@@ -2495,46 +2495,45 @@ export function RenderElement({
   function renderTextEditor() {
     if (!editingText) return null;
 
-    // Position at shape start
-    const x = el.start.x;
-    const y = el.start.y;
+    const centerX = (el.start.x + el.end.x) / 2;
+    const centerY = (el.start.y + el.end.y) / 2;
+    const width = Math.abs(el.end.x - el.start.x);
+    const height = Math.abs(el.end.y - el.start.y);
+    const fontSize = (el.styles?.fontSize as number) || 12;
 
-    // Calculate dimensions from shape bounds
-    let width = Math.abs(el.end.x - el.start.x);
-    let height = Math.abs(el.end.y - el.start.y);
+    // Position editor over the text
+    const editorWidth = Math.max(width - 16, 200);
+    const editorHeight = Math.max(height - 16, 60);
 
-    // Use large minimums to ensure textarea is always visible
-    const minWidth = 250;
-    const minHeight = 150;
-    const editorWidth = Math.max(width, minWidth);
-    const editorHeight = Math.max(height, minHeight);
-
-    console.log('📝 Rendering text editor:', {
-      position: { x, y },
+    console.log('📝 Inline text editor:', {
+      position: { centerX, centerY },
       dimensions: { editorWidth, editorHeight },
-      shapeBounds: { start: el.start, end: el.end, calculated: { width, height } }
+      fontSize
     });
 
     return (
       <foreignObject
-        className="foreign-object-container"
-        x={x}
-        y={y}
+        x={centerX - editorWidth / 2}
+        y={centerY - editorHeight / 2}
         width={editorWidth}
         height={editorHeight}
+        className="text-editor-container"
       >
-        <textarea
-          className="text-input"
-          value={editTextValue}
+        <div
+          contentEditable
+          suppressContentEditableWarning
           autoFocus
-          onChange={e => setEditTextValue(e.target.value)}
+          onInput={e => {
+            const text = e.currentTarget.textContent || '';
+            setEditTextValue(text);
+          }}
           onBlur={() => {
             console.log('📝 Text editor blur, saving:', editTextValue);
             handleTextEdit(editTextValue);
           }}
           onKeyDown={e => {
-            if (e.key === "Escape") {
-              console.log('📝 Text editor Escape key');
+            if (e.key === 'Escape') {
+              console.log('📝 Text editor Escape');
               setEditingText(false);
             }
           }}
@@ -2542,17 +2541,21 @@ export function RenderElement({
             width: '100%',
             height: '100%',
             padding: '8px',
-            border: '2px solid #007bff',
-            borderRadius: '4px',
-            fontSize: '13px',
-            fontFamily: 'Menlo, Monaco, monospace',
-            resize: 'both',
+            border: '1px solid #007bff',
+            borderRadius: '2px',
+            fontSize: `${fontSize}px`,
+            fontFamily: 'Arial, sans-serif',
             boxSizing: 'border-box',
             backgroundColor: 'white',
-            color: '#333',
-            lineHeight: '1.4'
+            color: '#000',
+            outline: 'none',
+            overflow: 'auto',
+            whiteSpace: 'pre-wrap',
+            wordWrap: 'break-word'
           }}
-        />
+        >
+          {editTextValue}
+        </div>
       </foreignObject>
     );
   }
