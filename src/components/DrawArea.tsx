@@ -1556,6 +1556,12 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     if (disableKeyboardHandlers) return;
 
     function handleKeyDown(e: KeyboardEvent) {
+      // Don't intercept if textarea is focused (let it handle input normally)
+      const activeElement = document.activeElement as HTMLElement;
+      if (activeElement?.tagName === 'TEXTAREA') {
+        return;
+      }
+
       console.log('🔑 handleKeyDown triggered:', {
         key: e.key,
         selectedCount: selectedElementIds.length,
