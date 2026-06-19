@@ -2430,9 +2430,12 @@ export function RenderElement({
    * @param e The mouse event from the text element.
    */
   function handleTextDoubleClick(e: React.MouseEvent) {
+    console.log('📝 Text double-click handler fired');
     e.stopPropagation();
+    e.preventDefault();
     setEditingText(true);
     setEditTextValue(el.text || "");
+    console.log('✅ Text editing activated');
   }
 
   /**
@@ -2784,9 +2787,11 @@ export function RenderElement({
         if (e.button === 0 && !labelDragging) handlePointerDown(e, el);
       }}
       onDoubleClick={e => {
+        console.log('🎯 Double-click detected on shape:', el.id);
         e.stopPropagation();
         setEditingText(true);
         setEditTextValue(el.text || "");
+        console.log('✅ Text editing enabled for shape:', el.id);
       }}
       onPointerEnter={() => setHoveredElementId(el.id)}
       onPointerLeave={() => {
