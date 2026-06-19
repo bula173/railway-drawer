@@ -1300,9 +1300,8 @@ export function RenderElement({
   const [selectedShapeElementId, setSelectedShapeElementId] = React.useState<string | null>(null);
   const [hoveredShapeElementId, setHoveredShapeElementId] = React.useState<string | null>(null);
 
-  // Double-click detection
-  const clickCountRef = useRef(0);
-  const clickTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  // Auto-exit text editing after inactivity timeout
+  const textEditTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // Clear hover state when element is not selected
   React.useEffect(() => {
@@ -2428,45 +2427,7 @@ export function RenderElement({
     );
   }
 
-  /**
-   * @function handleTextDoubleClick
-   * @brief Handles double-click on text elements to enter edit mode.
-   * @param e The mouse event from the text element.
-   */
-  function handleTextDoubleClick(e: React.MouseEvent) {
-    console.log('📝 Text double-click handler fired');
-    e.stopPropagation();
-    e.preventDefault();
-    setEditingText(true);
-    setEditTextValue(el.text || "");
-    console.log('✅ Text editing activated');
-  }
 
-  // Handle manual double-click detection for SVG
-  function handleMouseDownForDoubleClick(e: React.MouseEvent) {
-    clickCountRef.current++;
-    console.log('🖱️ Click count:', clickCountRef.current);
-
-    if (clickCountRef.current === 2) {
-      console.log('🎯 Double-click detected!');
-      setEditingText(true);
-      setEditTextValue(el.text || "");
-      clickCountRef.current = 0;
-      if (clickTimeoutRef.current) {
-        clearTimeout(clickTimeoutRef.current);
-      }
-      return;
-    }
-
-    if (clickTimeoutRef.current) {
-      clearTimeout(clickTimeoutRef.current);
-    }
-
-    clickTimeoutRef.current = setTimeout(() => {
-      clickCountRef.current = 0;
-      console.log('🖱️ Click timeout - reset count');
-    }, 300);
-  }
 
   /**
    * @function renderTextContent
@@ -2490,7 +2451,7 @@ export function RenderElement({
     const startY = centerY - ((lines.length - 1) * lineHeight) / 2;
 
     return (
-      <g onMouseDown={(e: any) => handleMouseDownForDoubleClick(e)} style={{ cursor: 'text' }}>
+      <g style={{ cursor: 'text' }}>
         {lines.map((line, idx) => (
           <text
             key={idx}
@@ -2552,25 +2513,47 @@ export function RenderElement({
           value={editTextValue}
           onChange={e => {
             setEditTextValue(e.target.value);
+
+            // Reset auto-exit timeout on each keystroke
+            if (textEditTimeoutRef.current) {
+              clearTimeout(textEditTimeoutRef.current);
+            }
+
+            // Auto-exit after 1 second of inactivity
+            textEditTimeoutRef.current = setTimeout(() => {
+              console.log('⏱️ Auto-exit text editing due to inactivity');
+              handleTextEdit(e.target.value);
+              setEditingText(false);
+            }, 1000);
           }}
           onBlur={() => {
-            console.log('📝 Save text:', editTextValue);
+            console.log('📝 Save text on blur:', editTextValue);
+            if (textEditTimeoutRef.current) {
+              clearTimeout(textEditTimeoutRef.current);
+            }
             handleTextEdit(editTextValue);
           }}
           onKeyDown={e => {
             // Save with Ctrl+Enter or Cmd+Enter
             if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
               e.preventDefault();
+              if (textEditTimeoutRef.current) {
+                clearTimeout(textEditTimeoutRef.current);
+              }
+              console.log('📝 Save with Ctrl+Enter');
               handleTextEdit(editTextValue);
               setEditingText(false);
             }
             // Cancel with Escape
             if (e.key === 'Escape') {
               e.preventDefault();
+              if (textEditTimeoutRef.current) {
+                clearTimeout(textEditTimeoutRef.current);
+              }
               setEditingText(false);
             }
           }}
-          placeholder="Type text... (Ctrl+Enter to save, Esc to cancel)"
+          placeholder="Type text... (auto-save after 1s, Ctrl+Enter to save, Esc to cancel)"
           style={{
             width: '100%',
             height: '100%',
@@ -2813,10 +2796,6 @@ export function RenderElement({
     <g
       className={`element-container ${isSelected ? 'selected' : ''}`}
       onPointerDown={e => {
-        // Double-click detection
-        if (e.button === 0) {
-          handleMouseDownForDoubleClick(e as any);
-        }
         if (e.button === 0 && !labelDragging) handlePointerDown(e, el);
       }}
       onPointerEnter={() => setHoveredElementId(el.id)}
