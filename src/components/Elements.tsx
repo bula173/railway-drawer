@@ -2495,23 +2495,24 @@ export function RenderElement({
   function renderTextEditor() {
     if (!editingText) return null;
 
-    // Get bounding box
-    const rect = getRotatedBoundingRect(el);
+    // Position at shape start
+    const x = el.start.x;
+    const y = el.start.y;
 
-    // Use bounding box dimensions with large minimums to ensure visibility
+    // Calculate dimensions from shape bounds
+    let width = Math.abs(el.end.x - el.start.x);
+    let height = Math.abs(el.end.y - el.start.y);
+
+    // Use large minimums to ensure textarea is always visible
     const minWidth = 250;
     const minHeight = 150;
-    const editorWidth = Math.max(rect.width, minWidth);
-    const editorHeight = Math.max(rect.height, minHeight);
-
-    // Position at bounding box
-    const x = rect.x;
-    const y = rect.y;
+    const editorWidth = Math.max(width, minWidth);
+    const editorHeight = Math.max(height, minHeight);
 
     console.log('📝 Rendering text editor:', {
       position: { x, y },
       dimensions: { editorWidth, editorHeight },
-      boundingBox: rect
+      shapeBounds: { start: el.start, end: el.end, calculated: { width, height } }
     });
 
     return (
