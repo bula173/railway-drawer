@@ -1300,6 +1300,10 @@ export function RenderElement({
   const [selectedShapeElementId, setSelectedShapeElementId] = React.useState<string | null>(null);
   const [hoveredShapeElementId, setHoveredShapeElementId] = React.useState<string | null>(null);
 
+  // Double-click detection
+  const clickCountRef = useRef(0);
+  const clickTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
   // Clear hover state when element is not selected
   React.useEffect(() => {
     if (!isSelected) {
@@ -2438,6 +2442,32 @@ export function RenderElement({
     console.log('✅ Text editing activated');
   }
 
+  // Handle manual double-click detection for SVG
+  function handleMouseDownForDoubleClick(e: React.MouseEvent) {
+    clickCountRef.current++;
+    console.log('🖱️ Click count:', clickCountRef.current);
+
+    if (clickCountRef.current === 2) {
+      console.log('🎯 Double-click detected!');
+      setEditingText(true);
+      setEditTextValue(el.text || "");
+      clickCountRef.current = 0;
+      if (clickTimeoutRef.current) {
+        clearTimeout(clickTimeoutRef.current);
+      }
+      return;
+    }
+
+    if (clickTimeoutRef.current) {
+      clearTimeout(clickTimeoutRef.current);
+    }
+
+    clickTimeoutRef.current = setTimeout(() => {
+      clickCountRef.current = 0;
+      console.log('🖱️ Click timeout - reset count');
+    }, 300);
+  }
+
   /**
    * @function renderTextContent
    * @brief Renders the text content for text-type elements.
@@ -2460,7 +2490,7 @@ export function RenderElement({
     const startY = centerY - ((lines.length - 1) * lineHeight) / 2;
 
     return (
-      <g onDoubleClick={handleTextDoubleClick} style={{ cursor: 'text' }}>
+      <g onMouseDown={(e: any) => handleMouseDownForDoubleClick(e)} style={{ cursor: 'text' }}>
         {lines.map((line, idx) => (
           <text
             key={idx}
@@ -2470,7 +2500,6 @@ export function RenderElement({
             textAnchor={textAnchor as any}
             fontSize={fontSize}
             fill={fill}
-            onDoubleClick={handleTextDoubleClick}
           >
             {line || ' '}
           </text>
@@ -2784,14 +2813,11 @@ export function RenderElement({
     <g
       className={`element-container ${isSelected ? 'selected' : ''}`}
       onPointerDown={e => {
+        // Double-click detection
+        if (e.button === 0) {
+          handleMouseDownForDoubleClick(e as any);
+        }
         if (e.button === 0 && !labelDragging) handlePointerDown(e, el);
-      }}
-      onDoubleClick={e => {
-        console.log('🎯 Double-click detected on shape:', el.id);
-        e.stopPropagation();
-        setEditingText(true);
-        setEditTextValue(el.text || "");
-        console.log('✅ Text editing enabled for shape:', el.id);
       }}
       onPointerEnter={() => setHoveredElementId(el.id)}
       onPointerLeave={() => {
