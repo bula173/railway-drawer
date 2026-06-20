@@ -28,8 +28,11 @@ import { TemplateGallery } from "./components/TemplateGallery";
 import { AlignmentToolbar } from "./components/AlignmentToolbar";
 import { TopToolbar } from "./components/TopToolbar";
 import { StatusBar } from "./components/StatusBar";
+import { ConnectorPanel } from "./components/ConnectorPanel";
 import type { DrawElement } from "./components/Elements";
 import type { DrawTool, Layer } from "./types";
+import type { Connector, ConnectorStyle } from "./utils/connectorStyles";
+import { DEFAULT_CONNECTOR_STYLE } from "./utils/connectorStyles";
 import { logger } from "./utils/logger";
 import { saveToLocalStorage, loadFromLocalStorage, clearLocalStorage } from "./utils/storageManager";
 import { getAvailableThemes } from "./utils/themingUtils";
@@ -117,6 +120,12 @@ const RailwayDrawerApp = () => {
 
   // Active tool state
   const [activeTool, setActiveTool] = useState<DrawTool>('select');
+
+  // Connector state
+  const [connectorMode, setConnectorMode] = useState(false);
+  const [connectorStyle, setConnectorStyle] = useState<ConnectorStyle>(DEFAULT_CONNECTOR_STYLE);
+  const [showConnectorPanel, setShowConnectorPanel] = useState(false);
+  const [selectedConnectorId, setSelectedConnectorId] = useState<string | undefined>();
 
   // Layers state
   const [layers, setLayers] = useState<Layer[]>([
@@ -1241,6 +1250,12 @@ const RailwayDrawerApp = () => {
         gridVisible={true}
         onGridToggle={() => {}}
         onLayersPanelToggle={() => setShowFloatingLayers(!showFloatingLayers)}
+        onConnectorToolToggle={() => {
+          setConnectorMode(!connectorMode);
+          setShowConnectorPanel(true);
+          logger.debug('interaction', 'Connector tool toggled', { connectorMode: !connectorMode });
+        }}
+        connectorToolActive={connectorMode}
       />
 
       {/* --- Modern Menu Bar (kept for now, will be consolidated) --- */}
@@ -2068,6 +2083,22 @@ const RailwayDrawerApp = () => {
           onLayerSelect={setActiveLayerId}
           onAddLayer={handleAddLayer}
           onClose={() => setShowFloatingLayers(false)}
+        />
+      )}
+
+      {/* Connector Panel */}
+      {showConnectorPanel && (
+        <ConnectorPanel
+          style={connectorStyle}
+          onStyleChange={(newStyle) => {
+            setConnectorStyle(newStyle);
+            logger.debug('interaction', 'Connector style updated', {
+              lineStyle: newStyle.lineStyle,
+              lineWidth: newStyle.lineWidth,
+              endArrow: newStyle.endArrow,
+            });
+          }}
+          onClose={() => setShowConnectorPanel(false)}
         />
       )}
     </div>
