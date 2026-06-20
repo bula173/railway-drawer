@@ -106,51 +106,70 @@ export const ShapeSearchPanel: React.FC<ShapeSearchPanelProps> = ({
   );
 
   /**
-   * Render category filter
+   * Render category tabs (professional draw.io style)
    */
-  const renderCategoryFilter = () => {
+  const renderCategoryTabs = () => {
     const categories = search.getCategories();
+    const allCategories = [null, ...categories];
+
     return (
-      <div style={{ padding: '8px', borderBottom: '1px solid #eee' }}>
-        <div style={{ fontSize: '12px', fontWeight: 'bold', marginBottom: '4px' }}>
-          Category:
-        </div>
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
-          <button
-            onClick={() => search.setCategory(null)}
-            style={{
-              padding: '4px 8px',
-              fontSize: '12px',
-              backgroundColor: search.category === null ? '#007bff' : '#f0f0f0',
-              color: search.category === null ? 'white' : 'black',
-              border: 'none',
-              borderRadius: '3px',
-              cursor: 'pointer',
-            }}
-          >
-            All
-          </button>
-          {categories.map(cat => (
+      <div style={{
+        display: 'flex',
+        borderBottom: '1px solid #ddd',
+        backgroundColor: '#f8f8f8',
+        overflowX: 'auto',
+      }}>
+        {allCategories.map((cat) => {
+          const isActive = search.category === cat;
+          const label = cat === null ? '📦 All' : `${getCategoryIcon(cat as string)} ${cat}`;
+
+          return (
             <button
-              key={cat}
+              key={cat || 'all'}
               onClick={() => search.setCategory(cat)}
               style={{
-                padding: '4px 8px',
-                fontSize: '12px',
-                backgroundColor: search.category === cat ? '#007bff' : '#f0f0f0',
-                color: search.category === cat ? 'white' : 'black',
+                flex: 'none',
+                padding: '8px 12px',
+                fontSize: '11px',
+                fontWeight: isActive ? '600' : '500',
+                backgroundColor: isActive ? 'white' : 'transparent',
+                color: isActive ? '#0066cc' : '#666',
                 border: 'none',
-                borderRadius: '3px',
+                borderBottom: isActive ? '2px solid #0066cc' : '2px solid transparent',
                 cursor: 'pointer',
+                transition: 'all 0.2s',
                 textTransform: 'capitalize',
+                whiteSpace: 'nowrap',
               }}
+              title={cat ? `Show ${cat} shapes` : 'Show all shapes'}
             >
-              {cat}
+              {label}
             </button>
-          ))}
-        </div>
+          );
+        })}
       </div>
     );
+  };
+
+  /**
+   * Get category icon for display
+   */
+  const getCategoryIcon = (category: string): string => {
+    const icons: Record<string, string> = {
+      'railway': '🚂',
+      'signaling': '🚦',
+      'junction': '🔀',
+      'track': '🛤️',
+      'station': '🏢',
+      'general': '📦',
+      'arrows': '➡️',
+      'uml': '📊',
+      'sequence': '📋',
+      'ertms': '⚡',
+      'structures': '🏗️',
+      'switches': '🔘',
+    };
+    return icons[category.toLowerCase()] || '▪️';
   };
 
   /**
@@ -393,7 +412,7 @@ export const ShapeSearchPanel: React.FC<ShapeSearchPanelProps> = ({
       }}
     >
       {renderSearchInput()}
-      {renderCategoryFilter()}
+      {renderCategoryTabs()}
       {renderTagFilter()}
       {renderResults()}
     </div>
