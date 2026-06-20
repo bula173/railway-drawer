@@ -1224,9 +1224,24 @@ const RailwayDrawerApp = () => {
           )}
         </div>
       </div>
-      
-      {/* --- Modern Menu Bar --- */}
-      <div className="flex bg-white border-b border-slate-200 h-10 items-stretch relative z-50 shadow-sm menu-bar">
+
+      {/* New Professional Toolbar */}
+      <TopToolbar
+        zoom={zoom}
+        onZoomIn={handleZoomIn}
+        onZoomOut={handleZoomOut}
+        onZoomReset={handleZoomReset}
+        onUndo={undo}
+        onRedo={redo}
+        onSave={saveAsJson}
+        canUndo={canUndo}
+        canRedo={canRedo}
+        gridVisible={showGrid}
+        onGridToggle={() => setShowGrid(!showGrid)}
+      />
+
+      {/* --- Modern Menu Bar (kept for now, will be consolidated) --- */}
+      <div className="flex bg-white border-b border-slate-200 h-10 items-stretch relative z-50 shadow-sm menu-bar hidden">
         {/* File Menu */}
         <Menu as="div" className="relative">
           <Menu.Button className="bg-white hover:bg-slate-50 text-slate-700 border-none px-4 h-10 text-sm font-medium cursor-pointer outline-none border-r border-slate-200 transition-colors duration-200 flex items-center">
@@ -1953,6 +1968,14 @@ const RailwayDrawerApp = () => {
           )}
         </div>
       </div>
+
+      {/* Status Bar */}
+      <StatusBar
+        selectedCount={selectedElements?.length || 0}
+        totalElements={tabs.find(t => t.id === activeTabId)?.elements.length || 0}
+        gridSize={GRID_SIZE}
+        zoom={zoom}
+      />
 
       {/* Bottom Page Manager */}
       <PageManager
