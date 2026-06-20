@@ -21,7 +21,6 @@ export interface BrushStroke {
   points: Array<{ x: number; y: number; pressure?: number }>;
   config: BrushConfig;
   created: number;
-  temporary?: boolean;
 }
 
 export const BRUSH_PRESETS: Record<BrushType, Omit<BrushConfig, 'color'>> = {

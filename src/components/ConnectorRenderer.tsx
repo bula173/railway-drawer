@@ -49,10 +49,10 @@ export const ConnectorRenderer: React.FC<ConnectorRendererProps> = ({
               {connector.style.endArrow !== 'none' && endArrowPath && (
                 <marker
                   id={arrowId}
-                  markerWidth="10"
-                  markerHeight="10"
-                  refX="9"
-                  refY="3"
+                  markerWidth={10 / (zoom || 1)}
+                  markerHeight={10 / (zoom || 1)}
+                  refX={9 / (zoom || 1)}
+                  refY={3 / (zoom || 1)}
                   orient="auto"
                   markerUnits="strokeWidth"
                 >

@@ -62,6 +62,8 @@ export const BrushPanel: React.FC<BrushPanelProps> = ({
         zIndex: 1000,
         boxShadow: '2px 0 8px rgba(0,0,0,0.1)',
       }}
+      role="dialog"
+      aria-label="Brush tool configuration panel"
     >
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
         <h3 style={{ margin: 0, fontSize: '14px', fontWeight: 'bold' }}>

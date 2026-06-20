@@ -62,9 +62,11 @@ export const ConnectorPanel: React.FC<ConnectorPanelProps> = ({
         borderLeft: '1px solid #ddd',
         padding: '16px',
         overflowY: 'auto',
-        zIndex: 1000,
+        zIndex: 999,
         boxShadow: '-2px 0 8px rgba(0,0,0,0.1)',
       }}
+      role="dialog"
+      aria-label="Connector styling panel"
     >
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
         <h3 style={{ margin: 0, fontSize: '14px', fontWeight: 'bold' }}>
