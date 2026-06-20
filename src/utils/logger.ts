@@ -22,8 +22,8 @@ interface LogConfig {
 
 class Logger {
   private config: LogConfig = {
-    level: process.env.NODE_ENV === 'development' ? 'debug' : 'warn',
-    enableConsole: true,
+    level: process.env.NODE_ENV === 'development' ? 'debug' : 'error',
+    enableConsole: process.env.NODE_ENV === 'development',
     enableTimestamp: true,
     enableTrace: false,
     maxDataSize: 500,
