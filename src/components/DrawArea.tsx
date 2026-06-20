@@ -18,6 +18,7 @@ import { ConnectorRenderer } from "./ConnectorRenderer";
 import type { ToolboxItem } from "./Toolbox";
 import type { DrawTool, Layer } from "../types";
 import type { Connector, ConnectorStyle } from "../utils/connectorStyles";
+import type { BrushConfig } from "../utils/brushTools";
 import { logger } from "../utils/logger";
 import { snapPointToGrid } from "../utils/index";
 import { findSnapPoint } from "../utils/trackUtils";
@@ -110,6 +111,10 @@ export interface DrawAreaProps {
   onReadyToSave?: () => void;
   /** @brief Callback when canvas needs to expand to fit elements */
   onCanvasExpand?: (bounds: { maxX: number; maxY: number; minX?: number; minY?: number }) => void;
+  /** @brief Whether brush tool is active */
+  brushMode?: boolean;
+  /** @brief Brush configuration */
+  brushConfig?: BrushConfig;
 }
 
 /**
@@ -142,6 +147,8 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
   onStateChange,
   onReadyToSave,
   onCanvasExpand,
+  brushMode = false,
+  brushConfig,
 }, ref) => {
   /** @brief Internal drawing elements state */
   const [elements, setElements] = useState<DrawElement[]>([]);
@@ -290,6 +297,11 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
   const [connectors, setConnectors] = useState<Connector[]>([]);
   const [connectorStartPoint, setConnectorStartPoint] = useState<{ elementId: string; point: { x: number; y: number } } | null>(null);
   const [selectedConnectorId, setSelectedConnectorId] = useState<string | undefined>();
+
+  /** @brief Brush stroke state */
+  const [brushStrokes, setBrushStrokes] = useState<Array<{ id: string; points: Array<{ x: number; y: number }>; config: any }>>([]);
+  const [isDrawing, setIsDrawing] = useState(false);
+  const [currentStroke, setCurrentStroke] = useState<Array<{ x: number; y: number }>>([]);
 
   /**
    * @brief Use effect to call parent's onCanvasExpand when bounds change
@@ -1298,6 +1310,66 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       to: newConnector.toElementId,
     });
   }, [connectorStartPoint]);
+
+  /**
+   * @brief Handle brush stroke start
+   */
+  const handleBrushStart = useCallback((e: React.PointerEvent) => {
+    if (!brushMode) return;
+
+    const svg = svgRef.current;
+    if (!svg) return;
+
+    const rect = svg.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / zoom;
+    const y = (e.clientY - rect.top) / zoom;
+
+    setIsDrawing(true);
+    setCurrentStroke([{ x, y }]);
+  }, [brushMode, zoom]);
+
+  /**
+   * @brief Handle brush stroke movement
+   */
+  const handleBrushMove = useCallback((e: React.PointerEvent) => {
+    if (!isDrawing || !brushMode) return;
+
+    const svg = svgRef.current;
+    if (!svg) return;
+
+    const rect = svg.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / zoom;
+    const y = (e.clientY - rect.top) / zoom;
+
+    setCurrentStroke(prev => [...prev, { x, y }]);
+  }, [isDrawing, brushMode, zoom]);
+
+  /**
+   * @brief Handle brush stroke finish
+   */
+  const handleBrushEnd = useCallback(() => {
+    if (!isDrawing || currentStroke.length < 2) {
+      setIsDrawing(false);
+      setCurrentStroke([]);
+      return;
+    }
+
+    const newStroke = {
+      id: `stroke-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+      points: currentStroke,
+      config: brushConfig,
+    };
+
+    setBrushStrokes(prev => [...prev, newStroke]);
+    setIsDrawing(false);
+    setCurrentStroke([]);
+
+    logger.debug('interaction', 'Brush stroke created', {
+      strokeId: newStroke.id,
+      pointCount: currentStroke.length,
+      brushType: brushConfig.type,
+    });
+  }, [isDrawing, currentStroke, brushConfig]);
 
   /**
    * @brief Handle right-click context menu
@@ -2575,18 +2647,24 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       data-testid="draw-area"
       width={GRID_WIDTH * zoom}
       height={GRID_HEIGHT * zoom}
-      style={{ 
-        background: backgroundColor, 
+      style={{
+        background: backgroundColor,
         minWidth: GRID_WIDTH * zoom,
         minHeight: GRID_HEIGHT * zoom,
         display: "block",
-        cursor: isPanning ? 'grabbing' : 'default'
+        cursor: isPanning ? 'grabbing' : brushMode ? 'crosshair' : 'default'
       }}
       tabIndex={0}
       onPointerDown={(e) => {
         svgRef.current?.focus();
-        handleSvgPointerDown(e);
+        if (brushMode) {
+          handleBrushStart(e);
+        } else {
+          handleSvgPointerDown(e);
+        }
       }}
+      onPointerMove={brushMode ? handleBrushMove : undefined}
+      onPointerUp={brushMode ? handleBrushEnd : undefined}
       onContextMenu={handleContextMenu}
       onDragOver={e => e.preventDefault()}
       onDrop={handleDrop}
@@ -2905,6 +2983,45 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
           onConnectorClick={setSelectedConnectorId}
           zoom={zoom}
         />
+
+        {/* Brush Strokes */}
+        <g className="brush-strokes">
+          {brushStrokes.map(stroke => {
+            const pathData = stroke.points
+              .map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x} ${p.y}`)
+              .join(' ');
+
+            return (
+              <path
+                key={stroke.id}
+                d={pathData}
+                stroke={stroke.config.color}
+                strokeWidth={stroke.config.size}
+                opacity={stroke.config.opacity}
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                style={{ pointerEvents: 'none' }}
+              />
+            );
+          })}
+
+          {/* Current stroke being drawn */}
+          {isDrawing && currentStroke.length > 1 && (
+            <path
+              d={currentStroke
+                .map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x} ${p.y}`)
+                .join(' ')}
+              stroke={brushConfig?.color || '#000000'}
+              strokeWidth={brushConfig?.size || 2}
+              opacity={brushConfig?.opacity || 1}
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              style={{ pointerEvents: 'none' }}
+            />
+          )}
+        </g>
       </g>
     </svg>
     

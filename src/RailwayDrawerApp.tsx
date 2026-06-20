@@ -1961,6 +1961,8 @@ const RailwayDrawerApp = () => {
                 onReadyToSave={handleDrawAreaReadyToSave}
                 disableKeyboardHandlers={false}
                 onCanvasExpand={expandCanvasIfNeeded}
+                brushMode={brushMode}
+                brushConfig={brushConfig}
               />
             </div>
           ))}
