@@ -15,6 +15,7 @@
 import React, { useRef } from "react";
 import { RotateCw } from "lucide-react";
 import { findSnapPoint } from "../utils/trackUtils";
+import { getConnectionPoints } from "../utils/connectionManager";
 import "../styles/elements.css";
 // --- Types ---
 
@@ -2789,6 +2790,35 @@ export function RenderElement({
     );
   }
 
+  /**
+   * Render connection points for this element
+   */
+  function renderConnectionPoints() {
+    // Only show connection points when selected or hovered
+    if (!isSelected && hoveredElementId !== el.id) return null;
+
+    const points = getConnectionPoints(el);
+    const radius = 4;
+
+    return (
+      <g className="connection-points" pointerEvents="none">
+        {points.map((point) => (
+          <circle
+            key={point.id}
+            cx={point.position.x}
+            cy={point.position.y}
+            r={radius}
+            fill={isSelected ? '#0066cc' : '#666'}
+            opacity={isSelected ? 0.8 : 0.4}
+            stroke="white"
+            strokeWidth={1}
+            className="connection-point"
+          />
+        ))}
+      </g>
+    );
+  }
+
   // --- Main Render ---
   const rect = getElementBoundingRect(el);
 
@@ -2823,6 +2853,7 @@ export function RenderElement({
       {renderRotationHandle()}
       {renderTextContent()}
       {renderTextEditor()}
+      {renderConnectionPoints()}
     </g>
   );
 }
