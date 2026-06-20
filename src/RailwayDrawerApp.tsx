@@ -25,6 +25,8 @@ import { EditMenu } from "./components/EditMenu";
 import { ShapeSearchPanel } from "./components/ShapeSearchPanel";
 import { TemplateGallery } from "./components/TemplateGallery";
 import { AlignmentToolbar } from "./components/AlignmentToolbar";
+import { TopToolbar } from "./components/TopToolbar";
+import { StatusBar } from "./components/StatusBar";
 import type { DrawElement } from "./components/Elements";
 import type { DrawTool, Layer } from "./types";
 import { logger } from "./utils/logger";
