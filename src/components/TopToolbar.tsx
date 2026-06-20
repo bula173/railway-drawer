@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { Save, Plus, Trash2, Undo2, Redo2, ZoomIn, ZoomOut, Grid3x3 } from 'lucide-react';
+import { Save, Plus, Trash2, Undo2, Redo2, ZoomIn, ZoomOut, Grid3x3, Layers } from 'lucide-react';
 
 interface TopToolbarProps {
   zoom: number;
@@ -18,6 +18,7 @@ interface TopToolbarProps {
   canRedo: boolean;
   gridVisible: boolean;
   onGridToggle: () => void;
+  onLayersPanelToggle: () => void;
 }
 
 export const TopToolbar: React.FC<TopToolbarProps> = ({
@@ -32,6 +33,7 @@ export const TopToolbar: React.FC<TopToolbarProps> = ({
   canRedo,
   gridVisible,
   onGridToggle,
+  onLayersPanelToggle,
 }) => {
   return (
     <div className="h-12 bg-white border-b border-slate-200 flex items-center gap-4 px-4 shadow-sm">
@@ -86,6 +88,13 @@ export const TopToolbar: React.FC<TopToolbarProps> = ({
           }`}
         >
           <Grid3x3 size={18} />
+        </button>
+        <button
+          onClick={onLayersPanelToggle}
+          title="Toggle Layers Panel"
+          className="p-2 hover:bg-slate-100 rounded transition-colors text-slate-600 hover:text-slate-900"
+        >
+          <Layers size={18} />
         </button>
       </div>
 

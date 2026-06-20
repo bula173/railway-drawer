@@ -1240,6 +1240,7 @@ const RailwayDrawerApp = () => {
         canRedo={canRedo}
         gridVisible={showGrid}
         onGridToggle={() => setShowGrid(!showGrid)}
+        onLayersPanelToggle={() => setShowFloatingLayers(!showFloatingLayers)}
       />
 
       {/* --- Modern Menu Bar (kept for now, will be consolidated) --- */}
