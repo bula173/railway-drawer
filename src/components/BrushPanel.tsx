@@ -4,7 +4,8 @@
  */
 
 import React from 'react';
-import { BrushType, BrushConfig, BRUSH_PRESETS, BRUSH_DESCRIPTIONS } from '../utils/brushTools';
+import type { BrushType, BrushConfig } from '../utils/brushTools';
+import { BRUSH_PRESETS, BRUSH_DESCRIPTIONS } from '../utils/brushTools';
 
 interface BrushPanelProps {
   config: BrushConfig;

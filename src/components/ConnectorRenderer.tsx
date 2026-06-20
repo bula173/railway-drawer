@@ -4,7 +4,8 @@
  */
 
 import React from 'react';
-import { Connector, getDashArray, getArrowMarkerPath } from '../utils/connectorStyles';
+import type { Connector } from '../utils/connectorStyles';
+import { getDashArray, getArrowMarkerPath } from '../utils/connectorStyles';
 
 interface ConnectorRendererProps {
   connectors: Connector[];

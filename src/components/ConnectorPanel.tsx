@@ -4,15 +4,13 @@
  */
 
 import React from 'react';
-import {
+import type {
   ConnectorStyle,
   ConnectorArrowStyle,
   ConnectorLineStyle,
   ConnectorLineWidth,
-  ARROW_STYLES,
-  LINE_STYLES,
-  LINE_WIDTHS,
 } from '../utils/connectorStyles';
+import { ARROW_STYLES, LINE_STYLES, LINE_WIDTHS } from '../utils/connectorStyles';
 import { ChevronDown } from 'lucide-react';
 
 interface ConnectorPanelProps {
