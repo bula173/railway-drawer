@@ -13,6 +13,7 @@
 import React, { useEffect, useRef, useState, forwardRef, useImperativeHandle, useCallback, useMemo } from "react";
 import { RenderElement, getRotatedBoundingRect, synchronizeTextRegionsWithSVG, expandSVGRectForText, syncTextRegionsWithSVG, syncUnifiedElement } from "./Elements";
 import type { DrawElement } from "./Elements";
+import { snapToConnectionPoint } from "../utils/connectionManager";
 import type { ToolboxItem } from "./Toolbox";
 import type { DrawTool, Layer } from "../types";
 import { logger } from "../utils/logger";
@@ -2075,7 +2076,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       // Snap start point
       const targetStart = { x: initialDraggedPos.start.x + deltaX, y: initialDraggedPos.start.y + deltaY };
       const snappedStart = findSnapPoint(targetStart, elements, currentDraggingId);
-      
+
       if (snappedStart.snapped) {
         deltaX = snappedStart.x - initialDraggedPos.start.x;
         deltaY = snappedStart.y - initialDraggedPos.start.y;
@@ -2087,6 +2088,18 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
           deltaX = snappedEnd.x - initialDraggedPos.end.x;
           deltaY = snappedEnd.y - initialDraggedPos.end.y;
         }
+      }
+    }
+
+    // Connection Point Snapping (for all shapes)
+    if (draggedEl) {
+      const targetStart = { x: initialDraggedPos.start.x + deltaX, y: initialDraggedPos.start.y + deltaY };
+      const snappedStart = snapToConnectionPoint(targetStart, elements, currentDraggingId);
+
+      if (snappedStart.x !== targetStart.x || snappedStart.y !== targetStart.y) {
+        // Snapped to a connection point
+        deltaX = snappedStart.x - initialDraggedPos.start.x;
+        deltaY = snappedStart.y - initialDraggedPos.start.y;
       }
     }
 
