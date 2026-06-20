@@ -2950,23 +2950,22 @@ export function RenderElement({
       const now = Date.now();
       const timeSinceLastClick = now - lastClickTimeRef.current;
 
-      if (timeSinceLastClick < 300 && clickCountRef.current === 1) {
-        // This is a double-click
-        if (isSelected) {
-          logger.debug('interaction', 'Double-click detected, enabling text edit mode', {
-            elementId: el.id,
-            timeSinceLastClick,
-            currentText: el.text
-          });
-          logDoubleClick(el.id);
-          setEditingText(true);
-          setEditTextValue(el.text || "");
-          clickCountRef.current = 0;
-          lastClickTimeRef.current = 0;
-          e.preventDefault();
-          e.stopPropagation();
-          return;
-        }
+      // Check for double-click: within 300ms and element was already selected
+      if (timeSinceLastClick < 300 && timeSinceLastClick > 0 && isSelected) {
+        // This is a double-click on an already selected element
+        logger.debug('interaction', 'Double-click detected, enabling text edit mode', {
+          elementId: el.id,
+          timeSinceLastClick,
+          currentText: el.text
+        });
+        logDoubleClick(el.id);
+        setEditingText(true);
+        setEditTextValue(el.text || "");
+        clickCountRef.current = 0;
+        lastClickTimeRef.current = 0;
+        e.preventDefault();
+        e.stopPropagation();
+        return;
       }
 
       // Track click for double-click detection
