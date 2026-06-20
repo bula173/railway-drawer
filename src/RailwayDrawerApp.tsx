@@ -20,6 +20,7 @@ import type { DrawAreaTab } from "./components/TabPanel";
 import DrawioPropertiesPanel from "./components/DrawioPropertiesPanel";
 import DrawArea, { type DrawAreaRef } from "./components/DrawArea";
 import { LayersPanel } from "./components/LayersPanel";
+import { FloatingLayersPanel } from "./components/FloatingLayersPanel";
 import { PageManager } from "./components/PageManager";
 import { EditMenu } from "./components/EditMenu";
 import { ShapeSearchPanel } from "./components/ShapeSearchPanel";
@@ -246,6 +247,7 @@ const RailwayDrawerApp = () => {
   const [toolboxWidth, setToolboxWidth] = useState(200); // wider default (was 148)
   const [propertiesWidth, setPropertiesWidth] = useState(220);
   const [layersCollapsed, setLayersCollapsed] = useState(false);
+  const [showFloatingLayers, setShowFloatingLayers] = useState(false);
   const [leftCollapsed, setLeftCollapsed] = useState(false);
   const [rightCollapsed, setRightCollapsed] = useState(false);
   const tabPanelHeight= 40;
@@ -2053,6 +2055,19 @@ const RailwayDrawerApp = () => {
             </button>
           </div>
         </div>
+      )}
+
+      {/* Floating Layers Panel */}
+      {showFloatingLayers && (
+        <FloatingLayersPanel
+          layers={layers}
+          activeLayerId={activeLayerId}
+          onLayerToggleVisibility={handleLayerToggleVisibility}
+          onLayerToggleLock={handleLayerToggleLock}
+          onLayerSelect={setActiveLayerId}
+          onAddLayer={handleAddLayer}
+          onClose={() => setShowFloatingLayers(false)}
+        />
       )}
     </div>
   );
