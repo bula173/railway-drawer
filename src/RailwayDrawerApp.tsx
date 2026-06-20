@@ -29,10 +29,13 @@ import { AlignmentToolbar } from "./components/AlignmentToolbar";
 import { TopToolbar } from "./components/TopToolbar";
 import { StatusBar } from "./components/StatusBar";
 import { ConnectorPanel } from "./components/ConnectorPanel";
+import { BrushPanel } from "./components/BrushPanel";
 import type { DrawElement } from "./components/Elements";
 import type { DrawTool, Layer } from "./types";
 import type { Connector, ConnectorStyle } from "./utils/connectorStyles";
 import { DEFAULT_CONNECTOR_STYLE } from "./utils/connectorStyles";
+import type { BrushConfig } from "./utils/brushTools";
+import { BRUSH_PRESETS } from "./utils/brushTools";
 import { logger } from "./utils/logger";
 import { saveToLocalStorage, loadFromLocalStorage, clearLocalStorage } from "./utils/storageManager";
 import { getAvailableThemes } from "./utils/themingUtils";
@@ -126,6 +129,14 @@ const RailwayDrawerApp = () => {
   const [connectorStyle, setConnectorStyle] = useState<ConnectorStyle>(DEFAULT_CONNECTOR_STYLE);
   const [showConnectorPanel, setShowConnectorPanel] = useState(false);
   const [selectedConnectorId, setSelectedConnectorId] = useState<string | undefined>();
+
+  // Brush state
+  const [brushMode, setBrushMode] = useState(false);
+  const [brushConfig, setBrushConfig] = useState<BrushConfig>({
+    ...BRUSH_PRESETS.freehand,
+    color: '#000000',
+  });
+  const [showBrushPanel, setShowBrushPanel] = useState(false);
 
   // Layers state
   const [layers, setLayers] = useState<Layer[]>([
@@ -1250,6 +1261,12 @@ const RailwayDrawerApp = () => {
         gridVisible={true}
         onGridToggle={() => {}}
         onLayersPanelToggle={() => setShowFloatingLayers(!showFloatingLayers)}
+        onBrushToolToggle={() => {
+          setBrushMode(!brushMode);
+          setShowBrushPanel(true);
+          logger.debug('interaction', 'Brush tool toggled', { brushMode: !brushMode });
+        }}
+        brushToolActive={brushMode}
         onConnectorToolToggle={() => {
           setConnectorMode(!connectorMode);
           setShowConnectorPanel(true);
@@ -2099,6 +2116,22 @@ const RailwayDrawerApp = () => {
             });
           }}
           onClose={() => setShowConnectorPanel(false)}
+        />
+      )}
+
+      {/* Brush Panel */}
+      {showBrushPanel && (
+        <BrushPanel
+          config={brushConfig}
+          onConfigChange={(newConfig) => {
+            setBrushConfig(newConfig);
+            logger.debug('interaction', 'Brush config updated', {
+              type: newConfig.type,
+              size: newConfig.size,
+              color: newConfig.color,
+            });
+          }}
+          onClose={() => setShowBrushPanel(false)}
         />
       )}
     </div>

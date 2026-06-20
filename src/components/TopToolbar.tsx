@@ -13,7 +13,7 @@
  */
 
 import React from 'react';
-import { Save, Undo2, Redo2, ZoomIn, ZoomOut, Grid3x3, Layers, GitBranch } from 'lucide-react';
+import { Save, Undo2, Redo2, ZoomIn, ZoomOut, Grid3x3, Layers, GitBranch, Paintbrush } from 'lucide-react';
 
 /**
  * @interface TopToolbarProps
@@ -47,6 +47,8 @@ interface TopToolbarProps {
   onLayersPanelToggle: () => void;
   onConnectorToolToggle?: () => void;
   connectorToolActive?: boolean;
+  onBrushToolToggle?: () => void;
+  brushToolActive?: boolean;
 }
 
 export const TopToolbar: React.FC<TopToolbarProps> = ({
@@ -64,6 +66,8 @@ export const TopToolbar: React.FC<TopToolbarProps> = ({
   onLayersPanelToggle,
   onConnectorToolToggle,
   connectorToolActive = false,
+  onBrushToolToggle,
+  brushToolActive = false,
 }) => {
   /**
    * TopToolbar renders a professional toolbar at the top of the application.
@@ -132,6 +136,17 @@ export const TopToolbar: React.FC<TopToolbarProps> = ({
           }`}
         >
           <Grid3x3 size={18} />
+        </button>
+        <button
+          onClick={onBrushToolToggle}
+          title="Brush Tool (B)"
+          className={`p-2 rounded transition-colors ${
+            brushToolActive
+              ? 'bg-blue-100 text-blue-600 hover:bg-blue-200'
+              : 'text-slate-600 hover:bg-slate-100'
+          }`}
+        >
+          <Paintbrush size={18} />
         </button>
         <button
           onClick={onConnectorToolToggle}
