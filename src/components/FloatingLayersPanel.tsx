@@ -31,7 +31,6 @@ export const FloatingLayersPanel: React.FC<FloatingLayersPanelProps> = ({
 }) => {
   const [isDragging, setIsDragging] = useState(false);
   const [position, setPosition] = useState({ x: 20, y: 400 });
-  const [size, setSize] = useState({ width: 280, height: 350 });
   const dragStartRef = useRef({ x: 0, y: 0, startX: 0, startY: 0 });
 
   const handleMouseDown = (e: React.MouseEvent) => {
@@ -105,8 +104,8 @@ export const FloatingLayersPanel: React.FC<FloatingLayersPanelProps> = ({
         position: 'fixed',
         left: `${position.x}px`,
         top: `${position.y}px`,
-        width: `${size.width}px`,
-        height: `${size.height}px`,
+        width: '280px',
+        height: '350px',
         zIndex: 5000,
         boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
         borderRadius: '4px',

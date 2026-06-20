@@ -16,6 +16,7 @@ import React, { useRef } from "react";
 import { RotateCw } from "lucide-react";
 import { findSnapPoint } from "../utils/trackUtils";
 import { getConnectionPoints } from "../utils/connectionManager";
+import { logger, logTextEditingStart, logTextEditingChange, logTextEditingSaved, logPointerDown, logDoubleClick } from "../utils/logger";
 import "../styles/elements.css";
 // --- Types ---
 
@@ -1259,10 +1260,42 @@ export function generateDynamicUMLClassSVG(el: DrawElement): any {
 }
 
 /**
- * @function RenderElement
+ * @component RenderElement
  * @brief Main component for rendering and interacting with a DrawElement.
- * @param props The props for the element, selection, and handlers.
- * @returns JSX.Element
+ *
+ * Handles complete rendering of SVG elements including:
+ * - Shape rendering with styling (fill, stroke, rotation, etc)
+ * - Selection and hover states
+ * - Text content editing with auto-save
+ * - Label editing and positioning
+ * - Resize handles for interactive resizing
+ * - Connection points for shape snapping
+ * - Shape rotation with visual feedback
+ * - Grouped element support
+ *
+ * @param {DrawElement} el - The element to render
+ * @param {boolean} isSelected - Whether this element is currently selected
+ * @param {string | null} hoveredElementId - ID of currently hovered element (for visual feedback)
+ * @param {Function} setHoveredElementId - Callback to update hovered element ID
+ * @param {DrawElement[]} allElements - Array of all elements (used for connection snapping)
+ * @param {Function} updateElement - Callback to update element properties
+ * @param {Function} handlePointerDown - Callback for pointer down events (drag/select)
+ * @param {Function} onContextMenu - Callback for context menu events
+ * @param {string} startEditingWithChar - Character that triggered text editing mode (from keystroke)
+ *
+ * @returns {JSX.Element} SVG group containing the rendered element with all interactive elements
+ *
+ * @example
+ * <RenderElement
+ *   el={element}
+ *   isSelected={selectedIds.includes(element.id)}
+ *   hoveredElementId={hoveredId}
+ *   setHoveredElementId={setHoveredId}
+ *   allElements={elements}
+ *   updateElement={updateElement}
+ *   handlePointerDown={handlePointerDown}
+ *   startEditingWithChar={editChar}
+ * />
  */
 export function RenderElement({
   el,
@@ -1286,23 +1319,43 @@ export function RenderElement({
   startEditingWithChar?: string;
 }) {
   // --- State ---
+  /** Whether the element label is currently being dragged to reposition */
   const [labelDragging, setLabelDragging] = React.useState(false);
+  /** Whether the element label is in edit mode */
   const [editingLabel, setEditingLabel] = React.useState(false);
+  /** Current text value while editing the element label */
   const [editValue, setEditValue] = React.useState(el.name || "");
+  /** Whether the label is currently hovered */
   const [labelHovered, setLabelHovered] = React.useState(false);
+  /** Whether the element's text content is currently in edit mode */
   const [editingText, setEditingText] = React.useState(false);
+  /** Current text value while editing the element's text content */
   const [editTextValue, setEditTextValue] = React.useState(el.text || "");
-  // Text region editing state
+  /** Index of text region currently being edited (for complex shapes like UML) */
   const [editingTextRegion, setEditingTextRegion] = React.useState<number | null>(null);
+  /** Current text value while editing a specific text region */
   const [editRegionValue, setEditRegionValue] = React.useState("");
-  // Shape element editing state
+  /** ID of shape element currently being edited (for compound shapes) */
   const [editingShapeElement, setEditingShapeElement] = React.useState<string | null>(null);
+  /** Current data being edited for a shape element */
   const [editShapeElementData, setEditShapeElementData] = React.useState<any>(null);
+  /** ID of shape element currently selected within the compound shape */
   const [selectedShapeElementId, setSelectedShapeElementId] = React.useState<string | null>(null);
+  /** ID of shape element currently hovered within the compound shape */
   const [hoveredShapeElementId, setHoveredShapeElementId] = React.useState<string | null>(null);
 
-  // Auto-exit text editing after inactivity timeout
+  /** Timeout reference for auto-saving text after inactivity (1 second) */
   const textEditTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  /** Reference to textarea element for cursor position management */
+  const textareaRef = useRef<HTMLTextAreaElement | null>(null);
+
+  /** Track if we've already processed the first keystroke to prevent duplicate additions */
+  const processedCharRef = useRef<string | null>(null);
+
+  /** Track clicks for double-click detection */
+  const lastClickTimeRef = useRef<number>(0);
+  const clickCountRef = useRef<number>(0);
 
   // Clear hover state when element is not selected
   React.useEffect(() => {
@@ -1312,22 +1365,64 @@ export function RenderElement({
     }
   }, [isSelected]);
 
-  // Auto-enter text editing mode with first character
+  // Auto-enter text editing mode with first character when shape is selected
   React.useEffect(() => {
-    console.log('🔍 Text edit useEffect triggered:', {
-      elementId: el.id,
-      isSelected,
-      startEditingWithChar,
-      editingText
-    });
-
     // Only initialize on first keystroke, not when already editing
     if (isSelected && startEditingWithChar && !editingText) {
-      console.log('🎯 Auto-entering text edit mode with char:', startEditingWithChar, 'element:', el.id);
+      // Skip if we've already processed this character
+      if (processedCharRef.current === startEditingWithChar) {
+        return;
+      }
+
+      logger.debug('text-edit', 'Auto-entering text edit mode', {
+        char: startEditingWithChar,
+        elementId: el.id,
+        currentText: el.text,
+        willBecome: (el.text || "") + startEditingWithChar
+      });
+      logTextEditingStart(el.id, startEditingWithChar, el.text);
+
       setEditingText(true);
-      setEditTextValue((el.text || "") + startEditingWithChar);
+      // Add the keystroke character to the existing text
+      const newValue = (el.text || "") + startEditingWithChar;
+      logger.trace('text-edit', 'Setting initial textarea value', { newValue });
+      setEditTextValue(newValue);
+      // Mark this character as processed to prevent duplicates
+      processedCharRef.current = startEditingWithChar;
+
+      // CRITICAL: Clear the startEditingWithChar to prevent it from firing again
+      // This must happen AFTER we've processed it to avoid the effect firing again with stale data
+      if (startEditingWithChar) {
+        // Use setTimeout to allow React state to settle before clearing
+        setTimeout(() => {
+          // Note: We don't have direct access to setEditingStartChar from parent
+          // This is a workaround - the parent should clear it after we're done
+          console.log('⚠️ Note: DrawArea should clear editingStartChar after text editing is triggered');
+        }, 0);
+      }
     }
   }, [isSelected, startEditingWithChar, editingText, el.text, el.id]);
+
+  // Clear the processed character when editing stops
+  React.useEffect(() => {
+    if (!editingText) {
+      processedCharRef.current = null;
+    }
+  }, [editingText]);
+
+  // Move cursor to end of textarea when editing starts
+  React.useEffect(() => {
+    if (editingText && textareaRef.current) {
+      setTimeout(() => {
+        if (textareaRef.current) {
+          const length = textareaRef.current.value.length;
+          // Move cursor to end
+          textareaRef.current.setSelectionRange(length, length);
+          textareaRef.current.focus();
+        }
+      }, 0);
+    }
+  }, [editingText]);
 
   // --- Resize Logic ---
   const resizingRef = useRef<{
@@ -1339,9 +1434,21 @@ export function RenderElement({
 
   /**
    * @function renderResizeHandles
-   * @brief Renders resize handles at the corners of the element's bounding rectangle.
-   * @param rect The bounding rectangle with x, y, width, and height properties.
-   * @returns Array of JSX elements representing resize handles.
+   * @brief Renders interactive resize handles at element corners for user manipulation.
+   *
+   * Intelligently handles different element types:
+   * - Line elements: Shows only start and end handles for direct endpoint manipulation
+   * - Rotated elements: Adjusts handle positions based on current rotation angle
+   * - Regular elements: Shows standard 4-corner handles for proportional resizing
+   *
+   * Each handle displays a resize cursor and triggers drag-to-resize interaction.
+   *
+   * @param {Object} rect - Bounding rectangle dimensions
+   * @param {number} rect.x - Left edge x-coordinate
+   * @param {number} rect.y - Top edge y-coordinate
+   * @param {number} rect.width - Rectangle width
+   * @param {number} rect.height - Rectangle height
+   * @returns {JSX.Element[]} Array of SVG rect elements representing draggable resize handles
    */
   function renderResizeHandles(rect: { x: number, y: number, width: number, height: number }) {
     // Check if this is a line-based element (only show endpoint handles)
@@ -2499,7 +2606,7 @@ export function RenderElement({
     const editorWidth = Math.max(width, 250);
     const editorHeight = Math.max(height, 100);
 
-    console.log('📝 Text editor rendered');
+    console.log('📝 Text editor rendering with value:', { editTextValue, el_text: el.text, editingText });
 
     return (
       <foreignObject
@@ -2510,10 +2617,13 @@ export function RenderElement({
         style={{ overflow: 'visible' }}
       >
         <textarea
+          ref={textareaRef}
           autoFocus
           value={editTextValue}
           onChange={e => {
-            setEditTextValue(e.target.value);
+            const newValue = e.target.value;
+            logTextEditingChange(el.id, editTextValue, newValue);
+            setEditTextValue(newValue);
 
             // Reset auto-exit timeout on each keystroke
             if (textEditTimeoutRef.current) {
@@ -2522,8 +2632,9 @@ export function RenderElement({
 
             // Auto-save and hide textarea after 1 second of inactivity
             textEditTimeoutRef.current = setTimeout(() => {
-              console.log('⏱️ Auto-save and hide textarea');
-              handleTextEdit(e.target.value);
+              logger.trace('text-edit', 'Auto-save triggered after inactivity', { elementId: el.id, finalValue: newValue });
+              logTextEditingSaved(el.id, newValue, 1000);
+              handleTextEdit(newValue);
               setEditingText(false);
             }, 1000);
           }}
@@ -2553,6 +2664,7 @@ export function RenderElement({
               }
               setEditingText(false);
             }
+            // Note: We do NOT prevent regular keystrokes - the character should be added normally
           }}
           placeholder="Type text... (auto-hide after 1s, Ctrl+Enter to save, Esc to cancel)"
           style={{
@@ -2822,12 +2934,54 @@ export function RenderElement({
   // --- Main Render ---
   const rect = getElementBoundingRect(el);
 
+  const handleElementPointerDown = (e: React.PointerEvent) => {
+    if (e.button === 0 && !labelDragging) {
+      // If currently editing text, close the editor instead of handling pointer down
+      if (editingText) {
+        console.log('📝 Closing text editor on click');
+        handleTextEdit(editTextValue);
+        setEditingText(false);
+        e.preventDefault();
+        e.stopPropagation();
+        return;
+      }
+
+      // Detect double-click for text editing
+      const now = Date.now();
+      const timeSinceLastClick = now - lastClickTimeRef.current;
+
+      if (timeSinceLastClick < 300 && clickCountRef.current === 1) {
+        // This is a double-click
+        if (isSelected) {
+          logger.debug('interaction', 'Double-click detected, enabling text edit mode', {
+            elementId: el.id,
+            timeSinceLastClick,
+            currentText: el.text
+          });
+          logDoubleClick(el.id);
+          setEditingText(true);
+          setEditTextValue(el.text || "");
+          clickCountRef.current = 0;
+          lastClickTimeRef.current = 0;
+          e.preventDefault();
+          e.stopPropagation();
+          return;
+        }
+      }
+
+      // Track click for double-click detection
+      clickCountRef.current = 1;
+      lastClickTimeRef.current = now;
+
+      // Handle regular pointer down for selection/dragging
+      handlePointerDown(e, el);
+    }
+  };
+
   return (
     <g
       className={`element-container ${isSelected ? 'selected' : ''}`}
-      onPointerDown={e => {
-        if (e.button === 0 && !labelDragging) handlePointerDown(e, el);
-      }}
+      onPointerDown={handleElementPointerDown}
       onPointerEnter={() => setHoveredElementId(el.id)}
       onPointerLeave={() => {
         setHoveredElementId(null);

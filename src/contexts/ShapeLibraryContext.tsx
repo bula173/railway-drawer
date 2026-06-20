@@ -121,18 +121,21 @@ export const ShapeLibraryProvider: React.FC<ShapeLibraryProviderProps> = ({ chil
 
     // Create libraries from grouped shapes
     const defaultLibraries: ShapeLibrary[] = Object.entries(groupedShapes)
-      .map(([groupName, shapes]) => ({
-        id: `library-${groupName.toLowerCase().replace(/\s+/g, '-')}`,
-        name: groupName,
-        description: `${groupName} shapes and elements`,
-        category: groupToCategoryMap[groupName] || 'other',
-        shapes: shapes,
-        tags: [groupName.toLowerCase(), ...shapes.map(s => (s.type || '').toLowerCase()).filter(Boolean)],
-        isDefault: true,
-        createdAt: new Date(),
-        modifiedAt: new Date(),
-        visible: true,
-      }));
+      .map(([groupName, shapes]) => {
+        const shapeList = shapes as DrawElement[];
+        return {
+          id: `library-${groupName.toLowerCase().replace(/\s+/g, '-')}`,
+          name: groupName,
+          description: `${groupName} shapes and elements`,
+          category: groupToCategoryMap[groupName] || 'other',
+          shapes: shapeList,
+          tags: [groupName.toLowerCase(), ...shapeList.map((s: DrawElement) => (s.type || '').toLowerCase()).filter(Boolean)],
+          isDefault: true,
+          createdAt: new Date(),
+          modifiedAt: new Date(),
+          visible: true,
+        };
+      });
 
     logger.info('ShapeLibraryProvider', 'Loaded libraries from toolboxConfig.json', {
       libraryCount: defaultLibraries.length,

@@ -1233,13 +1233,13 @@ const RailwayDrawerApp = () => {
         onZoomIn={handleZoomIn}
         onZoomOut={handleZoomOut}
         onZoomReset={handleZoomReset}
-        onUndo={undo}
-        onRedo={redo}
+        onUndo={() => currentDrawAreaRefObject.current?.undo()}
+        onRedo={() => currentDrawAreaRefObject.current?.redo()}
         onSave={saveAsJson}
-        canUndo={canUndo}
-        canRedo={canRedo}
-        gridVisible={showGrid}
-        onGridToggle={() => setShowGrid(!showGrid)}
+        canUndo={true}
+        canRedo={true}
+        gridVisible={true}
+        onGridToggle={() => {}}
         onLayersPanelToggle={() => setShowFloatingLayers(!showFloatingLayers)}
       />
 

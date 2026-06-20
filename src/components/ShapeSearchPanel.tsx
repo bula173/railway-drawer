@@ -341,61 +341,6 @@ export const ShapeSearchPanel: React.FC<ShapeSearchPanelProps> = ({
     );
   };
 
-  /**
-   * Render recent shapes
-   */
-  const renderRecentShapes = () => {
-    const recent = search.getRecentShapes();
-    if (recent.length === 0) {
-      return (
-        <div style={{ padding: '16px', textAlign: 'center', color: '#999' }}>
-          <div>Start searching to add recent shapes</div>
-          <div style={{ fontSize: '12px', marginTop: '8px' }}>
-            Try: "signal", "track", "platform"
-          </div>
-        </div>
-      );
-    }
-
-    return (
-      <div style={{ padding: '8px' }}>
-        <div style={{ fontSize: '12px', fontWeight: 'bold', marginBottom: '8px', color: '#666' }}>
-          Recent Shapes:
-        </div>
-        <div
-          style={{
-            maxHeight: '300px',
-            overflowY: 'auto',
-          }}
-        >
-          {recent.map(result => (
-            <div
-              key={`recent-${result.shape.id}`}
-              onClick={() => handleShapeSelect(result.shape, result.libraryId)}
-              style={{
-                padding: '6px',
-                marginBottom: '4px',
-                backgroundColor: '#f9f9f9',
-                border: '1px solid #ddd',
-                borderRadius: '3px',
-                cursor: 'pointer',
-                fontSize: '12px',
-              }}
-              onMouseOver={e => {
-                (e.currentTarget as HTMLElement).style.backgroundColor = '#f0f0f0';
-              }}
-              onMouseOut={e => {
-                (e.currentTarget as HTMLElement).style.backgroundColor = '#f9f9f9';
-              }}
-            >
-              {result.shape.id}
-            </div>
-          ))}
-        </div>
-      </div>
-    );
-  };
-
   if (!isOpen && position === 'modal') {
     return null;
   }

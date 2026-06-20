@@ -49,6 +49,10 @@ export interface TemplateContextType {
   addTemplate: (template: RailwayTemplate) => void;
   updateTemplate: (id: string, updates: Partial<RailwayTemplate>) => void;
   deleteTemplate: (id: string) => void;
+  getTemplate: (id: string) => RailwayTemplate | undefined;
+  getTemplatesByCategory: (category: string) => RailwayTemplate[];
+  getTemplatesByDifficulty: (difficulty: string) => RailwayTemplate[];
+  getPopularTemplates: (limit?: number) => RailwayTemplate[];
 
   setSearchQuery: (query: string) => void;
   setSelectedCategory: (category: string | null) => void;
@@ -418,6 +422,34 @@ export const TemplateProvider: React.FC<TemplateProviderProps> = ({ children }) 
     logger.info('TemplateProvider', 'Loading templates');
   }, []);
 
+  /**
+   * Get a single template by ID
+   */
+  const getTemplate = useCallback((id: string): RailwayTemplate | undefined => {
+    return templates.find(t => t.id === id);
+  }, [templates]);
+
+  /**
+   * Get templates by category
+   */
+  const getTemplatesByCategory = useCallback((category: string): RailwayTemplate[] => {
+    return templates.filter(t => t.category === category);
+  }, [templates]);
+
+  /**
+   * Get templates by difficulty
+   */
+  const getTemplatesByDifficulty = useCallback((difficulty: string): RailwayTemplate[] => {
+    return templates.filter(t => t.difficulty === difficulty);
+  }, [templates]);
+
+  /**
+   * Get most popular templates by usage count
+   */
+  const getPopularTemplates = useCallback((limit = 5): RailwayTemplate[] => {
+    return [...templates].sort((a, b) => (b.usageCount || 0) - (a.usageCount || 0)).slice(0, limit);
+  }, [templates]);
+
   const value: TemplateContextType = {
     templates,
     searchQuery,
@@ -426,6 +458,10 @@ export const TemplateProvider: React.FC<TemplateProviderProps> = ({ children }) 
     addTemplate,
     updateTemplate,
     deleteTemplate,
+    getTemplate,
+    getTemplatesByCategory,
+    getTemplatesByDifficulty,
+    getPopularTemplates,
     setSearchQuery,
     setSelectedCategory,
     setSelectedDifficulty,

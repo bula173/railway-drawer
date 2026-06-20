@@ -1,11 +1,37 @@
 /**
  * @file TopToolbar.tsx
- * @brief Professional top toolbar with essential controls
+ * @brief Professional top toolbar component with essential drawing controls.
+ *
+ * Provides user-facing controls for common operations:
+ * - File operations (save)
+ * - Edit operations (undo/redo)
+ * - View controls (zoom, grid toggle)
+ * - Panel management (layers panel toggle)
+ *
+ * Designed with a clean, professional UI following draw.io conventions.
+ * Includes keyboard shortcuts displayed in button tooltips.
  */
 
 import React from 'react';
-import { Save, Plus, Trash2, Undo2, Redo2, ZoomIn, ZoomOut, Grid3x3, Layers } from 'lucide-react';
+import { Save, Undo2, Redo2, ZoomIn, ZoomOut, Grid3x3, Layers } from 'lucide-react';
 
+/**
+ * @interface TopToolbarProps
+ * @brief Props for the TopToolbar component
+ *
+ * @property {number} zoom - Current zoom level (0.5 = 50%, 1 = 100%, etc)
+ * @property {Function} onZoomIn - Callback to zoom in (typically increases zoom by 20%)
+ * @property {Function} onZoomOut - Callback to zoom out (typically decreases zoom by 20%)
+ * @property {Function} onZoomReset - Callback to reset zoom to 100%
+ * @property {Function} onUndo - Callback to undo the last action
+ * @property {Function} onRedo - Callback to redo the last undone action
+ * @property {Function} onSave - Callback to save the drawing
+ * @property {boolean} canUndo - Whether undo is currently available
+ * @property {boolean} canRedo - Whether redo is currently available
+ * @property {boolean} gridVisible - Whether the grid is currently visible
+ * @property {Function} onGridToggle - Callback to toggle grid visibility
+ * @property {Function} onLayersPanelToggle - Callback to toggle the layers panel visibility
+ */
 interface TopToolbarProps {
   zoom: number;
   onZoomIn: () => void;
@@ -35,6 +61,20 @@ export const TopToolbar: React.FC<TopToolbarProps> = ({
   onGridToggle,
   onLayersPanelToggle,
 }) => {
+  /**
+   * TopToolbar renders a professional toolbar at the top of the application.
+   *
+   * Layout (left to right):
+   * 1. Logo and app name
+   * 2. File actions (Save)
+   * 3. Edit actions (Undo/Redo)
+   * 4. View actions (Grid toggle, Layers panel toggle)
+   * 5. Zoom controls (-, zoom %, +)
+   * 6. Helpful hint text
+   *
+   * All buttons include tooltips with keyboard shortcuts (e.g., "Ctrl+Z" for undo).
+   * Disabled buttons (when undo/redo not available) are shown with reduced opacity.
+   */
   return (
     <div className="h-12 bg-white border-b border-slate-200 flex items-center gap-4 px-4 shadow-sm">
       {/* Logo */}

@@ -47,7 +47,6 @@ export const TemplateGallery: React.FC<TemplateGalleryProps> = ({
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedDifficulty, setSelectedDifficulty] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
-  const [previewTemplate, setPreviewTemplate] = useState<RailwayTemplate | null>(null);
 
   /**
    * Get filtered templates
@@ -360,81 +359,6 @@ export const TemplateGallery: React.FC<TemplateGalleryProps> = ({
         )}
       </div>
 
-      {/* Preview panel */}
-      {previewTemplate && (
-        <div
-          style={{
-            width: '300px',
-            backgroundColor: '#f9f9f9',
-            borderLeft: '1px solid #ddd',
-            padding: '16px',
-            overflowY: 'auto',
-          }}
-        >
-          <h3 style={{ marginTop: 0 }}>{previewTemplate.name}</h3>
-          <p style={{ fontSize: '12px', color: '#666', lineHeight: '1.6' }}>
-            {previewTemplate.description}
-          </p>
-
-          <div style={{ marginBottom: '16px', paddingBottom: '16px', borderBottom: '1px solid #ddd' }}>
-            <div style={{ fontSize: '12px', marginBottom: '8px' }}>
-              <strong>Category:</strong> {previewTemplate.category}
-            </div>
-            <div style={{ fontSize: '12px', marginBottom: '8px' }}>
-              <strong>Difficulty:</strong> {previewTemplate.difficulty}
-            </div>
-            <div style={{ fontSize: '12px', marginBottom: '8px' }}>
-              <strong>Elements:</strong> {previewTemplate.elements.length}
-            </div>
-            {previewTemplate.connections && (
-              <div style={{ fontSize: '12px', marginBottom: '8px' }}>
-                <strong>Connections:</strong> {previewTemplate.connections.length}
-              </div>
-            )}
-          </div>
-
-          {/* Tags */}
-          <div style={{ marginBottom: '16px', paddingBottom: '16px', borderBottom: '1px solid #ddd' }}>
-            <div style={{ fontSize: '12px', fontWeight: 'bold', marginBottom: '8px' }}>
-              Tags:
-            </div>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
-              {previewTemplate.tags.map(tag => (
-                <span
-                  key={tag}
-                  style={{
-                    backgroundColor: '#e7f3ff',
-                    color: '#004085',
-                    padding: '4px 8px',
-                    borderRadius: '3px',
-                    fontSize: '11px',
-                  }}
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Use button */}
-          <button
-            onClick={() => handleSelectTemplate(previewTemplate)}
-            style={{
-              width: '100%',
-              padding: '12px',
-              backgroundColor: '#007bff',
-              color: 'white',
-              border: 'none',
-              borderRadius: '4px',
-              cursor: 'pointer',
-              fontWeight: 'bold',
-              fontSize: '14px',
-            }}
-          >
-            Use This Template
-          </button>
-        </div>
-      )}
     </div>
   );
 };

@@ -1577,6 +1577,12 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
           e.preventDefault();
           console.log('⌨️ Keystroke on selected shape, entering text edit:', e.key);
           setEditingStartChar(e.key);
+
+          // Clear the editingStartChar after a brief moment to prevent duplicate triggering
+          // This prevents the useEffect in Elements from firing multiple times with the same character
+          setTimeout(() => {
+            setEditingStartChar(undefined);
+          }, 100);
           return;
         }
       }
