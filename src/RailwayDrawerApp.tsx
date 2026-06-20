@@ -244,8 +244,8 @@ const RailwayDrawerApp = () => {
   const projectNameInputRef = useRef<HTMLInputElement>(null);
 
   /** @brief Panel widths and layout dimensions */
-  const [toolboxWidth, setToolboxWidth] = useState(200); // wider default (was 148)
-  const [propertiesWidth, setPropertiesWidth] = useState(220);
+  const [toolboxWidth, setToolboxWidth] = useState(220); // Left panel: Shapes library
+  const [propertiesWidth, setPropertiesWidth] = useState(280); // Right panel: Properties
   const [layersCollapsed, setLayersCollapsed] = useState(false);
   const [showFloatingLayers, setShowFloatingLayers] = useState(false);
   const [leftCollapsed, setLeftCollapsed] = useState(false);
@@ -1747,7 +1747,7 @@ const RailwayDrawerApp = () => {
       {/* Main Layout */}
       <div className="flex flex-row w-screen min-w-0 flex-1 overflow-hidden" style={{ height: `calc(100vh - ${tabPanelHeight}px)` }}>
         <div
-          style={{ width: leftCollapsed ? 36 : toolboxWidth, minWidth: leftCollapsed ? 36 : 160 }}
+          style={{ width: leftCollapsed ? 36 : toolboxWidth, minWidth: leftCollapsed ? 36 : 180 }}
           className="flex flex-col relative"
         >
           {leftCollapsed ? (
@@ -1938,7 +1938,7 @@ const RailwayDrawerApp = () => {
           onMouseDown={startResizeProperties}
         />
         
-        <div style={{ width: rightCollapsed ? 36 : propertiesWidth, minWidth: rightCollapsed ? 36 : 180 }}>
+        <div style={{ width: rightCollapsed ? 36 : propertiesWidth, minWidth: rightCollapsed ? 36 : 250 }}>
           {rightCollapsed ? (
             <div className="h-full flex items-center justify-center bg-white border-l border-slate-200">
               <button
