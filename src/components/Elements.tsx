@@ -1307,6 +1307,7 @@ export function RenderElement({
   handlePointerDown,
   onContextMenu,
   startEditingWithChar,
+  onConnectorStart,
 }: {
   el: DrawElement;
   isSelected: boolean;
@@ -1317,6 +1318,7 @@ export function RenderElement({
   handlePointerDown: (e: React.PointerEvent, el: DrawElement) => void;
   onContextMenu?: (e: React.MouseEvent) => void;
   startEditingWithChar?: string;
+  onConnectorStart?: (elementId: string, point: { x: number; y: number }) => void;
 }) {
   // --- State ---
   /** Whether the element label is currently being dragged to reposition */
@@ -2910,23 +2912,88 @@ export function RenderElement({
     if (!isSelected && hoveredElementId !== el.id) return null;
 
     const points = getConnectionPoints(el);
-    const radius = 4;
+    const radius = 5;
+    const arrowSize = 8;
 
     return (
-      <g className="connection-points" pointerEvents="none">
-        {points.map((point) => (
-          <circle
-            key={point.id}
-            cx={point.position.x}
-            cy={point.position.y}
-            r={radius}
-            fill={isSelected ? '#0066cc' : '#666'}
-            opacity={isSelected ? 0.8 : 0.4}
-            stroke="white"
-            strokeWidth={1}
-            className="connection-point"
-          />
-        ))}
+      <g className="connection-points">
+        {points.map((point) => {
+          // Calculate arrow direction based on position
+          const dirAngle = Math.atan2(point.position.y - (el.start.y + (el.end.y - el.start.y) / 2),
+                                       point.position.x - (el.start.x + (el.end.x - el.start.x) / 2));
+
+          return (
+            <g key={point.id} className="connection-point-group">
+              {/* Connection point circle */}
+              <circle
+                cx={point.position.x}
+                cy={point.position.y}
+                r={radius}
+                fill={isSelected ? '#0066cc' : '#666'}
+                opacity={isSelected ? 0.9 : 0.5}
+                stroke="white"
+                strokeWidth={2}
+                className="connection-point"
+                style={{ cursor: isSelected ? 'crosshair' : 'pointer' }}
+                onPointerDown={(e) => {
+                  if (isSelected && onConnectorStart) {
+                    e.stopPropagation();
+                    onConnectorStart(el.id, point.position);
+                    logDoubleClick(el.id);
+                  }
+                }}
+              />
+
+              {/* Arrow indicator when selected */}
+              {isSelected && (
+                <g
+                  style={{ cursor: 'crosshair', pointerEvents: 'auto' }}
+                  onPointerDown={(e) => {
+                    if (onConnectorStart) {
+                      e.stopPropagation();
+                      onConnectorStart(el.id, point.position);
+                    }
+                  }}
+                >
+                  {/* Larger invisible hit area */}
+                  <circle
+                    cx={point.position.x}
+                    cy={point.position.y}
+                    r={radius + 4}
+                    fill="transparent"
+                    style={{ pointerEvents: 'auto' }}
+                  />
+
+                  {/* Arrow pointing outward */}
+                  <path
+                    d={`M ${point.position.x} ${point.position.y}
+                        L ${point.position.x + Math.cos(dirAngle) * arrowSize} ${point.position.y + Math.sin(dirAngle) * arrowSize}`}
+                    stroke="#0066cc"
+                    strokeWidth={2}
+                    opacity={0.7}
+                    markerEnd="url(#arrow-connector-marker)"
+                    style={{ pointerEvents: 'none' }}
+                  />
+                </g>
+              )}
+            </g>
+          );
+        })}
+
+        {/* Arrow marker definition */}
+        <defs>
+          <marker
+            id="arrow-connector-marker"
+            markerWidth="10"
+            markerHeight="10"
+            refX="8"
+            refY="3"
+            orient="auto"
+            markerUnits="strokeWidth"
+          >
+            <path d="M0,0 L10,-3 L10,3 Z" fill="#0066cc" opacity="0.7" />
+          </marker>
+        </defs>
       </g>
     );
   }

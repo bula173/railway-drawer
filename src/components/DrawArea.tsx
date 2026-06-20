@@ -14,8 +14,10 @@ import React, { useEffect, useRef, useState, forwardRef, useImperativeHandle, us
 import { RenderElement, getRotatedBoundingRect, synchronizeTextRegionsWithSVG, expandSVGRectForText, syncTextRegionsWithSVG, syncUnifiedElement } from "./Elements";
 import type { DrawElement } from "./Elements";
 import { snapToConnectionPoint } from "../utils/connectionManager";
+import { ConnectorRenderer } from "./ConnectorRenderer";
 import type { ToolboxItem } from "./Toolbox";
 import type { DrawTool, Layer } from "../types";
+import type { Connector, ConnectorStyle } from "../utils/connectorStyles";
 import { logger } from "../utils/logger";
 import { snapPointToGrid } from "../utils/index";
 import { findSnapPoint } from "../utils/trackUtils";
@@ -283,6 +285,11 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     verticalLines: number[];
     horizontalLines: number[];
   }>({ verticalLines: [], horizontalLines: [] });
+
+  /** @brief Connectors state */
+  const [connectors, setConnectors] = useState<Connector[]>([]);
+  const [connectorStartPoint, setConnectorStartPoint] = useState<{ elementId: string; point: { x: number; y: number } } | null>(null);
+  const [selectedConnectorId, setSelectedConnectorId] = useState<string | undefined>();
 
   /**
    * @brief Use effect to call parent's onCanvasExpand when bounds change
@@ -1254,6 +1261,43 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     if (disableKeyboardHandlers) return;
     await performUnifiedPaste(e);
   }, [disableKeyboardHandlers, performUnifiedPaste]);
+
+  /**
+   * @brief Handle connector start from connection point
+   * @param elementId The element ID where connector starts
+   * @param point The connection point coordinates
+   */
+  const handleConnectorStart = useCallback((elementId: string, point: { x: number; y: number }) => {
+    setConnectorStartPoint({ elementId, point });
+    logger.debug('interaction', 'Connector drawing started', { elementId, point });
+  }, []);
+
+  /**
+   * @brief Handle connector finish (drop on another element)
+   * @param toElementId The target element ID
+   * @param toPoint The target connection point
+   * @param style The connector style
+   */
+  const handleConnectorFinish = useCallback((toElementId: string, toPoint: { x: number; y: number }, style: ConnectorStyle) => {
+    if (!connectorStartPoint) return;
+
+    const newConnector: Connector = {
+      id: `connector-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+      fromElementId: connectorStartPoint.elementId,
+      toElementId,
+      fromPoint: connectorStartPoint.point,
+      toPoint,
+      style,
+    };
+
+    setConnectors(prev => [...prev, newConnector]);
+    setConnectorStartPoint(null);
+    logger.debug('interaction', 'Connector created', {
+      connectorId: newConnector.id,
+      from: newConnector.fromElementId,
+      to: newConnector.toElementId,
+    });
+  }, [connectorStartPoint]);
 
   /**
    * @brief Handle right-click context menu
@@ -2687,6 +2731,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
                 if (elementLayer?.locked) return;
                 handleContextMenu(e, el.id);
               }}
+              onConnectorStart={handleConnectorStart}
             />
           );
         })}
@@ -2852,6 +2897,14 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
 
         {/* Measurement tool guide */}
         {renderMeasurementGuide()}
+
+        {/* Connectors */}
+        <ConnectorRenderer
+          connectors={connectors}
+          selectedConnectorId={selectedConnectorId}
+          onConnectorClick={setSelectedConnectorId}
+          zoom={zoom}
+        />
       </g>
     </svg>
     
