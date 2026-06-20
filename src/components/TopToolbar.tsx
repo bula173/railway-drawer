@@ -13,7 +13,7 @@
  */
 
 import React from 'react';
-import { Save, Undo2, Redo2, ZoomIn, ZoomOut, Grid3x3, Layers } from 'lucide-react';
+import { Save, Undo2, Redo2, ZoomIn, ZoomOut, Grid3x3, Layers, GitBranch } from 'lucide-react';
 
 /**
  * @interface TopToolbarProps
@@ -45,6 +45,8 @@ interface TopToolbarProps {
   gridVisible: boolean;
   onGridToggle: () => void;
   onLayersPanelToggle: () => void;
+  onConnectorToolToggle?: () => void;
+  connectorToolActive?: boolean;
 }
 
 export const TopToolbar: React.FC<TopToolbarProps> = ({
@@ -60,6 +62,8 @@ export const TopToolbar: React.FC<TopToolbarProps> = ({
   gridVisible,
   onGridToggle,
   onLayersPanelToggle,
+  onConnectorToolToggle,
+  connectorToolActive = false,
 }) => {
   /**
    * TopToolbar renders a professional toolbar at the top of the application.
@@ -128,6 +132,17 @@ export const TopToolbar: React.FC<TopToolbarProps> = ({
           }`}
         >
           <Grid3x3 size={18} />
+        </button>
+        <button
+          onClick={onConnectorToolToggle}
+          title="Draw Connector (C)"
+          className={`p-2 rounded transition-colors ${
+            connectorToolActive
+              ? 'bg-blue-100 text-blue-600 hover:bg-blue-200'
+              : 'text-slate-600 hover:bg-slate-100'
+          }`}
+        >
+          <GitBranch size={18} />
         </button>
         <button
           onClick={onLayersPanelToggle}
