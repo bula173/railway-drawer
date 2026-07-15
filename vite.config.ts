@@ -19,9 +19,16 @@ export default defineConfig({
     sourcemap: true,
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom'],
-          utils: ['html-to-image', 'jspdf'],
+        manualChunks: (id) => {
+          if (id.includes('node_modules')) {
+            if (id.includes('react')) {
+              return 'vendor-react';
+            }
+            if (id.includes('html-to-image') || id.includes('jspdf')) {
+              return 'vendor-utils';
+            }
+            return 'vendor';
+          }
         },
       },
     },

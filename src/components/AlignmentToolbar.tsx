@@ -22,7 +22,6 @@ import { logger } from '../utils/logger';
 export interface AlignmentToolbarProps {
   selectedElements: DrawElement[];
   onElementsAligned?: (elements: DrawElement[]) => void;
-  position?: 'top' | 'left' | 'right' | 'bottom';
   showLabels?: boolean;
 }
 

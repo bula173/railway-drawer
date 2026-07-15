@@ -15,15 +15,34 @@ import { ChevronDown } from 'lucide-react';
 
 interface ConnectorPanelProps {
   style: ConnectorStyle;
+  label?: string;
+  fromAttached?: boolean;
+  toAttached?: boolean;
   onStyleChange: (style: ConnectorStyle) => void;
+  onLabelChange?: (label: string) => void;
+  onDetachStart?: () => void;
+  onDetachEnd?: () => void;
+  onAttachStart?: () => void;
+  onAttachEnd?: () => void;
+  onDelete?: () => void;
   onClose?: () => void;
 }
 
 export const ConnectorPanel: React.FC<ConnectorPanelProps> = ({
   style,
+  label = '',
+  fromAttached = true,
+  toAttached = true,
   onStyleChange,
+  onLabelChange,
+  onDetachStart,
+  onDetachEnd,
+  onAttachStart,
+  onAttachEnd,
+  onDelete,
   onClose,
 }) => {
+  console.log('🎨 CONNECTOR PANEL RENDERED with style:', style);
   const handleLineStyleChange = (lineStyle: ConnectorLineStyle) => {
     onStyleChange({ ...style, lineStyle });
   };
@@ -68,22 +87,122 @@ export const ConnectorPanel: React.FC<ConnectorPanelProps> = ({
     >
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
         <h3 style={{ margin: 0, fontSize: '14px', fontWeight: 'bold' }}>
-          Connector Style
+          Connector
         </h3>
-        {onClose && (
+        <div style={{ display: 'flex', gap: '4px' }}>
+          {onDelete && (
+            <button
+              onClick={onDelete}
+              title="Delete connector"
+              style={{
+                background: '#ff4444',
+                color: 'white',
+                border: 'none',
+                cursor: 'pointer',
+                padding: '4px 8px',
+                fontSize: '12px',
+                borderRadius: '4px',
+                fontWeight: 'bold',
+              }}
+            >
+              Delete
+            </button>
+          )}
+          {onClose && (
+            <button
+              onClick={onClose}
+              style={{
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+                padding: '4px',
+                fontSize: '18px',
+              }}
+            >
+              ✕
+            </button>
+          )}
+        </div>
+      </div>
+
+      {/* Label */}
+      <div style={{ marginBottom: '16px' }}>
+        <label style={{ display: 'block', marginBottom: '8px', fontSize: '12px', fontWeight: 'bold' }}>
+          Label
+        </label>
+        <input
+          type="text"
+          value={label}
+          onChange={(e) => onLabelChange?.(e.target.value)}
+          placeholder="Add label text..."
+          style={{
+            width: '100%',
+            padding: '6px',
+            border: '1px solid #ccc',
+            borderRadius: '4px',
+            fontSize: '12px',
+            boxSizing: 'border-box',
+          }}
+        />
+      </div>
+
+      {/* Attachment Controls */}
+      <div style={{ marginBottom: '16px', padding: '12px', background: '#f0f0f0', borderRadius: '4px' }}>
+        <label style={{ display: 'block', marginBottom: '8px', fontSize: '12px', fontWeight: 'bold' }}>
+          Attachment
+        </label>
+
+        {/* Start Attachment */}
+        <div style={{ marginBottom: '8px' }}>
+          <div style={{ display: 'flex', gap: '4px', alignItems: 'center', marginBottom: '4px' }}>
+            <span style={{ fontSize: '11px', flex: 1 }}>Start:</span>
+            <span style={{ fontSize: '10px', color: '#666' }}>
+              {fromAttached ? '✓ Attached' : '◯ Detached'}
+            </span>
+          </div>
           <button
-            onClick={onClose}
+            onClick={fromAttached ? onDetachStart : onAttachStart}
             style={{
-              background: 'none',
-              border: 'none',
-              cursor: 'pointer',
+              width: '100%',
               padding: '4px',
-              fontSize: '18px',
+              border: '1px solid #ccc',
+              borderRadius: '3px',
+              background: fromAttached ? '#e8f4f8' : '#fff8f0',
+              color: '#333',
+              cursor: 'pointer',
+              fontSize: '11px',
+              fontWeight: 'bold',
             }}
           >
-            ✕
+            {fromAttached ? 'Detach Start' : 'Attach Start'}
           </button>
-        )}
+        </div>
+
+        {/* End Attachment */}
+        <div>
+          <div style={{ display: 'flex', gap: '4px', alignItems: 'center', marginBottom: '4px' }}>
+            <span style={{ fontSize: '11px', flex: 1 }}>End:</span>
+            <span style={{ fontSize: '10px', color: '#666' }}>
+              {toAttached ? '✓ Attached' : '◯ Detached'}
+            </span>
+          </div>
+          <button
+            onClick={toAttached ? onDetachEnd : onAttachEnd}
+            style={{
+              width: '100%',
+              padding: '4px',
+              border: '1px solid #ccc',
+              borderRadius: '3px',
+              background: toAttached ? '#e8f4f8' : '#fff8f0',
+              color: '#333',
+              cursor: 'pointer',
+              fontSize: '11px',
+              fontWeight: 'bold',
+            }}
+          >
+            {toAttached ? 'Detach End' : 'Attach End'}
+          </button>
+        </div>
       </div>
 
       {/* Line Style */}

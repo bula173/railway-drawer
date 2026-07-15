@@ -13,7 +13,7 @@
 import React, { useEffect, useRef, useState, forwardRef, useImperativeHandle, useCallback, useMemo } from "react";
 import { RenderElement, getRotatedBoundingRect, synchronizeTextRegionsWithSVG, expandSVGRectForText, syncTextRegionsWithSVG, syncUnifiedElement } from "./Elements";
 import type { DrawElement } from "./Elements";
-import { snapToConnectionPoint } from "../utils/connectionManager";
+import { snapToConnectionPoint, getConnectionPointsGrid } from "../utils/connectionManager";
 import { ConnectorRenderer } from "./ConnectorRenderer";
 import type { ToolboxItem } from "./Toolbox";
 import type { DrawTool, Layer } from "../types";
@@ -115,6 +115,8 @@ export interface DrawAreaProps {
   brushMode?: boolean;
   /** @brief Brush configuration */
   brushConfig?: BrushConfig;
+  /** @brief Callback for when a connector is selected */
+  onConnectorSelected?: (connectorId: string | undefined) => void;
 }
 
 /**
@@ -140,6 +142,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
   GRID_SIZE,
   zoom = 1,
   setSelectedElement,
+  onConnectorsChange,
   disableKeyboardHandlers = false,
   activeTool = 'select',
   layers = [{ id: 'default', name: 'Background Layer', visible: true, locked: false }],
@@ -210,19 +213,29 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
   const [backgroundColor, setBackgroundColor] = useState<string>("#ffffff");
   /** @brief Whether grid is visible */
   const [showGrid, setShowGrid] = useState<boolean>(true);
-  /** @brief Undo/redo history stack */
-  const [history, setHistory] = useState<DrawElement[][]>([]);
+  /** @brief Unified history state (elements + brush strokes together; connectors are now elements) */
+  interface HistoryState {
+    elements: DrawElement[];
+    brushStrokes: any[]; // BrushStroke[]
+    timestamp: number;
+  }
+
+  const [history, setHistory] = useState<HistoryState[]>([]);
   /** @brief Current position in history for redo functionality */
   const [historyIndex, setHistoryIndex] = useState<number>(-1);
 
-  // Initialize history with current elements on mount
+  // Initialize history with current state on mount
   useEffect(() => {
     if (history.length === 0) {
-      logger.info("DrawArea", "🔧 Initializing history", {
+      logger.info("DrawArea", "🔧 Initializing unified history", {
         currentElements: elements.length,
-        elementIds: elements.map(el => el.id)
+        currentBrushStrokes: brushStrokes.length,
       });
-      const initialSnapshot = createDeepElementsSnapshot(elements);
+      const initialSnapshot: HistoryState = {
+        elements: createDeepElementsSnapshot(elements),
+        brushStrokes: [...brushStrokes],
+        timestamp: Date.now(),
+      };
       setHistory([initialSnapshot]);
       setHistoryIndex(0);
     }
@@ -244,6 +257,20 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
   const svgRef = useRef<SVGSVGElement | null>(null);
   /** @brief Flag to prevent duplicate history entries */
   const hasPushedToHistory = useRef(false);
+  /** @brief Ref to track connector start point reliably across closures */
+  const connectorStartRef = useRef<{ elementId: string; point: { x: number; y: number } } | null>(null);
+  /** @brief Ref to track target shape for connector */
+  const targetShapeRef = useRef<string | null>(null);
+  /** @brief Ref to track which connector endpoint is being dragged */
+  const draggingConnectorRef = useRef<{ id: string; endpoint: 'start' | 'end' } | null>(null);
+  /** @brief Ref to track current mouse position during connector drag for accurate endpoint */
+  const connectorCurrentPosRef = useRef<{ x: number; y: number } | null>(null);
+  /** @brief State to track target shape when dragging connector endpoint */
+  const [connectorDragTargetShape, setConnectorDragTargetShape] = useState<string | null>(null);
+  /** @brief Ref to track target shape when dragging connector endpoint */
+  const connectorDragTargetRef = useRef<{ shapeId: string; pointIndex: number } | null>(null);
+  /** @brief Track which connector endpoint is being interacted with */
+  const [hoveredConnectorEnd, setHoveredConnectorEnd] = useState<{ connectorId: string; endpoint: 'start' | 'end' } | null>(null);
 
   /** @brief Area selection state */
   const [isAreaSelecting, setIsAreaSelecting] = useState(false);
@@ -293,15 +320,27 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     horizontalLines: number[];
   }>({ verticalLines: [], horizontalLines: [] });
 
-  /** @brief Connectors state */
-  const [connectors, setConnectors] = useState<Connector[]>([]);
+  /** @brief Connector creation state */
   const [connectorStartPoint, setConnectorStartPoint] = useState<{ elementId: string; point: { x: number; y: number } } | null>(null);
-  const [selectedConnectorId, setSelectedConnectorId] = useState<string | undefined>();
+  const [connectorPreview, setConnectorPreview] = useState<{ x: number; y: number } | null>(null);
+
+  /** @brief Quick-connect menu state */
+  const [quickConnectMenu, setQuickConnectMenu] = useState<{
+    visible: boolean;
+    x: number;
+    y: number;
+    sourceElementId: string;
+  } | null>(null);
+
+  /** @brief Target shape during connector drag (for green highlight) */
+  const [targetShapeForConnector, setTargetShapeForConnector] = useState<string | null>(null);
 
   /** @brief Brush stroke state */
   const [brushStrokes, setBrushStrokes] = useState<Array<{ id: string; points: Array<{ x: number; y: number }>; config: any }>>([]);
   const [isDrawing, setIsDrawing] = useState(false);
   const [currentStroke, setCurrentStroke] = useState<Array<{ x: number; y: number }>>([]);
+
+  // Note: Connectors are now part of elements[], so history is updated when elements change
 
   /**
    * @brief Use effect to call parent's onCanvasExpand when bounds change
@@ -488,125 +527,97 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
   }, [createDeepElementCopy]);
 
   /**
-   * @brief Add current state to history and update elements
+   * @brief Add unified state to history (elements + brush strokes)
+   * @details Saves a complete snapshot of both elements and brush strokes
+   * Note: Connectors are now part of elements[], so they're saved automatically
+   */
+  const pushToHistory = useCallback((newElements: DrawElement[], newBrushStrokes?: any[]) => {
+    const strokesToSave = newBrushStrokes !== undefined ? newBrushStrokes : brushStrokes;
+
+    // Check for actual changes
+    const elementsChanged = newElements.length !== elements.length ||
+      !newElements.every((el, idx) => el.id === elements[idx]?.id);
+    const strokesChanged = strokesToSave.length !== brushStrokes.length;
+
+    if (!elementsChanged && !strokesChanged) {
+      logger.debug("DrawArea", "No changes detected, skipping history");
+      return;
+    }
+
+    // Create new history entry
+    const historyState: HistoryState = {
+      elements: createDeepElementsSnapshot(newElements),
+      brushStrokes: [...strokesToSave],
+      timestamp: Date.now(),
+    };
+
+    // Clear future history and add new state
+    const newHistory = [...history.slice(0, historyIndex + 1), historyState];
+    setHistory(newHistory);
+    setHistoryIndex(newHistory.length - 1);
+
+    logger.info("DrawArea", "📝 Added to unified history", {
+      historyLength: newHistory.length,
+      historyIndex: newHistory.length - 1,
+      elements: historyState.elements.length,
+      brushStrokes: historyState.brushStrokes.length,
+    });
+
+    onStateChange?.();
+  }, [history, historyIndex, elements, brushStrokes, createDeepElementsSnapshot, onStateChange]);
+
+  /**
+   * @brief Add current state to history and update elements (legacy compatibility)
    * @param updater Function or value to update elements state
-   * @details Creates a complete snapshot of current elements, then updates elements, ensuring proper undo functionality
+   * @details Kept for compatibility with existing code
    */
   const pushToHistoryAndSetElements = useCallback((updater: React.SetStateAction<DrawElement[]>) => {
     // Calculate the new state first
     const newElements = typeof updater === 'function' ? updater(elements) : updater;
-    
+
     logger.info("DrawArea", "📝 Adding to history and updating elements", {
       currentHistoryIndex: historyIndex,
       currentHistoryLength: history.length,
       currentElements: elements.length,
       newElements: newElements.length,
-      elementIds: elements.map(el => el.id).slice(0, 5) // Show first 5 IDs for debugging
     });
-    
-    // Create a complete deep snapshot of current state before making changes
-    const currentSnapshot = createDeepElementsSnapshot(elements);
-    
-    // Check for changes
-    const hasLengthChange = currentSnapshot.length !== newElements.length;
-    const hasIdChange = !currentSnapshot.every((el, idx) => el.id === newElements[idx]?.id);
-    const isChange = hasLengthChange || hasIdChange;
-    
-    logger.info("DrawArea", "📝 Change detection", {
-      currentSnapshotLength: currentSnapshot.length,
-      newElementsLength: newElements.length,
-      hasLengthChange,
-      hasIdChange,
-      isChange,
-      currentIds: currentSnapshot.map(el => el.id),
-      newIds: newElements.map(el => el.id)
-    });
-    
-    // Only add to history if this is actually a change
-    if (isChange) {
-      
-      // Add current state to history before making changes
-      setHistory(prev => {
-        const newHistory = [...prev.slice(0, historyIndex + 1), currentSnapshot];
-        logger.info("DrawArea", "📝 History updated with current state", {
-          previousLength: prev.length,
-          newLength: newHistory.length,
-          snapshotElements: currentSnapshot.length
-        });
-        return newHistory;
-      });
-      setHistoryIndex(prev => prev + 1);
-      
-      // Update elements immediately
-      logger.info("DrawArea", "📝 Updating elements immediately", {
-        newElementsLength: newElements.length,
-        newElementIds: newElements.map(el => el.id)
-      });
-      setElements(newElements);
-      
-      // Schedule capturing the final state after the change is complete
-      setTimeout(() => {
-        const finalSnapshot = createDeepElementsSnapshot(newElements);
-        setHistory(prevHistory => {
-          const updatedHistory = [...prevHistory, finalSnapshot];
-          logger.info("DrawArea", "📝 Final state captured in history", {
-            finalElements: finalSnapshot.length,
-            totalHistoryLength: updatedHistory.length,
-            finalElementIds: finalSnapshot.map(el => el.id).slice(0, 5)
-          });
-          return updatedHistory;
-        });
-        setHistoryIndex(prev => prev + 1);
-        onStateChange?.();
-      }, 0);
-    } else {
-      // Update elements even if no history change
-      logger.info("DrawArea", "📝 No change detected, updating elements without history", {
-        newElementsLength: newElements.length
-      });
-      setElements(newElements);
-      onStateChange?.();
-    }
-  }, [elements, historyIndex, onStateChange, createDeepElementsSnapshot]);
+
+    // Update elements
+    setElements(newElements);
+
+    // Save to unified history
+    pushToHistory(newElements);
+  }, [elements, historyIndex, history.length, setElements, pushToHistory]);
 
   /**
    * @brief Undo the last action
-   * @details Restores the previous state from history
+   * @details Restores the previous state from unified history
    */
   const undo = useCallback(() => {
-    logger.info("DrawArea", "🔄 Undo called", { 
-      historyIndex, 
-      historyLength: history.length,
-      canUndo: historyIndex > 0,
-      currentElements: elements.length 
-    });
-    
-    // Validate history state and fix if corrupted
-    if (historyIndex >= history.length) {
-      logger.warn("DrawArea", "🔧 History index out of bounds, resetting", {
-        historyIndex,
-        historyLength: history.length
-      });
-      setHistoryIndex(Math.max(0, history.length - 1));
+    if (historyIndex <= 0) {
+      logger.warn("DrawArea", "🔄 Cannot undo - at history start");
       return;
     }
-    
-    if (historyIndex > 0 && history[historyIndex - 1]) {
-      const previousState = history[historyIndex - 1];
-      logger.info("DrawArea", "🔄 Applying undo", {
-        previousStateElements: previousState?.length || 0,
-        newHistoryIndex: historyIndex - 1,
-        restoringElementIds: previousState?.map(el => el.id).slice(0, 5) // Show first 5 IDs
-      });
-      
-      // Create deep copies of the restored elements to ensure proper function binding
-      const restoredElements = createDeepElementsSnapshot(previousState);
-      setElements(restoredElements);
-      setHistoryIndex(prev => prev - 1);
-      onStateChange?.();
-    } else {
-      logger.warn("DrawArea", "🔄 Cannot undo - no history available");
+
+    const newIndex = historyIndex - 1;
+    const previousState = history[newIndex];
+
+    if (!previousState) {
+      logger.warn("DrawArea", "🔄 Cannot undo - invalid history state");
+      return;
     }
+
+    logger.info("DrawArea", "🔄 Applying undo", {
+      fromIndex: historyIndex,
+      toIndex: newIndex,
+      restoringElements: previousState.elements.length,
+      restoringBrushStrokes: previousState.brushStrokes.length,
+    });
+
+    setElements(createDeepElementsSnapshot(previousState.elements));
+    setBrushStrokes([...previousState.brushStrokes]);
+    setHistoryIndex(newIndex);
+    onStateChange?.();
   }, [history, historyIndex, onStateChange, createDeepElementsSnapshot]);
 
   /**
@@ -646,41 +657,33 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
 
   /**
    * @brief Redo the last undone action
-   * @details Restores the next state from history
+   * @details Restores the next state from unified history
    */
   const redo = useCallback(() => {
-    logger.info("DrawArea", "🔄 Redo called", {
-      historyIndex,
-      historyLength: history.length,
-      canRedo: historyIndex < history.length - 1
-    });
-    
-    // Validate history state and fix if corrupted
-    if (historyIndex >= history.length) {
-      logger.warn("DrawArea", "🔧 History index out of bounds for redo, resetting", {
-        historyIndex,
-        historyLength: history.length
-      });
-      setHistoryIndex(Math.max(0, history.length - 1));
+    if (historyIndex >= history.length - 1) {
+      logger.warn("DrawArea", "🔄 Cannot redo - at history end");
       return;
     }
-    
-    if (historyIndex < history.length - 1 && history[historyIndex + 1]) {
-      const nextState = history[historyIndex + 1];
-      logger.info("DrawArea", "🔄 Applying redo", {
-        nextStateElements: nextState?.length || 0,
-        newHistoryIndex: historyIndex + 1,
-        restoringElementIds: nextState?.map(el => el.id).slice(0, 5) // Show first 5 IDs
-      });
-      
-      // Create deep copies of the restored elements to ensure proper function binding
-      const restoredElements = createDeepElementsSnapshot(nextState);
-      setElements(restoredElements);
-      setHistoryIndex(prev => prev + 1);
-      onStateChange?.();
-    } else {
-      logger.warn("DrawArea", "🔄 Cannot redo - no future history available");
+
+    const newIndex = historyIndex + 1;
+    const nextState = history[newIndex];
+
+    if (!nextState) {
+      logger.warn("DrawArea", "🔄 Cannot redo - invalid history state");
+      return;
     }
+
+    logger.info("DrawArea", "🔄 Applying redo", {
+      fromIndex: historyIndex,
+      toIndex: newIndex,
+      restoringElements: nextState.elements.length,
+      restoringBrushStrokes: nextState.brushStrokes.length,
+    });
+
+    setElements(createDeepElementsSnapshot(nextState.elements));
+    setBrushStrokes([...nextState.brushStrokes]);
+    setHistoryIndex(newIndex);
+    onStateChange?.();
   }, [history, historyIndex, onStateChange, createDeepElementsSnapshot]);
 
   /**
@@ -1280,36 +1283,214 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
    * @param point The connection point coordinates
    */
   const handleConnectorStart = useCallback((elementId: string, point: { x: number; y: number }) => {
-    setConnectorStartPoint({ elementId, point });
-    logger.debug('interaction', 'Connector drawing started', { elementId, point });
-  }, []);
+    const startData = { elementId, point };
+    setConnectorStartPoint(startData);
+    connectorStartRef.current = startData;
+    targetShapeRef.current = null; // Reset target for this drag
+    setConnectorPreview(point);
 
-  /**
-   * @brief Handle connector finish (drop on another element)
-   * @param toElementId The target element ID
-   * @param toPoint The target connection point
-   * @param style The connector style
-   */
-  const handleConnectorFinish = useCallback((toElementId: string, toPoint: { x: number; y: number }, style: ConnectorStyle) => {
-    if (!connectorStartPoint) return;
+    const handlePointerMove = (e: PointerEvent) => {
+      const svgRect = svgRef.current?.getBoundingClientRect();
+      if (!svgRect) return;
 
-    const newConnector: Connector = {
-      id: `connector-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
-      fromElementId: connectorStartPoint.elementId,
-      toElementId,
-      fromPoint: connectorStartPoint.point,
-      toPoint,
-      style,
+      const clientX = e.clientX - svgRect.left;
+      const clientY = e.clientY - svgRect.top;
+      const x = (clientX - panOffset.x) / zoom;
+      const y = (clientY - panOffset.y) / zoom;
+
+      const currentPos = { x, y };
+      connectorCurrentPosRef.current = currentPos;
+      setConnectorPreview(currentPos);
+
+      const DETECTION_RANGE = 80;
+      let closestShape: string | null = null;
+      let minDistance = DETECTION_RANGE;
+
+      console.log('🔍 DETECTION: cursor at', { x, y }, 'checking', elements.length, 'elements, excluding', elementId);
+
+      for (const el of elements) {
+        if (el.id === elementId) continue;
+        const bounds = getRotatedBoundingRect(el);
+
+        // Extract min/max coordinates from bounds
+        const minX = Math.min(bounds.topLeft.x, bounds.topRight.x, bounds.bottomLeft.x, bounds.bottomRight.x);
+        const maxX = Math.max(bounds.topLeft.x, bounds.topRight.x, bounds.bottomLeft.x, bounds.bottomRight.x);
+        const minY = Math.min(bounds.topLeft.y, bounds.topRight.y, bounds.bottomLeft.y, bounds.bottomRight.y);
+        const maxY = Math.max(bounds.topLeft.y, bounds.topRight.y, bounds.bottomLeft.y, bounds.bottomRight.y);
+
+        const closestX = Math.max(minX, Math.min(x, maxX));
+        const closestY = Math.max(minY, Math.min(y, maxY));
+        const dx = x - closestX;
+        const dy = y - closestY;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        console.log(`  Element ${el.id}: bounds=[${minX},${maxX}]x[${minY},${maxY}], distance=${distance.toFixed(1)}`);
+
+        if (distance < minDistance) {
+          minDistance = distance;
+          closestShape = el.id;
+          console.log(`    ✅ New closest at ${distance.toFixed(1)}px`);
+        }
+      }
+
+      if (closestShape !== targetShapeRef.current) {
+        console.log('🎨 TARGET UPDATE:', { old: targetShapeRef.current, new: closestShape, distance: minDistance });
+      }
+
+      console.log('📍 POINTER MOVE - Setting target:', { closestShape, minDistance });
+      setTargetShapeForConnector(closestShape);
+      targetShapeRef.current = closestShape;
+      console.log('📍 After set - targetShapeRef.current is now:', targetShapeRef.current);
     };
 
-    setConnectors(prev => [...prev, newConnector]);
-    setConnectorStartPoint(null);
-    logger.debug('interaction', 'Connector created', {
-      connectorId: newConnector.id,
-      from: newConnector.fromElementId,
-      to: newConnector.toElementId,
-    });
-  }, [connectorStartPoint]);
+    const handlePointerUp = (e: PointerEvent) => {
+      console.log('🔴🔴🔴 POINTER UP FIRED 🔴🔴🔴');
+      const startPoint = connectorStartRef.current;
+      const targetShapeId = targetShapeRef.current;
+
+      console.log('📌 Reading refs:', {
+        startPoint: !!startPoint,
+        targetShapeRef_current: targetShapeRef.current
+      });
+      console.log('🔴 CONNECTOR RELEASE:', {
+        hasStartPoint: !!startPoint,
+        targetShapeId,
+        elementCount: elements.length,
+        allElementIds: elements.map(el => el.id)
+      });
+
+      window.removeEventListener('pointermove', handlePointerMove);
+      window.removeEventListener('pointerup', handlePointerUp);
+      window.removeEventListener('mousemove', handlePointerMove);
+      window.removeEventListener('mouseup', handlePointerUp);
+
+      if (!startPoint) {
+        console.log('❌ No start point, aborting connector creation');
+        connectorStartRef.current = null;
+        targetShapeRef.current = null;
+        setConnectorStartPoint(null);
+        setConnectorPreview(null);
+        setTargetShapeForConnector(null);
+        return;
+      }
+
+      // Create connector regardless of whether there's a target shape
+      // If there's a target, use its center; otherwise use the mouse release point
+      let toElementId: string | undefined = undefined;
+      let toPoint = connectorCurrentPosRef.current || connectorPreview || startPoint.point;
+
+      if (targetShapeId) {
+        console.log('🔍 Looking for target element:', targetShapeId);
+        const targetElement = elements.find(el => el.id === targetShapeId);
+        console.log('✅ Found target element:', !!targetElement);
+
+        if (targetElement) {
+          toElementId = targetElement.id;
+          const targetCenterX = (targetElement.start.x + targetElement.end.x) / 2;
+          const targetCenterY = (targetElement.start.y + targetElement.end.y) / 2;
+          toPoint = { x: targetCenterX, y: targetCenterY };
+        }
+      } else {
+        console.log('⚠️  No target shape - creating free-end connector');
+      }
+
+      // Calculate connection point indices for attached endpoints
+      let fromPointIndex: number | undefined = undefined;
+      let toPointIndex: number | undefined = undefined;
+
+      // Find which point on the start element is closest to the start position
+      if (startPoint.elementId) {
+        const startElement = elements.find(el => el.id === startPoint.elementId);
+        if (startElement) {
+          const startPoints = getConnectionPointsGrid(startElement);
+          let minDist = Infinity;
+          for (let i = 0; i < startPoints.length; i++) {
+            const dist = Math.hypot(
+              startPoints[i].x - startPoint.point.x,
+              startPoints[i].y - startPoint.point.y
+            );
+            if (dist < minDist) {
+              minDist = dist;
+              fromPointIndex = i;
+            }
+          }
+        }
+      }
+
+      // Find which point on the target element is closest to the end position
+      if (toElementId) {
+        const toElement = elements.find(el => el.id === toElementId);
+        if (toElement) {
+          const toPoints = getConnectionPointsGrid(toElement);
+          let minDist = Infinity;
+          for (let i = 0; i < toPoints.length; i++) {
+            const dist = Math.hypot(
+              toPoints[i].x - toPoint.x,
+              toPoints[i].y - toPoint.y
+            );
+            if (dist < minDist) {
+              minDist = dist;
+              toPointIndex = i;
+            }
+          }
+        }
+      }
+
+      // Create connector as a DrawElement with type === 'connector'
+      const newConnectorElement: DrawElement = {
+        id: `connector-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+        type: 'connector',
+        dimensionality: '1D',
+        start: startPoint.point,
+        end: toPoint,
+        fromElementId: startPoint.elementId || undefined,
+        toElementId: toElementId,
+        fromAttached: !!startPoint.elementId,
+        toAttached: !!toElementId,
+        fromPointIndex,
+        toPointIndex,
+        connectorStyle: {
+          lineWidth: 2,
+          color: '#000000',
+          lineStyle: 'solid',
+          opacity: 1,
+          startArrow: 'none',
+          endArrow: 'standard'
+        }
+      };
+
+      console.log('📍 CREATING CONNECTOR ELEMENT:', newConnectorElement);
+      // Add connector to elements array
+      pushToHistoryAndSetElements(prev => {
+        console.log('📊 Previous elements:', prev.length);
+        const updated = [...prev, newConnectorElement];
+        console.log('📊 Updated elements:', updated.length);
+        return updated;
+      });
+      logger.info('interaction', 'Connector created', {
+        from: startPoint.elementId || 'free',
+        to: toElementId || 'free'
+      });
+
+      connectorStartRef.current = null;
+      targetShapeRef.current = null;
+      connectorCurrentPosRef.current = null;
+      setConnectorStartPoint(null);
+      setConnectorPreview(null);
+      setTargetShapeForConnector(null);
+    };
+
+    // Add listeners for both pointer and mouse events for better compatibility
+    window.addEventListener('pointermove', handlePointerMove);
+    window.addEventListener('pointerup', handlePointerUp);
+    window.addEventListener('mousemove', handlePointerMove);
+    window.addEventListener('mouseup', handlePointerUp);
+
+    logger.debug('interaction', 'Connector drag started', { elementId, point });
+  }, [elements, panOffset, zoom]);
+
+  // Note: Connector creation is now handled entirely through elements array
+  // No separate handleConnectorFinish or handleConnectorSelect needed
 
   /**
    * @brief Handle brush stroke start
@@ -1360,16 +1541,24 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       config: brushConfig,
     };
 
-    setBrushStrokes(prev => [...prev, newStroke]);
+    // Add new stroke to current brush strokes
+    const updatedBrushStrokes = [...brushStrokes, newStroke];
+
+    // Update brush strokes and save to unified history
+    setBrushStrokes(updatedBrushStrokes);
+
+    // Save the complete state (elements + new brush stroke) to unified history
+    pushToHistory(elements, updatedBrushStrokes);
+
     setIsDrawing(false);
     setCurrentStroke([]);
 
     logger.debug('interaction', 'Brush stroke created', {
       strokeId: newStroke.id,
       pointCount: currentStroke.length,
-      brushType: brushConfig.type,
+      brushType: brushConfig?.type,
     });
-  }, [isDrawing, currentStroke, brushConfig]);
+  }, [isDrawing, currentStroke, brushConfig, brushStrokes, elements, pushToHistory]);
 
   /**
    * @brief Handle right-click context menu
@@ -1453,7 +1642,10 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
    * @brief Close context menu when clicking elsewhere
    */
   useEffect(() => {
-    const handleClick = () => setContextMenu(null);
+    const handleClick = () => {
+      setContextMenu(null);
+      setQuickConnectMenu(null);
+    };
     document.addEventListener('click', handleClick);
     return () => document.removeEventListener('click', handleClick);
   }, []);
@@ -1585,6 +1777,10 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
   useImperativeHandle(ref, () => ({
     getSvgElement: () => svgRef.current,
     getElements: () => elements,
+    getBrushStrokes: () => brushStrokes,
+    setBrushStrokes: (strokes: any[]) => {
+      setBrushStrokes(strokes);
+    },
     setElements: (els: DrawElement[]) => {
       setElements(els);
     },
@@ -1772,11 +1968,24 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       handlePasteImage(e);
     };
     
+    // Handle delete connector event from properties panel
+    const handleDeleteConnector = (event: Event) => {
+      const customEvent = event as CustomEvent<{ connectorId: string }>;
+      const connectorId = customEvent.detail.connectorId;
+      pushToHistoryAndSetElements(prev =>
+        prev.filter(el => el.id !== connectorId)
+      );
+      setSelectedElementIds([]);
+      setSelectedElement?.(undefined);
+    };
+
     window.addEventListener("keydown", handleKeyDown);
     window.addEventListener("paste", handlePasteWithFocus as any);
+    window.addEventListener("deleteConnector", handleDeleteConnector);
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
       window.removeEventListener("paste", handlePasteWithFocus as any);
+      window.removeEventListener("deleteConnector", handleDeleteConnector);
     };
   }, [selectedElementIds, elements, setSelectedElement, copiedElements, disableKeyboardHandlers, pasteElements, pushToHistoryAndSetElements, undo, redo, deleteSelectedElements, selectAllElements, createDeepElementCopy, setCopiedElements, setHoveredElementId, onStateChange, handlePasteImage]);
 
@@ -1911,6 +2120,17 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     const dy = measureEnd.y - measureStart.y;
     const distance = Math.round(Math.sqrt(dx * dx + dy * dy));
 
+    // Guard against invalid zoom values
+    if (!zoom || zoom <= 0) {
+      return null;
+    }
+
+    const safeZoom = Math.max(zoom, 0.01);
+    const rectWidth = Math.max(60 / safeZoom, 1);
+    const rectHeight = Math.max(24 / safeZoom, 1);
+    const maxRx = Math.min(rectWidth, rectHeight) / 2;
+    const safeRx = Math.min(4 / safeZoom, maxRx);
+
     return (
       <g className="measurement-guide" pointerEvents="none">
         <line
@@ -1919,23 +2139,23 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
           x2={measureEnd.x}
           y2={measureEnd.y}
           stroke="#ef4444"
-          strokeWidth={2 / zoom}
-          strokeDasharray={`${5 / zoom},${5 / zoom}`}
+          strokeWidth={Math.max(2 / safeZoom, 0.5)}
+          strokeDasharray={`${Math.max(5 / safeZoom, 1)},${Math.max(5 / safeZoom, 1)}`}
         />
-        <circle cx={measureStart.x} cy={measureStart.y} r={4 / zoom} fill="#ef4444" />
-        <circle cx={measureEnd.x} cy={measureEnd.y} r={4 / zoom} fill="#ef4444" />
-        
+        <circle cx={measureStart.x} cy={measureStart.y} r={Math.max(4 / safeZoom, 0.5)} fill="#ef4444" />
+        <circle cx={measureEnd.x} cy={measureEnd.y} r={Math.max(4 / safeZoom, 0.5)} fill="#ef4444" />
+
         {/* Distance label */}
         <g transform={`translate(${(measureStart.x + measureEnd.x) / 2}, ${(measureStart.y + measureEnd.y) / 2})`}>
           <rect
-            x={-30 / zoom}
-            y={-12 / zoom}
-            width={60 / zoom}
-            height={24 / zoom}
+            x={-rectWidth / 2}
+            y={-rectHeight / 2}
+            width={rectWidth}
+            height={rectHeight}
             fill="white"
             stroke="#ef4444"
-            strokeWidth={1 / zoom}
-            rx={4 / zoom}
+            strokeWidth={Math.max(1 / safeZoom, 0.25)}
+            rx={safeRx}
           />
           <text
             x={0}
@@ -1943,7 +2163,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
             textAnchor="middle"
             dominantBaseline="middle"
             fill="#ef4444"
-            fontSize={12 / zoom}
+            fontSize={Math.max(12 / safeZoom, 8)}
             fontWeight="bold"
             style={{ pointerEvents: 'none', userSelect: 'none' }}
           >
@@ -1995,7 +2215,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       const clientY = e.clientY - svgRect.top;
       const x = (clientX - panOffset.x) / zoom;
       const y = (clientY - panOffset.y) / zoom;
-      
+
       const snapped = snapPointToGrid({ x, y }, GRID_SIZE);
       setMeasureStart(snapped);
       setMeasureEnd(snapped);
@@ -2008,7 +2228,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
         const moveClientY = moveEvent.clientY - moveSvgRect.top;
         const moveX = (moveClientX - panOffset.x) / zoom;
         const moveY = (moveClientY - panOffset.y) / zoom;
-        
+
         setMeasureEnd(snapPointToGrid({ x: moveX, y: moveY }, GRID_SIZE));
       };
 
@@ -2019,6 +2239,12 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
 
       window.addEventListener("pointermove", measureMove);
       window.addEventListener("pointerup", measureUp);
+      return;
+    }
+
+    // Connector tool is handled by data-connector-element-id click detection in SVG onPointerDown
+    // above, so we skip it here to avoid conflicts
+    if (activeTool === 'connector') {
       return;
     }
 
@@ -2241,11 +2467,11 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
     if (scrollableParent) {
       const SCROLL_THRESHOLD = 60; // Distance from edge to trigger scrolling
       const rect = scrollableParent.getBoundingClientRect();
-      
+
       // Calculate scroll velocity based on distance from edge (closer = faster)
       let scrollLeftDelta = 0;
       let scrollTopDelta = 0;
-      
+
       // Horizontal scrolling
       if (e.clientX > rect.right - SCROLL_THRESHOLD) {
         // Near right edge
@@ -2256,7 +2482,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
         const distFromEdge = e.clientX - rect.left;
         scrollLeftDelta = -Math.max(5, 15 - distFromEdge);
       }
-      
+
       // Vertical scrolling (independent of horizontal)
       if (e.clientY > rect.bottom - SCROLL_THRESHOLD) {
         // Near bottom edge
@@ -2267,7 +2493,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
         const distFromEdge = e.clientY - rect.top;
         scrollTopDelta = -Math.max(5, 15 - distFromEdge);
       }
-      
+
       // Apply scrolling
       if (scrollLeftDelta !== 0) {
         scrollableParent.scrollLeft += scrollLeftDelta;
@@ -2277,31 +2503,159 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       }
     }
 
+    // Detect shape overlap when dragging connector endpoint
+    if (draggingConnectorRef.current && svgRect) {
+      const connector = elements.find(el => el.id === draggingConnectorRef.current?.id);
+
+      if (connector?.type === 'connector') {
+        // Calculate current endpoint position in SVG coordinates
+        const currentSVGX = (e.clientX - svgRect.left) / zoom;
+        const currentSVGY = (e.clientY - svgRect.top) / zoom;
+        const endpointPos = { x: currentSVGX, y: currentSVGY };
+
+        console.log('🔍 Checking overlap at:', endpointPos);
+
+        let overlappingShape: { shapeId: string; pointIndex: number } | null = null;
+
+        for (const el of elements) {
+          if (el.id === connector.id || el.type === 'connector' || el.dimensionality === '1D') continue;
+
+          // Get shape bounds with margin for detection
+          const OVERLAP_MARGIN = 20; // 20px margin for detection
+          const minX = Math.min(el.start.x, el.end.x) - OVERLAP_MARGIN;
+          const maxX = Math.max(el.start.x, el.end.x) + OVERLAP_MARGIN;
+          const minY = Math.min(el.start.y, el.end.y) - OVERLAP_MARGIN;
+          const maxY = Math.max(el.start.y, el.end.y) + OVERLAP_MARGIN;
+
+          console.log(`  Shape ${el.id}: bounds [${minX},${maxX}]x[${minY},${maxY}], endpoint at [${endpointPos.x},${endpointPos.y}]`);
+
+          // Check if endpoint is inside shape bounds (with margin)
+          if (endpointPos.x >= minX && endpointPos.x <= maxX &&
+              endpointPos.y >= minY && endpointPos.y <= maxY) {
+            console.log(`    ✅ OVERLAP DETECTED with margin!`);
+            // Find closest connection point on this shape
+            const points = getConnectionPointsGrid(el);
+            let closestIdx = 0;
+            let minDist = Infinity;
+            for (let i = 0; i < points.length; i++) {
+              const dist = Math.hypot(points[i].x - endpointPos.x, points[i].y - endpointPos.y);
+              if (dist < minDist) {
+                minDist = dist;
+                closestIdx = i;
+              }
+            }
+            overlappingShape = { shapeId: el.id, pointIndex: closestIdx };
+            console.log(`    Using connection point ${closestIdx}`);
+            break;
+          }
+        }
+
+        // Update target shape
+        if (overlappingShape?.shapeId !== connectorDragTargetRef.current?.shapeId) {
+          console.log('🎨 Target shape updated:', overlappingShape?.shapeId);
+          connectorDragTargetRef.current = overlappingShape;
+          setConnectorDragTargetShape(overlappingShape?.shapeId || null);
+        }
+      }
+    }
+
     setElements(prev => {
       const updated = prev.map(el => {
         // Move all selected elements by the same delta
         if (selectedElementIds.includes(el.id)) {
           const initialPos = initialSelectedPositions.current.get(el.id);
           if (initialPos) {
+            // Check if dragging specific endpoint of a connector
+            const isDraggingConnectorEndpoint = draggingConnectorRef.current?.id === el.id;
+            const draggingEndpoint = isDraggingConnectorEndpoint ? draggingConnectorRef.current.endpoint : null;
+
+            // For connectors with attachment state, only move detached endpoints
+            const isConnector = el.type === 'connector';
+            const fromAttached = isConnector && el.fromAttached !== false;
+            const toAttached = isConnector && el.toAttached !== false;
+
+            // If dragging specific endpoint, only move that endpoint
+            if (isDraggingConnectorEndpoint && draggingEndpoint) {
+              let newStart = el.start;
+              let newEnd = el.end;
+              let newFromPointIndex = el.fromPointIndex;
+              let newToPointIndex = el.toPointIndex;
+
+              // Current mouse position in SVG space
+              const currentSVGX = (e.clientX - svgRect.left) / zoom;
+              const currentSVGY = (e.clientY - svgRect.top) / zoom;
+
+              if (draggingEndpoint === 'start') {
+                // Set endpoint directly to current mouse position
+                newStart = {
+                  x: currentSVGX,
+                  y: currentSVGY
+                };
+                newFromPointIndex = undefined;
+
+                // Snap to target shape if nearby
+                if (connectorDragTargetRef.current) {
+                  const targetShape = elements.find(s => s.id === connectorDragTargetRef.current?.shapeId);
+                  if (targetShape) {
+                    const points = getConnectionPointsGrid(targetShape);
+                    const pointIndex = connectorDragTargetRef.current.pointIndex;
+                    if (pointIndex >= 0 && pointIndex < points.length) {
+                      newStart = points[pointIndex];
+                      newFromPointIndex = pointIndex;
+                    }
+                  }
+                }
+              } else {
+                // Set endpoint directly to current mouse position
+                newEnd = {
+                  x: currentSVGX,
+                  y: currentSVGY
+                };
+                newToPointIndex = undefined;
+
+                // Snap to target shape if nearby
+                if (connectorDragTargetRef.current) {
+                  const targetShape = elements.find(s => s.id === connectorDragTargetRef.current?.shapeId);
+                  if (targetShape) {
+                    const points = getConnectionPointsGrid(targetShape);
+                    const pointIndex = connectorDragTargetRef.current.pointIndex;
+                    if (pointIndex >= 0 && pointIndex < points.length) {
+                      newEnd = points[pointIndex];
+                      newToPointIndex = pointIndex;
+                    }
+                  }
+                }
+              }
+
+              return {
+                ...el,
+                start: newStart,
+                end: newEnd,
+                fromPointIndex: newFromPointIndex,
+                toPointIndex: newToPointIndex
+              };
+            }
+
+            // For regular connector dragging (whole connector, not endpoint), move both
             return {
               ...el,
-              start: { 
-                x: initialPos.start.x + deltaX, 
-                y: initialPos.start.y + deltaY 
+              start: {
+                x: initialPos.start.x + deltaX,
+                y: initialPos.start.y + deltaY
               },
               end: {
                 x: initialPos.end.x + deltaX,
-                y: initialPos.end.y + deltaY,
-              },
+                y: initialPos.end.y + deltaY
+              }
             };
           }
         }
         return el;
       });
-      
+
       // Check if canvas needs to expand during drag
       checkAndExpandCanvas(updated);
-      
+
       return updated;
     });
   }
@@ -2311,6 +2665,38 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
    * @function
    */
   function handlePointerUp() {
+    // Handle attaching connector to target shape if one was detected
+    if (draggingConnectorRef.current && connectorDragTargetRef.current) {
+      const connector = elements.find(el => el.id === draggingConnectorRef.current?.id);
+      const targetShape = elements.find(el => el.id === connectorDragTargetRef.current?.shapeId);
+
+      if (connector?.type === 'connector' && targetShape) {
+        const endpoint = draggingConnectorRef.current.endpoint;
+        const pointIndex = connectorDragTargetRef.current.pointIndex;
+
+        pushToHistoryAndSetElements(prev => prev.map(el => {
+          if (el.id === connector.id) {
+            if (endpoint === 'start') {
+              return {
+                ...el,
+                fromElementId: targetShape.id,
+                fromAttached: true,
+                fromPointIndex: pointIndex
+              };
+            } else {
+              return {
+                ...el,
+                toElementId: targetShape.id,
+                toAttached: true,
+                toPointIndex: pointIndex
+              };
+            }
+          }
+          return el;
+        }));
+      }
+    }
+
     // Clean up drag state - history was already handled in handlePointerMove
     if (draggingId) {
       logger.info("DrawArea", "🎯 Drag operation completed", {
@@ -2318,17 +2704,121 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
         selectedCount: selectedElementIds.length,
         historyAlreadyUpdated: hasPushedToHistory.current
       });
-      
+
       // Check if canvas needs to expand after drag
       checkAndExpandCanvas(elements);
     }
-    
+
     setDraggingId(null);
+    draggingConnectorRef.current = null; // Clear connector endpoint drag state
+    connectorDragTargetRef.current = null; // Clear connector drag target
+    setConnectorDragTargetShape(null);
+    setHoveredConnectorEnd(null); // Clear hovered endpoint
     // Clear alignment guides
     setAlignmentGuides({ verticalLines: [], horizontalLines: [] });
     initialSelectedPositions.current.clear(); // Clear stored positions
     window.removeEventListener("pointermove", handlePointerMove);
     window.removeEventListener("pointerup", handlePointerUp);
+  }
+
+  /**
+   * Renders connection points on shapes - only shown when connector tool is active
+   */
+  function renderConnectionSuggestions() {
+    // Only show suggestions when dragging a shape
+    if (!draggingIdRef.current) return null;
+
+    const PROXIMITY_THRESHOLD = 60; // Show suggestions within 60px
+    const draggingElement = elements.find(el => el.id === draggingIdRef.current);
+
+    if (!draggingElement) return null;
+
+    const dragCenterX = (draggingElement.start.x + draggingElement.end.x) / 2;
+    const dragCenterY = (draggingElement.start.y + draggingElement.end.y) / 2;
+
+    const suggestionLines: JSX.Element[] = [];
+
+    // Find nearby connection points and draw suggestion lines
+    elements.forEach(el => {
+      if (el.type === 'connector' || el.dimensionality === '1D' || el.id === draggingElement.id) return;
+
+      const points = getConnectionPointsGrid(el);
+      points.forEach((point) => {
+        const distance = Math.hypot(point.x - dragCenterX, point.y - dragCenterY);
+        if (distance < PROXIMITY_THRESHOLD) {
+          suggestionLines.push(
+            <line
+              key={`suggestion-${draggingElement.id}-${el.id}-${point.x}-${point.y}`}
+              x1={dragCenterX}
+              y1={dragCenterY}
+              x2={point.x}
+              y2={point.y}
+              stroke="#22c55e"
+              strokeWidth={2}
+              strokeDasharray="5,5"
+              opacity={0.6}
+              pointerEvents="none"
+            />
+          );
+        }
+      });
+    });
+
+    return <g className="connection-suggestions">{suggestionLines}</g>;
+  }
+
+  function renderConnectionPoints() {
+    // Show connection points when using connector tool OR when dragging a shape
+    const shouldShowConnectionPoints = activeTool === 'connector' || !!draggingIdRef.current;
+
+    if (!shouldShowConnectionPoints) return null;
+
+    const PROXIMITY_THRESHOLD = 60; // Show suggestions within 60px
+    const draggingElement = draggingIdRef.current ? elements.find(el => el.id === draggingIdRef.current) : null;
+
+    return (
+      <g className="connection-points" pointerEvents="none">
+        {elements.map(el => {
+          if (el.type === 'connector' || el.dimensionality === '1D') return null;
+
+          const points = getConnectionPointsGrid(el);
+
+          // If dragging, check proximity to highlight suitable connection points
+          let proximityPoints: Set<number> = new Set();
+          if (draggingElement && draggingElement.id !== el.id) {
+            const dragCenterX = (draggingElement.start.x + draggingElement.end.x) / 2;
+            const dragCenterY = (draggingElement.start.y + draggingElement.end.y) / 2;
+
+            points.forEach((point, idx) => {
+              const distance = Math.hypot(point.x - dragCenterX, point.y - dragCenterY);
+              if (distance < PROXIMITY_THRESHOLD) {
+                proximityPoints.add(idx);
+              }
+            });
+          }
+
+          return (
+            <g key={`conn-points-${el.id}`}>
+              {points.map((point, idx) => {
+                const isProximate = proximityPoints.has(idx);
+                return (
+                  <circle
+                    key={`conn-point-${el.id}-${idx}`}
+                    cx={point.x}
+                    cy={point.y}
+                    r={isProximate ? 5 : 3}
+                    fill={isProximate ? "#22c55e" : "#6366f1"}
+                    opacity={isProximate ? 0.8 : 0.5}
+                    stroke={isProximate ? "#16a34a" : "#6366f1"}
+                    strokeWidth={isProximate ? 2 : 1}
+                  />
+                );
+              })}
+            </g>
+          );
+        })}
+      </g>
+    );
   }
 
   /**
@@ -2557,6 +3047,8 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
       setBackgroundColor,
       // Transfer complex property from toolbox item to element
       complex: toolboxItem.complex,
+      // Transfer dimensionality from toolbox item (2D or 1D)
+      dimensionality: (toolboxItem as any).dimensionality || '2D',
       // Store element definition for properties panel
       elementDefinition: toolboxItem.properties ? { properties: toolboxItem.properties } : undefined,
       ...(defaultStyles && { styles: defaultStyles }),
@@ -2652,13 +3144,37 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
         minWidth: GRID_WIDTH * zoom,
         minHeight: GRID_HEIGHT * zoom,
         display: "block",
-        cursor: isPanning ? 'grabbing' : brushMode ? 'crosshair' : 'default'
+        cursor: isPanning ? 'grabbing' : brushMode ? 'crosshair' : activeTool === 'connector' ? 'crosshair' : 'default'
       }}
       tabIndex={0}
       onPointerDown={(e) => {
         svgRef.current?.focus();
+
+        // Check if click was on a connection point
+        const target = e.target as SVGElement;
+        if (target.getAttribute && target.getAttribute('data-connector-element-id')) {
+          const elementId = target.getAttribute('data-connector-element-id');
+          const x = parseFloat(target.getAttribute('data-connector-x') || '0');
+          const y = parseFloat(target.getAttribute('data-connector-y') || '0');
+          console.log('🎯 Connection point clicked!', { elementId, x, y });
+          handleConnectorStart(elementId || '', { x, y });
+          return;
+        }
+
         if (brushMode) {
           handleBrushStart(e);
+        } else if (activeTool === 'connector') {
+          // Allow free connector drawing from any point
+          const svg = svgRef.current;
+          if (!svg) return;
+
+          const rect = svg.getBoundingClientRect();
+          const x = (e.clientX - rect.left - panOffset.x) / zoom;
+          const y = (e.clientY - rect.top - panOffset.y) / zoom;
+
+          console.log('🎯 Connector started at free point:', { x, y });
+          handleConnectorStart('', { x, y }); // Empty elementId means free start
+          return;
         } else {
           handleSvgPointerDown(e);
         }
@@ -2736,7 +3252,11 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
         
         {/* Grid lines */}
         {showGrid && renderGrid()}
-        
+
+        {/* Connection points for connector tool */}
+        {renderConnectionSuggestions()}
+        {renderConnectionPoints()}
+
         {/* Alignment guides for auto-positioning */}
         <g className="alignment-guides" pointerEvents="none">
           {/* Vertical alignment guides */}
@@ -2810,6 +3330,7 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
                 handleContextMenu(e, el.id);
               }}
               onConnectorStart={handleConnectorStart}
+              targetConnectorShapeId={targetShapeForConnector}
             />
           );
         })}
@@ -2881,63 +3402,45 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
           }
         })}
         
-        {/* Visual selection outline rectangles */}
+        {/* Visual selection outline rectangles - exactly at shape edges */}
         {elements.map(el => {
           if (!selectedElementIds.includes(el.id)) return null;
-          
+
           // Layer visibility check
           const elementLayer = layers.find(l => l.id === (el.layerId || 'default'));
           if (elementLayer && !elementLayer.visible) return null;
 
           if (el.rotation) {
-            // For rotated elements, use a polygon to show proper rotated outline
+            // For rotated elements, use a polygon at exact shape edges
             const rotatedRect = getRotatedBoundingRect(el);
-            const padding = 2;
-            
-            // Calculate padded corners (expand outward from center)
-            const center = rotatedRect.center;
-            const corners = [
+            const points = [
               rotatedRect.topLeft,
-              rotatedRect.topRight, 
+              rotatedRect.topRight,
               rotatedRect.bottomRight,
               rotatedRect.bottomLeft
             ];
-            
-            // Expand each corner outward from center by padding amount
-            const paddedCorners = corners.map(corner => {
-              const dx = corner.x - center.x;
-              const dy = corner.y - center.y;
-              const length = Math.sqrt(dx * dx + dy * dy);
-              if (length === 0) return corner;
-              const scale = (length + padding) / length;
-              return {
-                x: center.x + dx * scale,
-                y: center.y + dy * scale
-              };
-            });
-            
-            const points = paddedCorners.map(p => `${p.x},${p.y}`).join(' ');
-            
+
+            const pointsStr = points.map(p => `${p.x},${p.y}`).join(' ');
+
             return (
               <polygon
                 key={`selection-outline-${el.id}`}
-                points={points}
+                points={pointsStr}
                 fill="none"
                 stroke="rgba(0, 123, 255, 0.8)"
-                strokeWidth={1 / zoom} // Adjust stroke width for zoom
-                strokeDasharray={`${3 / zoom},${3 / zoom}`}
+                strokeWidth={1 / zoom}
                 pointerEvents="none"
               />
             );
           } else {
-            // For non-rotated elements, use the original rect approach
+            // For non-rotated elements, use the rect approach
             const left = Math.min(el.start.x, el.end.x);
             const top = Math.min(el.start.y, el.end.y);
             const width = Math.abs(el.end.x - el.start.x);
             const height = Math.abs(el.end.y - el.start.y);
-            
-            // For line-based elements, just show the line itself highlighted
-            if (el.isLineBased) {
+
+            // For line-based elements (1D), show selection border as thicker line
+            if (el.isLineBased || el.dimensionality === '1D') {
               return (
                 <line
                   key={`selection-outline-${el.id}`}
@@ -2946,43 +3449,362 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
                   x2={el.end.x}
                   y2={el.end.y}
                   stroke="rgba(0, 123, 255, 0.8)"
-                  strokeWidth={3 / zoom}
-                  strokeDasharray={`${3 / zoom},${3 / zoom}`}
+                  strokeWidth={8 / zoom}
+                  strokeLinecap="round"
                   pointerEvents="none"
                 />
               );
             }
-            
+
+            // Try to get actual visual bounds based on SVG content
+            let actualBounds = { left, top, width, height };
+
+            if (el.type === 'custom' && el.shapeElements && el.shapeElements.length > 0) {
+              try {
+                // Calculate bounds from all shape elements
+                let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+                let foundBounds = false;
+
+                el.shapeElements.forEach(elem => {
+                  if (elem.svg) {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(`<svg>${elem.svg}</svg>`, 'image/svg+xml');
+                    const svgElems = doc.querySelectorAll('rect, circle, ellipse, line, polygon, path');
+
+                    svgElems.forEach(el => {
+                      const tag = el.tagName.toLowerCase();
+                      let x = 0, y = 0, w = 0, h = 0;
+
+                      if (tag === 'rect') {
+                        x = parseFloat(el.getAttribute('x') || '0');
+                        y = parseFloat(el.getAttribute('y') || '0');
+                        w = parseFloat(el.getAttribute('width') || '0');
+                        h = parseFloat(el.getAttribute('height') || '0');
+                        minX = Math.min(minX, x);
+                        minY = Math.min(minY, y);
+                        maxX = Math.max(maxX, x + w);
+                        maxY = Math.max(maxY, y + h);
+                        foundBounds = true;
+                      } else if (tag === 'circle') {
+                        const cx = parseFloat(el.getAttribute('cx') || '0');
+                        const cy = parseFloat(el.getAttribute('cy') || '0');
+                        const r = parseFloat(el.getAttribute('r') || '0');
+                        minX = Math.min(minX, cx - r);
+                        minY = Math.min(minY, cy - r);
+                        maxX = Math.max(maxX, cx + r);
+                        maxY = Math.max(maxY, cy + r);
+                        foundBounds = true;
+                      } else if (tag === 'ellipse') {
+                        const cx = parseFloat(el.getAttribute('cx') || '0');
+                        const cy = parseFloat(el.getAttribute('cy') || '0');
+                        const rx = parseFloat(el.getAttribute('rx') || '0');
+                        const ry = parseFloat(el.getAttribute('ry') || '0');
+                        minX = Math.min(minX, cx - rx);
+                        minY = Math.min(minY, cy - ry);
+                        maxX = Math.max(maxX, cx + rx);
+                        maxY = Math.max(maxY, cy + ry);
+                        foundBounds = true;
+                      } else if (tag === 'polygon') {
+                        const points = el.getAttribute('points') || '';
+                        const coords = points.split(/[\s,]+/).filter(p => p).map(parseFloat);
+                        for (let i = 0; i < coords.length; i += 2) {
+                          minX = Math.min(minX, coords[i]);
+                          maxX = Math.max(maxX, coords[i]);
+                          minY = Math.min(minY, coords[i + 1]);
+                          maxY = Math.max(maxY, coords[i + 1]);
+                          foundBounds = true;
+                        }
+                      } else if (tag === 'line') {
+                        const x1 = parseFloat(el.getAttribute('x1') || '0');
+                        const y1 = parseFloat(el.getAttribute('y1') || '0');
+                        const x2 = parseFloat(el.getAttribute('x2') || '0');
+                        const y2 = parseFloat(el.getAttribute('y2') || '0');
+                        minX = Math.min(minX, x1, x2);
+                        maxX = Math.max(maxX, x1, x2);
+                        minY = Math.min(minY, y1, y2);
+                        maxY = Math.max(maxY, y1, y2);
+                        foundBounds = true;
+                      }
+                    });
+                  }
+                });
+
+                if (foundBounds && minX !== Infinity && maxX > minX && maxY > minY) {
+                  // Scale the SVG bounds to match the current canvas size
+                  const svgWidth = el.width || 48;
+                  const svgHeight = el.height || 48;
+                  const scaleX = width / svgWidth;
+                  const scaleY = height / svgHeight;
+
+                  actualBounds = {
+                    left: left + (minX * scaleX),
+                    top: top + (minY * scaleY),
+                    width: (maxX - minX) * scaleX,
+                    height: (maxY - minY) * scaleY
+                  };
+                }
+              } catch (e) {
+                // If bounds calculation fails, fall back to basic bounds
+              }
+            }
+
             return (
               <rect
                 key={`selection-outline-${el.id}`}
-                x={left - 2}
-                y={top - 2}
-                width={width + 4}
-                height={height + 4}
+                x={actualBounds.left}
+                y={actualBounds.top}
+                width={actualBounds.width}
+                height={actualBounds.height}
                 fill="none"
                 stroke="rgba(0, 123, 255, 0.8)"
-                strokeWidth={1 / zoom} // Adjust stroke width for zoom
-                strokeDasharray={`${3 / zoom},${3 / zoom}`}
+                strokeWidth={1 / zoom}
                 pointerEvents="none"
               />
             );
           }
         })}
-        
+
+        {/* Connector drag target highlight */}
+        {connectorDragTargetShape && (() => {
+          const targetEl = elements.find(el => el.id === connectorDragTargetShape);
+          if (!targetEl || targetEl.dimensionality === '1D') return null;
+
+          const left = Math.min(targetEl.start.x, targetEl.end.x);
+          const top = Math.min(targetEl.start.y, targetEl.end.y);
+          const width = Math.abs(targetEl.end.x - targetEl.start.x);
+          const height = Math.abs(targetEl.end.y - targetEl.start.y);
+
+          return (
+            <>
+              <rect
+                key={`connector-drag-target-${connectorDragTargetShape}`}
+                x={left - 3}
+                y={top - 3}
+                width={width + 6}
+                height={height + 6}
+                fill="none"
+                stroke="#22c55e"
+                strokeWidth={2 / zoom}
+                pointerEvents="none"
+              />
+              {/* Highlight connection points on target shape */}
+              {(() => {
+                const points = getConnectionPointsGrid(targetEl);
+                return (
+                  <g>
+                    {points.map((point, idx) => (
+                      <circle
+                        key={`target-conn-point-${connectorDragTargetShape}-${idx}`}
+                        cx={point.x}
+                        cy={point.y}
+                        r={5}
+                        fill="#22c55e"
+                        opacity={0.7}
+                        pointerEvents="none"
+                      />
+                    ))}
+                  </g>
+                );
+              })()}
+            </>
+          );
+        })()}
+
         {/* Area selection rectangle */}
         {renderSelectionRectangle()}
 
         {/* Measurement tool guide */}
         {renderMeasurementGuide()}
 
-        {/* Connectors */}
-        <ConnectorRenderer
-          connectors={connectors}
-          selectedConnectorId={selectedConnectorId}
-          onConnectorClick={setSelectedConnectorId}
-          zoom={zoom}
-        />
+        {/* Connector Preview Line (while dragging) */}
+        {connectorStartPoint && connectorPreview && (() => {
+          const dx = connectorPreview.x - connectorStartPoint.point.x;
+          const dy = connectorPreview.y - connectorStartPoint.point.y;
+          const angle = Math.atan2(dy, dx) * (180 / Math.PI);
+
+          return (
+            <g>
+              {/* Line from start to mouse */}
+              <line
+                x1={connectorStartPoint.point.x}
+                y1={connectorStartPoint.point.y}
+                x2={connectorPreview.x}
+                y2={connectorPreview.y}
+                stroke="#0066ff"
+                strokeWidth={2}
+                strokeDasharray="5,5"
+                opacity={0.6}
+                pointerEvents="none"
+              />
+
+              {/* Arrow pointing toward mouse */}
+              <g transform={`translate(${connectorPreview.x}, ${connectorPreview.y}) rotate(${angle + 180})`}>
+                <path
+                  d="M 0 0 L 8 -4 L 8 4 Z"
+                  fill="#0066ff"
+                  opacity={0.8}
+                  pointerEvents="none"
+                />
+              </g>
+            </g>
+          );
+        })()}
+
+        {/* Connectors - Always receives latest elements array so recalculates on any change */}
+        {(() => {
+          const connectorElements = elements.filter(el => el.type === 'connector');
+          const selectedConnectorId = connectorElements.find(c => selectedElementIds.includes(c.id))?.id;
+          return (
+            <ConnectorRenderer
+              connectors={connectorElements}
+              selectedConnectorId={selectedConnectorId}
+              hoveredConnectorEnd={hoveredConnectorEnd}
+              onEndpointHover={(connectorId, endpoint) => {
+                if (connectorId && endpoint) {
+                  setHoveredConnectorEnd({ connectorId, endpoint });
+                } else {
+                  setHoveredConnectorEnd(null);
+                }
+              }}
+              onEndpointPointerDown={(connectorId, endpoint, clickPosScreen) => {
+                const connector = elements.find(el => el.id === connectorId);
+                if (!connector) return;
+
+                setSelectedElementIds([connectorId]);
+                setSelectedElement?.(connector);
+
+                const svgRect = svgRef.current?.getBoundingClientRect();
+                if (!svgRect) return;
+
+                // Convert screen coordinates to SVG coordinates
+                const clickSvgX = (clickPosScreen.x - panOffset.x) / zoom;
+                const clickSvgY = (clickPosScreen.y - panOffset.y) / zoom;
+
+                // Set up endpoint drag
+                draggingConnectorRef.current = { id: connectorId, endpoint };
+                setHoveredConnectorEnd({ connectorId, endpoint });
+
+                setDraggingId(connectorId);
+                hasPushedToHistory.current = false;
+
+                // Store initial position
+                initialSelectedPositions.current.clear();
+                initialSelectedPositions.current.set(connectorId, {
+                  start: { ...connector.start },
+                  end: { ...connector.end }
+                });
+
+                // Set drag offset
+                dragOffset.current = {
+                  x: clickSvgX,
+                  y: clickSvgY
+                };
+
+                // Add event listeners
+                window.addEventListener("pointermove", handlePointerMove);
+                window.addEventListener("pointerup", handlePointerUp);
+              }}
+              onConnectorClick={(connectorId, clickPosScreen) => {
+                const connector = elements.find(el => el.id === connectorId);
+                setSelectedElementIds([connectorId]);
+                setSelectedElement?.(connector);
+
+                const svgRect = svgRef.current?.getBoundingClientRect();
+                if (!svgRect) return;
+
+                // Convert SVG coords to client space for dragOffset calculation
+                // clickPosScreen is already in client space (from ConnectorRenderer)
+                const clickX = clickPosScreen.x;
+                const clickY = clickPosScreen.y;
+
+                // Convert to SVG space for distance calculations
+                const clickSvgX = (clickX - panOffset.x) / zoom;
+                const clickSvgY = (clickY - panOffset.y) / zoom;
+                const clickSvgPos = { x: clickSvgX, y: clickSvgY };
+
+                // Determine which endpoint is closer to the click
+                if (connector?.type === 'connector') {
+                  const distToStart = Math.hypot(clickSvgPos.x - connector.start.x, clickSvgPos.y - connector.start.y);
+                  const distToEnd = Math.hypot(clickSvgPos.x - connector.end.x, clickSvgPos.y - connector.end.y);
+                  const lineLength = Math.hypot(connector.end.x - connector.start.x, connector.end.y - connector.start.y);
+                  const threshold = lineLength / 2;
+
+                  // Determine which endpoint to move
+                  if (distToStart < threshold) {
+                    draggingConnectorRef.current = { id: connectorId, endpoint: 'start' };
+                    setHoveredConnectorEnd({ connectorId, endpoint: 'start' });
+                    logger.debug('DrawArea', 'Connector endpoint detected: start', { distToStart, threshold });
+                  } else if (distToEnd < threshold) {
+                    draggingConnectorRef.current = { id: connectorId, endpoint: 'end' };
+                    setHoveredConnectorEnd({ connectorId, endpoint: 'end' });
+                    logger.debug('DrawArea', 'Connector endpoint detected: end', { distToEnd, threshold });
+                  } else {
+                    // Middle of line - move whole connector
+                    draggingConnectorRef.current = null;
+                    setHoveredConnectorEnd({ connectorId, endpoint: 'start' }); // Highlight start endpoint for feedback
+                    logger.debug('DrawArea', 'Connector middle clicked - highlighting start endpoint', { distToStart, distToEnd });
+                  }
+
+                  // Set up dragging (similar to handlePointerDown)
+                  setDraggingId(connectorId);
+                  hasPushedToHistory.current = false;
+
+                  // Store initial position
+                  initialSelectedPositions.current.clear();
+                  initialSelectedPositions.current.set(connectorId, {
+                    start: { ...connector.start },
+                    end: { ...connector.end }
+                  });
+
+                  // Calculate drag offset in client space (same as handlePointerDown for shapes)
+                  // offset = click client pos - element start in SVG space converted back to client space
+                  dragOffset.current = {
+                    x: clickX - (svgRect.left + panOffset.x + connector.start.x * zoom),
+                    y: clickY - (svgRect.top + panOffset.y + connector.start.y * zoom)
+                  };
+
+                  // Add event listeners
+                  window.addEventListener("pointermove", handlePointerMove);
+                  window.addEventListener("pointerup", handlePointerUp);
+                }
+              }}
+              onEndpointDoubleClick={(connectorId, endpoint) => {
+                const connector = elements.find(el => el.id === connectorId);
+                if (!connector) return;
+
+                const isStart = endpoint === 'start';
+                const elementId = isStart ? connector.fromElementId : connector.toElementId;
+                const isAttached = isStart ? connector.fromAttached : connector.toAttached;
+
+                if (isAttached && elementId) {
+                  // Detach the endpoint
+                  pushToHistoryAndSetElements(prev => prev.map(el => {
+                    if (el.id === connectorId) {
+                      if (isStart) {
+                        return {
+                          ...el,
+                          fromElementId: undefined,
+                          fromAttached: false,
+                          fromPointIndex: undefined
+                        };
+                      } else {
+                        return {
+                          ...el,
+                          toElementId: undefined,
+                          toAttached: false,
+                          toPointIndex: undefined
+                        };
+                      }
+                    }
+                    return el;
+                  }));
+                }
+              }}
+              allElements={elements}
+              zoom={zoom}
+            />
+          );
+        })()}
 
         {/* Brush Strokes */}
         <g className="brush-strokes">
@@ -3024,7 +3846,104 @@ const DrawArea = forwardRef<DrawAreaRef, DrawAreaProps>(({
         </g>
       </g>
     </svg>
-    
+
+    {/* Quick-Connect Menu */}
+    {quickConnectMenu && quickConnectMenu.visible && (
+      <div
+        style={{
+          position: 'fixed',
+          left: quickConnectMenu.x + 10,
+          top: quickConnectMenu.y + 10,
+          zIndex: 10000,
+          background: 'white',
+          border: '1px solid #ddd',
+          borderRadius: '4px',
+          boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
+          minWidth: '120px'
+        }}
+      >
+        {[
+          { type: 'rectangle', label: 'Rectangle', icon: '▭' },
+          { type: 'circle', label: 'Circle', icon: '●' },
+          { type: 'triangle', label: 'Triangle', icon: '▲' },
+        ].map(shape => (
+          <button
+            key={shape.type}
+            onClick={() => {
+              // Create new shape connected to source
+              const sourceEl = elements.find(el => el.id === quickConnectMenu.sourceElementId);
+              if (!sourceEl) return;
+
+              // Calculate position for new shape (to the right)
+              const newX = sourceEl.end.x + 100;
+              const newY = sourceEl.start.y;
+
+              const newElement: DrawElement = {
+                id: `${shape.type}-${Date.now()}`,
+                type: shape.type as any,
+                start: { x: newX, y: newY },
+                end: { x: newX + 100, y: newY + 80 },
+                style: {},
+                name: shape.label
+              };
+
+              // Add element to canvas
+              pushToHistoryAndSetElements(prev => [...prev, newElement]);
+
+              // Create connector from source to new shape as a DrawElement
+              const newConnectorElement: DrawElement = {
+                id: `connector-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+                type: 'connector',
+                start: {
+                  x: sourceEl.end.x,
+                  y: (sourceEl.start.y + sourceEl.end.y) / 2
+                },
+                end: {
+                  x: newX,
+                  y: (newY + newY + 80) / 2
+                },
+                fromElementId: quickConnectMenu.sourceElementId,
+                toElementId: newElement.id,
+                connectorStyle: {
+                  lineWidth: 2,
+                  color: '#000000',
+                  lineStyle: 'solid',
+                  opacity: 1,
+                  startArrow: 'none',
+                  endArrow: 'standard'
+                }
+              };
+
+              // Add connector and new element to elements array
+              pushToHistoryAndSetElements(prev => [...prev, newElement, newConnectorElement]);
+              setQuickConnectMenu(null);
+              logger.info('interaction', 'Quick-connect shape created', {
+                shapeType: shape.type,
+                connectedTo: quickConnectMenu.sourceElementId
+              });
+            }}
+            style={{
+              display: 'block',
+              width: '100%',
+              padding: '8px 12px',
+              border: 'none',
+              background: 'transparent',
+              cursor: 'pointer',
+              textAlign: 'left',
+              fontSize: '13px',
+              color: '#333',
+              transition: 'background-color 0.2s'
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#f0f0f0')}
+            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
+          >
+            <span style={{ marginRight: '8px' }}>{shape.icon}</span>
+            {shape.label}
+          </button>
+        ))}
+      </div>
+    )}
+
     {/* Context Menu */}
     {contextMenu && (
       <div

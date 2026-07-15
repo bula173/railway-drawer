@@ -1,5 +1,5 @@
 import React from 'react';
-import type { ReactNode } from 'react';
+import { type ReactNode } from 'react';
 import { UIProvider } from '../contexts/UIContext';
 import { ClipboardProvider } from '../contexts/ClipboardContext';
 import { DrawingProvider } from '../contexts/DrawingContext';

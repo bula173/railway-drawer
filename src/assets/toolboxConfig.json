@@ -5,14 +5,15 @@
     "type": "custom",
     "group": "General",
     "iconSvg": "default",
-    "height": 32,
-    "width": 48,
+    "height": 28,
+    "width": 44,
     "shapeElements": [
       {
         "id": "rectShapeGeneral",
-        "svg": "<rect x='2' y='2' width='44' height='28' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<rect x='0' y='0' width='44' height='28' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "rounded_rectangle",
@@ -20,14 +21,15 @@
     "type": "custom",
     "group": "General",
     "iconSvg": "default",
-    "height": 32,
-    "width": 48,
+    "height": 28,
+    "width": 44,
     "shapeElements": [
       {
         "id": "roundedRect",
-        "svg": "<rect x='2' y='2' width='44' height='28' rx='4' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<rect x='0' y='0' width='44' height='28' rx='2' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "ellipse_general",
@@ -35,14 +37,15 @@
     "type": "custom",
     "group": "General",
     "iconSvg": "default",
-    "height": 48,
-    "width": 72,
+    "height": 40,
+    "width": 64,
     "shapeElements": [
       {
         "id": "ellipseShapeGeneral",
-        "svg": "<ellipse cx='36' cy='24' rx='32' ry='20' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<ellipse cx='28' cy='16' rx='28' ry='16' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "circle_general",
@@ -50,14 +53,15 @@
     "type": "custom",
     "group": "General",
     "iconSvg": "default",
-    "height": 48,
-    "width": 48,
+    "height": 40,
+    "width": 40,
     "shapeElements": [
       {
         "id": "circleGeneral",
-        "svg": "<circle cx='24' cy='24' r='20' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<circle cx='16' cy='16' r='20' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "rectangle_with_rounded_one_side",
@@ -65,14 +69,15 @@
     "type": "custom",
     "group": "General",
     "iconSvg": "default",
-    "height": 32,
-    "width": 48,
+    "height": 28,
+    "width": 42,
     "shapeElements": [
       {
         "id": "roundedOneSide",
         "svg": "<path d='M6,2 L44,2 Q46,2 46,4 L46,28 Q46,30 44,30 L6,30 Q4,30 4,28 L4,4 Q4,2 6,2' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "triangle_general",
@@ -80,14 +85,15 @@
     "type": "custom",
     "group": "General",
     "iconSvg": "default",
-    "height": 48,
-    "width": 48,
+    "height": 40,
+    "width": 40,
     "shapeElements": [
       {
         "id": "triangleGeneral",
-        "svg": "<polygon points='24,4 44,44 4,44' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<polygon points='20,0,40,40,0,40' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "rectangle_dividers",
@@ -95,18 +101,19 @@
     "type": "custom",
     "group": "General",
     "iconSvg": "default",
-    "height": 48,
-    "width": 64,
+    "height": 40,
+    "width": 60,
     "shapeElements": [
       {
         "id": "mainRect",
-        "svg": "<rect x='2' y='4' width='60' height='40' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<rect x='0' y='0' width='60' height='40' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       },
       {
         "id": "dividers",
         "svg": "<line x1='22' y1='4' x2='22' y2='44' stroke='#000' stroke-width='1' vector-effect='non-scaling-stroke'/><line x1='42' y1='4' x2='42' y2='44' stroke='#000' stroke-width='1' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "diamond_general",
@@ -114,14 +121,15 @@
     "type": "custom",
     "group": "General",
     "iconSvg": "default",
-    "height": 48,
-    "width": 48,
+    "height": 40,
+    "width": 40,
     "shapeElements": [
       {
         "id": "diamondGeneral",
-        "svg": "<polygon points='24,4 44,24 24,44 4,24' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<polygon points='20,0,40,20,20,40,0,20' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "trapezoid",
@@ -129,14 +137,15 @@
     "type": "custom",
     "group": "General",
     "iconSvg": "default",
-    "height": 48,
-    "width": 48,
+    "height": 40,
+    "width": 40,
     "shapeElements": [
       {
         "id": "trapezoidShape",
-        "svg": "<polygon points='10,4 38,4 44,44 4,44' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<polygon points='6,0,34,0,40,40,0,40' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "hexagon_general",
@@ -144,14 +153,15 @@
     "type": "custom",
     "group": "General",
     "iconSvg": "default",
-    "height": 48,
-    "width": 48,
+    "height": 44,
+    "width": 40,
     "shapeElements": [
       {
         "id": "hexagonGeneral",
-        "svg": "<polygon points='24,2 44,14 44,34 24,46 4,34 4,14' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<polygon points='20,0,40,12,40,32,20,44,0,32,0,12' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "triangle_right",
@@ -159,14 +169,15 @@
     "type": "custom",
     "group": "General",
     "iconSvg": "default",
-    "height": 48,
-    "width": 48,
+    "height": 40,
+    "width": 40,
     "shapeElements": [
       {
         "id": "rightTriangle",
-        "svg": "<polygon points='4,4 44,4 4,44' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<polygon points='0,0,40,0,0,40' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "cylinder",
@@ -174,22 +185,23 @@
     "type": "custom",
     "group": "General",
     "iconSvg": "default",
-    "height": 48,
-    "width": 32,
+    "height": 40,
+    "width": 24,
     "shapeElements": [
       {
         "id": "cylinderTop",
-        "svg": "<ellipse cx='16' cy='8' rx='12' ry='4' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<ellipse cx='8' cy='0' rx='8' ry='0' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       },
       {
         "id": "cylinderBody",
-        "svg": "<rect x='4' y='8' width='24' height='32' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<rect x='0' y='4' width='24' height='32' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       },
       {
         "id": "cylinderBottom",
-        "svg": "<ellipse cx='16' cy='40' rx='12' ry='4' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<ellipse cx='8' cy='32' rx='8' ry='0' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "parallelogram",
@@ -197,14 +209,15 @@
     "type": "custom",
     "group": "General",
     "iconSvg": "default",
-    "height": 32,
-    "width": 48,
+    "height": 28,
+    "width": 46,
     "shapeElements": [
       {
         "id": "parallelogramShape",
-        "svg": "<polygon points='12,2 46,2 34,30 0,30' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<polygon points='12,0,46,0,34,28,0,28' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "speech_bubble",
@@ -212,18 +225,19 @@
     "type": "custom",
     "group": "General",
     "iconSvg": "default",
-    "height": 48,
-    "width": 56,
+    "height": 40,
+    "width": 16,
     "shapeElements": [
       {
         "id": "bubbleBox",
-        "svg": "<rect x='4' y='4' width='48' height='32' rx='4' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<rect x='0' y='0' width='48' height='32' rx='0' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       },
       {
         "id": "bubbleTail",
-        "svg": "<polygon points='12,36 20,44 14,36' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<polygon points='8,32,16,40,10,32' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "rounded_rectangle_general",
@@ -231,14 +245,15 @@
     "type": "custom",
     "group": "General",
     "iconSvg": "default",
-    "height": 64,
-    "width": 96,
+    "height": 56,
+    "width": 88,
     "shapeElements": [
       {
         "id": "largeRounded",
-        "svg": "<rect x='4' y='4' width='88' height='56' rx='6' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<rect x='0' y='0' width='88' height='56' rx='2' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "arc",
@@ -253,7 +268,8 @@
         "id": "arcShape",
         "svg": "<path d='M4,24 A20,20 0 0,1 44,24' stroke='#000' stroke-width='2' fill='none' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "crescent",
@@ -268,7 +284,8 @@
         "id": "crescentShape",
         "svg": "<path d='M4,24 A20,20 0 1,1 44,24 A16,16 0 1,0 4,24' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "text_label",
@@ -277,7 +294,8 @@
     "group": "General",
     "iconSvg": "<svg width=\"24\" height=\"24\"><text x=\"4\" y=\"20\" font-size=\"20\">T</text></svg>",
     "height": 24,
-    "width": 60
+    "width": 60,
+    "dimensionality": "2D"
   },
   {
     "id": "line_general",
@@ -285,7 +303,7 @@
     "type": "custom",
     "group": "General",
     "iconSvg": "default",
-    "height": 12,
+    "height": 0,
     "width": 100,
     "isLineBased": true,
     "shapeElements": [
@@ -293,7 +311,8 @@
         "id": "simpleLineGeneral",
         "svg": "<line x1='0' y1='6' x2='100' y2='6' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "1D"
   },
   {
     "id": "arrow_single_general",
@@ -301,8 +320,8 @@
     "type": "custom",
     "group": "General",
     "iconSvg": "default",
-    "height": 12,
-    "width": 100,
+    "height": 8,
+    "width": 15,
     "isLineBased": true,
     "shapeElements": [
       {
@@ -311,9 +330,10 @@
       },
       {
         "id": "arrowHeadGeneral",
-        "svg": "<polygon points='100,6 85,2 85,10' fill='#000' vector-effect='non-scaling-stroke'/>"
+        "svg": "<polygon points='15,4,0,0,0,8' fill='#000' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "1D"
   },
   {
     "id": "dash_line_general",
@@ -321,7 +341,7 @@
     "type": "custom",
     "group": "General",
     "iconSvg": "default",
-    "height": 12,
+    "height": 0,
     "width": 100,
     "isLineBased": true,
     "shapeElements": [
@@ -329,7 +349,8 @@
         "id": "dashLineGeneral",
         "svg": "<line x1='0' y1='6' x2='100' y2='6' stroke='#000' stroke-width='2' stroke-dasharray='8,4' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "1D"
   },
   {
     "id": "dotted_line_general",
@@ -337,7 +358,7 @@
     "type": "custom",
     "group": "General",
     "iconSvg": "default",
-    "height": 12,
+    "height": 0,
     "width": 100,
     "isLineBased": true,
     "shapeElements": [
@@ -345,7 +366,8 @@
         "id": "dottedLineGeneral",
         "svg": "<line x1='0' y1='6' x2='100' y2='6' stroke='#000' stroke-width='2' stroke-dasharray='2,4' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "1D"
   },
   {
     "id": "dash_dot_line",
@@ -353,7 +375,7 @@
     "type": "custom",
     "group": "General",
     "iconSvg": "default",
-    "height": 12,
+    "height": 0,
     "width": 100,
     "isLineBased": true,
     "shapeElements": [
@@ -361,7 +383,8 @@
         "id": "dashDotLine",
         "svg": "<line x1='0' y1='6' x2='100' y2='6' stroke='#000' stroke-width='2' stroke-dasharray='8,4,2,4' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "1D"
   },
   {
     "id": "arrow_with_circle",
@@ -369,8 +392,8 @@
     "type": "custom",
     "group": "General",
     "iconSvg": "default",
-    "height": 12,
-    "width": 100,
+    "height": 8,
+    "width": 99,
     "isLineBased": true,
     "shapeElements": [
       {
@@ -379,13 +402,14 @@
       },
       {
         "id": "arrowCircle",
-        "svg": "<circle cx='4' cy='6' r='3' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<circle cx='2' cy='2' r='3' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       },
       {
         "id": "arrowCircleHead",
-        "svg": "<polygon points='100,6 85,2 85,10' fill='#000' vector-effect='non-scaling-stroke'/>"
+        "svg": "<polygon points='99,4,84,0,84,8' fill='#000' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "1D"
   },
   {
     "id": "double_arrow",
@@ -393,7 +417,7 @@
     "type": "custom",
     "group": "General",
     "iconSvg": "default",
-    "height": 12,
+    "height": 8,
     "width": 100,
     "isLineBased": true,
     "shapeElements": [
@@ -403,13 +427,14 @@
       },
       {
         "id": "doubleArrowLeftHead",
-        "svg": "<polygon points='0,6 15,2 15,10' fill='#000' vector-effect='non-scaling-stroke'/>"
+        "svg": "<polygon points='0,4,15,0,15,8' fill='#000' vector-effect='non-scaling-stroke'/>"
       },
       {
         "id": "doubleArrowRightHead",
-        "svg": "<polygon points='100,6 85,2 85,10' fill='#000' vector-effect='non-scaling-stroke'/>"
+        "svg": "<polygon points='100,4,85,0,85,8' fill='#000' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "1D"
   },
   {
     "id": "connector_line",
@@ -417,7 +442,7 @@
     "type": "custom",
     "group": "General",
     "iconSvg": "default",
-    "height": 12,
+    "height": 6,
     "width": 100,
     "isLineBased": true,
     "shapeElements": [
@@ -425,7 +450,8 @@
         "id": "connectorPath",
         "svg": "<path d='M0,6 L30,6 L30,0 L70,0 L70,6 L100,6' stroke='#000' stroke-width='2' fill='none' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "arrow_right",
@@ -433,8 +459,8 @@
     "type": "custom",
     "group": "Arrows",
     "iconSvg": "default",
-    "height": 24,
-    "width": 48,
+    "height": 12,
+    "width": 12,
     "isLineBased": true,
     "shapeElements": [
       {
@@ -443,9 +469,10 @@
       },
       {
         "id": "arrowRightHead",
-        "svg": "<polygon points='44,12 32,6 32,18' fill='#000' vector-effect='non-scaling-stroke'/>"
+        "svg": "<polygon points='12,6,0,0,0,12' fill='#000' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "1D"
   },
   {
     "id": "arrow_left",
@@ -453,8 +480,8 @@
     "type": "custom",
     "group": "Arrows",
     "iconSvg": "default",
-    "height": 24,
-    "width": 48,
+    "height": 12,
+    "width": 12,
     "isLineBased": true,
     "shapeElements": [
       {
@@ -463,9 +490,10 @@
       },
       {
         "id": "arrowLeftHead",
-        "svg": "<polygon points='4,12 16,6 16,18' fill='#000' vector-effect='non-scaling-stroke'/>"
+        "svg": "<polygon points='0,6,12,0,12,12' fill='#000' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "1D"
   },
   {
     "id": "arrow_up",
@@ -473,8 +501,8 @@
     "type": "custom",
     "group": "Arrows",
     "iconSvg": "default",
-    "height": 48,
-    "width": 24,
+    "height": 12,
+    "width": 12,
     "isLineBased": true,
     "shapeElements": [
       {
@@ -483,9 +511,10 @@
       },
       {
         "id": "arrowUpHead",
-        "svg": "<polygon points='12,4 6,16 18,16' fill='#000' vector-effect='non-scaling-stroke'/>"
+        "svg": "<polygon points='6,0,0,12,12,12' fill='#000' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "1D"
   },
   {
     "id": "arrow_down",
@@ -493,8 +522,8 @@
     "type": "custom",
     "group": "Arrows",
     "iconSvg": "default",
-    "height": 48,
-    "width": 24,
+    "height": 12,
+    "width": 12,
     "isLineBased": true,
     "shapeElements": [
       {
@@ -503,9 +532,10 @@
       },
       {
         "id": "arrowDownHead",
-        "svg": "<polygon points='12,44 6,32 18,32' fill='#000' vector-effect='non-scaling-stroke'/>"
+        "svg": "<polygon points='6,12,0,0,12,0' fill='#000' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "1D"
   },
   {
     "id": "arrow_double_right",
@@ -513,8 +543,8 @@
     "type": "custom",
     "group": "Arrows",
     "iconSvg": "default",
-    "height": 24,
-    "width": 64,
+    "height": 12,
+    "width": 52,
     "isLineBased": true,
     "shapeElements": [
       {
@@ -523,13 +553,14 @@
       },
       {
         "id": "doubleArrowHead1",
-        "svg": "<polygon points='60,12 48,6 48,18' fill='#000' vector-effect='non-scaling-stroke'/>"
+        "svg": "<polygon points='52,6,40,0,40,12' fill='#000' vector-effect='non-scaling-stroke'/>"
       },
       {
         "id": "doubleArrowHead2",
-        "svg": "<polygon points='8,12 12,6 12,18' fill='#000' vector-effect='non-scaling-stroke'/>"
+        "svg": "<polygon points='0,6,4,0,4,12' fill='#000' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "1D"
   },
   {
     "id": "arrow_bent_right",
@@ -537,8 +568,8 @@
     "type": "custom",
     "group": "Arrows",
     "iconSvg": "default",
-    "height": 24,
-    "width": 48,
+    "height": 18,
+    "width": 24,
     "isLineBased": true,
     "shapeElements": [
       {
@@ -547,9 +578,10 @@
       },
       {
         "id": "bentArrowHead",
-        "svg": "<polygon points='24,2 20,10 28,10' fill='#000' vector-effect='non-scaling-stroke'/>"
+        "svg": "<polygon points='4,0,0,8,8,8' fill='#000' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "1D"
   },
   {
     "id": "arrow_bent_left",
@@ -557,8 +589,8 @@
     "type": "custom",
     "group": "Arrows",
     "iconSvg": "default",
-    "height": 24,
-    "width": 48,
+    "height": 18,
+    "width": 44,
     "isLineBased": true,
     "shapeElements": [
       {
@@ -567,9 +599,10 @@
       },
       {
         "id": "bentArrowLeftHead",
-        "svg": "<polygon points='24,2 20,10 28,10' fill='#000' vector-effect='non-scaling-stroke'/>"
+        "svg": "<polygon points='4,0,0,8,8,8' fill='#000' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "1D"
   },
   {
     "id": "arrow_box_right",
@@ -577,8 +610,8 @@
     "type": "custom",
     "group": "Arrows",
     "iconSvg": "default",
-    "height": 24,
-    "width": 64,
+    "height": 14,
+    "width": 52,
     "isLineBased": true,
     "shapeElements": [
       {
@@ -587,13 +620,14 @@
       },
       {
         "id": "boxArrowBox",
-        "svg": "<rect x='4' y='4' width='16' height='16' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<rect x='0' y='0' width='16' height='16' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       },
       {
         "id": "boxArrowHead",
-        "svg": "<polygon points='56,12 44,6 44,18' fill='#000' vector-effect='non-scaling-stroke'/>"
+        "svg": "<polygon points='52,8,40,2,40,14' fill='#000' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "1D"
   },
   {
     "id": "arrow_curved_right",
@@ -601,8 +635,8 @@
     "type": "custom",
     "group": "Arrows",
     "iconSvg": "default",
-    "height": 32,
-    "width": 48,
+    "height": 24,
+    "width": 8,
     "isLineBased": true,
     "shapeElements": [
       {
@@ -611,9 +645,10 @@
       },
       {
         "id": "curvedArrowHead",
-        "svg": "<polygon points='44,8 40,0 36,12' fill='#000' vector-effect='non-scaling-stroke'/>"
+        "svg": "<polygon points='8,8,4,0,0,12' fill='#000' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "1D"
   },
   {
     "id": "arrow_curved_left",
@@ -621,8 +656,8 @@
     "type": "custom",
     "group": "Arrows",
     "iconSvg": "default",
-    "height": 32,
-    "width": 48,
+    "height": 24,
+    "width": 40,
     "isLineBased": true,
     "shapeElements": [
       {
@@ -631,9 +666,10 @@
       },
       {
         "id": "curvedArrowLeftHead",
-        "svg": "<polygon points='4,8 8,0 12,12' fill='#000' vector-effect='non-scaling-stroke'/>"
+        "svg": "<polygon points='0,8,4,0,8,12' fill='#000' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "1D"
   },
   {
     "id": "arrow_pentagon",
@@ -641,8 +677,8 @@
     "type": "custom",
     "group": "Arrows",
     "iconSvg": "default",
-    "height": 24,
-    "width": 48,
+    "height": 14,
+    "width": 16,
     "isLineBased": true,
     "shapeElements": [
       {
@@ -651,9 +687,10 @@
       },
       {
         "id": "pentagonArrowHead",
-        "svg": "<polygon points='44,12 36,4 28,18' fill='#000' vector-effect='non-scaling-stroke'/>"
+        "svg": "<polygon points='16,8,8,0,0,14' fill='#000' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "1D"
   },
   {
     "id": "arrow_diamond",
@@ -661,8 +698,8 @@
     "type": "custom",
     "group": "Arrows",
     "iconSvg": "default",
-    "height": 24,
-    "width": 48,
+    "height": 12,
+    "width": 8,
     "isLineBased": true,
     "shapeElements": [
       {
@@ -671,9 +708,10 @@
       },
       {
         "id": "diamondArrowHead",
-        "svg": "<polygon points='40,12 32,6 36,12 32,18' fill='#000' stroke='#000' stroke-width='1' vector-effect='non-scaling-stroke'/>"
+        "svg": "<polygon points='8,6,0,0,4,6,0,12' fill='#000' stroke='#000' stroke-width='1' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "1D"
   },
   {
     "id": "arrow_circle",
@@ -681,8 +719,8 @@
     "type": "custom",
     "group": "Arrows",
     "iconSvg": "default",
-    "height": 24,
-    "width": 48,
+    "height": 12,
+    "width": 40,
     "isLineBased": true,
     "shapeElements": [
       {
@@ -691,13 +729,14 @@
       },
       {
         "id": "circleArrowHead",
-        "svg": "<polygon points='44,12 32,6 32,18' fill='#000' vector-effect='non-scaling-stroke'/>"
+        "svg": "<polygon points='40,6,28,0,28,12' fill='#000' vector-effect='non-scaling-stroke'/>"
       },
       {
         "id": "circleArrowEnd",
-        "svg": "<circle cx='8' cy='12' r='4' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<circle cx='0' cy='0' r='4' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "1D"
   },
   {
     "id": "arrow_cross",
@@ -705,8 +744,8 @@
     "type": "custom",
     "group": "Arrows",
     "iconSvg": "default",
-    "height": 24,
-    "width": 48,
+    "height": 18,
+    "width": 40,
     "isLineBased": true,
     "shapeElements": [
       {
@@ -719,9 +758,10 @@
       },
       {
         "id": "crossArrowHead",
-        "svg": "<polygon points='46,12 40,6 40,18' fill='#000' vector-effect='non-scaling-stroke'/>"
+        "svg": "<polygon points='6,6,0,0,0,12' fill='#000' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "1D"
   },
   {
     "id": "arrow_zigzag",
@@ -729,15 +769,16 @@
     "type": "custom",
     "group": "Arrows",
     "iconSvg": "default",
-    "height": 24,
-    "width": 48,
+    "height": 6,
+    "width": 40,
     "isLineBased": true,
     "shapeElements": [
       {
         "id": "zigzagPath",
         "svg": "<path d='M4,6 L12,12 L20,6 L28,12 L36,6 L44,12' stroke='#000' stroke-width='2' fill='none' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "1D"
   },
   {
     "id": "arrow_u_shape",
@@ -745,8 +786,8 @@
     "type": "custom",
     "group": "Arrows",
     "iconSvg": "default",
-    "height": 32,
-    "width": 48,
+    "height": 28,
+    "width": 40,
     "isLineBased": true,
     "shapeElements": [
       {
@@ -755,9 +796,10 @@
       },
       {
         "id": "uShapeHead",
-        "svg": "<polygon points='40,4 44,12 36,12' fill='#000' vector-effect='non-scaling-stroke'/>"
+        "svg": "<polygon points='4,0,8,8,0,8' fill='#000' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "1D"
   },
   {
     "id": "arrow_filled",
@@ -765,15 +807,16 @@
     "type": "custom",
     "group": "Arrows",
     "iconSvg": "default",
-    "height": 24,
-    "width": 48,
+    "height": 12,
+    "width": 32,
     "isLineBased": true,
     "shapeElements": [
       {
         "id": "filledArrowShape",
-        "svg": "<polygon points='4,6 36,12 4,18' fill='#000' stroke='#000' stroke-width='1' vector-effect='non-scaling-stroke'/>"
+        "svg": "<polygon points='0,0,32,6,0,12' fill='#000' stroke='#000' stroke-width='1' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "1D"
   },
   {
     "id": "arrow_diagonal_lines",
@@ -781,7 +824,7 @@
     "type": "custom",
     "group": "Arrows",
     "iconSvg": "default",
-    "height": 24,
+    "height": 0,
     "width": 48,
     "isLineBased": true,
     "shapeElements": [
@@ -789,7 +832,8 @@
         "id": "diagonalLines",
         "svg": "<line x1='8' y1='6' x2='8' y2='18' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/><line x1='16' y1='6' x2='16' y2='18' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/><line x1='24' y1='6' x2='24' y2='18' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "1D"
   },
   {
     "id": "track",
@@ -797,7 +841,7 @@
     "type": "custom",
     "group": "Tracks",
     "iconSvg": "default",
-    "height": 12,
+    "height": 0,
     "width": 100,
     "isLineBased": true,
     "shapeElements": [
@@ -805,7 +849,8 @@
         "id": "trackLine",
         "svg": "<line x1='0' y1='0' x2='100' y2='0' stroke='#000000' stroke-width='4' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "1D"
   },
   {
     "id": "signal",
@@ -813,50 +858,68 @@
     "type": "custom",
     "group": "Signals",
     "iconSvg": "<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 48\" ><rect x=\"2\" y=\"2\" width=\"20\" height=\"44\" rx=\"2\" fill=\"#ddd\" stroke=\"#000\" stroke-width=\"1\"/><circle cx=\"12\" cy=\"10\" r=\"6\" fill=\"red\" stroke=\"#000\" stroke-width=\"1\"/><circle cx=\"12\" cy=\"24\" r=\"6\" fill=\"white\" stroke=\"#000\" stroke-width=\"1\"/><circle cx=\"12\" cy=\"38\" r=\"6\" fill=\"white\" stroke=\"#000\" stroke-width=\"1\"/></svg>",
-    "height": 48,
-    "width": 24,
+    "height": 0,
+    "width": 20,
     "properties": {
       "orientation": {
         "type": "select",
         "label": "Orientation",
         "default": "left",
-        "options": ["left", "right"]
+        "options": [
+          "left",
+          "right"
+        ]
       },
       "topLight": {
         "type": "select",
         "label": "Top Light",
         "default": "red",
-        "options": ["white", "red", "yellow", "green"]
+        "options": [
+          "white",
+          "red",
+          "yellow",
+          "green"
+        ]
       },
       "middleLight": {
         "type": "select",
         "label": "Middle Light",
         "default": "white",
-        "options": ["white", "red", "yellow", "green"]
+        "options": [
+          "white",
+          "red",
+          "yellow",
+          "green"
+        ]
       },
       "bottomLight": {
         "type": "select",
         "label": "Bottom Light",
         "default": "white",
-        "options": ["white", "red", "yellow", "green"]
+        "options": [
+          "white",
+          "red",
+          "yellow",
+          "green"
+        ]
       }
     },
     "shapeElements": [
-    {
+      {
         "id": "signalBox",
-        "svg": "{orientation === 'left' ? \"<rect x='2' y='10' width='20' height='53' rx='2' fill='#ddd' stroke='#000' stroke-width='1' transform='skewY(-15) scale(1, 0.9)'/>\" : \"<rect x='2' y='5' width='20' height='50' rx='2' fill='#ddd' stroke='#000' stroke-width='1' transform='skewY(15) scale(1, 0.9)'/>\"}"
+        "svg": "{orientation === 'left' ? \"<rect x='0' y='5' width='20' height='53' rx='0' fill='#ddd' stroke='#000' stroke-width='1' transform='skewY(-15) scale(1, 0.9)'/>\" : \"<rect x='0' y='0' width='20' height='50' rx='0' fill='#ddd' stroke='#000' stroke-width='1' transform='skewY(15) scale(1, 0.9)'/>\"}"
       },
       {
         "id": "topLight",
-        "svg": "{orientation === 'left' ? \"<circle cx='12' cy='18' r='6' fill='{topLight}' stroke='#000' stroke-width='1' transform='translate(12,18) skewY(-15) scale(1,0.9) translate(-12,-18)'/>\" : \"<circle cx='12' cy='18' r='6' fill='{topLight}' stroke='#000' stroke-width='1' transform='translate(12,18) skewY(15) scale(1,0.9) translate(-12,-18)'/>\"}"
+        "svg": "{orientation === 'left' ? \"<circle cx='8' cy='8' r='6' fill='{topLight}' stroke='#000' stroke-width='1' transform='translate(12,18) skewY(-15) scale(1,0.9) translate(-12,-18)'/>\" : \"<circle cx='8' cy='8' r='6' fill='{topLight}' stroke='#000' stroke-width='1' transform='translate(12,18) skewY(15) scale(1,0.9) translate(-12,-18)'/>\"}"
       },
       {
         "id": "middleLight",
-        "svg": "{orientation === 'left' ? \"<circle cx='12' cy='32' r='6' fill='{middleLight}' stroke='#000' stroke-width='1' transform='translate(12,32) skewY(-15) scale(1,0.9) translate(-12,-32)'/>\" : \"<circle cx='12' cy='32' r='6' fill='{middleLight}' stroke='#000' stroke-width='1' transform='translate(12,32) skewY(15) scale(1,0.9) translate(-12,-32)'/>\"}"
+        "svg": "{orientation === 'left' ? \"<circle cx='8' cy='22' r='6' fill='{middleLight}' stroke='#000' stroke-width='1' transform='translate(12,32) skewY(-15) scale(1,0.9) translate(-12,-32)'/>\" : \"<circle cx='8' cy='22' r='6' fill='{middleLight}' stroke='#000' stroke-width='1' transform='translate(12,32) skewY(15) scale(1,0.9) translate(-12,-32)'/>\"}"
       },
       {
         "id": "bottomLight",
-        "svg": "{orientation === 'left' ? \"<circle cx='12' cy='46' r='6' fill='{bottomLight}' stroke='#000' stroke-width='1' transform='translate(12,46) skewY(-15) scale(1,0.9) translate(-12,-46)'/>\" : \"<circle cx='12' cy='46' r='6' fill='{bottomLight}' stroke='#000' stroke-width='1' transform='translate(12,46) skewY(15) scale(1,0.9) translate(-12,-46)'/>\"}"
+        "svg": "{orientation === 'left' ? \"<circle cx='8' cy='36' r='6' fill='{bottomLight}' stroke='#000' stroke-width='1' transform='translate(12,46) skewY(-15) scale(1,0.9) translate(-12,-46)'/>\" : \"<circle cx='8' cy='36' r='6' fill='{bottomLight}' stroke='#000' stroke-width='1' transform='translate(12,46) skewY(15) scale(1,0.9) translate(-12,-46)'/>\"}"
       },
       {
         "id": "signalPole",
@@ -874,11 +937,12 @@
           }
         ]
       }
-    ]
+    ],
+    "dimensionality": "1D"
   },
-{
-    "id": "ertms_double_balise",
-    "name": "ERTMS Double Balise",
+  {
+    "id": "ertms_signal_head_double",
+    "name": "ERTMS Signal Head Double",
     "type": "custom",
     "group": "ERTMS",
     "iconSvg": "default",
@@ -886,14 +950,27 @@
     "width": 48,
     "shapeElements": [
       {
-        "id": "leftBalise",
-        "svg": "<polygon points='8,12 24,24 8,36' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
-      },
-      {
-        "id": "rightBalise",
-        "svg": "<polygon points='24,12 40,24 24,36' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "id": "doubleSignalHeads",
+        "svg": "<rect x='4' y='0' width='20' height='48' fill='#eee' stroke='#333' stroke-width='2' vector-effect='non-scaling-stroke'/><rect x='24' y='0' width='20' height='48' fill='#eee' stroke='#333' stroke-width='2' vector-effect='non-scaling-stroke'/><circle cx='14' cy='12' r='3' fill='#fff300' stroke='#333' stroke-width='1' vector-effect='non-scaling-stroke'/><circle cx='14' cy='24' r='3' fill='#ffffff' stroke='#333' stroke-width='1' vector-effect='non-scaling-stroke'/><circle cx='34' cy='12' r='3' fill='#00cc00' stroke='#333' stroke-width='1' vector-effect='non-scaling-stroke'/><circle cx='34' cy='24' r='3' fill='#ffffff' stroke='#333' stroke-width='1' vector-effect='non-scaling-stroke'/><text x='14' y='42' text-anchor='middle' font-size='5' fill='#333' vector-effect='non-scaling-stroke'>S1</text><text x='34' y='42' text-anchor='middle' font-size='5' fill='#333' vector-effect='non-scaling-stroke'>S2</text>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
+  },
+  {
+    "id": "ertms_double_balise",
+    "name": "ERTMS Double Balise",
+    "type": "custom",
+    "group": "ERTMS",
+    "iconSvg": "default",
+    "height": 28,
+    "width": 48,
+    "shapeElements": [
+      {
+        "id": "doubleBaliseTransponders",
+        "svg": "<rect x='4' y='8' width='16' height='16' fill='#ddd' stroke='#333333' stroke-width='2' vector-effect='non-scaling-stroke'/><line x1='12' y1='8' x2='12' y2='2' stroke='#333333' stroke-width='2' vector-effect='non-scaling-stroke'/><polygon points='10,2 14,2 12,6' fill='#333333' vector-effect='non-scaling-stroke'/><text x='12' y='20' text-anchor='middle' font-size='6' fill='#333333' font-weight='bold' vector-effect='non-scaling-stroke'>B1</text><rect x='28' y='8' width='16' height='16' fill='#ddd' stroke='#333333' stroke-width='2' vector-effect='non-scaling-stroke'/><line x1='36' y1='8' x2='36' y2='2' stroke='#333333' stroke-width='2' vector-effect='non-scaling-stroke'/><polygon points='34,2 38,2 36,6' fill='#333333' vector-effect='non-scaling-stroke'/><text x='36' y='20' text-anchor='middle' font-size='6' fill='#333333' font-weight='bold' vector-effect='non-scaling-stroke'>B2</text>"
+      }
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "train",
@@ -901,8 +978,8 @@
     "type": "custom",
     "group": "Trains",
     "iconSvg": "default",
-    "height": 50,
-    "width": 150,
+    "height": 40,
+    "width": 135,
     "shapeElements": [
       {
         "id": "locomotive",
@@ -924,7 +1001,8 @@
         "id": "pantograph",
         "svg": "<line x1='70' y1='0' x2='80' y2='-10' stroke='#222' stroke-width='1' fill='none' vector-effect='non-scaling-stroke'/><line x1='80' y1='-10' x2='90' y2='0' stroke='#222' stroke-width='1' fill='none' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "point",
@@ -947,7 +1025,8 @@
         "id": "branchTrack2",
         "svg": "<line x1='80' y1='40' x2='100' y2='40' stroke='black' stroke-width='4' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "point_simple",
@@ -956,12 +1035,14 @@
     "group": "Tracks",
     "iconSvg": "default",
     "shapeElements": [
-      { "id": "simplePointLine",
-        "svg": "<line x1='0' y1='0' x2='120' y2='80' stroke='black' stroke-width='4' vector-effect='non-scaling-stroke'/>" 
+      {
+        "id": "simplePointLine",
+        "svg": "<line x1='0' y1='0' x2='120' y2='80' stroke='black' stroke-width='4' vector-effect='non-scaling-stroke'/>"
       }
     ],
     "height": 80,
-    "width": 120
+    "width": 120,
+    "dimensionality": "2D"
   },
   {
     "id": "text",
@@ -970,7 +1051,8 @@
     "group": "Utils",
     "iconSvg": "<svg width=\"24\" height=\"24\"><text x=\"4\" y=\"20\" font-size=\"20\">T</text></svg>",
     "height": 60,
-    "width": 150
+    "width": 150,
+    "dimensionality": "2D"
   },
   {
     "id": "LX",
@@ -989,7 +1071,8 @@
         "id": "rightGate",
         "svg": "<line x1='24' y1='0' x2='24' y2='48' stroke='#d32f2f' stroke-width='4' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "ertms_marker",
@@ -997,8 +1080,8 @@
     "type": "custom",
     "group": "ERTMS",
     "iconSvg": "<svg width=\"24\" height=\"24\" viewBox=\"0 0 48 48\" ><rect x=\"0\" y=\"0\" width=\"48\" height=\"48\" fill=\"#2d39b4\" stroke=\"white\" stroke-width=\"2\"/><polygon points=\"8,12 32,12 32,6 46,24 32,42 32,36 8,36\" fill=\"yellow\" stroke=\"white\" stroke-width=\"2\"/></svg>",
-    "height": 80,
-    "width": 48,
+    "height": 21,
+    "width": 23,
     "shapeElements": [
       {
         "id": "markerSign",
@@ -1006,13 +1089,14 @@
       },
       {
         "id": "markerArrow",
-        "svg": "<polygon points='4,6 16,6 16,3 23,12 16,21 16,18 4,18' fill='yellow' stroke='white' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<polygon points='4,6,16,6,16,3,23,12,16,21,16,18,4,18' fill='yellow' stroke='white' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       },
       {
         "id": "markerPole",
         "svg": "<line x1='12' y1='24' x2='12' y2='40' stroke='#000' stroke-width='4' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "rectangle",
@@ -1027,7 +1111,8 @@
         "id": "mainRect",
         "svg": "<rect x='0' y='0' width='48' height='32' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "circle",
@@ -1035,14 +1120,15 @@
     "type": "custom",
     "group": "Utils",
     "iconSvg": "default",
-    "height": 48,
-    "width": 48,
+    "height": 40,
+    "width": 40,
     "shapeElements": [
       {
         "id": "mainCircle",
-        "svg": "<circle cx='24' cy='24' r='20' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<circle cx='16' cy='16' r='20' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "arrow_single",
@@ -1050,8 +1136,8 @@
     "type": "custom",
     "group": "Utils",
     "iconSvg": "default",
-    "height": 48,
-    "width": 48,
+    "height": 12,
+    "width": 8,
     "isLineBased": true,
     "shapeElements": [
       {
@@ -1060,9 +1146,10 @@
       },
       {
         "id": "arrowHead",
-        "svg": "<polygon points='40,24 32,18 32,30' fill='#000' vector-effect='non-scaling-stroke'/>"
+        "svg": "<polygon points='8,6,0,0,0,12' fill='#000' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "1D"
   },
   {
     "id": "arrow_double",
@@ -1070,9 +1157,9 @@
     "type": "custom",
     "group": "Utils",
     "iconSvg": "default",
-    "height": 48,
+    "height": 12,
     "isLineBased": true,
-    "width": 48,
+    "width": 32,
     "shapeElements": [
       {
         "id": "arrowLine",
@@ -1080,13 +1167,14 @@
       },
       {
         "id": "arrowHeadRight",
-        "svg": "<polygon points='40,24 32,18 32,30' fill='#000' vector-effect='non-scaling-stroke'/>"
+        "svg": "<polygon points='32,6,24,0,24,12' fill='#000' vector-effect='non-scaling-stroke'/>"
       },
       {
         "id": "arrowHeadLeft",
-        "svg": "<polygon points='8,24 16,18 16,30' fill='#000' vector-effect='non-scaling-stroke'/>"
+        "svg": "<polygon points='0,6,8,0,8,12' fill='#000' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "1D"
   },
   {
     "id": "diamond",
@@ -1094,14 +1182,15 @@
     "type": "custom",
     "group": "Utils",
     "iconSvg": "default",
-    "height": 48,
-    "width": 48,
+    "height": 40,
+    "width": 40,
     "shapeElements": [
       {
         "id": "diamondShape",
-        "svg": "<polygon points='24,4 44,24 24,44 4,24' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<polygon points='20,0,40,20,20,40,0,20' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "simple_line",
@@ -1109,7 +1198,7 @@
     "type": "custom",
     "group": "Utils",
     "iconSvg": "default",
-    "height": 12,
+    "height": 0,
     "width": 100,
     "isLineBased": true,
     "shapeElements": [
@@ -1117,7 +1206,8 @@
         "id": "mainLine",
         "svg": "<line x1='0' y1='0' x2='100' y2='0' stroke='#000' stroke-width='3' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "1D"
   },
   {
     "id": "curved_line",
@@ -1126,8 +1216,9 @@
     "group": "Utils",
     "iconSvg": "default",
     "shape": "<path d='M4,44 Q24,4 44,44' stroke='#000' stroke-width='4' fill='none' vector-effect='non-scaling-stroke'/>",
-    "height": 48,
-    "width": 48
+    "height": 0,
+    "width": 48,
+    "dimensionality": "1D"
   },
   {
     "id": "triangle",
@@ -1135,12 +1226,12 @@
     "type": "custom",
     "group": "Utils",
     "iconSvg": "default",
-    "height": 48,
-    "width": 48,
+    "height": 40,
+    "width": 40,
     "shapeElements": [
       {
         "id": "triangleShape",
-        "svg": "<polygon points='24,4 44,44 4,44' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>",
+        "svg": "<polygon points='20,0,40,40,0,40' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>",
         "textRegions": [
           {
             "id": "triangleLabel",
@@ -1154,7 +1245,8 @@
           }
         ]
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "curved_line_one_side",
@@ -1163,8 +1255,25 @@
     "group": "ERTMS",
     "iconSvg": "default",
     "shape": "<path d='M4,4 Q80,4 80,48' stroke='#000' stroke-width='4' fill='none' vector-effect='non-scaling-stroke'/>",
+    "height": 0,
+    "width": 84,
+    "dimensionality": "1D"
+  },
+  {
+    "id": "ertms_signal_head",
+    "name": "ERTMS Signal Head",
+    "type": "custom",
+    "group": "ERTMS",
+    "iconSvg": "default",
     "height": 48,
-    "width": 84
+    "width": 32,
+    "shapeElements": [
+      {
+        "id": "signalHeadSingle",
+        "svg": "<rect x='4' y='0' width='24' height='48' fill='#eee' stroke='#333' stroke-width='2' vector-effect='non-scaling-stroke'/><circle cx='16' cy='12' r='4' fill='#fff300' stroke='#333' stroke-width='1' vector-effect='non-scaling-stroke'/><circle cx='16' cy='24' r='4' fill='#ffffff' stroke='#333' stroke-width='2' vector-effect='non-scaling-stroke'/><circle cx='16' cy='36' r='4' fill='#fff300' stroke='#333' stroke-width='1' vector-effect='non-scaling-stroke'/><text x='16' y='46' text-anchor='middle' font-size='6' fill='#333' vector-effect='non-scaling-stroke'>S1</text>"
+      }
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "ertms_single_balise",
@@ -1172,26 +1281,15 @@
     "type": "custom",
     "group": "ERTMS",
     "iconSvg": "default",
-    "height": 48,
-    "width": 48,
+    "height": 28,
+    "width": 24,
     "shapeElements": [
       {
-        "id": "balise",
-        "svg": "<polygon points='8,12 40,24 8,36' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>",
-        "textRegions": [
-          {
-            "id": "baliseId",
-            "x": 12,
-            "y": 20,
-            "width": 20,
-            "height": 8,
-            "text": "B1",
-            "fontSize": 8,
-            "align": "center"
-          }
-        ]
+        "id": "baliseTransponder",
+        "svg": "<rect x='4' y='8' width='16' height='16' fill='#ddd' stroke='#333333' stroke-width='2' vector-effect='non-scaling-stroke'/><line x1='12' y1='8' x2='12' y2='2' stroke='#333333' stroke-width='2' vector-effect='non-scaling-stroke'/><polygon points='10,2 14,2 12,6' fill='#333333' vector-effect='non-scaling-stroke'/><text x='12' y='20' text-anchor='middle' font-size='6' fill='#333333' font-weight='bold' vector-effect='non-scaling-stroke'>B1</text>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "uml_interface",
@@ -1199,12 +1297,12 @@
     "type": "custom",
     "group": "UML",
     "iconSvg": "default",
-    "height": 180,
-    "width": 120,
+    "height": 170,
+    "width": 100,
     "shapeElements": [
       {
         "id": "interfaceCircle",
-        "svg": "<circle cx='60' cy='40' r='30' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<circle cx='40' cy='20' r='30' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       },
       {
         "id": "connectionLine",
@@ -1212,7 +1310,7 @@
       },
       {
         "id": "interfaceNameRect",
-        "svg": "<rect x='10' y='120' width='100' height='20' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>",
+        "svg": "<rect x='0' y='110' width='100' height='20' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>",
         "textRegions": [
           {
             "id": "interfaceName",
@@ -1228,7 +1326,7 @@
       },
       {
         "id": "methodsRect",
-        "svg": "<rect x='10' y='140' width='100' height='40' fill='#fff' stroke='#000' stroke-width='2' stroke-dasharray='0' vector-effect='non-scaling-stroke'/>",
+        "svg": "<rect x='0' y='130' width='100' height='40' fill='#fff' stroke='#000' stroke-width='2' stroke-dasharray='-10' vector-effect='non-scaling-stroke'/>",
         "textRegions": [
           {
             "id": "methods",
@@ -1242,7 +1340,8 @@
           }
         ]
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "uml_actor",
@@ -1252,7 +1351,8 @@
     "iconSvg": "default",
     "shape": "<circle cx='30' cy='15' r='12' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/><line x1='30' y1='27' x2='30' y2='60' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/><line x1='10' y1='40' x2='50' y2='40' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/><line x1='30' y1='60' x2='15' y2='85' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/><line x1='30' y1='60' x2='45' y2='85' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>",
     "height": 90,
-    "width": 60
+    "width": 60,
+    "dimensionality": "2D"
   },
   {
     "id": "uml_usecase",
@@ -1274,7 +1374,8 @@
         "fontSize": 11,
         "align": "center"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "uml_package",
@@ -1284,7 +1385,8 @@
     "iconSvg": "default",
     "shape": "<rect x='0' y='15' width='100' height='65' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/><rect x='0' y='0' width='30' height='15' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>",
     "height": 80,
-    "width": 100
+    "width": 100,
+    "dimensionality": "2D"
   },
   {
     "id": "uml_note",
@@ -1306,7 +1408,8 @@
         "fontSize": 10,
         "align": "left"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "uml_association",
@@ -1316,7 +1419,8 @@
     "iconSvg": "default",
     "shape": "<line x1='10' y1='24' x2='90' y2='24' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>",
     "height": 48,
-    "width": 100
+    "width": 100,
+    "dimensionality": "2D"
   },
   {
     "id": "uml_aggregation",
@@ -1325,8 +1429,9 @@
     "group": "UML",
     "iconSvg": "default",
     "shape": "<line x1='20' y1='24' x2='90' y2='24' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/><polygon points='20,24 10,19 5,24 10,29' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>",
-    "height": 48,
-    "width": 100
+    "height": 29,
+    "width": 20,
+    "dimensionality": "2D"
   },
   {
     "id": "uml_composition",
@@ -1335,8 +1440,9 @@
     "group": "UML",
     "iconSvg": "default",
     "shape": "<line x1='20' y1='24' x2='90' y2='24' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/><polygon points='20,24 10,19 5,24 10,29' fill='#000' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>",
-    "height": 48,
-    "width": 100
+    "height": 29,
+    "width": 20,
+    "dimensionality": "2D"
   },
   {
     "id": "uml_inheritance",
@@ -1345,8 +1451,9 @@
     "group": "UML",
     "iconSvg": "default",
     "shape": "<line x1='15' y1='24' x2='90' y2='24' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/><polygon points='15,24 5,19 5,29' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>",
-    "height": 48,
-    "width": 100
+    "height": 29,
+    "width": 15,
+    "dimensionality": "2D"
   },
   {
     "id": "uml_realization",
@@ -1355,8 +1462,9 @@
     "group": "UML",
     "iconSvg": "default",
     "shape": "<line x1='15' y1='24' x2='90' y2='24' stroke='#000' stroke-width='2' stroke-dasharray='5,5' vector-effect='non-scaling-stroke'/><polygon points='15,24 5,19 5,29' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>",
-    "height": 48,
-    "width": 100
+    "height": 29,
+    "width": 15,
+    "dimensionality": "2D"
   },
   {
     "id": "uml_dependency",
@@ -1365,22 +1473,23 @@
     "group": "UML",
     "iconSvg": "default",
     "shape": "<line x1='15' y1='24' x2='90' y2='24' stroke='#000' stroke-width='2' stroke-dasharray='5,5' vector-effect='non-scaling-stroke'/><polygon points='90,24 80,19 80,29' fill='#000' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>",
-    "height": 48,
-    "width": 100
+    "height": 29,
+    "width": 90,
+    "dimensionality": "2D"
   },
   {
     "id": "sequence_actor",
     "name": "Sequence Actor",
-    "type": "custom", 
+    "type": "custom",
     "group": "Sequence Diagram",
     "iconSvg": "default",
-    "height": 120,
-    "width": 80,
+    "height": 30,
+    "width": 60,
     "complex": true,
     "shapeElements": [
       {
         "id": "actorBox",
-        "svg": "<rect x='10' y='10' width='60' height='30' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>",
+        "svg": "<rect x='0' y='0' width='60' height='30' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>",
         "textRegions": [
           {
             "id": "actorName",
@@ -1396,23 +1505,24 @@
       },
       {
         "id": "lifeline",
-        "svg": "<line x1='40' y1='40' x2='40' y2='120' stroke='#000' stroke-width='2' stroke-dasharray='5,5' vector-effect='non-scaling-stroke'/>"
+        "svg": "<line x1='40' y1='40' x2='40' y2='120' stroke='#000' stroke-width='2' stroke-dasharray='-5' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "sequence_object",
     "name": "Sequence Object",
     "type": "custom",
-    "group": "Sequence Diagram", 
+    "group": "Sequence Diagram",
     "iconSvg": "default",
-    "height": 120,
-    "width": 80,
+    "height": 30,
+    "width": 60,
     "complex": true,
     "shapeElements": [
       {
         "id": "objectBox",
-        "svg": "<rect x='10' y='10' width='60' height='30' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>",
+        "svg": "<rect x='0' y='0' width='60' height='30' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>",
         "textRegions": [
           {
             "id": "objectName",
@@ -1427,19 +1537,20 @@
         ]
       },
       {
-        "id": "lifeline", 
-        "svg": "<line x1='40' y1='40' x2='40' y2='120' stroke='#000' stroke-width='2' stroke-dasharray='5,5' vector-effect='non-scaling-stroke'/>"
+        "id": "lifeline",
+        "svg": "<line x1='40' y1='40' x2='40' y2='120' stroke='#000' stroke-width='2' stroke-dasharray='-5' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "sequence_message",
     "name": "Sequence Message",
     "type": "custom",
     "group": "Sequence Diagram",
-    "iconSvg": "default", 
-    "height": 20,
-    "width": 150,
+    "iconSvg": "default",
+    "height": 8,
+    "width": 10,
     "shapeElements": [
       {
         "id": "messageLine",
@@ -1447,9 +1558,10 @@
       },
       {
         "id": "messageArrow",
-        "svg": "<polygon points='140,10 130,6 130,14' fill='#000' vector-effect='non-scaling-stroke'/>"
+        "svg": "<polygon points='10,4,0,0,0,8' fill='#000' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "sequence_return",
@@ -1457,12 +1569,12 @@
     "type": "custom",
     "group": "Sequence Diagram",
     "iconSvg": "default",
-    "height": 20, 
-    "width": 150,
+    "height": 8,
+    "width": 10,
     "shapeElements": [
       {
         "id": "returnLine",
-        "svg": "<line x1='10' y1='10' x2='140' y2='10' stroke='#000' stroke-width='2' stroke-dasharray='5,5' vector-effect='non-scaling-stroke'/>",
+        "svg": "<line x1='10' y1='10' x2='140' y2='10' stroke='#000' stroke-width='2' stroke-dasharray='-1' vector-effect='non-scaling-stroke'/>",
         "textRegions": [
           {
             "id": "returnText",
@@ -1477,10 +1589,11 @@
         ]
       },
       {
-        "id": "returnArrow", 
-        "svg": "<polygon points='10,10 20,6 20,14' fill='#000' vector-effect='non-scaling-stroke'/>"
+        "id": "returnArrow",
+        "svg": "<polygon points='0,4,10,0,10,8' fill='#000' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "sequence_activation",
@@ -1488,14 +1601,15 @@
     "type": "custom",
     "group": "Sequence Diagram",
     "iconSvg": "default",
-    "height": 60,
-    "width": 12,
+    "height": 50,
+    "width": 8,
     "shapeElements": [
       {
         "id": "activationBox",
-        "svg": "<rect x='2' y='5' width='8' height='50' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<rect x='0' y='0' width='8' height='50' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "sequence_note",
@@ -1503,12 +1617,12 @@
     "type": "custom",
     "group": "Sequence Diagram",
     "iconSvg": "default",
-    "height": 40,
-    "width": 80,
+    "height": 30,
+    "width": 70,
     "shapeElements": [
       {
         "id": "noteShape",
-        "svg": "<polygon points='5,5 70,5 75,10 75,35 5,35' fill='#ffffcc' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>",
+        "svg": "<polygon points='0,0,65,0,70,5,70,30,0,30' fill='#ffffcc' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>",
         "textRegions": [
           {
             "id": "noteText",
@@ -1526,7 +1640,8 @@
         "id": "noteFold",
         "svg": "<line x1='70' y1='5' x2='70' y2='10' stroke='#000' stroke-width='1' vector-effect='non-scaling-stroke'/><line x1='70' y1='10' x2='75' y2='10' stroke='#000' stroke-width='1' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "sequence_self_message",
@@ -1534,8 +1649,8 @@
     "type": "custom",
     "group": "Sequence Diagram",
     "iconSvg": "default",
-    "height": 30,
-    "width": 40,
+    "height": 15,
+    "width": 35,
     "shapeElements": [
       {
         "id": "selfMessagePath",
@@ -1555,9 +1670,10 @@
       },
       {
         "id": "selfArrow",
-        "svg": "<polygon points='35,5 30,2 30,8' fill='#000' vector-effect='non-scaling-stroke'/>"
+        "svg": "<polygon points='5,3,0,0,0,6' fill='#000' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "sequence_alt_frame",
@@ -1565,16 +1681,16 @@
     "type": "custom",
     "group": "Sequence Diagram",
     "iconSvg": "default",
-    "height": 80,
-    "width": 200,
+    "height": 70,
+    "width": 190,
     "shapeElements": [
       {
         "id": "frameBox",
-        "svg": "<rect x='5' y='20' width='190' height='55' fill='none' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<rect x='0' y='15' width='190' height='55' fill='none' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       },
       {
         "id": "frameLabel",
-        "svg": "<rect x='5' y='5' width='30' height='15' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>",
+        "svg": "<rect x='0' y='0' width='30' height='15' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>",
         "textRegions": [
           {
             "id": "frameText",
@@ -1590,9 +1706,10 @@
       },
       {
         "id": "separator",
-        "svg": "<line x1='5' y1='50' x2='195' y2='50' stroke='#000' stroke-width='1' stroke-dasharray='3,3' vector-effect='non-scaling-stroke'/>"
+        "svg": "<line x1='5' y1='50' x2='195' y2='50' stroke='#000' stroke-width='1' stroke-dasharray='-2' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "example_complex",
@@ -1600,8 +1717,8 @@
     "type": "custom",
     "group": "Utils",
     "iconSvg": "default",
-    "height": 60,
-    "width": 80,
+    "height": 50,
+    "width": 70,
     "complex": true,
     "shapeElements": [
       {
@@ -1628,7 +1745,8 @@
           }
         ]
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "ertms_rbc",
@@ -1636,22 +1754,15 @@
     "type": "custom",
     "group": "ERTMS",
     "iconSvg": "default",
-    "height": 60,
-    "width": 80,
+    "height": 58,
+    "width": 70,
     "shapeElements": [
       {
-        "id": "rbcBox",
-        "svg": "<rect x='5' y='5' width='70' height='50' rx='3' fill='#e0f7fa' stroke='#006064' stroke-width='2' vector-effect='non-scaling-stroke'/>"
-      },
-      {
-        "id": "antenna",
-        "svg": "<line x1='40' y1='5' x2='40' y2='0' stroke='#006064' stroke-width='2' vector-effect='non-scaling-stroke'/><circle cx='40' cy='0' r='3' fill='#006064'/>"
-      },
-      {
-        "id": "rbcLabel",
-        "svg": "<text x='40' y='35' text-anchor='middle' font-size='12' fill='#006064' font-weight='bold'>RBC</text>"
+        "id": "rbcSignal",
+        "svg": "<rect x='2' y='8' width='66' height='48' fill='#e0f7fa' stroke='#006064' stroke-width='2' vector-effect='non-scaling-stroke'/><line x1='40' y1='5' x2='40' y2='3' stroke='#006064' stroke-width='2' vector-effect='non-scaling-stroke'/><circle cx='40' cy='6' r='3' fill='#006064' vector-effect='non-scaling-stroke'/><text x='35' y='38' text-anchor='middle' font-size='12' fill='#006064' font-weight='bold' vector-effect='non-scaling-stroke'>RBC</text><polygon points='60,22 66,22 63,28' fill='#006064' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "ertms_leu",
@@ -1659,18 +1770,31 @@
     "type": "custom",
     "group": "ERTMS",
     "iconSvg": "default",
-    "height": 48,
-    "width": 48,
+    "height": 32,
+    "width": 32,
     "shapeElements": [
       {
-        "id": "leuBox",
-        "svg": "<rect x='8' y='8' width='32' height='32' rx='2' fill='#fff3e0' stroke='#e65100' stroke-width='2' vector-effect='non-scaling-stroke'/>"
-      },
-      {
-        "id": "leuLabel",
-        "svg": "<text x='24' y='28' text-anchor='middle' font-size='10' fill='#e65100' font-weight='bold'>LEU</text>"
+        "id": "leuSignal",
+        "svg": "<rect x='2' y='2' width='28' height='28' fill='#fff3e0' stroke='#e65100' stroke-width='2' rx='2' vector-effect='non-scaling-stroke'/><text x='16' y='20' text-anchor='middle' font-size='10' fill='#e65100' font-weight='bold' vector-effect='non-scaling-stroke'>LEU</text>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
+  },
+  {
+    "id": "ertms_signal_head_triple",
+    "name": "ERTMS Signal Head Triple",
+    "type": "custom",
+    "group": "ERTMS",
+    "iconSvg": "default",
+    "height": 48,
+    "width": 64,
+    "shapeElements": [
+      {
+        "id": "tripleSignalHeads",
+        "svg": "<rect x='4' y='0' width='16' height='48' fill='#eee' stroke='#333' stroke-width='2' vector-effect='non-scaling-stroke'/><rect x='24' y='0' width='16' height='48' fill='#eee' stroke='#333' stroke-width='2' vector-effect='non-scaling-stroke'/><rect x='44' y='0' width='16' height='48' fill='#eee' stroke='#333' stroke-width='2' vector-effect='non-scaling-stroke'/><circle cx='12' cy='12' r='3' fill='#fff300' stroke='#333' stroke-width='1' vector-effect='non-scaling-stroke'/><circle cx='12' cy='24' r='3' fill='#ffffff' stroke='#333' stroke-width='1' vector-effect='non-scaling-stroke'/><circle cx='32' cy='12' r='3' fill='#00cc00' stroke='#333' stroke-width='1' vector-effect='non-scaling-stroke'/><circle cx='32' cy='24' r='3' fill='#ffffff' stroke='#333' stroke-width='1' vector-effect='non-scaling-stroke'/><circle cx='52' cy='12' r='3' fill='#00cc00' stroke='#333' stroke-width='1' vector-effect='non-scaling-stroke'/><circle cx='52' cy='24' r='3' fill='#ffffff' stroke='#333' stroke-width='1' vector-effect='non-scaling-stroke'/><text x='12' y='42' text-anchor='middle' font-size='4' fill='#333' vector-effect='non-scaling-stroke'>S1</text><text x='32' y='42' text-anchor='middle' font-size='4' fill='#333' vector-effect='non-scaling-stroke'>S2</text><text x='52' y='42' text-anchor='middle' font-size='4' fill='#333' vector-effect='non-scaling-stroke'>S3</text>"
+      }
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "ertms_triple_balise",
@@ -1678,26 +1802,15 @@
     "type": "custom",
     "group": "ERTMS",
     "iconSvg": "default",
-    "height": 48,
-    "width": 80,
+    "height": 28,
+    "width": 72,
     "shapeElements": [
       {
-        "id": "balise1",
-        "svg": "<polygon points='8,12 20,18 8,24' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
-      },
-      {
-        "id": "balise2",
-        "svg": "<polygon points='30,12 42,18 30,24' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
-      },
-      {
-        "id": "balise3",
-        "svg": "<polygon points='52,12 64,18 52,24' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
-      },
-      {
-        "id": "groupLabel",
-        "svg": "<text x='36' y='38' text-anchor='middle' font-size='8' fill='#000'>BG</text>"
+        "id": "tripleBaliseTransponders",
+        "svg": "<rect x='4' y='8' width='16' height='16' fill='#ddd' stroke='#333333' stroke-width='2' vector-effect='non-scaling-stroke'/><line x1='12' y1='8' x2='12' y2='2' stroke='#333333' stroke-width='2' vector-effect='non-scaling-stroke'/><polygon points='10,2 14,2 12,6' fill='#333333' vector-effect='non-scaling-stroke'/><text x='12' y='20' text-anchor='middle' font-size='5' fill='#333333' font-weight='bold' vector-effect='non-scaling-stroke'>B1</text><rect x='28' y='8' width='16' height='16' fill='#ddd' stroke='#333333' stroke-width='2' vector-effect='non-scaling-stroke'/><line x1='36' y1='8' x2='36' y2='2' stroke='#333333' stroke-width='2' vector-effect='non-scaling-stroke'/><polygon points='34,2 38,2 36,6' fill='#333333' vector-effect='non-scaling-stroke'/><text x='36' y='20' text-anchor='middle' font-size='5' fill='#333333' font-weight='bold' vector-effect='non-scaling-stroke'>B2</text><rect x='52' y='8' width='16' height='16' fill='#ddd' stroke='#333333' stroke-width='2' vector-effect='non-scaling-stroke'/><line x1='60' y1='8' x2='60' y2='2' stroke='#333333' stroke-width='2' vector-effect='non-scaling-stroke'/><polygon points='58,2 62,2 60,6' fill='#333333' vector-effect='non-scaling-stroke'/><text x='60' y='20' text-anchor='middle' font-size='5' fill='#333333' font-weight='bold' vector-effect='non-scaling-stroke'>B3</text>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "ertms_euroloop",
@@ -1705,12 +1818,12 @@
     "type": "custom",
     "group": "ERTMS",
     "iconSvg": "default",
-    "height": 40,
-    "width": 80,
+    "height": 20,
+    "width": 10,
     "shapeElements": [
       {
         "id": "loopBase",
-        "svg": "<rect x='5' y='15' width='70' height='10' fill='#ffe0b2' stroke='#bf360c' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<rect x='0' y='0' width='70' height='10' fill='#ffe0b2' stroke='#bf360c' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       },
       {
         "id": "loopWave",
@@ -1718,9 +1831,10 @@
       },
       {
         "id": "loopLabel",
-        "svg": "<text x='40' y='35' text-anchor='middle' font-size='8' fill='#bf360c'>EL</text>"
+        "svg": "<text x='35' y='20' text-anchor='middle' font-size='8' fill='#bf360c'>EL</text>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "ertms_euroradio",
@@ -1728,8 +1842,8 @@
     "type": "custom",
     "group": "ERTMS",
     "iconSvg": "default",
-    "height": 60,
-    "width": 48,
+    "height": 20,
+    "width": 32,
     "shapeElements": [
       {
         "id": "antennaPole",
@@ -1737,13 +1851,14 @@
       },
       {
         "id": "antennaTop",
-        "svg": "<polygon points='12,10 24,0 36,10' fill='#607d8b' stroke='#263238' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<polygon points='0,10,12,0,24,10' fill='#607d8b' stroke='#263238' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       },
       {
         "id": "radioWaves",
-        "svg": "<path d='M8,20 Q12,18 16,20' stroke='#1976d2' stroke-width='1' fill='none' stroke-dasharray='2,2'/><path d='M32,20 Q36,18 40,20' stroke='#1976d2' stroke-width='1' fill='none' stroke-dasharray='2,2'/>"
+        "svg": "<path d='M8,20 Q12,18 16,20' stroke='#1976d2' stroke-width='1' fill='none' stroke-dasharray='2'/><path d='M32,20 Q36,18 40,20' stroke='#1976d2' stroke-width='1' fill='none' stroke-dasharray='2'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "ertms_dmi",
@@ -1751,30 +1866,31 @@
     "type": "custom",
     "group": "ERTMS",
     "iconSvg": "default",
-    "height": 60,
-    "width": 80,
+    "height": 50,
+    "width": 70,
     "shapeElements": [
       {
         "id": "dmiScreen",
-        "svg": "<rect x='5' y='5' width='70' height='50' rx='3' fill='#37474f' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<rect x='0' y='0' width='70' height='50' rx='-2' fill='#37474f' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       },
       {
         "id": "dmiDisplay",
-        "svg": "<rect x='10' y='10' width='60' height='30' fill='#263238' stroke='#00acc1' stroke-width='1'/>"
+        "svg": "<rect x='5' y='5' width='60' height='30' fill='#263238' stroke='#00acc1' stroke-width='1'/>"
       },
       {
         "id": "speedIndicator",
-        "svg": "<text x='40' y='30' text-anchor='middle' font-size='16' fill='#00e676' font-weight='bold'>120</text>"
+        "svg": "<text x='35' y='25' text-anchor='middle' font-size='16' fill='#00e676' font-weight='bold'>120</text>"
       },
       {
         "id": "modeButton",
-        "svg": "<rect x='15' y='42' width='20' height='8' rx='2' fill='#ffc107' stroke='#000' stroke-width='1'/>"
+        "svg": "<rect x='10' y='37' width='20' height='8' rx='-3' fill='#ffc107' stroke='#000' stroke-width='1'/>"
       },
       {
         "id": "ackButton",
-        "svg": "<rect x='45' y='42' width='20' height='8' rx='2' fill='#4caf50' stroke='#000' stroke-width='1'/>"
+        "svg": "<rect x='40' y='37' width='20' height='8' rx='-3' fill='#4caf50' stroke='#000' stroke-width='1'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "ertms_etcs_l1",
@@ -1782,18 +1898,19 @@
     "type": "custom",
     "group": "ERTMS",
     "iconSvg": "default",
-    "height": 60,
-    "width": 60,
+    "height": 50,
+    "width": 50,
     "shapeElements": [
       {
         "id": "borderSign",
-        "svg": "<rect x='5' y='5' width='50' height='50' fill='#fff' stroke='#000' stroke-width='3' vector-effect='non-scaling-stroke'/>"
+        "svg": "<rect x='0' y='0' width='50' height='50' fill='#fff' stroke='#000' stroke-width='3' vector-effect='non-scaling-stroke'/>"
       },
       {
         "id": "l1Label",
-        "svg": "<text x='30' y='35' text-anchor='middle' font-size='20' fill='#000' font-weight='bold'>L1</text>"
+        "svg": "<text x='25' y='30' text-anchor='middle' font-size='20' fill='#000' font-weight='bold'>L1</text>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "ertms_etcs_l2",
@@ -1801,18 +1918,19 @@
     "type": "custom",
     "group": "ERTMS",
     "iconSvg": "default",
-    "height": 60,
-    "width": 60,
+    "height": 50,
+    "width": 50,
     "shapeElements": [
       {
         "id": "borderSign",
-        "svg": "<rect x='5' y='5' width='50' height='50' fill='#fff' stroke='#000' stroke-width='3' vector-effect='non-scaling-stroke'/>"
+        "svg": "<rect x='0' y='0' width='50' height='50' fill='#fff' stroke='#000' stroke-width='3' vector-effect='non-scaling-stroke'/>"
       },
       {
         "id": "l2Label",
-        "svg": "<text x='30' y='35' text-anchor='middle' font-size='20' fill='#000' font-weight='bold'>L2</text>"
+        "svg": "<text x='25' y='30' text-anchor='middle' font-size='20' fill='#000' font-weight='bold'>L2</text>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "ertms_level_crossing",
@@ -1820,8 +1938,8 @@
     "type": "custom",
     "group": "ERTMS",
     "iconSvg": "default",
-    "height": 80,
-    "width": 80,
+    "height": 60,
+    "width": 60,
     "shapeElements": [
       {
         "id": "crossingX",
@@ -1829,13 +1947,14 @@
       },
       {
         "id": "crossingCircle",
-        "svg": "<circle cx='40' cy='40' r='30' fill='none' stroke='#d32f2f' stroke-width='4' vector-effect='non-scaling-stroke'/>"
+        "svg": "<circle cx='20' cy='20' r='30' fill='none' stroke='#d32f2f' stroke-width='4' vector-effect='non-scaling-stroke'/>"
       },
       {
         "id": "warningLights",
-        "svg": "<circle cx='20' cy='15' r='5' fill='#ff5252'/><circle cx='60' cy='15' r='5' fill='#ff5252'/>"
+        "svg": "<circle cx='0' cy='-5' r='5' fill='#ff5252'/><circle cx='40' cy='-5' r='5' fill='#ff5252'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "ertms_axle_counter",
@@ -1843,22 +1962,23 @@
     "type": "custom",
     "group": "ERTMS",
     "iconSvg": "default",
-    "height": 40,
-    "width": 48,
+    "height": 28,
+    "width": 32,
     "shapeElements": [
       {
         "id": "counterBox",
-        "svg": "<rect x='8' y='5' width='32' height='20' rx='2' fill='#e1f5fe' stroke='#01579b' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<rect x='0' y='0' width='32' height='20' rx='-6' fill='#e1f5fe' stroke='#01579b' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       },
       {
         "id": "sensor",
-        "svg": "<rect x='18' y='25' width='12' height='8' fill='#0277bd' stroke='#01579b' stroke-width='1' vector-effect='non-scaling-stroke'/>"
+        "svg": "<rect x='10' y='20' width='12' height='8' fill='#0277bd' stroke='#01579b' stroke-width='1' vector-effect='non-scaling-stroke'/>"
       },
       {
         "id": "counterLabel",
-        "svg": "<text x='24' y='18' text-anchor='middle' font-size='8' fill='#01579b' font-weight='bold'>AC</text>"
+        "svg": "<text x='16' y='13' text-anchor='middle' font-size='8' fill='#01579b' font-weight='bold'>AC</text>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "buffer_stop",
@@ -1866,18 +1986,19 @@
     "type": "custom",
     "group": "Tracks",
     "iconSvg": "default",
-    "height": 48,
-    "width": 32,
+    "height": 32,
+    "width": 28,
     "shapeElements": [
       {
         "id": "buffer",
-        "svg": "<rect x='2' y='8' width='28' height='32' rx='2' fill='#f44336' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<rect x='0' y='0' width='28' height='32' rx='0' fill='#f44336' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       },
       {
         "id": "stripes",
-        "svg": "<rect x='6' y='12' width='20' height='6' fill='#fff'/><rect x='6' y='26' width='20' height='6' fill='#fff'/>"
+        "svg": "<rect x='4' y='4' width='20' height='6' fill='#fff'/><rect x='4' y='18' width='20' height='6' fill='#fff'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "platform",
@@ -1908,7 +2029,8 @@
           }
         ]
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "station_sign",
@@ -1916,12 +2038,12 @@
     "type": "custom",
     "group": "Tracks",
     "iconSvg": "default",
-    "height": 80,
-    "width": 100,
+    "height": 35,
+    "width": 80,
     "shapeElements": [
       {
         "id": "signBoard",
-        "svg": "<rect x='10' y='5' width='80' height='35' rx='3' fill='#1976d2' stroke='#fff' stroke-width='2' vector-effect='non-scaling-stroke'/>",
+        "svg": "<rect x='0' y='0' width='80' height='35' rx='-7' fill='#1976d2' stroke='#fff' stroke-width='2' vector-effect='non-scaling-stroke'/>",
         "textRegions": [
           {
             "id": "stationName",
@@ -1939,7 +2061,8 @@
         "id": "signPost",
         "svg": "<line x1='50' y1='40' x2='50' y2='80' stroke='#424242' stroke-width='4' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "tunnel",
@@ -1947,8 +2070,8 @@
     "type": "custom",
     "group": "Tracks",
     "iconSvg": "default",
-    "height": 80,
-    "width": 100,
+    "height": 40,
+    "width": 80,
     "shapeElements": [
       {
         "id": "tunnelArc",
@@ -1958,7 +2081,8 @@
         "id": "tunnelFill",
         "svg": "<path d='M10,80 L10,40 Q10,10 50,10 Q90,10 90,40 L90,80 Z' fill='#757575' opacity='0.3'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "bridge",
@@ -1966,18 +2090,19 @@
     "type": "custom",
     "group": "Tracks",
     "iconSvg": "default",
-    "height": 60,
+    "height": 8,
     "width": 120,
     "shapeElements": [
       {
         "id": "bridgeDeck",
-        "svg": "<rect x='0' y='20' width='120' height='8' fill='#78909c' stroke='#37474f' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<rect x='0' y='0' width='120' height='8' fill='#78909c' stroke='#37474f' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       },
       {
         "id": "supports",
         "svg": "<line x1='20' y1='28' x2='15' y2='60' stroke='#37474f' stroke-width='3' vector-effect='non-scaling-stroke'/><line x1='60' y1='28' x2='55' y2='60' stroke='#37474f' stroke-width='3' vector-effect='non-scaling-stroke'/><line x1='100' y1='28' x2='95' y2='60' stroke='#37474f' stroke-width='3' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "double_track",
@@ -1985,7 +2110,7 @@
     "type": "custom",
     "group": "Tracks",
     "iconSvg": "default",
-    "height": 20,
+    "height": 0,
     "width": 100,
     "isLineBased": true,
     "shapeElements": [
@@ -1997,7 +2122,8 @@
         "id": "lowerTrack",
         "svg": "<line x1='0' y1='15' x2='100' y2='15' stroke='#000000' stroke-width='4' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "1D"
   },
   {
     "id": "speed_limit",
@@ -2005,12 +2131,12 @@
     "type": "custom",
     "group": "Signals",
     "iconSvg": "default",
-    "height": 80,
-    "width": 48,
+    "height": 40,
+    "width": 40,
     "shapeElements": [
       {
         "id": "signCircle",
-        "svg": "<circle cx='24' cy='24' r='20' fill='#fff' stroke='#d32f2f' stroke-width='3' vector-effect='non-scaling-stroke'/>",
+        "svg": "<circle cx='16' cy='16' r='20' fill='#fff' stroke='#d32f2f' stroke-width='3' vector-effect='non-scaling-stroke'/>",
         "textRegions": [
           {
             "id": "speedValue",
@@ -2028,7 +2154,8 @@
         "id": "signPole",
         "svg": "<line x1='24' y1='44' x2='24' y2='80' stroke='#424242' stroke-width='3' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "gradient_marker",
@@ -2036,16 +2163,16 @@
     "type": "custom",
     "group": "Tracks",
     "iconSvg": "default",
-    "height": 60,
-    "width": 48,
+    "height": 16,
+    "width": 28,
     "shapeElements": [
       {
         "id": "markerBoard",
-        "svg": "<rect x='8' y='8' width='32' height='32' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<rect x='0' y='0' width='32' height='32' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       },
       {
         "id": "gradientLine",
-        "svg": "<line x1='12' y1='30' x2='36' y2='16' stroke='#000' stroke-width='3' vector-effect='non-scaling-stroke'/><polygon points='36,16 30,18 32,24' fill='#000'/>"
+        "svg": "<line x1='12' y1='30' x2='36' y2='16' stroke='#000' stroke-width='3' vector-effect='non-scaling-stroke'/><polygon points='28,8,22,10,24,16' fill='#000'/>"
       },
       {
         "id": "markerPole",
@@ -2063,7 +2190,8 @@
           }
         ]
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "shunting_signal",
@@ -2071,34 +2199,38 @@
     "type": "custom",
     "group": "Signals",
     "iconSvg": "default",
-    "height": 48,
-    "width": 32,
+    "height": 32,
+    "width": 16,
     "properties": {
       "orientation": {
         "type": "select",
         "label": "Orientation",
         "default": "left",
-        "options": ["left", "right"]
+        "options": [
+          "left",
+          "right"
+        ]
       }
     },
     "shapeElements": [
       {
         "id": "signalBox",
-        "svg": "<rect x='8' y='4' width='16' height='24' rx='2' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<rect x='0' y='0' width='16' height='24' rx='-6' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       },
       {
         "id": "whiteLight",
-        "svg": "<circle cx='16' cy='16' r='5' fill='#fff' stroke='#000' stroke-width='1'/>"
+        "svg": "<circle cx='0' cy='8' r='5' fill='#fff' stroke='#000' stroke-width='1'/>"
       },
       {
         "id": "orientationIndicator",
-        "svg": "{orientation === 'left' ? \"<polygon points='8,32 14,32 11,36' fill='#000' style='filter: drop-shadow(0px 2px 3px rgba(0,0,0,0.35));'/>\" : \"<polygon points='24,32 18,32 21,36' fill='#000' style='filter: drop-shadow(0px 2px 3px rgba(0,0,0,0.35));'/>\"}"
+        "svg": "{orientation === 'left' ? \"<polygon points='0,28,6,28,3,32' fill='#000' style='filter: drop-shadow(0px 2px 3px rgba(0,0,0,0.35));'/>\" : \"<polygon points='16,28,10,28,13,32' fill='#000' style='filter: drop-shadow(0px 2px 3px rgba(0,0,0,0.35));'/>\"}"
       },
       {
         "id": "signalPole",
         "svg": "<line x1='16' y1='28' x2='16' y2='48' stroke='#000' stroke-width='3' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "locomotive",
@@ -2106,8 +2238,8 @@
     "type": "custom",
     "group": "Trains",
     "iconSvg": "default",
-    "height": 50,
-    "width": 80,
+    "height": 43,
+    "width": 70,
     "shapeElements": [
       {
         "id": "body",
@@ -2129,7 +2261,8 @@
         "id": "frontCoupler",
         "svg": "<rect x='0' y='18' width='10' height='4' fill='#616161'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "passenger_car",
@@ -2137,30 +2270,31 @@
     "type": "custom",
     "group": "Trains",
     "iconSvg": "default",
-    "height": 50,
-    "width": 100,
+    "height": 35,
+    "width": 90,
     "shapeElements": [
       {
         "id": "carBody",
-        "svg": "<rect x='5' y='10' width='90' height='23' rx='2' fill='#1565c0' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<rect x='0' y='2' width='90' height='23' rx='-3' fill='#1565c0' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       },
       {
         "id": "windows",
-        "svg": "<rect x='10' y='14' width='12' height='10' fill='#bbdefb'/><rect x='25' y='14' width='12' height='10' fill='#bbdefb'/><rect x='40' y='14' width='12' height='10' fill='#bbdefb'/><rect x='55' y='14' width='12' height='10' fill='#bbdefb'/><rect x='70' y='14' width='12' height='10' fill='#bbdefb'/>"
+        "svg": "<rect x='5' y='6' width='12' height='10' fill='#bbdefb'/><rect x='20' y='6' width='12' height='10' fill='#bbdefb'/><rect x='35' y='6' width='12' height='10' fill='#bbdefb'/><rect x='50' y='6' width='12' height='10' fill='#bbdefb'/><rect x='65' y='6' width='12' height='10' fill='#bbdefb'/>"
       },
       {
         "id": "roof",
-        "svg": "<rect x='5' y='8' width='90' height='2' fill='#0d47a1'/>"
+        "svg": "<rect x='0' y='0' width='90' height='2' fill='#0d47a1'/>"
       },
       {
         "id": "wheels",
-        "svg": "<circle cx='20' cy='38' r='5' fill='#424242' stroke='#000' stroke-width='1'/><circle cx='80' cy='38' r='5' fill='#424242' stroke='#000' stroke-width='1'/>"
+        "svg": "<circle cx='10' cy='22' r='5' fill='#424242' stroke='#000' stroke-width='1'/><circle cx='70' cy='22' r='5' fill='#424242' stroke='#000' stroke-width='1'/>"
       },
       {
         "id": "doors",
-        "svg": "<rect x='18' y='20' width='2' height='13' fill='#0d47a1'/><rect x='78' y='20' width='2' height='13' fill='#0d47a1'/>"
+        "svg": "<rect x='13' y='12' width='2' height='13' fill='#0d47a1'/><rect x='73' y='12' width='2' height='13' fill='#0d47a1'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "freight_car",
@@ -2168,12 +2302,12 @@
     "type": "custom",
     "group": "Trains",
     "iconSvg": "default",
-    "height": 50,
-    "width": 100,
+    "height": 31,
+    "width": 90,
     "shapeElements": [
       {
         "id": "carBody",
-        "svg": "<rect x='5' y='12' width='90' height='20' fill='#6d4c41' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<rect x='0' y='0' width='90' height='20' fill='#6d4c41' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       },
       {
         "id": "topRail",
@@ -2185,9 +2319,10 @@
       },
       {
         "id": "wheels",
-        "svg": "<circle cx='20' cy='38' r='5' fill='#424242' stroke='#000' stroke-width='1'/><circle cx='80' cy='38' r='5' fill='#424242' stroke='#000' stroke-width='1'/>"
+        "svg": "<circle cx='10' cy='14' r='5' fill='#424242' stroke='#000' stroke-width='1'/><circle cx='70' cy='14' r='5' fill='#424242' stroke='#000' stroke-width='1'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "tank_car",
@@ -2195,16 +2330,16 @@
     "type": "custom",
     "group": "Trains",
     "iconSvg": "default",
-    "height": 50,
-    "width": 100,
+    "height": 35,
+    "width": 90,
     "shapeElements": [
       {
         "id": "tank",
-        "svg": "<ellipse cx='50' cy='20' rx='45' ry='12' fill='#90a4ae' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<ellipse cx='40' cy='4' rx='40' ry='4' fill='#90a4ae' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       },
       {
         "id": "tankBand",
-        "svg": "<ellipse cx='50' cy='20' rx='45' ry='8' fill='none' stroke='#546e7a' stroke-width='1'/>"
+        "svg": "<ellipse cx='40' cy='4' rx='40' ry='0' fill='none' stroke='#546e7a' stroke-width='1'/>"
       },
       {
         "id": "ladder",
@@ -2212,9 +2347,10 @@
       },
       {
         "id": "wheels",
-        "svg": "<circle cx='20' cy='38' r='5' fill='#424242' stroke='#000' stroke-width='1'/><circle cx='40' cy='38' r='5' fill='#424242' stroke='#000' stroke-width='1'/><circle cx='60' cy='38' r='5' fill='#424242' stroke='#000' stroke-width='1'/><circle cx='80' cy='38' r='5' fill='#424242' stroke='#000' stroke-width='1'/>"
+        "svg": "<circle cx='10' cy='22' r='5' fill='#424242' stroke='#000' stroke-width='1'/><circle cx='30' cy='22' r='5' fill='#424242' stroke='#000' stroke-width='1'/><circle cx='50' cy='22' r='5' fill='#424242' stroke='#000' stroke-width='1'/><circle cx='70' cy='22' r='5' fill='#424242' stroke='#000' stroke-width='1'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "hexagon",
@@ -2222,14 +2358,15 @@
     "type": "custom",
     "group": "Utils",
     "iconSvg": "default",
-    "height": 48,
-    "width": 48,
+    "height": 44,
+    "width": 40,
     "shapeElements": [
       {
         "id": "hexShape",
-        "svg": "<polygon points='24,2 44,14 44,34 24,46 4,34 4,14' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<polygon points='20,0,40,12,40,32,20,44,0,32,0,12' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "star",
@@ -2237,14 +2374,15 @@
     "type": "custom",
     "group": "Utils",
     "iconSvg": "default",
-    "height": 48,
-    "width": 48,
+    "height": 42,
+    "width": 44,
     "shapeElements": [
       {
         "id": "starShape",
-        "svg": "<polygon points='24,2 29,18 46,18 33,28 38,44 24,34 10,44 15,28 2,18 19,18' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<polygon points='22,0,27,16,44,16,31,26,36,42,22,32,8,42,13,26,0,16,17,16' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "ellipse",
@@ -2252,14 +2390,15 @@
     "type": "custom",
     "group": "Utils",
     "iconSvg": "default",
-    "height": 48,
-    "width": 72,
+    "height": 28,
+    "width": 28,
     "shapeElements": [
       {
         "id": "ellipseShape",
-        "svg": "<ellipse cx='36' cy='24' rx='32' ry='20' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<ellipse cx='28' cy='16' rx='28' ry='16' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "pentagon",
@@ -2267,14 +2406,15 @@
     "type": "custom",
     "group": "Utils",
     "iconSvg": "default",
-    "height": 48,
-    "width": 48,
+    "height": 38,
+    "width": 40,
     "shapeElements": [
       {
         "id": "pentagonShape",
-        "svg": "<polygon points='24,4 44,18 36,42 12,42 4,18' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<polygon points='20,0,40,14,32,38,8,38,0,14' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "octagon",
@@ -2282,14 +2422,15 @@
     "type": "custom",
     "group": "Utils",
     "iconSvg": "default",
-    "height": 48,
-    "width": 48,
+    "height": 40,
+    "width": 40,
     "shapeElements": [
       {
         "id": "octagonShape",
-        "svg": "<polygon points='14,4 34,4 44,14 44,34 34,44 14,44 4,34 4,14' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<polygon points='10,0,30,0,40,10,40,30,30,40,10,40,0,30,0,10' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "cross",
@@ -2297,14 +2438,15 @@
     "type": "custom",
     "group": "Utils",
     "iconSvg": "default",
-    "height": 48,
-    "width": 48,
+    "height": 40,
+    "width": 40,
     "shapeElements": [
       {
         "id": "crossShape",
-        "svg": "<polygon points='16,4 32,4 32,16 44,16 44,32 32,32 32,44 16,44 16,32 4,32 4,16 16,16' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
+        "svg": "<polygon points='12,0,28,0,28,12,40,12,40,28,28,28,28,40,12,40,12,28,0,28,0,12,12,12' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "cloud",
@@ -2319,7 +2461,8 @@
         "id": "cloudShape",
         "svg": "<path d='M52,28 Q52,20 44,20 Q44,14 36,14 Q28,14 24,20 Q18,20 14,26 Q10,32 14,38 Q18,44 24,44 L52,44 Q58,44 60,38 Q62,32 58,28 Q56,24 52,28' fill='#fff' stroke='#000' stroke-width='2' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "2D"
   },
   {
     "id": "dashed_line",
@@ -2327,7 +2470,7 @@
     "type": "custom",
     "group": "Utils",
     "iconSvg": "default",
-    "height": 12,
+    "height": 0,
     "width": 100,
     "isLineBased": true,
     "shapeElements": [
@@ -2335,7 +2478,8 @@
         "id": "dashedLine",
         "svg": "<line x1='0' y1='0' x2='100' y2='0' stroke='#000' stroke-width='3' stroke-dasharray='10,5' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "1D"
   },
   {
     "id": "dotted_line",
@@ -2343,7 +2487,7 @@
     "type": "custom",
     "group": "Utils",
     "iconSvg": "default",
-    "height": 12,
+    "height": 0,
     "width": 100,
     "isLineBased": true,
     "shapeElements": [
@@ -2351,6 +2495,7 @@
         "id": "dottedLine",
         "svg": "<line x1='0' y1='0' x2='100' y2='0' stroke='#000' stroke-width='3' stroke-dasharray='2,5' vector-effect='non-scaling-stroke'/>"
       }
-    ]
+    ],
+    "dimensionality": "1D"
   }
 ]

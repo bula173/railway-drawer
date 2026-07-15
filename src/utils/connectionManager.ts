@@ -257,3 +257,59 @@ export function snapToConnectionPoint(
   }
   return position;
 }
+
+/**
+ * @function getConnectionPointsGrid
+ * @brief Calculates connection points only on shape perimeter. Number depends on shape size.
+ *
+ * Points are distributed around the shape edges only (no interior points).
+ * Uses actual current bounds from start/end (accounts for resizing).
+ */
+export function getConnectionPointsGrid(element: DrawElement): Point[] {
+  const { start, end } = element;
+
+  // Always use start/end for actual current bounds (accounts for resizing)
+  const minX = Math.min(start.x, end.x);
+  const maxX = Math.max(start.x, end.x);
+  const minY = Math.min(start.y, end.y);
+  const maxY = Math.max(start.y, end.y);
+
+  const width = maxX - minX;
+  const height = maxY - minY;
+  const size = Math.max(width, height);
+
+  // Determine number of points per edge based on shape size
+  let pointsPerEdge = 2; // Minimum: just corners
+  if (size >= 100) pointsPerEdge = 3;
+  if (size >= 200) pointsPerEdge = 4;
+  if (size >= 300) pointsPerEdge = 5;
+  if (size >= 400) pointsPerEdge = 6;
+
+  const points: Point[] = [];
+
+  // Top edge (left to right)
+  for (let i = 0; i < pointsPerEdge; i++) {
+    const x = minX + (i / (pointsPerEdge - 1)) * width;
+    points.push({ x, y: minY });
+  }
+
+  // Right edge (top to bottom, excluding top-right corner already added)
+  for (let i = 1; i < pointsPerEdge; i++) {
+    const y = minY + (i / (pointsPerEdge - 1)) * height;
+    points.push({ x: maxX, y });
+  }
+
+  // Bottom edge (right to left, excluding bottom-right corner already added)
+  for (let i = pointsPerEdge - 2; i >= 0; i--) {
+    const x = minX + (i / (pointsPerEdge - 1)) * width;
+    points.push({ x, y: maxY });
+  }
+
+  // Left edge (bottom to top, excluding both corners already added)
+  for (let i = pointsPerEdge - 2; i > 0; i--) {
+    const y = minY + (i / (pointsPerEdge - 1)) * height;
+    points.push({ x: minX, y });
+  }
+
+  return points;
+}

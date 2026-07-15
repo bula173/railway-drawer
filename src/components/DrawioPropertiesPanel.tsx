@@ -9,15 +9,25 @@
  * - Professional styling
  */
 
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import { ChevronDown } from 'lucide-react';
 import type { DrawElement } from './Elements';
+import type { ConnectorStyle } from '../utils/connectorStyles';
+import type { BrushConfig } from '../utils/brushTools';
 import { logger } from '../utils/logger';
+import { ConnectorPanel } from './ConnectorPanel';
+import { BrushPanel } from './BrushPanel';
 
 interface DrawioPropertiesPanelProps {
   drawAreaRef: any;
   selectedElement?: DrawElement;
+  selectedConnectorId?: string;
+  selectedConnectorStyle?: ConnectorStyle;
+  brushMode?: boolean;
+  brushConfig?: BrushConfig;
   onElementChange?: (element: DrawElement) => void;
+  onConnectorStyleChange?: (style: ConnectorStyle) => void;
+  onBrushConfigChange?: (config: BrushConfig) => void;
   onCanvasPropertyChange?: (property: string, value: any) => void;
 }
 
@@ -26,9 +36,18 @@ type TabType = 'style' | 'text' | 'arrange';
 const DrawioPropertiesPanel: React.FC<DrawioPropertiesPanelProps> = ({
   drawAreaRef,
   selectedElement,
+  selectedConnectorId,
+  selectedConnectorStyle,
+  brushMode,
+  brushConfig,
   onElementChange,
+  onConnectorStyleChange,
+  onBrushConfigChange,
   onCanvasPropertyChange,
 }) => {
+  // Check if selected element is a connector (type === 'connector')
+  const isConnectorElement = selectedElement && selectedElement.type === 'connector';
+  const isElementBrush = selectedElement && selectedElement.type === 'brush';
   const [activeTab, setActiveTab] = useState<TabType>('style');
   const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({
     fill: true,
@@ -148,6 +167,97 @@ const DrawioPropertiesPanel: React.FC<DrawioPropertiesPanelProps> = ({
             </div>
           )}
         </div>
+      </div>
+    );
+  }
+
+  // If brush mode is active or selected element is brush type, show brush properties
+  if ((brushMode && brushConfig && onBrushConfigChange) || (isElementBrush && brushConfig && onBrushConfigChange)) {
+    return (
+      <div style={{ height: '100%', backgroundColor: '#f5f5f5', overflow: 'auto' }}>
+        <BrushPanel
+          config={brushConfig}
+          onConfigChange={onBrushConfigChange}
+          onClose={() => {/* handled by parent */}}
+        />
+      </div>
+    );
+  }
+
+  // If a connector element is selected, show connector properties
+  if (isConnectorElement && onElementChange) {
+    const connectorStyle = selectedElement?.connectorStyle || {
+      lineStyle: 'solid' as const,
+      lineWidth: 2 as const,
+      startArrow: 'none' as const,
+      endArrow: 'standard' as const,
+      color: '#333333',
+      opacity: 1,
+    };
+    return (
+      <div style={{ height: '100%', backgroundColor: '#f5f5f5', overflow: 'auto' }}>
+        <ConnectorPanel
+          style={connectorStyle}
+          label={selectedElement?.name || ''}
+          fromAttached={selectedElement?.fromAttached !== false}
+          toAttached={selectedElement?.toAttached !== false}
+          onStyleChange={(newStyle) => {
+            if (selectedElement) {
+              onElementChange({
+                ...selectedElement,
+                connectorStyle: newStyle
+              });
+            }
+          }}
+          onLabelChange={(newLabel) => {
+            if (selectedElement) {
+              onElementChange({
+                ...selectedElement,
+                name: newLabel
+              });
+            }
+          }}
+          onDetachStart={() => {
+            if (selectedElement) {
+              onElementChange({
+                ...selectedElement,
+                fromAttached: false
+              });
+            }
+          }}
+          onDetachEnd={() => {
+            if (selectedElement) {
+              onElementChange({
+                ...selectedElement,
+                toAttached: false
+              });
+            }
+          }}
+          onAttachStart={() => {
+            if (selectedElement) {
+              onElementChange({
+                ...selectedElement,
+                fromAttached: true
+              });
+            }
+          }}
+          onAttachEnd={() => {
+            if (selectedElement) {
+              onElementChange({
+                ...selectedElement,
+                toAttached: true
+              });
+            }
+          }}
+          onDelete={() => {
+            if (selectedElement) {
+              // Signal to parent to delete this connector
+              const deleteEvent = new CustomEvent('deleteConnector', { detail: { connectorId: selectedElement.id } });
+              window.dispatchEvent(deleteEvent);
+            }
+          }}
+          onClose={() => {/* handled by parent */}}
+        />
       </div>
     );
   }

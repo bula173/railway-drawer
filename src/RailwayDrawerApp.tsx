@@ -39,6 +39,7 @@ import { BRUSH_PRESETS } from "./utils/brushTools";
 import { logger } from "./utils/logger";
 import { saveToLocalStorage, loadFromLocalStorage, clearLocalStorage } from "./utils/storageManager";
 import { getAvailableThemes } from "./utils/themingUtils";
+import { enhanceToolboxWithRemoteSvgs, preloadErtmsSvgs } from "./utils/toolboxEnhancer";
 
 /** @brief Grid size for snap-to-grid functionality */
 const GRID_SIZE = 40;
@@ -47,7 +48,7 @@ const GRID_SIZE = 40;
 // Removed - no longer needed with simplified copy/paste implementation
 
 /** @brief Application version */
-const APP_VERSION = "0.3.3 Beta";
+const APP_VERSION = "0.5.0 Alpha";
 
 /** @brief Application author */
 const APP_AUTHOR = "Marcin Kwiatkowski";
@@ -70,6 +71,26 @@ const RailwayDrawerApp = () => {
     });
     return config;
   });
+
+  // Enhance toolbox with remote ERTMS SVGs on mount
+  useEffect(() => {
+    const enhance = async () => {
+      try {
+        const enhanced = await enhanceToolboxWithRemoteSvgs(toolbox);
+        if (enhanced && enhanced.length > 0) {
+          setToolbox(enhanced);
+        }
+      } catch (error) {
+        console.warn("Failed to enhance toolbox with remote SVGs:", error);
+        // Continue with original toolbox if enhancement fails
+      }
+    };
+
+    enhance();
+
+    // Also preload SVGs in background for faster access
+    preloadErtmsSvgs().catch(err => console.warn("Failed to preload SVGs:", err));
+  }, []); // Only run once on mount
 
   // Ref for the DrawArea component instances (one per tab)
   const drawAreaRefs = useRef<Map<string, DrawAreaRef>>(new Map());
@@ -124,11 +145,9 @@ const RailwayDrawerApp = () => {
   // Active tool state
   const [activeTool, setActiveTool] = useState<DrawTool>('select');
 
-  // Connector state
+  // Connector state (legacy - kept for backward compat with toolbar button)
   const [connectorMode, setConnectorMode] = useState(false);
   const [connectorStyle, setConnectorStyle] = useState<ConnectorStyle>(DEFAULT_CONNECTOR_STYLE);
-  const [showConnectorPanel, setShowConnectorPanel] = useState(false);
-  const [selectedConnectorId, setSelectedConnectorId] = useState<string | undefined>();
 
   // Brush state
   const [brushMode, setBrushMode] = useState(false);
@@ -176,7 +195,7 @@ const RailwayDrawerApp = () => {
       elements: [],
       gridVisible: true,
       backgroundColor: '#ffffff',
-      selectedElementIds: [] // Add this line
+      selectedElementIds: []
     }
   ]);
   const [activeTabId, setActiveTabId] = useState('tab-1');
@@ -333,10 +352,11 @@ const RailwayDrawerApp = () => {
     const currentDrawAreaRef = getCurrentDrawAreaRef();
     if (currentDrawAreaRef && activeTab) {
       const currentElements = currentDrawAreaRef.getElements();
+      const currentBrushStrokes = currentDrawAreaRef.getBrushStrokes?.() || [];
       const currentGridVisible = currentDrawAreaRef.getGridVisible();
       const currentBgColor = currentDrawAreaRef.getSvgElement()?.style.backgroundColor || '#ffffff';
       const currentSelectedIds = currentDrawAreaRef.getSelectedElementIds();
-      
+
       // Sync global clipboard before switching tabs
       const currentCopiedElements = currentDrawAreaRef.getCopiedElements();
       if (currentCopiedElements.length > 0) {
@@ -345,10 +365,10 @@ const RailwayDrawerApp = () => {
       }
 
       // Update current tab with latest state
-      setTabs(prev => prev.map(tab => 
-        tab.id === activeTabId 
-          ? { 
-              ...tab, 
+      setTabs(prev => prev.map(tab =>
+        tab.id === activeTabId
+          ? {
+              ...tab,
               elements: currentElements.map((element: DrawElement) => ({
                 ...element,
                 // Ensure all element properties are preserved
@@ -359,6 +379,7 @@ const RailwayDrawerApp = () => {
                 setGridEnabled: currentDrawAreaRef?.setGridVisible || (() => {}),
                 setBackgroundColor: () => {}
               })),
+              brushStrokes: currentBrushStrokes,
               gridVisible: currentGridVisible,
               backgroundColor: currentBgColor,
               selectedElementIds: currentSelectedIds
@@ -372,9 +393,10 @@ const RailwayDrawerApp = () => {
       id: newTabId,
       name: `Drawing ${tabs.length + 1}`,
       elements: [],
+      brushStrokes: [],
       gridVisible: true,
       backgroundColor: '#ffffff',
-      selectedElementIds: [] // Initialize with empty selection
+      selectedElementIds: []
     };
     setTabs(prev => [...prev, newTab]);
     setActiveTabId(newTabId);
@@ -415,9 +437,10 @@ const RailwayDrawerApp = () => {
     const currentDrawAreaRef = getCurrentDrawAreaRef();
     if (currentDrawAreaRef && activeTab) {
       const currentElements = currentDrawAreaRef.getElements();
+      const currentBrushStrokes = currentDrawAreaRef.getBrushStrokes?.() || [];
       const currentGridVisible = currentDrawAreaRef.getGridVisible();
       const currentBgColor = currentDrawAreaRef.getSvgElement()?.style.backgroundColor || '#ffffff';
-      
+
       // Sync global clipboard before switching tabs
       const currentCopiedElements = currentDrawAreaRef.getCopiedElements();
       if (currentCopiedElements.length > 0) {
@@ -427,10 +450,10 @@ const RailwayDrawerApp = () => {
 
       const currentSelectedIds = currentDrawAreaRef.getSelectedElementIds();
 
-      setTabs(prev => prev.map(tab => 
-        tab.id === activeTabId 
-          ? { 
-              ...tab, 
+      setTabs(prev => prev.map(tab =>
+        tab.id === activeTabId
+          ? {
+              ...tab,
               elements: currentElements.map((element: DrawElement) => ({
                 ...element,
                 // Ensure all element properties are preserved
@@ -441,6 +464,7 @@ const RailwayDrawerApp = () => {
                 setGridEnabled: currentDrawAreaRef?.setGridVisible || (() => {}),
                 setBackgroundColor: () => {}
               })),
+              brushStrokes: currentBrushStrokes,
               gridVisible: currentGridVisible,
               backgroundColor: currentBgColor,
               selectedElementIds: currentSelectedIds
@@ -464,21 +488,27 @@ const RailwayDrawerApp = () => {
     const timer = setTimeout(() => {
       const currentDrawAreaRef = getCurrentDrawAreaRef();
       if (currentDrawAreaRef && activeTab) {
-        logger.debug("RailwayDrawerApp", "Switching to tab", { 
-          tabId: activeTab.id, 
-          elementCount: activeTab.elements.length 
+        logger.debug("RailwayDrawerApp", "Switching to tab", {
+          tabId: activeTab.id,
+          elementCount: activeTab.elements.length,
+          brushStrokeCount: (activeTab as any).brushStrokes?.length || 0
         });
-        
-        // Set elements first
+
+        // Set elements (connectors are now part of elements array)
+        console.log('📌 LOADING TAB:', { tabId: activeTab.id, elementCount: activeTab.elements.length, brushStrokes: (activeTab as any).brushStrokes?.length || 0 });
         currentDrawAreaRef.setElements(activeTab.elements);
+        // Restore brush strokes
+        if ((activeTab as any).brushStrokes && currentDrawAreaRef.setBrushStrokes) {
+          currentDrawAreaRef.setBrushStrokes((activeTab as any).brushStrokes);
+        }
         currentDrawAreaRef.setGridVisible(activeTab.gridVisible);
-        
+
         // Sync global clipboard with DrawArea
         if (globalCopiedElements.length > 0) {
           currentDrawAreaRef.setCopiedElements(globalCopiedElements);
           logger.debug("RailwayDrawerApp", "Tab load: Synced clipboard", { elementCount: globalCopiedElements.length });
         }
-        
+
         const svgElement = currentDrawAreaRef.getSvgElement();
         if (svgElement) {
           svgElement.style.backgroundColor = activeTab.backgroundColor;
@@ -754,6 +784,12 @@ const RailwayDrawerApp = () => {
       setActiveTabId('tab-1');
       setSelectedElement(undefined);
       setGlobalCopiedElements([]);
+
+      // Clear DrawArea state
+      const drawAreaRef = getCurrentDrawAreaRef();
+      if (drawAreaRef) {
+        drawAreaRef.setElements([]);
+      }
       
       // Reset UI state
       setActiveMenu(null);
@@ -1110,12 +1146,14 @@ const RailwayDrawerApp = () => {
 
     // Create a debounced save function
     const timeoutId = setTimeout(() => {
-      // Get current elements from DrawArea instead of from tabs
+      // Get current elements and brush strokes from DrawArea
+      // Note: Connectors are now part of elements[]
       const tabsToSave = tabs.map(tab => {
         const tabRef = drawAreaRefs.current.get(tab.id);
-        // Use DrawArea's elements if available, otherwise use tabs elements
+        // Use DrawArea's elements and brush strokes if available
         const elements = tabRef?.getElements?.() || tab.elements;
-        return { ...tab, elements };
+        const brushStrokes = tabRef?.getBrushStrokes?.() || (tab as any).brushStrokes || [];
+        return { ...tab, elements, brushStrokes };
       });
 
       saveToLocalStorage(tabsToSave, projectName);
@@ -1123,7 +1161,7 @@ const RailwayDrawerApp = () => {
         pagesCount: tabsToSave.length,
         timestamp: new Date().toLocaleString()
       });
-      
+
       // Set status to saved, then reset after 2 seconds
       setSavingStatus('saved');
       setTimeout(() => {
@@ -1268,9 +1306,11 @@ const RailwayDrawerApp = () => {
         }}
         brushToolActive={brushMode}
         onConnectorToolToggle={() => {
-          setConnectorMode(!connectorMode);
+          const newConnectorMode = !connectorMode;
+          setConnectorMode(newConnectorMode);
+          setActiveTool(newConnectorMode ? 'connector' : 'select');
           setShowConnectorPanel(true);
-          logger.debug('interaction', 'Connector tool toggled', { connectorMode: !connectorMode });
+          logger.debug('interaction', 'Connector tool toggled', { connectorMode: newConnectorMode, activeTool: newConnectorMode ? 'connector' : 'select' });
         }}
         connectorToolActive={connectorMode}
       />
@@ -1891,7 +1931,10 @@ const RailwayDrawerApp = () => {
             {/* Drawing tools */}
             <div className="flex bg-slate-50 rounded-md border border-slate-200 p-0.5">
               <button
-                onClick={() => setActiveTool('select')}
+                onClick={() => {
+                  setActiveTool('select');
+                  setBrushMode(false);
+                }}
                 className={`w-7 h-7 rounded flex items-center justify-center transition-all ${
                   activeTool === 'select' 
                     ? 'bg-blue-500 text-white shadow-sm' 
@@ -1902,7 +1945,10 @@ const RailwayDrawerApp = () => {
                 <MousePointer2 size={14} />
               </button>
               <button
-                onClick={() => setActiveTool('measure')}
+                onClick={() => {
+                  setActiveTool('measure');
+                  setBrushMode(false);
+                }}
                 className={`w-7 h-7 rounded flex items-center justify-center transition-all ${
                   activeTool === 'measure' 
                     ? 'bg-blue-500 text-white shadow-sm' 
@@ -1991,7 +2037,12 @@ const RailwayDrawerApp = () => {
                   <DrawioPropertiesPanel
                     drawAreaRef={currentDrawAreaRefObject}
                     selectedElement={selectedElement}
+                    brushMode={brushMode}
+                    brushConfig={brushConfig}
                     onElementChange={handleElementChange}
+                    onBrushConfigChange={(newConfig) => {
+                      setBrushConfig(newConfig);
+                    }}
                     onCanvasPropertyChange={(property, value) => {
                       logger.debug('RailwayDrawerApp', 'Canvas property changed', {
                         property,
@@ -2044,15 +2095,18 @@ const RailwayDrawerApp = () => {
                   // Load template elements into current tab
                   const currentTab = tabs.find(t => t.id === activeTabId);
                   if (currentTab) {
+                    const newElements = [...currentTab.elements, ...template.elements];
                     const updatedTabs = tabs.map(t =>
                       t.id === activeTabId
-                        ? { ...t, elements: [...t.elements, ...template.elements] }
+                        ? { ...t, elements: newElements }
                         : t
                     );
                     setTabs(updatedTabs);
-                    // Update the current DrawArea ref if it exists
+
+                    // Update the current DrawArea ref to render the new elements
                     const currentRef = drawAreaRefs.current.get(activeTabId);
                     if (currentRef) {
+                      currentRef.updateElements(newElements);
                       logger.info('RailwayDrawerApp', 'Template loaded into DrawArea', {
                         templateId: template.id,
                         elementsAdded: template.elements.length
@@ -2105,37 +2159,9 @@ const RailwayDrawerApp = () => {
         />
       )}
 
-      {/* Connector Panel */}
-      {showConnectorPanel && (
-        <ConnectorPanel
-          style={connectorStyle}
-          onStyleChange={(newStyle) => {
-            setConnectorStyle(newStyle);
-            logger.debug('interaction', 'Connector style updated', {
-              lineStyle: newStyle.lineStyle,
-              lineWidth: newStyle.lineWidth,
-              endArrow: newStyle.endArrow,
-            });
-          }}
-          onClose={() => setShowConnectorPanel(false)}
-        />
-      )}
+      {/* Connector Panel - Hidden (integrated into main properties panel) */}
 
-      {/* Brush Panel */}
-      {showBrushPanel && (
-        <BrushPanel
-          config={brushConfig}
-          onConfigChange={(newConfig) => {
-            setBrushConfig(newConfig);
-            logger.debug('interaction', 'Brush config updated', {
-              type: newConfig.type,
-              size: newConfig.size,
-              color: newConfig.color,
-            });
-          }}
-          onClose={() => setShowBrushPanel(false)}
-        />
-      )}
+      {/* Brush Panel - Hidden (integrated into main properties panel) */}
     </div>
   );
 };

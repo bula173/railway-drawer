@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Button from "./Button";
 import { Plus, Search, ChevronDown } from "lucide-react";
 import { generateSVGFromElements } from "./Elements";
@@ -147,6 +147,9 @@ const Toolbox: React.FC<ToolboxProps> = ({
 
   const [searchQuery, setSearchQuery] = useState("");
 
+  // Responsive grid using CSS - no JavaScript width calculation needed
+  const containerRef = useRef<HTMLDivElement>(null);
+
   // Filter items based on search query
   const filteredGrouped = searchQuery.trim() === "" 
     ? grouped 
@@ -161,7 +164,7 @@ const Toolbox: React.FC<ToolboxProps> = ({
       }, {} as Record<string, typeof initialToolbox>);
 
   return (
-    <div className="h-full bg-white border-r border-slate-200 flex flex-col">
+    <div className="h-full bg-white border-r border-slate-200 flex flex-col" ref={containerRef}>
       {/* Header with search */}
       <div className="border-b border-slate-200 p-3 flex-shrink-0">
         <div className="text-sm font-semibold text-slate-700 mb-2">Shapes</div>
@@ -198,7 +201,7 @@ const Toolbox: React.FC<ToolboxProps> = ({
                 <span className="text-xs text-slate-400 ml-auto">({items.length})</span>
               </button>
               {!collapsedGroups[group] && (
-                <div className="mt-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, 40px)', gap: '8px', justifyContent: 'start', paddingLeft: '8px' }}>
+                <div className="mt-2 -mx-3 px-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(44px, 1fr))', gap: '8px', width: '100%', placeItems: 'center' }}>
                   {items.map((item) => (
                     <div
                       key={item.id}

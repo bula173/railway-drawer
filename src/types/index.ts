@@ -47,7 +47,7 @@ export const APP_CONSTANTS = {
 
 // Menu and UI types
 export type MenuType = 'file' | 'toolbox' | null;
-export type DrawTool = 'select' | 'measure';
+export type DrawTool = 'select' | 'measure' | 'connector';
 
 /**
  * @interface Layer

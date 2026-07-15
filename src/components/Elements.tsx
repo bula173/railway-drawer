@@ -165,17 +165,18 @@ export interface DrawElement {
   id: string;
   name?: string;
   type: string;
+  dimensionality?: '1D' | '2D'; // '1D' for lines/connectors, '2D' for shapes (default: '2D')
   layerId?: string; // ID of the layer this element belongs to
   groupId?: string; // ID of the group this element belongs to
-  
+
   // Element behavior properties
   unified?: boolean; // If true, treat as single object despite multiple shapeElements
   complex?: boolean; // If true, allow individual shapeElement resizing with proportional scaling
   isLineBased?: boolean; // If true, only show endpoint resize handles (for lines, arrows, tracks)
-  
+
   // Styling properties
   styles?: ElementStyles;
-  
+
   // Toolbox properties
   iconSvg?: string;
   iconName?: string;
@@ -185,26 +186,42 @@ export interface DrawElement {
   width?: number;
   height?: number;
   draw?: any;
-  
+
   // Element geometry
   start: { x: number; y: number };
   end: { x: number; y: number };
   labelOffset?: { dx: number; dy: number };
   rotation?: number;
-  
+
   // Content properties
   text?: string;
-  
+
+  // Connector properties (when type === 'connector')
+  fromElementId?: string;      // Connected shape ID (optional - can be detached)
+  toElementId?: string;        // Connected shape ID (optional - can be detached)
+  fromAttached?: boolean;      // Whether start is attached to a shape (default: true if fromElementId exists)
+  toAttached?: boolean;        // Whether end is attached to a shape (default: true if toElementId exists)
+  fromPointIndex?: number;     // Index of connection point on start shape (0-8 for 9-point grid)
+  toPointIndex?: number;       // Index of connection point on end shape (0-8 for 9-point grid)
+  connectorStyle?: {
+    lineStyle?: 'solid' | 'dotted' | 'dashed';
+    lineWidth?: 1 | 2 | 3 | 4;
+    startArrow?: 'none' | 'standard' | 'block' | 'classic' | 'circle' | 'diamond';
+    endArrow?: 'none' | 'standard' | 'block' | 'classic' | 'circle' | 'diamond';
+    color?: string;
+    opacity?: number;
+  };
+
   // Global properties (for draw area)
   gridEnabled?: boolean;
   backgroundColor?: string;
   setGridEnabled?: (enabled: boolean) => void;
   setBackgroundColor?: (color: string) => void;
-  
+
   // Mirror properties
   mirrorX?: boolean;
   mirrorY?: boolean;
-  
+
   // Allow additional properties
   [key: string]: any;
 }
@@ -654,21 +671,23 @@ export const ElementSVG: React.FC<{ el: DrawElement }> = ({ el }) => {
    
     case "custom":
       if (el.shape || el.shapeElements) {
-        // Use fallback size if missing or zero
+        // For 1D shapes, height is 0 by design (stroke width defines thickness)
+        // For 2D shapes, use fallback size if missing or zero
+        const is1D = el.dimensionality === '1D' || el.isLineBased;
         const shapeWidth = el.width && el.width > 0 ? el.width : 48;
-        const shapeHeight = el.height && el.height > 0 ? el.height : 48;
+        const shapeHeight = is1D ? (el.height || 1) : (el.height && el.height > 0 ? el.height : 48);
 
         const width = Math.abs(el.end.x - el.start.x);
         const height = Math.abs(el.end.y - el.start.y);
 
-        // Prevent division by zero
+        // Prevent division by zero - for 1D shapes, keep scaleY at 1
         const scaleX = shapeWidth ? width / shapeWidth : 1;
-        const scaleY = shapeHeight ? height / shapeHeight : 1;
+        const scaleY = is1D ? 1 : (shapeHeight ? height / shapeHeight : 1);
 
         const mirrorScaleX = el.mirrorX ? -1 : 1;
         const mirrorScaleY = el.mirrorY ? -1 : 1;
         const mirrorTranslateX = el.mirrorX ? shapeWidth : 0;
-        const mirrorTranslateY = el.mirrorY ? shapeHeight : 0;
+        const mirrorTranslateY = el.mirrorY ? (is1D ? 0 : shapeHeight) : 0;
 
         // Determine the shape to render
         let shapeToRender = '';
@@ -1308,6 +1327,7 @@ export function RenderElement({
   onContextMenu,
   startEditingWithChar,
   onConnectorStart,
+  targetConnectorShapeId,
 }: {
   el: DrawElement;
   isSelected: boolean;
@@ -1319,6 +1339,7 @@ export function RenderElement({
   onContextMenu?: (e: React.MouseEvent) => void;
   startEditingWithChar?: string;
   onConnectorStart?: (elementId: string, point: { x: number; y: number }) => void;
+  targetConnectorShapeId?: string | null;
 }) {
   // --- State ---
   /** Whether the element label is currently being dragged to reposition */
@@ -1453,8 +1474,8 @@ export function RenderElement({
    * @returns {JSX.Element[]} Array of SVG rect elements representing draggable resize handles
    */
   function renderResizeHandles(rect: { x: number, y: number, width: number, height: number }) {
-    // Check if this is a line-based element (only show endpoint handles)
-    if (el.isLineBased) {
+    // Check if this is a line-based or 1D element (only show endpoint handles)
+    if (el.isLineBased || el.dimensionality === '1D') {
       const left = Math.min(el.start.x, el.end.x);
       const right = Math.max(el.start.x, el.end.x);
       const top = Math.min(el.start.y, el.end.y);
@@ -1482,13 +1503,37 @@ export function RenderElement({
       }
       
       const handles = [startHandle, endHandle];
-      
+
+      // Determine cursor direction based on line orientation
+      const dx = el.end.x - el.start.x;
+      const dy = el.end.y - el.start.y;
+      const isHorizontal = dy === 0;
+      const isVertical = dx === 0;
+
+      let cursor = 'ew-resize'; // default: horizontal
+      if (isVertical) {
+        cursor = 'ns-resize'; // vertical
+      } else if (!isHorizontal) {
+        // Diagonal - determine if NW-SE or NE-SW based on slope
+        const angle = Math.atan2(dy, dx) * (180 / Math.PI);
+        // Normalize angle to 0-180
+        const normalizedAngle = angle < 0 ? angle + 180 : angle;
+        // If roughly 45° to 135°, use nesw-resize, otherwise nwse-resize
+        cursor = (normalizedAngle > 45 && normalizedAngle < 135) ? 'nesw-resize' : 'nwse-resize';
+      }
+
       return handles.map(h => (
         <rect
           key={h.name}
-          className={`resize-handle nwse-resize`}
+          className={`resize-handle`}
           x={h.x - 6}
           y={h.y - 6}
+          width={12}
+          height={12}
+          fill="rgba(0, 123, 255, 0.3)"
+          stroke="rgba(0, 123, 255, 0.8)"
+          strokeWidth={1}
+          style={{ cursor }}
           onPointerDown={e => handleResizePointerDown(e, h.name)}
         />
       ));
@@ -1576,17 +1621,23 @@ export function RenderElement({
     let newEnd = { ...resize.startEl.end };
 
     // Special handling for line-based elements - only move the endpoint being dragged
-    if (el.isLineBased) {
-      // Determine which endpoint is being dragged based on handle name
-      const left = Math.min(resize.startEl.start.x, resize.startEl.end.x);
-      const right = Math.max(resize.startEl.start.x, resize.startEl.end.x);
-      const top = Math.min(resize.startEl.start.y, resize.startEl.end.y);
-      const bottom = Math.max(resize.startEl.start.y, resize.startEl.end.y);
-      
-      const startIsTopLeft = resize.startEl.start.x === left && resize.startEl.start.y === top;
-      const startIsTopRight = resize.startEl.start.x === right && resize.startEl.start.y === top;
-      const startIsBottomLeft = resize.startEl.start.x === left && resize.startEl.start.y === bottom;
-      
+    if (el.isLineBased || el.dimensionality === '1D') {
+      // For 1D shapes, constrain endpoint movement along the line direction
+      const x1 = resize.startEl.start.x;
+      const y1 = resize.startEl.start.y;
+      const x2 = resize.startEl.end.x;
+      const y2 = resize.startEl.end.y;
+
+      // Determine which endpoint is being dragged
+      const left = Math.min(x1, x2);
+      const right = Math.max(x1, x2);
+      const top = Math.min(y1, y2);
+      const bottom = Math.max(y1, y2);
+
+      const startIsTopLeft = x1 === left && y1 === top;
+      const startIsTopRight = x1 === right && y1 === top;
+      const startIsBottomLeft = x1 === left && y1 === bottom;
+
       let isStartHandle = false;
       if ((startIsTopLeft && resize.handle === "topLeft") ||
           (startIsTopRight && resize.handle === "topRight") ||
@@ -1594,30 +1645,74 @@ export function RenderElement({
           (!startIsTopLeft && !startIsTopRight && !startIsBottomLeft && resize.handle === "bottomRight")) {
         isStartHandle = true;
       }
-      
-      if (isStartHandle) {
-        // Move start point - only horizontal (X) movement
-        newStart = { x: resize.startEl.start.x + dx, y: resize.startEl.start.y };
-        
-        // Smart Tracks Snapping
-        const snappedStart = findSnapPoint(newStart, allElements, el.id);
-        if (snappedStart.snapped) {
-          newStart = { x: snappedStart.x, y: snappedStart.y };
+
+      // Determine line orientation and constrain movement accordingly
+      const isHorizontal = y1 === y2; // Line is horizontal (only X changes)
+      const isVertical = x1 === x2;   // Line is vertical (only Y changes)
+
+      if (isHorizontal) {
+        // Horizontal line - only allow X movement
+        // Allow expansion and contraction, but prevent endpoints from crossing
+        if (isStartHandle) {
+          const newX = resize.startEl.start.x + dx;
+          // Constraint: start cannot cross past end
+          if ((x1 < x2 && newX <= x2) || (x1 > x2 && newX >= x2) || x1 === x2) {
+            newStart = { x: newX, y: y1 };
+            newEnd = { ...resize.startEl.end };
+          }
+        } else {
+          const newX = resize.startEl.end.x + dx;
+          // Constraint: end cannot cross past start
+          if ((x1 < x2 && newX >= x1) || (x1 > x2 && newX <= x1) || x1 === x2) {
+            newStart = { ...resize.startEl.start };
+            newEnd = { x: newX, y: y2 };
+          }
         }
-        
-        newEnd = { ...resize.startEl.end };
+      } else if (isVertical) {
+        // Vertical line - only allow Y movement
+        // Allow expansion and contraction, but prevent endpoints from crossing
+        if (isStartHandle) {
+          const newY = resize.startEl.start.y + dy;
+          // Constraint: start cannot cross past end
+          if ((y1 < y2 && newY <= y2) || (y1 > y2 && newY >= y2) || y1 === y2) {
+            newStart = { x: x1, y: newY };
+            newEnd = { ...resize.startEl.end };
+          }
+        } else {
+          const newY = resize.startEl.end.y + dy;
+          // Constraint: end cannot cross past start
+          if ((y1 < y2 && newY >= y1) || (y1 > y2 && newY <= y1) || y1 === y2) {
+            newStart = { ...resize.startEl.start };
+            newEnd = { x: x2, y: newY };
+          }
+        }
       } else {
-        // Move end point - only horizontal (X) movement
-        newStart = { ...resize.startEl.start };
-        newEnd = { x: resize.startEl.end.x + dx, y: resize.startEl.end.y };
-        
-        // Smart Tracks Snapping
-        const snappedEnd = findSnapPoint(newEnd, allElements, el.id);
-        if (snappedEnd.snapped) {
-          newEnd = { x: snappedEnd.x, y: snappedEnd.y };
+        // Diagonal line - project movement onto line direction
+        const lineX = x2 - x1;
+        const lineY = y2 - y1;
+        const lineLen = Math.sqrt(lineX * lineX + lineY * lineY);
+        const t = lineLen > 0 ? ((dx * lineX + dy * lineY) / (lineLen * lineLen)) : 0;
+
+        // Ensure endpoints don't cross
+        if (isStartHandle) {
+          if (t <= 0) {
+            newStart = {
+              x: resize.startEl.start.x + t * lineX,
+              y: resize.startEl.start.y + t * lineY
+            };
+            newEnd = { ...resize.startEl.end };
+          }
+        } else {
+          if (t >= 0) {
+            newStart = { ...resize.startEl.start };
+            newEnd = {
+              x: resize.startEl.end.x + t * lineX,
+              y: resize.startEl.end.y + t * lineY
+            };
+          }
         }
       }
-      
+
       // Update the element directly without further processing
       updateElement({ ...el, start: newStart, end: newEnd });
       return;
@@ -1810,24 +1905,77 @@ export function RenderElement({
    * @description Shows different colors for selected vs hovered states. Handles rotation correctly.
    */
   function renderSelectionHighlight(rect: ReturnType<typeof getElementBoundingRect>) {
-    const shouldShow = hoveredElementId === el.id || isSelected || labelHovered;
-    
+    // 1D objects (connectors, lines) don't have bounding box highlights
+    if (el.dimensionality === '1D') return null;
+
+    const isConnectorTarget = targetConnectorShapeId === el.id;
+    const shouldShow = hoveredElementId === el.id || isSelected || labelHovered || isConnectorTarget;
+
     if (!shouldShow) return null;
-    
+
+    // Green border for connector target
+    if (isConnectorTarget) {
+      if (el.rotation) {
+        const rotatedRect = getRotatedBoundingRect(el);
+        const padding = 4;
+        const center = rotatedRect.center;
+        const corners = [
+          rotatedRect.topLeft,
+          rotatedRect.topRight,
+          rotatedRect.bottomRight,
+          rotatedRect.bottomLeft
+        ];
+        const paddedCorners = corners.map(corner => {
+          const dx = corner.x - center.x;
+          const dy = corner.y - center.y;
+          const length = Math.sqrt(dx * dx + dy * dy);
+          if (length === 0) return corner;
+          const scale = (length + padding) / length;
+          return {
+            x: center.x + dx * scale,
+            y: center.y + dy * scale
+          };
+        });
+        const points = paddedCorners.map(p => `${p.x},${p.y}`).join(' ');
+        return (
+          <polygon
+            points={points}
+            fill="none"
+            stroke="#00cc00"
+            strokeWidth={2}
+            pointerEvents="none"
+          />
+        );
+      } else {
+        return (
+          <rect
+            x={rect.x - 4}
+            y={rect.y - 4}
+            width={rect.width + 8}
+            height={rect.height + 8}
+            fill="none"
+            stroke="#00cc00"
+            strokeWidth={2}
+            pointerEvents="none"
+          />
+        );
+      }
+    }
+
     if (el.rotation) {
       // For rotated elements, use a polygon to show proper rotated outline
       const rotatedRect = getRotatedBoundingRect(el);
       const padding = 4;
-      
+
       // Calculate padded corners (expand outward from center)
       const center = rotatedRect.center;
       const corners = [
         rotatedRect.topLeft,
-        rotatedRect.topRight, 
+        rotatedRect.topRight,
         rotatedRect.bottomRight,
         rotatedRect.bottomLeft
       ];
-      
+
       // Expand each corner outward from center by padding amount
       const paddedCorners = corners.map(corner => {
         const dx = corner.x - center.x;
@@ -1840,9 +1988,9 @@ export function RenderElement({
           y: center.y + dy * scale
         };
       });
-      
+
       const points = paddedCorners.map(p => `${p.x},${p.y}`).join(' ');
-      
+
       return (
         <polygon
           className={`element-selection-highlight ${isSelected ? 'selected' : 'hovered'}`}
@@ -2909,11 +3057,13 @@ export function RenderElement({
    */
   function renderConnectionPoints() {
     // Only show connection points when selected or hovered
-    if (!isSelected && hoveredElementId !== el.id) return null;
+    if (!isSelected && hoveredElementId !== el.id) {
+      return null;
+    }
 
     const points = getConnectionPoints(el);
-    const radius = 5;
-    const arrowSize = 8;
+    const radius = 6; // Small anchor circle
+    const arrowSize = 28; // Large triangle for dragging
 
     return (
       <g className="connection-points">
@@ -2929,25 +3079,21 @@ export function RenderElement({
                 cx={point.position.x}
                 cy={point.position.y}
                 r={radius}
-                fill={isSelected ? '#0066cc' : '#666'}
-                opacity={isSelected ? 0.9 : 0.5}
+                fill={isSelected ? '#0066cc' : hoveredElementId === el.id ? '#4a90ff' : '#666'}
+                opacity={isSelected ? 0.9 : hoveredElementId === el.id ? 0.7 : 0.5}
                 stroke="white"
                 strokeWidth={2}
                 className="connection-point"
-                style={{ cursor: isSelected ? 'crosshair' : 'pointer' }}
-                onPointerDown={(e) => {
-                  if (isSelected && onConnectorStart) {
-                    e.stopPropagation();
-                    onConnectorStart(el.id, point.position);
-                    logDoubleClick(el.id);
-                  }
-                }}
+                data-connector-element-id={el.id}
+                data-connector-x={point.position.x}
+                data-connector-y={point.position.y}
+                style={{ cursor: 'grab', pointerEvents: 'auto' }}
               />
 
-              {/* Arrow indicator when selected */}
-              {isSelected && (
+              {/* Draggable triangle indicator when selected or hovered */}
+              {(isSelected || hoveredElementId === el.id) && (
                 <g
-                  style={{ cursor: 'crosshair', pointerEvents: 'auto' }}
+                  style={{ cursor: 'grab', pointerEvents: 'auto' }}
                   onPointerDown={(e) => {
                     if (onConnectorStart) {
                       e.stopPropagation();
@@ -2955,24 +3101,18 @@ export function RenderElement({
                     }
                   }}
                 >
-                  {/* Larger invisible hit area */}
-                  <circle
-                    cx={point.position.x}
-                    cy={point.position.y}
-                    r={radius + 4}
-                    fill="transparent"
-                    style={{ pointerEvents: 'auto' }}
-                  />
-
-                  {/* Arrow pointing outward */}
-                  <path
-                    d={`M ${point.position.x} ${point.position.y}
-                        L ${point.position.x + Math.cos(dirAngle) * arrowSize} ${point.position.y + Math.sin(dirAngle) * arrowSize}`}
-                    stroke="#0066cc"
-                    strokeWidth={2}
-                    opacity={0.7}
-                    markerEnd="url(#arrow-connector-marker)"
-                    style={{ pointerEvents: 'none' }}
+                  {/* Filled triangle pointing outward - draggable connector handle */}
+                  <polygon
+                    points={`
+                      ${point.position.x + Math.cos(dirAngle) * arrowSize},${point.position.y + Math.sin(dirAngle) * arrowSize}
+                      ${point.position.x + Math.cos(dirAngle + Math.PI * 0.4) * (arrowSize * 0.6)},${point.position.y + Math.sin(dirAngle + Math.PI * 0.4) * (arrowSize * 0.6)}
+                      ${point.position.x + Math.cos(dirAngle - Math.PI * 0.4) * (arrowSize * 0.6)},${point.position.y + Math.sin(dirAngle - Math.PI * 0.4) * (arrowSize * 0.6)}
+                    `}
+                    fill={isSelected ? '#0066cc' : '#4a90ff'}
+                    opacity={isSelected ? 0.9 : 0.7}
+                    stroke="white"
+                    strokeWidth={1.5}
+                    style={{ pointerEvents: 'auto', cursor: 'grab' }}
                   />
                 </g>
               )}
@@ -3070,10 +3210,10 @@ export function RenderElement({
       {renderLabelBackground()}
       {renderLabel()}
       {renderLabelEditor()}
-      {renderRotationHandle()}
+      {el.dimensionality !== '1D' && renderRotationHandle()}
       {renderTextContent()}
       {renderTextEditor()}
-      {renderConnectionPoints()}
+      {el.dimensionality !== '1D' && renderConnectionPoints()}
     </g>
   );
 }
