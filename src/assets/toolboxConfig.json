@@ -1981,6 +1981,134 @@
     "dimensionality": "2D"
   },
   {
+    "id": "aci_signal_stop",
+    "name": "ACI Signal - Stop (Red)",
+    "type": "custom",
+    "group": "Signals",
+    "iconSvg": "default",
+    "height": 80,
+    "width": 24,
+    "shapeElements": [
+      {
+        "id": "aciPostStop",
+        "svg": "<rect x='8' y='0' width='8' height='80' fill='#333' stroke='#000' stroke-width='1' vector-effect='non-scaling-stroke'/>"
+      },
+      {
+        "id": "aciRedLight",
+        "svg": "<circle cx='12' cy='15' r='6' fill='#ff0000' stroke='#333' stroke-width='1' vector-effect='non-scaling-stroke'/>"
+      },
+      {
+        "id": "aciYellowLight",
+        "svg": "<circle cx='12' cy='40' r='6' fill='#ffff00' stroke='#333' stroke-width='1' vector-effect='non-scaling-stroke'/>"
+      },
+      {
+        "id": "aciGreenLight",
+        "svg": "<circle cx='12' cy='65' r='6' fill='#00cc00' stroke='#333' stroke-width='1' vector-effect='non-scaling-stroke'/>"
+      }
+    ],
+    "dimensionality": "2D"
+  },
+  {
+    "id": "aci_signal_caution",
+    "name": "ACI Signal - Caution (Yellow)",
+    "type": "custom",
+    "group": "Signals",
+    "iconSvg": "default",
+    "height": 80,
+    "width": 24,
+    "shapeElements": [
+      {
+        "id": "aciPostCaution",
+        "svg": "<rect x='8' y='0' width='8' height='80' fill='#333' stroke='#000' stroke-width='1' vector-effect='non-scaling-stroke'/>"
+      },
+      {
+        "id": "aciRedDark",
+        "svg": "<circle cx='12' cy='15' r='6' fill='#660000' stroke='#333' stroke-width='1' vector-effect='non-scaling-stroke'/>"
+      },
+      {
+        "id": "aciYellowLit",
+        "svg": "<circle cx='12' cy='40' r='6' fill='#ffff00' stroke='#333' stroke-width='1' vector-effect='non-scaling-stroke'/>"
+      },
+      {
+        "id": "aciGreenDark",
+        "svg": "<circle cx='12' cy='65' r='6' fill='#003300' stroke='#333' stroke-width='1' vector-effect='non-scaling-stroke'/>"
+      }
+    ],
+    "dimensionality": "2D"
+  },
+  {
+    "id": "aci_signal_proceed",
+    "name": "ACI Signal - Proceed (Green)",
+    "type": "custom",
+    "group": "Signals",
+    "iconSvg": "default",
+    "height": 80,
+    "width": 24,
+    "shapeElements": [
+      {
+        "id": "aciPostProceed",
+        "svg": "<rect x='8' y='0' width='8' height='80' fill='#333' stroke='#000' stroke-width='1' vector-effect='non-scaling-stroke'/>"
+      },
+      {
+        "id": "aciRedOff",
+        "svg": "<circle cx='12' cy='15' r='6' fill='#660000' stroke='#333' stroke-width='1' vector-effect='non-scaling-stroke'/>"
+      },
+      {
+        "id": "aciYellowOff",
+        "svg": "<circle cx='12' cy='40' r='6' fill='#664400' stroke='#333' stroke-width='1' vector-effect='non-scaling-stroke'/>"
+      },
+      {
+        "id": "aciGreenLit",
+        "svg": "<circle cx='12' cy='65' r='6' fill='#00ff00' stroke='#333' stroke-width='1' vector-effect='non-scaling-stroke'/>"
+      }
+    ],
+    "dimensionality": "2D"
+  },
+  {
+    "id": "aci_double_signal",
+    "name": "ACI Double Signal Head",
+    "type": "custom",
+    "group": "Signals",
+    "iconSvg": "default",
+    "height": 80,
+    "width": 50,
+    "shapeElements": [
+      {
+        "id": "aciLeftPost",
+        "svg": "<rect x='4' y='0' width='6' height='80' fill='#333' stroke='#000' stroke-width='1' vector-effect='non-scaling-stroke'/>"
+      },
+      {
+        "id": "aciRightPost",
+        "svg": "<rect x='40' y='0' width='6' height='80' fill='#333' stroke='#000' stroke-width='1' vector-effect='non-scaling-stroke'/>"
+      },
+      {
+        "id": "aciLeftRed",
+        "svg": "<circle cx='7' cy='15' r='5' fill='#ff0000' stroke='#333' stroke-width='1' vector-effect='non-scaling-stroke'/>"
+      },
+      {
+        "id": "aciLeftYellow",
+        "svg": "<circle cx='7' cy='40' r='5' fill='#ffff00' stroke='#333' stroke-width='1' vector-effect='non-scaling-stroke'/>"
+      },
+      {
+        "id": "aciLeftGreen",
+        "svg": "<circle cx='7' cy='65' r='5' fill='#00cc00' stroke='#333' stroke-width='1' vector-effect='non-scaling-stroke'/>"
+      },
+      {
+        "id": "aciRightRed",
+        "svg": "<circle cx='43' cy='15' r='5' fill='#660000' stroke='#333' stroke-width='1' vector-effect='non-scaling-stroke'/>"
+      },
+      {
+        "id": "aciRightYellow",
+        "svg": "<circle cx='43' cy='40' r='5' fill='#ffff00' stroke='#333' stroke-width='1' vector-effect='non-scaling-stroke'/>"
+      },
+      {
+        "id": "aciRightGreen",
+        "svg": "<circle cx='43' cy='65' r='5' fill='#003300' stroke='#333' stroke-width='1' vector-effect='non-scaling-stroke'/>"
+      }
+    ],
+    "dimensionality": "2D"
+  },
+  {
     "id": "buffer_stop",
     "name": "Buffer Stop",
     "type": "custom",
