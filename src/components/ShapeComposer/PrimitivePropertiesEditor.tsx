@@ -6,7 +6,7 @@
  */
 
 import React, { useCallback } from 'react';
-import { PrimitiveElement } from '../../types/shapeComposer';
+import type { PrimitiveElement } from '../../types';
 import './styles/propertiesEditor.css';
 
 export interface PrimitivePropertiesEditorProps {

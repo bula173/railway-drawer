@@ -14,6 +14,10 @@ import type { DrawElement, ElementStyles, ShapeElement } from '../components/Ele
 import type { DrawAreaRef } from '../components/DrawArea';
 import type { ToolboxItem } from '../components/Toolbox';
 import type { DrawAreaTab } from '../components/TabPanel';
+import type { ComposedShape, PrimitiveElement, ShapeLibrary, ShapePrimitive, ShapeComposerState, ComposerAction, ComposerValidationResult } from './shapeComposer';
+
+// Re-export Shape Composer types
+export type { ComposedShape, PrimitiveElement, ShapeLibrary, ShapePrimitive, ShapeComposerState, ComposerAction, ComposerValidationResult };
 
 // Define TextRegion interface here since it's not exported from Elements
 export interface TextRegion {

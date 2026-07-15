@@ -5,8 +5,8 @@
  * Handles localStorage storage, import/export, shape lifecycle management
  */
 
-import { ComposedShape, ShapeLibrary, ComposerValidationResult } from '../types/shapeComposer';
 import { logger } from './logger';
+import type { ComposedShape, ShapeLibrary, ComposerValidationResult } from '../types';
 
 const STORAGE_KEY = 'railway_drawer_custom_shapes';
 const LIBRARY_VERSION = '1.0';

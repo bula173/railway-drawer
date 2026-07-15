@@ -6,8 +6,8 @@
  */
 
 import React, { useCallback } from 'react';
-import { Circle, Line, Square, Hexagon, Pen, Type, Arc } from 'lucide-react';
-import { ShapePrimitive, PrimitiveElement } from '../../types/shapeComposer';
+import { Circle, Minus, Square, Hexagon, Pen, Type, ArrowUpRight } from 'lucide-react';
+import type { ShapePrimitive, PrimitiveElement } from '../../types';
 import './styles/primitiveToolbox.css';
 
 export interface PrimitiveToolboxProps {
@@ -35,7 +35,7 @@ const PRIMITIVES: Array<{
   {
     type: 'line',
     label: 'Line',
-    icon: <Line size={20} />,
+    icon: <Minus size={20} />,
     description: 'Add a line',
   },
   {
@@ -59,7 +59,7 @@ const PRIMITIVES: Array<{
   {
     type: 'arc',
     label: 'Arc',
-    icon: <Arc size={20} />,
+    icon: <ArrowUpRight size={20} />,
     description: 'Add an arc',
   },
 ];

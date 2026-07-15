@@ -5,7 +5,7 @@
 
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { ShapeLibraryManager } from '../shapeLibraryManager';
-import { ComposedShape, PrimitiveElement } from '../../types/shapeComposer';
+import type { ComposedShape, PrimitiveElement } from '../../types';
 
 // Mock localStorage
 const localStorageMock = (() => {

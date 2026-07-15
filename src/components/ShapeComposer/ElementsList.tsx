@@ -7,7 +7,7 @@
 
 import React, { useCallback } from 'react';
 import { ChevronUp, ChevronDown, Trash2 } from 'lucide-react';
-import { PrimitiveElement, ComposedShape } from '../../types/shapeComposer';
+import type { PrimitiveElement, ComposedShape } from '../../types';
 import './styles/elementsList.css';
 
 export interface ElementsListProps {

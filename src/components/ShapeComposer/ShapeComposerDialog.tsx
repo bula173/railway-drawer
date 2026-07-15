@@ -7,9 +7,9 @@
 
 import React, { useState, useCallback, useMemo } from 'react';
 import { X, Save, Download, Upload, Plus } from 'lucide-react';
-import { ComposedShape, PrimitiveElement } from '../../types/shapeComposer';
 import { shapeLibraryManager } from '../../utils/shapeLibraryManager';
 import { generateToolboxItem } from '../../utils/shapeComposerSvgGenerator';
+import type { ComposedShape, PrimitiveElement } from '../../types';
 import { ComposerCanvas } from './ComposerCanvas';
 import { PrimitiveToolbox } from './PrimitiveToolbox';
 import { ElementsList } from './ElementsList';

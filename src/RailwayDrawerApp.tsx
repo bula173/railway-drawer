@@ -30,6 +30,7 @@ import { TopToolbar } from "./components/TopToolbar";
 import { StatusBar } from "./components/StatusBar";
 import { ConnectorPanel } from "./components/ConnectorPanel";
 import { BrushPanel } from "./components/BrushPanel";
+import { ShapeComposerDialog } from "./components/ShapeComposer/ShapeComposerDialog";
 import type { DrawElement } from "./components/Elements";
 import type { DrawTool, Layer } from "./types";
 import type { Connector, ConnectorStyle } from "./utils/connectorStyles";
@@ -40,6 +41,7 @@ import { logger } from "./utils/logger";
 import { saveToLocalStorage, loadFromLocalStorage, clearLocalStorage } from "./utils/storageManager";
 import { getAvailableThemes } from "./utils/themingUtils";
 import { enhanceToolboxWithRemoteSvgs, preloadErtmsSvgs } from "./utils/toolboxEnhancer";
+import { useCustomShapeLibrary } from "./hooks/useCustomShapeLibrary";
 
 /** @brief Grid size for snap-to-grid functionality */
 const GRID_SIZE = 40;
@@ -49,6 +51,9 @@ const GRID_SIZE = 40;
 
 /** @brief Application version */
 const APP_VERSION = "0.5.0 Alpha";
+
+/** @brief Build ID (timestamp-based for development) */
+const BUILD_ID = `${new Date().getFullYear()}${String(new Date().getMonth() + 1).padStart(2, '0')}${String(new Date().getDate()).padStart(2, '0')}-${String(new Date().getHours()).padStart(2, '0')}${String(new Date().getMinutes()).padStart(2, '0')}`;
 
 /** @brief Application author */
 const APP_AUTHOR = "Marcin Kwiatkowski";
@@ -72,12 +77,20 @@ const RailwayDrawerApp = () => {
     return config;
   });
 
-  // Enhance toolbox with remote ERTMS SVGs on mount
+  // Load custom shapes from library
+  const { customToolboxItems, addShape: addCustomShape } = useCustomShapeLibrary();
+
+  // Shape Composer dialog state
+  const [isShapeComposerOpen, setIsShapeComposerOpen] = useState(false);
+
+  // Enhance toolbox with remote ERTMS SVGs and custom shapes on mount
   useEffect(() => {
     const enhance = async () => {
       try {
-        const enhanced = await enhanceToolboxWithRemoteSvgs(toolbox);
+        let enhanced = await enhanceToolboxWithRemoteSvgs(toolbox);
         if (enhanced && enhanced.length > 0) {
+          // Merge custom shapes into toolbox
+          enhanced = [...enhanced, ...customToolboxItems];
           setToolbox(enhanced);
         }
       } catch (error) {
@@ -86,11 +99,13 @@ const RailwayDrawerApp = () => {
       }
     };
 
-    enhance();
+    if (customToolboxItems.length >= 0) {
+      enhance();
+    }
 
     // Also preload SVGs in background for faster access
     preloadErtmsSvgs().catch(err => console.warn("Failed to preload SVGs:", err));
-  }, []); // Only run once on mount
+  }, [customToolboxItems]); // Run when custom shapes change
 
   // Ref for the DrawArea component instances (one per tab)
   const drawAreaRefs = useRef<Map<string, DrawAreaRef>>(new Map());
@@ -701,6 +716,13 @@ const RailwayDrawerApp = () => {
           currentRef.selectAllElements();
           updateEditMenuState();
         }
+      }
+
+      // Open Shape Composer (Shift+N)
+      if (e.shiftKey && e.key.toLowerCase() === "n") {
+        e.preventDefault();
+        e.stopPropagation();
+        setIsShapeComposerOpen(true);
       }
     }
 
@@ -1788,6 +1810,25 @@ const RailwayDrawerApp = () => {
               </div>
               <div className="px-1 py-1">
                 <Menu.Item>
+                  {({ active }) => (
+                    <button
+                      onClick={() => setIsShapeComposerOpen(true)}
+                      className={`${
+                        active ? 'bg-blue-500 text-white' : 'text-slate-900'
+                      } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                    >
+                      🎨 Shape Composer (Shift+N)
+                    </button>
+                  )}
+                </Menu.Item>
+                <Menu.Item>
+                  <div className="px-2 py-2 text-xs text-slate-500">
+                    Create custom railway shapes
+                  </div>
+                </Menu.Item>
+              </div>
+              <div className="px-1 py-1">
+                <Menu.Item>
                   <div className="px-2 py-2 text-xs font-semibold text-slate-600 uppercase tracking-wider">
                     Theme
                   </div>
@@ -1813,7 +1854,7 @@ const RailwayDrawerApp = () => {
 
         {/* App Title */}
         <div className="flex-1 flex items-center justify-center">
-          <h1 className="text-sm font-semibold text-slate-700">Railway Drawer <span className="text-xs text-slate-500 font-normal">v{APP_VERSION}</span></h1>
+          <h1 className="text-sm font-semibold text-slate-700">Railway Drawer <span className="text-xs text-slate-500 font-normal">v{APP_VERSION} (build: {BUILD_ID})</span></h1>
         </div>
       </div>
       
@@ -2127,7 +2168,7 @@ const RailwayDrawerApp = () => {
           <div className="bg-white rounded-lg shadow-xl p-6 max-w-md w-full mx-4" onClick={(e) => e.stopPropagation()}>
             <h2 className="text-2xl font-bold text-slate-800 mb-4">Railway Drawer</h2>
             <div className="space-y-3 text-slate-600">
-              <p><strong>Version:</strong> {APP_VERSION}</p>
+              <p><strong>Version:</strong> {APP_VERSION} (build: {BUILD_ID})</p>
               <p><strong>Author:</strong> {APP_AUTHOR}</p>
               <p className="text-sm mt-4 pt-4 border-t border-slate-200">
                 A modern, interactive railway diagram editor built with React, TypeScript, and Vite.
@@ -2158,6 +2199,17 @@ const RailwayDrawerApp = () => {
           onClose={() => setShowFloatingLayers(false)}
         />
       )}
+
+      {/* Shape Composer Dialog */}
+      <ShapeComposerDialog
+        isOpen={isShapeComposerOpen}
+        onClose={() => setIsShapeComposerOpen(false)}
+        onCancel={() => setIsShapeComposerOpen(false)}
+        onSave={(shape) => {
+          addCustomShape(shape);
+          setIsShapeComposerOpen(false);
+        }}
+      />
 
       {/* Connector Panel - Hidden (integrated into main properties panel) */}
 

@@ -6,8 +6,8 @@
  * compatible ToolboxItem entries for use in the main canvas
  */
 
-import { ComposedShape, PrimitiveElement } from '../types/shapeComposer';
-import { ToolboxItem } from '../components/Toolbox';
+import type { ComposedShape, PrimitiveElement } from '../types';
+import type { ToolboxItem } from '../components/Toolbox';
 import { logger } from './logger';
 
 /**

@@ -10,8 +10,8 @@
  */
 
 import React, { useRef, useEffect, useState, useCallback, useMemo } from 'react';
-import { PrimitiveElement, ComposedShape } from '../../types/shapeComposer';
 import { logger } from '../../utils/logger';
+import type { PrimitiveElement, ComposedShape } from '../../types';
 import './styles/composerCanvas.css';
 
 export interface ComposerCanvasProps {
