@@ -10,7 +10,7 @@
  */
 
 import React, { useRef, useEffect, useState, useCallback } from 'react';
-import { Editor } from '@maxgraph/core';
+import { Graph, Editor } from '@maxgraph/core';
 import './styles/railwayDrawerMaxGraphApp.css';
 
 interface RailwayDrawerAppState {
@@ -58,20 +58,27 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
 
     const initializeEditor = async () => {
       try {
-        console.log('📥 Creating maxGraph Editor');
-        const editor = new Editor();
-        editorRef.current = editor;
-
+        console.log('📥 Creating maxGraph Graph');
         const graphContainer = canvasRef.current;
-        if (graphContainer) {
-          graphContainer.style.width = '100%';
-          graphContainer.style.height = '100%';
-          graphContainer.style.position = 'relative';
-          graphContainer.style.overflow = 'hidden';
+        if (!graphContainer) {
+          console.error('❌ Graph container not available');
+          return;
         }
 
-        editor.setGraphContainer(graphContainer);
-        console.log('✅ Editor initialized');
+        graphContainer.style.width = '100%';
+        graphContainer.style.height = '100%';
+        graphContainer.style.position = 'relative';
+        graphContainer.style.overflow = 'hidden';
+
+        // Create graph directly
+        const graph = new Graph(graphContainer);
+        console.log('✅ Graph created');
+        console.log('Graph type:', graph.constructor.name);
+        console.log('Graph has insertVertex:', typeof graph.insertVertex);
+
+        // Store graph in editor-like object
+        const editor = { graph, undoManager: graph.undoManager } as any;
+        editorRef.current = editor;
 
         // Setup toolbar
         setupToolbar(editor);
@@ -80,9 +87,7 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
         setupPalette(editor);
 
         // Setup canvas drop zone
-        if (graphContainer) {
-          setupCanvasDropZone(editor, graphContainer);
-        }
+        setupCanvasDropZone(editor, graphContainer);
 
         console.log('✅ Initialization complete');
       } catch (error) {
@@ -181,13 +186,18 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
 
       const palette = paletteRef.current;
 
-      console.log('📦 Creating palette with embedded shapes');
+      console.log('📦 Creating palette with responsive grid layout');
       palette.innerHTML = '';
 
       const header = document.createElement('div');
       header.style.cssText = 'padding: 12px; font-weight: bold; border-bottom: 1px solid #ddd; color: #333; font-size: 13px; position: sticky; top: 0; background: white; z-index: 10;';
       header.textContent = 'Shapes';
       palette.appendChild(header);
+
+      // Create responsive grid container
+      const gridContainer = document.createElement('div');
+      gridContainer.className = 'railway-palette-grid';
+      palette.appendChild(gridContainer);
 
       // Only embedded maxGraph shapes
       const shapes = [
@@ -291,21 +301,20 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
       };
 
       shapes.forEach((shape, index) => {
-        // Add group header
+        // Add group header to grid
         if (currentGroup !== shape.group) {
           currentGroup = shape.group;
           const groupDiv = document.createElement('div');
-          groupDiv.style.cssText = 'padding: 10px 12px 6px 12px; font-size: 11px; font-weight: 600; color: #666; border-top: 1px solid #eee; margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px;';
+          groupDiv.className = 'railway-palette-group';
           groupDiv.textContent = shape.group;
-          palette.appendChild(groupDiv);
+          gridContainer.appendChild(groupDiv);
         }
 
-        // Add draggable shape item with icon
+        // Add draggable shape item with icon - responsive grid sizing
         const shapeItem = document.createElement('div');
         shapeItem.draggable = true;
         shapeItem.style.cssText = `
           padding: 8px;
-          margin: 4px 8px;
           background: white;
           border: 1px solid #ddd;
           border-radius: 4px;
@@ -319,6 +328,8 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
           flex-direction: column;
           align-items: center;
           gap: 6px;
+          justify-content: center;
+          min-height: 80px;
         `;
         shapeItem.id = `shape-${index}`;
 
@@ -365,7 +376,7 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
           shapeItem.style.boxShadow = 'none';
         });
 
-        palette.appendChild(shapeItem);
+        gridContainer.appendChild(shapeItem);
       });
 
       // Setup drop handlers on canvas
@@ -411,6 +422,7 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
 
         const graph = editor.graph;
         console.log('📍 Graph available:', !!graph);
+        console.log('📍 Graph methods:', Object.getOwnPropertyNames(Object.getPrototypeOf(graph)).slice(0, 20));
 
         const rect = canvasElement.getBoundingClientRect();
         const x = e.clientX - rect.left;
@@ -418,27 +430,66 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
         console.log('📍 Drop position:', { x, y });
 
         try {
-          const parent = graph.getDefaultParent();
+          // Try to get parent
+          let parent;
+          if (typeof graph.getDefaultParent === 'function') {
+            parent = graph.getDefaultParent();
+            console.log('📍 Using getDefaultParent()');
+          } else {
+            parent = graph.model.root;
+            console.log('📍 Using graph.model.root');
+          }
           console.log('📍 Parent:', !!parent);
 
-          // Insert vertex with modern maxGraph API
-          const cell = graph.insertVertex(
-            parent,
-            null,
-            shapeData.name,
-            x - shapeData.width / 2,
-            y - shapeData.height / 2,
-            shapeData.width,
-            shapeData.height,
-            shapeData.style
-          );
+          // Try different ways to insert vertex
+          let cell;
+          if (typeof graph.insertVertex === 'function') {
+            console.log('📍 Using insertVertex');
+            cell = graph.insertVertex(
+              parent,
+              null,
+              shapeData.name,
+              x - shapeData.width / 2,
+              y - shapeData.height / 2,
+              shapeData.width,
+              shapeData.height,
+              shapeData.style
+            );
+          } else if (typeof graph.addCell === 'function') {
+            console.log('📍 insertVertex not found, trying addCell');
+            const Geometry = (window as any).mxGeometry || (window as any).mx?.Geometry;
+            const Cell = (window as any).mxCell || (window as any).mx?.Cell;
+
+            if (Cell && Geometry) {
+              cell = new Cell(shapeData.name);
+              cell.geometry = new Geometry(
+                x - shapeData.width / 2,
+                y - shapeData.height / 2,
+                shapeData.width,
+                shapeData.height
+              );
+              cell.style = shapeData.style;
+              cell.vertex = true;
+              graph.addCell(cell, parent);
+            } else {
+              throw new Error('Cell or Geometry constructor not found');
+            }
+          } else {
+            throw new Error('No insertVertex or addCell method found');
+          }
+
           console.log('✅ Vertex created:', cell);
 
-          // Select the created cell
-          graph.setSelectionCells([cell]);
+          // Try to select
+          if (typeof graph.setSelectionCells === 'function') {
+            graph.setSelectionCells([cell]);
+          } else if (typeof graph.setSelectionCell === 'function') {
+            graph.setSelectionCell(cell);
+          }
           console.log('✅ Cell selected');
         } catch (err) {
           console.error('❌ Error creating vertex:', err);
+          console.error('Error details:', err);
         }
       } catch (error) {
         console.error('❌ Drop failed:', error);
