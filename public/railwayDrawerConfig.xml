@@ -46,33 +46,33 @@
     <add as="New" action="new" icon="new.png"/>
     <add as="Open" action="open" icon="open.png"/>
     <add as="Save" action="save" icon="save.png"/>
-    <add as="" as="spacer"/>
+    <add as="spacer"/>
 
     <!-- Edit Operations -->
     <add as="Undo" action="undo" icon="undo.png"/>
     <add as="Redo" action="redo" icon="redo.png"/>
-    <add as="" as="spacer"/>
+    <add as="spacer"/>
 
     <!-- Clipboard -->
     <add as="Cut" action="cut" icon="cut.png"/>
     <add as="Copy" action="copy" icon="copy.png"/>
     <add as="Paste" action="paste" icon="paste.png"/>
-    <add as="" as="spacer"/>
+    <add as="spacer"/>
 
     <!-- Selection -->
     <add as="Select All" action="selectAll" icon="selectall.png"/>
-    <add as="" as="spacer"/>
+    <add as="spacer"/>
 
     <!-- Grouping -->
     <add as="Group" action="group" icon="group.png"/>
     <add as="Ungroup" action="ungroup" icon="ungroup.png"/>
-    <add as="" as="spacer"/>
+    <add as="spacer"/>
 
     <!-- Alignment -->
     <add as="Align Left" action="alignCellsLeft" icon="alignleft.png"/>
     <add as="Align Center" action="alignCellsCenter" icon="aligncenter.png"/>
     <add as="Align Right" action="alignCellsRight" icon="alignright.png"/>
-    <add as="" as="spacer"/>
+    <add as="spacer"/>
 
     <!-- Zoom -->
     <add as="Zoom In" action="zoomIn" icon="zoomin.png"/>
