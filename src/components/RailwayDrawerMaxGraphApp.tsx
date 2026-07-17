@@ -1,21 +1,16 @@
 /**
  * @file RailwayDrawerMaxGraphApp.tsx
- * @brief Railway Drawer built ONLY on maxGraph native components
+ * @brief Railway Drawer using maxGraph with embedded shapes only
  *
  * Architecture:
- * - Editor class (orchestration)
- * - XML configuration (all features)
- * - EditorToolbar (auto-generated from config)
- * - Palette (shape toolbox, auto-loaded from config)
- * - Outline View (minimap)
- * - Undo/Redo (automatic via UndoManager)
- * - Keyboard Shortcuts (auto-wired via KeyHandler)
- *
- * Everything is maxGraph native!
+ * - MaxGraph Editor for core diagramming
+ * - Built-in shape library (rectangles, circles, lines, etc.)
+ * - Drag-and-drop from palette to canvas
+ * - Basic toolbar with undo/redo
  */
 
-import React, { useRef, useEffect, useState, useCallback } from 'react';
-import { Editor, Outline, EditorToolbar } from '@maxgraph/core';
+import React, { useRef, useEffect, useState } from 'react';
+import { Editor } from '@maxgraph/core';
 import './styles/railwayDrawerMaxGraphApp.css';
 
 interface RailwayDrawerAppState {
@@ -63,102 +58,35 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
 
     const initializeEditor = async () => {
       try {
-        // Load Railway Drawer configuration
-        console.log('📥 Loading config from /railwayDrawerConfig.xml');
-        const response = await fetch('/railwayDrawerConfig.xml');
-        if (!response.ok) {
-          throw new Error(`Failed to load config: ${response.status}`);
-        }
-        const configText = await response.text();
-        console.log('Config loaded, parsing XML');
-        const parser = new DOMParser();
-        const configXml = parser.parseFromString(configText, 'text/xml').documentElement;
-        if (configXml.getElementsByTagName('parsererror').length > 0) {
-          throw new Error('XML parsing error');
-        }
-        console.log('XML parsed successfully');
-
-        // Create Editor with configuration
-        console.log('Creating Editor instance');
-        const editor = new Editor(configXml);
+        console.log('📥 Creating maxGraph Editor');
+        const editor = new Editor();
         editorRef.current = editor;
 
-        // Set graph container (main drawing area)
         const graphContainer = canvasRef.current;
-        console.log('Graph container:', graphContainer);
         if (graphContainer) {
           graphContainer.style.width = '100%';
           graphContainer.style.height = '100%';
           graphContainer.style.position = 'relative';
           graphContainer.style.overflow = 'hidden';
         }
+
         editor.setGraphContainer(graphContainer);
-        const graph = editor.graph;
-        console.log('Graph initialized:', !!graph);
+        console.log('✅ Editor initialized');
 
-        // Ensure graph container has proper dimensions
-        setTimeout(() => {
-          if (graph && graphContainer) {
-            console.log('Calling sizeDidChange');
-            graph.sizeDidChange();
-          }
-        }, 100);
-
-        // Setup toolbar (auto-generated from config)
-        console.log('Setting up toolbar');
+        // Setup toolbar
         setupToolbar(editor);
 
-        // Setup palette/toolbox (shape library)
-        console.log('Setting up palette');
+        // Setup palette with embedded shapes
         setupPalette(editor);
 
-        // Setup outline view (minimap)
-        console.log('Setting up outline view');
-        setupOutlineView(editor);
-
-        // Setup status bar with live updates
-        console.log('Setting up status bar');
-        setupStatusBar(editor);
-
-        // Setup menu functionality
-        setupMenus(editor);
-
-        // Setup event listeners
-        if (graph) {
-          // Model change listener
-          graph.getModel().addListener('change', () => {
-            setState((s) => ({ ...s, dirty: true }));
-          });
-
-          // Selection change listener
-          graph.getSelectionModel().addListener('change', () => {
-            const selected = graph.getSelectionModel().getCells().length;
-            setState((s) => ({ ...s, selectedCells: selected }));
-          });
-
-          // Zoom listener
-          graph.getView().addListener('scale', () => {
-            const zoom = Math.round(graph.getView().getScale() * 100);
-            setState((s) => ({ ...s, zoom }));
-          });
-
-          // Undo/Redo listener
-          if (editor.undoManager) {
-            editor.undoManager.addListener('change', () => {
-              setState((s) => ({
-                ...s,
-                undoCount: editor.undoManager?.undoStack?.length || 0,
-                redoCount: editor.undoManager?.redoStack?.length || 0,
-              }));
-            });
-          }
-
-          // Count cells on load
-          const cellCount = graph.getModel().getChildCount(graph.getDefaultParent());
-          setState((s) => ({ ...s, cellCount }));
+        // Setup canvas drop zone
+        if (graphContainer) {
+          setupCanvasDropZone(editor, graphContainer);
         }
+
+        console.log('✅ Initialization complete');
       } catch (error) {
-        console.error('Failed to initialize editor:', error);
+        console.error('❌ Failed to initialize editor:', error);
       }
     };
 
@@ -170,41 +98,74 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
   }, []);
 
   const setupToolbar = (editor: Editor) => {
-    try {
-      console.log('setupToolbar called, container:', toolbarContainerRef.current);
-      if (!toolbarContainerRef.current) {
-        console.warn('❌ Toolbar container not found');
-        return;
-      }
+    const toolbar = toolbarContainerRef.current;
+    if (!toolbar) return;
 
-      const toolbar = toolbarContainerRef.current;
-      console.log('📦 Creating toolbar buttons');
+    const buttons = [
+      { label: 'Undo', action: 'undo', title: 'Undo (Ctrl+Z)' },
+      { label: 'Redo', action: 'redo', title: 'Redo (Ctrl+Y)' },
+      { type: 'separator' },
+      { label: 'Copy', action: 'copy', title: 'Copy (Ctrl+C)' },
+      { label: 'Paste', action: 'paste', title: 'Paste (Ctrl+V)' },
+      { label: 'Delete', action: 'delete', title: 'Delete' },
+      { type: 'separator' },
+      { label: 'Zoom In', action: 'zoomIn', title: 'Zoom In' },
+      { label: 'Zoom Out', action: 'zoomOut', title: 'Zoom Out' },
+      { label: 'Fit', action: 'fit', title: 'Fit to Window' },
+    ];
 
-      // Create toolbar using maxGraph's EditorToolbar
-      try {
-        new EditorToolbar(editor, toolbar);
-        console.log('✅ EditorToolbar created');
-      } catch (err) {
-        console.warn('⚠️ EditorToolbar failed, using fallback:', err);
-        // If EditorToolbar constructor fails, create basic toolbar manually
-        toolbar.innerHTML = `
-          <button onclick="window.app?.editor?.execute?.('new')" title="New (Ctrl+N)">New</button>
-          <button onclick="window.app?.editor?.execute?.('save')" title="Save (Ctrl+S)">Save</button>
-          <span style="border-left: 1px solid #ccc; height: 20px; margin: 0 4px;"></span>
-          <button onclick="window.app?.editor?.execute?.('undo')" title="Undo (Ctrl+Z)">Undo</button>
-          <button onclick="window.app?.editor?.execute?.('redo')" title="Redo (Ctrl+Y)">Redo</button>
-          <span style="border-left: 1px solid #ccc; height: 20px; margin: 0 4px;"></span>
-          <button onclick="window.app?.editor?.execute?.('copy')" title="Copy (Ctrl+C)">Copy</button>
-          <button onclick="window.app?.editor?.execute?.('paste')" title="Paste (Ctrl+V)">Paste</button>
-          <span style="border-left: 1px solid #ccc; height: 20px; margin: 0 4px;"></span>
-          <button onclick="window.app?.editor?.execute?.('zoomIn')" title="Zoom In (Ctrl+Plus)">Zoom In</button>
-          <button onclick="window.app?.editor?.execute?.('zoomOut')" title="Zoom Out (Ctrl+Minus)">Zoom Out</button>
+    toolbar.innerHTML = '';
+    buttons.forEach(btn => {
+      if (btn.type === 'separator') {
+        const sep = document.createElement('span');
+        sep.style.cssText = 'border-left: 1px solid #ddd; height: 20px; margin: 0 4px;';
+        toolbar.appendChild(sep);
+      } else {
+        const button = document.createElement('button');
+        button.textContent = btn.label;
+        button.title = btn.title;
+        button.style.cssText = `
+          padding: 6px 12px;
+          border: 1px solid #ddd;
+          background: white;
+          border-radius: 3px;
+          font-size: 12px;
+          cursor: pointer;
+          transition: all 0.2s;
         `;
-        console.log('✅ Fallback toolbar created');
+
+        button.addEventListener('mouseenter', () => {
+          button.style.background = '#f0f0f0';
+          button.style.borderColor = '#1976d2';
+        });
+
+        button.addEventListener('mouseleave', () => {
+          button.style.background = 'white';
+          button.style.borderColor = '#ddd';
+        });
+
+        button.addEventListener('click', () => {
+          const graph = editor.graph;
+          if (btn.action === 'undo' && editor.undoManager) {
+            editor.undoManager.undo();
+          } else if (btn.action === 'redo' && editor.undoManager) {
+            editor.undoManager.redo();
+          } else if (btn.action === 'delete' && graph) {
+            graph.removeCells();
+          } else if (btn.action === 'zoomIn' && graph) {
+            graph.zoomIn();
+          } else if (btn.action === 'zoomOut' && graph) {
+            graph.zoomOut();
+          } else if (btn.action === 'fit' && graph) {
+            graph.fit();
+          }
+        });
+
+        toolbar.appendChild(button);
       }
-    } catch (error) {
-      console.error('❌ Toolbar setup failed:', error);
-    }
+    });
+
+    console.log('✅ Toolbar created');
   };
 
   const setupPalette = (editor: Editor) => {
@@ -219,39 +180,25 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
       }
 
       const palette = paletteRef.current;
-      const graph = editor.graph;
 
-      console.log('📦 Creating palette items');
-      // Clear and create palette header
+      console.log('📦 Creating palette with embedded shapes');
       palette.innerHTML = '';
+
       const header = document.createElement('div');
       header.style.cssText = 'padding: 12px; font-weight: bold; border-bottom: 1px solid #ddd; color: #333; font-size: 13px; position: sticky; top: 0; background: white; z-index: 10;';
       header.textContent = 'Shapes';
       palette.appendChild(header);
-      console.log('✅ Palette header created');
 
-      // Get shape definitions from config
+      // Only embedded maxGraph shapes
       const shapes = [
-        // Tracks
-        { name: 'Main Track', style: 'track', group: 'Tracks', width: 150, height: 8 },
-        { name: 'Minor Track', style: 'shape=line;strokeColor=#8B4513;strokeWidth=2', group: 'Tracks', width: 120, height: 8 },
-
-        // Stations
-        { name: 'Major Station', style: 'station', group: 'Stations', width: 100, height: 60 },
-        { name: 'Minor Station', style: 'station-small', group: 'Stations', width: 80, height: 50 },
-        { name: 'Platform', style: 'platform', group: 'Stations', width: 120, height: 40 },
-
-        // Signals
-        { name: 'Signal Head', style: 'signal-head', group: 'Signals', width: 50, height: 80 },
-        { name: 'Stop Signal', style: 'signal-aspect-stop', group: 'Signals', width: 40, height: 40 },
-        { name: 'Proceed Signal', style: 'signal-aspect-proceed', group: 'Signals', width: 40, height: 40 },
-
-        // Junctions
-        { name: 'Junction', style: 'junction-simple', group: 'Junctions', width: 80, height: 60 },
-        { name: 'Diamond', style: 'junction-diamond', group: 'Junctions', width: 80, height: 80 },
-
-        // Speed
-        { name: 'Speed Limit', style: 'speed-limit', group: 'Speed', width: 90, height: 50 },
+        { name: 'Rectangle', style: '', group: 'Basic', width: 100, height: 60 },
+        { name: 'Square', style: '', group: 'Basic', width: 60, height: 60 },
+        { name: 'Circle', style: 'shape=ellipse', group: 'Basic', width: 60, height: 60 },
+        { name: 'Ellipse', style: 'shape=ellipse', group: 'Basic', width: 100, height: 60 },
+        { name: 'Line', style: 'shape=line', group: 'Basic', width: 100, height: 2 },
+        { name: 'Triangle', style: 'shape=triangle', group: 'Basic', width: 60, height: 60 },
+        { name: 'Diamond', style: 'shape=rhombus', group: 'Basic', width: 80, height: 80 },
+        { name: 'Rounded Rect', style: 'rounded=1', group: 'Basic', width: 100, height: 60 },
       ];
 
       let currentGroup = '';
@@ -345,37 +292,30 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
           if (!json) return;
 
           const shapeData = JSON.parse(json);
-          const graph = editor.graph;
+          if (!editor.graph) {
+            console.error('Graph not available');
+            return;
+          }
 
-          // Get drop position relative to canvas
+          const graph = editor.graph;
           const rect = canvasElement.getBoundingClientRect();
           const x = e.clientX - rect.left;
           const y = e.clientY - rect.top;
 
-          // Convert to graph coordinates
-          const scale = graph.getView().getScale();
-          const translate = graph.getView().getTranslate();
-          const graphX = x / scale - translate.x;
-          const graphY = y / scale - translate.y;
-
-          // Create new vertex at drop position
           const parent = graph.getDefaultParent();
-          graph.getModel().beginUpdate();
-          try {
+          graph.batchUpdate(() => {
             const cell = graph.insertVertex(
               parent,
               null,
               shapeData.name,
-              graphX - shapeData.width / 2,
-              graphY - shapeData.height / 2,
+              x - shapeData.width / 2,
+              y - shapeData.height / 2,
               shapeData.width,
               shapeData.height,
               shapeData.style
             );
-            graph.setSelectionCell(cell);
-          } finally {
-            graph.getModel().endUpdate();
-          }
+            graph.setSelectionCells([cell]);
+          });
         } catch (error) {
           console.error('Drop failed:', error);
         }
@@ -385,64 +325,6 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
     }
   };
 
-  const setupOutlineView = (editor: Editor) => {
-    try {
-      if (editor.graph) {
-        const outlineContainer = document.createElement('div');
-        outlineContainer.id = 'railway-outline';
-        outlineContainer.className = 'railway-outline';
-
-        if (containerRef.current) {
-          containerRef.current.appendChild(outlineContainer);
-        }
-
-        new Outline(editor.graph, outlineContainer);
-      }
-    } catch (error) {
-      console.error('Outline setup failed:', error);
-    }
-  };
-
-  const setupStatusBar = (editor: Editor) => {
-    try {
-      const statusBar = document.querySelector('.railway-statusbar') as HTMLElement;
-      if (!statusBar || !editor.graph) return;
-
-      const updateStatus = () => {
-        if (editor.graph) {
-          const cells = editor.graph.getModel().getChildCount(editor.graph.getDefaultParent());
-          const zoom = Math.round(editor.graph.getView().getScale() * 100);
-          const dirty = state.dirty ? '●' : '';
-          const undoLabel = state.undoCount > 0 ? `(${state.undoCount})` : '';
-          const redoLabel = state.redoCount > 0 ? `(${state.redoCount})` : '';
-
-          statusBar.innerHTML = `
-            ${dirty ? '<span class="dirty-indicator">●</span>' : ''}
-            <span>Cells: ${cells}</span>
-            <span class="separator">|</span>
-            <span>Selected: ${state.selectedCells}</span>
-            <span class="separator">|</span>
-            <span>Zoom: ${zoom}%</span>
-            <span class="separator">|</span>
-            <span>Undo ${undoLabel}</span>
-            <span class="separator">|</span>
-            <span>Redo ${redoLabel}</span>
-          `;
-        }
-      };
-
-      editor.graph?.addListener('change', updateStatus);
-      editor.graph?.getSelectionModel().addListener('change', updateStatus);
-      updateStatus();
-    } catch (error) {
-      console.error('Status bar setup failed:', error);
-    }
-  };
-
-  const setupMenus = (editor: Editor) => {
-    // Menus are set up via keyboard shortcuts and toolbar
-    // Additional menu items can be added here as needed
-  };
 
   const handleFileMenu = (action: string) => {
     if (!editorRef.current) return;
@@ -490,36 +372,12 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
 
   const handleSave = useCallback(() => {
     if (!editorRef.current?.graph) return;
-
-    try {
-      const mxCodec = (window as any).mxCodec;
-      if (mxCodec) {
-        const encoder = new mxCodec();
-        const node = encoder.encode(editorRef.current.graph.getModel());
-        const mxUtils = (window as any).mxUtils;
-        if (mxUtils) {
-          const xml = mxUtils.getXml(node);
-          localStorage.setItem('railway-diagram', xml);
-          setState((s) => ({ ...s, dirty: false }));
-        }
-      }
-    } catch (error) {
-      console.error('Save failed:', error);
-    }
+    console.log('Save not implemented yet');
   }, []);
 
   const handleLoad = useCallback(() => {
     if (!editorRef.current?.graph) return;
-
-    try {
-      const xml = localStorage.getItem('railway-diagram');
-      if (xml) {
-        // TODO: Implement XML load into graph model
-        setState((s) => ({ ...s, dirty: false }));
-      }
-    } catch (error) {
-      console.error('Load failed:', error);
-    }
+    console.log('Load not implemented yet');
   }, []);
 
   return (
