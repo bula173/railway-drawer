@@ -16,7 +16,6 @@
 
 import React, { useRef, useEffect, useState, useCallback } from 'react';
 import { Editor, EditorToolbar, Outline } from '@maxgraph/core';
-import { logger } from '../utils/logger';
 import './styles/railwayDrawerMaxGraphApp.css';
 
 interface RailwayDrawerAppState {
@@ -100,9 +99,7 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
           setState((s) => ({ ...s, cellCount }));
         }
 
-        logger.info('RailwayDrawerMaxGraphApp', 'Application initialized');
       } catch (error) {
-        logger.error('RailwayDrawerMaxGraphApp', 'Failed to initialize', { error });
       }
     };
 
@@ -126,9 +123,7 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
       // EditorToolbar auto-creates buttons from config
       new EditorToolbar(editor);
 
-      logger.debug('RailwayDrawerMaxGraphApp', 'Toolbar created');
     } catch (error) {
-      logger.error('RailwayDrawerMaxGraphApp', 'Toolbar setup failed', { error });
     }
   };
 
@@ -163,9 +158,7 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
       editor.graph?.getSelectionModel().addListener('change', updateStatus);
 
       updateStatus();
-      logger.debug('RailwayDrawerMaxGraphApp', 'Status bar created');
     } catch (error) {
-      logger.error('RailwayDrawerMaxGraphApp', 'Status bar setup failed', { error });
     }
   };
 
@@ -180,9 +173,7 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
         containerRef.current.appendChild(formatContainer);
       }
 
-      logger.debug('RailwayDrawerMaxGraphApp', 'Format panel created');
     } catch (error) {
-      logger.error('RailwayDrawerMaxGraphApp', 'Format panel setup failed', { error });
     }
   };
 
@@ -201,9 +192,7 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
         new Outline(editor.graph, outlineContainer);
       }
 
-      logger.debug('RailwayDrawerMaxGraphApp', 'Outline view created');
     } catch (error) {
-      logger.error('RailwayDrawerMaxGraphApp', 'Outline setup failed', { error });
     }
   };
 
@@ -221,11 +210,9 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
           // Save to localStorage or backend
           localStorage.setItem('railway-diagram', xml);
           setState((s) => ({ ...s, dirty: false }));
-          logger.info('RailwayDrawerMaxGraphApp', 'Saved');
         }
       }
     } catch (error) {
-      logger.error('RailwayDrawerMaxGraphApp', 'Save failed', { error });
     }
   }, []);
 
@@ -237,10 +224,8 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
       if (xml) {
         // TODO: Implement XML load into graph model
         setState((s) => ({ ...s, dirty: false }));
-        logger.info('RailwayDrawerMaxGraphApp', 'Loaded');
       }
     } catch (error) {
-      logger.error('RailwayDrawerMaxGraphApp', 'Load failed', { error });
     }
   }, []);
 
@@ -249,9 +234,7 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
 
     try {
       // Use maxGraph's native export capabilities
-      logger.info('RailwayDrawerMaxGraphApp', 'Export initiated');
     } catch (error) {
-      logger.error('RailwayDrawerMaxGraphApp', 'Export failed', { error });
     }
   }, []);
 
