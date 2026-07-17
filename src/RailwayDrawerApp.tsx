@@ -1890,16 +1890,7 @@ const RailwayDrawerApp = () => {
               <div className="flex-1 overflow-hidden flex flex-col">
                 {/* Shapes panel - primary tool interface */}
                 <div className="flex-1 overflow-auto border-b border-slate-200 bg-white">
-                  <ToolboxDrawIO
-                    items={toolbox}
-                    onDragStart={(e, item) => {
-                      e.dataTransfer.effectAllowed = 'copy';
-                      e.dataTransfer.setData('application/json', JSON.stringify({
-                        type: 'toolbox-item',
-                        item
-                      }));
-                    }}
-                  />
+                  <ToolboxDrawIO items={toolbox} />
                 </div>
 
                 {/* Layers panel at bottom */}

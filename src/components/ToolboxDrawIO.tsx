@@ -102,6 +102,9 @@ export const ToolboxDrawIO: React.FC<ToolboxDrawIOProps> = ({ items, onDragStart
 
   const handleDragStart = useCallback(
     (e: React.DragEvent, item: ToolboxItem) => {
+      e.dataTransfer.effectAllowed = 'copy';
+      e.dataTransfer.setData('application/railway-item', JSON.stringify(item));
+
       if (onDragStart) {
         onDragStart(e, item);
       }
