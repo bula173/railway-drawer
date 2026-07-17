@@ -22,6 +22,17 @@ interface RailwayDrawerAppState {
   redoCount: number;
 }
 
+interface SelectedCellProps {
+  width?: number;
+  height?: number;
+  x?: number;
+  y?: number;
+  fillColor?: string;
+  strokeColor?: string;
+  strokeWidth?: number;
+  label?: string;
+}
+
 /**
  * Railway Drawer Application built entirely on maxGraph
  */
@@ -40,6 +51,8 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
     redoCount: 0,
   });
   const [menuOpen, setMenuOpen] = useState<string | null>(null);
+  const [selectedCell, setSelectedCell] = useState<any>(null);
+  const [selectedProps, setSelectedProps] = useState<SelectedCellProps>({});
 
   // Initialize maxGraph Editor with configuration
   useEffect(() => {
@@ -73,12 +86,34 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
         // Create graph directly
         const graph = new Graph(graphContainer);
         console.log('✅ Graph created');
-        console.log('Graph type:', graph.constructor.name);
-        console.log('Graph has insertVertex:', typeof graph.insertVertex);
 
         // Store graph in editor-like object
         const editor = { graph, undoManager: graph.undoManager } as any;
         editorRef.current = editor;
+
+        // Setup selection listener
+        graph.addListener('selectionChange', () => {
+          const selected = graph.getSelectionCells();
+          console.log('Selection changed:', selected.length);
+          setState((s) => ({ ...s, selectedCells: selected.length }));
+
+          if (selected.length === 1) {
+            const cell = selected[0];
+            setSelectedCell(cell);
+            setSelectedProps({
+              width: cell.geometry?.width,
+              height: cell.geometry?.height,
+              x: cell.geometry?.x,
+              y: cell.geometry?.y,
+              label: cell.value,
+              fillColor: cell.style?.split('fillColor=')[1]?.split(';')[0] || '#ffffff',
+              strokeColor: cell.style?.split('strokeColor=')[1]?.split(';')[0] || '#000000',
+            });
+          } else {
+            setSelectedCell(null);
+            setSelectedProps({});
+          }
+        });
 
         // Setup toolbar
         setupToolbar(editor);
@@ -88,6 +123,10 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
 
         // Setup canvas drop zone
         setupCanvasDropZone(editor, graphContainer);
+
+        // Update status bar
+        updateStatusBar(graph);
+        graph.addListener('change', () => updateStatusBar(graph));
 
         console.log('✅ Initialization complete');
       } catch (error) {
@@ -500,13 +539,30 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
   };
 
 
+  const updateStatusBar = (graph: Graph) => {
+    const statusBar = document.querySelector('.railway-statusbar') as HTMLElement;
+    if (statusBar) {
+      const cellCount = graph.model.root ? graph.model.getChildCount(graph.model.root) : 0;
+      const zoom = Math.round(graph.getView().getScale() * 100);
+      statusBar.innerHTML = `
+        <span>Cells: ${cellCount}</span>
+        <span class="separator">|</span>
+        <span>Selected: ${state.selectedCells}</span>
+        <span class="separator">|</span>
+        <span>Zoom: ${zoom}%</span>
+      `;
+    }
+  };
+
   const handleFileMenu = (action: string) => {
-    if (!editorRef.current) return;
+    if (!editorRef.current?.graph) return;
+    const graph = editorRef.current.graph;
 
     switch (action) {
       case 'new':
-        editorRef.current.execute('new');
+        graph.model.clear();
         setState((s) => ({ ...s, dirty: false }));
+        console.log('✅ New diagram created');
         break;
       case 'save':
         handleSave();
@@ -519,26 +575,38 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
   };
 
   const handleEditMenu = (action: string) => {
-    if (!editorRef.current) return;
+    if (!editorRef.current?.graph) return;
+    const graph = editorRef.current.graph;
 
     switch (action) {
       case 'undo':
-        editorRef.current.execute('undo');
+        if (editorRef.current.undoManager?.canUndo()) {
+          editorRef.current.undoManager.undo();
+          console.log('✅ Undo executed');
+        }
         break;
       case 'redo':
-        editorRef.current.execute('redo');
+        if (editorRef.current.undoManager?.canRedo()) {
+          editorRef.current.undoManager.redo();
+          console.log('✅ Redo executed');
+        }
         break;
       case 'cut':
-        editorRef.current.execute('cut');
+        const cutCells = graph.getSelectionCells();
+        if (cutCells.length > 0) {
+          graph.removeCells(cutCells);
+          console.log('✅ Cut executed');
+        }
         break;
       case 'copy':
-        editorRef.current.execute('copy');
+        console.log('Copy not implemented yet');
         break;
       case 'paste':
-        editorRef.current.execute('paste');
+        console.log('Paste not implemented yet');
         break;
       case 'selectAll':
-        editorRef.current.execute('selectAll');
+        graph.selectAll();
+        console.log('✅ All cells selected');
         break;
     }
     setMenuOpen(null);
@@ -631,16 +699,167 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
           />
         </div>
 
-        {/* Properties Panel Placeholder */}
+        {/* Properties Panel */}
         <aside className="railway-properties">
           <h4>Properties</h4>
-          <p>Selected: {state.selectedCells} cell(s)</p>
-          <p>Zoom: {state.zoom}%</p>
+
+          {selectedCell ? (
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              {/* Label */}
+              <div>
+                <label style={{ fontSize: '11px', fontWeight: '600', color: '#666', display: 'block', marginBottom: '4px' }}>
+                  Label
+                </label>
+                <input
+                  type="text"
+                  value={selectedProps.label || ''}
+                  onChange={(e) => {
+                    if (selectedCell) {
+                      selectedCell.value = e.target.value;
+                      editorRef.current?.graph?.refresh();
+                      setSelectedProps((s) => ({ ...s, label: e.target.value }));
+                    }
+                  }}
+                  style={{
+                    width: '100%',
+                    padding: '6px',
+                    border: '1px solid #ddd',
+                    borderRadius: '3px',
+                    fontSize: '11px',
+                    boxSizing: 'border-box',
+                  }}
+                />
+              </div>
+
+              {/* Width */}
+              <div>
+                <label style={{ fontSize: '11px', fontWeight: '600', color: '#666', display: 'block', marginBottom: '4px' }}>
+                  Width: {selectedProps.width?.toFixed(0)}
+                </label>
+                <input
+                  type="range"
+                  min="20"
+                  max="500"
+                  value={selectedProps.width || 100}
+                  onChange={(e) => {
+                    if (selectedCell?.geometry) {
+                      selectedCell.geometry.width = parseFloat(e.target.value);
+                      editorRef.current?.graph?.refresh();
+                      setSelectedProps((s) => ({ ...s, width: parseFloat(e.target.value) }));
+                    }
+                  }}
+                  style={{ width: '100%' }}
+                />
+              </div>
+
+              {/* Height */}
+              <div>
+                <label style={{ fontSize: '11px', fontWeight: '600', color: '#666', display: 'block', marginBottom: '4px' }}>
+                  Height: {selectedProps.height?.toFixed(0)}
+                </label>
+                <input
+                  type="range"
+                  min="20"
+                  max="500"
+                  value={selectedProps.height || 60}
+                  onChange={(e) => {
+                    if (selectedCell?.geometry) {
+                      selectedCell.geometry.height = parseFloat(e.target.value);
+                      editorRef.current?.graph?.refresh();
+                      setSelectedProps((s) => ({ ...s, height: parseFloat(e.target.value) }));
+                    }
+                  }}
+                  style={{ width: '100%' }}
+                />
+              </div>
+
+              {/* Fill Color */}
+              <div>
+                <label style={{ fontSize: '11px', fontWeight: '600', color: '#666', display: 'block', marginBottom: '4px' }}>
+                  Fill Color
+                </label>
+                <input
+                  type="color"
+                  value={selectedProps.fillColor || '#ffffff'}
+                  onChange={(e) => {
+                    if (selectedCell) {
+                      const style = selectedCell.style || '';
+                      selectedCell.style = style.replace(/fillColor=[^;]*/g, '') + (style.includes('fillColor') ? '' : ';') + `fillColor=${e.target.value}`;
+                      editorRef.current?.graph?.refresh();
+                      setSelectedProps((s) => ({ ...s, fillColor: e.target.value }));
+                    }
+                  }}
+                  style={{ width: '100%', height: '32px', cursor: 'pointer', borderRadius: '3px', border: '1px solid #ddd' }}
+                />
+              </div>
+
+              {/* Stroke Color */}
+              <div>
+                <label style={{ fontSize: '11px', fontWeight: '600', color: '#666', display: 'block', marginBottom: '4px' }}>
+                  Border Color
+                </label>
+                <input
+                  type="color"
+                  value={selectedProps.strokeColor || '#000000'}
+                  onChange={(e) => {
+                    if (selectedCell) {
+                      const style = selectedCell.style || '';
+                      selectedCell.style = style.replace(/strokeColor=[^;]*/g, '') + (style.includes('strokeColor') ? '' : ';') + `strokeColor=${e.target.value}`;
+                      editorRef.current?.graph?.refresh();
+                      setSelectedProps((s) => ({ ...s, strokeColor: e.target.value }));
+                    }
+                  }}
+                  style={{ width: '100%', height: '32px', cursor: 'pointer', borderRadius: '3px', border: '1px solid #ddd' }}
+                />
+              </div>
+
+              {/* Delete Button */}
+              <button
+                onClick={() => {
+                  if (selectedCell) {
+                    editorRef.current?.graph?.removeCells([selectedCell]);
+                    setSelectedCell(null);
+                    setSelectedProps({});
+                  }
+                }}
+                style={{
+                  padding: '8px 12px',
+                  background: '#d32f2f',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '4px',
+                  cursor: 'pointer',
+                  fontSize: '12px',
+                  fontWeight: '600',
+                  marginTop: '8px',
+                }}
+              >
+                Delete Shape
+              </button>
+            </div>
+          ) : (
+            <>
+              <p style={{ fontSize: '12px', color: '#999' }}>Click a shape to edit properties</p>
+              <hr style={{ margin: '12px 0', borderColor: '#eee' }} />
+              <h4 style={{ marginTop: '16px' }}>Canvas Settings</h4>
+              <p style={{ fontSize: '11px', color: '#666' }}>
+                Grid: Off<br />
+                Snap: Off<br />
+                Zoom: {state.zoom}%
+              </p>
+            </>
+          )}
         </aside>
       </div>
 
       {/* Status Bar */}
-      <footer className="railway-statusbar" />
+      <footer className="railway-statusbar">
+        <span>Cells: 0</span>
+        <span className="separator">|</span>
+        <span>Selected: {state.selectedCells}</span>
+        <span className="separator">|</span>
+        <span>Zoom: {state.zoom}%</span>
+      </footer>
     </div>
   );
 };
