@@ -1,22 +1,27 @@
 /**
  * @file toolboxEnhancer.ts
- * @brief Enhances toolbox with remotely-fetched SVGs for ERTMS elements
+ * @brief Toolbox enhancement utilities
+ *
+ * Provides utilities for enhancing toolbox items with SVGs
  */
 
 import { loadSVG } from './svgLoader';
-import ertmsSvgUrls from '../config/ertmsSvgUrls.json';
 import type { ToolboxItem } from '../components/Toolbox';
+
+/**
+ * Map of ERTMS element IDs to their SVG URLs
+ * Can be extended with external URLs for remote SVG hosting
+ */
+const ERTMS_SVG_URLS: Record<string, string> = {
+  // Extended ERTMS elements would go here
+  // Example: 'ertms_signal_head': 'https://example.com/svgs/signal-head.svg'
+};
 
 /**
  * Get the full URL for an ERTMS element SVG
  */
 function getErtmsSvgUrl(elementId: string): string | null {
-  const config = ertmsSvgUrls as any;
-  const path = config.elements?.[elementId];
-
-  if (!path) return null;
-
-  return `${config.baseUrl}${path}`;
+  return ERTMS_SVG_URLS[elementId] || null;
 }
 
 /**

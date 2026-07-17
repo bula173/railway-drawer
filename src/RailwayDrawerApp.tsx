@@ -13,7 +13,7 @@
 import React, { useState, useRef, useEffect, useCallback, Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { MousePointer2, Ruler, Train, Edit2, Check, X, ChevronLeft, ChevronRight, ChevronDown, Plus, Minus } from "lucide-react";
-import toolboxConfig from "./assets/toolboxConfig.json";
+import { getAllMaxGraphShapes } from "./config/maxGraphShapes";
 import Toolbox from "./components/Toolbox";
 import type { ToolboxItem } from "./components/Toolbox";
 import type { DrawAreaTab } from "./components/TabPanel";
@@ -69,11 +69,10 @@ const APP_AUTHOR = "Marcin Kwiatkowski";
 const RailwayDrawerApp = () => {
   // Toolbox state
   const [toolbox, setToolbox] = useState<ToolboxItem[]>(() => {
-    const config = toolboxConfig as ToolboxItem[];
-    logger.debug("RailwayDrawerApp", "Loading toolbox configuration", {
+    const config = getAllMaxGraphShapes();
+    logger.debug("RailwayDrawerApp", "Loading maxGraph shapes", {
       totalItems: config.length,
-      hasPointElement: !!config.find(item => item.id === 'point'),
-      hasTrackElement: !!config.find(item => item.id === 'track')
+      categories: config.length > 0 ? [...new Set(config.map(s => s.group))] : []
     });
     return config;
   });

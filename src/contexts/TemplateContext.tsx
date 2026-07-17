@@ -1,14 +1,14 @@
 /**
  * @file TemplateContext.tsx
- * @brief Context for managing railway diagram templates using toolboxConfig shapes
+ * @brief Context for managing railway diagram templates using maxGraphShapes
  *
- * Provides pre-built templates composed of shapes from toolboxConfig.json
+ * Provides pre-built templates composed of shapes from maxGraphShapes
  */
 
 import React, { createContext, useCallback, useState, useEffect } from 'react';
 import type { DrawElement } from '../components/Elements';
 import { logger } from '../utils/logger';
-import toolboxConfig from '../assets/toolboxConfig.json';
+import { getAllMaxGraphShapes } from '../config/maxGraphShapes';
 
 /**
  * @interface RailwayTemplate
@@ -96,14 +96,15 @@ export const TemplateProvider: React.FC<TemplateProviderProps> = ({ children }) 
   }, []);
 
   /**
-   * Helper function to find shape by name from toolboxConfig
+   * Helper function to find shape by name from maxGraphShapes
    */
   const findShapeByName = useCallback((name: string): DrawElement | null => {
-    const shape = (toolboxConfig as any[]).find(s => s.name === name);
+    const allShapes = getAllMaxGraphShapes();
+    const shape = allShapes.find(s => s.name === name) as any;
     if (!shape) {
       logger.warn('TemplateProvider', `Shape not found: ${name}, using Rectangle as fallback`);
       // Fallback to Rectangle if shape not found
-      const fallback = (toolboxConfig as any[]).find(s => s.name === 'Rectangle');
+      const fallback = allShapes.find(s => s.name === 'Rectangle') as any;
       if (!fallback) return null;
       return {
         ...fallback,
@@ -145,7 +146,7 @@ export const TemplateProvider: React.FC<TemplateProviderProps> = ({ children }) 
   };
 
   /**
-   * Create default railway templates using shapes from toolboxConfig
+   * Create default railway templates using shapes from maxGraphShapes
    */
   const initializeDefaultTemplates = useCallback(() => {
     const defaultTemplates: RailwayTemplate[] = [

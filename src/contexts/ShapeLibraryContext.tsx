@@ -8,7 +8,7 @@
 import React, { createContext, useCallback, useState, useEffect } from 'react';
 import type { DrawElement } from '../components/Elements';
 import { logger } from '../utils/logger';
-import toolboxConfig from '../assets/toolboxConfig.json';
+import { MAX_GRAPH_SHAPES } from '../config/maxGraphShapes';
 
 /**
  * @interface ShapeLibrary
@@ -85,24 +85,25 @@ export const ShapeLibraryProvider: React.FC<ShapeLibraryProviderProps> = ({ chil
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
   /**
-   * Initialize with libraries from toolboxConfig.json
+   * Initialize with libraries from maxGraphShapes
    */
   useEffect(() => {
-    logger.info('ShapeLibraryProvider', 'Initializing with toolboxConfig.json');
+    logger.info('ShapeLibraryProvider', 'Initializing with maxGraphShapes');
     initializeLibrariesFromToolboxConfig();
   }, []);
 
   /**
-   * Create libraries from toolboxConfig.json
+   * Create libraries from maxGraphShapes
    */
   const initializeLibrariesFromToolboxConfig = useCallback(() => {
     // Group shapes by their group name
-    const groupedShapes = (toolboxConfig as any[]).reduce((acc, shape) => {
+    const allShapes = Object.values(MAX_GRAPH_SHAPES).flat();
+    const groupedShapes = allShapes.reduce((acc, shape) => {
       const groupName = shape.group || 'Other';
       if (!acc[groupName]) {
         acc[groupName] = [];
       }
-      acc[groupName].push(shape as DrawElement);
+      acc[groupName].push(shape as any as DrawElement);
       return acc;
     }, {} as Record<string, DrawElement[]>);
 
@@ -137,7 +138,7 @@ export const ShapeLibraryProvider: React.FC<ShapeLibraryProviderProps> = ({ chil
         };
       });
 
-    logger.info('ShapeLibraryProvider', 'Loaded libraries from toolboxConfig.json', {
+    logger.info('ShapeLibraryProvider', 'Loaded libraries from maxGraphShapes', {
       libraryCount: defaultLibraries.length,
       totalShapes: defaultLibraries.reduce((sum, lib) => sum + lib.shapes.length, 0),
     });
