@@ -48,12 +48,23 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
 
   // Initialize maxGraph Editor with configuration
   useEffect(() => {
-    if (!containerRef.current || !toolbarContainerRef.current || !canvasRef.current) return;
+    console.log('🔧 useEffect running - initializing editor');
+    console.log('Refs:', {
+      container: !!containerRef.current,
+      toolbar: !!toolbarContainerRef.current,
+      canvas: !!canvasRef.current,
+      palette: !!paletteRef.current
+    });
+
+    if (!containerRef.current) {
+      console.error('❌ containerRef not ready');
+      return;
+    }
 
     const initializeEditor = async () => {
       try {
         // Load Railway Drawer configuration
-        console.log('Loading config from /railwayDrawerConfig.xml');
+        console.log('📥 Loading config from /railwayDrawerConfig.xml');
         const response = await fetch('/railwayDrawerConfig.xml');
         if (!response.ok) {
           throw new Error(`Failed to load config: ${response.status}`);
@@ -160,14 +171,22 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
 
   const setupToolbar = (editor: Editor) => {
     try {
-      if (!toolbarContainerRef.current) return;
+      console.log('setupToolbar called, container:', toolbarContainerRef.current);
+      if (!toolbarContainerRef.current) {
+        console.warn('❌ Toolbar container not found');
+        return;
+      }
+
+      const toolbar = toolbarContainerRef.current;
+      console.log('📦 Creating toolbar buttons');
 
       // Create toolbar using maxGraph's EditorToolbar
       try {
-        new EditorToolbar(editor, toolbarContainerRef.current);
-      } catch {
+        new EditorToolbar(editor, toolbar);
+        console.log('✅ EditorToolbar created');
+      } catch (err) {
+        console.warn('⚠️ EditorToolbar failed, using fallback:', err);
         // If EditorToolbar constructor fails, create basic toolbar manually
-        const toolbar = toolbarContainerRef.current;
         toolbar.innerHTML = `
           <button onclick="window.app?.editor?.execute?.('new')" title="New (Ctrl+N)">New</button>
           <button onclick="window.app?.editor?.execute?.('save')" title="Save (Ctrl+S)">Save</button>
@@ -181,28 +200,35 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
           <button onclick="window.app?.editor?.execute?.('zoomIn')" title="Zoom In (Ctrl+Plus)">Zoom In</button>
           <button onclick="window.app?.editor?.execute?.('zoomOut')" title="Zoom Out (Ctrl+Minus)">Zoom Out</button>
         `;
+        console.log('✅ Fallback toolbar created');
       }
     } catch (error) {
-      console.error('Toolbar setup failed:', error);
+      console.error('❌ Toolbar setup failed:', error);
     }
   };
 
   const setupPalette = (editor: Editor) => {
     try {
+      console.log('setupPalette called, paletteRef:', paletteRef.current);
       if (!paletteRef.current || !editor.graph) {
-        console.warn('Palette or editor not ready');
+        console.warn('❌ Palette or editor not ready', {
+          palette: !!paletteRef.current,
+          graph: !!editor.graph
+        });
         return;
       }
 
       const palette = paletteRef.current;
       const graph = editor.graph;
 
+      console.log('📦 Creating palette items');
       // Clear and create palette header
       palette.innerHTML = '';
       const header = document.createElement('div');
       header.style.cssText = 'padding: 12px; font-weight: bold; border-bottom: 1px solid #ddd; color: #333; font-size: 13px; position: sticky; top: 0; background: white; z-index: 10;';
       header.textContent = 'Shapes';
       palette.appendChild(header);
+      console.log('✅ Palette header created');
 
       // Get shape definitions from config
       const shapes = [
@@ -560,7 +586,7 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
       </div>
 
       {/* Main Content Area */}
-      <div className="railway-workspace">
+      <div className="railway-workspace" ref={containerRef}>
         {/* Palette/Toolbox */}
         <aside className="railway-palette" ref={paletteRef} />
 
