@@ -15,7 +15,7 @@
  */
 
 import React, { useRef, useEffect, useState, useCallback } from 'react';
-import { Editor, EditorToolbar, Outline } from '@maxgraph/core';
+import { Editor, Outline, EditorToolbar } from '@maxgraph/core';
 import './styles/railwayDrawerMaxGraphApp.css';
 
 interface RailwayDrawerAppState {
@@ -64,10 +64,21 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
 
         // Set graph container (main drawing area)
         const graphContainer = canvasRef.current;
-        graphContainer.style.width = '100%';
-        graphContainer.style.height = '100%';
+        if (graphContainer) {
+          graphContainer.style.width = '100%';
+          graphContainer.style.height = '100%';
+          graphContainer.style.position = 'relative';
+          graphContainer.style.overflow = 'hidden';
+        }
         editor.setGraphContainer(graphContainer);
         const graph = editor.graph;
+
+        // Ensure graph container has proper dimensions
+        setTimeout(() => {
+          if (graph && graphContainer) {
+            graph.sizeDidChange();
+          }
+        }, 100);
 
         // Setup toolbar (auto-generated from config)
         setupToolbar(editor);
@@ -134,8 +145,26 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
     try {
       if (!toolbarContainerRef.current) return;
 
-      const toolbar = new EditorToolbar(editor, toolbarContainerRef.current);
-      toolbar.render(toolbarContainerRef.current);
+      // Create toolbar using maxGraph's EditorToolbar
+      try {
+        new EditorToolbar(editor, toolbarContainerRef.current);
+      } catch {
+        // If EditorToolbar constructor fails, create basic toolbar manually
+        const toolbar = toolbarContainerRef.current;
+        toolbar.innerHTML = `
+          <button onclick="window.app?.editor?.execute?.('new')" title="New (Ctrl+N)">New</button>
+          <button onclick="window.app?.editor?.execute?.('save')" title="Save (Ctrl+S)">Save</button>
+          <span style="border-left: 1px solid #ccc; height: 20px; margin: 0 4px;"></span>
+          <button onclick="window.app?.editor?.execute?.('undo')" title="Undo (Ctrl+Z)">Undo</button>
+          <button onclick="window.app?.editor?.execute?.('redo')" title="Redo (Ctrl+Y)">Redo</button>
+          <span style="border-left: 1px solid #ccc; height: 20px; margin: 0 4px;"></span>
+          <button onclick="window.app?.editor?.execute?.('copy')" title="Copy (Ctrl+C)">Copy</button>
+          <button onclick="window.app?.editor?.execute?.('paste')" title="Paste (Ctrl+V)">Paste</button>
+          <span style="border-left: 1px solid #ccc; height: 20px; margin: 0 4px;"></span>
+          <button onclick="window.app?.editor?.execute?.('zoomIn')" title="Zoom In (Ctrl+Plus)">Zoom In</button>
+          <button onclick="window.app?.editor?.execute?.('zoomOut')" title="Zoom Out (Ctrl+Minus)">Zoom Out</button>
+        `;
+      }
     } catch (error) {
       console.error('Toolbar setup failed:', error);
     }
@@ -143,12 +172,20 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
 
   const setupPalette = (editor: Editor) => {
     try {
-      if (!paletteRef.current || !editor.graph) return;
+      if (!paletteRef.current || !editor.graph) {
+        console.warn('Palette or editor not ready');
+        return;
+      }
 
+      const palette = paletteRef.current;
       const graph = editor.graph;
 
-      // Create palette container
-      paletteRef.current.innerHTML = '<div style="padding: 12px; font-weight: bold; border-bottom: 1px solid #ddd; color: #333; font-size: 13px;">Shapes</div>';
+      // Clear and create palette header
+      palette.innerHTML = '';
+      const header = document.createElement('div');
+      header.style.cssText = 'padding: 12px; font-weight: bold; border-bottom: 1px solid #ddd; color: #333; font-size: 13px; position: sticky; top: 0; background: white; z-index: 10;';
+      header.textContent = 'Shapes';
+      palette.appendChild(header);
 
       // Get shape definitions from config
       const shapes = [
@@ -183,7 +220,7 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
           const groupDiv = document.createElement('div');
           groupDiv.style.cssText = 'padding: 10px 12px 6px 12px; font-size: 11px; font-weight: 600; color: #666; border-top: 1px solid #eee; margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px;';
           groupDiv.textContent = shape.group;
-          paletteRef.current!.appendChild(groupDiv);
+          palette.appendChild(groupDiv);
         }
 
         // Add draggable shape item
@@ -234,7 +271,7 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
           shapeItem.style.boxShadow = 'none';
         });
 
-        paletteRef.current!.appendChild(shapeItem);
+        palette.appendChild(shapeItem);
       });
 
       // Setup drop handlers on canvas
