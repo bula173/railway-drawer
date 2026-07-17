@@ -179,6 +179,8 @@
   flex-shrink: 0;
   z-index: 5;
   box-shadow: 1px 0 2px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
 }
 
 .railway-palette > div:first-child {
@@ -186,6 +188,29 @@
   top: 0;
   background: white;
   z-index: 10;
+}
+
+/* Palette Grid Container */
+.railway-palette-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  gap: 8px;
+  padding: 8px;
+  align-content: start;
+  flex: 1;
+}
+
+/* Group headers */
+.railway-palette-group {
+  grid-column: 1 / -1;
+  padding: 10px 12px 6px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #666;
+  border-top: 1px solid #eee;
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .railway-palette [draggable="true"] {
@@ -206,6 +231,19 @@
 
 .railway-palette div {
   transition: all 0.15s;
+}
+
+/* Responsive palette width */
+@media (max-width: 200px) {
+  .railway-palette-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 250px) {
+  .railway-palette-grid {
+    grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
+  }
 }
 
 /* Canvas Wrapper */
@@ -498,6 +536,16 @@
   .railway-palette > div:first-child {
     background: #252525;
     border-bottom-color: #333;
+  }
+
+  .railway-palette-grid {
+    background: #252525;
+  }
+
+  .railway-palette-group {
+    background: #252525;
+    color: #999;
+    border-top-color: #333;
   }
 
   .railway-palette > div[style*="padding: 10px"] {
