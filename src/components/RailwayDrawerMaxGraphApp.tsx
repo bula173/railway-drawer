@@ -421,24 +421,22 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
           const parent = graph.getDefaultParent();
           console.log('📍 Parent:', !!parent);
 
-          // Use beginUpdate/endUpdate for compatibility
-          graph.getModel().beginUpdate();
-          try {
-            const cell = graph.insertVertex(
-              parent,
-              null,
-              shapeData.name,
-              x - shapeData.width / 2,
-              y - shapeData.height / 2,
-              shapeData.width,
-              shapeData.height,
-              shapeData.style
-            );
-            console.log('✅ Vertex created:', cell);
-            graph.setSelectionCells([cell]);
-          } finally {
-            graph.getModel().endUpdate();
-          }
+          // Insert vertex with modern maxGraph API
+          const cell = graph.insertVertex(
+            parent,
+            null,
+            shapeData.name,
+            x - shapeData.width / 2,
+            y - shapeData.height / 2,
+            shapeData.width,
+            shapeData.height,
+            shapeData.style
+          );
+          console.log('✅ Vertex created:', cell);
+
+          // Select the created cell
+          graph.setSelectionCells([cell]);
+          console.log('✅ Cell selected');
         } catch (err) {
           console.error('❌ Error creating vertex:', err);
         }
