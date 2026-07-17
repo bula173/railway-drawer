@@ -1,0 +1,233 @@
+.mxgraph-editor {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  overflow: hidden;
+}
+
+.mxgraph-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  color: #666;
+  font-size: 14px;
+}
+
+/* Toolbar */
+.mxgraph-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: #fafafa;
+  border-bottom: 1px solid #e0e0e0;
+  user-select: none;
+}
+
+.toolbar-group {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.toolbar-divider {
+  width: 1px;
+  height: 24px;
+  background: #ddd;
+  margin: 0 4px;
+}
+
+.toolbar-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #333;
+  transition: all 150ms ease;
+  font-size: 14px;
+}
+
+.toolbar-button:hover:not(:disabled) {
+  background: #f0f0f0;
+  border-color: #bbb;
+  color: #000;
+}
+
+.toolbar-button:active:not(:disabled) {
+  background: #e0e0e0;
+  border-color: #999;
+}
+
+.toolbar-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  color: #999;
+}
+
+.toolbar-button-primary {
+  background: #1976d2;
+  border-color: #1565c0;
+  color: #fff;
+  font-weight: 500;
+  padding: 0 16px;
+}
+
+.toolbar-button-primary:hover {
+  background: #1565c0;
+  border-color: #0d47a1;
+}
+
+.toolbar-button-primary:active {
+  background: #0d47a1;
+}
+
+/* Graph Container */
+.mxgraph-container {
+  flex: 1;
+  overflow: hidden;
+  background: #fff;
+  position: relative;
+}
+
+/* mxGraph specific styling */
+.mxgraph-container svg {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* Graph cells and connections */
+.mxgraph-container .mxCell {
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+  border-radius: 4px;
+}
+
+.mxgraph-container .mxCell:hover {
+  border-color: #1976d2;
+  background: #f0f7ff;
+}
+
+/* Handles */
+.mxgraph-container .mxHandle {
+  background: #1976d2;
+  border: 1px solid #0d47a1;
+  border-radius: 2px;
+}
+
+/* Connection point */
+.mxgraph-container .mxConnectionPoint {
+  background: #1976d2;
+  border: 2px solid #0d47a1;
+}
+
+/* Selection outline */
+.mxgraph-container .mxSelectionRect {
+  border: 2px solid #1976d2;
+  background: rgba(25, 118, 210, 0.1);
+}
+
+/* Guide lines */
+.mxgraph-container .mxGuide {
+  border: 1px dashed #ff0000;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .mxgraph-editor {
+    background: #1e1e1e;
+  }
+
+  .mxgraph-loading {
+    background: #1e1e1e;
+    color: #aaa;
+  }
+
+  .mxgraph-toolbar {
+    background: #252525;
+    border-bottom-color: #444;
+  }
+
+  .toolbar-divider {
+    background: #444;
+  }
+
+  .toolbar-button {
+    background: #2a2a2a;
+    border-color: #444;
+    color: #ddd;
+  }
+
+  .toolbar-button:hover:not(:disabled) {
+    background: #333;
+    border-color: #555;
+    color: #fff;
+  }
+
+  .toolbar-button:active:not(:disabled) {
+    background: #3a3a3a;
+    border-color: #666;
+  }
+
+  .toolbar-button:disabled {
+    color: #666;
+  }
+
+  .toolbar-button-primary {
+    background: #1976d2;
+    border-color: #1565c0;
+    color: #fff;
+  }
+
+  .toolbar-button-primary:hover {
+    background: #1565c0;
+    border-color: #0d47a1;
+  }
+
+  .toolbar-button-primary:active {
+    background: #0d47a1;
+  }
+
+  .mxgraph-container {
+    background: #1e1e1e;
+  }
+
+  .mxgraph-container .mxCell {
+    border-color: #444;
+    background: #2a2a2a;
+  }
+
+  .mxgraph-container .mxCell:hover {
+    border-color: #4da6ff;
+    background: #1a3a52;
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .mxgraph-toolbar {
+    padding: 6px 8px;
+    gap: 4px;
+  }
+
+  .toolbar-button {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  .toolbar-divider {
+    height: 20px;
+    margin: 0 2px;
+  }
+}
