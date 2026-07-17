@@ -9,7 +9,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "preview": "vite preview",
+    "preview": "npm run build && wrangler dev",
     "test": "vitest",
     "test:watch": "vitest --watch",
     "test:ui": "vitest --ui",
@@ -21,7 +21,8 @@
     "test:e2e:headed": "playwright test --headed",
     "test:e2e:report": "playwright show-report",
     "typecheck": "tsc --noEmit",
-    "ci": "npm run lint && npm run typecheck && npm run test:run && npm run test:e2e && npm run build"
+    "ci": "npm run lint && npm run typecheck && npm run test:run && npm run test:e2e && npm run build",
+    "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.6",
@@ -35,6 +36,7 @@
     "tcs": "^10.0.2"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.45.1",
     "@eslint/js": "^9.29.0",
     "@playwright/test": "^1.61.0",
     "@testing-library/jest-dom": "^6.6.3",
@@ -55,6 +57,7 @@
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.34.1",
     "vite": "^8.0.16",
-    "vitest": "^4.1.9"
+    "vitest": "^4.1.9",
+    "wrangler": "^4.112.0"
   }
 }
