@@ -1,0 +1,388 @@
+.maxgraph-file-dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.maxgraph-file-dialog {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.maxgraph-file-dialog .dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.maxgraph-file-dialog h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.maxgraph-file-dialog .close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #999;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.maxgraph-file-dialog .close-btn:hover {
+  background: #f0f0f0;
+  color: #333;
+}
+
+/* Tabs */
+.maxgraph-file-dialog .tabs {
+  display: flex;
+  border-bottom: 1px solid #e0e0e0;
+  background: #f5f5f5;
+  padding: 0 24px;
+}
+
+.maxgraph-file-dialog .tab {
+  flex: 1;
+  padding: 12px 16px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  color: #666;
+  transition: all 0.2s;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+
+.maxgraph-file-dialog .tab:hover {
+  background: #efefef;
+  color: #333;
+}
+
+.maxgraph-file-dialog .tab.active {
+  color: #1976d2;
+  border-bottom-color: #1976d2;
+}
+
+/* Tab Content */
+.maxgraph-file-dialog .tab-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+}
+
+.maxgraph-file-dialog h3 {
+  margin: 0 0 16px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.maxgraph-file-dialog p {
+  margin: 0 0 12px 0;
+  font-size: 13px;
+  color: #666;
+}
+
+.maxgraph-file-dialog strong {
+  color: #333;
+}
+
+/* Current Tab */
+.maxgraph-file-dialog .current-tab .actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* Open Tab */
+.maxgraph-file-dialog .empty-message {
+  text-align: center;
+  padding: 40px 20px;
+  color: #999;
+}
+
+.maxgraph-file-dialog .file-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.maxgraph-file-dialog .file-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.maxgraph-file-dialog .file-item:hover {
+  background: #f0f0f0;
+  border-color: #d0d0d0;
+}
+
+.maxgraph-file-dialog .file-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.maxgraph-file-dialog .file-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.maxgraph-file-dialog .file-meta {
+  font-size: 11px;
+  color: #999;
+  margin-top: 4px;
+}
+
+.maxgraph-file-dialog .file-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+
+/* New Tab */
+.maxgraph-file-dialog .file-upload {
+  display: block;
+  padding: 32px 20px;
+  border: 2px dashed #d0d0d0;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.maxgraph-file-dialog .file-upload:hover {
+  border-color: #1976d2;
+  background: rgba(25, 118, 210, 0.05);
+}
+
+.maxgraph-file-dialog .upload-label {
+  font-size: 14px;
+  color: #666;
+  pointer-events: none;
+}
+
+/* Buttons */
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background: #1976d2;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #1565c0;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.2);
+}
+
+.btn-primary:active {
+  background: #0d47a1;
+}
+
+.btn-secondary {
+  background: #f0f0f0;
+  color: #333;
+  border: 1px solid #e0e0e0;
+}
+
+.btn-secondary:hover {
+  background: #e8e8e8;
+}
+
+.btn-danger {
+  background: #f44336;
+  color: white;
+}
+
+.btn-danger:hover {
+  background: #d32f2f;
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+/* Footer */
+.maxgraph-file-dialog .dialog-footer {
+  padding: 20px 24px;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  .maxgraph-file-dialog {
+    background: #1e1e1e;
+    border: 1px solid #333;
+  }
+
+  .maxgraph-file-dialog .dialog-header {
+    border-bottom-color: #333;
+  }
+
+  .maxgraph-file-dialog h2 {
+    color: #ddd;
+  }
+
+  .maxgraph-file-dialog .close-btn {
+    color: #999;
+  }
+
+  .maxgraph-file-dialog .close-btn:hover {
+    background: #2a2a2a;
+    color: #ddd;
+  }
+
+  .maxgraph-file-dialog .tabs {
+    background: #252525;
+    border-bottom-color: #333;
+  }
+
+  .maxgraph-file-dialog .tab {
+    color: #aaa;
+  }
+
+  .maxgraph-file-dialog .tab:hover {
+    background: #2a2a2a;
+    color: #ddd;
+  }
+
+  .maxgraph-file-dialog .tab.active {
+    color: #4da6ff;
+    border-bottom-color: #4da6ff;
+  }
+
+  .maxgraph-file-dialog h3 {
+    color: #ddd;
+  }
+
+  .maxgraph-file-dialog p {
+    color: #aaa;
+  }
+
+  .maxgraph-file-dialog strong {
+    color: #ddd;
+  }
+
+  .maxgraph-file-dialog .file-item {
+    background: #2a2a2a;
+    border-color: #333;
+  }
+
+  .maxgraph-file-dialog .file-item:hover {
+    background: #333;
+    border-color: #444;
+  }
+
+  .maxgraph-file-dialog .file-name {
+    color: #ddd;
+  }
+
+  .maxgraph-file-dialog .file-meta {
+    color: #777;
+  }
+
+  .maxgraph-file-dialog .file-upload {
+    border-color: #444;
+  }
+
+  .maxgraph-file-dialog .file-upload:hover {
+    background: rgba(77, 166, 255, 0.05);
+    border-color: #4da6ff;
+  }
+
+  .maxgraph-file-dialog .upload-label {
+    color: #aaa;
+  }
+
+  .btn-secondary {
+    background: #2a2a2a;
+    color: #ddd;
+    border-color: #444;
+  }
+
+  .btn-secondary:hover {
+    background: #333;
+  }
+
+  .maxgraph-file-dialog .dialog-footer {
+    border-top-color: #333;
+  }
+}
+
+/* Scrollbar */
+.maxgraph-file-dialog .tab-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.maxgraph-file-dialog .tab-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.maxgraph-file-dialog .tab-content::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 4px;
+}
+
+.maxgraph-file-dialog .tab-content::-webkit-scrollbar-thumb:hover {
+  background: #bbb;
+}
+
+@media (prefers-color-scheme: dark) {
+  .maxgraph-file-dialog .tab-content::-webkit-scrollbar-thumb {
+    background: #444;
+  }
+
+  .maxgraph-file-dialog .tab-content::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}
