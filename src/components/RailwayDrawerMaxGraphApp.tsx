@@ -203,6 +203,93 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
 
       let currentGroup = '';
 
+      const createShapeIcon = (shapeName: string): SVGSVGElement => {
+        const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        svg.setAttribute('width', '40');
+        svg.setAttribute('height', '40');
+        svg.setAttribute('viewBox', '0 0 40 40');
+        svg.style.display = 'block';
+
+        const iconColor = '#1976d2';
+
+        switch (shapeName) {
+          case 'Rectangle':
+            const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+            rect.setAttribute('x', '8');
+            rect.setAttribute('y', '12');
+            rect.setAttribute('width', '24');
+            rect.setAttribute('height', '16');
+            rect.setAttribute('fill', 'none');
+            rect.setAttribute('stroke', iconColor);
+            rect.setAttribute('stroke-width', '2');
+            svg.appendChild(rect);
+            break;
+          case 'Square':
+            const sq = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+            sq.setAttribute('x', '12');
+            sq.setAttribute('y', '12');
+            sq.setAttribute('width', '16');
+            sq.setAttribute('height', '16');
+            sq.setAttribute('fill', 'none');
+            sq.setAttribute('stroke', iconColor);
+            sq.setAttribute('stroke-width', '2');
+            svg.appendChild(sq);
+            break;
+          case 'Circle':
+          case 'Ellipse':
+            const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            circle.setAttribute('cx', '20');
+            circle.setAttribute('cy', '20');
+            circle.setAttribute('r', '10');
+            circle.setAttribute('fill', 'none');
+            circle.setAttribute('stroke', iconColor);
+            circle.setAttribute('stroke-width', '2');
+            svg.appendChild(circle);
+            break;
+          case 'Line':
+            const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+            line.setAttribute('x1', '8');
+            line.setAttribute('y1', '20');
+            line.setAttribute('x2', '32');
+            line.setAttribute('y2', '20');
+            line.setAttribute('stroke', iconColor);
+            line.setAttribute('stroke-width', '2');
+            svg.appendChild(line);
+            break;
+          case 'Triangle':
+            const tri = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+            tri.setAttribute('points', '20,8 32,28 8,28');
+            tri.setAttribute('fill', 'none');
+            tri.setAttribute('stroke', iconColor);
+            tri.setAttribute('stroke-width', '2');
+            svg.appendChild(tri);
+            break;
+          case 'Diamond':
+            const diamond = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+            diamond.setAttribute('points', '20,6 34,20 20,34 6,20');
+            diamond.setAttribute('fill', 'none');
+            diamond.setAttribute('stroke', iconColor);
+            diamond.setAttribute('stroke-width', '2');
+            svg.appendChild(diamond);
+            break;
+          case 'Rounded Rect':
+            const roundRect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+            roundRect.setAttribute('x', '8');
+            roundRect.setAttribute('y', '12');
+            roundRect.setAttribute('width', '24');
+            roundRect.setAttribute('height', '16');
+            roundRect.setAttribute('rx', '3');
+            roundRect.setAttribute('ry', '3');
+            roundRect.setAttribute('fill', 'none');
+            roundRect.setAttribute('stroke', iconColor);
+            roundRect.setAttribute('stroke-width', '2');
+            svg.appendChild(roundRect);
+            break;
+        }
+
+        return svg;
+      };
+
       shapes.forEach((shape, index) => {
         // Add group header
         if (currentGroup !== shape.group) {
@@ -213,27 +300,42 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
           palette.appendChild(groupDiv);
         }
 
-        // Add draggable shape item
+        // Add draggable shape item with icon
         const shapeItem = document.createElement('div');
         shapeItem.draggable = true;
         shapeItem.style.cssText = `
-          padding: 10px 12px;
-          margin: 3px 8px;
+          padding: 8px;
+          margin: 4px 8px;
           background: white;
           border: 1px solid #ddd;
           border-radius: 4px;
-          cursor: move;
-          font-size: 12px;
+          cursor: grab;
+          font-size: 11px;
           text-align: center;
           transition: all 0.2s;
           user-select: none;
           color: #333;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 6px;
         `;
-        shapeItem.textContent = shape.name;
         shapeItem.id = `shape-${index}`;
+
+        // Add icon
+        const icon = createShapeIcon(shape.name);
+        shapeItem.appendChild(icon);
+
+        // Add label
+        const label = document.createElement('span');
+        label.textContent = shape.name;
+        label.style.fontSize = '11px';
+        label.style.fontWeight = '500';
+        shapeItem.appendChild(label);
 
         // Drag event handlers
         shapeItem.addEventListener('dragstart', (e) => {
+          console.log('🎨 Dragging shape:', shape.name);
           const dragData = {
             name: shape.name,
             style: shape.style,
@@ -242,11 +344,13 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
           };
           e.dataTransfer!.effectAllowed = 'copy';
           e.dataTransfer!.setData('application/json', JSON.stringify(dragData));
-          shapeItem.style.opacity = '0.6';
+          shapeItem.style.opacity = '0.5';
+          shapeItem.style.cursor = 'grabbing';
         });
 
         shapeItem.addEventListener('dragend', () => {
           shapeItem.style.opacity = '1';
+          shapeItem.style.cursor = 'grab';
         });
 
         shapeItem.addEventListener('mouseenter', () => {
@@ -272,38 +376,54 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
   };
 
   const setupCanvasDropZone = (editor: Editor, canvasElement: HTMLElement) => {
-    try {
-      canvasElement.addEventListener('dragover', (e) => {
-        e.preventDefault();
-        e.dataTransfer!.dropEffect = 'copy';
-        canvasElement.style.background = 'rgba(25, 118, 210, 0.05)';
-      });
+    canvasElement.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      e.dataTransfer!.dropEffect = 'copy';
+      canvasElement.classList.add('drag-over');
+    });
 
-      canvasElement.addEventListener('dragleave', () => {
-        canvasElement.style.background = '#ffffff';
-      });
+    canvasElement.addEventListener('dragleave', (e) => {
+      if (e.target === canvasElement) {
+        canvasElement.classList.remove('drag-over');
+      }
+    });
 
-      canvasElement.addEventListener('drop', (e) => {
-        e.preventDefault();
-        canvasElement.style.background = '#ffffff';
+    canvasElement.addEventListener('drop', (e) => {
+      e.preventDefault();
+      canvasElement.classList.remove('drag-over');
+
+      try {
+        const json = e.dataTransfer!.getData('application/json');
+        console.log('📍 Drop event, data:', json);
+
+        if (!json) {
+          console.warn('No data in drop event');
+          return;
+        }
+
+        const shapeData = JSON.parse(json);
+        console.log('📍 Parsed shape data:', shapeData);
+
+        if (!editor.graph) {
+          console.error('❌ Graph not available');
+          return;
+        }
+
+        const graph = editor.graph;
+        console.log('📍 Graph available:', !!graph);
+
+        const rect = canvasElement.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        console.log('📍 Drop position:', { x, y });
 
         try {
-          const json = e.dataTransfer!.getData('application/json');
-          if (!json) return;
-
-          const shapeData = JSON.parse(json);
-          if (!editor.graph) {
-            console.error('Graph not available');
-            return;
-          }
-
-          const graph = editor.graph;
-          const rect = canvasElement.getBoundingClientRect();
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-
           const parent = graph.getDefaultParent();
-          graph.batchUpdate(() => {
+          console.log('📍 Parent:', !!parent);
+
+          // Use beginUpdate/endUpdate for compatibility
+          graph.getModel().beginUpdate();
+          try {
             const cell = graph.insertVertex(
               parent,
               null,
@@ -314,15 +434,20 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
               shapeData.height,
               shapeData.style
             );
+            console.log('✅ Vertex created:', cell);
             graph.setSelectionCells([cell]);
-          });
-        } catch (error) {
-          console.error('Drop failed:', error);
+          } finally {
+            graph.getModel().endUpdate();
+          }
+        } catch (err) {
+          console.error('❌ Error creating vertex:', err);
         }
-      });
-    } catch (error) {
-      console.error('Canvas drop zone setup failed:', error);
-    }
+      } catch (error) {
+        console.error('❌ Drop failed:', error);
+      }
+    });
+
+    console.log('✅ Canvas drop zone initialized');
   };
 
 
