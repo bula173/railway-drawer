@@ -25,9 +25,11 @@
   },
   "dependencies": {
     "@headlessui/react": "^2.2.6",
+    "@typed-mxgraph/typed-mxgraph": "^1.0.8",
     "html-to-image": "^1.11.13",
     "jspdf": "^4.2.1",
     "lucide-react": "^0.525.0",
+    "mxgraph": "^4.2.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "tcs": "^10.0.2"
