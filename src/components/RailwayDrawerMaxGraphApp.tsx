@@ -9,7 +9,7 @@
  * - Basic toolbar with undo/redo
  */
 
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, useCallback } from 'react';
 import { Editor } from '@maxgraph/core';
 import './styles/railwayDrawerMaxGraphApp.css';
 
