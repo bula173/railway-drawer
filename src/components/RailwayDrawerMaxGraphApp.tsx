@@ -542,15 +542,16 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
   const updateStatusBar = (graph: Graph) => {
     const statusBar = document.querySelector('.railway-statusbar') as HTMLElement;
     if (statusBar) {
-      const cellCount = graph.model.root ? graph.model.getChildCount(graph.model.root) : 0;
-      const zoom = Math.round(graph.getView().getScale() * 100);
-      statusBar.innerHTML = `
-        <span>Cells: ${cellCount}</span>
-        <span class="separator">|</span>
-        <span>Selected: ${state.selectedCells}</span>
-        <span class="separator">|</span>
-        <span>Zoom: ${zoom}%</span>
-      `;
+      try {
+        const zoom = Math.round(graph.getView().getScale() * 100);
+        statusBar.innerHTML = `
+          <span>Zoom: ${zoom}%</span>
+          <span class="separator">|</span>
+          <span>Selected: ${state.selectedCells}</span>
+        `;
+      } catch (err) {
+        console.log('Status bar update skipped');
+      }
     }
   };
 
