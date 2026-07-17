@@ -1,0 +1,150 @@
+.maxgraph-editor-core {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  overflow: hidden;
+}
+
+.maxgraph-container {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  background: #fff;
+}
+
+/* maxGraph override styles */
+.maxgraph-container .mxCell {
+  border: none;
+}
+
+.maxgraph-container .mxCellHighlight {
+  border: 2px solid #1976d2;
+}
+
+.maxgraph-container .mxRubberband {
+  border: 2px solid #1976d2;
+  background: rgba(25, 118, 210, 0.1);
+}
+
+/* Grid styling */
+.maxgraph-container .mxGridLines {
+  stroke: #e0e0e0;
+  stroke-width: 1;
+  opacity: 0.5;
+}
+
+/* Selection handles */
+.maxgraph-container .mxHandle {
+  background: #1976d2;
+  border: 1px solid #0d47a1;
+  border-radius: 2px;
+}
+
+/* Connection points */
+.maxgraph-container .mxConnectionPoint {
+  background: #1976d2;
+  border: 2px solid #0d47a1;
+  border-radius: 50%;
+}
+
+/* Guide lines */
+.maxgraph-container .mxGuide {
+  border: 1px dashed #ff0000;
+}
+
+/* Vertex/edge styling */
+.maxgraph-container rect {
+  stroke: #999;
+  stroke-width: 1;
+  fill: #f0f0f0;
+}
+
+.maxgraph-container ellipse {
+  stroke: #999;
+  stroke-width: 1;
+  fill: #f0f0f0;
+}
+
+.maxgraph-container line {
+  stroke: #999;
+  stroke-width: 1;
+}
+
+.maxgraph-container path {
+  stroke: #999;
+  stroke-width: 1;
+  fill: none;
+}
+
+/* Text styling */
+.maxgraph-container text {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 12px;
+  fill: #333;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .maxgraph-editor-core {
+    background: #1e1e1e;
+  }
+
+  .maxgraph-container {
+    background: #1e1e1e;
+  }
+
+  .maxgraph-container .mxCellHighlight {
+    border-color: #4da6ff;
+  }
+
+  .maxgraph-container .mxRubberband {
+    border-color: #4da6ff;
+    background: rgba(77, 166, 255, 0.1);
+  }
+
+  .maxgraph-container .mxGridLines {
+    stroke: #444;
+    opacity: 0.3;
+  }
+
+  .maxgraph-container .mxHandle {
+    background: #4da6ff;
+    border-color: #2196f3;
+  }
+
+  .maxgraph-container .mxConnectionPoint {
+    background: #4da6ff;
+    border-color: #2196f3;
+  }
+
+  .maxgraph-container rect {
+    stroke: #666;
+    fill: #2a2a2a;
+  }
+
+  .maxgraph-container ellipse {
+    stroke: #666;
+    fill: #2a2a2a;
+  }
+
+  .maxgraph-container line {
+    stroke: #666;
+  }
+
+  .maxgraph-container path {
+    stroke: #666;
+  }
+
+  .maxgraph-container text {
+    fill: #ddd;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .maxgraph-container {
+    /* Touch-friendly sizing */
+  }
+}
