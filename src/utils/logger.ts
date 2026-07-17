@@ -45,7 +45,7 @@ class Logger {
         const savedTrace = localStorage.getItem('ENABLE_TRACE');
         if (savedLevel) this.config.level = savedLevel;
         if (savedTrace === 'true') this.config.enableTrace = true;
-      } catch (e) {
+      } catch {
         // localStorage may not be available in test environments
       }
     }
@@ -178,7 +178,7 @@ class Logger {
     if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
       try {
         localStorage.setItem('LOG_LEVEL', level);
-      } catch (e) {
+      } catch {
         // localStorage may not be available in test environments
       }
     }
@@ -194,7 +194,7 @@ class Logger {
     if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
       try {
         localStorage.setItem('ENABLE_TRACE', String(enabled));
-      } catch (e) {
+      } catch {
         // localStorage may not be available in test environments
       }
     }

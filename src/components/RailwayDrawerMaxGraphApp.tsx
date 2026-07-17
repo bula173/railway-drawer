@@ -15,7 +15,7 @@
  */
 
 import React, { useRef, useEffect, useState, useCallback } from 'react';
-import { Editor, EditorToolbar, Toolbar, Format, Outline } from '@maxgraph/core';
+import { Editor, EditorToolbar, Outline } from '@maxgraph/core';
 import { logger } from '../utils/logger';
 import './styles/railwayDrawerMaxGraphApp.css';
 
@@ -71,7 +71,7 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
         setupStatusBar(editor);
 
         // Setup format panel (auto-generated)
-        setupFormatPanel(editor);
+        setupFormatPanel();
 
         // Setup outline view (minimap)
         setupOutlineView(editor);
@@ -169,19 +169,15 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
     }
   };
 
-  const setupFormatPanel = (editor: Editor) => {
+  const setupFormatPanel = () => {
     try {
       const formatContainer = document.createElement('div');
       formatContainer.id = 'railway-format-panel';
       formatContainer.className = 'railway-format-panel';
+      formatContainer.innerHTML = '<h4>Properties</h4><p>Format panel coming soon...</p>';
 
       if (containerRef.current) {
         containerRef.current.appendChild(formatContainer);
-      }
-
-      // Format panel auto-generates from editor config
-      if (editor.graph) {
-        new Format(editor.graph);
       }
 
       logger.debug('RailwayDrawerMaxGraphApp', 'Format panel created');
@@ -215,16 +211,18 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
     if (!editorRef.current?.graph) return;
 
     try {
-      const encoder = new (window as any).mxCodec?.();
-      if (encoder) {
+      const mxCodec = (window as any).mxCodec;
+      if (mxCodec) {
+        const encoder = new mxCodec();
         const node = encoder.encode(editorRef.current.graph.getModel());
-        const xml = new (window as any).mxUtils?.getXml?.(node);
-
-        // Save to localStorage or backend
-        localStorage.setItem('railway-diagram', xml);
-        setState((s) => ({ ...s, dirty: false }));
-
-        logger.info('RailwayDrawerMaxGraphApp', 'Saved');
+        const mxUtils = (window as any).mxUtils;
+        if (mxUtils) {
+          const xml = mxUtils.getXml(node);
+          // Save to localStorage or backend
+          localStorage.setItem('railway-diagram', xml);
+          setState((s) => ({ ...s, dirty: false }));
+          logger.info('RailwayDrawerMaxGraphApp', 'Saved');
+        }
       }
     } catch (error) {
       logger.error('RailwayDrawerMaxGraphApp', 'Save failed', { error });
@@ -237,10 +235,7 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
     try {
       const xml = localStorage.getItem('railway-diagram');
       if (xml) {
-        // Decode and load XML
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(xml, 'text/xml');
-        // Load logic would go here
+        // TODO: Implement XML load into graph model
         setState((s) => ({ ...s, dirty: false }));
         logger.info('RailwayDrawerMaxGraphApp', 'Loaded');
       }

@@ -6,7 +6,7 @@
  */
 
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
-import { Graph, Cell } from '@maxgraph/core';
+import { Graph } from '@maxgraph/core';
 import {
   createVertex,
   createEdge,
