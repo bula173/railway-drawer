@@ -1,0 +1,447 @@
+.maxgraph-advanced-demo {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  background: #fafafa;
+}
+
+.maxgraph-advanced-demo .demo-header {
+  background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
+  color: white;
+  padding: 20px 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.maxgraph-advanced-demo .demo-header h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.maxgraph-advanced-demo .demo-header p {
+  margin: 4px 0 0 0;
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.maxgraph-advanced-demo .demo-layout {
+  display: flex;
+  flex: 1;
+  gap: 0;
+  overflow: hidden;
+}
+
+/* Toolbar */
+.maxgraph-advanced-demo .toolbar {
+  width: 180px;
+  background: white;
+  border-right: 1px solid #e0e0e0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.maxgraph-advanced-demo .toolbar-section {
+  padding: 12px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.maxgraph-advanced-demo .toolbar-section h3 {
+  margin: 0 0 8px 0;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #333;
+  letter-spacing: 0.5px;
+}
+
+.maxgraph-advanced-demo .btn {
+  width: 100%;
+  padding: 8px 12px;
+  margin-bottom: 6px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: white;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.maxgraph-advanced-demo .btn:hover:not(:disabled) {
+  background: #f0f0f0;
+  border-color: #1976d2;
+  color: #1976d2;
+}
+
+.maxgraph-advanced-demo .btn-primary {
+  background: #1976d2;
+  color: white;
+  border-color: #1976d2;
+}
+
+.maxgraph-advanced-demo .btn-primary:hover {
+  background: #1565c0;
+  border-color: #1565c0;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.2);
+}
+
+.maxgraph-advanced-demo .btn-secondary {
+  background: #f0f0f0;
+  color: #333;
+  border-color: #ddd;
+}
+
+.maxgraph-advanced-demo .btn-secondary:hover {
+  background: #e8e8e8;
+  color: #1976d2;
+}
+
+.maxgraph-advanced-demo .btn-danger {
+  background: #f44336;
+  color: white;
+  border-color: #f44336;
+}
+
+.maxgraph-advanced-demo .btn-danger:hover {
+  background: #d32f2f;
+  border-color: #d32f2f;
+}
+
+.maxgraph-advanced-demo .btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Alignment grid */
+.maxgraph-advanced-demo .align-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.maxgraph-advanced-demo .align-grid button {
+  padding: 6px;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 3px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.maxgraph-advanced-demo .align-grid button:hover {
+  background: #f0f0f0;
+  border-color: #1976d2;
+}
+
+/* Zoom controls */
+.maxgraph-advanced-demo .zoom-controls {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.maxgraph-advanced-demo .zoom-controls button {
+  padding: 6px;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.maxgraph-advanced-demo .zoom-controls button:hover {
+  background: #f0f0f0;
+  border-color: #1976d2;
+}
+
+.maxgraph-advanced-demo .zoom-controls button.active {
+  background: #1976d2;
+  color: white;
+  border-color: #1976d2;
+}
+
+/* Drawing Section */
+.maxgraph-advanced-demo .drawing-section {
+  flex: 1;
+  overflow: hidden;
+  background: white;
+}
+
+/* Info Panel */
+.maxgraph-advanced-demo .info-panel {
+  width: 220px;
+  background: white;
+  border-left: 1px solid #e0e0e0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.maxgraph-advanced-demo .info-section {
+  padding: 12px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.maxgraph-advanced-demo .info-section h3 {
+  margin: 0 0 8px 0;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #333;
+  letter-spacing: 0.5px;
+}
+
+.maxgraph-advanced-demo .stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  padding: 6px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.maxgraph-advanced-demo .stat-item:last-child {
+  border-bottom: none;
+}
+
+.maxgraph-advanced-demo .stat-item .label {
+  color: #666;
+  font-weight: 500;
+}
+
+.maxgraph-advanced-demo .stat-item .value {
+  color: #1976d2;
+  font-weight: 600;
+  font-family: 'Courier New', monospace;
+}
+
+.maxgraph-advanced-demo .log-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 200px;
+  overflow-y: auto;
+  background: #f9f9f9;
+  padding: 8px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+}
+
+.maxgraph-advanced-demo .log-empty {
+  color: #999;
+  text-align: center;
+  padding: 20px 0;
+  font-style: italic;
+}
+
+.maxgraph-advanced-demo .log-item {
+  padding: 4px;
+  color: #333;
+  line-height: 1.3;
+  word-break: break-word;
+}
+
+.maxgraph-advanced-demo .log-item:hover {
+  background: #e8e8e8;
+  border-radius: 2px;
+}
+
+.maxgraph-advanced-demo .shortcuts-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 11px;
+}
+
+.maxgraph-advanced-demo .shortcuts-list li {
+  padding: 4px 0;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.maxgraph-advanced-demo .shortcuts-list li:last-child {
+  border-bottom: none;
+}
+
+.maxgraph-advanced-demo kbd {
+  display: inline-block;
+  padding: 2px 6px;
+  background: #e0e0e0;
+  border: 1px solid #999;
+  border-radius: 3px;
+  font-family: monospace;
+  font-size: 10px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  .maxgraph-advanced-demo {
+    background: #1a1a1a;
+  }
+
+  .maxgraph-advanced-demo .toolbar,
+  .maxgraph-advanced-demo .info-panel,
+  .maxgraph-advanced-demo .drawing-section {
+    background: #1e1e1e;
+    border-color: #333;
+  }
+
+  .maxgraph-advanced-demo .toolbar-section,
+  .maxgraph-advanced-demo .info-section {
+    border-bottom-color: #333;
+  }
+
+  .maxgraph-advanced-demo .toolbar-section h3,
+  .maxgraph-advanced-demo .info-section h3 {
+    color: #ddd;
+  }
+
+  .maxgraph-advanced-demo .btn {
+    background: #252525;
+    border-color: #444;
+    color: #ddd;
+  }
+
+  .maxgraph-advanced-demo .btn:hover:not(:disabled) {
+    background: #2a2a2a;
+    border-color: #4da6ff;
+    color: #4da6ff;
+  }
+
+  .maxgraph-advanced-demo .btn-primary {
+    background: #1565c0;
+    color: white;
+  }
+
+  .maxgraph-advanced-demo .btn-primary:hover {
+    background: #0d47a1;
+  }
+
+  .maxgraph-advanced-demo .btn-secondary {
+    background: #2a2a2a;
+    color: #ddd;
+  }
+
+  .maxgraph-advanced-demo .btn-secondary:hover {
+    background: #333;
+    color: #4da6ff;
+  }
+
+  .maxgraph-advanced-demo .align-grid button,
+  .maxgraph-advanced-demo .zoom-controls button {
+    background: #252525;
+    border-color: #444;
+    color: #ddd;
+  }
+
+  .maxgraph-advanced-demo .align-grid button:hover,
+  .maxgraph-advanced-demo .zoom-controls button:hover {
+    background: #2a2a2a;
+    border-color: #4da6ff;
+  }
+
+  .maxgraph-advanced-demo .zoom-controls button.active {
+    background: #1565c0;
+  }
+
+  .maxgraph-advanced-demo .stat-item {
+    border-bottom-color: #333;
+  }
+
+  .maxgraph-advanced-demo .stat-item .label {
+    color: #999;
+  }
+
+  .maxgraph-advanced-demo .stat-item .value {
+    color: #4da6ff;
+  }
+
+  .maxgraph-advanced-demo .log-container {
+    background: #252525;
+    color: #ddd;
+  }
+
+  .maxgraph-advanced-demo .log-item:hover {
+    background: #333;
+  }
+
+  .maxgraph-advanced-demo kbd {
+    background: #333;
+    border-color: #666;
+    color: #ddd;
+  }
+}
+
+/* Scrollbar */
+.maxgraph-advanced-demo .toolbar::-webkit-scrollbar,
+.maxgraph-advanced-demo .info-panel::-webkit-scrollbar,
+.maxgraph-advanced-demo .log-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.maxgraph-advanced-demo .toolbar::-webkit-scrollbar-track,
+.maxgraph-advanced-demo .info-panel::-webkit-scrollbar-track,
+.maxgraph-advanced-demo .log-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.maxgraph-advanced-demo .toolbar::-webkit-scrollbar-thumb,
+.maxgraph-advanced-demo .info-panel::-webkit-scrollbar-thumb,
+.maxgraph-advanced-demo .log-container::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 4px;
+}
+
+.maxgraph-advanced-demo .toolbar::-webkit-scrollbar-thumb:hover,
+.maxgraph-advanced-demo .info-panel::-webkit-scrollbar-thumb:hover,
+.maxgraph-advanced-demo .log-container::-webkit-scrollbar-thumb:hover {
+  background: #bbb;
+}
+
+@media (prefers-color-scheme: dark) {
+  .maxgraph-advanced-demo .toolbar::-webkit-scrollbar-thumb,
+  .maxgraph-advanced-demo .info-panel::-webkit-scrollbar-thumb,
+  .maxgraph-advanced-demo .log-container::-webkit-scrollbar-thumb {
+    background: #444;
+  }
+
+  .maxgraph-advanced-demo .toolbar::-webkit-scrollbar-thumb:hover,
+  .maxgraph-advanced-demo .info-panel::-webkit-scrollbar-thumb:hover,
+  .maxgraph-advanced-demo .log-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .maxgraph-advanced-demo .toolbar {
+    width: 150px;
+  }
+
+  .maxgraph-advanced-demo .info-panel {
+    width: 180px;
+  }
+
+  .maxgraph-advanced-demo .toolbar-section,
+  .maxgraph-advanced-demo .info-section {
+    padding: 8px;
+  }
+
+  .maxgraph-advanced-demo .btn {
+    font-size: 11px;
+    padding: 6px 10px;
+  }
+}
