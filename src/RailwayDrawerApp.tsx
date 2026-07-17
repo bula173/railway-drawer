@@ -24,6 +24,7 @@ import { FloatingLayersPanel } from "./components/FloatingLayersPanel";
 import { PageManager } from "./components/PageManager";
 import { EditMenu } from "./components/EditMenu";
 import { ShapeSearchPanel } from "./components/ShapeSearchPanel";
+import { ToolboxDrawIO } from "./components/ToolboxDrawIO";
 import { TemplateGallery } from "./components/TemplateGallery";
 import { AlignmentToolbar } from "./components/AlignmentToolbar";
 import { TopToolbar } from "./components/TopToolbar";
@@ -1888,11 +1889,16 @@ const RailwayDrawerApp = () => {
               </div>
               <div className="flex-1 overflow-hidden flex flex-col">
                 {/* Shapes panel - primary tool interface */}
-                <div className="flex-1 overflow-auto border-b border-slate-200">
-                  <ShapeSearchPanel
-                    onClose={() => setLeftCollapsed(true)}
-                    isOpen={true}
-                    position="left"
+                <div className="flex-1 overflow-auto border-b border-slate-200 bg-white">
+                  <ToolboxDrawIO
+                    items={toolbox}
+                    onDragStart={(e, item) => {
+                      e.dataTransfer.effectAllowed = 'copy';
+                      e.dataTransfer.setData('application/json', JSON.stringify({
+                        type: 'toolbox-item',
+                        item
+                      }));
+                    }}
                   />
                 </div>
 
