@@ -91,29 +91,46 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
         const editor = { graph, undoManager: graph.undoManager } as any;
         editorRef.current = editor;
 
-        // Setup selection listener
-        graph.addListener('selectionChange', () => {
-          const selected = graph.getSelectionCells();
-          console.log('Selection changed:', selected.length);
-          setState((s) => ({ ...s, selectedCells: selected.length }));
+        // Setup selection listener - try multiple event names
+        const updateSelection = () => {
+          try {
+            const selected = graph.getSelectionCells?.() || [];
+            console.log('📋 Selection updated:', selected.length, 'cells');
+            setState((s) => ({ ...s, selectedCells: selected.length }));
 
-          if (selected.length === 1) {
-            const cell = selected[0];
-            setSelectedCell(cell);
-            setSelectedProps({
-              width: cell.geometry?.width,
-              height: cell.geometry?.height,
-              x: cell.geometry?.x,
-              y: cell.geometry?.y,
-              label: cell.value,
-              fillColor: cell.style?.split('fillColor=')[1]?.split(';')[0] || '#ffffff',
-              strokeColor: cell.style?.split('strokeColor=')[1]?.split(';')[0] || '#000000',
-            });
-          } else {
-            setSelectedCell(null);
-            setSelectedProps({});
+            if (selected.length === 1) {
+              const cell = selected[0];
+              console.log('📋 Cell selected:', cell.value);
+              setSelectedCell(cell);
+              setSelectedProps({
+                width: cell.geometry?.width,
+                height: cell.geometry?.height,
+                x: cell.geometry?.x,
+                y: cell.geometry?.y,
+                label: cell.value,
+                fillColor: cell.style?.split('fillColor=')[1]?.split(';')[0] || '#ffffff',
+                strokeColor: cell.style?.split('strokeColor=')[1]?.split(';')[0] || '#000000',
+              });
+            } else {
+              setSelectedCell(null);
+              setSelectedProps({});
+            }
+          } catch (err) {
+            console.error('Selection update error:', err);
           }
-        });
+        };
+
+        // Listen for selection changes via model
+        if (graph.getSelectionModel) {
+          graph.getSelectionModel().addListener('change', updateSelection);
+          console.log('✅ Selection listener added (via getSelectionModel)');
+        } else {
+          console.log('⚠️ getSelectionModel not available');
+        }
+
+        // Also listen to graph changes
+        graph.addListener?.('change', updateSelection);
+        console.log('✅ Graph change listener added');
 
         // Setup toolbar
         setupToolbar(editor);
