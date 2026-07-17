@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxEditor>
+  <!-- Railway Drawer Configuration - Built Entirely on maxGraph -->
+
+  <!-- Keyboard Shortcuts (All automatic via KeyHandler) -->
+  <keyhandler as="keyHandler">
+    <!-- File Operations -->
+    <add as="Ctrl+S" action="save"/>
+    <add as="Ctrl+O" action="open"/>
+    <add as="Ctrl+N" action="new"/>
+
+    <!-- Edit Operations -->
+    <add as="Ctrl+Z" action="undo"/>
+    <add as="Ctrl+Y" action="redo"/>
+    <add as="Ctrl+Shift+Z" action="redo"/>
+    <add as="Ctrl+C" action="copy"/>
+    <add as="Ctrl+X" action="cut"/>
+    <add as="Ctrl+V" action="paste"/>
+    <add as="Ctrl+D" action="duplicate"/>
+
+    <!-- Selection -->
+    <add as="Ctrl+A" action="selectAll"/>
+    <add as="Escape" action="clearSelection"/>
+
+    <!-- Grouping -->
+    <add as="Ctrl+G" action="group"/>
+    <add as="Ctrl+Shift+G" action="ungroup"/>
+
+    <!-- Delete -->
+    <add as="Delete" action="delete"/>
+    <add as="Backspace" action="delete"/>
+
+    <!-- Editing -->
+    <add as="F2" action="edit"/>
+    <add as="Enter" action="stopEditing"/>
+
+    <!-- Zoom -->
+    <add as="Ctrl+Plus" action="zoomIn"/>
+    <add as="Ctrl+Minus" action="zoomOut"/>
+    <add as="Ctrl+0" action="resetView"/>
+  </keyhandler>
+
+  <!-- Toolbar (Auto-generated with all actions) -->
+  <toolbar>
+    <!-- File Operations -->
+    <add as="New" action="new" icon="new.png"/>
+    <add as="Open" action="open" icon="open.png"/>
+    <add as="Save" action="save" icon="save.png"/>
+    <add as="" as="spacer"/>
+
+    <!-- Edit Operations -->
+    <add as="Undo" action="undo" icon="undo.png"/>
+    <add as="Redo" action="redo" icon="redo.png"/>
+    <add as="" as="spacer"/>
+
+    <!-- Clipboard -->
+    <add as="Cut" action="cut" icon="cut.png"/>
+    <add as="Copy" action="copy" icon="copy.png"/>
+    <add as="Paste" action="paste" icon="paste.png"/>
+    <add as="" as="spacer"/>
+
+    <!-- Selection -->
+    <add as="Select All" action="selectAll" icon="selectall.png"/>
+    <add as="" as="spacer"/>
+
+    <!-- Grouping -->
+    <add as="Group" action="group" icon="group.png"/>
+    <add as="Ungroup" action="ungroup" icon="ungroup.png"/>
+    <add as="" as="spacer"/>
+
+    <!-- Alignment -->
+    <add as="Align Left" action="alignCellsLeft" icon="alignleft.png"/>
+    <add as="Align Center" action="alignCellsCenter" icon="aligncenter.png"/>
+    <add as="Align Right" action="alignCellsRight" icon="alignright.png"/>
+    <add as="" as="spacer"/>
+
+    <!-- Zoom -->
+    <add as="Zoom In" action="zoomIn" icon="zoomin.png"/>
+    <add as="Zoom Out" action="zoomOut" icon="zoomout.png"/>
+    <add as="Fit" action="resetView" icon="fit.png"/>
+  </toolbar>
+
+  <!-- Cell Styles (Railway Drawer specific) -->
+  <styles>
+    <!-- Default vertex style -->
+    <add name="vertex" style="rounded=1;strokeColor=#999999;fillColor=#f0f0f0;strokeWidth=1;fontSize=12;fontFamily=Arial"/>
+
+    <!-- Railway Track -->
+    <add name="track" style="shape=line;strokeColor=#8B4513;strokeWidth=3;fontSize=11;fontFamily=Arial"/>
+    <add name="track-parallel" style="shape=parallelogram;strokeColor=#8B4513;fillColor=#D2B48C;strokeWidth=1"/>
+
+    <!-- Stations -->
+    <add name="station" style="shape=rectangle;rounded=1;strokeColor=#0097A7;fillColor=#E0F2F1;strokeWidth=2;fontSize=12;fontFamily=Arial;fontStyle=bold"/>
+    <add name="station-small" style="shape=rectangle;rounded=1;strokeColor#1B5E20;fillColor#C8E6C9;strokeWidth=1"/>
+    <add name="platform" style="shape=rectangle;rounded=0;strokeColor#424242;fillColor#BDBDBD;strokeWidth=1"/>
+
+    <!-- Signals (ERTMS) -->
+    <add name="signal-head" style="shape=rectangle;rounded=1;strokeColor=#D32F2F;fillColor=#FFEBEE;strokeWidth=2;fontSize=10"/>
+    <add name="signal-aspect-stop" style="shape=ellipse;strokeColor#FF0000;fillColor#FF0000;strokeWidth=1"/>
+    <add name="signal-aspect-proceed" style="shape=ellipse;strokeColor#00AA00;fillColor#00AA00;strokeWidth=1"/>
+
+    <!-- Junctions -->
+    <add name="junction-simple" style="shape=rectangle;rounded=1;strokeColor#F57C00;fillColor#FFE0B2;strokeWidth=2"/>
+    <add name="junction-diamond" style="shape=rhombus;strokeColor#F57C00;fillColor#FFE0B2;strokeWidth=2"/>
+    <add name="crossover" style="shape=rectangle;rounded=0;strokeColor#F57C00;fillColor#FFE0B2;strokeWidth=1"/>
+
+    <!-- Balises (ERTMS Ground Transponders) -->
+    <add name="balise" style="shape=ellipse;strokeColor#7B1FA2;fillColor#F3E5F5;strokeWidth=2;fontSize=9"/>
+
+    <!-- Speed Restrictions -->
+    <add name="speed-limit" style="shape=rectangle;rounded=1;strokeColor#E91E63;fillColor#FCE4EC;strokeWidth=2"/>
+
+    <!-- Points/Switches -->
+    <add name="switch-left" style="shape=rectangle;rounded=1;strokeColor#536DFE;fillColor#E8EAF6;strokeWidth=2"/>
+    <add name="switch-right" style="shape=rectangle;rounded=1;strokeColor#536DFE;fillColor#E8EAF6;strokeWidth=2"/>
+
+    <!-- Connectors/Edges -->
+    <add name="edge-main" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=2;fontSize=11;fontFamily=Arial;endArrow=classic"/>
+    <add name="edge-branch" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor#666666;strokeWidth=1;strokeDashed=1;endArrow=classic"/>
+    <add name="edge-signal" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor#D32F2F;strokeWidth=2;endArrow=block"/>
+
+    <!-- Groups/Containers -->
+    <add name="group" style="group=1;fillColor=none;strokeColor=#999999;strokeWidth=2;dashed=1;fontSize=11;fontFamily=Arial"/>
+    <add name="depot" style="group=1;fillColor=#FFFDE7;strokeColor#FBC02D;strokeWidth=2;dashed=0;fontSize=12;fontFamily=Arial"/>
+  </styles>
+
+  <!-- Default Edge Style -->
+  <defaultEdgeStyle style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=1;fontSize=11;fontFamily=Arial;endArrow=classic"/>
+
+  <!-- Default Vertex Style -->
+  <defaultVertexStyle style="rounded=1;strokeColor=#999999;fillColor=#f0f0f0;strokeWidth=1;fontSize=12;fontFamily=Arial;verticalAlign=middle;align=center"/>
+
+  <!-- Shape Palette (Railway Drawer specific) -->
+  <shapePalette>
+    <!-- Track Elements -->
+    <set name="Tracks">
+      <shape name="Main Track" style="track"/>
+      <shape name="Parallel Track" style="track-parallel"/>
+      <shape name="Platform Track" style="shape=line;strokeColor=#8B4513;strokeWidth=2"/>
+    </set>
+
+    <!-- Stations -->
+    <set name="Stations">
+      <shape name="Major Station" style="station"/>
+      <shape name="Minor Station" style="station-small"/>
+      <shape name="Platform" style="platform"/>
+      <shape name="Depot" style="depot"/>
+    </set>
+
+    <!-- Signaling (ERTMS) -->
+    <set name="Signals">
+      <shape name="Signal Head" style="signal-head"/>
+      <shape name="Stop Aspect" style="signal-aspect-stop"/>
+      <shape name="Proceed Aspect" style="signal-aspect-proceed"/>
+      <shape name="Balise (Transponder)" style="balise"/>
+    </set>
+
+    <!-- Junctions -->
+    <set name="Junctions">
+      <shape name="Simple Junction" style="junction-simple"/>
+      <shape name="Diamond Junction" style="junction-diamond"/>
+      <shape name="Crossover" style="crossover"/>
+      <shape name="Switch Left" style="switch-left"/>
+      <shape name="Switch Right" style="switch-right"/>
+    </set>
+
+    <!-- Speed Management -->
+    <set name="Speed">
+      <shape name="Speed Limit" style="speed-limit"/>
+      <shape name="Speed Restriction" style="shape=rectangle;rounded=1;strokeColor#FF6F00;fillColor#FFE0B2"/>
+    </set>
+
+    <!-- Connectors -->
+    <set name="Connections">
+      <shape name="Main Line" style="edge-main"/>
+      <shape name="Branch Line" style="edge-branch"/>
+      <shape name="Signal Link" style="edge-signal"/>
+    </set>
+  </shapePalette>
+
+  <!-- Grid Configuration -->
+  <grid enabled="true" size="40"/>
+  <snap enabled="true" size="10"/>
+
+  <!-- Connection Configuration -->
+  <connections enabled="true">
+    <allowLoops value="false"/>
+    <allowDuplicateEdges value="true"/>
+    <resetEdgesOnMove value="true"/>
+    <resetEdgesOnResize value="true"/>
+  </connections>
+
+  <!-- Edit Configuration -->
+  <edit>
+    <autoSizeCells value="false"/>
+    <cellsMovable value="true"/>
+    <cellsResizable value="true"/>
+    <cellsDeletable value="true"/>
+    <cellsCloneable value="true"/>
+    <cellsEditable value="true"/>
+    <edgeLabelMovable value="true"/>
+    <vertexLabelMovable value="true"/>
+    <foldingEnabled value="true"/>
+  </edit>
+
+  <!-- Format Panel Configuration -->
+  <formatPanel>
+    <item name="Fill">
+      <option name="fillColor" type="color" label="Fill"/>
+      <option name="fillOpacity" type="range" min="0" max="100" label="Opacity"/>
+    </item>
+
+    <item name="Stroke">
+      <option name="strokeColor" type="color" label="Color"/>
+      <option name="strokeWidth" type="select" values="1,2,3,4,5" label="Width"/>
+      <option name="dashed" type="checkbox" label="Dashed"/>
+    </item>
+
+    <item name="Text">
+      <option name="fontSize" type="select" values="8,9,10,11,12,14,16,18,20" label="Size"/>
+      <option name="fontColor" type="color" label="Color"/>
+      <option name="bold" type="checkbox" label="Bold"/>
+      <option name="italic" type="checkbox" label="Italic"/>
+    </item>
+
+    <item name="Arrange">
+      <option name="alignHorizontal" type="buttons" values="left,center,right" label="Horizontal"/>
+      <option name="alignVertical" type="buttons" values="top,middle,bottom" label="Vertical"/>
+      <option name="distribute" type="buttons" values="horizontally,vertically" label="Distribute"/>
+    </item>
+  </formatPanel>
+
+  <!-- Validation Rules -->
+  <validationRules>
+    <!-- Stations must have a name -->
+    <rule name="stationHasName" applies-to="station" requires="label"/>
+    <!-- Signals must connect to track -->
+    <rule name="signalConnected" applies-to="signal-head" requires="connected"/>
+  </validationRules>
+</mxEditor>

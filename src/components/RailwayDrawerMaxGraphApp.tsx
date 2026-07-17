@@ -53,17 +53,28 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
     const initializeEditor = async () => {
       try {
         // Load Railway Drawer configuration
-        const response = await fetch('/config/railwayDrawerConfig.xml');
+        console.log('Loading config from /railwayDrawerConfig.xml');
+        const response = await fetch('/railwayDrawerConfig.xml');
+        if (!response.ok) {
+          throw new Error(`Failed to load config: ${response.status}`);
+        }
         const configText = await response.text();
+        console.log('Config loaded, parsing XML');
         const parser = new DOMParser();
         const configXml = parser.parseFromString(configText, 'text/xml').documentElement;
+        if (configXml.getElementsByTagName('parsererror').length > 0) {
+          throw new Error('XML parsing error');
+        }
+        console.log('XML parsed successfully');
 
         // Create Editor with configuration
+        console.log('Creating Editor instance');
         const editor = new Editor(configXml);
         editorRef.current = editor;
 
         // Set graph container (main drawing area)
         const graphContainer = canvasRef.current;
+        console.log('Graph container:', graphContainer);
         if (graphContainer) {
           graphContainer.style.width = '100%';
           graphContainer.style.height = '100%';
@@ -72,24 +83,30 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
         }
         editor.setGraphContainer(graphContainer);
         const graph = editor.graph;
+        console.log('Graph initialized:', !!graph);
 
         // Ensure graph container has proper dimensions
         setTimeout(() => {
           if (graph && graphContainer) {
+            console.log('Calling sizeDidChange');
             graph.sizeDidChange();
           }
         }, 100);
 
         // Setup toolbar (auto-generated from config)
+        console.log('Setting up toolbar');
         setupToolbar(editor);
 
         // Setup palette/toolbox (shape library)
+        console.log('Setting up palette');
         setupPalette(editor);
 
         // Setup outline view (minimap)
+        console.log('Setting up outline view');
         setupOutlineView(editor);
 
         // Setup status bar with live updates
+        console.log('Setting up status bar');
         setupStatusBar(editor);
 
         // Setup menu functionality
