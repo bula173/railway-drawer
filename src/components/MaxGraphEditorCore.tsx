@@ -175,8 +175,66 @@ export const MaxGraphEditorCore = React.forwardRef<MaxGraphEditorCoreRef, MaxGra
     };
 
     const setupKeyboardHandlers = (graph: Graph, undoManager: UndoManager): void => {
-      // Will implement keyboard shortcuts
-      // Ctrl+Z, Ctrl+Y, Ctrl+C, Ctrl+V, Del, etc.
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) {
+          return;
+        }
+
+        if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'z' && !e.shiftKey) {
+          e.preventDefault();
+          undoManager.undo();
+          updateUndoRedoState();
+        }
+
+        if ((e.ctrlKey || e.metaKey) && (e.key.toLowerCase() === 'y' || (e.key.toLowerCase() === 'z' && e.shiftKey))) {
+          e.preventDefault();
+          undoManager.redo();
+          updateUndoRedoState();
+        }
+
+        if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'c') {
+          e.preventDefault();
+          ClipboardHandler.copy(graph);
+        }
+
+        if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'v') {
+          e.preventDefault();
+          ClipboardHandler.paste(graph);
+        }
+
+        if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'a') {
+          e.preventDefault();
+          graph.selectAll();
+        }
+
+        if (e.key === 'Delete' || e.key === 'Backspace') {
+          e.preventDefault();
+          const cells = graph.getSelectionModel().getCells();
+          if (cells.length > 0) {
+            graph.removeCells(cells);
+          }
+        }
+
+        if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'd') {
+          e.preventDefault();
+          const cells = graph.getSelectionModel().getCells();
+          if (cells.length > 0) {
+            const clones = graph.cloneCells(cells);
+            graph.getModel().beginUpdate();
+            clones.forEach(clone => {
+              const geo = clone.getGeometry();
+              if (geo) {
+                geo.translate(10, 10);
+              }
+            });
+            graph.getModel().endUpdate();
+          }
+        }
+      };
+
+      if (containerRef.current) {
+        containerRef.current.addEventListener('keydown', handleKeyDown);
+      }
     };
 
     useImperativeHandle(
