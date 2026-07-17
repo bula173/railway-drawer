@@ -146,86 +146,162 @@ export const RailwayDrawerMaxGraphApp: React.FC = () => {
       if (!paletteRef.current || !editor.graph) return;
 
       const graph = editor.graph;
-      const stylesheet = graph.getStylesheet();
 
       // Create palette container
-      paletteRef.current.innerHTML = '<div style="padding: 8px; font-weight: bold; border-bottom: 1px solid #ddd;">Shapes</div>';
+      paletteRef.current.innerHTML = '<div style="padding: 12px; font-weight: bold; border-bottom: 1px solid #ddd; color: #333; font-size: 13px;">Shapes</div>';
 
       // Get shape definitions from config
       const shapes = [
         // Tracks
-        { name: 'Main Track', style: 'track', group: 'Tracks' },
-        { name: 'Minor Track', style: 'shape=line;strokeColor=#8B4513;strokeWidth=2', group: 'Tracks' },
+        { name: 'Main Track', style: 'track', group: 'Tracks', width: 150, height: 8 },
+        { name: 'Minor Track', style: 'shape=line;strokeColor=#8B4513;strokeWidth=2', group: 'Tracks', width: 120, height: 8 },
 
         // Stations
-        { name: 'Major Station', style: 'station', group: 'Stations' },
-        { name: 'Minor Station', style: 'station-small', group: 'Stations' },
-        { name: 'Platform', style: 'platform', group: 'Stations' },
+        { name: 'Major Station', style: 'station', group: 'Stations', width: 100, height: 60 },
+        { name: 'Minor Station', style: 'station-small', group: 'Stations', width: 80, height: 50 },
+        { name: 'Platform', style: 'platform', group: 'Stations', width: 120, height: 40 },
 
         // Signals
-        { name: 'Signal Head', style: 'signal-head', group: 'Signals' },
-        { name: 'Stop Signal', style: 'signal-aspect-stop', group: 'Signals' },
-        { name: 'Proceed Signal', style: 'signal-aspect-proceed', group: 'Signals' },
+        { name: 'Signal Head', style: 'signal-head', group: 'Signals', width: 50, height: 80 },
+        { name: 'Stop Signal', style: 'signal-aspect-stop', group: 'Signals', width: 40, height: 40 },
+        { name: 'Proceed Signal', style: 'signal-aspect-proceed', group: 'Signals', width: 40, height: 40 },
 
         // Junctions
-        { name: 'Junction', style: 'junction-simple', group: 'Junctions' },
-        { name: 'Diamond Junction', style: 'junction-diamond', group: 'Junctions' },
+        { name: 'Junction', style: 'junction-simple', group: 'Junctions', width: 80, height: 60 },
+        { name: 'Diamond', style: 'junction-diamond', group: 'Junctions', width: 80, height: 80 },
 
         // Speed
-        { name: 'Speed Limit', style: 'speed-limit', group: 'Speed' },
+        { name: 'Speed Limit', style: 'speed-limit', group: 'Speed', width: 90, height: 50 },
       ];
 
       let currentGroup = '';
 
-      shapes.forEach(shape => {
+      shapes.forEach((shape, index) => {
         // Add group header
         if (currentGroup !== shape.group) {
           currentGroup = shape.group;
           const groupDiv = document.createElement('div');
-          groupDiv.style.cssText = 'padding: 8px 4px 4px 4px; font-size: 11px; font-weight: bold; color: #666; border-top: 1px solid #eee; margin-top: 4px;';
+          groupDiv.style.cssText = 'padding: 10px 12px 6px 12px; font-size: 11px; font-weight: 600; color: #666; border-top: 1px solid #eee; margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px;';
           groupDiv.textContent = shape.group;
           paletteRef.current!.appendChild(groupDiv);
         }
 
-        // Add shape button
-        const shapeBtn = document.createElement('div');
-        shapeBtn.style.cssText = 'padding: 8px; margin: 2px; background: white; border: 1px solid #ccc; border-radius: 3px; cursor: pointer; font-size: 12px; text-align: center; transition: all 0.2s;';
-        shapeBtn.textContent = shape.name;
+        // Add draggable shape item
+        const shapeItem = document.createElement('div');
+        shapeItem.draggable = true;
+        shapeItem.style.cssText = `
+          padding: 10px 12px;
+          margin: 3px 8px;
+          background: white;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+          cursor: move;
+          font-size: 12px;
+          text-align: center;
+          transition: all 0.2s;
+          user-select: none;
+          color: #333;
+        `;
+        shapeItem.textContent = shape.name;
+        shapeItem.id = `shape-${index}`;
 
-        shapeBtn.addEventListener('mouseenter', () => {
-          shapeBtn.style.background = '#f0f0f0';
-          shapeBtn.style.borderColor = '#1976d2';
+        // Drag event handlers
+        shapeItem.addEventListener('dragstart', (e) => {
+          const dragData = {
+            name: shape.name,
+            style: shape.style,
+            width: shape.width,
+            height: shape.height,
+          };
+          e.dataTransfer!.effectAllowed = 'copy';
+          e.dataTransfer!.setData('application/json', JSON.stringify(dragData));
+          shapeItem.style.opacity = '0.6';
         });
 
-        shapeBtn.addEventListener('mouseleave', () => {
-          shapeBtn.style.background = 'white';
-          shapeBtn.style.borderColor = '#ccc';
+        shapeItem.addEventListener('dragend', () => {
+          shapeItem.style.opacity = '1';
         });
 
-        shapeBtn.addEventListener('click', () => {
-          // Create a new cell
+        shapeItem.addEventListener('mouseenter', () => {
+          shapeItem.style.background = '#f5f5f5';
+          shapeItem.style.borderColor = '#1976d2';
+          shapeItem.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
+        });
+
+        shapeItem.addEventListener('mouseleave', () => {
+          shapeItem.style.background = 'white';
+          shapeItem.style.borderColor = '#ddd';
+          shapeItem.style.boxShadow = 'none';
+        });
+
+        paletteRef.current!.appendChild(shapeItem);
+      });
+
+      // Setup drop handlers on canvas
+      setupCanvasDropZone(editor, canvasRef.current!);
+    } catch (error) {
+      console.error('Palette setup failed:', error);
+    }
+  };
+
+  const setupCanvasDropZone = (editor: Editor, canvasElement: HTMLElement) => {
+    try {
+      canvasElement.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        e.dataTransfer!.dropEffect = 'copy';
+        canvasElement.style.background = 'rgba(25, 118, 210, 0.05)';
+      });
+
+      canvasElement.addEventListener('dragleave', () => {
+        canvasElement.style.background = '#ffffff';
+      });
+
+      canvasElement.addEventListener('drop', (e) => {
+        e.preventDefault();
+        canvasElement.style.background = '#ffffff';
+
+        try {
+          const json = e.dataTransfer!.getData('application/json');
+          if (!json) return;
+
+          const shapeData = JSON.parse(json);
+          const graph = editor.graph;
+
+          // Get drop position relative to canvas
+          const rect = canvasElement.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+
+          // Convert to graph coordinates
+          const scale = graph.getView().getScale();
+          const translate = graph.getView().getTranslate();
+          const graphX = x / scale - translate.x;
+          const graphY = y / scale - translate.y;
+
+          // Create new vertex at drop position
           const parent = graph.getDefaultParent();
           graph.getModel().beginUpdate();
           try {
             const cell = graph.insertVertex(
               parent,
               null,
-              shape.name,
-              10,
-              10,
-              100,
-              60,
-              shape.style
+              shapeData.name,
+              graphX - shapeData.width / 2,
+              graphY - shapeData.height / 2,
+              shapeData.width,
+              shapeData.height,
+              shapeData.style
             );
+            graph.setSelectionCell(cell);
           } finally {
             graph.getModel().endUpdate();
           }
-        });
-
-        paletteRef.current!.appendChild(shapeBtn);
+        } catch (error) {
+          console.error('Drop failed:', error);
+        }
       });
     } catch (error) {
-      console.error('Palette setup failed:', error);
+      console.error('Canvas drop zone setup failed:', error);
     }
   };
 
