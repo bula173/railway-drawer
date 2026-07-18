@@ -906,29 +906,53 @@ function exportDiagram(format: 'json' | 'xml') {
 }
 
 function showMenu(menuLabel: string, actions: string[], button: HTMLElement) {
+  // Close any existing menus
+  const existingMenus = document.querySelectorAll('.context-menu');
+  existingMenus.forEach((m) => {
+    if (document.body.contains(m)) {
+      document.body.removeChild(m);
+    }
+  });
+
   const menu = document.createElement('div');
   menu.className = 'context-menu';
   menu.style.position = 'absolute';
   menu.style.top = (button.getBoundingClientRect().bottom + 5) + 'px';
   menu.style.left = button.getBoundingClientRect().left + 'px';
+  menu.style.zIndex = '10000';
 
   actions.forEach((action) => {
     const item = document.createElement('div');
     item.className = 'menu-option';
     item.textContent = action;
-    item.addEventListener('click', () => {
+    item.addEventListener('click', (e) => {
+      e.stopPropagation();
       handleMenuAction(menuLabel, action);
-      document.body.removeChild(menu);
+      closeMenu();
     });
     menu.appendChild(item);
   });
 
+  menu.addEventListener('click', (e) => {
+    e.stopPropagation();
+  });
+
   document.body.appendChild(menu);
-  document.addEventListener('click', () => {
+
+  // Close menu when clicking outside
+  const closeMenu = () => {
     if (document.body.contains(menu)) {
       document.body.removeChild(menu);
     }
-  }, { once: true });
+    document.removeEventListener('click', closeMenuListener);
+  };
+
+  const closeMenuListener = () => closeMenu();
+
+  // Use setTimeout to prevent immediate closure
+  setTimeout(() => {
+    document.addEventListener('click', closeMenuListener);
+  }, 0);
 }
 
 function handleMenuAction(menu: string, action: string) {
