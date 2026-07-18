@@ -11,6 +11,7 @@ import { ConnectorTool } from './connector-tool';
 import { SelectionManager } from './selection-manager';
 import { AlignmentTools } from './alignment-tools';
 import { TransformTools } from './transform-tools';
+import { ExportManager } from './export-manager';
 
 // Parse editor configuration
 const parser = new DOMParser();
@@ -37,6 +38,9 @@ const alignmentTools = new AlignmentTools(editor.graph);
 // Transform tools (rotate, flip)
 const transformTools = new TransformTools(editor.graph);
 
+// Export manager
+const exportManager = new ExportManager(editor.graph);
+
 // App state
 let currentTool = 'select';
 let selectedCell: Cell | null = null;
@@ -52,7 +56,7 @@ const container = document.getElementById('editor-container')!;
 const menuBar = document.createElement('div');
 menuBar.className = 'menu-bar';
 const menuItems = [
-  { label: 'File', actions: ['New', 'Open', 'Save', 'Export as PNG', 'Import Shapes'] },
+  { label: 'File', actions: ['New', 'Open', 'Save', 'Export as SVG', 'Export as HTML', 'Import Shapes'] },
   { label: 'Edit', actions: ['Undo', 'Redo', 'Cut', 'Copy', 'Paste', 'Delete'] },
   { label: 'View', actions: ['Zoom In', 'Zoom Out', 'Fit', 'Reset View'] },
   {
@@ -890,8 +894,21 @@ function handleMenuAction(menu: string, action: string) {
     case 'Open':
       handleOpenDiagram();
       break;
-    case 'Export as PNG':
-      statusBar.textContent = 'PNG export not yet implemented';
+    case 'Export as SVG':
+      try {
+        exportManager.exportAsSVG('diagram.svg');
+        statusBar.textContent = '✓ Exported as SVG';
+      } catch (err) {
+        statusBar.textContent = `Export failed: ${err instanceof Error ? err.message : 'Unknown error'}`;
+      }
+      break;
+    case 'Export as HTML':
+      try {
+        exportManager.exportAsHTML('diagram.html');
+        statusBar.textContent = '✓ Exported as HTML';
+      } catch (err) {
+        statusBar.textContent = `Export failed: ${err instanceof Error ? err.message : 'Unknown error'}`;
+      }
       break;
     case 'Import Shapes':
       handleImportShapes();
