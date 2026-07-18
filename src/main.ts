@@ -89,9 +89,6 @@ const toolboxManager = new ToolboxManager(editor.graph);
 // App state
 let currentTool = 'select';
 let selectedCell: Cell | null = null;
-let isMouseDown = false;
-let mouseDownX = 0;
-let mouseDownY = 0;
 
 // ============= UI SETUP =============
 
@@ -611,92 +608,40 @@ canvasContainer.addEventListener('drop', (e) => {
   }
 });
 
-// Canvas mouse events for selection and connector tool
-canvasContainer.addEventListener('mousedown', (e) => {
-  isMouseDown = true;
-  const rect = canvasContainer.getBoundingClientRect();
-  mouseDownX = e.clientX - rect.left;
-  mouseDownY = e.clientY - rect.top;
-
-  if (currentTool === 'connect') return;
-
-  // Check if clicking on a cell
-  const cell = editor.graph.getCellAt(mouseDownX, mouseDownY);
-
-  if (cell && cell.isVertex && cell.isVertex()) {
-    // Click on shape
-    if (e.ctrlKey || e.metaKey) {
-      // Ctrl+Click: toggle selection
-      selectionManager.toggleCell(cell);
-    } else if (e.shiftKey) {
-      // Shift+Click: extend selection (add to current selection)
-      selectionManager.selectCell(cell, true);
-    } else {
-      // Regular click: select single cell
-      selectionManager.selectCell(cell, false);
-    }
-  } else {
-    // Click on empty area: start marquee selection
-    if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
-      selectionManager.clearSelection();
-      selectionManager.startMarquee(e.clientX, e.clientY, canvasContainer);
-    }
-  }
+// Listen to maxGraph's selection changes
+editor.graph.getSelectionModel().addListener('change', (_sender: any, _evt: any) => {
+  const selectedCells = editor.graph.getSelectionModel().cells || [];
+  selectedCell = selectedCells.length > 0 ? selectedCells[0] : null;
+  updateProperties();
+  updateLayers();
+  statusBar.textContent = `Selected: ${selectedCells.length} shape(s)`;
 });
 
-canvasContainer.addEventListener('mousemove', (e) => {
-  if (!isMouseDown) return;
-
-  if (selectionManager.isMarqueeSelecting()) {
-    selectionManager.updateMarquee(e.clientX, e.clientY);
-  }
-});
-
-canvasContainer.addEventListener('mouseup', (_e) => {
-  isMouseDown = false;
-
-  if (selectionManager.isMarqueeSelecting()) {
-    selectionManager.endMarquee(canvasContainer);
-  }
-});
-
-// Canvas click handler for connector tool
-canvasContainer.addEventListener('click', (e) => {
+// Connector tool with click to activate
+editor.graph.addListener('cellClicked', (_sender: any, evt: any) => {
   if (currentTool !== 'connect') return;
 
-  const rect = canvasContainer.getBoundingClientRect();
-  const x = e.clientX - rect.left;
-  const y = e.clientY - rect.top;
-
-  // Get cell at click position
-  const cell = editor.graph.getCellAt(x, y);
+  const cell = evt.getProperty('cell');
 
   if (cell && cell.isVertex && cell.isVertex()) {
     if (!connectorTool.isDrawingConnection()) {
-      connectorTool.startConnection(cell, x, y);
+      connectorTool.startConnection(cell, 0, 0);
       statusBar.textContent = 'Click another shape to complete connection';
     } else {
-      connectorTool.endConnection(cell, x, y);
-      statusBar.textContent = 'Connection created';
+      connectorTool.endConnection(cell, 0, 0);
+      statusBar.textContent = '✓ Connection created';
+      const command = new InsertCellCommand(connectorTool.getStartCell(), editor.graph, editor.graph.getDefaultParent());
+      history.execute(command);
       currentTool = 'select';
       updateToolbarState();
     }
-  } else if (!connectorTool.isDrawingConnection()) {
-    // Clicked on empty area without active connection
-  } else {
-    // Cancel connection
+  } else if (connectorTool.isDrawingConnection()) {
+    // Cancel connection if clicked on empty area
     connectorTool.resetConnection();
     statusBar.textContent = 'Connection cancelled';
   }
 });
 
-// Selection listener - use selectionManager
-selectionManager.addListener((cells) => {
-  selectedCell = cells.length > 0 ? cells[0] : null;
-  updateProperties();
-  updateLayers();
-  statusBar.textContent = `Selected: ${cells.length} shape(s)`;
-});
 
 // Text editing - double-click to edit
 let isEditingText = false;
