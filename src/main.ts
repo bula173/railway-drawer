@@ -20,6 +20,8 @@ import { TabManager } from './tab-manager';
 import { ZOrderManager } from './z-order-manager';
 import { SizingManager } from './sizing-manager';
 import { LayerManager } from './layer-manager';
+import { EdgeRoutingManager } from './edge-routing-manager';
+import { ConnectionPointsManager } from './connection-points-manager';
 
 // Parse editor configuration
 const parser = new DOMParser();
@@ -72,6 +74,12 @@ const sizingManager = new SizingManager(editor.graph);
 
 // Layer manager (visibility and locking)
 const layerManager = new LayerManager(editor.graph);
+
+// Edge routing manager (orthogonal, direct, curved routing)
+const edgeRoutingManager = new EdgeRoutingManager(editor.graph);
+
+// Connection points manager (custom attachment points)
+const connectionPointsManager = new ConnectionPointsManager(editor.graph);
 
 // App state
 let currentTool = 'select';
@@ -139,6 +147,18 @@ const menuItems = [
       'Layout - Hierarchical',
       'Layout - Circle',
       'Layout - Tree',
+      'Edge - Orthogonal Routing',
+      'Edge - Direct Routing',
+      'Edge - Curved Routing',
+      'Edge - Add Arrows',
+      'Edge - Remove Arrows',
+      'Edge - Solid Style',
+      'Edge - Dashed Style',
+      'Edge - Dotted Style',
+      'Connection - Corner Points',
+      'Connection - Cardinal Points',
+      'Connection - 8-Point Set',
+      'Connection - Clear Points',
     ],
   },
 ];
@@ -1508,6 +1528,85 @@ function handleMenuAction(menu: string, action: string) {
       break;
     case 'Load BPMN Stencils':
       handleLoadStencil('bpmn');
+      break;
+    case 'Edge - Orthogonal Routing':
+      edgeRoutingManager.applyRoutingToSelection('orthogonal');
+      statusBar.textContent = '✓ Applied orthogonal routing to edges';
+      break;
+    case 'Edge - Direct Routing':
+      edgeRoutingManager.applyRoutingToSelection('direct');
+      statusBar.textContent = '✓ Applied direct routing to edges';
+      break;
+    case 'Edge - Curved Routing':
+      edgeRoutingManager.applyRoutingToSelection('curved');
+      statusBar.textContent = '✓ Applied curved routing to edges';
+      break;
+    case 'Edge - Add Arrows':
+      edgeRoutingManager.applyRoutingToSelection('direct');
+      {
+        const edges = editor.graph.getDefaultParent().children?.filter((c: any) => c.isEdge?.()) || [];
+        edges.forEach((edge: any) => {
+          edgeRoutingManager.addArrows(edge, false, true);
+        });
+      }
+      statusBar.textContent = '✓ Added arrows to edges';
+      break;
+    case 'Edge - Remove Arrows':
+      {
+        const edges = editor.graph.getDefaultParent().children?.filter((c: any) => c.isEdge?.()) || [];
+        edges.forEach((edge: any) => {
+          edgeRoutingManager.removeArrows(edge);
+        });
+      }
+      statusBar.textContent = '✓ Removed arrows from edges';
+      break;
+    case 'Edge - Solid Style':
+      {
+        const edges = editor.graph.getDefaultParent().children?.filter((c: any) => c.isEdge?.()) || [];
+        edges.forEach((edge: any) => {
+          edgeRoutingManager.setEdgeStyle(edge, 'solid');
+        });
+      }
+      statusBar.textContent = '✓ Applied solid style to edges';
+      break;
+    case 'Edge - Dashed Style':
+      {
+        const edges = editor.graph.getDefaultParent().children?.filter((c: any) => c.isEdge?.()) || [];
+        edges.forEach((edge: any) => {
+          edgeRoutingManager.setEdgeStyle(edge, 'dashed');
+        });
+      }
+      statusBar.textContent = '✓ Applied dashed style to edges';
+      break;
+    case 'Edge - Dotted Style':
+      {
+        const edges = editor.graph.getDefaultParent().children?.filter((c: any) => c.isEdge?.()) || [];
+        edges.forEach((edge: any) => {
+          edgeRoutingManager.setEdgeStyle(edge, 'dotted');
+        });
+      }
+      statusBar.textContent = '✓ Applied dotted style to edges';
+      break;
+    case 'Connection - Corner Points':
+      connectionPointsManager.applyPointsToSelection('corner');
+      statusBar.textContent = '✓ Added corner connection points';
+      break;
+    case 'Connection - Cardinal Points':
+      connectionPointsManager.applyPointsToSelection('cardinal');
+      statusBar.textContent = '✓ Added cardinal connection points';
+      break;
+    case 'Connection - 8-Point Set':
+      connectionPointsManager.applyPointsToSelection('8point');
+      statusBar.textContent = '✓ Added 8-point connection set';
+      break;
+    case 'Connection - Clear Points':
+      {
+        const vertices = editor.graph.getDefaultParent().children?.filter((c: any) => c.isVertex?.()) || [];
+        vertices.forEach((vertex: any) => {
+          connectionPointsManager.clearConnectionPoints(vertex);
+        });
+      }
+      statusBar.textContent = '✓ Cleared connection points';
       break;
   }
 }
