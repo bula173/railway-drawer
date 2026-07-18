@@ -15,22 +15,19 @@ export default defineConfig({
     host: true,
   },
   build: {
-    outDir: 'dist',
-    sourcemap: true,
-    rollupOptions: {
-      output: {
-        manualChunks: (id) => {
-          if (id.includes('node_modules')) {
-            if (id.includes('react')) {
-              return 'vendor-react';
-            }
-            if (id.includes('html-to-image') || id.includes('jspdf')) {
-              return 'vendor-utils';
-            }
-            return 'vendor';
-          }
+        outDir: 'dist',
+      sourcemap: true,
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            // put the maxgraph code in a dedicated file. It lets know the size the produced bundle in an external application and if tree shaking works
+            maxgraph: ['@maxgraph/core'],
+          },
         },
       },
-    },
+      chunkSizeWarningLimit: 367, // @maxgraph/core
   },
 })
+
+
+

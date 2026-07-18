@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../maxGraph"
+		}
+	],
+	"settings": {
+		"workbench.colorCustomizations": {}
+	}
+}
