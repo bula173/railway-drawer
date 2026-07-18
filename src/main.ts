@@ -10,6 +10,7 @@ import { GridManager } from './grid-manager';
 import { ConnectorTool } from './connector-tool';
 import { SelectionManager } from './selection-manager';
 import { AlignmentTools } from './alignment-tools';
+import { TransformTools } from './transform-tools';
 
 // Parse editor configuration
 const parser = new DOMParser();
@@ -32,6 +33,9 @@ const selectionManager = new SelectionManager(editor.graph);
 
 // Alignment tools
 const alignmentTools = new AlignmentTools(editor.graph);
+
+// Transform tools (rotate, flip)
+const transformTools = new TransformTools(editor.graph);
 
 // App state
 let currentTool = 'select';
@@ -62,6 +66,10 @@ const menuItems = [
       'Align Bottom',
       'Distribute Horizontally',
       'Distribute Vertically',
+      'Rotate 90°',
+      'Rotate -90°',
+      'Flip Horizontal',
+      'Flip Vertical',
     ],
   },
 ];
@@ -648,6 +656,31 @@ function selectAllCells() {
   statusBar.textContent = `Selected all: ${allCells.length} shape(s)`;
 }
 
+function handleRotate(degrees: number) {
+  const cells = selectionManager.getSelectedCells();
+  if (cells.length > 0) {
+    transformTools.rotateMultiple(cells, degrees);
+    statusBar.textContent = `Rotated ${degrees}°`;
+  } else {
+    statusBar.textContent = 'Select shape(s) to rotate';
+  }
+}
+
+function handleFlip(direction: 'horizontal' | 'vertical') {
+  const cells = selectionManager.getSelectedCells();
+  if (cells.length > 0) {
+    if (direction === 'horizontal') {
+      transformTools.flipMultipleHorizontal(cells);
+      statusBar.textContent = 'Flipped horizontally';
+    } else {
+      transformTools.flipMultipleVertical(cells);
+      statusBar.textContent = 'Flipped vertically';
+    }
+  } else {
+    statusBar.textContent = 'Select shape(s) to flip';
+  }
+}
+
 function updateProperties() {
   const content = document.getElementById('property-content')!;
   if (!selectedCell) {
@@ -934,6 +967,18 @@ function handleMenuAction(menu: string, action: string) {
     case 'Distribute Vertically':
       alignmentTools.distributeVertically(selectionManager.getSelectedCells());
       statusBar.textContent = 'Distributed vertically';
+      break;
+    case 'Rotate 90°':
+      handleRotate(90);
+      break;
+    case 'Rotate -90°':
+      handleRotate(-90);
+      break;
+    case 'Flip Horizontal':
+      handleFlip('horizontal');
+      break;
+    case 'Flip Vertical':
+      handleFlip('vertical');
       break;
   }
 }
