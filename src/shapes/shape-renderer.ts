@@ -46,6 +46,15 @@ export function createShapeIcon(shape: ShapeDefinition): HTMLElement {
       case 'cylinder':
         drawCylinder(svg, fill, stroke, strokeWidth);
         break;
+      case 'cloud':
+        drawCloud(svg, fill, stroke, strokeWidth);
+        break;
+      case 'hexagon':
+        drawHexagon(svg, fill, stroke, strokeWidth);
+        break;
+      case 'doubleellipse':
+        drawDoubleEllipse(svg, fill, stroke, strokeWidth);
+        break;
       default:
         drawRectangle(svg, fill, stroke, strokeWidth);
     }
@@ -131,4 +140,48 @@ function drawCylinder(svg: SVGSVGElement, fill: string, stroke: string, strokeWi
   bottom.setAttribute('stroke', stroke);
   bottom.setAttribute('stroke-width', strokeWidth.toString());
   svg.appendChild(bottom);
+}
+
+function drawCloud(svg: SVGSVGElement, fill: string, stroke: string, strokeWidth: number) {
+  const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  path.setAttribute('d', 'M 8 22 Q 6 16 12 14 Q 14 8 20 8 Q 26 8 28 14 Q 34 16 32 22 Q 34 28 28 30 L 12 30 Q 6 28 8 22 Z');
+  path.setAttribute('fill', fill);
+  path.setAttribute('stroke', stroke);
+  path.setAttribute('stroke-width', strokeWidth.toString());
+  path.setAttribute('stroke-linejoin', 'round');
+  svg.appendChild(path);
+}
+
+function drawHexagon(svg: SVGSVGElement, fill: string, stroke: string, strokeWidth: number) {
+  const polygon = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+  // Regular hexagon centered at 20,20
+  polygon.setAttribute('points', '20,4 34,12 34,28 20,36 6,28 6,12');
+  polygon.setAttribute('fill', fill);
+  polygon.setAttribute('stroke', stroke);
+  polygon.setAttribute('stroke-width', strokeWidth.toString());
+  svg.appendChild(polygon);
+}
+
+function drawDoubleEllipse(svg: SVGSVGElement, fill: string, stroke: string, strokeWidth: number) {
+  // Outer ellipse
+  const outer = document.createElementNS('http://www.w3.org/2000/svg', 'ellipse');
+  outer.setAttribute('cx', '20');
+  outer.setAttribute('cy', '20');
+  outer.setAttribute('rx', '14');
+  outer.setAttribute('ry', '12');
+  outer.setAttribute('fill', 'none');
+  outer.setAttribute('stroke', stroke);
+  outer.setAttribute('stroke-width', strokeWidth.toString());
+  svg.appendChild(outer);
+
+  // Inner ellipse
+  const inner = document.createElementNS('http://www.w3.org/2000/svg', 'ellipse');
+  inner.setAttribute('cx', '20');
+  inner.setAttribute('cy', '20');
+  inner.setAttribute('rx', '10');
+  inner.setAttribute('ry', '8');
+  inner.setAttribute('fill', fill);
+  inner.setAttribute('stroke', stroke);
+  inner.setAttribute('stroke-width', strokeWidth.toString());
+  svg.appendChild(inner);
 }
