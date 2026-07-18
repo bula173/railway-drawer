@@ -22,6 +22,8 @@ import { SizingManager } from './sizing-manager';
 import { LayerManager } from './layer-manager';
 import { EdgeRoutingManager } from './edge-routing-manager';
 import { ConnectionPointsManager } from './connection-points-manager';
+import { ToolboxManager } from './toolbox-manager';
+import { ShapeDeduplicator } from './shapes/shape-deduplicator';
 
 // Parse editor configuration
 const parser = new DOMParser();
@@ -81,6 +83,9 @@ const edgeRoutingManager = new EdgeRoutingManager(editor.graph);
 // Connection points manager (custom attachment points)
 const connectionPointsManager = new ConnectionPointsManager(editor.graph);
 
+// Toolbox manager (shape library and recent shapes)
+const toolboxManager = new ToolboxManager(editor.graph);
+
 // App state
 let currentTool = 'select';
 let selectedCell: Cell | null = null;
@@ -122,6 +127,15 @@ const menuItems = [
       'Load Google Cloud Stencils',
       'Load Cisco Stencils',
       'Load BPMN Stencils',
+    ],
+  },
+  {
+    label: 'Tools',
+    actions: [
+      'Report Duplicate Shapes',
+      'Deduplicate Shapes',
+      'Show Recent Shapes',
+      'Clear Recent Shapes',
     ],
   },
   {
@@ -1607,6 +1621,46 @@ function handleMenuAction(menu: string, action: string) {
         });
       }
       statusBar.textContent = '✓ Cleared connection points';
+      break;
+    case 'Report Duplicate Shapes':
+      {
+        const report = ShapeDeduplicator.generateReport(importedShapes);
+        const reportWindow = window.open('', '', 'width=600,height=400');
+        if (reportWindow) {
+          reportWindow.document.write(`<pre>${report}</pre>`);
+          reportWindow.document.title = 'Shape Duplicates Report';
+        }
+      }
+      statusBar.textContent = 'Duplicate shapes report generated';
+      break;
+    case 'Deduplicate Shapes':
+      {
+        const duplicates = ShapeDeduplicator.findDuplicates(importedShapes);
+        const duplicateCount = duplicates.reduce((sum, g) => sum + g.duplicates.length, 0);
+        if (duplicateCount === 0) {
+          statusBar.textContent = 'No duplicate shapes found';
+        } else {
+          const deduped = ShapeDeduplicator.deduplicateShapes(importedShapes);
+          importedShapes = deduped;
+          buildShapeCategories();
+          statusBar.textContent = `✓ Removed ${duplicateCount} duplicate shapes`;
+        }
+      }
+      break;
+    case 'Show Recent Shapes':
+      {
+        const recent = toolboxManager.getRecent();
+        if (recent.length === 0) {
+          statusBar.textContent = 'No recent shapes';
+        } else {
+          const recentNames = recent.map((s) => s.label).join(', ');
+          statusBar.textContent = `Recent: ${recentNames}`;
+        }
+      }
+      break;
+    case 'Clear Recent Shapes':
+      toolboxManager.clearRecent();
+      statusBar.textContent = '✓ Cleared recent shapes history';
       break;
   }
 }
