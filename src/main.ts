@@ -158,8 +158,10 @@ const tabBar = document.createElement('div');
 tabBar.className = 'tab-bar';
 
 function updateTabBar() {
-  const tabButtons = tabBar.querySelectorAll('.tab');
-  tabButtons.forEach((btn) => btn.remove());
+  // Clear all tabs and the add button
+  while (tabBar.firstChild) {
+    tabBar.removeChild(tabBar.firstChild);
+  }
 
   const tabs = tabManager.getAllTabs();
   tabs.forEach((tab) => {
