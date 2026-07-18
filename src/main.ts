@@ -15,6 +15,7 @@ import { ExportManager } from './export-manager';
 import { GroupingManager } from './grouping-manager';
 import { LayoutManager } from './layout-manager';
 import { DrawioFileHandler } from './drawio-file-handler';
+import { TabManager } from './tab-manager';
 
 // Parse editor configuration
 const parser = new DOMParser();
@@ -53,6 +54,9 @@ const layoutManager = new LayoutManager(editor.graph);
 // Draw.io file handler
 const drawioFileHandler = new DrawioFileHandler(editor.graph);
 
+// Tab manager for multiple diagrams
+const tabManager = new TabManager(editor.graph);
+
 // App state
 let currentTool = 'select';
 let selectedCell: Cell | null = null;
@@ -72,6 +76,7 @@ const menuItems = [
     label: 'File',
     actions: [
       'New',
+      'New Tab',
       'Open',
       'Save',
       'Export as SVG',
@@ -147,6 +152,67 @@ toolbarButtons.forEach(({ id, label, title, style, active }) => {
   topToolbar.appendChild(btn);
 });
 container.appendChild(topToolbar);
+
+// Tab bar
+const tabBar = document.createElement('div');
+tabBar.className = 'tab-bar';
+
+function updateTabBar() {
+  const tabButtons = tabBar.querySelectorAll('.tab');
+  tabButtons.forEach((btn) => btn.remove());
+
+  const tabs = tabManager.getAllTabs();
+  tabs.forEach((tab) => {
+    const tabBtn = document.createElement('div');
+    tabBtn.className = `tab ${tab.active ? 'active' : ''}`;
+    tabBtn.innerHTML = `
+      <span class="tab-name">${tab.name}</span>
+      ${tabManager.canCloseTab(tab.id) ? '<button class="tab-close">×</button>' : ''}
+    `;
+
+    tabBtn.addEventListener('click', (e) => {
+      if ((e.target as HTMLElement).classList.contains('tab-close')) {
+        e.stopPropagation();
+        if (tabManager.closeTab(tab.id)) {
+          updateTabBar();
+          const activeTab = tabManager.getActiveTab();
+          if (activeTab?.data) {
+            tabManager.restoreDiagramData(activeTab.data);
+          } else {
+            editor.graph.removeCells(editor.graph.getDefaultParent().children || []);
+          }
+        }
+      } else {
+        if (tabManager.switchToTab(tab.id)) {
+          updateTabBar();
+          const activeTab = tabManager.getActiveTab();
+          if (activeTab?.data) {
+            tabManager.restoreDiagramData(activeTab.data);
+          } else {
+            editor.graph.removeCells(editor.graph.getDefaultParent().children || []);
+          }
+        }
+      }
+    });
+
+    tabBar.appendChild(tabBtn);
+  });
+
+  // Add new tab button
+  const addBtn = document.createElement('button');
+  addBtn.className = 'tab-add-btn';
+  addBtn.innerHTML = '+ New Tab';
+  addBtn.addEventListener('click', () => {
+    tabManager.createTab();
+    updateTabBar();
+  });
+  tabBar.appendChild(addBtn);
+}
+
+// Initialize tab bar
+updateTabBar();
+tabManager.addListener(() => updateTabBar());
+container.appendChild(tabBar);
 
 // Workspace
 const workspace = document.createElement('div');
@@ -1060,6 +1126,11 @@ function handleMenuAction(menu: string, action: string) {
       if (confirm('Clear diagram?')) {
         editor.graph.removeCells(editor.graph.getDefaultParent().children || []);
       }
+      break;
+    case 'New Tab':
+      tabManager.createTab();
+      updateTabBar();
+      statusBar.textContent = '✓ Created new tab';
       break;
     case 'Save':
       exportDiagram('json');
