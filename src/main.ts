@@ -8,6 +8,7 @@ import { loadDrawioFile, mergeShapeLibraries } from './drawio-importer';
 import { CommandHistory, SetCellValueCommand, SetGeometryCommand, RemoveCellsCommand, InsertCellCommand } from './command-history';
 import { GridManager } from './grid-manager';
 import { ConnectorTool } from './connector-tool';
+import { SelectionManager } from './selection-manager';
 
 // Parse editor configuration
 const parser = new DOMParser();
@@ -25,9 +26,15 @@ const grid = new GridManager(10, true, true);
 // Connector tool
 const connectorTool = new ConnectorTool(editor.graph);
 
+// Selection manager for multi-select
+const selectionManager = new SelectionManager(editor.graph);
+
 // App state
 let currentTool = 'select';
 let selectedCell: Cell | null = null;
+let isMouseDown = false;
+let mouseDownX = 0;
+let mouseDownY = 0;
 
 // ============= UI SETUP =============
 
@@ -378,6 +385,52 @@ canvasContainer.addEventListener('drop', (e) => {
   }
 });
 
+// Canvas mouse events for selection and connector tool
+canvasContainer.addEventListener('mousedown', (e) => {
+  isMouseDown = true;
+  const rect = canvasContainer.getBoundingClientRect();
+  mouseDownX = e.clientX - rect.left;
+  mouseDownY = e.clientY - rect.top;
+
+  if (currentTool === 'connect') return;
+
+  // Check if clicking on a cell
+  const cell = editor.graph.getCellAt(mouseDownX, mouseDownY);
+
+  if (cell && cell.isVertex && cell.isVertex()) {
+    // Click on shape
+    if (e.ctrlKey || e.metaKey) {
+      // Ctrl+Click: toggle selection
+      selectionManager.toggleCell(cell);
+    } else {
+      // Regular click: select single cell
+      selectionManager.selectCell(cell, false);
+    }
+  } else {
+    // Click on empty area: start marquee selection
+    if (!e.ctrlKey && !e.metaKey) {
+      selectionManager.clearSelection();
+      selectionManager.startMarquee(e.clientX, e.clientY, canvasContainer);
+    }
+  }
+});
+
+canvasContainer.addEventListener('mousemove', (e) => {
+  if (!isMouseDown) return;
+
+  if (selectionManager.isMarqueeSelecting()) {
+    selectionManager.updateMarquee(e.clientX, e.clientY);
+  }
+});
+
+canvasContainer.addEventListener('mouseup', (_e) => {
+  isMouseDown = false;
+
+  if (selectionManager.isMarqueeSelecting()) {
+    selectionManager.endMarquee(canvasContainer);
+  }
+});
+
 // Canvas click handler for connector tool
 canvasContainer.addEventListener('click', (e) => {
   if (currentTool !== 'connect') return;
@@ -408,11 +461,11 @@ canvasContainer.addEventListener('click', (e) => {
   }
 });
 
-// Selection
-editor.graph.getSelectionModel().addListener('change', () => {
-  const cells = editor.graph.getSelectionCells();
+// Selection listener - use selectionManager
+selectionManager.addListener((cells) => {
   selectedCell = cells.length > 0 ? cells[0] : null;
   updateProperties();
+  statusBar.textContent = `Selected: ${cells.length} shape(s)`;
 });
 
 // Text editing - double-click to edit
@@ -489,6 +542,10 @@ function startTextEdit(cell: Cell) {
 document.addEventListener('keydown', (e) => {
   if (e.ctrlKey || e.metaKey) {
     switch (e.key.toLowerCase()) {
+      case 'a':
+        e.preventDefault();
+        selectAllCells();
+        break;
       case 'c':
         e.preventDefault();
         copyCells();
@@ -558,6 +615,20 @@ function updateHistoryButtonStates() {
 
 function redrawGrid() {
   grid.drawGrid(canvasContainer, 0, 0, 1);
+}
+
+function selectAllCells() {
+  const parent = editor.graph.getDefaultParent();
+  const allCells: any[] = [];
+  if (parent && parent.children) {
+    parent.children.forEach((cell: any) => {
+      if (cell.isVertex && cell.isVertex()) {
+        allCells.push(cell);
+      }
+    });
+  }
+  selectionManager.selectCells(allCells);
+  statusBar.textContent = `Selected all: ${allCells.length} shape(s)`;
 }
 
 function updateProperties() {
@@ -636,9 +707,9 @@ function updateProperties() {
 }
 
 function copyCells() {
-  const cells = editor.graph.getSelectionCells();
+  const cells = selectionManager.getSelectedCells();
   if (cells.length > 0) {
-    const cellData = cells.map((cell: Cell) => ({
+    const cellData = cells.map((cell: any) => ({
       id: cell.id,
       value: cell.value,
       x: cell.geometry?.x,
@@ -684,11 +755,13 @@ function pasteCells() {
 }
 
 function deleteCells() {
-  const cells = editor.graph.getSelectionCells();
+  const cells = selectionManager.getSelectedCells();
   if (cells.length > 0) {
-    editor.graph.removeCells(cells);
+    const command = new RemoveCellsCommand(cells, editor.graph);
+    history.execute(command);
+    updateHistoryButtonStates();
+    selectionManager.clearSelection();
     statusBar.textContent = `Deleted ${cells.length} element(s)`;
-    updateProperties();
   }
 }
 
