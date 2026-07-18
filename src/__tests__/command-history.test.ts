@@ -81,7 +81,7 @@ describe('CommandHistory', () => {
   });
 
   describe('batch operations', () => {
-    it('should batch multiple commands into single undo', () => {
+    it('should create a batch command from multiple commands', () => {
       const cmd1 = { execute: jest.fn(), undo: jest.fn(), redo: jest.fn() };
       const cmd2 = { execute: jest.fn(), undo: jest.fn(), redo: jest.fn() };
 
@@ -90,8 +90,10 @@ describe('CommandHistory', () => {
       history.execute(cmd2);
       history.endBatch('batch operation');
 
+      // After endBatch, should have one batch command on undo stack
       expect(history.canUndo()).toBe(true);
 
+      // Undo the batch, which calls undo on all batched commands
       history.undo();
       expect(cmd1.undo).toHaveBeenCalled();
       expect(cmd2.undo).toHaveBeenCalled();

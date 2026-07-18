@@ -65,19 +65,22 @@ export class CommandHistory {
     this.batchMode = false;
 
     if (this.batchCommands.length > 0) {
+      // Capture commands in closure before clearing array
+      const commands = [...this.batchCommands];
+
       const batchCommand: Command = {
         execute: () => {
-          this.batchCommands.forEach((cmd) => cmd.execute());
+          commands.forEach((cmd) => cmd.execute());
         },
         undo: () => {
-          for (let i = this.batchCommands.length - 1; i >= 0; i--) {
-            this.batchCommands[i].undo();
+          for (let i = commands.length - 1; i >= 0; i--) {
+            commands[i].undo();
           }
         },
         redo: () => {
-          this.batchCommands.forEach((cmd) => cmd.redo());
+          commands.forEach((cmd) => cmd.redo());
         },
-        description: description || `Batch operation (${this.batchCommands.length} changes)`,
+        description: description || `Batch operation (${commands.length} changes)`,
       };
 
       this.undoStack.push(batchCommand);
