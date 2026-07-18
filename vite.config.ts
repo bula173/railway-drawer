@@ -10,6 +10,7 @@ export default defineConfig({
       '@': '/src',
     },
   },
+  assetsInclude: ['**/*.xml'],
   server: {
     port: 3000,
     host: true,

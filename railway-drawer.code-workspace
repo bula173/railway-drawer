@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "../maxGraph"
+		},
+		{
+			"path": "../drawio"
 		}
 	],
 	"settings": {

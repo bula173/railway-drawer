@@ -694,3 +694,99 @@ export function searchShapes(query: string): ShapeDefinition[] {
 export function getShapeByName(name: string): ShapeDefinition | undefined {
   return SHAPES_LIBRARY.find((shape) => shape.name === name);
 }
+
+/**
+ * Load shapes from draw.io stencil XML files
+ */
+export async function loadStencilShapes(stencilName: string): Promise<ShapeDefinition[]> {
+  const shapes: ShapeDefinition[] = [];
+
+  try {
+    // Fetch stencil XML file
+    const response = await fetch(`/src/stencils/${stencilName}.xml`);
+    if (!response.ok) {
+      console.warn(`Stencil ${stencilName} not found`);
+      return shapes;
+    }
+
+    const xmlContent = await response.text();
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(xmlContent, 'text/xml');
+
+    if (doc.getElementsByTagName('parsererror').length > 0) {
+      console.warn(`Invalid XML in stencil ${stencilName}`);
+      return shapes;
+    }
+
+    // Parse shape elements (limit to first 100 to avoid UI overload)
+    const shapeElements = Array.from(doc.querySelectorAll('shape')).slice(0, 100);
+
+    shapeElements.forEach((element) => {
+      const name = element.getAttribute('name');
+      if (!name) return;
+
+      const w = parseInt(element.getAttribute('w') || '100');
+      const h = parseInt(element.getAttribute('h') || '100');
+
+      // Extract color info
+      let fillColor = '#ffffff';
+      let strokeColor = '#000000';
+      const fillAttr = element.getAttribute('fillColor');
+      const strokeAttr = element.getAttribute('strokeColor');
+
+      if (fillAttr && fillAttr !== 'none') {
+        fillColor = fillAttr.startsWith('#') ? fillAttr : `#${fillAttr}`;
+      }
+      if (strokeAttr && strokeAttr !== 'none') {
+        strokeColor = strokeAttr.startsWith('#') ? strokeAttr : `#${strokeAttr}`;
+      }
+
+      const categoryMap: { [key: string]: string } = {
+        basic: 'Basic Shapes',
+        arrows: 'Arrows',
+        flowchart: 'Flowchart',
+        aws: 'AWS',
+        aws2: 'AWS',
+        aws3: 'AWS',
+        aws4: 'AWS',
+        azure: 'Azure',
+        gcp: 'Google Cloud',
+        cisco: 'Cisco',
+      };
+
+      const shape: ShapeDefinition = {
+        name: `${stencilName}-${name.replace(/\s+/g, '-').toLowerCase()}`,
+        label: name,
+        category: categoryMap[stencilName] || stencilName.charAt(0).toUpperCase() + stencilName.slice(1),
+        shape: 'rectangle',
+        width: Math.min(w, 120),
+        height: Math.min(h, 120),
+        fillColor,
+        strokeColor,
+        strokeWidth: 1,
+      };
+
+      shapes.push(shape);
+    });
+
+    // Add loaded shapes to library
+    shapes.forEach((shape) => {
+      if (!SHAPES_LIBRARY.find((s) => s.name === shape.name)) {
+        SHAPES_LIBRARY.push(shape);
+      }
+    });
+  } catch (err) {
+    console.warn(`Error loading stencil ${stencilName}:`, err);
+  }
+
+  return shapes;
+}
+
+/**
+ * Load multiple stencils
+ */
+export async function loadStencils(stencilNames: string[]): Promise<void> {
+  for (const stencilName of stencilNames) {
+    await loadStencilShapes(stencilName);
+  }
+}

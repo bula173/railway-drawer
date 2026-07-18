@@ -2,7 +2,7 @@ import '@maxgraph/core/css/common.css';
 import './style.css';
 import { Editor, Cell } from '@maxgraph/core';
 import configXml from './config/railwayConfig.xml?raw';
-import { searchShapes, getShapeByName, SHAPES_LIBRARY } from './shapes-library';
+import { searchShapes, getShapeByName, SHAPES_LIBRARY, loadStencils } from './shapes-library';
 import { createShapeIcon } from './shape-renderer';
 import { loadDrawioFile, mergeShapeLibraries } from './drawio-importer';
 import { CommandHistory, SetCellValueCommand, SetGeometryCommand, RemoveCellsCommand, InsertCellCommand } from './command-history';
@@ -102,6 +102,16 @@ const menuItems = [
   },
   { label: 'Edit', actions: ['Undo', 'Redo', 'Cut', 'Copy', 'Paste', 'Delete', 'Group', 'Ungroup'] },
   { label: 'View', actions: ['Zoom In', 'Zoom Out', 'Fit', 'Reset View'] },
+  {
+    label: 'Stencils',
+    actions: [
+      'Load AWS Stencils',
+      'Load Azure Stencils',
+      'Load Google Cloud Stencils',
+      'Load Cisco Stencils',
+      'Load BPMN Stencils',
+    ],
+  },
   {
     label: 'Format',
     actions: [
@@ -793,6 +803,16 @@ redrawGrid();
 // Initialize layers
 updateLayers();
 
+// Load popular stencils on startup
+(async () => {
+  try {
+    await loadStencils(['basic', 'arrows', 'flowchart']);
+    buildShapeCategories();
+  } catch (err) {
+    console.warn('Failed to load stencils:', err);
+  }
+})();
+
 // ============= FUNCTIONALITY =============
 
 function updateToolbarState() {
@@ -1255,6 +1275,18 @@ document.getElementById('btn-layer-hide-all')?.addEventListener('click', () => {
   statusBar.textContent = 'All layers hidden';
 });
 
+async function handleLoadStencil(stencilName: string) {
+  try {
+    statusBar.textContent = `Loading ${stencilName} stencil...`;
+    await loadStencils([stencilName]);
+    buildShapeCategories();
+    statusBar.textContent = `✓ ${stencilName.toUpperCase()} shapes loaded`;
+  } catch (err) {
+    statusBar.textContent = `Failed to load ${stencilName} stencil`;
+    console.error('Stencil load error:', err);
+  }
+}
+
 function handleMenuAction(menu: string, action: string) {
   statusBar.textContent = `${menu} > ${action}`;
 
@@ -1429,6 +1461,21 @@ function handleMenuAction(menu: string, action: string) {
       break;
     case 'Layout - Tree':
       handleLayout('tree');
+      break;
+    case 'Load AWS Stencils':
+      handleLoadStencil('aws');
+      break;
+    case 'Load Azure Stencils':
+      handleLoadStencil('azure');
+      break;
+    case 'Load Google Cloud Stencils':
+      handleLoadStencil('gcp');
+      break;
+    case 'Load Cisco Stencils':
+      handleLoadStencil('cisco');
+      break;
+    case 'Load BPMN Stencils':
+      handleLoadStencil('bpmn');
       break;
   }
 }
