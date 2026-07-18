@@ -14,6 +14,7 @@ import { TransformTools } from './transform-tools';
 import { ExportManager } from './export-manager';
 import { GroupingManager } from './grouping-manager';
 import { LayoutManager } from './layout-manager';
+import { DrawioFileHandler } from './drawio-file-handler';
 
 // Parse editor configuration
 const parser = new DOMParser();
@@ -49,6 +50,9 @@ const groupingManager = new GroupingManager(editor.graph);
 // Layout manager (uses maxGraph's built-in layout algorithms)
 const layoutManager = new LayoutManager(editor.graph);
 
+// Draw.io file handler
+const drawioFileHandler = new DrawioFileHandler(editor.graph);
+
 // App state
 let currentTool = 'select';
 let selectedCell: Cell | null = null;
@@ -64,7 +68,21 @@ const container = document.getElementById('editor-container')!;
 const menuBar = document.createElement('div');
 menuBar.className = 'menu-bar';
 const menuItems = [
-  { label: 'File', actions: ['New', 'Open', 'Save', 'Export as SVG', 'Export as HTML', 'Import Shapes'] },
+  {
+    label: 'File',
+    actions: [
+      'New',
+      'Open',
+      'Save',
+      'Export as SVG',
+      'Export as HTML',
+      'Export as PNG',
+      'Export as JPG',
+      'Export as Draw.io',
+      'Import Shapes',
+      'Import Draw.io File',
+    ],
+  },
   { label: 'Edit', actions: ['Undo', 'Redo', 'Cut', 'Copy', 'Paste', 'Delete', 'Group', 'Ungroup'] },
   { label: 'View', actions: ['Zoom In', 'Zoom Out', 'Fit', 'Reset View'] },
   {
@@ -737,6 +755,85 @@ function handleLayout(type: 'hierarchical' | 'circle' | 'tree') {
   }
 }
 
+function handleExportPNG() {
+  try {
+    statusBar.textContent = 'Exporting as PNG...';
+    exportManager.exportAsPNG('diagram.png', 1);
+    statusBar.textContent = '✓ Exported as PNG';
+  } catch (err) {
+    statusBar.textContent = `PNG export failed: ${err instanceof Error ? err.message : 'Unknown error'}`;
+  }
+}
+
+function handleExportJPG() {
+  try {
+    statusBar.textContent = 'Exporting as JPG...';
+    exportManager.exportAsJPG('diagram.jpg', 1, 0.9);
+    statusBar.textContent = '✓ Exported as JPG';
+  } catch (err) {
+    statusBar.textContent = `JPG export failed: ${err instanceof Error ? err.message : 'Unknown error'}`;
+  }
+}
+
+async function handleImportDrawioFile() {
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.accept = '.drawio,.xml';
+  input.onchange = async (e) => {
+    const file = (e.target as HTMLInputElement).files?.[0];
+    if (!file) return;
+
+    try {
+      statusBar.textContent = 'Importing Draw.io file...';
+      const diagram = await drawioFileHandler.importFromDrawio(file);
+
+      if (!diagram || !diagram.cells) {
+        statusBar.textContent = 'Invalid diagram format';
+        return;
+      }
+
+      // Clear current diagram
+      editor.graph.removeCells(editor.graph.getDefaultParent().children || []);
+
+      // Recreate cells from imported diagram
+      diagram.cells.forEach((cellData: any) => {
+        editor.graph.insertVertex({
+          value: cellData.value || '',
+          position: [cellData.x, cellData.y],
+          size: [cellData.width, cellData.height],
+          style: cellData.style || { shape: 'rectangle' },
+        });
+      });
+
+      // Recreate edges
+      if (diagram.edges && diagram.edges.length > 0) {
+        const cells = editor.graph.getDefaultParent().children || [];
+        diagram.edges.forEach((edgeData: any) => {
+          const sourceCell = cells.find((c: any) => c.id === edgeData.source);
+          const targetCell = cells.find((c: any) => c.id === edgeData.target);
+
+          if (sourceCell && targetCell) {
+            editor.graph.insertEdge({
+              source: sourceCell,
+              target: targetCell,
+              value: edgeData.value || '',
+              style: edgeData.style || {},
+            });
+          }
+        });
+      }
+
+      history.clear();
+      updateHistoryButtonStates();
+      selectionManager.clearSelection();
+      statusBar.textContent = `✓ Imported ${diagram.cells.length} shapes from ${file.name}`;
+    } catch (err) {
+      statusBar.textContent = `Import failed: ${err instanceof Error ? err.message : 'Unknown error'}`;
+    }
+  };
+  input.click();
+}
+
 function updateProperties() {
   const content = document.getElementById('property-content')!;
   if (!selectedCell) {
@@ -985,6 +1082,23 @@ function handleMenuAction(menu: string, action: string) {
       } catch (err) {
         statusBar.textContent = `Export failed: ${err instanceof Error ? err.message : 'Unknown error'}`;
       }
+      break;
+    case 'Export as PNG':
+      handleExportPNG();
+      break;
+    case 'Export as JPG':
+      handleExportJPG();
+      break;
+    case 'Export as Draw.io':
+      try {
+        drawioFileHandler.exportToDrawio('diagram.drawio');
+        statusBar.textContent = '✓ Exported as Draw.io file';
+      } catch (err) {
+        statusBar.textContent = `Export failed: ${err instanceof Error ? err.message : 'Unknown error'}`;
+      }
+      break;
+    case 'Import Draw.io File':
+      handleImportDrawioFile();
       break;
     case 'Import Shapes':
       handleImportShapes();

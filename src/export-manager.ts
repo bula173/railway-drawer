@@ -48,24 +48,6 @@ export class ExportManager {
     }
   }
 
-  exportAsPNG(filename: string = 'diagram.png'): void {
-    try {
-      const canvas = this.graph.view.canvas as HTMLCanvasElement;
-      if (!canvas) {
-        throw new Error('No canvas available for export');
-      }
-
-      // Convert canvas to blob and download
-      canvas.toBlob((blob) => {
-        if (blob) {
-          this.downloadBlob(blob, filename);
-        }
-      }, 'image/png');
-    } catch (err) {
-      throw new Error(`PNG export failed: ${err instanceof Error ? err.message : 'Unknown error'}`);
-    }
-  }
-
   private downloadSVG(svg: SVGElement, filename: string): void {
     const svgString = new XMLSerializer().serializeToString(svg);
     const blob = new Blob([svgString], { type: 'image/svg+xml' });
@@ -126,5 +108,94 @@ export class ExportManager {
       width: Math.ceil(bounds.width + 40),
       height: Math.ceil(bounds.height + 40),
     };
+  }
+
+  /**
+   * Export diagram as PNG image
+   */
+  async exportAsPNG(filename: string = 'diagram.png', scale: number = 1): Promise<void> {
+    try {
+      const canvas = await this.createImageCanvas(scale);
+      canvas.toBlob((blob) => {
+        if (blob) {
+          this.downloadBlob(blob, filename);
+        }
+      }, 'image/png');
+    } catch (err) {
+      throw new Error(`PNG export failed: ${err instanceof Error ? err.message : 'Unknown error'}`);
+    }
+  }
+
+  /**
+   * Export diagram as JPG image
+   */
+  async exportAsJPG(filename: string = 'diagram.jpg', scale: number = 1, quality: number = 0.9): Promise<void> {
+    try {
+      const canvas = await this.createImageCanvas(scale);
+      canvas.toBlob(
+        (blob) => {
+          if (blob) {
+            this.downloadBlob(blob, filename);
+          }
+        },
+        'image/jpeg',
+        quality,
+      );
+    } catch (err) {
+      throw new Error(`JPG export failed: ${err instanceof Error ? err.message : 'Unknown error'}`);
+    }
+  }
+
+  /**
+   * Create canvas image from graph (async due to SVG to image conversion)
+   */
+  private createImageCanvas(scale: number = 1): Promise<HTMLCanvasElement> {
+    return new Promise((resolve, reject) => {
+      try {
+        const bounds = this.graph.getGraphBounds();
+        const width = Math.ceil((bounds.width + 40) * scale);
+        const height = Math.ceil((bounds.height + 40) * scale);
+
+        const canvas = document.createElement('canvas');
+        canvas.width = width;
+        canvas.height = height;
+
+        const ctx = canvas.getContext('2d');
+        if (!ctx) {
+          reject(new Error('Failed to get canvas context'));
+          return;
+        }
+
+        // White background
+        ctx.fillStyle = 'white';
+        ctx.fillRect(0, 0, width, height);
+
+        // Get SVG canvas from graph
+        const svgCanvas = this.graph.view.canvas as SVGElement;
+        if (!svgCanvas) {
+          reject(new Error('No canvas available for export'));
+          return;
+        }
+
+        // Convert SVG to image and draw on canvas
+        const svg = new XMLSerializer().serializeToString(svgCanvas);
+        const img = new Image();
+
+        img.onload = () => {
+          ctx.drawImage(img, 20 * scale, 20 * scale);
+          resolve(canvas);
+        };
+
+        img.onerror = () => {
+          reject(new Error('Failed to render SVG image'));
+        };
+
+        const blob = new Blob([svg], { type: 'image/svg+xml;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        img.src = url;
+      } catch (err) {
+        reject(err);
+      }
+    });
   }
 }
