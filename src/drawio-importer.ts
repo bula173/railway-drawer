@@ -3,7 +3,7 @@
  * Converts draw.io XML shape definitions to our shape library format
  */
 
-import { ShapeDefinition } from './shapes-library';
+import { ShapeDefinition } from './shapes/shapes-library';
 
 export interface DrawioShape {
   name: string;

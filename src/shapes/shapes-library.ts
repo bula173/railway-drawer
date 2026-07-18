@@ -703,7 +703,7 @@ export async function loadStencilShapes(stencilName: string): Promise<ShapeDefin
 
   try {
     // Fetch stencil XML file
-    const response = await fetch(`/src/stencils/${stencilName}.xml`);
+    const response = await fetch(`/src/shapes/stencils/${stencilName}.xml`);
     if (!response.ok) {
       console.warn(`Stencil ${stencilName} not found`);
       return shapes;
