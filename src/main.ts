@@ -4,6 +4,7 @@ import { Editor, Cell } from '@maxgraph/core';
 import configXml from './config/railwayConfig.xml?raw';
 import { searchShapes, getShapeByName, SHAPES_LIBRARY, loadStencils } from './shapes/shapes-library';
 import { createShapeIcon } from './shapes/shape-renderer';
+import { registerShapes } from './shapes/shape-registration';
 import { loadDrawioFile, mergeShapeLibraries } from './drawio-importer';
 import { CommandHistory, SetCellValueCommand, SetGeometryCommand, RemoveCellsCommand, InsertCellCommand } from './command-history';
 import { GridManager } from './grid-manager';
@@ -26,6 +27,9 @@ const configElement = parser.parseFromString(configXml, 'text/xml').documentElem
 
 // Create editor instance
 const editor = new Editor(configElement);
+
+// Register all native maxGraph shapes
+registerShapes();
 
 // Command history for undo/redo
 const history = new CommandHistory();
