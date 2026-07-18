@@ -9,6 +9,7 @@ import { CommandHistory, SetCellValueCommand, SetGeometryCommand, RemoveCellsCom
 import { GridManager } from './grid-manager';
 import { ConnectorTool } from './connector-tool';
 import { SelectionManager } from './selection-manager';
+import { AlignmentTools } from './alignment-tools';
 
 // Parse editor configuration
 const parser = new DOMParser();
@@ -29,6 +30,9 @@ const connectorTool = new ConnectorTool(editor.graph);
 // Selection manager for multi-select
 const selectionManager = new SelectionManager(editor.graph);
 
+// Alignment tools
+const alignmentTools = new AlignmentTools(editor.graph);
+
 // App state
 let currentTool = 'select';
 let selectedCell: Cell | null = null;
@@ -47,6 +51,19 @@ const menuItems = [
   { label: 'File', actions: ['New', 'Open', 'Save', 'Export as PNG', 'Import Shapes'] },
   { label: 'Edit', actions: ['Undo', 'Redo', 'Cut', 'Copy', 'Paste', 'Delete'] },
   { label: 'View', actions: ['Zoom In', 'Zoom Out', 'Fit', 'Reset View'] },
+  {
+    label: 'Format',
+    actions: [
+      'Align Left',
+      'Align Center',
+      'Align Right',
+      'Align Top',
+      'Align Middle',
+      'Align Bottom',
+      'Distribute Horizontally',
+      'Distribute Vertically',
+    ],
+  },
 ];
 
 // App state for imported shapes
@@ -885,6 +902,38 @@ function handleMenuAction(menu: string, action: string) {
       break;
     case 'Reset View':
       editor.graph.zoomActual();
+      break;
+    case 'Align Left':
+      alignmentTools.alignLeft(selectionManager.getSelectedCells());
+      statusBar.textContent = 'Aligned left';
+      break;
+    case 'Align Center':
+      alignmentTools.alignHCenter(selectionManager.getSelectedCells());
+      statusBar.textContent = 'Aligned center (horizontal)';
+      break;
+    case 'Align Right':
+      alignmentTools.alignRight(selectionManager.getSelectedCells());
+      statusBar.textContent = 'Aligned right';
+      break;
+    case 'Align Top':
+      alignmentTools.alignTop(selectionManager.getSelectedCells());
+      statusBar.textContent = 'Aligned top';
+      break;
+    case 'Align Middle':
+      alignmentTools.alignVCenter(selectionManager.getSelectedCells());
+      statusBar.textContent = 'Aligned middle (vertical)';
+      break;
+    case 'Align Bottom':
+      alignmentTools.alignBottom(selectionManager.getSelectedCells());
+      statusBar.textContent = 'Aligned bottom';
+      break;
+    case 'Distribute Horizontally':
+      alignmentTools.distributeHorizontally(selectionManager.getSelectedCells());
+      statusBar.textContent = 'Distributed horizontally';
+      break;
+    case 'Distribute Vertically':
+      alignmentTools.distributeVertically(selectionManager.getSelectedCells());
+      statusBar.textContent = 'Distributed vertically';
       break;
   }
 }
