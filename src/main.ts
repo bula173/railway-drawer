@@ -12,6 +12,7 @@ import { SelectionManager } from './selection-manager';
 import { AlignmentTools } from './alignment-tools';
 import { TransformTools } from './transform-tools';
 import { ExportManager } from './export-manager';
+import { GroupingManager } from './grouping-manager';
 
 // Parse editor configuration
 const parser = new DOMParser();
@@ -41,6 +42,9 @@ const transformTools = new TransformTools(editor.graph);
 // Export manager
 const exportManager = new ExportManager(editor.graph);
 
+// Grouping manager (uses maxGraph's native grouping)
+const groupingManager = new GroupingManager(editor.graph);
+
 // App state
 let currentTool = 'select';
 let selectedCell: Cell | null = null;
@@ -57,7 +61,7 @@ const menuBar = document.createElement('div');
 menuBar.className = 'menu-bar';
 const menuItems = [
   { label: 'File', actions: ['New', 'Open', 'Save', 'Export as SVG', 'Export as HTML', 'Import Shapes'] },
-  { label: 'Edit', actions: ['Undo', 'Redo', 'Cut', 'Copy', 'Paste', 'Delete'] },
+  { label: 'Edit', actions: ['Undo', 'Redo', 'Cut', 'Copy', 'Paste', 'Delete', 'Group', 'Ungroup'] },
   { label: 'View', actions: ['Zoom In', 'Zoom Out', 'Fit', 'Reset View'] },
   {
     label: 'Format',
@@ -685,6 +689,38 @@ function handleFlip(direction: 'horizontal' | 'vertical') {
   }
 }
 
+function handleGroup() {
+  const cells = selectionManager.getSelectedCells();
+  if (cells.length < 2) {
+    statusBar.textContent = 'Select at least 2 shapes to group';
+    return;
+  }
+
+  try {
+    groupingManager.groupCells(cells, 'Group');
+    selectionManager.clearSelection();
+    statusBar.textContent = `✓ Grouped ${cells.length} shapes`;
+  } catch (err) {
+    statusBar.textContent = `Group failed: ${err instanceof Error ? err.message : 'Unknown error'}`;
+  }
+}
+
+function handleUngroup() {
+  const cells = selectionManager.getSelectedCells();
+  if (cells.length === 0) {
+    statusBar.textContent = 'Select group(s) to ungroup';
+    return;
+  }
+
+  try {
+    groupingManager.ungroupCells(cells);
+    selectionManager.clearSelection();
+    statusBar.textContent = `✓ Ungrouped ${cells.length} group(s)`;
+  } catch (err) {
+    statusBar.textContent = `Ungroup failed: ${err instanceof Error ? err.message : 'Unknown error'}`;
+  }
+}
+
 function updateProperties() {
   const content = document.getElementById('property-content')!;
   if (!selectedCell) {
@@ -940,6 +976,12 @@ function handleMenuAction(menu: string, action: string) {
       break;
     case 'Delete':
       deleteCells();
+      break;
+    case 'Group':
+      handleGroup();
+      break;
+    case 'Ungroup':
+      handleUngroup();
       break;
     case 'Zoom In':
       editor.graph.zoomIn();
