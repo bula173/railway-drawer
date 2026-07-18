@@ -248,18 +248,19 @@ function buildShapeCategories() {
   });
   const categories = Array.from(categorySet).sort();
 
-  categories.forEach((category) => {
+  categories.forEach((category, index) => {
     const categoryDiv = document.createElement('div');
     categoryDiv.className = 'shape-category';
 
+    const isFirstCategory = index === 0;
     const categoryTitle = document.createElement('div');
     categoryTitle.className = 'category-title';
-    categoryTitle.innerHTML = `<span class="category-toggle">▼</span> ${category}`;
+    categoryTitle.innerHTML = `<span class="category-toggle">${isFirstCategory ? '▼' : '▶'}</span> ${category}`;
     categoryDiv.appendChild(categoryTitle);
 
     const shapesGrid = document.createElement('div');
     shapesGrid.className = 'shapes-grid';
-    shapesGrid.style.display = 'grid';
+    shapesGrid.style.display = isFirstCategory ? 'grid' : 'none';
 
     const shapes = importedShapes.filter((shape) => shape.category === category);
     shapes.forEach((shapeDef) => {

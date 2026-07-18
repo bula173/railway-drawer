@@ -197,8 +197,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
-  min-height: 100px;
+  gap: 4px;
+  min-height: 75px;
   justify-content: center;
 }
 
@@ -217,8 +217,8 @@ body {
 /* Shape icon container */
 .shape-icon-container {
   flex-shrink: 0;
-  width: 48px;
-  height: 48px;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
