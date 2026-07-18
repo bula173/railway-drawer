@@ -18,6 +18,7 @@ import { DrawioFileHandler } from './drawio-file-handler';
 import { TabManager } from './tab-manager';
 import { ZOrderManager } from './z-order-manager';
 import { SizingManager } from './sizing-manager';
+import { LayerManager } from './layer-manager';
 
 // Parse editor configuration
 const parser = new DOMParser();
@@ -64,6 +65,9 @@ const zOrderManager = new ZOrderManager(editor.graph);
 
 // Sizing manager (make same size, etc.)
 const sizingManager = new SizingManager(editor.graph);
+
+// Layer manager (visibility and locking)
+const layerManager = new LayerManager(editor.graph);
 
 // App state
 let currentTool = 'select';
@@ -415,6 +419,26 @@ propertyContent.className = 'property-content';
 propertyContent.innerHTML = '<p style="color: #999; font-size: 12px;">Click element to edit</p>';
 rightPanel.appendChild(propertyContent);
 
+// Layers section
+const layersTitle = document.createElement('div');
+layersTitle.className = 'panel-title';
+layersTitle.textContent = 'Layers';
+rightPanel.appendChild(layersTitle);
+
+const layersList = document.createElement('div');
+layersList.id = 'layers-list';
+layersList.className = 'layers-list';
+rightPanel.appendChild(layersList);
+
+// Layer controls
+const layerControls = document.createElement('div');
+layerControls.className = 'layer-controls';
+layerControls.innerHTML = `
+  <button id="btn-layer-show-all" class="layer-btn" title="Show All">👁️</button>
+  <button id="btn-layer-hide-all" class="layer-btn" title="Hide All">🚫</button>
+`;
+rightPanel.appendChild(layerControls);
+
 workspace.appendChild(rightPanel);
 
 // Status bar
@@ -520,6 +544,7 @@ canvasContainer.addEventListener('drop', (e) => {
     updateHistoryButtonStates();
 
     statusBar.textContent = `Added ${shapeDef.label}`;
+    updateLayers();
   } catch (err) {
     console.error('Drop error:', err);
   }
@@ -608,6 +633,7 @@ canvasContainer.addEventListener('click', (e) => {
 selectionManager.addListener((cells) => {
   selectedCell = cells.length > 0 ? cells[0] : null;
   updateProperties();
+  updateLayers();
   statusBar.textContent = `Selected: ${cells.length} shape(s)`;
 });
 
@@ -763,6 +789,9 @@ updateToolbarState();
 
 // Draw initial grid
 redrawGrid();
+
+// Initialize layers
+updateLayers();
 
 // ============= FUNCTIONALITY =============
 
@@ -1020,6 +1049,55 @@ function updateProperties() {
   });
 }
 
+function updateLayers() {
+  const layersList = document.getElementById('layers-list')!;
+  layersList.innerHTML = '';
+
+  const parent = editor.graph.getDefaultParent();
+  if (!parent || !parent.children) return;
+
+  parent.children.forEach((cell: any) => {
+    if (cell.isVertex?.()) {
+      // Add to layer manager if not already there
+      if (!layerManager.getAllLayers().find((l) => l.id === cell.id)) {
+        layerManager.addLayer(cell, cell.value || 'Layer');
+      }
+
+      const layer = layerManager.getAllLayers().find((l) => l.id === cell.id);
+      if (!layer) return;
+
+      const layerItem = document.createElement('div');
+      layerItem.className = `layer-item ${layer.locked ? 'locked' : ''}`;
+      layerItem.innerHTML = `
+        <button class="layer-visibility" title="Toggle Visibility">${layer.visible ? '👁️' : '🚫'}</button>
+        <span class="layer-name">${layer.label}</span>
+        <button class="layer-lock" title="Toggle Lock">${layer.locked ? '🔒' : '🔓'}</button>
+      `;
+
+      // Visibility toggle
+      layerItem.querySelector('.layer-visibility')?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        layerManager.toggleVisibility(cell.id);
+        updateLayers();
+      });
+
+      // Lock toggle
+      layerItem.querySelector('.layer-lock')?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        layerManager.toggleLock(cell.id);
+        updateLayers();
+      });
+
+      // Click to select
+      layerItem.addEventListener('click', () => {
+        selectionManager.selectCell(cell, false);
+      });
+
+      layersList.appendChild(layerItem);
+    }
+  });
+}
+
 function copyCells() {
   const cells = selectionManager.getSelectedCells();
   if (cells.length > 0) {
@@ -1076,6 +1154,7 @@ function deleteCells() {
     updateHistoryButtonStates();
     selectionManager.clearSelection();
     statusBar.textContent = `Deleted ${cells.length} element(s)`;
+    updateLayers();
   }
 }
 
@@ -1162,6 +1241,19 @@ function showMenu(menuLabel: string, actions: string[], button: HTMLElement) {
     document.addEventListener('click', closeMenuListener);
   }, 0);
 }
+
+// Layer panel controls
+document.getElementById('btn-layer-show-all')?.addEventListener('click', () => {
+  layerManager.showAll();
+  updateLayers();
+  statusBar.textContent = 'All layers shown';
+});
+
+document.getElementById('btn-layer-hide-all')?.addEventListener('click', () => {
+  layerManager.hideAll();
+  updateLayers();
+  statusBar.textContent = 'All layers hidden';
+});
 
 function handleMenuAction(menu: string, action: string) {
   statusBar.textContent = `${menu} > ${action}`;

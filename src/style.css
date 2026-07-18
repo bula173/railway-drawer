@@ -540,3 +540,82 @@ div.mxRubberband {
 .property-btn:hover {
   background: #ff5252;
 }
+
+/* Layers Panel */
+.layers-list {
+  padding: 8px;
+  max-height: 300px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.layer-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  background: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 12px;
+}
+
+.layer-item:hover {
+  background: #f0f0f0;
+  border-color: #0066cc;
+}
+
+.layer-item.locked {
+  opacity: 0.6;
+}
+
+.layer-visibility,
+.layer-lock {
+  padding: 2px 4px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  flex-shrink: 0;
+  transition: opacity 0.2s;
+}
+
+.layer-visibility:hover,
+.layer-lock:hover {
+  opacity: 0.7;
+}
+
+.layer-name {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #333;
+}
+
+.layer-controls {
+  display: flex;
+  gap: 4px;
+  padding: 8px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.layer-btn {
+  flex: 1;
+  padding: 6px;
+  background: #ffffff;
+  border: 1px solid #d0d0d0;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.2s;
+}
+
+.layer-btn:hover {
+  background: #f0f0f0;
+  border-color: #0066cc;
+}
