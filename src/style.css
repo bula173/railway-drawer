@@ -158,6 +158,25 @@ body {
   background: #efefef;
 }
 
+/* Stencil Category Styling */
+.shape-category.stencil-category {
+  margin-bottom: 12px;
+  border-left: 3px solid #0066cc;
+  padding-left: 8px;
+}
+
+.category-title.stencil-title {
+  background: #f0f7ff;
+  border-bottom-color: #0066cc;
+  color: #0066cc;
+  font-weight: 700;
+}
+
+.category-title.stencil-title:hover {
+  background: #e8f2ff;
+  border-color: #0052a3;
+}
+
 .category-toggle {
   display: inline-block;
   min-width: 12px;

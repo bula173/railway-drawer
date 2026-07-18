@@ -264,6 +264,9 @@ const shapesContainer = document.createElement('div');
 shapesContainer.className = 'shapes-container';
 leftPanel.appendChild(shapesContainer);
 
+// Track loaded stencil categories for styling
+let stencilCategories = new Set<string>();
+
 // Build shape categories
 function buildShapeCategories() {
   shapesContainer.innerHTML = '';
@@ -275,13 +278,23 @@ function buildShapeCategories() {
   });
   const categories = Array.from(categorySet).sort();
 
-  categories.forEach((category, index) => {
-    const categoryDiv = document.createElement('div');
-    categoryDiv.className = 'shape-category';
+  // Separate original categories from stencil categories
+  const originalCategories = categories.filter((c) => !stencilCategories.has(c));
+  const newStencilCategories = categories.filter((c) => stencilCategories.has(c));
 
+  // Display in order: original categories first, then stencil categories
+  const orderedCategories = [...originalCategories, ...newStencilCategories];
+
+  orderedCategories.forEach((category, index) => {
+    const categoryDiv = document.createElement('div');
+    const isStencilCategory = stencilCategories.has(category);
+    categoryDiv.className = `shape-category ${isStencilCategory ? 'stencil-category' : ''}`;
+
+    // Only first category is expanded, all others collapsed
     const isFirstCategory = index === 0;
     const categoryTitle = document.createElement('div');
-    categoryTitle.className = 'category-title';
+    const titleClass = isStencilCategory ? 'category-title stencil-title' : 'category-title';
+    categoryTitle.className = titleClass;
     categoryTitle.innerHTML = `<span class="category-toggle">${isFirstCategory ? '▼' : '▶'}</span> ${category}`;
     categoryDiv.appendChild(categoryTitle);
 
@@ -1278,9 +1291,24 @@ document.getElementById('btn-layer-hide-all')?.addEventListener('click', () => {
 async function handleLoadStencil(stencilName: string) {
   try {
     statusBar.textContent = `Loading ${stencilName} stencil...`;
+
+    // Get categories before loading
+    const categoriesBefore = new Set(importedShapes.map((s) => s.category));
+
     await loadStencils([stencilName]);
+
+    // Get categories after loading
+    const categoriesAfter = new Set(importedShapes.map((s) => s.category));
+
+    // Add new categories to stencil categories set
+    categoriesAfter.forEach((cat) => {
+      if (!categoriesBefore.has(cat)) {
+        stencilCategories.add(cat);
+      }
+    });
+
     buildShapeCategories();
-    statusBar.textContent = `✓ ${stencilName.toUpperCase()} shapes loaded`;
+    statusBar.textContent = `✓ ${stencilName.toUpperCase()} shapes loaded (${stencilCategories.size} new categories)`;
   } catch (err) {
     statusBar.textContent = `Failed to load ${stencilName} stencil`;
     console.error('Stencil load error:', err);
