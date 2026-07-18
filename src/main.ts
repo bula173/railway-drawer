@@ -13,6 +13,7 @@ import { AlignmentTools } from './alignment-tools';
 import { TransformTools } from './transform-tools';
 import { ExportManager } from './export-manager';
 import { GroupingManager } from './grouping-manager';
+import { LayoutManager } from './layout-manager';
 
 // Parse editor configuration
 const parser = new DOMParser();
@@ -44,6 +45,9 @@ const exportManager = new ExportManager(editor.graph);
 
 // Grouping manager (uses maxGraph's native grouping)
 const groupingManager = new GroupingManager(editor.graph);
+
+// Layout manager (uses maxGraph's built-in layout algorithms)
+const layoutManager = new LayoutManager(editor.graph);
 
 // App state
 let currentTool = 'select';
@@ -78,6 +82,9 @@ const menuItems = [
       'Rotate -90°',
       'Flip Horizontal',
       'Flip Vertical',
+      'Layout - Hierarchical',
+      'Layout - Circle',
+      'Layout - Tree',
     ],
   },
 ];
@@ -721,6 +728,15 @@ function handleUngroup() {
   }
 }
 
+function handleLayout(type: 'hierarchical' | 'circle' | 'tree') {
+  try {
+    layoutManager.applyLayout(type);
+    statusBar.textContent = `✓ Applied ${type} layout`;
+  } catch (err) {
+    statusBar.textContent = `Layout failed: ${err instanceof Error ? err.message : 'Unknown error'}`;
+  }
+}
+
 function updateProperties() {
   const content = document.getElementById('property-content')!;
   if (!selectedCell) {
@@ -1038,6 +1054,15 @@ function handleMenuAction(menu: string, action: string) {
       break;
     case 'Flip Vertical':
       handleFlip('vertical');
+      break;
+    case 'Layout - Hierarchical':
+      handleLayout('hierarchical');
+      break;
+    case 'Layout - Circle':
+      handleLayout('circle');
+      break;
+    case 'Layout - Tree':
+      handleLayout('tree');
       break;
   }
 }
