@@ -765,7 +765,7 @@ function handleMenuAction(menu: string, action: string) {
       exportDiagram('json');
       break;
     case 'Open':
-      statusBar.textContent = 'Open not yet implemented';
+      handleOpenDiagram();
       break;
     case 'Export as PNG':
       statusBar.textContent = 'PNG export not yet implemented';
@@ -774,10 +774,20 @@ function handleMenuAction(menu: string, action: string) {
       handleImportShapes();
       break;
     case 'Undo':
-      statusBar.textContent = 'Undo not yet implemented';
+      if (history.canUndo()) {
+        history.undo();
+        updateProperties();
+        updateHistoryButtonStates();
+        statusBar.textContent = 'Undo';
+      }
       break;
     case 'Redo':
-      statusBar.textContent = 'Redo not yet implemented';
+      if (history.canRedo()) {
+        history.redo();
+        updateProperties();
+        updateHistoryButtonStates();
+        statusBar.textContent = 'Redo';
+      }
       break;
     case 'Cut':
       cutCells();
@@ -806,7 +816,51 @@ function handleMenuAction(menu: string, action: string) {
   }
 }
 
-// ============= IMPORT HANDLER =============
+// ============= FILE HANDLERS =============
+
+function handleOpenDiagram() {
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.accept = '.json';
+  input.onchange = (e) => {
+    const file = (e.target as HTMLInputElement).files?.[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      try {
+        const content = event.target?.result as string;
+        const diagramData = JSON.parse(content);
+
+        // Clear current diagram
+        editor.graph.removeCells(editor.graph.getDefaultParent().children || []);
+
+        // Restore cells
+        if (diagramData.cells && Array.isArray(diagramData.cells)) {
+          diagramData.cells.forEach((cellData: any) => {
+            editor.graph.insertVertex({
+              value: cellData.value || '',
+              position: [cellData.x || 0, cellData.y || 0],
+              size: [cellData.width || 80, cellData.height || 60],
+              style: cellData.style || { shape: 'rectangle' },
+            });
+          });
+        }
+
+        // Clear history on load
+        history.clear();
+        updateHistoryButtonStates();
+        updateProperties();
+        statusBar.textContent = `✓ Loaded diagram from ${file.name}`;
+      } catch (err) {
+        console.error('Open error:', err);
+        statusBar.textContent = 'Failed to open diagram';
+      }
+    };
+    reader.readAsText(file);
+  };
+  input.click();
+}
 
 async function handleImportShapes() {
   const input = document.createElement('input');
