@@ -16,6 +16,8 @@ import { GroupingManager } from './grouping-manager';
 import { LayoutManager } from './layout-manager';
 import { DrawioFileHandler } from './drawio-file-handler';
 import { TabManager } from './tab-manager';
+import { ZOrderManager } from './z-order-manager';
+import { SizingManager } from './sizing-manager';
 
 // Parse editor configuration
 const parser = new DOMParser();
@@ -56,6 +58,12 @@ const drawioFileHandler = new DrawioFileHandler(editor.graph);
 
 // Tab manager for multiple diagrams
 const tabManager = new TabManager(editor.graph);
+
+// Z-order manager (bring to front, send to back)
+const zOrderManager = new ZOrderManager(editor.graph);
+
+// Sizing manager (make same size, etc.)
+const sizingManager = new SizingManager(editor.graph);
 
 // App state
 let currentTool = 'select';
@@ -105,6 +113,11 @@ const menuItems = [
       'Rotate -90°',
       'Flip Horizontal',
       'Flip Vertical',
+      'Make Same Size',
+      'Make Same Width',
+      'Make Same Height',
+      'Bring to Front',
+      'Send to Back',
       'Layout - Hierarchical',
       'Layout - Circle',
       'Layout - Tree',
@@ -529,13 +542,16 @@ canvasContainer.addEventListener('mousedown', (e) => {
     if (e.ctrlKey || e.metaKey) {
       // Ctrl+Click: toggle selection
       selectionManager.toggleCell(cell);
+    } else if (e.shiftKey) {
+      // Shift+Click: extend selection (add to current selection)
+      selectionManager.selectCell(cell, true);
     } else {
       // Regular click: select single cell
       selectionManager.selectCell(cell, false);
     }
   } else {
     // Click on empty area: start marquee selection
-    if (!e.ctrlKey && !e.metaKey) {
+    if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
       selectionManager.clearSelection();
       selectionManager.startMarquee(e.clientX, e.clientY, canvasContainer);
     }
@@ -712,6 +728,32 @@ document.addEventListener('keydown', (e) => {
     }
     currentTool = 'select';
     updateToolbarState();
+  } else if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) {
+    // Arrow key movement (1px at a time, 10px with Shift)
+    e.preventDefault();
+    const step = e.shiftKey ? 10 : 1;
+    const cells = selectionManager.getSelectedCells();
+
+    cells.forEach((cell) => {
+      if (cell.geometry) {
+        switch (e.key) {
+          case 'ArrowUp':
+            cell.geometry.y -= step;
+            break;
+          case 'ArrowDown':
+            cell.geometry.y += step;
+            break;
+          case 'ArrowLeft':
+            cell.geometry.x -= step;
+            break;
+          case 'ArrowRight':
+            cell.geometry.x += step;
+            break;
+        }
+      }
+    });
+
+    editor.graph.view.refresh();
   }
 });
 
@@ -1266,6 +1308,26 @@ function handleMenuAction(menu: string, action: string) {
       break;
     case 'Flip Vertical':
       handleFlip('vertical');
+      break;
+    case 'Make Same Size':
+      sizingManager.makeSameSize(selectionManager.getSelectedCells());
+      statusBar.textContent = 'Made same size';
+      break;
+    case 'Make Same Width':
+      sizingManager.makeSameWidth(selectionManager.getSelectedCells());
+      statusBar.textContent = 'Made same width';
+      break;
+    case 'Make Same Height':
+      sizingManager.makeSameHeight(selectionManager.getSelectedCells());
+      statusBar.textContent = 'Made same height';
+      break;
+    case 'Bring to Front':
+      zOrderManager.bringToFront(selectionManager.getSelectedCells());
+      statusBar.textContent = 'Brought to front';
+      break;
+    case 'Send to Back':
+      zOrderManager.sendToBack(selectionManager.getSelectedCells());
+      statusBar.textContent = 'Sent to back';
       break;
     case 'Layout - Hierarchical':
       handleLayout('hierarchical');
