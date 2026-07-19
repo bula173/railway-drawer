@@ -321,6 +321,16 @@ searchBox.placeholder = 'Type / to search';
 searchBox.className = 'shape-search';
 leftPanel.appendChild(searchBox);
 
+// Allow "/" to focus search from anywhere
+document.addEventListener('keydown', (e) => {
+  if (e.key === '/' && !isEditingText && document.activeElement !== searchBox) {
+    if (!(['input', 'textarea'].includes((document.activeElement as HTMLElement)?.tagName.toLowerCase()))) {
+      e.preventDefault();
+      searchBox.focus();
+    }
+  }
+});
+
 // Shapes container
 const shapesContainer = document.createElement('div');
 shapesContainer.className = 'shapes-container';
@@ -502,7 +512,10 @@ function buildShapeCategories() {
     const categoryTitle = document.createElement('div');
     const titleClass = isStencilCategory ? 'category-title stencil-title' : 'category-title';
     categoryTitle.className = titleClass;
+    categoryTitle.title = 'Drag to reorder categories';
+    categoryTitle.draggable = true;
     categoryTitle.innerHTML = `<span class="category-toggle">▶</span> ${category}`;
+    categoryTitle.style.cursor = 'grab';
     categoryDiv.appendChild(categoryTitle);
 
     const shapesGrid = document.createElement('div');
