@@ -47,7 +47,7 @@ body {
   background: #e8e8e8;
 }
 
-/* Top Toolbar */
+/* Top Toolbar - Tier 2 */
 .top-toolbar {
   background: #fafafa;
   border-bottom: 1px solid #e0e0e0;
@@ -57,6 +57,61 @@ body {
   padding: 0 8px;
   gap: 4px;
   flex-shrink: 0;
+}
+
+/* Feature Toolbar - Tier 3 */
+.feature-toolbar {
+  background: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  height: 36px;
+  align-items: center;
+  padding: 0 8px;
+  gap: 12px;
+  flex-shrink: 0;
+  overflow-x: auto;
+}
+
+.toolbar-section {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding-right: 8px;
+  border-right: 1px solid #e0e0e0;
+}
+
+.toolbar-section:last-child {
+  border-right: none;
+}
+
+.toolbar-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.toolbar-icon-btn {
+  width: 28px;
+  height: 28px;
+  padding: 4px;
+  background: #ffffff;
+  border: 1px solid #d0d0d0;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.toolbar-icon-btn:hover {
+  background: #f0f8ff;
+  border-color: #0066cc;
+  color: #0066cc;
 }
 
 .toolbar-btn {
@@ -276,19 +331,72 @@ body {
   background: #f0f8ff;
 }
 
-/* Right Panel - Format */
+/* Right Panel - Tabbed Interface */
 .right-panel {
-  width: 240px;
+  width: 280px;
   background: #ffffff;
   border-left: 1px solid #e0e0e0;
-  overflow-y: auto;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+}
+
+.panel-tabs {
+  display: flex;
+  height: 40px;
+  background: #f9f9f9;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 0;
+  gap: 0;
+  flex-shrink: 0;
+  overflow-x: auto;
+}
+
+.panel-tab-btn {
+  flex: 1;
+  min-width: 60px;
+  padding: 8px 12px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  color: #666;
+  white-space: nowrap;
+  transition: all 0.2s;
+  border-right: 1px solid #e0e0e0;
+}
+
+.panel-tab-btn:last-child {
+  border-right: none;
+}
+
+.panel-tab-btn:hover {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.panel-tab-btn.active {
+  background: #ffffff;
+  color: #0066cc;
+  border-bottom-color: #0066cc;
+}
+
+.panel-tab-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+  display: none;
+}
+
+.panel-tab-content.active {
+  display: block;
 }
 
 .format-content {
-  padding: 12px;
+  padding: 0;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -324,7 +432,7 @@ body {
   font-size: 12px;
 }
 
-/* Status Bar */
+/* Enhanced Status Bar */
 .status-bar {
   height: 28px;
   background: #f5f5f5;
@@ -332,9 +440,35 @@ body {
   padding: 0 12px;
   display: flex;
   align-items: center;
-  font-size: 12px;
+  font-size: 11px;
   color: #666;
   flex-shrink: 0;
+  gap: 16px;
+  overflow-x: auto;
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+  border-right: 1px solid #d0d0d0;
+  padding-right: 12px;
+}
+
+.status-item:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+
+.status-label {
+  font-weight: 600;
+  color: #333;
+}
+
+.status-value {
+  color: #0066cc;
+  font-family: 'Monaco', 'Courier New', monospace;
 }
 
 /* Scrollbars */
@@ -637,4 +771,88 @@ div.mxRubberband {
 .layer-btn:hover {
   background: #f0f0f0;
   border-color: #0066cc;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .left-panel {
+    width: 160px;
+  }
+
+  .right-panel {
+    width: 240px;
+  }
+
+  .feature-toolbar {
+    height: 32px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  #editor-container {
+    flex-direction: column;
+  }
+
+  .workspace {
+    flex-direction: column;
+  }
+
+  .left-panel {
+    width: 100%;
+    height: 150px;
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .right-panel {
+    width: 100%;
+    height: 200px;
+    border-left: none;
+    border-top: 1px solid #e0e0e0;
+  }
+
+  .canvas-container {
+    flex: 1;
+  }
+
+  .top-toolbar {
+    height: 36px;
+  }
+
+  .feature-toolbar {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-bar {
+    height: 28px;
+    font-size: 11px;
+  }
+
+  .top-toolbar {
+    height: 32px;
+    padding: 0 4px;
+    gap: 2px;
+  }
+
+  .toolbar-btn {
+    padding: 2px 6px;
+    font-size: 10px;
+  }
+
+  .left-panel {
+    height: 120px;
+  }
+
+  .right-panel {
+    height: 150px;
+  }
+
+  .panel-tab-btn {
+    min-width: 50px;
+    padding: 6px 8px;
+    font-size: 10px;
+  }
 }
