@@ -2,7 +2,7 @@ import '@maxgraph/core/css/common.css';
 import './style.css';
 import { Editor, Cell } from '@maxgraph/core';
 import configXml from './config/railwayConfig.xml?raw';
-import { searchShapes, getShapeByName, SHAPES_LIBRARY, loadStencils } from './shapes/shapes-library';
+import { searchShapes, getShapeByName, SHAPES_LIBRARY, loadStencils, ShapeDefinition } from './shapes/shapes-library';
 import { createShapeIcon } from './shapes/shape-renderer';
 import { registerShapes } from './shapes/shape-registration';
 import { loadDrawioFile, mergeShapeLibraries } from './drawio-importer';
@@ -330,86 +330,192 @@ leftPanel.appendChild(shapesContainer);
 let stencilCategories = new Set<string>();
 
 // Build shape categories
+// Track recently used and favorite shapes
+const recentlyUsed = new Map<string, number>(); // shape name -> timestamp
+const favorites = new Set<string>();
+
+function addToRecentlyUsed(shapeName: string) {
+  recentlyUsed.set(shapeName, Date.now());
+  // Keep only last 12 recently used
+  if (recentlyUsed.size > 12) {
+    let oldest = Array.from(recentlyUsed.entries()).sort((a, b) => a[1] - b[1])[0];
+    recentlyUsed.delete(oldest[0]);
+  }
+}
+
+function toggleFavorite(shapeName: string) {
+  if (favorites.has(shapeName)) {
+    favorites.delete(shapeName);
+  } else {
+    favorites.add(shapeName);
+  }
+  buildShapeCategories();
+}
+
+// Category order to match draw.io
+const categoryOrder = [
+  'General',
+  'Flowchart',
+  'Database',
+  'UML',
+  'BPMN',
+  'Connectors',
+  'Arrows',
+  'Network',
+  'Mockup',
+  'Swimlane',
+  'Container',
+  'Misc',
+];
+
 function buildShapeCategories() {
   shapesContainer.innerHTML = '';
+
+  // Add Recently Used section if there are any
+  if (recentlyUsed.size > 0) {
+    const recentDiv = document.createElement('div');
+    recentDiv.className = 'shape-category recent-category';
+    const recentTitle = document.createElement('div');
+    recentTitle.className = 'category-title recent-title';
+    recentTitle.innerHTML = `<span class="category-toggle">▼</span> Recently Used`;
+    recentDiv.appendChild(recentTitle);
+
+    const recentGrid = document.createElement('div');
+    recentGrid.className = 'shapes-grid';
+    const recentShapes = Array.from(recentlyUsed.entries())
+      .sort((a, b) => b[1] - a[1])
+      .map(([name]) => importedShapes.find((s) => s.name === name))
+      .filter((s) => s !== undefined) as ShapeDefinition[];
+
+    recentShapes.forEach((shapeDef) => {
+      createShapeItemElement(shapeDef, recentGrid);
+    });
+
+    recentDiv.appendChild(recentGrid);
+    recentTitle.addEventListener('click', () => {
+      const isCollapsed = recentGrid.style.display === 'none';
+      recentGrid.style.display = isCollapsed ? 'grid' : 'none';
+      const toggle = recentTitle.querySelector('.category-toggle') as HTMLElement;
+      if (toggle) toggle.textContent = isCollapsed ? '▼' : '▶';
+    });
+    shapesContainer.appendChild(recentDiv);
+  }
+
+  // Add Favorites section if there are any
+  if (favorites.size > 0) {
+    const favDiv = document.createElement('div');
+    favDiv.className = 'shape-category favorites-category';
+    const favTitle = document.createElement('div');
+    favTitle.className = 'category-title favorites-title';
+    favTitle.innerHTML = `<span class="category-toggle">▼</span> ★ Favorites`;
+    favDiv.appendChild(favTitle);
+
+    const favGrid = document.createElement('div');
+    favGrid.className = 'shapes-grid';
+    Array.from(favorites).forEach((shapeName) => {
+      const shapeDef = importedShapes.find((s) => s.name === shapeName);
+      if (shapeDef) createShapeItemElement(shapeDef, favGrid);
+    });
+
+    favDiv.appendChild(favGrid);
+    favTitle.addEventListener('click', () => {
+      const isCollapsed = favGrid.style.display === 'none';
+      favGrid.style.display = isCollapsed ? 'grid' : 'none';
+      const toggle = favTitle.querySelector('.category-toggle') as HTMLElement;
+      if (toggle) toggle.textContent = isCollapsed ? '▼' : '▶';
+    });
+    shapesContainer.appendChild(favDiv);
+  }
 
   // Get unique categories from imported shapes
   const categorySet = new Set<string>();
   importedShapes.forEach((shape) => {
     categorySet.add(shape.category);
   });
-  const categories = Array.from(categorySet).sort();
+
+  // Sort categories using predefined order
+  const allCategories = Array.from(categorySet);
+  const orderedCategories = categoryOrder.filter((c) => allCategories.includes(c)).concat(
+    allCategories.filter((c) => !categoryOrder.includes(c)).sort()
+  );
 
   // Separate original categories from stencil categories
-  const originalCategories = categories.filter((c) => !stencilCategories.has(c));
-  const newStencilCategories = categories.filter((c) => stencilCategories.has(c));
+  const originalCategories = orderedCategories.filter((c) => !stencilCategories.has(c));
+  const newStencilCategories = orderedCategories.filter((c) => stencilCategories.has(c));
 
-  // Display in order: original categories first, then stencil categories
-  const orderedCategories = [...originalCategories, ...newStencilCategories];
+  const finalCategories = [...originalCategories, ...newStencilCategories];
 
-  orderedCategories.forEach((category, index) => {
+  finalCategories.forEach((category) => {
     const categoryDiv = document.createElement('div');
     const isStencilCategory = stencilCategories.has(category);
     categoryDiv.className = `shape-category ${isStencilCategory ? 'stencil-category' : ''}`;
 
-    // Only first category is expanded, all others collapsed
-    const isFirstCategory = index === 0;
     const categoryTitle = document.createElement('div');
     const titleClass = isStencilCategory ? 'category-title stencil-title' : 'category-title';
     categoryTitle.className = titleClass;
-    categoryTitle.innerHTML = `<span class="category-toggle">${isFirstCategory ? '▼' : '▶'}</span> ${category}`;
+    categoryTitle.innerHTML = `<span class="category-toggle">▶</span> ${category}`;
     categoryDiv.appendChild(categoryTitle);
 
     const shapesGrid = document.createElement('div');
     shapesGrid.className = 'shapes-grid';
-    shapesGrid.style.display = isFirstCategory ? 'grid' : 'none';
+    shapesGrid.style.display = 'none'; // All collapsed by default
 
     const shapes = importedShapes.filter((shape) => shape.category === category);
     shapes.forEach((shapeDef) => {
-      const shapeItem = document.createElement('div');
-      shapeItem.className = 'shape-item';
-      shapeItem.title = shapeDef.label;
-      shapeItem.draggable = true;
-      shapeItem.dataset.shapeName = shapeDef.name;
-
-      try {
-        // Create and add shape icon
-        const icon = createShapeIcon(shapeDef);
-        shapeItem.appendChild(icon);
-
-        // Add label
-        const label = document.createElement('div');
-        label.className = 'shape-label';
-        label.textContent = shapeDef.label;
-        shapeItem.appendChild(label);
-      } catch (e) {
-        console.error('Error creating shape item:', shapeDef.name, e);
-        shapeItem.textContent = shapeDef.label;
-      }
-
-      shapeItem.addEventListener('dragstart', (e) => {
-        const data = { shape: shapeDef.name };
-        (e.dataTransfer as DataTransfer).effectAllowed = 'copy';
-        (e.dataTransfer as DataTransfer).setData('application/json', JSON.stringify(data));
-      });
-
-      shapesGrid.appendChild(shapeItem);
+      createShapeItemElement(shapeDef, shapesGrid);
     });
 
     categoryDiv.appendChild(shapesGrid);
 
-    // Toggle collapse/expand
     categoryTitle.addEventListener('click', () => {
       const isCollapsed = shapesGrid.style.display === 'none';
       shapesGrid.style.display = isCollapsed ? 'grid' : 'none';
       const toggle = categoryTitle.querySelector('.category-toggle') as HTMLElement;
-      if (toggle) {
-        toggle.textContent = isCollapsed ? '▼' : '▶';
-      }
+      if (toggle) toggle.textContent = isCollapsed ? '▼' : '▶';
     });
 
     shapesContainer.appendChild(categoryDiv);
   });
+}
+
+function createShapeItemElement(shapeDef: ShapeDefinition, container: HTMLElement) {
+  const shapeItem = document.createElement('div');
+  shapeItem.className = `shape-item ${favorites.has(shapeDef.name) ? 'favorite' : ''}`;
+  shapeItem.title = shapeDef.label;
+  shapeItem.draggable = true;
+  shapeItem.dataset.shapeName = shapeDef.name;
+
+  try {
+    const icon = createShapeIcon(shapeDef);
+    shapeItem.appendChild(icon);
+
+    // Add favorite button
+    const favBtn = document.createElement('button');
+    favBtn.className = 'shape-favorite-btn';
+    favBtn.innerHTML = favorites.has(shapeDef.name) ? '★' : '☆';
+    favBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleFavorite(shapeDef.name);
+    });
+    shapeItem.appendChild(favBtn);
+  } catch (e) {
+    console.error('Error creating shape item:', shapeDef.name, e);
+    shapeItem.textContent = shapeDef.label;
+  }
+
+  shapeItem.addEventListener('dragstart', (e) => {
+    addToRecentlyUsed(shapeDef.name);
+    const data = { shape: shapeDef.name };
+    (e.dataTransfer as DataTransfer).effectAllowed = 'copy';
+    (e.dataTransfer as DataTransfer).setData('application/json', JSON.stringify(data));
+    shapeItem.classList.add('dragging');
+  });
+
+  shapeItem.addEventListener('dragend', () => {
+    shapeItem.classList.remove('dragging');
+  });
+
+  container.appendChild(shapeItem);
 }
 
 // Search functionality
