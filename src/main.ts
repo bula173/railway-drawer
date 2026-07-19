@@ -481,7 +481,6 @@ function buildShapeCategories() {
 function createShapeItemElement(shapeDef: ShapeDefinition, container: HTMLElement) {
   const shapeItem = document.createElement('div');
   shapeItem.className = `shape-item ${favorites.has(shapeDef.name) ? 'favorite' : ''}`;
-  shapeItem.title = shapeDef.label;
   shapeItem.draggable = true;
   shapeItem.dataset.shapeName = shapeDef.name;
 
@@ -503,19 +502,86 @@ function createShapeItemElement(shapeDef: ShapeDefinition, container: HTMLElemen
     shapeItem.textContent = shapeDef.label;
   }
 
+  shapeItem.addEventListener('mouseenter', () => {
+    showShapeTooltip(shapeDef, shapeItem);
+  });
+
+  shapeItem.addEventListener('mouseleave', () => {
+    hideShapeTooltip();
+  });
+
   shapeItem.addEventListener('dragstart', (e) => {
     addToRecentlyUsed(shapeDef.name);
     const data = { shape: shapeDef.name };
     (e.dataTransfer as DataTransfer).effectAllowed = 'copy';
     (e.dataTransfer as DataTransfer).setData('application/json', JSON.stringify(data));
     shapeItem.classList.add('dragging');
+    showDragPreview(shapeDef, e as DragEvent);
   });
 
   shapeItem.addEventListener('dragend', () => {
     shapeItem.classList.remove('dragging');
+    hideDragPreview();
   });
 
   container.appendChild(shapeItem);
+}
+
+// Shape tooltip
+let tooltipElement: HTMLElement | null = null;
+
+function showShapeTooltip(shapeDef: ShapeDefinition, shapeItem: HTMLElement) {
+  hideShapeTooltip();
+
+  tooltipElement = document.createElement('div');
+  tooltipElement.className = 'shape-tooltip';
+  tooltipElement.innerHTML = `
+    <div class="tooltip-label">${shapeDef.label}</div>
+    <div class="tooltip-category">${shapeDef.category}</div>
+    <div class="tooltip-size">${shapeDef.width}×${shapeDef.height}px</div>
+  `;
+
+  document.body.appendChild(tooltipElement);
+
+  const rect = shapeItem.getBoundingClientRect();
+  tooltipElement.style.position = 'fixed';
+  tooltipElement.style.left = rect.right + 8 + 'px';
+  tooltipElement.style.top = rect.top + 'px';
+}
+
+function hideShapeTooltip() {
+  if (tooltipElement && document.body.contains(tooltipElement)) {
+    document.body.removeChild(tooltipElement);
+    tooltipElement = null;
+  }
+}
+
+// Drag preview
+let dragPreviewElement: HTMLElement | null = null;
+
+function showDragPreview(shapeDef: ShapeDefinition, dragEvent: DragEvent) {
+  dragPreviewElement = document.createElement('div');
+  dragPreviewElement.className = 'drag-preview';
+  dragPreviewElement.innerHTML = `
+    <div class="drag-preview-icon">
+      <svg width="40" height="40" viewBox="0 0 100 100">
+        <rect x="10" y="10" width="80" height="80" fill="${shapeDef.fillColor || '#fff'}" stroke="${shapeDef.strokeColor || '#000'}" stroke-width="2"/>
+      </svg>
+    </div>
+    <div class="drag-preview-label">${shapeDef.label}</div>
+  `;
+  document.body.appendChild(dragPreviewElement);
+
+  if (dragEvent.dataTransfer) {
+    dragEvent.dataTransfer.setDragImage(dragPreviewElement, 20, 20);
+  }
+}
+
+function hideDragPreview() {
+  if (dragPreviewElement && document.body.contains(dragPreviewElement)) {
+    document.body.removeChild(dragPreviewElement);
+    dragPreviewElement = null;
+  }
 }
 
 // Advanced search functionality
