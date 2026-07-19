@@ -8,26 +8,19 @@ import { ShapeDefinition } from './shapes-library';
 export function createShapeIcon(shape: ShapeDefinition): HTMLElement {
   const container = document.createElement('div');
   container.className = 'shape-icon-container';
-  container.style.width = '48px';
-  container.style.height = '48px';
-  container.style.display = 'flex';
-  container.style.alignItems = 'center';
-  container.style.justifyContent = 'center';
-  container.style.backgroundColor = '#f9f9f9';
-  container.style.borderRadius = '4px';
-  container.style.border = '1px solid #e0e0e0';
-  container.style.padding = '4px';
 
   const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-  svg.setAttribute('width', '40');
-  svg.setAttribute('height', '40');
-  svg.setAttribute('viewBox', '0 0 40 40');
+  svg.setAttribute('width', '32');
+  svg.setAttribute('height', '32');
+  svg.setAttribute('viewBox', '0 0 32 32');
   svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
   svg.style.display = 'block';
+  svg.style.width = '100%';
+  svg.style.height = '100%';
 
   const fill = shape.fillColor || '#ffffff';
   const stroke = shape.strokeColor || '#333333';
-  const strokeWidth = Math.max(0.5, (shape.strokeWidth || 1) * 0.75);
+  const strokeWidth = Math.max(1, Math.min(1.5, (shape.strokeWidth || 1)));
 
   try {
     switch (shape.shape) {
@@ -69,54 +62,58 @@ export function createShapeIcon(shape: ShapeDefinition): HTMLElement {
 
 function drawRectangle(svg: SVGSVGElement, fill: string, stroke: string, strokeWidth: number) {
   const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-  rect.setAttribute('x', '6');
-  rect.setAttribute('y', '8');
-  rect.setAttribute('width', '28');
-  rect.setAttribute('height', '24');
+  rect.setAttribute('x', '5');
+  rect.setAttribute('y', '7');
+  rect.setAttribute('width', '22');
+  rect.setAttribute('height', '18');
   rect.setAttribute('fill', fill);
   rect.setAttribute('stroke', stroke);
   rect.setAttribute('stroke-width', strokeWidth.toString());
-  rect.setAttribute('rx', '1');
+  rect.setAttribute('stroke-linejoin', 'miter');
+  rect.setAttribute('rx', '0');
   svg.appendChild(rect);
 }
 
 function drawEllipse(svg: SVGSVGElement, fill: string, stroke: string, strokeWidth: number) {
   const ellipse = document.createElementNS('http://www.w3.org/2000/svg', 'ellipse');
-  ellipse.setAttribute('cx', '20');
-  ellipse.setAttribute('cy', '20');
-  ellipse.setAttribute('rx', '14');
-  ellipse.setAttribute('ry', '12');
+  ellipse.setAttribute('cx', '16');
+  ellipse.setAttribute('cy', '16');
+  ellipse.setAttribute('rx', '10');
+  ellipse.setAttribute('ry', '9');
   ellipse.setAttribute('fill', fill);
   ellipse.setAttribute('stroke', stroke);
   ellipse.setAttribute('stroke-width', strokeWidth.toString());
+  ellipse.setAttribute('stroke-linejoin', 'miter');
   svg.appendChild(ellipse);
 }
 
 function drawDiamond(svg: SVGSVGElement, fill: string, stroke: string, strokeWidth: number) {
   const polygon = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
-  polygon.setAttribute('points', '20,4 34,20 20,36 6,20');
+  polygon.setAttribute('points', '16,3 28,16 16,29 4,16');
   polygon.setAttribute('fill', fill);
   polygon.setAttribute('stroke', stroke);
   polygon.setAttribute('stroke-width', strokeWidth.toString());
+  polygon.setAttribute('stroke-linejoin', 'miter');
   svg.appendChild(polygon);
 }
 
 function drawTriangle(svg: SVGSVGElement, fill: string, stroke: string, strokeWidth: number) {
   const polygon = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
-  polygon.setAttribute('points', '20,6 34,32 6,32');
+  polygon.setAttribute('points', '16,4 28,26 4,26');
   polygon.setAttribute('fill', fill);
   polygon.setAttribute('stroke', stroke);
   polygon.setAttribute('stroke-width', strokeWidth.toString());
+  polygon.setAttribute('stroke-linejoin', 'miter');
   svg.appendChild(polygon);
 }
 
 function drawCylinder(svg: SVGSVGElement, fill: string, stroke: string, strokeWidth: number) {
   // Top circle
   const top = document.createElementNS('http://www.w3.org/2000/svg', 'ellipse');
-  top.setAttribute('cx', '20');
-  top.setAttribute('cy', '10');
-  top.setAttribute('rx', '12');
-  top.setAttribute('ry', '5');
+  top.setAttribute('cx', '16');
+  top.setAttribute('cy', '8');
+  top.setAttribute('rx', '9');
+  top.setAttribute('ry', '4');
   top.setAttribute('fill', fill);
   top.setAttribute('stroke', stroke);
   top.setAttribute('stroke-width', strokeWidth.toString());
@@ -124,18 +121,19 @@ function drawCylinder(svg: SVGSVGElement, fill: string, stroke: string, strokeWi
 
   // Body
   const body = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-  body.setAttribute('d', 'M 8 10 L 8 30 Q 20 33 32 30 L 32 10');
+  body.setAttribute('d', 'M 7 8 L 7 24 Q 16 27 25 24 L 25 8');
   body.setAttribute('fill', fill);
   body.setAttribute('stroke', stroke);
   body.setAttribute('stroke-width', strokeWidth.toString());
+  body.setAttribute('stroke-linejoin', 'miter');
   svg.appendChild(body);
 
   // Bottom circle
   const bottom = document.createElementNS('http://www.w3.org/2000/svg', 'ellipse');
-  bottom.setAttribute('cx', '20');
-  bottom.setAttribute('cy', '30');
-  bottom.setAttribute('rx', '12');
-  bottom.setAttribute('ry', '5');
+  bottom.setAttribute('cx', '16');
+  bottom.setAttribute('cy', '24');
+  bottom.setAttribute('rx', '9');
+  bottom.setAttribute('ry', '4');
   bottom.setAttribute('fill', fill);
   bottom.setAttribute('stroke', stroke);
   bottom.setAttribute('stroke-width', strokeWidth.toString());
@@ -144,31 +142,33 @@ function drawCylinder(svg: SVGSVGElement, fill: string, stroke: string, strokeWi
 
 function drawCloud(svg: SVGSVGElement, fill: string, stroke: string, strokeWidth: number) {
   const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-  path.setAttribute('d', 'M 8 22 Q 6 16 12 14 Q 14 8 20 8 Q 26 8 28 14 Q 34 16 32 22 Q 34 28 28 30 L 12 30 Q 6 28 8 22 Z');
+  path.setAttribute('d', 'M 6 18 Q 4 13 9 11 Q 10 6 16 6 Q 21 6 23 11 Q 28 13 26 18 Q 28 23 23 25 L 9 25 Q 4 23 6 18 Z');
   path.setAttribute('fill', fill);
   path.setAttribute('stroke', stroke);
   path.setAttribute('stroke-width', strokeWidth.toString());
   path.setAttribute('stroke-linejoin', 'round');
+  path.setAttribute('stroke-linecap', 'round');
   svg.appendChild(path);
 }
 
 function drawHexagon(svg: SVGSVGElement, fill: string, stroke: string, strokeWidth: number) {
   const polygon = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
-  // Regular hexagon centered at 20,20
-  polygon.setAttribute('points', '20,4 34,12 34,28 20,36 6,28 6,12');
+  // Regular hexagon
+  polygon.setAttribute('points', '16,3 26,9 26,21 16,27 6,21 6,9');
   polygon.setAttribute('fill', fill);
   polygon.setAttribute('stroke', stroke);
   polygon.setAttribute('stroke-width', strokeWidth.toString());
+  polygon.setAttribute('stroke-linejoin', 'miter');
   svg.appendChild(polygon);
 }
 
 function drawDoubleEllipse(svg: SVGSVGElement, fill: string, stroke: string, strokeWidth: number) {
   // Outer ellipse
   const outer = document.createElementNS('http://www.w3.org/2000/svg', 'ellipse');
-  outer.setAttribute('cx', '20');
-  outer.setAttribute('cy', '20');
-  outer.setAttribute('rx', '14');
-  outer.setAttribute('ry', '12');
+  outer.setAttribute('cx', '16');
+  outer.setAttribute('cy', '16');
+  outer.setAttribute('rx', '11');
+  outer.setAttribute('ry', '10');
   outer.setAttribute('fill', 'none');
   outer.setAttribute('stroke', stroke);
   outer.setAttribute('stroke-width', strokeWidth.toString());
@@ -176,10 +176,10 @@ function drawDoubleEllipse(svg: SVGSVGElement, fill: string, stroke: string, str
 
   // Inner ellipse
   const inner = document.createElementNS('http://www.w3.org/2000/svg', 'ellipse');
-  inner.setAttribute('cx', '20');
-  inner.setAttribute('cy', '20');
-  inner.setAttribute('rx', '10');
-  inner.setAttribute('ry', '8');
+  inner.setAttribute('cx', '16');
+  inner.setAttribute('cy', '16');
+  inner.setAttribute('rx', '7');
+  inner.setAttribute('ry', '6');
   inner.setAttribute('fill', fill);
   inner.setAttribute('stroke', stroke);
   inner.setAttribute('stroke-width', strokeWidth.toString());
