@@ -114,6 +114,29 @@ body {
   color: #0066cc;
 }
 
+.toolbar-select {
+  padding: 4px 8px;
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+  background: #ffffff;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  max-width: 80px;
+  color: #333;
+}
+
+.toolbar-select:hover {
+  border-color: #0066cc;
+  background: #f5faff;
+}
+
+.toolbar-select:focus {
+  outline: none;
+  border-color: #0066cc;
+  box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.1);
+}
+
 .toolbar-btn {
   padding: 4px 10px;
   background: #ffffff;

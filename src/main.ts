@@ -230,6 +230,18 @@ featureToolbar.innerHTML = `
     <button class="toolbar-icon-btn" id="btn-align-right" title="Align Right">➡️</button>
   </div>
   <div class="toolbar-section">
+    <span class="toolbar-label">Grid</span>
+    <select id="grid-size-selector" class="toolbar-select" title="Grid Size">
+      <option value="5">5px</option>
+      <option value="10" selected>10px</option>
+      <option value="15">15px</option>
+      <option value="20">20px</option>
+      <option value="25">25px</option>
+      <option value="30">30px</option>
+    </select>
+    <button class="toolbar-icon-btn" id="btn-snap-toggle" title="Toggle Snap">🧲</button>
+  </div>
+  <div class="toolbar-section">
     <span class="toolbar-label">Layout</span>
     <button class="toolbar-icon-btn" id="btn-rulers" title="Toggle Rulers">📐</button>
     <button class="toolbar-icon-btn" id="btn-guides" title="Toggle Guides">📏</button>
@@ -952,6 +964,22 @@ document.getElementById('btn-templates')?.addEventListener('click', () => {
 
 document.getElementById('btn-find')?.addEventListener('click', () => {
   handleMenuAction('edit', 'find_replace');
+});
+
+// Grid size selector
+document.getElementById('grid-size-selector')?.addEventListener('change', (e) => {
+  const size = parseInt((e.target as HTMLSelectElement).value);
+  grid.setGridSize(size);
+  redrawGrid();
+  updateStatusBar('grid', `${size}px`);
+});
+
+// Snap toggle button
+document.getElementById('btn-snap-toggle')?.addEventListener('click', () => {
+  const currentSnap = grid.isSnapEnabled();
+  grid.setSnapEnabled(!currentSnap);
+  document.getElementById('btn-snap-toggle')?.classList.toggle('active', !currentSnap);
+  updateStatusBar('snap', !currentSnap ? 'ON' : 'OFF');
 });
 
 // Drag and drop shapes
