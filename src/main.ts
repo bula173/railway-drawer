@@ -326,6 +326,55 @@ const shapesContainer = document.createElement('div');
 shapesContainer.className = 'shapes-container';
 leftPanel.appendChild(shapesContainer);
 
+// More Shapes button
+const moreShapesBtn = document.createElement('button');
+moreShapesBtn.className = 'more-shapes-btn';
+moreShapesBtn.innerHTML = '+ More Shapes';
+moreShapesBtn.addEventListener('click', () => {
+  const menu = document.createElement('div');
+  menu.className = 'context-menu stencil-menu';
+  menu.style.position = 'fixed';
+  menu.style.bottom = '60px';
+  menu.style.left = '10px';
+  menu.style.zIndex = '10000';
+  menu.style.minWidth = '200px';
+
+  const stencils = ['aws', 'azure', 'gcp', 'cisco', 'kubernetes'];
+  stencils.forEach((stencil) => {
+    const item = document.createElement('div');
+    item.className = 'menu-option';
+    item.textContent = stencil.charAt(0).toUpperCase() + stencil.slice(1);
+    item.addEventListener('click', async () => {
+      await handleLoadStencil(stencil);
+      if (document.body.contains(menu)) {
+        document.body.removeChild(menu);
+      }
+    });
+    menu.appendChild(item);
+  });
+
+  document.body.appendChild(menu);
+
+  // Close menu on outside click
+  const closeMenu = () => {
+    if (document.body.contains(menu)) {
+      document.body.removeChild(menu);
+    }
+    document.removeEventListener('click', closeMenuListener);
+  };
+
+  setTimeout(() => {
+    document.addEventListener('click', closeMenuListener);
+  }, 0);
+
+  const closeMenuListener = (e: Event) => {
+    if (!menu.contains(e.target as Node) && !moreShapesBtn.contains(e.target as Node)) {
+      closeMenu();
+    }
+  };
+});
+leftPanel.appendChild(moreShapesBtn);
+
 // Track loaded stencil categories for styling
 let stencilCategories = new Set<string>();
 

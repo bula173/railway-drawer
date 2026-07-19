@@ -196,6 +196,39 @@ body {
   padding: 0 8px 8px 8px;
 }
 
+/* More Shapes Button */
+.more-shapes-btn {
+  width: calc(100% - 16px);
+  margin: 8px;
+  padding: 10px 12px;
+  background: #e8f4ff;
+  border: 1px solid #0066cc;
+  border-radius: 4px;
+  color: #0066cc;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.more-shapes-btn:hover {
+  background: #d9ecff;
+  border-color: #0052a3;
+}
+
+.more-shapes-btn:active {
+  background: #c9e3ff;
+}
+
+/* Stencil menu styling */
+.stencil-menu {
+  background: #ffffff;
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
 /* Shape category */
 .shape-category {
   margin-bottom: 14px;
@@ -258,23 +291,29 @@ body {
 /* Shapes grid */
 .shapes-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 6px;
-  margin-top: 6px;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 4px;
+  margin-top: 4px;
   padding: 0;
   transition: opacity 0.2s;
 }
 
 /* Responsive grid for smaller panels */
+@media (max-width: 350px) {
+  .shapes-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
 @media (max-width: 300px) {
   .shapes-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
 @media (max-width: 240px) {
   .shapes-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -290,18 +329,18 @@ body {
 }
 
 .shape-item {
-  padding: 8px 4px;
+  padding: 6px 3px;
   background: #ffffff;
   border: 1px solid #e8e8e8;
-  border-radius: 3px;
+  border-radius: 2px;
   cursor: grab;
-  transition: all 0.15s ease;
+  transition: all 0.12s ease;
   user-select: none;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2px;
-  min-height: 60px;
+  gap: 1px;
+  min-height: 50px;
   justify-content: center;
   position: relative;
   aspect-ratio: 1;
@@ -437,8 +476,8 @@ body {
 /* Shape icon container */
 .shape-icon-container {
   flex-shrink: 0;
-  width: 35px;
-  height: 35px;
+  width: 28px;
+  height: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
