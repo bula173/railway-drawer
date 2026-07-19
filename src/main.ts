@@ -2,7 +2,7 @@ import '@maxgraph/core/css/common.css';
 import './style.css';
 import { Editor, Cell } from '@maxgraph/core';
 import configXml from './config/railwayConfig.xml?raw';
-import { searchShapes, getShapeByName, SHAPES_LIBRARY, loadStencils, ShapeDefinition } from './shapes/shapes-library';
+import { getShapeByName, SHAPES_LIBRARY, loadStencils, ShapeDefinition } from './shapes/shapes-library';
 import { createShapeIcon } from './shapes/shape-renderer';
 import { registerShapes } from './shapes/shape-registration';
 import { loadDrawioFile, mergeShapeLibraries } from './drawio-importer';
@@ -518,9 +518,9 @@ function createShapeItemElement(shapeDef: ShapeDefinition, container: HTMLElemen
   container.appendChild(shapeItem);
 }
 
-// Search functionality
+// Advanced search functionality
 searchBox.addEventListener('input', (e) => {
-  const query = (e.target as HTMLInputElement).value.trim();
+  const query = (e.target as HTMLInputElement).value.trim().toLowerCase();
 
   if (query === '') {
     buildShapeCategories();
@@ -528,48 +528,63 @@ searchBox.addEventListener('input', (e) => {
   }
 
   shapesContainer.innerHTML = '';
-  const results = searchShapes(query);
+
+  // Enhanced search: search by name, label, and category
+  const results = importedShapes.filter((shape) => {
+    const name = shape.name.toLowerCase();
+    const label = shape.label.toLowerCase();
+    const category = shape.category.toLowerCase();
+    return (
+      name.includes(query) ||
+      label.includes(query) ||
+      category.includes(query) ||
+      // Fuzzy match: match words separately
+      query.split(' ').every((q) =>
+        name.includes(q) || label.includes(q) || category.includes(q)
+      )
+    );
+  });
 
   if (results.length === 0) {
-    shapesContainer.innerHTML = '<p class="no-results">No shapes found</p>';
+    shapesContainer.innerHTML = '<p class="no-results">No shapes found for "' + query + '"</p>';
     return;
   }
 
-  const resultsDiv = document.createElement('div');
-  resultsDiv.className = 'shapes-grid';
-
-  results.forEach((shapeDef) => {
-    const shapeItem = document.createElement('div');
-    shapeItem.className = 'shape-item';
-    shapeItem.title = shapeDef.label;
-    shapeItem.draggable = true;
-    shapeItem.dataset.shapeName = shapeDef.name;
-
-    try {
-      // Create and add shape icon
-      const icon = createShapeIcon(shapeDef);
-      shapeItem.appendChild(icon);
-
-      // Add label with category
-      const label = document.createElement('div');
-      label.className = 'shape-label';
-      label.textContent = `${shapeDef.label}`;
-      shapeItem.appendChild(label);
-    } catch (e) {
-      console.error('Error creating search result:', shapeDef.name, e);
-      shapeItem.textContent = shapeDef.label;
+  // Group results by category
+  const groupedResults = new Map<string, ShapeDefinition[]>();
+  results.forEach((shape) => {
+    if (!groupedResults.has(shape.category)) {
+      groupedResults.set(shape.category, []);
     }
-
-    shapeItem.addEventListener('dragstart', (e) => {
-      const data = { shape: shapeDef.name };
-      (e.dataTransfer as DataTransfer).effectAllowed = 'copy';
-      (e.dataTransfer as DataTransfer).setData('application/json', JSON.stringify(data));
-    });
-
-    resultsDiv.appendChild(shapeItem);
+    groupedResults.get(shape.category)!.push(shape);
   });
 
-  shapesContainer.appendChild(resultsDiv);
+  // Display grouped results
+  groupedResults.forEach((shapes, category) => {
+    const categoryDiv = document.createElement('div');
+    categoryDiv.className = 'shape-category search-result-category';
+
+    const categoryTitle = document.createElement('div');
+    categoryTitle.className = 'category-title';
+    categoryTitle.innerHTML = `<span class="category-toggle">▼</span> ${category}`;
+    categoryDiv.appendChild(categoryTitle);
+
+    const resultsGrid = document.createElement('div');
+    resultsGrid.className = 'shapes-grid';
+
+    shapes.forEach((shapeDef) => {
+      createShapeItemElement(shapeDef, resultsGrid);
+    });
+
+    categoryDiv.appendChild(resultsGrid);
+    shapesContainer.appendChild(categoryDiv);
+  });
+
+  // Show result count
+  const resultCount = document.createElement('div');
+  resultCount.className = 'search-result-count';
+  resultCount.textContent = `Found ${results.length} shape${results.length !== 1 ? 's' : ''}`;
+  shapesContainer.insertBefore(resultCount, shapesContainer.firstChild);
 });
 
 buildShapeCategories();
