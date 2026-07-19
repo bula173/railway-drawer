@@ -215,6 +215,33 @@ toolbarButtons.forEach(({ id, label, title, style, active }) => {
 });
 container.appendChild(topToolbar);
 
+// Feature toolbar
+const featureToolbar = document.createElement('div');
+featureToolbar.className = 'feature-toolbar';
+featureToolbar.innerHTML = `
+  <div class="toolbar-section">
+    <span class="toolbar-label">Colors</span>
+    <button class="toolbar-icon-btn" id="btn-color-palette" title="Color Palette">🎨</button>
+  </div>
+  <div class="toolbar-section">
+    <span class="toolbar-label">Alignment</span>
+    <button class="toolbar-icon-btn" id="btn-align-left" title="Align Left">⬅️</button>
+    <button class="toolbar-icon-btn" id="btn-align-center" title="Align Center">⬆️</button>
+    <button class="toolbar-icon-btn" id="btn-align-right" title="Align Right">➡️</button>
+  </div>
+  <div class="toolbar-section">
+    <span class="toolbar-label">Layout</span>
+    <button class="toolbar-icon-btn" id="btn-rulers" title="Toggle Rulers">📐</button>
+    <button class="toolbar-icon-btn" id="btn-guides" title="Toggle Guides">📏</button>
+  </div>
+  <div class="toolbar-section">
+    <span class="toolbar-label">Tools</span>
+    <button class="toolbar-icon-btn" id="btn-templates" title="Templates">📋</button>
+    <button class="toolbar-icon-btn" id="btn-find" title="Find & Replace (Ctrl+H)">🔍</button>
+  </div>
+`;
+container.appendChild(featureToolbar);
+
 // Tab bar
 const tabBar = document.createElement('div');
 tabBar.className = 'tab-bar';
@@ -462,49 +489,124 @@ if (editor.graph.view?.canvas && !svg.contains(editor.graph.view.canvas as Node)
 
 workspace.appendChild(canvasContainer);
 
-// Right panel - Properties
+// Right panel - Tabbed interface
 const rightPanel = document.createElement('div');
 rightPanel.className = 'right-panel';
 
-const formatTitle = document.createElement('div');
-formatTitle.className = 'panel-title';
-formatTitle.textContent = 'Properties';
-rightPanel.appendChild(formatTitle);
+const panelTabs = document.createElement('div');
+panelTabs.className = 'panel-tabs';
 
+const tabs = ['Properties', 'Layers', 'Comments', 'History', 'Animations'];
+const tabContents: { [key: string]: HTMLElement } = {};
+
+tabs.forEach((tabName, index) => {
+  const tabBtn = document.createElement('button');
+  tabBtn.className = `panel-tab-btn ${index === 0 ? 'active' : ''}`;
+  tabBtn.textContent = tabName;
+  tabBtn.addEventListener('click', () => {
+    // Update active tab button
+    document.querySelectorAll('.panel-tab-btn').forEach((btn) => {
+      btn.classList.remove('active');
+    });
+    tabBtn.classList.add('active');
+
+    // Update active content
+    Object.values(tabContents).forEach((content) => {
+      content.classList.remove('active');
+    });
+    tabContents[tabName].classList.add('active');
+  });
+  panelTabs.appendChild(tabBtn);
+
+  // Create tab content
+  const content = document.createElement('div');
+  content.className = `panel-tab-content ${index === 0 ? 'active' : ''}`;
+  tabContents[tabName] = content;
+});
+
+rightPanel.appendChild(panelTabs);
+
+// Properties tab
 const propertyContent = document.createElement('div');
 propertyContent.id = 'property-content';
-propertyContent.className = 'property-content';
+propertyContent.className = 'format-content';
 propertyContent.innerHTML = '<p style="color: #999; font-size: 12px;">Click element to edit</p>';
-rightPanel.appendChild(propertyContent);
+tabContents['Properties'].appendChild(propertyContent);
+rightPanel.appendChild(tabContents['Properties']);
 
-// Layers section
-const layersTitle = document.createElement('div');
-layersTitle.className = 'panel-title';
-layersTitle.textContent = 'Layers';
-rightPanel.appendChild(layersTitle);
-
+// Layers tab
+const layersContent = document.createElement('div');
 const layersList = document.createElement('div');
 layersList.id = 'layers-list';
 layersList.className = 'layers-list';
-rightPanel.appendChild(layersList);
+layersContent.appendChild(layersList);
 
-// Layer controls
 const layerControls = document.createElement('div');
 layerControls.className = 'layer-controls';
 layerControls.innerHTML = `
   <button id="btn-layer-show-all" class="layer-btn" title="Show All">👁️</button>
   <button id="btn-layer-hide-all" class="layer-btn" title="Hide All">🚫</button>
 `;
-rightPanel.appendChild(layerControls);
+layersContent.appendChild(layerControls);
+tabContents['Layers'].appendChild(layersContent);
+rightPanel.appendChild(tabContents['Layers']);
+
+// Comments tab
+const commentsContent = document.createElement('div');
+commentsContent.id = 'comments-content';
+commentsContent.innerHTML = '<p style="color: #999; font-size: 12px;">Select a shape to add comments</p>';
+tabContents['Comments'].appendChild(commentsContent);
+rightPanel.appendChild(tabContents['Comments']);
+
+// History tab
+const historyContent = document.createElement('div');
+historyContent.id = 'history-content';
+historyContent.innerHTML = '<p style="color: #999; font-size: 12px;">Version snapshots will appear here</p>';
+tabContents['History'].appendChild(historyContent);
+rightPanel.appendChild(tabContents['History']);
+
+// Animations tab
+const animationsContent = document.createElement('div');
+animationsContent.id = 'animations-content';
+animationsContent.innerHTML = '<p style="color: #999; font-size: 12px;">Select a shape to add animations</p>';
+tabContents['Animations'].appendChild(animationsContent);
+rightPanel.appendChild(tabContents['Animations']);
 
 workspace.appendChild(rightPanel);
 
-// Status bar
+// Enhanced status bar
 const statusBar = document.createElement('div');
 statusBar.id = 'status-bar';
 statusBar.className = 'status-bar';
-statusBar.textContent = 'Ready';
+statusBar.innerHTML = `
+  <div class="status-item">
+    <span class="status-label">Grid:</span>
+    <span class="status-value" id="status-grid">10px</span>
+  </div>
+  <div class="status-item">
+    <span class="status-label">Snap:</span>
+    <span class="status-value" id="status-snap">ON</span>
+  </div>
+  <div class="status-item">
+    <span class="status-label">Zoom:</span>
+    <span class="status-value" id="status-zoom">100%</span>
+  </div>
+  <div class="status-item">
+    <span class="status-label">Selected:</span>
+    <span class="status-value" id="status-selected">0</span>
+  </div>
+  <div class="status-item">
+    <span class="status-label">Pos:</span>
+    <span class="status-value" id="status-pos">-</span>
+  </div>
+`;
 container.appendChild(statusBar);
+
+// Helper to update status items
+const updateStatusBar = (item: string, value: string) => {
+  const element = document.getElementById(`status-${item}`);
+  if (element) element.textContent = value;
+};
 
 // ============= EVENT HANDLERS =============
 
@@ -555,7 +657,52 @@ document.getElementById('btn-grid')?.addEventListener('click', () => {
 document.getElementById('btn-snap')?.addEventListener('click', () => {
   grid.setSnapEnabled(!grid.isSnapEnabled());
   document.getElementById('btn-snap')?.classList.toggle('active', grid.isSnapEnabled());
-  statusBar.textContent = `Snap ${grid.isSnapEnabled() ? 'enabled' : 'disabled'}`;
+  updateStatusBar('snap', grid.isSnapEnabled() ? 'ON' : 'OFF');
+});
+
+// Feature toolbar handlers
+document.getElementById('btn-color-palette')?.addEventListener('click', () => {
+  handleMenuAction('format', 'color_palette');
+});
+
+document.getElementById('btn-align-left')?.addEventListener('click', () => {
+  const cells = selectionManager.getSelectedCells();
+  if (cells.length > 0) {
+    alignmentTools.alignLeft(cells);
+    updateStatusBar('selected', cells.length.toString());
+  }
+});
+
+document.getElementById('btn-align-center')?.addEventListener('click', () => {
+  const cells = selectionManager.getSelectedCells();
+  if (cells.length > 0) {
+    alignmentTools.alignHCenter(cells);
+    updateStatusBar('selected', cells.length.toString());
+  }
+});
+
+document.getElementById('btn-align-right')?.addEventListener('click', () => {
+  const cells = selectionManager.getSelectedCells();
+  if (cells.length > 0) {
+    alignmentTools.alignRight(cells);
+    updateStatusBar('selected', cells.length.toString());
+  }
+});
+
+document.getElementById('btn-rulers')?.addEventListener('click', () => {
+  handleMenuAction('view', 'rulers');
+});
+
+document.getElementById('btn-guides')?.addEventListener('click', () => {
+  handleMenuAction('view', 'guides');
+});
+
+document.getElementById('btn-templates')?.addEventListener('click', () => {
+  handleMenuAction('file', 'templates');
+});
+
+document.getElementById('btn-find')?.addEventListener('click', () => {
+  handleMenuAction('edit', 'find_replace');
 });
 
 // Drag and drop shapes
@@ -614,8 +761,18 @@ editor.graph.getSelectionModel().addListener('change', (_sender: any, _evt: any)
   selectedCell = selectedCells.length > 0 ? selectedCells[0] : null;
   updateProperties();
   updateLayers();
-  statusBar.textContent = `Selected: ${selectedCells.length} shape(s)`;
+  updateStatusBar('selected', selectedCells.length.toString());
 });
+
+// Update zoom and grid status on scale change
+editor.graph.view.addListener('scale', () => {
+  const scale = Math.round(editor.graph.view.scale * 100);
+  updateStatusBar('zoom', `${scale}%`);
+});
+
+// Update grid and snap status
+updateStatusBar('grid', `${grid.getGridSize()}px`);
+updateStatusBar('snap', grid.isSnapEnabled() ? 'ON' : 'OFF');
 
 // Connector tool with click to activate
 editor.graph.addListener('cellClicked', (_sender: any, evt: any) => {
