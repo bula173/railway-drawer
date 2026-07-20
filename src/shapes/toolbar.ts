@@ -1,6 +1,5 @@
 import { Cell, Geometry } from '@maxgraph/core';
 import { ShapeRegistry, ShapeConfig } from './registry';
-import { objectToStyleString } from '../utils/styleUtils';
 
 export class ShapeToolbar {
   private container: HTMLElement;
@@ -39,8 +38,7 @@ export class ShapeToolbar {
   }
 
   private createShapeItem(shape: ShapeConfig): HTMLElement {
-    const styleStr = objectToStyleString(shape.style);
-    const prototype = new Cell(shape.label, new Geometry(0, 0, shape.width, shape.height), styleStr as any);
+    const prototype = new Cell(shape.label, new Geometry(0, 0, shape.width, shape.height), shape.style as any);
     prototype.setVertex(true);
 
     const item = document.createElement('div');

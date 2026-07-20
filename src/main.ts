@@ -1,9 +1,7 @@
 import '@maxgraph/core/css/common.css';
 import './style.css';
-import { Cell, Geometry } from '@maxgraph/core';
 import { registerShapes, shapeRegistry, ShapeToolbar } from './shapes';
 import { TabManager } from './ui/tabs';
-import { objectToStyleString } from './utils/styleUtils';
 
 // Register built-in shapes
 registerShapes();
@@ -31,22 +29,21 @@ graphContainer.addEventListener('drop', (evt) => {
     // Convert to graph coordinates
     const pt = activeTab.graph.getPointForEvent(evt as any);
 
-    // Convert style object to maxGraph style string
-    const styleStr = objectToStyleString(shape.style);
-
-    // Create cell with proper style string
-    const prototype = new Cell(shape.label, new Geometry(0, 0, shape.width, shape.height), styleStr as any);
-    prototype.setVertex(true);
-
-    const cellToImport = prototype.clone();
-    if (cellToImport.geometry) {
-      cellToImport.geometry.x = pt.x - shape.width / 2;
-      cellToImport.geometry.y = pt.y - shape.height / 2;
-    }
+    // Create cell with style object (not string)
+    const styleObj = shape.style as any;
 
     activeTab.graph.batchUpdate(() => {
-      const cells = activeTab.graph.importCells([cellToImport], 0, 0);
-      activeTab.graph.setSelectionCells(cells);
+      const cell = activeTab.graph.insertVertex(
+        activeTab.graph.getDefaultParent(),
+        null,
+        shape.label,
+        pt.x - shape.width / 2,
+        pt.y - shape.height / 2,
+        shape.width,
+        shape.height,
+        styleObj
+      );
+      activeTab.graph.setSelectionCells([cell]);
     });
   }
 }, false);
