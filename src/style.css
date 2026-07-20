@@ -328,3 +328,79 @@ svg.mxGraph .mxHandle {
   stroke: #ffffff !important;
   stroke-width: 1 !important;
 }
+
+/* Tabs Bar */
+#tabs-container {
+  display: flex;
+  gap: 4px;
+  padding: 8px;
+  border-top: 1px solid #e0e0e0;
+  background: #fafafa;
+  overflow-x: auto;
+  flex-shrink: 0;
+}
+
+.tab-button {
+  padding: 6px 12px;
+  background: #f0f0f0;
+  border: 1px solid #d0d0d0;
+  border-radius: 0 0 3px 3px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #333;
+  white-space: nowrap;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tab-button:hover {
+  background: #f5f5f5;
+  border-color: #b0b0b0;
+}
+
+.tab-button.active {
+  background: #ffffff;
+  border: 1px solid #0066cc;
+  border-top: 1px solid #d0d0d0;
+}
+
+.tab-label {
+  margin-right: 8px;
+}
+
+.tab-close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #666;
+  padding: 0 4px;
+  margin-left: 4px;
+  transition: color 0.2s;
+}
+
+.tab-close-btn:hover {
+  color: #333;
+}
+
+.tab-new-btn {
+  padding: 6px 12px;
+  background: #f0f0f0;
+  border: 1px solid #d0d0d0;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #666;
+  transition: all 0.2s;
+}
+
+.tab-new-btn:hover {
+  background: #e8f4f9;
+  border-color: #0066cc;
+}
+
+.tab-new-btn:active {
+  background: #d0e8f5;
+}

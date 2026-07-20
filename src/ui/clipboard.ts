@@ -1,0 +1,65 @@
+import { Graph } from '@maxgraph/core';
+
+export class ClipboardController {
+  private graph: Graph;
+  private clipboard: any[] = [];
+
+  constructor(graph: Graph) {
+    this.graph = graph;
+    this.setupKeyboardShortcuts();
+  }
+
+  private setupKeyboardShortcuts() {
+    document.addEventListener('keydown', (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'c') {
+        e.preventDefault();
+        this.copy();
+      }
+      if ((e.ctrlKey || e.metaKey) && e.key === 'x') {
+        e.preventDefault();
+        this.cut();
+      }
+      if ((e.ctrlKey || e.metaKey) && e.key === 'v') {
+        e.preventDefault();
+        this.paste();
+      }
+    });
+  }
+
+  copy() {
+    const cells = this.graph.getSelectionCells();
+    if (cells.length === 0) return;
+    this.clipboard = cells.map((cell) => cell.clone());
+    console.log('[Clipboard] Copied', cells.length, 'cell(s)');
+  }
+
+  cut() {
+    const cells = this.graph.getSelectionCells();
+    if (cells.length === 0) return;
+    this.clipboard = cells.map((cell) => cell.clone());
+    this.graph.batchUpdate(() => {
+      this.graph.removeCells(cells);
+    });
+    console.log('[Clipboard] Cut', cells.length, 'cell(s)');
+  }
+
+  paste() {
+    if (this.clipboard.length === 0) return;
+
+    const cells = this.clipboard.map((cell) => {
+      const cloned = cell.clone();
+      if (cloned.geometry) {
+        cloned.geometry.x += 20;
+        cloned.geometry.y += 20;
+      }
+      return cloned;
+    });
+
+    this.graph.batchUpdate(() => {
+      const imported = this.graph.importCells(cells, 0, 0);
+      this.graph.setSelectionCells(imported);
+    });
+
+    console.log('[Clipboard] Pasted', cells.length, 'cell(s)');
+  }
+}
