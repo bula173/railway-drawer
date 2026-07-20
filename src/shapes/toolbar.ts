@@ -5,6 +5,7 @@ export class ShapeToolbar {
   private container: HTMLElement;
   private registry: ShapeRegistry;
   private enabledGroups: Set<string> = new Set();
+  private collapsedGroups: Set<string> = new Set();
 
   constructor(toolbarContainer: HTMLElement, registry: ShapeRegistry) {
     this.container = toolbarContainer;
@@ -20,6 +21,15 @@ export class ShapeToolbar {
 
   setEnabledGroups(groups: Set<string>) {
     this.enabledGroups = groups;
+    this.buildToolbar();
+  }
+
+  private toggleGroup(groupName: string) {
+    if (this.collapsedGroups.has(groupName)) {
+      this.collapsedGroups.delete(groupName);
+    } else {
+      this.collapsedGroups.add(groupName);
+    }
     this.buildToolbar();
   }
 
@@ -40,21 +50,40 @@ export class ShapeToolbar {
       }
       isFirstGroup = false;
 
+      const isCollapsed = this.collapsedGroups.has(group);
+
+      const groupHeader = document.createElement('div');
+      groupHeader.className = 'shapes-group-header';
+
       const groupTitle = document.createElement('div');
       groupTitle.className = 'shapes-group-title';
-      groupTitle.textContent = group;
-      this.container.appendChild(groupTitle);
 
-      const shapes = this.registry.getShapesByGroup(group);
-      const shapeGroup = document.createElement('div');
-      shapeGroup.className = 'shapes-group-icons';
+      const toggleIcon = document.createElement('span');
+      toggleIcon.className = 'shapes-group-toggle';
+      toggleIcon.textContent = isCollapsed ? '▶' : '▼';
+      toggleIcon.style.marginRight = '4px';
+      toggleIcon.style.cursor = 'pointer';
 
-      shapes.forEach((shape: ShapeConfig) => {
-        const item = this.createShapeItem(shape);
-        shapeGroup.appendChild(item);
-      });
+      groupTitle.appendChild(toggleIcon);
+      groupTitle.appendChild(document.createTextNode(group));
 
-      this.container.appendChild(shapeGroup);
+      groupHeader.appendChild(groupTitle);
+      groupHeader.addEventListener('click', () => this.toggleGroup(group));
+
+      this.container.appendChild(groupHeader);
+
+      if (!isCollapsed) {
+        const shapes = this.registry.getShapesByGroup(group);
+        const shapeGroup = document.createElement('div');
+        shapeGroup.className = 'shapes-group-icons';
+
+        shapes.forEach((shape: ShapeConfig) => {
+          const item = this.createShapeItem(shape);
+          shapeGroup.appendChild(item);
+        });
+
+        this.container.appendChild(shapeGroup);
+      }
     });
   }
 

@@ -3,6 +3,7 @@ import './style.css';
 import { registerShapes, shapeRegistry, ShapeToolbar } from './shapes';
 import { TabManager } from './ui/tabs';
 import { StencilManager } from './ui/stencil-manager';
+import { LeftPanelTabs } from './ui/left-panel-tabs';
 
 // Register built-in shapes
 registerShapes();
@@ -60,13 +61,19 @@ graphContainer.addEventListener('dragleave', (evt) => {
   }
 }, false);
 
+// ============= LEFT PANEL TABS =============
+
+const leftPanelTabs = new LeftPanelTabs('leftpanel-container');
+leftPanelTabs.registerTabContent('shapes', 'shapes-container');
+leftPanelTabs.registerTabContent('stencils', 'stencils-container');
+
 // ============= SHAPES TOOLBAR & STENCILS =============
 
 const shapesContainer = document.getElementById('shapes-container')!;
 const shapeToolbar = new ShapeToolbar(shapesContainer, shapeRegistry);
 
-// Initialize stencil manager
-const stencilManager = new StencilManager('leftpanel-container');
+// Initialize stencil manager in stencils tab
+const stencilManager = new StencilManager('stencils-container');
 
 // Register all available stencil groups
 shapeRegistry.getGroups().forEach((group) => {

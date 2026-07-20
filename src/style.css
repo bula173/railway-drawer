@@ -302,6 +302,39 @@ body {
   outline-offset: -2px;
 }
 
+/* Left Panel Tabs */
+.left-panel-tabbar {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid #e0e0e0;
+  background: #f9f9f9;
+  flex-shrink: 0;
+}
+
+.left-panel-tab-btn {
+  flex: 1;
+  padding: 8px;
+  background: #f5f5f5;
+  border: none;
+  border-bottom: 2px solid #e0e0e0;
+  cursor: pointer;
+  font-size: 12px;
+  color: #666;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.left-panel-tab-btn:hover {
+  background: #efefef;
+  color: #333;
+}
+
+.left-panel-tab-btn.active {
+  background: #ffffff;
+  border-bottom: 2px solid #0066cc;
+  color: #0066cc;
+}
+
 /* Stencil Manager */
 .stencil-header {
   font-size: 11px;
@@ -345,6 +378,38 @@ body {
 
 .stencil-label {
   flex: 1;
+}
+
+/* Collapsible Shape Groups */
+.shapes-group-header {
+  display: flex;
+  align-items: center;
+  padding: 6px 8px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s;
+}
+
+.shapes-group-header:hover {
+  background: #f5f5f5;
+}
+
+.shapes-group-header .shapes-group-title {
+  display: flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  width: 100%;
+}
+
+.shapes-group-toggle {
+  display: inline-block;
+  width: 16px;
+  text-align: center;
+  font-size: 10px;
 }
 
 /* Selection handles (maxGraph) */
