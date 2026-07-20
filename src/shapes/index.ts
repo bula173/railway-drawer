@@ -1,5 +1,6 @@
 import { CellRenderer } from '@maxgraph/core';
 import { ArrowShape } from './arrow';
+import { LineShape } from './line';
 import { CloudShape } from './cloud';
 import { DocumentShape } from './document';
 import { DatabaseShape } from './database';
@@ -10,6 +11,7 @@ import { shapeRegistry } from './registry';
 
 export function registerShapes() {
   // Register custom shapes
+  CellRenderer.registerShape('customLine', LineShape as any);
   CellRenderer.registerShape('customArrow', ArrowShape as any);
   CellRenderer.registerShape('customCloud', CloudShape as any);
   CellRenderer.registerShape('customDocument', DocumentShape as any);
@@ -66,7 +68,7 @@ export function registerShapes() {
     group: 'Basic',
     width: 100,
     height: 10,
-    style: { shape: 'line', strokeColor: '#2c3e50', strokeWidth: 2 },
+    style: { shape: 'customLine', strokeColor: '#2c3e50', strokeWidth: 2 },
   });
 
   shapeRegistry.register({
@@ -178,7 +180,7 @@ export function registerShapes() {
     group: 'Arrows',
     width: 100,
     height: 60,
-    style: { filled: false, strokeColor: '#2c3e50', strokeWidth: 2 },
+    style: { shape: 'customArrow', filled: false, strokeColor: '#2c3e50', strokeWidth: 2 },
   });
 
   shapeRegistry.register({
@@ -188,7 +190,7 @@ export function registerShapes() {
     group: 'Arrows',
     width: 60,
     height: 100,
-    style: { filled: false, strokeColor: '#2c3e50', strokeWidth: 2 },
+    style: { shape: 'customArrow', filled: false, strokeColor: '#2c3e50', strokeWidth: 2 },
   });
 
   shapeRegistry.register({
@@ -198,7 +200,7 @@ export function registerShapes() {
     group: 'Arrows',
     width: 60,
     height: 100,
-    style: { filled: false, strokeColor: '#2c3e50', strokeWidth: 2 },
+    style: { shape: 'customArrow', filled: false, strokeColor: '#2c3e50', strokeWidth: 2 },
   });
 
   shapeRegistry.register({
@@ -208,7 +210,7 @@ export function registerShapes() {
     group: 'Arrows',
     width: 120,
     height: 60,
-    style: { filled: false, strokeColor: '#2c3e50', strokeWidth: 2 },
+    style: { shape: 'customArrow', filled: false, strokeColor: '#2c3e50', strokeWidth: 2 },
   });
 
   // ===== UML SHAPES =====
