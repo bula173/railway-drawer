@@ -7,6 +7,9 @@ import { DatabaseShape } from './database';
 import { TerminatorShape } from './terminator';
 import { ActorShape } from './actor';
 import { DataShape } from './data';
+import { BpmnEventShape } from './bpmn-event';
+import { BpmnTaskShape } from './bpmn-task';
+import { BpmnGatewayShape } from './bpmn-gateway';
 import { shapeRegistry } from './registry';
 
 export function registerShapes() {
@@ -19,6 +22,9 @@ export function registerShapes() {
   CellRenderer.registerShape('customTerminator', TerminatorShape as any);
   CellRenderer.registerShape('customActor', ActorShape as any);
   CellRenderer.registerShape('customData', DataShape as any);
+  CellRenderer.registerShape('customBpmnEvent', BpmnEventShape as any);
+  CellRenderer.registerShape('customBpmnTask', BpmnTaskShape as any);
+  CellRenderer.registerShape('customBpmnGateway', BpmnGatewayShape as any);
 
   // ===== BASIC SHAPES =====
   shapeRegistry.register({
@@ -434,6 +440,57 @@ export function registerShapes() {
     icon: '📱',
     group: 'Network',
     width: 60,
+    height: 100,
+    style: { fillColor: '#e2efda', strokeColor: '#70ad47' },
+  });
+
+  // ===== BPMN (Business Process Model and Notation) SHAPES =====
+  shapeRegistry.register({
+    id: 'bpmn_event',
+    label: 'Event',
+    icon: '●',
+    group: 'BPMN',
+    width: 60,
+    height: 60,
+    style: { shape: 'customBpmnEvent', fillColor: '#fff2cc', strokeColor: '#d6b656' },
+  });
+
+  shapeRegistry.register({
+    id: 'bpmn_task',
+    label: 'Task',
+    icon: '▬',
+    group: 'BPMN',
+    width: 120,
+    height: 80,
+    style: { shape: 'customBpmnTask', fillColor: '#b3e5fc', strokeColor: '#0288d1' },
+  });
+
+  shapeRegistry.register({
+    id: 'bpmn_gateway',
+    label: 'Gateway',
+    icon: '◇',
+    group: 'BPMN',
+    width: 80,
+    height: 80,
+    style: { shape: 'customBpmnGateway', fillColor: '#f8b88b', strokeColor: '#e67e22' },
+  });
+
+  shapeRegistry.register({
+    id: 'bpmn_subprocess',
+    label: 'Subprocess',
+    icon: '⬚',
+    group: 'BPMN',
+    width: 140,
+    height: 100,
+    style: { shape: 'customBpmnTask', fillColor: '#d4e6f1', strokeColor: '#3498db', dashed: true },
+  });
+
+  shapeRegistry.register({
+    id: 'bpmn_data_object',
+    label: 'Data Object',
+    icon: '📄',
+    group: 'BPMN',
+    width: 80,
     height: 100,
     style: { fillColor: '#e2efda', strokeColor: '#70ad47' },
   });
