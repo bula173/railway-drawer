@@ -6,7 +6,7 @@ export function registerShapes() {
   // Register custom arrow shape
   CellRenderer.registerShape('customArrow', ArrowShape as any);
 
-  // Register default shapes in registry
+  // ===== BASIC SHAPES =====
   shapeRegistry.register({
     id: 'rectangle',
     label: 'Rectangle',
@@ -48,6 +48,27 @@ export function registerShapes() {
   });
 
   shapeRegistry.register({
+    id: 'line',
+    label: 'Line',
+    icon: '─',
+    group: 'Basic',
+    width: 100,
+    height: 10,
+    style: { filled: false, strokeColor: '#2c3e50', strokeWidth: 2 },
+  });
+
+  shapeRegistry.register({
+    id: 'rounded_rectangle',
+    label: 'Rounded Rectangle',
+    icon: '⛶',
+    group: 'Basic',
+    width: 100,
+    height: 60,
+    style: { rounded: true, fillColor: '#a9d08e', strokeColor: '#70ad47' },
+  });
+
+  // ===== FLOWCHART SHAPES =====
+  shapeRegistry.register({
     id: 'process',
     label: 'Process',
     icon: '▬',
@@ -88,13 +109,319 @@ export function registerShapes() {
   });
 
   shapeRegistry.register({
-    id: 'arrow',
-    label: 'Arrow',
+    id: 'document',
+    label: 'Document',
+    icon: '📄',
+    group: 'Flowchart',
+    width: 80,
+    height: 100,
+    style: { fillColor: '#ffecb3', strokeColor: '#fbc02d' },
+  });
+
+  shapeRegistry.register({
+    id: 'data',
+    label: 'Data',
+    icon: '⬡',
+    group: 'Flowchart',
+    width: 100,
+    height: 60,
+    style: { fillColor: '#b3e5fc', strokeColor: '#0288d1' },
+  });
+
+  shapeRegistry.register({
+    id: 'terminator',
+    label: 'Terminator',
+    icon: '◠',
+    group: 'Flowchart',
+    width: 100,
+    height: 60,
+    style: { rounded: true, fillColor: '#ffcccc', strokeColor: '#cc0000' },
+  });
+
+  shapeRegistry.register({
+    id: 'loop',
+    label: 'Loop',
+    icon: '↻',
+    group: 'Flowchart',
+    width: 100,
+    height: 80,
+    style: { fillColor: '#ffe0b2', strokeColor: '#ff6f00' },
+  });
+
+  // ===== ARROWS & CONNECTORS =====
+  shapeRegistry.register({
+    id: 'arrow_right',
+    label: 'Arrow Right',
     icon: '→',
-    group: 'Connectors',
+    group: 'Arrows',
     width: 100,
     height: 60,
     style: { shape: 'customArrow', fillColor: 'none', strokeColor: '#2c3e50', strokeWidth: 2 },
+  });
+
+  shapeRegistry.register({
+    id: 'arrow_left',
+    label: 'Arrow Left',
+    icon: '←',
+    group: 'Arrows',
+    width: 100,
+    height: 60,
+    style: { fillColor: 'none', strokeColor: '#2c3e50', strokeWidth: 2 },
+  });
+
+  shapeRegistry.register({
+    id: 'arrow_up',
+    label: 'Arrow Up',
+    icon: '↑',
+    group: 'Arrows',
+    width: 60,
+    height: 100,
+    style: { fillColor: 'none', strokeColor: '#2c3e50', strokeWidth: 2 },
+  });
+
+  shapeRegistry.register({
+    id: 'arrow_down',
+    label: 'Arrow Down',
+    icon: '↓',
+    group: 'Arrows',
+    width: 60,
+    height: 100,
+    style: { fillColor: 'none', strokeColor: '#2c3e50', strokeWidth: 2 },
+  });
+
+  shapeRegistry.register({
+    id: 'double_arrow',
+    label: 'Double Arrow',
+    icon: '⇄',
+    group: 'Arrows',
+    width: 120,
+    height: 60,
+    style: { fillColor: 'none', strokeColor: '#2c3e50', strokeWidth: 2 },
+  });
+
+  // ===== UML SHAPES =====
+  shapeRegistry.register({
+    id: 'class',
+    label: 'Class',
+    icon: '◻',
+    group: 'UML',
+    width: 140,
+    height: 120,
+    style: { fillColor: '#e8f4f8', strokeColor: '#0c5aa0' },
+  });
+
+  shapeRegistry.register({
+    id: 'interface',
+    label: 'Interface',
+    icon: '⟪I⟫',
+    group: 'UML',
+    width: 140,
+    height: 100,
+    style: { fillColor: '#f0f0f0', strokeColor: '#666666' },
+  });
+
+  shapeRegistry.register({
+    id: 'actor',
+    label: 'Actor',
+    icon: '👤',
+    group: 'UML',
+    width: 60,
+    height: 100,
+    style: { fillColor: '#fff2cc', strokeColor: '#d6b656' },
+  });
+
+  shapeRegistry.register({
+    id: 'usecase',
+    label: 'Use Case',
+    icon: '◯',
+    group: 'UML',
+    width: 100,
+    height: 60,
+    style: { shape: 'ellipse', fillColor: '#e1d5e7', strokeColor: '#9673a6' },
+  });
+
+  shapeRegistry.register({
+    id: 'package',
+    label: 'Package',
+    icon: '📦',
+    group: 'UML',
+    width: 120,
+    height: 100,
+    style: { fillColor: '#fce4d6', strokeColor: '#c65911' },
+  });
+
+  // ===== CLOUD/AWS SHAPES =====
+  shapeRegistry.register({
+    id: 'cloud',
+    label: 'Cloud',
+    icon: '☁',
+    group: 'Cloud',
+    width: 120,
+    height: 80,
+    style: { shape: 'ellipse', fillColor: '#cfe2f3', strokeColor: '#4472c4' },
+  });
+
+  shapeRegistry.register({
+    id: 'database',
+    label: 'Database',
+    icon: '🗄',
+    group: 'Cloud',
+    width: 80,
+    height: 100,
+    style: { shape: 'cylinder', fillColor: '#e2efda', strokeColor: '#70ad47' },
+  });
+
+  shapeRegistry.register({
+    id: 'server',
+    label: 'Server',
+    icon: '🖥',
+    group: 'Cloud',
+    width: 100,
+    height: 80,
+    style: { fillColor: '#deebf7', strokeColor: '#2f5496' },
+  });
+
+  shapeRegistry.register({
+    id: 'bucket',
+    label: 'S3 Bucket',
+    icon: '🪣',
+    group: 'Cloud',
+    width: 80,
+    height: 80,
+    style: { fillColor: '#fff2cc', strokeColor: '#d6b656' },
+  });
+
+  shapeRegistry.register({
+    id: 'queue',
+    label: 'Queue',
+    icon: '█',
+    group: 'Cloud',
+    width: 80,
+    height: 60,
+    style: { fillColor: '#fce4d6', strokeColor: '#c65911' },
+  });
+
+  // ===== DATA FLOW DIAGRAM SHAPES =====
+  shapeRegistry.register({
+    id: 'process_dfd',
+    label: 'Process (DFD)',
+    icon: '◻',
+    group: 'DFD',
+    width: 80,
+    height: 60,
+    style: { fillColor: '#d5a6bd', strokeColor: '#76448a' },
+  });
+
+  shapeRegistry.register({
+    id: 'entity_dfd',
+    label: 'Entity (DFD)',
+    icon: '▭',
+    group: 'DFD',
+    width: 100,
+    height: 60,
+    style: { fillColor: '#b4c7e7', strokeColor: '#5b9bd5' },
+  });
+
+  shapeRegistry.register({
+    id: 'datastore_dfd',
+    label: 'Data Store (DFD)',
+    icon: '▬',
+    group: 'DFD',
+    width: 100,
+    height: 60,
+    style: { fillColor: '#c6e0b4', strokeColor: '#70ad47' },
+  });
+
+  // ===== C4 MODEL SHAPES =====
+  shapeRegistry.register({
+    id: 'person_c4',
+    label: 'Person (C4)',
+    icon: '👤',
+    group: 'C4',
+    width: 100,
+    height: 120,
+    style: { fillColor: '#08427b', strokeColor: '#08427b', fontColor: '#ffffff' },
+  });
+
+  shapeRegistry.register({
+    id: 'system_c4',
+    label: 'System (C4)',
+    icon: '▬',
+    group: 'C4',
+    width: 150,
+    height: 100,
+    style: { fillColor: '#1168bd', strokeColor: '#1168bd', fontColor: '#ffffff' },
+  });
+
+  shapeRegistry.register({
+    id: 'container_c4',
+    label: 'Container (C4)',
+    icon: '📦',
+    group: 'C4',
+    width: 140,
+    height: 100,
+    style: { fillColor: '#438dd5', strokeColor: '#1168bd', fontColor: '#ffffff' },
+  });
+
+  shapeRegistry.register({
+    id: 'component_c4',
+    label: 'Component (C4)',
+    icon: '⚙',
+    group: 'C4',
+    width: 120,
+    height: 80,
+    style: { fillColor: '#85bbd7', strokeColor: '#438dd5', fontColor: '#ffffff' },
+  });
+
+  // ===== NETWORK SHAPES =====
+  shapeRegistry.register({
+    id: 'router',
+    label: 'Router',
+    icon: '📡',
+    group: 'Network',
+    width: 80,
+    height: 60,
+    style: { fillColor: '#f4b084', strokeColor: '#ed7d31' },
+  });
+
+  shapeRegistry.register({
+    id: 'switch',
+    label: 'Switch',
+    icon: '⧉',
+    group: 'Network',
+    width: 80,
+    height: 60,
+    style: { fillColor: '#c5e0b4', strokeColor: '#70ad47' },
+  });
+
+  shapeRegistry.register({
+    id: 'firewall',
+    label: 'Firewall',
+    icon: '🛡',
+    group: 'Network',
+    width: 80,
+    height: 60,
+    style: { fillColor: '#f8cbad', strokeColor: '#ed7d31' },
+  });
+
+  shapeRegistry.register({
+    id: 'client',
+    label: 'Client',
+    icon: '💻',
+    group: 'Network',
+    width: 80,
+    height: 60,
+    style: { fillColor: '#b4c7e7', strokeColor: '#5b9bd5' },
+  });
+
+  shapeRegistry.register({
+    id: 'mobile_device',
+    label: 'Mobile Device',
+    icon: '📱',
+    group: 'Network',
+    width: 60,
+    height: 100,
+    style: { fillColor: '#e2efda', strokeColor: '#70ad47' },
   });
 }
 
