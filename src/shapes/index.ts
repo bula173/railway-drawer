@@ -1,10 +1,22 @@
 import { CellRenderer } from '@maxgraph/core';
 import { ArrowShape } from './arrow';
+import { CloudShape } from './cloud';
+import { DocumentShape } from './document';
+import { DatabaseShape } from './database';
+import { TerminatorShape } from './terminator';
+import { ActorShape } from './actor';
+import { DataShape } from './data';
 import { shapeRegistry } from './registry';
 
 export function registerShapes() {
-  // Register custom arrow shape
+  // Register custom shapes
   CellRenderer.registerShape('customArrow', ArrowShape as any);
+  CellRenderer.registerShape('customCloud', CloudShape as any);
+  CellRenderer.registerShape('customDocument', DocumentShape as any);
+  CellRenderer.registerShape('customDatabase', DatabaseShape as any);
+  CellRenderer.registerShape('customTerminator', TerminatorShape as any);
+  CellRenderer.registerShape('customActor', ActorShape as any);
+  CellRenderer.registerShape('customData', DataShape as any);
 
   // ===== BASIC SHAPES =====
   shapeRegistry.register({
@@ -115,7 +127,7 @@ export function registerShapes() {
     group: 'Flowchart',
     width: 80,
     height: 100,
-    style: { fillColor: '#ffecb3', strokeColor: '#fbc02d' },
+    style: { shape: 'customDocument', fillColor: '#ffecb3', strokeColor: '#fbc02d' },
   });
 
   shapeRegistry.register({
@@ -125,7 +137,7 @@ export function registerShapes() {
     group: 'Flowchart',
     width: 100,
     height: 60,
-    style: { fillColor: '#b3e5fc', strokeColor: '#0288d1' },
+    style: { shape: 'customData', fillColor: '#b3e5fc', strokeColor: '#0288d1' },
   });
 
   shapeRegistry.register({
@@ -135,7 +147,7 @@ export function registerShapes() {
     group: 'Flowchart',
     width: 100,
     height: 60,
-    style: { rounded: true, fillColor: '#ffcccc', strokeColor: '#cc0000' },
+    style: { shape: 'customTerminator', fillColor: '#ffcccc', strokeColor: '#cc0000' },
   });
 
   shapeRegistry.register({
@@ -227,7 +239,7 @@ export function registerShapes() {
     group: 'UML',
     width: 60,
     height: 100,
-    style: { fillColor: '#fff2cc', strokeColor: '#d6b656' },
+    style: { shape: 'customActor', fillColor: '#fff2cc', strokeColor: '#d6b656' },
   });
 
   shapeRegistry.register({
@@ -258,7 +270,7 @@ export function registerShapes() {
     group: 'Cloud',
     width: 120,
     height: 80,
-    style: { shape: 'ellipse', fillColor: '#cfe2f3', strokeColor: '#4472c4' },
+    style: { shape: 'customCloud', fillColor: '#cfe2f3', strokeColor: '#4472c4' },
   });
 
   shapeRegistry.register({
@@ -268,7 +280,7 @@ export function registerShapes() {
     group: 'Cloud',
     width: 80,
     height: 100,
-    style: { shape: 'cylinder', fillColor: '#e2efda', strokeColor: '#70ad47' },
+    style: { shape: 'customDatabase', fillColor: '#e2efda', strokeColor: '#70ad47' },
   });
 
   shapeRegistry.register({
