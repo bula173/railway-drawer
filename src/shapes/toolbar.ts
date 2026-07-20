@@ -14,6 +14,10 @@ export class ShapeToolbar {
     // Enable all groups by default
     this.registry.getGroups().forEach((group) => {
       this.enabledGroups.add(group);
+      // Collapse all groups except "Basic"
+      if (group !== 'Basic') {
+        this.collapsedGroups.add(group);
+      }
     });
 
     this.buildToolbar();
