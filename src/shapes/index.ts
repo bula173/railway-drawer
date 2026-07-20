@@ -10,6 +10,12 @@ import { DataShape } from './data';
 import { BpmnEventShape } from './bpmn-event';
 import { BpmnTaskShape } from './bpmn-task';
 import { BpmnGatewayShape } from './bpmn-gateway';
+import { UmlClassShape } from './uml-class';
+import { UmlUsecaseShape } from './uml-usecase';
+import { UmlStateShape, UmlInitialStateShape, UmlFinalStateShape } from './uml-state';
+import { UmlComponentShape, UmlArtifactShape } from './uml-component';
+import { UmlPackageShape, UmlObjectShape } from './uml-package';
+import { UmlActivityShape, UmlForkJoinShape, UmlDecisionShape, UmlMergeShape } from './uml-activity';
 import { shapeRegistry } from './registry';
 
 export function registerShapes() {
@@ -25,6 +31,21 @@ export function registerShapes() {
   CellRenderer.registerShape('customBpmnEvent', BpmnEventShape as any);
   CellRenderer.registerShape('customBpmnTask', BpmnTaskShape as any);
   CellRenderer.registerShape('customBpmnGateway', BpmnGatewayShape as any);
+
+  // Register UML shapes
+  CellRenderer.registerShape('customUmlClass', UmlClassShape as any);
+  CellRenderer.registerShape('customUmlUsecase', UmlUsecaseShape as any);
+  CellRenderer.registerShape('customUmlState', UmlStateShape as any);
+  CellRenderer.registerShape('customUmlInitialState', UmlInitialStateShape as any);
+  CellRenderer.registerShape('customUmlFinalState', UmlFinalStateShape as any);
+  CellRenderer.registerShape('customUmlComponent', UmlComponentShape as any);
+  CellRenderer.registerShape('customUmlArtifact', UmlArtifactShape as any);
+  CellRenderer.registerShape('customUmlPackage', UmlPackageShape as any);
+  CellRenderer.registerShape('customUmlObject', UmlObjectShape as any);
+  CellRenderer.registerShape('customUmlActivity', UmlActivityShape as any);
+  CellRenderer.registerShape('customUmlForkJoin', UmlForkJoinShape as any);
+  CellRenderer.registerShape('customUmlDecision', UmlDecisionShape as any);
+  CellRenderer.registerShape('customUmlMerge', UmlMergeShape as any);
 
   // ===== BASIC SHAPES =====
   shapeRegistry.register({
@@ -219,29 +240,70 @@ export function registerShapes() {
     style: { shape: 'customArrow', filled: false, strokeColor: '#2c3e50', strokeWidth: 2 },
   });
 
-  // ===== UML SHAPES =====
+  // ===== UML 2.5 SHAPES (CLASS DIAGRAMS) =====
   shapeRegistry.register({
-    id: 'class',
+    id: 'uml_class',
     label: 'Class',
     icon: '◻',
     group: 'UML',
     width: 140,
     height: 120,
-    style: { fillColor: '#e8f4f8', strokeColor: '#0c5aa0' },
+    style: { shape: 'customUmlClass', fillColor: '#e8f4f8', strokeColor: '#0c5aa0' },
   });
 
   shapeRegistry.register({
-    id: 'interface',
+    id: 'uml_interface',
     label: 'Interface',
     icon: '⟪I⟫',
     group: 'UML',
     width: 140,
     height: 100,
-    style: { fillColor: '#f0f0f0', strokeColor: '#666666' },
+    style: { shape: 'customUmlClass', fillColor: '#f0f0f0', strokeColor: '#666666' },
   });
 
   shapeRegistry.register({
-    id: 'actor',
+    id: 'uml_object',
+    label: 'Object',
+    icon: '🔹',
+    group: 'UML',
+    width: 140,
+    height: 80,
+    style: { shape: 'customUmlObject', fillColor: '#fff9e6', strokeColor: '#d4a500' },
+  });
+
+  shapeRegistry.register({
+    id: 'uml_component',
+    label: 'Component',
+    icon: '⚙',
+    group: 'UML',
+    width: 140,
+    height: 100,
+    style: { shape: 'customUmlComponent', fillColor: '#e8f4f8', strokeColor: '#0c5aa0' },
+  });
+
+  shapeRegistry.register({
+    id: 'uml_artifact',
+    label: 'Artifact',
+    icon: '📋',
+    group: 'UML',
+    width: 100,
+    height: 120,
+    style: { shape: 'customUmlArtifact', fillColor: '#fce4d6', strokeColor: '#c65911' },
+  });
+
+  shapeRegistry.register({
+    id: 'uml_package',
+    label: 'Package',
+    icon: '📦',
+    group: 'UML',
+    width: 120,
+    height: 100,
+    style: { shape: 'customUmlPackage', fillColor: '#fce4d6', strokeColor: '#c65911' },
+  });
+
+  // ===== UML 2.5 SHAPES (USE CASE DIAGRAMS) =====
+  shapeRegistry.register({
+    id: 'uml_actor',
     label: 'Actor',
     icon: '👤',
     group: 'UML',
@@ -251,23 +313,85 @@ export function registerShapes() {
   });
 
   shapeRegistry.register({
-    id: 'usecase',
+    id: 'uml_usecase',
     label: 'Use Case',
     icon: '◯',
     group: 'UML',
     width: 100,
     height: 60,
-    style: { shape: 'ellipse', fillColor: '#e1d5e7', strokeColor: '#9673a6' },
+    style: { shape: 'customUmlUsecase', fillColor: '#e1d5e7', strokeColor: '#9673a6' },
+  });
+
+  // ===== UML 2.5 SHAPES (STATE DIAGRAMS) =====
+  shapeRegistry.register({
+    id: 'uml_state',
+    label: 'State',
+    icon: '◐',
+    group: 'UML',
+    width: 100,
+    height: 80,
+    style: { shape: 'customUmlState', fillColor: '#b3e5fc', strokeColor: '#0288d1' },
   });
 
   shapeRegistry.register({
-    id: 'package',
-    label: 'Package',
-    icon: '📦',
+    id: 'uml_initial_state',
+    label: 'Initial State',
+    icon: '●',
+    group: 'UML',
+    width: 40,
+    height: 40,
+    style: { shape: 'customUmlInitialState', fillColor: '#000000', strokeColor: '#000000' },
+  });
+
+  shapeRegistry.register({
+    id: 'uml_final_state',
+    label: 'Final State',
+    icon: '◯●',
+    group: 'UML',
+    width: 40,
+    height: 40,
+    style: { shape: 'customUmlFinalState', fillColor: '#ffffff', strokeColor: '#000000' },
+  });
+
+  // ===== UML 2.5 SHAPES (ACTIVITY DIAGRAMS) =====
+  shapeRegistry.register({
+    id: 'uml_activity',
+    label: 'Activity',
+    icon: '▬',
     group: 'UML',
     width: 120,
-    height: 100,
-    style: { fillColor: '#fce4d6', strokeColor: '#c65911' },
+    height: 80,
+    style: { shape: 'customUmlActivity', fillColor: '#b3e5fc', strokeColor: '#0288d1' },
+  });
+
+  shapeRegistry.register({
+    id: 'uml_fork_join',
+    label: 'Fork/Join',
+    icon: '▮▮',
+    group: 'UML',
+    width: 120,
+    height: 20,
+    style: { shape: 'customUmlForkJoin', fillColor: 'none', strokeColor: '#000000', strokeWidth: 2 },
+  });
+
+  shapeRegistry.register({
+    id: 'uml_decision',
+    label: 'Decision',
+    icon: '◇',
+    group: 'UML',
+    width: 80,
+    height: 80,
+    style: { shape: 'customUmlDecision', fillColor: '#ffd966', strokeColor: '#f1c232' },
+  });
+
+  shapeRegistry.register({
+    id: 'uml_merge',
+    label: 'Merge',
+    icon: '◆',
+    group: 'UML',
+    width: 80,
+    height: 80,
+    style: { shape: 'customUmlMerge', fillColor: '#c5e1a5', strokeColor: '#9ccc65' },
   });
 
   // ===== CLOUD/AWS SHAPES =====
