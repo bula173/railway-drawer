@@ -3,6 +3,7 @@ import './style.css';
 import { Cell, Geometry } from '@maxgraph/core';
 import { registerShapes, shapeRegistry, ShapeToolbar } from './shapes';
 import { TabManager } from './ui/tabs';
+import { objectToStyleString } from './utils/styleUtils';
 
 // Register built-in shapes
 registerShapes();
@@ -30,8 +31,11 @@ graphContainer.addEventListener('drop', (evt) => {
     // Convert to graph coordinates
     const pt = activeTab.graph.getPointForEvent(evt as any);
 
-    // Create cell
-    const prototype = new Cell(shape.label, new Geometry(0, 0, shape.width, shape.height), shape.style);
+    // Convert style object to maxGraph style string
+    const styleStr = objectToStyleString(shape.style);
+
+    // Create cell with proper style string
+    const prototype = new Cell(shape.label, new Geometry(0, 0, shape.width, shape.height), styleStr as any);
     prototype.setVertex(true);
 
     const cellToImport = prototype.clone();
