@@ -8,41 +8,38 @@ export class ActorShape extends Shape {
   override paintVertexShape(c: any, x: number, y: number, w: number, h: number) {
     c.translate(x, y);
 
-    const headSize = w * 0.3;
-    const headX = w / 2 - headSize / 2;
-    const headY = h * 0.1;
+    const headSize = Math.min(w * 0.4, h * 0.25);
+    const headX = w * 0.5 - headSize * 0.5;
+    const headY = h * 0.05;
 
     const bodyStartY = headY + headSize;
-    const bodyHeight = h * 0.4;
-
-    const armStartY = bodyStartY + bodyHeight * 0.3;
-    const armLength = w * 0.35;
-
-    const legStartY = bodyStartY + bodyHeight;
-    const legHeight = h * 0.3;
+    const bodyMidY = bodyStartY + h * 0.2;
+    const legStartY = bodyMidY + h * 0.1;
 
     c.begin();
     c.ellipse(headX, headY, headSize, headSize);
     c.fillAndStroke();
 
+    c.setShadow(false);
+
     c.begin();
-    c.moveTo(w / 2, bodyStartY);
-    c.lineTo(w / 2, legStartY);
+    c.moveTo(w * 0.5, bodyStartY);
+    c.lineTo(w * 0.5, legStartY);
     c.stroke();
 
     c.begin();
-    c.moveTo(w / 2 - armLength, armStartY);
-    c.lineTo(w / 2 + armLength, armStartY);
+    c.moveTo(w * 0.2, bodyMidY);
+    c.lineTo(w * 0.8, bodyMidY);
     c.stroke();
 
     c.begin();
-    c.moveTo(w / 2, legStartY);
-    c.lineTo(w / 2 - w * 0.15, legStartY + legHeight);
+    c.moveTo(w * 0.5, legStartY);
+    c.lineTo(w * 0.35, h * 0.95);
     c.stroke();
 
     c.begin();
-    c.moveTo(w / 2, legStartY);
-    c.lineTo(w / 2 + w * 0.15, legStartY + legHeight);
+    c.moveTo(w * 0.5, legStartY);
+    c.lineTo(w * 0.65, h * 0.95);
     c.stroke();
   }
 }

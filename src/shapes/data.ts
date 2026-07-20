@@ -8,7 +8,7 @@ export class DataShape extends Shape {
   override paintVertexShape(c: any, x: number, y: number, w: number, h: number) {
     c.translate(x, y);
 
-    const skew = w * 0.2;
+    const skew = Math.min(w * 0.15, h * 0.2);
 
     c.begin();
     c.moveTo(skew, 0);

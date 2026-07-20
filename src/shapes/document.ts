@@ -8,18 +8,19 @@ export class DocumentShape extends Shape {
   override paintVertexShape(c: any, x: number, y: number, w: number, h: number) {
     c.translate(x, y);
 
-    const waviness = h * 0.15;
+    const dy = h * 0.1;
 
     c.begin();
     c.moveTo(0, 0);
     c.lineTo(w, 0);
-    c.lineTo(w, h - waviness);
+    c.lineTo(w, h - dy);
 
-    for (let i = 0; i < w; i += 10) {
-      c.quadTo(i + 5, h - waviness + 5, i + 10, h - waviness);
+    const step = w * 0.1;
+    for (let i = 0; i < w; i += step) {
+      c.quadTo(i + step * 0.5, h - dy + dy * 0.5, Math.min(i + step, w), h - dy);
     }
 
-    c.lineTo(0, h - waviness);
+    c.lineTo(0, h - dy);
     c.close();
     c.fillAndStroke();
   }
