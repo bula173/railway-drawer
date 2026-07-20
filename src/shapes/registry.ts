@@ -1,7 +1,8 @@
 export interface ShapeConfig {
   id: string;
   label: string;
-  icon: string;
+  icon?: string;
+  svgIcon?: string;
   group: string;
   width: number;
   height: number;
