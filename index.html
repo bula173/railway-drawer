@@ -5,9 +5,69 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Railway Drawer</title>
-    <script type="module" src="/src/main.ts"></script>
   </head>
   <body>
-    <div id="editor-container"></div>
+    <div id="app-container">
+      <!-- Menu Bar -->
+      <div id="menu-bar" class="menu-bar">
+        <button class="menu-item">File</button>
+        <button class="menu-item">Edit</button>
+        <button class="menu-item">View</button>
+        <button class="menu-item">Help</button>
+      </div>
+
+      <!-- Toolbar -->
+      <div id="toolbar-container" class="toolbar">
+        <div class="toolbar-section">
+          <span class="toolbar-label">Edit</span>
+          <button class="toolbar-btn" id="btn-undo" title="Undo">↺</button>
+          <button class="toolbar-btn" id="btn-redo" title="Redo">↻</button>
+        </div>
+        <div class="toolbar-section">
+          <span class="toolbar-label">View</span>
+          <button class="toolbar-btn" id="btn-zoom-in" title="Zoom In">🔍+</button>
+          <button class="toolbar-btn" id="btn-zoom-out" title="Zoom Out">🔍-</button>
+          <button class="toolbar-btn" id="btn-fit" title="Fit">⊡</button>
+          <button class="toolbar-btn" id="btn-reset-zoom" title="Reset Zoom">100%</button>
+        </div>
+      </div>
+
+      <!-- Main Workspace -->
+      <div id="workspace" class="workspace">
+        <!-- Left Panel -->
+        <div id="leftpanel-container" class="left-panel">
+          <div class="panel-header">Shapes</div>
+          <div id="shapes-container" class="panel-content"></div>
+        </div>
+
+        <!-- Graph Canvas -->
+        <div id="graph-container" class="canvas-container"></div>
+
+        <!-- Right Panel -->
+        <div id="rightpanel-container" class="right-panel">
+          <div class="panel-header">Properties</div>
+          <div id="property-content" class="panel-content">
+            <p style="color: #999; font-size: 12px; padding: 12px;">Click element to edit</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Status Bar -->
+      <div id="statusbar-container" class="status-bar">
+        <div class="status-message" id="status-message">Ready</div>
+        <div class="status-items">
+          <div class="status-item">
+            <span class="status-label">Zoom:</span>
+            <span class="status-value" id="status-zoom">100%</span>
+          </div>
+          <div class="status-item">
+            <span class="status-label">Selected:</span>
+            <span class="status-value" id="status-selected">0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
