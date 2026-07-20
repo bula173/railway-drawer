@@ -2,6 +2,7 @@ import '@maxgraph/core/css/common.css';
 import './style.css';
 import { registerShapes, shapeRegistry, ShapeToolbar } from './shapes';
 import { TabManager } from './ui/tabs';
+import { StencilManager } from './ui/stencil-manager';
 
 // Register built-in shapes
 registerShapes();
@@ -59,10 +60,28 @@ graphContainer.addEventListener('dragleave', (evt) => {
   }
 }, false);
 
-// ============= SHAPES TOOLBAR =============
+// ============= SHAPES TOOLBAR & STENCILS =============
 
 const shapesContainer = document.getElementById('shapes-container')!;
-// @ts-ignore
-new ShapeToolbar(shapesContainer, shapeRegistry);
+const shapeToolbar = new ShapeToolbar(shapesContainer, shapeRegistry);
 
-console.log('✓ Railway Drawer with tabs initialized');
+// Initialize stencil manager
+const stencilManager = new StencilManager('leftpanel-container');
+
+// Register all available stencil groups
+shapeRegistry.getGroups().forEach((group) => {
+  stencilManager.registerStencil(group, group, true);
+});
+
+// Wire stencil toggling to toolbar
+stencilManager.setOnToggle(() => {
+  const enabledGroups = new Set<string>();
+  shapeRegistry.getGroups().forEach((group) => {
+    if (stencilManager.isEnabled(group)) {
+      enabledGroups.add(group);
+    }
+  });
+  shapeToolbar.setEnabledGroups(enabledGroups);
+});
+
+console.log('✓ Railway Drawer with tabs and stencils initialized');

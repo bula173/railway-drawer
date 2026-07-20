@@ -7,7 +7,7 @@ export interface StencilGroup {
 export class StencilManager {
   private container: HTMLElement;
   private stencils: Map<string, StencilGroup> = new Map();
-  private onToggle: (stencilId: string, enabled: boolean) => void = () => {};
+  private onToggle: () => void = () => {};
 
   constructor(containerId: string) {
     const el = document.getElementById(containerId);
@@ -20,7 +20,7 @@ export class StencilManager {
     this.render();
   }
 
-  setOnToggle(callback: (stencilId: string, enabled: boolean) => void) {
+  setOnToggle(callback: () => void) {
     this.onToggle = callback;
   }
 
@@ -32,7 +32,7 @@ export class StencilManager {
     const stencil = this.stencils.get(stencilId);
     if (stencil) {
       stencil.enabled = !stencil.enabled;
-      this.onToggle(stencilId, stencil.enabled);
+      this.onToggle();
       this.render();
     }
   }

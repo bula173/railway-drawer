@@ -4,20 +4,41 @@ import { ShapeRegistry, ShapeConfig } from './registry';
 export class ShapeToolbar {
   private container: HTMLElement;
   private registry: ShapeRegistry;
+  private enabledGroups: Set<string> = new Set();
 
   constructor(toolbarContainer: HTMLElement, registry: ShapeRegistry) {
     this.container = toolbarContainer;
     this.registry = registry;
+
+    // Enable all groups by default
+    this.registry.getGroups().forEach((group) => {
+      this.enabledGroups.add(group);
+    });
+
+    this.buildToolbar();
+  }
+
+  setEnabledGroups(groups: Set<string>) {
+    this.enabledGroups = groups;
     this.buildToolbar();
   }
 
   private buildToolbar(): void {
-    const groups = this.registry.getGroups();
+    this.container.innerHTML = '';
 
-    groups.forEach((group: string, index: number) => {
-      if (index > 0) {
+    const groups = this.registry.getGroups();
+    let isFirstGroup = true;
+
+    groups.forEach((group: string) => {
+      // Skip disabled groups
+      if (!this.enabledGroups.has(group)) {
+        return;
+      }
+
+      if (!isFirstGroup) {
         this.addSeparator();
       }
+      isFirstGroup = false;
 
       const groupTitle = document.createElement('div');
       groupTitle.className = 'shapes-group-title';
