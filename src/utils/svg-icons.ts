@@ -160,8 +160,80 @@ export const SvgIcons = {
   `,
 };
 
+// Map shape IDs to icon function names
+const iconMap: Record<string, keyof typeof SvgIcons> = {
+  // Basic
+  rectangle: 'rectangle',
+  circle: 'circle',
+  diamond: 'diamond',
+  triangle: 'triangle',
+  line: 'line',
+  rounded_rectangle: 'rectangle',
+  // Flowchart
+  process: 'process',
+  decision: 'decision',
+  cylinder: 'cylinder',
+  document: 'document',
+  data: 'diamond',
+  terminator: 'process',
+  loop: 'process',
+  parallelogram: 'triangle',
+  // Arrows
+  arrow_right: 'arrow',
+  arrow_left: 'arrow',
+  arrow_up: 'arrow',
+  arrow_down: 'arrow',
+  double_arrow: 'arrow',
+  // UML
+  uml_class: 'umlClass',
+  uml_interface: 'umlClass',
+  uml_object: 'umlClass',
+  uml_component: 'umlComponent',
+  uml_artifact: 'document',
+  uml_package: 'umlPackage',
+  uml_actor: 'circle',
+  uml_usecase: 'umlUsecase',
+  uml_state: 'umlState',
+  uml_initial_state: 'bpmnEvent',
+  uml_final_state: 'bpmnEvent',
+  uml_activity: 'umlActivity',
+  uml_fork_join: 'line',
+  uml_decision: 'decision',
+  uml_merge: 'decision',
+  // Cloud
+  cloud: 'cloud',
+  database: 'database',
+  server: 'server',
+  bucket: 'circle',
+  queue: 'rectangle',
+  // Network
+  router: 'router',
+  switch: 'rectangle',
+  firewall: 'rectangle',
+  client: 'server',
+  mobile_device: 'rectangle',
+  // DFD
+  process_dfd: 'circle',
+  entity_dfd: 'rectangle',
+  datastore_dfd: 'rectangle',
+  // C4
+  person_c4: 'circle',
+  system_c4: 'rectangle',
+  container_c4: 'rectangle',
+  component_c4: 'rectangle',
+  // BPMN
+  bpmn_event: 'bpmnEvent',
+  bpmn_task: 'bpmnTask',
+  bpmn_gateway: 'bpmnGateway',
+  bpmn_subprocess: 'bpmnTask',
+  bpmn_data_object: 'document',
+};
+
 export function getSvgIcon(shapeId: string): string {
-  const key = shapeId.replace(/^(uml_|bpmn_)?/, '') as keyof typeof SvgIcons;
-  const iconFn = SvgIcons[key];
-  return iconFn ? iconFn() : SvgIcons.rectangle();
+  const iconKey = iconMap[shapeId];
+  if (iconKey && SvgIcons[iconKey]) {
+    const iconFn = SvgIcons[iconKey];
+    return iconFn();
+  }
+  return SvgIcons.rectangle();
 }
