@@ -8,6 +8,7 @@ import { UndoRedoController } from './undoredo';
 import { PanController } from './pan';
 import { GridController } from './grid';
 import { SaveLoadController } from './saveload';
+import { CanvasProperties } from './canvas-properties';
 
 export interface TabData {
   id: string;
@@ -22,6 +23,7 @@ export interface TabData {
   panController: PanController;
   gridController: GridController;
   saveLoadController: SaveLoadController;
+  canvasProperties: CanvasProperties;
 }
 
 export class TabManager {
@@ -66,6 +68,7 @@ export class TabManager {
     const panController = new PanController(graph);
     const gridController = new GridController(graph, 10);
     const saveLoadController = new SaveLoadController(graph);
+    const canvasProperties = new CanvasProperties(graph, 'property-content');
 
     const tabData: TabData = {
       id: tabId,
@@ -80,6 +83,7 @@ export class TabManager {
       panController,
       gridController,
       saveLoadController,
+      canvasProperties,
     };
 
     this.tabs.set(tabId, tabData);
