@@ -1,15 +1,17 @@
 import { Graph } from '@maxgraph/core';
+import { ClipboardService } from '../services/clipboard-service';
 
 export class ClipboardController {
   private graph: Graph;
-  private clipboard: any[] = [];
+  private clipboardService: ClipboardService;
 
   constructor(graph: Graph) {
     this.graph = graph;
+    this.clipboardService = ClipboardService.getInstance();
     this.setupKeyboardShortcuts();
   }
 
-  private setupKeyboardShortcuts() {
+  private setupKeyboardShortcuts(): void {
     document.addEventListener('keydown', (e) => {
       if ((e.ctrlKey || e.metaKey) && e.key === 'c') {
         e.preventDefault();
@@ -26,31 +28,17 @@ export class ClipboardController {
     });
   }
 
-  copy() {
+  copy(): void {
     const cells = this.graph.getSelectionCells();
-    if (cells.length === 0) return;
-    this.clipboard = this.graph.cloneCells(cells);
-    console.log('[Clipboard] Copied', cells.length, 'cell(s)');
+    this.clipboardService.copy(cells, this.graph);
   }
 
-  cut() {
+  cut(): void {
     const cells = this.graph.getSelectionCells();
-    if (cells.length === 0) return;
-    this.clipboard = this.graph.cloneCells(cells);
-    this.graph.batchUpdate(() => {
-      this.graph.removeCells(cells);
-    });
-    console.log('[Clipboard] Cut', cells.length, 'cell(s)');
+    this.clipboardService.cut(cells, this.graph);
   }
 
-  paste() {
-    if (this.clipboard.length === 0) return;
-
-    this.graph.batchUpdate(() => {
-      const imported = this.graph.importCells(this.clipboard, 20, 20);
-      this.graph.setSelectionCells(imported);
-    });
-
-    console.log('[Clipboard] Pasted', this.clipboard.length, 'cell(s)');
+  paste(): void {
+    this.clipboardService.paste(this.graph, 20, 20);
   }
 }

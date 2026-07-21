@@ -1,17 +1,30 @@
 import { Graph } from '@maxgraph/core';
+import { ClipboardService } from '../services/clipboard-service';
 
 export class ContextMenuController {
   private graph: Graph;
   private contextMenu: HTMLElement | null;
   private currentCell: any = null;
-  private clipboard: any[] = [];
+  private clipboardService: ClipboardService;
   private lastContextX = 0;
   private lastContextY = 0;
 
   constructor(graph: Graph) {
     this.graph = graph;
     this.contextMenu = document.getElementById('context-menu');
+    this.clipboardService = ClipboardService.getInstance();
     this.setupContextMenu();
+    this.setupClipboardListener();
+  }
+
+  private setupClipboardListener(): void {
+    this.clipboardService.subscribe((hasContent) => {
+      const pasteItem = this.contextMenu?.querySelector('[data-action="paste"]') as HTMLElement;
+      if (pasteItem) {
+        pasteItem.style.opacity = hasContent ? '1' : '0.5';
+        pasteItem.style.pointerEvents = hasContent ? 'auto' : 'none';
+      }
+    });
   }
 
   private setupContextMenu() {
@@ -88,7 +101,7 @@ export class ContextMenuController {
       zOrderItems.forEach((item) => {
         (item as HTMLElement).style.display = 'none';
       });
-      if (pasteItem) pasteItem.style.display = this.clipboard.length > 0 ? 'block' : 'none';
+      if (pasteItem) pasteItem.style.display = this.clipboardService.hasContent() ? 'block' : 'none';
     } else {
       // For cells, show all items
       if (deleteItem) deleteItem.style.display = 'block';
@@ -96,7 +109,7 @@ export class ContextMenuController {
       zOrderItems.forEach((item) => {
         (item as HTMLElement).style.display = 'block';
       });
-      if (pasteItem) pasteItem.style.display = this.clipboard.length > 0 ? 'block' : 'none';
+      if (pasteItem) pasteItem.style.display = this.clipboardService.hasContent() ? 'block' : 'none';
     }
 
     this.contextMenu.style.display = 'block';
@@ -110,30 +123,32 @@ export class ContextMenuController {
     }
   }
 
-  private executeAction(action: string) {
-    if (!this.currentCell) return;
-
+  private executeAction(action: string): void {
     switch (action) {
       case 'delete':
-        this.graph.removeCells([this.currentCell]);
+        if (this.currentCell) {
+          this.graph.removeCells([this.currentCell]);
+        }
         break;
 
       case 'cut':
-        this.clipboard = this.graph.cloneCells([this.currentCell]);
-        this.graph.removeCells([this.currentCell]);
+        if (this.currentCell) {
+          this.clipboardService.cut([this.currentCell], this.graph);
+        }
         break;
 
       case 'copy':
-        this.clipboard = this.graph.cloneCells([this.currentCell]);
+        if (this.currentCell) {
+          this.clipboardService.copy([this.currentCell], this.graph);
+        }
         break;
 
       case 'paste':
-        if (this.clipboard.length > 0) {
+        {
           const rect = document.getElementById('graph-container')?.getBoundingClientRect();
           const offsetX = rect ? this.lastContextX - rect.left : 20;
           const offsetY = rect ? this.lastContextY - rect.top : 20;
-          const imported = this.graph.importCells(this.clipboard, offsetX, offsetY);
-          this.graph.setSelectionCells(imported);
+          this.clipboardService.paste(this.graph, offsetX, offsetY);
         }
         break;
 

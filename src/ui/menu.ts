@@ -1,10 +1,13 @@
 import { Graph } from '@maxgraph/core';
+import { ClipboardService } from '../services/clipboard-service';
 
 export class MenuController {
   private graph: Graph;
+  private clipboardService: ClipboardService;
 
   constructor(graph: Graph) {
     this.graph = graph;
+    this.clipboardService = ClipboardService.getInstance();
     this.setupMenus();
   }
 
@@ -108,15 +111,15 @@ export class MenuController {
         break;
 
       case 'cut':
-        console.log('[Menu] Cut');
+        this.clipboardService.cut(cells, this.graph);
         break;
 
       case 'copy':
-        console.log('[Menu] Copy');
+        this.clipboardService.copy(cells, this.graph);
         break;
 
       case 'paste':
-        console.log('[Menu] Paste');
+        this.clipboardService.paste(this.graph, 20, 20);
         break;
 
       case 'delete':
