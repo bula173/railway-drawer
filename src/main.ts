@@ -6,6 +6,7 @@ import { StencilManager } from './ui/stencil-manager';
 import { LeftPanelTabs } from './ui/left-panel-tabs';
 import { CacheService } from './services/cache-service';
 import { ProjectNameEditor } from './ui/project-name-editor';
+import { ResizablePanels } from './ui/resizable-panels';
 
 // Register built-in shapes
 registerShapes();
@@ -13,6 +14,10 @@ registerShapes();
 // ============= PROJECT NAME EDITOR =============
 
 new ProjectNameEditor();
+
+// ============= RESIZABLE PANELS =============
+
+new ResizablePanels();
 
 // ============= TAB MANAGER =============
 
@@ -25,6 +30,43 @@ if (CacheService.exists()) {
 } else {
   tabManager.createTab('Diagram 1');
 }
+
+// ============= GLOBAL KEYBOARD SHORTCUTS =============
+
+document.addEventListener('keydown', (e) => {
+  // Only handle shortcuts when not typing in an input
+  if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) {
+    return;
+  }
+
+  const activeTab = tabManager.getActiveTab();
+  if (!activeTab) return;
+
+  if ((e.ctrlKey || e.metaKey) && e.key === 'z' && !e.shiftKey) {
+    e.preventDefault();
+    activeTab.graphCommandService.undo();
+  }
+  if ((e.ctrlKey || e.metaKey) && (e.key === 'y' || (e.shiftKey && e.key === 'z'))) {
+    e.preventDefault();
+    activeTab.graphCommandService.redo();
+  }
+  if ((e.ctrlKey || e.metaKey) && e.key === 'c') {
+    e.preventDefault();
+    activeTab.graphCommandService.copy();
+  }
+  if ((e.ctrlKey || e.metaKey) && e.key === 'x') {
+    e.preventDefault();
+    activeTab.graphCommandService.cut();
+  }
+  if ((e.ctrlKey || e.metaKey) && e.key === 'v') {
+    e.preventDefault();
+    activeTab.graphCommandService.paste();
+  }
+  if (e.key === 'Delete') {
+    e.preventDefault();
+    activeTab.graphCommandService.delete();
+  }
+}, true);
 
 // Cleanup on page unload
 window.addEventListener('beforeunload', () => {
@@ -84,6 +126,7 @@ graphContainer.addEventListener('dragleave', (evt) => {
 const leftPanelTabs = new LeftPanelTabs('leftpanel-container');
 leftPanelTabs.registerTabContent('shapes', 'shapes-container');
 leftPanelTabs.registerTabContent('stencils', 'stencils-container');
+leftPanelTabs.registerTabContent('layers', 'layers-panel');
 
 // ============= SHAPES TOOLBAR & STENCILS =============
 

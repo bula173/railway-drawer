@@ -23,25 +23,41 @@ export class SaveLoadController {
   }
 
   saveProject(): void {
-    const graphXml = this.serializeToXml();
-    const projectXml = this.projectService.generateProjectXml(graphXml);
-    const filename = `${this.projectService.getProjectName() || 'diagram'}.drawio`;
-    this.projectService.exportToFile(projectXml, filename);
-    this.markAsSavedToDisk();
-    console.log('[SaveLoad] Project saved as', filename);
+    try {
+      console.log('[SaveLoad] Starting save...');
+      const graphXml = this.serializeToXml();
+      console.log('[SaveLoad] Graph serialized, length:', graphXml.length);
+      const projectXml = this.projectService.generateProjectXml(graphXml);
+      console.log('[SaveLoad] Project XML generated, length:', projectXml.length);
+      const filename = `${this.projectService.getProjectName() || 'diagram'}.railwaydrawer`;
+      console.log('[SaveLoad] Filename:', filename);
+      this.projectService.exportToFile(projectXml, filename);
+      this.markAsSavedToDisk();
+      console.log('[SaveLoad] Project saved as', filename);
+    } catch (error) {
+      console.error('[SaveLoad] Save failed:', error);
+    }
   }
 
   async loadProjectFromFile(file: File): Promise<void> {
     try {
+      console.log('[SaveLoad] Starting file import:', file.name);
       const result = await this.projectService.importFromFile(file);
+      console.log('[SaveLoad] File imported, metadata:', result.metadata);
       this.projectService.setProjectName(result.metadata.name);
-      this.projectService.deserializeGraphFromXml(this.graph, result.graphXml);
+      console.log('[SaveLoad] Deserializing graph...');
+
+      // Use the same load method that works for cache
+      this.load(result.graphXml);
+
+      console.log('[SaveLoad] Graph deserialized');
       this.updateProjectNameUI(result.metadata.name);
       this.markAsSavedToDisk();
       console.log('[SaveLoad] Project loaded:', result.metadata.name);
     } catch (error) {
       console.error('[SaveLoad] Failed to load project:', error);
-      alert('Failed to load project file');
+      alert('Failed to load project file: ' + error);
+      throw error;
     }
   }
 
@@ -60,31 +76,47 @@ export class SaveLoadController {
 
   load(xml: string): void {
     try {
-      const doc = new DOMParser().parseFromString(xml, 'application/xml');
-      const root = doc.documentElement;
-
-      if (root.nodeName === 'parsererror') {
-        throw new Error('Invalid XML');
+      if (!xml || xml.trim().length === 0) {
+        console.warn('[SaveLoad] Empty XML, skipping load');
+        return;
       }
 
-      this.graph.batchUpdate(() => {
-        (this.graph as any).model.clear();
-        const encoder = new (ModelXmlSerializer as any)();
-        const cells = encoder.import(root);
-        this.graph.importCells(cells);
-      });
+      console.log('[SaveLoad] Loading XML, length:', xml.length);
 
+      // ModelXmlSerializer.import(xml) expects a string and modifies the model in-place
+      const model = (this.graph as any).model;
+      const encoder = new ModelXmlSerializer(model);
+
+      // Clear model before importing
+      model.clear();
+
+      // import() takes a string and returns void (modifies model)
+      encoder.import(xml);
+
+      this.graph.refresh();
       console.log('[SaveLoad] Diagram loaded');
     } catch (e) {
       console.error('[SaveLoad] Failed to load diagram:', e);
+      console.error('[SaveLoad] Stack:', (e as any).stack);
     }
   }
 
+
   serializeToXml(): string {
-    const model = (this.graph as any).model;
-    const encoder = new ModelXmlSerializer(model);
-    const xml = (encoder as any).export(model);
-    return new XMLSerializer().serializeToString(xml);
+    try {
+      console.log('[SaveLoad] Serializing graph...');
+      const model = (this.graph as any).model;
+
+      // ModelXmlSerializer.export() returns a string
+      const encoder = new ModelXmlSerializer(model);
+      const xml = encoder.export();
+
+      console.log('[SaveLoad] Serialized, length:', xml.length);
+      return xml;
+    } catch (e) {
+      console.error('[SaveLoad] Serialization error:', e);
+      return '<mxGraphModel><root></root></mxGraphModel>';
+    }
   }
 
   exportAsJson(): string {

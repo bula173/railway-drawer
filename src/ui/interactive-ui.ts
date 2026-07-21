@@ -1,11 +1,14 @@
 import { Graph } from '@maxgraph/core';
+import { GraphCommandService } from '../services/graph-command-service';
 
 export class InteractiveUIController {
   private graph: Graph;
+  private commandService: GraphCommandService;
   private selectedCells: any[] = [];
 
-  constructor(graph: Graph) {
+  constructor(graph: Graph, commandService: GraphCommandService) {
     this.graph = graph;
+    this.commandService = commandService;
     this.setupToolbarButtons();
     this.setupCanvasProperties();
     this.setupPropertyPanelInputs();
@@ -46,10 +49,7 @@ export class InteractiveUIController {
 
     // Delete button
     document.getElementById('btn-delete')?.addEventListener('click', () => {
-      const cells = this.graph.getSelectionCells();
-      if (cells.length > 0) {
-        this.graph.removeCells(cells);
-      }
+      this.commandService.delete();
     });
 
     // Grid toggle
@@ -67,37 +67,43 @@ export class InteractiveUIController {
       }
     });
 
-    // Drawing modes (placeholder implementations)
+    // Quick shape insertion buttons
     document.getElementById('btn-draw-rect')?.addEventListener('click', () => {
-      console.log('[UI] Draw rectangle mode - Not yet implemented');
+      this.insertQuickShape('rectangle', 100, 60, '#e1d5e7', '#9673a6');
     });
 
     document.getElementById('btn-draw-ellipse')?.addEventListener('click', () => {
-      console.log('[UI] Draw ellipse mode - Not yet implemented');
+      this.insertQuickShape('ellipse', 80, 80, '#d4e6f1', '#3498db', 'ellipse');
     });
 
     document.getElementById('btn-draw-diamond')?.addEventListener('click', () => {
-      console.log('[UI] Draw diamond mode - Not yet implemented');
+      this.insertQuickShape('diamond', 80, 80, '#f9e79f', '#f39c12', 'diamond');
     });
 
     document.getElementById('btn-draw-line')?.addEventListener('click', () => {
-      console.log('[UI] Draw line mode - Not yet implemented');
+      this.insertQuickShape('line', 100, 10, 'none', '#2c3e50', undefined, 2);
     });
 
     document.getElementById('btn-draw-connector')?.addEventListener('click', () => {
-      console.log('[UI] Draw connector mode - Not yet implemented');
+      const cells = this.graph.getSelectionCells();
+      if (cells.length >= 2) {
+        this.graph.insertEdge(this.graph.getDefaultParent(), null, '', cells[0], cells[1]);
+        this.graph.refresh();
+      } else {
+        alert('Select two shapes to create a connector');
+      }
     });
 
     document.getElementById('btn-add-element')?.addEventListener('click', () => {
-      console.log('[UI] Add element - Not yet implemented');
+      this.insertQuickShape('rectangle', 100, 60, '#a9d08e', '#70ad47');
     });
 
     document.getElementById('btn-align')?.addEventListener('click', () => {
-      console.log('[UI] Align options - Not yet implemented');
+      this.commandService.alignShapes('center');
     });
 
     document.getElementById('btn-distribute')?.addEventListener('click', () => {
-      console.log('[UI] Distribute options - Not yet implemented');
+      this.commandService.distributeShapes('horizontal');
     });
 
     document.getElementById('btn-fullscreen')?.addEventListener('click', () => {
@@ -662,4 +668,43 @@ export class InteractiveUIController {
       rotation.value = (style.rotation as number).toString();
     }
   }
+
+  private insertQuickShape(
+    shapeType: string,
+    width: number,
+    height: number,
+    fillColor: string,
+    strokeColor: string,
+    shape?: string,
+    strokeWidth?: number
+  ): void {
+    const parent = this.graph.getDefaultParent();
+    const container = this.graph.container as HTMLElement;
+    const centerX = (container.clientWidth / 2 - width / 2) / this.graph.view.scale + this.graph.view.translate.x;
+    const centerY = (container.clientHeight / 2 - height / 2) / this.graph.view.scale + this.graph.view.translate.y;
+
+    let style = `fillColor=${fillColor};strokeColor=${strokeColor};`;
+    if (strokeWidth !== undefined) {
+      style += `strokeWidth=${strokeWidth};`;
+    }
+    if (shape) {
+      style += `shape=${shape};`;
+    }
+
+    this.graph.batchUpdate(() => {
+      const cell = this.graph.insertVertex(
+        parent,
+        null,
+        shapeType.charAt(0).toUpperCase() + shapeType.slice(1),
+        centerX,
+        centerY,
+        width,
+        height,
+        style as any
+      );
+      this.graph.setSelectionCells([cell]);
+      this.graph.refresh();
+    });
+  }
+
 }

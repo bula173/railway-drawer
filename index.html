@@ -159,6 +159,13 @@
           <!-- Tab bar will be inserted here by LeftPanelTabs -->
           <div id="stencils-container" class="panel-content"></div>
           <div id="shapes-container" class="panel-content"></div>
+          <div id="layers-panel" class="panel-content" style="display: none;">
+            <div style="padding: 8px; border-bottom: 1px solid #e0e0e0; display: flex; gap: 4px;">
+              <button id="btn-add-layer" style="flex: 1; padding: 6px; background: #1976d2; color: white; border: none; border-radius: 3px; cursor: pointer; font-size: 11px;">+ Layer</button>
+              <button id="btn-delete-layer" style="flex: 1; padding: 6px; background: #f44336; color: white; border: none; border-radius: 3px; cursor: pointer; font-size: 11px;">Delete</button>
+            </div>
+            <div id="layers-list" style="overflow-y: auto; max-height: calc(100% - 40px);"></div>
+          </div>
         </div>
 
         <!-- Graph Canvas -->

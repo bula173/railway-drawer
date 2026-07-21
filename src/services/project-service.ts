@@ -214,57 +214,154 @@ export class ProjectService {
   }
 
   generateProjectXml(graphXml: string): string {
-    const project = document.createElement('project');
-    project.setAttribute('name', this.projectMetadata.name);
-    project.setAttribute('version', this.projectMetadata.version);
-    project.setAttribute('createdAt', this.projectMetadata.createdAt);
-    project.setAttribute('modifiedAt', this.projectMetadata.modifiedAt);
+    // Create mxfile element (standard draw.io format)
+    const mxfile = document.createElement('mxfile');
+    mxfile.setAttribute('host', 'railway-drawer');
+    mxfile.setAttribute('modified', this.projectMetadata.modifiedAt);
+    mxfile.setAttribute('agent', 'railway-drawer/1.0');
+    mxfile.setAttribute('version', this.projectMetadata.version);
 
     const diagram = document.createElement('diagram');
-    diagram.setAttribute('name', 'Sheet1');
+    diagram.setAttribute('id', '1');
+    diagram.setAttribute('name', this.projectMetadata.name);
 
-    const graphModel = new DOMParser().parseFromString(graphXml, 'text/xml');
-    diagram.appendChild(graphModel.documentElement.cloneNode(true));
+    try {
+      // Parse the graph XML and add it to the diagram
+      const graphModel = new DOMParser().parseFromString(graphXml, 'text/xml');
+      if (graphModel.documentElement) {
+        diagram.appendChild(graphModel.documentElement.cloneNode(true));
+      }
+    } catch (error) {
+      console.error('[Project] Error parsing graph XML:', error);
+      // Create empty mxGraphModel if parsing fails
+      const emptyModel = document.createElement('mxGraphModel');
+      emptyModel.setAttribute('dx', '0');
+      emptyModel.setAttribute('dy', '0');
+      emptyModel.setAttribute('grid', '1');
+      emptyModel.setAttribute('gridSize', '10');
+      emptyModel.setAttribute('guides', '1');
+      emptyModel.setAttribute('tooltips', '1');
+      emptyModel.setAttribute('connect', '1');
+      emptyModel.setAttribute('arrows', '1');
+      emptyModel.setAttribute('fold', '1');
+      emptyModel.setAttribute('page', '1');
+      emptyModel.setAttribute('pageScale', '1');
+      emptyModel.setAttribute('pageWidth', '827');
+      emptyModel.setAttribute('pageHeight', '1169');
+      emptyModel.setAttribute('background', '#ffffff');
+      emptyModel.setAttribute('math', '0');
+      emptyModel.setAttribute('shadow', '0');
 
-    project.appendChild(diagram);
+      const root = document.createElement('root');
+      const cell0 = document.createElement('mxCell');
+      cell0.setAttribute('id', '0');
+      const cell1 = document.createElement('mxCell');
+      cell1.setAttribute('id', '1');
+      cell1.setAttribute('parent', '0');
+      cell1.setAttribute('edge', '1');
 
-    return new XMLSerializer().serializeToString(project);
+      root.appendChild(cell0);
+      root.appendChild(cell1);
+      emptyModel.appendChild(root);
+      diagram.appendChild(emptyModel);
+    }
+
+    mxfile.appendChild(diagram);
+
+    return new XMLSerializer().serializeToString(mxfile);
   }
 
   parseProjectXml(xml: string): { metadata: ProjectMetadata; graphXml: string } {
     const parser = new DOMParser();
     const doc = parser.parseFromString(xml, 'text/xml');
 
-    const projectEl = doc.documentElement;
-    const metadata: ProjectMetadata = {
-      name: projectEl.getAttribute('name') || 'Untitled Diagram',
-      version: projectEl.getAttribute('version') || '1.0',
-      createdAt: projectEl.getAttribute('createdAt') || new Date().toISOString(),
-      modifiedAt: projectEl.getAttribute('modifiedAt') || new Date().toISOString(),
-    };
+    if (doc.getElementsByTagName('parsererror').length > 0) {
+      throw new Error('Invalid XML format');
+    }
 
-    const diagramEl = projectEl.getElementsByTagName('diagram')[0];
+    const rootEl = doc.documentElement;
+    let metadata: ProjectMetadata;
     let graphXml = '<mxGraphModel><root></root></mxGraphModel>';
 
-    if (diagramEl) {
-      const mxGraphModel = diagramEl.getElementsByTagName('mxGraphModel')[0];
-      if (mxGraphModel) {
-        graphXml = new XMLSerializer().serializeToString(mxGraphModel);
+    // Handle mxfile format (standard draw.io)
+    if (rootEl.nodeName === 'mxfile') {
+      const diagramEl = rootEl.getElementsByTagName('diagram')[0];
+      if (diagramEl) {
+        metadata = {
+          name: diagramEl.getAttribute('name') || 'Untitled Diagram',
+          version: rootEl.getAttribute('version') || '1.0',
+          createdAt: new Date().toISOString(),
+          modifiedAt: rootEl.getAttribute('modified') || new Date().toISOString(),
+        };
+
+        // Try mxGraphModel first
+        let graphModel = diagramEl.getElementsByTagName('mxGraphModel')[0];
+        // Then try GraphDataModel (maxGraph format)
+        if (!graphModel) {
+          graphModel = diagramEl.getElementsByTagName('GraphDataModel')[0];
+        }
+
+        if (graphModel) {
+          graphXml = new XMLSerializer().serializeToString(graphModel);
+        }
+      } else {
+        metadata = {
+          name: 'Untitled Diagram',
+          version: rootEl.getAttribute('version') || '1.0',
+          createdAt: new Date().toISOString(),
+          modifiedAt: rootEl.getAttribute('modified') || new Date().toISOString(),
+        };
       }
+    }
+    // Handle legacy project format
+    else if (rootEl.nodeName === 'project') {
+      metadata = {
+        name: rootEl.getAttribute('name') || 'Untitled Diagram',
+        version: rootEl.getAttribute('version') || '1.0',
+        createdAt: rootEl.getAttribute('createdAt') || new Date().toISOString(),
+        modifiedAt: rootEl.getAttribute('modifiedAt') || new Date().toISOString(),
+      };
+
+      const diagramEl = rootEl.getElementsByTagName('diagram')[0];
+      if (diagramEl) {
+        let graphModel = diagramEl.getElementsByTagName('mxGraphModel')[0];
+        if (!graphModel) {
+          graphModel = diagramEl.getElementsByTagName('GraphDataModel')[0];
+        }
+        if (graphModel) {
+          graphXml = new XMLSerializer().serializeToString(graphModel);
+        }
+      }
+    } else {
+      // Try to treat as mxGraphModel or GraphDataModel directly
+      metadata = {
+        name: 'Untitled Diagram',
+        version: '1.0',
+        createdAt: new Date().toISOString(),
+        modifiedAt: new Date().toISOString(),
+      };
+      graphXml = xml;
     }
 
     return { metadata, graphXml };
   }
 
   exportToFile(projectXml: string, filename: string): void {
-    const blob = new Blob([projectXml], { type: 'application/xml' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = filename || `${this.projectMetadata.name}.drawio`;
-    link.click();
-    URL.revokeObjectURL(url);
-    console.log('[Project] Exported to file:', filename);
+    try {
+      const blob = new Blob([projectXml], { type: 'application/xml' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = filename || `${this.projectMetadata.name}.railwaydrawer`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      setTimeout(() => URL.revokeObjectURL(url), 100);
+      console.log('[Project] Exported to file:', filename);
+    } catch (error) {
+      console.error('[Project] Export failed:', error);
+      throw error;
+    }
   }
 
   importFromFile(file: File): Promise<{ metadata: ProjectMetadata; graphXml: string }> {

@@ -9,6 +9,7 @@ export class DrawingController {
   private startX = 0;
   private startY = 0;
   private points: Array<{ x: number; y: number }> = [];
+  private resizeObserver: ResizeObserver | null = null;
 
   constructor(graph: Graph) {
     this.graph = graph;
@@ -28,7 +29,8 @@ export class DrawingController {
     this.canvas.style.left = '0';
     this.canvas.style.zIndex = '100';
     this.canvas.style.cursor = 'crosshair';
-    this.canvas.style.display = 'none';
+    this.canvas.style.display = 'block';
+    this.canvas.style.pointerEvents = 'none';
 
     container.style.position = 'relative';
     container.appendChild(this.canvas);
@@ -37,10 +39,22 @@ export class DrawingController {
     this.resizeCanvas();
 
     // Listen for container resize
-    const resizeObserver = new ResizeObserver(() => this.resizeCanvas());
-    resizeObserver.observe(container);
+    this.resizeObserver = new ResizeObserver(() => this.resizeCanvas());
+    this.resizeObserver.observe(container);
 
     this.setupMouseEvents();
+  }
+
+  destroy(): void {
+    if (this.resizeObserver) {
+      this.resizeObserver.disconnect();
+      this.resizeObserver = null;
+    }
+    if (this.canvas && this.canvas.parentElement) {
+      this.canvas.parentElement.removeChild(this.canvas);
+    }
+    this.canvas = null;
+    this.ctx = null;
   }
 
   private resizeCanvas(): void {
@@ -62,6 +76,9 @@ export class DrawingController {
   private handleMouseDown(e: MouseEvent): void {
     if (this.currentTool === 'select') return;
 
+    // Only handle events on canvas when pointer events are enabled
+    if (this.canvas && this.canvas.style.pointerEvents === 'none') return;
+
     this.isDrawing = true;
     const rect = this.canvas!.getBoundingClientRect();
     this.startX = e.clientX - rect.left;
@@ -75,6 +92,7 @@ export class DrawingController {
 
   private handleMouseMove(e: MouseEvent): void {
     if (!this.isDrawing || this.currentTool === 'select') return;
+    if (this.canvas && this.canvas.style.pointerEvents === 'none') return;
 
     const rect = this.canvas!.getBoundingClientRect();
     const x = e.clientX - rect.left;
@@ -97,6 +115,8 @@ export class DrawingController {
 
   private handleMouseUp(e: MouseEvent): void {
     if (!this.isDrawing) return;
+    if (this.canvas && this.canvas.style.pointerEvents === 'none') return;
+
     this.isDrawing = false;
 
     if (this.currentTool === 'line' && this.points.length > 1) {
@@ -202,15 +222,17 @@ export class DrawingController {
       }
     });
 
-    // Show/hide canvas and set cursor
+    // Canvas always visible, but control pointer events and appearance
     if (this.canvas) {
       if (tool === 'select') {
-        this.canvas.style.display = 'none';
+        // In select mode: canvas visible but doesn't capture events, so graph interactions work
         this.canvas.style.pointerEvents = 'none';
+        this.canvas.style.opacity = '1';
         (this.graph.container as HTMLElement).style.cursor = 'default';
       } else {
-        this.canvas.style.display = 'block';
+        // In drawing mode: canvas captures events for drawing
         this.canvas.style.pointerEvents = 'auto';
+        this.canvas.style.opacity = '1';
 
         // Set appropriate cursor for each tool
         switch (tool) {

@@ -18,6 +18,8 @@ import { UmlPackageShape, UmlObjectShape } from './uml-package';
 import { UmlActivityShape, UmlForkJoinShape, UmlDecisionShape, UmlMergeShape } from './uml-activity';
 import { UmlLifelineShape, UmlActivationBoxShape, UmlMessageArrowShape, UmlCombinedFragmentShape, UmlInteractionUseShape, UmlNoteShape } from './uml-sequence';
 import { HexagonShape, PentagonShape, StarShape, TrapezoidShape, CrossShape, CylinderShape, SimpleArrowShape, OvalShape, DoubleRectangleShape, ParallelogramShape, DelayShape, ChevronShape, RightAngleShape, LozengeShape, RoundedRectangleShape } from './basic-shapes';
+import { RailShape, SignalShape, SwitchShape, JunctionShape, PlatformShape, StationShape, CrossingShape, TunnelShape, BufferShape, CabinShape, LTAShape, LTOShape, DetectionPointShape, TrackSectionShape, VerticalConnectorShape, EOLMarkerShape, RailLevelShape, SlopedTrackShape, TrainShape, SignalHeadShape, RBCShape, CommunicationLineShape, EBSectionShape, WaysideEquipmentShape, TrackCircuitShape } from './railway-shapes';
+import { railwayShapes } from './railway';
 import { shapeRegistry } from './registry';
 
 export function registerShapes() {
@@ -71,6 +73,33 @@ export function registerShapes() {
   CellRenderer.registerShape('customUmlCombinedFragment', UmlCombinedFragmentShape as any);
   CellRenderer.registerShape('customUmlInteractionUse', UmlInteractionUseShape as any);
   CellRenderer.registerShape('customUmlNote', UmlNoteShape as any);
+
+  // Register Railway shapes
+  CellRenderer.registerShape('customRail', RailShape as any);
+  CellRenderer.registerShape('customSignal', SignalShape as any);
+  CellRenderer.registerShape('customSwitch', SwitchShape as any);
+  CellRenderer.registerShape('customJunction', JunctionShape as any);
+  CellRenderer.registerShape('customPlatform', PlatformShape as any);
+  CellRenderer.registerShape('customStation', StationShape as any);
+  CellRenderer.registerShape('customCrossing', CrossingShape as any);
+  CellRenderer.registerShape('customTunnel', TunnelShape as any);
+  CellRenderer.registerShape('customBuffer', BufferShape as any);
+  CellRenderer.registerShape('customCabin', CabinShape as any);
+  CellRenderer.registerShape('customLTA', LTAShape as any);
+  CellRenderer.registerShape('customLTO', LTOShape as any);
+  CellRenderer.registerShape('customDetectionPoint', DetectionPointShape as any);
+  CellRenderer.registerShape('customTrackSection', TrackSectionShape as any);
+  CellRenderer.registerShape('customVerticalConnector', VerticalConnectorShape as any);
+  CellRenderer.registerShape('customEOLMarker', EOLMarkerShape as any);
+  CellRenderer.registerShape('customRailLevel', RailLevelShape as any);
+  CellRenderer.registerShape('customSlopedTrack', SlopedTrackShape as any);
+  CellRenderer.registerShape('customTrain', TrainShape as any);
+  CellRenderer.registerShape('customSignalHead', SignalHeadShape as any);
+  CellRenderer.registerShape('customRBC', RBCShape as any);
+  CellRenderer.registerShape('customCommunicationLine', CommunicationLineShape as any);
+  CellRenderer.registerShape('customEBSection', EBSectionShape as any);
+  CellRenderer.registerShape('customWaysideEquipment', WaysideEquipmentShape as any);
+  CellRenderer.registerShape('customTrackCircuit', TrackCircuitShape as any);
 
   // ===== BASIC SHAPES =====
   shapeRegistry.register({
@@ -834,6 +863,11 @@ export function registerShapes() {
     width: 100,
     height: 60,
     style: { shape: 'customRoundedRectangle', fillColor: '#a9d08e', strokeColor: '#70ad47' },
+  });
+
+  // ===== RAILWAY SHAPES =====
+  railwayShapes.forEach((shape) => {
+    shapeRegistry.register(shape);
   });
 }
 

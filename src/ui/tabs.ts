@@ -13,12 +13,18 @@ import { ContextMenuController } from './context-menu';
 import { MenuController } from './menu';
 import { InteractiveUIController } from './interactive-ui';
 import { CacheService, CacheData } from '../services/cache-service';
+import { GraphCommandService } from '../services/graph-command-service';
 import { DrawingController } from './drawing';
+import { ConnectionHandler } from './connections';
+import { TextEditorController } from './text-editor';
+import { EdgePropertiesController } from './edge-properties';
+import { LayersController } from './layers';
 
 export interface TabData {
   id: string;
   name: string;
   graph: Graph;
+  graphCommandService: GraphCommandService;
   propertiesPanel: PropertiesPanel;
   toolbarController: ToolbarController;
   statusBarController: StatusBarController;
@@ -33,6 +39,7 @@ export interface TabData {
   menuController: MenuController;
   interactiveUIController: InteractiveUIController;
   drawingController: DrawingController;
+  layersController: LayersController;
 }
 
 export class TabManager {
@@ -70,26 +77,44 @@ export class TabManager {
     graph.dropEnabled = true;
     graph.setMultigraph(false);
 
+    // Configure scrolling behavior
+    graph.ignoreScrollbars = false; // Use native scrollbars
+    graph.translateToScrollPosition = false; // Don't convert scroll to translate
+
+    // Configure connection points on shapes
+    new ConnectionHandler(graph);
+
+    // Configure double-click text editing
+    new TextEditorController(graph);
+
+    // Configure edge/connector properties
+    new EdgePropertiesController(graph);
+
+    // Initialize centralized command service
+    const graphCommandService = new GraphCommandService(graph);
+
     // Initialize UI controllers
     const propertiesPanel = new PropertiesPanel(graph);
     const toolbarController = new ToolbarController(graph);
     const statusBarController = new StatusBarController(graph);
     const clipboardController = new ClipboardController(graph);
     const deleteController = new DeleteController(graph);
-    const undoRedoController = new UndoRedoController(graph);
+    const undoRedoController = new UndoRedoController(graph, graphCommandService);
     const panController = new PanController(graph);
     const gridController = new GridController(graph, 10);
     const saveLoadController = new SaveLoadController(graph);
     const canvasProperties = new CanvasProperties(graph);
     const contextMenuController = new ContextMenuController(graph);
-    const menuController = new MenuController(graph);
-    const interactiveUIController = new InteractiveUIController(graph);
+    const menuController = new MenuController(graph, graphCommandService, saveLoadController);
+    const interactiveUIController = new InteractiveUIController(graph, graphCommandService);
     const drawingController = new DrawingController(graph);
+    const layersController = new LayersController(graph);
 
     const tabData: TabData = {
       id: tabId,
       name,
       graph,
+      graphCommandService,
       propertiesPanel,
       toolbarController,
       statusBarController,
@@ -104,6 +129,7 @@ export class TabManager {
       menuController,
       interactiveUIController,
       drawingController,
+      layersController,
     };
 
     this.tabs.set(tabId, tabData);
@@ -205,10 +231,26 @@ export class TabManager {
     if (!this.tabs.has(tabId)) return;
     if (this.tabs.size === 1) return; // Keep at least one tab
 
+    const tab = this.tabs.get(tabId);
+    if (tab) {
+      // Clean up controllers to prevent memory leaks
+      try {
+        if ((tab.drawingController as any).destroy) {
+          (tab.drawingController as any).destroy();
+        }
+        if ((tab.layersController as any).destroy) {
+          (tab.layersController as any).destroy();
+        }
+      } catch (e) {
+        console.warn('[TabManager] Error destroying controllers:', e);
+      }
+    }
+
     const graphDiv = document.getElementById(`graph-${tabId}`);
     if (graphDiv) graphDiv.remove();
 
     this.tabs.delete(tabId);
+    this.saveLoadControllers.delete(tabId);
 
     if (this.activeTabId === tabId) {
       const nextTabId = this.tabs.keys().next().value;

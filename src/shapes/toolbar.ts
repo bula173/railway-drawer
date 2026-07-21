@@ -7,10 +7,20 @@ export class ShapeToolbar {
   private registry: ShapeRegistry;
   private enabledGroups: Set<string> = new Set();
   private collapsedGroups: Set<string> = new Set();
+  private groupOrder: string[] = [];
+  private draggedGroup: string | null = null;
 
   constructor(toolbarContainer: HTMLElement, registry: ShapeRegistry) {
     this.container = toolbarContainer;
     this.registry = registry;
+
+    // Load custom group order from localStorage or use default
+    this.loadGroupOrder();
+
+    // If no custom order yet, set default order (railway groups at bottom)
+    if (this.groupOrder.length === 0) {
+      this.setDefaultGroupOrder();
+    }
 
     // Enable all groups by default
     this.registry.getGroups().forEach((group) => {
@@ -41,7 +51,8 @@ export class ShapeToolbar {
   private buildToolbar(): void {
     this.container.innerHTML = '';
 
-    const groups = this.registry.getGroups();
+    // Use custom group order
+    const groups = this.getOrderedGroups();
     let isFirstGroup = true;
 
     groups.forEach((group: string) => {
@@ -59,6 +70,9 @@ export class ShapeToolbar {
 
       const groupHeader = document.createElement('div');
       groupHeader.className = 'shapes-group-header';
+      groupHeader.draggable = true;
+      groupHeader.dataset.group = group;
+      groupHeader.style.cursor = 'grab';
 
       const groupTitle = document.createElement('div');
       groupTitle.className = 'shapes-group-title';
@@ -73,7 +87,17 @@ export class ShapeToolbar {
       groupTitle.appendChild(document.createTextNode(group));
 
       groupHeader.appendChild(groupTitle);
-      groupHeader.addEventListener('click', () => this.toggleGroup(group));
+
+      // Handle toggle click
+      groupHeader.addEventListener('click', (e) => {
+        // Only toggle if clicking on the header area, not dragging
+        if ((e.target as HTMLElement).closest('.shapes-group-toggle')) {
+          this.toggleGroup(group);
+        }
+      });
+
+      // Handle drag events for reordering
+      this.attachDragHandlers(groupHeader, group);
 
       this.container.appendChild(groupHeader);
 
@@ -90,6 +114,89 @@ export class ShapeToolbar {
         this.container.appendChild(shapeGroup);
       }
     });
+  }
+
+  private getOrderedGroups(): string[] {
+    const allGroups = this.registry.getGroups();
+
+    // If custom order exists and contains all groups, use it
+    if (this.groupOrder.length === allGroups.length && allGroups.every(g => this.groupOrder.includes(g))) {
+      return this.groupOrder;
+    }
+
+    // Otherwise return default order
+    return allGroups;
+  }
+
+  private attachDragHandlers(groupHeader: HTMLElement, groupName: string): void {
+    groupHeader.addEventListener('dragstart', (e) => {
+      this.draggedGroup = groupName;
+      (e as DragEvent).dataTransfer!.effectAllowed = 'move';
+      groupHeader.style.opacity = '0.5';
+    });
+
+    groupHeader.addEventListener('dragend', () => {
+      groupHeader.style.opacity = '1';
+      this.draggedGroup = null;
+    });
+
+    groupHeader.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      (e as DragEvent).dataTransfer!.dropEffect = 'move';
+      groupHeader.style.borderTop = '2px solid #0066cc';
+    });
+
+    groupHeader.addEventListener('dragleave', () => {
+      groupHeader.style.borderTop = 'none';
+    });
+
+    groupHeader.addEventListener('drop', (e) => {
+      e.preventDefault();
+      groupHeader.style.borderTop = 'none';
+
+      if (this.draggedGroup && this.draggedGroup !== groupName) {
+        this.reorderGroups(this.draggedGroup, groupName);
+      }
+    });
+  }
+
+  private reorderGroups(fromGroup: string, toGroup: string): void {
+    const ordered = this.getOrderedGroups();
+    const fromIndex = ordered.indexOf(fromGroup);
+    const toIndex = ordered.indexOf(toGroup);
+
+    if (fromIndex !== -1 && toIndex !== -1) {
+      // Swap groups
+      [ordered[fromIndex], ordered[toIndex]] = [ordered[toIndex], ordered[fromIndex]];
+      this.groupOrder = ordered;
+      this.saveGroupOrder();
+      this.buildToolbar();
+    }
+  }
+
+  private loadGroupOrder(): void {
+    const stored = localStorage.getItem('shapeToolbarGroupOrder');
+    if (stored) {
+      try {
+        this.groupOrder = JSON.parse(stored);
+      } catch {
+        this.groupOrder = [];
+      }
+    }
+  }
+
+  private saveGroupOrder(): void {
+    localStorage.setItem('shapeToolbarGroupOrder', JSON.stringify(this.groupOrder));
+  }
+
+  private setDefaultGroupOrder(): void {
+    const allGroups = this.registry.getGroups();
+    const railwayGroups = ['Railway', 'Track Circuit', 'Rolling Stock', 'Signaling', 'Infrastructure'];
+    const genericGroups = allGroups.filter((g) => !railwayGroups.includes(g));
+
+    // Place generic groups first, then railway groups
+    this.groupOrder = [...genericGroups, ...railwayGroups.filter((g) => allGroups.includes(g))];
+    this.saveGroupOrder();
   }
 
   private createShapeItem(shape: ShapeConfig): HTMLElement {

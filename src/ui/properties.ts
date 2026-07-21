@@ -308,6 +308,26 @@ export class PropertiesPanel {
       this.graph.refresh();
     });
 
+    // Flip Horizontal
+    document.getElementById('btn-flipHorizontal')?.addEventListener('click', () => {
+      const geo = this.currentCell.geometry;
+      if (geo) {
+        geo.flipH = !geo.flipH;
+        this.graph.refresh();
+        this.updateValues();
+      }
+    });
+
+    // Flip Vertical
+    document.getElementById('btn-flipVertical')?.addEventListener('click', () => {
+      const geo = this.currentCell.geometry;
+      if (geo) {
+        geo.flipV = !geo.flipV;
+        this.graph.refresh();
+        this.updateValues();
+      }
+    });
+
     // Z-Order
     document.getElementById('btn-toFront')?.addEventListener('click', () => {
       const model = this.graph.model as any;

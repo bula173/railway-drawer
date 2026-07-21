@@ -1,19 +1,23 @@
 import { Graph } from '@maxgraph/core';
-import { ClipboardService } from '../services/clipboard-service';
+import { GraphCommandService } from '../services/graph-command-service';
+import { SaveLoadController } from './saveload';
 
 export class MenuController {
   private graph: Graph;
-  private clipboardService: ClipboardService;
+  private commandService: GraphCommandService;
+  private saveLoadController: SaveLoadController;
 
-  constructor(graph: Graph) {
+  constructor(graph: Graph, commandService: GraphCommandService, saveLoadController: SaveLoadController) {
     this.graph = graph;
-    this.clipboardService = ClipboardService.getInstance();
+    this.commandService = commandService;
+    this.saveLoadController = saveLoadController;
     this.setupMenus();
   }
 
   private setupMenus() {
     // Setup menu item clicks to toggle dropdowns
     const menuItems = document.querySelectorAll('.menu-item');
+    console.log('[Menu] Found', menuItems.length, 'menu items');
     menuItems.forEach((item) => {
       item.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -24,10 +28,12 @@ export class MenuController {
 
     // Setup menu dropdown item clicks
     const dropdownItems = document.querySelectorAll('.menu-dropdown-item');
+    console.log('[Menu] Found', dropdownItems.length, 'dropdown items');
     dropdownItems.forEach((item) => {
       item.addEventListener('click', (e) => {
         e.stopPropagation();
         const action = item.getAttribute('data-action');
+        console.log('[Menu] Dropdown item clicked:', action);
         if (action) {
           this.executeMenuAction(action);
         }
@@ -66,16 +72,24 @@ export class MenuController {
   }
 
   private openProject(): void {
+    console.log('[Menu] Opening file dialog...');
     const input = document.createElement('input');
     input.type = 'file';
-    input.accept = '.drawio,.xml';
+    input.accept = '.railwaydrawer,.drawio,.xml';
     input.onchange = async (e: any) => {
+      console.log('[Menu] File selected:', e.target.files);
       const file = e.target.files?.[0];
       if (file) {
-        const tab = (this.graph as any)._tabData;
-        if (tab && tab.saveLoadController) {
-          await tab.saveLoadController.loadProjectFromFile(file);
+        console.log('[Menu] Loading file:', file.name);
+        try {
+          await this.saveLoadController.loadProjectFromFile(file);
+          console.log('[Menu] File loaded successfully');
+        } catch (error) {
+          console.error('[Menu] Error loading file:', error);
+          alert('Error loading file: ' + error);
         }
+      } else {
+        console.log('[Menu] No file selected');
       }
     };
     input.click();
@@ -83,7 +97,7 @@ export class MenuController {
 
   private saveProjectAs(): void {
     const titleElement = document.querySelector('.document-title');
-    const currentName = titleElement?.textContent || (this.graph as any)._tabData?.saveLoadController?.getProjectName?.() || 'Untitled';
+    const currentName = titleElement?.textContent || this.saveLoadController.getProjectName() || 'Untitled';
 
     const input = document.createElement('input');
     input.type = 'text';
@@ -133,11 +147,8 @@ export class MenuController {
 
     saveBtn.onclick = () => {
       const name = input.value || 'Untitled';
-      const tab = (this.graph as any)._tabData;
-      if (tab && tab.saveLoadController) {
-        tab.saveLoadController.setProjectName(name);
-        tab.saveLoadController.saveProject();
-      }
+      this.saveLoadController.setProjectName(name);
+      this.saveLoadController.saveProject();
       document.body.removeChild(dialog);
     };
 
@@ -179,12 +190,7 @@ export class MenuController {
         break;
 
       case 'save':
-        {
-          const tab = (this.graph as any)._tabData;
-          if (tab && tab.saveLoadController) {
-            tab.saveLoadController.saveProject();
-          }
-        }
+        this.saveLoadController.saveProject();
         break;
 
       case 'saveAs':
@@ -192,12 +198,7 @@ export class MenuController {
         break;
 
       case 'export':
-        {
-          const tab = (this.graph as any)._tabData;
-          if (tab && tab.saveLoadController) {
-            tab.saveLoadController.save();
-          }
-        }
+        this.saveLoadController.save();
         break;
 
       case 'print':
@@ -205,41 +206,31 @@ export class MenuController {
         break;
 
       case 'undo':
-        const undoMgr = (this.graph as any).undoManager;
-        if (undoMgr) {
-          undoMgr.undo();
-        }
+        this.commandService.undo();
         break;
 
       case 'redo':
-        const redoMgr = (this.graph as any).undoManager;
-        if (redoMgr) {
-          redoMgr.redo();
-        }
+        this.commandService.redo();
         break;
 
       case 'cut':
-        this.clipboardService.cut(cells, this.graph);
+        this.commandService.cut();
         break;
 
       case 'copy':
-        this.clipboardService.copy(cells, this.graph);
+        this.commandService.copy();
         break;
 
       case 'paste':
-        this.clipboardService.paste(this.graph, 20, 20);
+        this.commandService.paste();
         break;
 
       case 'delete':
-        this.graph.removeCells(cells);
+        this.commandService.delete();
         break;
 
       case 'selectAll':
-        {
-          const parent = this.graph.getDefaultParent();
-          const allCells = (this.graph.model as any).getChildren(parent) || [];
-          this.graph.setSelectionCells(allCells);
-        }
+        this.commandService.selectAll();
         break;
 
       case 'zoomIn':
@@ -264,65 +255,66 @@ export class MenuController {
         break;
 
       case 'toFront':
-        {
-          if (cells.length === 0) break;
-          const model = this.graph.model as any;
-          const parent = model.getParent(cells[0]);
-          if (parent) {
-            const index = model.getChildCount(parent) - 1;
-            model.add(parent, cells[0], index);
-          }
+        if (cells.length > 0) {
+          (this.graph as any).orderCells(false, cells);
         }
         break;
 
       case 'toBack':
-        {
-          if (cells.length === 0) break;
-          const model = this.graph.model as any;
-          const parent = model.getParent(cells[0]);
-          if (parent) {
-            model.add(parent, cells[0], 0);
-          }
+        if (cells.length > 0) {
+          (this.graph as any).orderCells(true, cells);
         }
         break;
 
       case 'bringForward':
-        {
-          if (cells.length === 0) break;
+        if (cells.length > 0) {
           const model = this.graph.model as any;
-          const parent = model.getParent(cells[0]);
-          if (parent) {
-            let index = -1;
-            for (let i = 0; i < model.getChildCount(parent); i++) {
-              if (model.getChildAt(parent, i) === cells[0]) {
-                index = i;
-                break;
+          this.graph.batchUpdate(() => {
+            cells.forEach((cell) => {
+              const parent = model.getParent(cell);
+              if (parent) {
+                let index = -1;
+                for (let i = 0; i < model.getChildCount(parent); i++) {
+                  if (model.getChildAt(parent, i) === cell) {
+                    index = i;
+                    break;
+                  }
+                }
+                if (index >= 0 && index < model.getChildCount(parent) - 1) {
+                  const temp = model.getChildAt(parent, index + 1);
+                  model.add(parent, temp, index);
+                  model.add(parent, cell, index + 1);
+                }
               }
-            }
-            if (index < model.getChildCount(parent) - 1) {
-              model.add(parent, cells[0], index + 1);
-            }
-          }
+            });
+          });
+          this.graph.refresh();
         }
         break;
 
       case 'sendBackward':
-        {
-          if (cells.length === 0) break;
+        if (cells.length > 0) {
           const model = this.graph.model as any;
-          const parent = model.getParent(cells[0]);
-          if (parent) {
-            let index = -1;
-            for (let i = 0; i < model.getChildCount(parent); i++) {
-              if (model.getChildAt(parent, i) === cells[0]) {
-                index = i;
-                break;
+          this.graph.batchUpdate(() => {
+            cells.forEach((cell) => {
+              const parent = model.getParent(cell);
+              if (parent) {
+                let index = -1;
+                for (let i = 0; i < model.getChildCount(parent); i++) {
+                  if (model.getChildAt(parent, i) === cell) {
+                    index = i;
+                    break;
+                  }
+                }
+                if (index > 0) {
+                  const temp = model.getChildAt(parent, index - 1);
+                  model.add(parent, temp, index);
+                  model.add(parent, cell, index - 1);
+                }
               }
-            }
-            if (index > 0) {
-              model.add(parent, cells[0], index - 1);
-            }
-          }
+            });
+          });
+          this.graph.refresh();
         }
         break;
 
