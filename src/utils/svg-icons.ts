@@ -200,6 +200,13 @@ const iconMap: Record<string, keyof typeof SvgIcons> = {
   uml_fork_join: 'line',
   uml_decision: 'decision',
   uml_merge: 'decision',
+  // Sequence Diagrams
+  uml_lifeline: 'line',
+  uml_activation_box: 'rectangle',
+  uml_message_arrow: 'arrow',
+  uml_combined_fragment: 'rectangle',
+  uml_interaction_use: 'rectangle',
+  uml_note: 'document',
   // Cloud
   cloud: 'cloud',
   database: 'database',

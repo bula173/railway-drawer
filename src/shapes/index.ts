@@ -16,6 +16,7 @@ import { UmlStateShape, UmlInitialStateShape, UmlFinalStateShape } from './uml-s
 import { UmlComponentShape, UmlArtifactShape } from './uml-component';
 import { UmlPackageShape, UmlObjectShape } from './uml-package';
 import { UmlActivityShape, UmlForkJoinShape, UmlDecisionShape, UmlMergeShape } from './uml-activity';
+import { UmlLifelineShape, UmlActivationBoxShape, UmlMessageArrowShape, UmlCombinedFragmentShape, UmlInteractionUseShape, UmlNoteShape } from './uml-sequence';
 import { shapeRegistry } from './registry';
 
 export function registerShapes() {
@@ -46,6 +47,12 @@ export function registerShapes() {
   CellRenderer.registerShape('customUmlForkJoin', UmlForkJoinShape as any);
   CellRenderer.registerShape('customUmlDecision', UmlDecisionShape as any);
   CellRenderer.registerShape('customUmlMerge', UmlMergeShape as any);
+  CellRenderer.registerShape('customUmlLifeline', UmlLifelineShape as any);
+  CellRenderer.registerShape('customUmlActivationBox', UmlActivationBoxShape as any);
+  CellRenderer.registerShape('customUmlMessageArrow', UmlMessageArrowShape as any);
+  CellRenderer.registerShape('customUmlCombinedFragment', UmlCombinedFragmentShape as any);
+  CellRenderer.registerShape('customUmlInteractionUse', UmlInteractionUseShape as any);
+  CellRenderer.registerShape('customUmlNote', UmlNoteShape as any);
 
   // ===== BASIC SHAPES =====
   shapeRegistry.register({
@@ -392,6 +399,67 @@ export function registerShapes() {
     width: 80,
     height: 80,
     style: { shape: 'customUmlMerge', fillColor: '#c5e1a5', strokeColor: '#9ccc65' },
+  });
+
+  // ===== UML 2.5 SHAPES (SEQUENCE DIAGRAMS) =====
+  shapeRegistry.register({
+    id: 'uml_lifeline',
+    label: 'Lifeline',
+    icon: '⬚',
+    group: 'UML',
+    width: 100,
+    height: 200,
+    style: { shape: 'customUmlLifeline', fillColor: '#e8f4f8', strokeColor: '#0c5aa0' },
+  });
+
+  shapeRegistry.register({
+    id: 'uml_activation_box',
+    label: 'Activation Box',
+    icon: '▭',
+    group: 'UML',
+    width: 40,
+    height: 100,
+    style: { shape: 'customUmlActivationBox', fillColor: '#ffffff', strokeColor: '#0c5aa0' },
+  });
+
+  shapeRegistry.register({
+    id: 'uml_message_arrow',
+    label: 'Message',
+    icon: '→',
+    group: 'UML',
+    width: 100,
+    height: 20,
+    style: { shape: 'customUmlMessageArrow', filled: false, strokeColor: '#0c5aa0', strokeWidth: 1.5 },
+  });
+
+  shapeRegistry.register({
+    id: 'uml_combined_fragment',
+    label: 'Combined Fragment',
+    icon: '□',
+    group: 'UML',
+    width: 200,
+    height: 120,
+    style: { shape: 'customUmlCombinedFragment', fillColor: '#ffffff', strokeColor: '#0c5aa0' },
+  });
+
+  shapeRegistry.register({
+    id: 'uml_interaction_use',
+    label: 'Interaction Use',
+    icon: '⟨⟩',
+    group: 'UML',
+    width: 140,
+    height: 80,
+    style: { shape: 'customUmlInteractionUse', fillColor: '#ffffff', strokeColor: '#0c5aa0' },
+  });
+
+  shapeRegistry.register({
+    id: 'uml_note',
+    label: 'Note',
+    icon: '📝',
+    group: 'UML',
+    width: 100,
+    height: 80,
+    style: { shape: 'customUmlNote', fillColor: '#ffffcc', strokeColor: '#d4a500' },
   });
 
   // ===== CLOUD/AWS SHAPES =====
