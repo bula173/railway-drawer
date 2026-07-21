@@ -213,45 +213,150 @@ export class PropertiesPanel {
 
           <!-- Style Tab -->
           <div class="prop-tab-content" data-tab="style" style="display: none;">
-            <div style="margin-bottom: 12px;">
-              <label style="display: block; margin-bottom: 4px; font-weight: 600; color: #333;">Fill Color</label>
-              <div style="display: flex; gap: 6px; align-items: center;">
-                <input type="color" class="prop-input" id="prop-fillColor" value="${style.fillColor || '#ffffff'}" style="width: 50px; height: 36px; cursor: pointer; border: 1px solid #ccc; border-radius: 3px;" />
-                <input type="text" class="prop-input" id="prop-fillColorText" value="${style.fillColor || '#ffffff'}" style="flex: 1; padding: 6px; border: 1px solid #ccc; border-radius: 3px; font-size: 12px; box-sizing: border-box;" />
+            <!-- Color Palette -->
+            <div style="margin-bottom: 16px;">
+              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                <button style="padding: 6px; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; cursor: pointer; font-size: 16px;">‹</button>
+                <div style="display: flex; gap: 6px; flex: 1; overflow: hidden;">
+                  <div style="width: 24px; height: 24px; border: 2px solid #2196F3; border-radius: 3px; background: #ffffff; cursor: pointer;"></div>
+                  <div style="width: 24px; height: 24px; border: 1px solid #ccc; border-radius: 3px; background: #f0f0f0; cursor: pointer;"></div>
+                  <div style="width: 24px; height: 24px; border: 1px solid #ccc; border-radius: 3px; background: #e3f2fd; cursor: pointer;"></div>
+                  <div style="width: 24px; height: 24px; border: 1px solid #ccc; border-radius: 3px; background: #e8f5e9; cursor: pointer;"></div>
+                  <div style="width: 24px; height: 24px; border: 1px solid #ccc; border-radius: 3px; background: #fff3e0; cursor: pointer;"></div>
+                  <div style="width: 24px; height: 24px; border: 1px solid #ccc; border-radius: 3px; background: #ffe0b2; cursor: pointer;"></div>
+                </div>
+                <button style="padding: 6px; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; cursor: pointer; font-size: 16px;">›</button>
+              </div>
+              <div style="display: flex; gap: 4px; justify-content: center;">
+                <div style="width: 8px; height: 8px; border-radius: 50%; background: #2196F3;"></div>
+                <div style="width: 8px; height: 8px; border-radius: 50%; background: #ccc;"></div>
+                <div style="width: 8px; height: 8px; border-radius: 50%; background: #ccc;"></div>
+                <div style="width: 8px; height: 8px; border-radius: 50%; background: #ccc;"></div>
+                <div style="width: 8px; height: 8px; border-radius: 50%; background: #ccc;"></div>
+                <div style="width: 8px; height: 8px; border-radius: 50%; background: #ccc;"></div>
               </div>
             </div>
 
-            <div style="margin-bottom: 12px;">
-              <label style="display: block; margin-bottom: 4px; font-weight: 600; color: #333;">Stroke Color</label>
-              <div style="display: flex; gap: 6px; align-items: center;">
-                <input type="color" class="prop-input" id="prop-strokeColor" value="${style.strokeColor || '#000000'}" style="width: 50px; height: 36px; cursor: pointer; border: 1px solid #ccc; border-radius: 3px;" />
-                <input type="text" class="prop-input" id="prop-strokeColorText" value="${style.strokeColor || '#000000'}" style="flex: 1; padding: 6px; border: 1px solid #ccc; border-radius: 3px; font-size: 12px; box-sizing: border-box;" />
+            <!-- Fill Section -->
+            <div style="margin-bottom: 16px; border: 1px solid #e0e0e0; border-radius: 3px; overflow: hidden;">
+              <div class="collapsible-header" data-section="style-fill" style="padding: 8px; background: #f9f9f9; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px; user-select: none;">
+                <span style="display: inline-block; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 5px solid #333;"></span>
+                Fill
+              </div>
+              <div class="collapsible-content" data-section="style-fill" style="padding: 8px;">
+                <div style="margin-bottom: 8px;">
+                  <label style="display: flex; align-items: center; gap: 6px; cursor: pointer; margin-bottom: 8px;">
+                    <input type="checkbox" id="prop-useFill" ${style.fillColor ? 'checked' : ''} style="cursor: pointer;" />
+                    <span style="font-weight: 600; color: #333;">Fill</span>
+                    <select class="prop-input" id="prop-fillType" style="margin-left: auto; padding: 4px 8px; border: 1px solid #ccc; border-radius: 3px; font-size: 11px;">
+                      <option value="solid">Automatic</option>
+                      <option value="gradient">Gradient</option>
+                    </select>
+                    <button style="padding: 4px 8px; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; cursor: pointer; font-size: 12px; width: 36px; text-align: center;">✏️</button>
+                  </label>
+                </div>
+                <div style="margin-bottom: 8px;">
+                  <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+                    <input type="checkbox" id="prop-useGradient" style="cursor: pointer;" />
+                    <span style="font-weight: 600; color: #333;">Gradient</span>
+                  </label>
+                </div>
               </div>
             </div>
 
-            <div style="margin-bottom: 12px;">
-              <label style="display: block; margin-bottom: 4px; font-weight: 600; color: #333;">Stroke Width</label>
-              <input type="number" class="prop-input" id="prop-strokeWidth" value="${style.strokeWidth || 1}" min="0.5" max="10" step="0.5" style="width: 100%; padding: 6px; border: 1px solid #ccc; border-radius: 3px; font-size: 12px; box-sizing: border-box;" />
+            <!-- Line Section -->
+            <div style="margin-bottom: 16px; border: 1px solid #e0e0e0; border-radius: 3px; overflow: hidden;">
+              <div class="collapsible-header" data-section="style-line" style="padding: 8px; background: #f9f9f9; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px; user-select: none;">
+                <span style="display: inline-block; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 5px solid #333;"></span>
+                Line
+              </div>
+              <div class="collapsible-content" data-section="style-line" style="padding: 8px;">
+                <div style="margin-bottom: 8px;">
+                  <label style="display: flex; align-items: center; gap: 6px; cursor: pointer; margin-bottom: 8px;">
+                    <input type="checkbox" id="prop-useLine" ${style.strokeColor ? 'checked' : ''} style="cursor: pointer;" />
+                    <span style="font-weight: 600; color: #333;">Line</span>
+                    <div style="margin-left: auto; width: 24px; height: 24px; border: 1px solid #ccc; border-radius: 3px; background: ${style.strokeColor || '#000000'};"></div>
+                    <button style="padding: 4px 8px; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; cursor: pointer; font-size: 12px; width: 36px; text-align: center;">✏️</button>
+                  </label>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 8px;">
+                  <div>
+                    <label style="display: block; margin-bottom: 3px; font-size: 11px; color: #666;">Style</label>
+                    <select class="prop-input" id="prop-lineStyle" style="width: 100%; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-size: 11px;">
+                      <option value="solid">Solid</option>
+                      <option value="dashed" ${style.dashed ? 'selected' : ''}>Dashed</option>
+                      <option value="dotted">Dotted</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label style="display: block; margin-bottom: 3px; font-size: 11px; color: #666;">Width</label>
+                    <input type="number" class="prop-input" id="prop-strokeWidth" value="${style.strokeWidth || 1}" min="0.5" max="10" step="0.5" style="width: 100%; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-size: 11px; box-sizing: border-box;" />
+                  </div>
+                </div>
+                <div>
+                  <label style="display: block; margin-bottom: 3px; font-size: 11px; color: #666;">Perimeter</label>
+                  <input type="number" class="prop-input" id="prop-perimeter" value="0" min="0" max="20" style="width: 100%; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-size: 11px; box-sizing: border-box;" />
+                </div>
+              </div>
             </div>
 
-            <div style="margin-bottom: 12px;">
-              <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
-                <input type="checkbox" class="prop-input" id="prop-dashed" ${style.dashed ? 'checked' : ''} style="cursor: pointer;" />
-                <span style="font-weight: 600; color: #333;">Dashed Border</span>
-              </label>
+            <!-- Opacity -->
+            <div style="margin-bottom: 16px;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <label style="font-weight: 600; color: #333;">Opacity</label>
+                <input type="range" class="prop-input" id="prop-opacity" value="${style.opacity || 100}" min="0" max="100" style="flex: 1; cursor: pointer;" />
+                <input type="number" id="prop-opacity-value" value="${style.opacity || 100}" min="0" max="100" style="width: 50px; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-size: 11px; box-sizing: border-box;" />
+                <span style="font-size: 11px; color: #666;">%</span>
+              </div>
             </div>
 
-            <div style="margin-bottom: 12px;">
-              <label style="display: block; margin-bottom: 4px; font-weight: 600; color: #333;">Opacity</label>
-              <input type="range" class="prop-input" id="prop-opacity" value="${style.opacity || 100}" min="0" max="100" style="width: 100%; cursor: pointer;" />
-              <span id="prop-opacity-value" style="font-size: 11px; color: #666;">${style.opacity || 100}%</span>
+            <!-- Effects Section -->
+            <div style="margin-bottom: 16px; border: 1px solid #e0e0e0; border-radius: 3px; overflow: hidden;">
+              <div class="collapsible-header" data-section="style-effects" style="padding: 8px; background: #f9f9f9; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px; user-select: none;">
+                <span style="display: inline-block; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 5px solid #333;"></span>
+                Effects
+              </div>
+              <div class="collapsible-content" data-section="style-effects" style="padding: 8px;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 12px;">
+                  <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+                    <input type="checkbox" id="prop-rounded" ${style.rounded ? 'checked' : ''} style="cursor: pointer;" />
+                    <span style="font-weight: 600; font-size: 12px;">Rounded</span>
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+                    <input type="checkbox" id="prop-sketch" style="cursor: pointer;" />
+                    <span style="font-weight: 600; font-size: 12px;">Sketch</span>
+                  </label>
+                </div>
+                <div style="margin-bottom: 12px;">
+                  <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+                    <input type="checkbox" id="prop-shadow" ${style.shadow ? 'checked' : ''} style="cursor: pointer;" />
+                    <span style="font-weight: 600; font-size: 12px;">Shadow</span>
+                  </label>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
+                  <button style="padding: 8px; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; cursor: pointer; font-size: 12px; font-weight: 500;">Edit</button>
+                  <button style="padding: 8px; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; cursor: pointer; font-size: 12px; font-weight: 500;">Copy Style</button>
+                </div>
+                <button style="width: 100%; padding: 8px; margin-top: 6px; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; cursor: pointer; font-size: 12px; font-weight: 500;">Set as Default Style</button>
+              </div>
             </div>
 
-            <div style="margin-bottom: 12px;">
-              <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
-                <input type="checkbox" class="prop-input" id="prop-shadow" ${style.shadow ? 'checked' : ''} style="cursor: pointer;" />
-                <span style="font-weight: 600; color: #333;">Shadow</span>
-              </label>
+            <!-- Property Section -->
+            <div style="border: 1px solid #e0e0e0; border-radius: 3px; overflow: hidden;">
+              <div class="collapsible-header" data-section="style-property" style="padding: 8px; background: #f9f9f9; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px; user-select: none;">
+                <span style="display: inline-block; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 5px solid #333;"></span>
+                Property
+              </div>
+              <div class="collapsible-content" data-section="style-property" style="padding: 8px; display: none;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 11px;">
+                  <div style="font-weight: 600; color: #666;">Property</div>
+                  <div style="font-weight: 600; color: #666;">Value</div>
+                  <div style="color: #333;">ID:</div>
+                  <div style="color: #666;">...${String(cell.id || '').slice(-6)}</div>
+                  <div style="color: #333;">Shape:</div>
+                  <div style="color: #666;">${style.shape || 'default'}</div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -652,6 +757,97 @@ export class PropertiesPanel {
       const value = parseInt((e.target as HTMLInputElement).value);
       const style = this.graph.getCellStyle(cell);
       (style as any).spacingGlobal = value;
+      this.graph.model.setStyle(cell, style);
+      this.graph.refresh();
+    });
+
+    // Style tab handlers
+    // Fill controls
+    document.getElementById('prop-useFill')?.addEventListener('change', (e) => {
+      const checked = (e.target as HTMLInputElement).checked;
+      const style = this.graph.getCellStyle(cell);
+      if (checked) {
+        style.fillColor = style.fillColor || '#ffffff';
+      } else {
+        style.fillColor = 'none';
+      }
+      this.graph.model.setStyle(cell, style);
+      this.graph.refresh();
+    });
+
+    document.getElementById('prop-fillType')?.addEventListener('change', () => {
+      this.graph.refresh();
+    });
+
+    // Line controls
+    document.getElementById('prop-useLine')?.addEventListener('change', (e) => {
+      const checked = (e.target as HTMLInputElement).checked;
+      const style = this.graph.getCellStyle(cell);
+      if (checked) {
+        style.strokeColor = style.strokeColor || '#000000';
+      } else {
+        style.strokeColor = 'none';
+      }
+      this.graph.model.setStyle(cell, style);
+      this.graph.refresh();
+    });
+
+    document.getElementById('prop-lineStyle')?.addEventListener('change', (e) => {
+      const value = (e.target as HTMLInputElement).value;
+      const style = this.graph.getCellStyle(cell);
+      style.dashed = value === 'dashed';
+      this.graph.model.setStyle(cell, style);
+      this.graph.refresh();
+    });
+
+    document.getElementById('prop-perimeter')?.addEventListener('change', (e) => {
+      const value = parseInt((e.target as HTMLInputElement).value);
+      const style = this.graph.getCellStyle(cell) as any;
+      style.perimeter = value;
+      this.graph.model.setStyle(cell, style);
+      this.graph.refresh();
+    });
+
+    // Opacity slider and input sync
+    const opacitySlider = document.getElementById('prop-opacity') as HTMLInputElement;
+    const opacityValue = document.getElementById('prop-opacity-value') as HTMLInputElement;
+
+    opacitySlider?.addEventListener('input', () => {
+      if (opacityValue) opacityValue.value = opacitySlider.value;
+    });
+
+    opacitySlider?.addEventListener('change', (e) => {
+      const value = parseInt((e.target as HTMLInputElement).value);
+      const style = this.graph.getCellStyle(cell);
+      style.opacity = value;
+      this.graph.model.setStyle(cell, style);
+      this.graph.refresh();
+    });
+
+    opacityValue?.addEventListener('change', () => {
+      const value = parseInt(opacityValue.value);
+      if (!isNaN(value) && value >= 0 && value <= 100) {
+        opacitySlider!.value = String(value);
+        const style = this.graph.getCellStyle(cell);
+        style.opacity = value;
+        this.graph.model.setStyle(cell, style);
+        this.graph.refresh();
+      }
+    });
+
+    // Effects
+    document.getElementById('prop-rounded')?.addEventListener('change', (e) => {
+      const checked = (e.target as HTMLInputElement).checked;
+      const style = this.graph.getCellStyle(cell) as any;
+      style.rounded = checked ? 1 : 0;
+      this.graph.model.setStyle(cell, style);
+      this.graph.refresh();
+    });
+
+    document.getElementById('prop-sketch')?.addEventListener('change', (e) => {
+      const checked = (e.target as HTMLInputElement).checked;
+      const style = this.graph.getCellStyle(cell) as any;
+      style.sketch = checked;
       this.graph.model.setStyle(cell, style);
       this.graph.refresh();
     });
