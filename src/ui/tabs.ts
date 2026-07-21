@@ -19,6 +19,7 @@ import { ConnectionHandler } from './connections';
 import { TextEditorController } from './text-editor';
 import { EdgePropertiesController } from './edge-properties';
 import { LayersController } from './layers';
+import { ImageUploadController } from './image-upload';
 
 export interface TabData {
   id: string;
@@ -40,6 +41,7 @@ export interface TabData {
   interactiveUIController: InteractiveUIController;
   drawingController: DrawingController;
   layersController: LayersController;
+  imageUploadController: ImageUploadController;
 }
 
 export class TabManager {
@@ -109,6 +111,7 @@ export class TabManager {
     const interactiveUIController = new InteractiveUIController(graph, graphCommandService);
     const drawingController = new DrawingController(graph);
     const layersController = new LayersController(graph);
+    const imageUploadController = new ImageUploadController(graph);
 
     const tabData: TabData = {
       id: tabId,
@@ -130,6 +133,7 @@ export class TabManager {
       interactiveUIController,
       drawingController,
       layersController,
+      imageUploadController,
     };
 
     this.tabs.set(tabId, tabData);
@@ -240,6 +244,9 @@ export class TabManager {
         }
         if ((tab.layersController as any).destroy) {
           (tab.layersController as any).destroy();
+        }
+        if ((tab.imageUploadController as any).destroy) {
+          (tab.imageUploadController as any).destroy();
         }
       } catch (e) {
         console.warn('[TabManager] Error destroying controllers:', e);

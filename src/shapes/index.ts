@@ -19,6 +19,7 @@ import { UmlActivityShape, UmlForkJoinShape, UmlDecisionShape, UmlMergeShape } f
 import { UmlLifelineShape, UmlActivationBoxShape, UmlMessageArrowShape, UmlCombinedFragmentShape, UmlInteractionUseShape, UmlNoteShape } from './uml-sequence';
 import { HexagonShape, PentagonShape, StarShape, TrapezoidShape, CrossShape, CylinderShape, SimpleArrowShape, OvalShape, DoubleRectangleShape, ParallelogramShape, DelayShape, ChevronShape, RightAngleShape, LozengeShape, RoundedRectangleShape } from './basic-shapes';
 import { RailShape, SignalShape, SwitchShape, JunctionShape, PlatformShape, StationShape, CrossingShape, TunnelShape, BufferShape, CabinShape, LTAShape, LTOShape, DetectionPointShape, TrackSectionShape, VerticalConnectorShape, EOLMarkerShape, RailLevelShape, SlopedTrackShape, TrainShape, SignalHeadShape, RBCShape, CommunicationLineShape, EBSectionShape, WaysideEquipmentShape, TrackCircuitShape, ERTMSLevelMarkerShape, SpeedRestrictionMarkerShape, ERTMSBaliseShape, ERTMSLevelCrossingShape, ERTMSHandoverPointShape, NationalTransitionPointShape, ERTMSTransponderShape, ERTMSSectionMarkerShape } from './railway-shapes';
+import { ImageShape } from './image-shape';
 import { railwayShapes } from './railway';
 import { shapeRegistry } from './registry';
 
@@ -110,6 +111,9 @@ export function registerShapes() {
   CellRenderer.registerShape('customNationalTransitionPoint', NationalTransitionPointShape as any);
   CellRenderer.registerShape('customERTMSTransponder', ERTMSTransponderShape as any);
   CellRenderer.registerShape('customERTMSSectionMarker', ERTMSSectionMarkerShape as any);
+
+  // Register image shape
+  CellRenderer.registerShape('customImage', ImageShape as any);
 
   // ===== BASIC SHAPES =====
   shapeRegistry.register({
