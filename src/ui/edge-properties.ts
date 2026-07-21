@@ -16,14 +16,33 @@ export class EdgePropertiesController {
 
   private update(): void {
     const cells = this.graph.getSelectionCells();
-    if (cells.length === 0) return;
+    console.log('[EdgeProperties] Selection changed:', cells.length, cells.map((c: any) => ({ isEdge: c.isEdge?.(), isVertex: c.isVertex?.() })));
+
+    if (cells.length === 0) {
+      this.hideEdgeProperties();
+      return;
+    }
 
     const cell = cells[0];
-    if (cell && cell.isEdge && cell.isEdge()) {
+    const isEdge = cell && cell.isEdge && cell.isEdge();
+    console.log('[EdgeProperties] Selected cell isEdge:', isEdge, 'cell:', cell);
+
+    if (isEdge) {
       this.currentEdge = cell;
       this.showEdgeProperties();
       this.updateEdgeValues();
       this.setupEdgeHandlers();
+      console.log('[EdgeProperties] Edge properties shown');
+    } else {
+      this.hideEdgeProperties();
+      console.log('[EdgeProperties] Edge properties hidden (non-edge selected)');
+    }
+  }
+
+  private hideEdgeProperties(): void {
+    const edgePanel = document.getElementById('edge-properties');
+    if (edgePanel) {
+      edgePanel.style.display = 'none';
     }
   }
 
