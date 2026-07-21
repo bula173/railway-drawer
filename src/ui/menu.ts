@@ -82,9 +82,12 @@ export class MenuController {
   }
 
   private saveProjectAs(): void {
+    const titleElement = document.querySelector('.document-title');
+    const currentName = titleElement?.textContent || (this.graph as any)._tabData?.saveLoadController?.getProjectName?.() || 'Untitled';
+
     const input = document.createElement('input');
     input.type = 'text';
-    input.value = (this.graph as any)._tabData?.saveLoadController?.getProjectName?.() || 'Untitled';
+    input.value = currentName;
     input.placeholder = 'Project name';
 
     const dialog = document.createElement('div');
