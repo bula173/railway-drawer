@@ -103,7 +103,7 @@
         <!-- Left Section: View & Navigation -->
         <div class="toolbar-section">
           <div class="zoom-control">
-            <button class="toolbar-btn" title="Zoom out">−</button>
+            <button class="toolbar-btn" id="btn-zoom-out" title="Zoom out">−</button>
             <select class="zoom-select" id="zoom-level">
               <option value="50">50%</option>
               <option value="75">75%</option>
@@ -111,11 +111,11 @@
               <option value="150">150%</option>
               <option value="200">200%</option>
             </select>
-            <button class="toolbar-btn" title="Zoom in">+</button>
+            <button class="toolbar-btn" id="btn-zoom-in" title="Zoom in">+</button>
           </div>
           <div class="toolbar-separator"></div>
-          <button class="toolbar-btn" title="Pan left">‹</button>
-          <button class="toolbar-btn" title="Pan right">›</button>
+          <button class="toolbar-btn" id="btn-pan-left" title="Pan left">‹</button>
+          <button class="toolbar-btn" id="btn-pan-right" title="Pan right">›</button>
         </div>
 
         <!-- Center Section: Edit Tools -->
@@ -123,26 +123,26 @@
           <button class="toolbar-btn" id="btn-undo" title="Undo">↺</button>
           <button class="toolbar-btn" id="btn-redo" title="Redo">↻</button>
           <div class="toolbar-separator"></div>
-          <button class="toolbar-btn" title="Delete">🗑</button>
+          <button class="toolbar-btn" id="btn-delete" title="Delete">🗑</button>
           <div class="toolbar-separator"></div>
-          <button class="toolbar-btn" title="Draw rectangle">▭</button>
-          <button class="toolbar-btn" title="Draw ellipse">●</button>
-          <button class="toolbar-btn" title="Draw diamond">◆</button>
-          <button class="toolbar-btn" title="Draw line">—</button>
-          <button class="toolbar-btn" title="Draw connector">↗</button>
+          <button class="toolbar-btn" id="btn-draw-rect" title="Draw rectangle">▭</button>
+          <button class="toolbar-btn" id="btn-draw-ellipse" title="Draw ellipse">●</button>
+          <button class="toolbar-btn" id="btn-draw-diamond" title="Draw diamond">◆</button>
+          <button class="toolbar-btn" id="btn-draw-line" title="Draw line">—</button>
+          <button class="toolbar-btn" id="btn-draw-connector" title="Draw connector">↗</button>
           <div class="toolbar-separator"></div>
-          <button class="toolbar-btn" title="Add element">+</button>
+          <button class="toolbar-btn" id="btn-add-element" title="Add element">+</button>
           <div class="toolbar-separator"></div>
-          <button class="toolbar-btn" title="Grid">⊞</button>
-          <button class="toolbar-btn" title="Format painter">🎨</button>
-          <button class="toolbar-btn" title="Align">⊞⊡</button>
-          <button class="toolbar-btn" title="Distribute">≣</button>
+          <button class="toolbar-btn" id="btn-grid" title="Grid">⊞</button>
+          <button class="toolbar-btn" id="btn-format-painter" title="Format painter">🎨</button>
+          <button class="toolbar-btn" id="btn-align" title="Align">⊞⊡</button>
+          <button class="toolbar-btn" id="btn-distribute" title="Distribute">≣</button>
         </div>
 
         <!-- Right Section: View Options -->
         <div class="toolbar-section">
-          <button class="toolbar-btn" title="Fullscreen">⛶</button>
-          <button class="toolbar-btn" title="More options">⋮</button>
+          <button class="toolbar-btn" id="btn-fullscreen" title="Fullscreen">⛶</button>
+          <button class="toolbar-btn" id="btn-more-options" title="More options">⋮</button>
         </div>
       </div>
 
@@ -473,8 +473,8 @@
 
                   <!-- Misc Buttons -->
                   <div style="margin-bottom: 0;">
-                    <button style="width: 100%; padding: 8px; margin-bottom: 6px; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; cursor: pointer; font-size: 12px; font-weight: 500;">Snap to Grid</button>
-                    <button style="width: 100%; padding: 8px; margin-bottom: 6px; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; cursor: pointer; font-size: 12px; font-weight: 500;">Group</button>
+                    <button id="btn-snap-to-grid" style="width: 100%; padding: 8px; margin-bottom: 6px; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; cursor: pointer; font-size: 12px; font-weight: 500;">Snap to Grid</button>
+                    <button id="btn-group" style="width: 100%; padding: 8px; margin-bottom: 6px; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; cursor: pointer; font-size: 12px; font-weight: 500;">Group</button>
                     <button id="btn-copySize" style="width: 100%; padding: 8px; margin-bottom: 6px; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; cursor: pointer; font-size: 12px; font-weight: 500;">Copy Size</button>
                     <button id="btn-lock" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; cursor: pointer; font-size: 12px; font-weight: 500;">Lock</button>
                   </div>
