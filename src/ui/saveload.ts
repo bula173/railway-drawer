@@ -4,11 +4,13 @@ import { ProjectService } from '../services/project-service';
 export class SaveLoadController {
   private graph: Graph;
   private projectService: ProjectService;
+  private isSavedToDisk = false;
 
   constructor(graph: Graph) {
     this.graph = graph;
     this.projectService = new ProjectService();
     this.setupKeyboardShortcuts();
+    this.updateSaveStatus();
   }
 
   private setupKeyboardShortcuts(): void {
@@ -25,6 +27,7 @@ export class SaveLoadController {
     const projectXml = this.projectService.generateProjectXml(graphXml);
     const filename = `${this.projectService.getProjectName() || 'diagram'}.drawio`;
     this.projectService.exportToFile(projectXml, filename);
+    this.markAsSavedToDisk();
     console.log('[SaveLoad] Project saved as', filename);
   }
 
@@ -34,6 +37,7 @@ export class SaveLoadController {
       this.projectService.setProjectName(result.metadata.name);
       this.projectService.deserializeGraphFromXml(this.graph, result.graphXml);
       this.updateProjectNameUI(result.metadata.name);
+      this.markAsSavedToDisk();
       console.log('[SaveLoad] Project loaded:', result.metadata.name);
     } catch (error) {
       console.error('[SaveLoad] Failed to load project:', error);
@@ -119,5 +123,32 @@ export class SaveLoadController {
     if (titleElement) {
       titleElement.textContent = name;
     }
+  }
+
+  private updateSaveStatus(): void {
+    const statusElement = document.querySelector('.save-status') as HTMLElement;
+    if (statusElement) {
+      if (this.isSavedToDisk) {
+        statusElement.textContent = '✓ Saved to disk';
+        statusElement.style.color = '#4caf50';
+      } else {
+        statusElement.textContent = '💾 Auto-saving to cache...';
+        statusElement.style.color = '#ff9800';
+      }
+    }
+  }
+
+  markAsSavedToDisk(): void {
+    this.isSavedToDisk = true;
+    this.updateSaveStatus();
+    setTimeout(() => {
+      this.isSavedToDisk = false;
+      this.updateSaveStatus();
+    }, 2000);
+  }
+
+  markAsChanged(): void {
+    this.isSavedToDisk = false;
+    this.updateSaveStatus();
   }
 }

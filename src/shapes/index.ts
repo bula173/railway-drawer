@@ -17,9 +17,27 @@ import { UmlComponentShape, UmlArtifactShape } from './uml-component';
 import { UmlPackageShape, UmlObjectShape } from './uml-package';
 import { UmlActivityShape, UmlForkJoinShape, UmlDecisionShape, UmlMergeShape } from './uml-activity';
 import { UmlLifelineShape, UmlActivationBoxShape, UmlMessageArrowShape, UmlCombinedFragmentShape, UmlInteractionUseShape, UmlNoteShape } from './uml-sequence';
+import { HexagonShape, PentagonShape, StarShape, TrapezoidShape, CrossShape, CylinderShape, SimpleArrowShape, OvalShape, DoubleRectangleShape, ParallelogramShape, DelayShape, ChevronShape, RightAngleShape, LozengeShape, RoundedRectangleShape } from './basic-shapes';
 import { shapeRegistry } from './registry';
 
 export function registerShapes() {
+  // Register basic shapes
+  CellRenderer.registerShape('customHexagon', HexagonShape as any);
+  CellRenderer.registerShape('customPentagon', PentagonShape as any);
+  CellRenderer.registerShape('customStar', StarShape as any);
+  CellRenderer.registerShape('customTrapezoid', TrapezoidShape as any);
+  CellRenderer.registerShape('customCross', CrossShape as any);
+  CellRenderer.registerShape('customCylinder', CylinderShape as any);
+  CellRenderer.registerShape('customSimpleArrow', SimpleArrowShape as any);
+  CellRenderer.registerShape('customOval', OvalShape as any);
+  CellRenderer.registerShape('customDoubleRectangle', DoubleRectangleShape as any);
+  CellRenderer.registerShape('customParallelogram', ParallelogramShape as any);
+  CellRenderer.registerShape('customDelay', DelayShape as any);
+  CellRenderer.registerShape('customChevron', ChevronShape as any);
+  CellRenderer.registerShape('customRightAngle', RightAngleShape as any);
+  CellRenderer.registerShape('customLozenge', LozengeShape as any);
+  CellRenderer.registerShape('customRoundedRectangle', RoundedRectangleShape as any);
+
   // Register custom shapes
   CellRenderer.registerShape('customLine', LineShape as any);
   CellRenderer.registerShape('customArrow', ArrowShape as any);
@@ -685,6 +703,137 @@ export function registerShapes() {
     width: 80,
     height: 100,
     style: { fillColor: '#e2efda', strokeColor: '#70ad47' },
+  });
+
+  // ===== EXTENDED BASIC SHAPES =====
+  shapeRegistry.register({
+    id: 'hexagon',
+    label: 'Hexagon',
+    icon: '⬡',
+    group: 'Basic',
+    width: 100,
+    height: 100,
+    style: { shape: 'customHexagon', fillColor: '#c5e0b4', strokeColor: '#70ad47' },
+  });
+
+  shapeRegistry.register({
+    id: 'pentagon',
+    label: 'Pentagon',
+    icon: '⬠',
+    group: 'Basic',
+    width: 100,
+    height: 100,
+    style: { shape: 'customPentagon', fillColor: '#f4b183', strokeColor: '#e67e22' },
+  });
+
+  shapeRegistry.register({
+    id: 'star',
+    label: 'Star',
+    icon: '★',
+    group: 'Basic',
+    width: 100,
+    height: 100,
+    style: { shape: 'customStar', fillColor: '#ffd966', strokeColor: '#f1c232' },
+  });
+
+  shapeRegistry.register({
+    id: 'trapezoid',
+    label: 'Trapezoid',
+    icon: '⧥',
+    group: 'Basic',
+    width: 100,
+    height: 80,
+    style: { shape: 'customTrapezoid', fillColor: '#e2efda', strokeColor: '#70ad47' },
+  });
+
+  shapeRegistry.register({
+    id: 'cross',
+    label: 'Cross',
+    icon: '✕',
+    group: 'Basic',
+    width: 100,
+    height: 100,
+    style: { shape: 'customCross', fillColor: '#f8b88b', strokeColor: '#e67e22' },
+  });
+
+  shapeRegistry.register({
+    id: 'cylinder_basic',
+    label: 'Cylinder',
+    icon: '⊗',
+    group: 'Basic',
+    width: 80,
+    height: 100,
+    style: { shape: 'customCylinder', fillColor: '#b3e5fc', strokeColor: '#0288d1' },
+  });
+
+  shapeRegistry.register({
+    id: 'oval_basic',
+    label: 'Oval',
+    icon: '⬭',
+    group: 'Basic',
+    width: 100,
+    height: 80,
+    style: { shape: 'customOval', fillColor: '#d4e6f1', strokeColor: '#3498db' },
+  });
+
+  shapeRegistry.register({
+    id: 'double_rectangle',
+    label: 'Double Rectangle',
+    icon: '▦',
+    group: 'Basic',
+    width: 100,
+    height: 60,
+    style: { shape: 'customDoubleRectangle', fillColor: '#e1d5e7', strokeColor: '#9673a6' },
+  });
+
+  shapeRegistry.register({
+    id: 'lozenge',
+    label: 'Lozenge',
+    icon: '◆',
+    group: 'Basic',
+    width: 80,
+    height: 80,
+    style: { shape: 'customLozenge', fillColor: '#ffe6cc', strokeColor: '#ed7d31' },
+  });
+
+  shapeRegistry.register({
+    id: 'chevron',
+    label: 'Chevron',
+    icon: '▶',
+    group: 'Basic',
+    width: 100,
+    height: 60,
+    style: { shape: 'customChevron', fillColor: '#cfe2f3', strokeColor: '#4472c4' },
+  });
+
+  shapeRegistry.register({
+    id: 'delay',
+    label: 'Delay',
+    icon: '◄',
+    group: 'Flowchart',
+    width: 100,
+    height: 60,
+    style: { shape: 'customDelay', fillColor: '#fce4d6', strokeColor: '#c65911' },
+  });
+
+  shapeRegistry.register({
+    id: 'right_angle',
+    label: 'Right Angle',
+    icon: '⊞',
+    group: 'Basic',
+    width: 80,
+    height: 80,
+    style: { shape: 'customRightAngle', fillColor: 'none', strokeColor: '#2c3e50', strokeWidth: 2 },
+  });
+
+  shapeRegistry.register({
+    id: 'rounded_rect_basic',
+    label: 'Rounded Rect',
+    icon: '⬬',
+    group: 'Basic',
+    width: 100,
+    height: 60,
+    style: { shape: 'customRoundedRectangle', fillColor: '#a9d08e', strokeColor: '#70ad47' },
   });
 }
 

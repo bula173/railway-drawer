@@ -5,13 +5,19 @@ import { TabManager } from './ui/tabs';
 import { StencilManager } from './ui/stencil-manager';
 import { LeftPanelTabs } from './ui/left-panel-tabs';
 import { CacheService } from './services/cache-service';
+import { ProjectNameEditor } from './ui/project-name-editor';
 
 // Register built-in shapes
 registerShapes();
 
+// ============= PROJECT NAME EDITOR =============
+
+new ProjectNameEditor();
+
 // ============= TAB MANAGER =============
 
 const tabManager = new TabManager('tabs-container', 'graph-container');
+(window as any).__tabManager = tabManager;
 
 // Restore from cache or create new tab
 if (CacheService.exists()) {
