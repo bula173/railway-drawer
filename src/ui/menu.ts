@@ -58,14 +58,109 @@ export class MenuController {
     }
   }
 
-  private closeAllMenus() {
+  private closeAllMenus(): void {
     const dropdowns = document.querySelectorAll('.menu-dropdown');
     dropdowns.forEach((dropdown) => {
       (dropdown as HTMLElement).style.display = 'none';
     });
   }
 
-  private executeMenuAction(action: string) {
+  private openProject(): void {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = '.drawio,.xml';
+    input.onchange = async (e: any) => {
+      const file = e.target.files?.[0];
+      if (file) {
+        const tab = (this.graph as any)._tabData;
+        if (tab && tab.saveLoadController) {
+          await tab.saveLoadController.loadProjectFromFile(file);
+        }
+      }
+    };
+    input.click();
+  }
+
+  private saveProjectAs(): void {
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.value = (this.graph as any)._tabData?.saveLoadController?.getProjectName?.() || 'Untitled';
+    input.placeholder = 'Project name';
+
+    const dialog = document.createElement('div');
+    dialog.style.position = 'fixed';
+    dialog.style.top = '50%';
+    dialog.style.left = '50%';
+    dialog.style.transform = 'translate(-50%, -50%)';
+    dialog.style.background = 'white';
+    dialog.style.padding = '20px';
+    dialog.style.borderRadius = '8px';
+    dialog.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+    dialog.style.zIndex = '10001';
+    dialog.style.minWidth = '300px';
+
+    const label = document.createElement('div');
+    label.textContent = 'Enter project name:';
+    label.style.marginBottom = '10px';
+    label.style.fontWeight = '600';
+
+    const buttonContainer = document.createElement('div');
+    buttonContainer.style.display = 'flex';
+    buttonContainer.style.gap = '8px';
+    buttonContainer.style.marginTop = '16px';
+
+    const saveBtn = document.createElement('button');
+    saveBtn.textContent = 'Save';
+    saveBtn.style.flex = '1';
+    saveBtn.style.padding = '8px';
+    saveBtn.style.background = '#1976d2';
+    saveBtn.style.color = 'white';
+    saveBtn.style.border = 'none';
+    saveBtn.style.borderRadius = '4px';
+    saveBtn.style.cursor = 'pointer';
+
+    const cancelBtn = document.createElement('button');
+    cancelBtn.textContent = 'Cancel';
+    cancelBtn.style.flex = '1';
+    cancelBtn.style.padding = '8px';
+    cancelBtn.style.background = '#f0f0f0';
+    cancelBtn.style.border = '1px solid #ccc';
+    cancelBtn.style.borderRadius = '4px';
+    cancelBtn.style.cursor = 'pointer';
+
+    saveBtn.onclick = () => {
+      const name = input.value || 'Untitled';
+      const tab = (this.graph as any)._tabData;
+      if (tab && tab.saveLoadController) {
+        tab.saveLoadController.setProjectName(name);
+        tab.saveLoadController.saveProject();
+      }
+      document.body.removeChild(dialog);
+    };
+
+    cancelBtn.onclick = () => {
+      document.body.removeChild(dialog);
+    };
+
+    input.style.width = '100%';
+    input.style.padding = '8px';
+    input.style.border = '1px solid #ccc';
+    input.style.borderRadius = '4px';
+    input.style.boxSizing = 'border-box';
+
+    buttonContainer.appendChild(saveBtn);
+    buttonContainer.appendChild(cancelBtn);
+
+    dialog.appendChild(label);
+    dialog.appendChild(input);
+    dialog.appendChild(buttonContainer);
+    document.body.appendChild(dialog);
+
+    input.focus();
+    input.select();
+  }
+
+  private executeMenuAction(action: string): void {
     const cells = this.graph.getSelectionCells();
 
     switch (action) {
@@ -77,19 +172,29 @@ export class MenuController {
         break;
 
       case 'open':
-        console.log('[Menu] Open - Not yet implemented');
+        this.openProject();
         break;
 
       case 'save':
-        console.log('[Menu] Save - Document saved');
+        {
+          const tab = (this.graph as any)._tabData;
+          if (tab && tab.saveLoadController) {
+            tab.saveLoadController.saveProject();
+          }
+        }
         break;
 
       case 'saveAs':
-        console.log('[Menu] Save As - Not yet implemented');
+        this.saveProjectAs();
         break;
 
       case 'export':
-        console.log('[Menu] Export As - Not yet implemented');
+        {
+          const tab = (this.graph as any)._tabData;
+          if (tab && tab.saveLoadController) {
+            tab.saveLoadController.save();
+          }
+        }
         break;
 
       case 'print':

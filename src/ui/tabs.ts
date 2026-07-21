@@ -12,6 +12,7 @@ import { CanvasProperties } from './canvas-properties';
 import { ContextMenuController } from './context-menu';
 import { MenuController } from './menu';
 import { InteractiveUIController } from './interactive-ui';
+import { CacheService, CacheData } from '../services/cache-service';
 
 export interface TabData {
   id: string;
@@ -37,10 +38,13 @@ export class TabManager {
   private activeTabId: string | null = null;
   private tabBarContainer: HTMLElement;
   private graphContainer: HTMLElement;
+  private autoSaveInterval: NodeJS.Timeout | null = null;
+  private saveLoadControllers: Map<string, SaveLoadController> = new Map();
 
   constructor(tabBarContainerId: string, graphContainerId: string) {
     this.tabBarContainer = document.getElementById(tabBarContainerId)!;
     this.graphContainer = document.getElementById(graphContainerId)!;
+    this.startAutoSave();
   }
 
   createTab(name: string = 'Untitled'): TabData {
@@ -99,6 +103,7 @@ export class TabManager {
     };
 
     this.tabs.set(tabId, tabData);
+    this.saveLoadControllers.set(tabId, saveLoadController);
 
     if (!this.activeTabId) {
       this.activeTabId = tabId;
@@ -106,6 +111,63 @@ export class TabManager {
 
     this.renderTabBar();
     return tabData;
+  }
+
+  private startAutoSave(): void {
+    this.autoSaveInterval = setInterval(() => {
+      this.saveToCache();
+    }, 5000); // Auto-save every 5 seconds
+  }
+
+  private saveToCache(): void {
+    if (this.tabs.size === 0 || !this.activeTabId) return;
+
+    const cacheData: CacheData = {
+      projectName: this.getProjectName(),
+      tabs: Array.from(this.tabs.values()).map((tab) => ({
+        id: tab.id,
+        name: tab.name,
+        graphXml: tab.saveLoadController.serializeToXml(),
+      })),
+      activeTabId: this.activeTabId,
+      timestamp: Date.now(),
+    };
+
+    CacheService.save(cacheData);
+  }
+
+  restoreFromCache(): void {
+    const cacheData = CacheService.load();
+    if (!cacheData) return;
+
+    this.restoreProjectName(cacheData.projectName);
+
+    cacheData.tabs.forEach((tabCache) => {
+      const tabData = this.createTab(tabCache.name);
+      tabData.saveLoadController.load(tabCache.graphXml);
+    });
+
+    if (cacheData.activeTabId && this.tabs.has(cacheData.activeTabId)) {
+      this.switchTab(cacheData.activeTabId);
+    }
+
+    console.log('[TabManager] Restored from cache');
+  }
+
+  clearCache(): void {
+    CacheService.clear();
+  }
+
+  private getProjectName(): string {
+    const titleElement = document.querySelector('.document-title');
+    return titleElement?.textContent || 'Untitled Diagram';
+  }
+
+  private restoreProjectName(name: string): void {
+    const titleElement = document.querySelector('.document-title') as HTMLElement;
+    if (titleElement) {
+      titleElement.textContent = name;
+    }
   }
 
   switchTab(tabId: string): void {
@@ -156,7 +218,17 @@ export class TabManager {
     const tab = this.tabs.get(tabId);
     if (tab) {
       tab.name = newName;
+      const saveLoadController = this.saveLoadControllers.get(tabId);
+      if (saveLoadController) {
+        saveLoadController.setProjectName(newName);
+      }
       this.renderTabBar();
+    }
+  }
+
+  destroy(): void {
+    if (this.autoSaveInterval) {
+      clearInterval(this.autoSaveInterval);
     }
   }
 

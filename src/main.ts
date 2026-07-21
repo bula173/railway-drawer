@@ -4,6 +4,7 @@ import { registerShapes, shapeRegistry, ShapeToolbar } from './shapes';
 import { TabManager } from './ui/tabs';
 import { StencilManager } from './ui/stencil-manager';
 import { LeftPanelTabs } from './ui/left-panel-tabs';
+import { CacheService } from './services/cache-service';
 
 // Register built-in shapes
 registerShapes();
@@ -11,7 +12,18 @@ registerShapes();
 // ============= TAB MANAGER =============
 
 const tabManager = new TabManager('tabs-container', 'graph-container');
-tabManager.createTab('Diagram 1');
+
+// Restore from cache or create new tab
+if (CacheService.exists()) {
+  tabManager.restoreFromCache();
+} else {
+  tabManager.createTab('Diagram 1');
+}
+
+// Cleanup on page unload
+window.addEventListener('beforeunload', () => {
+  tabManager.destroy();
+});
 
 // ============= DROP HANDLER =============
 

@@ -8,12 +8,21 @@ export class StatusBarController {
     this.setupListeners();
   }
 
-  private setupListeners() {
-    // Update zoom status
+  private setupListeners(): void {
+    // Update zoom status and sync zoom selector
     this.graph.view.addListener('scale', () => {
       const zoom = Math.round(this.graph.view.scale * 100);
       const statusZoom = document.getElementById('status-zoom');
       if (statusZoom) statusZoom.textContent = `${zoom}%`;
+
+      // Sync zoom selector if it matches a standard value
+      const zoomSelect = document.getElementById('zoom-level') as HTMLSelectElement;
+      if (zoomSelect) {
+        const options = Array.from(zoomSelect.options).map((o) => parseInt(o.value));
+        if (options.includes(zoom)) {
+          zoomSelect.value = zoom.toString();
+        }
+      }
     });
 
     // Update selection status
