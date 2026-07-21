@@ -38,8 +38,10 @@ export class PropertiesPanel {
   private showEditor() {
     const placeholder = document.getElementById('prop-placeholder');
     const editor = document.getElementById('prop-editor');
+    const canvasProps = document.getElementById('canvas-props');
     if (placeholder) placeholder.style.display = 'none';
     if (editor) editor.style.display = 'flex';
+    if (canvasProps) canvasProps.style.display = 'none';
   }
 
   private updateValues() {

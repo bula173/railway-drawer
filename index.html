@@ -100,6 +100,44 @@
             <!-- Placeholder when no selection -->
             <p id="prop-placeholder" style="color: #999; font-size: 12px; padding: 12px;">Click element to edit</p>
 
+            <!-- Canvas Properties (shown when canvas clicked) -->
+            <div id="canvas-props" style="display: none;">
+              <div style="padding: 8px;">
+                <div style="font-size: 12px; font-weight: 600; color: #333; padding: 8px; border-bottom: 1px solid #e0e0e0; margin-bottom: 12px;">Canvas Properties</div>
+
+                <div style="margin-bottom: 12px;">
+                  <label style="display: block; margin-bottom: 4px; font-weight: 600; color: #333;">Grid</label>
+                  <div style="display: flex; align-items: center; gap: 6px;">
+                    <input type="checkbox" id="canvas-gridEnabled" checked style="cursor: pointer;" />
+                    <label for="canvas-gridEnabled" style="cursor: pointer;">Show Grid</label>
+                  </div>
+                </div>
+
+                <div style="margin-bottom: 12px;">
+                  <label style="display: block; margin-bottom: 4px; font-weight: 600; color: #333;">Grid Size</label>
+                  <input type="number" id="canvas-gridSize" value="10" min="5" max="50" step="1" style="width: 100%; padding: 6px; border: 1px solid #ccc; border-radius: 3px; font-size: 12px; box-sizing: border-box;" />
+                </div>
+
+                <div style="margin-bottom: 12px;">
+                  <label style="display: block; margin-bottom: 4px; font-weight: 600; color: #333;">Background Color</label>
+                  <div style="display: flex; gap: 6px;">
+                    <input type="color" id="canvas-bgColor" value="#ffffff" style="width: 50px; height: 36px; cursor: pointer; border: 1px solid #ccc; border-radius: 3px;" />
+                    <input type="text" id="canvas-bgColorText" value="#ffffff" style="flex: 1; padding: 6px; border: 1px solid #ccc; border-radius: 3px; font-size: 12px; box-sizing: border-box;" />
+                  </div>
+                </div>
+
+                <div>
+                  <label style="display: block; margin-bottom: 4px; font-weight: 600; color: #333;">Canvas Size</label>
+                  <select id="canvas-size" style="width: 100%; padding: 6px; border: 1px solid #ccc; border-radius: 3px; font-size: 12px; box-sizing: border-box;">
+                    <option value="A4">A4</option>
+                    <option value="A5">A5</option>
+                    <option value="Letter">Letter</option>
+                    <option value="Fullscreen" selected>Fullscreen</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
             <!-- Properties Editor (hidden by default) -->
             <div id="prop-editor" style="display: none; height: 100%; display: flex; flex-direction: column;">
               <!-- Tab Bar -->

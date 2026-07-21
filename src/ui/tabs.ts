@@ -68,7 +68,7 @@ export class TabManager {
     const panController = new PanController(graph);
     const gridController = new GridController(graph, 10);
     const saveLoadController = new SaveLoadController(graph);
-    const canvasProperties = new CanvasProperties(graph, 'property-content');
+    const canvasProperties = new CanvasProperties(graph);
 
     const tabData: TabData = {
       id: tabId,
