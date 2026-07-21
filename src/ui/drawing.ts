@@ -104,12 +104,10 @@ export class DrawingController {
       const endX = e.clientX - rect.left;
       const endY = e.clientY - rect.top;
       this.convertLineToShape(this.startX, this.startY, endX, endY);
-    } else if ((this.currentTool === 'pencil' || this.currentTool === 'brush') && this.points.length > 2) {
-      this.convertDrawingToShape();
+      this.points = [];
+      this.redrawCanvas();
     }
-
-    this.points = [];
-    this.redrawCanvas();
+    // For pencil and brush, keep the drawing on canvas - don't convert to shape
   }
 
   private handleMouseOut(): void {
@@ -139,42 +137,6 @@ export class DrawingController {
   private redrawCanvas(): void {
     if (!this.ctx || !this.canvas) return;
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-  }
-
-  private convertDrawingToShape(): void {
-    if (this.points.length < 2) return;
-
-    // Get bounding box
-    let minX = this.points[0].x;
-    let minY = this.points[0].y;
-    let maxX = this.points[0].x;
-    let maxY = this.points[0].y;
-
-    this.points.forEach((p) => {
-      minX = Math.min(minX, p.x);
-      minY = Math.min(minY, p.y);
-      maxX = Math.max(maxX, p.x);
-      maxY = Math.max(maxY, p.y);
-    });
-
-    const width = Math.max(maxX - minX, 20);
-    const height = Math.max(maxY - minY, 20);
-
-    // Create shape at bounding box position
-    const style = `fillColor=${this.currentTool === 'pencil' ? '#E8E8E8' : '#D0D0D0'};strokeColor=#333`;
-    this.graph.batchUpdate(() => {
-      const cell = this.graph.insertVertex(
-        this.graph.getDefaultParent(),
-        null,
-        this.currentTool.charAt(0).toUpperCase() + this.currentTool.slice(1),
-        minX,
-        minY,
-        width,
-        height,
-        style as any
-      );
-      this.graph.setSelectionCells([cell]);
-    });
   }
 
   private convertLineToShape(x1: number, y1: number, x2: number, y2: number): void {
