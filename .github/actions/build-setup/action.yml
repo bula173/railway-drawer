@@ -1,20 +1,15 @@
 name: 'Build Setup'
 description: 'Setup node and install dependencies'
 
-inputs:
-  registry-url:
-    description: 'Optional registry to set up for auth.'
-    required: false
-
 runs:
   using: 'composite'
   steps:
     - name: Setup node
-      uses: actions/setup-node@v6
+      uses: actions/setup-node@v4
       with:
         node-version-file: '.nvmrc'
-        registry-url: ${{ inputs.registry-url }}
+        cache: 'npm'
+
     - name: Install dependencies
-      uses: bahmutov/npm-install@v1
-      with:
-        install-command: npm ci --prefer-offline --audit false --ignore-scripts --no-fund
+      run: npm ci
+      shell: bash
