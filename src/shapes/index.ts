@@ -729,7 +729,7 @@ export function registerShapes() {
   shapeRegistry.register({
     id: 'star',
     label: 'Star',
-    icon: '★',
+    icon: '⭐',
     group: 'Basic',
     width: 100,
     height: 100,
@@ -739,7 +739,7 @@ export function registerShapes() {
   shapeRegistry.register({
     id: 'trapezoid',
     label: 'Trapezoid',
-    icon: '⧥',
+    icon: '⟂',
     group: 'Basic',
     width: 100,
     height: 80,
@@ -749,7 +749,7 @@ export function registerShapes() {
   shapeRegistry.register({
     id: 'cross',
     label: 'Cross',
-    icon: '✕',
+    icon: '✚',
     group: 'Basic',
     width: 100,
     height: 100,
@@ -759,7 +759,7 @@ export function registerShapes() {
   shapeRegistry.register({
     id: 'cylinder_basic',
     label: 'Cylinder',
-    icon: '⊗',
+    icon: '🗄',
     group: 'Basic',
     width: 80,
     height: 100,
@@ -778,7 +778,7 @@ export function registerShapes() {
 
   shapeRegistry.register({
     id: 'double_rectangle',
-    label: 'Double Rectangle',
+    label: 'Double Rect',
     icon: '▦',
     group: 'Basic',
     width: 100,
@@ -789,7 +789,7 @@ export function registerShapes() {
   shapeRegistry.register({
     id: 'lozenge',
     label: 'Lozenge',
-    icon: '◆',
+    icon: '◇',
     group: 'Basic',
     width: 80,
     height: 80,
@@ -809,7 +809,7 @@ export function registerShapes() {
   shapeRegistry.register({
     id: 'delay',
     label: 'Delay',
-    icon: '◄',
+    icon: '◠',
     group: 'Flowchart',
     width: 100,
     height: 60,
@@ -819,7 +819,7 @@ export function registerShapes() {
   shapeRegistry.register({
     id: 'right_angle',
     label: 'Right Angle',
-    icon: '⊞',
+    icon: '⌟',
     group: 'Basic',
     width: 80,
     height: 80,
@@ -829,7 +829,7 @@ export function registerShapes() {
   shapeRegistry.register({
     id: 'rounded_rect_basic',
     label: 'Rounded Rect',
-    icon: '⬬',
+    icon: '◫',
     group: 'Basic',
     width: 100,
     height: 60,
