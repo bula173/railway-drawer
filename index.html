@@ -439,6 +439,35 @@
       </div>
     </div>
 
+    <!-- Context Menu -->
+    <div id="context-menu" class="context-menu" style="display: none; position: fixed; background: #ffffff; border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); z-index: 10000; min-width: 200px;">
+      <div class="context-menu-item" data-action="delete" style="padding: 8px 12px; cursor: pointer; color: #d32f2f; font-weight: 600; border-bottom: 1px solid #e0e0e0;">Delete</div>
+      <div class="context-menu-item" data-action="cut" style="padding: 8px 12px; cursor: pointer;">Cut</div>
+      <div class="context-menu-item" data-action="copy" style="padding: 8px 12px; cursor: pointer;">Copy</div>
+      <div class="context-menu-item" data-action="paste" style="padding: 8px 12px; cursor: pointer;">Paste</div>
+      <div class="context-menu-item" data-action="duplicate" style="padding: 8px 12px; cursor: pointer;">Duplicate</div>
+      <div style="height: 1px; background: #e0e0e0; margin: 4px 0;"></div>
+      <div class="context-menu-item" data-action="lock" style="padding: 8px 12px; cursor: pointer;">Lock/Unlock</div>
+      <div class="context-menu-item" data-action="setDefaultStyle" style="padding: 8px 12px; cursor: pointer;">Set as Default Style</div>
+      <div style="height: 1px; background: #e0e0e0; margin: 4px 0;"></div>
+      <div class="context-menu-item" data-action="toFront" style="padding: 8px 12px; cursor: pointer;">To Front</div>
+      <div class="context-menu-item" data-action="toBack" style="padding: 8px 12px; cursor: pointer;">To Back</div>
+      <div class="context-menu-item" data-action="bringForward" style="padding: 8px 12px; cursor: pointer;">Bring Forward</div>
+      <div class="context-menu-item" data-action="sendBackward" style="padding: 8px 12px; cursor: pointer;">Send Backward</div>
+      <div style="height: 1px; background: #e0e0e0; margin: 4px 0;"></div>
+      <div class="context-menu-item" data-action="editStyle" style="padding: 8px 12px; cursor: pointer;">Edit Style...</div>
+      <div class="context-menu-item" data-action="editData" style="padding: 8px 12px; cursor: pointer;">Edit Data...</div>
+    </div>
+
+    <style>
+      .context-menu-item:hover {
+        background: #f5f5f5;
+      }
+      .context-menu-item:active {
+        background: #e0e0e0;
+      }
+    </style>
+
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
