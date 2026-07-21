@@ -628,3 +628,247 @@ export class TrackCircuitShape extends RectangleShape {
     }
   }
 }
+
+/**
+ * ERTMS Level Marker (Level 1, 2, or 3)
+ */
+export class ERTMSLevelMarkerShape extends RectangleShape {
+  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+    c.setFillColor('#ff9800');
+    c.setStrokeColor('#e65100');
+    c.setStrokeWidth(2);
+
+    // Hexagon shape
+    const cornerX = w * 0.3;
+    const cornerY = h * 0.25;
+    c.begin();
+    c.moveTo(x + cornerX, y);
+    c.lineTo(x + w - cornerX, y);
+    c.lineTo(x + w, y + cornerY);
+    c.lineTo(x + w - cornerX, y + h);
+    c.lineTo(x + cornerX, y + h);
+    c.lineTo(x, y + cornerY);
+    c.close();
+    c.fillAndStroke();
+
+    // Text indicator (L1, L2, L3)
+    c.setFillColor('#ffffff');
+    c.setFontColor('#ffffff');
+    c.setFontSize(14);
+  }
+}
+
+/**
+ * Speed Restriction Marker
+ */
+export class SpeedRestrictionMarkerShape extends RectangleShape {
+  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+    c.setFillColor('#ff6b6b');
+    c.setStrokeColor('#cc0000');
+    c.setStrokeWidth(2);
+
+    // Diamond shape
+    c.begin();
+    c.moveTo(x + w * 0.5, y);
+    c.lineTo(x + w, y + h * 0.5);
+    c.lineTo(x + w * 0.5, y + h);
+    c.lineTo(x, y + h * 0.5);
+    c.close();
+    c.fillAndStroke();
+
+    // Speed value inside
+    c.setFillColor('#ffffff');
+  }
+}
+
+/**
+ * ERTMS Balise (Transmission device on track)
+ */
+export class ERTMSBaliseShape extends RectangleShape {
+  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+    c.setFillColor('#1976d2');
+    c.setStrokeColor('#0d47a1');
+    c.setStrokeWidth(2);
+
+    // Rectangular coil
+    c.rect(x + w * 0.1, y + h * 0.2, w * 0.8, h * 0.6);
+    c.fillAndStroke();
+
+    // Signal lines (representing transmission)
+    c.setStrokeColor('#0d47a1');
+    c.setStrokeWidth(1);
+    for (let i = 0; i < 3; i++) {
+      c.begin();
+      c.moveTo(x + w * (0.2 + i * 0.2), y + h * 0.15);
+      c.lineTo(x + w * (0.2 + i * 0.2), y + h * 0.05);
+      c.stroke();
+    }
+  }
+}
+
+/**
+ * ERTMS Level Crossing
+ */
+export class ERTMSLevelCrossingShape extends RectangleShape {
+  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+    // Rail 1
+    c.setStrokeColor('#333333');
+    c.setStrokeWidth(2);
+    c.begin();
+    c.moveTo(x, y + h * 0.35);
+    c.lineTo(x + w, y + h * 0.35);
+    c.stroke();
+
+    c.begin();
+    c.moveTo(x, y + h * 0.65);
+    c.lineTo(x + w, y + h * 0.65);
+    c.stroke();
+
+    // Road crossing
+    c.begin();
+    c.moveTo(x + w * 0.35, y);
+    c.lineTo(x + w * 0.35, y + h);
+    c.stroke();
+
+    c.begin();
+    c.moveTo(x + w * 0.65, y);
+    c.lineTo(x + w * 0.65, y + h);
+    c.stroke();
+
+    // Crossing warning lights
+    c.setFillColor('#ff0000');
+    c.ellipse(x + w * 0.25 - w * 0.06, y + h * 0.15 - w * 0.06, w * 0.12, w * 0.12);
+    c.fillAndStroke();
+
+    c.ellipse(x + w * 0.75 - w * 0.06, y + h * 0.15 - w * 0.06, w * 0.12, w * 0.12);
+    c.fillAndStroke();
+  }
+}
+
+/**
+ * ERTMS Handover Point (transition between systems)
+ */
+export class ERTMSHandoverPointShape extends RectangleShape {
+  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+    c.setFillColor('#9c27b0');
+    c.setStrokeColor('#6a1b9a');
+    c.setStrokeWidth(2);
+
+    // Circle
+    c.ellipse(x + w * 0.1, y + h * 0.1, w * 0.8, h * 0.8);
+    c.fillAndStroke();
+
+    // Inner circle (overlap marker)
+    c.setFillColor('#ffffff');
+    c.ellipse(x + w * 0.25, y + h * 0.25, w * 0.5, h * 0.5);
+    c.fillAndStroke();
+
+    // Arrow indicating direction
+    c.setStrokeColor('#6a1b9a');
+    c.setStrokeWidth(2);
+    c.begin();
+    c.moveTo(x + w * 0.5, y + h * 0.3);
+    c.lineTo(x + w * 0.7, y + h * 0.5);
+    c.lineTo(x + w * 0.5, y + h * 0.7);
+    c.stroke();
+  }
+}
+
+/**
+ * National System Transition Point
+ */
+export class NationalTransitionPointShape extends RectangleShape {
+  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+    c.setFillColor('#4caf50');
+    c.setStrokeColor('#2e7d32');
+    c.setStrokeWidth(2);
+
+    // Pentagon shape
+    c.begin();
+    c.moveTo(x + w * 0.5, y);
+    c.lineTo(x + w * 0.95, y + h * 0.35);
+    c.lineTo(x + w * 0.75, y + h);
+    c.lineTo(x + w * 0.25, y + h);
+    c.lineTo(x + w * 0.05, y + h * 0.35);
+    c.close();
+    c.fillAndStroke();
+
+    // Border indicator
+    c.setStrokeColor('#2e7d32');
+    c.setStrokeWidth(1);
+    c.begin();
+    c.moveTo(x, y + h * 0.5);
+    c.lineTo(x + w, y + h * 0.5);
+    c.stroke();
+  }
+}
+
+/**
+ * ERTMS Transponder Tag
+ */
+export class ERTMSTransponderShape extends RectangleShape {
+  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+    c.setFillColor('#00bcd4');
+    c.setStrokeColor('#00838f');
+    c.setStrokeWidth(2);
+
+    // Main body
+    c.rect(x + w * 0.15, y + h * 0.2, w * 0.7, h * 0.6);
+    c.fillAndStroke();
+
+    // Antenna
+    c.setStrokeColor('#00838f');
+    c.setStrokeWidth(2);
+    c.begin();
+    c.moveTo(x + w * 0.3, y + h * 0.2);
+    c.lineTo(x + w * 0.3, y);
+    c.stroke();
+
+    c.begin();
+    c.moveTo(x + w * 0.7, y + h * 0.2);
+    c.lineTo(x + w * 0.7, y);
+    c.stroke();
+
+    // Signal indicator
+    c.setFillColor('#ffffff');
+    c.ellipse(x + w * 0.35 - w * 0.06, y + h * 0.35 - w * 0.06, w * 0.12, w * 0.12);
+    c.fillAndStroke();
+
+    c.ellipse(x + w * 0.65 - w * 0.06, y + h * 0.35 - w * 0.06, w * 0.12, w * 0.12);
+    c.fillAndStroke();
+  }
+}
+
+/**
+ * ERTMS Section Marker
+ */
+export class ERTMSSectionMarkerShape extends RectangleShape {
+  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+    c.setFillColor('#ffc107');
+    c.setStrokeColor('#ff8f00');
+    c.setStrokeWidth(2);
+
+    // Rounded rectangle
+    const radius = w * 0.15;
+    c.begin();
+    c.moveTo(x + radius, y);
+    c.lineTo(x + w - radius, y);
+    c.quadTo(x + w, y, x + w, y + radius);
+    c.lineTo(x + w, y + h - radius);
+    c.quadTo(x + w, y + h, x + w - radius, y + h);
+    c.lineTo(x + radius, y + h);
+    c.quadTo(x, y + h, x, y + h - radius);
+    c.lineTo(x, y + radius);
+    c.quadTo(x, y, x + radius, y);
+    c.close();
+    c.fillAndStroke();
+
+    // Section indicator line
+    c.setStrokeColor('#ff8f00');
+    c.setStrokeWidth(1);
+    c.begin();
+    c.moveTo(x, y + h * 0.5);
+    c.lineTo(x + w, y + h * 0.5);
+    c.stroke();
+  }
+}

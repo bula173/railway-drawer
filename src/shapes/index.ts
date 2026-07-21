@@ -18,7 +18,7 @@ import { UmlPackageShape, UmlObjectShape } from './uml-package';
 import { UmlActivityShape, UmlForkJoinShape, UmlDecisionShape, UmlMergeShape } from './uml-activity';
 import { UmlLifelineShape, UmlActivationBoxShape, UmlMessageArrowShape, UmlCombinedFragmentShape, UmlInteractionUseShape, UmlNoteShape } from './uml-sequence';
 import { HexagonShape, PentagonShape, StarShape, TrapezoidShape, CrossShape, CylinderShape, SimpleArrowShape, OvalShape, DoubleRectangleShape, ParallelogramShape, DelayShape, ChevronShape, RightAngleShape, LozengeShape, RoundedRectangleShape } from './basic-shapes';
-import { RailShape, SignalShape, SwitchShape, JunctionShape, PlatformShape, StationShape, CrossingShape, TunnelShape, BufferShape, CabinShape, LTAShape, LTOShape, DetectionPointShape, TrackSectionShape, VerticalConnectorShape, EOLMarkerShape, RailLevelShape, SlopedTrackShape, TrainShape, SignalHeadShape, RBCShape, CommunicationLineShape, EBSectionShape, WaysideEquipmentShape, TrackCircuitShape } from './railway-shapes';
+import { RailShape, SignalShape, SwitchShape, JunctionShape, PlatformShape, StationShape, CrossingShape, TunnelShape, BufferShape, CabinShape, LTAShape, LTOShape, DetectionPointShape, TrackSectionShape, VerticalConnectorShape, EOLMarkerShape, RailLevelShape, SlopedTrackShape, TrainShape, SignalHeadShape, RBCShape, CommunicationLineShape, EBSectionShape, WaysideEquipmentShape, TrackCircuitShape, ERTMSLevelMarkerShape, SpeedRestrictionMarkerShape, ERTMSBaliseShape, ERTMSLevelCrossingShape, ERTMSHandoverPointShape, NationalTransitionPointShape, ERTMSTransponderShape, ERTMSSectionMarkerShape } from './railway-shapes';
 import { railwayShapes } from './railway';
 import { shapeRegistry } from './registry';
 
@@ -100,6 +100,16 @@ export function registerShapes() {
   CellRenderer.registerShape('customEBSection', EBSectionShape as any);
   CellRenderer.registerShape('customWaysideEquipment', WaysideEquipmentShape as any);
   CellRenderer.registerShape('customTrackCircuit', TrackCircuitShape as any);
+
+  // Register ERTMS shapes
+  CellRenderer.registerShape('customERTMSLevelMarker', ERTMSLevelMarkerShape as any);
+  CellRenderer.registerShape('customSpeedRestrictionMarker', SpeedRestrictionMarkerShape as any);
+  CellRenderer.registerShape('customERTMSBalise', ERTMSBaliseShape as any);
+  CellRenderer.registerShape('customERTMSLevelCrossing', ERTMSLevelCrossingShape as any);
+  CellRenderer.registerShape('customERTMSHandoverPoint', ERTMSHandoverPointShape as any);
+  CellRenderer.registerShape('customNationalTransitionPoint', NationalTransitionPointShape as any);
+  CellRenderer.registerShape('customERTMSTransponder', ERTMSTransponderShape as any);
+  CellRenderer.registerShape('customERTMSSectionMarker', ERTMSSectionMarkerShape as any);
 
   // ===== BASIC SHAPES =====
   shapeRegistry.register({
