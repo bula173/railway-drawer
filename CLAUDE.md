@@ -18,7 +18,7 @@ npm run preview                # Preview production build locally
 ## Project Structure
 
 - **src/main.ts** — Application entry point; initializes graph and UI components
-- **src/custom-shapes.ts** — Custom shape definitions for railway elements (registers with CellRenderer)
+- **src/shapes/.ts** — Custom shape definitions for railway elements (registers with CellRenderer)
 - **src/style.css** — Global styling (CSS for UI panels, layout, responsive design)
 - **src/index.d.ts** — TypeScript definitions for CSS module imports
 - **src/config/** — Configuration files (currently minimal)

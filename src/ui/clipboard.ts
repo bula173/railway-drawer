@@ -29,14 +29,14 @@ export class ClipboardController {
   copy() {
     const cells = this.graph.getSelectionCells();
     if (cells.length === 0) return;
-    this.clipboard = cells.map((cell) => cell.clone());
+    this.clipboard = this.graph.cloneCells(cells);
     console.log('[Clipboard] Copied', cells.length, 'cell(s)');
   }
 
   cut() {
     const cells = this.graph.getSelectionCells();
     if (cells.length === 0) return;
-    this.clipboard = cells.map((cell) => cell.clone());
+    this.clipboard = this.graph.cloneCells(cells);
     this.graph.batchUpdate(() => {
       this.graph.removeCells(cells);
     });
@@ -46,20 +46,11 @@ export class ClipboardController {
   paste() {
     if (this.clipboard.length === 0) return;
 
-    const cells = this.clipboard.map((cell) => {
-      const cloned = cell.clone();
-      if (cloned.geometry) {
-        cloned.geometry.x += 20;
-        cloned.geometry.y += 20;
-      }
-      return cloned;
-    });
-
     this.graph.batchUpdate(() => {
-      const imported = this.graph.importCells(cells, 0, 0);
+      const imported = this.graph.importCells(this.clipboard, 20, 20);
       this.graph.setSelectionCells(imported);
     });
 
-    console.log('[Clipboard] Pasted', cells.length, 'cell(s)');
+    console.log('[Clipboard] Pasted', this.clipboard.length, 'cell(s)');
   }
 }

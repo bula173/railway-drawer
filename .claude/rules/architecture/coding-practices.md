@@ -1,8 +1,11 @@
 ---
 paths:
-  - "packages/core/src/**"
+  - "src/**/*"
 ---
 # Coding Practices — Core Package
+
+# External API
+Alway use nativly supported functions from https://maxgraph.github.io/maxGraph/api-docs/index.html before implementing own functions. If a function is not supported, write new one and submit issue in the my repositiory.
 
 ## Import Extensions
 

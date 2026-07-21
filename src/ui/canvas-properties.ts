@@ -50,7 +50,7 @@ export class CanvasProperties {
 
   toggleGrid(enabled: boolean) {
     this.config.gridEnabled = enabled;
-    (this.graph as any).setGridEnabled(enabled);
+    this.graph.gridEnabled = enabled;
     this.render();
   }
 

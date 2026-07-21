@@ -25,13 +25,13 @@ export class PanController {
   }
 
   enablePan() {
-    (this.panningHandler as any).active = true;
+    this.panningHandler.useLeftButtonForPanning = true;
     this.isPanMode = true;
     console.log('[Pan] Pan mode enabled');
   }
 
   disablePan() {
-    (this.panningHandler as any).active = false;
+    this.panningHandler.useLeftButtonForPanning = false;
     this.isPanMode = false;
     console.log('[Pan] Pan mode disabled');
   }

@@ -16,6 +16,9 @@ export class UndoRedoController {
     (this.graph as any).model.addListener('change', (_sender: any, evt: any) => {
       this.undoManager.undoableEditHappened(evt.getProperty('edit'));
     });
+    this.undoManager.addListener('undoableEdit', () => {
+      this.updateButtonStates();
+    });
   }
 
   private setupKeyboardShortcuts() {
@@ -32,25 +35,45 @@ export class UndoRedoController {
   }
 
   private setupToolbarButtons() {
-    const undoBtn = document.getElementById('btn-undo');
-    const redoBtn = document.getElementById('btn-redo');
+    const undoBtn = document.getElementById('btn-undo') as HTMLButtonElement | null;
+    const redoBtn = document.getElementById('btn-redo') as HTMLButtonElement | null;
 
     if (undoBtn) {
       undoBtn.addEventListener('click', () => this.undo());
+      undoBtn.disabled = true;
     }
 
     if (redoBtn) {
       redoBtn.addEventListener('click', () => this.redo());
+      redoBtn.disabled = true;
     }
   }
 
   undo() {
-    this.undoManager.undo();
-    console.log('[UndoRedo] Undo');
+    if (this.undoManager.canUndo()) {
+      this.undoManager.undo();
+      console.log('[UndoRedo] Undo');
+      this.updateButtonStates();
+    }
   }
 
   redo() {
-    this.undoManager.redo();
-    console.log('[UndoRedo] Redo');
+    if (this.undoManager.canRedo()) {
+      this.undoManager.redo();
+      console.log('[UndoRedo] Redo');
+      this.updateButtonStates();
+    }
+  }
+
+  private updateButtonStates() {
+    const undoBtn = document.getElementById('btn-undo') as HTMLButtonElement | null;
+    const redoBtn = document.getElementById('btn-redo') as HTMLButtonElement | null;
+
+    if (undoBtn) {
+      undoBtn.disabled = !this.undoManager.canUndo();
+    }
+    if (redoBtn) {
+      redoBtn.disabled = !this.undoManager.canRedo();
+    }
   }
 }
