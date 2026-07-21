@@ -211,7 +211,6 @@ export class DrawingController {
       } else {
         this.canvas.style.display = 'block';
         this.canvas.style.pointerEvents = 'auto';
-        this.redrawCanvas();
 
         // Set appropriate cursor for each tool
         switch (tool) {
