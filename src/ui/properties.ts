@@ -29,7 +29,7 @@ export class PropertiesPanel {
 
   private renderProperties(cell: any) {
     const geo = cell.geometry;
-    const style = this.graph.getCellStyle(cell);
+    const style = this.graph.getCellStyle(cell) as any;
 
     this.contentElement.innerHTML = `
       <div style="display: flex; flex-direction: column; height: 100%; font-size: 12px;">
@@ -42,43 +42,172 @@ export class PropertiesPanel {
         <div class="property-content" style="flex: 1; overflow-y: auto; padding: 8px;">
           <!-- Text Tab -->
           <div class="prop-tab-content" data-tab="text" style="display: block;">
+            <!-- Text Content -->
             <div style="margin-bottom: 12px;">
-              <label style="display: block; margin-bottom: 4px; font-weight: 600; color: #333;">Text Content</label>
-              <input type="text" class="prop-input" id="prop-text" value="${cell.value || ''}" placeholder="Shape text" style="width: 100%; padding: 6px; border: 1px solid #ccc; border-radius: 3px; font-size: 12px; box-sizing: border-box;" />
+              <input type="text" class="prop-input" id="prop-text" value="${cell.value || ''}" placeholder="Text content" style="width: 100%; padding: 6px; border: 1px solid #ccc; border-radius: 3px; font-size: 12px; box-sizing: border-box;" />
             </div>
 
-            <div style="margin-bottom: 12px;">
-              <label style="display: block; margin-bottom: 4px; font-weight: 600; color: #333;">Font Family</label>
-              <select class="prop-input" id="prop-fontFamily" style="width: 100%; padding: 6px; border: 1px solid #ccc; border-radius: 3px; font-size: 12px; box-sizing: border-box;">
-                <option value="Arial" ${style.fontFamily === 'Arial' ? 'selected' : ''}>Arial</option>
-                <option value="Verdana" ${style.fontFamily === 'Verdana' ? 'selected' : ''}>Verdana</option>
-                <option value="Times New Roman" ${style.fontFamily === 'Times New Roman' ? 'selected' : ''}>Times New Roman</option>
-                <option value="Courier New" ${style.fontFamily === 'Courier New' ? 'selected' : ''}>Courier New</option>
-                <option value="Georgia" ${style.fontFamily === 'Georgia' ? 'selected' : ''}>Georgia</option>
-              </select>
+            <!-- Font Section -->
+            <div style="margin-bottom: 16px; border-top: 1px solid #e0e0e0; padding-top: 12px;">
+              <div style="margin-bottom: 12px;">
+                <label style="display: block; margin-bottom: 4px; font-weight: 600; color: #333; font-size: 13px;">Font</label>
+                <select class="prop-input" id="prop-fontFamily" style="width: 100%; padding: 6px; border: 1px solid #ccc; border-radius: 3px; font-size: 12px; box-sizing: border-box; margin-bottom: 8px;">
+                  <option value="Helvetica" ${style.fontFamily === 'Helvetica' || style.fontFamily === 'Arial' ? 'selected' : ''}>Helvetica</option>
+                  <option value="Arial" ${style.fontFamily === 'Arial' ? 'selected' : ''}>Arial</option>
+                  <option value="Verdana" ${style.fontFamily === 'Verdana' ? 'selected' : ''}>Verdana</option>
+                  <option value="Times New Roman" ${style.fontFamily === 'Times New Roman' ? 'selected' : ''}>Times New Roman</option>
+                  <option value="Courier New" ${style.fontFamily === 'Courier New' ? 'selected' : ''}>Courier New</option>
+                  <option value="Georgia" ${style.fontFamily === 'Georgia' ? 'selected' : ''}>Georgia</option>
+                </select>
+
+                <!-- Text Style Buttons -->
+                <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; margin-bottom: 8px;">
+                  <button class="prop-btn text-bold" style="padding: 6px; border: 1px solid #ccc; border-radius: 3px; background: ${style.fontStyle?.includes('bold') ? '#e0e0e0' : '#f5f5f5'}; cursor: pointer; font-weight: bold; font-size: 14px;">B</button>
+                  <button class="prop-btn text-italic" style="padding: 6px; border: 1px solid #ccc; border-radius: 3px; background: ${style.fontStyle?.includes('italic') ? '#e0e0e0' : '#f5f5f5'}; cursor: pointer; font-style: italic; font-size: 14px;">I</button>
+                  <button class="prop-btn text-underline" style="padding: 6px; border: 1px solid #ccc; border-radius: 3px; background: ${style.fontStyle?.includes('underline') ? '#e0e0e0' : '#f5f5f5'}; cursor: pointer; text-decoration: underline; font-size: 14px;">U</button>
+                  <div style="display: flex; align-items: center; justify-content: center; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; cursor: pointer; font-size: 14px;">
+                    <input type="color" class="prop-input" id="prop-fontColorBtn" value="${style.fontColor || '#000000'}" style="width: 100%; height: 100%; border: none; cursor: pointer;" />
+                  </div>
+                  <input type="number" class="prop-input" id="prop-fontSize" value="${style.fontSize || 12}" min="8" max="72" style="padding: 6px; border: 1px solid #ccc; border-radius: 3px; font-size: 12px; box-sizing: border-box;" />
+                </div>
+
+                <!-- Alignment Buttons -->
+                <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px;">
+                  <button class="prop-btn align-left" style="padding: 6px; border: 1px solid #ccc; border-radius: 3px; background: ${style.align === 'left' ? '#e0e0e0' : '#f5f5f5'}; cursor: pointer; font-size: 12px; text-align: center;">⬅</button>
+                  <button class="prop-btn align-center" style="padding: 6px; border: 1px solid #ccc; border-radius: 3px; background: ${style.align === 'center' || !style.align ? '#e0e0e0' : '#f5f5f5'}; cursor: pointer; font-size: 12px; text-align: center;">⬅➡</button>
+                  <button class="prop-btn align-right" style="padding: 6px; border: 1px solid #ccc; border-radius: 3px; background: ${style.align === 'right' ? '#e0e0e0' : '#f5f5f5'}; cursor: pointer; font-size: 12px; text-align: center;">➡</button>
+                  <button class="prop-btn valign-top" style="padding: 6px; border: 1px solid #ccc; border-radius: 3px; background: ${style.verticalAlign === 'top' ? '#e0e0e0' : '#f5f5f5'}; cursor: pointer; font-size: 12px; text-align: center;">⬆</button>
+                  <button class="prop-btn valign-middle" style="padding: 6px; border: 1px solid #ccc; border-radius: 3px; background: ${style.verticalAlign === 'middle' || !style.verticalAlign ? '#e0e0e0' : '#f5f5f5'}; cursor: pointer; font-size: 12px; text-align: center;">⬆⬇</button>
+                  <button class="prop-btn valign-bottom" style="padding: 6px; border: 1px solid #ccc; border-radius: 3px; background: ${style.verticalAlign === 'bottom' ? '#e0e0e0' : '#f5f5f5'}; cursor: pointer; font-size: 12px; text-align: center;">⬇</button>
+                </div>
+
+                <!-- Position & Direction -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 8px;">
+                  <div>
+                    <label style="display: block; margin-bottom: 3px; font-weight: 600; font-size: 11px; color: #666;">Position</label>
+                    <select class="prop-input" id="prop-position" style="width: 100%; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-size: 11px; box-sizing: border-box;">
+                      <option value="top" ${style.position === 'top' ? 'selected' : ''}>Top</option>
+                      <option value="center" ${style.position === 'center' || !style.position ? 'selected' : ''}>Center</option>
+                      <option value="bottom" ${style.position === 'bottom' ? 'selected' : ''}>Bottom</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label style="display: block; margin-bottom: 3px; font-weight: 600; font-size: 11px; color: #666;">Writing Direction</label>
+                    <select class="prop-input" id="prop-writingDirection" style="width: 100%; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-size: 11px; box-sizing: border-box;">
+                      <option value="automatic" ${style.writingDirection === 'automatic' || !style.writingDirection ? 'selected' : ''}>Automatic</option>
+                      <option value="ltr" ${style.writingDirection === 'ltr' ? 'selected' : ''}>LTR</option>
+                      <option value="rtl" ${style.writingDirection === 'rtl' ? 'selected' : ''}>RTL</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div style="margin-bottom: 12px;">
-              <label style="display: block; margin-bottom: 4px; font-weight: 600; color: #333;">Font Size</label>
-              <input type="number" class="prop-input" id="prop-fontSize" value="${style.fontSize || 12}" min="8" max="48" style="width: 100%; padding: 6px; border: 1px solid #ccc; border-radius: 3px; font-size: 12px; box-sizing: border-box;" />
+            <!-- Colors Section -->
+            <div style="margin-bottom: 16px;">
+              <div style="margin-bottom: 8px;">
+                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                  <input type="checkbox" id="prop-useFontColor" ${style.fontColor ? 'checked' : ''} style="cursor: pointer;" />
+                  <span style="font-weight: 600; color: #333;">Font Color</span>
+                  <div style="margin-left: auto; display: flex; gap: 4px; align-items: center;">
+                    <div style="width: 24px; height: 24px; border: 1px solid #ccc; border-radius: 3px; background: ${style.fontColor || '#000000'};"></div>
+                    <button class="prop-btn" id="btn-fontColorPicker" style="padding: 4px 8px; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; cursor: pointer; font-size: 12px;">✏️</button>
+                  </div>
+                </label>
+              </div>
+
+              <div style="margin-bottom: 8px;">
+                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                  <input type="checkbox" id="prop-useBackgroundColor" ${style.backgroundColor ? 'checked' : ''} style="cursor: pointer;" />
+                  <span style="font-weight: 600; color: #333;">Background Color</span>
+                </label>
+              </div>
+
+              <div style="margin-bottom: 8px;">
+                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                  <input type="checkbox" id="prop-useBorderColor" ${style.borderColor ? 'checked' : ''} style="cursor: pointer;" />
+                  <span style="font-weight: 600; color: #333;">Border Color</span>
+                </label>
+              </div>
+
+              <div>
+                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                  <input type="checkbox" id="prop-useShadow" ${style.shadow ? 'checked' : ''} style="cursor: pointer;" />
+                  <span style="font-weight: 600; color: #333;">Shadow</span>
+                </label>
+              </div>
             </div>
 
-            <div style="margin-bottom: 12px;">
-              <label style="display: block; margin-bottom: 4px; font-weight: 600; color: #333;">Horizontal Align</label>
-              <select class="prop-input" id="prop-align" style="width: 100%; padding: 6px; border: 1px solid #ccc; border-radius: 3px; font-size: 12px; box-sizing: border-box;">
-                <option value="left" ${style.align === 'left' ? 'selected' : ''}>Left</option>
-                <option value="center" ${style.align === 'center' || !style.align ? 'selected' : ''}>Center</option>
-                <option value="right" ${style.align === 'right' ? 'selected' : ''}>Right</option>
-              </select>
+            <!-- Advanced Section -->
+            <div style="margin-bottom: 16px; border: 1px solid #e0e0e0; border-radius: 3px; overflow: hidden;">
+              <div class="collapsible-header" data-section="text-advanced" style="padding: 8px; background: #f9f9f9; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px; user-select: none;">
+                <span style="display: inline-block; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 5px solid #333;"></span>
+                Advanced
+              </div>
+              <div class="collapsible-content" data-section="text-advanced" style="padding: 8px; display: none;">
+                <div style="margin-bottom: 8px;">
+                  <label style="display: flex; align-items: center; gap: 6px; cursor: pointer; font-size: 12px;">
+                    <input type="checkbox" id="prop-wordWrap" checked style="cursor: pointer;" />
+                    <span style="font-weight: 600;">Word Wrap</span>
+                  </label>
+                </div>
+                <div style="margin-bottom: 8px;">
+                  <label style="display: flex; align-items: center; gap: 6px; cursor: pointer; font-size: 12px;">
+                    <input type="checkbox" id="prop-formattedText" checked style="cursor: pointer;" />
+                    <span style="font-weight: 600;">Formatted Text</span>
+                  </label>
+                </div>
+                <div style="margin-bottom: 8px;">
+                  <label style="display: flex; align-items: center; gap: 6px; cursor: pointer; font-size: 12px;">
+                    <input type="checkbox" id="prop-convertToSvg" style="cursor: pointer;" />
+                    <span style="font-weight: 600;">Convert Labels to SVG</span>
+                  </label>
+                </div>
+                <div style="margin-bottom: 8px;">
+                  <label style="display: flex; align-items: center; gap: 6px; cursor: pointer; font-size: 12px;">
+                    <input type="checkbox" id="prop-autoFontSize" style="cursor: pointer;" />
+                    <span style="font-weight: 600;">Automatic Font Size</span>
+                  </label>
+                </div>
+                <div style="margin-bottom: 0;">
+                  <label style="display: block; margin-bottom: 3px; font-weight: 600; font-size: 11px; color: #666;">Label Width</label>
+                  <input type="number" class="prop-input" id="prop-labelWidth" value="" min="0" style="width: 100%; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-size: 11px; box-sizing: border-box;" />
+                </div>
+              </div>
             </div>
 
-            <div style="margin-bottom: 12px;">
-              <label style="display: block; margin-bottom: 4px; font-weight: 600; color: #333;">Vertical Align</label>
-              <select class="prop-input" id="prop-verticalAlign" style="width: 100%; padding: 6px; border: 1px solid #ccc; border-radius: 3px; font-size: 12px; box-sizing: border-box;">
-                <option value="top" ${style.verticalAlign === 'top' ? 'selected' : ''}>Top</option>
-                <option value="middle" ${style.verticalAlign === 'middle' || !style.verticalAlign ? 'selected' : ''}>Middle</option>
-                <option value="bottom" ${style.verticalAlign === 'bottom' ? 'selected' : ''}>Bottom</option>
-              </select>
+            <!-- Spacing Section -->
+            <div style="border: 1px solid #e0e0e0; border-radius: 3px; overflow: hidden;">
+              <div class="collapsible-header" data-section="text-spacing" style="padding: 8px; background: #f9f9f9; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px; user-select: none;">
+                <span style="display: inline-block; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 5px solid #333;"></span>
+                Spacing
+              </div>
+              <div class="collapsible-content" data-section="text-spacing" style="padding: 8px; display: none;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 8px;">
+                  <div>
+                    <input type="number" class="prop-input" id="prop-spacingTop" value="${style.spacingTop || 0}" style="width: 100%; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-size: 11px; box-sizing: border-box;" />
+                    <div style="font-size: 10px; color: #999; text-align: center; margin-top: 2px;">Top</div>
+                  </div>
+                  <div>
+                    <input type="number" class="prop-input" id="prop-spacingGlobal" value="${style.spacingGlobal || 2}" style="width: 100%; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-size: 11px; box-sizing: border-box;" />
+                    <div style="font-size: 10px; color: #999; text-align: center; margin-top: 2px;">Global</div>
+                  </div>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px;">
+                  <div>
+                    <input type="number" class="prop-input" id="prop-spacingLeft" value="${style.spacingLeft || 0}" style="width: 100%; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-size: 11px; box-sizing: border-box;" />
+                    <div style="font-size: 10px; color: #999; text-align: center; margin-top: 2px;">Left</div>
+                  </div>
+                  <div>
+                    <input type="number" class="prop-input" id="prop-spacingBottom" value="${style.spacingBottom || 0}" style="width: 100%; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-size: 11px; box-sizing: border-box;" />
+                    <div style="font-size: 10px; color: #999; text-align: center; margin-top: 2px;">Bottom</div>
+                  </div>
+                  <div>
+                    <input type="number" class="prop-input" id="prop-spacingRight" value="${style.spacingRight || 0}" style="width: 100%; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-size: 11px; box-sizing: border-box;" />
+                    <div style="font-size: 10px; color: #999; text-align: center; margin-top: 2px;">Right</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -285,6 +414,7 @@ export class PropertiesPanel {
       this.graph.refresh();
     });
 
+    // Font properties
     document.getElementById('prop-fontFamily')?.addEventListener('change', (e) => {
       const value = (e.target as HTMLInputElement).value;
       const style = this.graph.getCellStyle(cell);
@@ -301,18 +431,227 @@ export class PropertiesPanel {
       this.graph.refresh();
     });
 
-    document.getElementById('prop-align')?.addEventListener('change', (e) => {
-      const value = (e.target as HTMLInputElement).value;
-      const style = this.graph.getCellStyle(cell);
-      (style as any).align = value;
+    // Text style buttons (Bold, Italic, Underline)
+    document.querySelector('.text-bold')?.addEventListener('click', () => {
+      const style = this.graph.getCellStyle(cell) as any;
+      const currentStyle = String(style.fontStyle || '');
+      if (currentStyle.includes('bold')) {
+        style.fontStyle = currentStyle.replace('bold', '').trim();
+      } else {
+        style.fontStyle = (currentStyle + ' bold').trim();
+      }
       this.graph.model.setStyle(cell, style);
       this.graph.refresh();
     });
 
-    document.getElementById('prop-verticalAlign')?.addEventListener('change', (e) => {
+    document.querySelector('.text-italic')?.addEventListener('click', () => {
+      const style = this.graph.getCellStyle(cell) as any;
+      const currentStyle = String(style.fontStyle || '');
+      if (currentStyle.includes('italic')) {
+        style.fontStyle = currentStyle.replace('italic', '').trim();
+      } else {
+        style.fontStyle = (currentStyle + ' italic').trim();
+      }
+      this.graph.model.setStyle(cell, style);
+      this.graph.refresh();
+    });
+
+    document.querySelector('.text-underline')?.addEventListener('click', () => {
+      const style = this.graph.getCellStyle(cell) as any;
+      const currentStyle = String(style.fontStyle || '');
+      if (currentStyle.includes('underline')) {
+        style.fontStyle = currentStyle.replace('underline', '').trim();
+      } else {
+        style.fontStyle = (currentStyle + ' underline').trim();
+      }
+      this.graph.model.setStyle(cell, style);
+      this.graph.refresh();
+    });
+
+    // Font color
+    document.getElementById('prop-fontColorBtn')?.addEventListener('change', (e) => {
       const value = (e.target as HTMLInputElement).value;
       const style = this.graph.getCellStyle(cell);
-      (style as any).verticalAlign = value;
+      style.fontColor = value;
+      this.graph.model.setStyle(cell, style);
+      this.graph.refresh();
+    });
+
+    // Alignment buttons
+    document.querySelector('.align-left')?.addEventListener('click', () => {
+      const style = this.graph.getCellStyle(cell);
+      (style as any).align = 'left';
+      this.graph.model.setStyle(cell, style);
+      this.graph.refresh();
+    });
+
+    document.querySelector('.align-center')?.addEventListener('click', () => {
+      const style = this.graph.getCellStyle(cell);
+      (style as any).align = 'center';
+      this.graph.model.setStyle(cell, style);
+      this.graph.refresh();
+    });
+
+    document.querySelector('.align-right')?.addEventListener('click', () => {
+      const style = this.graph.getCellStyle(cell);
+      (style as any).align = 'right';
+      this.graph.model.setStyle(cell, style);
+      this.graph.refresh();
+    });
+
+    document.querySelector('.valign-top')?.addEventListener('click', () => {
+      const style = this.graph.getCellStyle(cell);
+      (style as any).verticalAlign = 'top';
+      this.graph.model.setStyle(cell, style);
+      this.graph.refresh();
+    });
+
+    document.querySelector('.valign-middle')?.addEventListener('click', () => {
+      const style = this.graph.getCellStyle(cell);
+      (style as any).verticalAlign = 'middle';
+      this.graph.model.setStyle(cell, style);
+      this.graph.refresh();
+    });
+
+    document.querySelector('.valign-bottom')?.addEventListener('click', () => {
+      const style = this.graph.getCellStyle(cell);
+      (style as any).verticalAlign = 'bottom';
+      this.graph.model.setStyle(cell, style);
+      this.graph.refresh();
+    });
+
+    // Position and writing direction
+    document.getElementById('prop-position')?.addEventListener('change', (e) => {
+      const value = (e.target as HTMLInputElement).value;
+      const style = this.graph.getCellStyle(cell) as any;
+      style.position = value;
+      this.graph.model.setStyle(cell, style);
+      this.graph.refresh();
+    });
+
+    document.getElementById('prop-writingDirection')?.addEventListener('change', (e) => {
+      const value = (e.target as HTMLInputElement).value;
+      const style = this.graph.getCellStyle(cell) as any;
+      style.writingDirection = value;
+      this.graph.model.setStyle(cell, style);
+      this.graph.refresh();
+    });
+
+    // Color toggles
+    document.getElementById('prop-useBackgroundColor')?.addEventListener('change', (e) => {
+      const checked = (e.target as HTMLInputElement).checked;
+      const style = this.graph.getCellStyle(cell) as any;
+      if (checked) {
+        style.backgroundColor = style.backgroundColor || '#ffffff';
+      } else {
+        style.backgroundColor = undefined;
+      }
+      this.graph.model.setStyle(cell, style);
+      this.graph.refresh();
+    });
+
+    document.getElementById('prop-useBorderColor')?.addEventListener('change', (e) => {
+      const checked = (e.target as HTMLInputElement).checked;
+      const style = this.graph.getCellStyle(cell) as any;
+      if (checked) {
+        style.borderColor = style.borderColor || '#000000';
+      } else {
+        style.borderColor = undefined;
+      }
+      this.graph.model.setStyle(cell, style);
+      this.graph.refresh();
+    });
+
+    document.getElementById('prop-useShadow')?.addEventListener('change', (e) => {
+      const checked = (e.target as HTMLInputElement).checked;
+      const style = this.graph.getCellStyle(cell);
+      style.shadow = checked;
+      this.graph.model.setStyle(cell, style);
+      this.graph.refresh();
+    });
+
+    // Advanced section
+    document.getElementById('prop-wordWrap')?.addEventListener('change', (e) => {
+      const checked = (e.target as HTMLInputElement).checked;
+      const style = this.graph.getCellStyle(cell);
+      (style as any).wordWrap = checked ? 1 : 0;
+      this.graph.model.setStyle(cell, style);
+      this.graph.refresh();
+    });
+
+    document.getElementById('prop-formattedText')?.addEventListener('change', (e) => {
+      const checked = (e.target as HTMLInputElement).checked;
+      const style = this.graph.getCellStyle(cell);
+      (style as any).formattedText = checked;
+      this.graph.model.setStyle(cell, style);
+      this.graph.refresh();
+    });
+
+    document.getElementById('prop-convertToSvg')?.addEventListener('change', (e) => {
+      const checked = (e.target as HTMLInputElement).checked;
+      const style = this.graph.getCellStyle(cell);
+      (style as any).convertToSvg = checked;
+      this.graph.model.setStyle(cell, style);
+      this.graph.refresh();
+    });
+
+    document.getElementById('prop-autoFontSize')?.addEventListener('change', (e) => {
+      const checked = (e.target as HTMLInputElement).checked;
+      const style = this.graph.getCellStyle(cell);
+      (style as any).autoSize = checked ? 1 : 0;
+      this.graph.model.setStyle(cell, style);
+      this.graph.refresh();
+    });
+
+    document.getElementById('prop-labelWidth')?.addEventListener('change', (e) => {
+      const value = (e.target as HTMLInputElement).value;
+      const style = this.graph.getCellStyle(cell);
+      if (value) {
+        (style as any).labelWidth = parseInt(value);
+      } else {
+        (style as any).labelWidth = undefined;
+      }
+      this.graph.model.setStyle(cell, style);
+      this.graph.refresh();
+    });
+
+    // Spacing inputs
+    document.getElementById('prop-spacingTop')?.addEventListener('change', (e) => {
+      const value = parseInt((e.target as HTMLInputElement).value);
+      const style = this.graph.getCellStyle(cell);
+      (style as any).spacingTop = value;
+      this.graph.model.setStyle(cell, style);
+      this.graph.refresh();
+    });
+
+    document.getElementById('prop-spacingLeft')?.addEventListener('change', (e) => {
+      const value = parseInt((e.target as HTMLInputElement).value);
+      const style = this.graph.getCellStyle(cell);
+      (style as any).spacingLeft = value;
+      this.graph.model.setStyle(cell, style);
+      this.graph.refresh();
+    });
+
+    document.getElementById('prop-spacingBottom')?.addEventListener('change', (e) => {
+      const value = parseInt((e.target as HTMLInputElement).value);
+      const style = this.graph.getCellStyle(cell);
+      (style as any).spacingBottom = value;
+      this.graph.model.setStyle(cell, style);
+      this.graph.refresh();
+    });
+
+    document.getElementById('prop-spacingRight')?.addEventListener('change', (e) => {
+      const value = parseInt((e.target as HTMLInputElement).value);
+      const style = this.graph.getCellStyle(cell);
+      (style as any).spacingRight = value;
+      this.graph.model.setStyle(cell, style);
+      this.graph.refresh();
+    });
+
+    document.getElementById('prop-spacingGlobal')?.addEventListener('change', (e) => {
+      const value = parseInt((e.target as HTMLInputElement).value);
+      const style = this.graph.getCellStyle(cell);
+      (style as any).spacingGlobal = value;
       this.graph.model.setStyle(cell, style);
       this.graph.refresh();
     });
