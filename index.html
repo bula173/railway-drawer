@@ -8,27 +8,76 @@
   </head>
   <body>
     <div id="app-container">
-      <!-- Menu Bar -->
-      <div id="menu-bar" class="menu-bar">
-        <button class="menu-item">File</button>
-        <button class="menu-item">Edit</button>
-        <button class="menu-item">View</button>
-        <button class="menu-item">Help</button>
+      <!-- Top Bar -->
+      <div class="top-bar">
+        <!-- Logo & Title -->
+        <div class="top-bar-left">
+          <div class="logo">🚂</div>
+          <h1 class="document-title">Untitled Diagram</h1>
+        </div>
+
+        <!-- Menu Bar -->
+        <div id="menu-bar" class="menu-bar">
+          <button class="menu-item">File</button>
+          <button class="menu-item">Edit</button>
+          <button class="menu-item">View</button>
+          <button class="menu-item">Arrange</button>
+          <button class="menu-item">Extras</button>
+          <button class="menu-item">Help</button>
+        </div>
+
+        <!-- Save Status & Share -->
+        <div class="top-bar-right">
+          <div class="save-status">Unsaved changes. Click here to save.</div>
+          <button class="share-btn">👤 Share</button>
+        </div>
       </div>
 
       <!-- Toolbar -->
       <div id="toolbar-container" class="toolbar">
+        <!-- Left Section: View & Navigation -->
         <div class="toolbar-section">
-          <span class="toolbar-label">Edit</span>
+          <div class="zoom-control">
+            <button class="toolbar-btn" title="Zoom out">−</button>
+            <select class="zoom-select" id="zoom-level">
+              <option value="50">50%</option>
+              <option value="75">75%</option>
+              <option value="100">100%</option>
+              <option value="150">150%</option>
+              <option value="200">200%</option>
+            </select>
+            <button class="toolbar-btn" title="Zoom in">+</button>
+          </div>
+          <div class="toolbar-separator"></div>
+          <button class="toolbar-btn" title="Pan left">‹</button>
+          <button class="toolbar-btn" title="Pan right">›</button>
+        </div>
+
+        <!-- Center Section: Edit Tools -->
+        <div class="toolbar-section">
           <button class="toolbar-btn" id="btn-undo" title="Undo">↺</button>
           <button class="toolbar-btn" id="btn-redo" title="Redo">↻</button>
+          <div class="toolbar-separator"></div>
+          <button class="toolbar-btn" title="Delete">🗑</button>
+          <div class="toolbar-separator"></div>
+          <button class="toolbar-btn" title="Draw rectangle">▭</button>
+          <button class="toolbar-btn" title="Draw ellipse">●</button>
+          <button class="toolbar-btn" title="Draw diamond">◆</button>
+          <button class="toolbar-btn" title="Draw line">—</button>
+          <button class="toolbar-btn" title="Draw connector">↗</button>
+          <div class="toolbar-separator"></div>
+          <button class="toolbar-btn" title="Add element">+</button>
+          <div class="toolbar-separator"></div>
+          <button class="toolbar-btn" title="Grid">⊞</button>
+          <button class="toolbar-btn" title="Format painter">🎨</button>
+          <button class="toolbar-btn" title="Align">⊞⊡</button>
+          <button class="toolbar-btn" title="Distribute">≣</button>
         </div>
+
+        <!-- Right Section: View Options -->
         <div class="toolbar-section">
-          <span class="toolbar-label">View</span>
-          <button class="toolbar-btn" id="btn-zoom-in" title="Zoom In">🔍+</button>
-          <button class="toolbar-btn" id="btn-zoom-out" title="Zoom Out">🔍-</button>
-          <button class="toolbar-btn" id="btn-fit" title="Fit">⊡</button>
-          <button class="toolbar-btn" id="btn-reset-zoom" title="Reset Zoom">100%</button>
+          <button class="toolbar-btn" title="Fullscreen">⛶</button>
+          <button class="toolbar-btn" title="More options">⋮</button>
         </div>
       </div>
 
