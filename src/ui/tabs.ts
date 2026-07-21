@@ -59,7 +59,7 @@ export class TabManager {
     graph.setMultigraph(false);
 
     // Initialize UI controllers
-    const propertiesPanel = new PropertiesPanel(graph, 'property-content');
+    const propertiesPanel = new PropertiesPanel(graph);
     const toolbarController = new ToolbarController(graph);
     const statusBarController = new StatusBarController(graph);
     const clipboardController = new ClipboardController(graph);

@@ -97,7 +97,287 @@
         <div id="rightpanel-container" class="right-panel">
           <div class="panel-header">Properties</div>
           <div id="property-content" class="panel-content">
-            <p style="color: #999; font-size: 12px; padding: 12px;">Click element to edit</p>
+            <!-- Placeholder when no selection -->
+            <p id="prop-placeholder" style="color: #999; font-size: 12px; padding: 12px;">Click element to edit</p>
+
+            <!-- Properties Editor (hidden by default) -->
+            <div id="prop-editor" style="display: none; height: 100%; display: flex; flex-direction: column;">
+              <!-- Tab Bar -->
+              <div class="property-tabs" style="display: flex; border-bottom: 1px solid #e0e0e0; background: #f5f5f5;">
+                <button class="prop-tab active" data-tab="text" style="flex: 1; padding: 8px; border: none; background: transparent; cursor: pointer; font-weight: 600; color: #333; border-bottom: 2px solid #2196F3;">Text</button>
+                <button class="prop-tab" data-tab="style" style="flex: 1; padding: 8px; border: none; background: transparent; cursor: pointer; font-weight: 600; color: #999; border-bottom: 2px solid transparent;">Style</button>
+                <button class="prop-tab" data-tab="arrange" style="flex: 1; padding: 8px; border: none; background: transparent; cursor: pointer; font-weight: 600; color: #999; border-bottom: 2px solid transparent;">Arrange</button>
+              </div>
+
+              <!-- Tab Content -->
+              <div style="flex: 1; overflow-y: auto; padding: 8px;">
+                <!-- TEXT TAB -->
+                <div class="prop-tab-content" data-tab="text" style="display: block;">
+                  <!-- Text Content -->
+                  <div style="margin-bottom: 12px;">
+                    <input type="text" id="prop-text" placeholder="Text content" style="width: 100%; padding: 6px; border: 1px solid #ccc; border-radius: 3px; font-size: 12px; box-sizing: border-box;" />
+                  </div>
+
+                  <!-- Font Section -->
+                  <div style="margin-bottom: 16px; border-top: 1px solid #e0e0e0; padding-top: 12px;">
+                    <label style="display: block; margin-bottom: 4px; font-weight: 600; color: #333; font-size: 13px;">Font</label>
+                    <select id="prop-fontFamily" style="width: 100%; padding: 6px; border: 1px solid #ccc; border-radius: 3px; font-size: 12px; box-sizing: border-box; margin-bottom: 8px;">
+                      <option value="Helvetica">Helvetica</option>
+                      <option value="Arial">Arial</option>
+                      <option value="Verdana">Verdana</option>
+                      <option value="Times New Roman">Times New Roman</option>
+                      <option value="Courier New">Courier New</option>
+                      <option value="Georgia">Georgia</option>
+                    </select>
+
+                    <!-- Text Style Buttons -->
+                    <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; margin-bottom: 8px;">
+                      <button class="text-bold" style="padding: 6px; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; cursor: pointer; font-weight: bold; font-size: 14px;">B</button>
+                      <button class="text-italic" style="padding: 6px; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; cursor: pointer; font-style: italic; font-size: 14px;">I</button>
+                      <button class="text-underline" style="padding: 6px; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; cursor: pointer; text-decoration: underline; font-size: 14px;">U</button>
+                      <input type="color" id="prop-fontColorBtn" style="width: 100%; height: 32px; border: 1px solid #ccc; border-radius: 3px; cursor: pointer;" />
+                      <input type="number" id="prop-fontSize" value="12" min="8" max="72" style="padding: 6px; border: 1px solid #ccc; border-radius: 3px; font-size: 12px; box-sizing: border-box;" />
+                    </div>
+
+                    <!-- Alignment Buttons -->
+                    <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px;">
+                      <button class="align-left" style="padding: 6px; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; cursor: pointer;">⬅</button>
+                      <button class="align-center" style="padding: 6px; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; cursor: pointer;">⬅➡</button>
+                      <button class="align-right" style="padding: 6px; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; cursor: pointer;">➡</button>
+                      <button class="valign-top" style="padding: 6px; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; cursor: pointer;">⬆</button>
+                      <button class="valign-middle" style="padding: 6px; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; cursor: pointer;">⬆⬇</button>
+                      <button class="valign-bottom" style="padding: 6px; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; cursor: pointer;">⬇</button>
+                    </div>
+
+                    <!-- Position & Direction -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 8px;">
+                      <div>
+                        <label style="display: block; margin-bottom: 3px; font-weight: 600; font-size: 11px; color: #666;">Position</label>
+                        <select id="prop-position" style="width: 100%; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-size: 11px; box-sizing: border-box;">
+                          <option value="top">Top</option>
+                          <option value="center" selected>Center</option>
+                          <option value="bottom">Bottom</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label style="display: block; margin-bottom: 3px; font-weight: 600; font-size: 11px; color: #666;">Writing Direction</label>
+                        <select id="prop-writingDirection" style="width: 100%; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-size: 11px; box-sizing: border-box;">
+                          <option value="automatic" selected>Automatic</option>
+                          <option value="ltr">LTR</option>
+                          <option value="rtl">RTL</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Colors Section -->
+                  <div style="margin-bottom: 16px;">
+                    <div style="margin-bottom: 8px;">
+                      <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                        <input type="checkbox" id="prop-useFontColor" style="cursor: pointer;" />
+                        <span style="font-weight: 600; color: #333;">Font Color</span>
+                      </label>
+                    </div>
+                    <div style="margin-bottom: 8px;">
+                      <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                        <input type="checkbox" id="prop-useBackgroundColor" style="cursor: pointer;" />
+                        <span style="font-weight: 600; color: #333;">Background Color</span>
+                      </label>
+                    </div>
+                    <div style="margin-bottom: 8px;">
+                      <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                        <input type="checkbox" id="prop-useBorderColor" style="cursor: pointer;" />
+                        <span style="font-weight: 600; color: #333;">Border Color</span>
+                      </label>
+                    </div>
+                    <div>
+                      <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                        <input type="checkbox" id="prop-useShadow" style="cursor: pointer;" />
+                        <span style="font-weight: 600; color: #333;">Shadow</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- STYLE TAB -->
+                <div class="prop-tab-content" data-tab="style" style="display: none;">
+                  <!-- Fill Section -->
+                  <div style="margin-bottom: 16px; border: 1px solid #e0e0e0; border-radius: 3px; overflow: hidden;">
+                    <div class="collapsible-header" data-section="style-fill" style="padding: 8px; background: #f9f9f9; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px;">
+                      <span style="display: inline-block; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 5px solid #333;"></span>
+                      Fill
+                    </div>
+                    <div class="collapsible-content" data-section="style-fill" style="padding: 8px;">
+                      <label style="display: flex; align-items: center; gap: 6px; cursor: pointer; margin-bottom: 8px;">
+                        <input type="checkbox" id="prop-useFill" checked style="cursor: pointer;" />
+                        <span style="font-weight: 600; color: #333;">Fill</span>
+                        <select id="prop-fillType" style="margin-left: auto; padding: 4px 8px; border: 1px solid #ccc; border-radius: 3px; font-size: 11px;">
+                          <option value="solid">Automatic</option>
+                          <option value="gradient">Gradient</option>
+                        </select>
+                      </label>
+                    </div>
+                  </div>
+
+                  <!-- Line Section -->
+                  <div style="margin-bottom: 16px; border: 1px solid #e0e0e0; border-radius: 3px; overflow: hidden;">
+                    <div class="collapsible-header" data-section="style-line" style="padding: 8px; background: #f9f9f9; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px;">
+                      <span style="display: inline-block; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 5px solid #333;"></span>
+                      Line
+                    </div>
+                    <div class="collapsible-content" data-section="style-line" style="padding: 8px;">
+                      <label style="display: flex; align-items: center; gap: 6px; cursor: pointer; margin-bottom: 8px;">
+                        <input type="checkbox" id="prop-useLine" checked style="cursor: pointer;" />
+                        <span style="font-weight: 600; color: #333;">Line</span>
+                      </label>
+                      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 8px;">
+                        <div>
+                          <label style="display: block; margin-bottom: 3px; font-size: 11px; color: #666;">Style</label>
+                          <select id="prop-lineStyle" style="width: 100%; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-size: 11px;">
+                            <option value="solid">Solid</option>
+                            <option value="dashed">Dashed</option>
+                            <option value="dotted">Dotted</option>
+                          </select>
+                        </div>
+                        <div>
+                          <label style="display: block; margin-bottom: 3px; font-size: 11px; color: #666;">Width</label>
+                          <input type="number" id="prop-strokeWidth" value="1" min="0.5" max="10" step="0.5" style="width: 100%; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-size: 11px; box-sizing: border-box;" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Opacity -->
+                  <div style="margin-bottom: 16px;">
+                    <label style="font-weight: 600; color: #333;">Opacity</label>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                      <input type="range" id="prop-opacity" value="100" min="0" max="100" style="flex: 1; cursor: pointer;" />
+                      <span id="prop-opacity-value" style="min-width: 40px; text-align: right;">100%</span>
+                    </div>
+                  </div>
+
+                  <!-- Effects -->
+                  <div style="margin-bottom: 16px; border: 1px solid #e0e0e0; border-radius: 3px; overflow: hidden;">
+                    <div class="collapsible-header" data-section="style-effects" style="padding: 8px; background: #f9f9f9; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px;">
+                      <span style="display: inline-block; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 5px solid #333;"></span>
+                      Effects
+                    </div>
+                    <div class="collapsible-content" data-section="style-effects" style="padding: 8px;">
+                      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
+                        <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+                          <input type="checkbox" id="prop-rounded" style="cursor: pointer;" />
+                          <span style="font-weight: 600; font-size: 12px;">Rounded</span>
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+                          <input type="checkbox" id="prop-sketch" style="cursor: pointer;" />
+                          <span style="font-weight: 600; font-size: 12px;">Sketch</span>
+                        </label>
+                      </div>
+                      <div style="margin-top: 6px;">
+                        <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+                          <input type="checkbox" id="prop-shadow" style="cursor: pointer;" />
+                          <span style="font-weight: 600; font-size: 12px;">Shadow</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ARRANGE TAB -->
+                <div class="prop-tab-content" data-tab="arrange" style="display: none;">
+                  <!-- Z-Order Controls -->
+                  <div style="margin-bottom: 16px;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
+                      <button id="btn-toFront" style="padding: 8px; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; cursor: pointer; font-size: 12px; font-weight: 500;">To Front</button>
+                      <button id="btn-toBack" style="padding: 8px; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; cursor: pointer; font-size: 12px; font-weight: 500;">To Back</button>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 6px;">
+                      <button id="btn-bringForward" style="padding: 8px; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; cursor: pointer; font-size: 12px; font-weight: 500;">Bring Forward</button>
+                      <button id="btn-sendBackward" style="padding: 8px; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; cursor: pointer; font-size: 12px; font-weight: 500;">Send Backward</button>
+                    </div>
+                  </div>
+
+                  <!-- Size / Position Section -->
+                  <div style="margin-bottom: 16px; border: 1px solid #e0e0e0; border-radius: 3px; overflow: hidden;">
+                    <div class="collapsible-header" data-section="size-position" style="padding: 8px; background: #f9f9f9; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px;">
+                      <span style="display: inline-block; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 5px solid #333;"></span>
+                      Size / Position
+                    </div>
+                    <div class="collapsible-content" data-section="size-position" style="padding: 8px;">
+                      <div style="margin-bottom: 8px;">
+                        <label style="display: block; margin-bottom: 3px; font-weight: 600; font-size: 11px; color: #666;">Size</label>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
+                          <div>
+                            <input type="number" id="prop-w" value="80" min="1" style="width: 100%; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-size: 11px; box-sizing: border-box;" />
+                            <div style="font-size: 10px; color: #999; text-align: center; margin-top: 2px;">Width</div>
+                          </div>
+                          <div>
+                            <input type="number" id="prop-h" value="60" min="1" style="width: 100%; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-size: 11px; box-sizing: border-box;" />
+                            <div style="font-size: 10px; color: #999; text-align: center; margin-top: 2px;">Height</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div style="margin-bottom: 8px;">
+                        <label style="display: flex; align-items: center; gap: 6px; cursor: pointer; font-size: 11px;">
+                          <input type="checkbox" id="prop-constrainProportions" style="cursor: pointer;" />
+                          <span>Constrain Proportions</span>
+                        </label>
+                      </div>
+                      <div>
+                        <label style="display: block; margin-bottom: 3px; font-weight: 600; font-size: 11px; color: #666;">Position</label>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
+                          <div>
+                            <input type="number" id="prop-x" value="0" style="width: 100%; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-size: 11px; box-sizing: border-box;" />
+                            <div style="font-size: 10px; color: #999; text-align: center; margin-top: 2px;">Left</div>
+                          </div>
+                          <div>
+                            <input type="number" id="prop-y" value="0" style="width: 100%; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-size: 11px; box-sizing: border-box;" />
+                            <div style="font-size: 10px; color: #999; text-align: center; margin-top: 2px;">Top</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Rotation Section -->
+                  <div style="margin-bottom: 16px; border: 1px solid #e0e0e0; border-radius: 3px; overflow: hidden;">
+                    <div class="collapsible-header" data-section="rotation" style="padding: 8px; background: #f9f9f9; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px;">
+                      <span style="display: inline-block; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 5px solid #333;"></span>
+                      Rotation
+                    </div>
+                    <div class="collapsible-content" data-section="rotation" style="padding: 8px;">
+                      <div style="margin-bottom: 8px;">
+                        <label style="display: block; margin-bottom: 3px; font-weight: 600; font-size: 11px; color: #666;">Angle</label>
+                        <input type="number" id="prop-rotation" value="0" min="0" max="360" style="width: 100%; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-size: 11px; box-sizing: border-box;" />
+                      </div>
+                      <button id="btn-rotate90" style="width: 100%; padding: 6px; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; cursor: pointer; font-size: 11px; font-weight: 500;">Rotate Shape Only by 90°</button>
+                    </div>
+                  </div>
+
+                  <!-- Flip Section -->
+                  <div style="margin-bottom: 16px; border: 1px solid #e0e0e0; border-radius: 3px; overflow: hidden;">
+                    <div class="collapsible-header" data-section="flip" style="padding: 8px; background: #f9f9f9; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px;">
+                      <span style="display: inline-block; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 5px solid #333;"></span>
+                      Flip
+                    </div>
+                    <div class="collapsible-content" data-section="flip" style="padding: 8px;">
+                      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
+                        <button id="btn-flipHorizontal" style="padding: 8px; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; cursor: pointer; font-size: 12px; font-weight: 500;">Horizontal</button>
+                        <button id="btn-flipVertical" style="padding: 8px; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; cursor: pointer; font-size: 12px; font-weight: 500;">Vertical</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Misc Buttons -->
+                  <div style="margin-bottom: 0;">
+                    <button style="width: 100%; padding: 8px; margin-bottom: 6px; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; cursor: pointer; font-size: 12px; font-weight: 500;">Snap to Grid</button>
+                    <button style="width: 100%; padding: 8px; margin-bottom: 6px; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; cursor: pointer; font-size: 12px; font-weight: 500;">Group</button>
+                    <button id="btn-copySize" style="width: 100%; padding: 8px; margin-bottom: 6px; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; cursor: pointer; font-size: 12px; font-weight: 500;">Copy Size</button>
+                    <button id="btn-lock" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; cursor: pointer; font-size: 12px; font-weight: 500;">Lock</button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
