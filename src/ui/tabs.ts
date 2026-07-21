@@ -13,6 +13,7 @@ import { ContextMenuController } from './context-menu';
 import { MenuController } from './menu';
 import { InteractiveUIController } from './interactive-ui';
 import { CacheService, CacheData } from '../services/cache-service';
+import { DrawingController } from './drawing';
 
 export interface TabData {
   id: string;
@@ -31,6 +32,7 @@ export interface TabData {
   contextMenuController: ContextMenuController;
   menuController: MenuController;
   interactiveUIController: InteractiveUIController;
+  drawingController: DrawingController;
 }
 
 export class TabManager {
@@ -82,6 +84,7 @@ export class TabManager {
     const contextMenuController = new ContextMenuController(graph);
     const menuController = new MenuController(graph);
     const interactiveUIController = new InteractiveUIController(graph);
+    const drawingController = new DrawingController(graph);
 
     const tabData: TabData = {
       id: tabId,
@@ -100,6 +103,7 @@ export class TabManager {
       contextMenuController,
       menuController,
       interactiveUIController,
+      drawingController,
     };
 
     this.tabs.set(tabId, tabData);
