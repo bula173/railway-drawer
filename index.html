@@ -16,14 +16,79 @@
           <h1 class="document-title">Untitled Diagram</h1>
         </div>
 
-        <!-- Menu Bar -->
+        <!-- Menu Bar with Dropdowns -->
         <div id="menu-bar" class="menu-bar">
-          <button class="menu-item">File</button>
-          <button class="menu-item">Edit</button>
-          <button class="menu-item">View</button>
-          <button class="menu-item">Arrange</button>
-          <button class="menu-item">Extras</button>
-          <button class="menu-item">Help</button>
+          <div class="menu-item-container">
+            <button class="menu-item" data-menu="file">File</button>
+            <div class="menu-dropdown" data-menu="file" style="display: none;">
+              <div class="menu-dropdown-item" data-action="new">New</div>
+              <div class="menu-dropdown-item" data-action="open">Open</div>
+              <div class="menu-dropdown-item" data-action="save">Save</div>
+              <div class="menu-dropdown-item" data-action="saveAs">Save As...</div>
+              <div style="height: 1px; background: #e0e0e0; margin: 4px 0;"></div>
+              <div class="menu-dropdown-item" data-action="export">Export As...</div>
+              <div class="menu-dropdown-item" data-action="print">Print</div>
+            </div>
+          </div>
+
+          <div class="menu-item-container">
+            <button class="menu-item" data-menu="edit">Edit</button>
+            <div class="menu-dropdown" data-menu="edit" style="display: none;">
+              <div class="menu-dropdown-item" data-action="undo">Undo</div>
+              <div class="menu-dropdown-item" data-action="redo">Redo</div>
+              <div style="height: 1px; background: #e0e0e0; margin: 4px 0;"></div>
+              <div class="menu-dropdown-item" data-action="cut">Cut</div>
+              <div class="menu-dropdown-item" data-action="copy">Copy</div>
+              <div class="menu-dropdown-item" data-action="paste">Paste</div>
+              <div class="menu-dropdown-item" data-action="delete">Delete</div>
+              <div style="height: 1px; background: #e0e0e0; margin: 4px 0;"></div>
+              <div class="menu-dropdown-item" data-action="selectAll">Select All</div>
+            </div>
+          </div>
+
+          <div class="menu-item-container">
+            <button class="menu-item" data-menu="view">View</button>
+            <div class="menu-dropdown" data-menu="view" style="display: none;">
+              <div class="menu-dropdown-item" data-action="zoomIn">Zoom In</div>
+              <div class="menu-dropdown-item" data-action="zoomOut">Zoom Out</div>
+              <div class="menu-dropdown-item" data-action="zoomActual">Reset Zoom</div>
+              <div class="menu-dropdown-item" data-action="fitWindow">Fit to Window</div>
+              <div style="height: 1px; background: #e0e0e0; margin: 4px 0;"></div>
+              <div class="menu-dropdown-item" data-action="showGrid">Show Grid</div>
+            </div>
+          </div>
+
+          <div class="menu-item-container">
+            <button class="menu-item" data-menu="arrange">Arrange</button>
+            <div class="menu-dropdown" data-menu="arrange" style="display: none;">
+              <div class="menu-dropdown-item" data-action="toFront">To Front</div>
+              <div class="menu-dropdown-item" data-action="toBack">To Back</div>
+              <div class="menu-dropdown-item" data-action="bringForward">Bring Forward</div>
+              <div class="menu-dropdown-item" data-action="sendBackward">Send Backward</div>
+              <div style="height: 1px; background: #e0e0e0; margin: 4px 0;"></div>
+              <div class="menu-dropdown-item" data-action="alignLeft">Align Left</div>
+              <div class="menu-dropdown-item" data-action="alignCenter">Align Center</div>
+              <div class="menu-dropdown-item" data-action="alignRight">Align Right</div>
+            </div>
+          </div>
+
+          <div class="menu-item-container">
+            <button class="menu-item" data-menu="extras">Extras</button>
+            <div class="menu-dropdown" data-menu="extras" style="display: none;">
+              <div class="menu-dropdown-item" data-action="editData">Edit Data</div>
+              <div class="menu-dropdown-item" data-action="editStyle">Edit Style</div>
+              <div style="height: 1px; background: #e0e0e0; margin: 4px 0;"></div>
+              <div class="menu-dropdown-item" data-action="preferences">Preferences</div>
+            </div>
+          </div>
+
+          <div class="menu-item-container">
+            <button class="menu-item" data-menu="help">Help</button>
+            <div class="menu-dropdown" data-menu="help" style="display: none;">
+              <div class="menu-dropdown-item" data-action="shortcuts">Keyboard Shortcuts</div>
+              <div class="menu-dropdown-item" data-action="about">About</div>
+            </div>
+          </div>
         </div>
 
         <!-- Save Status & Share -->

@@ -10,6 +10,7 @@ import { GridController } from './grid';
 import { SaveLoadController } from './saveload';
 import { CanvasProperties } from './canvas-properties';
 import { ContextMenuController } from './context-menu';
+import { MenuController } from './menu';
 
 export interface TabData {
   id: string;
@@ -26,6 +27,7 @@ export interface TabData {
   saveLoadController: SaveLoadController;
   canvasProperties: CanvasProperties;
   contextMenuController: ContextMenuController;
+  menuController: MenuController;
 }
 
 export class TabManager {
@@ -72,6 +74,7 @@ export class TabManager {
     const saveLoadController = new SaveLoadController(graph);
     const canvasProperties = new CanvasProperties(graph);
     const contextMenuController = new ContextMenuController(graph);
+    const menuController = new MenuController(graph);
 
     const tabData: TabData = {
       id: tabId,
@@ -88,6 +91,7 @@ export class TabManager {
       saveLoadController,
       canvasProperties,
       contextMenuController,
+      menuController,
     };
 
     this.tabs.set(tabId, tabData);
