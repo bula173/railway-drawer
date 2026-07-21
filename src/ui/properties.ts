@@ -34,8 +34,9 @@ export class PropertiesPanel {
 
     this.contentElement.innerHTML = `
       <div style="padding: 8px; font-size: 12px;">
-        <div style="margin-bottom: 12px;">
-          <strong>${cell.value || 'Cell'}</strong>
+        <div style="margin-bottom: 8px;">
+          <label style="display: block; margin-bottom: 2px; font-weight: 600;">Text</label>
+          <input type="text" class="prop-input" id="prop-text" value="${cell.value || ''}" placeholder="Shape text" style="width: 100%; padding: 4px; border: 1px solid #ccc; border-radius: 3px;" />
         </div>
 
         <div style="margin-bottom: 8px;">
@@ -66,6 +67,12 @@ export class PropertiesPanel {
 
   private wireUpHandlers(cell: any) {
     const geo = cell.geometry;
+
+    document.getElementById('prop-text')?.addEventListener('change', (e) => {
+      const value = (e.target as HTMLInputElement).value;
+      this.graph.model.setValue(cell, value);
+      this.graph.refresh();
+    });
 
     document.getElementById('prop-x')?.addEventListener('change', (e) => {
       const value = parseInt((e.target as HTMLInputElement).value);
