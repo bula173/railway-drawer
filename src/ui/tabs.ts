@@ -142,13 +142,23 @@ export class TabManager {
 
     this.restoreProjectName(cacheData.projectName);
 
+    let activeTabId: string | null = null;
+    let tabIndex = 0;
+
     cacheData.tabs.forEach((tabCache) => {
       const tabData = this.createTab(tabCache.name);
       tabData.saveLoadController.load(tabCache.graphXml);
+
+      // Track the first tab as active, or use the index matching the cached active tab
+      if (tabIndex === 0 || (cacheData.activeTabId && tabIndex === cacheData.tabs.findIndex(t => t.id === cacheData.activeTabId))) {
+        activeTabId = tabData.id;
+      }
+      tabIndex++;
     });
 
-    if (cacheData.activeTabId && this.tabs.has(cacheData.activeTabId)) {
-      this.switchTab(cacheData.activeTabId);
+    // Switch to the appropriate tab (first tab by default)
+    if (activeTabId) {
+      this.switchTab(activeTabId);
     }
 
     console.log('[TabManager] Restored from cache');
