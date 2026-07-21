@@ -51,13 +51,33 @@ export class CanvasProperties {
   toggleGrid(enabled: boolean) {
     this.config.gridEnabled = enabled;
     this.graph.gridEnabled = enabled;
+    this.updateGridDisplay();
     this.render();
   }
 
   setGridSize(size: number) {
     this.config.gridSize = size;
     this.graph.gridSize = size;
+    this.updateGridDisplay();
     this.render();
+  }
+
+  private updateGridDisplay() {
+    const container = this.graph.getContainer();
+    if (!container) return;
+
+    if (this.config.gridEnabled) {
+      const gridColor = '#e0e0e0';
+      const gridSize = this.config.gridSize;
+      container.style.backgroundImage = `
+        linear-gradient(${gridColor} 1px, transparent 1px),
+        linear-gradient(90deg, ${gridColor} 1px, transparent 1px)
+      `;
+      container.style.backgroundSize = `${gridSize}px ${gridSize}px`;
+      container.style.backgroundPosition = '0 0';
+    } else {
+      container.style.backgroundImage = 'none';
+    }
   }
 
   setBackgroundColor(color: string) {
