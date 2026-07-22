@@ -91,21 +91,43 @@ graphContainer.addEventListener('drop', (evt) => {
     // Convert to graph coordinates
     const pt = activeTab.graph.getPointForEvent(evt as any);
 
-    // Create cell with style object (not string)
-    const styleObj = shape.style as any;
-
+    // Create cell based on shape type
     activeTab.graph.batchUpdate(() => {
-      const cell = activeTab.graph.insertVertex(
-        activeTab.graph.getDefaultParent(),
-        null,
-        shape.label,
-        pt.x - shape.width / 2,
-        pt.y - shape.height / 2,
-        shape.width,
-        shape.height,
-        styleObj
-      );
-      activeTab.graph.setSelectionCells([cell]);
+      if (shape.type === 'vertex') {
+        // ===== VERTEX-BASED SHAPE =====
+        // Native maxGraph shape extending Shape class
+        // Rendered directly via custom paintVertexShape() method
+        // CellRenderer looks up the custom shape class from the style.shape property
+        const cell = activeTab.graph.insertVertex(
+          activeTab.graph.getDefaultParent(),
+          null,
+          shape.label,
+          pt.x - shape.width / 2,
+          pt.y - shape.height / 2,
+          shape.width,
+          shape.height,
+          shape.style as any
+        );
+        activeTab.graph.setSelectionCells([cell]);
+      } else if (shape.type === 'svg') {
+        // ===== SVG-BASED SHAPE =====
+        // Pure SVG rendered as maxGraph image shape
+        // Style contains: shape: 'image', image: <data:image/svg+xml;base64,...>
+        // maxGraph renders as <image> element with SVG data URL
+        const cell = activeTab.graph.insertVertex(
+          activeTab.graph.getDefaultParent(),
+          null,
+          shape.label,
+          pt.x - shape.width / 2,
+          pt.y - shape.height / 2,
+          shape.width,
+          shape.height,
+          shape.style as any  // Contains SVG data URL
+        );
+        activeTab.graph.setSelectionCells([cell]);
+      } else {
+        console.warn(`Unknown shape type: ${shape.type}`);
+      }
     });
   }
 }, false);
