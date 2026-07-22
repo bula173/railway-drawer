@@ -7,10 +7,10 @@ import { svgArrows } from './svg-arrows';
 
 const svgToDataUrl = (svg: string) => `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
 
-// Create icon from SVG (scaled for toolbar)
+// Create icon from SVG (use raw SVG for toolbar display)
 const createSvgIcon = (svg: string): string => {
-  // Scale to icon size (32x30 for consistency with toolbar icons)
-  return svg.replace('viewBox="0 0 32 30"', 'viewBox="0 0 32 30" style="width: 24px; height: 22px;"');
+  // Return the SVG directly - toolbar will scale it
+  return svg;
 };
 
 export function registerArrowShapes(): void {

@@ -4,12 +4,6 @@
 
 import { shapeRegistry } from '../registry';
 
-const svgToDataUrl = (svg: string) => `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
-
-const createSvgIcon = (svg: string): string => {
-  return svg.replace('viewBox="0 0 32 30"', 'viewBox="0 0 32 30" style="width: 24px; height: 22px;"');
-};
-
 export function registerBasicShapes(): void {
   // Basic geometric shapes
   shapeRegistry.register({
