@@ -440,7 +440,6 @@ body {
   height: 100%;
   color: #333;
   stroke: currentColor;
-  fill: none;
 }
 
 .shape-icon-only:hover .shape-icon-svg svg {
