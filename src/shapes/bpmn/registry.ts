@@ -7,6 +7,7 @@ import { shapeRegistry } from '../registry';
 export function registerBpmnShapes(): void {
   shapeRegistry.register({
     id: 'bpmn_event',
+    type: 'vertex',
     label: 'Event',
     icon: '●',
     group: 'BPMN',
@@ -17,6 +18,7 @@ export function registerBpmnShapes(): void {
 
   shapeRegistry.register({
     id: 'bpmn_task',
+    type: 'vertex',
     label: 'Task',
     icon: '▬',
     group: 'BPMN',
@@ -27,6 +29,7 @@ export function registerBpmnShapes(): void {
 
   shapeRegistry.register({
     id: 'bpmn_gateway',
+    type: 'vertex',
     label: 'Gateway',
     icon: '◇',
     group: 'BPMN',
@@ -37,6 +40,7 @@ export function registerBpmnShapes(): void {
 
   shapeRegistry.register({
     id: 'bpmn_subprocess',
+    type: 'vertex',
     label: 'Subprocess',
     icon: '⬚',
     group: 'BPMN',
@@ -47,6 +51,7 @@ export function registerBpmnShapes(): void {
 
   shapeRegistry.register({
     id: 'bpmn_data_object',
+    type: 'vertex',
     label: 'Data Object',
     icon: '📄',
     group: 'BPMN',

@@ -7,6 +7,7 @@ import { shapeRegistry } from '../registry';
 export function registerCloudShapes(): void {
   shapeRegistry.register({
     id: 'cloud',
+    type: 'vertex',
     label: 'Cloud',
     icon: '☁',
     group: 'Cloud',
@@ -17,6 +18,7 @@ export function registerCloudShapes(): void {
 
   shapeRegistry.register({
     id: 'database',
+    type: 'vertex',
     label: 'Database',
     icon: '🗄',
     group: 'Cloud',
@@ -27,6 +29,7 @@ export function registerCloudShapes(): void {
 
   shapeRegistry.register({
     id: 'server',
+    type: 'vertex',
     label: 'Server',
     icon: '🖥',
     group: 'Cloud',
@@ -37,6 +40,7 @@ export function registerCloudShapes(): void {
 
   shapeRegistry.register({
     id: 'bucket',
+    type: 'vertex',
     label: 'S3 Bucket',
     icon: '🪣',
     group: 'Cloud',
@@ -47,6 +51,7 @@ export function registerCloudShapes(): void {
 
   shapeRegistry.register({
     id: 'queue',
+    type: 'vertex',
     label: 'Queue',
     icon: '█',
     group: 'Cloud',

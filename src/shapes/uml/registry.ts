@@ -8,6 +8,7 @@ export function registerUmlShapes(): void {
   // Class diagrams
   shapeRegistry.register({
     id: 'uml_class',
+    type: 'vertex',
     label: 'Class',
     icon: '◻',
     group: 'UML',
@@ -18,6 +19,7 @@ export function registerUmlShapes(): void {
 
   shapeRegistry.register({
     id: 'uml_interface',
+    type: 'vertex',
     label: 'Interface',
     icon: '⟪I⟫',
     group: 'UML',
@@ -28,6 +30,7 @@ export function registerUmlShapes(): void {
 
   shapeRegistry.register({
     id: 'uml_object',
+    type: 'vertex',
     label: 'Object',
     icon: '🔹',
     group: 'UML',
@@ -38,6 +41,7 @@ export function registerUmlShapes(): void {
 
   shapeRegistry.register({
     id: 'uml_component',
+    type: 'vertex',
     label: 'Component',
     icon: '⚙',
     group: 'UML',
@@ -48,6 +52,7 @@ export function registerUmlShapes(): void {
 
   shapeRegistry.register({
     id: 'uml_artifact',
+    type: 'vertex',
     label: 'Artifact',
     icon: '📋',
     group: 'UML',
@@ -58,6 +63,7 @@ export function registerUmlShapes(): void {
 
   shapeRegistry.register({
     id: 'uml_package',
+    type: 'vertex',
     label: 'Package',
     icon: '📦',
     group: 'UML',
@@ -69,6 +75,7 @@ export function registerUmlShapes(): void {
   // Use case diagrams
   shapeRegistry.register({
     id: 'uml_actor',
+    type: 'vertex',
     label: 'Actor',
     icon: '👤',
     group: 'UML',
@@ -79,6 +86,7 @@ export function registerUmlShapes(): void {
 
   shapeRegistry.register({
     id: 'uml_usecase',
+    type: 'vertex',
     label: 'Use Case',
     icon: '◯',
     group: 'UML',
@@ -90,6 +98,7 @@ export function registerUmlShapes(): void {
   // State diagrams
   shapeRegistry.register({
     id: 'uml_state',
+    type: 'vertex',
     label: 'State',
     icon: '◐',
     group: 'UML',
@@ -100,6 +109,7 @@ export function registerUmlShapes(): void {
 
   shapeRegistry.register({
     id: 'uml_initial_state',
+    type: 'vertex',
     label: 'Initial State',
     icon: '●',
     group: 'UML',
@@ -110,6 +120,7 @@ export function registerUmlShapes(): void {
 
   shapeRegistry.register({
     id: 'uml_final_state',
+    type: 'vertex',
     label: 'Final State',
     icon: '◯●',
     group: 'UML',
@@ -121,6 +132,7 @@ export function registerUmlShapes(): void {
   // Activity diagrams
   shapeRegistry.register({
     id: 'uml_activity',
+    type: 'vertex',
     label: 'Activity',
     icon: '▬',
     group: 'UML',
@@ -131,6 +143,7 @@ export function registerUmlShapes(): void {
 
   shapeRegistry.register({
     id: 'uml_fork_join',
+    type: 'vertex',
     label: 'Fork/Join',
     icon: '▮▮',
     group: 'UML',
@@ -141,6 +154,7 @@ export function registerUmlShapes(): void {
 
   shapeRegistry.register({
     id: 'uml_decision',
+    type: 'vertex',
     label: 'Decision',
     icon: '◇',
     group: 'UML',
@@ -151,6 +165,7 @@ export function registerUmlShapes(): void {
 
   shapeRegistry.register({
     id: 'uml_merge',
+    type: 'vertex',
     label: 'Merge',
     icon: '◆',
     group: 'UML',
@@ -162,6 +177,7 @@ export function registerUmlShapes(): void {
   // Sequence diagrams
   shapeRegistry.register({
     id: 'uml_lifeline',
+    type: 'vertex',
     label: 'Lifeline',
     icon: '⬚',
     group: 'UML',
@@ -172,6 +188,7 @@ export function registerUmlShapes(): void {
 
   shapeRegistry.register({
     id: 'uml_activation_box',
+    type: 'vertex',
     label: 'Activation Box',
     icon: '▭',
     group: 'UML',
@@ -182,6 +199,7 @@ export function registerUmlShapes(): void {
 
   shapeRegistry.register({
     id: 'uml_message_arrow',
+    type: 'vertex',
     label: 'Message',
     icon: '→',
     group: 'UML',
@@ -192,6 +210,7 @@ export function registerUmlShapes(): void {
 
   shapeRegistry.register({
     id: 'uml_combined_fragment',
+    type: 'vertex',
     label: 'Combined Fragment',
     icon: '□',
     group: 'UML',
@@ -202,6 +221,7 @@ export function registerUmlShapes(): void {
 
   shapeRegistry.register({
     id: 'uml_interaction_use',
+    type: 'vertex',
     label: 'Interaction Use',
     icon: '⟨⟩',
     group: 'UML',
@@ -212,6 +232,7 @@ export function registerUmlShapes(): void {
 
   shapeRegistry.register({
     id: 'uml_note',
+    type: 'vertex',
     label: 'Note',
     icon: '📝',
     group: 'UML',

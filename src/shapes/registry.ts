@@ -1,12 +1,24 @@
+/**
+ * Shape types:
+ * - 'vertex': Native maxGraph shape extending Shape class (RectangleShape, EllipseShape, etc.)
+ *   Rendered directly on canvas with custom paint logic
+ *   Icon: scaled version of the vertex shape
+ *
+ * - 'svg': Pure SVG definition rendered via maxGraph image shape
+ *   Rendered as image element with SVG data URL
+ *   Icon: raw SVG string scaled for toolbar
+ */
+export type ShapeType = 'vertex' | 'svg';
+
 export interface ShapeConfig {
   id: string;
   label: string;
-  icon?: string;
-  svgIcon?: string;
+  type: ShapeType;
+  icon: string; // Either emoji (vertex) or SVG string (svg)
   group: string;
   width: number;
   height: number;
-  style: any;
+  style: any; // maxGraph style object
 }
 
 export class ShapeRegistry {
@@ -31,6 +43,10 @@ export class ShapeRegistry {
   getGroups(): string[] {
     const groups = new Set(Array.from(this.shapes.values()).map((s) => s.group));
     return Array.from(groups);
+  }
+
+  getShapesByType(type: ShapeType): ShapeConfig[] {
+    return Array.from(this.shapes.values()).filter((s) => s.type === type);
   }
 }
 

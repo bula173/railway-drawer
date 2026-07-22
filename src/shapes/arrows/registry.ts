@@ -1,5 +1,9 @@
 /**
- * Arrow shape registry - all arrow shapes registered here
+ * Arrow shapes registry - SVG-based arrow shapes
+ *
+ * All arrows are type 'svg' - pure SVG definitions rendered as images on canvas
+ * Icons use raw SVG for toolbar display
+ * Dragged shapes use SVG data URLs for rendering
  */
 
 import { shapeRegistry } from '../registry';
@@ -7,75 +11,69 @@ import { svgArrows } from './svg-arrows';
 
 const svgToDataUrl = (svg: string) => `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
 
-// Create icon from SVG (use raw SVG for toolbar display)
-const createSvgIcon = (svg: string): string => {
-  // Return the SVG directly - toolbar will scale it
-  return svg;
-};
-
 export function registerArrowShapes(): void {
-  // Simple arrows (basic) - using scaled SVG icons
-  const rightArrowIcon = createSvgIcon(svgArrows.wideArrow);
-  const leftArrowIcon = createSvgIcon(svgArrows.leftArrow);
-  const upArrowIcon = createSvgIcon(svgArrows.upArrow);
-  const downArrowIcon = createSvgIcon(svgArrows.downArrow);
-  const doubleArrowIcon = createSvgIcon(svgArrows.doubleArrow);
-
+  // Simple arrows (basic) - SVG-based shapes
   shapeRegistry.register({
     id: 'arrow_right',
+    type: 'svg',
     label: 'Arrow Right',
-    icon: rightArrowIcon,
+    icon: svgArrows.wideArrow,
     group: 'Arrows',
     width: 100,
     height: 60,
-    style: { shape: 'customArrow', filled: false, strokeColor: '#2c3e50', strokeWidth: 2 },
+    style: { shape: 'image', image: svgToDataUrl(svgArrows.wideArrow) },
   });
 
   shapeRegistry.register({
     id: 'arrow_left',
+    type: 'svg',
     label: 'Arrow Left',
-    icon: leftArrowIcon,
+    icon: svgArrows.leftArrow,
     group: 'Arrows',
     width: 100,
     height: 60,
-    style: { shape: 'customArrow', filled: false, strokeColor: '#2c3e50', strokeWidth: 2 },
+    style: { shape: 'image', image: svgToDataUrl(svgArrows.leftArrow) },
   });
 
   shapeRegistry.register({
     id: 'arrow_up',
+    type: 'svg',
     label: 'Arrow Up',
-    icon: upArrowIcon,
+    icon: svgArrows.upArrow,
     group: 'Arrows',
     width: 60,
     height: 100,
-    style: { shape: 'customArrow', filled: false, strokeColor: '#2c3e50', strokeWidth: 2 },
+    style: { shape: 'image', image: svgToDataUrl(svgArrows.upArrow) },
   });
 
   shapeRegistry.register({
     id: 'arrow_down',
+    type: 'svg',
     label: 'Arrow Down',
-    icon: downArrowIcon,
+    icon: svgArrows.downArrow,
     group: 'Arrows',
     width: 60,
     height: 100,
-    style: { shape: 'customArrow', filled: false, strokeColor: '#2c3e50', strokeWidth: 2 },
+    style: { shape: 'image', image: svgToDataUrl(svgArrows.downArrow) },
   });
 
   shapeRegistry.register({
     id: 'double_arrow',
+    type: 'svg',
     label: 'Double Arrow',
-    icon: doubleArrowIcon,
+    icon: svgArrows.doubleArrow,
     group: 'Arrows',
     width: 120,
     height: 60,
-    style: { shape: 'customArrow', filled: false, strokeColor: '#2c3e50', strokeWidth: 2 },
+    style: { shape: 'image', image: svgToDataUrl(svgArrows.doubleArrow) },
   });
 
-  // Advanced arrow types (SVG-based) - using scaled SVG icons
+  // Advanced arrow types (SVG-based shapes)
   shapeRegistry.register({
     id: 'wide_arrow',
+    type: 'svg',
     label: 'Wide Arrow',
-    icon: createSvgIcon(svgArrows.wideArrow),
+    icon: svgArrows.wideArrow,
     group: 'Arrows',
     width: 120,
     height: 60,
@@ -84,8 +82,9 @@ export function registerArrowShapes(): void {
 
   shapeRegistry.register({
     id: 'thin_arrow',
+    type: 'svg',
     label: 'Thin Arrow',
-    icon: createSvgIcon(svgArrows.thinArrow),
+    icon: svgArrows.thinArrow,
     group: 'Arrows',
     width: 120,
     height: 40,
@@ -94,8 +93,9 @@ export function registerArrowShapes(): void {
 
   shapeRegistry.register({
     id: 'double_headed_arrow',
+    type: 'svg',
     label: 'Double Headed',
-    icon: createSvgIcon(svgArrows.doubleArrow),
+    icon: svgArrows.doubleArrow,
     group: 'Arrows',
     width: 140,
     height: 60,
@@ -104,8 +104,9 @@ export function registerArrowShapes(): void {
 
   shapeRegistry.register({
     id: 'notched_arrow',
+    type: 'svg',
     label: 'Notched Arrow',
-    icon: createSvgIcon(svgArrows.notchedArrow),
+    icon: svgArrows.notchedArrow,
     group: 'Arrows',
     width: 120,
     height: 60,
@@ -114,8 +115,9 @@ export function registerArrowShapes(): void {
 
   shapeRegistry.register({
     id: 'split_arrow',
+    type: 'svg',
     label: 'Split Arrow',
-    icon: createSvgIcon(svgArrows.splitArrow),
+    icon: svgArrows.splitArrow,
     group: 'Arrows',
     width: 100,
     height: 80,
@@ -124,8 +126,9 @@ export function registerArrowShapes(): void {
 
   shapeRegistry.register({
     id: 'curved_arrow',
+    type: 'svg',
     label: 'Curved Arrow',
-    icon: createSvgIcon(svgArrows.curvedArrow),
+    icon: svgArrows.curvedArrow,
     group: 'Arrows',
     width: 120,
     height: 60,
@@ -134,8 +137,9 @@ export function registerArrowShapes(): void {
 
   shapeRegistry.register({
     id: 'loop_arrow',
+    type: 'svg',
     label: 'Loop Arrow',
-    icon: createSvgIcon(svgArrows.loopArrow),
+    icon: svgArrows.loopArrow,
     group: 'Arrows',
     width: 100,
     height: 100,
@@ -144,8 +148,9 @@ export function registerArrowShapes(): void {
 
   shapeRegistry.register({
     id: 'rounded_loop_arrow',
+    type: 'svg',
     label: 'Rounded Loop',
-    icon: createSvgIcon(svgArrows.roundedLoopArrow),
+    icon: svgArrows.roundedLoopArrow,
     group: 'Arrows',
     width: 100,
     height: 100,
@@ -154,8 +159,9 @@ export function registerArrowShapes(): void {
 
   shapeRegistry.register({
     id: 'chevron_arrow',
+    type: 'svg',
     label: 'Chevron Arrow',
-    icon: createSvgIcon(svgArrows.chevronArrow),
+    icon: svgArrows.chevronArrow,
     group: 'Arrows',
     width: 140,
     height: 60,
@@ -164,8 +170,9 @@ export function registerArrowShapes(): void {
 
   shapeRegistry.register({
     id: 'zigzag_arrow',
+    type: 'svg',
     label: 'Zigzag Arrow',
-    icon: createSvgIcon(svgArrows.zigzagArrow),
+    icon: svgArrows.zigzagArrow,
     group: 'Arrows',
     width: 120,
     height: 60,
@@ -174,8 +181,9 @@ export function registerArrowShapes(): void {
 
   shapeRegistry.register({
     id: 'hollow_arrow',
+    type: 'svg',
     label: 'Hollow Arrow',
-    icon: createSvgIcon(svgArrows.hollowArrow),
+    icon: svgArrows.hollowArrow,
     group: 'Arrows',
     width: 120,
     height: 60,
@@ -184,8 +192,9 @@ export function registerArrowShapes(): void {
 
   shapeRegistry.register({
     id: 'triangle_arrow',
+    type: 'svg',
     label: 'Triangle Arrow',
-    icon: createSvgIcon(svgArrows.triangleArrow),
+    icon: svgArrows.triangleArrow,
     group: 'Arrows',
     width: 100,
     height: 100,
@@ -194,8 +203,9 @@ export function registerArrowShapes(): void {
 
   shapeRegistry.register({
     id: 'left_arrow_svg',
+    type: 'svg',
     label: 'Left Arrow',
-    icon: createSvgIcon(svgArrows.leftArrow),
+    icon: svgArrows.leftArrow,
     group: 'Arrows',
     width: 120,
     height: 60,
@@ -204,8 +214,9 @@ export function registerArrowShapes(): void {
 
   shapeRegistry.register({
     id: 'up_arrow_svg',
+    type: 'svg',
     label: 'Up Arrow',
-    icon: createSvgIcon(svgArrows.upArrow),
+    icon: svgArrows.upArrow,
     group: 'Arrows',
     width: 60,
     height: 120,
@@ -214,8 +225,9 @@ export function registerArrowShapes(): void {
 
   shapeRegistry.register({
     id: 'down_arrow_svg',
+    type: 'svg',
     label: 'Down Arrow',
-    icon: createSvgIcon(svgArrows.downArrow),
+    icon: svgArrows.downArrow,
     group: 'Arrows',
     width: 60,
     height: 120,

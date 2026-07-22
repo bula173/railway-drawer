@@ -1,6 +1,5 @@
 import { Cell, Geometry } from '@maxgraph/core';
 import { ShapeRegistry, ShapeConfig } from './registry';
-import { getSvgIcon } from '../utils/svg-icons';
 
 export class ShapeToolbar {
   private container: HTMLElement;
@@ -208,9 +207,8 @@ export class ShapeToolbar {
     item.draggable = true;
     item.title = shape.label;
 
-    // Use SVG icon if available, otherwise get from icon system
-    const svgContent = shape.svgIcon || getSvgIcon(shape.id);
-    item.innerHTML = `<div class="shape-icon-svg">${svgContent}</div>`;
+    // Display icon - either SVG string (for svg type) or emoji (for vertex type)
+    item.innerHTML = `<div class="shape-icon-svg">${shape.icon}</div>`;
 
     // Drag event - store shape data
     item.addEventListener('dragstart', (evt) => {

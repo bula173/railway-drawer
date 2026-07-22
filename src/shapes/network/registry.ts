@@ -7,6 +7,7 @@ import { shapeRegistry } from '../registry';
 export function registerNetworkShapes(): void {
   shapeRegistry.register({
     id: 'router',
+    type: 'vertex',
     label: 'Router',
     icon: '📡',
     group: 'Network',
@@ -17,6 +18,7 @@ export function registerNetworkShapes(): void {
 
   shapeRegistry.register({
     id: 'switch',
+    type: 'vertex',
     label: 'Switch',
     icon: '⧉',
     group: 'Network',
@@ -27,6 +29,7 @@ export function registerNetworkShapes(): void {
 
   shapeRegistry.register({
     id: 'firewall',
+    type: 'vertex',
     label: 'Firewall',
     icon: '🛡',
     group: 'Network',
@@ -37,6 +40,7 @@ export function registerNetworkShapes(): void {
 
   shapeRegistry.register({
     id: 'client',
+    type: 'vertex',
     label: 'Client',
     icon: '💻',
     group: 'Network',
@@ -47,6 +51,7 @@ export function registerNetworkShapes(): void {
 
   shapeRegistry.register({
     id: 'mobile_device',
+    type: 'vertex',
     label: 'Mobile Device',
     icon: '📱',
     group: 'Network',

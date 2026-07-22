@@ -8,6 +8,7 @@ export function registerRailwayShapes(): void {
   // Basic railway infrastructure
   shapeRegistry.register({
     id: 'railway-rail',
+    type: 'vertex',
     label: 'Rail',
     group: 'Railway',
     icon: '━',
@@ -18,6 +19,7 @@ export function registerRailwayShapes(): void {
 
   shapeRegistry.register({
     id: 'railway-signal',
+    type: 'vertex',
     label: 'Signal',
     group: 'Railway',
     icon: '🚦',
@@ -28,6 +30,7 @@ export function registerRailwayShapes(): void {
 
   shapeRegistry.register({
     id: 'railway-switch',
+    type: 'vertex',
     label: 'Switch',
     group: 'Railway',
     icon: '⊞',
@@ -38,6 +41,7 @@ export function registerRailwayShapes(): void {
 
   shapeRegistry.register({
     id: 'railway-junction',
+    type: 'vertex',
     label: 'Junction',
     group: 'Railway',
     icon: '⊕',
@@ -48,6 +52,7 @@ export function registerRailwayShapes(): void {
 
   shapeRegistry.register({
     id: 'railway-platform',
+    type: 'vertex',
     label: 'Platform',
     group: 'Railway',
     icon: '▌',
@@ -58,6 +63,7 @@ export function registerRailwayShapes(): void {
 
   shapeRegistry.register({
     id: 'railway-station',
+    type: 'vertex',
     label: 'Station',
     group: 'Railway',
     icon: '🏛',
@@ -68,6 +74,7 @@ export function registerRailwayShapes(): void {
 
   shapeRegistry.register({
     id: 'railway-crossing',
+    type: 'vertex',
     label: 'Crossing',
     group: 'Railway',
     icon: '✕',
@@ -78,6 +85,7 @@ export function registerRailwayShapes(): void {
 
   shapeRegistry.register({
     id: 'railway-tunnel',
+    type: 'vertex',
     label: 'Tunnel',
     group: 'Railway',
     icon: '◠',
@@ -88,6 +96,7 @@ export function registerRailwayShapes(): void {
 
   shapeRegistry.register({
     id: 'railway-buffer',
+    type: 'vertex',
     label: 'Buffer',
     group: 'Railway',
     icon: '⊣',
@@ -98,6 +107,7 @@ export function registerRailwayShapes(): void {
 
   shapeRegistry.register({
     id: 'railway-cabin',
+    type: 'vertex',
     label: 'Cabin',
     group: 'Railway',
     icon: '▢',
@@ -109,6 +119,7 @@ export function registerRailwayShapes(): void {
   // Track Circuit Elements
   shapeRegistry.register({
     id: 'railway-lta',
+    type: 'vertex',
     label: 'LTA (Track Area)',
     group: 'Track Circuit',
     icon: '◀',
@@ -119,6 +130,7 @@ export function registerRailwayShapes(): void {
 
   shapeRegistry.register({
     id: 'railway-lto',
+    type: 'vertex',
     label: 'LTO (Track Output)',
     group: 'Track Circuit',
     icon: '▶',
@@ -129,6 +141,7 @@ export function registerRailwayShapes(): void {
 
   shapeRegistry.register({
     id: 'railway-detection',
+    type: 'vertex',
     label: 'Detection Point',
     group: 'Track Circuit',
     icon: '●',
@@ -139,6 +152,7 @@ export function registerRailwayShapes(): void {
 
   shapeRegistry.register({
     id: 'railway-track-section',
+    type: 'vertex',
     label: 'Track Section',
     group: 'Track Circuit',
     icon: '─',
@@ -149,6 +163,7 @@ export function registerRailwayShapes(): void {
 
   shapeRegistry.register({
     id: 'railway-vertical-connector',
+    type: 'vertex',
     label: 'Vertical Connector',
     group: 'Track Circuit',
     icon: '│',
@@ -159,6 +174,7 @@ export function registerRailwayShapes(): void {
 
   shapeRegistry.register({
     id: 'railway-eol-marker',
+    type: 'vertex',
     label: 'End of Line',
     group: 'Track Circuit',
     icon: '◯',
@@ -169,6 +185,7 @@ export function registerRailwayShapes(): void {
 
   shapeRegistry.register({
     id: 'railway-rail-level',
+    type: 'vertex',
     label: 'Rail Level',
     group: 'Track Circuit',
     icon: '═',
@@ -179,6 +196,7 @@ export function registerRailwayShapes(): void {
 
   shapeRegistry.register({
     id: 'railway-sloped-track',
+    type: 'vertex',
     label: 'Sloped Track',
     group: 'Track Circuit',
     icon: '⟋',
@@ -190,6 +208,7 @@ export function registerRailwayShapes(): void {
   // Rolling Stock & Signaling
   shapeRegistry.register({
     id: 'railway-train',
+    type: 'vertex',
     label: 'Train',
     group: 'Rolling Stock',
     icon: '🚂',
@@ -200,6 +219,7 @@ export function registerRailwayShapes(): void {
 
   shapeRegistry.register({
     id: 'railway-signal-head',
+    type: 'vertex',
     label: 'Signal Head',
     group: 'Signaling',
     icon: '📊',
@@ -210,6 +230,7 @@ export function registerRailwayShapes(): void {
 
   shapeRegistry.register({
     id: 'railway-rbc',
+    type: 'vertex',
     label: 'RBC (Radio Block Center)',
     group: 'Signaling',
     icon: '△',
@@ -220,6 +241,7 @@ export function registerRailwayShapes(): void {
 
   shapeRegistry.register({
     id: 'railway-communication-line',
+    type: 'vertex',
     label: 'GSM-R Communication',
     group: 'Signaling',
     icon: '≈',
@@ -230,6 +252,7 @@ export function registerRailwayShapes(): void {
 
   shapeRegistry.register({
     id: 'railway-eb-section',
+    type: 'vertex',
     label: 'Electronic Block (EB)',
     group: 'Track Circuit',
     icon: '▪',
@@ -240,6 +263,7 @@ export function registerRailwayShapes(): void {
 
   shapeRegistry.register({
     id: 'railway-wayside-equipment',
+    type: 'vertex',
     label: 'Wayside Equipment',
     group: 'Infrastructure',
     icon: '⚙',
@@ -250,6 +274,7 @@ export function registerRailwayShapes(): void {
 
   shapeRegistry.register({
     id: 'railway-track-circuit',
+    type: 'vertex',
     label: 'Track Circuit',
     group: 'Track Circuit',
     icon: '⊞',

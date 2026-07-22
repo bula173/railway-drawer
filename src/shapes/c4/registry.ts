@@ -7,6 +7,7 @@ import { shapeRegistry } from '../registry';
 export function registerC4Shapes(): void {
   shapeRegistry.register({
     id: 'person_c4',
+    type: 'vertex',
     label: 'Person (C4)',
     icon: '👤',
     group: 'C4',
@@ -17,6 +18,7 @@ export function registerC4Shapes(): void {
 
   shapeRegistry.register({
     id: 'system_c4',
+    type: 'vertex',
     label: 'System (C4)',
     icon: '▬',
     group: 'C4',
@@ -27,6 +29,7 @@ export function registerC4Shapes(): void {
 
   shapeRegistry.register({
     id: 'container_c4',
+    type: 'vertex',
     label: 'Container (C4)',
     icon: '📦',
     group: 'C4',
@@ -37,6 +40,7 @@ export function registerC4Shapes(): void {
 
   shapeRegistry.register({
     id: 'component_c4',
+    type: 'vertex',
     label: 'Component (C4)',
     icon: '⚙',
     group: 'C4',

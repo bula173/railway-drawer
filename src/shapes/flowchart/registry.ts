@@ -7,6 +7,7 @@ import { shapeRegistry } from '../registry';
 export function registerFlowchartShapes(): void {
   shapeRegistry.register({
     id: 'process',
+    type: 'vertex',
     label: 'Process',
     icon: '▬',
     group: 'Flowchart',
@@ -17,6 +18,7 @@ export function registerFlowchartShapes(): void {
 
   shapeRegistry.register({
     id: 'decision',
+    type: 'vertex',
     label: 'Decision',
     icon: '◇',
     group: 'Flowchart',
@@ -27,6 +29,7 @@ export function registerFlowchartShapes(): void {
 
   shapeRegistry.register({
     id: 'cylinder',
+    type: 'vertex',
     label: 'Cylinder',
     icon: '⊗',
     group: 'Flowchart',
@@ -37,6 +40,7 @@ export function registerFlowchartShapes(): void {
 
   shapeRegistry.register({
     id: 'parallelogram',
+    type: 'vertex',
     label: 'Parallelogram',
     icon: '⬠',
     group: 'Flowchart',
@@ -47,6 +51,7 @@ export function registerFlowchartShapes(): void {
 
   shapeRegistry.register({
     id: 'document',
+    type: 'vertex',
     label: 'Document',
     icon: '📄',
     group: 'Flowchart',
@@ -57,6 +62,7 @@ export function registerFlowchartShapes(): void {
 
   shapeRegistry.register({
     id: 'data',
+    type: 'vertex',
     label: 'Data',
     icon: '⬡',
     group: 'Flowchart',
@@ -67,6 +73,7 @@ export function registerFlowchartShapes(): void {
 
   shapeRegistry.register({
     id: 'terminator',
+    type: 'vertex',
     label: 'Terminator',
     icon: '◠',
     group: 'Flowchart',
@@ -77,6 +84,7 @@ export function registerFlowchartShapes(): void {
 
   shapeRegistry.register({
     id: 'loop',
+    type: 'vertex',
     label: 'Loop',
     icon: '↻',
     group: 'Flowchart',
@@ -87,6 +95,7 @@ export function registerFlowchartShapes(): void {
 
   shapeRegistry.register({
     id: 'delay',
+    type: 'vertex',
     label: 'Delay',
     icon: '◠',
     group: 'Flowchart',

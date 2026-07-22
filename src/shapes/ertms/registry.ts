@@ -7,6 +7,7 @@ import { shapeRegistry } from '../registry';
 export function registerErtmsShapes(): void {
   shapeRegistry.register({
     id: 'ertms-level-marker',
+    type: 'vertex',
     label: 'ERTMS Level Marker',
     group: 'ERTMS',
     icon: '⬟',
@@ -17,6 +18,7 @@ export function registerErtmsShapes(): void {
 
   shapeRegistry.register({
     id: 'ertms-speed-restriction',
+    type: 'vertex',
     label: 'Speed Restriction Marker',
     group: 'ERTMS',
     icon: '◇',
@@ -27,6 +29,7 @@ export function registerErtmsShapes(): void {
 
   shapeRegistry.register({
     id: 'ertms-balise',
+    type: 'vertex',
     label: 'ERTMS Balise',
     group: 'ERTMS',
     icon: '▭',
@@ -37,6 +40,7 @@ export function registerErtmsShapes(): void {
 
   shapeRegistry.register({
     id: 'ertms-level-crossing',
+    type: 'vertex',
     label: 'ERTMS Level Crossing',
     group: 'ERTMS',
     icon: '╋',
@@ -47,6 +51,7 @@ export function registerErtmsShapes(): void {
 
   shapeRegistry.register({
     id: 'ertms-handover-point',
+    type: 'vertex',
     label: 'ERTMS Handover Point',
     group: 'ERTMS',
     icon: '◉',
@@ -57,6 +62,7 @@ export function registerErtmsShapes(): void {
 
   shapeRegistry.register({
     id: 'ertms-national-transition',
+    type: 'vertex',
     label: 'National Transition Point',
     group: 'ERTMS',
     icon: '⬠',
@@ -67,6 +73,7 @@ export function registerErtmsShapes(): void {
 
   shapeRegistry.register({
     id: 'ertms-transponder',
+    type: 'vertex',
     label: 'ERTMS Transponder',
     group: 'ERTMS',
     icon: '◊',
@@ -77,6 +84,7 @@ export function registerErtmsShapes(): void {
 
   shapeRegistry.register({
     id: 'ertms-section-marker',
+    type: 'vertex',
     label: 'ERTMS Section Marker',
     group: 'ERTMS',
     icon: '⬜',

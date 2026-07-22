@@ -7,6 +7,7 @@ import { shapeRegistry } from '../registry';
 export function registerDfdShapes(): void {
   shapeRegistry.register({
     id: 'process_dfd',
+    type: 'vertex',
     label: 'Process (DFD)',
     icon: '◻',
     group: 'DFD',
@@ -17,6 +18,7 @@ export function registerDfdShapes(): void {
 
   shapeRegistry.register({
     id: 'entity_dfd',
+    type: 'vertex',
     label: 'Entity (DFD)',
     icon: '▭',
     group: 'DFD',
@@ -27,6 +29,7 @@ export function registerDfdShapes(): void {
 
   shapeRegistry.register({
     id: 'datastore_dfd',
+    type: 'vertex',
     label: 'Data Store (DFD)',
     icon: '▬',
     group: 'DFD',

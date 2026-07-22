@@ -8,6 +8,7 @@ export function registerBasicShapes(): void {
   // Basic geometric shapes
   shapeRegistry.register({
     id: 'rectangle',
+    type: 'vertex',
     label: 'Rectangle',
     icon: '▭',
     group: 'Basic',
@@ -18,6 +19,7 @@ export function registerBasicShapes(): void {
 
   shapeRegistry.register({
     id: 'circle',
+    type: 'vertex',
     label: 'Circle',
     icon: '●',
     group: 'Basic',
@@ -28,6 +30,7 @@ export function registerBasicShapes(): void {
 
   shapeRegistry.register({
     id: 'diamond',
+    type: 'vertex',
     label: 'Diamond',
     icon: '◇',
     group: 'Basic',
@@ -38,6 +41,7 @@ export function registerBasicShapes(): void {
 
   shapeRegistry.register({
     id: 'triangle',
+    type: 'vertex',
     label: 'Triangle',
     icon: '△',
     group: 'Basic',
@@ -48,6 +52,7 @@ export function registerBasicShapes(): void {
 
   shapeRegistry.register({
     id: 'line',
+    type: 'vertex',
     label: 'Line',
     icon: '─',
     group: 'Basic',
@@ -58,6 +63,7 @@ export function registerBasicShapes(): void {
 
   shapeRegistry.register({
     id: 'rounded_rectangle',
+    type: 'vertex',
     label: 'Rounded Rectangle',
     icon: '⛶',
     group: 'Basic',
@@ -69,6 +75,7 @@ export function registerBasicShapes(): void {
   // Extended shapes
   shapeRegistry.register({
     id: 'hexagon',
+    type: 'vertex',
     label: 'Hexagon',
     icon: '⬡',
     group: 'Basic',
@@ -79,6 +86,7 @@ export function registerBasicShapes(): void {
 
   shapeRegistry.register({
     id: 'pentagon',
+    type: 'vertex',
     label: 'Pentagon',
     icon: '⬠',
     group: 'Basic',
@@ -89,6 +97,7 @@ export function registerBasicShapes(): void {
 
   shapeRegistry.register({
     id: 'star',
+    type: 'vertex',
     label: 'Star',
     icon: '⭐',
     group: 'Basic',
@@ -99,6 +108,7 @@ export function registerBasicShapes(): void {
 
   shapeRegistry.register({
     id: 'trapezoid',
+    type: 'vertex',
     label: 'Trapezoid',
     icon: '⟂',
     group: 'Basic',
@@ -109,6 +119,7 @@ export function registerBasicShapes(): void {
 
   shapeRegistry.register({
     id: 'cross',
+    type: 'vertex',
     label: 'Cross',
     icon: '✚',
     group: 'Basic',
@@ -119,6 +130,7 @@ export function registerBasicShapes(): void {
 
   shapeRegistry.register({
     id: 'cylinder_basic',
+    type: 'vertex',
     label: 'Cylinder',
     icon: '🗄',
     group: 'Basic',
@@ -129,6 +141,7 @@ export function registerBasicShapes(): void {
 
   shapeRegistry.register({
     id: 'oval_basic',
+    type: 'vertex',
     label: 'Oval',
     icon: '⬭',
     group: 'Basic',
@@ -139,6 +152,7 @@ export function registerBasicShapes(): void {
 
   shapeRegistry.register({
     id: 'double_rectangle',
+    type: 'vertex',
     label: 'Double Rect',
     icon: '▦',
     group: 'Basic',
@@ -149,6 +163,7 @@ export function registerBasicShapes(): void {
 
   shapeRegistry.register({
     id: 'lozenge',
+    type: 'vertex',
     label: 'Lozenge',
     icon: '◇',
     group: 'Basic',
@@ -159,6 +174,7 @@ export function registerBasicShapes(): void {
 
   shapeRegistry.register({
     id: 'chevron',
+    type: 'vertex',
     label: 'Chevron',
     icon: '▶',
     group: 'Basic',
@@ -169,6 +185,7 @@ export function registerBasicShapes(): void {
 
   shapeRegistry.register({
     id: 'right_angle',
+    type: 'vertex',
     label: 'Right Angle',
     icon: '⌟',
     group: 'Basic',
@@ -179,6 +196,7 @@ export function registerBasicShapes(): void {
 
   shapeRegistry.register({
     id: 'rounded_rect_basic',
+    type: 'vertex',
     label: 'Rounded Rect',
     icon: '◫',
     group: 'Basic',
