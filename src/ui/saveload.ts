@@ -107,9 +107,15 @@ export class SaveLoadController {
       console.log('[SaveLoad] Serializing graph...');
       const model = (this.graph as any).model;
 
+      // Temporarily remove large SVG data URLs to reduce file/cache size
+      const svgShapes = this.stripSvgDataUrls();
+
       // ModelXmlSerializer.export() returns a string
       const encoder = new ModelXmlSerializer(model);
       const xml = encoder.export();
+
+      // Restore SVG data URLs to cells
+      this.restoreSvgDataUrls(svgShapes);
 
       console.log('[SaveLoad] Serialized, length:', xml.length);
       return xml;
@@ -119,24 +125,77 @@ export class SaveLoadController {
     }
   }
 
+  private stripSvgDataUrls(): Map<string, string> {
+    // Temporarily remove SVG data URLs from cells to reduce serialization size
+    const model = (this.graph as any).model;
+    const cells = (model as any).cells || {};
+    const svgShapes = new Map<string, string>();
+
+    for (const cellId in cells) {
+      const cell = cells[cellId];
+      if (cell && cell.style && typeof cell.style === 'string') {
+        // Check if this cell has an SVG data URL
+        const match = cell.style.match(/image=([^;]*);/);
+        if (match && match[1].startsWith('data:image/svg+xml')) {
+          svgShapes.set(cellId, match[0]);
+          // Remove the image property from the style
+          cell.style = cell.style.replace(match[0], '');
+        }
+      }
+    }
+
+    if (svgShapes.size > 0) {
+      console.log(`[SaveLoad] Stripped ${svgShapes.size} SVG data URLs for serialization`);
+    }
+
+    return svgShapes;
+  }
+
+  private restoreSvgDataUrls(svgShapes: Map<string, string>): void {
+    // Restore SVG data URLs to cells after serialization
+    const model = (this.graph as any).model;
+    const cells = (model as any).cells || {};
+
+    for (const [cellId, imageProp] of svgShapes) {
+      const cell = cells[cellId];
+      if (cell && cell.style && typeof cell.style === 'string') {
+        // Add back the image property
+        cell.style = imageProp + cell.style;
+      }
+    }
+
+    if (svgShapes.size > 0) {
+      console.log(`[SaveLoad] Restored ${svgShapes.size} SVG data URLs after serialization`);
+    }
+  }
+
   exportAsJson(): string {
     const model = (this.graph as any).model;
     const children = (model as any).children || [];
-    const data = children.map((cell: any) => ({
-      id: cell.id,
-      label: cell.value,
-      geometry: cell.geometry
-        ? {
-            x: cell.geometry.x,
-            y: cell.geometry.y,
-            width: cell.geometry.width,
-            height: cell.geometry.height,
-          }
-        : null,
-      style: cell.style,
-      isVertex: cell.isVertex?.(),
-      isEdge: cell.isEdge?.(),
-    }));
+    const data = children.map((cell: any) => {
+      // Clone style and remove large SVG data URLs to reduce export size
+      const style = cell.style ? { ...cell.style } : null;
+      if (style && style.image && style.image.startsWith('data:image/svg+xml')) {
+        // Remove SVG data URL - will be regenerated from shape registry on load
+        delete style.image;
+      }
+
+      return {
+        id: cell.id,
+        label: cell.value,
+        geometry: cell.geometry
+          ? {
+              x: cell.geometry.x,
+              y: cell.geometry.y,
+              width: cell.geometry.width,
+              height: cell.geometry.height,
+            }
+          : null,
+        style: style,
+        isVertex: cell.isVertex?.(),
+        isEdge: cell.isEdge?.(),
+      };
+    });
 
     return JSON.stringify(data, null, 2);
   }
