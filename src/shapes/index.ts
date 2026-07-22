@@ -20,7 +20,7 @@ import { UmlLifelineShape, UmlActivationBoxShape, UmlMessageArrowShape, UmlCombi
 import { HexagonShape, PentagonShape, StarShape, TrapezoidShape, CrossShape, CylinderShape, SimpleArrowShape, OvalShape, DoubleRectangleShape, ParallelogramShape, DelayShape, ChevronShape, RightAngleShape, LozengeShape, RoundedRectangleShape } from './basic-shapes';
 import { RailShape, SignalShape, SwitchShape, JunctionShape, PlatformShape, StationShape, CrossingShape, TunnelShape, BufferShape, CabinShape, LTAShape, LTOShape, DetectionPointShape, TrackSectionShape, VerticalConnectorShape, EOLMarkerShape, RailLevelShape, SlopedTrackShape, TrainShape, SignalHeadShape, RBCShape, CommunicationLineShape, EBSectionShape, WaysideEquipmentShape, TrackCircuitShape, ERTMSLevelMarkerShape, SpeedRestrictionMarkerShape, ERTMSBaliseShape, ERTMSLevelCrossingShape, ERTMSHandoverPointShape, NationalTransitionPointShape, ERTMSTransponderShape, ERTMSSectionMarkerShape } from './railway-shapes';
 import { ImageShape } from './image-shape';
-import { WideArrowShape, ThinArrowShape, DoubleArrowShape, NotchedArrowShape, SplitArrowShape, CurvedArrowShape, LoopArrowShape, ZigzagArrowShape, ChevronArrowShape, HollowArrowShape } from './arrows';
+import { svgArrows } from './svg-arrows';
 import { railwayShapes } from './railway';
 import { shapeRegistry } from './registry';
 
@@ -116,17 +116,6 @@ export function registerShapes() {
   // Register image shape
   CellRenderer.registerShape('customImage', ImageShape as any);
 
-  // Register arrow shapes
-  CellRenderer.registerShape('customWideArrow', WideArrowShape as any);
-  CellRenderer.registerShape('customThinArrow', ThinArrowShape as any);
-  CellRenderer.registerShape('customDoubleArrow', DoubleArrowShape as any);
-  CellRenderer.registerShape('customNotchedArrow', NotchedArrowShape as any);
-  CellRenderer.registerShape('customSplitArrow', SplitArrowShape as any);
-  CellRenderer.registerShape('customCurvedArrow', CurvedArrowShape as any);
-  CellRenderer.registerShape('customLoopArrow', LoopArrowShape as any);
-  CellRenderer.registerShape('customZigzagArrow', ZigzagArrowShape as any);
-  CellRenderer.registerShape('customChevronArrow', ChevronArrowShape as any);
-  CellRenderer.registerShape('customHollowArrow', HollowArrowShape as any);
 
   // ===== BASIC SHAPES =====
   shapeRegistry.register({
@@ -321,7 +310,9 @@ export function registerShapes() {
     style: { shape: 'customArrow', filled: false, strokeColor: '#2c3e50', strokeWidth: 2 },
   });
 
-  // Additional arrow types
+  // Additional arrow types (using SVG directly)
+  const svgToDataUrl = (svg: string) => `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
+
   shapeRegistry.register({
     id: 'wide_arrow',
     label: 'Wide Arrow',
@@ -329,7 +320,7 @@ export function registerShapes() {
     group: 'Arrows',
     width: 120,
     height: 60,
-    style: { shape: 'customWideArrow', fillColor: '#2196f3', strokeColor: '#1565c0', strokeWidth: 2 },
+    style: { shape: 'image', image: svgToDataUrl(svgArrows.wideArrow) },
   });
 
   shapeRegistry.register({
@@ -339,7 +330,7 @@ export function registerShapes() {
     group: 'Arrows',
     width: 120,
     height: 40,
-    style: { shape: 'customThinArrow', fillColor: '#2196f3', strokeColor: '#1565c0', strokeWidth: 2 },
+    style: { shape: 'image', image: svgToDataUrl(svgArrows.thinArrow) },
   });
 
   shapeRegistry.register({
@@ -349,7 +340,7 @@ export function registerShapes() {
     group: 'Arrows',
     width: 140,
     height: 60,
-    style: { shape: 'customDoubleArrow', fillColor: '#4caf50', strokeColor: '#2e7d32', strokeWidth: 2 },
+    style: { shape: 'image', image: svgToDataUrl(svgArrows.doubleArrow) },
   });
 
   shapeRegistry.register({
@@ -359,7 +350,7 @@ export function registerShapes() {
     group: 'Arrows',
     width: 120,
     height: 60,
-    style: { shape: 'customNotchedArrow', fillColor: '#ff9800', strokeColor: '#e65100', strokeWidth: 2 },
+    style: { shape: 'image', image: svgToDataUrl(svgArrows.notchedArrow) },
   });
 
   shapeRegistry.register({
@@ -369,7 +360,7 @@ export function registerShapes() {
     group: 'Arrows',
     width: 100,
     height: 80,
-    style: { shape: 'customSplitArrow', fillColor: '#9c27b0', strokeColor: '#6a1b9a', strokeWidth: 2 },
+    style: { shape: 'image', image: svgToDataUrl(svgArrows.splitArrow) },
   });
 
   shapeRegistry.register({
@@ -379,7 +370,7 @@ export function registerShapes() {
     group: 'Arrows',
     width: 120,
     height: 60,
-    style: { shape: 'customCurvedArrow', fillColor: '#f44336', strokeColor: '#c62828', strokeWidth: 2 },
+    style: { shape: 'image', image: svgToDataUrl(svgArrows.curvedArrow) },
   });
 
   shapeRegistry.register({
@@ -389,17 +380,17 @@ export function registerShapes() {
     group: 'Arrows',
     width: 100,
     height: 100,
-    style: { shape: 'customLoopArrow', fillColor: 'none', strokeColor: '#333333', strokeWidth: 2 },
+    style: { shape: 'image', image: svgToDataUrl(svgArrows.loopArrow) },
   });
 
   shapeRegistry.register({
-    id: 'zigzag_arrow',
-    label: 'Zigzag Arrow',
-    icon: '↝',
+    id: 'rounded_loop_arrow',
+    label: 'Rounded Loop',
+    icon: '↺',
     group: 'Arrows',
-    width: 120,
-    height: 60,
-    style: { shape: 'customZigzagArrow', fillColor: '#00bcd4', strokeColor: '#00838f', strokeWidth: 2 },
+    width: 100,
+    height: 100,
+    style: { shape: 'image', image: svgToDataUrl(svgArrows.roundedLoopArrow) },
   });
 
   shapeRegistry.register({
@@ -409,7 +400,17 @@ export function registerShapes() {
     group: 'Arrows',
     width: 140,
     height: 60,
-    style: { shape: 'customChevronArrow', fillColor: '#3f51b5', strokeColor: '#1a237e', strokeWidth: 2 },
+    style: { shape: 'image', image: svgToDataUrl(svgArrows.chevronArrow) },
+  });
+
+  shapeRegistry.register({
+    id: 'zigzag_arrow',
+    label: 'Zigzag Arrow',
+    icon: '↝',
+    group: 'Arrows',
+    width: 120,
+    height: 60,
+    style: { shape: 'image', image: svgToDataUrl(svgArrows.zigzagArrow) },
   });
 
   shapeRegistry.register({
@@ -419,7 +420,47 @@ export function registerShapes() {
     group: 'Arrows',
     width: 120,
     height: 60,
-    style: { shape: 'customHollowArrow', fillColor: 'none', strokeColor: '#333333', strokeWidth: 2 },
+    style: { shape: 'image', image: svgToDataUrl(svgArrows.hollowArrow) },
+  });
+
+  shapeRegistry.register({
+    id: 'triangle_arrow',
+    label: 'Triangle Arrow',
+    icon: '▲',
+    group: 'Arrows',
+    width: 100,
+    height: 100,
+    style: { shape: 'image', image: svgToDataUrl(svgArrows.triangleArrow) },
+  });
+
+  shapeRegistry.register({
+    id: 'left_arrow',
+    label: 'Left Arrow',
+    icon: '◀',
+    group: 'Arrows',
+    width: 120,
+    height: 60,
+    style: { shape: 'image', image: svgToDataUrl(svgArrows.leftArrow) },
+  });
+
+  shapeRegistry.register({
+    id: 'up_arrow',
+    label: 'Up Arrow',
+    icon: '▲',
+    group: 'Arrows',
+    width: 60,
+    height: 120,
+    style: { shape: 'image', image: svgToDataUrl(svgArrows.upArrow) },
+  });
+
+  shapeRegistry.register({
+    id: 'down_arrow',
+    label: 'Down Arrow',
+    icon: '▼',
+    group: 'Arrows',
+    width: 60,
+    height: 120,
+    style: { shape: 'image', image: svgToDataUrl(svgArrows.downArrow) },
   });
 
   // ===== UML 2.5 SHAPES (CLASS DIAGRAMS) =====
