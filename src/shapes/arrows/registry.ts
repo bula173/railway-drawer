@@ -10,10 +10,10 @@ import { shapeRegistry } from '../registry';
 import { svgArrows } from './svg-arrows';
 
 // Convert SVG to data URL for maxGraph image rendering
-// Use proper charset declaration for URL-encoded content
+// Use base64 encoding for consistent MIME type
 const svgToDataUrl = (svg: string) => {
-  const encoded = encodeURIComponent(svg);
-  return `data:image/svg+xml;charset=utf-8,${encoded}`;
+  const base64 = btoa(unescape(encodeURIComponent(svg)));
+  return `data:image/svg+xml;base64,${base64}`;
 };
 
 export function registerArrowShapes(): void {
