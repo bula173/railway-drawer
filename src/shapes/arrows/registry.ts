@@ -5,7 +5,7 @@
 import { shapeRegistry } from '../registry';
 import { svgArrows } from './svg-arrows';
 
-const svgToDataUrl = (svg: string) => `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
+const svgToDataUrl = (svg: string) => `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
 
 // Create icon from SVG (use raw SVG for toolbar display)
 const createSvgIcon = (svg: string): string => {
