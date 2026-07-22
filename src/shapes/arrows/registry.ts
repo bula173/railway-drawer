@@ -9,7 +9,12 @@
 import { shapeRegistry } from '../registry';
 import { svgArrows } from './svg-arrows';
 
-const svgToDataUrl = (svg: string) => `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+// Convert SVG to data URL for maxGraph image rendering
+// Use proper charset declaration for URL-encoded content
+const svgToDataUrl = (svg: string) => {
+  const encoded = encodeURIComponent(svg);
+  return `data:image/svg+xml;charset=utf-8,${encoded}`;
+};
 
 export function registerArrowShapes(): void {
   // Simple arrows (basic) - SVG-based shapes
