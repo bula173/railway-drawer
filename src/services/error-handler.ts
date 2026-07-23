@@ -32,9 +32,28 @@ export class ErrorHandler {
     category: ErrorCategory = 'unknown',
     recoverable = true
   ): AppError {
+    const message = typeof error === 'string' ? error : error.message;
+
+    // Ignore non-critical browser warnings
+    const ignoredPatterns = [
+      'ResizeObserver loop completed with undelivered notifications',
+      'Uncaught (in promise)',
+    ];
+
+    if (ignoredPatterns.some((pattern) => message.includes(pattern))) {
+      // Return silently without logging or user feedback
+      return {
+        category,
+        message,
+        originalError: typeof error === 'string' ? undefined : error,
+        timestamp: Date.now(),
+        recoverable,
+      };
+    }
+
     const appError: AppError = {
       category,
-      message: typeof error === 'string' ? error : error.message,
+      message,
       originalError: typeof error === 'string' ? undefined : error,
       timestamp: Date.now(),
       recoverable,
