@@ -1,8 +1,10 @@
 /**
  * @file plantuml-parser.ts
  * @brief PlantUML text syntax parser for converting to maxGraph shapes
- * @details Client-side PlantUML parser without external dependencies
+ * @details Uses plantuml-parser library for full syntax support
  */
+
+import { parse as parsePlantUML } from 'plantuml-parser';
 
 export interface DiagramElement {
   type: 'actor' | 'participant' | 'class' | 'state' | 'activity' | 'component' | 'note' | 'message';
@@ -33,32 +35,122 @@ export interface DiagramData {
 
 /**
  * PlantUML text parser
- * Parses simplified PlantUML syntax to diagram elements
+ * Uses the plantuml-parser library for comprehensive syntax support
  */
 export class PlantUmlParser {
   /**
    * Parse PlantUML text and return diagram data
    */
   static parse(text: string): DiagramData {
-    const lines = text.split('\n').map((line) => line.trim()).filter((line) => line && !line.startsWith("'"));
+    try {
+      console.log('[PlantUmlParser] Parsing with plantuml-parser library');
+      const lines = text.split('\n').filter((line) => line.trim() && !line.trim().startsWith("'"));
 
-    console.log('[PlantUmlParser] Input lines:', lines);
-    const diagramType = this.detectDiagramType(lines);
-    console.log('[PlantUmlParser] Detected type:', diagramType);
+      const diagramType = this.detectDiagramType(lines);
+      console.log('[PlantUmlParser] Detected type:', diagramType);
 
-    const data: DiagramData = {
-      type: diagramType,
-      elements: [],
-      connections: [],
-    };
+      const data: DiagramData = {
+        type: diagramType,
+        elements: [],
+        connections: [],
+      };
 
-    // Extract title
-    const titleMatch = lines.find((line) => line.startsWith('@startuml') || line.startsWith('title'));
-    if (titleMatch && titleMatch.includes('title')) {
-      data.title = titleMatch.replace(/^title\s+/i, '').trim();
+      // Parse with the library
+      try {
+        const diagram = parsePlantUML(text);
+        console.log('[PlantUmlParser] Parsed diagram:', diagram);
+
+        // Extract elements and connections from parsed diagram
+        this.extractElementsFromParsedDiagram(diagram, data);
+      } catch (parseError) {
+        console.warn('[PlantUmlParser] Library parse error, falling back to regex:', parseError);
+        // Fall back to regex-based parsing if library parsing fails
+        this.parseWithRegex(lines, data);
+      }
+
+      return data;
+    } catch (error) {
+      console.error('[PlantUmlParser] Parse error:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Extract elements from parsed diagram
+   */
+  private static extractElementsFromParsedDiagram(diagram: any, data: DiagramData): void {
+    // The plantuml-parser library returns a structured diagram
+    // We need to convert it to our DiagramElement format
+
+    if (!diagram) return;
+
+    // Handle different diagram types
+    if (diagram.title) {
+      data.title = diagram.title;
     }
 
-    switch (diagramType) {
+    // Extract participants/actors/classes/states
+    if (diagram.participants) {
+      diagram.participants.forEach((p: any, index: number) => {
+        data.elements.push({
+          type: 'participant',
+          id: p.name || `participant_${index}`,
+          label: p.displayName || p.name || `Participant ${index}`,
+        });
+      });
+    }
+
+    if (diagram.classes) {
+      diagram.classes.forEach((c: any) => {
+        data.elements.push({
+          type: 'class',
+          id: c.name,
+          label: c.name,
+          attributes: c.properties || [],
+          methods: c.methods || [],
+        });
+      });
+    }
+
+    if (diagram.states) {
+      diagram.states.forEach((s: any) => {
+        data.elements.push({
+          type: 'state',
+          id: s.name,
+          label: s.name,
+        });
+      });
+    }
+
+    // Extract connections/messages
+    if (diagram.messages) {
+      diagram.messages.forEach((msg: any) => {
+        data.connections.push({
+          from: msg.from,
+          to: msg.to,
+          label: msg.label || '',
+          type: msg.type || 'default',
+        });
+      });
+    }
+
+    if (diagram.relationships) {
+      diagram.relationships.forEach((rel: any) => {
+        data.connections.push({
+          from: rel.from,
+          to: rel.to,
+          label: rel.label || '',
+          type: rel.type || 'default',
+        });
+      });
+    }
+  }
+
+  /**
+   * Fallback regex-based parsing when library parsing fails
+   */
+  private static parseWithRegex(lines: string[], data: DiagramData): void {
+    switch (data.type) {
       case 'sequence':
         this.parseSequenceDiagram(lines, data);
         break;
@@ -77,8 +169,6 @@ export class PlantUmlParser {
       default:
         this.parseSequenceDiagram(lines, data);
     }
-
-    return data;
   }
 
   /**
