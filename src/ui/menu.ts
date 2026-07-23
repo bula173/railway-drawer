@@ -7,6 +7,7 @@ export class MenuController {
   private commandService: GraphCommandService;
   private saveLoadController: SaveLoadController;
   private alignmentController: any;
+  private plantumlEditorController: any;
 
   constructor(graph: Graph, commandService: GraphCommandService, saveLoadController: SaveLoadController) {
     this.graph = graph;
@@ -17,6 +18,10 @@ export class MenuController {
 
   setAlignmentController(controller: any): void {
     this.alignmentController = controller;
+  }
+
+  setPlantumlEditorController(controller: any): void {
+    this.plantumlEditorController = controller;
   }
 
   private setupMenus() {
@@ -338,6 +343,12 @@ export class MenuController {
       case 'alignRight':
         if (this.alignmentController) {
           this.alignmentController.alignRight();
+        }
+        break;
+
+      case 'plantumlEditor':
+        if (this.plantumlEditorController) {
+          this.plantumlEditorController.show();
         }
         break;
 

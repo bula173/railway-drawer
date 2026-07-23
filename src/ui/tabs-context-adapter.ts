@@ -124,6 +124,7 @@ export function contextToTabData(context: TabContext): TabData {
     colorPaletteController: context.features.colorPaletteController,
     duplicateOffsetController: context.features.duplicateOffsetController,
     exportImageController: context.features.exportImageController,
+    plantumlEditorController: undefined as any,
   } as TabData;
 }
 

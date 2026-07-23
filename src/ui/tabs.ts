@@ -38,6 +38,7 @@ import { ColorPickerController } from './color-picker';
 import { ColorPaletteController } from './color-palette';
 import { DuplicateOffsetController } from './duplicate-offset';
 import { ExportImageController } from './export-image';
+import { PlantUmlEditorController } from './plantuml-editor';
 
 export interface TabData {
   id: string;
@@ -70,6 +71,7 @@ export interface TabData {
   colorPaletteController: ColorPaletteController;
   duplicateOffsetController: DuplicateOffsetController;
   exportImageController: ExportImageController;
+  plantumlEditorController: PlantUmlEditorController;
 }
 
 export class TabManager {
@@ -178,9 +180,11 @@ export class TabManager {
     const zoomController = new ZoomController(graph);
     const alignmentController = new AlignmentController(graph);
     const groupingController = new GroupingController(graph);
+    const plantumlEditorController = new PlantUmlEditorController(graph);
     contextMenuController.setGroupingController(groupingController);
     contextMenuController.setCommandService(graphCommandService);
     menuController.setAlignmentController(alignmentController);
+    menuController.setPlantumlEditorController(plantumlEditorController);
     const transformController = new TransformController(graph);
     const gridSnapController = new GridSnapController(graph);
     const colorPickerController = new ColorPickerController(graph);
@@ -219,6 +223,7 @@ export class TabManager {
       colorPaletteController,
       duplicateOffsetController,
       exportImageController,
+      plantumlEditorController,
     };
 
     this.tabs.set(tabId, tabData);
@@ -419,6 +424,7 @@ export class TabManager {
         tab.colorPaletteController,
         tab.duplicateOffsetController,
         tab.exportImageController,
+        tab.plantumlEditorController,
       ];
 
       controllers.forEach((controller) => {

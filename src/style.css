@@ -1278,6 +1278,162 @@ svg.mxGraph .mxHandle {
   }
 }
 
+/* ========== PLANTUML EDITOR ========== */
+
+#plantuml-editor-panel {
+  display: none;
+  position: absolute;
+  top: 52px;
+  left: 0;
+  width: 320px;
+  height: calc(100vh - 52px);
+  background: #f5f5f5;
+  border-right: 1px solid #e0e0e0;
+  flex-direction: column;
+  z-index: 100;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.editor-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.editor-header {
+  padding: 12px 16px;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fafafa;
+  flex-shrink: 0;
+}
+
+.editor-header h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #666;
+  padding: 0 8px;
+}
+
+.close-btn:hover {
+  color: #333;
+}
+
+.editor-toolbar {
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  border-bottom: 1px solid #e0e0e0;
+  background: #fafafa;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+.editor-toolbar .btn {
+  flex: 1;
+  min-width: 80px;
+  padding: 6px 8px;
+  font-size: 12px;
+}
+
+.error-display {
+  padding: 8px 12px;
+  margin: 8px;
+  background: #ffebee;
+  color: #c62828;
+  border-radius: 4px;
+  border-left: 3px solid #c62828;
+  font-size: 12px;
+  display: none;
+}
+
+.editor-textarea {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  resize: none;
+  background: white;
+  color: #333;
+  overflow-y: auto;
+}
+
+.editor-textarea:focus {
+  outline: none;
+  background: #fafafa;
+}
+
+.diagram-preview {
+  padding: 12px;
+  border-top: 1px solid #e0e0e0;
+  background: #f9f9f9;
+  font-size: 12px;
+  color: #666;
+  overflow-y: auto;
+  max-height: 100px;
+  flex-shrink: 0;
+}
+
+/* Dark mode for PlantUML editor */
+@media (prefers-color-scheme: dark) {
+  #plantuml-editor-panel {
+    background: #252526;
+    border-right-color: #404040;
+  }
+
+  .editor-header {
+    background: #2d2d30;
+    border-bottom-color: #404040;
+    color: #e0e0e0;
+  }
+
+  .editor-toolbar {
+    background: #2d2d30;
+    border-bottom-color: #404040;
+  }
+
+  .error-display {
+    background: #5a1a1a;
+    color: #ff9999;
+    border-left-color: #ff6666;
+  }
+
+  .editor-textarea {
+    background: #1e1e1e;
+    color: #e0e0e0;
+  }
+
+  .editor-textarea:focus {
+    background: #2d2d30;
+  }
+
+  .diagram-preview {
+    background: #1e1e1e;
+    border-top-color: #404040;
+    color: #b0b0b0;
+  }
+
+  .close-btn {
+    color: #b0b0b0;
+  }
+
+  .close-btn:hover {
+    color: #e0e0e0;
+  }
+}
+
 /* ========== DARK MODE SUPPORT ========== */
 
 @media (prefers-color-scheme: dark) {
