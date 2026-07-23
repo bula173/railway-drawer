@@ -42,7 +42,10 @@ export class PlantUmlParser {
   static parse(text: string): DiagramData {
     const lines = text.split('\n').map((line) => line.trim()).filter((line) => line && !line.startsWith("'"));
 
+    console.log('[PlantUmlParser] Input lines:', lines);
     const diagramType = this.detectDiagramType(lines);
+    console.log('[PlantUmlParser] Detected type:', diagramType);
+
     const data: DiagramData = {
       type: diagramType,
       elements: [],
@@ -101,9 +104,12 @@ export class PlantUmlParser {
     const messageRegex = /^(\w+)\s*(->|-->|<--|<-)\s*(\w+)\s*:\s*(.+)$/;
     const noteRegex = /^note\s+(left|right|over)\s+(\w+)\s*:\s*(.+)$/i;
 
+    console.log('[parseSequenceDiagram] Starting parse, lines:', lines.length);
+
     const seenParticipants = new Set<string>();
 
     for (const line of lines) {
+      console.log('[parseSequenceDiagram] Processing line:', line);
       // Parse participants
       const participantMatch = line.match(participantRegex);
       if (participantMatch) {

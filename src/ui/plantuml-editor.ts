@@ -30,6 +30,13 @@ export class PlantUmlEditorController extends UIController {
    * Create the PlantUML editor panel
    */
   private createEditorPanel(): void {
+    // Get or create container in left panel
+    const leftPanel = document.getElementById('leftpanel-container');
+    if (!leftPanel) {
+      console.error('[PlantUML] Left panel not found');
+      return;
+    }
+
     // Create container
     this.editorPanel = document.createElement('div');
     this.editorPanel.id = 'plantuml-editor-panel';
@@ -37,26 +44,22 @@ export class PlantUmlEditorController extends UIController {
 
     const html = `
       <div class="editor-header">
-        <h3>PlantUML Editor</h3>
-        <button id="close-plantuml-editor" class="close-btn" aria-label="Close PlantUML editor">×</button>
+        <h3>🌿 PlantUML</h3>
       </div>
       <div class="editor-toolbar">
-        <button id="render-plantuml-btn" class="btn btn-primary" title="Render diagram to canvas">🎨 Render</button>
-        <button id="plantuml-example-btn" class="btn" title="Insert example diagram">📝 Example</button>
-        <button id="clear-plantuml-btn" class="btn" title="Clear editor">🗑️ Clear</button>
+        <button id="render-plantuml-btn" class="btn btn-primary" title="Render diagram to canvas" style="flex: 1;">🎨 Render</button>
+        <button id="plantuml-example-btn" class="btn" title="Insert example" style="flex: 1;">📝 Example</button>
+        <button id="clear-plantuml-btn" class="btn" title="Clear" style="flex: 1;">Clear</button>
       </div>
       <div id="plantuml-error" class="error-display" style="display: none;"></div>
-      <textarea id="plantuml-input" class="editor-textarea" placeholder="Paste or write PlantUML syntax here...
-
-Example:
-@startuml
+      <textarea id="plantuml-input" class="editor-textarea" placeholder="@startuml
 participant Alice
 participant Bob
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
+Alice -> Bob: Hello
+Bob --> Alice: Hi
 @enduml" spellcheck="false"></textarea>
       <div id="plantuml-preview" class="diagram-preview">
-        <small>Diagram preview will appear here</small>
+        <small>Ready to render</small>
       </div>
     `;
 
@@ -70,19 +73,8 @@ Bob --> Alice: Authentication Response
     this.errorDisplay = this.editorPanel.querySelector('#plantuml-error');
     this.diagramPreview = this.editorPanel.querySelector('#plantuml-preview');
 
-    // Close button
-    const closeBtn = this.editorPanel.querySelector('#close-plantuml-editor');
-    if (closeBtn) {
-      this.trackListener(closeBtn, 'click', () => this.hide());
-    }
-
-    // Add to left panel or create new panel
-    const leftPanel = document.getElementById('leftpanel-container');
-    if (leftPanel) {
-      leftPanel.insertBefore(this.editorPanel, leftPanel.firstChild);
-    } else {
-      document.body.appendChild(this.editorPanel);
-    }
+    // Add to left panel
+    leftPanel.appendChild(this.editorPanel);
   }
 
   /**
@@ -114,8 +106,19 @@ Bob --> Alice: Authentication Response
     if (this.editorPanel) {
       this.editorPanel.classList.add('visible');
       if (this.textarea) {
-        this.textarea.focus();
+        setTimeout(() => this.textarea?.focus(), 100);
       }
+    }
+  }
+
+  /**
+   * Toggle the editor panel visibility
+   */
+  toggle(): void {
+    if (this.editorPanel?.classList.contains('visible')) {
+      this.hide();
+    } else {
+      this.show();
     }
   }
 
