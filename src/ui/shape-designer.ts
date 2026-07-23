@@ -329,17 +329,26 @@ export class ShapeDesignerController {
     // First, try to select a shape element
     let clickedElement = false;
     for (const el of this.shapeElements) {
-      if (x >= el.x && x <= el.x + el.width && y >= el.y && y <= el.y + el.height) {
+      // Add padding to make selection easier
+      const padding = 4;
+      if (x >= el.x - padding && x <= el.x + el.width + padding &&
+          y >= el.y - padding && y <= el.y + el.height + padding) {
         this.selectedElement = el;
         clickedElement = true;
         break;
       }
     }
 
-    // If no shape clicked, add a vertex
+    // If no shape clicked, add a vertex (only if not clicking on empty space to deselect)
     if (!clickedElement) {
-      this.selectedElement = null;
-      this.vertices.push({ x, y });
+      // Check if trying to deselect by clicking empty area
+      if (this.selectedElement) {
+        // User clicked empty area - deselect
+        this.selectedElement = null;
+      } else {
+        // User clicked empty area without selection - add vertex
+        this.vertices.push({ x, y });
+      }
     }
 
     this.redrawCanvas();
@@ -840,8 +849,10 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
       }
 
       // Otherwise, check if dragging element
+      const padding = 4;
       for (const el of this.shapeElements) {
-        if (x >= el.x && x <= el.x + el.width && y >= el.y && y <= el.y + el.height) {
+        if (x >= el.x - padding && x <= el.x + el.width + padding &&
+            y >= el.y - padding && y <= el.y + el.height + padding) {
           this.draggingElement = el;
           this.dragStart = { x, y };
           break;
