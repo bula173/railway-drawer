@@ -1,4 +1,12 @@
-import { Graph } from '@maxgraph/core';
+import { Graph, RubberBandHandler, CellEditorHandler } from '@maxgraph/core';
+import {
+  wideArrowPerimeter,
+  thinArrowPerimeter,
+  doubleArrowPerimeter,
+  splitArrowPerimeter,
+  chevronArrowPerimeter,
+  loopArrowPerimeter,
+} from '../shapes/arrows/perimeter';
 import { PropertiesPanel } from './properties';
 import { ToolbarController } from './toolbar';
 import { StatusBarController } from './statusbar';
@@ -20,6 +28,16 @@ import { TextEditorController } from './text-editor';
 import { EdgePropertiesController } from './edge-properties';
 import { LayersController } from './layers';
 import { ImageUploadController } from './image-upload';
+import { PasteImageController } from './paste-image';
+import { ZoomController } from './zoom';
+import { AlignmentController } from './alignment';
+import { GroupingController } from './grouping';
+import { TransformController } from './transform';
+import { GridSnapController } from './grid-snap';
+import { ColorPickerController } from './color-picker';
+import { ColorPaletteController } from './color-palette';
+import { DuplicateOffsetController } from './duplicate-offset';
+import { ExportImageController } from './export-image';
 
 export interface TabData {
   id: string;
@@ -42,6 +60,16 @@ export interface TabData {
   drawingController: DrawingController;
   layersController: LayersController;
   imageUploadController: ImageUploadController;
+  pasteImageController: PasteImageController;
+  zoomController: ZoomController;
+  alignmentController: AlignmentController;
+  groupingController: GroupingController;
+  transformController: TransformController;
+  gridSnapController: GridSnapController;
+  colorPickerController: ColorPickerController;
+  colorPaletteController: ColorPaletteController;
+  duplicateOffsetController: DuplicateOffsetController;
+  exportImageController: ExportImageController;
 }
 
 export class TabManager {
@@ -49,7 +77,7 @@ export class TabManager {
   private activeTabId: string | null = null;
   private tabBarContainer: HTMLElement;
   private graphContainer: HTMLElement;
-  private autoSaveInterval: NodeJS.Timeout | null = null;
+  private autoSaveInterval: ReturnType<typeof setInterval> | null = null;
   private saveLoadControllers: Map<string, SaveLoadController> = new Map();
 
   constructor(tabBarContainerId: string, graphContainerId: string) {
@@ -79,9 +107,43 @@ export class TabManager {
     graph.dropEnabled = true;
     graph.setMultigraph(false);
 
+    // Enable rubber band selection - drag to select multiple objects
+    new RubberBandHandler(graph);
+
+    // Enable text editing on double-click
+    new CellEditorHandler(graph);
+
     // Configure scrolling behavior
     graph.ignoreScrollbars = false; // Use native scrollbars
     graph.translateToScrollPosition = false; // Don't convert scroll to translate
+
+    // Register SVG arrow perimeter styles with graph stylesheet
+    // This ensures perimeter functions are available for edge routing calculations
+    const stylesheet = graph.getStylesheet();
+    stylesheet.putCellStyle('wideArrow', {
+      shape: 'image',
+      perimeter: wideArrowPerimeter,
+    });
+    stylesheet.putCellStyle('thinArrow', {
+      shape: 'image',
+      perimeter: thinArrowPerimeter,
+    });
+    stylesheet.putCellStyle('doubleArrow', {
+      shape: 'image',
+      perimeter: doubleArrowPerimeter,
+    });
+    stylesheet.putCellStyle('splitArrow', {
+      shape: 'image',
+      perimeter: splitArrowPerimeter,
+    });
+    stylesheet.putCellStyle('chevronArrow', {
+      shape: 'image',
+      perimeter: chevronArrowPerimeter,
+    });
+    stylesheet.putCellStyle('loopArrow', {
+      shape: 'image',
+      perimeter: loopArrowPerimeter,
+    });
 
     // Configure connection points on shapes
     new ConnectionHandler(graph);
@@ -97,7 +159,7 @@ export class TabManager {
 
     // Initialize UI controllers
     const propertiesPanel = new PropertiesPanel(graph);
-    const toolbarController = new ToolbarController(graph);
+    const toolbarController = new ToolbarController();
     const statusBarController = new StatusBarController(graph);
     const clipboardController = new ClipboardController(graph);
     const deleteController = new DeleteController(graph);
@@ -112,6 +174,18 @@ export class TabManager {
     const drawingController = new DrawingController(graph);
     const layersController = new LayersController(graph);
     const imageUploadController = new ImageUploadController(graph);
+    const pasteImageController = new PasteImageController(graph);
+    const zoomController = new ZoomController(graph);
+    const alignmentController = new AlignmentController(graph);
+    const groupingController = new GroupingController(graph);
+    contextMenuController.setGroupingController(groupingController);
+    menuController.setAlignmentController(alignmentController);
+    const transformController = new TransformController(graph);
+    const gridSnapController = new GridSnapController(graph);
+    const colorPickerController = new ColorPickerController(graph);
+    const colorPaletteController = new ColorPaletteController(graph);
+    const duplicateOffsetController = new DuplicateOffsetController(graph);
+    const exportImageController = new ExportImageController(graph);
 
     const tabData: TabData = {
       id: tabId,
@@ -134,6 +208,16 @@ export class TabManager {
       drawingController,
       layersController,
       imageUploadController,
+      pasteImageController,
+      zoomController,
+      alignmentController,
+      groupingController,
+      transformController,
+      gridSnapController,
+      colorPickerController,
+      colorPaletteController,
+      duplicateOffsetController,
+      exportImageController,
     };
 
     this.tabs.set(tabId, tabData);
@@ -235,34 +319,18 @@ export class TabManager {
     if (!this.tabs.has(tabId)) return;
     if (this.tabs.size === 1) return; // Keep at least one tab
 
-    const tab = this.tabs.get(tabId);
-    if (tab) {
-      // Clean up controllers to prevent memory leaks
-      try {
-        if ((tab.drawingController as any).destroy) {
-          (tab.drawingController as any).destroy();
-        }
-        if ((tab.layersController as any).destroy) {
-          (tab.layersController as any).destroy();
-        }
-        if ((tab.imageUploadController as any).destroy) {
-          (tab.imageUploadController as any).destroy();
-        }
-      } catch (e) {
-        console.warn('[TabManager] Error destroying controllers:', e);
-      }
-    }
-
-    const graphDiv = document.getElementById(`graph-${tabId}`);
-    if (graphDiv) graphDiv.remove();
-
+    // Destroy the tab and clean up resources
+    this.destroyTab(tabId);
     this.tabs.delete(tabId);
     this.saveLoadControllers.delete(tabId);
 
+    // Switch to another tab if the closed tab was active
     if (this.activeTabId === tabId) {
       const nextTabId = this.tabs.keys().next().value;
       if (nextTabId) {
         this.switchTab(nextTabId);
+      } else {
+        this.activeTabId = null;
       }
     }
 
@@ -290,8 +358,83 @@ export class TabManager {
   }
 
   destroy(): void {
+    // Clear auto-save interval
     if (this.autoSaveInterval) {
       clearInterval(this.autoSaveInterval);
+      this.autoSaveInterval = null;
+    }
+
+    // Clean up all tabs
+    Array.from(this.tabs.keys()).forEach((tabId) => {
+      this.destroyTab(tabId);
+    });
+
+    this.tabs.clear();
+    this.saveLoadControllers.clear();
+    this.activeTabId = null;
+  }
+
+  private destroyTab(tabId: string): void {
+    const tab = this.tabs.get(tabId);
+    if (!tab) return;
+
+    try {
+      // Dispose graph (removes event listeners, clears model, disposes view)
+      if (tab.graph) {
+        tab.graph.destroy();
+      }
+
+      // Remove graph DOM element
+      const graphDiv = document.getElementById(`graph-${tabId}`);
+      if (graphDiv) {
+        graphDiv.remove();
+      }
+
+      // Clean up controller destroy methods if they exist
+      const controllers = [
+        tab.propertiesPanel,
+        tab.toolbarController,
+        tab.statusBarController,
+        tab.clipboardController,
+        tab.deleteController,
+        tab.undoRedoController,
+        tab.panController,
+        tab.gridController,
+        tab.saveLoadController,
+        tab.canvasProperties,
+        tab.contextMenuController,
+        tab.menuController,
+        tab.interactiveUIController,
+        tab.drawingController,
+        tab.layersController,
+        tab.imageUploadController,
+        tab.pasteImageController,
+        tab.zoomController,
+        tab.alignmentController,
+        tab.groupingController,
+        tab.transformController,
+        tab.gridSnapController,
+        tab.colorPickerController,
+        tab.colorPaletteController,
+        tab.duplicateOffsetController,
+        tab.exportImageController,
+      ];
+
+      controllers.forEach((controller) => {
+        if (controller && typeof (controller as any).destroy === 'function') {
+          try {
+            (controller as any).destroy();
+          } catch (e) {
+            console.warn('[TabManager] Error destroying controller:', e);
+          }
+        }
+      });
+
+      // Nullify references for garbage collection
+      (tab as any).graph = null;
+      (tab as any).graphCommandService = null;
+    } catch (e) {
+      console.error('[TabManager] Error destroying tab:', tabId, e);
     }
   }
 
