@@ -252,6 +252,141 @@ export class GraphCommandService {
     }
   }
 
+  /**
+   * Move selected cells to front (top z-order)
+   */
+  toFront(): void {
+    const cells = this.graph.getSelectionCells();
+    if (cells.length === 0) return;
+
+    this.graph.batchUpdate(() => {
+      cells.forEach((cell) => {
+        if (!cell.isEdge()) {
+          this.graph.orderCells(true, [cell]);
+        }
+      });
+    });
+
+    this.notifyListeners('stateChanged');
+    console.log('[GraphCommand] Move to Front executed');
+  }
+
+  /**
+   * Move selected cells to back (bottom z-order)
+   */
+  toBack(): void {
+    const cells = this.graph.getSelectionCells();
+    if (cells.length === 0) return;
+
+    this.graph.batchUpdate(() => {
+      cells.forEach((cell) => {
+        if (!cell.isEdge()) {
+          this.graph.orderCells(false, [cell]);
+        }
+      });
+    });
+
+    this.notifyListeners('stateChanged');
+    console.log('[GraphCommand] Move to Back executed');
+  }
+
+  /**
+   * Bring selected cells forward one step
+   */
+  bringForward(): void {
+    const cells = this.graph.getSelectionCells();
+    if (cells.length === 0) return;
+
+    const parent = cells[0].getParent();
+    if (!parent) return;
+
+    this.graph.batchUpdate(() => {
+      cells.forEach((cell) => {
+        if (!cell.isEdge()) {
+          const index = (this.graph.model as any).getChildCount(parent) - 1;
+          (this.graph.model as any).setChildAt(cell, Math.max(0, index - 1));
+        }
+      });
+    });
+
+    this.notifyListeners('stateChanged');
+    console.log('[GraphCommand] Bring Forward executed');
+  }
+
+  /**
+   * Send selected cells backward one step
+   */
+  sendBackward(): void {
+    const cells = this.graph.getSelectionCells();
+    if (cells.length === 0) return;
+
+    const parent = cells[0].getParent();
+    if (!parent) return;
+
+    this.graph.batchUpdate(() => {
+      cells.forEach((cell) => {
+        if (!cell.isEdge()) {
+          const index = (this.graph.model as any).getChildIndex(cell);
+          (this.graph.model as any).setChildAt(cell, Math.min(index + 1, (this.graph.model as any).getChildCount(parent) - 1));
+        }
+      });
+    });
+
+    this.notifyListeners('stateChanged');
+    console.log('[GraphCommand] Send Backward executed');
+  }
+
+  /**
+   * Copy style from selected cells for format painter
+   */
+  private copiedStyle: any = null;
+
+  copyStyle(): void {
+    const cells = this.graph.getSelectionCells();
+    if (cells.length === 0) {
+      console.warn('[GraphCommand] No cells selected for copy style');
+      return;
+    }
+
+    this.copiedStyle = cells[0].getStyle();
+    this.notifyListeners('styleChanged');
+    console.log('[GraphCommand] Style copied');
+  }
+
+  /**
+   * Paste style to selected cells
+   */
+  pasteStyle(): void {
+    if (!this.copiedStyle) {
+      console.warn('[GraphCommand] No style copied');
+      return;
+    }
+
+    const cells = this.graph.getSelectionCells();
+    if (cells.length === 0) {
+      console.warn('[GraphCommand] No cells selected for paste style');
+      return;
+    }
+
+    this.graph.batchUpdate(() => {
+      cells.forEach((cell) => {
+        if (!cell.isEdge()) {
+          cell.setStyle(this.copiedStyle);
+        }
+      });
+    });
+
+    this.notifyListeners('stateChanged');
+    console.log('[GraphCommand] Style pasted');
+  }
+
+  /**
+   * Get copied style (for format painter UI)
+   */
+  hasCopiedStyle(): boolean {
+    return this.copiedStyle !== null;
+  }
+
   destroy(): void {
     this.listeners.clear();
   }

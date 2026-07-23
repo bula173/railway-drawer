@@ -63,7 +63,12 @@ export class InteractiveUIController {
     document.getElementById('btn-format-painter')?.addEventListener('click', () => {
       const cells = this.graph.getSelectionCells();
       if (cells.length > 0) {
-        console.log('[UI] Format painter activated - Not yet fully implemented');
+        // If already has copied style, paste it; otherwise copy from selection
+        if (this.commandService.hasCopiedStyle()) {
+          this.commandService.pasteStyle();
+        } else {
+          this.commandService.copyStyle();
+        }
       }
     });
 
