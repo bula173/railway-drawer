@@ -173,11 +173,14 @@ export class ShapeDesignerController {
               <input type="number" id="element-stroke-width" min="0" max="10" step="0.5">
             </div>
 
-            <!-- Preview -->
+            <!-- Vertex Preview -->
             <div class="preview-container">
-              <label>Preview:</label>
-              <div class="preview-canvas">
-                <svg id="preview-svg" width="100" height="100"></svg>
+              <label><strong>Vertex Preview:</strong></label>
+              <div class="vertex-preview">
+                <canvas id="vertex-preview-canvas" width="150" height="150"></canvas>
+              </div>
+              <div class="preview-info">
+                <small id="preview-info-text">Draw shapes to preview</small>
               </div>
             </div>
 
@@ -267,6 +270,7 @@ export class ShapeDesignerController {
         this.redrawCanvas();
         this.generateVertexCodeFromComposition();
         this.displaySelectedElementProperties();
+        this.renderVertexPreview();
       }
     });
 
@@ -308,6 +312,7 @@ export class ShapeDesignerController {
     }
 
     this.updatePreview();
+    this.renderVertexPreview();
   }
 
   /**
@@ -338,6 +343,7 @@ export class ShapeDesignerController {
 
     this.redrawCanvas();
     this.displaySelectedElementProperties();
+    this.renderVertexPreview();
   }
 
   /**
@@ -586,6 +592,132 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
 
     this.redrawCanvas();
     this.generateVertexCodeFromComposition();
+    this.renderVertexPreview();
+  }
+
+  /**
+   * @brief Render vertex preview canvas
+   */
+  private renderVertexPreview(): void {
+    const previewCanvas = this.modal?.querySelector('#vertex-preview-canvas') as HTMLCanvasElement;
+    const infoText = this.modal?.querySelector('#preview-info-text') as HTMLElement;
+
+    if (!previewCanvas) return;
+
+    const ctx = previewCanvas.getContext('2d');
+    if (!ctx) return;
+
+    // Clear canvas
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, previewCanvas.width, previewCanvas.height);
+
+    // Draw border
+    ctx.strokeStyle = '#e0e0e0';
+    ctx.lineWidth = 1;
+    ctx.strokeRect(0, 0, previewCanvas.width, previewCanvas.height);
+
+    // Calculate bounds of all elements
+    let minX = Infinity,
+      minY = Infinity,
+      maxX = -Infinity,
+      maxY = -Infinity;
+
+    // Include vertices in bounds
+    this.vertices.forEach((v) => {
+      minX = Math.min(minX, v.x);
+      minY = Math.min(minY, v.y);
+      maxX = Math.max(maxX, v.x);
+      maxY = Math.max(maxY, v.y);
+    });
+
+    // Include shape elements in bounds
+    this.shapeElements.forEach((el) => {
+      minX = Math.min(minX, el.x);
+      minY = Math.min(minY, el.y);
+      maxX = Math.max(maxX, el.x + el.width);
+      maxY = Math.max(maxY, el.y + el.height);
+    });
+
+    if (minX === Infinity) {
+      if (infoText) infoText.textContent = 'Draw shapes to preview';
+      return;
+    }
+
+    // Calculate scale to fit in preview
+    const padding = 10;
+    const contentWidth = maxX - minX;
+    const contentHeight = maxY - minY;
+    const scaleX = (previewCanvas.width - padding * 2) / contentWidth;
+    const scaleY = (previewCanvas.height - padding * 2) / contentHeight;
+    const scale = Math.min(scaleX, scaleY, 2); // Max scale of 2x
+
+    // Draw shapes
+    this.shapeElements.forEach((el) => {
+      const x = (el.x - minX) * scale + padding;
+      const y = (el.y - minY) * scale + padding;
+      const w = el.width * scale;
+      const h = el.height * scale;
+
+      ctx.fillStyle = el.fill;
+      ctx.strokeStyle = el.stroke;
+      ctx.lineWidth = el.strokeWidth;
+
+      switch (el.type) {
+        case 'rect':
+          ctx.fillRect(x, y, w, h);
+          ctx.strokeRect(x, y, w, h);
+          break;
+        case 'circle':
+          ctx.beginPath();
+          ctx.arc(x + w / 2, y + h / 2, w / 2, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.stroke();
+          break;
+        case 'triangle':
+          ctx.beginPath();
+          ctx.moveTo(x + w / 2, y);
+          ctx.lineTo(x + w, y + h);
+          ctx.lineTo(x, y + h);
+          ctx.closePath();
+          ctx.fill();
+          ctx.stroke();
+          break;
+        case 'line':
+          ctx.beginPath();
+          ctx.moveTo(x, y + h / 2);
+          ctx.lineTo(x + w, y + h / 2);
+          ctx.stroke();
+          break;
+      }
+    });
+
+    // Draw vertices
+    if (this.vertices.length > 0) {
+      ctx.strokeStyle = '#1976d2';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      const v0 = this.vertices[0];
+      ctx.moveTo((v0.x - minX) * scale + padding, (v0.y - minY) * scale + padding);
+      for (let i = 1; i < this.vertices.length; i++) {
+        const v = this.vertices[i];
+        ctx.lineTo((v.x - minX) * scale + padding, (v.y - minY) * scale + padding);
+      }
+      ctx.stroke();
+
+      // Draw vertex points
+      ctx.fillStyle = '#1976d2';
+      this.vertices.forEach((v) => {
+        ctx.beginPath();
+        ctx.arc((v.x - minX) * scale + padding, (v.y - minY) * scale + padding, 2, 0, Math.PI * 2);
+        ctx.fill();
+      });
+    }
+
+    // Update info
+    if (infoText) {
+      const elementCount = this.shapeElements.length + (this.vertices.length > 0 ? 1 : 0);
+      infoText.textContent = `${elementCount} element${elementCount !== 1 ? 's' : ''} • ${this.shapeElements.length} shape${this.shapeElements.length !== 1 ? 's' : ''}`;
+    }
   }
 
   /**
@@ -715,6 +847,7 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
       this.dragStart = null;
       this.generateVertexCodeFromComposition();
       this.displaySelectedElementProperties();
+      this.renderVertexPreview();
     });
   }
 
@@ -738,6 +871,7 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
     this.selectedElement = element;
     this.redrawCanvas();
     this.displaySelectedElementProperties();
+    this.renderVertexPreview();
   }
 
   /**
