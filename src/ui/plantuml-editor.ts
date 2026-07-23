@@ -81,6 +81,7 @@ Bob --> Alice: Hi
   private setupSelectionListener(): void {
     this.graph.getSelectionModel().addListener('change', () => {
       const selected = this.graph.getSelectionCells();
+
       if (selected.length === 1) {
         const cell = selected[0];
         const metadata = this.groupManager.getPlantUmlMetadata(cell as Cell);
@@ -92,8 +93,15 @@ Bob --> Alice: Hi
             this.textarea.value = metadata.plantumlSource;
             this.updatePreview();
           }
+          return;
         }
       }
+
+      // If selection is NOT a PlantUML group, clear the editing group
+      // This way render will create a new diagram
+      console.log('[PlantUmlEditor] Non-PlantUML selection or no selection');
+      this.currentEditingGroup = null;
+      this.groupManager.setCurrentPlantUmlGroup(null);
     });
   }
 
