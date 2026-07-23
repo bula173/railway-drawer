@@ -98,17 +98,21 @@ export class PlantUmlParser {
    */
   private static parseSequenceDiagram(lines: string[], data: DiagramData): void {
     const participantRegex = /^(actor|participant|queue|database|entity)\s+(\w+)(?:\s+as\s+(\w+))?(?:\s*:\s*(.+))?$/i;
-    const messageRegex = /^(\w+)\s*(?:-+>|<-+|-->|<--)\s*(\w+)\s*:\s*(.+)$/;
+    const messageRegex = /^(\w+)\s*(->|-->|<--|<-)\s*(\w+)\s*:\s*(.+)$/;
     const noteRegex = /^note\s+(left|right|over)\s+(\w+)\s*:\s*(.+)$/i;
+
+    const seenParticipants = new Set<string>();
 
     for (const line of lines) {
       // Parse participants
       const participantMatch = line.match(participantRegex);
       if (participantMatch) {
         const [, type, id, alias, label] = participantMatch;
+        const participantId = alias || id;
+        seenParticipants.add(participantId);
         data.elements.push({
           type: 'participant',
-          id: alias || id,
+          id: participantId,
           label: label || id,
           stereotype: type.toLowerCase() as any,
         });
@@ -118,13 +122,36 @@ export class PlantUmlParser {
       // Parse messages
       const messageMatch = line.match(messageRegex);
       if (messageMatch) {
-        const [, from, to, label] = messageMatch;
-        const hasDoubleDash = line.includes('--');
+        const [, from, arrow, to, label] = messageMatch;
+
+        // Auto-create participants if not explicitly declared
+        if (!seenParticipants.has(from)) {
+          seenParticipants.add(from);
+          data.elements.push({
+            type: 'participant',
+            id: from,
+            label: from,
+            stereotype: 'participant',
+          });
+        }
+        if (!seenParticipants.has(to)) {
+          seenParticipants.add(to);
+          data.elements.push({
+            type: 'participant',
+            id: to,
+            label: to,
+            stereotype: 'participant',
+          });
+        }
+
+        // Determine message type from arrow
+        const isAsync = arrow.includes('--');
+
         data.connections.push({
           from,
           to,
           label,
-          type: hasDoubleDash ? 'async' : 'sync',
+          type: isAsync ? 'async' : 'sync',
         });
         continue;
       }
