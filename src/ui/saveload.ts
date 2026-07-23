@@ -1,14 +1,17 @@
 import { Graph, ModelXmlSerializer } from '@maxgraph/core';
 import { ProjectService } from '../services/project-service';
+import { PlantUmlGroupManager } from '../services/plantuml-group-manager';
 
 export class SaveLoadController {
   private graph: Graph;
   private projectService: ProjectService;
+  private plantumlGroupManager: PlantUmlGroupManager;
   private isSavedToDisk = false;
 
   constructor(graph: Graph) {
     this.graph = graph;
     this.projectService = new ProjectService();
+    this.plantumlGroupManager = new PlantUmlGroupManager(graph);
     this.setupKeyboardShortcuts();
     this.updateSaveStatus();
   }
@@ -93,6 +96,9 @@ export class SaveLoadController {
       // import() takes a string and returns void (modifies model)
       encoder.import(xml);
 
+      // Restore PlantUML metadata
+      this.restorePlantUmlMetadata(xml);
+
       this.graph.refresh();
       console.log('[SaveLoad] Diagram loaded');
     } catch (e) {
@@ -112,10 +118,13 @@ export class SaveLoadController {
 
       // ModelXmlSerializer.export() returns a string
       const encoder = new ModelXmlSerializer(model);
-      const xml = encoder.export();
+      let xml = encoder.export();
 
       // Restore SVG data URLs to cells
       this.restoreSvgDataUrls(svgShapes);
+
+      // Embed PlantUML metadata
+      xml = this.embedPlantUmlMetadata(xml);
 
       console.log('[SaveLoad] Serialized, length:', xml.length);
       return xml;
@@ -242,5 +251,71 @@ export class SaveLoadController {
   markAsChanged(): void {
     this.isSavedToDisk = false;
     this.updateSaveStatus();
+  }
+
+  /**
+   * Embed PlantUML metadata into XML before serialization
+   */
+  private embedPlantUmlMetadata(xml: string): string {
+    try {
+      const plantumlGroups = this.plantumlGroupManager.getAllPlantUmlGroups();
+      if (plantumlGroups.length === 0) return xml;
+
+      console.log('[SaveLoad] Embedding PlantUML metadata for', plantumlGroups.length, 'groups');
+
+      // Create a root element to hold PlantUML data
+      const plantumlData = plantumlGroups.map((group) => {
+        const metadata = this.plantumlGroupManager.getPlantUmlMetadata(group);
+        return {
+          cellId: group.getId(),
+          cellLabel: group.getValue(),
+          plantumlSource: metadata?.plantumlSource || '',
+          diagramType: metadata?.diagramType || '',
+          createdAt: metadata?.createdAt || 0,
+          lastModified: metadata?.lastModified || 0,
+        };
+      });
+
+      // Store PlantUML metadata as JSON in a comment at the end
+      const comment = `\n<!-- PLANTUML_METADATA:${btoa(JSON.stringify(plantumlData))} -->`;
+      return xml + comment;
+    } catch (e) {
+      console.warn('[SaveLoad] Failed to embed PlantUML metadata:', e);
+      return xml; // Return original XML on failure
+    }
+  }
+
+  /**
+   * Extract and restore PlantUML metadata from XML after deserialization
+   */
+  private restorePlantUmlMetadata(xml: string): void {
+    try {
+      const match = xml.match(/<!-- PLANTUML_METADATA:(.+?) -->/);
+      if (!match || !match[1]) {
+        console.log('[SaveLoad] No PlantUML metadata found in XML');
+        return;
+      }
+
+      const plantumlData = JSON.parse(atob(match[1]));
+      console.log('[SaveLoad] Restoring PlantUML metadata for', plantumlData.length, 'groups');
+
+      const model = (this.graph as any).model;
+      const cells = (model as any).cells || {};
+
+      plantumlData.forEach((data: any) => {
+        const cell = cells[data.cellId];
+        if (cell) {
+          this.plantumlGroupManager.setPlantUmlMetadata(cell, {
+            plantumlSource: data.plantumlSource,
+            diagramType: data.diagramType,
+            createdAt: data.createdAt,
+            lastModified: data.lastModified,
+          });
+          console.log('[SaveLoad] Restored PlantUML metadata for:', data.cellLabel);
+        }
+      });
+    } catch (e) {
+      console.warn('[SaveLoad] Failed to restore PlantUML metadata:', e);
+    }
   }
 }
