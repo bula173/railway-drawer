@@ -1280,8 +1280,8 @@ svg.mxGraph .mxHandle {
 
 /* ========== PLANTUML EDITOR ========== */
 
-#plantuml-panel {
-  display: flex !important;
+.plantuml-panel-container {
+  display: none !important;
   flex-direction: column;
   width: 100%;
   height: 100%;
@@ -1289,6 +1289,10 @@ svg.mxGraph .mxHandle {
   overflow: hidden;
   padding: 0;
   margin: 0;
+}
+
+.plantuml-panel-container.visible {
+  display: flex !important;
 }
 
 .editor-header {

@@ -85,6 +85,7 @@ export class LeftPanelTabs {
     const currentContent = this.tabContents.get(this.activeTab);
     if (currentContent) {
       currentContent.style.display = 'none';
+      currentContent.classList.remove('visible');
     }
 
     const currentBtn = this.tabButtons.get(this.activeTab);
@@ -96,6 +97,7 @@ export class LeftPanelTabs {
     const newContent = this.tabContents.get(tabId);
     if (newContent) {
       newContent.style.display = 'block';
+      newContent.classList.add('visible');
     }
 
     const newBtn = this.tabButtons.get(tabId);
@@ -139,6 +141,12 @@ export class LeftPanelTabs {
     const btn = this.tabButtons.get(tabId);
     if (btn) {
       btn.style.display = 'block';
+    }
+
+    const content = this.tabContents.get(tabId);
+    if (content) {
+      content.style.display = 'block';
+      content.classList.add('visible');
     }
 
     // Switch to the newly shown tab
