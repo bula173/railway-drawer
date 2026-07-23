@@ -14,8 +14,7 @@
     "test:coverage": "jest --coverage"
   },
   "dependencies": {
-    "@maxgraph/core": "^0.10.0",
-    "plantuml-parser": "^0.4.0"
+    "@maxgraph/core": "^0.10.0"
   },
   "devDependencies": {
     "@testing-library/dom": "^10.4.1",

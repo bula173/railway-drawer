@@ -1,10 +1,8 @@
 /**
  * @file plantuml-parser.ts
  * @brief PlantUML text syntax parser for converting to maxGraph shapes
- * @details Uses plantuml-parser library for full syntax support
+ * @details Browser-compatible regex-based parser for PlantUML syntax
  */
-
-import { parse as parsePlantUML } from 'plantuml-parser';
 
 export interface DiagramElement {
   type: 'actor' | 'participant' | 'class' | 'state' | 'activity' | 'component' | 'note' | 'message';
@@ -43,7 +41,7 @@ export class PlantUmlParser {
    */
   static parse(text: string): DiagramData {
     try {
-      console.log('[PlantUmlParser] Parsing with plantuml-parser library');
+      console.log('[PlantUmlParser] Parsing PlantUML text');
       const lines = text.split('\n').filter((line) => line.trim() && !line.trim().startsWith("'"));
 
       const diagramType = this.detectDiagramType(lines);
@@ -55,18 +53,7 @@ export class PlantUmlParser {
         connections: [],
       };
 
-      // Parse with the library
-      try {
-        const diagram = parsePlantUML(text);
-        console.log('[PlantUmlParser] Parsed diagram:', diagram);
-
-        // Extract elements and connections from parsed diagram
-        this.extractElementsFromParsedDiagram(diagram, data);
-      } catch (parseError) {
-        console.warn('[PlantUmlParser] Library parse error, falling back to regex:', parseError);
-        // Fall back to regex-based parsing if library parsing fails
-        this.parseWithRegex(lines, data);
-      }
+      this.parseWithRegex(lines, data);
 
       return data;
     } catch (error) {
@@ -75,76 +62,6 @@ export class PlantUmlParser {
     }
   }
 
-  /**
-   * Extract elements from parsed diagram
-   */
-  private static extractElementsFromParsedDiagram(diagram: any, data: DiagramData): void {
-    // The plantuml-parser library returns a structured diagram
-    // We need to convert it to our DiagramElement format
-
-    if (!diagram) return;
-
-    // Handle different diagram types
-    if (diagram.title) {
-      data.title = diagram.title;
-    }
-
-    // Extract participants/actors/classes/states
-    if (diagram.participants) {
-      diagram.participants.forEach((p: any, index: number) => {
-        data.elements.push({
-          type: 'participant',
-          id: p.name || `participant_${index}`,
-          label: p.displayName || p.name || `Participant ${index}`,
-        });
-      });
-    }
-
-    if (diagram.classes) {
-      diagram.classes.forEach((c: any) => {
-        data.elements.push({
-          type: 'class',
-          id: c.name,
-          label: c.name,
-          attributes: c.properties || [],
-          methods: c.methods || [],
-        });
-      });
-    }
-
-    if (diagram.states) {
-      diagram.states.forEach((s: any) => {
-        data.elements.push({
-          type: 'state',
-          id: s.name,
-          label: s.name,
-        });
-      });
-    }
-
-    // Extract connections/messages
-    if (diagram.messages) {
-      diagram.messages.forEach((msg: any) => {
-        data.connections.push({
-          from: msg.from,
-          to: msg.to,
-          label: msg.label || '',
-          type: msg.type || 'default',
-        });
-      });
-    }
-
-    if (diagram.relationships) {
-      diagram.relationships.forEach((rel: any) => {
-        data.connections.push({
-          from: rel.from,
-          to: rel.to,
-          label: rel.label || '',
-          type: rel.type || 'default',
-        });
-      });
-    }
-  }
 
   /**
    * Fallback regex-based parsing when library parsing fails
