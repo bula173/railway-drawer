@@ -8,6 +8,10 @@ import { Graph, Cell } from '@maxgraph/core';
 import { UIController } from './base/ui-controller';
 import { PlantUmlParser, DiagramData, DiagramElement } from '../services/plantuml-parser';
 import { SequenceDiagramRenderer } from '../services/sequence-diagram-renderer';
+import { ClassDiagramRenderer } from '../services/class-diagram-renderer';
+import { StateDiagramRenderer } from '../services/state-diagram-renderer';
+import { ActivityDiagramRenderer } from '../services/activity-diagram-renderer';
+import { ComponentDiagramRenderer } from '../services/component-diagram-renderer';
 import { PlantUmlGroupManager } from '../services/plantuml-group-manager';
 
 export class PlantUmlEditorController extends UIController {
@@ -213,20 +217,44 @@ Bob --> Alice: Hi
         console.log('[PlantUML] Created new group:', groupName);
       }
 
-      // Render diagram inside the group
-      if (diagramData.type === 'sequence') {
-        console.log('[PlantUML] Using sequence diagram renderer');
-        const renderer = new SequenceDiagramRenderer(this.graph);
-        renderer.renderIntoGroup(diagramData, groupToRender);
-      } else {
-        console.log('[PlantUML] Using generic diagram renderer');
-        this.convertAndAddToGraph(diagramData, groupToRender);
-      }
+      // Render diagram inside the group using the appropriate renderer
+      this.renderDiagramWithAppropriateRenderer(diagramData, groupToRender);
 
       this.showSuccess(`✅ ${diagramData.type} diagram rendered! (${diagramData.elements.length} elements, ${diagramData.connections.length} connections)`);
     } catch (error) {
       this.showError(`Error parsing PlantUML: ${error instanceof Error ? error.message : String(error)}`);
       console.error('[PlantUML]', error);
+    }
+  }
+
+  /**
+   * Render diagram using the appropriate renderer based on type
+   */
+  private renderDiagramWithAppropriateRenderer(diagramData: DiagramData, groupToRender: any): void {
+    switch (diagramData.type) {
+      case 'sequence':
+        console.log('[PlantUML] Using sequence diagram renderer');
+        new SequenceDiagramRenderer(this.graph).renderIntoGroup(diagramData, groupToRender);
+        break;
+      case 'class':
+        console.log('[PlantUML] Using class diagram renderer');
+        new ClassDiagramRenderer(this.graph).renderIntoGroup(diagramData, groupToRender);
+        break;
+      case 'state':
+        console.log('[PlantUML] Using state diagram renderer');
+        new StateDiagramRenderer(this.graph).renderIntoGroup(diagramData, groupToRender);
+        break;
+      case 'activity':
+        console.log('[PlantUML] Using activity diagram renderer');
+        new ActivityDiagramRenderer(this.graph).renderIntoGroup(diagramData, groupToRender);
+        break;
+      case 'component':
+        console.log('[PlantUML] Using component diagram renderer');
+        new ComponentDiagramRenderer(this.graph).renderIntoGroup(diagramData, groupToRender);
+        break;
+      default:
+        console.log('[PlantUML] Using generic diagram renderer');
+        this.convertAndAddToGraph(diagramData, groupToRender);
     }
   }
 
