@@ -245,6 +245,13 @@ export class ShapeDesignerController {
                 <svg id="preview-svg" width="100" height="100"></svg>
               </div>
             </div>
+
+            <!-- Vertex Code -->
+            <div class="vertex-code-section">
+              <label>Vertex Code:</label>
+              <textarea id="vertex-code" class="vertex-code-output" readonly spellcheck="false"></textarea>
+              <button id="copy-vertex-code" class="btn btn-small" title="Copy to clipboard">📋 Copy Code</button>
+            </div>
           </div>
         </div>
 
@@ -343,6 +350,22 @@ export class ShapeDesignerController {
           this.loadTemplate(template);
         }
       });
+    });
+
+    // Copy vertex code button
+    const copyCodeBtn = this.modal?.querySelector('#copy-vertex-code');
+    copyCodeBtn?.addEventListener('click', () => {
+      const vertexCodeArea = this.modal?.querySelector('#vertex-code') as HTMLTextAreaElement;
+      if (vertexCodeArea && vertexCodeArea.value) {
+        navigator.clipboard.writeText(vertexCodeArea.value).then(() => {
+          const btn = copyCodeBtn as HTMLElement;
+          const originalText = btn.textContent;
+          btn.textContent = '✅ Copied!';
+          setTimeout(() => {
+            btn.textContent = originalText;
+          }, 2000);
+        });
+      }
     });
 
     // Load existing path if editing
@@ -485,7 +508,7 @@ export class ShapeDesignerController {
   }
 
   /**
-   * @brief Update preview SVG
+   * @brief Update preview SVG and vertex code
    */
   private updatePreview(): void {
     const pathInput = this.modal?.querySelector('#shape-path') as HTMLTextAreaElement;
@@ -504,6 +527,132 @@ export class ShapeDesignerController {
         stroke-width="${strokeWidthInput?.value || 2}"
       />
     `;
+
+    // Generate vertex code
+    this.generateVertexCode();
+  }
+
+  /**
+   * @brief Generate TypeScript vertex code from SVG path
+   */
+  private generateVertexCode(): void {
+    const nameInput = this.modal?.querySelector('#shape-name') as HTMLInputElement;
+    const pathInput = this.modal?.querySelector('#shape-path') as HTMLTextAreaElement;
+    const fillInput = this.modal?.querySelector('#shape-fill') as HTMLInputElement;
+    const strokeInput = this.modal?.querySelector('#shape-stroke') as HTMLInputElement;
+    const strokeWidthInput = this.modal?.querySelector('#shape-stroke-width') as HTMLInputElement;
+    const vertexCodeArea = this.modal?.querySelector('#vertex-code') as HTMLTextAreaElement;
+
+    if (!vertexCodeArea || !pathInput || !nameInput) return;
+
+    const shapeName = nameInput.value || 'CustomShape';
+    const className = this.toPascalCase(shapeName) + 'Shape';
+    const path = pathInput.value;
+    const fill = fillInput?.value || '#1976d2';
+    const stroke = strokeInput?.value || '#0d47a1';
+    const strokeWidth = parseFloat(strokeWidthInput?.value || '2');
+
+    const code = this.generateShapeClassCode(className, path, fill, stroke, strokeWidth);
+    vertexCodeArea.value = code;
+  }
+
+  /**
+   * @brief Generate TypeScript Shape class code
+   */
+  private generateShapeClassCode(className: string, svgPath: string, fill: string, stroke: string, strokeWidth: number): string {
+    return `import { Shape } from '@maxgraph/core';
+
+/**
+ * Custom shape: ${className}
+ * Generated from shape designer
+ */
+export class ${className} extends Shape {
+  constructor() {
+    super();
+  }
+
+  override paintVertexShape(c: any, x: number, y: number, w: number, h: number) {
+    c.translate(x, y);
+
+    // Parse and render SVG path
+    const svgPath = '${svgPath}';
+    const scale = { x: w / 100, y: h / 100 }; // Adjust for vertex size
+
+    ${this.generatePathRenderingCode(svgPath)}
+
+    c.setFillColor('${fill}');
+    c.setStrokeColor('${stroke}');
+    c.setStrokeWidth(${strokeWidth});
+    c.fillAndStroke();
+  }
+}
+
+// Register the shape
+import { CellRenderer } from '@maxgraph/core';
+CellRenderer.registerShape('custom${className}', ${className} as any);
+`;
+  }
+
+  /**
+   * @brief Generate path rendering code from SVG path
+   */
+  private generatePathRenderingCode(svgPath: string): string {
+    // Parse SVG path and generate canvas drawing code
+    const commands = svgPath.match(/[MLHVCSQTAZmlhvcsqtaz][^MLHVCSQTAZmlhvcsqtaz]*/g) || [];
+
+    let code = '// Draw SVG path\n    c.begin();\n';
+
+    commands.forEach((cmd) => {
+      const type = cmd[0];
+      const coords = cmd
+        .substring(1)
+        .trim()
+        .split(/[\s,]+/)
+        .map((v) => parseFloat(v));
+
+      switch (type.toUpperCase()) {
+        case 'M': // Move to
+          if (coords.length >= 2) {
+            code += `    c.moveTo(${coords[0]} * scale.x, ${coords[1]} * scale.y);\n`;
+          }
+          break;
+        case 'L': // Line to
+          if (coords.length >= 2) {
+            code += `    c.lineTo(${coords[0]} * scale.x, ${coords[1]} * scale.y);\n`;
+          }
+          break;
+        case 'C': // Cubic bezier
+          if (coords.length >= 6) {
+            code += `    c.curveTo(${coords[0]} * scale.x, ${coords[1]} * scale.y, ${coords[2]} * scale.x, ${coords[3]} * scale.y, ${coords[4]} * scale.x, ${coords[5]} * scale.y);\n`;
+          }
+          break;
+        case 'Q': // Quadratic bezier
+          if (coords.length >= 4) {
+            code += `    c.quadTo(${coords[0]} * scale.x, ${coords[1]} * scale.y, ${coords[2]} * scale.x, ${coords[3]} * scale.y);\n`;
+          }
+          break;
+        case 'A': // Arc
+          if (coords.length >= 7) {
+            code += `    c.arcTo(${coords[0]} * scale.x, ${coords[1]} * scale.y, ${coords[5]} * scale.x, ${coords[6]} * scale.y);\n`;
+          }
+          break;
+        case 'Z': // Close path
+          code += '    c.close();\n';
+          break;
+      }
+    });
+
+    return code;
+  }
+
+  /**
+   * @brief Convert string to PascalCase
+   */
+  private toPascalCase(str: string): string {
+    return str
+      .split(/[\s\-_]+/)
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+      .join('');
   }
 
   /**
