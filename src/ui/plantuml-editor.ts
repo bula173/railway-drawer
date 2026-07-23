@@ -144,12 +144,15 @@ Bob --> Alice: Authentication Response
       }
 
       const diagramData = PlantUmlParser.parse(text);
+      console.log('[PlantUML] Parsed diagram type:', diagramData.type, diagramData);
 
       // Use specialized renderer for sequence diagrams
       if (diagramData.type === 'sequence') {
+        console.log('[PlantUML] Using sequence diagram renderer');
         const renderer = new SequenceDiagramRenderer(this.graph);
         renderer.render(diagramData);
       } else {
+        console.log('[PlantUML] Using generic diagram renderer');
         this.convertAndAddToGraph(diagramData);
       }
 
