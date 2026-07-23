@@ -930,14 +930,23 @@ svg.mxGraph .mxHandle {
   min-height: 60px;
 }
 
-.shape-properties {
+.shape-properties,
+.element-properties {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 8px;
 }
 
-.shape-properties label {
+.shape-properties label,
+.element-properties label {
   grid-column: 1 / -1;
+}
+
+.shape-properties label strong,
+.element-properties label strong {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1976d2;
 }
 
 .shape-properties input[type='color'] {

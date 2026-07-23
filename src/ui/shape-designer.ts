@@ -14,18 +14,6 @@
 import { Graph } from '@maxgraph/core';
 import { customShapeRegistry, CustomShape } from '../services/custom-shape-registry';
 
-/**
- * @interface ShapeTemplate
- * @brief Pre-defined shape templates for quick starting
- */
-interface ShapeTemplate {
-  name: string;
-  path: string;
-  width: number;
-  height: number;
-  icon: string;
-}
-
 interface ShapeElement {
   type: 'rect' | 'circle' | 'triangle' | 'line' | 'polygon';
   x: number;
@@ -49,92 +37,6 @@ export class ShapeDesignerController {
   private editingShapeId: string | null = null;
   private drawMode = true; // true = draw, false = edit path
 
-  private static SHAPE_TEMPLATES: ShapeTemplate[] = [
-    {
-      name: 'Line',
-      path: 'M 0 50 L 100 50',
-      width: 100,
-      height: 100,
-      icon: '—',
-    },
-    {
-      name: 'Rectangle',
-      path: 'M 0 0 L 100 0 L 100 100 L 0 100 Z',
-      width: 100,
-      height: 100,
-      icon: '▭',
-    },
-    {
-      name: 'Circle',
-      path: 'M 50 0 A 50 50 0 1 1 49.99 0',
-      width: 100,
-      height: 100,
-      icon: '●',
-    },
-    {
-      name: 'Triangle',
-      path: 'M 50 0 L 100 100 L 0 100 Z',
-      width: 100,
-      height: 100,
-      icon: '▲',
-    },
-    {
-      name: 'Diamond',
-      path: 'M 50 0 L 100 50 L 50 100 L 0 50 Z',
-      width: 100,
-      height: 100,
-      icon: '◆',
-    },
-    {
-      name: 'Star',
-      path: 'M 50 0 L 61 35 L 98 35 L 68 57 L 79 91 L 50 68 L 21 91 L 32 57 L 2 35 L 39 35 Z',
-      width: 100,
-      height: 100,
-      icon: '★',
-    },
-    {
-      name: 'Heart',
-      path: 'M 50 95 C 20 75 0 60 0 40 C 0 25 15 15 25 15 C 35 15 50 25 50 25 C 50 25 65 15 75 15 C 85 15 100 25 100 40 C 100 60 80 75 50 95 Z',
-      width: 100,
-      height: 100,
-      icon: '♥',
-    },
-    {
-      name: 'Arrow Right',
-      path: 'M 0 50 L 70 50 L 70 30 L 100 60 L 70 90 L 70 70 L 0 70 Z',
-      width: 100,
-      height: 100,
-      icon: '➜',
-    },
-    {
-      name: 'Pentagon',
-      path: 'M 50 0 L 100 35 L 82 100 L 18 100 L 0 35 Z',
-      width: 100,
-      height: 100,
-      icon: '⬠',
-    },
-    {
-      name: 'Hexagon',
-      path: 'M 25 0 L 75 0 L 100 50 L 75 100 L 25 100 L 0 50 Z',
-      width: 100,
-      height: 100,
-      icon: '⬡',
-    },
-    {
-      name: 'Rounded Rect',
-      path: 'M 10 0 L 90 0 Q 100 0 100 10 L 100 90 Q 100 100 90 100 L 10 100 Q 0 100 0 90 L 0 10 Q 0 0 10 0 Z',
-      width: 100,
-      height: 100,
-      icon: '◬',
-    },
-    {
-      name: 'Cloud',
-      path: 'M 20 60 Q 10 50 10 40 Q 10 25 20 20 Q 25 10 35 10 Q 45 0 55 0 Q 70 0 75 10 Q 90 10 90 25 Q 95 35 90 45 Q 100 50 95 60 Z',
-      width: 100,
-      height: 100,
-      icon: '☁',
-    },
-  ];
 
   constructor(_graph: Graph) {
     this.setupUI();
@@ -181,28 +83,12 @@ export class ShapeDesignerController {
           <button class="designer-close" title="Close">×</button>
         </div>
 
-        <div class="templates-bar">
-          <span class="templates-label">Start with template:</span>
-          <div class="templates-grid">
-            ${ShapeDesignerController.SHAPE_TEMPLATES.map(
-              (t) =>
-                `<button class="template-btn" data-template="${t.name}" title="${t.name}">${t.icon}</button>`
-            ).join('')}
-          </div>
-        </div>
-
         <div class="designer-body">
-          <!-- Left: Canvas & Mode Toggle -->
+          <!-- Left: Canvas & Shape Palette -->
           <div class="designer-left">
-            <div class="mode-toggle">
-              <button class="mode-btn active" data-mode="draw">✏️ Draw</button>
-              <button class="mode-btn" data-mode="compose">🧩 Compose</button>
-              <button class="mode-btn" data-mode="edit">✐ Edit Path</button>
-            </div>
-
-            <!-- Shape Palette for Compose Mode -->
-            <div class="shape-palette" style="display: none;">
-              <div class="palette-label">Drag shapes to canvas:</div>
+            <!-- Shape Palette -->
+            <div class="shape-palette">
+              <div class="palette-label">Drag shapes or click to draw:</div>
               <div class="palette-grid">
                 <button class="palette-shape" data-shape="rect" title="Rectangle">▭</button>
                 <button class="palette-shape" data-shape="circle" title="Circle">●</button>
@@ -213,18 +99,14 @@ export class ShapeDesignerController {
 
             <div class="draw-canvas-container">
               <canvas id="shape-canvas" width="300" height="300"></canvas>
-              <div class="canvas-help draw-help">Click to add vertices</div>
-              <div class="canvas-help compose-help" style="display: none;">Drag shapes from palette to canvas</div>
+              <div class="canvas-help">Click to add vertices • Drag shapes from palette</div>
             </div>
 
-            <div class="canvas-controls draw-controls">
+            <div class="canvas-controls">
               <button class="btn-undo" title="Undo last vertex">↶ Undo</button>
-              <button class="btn-clear" title="Clear all vertices">🗑️ Clear</button>
-              <button class="btn-close-path" title="Close path">🔒 Close</button>
-            </div>
-            <div class="canvas-controls compose-controls" style="display: none;">
               <button class="btn-delete-shape" title="Delete selected shape">🗑️ Delete</button>
-              <button class="btn-clear" title="Clear all shapes">Clear All</button>
+              <button class="btn-clear" title="Clear all">🗑️ Clear All</button>
+              <button class="btn-close-path" title="Close path">🔒 Close</button>
             </div>
           </div>
 
@@ -243,16 +125,10 @@ export class ShapeDesignerController {
               }</textarea>
             </div>
 
-            <!-- SVG Path Editor -->
-            <div class="path-editor">
-              <label>SVG Path:</label>
-              <textarea id="shape-path" class="path-input" placeholder="M 0 0 L 100 0 L 100 100 L 0 100 Z">${
-                editingShape?.svgPath || ''
-              }</textarea>
-            </div>
-
-            <!-- Properties -->
+            <!-- Global Properties -->
             <div class="shape-properties">
+              <label><strong>Shape Properties:</strong></label>
+
               <label>Fill Color:</label>
               <input type="color" id="shape-fill" value="${editingShape?.fillColor || '#1976d2'}">
 
@@ -264,11 +140,37 @@ export class ShapeDesignerController {
                 editingShape?.strokeWidth || 2
               }">
 
-              <label>Width:</label>
+              <label>Default Width:</label>
               <input type="number" id="shape-width" min="20" max="500" value="${editingShape?.width || 100}">
 
-              <label>Height:</label>
+              <label>Default Height:</label>
               <input type="number" id="shape-height" min="20" max="500" value="${editingShape?.height || 100}">
+            </div>
+
+            <!-- Selected Element Properties -->
+            <div class="element-properties" style="display: none;">
+              <label><strong>Selected Shape:</strong></label>
+
+              <label>X Position:</label>
+              <input type="number" id="element-x" min="0" max="300">
+
+              <label>Y Position:</label>
+              <input type="number" id="element-y" min="0" max="300">
+
+              <label>Width:</label>
+              <input type="number" id="element-width" min="10" max="200">
+
+              <label>Height:</label>
+              <input type="number" id="element-height" min="10" max="200">
+
+              <label>Fill Color:</label>
+              <input type="color" id="element-fill">
+
+              <label>Stroke Color:</label>
+              <input type="color" id="element-stroke">
+
+              <label>Stroke Width:</label>
+              <input type="number" id="element-stroke-width" min="0" max="10" step="0.5">
             </div>
 
             <!-- Preview -->
@@ -330,23 +232,13 @@ export class ShapeDesignerController {
       });
     }
 
-    // Mode toggle
-    const modeBtns = this.modal?.querySelectorAll('.mode-btn');
-    modeBtns?.forEach((btn) => {
-      btn.addEventListener('click', (e) => {
-        const mode = (e.target as HTMLElement).dataset.mode || 'draw';
-        modeBtns.forEach((b) => b.classList.remove('active'));
-        (e.target as HTMLElement).classList.add('active');
-
-        this.switchMode(mode);
-      });
-    });
-
     // Canvas handlers
     this.previewCanvas = this.modal?.querySelector('#shape-canvas') as HTMLCanvasElement;
     if (this.previewCanvas) {
       this.previewCanvas.addEventListener('click', (e) => this.handleCanvasClick(e));
       this.previewCanvas.addEventListener('mousemove', (e) => this.handleCanvasMouseMove(e));
+      // Setup drag and drop
+      this.setupDragAndDrop();
     }
 
     // Canvas controls
@@ -356,12 +248,9 @@ export class ShapeDesignerController {
     });
 
     this.modal?.querySelector('.btn-clear')?.addEventListener('click', () => {
-      if (this.drawMode) {
-        this.vertices = [];
-      } else {
-        this.shapeElements = [];
-        this.selectedElement = null;
-      }
+      this.vertices = [];
+      this.shapeElements = [];
+      this.selectedElement = null;
       this.redrawCanvas();
     });
 
@@ -377,29 +266,15 @@ export class ShapeDesignerController {
         this.selectedElement = null;
         this.redrawCanvas();
         this.generateVertexCodeFromComposition();
+        this.displaySelectedElementProperties();
       }
     });
-
-    // SVG Path input handler
-    const pathInput = this.modal?.querySelector('#shape-path') as HTMLTextAreaElement;
-    pathInput?.addEventListener('change', () => this.updatePreview());
 
     // Property change handlers
     this.modal?.querySelectorAll('input, textarea').forEach((el) => {
       el.addEventListener('change', () => this.updatePreview());
     });
 
-    // Template buttons
-    const templateBtns = this.modal?.querySelectorAll('.template-btn');
-    templateBtns?.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const templateName = (btn as HTMLElement).dataset.template;
-        const template = ShapeDesignerController.SHAPE_TEMPLATES.find((t) => t.name === templateName);
-        if (template) {
-          this.loadTemplate(template);
-        }
-      });
-    });
 
     // Copy vertex code button
     const copyCodeBtn = this.modal?.querySelector('#copy-vertex-code');
@@ -417,6 +292,15 @@ export class ShapeDesignerController {
       }
     });
 
+    // Element property change listeners
+    this.modal?.querySelector('#element-x')?.addEventListener('change', () => this.updateSelectedElement());
+    this.modal?.querySelector('#element-y')?.addEventListener('change', () => this.updateSelectedElement());
+    this.modal?.querySelector('#element-width')?.addEventListener('change', () => this.updateSelectedElement());
+    this.modal?.querySelector('#element-height')?.addEventListener('change', () => this.updateSelectedElement());
+    this.modal?.querySelector('#element-fill')?.addEventListener('change', () => this.updateSelectedElement());
+    this.modal?.querySelector('#element-stroke')?.addEventListener('change', () => this.updateSelectedElement());
+    this.modal?.querySelector('#element-stroke-width')?.addEventListener('change', () => this.updateSelectedElement());
+
     // Load existing path if editing
     if (editingShape?.svgPath) {
       this.vertices = this.parseSVGPath(editingShape.svgPath);
@@ -427,36 +311,33 @@ export class ShapeDesignerController {
   }
 
   /**
-   * @brief Load shape template
-   */
-  private loadTemplate(template: ShapeTemplate): void {
-    const pathInput = this.modal?.querySelector('#shape-path') as HTMLTextAreaElement;
-    const widthInput = this.modal?.querySelector('#shape-width') as HTMLInputElement;
-    const heightInput = this.modal?.querySelector('#shape-height') as HTMLInputElement;
-
-    if (pathInput) {
-      pathInput.value = template.path;
-      if (widthInput) widthInput.value = template.width.toString();
-      if (heightInput) heightInput.value = template.height.toString();
-
-      this.vertices = this.parseSVGPath(template.path);
-      this.redrawCanvas();
-      this.updatePreview();
-    }
-  }
-
-  /**
-   * @brief Handle canvas click to add vertices
+   * @brief Handle canvas click to add vertices or select shapes
    */
   private handleCanvasClick(e: MouseEvent): void {
-    if (!this.drawMode || !this.previewCanvas) return;
+    if (!this.previewCanvas) return;
 
     const rect = this.previewCanvas.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
-    this.vertices.push({ x, y });
+    // First, try to select a shape element
+    let clickedElement = false;
+    for (const el of this.shapeElements) {
+      if (x >= el.x && x <= el.x + el.width && y >= el.y && y <= el.y + el.height) {
+        this.selectedElement = el;
+        clickedElement = true;
+        break;
+      }
+    }
+
+    // If no shape clicked, add a vertex
+    if (!clickedElement) {
+      this.selectedElement = null;
+      this.vertices.push({ x, y });
+    }
+
     this.redrawCanvas();
+    this.displaySelectedElementProperties();
   }
 
   /**
@@ -468,7 +349,7 @@ export class ShapeDesignerController {
   }
 
   /**
-   * @brief Redraw canvas with current vertices or shape elements
+   * @brief Redraw canvas with vertices and shape elements
    */
   private redrawCanvas(): void {
     if (!this.previewCanvas) return;
@@ -494,14 +375,12 @@ export class ShapeDesignerController {
       ctx.stroke();
     }
 
-    // If in compose mode, render shape elements
+    // Render shape elements
     if (this.shapeElements.length > 0) {
       this.renderShapeElements();
-      return;
     }
 
-    // Otherwise render vertices (draw mode)
-    // Draw lines between vertices
+    // Render vertices
     ctx.strokeStyle = '#1976d2';
     ctx.lineWidth = 2;
     if (this.vertices.length > 0) {
@@ -589,33 +468,61 @@ export class ShapeDesignerController {
   }
 
   /**
-   * @brief Generate TypeScript vertex code from SVG path
+   * @brief Generate TypeScript vertex code from vertices and shapes
    */
   private generateVertexCode(): void {
     const nameInput = this.modal?.querySelector('#shape-name') as HTMLInputElement;
-    const pathInput = this.modal?.querySelector('#shape-path') as HTMLTextAreaElement;
     const fillInput = this.modal?.querySelector('#shape-fill') as HTMLInputElement;
     const strokeInput = this.modal?.querySelector('#shape-stroke') as HTMLInputElement;
     const strokeWidthInput = this.modal?.querySelector('#shape-stroke-width') as HTMLInputElement;
     const vertexCodeArea = this.modal?.querySelector('#vertex-code') as HTMLTextAreaElement;
 
-    if (!vertexCodeArea || !pathInput || !nameInput) return;
+    if (!vertexCodeArea || !nameInput) return;
 
     const shapeName = nameInput.value || 'CustomShape';
     const className = this.toPascalCase(shapeName) + 'Shape';
-    const path = pathInput.value;
     const fill = fillInput?.value || '#1976d2';
     const stroke = strokeInput?.value || '#0d47a1';
     const strokeWidth = parseFloat(strokeWidthInput?.value || '2');
 
-    const code = this.generateShapeClassCode(className, path, fill, stroke, strokeWidth);
+    // Generate code from both vertices and shapes
+    let pathCode = '';
+
+    // Add code for shape elements
+    this.shapeElements.forEach((el) => {
+      pathCode += this.generateShapeElementCode(el);
+    });
+
+    // Add code for vertices if any
+    if (this.vertices.length > 0) {
+      pathCode += this.generateVertexPathCode();
+    }
+
+    const code = this.generateShapeClassCodeCombined(className, pathCode, fill, stroke, strokeWidth);
     vertexCodeArea.value = code;
   }
 
   /**
-   * @brief Generate TypeScript Shape class code
+   * @brief Generate vertex path code
    */
-  private generateShapeClassCode(className: string, svgPath: string, fill: string, stroke: string, strokeWidth: number): string {
+  private generateVertexPathCode(): string {
+    if (this.vertices.length < 2) return '';
+
+    let code = '    // Draw vertex path\n    c.begin();\n';
+    code += `    c.moveTo(${this.vertices[0].x}, ${this.vertices[0].y});\n`;
+
+    for (let i = 1; i < this.vertices.length; i++) {
+      code += `    c.lineTo(${this.vertices[i].x}, ${this.vertices[i].y});\n`;
+    }
+
+    code += '    c.fillAndStroke();\n\n';
+    return code;
+  }
+
+  /**
+   * @brief Generate combined shape class code
+   */
+  private generateShapeClassCodeCombined(className: string, pathCode: string, fill: string, stroke: string, strokeWidth: number): string {
     return `import { Shape } from '@maxgraph/core';
 
 /**
@@ -630,16 +537,12 @@ export class ${className} extends Shape {
   override paintVertexShape(c: any, x: number, y: number, w: number, h: number) {
     c.translate(x, y);
 
-    // Parse and render SVG path
-    const svgPath = '${svgPath}';
-    const scale = { x: w / 100, y: h / 100 }; // Adjust for vertex size
+    const scale = { x: w / 300, y: h / 300 };
 
-    ${this.generatePathRenderingCode(svgPath)}
-
+${pathCode}
     c.setFillColor('${fill}');
     c.setStrokeColor('${stroke}');
     c.setStrokeWidth(${strokeWidth});
-    c.fillAndStroke();
   }
 }
 
@@ -647,58 +550,6 @@ export class ${className} extends Shape {
 import { CellRenderer } from '@maxgraph/core';
 CellRenderer.registerShape('custom${className}', ${className} as any);
 `;
-  }
-
-  /**
-   * @brief Generate path rendering code from SVG path
-   */
-  private generatePathRenderingCode(svgPath: string): string {
-    // Parse SVG path and generate canvas drawing code
-    const commands = svgPath.match(/[MLHVCSQTAZmlhvcsqtaz][^MLHVCSQTAZmlhvcsqtaz]*/g) || [];
-
-    let code = '// Draw SVG path\n    c.begin();\n';
-
-    commands.forEach((cmd) => {
-      const type = cmd[0];
-      const coords = cmd
-        .substring(1)
-        .trim()
-        .split(/[\s,]+/)
-        .map((v) => parseFloat(v));
-
-      switch (type.toUpperCase()) {
-        case 'M': // Move to
-          if (coords.length >= 2) {
-            code += `    c.moveTo(${coords[0]} * scale.x, ${coords[1]} * scale.y);\n`;
-          }
-          break;
-        case 'L': // Line to
-          if (coords.length >= 2) {
-            code += `    c.lineTo(${coords[0]} * scale.x, ${coords[1]} * scale.y);\n`;
-          }
-          break;
-        case 'C': // Cubic bezier
-          if (coords.length >= 6) {
-            code += `    c.curveTo(${coords[0]} * scale.x, ${coords[1]} * scale.y, ${coords[2]} * scale.x, ${coords[3]} * scale.y, ${coords[4]} * scale.x, ${coords[5]} * scale.y);\n`;
-          }
-          break;
-        case 'Q': // Quadratic bezier
-          if (coords.length >= 4) {
-            code += `    c.quadTo(${coords[0]} * scale.x, ${coords[1]} * scale.y, ${coords[2]} * scale.x, ${coords[3]} * scale.y);\n`;
-          }
-          break;
-        case 'A': // Arc
-          if (coords.length >= 7) {
-            code += `    c.arcTo(${coords[0]} * scale.x, ${coords[1]} * scale.y, ${coords[5]} * scale.x, ${coords[6]} * scale.y);\n`;
-          }
-          break;
-        case 'Z': // Close path
-          code += '    c.close();\n';
-          break;
-      }
-    });
-
-    return code;
   }
 
   /**
@@ -712,39 +563,56 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
   }
 
   /**
-   * @brief Switch editor mode
+   * @brief Update selected element from UI inputs
    */
-  private switchMode(mode: string): void {
-    const palette = this.modal?.querySelector('.shape-palette') as HTMLElement;
-    const drawHelp = this.modal?.querySelector('.draw-help') as HTMLElement;
-    const composeHelp = this.modal?.querySelector('.compose-help') as HTMLElement;
-    const drawControls = this.modal?.querySelector('.draw-controls') as HTMLElement;
-    const composeControls = this.modal?.querySelector('.compose-controls') as HTMLElement;
+  private updateSelectedElement(): void {
+    if (!this.selectedElement) return;
 
-    if (mode === 'draw') {
-      this.drawMode = true;
-      if (palette) palette.style.display = 'none';
-      if (drawHelp) drawHelp.style.display = 'block';
-      if (composeHelp) composeHelp.style.display = 'none';
-      if (drawControls) drawControls.style.display = 'flex';
-      if (composeControls) composeControls.style.display = 'none';
-    } else if (mode === 'compose') {
-      this.drawMode = false;
-      if (palette) palette.style.display = 'block';
-      if (drawHelp) drawHelp.style.display = 'none';
-      if (composeHelp) composeHelp.style.display = 'block';
-      if (drawControls) drawControls.style.display = 'none';
-      if (composeControls) composeControls.style.display = 'flex';
-      this.setupDragAndDrop();
-      this.redrawCanvas();
-    } else if (mode === 'edit') {
-      this.drawMode = false;
-      if (palette) palette.style.display = 'none';
-      if (drawHelp) drawHelp.style.display = 'none';
-      if (composeHelp) composeHelp.style.display = 'none';
-      if (drawControls) drawControls.style.display = 'flex';
-      if (composeControls) composeControls.style.display = 'none';
+    const xInput = this.modal?.querySelector('#element-x') as HTMLInputElement;
+    const yInput = this.modal?.querySelector('#element-y') as HTMLInputElement;
+    const widthInput = this.modal?.querySelector('#element-width') as HTMLInputElement;
+    const heightInput = this.modal?.querySelector('#element-height') as HTMLInputElement;
+    const fillInput = this.modal?.querySelector('#element-fill') as HTMLInputElement;
+    const strokeInput = this.modal?.querySelector('#element-stroke') as HTMLInputElement;
+    const strokeWidthInput = this.modal?.querySelector('#element-stroke-width') as HTMLInputElement;
+
+    if (xInput) this.selectedElement.x = parseInt(xInput.value) || this.selectedElement.x;
+    if (yInput) this.selectedElement.y = parseInt(yInput.value) || this.selectedElement.y;
+    if (widthInput) this.selectedElement.width = parseInt(widthInput.value) || this.selectedElement.width;
+    if (heightInput) this.selectedElement.height = parseInt(heightInput.value) || this.selectedElement.height;
+    if (fillInput) this.selectedElement.fill = fillInput.value;
+    if (strokeInput) this.selectedElement.stroke = strokeInput.value;
+    if (strokeWidthInput) this.selectedElement.strokeWidth = parseFloat(strokeWidthInput.value) || this.selectedElement.strokeWidth;
+
+    this.redrawCanvas();
+    this.generateVertexCodeFromComposition();
+  }
+
+  /**
+   * @brief Display selected element properties in UI
+   */
+  private displaySelectedElementProperties(): void {
+    const elementProps = this.modal?.querySelector('.element-properties') as HTMLElement;
+    const shapeProps = this.modal?.querySelector('.shape-properties') as HTMLElement;
+
+    if (!elementProps || !shapeProps) return;
+
+    if (!this.selectedElement) {
+      elementProps.style.display = 'none';
+      shapeProps.style.display = 'block';
+      return;
     }
+
+    shapeProps.style.display = 'none';
+    elementProps.style.display = 'block';
+
+    (this.modal?.querySelector('#element-x') as HTMLInputElement).value = this.selectedElement.x.toString();
+    (this.modal?.querySelector('#element-y') as HTMLInputElement).value = this.selectedElement.y.toString();
+    (this.modal?.querySelector('#element-width') as HTMLInputElement).value = this.selectedElement.width.toString();
+    (this.modal?.querySelector('#element-height') as HTMLInputElement).value = this.selectedElement.height.toString();
+    (this.modal?.querySelector('#element-fill') as HTMLInputElement).value = this.selectedElement.fill;
+    (this.modal?.querySelector('#element-stroke') as HTMLInputElement).value = this.selectedElement.stroke;
+    (this.modal?.querySelector('#element-stroke-width') as HTMLInputElement).value = this.selectedElement.strokeWidth.toString();
   }
 
   /**
@@ -846,6 +714,7 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
       this.draggingElement = null;
       this.dragStart = null;
       this.generateVertexCodeFromComposition();
+      this.displaySelectedElementProperties();
     });
   }
 
@@ -868,6 +737,7 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
     this.shapeElements.push(element);
     this.selectedElement = element;
     this.redrawCanvas();
+    this.displaySelectedElementProperties();
   }
 
   /**
