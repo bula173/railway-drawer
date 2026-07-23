@@ -507,9 +507,7 @@ export class InteractiveUIController {
       this.graph.refresh();
     });
 
-    document.getElementById('btn-group')?.addEventListener('click', () => {
-      console.log('[UI] Group - Not yet implemented');
-    });
+    // NOTE: Group/Ungroup are handled by GroupingController to avoid duplicates
 
     document.getElementById('btn-copySize')?.addEventListener('click', () => {
       const cells = this.graph.getSelectionCells();

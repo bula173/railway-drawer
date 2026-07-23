@@ -3,4 +3,4 @@
  * All basic geometric shapes and extended shapes
  */
 
-export { registerBasicShapes } from './registry';
+export { registerBasicShapes, registerBasicShapeClasses } from './registry';

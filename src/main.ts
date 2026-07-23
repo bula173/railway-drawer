@@ -31,6 +31,8 @@ import { ShapeDesignerController } from './ui/shape-designer';
 import { CustomShapeToolbar } from './ui/custom-shape-toolbar';
 import { globalNotificationManager } from './ui/notification';
 import { globalSaveStatusIndicator } from './ui/save-status';
+import { ServiceRegistry } from './services/service-registry';
+import { globalErrorHandler } from './services/error-handler';
 
 /**
  * @brief Register all built-in shape definitions
@@ -39,10 +41,10 @@ import { globalSaveStatusIndicator } from './ui/save-status';
  */
 try {
   registerShapes();
-  globalNotificationManager.success('Railway Drawer ready');
+  globalNotificationManager.success('✓ Railway Drawer initialized');
 } catch (error) {
-  console.error('Failed to register shapes:', error);
-  globalNotificationManager.error('Failed to initialize shapes');
+  globalErrorHandler.handleShapeError(error instanceof Error ? error : new Error(String(error)), true);
+  globalNotificationManager.error('Failed to load shapes - some shapes may be unavailable');
 }
 
 /**
@@ -79,7 +81,12 @@ new ResizablePanels();
  * The active tab provides access to the graph instance and command services.
  */
 const tabManager = new TabManager('tabs-container', 'graph-container');
-(window as any).__tabManager = tabManager;
+// Register with service registry instead of polluting window object
+ServiceRegistry.setTabManager(tabManager);
+ServiceRegistry.setNotificationManager(globalNotificationManager);
+ServiceRegistry.setSaveStatusIndicator(globalSaveStatusIndicator);
+// Register error handler (it's active via global event listeners)
+ServiceRegistry.register('errorHandler', globalErrorHandler);
 
 /**
  * @brief Restore previous session from cache or create new diagram
@@ -366,8 +373,9 @@ if (activeTabForShapes) {
     customShapeToolbar.refresh();
   });
 
-  (window as any).__shapeDesigner = shapeDesigner;
-  (window as any).__customShapeToolbar = customShapeToolbar;
+  // Services are registered in ServiceRegistry, no need for window globals
+  ServiceRegistry.register('shapeDesigner', shapeDesigner);
+  ServiceRegistry.register('customShapeToolbar', customShapeToolbar);
 }
 
 /**

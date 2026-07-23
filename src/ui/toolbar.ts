@@ -1,36 +1,20 @@
-import { Graph } from '@maxgraph/core';
-
 export class ToolbarController {
-  private graph: Graph;
-
-  constructor(graph: Graph) {
-    this.graph = graph;
+  constructor() {
     this.setupHandlers();
   }
 
   private setupHandlers() {
-    document.getElementById('btn-zoom-in')?.addEventListener('click', () => {
-      this.graph.zoomIn();
+    // NOTE: Zoom handlers are managed by ZoomController to avoid duplicates
+    // NOTE: Undo/Redo are handled by UndoRedoController and keyboard shortcuts
+
+    // Format Painter (stub for future implementation)
+    document.getElementById('btn-format-painter')?.addEventListener('click', () => {
+      console.log('[Toolbar] Format Painter - Not yet implemented');
     });
 
-    document.getElementById('btn-zoom-out')?.addEventListener('click', () => {
-      this.graph.zoomOut();
-    });
-
-    document.getElementById('btn-fit')?.addEventListener('click', () => {
-      this.graph.fit(20);
-    });
-
-    document.getElementById('btn-reset-zoom')?.addEventListener('click', () => {
-      this.graph.zoomActual();
-    });
-
-    document.getElementById('btn-undo')?.addEventListener('click', () => {
-      // TODO: Implement undo
-    });
-
-    document.getElementById('btn-redo')?.addEventListener('click', () => {
-      // TODO: Implement redo
+    // More Options (stub for future implementation)
+    document.getElementById('btn-more-options')?.addEventListener('click', () => {
+      console.log('[Toolbar] More Options - Not yet implemented');
     });
   }
 }

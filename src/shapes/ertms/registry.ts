@@ -2,7 +2,24 @@
  * ERTMS (European Rail Traffic Management System) shapes registry
  */
 
+import { CellRenderer } from '@maxgraph/core';
 import { shapeRegistry } from '../registry';
+import {
+  ERTMSSignalShape,
+  SingleBaliseShape,
+  BaliseGroupShape,
+  ERTMSMarkerShape,
+} from './shapes';
+
+/**
+ * Register all ERTMS shape classes with CellRenderer
+ */
+export function registerErtmsShapeClasses(): void {
+  CellRenderer.defaultShapes['customERTMSSignal'] = ERTMSSignalShape as any;
+  CellRenderer.defaultShapes['customSingleBalise'] = SingleBaliseShape as any;
+  CellRenderer.defaultShapes['customBaliseGroup'] = BaliseGroupShape as any;
+  CellRenderer.defaultShapes['customERTMSMarker'] = ERTMSMarkerShape as any;
+}
 
 export function registerErtmsShapes(): void {
   shapeRegistry.register({
@@ -91,5 +108,49 @@ export function registerErtmsShapes(): void {
     width: 100,
     height: 50,
     style: { shape: 'customERTMSSectionMarker', fillColor: '#ffc107', strokeColor: '#ff8f00', strokeWidth: 2 },
+  });
+
+  shapeRegistry.register({
+    id: 'ertms-signal',
+    type: 'vertex',
+    label: 'ERTMS Signal',
+    group: 'ERTMS',
+    icon: '🚦',
+    width: 60,
+    height: 100,
+    style: { shape: 'customERTMSSignal', fillColor: 'none', strokeColor: '#000000', strokeWidth: 2 },
+  });
+
+  shapeRegistry.register({
+    id: 'ertms-single-balise',
+    type: 'vertex',
+    label: 'Single Balise',
+    group: 'ERTMS',
+    icon: '◀',
+    width: 50,
+    height: 40,
+    style: { shape: 'customSingleBalise', fillColor: '#1976d2', strokeColor: '#0d47a1', strokeWidth: 2 },
+  });
+
+  shapeRegistry.register({
+    id: 'ertms-balise-group',
+    type: 'vertex',
+    label: 'Balise Group',
+    group: 'ERTMS',
+    icon: '◀◀',
+    width: 90,
+    height: 40,
+    style: { shape: 'customBaliseGroup', fillColor: '#1976d2', strokeColor: '#0d47a1', strokeWidth: 2 },
+  });
+
+  shapeRegistry.register({
+    id: 'ertms-marker',
+    type: 'vertex',
+    label: 'ERTMS Marker',
+    group: 'ERTMS',
+    icon: '▼',
+    width: 50,
+    height: 60,
+    style: { shape: 'customERTMSMarker', fillColor: '#ff6b6b', strokeColor: '#cc0000', strokeWidth: 2 },
   });
 }

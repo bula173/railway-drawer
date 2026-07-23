@@ -75,6 +75,8 @@
           <div class="menu-item-container">
             <button class="menu-item" data-menu="extras">Extras</button>
             <div class="menu-dropdown" data-menu="extras" style="display: none;">
+              <div class="menu-dropdown-item" data-action="designShapes">✏️📐 Design Custom Shapes</div>
+              <div style="height: 1px; background: #e0e0e0; margin: 4px 0;"></div>
               <div class="menu-dropdown-item" data-action="editData">Edit Data</div>
               <div class="menu-dropdown-item" data-action="editStyle">Edit Style</div>
               <div style="height: 1px; background: #e0e0e0; margin: 4px 0;"></div>
@@ -150,6 +152,7 @@
         <!-- Right Section: View Options -->
         <div class="toolbar-section">
           <button class="toolbar-btn" id="btn-fullscreen" title="Fullscreen">⛶</button>
+          <button class="toolbar-btn" id="btn-shape-designer" title="Design custom shapes">✏️📐</button>
           <button class="toolbar-btn" id="btn-more-options" title="More options">⋮</button>
         </div>
       </div>
@@ -329,8 +332,15 @@
                       <label style="display: flex; align-items: center; gap: 6px; cursor: pointer; margin-bottom: 8px;">
                         <input type="checkbox" id="prop-useFill" checked style="cursor: pointer;" />
                         <span style="font-weight: 600; color: #333;">Fill</span>
-                        <select id="prop-fillType" style="margin-left: auto; padding: 4px 8px; border: 1px solid #ccc; border-radius: 3px; font-size: 11px;">
-                          <option value="solid">Automatic</option>
+                      </label>
+                      <div style="display: flex; gap: 6px; margin-bottom: 8px;">
+                        <input type="color" id="prop-fillColor" value="#ffffff" style="width: 50px; height: 36px; cursor: pointer; border: 1px solid #ccc; border-radius: 3px;" />
+                        <input type="text" id="prop-fillColorText" value="#ffffff" style="flex: 1; padding: 6px; border: 1px solid #ccc; border-radius: 3px; font-size: 12px; box-sizing: border-box;" />
+                      </div>
+                      <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+                        <span style="font-weight: 600; color: #333; font-size: 12px;">Type:</span>
+                        <select id="prop-fillType" style="flex: 1; padding: 4px 8px; border: 1px solid #ccc; border-radius: 3px; font-size: 11px;">
+                          <option value="solid">Solid</option>
                           <option value="gradient">Gradient</option>
                         </select>
                       </label>
@@ -489,7 +499,10 @@
                   <!-- Misc Buttons -->
                   <div style="margin-bottom: 0;">
                     <button id="btn-snap-to-grid" style="width: 100%; padding: 8px; margin-bottom: 6px; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; cursor: pointer; font-size: 12px; font-weight: 500;">Snap to Grid</button>
-                    <button id="btn-group" style="width: 100%; padding: 8px; margin-bottom: 6px; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; cursor: pointer; font-size: 12px; font-weight: 500;">Group</button>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 6px;">
+                      <button id="btn-group" style="padding: 8px; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; cursor: pointer; font-size: 12px; font-weight: 500;">Group</button>
+                      <button id="btn-ungroup" style="padding: 8px; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; cursor: pointer; font-size: 12px; font-weight: 500;">Ungroup</button>
+                    </div>
                     <button id="btn-copySize" style="width: 100%; padding: 8px; margin-bottom: 6px; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; cursor: pointer; font-size: 12px; font-weight: 500;">Copy Size</button>
                     <button id="btn-lock" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; cursor: pointer; font-size: 12px; font-weight: 500;">Lock</button>
                   </div>
@@ -510,6 +523,14 @@
           <div class="status-item">
             <span class="status-label">Version:</span>
             <span class="status-value" id="status-version">0.6.0</span>
+          </div>
+          <div class="status-item">
+            <span class="status-label">Build:</span>
+            <span class="status-value" id="status-build">dev</span>
+          </div>
+          <div class="status-item">
+            <span class="status-label">Built:</span>
+            <span class="status-value" id="status-build-date">-</span>
           </div>
           <div class="status-item">
             <span class="status-label">Zoom:</span>
@@ -538,6 +559,9 @@
       <div class="context-menu-item" data-action="toBack" style="padding: 8px 12px; cursor: pointer;">To Back</div>
       <div class="context-menu-item" data-action="bringForward" style="padding: 8px 12px; cursor: pointer;">Bring Forward</div>
       <div class="context-menu-item" data-action="sendBackward" style="padding: 8px 12px; cursor: pointer;">Send Backward</div>
+      <div style="height: 1px; background: #e0e0e0; margin: 4px 0;"></div>
+      <div class="context-menu-item" data-action="group" style="padding: 8px 12px; cursor: pointer;">Group</div>
+      <div class="context-menu-item" data-action="ungroup" style="padding: 8px 12px; cursor: pointer;">Ungroup</div>
       <div style="height: 1px; background: #e0e0e0; margin: 4px 0;"></div>
       <div class="context-menu-item" data-action="editStyle" style="padding: 8px 12px; cursor: pointer;">Edit Style...</div>
       <div class="context-menu-item" data-action="editData" style="padding: 8px 12px; cursor: pointer;">Edit Data...</div>

@@ -4,4 +4,4 @@
  */
 
 export { svgArrows } from './svg-arrows';
-export { registerArrowShapes } from './registry';
+export { registerArrowShapes, registerArrowShapeClasses } from './registry';

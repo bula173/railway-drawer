@@ -58,4 +58,20 @@ export class StatusBarController {
       }, duration);
     }
   }
+
+  setBuildId(buildId: string): void {
+    const buildEl = document.getElementById('status-build');
+    if (buildEl) {
+      buildEl.textContent = buildId;
+      buildEl.title = `Build ID: ${buildId}`;
+    }
+  }
+
+  setBuildDate(buildDate: string): void {
+    const buildDateEl = document.getElementById('status-build-date');
+    if (buildDateEl) {
+      buildDateEl.textContent = buildDate;
+      buildDateEl.title = `Build time: ${buildDate}`;
+    }
+  }
 }

@@ -1,4 +1,12 @@
-import { CellRenderer } from '@maxgraph/core';
+import { CellRenderer, StyleRegistry } from '@maxgraph/core';
+import {
+  wideArrowPerimeter,
+  thinArrowPerimeter,
+  doubleArrowPerimeter,
+  splitArrowPerimeter,
+  chevronArrowPerimeter,
+  loopArrowPerimeter,
+} from './arrows/perimeter';
 import { ArrowShape } from './arrows/arrow';
 import { LineShape } from './basic/line';
 import { CloudShape } from './cloud/cloud';
@@ -20,8 +28,8 @@ import { UmlLifelineShape, UmlActivationBoxShape, UmlMessageArrowShape, UmlCombi
 import { HexagonShape, PentagonShape, StarShape, TrapezoidShape, CrossShape, CylinderShape, SimpleArrowShape, OvalShape, DoubleRectangleShape, ParallelogramShape, DelayShape, ChevronShape, RightAngleShape, LozengeShape, RoundedRectangleShape } from './basic/basic-shapes';
 import { RailShape, SignalShape, SwitchShape, JunctionShape, PlatformShape, StationShape, CrossingShape, TunnelShape, BufferShape, CabinShape, LTAShape, LTOShape, DetectionPointShape, TrackSectionShape, VerticalConnectorShape, EOLMarkerShape, RailLevelShape, SlopedTrackShape, TrainShape, SignalHeadShape, RBCShape, CommunicationLineShape, EBSectionShape, WaysideEquipmentShape, TrackCircuitShape, ERTMSLevelMarkerShape, SpeedRestrictionMarkerShape, ERTMSBaliseShape, ERTMSLevelCrossingShape, ERTMSHandoverPointShape, NationalTransitionPointShape, ERTMSTransponderShape, ERTMSSectionMarkerShape } from './railway/railway-shapes';
 import { ImageShape } from './custom/image-shape';
-import { registerArrowShapes } from './arrows';
-import { registerBasicShapes } from './basic';
+import { registerArrowShapes, registerArrowShapeClasses } from './arrows';
+import { registerBasicShapes, registerBasicShapeClasses } from './basic';
 import { registerFlowchartShapes } from './flowchart';
 import { registerCloudShapes } from './cloud';
 import { registerDfdShapes } from './dfd';
@@ -30,10 +38,18 @@ import { registerNetworkShapes } from './network';
 import { registerBpmnShapes } from './bpmn';
 import { registerUmlShapes } from './uml';
 import { registerRailwayShapes } from './railway';
-import { registerErtmsShapes } from './ertms';
+import { registerErtmsShapes, registerErtmsShapeClasses } from './ertms';
 import { registerCustomShapes } from './custom';
 
 export function registerShapes() {
+  // Register perimeter functions with StyleRegistry for SVG arrow shapes
+  StyleRegistry.putValue('wideArrowPerimeter', wideArrowPerimeter);
+  StyleRegistry.putValue('thinArrowPerimeter', thinArrowPerimeter);
+  StyleRegistry.putValue('doubleArrowPerimeter', doubleArrowPerimeter);
+  StyleRegistry.putValue('splitArrowPerimeter', splitArrowPerimeter);
+  StyleRegistry.putValue('chevronArrowPerimeter', chevronArrowPerimeter);
+  StyleRegistry.putValue('loopArrowPerimeter', loopArrowPerimeter);
+
   // Register basic vertex-based shapes with CellRenderer
   CellRenderer.registerShape('customHexagon', HexagonShape as any);
   CellRenderer.registerShape('customPentagon', PentagonShape as any);
@@ -126,9 +142,11 @@ export function registerShapes() {
   CellRenderer.registerShape('customImage', ImageShape as any);
 
   // Register all shape groups via their registry functions
+  registerBasicShapeClasses();
   registerBasicShapes();
-  registerFlowchartShapes();
+  registerArrowShapeClasses();
   registerArrowShapes();
+  registerFlowchartShapes();
   registerCloudShapes();
   registerDfdShapes();
   registerC4Shapes();
@@ -136,6 +154,7 @@ export function registerShapes() {
   registerBpmnShapes();
   registerUmlShapes();
   registerRailwayShapes();
+  registerErtmsShapeClasses();
   registerErtmsShapes();
   registerCustomShapes();
 }

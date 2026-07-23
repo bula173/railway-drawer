@@ -135,8 +135,9 @@ export class SaveLoadController {
       const cell = cells[cellId];
       if (cell && cell.style && typeof cell.style === 'string') {
         // Check if this cell has an SVG data URL
-        const match = cell.style.match(/image=([^;]*);/);
-        if (match && match[1].startsWith('data:image/svg+xml')) {
+        // Pattern: image=data:image/svg+xml;base64,...; (matches the entire image property)
+        const match = cell.style.match(/image=data:image\/svg\+xml[^;]*;?/);
+        if (match) {
           svgShapes.set(cellId, match[0]);
           // Remove the image property from the style
           cell.style = cell.style.replace(match[0], '');

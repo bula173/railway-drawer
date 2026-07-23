@@ -6,12 +6,17 @@ export class MenuController {
   private graph: Graph;
   private commandService: GraphCommandService;
   private saveLoadController: SaveLoadController;
+  private alignmentController: any;
 
   constructor(graph: Graph, commandService: GraphCommandService, saveLoadController: SaveLoadController) {
     this.graph = graph;
     this.commandService = commandService;
     this.saveLoadController = saveLoadController;
     this.setupMenus();
+  }
+
+  setAlignmentController(controller: any): void {
+    this.alignmentController = controller;
   }
 
   private setupMenus() {
@@ -319,15 +324,25 @@ export class MenuController {
         break;
 
       case 'alignLeft':
-        console.log('[Menu] Align Left - Not yet implemented');
+        if (this.alignmentController) {
+          this.alignmentController.alignLeft();
+        }
         break;
 
       case 'alignCenter':
-        console.log('[Menu] Align Center - Not yet implemented');
+        if (this.alignmentController) {
+          this.alignmentController.alignCenter();
+        }
         break;
 
       case 'alignRight':
-        console.log('[Menu] Align Right - Not yet implemented');
+        if (this.alignmentController) {
+          this.alignmentController.alignRight();
+        }
+        break;
+
+      case 'designShapes':
+        window.dispatchEvent(new CustomEvent('open-shape-designer'));
         break;
 
       case 'editData':

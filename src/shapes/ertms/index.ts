@@ -2,4 +2,4 @@
  * ERTMS shapes group
  */
 
-export { registerErtmsShapes } from './registry';
+export { registerErtmsShapes, registerErtmsShapeClasses } from './registry';

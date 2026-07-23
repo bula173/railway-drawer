@@ -1,9 +1,51 @@
+/**
+ * @file properties.ts
+ * @brief Properties panel for editing selected cell properties
+ * @details
+ * Provides a comprehensive UI for editing properties of selected cells including:
+ * - Text and font properties (family, size, color, alignment)
+ * - Position and size (x, y, width, height)
+ * - Styling (fill color, stroke, opacity, shadow, rounded corners)
+ * - Transformations (rotation, flip horizontal/vertical)
+ * - Z-order (bring forward, send backward, to front, to back)
+ * - Cell locking state
+ *
+ * The panel automatically updates when selection changes and applies changes
+ * directly to the graph model with immediate visual feedback.
+ */
+
 import { Graph } from '@maxgraph/core';
 
+/**
+ * @class PropertiesPanel
+ * @brief Inspector panel for editing cell properties
+ * @details
+ * Manages a multi-tab properties panel that displays and allows editing of:
+ * - Text properties (content, font, color)
+ * - Geometry (position, size, rotation)
+ * - Style (fill, stroke, opacity, effects)
+ * - Transforms (flip, rotation)
+ * - Z-order
+ *
+ * The panel listens to selection changes and updates its UI to reflect
+ * the properties of the currently selected cell. All changes are applied
+ * to the graph model immediately.
+ *
+ * @note Placeholder is shown when nothing is selected; editor shows when a cell is selected
+ */
 export class PropertiesPanel {
+  /** @brief Reference to the maxGraph instance */
   private graph: Graph;
+  /** @brief Currently selected cell being edited */
   private currentCell: any = null;
 
+  /**
+   * @brief Initialize properties panel
+   * @param {Graph} graph - The maxGraph instance to edit
+   * @details
+   * Sets up the panel UI, tab buttons, collapsible sections, and event listeners.
+   * Automatically updates when the selection in the graph changes.
+   */
   constructor(graph: Graph) {
     this.graph = graph;
     this.setupTabButtons();
@@ -15,6 +57,13 @@ export class PropertiesPanel {
     });
   }
 
+  /**
+   * @brief Update panel to reflect currently selected cell
+   * @details
+   * Refreshes all input fields to show the properties of the currently selected cell.
+   * If multiple cells are selected, uses the first one. If nothing is selected,
+   * shows the placeholder message.
+   */
   update() {
     const cells = this.graph.getSelectionCells();
     if (cells.length === 0) {
@@ -78,6 +127,12 @@ export class PropertiesPanel {
     // Style
     const fillCheckbox = document.getElementById('prop-useFill') as HTMLInputElement;
     if (fillCheckbox) fillCheckbox.checked = style.fillColor && style.fillColor !== 'none';
+
+    const fillColor = document.getElementById('prop-fillColor') as HTMLInputElement;
+    const fillColorText = document.getElementById('prop-fillColorText') as HTMLInputElement;
+    const displayColor = style.fillColor && style.fillColor !== 'none' ? style.fillColor : '#ffffff';
+    if (fillColor) fillColor.value = displayColor;
+    if (fillColorText) fillColorText.value = displayColor;
 
     const lineCheckbox = document.getElementById('prop-useLine') as HTMLInputElement;
     if (lineCheckbox) lineCheckbox.checked = style.strokeColor && style.strokeColor !== 'none';
@@ -178,6 +233,14 @@ export class PropertiesPanel {
       this.graph.refresh();
     });
 
+    document.getElementById('prop-fontColorBtn')?.addEventListener('change', (e) => {
+      const value = (e.target as HTMLInputElement).value;
+      const style = this.graph.getCellStyle(this.currentCell);
+      style.fontColor = value;
+      this.graph.model.setStyle(this.currentCell, style);
+      this.graph.refresh();
+    });
+
     // Alignment
     document.querySelector('.align-left')?.addEventListener('click', () => {
       const style = this.graph.getCellStyle(this.currentCell) as any;
@@ -217,6 +280,37 @@ export class PropertiesPanel {
     document.querySelector('.valign-bottom')?.addEventListener('click', () => {
       const style = this.graph.getCellStyle(this.currentCell) as any;
       style.verticalAlign = 'bottom';
+      this.graph.model.setStyle(this.currentCell, style);
+      this.graph.refresh();
+    });
+
+    // Fill Color
+    document.getElementById('prop-fillColor')?.addEventListener('change', (e) => {
+      const value = (e.target as HTMLInputElement).value;
+      const style = this.graph.getCellStyle(this.currentCell);
+      style.fillColor = value;
+      this.graph.model.setStyle(this.currentCell, style);
+      // Update text input
+      const textInput = document.getElementById('prop-fillColorText') as HTMLInputElement;
+      if (textInput) textInput.value = value;
+      this.graph.refresh();
+    });
+
+    document.getElementById('prop-fillColorText')?.addEventListener('change', (e) => {
+      const value = (e.target as HTMLInputElement).value;
+      const style = this.graph.getCellStyle(this.currentCell);
+      style.fillColor = value;
+      this.graph.model.setStyle(this.currentCell, style);
+      // Update color picker
+      const colorInput = document.getElementById('prop-fillColor') as HTMLInputElement;
+      if (colorInput) colorInput.value = value;
+      this.graph.refresh();
+    });
+
+    document.getElementById('prop-useFill')?.addEventListener('change', (e) => {
+      const checked = (e.target as HTMLInputElement).checked;
+      const style = this.graph.getCellStyle(this.currentCell);
+      style.fillColor = checked ? (style.fillColor || '#ffffff') : 'none';
       this.graph.model.setStyle(this.currentCell, style);
       this.graph.refresh();
     });
@@ -278,12 +372,26 @@ export class PropertiesPanel {
 
     document.getElementById('prop-w')?.addEventListener('change', (e) => {
       const value = parseInt((e.target as HTMLInputElement).value);
+      const constrainProportions = (document.getElementById('prop-constrainProportions') as HTMLInputElement)?.checked;
+
+      if (constrainProportions && geo!.height > 0) {
+        const aspectRatio = geo!.height / geo!.width;
+        geo!.height = value * aspectRatio;
+      }
+
       geo!.width = value;
       this.graph.refresh();
     });
 
     document.getElementById('prop-h')?.addEventListener('change', (e) => {
       const value = parseInt((e.target as HTMLInputElement).value);
+      const constrainProportions = (document.getElementById('prop-constrainProportions') as HTMLInputElement)?.checked;
+
+      if (constrainProportions && geo!.width > 0) {
+        const aspectRatio = geo!.width / geo!.height;
+        geo!.width = value * aspectRatio;
+      }
+
       geo!.height = value;
       this.graph.refresh();
     });
@@ -295,6 +403,11 @@ export class PropertiesPanel {
       style.rotation = value;
       this.graph.model.setStyle(this.currentCell, style);
       this.graph.refresh();
+    });
+
+    // Constrain Proportions
+    document.getElementById('prop-constrainProportions')?.addEventListener('change', () => {
+      // No action needed - the state is read when width/height change
     });
 
     // Rotate 90
