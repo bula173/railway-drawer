@@ -25,6 +25,7 @@ import { UmlComponentShape, UmlArtifactShape } from './uml/uml-component';
 import { UmlPackageShape, UmlObjectShape } from './uml/uml-package';
 import { UmlActivityShape, UmlForkJoinShape, UmlDecisionShape, UmlMergeShape } from './uml/uml-activity';
 import { UmlLifelineShape, UmlActivationBoxShape, UmlMessageArrowShape, UmlCombinedFragmentShape, UmlInteractionUseShape, UmlNoteShape } from './uml/uml-sequence';
+import { PlantUmlBoundaryShape, PlantUmlControlShape, PlantUmlEntityShape, PlantUmlDatabaseShape, PlantUmlCollectionsShape, PlantUmlQueueShape, PlantUmlParticipantShape } from './uml/plantuml-shapes';
 import { HexagonShape, PentagonShape, StarShape, TrapezoidShape, CrossShape, CylinderShape, SimpleArrowShape, OvalShape, DoubleRectangleShape, ParallelogramShape, DelayShape, ChevronShape, RightAngleShape, LozengeShape, RoundedRectangleShape } from './basic/basic-shapes';
 import { RailShape, SignalShape, SwitchShape, JunctionShape, PlatformShape, StationShape, CrossingShape, TunnelShape, BufferShape, CabinShape, LTAShape, LTOShape, DetectionPointShape, TrackSectionShape, VerticalConnectorShape, EOLMarkerShape, RailLevelShape, SlopedTrackShape, TrainShape, SignalHeadShape, RBCShape, CommunicationLineShape, EBSectionShape, WaysideEquipmentShape, TrackCircuitShape, ERTMSLevelMarkerShape, SpeedRestrictionMarkerShape, ERTMSBaliseShape, ERTMSLevelCrossingShape, ERTMSHandoverPointShape, NationalTransitionPointShape, ERTMSTransponderShape, ERTMSSectionMarkerShape } from './railway/railway-shapes';
 import { ImageShape } from './custom/image-shape';
@@ -100,6 +101,15 @@ export function registerShapes() {
   CellRenderer.registerShape('customUmlCombinedFragment', UmlCombinedFragmentShape as any);
   CellRenderer.registerShape('customUmlInteractionUse', UmlInteractionUseShape as any);
   CellRenderer.registerShape('customUmlNote', UmlNoteShape as any);
+
+  // Register PlantUML participant shapes
+  CellRenderer.registerShape('customPlantUmlParticipant', PlantUmlParticipantShape as any);
+  CellRenderer.registerShape('customPlantUmlBoundary', PlantUmlBoundaryShape as any);
+  CellRenderer.registerShape('customPlantUmlControl', PlantUmlControlShape as any);
+  CellRenderer.registerShape('customPlantUmlEntity', PlantUmlEntityShape as any);
+  CellRenderer.registerShape('customPlantUmlDatabase', PlantUmlDatabaseShape as any);
+  CellRenderer.registerShape('customPlantUmlCollections', PlantUmlCollectionsShape as any);
+  CellRenderer.registerShape('customPlantUmlQueue', PlantUmlQueueShape as any);
 
   // Register Railway shapes
   CellRenderer.registerShape('customRail', RailShape as any);

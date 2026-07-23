@@ -21,6 +21,30 @@ export class SequenceDiagramRenderer {
   }
 
   /**
+   * Get style for participant type
+   */
+  private getStyleForParticipantType(stereotype?: string): string {
+    switch (stereotype?.toLowerCase()) {
+      case 'actor':
+        return 'shape=customPlantUmlActor;fillColor=#fff2cc;strokeColor=#d6b656;shadow=0;';
+      case 'boundary':
+        return 'shape=customPlantUmlBoundary;fillColor=#e8f4f8;strokeColor=#0c5aa0;shadow=0;';
+      case 'control':
+        return 'shape=customPlantUmlControl;fillColor=#f8e8f4;strokeColor=#8b0c5a;shadow=0;';
+      case 'entity':
+        return 'shape=customPlantUmlEntity;fillColor=#f4f8e8;strokeColor=#5aa00c;shadow=0;';
+      case 'database':
+        return 'shape=customPlantUmlDatabase;fillColor=#ffe8e8;strokeColor=#a00c0c;shadow=0;';
+      case 'collections':
+        return 'shape=customPlantUmlCollections;fillColor=#e8e8f4;strokeColor=#0c0ca0;shadow=0;';
+      case 'queue':
+        return 'shape=customPlantUmlQueue;fillColor=#f4e8e8;strokeColor=#8b5a0c;shadow=0;';
+      default:
+        return 'shape=customPlantUmlParticipant;fillColor=#e8f4f8;strokeColor=#0284C7;rounded=1;shadow=0;';
+    }
+  }
+
+  /**
    * Render sequence diagram into a group
    */
   renderIntoGroup(diagramData: DiagramData, groupCell: any): void {
@@ -43,7 +67,9 @@ export class SequenceDiagramRenderer {
         const x = this.startX + index * this.lifelineSpacing;
         const y = this.startY;
 
-        // Participant box
+        const style = this.getStyleForParticipantType(participant.stereotype);
+
+        // Participant box with proper shape
         const participantCell = this.graph.insertVertex(
           parent,
           `seq_participant_${participant.id}`,
@@ -52,7 +78,7 @@ export class SequenceDiagramRenderer {
           y,
           this.participantWidth,
           this.participantHeight,
-          'rounded=1;shadow=0;fillColor=#E8F4F8;strokeColor=#0284C7;fontSize=12;fontStyle=bold;' as any
+          `${style}fontSize=12;fontStyle=bold;` as any
         );
 
         participantMap.set(participant.id, { x, y: y + this.participantHeight, cell: participantCell });
@@ -85,9 +111,9 @@ export class SequenceDiagramRenderer {
         // Draw message arrow between anchors
         const isAsync = connection.type === 'async';
         const isDashed = isAsync ? '1' : '0';
-        const style = `dashed=${isDashed};endArrow=block;fontSize=11;labelBackgroundColor=white;`;
+        const msgStyle = `dashed=${isDashed};endArrow=block;fontSize=11;labelBackgroundColor=white;`;
 
-        this.graph.insertEdge(parent, null, connection.label || '', fromAnchor, toAnchor, style as any);
+        this.graph.insertEdge(parent, null, connection.label || '', fromAnchor, toAnchor, msgStyle as any);
 
         messageAnchors.set(index, { from: fromAnchor, to: toAnchor });
       });
@@ -128,7 +154,9 @@ export class SequenceDiagramRenderer {
         const x = this.startX + index * this.lifelineSpacing;
         const y = this.startY;
 
-        // Participant box
+        const style = this.getStyleForParticipantType(participant.stereotype);
+
+        // Participant box with proper shape
         const participantCell = this.graph.insertVertex(
           parent,
           `seq_participant_${participant.id}`,
@@ -137,7 +165,7 @@ export class SequenceDiagramRenderer {
           y,
           this.participantWidth,
           this.participantHeight,
-          'rounded=1;shadow=0;fillColor=#E8F4F8;strokeColor=#0284C7;fontSize=12;fontStyle=bold;' as any
+          `${style}fontSize=12;fontStyle=bold;` as any
         );
 
         participantMap.set(participant.id, { x, y: y + this.participantHeight, cell: participantCell });
@@ -170,9 +198,9 @@ export class SequenceDiagramRenderer {
         // Draw message arrow between anchors
         const isAsync = connection.type === 'async';
         const isDashed = isAsync ? '1' : '0';
-        const style = `dashed=${isDashed};endArrow=block;fontSize=11;labelBackgroundColor=white;`;
+        const msgStyle = `dashed=${isDashed};endArrow=block;fontSize=11;labelBackgroundColor=white;`;
 
-        this.graph.insertEdge(parent, null, connection.label || '', fromAnchor, toAnchor, style as any);
+        this.graph.insertEdge(parent, null, connection.label || '', fromAnchor, toAnchor, msgStyle as any);
 
         messageAnchors.set(index, { from: fromAnchor, to: toAnchor });
       });

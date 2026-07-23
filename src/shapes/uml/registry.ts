@@ -240,4 +240,93 @@ export function registerUmlShapes(): void {
     height: 80,
     style: { shape: 'customUmlNote', fillColor: '#ffffcc', strokeColor: '#d4a500' },
   });
+
+  // PlantUML participant types
+  shapeRegistry.register({
+    id: 'plantuml_participant',
+    type: 'vertex',
+    label: 'Participant',
+    icon: '▭',
+    group: 'PlantUML',
+    width: 100,
+    height: 40,
+    style: { shape: 'customPlantUmlParticipant', fillColor: '#e8f4f8', strokeColor: '#0c5aa0' },
+  });
+
+  shapeRegistry.register({
+    id: 'plantuml_actor',
+    type: 'vertex',
+    label: 'Actor',
+    icon: '👤',
+    group: 'PlantUML',
+    width: 60,
+    height: 100,
+    style: { shape: 'customPlantUmlActor', fillColor: '#fff2cc', strokeColor: '#d6b656' },
+  });
+
+  shapeRegistry.register({
+    id: 'plantuml_boundary',
+    type: 'vertex',
+    label: 'Boundary',
+    icon: '◯',
+    group: 'PlantUML',
+    width: 80,
+    height: 100,
+    style: { shape: 'customPlantUmlBoundary', fillColor: '#e8f4f8', strokeColor: '#0c5aa0' },
+  });
+
+  shapeRegistry.register({
+    id: 'plantuml_control',
+    type: 'vertex',
+    label: 'Control',
+    icon: '◆',
+    group: 'PlantUML',
+    width: 80,
+    height: 100,
+    style: { shape: 'customPlantUmlControl', fillColor: '#f8e8f4', strokeColor: '#8b0c5a' },
+  });
+
+  shapeRegistry.register({
+    id: 'plantuml_entity',
+    type: 'vertex',
+    label: 'Entity',
+    icon: '▯',
+    group: 'PlantUML',
+    width: 80,
+    height: 100,
+    style: { shape: 'customPlantUmlEntity', fillColor: '#f4f8e8', strokeColor: '#5aa00c' },
+  });
+
+  shapeRegistry.register({
+    id: 'plantuml_database',
+    type: 'vertex',
+    label: 'Database',
+    icon: '◧',
+    group: 'PlantUML',
+    width: 80,
+    height: 100,
+    style: { shape: 'customPlantUmlDatabase', fillColor: '#ffe8e8', strokeColor: '#a00c0c' },
+  });
+
+  shapeRegistry.register({
+    id: 'plantuml_collections',
+    type: 'vertex',
+    label: 'Collections',
+    icon: '▦',
+    group: 'PlantUML',
+    width: 80,
+    height: 100,
+    style: { shape: 'customPlantUmlCollections', fillColor: '#e8e8f4', strokeColor: '#0c0ca0' },
+  });
+
+  shapeRegistry.register({
+    id: 'plantuml_queue',
+    type: 'vertex',
+    label: 'Queue',
+    icon: '▬',
+    group: 'PlantUML',
+    width: 80,
+    height: 100,
+    style: { shape: 'customPlantUmlQueue', fillColor: '#f4e8e8', strokeColor: '#8b5a0c' },
+  });
 }
