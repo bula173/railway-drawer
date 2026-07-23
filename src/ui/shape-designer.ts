@@ -26,10 +26,26 @@ interface ShapeTemplate {
   icon: string;
 }
 
+interface ShapeElement {
+  type: 'rect' | 'circle' | 'triangle' | 'line' | 'polygon';
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+  fill: string;
+  stroke: string;
+  strokeWidth: number;
+  id: string;
+}
+
 export class ShapeDesignerController {
   private modal: HTMLElement | null = null;
   private previewCanvas: HTMLCanvasElement | null = null;
   private vertices: { x: number; y: number }[] = [];
+  private shapeElements: ShapeElement[] = [];
+  private selectedElement: ShapeElement | null = null;
+  private draggingElement: ShapeElement | null = null;
+  private dragStart: { x: number; y: number } | null = null;
   private editingShapeId: string | null = null;
   private drawMode = true; // true = draw, false = edit path
 
@@ -180,18 +196,35 @@ export class ShapeDesignerController {
           <div class="designer-left">
             <div class="mode-toggle">
               <button class="mode-btn active" data-mode="draw">✏️ Draw</button>
+              <button class="mode-btn" data-mode="compose">🧩 Compose</button>
               <button class="mode-btn" data-mode="edit">✐ Edit Path</button>
+            </div>
+
+            <!-- Shape Palette for Compose Mode -->
+            <div class="shape-palette" style="display: none;">
+              <div class="palette-label">Drag shapes to canvas:</div>
+              <div class="palette-grid">
+                <button class="palette-shape" data-shape="rect" title="Rectangle">▭</button>
+                <button class="palette-shape" data-shape="circle" title="Circle">●</button>
+                <button class="palette-shape" data-shape="triangle" title="Triangle">▲</button>
+                <button class="palette-shape" data-shape="line" title="Line">—</button>
+              </div>
             </div>
 
             <div class="draw-canvas-container">
               <canvas id="shape-canvas" width="300" height="300"></canvas>
-              <div class="canvas-help">Click to add vertices</div>
+              <div class="canvas-help draw-help">Click to add vertices</div>
+              <div class="canvas-help compose-help" style="display: none;">Drag shapes from palette to canvas</div>
             </div>
 
-            <div class="canvas-controls">
+            <div class="canvas-controls draw-controls">
               <button class="btn-undo" title="Undo last vertex">↶ Undo</button>
               <button class="btn-clear" title="Clear all vertices">🗑️ Clear</button>
               <button class="btn-close-path" title="Close path">🔒 Close</button>
+            </div>
+            <div class="canvas-controls compose-controls" style="display: none;">
+              <button class="btn-delete-shape" title="Delete selected shape">🗑️ Delete</button>
+              <button class="btn-clear" title="Clear all shapes">Clear All</button>
             </div>
           </div>
 
@@ -301,9 +334,11 @@ export class ShapeDesignerController {
     const modeBtns = this.modal?.querySelectorAll('.mode-btn');
     modeBtns?.forEach((btn) => {
       btn.addEventListener('click', (e) => {
+        const mode = (e.target as HTMLElement).dataset.mode || 'draw';
         modeBtns.forEach((b) => b.classList.remove('active'));
         (e.target as HTMLElement).classList.add('active');
-        this.drawMode = (e.target as HTMLElement).dataset.mode === 'draw';
+
+        this.switchMode(mode);
       });
     });
 
@@ -321,13 +356,27 @@ export class ShapeDesignerController {
     });
 
     this.modal?.querySelector('.btn-clear')?.addEventListener('click', () => {
-      this.vertices = [];
+      if (this.drawMode) {
+        this.vertices = [];
+      } else {
+        this.shapeElements = [];
+        this.selectedElement = null;
+      }
       this.redrawCanvas();
     });
 
     this.modal?.querySelector('.btn-close-path')?.addEventListener('click', () => {
       if (this.vertices.length > 2) {
         this.updateSVGPath();
+      }
+    });
+
+    this.modal?.querySelector('.btn-delete-shape')?.addEventListener('click', () => {
+      if (this.selectedElement) {
+        this.shapeElements = this.shapeElements.filter((el) => el !== this.selectedElement);
+        this.selectedElement = null;
+        this.redrawCanvas();
+        this.generateVertexCodeFromComposition();
       }
     });
 
@@ -419,7 +468,7 @@ export class ShapeDesignerController {
   }
 
   /**
-   * @brief Redraw canvas with current vertices
+   * @brief Redraw canvas with current vertices or shape elements
    */
   private redrawCanvas(): void {
     if (!this.previewCanvas) return;
@@ -445,6 +494,13 @@ export class ShapeDesignerController {
       ctx.stroke();
     }
 
+    // If in compose mode, render shape elements
+    if (this.shapeElements.length > 0) {
+      this.renderShapeElements();
+      return;
+    }
+
+    // Otherwise render vertices (draw mode)
     // Draw lines between vertices
     ctx.strokeStyle = '#1976d2';
     ctx.lineWidth = 2;
@@ -653,6 +709,312 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
       .split(/[\s\-_]+/)
       .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
       .join('');
+  }
+
+  /**
+   * @brief Switch editor mode
+   */
+  private switchMode(mode: string): void {
+    const palette = this.modal?.querySelector('.shape-palette') as HTMLElement;
+    const drawHelp = this.modal?.querySelector('.draw-help') as HTMLElement;
+    const composeHelp = this.modal?.querySelector('.compose-help') as HTMLElement;
+    const drawControls = this.modal?.querySelector('.draw-controls') as HTMLElement;
+    const composeControls = this.modal?.querySelector('.compose-controls') as HTMLElement;
+
+    if (mode === 'draw') {
+      this.drawMode = true;
+      if (palette) palette.style.display = 'none';
+      if (drawHelp) drawHelp.style.display = 'block';
+      if (composeHelp) composeHelp.style.display = 'none';
+      if (drawControls) drawControls.style.display = 'flex';
+      if (composeControls) composeControls.style.display = 'none';
+    } else if (mode === 'compose') {
+      this.drawMode = false;
+      if (palette) palette.style.display = 'block';
+      if (drawHelp) drawHelp.style.display = 'none';
+      if (composeHelp) composeHelp.style.display = 'block';
+      if (drawControls) drawControls.style.display = 'none';
+      if (composeControls) composeControls.style.display = 'flex';
+      this.setupDragAndDrop();
+      this.redrawCanvas();
+    } else if (mode === 'edit') {
+      this.drawMode = false;
+      if (palette) palette.style.display = 'none';
+      if (drawHelp) drawHelp.style.display = 'none';
+      if (composeHelp) composeHelp.style.display = 'none';
+      if (drawControls) drawControls.style.display = 'flex';
+      if (composeControls) composeControls.style.display = 'none';
+    }
+  }
+
+  /**
+   * @brief Setup drag and drop for shape composition
+   */
+  private setupDragAndDrop(): void {
+    const paletteShapes = this.modal?.querySelectorAll('.palette-shape');
+    const canvas = this.previewCanvas;
+
+    if (!canvas) return;
+
+    // Setup draggable palette items
+    paletteShapes?.forEach((btn) => {
+      (btn as HTMLElement).draggable = true;
+      btn.addEventListener('dragstart', (e) => {
+        const shapeType = (e.target as HTMLElement).dataset.shape;
+        (e as DragEvent).dataTransfer!.effectAllowed = 'copy';
+        (e as DragEvent).dataTransfer!.setData('shapeType', shapeType || '');
+      });
+    });
+
+    // Setup canvas as drop target
+    canvas.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      (e as DragEvent).dataTransfer!.dropEffect = 'copy';
+      canvas.style.opacity = '0.8';
+    });
+
+    canvas.addEventListener('dragleave', () => {
+      canvas.style.opacity = '1';
+    });
+
+    canvas.addEventListener('drop', (e) => {
+      e.preventDefault();
+      canvas.style.opacity = '1';
+
+      const shapeType = (e as DragEvent).dataTransfer!.getData('shapeType');
+      if (!shapeType) return;
+
+      const rect = canvas.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      this.addShapeElement(shapeType as any, x, y);
+    });
+
+    // Canvas click to select/deselect
+    canvas.addEventListener('click', (e) => {
+      const rect = canvas.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      this.selectedElement = null;
+      for (const el of this.shapeElements) {
+        if (x >= el.x && x <= el.x + el.width && y >= el.y && y <= el.y + el.height) {
+          this.selectedElement = el;
+          break;
+        }
+      }
+
+      this.redrawCanvas();
+    });
+
+    // Canvas mouse down for dragging
+    canvas.addEventListener('mousedown', (e) => {
+      const rect = canvas.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      for (const el of this.shapeElements) {
+        if (x >= el.x && x <= el.x + el.width && y >= el.y && y <= el.y + el.height) {
+          this.draggingElement = el;
+          this.dragStart = { x, y };
+          break;
+        }
+      }
+    });
+
+    // Canvas mouse move for dragging
+    canvas.addEventListener('mousemove', (e) => {
+      if (!this.draggingElement || !this.dragStart) return;
+
+      const rect = canvas.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const dx = x - this.dragStart.x;
+      const dy = y - this.dragStart.y;
+
+      this.draggingElement.x += dx;
+      this.draggingElement.y += dy;
+
+      this.dragStart = { x, y };
+      this.redrawCanvas();
+    });
+
+    // Canvas mouse up to stop dragging
+    canvas.addEventListener('mouseup', () => {
+      this.draggingElement = null;
+      this.dragStart = null;
+      this.generateVertexCodeFromComposition();
+    });
+  }
+
+  /**
+   * @brief Add a shape element to the composition
+   */
+  private addShapeElement(type: ShapeElement['type'], x: number, y: number): void {
+    const element: ShapeElement = {
+      type,
+      x: Math.max(0, Math.min(x - 30, 300 - 60)),
+      y: Math.max(0, Math.min(y - 30, 300 - 60)),
+      width: 60,
+      height: 60,
+      fill: '#1976d2',
+      stroke: '#0d47a1',
+      strokeWidth: 2,
+      id: `shape-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+    };
+
+    this.shapeElements.push(element);
+    this.selectedElement = element;
+    this.redrawCanvas();
+  }
+
+  /**
+   * @brief Render shape elements to canvas
+   */
+  private renderShapeElements(): void {
+    if (!this.previewCanvas) return;
+
+    const ctx = this.previewCanvas.getContext('2d');
+    if (!ctx) return;
+
+    this.shapeElements.forEach((el) => {
+      ctx.fillStyle = el.fill;
+      ctx.strokeStyle = el.stroke;
+      ctx.lineWidth = el.strokeWidth;
+
+      switch (el.type) {
+        case 'rect':
+          ctx.fillRect(el.x, el.y, el.width, el.height);
+          ctx.strokeRect(el.x, el.y, el.width, el.height);
+          break;
+        case 'circle':
+          ctx.beginPath();
+          ctx.arc(el.x + el.width / 2, el.y + el.height / 2, el.width / 2, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.stroke();
+          break;
+        case 'triangle':
+          ctx.beginPath();
+          ctx.moveTo(el.x + el.width / 2, el.y);
+          ctx.lineTo(el.x + el.width, el.y + el.height);
+          ctx.lineTo(el.x, el.y + el.height);
+          ctx.closePath();
+          ctx.fill();
+          ctx.stroke();
+          break;
+        case 'line':
+          ctx.beginPath();
+          ctx.moveTo(el.x, el.y + el.height / 2);
+          ctx.lineTo(el.x + el.width, el.y + el.height / 2);
+          ctx.stroke();
+          break;
+      }
+
+      // Draw selection outline
+      if (this.selectedElement === el) {
+        ctx.strokeStyle = '#ff6b6b';
+        ctx.lineWidth = 2;
+        ctx.setLineDash([4, 4]);
+        ctx.strokeRect(el.x - 2, el.y - 2, el.width + 4, el.height + 4);
+        ctx.setLineDash([]);
+      }
+    });
+  }
+
+  /**
+   * @brief Generate vertex code from composed shapes
+   */
+  private generateVertexCodeFromComposition(): void {
+    if (this.shapeElements.length === 0) return;
+
+    const nameInput = this.modal?.querySelector('#shape-name') as HTMLInputElement;
+    const vertexCodeArea = this.modal?.querySelector('#vertex-code') as HTMLTextAreaElement;
+
+    if (!vertexCodeArea || !nameInput) return;
+
+    const shapeName = nameInput.value || 'CustomShape';
+    const className = this.toPascalCase(shapeName) + 'Shape';
+
+    let pathCode = '';
+    this.shapeElements.forEach((el) => {
+      pathCode += this.generateShapeElementCode(el);
+    });
+
+    const code = `import { Shape } from '@maxgraph/core';
+
+/**
+ * Composite shape: ${className}
+ * Generated from shape designer composition
+ */
+export class ${className} extends Shape {
+  constructor() {
+    super();
+  }
+
+  override paintVertexShape(c: any, x: number, y: number, w: number, h: number) {
+    c.translate(x, y);
+
+    const scale = { x: w / 300, y: h / 300 };
+
+${pathCode}
+
+    c.setFillColor('#1976d2');
+    c.setStrokeColor('#0d47a1');
+    c.setStrokeWidth(2);
+  }
+}
+
+// Register the shape
+import { CellRenderer } from '@maxgraph/core';
+CellRenderer.registerShape('custom${className}', ${className} as any);
+`;
+
+    vertexCodeArea.value = code;
+  }
+
+  /**
+   * @brief Generate code for a single shape element
+   */
+  private generateShapeElementCode(el: ShapeElement): string {
+    let code = '';
+
+    switch (el.type) {
+      case 'rect':
+        code += `    c.begin();\n`;
+        code += `    c.moveTo(${el.x} * scale.x, ${el.y} * scale.y);\n`;
+        code += `    c.lineTo(${el.x + el.width} * scale.x, ${el.y} * scale.y);\n`;
+        code += `    c.lineTo(${el.x + el.width} * scale.x, ${el.y + el.height} * scale.y);\n`;
+        code += `    c.lineTo(${el.x} * scale.x, ${el.y + el.height} * scale.y);\n`;
+        code += `    c.close();\n`;
+        code += `    c.fillAndStroke();\n\n`;
+        break;
+      case 'circle':
+        const cx = el.x + el.width / 2;
+        const cy = el.y + el.height / 2;
+        const r = el.width / 2;
+        code += `    c.begin();\n`;
+        code += `    c.ellipse(${cx} * scale.x - ${r} * scale.x, ${cy} * scale.y - ${r} * scale.y, ${el.width} * scale.x, ${el.height} * scale.y);\n`;
+        code += `    c.fillAndStroke();\n\n`;
+        break;
+      case 'triangle':
+        code += `    c.begin();\n`;
+        code += `    c.moveTo(${el.x + el.width / 2} * scale.x, ${el.y} * scale.y);\n`;
+        code += `    c.lineTo(${el.x + el.width} * scale.x, ${el.y + el.height} * scale.y);\n`;
+        code += `    c.lineTo(${el.x} * scale.x, ${el.y + el.height} * scale.y);\n`;
+        code += `    c.close();\n`;
+        code += `    c.fillAndStroke();\n\n`;
+        break;
+      case 'line':
+        code += `    c.begin();\n`;
+        code += `    c.moveTo(${el.x} * scale.x, ${el.y + el.height / 2} * scale.y);\n`;
+        code += `    c.lineTo(${el.x + el.width} * scale.x, ${el.y + el.height / 2} * scale.y);\n`;
+        code += `    c.stroke();\n\n`;
+        break;
+    }
+
+    return code;
   }
 
   /**

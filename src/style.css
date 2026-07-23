@@ -1029,6 +1029,58 @@ svg.mxGraph .mxHandle {
   background: #0369a1;
 }
 
+/* Shape Palette */
+.shape-palette {
+  padding: 12px;
+  background: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.palette-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.palette-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+
+.palette-shape {
+  padding: 8px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: grab;
+  font-size: 20px;
+  transition: all 0.2s;
+}
+
+.palette-shape:hover {
+  background: #f0f0f0;
+  border-color: #999;
+}
+
+.palette-shape:active {
+  cursor: grabbing;
+}
+
+#shape-canvas {
+  cursor: crosshair;
+  background: white;
+  border: 1px solid #ccc;
+}
+
+#shape-canvas:hover {
+  background: #fafafa;
+}
+
 .designer-footer {
   padding: 16px;
   border-top: 1px solid #e0e0e0;
