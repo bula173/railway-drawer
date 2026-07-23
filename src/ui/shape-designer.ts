@@ -100,7 +100,7 @@ export class ShapeDesignerController {
 
             <div class="draw-canvas-container">
               <canvas id="shape-canvas" width="300" height="300"></canvas>
-              <div class="canvas-help">Click to add vertices • Drag shapes from palette</div>
+              <div class="canvas-help">Drag shapes from palette • Click to select & edit</div>
             </div>
 
             <div class="canvas-controls">
@@ -247,21 +247,24 @@ export class ShapeDesignerController {
 
     // Canvas controls
     this.modal?.querySelector('.btn-undo')?.addEventListener('click', () => {
-      this.vertices.pop();
-      this.redrawCanvas();
+      if (this.shapeElements.length > 0) {
+        this.shapeElements.pop();
+        this.selectedElement = null;
+        this.redrawCanvas();
+      }
     });
 
     this.modal?.querySelector('.btn-clear')?.addEventListener('click', () => {
-      this.vertices = [];
       this.shapeElements = [];
       this.selectedElement = null;
       this.redrawCanvas();
+      this.generateVertexCodeFromComposition();
+      this.displaySelectedElementProperties();
+      this.renderVertexPreview();
     });
 
     this.modal?.querySelector('.btn-close-path')?.addEventListener('click', () => {
-      if (this.vertices.length > 2) {
-        this.updateSVGPath();
-      }
+      // Not used in shape composition mode
     });
 
     this.modal?.querySelector('.btn-delete-shape')?.addEventListener('click', () => {
@@ -306,18 +309,12 @@ export class ShapeDesignerController {
     this.modal?.querySelector('#element-stroke')?.addEventListener('change', () => this.updateSelectedElement());
     this.modal?.querySelector('#element-stroke-width')?.addEventListener('change', () => this.updateSelectedElement());
 
-    // Load existing path if editing
-    if (editingShape?.svgPath) {
-      this.vertices = this.parseSVGPath(editingShape.svgPath);
-      this.redrawCanvas();
-    }
-
     this.updatePreview();
     this.renderVertexPreview();
   }
 
   /**
-   * @brief Handle canvas click to add vertices or select shapes
+   * @brief Handle canvas click to select shapes
    */
   private handleCanvasClick(e: MouseEvent): void {
     if (!this.previewCanvas) return;
@@ -326,11 +323,11 @@ export class ShapeDesignerController {
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
-    // First, try to select a shape element
+    // Try to select a shape element
     let clickedElement = false;
+    const padding = 4;
+
     for (const el of this.shapeElements) {
-      // Add padding to make selection easier
-      const padding = 4;
       if (x >= el.x - padding && x <= el.x + el.width + padding &&
           y >= el.y - padding && y <= el.y + el.height + padding) {
         this.selectedElement = el;
@@ -339,16 +336,9 @@ export class ShapeDesignerController {
       }
     }
 
-    // If no shape clicked, add a vertex (only if not clicking on empty space to deselect)
+    // If no shape clicked, deselect
     if (!clickedElement) {
-      // Check if trying to deselect by clicking empty area
-      if (this.selectedElement) {
-        // User clicked empty area - deselect
-        this.selectedElement = null;
-      } else {
-        // User clicked empty area without selection - add vertex
-        this.vertices.push({ x, y });
-      }
+      this.selectedElement = null;
     }
 
     this.redrawCanvas();
@@ -365,7 +355,7 @@ export class ShapeDesignerController {
   }
 
   /**
-   * @brief Redraw canvas with vertices and shape elements
+   * @brief Redraw canvas with shape elements only
    */
   private redrawCanvas(): void {
     if (!this.previewCanvas) return;
@@ -391,71 +381,10 @@ export class ShapeDesignerController {
       ctx.stroke();
     }
 
-    // Render shape elements
+    // Render shape elements only
     if (this.shapeElements.length > 0) {
       this.renderShapeElements();
     }
-
-    // Render vertices
-    ctx.strokeStyle = '#1976d2';
-    ctx.lineWidth = 2;
-    if (this.vertices.length > 0) {
-      ctx.beginPath();
-      ctx.moveTo(this.vertices[0].x, this.vertices[0].y);
-      for (let i = 1; i < this.vertices.length; i++) {
-        ctx.lineTo(this.vertices[i].x, this.vertices[i].y);
-      }
-      ctx.stroke();
-    }
-
-    // Draw vertices as circles
-    ctx.fillStyle = '#1976d2';
-    this.vertices.forEach((v) => {
-      ctx.beginPath();
-      ctx.arc(v.x, v.y, 4, 0, Math.PI * 2);
-      ctx.fill();
-    });
-  }
-
-  /**
-   * @brief Convert vertices to SVG path
-   */
-  private updateSVGPath(): void {
-    if (this.vertices.length < 2) return;
-
-    const pathInput = this.modal?.querySelector('#shape-path') as HTMLTextAreaElement;
-    if (!pathInput) return;
-
-    let path = `M ${this.vertices[0].x} ${this.vertices[0].y}`;
-    for (let i = 1; i < this.vertices.length; i++) {
-      path += ` L ${this.vertices[i].x} ${this.vertices[i].y}`;
-    }
-    path += ' Z'; // Close path
-
-    pathInput.value = path;
-    this.updatePreview();
-  }
-
-  /**
-   * @brief Parse SVG path string to vertices
-   */
-  private parseSVGPath(pathStr: string): { x: number; y: number }[] {
-    const vertices: { x: number; y: number }[] = [];
-    const commands = pathStr.match(/[MLZ][^MLZ]*/g) || [];
-
-    commands.forEach((cmd) => {
-      if (cmd.startsWith('M') || cmd.startsWith('L')) {
-        const coords = cmd.substring(1).trim().split(/[\s,]+/);
-        if (coords.length >= 2) {
-          vertices.push({
-            x: parseFloat(coords[0]),
-            y: parseFloat(coords[1]),
-          });
-        }
-      }
-    });
-
-    return vertices;
   }
 
   /**
@@ -501,7 +430,7 @@ export class ShapeDesignerController {
     const stroke = strokeInput?.value || '#0d47a1';
     const strokeWidth = parseFloat(strokeWidthInput?.value || '2');
 
-    // Generate code from both vertices and shapes
+    // Generate code from shape elements only
     let pathCode = '';
 
     // Add code for shape elements
@@ -509,30 +438,8 @@ export class ShapeDesignerController {
       pathCode += this.generateShapeElementCode(el);
     });
 
-    // Add code for vertices if any
-    if (this.vertices.length > 0) {
-      pathCode += this.generateVertexPathCode();
-    }
-
     const code = this.generateShapeClassCodeCombined(className, pathCode, fill, stroke, strokeWidth);
     vertexCodeArea.value = code;
-  }
-
-  /**
-   * @brief Generate vertex path code
-   */
-  private generateVertexPathCode(): string {
-    if (this.vertices.length < 2) return '';
-
-    let code = '    // Draw vertex path\n    c.begin();\n';
-    code += `    c.moveTo(${this.vertices[0].x}, ${this.vertices[0].y});\n`;
-
-    for (let i = 1; i < this.vertices.length; i++) {
-      code += `    c.lineTo(${this.vertices[i].x}, ${this.vertices[i].y});\n`;
-    }
-
-    code += '    c.fillAndStroke();\n\n';
-    return code;
   }
 
   /**
@@ -626,19 +533,11 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
     ctx.lineWidth = 1;
     ctx.strokeRect(0, 0, previewCanvas.width, previewCanvas.height);
 
-    // Calculate bounds of all elements
+    // Calculate bounds of shape elements only
     let minX = Infinity,
       minY = Infinity,
       maxX = -Infinity,
       maxY = -Infinity;
-
-    // Include vertices in bounds
-    this.vertices.forEach((v) => {
-      minX = Math.min(minX, v.x);
-      minY = Math.min(minY, v.y);
-      maxX = Math.max(maxX, v.x);
-      maxY = Math.max(maxY, v.y);
-    });
 
     // Include shape elements in bounds
     this.shapeElements.forEach((el) => {
@@ -649,7 +548,7 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
     });
 
     if (minX === Infinity) {
-      if (infoText) infoText.textContent = 'Draw shapes to preview';
+      if (infoText) infoText.textContent = 'Drag shapes from palette';
       return;
     }
 
@@ -700,28 +599,6 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
           break;
       }
     });
-
-    // Draw vertices
-    if (this.vertices.length > 0) {
-      ctx.strokeStyle = '#1976d2';
-      ctx.lineWidth = 1;
-      ctx.beginPath();
-      const v0 = this.vertices[0];
-      ctx.moveTo((v0.x - minX) * scale + padding, (v0.y - minY) * scale + padding);
-      for (let i = 1; i < this.vertices.length; i++) {
-        const v = this.vertices[i];
-        ctx.lineTo((v.x - minX) * scale + padding, (v.y - minY) * scale + padding);
-      }
-      ctx.stroke();
-
-      // Draw vertex points
-      ctx.fillStyle = '#1976d2';
-      this.vertices.forEach((v) => {
-        ctx.beginPath();
-        ctx.arc((v.x - minX) * scale + padding, (v.y - minY) * scale + padding, 2, 0, Math.PI * 2);
-        ctx.fill();
-      });
-    }
 
     // Update info
     if (infoText) {
