@@ -33,7 +33,6 @@ export class PlantUmlEditorController extends UIController {
     this.editorPanel = document.createElement('div');
     this.editorPanel.id = 'plantuml-editor-panel';
     this.editorPanel.className = 'editor-panel';
-    this.editorPanel.style.display = 'none';
 
     const html = `
       <div class="editor-header">
@@ -112,7 +111,7 @@ Bob --> Alice: Authentication Response
    */
   show(): void {
     if (this.editorPanel) {
-      this.editorPanel.style.display = 'block';
+      this.editorPanel.classList.add('visible');
       if (this.textarea) {
         this.textarea.focus();
       }
@@ -124,7 +123,7 @@ Bob --> Alice: Authentication Response
    */
   hide(): void {
     if (this.editorPanel) {
-      this.editorPanel.style.display = 'none';
+      this.editorPanel.classList.remove('visible');
     }
   }
 
