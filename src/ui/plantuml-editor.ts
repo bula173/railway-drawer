@@ -4,13 +4,15 @@
  * @details Provides text input and rendering controls for PlantUML diagrams
  */
 
-import { Graph } from '@maxgraph/core';
+import { Graph, Cell } from '@maxgraph/core';
 import { UIController } from './base/ui-controller';
 import { PlantUmlParser, DiagramData, DiagramElement } from '../services/plantuml-parser';
 import { SequenceDiagramRenderer } from '../services/sequence-diagram-renderer';
+import { PlantUmlGroupManager } from '../services/plantuml-group-manager';
 
 export class PlantUmlEditorController extends UIController {
   private graph: Graph;
+  private groupManager: PlantUmlGroupManager;
   private editorPanel: HTMLElement | null = null;
   private textarea: HTMLTextAreaElement | null = null;
   private renderButton: HTMLButtonElement | null = null;
@@ -18,14 +20,17 @@ export class PlantUmlEditorController extends UIController {
   private exampleButton: HTMLButtonElement | null = null;
   private errorDisplay: HTMLElement | null = null;
   private diagramPreview: HTMLElement | null = null;
+  private currentEditingGroup: Cell | null = null;
 
   constructor(graph: Graph) {
     super();
     this.graph = graph;
+    this.groupManager = new PlantUmlGroupManager(graph);
     console.log('[PlantUmlEditor] Constructor called');
     this.createEditorPanel();
     console.log('[PlantUmlEditor] Panel created:', this.editorPanel?.id);
     this.setupEventListeners();
+    this.setupSelectionListener();
     console.log('[PlantUmlEditor] Event listeners setup');
   }
 
@@ -68,6 +73,28 @@ Bob --> Alice: Hi
     this.exampleButton = this.editorPanel.querySelector('#plantuml-example-btn');
     this.errorDisplay = this.editorPanel.querySelector('#plantuml-error');
     this.diagramPreview = this.editorPanel.querySelector('#plantuml-preview');
+  }
+
+  /**
+   * Setup selection listener to detect PlantUML group selection
+   */
+  private setupSelectionListener(): void {
+    this.graph.getSelectionModel().addListener('change', () => {
+      const selected = this.graph.getSelectionCells();
+      if (selected.length === 1) {
+        const cell = selected[0];
+        const metadata = this.groupManager.getPlantUmlMetadata(cell as Cell);
+        if (metadata) {
+          console.log('[PlantUmlEditor] PlantUML group selected:', cell.getValue());
+          this.currentEditingGroup = cell as Cell;
+          this.groupManager.setCurrentPlantUmlGroup(cell as Cell);
+          if (this.textarea) {
+            this.textarea.value = metadata.plantumlSource;
+            this.updatePreview();
+          }
+        }
+      }
+    });
   }
 
   /**
@@ -156,6 +183,21 @@ Bob --> Alice: Hi
       } else {
         console.log('[PlantUML] Using generic diagram renderer');
         this.convertAndAddToGraph(diagramData);
+      }
+
+      // Save PlantUML source to current group or create new group
+      const parent = this.graph.getDefaultParent();
+      if (this.currentEditingGroup) {
+        // Update existing group
+        this.groupManager.updatePlantUmlSource(this.currentEditingGroup, text);
+        console.log('[PlantUML] Updated existing group source');
+      } else {
+        // Create new group for this diagram
+        const groupName = `${diagramData.type.toUpperCase()} Diagram ${Date.now()}`;
+        const newGroup = this.groupManager.createPlantUmlGroup(parent!, groupName, text, diagramData.type);
+        this.currentEditingGroup = newGroup;
+        this.groupManager.setCurrentPlantUmlGroup(newGroup);
+        console.log('[PlantUML] Created new group:', groupName);
       }
 
       this.showSuccess(`✅ ${diagramData.type} diagram rendered! (${diagramData.elements.length} elements, ${diagramData.connections.length} connections)`);
