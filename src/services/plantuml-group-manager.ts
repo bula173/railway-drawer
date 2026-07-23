@@ -35,15 +35,18 @@ export class PlantUmlGroupManager {
   ): Cell {
     console.log('[PlantUmlGroup] Creating group:', diagramName);
 
+    // Create group with no background, just border, label in top-left
+    const groupStyle = 'group=1;fillColor=none;strokeColor=#999;strokeWidth=2;html=1;verticalAlign=top;align=left;spacing=2;';
+
     const group = this.graph.insertVertex(
       parent,
       null,
       diagramName,
-      100,
-      100,
+      50,
+      50,
+      500,
       400,
-      300,
-      'group=1;fillColor=#F0F0F0;strokeColor=#666;' as any
+      groupStyle as any
     );
 
     // Store PlantUML metadata

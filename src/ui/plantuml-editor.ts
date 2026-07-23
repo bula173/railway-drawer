@@ -175,29 +175,44 @@ Bob --> Alice: Hi
       const diagramData = PlantUmlParser.parse(text);
       console.log('[PlantUML] Parsed diagram type:', diagramData.type, diagramData);
 
-      // Use specialized renderer for sequence diagrams
-      if (diagramData.type === 'sequence') {
-        console.log('[PlantUML] Using sequence diagram renderer');
-        const renderer = new SequenceDiagramRenderer(this.graph);
-        renderer.render(diagramData);
-      } else {
-        console.log('[PlantUML] Using generic diagram renderer');
-        this.convertAndAddToGraph(diagramData);
-      }
-
-      // Save PlantUML source to current group or create new group
       const parent = this.graph.getDefaultParent();
+      let groupToRender: any;
+
+      // Create or get group
       if (this.currentEditingGroup) {
         // Update existing group
-        this.groupManager.updatePlantUmlSource(this.currentEditingGroup, text);
+        groupToRender = this.currentEditingGroup;
+        // Clear existing children (but keep the group)
+        this.graph.batchUpdate(() => {
+          const childCount = groupToRender.getChildCount();
+          const cellsToRemove: any[] = [];
+          for (let i = 0; i < childCount; i++) {
+            const child = groupToRender.getChildAt(i);
+            if (child) {
+              cellsToRemove.push(child);
+            }
+          }
+          this.graph.removeCells(cellsToRemove);
+        });
+        this.groupManager.updatePlantUmlSource(groupToRender, text);
         console.log('[PlantUML] Updated existing group source');
       } else {
         // Create new group for this diagram
-        const groupName = `${diagramData.type.toUpperCase()} Diagram ${Date.now()}`;
-        const newGroup = this.groupManager.createPlantUmlGroup(parent!, groupName, text, diagramData.type);
-        this.currentEditingGroup = newGroup;
-        this.groupManager.setCurrentPlantUmlGroup(newGroup);
+        const groupName = `${diagramData.type.toUpperCase()} Diagram`;
+        groupToRender = this.groupManager.createPlantUmlGroup(parent!, groupName, text, diagramData.type);
+        this.currentEditingGroup = groupToRender;
+        this.groupManager.setCurrentPlantUmlGroup(groupToRender);
         console.log('[PlantUML] Created new group:', groupName);
+      }
+
+      // Render diagram inside the group
+      if (diagramData.type === 'sequence') {
+        console.log('[PlantUML] Using sequence diagram renderer');
+        const renderer = new SequenceDiagramRenderer(this.graph);
+        renderer.renderIntoGroup(diagramData, groupToRender);
+      } else {
+        console.log('[PlantUML] Using generic diagram renderer');
+        this.convertAndAddToGraph(diagramData, groupToRender);
       }
 
       this.showSuccess(`✅ ${diagramData.type} diagram rendered! (${diagramData.elements.length} elements, ${diagramData.connections.length} connections)`);
@@ -210,16 +225,17 @@ Bob --> Alice: Hi
   /**
    * Convert diagram data to maxGraph cells
    */
-  private convertAndAddToGraph(diagramData: DiagramData): void {
-    const parent = this.graph.getDefaultParent();
-    let yPos = 50;
+  private convertAndAddToGraph(diagramData: DiagramData, parentGroup?: any): void {
+    // If no parent group provided, use default parent
+    const parent = parentGroup || this.graph.getDefaultParent();
+    let yPos = 30;
     const elementMap = new Map<string, any>();
 
     this.graph.batchUpdate(() => {
       // Add all elements first
       diagramData.elements.forEach((element, index) => {
         const dims = PlantUmlParser.getDefaultDimensions(element.type);
-        const xPos = 50 + (index % 3) * 220;
+        const xPos = 20 + (index % 3) * 220;
         const yActual = yPos + Math.floor(index / 3) * 150;
 
         const styleStr = this.getShapeStyle(element);
