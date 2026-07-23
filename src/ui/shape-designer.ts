@@ -239,7 +239,6 @@ export class ShapeDesignerController {
     // Canvas handlers
     this.previewCanvas = this.modal?.querySelector('#shape-canvas') as HTMLCanvasElement;
     if (this.previewCanvas) {
-      this.previewCanvas.addEventListener('click', (e) => this.handleCanvasClick(e));
       this.previewCanvas.addEventListener('mousemove', (e) => this.handleCanvasMouseMove(e));
       // Setup drag and drop
       this.setupDragAndDrop();
@@ -313,38 +312,6 @@ export class ShapeDesignerController {
     this.renderVertexPreview();
   }
 
-  /**
-   * @brief Handle canvas click to select shapes
-   */
-  private handleCanvasClick(e: MouseEvent): void {
-    if (!this.previewCanvas) return;
-
-    const rect = this.previewCanvas.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    // Try to select a shape element
-    let clickedElement = false;
-    const padding = 4;
-
-    for (const el of this.shapeElements) {
-      if (x >= el.x - padding && x <= el.x + el.width + padding &&
-          y >= el.y - padding && y <= el.y + el.height + padding) {
-        this.selectedElement = el;
-        clickedElement = true;
-        break;
-      }
-    }
-
-    // If no shape clicked, deselect
-    if (!clickedElement) {
-      this.selectedElement = null;
-    }
-
-    this.redrawCanvas();
-    this.displaySelectedElementProperties();
-    this.renderVertexPreview();
-  }
 
   /**
    * @brief Handle canvas mouse move for preview line
@@ -678,33 +645,43 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
       this.addShapeElement(shapeType as any, x, y);
     });
 
-    // Canvas click to select/deselect
-    canvas.addEventListener('click', (e) => {
-      const rect = canvas.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
 
-      this.selectedElement = null;
-      for (const el of this.shapeElements) {
-        if (x >= el.x && x <= el.x + el.width && y >= el.y && y <= el.y + el.height) {
-          this.selectedElement = el;
-          break;
-        }
-      }
-
-      this.redrawCanvas();
-    });
-
-    // Canvas mouse down for dragging or resizing
+    // Canvas mouse down for selection, dragging or resizing
     canvas.addEventListener('mousedown', (e) => {
       const rect = canvas.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
+      const padding = 4;
+      const handleSize = 6;
 
-      // Check if we're clicking on a resize handle
+      // First, check if we clicked on a shape
+      let clickedElement = null;
+      for (const el of this.shapeElements) {
+        if (x >= el.x - padding && x <= el.x + el.width + padding &&
+            y >= el.y - padding && y <= el.y + el.height + padding) {
+          clickedElement = el;
+          break;
+        }
+      }
+
+      // If we clicked on a shape, select it first
+      if (clickedElement) {
+        this.selectedElement = clickedElement;
+        this.redrawCanvas();
+        this.displaySelectedElementProperties();
+        this.renderVertexPreview();
+      } else {
+        // Clicking empty area deselects
+        this.selectedElement = null;
+        this.redrawCanvas();
+        this.displaySelectedElementProperties();
+        this.renderVertexPreview();
+        return;
+      }
+
+      // Now check if we're clicking on a resize handle of selected element
       if (this.selectedElement) {
         const el = this.selectedElement;
-        const handleSize = 6;
         const handles: { [key: string]: { x: number; y: number } } = {
           nw: { x: el.x - handleSize / 2, y: el.y - handleSize / 2 },
           n: { x: el.x + el.width / 2 - handleSize / 2, y: el.y - handleSize / 2 },
@@ -725,15 +702,10 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
         }
       }
 
-      // Otherwise, check if dragging element
-      const padding = 4;
-      for (const el of this.shapeElements) {
-        if (x >= el.x - padding && x <= el.x + el.width + padding &&
-            y >= el.y - padding && y <= el.y + el.height + padding) {
-          this.draggingElement = el;
-          this.dragStart = { x, y };
-          break;
-        }
+      // Otherwise, prepare to drag the selected element
+      if (this.selectedElement) {
+        this.draggingElement = this.selectedElement;
+        this.dragStart = { x, y };
       }
     });
 
