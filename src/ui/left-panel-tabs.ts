@@ -1,10 +1,12 @@
 export type LeftPanelTab = 'stencils' | 'shapes' | 'layers' | 'plantuml';
+export type CloseableTab = 'plantuml';
 
 export class LeftPanelTabs {
   private container: HTMLElement;
   private tabButtons: Map<LeftPanelTab, HTMLElement> = new Map();
   private tabContents: Map<LeftPanelTab, HTMLElement> = new Map();
   private activeTab: LeftPanelTab = 'shapes';
+  private hiddenTabs: Set<CloseableTab> = new Set();
 
   constructor(containerId: string) {
     const el = document.getElementById(containerId);
@@ -36,7 +38,28 @@ export class LeftPanelTabs {
     if (tabId === this.activeTab) {
       btn.classList.add('active');
     }
-    btn.textContent = label;
+
+    // Create tab label container
+    const labelSpan = document.createElement('span');
+    labelSpan.textContent = label;
+    btn.appendChild(labelSpan);
+
+    // Add close button for closeable tabs
+    const closeableTabs: CloseableTab[] = ['plantuml'];
+    if (closeableTabs.includes(tabId as CloseableTab)) {
+      const closeBtn = document.createElement('span');
+      closeBtn.className = 'tab-close-btn';
+      closeBtn.textContent = '×';
+      closeBtn.style.marginLeft = '4px';
+      closeBtn.style.cursor = 'pointer';
+      closeBtn.style.fontSize = '16px';
+      closeBtn.style.fontWeight = 'bold';
+      closeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.closeTab(tabId as CloseableTab);
+      });
+      btn.appendChild(closeBtn);
+    }
 
     btn.addEventListener('click', () => this.switchTab(tabId));
 
@@ -85,5 +108,47 @@ export class LeftPanelTabs {
 
   getActiveTab(): LeftPanelTab {
     return this.activeTab;
+  }
+
+  /**
+   * Close (hide) a tab
+   */
+  closeTab(tabId: CloseableTab): void {
+    console.log('[LeftPanelTabs] Closing tab:', tabId);
+    this.hiddenTabs.add(tabId);
+
+    const btn = this.tabButtons.get(tabId);
+    if (btn) {
+      btn.style.display = 'none';
+    }
+
+    // If this was the active tab, switch to another one
+    if (this.activeTab === tabId) {
+      const defaultTab: LeftPanelTab = 'shapes';
+      this.switchTab(defaultTab);
+    }
+  }
+
+  /**
+   * Show (reopen) a hidden tab
+   */
+  showTab(tabId: CloseableTab): void {
+    console.log('[LeftPanelTabs] Showing tab:', tabId);
+    this.hiddenTabs.delete(tabId);
+
+    const btn = this.tabButtons.get(tabId);
+    if (btn) {
+      btn.style.display = 'block';
+    }
+
+    // Switch to the newly shown tab
+    this.switchTab(tabId);
+  }
+
+  /**
+   * Check if a tab is hidden
+   */
+  isTabHidden(tabId: CloseableTab): boolean {
+    return this.hiddenTabs.has(tabId);
   }
 }

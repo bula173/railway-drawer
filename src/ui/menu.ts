@@ -345,8 +345,14 @@ export class MenuController {
         console.log('[Menu] PlantUML editor clicked');
         const leftPanelTabs = (window as any).__leftPanelTabs;
         if (leftPanelTabs) {
-          console.log('[Menu] Switching to plantuml tab');
-          leftPanelTabs.switchTab('plantuml');
+          // If tab is hidden, show it; otherwise switch to it
+          if (leftPanelTabs.isTabHidden('plantuml')) {
+            console.log('[Menu] Showing hidden plantuml tab');
+            leftPanelTabs.showTab('plantuml');
+          } else {
+            console.log('[Menu] Switching to plantuml tab');
+            leftPanelTabs.switchTab('plantuml');
+          }
         } else {
           console.error('[Menu] leftPanelTabs not found!');
         }
