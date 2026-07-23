@@ -297,14 +297,10 @@ export class GraphCommandService {
     const cells = this.graph.getSelectionCells();
     if (cells.length === 0) return;
 
-    const parent = cells[0].getParent();
-    if (!parent) return;
-
     this.graph.batchUpdate(() => {
       cells.forEach((cell) => {
         if (!cell.isEdge()) {
-          const index = (this.graph.model as any).getChildCount(parent) - 1;
-          (this.graph.model as any).setChildAt(cell, Math.max(0, index - 1));
+          this.graph.orderCells(true, [cell]);
         }
       });
     });
@@ -320,14 +316,10 @@ export class GraphCommandService {
     const cells = this.graph.getSelectionCells();
     if (cells.length === 0) return;
 
-    const parent = cells[0].getParent();
-    if (!parent) return;
-
     this.graph.batchUpdate(() => {
       cells.forEach((cell) => {
         if (!cell.isEdge()) {
-          const index = (this.graph.model as any).getChildIndex(cell);
-          (this.graph.model as any).setChildAt(cell, Math.min(index + 1, (this.graph.model as any).getChildCount(parent) - 1));
+          this.graph.orderCells(false, [cell]);
         }
       });
     });
