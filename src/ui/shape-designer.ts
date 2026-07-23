@@ -34,6 +34,7 @@ export class ShapeDesignerController {
   private selectedElement: ShapeElement | null = null;
   private draggingElement: ShapeElement | null = null;
   private dragStart: { x: number; y: number } | null = null;
+  private resizingHandle: string | null = null; // 'nw', 'ne', 'sw', 'se', 'n', 's', 'e', 'w'
   private editingShapeId: string | null = null;
   private drawMode = true; // true = draw, false = edit path
 
@@ -808,12 +809,37 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
       this.redrawCanvas();
     });
 
-    // Canvas mouse down for dragging
+    // Canvas mouse down for dragging or resizing
     canvas.addEventListener('mousedown', (e) => {
       const rect = canvas.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
 
+      // Check if we're clicking on a resize handle
+      if (this.selectedElement) {
+        const el = this.selectedElement;
+        const handleSize = 6;
+        const handles: { [key: string]: { x: number; y: number } } = {
+          nw: { x: el.x - handleSize / 2, y: el.y - handleSize / 2 },
+          n: { x: el.x + el.width / 2 - handleSize / 2, y: el.y - handleSize / 2 },
+          ne: { x: el.x + el.width - handleSize / 2, y: el.y - handleSize / 2 },
+          e: { x: el.x + el.width - handleSize / 2, y: el.y + el.height / 2 - handleSize / 2 },
+          se: { x: el.x + el.width - handleSize / 2, y: el.y + el.height - handleSize / 2 },
+          s: { x: el.x + el.width / 2 - handleSize / 2, y: el.y + el.height - handleSize / 2 },
+          sw: { x: el.x - handleSize / 2, y: el.y + el.height - handleSize / 2 },
+          w: { x: el.x - handleSize / 2, y: el.y + el.height / 2 - handleSize / 2 },
+        };
+
+        for (const [key, handle] of Object.entries(handles)) {
+          if (x >= handle.x && x <= handle.x + handleSize && y >= handle.y && y <= handle.y + handleSize) {
+            this.resizingHandle = key;
+            this.dragStart = { x, y };
+            return;
+          }
+        }
+      }
+
+      // Otherwise, check if dragging element
       for (const el of this.shapeElements) {
         if (x >= el.x && x <= el.x + el.width && y >= el.y && y <= el.y + el.height) {
           this.draggingElement = el;
@@ -823,28 +849,111 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
       }
     });
 
-    // Canvas mouse move for dragging
+    // Canvas mouse move for dragging or resizing
     canvas.addEventListener('mousemove', (e) => {
-      if (!this.draggingElement || !this.dragStart) return;
-
       const rect = canvas.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
 
-      const dx = x - this.dragStart.x;
-      const dy = y - this.dragStart.y;
+      // Update cursor based on handle or position
+      if (this.selectedElement) {
+        const el = this.selectedElement;
+        const handleSize = 6;
+        const handles: { [key: string]: { x: number; y: number; cursor: string } } = {
+          nw: { x: el.x - handleSize / 2, y: el.y - handleSize / 2, cursor: 'nw-resize' },
+          n: { x: el.x + el.width / 2 - handleSize / 2, y: el.y - handleSize / 2, cursor: 'ns-resize' },
+          ne: { x: el.x + el.width - handleSize / 2, y: el.y - handleSize / 2, cursor: 'ne-resize' },
+          e: { x: el.x + el.width - handleSize / 2, y: el.y + el.height / 2 - handleSize / 2, cursor: 'ew-resize' },
+          se: { x: el.x + el.width - handleSize / 2, y: el.y + el.height - handleSize / 2, cursor: 'se-resize' },
+          s: { x: el.x + el.width / 2 - handleSize / 2, y: el.y + el.height - handleSize / 2, cursor: 'ns-resize' },
+          sw: { x: el.x - handleSize / 2, y: el.y + el.height - handleSize / 2, cursor: 'sw-resize' },
+          w: { x: el.x - handleSize / 2, y: el.y + el.height / 2 - handleSize / 2, cursor: 'ew-resize' },
+        };
 
-      this.draggingElement.x += dx;
-      this.draggingElement.y += dy;
+        let cursorFound = false;
+        for (const [, handle] of Object.entries(handles)) {
+          if (x >= handle.x && x <= handle.x + handleSize && y >= handle.y && y <= handle.y + handleSize) {
+            canvas.style.cursor = handle.cursor;
+            cursorFound = true;
+            break;
+          }
+        }
+        if (!cursorFound) {
+          canvas.style.cursor = 'crosshair';
+        }
+      }
 
-      this.dragStart = { x, y };
-      this.redrawCanvas();
+      // Handle resizing
+      if (this.resizingHandle && this.selectedElement && this.dragStart) {
+        const el = this.selectedElement;
+        const dx = x - this.dragStart.x;
+        const dy = y - this.dragStart.y;
+
+        switch (this.resizingHandle) {
+          case 'nw':
+            el.x += dx;
+            el.y += dy;
+            el.width -= dx;
+            el.height -= dy;
+            break;
+          case 'n':
+            el.y += dy;
+            el.height -= dy;
+            break;
+          case 'ne':
+            el.y += dy;
+            el.width += dx;
+            el.height -= dy;
+            break;
+          case 'e':
+            el.width += dx;
+            break;
+          case 'se':
+            el.width += dx;
+            el.height += dy;
+            break;
+          case 's':
+            el.height += dy;
+            break;
+          case 'sw':
+            el.x += dx;
+            el.width -= dx;
+            el.height += dy;
+            break;
+          case 'w':
+            el.x += dx;
+            el.width -= dx;
+            break;
+        }
+
+        // Ensure minimum size
+        if (el.width < 20) el.width = 20;
+        if (el.height < 20) el.height = 20;
+
+        this.dragStart = { x, y };
+        this.redrawCanvas();
+        return;
+      }
+
+      // Handle dragging
+      if (this.draggingElement && this.dragStart) {
+        const dx = x - this.dragStart.x;
+        const dy = y - this.dragStart.y;
+
+        this.draggingElement.x += dx;
+        this.draggingElement.y += dy;
+
+        this.dragStart = { x, y };
+        this.redrawCanvas();
+      }
     });
 
-    // Canvas mouse up to stop dragging
+    // Canvas mouse up to stop dragging or resizing
     canvas.addEventListener('mouseup', () => {
       this.draggingElement = null;
+      this.resizingHandle = null;
       this.dragStart = null;
+      canvas.style.cursor = 'crosshair';
       this.generateVertexCodeFromComposition();
       this.displaySelectedElementProperties();
       this.renderVertexPreview();
@@ -916,13 +1025,35 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
           break;
       }
 
-      // Draw selection outline
+      // Draw selection outline and resize handles
       if (this.selectedElement === el) {
         ctx.strokeStyle = '#ff6b6b';
         ctx.lineWidth = 2;
         ctx.setLineDash([4, 4]);
         ctx.strokeRect(el.x - 2, el.y - 2, el.width + 4, el.height + 4);
         ctx.setLineDash([]);
+
+        // Draw resize handles
+        const handleSize = 6;
+        const handleStyle = '#ff6b6b';
+        const handles = [
+          { x: el.x - handleSize / 2, y: el.y - handleSize / 2, cursor: 'nw-resize' }, // nw
+          { x: el.x + el.width / 2 - handleSize / 2, y: el.y - handleSize / 2, cursor: 'ns-resize' }, // n
+          { x: el.x + el.width - handleSize / 2, y: el.y - handleSize / 2, cursor: 'ne-resize' }, // ne
+          { x: el.x + el.width - handleSize / 2, y: el.y + el.height / 2 - handleSize / 2, cursor: 'ew-resize' }, // e
+          { x: el.x + el.width - handleSize / 2, y: el.y + el.height - handleSize / 2, cursor: 'se-resize' }, // se
+          { x: el.x + el.width / 2 - handleSize / 2, y: el.y + el.height - handleSize / 2, cursor: 'ns-resize' }, // s
+          { x: el.x - handleSize / 2, y: el.y + el.height - handleSize / 2, cursor: 'sw-resize' }, // sw
+          { x: el.x - handleSize / 2, y: el.y + el.height / 2 - handleSize / 2, cursor: 'ew-resize' }, // w
+        ];
+
+        ctx.fillStyle = handleStyle;
+        ctx.strokeStyle = '#ffffff';
+        ctx.lineWidth = 1;
+        handles.forEach((handle) => {
+          ctx.fillRect(handle.x, handle.y, handleSize, handleSize);
+          ctx.strokeRect(handle.x, handle.y, handleSize, handleSize);
+        });
       }
     });
   }
