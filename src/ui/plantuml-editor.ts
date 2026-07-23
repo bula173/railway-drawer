@@ -7,6 +7,7 @@
 import { Graph } from '@maxgraph/core';
 import { UIController } from './base/ui-controller';
 import { PlantUmlParser, DiagramData, DiagramElement } from '../services/plantuml-parser';
+import { SequenceDiagramRenderer } from '../services/sequence-diagram-renderer';
 
 export class PlantUmlEditorController extends UIController {
   private graph: Graph;
@@ -143,9 +144,16 @@ Bob --> Alice: Authentication Response
       }
 
       const diagramData = PlantUmlParser.parse(text);
-      this.convertAndAddToGraph(diagramData);
 
-      this.showSuccess(`✅ Diagram rendered! (${diagramData.elements.length} elements, ${diagramData.connections.length} connections)`);
+      // Use specialized renderer for sequence diagrams
+      if (diagramData.type === 'sequence') {
+        const renderer = new SequenceDiagramRenderer(this.graph);
+        renderer.render(diagramData);
+      } else {
+        this.convertAndAddToGraph(diagramData);
+      }
+
+      this.showSuccess(`✅ ${diagramData.type} diagram rendered! (${diagramData.elements.length} elements, ${diagramData.connections.length} connections)`);
     } catch (error) {
       this.showError(`Error parsing PlantUML: ${error instanceof Error ? error.message : String(error)}`);
       console.error('[PlantUML]', error);
