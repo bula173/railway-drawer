@@ -1,4 +1,4 @@
-export type LeftPanelTab = 'stencils' | 'shapes' | 'layers';
+export type LeftPanelTab = 'stencils' | 'shapes' | 'layers' | 'plantuml';
 
 export class LeftPanelTabs {
   private container: HTMLElement;
@@ -20,10 +20,12 @@ export class LeftPanelTabs {
     const shapeTabBtn = this.createTabButton('shapes', 'Shapes');
     const stencilTabBtn = this.createTabButton('stencils', 'Stencils');
     const layerTabBtn = this.createTabButton('layers', 'Layers');
+    const plantumlTabBtn = this.createTabButton('plantuml', '🌿 PlantUML');
 
     tabBar.appendChild(shapeTabBtn);
     tabBar.appendChild(stencilTabBtn);
     tabBar.appendChild(layerTabBtn);
+    tabBar.appendChild(plantumlTabBtn);
 
     this.container.insertBefore(tabBar, this.container.firstChild);
   }

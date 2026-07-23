@@ -7,7 +7,6 @@ export class MenuController {
   private commandService: GraphCommandService;
   private saveLoadController: SaveLoadController;
   private alignmentController: any;
-  private plantumlEditorController: any;
 
   constructor(graph: Graph, commandService: GraphCommandService, saveLoadController: SaveLoadController) {
     this.graph = graph;
@@ -18,10 +17,6 @@ export class MenuController {
 
   setAlignmentController(controller: any): void {
     this.alignmentController = controller;
-  }
-
-  setPlantumlEditorController(controller: any): void {
-    this.plantumlEditorController = controller;
   }
 
   private setupMenus() {
@@ -347,8 +342,13 @@ export class MenuController {
         break;
 
       case 'plantumlEditor':
-        if (this.plantumlEditorController) {
-          this.plantumlEditorController.show();
+        console.log('[Menu] PlantUML editor clicked');
+        const leftPanelTabs = (window as any).__leftPanelTabs;
+        if (leftPanelTabs) {
+          console.log('[Menu] Switching to plantuml tab');
+          leftPanelTabs.switchTab('plantuml');
+        } else {
+          console.error('[Menu] leftPanelTabs not found!');
         }
         break;
 

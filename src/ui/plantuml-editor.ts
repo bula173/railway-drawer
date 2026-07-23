@@ -22,31 +22,26 @@ export class PlantUmlEditorController extends UIController {
   constructor(graph: Graph) {
     super();
     this.graph = graph;
+    console.log('[PlantUmlEditor] Constructor called');
     this.createEditorPanel();
+    console.log('[PlantUmlEditor] Panel created:', this.editorPanel?.id);
     this.setupEventListeners();
+    console.log('[PlantUmlEditor] Event listeners setup');
   }
 
   /**
    * Create the PlantUML editor panel
    */
   private createEditorPanel(): void {
-    // Get or create container in left panel
-    const leftPanel = document.getElementById('leftpanel-container');
-    if (!leftPanel) {
-      console.error('[PlantUML] Left panel not found');
+    // Get container from HTML (registered as tab)
+    this.editorPanel = document.getElementById('plantuml-panel');
+    if (!this.editorPanel) {
+      console.error('[PlantUML] plantuml-panel container not found');
       return;
     }
 
-    // Create container
-    this.editorPanel = document.createElement('div');
-    this.editorPanel.id = 'plantuml-editor-panel';
-    this.editorPanel.className = 'editor-panel';
-
     const html = `
-      <div class="editor-header">
-        <h3>🌿 PlantUML</h3>
-      </div>
-      <div class="editor-toolbar">
+      <div class="editor-toolbar" style="flex-shrink: 0;">
         <button id="render-plantuml-btn" class="btn btn-primary" title="Render diagram to canvas" style="flex: 1;">🎨 Render</button>
         <button id="plantuml-example-btn" class="btn" title="Insert example" style="flex: 1;">📝 Example</button>
         <button id="clear-plantuml-btn" class="btn" title="Clear" style="flex: 1;">Clear</button>
@@ -58,12 +53,13 @@ participant Bob
 Alice -> Bob: Hello
 Bob --> Alice: Hi
 @enduml" spellcheck="false"></textarea>
-      <div id="plantuml-preview" class="diagram-preview">
+      <div id="plantuml-preview" class="diagram-preview" style="flex-shrink: 0;">
         <small>Ready to render</small>
       </div>
     `;
 
     this.editorPanel.innerHTML = html;
+    this.editorPanel.style.display = 'flex';
 
     // Get references to elements
     this.textarea = this.editorPanel.querySelector('#plantuml-input');
@@ -72,9 +68,6 @@ Bob --> Alice: Hi
     this.exampleButton = this.editorPanel.querySelector('#plantuml-example-btn');
     this.errorDisplay = this.editorPanel.querySelector('#plantuml-error');
     this.diagramPreview = this.editorPanel.querySelector('#plantuml-preview');
-
-    // Add to left panel
-    leftPanel.appendChild(this.editorPanel);
   }
 
   /**
@@ -103,11 +96,17 @@ Bob --> Alice: Hi
    * Show the editor panel
    */
   show(): void {
+    console.log('[PlantUmlEditor] show() called');
+    console.log('[PlantUmlEditor] editorPanel exists:', !!this.editorPanel);
     if (this.editorPanel) {
+      console.log('[PlantUmlEditor] Adding visible class');
       this.editorPanel.classList.add('visible');
+      console.log('[PlantUmlEditor] visible class added, classList:', this.editorPanel.className);
       if (this.textarea) {
         setTimeout(() => this.textarea?.focus(), 100);
       }
+    } else {
+      console.error('[PlantUmlEditor] editorPanel is null!');
     }
   }
 

@@ -304,6 +304,10 @@ const leftPanelTabs = new LeftPanelTabs('leftpanel-container');
 leftPanelTabs.registerTabContent('shapes', 'shapes-container');
 leftPanelTabs.registerTabContent('stencils', 'stencils-container');
 leftPanelTabs.registerTabContent('layers', 'layers-panel');
+leftPanelTabs.registerTabContent('plantuml', 'plantuml-panel');
+
+// Make leftPanelTabs globally accessible for menu handlers
+(window as any).__leftPanelTabs = leftPanelTabs;
 
 // ============= SHAPES TOOLBAR & STENCILS =============
 

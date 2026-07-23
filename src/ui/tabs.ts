@@ -184,7 +184,6 @@ export class TabManager {
     contextMenuController.setGroupingController(groupingController);
     contextMenuController.setCommandService(graphCommandService);
     menuController.setAlignmentController(alignmentController);
-    menuController.setPlantumlEditorController(plantumlEditorController);
     const transformController = new TransformController(graph);
     const gridSnapController = new GridSnapController(graph);
     const colorPickerController = new ColorPickerController(graph);
