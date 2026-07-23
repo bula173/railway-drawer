@@ -179,6 +179,7 @@ export class TabManager {
     const alignmentController = new AlignmentController(graph);
     const groupingController = new GroupingController(graph);
     contextMenuController.setGroupingController(groupingController);
+    contextMenuController.setCommandService(graphCommandService);
     menuController.setAlignmentController(alignmentController);
     const transformController = new TransformController(graph);
     const gridSnapController = new GridSnapController(graph);

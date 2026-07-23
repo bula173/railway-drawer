@@ -14,6 +14,7 @@
 
 import { Graph } from '@maxgraph/core';
 import { ClipboardService } from '../services/clipboard-service';
+import type { GraphCommandService } from '../services/graph-command-service';
 
 /**
  * @class ContextMenuController
@@ -48,6 +49,8 @@ export class ContextMenuController {
   private lastContextY = 0;
   /** @brief Reference to grouping controller for group/ungroup operations */
   private groupingController: any;
+  /** @brief Reference to graph command service for z-order operations */
+  private commandService: GraphCommandService | null = null;
 
   /**
    * @brief Initialize context menu controller
@@ -63,6 +66,10 @@ export class ContextMenuController {
 
   setGroupingController(controller: any): void {
     this.groupingController = controller;
+  }
+
+  setCommandService(service: GraphCommandService): void {
+    this.commandService = service;
   }
 
   private setupClipboardListener(): void {
@@ -248,78 +255,19 @@ export class ContextMenuController {
         break;
 
       case 'toFront':
-        {
-          const model = this.graph.model as any;
-          this.graph.batchUpdate(() => {
-            cellsToOperate.forEach((cell: any) => {
-              const parent = model.getParent(cell);
-              if (parent) {
-                const index = model.getChildCount(parent) - 1;
-                model.add(parent, cell, index);
-              }
-            });
-          });
-        }
+        if (this.commandService) this.commandService.toFront();
         break;
 
       case 'toBack':
-        {
-          const model = this.graph.model as any;
-          this.graph.batchUpdate(() => {
-            cellsToOperate.forEach((cell: any) => {
-              const parent = model.getParent(cell);
-              if (parent) {
-                model.add(parent, cell, 0);
-              }
-            });
-          });
-        }
+        if (this.commandService) this.commandService.toBack();
         break;
 
       case 'bringForward':
-        {
-          const model = this.graph.model as any;
-          this.graph.batchUpdate(() => {
-            cellsToOperate.forEach((cell: any) => {
-              const parent = model.getParent(cell);
-              if (parent) {
-                let index = -1;
-                for (let i = 0; i < model.getChildCount(parent); i++) {
-                  if (model.getChildAt(parent, i) === cell) {
-                    index = i;
-                    break;
-                  }
-                }
-                if (index < model.getChildCount(parent) - 1) {
-                  model.add(parent, cell, index + 1);
-                }
-              }
-            });
-          });
-        }
+        if (this.commandService) this.commandService.bringForward();
         break;
 
       case 'sendBackward':
-        {
-          const model = this.graph.model as any;
-          this.graph.batchUpdate(() => {
-            cellsToOperate.forEach((cell: any) => {
-              const parent = model.getParent(cell);
-              if (parent) {
-                let index = -1;
-                for (let i = 0; i < model.getChildCount(parent); i++) {
-                  if (model.getChildAt(parent, i) === cell) {
-                    index = i;
-                    break;
-                  }
-                }
-                if (index > 0) {
-                  model.add(parent, cell, index - 1);
-                }
-              }
-            });
-          });
-        }
+        if (this.commandService) this.commandService.sendBackward();
         break;
 
       case 'editStyle':
