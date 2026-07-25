@@ -216,11 +216,16 @@ export class ShapeToolbar {
     if (shape.iconGeneratorClass) {
       try {
         const svgHtml = shapeToSvg(shape.iconGeneratorClass, { width: 32, height: 30 });
-        console.log(`Generated SVG for ${shape.id}:`, svgHtml);
         if (svgHtml) {
-          iconDiv.innerHTML = svgHtml;
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(svgHtml, 'image/svg+xml');
+          const svgElement = doc.documentElement;
+          if (svgElement.tagName === 'svg') {
+            iconDiv.appendChild(svgElement);
+          } else {
+            iconDiv.textContent = shape.icon || '▫';
+          }
         } else {
-          console.warn(`Empty SVG generated for ${shape.id}`);
           iconDiv.textContent = shape.icon || '▫';
         }
       } catch (error) {
