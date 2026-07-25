@@ -1,6 +1,6 @@
 import { Cell, Geometry } from '@maxgraph/core';
 import { ShapeRegistry, ShapeConfig } from './registry.js';
-import { shapeToSvg } from './shape-to-svg.js';
+import { generateShapeIcon } from './svg-icon-generator.js';
 
 export class ShapeToolbar {
   private container: HTMLElement;
@@ -214,22 +214,10 @@ export class ShapeToolbar {
 
     // Generate SVG icon from Shape class if available
     if (shape.iconGeneratorClass) {
-      try {
-        const svgHtml = shapeToSvg(shape.iconGeneratorClass, { width: 32, height: 30 });
-        if (svgHtml) {
-          const parser = new DOMParser();
-          const doc = parser.parseFromString(svgHtml, 'image/svg+xml');
-          const svgElement = doc.documentElement;
-          if (svgElement.tagName === 'svg') {
-            iconDiv.appendChild(svgElement);
-          } else {
-            iconDiv.textContent = shape.icon || '▫';
-          }
-        } else {
-          iconDiv.textContent = shape.icon || '▫';
-        }
-      } catch (error) {
-        console.error(`Failed to generate icon for ${shape.id}:`, error);
+      const svgElement = generateShapeIcon(shape.iconGeneratorClass, 32, 30);
+      if (svgElement) {
+        iconDiv.appendChild(svgElement);
+      } else {
         iconDiv.textContent = shape.icon || '▫';
       }
     } else if (shape.icon.startsWith('data:image')) {
