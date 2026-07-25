@@ -1,6 +1,6 @@
 import { Cell, Geometry } from '@maxgraph/core';
 import { ShapeRegistry, ShapeConfig } from './registry.js';
-import { shapeToSvgVector } from './shape-to-svg.js';
+import { shapeToSvg } from './shape-to-svg.js';
 
 export class ShapeToolbar {
   private container: HTMLElement;
@@ -215,11 +215,8 @@ export class ShapeToolbar {
     // Generate SVG icon from Shape class if available
     if (shape.iconGeneratorClass) {
       try {
-        const svgDataUri = shapeToSvgVector(shape.iconGeneratorClass, { width: 32, height: 30 });
-        iconDiv.style.backgroundImage = `url('${svgDataUri}')`;
-        iconDiv.style.backgroundSize = 'contain';
-        iconDiv.style.backgroundRepeat = 'no-repeat';
-        iconDiv.style.backgroundPosition = 'center';
+        const svgHtml = shapeToSvg(shape.iconGeneratorClass, { width: 32, height: 30 });
+        iconDiv.innerHTML = svgHtml;
       } catch (error) {
         console.warn(`Failed to generate icon for ${shape.id}:`, error);
         iconDiv.textContent = shape.icon || '▫';
