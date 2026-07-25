@@ -216,9 +216,15 @@ export class ShapeToolbar {
     if (shape.iconGeneratorClass) {
       try {
         const svgHtml = shapeToSvg(shape.iconGeneratorClass, { width: 32, height: 30 });
-        iconDiv.innerHTML = svgHtml;
+        console.log(`Generated SVG for ${shape.id}:`, svgHtml);
+        if (svgHtml) {
+          iconDiv.innerHTML = svgHtml;
+        } else {
+          console.warn(`Empty SVG generated for ${shape.id}`);
+          iconDiv.textContent = shape.icon || '▫';
+        }
       } catch (error) {
-        console.warn(`Failed to generate icon for ${shape.id}:`, error);
+        console.error(`Failed to generate icon for ${shape.id}:`, error);
         iconDiv.textContent = shape.icon || '▫';
       }
     } else if (shape.icon.startsWith('data:image')) {
