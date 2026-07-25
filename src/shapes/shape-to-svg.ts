@@ -6,47 +6,8 @@
 import { Shape } from '@maxgraph/core';
 
 /**
- * Convert a Shape class to an SVG data URI by rendering it to a canvas
- * and capturing the drawing commands
- */
-export function shapeToSvg(ShapeClass: typeof Shape, options?: { width?: number; height?: number }): string {
-  const width = options?.width || 64;
-  const height = options?.height || 64;
-
-  // Create canvas for rendering
-  const canvas = document.createElement('canvas');
-  canvas.width = width;
-  canvas.height = height;
-  const ctx = canvas.getContext('2d');
-
-  if (!ctx) {
-    console.warn('Failed to get canvas context');
-    return '';
-  }
-
-  try {
-    // Instantiate the shape
-    const shape = new ShapeClass();
-
-    // Set up canvas context with sensible defaults
-    ctx.fillStyle = '#1976d2';
-    ctx.strokeStyle = '#0d47a1';
-    ctx.lineWidth = 1.5;
-
-    // Paint the shape
-    shape.paintVertexShape(ctx as any, 0, 0, width, height);
-
-    // Convert canvas to data URI
-    return canvas.toDataURL('image/png');
-  } catch (error) {
-    console.warn(`Failed to render shape to SVG: ${error}`);
-    return '';
-  }
-}
-
-/**
- * Render Shape class to SVG by capturing canvas drawings as SVG paths
- * This creates a true vector representation
+ * Render Shape class to SVG by capturing canvas drawings as SVG paths.
+ * Creates a true vector representation of the shape.
  */
 export function shapeToSvgVector(ShapeClass: typeof Shape, options?: { width?: number; height?: number }): string {
   const width = options?.width || 64;
@@ -206,41 +167,3 @@ export function shapeToSvgVector(ShapeClass: typeof Shape, options?: { width?: n
   }
 }
 
-/**
- * Simple canvas-based rendering to PNG data URI
- * Fallback method that works for all shapes
- */
-export function shapeToCanvasPNG(ShapeClass: typeof Shape, options?: { width?: number; height?: number; fillColor?: string; strokeColor?: string }): string {
-  const width = options?.width || 64;
-  const height = options?.height || 64;
-  const fillColor = options?.fillColor || '#1976d2';
-  const strokeColor = options?.strokeColor || '#0d47a1';
-
-  const canvas = document.createElement('canvas');
-  canvas.width = width;
-  canvas.height = height;
-  const ctx = canvas.getContext('2d');
-
-  if (!ctx) return '';
-
-  try {
-    // Clear canvas with white background
-    ctx.fillStyle = '#ffffff';
-    ctx.fillRect(0, 0, width, height);
-
-    // Set up rendering
-    ctx.fillStyle = fillColor;
-    ctx.strokeStyle = strokeColor;
-    ctx.lineWidth = 1.5;
-
-    // Render shape
-    const shape = new ShapeClass();
-    shape.paintVertexShape(ctx as any, 0, 0, width, height);
-
-    // Return as PNG data URI
-    return canvas.toDataURL('image/png');
-  } catch (error) {
-    console.warn(`Failed to render shape: ${error}`);
-    return '';
-  }
-}
