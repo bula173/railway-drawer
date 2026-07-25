@@ -41,6 +41,7 @@ import { registerUmlShapes } from './uml';
 import { registerRailwayShapes } from './railway';
 import { registerErtmsShapes, registerErtmsShapeClasses } from './ertms';
 import { registerCustomShapes } from './custom';
+import { registerDrawioMxArrowsShapeClasses, registerDrawioMxArrowsShapes } from './drawio-arrows/registry';
 
 export function registerShapes() {
   // Register perimeter functions with StyleRegistry for SVG arrow shapes
@@ -166,6 +167,8 @@ export function registerShapes() {
   registerRailwayShapes();
   registerErtmsShapeClasses();
   registerErtmsShapes();
+  registerDrawioMxArrowsShapeClasses();
+  registerDrawioMxArrowsShapes();
   registerCustomShapes();
 }
 

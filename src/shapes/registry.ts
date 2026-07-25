@@ -19,6 +19,7 @@ export interface ShapeConfig {
   width: number;
   height: number;
   style: any; // maxGraph style object
+  iconGeneratorClass?: any; // Optional: Shape class to generate icon from at runtime
 }
 
 export class ShapeRegistry {

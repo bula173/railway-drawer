@@ -1,5 +1,6 @@
 import { Cell, Geometry } from '@maxgraph/core';
 import { ShapeRegistry, ShapeConfig } from './registry';
+import { shapeToCanvasPNG } from './shape-to-svg';
 
 export class ShapeToolbar {
   private container: HTMLElement;
@@ -207,8 +208,39 @@ export class ShapeToolbar {
     item.draggable = true;
     item.title = shape.label;
 
-    // Display icon - either SVG string (for svg type) or emoji (for vertex type)
-    item.innerHTML = `<div class="shape-icon-svg">${shape.icon}</div>`;
+    // Display icon as background image
+    const iconDiv = document.createElement('div');
+    iconDiv.className = 'shape-icon-svg';
+
+    // Generate icon from Shape class if available
+    if (shape.iconGeneratorClass) {
+      try {
+        const iconDataUri = shapeToCanvasPNG(shape.iconGeneratorClass, {
+          width: 64,
+          height: 64,
+          fillColor: '#1976d2',
+          strokeColor: '#0d47a1',
+        });
+        iconDiv.style.backgroundImage = `url('${iconDataUri}')`;
+        iconDiv.style.backgroundSize = 'contain';
+        iconDiv.style.backgroundRepeat = 'no-repeat';
+        iconDiv.style.backgroundPosition = 'center';
+      } catch (error) {
+        console.warn(`Failed to generate icon for ${shape.id}:`, error);
+        // Fallback to text
+        iconDiv.textContent = shape.icon || '▫';
+      }
+    } else if (shape.icon.startsWith('data:image')) {
+      // Data URI (SVG or PNG) - use as background image
+      iconDiv.style.backgroundImage = `url('${shape.icon}')`;
+      iconDiv.style.backgroundSize = 'contain';
+      iconDiv.style.backgroundRepeat = 'no-repeat';
+      iconDiv.style.backgroundPosition = 'center';
+    } else {
+      // Fallback for emoji or text icons
+      iconDiv.textContent = shape.icon || '▫';
+    }
+    item.appendChild(iconDiv);
 
     // Drag event - store shape data
     item.addEventListener('dragstart', (evt) => {

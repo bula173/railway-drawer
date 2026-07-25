@@ -15,7 +15,8 @@ import { Graph } from '@maxgraph/core';
 import { customShapeRegistry, CustomShape } from '../services/custom-shape-registry';
 
 interface ShapeElement {
-  type: 'rect' | 'circle' | 'triangle' | 'line' | 'polygon';
+  type: 'rect' | 'circle' | 'triangle' | 'line' | 'diamond' | 'star' | 'pentagon' | 'hexagon' | 'ellipse' |
+        'actor' | 'arrow' | 'cloud' | 'cylinder' | 'double-ellipse' | 'image' | 'label' | 'rhombus' | 'swimlane';
   x: number;
   y: number;
   width: number;
@@ -23,6 +24,7 @@ interface ShapeElement {
   fill: string;
   stroke: string;
   strokeWidth: number;
+  rotation: number; // degrees
   id: string;
 }
 
@@ -89,12 +91,30 @@ export class ShapeDesignerController {
           <div class="designer-left">
             <!-- Shape Palette -->
             <div class="shape-palette">
-              <div class="palette-label">Drag shapes or click to draw:</div>
+              <div class="palette-label">Basic Shapes:</div>
               <div class="palette-grid">
                 <button class="palette-shape" data-shape="rect" title="Rectangle">▭</button>
                 <button class="palette-shape" data-shape="circle" title="Circle">●</button>
+                <button class="palette-shape" data-shape="ellipse" title="Ellipse">⬭</button>
                 <button class="palette-shape" data-shape="triangle" title="Triangle">▲</button>
+                <button class="palette-shape" data-shape="diamond" title="Diamond">◆</button>
+                <button class="palette-shape" data-shape="star" title="Star">★</button>
+                <button class="palette-shape" data-shape="pentagon" title="Pentagon">⬠</button>
+                <button class="palette-shape" data-shape="hexagon" title="Hexagon">⬡</button>
                 <button class="palette-shape" data-shape="line" title="Line">—</button>
+              </div>
+
+              <div class="palette-label">Generic Shapes:</div>
+              <div class="palette-grid">
+                <button class="palette-shape" data-shape="actor" title="Actor">🧑</button>
+                <button class="palette-shape" data-shape="arrow" title="Arrow">➤</button>
+                <button class="palette-shape" data-shape="cloud" title="Cloud">☁</button>
+                <button class="palette-shape" data-shape="cylinder" title="Cylinder">⌗</button>
+                <button class="palette-shape" data-shape="double-ellipse" title="Double Ellipse">⧗</button>
+                <button class="palette-shape" data-shape="image" title="Image">🖼</button>
+                <button class="palette-shape" data-shape="label" title="Label">▢</button>
+                <button class="palette-shape" data-shape="rhombus" title="Rhombus">◇</button>
+                <button class="palette-shape" data-shape="swimlane" title="Swimlane">⊞</button>
               </div>
             </div>
 
@@ -108,6 +128,13 @@ export class ShapeDesignerController {
               <button class="btn-delete-shape" title="Delete selected shape">🗑️ Delete</button>
               <button class="btn-clear" title="Clear all">🗑️ Clear All</button>
               <button class="btn-close-path" title="Close path">🔒 Close</button>
+            </div>
+
+            <div class="canvas-controls">
+              <button class="btn-bring-forward" title="Bring forward">⬆ Forward</button>
+              <button class="btn-send-backward" title="Send backward">⬇ Backward</button>
+              <button class="btn-to-front" title="Bring to front">⬆⬆ Front</button>
+              <button class="btn-to-back" title="Send to back">⬇⬇ Back</button>
             </div>
           </div>
 
@@ -163,6 +190,9 @@ export class ShapeDesignerController {
 
               <label>Height:</label>
               <input type="number" id="element-height" min="10" max="200">
+
+              <label>Rotation (°):</label>
+              <input type="number" id="element-rotation" min="0" max="360" step="15" value="0">
 
               <label>Fill Color:</label>
               <input type="color" id="element-fill">
@@ -277,6 +307,47 @@ export class ShapeDesignerController {
       }
     });
 
+    // Z-order controls
+    this.modal?.querySelector('.btn-bring-forward')?.addEventListener('click', () => {
+      if (this.selectedElement) {
+        const index = this.shapeElements.indexOf(this.selectedElement);
+        if (index < this.shapeElements.length - 1) {
+          [this.shapeElements[index], this.shapeElements[index + 1]] = [this.shapeElements[index + 1], this.shapeElements[index]];
+          this.redrawCanvas();
+          this.generateVertexCodeFromComposition();
+        }
+      }
+    });
+
+    this.modal?.querySelector('.btn-send-backward')?.addEventListener('click', () => {
+      if (this.selectedElement) {
+        const index = this.shapeElements.indexOf(this.selectedElement);
+        if (index > 0) {
+          [this.shapeElements[index], this.shapeElements[index - 1]] = [this.shapeElements[index - 1], this.shapeElements[index]];
+          this.redrawCanvas();
+          this.generateVertexCodeFromComposition();
+        }
+      }
+    });
+
+    this.modal?.querySelector('.btn-to-front')?.addEventListener('click', () => {
+      if (this.selectedElement) {
+        this.shapeElements = this.shapeElements.filter((el) => el !== this.selectedElement);
+        this.shapeElements.push(this.selectedElement);
+        this.redrawCanvas();
+        this.generateVertexCodeFromComposition();
+      }
+    });
+
+    this.modal?.querySelector('.btn-to-back')?.addEventListener('click', () => {
+      if (this.selectedElement) {
+        this.shapeElements = this.shapeElements.filter((el) => el !== this.selectedElement);
+        this.shapeElements.unshift(this.selectedElement);
+        this.redrawCanvas();
+        this.generateVertexCodeFromComposition();
+      }
+    });
+
     // Property change handlers
     this.modal?.querySelectorAll('input, textarea').forEach((el) => {
       el.addEventListener('change', () => this.updatePreview());
@@ -304,6 +375,7 @@ export class ShapeDesignerController {
     this.modal?.querySelector('#element-y')?.addEventListener('change', () => this.updateSelectedElement());
     this.modal?.querySelector('#element-width')?.addEventListener('change', () => this.updateSelectedElement());
     this.modal?.querySelector('#element-height')?.addEventListener('change', () => this.updateSelectedElement());
+    this.modal?.querySelector('#element-rotation')?.addEventListener('change', () => this.updateSelectedElement());
     this.modal?.querySelector('#element-fill')?.addEventListener('change', () => this.updateSelectedElement());
     this.modal?.querySelector('#element-stroke')?.addEventListener('change', () => this.updateSelectedElement());
     this.modal?.querySelector('#element-stroke-width')?.addEventListener('change', () => this.updateSelectedElement());
@@ -340,20 +412,43 @@ export class ShapeDesignerController {
 
     ctx.clearRect(0, 0, this.previewCanvas.width, this.previewCanvas.height);
 
-    // Draw grid
-    ctx.strokeStyle = '#e0e0e0';
+    // Draw grid (10px)
+    ctx.strokeStyle = '#f0f0f0';
     ctx.lineWidth = 0.5;
-    for (let i = 0; i < this.previewCanvas.width; i += 50) {
+    for (let i = 0; i < this.previewCanvas.width; i += 10) {
       ctx.beginPath();
       ctx.moveTo(i, 0);
       ctx.lineTo(i, this.previewCanvas.height);
       ctx.stroke();
     }
-    for (let i = 0; i < this.previewCanvas.height; i += 50) {
+    for (let i = 0; i < this.previewCanvas.height; i += 10) {
       ctx.beginPath();
       ctx.moveTo(0, i);
       ctx.lineTo(this.previewCanvas.width, i);
       ctx.stroke();
+    }
+
+    // Draw ruler (every 50px with labels)
+    ctx.strokeStyle = '#999';
+    ctx.lineWidth = 1;
+    ctx.fillStyle = '#666';
+    ctx.font = '9px Arial';
+    ctx.textAlign = 'center';
+    for (let i = 50; i < this.previewCanvas.width; i += 50) {
+      ctx.beginPath();
+      ctx.moveTo(i, 0);
+      ctx.lineTo(i, 6);
+      ctx.stroke();
+      ctx.fillText(i + 'px', i, 12);
+    }
+    ctx.textAlign = 'right';
+    ctx.textBaseline = 'middle';
+    for (let i = 50; i < this.previewCanvas.height; i += 50) {
+      ctx.beginPath();
+      ctx.moveTo(0, i);
+      ctx.lineTo(6, i);
+      ctx.stroke();
+      ctx.fillText(i + 'px', 20, i);
     }
 
     // Render shape elements only
@@ -470,6 +565,7 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
     const yInput = this.modal?.querySelector('#element-y') as HTMLInputElement;
     const widthInput = this.modal?.querySelector('#element-width') as HTMLInputElement;
     const heightInput = this.modal?.querySelector('#element-height') as HTMLInputElement;
+    const rotationInput = this.modal?.querySelector('#element-rotation') as HTMLInputElement;
     const fillInput = this.modal?.querySelector('#element-fill') as HTMLInputElement;
     const strokeInput = this.modal?.querySelector('#element-stroke') as HTMLInputElement;
     const strokeWidthInput = this.modal?.querySelector('#element-stroke-width') as HTMLInputElement;
@@ -478,6 +574,7 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
     if (yInput) this.selectedElement.y = parseInt(yInput.value) || this.selectedElement.y;
     if (widthInput) this.selectedElement.width = parseInt(widthInput.value) || this.selectedElement.width;
     if (heightInput) this.selectedElement.height = parseInt(heightInput.value) || this.selectedElement.height;
+    if (rotationInput) this.selectedElement.rotation = parseFloat(rotationInput.value) || 0;
     if (fillInput) this.selectedElement.fill = fillInput.value;
     if (strokeInput) this.selectedElement.stroke = strokeInput.value;
     if (strokeWidthInput) this.selectedElement.strokeWidth = parseFloat(strokeWidthInput.value) || this.selectedElement.strokeWidth;
@@ -542,9 +639,17 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
       const w = el.width * scale;
       const h = el.height * scale;
 
+      ctx.save();
       ctx.fillStyle = el.fill;
       ctx.strokeStyle = el.stroke;
       ctx.lineWidth = el.strokeWidth;
+
+      // Apply rotation around center
+      const centerX = x + w / 2;
+      const centerY = y + h / 2;
+      ctx.translate(centerX, centerY);
+      ctx.rotate((el.rotation || 0) * Math.PI / 180);
+      ctx.translate(-centerX, -centerY);
 
       switch (el.type) {
         case 'rect':
@@ -553,7 +658,13 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
           break;
         case 'circle':
           ctx.beginPath();
-          ctx.arc(x + w / 2, y + h / 2, w / 2, 0, Math.PI * 2);
+          ctx.arc(centerX, centerY, w / 2, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.stroke();
+          break;
+        case 'ellipse':
+          ctx.beginPath();
+          ctx.ellipse(centerX, centerY, w / 2, h / 2, 0, 0, Math.PI * 2);
           ctx.fill();
           ctx.stroke();
           break;
@@ -566,13 +677,163 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
           ctx.fill();
           ctx.stroke();
           break;
+        case 'diamond':
+          ctx.beginPath();
+          ctx.moveTo(centerX, y);
+          ctx.lineTo(x + w, centerY);
+          ctx.lineTo(centerX, y + h);
+          ctx.lineTo(x, centerY);
+          ctx.closePath();
+          ctx.fill();
+          ctx.stroke();
+          break;
+        case 'star':
+          this.drawStar(ctx, centerX, centerY, 5, w / 2, w / 4);
+          break;
+        case 'pentagon':
+          this.drawPolygon(ctx, centerX, centerY, 5, w / 2);
+          break;
+        case 'hexagon':
+          this.drawPolygon(ctx, centerX, centerY, 6, w / 2);
+          break;
         case 'line':
           ctx.beginPath();
           ctx.moveTo(x, y + h / 2);
           ctx.lineTo(x + w, y + h / 2);
           ctx.stroke();
           break;
+        case 'actor': {
+          const cx = centerX;
+          // Head
+          ctx.beginPath();
+          ctx.arc(cx, y + h * 0.2, w * 0.15, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.stroke();
+          // Body
+          ctx.beginPath();
+          ctx.moveTo(cx, y + h * 0.35);
+          ctx.lineTo(cx, y + h * 0.65);
+          ctx.stroke();
+          // Arms
+          ctx.beginPath();
+          ctx.moveTo(x + w * 0.2, y + h * 0.45);
+          ctx.lineTo(x + w * 0.8, y + h * 0.45);
+          ctx.stroke();
+          // Legs
+          ctx.beginPath();
+          ctx.moveTo(cx, y + h * 0.65);
+          ctx.lineTo(x + w * 0.3, y + h);
+          ctx.stroke();
+          ctx.beginPath();
+          ctx.moveTo(cx, y + h * 0.65);
+          ctx.lineTo(x + w * 0.7, y + h);
+          ctx.stroke();
+          break;
+        }
+        case 'arrow': {
+          const cy = centerY;
+          ctx.beginPath();
+          ctx.moveTo(x, cy);
+          ctx.lineTo(x + w * 0.7, cy);
+          ctx.stroke();
+          ctx.beginPath();
+          ctx.moveTo(x + w * 0.7, cy);
+          ctx.lineTo(x + w * 0.5, y + h * 0.3);
+          ctx.stroke();
+          ctx.beginPath();
+          ctx.moveTo(x + w * 0.7, cy);
+          ctx.lineTo(x + w * 0.5, y + h * 0.7);
+          ctx.stroke();
+          break;
+        }
+        case 'cloud': {
+          const cx = centerX;
+          ctx.beginPath();
+          ctx.arc(x + w * 0.2, y + h * 0.5, w * 0.15, 0, Math.PI * 2);
+          ctx.arc(cx, y + h * 0.3, w * 0.2, 0, Math.PI * 2);
+          ctx.arc(x + w * 0.8, y + h * 0.5, w * 0.15, 0, Math.PI * 2);
+          ctx.arc(cx, y + h * 0.7, w * 0.2, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.stroke();
+          break;
+        }
+        case 'cylinder': {
+          const cx = centerX;
+          // Top ellipse
+          ctx.beginPath();
+          ctx.ellipse(cx, y + h * 0.2, w / 2, h * 0.1, 0, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.stroke();
+          // Body
+          ctx.fillRect(x, y + h * 0.2, w, h * 0.6);
+          ctx.strokeRect(x, y + h * 0.2, w, h * 0.6);
+          // Bottom ellipse
+          ctx.beginPath();
+          ctx.ellipse(cx, y + h * 0.8, w / 2, h * 0.1, 0, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.stroke();
+          break;
+        }
+        case 'double-ellipse': {
+          const cx = centerX;
+          const cy = centerY;
+          // Outer ellipse
+          ctx.beginPath();
+          ctx.ellipse(cx, cy, w / 2, h / 2, 0, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.stroke();
+          // Inner ellipse
+          ctx.beginPath();
+          ctx.ellipse(cx, cy, w * 0.35, h * 0.35, 0, 0, Math.PI * 2);
+          ctx.fillStyle = '#ffffff';
+          ctx.fill();
+          ctx.strokeStyle = el.stroke;
+          ctx.stroke();
+          break;
+        }
+        case 'image':
+          ctx.fillRect(x, y, w, h);
+          ctx.strokeRect(x, y, w, h);
+          // Draw diagonal lines for image
+          ctx.beginPath();
+          ctx.moveTo(x, y);
+          ctx.lineTo(x + w, y + h);
+          ctx.stroke();
+          ctx.beginPath();
+          ctx.moveTo(x + w, y);
+          ctx.lineTo(x, y + h);
+          ctx.stroke();
+          break;
+        case 'label':
+          ctx.fillRect(x, y, w, h);
+          ctx.strokeRect(x, y, w, h);
+          break;
+        case 'rhombus': {
+          const cx = centerX;
+          const cy = centerY;
+          ctx.beginPath();
+          ctx.moveTo(cx, y);
+          ctx.lineTo(x + w, cy);
+          ctx.lineTo(cx, y + h);
+          ctx.lineTo(x, cy);
+          ctx.closePath();
+          ctx.fill();
+          ctx.stroke();
+          break;
+        }
+        case 'swimlane':
+          // Outer box
+          ctx.fillRect(x, y, w, h);
+          ctx.strokeRect(x, y, w, h);
+          // Header line
+          ctx.beginPath();
+          ctx.moveTo(x, y + h * 0.15);
+          ctx.lineTo(x + w, y + h * 0.15);
+          ctx.stroke();
+          break;
       }
+
+      ctx.restore();
     });
 
     // Update info
@@ -604,6 +865,7 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
     (this.modal?.querySelector('#element-y') as HTMLInputElement).value = this.selectedElement.y.toString();
     (this.modal?.querySelector('#element-width') as HTMLInputElement).value = this.selectedElement.width.toString();
     (this.modal?.querySelector('#element-height') as HTMLInputElement).value = this.selectedElement.height.toString();
+    (this.modal?.querySelector('#element-rotation') as HTMLInputElement).value = (this.selectedElement.rotation || 0).toString();
     (this.modal?.querySelector('#element-fill') as HTMLInputElement).value = this.selectedElement.fill;
     (this.modal?.querySelector('#element-stroke') as HTMLInputElement).value = this.selectedElement.stroke;
     (this.modal?.querySelector('#element-stroke-width') as HTMLInputElement).value = this.selectedElement.strokeWidth.toString();
@@ -652,10 +914,12 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
       }
 
       const rect = canvas.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
+      const scaleX = canvas.width / rect.width;
+      const scaleY = canvas.height / rect.height;
+      const x = (e.clientX - rect.left) * scaleX;
+      const y = (e.clientY - rect.top) * scaleY;
 
-      console.log('[DEBUG] drop at:', { x, y });
+      console.log('[DEBUG] drop at:', { x, y, displaySize: { width: rect.width, height: rect.height }, logicalSize: { width: canvas.width, height: canvas.height }, scale: { x: scaleX, y: scaleY } });
 
       this.addShapeElement(shapeType as any, x, y);
     });
@@ -664,8 +928,10 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
     // Canvas mouse down for selection, dragging or resizing
     canvas.addEventListener('mousedown', (e) => {
       const rect = canvas.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
+      const scaleX = canvas.width / rect.width;
+      const scaleY = canvas.height / rect.height;
+      const x = (e.clientX - rect.left) * scaleX;
+      const y = (e.clientY - rect.top) * scaleY;
       const padding = 4;
       const handleSize = 6;
 
@@ -746,8 +1012,10 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
     // Canvas mouse move for dragging or resizing
     canvas.addEventListener('mousemove', (e) => {
       const rect = canvas.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
+      const scaleX = canvas.width / rect.width;
+      const scaleY = canvas.height / rect.height;
+      const x = (e.clientX - rect.left) * scaleX;
+      const y = (e.clientY - rect.top) * scaleY;
 
       // Update cursor based on handle or position
       if (this.selectedElement) {
@@ -869,6 +1137,7 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
       fill: '#1976d2',
       stroke: '#0d47a1',
       strokeWidth: 2,
+      rotation: 0,
       id: `shape-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
     };
 
@@ -902,9 +1171,18 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
 
     this.shapeElements.forEach((el, index) => {
       console.log(`[DEBUG] Rendering shape ${index}:`, el.type, 'at', el.x, el.y);
+
+      ctx.save();
       ctx.fillStyle = el.fill;
       ctx.strokeStyle = el.stroke;
       ctx.lineWidth = el.strokeWidth;
+
+      // Apply rotation around center
+      const centerX = el.x + el.width / 2;
+      const centerY = el.y + el.height / 2;
+      ctx.translate(centerX, centerY);
+      ctx.rotate((el.rotation || 0) * Math.PI / 180);
+      ctx.translate(-centerX, -centerY);
 
       switch (el.type) {
         case 'rect':
@@ -913,7 +1191,13 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
           break;
         case 'circle':
           ctx.beginPath();
-          ctx.arc(el.x + el.width / 2, el.y + el.height / 2, el.width / 2, 0, Math.PI * 2);
+          ctx.arc(centerX, centerY, el.width / 2, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.stroke();
+          break;
+        case 'ellipse':
+          ctx.beginPath();
+          ctx.ellipse(centerX, centerY, el.width / 2, el.height / 2, 0, 0, Math.PI * 2);
           ctx.fill();
           ctx.stroke();
           break;
@@ -926,13 +1210,166 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
           ctx.fill();
           ctx.stroke();
           break;
+        case 'diamond':
+          ctx.beginPath();
+          ctx.moveTo(centerX, el.y);
+          ctx.lineTo(el.x + el.width, centerY);
+          ctx.lineTo(centerX, el.y + el.height);
+          ctx.lineTo(el.x, centerY);
+          ctx.closePath();
+          ctx.fill();
+          ctx.stroke();
+          break;
+        case 'star':
+          this.drawStar(ctx, centerX, centerY, 5, el.width / 2, el.width / 4);
+          break;
+        case 'pentagon':
+          this.drawPolygon(ctx, centerX, centerY, 5, el.width / 2);
+          break;
+        case 'hexagon':
+          this.drawPolygon(ctx, centerX, centerY, 6, el.width / 2);
+          break;
         case 'line':
           ctx.beginPath();
           ctx.moveTo(el.x, el.y + el.height / 2);
           ctx.lineTo(el.x + el.width, el.y + el.height / 2);
           ctx.stroke();
           break;
+        case 'actor': {
+          const cx = el.x + el.width / 2;
+          // Head
+          ctx.beginPath();
+          ctx.arc(cx, el.y + el.height * 0.2, el.width * 0.15, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.stroke();
+          // Body
+          ctx.beginPath();
+          ctx.moveTo(cx, el.y + el.height * 0.35);
+          ctx.lineTo(cx, el.y + el.height * 0.65);
+          ctx.stroke();
+          // Arms
+          ctx.beginPath();
+          ctx.moveTo(el.x + el.width * 0.2, el.y + el.height * 0.45);
+          ctx.lineTo(el.x + el.width * 0.8, el.y + el.height * 0.45);
+          ctx.stroke();
+          // Legs
+          ctx.beginPath();
+          ctx.moveTo(cx, el.y + el.height * 0.65);
+          ctx.lineTo(el.x + el.width * 0.3, el.y + el.height);
+          ctx.stroke();
+          ctx.beginPath();
+          ctx.moveTo(cx, el.y + el.height * 0.65);
+          ctx.lineTo(el.x + el.width * 0.7, el.y + el.height);
+          ctx.stroke();
+          break;
+        }
+        case 'arrow': {
+          const cy = el.y + el.height / 2;
+          // Arrow shaft
+          ctx.beginPath();
+          ctx.moveTo(el.x, cy);
+          ctx.lineTo(el.x + el.width * 0.7, cy);
+          ctx.stroke();
+          // Arrow head
+          ctx.beginPath();
+          ctx.moveTo(el.x + el.width * 0.7, cy);
+          ctx.lineTo(el.x + el.width * 0.5, el.y + el.height * 0.3);
+          ctx.stroke();
+          ctx.beginPath();
+          ctx.moveTo(el.x + el.width * 0.7, cy);
+          ctx.lineTo(el.x + el.width * 0.5, el.y + el.height * 0.7);
+          ctx.stroke();
+          break;
+        }
+        case 'cloud': {
+          const cx = el.x + el.width / 2;
+          ctx.beginPath();
+          ctx.arc(el.x + el.width * 0.2, el.y + el.height * 0.5, el.width * 0.15, 0, Math.PI * 2);
+          ctx.arc(cx, el.y + el.height * 0.3, el.width * 0.2, 0, Math.PI * 2);
+          ctx.arc(el.x + el.width * 0.8, el.y + el.height * 0.5, el.width * 0.15, 0, Math.PI * 2);
+          ctx.arc(cx, el.y + el.height * 0.7, el.width * 0.2, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.stroke();
+          break;
+        }
+        case 'cylinder': {
+          const cx = el.x + el.width / 2;
+          // Top ellipse
+          ctx.beginPath();
+          ctx.ellipse(cx, el.y + el.height * 0.2, el.width / 2, el.height * 0.1, 0, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.stroke();
+          // Body
+          ctx.fillRect(el.x, el.y + el.height * 0.2, el.width, el.height * 0.6);
+          ctx.strokeRect(el.x, el.y + el.height * 0.2, el.width, el.height * 0.6);
+          // Bottom ellipse
+          ctx.beginPath();
+          ctx.ellipse(cx, el.y + el.height * 0.8, el.width / 2, el.height * 0.1, 0, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.stroke();
+          break;
+        }
+        case 'double-ellipse': {
+          const cx = el.x + el.width / 2;
+          const cy = el.y + el.height / 2;
+          // Outer ellipse
+          ctx.beginPath();
+          ctx.ellipse(cx, cy, el.width / 2, el.height / 2, 0, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.stroke();
+          // Inner ellipse
+          ctx.beginPath();
+          ctx.ellipse(cx, cy, el.width * 0.35, el.height * 0.35, 0, 0, Math.PI * 2);
+          ctx.fillStyle = '#ffffff';
+          ctx.fill();
+          ctx.strokeStyle = el.stroke;
+          ctx.stroke();
+          break;
+        }
+        case 'image':
+          ctx.fillRect(el.x, el.y, el.width, el.height);
+          ctx.strokeRect(el.x, el.y, el.width, el.height);
+          // Diagonal lines
+          ctx.beginPath();
+          ctx.moveTo(el.x, el.y);
+          ctx.lineTo(el.x + el.width, el.y + el.height);
+          ctx.stroke();
+          ctx.beginPath();
+          ctx.moveTo(el.x + el.width, el.y);
+          ctx.lineTo(el.x, el.y + el.height);
+          ctx.stroke();
+          // eslint-disable-next-line no-fallthrough
+          break;
+        case 'label':
+          ctx.fillRect(el.x, el.y, el.width, el.height);
+          ctx.strokeRect(el.x, el.y, el.width, el.height);
+          break;
+        case 'rhombus': {
+          const cx = el.x + el.width / 2;
+          const cy = el.y + el.height / 2;
+          ctx.beginPath();
+          ctx.moveTo(cx, el.y);
+          ctx.lineTo(el.x + el.width, cy);
+          ctx.lineTo(cx, el.y + el.height);
+          ctx.lineTo(el.x, cy);
+          ctx.closePath();
+          ctx.fill();
+          ctx.stroke();
+          break;
+        }
+        case 'swimlane':
+          // Outer box
+          ctx.fillRect(el.x, el.y, el.width, el.height);
+          ctx.strokeRect(el.x, el.y, el.width, el.height);
+          // Header line
+          ctx.beginPath();
+          ctx.moveTo(el.x, el.y + el.height * 0.15);
+          ctx.lineTo(el.x + el.width, el.y + el.height * 0.15);
+          ctx.stroke();
+          break;
       }
+
+      ctx.restore();
 
       // Draw selection outline and resize handles
       if (this.selectedElement === el) {
@@ -968,6 +1405,41 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
   }
 
   /**
+   * @brief Draw a star shape
+   */
+  private drawStar(ctx: CanvasRenderingContext2D, cx: number, cy: number, points: number, outerRadius: number, innerRadius: number): void {
+    ctx.beginPath();
+    for (let i = 0; i < points * 2; i++) {
+      const radius = i % 2 === 0 ? outerRadius : innerRadius;
+      const angle = (i * Math.PI) / points - Math.PI / 2;
+      const x = cx + radius * Math.cos(angle);
+      const y = cy + radius * Math.sin(angle);
+      if (i === 0) ctx.moveTo(x, y);
+      else ctx.lineTo(x, y);
+    }
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+  }
+
+  /**
+   * @brief Draw a polygon shape
+   */
+  private drawPolygon(ctx: CanvasRenderingContext2D, cx: number, cy: number, sides: number, radius: number): void {
+    ctx.beginPath();
+    for (let i = 0; i < sides; i++) {
+      const angle = (i * 2 * Math.PI) / sides - Math.PI / 2;
+      const x = cx + radius * Math.cos(angle);
+      const y = cy + radius * Math.sin(angle);
+      if (i === 0) ctx.moveTo(x, y);
+      else ctx.lineTo(x, y);
+    }
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+  }
+
+  /**
    * @brief Generate vertex code from composed shapes
    */
   private generateVertexCodeFromComposition(): void {
@@ -998,15 +1470,37 @@ export class ${className} extends Shape {
   }
 
   override paintVertexShape(c: any, x: number, y: number, w: number, h: number) {
-    c.translate(x, y);
-
     const scale = { x: w / 300, y: h / 300 };
-
 ${pathCode}
+  }
 
-    c.setFillColor('#1976d2');
-    c.setStrokeColor('#0d47a1');
-    c.setStrokeWidth(2);
+  private drawStar(c: CanvasRenderingContext2D, cx: number, cy: number, points: number, outerRadius: number, innerRadius: number): void {
+    c.begin();
+    for (let i = 0; i < points * 2; i++) {
+      const radius = i % 2 === 0 ? outerRadius : innerRadius;
+      const angle = (i * Math.PI) / points - Math.PI / 2;
+      const x = cx + radius * Math.cos(angle);
+      const y = cy + radius * Math.sin(angle);
+      if (i === 0) c.moveTo(x, y);
+      else c.lineTo(x, y);
+    }
+    c.close();
+    c.fill();
+    c.stroke();
+  }
+
+  private drawPolygon(c: CanvasRenderingContext2D, cx: number, cy: number, sides: number, radius: number): void {
+    c.begin();
+    for (let i = 0; i < sides; i++) {
+      const angle = (i * 2 * Math.PI) / sides - Math.PI / 2;
+      const x = cx + radius * Math.cos(angle);
+      const y = cy + radius * Math.sin(angle);
+      if (i === 0) c.moveTo(x, y);
+      else c.lineTo(x, y);
+    }
+    c.close();
+    c.fill();
+    c.stroke();
   }
 }
 
@@ -1023,41 +1517,209 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
    */
   private generateShapeElementCode(el: ShapeElement): string {
     let code = '';
+    // Round all coordinates to integers for cleaner code
+    const x = Math.round(el.x);
+    const y = Math.round(el.y);
+    const w = Math.round(el.width);
+    const h = Math.round(el.height);
+    const centerX = x + w / 2;
+    const centerY = y + h / 2;
+    const rotation = el.rotation || 0;
+    const hasRotation = rotation !== 0;
+
+    code += `    c.fillStyle = '${el.fill}';\n`;
+    code += `    c.strokeStyle = '${el.stroke}';\n`;
+    code += `    c.lineWidth = ${el.strokeWidth};\n`;
+
+    // Apply rotation if needed
+    if (hasRotation) {
+      code += `    c.save();\n`;
+      code += `    c.translate(${Math.round(centerX)} * scale.x, ${Math.round(centerY)} * scale.y);\n`;
+      code += `    c.rotate(${rotation} * Math.PI / 180);\n`;
+      code += `    c.translate(-${Math.round(centerX)} * scale.x, -${Math.round(centerY)} * scale.y);\n`;
+    }
 
     switch (el.type) {
       case 'rect':
-        code += `    c.begin();\n`;
-        code += `    c.moveTo(${el.x} * scale.x, ${el.y} * scale.y);\n`;
-        code += `    c.lineTo(${el.x + el.width} * scale.x, ${el.y} * scale.y);\n`;
-        code += `    c.lineTo(${el.x + el.width} * scale.x, ${el.y + el.height} * scale.y);\n`;
-        code += `    c.lineTo(${el.x} * scale.x, ${el.y + el.height} * scale.y);\n`;
-        code += `    c.close();\n`;
-        code += `    c.fillAndStroke();\n\n`;
+        code += `    c.rect(${x} * scale.x, ${y} * scale.y, ${w} * scale.x, ${h} * scale.y);\n`;
+        code += `    c.fill();\n`;
+        code += `    c.stroke();\n`;
         break;
       case 'circle':
-        const cx = el.x + el.width / 2;
-        const cy = el.y + el.height / 2;
-        const r = el.width / 2;
         code += `    c.begin();\n`;
-        code += `    c.ellipse(${cx} * scale.x - ${r} * scale.x, ${cy} * scale.y - ${r} * scale.y, ${el.width} * scale.x, ${el.height} * scale.y);\n`;
-        code += `    c.fillAndStroke();\n\n`;
+        code += `    c.arc(${Math.round(centerX)} * scale.x, ${Math.round(centerY)} * scale.y, ${Math.round(w / 2)} * scale.x, 0, Math.PI * 2);\n`;
+        code += `    c.fill();\n`;
+        code += `    c.stroke();\n`;
+        break;
+      case 'ellipse':
+        code += `    c.begin();\n`;
+        code += `    c.ellipse(${Math.round(centerX)} * scale.x, ${Math.round(centerY)} * scale.y, ${Math.round(w / 2)} * scale.x, ${Math.round(h / 2)} * scale.y, 0, 0, Math.PI * 2);\n`;
+        code += `    c.fill();\n`;
+        code += `    c.stroke();\n`;
         break;
       case 'triangle':
         code += `    c.begin();\n`;
-        code += `    c.moveTo(${el.x + el.width / 2} * scale.x, ${el.y} * scale.y);\n`;
-        code += `    c.lineTo(${el.x + el.width} * scale.x, ${el.y + el.height} * scale.y);\n`;
-        code += `    c.lineTo(${el.x} * scale.x, ${el.y + el.height} * scale.y);\n`;
+        code += `    c.moveTo(${Math.round(x + w / 2)} * scale.x, ${y} * scale.y);\n`;
+        code += `    c.lineTo(${x + w} * scale.x, ${y + h} * scale.y);\n`;
+        code += `    c.lineTo(${x} * scale.x, ${y + h} * scale.y);\n`;
         code += `    c.close();\n`;
-        code += `    c.fillAndStroke();\n\n`;
+        code += `    c.fill();\n`;
+        code += `    c.stroke();\n`;
+        break;
+      case 'diamond':
+        code += `    c.begin();\n`;
+        code += `    c.moveTo(${Math.round(centerX)} * scale.x, ${y} * scale.y);\n`;
+        code += `    c.lineTo(${x + w} * scale.x, ${Math.round(centerY)} * scale.y);\n`;
+        code += `    c.lineTo(${Math.round(centerX)} * scale.x, ${y + h} * scale.y);\n`;
+        code += `    c.lineTo(${x} * scale.x, ${Math.round(centerY)} * scale.y);\n`;
+        code += `    c.close();\n`;
+        code += `    c.fill();\n`;
+        code += `    c.stroke();\n`;
+        break;
+      case 'star':
+        code += `    this.drawStar(c, ${Math.round(centerX)} * scale.x, ${Math.round(centerY)} * scale.y, 5, ${Math.round(w / 2)} * scale.x, ${Math.round(w / 4)} * scale.x);\n`;
+        break;
+      case 'pentagon':
+        code += `    this.drawPolygon(c, ${Math.round(centerX)} * scale.x, ${Math.round(centerY)} * scale.y, 5, ${Math.round(w / 2)} * scale.x);\n`;
+        break;
+      case 'hexagon':
+        code += `    this.drawPolygon(c, ${Math.round(centerX)} * scale.x, ${Math.round(centerY)} * scale.y, 6, ${Math.round(w / 2)} * scale.x);\n`;
         break;
       case 'line':
         code += `    c.begin();\n`;
-        code += `    c.moveTo(${el.x} * scale.x, ${el.y + el.height / 2} * scale.y);\n`;
-        code += `    c.lineTo(${el.x + el.width} * scale.x, ${el.y + el.height / 2} * scale.y);\n`;
-        code += `    c.stroke();\n\n`;
+        code += `    c.moveTo(${x} * scale.x, ${Math.round(y + h / 2)} * scale.y);\n`;
+        code += `    c.lineTo(${x + w} * scale.x, ${Math.round(y + h / 2)} * scale.y);\n`;
+        code += `    c.stroke();\n`;
+        break;
+      case 'actor':
+        code += `    // Head\n`;
+        code += `    c.begin();\n`;
+        code += `    c.arc(${Math.round(centerX)} * scale.x, ${Math.round(y + h * 0.2)} * scale.y, ${Math.round(w * 0.15)} * scale.x, 0, Math.PI * 2);\n`;
+        code += `    c.fill();\n`;
+        code += `    c.stroke();\n`;
+        code += `    // Body\n`;
+        code += `    c.begin();\n`;
+        code += `    c.moveTo(${Math.round(centerX)} * scale.x, ${Math.round(y + h * 0.35)} * scale.y);\n`;
+        code += `    c.lineTo(${Math.round(centerX)} * scale.x, ${Math.round(y + h * 0.65)} * scale.y);\n`;
+        code += `    c.stroke();\n`;
+        code += `    // Arms\n`;
+        code += `    c.begin();\n`;
+        code += `    c.moveTo(${Math.round(x + w * 0.2)} * scale.x, ${Math.round(y + h * 0.45)} * scale.y);\n`;
+        code += `    c.lineTo(${Math.round(x + w * 0.8)} * scale.x, ${Math.round(y + h * 0.45)} * scale.y);\n`;
+        code += `    c.stroke();\n`;
+        code += `    // Legs\n`;
+        code += `    c.begin();\n`;
+        code += `    c.moveTo(${Math.round(centerX)} * scale.x, ${Math.round(y + h * 0.65)} * scale.y);\n`;
+        code += `    c.lineTo(${Math.round(x + w * 0.3)} * scale.x, ${Math.round(y + h)} * scale.y);\n`;
+        code += `    c.stroke();\n`;
+        code += `    c.begin();\n`;
+        code += `    c.moveTo(${Math.round(centerX)} * scale.x, ${Math.round(y + h * 0.65)} * scale.y);\n`;
+        code += `    c.lineTo(${Math.round(x + w * 0.7)} * scale.x, ${Math.round(y + h)} * scale.y);\n`;
+        code += `    c.stroke();\n`;
+        break;
+      case 'arrow':
+        code += `    // Arrow shaft\n`;
+        code += `    c.begin();\n`;
+        code += `    c.moveTo(${x} * scale.x, ${Math.round(centerY)} * scale.y);\n`;
+        code += `    c.lineTo(${Math.round(x + w * 0.7)} * scale.x, ${Math.round(centerY)} * scale.y);\n`;
+        code += `    c.stroke();\n`;
+        code += `    // Arrow head\n`;
+        code += `    c.begin();\n`;
+        code += `    c.moveTo(${Math.round(x + w * 0.7)} * scale.x, ${Math.round(centerY)} * scale.y);\n`;
+        code += `    c.lineTo(${Math.round(x + w * 0.5)} * scale.x, ${Math.round(y + h * 0.3)} * scale.y);\n`;
+        code += `    c.stroke();\n`;
+        code += `    c.begin();\n`;
+        code += `    c.moveTo(${Math.round(x + w * 0.7)} * scale.x, ${Math.round(centerY)} * scale.y);\n`;
+        code += `    c.lineTo(${Math.round(x + w * 0.5)} * scale.x, ${Math.round(y + h * 0.7)} * scale.y);\n`;
+        code += `    c.stroke();\n`;
+        break;
+      case 'cloud':
+        code += `    c.begin();\n`;
+        code += `    c.arc(${Math.round(x + w * 0.2)} * scale.x, ${Math.round(y + h * 0.5)} * scale.y, ${Math.round(w * 0.15)} * scale.x, 0, Math.PI * 2);\n`;
+        code += `    c.arc(${Math.round(centerX)} * scale.x, ${Math.round(y + h * 0.3)} * scale.y, ${Math.round(w * 0.2)} * scale.x, 0, Math.PI * 2);\n`;
+        code += `    c.arc(${Math.round(x + w * 0.8)} * scale.x, ${Math.round(y + h * 0.5)} * scale.y, ${Math.round(w * 0.15)} * scale.x, 0, Math.PI * 2);\n`;
+        code += `    c.arc(${Math.round(centerX)} * scale.x, ${Math.round(y + h * 0.7)} * scale.y, ${Math.round(w * 0.2)} * scale.x, 0, Math.PI * 2);\n`;
+        code += `    c.fill();\n`;
+        code += `    c.stroke();\n`;
+        break;
+      case 'cylinder':
+        code += `    // Top ellipse\n`;
+        code += `    c.begin();\n`;
+        code += `    c.ellipse(${Math.round(centerX)} * scale.x, ${Math.round(y + h * 0.2)} * scale.y, ${Math.round(w / 2)} * scale.x, ${Math.round(h * 0.1)} * scale.y, 0, 0, Math.PI * 2);\n`;
+        code += `    c.fill();\n`;
+        code += `    c.stroke();\n`;
+        code += `    // Body\n`;
+        code += `    c.rect(${x} * scale.x, ${Math.round(y + h * 0.2)} * scale.y, ${w} * scale.x, ${Math.round(h * 0.6)} * scale.y);\n`;
+        code += `    c.fill();\n`;
+        code += `    c.stroke();\n`;
+        code += `    // Bottom ellipse\n`;
+        code += `    c.begin();\n`;
+        code += `    c.ellipse(${Math.round(centerX)} * scale.x, ${Math.round(y + h * 0.8)} * scale.y, ${Math.round(w / 2)} * scale.x, ${Math.round(h * 0.1)} * scale.y, 0, 0, Math.PI * 2);\n`;
+        code += `    c.fill();\n`;
+        code += `    c.stroke();\n`;
+        break;
+      case 'double-ellipse':
+        code += `    // Outer ellipse\n`;
+        code += `    c.begin();\n`;
+        code += `    c.ellipse(${Math.round(centerX)} * scale.x, ${Math.round(centerY)} * scale.y, ${Math.round(w / 2)} * scale.x, ${Math.round(h / 2)} * scale.y, 0, 0, Math.PI * 2);\n`;
+        code += `    c.fill();\n`;
+        code += `    c.stroke();\n`;
+        code += `    // Inner ellipse\n`;
+        code += `    c.begin();\n`;
+        code += `    c.ellipse(${Math.round(centerX)} * scale.x, ${Math.round(centerY)} * scale.y, ${Math.round(w * 0.35)} * scale.x, ${Math.round(h * 0.35)} * scale.y, 0, 0, Math.PI * 2);\n`;
+        code += `    c.fillStyle = '#ffffff';\n`;
+        code += `    c.fill();\n`;
+        code += `    c.strokeStyle = '${el.stroke}';\n`;
+        code += `    c.stroke();\n`;
+        break;
+      case 'image':
+        code += `    // Image frame\n`;
+        code += `    c.rect(${x} * scale.x, ${y} * scale.y, ${w} * scale.x, ${h} * scale.y);\n`;
+        code += `    c.fill();\n`;
+        code += `    c.stroke();\n`;
+        code += `    // Diagonal lines\n`;
+        code += `    c.begin();\n`;
+        code += `    c.moveTo(${x} * scale.x, ${y} * scale.y);\n`;
+        code += `    c.lineTo(${x + w} * scale.x, ${y + h} * scale.y);\n`;
+        code += `    c.stroke();\n`;
+        code += `    c.begin();\n`;
+        code += `    c.moveTo(${x + w} * scale.x, ${y} * scale.y);\n`;
+        code += `    c.lineTo(${x} * scale.x, ${y + h} * scale.y);\n`;
+        code += `    c.stroke();\n`;
+        break;
+      case 'label':
+        code += `    c.rect(${x} * scale.x, ${y} * scale.y, ${w} * scale.x, ${h} * scale.y);\n`;
+        code += `    c.fill();\n`;
+        code += `    c.stroke();\n`;
+        break;
+      case 'rhombus':
+        code += `    c.begin();\n`;
+        code += `    c.moveTo(${Math.round(centerX)} * scale.x, ${y} * scale.y);\n`;
+        code += `    c.lineTo(${x + w} * scale.x, ${Math.round(centerY)} * scale.y);\n`;
+        code += `    c.lineTo(${Math.round(centerX)} * scale.x, ${y + h} * scale.y);\n`;
+        code += `    c.lineTo(${x} * scale.x, ${Math.round(centerY)} * scale.y);\n`;
+        code += `    c.close();\n`;
+        code += `    c.fill();\n`;
+        code += `    c.stroke();\n`;
+        break;
+      case 'swimlane':
+        code += `    // Outer box\n`;
+        code += `    c.rect(${x} * scale.x, ${y} * scale.y, ${w} * scale.x, ${h} * scale.y);\n`;
+        code += `    c.fill();\n`;
+        code += `    c.stroke();\n`;
+        code += `    // Header line\n`;
+        code += `    c.begin();\n`;
+        code += `    c.moveTo(${x} * scale.x, ${Math.round(y + h * 0.15)} * scale.y);\n`;
+        code += `    c.lineTo(${x + w} * scale.x, ${Math.round(y + h * 0.15)} * scale.y);\n`;
+        code += `    c.stroke();\n`;
         break;
     }
 
+    if (hasRotation) {
+      code += `    c.restore();\n`;
+    }
+
+    code += `\n`;
     return code;
   }
 
