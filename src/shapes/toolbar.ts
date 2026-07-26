@@ -218,12 +218,27 @@ export class ShapeToolbar {
     // Generate SVG icon from Shape class if available
     if (shape.iconGeneratorClass) {
       const svgElement = generateShapeIcon(shape.iconGeneratorClass, 32, 30);
-      console.log(`Icon for ${shape.id}:`, svgElement ? 'generated' : 'failed', svgElement);
+      console.log(`Icon for ${shape.id}:`, svgElement ? 'generated' : 'failed');
       if (svgElement) {
         iconDiv.appendChild(svgElement);
       } else {
         console.warn(`No SVG generated for ${shape.id}, using fallback`);
         iconDiv.textContent = shape.icon || '▫';
+      }
+    } else if (shape.icon.trim().startsWith('<svg')) {
+      // Parse SVG string to DOM elements
+      try {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(shape.icon, 'image/svg+xml');
+        const svgElement = doc.documentElement;
+        if (svgElement.tagName === 'svg') {
+          iconDiv.appendChild(svgElement);
+        } else {
+          iconDiv.textContent = '▫';
+        }
+      } catch (error) {
+        console.warn(`Failed to parse SVG for ${shape.id}:`, error);
+        iconDiv.textContent = '▫';
       }
     } else if (shape.icon.startsWith('data:image')) {
       iconDiv.style.backgroundImage = `url('${shape.icon}')`;
