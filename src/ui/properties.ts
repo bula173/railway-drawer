@@ -107,6 +107,15 @@ export class PropertiesPanel {
     const fontSize = document.getElementById('prop-fontSize') as HTMLInputElement;
     if (fontSize) fontSize.value = String(style.fontSize || 12);
 
+    const fontWeight = document.getElementById('prop-fontWeight') as HTMLSelectElement;
+    if (fontWeight) fontWeight.value = style.fontWeight || 'normal';
+
+    const fontStyle = document.getElementById('prop-fontStyle') as HTMLSelectElement;
+    if (fontStyle) fontStyle.value = style.fontStyle || 'normal';
+
+    const textDecoration = document.getElementById('prop-textDecoration') as HTMLSelectElement;
+    if (textDecoration) textDecoration.value = style.textDecoration || 'none';
+
     const fontColor = document.getElementById('prop-fontColorBtn') as HTMLInputElement;
     if (fontColor) fontColor.value = style.fontColor || '#000000';
 
@@ -140,6 +149,11 @@ export class PropertiesPanel {
     const strokeWidth = document.getElementById('prop-strokeWidth') as HTMLInputElement;
     if (strokeWidth) strokeWidth.value = String(style.strokeWidth || 1);
 
+    const strokeOpacity = document.getElementById('prop-strokeOpacity') as HTMLInputElement;
+    const strokeOpacityValue = document.getElementById('prop-strokeOpacity-value');
+    if (strokeOpacity) strokeOpacity.value = String(style.strokeOpacity || 100);
+    if (strokeOpacityValue) strokeOpacityValue.textContent = `${style.strokeOpacity || 100}%`;
+
     const opacity = document.getElementById('prop-opacity') as HTMLInputElement;
     const opacityValue = document.getElementById('prop-opacity-value');
     if (opacity) opacity.value = String(style.opacity || 100);
@@ -150,6 +164,9 @@ export class PropertiesPanel {
 
     const roundedCheckbox = document.getElementById('prop-rounded') as HTMLInputElement;
     if (roundedCheckbox) roundedCheckbox.checked = style.rounded ? true : false;
+
+    const cornerRadius = document.getElementById('prop-cornerRadius') as HTMLInputElement;
+    if (cornerRadius) cornerRadius.value = String(style.arcSize || 0);
 
     // Flip states
     const flipH = geo?.flipH || false;
@@ -229,6 +246,30 @@ export class PropertiesPanel {
       const value = parseInt((e.target as HTMLInputElement).value);
       const style = this.graph.getCellStyle(this.currentCell);
       style.fontSize = value;
+      this.graph.model.setStyle(this.currentCell, style);
+      this.graph.refresh();
+    });
+
+    document.getElementById('prop-fontWeight')?.addEventListener('change', (e) => {
+      const value = (e.target as HTMLSelectElement).value;
+      const style = this.graph.getCellStyle(this.currentCell) as any;
+      style.fontWeight = value;
+      this.graph.model.setStyle(this.currentCell, style);
+      this.graph.refresh();
+    });
+
+    document.getElementById('prop-fontStyle')?.addEventListener('change', (e) => {
+      const value = (e.target as HTMLSelectElement).value;
+      const style = this.graph.getCellStyle(this.currentCell) as any;
+      style.fontStyle = value;
+      this.graph.model.setStyle(this.currentCell, style);
+      this.graph.refresh();
+    });
+
+    document.getElementById('prop-textDecoration')?.addEventListener('change', (e) => {
+      const value = (e.target as HTMLSelectElement).value;
+      const style = this.graph.getCellStyle(this.currentCell) as any;
+      style.textDecoration = value;
       this.graph.model.setStyle(this.currentCell, style);
       this.graph.refresh();
     });
@@ -335,6 +376,28 @@ export class PropertiesPanel {
       const value = parseInt((e.target as HTMLInputElement).value);
       const style = this.graph.getCellStyle(this.currentCell);
       style.opacity = value;
+      this.graph.model.setStyle(this.currentCell, style);
+      this.graph.refresh();
+    });
+
+    document.getElementById('prop-strokeOpacity')?.addEventListener('input', (e) => {
+      const value = parseInt((e.target as HTMLInputElement).value);
+      const strokeOpacityValue = document.getElementById('prop-strokeOpacity-value');
+      if (strokeOpacityValue) strokeOpacityValue.textContent = `${value}%`;
+    });
+
+    document.getElementById('prop-strokeOpacity')?.addEventListener('change', (e) => {
+      const value = parseInt((e.target as HTMLInputElement).value);
+      const style = this.graph.getCellStyle(this.currentCell) as any;
+      style.strokeOpacity = value;
+      this.graph.model.setStyle(this.currentCell, style);
+      this.graph.refresh();
+    });
+
+    document.getElementById('prop-cornerRadius')?.addEventListener('change', (e) => {
+      const value = parseInt((e.target as HTMLInputElement).value);
+      const style = this.graph.getCellStyle(this.currentCell) as any;
+      style.arcSize = value;
       this.graph.model.setStyle(this.currentCell, style);
       this.graph.refresh();
     });

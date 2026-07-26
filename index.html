@@ -262,6 +262,44 @@
                       <input type="number" id="prop-fontSize" value="12" min="8" max="72" style="padding: 6px; border: 1px solid #ccc; border-radius: 3px; font-size: 12px; box-sizing: border-box;" />
                     </div>
 
+                    <!-- Font Weight & Style -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 8px;">
+                      <div>
+                        <label style="display: block; margin-bottom: 3px; font-weight: 600; font-size: 11px; color: #666;">Weight</label>
+                        <select id="prop-fontWeight" style="width: 100%; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-size: 11px; box-sizing: border-box;">
+                          <option value="normal">Normal</option>
+                          <option value="bold">Bold</option>
+                          <option value="lighter">Lighter</option>
+                          <option value="300">Light (300)</option>
+                          <option value="400">Regular (400)</option>
+                          <option value="500">Medium (500)</option>
+                          <option value="600">Semi-Bold (600)</option>
+                          <option value="700">Bold (700)</option>
+                          <option value="800">Extra Bold (800)</option>
+                          <option value="900">Black (900)</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label style="display: block; margin-bottom: 3px; font-weight: 600; font-size: 11px; color: #666;">Style</label>
+                        <select id="prop-fontStyle" style="width: 100%; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-size: 11px; box-sizing: border-box;">
+                          <option value="normal">Normal</option>
+                          <option value="italic">Italic</option>
+                          <option value="oblique">Oblique</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <!-- Text Decoration -->
+                    <div style="margin-top: 8px;">
+                      <label style="display: block; margin-bottom: 3px; font-weight: 600; font-size: 11px; color: #666;">Decoration</label>
+                      <select id="prop-textDecoration" style="width: 100%; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-size: 11px; box-sizing: border-box;">
+                        <option value="none">None</option>
+                        <option value="underline">Underline</option>
+                        <option value="overline">Overline</option>
+                        <option value="line-through">Strikethrough</option>
+                      </select>
+                    </div>
+
                     <!-- Alignment Buttons -->
                     <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px;">
                       <button class="align-left" style="padding: 6px; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; cursor: pointer;">⬅</button>
@@ -373,6 +411,13 @@
                           <label style="display: block; margin-bottom: 3px; font-size: 11px; color: #666;">Width</label>
                           <input type="number" id="prop-strokeWidth" value="1" min="0.5" max="10" step="0.5" style="width: 100%; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-size: 11px; box-sizing: border-box;" />
                         </div>
+                        <div>
+                          <label style="display: block; margin-bottom: 3px; font-size: 11px; color: #666;">Opacity</label>
+                          <div style="display: flex; align-items: center; gap: 6px;">
+                            <input type="range" id="prop-strokeOpacity" value="100" min="0" max="100" style="flex: 1; cursor: pointer;" />
+                            <span id="prop-strokeOpacity-value" style="min-width: 30px; text-align: right; font-size: 11px;">100%</span>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -402,6 +447,10 @@
                           <input type="checkbox" id="prop-sketch" style="cursor: pointer;" />
                           <span style="font-weight: 600; font-size: 12px;">Sketch</span>
                         </label>
+                      </div>
+                      <div style="margin-top: 6px;">
+                        <label style="display: block; margin-bottom: 3px; font-weight: 600; font-size: 11px; color: #666;">Corner Radius</label>
+                        <input type="number" id="prop-cornerRadius" value="0" min="0" max="50" step="1" style="width: 100%; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-size: 11px; box-sizing: border-box;" />
                       </div>
                       <div style="margin-top: 6px;">
                         <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
