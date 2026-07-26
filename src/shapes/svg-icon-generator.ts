@@ -96,31 +96,33 @@ export function generateShapeIcon(ShapeClass: typeof Shape, width: number = 32, 
     const shape = new ShapeClass();
     shape.paintVertexShape(mockCtx, 0, 0, width, height);
 
+    console.log(`Shape icon: ${ShapeClass.name} generated ${commands.length} commands`);
+
     // Convert commands to SVG path
     let pathData = '';
     for (const cmd of commands) {
       switch (cmd.type) {
         case 'moveTo':
-          pathData += `M${cmd.data.x},${cmd.data.y}`;
+          pathData += `M ${cmd.data.x} ${cmd.data.y} `;
           break;
         case 'lineTo':
-          pathData += `L${cmd.data.x},${cmd.data.y}`;
+          pathData += `L ${cmd.data.x} ${cmd.data.y} `;
           break;
         case 'quadTo':
-          pathData += `Q${cmd.data.cpx},${cmd.data.cpy},${cmd.data.x},${cmd.data.y}`;
+          pathData += `Q ${cmd.data.cpx} ${cmd.data.cpy} ${cmd.data.x} ${cmd.data.y} `;
           break;
         case 'arcTo':
-          pathData += `A${cmd.data.rx},${cmd.data.ry},${cmd.data.rot},${cmd.data.largeArc},${cmd.data.sweep},${cmd.data.x},${cmd.data.y}`;
+          pathData += `A ${cmd.data.rx} ${cmd.data.ry} ${cmd.data.rot} ${cmd.data.largeArc} ${cmd.data.sweep} ${cmd.data.x} ${cmd.data.y} `;
           break;
         case 'rect':
-          pathData += `M${cmd.data.x},${cmd.data.y}L${cmd.data.x + cmd.data.w},${cmd.data.y}L${cmd.data.x + cmd.data.w},${cmd.data.y + cmd.data.h}L${cmd.data.x},${cmd.data.y + cmd.data.h}Z`;
+          pathData += `M ${cmd.data.x} ${cmd.data.y} L ${cmd.data.x + cmd.data.w} ${cmd.data.y} L ${cmd.data.x + cmd.data.w} ${cmd.data.y + cmd.data.h} L ${cmd.data.x} ${cmd.data.y + cmd.data.h} Z `;
           break;
         case 'close':
-          pathData += 'Z';
+          pathData += 'Z ';
           break;
         case 'fillAndStroke':
         case 'end':
-          if (pathData) {
+          if (pathData.trim()) {
             const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
             path.setAttribute('d', pathData);
             path.setAttribute('fill', cmd.data.fillStyle);
@@ -136,7 +138,7 @@ export function generateShapeIcon(ShapeClass: typeof Shape, width: number = 32, 
     svg.appendChild(g);
     return svg;
   } catch (error) {
-    console.warn('Failed to generate shape icon:', error);
+    console.error('Failed to generate shape icon:', error);
     return null;
   }
 }

@@ -215,9 +215,11 @@ export class ShapeToolbar {
     // Generate SVG icon from Shape class if available
     if (shape.iconGeneratorClass) {
       const svgElement = generateShapeIcon(shape.iconGeneratorClass, 32, 30);
+      console.log(`Icon for ${shape.id}:`, svgElement ? 'generated' : 'failed', svgElement);
       if (svgElement) {
         iconDiv.appendChild(svgElement);
       } else {
+        console.warn(`No SVG generated for ${shape.id}, using fallback`);
         iconDiv.textContent = shape.icon || '▫';
       }
     } else if (shape.icon.startsWith('data:image')) {
