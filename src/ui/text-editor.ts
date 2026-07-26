@@ -15,10 +15,11 @@ export class TextEditorController {
     // Listen for double-click events
     graph.addListener(InternalEvent.DOUBLE_CLICK, (_sender: any, evt: any) => {
       const cell = evt.getProperty('cell');
+      console.log('[TextEditor] Double-click detected on:', cell);
 
       // Only allow editing for vertices (shapes), not edges
       if (cell && cell.isVertex && cell.isVertex()) {
-        // Start in-place editing
+        console.log('[TextEditor] Starting edit for vertex:', cell.value);
         this.editCell(graph, cell);
       }
     });
@@ -27,9 +28,10 @@ export class TextEditorController {
   private editCell(_graph: Graph, cell: any): void {
     // Use maxGraph's built-in cell editor
     if (this.cellEditor) {
+      console.log('[TextEditor] cellEditor.startEditing() called');
       this.cellEditor.startEditing(cell);
     } else {
-      console.warn('[TextEditor] Cell editor not available');
+      console.error('[TextEditor] Cell editor not available');
     }
   }
 }
