@@ -153,6 +153,21 @@ export class PropertiesPanel {
     if (fillColor) fillColor.value = displayColor;
     if (fillColorText) fillColorText.value = displayColor;
 
+    // Gradient properties
+    const gradientColor1 = document.getElementById('prop-gradientColor1') as HTMLInputElement;
+    const gradientColor2 = document.getElementById('prop-gradientColor2') as HTMLInputElement;
+    const gradientOpacity = document.getElementById('prop-gradientOpacity') as HTMLInputElement;
+    const gradientOpacityValue = document.getElementById('prop-gradientOpacity-value');
+    if (gradientColor1) gradientColor1.value = style.gradientColor || '#1976d2';
+    if (gradientColor2) gradientColor2.value = style.gradientColor2 || '#64b5f6';
+    if (gradientOpacity) gradientOpacity.value = String(style.gradientOpacity || 100);
+    if (gradientOpacityValue) gradientOpacityValue.textContent = `${style.gradientOpacity || 100}%`;
+
+    // Show/hide gradient controls based on fill type
+    const gradientControls = document.getElementById('gradient-controls');
+    const isFillType = style.fillType === 'linear' || style.fillType === 'radial';
+    if (gradientControls) gradientControls.style.display = isFillType ? 'block' : 'none';
+
     const lineCheckbox = document.getElementById('prop-useLine') as HTMLInputElement;
     if (lineCheckbox) lineCheckbox.checked = style.strokeColor && style.strokeColor !== 'none';
 
@@ -171,6 +186,20 @@ export class PropertiesPanel {
 
     const shadowCheckbox = document.getElementById('prop-shadow') as HTMLInputElement;
     if (shadowCheckbox) shadowCheckbox.checked = style.shadow || false;
+
+    // Shadow properties
+    const shadowColor = document.getElementById('prop-shadowColor') as HTMLInputElement;
+    const shadowBlur = document.getElementById('prop-shadowBlur') as HTMLInputElement;
+    const shadowOffsetX = document.getElementById('prop-shadowOffsetX') as HTMLInputElement;
+    const shadowOffsetY = document.getElementById('prop-shadowOffsetY') as HTMLInputElement;
+    if (shadowColor) shadowColor.value = style.shadowColor || '#000000';
+    if (shadowBlur) shadowBlur.value = String(style.shadowBlur || 3);
+    if (shadowOffsetX) shadowOffsetX.value = String(style.shadowOffsetX || 2);
+    if (shadowOffsetY) shadowOffsetY.value = String(style.shadowOffsetY || 2);
+
+    // Show/hide shadow details
+    const shadowDetails = document.getElementById('shadow-details');
+    if (shadowDetails) shadowDetails.style.display = style.shadow ? 'block' : 'none';
 
     const roundedCheckbox = document.getElementById('prop-rounded') as HTMLInputElement;
     if (roundedCheckbox) roundedCheckbox.checked = style.rounded ? true : false;
@@ -366,6 +395,54 @@ export class PropertiesPanel {
       this.graph.refresh();
     });
 
+    // Fill type (solid, linear, radial)
+    document.getElementById('prop-fillType')?.addEventListener('change', (e) => {
+      const value = (e.target as HTMLSelectElement).value;
+      const style = this.graph.getCellStyle(this.currentCell) as any;
+      style.fillType = value;
+      this.graph.model.setStyle(this.currentCell, style);
+
+      // Show/hide gradient controls
+      const gradientControls = document.getElementById('gradient-controls');
+      if (gradientControls) {
+        gradientControls.style.display = value === 'solid' ? 'none' : 'block';
+      }
+      this.graph.refresh();
+    });
+
+    // Gradient color 1
+    document.getElementById('prop-gradientColor1')?.addEventListener('change', (e) => {
+      const value = (e.target as HTMLInputElement).value;
+      const style = this.graph.getCellStyle(this.currentCell) as any;
+      style.gradientColor = value;
+      this.graph.model.setStyle(this.currentCell, style);
+      this.graph.refresh();
+    });
+
+    // Gradient color 2
+    document.getElementById('prop-gradientColor2')?.addEventListener('change', (e) => {
+      const value = (e.target as HTMLInputElement).value;
+      const style = this.graph.getCellStyle(this.currentCell) as any;
+      style.gradientColor2 = value;
+      this.graph.model.setStyle(this.currentCell, style);
+      this.graph.refresh();
+    });
+
+    // Gradient opacity
+    document.getElementById('prop-gradientOpacity')?.addEventListener('input', (e) => {
+      const value = parseInt((e.target as HTMLInputElement).value);
+      const gradientOpacityValue = document.getElementById('prop-gradientOpacity-value');
+      if (gradientOpacityValue) gradientOpacityValue.textContent = `${value}%`;
+    });
+
+    document.getElementById('prop-gradientOpacity')?.addEventListener('change', (e) => {
+      const value = parseInt((e.target as HTMLInputElement).value);
+      const style = this.graph.getCellStyle(this.currentCell) as any;
+      style.gradientOpacity = value;
+      this.graph.model.setStyle(this.currentCell, style);
+      this.graph.refresh();
+    });
+
     // Stroke
     document.getElementById('prop-strokeWidth')?.addEventListener('change', (e) => {
       const value = parseFloat((e.target as HTMLInputElement).value);
@@ -417,6 +494,47 @@ export class PropertiesPanel {
       const value = (e.target as HTMLInputElement).checked;
       const style = this.graph.getCellStyle(this.currentCell);
       style.shadow = value;
+      this.graph.model.setStyle(this.currentCell, style);
+
+      // Show/hide shadow details
+      const shadowDetails = document.getElementById('shadow-details');
+      if (shadowDetails) shadowDetails.style.display = value ? 'block' : 'none';
+
+      this.graph.refresh();
+    });
+
+    // Shadow color
+    document.getElementById('prop-shadowColor')?.addEventListener('change', (e) => {
+      const value = (e.target as HTMLInputElement).value;
+      const style = this.graph.getCellStyle(this.currentCell) as any;
+      style.shadowColor = value;
+      this.graph.model.setStyle(this.currentCell, style);
+      this.graph.refresh();
+    });
+
+    // Shadow blur
+    document.getElementById('prop-shadowBlur')?.addEventListener('change', (e) => {
+      const value = parseInt((e.target as HTMLInputElement).value);
+      const style = this.graph.getCellStyle(this.currentCell) as any;
+      style.shadowBlur = value;
+      this.graph.model.setStyle(this.currentCell, style);
+      this.graph.refresh();
+    });
+
+    // Shadow offset X
+    document.getElementById('prop-shadowOffsetX')?.addEventListener('change', (e) => {
+      const value = parseInt((e.target as HTMLInputElement).value);
+      const style = this.graph.getCellStyle(this.currentCell) as any;
+      style.shadowOffsetX = value;
+      this.graph.model.setStyle(this.currentCell, style);
+      this.graph.refresh();
+    });
+
+    // Shadow offset Y
+    document.getElementById('prop-shadowOffsetY')?.addEventListener('change', (e) => {
+      const value = parseInt((e.target as HTMLInputElement).value);
+      const style = this.graph.getCellStyle(this.currentCell) as any;
+      style.shadowOffsetY = value;
       this.graph.model.setStyle(this.currentCell, style);
       this.graph.refresh();
     });

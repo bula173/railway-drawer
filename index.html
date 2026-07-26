@@ -381,9 +381,31 @@
                         <span style="font-weight: 600; color: #333; font-size: 12px;">Type:</span>
                         <select id="prop-fillType" style="flex: 1; padding: 4px 8px; border: 1px solid #ccc; border-radius: 3px; font-size: 11px;">
                           <option value="solid">Solid</option>
-                          <option value="gradient">Gradient</option>
+                          <option value="linear">Linear Gradient</option>
+                          <option value="radial">Radial Gradient</option>
                         </select>
                       </label>
+
+                      <!-- Gradient Controls -->
+                      <div id="gradient-controls" style="margin-top: 8px; padding-top: 8px; border-top: 1px solid #e0e0e0; display: none;">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 8px;">
+                          <div>
+                            <label style="display: block; margin-bottom: 3px; font-weight: 600; font-size: 11px; color: #666;">Gradient Color 1</label>
+                            <input type="color" id="prop-gradientColor1" value="#1976d2" style="width: 100%; height: 32px; border: 1px solid #ccc; border-radius: 3px; cursor: pointer;" />
+                          </div>
+                          <div>
+                            <label style="display: block; margin-bottom: 3px; font-weight: 600; font-size: 11px; color: #666;">Gradient Color 2</label>
+                            <input type="color" id="prop-gradientColor2" value="#64b5f6" style="width: 100%; height: 32px; border: 1px solid #ccc; border-radius: 3px; cursor: pointer;" />
+                          </div>
+                        </div>
+                        <div>
+                          <label style="display: block; margin-bottom: 3px; font-weight: 600; font-size: 11px; color: #666;">Gradient Opacity</label>
+                          <div style="display: flex; align-items: center; gap: 6px;">
+                            <input type="range" id="prop-gradientOpacity" value="100" min="0" max="100" style="flex: 1; cursor: pointer;" />
+                            <span id="prop-gradientOpacity-value" style="min-width: 35px; text-align: right; font-size: 11px;">100%</span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
@@ -457,6 +479,30 @@
                           <input type="checkbox" id="prop-shadow" style="cursor: pointer;" />
                           <span style="font-weight: 600; font-size: 12px;">Shadow</span>
                         </label>
+
+                        <!-- Shadow Details -->
+                        <div id="shadow-details" style="margin-top: 8px; padding-top: 8px; border-top: 1px solid #e0e0e0; display: none;">
+                          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 6px;">
+                            <div>
+                              <label style="display: block; margin-bottom: 3px; font-weight: 600; font-size: 11px; color: #666;">Color</label>
+                              <input type="color" id="prop-shadowColor" value="#000000" style="width: 100%; height: 32px; border: 1px solid #ccc; border-radius: 3px; cursor: pointer;" />
+                            </div>
+                            <div>
+                              <label style="display: block; margin-bottom: 3px; font-weight: 600; font-size: 11px; color: #666;">Blur Radius</label>
+                              <input type="number" id="prop-shadowBlur" value="3" min="0" max="20" style="width: 100%; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-size: 11px; box-sizing: border-box;" />
+                            </div>
+                          </div>
+                          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
+                            <div>
+                              <label style="display: block; margin-bottom: 3px; font-weight: 600; font-size: 11px; color: #666;">Offset X</label>
+                              <input type="number" id="prop-shadowOffsetX" value="2" min="-20" max="20" style="width: 100%; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-size: 11px; box-sizing: border-box;" />
+                            </div>
+                            <div>
+                              <label style="display: block; margin-bottom: 3px; font-weight: 600; font-size: 11px; color: #666;">Offset Y</label>
+                              <input type="number" id="prop-shadowOffsetY" value="2" min="-20" max="20" style="width: 100%; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-size: 11px; box-sizing: border-box;" />
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
