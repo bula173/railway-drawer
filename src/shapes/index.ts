@@ -27,7 +27,8 @@ import { UmlActivityShape, UmlForkJoinShape, UmlDecisionShape, UmlMergeShape } f
 import { UmlLifelineShape, UmlActivationBoxShape, UmlMessageArrowShape, UmlCombinedFragmentShape, UmlInteractionUseShape, UmlNoteShape } from './uml/uml-sequence';
 import { PlantUmlBoundaryShape, PlantUmlControlShape, PlantUmlEntityShape, PlantUmlDatabaseShape, PlantUmlCollectionsShape, PlantUmlQueueShape, PlantUmlParticipantShape } from './uml/plantuml-shapes';
 import { HexagonShape, PentagonShape, StarShape, TrapezoidShape, CrossShape, CylinderShape, SimpleArrowShape, OvalShape, DoubleRectangleShape, ParallelogramShape, DelayShape, ChevronShape, RightAngleShape, LozengeShape, RoundedRectangleShape } from './basic/basic-shapes';
-import { RailShape, SignalShape, SwitchShape, JunctionShape, PlatformShape, StationShape, CrossingShape, TunnelShape, BufferShape, CabinShape, LTAShape, LTOShape, DetectionPointShape, TrackSectionShape, VerticalConnectorShape, EOLMarkerShape, RailLevelShape, SlopedTrackShape, TrainShape, SignalHeadShape, RBCShape, CommunicationLineShape, EBSectionShape, WaysideEquipmentShape, TrackCircuitShape, ERTMSLevelMarkerShape, SpeedRestrictionMarkerShape, ERTMSBaliseShape, ERTMSLevelCrossingShape, ERTMSHandoverPointShape, NationalTransitionPointShape, ERTMSTransponderShape, ERTMSSectionMarkerShape } from './railway/railway-shapes';
+// Railway and ERTMS shapes removed - no longer needed
+// import { RailShape, SignalShape, SwitchShape, JunctionShape, PlatformShape, StationShape, CrossingShape, TunnelShape, BufferShape, CabinShape, LTAShape, LTOShape, DetectionPointShape, TrackSectionShape, VerticalConnectorShape, EOLMarkerShape, RailLevelShape, SlopedTrackShape, TrainShape, SignalHeadShape, RBCShape, CommunicationLineShape, EBSectionShape, WaysideEquipmentShape, TrackCircuitShape, ERTMSLevelMarkerShape, SpeedRestrictionMarkerShape, ERTMSBaliseShape, ERTMSLevelCrossingShape, ERTMSHandoverPointShape, NationalTransitionPointShape, ERTMSTransponderShape, ERTMSSectionMarkerShape } from './railway/railway-shapes';
 import { ImageShape } from './custom/image-shape';
 import { registerArrowShapes, registerArrowShapeClasses } from './arrows';
 import { registerBasicShapes, registerBasicShapeClasses } from './basic';
@@ -38,8 +39,9 @@ import { registerC4Shapes } from './c4';
 import { registerNetworkShapes } from './network';
 import { registerBpmnShapes } from './bpmn';
 import { registerUmlShapes } from './uml';
-import { registerRailwayShapes } from './railway';
-import { registerErtmsShapes, registerErtmsShapeClasses } from './ertms';
+// Railway and ERTMS imports removed - no longer needed
+// import { registerRailwayShapes } from './railway';
+// import { registerErtmsShapes, registerErtmsShapeClasses } from './ertms';
 import { registerCustomShapes } from './custom';
 import { registerDrawioMxArrowsShapeClasses, registerDrawioMxArrowsShapes } from './drawio-arrows/registry';
 
@@ -112,6 +114,8 @@ export function registerShapes() {
   CellRenderer.registerShape('customPlantUmlCollections', PlantUmlCollectionsShape as any);
   CellRenderer.registerShape('customPlantUmlQueue', PlantUmlQueueShape as any);
 
+  // Railway and ERTMS shape registration removed - no longer needed
+  /*
   // Register Railway shapes
   CellRenderer.registerShape('customRail', RailShape as any);
   CellRenderer.registerShape('customSignal', SignalShape as any);
@@ -148,6 +152,7 @@ export function registerShapes() {
   CellRenderer.registerShape('customNationalTransitionPoint', NationalTransitionPointShape as any);
   CellRenderer.registerShape('customERTMSTransponder', ERTMSTransponderShape as any);
   CellRenderer.registerShape('customERTMSSectionMarker', ERTMSSectionMarkerShape as any);
+  */
 
   // Register image shape
   CellRenderer.registerShape('customImage', ImageShape as any);
@@ -164,9 +169,9 @@ export function registerShapes() {
   registerNetworkShapes();
   registerBpmnShapes();
   registerUmlShapes();
-  registerRailwayShapes();
-  registerErtmsShapeClasses();
-  registerErtmsShapes();
+  // registerRailwayShapes(); // Railway shapes removed
+  // registerErtmsShapeClasses(); // ERTMS shapes removed
+  // registerErtmsShapes(); // ERTMS shapes removed
   registerDrawioMxArrowsShapeClasses();
   registerDrawioMxArrowsShapes();
   registerCustomShapes();
