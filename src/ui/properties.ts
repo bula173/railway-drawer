@@ -116,6 +116,9 @@ export class PropertiesPanel {
     const textDecoration = document.getElementById('prop-textDecoration') as HTMLSelectElement;
     if (textDecoration) textDecoration.value = style.textDecoration || 'none';
 
+    const textOverflow = document.getElementById('prop-textOverflow') as HTMLSelectElement;
+    if (textOverflow) textOverflow.value = style.textOverflow || 'visible';
+
     const fontColor = document.getElementById('prop-fontColorBtn') as HTMLInputElement;
     if (fontColor) fontColor.value = style.fontColor || '#000000';
 
@@ -206,6 +209,12 @@ export class PropertiesPanel {
 
     const cornerRadius = document.getElementById('prop-cornerRadius') as HTMLInputElement;
     if (cornerRadius) cornerRadius.value = String(style.arcSize || 0);
+
+    const lockShape = document.getElementById('prop-lockShape') as HTMLInputElement;
+    if (lockShape) lockShape.checked = !this.currentCell.connectable || false;
+
+    const blendMode = document.getElementById('prop-blendMode') as HTMLSelectElement;
+    if (blendMode) blendMode.value = style.blendMode || 'normal';
 
     // Flip states
     const flipH = geo?.flipH || false;
@@ -309,6 +318,14 @@ export class PropertiesPanel {
       const value = (e.target as HTMLSelectElement).value;
       const style = this.graph.getCellStyle(this.currentCell) as any;
       style.textDecoration = value;
+      this.graph.model.setStyle(this.currentCell, style);
+      this.graph.refresh();
+    });
+
+    document.getElementById('prop-textOverflow')?.addEventListener('change', (e) => {
+      const value = (e.target as HTMLSelectElement).value;
+      const style = this.graph.getCellStyle(this.currentCell) as any;
+      style.textOverflow = value;
       this.graph.model.setStyle(this.currentCell, style);
       this.graph.refresh();
     });
@@ -485,6 +502,20 @@ export class PropertiesPanel {
       const value = parseInt((e.target as HTMLInputElement).value);
       const style = this.graph.getCellStyle(this.currentCell) as any;
       style.arcSize = value;
+      this.graph.model.setStyle(this.currentCell, style);
+      this.graph.refresh();
+    });
+
+    document.getElementById('prop-lockShape')?.addEventListener('change', (e) => {
+      const value = (e.target as HTMLInputElement).checked;
+      this.currentCell.setConnectable(!value);
+      this.graph.refresh();
+    });
+
+    document.getElementById('prop-blendMode')?.addEventListener('change', (e) => {
+      const value = (e.target as HTMLSelectElement).value;
+      const style = this.graph.getCellStyle(this.currentCell) as any;
+      style.blendMode = value;
       this.graph.model.setStyle(this.currentCell, style);
       this.graph.refresh();
     });

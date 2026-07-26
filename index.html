@@ -300,6 +300,16 @@
                       </select>
                     </div>
 
+                    <!-- Text Overflow -->
+                    <div style="margin-top: 8px;">
+                      <label style="display: block; margin-bottom: 3px; font-weight: 600; font-size: 11px; color: #666;">Overflow</label>
+                      <select id="prop-textOverflow" style="width: 100%; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-size: 11px; box-sizing: border-box;">
+                        <option value="visible">Visible</option>
+                        <option value="hidden">Hidden</option>
+                        <option value="ellipsis">Ellipsis</option>
+                      </select>
+                    </div>
+
                     <!-- Alignment Buttons -->
                     <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px;">
                       <button class="align-left" style="padding: 6px; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; cursor: pointer;">⬅</button>
@@ -453,6 +463,23 @@
                     </div>
                   </div>
 
+                  <!-- Blend Mode -->
+                  <div style="margin-bottom: 16px;">
+                    <label style="display: block; margin-bottom: 6px; font-weight: 600; font-size: 11px; color: #666;">Blend Mode</label>
+                    <select id="prop-blendMode" style="width: 100%; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-size: 11px; box-sizing: border-box;">
+                      <option value="normal">Normal</option>
+                      <option value="multiply">Multiply</option>
+                      <option value="screen">Screen</option>
+                      <option value="overlay">Overlay</option>
+                      <option value="darken">Darken</option>
+                      <option value="lighten">Lighten</option>
+                      <option value="color-dodge">Color Dodge</option>
+                      <option value="color-burn">Color Burn</option>
+                      <option value="hard-light">Hard Light</option>
+                      <option value="soft-light">Soft Light</option>
+                    </select>
+                  </div>
+
                   <!-- Effects -->
                   <div style="margin-bottom: 16px; border: 1px solid #e0e0e0; border-radius: 3px; overflow: hidden;">
                     <div class="collapsible-header" data-section="style-effects" style="padding: 8px; background: #f9f9f9; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px;">
@@ -546,6 +573,14 @@
                         <label style="display: flex; align-items: center; gap: 6px; cursor: pointer; font-size: 11px;">
                           <input type="checkbox" id="prop-constrainProportions" style="cursor: pointer;" />
                           <span>Constrain Proportions</span>
+                        </label>
+                      </div>
+
+                      <!-- Lock Shape -->
+                      <div style="margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid #e0e0e0;">
+                        <label style="display: flex; align-items: center; gap: 6px; cursor: pointer; font-size: 11px;">
+                          <input type="checkbox" id="prop-lockShape" style="cursor: pointer;" />
+                          <span>Lock Shape</span>
                         </label>
                       </div>
 
