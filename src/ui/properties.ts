@@ -129,6 +129,16 @@ export class PropertiesPanel {
     if (wInput) wInput.value = String(Math.round(geo?.width || 80));
     if (hInput) hInput.value = String(Math.round(geo?.height || 60));
 
+    // Min/Max dimensions
+    const minWidth = document.getElementById('prop-minWidth') as HTMLInputElement;
+    const maxWidth = document.getElementById('prop-maxWidth') as HTMLInputElement;
+    const minHeight = document.getElementById('prop-minHeight') as HTMLInputElement;
+    const maxHeight = document.getElementById('prop-maxHeight') as HTMLInputElement;
+    if (minWidth) minWidth.value = String(style.minWidth || 0);
+    if (maxWidth) maxWidth.value = String(style.maxWidth || 9999);
+    if (minHeight) minHeight.value = String(style.minHeight || 0);
+    if (maxHeight) maxHeight.value = String(style.maxHeight || 9999);
+
     // Rotation
     const rotation = document.getElementById('prop-rotation') as HTMLInputElement;
     if (rotation) rotation.value = String(style.rotation || 0);
@@ -456,6 +466,39 @@ export class PropertiesPanel {
       }
 
       geo!.height = value;
+      this.graph.refresh();
+    });
+
+    // Min/Max dimensions
+    document.getElementById('prop-minWidth')?.addEventListener('change', (e) => {
+      const value = parseInt((e.target as HTMLInputElement).value);
+      const style = this.graph.getCellStyle(this.currentCell) as any;
+      style.minWidth = value;
+      this.graph.model.setStyle(this.currentCell, style);
+      this.graph.refresh();
+    });
+
+    document.getElementById('prop-maxWidth')?.addEventListener('change', (e) => {
+      const value = parseInt((e.target as HTMLInputElement).value);
+      const style = this.graph.getCellStyle(this.currentCell) as any;
+      style.maxWidth = value;
+      this.graph.model.setStyle(this.currentCell, style);
+      this.graph.refresh();
+    });
+
+    document.getElementById('prop-minHeight')?.addEventListener('change', (e) => {
+      const value = parseInt((e.target as HTMLInputElement).value);
+      const style = this.graph.getCellStyle(this.currentCell) as any;
+      style.minHeight = value;
+      this.graph.model.setStyle(this.currentCell, style);
+      this.graph.refresh();
+    });
+
+    document.getElementById('prop-maxHeight')?.addEventListener('change', (e) => {
+      const value = parseInt((e.target as HTMLInputElement).value);
+      const style = this.graph.getCellStyle(this.currentCell) as any;
+      style.maxHeight = value;
+      this.graph.model.setStyle(this.currentCell, style);
       this.graph.refresh();
     });
 

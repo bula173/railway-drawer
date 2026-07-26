@@ -502,6 +502,31 @@
                           <span>Constrain Proportions</span>
                         </label>
                       </div>
+
+                      <!-- Min/Max Dimensions -->
+                      <div style="margin-bottom: 8px; padding-top: 8px; border-top: 1px solid #e0e0e0;">
+                        <label style="display: block; margin-bottom: 6px; font-weight: 600; font-size: 11px; color: #666;">Min/Max Size</label>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 6px;">
+                          <div>
+                            <input type="number" id="prop-minWidth" value="0" min="0" max="9999" style="width: 100%; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-size: 11px; box-sizing: border-box;" />
+                            <div style="font-size: 10px; color: #999; text-align: center; margin-top: 2px;">Min Width</div>
+                          </div>
+                          <div>
+                            <input type="number" id="prop-maxWidth" value="9999" min="0" max="99999" style="width: 100%; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-size: 11px; box-sizing: border-box;" />
+                            <div style="font-size: 10px; color: #999; text-align: center; margin-top: 2px;">Max Width</div>
+                          </div>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
+                          <div>
+                            <input type="number" id="prop-minHeight" value="0" min="0" max="9999" style="width: 100%; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-size: 11px; box-sizing: border-box;" />
+                            <div style="font-size: 10px; color: #999; text-align: center; margin-top: 2px;">Min Height</div>
+                          </div>
+                          <div>
+                            <input type="number" id="prop-maxHeight" value="9999" min="0" max="99999" style="width: 100%; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-size: 11px; box-sizing: border-box;" />
+                            <div style="font-size: 10px; color: #999; text-align: center; margin-top: 2px;">Max Height</div>
+                          </div>
+                        </div>
+                      </div>
                       <div>
                         <label style="display: block; margin-bottom: 3px; font-weight: 600; font-size: 11px; color: #666;">Position</label>
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
