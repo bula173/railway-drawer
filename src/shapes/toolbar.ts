@@ -13,6 +13,7 @@ export class ShapeToolbar {
   constructor(toolbarContainer: HTMLElement, registry: ShapeRegistry) {
     this.container = toolbarContainer;
     this.registry = registry;
+    console.log('[Toolbar] Constructor called, groups:', registry.getGroups());
 
     // Load custom group order from localStorage or use default
     this.loadGroupOrder();
@@ -53,6 +54,7 @@ export class ShapeToolbar {
 
     // Use custom group order
     const groups = this.getOrderedGroups();
+    console.log('[Toolbar] buildToolbar: groups =', groups);
     let isFirstGroup = true;
 
     groups.forEach((group: string) => {
@@ -103,6 +105,7 @@ export class ShapeToolbar {
 
       if (!isCollapsed) {
         const shapes = this.registry.getShapesByGroup(group);
+        console.log(`[Toolbar] Group "${group}": ${shapes.length} shapes`);
         const shapeGroup = document.createElement('div');
         shapeGroup.className = 'shapes-group-icons';
 
