@@ -113,7 +113,9 @@ export class TabManager {
     new RubberBandHandler(graph);
 
     // Enable text editing on double-click
-    new CellEditorHandler(graph);
+    const cellEditorHandler = new CellEditorHandler(graph);
+    // Store on graph for access by TextEditorController
+    (graph as any).cellEditorHandler = cellEditorHandler;
 
     // Configure scrolling behavior
     graph.ignoreScrollbars = false; // Use native scrollbars

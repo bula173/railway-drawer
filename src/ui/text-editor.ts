@@ -67,12 +67,43 @@ export class TextEditorController {
   }
 
   private startEditing(cell: any): void {
-    const cellEditor = (this.graph as any).cellEditor;
-    if (cellEditor) {
-      console.log('[TextEditor] Starting inline text editing for:', cell.value);
-      cellEditor.startEditing(cell);
-    } else {
-      console.error('[TextEditor] Cell editor not available on graph');
+    try {
+      console.log('[TextEditor] Attempting to start editing for:', cell.value);
+
+      // Try the cellEditorHandler stored on graph (from tabs.ts)
+      const handler = (this.graph as any).cellEditorHandler;
+      if (handler && handler.startEditing) {
+        console.log('[TextEditor] Using cellEditorHandler.startEditing()');
+        handler.startEditing(cell);
+        return;
+      }
+
+      // Try to get the cell editor from the graph view
+      const view = (this.graph as any).getView();
+      if (view && view.cellEditor) {
+        console.log('[TextEditor] Using view.cellEditor.startEditing()');
+        view.cellEditor.startEditing(cell);
+        return;
+      }
+
+      // Try the direct cellEditor property on graph
+      const cellEditor = (this.graph as any).cellEditor;
+      if (cellEditor && cellEditor.startEditing) {
+        console.log('[TextEditor] Using graph.cellEditor.startEditing()');
+        cellEditor.startEditing(cell);
+        return;
+      }
+
+      // Try using graph's built-in startEditing method
+      if ((this.graph as any).startEditing) {
+        console.log('[TextEditor] Using graph.startEditing()');
+        (this.graph as any).startEditing(cell);
+        return;
+      }
+
+      console.error('[TextEditor] No cell editor method found');
+    } catch (error) {
+      console.error('[TextEditor] Error starting editing:', error);
     }
   }
 }
