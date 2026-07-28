@@ -1,37 +1,78 @@
-import { Graph, InternalEvent } from '@maxgraph/core';
+import { Graph, Point } from '@maxgraph/core';
 
 export class TextEditorController {
-  private cellEditor: any;
+  private graph: Graph;
+  private lastClickedCell: any = null;
+  private lastClickTime: number = 0;
+  private clickDelay: number = 400;
 
   constructor(graph: Graph) {
-    // CellEditorHandler is already available on the graph through default plugins
-    this.cellEditor = (graph as any).cellEditor;
-
-    // Setup double-click to start editing
-    this.setupDoubleClickEditing(graph);
+    this.graph = graph;
+    this.setupTextEditingHandlers();
   }
 
-  private setupDoubleClickEditing(graph: Graph): void {
-    // Listen for double-click events
-    graph.addListener(InternalEvent.DOUBLE_CLICK, (_sender: any, evt: any) => {
-      const cell = evt.getProperty('cell');
-      console.log('[TextEditor] Double-click detected on:', cell);
+  private setupTextEditingHandlers(): void {
+    const container = this.graph.getContainer();
 
-      // Only allow editing for vertices (shapes), not edges
+    // Track mouse clicks to detect double-click on same cell
+    container.addEventListener('mousedown', (evt: MouseEvent) => {
+      // Get the cell at the click position using graph coordinates
+      const point = this.getGraphCoordinates(evt);
+      const cell = this.graph.getCellAt(point.x, point.y);
+
+      const now = Date.now();
+
       if (cell && cell.isVertex && cell.isVertex()) {
-        console.log('[TextEditor] Starting edit for vertex:', cell.value);
-        this.editCell(graph, cell);
+        // Check if this is a double-click (same cell, within time delay)
+        if (this.lastClickedCell === cell && now - this.lastClickTime < this.clickDelay) {
+          console.log('[TextEditor] Double-click detected on:', cell.value);
+          this.startEditing(cell);
+          this.lastClickedCell = null;
+          this.lastClickTime = 0;
+          evt.preventDefault();
+        } else {
+          // Single click - just update tracking
+          this.lastClickedCell = cell;
+          this.lastClickTime = now;
+        }
+      } else {
+        // Clicked on empty space - reset tracking
+        this.lastClickedCell = null;
+        this.lastClickTime = 0;
+      }
+    });
+
+    // Also listen for Enter/Space key on selected shapes
+    document.addEventListener('keydown', (evt: KeyboardEvent) => {
+      if ((evt.key === 'Enter' || evt.key === ' ') && evt.target === document.body) {
+        const cells = this.graph.getSelectionCells();
+        if (cells.length === 1 && cells[0].isVertex && cells[0].isVertex()) {
+          console.log('[TextEditor] Enter/Space pressed, starting edit for:', cells[0].value);
+          evt.preventDefault();
+          this.startEditing(cells[0]);
+        }
       }
     });
   }
 
-  private editCell(_graph: Graph, cell: any): void {
-    // Use maxGraph's built-in cell editor
-    if (this.cellEditor) {
-      console.log('[TextEditor] cellEditor.startEditing() called');
-      this.cellEditor.startEditing(cell);
+  private getGraphCoordinates(evt: MouseEvent): Point {
+    const container = this.graph.getContainer();
+    const rect = container.getBoundingClientRect();
+    const x = evt.clientX - rect.left;
+    const y = evt.clientY - rect.top;
+
+    // Create a point with the relative coordinates
+    const point = new Point(x, y);
+    return point;
+  }
+
+  private startEditing(cell: any): void {
+    const cellEditor = (this.graph as any).cellEditor;
+    if (cellEditor) {
+      console.log('[TextEditor] Starting inline text editing for:', cell.value);
+      cellEditor.startEditing(cell);
     } else {
-      console.error('[TextEditor] Cell editor not available');
+      console.error('[TextEditor] Cell editor not available on graph');
     }
   }
 }

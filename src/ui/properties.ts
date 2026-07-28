@@ -119,6 +119,13 @@ export class PropertiesPanel {
     const textOverflow = document.getElementById('prop-textOverflow') as HTMLSelectElement;
     if (textOverflow) textOverflow.value = style.textOverflow || 'visible';
 
+    // Text Alignment Selects (Priority 3)
+    const textAlign = document.getElementById('prop-textAlign') as HTMLSelectElement;
+    if (textAlign) textAlign.value = style.align || 'left';
+
+    const verticalAlign = document.getElementById('prop-verticalAlign') as HTMLSelectElement;
+    if (verticalAlign) verticalAlign.value = style.verticalAlign || 'middle';
+
     const fontColor = document.getElementById('prop-fontColorBtn') as HTMLInputElement;
     if (fontColor) fontColor.value = style.fontColor || '#000000';
 
@@ -171,6 +178,10 @@ export class PropertiesPanel {
     const isFillType = style.fillType === 'linear' || style.fillType === 'radial';
     if (gradientControls) gradientControls.style.display = isFillType ? 'block' : 'none';
 
+    // Background Pattern (Priority 3)
+    const fillPattern = document.getElementById('prop-fillPattern') as HTMLSelectElement;
+    if (fillPattern) fillPattern.value = style.fillPattern || 'none';
+
     const lineCheckbox = document.getElementById('prop-useLine') as HTMLInputElement;
     if (lineCheckbox) lineCheckbox.checked = style.strokeColor && style.strokeColor !== 'none';
 
@@ -181,6 +192,10 @@ export class PropertiesPanel {
     const strokeOpacityValue = document.getElementById('prop-strokeOpacity-value');
     if (strokeOpacity) strokeOpacity.value = String(style.strokeOpacity || 100);
     if (strokeOpacityValue) strokeOpacityValue.textContent = `${style.strokeOpacity || 100}%`;
+
+    // Dash Pattern (Priority 3)
+    const dashPattern = document.getElementById('prop-dashPattern') as HTMLSelectElement;
+    if (dashPattern) dashPattern.value = style.dashPattern || 'none';
 
     const opacity = document.getElementById('prop-opacity') as HTMLInputElement;
     const opacityValue = document.getElementById('prop-opacity-value');
@@ -381,6 +396,24 @@ export class PropertiesPanel {
       this.graph.refresh();
     });
 
+    // Text Horizontal Alignment Select (Priority 3)
+    document.getElementById('prop-textAlign')?.addEventListener('change', (e) => {
+      const value = (e.target as HTMLSelectElement).value;
+      const style = this.graph.getCellStyle(this.currentCell) as any;
+      style.align = value;
+      this.graph.model.setStyle(this.currentCell, style);
+      this.graph.refresh();
+    });
+
+    // Text Vertical Alignment Select (Priority 3)
+    document.getElementById('prop-verticalAlign')?.addEventListener('change', (e) => {
+      const value = (e.target as HTMLSelectElement).value;
+      const style = this.graph.getCellStyle(this.currentCell) as any;
+      style.verticalAlign = value;
+      this.graph.model.setStyle(this.currentCell, style);
+      this.graph.refresh();
+    });
+
     // Fill Color
     document.getElementById('prop-fillColor')?.addEventListener('change', (e) => {
       const value = (e.target as HTMLInputElement).value;
@@ -460,11 +493,29 @@ export class PropertiesPanel {
       this.graph.refresh();
     });
 
+    // Background Pattern (Priority 3)
+    document.getElementById('prop-fillPattern')?.addEventListener('change', (e) => {
+      const value = (e.target as HTMLSelectElement).value;
+      const style = this.graph.getCellStyle(this.currentCell) as any;
+      style.fillPattern = value === 'none' ? undefined : value;
+      this.graph.model.setStyle(this.currentCell, style);
+      this.graph.refresh();
+    });
+
     // Stroke
     document.getElementById('prop-strokeWidth')?.addEventListener('change', (e) => {
       const value = parseFloat((e.target as HTMLInputElement).value);
       const style = this.graph.getCellStyle(this.currentCell);
       style.strokeWidth = value;
+      this.graph.model.setStyle(this.currentCell, style);
+      this.graph.refresh();
+    });
+
+    // Dash Pattern (Priority 3)
+    document.getElementById('prop-dashPattern')?.addEventListener('change', (e) => {
+      const value = (e.target as HTMLSelectElement).value;
+      const style = this.graph.getCellStyle(this.currentCell) as any;
+      style.dashPattern = value === 'none' ? undefined : value;
       this.graph.model.setStyle(this.currentCell, style);
       this.graph.refresh();
     });
