@@ -49,18 +49,26 @@ export class TextEditorController {
     const container = this.graph.getContainer();
     const view = (this.graph as any).getView();
 
-    // Get cell bounds in view coordinates
-    const bounds = view.getBounds(cell);
+    // Get cell state which contains the bounds
+    const state = view.getState(cell);
+    if (!state) {
+      console.error('[TextEditor] Could not get cell state');
+      return;
+    }
+
+    const bounds = state.getBoundingBox();
     if (!bounds) {
       console.error('[TextEditor] Could not get cell bounds');
       return;
     }
 
+    console.log('[TextEditor] Cell bounds:', bounds);
+
     // Create text input element
     this.editingInput = document.createElement('input');
     this.editingInput.type = 'text';
     this.editingInput.value = cell.value || '';
-    this.editingInput.style.position = 'absolute';
+    this.editingInput.style.position = 'fixed';
     this.editingInput.style.zIndex = '10000';
     this.editingInput.style.border = '2px solid #2196F3';
     this.editingInput.style.borderRadius = '3px';
@@ -70,9 +78,12 @@ export class TextEditorController {
     this.editingInput.style.boxSizing = 'border-box';
     this.editingInput.style.backgroundColor = '#fff';
 
-    // Position input over the cell
-    const left = container.offsetLeft + bounds.x + 4;
-    const top = container.offsetTop + bounds.y + 4;
+    // Get container position for offset calculation
+    const containerRect = container.getBoundingClientRect();
+
+    // Position input over the cell (using fixed positioning relative to viewport)
+    const left = containerRect.left + bounds.x + 4;
+    const top = containerRect.top + bounds.y + 4;
     const width = Math.max(bounds.width - 8, 100);
     const height = Math.max(bounds.height - 8, 24);
 
@@ -104,7 +115,7 @@ export class TextEditorController {
       }
     });
 
-    console.log('[TextEditor] Inline text input created and focused');
+    console.log('[TextEditor] Inline text input created and focused at', { left, top, width, height });
   }
 
   private stopEditing(): void {
