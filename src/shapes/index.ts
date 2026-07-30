@@ -1,6 +1,7 @@
 import { CellRenderer } from '@maxgraph/core';
 import { HexagonShape, PentagonShape, StarShape, TrapezoidShape, CrossShape, CylinderShape, SimpleArrowShape, OvalShape, DoubleRectangleShape, ParallelogramShape, DelayShape, ChevronShape, RightAngleShape, LozengeShape, RoundedRectangleShape } from './basic/basic-shapes';
 import { registerBasicShapes, registerBasicShapeClasses } from './basic';
+import { registerErtmsShapes } from './ertms';
 
 export function registerShapes() {
   // Register basic vertex-based shapes with CellRenderer
@@ -23,6 +24,9 @@ export function registerShapes() {
   // Register only Basic shapes via their registry functions
   registerBasicShapeClasses();
   registerBasicShapes();
+
+  // Register ERTMS shapes
+  registerErtmsShapes();
 }
 
 export { shapeRegistry } from './registry';
