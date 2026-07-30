@@ -1,10 +1,26 @@
 {
   "permissions": {
     "allow": [
-      "Bash(curl -s -X GET \"http://localhost:3001/\" -H \"User-Agent: curl/test\")",
-      "Bash(node /tmp/decode_svg.js)",
-      "Bash(tsc -b)",
-      "Bash(vite build *)"
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git show:*)",
+      "Bash(git branch:*)"
+    ],
+    "deny": [],
+    "ask": []
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/block-build.sh"
+          }
+        ]
+      }
     ]
   }
 }

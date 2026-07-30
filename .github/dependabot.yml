@@ -1,0 +1,74 @@
+# See https://docs.github.com/en/github/administering-a-repository/configuration-options-for-dependency-updates
+
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: tuesday
+    open-pull-requests-limit: 2
+    versioning-strategy: increase
+    rebase-strategy: "disabled"
+    commit-message:
+      prefix: "chore(deps)"
+      prefix-development: "chore(deps-dev)"
+    labels:
+      - dependencies
+      - javascript
+      - skip-changelog
+    ignore:
+      # typescript must not be updated in packages/check-ts-support. Its version must remain unchanged to test the minimum version supported by bpmn-visualization-addons
+      - dependency-name: "typescript"
+      # We must use a version that matches the version of node used to build. This is not the latest one, so manage this manually.
+      - dependency-name: "@types/node"
+
+    groups:
+      docusaurus:
+        patterns:
+          - "@easyops-cn/docusaurus-search-local"
+          - "@docusaurus/*"
+          - "@mdx-js/"
+          - "clsx"
+          - "prism-react-renderer"
+      lint:
+        patterns:
+          - "eslint"
+          - "eslint-*"
+          - "prettier"
+          - "typescript-eslint"
+      react:
+        patterns:
+          - "react"
+          - "react-*"
+      storybook:
+        patterns:
+          - "@storybook/*"
+          - "storybook"
+      test:
+        patterns:
+          - "@jest/*"
+          - "@testing-library/*"
+          - "@types/jest"
+          - "@swc/*"
+          - "jest"
+          - "jest-*"
+          - "jsdom"
+          - "jsdom-*"
+          - "ts-jest"
+      webpack:
+        patterns:
+          - "copy-webpack-plugin"
+          - "css-loader"
+          - "html-webpack-plugin"
+          - "mini-css-extract-plugin"
+          - "style-loader"
+          - "webpack"
+          - "webpack-*"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    commit-message:
+      prefix: "chore(deps-gha)"

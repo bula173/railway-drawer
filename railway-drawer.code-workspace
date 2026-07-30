@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../maxGraph"
+		},
+		{
+			"path": "../drawio"
+		},
+		{
+			"path": "../ERTMSDrawioTemplate"
+		}
+	],
+	"settings": {
+		"workbench.colorCustomizations": {}
+	}
+}

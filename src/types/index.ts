@@ -1,171 +1,241 @@
 /**
- * @file types.ts
- * @brief Centralized type definitions for the Railway Drawer application
- * 
- * Contains all shared interfaces, types, and constants used throughout the application.
- * Helps maintain consistency and provides a single source of truth for type definitions.
- * 
- * @author Railway Drawer Team
- * @date 2025
- * @version 1.0
+ * @file types/index.ts
+ * @brief Central TypeScript type definitions for the application
+ * @details Defines all major types used throughout the codebase
  */
 
-import type { DrawElement, ElementStyles, ShapeElement } from '../components/Elements';
-import type { DrawAreaRef } from '../components/DrawArea';
-import type { ToolboxItem } from '../components/Toolbox';
-import type { DrawAreaTab } from '../components/TabPanel';
-import type { ComposedShape, PrimitiveElement, ShapeLibrary, ShapePrimitive, ShapeComposerState, ComposerAction, ComposerValidationResult } from './shapeComposer';
+// ============= Shape Types =============
 
-// Re-export Shape Composer types
-export type { ComposedShape, PrimitiveElement, ShapeLibrary, ShapePrimitive, ShapeComposerState, ComposerAction, ComposerValidationResult };
+/**
+ * Shape configuration for both vertex and SVG shapes
+ */
+export interface ShapeConfig {
+  name: string;
+  displayName: string;
+  group: string;
+  type: 'vertex' | 'svg';
+  width: number;
+  height: number;
+  style?: CellStyle;
+  description?: string;
+  icon?: string;
+}
 
-// Define TextRegion interface here since it's not exported from Elements
-export interface TextRegion {
-  id: string;
-  text: string;
+/**
+ * Cell styling options
+ */
+export interface CellStyle {
+  shape?: string;
+  fill?: string;
+  stroke?: string;
+  strokeWidth?: number;
+  fontSize?: number;
+  fontFamily?: string;
+  fontColor?: string;
+  fillOpacity?: number;
+  strokeOpacity?: number;
+  rounded?: boolean;
+  html?: boolean;
+  image?: string;
+  perimeter?: (bounds: any, vertex: any, next: any) => any;
+  [key: string]: unknown;
+}
+
+/**
+ * Position and size information
+ */
+export interface Bounds {
   x: number;
   y: number;
   width: number;
   height: number;
-  fontSize?: number;
-  fontFamily?: string;
-  fill?: string;
-  textAnchor?: 'start' | 'middle' | 'end';
-  dominantBaseline?: 'auto' | 'central' | 'middle';
 }
-
-// Re-export types for convenience
-export type { DrawElement, ElementStyles, ShapeElement, DrawAreaRef, ToolboxItem, DrawAreaTab };
-
-// Application-wide constants
-export const APP_CONSTANTS = {
-  GRID_SIZE: 40,
-  DEFAULT_ZOOM: 1,
-  MIN_ZOOM: 0.1,
-  MAX_ZOOM: 5,
-  DEFAULT_CANVAS_WIDTH: 800,
-  DEFAULT_CANVAS_HEIGHT: 600,
-  DEFAULT_BACKGROUND_COLOR: '#ffffff',
-  SNAP_THRESHOLD: 10,
-} as const;
-
-// Menu and UI types
-export type MenuType = 'file' | 'toolbox' | null;
-export type DrawTool = 'select' | 'measure' | 'connector';
 
 /**
- * @interface Layer
- * @brief Represents a drawing layer that groups elements
+ * Point in 2D space
  */
-export interface Layer {
+export interface Point {
+  x: number;
+  y: number;
+}
+
+// ============= Cache & Persistence Types =============
+
+/**
+ * Single tab data in cache
+ */
+export interface CachedTabData {
   id: string;
   name: string;
-  visible: boolean;
-  locked: boolean;
-  opacity?: number;
+  graphXml: string;
 }
 
-export type PropertiesTabType = 'general' | 'style' | 'text' | 'arrange';
-
-// Application state interfaces
-export interface AppState {
-  activeMenu: MenuType;
-  selectedElement: DrawElement | null;
-  globalCopiedElements: DrawElement[];
-  zoom: number;
-  panOffset: { x: number; y: number };
-}
-
-// File operation types
-export interface FileData {
-  version: string;
-  timestamp: string;
-  tabs: DrawAreaTab[];
-  metadata?: {
-    appVersion: string;
-    createdBy: string;
-    [key: string]: unknown;
-  };
-}
-
-// Error types
-export interface AppError {
-  code: string;
-  message: string;
-  category: 'file' | 'element' | 'clipboard' | 'ui' | 'validation';
-  details?: unknown;
-}
-
-// Event types
-export interface ElementChangeEvent {
-  type: 'create' | 'update' | 'delete' | 'select' | 'deselect';
-  element: DrawElement;
-  previousElement?: DrawElement;
+/**
+ * Application state cache
+ */
+export interface CacheData {
+  projectName: string;
+  tabs: CachedTabData[];
+  activeTabId: string;
   timestamp: number;
 }
 
-export interface TabChangeEvent {
-  fromTabId?: string;
-  toTabId: string;
-  timestamp: number;
+// ============= Event Types =============
+
+/**
+ * Custom event for diagram changes
+ */
+export interface DiagramChangeEvent {
+  type: 'add' | 'remove' | 'modify' | 'property';
+  cellId?: string;
+  property?: string;
+  oldValue?: unknown;
+  newValue?: unknown;
 }
 
-// Utility types
-export type Point = { x: number; y: number };
-export type Size = { width: number; height: number };
-export type Rectangle = Point & Size;
-export type Transform = { 
-  rotation: number; 
-  scale: number; 
-  translate: Point; 
-};
-
-// Component prop types for better reusability
-export interface BaseComponentProps {
-  className?: string;
-  'data-testid'?: string;
+/**
+ * Selection change event
+ */
+export interface SelectionChangeEvent {
+  selected: string[];
+  deselected: string[];
 }
 
-export interface DrawAreaProps extends BaseComponentProps {
-  GRID_WIDTH: number;
-  GRID_HEIGHT: number;
-  GRID_SIZE: number;
+// ============= UI State Types =============
+
+/**
+ * Application-wide UI state
+ */
+export interface UIState {
   zoom: number;
+  panX: number;
+  panY: number;
+  selectedCells: string[];
+  activeTab: string;
+  gridEnabled: boolean;
+  gridSize: number;
 }
 
-export interface PropertiesPanelProps extends BaseComponentProps {
-  drawAreaRef?: React.RefObject<DrawAreaRef | null>;
-  selectedElement?: DrawElement | null;
-  onElementChange?: (element: DrawElement | undefined) => void;
-  onChangeName?: (elementId: string, name: string) => void;
-}
+/**
+ * Tool states for toolbar
+ */
+export type ToolState = 'select' | 'pencil' | 'brush' | 'eraser' | 'line';
 
-// Validation schemas (for future use with libraries like Zod)
-export interface ValidationResult {
-  isValid: boolean;
-  errors: string[];
-}
+// ============= Custom Shape Types =============
 
-// Performance monitoring types
-export interface PerformanceMetric {
+/**
+ * Custom shape created by user
+ */
+export interface CustomShape {
+  id: string;
   name: string;
-  duration: number;
+  width: number;
+  height: number;
+  svgPath: string;
+  fillColor: string;
+  strokeColor: string;
+  strokeWidth: number;
+  createdAt: number;
+  modifiedAt?: number;
+}
+
+// ============= Export Types =============
+
+/**
+ * Export options for diagrams
+ */
+export interface ExportOptions {
+  format: 'png' | 'svg' | 'xml';
+  quality?: number;
+  transparent?: boolean;
+  scale?: number;
+}
+
+/**
+ * Export result
+ */
+export interface ExportResult {
+  format: string;
+  data: string | Blob;
+  filename: string;
   timestamp: number;
-  metadata?: Record<string, unknown>;
 }
 
-// Feature flags (for gradual rollouts)
-export interface FeatureFlags {
-  enableAdvancedTextEditing: boolean;
-  enableMultipleSelection: boolean;
-  enableUndoRedo: boolean;
-  enableRealTimeCollaboration: boolean;
+// ============= Keyboard & Input Types =============
+
+/**
+ * Keyboard shortcut definition
+ */
+export interface Shortcut {
+  key: string;
+  ctrl?: boolean;
+  shift?: boolean;
+  alt?: boolean;
+  meta?: boolean;
+  action: string;
+  description: string;
 }
 
-// Default feature flags
-export const DEFAULT_FEATURE_FLAGS: FeatureFlags = {
-  enableAdvancedTextEditing: true,
-  enableMultipleSelection: true,
-  enableUndoRedo: false,
-  enableRealTimeCollaboration: false,
-} as const;
+/**
+ * Keyboard event context
+ */
+export interface KeyboardContext {
+  key: string;
+  ctrlKey: boolean;
+  shiftKey: boolean;
+  altKey: boolean;
+  metaKey: boolean;
+  target: EventTarget;
+}
+
+// ============= Alignment & Distribution =============
+
+/**
+ * Alignment direction
+ */
+export type AlignmentType = 'left' | 'center' | 'right' | 'top' | 'middle' | 'bottom';
+
+/**
+ * Distribution direction
+ */
+export type DistributionType = 'horizontal' | 'vertical';
+
+// ============= Theme Types =============
+
+/**
+ * Theme configuration
+ */
+export interface Theme {
+  name: string;
+  isDark: boolean;
+  colors: ThemeColors;
+}
+
+/**
+ * Theme color palette
+ */
+export interface ThemeColors {
+  primary: string;
+  secondary: string;
+  background: string;
+  surface: string;
+  text: string;
+  textSecondary: string;
+  border: string;
+  success: string;
+  warning: string;
+  error: string;
+  info: string;
+}
+
+// ============= Application Context =============
+
+/**
+ * Dependency injection context for controllers
+ */
+export interface AppContext {
+  graph: any; // maxGraph Graph instance
+  tabId: string;
+  isDarkMode: boolean;
+  isReadOnly?: boolean;
+}
