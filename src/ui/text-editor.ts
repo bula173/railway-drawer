@@ -56,11 +56,13 @@ export class TextEditorController {
       return;
     }
 
-    const bounds = state.getBoundingBox();
-    if (!bounds) {
-      console.error('[TextEditor] Could not get cell bounds');
-      return;
-    }
+    // CellState has x, y, width, height properties directly
+    const bounds = {
+      x: state.x || 0,
+      y: state.y || 0,
+      width: state.width || 80,
+      height: state.height || 60,
+    };
 
     console.log('[TextEditor] Cell bounds:', bounds);
 
