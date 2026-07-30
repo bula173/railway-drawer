@@ -66,9 +66,13 @@ export class TextEditorController {
 
     console.log('[TextEditor] Cell bounds:', bounds);
 
-    // Create text input element
-    this.editingInput = document.createElement('input');
-    this.editingInput.type = 'text';
+    // Create textarea element (supports multi-line text)
+    this.editingInput = document.createElement('textarea') as any;
+    if (!this.editingInput) {
+      console.error('[TextEditor] Failed to create textarea element');
+      return;
+    }
+
     this.editingInput.value = cell.value || '';
     this.editingInput.style.position = 'fixed';
     this.editingInput.style.zIndex = '10000';
@@ -79,6 +83,8 @@ export class TextEditorController {
     this.editingInput.style.fontSize = '14px';
     this.editingInput.style.boxSizing = 'border-box';
     this.editingInput.style.backgroundColor = '#fff';
+    this.editingInput.style.resize = 'none';
+    this.editingInput.style.overflow = 'auto';
 
     // Get container position for offset calculation
     const containerRect = container.getBoundingClientRect();
@@ -101,21 +107,25 @@ export class TextEditorController {
     this.editingInput.focus();
     this.editingInput.select();
 
-    // Handle save on blur
-    this.editingInput.addEventListener('blur', () => {
-      this.stopEditing();
-    });
-
-    // Handle save on Enter
+    // Handle Escape to cancel editing
     this.editingInput.addEventListener('keydown', (evt: KeyboardEvent) => {
-      if (evt.key === 'Enter') {
-        evt.preventDefault();
-        this.stopEditing();
-      } else if (evt.key === 'Escape') {
+      if (evt.key === 'Escape') {
         evt.preventDefault();
         this.cancelEditing();
       }
     });
+
+    // Handle click outside to close editing
+    const handleClickOutside = (evt: MouseEvent) => {
+      if (this.editingInput && evt.target && !this.editingInput.contains(evt.target as Node)) {
+        this.stopEditing();
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    // Store handler so we can remove it later
+    (this.editingInput as any).__clickOutsideHandler = handleClickOutside;
 
     console.log('[TextEditor] Inline text input created and focused at', { left, top, width, height });
   }
@@ -125,22 +135,44 @@ export class TextEditorController {
       return;
     }
 
-    const newText = this.editingInput.value;
+    const input = this.editingInput;
+    const cell = this.currentEditingCell;
+    const newText = input.value;
     console.log('[TextEditor] Saving text:', newText);
 
+    // Remove click outside handler
+    const handler = (input as any).__clickOutsideHandler;
+    if (handler) {
+      document.removeEventListener('mousedown', handler);
+    }
+
+    // Clean up - check if element is still in DOM before removing
+    if (input.parentNode) {
+      input.remove();
+    }
+
     // Update cell value
-    this.graph.model.setValue(this.currentEditingCell, newText);
+    this.graph.model.setValue(cell, newText);
     this.graph.refresh();
 
-    // Clean up
-    this.editingInput.remove();
     this.editingInput = null;
     this.currentEditingCell = null;
   }
 
   private cancelEditing(): void {
     if (this.editingInput) {
-      this.editingInput.remove();
+      const input = this.editingInput;
+
+      // Remove click outside handler
+      const handler = (input as any).__clickOutsideHandler;
+      if (handler) {
+        document.removeEventListener('mousedown', handler);
+      }
+
+      // Check if element is still in DOM before removing
+      if (input.parentNode) {
+        input.remove();
+      }
       this.editingInput = null;
     }
     this.currentEditingCell = null;
