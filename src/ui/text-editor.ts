@@ -2,6 +2,8 @@ import { Graph, InternalEvent } from '@maxgraph/core';
 
 export class TextEditorController {
   private graph: Graph;
+  private currentEditingCell: any = null;
+  private editingInput: HTMLInputElement | null = null;
 
   constructor(graph: Graph) {
     this.graph = graph;
@@ -9,8 +11,15 @@ export class TextEditorController {
   }
 
   private setupTextEditingHandlers(): void {
-    // CellEditorHandler already handles double-click text editing natively
-    // We just need to add support for Enter/Space key to start editing
+    // Listen for double-click to start inline text editing
+    this.graph.addListener(InternalEvent.DOUBLE_CLICK, (_sender: any, evt: any) => {
+      const cell = evt.getProperty('cell');
+      if (cell && cell.isVertex && cell.isVertex()) {
+        console.log('[TextEditor] Double-click detected on vertex:', cell.value);
+        evt.consume(); // Prevent default behavior
+        this.startInlineEditing(cell);
+      }
+    });
 
     // Listen for Enter/Space key on selected shapes
     document.addEventListener('keydown', (evt: KeyboardEvent) => {
@@ -24,35 +33,104 @@ export class TextEditorController {
         if (cells.length === 1 && cells[0].isVertex && cells[0].isVertex()) {
           console.log('[TextEditor] Enter/Space pressed, starting edit for:', cells[0].value);
           evt.preventDefault();
-          this.startEditing(cells[0]);
+          this.startInlineEditing(cells[0]);
         }
-      }
-    });
-
-    // Log when text editing starts (for debugging)
-    this.graph.addListener(InternalEvent.DOUBLE_CLICK, (_sender: any, evt: any) => {
-      const cell = evt.getProperty('cell');
-      if (cell && cell.isVertex && cell.isVertex()) {
-        console.log('[TextEditor] Double-click detected on vertex:', cell.value);
       }
     });
   }
 
-  private startEditing(cell: any): void {
-    try {
-      console.log('[TextEditor] Starting text editing for:', cell.value);
+  private startInlineEditing(cell: any): void {
+    console.log('[TextEditor] Starting inline editing for cell:', cell.value);
 
-      // Try the cellEditorHandler stored on graph (from tabs.ts)
-      const handler = (this.graph as any).cellEditorHandler;
-      if (handler && handler.startEditing) {
-        console.log('[TextEditor] Using cellEditorHandler.startEditing()');
-        handler.startEditing(cell);
-        return;
-      }
+    // Stop any existing editing
+    this.stopEditing();
 
-      console.error('[TextEditor] cellEditorHandler not found on graph');
-    } catch (error) {
-      console.error('[TextEditor] Error starting editing:', error);
+    this.currentEditingCell = cell;
+    const container = this.graph.getContainer();
+    const view = (this.graph as any).getView();
+
+    // Get cell bounds in view coordinates
+    const bounds = view.getBounds(cell);
+    if (!bounds) {
+      console.error('[TextEditor] Could not get cell bounds');
+      return;
     }
+
+    // Create text input element
+    this.editingInput = document.createElement('input');
+    this.editingInput.type = 'text';
+    this.editingInput.value = cell.value || '';
+    this.editingInput.style.position = 'absolute';
+    this.editingInput.style.zIndex = '10000';
+    this.editingInput.style.border = '2px solid #2196F3';
+    this.editingInput.style.borderRadius = '3px';
+    this.editingInput.style.padding = '4px';
+    this.editingInput.style.fontFamily = 'Arial, sans-serif';
+    this.editingInput.style.fontSize = '14px';
+    this.editingInput.style.boxSizing = 'border-box';
+    this.editingInput.style.backgroundColor = '#fff';
+
+    // Position input over the cell
+    const left = container.offsetLeft + bounds.x + 4;
+    const top = container.offsetTop + bounds.y + 4;
+    const width = Math.max(bounds.width - 8, 100);
+    const height = Math.max(bounds.height - 8, 24);
+
+    this.editingInput.style.left = `${left}px`;
+    this.editingInput.style.top = `${top}px`;
+    this.editingInput.style.width = `${width}px`;
+    this.editingInput.style.height = `${height}px`;
+
+    // Add to document
+    document.body.appendChild(this.editingInput);
+
+    // Focus and select all text
+    this.editingInput.focus();
+    this.editingInput.select();
+
+    // Handle save on blur
+    this.editingInput.addEventListener('blur', () => {
+      this.stopEditing();
+    });
+
+    // Handle save on Enter
+    this.editingInput.addEventListener('keydown', (evt: KeyboardEvent) => {
+      if (evt.key === 'Enter') {
+        evt.preventDefault();
+        this.stopEditing();
+      } else if (evt.key === 'Escape') {
+        evt.preventDefault();
+        this.cancelEditing();
+      }
+    });
+
+    console.log('[TextEditor] Inline text input created and focused');
+  }
+
+  private stopEditing(): void {
+    if (!this.currentEditingCell || !this.editingInput) {
+      return;
+    }
+
+    const newText = this.editingInput.value;
+    console.log('[TextEditor] Saving text:', newText);
+
+    // Update cell value
+    this.graph.model.setValue(this.currentEditingCell, newText);
+    this.graph.refresh();
+
+    // Clean up
+    this.editingInput.remove();
+    this.editingInput = null;
+    this.currentEditingCell = null;
+  }
+
+  private cancelEditing(): void {
+    if (this.editingInput) {
+      this.editingInput.remove();
+      this.editingInput = null;
+    }
+    this.currentEditingCell = null;
+    console.log('[TextEditor] Editing cancelled');
   }
 }

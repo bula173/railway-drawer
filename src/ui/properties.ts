@@ -97,10 +97,6 @@ export class PropertiesPanel {
     const geo = this.currentCell.geometry;
     const style = this.graph.getCellStyle(this.currentCell) as any;
 
-    // Text values
-    const textInput = document.getElementById('prop-text') as HTMLInputElement;
-    if (textInput) textInput.value = this.currentCell.value || '';
-
     const fontFamily = document.getElementById('prop-fontFamily') as HTMLInputElement;
     if (fontFamily) fontFamily.value = style.fontFamily || 'Arial';
 
@@ -289,13 +285,6 @@ export class PropertiesPanel {
 
   private wireUpHandlers() {
     const geo = this.currentCell.geometry;
-
-    // Text
-    document.getElementById('prop-text')?.addEventListener('change', (e) => {
-      const value = (e.target as HTMLInputElement).value;
-      this.graph.model.setValue(this.currentCell, value);
-      this.graph.refresh();
-    });
 
     document.getElementById('prop-fontFamily')?.addEventListener('change', (e) => {
       const value = (e.target as HTMLInputElement).value;
