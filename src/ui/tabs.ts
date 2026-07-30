@@ -461,6 +461,12 @@ export class TabManager {
       tabLabel.className = 'tab-label';
       tabLabel.textContent = tab.name;
 
+      // Add double-click to edit tab name
+      tabLabel.addEventListener('dblclick', (e) => {
+        e.stopPropagation();
+        this.editTabName(tab, tabLabel);
+      });
+
       tabButton.appendChild(tabLabel);
 
       if (this.tabs.size > 1) {
@@ -490,5 +496,60 @@ export class TabManager {
     });
 
     this.tabBarContainer.appendChild(newTabBtn);
+  }
+
+  private editTabName(tab: TabData, labelElement: HTMLSpanElement): void {
+    console.log('[TabManager] Editing tab name:', tab.name);
+
+    // Create input element
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.value = tab.name;
+    input.style.padding = '2px 4px';
+    input.style.border = '1px solid #2196F3';
+    input.style.borderRadius = '3px';
+    input.style.fontSize = '12px';
+    input.style.fontWeight = '500';
+    input.style.width = `${Math.max(tab.name.length * 7, 60)}px`;
+
+    // Replace label with input
+    labelElement.replaceWith(input);
+    input.focus();
+    input.select();
+
+    // Save on Enter or blur
+    const saveTabName = () => {
+      const newName = input.value.trim() || tab.name;
+      if (newName !== tab.name) {
+        tab.name = newName;
+        console.log('[TabManager] Tab name changed to:', newName);
+        // Save to cache
+        const cacheData = CacheService.load();
+        if (cacheData) {
+          const tabCache = cacheData.tabs.find((t: any) => t.id === tab.id);
+          if (tabCache) {
+            tabCache.name = newName;
+            CacheService.save(cacheData);
+          }
+        }
+      }
+      this.renderTabBar();
+    };
+
+    // Handle Enter key
+    input.addEventListener('keydown', (evt: KeyboardEvent) => {
+      if (evt.key === 'Enter') {
+        evt.preventDefault();
+        saveTabName();
+      } else if (evt.key === 'Escape') {
+        evt.preventDefault();
+        this.renderTabBar();
+      }
+    });
+
+    // Handle blur
+    input.addEventListener('blur', () => {
+      saveTabName();
+    });
   }
 }
