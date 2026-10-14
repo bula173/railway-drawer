@@ -80,16 +80,19 @@ export class CustomShapeToolbar {
     // Create preview SVG
     const preview = document.createElement('div');
     preview.className = 'shape-preview';
-    preview.innerHTML = `
-      <svg viewBox="0 0 ${shape.width} ${shape.height}" width="40" height="40">
-        <path
-          d="${shape.svgPath}"
-          fill="${shape.fillColor}"
-          stroke="${shape.strokeColor}"
-          stroke-width="${shape.strokeWidth}"
-        />
-      </svg>
-    `;
+    // Build via DOM APIs: shape fields come from localStorage/imports and must not be parsed as HTML
+    const svgNs = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(svgNs, 'svg');
+    svg.setAttribute('viewBox', `0 0 ${shape.width} ${shape.height}`);
+    svg.setAttribute('width', '40');
+    svg.setAttribute('height', '40');
+    const path = document.createElementNS(svgNs, 'path');
+    path.setAttribute('d', shape.svgPath);
+    path.setAttribute('fill', shape.fillColor);
+    path.setAttribute('stroke', shape.strokeColor);
+    path.setAttribute('stroke-width', String(shape.strokeWidth));
+    svg.appendChild(path);
+    preview.appendChild(svg);
 
     const label = document.createElement('div');
     label.className = 'shape-label';

@@ -1,4 +1,5 @@
 import { Graph } from '@maxgraph/core';
+import { shouldIgnoreGraphShortcut } from './delete';
 
 export class TransformController {
   private graph: Graph;
@@ -29,7 +30,7 @@ export class TransformController {
 
   private setupKeyboardShortcuts(): void {
     document.addEventListener('keydown', (e) => {
-      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) {
+      if (shouldIgnoreGraphShortcut(e, this.graph)) {
         return;
       }
 

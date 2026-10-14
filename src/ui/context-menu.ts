@@ -51,6 +51,8 @@ export class ContextMenuController {
   private groupingController: any;
   /** @brief Reference to graph command service for z-order operations */
   private commandService: GraphCommandService | null = null;
+  /** @brief Removes this controller's subscription to the shared ClipboardService */
+  private unsubscribeClipboard: (() => void) | null = null;
 
   /**
    * @brief Initialize context menu controller
@@ -73,13 +75,23 @@ export class ContextMenuController {
   }
 
   private setupClipboardListener(): void {
-    this.clipboardService.subscribe((hasContent) => {
+    this.unsubscribeClipboard = this.clipboardService.subscribe((hasContent) => {
       const pasteItem = this.contextMenu?.querySelector('[data-action="paste"]') as HTMLElement;
       if (pasteItem) {
         pasteItem.style.opacity = hasContent ? '1' : '0.5';
         pasteItem.style.pointerEvents = hasContent ? 'auto' : 'none';
       }
     });
+  }
+
+  /**
+   * @brief Release the clipboard subscription so a closed tab's controller (and its graph)
+   * is no longer retained by the ClipboardService singleton.
+   * The document listeners are scoped to the tab and removed by the TabManager.
+   */
+  destroy(): void {
+    this.unsubscribeClipboard?.();
+    this.unsubscribeClipboard = null;
   }
 
   private setupContextMenu() {
@@ -270,11 +282,12 @@ export class ContextMenuController {
         if (this.commandService) this.commandService.sendBackward();
         break;
 
-      case 'editStyle':
+      case 'editStyle': {
         console.log('[ContextMenu] Edit Style - Selecting Text tab');
         const textTab = document.querySelector('.prop-tab[data-tab="style"]') as HTMLElement;
         if (textTab) textTab.click();
         break;
+      }
 
       case 'editData':
         console.log('[ContextMenu] Edit Data - Not yet implemented');

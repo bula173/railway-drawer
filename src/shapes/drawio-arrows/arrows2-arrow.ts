@@ -15,14 +15,13 @@ export class Arrows2ArrowShape extends Shape {
   notch = 0;
 
   override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     c.translate(x, y);
 
-    	let dy = h * 0.5 * Math.max(0, Math.min(1, this.dy));
-    	let dx = Math.max(0, Math.min(w, this.dx));
-    	let notch = Math.max(0, Math.min(w, this.notch));
-    	let headCrossline = false;
-    	let tailCrossline = false;
+    	const dy = h * 0.5 * Math.max(0, Math.min(1, this.dy));
+    	const dx = Math.max(0, Math.min(w, this.dx));
+    	const notch = Math.max(0, Math.min(w, this.notch));
+    	const headCrossline = false;
+    	const tailCrossline = false;
 
     	c.begin();
     	c.moveTo(0, dy);

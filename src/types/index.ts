@@ -68,6 +68,10 @@ export interface CachedTabData {
   id: string;
   name: string;
   graphXml: string;
+  /** Pages 2..n of the opened file (serialized <diagram> elements), kept for saving. */
+  extraPages?: string[];
+  /** Id of the shown page's <diagram>. */
+  pageId?: string | null;
 }
 
 /**

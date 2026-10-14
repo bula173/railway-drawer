@@ -16,13 +16,12 @@ export class Arrows2StylisedArrowShape extends Shape {
   feather = 0.5;
 
   override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     c.translate(x, y);
 
-    	let dy = h * 0.5 * Math.max(0, Math.min(1, this.dy));
-    	let dx = Math.max(0, Math.min(w, this.dx));
-    	let notch = Math.max(0, Math.min(w, this.notch));
-    	let feather = h * 0.5 * Math.max(0, Math.min(1, this.feather));
+    	const dy = h * 0.5 * Math.max(0, Math.min(1, this.dy));
+    	const dx = Math.max(0, Math.min(w, this.dx));
+    	const notch = Math.max(0, Math.min(w, this.notch));
+    	const feather = h * 0.5 * Math.max(0, Math.min(1, this.feather));
 
     	c.begin();
     	c.moveTo(0, feather);

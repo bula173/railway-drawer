@@ -18,15 +18,14 @@ export class Arrows2SharpArrow2Shape extends Shape {
   notch = 0;
 
   override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     c.translate(x, y);
 
-    	let dy1 = h * 0.5 * Math.max(0, Math.min(1, this.dy1));
-    	let dx1 = Math.max(0, Math.min(w, this.dx1));
-    	let dx2 = Math.max(0, Math.min(w, this.dx2));
-    	let dy3 = h * 0.5 * Math.max(0, Math.min(1, this.dy3));
-    	let dx3 = Math.max(0, Math.min(w, this.dx3));
-    	let notch = Math.max(0, Math.min(w, this.notch));
+    	const dy1 = h * 0.5 * Math.max(0, Math.min(1, this.dy1));
+    	const dx1 = Math.max(0, Math.min(w, this.dx1));
+    	const dx2 = Math.max(0, Math.min(w, this.dx2));
+    	const dy3 = h * 0.5 * Math.max(0, Math.min(1, this.dy3));
+    	const dx3 = Math.max(0, Math.min(w, this.dx3));
+    	const notch = Math.max(0, Math.min(w, this.notch));
 
     	c.begin();
     	c.moveTo(0, dy1);

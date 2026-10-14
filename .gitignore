@@ -38,3 +38,11 @@ debug-storybook.log
 .vercel
 src/.next/
 out/
+# Cloudflare wrangler local state
+.wrangler/
+
+# playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/

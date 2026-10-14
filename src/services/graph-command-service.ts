@@ -1,4 +1,4 @@
-import { Graph, UndoManager } from '@maxgraph/core';
+import { EventObject, EventSource, Graph, InternalEvent, UndoManager } from '@maxgraph/core';
 import { ClipboardService } from './clipboard-service';
 
 export class GraphCommandService {
@@ -7,31 +7,68 @@ export class GraphCommandService {
   private clipboardService: ClipboardService;
   private listeners: Map<string, Set<() => void>> = new Map();
 
+  /** Records completed edits from the model and view (fired once per endUpdate, never by undo/redo). */
+  private readonly onUndoableEdit = (_sender: EventSource, evt: EventObject): void => {
+    const edit = evt.getProperty('edit');
+    if (edit) {
+      this.undoManager.undoableEditHappened(edit);
+    }
+  };
+
+  /** Keeps the selection in sync with the cells touched by an undo/redo (as maxGraph's Editor does). */
+  private readonly onHistoryNavigated = (_sender: EventSource, evt: EventObject): void => {
+    const edit = evt.getProperty('edit');
+    if (edit?.changes) {
+      this.graph.setSelectionCells(this.graph.getSelectionCellsForChanges(edit.changes));
+    }
+  };
+
+  private readonly onHistoryChanged = (): void => {
+    this.notifyListeners('stateChanged');
+  };
+
   constructor(graph: Graph) {
     this.graph = graph;
     this.undoManager = new UndoManager();
     this.clipboardService = ClipboardService.getInstance();
-    this.setupModelListener();
+    this.setupUndoHandler();
   }
 
-  private setupModelListener(): void {
-    (this.graph as any).model.addListener('change', (_sender: any, evt: any) => {
-      const edit = evt.getProperty('edit');
-      if (edit) {
-        this.undoManager.undoableEditHappened(edit);
-        this.notifyListeners('stateChanged');
-      }
-    });
+  /**
+   * Wires the undo manager the way maxGraph's Editor.installUndoHandler does.
+   * The model/view fire InternalEvent.UNDO only for new edits; replaying an edit through
+   * UndoManager.undo()/redo() fires CHANGE but not UNDO, so undo/redo is not re-recorded.
+   */
+  private setupUndoHandler(): void {
+    this.graph.getDataModel().addListener(InternalEvent.UNDO, this.onUndoableEdit);
+    this.graph.getView().addListener(InternalEvent.UNDO, this.onUndoableEdit);
 
-    this.undoManager.addListener('undoableEdit', () => {
-      this.notifyListeners('stateChanged');
-    });
+    this.undoManager.addListener(InternalEvent.UNDO, this.onHistoryNavigated);
+    this.undoManager.addListener(InternalEvent.REDO, this.onHistoryNavigated);
+
+    this.undoManager.addListener(InternalEvent.ADD, this.onHistoryChanged);
+    this.undoManager.addListener(InternalEvent.UNDO, this.onHistoryChanged);
+    this.undoManager.addListener(InternalEvent.REDO, this.onHistoryChanged);
+    this.undoManager.addListener(InternalEvent.CLEAR, this.onHistoryChanged);
+  }
+
+  /** Clears the undo history (e.g. after loading a file, so the load itself is not undoable). */
+  clearHistory(): void {
+    this.undoManager.clear();
+  }
+
+  /** Detaches the undo handler from the graph and drops all subscribers. */
+  destroy(): void {
+    this.graph.getDataModel().removeListener(this.onUndoableEdit);
+    this.graph.getView().removeListener(this.onUndoableEdit);
+    this.undoManager.removeListener(this.onHistoryNavigated);
+    this.undoManager.removeListener(this.onHistoryChanged);
+    this.listeners.clear();
   }
 
   undo(): void {
     if (this.undoManager.canUndo()) {
       this.undoManager.undo();
-      this.notifyListeners('stateChanged');
       console.log('[GraphCommand] Undo executed');
     }
   }
@@ -39,7 +76,6 @@ export class GraphCommandService {
   redo(): void {
     if (this.undoManager.canRedo()) {
       this.undoManager.redo();
-      this.notifyListeners('stateChanged');
       console.log('[GraphCommand] Redo executed');
     }
   }
@@ -377,9 +413,5 @@ export class GraphCommandService {
    */
   hasCopiedStyle(): boolean {
     return this.copiedStyle !== null;
-  }
-
-  destroy(): void {
-    this.listeners.clear();
   }
 }

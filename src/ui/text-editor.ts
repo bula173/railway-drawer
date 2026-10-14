@@ -1,4 +1,5 @@
 import { Graph, InternalEvent } from '@maxgraph/core';
+import { shouldIgnoreGraphShortcut } from './delete';
 
 export class TextEditorController {
   private graph: Graph;
@@ -23,8 +24,8 @@ export class TextEditorController {
 
     // Listen for Enter/Space key on selected shapes
     document.addEventListener('keydown', (evt: KeyboardEvent) => {
-      // Ignore if user is typing in an input field
-      if (evt.target instanceof HTMLInputElement || evt.target instanceof HTMLTextAreaElement) {
+      // Ignore text editing (inputs, selects, contentEditable, active cell editor)
+      if (shouldIgnoreGraphShortcut(evt, this.graph)) {
         return;
       }
 
@@ -73,7 +74,8 @@ export class TextEditorController {
       return;
     }
 
-    this.editingInput.value = cell.value || '';
+    // convertValueToString: the label of a draw.io UserObject value, not the element itself
+    this.editingInput.value = this.graph.convertValueToString(cell);
     this.editingInput.style.position = 'fixed';
     this.editingInput.style.zIndex = '10000';
     this.editingInput.style.border = '2px solid #2196F3';
@@ -151,12 +153,20 @@ export class TextEditorController {
       input.remove();
     }
 
-    // Update cell value
-    this.graph.model.setValue(cell, newText);
+    // Update cell value; cellLabelChanged keeps the other attributes of a UserObject value
+    this.graph.cellLabelChanged(cell, newText, false);
     this.graph.refresh();
 
     this.editingInput = null;
     this.currentEditingCell = null;
+  }
+
+  /**
+   * Ends an edit still open when the tab closes: removes the overlay textarea and its
+   * `document` mousedown listener, which are added per edit and so not managed by the TabManager.
+   */
+  destroy(): void {
+    this.cancelEditing();
   }
 
   private cancelEditing(): void {

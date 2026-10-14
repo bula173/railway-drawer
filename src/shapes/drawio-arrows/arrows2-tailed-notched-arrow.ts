@@ -20,15 +20,14 @@ export class Arrows2TailedNotchedArrowShape extends Shape {
   dy2 = 30;
 
   override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     c.translate(x, y);
 
-    	let dy1 = Math.max(0, Math.min(h, this.dy1));
-    	let dx1 = Math.max(0, Math.min(w, this.dx1));
-    	let dy2 = Math.max(0, Math.min(h, this.dy2));
-    	let dx2 = Math.max(0, Math.min(w, this.dx2));
-    	let notch = Math.max(0, Math.min(w, this.notch));
-    	let arrowHead = Math.max(0, Math.min(h, this.arrowHead));
+    	const dy1 = Math.max(0, Math.min(h, this.dy1));
+    	const dx1 = Math.max(0, Math.min(w, this.dx1));
+    	const dy2 = Math.max(0, Math.min(h, this.dy2));
+    	const dx2 = Math.max(0, Math.min(w, this.dx2));
+    	const notch = Math.max(0, Math.min(w, this.notch));
+    	const arrowHead = Math.max(0, Math.min(h, this.arrowHead));
     	let x2 = 0;
 	
     	if (dy2 != 0)

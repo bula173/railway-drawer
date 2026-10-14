@@ -1,0 +1,11 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // Static-assets-only Worker. Production is deployed by Cloudflare Workers
+  // Builds (dashboard); `npm run deploy` does the same from a local machine.
+  "name": "railway-drawer",
+  "compatibility_date": "2026-07-17",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
+  }
+}

@@ -143,14 +143,10 @@ export class ShapeDesignerController {
             <!-- Shape Info -->
             <div class="shape-info">
               <label>Name:</label>
-              <input type="text" id="shape-name" placeholder="My Custom Shape" value="${
-                editingShape?.name || ''
-              }">
+              <input type="text" id="shape-name" placeholder="My Custom Shape">
 
               <label>Description:</label>
-              <textarea id="shape-desc" placeholder="Optional description">${
-                editingShape?.description || ''
-              }</textarea>
+              <textarea id="shape-desc" placeholder="Optional description"></textarea>
             </div>
 
             <!-- Global Properties -->
@@ -158,21 +154,19 @@ export class ShapeDesignerController {
               <label><strong>Shape Properties:</strong></label>
 
               <label>Fill Color:</label>
-              <input type="color" id="shape-fill" value="${editingShape?.fillColor || '#1976d2'}">
+              <input type="color" id="shape-fill">
 
               <label>Stroke Color:</label>
-              <input type="color" id="shape-stroke" value="${editingShape?.strokeColor || '#0d47a1'}">
+              <input type="color" id="shape-stroke">
 
               <label>Stroke Width:</label>
-              <input type="number" id="shape-stroke-width" min="0" max="10" step="0.5" value="${
-                editingShape?.strokeWidth || 2
-              }">
+              <input type="number" id="shape-stroke-width" min="0" max="10" step="0.5">
 
               <label>Default Width:</label>
-              <input type="number" id="shape-width" min="20" max="500" value="${editingShape?.width || 100}">
+              <input type="number" id="shape-width" min="20" max="500">
 
               <label>Default Height:</label>
-              <input type="number" id="shape-height" min="20" max="500" value="${editingShape?.height || 100}">
+              <input type="number" id="shape-height" min="20" max="500">
             </div>
 
             <!-- Selected Element Properties -->
@@ -234,6 +228,19 @@ export class ShapeDesignerController {
         </div>
       </div>
     `;
+
+    // User-provided values are assigned through DOM properties, never interpolated into HTML
+    const setValue = (selector: string, value: string): void => {
+      const field = modal.querySelector(selector) as HTMLInputElement | HTMLTextAreaElement | null;
+      if (field) field.value = value;
+    };
+    setValue('#shape-name', editingShape?.name || '');
+    setValue('#shape-desc', editingShape?.description || '');
+    setValue('#shape-fill', editingShape?.fillColor || '#1976d2');
+    setValue('#shape-stroke', editingShape?.strokeColor || '#0d47a1');
+    setValue('#shape-stroke-width', String(editingShape?.strokeWidth || 2));
+    setValue('#shape-width', String(editingShape?.width || 100));
+    setValue('#shape-height', String(editingShape?.height || 100));
 
     return modal;
   }
@@ -469,14 +476,13 @@ export class ShapeDesignerController {
 
     if (!previewSvg || !pathInput) return;
 
-    previewSvg.innerHTML = `
-      <path
-        d="${pathInput.value}"
-        fill="${fillInput?.value || '#1976d2'}"
-        stroke="${strokeInput?.value || '#0d47a1'}"
-        stroke-width="${strokeWidthInput?.value || 2}"
-      />
-    `;
+    // Build the path via DOM APIs so user path/colour text cannot inject markup
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('d', pathInput.value);
+    path.setAttribute('fill', fillInput?.value || '#1976d2');
+    path.setAttribute('stroke', strokeInput?.value || '#0d47a1');
+    path.setAttribute('stroke-width', String(strokeWidthInput?.value || 2));
+    previewSvg.replaceChildren(path);
 
     // Generate vertex code
     this.generateVertexCode();
@@ -1338,7 +1344,6 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
           ctx.moveTo(el.x + el.width, el.y);
           ctx.lineTo(el.x, el.y + el.height);
           ctx.stroke();
-          // eslint-disable-next-line no-fallthrough
           break;
         case 'label':
           ctx.fillRect(el.x, el.y, el.width, el.height);

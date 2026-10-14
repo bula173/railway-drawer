@@ -17,14 +17,13 @@ export class Arrows2CalloutDouble90ArrowShape extends Shape {
   arrowHead = 0;
 
   override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     c.translate(x, y);
 
-    	let dy1 = Math.max(0, Math.min(h, this.dy1));
-    	let dx1 = Math.max(0, Math.min(w, this.dx1));
-    	let dx2 = Math.max(0, Math.min(w, this.dx2));
-    	let dy2 = Math.max(0, Math.min(w, this.dy2));
-    	let arrowHead = Math.max(0, Math.min(h, this.arrowHead));
+    	const dy1 = Math.max(0, Math.min(h, this.dy1));
+    	const dx1 = Math.max(0, Math.min(w, this.dx1));
+    	const dx2 = Math.max(0, Math.min(w, this.dx2));
+    	const dy2 = Math.max(0, Math.min(w, this.dy2));
+    	const arrowHead = Math.max(0, Math.min(h, this.arrowHead));
 
     	c.begin();
     	c.moveTo(0, 0);

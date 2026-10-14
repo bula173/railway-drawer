@@ -67,7 +67,12 @@ Bob --> Alice: Hi
       </div>
     `;
 
-    this.editorPanel.innerHTML = html;
+    // The panel is shared by all tabs. Build it only once: rebuilding it for every new tab
+    // would discard the buttons the other tabs' listeners are bound to (the TabManager
+    // attaches the active tab's listeners to these same nodes when tabs are switched).
+    if (!this.editorPanel.querySelector('#plantuml-input')) {
+      this.editorPanel.innerHTML = html;
+    }
     this.editorPanel.style.display = 'flex';
 
     // Get references to elements
@@ -264,7 +269,7 @@ Bob --> Alice: Hi
   private convertAndAddToGraph(diagramData: DiagramData, parentGroup?: any): void {
     // If no parent group provided, use default parent
     const parent = parentGroup || this.graph.getDefaultParent();
-    let yPos = 30;
+    const yPos = 30;
     const elementMap = new Map<string, any>();
 
     this.graph.batchUpdate(() => {
@@ -490,9 +495,7 @@ api --> db
   }
 
   destroy(): void {
+    // Only this tab's listeners go; #plantuml-panel is shared and stays for the other tabs
     this.removeTrackedListeners();
-    if (this.editorPanel?.parentElement) {
-      this.editorPanel.remove();
-    }
   }
 }

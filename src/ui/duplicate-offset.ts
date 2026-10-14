@@ -1,8 +1,11 @@
 import { Graph } from '@maxgraph/core';
+import { shouldIgnoreGraphShortcut } from './delete';
 
 export class DuplicateOffsetController {
   private graph: Graph;
   private defaultOffset = 20;
+  /** Closes the open "Duplicate Multiple Times" dialog and removes its listeners */
+  private closeOpenDialog: (() => void) | null = null;
 
   constructor(graph: Graph) {
     this.graph = graph;
@@ -24,7 +27,7 @@ export class DuplicateOffsetController {
 
   private setupKeyboardShortcuts(): void {
     document.addEventListener('keydown', (e) => {
-      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) {
+      if (shouldIgnoreGraphShortcut(e, this.graph)) {
         return;
       }
 
@@ -44,7 +47,16 @@ export class DuplicateOffsetController {
   }
 
   private showDuplicateDialog(): void {
+    this.closeOpenDialog?.();
     const modal = document.createElement('div');
+    const onEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') closeDialog();
+    };
+    const closeDialog = () => {
+      document.removeEventListener('keydown', onEscape);
+      modal.remove();
+      if (this.closeOpenDialog === closeDialog) this.closeOpenDialog = null;
+    };
     modal.style.cssText = `
       display: flex;
       position: fixed;
@@ -135,7 +147,7 @@ export class DuplicateOffsetController {
       if (count > 0) {
         const selected = this.graph.getSelectionCells();
         this.duplicateWithOffset(selected, count, offset);
-        modal.remove();
+        closeDialog();
       }
     });
     buttonContainer.appendChild(createBtn);
@@ -151,7 +163,7 @@ export class DuplicateOffsetController {
       cursor: pointer;
       font-weight: 600;
     `;
-    closeBtn.addEventListener('click', () => modal.remove());
+    closeBtn.addEventListener('click', () => closeDialog());
     buttonContainer.appendChild(closeBtn);
 
     content.appendChild(buttonContainer);
@@ -164,12 +176,14 @@ export class DuplicateOffsetController {
 
     // Close on background click or escape
     modal.addEventListener('click', (e) => {
-      if (e.target === modal) modal.remove();
+      if (e.target === modal) closeDialog();
     });
 
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') modal.remove();
-    });
+    // Registered after construction, so the TabManager's per-tab listener swap does not see it:
+    // it lives exactly as long as the dialog and is removed with it (it used to stay on
+    // `document` for good, one more per dialog opened, in every tab)
+    document.addEventListener('keydown', onEscape);
+    this.closeOpenDialog = closeDialog;
   }
 
   private duplicateWithOffset(cells: any[], count: number, offset: number): void {
@@ -191,6 +205,7 @@ export class DuplicateOffsetController {
   }
 
   destroy(): void {
-    // Cleanup if needed
+    // A dialog left open when the tab closes goes with the tab, with its document listener
+    this.closeOpenDialog?.();
   }
 }

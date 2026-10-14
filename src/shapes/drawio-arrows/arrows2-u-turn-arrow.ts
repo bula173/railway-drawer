@@ -16,13 +16,12 @@ export class Arrows2UTurnArrowShape extends Shape {
   dx2 = 25;
 
   override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     c.translate(x, y);
 
-    	let dy = Math.max(0, Math.min(h, this.dy));
-    	let arrowHead = Math.max(0, Math.min(h, this.arrowHead));
-    	let dx = (h - arrowHead / 2 + dy) / 2;
-    	let dx2 = Math.max(0, this.dx2);
+    	const dy = Math.max(0, Math.min(h, this.dy));
+    	const arrowHead = Math.max(0, Math.min(h, this.arrowHead));
+    	const dx = (h - arrowHead / 2 + dy) / 2;
+    	const dx2 = Math.max(0, this.dx2);
 	
     	c.begin();
     	c.moveTo(dx, 0);

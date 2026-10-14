@@ -275,6 +275,15 @@ export class LayersController {
     });
   }
 
+  /**
+   * Re-renders the shared layers list for this controller's graph.
+   * #layers-list is shared by all tabs, so the TabManager calls this when the tab is shown;
+   * the rebuilt items act on this graph only.
+   */
+  refresh(): void {
+    this.render();
+  }
+
   getCurrentLayer(): Layer | null {
     return this.currentLayerId ? this.layers.get(this.currentLayerId) || null : null;
   }
@@ -284,10 +293,8 @@ export class LayersController {
   }
 
   destroy(): void {
-    // Clear all event listeners and references
-    if (this.layerListContainer) {
-      this.layerListContainer.innerHTML = '';
-    }
+    // #layers-list is shared with the other tabs: it is left alone here and re-rendered by the
+    // tab that is shown next, so closing a background tab does not empty the active tab's list.
     this.layers.clear();
     this.currentLayerId = null;
   }

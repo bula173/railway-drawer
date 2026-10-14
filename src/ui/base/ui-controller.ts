@@ -101,7 +101,8 @@ export abstract class UIController {
    */
   protected removeTrackedListeners(): void {
     this._trackedListeners.forEach((listener) => {
-      listener.element.removeEventListener(listener.event, listener.handler);
+      // Same options as when added: a capture listener is only removed with capture set
+      listener.element.removeEventListener(listener.event, listener.handler, listener.options);
     });
     this._trackedListeners = [];
   }

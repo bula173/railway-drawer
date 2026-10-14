@@ -1,4 +1,4 @@
-import { Graph, RubberBandHandler, CellEditorHandler } from '@maxgraph/core';
+import { Graph, RubberBandHandler, CellEditorHandler, InternalEvent } from '@maxgraph/core';
 import {
   wideArrowPerimeter,
   thinArrowPerimeter,
@@ -20,7 +20,10 @@ import { CanvasProperties } from './canvas-properties';
 import { ContextMenuController } from './context-menu';
 import { MenuController } from './menu';
 import { InteractiveUIController } from './interactive-ui';
-import { CacheService, CacheData } from '../services/cache-service';
+import { installUserObjectLabels, registerDrawioNamedStyles } from '../services/drawio-xml';
+import { CacheService, CacheData, CacheSaveResult } from '../services/cache-service';
+import { globalSaveStatusIndicator } from './save-status';
+import { globalNotificationManager } from './notification';
 import { GraphCommandService } from '../services/graph-command-service';
 import { DrawingController } from './drawing';
 import { ConnectionHandler } from './connections';
@@ -72,6 +75,18 @@ export interface TabData {
   duplicateOffsetController: DuplicateOffsetController;
   exportImageController: ExportImageController;
   plantumlEditorController: PlantUmlEditorController;
+  textEditorController: TextEditorController;
+}
+
+/**
+ * A DOM listener that a tab's controllers registered outside the tab's own graph element
+ * (on `document`, `window`, or shared UI such as the menu bar, toolbar and properties panel).
+ */
+interface TabScopedListener {
+  target: EventTarget;
+  type: string;
+  listener: EventListenerOrEventListenerObject;
+  options?: boolean | AddEventListenerOptions;
 }
 
 export class TabManager {
@@ -81,6 +96,19 @@ export class TabManager {
   private graphContainer: HTMLElement;
   private autoSaveInterval: ReturnType<typeof setInterval> | null = null;
   private saveLoadControllers: Map<string, SaveLoadController> = new Map();
+  /**
+   * Shared-DOM listeners per tab. Only the active tab's listeners are attached, so every global
+   * UI action (menu, toolbar, shortcuts, properties) runs once and against the active tab.
+   * They are removed for good when the tab is closed.
+   */
+  private tabListeners: Map<string, TabScopedListener[]> = new Map();
+  private cacheSaveFailed = false;
+  /**
+   * Cached diagram XML of tabs that could not be restored, by tab id. Until the user edits such
+   * a tab, autosave writes this XML back unchanged instead of the tab's empty model, so the
+   * diagram is not destroyed and a later fix or version can still recover it.
+   */
+  private unrestoredTabXml: Map<string, string> = new Map();
 
   constructor(tabBarContainerId: string, graphContainerId: string) {
     this.tabBarContainer = document.getElementById(tabBarContainerId)!;
@@ -88,8 +116,74 @@ export class TabManager {
     this.startAutoSave();
   }
 
+  /** Unique tab id; crypto.randomUUID is unavailable outside secure contexts (plain-http deploys). */
+  private generateTabId(): string {
+    let tabId: string;
+    do {
+      const unique =
+        typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function'
+          ? crypto.randomUUID()
+          : `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`;
+      tabId = `tab-${unique}`;
+    } while (this.tabs.has(tabId));
+    return tabId;
+  }
+
+  /**
+   * Runs `build` (the construction of one tab's controllers) and records every listener it adds
+   * to a target outside `tabElement`. The controllers bind to shared DOM and `document` directly;
+   * recording those bindings lets the TabManager attach them only while the tab is active and
+   * remove them when the tab closes, without each controller having to track that itself.
+   * `once` listeners are not recorded, since re-attaching them would re-arm them.
+   *
+   * Only listeners added while `build` runs are seen. A controller that binds to shared DOM or
+   * `document` later (when a dialog opens, an edit starts, ...) must scope that listener itself:
+   * remove it when the dialog/edit ends and in its destroy() (see DuplicateOffsetController and
+   * TextEditorController), or bind it to an element it creates and removes.
+   */
+  private captureSharedListeners<T>(tabElement: HTMLElement, sink: TabScopedListener[], build: () => T): T {
+    const proto = EventTarget.prototype;
+    const nativeAddEventListener = proto.addEventListener;
+    proto.addEventListener = function (
+      this: EventTarget,
+      type: string,
+      listener: EventListenerOrEventListenerObject | null,
+      options?: boolean | AddEventListenerOptions
+    ): void {
+      nativeAddEventListener.call(this, type, listener, options);
+      if (!listener) return;
+      if (this instanceof Node && tabElement.contains(this)) return;
+      if (typeof options === 'object' && options.once) return;
+      sink.push({ target: this, type, listener, options });
+    };
+    try {
+      return build();
+    } finally {
+      proto.addEventListener = nativeAddEventListener;
+    }
+  }
+
+  private attachTabListeners(tabId: string): void {
+    const listeners = this.tabListeners.get(tabId);
+    if (!listeners) return;
+    // Drop listeners whose AbortSignal already fired (their controller disposed them)
+    const live = listeners.filter(
+      ({ options }) => !(typeof options === 'object' && options.signal?.aborted)
+    );
+    this.tabListeners.set(tabId, live);
+    live.forEach(({ target, type, listener, options }) => {
+      target.addEventListener(type, listener, options);
+    });
+  }
+
+  private detachTabListeners(tabId: string): void {
+    this.tabListeners.get(tabId)?.forEach(({ target, type, listener, options }) => {
+      target.removeEventListener(type, listener, options);
+    });
+  }
+
   createTab(name: string = 'Untitled'): TabData {
-    const tabId = `tab-${Date.now()}`;
+    const tabId = this.generateTabId();
 
     // Create new graph container
     const graphDiv = document.createElement('div');
@@ -148,83 +242,99 @@ export class TabManager {
       shape: 'image',
       perimeter: loopArrowPerimeter,
     });
+    // Base style names used in draw.io files (text, ellipse, swimlane, ...)
+    registerDrawioNamedStyles(stylesheet);
+    // Labels of draw.io UserObject cells (values that are XML elements)
+    installUserObjectLabels(graph);
 
-    // Configure connection points on shapes
-    new ConnectionHandler(graph);
+    // Controllers bind to shared DOM and `document`; record those listeners so they are only
+    // attached while this tab is active (see captureSharedListeners).
+    const sharedListeners: TabScopedListener[] = [];
+    this.tabListeners.set(tabId, sharedListeners);
+    const controllers = this.captureSharedListeners(graphDiv, sharedListeners, () => {
+      // Configure connection points on shapes
+      new ConnectionHandler(graph);
 
-    // Configure double-click text editing
-    new TextEditorController(graph);
+      // Configure double-click text editing
+      const textEditorController = new TextEditorController(graph);
 
-    // Configure edge/connector properties
-    new EdgePropertiesController(graph);
+      // Configure edge/connector properties
+      new EdgePropertiesController(graph);
 
-    // Initialize centralized command service
-    const graphCommandService = new GraphCommandService(graph);
+      // Initialize centralized command service
+      const graphCommandService = new GraphCommandService(graph);
 
-    // Initialize UI controllers
-    const propertiesPanel = new PropertiesPanel(graph);
-    const toolbarController = new ToolbarController();
-    const statusBarController = new StatusBarController(graph);
-    const clipboardController = new ClipboardController(graph);
-    const deleteController = new DeleteController(graph);
-    const undoRedoController = new UndoRedoController(graph, graphCommandService);
-    const panController = new PanController(graph);
-    const gridController = new GridController(graph, 10);
-    const saveLoadController = new SaveLoadController(graph);
-    const canvasProperties = new CanvasProperties(graph);
-    const contextMenuController = new ContextMenuController(graph);
-    const menuController = new MenuController(graph, graphCommandService, saveLoadController);
-    const interactiveUIController = new InteractiveUIController(graph, graphCommandService);
-    const drawingController = new DrawingController(graph);
-    const layersController = new LayersController(graph);
-    const imageUploadController = new ImageUploadController(graph);
-    const pasteImageController = new PasteImageController(graph);
-    const zoomController = new ZoomController(graph);
-    const alignmentController = new AlignmentController(graph);
-    const groupingController = new GroupingController(graph);
-    const plantumlEditorController = new PlantUmlEditorController(graph);
-    contextMenuController.setGroupingController(groupingController);
-    contextMenuController.setCommandService(graphCommandService);
-    menuController.setAlignmentController(alignmentController);
-    const transformController = new TransformController(graph);
-    const gridSnapController = new GridSnapController(graph);
-    const colorPickerController = new ColorPickerController(graph);
-    const colorPaletteController = new ColorPaletteController(graph);
-    const duplicateOffsetController = new DuplicateOffsetController(graph);
-    const exportImageController = new ExportImageController(graph);
+      // Initialize UI controllers
+      const propertiesPanel = new PropertiesPanel(graph);
+      const toolbarController = new ToolbarController();
+      const statusBarController = new StatusBarController(graph);
+      const clipboardController = new ClipboardController(graph);
+      const deleteController = new DeleteController(graph);
+      const undoRedoController = new UndoRedoController(graph, graphCommandService);
+      const panController = new PanController(graph);
+      const gridController = new GridController(graph, 10);
+      const saveLoadController = new SaveLoadController(graph, graphCommandService);
+      const canvasProperties = new CanvasProperties(graph);
+      const contextMenuController = new ContextMenuController(graph);
+      const menuController = new MenuController(graph, graphCommandService, saveLoadController);
+      const interactiveUIController = new InteractiveUIController(graph, graphCommandService);
+      const drawingController = new DrawingController(graph);
+      const layersController = new LayersController(graph);
+      const imageUploadController = new ImageUploadController(graph);
+      const pasteImageController = new PasteImageController(graph);
+      const zoomController = new ZoomController(graph);
+      const alignmentController = new AlignmentController(graph);
+      const groupingController = new GroupingController(graph);
+      const plantumlEditorController = new PlantUmlEditorController(graph);
+      contextMenuController.setGroupingController(groupingController);
+      contextMenuController.setCommandService(graphCommandService);
+      menuController.setAlignmentController(alignmentController);
+      const transformController = new TransformController(graph);
+      const gridSnapController = new GridSnapController(graph);
+      const colorPickerController = new ColorPickerController(graph);
+      const colorPaletteController = new ColorPaletteController(graph);
+      const duplicateOffsetController = new DuplicateOffsetController(graph);
+      const exportImageController = new ExportImageController(graph);
+
+      return {
+        graphCommandService,
+        propertiesPanel,
+        toolbarController,
+        statusBarController,
+        clipboardController,
+        deleteController,
+        undoRedoController,
+        panController,
+        gridController,
+        saveLoadController,
+        canvasProperties,
+        contextMenuController,
+        menuController,
+        interactiveUIController,
+        drawingController,
+        layersController,
+        imageUploadController,
+        pasteImageController,
+        zoomController,
+        alignmentController,
+        groupingController,
+        transformController,
+        gridSnapController,
+        colorPickerController,
+        colorPaletteController,
+        duplicateOffsetController,
+        exportImageController,
+        plantumlEditorController,
+        textEditorController,
+      };
+    });
+    const { saveLoadController } = controllers;
 
     const tabData: TabData = {
       id: tabId,
       name,
       graph,
-      graphCommandService,
-      propertiesPanel,
-      toolbarController,
-      statusBarController,
-      clipboardController,
-      deleteController,
-      undoRedoController,
-      panController,
-      gridController,
-      saveLoadController,
-      canvasProperties,
-      contextMenuController,
-      menuController,
-      interactiveUIController,
-      drawingController,
-      layersController,
-      imageUploadController,
-      pasteImageController,
-      zoomController,
-      alignmentController,
-      groupingController,
-      transformController,
-      gridSnapController,
-      colorPickerController,
-      colorPaletteController,
-      duplicateOffsetController,
-      exportImageController,
-      plantumlEditorController,
+      ...controllers,
     };
 
     this.tabs.set(tabId, tabData);
@@ -232,6 +342,13 @@ export class TabManager {
 
     if (!this.activeTabId) {
       this.activeTabId = tabId;
+    } else {
+      // Created in the background: its shared-DOM listeners stay detached until it is shown
+      this.detachTabListeners(tabId);
+      tabData.undoRedoController.setActive(false);
+      // Its constructors rendered into the shared panels; point them back at the active tab
+      const activeTab = this.getActiveTab();
+      if (activeTab) this.refreshSharedPanels(activeTab);
     }
 
     this.renderTabBar();
@@ -244,49 +361,134 @@ export class TabManager {
     }, 5000); // Auto-save every 5 seconds
   }
 
-  private saveToCache(): void {
-    if (this.tabs.size === 0 || !this.activeTabId) return;
+  /**
+   * Writes all tabs to the browser cache now, instead of waiting for the next 5 s autosave.
+   * Call before the page goes away (reload, editor switch) so the latest edits are kept.
+   * @returns false when the write failed (e.g. storage full): edits since the last good save are not cached.
+   */
+  flushCache(): boolean {
+    return this.saveToCache();
+  }
+
+  private saveToCache(): boolean {
+    if (this.tabs.size === 0 || !this.activeTabId) return true;
 
     const cacheData: CacheData = {
       projectName: this.getProjectName(),
-      tabs: Array.from(this.tabs.values()).map((tab) => ({
-        id: tab.id,
-        name: tab.name,
-        graphXml: tab.saveLoadController.serializeToXml(),
-      })),
+      tabs: Array.from(this.tabs.values()).map((tab) => {
+        const { extraPages, pageId } = tab.saveLoadController.getPreservedPages();
+        return {
+          id: tab.id,
+          name: tab.name,
+          graphXml: this.unrestoredTabXml.get(tab.id) ?? tab.saveLoadController.serializeToXml(),
+          // Only written when there is something to keep, so single-page caches stay as they were
+          ...(extraPages.length > 0 ? { extraPages } : {}),
+          ...(pageId ? { pageId } : {}),
+        };
+      }),
       activeTabId: this.activeTabId,
       timestamp: Date.now(),
     };
 
-    CacheService.save(cacheData);
+    const result = CacheService.save(cacheData);
+    this.reportCacheSaveResult(result);
+    return result === 'saved';
   }
 
-  restoreFromCache(): void {
+  /**
+   * Shows autosave failures (typically a full localStorage quota) in the save-status indicator.
+   * Reported once per failure streak so the 5 s autosave does not repeat the notification.
+   */
+  private reportCacheSaveResult(result: CacheSaveResult): void {
+    if (result === 'saved') {
+      if (this.cacheSaveFailed) {
+        this.cacheSaveFailed = false;
+        globalSaveStatusIndicator.setSaved();
+      }
+      return;
+    }
+    if (this.cacheSaveFailed) return;
+    this.cacheSaveFailed = true;
+    globalSaveStatusIndicator.setError(
+      result === 'quota-exceeded'
+        ? 'Browser storage is full, autosave paused. Save to disk (Ctrl+S).'
+        : 'Autosave to browser storage failed. Save to disk (Ctrl+S).'
+    );
+  }
+
+  /**
+   * Recreates the tabs stored in the cache. Returns false when there was no usable cache
+   * (missing, corrupt or from an older version), so the caller can start with a fresh tab.
+   * A tab whose diagram cannot be decoded is kept empty and reported to the user.
+   */
+  restoreFromCache(): boolean {
     const cacheData = CacheService.load();
-    if (!cacheData) return;
+    if (!cacheData) return false;
 
     this.restoreProjectName(cacheData.projectName);
 
     let activeTabId: string | null = null;
-    let tabIndex = 0;
+    let failedTabs = 0;
+    let migratedTabs = 0;
 
-    cacheData.tabs.forEach((tabCache) => {
+    for (const tabCache of cacheData.tabs) {
       const tabData = this.createTab(tabCache.name);
-      tabData.saveLoadController.load(tabCache.graphXml);
+      // Pages 2..n of the opened file are kept even when page 1 cannot be restored
+      const extraPages = Array.isArray(tabCache.extraPages)
+        ? tabCache.extraPages.filter((page): page is string => typeof page === 'string')
+        : [];
+      const pageId = typeof tabCache.pageId === 'string' && tabCache.pageId ? tabCache.pageId : null;
+      tabData.saveLoadController.setPreservedPages(extraPages, pageId);
+      try {
+        tabData.saveLoadController.load(tabCache.graphXml);
+        if (CacheService.isLegacyGraphXml(tabCache.graphXml)) migratedTabs++;
+      } catch (error) {
+        failedTabs++;
+        console.error('[TabManager] Failed to restore tab from cache:', tabCache.name, error);
+        this.keepUnrestoredXml(tabData, tabCache.graphXml);
+      }
 
-      // Track the first tab as active, or use the index matching the cached active tab
-      if (tabIndex === 0 || (cacheData.activeTabId && tabIndex === cacheData.tabs.findIndex(t => t.id === cacheData.activeTabId))) {
+      // Track the first tab as active, or the tab matching the cached active tab
+      if (activeTabId === null || tabCache.id === cacheData.activeTabId) {
         activeTabId = tabData.id;
       }
-      tabIndex++;
-    });
+    }
 
     // Switch to the appropriate tab (first tab by default)
     if (activeTabId) {
       this.switchTab(activeTabId);
     }
 
+    // Diagrams cached by earlier versions (<GraphDataModel>) are rewritten in the draw.io
+    // format right away instead of at the next autosave. Tabs that failed keep their XML.
+    if (migratedTabs > 0) {
+      console.log('[TabManager] Migrating', migratedTabs, 'cached diagram(s) to the draw.io format');
+      this.saveToCache();
+    }
+
+    if (failedTabs > 0) {
+      globalNotificationManager.warning(
+        `${failedTabs} cached diagram(s) could not be restored and were opened empty. ` +
+          'Their saved data is kept in browser storage until you edit those tabs.'
+      );
+    }
+
     console.log('[TabManager] Restored from cache');
+    return this.tabs.size > 0;
+  }
+
+  /**
+   * Keeps the cached XML of a tab that failed to restore, so autosave does not overwrite it with
+   * the empty model. The first edit of the tab (any model change) makes it a normal tab again.
+   */
+  private keepUnrestoredXml(tab: TabData, graphXml: string): void {
+    this.unrestoredTabXml.set(tab.id, graphXml);
+    const model = tab.graph.getDataModel();
+    const onFirstEdit = () => {
+      this.unrestoredTabXml.delete(tab.id);
+      model.removeListener(onFirstEdit);
+    };
+    model.addListener(InternalEvent.CHANGE, onFirstEdit);
   }
 
   clearCache(): void {
@@ -308,18 +510,47 @@ export class TabManager {
   switchTab(tabId: string): void {
     if (!this.tabs.has(tabId)) return;
 
-    // Hide previous tab
+    // Clicking the active tab is a no-op. Re-rendering here would replace the tab's label between
+    // the two clicks of a double-click, so the rename (dblclick) handler never ran on a live label.
+    if (this.activeTabId === tabId) return;
+
+    // Hide previous tab and unbind its shared-DOM listeners
     if (this.activeTabId) {
       const prevGraphDiv = document.getElementById(`graph-${this.activeTabId}`);
       if (prevGraphDiv) prevGraphDiv.style.display = 'none';
+      this.detachTabListeners(this.activeTabId);
     }
 
-    // Show new tab
+    // Show new tab and bind its shared-DOM listeners
     const newGraphDiv = document.getElementById(`graph-${tabId}`);
     if (newGraphDiv) newGraphDiv.style.display = 'block';
+    this.attachTabListeners(tabId);
 
     this.activeTabId = tabId;
-    this.renderTabBar();
+    const newTab = this.tabs.get(tabId);
+    if (newTab) this.refreshSharedPanels(newTab);
+    // Only the highlight changes: keep the tab elements, so a double-click that started on an
+    // inactive tab still reaches the same label and opens the rename editor
+    this.updateActiveTabHighlight();
+  }
+
+  private updateActiveTabHighlight(): void {
+    this.tabBarContainer.querySelectorAll<HTMLElement>('.tab-button').forEach((tabElement) => {
+      const isActive = tabElement.dataset.tabId === this.activeTabId;
+      tabElement.classList.toggle('active', isActive);
+      tabElement.setAttribute('aria-selected', String(isActive));
+    });
+  }
+
+  /**
+   * Shows `tab`'s state in the shared panels whose content is per tab. Hidden tabs ignore
+   * selection/history events and a background tab's constructors render into these panels,
+   * so they are refreshed whenever the active tab changes.
+   */
+  private refreshSharedPanels(tab: TabData): void {
+    this.tabs.forEach((other) => other.undoRedoController.setActive(other === tab));
+    tab.layersController.refresh();
+    tab.propertiesPanel.update();
   }
 
   closeTab(tabId: string): void {
@@ -385,20 +616,15 @@ export class TabManager {
     const tab = this.tabs.get(tabId);
     if (!tab) return;
 
+    // Unbind the tab's shared-DOM listeners (menu, toolbar, document shortcuts, ...) for good
+    this.detachTabListeners(tabId);
+    this.tabListeners.delete(tabId);
+    this.unrestoredTabXml.delete(tabId);
+
     try {
-      // Dispose graph (removes event listeners, clears model, disposes view)
-      if (tab.graph) {
-        tab.graph.destroy();
-      }
-
-      // Remove graph DOM element
-      const graphDiv = document.getElementById(`graph-${tabId}`);
-      if (graphDiv) {
-        graphDiv.remove();
-      }
-
-      // Clean up controller destroy methods if they exist
+      // Clean up controller destroy methods if they exist (before the graph they use is destroyed)
       const controllers = [
+        tab.graphCommandService,
         tab.propertiesPanel,
         tab.toolbarController,
         tab.statusBarController,
@@ -426,6 +652,7 @@ export class TabManager {
         tab.duplicateOffsetController,
         tab.exportImageController,
         tab.plantumlEditorController,
+        tab.textEditorController,
       ];
 
       controllers.forEach((controller) => {
@@ -437,6 +664,17 @@ export class TabManager {
           }
         }
       });
+
+      // Dispose graph (removes event listeners, clears model, disposes view)
+      if (tab.graph) {
+        tab.graph.destroy();
+      }
+
+      // Remove graph DOM element
+      const graphDiv = document.getElementById(`graph-${tabId}`);
+      if (graphDiv) {
+        graphDiv.remove();
+      }
 
       // Nullify references for garbage collection
       (tab as any).graph = null;
@@ -450,12 +688,19 @@ export class TabManager {
     this.tabBarContainer.innerHTML = '';
 
     // Render tabs
+    this.tabBarContainer.setAttribute('role', 'tablist');
     this.tabs.forEach((tab: TabData) => {
-      const tabButton = document.createElement('button');
+      // A focusable element with the tab role rather than a <button>: the rename editor puts an
+      // <input> (and the close button sits) inside it, and interactive content inside a <button>
+      // does not get its own clicks/keys in every browser (Firefox targets the button itself).
+      const tabButton = document.createElement('div');
       tabButton.className = 'tab-button';
-      if (tab.id === this.activeTabId) {
-        tabButton.classList.add('active');
-      }
+      tabButton.dataset.tabId = tab.id;
+      tabButton.setAttribute('role', 'tab');
+      tabButton.tabIndex = 0;
+      const isActive = tab.id === this.activeTabId;
+      tabButton.classList.toggle('active', isActive);
+      tabButton.setAttribute('aria-selected', String(isActive));
 
       const tabLabel = document.createElement('span');
       tabLabel.className = 'tab-label';
@@ -483,6 +728,16 @@ export class TabManager {
       }
 
       tabButton.addEventListener('click', () => this.switchTab(tab.id));
+      tabButton.addEventListener('keydown', (e) => {
+        // Keyboard activation like a button; keys typed in the rename input are not for the tab
+        if (e.target !== tabButton) return;
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          // Keep the keypress from reaching graph-level document handlers (label editor etc.)
+          e.stopPropagation();
+          this.switchTab(tab.id);
+        }
+      });
       this.tabBarContainer.appendChild(tabButton);
     });
 
@@ -512,44 +767,55 @@ export class TabManager {
     input.style.fontWeight = '500';
     input.style.width = `${Math.max(tab.name.length * 7, 60)}px`;
 
+    // The input sits inside the tab element: keep its clicks from reaching the tab's switchTab
+    // handler and the close button's neighbours (they are for the tab, not for the text field)
+    const stopAtInput = (evt: Event) => evt.stopPropagation();
+    input.addEventListener('click', stopAtInput);
+    input.addEventListener('mousedown', stopAtInput);
+    input.addEventListener('dblclick', stopAtInput);
+
+    // A label already detached by a re-render cannot host the editor
+    if (!labelElement.isConnected) return;
+
     // Replace label with input
     labelElement.replaceWith(input);
     input.focus();
     input.select();
 
-    // Save on Enter or blur
-    const saveTabName = () => {
-      const newName = input.value.trim() || tab.name;
-      if (newName !== tab.name) {
+    // Enter, Escape and blur each end the edit. Removing the input fires blur again, so only the
+    // first of them may act (otherwise Escape would still save). The label is put back in place
+    // instead of re-rendering the whole tab bar: a blur caused by pressing another tab must not
+    // destroy that tab's element before its click arrives.
+    let finished = false;
+    const finish = (save: boolean) => {
+      if (finished) return;
+      finished = true;
+      const newName = input.value.trim();
+      if (save && newName && newName !== tab.name && this.tabs.get(tab.id) === tab) {
         tab.name = newName;
         console.log('[TabManager] Tab name changed to:', newName);
-        // Save to cache
-        const cacheData = CacheService.load();
-        if (cacheData) {
-          const tabCache = cacheData.tabs.find((t: any) => t.id === tab.id);
-          if (tabCache) {
-            tabCache.name = newName;
-            CacheService.save(cacheData);
-          }
-        }
+        // Save the current session (re-saving the stored copy with only the name patched would
+        // mark an out-of-date cache as current after a failed autosave)
+        this.saveToCache();
       }
-      this.renderTabBar();
+      labelElement.textContent = tab.name;
+      if (input.isConnected) input.replaceWith(labelElement);
     };
 
     // Handle Enter key
     input.addEventListener('keydown', (evt: KeyboardEvent) => {
+      // Typing here is for the field only, not for the tab's keyboard activation
+      evt.stopPropagation();
       if (evt.key === 'Enter') {
         evt.preventDefault();
-        saveTabName();
+        finish(true);
       } else if (evt.key === 'Escape') {
         evt.preventDefault();
-        this.renderTabBar();
+        finish(false);
       }
     });
 
     // Handle blur
-    input.addEventListener('blur', () => {
-      saveTabName();
-    });
+    input.addEventListener('blur', () => finish(true));
   }
 }

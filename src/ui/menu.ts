@@ -90,8 +90,8 @@ export class MenuController {
           await this.saveLoadController.loadProjectFromFile(file);
           console.log('[Menu] File loaded successfully');
         } catch (error) {
+          // SaveLoadController already showed the error to the user and kept the current diagram
           console.error('[Menu] Error loading file:', error);
-          alert('Error loading file: ' + error);
         }
       } else {
         console.log('[Menu] No file selected');
@@ -254,6 +254,11 @@ export class MenuController {
         this.graph.fit(10);
         break;
 
+      case 'switchEditorDrawio':
+        // legacy-main.ts flushes the tab cache and reloads in draw.io mode
+        window.dispatchEvent(new CustomEvent('editor-switch-request', { detail: 'drawio' }));
+        break;
+
       case 'showGrid':
         this.graph.gridEnabled = !this.graph.gridEnabled;
         console.log('[Menu] Grid', this.graph.gridEnabled ? 'enabled' : 'disabled');
@@ -341,7 +346,7 @@ export class MenuController {
         }
         break;
 
-      case 'plantumlEditor':
+      case 'plantumlEditor': {
         console.log('[Menu] PlantUML editor clicked');
         const leftPanelTabs = (window as any).__leftPanelTabs;
         if (leftPanelTabs) {
@@ -357,6 +362,7 @@ export class MenuController {
           console.error('[Menu] leftPanelTabs not found!');
         }
         break;
+      }
 
       case 'designShapes':
         window.dispatchEvent(new CustomEvent('open-shape-designer'));

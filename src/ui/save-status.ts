@@ -55,6 +55,23 @@ export class SaveStatusIndicator {
     if (this.saveTimeout) clearTimeout(this.saveTimeout);
   }
 
+  /**
+   * Reports a successful save to disk. An active error (e.g. autosave quota) stays visible,
+   * since writing a file does not fix the browser-storage problem behind it.
+   */
+  setSavedToDisk(): void {
+    if (this.currentState === 'error') return;
+    this.currentState = 'saved';
+    this.statusElement.className = 'save-status saved';
+    this.statusElement.style.opacity = '1';
+    this.statusElement.textContent = '✓ Saved to disk';
+
+    if (this.saveTimeout) clearTimeout(this.saveTimeout);
+    this.saveTimeout = setTimeout(() => {
+      this.fadeOut();
+    }, 3000);
+  }
+
   setError(message: string): void {
     this.currentState = 'error';
     this.updateUI('error', message);

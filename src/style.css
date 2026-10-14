@@ -135,6 +135,47 @@ body {
   white-space: nowrap;
 }
 
+/* Editor switch: maxGraph | draw.io */
+.editor-toggle {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+}
+
+.editor-toggle-label {
+  color: #666;
+  margin-right: 6px;
+}
+
+.editor-toggle-btn {
+  padding: 4px 10px;
+  background: #ffffff;
+  color: #333;
+  border: 1px solid #c4c4c4;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.editor-toggle-btn:first-of-type {
+  border-radius: 4px 0 0 4px;
+}
+
+.editor-toggle-btn:last-of-type {
+  border-radius: 0 4px 4px 0;
+  border-left: none;
+}
+
+.editor-toggle-btn:hover:not(.active) {
+  background: #f0f4fa;
+}
+
+.editor-toggle-btn.active {
+  background: #1976d2;
+  border-color: #1976d2;
+  color: #ffffff;
+  cursor: default;
+}
+
 .save-status {
   font-size: 12px;
   color: #d32f2f;
@@ -618,6 +659,7 @@ svg.mxGraph .mxHandle {
 
 .tab-button {
   padding: 6px 12px;
+  user-select: none;
   background: #f0f0f0;
   border: 1px solid #d0d0d0;
   border-radius: 0 0 3px 3px;

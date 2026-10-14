@@ -1,28 +1,53 @@
-import { Graph, ModelXmlSerializer } from '@maxgraph/core';
+import { Graph, GraphDataModel, Rectangle } from '@maxgraph/core';
+import {
+  emptyDrawioModelXml,
+  exportModelToDrawioXml,
+  importModelXml,
+  sanitizeXmlText,
+  type PageSettings,
+} from '../services/drawio-xml';
 import { ProjectService } from '../services/project-service';
 import { PlantUmlGroupManager } from '../services/plantuml-group-manager';
+import { GraphCommandService } from '../services/graph-command-service';
+import { globalNotificationManager } from './notification';
+import { globalSaveStatusIndicator } from './save-status';
+
+/** Current marker: base64 of the UTF-8 encoded JSON. */
+const PLANTUML_METADATA_UTF8_MARKER = 'PLANTUML_METADATA_UTF8';
+/** Legacy marker: plain btoa() of the JSON (Latin-1 only). Still read for older files and caches. */
+const PLANTUML_METADATA_LEGACY_MARKER = 'PLANTUML_METADATA';
+
+function utf8ToBase64(text: string): string {
+  const bytes = new TextEncoder().encode(text);
+  let binary = '';
+  bytes.forEach((byte) => {
+    binary += String.fromCharCode(byte);
+  });
+  return btoa(binary);
+}
+
+function base64ToUtf8(base64: string): string {
+  const binary = atob(base64);
+  return new TextDecoder().decode(Uint8Array.from(binary, (char) => char.charCodeAt(0)));
+}
 
 export class SaveLoadController {
   private graph: Graph;
   private projectService: ProjectService;
   private plantumlGroupManager: PlantUmlGroupManager;
-  private isSavedToDisk = false;
+  private commandService: GraphCommandService | null;
+  /** Page settings of the loaded draw.io model, written back on save. */
+  private pageSettings: PageSettings = {};
 
-  constructor(graph: Graph) {
+  constructor(graph: Graph, commandService: GraphCommandService | null = null) {
     this.graph = graph;
+    this.commandService = commandService;
     this.projectService = new ProjectService();
     this.plantumlGroupManager = new PlantUmlGroupManager(graph);
-    this.setupKeyboardShortcuts();
-    this.updateSaveStatus();
-  }
-
-  private setupKeyboardShortcuts(): void {
-    document.addEventListener('keydown', (e) => {
-      if ((e.ctrlKey || e.metaKey) && e.key === 's') {
-        e.preventDefault();
-        this.saveProject();
-      }
-    });
+    // Ctrl/Cmd+S is dispatched once, to the active tab, by the global shortcut handler in legacy-main.ts.
+    // A per-controller `document` listener here downloaded one file per open tab.
+    // The .save-status element is owned by globalSaveStatusIndicator; writing it directly
+    // from here overwrote autosave error messages.
   }
 
   saveProject(): void {
@@ -42,86 +67,112 @@ export class SaveLoadController {
     }
   }
 
+  /**
+   * Opens a project file into this graph. On any failure the current diagram is kept,
+   * the user sees an error notification, and the returned promise rejects.
+   */
   async loadProjectFromFile(file: File): Promise<void> {
     try {
       console.log('[SaveLoad] Starting file import:', file.name);
       const result = await this.projectService.importFromFile(file);
       console.log('[SaveLoad] File imported, metadata:', result.metadata);
-      this.projectService.setProjectName(result.metadata.name);
       console.log('[SaveLoad] Deserializing graph...');
 
       // Use the same load method that works for cache
       this.load(result.graphXml);
 
       console.log('[SaveLoad] Graph deserialized');
+      this.projectService.setProjectMetadata(result.metadata);
+      // Pages 2..n are not shown, but are kept so a save writes them back unchanged
+      this.projectService.setExtraPages(result.extraPages);
+      this.projectService.setPageId(result.pageId);
       this.updateProjectNameUI(result.metadata.name);
       this.markAsSavedToDisk();
+      if (result.extraPageNames.length > 0) {
+        const names = result.extraPageNames.map((name) => `"${name}"`).join(', ');
+        globalNotificationManager.warning(
+          `Opened ${file.name}: only the first page is shown. Not loaded: ${names}. ` +
+            'They are kept unchanged when you save.'
+        );
+      } else {
+        globalNotificationManager.success(`Opened ${file.name}`);
+      }
       console.log('[SaveLoad] Project loaded:', result.metadata.name);
     } catch (error) {
       console.error('[SaveLoad] Failed to load project:', error);
-      alert('Failed to load project file: ' + error);
+      const reason = error instanceof Error ? error.message : String(error);
+      globalNotificationManager.error(`Could not open ${file.name}: ${reason}`);
       throw error;
     }
   }
 
+  /**
+   * File > Export: downloads the diagram as a native draw.io file (`<mxfile>`), which
+   * draw.io (web and desktop) opens directly.
+   */
   save(): string {
-    const xml = this.serializeToXml();
-    const blob = new Blob([xml], { type: 'application/xml' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `diagram-${Date.now()}.xml`;
-    a.click();
-    URL.revokeObjectURL(url);
-    console.log('[SaveLoad] Diagram saved');
+    const xml = this.projectService.generateProjectXml(this.serializeToXml());
+    const name = this.projectService.getProjectName() || 'diagram';
+    this.projectService.exportToFile(xml, `${name}.drawio`);
+    console.log('[SaveLoad] Diagram exported');
     return xml;
   }
 
+  /**
+   * Replaces the diagram with the model in `xml`.
+   * The XML is fully decoded into a scratch model first; the current diagram is only replaced
+   * once that succeeded, otherwise this throws and the diagram is left untouched.
+   * The load is not undoable: the undo history is cleared afterwards.
+   */
   load(xml: string): void {
-    try {
-      if (!xml || xml.trim().length === 0) {
-        console.warn('[SaveLoad] Empty XML, skipping load');
-        return;
-      }
-
-      console.log('[SaveLoad] Loading XML, length:', xml.length);
-
-      // ModelXmlSerializer.import(xml) expects a string and modifies the model in-place
-      const model = (this.graph as any).model;
-      const encoder = new ModelXmlSerializer(model);
-
-      // Clear model before importing
-      model.clear();
-
-      // import() takes a string and returns void (modifies model)
-      encoder.import(xml);
-
-      // Restore PlantUML metadata
-      this.restorePlantUmlMetadata(xml);
-
-      this.graph.refresh();
-      console.log('[SaveLoad] Diagram loaded');
-    } catch (e) {
-      console.error('[SaveLoad] Failed to load diagram:', e);
-      console.error('[SaveLoad] Stack:', (e as any).stack);
+    if (!xml || xml.trim().length === 0) {
+      console.warn('[SaveLoad] Empty XML, skipping load');
+      return;
     }
+
+    console.log('[SaveLoad] Loading XML, length:', xml.length);
+
+    // Caches written before control characters were filtered on save are otherwise unreadable
+    xml = sanitizeXmlText(xml);
+    ProjectService.validateGraphModelXml(xml);
+
+    // Native draw.io <mxGraphModel>, or the legacy <GraphDataModel> of earlier versions
+    const scratchModel = new GraphDataModel();
+    const emptyRoot = scratchModel.getRoot();
+    const pageSettings = importModelXml(xml, scratchModel);
+    const loadedRoot = scratchModel.getRoot();
+    if (!loadedRoot || loadedRoot === emptyRoot) {
+      throw new Error('The diagram data contains no cells');
+    }
+
+    this.graph.clearSelection();
+    this.graph.getDataModel().setRoot(loadedRoot);
+    this.applyPageSettings(pageSettings ?? {});
+
+    // Restore PlantUML metadata
+    this.restorePlantUmlMetadata(xml);
+
+    this.graph.refresh();
+    this.commandService?.clearHistory();
+    console.log('[SaveLoad] Diagram loaded');
   }
 
 
+  /**
+   * Serializes the diagram as a draw.io `<mxGraphModel>` (plus the PlantUML metadata comment).
+   * Used for file save, File > Export and the browser cache.
+   */
   serializeToXml(): string {
+    const page: PageSettings = { ...this.pageSettings, gridSize: this.graph.gridSize };
     try {
       console.log('[SaveLoad] Serializing graph...');
-      const model = (this.graph as any).model;
-
-      // Temporarily remove large SVG data URLs to reduce file/cache size
-      const svgShapes = this.stripSvgDataUrls();
-
-      // ModelXmlSerializer.export() returns a string
-      const encoder = new ModelXmlSerializer(model);
-      let xml = encoder.export();
-
-      // Restore SVG data URLs to cells
-      this.restoreSvgDataUrls(svgShapes);
+      // Image data URLs stay in the output: custom shapes and uploaded images have no other
+      // source to be rebuilt from, so stripping them would lose content on reload.
+      let xml = exportModelToDrawioXml(this.graph.getDataModel(), {
+        stylesheet: this.graph.getStylesheet(),
+        page,
+        htmlLabels: this.graph.isHtmlLabels(),
+      });
 
       // Embed PlantUML metadata
       xml = this.embedPlantUmlMetadata(xml);
@@ -130,52 +181,21 @@ export class SaveLoadController {
       return xml;
     } catch (e) {
       console.error('[SaveLoad] Serialization error:', e);
-      return '<mxGraphModel><root></root></mxGraphModel>';
+      return emptyDrawioModelXml(page);
     }
   }
 
-  private stripSvgDataUrls(): Map<string, string> {
-    // Temporarily remove SVG data URLs from cells to reduce serialization size
-    const model = (this.graph as any).model;
-    const cells = (model as any).cells || {};
-    const svgShapes = new Map<string, string>();
-
-    for (const cellId in cells) {
-      const cell = cells[cellId];
-      if (cell && cell.style && typeof cell.style === 'string') {
-        // Check if this cell has an SVG data URL
-        // Pattern: image=data:image/svg+xml;base64,...; (matches the entire image property)
-        const match = cell.style.match(/image=data:image\/svg\+xml[^;]*;?/);
-        if (match) {
-          svgShapes.set(cellId, match[0]);
-          // Remove the image property from the style
-          cell.style = cell.style.replace(match[0], '');
-        }
-      }
+  /** Keeps the page settings of a loaded draw.io model and applies the grid size. */
+  private applyPageSettings(settings: PageSettings): void {
+    this.pageSettings = { ...settings };
+    if (settings.gridSize && settings.gridSize > 0) {
+      this.graph.gridSize = settings.gridSize;
     }
-
-    if (svgShapes.size > 0) {
-      console.log(`[SaveLoad] Stripped ${svgShapes.size} SVG data URLs for serialization`);
+    if (settings.pageWidth && settings.pageHeight) {
+      this.graph.pageFormat = new Rectangle(0, 0, settings.pageWidth, settings.pageHeight);
     }
-
-    return svgShapes;
-  }
-
-  private restoreSvgDataUrls(svgShapes: Map<string, string>): void {
-    // Restore SVG data URLs to cells after serialization
-    const model = (this.graph as any).model;
-    const cells = (model as any).cells || {};
-
-    for (const [cellId, imageProp] of svgShapes) {
-      const cell = cells[cellId];
-      if (cell && cell.style && typeof cell.style === 'string') {
-        // Add back the image property
-        cell.style = imageProp + cell.style;
-      }
-    }
-
-    if (svgShapes.size > 0) {
-      console.log(`[SaveLoad] Restored ${svgShapes.size} SVG data URLs after serialization`);
+    if (settings.pageScale && settings.pageScale > 0) {
+      this.graph.pageScale = settings.pageScale;
     }
   }
 
@@ -210,6 +230,20 @@ export class SaveLoadController {
     return JSON.stringify(data, null, 2);
   }
 
+  /**
+   * Pages 2..n of the opened file and the shown page's id, which only this controller holds.
+   * The tab cache stores them so a save after a browser reload still writes every page.
+   */
+  getPreservedPages(): { extraPages: string[]; pageId: string | null } {
+    return { extraPages: this.projectService.getExtraPages(), pageId: this.projectService.getPageId() };
+  }
+
+  /** Restores what getPreservedPages() returned (from the tab cache). */
+  setPreservedPages(extraPages: string[], pageId: string | null): void {
+    this.projectService.setExtraPages(extraPages);
+    this.projectService.setPageId(pageId);
+  }
+
   setProjectName(name: string): void {
     this.projectService.setProjectName(name);
     this.updateProjectNameUI(name);
@@ -226,35 +260,15 @@ export class SaveLoadController {
     }
   }
 
-  private updateSaveStatus(): void {
-    const statusElement = document.querySelector('.save-status') as HTMLElement;
-    if (statusElement) {
-      if (this.isSavedToDisk) {
-        statusElement.textContent = '✓ Saved to disk';
-        statusElement.style.color = '#4caf50';
-      } else {
-        statusElement.textContent = '💾 Auto-saving to cache...';
-        statusElement.style.color = '#ff9800';
-      }
-    }
-  }
-
   markAsSavedToDisk(): void {
-    this.isSavedToDisk = true;
-    this.updateSaveStatus();
-    setTimeout(() => {
-      this.isSavedToDisk = false;
-      this.updateSaveStatus();
-    }, 2000);
-  }
-
-  markAsChanged(): void {
-    this.isSavedToDisk = false;
-    this.updateSaveStatus();
+    globalSaveStatusIndicator.setSavedToDisk();
   }
 
   /**
-   * Embed PlantUML metadata into XML before serialization
+   * Embed PlantUML metadata into XML before serialization.
+   * The authoritative copy is the group cell's `rdPlantUml` style key (written by
+   * exportModelToDrawioXml), which survives a re-save in draw.io; this comment is kept for
+   * earlier versions of the app, which read only the comment.
    */
   private embedPlantUmlMetadata(xml: string): string {
     try {
@@ -277,7 +291,8 @@ export class SaveLoadController {
       });
 
       // Store PlantUML metadata as JSON in a comment at the end
-      const comment = `\n<!-- PLANTUML_METADATA:${btoa(JSON.stringify(plantumlData))} -->`;
+      // UTF-8 base64: plain btoa() throws on characters outside Latin-1 (e.g. Polish 'ą', 'ł')
+      const comment = `\n<!-- ${PLANTUML_METADATA_UTF8_MARKER}:${utf8ToBase64(JSON.stringify(plantumlData))} -->`;
       return xml + comment;
     } catch (e) {
       console.warn('[SaveLoad] Failed to embed PlantUML metadata:', e);
@@ -290,13 +305,19 @@ export class SaveLoadController {
    */
   private restorePlantUmlMetadata(xml: string): void {
     try {
-      const match = xml.match(/<!-- PLANTUML_METADATA:(.+?) -->/);
-      if (!match || !match[1]) {
+      const utf8Match = xml.match(new RegExp(`<!-- ${PLANTUML_METADATA_UTF8_MARKER}:(.+?) -->`));
+      const legacyMatch = utf8Match ? null : xml.match(new RegExp(`<!-- ${PLANTUML_METADATA_LEGACY_MARKER}:(.+?) -->`));
+      let json: string;
+      if (utf8Match?.[1]) {
+        json = base64ToUtf8(utf8Match[1]);
+      } else if (legacyMatch?.[1]) {
+        json = atob(legacyMatch[1]);
+      } else {
         console.log('[SaveLoad] No PlantUML metadata found in XML');
         return;
       }
 
-      const plantumlData = JSON.parse(atob(match[1]));
+      const plantumlData = JSON.parse(json);
       console.log('[SaveLoad] Restoring PlantUML metadata for', plantumlData.length, 'groups');
 
       const model = (this.graph as any).model;
@@ -304,7 +325,8 @@ export class SaveLoadController {
 
       plantumlData.forEach((data: any) => {
         const cell = cells[data.cellId];
-        if (cell) {
+        // The cell's own rdPlantUml style key (read by importModelXml) takes precedence
+        if (cell && !this.plantumlGroupManager.hasPlantUmlMetadata(cell)) {
           this.plantumlGroupManager.setPlantUmlMetadata(cell, {
             plantumlSource: data.plantumlSource,
             diagramType: data.diagramType,

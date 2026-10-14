@@ -14,7 +14,15 @@
  * directly to the graph model with immediate visual feedback.
  */
 
-import { Graph } from '@maxgraph/core';
+import { Graph, constants } from '@maxgraph/core';
+import type { Geometry } from '@maxgraph/core';
+import type { AlignValue, Cell, CellStateStyle, VAlignValue } from '@maxgraph/core';
+
+/** @brief Cell with the ad-hoc `locked` flag shared with context-menu/interactive-ui */
+type LockableCell = Cell & { locked?: boolean };
+
+/** @brief Cell style with access to keys not declared on CellStateStyle (fontWeight, blendMode, ...) */
+type EditableStyle = CellStateStyle & Record<string, unknown>;
 
 /**
  * @class PropertiesPanel
@@ -36,8 +44,17 @@ import { Graph } from '@maxgraph/core';
 export class PropertiesPanel {
   /** @brief Reference to the maxGraph instance */
   private graph: Graph;
-  /** @brief Currently selected cell being edited */
-  private currentCell: any = null;
+  /** @brief Cell whose values are currently displayed in the panel */
+  private currentCell: Cell | null = null;
+  /**
+   * @brief Aborts every DOM listener registered by this panel (see destroy())
+   * @details All DOM listeners are registered exactly once, in the constructor.
+   * Handlers resolve the target cell at event time via getTargetCell(), so
+   * selection changes only refresh displayed values and never add listeners.
+   */
+  private readonly listenerAbort = new AbortController();
+  /** @brief Selection model listener, kept for removal in destroy() */
+  private readonly selectionListener = () => this.update();
 
   /**
    * @brief Initialize properties panel
@@ -52,9 +69,44 @@ export class PropertiesPanel {
     this.setupCollapsibles();
     this.setupEventListeners();
 
-    this.graph.getSelectionModel().addListener('change', () => {
-      this.update();
-    });
+    this.graph.getSelectionModel().addListener('change', this.selectionListener);
+  }
+
+  /**
+   * @brief Remove all DOM and graph listeners registered by this panel
+   * @details Called by TabManager.destroyTab() when the owning tab is closed.
+   */
+  destroy() {
+    this.listenerAbort.abort();
+    this.graph.getSelectionModel().removeListener(this.selectionListener);
+    this.currentCell = null;
+  }
+
+  /**
+   * @brief Whether this panel's graph is the one currently shown
+   * @details The panel DOM is shared by every tab (one PropertiesPanel per tab),
+   * so only the panel of the visible graph may react to edits.
+   */
+  private isActive(): boolean {
+    const container = this.graph.container;
+    return !!container && container.isConnected && container.style.display !== 'none';
+  }
+
+  /**
+   * @brief Resolve the cell an edit applies to, at event time
+   * @returns First selected cell of the active graph, or null
+   */
+  private getTargetCell(): Cell | null {
+    return this.getTargetCells()[0] ?? null;
+  }
+
+  /**
+   * @brief Resolve every cell a multi-selection edit applies to, at event time
+   * @returns Selected cells of the active graph (empty when the panel is hidden)
+   */
+  private getTargetCells(): Cell[] {
+    if (!this.isActive()) return [];
+    return this.graph.getSelectionCells();
   }
 
   /**
@@ -65,8 +117,12 @@ export class PropertiesPanel {
    * shows the placeholder message.
    */
   update() {
+    // Hidden tabs share the panel DOM; they must not overwrite the visible tab's values
+    if (!this.isActive()) return;
+
     const cells = this.graph.getSelectionCells();
     if (cells.length === 0) {
+      this.currentCell = null;
       this.showPlaceholder();
       return;
     }
@@ -74,7 +130,6 @@ export class PropertiesPanel {
     this.currentCell = cells[0];
     this.showEditor();
     this.updateValues();
-    this.wireUpHandlers();
   }
 
   private showPlaceholder() {
@@ -94,8 +149,10 @@ export class PropertiesPanel {
   }
 
   private updateValues() {
-    const geo = this.currentCell.geometry;
-    const style = this.graph.getCellStyle(this.currentCell) as any;
+    const cell = this.currentCell as LockableCell | null;
+    if (!cell) return;
+    const geo = cell.geometry;
+    const style = this.graph.getCellStyle(cell) as any;
 
     const fontFamily = document.getElementById('prop-fontFamily') as HTMLInputElement;
     if (fontFamily) fontFamily.value = style.fontFamily || 'Arial';
@@ -107,7 +164,7 @@ export class PropertiesPanel {
     if (fontWeight) fontWeight.value = style.fontWeight || 'normal';
 
     const fontStyle = document.getElementById('prop-fontStyle') as HTMLSelectElement;
-    if (fontStyle) fontStyle.value = style.fontStyle || 'normal';
+    if (fontStyle) fontStyle.value = (style.fontStyle || 0) & constants.FONT.ITALIC ? 'italic' : 'normal';
 
     const textDecoration = document.getElementById('prop-textDecoration') as HTMLSelectElement;
     if (textDecoration) textDecoration.value = style.textDecoration || 'none';
@@ -222,18 +279,29 @@ export class PropertiesPanel {
     if (cornerRadius) cornerRadius.value = String(style.arcSize || 0);
 
     const lockShape = document.getElementById('prop-lockShape') as HTMLInputElement;
-    if (lockShape) lockShape.checked = !this.currentCell.connectable || false;
+    if (lockShape) lockShape.checked = !cell.connectable || false;
 
     const blendMode = document.getElementById('prop-blendMode') as HTMLSelectElement;
     if (blendMode) blendMode.value = style.blendMode || 'normal';
 
     // Flip states
-    const flipH = geo?.flipH || false;
-    const flipV = geo?.flipV || false;
+    const flipH = style.flipH || false;
+    const flipV = style.flipV || false;
     const flipHBtn = document.getElementById('btn-flipHorizontal');
     const flipVBtn = document.getElementById('btn-flipVertical');
     if (flipHBtn) flipHBtn.style.background = flipH ? '#e0e0e0' : '#f5f5f5';
     if (flipVBtn) flipVBtn.style.background = flipV ? '#e0e0e0' : '#f5f5f5';
+
+    // Lock state of the displayed cell
+    this.updateLockButton(!!cell.locked);
+  }
+
+  private updateLockButton(isLocked: boolean) {
+    const lockBtn = document.getElementById('btn-lock');
+    if (lockBtn) {
+      lockBtn.textContent = isLocked ? 'Unlock' : 'Lock';
+      lockBtn.style.background = isLocked ? '#ffd700' : '#f5f5f5';
+    }
   }
 
   private setupTabButtons() {
@@ -242,7 +310,7 @@ export class PropertiesPanel {
       tab.addEventListener('click', () => {
         const tabName = tab.getAttribute('data-tab');
         this.switchTab(tabName!);
-      });
+      }, { signal: this.listenerAbort.signal });
     });
   }
 
@@ -264,6 +332,8 @@ export class PropertiesPanel {
     const headers = document.querySelectorAll('.collapsible-header');
     headers.forEach((header) => {
       header.addEventListener('click', () => {
+        // Every tab's panel registers this toggle; only one may flip it
+        if (!this.isActive()) return;
         const section = header.getAttribute('data-section');
         const content = document.querySelector(
           `.collapsible-content[data-section="${section}"]`
@@ -275,548 +345,299 @@ export class PropertiesPanel {
           content.style.display = isOpen ? 'none' : 'block';
           if (arrow) arrow.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(-180deg)';
         }
+      }, { signal: this.listenerAbort.signal });
+    });
+  }
+
+  /**
+   * @brief Register a DOM listener once, removable via destroy()
+   */
+  private on(target: Element | null, type: string, handler: (e: Event) => void) {
+    target?.addEventListener(type, handler, { signal: this.listenerAbort.signal });
+  }
+
+  /**
+   * @brief Apply a style mutation to the cell selected at event time
+   */
+  private applyStyle(mutate: (style: EditableStyle) => void) {
+    const cells = this.getTargetCells();
+    if (cells.length === 0) return;
+    this.graph.batchUpdate(() => {
+      cells.forEach((cell) => {
+        const style = this.graph.getCellStyle(cell) as EditableStyle;
+        mutate(style);
+        this.graph.model.setStyle(cell, style);
+      });
+    });
+    this.graph.refresh();
+  }
+
+  /**
+   * @brief Change the geometry of the cell selected at event time through the model
+   * @details model.setGeometry records an undoable change; editing the geometry in place did not.
+   */
+  private applyGeometry(mutate: (geo: Geometry) => void) {
+    const cell = this.getTargetCell();
+    const current = cell?.getGeometry();
+    if (!cell || !current) return;
+    const geo = current.clone();
+    mutate(geo);
+    this.graph.model.setGeometry(cell, geo);
+  }
+
+  /** @brief Bind a 'change' listener on an input/select that sets one style key */
+  private bindStyle(id: string, apply: (style: EditableStyle, input: HTMLInputElement) => void) {
+    this.on(document.getElementById(id), 'change', (e) => {
+      const input = e.target as HTMLInputElement;
+      this.applyStyle((style) => apply(style, input));
+    });
+  }
+
+  /** @brief Bind a button click that sets one style key to a fixed value */
+  private bindStyleClick(selector: string, key: string, value: string) {
+    this.on(document.querySelector(selector), 'click', () => {
+      this.applyStyle((style) => {
+        style[key] = value;
       });
     });
   }
 
-  private setupEventListeners() {
-    // This will be called after updateValues, so event listeners are wired up with current cell
+  /** @brief Live-update a percentage label while a range input is dragged */
+  private bindPercentLabel(inputId: string, labelId: string) {
+    this.on(document.getElementById(inputId), 'input', (e) => {
+      const value = parseInt((e.target as HTMLInputElement).value);
+      const label = document.getElementById(labelId);
+      if (label) label.textContent = `${value}%`;
+    });
   }
 
-  private wireUpHandlers() {
-    const geo = this.currentCell.geometry;
-
-    document.getElementById('prop-fontFamily')?.addEventListener('change', (e) => {
-      const value = (e.target as HTMLInputElement).value;
-      const style = this.graph.getCellStyle(this.currentCell);
-      style.fontFamily = value;
-      this.graph.model.setStyle(this.currentCell, style);
-      this.graph.refresh();
+  /**
+   * @brief Wire every panel control exactly once
+   * @details Handlers never capture a cell; they resolve it via getTargetCell()
+   * when the event fires, so each edit is applied once to the current selection.
+   */
+  private setupEventListeners() {
+    // Text
+    this.bindStyle('prop-fontFamily', (style, input) => { style.fontFamily = input.value; });
+    this.bindStyle('prop-fontSize', (style, input) => { style.fontSize = parseInt(input.value); });
+    this.bindStyle('prop-fontWeight', (style, input) => { style.fontWeight = input.value; });
+    this.bindStyle('prop-fontStyle', (style, input) => {
+      // maxGraph fontStyle is a bitmask; the select only controls the italic bit
+      const flags = style.fontStyle || 0;
+      style.fontStyle = input.value === 'normal'
+        ? flags & ~constants.FONT.ITALIC
+        : flags | constants.FONT.ITALIC;
     });
-
-    document.getElementById('prop-fontSize')?.addEventListener('change', (e) => {
-      const value = parseInt((e.target as HTMLInputElement).value);
-      const style = this.graph.getCellStyle(this.currentCell);
-      style.fontSize = value;
-      this.graph.model.setStyle(this.currentCell, style);
-      this.graph.refresh();
-    });
-
-    document.getElementById('prop-fontWeight')?.addEventListener('change', (e) => {
-      const value = (e.target as HTMLSelectElement).value;
-      const style = this.graph.getCellStyle(this.currentCell) as any;
-      style.fontWeight = value;
-      this.graph.model.setStyle(this.currentCell, style);
-      this.graph.refresh();
-    });
-
-    document.getElementById('prop-fontStyle')?.addEventListener('change', (e) => {
-      const value = (e.target as HTMLSelectElement).value;
-      const style = this.graph.getCellStyle(this.currentCell) as any;
-      style.fontStyle = value;
-      this.graph.model.setStyle(this.currentCell, style);
-      this.graph.refresh();
-    });
-
-    document.getElementById('prop-textDecoration')?.addEventListener('change', (e) => {
-      const value = (e.target as HTMLSelectElement).value;
-      const style = this.graph.getCellStyle(this.currentCell) as any;
-      style.textDecoration = value;
-      this.graph.model.setStyle(this.currentCell, style);
-      this.graph.refresh();
-    });
-
-    document.getElementById('prop-textOverflow')?.addEventListener('change', (e) => {
-      const value = (e.target as HTMLSelectElement).value;
-      const style = this.graph.getCellStyle(this.currentCell) as any;
-      style.textOverflow = value;
-      this.graph.model.setStyle(this.currentCell, style);
-      this.graph.refresh();
-    });
-
-    document.getElementById('prop-fontColorBtn')?.addEventListener('change', (e) => {
-      const value = (e.target as HTMLInputElement).value;
-      const style = this.graph.getCellStyle(this.currentCell);
-      style.fontColor = value;
-      this.graph.model.setStyle(this.currentCell, style);
-      this.graph.refresh();
-    });
+    this.bindStyle('prop-textDecoration', (style, input) => { style.textDecoration = input.value; });
+    this.bindStyle('prop-textOverflow', (style, input) => { style.textOverflow = input.value; });
+    this.bindStyle('prop-fontColorBtn', (style, input) => { style.fontColor = input.value; });
 
     // Alignment
-    document.querySelector('.align-left')?.addEventListener('click', () => {
-      const style = this.graph.getCellStyle(this.currentCell) as any;
-      style.align = 'left';
-      this.graph.model.setStyle(this.currentCell, style);
-      this.graph.refresh();
-    });
+    this.bindStyleClick('.align-left', 'align', 'left');
+    this.bindStyleClick('.align-center', 'align', 'center');
+    this.bindStyleClick('.align-right', 'align', 'right');
+    this.bindStyleClick('.valign-top', 'verticalAlign', 'top');
+    this.bindStyleClick('.valign-middle', 'verticalAlign', 'middle');
+    this.bindStyleClick('.valign-bottom', 'verticalAlign', 'bottom');
 
-    document.querySelector('.align-center')?.addEventListener('click', () => {
-      const style = this.graph.getCellStyle(this.currentCell) as any;
-      style.align = 'center';
-      this.graph.model.setStyle(this.currentCell, style);
-      this.graph.refresh();
-    });
-
-    document.querySelector('.align-right')?.addEventListener('click', () => {
-      const style = this.graph.getCellStyle(this.currentCell) as any;
-      style.align = 'right';
-      this.graph.model.setStyle(this.currentCell, style);
-      this.graph.refresh();
-    });
-
-    document.querySelector('.valign-top')?.addEventListener('click', () => {
-      const style = this.graph.getCellStyle(this.currentCell) as any;
-      style.verticalAlign = 'top';
-      this.graph.model.setStyle(this.currentCell, style);
-      this.graph.refresh();
-    });
-
-    document.querySelector('.valign-middle')?.addEventListener('click', () => {
-      const style = this.graph.getCellStyle(this.currentCell) as any;
-      style.verticalAlign = 'middle';
-      this.graph.model.setStyle(this.currentCell, style);
-      this.graph.refresh();
-    });
-
-    document.querySelector('.valign-bottom')?.addEventListener('click', () => {
-      const style = this.graph.getCellStyle(this.currentCell) as any;
-      style.verticalAlign = 'bottom';
-      this.graph.model.setStyle(this.currentCell, style);
-      this.graph.refresh();
-    });
-
-    // Text Horizontal Alignment Select (Priority 3)
-    document.getElementById('prop-textAlign')?.addEventListener('change', (e) => {
-      const value = (e.target as HTMLSelectElement).value;
-      const style = this.graph.getCellStyle(this.currentCell) as any;
-      style.align = value;
-      this.graph.model.setStyle(this.currentCell, style);
-      this.graph.refresh();
-    });
-
-    // Text Vertical Alignment Select (Priority 3)
-    document.getElementById('prop-verticalAlign')?.addEventListener('change', (e) => {
-      const value = (e.target as HTMLSelectElement).value;
-      const style = this.graph.getCellStyle(this.currentCell) as any;
-      style.verticalAlign = value;
-      this.graph.model.setStyle(this.currentCell, style);
-      this.graph.refresh();
-    });
+    // Text Horizontal / Vertical Alignment Selects (Priority 3)
+    this.bindStyle('prop-textAlign', (style, input) => { style.align = input.value as AlignValue; });
+    this.bindStyle('prop-verticalAlign', (style, input) => { style.verticalAlign = input.value as VAlignValue; });
 
     // Fill Color
-    document.getElementById('prop-fillColor')?.addEventListener('change', (e) => {
-      const value = (e.target as HTMLInputElement).value;
-      const style = this.graph.getCellStyle(this.currentCell);
-      style.fillColor = value;
-      this.graph.model.setStyle(this.currentCell, style);
+    this.bindStyle('prop-fillColor', (style, input) => {
+      style.fillColor = input.value;
       // Update text input
       const textInput = document.getElementById('prop-fillColorText') as HTMLInputElement;
-      if (textInput) textInput.value = value;
-      this.graph.refresh();
+      if (textInput) textInput.value = input.value;
     });
 
-    document.getElementById('prop-fillColorText')?.addEventListener('change', (e) => {
-      const value = (e.target as HTMLInputElement).value;
-      const style = this.graph.getCellStyle(this.currentCell);
-      style.fillColor = value;
-      this.graph.model.setStyle(this.currentCell, style);
+    this.bindStyle('prop-fillColorText', (style, input) => {
+      style.fillColor = input.value;
       // Update color picker
       const colorInput = document.getElementById('prop-fillColor') as HTMLInputElement;
-      if (colorInput) colorInput.value = value;
-      this.graph.refresh();
+      if (colorInput) colorInput.value = input.value;
     });
 
-    document.getElementById('prop-useFill')?.addEventListener('change', (e) => {
-      const checked = (e.target as HTMLInputElement).checked;
-      const style = this.graph.getCellStyle(this.currentCell);
-      style.fillColor = checked ? (style.fillColor || '#ffffff') : 'none';
-      this.graph.model.setStyle(this.currentCell, style);
-      this.graph.refresh();
+    this.bindStyle('prop-useFill', (style, input) => {
+      style.fillColor = input.checked ? (style.fillColor || '#ffffff') : 'none';
     });
 
     // Fill type (solid, linear, radial)
-    document.getElementById('prop-fillType')?.addEventListener('change', (e) => {
-      const value = (e.target as HTMLSelectElement).value;
-      const style = this.graph.getCellStyle(this.currentCell) as any;
-      style.fillType = value;
-      this.graph.model.setStyle(this.currentCell, style);
-
+    this.bindStyle('prop-fillType', (style, input) => {
+      style.fillType = input.value;
       // Show/hide gradient controls
       const gradientControls = document.getElementById('gradient-controls');
       if (gradientControls) {
-        gradientControls.style.display = value === 'solid' ? 'none' : 'block';
+        gradientControls.style.display = input.value === 'solid' ? 'none' : 'block';
       }
-      this.graph.refresh();
     });
 
-    // Gradient color 1
-    document.getElementById('prop-gradientColor1')?.addEventListener('change', (e) => {
-      const value = (e.target as HTMLInputElement).value;
-      const style = this.graph.getCellStyle(this.currentCell) as any;
-      style.gradientColor = value;
-      this.graph.model.setStyle(this.currentCell, style);
-      this.graph.refresh();
-    });
-
-    // Gradient color 2
-    document.getElementById('prop-gradientColor2')?.addEventListener('change', (e) => {
-      const value = (e.target as HTMLInputElement).value;
-      const style = this.graph.getCellStyle(this.currentCell) as any;
-      style.gradientColor2 = value;
-      this.graph.model.setStyle(this.currentCell, style);
-      this.graph.refresh();
-    });
-
-    // Gradient opacity
-    document.getElementById('prop-gradientOpacity')?.addEventListener('input', (e) => {
-      const value = parseInt((e.target as HTMLInputElement).value);
-      const gradientOpacityValue = document.getElementById('prop-gradientOpacity-value');
-      if (gradientOpacityValue) gradientOpacityValue.textContent = `${value}%`;
-    });
-
-    document.getElementById('prop-gradientOpacity')?.addEventListener('change', (e) => {
-      const value = parseInt((e.target as HTMLInputElement).value);
-      const style = this.graph.getCellStyle(this.currentCell) as any;
-      style.gradientOpacity = value;
-      this.graph.model.setStyle(this.currentCell, style);
-      this.graph.refresh();
-    });
+    // Gradient
+    this.bindStyle('prop-gradientColor1', (style, input) => { style.gradientColor = input.value; });
+    this.bindStyle('prop-gradientColor2', (style, input) => { style.gradientColor2 = input.value; });
+    this.bindPercentLabel('prop-gradientOpacity', 'prop-gradientOpacity-value');
+    this.bindStyle('prop-gradientOpacity', (style, input) => { style.gradientOpacity = parseInt(input.value); });
 
     // Background Pattern (Priority 3)
-    document.getElementById('prop-fillPattern')?.addEventListener('change', (e) => {
-      const value = (e.target as HTMLSelectElement).value;
-      const style = this.graph.getCellStyle(this.currentCell) as any;
-      style.fillPattern = value === 'none' ? undefined : value;
-      this.graph.model.setStyle(this.currentCell, style);
-      this.graph.refresh();
+    this.bindStyle('prop-fillPattern', (style, input) => {
+      style.fillPattern = input.value === 'none' ? undefined : input.value;
     });
 
     // Stroke
-    document.getElementById('prop-strokeWidth')?.addEventListener('change', (e) => {
-      const value = parseFloat((e.target as HTMLInputElement).value);
-      const style = this.graph.getCellStyle(this.currentCell);
-      style.strokeWidth = value;
-      this.graph.model.setStyle(this.currentCell, style);
-      this.graph.refresh();
-    });
+    this.bindStyle('prop-strokeWidth', (style, input) => { style.strokeWidth = parseFloat(input.value); });
 
     // Dash Pattern (Priority 3)
-    document.getElementById('prop-dashPattern')?.addEventListener('change', (e) => {
-      const value = (e.target as HTMLSelectElement).value;
-      const style = this.graph.getCellStyle(this.currentCell) as any;
-      style.dashPattern = value === 'none' ? undefined : value;
-      this.graph.model.setStyle(this.currentCell, style);
-      this.graph.refresh();
+    this.bindStyle('prop-dashPattern', (style, input) => {
+      style.dashPattern = input.value === 'none' ? undefined : input.value;
     });
 
     // Opacity
-    document.getElementById('prop-opacity')?.addEventListener('input', (e) => {
-      const value = parseInt((e.target as HTMLInputElement).value);
-      const opacityValue = document.getElementById('prop-opacity-value');
-      if (opacityValue) opacityValue.textContent = `${value}%`;
-    });
+    this.bindPercentLabel('prop-opacity', 'prop-opacity-value');
+    this.bindStyle('prop-opacity', (style, input) => { style.opacity = parseInt(input.value); });
+    this.bindPercentLabel('prop-strokeOpacity', 'prop-strokeOpacity-value');
+    this.bindStyle('prop-strokeOpacity', (style, input) => { style.strokeOpacity = parseInt(input.value); });
 
-    document.getElementById('prop-opacity')?.addEventListener('change', (e) => {
-      const value = parseInt((e.target as HTMLInputElement).value);
-      const style = this.graph.getCellStyle(this.currentCell);
-      style.opacity = value;
-      this.graph.model.setStyle(this.currentCell, style);
+    this.bindStyle('prop-cornerRadius', (style, input) => { style.arcSize = parseInt(input.value); });
+
+    this.on(document.getElementById('prop-lockShape'), 'change', (e) => {
+      const cell = this.getTargetCell();
+      if (!cell) return;
+      cell.setConnectable(!(e.target as HTMLInputElement).checked);
       this.graph.refresh();
     });
 
-    document.getElementById('prop-strokeOpacity')?.addEventListener('input', (e) => {
-      const value = parseInt((e.target as HTMLInputElement).value);
-      const strokeOpacityValue = document.getElementById('prop-strokeOpacity-value');
-      if (strokeOpacityValue) strokeOpacityValue.textContent = `${value}%`;
-    });
-
-    document.getElementById('prop-strokeOpacity')?.addEventListener('change', (e) => {
-      const value = parseInt((e.target as HTMLInputElement).value);
-      const style = this.graph.getCellStyle(this.currentCell) as any;
-      style.strokeOpacity = value;
-      this.graph.model.setStyle(this.currentCell, style);
-      this.graph.refresh();
-    });
-
-    document.getElementById('prop-cornerRadius')?.addEventListener('change', (e) => {
-      const value = parseInt((e.target as HTMLInputElement).value);
-      const style = this.graph.getCellStyle(this.currentCell) as any;
-      style.arcSize = value;
-      this.graph.model.setStyle(this.currentCell, style);
-      this.graph.refresh();
-    });
-
-    document.getElementById('prop-lockShape')?.addEventListener('change', (e) => {
-      const value = (e.target as HTMLInputElement).checked;
-      this.currentCell.setConnectable(!value);
-      this.graph.refresh();
-    });
-
-    document.getElementById('prop-blendMode')?.addEventListener('change', (e) => {
-      const value = (e.target as HTMLSelectElement).value;
-      const style = this.graph.getCellStyle(this.currentCell) as any;
-      style.blendMode = value;
-      this.graph.model.setStyle(this.currentCell, style);
-      this.graph.refresh();
-    });
+    this.bindStyle('prop-blendMode', (style, input) => { style.blendMode = input.value; });
 
     // Shadow
-    document.getElementById('prop-shadow')?.addEventListener('change', (e) => {
-      const value = (e.target as HTMLInputElement).checked;
-      const style = this.graph.getCellStyle(this.currentCell);
-      style.shadow = value;
-      this.graph.model.setStyle(this.currentCell, style);
-
+    this.bindStyle('prop-shadow', (style, input) => {
+      style.shadow = input.checked;
       // Show/hide shadow details
       const shadowDetails = document.getElementById('shadow-details');
-      if (shadowDetails) shadowDetails.style.display = value ? 'block' : 'none';
-
-      this.graph.refresh();
+      if (shadowDetails) shadowDetails.style.display = input.checked ? 'block' : 'none';
     });
-
-    // Shadow color
-    document.getElementById('prop-shadowColor')?.addEventListener('change', (e) => {
-      const value = (e.target as HTMLInputElement).value;
-      const style = this.graph.getCellStyle(this.currentCell) as any;
-      style.shadowColor = value;
-      this.graph.model.setStyle(this.currentCell, style);
-      this.graph.refresh();
-    });
-
-    // Shadow blur
-    document.getElementById('prop-shadowBlur')?.addEventListener('change', (e) => {
-      const value = parseInt((e.target as HTMLInputElement).value);
-      const style = this.graph.getCellStyle(this.currentCell) as any;
-      style.shadowBlur = value;
-      this.graph.model.setStyle(this.currentCell, style);
-      this.graph.refresh();
-    });
-
-    // Shadow offset X
-    document.getElementById('prop-shadowOffsetX')?.addEventListener('change', (e) => {
-      const value = parseInt((e.target as HTMLInputElement).value);
-      const style = this.graph.getCellStyle(this.currentCell) as any;
-      style.shadowOffsetX = value;
-      this.graph.model.setStyle(this.currentCell, style);
-      this.graph.refresh();
-    });
-
-    // Shadow offset Y
-    document.getElementById('prop-shadowOffsetY')?.addEventListener('change', (e) => {
-      const value = parseInt((e.target as HTMLInputElement).value);
-      const style = this.graph.getCellStyle(this.currentCell) as any;
-      style.shadowOffsetY = value;
-      this.graph.model.setStyle(this.currentCell, style);
-      this.graph.refresh();
-    });
+    this.bindStyle('prop-shadowColor', (style, input) => { style.shadowColor = input.value; });
+    this.bindStyle('prop-shadowBlur', (style, input) => { style.shadowBlur = parseInt(input.value); });
+    this.bindStyle('prop-shadowOffsetX', (style, input) => { style.shadowOffsetX = parseInt(input.value); });
+    this.bindStyle('prop-shadowOffsetY', (style, input) => { style.shadowOffsetY = parseInt(input.value); });
 
     // Rounded
-    document.getElementById('prop-rounded')?.addEventListener('change', (e) => {
-      const value = (e.target as HTMLInputElement).checked;
-      const style = this.graph.getCellStyle(this.currentCell) as any;
-      style.rounded = value ? 1 : 0;
-      this.graph.model.setStyle(this.currentCell, style);
-      this.graph.refresh();
-    });
+    this.bindStyle('prop-rounded', (style, input) => { style.rounded = input.checked; });
 
     // Position/Size
-    document.getElementById('prop-x')?.addEventListener('change', (e) => {
+    this.on(document.getElementById('prop-x'), 'change', (e) => {
       const value = parseInt((e.target as HTMLInputElement).value);
-      geo!.x = value;
-      this.graph.refresh();
+      if (Number.isNaN(value)) return;
+      this.applyGeometry((geo) => { geo.x = value; });
     });
 
-    document.getElementById('prop-y')?.addEventListener('change', (e) => {
+    this.on(document.getElementById('prop-y'), 'change', (e) => {
       const value = parseInt((e.target as HTMLInputElement).value);
-      geo!.y = value;
-      this.graph.refresh();
+      if (Number.isNaN(value)) return;
+      this.applyGeometry((geo) => { geo.y = value; });
     });
 
-    document.getElementById('prop-w')?.addEventListener('change', (e) => {
+    this.on(document.getElementById('prop-w'), 'change', (e) => {
       const value = parseInt((e.target as HTMLInputElement).value);
+      if (Number.isNaN(value)) return;
       const constrainProportions = (document.getElementById('prop-constrainProportions') as HTMLInputElement)?.checked;
-
-      if (constrainProportions && geo!.height > 0) {
-        const aspectRatio = geo!.height / geo!.width;
-        geo!.height = value * aspectRatio;
-      }
-
-      geo!.width = value;
-      this.graph.refresh();
+      this.applyGeometry((geo) => {
+        if (constrainProportions && geo.height > 0) {
+          const aspectRatio = geo.height / geo.width;
+          geo.height = value * aspectRatio;
+        }
+        geo.width = value;
+      });
     });
 
-    document.getElementById('prop-h')?.addEventListener('change', (e) => {
+    this.on(document.getElementById('prop-h'), 'change', (e) => {
       const value = parseInt((e.target as HTMLInputElement).value);
+      if (Number.isNaN(value)) return;
       const constrainProportions = (document.getElementById('prop-constrainProportions') as HTMLInputElement)?.checked;
-
-      if (constrainProportions && geo!.width > 0) {
-        const aspectRatio = geo!.width / geo!.height;
-        geo!.width = value * aspectRatio;
-      }
-
-      geo!.height = value;
-      this.graph.refresh();
+      this.applyGeometry((geo) => {
+        if (constrainProportions && geo.width > 0) {
+          const aspectRatio = geo.width / geo.height;
+          geo.width = value * aspectRatio;
+        }
+        geo.height = value;
+      });
     });
 
     // Min/Max dimensions
-    document.getElementById('prop-minWidth')?.addEventListener('change', (e) => {
-      const value = parseInt((e.target as HTMLInputElement).value);
-      const style = this.graph.getCellStyle(this.currentCell) as any;
-      style.minWidth = value;
-      this.graph.model.setStyle(this.currentCell, style);
-      this.graph.refresh();
-    });
-
-    document.getElementById('prop-maxWidth')?.addEventListener('change', (e) => {
-      const value = parseInt((e.target as HTMLInputElement).value);
-      const style = this.graph.getCellStyle(this.currentCell) as any;
-      style.maxWidth = value;
-      this.graph.model.setStyle(this.currentCell, style);
-      this.graph.refresh();
-    });
-
-    document.getElementById('prop-minHeight')?.addEventListener('change', (e) => {
-      const value = parseInt((e.target as HTMLInputElement).value);
-      const style = this.graph.getCellStyle(this.currentCell) as any;
-      style.minHeight = value;
-      this.graph.model.setStyle(this.currentCell, style);
-      this.graph.refresh();
-    });
-
-    document.getElementById('prop-maxHeight')?.addEventListener('change', (e) => {
-      const value = parseInt((e.target as HTMLInputElement).value);
-      const style = this.graph.getCellStyle(this.currentCell) as any;
-      style.maxHeight = value;
-      this.graph.model.setStyle(this.currentCell, style);
-      this.graph.refresh();
-    });
+    this.bindStyle('prop-minWidth', (style, input) => { style.minWidth = parseInt(input.value); });
+    this.bindStyle('prop-maxWidth', (style, input) => { style.maxWidth = parseInt(input.value); });
+    this.bindStyle('prop-minHeight', (style, input) => { style.minHeight = parseInt(input.value); });
+    this.bindStyle('prop-maxHeight', (style, input) => { style.maxHeight = parseInt(input.value); });
 
     // Rotation
-    document.getElementById('prop-rotation')?.addEventListener('change', (e) => {
-      const value = parseInt((e.target as HTMLInputElement).value);
-      const style = this.graph.getCellStyle(this.currentCell);
-      style.rotation = value;
-      this.graph.model.setStyle(this.currentCell, style);
-      this.graph.refresh();
-    });
+    this.bindStyle('prop-rotation', (style, input) => { style.rotation = parseInt(input.value); });
 
-    // Constrain Proportions
-    document.getElementById('prop-constrainProportions')?.addEventListener('change', () => {
-      // No action needed - the state is read when width/height change
-    });
+    // Constrain Proportions: no listener needed - the state is read when width/height change
 
     // Rotate 90
-    document.getElementById('btn-rotate90')?.addEventListener('click', () => {
-      const style = this.graph.getCellStyle(this.currentCell);
-      const current = style.rotation || 0;
-      style.rotation = (current + 90) % 360;
-      const rotInput = document.getElementById('prop-rotation') as HTMLInputElement;
-      if (rotInput) rotInput.value = String(style.rotation);
-      this.graph.model.setStyle(this.currentCell, style);
-      this.graph.refresh();
+    this.on(document.getElementById('btn-rotate90'), 'click', () => {
+      this.applyStyle((style) => {
+        const current = style.rotation || 0;
+        style.rotation = (current + 90) % 360;
+        const rotInput = document.getElementById('prop-rotation') as HTMLInputElement;
+        if (rotInput) rotInput.value = String(style.rotation);
+      });
     });
 
-    // Flip Horizontal
-    document.getElementById('btn-flipHorizontal')?.addEventListener('click', () => {
-      const geo = this.currentCell.geometry;
-      if (geo) {
-        geo.flipH = !geo.flipH;
-        this.graph.refresh();
-        this.updateValues();
-      }
+    // Flip Horizontal / Vertical (one toggle per click). maxGraph reads flips from
+    // the style; Geometry has no flipH/flipV, so geometry flags never rendered.
+    this.on(document.getElementById('btn-flipHorizontal'), 'click', () => {
+      this.applyStyle((style) => {
+        style.flipH = !style.flipH;
+      });
+      this.update();
     });
 
-    // Flip Vertical
-    document.getElementById('btn-flipVertical')?.addEventListener('click', () => {
-      const geo = this.currentCell.geometry;
-      if (geo) {
-        geo.flipV = !geo.flipV;
-        this.graph.refresh();
-        this.updateValues();
-      }
+    this.on(document.getElementById('btn-flipVertical'), 'click', () => {
+      this.applyStyle((style) => {
+        style.flipV = !style.flipV;
+      });
+      this.update();
     });
 
     // Z-Order
-    document.getElementById('btn-toFront')?.addEventListener('click', () => {
-      const model = this.graph.model as any;
-      const parent = model.getParent(this.currentCell);
-      if (parent) {
-        const index = model.getChildCount(parent) - 1;
-        model.add(parent, this.currentCell, index);
-      }
-    });
+    this.bindZOrder('btn-toFront', (parent) => parent.getChildCount() - 1);
+    this.bindZOrder('btn-toBack', () => 0);
+    this.bindZOrder('btn-bringForward', (parent, index) =>
+      Math.min(index + 1, parent.getChildCount() - 1)
+    );
+    this.bindZOrder('btn-sendBackward', (_parent, index) => Math.max(index - 1, 0));
 
-    document.getElementById('btn-toBack')?.addEventListener('click', () => {
-      const model = this.graph.model as any;
-      const parent = model.getParent(this.currentCell);
-      if (parent) {
-        model.add(parent, this.currentCell, 0);
-      }
+    // Lock: toggles each selected cell's own flag (same flag as the context menu)
+    this.on(document.getElementById('btn-lock'), 'click', () => {
+      const cells = this.getTargetCells() as LockableCell[];
+      if (cells.length === 0) return;
+      cells.forEach((cell) => {
+        cell.locked = !cell.locked;
+      });
+      this.updateLockButton(!!cells[0].locked);
     });
+  }
 
-    document.getElementById('btn-bringForward')?.addEventListener('click', () => {
-      const model = this.graph.model as any;
-      const parent = model.getParent(this.currentCell);
-      if (parent) {
-        let index = -1;
-        for (let i = 0; i < model.getChildCount(parent); i++) {
-          if (model.getChildAt(parent, i) === this.currentCell) {
-            index = i;
-            break;
+  /**
+   * @brief Bind a z-order button that moves every selected cell within its parent
+   * @param newIndex Target index for a cell currently at `index` in `parent`
+   */
+  private bindZOrder(id: string, newIndex: (parent: Cell, index: number) => number) {
+    this.on(document.getElementById(id), 'click', () => {
+      const cells = this.getTargetCells();
+      if (cells.length === 0) return;
+      this.graph.batchUpdate(() => {
+        cells.forEach((cell) => {
+          const parent = cell.getParent();
+          if (!parent) return;
+          const index = parent.getIndex(cell);
+          const target = newIndex(parent, index);
+          if (target !== index) {
+            this.graph.model.add(parent, cell, target);
           }
-        }
-        if (index < model.getChildCount(parent) - 1) {
-          model.add(parent, this.currentCell, index + 1);
-        }
-      }
-    });
-
-    document.getElementById('btn-sendBackward')?.addEventListener('click', () => {
-      const model = this.graph.model as any;
-      const parent = model.getParent(this.currentCell);
-      if (parent) {
-        let index = -1;
-        for (let i = 0; i < model.getChildCount(parent); i++) {
-          if (model.getChildAt(parent, i) === this.currentCell) {
-            index = i;
-            break;
-          }
-        }
-        if (index > 0) {
-          model.add(parent, this.currentCell, index - 1);
-        }
-      }
-    });
-
-    // Flip
-    document.getElementById('btn-flipHorizontal')?.addEventListener('click', () => {
-      if (geo) {
-        geo.flipH = !geo.flipH;
-        const flipHBtn = document.getElementById('btn-flipHorizontal');
-        if (flipHBtn) flipHBtn.style.background = geo.flipH ? '#e0e0e0' : '#f5f5f5';
-        this.graph.refresh();
-      }
-    });
-
-    document.getElementById('btn-flipVertical')?.addEventListener('click', () => {
-      if (geo) {
-        geo.flipV = !geo.flipV;
-        const flipVBtn = document.getElementById('btn-flipVertical');
-        if (flipVBtn) flipVBtn.style.background = geo.flipV ? '#e0e0e0' : '#f5f5f5';
-        this.graph.refresh();
-      }
-    });
-
-    // Lock
-    let isLocked = false;
-    const lockBtn = document.getElementById('btn-lock') as HTMLButtonElement;
-    document.getElementById('btn-lock')?.addEventListener('click', () => {
-      isLocked = !isLocked;
-      this.currentCell.locked = isLocked;
-      if (lockBtn) {
-        lockBtn.textContent = isLocked ? 'Unlock' : 'Lock';
-        lockBtn.style.background = isLocked ? '#ffd700' : '#f5f5f5';
-      }
+        });
+      });
     });
   }
 }

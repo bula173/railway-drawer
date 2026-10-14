@@ -8,6 +8,7 @@
  */
 
 import { Graph } from '@maxgraph/core';
+import { shouldIgnoreGraphShortcut } from './delete';
 
 /**
  * @interface GroupInfo
@@ -82,7 +83,7 @@ export class GroupingController {
    */
   private setupKeyboardShortcuts(): void {
     document.addEventListener('keydown', (e) => {
-      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) {
+      if (shouldIgnoreGraphShortcut(e, this.graph)) {
         return;
       }
 

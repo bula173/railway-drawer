@@ -5,6 +5,10 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Railway Drawer</title>
+    <!-- draw.io mode never shows the maxGraph shell; hide it before any script runs (no flash) -->
+    <style>
+      body[data-editor="drawio"] #app-container { display: none; }
+    </style>
   </head>
   <body>
     <div id="app-container">
@@ -55,6 +59,8 @@
               <div class="menu-dropdown-item" data-action="fitWindow">Fit to Window</div>
               <div style="height: 1px; background: #e0e0e0; margin: 4px 0;"></div>
               <div class="menu-dropdown-item" data-action="showGrid">Show Grid</div>
+              <div style="height: 1px; background: #e0e0e0; margin: 4px 0;"></div>
+              <div class="menu-dropdown-item" data-action="switchEditorDrawio">Switch to draw.io editor</div>
             </div>
           </div>
 
@@ -96,6 +102,11 @@
 
         <!-- Save Status & Share -->
         <div class="top-bar-right">
+          <div class="editor-toggle" role="group" aria-label="Editor">
+            <span class="editor-toggle-label">Editor:</span>
+            <button type="button" class="editor-toggle-btn active" data-editor-mode="legacy" aria-pressed="true" title="maxGraph editor (current)">maxGraph</button>
+            <button type="button" class="editor-toggle-btn" data-editor-mode="drawio" aria-pressed="false" title="Switch to the draw.io editor (saves, then reloads the page)">draw.io</button>
+          </div>
           <div class="save-status">Unsaved changes. Click here to save.</div>
           <button class="share-btn">👤 Share</button>
         </div>

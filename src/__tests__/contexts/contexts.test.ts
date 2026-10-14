@@ -11,7 +11,6 @@ import {
   createFeaturesContext,
   createTabContext,
 } from '../../contexts';
-import type { GraphContext, UIContext, EditingContext, HelpersContext, FeaturesContext } from '../../contexts';
 
 describe('Contexts', () => {
   describe('GraphContext', () => {
@@ -183,13 +182,19 @@ describe('Contexts', () => {
   });
 
   describe('context immutability', () => {
-    it('should create readonly contexts', () => {
+    it('should declare context fields readonly at the type level', () => {
       const context = createGraphContext('tab-1', {} as any, {} as any);
 
-      // TypeScript should prevent reassignment
-      expect(() => {
-        (context as any).id = 'new-id';
-      }).toThrow();
+      // Contexts are plain objects; immutability is a compile-time guarantee
+      // (`readonly` fields), not a runtime Object.freeze. Checked by
+      // `tsc -p tsconfig.test.json`; the function is never called.
+      const reassign = (): void => {
+        // @ts-expect-error id is readonly
+        context.id = 'new-id';
+      };
+
+      expect(reassign).toBeTypeOf('function');
+      expect(context.id).toBe('tab-1');
     });
   });
 });

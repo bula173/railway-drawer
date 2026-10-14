@@ -1,0 +1,15 @@
+{
+  "version": "1",
+  "data": {
+    "projectName": "Legacy Project",
+    "tabs": [
+      {
+        "id": "tab-legacy",
+        "name": "Stara karta",
+        "graphXml": "<GraphDataModel>\n  <root>\n    <Cell id=\"0\">\n      <Object as=\"style\" />\n    </Cell>\n    <Cell id=\"1\" parent=\"0\">\n      <Object as=\"style\" />\n    </Cell>\n    <Cell id=\"grp\" value=\"Gruppe Łódź\" vertex=\"1\" parent=\"1\">\n      <Geometry _x=\"20\" _y=\"20\" _width=\"300\" _height=\"200\" as=\"geometry\">\n        <Rectangle _x=\"20\" _y=\"20\" _width=\"120\" _height=\"30\" as=\"alternateBounds\" />\n      </Geometry>\n      <Object fillColor=\"#ffffff\" strokeColor=\"#000000\" as=\"style\" />\n      <Object plantumlSource=\"@startuml&#xa;A -&gt; B&#xa;@enduml\" diagramType=\"sequence\" createdAt=\"1\" lastModified=\"2\" as=\"__plantuml\" />\n    </Cell>\n    <Cell id=\"a\" value=\"Signal&#xa;A1\" vertex=\"1\" parent=\"grp\" __layerId=\"layer-2\">\n      <Geometry _x=\"10\" _y=\"40\" _width=\"80\" _height=\"40\" as=\"geometry\" />\n      <Object shape=\"ellipse-shape\" fillColor=\"none\" strokeColor=\"#000000\" fontColor=\"000000\" as=\"style\" />\n    </Cell>\n    <Cell id=\"b\" value=\"B\" vertex=\"1\" parent=\"grp\">\n      <Geometry _x=\"180\" _y=\"40\" _width=\"80\" _height=\"40\" as=\"geometry\" />\n      <Object shape=\"image\" image=\"data:image/png;base64,iVBORw0KGgo=\" as=\"style\" />\n    </Cell>\n    <Cell id=\"ab\" value=\"a→b\" edge=\"1\" parent=\"grp\" source=\"a\" target=\"b\">\n      <Geometry relative=\"1\" as=\"geometry\">\n        <Array as=\"points\">\n          <Point _x=\"140\" _y=\"100\" />\n        </Array>\n      </Geometry>\n      <Object endArrow=\"block\" dashed=\"1\" as=\"style\" />\n    </Cell>\n  </root>\n</GraphDataModel>\n\n<!-- PLANTUML_METADATA_UTF8:W3siY2VsbElkIjoiZ3JwIiwiY2VsbExhYmVsIjoiR3J1cHBlIMWBw7NkxboiLCJwbGFudHVtbFNvdXJjZSI6IkBzdGFydHVtbFxuQSAtPiBCXG5AZW5kdW1sIiwiZGlhZ3JhbVR5cGUiOiJzZXF1ZW5jZSIsImNyZWF0ZWRBdCI6MSwibGFzdE1vZGlmaWVkIjoyfV0= -->"
+      }
+    ],
+    "activeTabId": "tab-legacy",
+    "timestamp": 1760000000000
+  }
+}

@@ -46,7 +46,7 @@ export class ComponentDiagramRenderer {
           y,
           this.componentWidth,
           this.componentHeight,
-          'shape=rectangle;fillColor=#e8f4f8;strokeColor:#0c5aa0;fontSize=12;' as any
+          'shape=rectangle;fillColor=#e8f4f8;strokeColor=#0c5aa0;fontSize=12;' as any
         );
 
         componentMap.set(component.id, componentCell);
@@ -64,7 +64,7 @@ export class ComponentDiagramRenderer {
         const toComponent = componentMap.get(conn.to);
 
         if (fromComponent && toComponent) {
-          const relationshipStyle = 'endArrow=block;strokeColor:#0c5aa0;dashed=0;';
+          const relationshipStyle = 'endArrow=block;strokeColor=#0c5aa0;dashed=0;';
           this.graph.insertEdge(parent, null, conn.label || '', fromComponent, toComponent, relationshipStyle as any);
         }
       });
@@ -100,7 +100,7 @@ export class ComponentDiagramRenderer {
           y,
           this.componentWidth,
           this.componentHeight,
-          'shape=rectangle;fillColor=#e8f4f8;strokeColor:#0c5aa0;fontSize=12;' as any
+          'shape=rectangle;fillColor=#e8f4f8;strokeColor=#0c5aa0;fontSize=12;' as any
         );
 
         componentMap.set(component.id, componentCell);
@@ -118,7 +118,7 @@ export class ComponentDiagramRenderer {
         const toComponent = componentMap.get(conn.to);
 
         if (fromComponent && toComponent) {
-          const relationshipStyle = 'endArrow=block;strokeColor:#0c5aa0;dashed=0;';
+          const relationshipStyle = 'endArrow=block;strokeColor=#0c5aa0;dashed=0;';
           this.graph.insertEdge(parent, null, conn.label || '', fromComponent, toComponent, relationshipStyle as any);
         }
       });

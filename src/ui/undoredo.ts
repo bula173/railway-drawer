@@ -1,9 +1,15 @@
 import { GraphCommandService } from '../services/graph-command-service';
 
+/**
+ * Binds the shared Undo/Redo toolbar buttons to one tab's command history.
+ * The buttons are shared by all tabs, so only the active tab's controller may set their
+ * state; the TabManager toggles that with setActive() when tabs are switched.
+ */
 export class UndoRedoController {
   private commandService: GraphCommandService;
   private undoBtn: HTMLButtonElement | null = null;
   private redoBtn: HTMLButtonElement | null = null;
+  private active = true;
 
   constructor(_graph: any, commandService: GraphCommandService) {
     this.commandService = commandService;
@@ -18,16 +24,24 @@ export class UndoRedoController {
 
     if (this.undoBtn) {
       this.undoBtn.addEventListener('click', () => this.commandService.undo());
-      this.undoBtn.disabled = true;
     }
 
     if (this.redoBtn) {
       this.redoBtn.addEventListener('click', () => this.commandService.redo());
-      this.redoBtn.disabled = true;
     }
   }
 
+  /**
+   * Marks this tab as the one shown. An active controller immediately reflects its own
+   * history in the shared buttons; an inactive one stops touching them.
+   */
+  setActive(active: boolean): void {
+    this.active = active;
+    this.updateButtonStates();
+  }
+
   private updateButtonStates(): void {
+    if (!this.active) return;
     if (this.undoBtn) {
       this.undoBtn.disabled = !this.commandService.canUndo();
     }

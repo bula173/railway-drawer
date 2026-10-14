@@ -189,8 +189,8 @@ export class PlantUmlParser {
   private static parseClassDiagram(lines: string[], data: DiagramData): void {
     const classRegex = /^class\s+(\w+)(?:\s*<<\s*(\w+)\s*>>)?(?:\s*{)?$/i;
     const relationRegex = /^(\w+)\s*(--|#|\\*--)\s*(\w+)\s*:\s*(.+)?$/;
-    const attributeRegex = /^\s*([\+\-#~])\s*(\w+)\s*:\s*(.+)$/;
-    const methodRegex = /^\s*([\+\-#~])\s*(\w+)\s*\(\s*\)(?:\s*:\s*(.+))?$/;
+    const attributeRegex = /^\s*([+\-#~])\s*(\w+)\s*:\s*(.+)$/;
+    const methodRegex = /^\s*([+\-#~])\s*(\w+)\s*\(\s*\)(?:\s*:\s*(.+))?$/;
 
     let currentClass: DiagramElement | null = null;
 

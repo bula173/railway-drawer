@@ -16,13 +16,12 @@ export class Arrows2CalloutQuadArrowShape extends Shape {
   arrowHead = 0;
 
   override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     c.translate(x, y);
 
-    	let dy = Math.max(0, Math.min(h, this.dy));
-    	let dx = Math.max(0, Math.min(w, this.dx));
-    	let notch = Math.max(0, Math.min(w, this.notch));
-    	let arrowHead = Math.max(0, Math.min(h, this.arrowHead));
+    	const dy = Math.max(0, Math.min(h, this.dy));
+    	const dx = Math.max(0, Math.min(w, this.dx));
+    	const notch = Math.max(0, Math.min(w, this.notch));
+    	const arrowHead = Math.max(0, Math.min(h, this.arrowHead));
 
     	c.begin();
     	c.moveTo(w * 0.5 + dy, h * 0.5 - notch);

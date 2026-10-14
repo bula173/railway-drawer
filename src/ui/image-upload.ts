@@ -6,7 +6,6 @@ export class ImageUploadController {
   private uploadButton: HTMLElement | null;
   private modal: HTMLDivElement | null = null;
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   constructor(_graph: Graph) {
     this.imageService = ImageService.getInstance();
     this.uploadButton = document.getElementById('btn-upload-image');
@@ -220,12 +219,19 @@ export class ImageUploadController {
       const previewContainer = modalContent.querySelector('#image-preview-container') as HTMLElement;
       if (previewContainer) {
         previewContainer.style.display = 'block';
-        previewContainer.innerHTML = `
-          <div style="border: 1px solid #ddd; border-radius: 4px; padding: 8px; background: #f9f9f9;">
-            <img src="${e.target?.result}" style="max-width: 100%; max-height: 200px; border-radius: 4px;" />
-            <p style="margin: 8px 0 0 0; font-size: 12px; color: #666;">${file.name} (${(file.size / 1024).toFixed(1)} KB)</p>
-          </div>
-        `;
+        // Build via DOM APIs: file.name is user-controlled and must not be parsed as HTML
+        const wrapper = document.createElement('div');
+        wrapper.style.cssText = 'border: 1px solid #ddd; border-radius: 4px; padding: 8px; background: #f9f9f9;';
+        const img = document.createElement('img');
+        const result = e.target?.result;
+        if (typeof result === 'string') img.src = result;
+        img.style.cssText = 'max-width: 100%; max-height: 200px; border-radius: 4px;';
+        const caption = document.createElement('p');
+        caption.style.cssText = 'margin: 8px 0 0 0; font-size: 12px; color: #666;';
+        caption.textContent = `${file.name} (${(file.size / 1024).toFixed(1)} KB)`;
+        wrapper.appendChild(img);
+        wrapper.appendChild(caption);
+        previewContainer.replaceChildren(wrapper);
       }
       uploadArea.textContent = '✓ Image selected: ' + file.name;
     };
@@ -291,10 +297,15 @@ export class ImageUploadController {
 
       const info = document.createElement('div');
       info.style.cssText = 'flex: 1;';
-      info.innerHTML = `
-        <div style="font-weight: 600; font-size: 13px; color: #333;">${img.name}</div>
-        <div style="font-size: 11px; color: #999;">${img.width}×${img.height}px</div>
-      `;
+      // img.name is user-controlled (persisted in localStorage): use textContent, not innerHTML
+      const nameEl = document.createElement('div');
+      nameEl.style.cssText = 'font-weight: 600; font-size: 13px; color: #333;';
+      nameEl.textContent = img.name;
+      const sizeEl = document.createElement('div');
+      sizeEl.style.cssText = 'font-size: 11px; color: #999;';
+      sizeEl.textContent = `${img.width}×${img.height}px`;
+      info.appendChild(nameEl);
+      info.appendChild(sizeEl);
       item.appendChild(info);
 
       const deleteBtn = document.createElement('button');
