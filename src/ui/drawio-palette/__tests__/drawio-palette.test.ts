@@ -386,6 +386,27 @@ describe('drawio palette view', () => {
     expect(Number(svg.getAttribute('height'))).toBeGreaterThanOrEqual(120);
     expect(svg.querySelectorAll('rect, path').length).toBeGreaterThan(0);
   });
+
+  it('renderEntryForParity uses the draw.io PNG export layout (Graph.getSvg at scale 1)', async () => {
+    // Regression: the translate was floored at the output scale and the border divided by it,
+    // which put cells on half pixels (labels snapped 1 output px off) and halved the margin.
+    setDrawioPaletteEngine(engine);
+    const rect = entry({ id: 'x-rect', title: 'Rect', style: 'rounded=0;whiteSpace=wrap;html=1;', width: 120, height: 60 });
+    const svg = await renderEntryForParity({ ...rect, kind: 'vertex' }, 2, { exportLayout: true, border: 10 });
+    // bounds 20..140 (jsdom measures no stroke), extended by the +0.5 crisp offset -> ceil(120.5) + 2 * 10
+    expect(svg.getAttribute('width')).toBe('141');
+    expect(svg.getAttribute('height')).toBe('81');
+    const shapeNode = svg.querySelector('g[transform]');
+    expect(shapeNode?.getAttribute('transform')).toBe('translate(0.5,0.5)');
+    // the cell is at (10, 10): whole units, so its label is on whole pixels too
+    const rectEl = svg.querySelector('rect, path');
+    expect(rectEl?.getAttribute('x') ?? rectEl?.getAttribute('d')).toMatch(/^(10|M 10 10)\b/);
+
+    // draw.io mxImageExport.getSvgShapeOffset: no crisp offset for shapes without a stroke
+    const noStroke = entry({ id: 'x-nostroke', title: 'No stroke', style: 'rounded=0;html=1;strokeColor=none;fillColor=#ff0000;', width: 120, height: 60 });
+    const svg2 = await renderEntryForParity({ ...noStroke, kind: 'vertex' }, 2, { exportLayout: true, border: 10 });
+    expect(svg2.querySelector('g[transform^="translate(0.5"]')).toBeNull();
+  });
 });
 
 describe('libraryToPaletteDef', () => {

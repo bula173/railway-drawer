@@ -4,7 +4,7 @@
  *        Sidebar.createThumb does: add the cells, fit them into the thumb (minus the border),
  *        clone the SVG, clear the model.
  */
-import { Graph, Rectangle } from '@maxgraph/core';
+import { Graph, Rectangle, Shape } from '@maxgraph/core';
 import { installUserObjectLabels, registerDrawioNamedStyles } from '../../services/drawio-xml';
 import { installTableSupport } from '../../drawio-shapes/js/shapes-edges';
 import { installDrawioHtmlLabels } from '../../drawio-shapes/engine/html-labels';
@@ -55,6 +55,54 @@ function localizeFragmentRefs(svg: SVGSVGElement): void {
       else el.setAttribute(name, `#${id}`);
     }
   }
+}
+
+/**
+ * draw.io mxImageExport.getSvgShapeOffset (v32.4.1): the crisp half-pixel offset of a shape in
+ * the export. Unlike the screen offset (Shape.getSvgScreenOffset, which treats every shape as
+ * at least a 1px stroke), shapes without a stroke (strokeColor=none or strokeWidth=0) get no
+ * offset; shape-specific overrides (text, images, ...) are used unchanged.
+ * `outputScale` is the canvas scale of the SVG export (1 for PNG export, see exportToCanvas).
+ */
+export function exportShapeOffset(shape: Shape, outputScale = 1): number {
+  if (shape.getSvgScreenOffset !== Shape.prototype.getSvgScreenOffset) return shape.getSvgScreenOffset();
+  const stencilSw = shape.stencil?.strokeWidthValue;
+  const sw = shape.stencil && stencilSw !== 'inherit' ? Number(stencilSw) : (shape.strokeWidth ?? 0);
+  const stroke = shape.stroke as string | null | undefined;
+  const hasStroke = stroke != null && stroke !== '' && stroke !== 'none';
+  const scale = shape.scale * outputScale;
+  return hasStroke && sw > 0 && Math.max(1, Math.round(sw * scale)) % 2 === 1 ? 0.5 : 0;
+}
+
+/** Re-applies the shapes' crisp offsets the way draw.io's export paints them (exportShapeOffset). */
+export function applyExportShapeOffsets(graph: Graph): void {
+  graph.view.states.visit((_key, state) => {
+    const shape = state?.shape;
+    const node = shape?.node;
+    if (!shape || !node) return;
+    const off = exportShapeOffset(shape);
+    if (off !== 0) node.setAttribute('transform', `translate(${off},${off})`);
+    else node.removeAttribute('transform');
+  });
+}
+
+/**
+ * draw.io Graph.getSvg (v32.4.1, Graph.js:28100-28145): the graph bounds extended by each shape's
+ * bounding box moved by its export crisp offset (odd stroke widths), so that the export does not
+ * clip the right and bottom edge. View scale 1.
+ */
+export function exportBounds(graph: Graph, bounds: Rectangle): Rectangle {
+  let extended: Rectangle | null = null;
+  graph.view.states.visit((_key, state) => {
+    const shape = state?.shape;
+    const bb = shape?.boundingBox;
+    if (!shape || !bb) return;
+    const off = exportShapeOffset(shape);
+    if (off === 0) return;
+    extended ??= bounds.clone();
+    extended.add(new Rectangle(bb.x + off, bb.y + off, bb.width, bb.height));
+  });
+  return extended ?? bounds;
 }
 
 export class ThumbnailRenderer {
@@ -155,14 +203,19 @@ export class ThumbnailRenderer {
       let width: number;
       let height: number;
       if (opts.exportScale != null) {
-        // Graph.js:28147-28191: w = ceil(bounds.width * s) + 2 * border (s = 1 here), translate
-        // floored at the output scale so content moves by whole output pixels.
-        const out = opts.exportScale > 0 ? opts.exportScale : 1;
-        width = Math.max(1, Math.ceil(bw) + 2 * border);
-        height = Math.max(1, Math.ceil(bh) + 2 * border);
-        const dx = Math.floor(Math.round((border / out - bounds.x) * out * 1e6) / 1e6) / out;
-        const dy = Math.floor(Math.round((border / out - bounds.y) * out * 1e6) / 1e6) / out;
+        // Editor.exportToCanvas calls Graph.getSvg with scale 1 (the output scale is applied only
+        // when rasterizing), so getSvg's translate floor(border / scale - bounds.x) is in whole
+        // units: the cells land on integer coordinates and the border is not divided by the
+        // output scale. A fractional translate would put foreignObject labels on half pixels,
+        // which Chrome snaps to whole CSS pixels (1 output px off at scale 2).
+        // Graph.js:28100-28150: bounds extended by the half-pixel crisp offset of odd strokes.
+        const ext = exportBounds(graph, bounds);
+        width = Math.max(1, Math.ceil(ext.width) + 2 * border);
+        height = Math.max(1, Math.ceil(ext.height) + 2 * border);
+        const dx = Math.floor(Math.round((border - ext.x) * 1e6) / 1e6);
+        const dy = Math.floor(Math.round((border - ext.y) * 1e6) / 1e6);
         view.scaleAndTranslate(1, dx, dy);
+        applyExportShapeOffsets(graph);
       } else if (opts.scale != null) {
         const s = opts.scale;
         // bounds are at scale s here; translate is in unscaled units

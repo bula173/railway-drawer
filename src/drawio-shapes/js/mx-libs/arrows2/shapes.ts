@@ -1490,6 +1490,7 @@ export class mxShapeArrowsWedgeArrow extends ArrowShape {
     {name: 'startWidth', dispName: 'Wedge Width', type: 'float', min:0, defVal:25}
   ];
   override useSvgBoundingBox = true;
+  static drawioSvgBoundingBox = true;
 
   constructor() {
     // draw.io: mxArrow.call(this)
@@ -1525,6 +1526,7 @@ export class mxShapeArrowsWedgeArrowDashed extends ArrowShape {
     {name: 'startWidth', dispName: 'Wedge Width', type: 'float', min:0, defVal:25}
   ];
   override useSvgBoundingBox = true;
+  static drawioSvgBoundingBox = true;
 
   constructor() {
     // draw.io: mxArrowConnector.call(this)
@@ -1585,6 +1587,7 @@ export class mxShapeArrowsWedgeArrowDashed2 extends ArrowShape {
     {name: 'stepSize', dispName: 'Step Size', type: 'float', min:0, defVal:25}
   ];
   override useSvgBoundingBox = true;
+  static drawioSvgBoundingBox = true;
   maxSteps = 10000;
 
   constructor() {
