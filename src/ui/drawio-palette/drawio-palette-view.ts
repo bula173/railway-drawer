@@ -94,8 +94,15 @@ function getRenderer(): ThumbnailRenderer {
 }
 
 /** Visual parity harness: renders an entry at a fixed scale with the palette's hidden graph. */
-export function renderEntryForParity(entry: PaletteEntry, scale: number): Promise<SVGSVGElement> {
-  return getRenderer().render(entry, { scale, border: 0 });
+export function renderEntryForParity(
+  entry: PaletteEntry,
+  scale: number,
+  opts: { exportLayout?: boolean; border?: number } = {},
+): Promise<SVGSVGElement> {
+  return getRenderer().render(
+    entry,
+    opts.exportLayout ? { exportScale: scale, border: opts.border ?? 0 } : { scale, border: opts.border ?? 0 },
+  );
 }
 
 /** Test helper: drops the shared renderer and its hidden graph. */

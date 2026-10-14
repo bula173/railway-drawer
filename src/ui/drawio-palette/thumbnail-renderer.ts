@@ -29,6 +29,32 @@ export interface RenderOptions {
   border?: number;
   /** Fit, but never enlarge beyond scale 1 (hover previews). */
   maxScale?: number;
+  /**
+   * draw.io export layout (Graph.getSvg + Editor.exportToCanvas, v32.4.1): render at view scale 1
+   * with the translate floored at this output scale; the caller rasterizes the SVG scaled by it.
+   */
+  exportScale?: number;
+}
+
+/**
+ * The live graph references in-document ids through the page URL (maxGraph/draw.io getBaseUrl,
+ * e.g. curvedText's `<textPath href="http://host/#ctp-1">`). A standalone copy of the SVG (an
+ * `<img>` or a data URI) cannot resolve those, so they become plain `#id` references.
+ */
+function localizeFragmentRefs(svg: SVGSVGElement): void {
+  const XLINK = 'http://www.w3.org/1999/xlink';
+  for (const el of Array.from(svg.querySelectorAll('textPath, use, image, a, pattern, linearGradient, radialGradient, filter, mpath'))) {
+    for (const [ns, name] of [[null, 'href'], [XLINK, 'href']] as const) {
+      const value = ns ? el.getAttributeNS(ns, name) : el.getAttribute(name);
+      if (!value || value.startsWith('#') || value.startsWith('data:')) continue;
+      const hash = value.indexOf('#');
+      if (hash < 0) continue;
+      const id = value.substring(hash + 1);
+      if (!svg.querySelector(`[id="${id.replace(/["\\]/g, '\\$&')}"]`)) continue;
+      if (ns) el.setAttributeNS(ns, 'xlink:href', `#${id}`);
+      else el.setAttribute(name, `#${id}`);
+    }
+  }
 }
 
 export class ThumbnailRenderer {
@@ -128,7 +154,16 @@ export class ThumbnailRenderer {
 
       let width: number;
       let height: number;
-      if (opts.scale != null) {
+      if (opts.exportScale != null) {
+        // Graph.js:28147-28191: w = ceil(bounds.width * s) + 2 * border (s = 1 here), translate
+        // floored at the output scale so content moves by whole output pixels.
+        const out = opts.exportScale > 0 ? opts.exportScale : 1;
+        width = Math.max(1, Math.ceil(bw) + 2 * border);
+        height = Math.max(1, Math.ceil(bh) + 2 * border);
+        const dx = Math.floor(Math.round((border / out - bounds.x) * out * 1e6) / 1e6) / out;
+        const dy = Math.floor(Math.round((border / out - bounds.y) * out * 1e6) / 1e6) / out;
+        view.scaleAndTranslate(1, dx, dy);
+      } else if (opts.scale != null) {
         const s = opts.scale;
         // bounds are at scale s here; translate is in unscaled units
         width = Math.ceil(bw + 2 * border);
@@ -152,6 +187,7 @@ export class ThumbnailRenderer {
       const source = canvas && 'ownerSVGElement' in canvas ? canvas.ownerSVGElement : null;
       const svg = source ? (source.cloneNode(true) as SVGSVGElement) : (document.createElementNS(SVG_NS, 'svg') as SVGSVGElement);
       svg.removeAttribute('id');
+      localizeFragmentRefs(svg);
       svg.setAttribute('xmlns', SVG_NS);
       svg.setAttribute('width', String(width));
       svg.setAttribute('height', String(height));

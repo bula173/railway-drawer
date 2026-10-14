@@ -10,6 +10,7 @@ export * from './codec';
 export * from './colors';
 export * from './stencil-registry';
 export * from './stencil-fixes';
+export * from './shape-fixes';
 export * from './graph-compat';
 export * from './html-labels';
 export * from './view-fixes';

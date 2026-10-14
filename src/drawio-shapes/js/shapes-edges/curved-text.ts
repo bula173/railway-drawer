@@ -211,7 +211,8 @@ export class CurvedTextShape extends RectangleShape {
       }
 
       // Unique path ID (object identity avoids collisions across graphs)
-      const pathId = `${svg.idPrefix ?? ''}ctp-${ObjectIdentity.get(this as unknown as object) ?? ''}`;
+      // maxGraph identities look like 'CurvedTextShape#5'; keep the id a plain URL fragment
+      const pathId = `${svg.idPrefix ?? ''}ctp-${String(ObjectIdentity.get(this as unknown as object) ?? '').replace(/[^\w-]/g, '-')}`;
       const doc = svg.root.ownerDocument;
       const useBaseUrl = typeof document !== 'undefined' && doc === document;
       const base = useBaseUrl ? svg.getBaseUrl().replace(/([()])/g, '\\$1') : '';

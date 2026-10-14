@@ -12,6 +12,7 @@
  * draw.io values, so a saved file still opens 1:1 in draw.io.
  */
 
+import { TextShape } from '@maxgraph/core';
 import type { Cell, CellStateStyle, Graph } from '@maxgraph/core';
 import { resolveColorValue, resolveLightDarkInCss, type DefaultColorMode } from './colors';
 
@@ -45,9 +46,23 @@ export function resolveStyleColors<T extends object>(style: T): T {
 }
 
 /**
+ * Labels with draw.io's base spacing: Graph.js:212-213 sets mxText.prototype.baseSpacingTop = 5
+ * and baseSpacingBottom = 1 ("Matches label positions of mxGraph 1.x"). maxGraph's TextShape
+ * assigns these per instance, so the renderer creates this subclass instead.
+ */
+export class DrawioTextShape extends TextShape {
+  constructor(...args: ConstructorParameters<typeof TextShape>) {
+    super(...args);
+    this.baseSpacingTop = 5;
+    this.baseSpacingBottom = 1;
+  }
+}
+
+/**
  * Installs draw.io color compatibility on one graph (idempotent):
  * - postProcessCellStyle resolves light-dark()/default on the resolved style only;
  * - getLabel rewrites light-dark() in HTML label CSS to the light value;
+ * - draw.io's label base spacing (DrawioTextShape) and 0.1 minimum SVG stroke width;
  * - the container gets `color-scheme: light`, so any light-dark() left in CSS picks the
  *   light value too.
  */
@@ -64,6 +79,11 @@ export function installDrawioCompat(graph: Graph): void {
     const label = baseGetLabel(cell);
     return typeof label === 'string' && LIGHT_DARK_RE.test(label) ? resolveLightDarkInCss(label) : label;
   };
+
+  // draw.io Graph constructor (Graph.js:941): thin strokes such as fillStrokeWidth=0.2 stay thin
+  // instead of being widened to maxGraph's 1px minimum.
+  graph.cellRenderer.minSvgStrokeWidth = 0.1;
+  graph.cellRenderer.defaultTextShape = DrawioTextShape;
 
   const container = graph.container as HTMLElement | null | undefined;
   if (container?.style) {

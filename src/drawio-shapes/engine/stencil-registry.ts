@@ -22,6 +22,7 @@ import type { CellState } from '@maxgraph/core';
 import { logger } from '../../drawio/logger';
 import { decompress } from './codec';
 import { installStencilArcFix } from './stencil-fixes';
+import { installDropShadowFix, installPolylineArcSizeFix } from './shape-fixes';
 
 const LOG = 'drawio-stencils';
 const STENCIL_PREFIX = 'stencil(';
@@ -141,6 +142,8 @@ export function installStencilEngine(options: StencilEngineOptions = {}): void {
   installed = true;
 
   installStencilArcFix();
+  installPolylineArcSizeFix();
+  installDropShadowFix();
   ensureNullPrototypeStore();
   // Typed as returning StencilShape, but maxGraph itself returns undefined for unknown names
   StencilShapeRegistry.getStencil = ((name: string) => lookupStencil(name)) as typeof StencilShapeRegistry.getStencil;

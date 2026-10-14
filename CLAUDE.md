@@ -45,13 +45,19 @@ CI (`.github/workflows/build-and-deploy.yml`) runs typecheck, typecheck:tests, l
 - `tests/e2e/drawio-parity.spec.ts`: renders every palette entry (7 draw.io palettes + ERTMS, 347) in
   embed.diagrams.net (`export` message, served from a routed `http://localhost/parity/drawio-host.html`) and
   in the app through `window.__rdParity.render(xml, {scale, border, background})` (`src/debug/parity-hook.ts`,
-  installed only in dev builds or with `?parity=1`), then compares them (`tests/e2e/parity/compare.ts`: best
+  installed only in dev builds or with `?parity=1`; it mirrors draw.io's PNG export: an SVG at view scale 1
+  laid out like `Graph.getSvg`, rasterized with `ctx.scale(scale)` like `Editor.exportToCanvas`, so
+  rounding and the 0.5 px stroke offsets match; `__rdParity.svg(xml, opts)` returns that SVG for
+  debugging), then compares them (`tests/e2e/parity/compare.ts`: best
   alignment within ±2 px, a pixel differs only if its colour is not found within 1 px in the other image;
   pixelmatch gives the strict count). pass <= 2 %, warn <= 6 %, fail above; accepted differences are listed
   with a reason in `tests/e2e/parity/expected-mismatch.json`. Do not edit `src/` while it runs: Vite reloads
   the page and the remaining entries error.
   Report: `test-results/drawio-parity/index.html`. `PARITY_FILTER=<palette|id>`, `PARITY_LIMIT=<n>`.
   Skips itself on port != 80 (`PARITY_ANY_PORT=1` overrides), offline (`E2E_OFFLINE=1`) or on a 403.
+  Last full run: 335 pass, 0 warn, 0 fail, 12 expected (images with draw.io-relative `img/` paths,
+  sketch=1, `%date%` placeholders, the List templates draw.io's export does not lay out, the mermaid
+  Sankey gradient band). ERTMS: 40/40 pass.
 - `tests/e2e/drawio-palette.spec.ts` (any port): draw.io tab renders, inserts keep draw.io styles, autosave
   writes real draw.io shape names.
 
@@ -159,7 +165,11 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
 - maxGraph 0.10.3 gaps fixed for draw.io content (engine/): `stencil-fixes.ts` (StencilShape read
   `large-arc-flag="0"` as true, so stencil arcs were wrong; `<fillcolor color="accentColor" default=..>` style
   keys), `html-labels.ts` (`html=1` cells render sanitized HTML labels; maxGraph only has a graph-wide flag),
-  `view-fixes.ts` (edge styles for edges without a source terminal; `inherit` style values). maxGraph
+  `view-fixes.ts` (edge styles for edges without a source terminal; `inherit` style values),
+  `shape-fixes.ts` (rounded edges use `arcSize / 2` like mxPolyline; `shadow=1` is draw.io's CSS
+  `drop-shadow()` filter instead of maxGraph's offset copies, whose fill was the boolean flag), and
+  `graph-compat.ts` (`DrawioTextShape`: draw.io's label `baseSpacingTop = 5` / `baseSpacingBottom = 1`,
+  Graph.js:212; `minSvgStrokeWidth = 0.1`, Graph.js:941). maxGraph
   registers its core shapes when the first `Graph` is created, which silently replaced draw.io's `hexagon`:
   `registerDrawioJsShapes()` calls `Graph.prototype.registerDefaults()` first.
 - Tab graphs (`TabManager.createTab`): `applyDrawioDefaultStyles` (draw.io's styles/default.xml: white fill,

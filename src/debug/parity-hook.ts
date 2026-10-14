@@ -22,6 +22,8 @@ export interface ParityRenderOptions {
 
 export interface ParityHook {
   render(xml: string, opts?: ParityRenderOptions): Promise<string>;
+  /** Debugging: the serialized SVG that `render` rasterizes. */
+  svg(xml: string, opts?: ParityRenderOptions): Promise<string>;
 }
 
 declare global {
@@ -41,10 +43,10 @@ function loadImage(url: string): Promise<HTMLImageElement> {
   });
 }
 
-/** Renders `<mxGraphModel>` XML to a `data:image/png;base64,...` URI. */
-export async function renderXmlToPng(xml: string, opts: ParityRenderOptions = {}): Promise<string> {
+/** Renders `<mxGraphModel>` XML to the SVG that `renderXmlToPng` rasterizes (draw.io getSvg layout). */
+async function renderXmlToSvg(xml: string, opts: ParityRenderOptions = {}): Promise<SVGSVGElement> {
   const scale = opts.scale && opts.scale > 0 ? opts.scale : 1;
-  const border = Math.max(0, opts.border ?? 0) * scale;
+  const border = Math.max(0, opts.border ?? 0);
   await ensureStencilsForXml(xml);
   const entry: PaletteEntry = {
     id: `parity-${++counter}`,
@@ -57,17 +59,26 @@ export async function renderXmlToPng(xml: string, opts: ParityRenderOptions = {}
     cls: 'd',
     source: 'parity',
   };
-  const svg = await renderEntryForParity(entry, scale);
+  // Same pipeline as draw.io's PNG export (jgraph/drawio v32.4.1 Editor.exportToCanvas +
+  // Graph.getSvg): an SVG at scale 1 with the border inside, rasterized with ctx.scale(scale).
+  const svg = await renderEntryForParity(entry, scale, { exportLayout: true, border });
+  svg.removeAttribute('class');
+  svg.setAttribute('style', '-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;');
+  return svg;
+}
+
+/** Renders `<mxGraphModel>` XML to a `data:image/png;base64,...` URI. */
+export async function renderXmlToPng(xml: string, opts: ParityRenderOptions = {}): Promise<string> {
+  const scale = opts.scale && opts.scale > 0 ? opts.scale : 1;
+  const svg = await renderXmlToSvg(xml, opts);
   const w = Math.max(1, parseFloat(svg.getAttribute('width') ?? '1'));
   const h = Math.max(1, parseFloat(svg.getAttribute('height') ?? '1'));
-  svg.removeAttribute('class');
-  svg.removeAttribute('style');
   const markup = new XMLSerializer().serializeToString(svg);
   const img = await loadImage(`data:image/svg+xml;charset=utf-8,${encodeURIComponent(markup)}`);
 
   const canvas = document.createElement('canvas');
-  canvas.width = Math.ceil(w + 2 * border);
-  canvas.height = Math.ceil(h + 2 * border);
+  canvas.width = Math.ceil(w * scale);
+  canvas.height = Math.ceil(h * scale);
   const ctx = canvas.getContext('2d');
   if (!ctx) throw new Error('No 2D canvas context');
   const bg = opts.background;
@@ -75,7 +86,8 @@ export async function renderXmlToPng(xml: string, opts: ParityRenderOptions = {}
     ctx.fillStyle = bg;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
   }
-  ctx.drawImage(img, border, border, w, h);
+  if (scale !== 1) ctx.scale(scale, scale);
+  ctx.drawImage(img, 0, 0);
   return canvas.toDataURL('image/png');
 }
 
@@ -88,5 +100,8 @@ export function installParityHook(): void {
     // no URL: keep the build-time decision
   }
   if (!enabled) return;
-  window.__rdParity = { render: renderXmlToPng };
+  window.__rdParity = {
+    render: renderXmlToPng,
+    svg: async (xml, opts) => new XMLSerializer().serializeToString(await renderXmlToSvg(xml, opts)),
+  };
 }
