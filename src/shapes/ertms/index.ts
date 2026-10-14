@@ -94,13 +94,21 @@ class BaliseMarkerShape extends RectangleShape {
 }
 
 /**
- * Register ERTMS shapes
+ * Registers the renderers of the ERTMS placeholder shapes only (no palette entries), so diagrams
+ * saved with them still open. The ERTMS palette is the draw.io library (public/libraries/ertms.xml).
  */
-export function registerErtmsShapes(): void {
+export function registerErtmsShapeClasses(): void {
   CellRenderer.registerShape('ertms-signal', SignalLightShape as any);
   CellRenderer.registerShape('ertms-track', TrackLineShape as any);
   CellRenderer.registerShape('ertms-train', TrainIconShape as any);
   CellRenderer.registerShape('ertms-balise', BaliseMarkerShape as any);
+}
+
+/**
+ * Register ERTMS shapes (renderers and the legacy palette entries)
+ */
+export function registerErtmsShapes(): void {
+  registerErtmsShapeClasses();
 
   // Register in shape registry for toolbar
   shapeRegistry.register({

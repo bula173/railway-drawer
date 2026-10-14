@@ -1,271 +1,92 @@
 /**
- * Draw.io mxArrows shapes registry
+ * Draw.io mxArrows shapes registry (legacy entry points).
+ *
+ * Delegates to the port of draw.io shapes/mxArrows.js in
+ * src/drawio-shapes/js/mx-libs/arrows2:
+ * - the real draw.io names ('mxgraph.arrows2.arrow', ...) are registered,
+ * - the legacy keys ('mxarrows.Arrows2Arrow', ...) used by older saved files
+ *   stay registered as aliases of the same constructors,
+ * - ShapeRegistry entries keep their ids but insert `shape=mxgraph.arrows2.*`,
+ *   so new cells open 1:1 in draw.io.
  */
 
-import { CellRenderer } from '@maxgraph/core';
+import { CellRenderer, type Shape } from '@maxgraph/core';
 import { shapeRegistry } from '../registry.js';
-import {
-  Arrows2ArrowShape,
-  Arrows2TwoWayArrowShape,
-  Arrows2StylisedArrowShape,
-  Arrows2SharpArrowShape,
-  Arrows2SharpArrow2Shape,
-  Arrows2CalloutArrowShape,
-  Arrows2BendArrowShape,
-  Arrows2BendDoubleArrowShape,
-  Arrows2CalloutDoubleArrowShape,
-  Arrows2CalloutQuadArrowShape,
-  Arrows2CalloutDouble90ArrowShape,
-  Arrows2QuadArrowShape,
-  Arrows2TriadArrowShape,
-  Arrows2TailedArrowShape,
-  Arrows2TailedNotchedArrowShape,
-  Arrows2StripedArrowShape,
-  Arrows2JumpInArrowShape,
-  Arrows2UTurnArrowShape,
-} from './index.js';
+import { MX_ARROWS2_SHAPES, registerMxArrows2Shapes } from '../../drawio-shapes/js/mx-libs/arrows2/index.js';
 
-/**
- * Register all draw.io mxArrows shape classes with CellRenderer
- */
-export function registerDrawioMxArrowsShapeClasses(): void {
-  CellRenderer.defaultShapes['mxarrows.Arrows2Arrow'] = Arrows2ArrowShape as any;
-  CellRenderer.defaultShapes['mxarrows.Arrows2TwoWayArrow'] = Arrows2TwoWayArrowShape as any;
-  CellRenderer.defaultShapes['mxarrows.Arrows2StylisedArrow'] = Arrows2StylisedArrowShape as any;
-  CellRenderer.defaultShapes['mxarrows.Arrows2SharpArrow'] = Arrows2SharpArrowShape as any;
-  CellRenderer.defaultShapes['mxarrows.Arrows2SharpArrow2'] = Arrows2SharpArrow2Shape as any;
-  CellRenderer.defaultShapes['mxarrows.Arrows2CalloutArrow'] = Arrows2CalloutArrowShape as any;
-  CellRenderer.defaultShapes['mxarrows.Arrows2BendArrow'] = Arrows2BendArrowShape as any;
-  CellRenderer.defaultShapes['mxarrows.Arrows2BendDoubleArrow'] = Arrows2BendDoubleArrowShape as any;
-  CellRenderer.defaultShapes['mxarrows.Arrows2CalloutDoubleArrow'] = Arrows2CalloutDoubleArrowShape as any;
-  CellRenderer.defaultShapes['mxarrows.Arrows2CalloutQuadArrow'] = Arrows2CalloutQuadArrowShape as any;
-  CellRenderer.defaultShapes['mxarrows.Arrows2CalloutDouble90Arrow'] = Arrows2CalloutDouble90ArrowShape as any;
-  CellRenderer.defaultShapes['mxarrows.Arrows2QuadArrow'] = Arrows2QuadArrowShape as any;
-  CellRenderer.defaultShapes['mxarrows.Arrows2TriadArrow'] = Arrows2TriadArrowShape as any;
-  CellRenderer.defaultShapes['mxarrows.Arrows2TailedArrow'] = Arrows2TailedArrowShape as any;
-  CellRenderer.defaultShapes['mxarrows.Arrows2TailedNotchedArrow'] = Arrows2TailedNotchedArrowShape as any;
-  CellRenderer.defaultShapes['mxarrows.Arrows2StripedArrow'] = Arrows2StripedArrowShape as any;
-  CellRenderer.defaultShapes['mxarrows.Arrows2JumpInArrow'] = Arrows2JumpInArrowShape as any;
-  CellRenderer.defaultShapes['mxarrows.Arrows2UTurnArrow'] = Arrows2UTurnArrowShape as any;
+interface LegacyArrowEntry {
+  /** Legacy CellRenderer key (pre draw.io names). */
+  legacyKey: string;
+  /** Exact draw.io shape name. */
+  drawioName: string;
+  /** ShapeRegistry id (unchanged). */
+  id: string;
+  /** ShapeRegistry label (unchanged). */
+  label: string;
+}
+
+/** Legacy key -> draw.io name for the 18 arrows2 vertex shapes. */
+export const LEGACY_MXARROWS_ENTRIES: readonly LegacyArrowEntry[] = [
+  { legacyKey: 'mxarrows.Arrows2Arrow', drawioName: 'mxgraph.arrows2.arrow', id: 'drawio-mxarrows-arrows2-arrow', label: 'Arrows2 Arrow' },
+  { legacyKey: 'mxarrows.Arrows2TwoWayArrow', drawioName: 'mxgraph.arrows2.twoWayArrow', id: 'drawio-mxarrows-arrows2-two-way-arrow', label: 'Arrows2 Two Way Arrow' },
+  { legacyKey: 'mxarrows.Arrows2StylisedArrow', drawioName: 'mxgraph.arrows2.stylisedArrow', id: 'drawio-mxarrows-arrows2-stylised-arrow', label: 'Arrows2 Stylised Arrow' },
+  { legacyKey: 'mxarrows.Arrows2SharpArrow', drawioName: 'mxgraph.arrows2.sharpArrow', id: 'drawio-mxarrows-arrows2-sharp-arrow', label: 'Arrows2 Sharp Arrow' },
+  { legacyKey: 'mxarrows.Arrows2SharpArrow2', drawioName: 'mxgraph.arrows2.sharpArrow2', id: 'drawio-mxarrows-arrows2-sharp-arrow2', label: 'Arrows2 Sharp Arrow2' },
+  { legacyKey: 'mxarrows.Arrows2CalloutArrow', drawioName: 'mxgraph.arrows2.calloutArrow', id: 'drawio-mxarrows-arrows2-callout-arrow', label: 'Arrows2 Callout Arrow' },
+  { legacyKey: 'mxarrows.Arrows2BendArrow', drawioName: 'mxgraph.arrows2.bendArrow', id: 'drawio-mxarrows-arrows2-bend-arrow', label: 'Arrows2 Bend Arrow' },
+  { legacyKey: 'mxarrows.Arrows2BendDoubleArrow', drawioName: 'mxgraph.arrows2.bendDoubleArrow', id: 'drawio-mxarrows-arrows2-bend-double-arrow', label: 'Arrows2 Bend Double Arrow' },
+  { legacyKey: 'mxarrows.Arrows2CalloutDoubleArrow', drawioName: 'mxgraph.arrows2.calloutDoubleArrow', id: 'drawio-mxarrows-arrows2-callout-double-arrow', label: 'Arrows2 Callout Double Arrow' },
+  { legacyKey: 'mxarrows.Arrows2CalloutQuadArrow', drawioName: 'mxgraph.arrows2.calloutQuadArrow', id: 'drawio-mxarrows-arrows2-callout-quad-arrow', label: 'Arrows2 Callout Quad Arrow' },
+  { legacyKey: 'mxarrows.Arrows2CalloutDouble90Arrow', drawioName: 'mxgraph.arrows2.calloutDouble90Arrow', id: 'drawio-mxarrows-arrows2-callout-double90-arrow', label: 'Arrows2 Callout Double90 Arrow' },
+  { legacyKey: 'mxarrows.Arrows2QuadArrow', drawioName: 'mxgraph.arrows2.quadArrow', id: 'drawio-mxarrows-arrows2-quad-arrow', label: 'Arrows2 Quad Arrow' },
+  { legacyKey: 'mxarrows.Arrows2TriadArrow', drawioName: 'mxgraph.arrows2.triadArrow', id: 'drawio-mxarrows-arrows2-triad-arrow', label: 'Arrows2 Triad Arrow' },
+  { legacyKey: 'mxarrows.Arrows2TailedArrow', drawioName: 'mxgraph.arrows2.tailedArrow', id: 'drawio-mxarrows-arrows2-tailed-arrow', label: 'Arrows2 Tailed Arrow' },
+  { legacyKey: 'mxarrows.Arrows2TailedNotchedArrow', drawioName: 'mxgraph.arrows2.tailedNotchedArrow', id: 'drawio-mxarrows-arrows2-tailed-notched-arrow', label: 'Arrows2 Tailed Notched Arrow' },
+  { legacyKey: 'mxarrows.Arrows2StripedArrow', drawioName: 'mxgraph.arrows2.stripedArrow', id: 'drawio-mxarrows-arrows2-striped-arrow', label: 'Arrows2 Striped Arrow' },
+  { legacyKey: 'mxarrows.Arrows2JumpInArrow', drawioName: 'mxgraph.arrows2.jumpInArrow', id: 'drawio-mxarrows-arrows2-jump-in-arrow', label: 'Arrows2 Jump In Arrow' },
+  { legacyKey: 'mxarrows.Arrows2UTurnArrow', drawioName: 'mxgraph.arrows2.uTurnArrow', id: 'drawio-mxarrows-arrows2-u-turn-arrow', label: 'Arrows2 U Turn Arrow' },
+];
+
+/** Legacy key -> draw.io name, for loaders that want to normalise old files. */
+export const LEGACY_MXARROWS_TO_DRAWIO: Readonly<Record<string, string>> = Object.fromEntries(
+  LEGACY_MXARROWS_ENTRIES.map((e) => [e.legacyKey, e.drawioName]),
+);
+
+function ctorFor(drawioName: string): typeof Shape {
+  const hit = MX_ARROWS2_SHAPES.find(([name]) => name === drawioName);
+  if (!hit) throw new Error(`mxArrows port has no shape '${drawioName}'`);
+  return hit[1] as unknown as typeof Shape;
 }
 
 /**
- * Register draw.io mxArrows shapes with shape registry (for palette/menu)
+ * Registers the draw.io arrows2 shapes under their real names and the legacy
+ * 'mxarrows.*' keys as aliases of the same constructors. Idempotent.
+ * Returns all registered keys (draw.io names first, then legacy aliases).
+ */
+export function registerDrawioMxArrowsShapeClasses(): string[] {
+  const names = registerMxArrows2Shapes();
+  for (const e of LEGACY_MXARROWS_ENTRIES) {
+    CellRenderer.registerShape(e.legacyKey, ctorFor(e.drawioName));
+  }
+  return [...names, ...LEGACY_MXARROWS_ENTRIES.map((e) => e.legacyKey)];
+}
+
+/**
+ * Register draw.io arrows2 shapes with the shape registry (palette/menu).
+ * Ids and labels are unchanged; inserted cells use the real draw.io name.
  */
 export function registerDrawioMxArrowsShapes(): void {
-  shapeRegistry.register({
-    id: 'drawio-mxarrows-arrows2-arrow',
-    type: 'vertex',
-    label: 'Arrows2 Arrow',
-    group: 'Draw.io Arrows',
-    icon: '', // Icon will be generated from shape vertex at runtime
-    iconGeneratorClass: Arrows2ArrowShape,
-    width: 100,
-    height: 100,
-    style: { shape: 'mxarrows.Arrows2Arrow', fillColor: '#e3f2fd', strokeColor: '#1976d2' },
-  });
-
-  shapeRegistry.register({
-    id: 'drawio-mxarrows-arrows2-two-way-arrow',
-    type: 'vertex',
-    label: 'Arrows2 Two Way Arrow',
-    group: 'Draw.io Arrows',
-    icon: '', // Icon will be generated from shape vertex at runtime
-    iconGeneratorClass: Arrows2TwoWayArrowShape,
-    width: 100,
-    height: 100,
-    style: { shape: 'mxarrows.Arrows2TwoWayArrow', fillColor: '#e3f2fd', strokeColor: '#1976d2' },
-  });
-
-  shapeRegistry.register({
-    id: 'drawio-mxarrows-arrows2-stylised-arrow',
-    type: 'vertex',
-    label: 'Arrows2 Stylised Arrow',
-    group: 'Draw.io Arrows',
-    icon: '', // Icon will be generated from shape vertex at runtime
-    iconGeneratorClass: Arrows2StylisedArrowShape,
-    width: 100,
-    height: 100,
-    style: { shape: 'mxarrows.Arrows2StylisedArrow', fillColor: '#e3f2fd', strokeColor: '#1976d2' },
-  });
-
-  shapeRegistry.register({
-    id: 'drawio-mxarrows-arrows2-sharp-arrow',
-    type: 'vertex',
-    label: 'Arrows2 Sharp Arrow',
-    group: 'Draw.io Arrows',
-    icon: '', // Icon will be generated from shape vertex at runtime
-    iconGeneratorClass: Arrows2SharpArrowShape,
-    width: 100,
-    height: 100,
-    style: { shape: 'mxarrows.Arrows2SharpArrow', fillColor: '#e3f2fd', strokeColor: '#1976d2' },
-  });
-
-  shapeRegistry.register({
-    id: 'drawio-mxarrows-arrows2-sharp-arrow2',
-    type: 'vertex',
-    label: 'Arrows2 Sharp Arrow2',
-    group: 'Draw.io Arrows',
-    icon: '', // Icon will be generated from shape vertex at runtime
-    iconGeneratorClass: Arrows2SharpArrow2Shape,
-    width: 100,
-    height: 100,
-    style: { shape: 'mxarrows.Arrows2SharpArrow2', fillColor: '#e3f2fd', strokeColor: '#1976d2' },
-  });
-
-  shapeRegistry.register({
-    id: 'drawio-mxarrows-arrows2-callout-arrow',
-    type: 'vertex',
-    label: 'Arrows2 Callout Arrow',
-    group: 'Draw.io Arrows',
-    icon: '', // Icon will be generated from shape vertex at runtime
-    iconGeneratorClass: Arrows2CalloutArrowShape,
-    width: 100,
-    height: 100,
-    style: { shape: 'mxarrows.Arrows2CalloutArrow', fillColor: '#e3f2fd', strokeColor: '#1976d2' },
-  });
-
-  shapeRegistry.register({
-    id: 'drawio-mxarrows-arrows2-bend-arrow',
-    type: 'vertex',
-    label: 'Arrows2 Bend Arrow',
-    group: 'Draw.io Arrows',
-    icon: '', // Icon will be generated from shape vertex at runtime
-    iconGeneratorClass: Arrows2BendArrowShape,
-    width: 100,
-    height: 100,
-    style: { shape: 'mxarrows.Arrows2BendArrow', fillColor: '#e3f2fd', strokeColor: '#1976d2' },
-  });
-
-  shapeRegistry.register({
-    id: 'drawio-mxarrows-arrows2-bend-double-arrow',
-    type: 'vertex',
-    label: 'Arrows2 Bend Double Arrow',
-    group: 'Draw.io Arrows',
-    icon: '', // Icon will be generated from shape vertex at runtime
-    iconGeneratorClass: Arrows2BendDoubleArrowShape,
-    width: 100,
-    height: 100,
-    style: { shape: 'mxarrows.Arrows2BendDoubleArrow', fillColor: '#e3f2fd', strokeColor: '#1976d2' },
-  });
-
-  shapeRegistry.register({
-    id: 'drawio-mxarrows-arrows2-callout-double-arrow',
-    type: 'vertex',
-    label: 'Arrows2 Callout Double Arrow',
-    group: 'Draw.io Arrows',
-    icon: '', // Icon will be generated from shape vertex at runtime
-    iconGeneratorClass: Arrows2CalloutDoubleArrowShape,
-    width: 100,
-    height: 100,
-    style: { shape: 'mxarrows.Arrows2CalloutDoubleArrow', fillColor: '#e3f2fd', strokeColor: '#1976d2' },
-  });
-
-  shapeRegistry.register({
-    id: 'drawio-mxarrows-arrows2-callout-quad-arrow',
-    type: 'vertex',
-    label: 'Arrows2 Callout Quad Arrow',
-    group: 'Draw.io Arrows',
-    icon: '', // Icon will be generated from shape vertex at runtime
-    iconGeneratorClass: Arrows2CalloutQuadArrowShape,
-    width: 100,
-    height: 100,
-    style: { shape: 'mxarrows.Arrows2CalloutQuadArrow', fillColor: '#e3f2fd', strokeColor: '#1976d2' },
-  });
-
-  shapeRegistry.register({
-    id: 'drawio-mxarrows-arrows2-callout-double90-arrow',
-    type: 'vertex',
-    label: 'Arrows2 Callout Double90 Arrow',
-    group: 'Draw.io Arrows',
-    icon: '', // Icon will be generated from shape vertex at runtime
-    iconGeneratorClass: Arrows2CalloutDouble90ArrowShape,
-    width: 100,
-    height: 100,
-    style: { shape: 'mxarrows.Arrows2CalloutDouble90Arrow', fillColor: '#e3f2fd', strokeColor: '#1976d2' },
-  });
-
-  shapeRegistry.register({
-    id: 'drawio-mxarrows-arrows2-quad-arrow',
-    type: 'vertex',
-    label: 'Arrows2 Quad Arrow',
-    group: 'Draw.io Arrows',
-    icon: '', // Icon will be generated from shape vertex at runtime
-    iconGeneratorClass: Arrows2QuadArrowShape,
-    width: 100,
-    height: 100,
-    style: { shape: 'mxarrows.Arrows2QuadArrow', fillColor: '#e3f2fd', strokeColor: '#1976d2' },
-  });
-
-  shapeRegistry.register({
-    id: 'drawio-mxarrows-arrows2-triad-arrow',
-    type: 'vertex',
-    label: 'Arrows2 Triad Arrow',
-    group: 'Draw.io Arrows',
-    icon: '', // Icon will be generated from shape vertex at runtime
-    iconGeneratorClass: Arrows2TriadArrowShape,
-    width: 100,
-    height: 100,
-    style: { shape: 'mxarrows.Arrows2TriadArrow', fillColor: '#e3f2fd', strokeColor: '#1976d2' },
-  });
-
-  shapeRegistry.register({
-    id: 'drawio-mxarrows-arrows2-tailed-arrow',
-    type: 'vertex',
-    label: 'Arrows2 Tailed Arrow',
-    group: 'Draw.io Arrows',
-    icon: '', // Icon will be generated from shape vertex at runtime
-    iconGeneratorClass: Arrows2TailedArrowShape,
-    width: 100,
-    height: 100,
-    style: { shape: 'mxarrows.Arrows2TailedArrow', fillColor: '#e3f2fd', strokeColor: '#1976d2' },
-  });
-
-  shapeRegistry.register({
-    id: 'drawio-mxarrows-arrows2-tailed-notched-arrow',
-    type: 'vertex',
-    label: 'Arrows2 Tailed Notched Arrow',
-    group: 'Draw.io Arrows',
-    icon: '', // Icon will be generated from shape vertex at runtime
-    iconGeneratorClass: Arrows2TailedNotchedArrowShape,
-    width: 100,
-    height: 100,
-    style: { shape: 'mxarrows.Arrows2TailedNotchedArrow', fillColor: '#e3f2fd', strokeColor: '#1976d2' },
-  });
-
-  shapeRegistry.register({
-    id: 'drawio-mxarrows-arrows2-striped-arrow',
-    type: 'vertex',
-    label: 'Arrows2 Striped Arrow',
-    group: 'Draw.io Arrows',
-    icon: '', // Icon will be generated from shape vertex at runtime
-    iconGeneratorClass: Arrows2StripedArrowShape,
-    width: 100,
-    height: 100,
-    style: { shape: 'mxarrows.Arrows2StripedArrow', fillColor: '#e3f2fd', strokeColor: '#1976d2' },
-  });
-
-  shapeRegistry.register({
-    id: 'drawio-mxarrows-arrows2-jump-in-arrow',
-    type: 'vertex',
-    label: 'Arrows2 Jump In Arrow',
-    group: 'Draw.io Arrows',
-    icon: '', // Icon will be generated from shape vertex at runtime
-    iconGeneratorClass: Arrows2JumpInArrowShape,
-    width: 100,
-    height: 100,
-    style: { shape: 'mxarrows.Arrows2JumpInArrow', fillColor: '#e3f2fd', strokeColor: '#1976d2' },
-  });
-
-  shapeRegistry.register({
-    id: 'drawio-mxarrows-arrows2-u-turn-arrow',
-    type: 'vertex',
-    label: 'Arrows2 U Turn Arrow',
-    group: 'Draw.io Arrows',
-    icon: '', // Icon will be generated from shape vertex at runtime
-    iconGeneratorClass: Arrows2UTurnArrowShape,
-    width: 100,
-    height: 100,
-    style: { shape: 'mxarrows.Arrows2UTurnArrow', fillColor: '#e3f2fd', strokeColor: '#1976d2' },
-  });
+  for (const e of LEGACY_MXARROWS_ENTRIES) {
+    shapeRegistry.register({
+      id: e.id,
+      type: 'vertex',
+      label: e.label,
+      group: 'Draw.io Arrows',
+      icon: '', // Icon will be generated from shape vertex at runtime
+      iconGeneratorClass: ctorFor(e.drawioName),
+      width: 100,
+      height: 100,
+      style: { shape: e.drawioName, fillColor: '#e3f2fd', strokeColor: '#1976d2' },
+    });
+  }
 }

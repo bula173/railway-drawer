@@ -38,6 +38,10 @@ import { shouldIgnoreGraphShortcut } from './ui/delete';
 import { registerDrawioCodecs } from './services/drawio-xml';
 import { switchEditorMode } from './drawio/editorMode';
 import type { EditorMode } from './drawio/editorMode';
+import { ensureStencilsForXml, installDrawioCompat, installStencilEngine, parseMxLibrary } from './drawio-shapes/engine';
+import { PALETTES, loadPalette } from './drawio-shapes/palettes';
+import { createDrawioPaletteView, ertmsPaletteSource, setDrawioPaletteEngine } from './ui/drawio-palette';
+import { installParityHook } from './debug/parity-hook';
 
 /**
  * @brief Register all built-in shape definitions
@@ -46,6 +50,10 @@ import type { EditorMode } from './drawio/editorMode';
  */
 // Codecs for reading draw.io files; before any file or cache is loaded
 registerDrawioCodecs();
+
+// draw.io stencils: shape=stencil(...), named stencil sets from public/stencils/, JS shapes win
+installStencilEngine({ baseUrl: import.meta.env.BASE_URL });
+setDrawioPaletteEngine({ ensureStencilsForXml, installDrawioCompat, parseMxLibrary });
 
 try {
   registerShapes();
@@ -364,6 +372,12 @@ graphContainer.addEventListener('dragleave', (evt) => {
  * @details Manages the tabbed interface for the left panel, allowing users
  * to switch between Shapes, Stencils, and Layers views.
  */
+// Content of the draw.io tab (palettes from jgraph/drawio + the ERTMS library)
+const leftPanelContainer = document.getElementById('leftpanel-container')!;
+const drawioPaletteContainer = document.createElement('div');
+drawioPaletteContainer.id = 'drawio-palette-container';
+drawioPaletteContainer.className = 'panel-content';
+leftPanelContainer.insertBefore(drawioPaletteContainer, document.getElementById('shapes-container'));
 const leftPanelTabs = new LeftPanelTabs('leftpanel-container');
 /**
  * @brief Register left panel tab content areas
@@ -371,6 +385,7 @@ const leftPanelTabs = new LeftPanelTabs('leftpanel-container');
  * for shapes, stencils, and layers panels.
  */
 leftPanelTabs.registerTabContent('shapes', 'shapes-container');
+leftPanelTabs.registerTabContent('drawio', 'drawio-palette-container');
 leftPanelTabs.registerTabContent('stencils', 'stencils-container');
 leftPanelTabs.registerTabContent('layers', 'layers-panel');
 leftPanelTabs.registerTabContent('plantuml', 'plantuml-panel');
@@ -418,6 +433,26 @@ stencilManager.setOnToggle(() => {
   });
   shapeToolbar.setEnabledGroups(enabledGroups);
 });
+
+// ============= DRAW.IO PALETTES =============
+
+/**
+ * @brief draw.io shape palettes (General, Misc, Advanced, Basic, Arrows, Flowchart, ERTMS, ...)
+ * @details Same entries, titles, sizes and styles as draw.io (jgraph/drawio v32.4.1); inserted
+ * cells keep draw.io's style strings, so saved files open 1:1 in draw.io. ERTMS is the draw.io
+ * library public/libraries/ertms.xml. Click inserts at the view centre, drag drops at the pointer.
+ */
+createDrawioPaletteView({
+  container: drawioPaletteContainer,
+  getGraph: () => tabManager.getActiveTab()?.graph ?? null,
+  palettes: PALETTES.map((meta) => ({ ...meta, load: () => loadPalette(meta.id) })),
+  extraLibraries: [ertmsPaletteSource(import.meta.env.BASE_URL)],
+  dropTarget: graphContainer,
+  onError: (message) => globalNotificationManager.error(message),
+});
+
+// Visual parity harness hook (dev server / ?parity=1 only)
+installParityHook();
 
 // ============= CUSTOM SHAPES =============
 

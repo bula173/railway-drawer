@@ -20,7 +20,15 @@ import { CanvasProperties } from './canvas-properties';
 import { ContextMenuController } from './context-menu';
 import { MenuController } from './menu';
 import { InteractiveUIController } from './interactive-ui';
-import { installUserObjectLabels, registerDrawioNamedStyles } from '../services/drawio-xml';
+import { applyDrawioDefaultStyles, installUserObjectLabels, registerDrawioNamedStyles } from '../services/drawio-xml';
+import {
+  installDanglingEdgeStyles,
+  installDrawioCompat,
+  installDrawioHtmlLabels,
+  installInheritStyleValues,
+} from '../drawio-shapes/engine';
+import { installTableSupport } from '../drawio-shapes/js/shapes-edges';
+import { installStencilAutoload } from './drawio-stencil-autoload';
 import { CacheService, CacheData, CacheSaveResult } from '../services/cache-service';
 import { globalSaveStatusIndicator } from './save-status';
 import { globalNotificationManager } from './notification';
@@ -242,10 +250,25 @@ export class TabManager {
       shape: 'image',
       perimeter: loopArrowPerimeter,
     });
+    // draw.io's default colours, fonts and arrows (styles/default.xml), so draw.io shapes and
+    // files look as in draw.io; the export only writes values draw.io would resolve differently
+    applyDrawioDefaultStyles(stylesheet);
     // Base style names used in draw.io files (text, ellipse, swimlane, ...)
     registerDrawioNamedStyles(stylesheet);
     // Labels of draw.io UserObject cells (values that are XML elements)
     installUserObjectLabels(graph);
+    // light-dark()/default colours (after installUserObjectLabels: it wraps getLabel)
+    installDrawioCompat(graph);
+    // html=1 labels render as (sanitized) HTML, as in draw.io
+    installDrawioHtmlLabels(graph);
+    // edge styles (elbow, orthogonal, isometric) also for edges without a source, as in draw.io
+    installDanglingEdgeStyles(graph);
+    // strokeColor=inherit (tables, lists) takes the parent's value
+    installInheritStyleValues(graph);
+    // draw.io tables, lists, stack layouts, collapsed tables
+    installTableSupport(graph);
+    // Named stencils (mxgraph.basic.*, ...) are fetched when cells using them arrive (load, paste, insert)
+    installStencilAutoload(graph);
 
     // Controllers bind to shared DOM and `document`; record those listeners so they are only
     // attached while this tab is active (see captureSharedListeners).

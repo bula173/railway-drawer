@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>draw.io parity host</title>
+<style>
+  html, body { margin: 0; background: #ffffff; }
+  iframe { border: 0; width: 1200px; height: 900px; }
+</style>
+</head>
+<body>
+<!--
+  Served by tests/e2e/drawio-parity.spec.ts through page.route at
+  http://localhost/parity/drawio-host.html (default port 80, so embed.diagrams.net
+  accepts the Referer). The iframe URL is injected as ?drawio=<url>.
+  window.parityReady: Promise<void> resolved on the editor's {event:'init'}.
+  window.parityExport(xml, opts): Promise<string> PNG data URI from {action:'export'}.
+-->
+<script>
+(function () {
+  var params = new URLSearchParams(location.search);
+  var base = params.get('drawio') || 'https://embed.diagrams.net/';
+  var src = base + (base.indexOf('?') >= 0 ? '&' : '?') + 'embed=1&proto=json&spin=0&ui=min&lang=en';
+  var origin = new URL(base).origin;
+  var iframe = document.createElement('iframe');
+  iframe.title = 'draw.io parity';
+  iframe.src = src;
+  document.body.appendChild(iframe);
+
+  var waiting = null;
+  var resolveReady;
+  window.parityReady = new Promise(function (r) { resolveReady = r; });
+
+  window.addEventListener('message', function (evt) {
+    if (evt.source !== iframe.contentWindow || evt.origin !== origin) return;
+    var msg;
+    try { msg = typeof evt.data === 'string' ? JSON.parse(evt.data) : evt.data; } catch (e) { return; }
+    if (!msg || !msg.event) return;
+    if (msg.event === 'init') { resolveReady(); return; }
+    if (msg.event === 'export' && waiting) {
+      var w = waiting;
+      waiting = null;
+      if (typeof msg.data === 'string' && msg.data.indexOf('data:image/png') === 0) w.resolve(msg.data);
+      else w.reject(new Error('draw.io export returned no PNG (' + (msg.message ? JSON.stringify(msg.message).slice(0, 120) : 'no data') + ')'));
+    }
+  });
+
+  /** Exports one model; calls are serialized by the caller. */
+  window.parityExport = function (xml, opts) {
+    opts = opts || {};
+    return window.parityReady.then(function () {
+      return new Promise(function (resolve, reject) {
+        var timer = setTimeout(function () { waiting = null; reject(new Error('draw.io export timed out')); }, opts.timeout || 30000);
+        waiting = {
+          resolve: function (v) { clearTimeout(timer); resolve(v); },
+          reject: function (e) { clearTimeout(timer); reject(e); }
+        };
+        iframe.contentWindow.postMessage(JSON.stringify({
+          action: 'export',
+          format: 'png',
+          xml: xml,
+          scale: opts.scale || 2,
+          border: opts.border != null ? opts.border : 10,
+          background: opts.background || '#ffffff',
+          shadow: false,
+          grid: false
+        }), origin);
+      });
+    });
+  };
+})();
+</script>
+</body>
+</html>

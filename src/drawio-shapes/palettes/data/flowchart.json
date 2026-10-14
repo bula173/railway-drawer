@@ -1,0 +1,482 @@
+{
+ "id": "flowchart",
+ "title": "Flowchart",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Flowchart.js:7",
+ "entries": [
+  {
+   "id": "flowchart-0-annotation",
+   "title": "Annotation",
+   "tags": "flowchart annotation 1  Annotation",
+   "kind": "vertex",
+   "width": 50,
+   "height": 100,
+   "style": "strokeWidth=2;html=1;shape=mxgraph.flowchart.annotation_1;align=left;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.flowchart.annotation_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Flowchart.js:20"
+  },
+  {
+   "id": "flowchart-1-annotation",
+   "title": "Annotation",
+   "tags": "flowchart annotation 2  Annotation",
+   "kind": "vertex",
+   "width": 50,
+   "height": 100,
+   "style": "strokeWidth=2;html=1;shape=mxgraph.flowchart.annotation_2;align=left;labelPosition=right;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.flowchart.annotation_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Flowchart.js:21"
+  },
+  {
+   "id": "flowchart-2-card",
+   "title": "Card",
+   "tags": "flowchart card  Card",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=card;whiteSpace=wrap;size=20;arcSize=12;",
+   "shapeNames": [
+    "card"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Flowchart.js:22"
+  },
+  {
+   "id": "flowchart-3-collate",
+   "title": "Collate",
+   "tags": "flowchart collate  Collate",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.flowchart.collate;",
+   "shapeNames": [
+    "mxgraph.flowchart.collate"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Flowchart.js:23"
+  },
+  {
+   "id": "flowchart-4-data",
+   "title": "Data",
+   "tags": "flowchart data  Data",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;",
+   "shapeNames": [
+    "parallelogram"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Flowchart.js:24"
+  },
+  {
+   "id": "flowchart-5-database",
+   "title": "Database",
+   "tags": "flowchart database  Database",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "strokeWidth=2;html=1;shape=mxgraph.flowchart.database;whiteSpace=wrap;",
+   "shapeNames": [
+    "mxgraph.flowchart.database"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Flowchart.js:25"
+  },
+  {
+   "id": "flowchart-6-decision",
+   "title": "Decision",
+   "tags": "flowchart decision  Decision",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;",
+   "shapeNames": [
+    "mxgraph.flowchart.decision"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Flowchart.js:26"
+  },
+  {
+   "id": "flowchart-7-delay",
+   "title": "Delay",
+   "tags": "flowchart delay  Delay",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "strokeWidth=2;html=1;shape=mxgraph.flowchart.delay;whiteSpace=wrap;",
+   "shapeNames": [
+    "mxgraph.flowchart.delay"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Flowchart.js:27"
+  },
+  {
+   "id": "flowchart-8-direct-data",
+   "title": "Direct Data",
+   "tags": "flowchart direct data  Direct Data",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "strokeWidth=2;html=1;shape=mxgraph.flowchart.direct_data;whiteSpace=wrap;",
+   "shapeNames": [
+    "mxgraph.flowchart.direct_data"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Flowchart.js:28"
+  },
+  {
+   "id": "flowchart-9-display",
+   "title": "Display",
+   "tags": "flowchart display  Display",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "strokeWidth=2;html=1;shape=mxgraph.flowchart.display;whiteSpace=wrap;",
+   "shapeNames": [
+    "mxgraph.flowchart.display"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Flowchart.js:29"
+  },
+  {
+   "id": "flowchart-10-document",
+   "title": "Document",
+   "tags": "flowchart document  Document",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "strokeWidth=2;html=1;shape=mxgraph.flowchart.document2;whiteSpace=wrap;size=0.25;",
+   "shapeNames": [
+    "mxgraph.flowchart.document2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Flowchart.js:30"
+  },
+  {
+   "id": "flowchart-11-extract-or-measurement",
+   "title": "Extract or Measurement",
+   "tags": "flowchart extract or measurement  Extract or Measurement",
+   "kind": "vertex",
+   "width": 95,
+   "height": 60,
+   "style": "strokeWidth=2;html=1;shape=mxgraph.flowchart.extract_or_measurement;whiteSpace=wrap;",
+   "shapeNames": [
+    "mxgraph.flowchart.extract_or_measurement"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Flowchart.js:31"
+  },
+  {
+   "id": "flowchart-12-internal-storage",
+   "title": "Internal Storage",
+   "tags": "flowchart internal storage  Internal Storage",
+   "kind": "vertex",
+   "width": 70,
+   "height": 70,
+   "style": "shape=internalStorage;whiteSpace=wrap;html=1;dx=15;dy=15;rounded=1;arcSize=8;strokeWidth=2;",
+   "shapeNames": [
+    "internalStorage"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Flowchart.js:32"
+  },
+  {
+   "id": "flowchart-13-loop-limit",
+   "title": "Loop Limit",
+   "tags": "flowchart loop limit  Loop Limit",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "strokeWidth=2;html=1;shape=mxgraph.flowchart.loop_limit;whiteSpace=wrap;",
+   "shapeNames": [
+    "mxgraph.flowchart.loop_limit"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Flowchart.js:33"
+  },
+  {
+   "id": "flowchart-14-manual-input",
+   "title": "Manual Input",
+   "tags": "flowchart manual input  Manual Input",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "html=1;strokeWidth=2;shape=manualInput;boundedLbl=1;whiteSpace=wrap;rounded=1;size=26;arcSize=11;",
+   "shapeNames": [
+    "manualInput"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Flowchart.js:34"
+  },
+  {
+   "id": "flowchart-15-manual-operation",
+   "title": "Manual Operation",
+   "tags": "flowchart manual operation  Manual Operation",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=middle;verticalAlign=middle;html=1;shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;size=0.23;arcSize=10;flipV=1;labelPosition=center;align=center;",
+   "shapeNames": [
+    "trapezoid"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Flowchart.js:35"
+  },
+  {
+   "id": "flowchart-16-merge-or-storage",
+   "title": "Merge or Storage",
+   "tags": "flowchart merge or storage  Merge or Storage",
+   "kind": "vertex",
+   "width": 95,
+   "height": 60,
+   "style": "strokeWidth=2;html=1;shape=mxgraph.flowchart.merge_or_storage;whiteSpace=wrap;",
+   "shapeNames": [
+    "mxgraph.flowchart.merge_or_storage"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Flowchart.js:36"
+  },
+  {
+   "id": "flowchart-17-multi-document",
+   "title": "Multi-Document",
+   "tags": "flowchart multi-document  Multi-Document",
+   "kind": "vertex",
+   "width": 88,
+   "height": 60,
+   "style": "strokeWidth=2;html=1;shape=mxgraph.flowchart.multi-document;whiteSpace=wrap;boundedLbl=1;",
+   "shapeNames": [
+    "mxgraph.flowchart.multi-document"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Flowchart.js:37"
+  },
+  {
+   "id": "flowchart-18-off-page-reference",
+   "title": "Off-Page Reference",
+   "tags": "flowchart off-page reference  Off-Page Reference",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=offPageConnector;rounded=0;size=0.5;",
+   "shapeNames": [
+    "offPageConnector"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Flowchart.js:38"
+  },
+  {
+   "id": "flowchart-19-on-page-reference",
+   "title": "On-Page Reference",
+   "tags": "flowchart on-page reference  On-Page Reference",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.flowchart.on-page_reference;",
+   "shapeNames": [
+    "mxgraph.flowchart.on-page_reference"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Flowchart.js:39"
+  },
+  {
+   "id": "flowchart-20-or",
+   "title": "Or",
+   "tags": "flowchart or 2  Or",
+   "kind": "vertex",
+   "width": 70,
+   "height": 70,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.flowchart.or_2;",
+   "shapeNames": [
+    "mxgraph.flowchart.or_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Flowchart.js:40"
+  },
+  {
+   "id": "flowchart-21-tape",
+   "title": "Tape",
+   "tags": "flowchart tape  Tape",
+   "kind": "vertex",
+   "width": 100,
+   "height": 65,
+   "style": "shape=tape;whiteSpace=wrap;html=1;strokeWidth=2;size=0.19",
+   "shapeNames": [
+    "tape"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Flowchart.js:41"
+  },
+  {
+   "id": "flowchart-22-parallel-mode",
+   "title": "Parallel Mode",
+   "tags": "flowchart parallel mode  Parallel Mode",
+   "kind": "vertex",
+   "width": 95,
+   "height": 40,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.flowchart.parallel_mode;accentColor=#ffff00;pointerEvents=1",
+   "shapeNames": [
+    "mxgraph.flowchart.parallel_mode"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Flowchart.js:42"
+  },
+  {
+   "id": "flowchart-23-predefined-process",
+   "title": "Predefined Process",
+   "tags": "flowchart predefined process  Predefined Process",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=process;whiteSpace=wrap;rounded=1;size=0.14;arcSize=6;",
+   "shapeNames": [
+    "process"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Flowchart.js:43"
+  },
+  {
+   "id": "flowchart-24-preparation",
+   "title": "Preparation",
+   "tags": "flowchart preparation  Preparation",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=hexagon;perimeter=hexagonPerimeter2;arcSize=6;size=0.27;",
+   "shapeNames": [
+    "hexagon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Flowchart.js:44"
+  },
+  {
+   "id": "flowchart-25-process",
+   "title": "Process",
+   "tags": "flowchart process  Process",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Flowchart.js:45"
+  },
+  {
+   "id": "flowchart-26-sequential-data",
+   "title": "Sequential Data",
+   "tags": "flowchart sequential data  Sequential Data",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "strokeWidth=2;html=1;shape=mxgraph.flowchart.sequential_data;whiteSpace=wrap;",
+   "shapeNames": [
+    "mxgraph.flowchart.sequential_data"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Flowchart.js:46"
+  },
+  {
+   "id": "flowchart-27-sort",
+   "title": "Sort",
+   "tags": "flowchart sort  Sort",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.flowchart.sort;",
+   "shapeNames": [
+    "mxgraph.flowchart.sort"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Flowchart.js:47"
+  },
+  {
+   "id": "flowchart-28-start",
+   "title": "Start",
+   "tags": "flowchart start 1  Start",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "strokeWidth=2;html=1;shape=mxgraph.flowchart.start_1;whiteSpace=wrap;",
+   "shapeNames": [
+    "mxgraph.flowchart.start_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Flowchart.js:48"
+  },
+  {
+   "id": "flowchart-29-start",
+   "title": "Start",
+   "tags": "flowchart start 2  Start",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "strokeWidth=2;html=1;shape=mxgraph.flowchart.start_2;whiteSpace=wrap;",
+   "shapeNames": [
+    "mxgraph.flowchart.start_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Flowchart.js:49"
+  },
+  {
+   "id": "flowchart-30-stored-data",
+   "title": "Stored Data",
+   "tags": "flowchart stored data  Stored Data",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "strokeWidth=2;html=1;shape=mxgraph.flowchart.stored_data;whiteSpace=wrap;",
+   "shapeNames": [
+    "mxgraph.flowchart.stored_data"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Flowchart.js:50"
+  },
+  {
+   "id": "flowchart-31-summing-junction",
+   "title": "Summing Junction",
+   "tags": "flowchart summing junction  Summing Junction",
+   "kind": "vertex",
+   "width": 70,
+   "height": 70,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.flowchart.summing_junction;",
+   "shapeNames": [
+    "mxgraph.flowchart.summing_junction"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Flowchart.js:51"
+  },
+  {
+   "id": "flowchart-32-terminator",
+   "title": "Terminator",
+   "tags": "flowchart terminator  Terminator",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;",
+   "shapeNames": [
+    "mxgraph.flowchart.terminator"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Flowchart.js:52"
+  },
+  {
+   "id": "flowchart-33-transfer",
+   "title": "Transfer",
+   "tags": "flowchart transfer  Transfer",
+   "kind": "vertex",
+   "width": 100,
+   "height": 70,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;strokeWidth=2;shape=mxgraph.arrows2.arrow;dy=0.6;dx=40;notch=0;",
+   "shapeNames": [
+    "mxgraph.arrows2.arrow"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Flowchart.js:53"
+  }
+ ]
+}

@@ -11,6 +11,8 @@ const baseURL = port === 80 ? 'http://localhost' : `http://localhost:${port}`;
 
 export default defineConfig({
   testDir: './tests/e2e',
+  // Only Playwright specs; tests/e2e/parity/__tests__/*.test.ts are vitest unit tests
+  testMatch: '*.spec.ts',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,

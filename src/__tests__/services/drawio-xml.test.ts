@@ -300,10 +300,11 @@ describe('drawio-xml', () => {
           strokeColor: '#6482B9',
           fontColor: '#774400',
         });
+        // endArrow=classic is draw.io's default too, so it is not written; rounded is not
         expect(parseStyleString(cells.get('e')!.getAttribute('style')!)).toMatchObject({
-          endArrow: 'classic',
           rounded: false,
         });
+        expect(parseStyleString(cells.get('e')!.getAttribute('style')!)).not.toHaveProperty('endArrow');
       } finally {
         cleanupTestGraph(graph);
       }

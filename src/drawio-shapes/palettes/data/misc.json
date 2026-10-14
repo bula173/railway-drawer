@@ -1,0 +1,753 @@
+{
+ "id": "misc",
+ "title": "Misc",
+ "drawioTag": "v32.4.1",
+ "source": "js/grapheditor/Sidebar.js:2947",
+ "entries": [
+  {
+   "id": "misc-0-autosize-text",
+   "title": "Autosize Text",
+   "tags": "autosize text Autosize Text",
+   "kind": "vertex",
+   "width": 60,
+   "height": 30,
+   "style": "text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;autosize=1;resizable=0;",
+   "value": "Text",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:2958"
+  },
+  {
+   "id": "misc-1-autosize-title",
+   "title": "Autosize Title",
+   "tags": "text heading title Autosize Title",
+   "kind": "vertex",
+   "width": 160,
+   "height": 40,
+   "style": "text;strokeColor=none;fillColor=none;html=1;fontSize=25;fontStyle=1;verticalAlign=middle;align=center;autosizeText=1;",
+   "value": "Autosize Title",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:2960"
+  },
+  {
+   "id": "misc-2-link",
+   "title": "Link",
+   "tags": "link url hyperlink text label",
+   "kind": "cells",
+   "width": 60,
+   "height": 40,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><UserObject label=\"Link\" link=\"https://www.draw.io\" id=\"2\"><mxCell style=\"text;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;align=center;verticalAlign=middle;fontColor=#0000EE;fontStyle=4;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"60\" height=\"40\" as=\"geometry\"/></mxCell></UserObject></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:2962"
+  },
+  {
+   "id": "misc-3-curved-text",
+   "title": "Curved Text",
+   "tags": "text curved arc path Curved Text",
+   "kind": "vertex",
+   "width": 70,
+   "height": 50,
+   "style": "shape=curvedText;noLabel=1;align=center;verticalAlign=middle;strokeColor=none;fillColor=none;",
+   "value": "Curved Text",
+   "shapeNames": [
+    "curvedText"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:2970"
+  },
+  {
+   "id": "misc-4-slanted-text-left",
+   "title": "Slanted Text Left",
+   "tags": "text slanted skewed isometric aws 3d face left Slanted Text Left",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;",
+   "value": "<div style=\"transform:skewY(30deg);\">Text</div>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:2975"
+  },
+  {
+   "id": "misc-5-slanted-text-right",
+   "title": "Slanted Text Right",
+   "tags": "text slanted skewed isometric aws 3d face right Slanted Text Right",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;",
+   "value": "<div style=\"transform:skewY(-30deg);\">Text</div>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:2978"
+  },
+  {
+   "id": "misc-6-slanted-text-top",
+   "title": "Slanted Text Top",
+   "tags": "text slanted skewed isometric aws 3d face top Slanted Text Top",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;",
+   "value": "<div style=\"transform:matrix(0.866,-0.5,0.866,0.5,0,0);\">Text</div>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:2981"
+  },
+  {
+   "id": "misc-7-variable",
+   "title": "Variable",
+   "tags": "variable placeholder metadata hello world text label",
+   "kind": "cells",
+   "width": 80,
+   "height": 20,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><UserObject label=\"%name% Text\" placeholders=\"1\" name=\"Variable\" id=\"2\"><mxCell style=\"text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"80\" height=\"20\" as=\"geometry\"/></mxCell></UserObject></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:2984"
+  },
+  {
+   "id": "misc-8-timestamp",
+   "title": "Timestamp",
+   "tags": "timestamp date time text label",
+   "kind": "cells",
+   "width": 160,
+   "height": 20,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><UserObject label=\"%date{ddd mmm dd yyyy HH:MM:ss}%\" placeholders=\"1\" id=\"2\"><mxCell style=\"text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"160\" height=\"20\" as=\"geometry\"/></mxCell></UserObject></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:2993"
+  },
+  {
+   "id": "misc-9-unordered-list",
+   "title": "Unordered List",
+   "tags": "unordered list",
+   "kind": "vertex",
+   "width": 100,
+   "height": 80,
+   "style": "text;strokeColor=none;fillColor=none;html=1;whiteSpace=wrap;verticalAlign=middle;overflow=hidden;",
+   "value": "<ul><li>Value 1</li><li>Value 2</li><li>Value 3</li></ul>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:3001"
+  },
+  {
+   "id": "misc-10-ordered-list",
+   "title": "Ordered List",
+   "tags": "ordered list",
+   "kind": "vertex",
+   "width": 100,
+   "height": 80,
+   "style": "text;strokeColor=none;fillColor=none;html=1;whiteSpace=wrap;verticalAlign=middle;overflow=hidden;",
+   "value": "<ol><li>Value 1</li><li>Value 2</li><li>Value 3</li></ol>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:3003"
+  },
+  {
+   "id": "misc-11-vertical-list",
+   "title": "Vertical List",
+   "tags": "vertical list Vertical List",
+   "kind": "cells",
+   "width": 60,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=table;tableRender=collapsed;startSize=0;container=1;collapsible=0;childLayout=tableLayout;fontSize=11;fillColor=none;strokeColor=none;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"60\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"60\" height=\"15\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Item 1\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;fontSize=12;align=left;spacingLeft=5;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"60\" height=\"15\" as=\"geometry\"><mxRectangle width=\"60\" height=\"15\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"\" style=\"shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"15\" width=\"60\" height=\"15\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"Item 2\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;fontSize=12;align=left;spacingLeft=5;\" vertex=\"1\" parent=\"5\"><mxGeometry width=\"60\" height=\"15\" as=\"geometry\"><mxRectangle width=\"60\" height=\"15\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"7\" value=\"\" style=\"shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"30\" width=\"60\" height=\"15\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"Item 3\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;fontSize=12;align=left;spacingLeft=5;\" vertex=\"1\" parent=\"7\"><mxGeometry width=\"60\" height=\"15\" as=\"geometry\"><mxRectangle width=\"60\" height=\"15\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"9\" style=\"shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"45\" width=\"60\" height=\"15\" as=\"geometry\"/></mxCell><mxCell id=\"10\" value=\"Item 4\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;fontSize=12;align=left;spacingLeft=5;\" vertex=\"1\" parent=\"9\"><mxGeometry width=\"60\" height=\"15\" as=\"geometry\"><mxRectangle width=\"60\" height=\"15\" as=\"alternateBounds\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "table",
+    "tableRow",
+    "partialRectangle"
+   ],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:3005"
+  },
+  {
+   "id": "misc-12-note",
+   "title": "Note",
+   "tags": "note",
+   "kind": "vertex",
+   "width": 150,
+   "height": 150,
+   "style": "shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;autosizeText=1;fontColor=#000000;darkOpacity=0.05;fillColor=#FFF9B2;strokeColor=none;fillStyle=solid;fontSize=20;direction=west;gradientDirection=north;gradientColor=#FFF2A1;shadow=1;size=20;pointerEvents=1;",
+   "value": "The size of the font in this note will change so that it fits within the note shape",
+   "shapeNames": [
+    "note"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:3007"
+  },
+  {
+   "id": "misc-13-table-1",
+   "title": "Table 1",
+   "tags": "table Table 1",
+   "kind": "cells",
+   "width": 180,
+   "height": 120,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=table;tableRender=collapsed;startSize=0;container=1;collapsible=0;childLayout=tableLayout;fontSize=16;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"180\" height=\"120\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"180\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;fontSize=16;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"60\" height=\"40\" as=\"geometry\"><mxRectangle width=\"60\" height=\"40\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;fontSize=16;\" vertex=\"1\" parent=\"3\"><mxGeometry x=\"60\" width=\"60\" height=\"40\" as=\"geometry\"><mxRectangle width=\"60\" height=\"40\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"6\" value=\"\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;fontSize=16;\" vertex=\"1\" parent=\"3\"><mxGeometry x=\"120\" width=\"60\" height=\"40\" as=\"geometry\"><mxRectangle width=\"60\" height=\"40\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"7\" value=\"\" style=\"shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"40\" width=\"180\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;fontSize=16;\" vertex=\"1\" parent=\"7\"><mxGeometry width=\"60\" height=\"40\" as=\"geometry\"><mxRectangle width=\"60\" height=\"40\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"9\" value=\"\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;fontSize=16;\" vertex=\"1\" parent=\"7\"><mxGeometry x=\"60\" width=\"60\" height=\"40\" as=\"geometry\"><mxRectangle width=\"60\" height=\"40\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"10\" value=\"\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;fontSize=16;\" vertex=\"1\" parent=\"7\"><mxGeometry x=\"120\" width=\"60\" height=\"40\" as=\"geometry\"><mxRectangle width=\"60\" height=\"40\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"11\" value=\"\" style=\"shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"80\" width=\"180\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"12\" value=\"\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;fontSize=16;\" vertex=\"1\" parent=\"11\"><mxGeometry width=\"60\" height=\"40\" as=\"geometry\"><mxRectangle width=\"60\" height=\"40\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"13\" value=\"\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;fontSize=16;\" vertex=\"1\" parent=\"11\"><mxGeometry x=\"60\" width=\"60\" height=\"40\" as=\"geometry\"><mxRectangle width=\"60\" height=\"40\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"14\" value=\"\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;fontSize=16;\" vertex=\"1\" parent=\"11\"><mxGeometry x=\"120\" width=\"60\" height=\"40\" as=\"geometry\"><mxRectangle width=\"60\" height=\"40\" as=\"alternateBounds\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "table",
+    "tableRow",
+    "partialRectangle"
+   ],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:3011"
+  },
+  {
+   "id": "misc-14-table-2",
+   "title": "Table 2",
+   "tags": "table Table 2",
+   "kind": "cells",
+   "width": 180,
+   "height": 120,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=table;tableRender=collapsed;html=1;whiteSpace=wrap;startSize=0;container=1;collapsible=0;childLayout=tableLayout;columnLines=0;rowLines=0;fontSize=16;strokeColor=default;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"180\" height=\"120\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;strokeColor=inherit;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"180\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Value 1\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;overflow=hidden;fontSize=12;strokeColor=inherit;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"60\" height=\"40\" as=\"geometry\"><mxRectangle width=\"60\" height=\"40\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"Value 2\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;overflow=hidden;fontSize=12;strokeColor=inherit;\" vertex=\"1\" parent=\"3\"><mxGeometry x=\"60\" width=\"60\" height=\"40\" as=\"geometry\"><mxRectangle width=\"60\" height=\"40\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"6\" value=\"Value 3\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;overflow=hidden;fontSize=12;strokeColor=inherit;\" vertex=\"1\" parent=\"3\"><mxGeometry x=\"120\" width=\"60\" height=\"40\" as=\"geometry\"><mxRectangle width=\"60\" height=\"40\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"7\" value=\"\" style=\"shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;strokeColor=inherit;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"40\" width=\"180\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"Value 4\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;overflow=hidden;fontSize=12;strokeColor=inherit;\" vertex=\"1\" parent=\"7\"><mxGeometry width=\"60\" height=\"40\" as=\"geometry\"><mxRectangle width=\"60\" height=\"40\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"9\" value=\"Value 5\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;overflow=hidden;fontSize=12;strokeColor=inherit;\" vertex=\"1\" parent=\"7\"><mxGeometry x=\"60\" width=\"60\" height=\"40\" as=\"geometry\"><mxRectangle width=\"60\" height=\"40\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"10\" value=\"Value 6\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;overflow=hidden;fontSize=12;strokeColor=inherit;\" vertex=\"1\" parent=\"7\"><mxGeometry x=\"120\" width=\"60\" height=\"40\" as=\"geometry\"><mxRectangle width=\"60\" height=\"40\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"11\" value=\"\" style=\"shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;strokeColor=inherit;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"80\" width=\"180\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"12\" value=\"Value 7\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;overflow=hidden;fontSize=12;strokeColor=inherit;\" vertex=\"1\" parent=\"11\"><mxGeometry width=\"60\" height=\"40\" as=\"geometry\"><mxRectangle width=\"60\" height=\"40\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"13\" value=\"Value 8\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;overflow=hidden;fontSize=12;strokeColor=inherit;\" vertex=\"1\" parent=\"11\"><mxGeometry x=\"60\" width=\"60\" height=\"40\" as=\"geometry\"><mxRectangle width=\"60\" height=\"40\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"14\" value=\"Value 9\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;overflow=hidden;fontSize=12;strokeColor=inherit;\" vertex=\"1\" parent=\"11\"><mxGeometry x=\"120\" width=\"60\" height=\"40\" as=\"geometry\"><mxRectangle width=\"60\" height=\"40\" as=\"alternateBounds\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "table",
+    "tableRow",
+    "partialRectangle"
+   ],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:3012"
+  },
+  {
+   "id": "misc-15-table-with-title-1",
+   "title": "Table with Title 1",
+   "tags": "table title Table with Title 1",
+   "kind": "cells",
+   "width": 180,
+   "height": 150,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Table\" style=\"shape=table;tableRender=collapsed;startSize=30;container=1;collapsible=0;childLayout=tableLayout;strokeColor=default;fontSize=16;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"180\" height=\"150\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"30\" width=\"180\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;fontSize=16;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"60\" height=\"40\" as=\"geometry\"><mxRectangle width=\"60\" height=\"40\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;fontSize=16;\" vertex=\"1\" parent=\"3\"><mxGeometry x=\"60\" width=\"60\" height=\"40\" as=\"geometry\"><mxRectangle width=\"60\" height=\"40\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"6\" value=\"\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;fontSize=16;\" vertex=\"1\" parent=\"3\"><mxGeometry x=\"120\" width=\"60\" height=\"40\" as=\"geometry\"><mxRectangle width=\"60\" height=\"40\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"7\" value=\"\" style=\"shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"70\" width=\"180\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;fontSize=16;\" vertex=\"1\" parent=\"7\"><mxGeometry width=\"60\" height=\"40\" as=\"geometry\"><mxRectangle width=\"60\" height=\"40\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"9\" value=\"\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;fontSize=16;\" vertex=\"1\" parent=\"7\"><mxGeometry x=\"60\" width=\"60\" height=\"40\" as=\"geometry\"><mxRectangle width=\"60\" height=\"40\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"10\" value=\"\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;fontSize=16;\" vertex=\"1\" parent=\"7\"><mxGeometry x=\"120\" width=\"60\" height=\"40\" as=\"geometry\"><mxRectangle width=\"60\" height=\"40\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"11\" value=\"\" style=\"shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"110\" width=\"180\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"12\" value=\"\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;fontSize=16;\" vertex=\"1\" parent=\"11\"><mxGeometry width=\"60\" height=\"40\" as=\"geometry\"><mxRectangle width=\"60\" height=\"40\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"13\" value=\"\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;fontSize=16;\" vertex=\"1\" parent=\"11\"><mxGeometry x=\"60\" width=\"60\" height=\"40\" as=\"geometry\"><mxRectangle width=\"60\" height=\"40\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"14\" value=\"\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;fontSize=16;\" vertex=\"1\" parent=\"11\"><mxGeometry x=\"120\" width=\"60\" height=\"40\" as=\"geometry\"><mxRectangle width=\"60\" height=\"40\" as=\"alternateBounds\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "table",
+    "tableRow",
+    "partialRectangle"
+   ],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:3013"
+  },
+  {
+   "id": "misc-16-table-with-title-2",
+   "title": "Table with Title 2",
+   "tags": "table title Table with Title 2",
+   "kind": "cells",
+   "width": 180,
+   "height": 120,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Table\" style=\"shape=table;tableRender=collapsed;startSize=30;container=1;collapsible=0;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=0;strokeColor=default;fontSize=16;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"180\" height=\"120\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;strokeColor=inherit;fontSize=16;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"30\" width=\"180\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"1\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;overflow=hidden;pointerEvents=1;strokeColor=inherit;fontSize=16;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"40\" height=\"30\" as=\"geometry\"><mxRectangle width=\"40\" height=\"30\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"Value 1\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;align=left;spacingLeft=6;overflow=hidden;strokeColor=inherit;fontSize=16;\" vertex=\"1\" parent=\"3\"><mxGeometry x=\"40\" width=\"140\" height=\"30\" as=\"geometry\"><mxRectangle width=\"140\" height=\"30\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"6\" value=\"\" style=\"shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;strokeColor=inherit;fontSize=16;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"60\" width=\"180\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"2\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;overflow=hidden;strokeColor=inherit;fontSize=16;\" vertex=\"1\" parent=\"6\"><mxGeometry width=\"40\" height=\"30\" as=\"geometry\"><mxRectangle width=\"40\" height=\"30\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"8\" value=\"Value 2\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;align=left;spacingLeft=6;overflow=hidden;strokeColor=inherit;fontSize=16;\" vertex=\"1\" parent=\"6\"><mxGeometry x=\"40\" width=\"140\" height=\"30\" as=\"geometry\"><mxRectangle width=\"140\" height=\"30\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"9\" value=\"\" style=\"shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;strokeColor=inherit;fontSize=16;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"90\" width=\"180\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"10\" value=\"3\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;overflow=hidden;strokeColor=inherit;fontSize=16;\" vertex=\"1\" parent=\"9\"><mxGeometry width=\"40\" height=\"30\" as=\"geometry\"><mxRectangle width=\"40\" height=\"30\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"11\" value=\"Value 3\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;align=left;spacingLeft=6;overflow=hidden;strokeColor=inherit;fontSize=16;\" vertex=\"1\" parent=\"9\"><mxGeometry x=\"40\" width=\"140\" height=\"30\" as=\"geometry\"><mxRectangle width=\"140\" height=\"30\" as=\"alternateBounds\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "table",
+    "tableRow",
+    "partialRectangle"
+   ],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:3014"
+  },
+  {
+   "id": "misc-17-cross-functional-flowchart",
+   "title": "Cross-Functional Flowchart",
+   "tags": "crossfunctional cross-functional cross functional flowchart swimlane table Cross-Functional Flowchart",
+   "kind": "cells",
+   "width": 400,
+   "height": 400,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Cross-Functional Flowchart\" style=\"shape=table;tableRender=collapsed;childLayout=tableLayout;startSize=40;collapsible=0;recursiveResize=0;expand=0;fontSize=16;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"400\" height=\"400\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Actor 1\" style=\"shape=tableRow;horizontal=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;dropTarget=0;fontStyle=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;startSize=40;collapsible=0;recursiveResize=0;expand=0;fontSize=16;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"40\" width=\"400\" height=\"120\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Phase 1\" style=\"swimlane;swimlaneHead=0;swimlaneBody=0;fontStyle=0;strokeColor=inherit;connectable=0;fillColor=none;startSize=40;collapsible=0;recursiveResize=0;expand=0;fontSize=16;\" vertex=\"1\" parent=\"3\"><mxGeometry x=\"40\" width=\"120\" height=\"120\" as=\"geometry\"><mxRectangle width=\"120\" height=\"120\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"Phase 2\" style=\"swimlane;swimlaneHead=0;swimlaneBody=0;fontStyle=0;strokeColor=inherit;connectable=0;fillColor=none;startSize=40;collapsible=0;recursiveResize=0;expand=0;fontSize=16;\" vertex=\"1\" parent=\"3\"><mxGeometry x=\"160\" width=\"120\" height=\"120\" as=\"geometry\"><mxRectangle width=\"120\" height=\"120\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"6\" value=\"Phase 3\" style=\"swimlane;swimlaneHead=0;swimlaneBody=0;fontStyle=0;strokeColor=inherit;connectable=0;fillColor=none;startSize=40;collapsible=0;recursiveResize=0;expand=0;fontSize=16;\" vertex=\"1\" parent=\"3\"><mxGeometry x=\"280\" width=\"120\" height=\"120\" as=\"geometry\"><mxRectangle width=\"120\" height=\"120\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"7\" value=\"Actor 2\" style=\"shape=tableRow;horizontal=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;dropTarget=0;fontStyle=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;startSize=40;collapsible=0;recursiveResize=0;expand=0;fontSize=16;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"160\" width=\"400\" height=\"120\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"\" style=\"swimlane;swimlaneHead=0;swimlaneBody=0;fontStyle=0;connectable=0;strokeColor=inherit;fillColor=none;startSize=0;collapsible=0;recursiveResize=0;expand=0;fontSize=16;\" vertex=\"1\" parent=\"7\"><mxGeometry x=\"40\" width=\"120\" height=\"120\" as=\"geometry\"><mxRectangle width=\"120\" height=\"120\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"9\" value=\"\" style=\"swimlane;swimlaneHead=0;swimlaneBody=0;fontStyle=0;connectable=0;strokeColor=inherit;fillColor=none;startSize=0;collapsible=0;recursiveResize=0;expand=0;fontSize=16;\" vertex=\"1\" parent=\"7\"><mxGeometry x=\"160\" width=\"120\" height=\"120\" as=\"geometry\"><mxRectangle width=\"120\" height=\"120\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"10\" value=\"\" style=\"swimlane;swimlaneHead=0;swimlaneBody=0;fontStyle=0;connectable=0;strokeColor=inherit;fillColor=none;startSize=0;collapsible=0;recursiveResize=0;expand=0;fontSize=16;\" vertex=\"1\" parent=\"7\"><mxGeometry x=\"280\" width=\"120\" height=\"120\" as=\"geometry\"><mxRectangle width=\"120\" height=\"120\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"11\" value=\"Actor 3\" style=\"shape=tableRow;horizontal=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;dropTarget=0;fontStyle=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;startSize=40;collapsible=0;recursiveResize=0;expand=0;fontSize=16;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"280\" width=\"400\" height=\"120\" as=\"geometry\"/></mxCell><mxCell id=\"12\" value=\"\" style=\"swimlane;swimlaneHead=0;swimlaneBody=0;fontStyle=0;connectable=0;strokeColor=inherit;fillColor=none;startSize=0;collapsible=0;recursiveResize=0;expand=0;fontSize=16;\" vertex=\"1\" parent=\"11\"><mxGeometry x=\"40\" width=\"120\" height=\"120\" as=\"geometry\"><mxRectangle width=\"120\" height=\"120\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"13\" value=\"\" style=\"swimlane;swimlaneHead=0;swimlaneBody=0;fontStyle=0;connectable=0;strokeColor=inherit;fillColor=none;startSize=0;collapsible=0;recursiveResize=0;expand=0;fontSize=16;\" vertex=\"1\" parent=\"11\"><mxGeometry x=\"160\" width=\"120\" height=\"120\" as=\"geometry\"><mxRectangle width=\"120\" height=\"120\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"14\" value=\"\" style=\"swimlane;swimlaneHead=0;swimlaneBody=0;fontStyle=0;connectable=0;strokeColor=inherit;fillColor=none;startSize=0;collapsible=0;recursiveResize=0;expand=0;fontSize=16;\" vertex=\"1\" parent=\"11\"><mxGeometry x=\"280\" width=\"120\" height=\"120\" as=\"geometry\"><mxRectangle width=\"120\" height=\"120\" as=\"alternateBounds\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "table",
+    "tableRow",
+    "swimlane"
+   ],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:3015"
+  },
+  {
+   "id": "misc-18-table",
+   "title": "Table",
+   "tags": "table Table",
+   "kind": "cells",
+   "width": 280,
+   "height": 160,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Assets\" style=\"childLayout=tableLayout;recursiveResize=0;strokeColor=#98bf21;fillColor=#A7C942;shadow=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"280\" height=\"160\" as=\"geometry\"/></mxCell><mxCell id=\"3\" style=\"shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;dropTarget=0;collapsible=0;recursiveResize=0;expand=0;fontStyle=0;strokeColor=inherit;fillColor=#ffffff;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"280\" height=\"33\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Title 1\" style=\"connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=#A7C942;align=center;fontStyle=1;fontColor=#FFFFFF;html=1;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"93\" height=\"33\" as=\"geometry\"><mxRectangle width=\"93\" height=\"33\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"Title 2\" style=\"connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=#A7C942;align=center;fontStyle=1;fontColor=#FFFFFF;html=1;\" vertex=\"1\" parent=\"3\"><mxGeometry x=\"93\" width=\"94\" height=\"33\" as=\"geometry\"><mxRectangle width=\"94\" height=\"33\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"6\" value=\"Title 3\" style=\"connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=#A7C942;align=center;fontStyle=1;fontColor=#FFFFFF;html=1;\" vertex=\"1\" parent=\"3\"><mxGeometry x=\"187\" width=\"93\" height=\"33\" as=\"geometry\"><mxRectangle width=\"93\" height=\"33\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"7\" value=\"\" style=\"shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;dropTarget=0;collapsible=0;recursiveResize=0;expand=0;fontStyle=0;strokeColor=inherit;fillColor=#ffffff;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"33\" width=\"280\" height=\"32\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"Value 1\" style=\"connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=inherit;align=center;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"7\"><mxGeometry width=\"93\" height=\"32\" as=\"geometry\"><mxRectangle width=\"93\" height=\"32\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"9\" value=\"Value 2\" style=\"connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=inherit;align=center;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"7\"><mxGeometry x=\"93\" width=\"94\" height=\"32\" as=\"geometry\"><mxRectangle width=\"94\" height=\"32\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"10\" value=\"Value 3\" style=\"connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=inherit;align=center;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"7\"><mxGeometry x=\"187\" width=\"93\" height=\"32\" as=\"geometry\"><mxRectangle width=\"93\" height=\"32\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"11\" value=\"\" style=\"shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;dropTarget=0;collapsible=0;recursiveResize=0;expand=0;fontStyle=1;strokeColor=inherit;fillColor=#EAF2D3;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"65\" width=\"280\" height=\"31\" as=\"geometry\"/></mxCell><mxCell id=\"12\" value=\"Value 4\" style=\"connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=inherit;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"11\"><mxGeometry width=\"93\" height=\"31\" as=\"geometry\"><mxRectangle width=\"93\" height=\"31\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"13\" value=\"Value 5\" style=\"connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=inherit;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"11\"><mxGeometry x=\"93\" width=\"94\" height=\"31\" as=\"geometry\"><mxRectangle width=\"94\" height=\"31\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"14\" value=\"Value 6\" style=\"connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=inherit;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"11\"><mxGeometry x=\"187\" width=\"93\" height=\"31\" as=\"geometry\"><mxRectangle width=\"93\" height=\"31\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"15\" value=\"\" style=\"shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;dropTarget=0;collapsible=0;recursiveResize=0;expand=0;fontStyle=0;strokeColor=inherit;fillColor=#ffffff;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"96\" width=\"280\" height=\"33\" as=\"geometry\"/></mxCell><mxCell id=\"16\" value=\"Value 7\" style=\"connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=inherit;fontStyle=0;align=center;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"15\"><mxGeometry width=\"93\" height=\"33\" as=\"geometry\"><mxRectangle width=\"93\" height=\"33\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"17\" value=\"Value 8\" style=\"connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=inherit;fontStyle=0;align=center;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"15\"><mxGeometry x=\"93\" width=\"94\" height=\"33\" as=\"geometry\"><mxRectangle width=\"94\" height=\"33\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"18\" value=\"Value 9\" style=\"connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=inherit;fontStyle=0;align=center;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"15\"><mxGeometry x=\"187\" width=\"93\" height=\"33\" as=\"geometry\"><mxRectangle width=\"93\" height=\"33\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"19\" value=\"\" style=\"shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;dropTarget=0;collapsible=0;recursiveResize=0;expand=0;fontStyle=1;strokeColor=inherit;fillColor=#EAF2D3;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"129\" width=\"280\" height=\"31\" as=\"geometry\"/></mxCell><mxCell id=\"20\" value=\"Value 10\" style=\"connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=inherit;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"19\"><mxGeometry width=\"93\" height=\"31\" as=\"geometry\"><mxRectangle width=\"93\" height=\"31\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"21\" value=\"Value 11\" style=\"connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=inherit;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"19\"><mxGeometry x=\"93\" width=\"94\" height=\"31\" as=\"geometry\"><mxRectangle width=\"94\" height=\"31\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"22\" value=\"Value 12\" style=\"connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=inherit;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"19\"><mxGeometry x=\"187\" width=\"93\" height=\"31\" as=\"geometry\"><mxRectangle width=\"93\" height=\"31\" as=\"alternateBounds\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "tableRow"
+   ],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:3017"
+  },
+  {
+   "id": "misc-19-table",
+   "title": "Table",
+   "tags": "table Table",
+   "kind": "cells",
+   "width": 180,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"childLayout=tableLayout;recursiveResize=0;shadow=0;fillColor=none;strokeColor=#C0C0C0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"180\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;dropTarget=0;collapsible=0;recursiveResize=0;expand=0;fontStyle=0;fillColor=none;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"180\" height=\"47\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Value 1\" style=\"connectable=0;recursiveResize=0;strokeColor=none;fillColor=none;align=center;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"60\" height=\"47\" as=\"geometry\"><mxRectangle width=\"60\" height=\"47\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"Value 2\" style=\"connectable=0;recursiveResize=0;strokeColor=none;fillColor=none;align=center;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"3\"><mxGeometry x=\"60\" width=\"60\" height=\"47\" as=\"geometry\"><mxRectangle width=\"60\" height=\"47\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"6\" value=\"Value 3\" style=\"connectable=0;recursiveResize=0;strokeColor=none;fillColor=none;align=center;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"3\"><mxGeometry x=\"120\" width=\"60\" height=\"47\" as=\"geometry\"><mxRectangle width=\"60\" height=\"47\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"7\" style=\"shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;dropTarget=0;collapsible=0;recursiveResize=0;expand=0;fontStyle=0;fillColor=none;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"47\" width=\"180\" height=\"46\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"Value 4\" style=\"connectable=0;recursiveResize=0;strokeColor=none;fillColor=none;align=center;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"7\"><mxGeometry width=\"60\" height=\"46\" as=\"geometry\"><mxRectangle width=\"60\" height=\"46\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"9\" value=\"Value 5\" style=\"connectable=0;recursiveResize=0;strokeColor=none;fillColor=none;align=center;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"7\"><mxGeometry x=\"60\" width=\"60\" height=\"46\" as=\"geometry\"><mxRectangle width=\"60\" height=\"46\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"10\" value=\"Value 6\" style=\"connectable=0;recursiveResize=0;strokeColor=none;fillColor=none;align=center;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"7\"><mxGeometry x=\"120\" width=\"60\" height=\"46\" as=\"geometry\"><mxRectangle width=\"60\" height=\"46\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"11\" style=\"shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;dropTarget=0;collapsible=0;recursiveResize=0;expand=0;fontStyle=0;fillColor=none;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"93\" width=\"180\" height=\"47\" as=\"geometry\"/></mxCell><mxCell id=\"12\" value=\"Value 7\" style=\"connectable=0;recursiveResize=0;strokeColor=none;fillColor=none;align=center;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"11\"><mxGeometry width=\"60\" height=\"47\" as=\"geometry\"><mxRectangle width=\"60\" height=\"47\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"13\" value=\"Value 8\" style=\"connectable=0;recursiveResize=0;strokeColor=none;fillColor=none;align=center;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"11\"><mxGeometry x=\"60\" width=\"60\" height=\"47\" as=\"geometry\"><mxRectangle width=\"60\" height=\"47\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"14\" value=\"Value 9\" style=\"connectable=0;recursiveResize=0;strokeColor=none;fillColor=none;align=center;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"11\"><mxGeometry x=\"120\" width=\"60\" height=\"47\" as=\"geometry\"><mxRectangle width=\"60\" height=\"47\" as=\"alternateBounds\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "tableRow"
+   ],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:3018"
+  },
+  {
+   "id": "misc-20-table",
+   "title": "Table",
+   "tags": "table Table",
+   "kind": "cells",
+   "width": 180,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"childLayout=tableLayout;recursiveResize=0;shadow=0;fillColor=none;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"180\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;dropTarget=0;collapsible=0;recursiveResize=0;expand=0;fontStyle=0;fillColor=none;strokeColor=inherit;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"180\" height=\"47\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Value 1\" style=\"connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=none;align=center;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"60\" height=\"47\" as=\"geometry\"><mxRectangle width=\"60\" height=\"47\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"Value 2\" style=\"connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=none;align=center;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"3\"><mxGeometry x=\"60\" width=\"60\" height=\"47\" as=\"geometry\"><mxRectangle width=\"60\" height=\"47\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"6\" value=\"Value 3\" style=\"connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=none;align=center;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"3\"><mxGeometry x=\"120\" width=\"60\" height=\"47\" as=\"geometry\"><mxRectangle width=\"60\" height=\"47\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"7\" style=\"shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;dropTarget=0;collapsible=0;recursiveResize=0;expand=0;fontStyle=0;fillColor=none;strokeColor=inherit;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"47\" width=\"180\" height=\"46\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"Value 4\" style=\"connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=none;align=center;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"7\"><mxGeometry width=\"60\" height=\"46\" as=\"geometry\"><mxRectangle width=\"60\" height=\"46\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"9\" value=\"Value 5\" style=\"connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=none;align=center;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"7\"><mxGeometry x=\"60\" width=\"60\" height=\"46\" as=\"geometry\"><mxRectangle width=\"60\" height=\"46\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"10\" value=\"Value 6\" style=\"connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=none;align=center;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"7\"><mxGeometry x=\"120\" width=\"60\" height=\"46\" as=\"geometry\"><mxRectangle width=\"60\" height=\"46\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"11\" style=\"shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;dropTarget=0;collapsible=0;recursiveResize=0;expand=0;fontStyle=0;fillColor=none;strokeColor=inherit;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"93\" width=\"180\" height=\"47\" as=\"geometry\"/></mxCell><mxCell id=\"12\" value=\"Value 7\" style=\"connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=none;align=center;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"11\"><mxGeometry width=\"60\" height=\"47\" as=\"geometry\"><mxRectangle width=\"60\" height=\"47\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"13\" value=\"Value 8\" style=\"connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=none;align=center;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"11\"><mxGeometry x=\"60\" width=\"60\" height=\"47\" as=\"geometry\"><mxRectangle width=\"60\" height=\"47\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"14\" value=\"Value 9\" style=\"connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=none;align=center;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"11\"><mxGeometry x=\"120\" width=\"60\" height=\"47\" as=\"geometry\"><mxRectangle width=\"60\" height=\"47\" as=\"alternateBounds\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "tableRow"
+   ],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:3019"
+  },
+  {
+   "id": "misc-21-html-table-4",
+   "title": "HTML Table 4",
+   "tags": "html table 4",
+   "kind": "vertex",
+   "width": 180,
+   "height": 180,
+   "style": "text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;overflow=fill;",
+   "value": "<table border=\"1\" width=\"100%\" height=\"100%\" cellpadding=\"4\" style=\"width:100%;height:100%;border-collapse:collapse;\"><tr><th align=\"center\"><b>Title</b></th></tr><tr><td align=\"center\">Section 1.1\nSection 1.2\nSection 1.3</td></tr><tr><td align=\"center\">Section 2.1\nSection 2.2\nSection 2.3</td></tr></table>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:3020"
+  },
+  {
+   "id": "misc-22-rectangle-sketch",
+   "title": "Rectangle Sketch",
+   "tags": "rectangle rect box text sketch comic retro Rectangle Sketch",
+   "kind": "vertex",
+   "width": 120,
+   "height": 60,
+   "style": "rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#1ba1e2;sketch=1;",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/grapheditor/Sidebar.js:3025"
+  },
+  {
+   "id": "misc-23-ellipse-sketch",
+   "title": "Ellipse Sketch",
+   "tags": "ellipse oval sketch comic retro Ellipse Sketch",
+   "kind": "vertex",
+   "width": 120,
+   "height": 60,
+   "style": "ellipse;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=2;hachureGap=8;fillColor=#990000;fillStyle=dots;sketch=1;",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/grapheditor/Sidebar.js:3026"
+  },
+  {
+   "id": "misc-24-diamond-sketch",
+   "title": "Diamond Sketch",
+   "tags": "diamond sketch comic retro Diamond Sketch",
+   "kind": "vertex",
+   "width": 120,
+   "height": 60,
+   "style": "rhombus;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=-1;hachureGap=8;fillStyle=cross-hatch;fillColor=#006600;sketch=1;",
+   "shapeNames": [
+    "rhombus"
+   ],
+   "cls": "a",
+   "source": "js/grapheditor/Sidebar.js:3027"
+  },
+  {
+   "id": "misc-25-isometric-cube",
+   "title": "Isometric Cube",
+   "tags": "cube box iso isometric Isometric Cube",
+   "kind": "vertex",
+   "width": 90,
+   "height": 100,
+   "style": "html=1;whiteSpace=wrap;shape=isoCube2;backgroundOutline=1;isoAngle=15;",
+   "shapeNames": [
+    "isoCube2"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:3028"
+  },
+  {
+   "id": "misc-26-isometric-square",
+   "title": "Isometric Square",
+   "tags": "rectangle rect box iso isometric Isometric Square",
+   "kind": "vertex",
+   "width": 150,
+   "height": 90,
+   "style": "html=1;whiteSpace=wrap;aspect=fixed;shape=isoRectangle;",
+   "shapeNames": [
+    "isoRectangle"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:3029"
+  },
+  {
+   "id": "misc-27-isometric-edge-1",
+   "title": "Isometric Edge 1",
+   "tags": "isometric edge 1",
+   "kind": "edge",
+   "width": 50,
+   "height": 100,
+   "style": "edgeStyle=isometricEdgeStyle;endArrow=none;html=1;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:3030"
+  },
+  {
+   "id": "misc-28-isometric-edge-2",
+   "title": "Isometric Edge 2",
+   "tags": "isometric edge 2",
+   "kind": "edge",
+   "width": 50,
+   "height": 100,
+   "style": "edgeStyle=isometricEdgeStyle;endArrow=none;html=1;elbow=vertical;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:3031"
+  },
+  {
+   "id": "misc-29-left-curly-bracket",
+   "title": "Left Curly Bracket",
+   "tags": "left curly bracket",
+   "kind": "vertex",
+   "width": 20,
+   "height": 120,
+   "style": "shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;",
+   "shapeNames": [
+    "curlyBracket"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:3032"
+  },
+  {
+   "id": "misc-30-right-curly-bracket",
+   "title": "Right Curly Bracket",
+   "tags": "right curly bracket",
+   "kind": "vertex",
+   "width": 20,
+   "height": 120,
+   "style": "shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;",
+   "shapeNames": [
+    "curlyBracket"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:3033"
+  },
+  {
+   "id": "misc-31-horizontal-line",
+   "title": "Horizontal Line",
+   "tags": "horizontal line",
+   "kind": "vertex",
+   "width": 160,
+   "height": 10,
+   "style": "line;strokeWidth=2;html=1;",
+   "shapeNames": [
+    "line"
+   ],
+   "cls": "a",
+   "source": "js/grapheditor/Sidebar.js:3034"
+  },
+  {
+   "id": "misc-32-vertical-line",
+   "title": "Vertical Line",
+   "tags": "vertical line",
+   "kind": "vertex",
+   "width": 10,
+   "height": 160,
+   "style": "line;strokeWidth=2;direction=south;html=1;",
+   "shapeNames": [
+    "line"
+   ],
+   "cls": "a",
+   "source": "js/grapheditor/Sidebar.js:3035"
+  },
+  {
+   "id": "misc-33-horizontal-backbone",
+   "title": "Horizontal Backbone",
+   "tags": "backbone bus network Horizontal Backbone",
+   "kind": "vertex",
+   "width": 160,
+   "height": 10,
+   "style": "line;strokeWidth=4;html=1;perimeter=backbonePerimeter;points=[];outlineConnect=0;",
+   "shapeNames": [
+    "line"
+   ],
+   "cls": "a",
+   "source": "js/grapheditor/Sidebar.js:3036"
+  },
+  {
+   "id": "misc-34-vertical-backbone",
+   "title": "Vertical Backbone",
+   "tags": "backbone bus network Vertical Backbone",
+   "kind": "vertex",
+   "width": 10,
+   "height": 160,
+   "style": "line;strokeWidth=4;direction=south;html=1;perimeter=backbonePerimeter;points=[];outlineConnect=0;",
+   "shapeNames": [
+    "line"
+   ],
+   "cls": "a",
+   "source": "js/grapheditor/Sidebar.js:3037"
+  },
+  {
+   "id": "misc-35-horizontal-crossbar",
+   "title": "Horizontal Crossbar",
+   "tags": "crossbar distance measure dimension unit Horizontal Crossbar",
+   "kind": "vertex",
+   "width": 120,
+   "height": 20,
+   "style": "shape=crossbar;whiteSpace=wrap;html=1;rounded=1;",
+   "shapeNames": [
+    "crossbar"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:3038"
+  },
+  {
+   "id": "misc-36-vertical-crossbar",
+   "title": "Vertical Crossbar",
+   "tags": "crossbar distance measure dimension unit Vertical Crossbar",
+   "kind": "vertex",
+   "width": 20,
+   "height": 120,
+   "style": "shape=crossbar;whiteSpace=wrap;html=1;rounded=1;direction=south;",
+   "shapeNames": [
+    "crossbar"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:3039"
+  },
+  {
+   "id": "misc-37-image-fixed-aspect",
+   "title": "Image (Fixed Aspect)",
+   "tags": "fixed image icon symbol Image (Fixed Aspect)",
+   "kind": "vertex",
+   "width": 52,
+   "height": 61,
+   "style": "shape=image;html=1;verticalLabelPosition=bottom;verticalAlign=top;imageAspect=1;aspect=fixed;image=img/clipart/Gear_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:3040"
+  },
+  {
+   "id": "misc-38-image-variable-aspect",
+   "title": "Image (Variable Aspect)",
+   "tags": "strechted image icon symbol Image (Variable Aspect)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 60,
+   "style": "shape=image;html=1;verticalLabelPosition=bottom;verticalAlign=top;imageAspect=0;image=img/clipart/Gear_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:3041"
+  },
+  {
+   "id": "misc-39-icon",
+   "title": "Icon",
+   "tags": "icon image symbol Icon",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "icon;html=1;image=img/clipart/Gear_128x128.png",
+   "value": "Icon",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:3042"
+  },
+  {
+   "id": "misc-40-label-1",
+   "title": "Label 1",
+   "tags": "label image icon symbol Label 1",
+   "kind": "vertex",
+   "width": 140,
+   "height": 60,
+   "style": "label;whiteSpace=wrap;html=1;image=img/clipart/Gear_128x128.png",
+   "value": "Label",
+   "shapeNames": [
+    "label"
+   ],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:3043"
+  },
+  {
+   "id": "misc-41-label-2",
+   "title": "Label 2",
+   "tags": "label image icon symbol Label 2",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "label;whiteSpace=wrap;html=1;align=center;verticalAlign=bottom;spacingLeft=0;spacingBottom=4;imageAlign=center;imageVerticalAlign=top;image=img/clipart/Gear_128x128.png",
+   "value": "Label",
+   "shapeNames": [
+    "label"
+   ],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:3044"
+  },
+  {
+   "id": "misc-42-shape-group",
+   "title": "Shape Group",
+   "tags": "shape group container",
+   "kind": "cells",
+   "width": 160,
+   "height": 70,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Label\" style=\"html=1;whiteSpace=wrap;container=1;recursiveResize=0;collapsible=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"160\" height=\"70\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"triangle;html=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"20\" y=\"20\" width=\"20\" height=\"30\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "triangle"
+   ],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:3045"
+  },
+  {
+   "id": "misc-43-partial-rectangle",
+   "title": "Partial Rectangle",
+   "tags": "partial rectangle",
+   "kind": "vertex",
+   "width": 120,
+   "height": 60,
+   "style": "shape=partialRectangle;whiteSpace=wrap;html=1;left=0;right=0;fillColor=none;",
+   "shapeNames": [
+    "partialRectangle"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:3057"
+  },
+  {
+   "id": "misc-44-partial-rectangle",
+   "title": "Partial Rectangle",
+   "tags": "partial rectangle",
+   "kind": "vertex",
+   "width": 120,
+   "height": 60,
+   "style": "shape=partialRectangle;whiteSpace=wrap;html=1;bottom=0;top=0;fillColor=none;",
+   "shapeNames": [
+    "partialRectangle"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:3058"
+  },
+  {
+   "id": "misc-45-partial-rectangle",
+   "title": "Partial Rectangle",
+   "tags": "partial rectangle",
+   "kind": "vertex",
+   "width": 120,
+   "height": 60,
+   "style": "shape=partialRectangle;whiteSpace=wrap;html=1;bottom=1;right=1;left=1;top=0;fillColor=none;routingCenterX=-0.5;",
+   "shapeNames": [
+    "partialRectangle"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:3059"
+  },
+  {
+   "id": "misc-46-waypoint",
+   "title": "Waypoint",
+   "tags": "waypoint",
+   "kind": "vertex",
+   "width": 20,
+   "height": 20,
+   "style": "shape=waypoint;sketch=0;fillStyle=solid;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;",
+   "shapeNames": [
+    "waypoint"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:3060"
+  },
+  {
+   "id": "misc-47-manual-line",
+   "title": "Manual Line",
+   "tags": "line lines connector connectors connection connections arrow arrows manual",
+   "kind": "edge",
+   "width": 50,
+   "height": 50,
+   "style": "edgeStyle=segmentEdgeStyle;endArrow=classic;html=1;curved=0;rounded=0;endSize=8;startSize=8;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:3061"
+  },
+  {
+   "id": "misc-48-filled-edge",
+   "title": "Filled Edge",
+   "tags": "filled edge",
+   "kind": "edge",
+   "width": 60,
+   "height": 40,
+   "style": "shape=filledEdge;curved=0;rounded=0;fixDash=1;endArrow=none;strokeWidth=10;fillColor=#ffffff;edgeStyle=orthogonalEdgeStyle;html=1;",
+   "shapeNames": [
+    "filledEdge"
+   ],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:3062"
+  },
+  {
+   "id": "misc-49-tapered-arrow",
+   "title": "Tapered Arrow",
+   "tags": "line lines connector connectors connection connections arrow arrows tapered taper arrow wedge",
+   "kind": "edge",
+   "width": 60,
+   "height": 40,
+   "style": "shape=taperedArrow;startWidth=12;endWidth=2;endArrow=block;endFill=1;html=1;",
+   "shapeNames": [
+    "taperedArrow"
+   ],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:3063"
+  },
+  {
+   "id": "misc-50-horizontal-elbow",
+   "title": "Horizontal Elbow",
+   "tags": "line lines connector connectors connection connections arrow arrows elbow horizontal",
+   "kind": "edge",
+   "width": 50,
+   "height": 50,
+   "style": "edgeStyle=elbowEdgeStyle;elbow=horizontal;endArrow=classic;html=1;curved=0;rounded=0;endSize=8;startSize=8;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:3064"
+  },
+  {
+   "id": "misc-51-vertical-elbow",
+   "title": "Vertical Elbow",
+   "tags": "line lines connector connectors connection connections arrow arrows elbow vertical",
+   "kind": "edge",
+   "width": 50,
+   "height": 50,
+   "style": "edgeStyle=elbowEdgeStyle;elbow=vertical;endArrow=classic;html=1;curved=0;rounded=0;endSize=8;startSize=8;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:3065"
+  },
+  {
+   "id": "misc-52-arc",
+   "title": "Arc",
+   "tags": "arc curve Arc",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.basic.arc;html=1;startAngle=0.3;endAngle=0.1;endArrow=classic;endFill=1;",
+   "shapeNames": [
+    "mxgraph.basic.arc"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:3066"
+  },
+  {
+   "id": "misc-53-zigzag",
+   "title": "Zigzag",
+   "tags": "zigzag wave sawtooth Zigzag",
+   "kind": "vertex",
+   "width": 160,
+   "height": 20,
+   "style": "shape=zigzag;html=1;fillColor=none;",
+   "shapeNames": [
+    "zigzag"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:3067"
+  }
+ ]
+}

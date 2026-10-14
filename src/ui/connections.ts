@@ -1,4 +1,5 @@
 import { Graph, ConnectionConstraint, Point } from '@maxgraph/core';
+import { getDrawioConnectionConstraints } from '../drawio-shapes/js/shapes-core';
 
 export class ConnectionHandler {
   constructor(graph: Graph) {
@@ -13,8 +14,11 @@ export class ConnectionHandler {
       // Get original constraints if they exist
       const constraints = originalGetAllConstraints(terminal, source);
 
-      // If terminal is a vertex, define standard connection points (top, right, bottom, left, center)
       if (terminal && terminal.cell && terminal.cell.isVertex && terminal.cell.isVertex()) {
+        // draw.io shapes: their own fixed points (`points` style, getConstraints, stencil, constraints)
+        const drawio = getDrawioConnectionConstraints(terminal);
+        if (drawio && drawio.length > 0) return drawio;
+        // Otherwise standard connection points (top, right, bottom, left, center)
         return [
           new ConnectionConstraint(new Point(0.5, 0), false), // Top center
           new ConnectionConstraint(new Point(1, 0.5), false), // Right center

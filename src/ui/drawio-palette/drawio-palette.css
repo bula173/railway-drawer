@@ -1,0 +1,215 @@
+/* draw.io-style shape sidebar (src/ui/drawio-palette). Uses the app tokens of styles/variables.css. */
+
+.rd-drawio-palette {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  font-family: var(--font-family, Helvetica, Arial, sans-serif);
+  font-size: var(--font-size-sm, 12px);
+  color: var(--text, #333);
+  background: var(--surface, #fff);
+}
+
+.rd-dp-toolbar {
+  padding: var(--space-sm, 6px);
+  border-bottom: 1px solid var(--divider, #e0e0e0);
+}
+
+.rd-dp-search {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 4px 8px;
+  border: 1px solid var(--border, #ccc);
+  border-radius: var(--radius-sm, 4px);
+  font: inherit;
+}
+
+.rd-dp-status {
+  padding: 4px 8px;
+  color: var(--error, #c62828);
+  font-size: var(--font-size-xs, 11px);
+}
+
+.rd-dp-list {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.rd-dp-category {
+  border-bottom: 1px solid var(--divider, #e0e0e0);
+}
+
+.rd-dp-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 6px 8px 6px 20px;
+  border: 0;
+  background: var(--surface-light, #f5f5f5);
+  color: inherit;
+  font: inherit;
+  font-weight: var(--font-weight-medium, 500);
+  text-align: left;
+  cursor: pointer;
+  position: relative;
+}
+
+.rd-dp-header::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  border: 4px solid transparent;
+  border-left-color: currentColor;
+  transform: translateY(-50%);
+}
+
+.rd-dp-expanded > .rd-dp-header::before {
+  border-left-color: transparent;
+  border-top-color: currentColor;
+  transform: translate(-2px, -25%);
+}
+
+.rd-dp-header:hover {
+  background: var(--divider, #e8e8e8);
+}
+
+.rd-dp-header-title {
+  flex: 1 1 auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rd-dp-remove {
+  padding: 0 4px;
+  font-size: 15px;
+  line-height: 1;
+  color: var(--text-secondary, #666);
+}
+
+.rd-dp-remove:hover {
+  color: var(--error, #c62828);
+}
+
+.rd-dp-body {
+  display: none;
+  flex-wrap: wrap;
+  gap: 2px;
+  padding: 6px;
+}
+
+.rd-dp-expanded > .rd-dp-body,
+.rd-dp-searching .rd-dp-body {
+  display: flex;
+}
+
+.rd-dp-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm, 4px);
+  cursor: move;
+  box-sizing: border-box;
+}
+
+.rd-dp-item[hidden] {
+  display: none;
+}
+
+.rd-dp-item:hover,
+.rd-dp-item:focus-visible {
+  border-color: var(--border, #ccc);
+  background: var(--surface-light, #f5f5f5);
+  outline: none;
+}
+
+.rd-dp-thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.rd-dp-thumb-error {
+  color: var(--text-secondary, #999);
+}
+
+.rd-dp-empty {
+  padding: 4px;
+  color: var(--text-secondary, #888);
+}
+
+.rd-dp-footer {
+  display: flex;
+  gap: 4px;
+  padding: var(--space-sm, 6px);
+  border-top: 1px solid var(--divider, #e0e0e0);
+}
+
+.rd-dp-footer button {
+  flex: 1 1 0;
+  padding: 4px 6px;
+  border: 1px solid var(--border, #ccc);
+  border-radius: var(--radius-sm, 4px);
+  background: var(--surface, #fff);
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.rd-dp-footer button:hover {
+  background: var(--surface-light, #f5f5f5);
+}
+
+.rd-dp-menu {
+  position: absolute;
+  left: 6px;
+  right: 6px;
+  bottom: 40px;
+  max-height: 60%;
+  overflow-y: auto;
+  padding: 6px 8px;
+  border: 1px solid var(--border, #ccc);
+  border-radius: var(--radius-md, 6px);
+  background: var(--surface, #fff);
+  box-shadow: var(--shadow-md, 0 2px 8px rgba(0, 0, 0, 0.15));
+  z-index: 20;
+}
+
+.rd-dp-menu-row {
+  display: block;
+  padding: 3px 0;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.rd-dp-preview {
+  position: fixed;
+  z-index: 1000;
+  padding: 6px;
+  border: 1px solid var(--border, #ccc);
+  border-radius: var(--radius-md, 6px);
+  background: #fff;
+  box-shadow: var(--shadow-lg, 0 4px 16px rgba(0, 0, 0, 0.2));
+  pointer-events: none;
+  color-scheme: light;
+}
+
+.rd-dp-preview-title {
+  margin-top: 4px;
+  text-align: center;
+  font-size: var(--font-size-xs, 11px);
+  color: #303030;
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

@@ -1,23 +1,30 @@
 /**
  * @file index.ts
- * @brief Export draw.io shapes adapted to maxGraph
+ * @brief Legacy draw.io arrows2 shape exports.
+ *
+ * The 18 hand-written ports that used to live here are replaced by the full
+ * port of draw.io shapes/mxArrows.js (jgraph/drawio v32.4.1) in
+ * src/drawio-shapes/js/mx-libs/arrows2. The old class names stay exported as
+ * aliases of the new implementations so existing imports keep working.
  */
 
-export { Arrows2ArrowShape } from './arrows2-arrow.js';
-export { Arrows2TwoWayArrowShape } from './arrows2-two-way-arrow.js';
-export { Arrows2StylisedArrowShape } from './arrows2-stylised-arrow.js';
-export { Arrows2SharpArrowShape } from './arrows2-sharp-arrow.js';
-export { Arrows2SharpArrow2Shape } from './arrows2-sharp-arrow2.js';
-export { Arrows2CalloutArrowShape } from './arrows2-callout-arrow.js';
-export { Arrows2BendArrowShape } from './arrows2-bend-arrow.js';
-export { Arrows2BendDoubleArrowShape } from './arrows2-bend-double-arrow.js';
-export { Arrows2CalloutDoubleArrowShape } from './arrows2-callout-double-arrow.js';
-export { Arrows2CalloutQuadArrowShape } from './arrows2-callout-quad-arrow.js';
-export { Arrows2CalloutDouble90ArrowShape } from './arrows2-callout-double90-arrow.js';
-export { Arrows2QuadArrowShape } from './arrows2-quad-arrow.js';
-export { Arrows2TriadArrowShape } from './arrows2-triad-arrow.js';
-export { Arrows2TailedArrowShape } from './arrows2-tailed-arrow.js';
-export { Arrows2TailedNotchedArrowShape } from './arrows2-tailed-notched-arrow.js';
-export { Arrows2StripedArrowShape } from './arrows2-striped-arrow.js';
-export { Arrows2JumpInArrowShape } from './arrows2-jump-in-arrow.js';
-export { Arrows2UTurnArrowShape } from './arrows2-u-turn-arrow.js';
+export {
+  mxShapeArrows2Arrow as Arrows2ArrowShape,
+  mxShapeArrows2TwoWayArrow as Arrows2TwoWayArrowShape,
+  mxShapeArrows2StylisedArrow as Arrows2StylisedArrowShape,
+  mxShapeArrows2SharpArrow as Arrows2SharpArrowShape,
+  mxShapeArrows2SharpArrow2 as Arrows2SharpArrow2Shape,
+  mxShapeArrows2CalloutArrow as Arrows2CalloutArrowShape,
+  mxShapeArrows2BendArrow as Arrows2BendArrowShape,
+  mxShapeArrows2BendDoubleArrow as Arrows2BendDoubleArrowShape,
+  mxShapeArrows2CalloutDoubleArrow as Arrows2CalloutDoubleArrowShape,
+  mxShapeArrows2CalloutQuadArrow as Arrows2CalloutQuadArrowShape,
+  mxShapeArrows2CalloutDouble90Arrow as Arrows2CalloutDouble90ArrowShape,
+  mxShapeArrows2QuadArrow as Arrows2QuadArrowShape,
+  mxShapeArrows2TriadArrow as Arrows2TriadArrowShape,
+  mxShapeArrows2TailedArrow as Arrows2TailedArrowShape,
+  mxShapeArrows2TailedNotchedArrow as Arrows2TailedNotchedArrowShape,
+  mxShapeArrows2StripedArrow as Arrows2StripedArrowShape,
+  mxShapeArrows2JumpInArrow as Arrows2JumpInArrowShape,
+  mxShapeArrows2UTurnArrow as Arrows2UTurnArrowShape,
+} from '../../drawio-shapes/js/mx-libs/arrows2/index.js';

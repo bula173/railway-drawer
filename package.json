@@ -19,7 +19,9 @@
     "test:coverage": "vitest run --coverage",
     "test:e2e": "playwright test --project=chromium",
     "test:e2e:headed": "playwright test --project=chromium --headed",
-    "typecheck:e2e": "tsc --noEmit -p tsconfig.e2e.json"
+    "typecheck:e2e": "tsc --noEmit -p tsconfig.e2e.json",
+    "test:parity": "playwright test tests/e2e/drawio-parity.spec.ts --project=chromium",
+    "drawio:palettes": "node scripts/drawio-palettes/fetch-sources.ts && node scripts/drawio-palettes/decode-stencils-bundle.ts && node scripts/drawio-palettes/extract-palettes.ts"
   },
   "dependencies": {
     "@maxgraph/core": "^0.10.0"
@@ -29,10 +31,13 @@
     "@playwright/test": "^1.61.1",
     "@testing-library/dom": "^10.4.1",
     "@types/node": "^20.19.43",
+    "@types/pngjs": "^6.0.5",
     "@vitest/coverage-v8": "^4.1.10",
     "eslint": "^9.39.5",
     "globals": "^17.13.0",
     "jsdom": "^30.1.2",
+    "pixelmatch": "^7.2.0",
+    "pngjs": "^7.0.0",
     "typescript": "^5.6.3",
     "typescript-eslint": "^8.71.2",
     "vite": "~7.3.3",

@@ -27,12 +27,13 @@ import {
   ObjectCodec,
   Point,
   Rectangle,
+  Stylesheet,
   SvgCanvas2D,
   mxCellCodec,
   registerModelCodecs,
   xmlUtils,
 } from '@maxgraph/core';
-import type { CellStyle, Stylesheet } from '@maxgraph/core';
+import type { CellStyle } from '@maxgraph/core';
 
 /** Attributes of `<mxGraphModel>` that describe the page (draw.io's File > Page Setup / grid). */
 export interface PageSettings {
@@ -295,6 +296,35 @@ export function parseStyleString(input: string): CellStyle {
   return style as CellStyle;
 }
 
+/** draw.io style strings of parsed styles (see parseDrawioStyle), by style object. */
+const rawDrawioStyles = new WeakMap<object, string>();
+
+/**
+ * parseStyleString, remembering the original string: while the style object stays unchanged,
+ * the export writes that string back byte for byte (draw.io's own spelling: no trailing `;`,
+ * repeated keys, empty tokens). Used for styles read from draw.io files and palettes.
+ */
+export function parseDrawioStyle(input: string): CellStyle {
+  const style = parseStyleString(input);
+  if (input.trim() !== '') rawDrawioStyles.set(style, input);
+  return style;
+}
+
+/** Copies the remembered draw.io style string to a clone of a style (cloned cells). */
+export function copyRawDrawioStyle(from: unknown, to: unknown): void {
+  if (!from || !to || typeof from !== 'object' || typeof to !== 'object') return;
+  const raw = rawDrawioStyles.get(from);
+  if (raw !== undefined) rawDrawioStyles.set(to, raw);
+}
+
+/** The draw.io string a style was parsed from, when the style still means exactly that. */
+function unchangedRawStyle(original: unknown, current: CellStyle): string | null {
+  if (!original || typeof original !== 'object') return null;
+  const raw = rawDrawioStyles.get(original);
+  if (raw === undefined) return null;
+  return styleToString(current) === styleToString(parseStyleString(raw)) ? raw : null;
+}
+
 function styleValueToString(key: string, value: unknown): string | null {
   if (value === undefined || value === null) return null;
   let text: string;
@@ -332,9 +362,14 @@ export function styleToString(style: CellStyle | string | null | undefined): str
 // ---------------------------------------------------------------------------------------------
 
 /**
- * App shape name -> draw.io style giving a similar picture. On export the cell gets this style
- * plus `rdShape=<app shape>`; on import `rdShape` restores the app shape and the keys and base
- * names added here are removed again (when they still have the written value).
+ * Legacy app shape name -> draw.io style giving a similar picture. On export the cell gets this
+ * style plus `rdShape=<app shape>`; on import `rdShape` restores the app shape and the keys and
+ * base names added here are removed again (when they still have the written value).
+ *
+ * Only the app's own shapes are listed. draw.io shapes (hexagon, trapezoid, cross, cylinder3,
+ * step, ext, parallelogram, delay, singleArrow, corner, mxgraph.basic.*, mxgraph.arrows2.*,
+ * mxgraph.flowchart.*, table, flexArrow, ..., `stencil(...)`) are registered natively
+ * (src/drawio-shapes, jgraph/drawio v32.4.1) and are written and read verbatim.
  */
 export const DRAWIO_SHAPE_MAP: Record<string, string> = {
   'rectangle-shape': '',
@@ -371,6 +406,19 @@ export const DRAWIO_SHAPE_MAP: Record<string, string> = {
   customRightAngle: 'shape=corner',
   'right-angle-shape': 'shape=corner',
 };
+
+/** Prefix of the shape keys of earlier app versions for the draw.io arrows2 shapes. */
+const LEGACY_MXARROWS_PREFIX = 'mxarrows.Arrows2';
+
+/**
+ * draw.io name of a legacy `mxarrows.Arrows2<Name>` shape key (`mxgraph.arrows2.<name>`), or
+ * null. Those keys render with the same draw.io port; files are written with the real name.
+ */
+export function legacyMxArrowsToDrawio(shape: string): string | null {
+  if (!shape.startsWith(LEGACY_MXARROWS_PREFIX) || shape.length === LEGACY_MXARROWS_PREFIX.length) return null;
+  const name = shape.slice(LEGACY_MXARROWS_PREFIX.length);
+  return `mxgraph.arrows2.${name.charAt(0).toLowerCase()}${name.slice(1)}`;
+}
 
 /** App shapes that paint fixed graphics with no draw.io equivalent: exported as an SVG image. */
 export const IMAGE_FALLBACK_SHAPES = ['ertms-signal', 'ertms-track', 'ertms-train', 'ertms-balise'];
@@ -525,19 +573,87 @@ function formatNumber(n: number): string {
 const VERTEX_DEFAULT_KEYS = ['fillColor', 'strokeColor', 'fontColor'];
 const EDGE_DEFAULT_KEYS = ['strokeColor', 'fontColor', 'endArrow', 'startArrow', 'rounded'];
 
-/** Fills in the app's default colours/arrows that draw.io would otherwise replace with its own. */
+/**
+ * draw.io's default vertex style (styles/default.xml `defaultVertex`, jgraph/drawio v32.4.1,
+ * light theme: `default` colours resolved). The shape stays maxGraph's rectangle.
+ */
+export const DRAWIO_DEFAULT_VERTEX_STYLE: Readonly<CellStyle> = {
+  fontSize: 12,
+  fontFamily: 'Helvetica',
+  align: 'center',
+  verticalAlign: 'middle',
+  fillColor: '#ffffff',
+  strokeColor: '#000000',
+  fontColor: '#000000',
+};
+
+/** draw.io's default edge style (styles/default.xml `defaultEdge`, light theme). */
+export const DRAWIO_DEFAULT_EDGE_STYLE: Readonly<CellStyle> = {
+  shape: 'connector',
+  labelBackgroundColor: '#ffffff',
+  endArrow: 'classic',
+  fontSize: 11,
+  fontFamily: 'Helvetica',
+  align: 'center',
+  verticalAlign: 'middle',
+  rounded: true,
+  strokeColor: '#000000',
+  fontColor: '#000000',
+};
+
+/**
+ * Makes a stylesheet's defaults draw.io's (styles/default.xml), so cells without explicit
+ * colours, fonts or arrows look as in draw.io. Used by the tab graphs and the palette thumbnails.
+ */
+export function applyDrawioDefaultStyles(stylesheet: Stylesheet): void {
+  Object.assign(stylesheet.getDefaultVertexStyle(), DRAWIO_DEFAULT_VERTEX_STYLE);
+  Object.assign(stylesheet.getDefaultEdgeStyle(), DRAWIO_DEFAULT_EDGE_STYLE);
+}
+
+let drawioReferenceStylesheet: Stylesheet | null = null;
+
+/** A stylesheet resolving styles as draw.io does (its defaults and named styles). */
+function getDrawioReferenceStylesheet(): Stylesheet {
+  if (!drawioReferenceStylesheet) {
+    const sheet = new Stylesheet();
+    applyDrawioDefaultStyles(sheet);
+    registerDrawioNamedStyles(sheet);
+    drawioReferenceStylesheet = sheet;
+  }
+  return drawioReferenceStylesheet;
+}
+
+function sameStyleValue(a: unknown, b: unknown): boolean {
+  const norm = (v: unknown): string | null => {
+    if (v === undefined || v === null) return null;
+    if (typeof v === 'boolean') return v ? '1' : '0';
+    return String(v).toLowerCase();
+  };
+  return norm(a) === norm(b);
+}
+
+/**
+ * Fills in the app's default colours/arrows where draw.io would render something else. Values
+ * that equal what draw.io resolves itself (its defaults and named styles) are not written, so
+ * cells with draw.io styles (palette entries, opened draw.io files) keep their style verbatim.
+ */
 function addAppDefaults(style: Record<string, unknown>, cell: Cell, stylesheet: Stylesheet): void {
   if (style[IGNORE_DEFAULT_STYLE]) return;
   const isEdge = cell.isEdge();
   const keys = isEdge ? EDGE_DEFAULT_KEYS : VERTEX_DEFAULT_KEYS;
   const defaults = isEdge ? stylesheet.getDefaultEdgeStyle() : stylesheet.getDefaultVertexStyle();
   const resolved = stylesheet.getCellStyle(style as CellStyle, defaults) as Record<string, unknown>;
+  const ref = getDrawioReferenceStylesheet();
+  const drawio = ref.getCellStyle(
+    style as CellStyle,
+    isEdge ? ref.getDefaultEdgeStyle() : ref.getDefaultVertexStyle()
+  ) as Record<string, unknown>;
   for (const key of keys) {
     if (key in style) continue;
     const value = resolved[key];
     if (value !== undefined && value !== null && typeof value !== 'function') {
-      style[key] = value;
-    } else if (isEdge && key === 'rounded') {
+      if (!sameStyleValue(value, drawio[key])) style[key] = value;
+    } else if (isEdge && key === 'rounded' && drawio[key]) {
       // draw.io's default edge is rounded
       style[key] = false;
     }
@@ -595,14 +711,26 @@ function cellStyleToWrite(cell: Cell, opts: ExportOptions): string {
     return text;
   }
   if (!cell.isVertex() && !cell.isEdge()) {
-    return styleToString(raw);
+    return (raw ? unchangedRawStyle(raw, raw) : null) ?? styleToString(raw);
   }
   let style: Record<string, unknown> = { ...((raw ?? {}) as Record<string, unknown>) };
   if (raw?.baseStyleNames) style.baseStyleNames = [...raw.baseStyleNames];
   if (opts.stylesheet) addAppDefaults(style, cell, opts.stylesheet);
   if (opts.htmlLabels && !('html' in style)) style.html = true;
   if (opts.translateShapes !== false && cell.isVertex()) {
-    style = translateShapeStyle(style, cell) ?? style;
+    const drawioName = typeof style.shape === 'string' ? legacyMxArrowsToDrawio(style.shape) : null;
+    if (drawioName) style.shape = drawioName;
+    else style = translateShapeStyle(style, cell) ?? style;
+  }
+  const verbatim = unchangedRawStyle(raw, style as CellStyle);
+  if (verbatim !== null) {
+    let text = verbatim;
+    const append = (key: string, value: string): void => {
+      text = `${text}${text && !text.endsWith(';') ? ';' : ''}${key}=${value.replace(/;/g, '%3B')};`;
+    };
+    if (layerId !== undefined && layerId !== null) append('rdLayerId', String(layerId));
+    if (plantUml) append('rdPlantUml', plantUml);
+    return text;
   }
   if (layerId !== undefined && layerId !== null) style.rdLayerId = String(layerId);
   if (plantUml) style.rdPlantUml = plantUml;
@@ -613,11 +741,21 @@ function isElementValue(value: unknown): value is Element {
   return typeof value === 'object' && value !== null && (value as Node).nodeType === 1;
 }
 
+/**
+ * Sets a numeric attribute unless it is written as 0 (draw.io leaves those out). Values decoded
+ * from XML can still be strings, and tiny values round to "0": both would not survive a re-save.
+ */
+function setNonZero(el: Element, name: string, value: unknown): void {
+  const text = formatNumber(Number(value));
+  if (text !== '0') el.setAttribute(name, text);
+}
+
 function appendPoint(doc: XMLDocument, parent: Element, p: Point | null | undefined, as?: string): void {
   if (!p) return;
   const el = doc.createElement('mxPoint');
-  if (p.x) el.setAttribute('x', formatNumber(p.x));
-  if (p.y) el.setAttribute('y', formatNumber(p.y));
+  // Values decoded from XML can still be strings ("0"): compare numerically
+  setNonZero(el, 'x', p.x);
+  setNonZero(el, 'y', p.y);
   if (as) el.setAttribute('as', as);
   parent.appendChild(el);
 }
@@ -625,8 +763,7 @@ function appendPoint(doc: XMLDocument, parent: Element, p: Point | null | undefi
 function writeGeometry(doc: XMLDocument, geo: Geometry): Element {
   const el = doc.createElement('mxGeometry');
   for (const key of ['x', 'y', 'width', 'height'] as const) {
-    const value = geo[key];
-    if (value) el.setAttribute(key, formatNumber(value));
+    setNonZero(el, key, geo[key]);
   }
   if (geo.relative) el.setAttribute('relative', '1');
   el.setAttribute('as', 'geometry');
@@ -634,8 +771,7 @@ function writeGeometry(doc: XMLDocument, geo: Geometry): Element {
   if (alt) {
     const rect = doc.createElement('mxRectangle');
     for (const key of ['x', 'y', 'width', 'height'] as const) {
-      const value = alt[key];
-      if (value) rect.setAttribute(key, formatNumber(value));
+      setNonZero(rect, key, alt[key]);
     }
     rect.setAttribute('as', 'alternateBounds');
     el.appendChild(rect);
@@ -816,7 +952,7 @@ export function buildMxfile(pages: MxfilePage[], extraPages: string[], meta: Mxf
 class DrawioCellCodec extends mxCellCodec {
   override decodeAttribute(dec: Codec, attr: Attr, obj?: Element | object): void {
     if (obj && attr.nodeName === 'style') {
-      (obj as { style: CellStyle }).style = parseStyleString(attr.value);
+      (obj as { style: CellStyle }).style = parseDrawioStyle(attr.value);
     } else {
       super.decodeAttribute(dec, attr, obj);
     }

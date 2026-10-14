@@ -1,0 +1,615 @@
+{
+ "id": "general",
+ "title": "General",
+ "drawioTag": "v32.4.1",
+ "source": "js/grapheditor/Sidebar.js:2790",
+ "entries": [
+  {
+   "id": "general-0-rectangle",
+   "title": "Rectangle",
+   "tags": "rect rectangle box Rectangle",
+   "kind": "vertex",
+   "width": 120,
+   "height": 60,
+   "style": "rounded=0;whiteSpace=wrap;html=1;",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/grapheditor/Sidebar.js:2809"
+  },
+  {
+   "id": "general-1-rounded-rectangle",
+   "title": "Rounded Rectangle",
+   "tags": "rounded rect rectangle box Rounded Rectangle",
+   "kind": "vertex",
+   "width": 120,
+   "height": 60,
+   "style": "rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/grapheditor/Sidebar.js:2810"
+  },
+  {
+   "id": "general-2-text",
+   "title": "Text",
+   "tags": "text textbox textarea label Text",
+   "kind": "vertex",
+   "width": 60,
+   "height": 30,
+   "style": "text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;",
+   "value": "Text",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:2811"
+  },
+  {
+   "id": "general-3-textbox",
+   "title": "Textbox",
+   "tags": "text textbox textarea Textbox",
+   "kind": "vertex",
+   "width": 180,
+   "height": 120,
+   "style": "text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;",
+   "value": "<h1 style=\"margin-top: 0px;\">Heading</h1><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:2813"
+  },
+  {
+   "id": "general-4-ellipse",
+   "title": "Ellipse",
+   "tags": "oval ellipse state Ellipse",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "ellipse;whiteSpace=wrap;html=1;shapeInside=1;",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/grapheditor/Sidebar.js:2816"
+  },
+  {
+   "id": "general-5-square",
+   "title": "Square",
+   "tags": "square Square",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "whiteSpace=wrap;html=1;aspect=fixed;",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/grapheditor/Sidebar.js:2817"
+  },
+  {
+   "id": "general-6-circle",
+   "title": "Circle",
+   "tags": "circle Circle",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/grapheditor/Sidebar.js:2818"
+  },
+  {
+   "id": "general-7-process",
+   "title": "Process",
+   "tags": "process task Process",
+   "kind": "vertex",
+   "width": 120,
+   "height": 60,
+   "style": "shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;",
+   "shapeNames": [
+    "process"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:2819"
+  },
+  {
+   "id": "general-8-diamond",
+   "title": "Diamond",
+   "tags": "diamond rhombus if condition decision conditional question test Diamond",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "rhombus;whiteSpace=wrap;html=1;shapeInside=1;",
+   "shapeNames": [
+    "rhombus"
+   ],
+   "cls": "a",
+   "source": "js/grapheditor/Sidebar.js:2820"
+  },
+  {
+   "id": "general-9-parallelogram",
+   "title": "Parallelogram",
+   "tags": "parallelogram",
+   "kind": "vertex",
+   "width": 120,
+   "height": 60,
+   "style": "shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;",
+   "shapeNames": [
+    "parallelogram"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:2821"
+  },
+  {
+   "id": "general-10-hexagon",
+   "title": "Hexagon",
+   "tags": "hexagon preparation Hexagon",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;",
+   "shapeNames": [
+    "hexagon"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:2822"
+  },
+  {
+   "id": "general-11-triangle",
+   "title": "Triangle",
+   "tags": "triangle logic inverter buffer Triangle",
+   "kind": "vertex",
+   "width": 60,
+   "height": 80,
+   "style": "triangle;whiteSpace=wrap;html=1;shapeInside=1;",
+   "shapeNames": [
+    "triangle"
+   ],
+   "cls": "a",
+   "source": "js/grapheditor/Sidebar.js:2823"
+  },
+  {
+   "id": "general-12-cylinder",
+   "title": "Cylinder",
+   "tags": "cylinder data database Cylinder",
+   "kind": "vertex",
+   "width": 60,
+   "height": 80,
+   "style": "shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;",
+   "shapeNames": [
+    "cylinder3"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:2824"
+  },
+  {
+   "id": "general-13-cloud",
+   "title": "Cloud",
+   "tags": "cloud network Cloud",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "ellipse;shape=cloud;whiteSpace=wrap;html=1;",
+   "shapeNames": [
+    "cloud"
+   ],
+   "cls": "a",
+   "source": "js/grapheditor/Sidebar.js:2825"
+  },
+  {
+   "id": "general-14-document",
+   "title": "Document",
+   "tags": "document",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "shape=document;whiteSpace=wrap;html=1;boundedLbl=1;",
+   "shapeNames": [
+    "document"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:2826"
+  },
+  {
+   "id": "general-15-internal-storage",
+   "title": "Internal Storage",
+   "tags": "internal storage",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;",
+   "shapeNames": [
+    "internalStorage"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:2827"
+  },
+  {
+   "id": "general-16-cube",
+   "title": "Cube",
+   "tags": "cube",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;",
+   "shapeNames": [
+    "cube"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:2828"
+  },
+  {
+   "id": "general-17-step",
+   "title": "Step",
+   "tags": "step",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;",
+   "shapeNames": [
+    "step"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:2829"
+  },
+  {
+   "id": "general-18-trapezoid",
+   "title": "Trapezoid",
+   "tags": "trapezoid",
+   "kind": "vertex",
+   "width": 120,
+   "height": 60,
+   "style": "shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;",
+   "shapeNames": [
+    "trapezoid"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:2830"
+  },
+  {
+   "id": "general-19-tape",
+   "title": "Tape",
+   "tags": "tape",
+   "kind": "vertex",
+   "width": 120,
+   "height": 100,
+   "style": "shape=tape;whiteSpace=wrap;html=1;",
+   "shapeNames": [
+    "tape"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:2831"
+  },
+  {
+   "id": "general-20-note",
+   "title": "Note",
+   "tags": "note",
+   "kind": "vertex",
+   "width": 80,
+   "height": 100,
+   "style": "shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;",
+   "shapeNames": [
+    "note"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:2832"
+  },
+  {
+   "id": "general-21-card",
+   "title": "Card",
+   "tags": "card",
+   "kind": "vertex",
+   "width": 80,
+   "height": 100,
+   "style": "shape=card;whiteSpace=wrap;html=1;",
+   "shapeNames": [
+    "card"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:2833"
+  },
+  {
+   "id": "general-22-callout",
+   "title": "Callout",
+   "tags": "bubble chat thought speech message Callout",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;",
+   "shapeNames": [
+    "callout"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:2834"
+  },
+  {
+   "id": "general-23-wedge-callout",
+   "title": "Wedge Callout",
+   "tags": "bubble chat thought speech message callout annotation pointer wedge Wedge Callout",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "shape=wedgeCallout;whiteSpace=wrap;html=1;",
+   "shapeNames": [
+    "wedgeCallout"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:2835"
+  },
+  {
+   "id": "general-24-actor",
+   "title": "Actor",
+   "tags": "user person human stickman Actor",
+   "kind": "vertex",
+   "width": 30,
+   "height": 60,
+   "style": "shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;",
+   "value": "Actor",
+   "shapeNames": [
+    "umlActor"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:2836"
+  },
+  {
+   "id": "general-25-or",
+   "title": "Or",
+   "tags": "logic or Or",
+   "kind": "vertex",
+   "width": 60,
+   "height": 80,
+   "style": "shape=xor;whiteSpace=wrap;html=1;shapeInside=1;",
+   "shapeNames": [
+    "xor"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:2837"
+  },
+  {
+   "id": "general-26-and",
+   "title": "And",
+   "tags": "logic and And",
+   "kind": "vertex",
+   "width": 60,
+   "height": 80,
+   "style": "shape=or;whiteSpace=wrap;html=1;shapeInside=1;",
+   "shapeNames": [
+    "or"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:2838"
+  },
+  {
+   "id": "general-27-data-storage",
+   "title": "Data Storage",
+   "tags": "data storage",
+   "kind": "vertex",
+   "width": 100,
+   "height": 80,
+   "style": "shape=dataStorage;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;",
+   "shapeNames": [
+    "dataStorage"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:2839"
+  },
+  {
+   "id": "general-28-container",
+   "title": "Container",
+   "tags": "container swimlane lane pool group Container",
+   "kind": "vertex",
+   "width": 200,
+   "height": 200,
+   "style": "swimlane;startSize=0;",
+   "shapeNames": [
+    "swimlane"
+   ],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:2840"
+  },
+  {
+   "id": "general-29-container",
+   "title": "Container",
+   "tags": "container swimlane lane pool group Container",
+   "kind": "vertex",
+   "width": 200,
+   "height": 200,
+   "style": "swimlane;whiteSpace=wrap;html=1;",
+   "value": "Vertical Container",
+   "shapeNames": [
+    "swimlane"
+   ],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:2841"
+  },
+  {
+   "id": "general-30-horizontal-container",
+   "title": "Horizontal Container",
+   "tags": "container swimlane lane pool group Horizontal Container",
+   "kind": "vertex",
+   "width": 200,
+   "height": 200,
+   "style": "swimlane;horizontal=0;whiteSpace=wrap;html=1;",
+   "value": "Horizontal Container",
+   "shapeNames": [
+    "swimlane"
+   ],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:2842"
+  },
+  {
+   "id": "general-31-list",
+   "title": "List",
+   "tags": "list group erd table",
+   "kind": "cells",
+   "width": 140,
+   "height": 120,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"List\" style=\"swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"140\" height=\"120\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Item 1\" style=\"text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"80\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Item 2\" style=\"text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"80\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"Item 3\" style=\"text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"80\" height=\"30\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "swimlane"
+   ],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:2843"
+  },
+  {
+   "id": "general-32-list-item",
+   "title": "List Item",
+   "tags": "list item entry value group erd table",
+   "kind": "cells",
+   "width": 80,
+   "height": 30,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"List Item\" style=\"text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"80\" height=\"30\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:2855"
+  },
+  {
+   "id": "general-33-curve",
+   "title": "Curve",
+   "tags": "curve",
+   "kind": "cells",
+   "width": 50,
+   "height": 50,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"curved=1;curveGeometry=1;endArrow=classic;html=1;\" edge=\"1\" parent=\"1\"><mxGeometry width=\"50\" height=\"50\" relative=\"1\" as=\"geometry\"><mxPoint y=\"50\" as=\"sourcePoint\"/><mxPoint x=\"50\" as=\"targetPoint\"/><Array as=\"points\"><mxPoint x=\"50\" y=\"50\"/><mxPoint/></Array></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:2859"
+  },
+  {
+   "id": "general-34-bidirectional-arrow",
+   "title": "Bidirectional Arrow",
+   "tags": "line lines connector connectors connection connections arrow arrows bidirectional",
+   "kind": "edge",
+   "width": 100,
+   "height": 100,
+   "style": "shape=flexArrow;endArrow=classic;startArrow=classic;html=1;",
+   "shapeNames": [
+    "flexArrow"
+   ],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:2870"
+  },
+  {
+   "id": "general-35-arrow",
+   "title": "Arrow",
+   "tags": "line lines connector connectors connection connections arrow arrows directional directed",
+   "kind": "edge",
+   "width": 50,
+   "height": 50,
+   "style": "shape=flexArrow;endArrow=classic;html=1;",
+   "shapeNames": [
+    "flexArrow"
+   ],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:2871"
+  },
+  {
+   "id": "general-36-dashed-line",
+   "title": "Dashed Line",
+   "tags": "line lines connector connectors connection connections arrow arrows dashed undirected no",
+   "kind": "edge",
+   "width": 50,
+   "height": 50,
+   "style": "endArrow=none;dashed=1;html=1;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:2872"
+  },
+  {
+   "id": "general-37-dotted-line",
+   "title": "Dotted Line",
+   "tags": "line lines connector connectors connection connections arrow arrows dotted undirected no",
+   "kind": "edge",
+   "width": 50,
+   "height": 50,
+   "style": "endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:2873"
+  },
+  {
+   "id": "general-38-line",
+   "title": "Line",
+   "tags": "line lines connector connectors connection connections arrow arrows simple undirected plain blank no",
+   "kind": "edge",
+   "width": 50,
+   "height": 50,
+   "style": "endArrow=none;html=1;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:2874"
+  },
+  {
+   "id": "general-39-bidirectional-connector",
+   "title": "Bidirectional Connector",
+   "tags": "line lines connector connectors connection connections arrow arrows bidirectional",
+   "kind": "edge",
+   "width": 50,
+   "height": 50,
+   "style": "endArrow=classic;startArrow=classic;html=1;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:2875"
+  },
+  {
+   "id": "general-40-directional-connector",
+   "title": "Directional Connector",
+   "tags": "line lines connector connectors connection connections arrow arrows directional directed",
+   "kind": "edge",
+   "width": 50,
+   "height": 50,
+   "style": "endArrow=classic;html=1;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:2876"
+  },
+  {
+   "id": "general-41-link",
+   "title": "Link",
+   "tags": "line lines connector connectors connection connections arrow arrows link",
+   "kind": "edge",
+   "width": 100,
+   "height": 0,
+   "style": "shape=link;html=1;",
+   "shapeNames": [
+    "link"
+   ],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:2877"
+  },
+  {
+   "id": "general-42-connector-with-label",
+   "title": "Connector with Label",
+   "tags": "line lines connector connectors connection connections arrow arrows edge title",
+   "kind": "cells",
+   "width": 100,
+   "height": 0,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"endArrow=classic;html=1;\" edge=\"1\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint as=\"sourcePoint\"/><mxPoint x=\"100\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"3\" value=\"Label\" style=\"edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;\" vertex=\"1\" connectable=\"0\" parent=\"2\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:2878"
+  },
+  {
+   "id": "general-43-connector-with-labels",
+   "title": "Connector with Labels",
+   "tags": "line lines connector connectors connection connections arrow arrows edge title multiplicity",
+   "kind": "cells",
+   "width": 160,
+   "height": 0,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"endArrow=classic;html=1;\" edge=\"1\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint as=\"sourcePoint\"/><mxPoint x=\"160\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"3\" value=\"Label\" style=\"edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;\" vertex=\"1\" connectable=\"0\" parent=\"2\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Source\" style=\"edgeLabel;resizable=0;html=1;;align=left;verticalAlign=bottom;\" vertex=\"1\" connectable=\"0\" parent=\"2\"><mxGeometry x=\"-1\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"Target\" style=\"edgeLabel;resizable=0;html=1;;align=right;verticalAlign=bottom;\" vertex=\"1\" connectable=\"0\" parent=\"2\"><mxGeometry x=\"1\" relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:2894"
+  },
+  {
+   "id": "general-44-connector-with-symbol",
+   "title": "Connector with Symbol",
+   "tags": "line lines connector connectors connection connections arrow arrows edge shape symbol message mail email",
+   "kind": "cells",
+   "width": 100,
+   "height": 0,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"endArrow=classic;html=1;\" edge=\"1\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint as=\"sourcePoint\"/><mxPoint x=\"100\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"3\" value=\"\" style=\"shape=message;html=1;outlineConnect=0;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"20\" height=\"14\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-10\" y=\"-7\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "message"
+   ],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:2922"
+  }
+ ]
+}

@@ -46,3 +46,6 @@ out/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+
+# draw.io source downloads (scripts/drawio-palettes, when DRAWIO_CACHE_DIR points here)
+/.cache/

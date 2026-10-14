@@ -45,9 +45,9 @@ export default defineConfig({
   test: {
     environment: 'jsdom',
     globals: true,
-    include: ['src/**/*.test.ts'],
+    include: ['src/**/*.test.ts', 'tests/e2e/parity/__tests__/**/*.test.ts'],
     // Playwright specs (tests/e2e) run with `npm run test:e2e`, never under vitest
-    exclude: ['node_modules/**', 'dist/**', 'tests/e2e/**'],
+    exclude: ['node_modules/**', 'dist/**', 'tests/e2e/*.spec.ts'],
     setupFiles: ['src/__tests__/setup.ts'],
     // Node >= 25 enables Web Storage by default and its global localStorage
     // (undefined without --localstorage-file) shadows jsdom's implementation.

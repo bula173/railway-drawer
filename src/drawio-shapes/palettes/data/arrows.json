@@ -1,0 +1,484 @@
+{
+ "id": "arrows",
+ "title": "Arrows",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar.js:1481",
+ "entries": [
+  {
+   "id": "arrows-0-arrow-down",
+   "title": "Arrow Down",
+   "tags": "arrows  Arrow Down Arrow Down",
+   "kind": "vertex",
+   "width": 70,
+   "height": 97,
+   "style": "shape=mxgraph.arrows.arrow_down;html=1;verticalLabelPosition=bottom;verticalAlign=top;strokeWidth=2;strokeColor=#000000;",
+   "shapeNames": [
+    "mxgraph.arrows.arrow_down"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar.js:1481"
+  },
+  {
+   "id": "arrows-1-arrow-left",
+   "title": "Arrow Left",
+   "tags": "arrows  Arrow Left Arrow Left",
+   "kind": "vertex",
+   "width": 97,
+   "height": 70,
+   "style": "shape=mxgraph.arrows.arrow_left;html=1;verticalLabelPosition=bottom;verticalAlign=top;strokeWidth=2;strokeColor=#000000;",
+   "shapeNames": [
+    "mxgraph.arrows.arrow_left"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar.js:1481"
+  },
+  {
+   "id": "arrows-2-arrow-right",
+   "title": "Arrow Right",
+   "tags": "arrows  Arrow Right Arrow Right",
+   "kind": "vertex",
+   "width": 97,
+   "height": 70,
+   "style": "shape=mxgraph.arrows.arrow_right;html=1;verticalLabelPosition=bottom;verticalAlign=top;strokeWidth=2;strokeColor=#000000;",
+   "shapeNames": [
+    "mxgraph.arrows.arrow_right"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar.js:1481"
+  },
+  {
+   "id": "arrows-3-arrow-up",
+   "title": "Arrow Up",
+   "tags": "arrows  Arrow Up Arrow Up",
+   "kind": "vertex",
+   "width": 70,
+   "height": 97,
+   "style": "shape=mxgraph.arrows.arrow_up;html=1;verticalLabelPosition=bottom;verticalAlign=top;strokeWidth=2;strokeColor=#000000;",
+   "shapeNames": [
+    "mxgraph.arrows.arrow_up"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar.js:1481"
+  },
+  {
+   "id": "arrows-4-bent-left-arrow",
+   "title": "Bent Left Arrow",
+   "tags": "arrows  Bent Left Arrow Bent Left Arrow",
+   "kind": "vertex",
+   "width": 97,
+   "height": 97,
+   "style": "shape=mxgraph.arrows.bent_left_arrow;html=1;verticalLabelPosition=bottom;verticalAlign=top;strokeWidth=2;strokeColor=#000000;",
+   "shapeNames": [
+    "mxgraph.arrows.bent_left_arrow"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar.js:1481"
+  },
+  {
+   "id": "arrows-5-bent-right-arrow",
+   "title": "Bent Right Arrow",
+   "tags": "arrows  Bent Right Arrow Bent Right Arrow",
+   "kind": "vertex",
+   "width": 97,
+   "height": 97,
+   "style": "shape=mxgraph.arrows.bent_right_arrow;html=1;verticalLabelPosition=bottom;verticalAlign=top;strokeWidth=2;strokeColor=#000000;",
+   "shapeNames": [
+    "mxgraph.arrows.bent_right_arrow"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar.js:1481"
+  },
+  {
+   "id": "arrows-6-bent-up-arrow",
+   "title": "Bent Up Arrow",
+   "tags": "arrows  Bent Up Arrow Bent Up Arrow",
+   "kind": "vertex",
+   "width": 97,
+   "height": 83,
+   "style": "shape=mxgraph.arrows.bent_up_arrow;html=1;verticalLabelPosition=bottom;verticalAlign=top;strokeWidth=2;strokeColor=#000000;",
+   "shapeNames": [
+    "mxgraph.arrows.bent_up_arrow"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar.js:1481"
+  },
+  {
+   "id": "arrows-7-callout-double-arrow",
+   "title": "Callout Double Arrow",
+   "tags": "arrows  Callout Double Arrow Callout Double Arrow",
+   "kind": "vertex",
+   "width": 50,
+   "height": 97,
+   "style": "shape=mxgraph.arrows.callout_double_arrow;html=1;verticalLabelPosition=bottom;verticalAlign=top;strokeWidth=2;strokeColor=#000000;",
+   "shapeNames": [
+    "mxgraph.arrows.callout_double_arrow"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar.js:1481"
+  },
+  {
+   "id": "arrows-8-callout-quad-arrow",
+   "title": "Callout Quad Arrow",
+   "tags": "arrows  Callout Quad Arrow Callout Quad Arrow",
+   "kind": "vertex",
+   "width": 97,
+   "height": 97,
+   "style": "shape=mxgraph.arrows.callout_quad_arrow;html=1;verticalLabelPosition=bottom;verticalAlign=top;strokeWidth=2;strokeColor=#000000;",
+   "shapeNames": [
+    "mxgraph.arrows.callout_quad_arrow"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar.js:1481"
+  },
+  {
+   "id": "arrows-9-callout-up-arrow",
+   "title": "Callout Up Arrow",
+   "tags": "arrows  Callout Up Arrow Callout Up Arrow",
+   "kind": "vertex",
+   "width": 60,
+   "height": 98,
+   "style": "shape=mxgraph.arrows.callout_up_arrow;html=1;verticalLabelPosition=bottom;verticalAlign=top;strokeWidth=2;strokeColor=#000000;",
+   "shapeNames": [
+    "mxgraph.arrows.callout_up_arrow"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar.js:1481"
+  },
+  {
+   "id": "arrows-10-chevron-arrow",
+   "title": "Chevron Arrow",
+   "tags": "arrows  Chevron Arrow Chevron Arrow",
+   "kind": "vertex",
+   "width": 96,
+   "height": 60,
+   "style": "shape=mxgraph.arrows.chevron_arrow;html=1;verticalLabelPosition=bottom;verticalAlign=top;strokeWidth=2;strokeColor=#000000;",
+   "shapeNames": [
+    "mxgraph.arrows.chevron_arrow"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar.js:1481"
+  },
+  {
+   "id": "arrows-11-circular-arrow",
+   "title": "Circular Arrow",
+   "tags": "arrows  Circular Arrow Circular Arrow",
+   "kind": "vertex",
+   "width": 97,
+   "height": 69,
+   "style": "shape=mxgraph.arrows.circular_arrow;html=1;verticalLabelPosition=bottom;verticalAlign=top;strokeWidth=2;strokeColor=#000000;",
+   "shapeNames": [
+    "mxgraph.arrows.circular_arrow"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar.js:1481"
+  },
+  {
+   "id": "arrows-12-jump-in-arrow-1",
+   "title": "Jump-in Arrow 1",
+   "tags": "arrows  Jump-in Arrow 1 Jump-in Arrow 1",
+   "kind": "vertex",
+   "width": 96,
+   "height": 99,
+   "style": "shape=mxgraph.arrows.jump-in_arrow_1;html=1;verticalLabelPosition=bottom;verticalAlign=top;strokeWidth=2;strokeColor=#000000;",
+   "shapeNames": [
+    "mxgraph.arrows.jump-in_arrow_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar.js:1481"
+  },
+  {
+   "id": "arrows-13-jump-in-arrow-2",
+   "title": "Jump-in Arrow 2",
+   "tags": "arrows  Jump-in Arrow 2 Jump-in Arrow 2",
+   "kind": "vertex",
+   "width": 96,
+   "height": 99,
+   "style": "shape=mxgraph.arrows.jump-in_arrow_2;html=1;verticalLabelPosition=bottom;verticalAlign=top;strokeWidth=2;strokeColor=#000000;",
+   "shapeNames": [
+    "mxgraph.arrows.jump-in_arrow_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar.js:1481"
+  },
+  {
+   "id": "arrows-14-left-and-up-arrow",
+   "title": "Left and Up Arrow",
+   "tags": "arrows  Left and Up Arrow Left and Up Arrow",
+   "kind": "vertex",
+   "width": 96,
+   "height": 96,
+   "style": "shape=mxgraph.arrows.left_and_up_arrow;html=1;verticalLabelPosition=bottom;verticalAlign=top;strokeWidth=2;strokeColor=#000000;",
+   "shapeNames": [
+    "mxgraph.arrows.left_and_up_arrow"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar.js:1481"
+  },
+  {
+   "id": "arrows-15-left-sharp-edged-head-arrow",
+   "title": "Left Sharp Edged Head Arrow",
+   "tags": "arrows  Left Sharp Edged Head Arrow Left Sharp Edged Head Arrow",
+   "kind": "vertex",
+   "width": 97,
+   "height": 60,
+   "style": "shape=mxgraph.arrows.left_sharp_edged_head_arrow;html=1;verticalLabelPosition=bottom;verticalAlign=top;strokeWidth=2;strokeColor=#000000;",
+   "shapeNames": [
+    "mxgraph.arrows.left_sharp_edged_head_arrow"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar.js:1481"
+  },
+  {
+   "id": "arrows-16-notched-signal-in-arrow",
+   "title": "Notched Signal-in Arrow",
+   "tags": "arrows  Notched Signal-in Arrow Notched Signal-in Arrow",
+   "kind": "vertex",
+   "width": 96,
+   "height": 30,
+   "style": "shape=mxgraph.arrows.notched_signal-in_arrow;html=1;verticalLabelPosition=bottom;verticalAlign=top;strokeWidth=2;strokeColor=#000000;",
+   "shapeNames": [
+    "mxgraph.arrows.notched_signal-in_arrow"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar.js:1481"
+  },
+  {
+   "id": "arrows-17-quad-arrow",
+   "title": "Quad Arrow",
+   "tags": "arrows  Quad Arrow Quad Arrow",
+   "kind": "vertex",
+   "width": 97,
+   "height": 97,
+   "style": "shape=mxgraph.arrows.quad_arrow;html=1;verticalLabelPosition=bottom;verticalAlign=top;strokeWidth=2;strokeColor=#000000;",
+   "shapeNames": [
+    "mxgraph.arrows.quad_arrow"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar.js:1481"
+  },
+  {
+   "id": "arrows-18-right-notched-arrow",
+   "title": "Right Notched Arrow",
+   "tags": "arrows  Right Notched Arrow Right Notched Arrow",
+   "kind": "vertex",
+   "width": 96,
+   "height": 70,
+   "style": "shape=mxgraph.arrows.right_notched_arrow;html=1;verticalLabelPosition=bottom;verticalAlign=top;strokeWidth=2;strokeColor=#000000;",
+   "shapeNames": [
+    "mxgraph.arrows.right_notched_arrow"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar.js:1481"
+  },
+  {
+   "id": "arrows-19-sharp-edged-arrow",
+   "title": "Sharp Edged Arrow",
+   "tags": "arrows  Sharp Edged Arrow Sharp Edged Arrow",
+   "kind": "vertex",
+   "width": 97,
+   "height": 60,
+   "style": "shape=mxgraph.arrows.sharp_edged_arrow;html=1;verticalLabelPosition=bottom;verticalAlign=top;strokeWidth=2;strokeColor=#000000;",
+   "shapeNames": [
+    "mxgraph.arrows.sharp_edged_arrow"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar.js:1481"
+  },
+  {
+   "id": "arrows-20-signal-in-arrow",
+   "title": "Signal-in Arrow",
+   "tags": "arrows  Signal-in Arrow Signal-in Arrow",
+   "kind": "vertex",
+   "width": 97,
+   "height": 30,
+   "style": "shape=mxgraph.arrows.signal-in_arrow;html=1;verticalLabelPosition=bottom;verticalAlign=top;strokeWidth=2;strokeColor=#000000;",
+   "shapeNames": [
+    "mxgraph.arrows.signal-in_arrow"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar.js:1481"
+  },
+  {
+   "id": "arrows-21-slender-left-arrow",
+   "title": "Slender Left Arrow",
+   "tags": "arrows  Slender Left Arrow Slender Left Arrow",
+   "kind": "vertex",
+   "width": 97,
+   "height": 60,
+   "style": "shape=mxgraph.arrows.slender_left_arrow;html=1;verticalLabelPosition=bottom;verticalAlign=top;strokeWidth=2;strokeColor=#000000;",
+   "shapeNames": [
+    "mxgraph.arrows.slender_left_arrow"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar.js:1481"
+  },
+  {
+   "id": "arrows-22-slender-two-way-arrow",
+   "title": "Slender Two Way Arrow",
+   "tags": "arrows  Slender Two Way Arrow Slender Two Way Arrow",
+   "kind": "vertex",
+   "width": 97,
+   "height": 60,
+   "style": "shape=mxgraph.arrows.slender_two_way_arrow;html=1;verticalLabelPosition=bottom;verticalAlign=top;strokeWidth=2;strokeColor=#000000;",
+   "shapeNames": [
+    "mxgraph.arrows.slender_two_way_arrow"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar.js:1481"
+  },
+  {
+   "id": "arrows-23-slender-wide-tailed-arrow",
+   "title": "Slender Wide Tailed Arrow",
+   "tags": "arrows  Slender Wide Tailed Arrow Slender Wide Tailed Arrow",
+   "kind": "vertex",
+   "width": 96,
+   "height": 60,
+   "style": "shape=mxgraph.arrows.slender_wide_tailed_arrow;html=1;verticalLabelPosition=bottom;verticalAlign=top;strokeWidth=2;strokeColor=#000000;",
+   "shapeNames": [
+    "mxgraph.arrows.slender_wide_tailed_arrow"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar.js:1481"
+  },
+  {
+   "id": "arrows-24-striped-arrow",
+   "title": "Striped Arrow",
+   "tags": "arrows  Striped Arrow Striped Arrow",
+   "kind": "vertex",
+   "width": 97,
+   "height": 70,
+   "style": "shape=mxgraph.arrows.striped_arrow;html=1;verticalLabelPosition=bottom;verticalAlign=top;strokeWidth=2;strokeColor=#000000;",
+   "shapeNames": [
+    "mxgraph.arrows.striped_arrow"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar.js:1481"
+  },
+  {
+   "id": "arrows-25-stylised-notched-arrow",
+   "title": "Stylised Notched Arrow",
+   "tags": "arrows  Stylised Notched Arrow Stylised Notched Arrow",
+   "kind": "vertex",
+   "width": 96,
+   "height": 60,
+   "style": "shape=mxgraph.arrows.stylised_notched_arrow;html=1;verticalLabelPosition=bottom;verticalAlign=top;strokeWidth=2;strokeColor=#000000;",
+   "shapeNames": [
+    "mxgraph.arrows.stylised_notched_arrow"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar.js:1481"
+  },
+  {
+   "id": "arrows-26-triad-arrow",
+   "title": "Triad Arrow",
+   "tags": "arrows  Triad Arrow Triad Arrow",
+   "kind": "vertex",
+   "width": 97,
+   "height": 68,
+   "style": "shape=mxgraph.arrows.triad_arrow;html=1;verticalLabelPosition=bottom;verticalAlign=top;strokeWidth=2;strokeColor=#000000;",
+   "shapeNames": [
+    "mxgraph.arrows.triad_arrow"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar.js:1481"
+  },
+  {
+   "id": "arrows-27-two-way-arrow-horizontal",
+   "title": "Two Way Arrow Horizontal",
+   "tags": "arrows  Two Way Arrow Horizontal Two Way Arrow Horizontal",
+   "kind": "vertex",
+   "width": 96,
+   "height": 60,
+   "style": "shape=mxgraph.arrows.two_way_arrow_horizontal;html=1;verticalLabelPosition=bottom;verticalAlign=top;strokeWidth=2;strokeColor=#000000;",
+   "shapeNames": [
+    "mxgraph.arrows.two_way_arrow_horizontal"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar.js:1481"
+  },
+  {
+   "id": "arrows-28-two-way-arrow-vertical",
+   "title": "Two Way Arrow Vertical",
+   "tags": "arrows  Two Way Arrow Vertical Two Way Arrow Vertical",
+   "kind": "vertex",
+   "width": 60,
+   "height": 96,
+   "style": "shape=mxgraph.arrows.two_way_arrow_vertical;html=1;verticalLabelPosition=bottom;verticalAlign=top;strokeWidth=2;strokeColor=#000000;",
+   "shapeNames": [
+    "mxgraph.arrows.two_way_arrow_vertical"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar.js:1481"
+  },
+  {
+   "id": "arrows-29-u-turn-arrow",
+   "title": "U Turn Arrow",
+   "tags": "arrows  U Turn Arrow U Turn Arrow",
+   "kind": "vertex",
+   "width": 97,
+   "height": 98,
+   "style": "shape=mxgraph.arrows.u_turn_arrow;html=1;verticalLabelPosition=bottom;verticalAlign=top;strokeWidth=2;strokeColor=#000000;",
+   "shapeNames": [
+    "mxgraph.arrows.u_turn_arrow"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar.js:1481"
+  },
+  {
+   "id": "arrows-30-u-turn-down-arrow",
+   "title": "U Turn Down Arrow",
+   "tags": "arrows  U Turn Down Arrow U Turn Down Arrow",
+   "kind": "vertex",
+   "width": 97,
+   "height": 62,
+   "style": "shape=mxgraph.arrows.u_turn_down_arrow;html=1;verticalLabelPosition=bottom;verticalAlign=top;strokeWidth=2;strokeColor=#000000;",
+   "shapeNames": [
+    "mxgraph.arrows.u_turn_down_arrow"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar.js:1481"
+  },
+  {
+   "id": "arrows-31-u-turn-left-arrow",
+   "title": "U Turn Left Arrow",
+   "tags": "arrows  U Turn Left Arrow U Turn Left Arrow",
+   "kind": "vertex",
+   "width": 62,
+   "height": 97,
+   "style": "shape=mxgraph.arrows.u_turn_left_arrow;html=1;verticalLabelPosition=bottom;verticalAlign=top;strokeWidth=2;strokeColor=#000000;",
+   "shapeNames": [
+    "mxgraph.arrows.u_turn_left_arrow"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar.js:1481"
+  },
+  {
+   "id": "arrows-32-u-turn-right-arrow",
+   "title": "U Turn Right Arrow",
+   "tags": "arrows  U Turn Right Arrow U Turn Right Arrow",
+   "kind": "vertex",
+   "width": 62,
+   "height": 97,
+   "style": "shape=mxgraph.arrows.u_turn_right_arrow;html=1;verticalLabelPosition=bottom;verticalAlign=top;strokeWidth=2;strokeColor=#000000;",
+   "shapeNames": [
+    "mxgraph.arrows.u_turn_right_arrow"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar.js:1481"
+  },
+  {
+   "id": "arrows-33-u-turn-up-arrow",
+   "title": "U Turn Up Arrow",
+   "tags": "arrows  U Turn Up Arrow U Turn Up Arrow",
+   "kind": "vertex",
+   "width": 97,
+   "height": 62,
+   "style": "shape=mxgraph.arrows.u_turn_up_arrow;html=1;verticalLabelPosition=bottom;verticalAlign=top;strokeWidth=2;strokeColor=#000000;",
+   "shapeNames": [
+    "mxgraph.arrows.u_turn_up_arrow"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar.js:1481"
+  }
+ ]
+}

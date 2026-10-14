@@ -1,0 +1,36 @@
+{
+  "$comment": "Entries reported but never failing the draw.io parity spec. ids: exact entry id -> reason. xmlIncludes: substring of the rendered mxGraphModel XML -> reason (checked after ids).",
+  "ids": {
+    "general-2-text": "fonts: text-only entry, glyph rasterization differs between draw.io and the app",
+    "general-3-textbox": "fonts: text-only entry",
+    "misc-0-autosize-text": "fonts: text-only entry",
+    "misc-1-autosize-title": "fonts: text-only entry",
+    "misc-4-slanted-text-left": "fonts: text-only entry",
+    "misc-5-slanted-text-right": "fonts: text-only entry",
+    "misc-6-slanted-text-top": "fonts: text-only entry",
+    "misc-9-unordered-list": "fonts: HTML list label",
+    "misc-10-ordered-list": "fonts: HTML list label",
+    "misc-21-html-table-4": "fonts: HTML table label",
+    "misc-3-curved-text": "fonts: curvedText glyph placement",
+    "misc-12-note": "gradient: gradient rasterization differs by sub-pixel amounts",
+    "basic-68-sankey-link": "mermaid shape (low priority) with gradient",
+    "misc-37-image-fixed-aspect": "image: img/clipart/* is resolved by draw.io's base URL only",
+    "misc-38-image-variable-aspect": "image: img/clipart/* is resolved by draw.io's base URL only",
+    "misc-39-icon": "image: img/clipart/* is resolved by draw.io's base URL only",
+    "misc-40-label-1": "image: img/clipart/* is resolved by draw.io's base URL only",
+    "misc-41-label-2": "image: img/clipart/* is resolved by draw.io's base URL only",
+    "general-32-list-item": "fonts: text-only entry (HTML label 1-2 px lower than draw.io's)",
+    "advanced-32-list-item": "fonts: text-only entry (HTML label 1-2 px lower than draw.io's)",
+    "misc-7-variable": "fonts: text-only entry",
+    "misc-2-link": "fonts: text-only entry (link label)",
+    "misc-11-vertical-list": "fonts: borderless table of text cells (strokeColor=none, inherited); only the labels differ",
+    "misc-8-timestamp": "placeholders: %date{...}% substitution (draw.io Graph.replacePlaceholders) is not ported; the app shows the raw label",
+    "general-31-list": "draw.io side: the export of the raw palette template does not run its stackLayout (all items are drawn in the header); the app lays the items out as draw.io's sidebar insert does",
+    "advanced-31-list": "draw.io side: the export of the raw palette template does not run its stackLayout (all items are drawn in the header); the app lays the items out as draw.io's sidebar insert does"
+  },
+  "xmlIncludes": {
+    "sketch=1": "sketch=1 hand-drawn (rough.js) renders as a plain shape in maxGraph mode",
+    "shape=mermaid": "mermaid shape: ported, low priority",
+    "image=img/": "image: draw.io-relative image path"
+  }
+}
