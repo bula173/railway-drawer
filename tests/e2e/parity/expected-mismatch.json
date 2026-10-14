@@ -7,12 +7,10 @@
     "misc-39-icon": "image: img/clipart/* is resolved by draw.io's base URL only",
     "misc-40-label-1": "image: img/clipart/* is resolved by draw.io's base URL only",
     "misc-41-label-2": "image: img/clipart/* is resolved by draw.io's base URL only",
-    "misc-8-timestamp": "placeholders: %date{...}% substitution (draw.io Graph.replacePlaceholders) is not ported; the app shows the raw label",
     "general-31-list": "draw.io side: the export of the raw palette template does not run its stackLayout (all items are drawn in the header); the app lays the items out as draw.io's sidebar insert does",
     "advanced-31-list": "draw.io side: the export of the raw palette template does not run its stackLayout (all items are drawn in the header); the app lays the items out as draw.io's sidebar insert does"
   },
   "xmlIncludes": {
-    "sketch=1": "sketch=1 hand-drawn (rough.js) renders as a plain shape in maxGraph mode",
     "image=img/": "image: draw.io-relative image path"
   }
 }

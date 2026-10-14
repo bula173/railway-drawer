@@ -9,6 +9,19 @@
     <style>
       body[data-editor="drawio"] #app-container { display: none; }
     </style>
+    <!-- Theme before first paint (src/drawio-shapes/theme/dark-mode.ts owns it afterwards) -->
+    <script>
+      (function () {
+        var dark = false;
+        try {
+          var pref = localStorage.getItem('rd.theme');
+          dark = pref === 'dark' || (pref !== 'light' && !!window.matchMedia &&
+            window.matchMedia('(prefers-color-scheme: dark)').matches);
+        } catch (e) { /* storage blocked: light */ }
+        document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+        document.documentElement.style.colorScheme = dark ? 'dark' : 'light';
+      })();
+    </script>
   </head>
   <body>
     <div id="app-container">
@@ -59,6 +72,7 @@
               <div class="menu-dropdown-item" data-action="fitWindow">Fit to Window</div>
               <div style="height: 1px; background: #e0e0e0; margin: 4px 0;"></div>
               <div class="menu-dropdown-item" data-action="showGrid">Show Grid</div>
+              <div class="menu-dropdown-item" data-action="toggleDarkMode" role="menuitemcheckbox" aria-checked="false">Dark Mode</div>
               <div style="height: 1px; background: #e0e0e0; margin: 4px 0;"></div>
               <div class="menu-dropdown-item" data-action="switchEditorDrawio">Switch to draw.io editor</div>
             </div>

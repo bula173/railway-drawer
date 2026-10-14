@@ -23,6 +23,7 @@ import { logger } from '../../drawio/logger';
 import { decompress } from './codec';
 import { installStencilArcFix } from './stencil-fixes';
 import { installBoundingBoxFix, installDropShadowFix, installPolylineArcSizeFix, installTextCssFix } from './shape-fixes';
+import { installSketchSupport } from './sketch';
 
 const LOG = 'drawio-stencils';
 const STENCIL_PREFIX = 'stencil(';
@@ -146,6 +147,8 @@ export function installStencilEngine(options: StencilEngineOptions = {}): void {
   installDropShadowFix();
   installTextCssFix();
   installBoundingBoxFix();
+  // sketch=1 (rough.js) and comic=1 hand-drawn shapes; after installBoundingBoxFix
+  installSketchSupport();
   ensureNullPrototypeStore();
   // Typed as returning StencilShape, but maxGraph itself returns undefined for unknown names
   StencilShapeRegistry.getStencil = ((name: string) => lookupStencil(name)) as typeof StencilShapeRegistry.getStencil;

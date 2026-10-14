@@ -10,13 +10,124 @@
  *
  * Only the resolved style (CellState.style) is rewritten. cell.style keeps the original
  * draw.io values, so a saved file still opens 1:1 in draw.io.
+ *
+ * Color mode: light by default. `setDrawioDarkMode(true)` switches every installed graph (that
+ * does not override it with `setGraphColorMode`) to draw.io's dark rendering: light-dark()
+ * takes the dark side, `default` colors use shapeForegroundColor/shapeBackgroundColor's dark
+ * values, and with adaptiveColors 'auto' (draw.io's default, Graph.js:2247) every plain color is
+ * inverted with mxUtils.getInverseColor, as draw.io's SVG canvas does in dark mode.
+ * The initial global mode follows `<html data-theme="dark">` when present.
  */
 
 import { TextShape } from '@maxgraph/core';
 import type { Cell, CellStateStyle, Graph } from '@maxgraph/core';
-import { resolveColorValue, resolveLightDarkInCss, type DefaultColorMode } from './colors';
+import {
+  resolveColorValue,
+  resolveHtmlLabelColors,
+  type AdaptiveColors,
+  type ColorResolveOptions,
+  type DefaultColorMode,
+} from './colors';
+import { installPlaceholders } from './placeholders';
 
 const INSTALLED = Symbol.for('rd.drawioCompatInstalled');
+const MODE = Symbol.for('rd.drawioColorMode');
+
+interface GraphColorMode {
+  /** null: follow the global mode */
+  dark: boolean | null;
+  /** null: follow the global adaptive colors */
+  adaptive: AdaptiveColors | null;
+}
+
+type ModedGraph = Graph & { [MODE]?: GraphColorMode; [INSTALLED]?: boolean };
+
+function initialDark(): boolean {
+  try {
+    return typeof document !== 'undefined' && document.documentElement?.getAttribute('data-theme') === 'dark';
+  } catch {
+    return false;
+  }
+}
+
+let globalDark = initialDark();
+let globalAdaptive: AdaptiveColors = 'auto';
+const installedGraphs = new Set<ModedGraph>();
+
+function modeOf(graph: Graph): GraphColorMode {
+  const g = graph as ModedGraph;
+  if (!g[MODE]) g[MODE] = { dark: null, adaptive: null };
+  return g[MODE]!;
+}
+
+/** True when `graph` renders in dark mode (its own setting, else the global one). */
+export function isGraphDarkMode(graph: Graph): boolean {
+  const own = (graph as ModedGraph)[MODE]?.dark;
+  return own != null ? own : globalDark;
+}
+
+/** Graph.getAdaptiveColors: the graph's value, else the global default ('auto'). */
+export function getGraphAdaptiveColors(graph: Graph): AdaptiveColors {
+  const own = (graph as ModedGraph)[MODE]?.adaptive;
+  return own != null ? own : globalAdaptive;
+}
+
+/** Resolution options for `graph` (dark mode, adaptive colors, page background). */
+export function getColorResolveOptions(graph: Graph): ColorResolveOptions {
+  const background = (graph as Graph & { background?: string | null }).background;
+  return {
+    dark: isGraphDarkMode(graph),
+    adaptive: getGraphAdaptiveColors(graph),
+    pageBackground: typeof background === 'string' ? background : null,
+  };
+}
+
+/** Container color-scheme and a repaint for the graph's current mode. */
+function applyGraphColorMode(graph: Graph): void {
+  const container = graph.container as HTMLElement | null | undefined;
+  const scheme = isGraphDarkMode(graph) && getGraphAdaptiveColors(graph) !== 'none' ? 'dark' : 'light';
+  if (container?.style) {
+    container.style.setProperty('color-scheme', scheme);
+    (container.style as CSSStyleDeclaration & { colorScheme?: string }).colorScheme = scheme;
+    container.setAttribute('data-color-mode', scheme);
+  }
+  if ((graph as ModedGraph)[INSTALLED] && graph.getDataModel().getRoot()) graph.refresh();
+}
+
+/** The global color mode (all installed graphs without their own setting). */
+export function getDrawioDarkMode(): boolean {
+  return globalDark;
+}
+
+/** Switches all installed graphs that follow the global mode to dark or light rendering. */
+export function setDrawioDarkMode(dark: boolean): void {
+  if (globalDark === dark) return;
+  globalDark = dark;
+  for (const graph of installedGraphs) {
+    if ((graph as ModedGraph)[MODE]?.dark == null) applyGraphColorMode(graph);
+  }
+}
+
+/** Graph.defaultAdaptiveColors for all graphs without their own value. */
+export function setDefaultAdaptiveColors(value: AdaptiveColors): void {
+  if (globalAdaptive === value) return;
+  globalAdaptive = value;
+  for (const graph of installedGraphs) {
+    if ((graph as ModedGraph)[MODE]?.adaptive == null) applyGraphColorMode(graph);
+  }
+}
+
+/** Per-graph override: true/false pins dark/light (e.g. exports, parity), null follows the global mode. */
+export function setGraphColorMode(graph: Graph, dark: boolean | null): void {
+  modeOf(graph).dark = dark;
+  applyGraphColorMode(graph);
+}
+
+/** Graph.setAdaptiveColors: 'auto' | 'simple' | 'none', or null/'default' for the global default. */
+export function setGraphAdaptiveColors(graph: Graph, value: AdaptiveColors | 'default' | null): void {
+  modeOf(graph).adaptive = value === 'default' ? null : value;
+  applyGraphColorMode(graph);
+}
 
 /** Color keys that do not end in `Color`. */
 const EXTRA_COLOR_KEYS: ReadonlySet<string> = new Set(['imageBorder', 'imageBackground']);
@@ -30,16 +141,17 @@ function defaultMode(style: Record<string, unknown>, key: string): DefaultColorM
 
 /**
  * Resolves `light-dark()`, `var(--x, fallback)` and `default` in every color key of a
- * resolved style, in place. Returns the same object.
+ * resolved style, in place. Returns the same object. Without `options` the light theme is
+ * used; with `{ dark: true }` the dark values and adaptive colors apply.
  */
-export function resolveStyleColors<T extends object>(style: T): T {
+export function resolveStyleColors<T extends object>(style: T, options?: ColorResolveOptions): T {
   if (!style) return style;
   const rec = style as Record<string, unknown>;
   for (const key of Object.keys(rec)) {
     if (!key.endsWith('Color') && !EXTRA_COLOR_KEYS.has(key)) continue;
     const value = rec[key];
     if (typeof value !== 'string') continue;
-    const resolved = resolveColorValue(value, key, value === 'default' ? defaultMode(rec, key) : undefined);
+    const resolved = resolveColorValue(value, key, value === 'default' ? defaultMode(rec, key) : undefined, options);
     if (resolved !== value) rec[key] = resolved;
   }
   return style;
@@ -60,24 +172,44 @@ export class DrawioTextShape extends TextShape {
 
 /**
  * Installs draw.io color compatibility on one graph (idempotent):
- * - postProcessCellStyle resolves light-dark()/default on the resolved style only;
- * - getLabel rewrites light-dark() in HTML label CSS to the light value;
+ * - postProcessCellStyle resolves light-dark()/default (and adaptive colors in dark mode) on
+ *   the resolved style only;
+ * - draw.io label placeholders (`placeholders=1`: %name%, %id%, %date{mask}%, ...);
+ * - getLabel rewrites light-dark() in HTML label CSS to the current mode's value (and inverts
+ *   plain label colors in dark mode with adaptiveColors 'auto');
  * - draw.io's label base spacing (DrawioTextShape) and 0.1 minimum SVG stroke width;
- * - the container gets `color-scheme: light`, so any light-dark() left in CSS picks the
- *   light value too.
+ * - the container gets `color-scheme: light` (`dark` in dark mode), so any light-dark() left
+ *   in CSS picks the same side.
  */
 export function installDrawioCompat(graph: Graph): void {
-  const marked = graph as Graph & { [INSTALLED]?: boolean };
+  const marked = graph as ModedGraph;
   if (marked[INSTALLED]) return;
   marked[INSTALLED] = true;
+  installedGraphs.add(marked);
+
+  const baseDestroy = graph.destroy.bind(graph);
+  graph.destroy = () => {
+    installedGraphs.delete(marked);
+    baseDestroy();
+  };
+
+  // Placeholders before the light-dark() rewrite: values can contain CSS too
+  installPlaceholders(graph);
 
   const basePostProcess = graph.postProcessCellStyle.bind(graph);
-  graph.postProcessCellStyle = (style: CellStateStyle): CellStateStyle => resolveStyleColors(basePostProcess(style));
+  graph.postProcessCellStyle = (style: CellStateStyle): CellStateStyle =>
+    resolveStyleColors(basePostProcess(style), isGraphDarkMode(graph) ? getColorResolveOptions(graph) : undefined);
 
   const baseGetLabel = graph.getLabel.bind(graph);
   graph.getLabel = (cell: Cell): string | null => {
     const label = baseGetLabel(cell);
-    return typeof label === 'string' && LIGHT_DARK_RE.test(label) ? resolveLightDarkInCss(label) : label;
+    if (typeof label !== 'string') return label;
+    if (isGraphDarkMode(graph)) {
+      return graph.isHtmlLabel(cell) || LIGHT_DARK_RE.test(label)
+        ? resolveHtmlLabelColors(label, getColorResolveOptions(graph))
+        : label;
+    }
+    return LIGHT_DARK_RE.test(label) ? resolveHtmlLabelColors(label) : label;
   };
 
   // draw.io Graph constructor (Graph.js:941): thin strokes such as fillStrokeWidth=0.2 stay thin
@@ -85,12 +217,6 @@ export function installDrawioCompat(graph: Graph): void {
   graph.cellRenderer.minSvgStrokeWidth = 0.1;
   graph.cellRenderer.defaultTextShape = DrawioTextShape;
 
-  const container = graph.container as HTMLElement | null | undefined;
-  if (container?.style) {
-    container.style.setProperty('color-scheme', 'light');
-    (container.style as CSSStyleDeclaration & { colorScheme?: string }).colorScheme = 'light';
-  }
-
-  // Cells that were rendered before the install pick up the resolved colors
-  if (graph.getDataModel().getRoot()) graph.refresh();
+  // color-scheme for the current mode; cells rendered before the install pick up the resolved colors
+  applyGraphColorMode(graph);
 }

@@ -15,6 +15,7 @@
 import { Graph } from '@maxgraph/core';
 import { ClipboardService } from '../services/clipboard-service';
 import type { GraphCommandService } from '../services/graph-command-service';
+import { ensureDrawioMenuItems, executeDrawioMenuAction, updateDrawioMenuItems } from '../drawio-shapes/behaviour/menu';
 
 /**
  * @class ContextMenuController
@@ -62,6 +63,8 @@ export class ContextMenuController {
     this.graph = graph;
     this.contextMenu = document.getElementById('context-menu');
     this.clipboardService = ClipboardService.getInstance();
+    // draw.io table/lane and collapse/expand items (bound below like the static items)
+    ensureDrawioMenuItems(this.contextMenu);
     this.setupContextMenu();
     this.setupClipboardListener();
   }
@@ -212,6 +215,8 @@ export class ContextMenuController {
       if (pasteItem) pasteItem.style.display = this.clipboardService.hasContent() ? 'block' : 'none';
     }
 
+    updateDrawioMenuItems(this.contextMenu, this.graph, type === 'cell' ? this.currentCell : null);
+
     this.contextMenu.style.display = 'block';
     this.contextMenu.style.left = `${x}px`;
     this.contextMenu.style.top = `${y}px`;
@@ -225,6 +230,10 @@ export class ContextMenuController {
 
   private executeAction(action: string): void {
     const cellsToOperate = this.selectedCells.length > 0 ? this.selectedCells : [this.currentCell];
+
+    if (executeDrawioMenuAction(this.graph, action, this.currentCell)) {
+      return;
+    }
 
     switch (action) {
       case 'delete':

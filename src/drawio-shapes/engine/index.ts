@@ -15,3 +15,5 @@ export * from './graph-compat';
 export * from './html-labels';
 export * from './view-fixes';
 export * from './mxlibrary';
+export * from './placeholders';
+export * from './sketch';

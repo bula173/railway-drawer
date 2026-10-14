@@ -28,6 +28,8 @@ import {
   installInheritStyleValues,
 } from '../drawio-shapes/engine';
 import { installTableSupport } from '../drawio-shapes/js/shapes-edges';
+import { installDrawioBehaviour } from '../drawio-shapes/behaviour';
+import { installDrawioHandles } from '../drawio-shapes/handles';
 import { installStencilAutoload } from './drawio-stencil-autoload';
 import { CacheService, CacheData, CacheSaveResult } from '../services/cache-service';
 import { globalSaveStatusIndicator } from './save-status';
@@ -267,6 +269,8 @@ export class TabManager {
     installInheritStyleValues(graph);
     // draw.io tables, lists, stack layouts, collapsed tables
     installTableSupport(graph);
+    installDrawioBehaviour(graph);
+    installDrawioHandles(graph);
     // Named stencils (mxgraph.basic.*, ...) are fetched when cells using them arrive (load, paste, insert)
     installStencilAutoload(graph);
 

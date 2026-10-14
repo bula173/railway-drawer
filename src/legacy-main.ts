@@ -42,6 +42,7 @@ import { ensureStencilsForXml, installDrawioCompat, installStencilEngine, parseM
 import { PALETTES, loadPalette } from './drawio-shapes/palettes';
 import { createDrawioPaletteView, ertmsPaletteSource, setDrawioPaletteEngine } from './ui/drawio-palette';
 import { installParityHook } from './debug/parity-hook';
+import { installDarkModeToggle } from './drawio-shapes/theme/dark-mode';
 
 /**
  * @brief Register all built-in shape definitions
@@ -96,6 +97,7 @@ new ResizablePanels();
  * save, and load different diagrams within the same session.
  * The active tab provides access to the graph instance and command services.
  */
+installDarkModeToggle();
 const tabManager = new TabManager('tabs-container', 'graph-container');
 // Register with service registry instead of polluting window object
 ServiceRegistry.setTabManager(tabManager);

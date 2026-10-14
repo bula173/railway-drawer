@@ -24,7 +24,8 @@
     "drawio:palettes": "node scripts/drawio-palettes/fetch-sources.ts && node scripts/drawio-palettes/decode-stencils-bundle.ts && node scripts/drawio-palettes/extract-palettes.ts"
   },
   "dependencies": {
-    "@maxgraph/core": "^0.10.0"
+    "@maxgraph/core": "^0.10.0",
+    "roughjs": "4.6.6"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.5",

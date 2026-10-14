@@ -11,6 +11,7 @@ import { Cell, Geometry, GraphDataModel, Point } from '@maxgraph/core';
 import type { Graph } from '@maxgraph/core';
 import { copyRawDrawioStyle, importDrawioXmlIntoModel, parseDrawioStyle } from '../../services/drawio-xml';
 import type { PaletteEntry } from './contracts';
+import { dropCellsIntoContainerAt } from '../../drawio-shapes/behaviour';
 
 /** Wraps bare `<root>` / `<mxCell>` fragments into an `<mxGraphModel>`. */
 export function wrapModelXml(xml: string): string {
@@ -142,6 +143,8 @@ export function insertEntry(graph: Graph, entry: PaletteEntry, at?: { x: number;
   model.beginUpdate();
   try {
     inserted = graph.addCells(clones, graph.getDefaultParent(), null, null, null);
+    // Dropped onto a container/List: move into it at the drop position, like draw.io
+    if (at) inserted = dropCellsIntoContainerAt(graph, inserted, target.x, target.y);
   } finally {
     model.endUpdate();
   }
