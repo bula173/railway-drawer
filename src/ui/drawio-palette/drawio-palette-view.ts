@@ -55,6 +55,15 @@ export interface DrawioPaletteViewOptions {
    * (e.g. the app's own shape groups), so one menu controls every library in the Shapes tab.
    */
   extraMenuItems?: PaletteMenuItem[];
+  /** Load stored user libraries and show "Import library…" (default true). */
+  userLibraries?: boolean;
+  /** Show the "More shapes…" menu (default true). */
+  showMoreMenu?: boolean;
+  /**
+   * Suffix for the localStorage keys of the visible/expanded flags, so a second view (e.g. the
+   * ERTMS-only tab) keeps its own state. Default: the shared keys.
+   */
+  storageKeySuffix?: string;
 }
 
 export interface PaletteMenuItem {
@@ -194,8 +203,11 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
       status.hidden = false;
     });
 
-  const visibleFlags = readFlags(VISIBLE_STORAGE_KEY);
-  const expandedFlags = readFlags(EXPANDED_STORAGE_KEY);
+  const visibleKey = VISIBLE_STORAGE_KEY + (options.storageKeySuffix ?? '');
+  const expandedKey = EXPANDED_STORAGE_KEY + (options.storageKeySuffix ?? '');
+  const userLibraries = options.userLibraries ?? true;
+  const visibleFlags = readFlags(visibleKey);
+  const expandedFlags = readFlags(expandedKey);
   const firstId = options.palettes[0]?.id;
   const defaultExpanded = new Set(options.defaultExpanded ?? [firstId, 'ertms'].filter((x): x is string => !!x));
 
@@ -219,6 +231,9 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
   fileInput.accept = '.xml,.drawiolib,application/xml,text/xml';
   fileInput.hidden = true;
   footer.append(moreBtn, importBtn, fileInput);
+  moreBtn.hidden = options.showMoreMenu === false;
+  importBtn.hidden = !userLibraries;
+  footer.hidden = moreBtn.hidden && importBtn.hidden;
   const menu = el('div', 'rd-dp-menu');
   menu.hidden = true;
   menu.setAttribute('role', 'menu');
@@ -492,7 +507,7 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
     cat.root.classList.toggle('rd-dp-expanded', expanded);
     cat.header.setAttribute('aria-expanded', String(expanded));
     expandedFlags[id] = expanded;
-    writeFlags(EXPANDED_STORAGE_KEY, expandedFlags);
+    writeFlags(expandedKey, expandedFlags);
     if (expanded) void loadCategory(cat);
   }
 
@@ -538,7 +553,7 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
     const cat = byId.get(id);
     if (!cat) return;
     visibleFlags[id] = visible;
-    writeFlags(VISIBLE_STORAGE_KEY, visibleFlags);
+    writeFlags(visibleKey, visibleFlags);
     if (visible && (isExpanded(cat) || query.trim())) void loadCategory(cat);
     applyFilter();
     syncMenu();
@@ -582,7 +597,7 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
 
   // ------------------------------------------------------------------ user libraries
 
-  let stored: StoredLibrary[] = readStoredLibraries();
+  let stored: StoredLibrary[] = userLibraries ? readStoredLibraries() : [];
 
   function addLibraryCategory(lib: StoredLibrary): void {
     const entries = engine().parseMxLibrary(lib.text);
@@ -623,8 +638,8 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
     writeStoredLibraries(stored);
     delete visibleFlags[id];
     delete expandedFlags[id];
-    writeFlags(VISIBLE_STORAGE_KEY, visibleFlags);
-    writeFlags(EXPANDED_STORAGE_KEY, expandedFlags);
+    writeFlags(visibleKey, visibleFlags);
+    writeFlags(expandedKey, expandedFlags);
     syncMenu();
   }
 

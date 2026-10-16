@@ -1,5 +1,5 @@
-export type LeftPanelTab = 'shapes' | 'layers' | 'plantuml';
-export type CloseableTab = 'plantuml';
+export type LeftPanelTab = 'shapes' | 'ertms' | 'layers' | 'plantuml';
+export type CloseableTab = 'plantuml' | 'ertms';
 
 export class LeftPanelTabs {
   private container: HTMLElement;
@@ -7,6 +7,7 @@ export class LeftPanelTabs {
   private tabContents: Map<LeftPanelTab, HTMLElement> = new Map();
   private activeTab: LeftPanelTab = 'shapes';
   private hiddenTabs: Set<CloseableTab> = new Set();
+  private visibilityListeners: Array<(tabId: CloseableTab, visible: boolean) => void> = [];
 
   constructor(containerId: string) {
     const el = document.getElementById(containerId);
@@ -20,10 +21,13 @@ export class LeftPanelTabs {
     tabBar.className = 'left-panel-tabbar';
 
     const shapeTabBtn = this.createTabButton('shapes', 'Shapes');
+    const ertmsTabBtn = this.createTabButton('ertms', 'ERTMS');
+    ertmsTabBtn.title = 'ERTMS library only (optional: View > ERTMS Tab)';
     const layerTabBtn = this.createTabButton('layers', 'Layers');
     const plantumlTabBtn = this.createTabButton('plantuml', '🌿 PlantUML');
 
     tabBar.appendChild(shapeTabBtn);
+    tabBar.appendChild(ertmsTabBtn);
     tabBar.appendChild(layerTabBtn);
     tabBar.appendChild(plantumlTabBtn);
 
@@ -43,7 +47,7 @@ export class LeftPanelTabs {
     btn.appendChild(labelSpan);
 
     // Add close button for closeable tabs
-    const closeableTabs: CloseableTab[] = ['plantuml'];
+    const closeableTabs: CloseableTab[] = ['plantuml', 'ertms'];
     if (closeableTabs.includes(tabId as CloseableTab)) {
       const closeBtn = document.createElement('span');
       closeBtn.className = 'tab-close-btn';
@@ -127,6 +131,7 @@ export class LeftPanelTabs {
       const defaultTab: LeftPanelTab = 'shapes';
       this.switchTab(defaultTab);
     }
+    this.visibilityListeners.forEach((listener) => listener(tabId, false));
   }
 
   /**
@@ -149,6 +154,14 @@ export class LeftPanelTabs {
 
     // Switch to the newly shown tab
     this.switchTab(tabId);
+    this.visibilityListeners.forEach((listener) => listener(tabId, true));
+  }
+
+  /**
+   * Called when a closeable tab is shown or closed (e.g. to persist an optional tab)
+   */
+  onTabVisibilityChange(listener: (tabId: CloseableTab, visible: boolean) => void): void {
+    this.visibilityListeners.push(listener);
   }
 
   /**

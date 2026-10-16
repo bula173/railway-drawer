@@ -51,7 +51,7 @@ test.describe('draw.io palettes in the maxGraph editor', () => {
     await expect(page.locator('body')).toHaveAttribute('data-editor', 'legacy');
 
     // One Shapes tab holds app shapes and the draw.io palettes; no separate draw.io/Stencils tabs
-    await expect(page.locator('.left-panel-tab-btn')).toHaveText(['Shapes', 'Layers', /PlantUML/]);
+    await expect(page.locator('.left-panel-tab-btn:visible')).toHaveText(['Shapes', 'Layers', /PlantUML/]);
     await expect(page.locator('#stencils-container')).toHaveCount(0);
     const container = page.locator('#drawio-palette-container');
     await expect(container).toBeVisible();
@@ -117,5 +117,32 @@ test.describe('draw.io palettes in the maxGraph editor', () => {
     await page.locator('#drawio-palette-container .rd-dp-more').click();
     await menu.locator('input[data-menu-item-id="app-Basic"]').check();
     await expect(appShapes.locator('.shapes-group-header[data-group="Basic"]')).toBeVisible();
+  });
+
+  test('optional ERTMS tab shows only the ERTMS library and is remembered', async ({ page }) => {
+    await page.goto('/');
+    await page.evaluate(() => localStorage.removeItem('railway-drawer-ertms-tab'));
+    await page.reload();
+    await expect(page.locator('#tabs-container .tab-button.active')).toHaveCount(1);
+    const ertmsTab = page.locator('.left-panel-tab-btn', { hasText: 'ERTMS' });
+    await expect(ertmsTab).toBeHidden();
+
+    await page.locator('.menu-item[data-menu="view"]').click();
+    await page.locator('[data-action="toggleErtmsTab"]').click();
+    await expect(ertmsTab).toBeVisible();
+    const panel = page.locator('#ertms-panel');
+    await expect(panel).toBeVisible();
+    await expect(panel.locator('.rd-dp-category')).toHaveCount(1);
+    await expect(panel.locator('section[data-palette-id="ertms"] .rd-dp-item')).toHaveCount(40);
+    await expect(panel.locator('.rd-dp-more')).toBeHidden();
+    await expect(panel.locator('.rd-dp-import')).toBeHidden();
+
+    // remembered across reloads; the tab's close button hides it again
+    await page.reload();
+    await expect(ertmsTab).toBeVisible();
+    await ertmsTab.locator('.tab-close-btn').click();
+    await expect(ertmsTab).toBeHidden();
+    await page.reload();
+    await expect(ertmsTab).toBeHidden();
   });
 });

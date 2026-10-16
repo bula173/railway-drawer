@@ -364,6 +364,16 @@ export class MenuController {
         break;
       }
 
+      case 'toggleErtmsTab': {
+        // Optional left-panel tab with only the ERTMS library; visibility is persisted by legacy-main.ts
+        const leftPanelTabs = (window as any).__leftPanelTabs;
+        if (leftPanelTabs) {
+          if (leftPanelTabs.isTabHidden('ertms')) leftPanelTabs.showTab('ertms');
+          else leftPanelTabs.closeTab('ertms');
+        }
+        break;
+      }
+
       case 'designShapes':
         window.dispatchEvent(new CustomEvent('open-shape-designer'));
         break;

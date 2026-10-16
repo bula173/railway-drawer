@@ -160,7 +160,10 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   **Shapes** tab of the left panel (`#shapes-container` = `#app-shapes-container` (ShapeToolbar groups) +
   `#custom-shapes-container` + `#drawio-palette-container`). There is no separate draw.io or Stencils tab:
   the palette's "More shapes…" menu toggles the draw.io palettes and, via `extraMenuItems`, the app shape
-  groups (hidden groups in localStorage `railway-drawer-hidden-shape-groups`). Order: draw.io palettes, then ERTMS (`public/libraries/ertms.xml`,
+  groups (hidden groups in localStorage `railway-drawer-hidden-shape-groups`). Optional **ERTMS** tab (View > ERTMS Tab,
+  closeable, state in localStorage `railway-drawer-ertms-tab`): a second palette view with only the ERTMS
+  library (`userLibraries: false`, `showMoreMenu: false`, own flags via `storageKeySuffix`, no dropTarget —
+  the Shapes-tab view handles its drops since palette/entry ids are the same). Order: draw.io palettes, then ERTMS (`public/libraries/ertms.xml`,
   the default ERTMS palette; the `src/shapes/ertms` placeholders are renderers only, for old files), then
   user libraries ("Import library…", stored in localStorage `rd.drawioLibraries`). Thumbnails come from one
   hidden graph (draw.io defaults, table support). Click inserts at the view centre, drag drops at the pointer

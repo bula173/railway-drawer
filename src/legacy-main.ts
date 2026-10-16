@@ -375,6 +375,7 @@ graphContainer.addEventListener('dragleave', (evt) => {
  */
 const leftPanelTabs = new LeftPanelTabs('leftpanel-container');
 leftPanelTabs.registerTabContent('shapes', 'shapes-container');
+leftPanelTabs.registerTabContent('ertms', 'ertms-panel');
 leftPanelTabs.registerTabContent('layers', 'layers-panel');
 leftPanelTabs.registerTabContent('plantuml', 'plantuml-panel');
 
@@ -434,6 +435,58 @@ createDrawioPaletteView({
     },
   })),
 });
+
+/**
+ * @brief Optional ERTMS-only tab (View > ERTMS Tab)
+ * @details Shows just the ERTMS library (public/libraries/ertms.xml), with its own expanded
+ * state and without user libraries. Created on first show; drops of its entries onto the canvas
+ * are handled by the Shapes tab palette view (same palette/entry ids). Shown/hidden state is
+ * persisted in localStorage.
+ */
+const ERTMS_TAB_KEY = 'railway-drawer-ertms-tab';
+let ertmsTabCreated = false;
+const ensureErtmsTabView = (): void => {
+  if (ertmsTabCreated) return;
+  ertmsTabCreated = true;
+  createDrawioPaletteView({
+    container: document.getElementById('ertms-panel')!,
+    getGraph: () => tabManager.getActiveTab()?.graph ?? null,
+    palettes: [],
+    extraLibraries: [ertmsPaletteSource(import.meta.env.BASE_URL)],
+    defaultExpanded: ['ertms'],
+    userLibraries: false,
+    showMoreMenu: false,
+    storageKeySuffix: '.ertmsTab',
+    onError: (message) => globalNotificationManager.error(message),
+  });
+};
+const syncErtmsMenuItem = (visible: boolean): void => {
+  document
+    .querySelectorAll('[data-action="toggleErtmsTab"]')
+    .forEach((item) => item.setAttribute('aria-checked', String(visible)));
+};
+leftPanelTabs.onTabVisibilityChange((tabId, visible) => {
+  if (tabId !== 'ertms') return;
+  if (visible) ensureErtmsTabView();
+  syncErtmsMenuItem(visible);
+  try {
+    localStorage.setItem(ERTMS_TAB_KEY, visible ? '1' : '0');
+  } catch {
+    // storage blocked: the choice applies for this session only
+  }
+});
+let ertmsTabWanted = false;
+try {
+  ertmsTabWanted = localStorage.getItem(ERTMS_TAB_KEY) === '1';
+} catch {
+  ertmsTabWanted = false;
+}
+if (ertmsTabWanted) {
+  ensureErtmsTabView();
+  syncErtmsMenuItem(true);
+} else {
+  leftPanelTabs.closeTab('ertms');
+}
 
 // Visual parity harness hook (dev server / ?parity=1 only)
 installParityHook();
