@@ -46,6 +46,7 @@ import { installDarkModeToggle } from './drawio-shapes/theme/dark-mode';
 import { installSharing } from './share/install-sharing';
 import { installScenarios } from './scenarios/install-scenarios';
 import { assignKindForInsertedShape, installRailwayData, prepareRailwayInsert } from './railway/install-railway-data';
+import { installRailwayRoutes } from './railway/install-railway-routes';
 
 /**
  * @brief Register all built-in shape definitions
@@ -172,6 +173,8 @@ const scenarios = installScenarios(tabManager, globalNotificationManager, graphC
  * kind on insert; Checks validates the data live; File > Export Railway Data writes CSV/xlsx lists.
  */
 installRailwayData(tabManager, globalNotificationManager, { showPanel: scenarios.showPanel });
+// Route tool, route/interlocking tables, snap to track, km ruler (src/railway/install-railway-routes.ts)
+installRailwayRoutes(tabManager, globalNotificationManager);
 
 // ============= GLOBAL KEYBOARD SHORTCUTS =============
 

@@ -16,6 +16,7 @@
  * - `missing-reference`  error    a reference (track, group, LEU, RBC, route, signal, section) names no object
  * - `km-order`           warning  km positions of the objects on a track are not monotonic along it
  * - `km-outside-track`   warning  an object's km lies outside its track's km start/end
+ * - `route-endpoint`, `route-path`, `route-points`: route rules, see route-checks.ts
  */
 import type { Cell, GraphDataModel } from '@maxgraph/core';
 import type { FieldDef, KindDef, KindId } from './catalogue';
@@ -23,6 +24,7 @@ import { fieldValueProblem, getKind, parseNumber, splitRefList } from './catalog
 import { allCells, getCellKind, getRawKind, readField, readObjectId } from './object-data';
 import { centerOf, projectOnPolyline, trackPolyline } from './geometry';
 import type { Pt } from './geometry';
+import { checkRoutes } from './route-checks';
 
 export type Severity = 'error' | 'warning';
 
@@ -37,7 +39,10 @@ export type RuleId =
   | 'signal-off-track'
   | 'missing-reference'
   | 'km-order'
-  | 'km-outside-track';
+  | 'km-outside-track'
+  | 'route-endpoint'
+  | 'route-path'
+  | 'route-points';
 
 export interface Issue {
   severity: Severity;
@@ -185,6 +190,8 @@ export function validateObjects(objects: RailObject[], options: ValidateOptions 
       if (f.type === 'ref' || f.type === 'refList') {
         const ids = f.type === 'ref' ? [value] : splitRefList(value);
         for (const id of ids) {
+          // a route endpoint naming another kind is reported by route-endpoint
+          if (o.kind.id === 'route' && f.type === 'ref' && objects.some((x) => x.id.toUpperCase() === id.toUpperCase())) continue;
           if (!findRef(index, f.refKinds, id)) {
             push(o, 'error', 'missing-reference', `${capitalize(describeObject(o))}: ${f.label.toLowerCase()} "${id}" does not exist (no ${refKindsText(f)} with this ID)`, f.key);
           }
@@ -304,6 +311,9 @@ export function validateObjects(objects: RailObject[], options: ValidateOptions 
       }
     }
   }
+
+  // routes
+  for (const r of checkRoutes(objects)) push(r.o, r.severity, r.rule, r.message, r.field);
 
   return issues;
 }

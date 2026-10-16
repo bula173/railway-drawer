@@ -1,0 +1,254 @@
+/* Route tool, route tables, km ruler (src/railway/install-railway-routes.ts) */
+
+#graph-container.rd-route-tool-active,
+#graph-container.rd-route-tool-active * {
+  cursor: pointer !important;
+}
+
+#btn-route-tool.active {
+  background: #ffe0b2;
+  outline: 1px solid #ff8f00;
+}
+
+.rd-route-overlay .rd-route-hl-casing {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 12;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  opacity: 0.8;
+  vector-effect: non-scaling-stroke;
+}
+
+.rd-route-overlay .rd-route-hl {
+  fill: none;
+  stroke: #ff8f00;
+  stroke-width: 7;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  opacity: 0.85;
+  vector-effect: non-scaling-stroke;
+}
+
+.rd-route-overlay .rd-route-hl-signal {
+  fill: rgba(255, 143, 0, 0.12);
+  stroke: #ff8f00;
+  stroke-width: 2;
+  stroke-dasharray: 4 3;
+  vector-effect: non-scaling-stroke;
+}
+
+.rd-route-tool {
+  position: fixed;
+  z-index: 900;
+  width: 320px;
+  max-height: 60vh;
+  overflow: auto;
+  background: #ffffff;
+  color: #222222;
+  border: 1px solid #ffb74d;
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  font: 12px/1.4 system-ui, sans-serif;
+}
+
+.rd-route-tool-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 8px;
+  background: #fff3e0;
+  border-bottom: 1px solid #ffe0b2;
+}
+
+.rd-route-tool-body {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rd-route-status {
+  margin: 0;
+}
+
+.rd-route-paths {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.rd-route-path {
+  display: flex;
+  gap: 6px;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+.rd-route-id {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.rd-route-id-input {
+  flex: 1;
+  padding: 3px 5px;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+}
+
+.rd-route-btn {
+  padding: 4px 10px;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  background: #fafafa;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+}
+
+.rd-route-create {
+  background: #ff8f00;
+  border-color: #ef6c00;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.rd-route-close {
+  padding: 0 6px;
+}
+
+.rd-route-dialog-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rd-route-dialog {
+  width: min(960px, calc(100vw - 32px));
+  max-height: calc(100vh - 64px);
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  color: #222222;
+  border-radius: 6px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  font: 13px/1.4 system-ui, sans-serif;
+}
+
+.rd-route-dialog-title {
+  margin: 0;
+  padding: 12px 16px 4px;
+  font-size: 15px;
+}
+
+.rd-route-tabs {
+  display: flex;
+  gap: 4px;
+  padding: 4px 16px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.rd-route-tab {
+  padding: 6px 12px;
+  border: 1px solid transparent;
+  border-bottom: none;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+}
+
+.rd-route-tab[aria-selected='true'] {
+  border-color: #e0e0e0;
+  border-radius: 4px 4px 0 0;
+  background: #fff3e0;
+  font-weight: 600;
+}
+
+.rd-route-dialog-content {
+  overflow: auto;
+  padding: 12px 16px;
+  min-height: 120px;
+}
+
+.rd-route-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.rd-route-table th,
+.rd-route-table td {
+  border: 1px solid #e0e0e0;
+  padding: 4px 6px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.rd-route-table th {
+  background: #f5f5f5;
+  position: sticky;
+  top: 0;
+}
+
+.rd-route-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 10px 16px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.rd-km-ruler-line {
+  fill: none;
+  stroke: #1565c0;
+  stroke-width: 1;
+  stroke-dasharray: 2 2;
+  vector-effect: non-scaling-stroke;
+}
+
+.rd-km-tick {
+  stroke: #1565c0;
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.rd-km-major {
+  stroke-width: 2;
+}
+
+.rd-km-label {
+  fill: #1565c0;
+  font: 10px system-ui, sans-serif;
+  paint-order: stroke;
+  stroke: #ffffff;
+  stroke-width: 3px;
+}
+
+:root[data-theme='dark'] .rd-route-tool,
+:root[data-theme='dark'] .rd-route-dialog {
+  background: #2b2b2b;
+  color: #e0e0e0;
+  border-color: #8d5a00;
+}
+
+:root[data-theme='dark'] .rd-route-tool-head,
+:root[data-theme='dark'] .rd-route-tab[aria-selected='true'] {
+  background: #3d2c12;
+}
+
+:root[data-theme='dark'] .rd-route-table th {
+  background: #333333;
+}
+
+:root[data-theme='dark'] .rd-route-btn,
+:root[data-theme='dark'] .rd-route-id-input {
+  background: #333333;
+  color: #e0e0e0;
+  border-color: #555555;
+}
