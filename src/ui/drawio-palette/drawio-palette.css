@@ -191,6 +191,11 @@
   white-space: nowrap;
 }
 
+.rd-dp-menu-separator {
+  margin: 4px 0;
+  border-top: 1px solid var(--border, #ccc);
+}
+
 .rd-dp-preview {
   position: fixed;
   z-index: 1000;

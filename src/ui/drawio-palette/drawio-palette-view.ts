@@ -50,6 +50,18 @@ export interface DrawioPaletteViewOptions {
   onInsert?: (entry: PaletteEntry) => void;
   /** User-visible error reporting (default: logger + alert-free status line). */
   onError?: (message: string) => void;
+  /**
+   * Extra show/hide toggles listed in the "More shapes…" menu after the draw.io palettes
+   * (e.g. the app's own shape groups), so one menu controls every library in the Shapes tab.
+   */
+  extraMenuItems?: PaletteMenuItem[];
+}
+
+export interface PaletteMenuItem {
+  id: string;
+  title: string;
+  isChecked(): boolean;
+  setChecked(checked: boolean): void;
 }
 
 export interface DrawioPaletteView {
@@ -542,6 +554,18 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
       box.dataset.paletteId = cat.id;
       box.addEventListener('change', () => setPaletteVisible(cat.id, box.checked));
       row.append(box, document.createTextNode(` ${cat.title}`));
+      menu.appendChild(row);
+    }
+    const extra = options.extraMenuItems ?? [];
+    if (extra.length > 0) menu.appendChild(el('div', 'rd-dp-menu-separator'));
+    for (const item of extra) {
+      const row = el('label', 'rd-dp-menu-row');
+      const box = el('input');
+      box.type = 'checkbox';
+      box.checked = item.isChecked();
+      box.dataset.menuItemId = item.id;
+      box.addEventListener('change', () => item.setChecked(box.checked));
+      row.append(box, document.createTextNode(` ${item.title}`));
       menu.appendChild(row);
     }
   }

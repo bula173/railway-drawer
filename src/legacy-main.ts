@@ -22,7 +22,6 @@ import './style.css';
 import { registerShapes, shapeRegistry, ShapeToolbar } from './shapes';
 import { ShortcutsHelpController } from './ui/shortcuts-help';
 import { TabManager } from './ui/tabs';
-import { StencilManager } from './ui/stencil-manager';
 import { LeftPanelTabs } from './ui/left-panel-tabs';
 import { CacheService } from './services/cache-service';
 import { ProjectNameEditor } from './ui/project-name-editor';
@@ -371,72 +370,40 @@ graphContainer.addEventListener('dragleave', (evt) => {
 
 /**
  * @brief Initialize left sidebar tab system
- * @details Manages the tabbed interface for the left panel, allowing users
- * to switch between Shapes, Stencils, and Layers views.
+ * @details One Shapes tab (app shapes, custom shapes and the draw.io palettes), plus Layers
+ * and PlantUML. Library visibility is controlled from the palette's "More shapes…" menu.
  */
-// Content of the draw.io tab (palettes from jgraph/drawio + the ERTMS library)
-const leftPanelContainer = document.getElementById('leftpanel-container')!;
-const drawioPaletteContainer = document.createElement('div');
-drawioPaletteContainer.id = 'drawio-palette-container';
-drawioPaletteContainer.className = 'panel-content';
-leftPanelContainer.insertBefore(drawioPaletteContainer, document.getElementById('shapes-container'));
 const leftPanelTabs = new LeftPanelTabs('leftpanel-container');
-/**
- * @brief Register left panel tab content areas
- * @details Associates tab buttons with their corresponding content containers
- * for shapes, stencils, and layers panels.
- */
 leftPanelTabs.registerTabContent('shapes', 'shapes-container');
-leftPanelTabs.registerTabContent('drawio', 'drawio-palette-container');
-leftPanelTabs.registerTabContent('stencils', 'stencils-container');
 leftPanelTabs.registerTabContent('layers', 'layers-panel');
 leftPanelTabs.registerTabContent('plantuml', 'plantuml-panel');
 
 // Make leftPanelTabs globally accessible for menu handlers
 (window as any).__leftPanelTabs = leftPanelTabs;
 
-// ============= SHAPES TOOLBAR & STENCILS =============
+// ============= SHAPES TAB =============
 
 /**
- * @brief Initialize shape toolbar
- * @details Creates a dynamic toolbar displaying all available shapes organized by group,
- * with draggable items that can be dropped onto the canvas.
+ * @brief App shape groups (Basic, ERTMS, ...) at the top of the Shapes tab
+ * @details Draggable items that can be dropped onto the canvas. Hidden groups are stored in
+ * localStorage and toggled from the "More shapes…" menu together with the draw.io palettes.
  */
-const shapesContainer = document.getElementById('shapes-container')!;
-const shapeToolbar = new ShapeToolbar(shapesContainer, shapeRegistry);
+const APP_GROUPS_HIDDEN_KEY = 'railway-drawer-hidden-shape-groups';
+const hiddenAppGroups = new Set<string>(readStringArray(APP_GROUPS_HIDDEN_KEY));
+const shapeToolbar = new ShapeToolbar(document.getElementById('app-shapes-container')!, shapeRegistry);
+const applyAppGroupVisibility = (): void => {
+  shapeToolbar.setEnabledGroups(new Set(shapeRegistry.getGroups().filter((g) => !hiddenAppGroups.has(g))));
+};
+if (hiddenAppGroups.size > 0) applyAppGroupVisibility();
 
-/**
- * @brief Initialize stencil manager for shape group visibility
- * @details Allows users to toggle visibility and filtering of shape groups
- * such as Railway, UML, Flowchart, BPMN, etc.
- */
-const stencilManager = new StencilManager('stencils-container');
-
-/**
- * @brief Register all available shape groups as stencils
- * @details Dynamically discovers all shape groups from the registry and
- * creates corresponding stencil entries that can be toggled on/off.
- */
-shapeRegistry.getGroups().forEach((group) => {
-  stencilManager.registerStencil(group, group, true);
-});
-
-/**
- * @brief Wire stencil visibility changes to toolbar updates
- * @details When the user toggles stencil visibility, updates the toolbar
- * to show only shapes from enabled groups.
- */
-stencilManager.setOnToggle(() => {
-  const enabledGroups = new Set<string>();
-  shapeRegistry.getGroups().forEach((group) => {
-    if (stencilManager.isEnabled(group)) {
-      enabledGroups.add(group);
-    }
-  });
-  shapeToolbar.setEnabledGroups(enabledGroups);
-});
-
-// ============= DRAW.IO PALETTES =============
+function readStringArray(key: string): string[] {
+  try {
+    const parsed: unknown = JSON.parse(localStorage.getItem(key) ?? '[]');
+    return Array.isArray(parsed) ? parsed.filter((x): x is string => typeof x === 'string') : [];
+  } catch {
+    return [];
+  }
+}
 
 /**
  * @brief draw.io shape palettes (General, Misc, Advanced, Basic, Arrows, Flowchart, ERTMS, ...)
@@ -445,12 +412,27 @@ stencilManager.setOnToggle(() => {
  * library public/libraries/ertms.xml. Click inserts at the view centre, drag drops at the pointer.
  */
 createDrawioPaletteView({
-  container: drawioPaletteContainer,
+  container: document.getElementById('drawio-palette-container')!,
   getGraph: () => tabManager.getActiveTab()?.graph ?? null,
   palettes: PALETTES.map((meta) => ({ ...meta, load: () => loadPalette(meta.id) })),
   extraLibraries: [ertmsPaletteSource(import.meta.env.BASE_URL)],
   dropTarget: graphContainer,
   onError: (message) => globalNotificationManager.error(message),
+  extraMenuItems: shapeRegistry.getGroups().map((group) => ({
+    id: `app-${group}`,
+    title: `${group} (Railway Drawer)`,
+    isChecked: () => !hiddenAppGroups.has(group),
+    setChecked: (checked: boolean) => {
+      if (checked) hiddenAppGroups.delete(group);
+      else hiddenAppGroups.add(group);
+      try {
+        localStorage.setItem(APP_GROUPS_HIDDEN_KEY, JSON.stringify([...hiddenAppGroups]));
+      } catch {
+        // storage blocked or full: the choice still applies for this session
+      }
+      applyAppGroupVisibility();
+    },
+  })),
 });
 
 // Visual parity harness hook (dev server / ?parity=1 only)
@@ -467,7 +449,7 @@ installParityHook();
 const activeTabForShapes = tabManager.getActiveTab();
 if (activeTabForShapes) {
   const shapeDesigner = new ShapeDesignerController(activeTabForShapes.graph);
-  const customShapeToolbar = new CustomShapeToolbar('shapes-container');
+  const customShapeToolbar = new CustomShapeToolbar('custom-shapes-container');
 
   // Wire up event listeners for opening shape designer
   window.addEventListener('open-shape-designer', () => {

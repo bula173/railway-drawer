@@ -58,7 +58,7 @@ CI (`.github/workflows/build-and-deploy.yml`) runs typecheck, typecheck:tests, l
   Last full run: 335 pass, 0 warn, 0 fail, 12 expected (images with draw.io-relative `img/` paths,
   sketch=1, `%date%` placeholders, the List templates draw.io's export does not lay out, the mermaid
   Sankey gradient band). ERTMS: 40/40 pass.
-- `tests/e2e/drawio-palette.spec.ts` (any port): draw.io tab renders, inserts keep draw.io styles, autosave
+- `tests/e2e/drawio-palette.spec.ts` (any port): Shapes tab (no draw.io/Stencils tabs) renders the palettes, "More shapes…" toggles palettes and app groups, inserts keep draw.io styles, autosave
   writes real draw.io shape names.
 
 ## Architecture
@@ -81,7 +81,7 @@ CI (`.github/workflows/build-and-deploy.yml`) runs typecheck, typecheck:tests, l
   write failed (storage full), since the reload would drop the unsaved edits.
 - `src/legacy-main.ts` is the whole legacy boot: `registerDrawioCodecs()` first (before any file or cache
   load), shapes, `TabManager`, cache restore, the global keyboard dispatcher, drop handler, left panel,
-  shape toolbar/stencils, shape designer. `beforeunload` flushes the cache, then destroys the tabs.
+  Shapes tab (shape toolbar + draw.io palettes), shape designer. `beforeunload` flushes the cache, then destroys the tabs.
 
 ### Legacy editor (maxGraph)
 
@@ -156,8 +156,11 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   the pinned files (SHA-256 checked) into `$DRAWIO_CACHE_DIR` or the OS temp dir, decode-stencils-bundle.ts
   writes `public/stencils/*.xml` from js/stencils.min.js, extract-palettes.ts runs the real Sidebar-*.js
   palette functions in a `node:vm` sandbox and writes `palettes/data/*.json`. Outputs are deterministic.
-- UI: `src/ui/drawio-palette/` (`createDrawioPaletteView`), mounted in `legacy-main.ts` as the **draw.io**
-  tab of the left panel (`#drawio-palette-container`): draw.io palettes, then ERTMS (`public/libraries/ertms.xml`,
+- UI: `src/ui/drawio-palette/` (`createDrawioPaletteView`), mounted in `legacy-main.ts` inside the single
+  **Shapes** tab of the left panel (`#shapes-container` = `#app-shapes-container` (ShapeToolbar groups) +
+  `#custom-shapes-container` + `#drawio-palette-container`). There is no separate draw.io or Stencils tab:
+  the palette's "More shapes…" menu toggles the draw.io palettes and, via `extraMenuItems`, the app shape
+  groups (hidden groups in localStorage `railway-drawer-hidden-shape-groups`). Order: draw.io palettes, then ERTMS (`public/libraries/ertms.xml`,
   the default ERTMS palette; the `src/shapes/ertms` placeholders are renderers only, for old files), then
   user libraries ("Import library…", stored in localStorage `rd.drawioLibraries`). Thumbnails come from one
   hidden graph (draw.io defaults, table support). Click inserts at the view centre, drag drops at the pointer

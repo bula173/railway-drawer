@@ -1,6 +1,6 @@
 /**
  * @file drawio-palette.spec.ts
- * @brief The draw.io tab of the legacy editor's left panel: palettes render, entries insert with
+ * @brief draw.io palettes in the Shapes tab of the legacy editor: palettes render, entries insert with
  *        their exact draw.io style, and the saved diagram keeps the draw.io shape names.
  *
  * Runs on any port (no draw.io server is involved). Uses the 5 s autosave into localStorage
@@ -50,9 +50,12 @@ test.describe('draw.io palettes in the maxGraph editor', () => {
     await page.goto('/');
     await expect(page.locator('body')).toHaveAttribute('data-editor', 'legacy');
 
-    await page.locator('.left-panel-tab-btn', { hasText: 'draw.io' }).click();
+    // One Shapes tab holds app shapes and the draw.io palettes; no separate draw.io/Stencils tabs
+    await expect(page.locator('.left-panel-tab-btn')).toHaveText(['Shapes', 'Layers', /PlantUML/]);
+    await expect(page.locator('#stencils-container')).toHaveCount(0);
     const container = page.locator('#drawio-palette-container');
     await expect(container).toBeVisible();
+    await expect(page.locator('#shapes-container #app-shapes-container .shapes-group-header').first()).toBeVisible();
 
     // General (expanded by default) has draw.io's 45 entries; ERTMS is the ertms.xml library (40)
     const general = container.locator('section[data-palette-id="general"]');
@@ -91,5 +94,28 @@ test.describe('draw.io palettes in the maxGraph editor', () => {
     expect(styleWith(again, 'mxgraph.basic.flash')?.replace(/;?rdLayerId=[^;]*;$/, '')).toBe(FLASH);
 
     expect(pageErrors).toEqual([]);
+  });
+
+  test('"More shapes…" toggles draw.io palettes and app shape groups', async ({ page }) => {
+    await page.goto('/');
+    await page.evaluate(() => localStorage.removeItem('railway-drawer-hidden-shape-groups'));
+    await page.reload();
+    const appShapes = page.locator('#app-shapes-container');
+    await expect(appShapes.locator('.shapes-group-header[data-group="Basic"]')).toBeVisible();
+
+    await page.locator('#drawio-palette-container .rd-dp-more').click();
+    const menu = page.locator('#drawio-palette-container .rd-dp-menu');
+    await expect(menu.locator('input[data-palette-id="general"]')).toBeChecked();
+    const basicGroup = menu.locator('input[data-menu-item-id="app-Basic"]');
+    await expect(basicGroup).toBeChecked();
+
+    await basicGroup.uncheck();
+    await expect(appShapes.locator('.shapes-group-header[data-group="Basic"]')).toHaveCount(0);
+    await page.reload();
+    await expect(appShapes.locator('.shapes-group-header[data-group="Basic"]')).toHaveCount(0);
+
+    await page.locator('#drawio-palette-container .rd-dp-more').click();
+    await menu.locator('input[data-menu-item-id="app-Basic"]').check();
+    await expect(appShapes.locator('.shapes-group-header[data-group="Basic"]')).toBeVisible();
   });
 });

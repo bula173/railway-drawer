@@ -188,8 +188,12 @@
         <!-- Left Panel -->
         <div id="leftpanel-container" class="left-panel">
           <!-- Tab bar will be inserted here by LeftPanelTabs -->
-          <div id="stencils-container" class="panel-content"></div>
-          <div id="shapes-container" class="panel-content"></div>
+          <!-- One Shapes tab: app shapes, custom shapes and the draw.io palettes ("More shapes…" toggles libraries) -->
+          <div id="shapes-container" class="panel-content">
+            <div id="app-shapes-container"></div>
+            <div id="custom-shapes-container"></div>
+            <div id="drawio-palette-container"></div>
+          </div>
           <div id="layers-panel" class="panel-content" style="display: none;">
             <div style="padding: 8px; border-bottom: 1px solid #e0e0e0; display: flex; gap: 4px;">
               <button id="btn-add-layer" style="flex: 1; padding: 6px; background: #1976d2; color: white; border: none; border-radius: 3px; cursor: pointer; font-size: 11px;">+ Layer</button>

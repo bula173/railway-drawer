@@ -1,4 +1,4 @@
-export type LeftPanelTab = 'stencils' | 'shapes' | 'drawio' | 'layers' | 'plantuml';
+export type LeftPanelTab = 'shapes' | 'layers' | 'plantuml';
 export type CloseableTab = 'plantuml';
 
 export class LeftPanelTabs {
@@ -20,15 +20,10 @@ export class LeftPanelTabs {
     tabBar.className = 'left-panel-tabbar';
 
     const shapeTabBtn = this.createTabButton('shapes', 'Shapes');
-    const drawioTabBtn = this.createTabButton('drawio', 'draw.io');
-    drawioTabBtn.title = 'draw.io shapes (General, Misc, Advanced, Basic, Arrows, Flowchart, ERTMS)';
-    const stencilTabBtn = this.createTabButton('stencils', 'Stencils');
     const layerTabBtn = this.createTabButton('layers', 'Layers');
     const plantumlTabBtn = this.createTabButton('plantuml', '🌿 PlantUML');
 
     tabBar.appendChild(shapeTabBtn);
-    tabBar.appendChild(drawioTabBtn);
-    tabBar.appendChild(stencilTabBtn);
     tabBar.appendChild(layerTabBtn);
     tabBar.appendChild(plantumlTabBtn);
 

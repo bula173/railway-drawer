@@ -224,6 +224,31 @@ describe('drawio palette view', () => {
     expect(container.querySelector<HTMLElement>('[data-palette-id="arrows"]')!.hidden).toBe(false);
   });
 
+  it('lists extra menu items after the palettes and forwards their toggles', async () => {
+    let basicShown = true;
+    const v = create({
+      extraMenuItems: [
+        { id: 'app-Basic', title: 'Basic (Railway Drawer)', isChecked: () => basicShown, setChecked: (c) => (basicShown = c) },
+      ],
+    });
+    await v.ready;
+    (container.querySelector('.rd-dp-more') as HTMLButtonElement).click();
+    const menu = container.querySelector<HTMLElement>('.rd-dp-menu')!;
+    const rows = Array.from(menu.querySelectorAll<HTMLInputElement>('input[type=checkbox]'));
+    expect(rows.map((b) => b.dataset.paletteId ?? b.dataset.menuItemId)).toEqual(['general', 'misc', 'arrows', 'app-Basic']);
+    expect(menu.querySelector('.rd-dp-menu-separator')).not.toBeNull();
+
+    const extra = rows[3];
+    expect(extra.checked).toBe(true);
+    extra.checked = false;
+    extra.dispatchEvent(new Event('change'));
+    expect(basicShown).toBe(false);
+    // re-opening reflects the current state
+    (container.querySelector('.rd-dp-more') as HTMLButtonElement).click();
+    (container.querySelector('.rd-dp-more') as HTMLButtonElement).click();
+    expect(menu.querySelector<HTMLInputElement>('input[data-menu-item-id="app-Basic"]')!.checked).toBe(false);
+  });
+
   it('persists the expanded state of categories', async () => {
     const v = create();
     await v.ready;
