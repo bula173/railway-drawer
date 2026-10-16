@@ -10,9 +10,10 @@
 </head>
 <body>
 <!--
-  Served by tests/e2e/drawio-parity.spec.ts through page.route at
-  http://localhost/parity/drawio-host.html (default port 80, so embed.diagrams.net
-  accepts the Referer). The iframe URL is injected as ?drawio=<url>.
+  Served by tests/e2e/drawio-parity.spec.ts through page.route: at <app>/__parity/drawio-host.html
+  for the self-hosted draw.io (http://localhost:<port>/drawio/, the default), or at
+  http://localhost/parity/drawio-host.html (default port 80, so embed.diagrams.net accepts the
+  Referer) with VITE_DRAWIO_URL. The iframe URL is injected as ?drawio=<url>.
   window.parityReady: Promise<void> resolved on the editor's {event:'init'}.
   window.parityExport(xml, opts): Promise<string> PNG data URI from {action:'export'}.
 -->

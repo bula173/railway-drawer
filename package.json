@@ -21,6 +21,7 @@
     "test:e2e:headed": "playwright test --project=chromium --headed",
     "typecheck:e2e": "tsc --noEmit -p tsconfig.e2e.json",
     "test:parity": "playwright test tests/e2e/drawio-parity.spec.ts --project=chromium",
+    "drawio:selfhost": "node scripts/drawio-selfhost/fetch-drawio.ts",
     "drawio:palettes": "node scripts/drawio-palettes/fetch-sources.ts && node scripts/drawio-palettes/decode-stencils-bundle.ts && node scripts/drawio-palettes/extract-palettes.ts"
   },
   "dependencies": {

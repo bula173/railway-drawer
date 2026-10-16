@@ -23,29 +23,35 @@ npm run test:run            # vitest once
 npx vitest run src/__tests__/ui/tab-cache-restore.test.ts   # single file
 npx vitest run -t "restores"                                 # tests by name
 npm run test:e2e            # Playwright, chromium, starts vite itself (E2E_PORT, default 3000)
-E2E_PORT=80 npm run test:e2e   # what the draw.io embed spec needs, see below
-E2E_PORT=80 npm run test:parity # maxGraph vs draw.io pixel comparison of every palette entry (see below)
+npm run test:parity         # maxGraph vs draw.io pixel comparison of every palette entry (see below)
+npm run drawio:selfhost     # download + stage the self-hosted draw.io (dev/build do it automatically)
 npm run drawio:palettes     # regenerate palettes + stencil sets from the pinned draw.io tag (Node >= 22.18)
 ```
 
-CI (`.github/workflows/build-and-deploy.yml`) runs typecheck, typecheck:tests, lint, test:run, build and the any-port
+CI (`.github/workflows/build-and-deploy.yml`) runs typecheck, typecheck:tests, lint, test:run, build and the
 Playwright subset (legacy-smoke, drawio-palette, templates, scenarios, style-edit, share, gitlab, ertms-data,
-scenario-uml-text, theme-contrast). It does not deploy.
+scenario-uml-text, theme-contrast, drawio-embed, drawio-parity). `~/.cache/railway-drawer` (self-hosted draw.io) is kept with
+`actions/cache` (key = hash of `scripts/drawio-selfhost/**` + `scripts/drawio-palettes/fetch-sources.ts`). It does not deploy.
 
-### E2E and port 80
+### E2E and draw.io
 
-`embed.diagrams.net` answers **HTTP 403** to iframes whose Referer has a non-default port
-(`http://localhost:3000/`) and to the `HeadlessChrome` user agent. So:
+draw.io mode and the draw.io specs use the **self-hosted** draw.io (`<app>/drawio/`, see "Self-hosted draw.io"
+below): any port, headless, offline. `embed.diagrams.net` (only with `VITE_DRAWIO_URL=https://embed.diagrams.net/`)
+answers **HTTP 403** to iframes whose Referer has a non-default port (`http://localhost:3000/`) and to the
+`HeadlessChrome` user agent, so with it use `E2E_PORT=80` (macOS lets non-root bind :80).
 
-- `tests/e2e/drawio-embed.spec.ts` skips itself with a hint on port 3000; it only runs for real with
-  `E2E_PORT=80` (macOS lets non-root bind :80; on Linux set `VITE_DRAWIO_URL` to a self-hosted draw.io).
+- `tests/e2e/drawio-embed.spec.ts` (any port): self-hosted by default; aborts and fails on every request that
+  leaves localhost and on every 4xx/5xx of a draw.io file. With `VITE_DRAWIO_URL` (the dev server and the spec
+  both read it) it targets that editor and skips itself with a hint on a 403 / when unreachable / `E2E_OFFLINE=1`.
 - The chromium project uses `devices['Desktop Chrome']`, which sends a normal Chrome UA even headless.
 - `tests/e2e/legacy-smoke.spec.ts` works on any port (drop shape, Ctrl+Z/Ctrl+Y, switch to draw.io and back,
   draw.io mode loads no maxGraph module).
 - vitest includes `src/**/*.test.ts` and `tests/e2e/parity/__tests__/**/*.test.ts` (the parity harness's
   own unit tests); Playwright only runs `tests/e2e/*.spec.ts` (`testMatch`). `tsconfig.json` only covers `src`.
-- `tests/e2e/drawio-parity.spec.ts`: renders every palette entry (7 draw.io palettes + ERTMS, 347) in
-  embed.diagrams.net (`export` message, served from a routed `http://localhost/parity/drawio-host.html`) and
+- `tests/e2e/drawio-parity.spec.ts` (any port): renders every palette entry (7 draw.io palettes + ERTMS, 347) in
+  the self-hosted draw.io v32.4.1 (`export` message from a host page routed at `<app>/__parity/drawio-host.html`;
+  a routed `http://localhost/` page may not frame `localhost:<port>`: Chrome Local Network Access) — or in
+  `VITE_DRAWIO_URL` (host page routed at `http://localhost/parity/drawio-host.html`) — and
   in the app through `window.__rdParity.render(xml, {scale, border, background})` (`src/debug/parity-hook.ts`,
   installed only in dev builds or with `?parity=1`; it mirrors draw.io's PNG export: an SVG at view scale 1
   laid out like `Graph.getSvg`, rasterized with `ctx.scale(scale)` like `Editor.exportToCanvas`, so
@@ -56,8 +62,10 @@ scenario-uml-text, theme-contrast). It does not deploy.
   with a reason in `tests/e2e/parity/expected-mismatch.json`. Do not edit `src/` while it runs: Vite reloads
   the page and the remaining entries error.
   Report: `test-results/drawio-parity/index.html`. `PARITY_FILTER=<palette|id>`, `PARITY_LIMIT=<n>`.
-  Skips itself on port != 80 (`PARITY_ANY_PORT=1` overrides), offline (`E2E_OFFLINE=1`) or on a 403.
-  Last full run: 335 pass, 0 warn, 0 fail, 12 expected (images with draw.io-relative `img/` paths,
+  Self-hosted: a missing draw.io fails. With `VITE_DRAWIO_URL`: skips itself on port != 80
+  (`PARITY_ANY_PORT=1` overrides), offline (`E2E_OFFLINE=1`) or on a 403.
+  Last full run (self-hosted v32.4.1, port 3102, headless, ~50 s): 339 pass, 0 warn, 0 fail, 8 expected (images x3,
+  labels x2, lists x2, the Sankey link), ERTMS 40/40. Earlier run against embed.diagrams.net: 335 pass, 0 warn, 0 fail, 12 expected (images with draw.io-relative `img/` paths,
   sketch=1, `%date%` placeholders, the List templates draw.io's export does not lay out, the mermaid
   Sankey gradient band). ERTMS: 40/40 pass.
 - `tests/e2e/drawio-palette.spec.ts` (any port): Shapes tab (no draw.io/Stencils tabs) renders the palettes, "More shapes…" toggles palettes and app groups, inserts keep draw.io styles, autosave
@@ -427,7 +435,47 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   `public/libraries/ERTMS-LICENSE.txt`) relative to `import.meta.env.BASE_URL`; the JSON body is read via
   `textContent` (entity-decoded, otherwise every tile shows "Error:"); passed inline as `data`, never `url`
   (draw.io would proxy it). Bump `DRAWIO_CONFIG_VERSION` when the config changes (resets draw.io sidebar state).
-- `VITE_DRAWIO_URL` (default `https://embed.diagrams.net/`) and `VITE_DRAWIO_PARAMS` select the draw.io server.
+- `VITE_DRAWIO_URL` (default: the self-hosted copy, `selfHostedDrawioUrl(import.meta.env.BASE_URL)` =
+  `/drawio/` in dev, `./drawio/` in the relative build, so it works at `/` and at `/railway-drawer/`) and
+  `VITE_DRAWIO_PARAMS` select the draw.io server; `VITE_DRAWIO_URL=https://embed.diagrams.net/` restores the
+  public editor.
+
+### Self-hosted draw.io (`scripts/drawio-selfhost/`)
+
+- `fetch-drawio.ts` (`npm run drawio:selfhost`; run automatically by the Vite plugin): downloads the official
+  `draw.war` of the pinned tag (`DRAWIO_TAG` from `scripts/drawio-palettes/fetch-sources.ts`, v32.4.1, 46 MiB),
+  checks `WAR_SHA256`, extracts a trimmed copy with a built-in zip reader into
+  `$DRAWIO_SELFHOST_CACHE_DIR` (default `~/.cache/railway-drawer/drawio-v32.4.1/`: `draw.war` + `site/`). The
+  site is rebuilt when the tag, the war hash, the script or `config/*.js` change (stamp `site/.rd-selfhost.json`).
+  `DRAWIO_WAR=<file>` uses a pre-downloaded war (offline machines). Nothing of it is in git.
+- Trimmed out (war 3154 files / 117 MiB -> **2796 files / 64.1 MiB**, largest `js/app.min.js` 9.7 MiB):
+  WEB-INF (servlet + placeholder OAuth secrets), META-INF, `*.map`, dev sources (`js/diagramly`,
+  `js/grapheditor`, `mxgraph/src`; only used with `?dev=1`), Atlassian/Teams/cloud integrations
+  (`js/integrate.min.js` 19 MB, `connect/`, `js/onedrive`, `js/dropbox`, `*.html` callbacks), `js/viewer.min.js`,
+  the service worker + workbox and `clear.html` (it would wipe the localStorage of the whole origin = the app's
+  data). Fails if > 20,000 files or a file > 25 MiB (Cloudflare Workers static assets limits).
+- `config/PreConfig.js` / `config/PostConfig.js` replace draw.io's: `DRAWIO_BASE_URL`/`DRAWIO_LIGHTBOX_URL` =
+  the copy's own folder, `DRAWIO_VIEWER_URL` = its `js/viewer-static.min.js`, `EXPORT_URL = null` (PDF via
+  print), and forced `urlParams` (bootstrap.js loads PreConfig before app.min.js on non-diagrams.net hosts):
+  `offline=1 stealth=1 lockdown=1 pwa=0 plugins=0`, no gapi/picker/db/od/gh/gl/tr/ms365; PostConfig nulls
+  `ICONSEARCH_PATH`, `ICON_SERVICE_PATH`, `DRAWIO_LOG_URL`. Verified: a full draw.io-mode session makes no
+  request outside localhost (the embed spec enforces it). Embed parameters still come from `protocol.ts`.
+- `vite-plugin.ts` (`drawioSelfHost()` in `vite.config.ts`): stages the site in `configResolved`, serves it at
+  `<base>drawio/` in the dev server (own middleware before Vite's, so draw.io's HTML is not transformed;
+  `index.html` for directories, 404 outside the site) and copies it to `dist/drawio/` in `writeBundle`.
+  Disabled under vitest and with `DRAWIO_SELFHOST=0` (then set `VITE_DRAWIO_URL`). A build fails when draw.io
+  cannot be prepared; the dev server only warns (draw.io mode then shows the "not reachable" banner with a
+  self-hosted hint).
+- Deploy: `npm run build` (also the Cloudflare Workers Builds command) downloads it (no persistent cache there,
+  ~46 MiB from GitHub per build); `dist/` = app + `drawio/`. Cloudflare Workers static assets: 20,000 files
+  (free plan) / 25 MiB per file, no total size limit -> fits. `deploy.sh` checks `dist/drawio/index.html`
+  locally and on the LAN server (`http://192.168.10.22/railway-drawer/drawio/` needs a directory index).
+- **Same-origin iframe (security)**: the self-hosted draw.io runs on the app's origin, so it could read the
+  app's DOM, localStorage (shared quota; draw.io's keys start with `.` / `mxSettings`) and cookies. We accept
+  that for the pinned, SHA-256-checked copy with external services disabled. No `sandbox` attribute: draw.io
+  needs `allow-scripts` + `allow-same-origin`, which together are no boundary for same-origin content (the
+  frame could remove its own sandbox); embed.diagrams.net is cross-origin and isolated by the browser anyway.
+  The protocol still checks `origin` (= the app origin) and `source === iframe.contentWindow`.
 - The maxGraph editor shows the same `public/libraries/ertms.xml` (elements in the Shapes/ERTMS tabs, scenarios as templates). The old maxGraph-side
   ERTMS placeholder shapes (`src/shapes/ertms/index.ts`) are only registered as renderers, for old files.
 

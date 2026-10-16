@@ -1,11 +1,10 @@
 import { defineConfig, devices } from '@playwright/test';
 
 // E2E_PORT selects the dev-server port (default 3000, the Vite default of this repo).
-// embed.diagrams.net refuses (HTTP 403) iframes whose Referer carries a non-default port, so the
-// draw.io embed spec only runs for real with the app on a default port, like production:
-//   E2E_PORT=80 npx playwright test --project=chromium
-// (macOS lets non-root processes bind port 80; on Linux point VITE_DRAWIO_URL at a self-hosted
-// draw.io instead). On other ports that spec skips itself with this hint.
+// draw.io mode uses the self-hosted copy served by the dev server at /drawio/ (scripts/drawio-selfhost),
+// so the draw.io specs run on any port, headless and offline. With VITE_DRAWIO_URL=https://embed.diagrams.net/
+// they target the public editor, which refuses (HTTP 403) iframes whose Referer carries a non-default
+// port: use E2E_PORT=80 then (macOS lets non-root processes bind port 80).
 const port = Number(process.env.E2E_PORT ?? 3000);
 const baseURL = port === 80 ? 'http://localhost' : `http://localhost:${port}`;
 
@@ -36,6 +35,7 @@ export default defineConfig({
     command: `npx vite --port ${port} --strictPort`,
     url: baseURL,
     reuseExistingServer: !process.env.CI,
-    timeout: 60000,
+    // the first start downloads and stages draw.io (~46 MiB, cached afterwards)
+    timeout: 180000,
   },
 });
