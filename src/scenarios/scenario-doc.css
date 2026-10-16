@@ -1,5 +1,6 @@
 /* Scenario view additions (scenario-view.ts): autoplay, "Show changes" (legend, Changes list) and
-   the PDF / slides export options dialog (scenario-doc-export.ts). */
+   the PDF / slides export options dialog (scenario-doc-export.ts). Chrome colors: --rd-* theme tokens
+   only (styles/variables.css); the diff swatches use the highlight colors (DIFF_COLORS). */
 .rd-scn-view-canvas {
   position: relative;
   display: flex;
@@ -15,10 +16,10 @@
 }
 .rd-scn-autoplay-interval {
   padding: 3px 2px;
-  border: 1px solid #c8a24a;
+  border: 1px solid var(--rd-scenario-border);
   border-radius: 4px;
-  background: #fff;
-  color: #3e2b00;
+  background: var(--rd-surface);
+  color: var(--rd-scenario-text);
   font: inherit;
   font-size: 12px;
 }
@@ -31,7 +32,7 @@
   cursor: pointer;
 }
 .rd-scn-playing .rd-scn-play-btn {
-  background: #fff3c4;
+  background: var(--rd-scenario-hover);
   font-weight: 600;
 }
 .rd-scn-diff-legend {
@@ -44,10 +45,10 @@
   gap: 4px 12px;
   max-width: calc(100% - 16px);
   padding: 4px 8px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--rd-border);
   border-radius: 4px;
-  background: rgba(255, 255, 255, 0.92);
-  color: #333;
+  background: var(--rd-surface-overlay);
+  color: var(--rd-text);
   font: 11px/1.4 var(--font-family, Helvetica, Arial, sans-serif);
   pointer-events: none;
 }
@@ -75,7 +76,7 @@
 .rd-scn-diff-counts {
   margin: 0 0 4px;
   font-size: 12px;
-  color: #555;
+  color: var(--rd-text-muted);
 }
 .rd-scn-diff-list {
   margin: 0;
@@ -98,7 +99,7 @@
 }
 .rd-scn-side-empty {
   margin: 0;
-  color: #888;
+  color: var(--rd-text-subtle);
   font-size: 12px;
   font-style: italic;
 }
@@ -107,13 +108,13 @@
 .rd-scn-export-options fieldset {
   margin: 0 0 10px;
   padding: 6px 10px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--rd-border);
   border-radius: 4px;
 }
 .rd-scn-export-options legend {
   padding: 0 4px;
   font-size: 12px;
-  color: #666;
+  color: var(--rd-text-muted);
 }
 .rd-scn-export-options label {
   display: flex;
@@ -128,10 +129,4 @@
   margin: 0 0 10px;
   padding: 4px;
   font: inherit;
-}
-
-:root[data-theme='dark'] .rd-scn-diff-legend {
-  background: rgba(40, 40, 40, 0.92);
-  border-color: #555;
-  color: #ddd;
 }

@@ -1,4 +1,6 @@
-/* Route tool, route tables, km ruler (src/railway/install-railway-routes.ts) */
+/* Route tool, route tables, km ruler (src/railway/install-railway-routes.ts).
+   Chrome colors: --rd-* theme tokens only (styles/variables.css). The canvas overlays (route
+   highlight, km ruler) are diagram content with fixed colors that read on both canvas pages. */
 
 #graph-container.rd-route-tool-active,
 #graph-container.rd-route-tool-active * {
@@ -6,13 +8,13 @@
 }
 
 #btn-route-tool.active {
-  background: #ffe0b2;
-  outline: 1px solid #ff8f00;
+  background: var(--rd-route-line);
+  outline: 1px solid var(--rd-route);
 }
 
 .rd-route-overlay .rd-route-hl-casing {
   fill: none;
-  stroke: #ffffff;
+  stroke: var(--rd-canvas-bg);
   stroke-width: 12;
   stroke-linejoin: round;
   stroke-linecap: round;
@@ -44,11 +46,11 @@
   width: 320px;
   max-height: 60vh;
   overflow: auto;
-  background: #ffffff;
-  color: #222222;
-  border: 1px solid #ffb74d;
+  background: var(--rd-surface);
+  color: var(--rd-text);
+  border: 1px solid var(--rd-route-border);
   border-radius: 6px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 4px 16px var(--rd-shadow);
   font: 12px/1.4 system-ui, sans-serif;
 }
 
@@ -57,8 +59,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 6px 8px;
-  background: #fff3e0;
-  border-bottom: 1px solid #ffe0b2;
+  background: var(--rd-route-bg);
+  border-bottom: 1px solid var(--rd-route-line);
 }
 
 .rd-route-tool-body {
@@ -94,24 +96,26 @@
 .rd-route-id-input {
   flex: 1;
   padding: 3px 5px;
-  border: 1px solid #cccccc;
+  border: 1px solid var(--rd-input-border);
   border-radius: 3px;
+  background: var(--rd-input-bg);
+  color: var(--rd-input-text);
 }
 
 .rd-route-btn {
   padding: 4px 10px;
-  border: 1px solid #cccccc;
+  border: 1px solid var(--rd-border-strong);
   border-radius: 3px;
-  background: #fafafa;
+  background: var(--rd-surface-2);
   color: inherit;
   cursor: pointer;
   font: inherit;
 }
 
 .rd-route-create {
-  background: #ff8f00;
-  border-color: #ef6c00;
-  color: #ffffff;
+  background: var(--rd-route);
+  border-color: var(--rd-route-strong);
+  color: var(--rd-route-on-accent);
   font-weight: 600;
 }
 
@@ -123,7 +127,7 @@
   position: fixed;
   inset: 0;
   z-index: 1000;
-  background: rgba(0, 0, 0, 0.35);
+  background: var(--rd-backdrop);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -134,10 +138,10 @@
   max-height: calc(100vh - 64px);
   display: flex;
   flex-direction: column;
-  background: #ffffff;
-  color: #222222;
+  background: var(--rd-surface);
+  color: var(--rd-text);
   border-radius: 6px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 32px var(--rd-shadow);
   font: 13px/1.4 system-ui, sans-serif;
 }
 
@@ -151,7 +155,7 @@
   display: flex;
   gap: 4px;
   padding: 4px 16px 0;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid var(--rd-border);
 }
 
 .rd-route-tab {
@@ -165,9 +169,9 @@
 }
 
 .rd-route-tab[aria-selected='true'] {
-  border-color: #e0e0e0;
+  border-color: var(--rd-border);
   border-radius: 4px 4px 0 0;
-  background: #fff3e0;
+  background: var(--rd-route-bg);
   font-weight: 600;
 }
 
@@ -184,14 +188,14 @@
 
 .rd-route-table th,
 .rd-route-table td {
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--rd-border);
   padding: 4px 6px;
   text-align: left;
   vertical-align: top;
 }
 
 .rd-route-table th {
-  background: #f5f5f5;
+  background: var(--rd-surface-3);
   position: sticky;
   top: 0;
 }
@@ -201,7 +205,7 @@
   justify-content: flex-end;
   gap: 8px;
   padding: 10px 16px;
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid var(--rd-border);
 }
 
 .rd-km-ruler-line {
@@ -228,27 +232,4 @@
   paint-order: stroke;
   stroke: #ffffff;
   stroke-width: 3px;
-}
-
-:root[data-theme='dark'] .rd-route-tool,
-:root[data-theme='dark'] .rd-route-dialog {
-  background: #2b2b2b;
-  color: #e0e0e0;
-  border-color: #8d5a00;
-}
-
-:root[data-theme='dark'] .rd-route-tool-head,
-:root[data-theme='dark'] .rd-route-tab[aria-selected='true'] {
-  background: #3d2c12;
-}
-
-:root[data-theme='dark'] .rd-route-table th {
-  background: #333333;
-}
-
-:root[data-theme='dark'] .rd-route-btn,
-:root[data-theme='dark'] .rd-route-id-input {
-  background: #333333;
-  color: #e0e0e0;
-  border-color: #555555;
 }

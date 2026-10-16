@@ -13,6 +13,12 @@
  * opposite system preference emulated, so the explicit choice must win) and View > Dark Mode at
  * runtime. Screenshots of both themes go to test-results/theme-contrast/.
  *
+ * A second test per theme covers the railway / scenario-document / remote-file features: the
+ * Route tool floating panel and the Route Table / Interlocking dialog (a small layout loaded into
+ * the tab), the scenario view with "Show changes" (legend, Changes list) and autoplay running,
+ * the scenario PDF export options dialog, and the remote status menu + Reload confirm dialog
+ * (the dev-only fake provider, localStorage `rd.fakeRemote`, like remote-persist.spec.ts).
+ *
  * Runs on any port (no draw.io server is involved).
  */
 import { test, expect } from '@playwright/test';
@@ -403,6 +409,180 @@ async function auditAllSurfaces(page: Page, a: Auditor): Promise<void> {
   await a.check('main window (after the tour)');
 }
 
+/** Runs `body` with the active tab's graph and tab (dev server module graph). */
+async function inGraph<T>(page: Page, body: string, arg?: unknown): Promise<T> {
+  return page.evaluate(
+    async ({ body, arg }) => {
+      const registry = await import('/src/services/service-registry.ts' as string);
+      const tab = registry.ServiceRegistry.getTabManager().getActiveTab();
+      return new Function('graph', 'tab', 'arg', body)(tab.graph, tab, arg);
+    },
+    { body, arg }
+  ) as Promise<T>;
+}
+
+/** Clicks the center of the railway object with this rdId (like ertms-routes.spec.ts). */
+async function clickRailwayObject(page: Page, rdId: string): Promise<void> {
+  const p = await inGraph<{ x: number; y: number }>(
+    page,
+    `const cell = graph.getDefaultParent().children.find((c) => c.value && c.value.nodeType === 1 && c.value.getAttribute('rdId') === arg);
+     const g = cell.geometry, s = graph.view.scale, t = graph.view.translate, c = graph.container;
+     const r = c.getBoundingClientRect();
+     return { x: r.left + (g.x + g.width / 2 + t.x) * s - c.scrollLeft, y: r.top + (g.y + g.height / 2 + t.y) * s - c.scrollTop };`,
+    rdId
+  );
+  await page.mouse.click(p.x, p.y);
+}
+
+const railObj = (id: string, attrs: string, style: string, geo: string, edge = false): string =>
+  `<object label="" id="${id}" ${attrs}><mxCell style="${style}" ${edge ? 'edge="1"' : 'vertex="1"'} parent="1">${geo}</mxCell></object>`;
+const railLine = (x1: number, y1: number, x2: number, y2: number): string =>
+  `<mxGeometry relative="1" as="geometry"><mxPoint x="${x1}" y="${y1}" as="sourcePoint"/><mxPoint x="${x2}" y="${y2}" as="targetPoint"/></mxGeometry>`;
+const railBox = (cx: number, cy: number): string => `<mxGeometry x="${cx - 10}" y="${cy - 10}" width="20" height="20" as="geometry"/>`;
+const TRACK = 'endArrow=none;html=1;strokeWidth=4;';
+const SIGNAL = 'triangle;whiteSpace=wrap;html=1;fillColor=#000000;';
+/** Two tracks, points W1, three signals (the ertms-routes.spec.ts layout). */
+const RAIL_LAYOUT = `<mxGraphModel><root><mxCell id="0"/><mxCell id="1" parent="0"/>
+${railObj('t1', 'rdKind="track" rdId="T1" rdKmStart="10" rdKmEnd="10.5"', TRACK, railLine(0, 100, 500, 100), true)}
+${railObj('t2', 'rdKind="track" rdId="T2" rdKmStart="20" rdKmEnd="20.35"', TRACK, railLine(150, 180, 500, 180), true)}
+${railObj('w1', 'rdKind="points" rdId="W1" rdPosition="normal" rdTrackId="T1"', TRACK, railLine(150, 100, 230, 180), true)}
+${railObj('s1', 'rdKind="signal" rdId="S1" rdDirection="nominal" rdTrackId="T1"', SIGNAL, railBox(40, 114))}
+${railObj('s2', 'rdKind="signal" rdId="S2" rdDirection="nominal" rdTrackId="T1"', SIGNAL, railBox(450, 114))}
+${railObj('s3', 'rdKind="signal" rdId="S3" rdDirection="nominal" rdTrackId="T2"', SIGNAL, railBox(440, 194))}
+</root></mxGraphModel>`;
+
+const REMOTE_FILE = 'Station.drawio';
+const REMOTE_XML =
+  '<mxfile><diagram name="Station" id="page-1"><mxGraphModel><root><mxCell id="0"/><mxCell id="1" parent="0"/>' +
+  '<mxCell id="2" value="Signal S1" style="rounded=0;whiteSpace=wrap;" vertex="1" parent="1">' +
+  '<mxGeometry x="40" y="40" width="120" height="40" as="geometry"/></mxCell></root></mxGraphModel></diagram></mxfile>';
+
+/** Like openApp, with the dev-only fake remote provider enabled and signed in. */
+async function openAppWithFakeRemote(page: Page, theme: Theme): Promise<void> {
+  await page.emulateMedia({ colorScheme: theme === 'dark' ? 'light' : 'dark' });
+  await page.goto('/');
+  await page.evaluate(
+    ({ t, file, xml }) => {
+      localStorage.clear();
+      sessionStorage.clear();
+      localStorage.setItem('rd.theme', t);
+      localStorage.setItem('rd.fakeRemote', '1');
+      localStorage.setItem('rd.fakeRemote.files', JSON.stringify({ [file]: { xml, version: 'v1' } }));
+      sessionStorage.setItem('rd.fakeRemote.account', '1');
+    },
+    { t: theme, file: REMOTE_FILE, xml: REMOTE_XML }
+  );
+  await page.reload();
+  await expect(page.locator('body')).toHaveAttribute('data-editor', 'legacy');
+  await expect(page.locator('#tabs-container .tab-button.active')).toHaveCount(1);
+  await expect(page.locator('html')).toHaveAttribute('data-theme', theme);
+  await expect(page.locator('#file-menu-remote-items [data-provider="fake-remote"][data-remote-action="open"]')).toHaveCount(1);
+  await page.locator(HEXAGON).waitFor();
+}
+
+async function auditFeatureSurfaces(page: Page, a: Auditor): Promise<void> {
+  // Route tool floating panel (layout loaded like a file)
+  await inGraph(page, 'tab.saveLoadController.load(arg); graph.view.setTranslate(20, 20); graph.container.scrollLeft = 0; graph.container.scrollTop = 0;', RAIL_LAYOUT);
+  await page.locator('#btn-route-tool').click();
+  const tool = page.locator('.rd-route-tool');
+  await expect(tool.locator('.rd-route-status')).toHaveText('Click the start (entry) signal.');
+  await a.check('Route tool panel (start)', '.rd-route-tool');
+  await clickRailwayObject(page, 'S1');
+  await expect(tool.locator('.rd-route-status')).toContainText('Start: S1');
+  await clickRailwayObject(page, 'S3');
+  await expect(tool.locator('.rd-route-path')).toContainText('W1 reverse');
+  await a.check('Route tool panel (path, Create)', '.rd-route-tool');
+  await a.shot('route-tool');
+  await tool.locator('.rd-route-create').click();
+  await expect(tool.locator('.rd-route-status')).toHaveText('Click the start (entry) signal.');
+  await page.keyboard.press('Escape');
+  await expect(tool).toHaveCount(0);
+
+  // Route Table / Interlocking dialog
+  await openMenu(page, 'extras');
+  await page.locator('.menu-dropdown[data-menu="extras"] [data-action="railwayRoute:routeTable"]').click();
+  const routes = page.locator('.rd-route-dialog');
+  await expect(routes.locator('.rd-route-table tbody tr')).toHaveCount(1);
+  await a.check('Route Table dialog', '.rd-route-dialog-overlay');
+  await a.shot('route-table');
+  await routes.locator('.rd-route-tab[data-tab="conflicts"]').click();
+  await expect(routes.locator('.rd-route-tab[data-tab="conflicts"]')).toHaveAttribute('aria-selected', 'true');
+  await a.check('Interlocking (conflicts) dialog', '.rd-route-dialog-overlay');
+  await page.keyboard.press('Escape');
+  await expect(routes).toHaveCount(0);
+
+  // Scenario with two steps (S1 moved in step 2), viewed with "Show changes" and autoplay
+  await page.locator('[data-right-panel="scenarios"]').click();
+  const panel = page.locator('#scenarios-panel');
+  await panel.locator('.rd-scn-new').click();
+  await fillTemplateDialog(page, 'Przebieg');
+  for (const name of ['Start', 'Move']) {
+    if (name === 'Move') await inGraph(page, "graph.moveCells([graph.getDataModel().getCell('s2')], 0, 40);");
+    await panel.locator('.rd-scn-add-step').click();
+    const editor = page.locator('[data-testid="scenario-step-editor"]');
+    await editor.locator('input[name="template-name"]').fill(name);
+    await editor.locator('.rd-tpl-btn-primary').click();
+    await expect(editor).toHaveCount(0);
+  }
+  await panel.locator('.rd-scn-step').nth(1).click();
+  const view = page.locator('[data-testid="scenario-view"]');
+  await expect(view).toBeVisible();
+  await page.locator('.rd-scn-diff-toggle').check();
+  const legend = page.locator('[data-testid="scenario-diff-legend"]');
+  await expect(legend).toBeVisible();
+  await expect(page.locator('[data-testid="scenario-side-panel"] .rd-scn-side-changes li')).not.toHaveCount(0);
+  // the legend is chrome over the canvas, not inside the skipped graph area
+  expect(await legend.evaluate((n) => !n.closest('.rd-scn-view-host, #graph-container > div[id^="graph-tab-"]'))).toBe(true);
+  await a.check('scenario view: Show changes (banner, legend, Changes list)', '[data-testid="scenario-view"]', '.rd-scn-side');
+  await a.shot('scenario-changes');
+  await page.keyboard.press('Home');
+  await page.locator('.rd-scn-banner-title').click();
+  await page.keyboard.press('Space');
+  await expect(page.locator('.rd-scn-play-btn')).toHaveText('⏸ Pause');
+  await a.check('scenario view: autoplay running (banner)', '.rd-scn-banner');
+  await page.keyboard.press('Space');
+  await expect(page.locator('.rd-scn-play-btn')).toHaveText('▶ Play');
+  await page.keyboard.press('Escape');
+  await expect(view).toBeHidden();
+
+  // File > Export Scenario (PDF)… options dialog
+  await openMenu(page, 'file');
+  await page.locator('.menu-dropdown-item[data-action="exportScenarioPdf"]').click();
+  const exportDialog = page.locator('[data-testid="scenario-doc-export-dialog"]');
+  await expect(exportDialog).toBeVisible();
+  await a.check('scenario PDF export options dialog', '[data-testid="scenario-doc-export-dialog"]');
+  await a.shot('scenario-export');
+  await page.keyboard.press('Escape');
+  await expect(exportDialog).toHaveCount(0);
+  await page.locator('[data-right-panel="properties"]').click();
+
+  // Remote file (fake provider): open dialog, status menu, Reload confirm with unsaved changes
+  await openMenu(page, 'file');
+  await page.locator('#file-menu-remote-items .menu-dropdown-item[data-provider="fake-remote"][data-remote-action="open"]').click();
+  const openDialog = page.locator('[data-testid="remote-open-dialog"]');
+  await expect(openDialog).toBeVisible();
+  await openDialog.locator('.rd-share-entry', { hasText: 'Test repo' }).click();
+  await openDialog.locator('.rd-share-entry[data-kind="file"]', { hasText: REMOTE_FILE }).click();
+  await a.check('remote Open dialog', '[data-testid="remote-open-dialog"]');
+  await openDialog.locator('[data-testid="remote-open-confirm"]').click();
+  await expect(openDialog).toHaveCount(0);
+  await expect(page.locator('#status-remote')).toHaveText(`Test storage: Test repo › ${REMOTE_FILE}`);
+  await inGraph(page, "graph.insertVertex(graph.getDefaultParent(), null, 'My edit', 200, 60, 100, 40);");
+  await expect(page.locator('#status-remote-item')).toHaveAttribute('data-dirty', 'true');
+  await page.locator('#status-remote-item').click();
+  const remoteMenu = page.locator('[data-testid="remote-status-menu"]');
+  await expect(remoteMenu).toBeVisible();
+  await a.check('remote status menu (+ status bar, tab bar)', '[data-testid="remote-status-menu"]', '.status-bar', '#tabs-container');
+  await a.shot('remote-menu');
+  await remoteMenu.locator('[data-remote-action="reload"]').click();
+  const confirm = page.locator('[data-testid="remote-confirm-dialog"]');
+  await expect(confirm).toContainText('Discard the changes');
+  await a.check('remote Reload confirm dialog', '[data-testid="remote-confirm-dialog"]');
+  await a.shot('remote-confirm');
+  await confirm.getByRole('button', { name: 'Cancel' }).click();
+  await expect(confirm).toHaveCount(0);
+}
+
 test.describe('theme contrast', () => {
   for (const theme of ['light', 'dark'] as const) {
     test(`${theme} theme (localStorage rd.theme): all surfaces meet WCAG AA contrast`, async ({ page }) => {
@@ -417,6 +597,23 @@ test.describe('theme contrast', () => {
       await auditAllSurfaces(page, a);
       await test.info().attach(`contrast-${theme}.txt`, { body: a.report() || 'no offenders', contentType: 'text/plain' });
       expect(a.surfaces.length).toBeGreaterThan(25);
+      expect(a.offenders, `contrast offenders:\n${a.report()}`).toEqual([]);
+      expect(pageErrors).toEqual([]);
+    });
+  }
+
+  for (const theme of ['light', 'dark'] as const) {
+    test(`${theme} theme: route tool, route tables, scenario document, remote file meet WCAG AA contrast`, async ({ page }) => {
+      test.setTimeout(120_000);
+      const pageErrors: string[] = [];
+      page.on('pageerror', (err) => pageErrors.push(err.message));
+      await page.setViewportSize({ width: 1440, height: 900 });
+      await openAppWithFakeRemote(page, theme);
+
+      const a = new Auditor(page, theme);
+      await auditFeatureSurfaces(page, a);
+      await test.info().attach(`contrast-features-${theme}.txt`, { body: a.report() || 'no offenders', contentType: 'text/plain' });
+      expect(a.surfaces.length).toBeGreaterThanOrEqual(10);
       expect(a.offenders, `contrast offenders:\n${a.report()}`).toEqual([]);
       expect(pageErrors).toEqual([]);
     });

@@ -341,13 +341,13 @@
 /* ---- remote-bound tabs (remote-session.ts) ------------------------------------------------ */
 
 .rd-share-btn-danger {
-  border-color: #c62828;
-  background: #c62828;
-  color: #fff;
+  border-color: var(--rd-danger-solid);
+  background: var(--rd-danger-solid);
+  color: var(--rd-accent-text);
 }
 
 .rd-share-btn-danger:hover:not(:disabled) {
-  background: #b71c1c;
+  background: var(--rd-danger-hover);
 }
 
 /* Unsaved changes since the last save to the provider */
@@ -357,7 +357,7 @@
   height: 7px;
   margin-left: 5px;
   border-radius: 50%;
-  background: #e65100;
+  background: var(--rd-dirty);
   vertical-align: middle;
   flex: none;
 }
@@ -372,7 +372,7 @@
 
 #status-remote-item[data-dirty='true'] .status-value::after {
   content: ' •';
-  color: #e65100;
+  color: var(--rd-dirty);
 }
 
 .rd-remote-menu {
@@ -380,11 +380,11 @@
   z-index: 10050;
   min-width: 200px;
   padding: 4px 0;
-  border: 1px solid var(--rd-chrome-border, #ccc);
+  border: 1px solid var(--rd-border-strong);
   border-radius: 4px;
-  background: var(--rd-chrome-bg, #fff);
-  color: inherit;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  background: var(--rd-surface);
+  color: var(--rd-text);
+  box-shadow: 0 4px 14px var(--rd-shadow);
   font-size: 13px;
 }
 
@@ -402,13 +402,13 @@
 
 .rd-remote-menu-item:hover,
 .rd-remote-menu-item:focus-visible {
-  background: rgba(127, 127, 127, 0.15);
+  background: var(--rd-hover);
   outline: none;
 }
 
 .rd-remote-menu-note {
   padding: 4px 14px 6px;
-  opacity: 0.75;
+  color: var(--rd-text-muted);
   font-size: 12px;
   white-space: normal;
   max-width: 320px;

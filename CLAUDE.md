@@ -101,7 +101,9 @@ answers **HTTP 403** to iframes whose Referer has a non-default port (`http://lo
   system preference emulated, and View > Dark Mode both ways): opens every surface (menus + submenu, toolbar, left tabs
   Shapes/Templates/Layers/PlantUML/ERTMS, Properties canvas/Text/Style/Arrange, Data, Checks, Scenarios, scenario
   dialog + step editor + view, context menu, Save as Template (with error), Share, Keyboard Shortcuts, image upload,
-  shape designer, all 4 notification types, status/tab bars) and requires WCAG contrast >= 4.5 (3 for large or
+  shape designer, all 4 notification types, status/tab bars; a second test per theme: Route tool panel + Route
+  Table/Interlocking dialog on a loaded layout, scenario view with "Show changes" legend/Changes list and autoplay
+  running, scenario PDF export options, fake-remote (`rd.fakeRemote`) Open dialog, status menu, Reload confirm) and requires WCAG contrast >= 4.5 (3 for large or
   symbol-only text; disabled exempt) between each visible text's color and its effective background (ancestors
   composited until opaque). Diagram content (tab graphs, thumbnails, SVG, canvas) is skipped. Offenders are listed as
   `theme: surface | selector | "text" | fg on bg = ratio`. Screenshots: `test-results/theme-contrast/<theme>-*.png`.
@@ -143,8 +145,9 @@ answers **HTTP 403** to iframes whose Referer has a non-default port (`http://lo
   colors are `--rd-*` (`--rd-bg`, `--rd-surface`/`-2`/`-3`, `--rd-hover`, `--rd-active`, `--rd-text`, `--rd-text-muted`,
   `--rd-text-subtle`, `--rd-border`, `--rd-border-strong`, `--rd-accent`(+`-hover`, `-text`), `--rd-link`, `--rd-focus`,
   `--rd-selected`, `--rd-input-bg/-text/-border`, `--rd-button-bg/-text`, `--rd-danger`/`-solid`/`-bg`, `--rd-success*`,
-  `--rd-warning*`, `--rd-info*`, `--rd-hint-*`, `--rd-badge-*`, `--rd-scenario-*`, `--rd-shadow`, `--rd-overlay`,
-  `--rd-backdrop`, `--rd-scrollbar*`, `--rd-canvas-bg`). Light values on `:root`, dark on `:root[data-theme="dark"]`,
+  `--rd-warning*`, `--rd-info*`, `--rd-hint-*`, `--rd-badge-*`, `--rd-scenario-*`, `--rd-route-*` (route tool orange),
+  `--rd-danger-hover`, `--rd-dirty`, `--rd-surface-overlay`, `--rd-shadow`, `--rd-overlay`, `--rd-backdrop`,
+  `--rd-scrollbar*`, `--rd-canvas-bg`). Light values on `:root`, dark on `:root[data-theme="dark"]`,
   each with `color-scheme`. The older names (`--background`, `--surface`, `--text`, `--text-secondary`, `--border`,
   `--rd-chrome-*`) are aliases of them. Never key chrome colors off `prefers-color-scheme`: `<html data-theme>`
   (index.html before first paint, then `src/drawio-shapes/theme/dark-mode.ts`) already resolves the stored choice

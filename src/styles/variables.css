@@ -69,6 +69,16 @@
   --rd-scenario-border: #c8a24a;
   --rd-scenario-line: #f0d58a;
   --rd-scenario-hover: #fff3c4;
+  /* Railway route tool + route tables (orange; src/railway/railway-routes.css) */
+  --rd-route: #ff8f00;           /* Create button, active Route tool outline */
+  --rd-route-strong: #ef6c00;    /* border of --rd-route buttons */
+  --rd-route-on-accent: #2b1d00; /* text on --rd-route */
+  --rd-route-bg: #fff3e0;        /* panel header, selected table tab */
+  --rd-route-border: #ffb74d;    /* panel border */
+  --rd-route-line: #ffe0b2;      /* header separator, active Route tool button */
+  --rd-danger-hover: #b71c1c;    /* hovered --rd-danger-solid buttons */
+  --rd-dirty: #e65100;           /* "unsaved remote changes" dot */
+  --rd-surface-overlay: rgba(255, 255, 255, 0.92); /* legends floating over the canvas */
   --rd-shadow: rgba(0, 0, 0, 0.15);
   --rd-overlay: rgba(0, 0, 0, 0.5);
   --rd-backdrop: rgba(0, 0, 0, 0.35); /* behind the Share / template dialogs */
@@ -214,6 +224,15 @@
   --rd-scenario-border: #8a6d2a;
   --rd-scenario-line: #5a4a1f;
   --rd-scenario-hover: #4a3b14;
+  --rd-route: #ff8f00;
+  --rd-route-strong: #c66a00;
+  --rd-route-on-accent: #2b1d00;
+  --rd-route-bg: #3d2c12;
+  --rd-route-border: #8d5a00;
+  --rd-route-line: #5a3d10;
+  --rd-danger-hover: #b71c1c;
+  --rd-dirty: #ff9e40;
+  --rd-surface-overlay: rgba(37, 37, 38, 0.92);
   --rd-shadow: rgba(0, 0, 0, 0.5);
   --rd-overlay: rgba(0, 0, 0, 0.6);
   --rd-backdrop: rgba(0, 0, 0, 0.55);
