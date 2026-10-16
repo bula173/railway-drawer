@@ -20,7 +20,11 @@ import type { ScenarioData, ScenarioSet, ScenarioStepData } from './scenario-mod
 import { renderStepUml, showUmlResult } from './step-uml';
 import type { UmlRenderResult } from './step-uml';
 import { showMarkdown } from './markdown';
+import { ScenarioAutoplay, AUTOPLAY_INTERVALS } from './scenario-autoplay';
+import { buildDiffHighlightXml, diffSnapshots, diffCountsText, DIFF_COLORS, DIFF_LABELS } from './scenario-diff';
+import type { CellChangeKind, SnapshotDiff } from './scenario-diff';
 import './scenarios.css';
+import './scenario-doc.css';
 
 /** localStorage key of the side panel state ('collapsed' | 'open'). */
 export const SIDE_PANEL_KEY = 'rd.scenario.sidePanel';
@@ -30,6 +34,25 @@ function readCollapsed(): boolean {
     return localStorage.getItem(SIDE_PANEL_KEY) === 'collapsed';
   } catch {
     return false;
+  }
+}
+
+/** localStorage key of the "Show changes" toggle ('1' | '0'). */
+export const SHOW_CHANGES_KEY = 'rd.scenario.showChanges';
+
+function readShowChanges(): boolean {
+  try {
+    return localStorage.getItem(SHOW_CHANGES_KEY) === '1';
+  } catch {
+    return false;
+  }
+}
+
+function writeShowChanges(on: boolean): void {
+  try {
+    localStorage.setItem(SHOW_CHANGES_KEY, on ? '1' : '0');
+  } catch {
+    // storage blocked
   }
 }
 
@@ -98,8 +121,71 @@ export class ScenarioViewer {
   private renderedText: string | null = null;
   private umlSeq = 0;
   private collapsed = readCollapsed();
+  /** "Show changes": highlights the differences to the previous step (a copy of the snapshot is shown). */
+  private showChanges = readShowChanges();
+  private diffToggle: HTMLInputElement | null = null;
+  private legendEl: HTMLElement | null = null;
+  private changesSection: HTMLElement | null = null;
+  private changesEl: HTMLElement | null = null;
+  private lastDiff: SnapshotDiff | null = null;
+  private playBtn: HTMLButtonElement | null = null;
+  private intervalSelect: HTMLSelectElement | null = null;
+  private loopBox: HTMLInputElement | null = null;
+  private readonly autoplay: ScenarioAutoplay;
 
-  constructor(private readonly options: ScenarioViewerOptions) {}
+  constructor(private readonly options: ScenarioViewerOptions) {
+    this.autoplay = new ScenarioAutoplay({
+      position: () => {
+        const scenario = this.currentScenario();
+        return this.state && scenario ? { index: this.state.index, total: scenario.steps.length } : null;
+      },
+      show: (index) => this.show(index),
+      onChange: (playing) => this.applyPlayState(playing),
+    });
+  }
+
+  /** Autoplay (banner ▶ button, Space). */
+  isPlaying(): boolean {
+    return this.autoplay.isPlaying();
+  }
+
+  play(): void {
+    this.autoplay.play();
+  }
+
+  pause(): void {
+    this.autoplay.pause();
+  }
+
+  toggleAutoplay(): void {
+    this.autoplay.toggle();
+  }
+
+  setAutoplaySettings(settings: { seconds?: number; loop?: boolean }): void {
+    this.autoplay.setSettings(settings);
+    this.syncAutoplayControls();
+  }
+
+  getAutoplaySettings(): { seconds: number; loop: boolean } {
+    return this.autoplay.getSettings();
+  }
+
+  /** "Show changes" toggle (remembered in localStorage `rd.scenario.showChanges`). */
+  setShowChanges(on: boolean): void {
+    this.showChanges = on;
+    writeShowChanges(on);
+    if (this.diffToggle) this.diffToggle.checked = on;
+    if (this.state) this.render();
+  }
+
+  isShowingChanges(): boolean {
+    return this.showChanges;
+  }
+
+  /** Differences of the shown step to the previous one (null: off, first step or closed). */
+  getShownDiff(): SnapshotDiff | null {
+    return this.state && this.showChanges ? this.lastDiff : null;
+  }
 
   isActive(): boolean {
     return this.state !== null;
@@ -134,6 +220,7 @@ export class ScenarioViewer {
   go(delta: number): void {
     if (!this.state) return;
     this.show(this.state.index + delta);
+    this.autoplay.restartInterval();
   }
 
   show(index: number): void {
@@ -147,18 +234,22 @@ export class ScenarioViewer {
 
   first(): void {
     this.show(0);
+    this.autoplay.restartInterval();
   }
 
   last(): void {
     const scenario = this.currentScenario();
     if (scenario) this.show(scenario.steps.length - 1);
+    this.autoplay.restartInterval();
   }
 
   /** Back to editing: removes the view and shows the (untouched) live drawing again. */
   close(): void {
     if (!this.state) return;
     const { tabId } = this.state;
+    this.autoplay.pause();
     this.state = null;
+    this.lastDiff = null;
     this.unsubscribe?.();
     this.unsubscribe = null;
     this.renderedXml = null;
@@ -227,7 +318,37 @@ export class ScenarioViewer {
     const exit = el('button', 'rd-scn-banner-btn rd-scn-banner-primary rd-scn-exit', 'Back to editing');
     exit.type = 'button';
     exit.title = 'Back to the live drawing (Esc)';
-    banner.append(badge, prev, text, next, replace, exit);
+    // Autoplay: ▶/⏸, interval, loop
+    const play = el('button', 'rd-scn-banner-btn rd-scn-play-btn', '▶ Play');
+    play.type = 'button';
+    play.title = 'Play the steps automatically (Space)';
+    play.setAttribute('aria-pressed', 'false');
+    const interval = el('select', 'rd-scn-autoplay-interval');
+    interval.title = 'Autoplay interval';
+    interval.setAttribute('aria-label', 'Autoplay interval');
+    const seconds = this.autoplay.getSettings().seconds;
+    const values: number[] = [...AUTOPLAY_INTERVALS];
+    if (!values.includes(seconds)) values.push(seconds);
+    for (const v of values.sort((a, b) => a - b)) {
+      const opt = el('option', undefined, `${v} s`);
+      opt.value = String(v);
+      interval.appendChild(opt);
+    }
+    const loopLabel = el('label', 'rd-scn-banner-check rd-scn-autoplay-loop-label');
+    loopLabel.title = 'Start again at step 1 after the last step';
+    const loop = el('input', 'rd-scn-autoplay-loop');
+    loop.type = 'checkbox';
+    loopLabel.append(loop, document.createTextNode(' Loop'));
+    const autoplayGroup = el('div', 'rd-scn-autoplay');
+    autoplayGroup.append(play, interval, loopLabel);
+    // Show changes against the previous step
+    const diffLabel = el('label', 'rd-scn-banner-check rd-scn-diff-label');
+    diffLabel.title = 'Highlight what changed since the previous step';
+    const diffToggle = el('input', 'rd-scn-diff-toggle');
+    diffToggle.type = 'checkbox';
+    diffToggle.checked = this.showChanges;
+    diffLabel.append(diffToggle, document.createTextNode(' Show changes'));
+    banner.append(badge, prev, text, next, autoplayGroup, diffLabel, replace, exit);
     const host = el('div', 'rd-scn-view-host');
     const side = el('aside', 'rd-scn-side');
     side.dataset.testid = 'scenario-side-panel';
@@ -247,10 +368,30 @@ export class ScenarioViewer {
     textSection.appendChild(el('h3', 'rd-scn-side-heading', 'Text'));
     const textEl = el('div', 'rd-scn-side-text rd-scn-markdown');
     textSection.appendChild(textEl);
-    sideBody.append(umlSection, textSection);
+    const changesSection = el('section', 'rd-scn-side-section rd-scn-side-changes-section');
+    changesSection.appendChild(el('h3', 'rd-scn-side-heading', 'Changes'));
+    const changesEl = el('div', 'rd-scn-side-changes');
+    changesEl.setAttribute('aria-live', 'polite');
+    changesSection.appendChild(changesEl);
+    changesSection.hidden = true;
+    sideBody.append(changesSection, umlSection, textSection);
     side.append(sideHead, sideBody);
+    const legend = el('div', 'rd-scn-diff-legend');
+    legend.dataset.testid = 'scenario-diff-legend';
+    legend.setAttribute('aria-label', 'Legend of the change highlights');
+    for (const kind of ['added', 'removed', 'moved', 'changed'] as CellChangeKind[]) {
+      const item = el('span', `rd-scn-diff-legend-item rd-scn-diff-${kind}`);
+      const swatch = el('span', 'rd-scn-diff-swatch');
+      swatch.style.borderColor = DIFF_COLORS[kind];
+      if (kind === 'removed') swatch.style.background = `${DIFF_COLORS[kind]}2e`;
+      item.append(swatch, document.createTextNode(DIFF_LABELS[kind]));
+      legend.appendChild(item);
+    }
+    legend.hidden = true;
+    const hostWrap = el('div', 'rd-scn-view-canvas');
+    hostWrap.append(host, legend);
     const body = el('div', 'rd-scn-view-body');
-    body.append(host, side);
+    body.append(hostWrap, side);
     wrapper.append(banner, body);
     this.options.graphContainer.appendChild(wrapper);
     sideToggle.addEventListener('click', () => this.setSideCollapsed(!this.collapsed));
@@ -258,6 +399,10 @@ export class ScenarioViewer {
     prev.addEventListener('click', () => this.go(-1));
     next.addEventListener('click', () => this.go(1));
     exit.addEventListener('click', () => this.close());
+    play.addEventListener('click', () => this.toggleAutoplay());
+    interval.addEventListener('change', () => this.setAutoplaySettings({ seconds: Number(interval.value) }));
+    loop.addEventListener('change', () => this.setAutoplaySettings({ loop: loop.checked }));
+    diffToggle.addEventListener('change', () => this.setShowChanges(diffToggle.checked));
     replace.addEventListener('click', () => {
       const scenario = this.currentScenario();
       if (!this.state || !scenario) return;
@@ -276,6 +421,14 @@ export class ScenarioViewer {
     this.sideToggle = sideToggle;
     this.umlEl = umlEl;
     this.textEl = textEl;
+    this.playBtn = play;
+    this.intervalSelect = interval;
+    this.loopBox = loop;
+    this.diffToggle = diffToggle;
+    this.legendEl = legend;
+    this.changesSection = changesSection;
+    this.changesEl = changesEl;
+    this.syncAutoplayControls();
     this.applySideState();
   }
 
@@ -288,6 +441,28 @@ export class ScenarioViewer {
 
   isSideCollapsed(): boolean {
     return this.collapsed;
+  }
+
+  private syncAutoplayControls(): void {
+    const settings = this.autoplay.getSettings();
+    if (this.intervalSelect) {
+      const value = String(settings.seconds);
+      if (!Array.from(this.intervalSelect.options).some((o) => o.value === value)) {
+        const opt = el('option', undefined, `${value} s`);
+        opt.value = value;
+        this.intervalSelect.appendChild(opt);
+      }
+      this.intervalSelect.value = value;
+    }
+    if (this.loopBox) this.loopBox.checked = settings.loop;
+  }
+
+  private applyPlayState(playing: boolean): void {
+    if (!this.playBtn) return;
+    this.playBtn.textContent = playing ? '⏸ Pause' : '▶ Play';
+    this.playBtn.title = playing ? 'Pause autoplay (Space)' : 'Play the steps automatically (Space)';
+    this.playBtn.setAttribute('aria-pressed', String(playing));
+    this.wrapper?.classList.toggle('rd-scn-playing', playing);
   }
 
   private applySideState(): void {
@@ -346,12 +521,66 @@ export class ScenarioViewer {
     this.descEl!.hidden = !step.description;
     this.prevBtn!.disabled = this.state.index === 0;
     this.nextBtn!.disabled = this.state.index >= total - 1;
-    if (step.xml !== this.renderedXml) {
-      this.renderedXml = step.xml;
-      this.loadSnapshot(step.xml);
+    if (this.playBtn) this.playBtn.disabled = total < 2;
+    const prevStep = this.state.index > 0 ? scenario.steps[this.state.index - 1] : null;
+    let shownXml = step.xml;
+    this.lastDiff = null;
+    if (this.showChanges && prevStep) {
+      try {
+        this.lastDiff = diffSnapshots(prevStep.xml, step.xml);
+        shownXml = buildDiffHighlightXml(prevStep.xml, step.xml, this.lastDiff);
+      } catch (error) {
+        console.error('[Scenarios] Could not compare the steps:', error);
+      }
     }
+    if (shownXml !== this.renderedXml) {
+      this.renderedXml = shownXml;
+      this.loadSnapshot(shownXml);
+    }
+    this.renderChanges(prevStep !== null);
     this.renderSide(step);
     this.options.onStateChange?.({ ...this.state });
+  }
+
+  /** Legend, the side panel's "Changes" list and the counts on the view (data-diff-*). */
+  private renderChanges(hasPrevious: boolean): void {
+    const on = this.showChanges;
+    const diff = this.lastDiff;
+    this.legendEl!.hidden = !on || !hasPrevious;
+    this.changesSection!.hidden = !on;
+    const wrapper = this.wrapper!;
+    for (const kind of ['added', 'removed', 'moved', 'changed'] as CellChangeKind[]) {
+      if (diff) wrapper.dataset[`diff${kind.charAt(0).toUpperCase()}${kind.slice(1)}`] = String(diff.counts[kind]);
+      else delete wrapper.dataset[`diff${kind.charAt(0).toUpperCase()}${kind.slice(1)}`];
+    }
+    wrapper.classList.toggle('rd-scn-showing-changes', on && hasPrevious);
+    if (!on) return;
+    const host = this.changesEl!;
+    host.textContent = '';
+    if (!hasPrevious) {
+      host.appendChild(el('p', 'rd-scn-side-empty', 'First step: nothing to compare with.'));
+      return;
+    }
+    if (!diff) {
+      host.appendChild(el('p', 'rd-scn-side-empty', 'The steps could not be compared.'));
+      return;
+    }
+    if (diff.changes.length === 0) {
+      host.appendChild(el('p', 'rd-scn-side-empty', 'No changes since the previous step.'));
+      return;
+    }
+    host.appendChild(el('p', 'rd-scn-diff-counts', diffCountsText(diff.counts)));
+    const list = el('ul', 'rd-scn-diff-list');
+    for (const change of diff.changes) {
+      const li = el('li', `rd-scn-diff-item rd-scn-diff-${change.kind}`);
+      li.dataset.kind = change.kind;
+      li.dataset.cellId = change.id;
+      const dot = el('span', 'rd-scn-diff-dot');
+      dot.style.background = DIFF_COLORS[change.kind];
+      li.append(dot, document.createTextNode(change.summary));
+      list.appendChild(li);
+    }
+    host.appendChild(list);
   }
 
   /** UML (async: a server rendering may take a while; stale answers are dropped) and Markdown. */

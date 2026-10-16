@@ -51,3 +51,16 @@ ERTMS shape library (public/libraries/ertms.xml)
 -------------------------------------------------------------------------------
 
 See public/libraries/ERTMS-LICENSE.txt.
+
+-------------------------------------------------------------------------------
+Scenario PDF export (src/scenarios/scenario-pdf.ts, loaded on demand)
+-------------------------------------------------------------------------------
+
+jsPDF 4.2.1 (https://github.com/parallax/jsPDF), Copyright (c) 2010-2025 James Hall,
+yWorks GmbH and contributors, MIT License.
+svg2pdf.js 2.8.1 (https://github.com/yWorks/svg2pdf.js), Copyright (c) 2015-2025 yWorks GmbH
+and contributors, MIT License.
+DejaVu fonts 2.37 (DejaVuSans, DejaVuSans-Bold, DejaVuSansMono; npm dejavu-fonts-ttf), embedded
+in exported PDFs: Bitstream Vera Fonts Copyright (c) 2003 Bitstream, Inc.; DejaVu changes are
+in the public domain; Arev Fonts Copyright (c) 2006 Tavmjong Bah. Free license (Bitstream Vera
+/ Arev font license): https://dejavu-fonts.github.io/License.html

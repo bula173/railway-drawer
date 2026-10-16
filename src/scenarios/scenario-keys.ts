@@ -9,20 +9,25 @@
  * scenario view the dispatcher never calls this, so the arrows keep their usual meaning.
  */
 
-export type ScenarioKeyAction = 'prev' | 'next' | 'first' | 'last' | 'exit' | 'block' | 'swallow' | 'pass';
+export type ScenarioKeyAction = 'prev' | 'next' | 'first' | 'last' | 'exit' | 'toggle-play' | 'block' | 'swallow' | 'pass';
 
 const EDIT_KEYS = new Set(['z', 'y', 'x', 'v', 'a', 'c', 'd', 'g', 'b', 'i', 'u', 'l', 'Delete', 'Backspace', 'Enter']);
+
+const NON_TEXT_INPUTS = new Set(['checkbox', 'radio', 'button', 'submit', 'reset']);
 
 function isEditableTarget(target: EventTarget | null): boolean {
   if (!(target instanceof HTMLElement)) return false;
   if (target.isContentEditable) return true;
   const tag = target.tagName;
-  return tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT';
+  // check boxes / buttons in the banner ("Loop", "Show changes") keep the navigation keys working
+  if (tag === 'INPUT') return !NON_TEXT_INPUTS.has((target as HTMLInputElement).type);
+  return tag === 'TEXTAREA' || tag === 'SELECT';
 }
 
 /**
  * What a keydown means in the scenario view:
  * - prev/next/first/last/exit: navigation (the caller prevents the default and stops the event);
+ * - toggle-play: Space starts/pauses the autoplay (default prevented, so a focused button is not clicked);
  * - block: an editing shortcut of the hidden drawing (Ctrl+Z/Y/X/V/A/C/D/G, Delete, ...): prevent + stop;
  * - swallow: any other key: stopped so no per-tab shortcut acts on the hidden drawing, default kept
  *   (Tab focus, Enter/Space on a focused button);
@@ -50,6 +55,8 @@ export function scenarioKeyAction(e: KeyboardEvent): ScenarioKeyAction {
       return 'last';
     case 'Escape':
       return 'exit';
+    case ' ':
+      return 'toggle-play';
     case 'Delete':
     case 'Backspace':
     case 'ArrowUp':

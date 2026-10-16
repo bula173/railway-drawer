@@ -3,7 +3,8 @@
  * @brief Wires scenarios into the legacy editor (called once from legacy-main.ts): the right
  *        panel's "Properties | Scenarios" switch, the Scenarios panel for the active tab, the
  *        read-only scenario view on the canvas (with the UML & text side panel), the keyboard while
- *        that view is open, and File > Export Scenario (HTML)… (`scenario-export-request`).
+ *        that view is open, and File > Export Scenario (HTML/PDF/Slides)… (`scenario-export-request`,
+ *        `detail.format` 'html' | 'pdf' | 'slides'). PDF and slides modules are loaded on demand.
  */
 import type { TabData, TabManager } from '../ui/tabs';
 import { getDrawioThumbnailRenderer } from '../ui/drawio-palette/drawio-palette-view';
@@ -19,6 +20,9 @@ import type { ScenarioExportDeps } from './scenario-export';
 import type { ScenarioData } from './scenario-model';
 import type { StepEditorOptions, StepEditorResult } from './step-editor';
 import type { UmlRenderResult } from './step-uml';
+import { openScenarioDocDialog } from './scenario-doc-export';
+import type { ScenarioDocChoice, ScenarioDocDialogOptions, ScenarioDocFormat } from './scenario-doc-export';
+import type { PdfImage, ScenarioPdfDeps } from './scenario-pdf';
 
 /** `window` event of File > Export Scenario (HTML)… (MenuController). */
 export const SCENARIO_EXPORT_EVENT = 'scenario-export-request';
@@ -38,6 +42,11 @@ export interface ScenariosHandle {
    * presented, the only one, or the one the user picks. Resolves the file name (null: nothing exported).
    */
   exportScenario(scenarioId?: string): Promise<string | null>;
+  /**
+   * Exports a scenario as PDF or HTML slideshow after the options dialog (which also picks the
+   * scenario when there is a choice). Resolves the file name (null: nothing exported).
+   */
+  exportScenarioDoc(format: ScenarioDocFormat, scenarioId?: string): Promise<string | null>;
   /** Removes the view, the panel and the window listeners (tests). */
   destroy(): void;
 }
@@ -53,6 +62,12 @@ export interface InstallScenariosOptions {
   renderDrawingSvg?: ScenarioExportDeps['renderDrawingSvg'];
   /** Receives the exported file (tests); default: download. */
   saveFile?: (blob: Blob, fileName: string) => void;
+  /** Options dialog of the PDF/slides export (tests); default: openScenarioDocDialog. */
+  docDialog?: (opts: ScenarioDocDialogOptions) => Promise<ScenarioDocChoice | null>;
+  /** Drawing rasterizer of the PDF export (tests); default: SVG image export at 2x. */
+  renderDrawingPng?: (xml: string) => Promise<PdfImage>;
+  /** Further PDF dependencies (tests: fonts, svg2pdf). */
+  pdfDeps?: Partial<ScenarioPdfDeps>;
 }
 
 function downloadFile(blob: Blob, fileName: string): void {
@@ -178,6 +193,9 @@ export function installScenarios(
     onExportScenario: (_tabId, scenarioId) => {
       void exportScenario(scenarioId);
     },
+    onExportScenarioDoc: (_tabId, scenarioId, format) => {
+      void exportScenarioDoc(format, scenarioId);
+    },
     onStepsChanged: () => {
       // Steps hold whole drawings: write the cache now so a full storage is reported right away
       if (!tabManager.flushCache()) {
@@ -222,8 +240,72 @@ export function installScenarios(
       return null;
     }
   };
-  const onExportRequest = (): void => {
-    void exportScenario();
+  const exportScenarioDoc = async (format: ScenarioDocFormat, scenarioId?: string): Promise<string | null> => {
+    const tab = tabManager.getActiveTab();
+    if (!tab) return null;
+    const set = tab.saveLoadController.getScenarios();
+    const all = set.list();
+    if (!all.some((s) => s.steps.length > 0)) {
+      notify.warning('This diagram has no scenario with steps to export (right panel › Scenarios).');
+      return null;
+    }
+    const viewing = viewer.getState();
+    const initial =
+      (scenarioId && set.get(scenarioId)?.id) || (viewing && viewing.tabId === tab.id ? viewing.scenarioId : null) || null;
+    const offered = scenarioId ? all.filter((s) => s.id === scenarioId) : all;
+    const choice = await (installOptions.docDialog ?? openScenarioDocDialog)({
+      format,
+      scenarios: offered,
+      initialScenarioId: initial,
+      showChanges: viewer.isShowingChanges(),
+    });
+    if (!choice) return null;
+    const scenario = set.get(choice.scenarioId);
+    if (!scenario || scenario.steps.length === 0) {
+      notify.warning(`"${scenario?.name ?? 'The scenario'}" has no steps to export.`);
+      return null;
+    }
+    const renderDrawingSvg = installOptions.renderDrawingSvg ?? ((xml: string) => renderXmlToSvgDocument(xml));
+    try {
+      let blob: Blob;
+      let fileName: string;
+      if (format === 'pdf') {
+        notify.success(`Creating the PDF of "${scenario.name}"…`);
+        const pdf = await import('./scenario-pdf');
+        const renderDrawingPng =
+          installOptions.renderDrawingPng ?? (async (xml: string) => pdf.rasterizeSvgMarkup(await renderDrawingSvg(xml), 2));
+        const bytes = await pdf.buildScenarioPdf(
+          scenario,
+          tab.name,
+          { renderDrawingPng, renderUml: installOptions.renderUml, ...installOptions.pdfDeps },
+          { orientation: choice.orientation, showChanges: choice.showChanges }
+        );
+        blob = new Blob([bytes], { type: 'application/pdf' });
+        fileName = pdf.scenarioPdfFileName(tab.name, scenario.name);
+      } else {
+        const slides = await import('./scenario-slides');
+        const html = await slides.buildScenarioSlidesHtml(
+          scenario,
+          tab.name,
+          { renderDrawingSvg, renderUml: installOptions.renderUml },
+          { showChanges: choice.showChanges }
+        );
+        blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+        fileName = slides.scenarioSlidesFileName(tab.name, scenario.name);
+      }
+      (installOptions.saveFile ?? downloadFile)(blob, fileName);
+      notify.success(`Scenario "${scenario.name}" exported as ${fileName}`);
+      return fileName;
+    } catch (error) {
+      console.error('[Scenarios] Export failed:', error);
+      notify.error(`Could not export the scenario: ${error instanceof Error ? error.message : String(error)}`);
+      return null;
+    }
+  };
+  const onExportRequest = (evt: Event): void => {
+    const format = (evt as CustomEvent<{ format?: string } | null>).detail?.format;
+    if (format === 'pdf' || format === 'slides') void exportScenarioDoc(format);
+    else void exportScenario();
   };
   window.addEventListener(SCENARIO_EXPORT_EVENT, onExportRequest);
 
@@ -257,6 +339,7 @@ export function installScenarios(
     else if (action === 'first') viewer.first();
     else if (action === 'last') viewer.last();
     else if (action === 'exit') viewer.close();
+    else if (action === 'toggle-play') viewer.toggleAutoplay();
     return true;
   };
 
@@ -268,5 +351,5 @@ export function installScenarios(
     panel.destroy();
   };
 
-  return { viewer, panel, handleKeydown, showPanel, exportScenario, destroy };
+  return { viewer, panel, handleKeydown, showPanel, exportScenario, exportScenarioDoc, destroy };
 }
