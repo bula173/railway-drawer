@@ -30,7 +30,7 @@ npm run drawio:palettes     # regenerate palettes + stencil sets from the pinned
 
 CI (`.github/workflows/build-and-deploy.yml`) runs typecheck, typecheck:tests, lint, test:run, build and the
 Playwright subset (legacy-smoke, drawio-palette, templates, scenarios, style-edit, share, gitlab, ertms-data,
-scenario-uml-text, theme-contrast, drawio-embed, drawio-parity). `~/.cache/railway-drawer` (self-hosted draw.io) is kept with
+scenario-uml-text, theme-contrast, remote-persist, drawio-embed, drawio-parity). `~/.cache/railway-drawer` (self-hosted draw.io) is kept with
 `actions/cache` (key = hash of `scripts/drawio-selfhost/**` + `scripts/drawio-palettes/fetch-sources.ts`). It does not deploy.
 
 ### E2E and draw.io
@@ -74,6 +74,10 @@ answers **HTTP 403** to iframes whose Referer has a non-default port (`http://lo
 - `tests/e2e/gitlab.spec.ts` (any port): GitLab "Not configured" -> runtime settings -> Open/Save + sign-in button,
   File-menu items without reload, `?gitlab=` link on an unconfigured browser. Requests to the fake GitLab URL are
   intercepted and must not happen.
+- `tests/e2e/remote-persist.spec.ts` (any port): dev-only fake provider (below): open a "remote" file, edit (dirty dot),
+  reload (beforeunload prompt accepted), binding restored unverified, Ctrl+S saves with the stored version; after a
+  reload signed out + remote changed -> sign-in dialog -> conflict dialog; status-bar menu Reload (confirm), File >
+  Unlink (also after reload); File > Open from disk unbinds.
 - `tests/e2e/scenarios.spec.ts` (any port): new scenario, 3 steps, ←/→ presentation, Esc restores the live drawing and
   its undo history, rename/reorder (↓ and drag)/delete step, reload, File > Save pages "<Scenario> / <n>. <step>",
   reopen; replace drawing (confirm, Ctrl+Z). `drawio-embed.spec.ts` also round-trips a scenario file through draw.io
@@ -120,7 +124,8 @@ answers **HTTP 403** to iframes whose Referer has a non-default port (`http://lo
   write failed (storage full), since the reload would drop the unsaved edits.
 - `src/legacy-main.ts` is the whole legacy boot: `registerDrawioCodecs()` first (before any file or cache
   load), shapes, `TabManager`, cache restore, the global keyboard dispatcher, drop handler, left panel,
-  Shapes tab (shape toolbar + draw.io palettes), shape designer. `beforeunload` flushes the cache, then destroys the tabs.
+  Shapes tab (shape toolbar + draw.io palettes), shape designer. `beforeunload` flushes the cache; the tabs are destroyed
+  on `pagehide` (not persisted), because beforeunload can be cancelled (unsaved remote changes prompt).
 
 ### Theming (light / dark app chrome)
 
@@ -508,10 +513,34 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   gesture), descriptor `settings` (runtime settings form in the Share dialog; on save the section is redrawn and
   `onProviderSettingsChanged` rebuilds the File-menu items and retries incoming links). `ShareLinkCapability`
   `typesLegend/audiencesLegend`. The pending-redirect key moved to `providers/pending.ts`.
-- `remote-session.ts`: per-tab binding (provider id + ref + version, in memory only), `SaveLoadController.setSaveHandler`
+- `remote-session.ts`: per-tab binding (provider id + ref + version), `SaveLoadController.setSaveHandler`
   redirects Ctrl+S / File > Save to `saveBack` (version conflict -> overwrite / save as copy / cancel); File > Save As…
   (`saveProjectToDisk`) always downloads. Status bar `#status-remote-item` "Stored in:". TabManager now dispatches
   `window` events `tab-changed` (switchTab) and `tab-closed` (closeTab).
+- **Bindings persist with the tab cache** (`remote-binding.ts`): `CacheData.tabs[].remote` = `{ v: 1, providerId, ref,
+  version, name, location, webUrl?, parentPath, savedAt, dirty }` (optional field, cache version stays `'1'`; old caches
+  restore unbound; unknown `v`/malformed -> ignored; credential-like keys are stripped on write and read; tokens stay in
+  the providers' own storage). `restoreFromCache` runs before sharing, so TabManager keeps each tab's raw entry
+  (`takeCachedRemote`) until `installSharing` calls `restoreBinding`, then writes through
+  `setRemoteCacheWriter(remoteSession.persistedBinding)`. Bind/save/reload/unlink flush the cache at once.
+  A restored binding is **unverified** (`data-verified` on the status item) until the next save/reload: `saveBack` asks
+  `askSignIn` first when the provider has no account, sends the stored version (remote changed -> conflict dialog) and,
+  when a call fails because the session ended (account gone), asks to sign in and retries once (`withSignIn`).
+  Actions (active tab): File menu "Reload from <provider>…" / "Unlink from <provider>" (in `#file-menu-remote-items`,
+  rebuilt on tab change/binding change) and the clickable status item's popup (`ui/remote-menu.ts`: Save now, Reload,
+  Unlink, Open in <provider>). Reload = confirm (`askConfirm`, "Discard the changes" when dirty) -> provider
+  `reopen(file)` (optional `StorageProvider` method; SharePoint downloadText, GitLab read) -> `loadProjectXml` into the
+  same tab. Unlink keeps the content. File > Open from disk (`SaveLoadController.onLocalFileOpened`) unbinds.
+- **Dirty tracking**: fingerprint (`contentFingerprint` of `getProjectXml()`) at the last open/save; model/scenario
+  changes (`watchTab`) re-check it debounced (300 ms), so undo back to the saved state is clean. `dirty` is persisted;
+  a tab restored dirty stays dirty until saved/reloaded. UI: `.rd-remote-dirty-dot` in the tab (TabManager
+  `setTabDecorator`), `data-dirty` on the status item; the tab × asks (`setCloseGuard` -> `confirmCloseTab`,
+  `window.confirm`) and `beforeunload` prompts only when a bound tab has unsaved remote changes.
+- **Test provider** (`src/debug/fake-remote-provider.ts`, "Test storage", id `fake-remote`): registered by
+  `installSharing` only when `import.meta.env.DEV` and localStorage `rd.fakeRemote` = `'1'` (production builds drop it:
+  no `rd.fakeRemote` in `dist/`). Files in localStorage `rd.fakeRemote.files` (`{path: {xml, version: 'v<n>'}}`), save
+  log `rd.fakeRemote.log`, signed-in flag sessionStorage `rd.fakeRemote.account`, `window.__rdFakeRemote.put()` to
+  change a file "remotely".
 - **SharePoint** (`providers/sharepoint/`, docs/SHAREPOINT.md): disabled unless `VITE_MSAL_CLIENT_ID` is set at build
   time (`VITE_MSAL_TENANT_ID` default `organizations`, `VITE_SHAREPOINT_DEFAULT_SITE` `host:/sites/Name`). vite.config.ts
   `define`s these keys (empty when unset) so `import.meta.env.VITE_MSAL_CLIENT_ID ? () => import(...) : null` is a
@@ -546,7 +575,9 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
 - Tests: `src/share/__tests__/` (link codec incl. draw.io's algorithm via node:zlib, Graph client with mocked fetch,
   dialog, remote session, provider, config; `gitlab.test.ts`: PKCE vectors, OAuth popup/redirect/refresh, bridge,
   client paging/errors, provider against an in-memory GitLab, config/links, descriptor; `gitlab-session.test.ts`:
-  save fields, conflict actions, incoming links, Share-dialog settings), `tests/e2e/share.spec.ts` (any port: copy
+  save fields, conflict actions, incoming links, Share-dialog settings; `remote-persist.test.ts`: binding format, restore +
+  save back (sign-in, conflict), Reload/Unlink, dirty state), `src/__tests__/ui/remote-binding-cache.test.ts` (real
+  TabManager + installSharing: old cache, reload round trip with the fake provider, close/beforeunload), `tests/e2e/share.spec.ts` (any port: copy
   link -> fresh context opens the tabs, downloads, damaged link, SharePoint "Not configured"), `tests/e2e/gitlab.spec.ts`.
 
 ## Deploy

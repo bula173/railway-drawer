@@ -105,6 +105,17 @@ export class TabManager {
    * diagram is not destroyed and a later fix or version can still recover it.
    */
   private unrestoredTabXml: Map<string, string> = new Map();
+  /**
+   * Remote-file binding data per tab (`CacheData.tabs[].remote`, opaque here). Filled by
+   * restoreFromCache, which runs before sharing is installed; the remote session claims each entry
+   * (takeCachedRemote) and from then on supplies it through the writer (setRemoteCacheWriter).
+   */
+  private cachedRemote: Map<string, unknown> = new Map();
+  private remoteCacheWriter: ((tabId: string) => unknown) | null = null;
+  /** Asked before the user closes a tab with its × button; false keeps the tab. */
+  private closeGuard: ((tabId: string) => boolean) | null = null;
+  /** Decorates each rendered tab element (unsaved-changes dot of remote-bound tabs). */
+  private tabDecorator: ((tabId: string, element: HTMLElement) => void) | null = null;
 
   constructor(tabBarContainerId: string, graphContainerId: string) {
     this.tabBarContainer = document.getElementById(tabBarContainerId)!;
@@ -357,6 +368,7 @@ export class TabManager {
           ...(extraPages.length > 0 ? { extraPages } : {}),
           ...(pageId ? { pageId } : {}),
           ...(scenarios.length > 0 ? { scenarios } : {}),
+          ...this.remoteCacheEntry(tab.id),
         };
       }),
       activeTabId: this.activeTabId,
@@ -366,6 +378,39 @@ export class TabManager {
     const result = CacheService.save(cacheData);
     this.reportCacheSaveResult(result);
     return result === 'saved';
+  }
+
+  /** `{ remote }` of a tab for the cache, or nothing when it is not bound. */
+  private remoteCacheEntry(tabId: string): { remote?: unknown } {
+    let remote: unknown;
+    try {
+      remote = this.remoteCacheWriter ? this.remoteCacheWriter(tabId) : this.cachedRemote.get(tabId);
+    } catch (error) {
+      console.error('[TabManager] Remote binding not cached:', error);
+      remote = undefined;
+    }
+    return remote === undefined || remote === null ? {} : { remote };
+  }
+
+  /** Supplies each tab's remote binding for the cache (replaces the restored entries). */
+  setRemoteCacheWriter(writer: ((tabId: string) => unknown) | null): void {
+    this.remoteCacheWriter = writer;
+  }
+
+  /** The cached remote binding of a restored tab, once (undefined when it had none). */
+  takeCachedRemote(tabId: string): unknown {
+    const remote = this.cachedRemote.get(tabId);
+    this.cachedRemote.delete(tabId);
+    return remote;
+  }
+
+  setCloseGuard(guard: ((tabId: string) => boolean) | null): void {
+    this.closeGuard = guard;
+  }
+
+  setTabDecorator(decorator: ((tabId: string, element: HTMLElement) => void) | null): void {
+    this.tabDecorator = decorator;
+    this.renderTabBar();
   }
 
   /**
@@ -422,6 +467,8 @@ export class TabManager {
         console.error('[TabManager] Failed to restore tab from cache:', tabCache.name, error);
         this.keepUnrestoredXml(tabData, tabCache.graphXml);
       }
+      // Claimed by the remote session (install-sharing.ts) once it exists
+      if (tabCache.remote !== undefined && tabCache.remote !== null) this.cachedRemote.set(tabData.id, tabCache.remote);
 
       // Track the first tab as active, or the tab matching the cached active tab
       if (activeTabId === null || tabCache.id === cacheData.activeTabId) {
@@ -598,6 +645,7 @@ export class TabManager {
     this.detachTabListeners(tabId);
     this.tabListeners.delete(tabId);
     this.unrestoredTabXml.delete(tabId);
+    this.cachedRemote.delete(tabId);
 
     try {
       // Clean up controller destroy methods if they exist (before the graph they use is destroyed)
@@ -699,12 +747,14 @@ export class TabManager {
 
         closeBtn.addEventListener('click', (e) => {
           e.stopPropagation();
+          if (this.closeGuard && !this.closeGuard(tab.id)) return;
           this.closeTab(tab.id);
         });
 
         tabButton.appendChild(closeBtn);
       }
 
+      this.tabDecorator?.(tab.id, tabButton);
       tabButton.addEventListener('click', () => this.switchTab(tab.id));
       tabButton.addEventListener('keydown', (e) => {
         // Keyboard activation like a button; keys typed in the rename input are not for the tab

@@ -345,6 +345,13 @@ export class GitLabProvider implements StorageProvider {
     return this.read({ projectId: d.projectId, projectPath: d.projectPath, branch: d.branch, path: d.path, defaultBranch: d.defaultBranch });
   }
 
+  /** "Reload from GitLab": the bound file's branch head. */
+  async reopen(file: RemoteFileInfo): Promise<RemoteFileContent> {
+    if (!isFileRef(file.ref)) throw new Error('Invalid GitLab file reference');
+    const r = file.ref;
+    return this.read({ projectId: r.projectId, projectPath: r.projectPath, branch: r.branch, path: r.path, defaultBranch: r.defaultBranch ?? null });
+  }
+
   /** `?gitlab=` links: project path or id, branch (empty = default), path. */
   async openRef(target: unknown): Promise<RemoteFileContent> {
     const t = target as GitLabLinkTarget | null;

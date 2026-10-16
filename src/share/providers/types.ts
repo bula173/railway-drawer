@@ -211,6 +211,11 @@ export interface StorageProvider {
   resolveConflict?(file: RemoteFileInfo, xml: string, actionId: string, values: SaveFieldValues): Promise<SaveResult>;
   /** Optional: opens the file of an `IncomingLink`. */
   openRef?(ref: unknown): Promise<RemoteFileContent>;
+  /**
+   * Optional: reads a bound file again by its `RemoteFileInfo` (ref), e.g. for "Reload from
+   * <provider>" after a page reload, when no browse entry of it exists.
+   */
+  reopen?(file: RemoteFileInfo): Promise<RemoteFileContent>;
   /** Optional: sharing links / invitations. */
   readonly shareLinks?: ShareLinkCapability;
   createShareLink?(file: RemoteFileInfo, options: ShareLinkOptions): Promise<ShareLinkResult>;

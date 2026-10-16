@@ -552,3 +552,21 @@ export function shareLinkDialog(provider: StorageProvider, file: RemoteFileInfo)
     createBtn.focus();
   });
 }
+
+/** A yes/no question ("Reload from GitLab and discard your changes?"); true = confirmed. */
+export function askConfirm(opts: { title: string; message: string; confirmLabel: string; danger?: boolean }): Promise<boolean> {
+  return new Promise((resolve) => {
+    const modal = openModal({ title: opts.title, testId: 'remote-confirm-dialog' });
+    let confirmed = false;
+    modal.onClose(() => resolve(confirmed));
+    modal.body.appendChild(el('p', undefined, opts.message));
+    const cancel = button('Cancel', 'rd-share-btn', () => modal.close());
+    const ok = button(opts.confirmLabel, opts.danger ? 'rd-share-btn rd-share-btn-danger' : 'rd-share-btn rd-share-btn-primary', () => {
+      confirmed = true;
+      modal.close();
+    });
+    ok.dataset.testid = 'remote-confirm-ok';
+    modal.footer.append(cancel, ok);
+    cancel.focus();
+  });
+}

@@ -53,6 +53,8 @@ export class SaveLoadController {
   private pageSettings: PageSettings = {};
   /** Set while the tab is bound to a remote file: saveProject() saves there instead. */
   private saveHandler: (() => void) | null = null;
+  /** Told after a file from disk was opened into this tab (the remote session unbinds the tab). */
+  private localFileOpenedListeners = new Set<() => void>();
 
   constructor(graph: Graph, commandService: GraphCommandService | null = null) {
     this.graph = graph;
@@ -118,6 +120,15 @@ export class SaveLoadController {
       throw error;
     }
     await this.loadProjectXml(xml, file.name);
+    this.localFileOpenedListeners.forEach((listener) => listener());
+  }
+
+  /** Calls `listener` after each successful loadProjectFromFile (File > Open); returns the unsubscribe function. */
+  onLocalFileOpened(listener: () => void): () => void {
+    this.localFileOpenedListeners.add(listener);
+    return () => {
+      this.localFileOpenedListeners.delete(listener);
+    };
   }
 
   /**
