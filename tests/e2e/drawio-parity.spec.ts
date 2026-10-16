@@ -1,22 +1,25 @@
 /**
  * @file drawio-parity.spec.ts
- * @brief Per-entry visual parity: maxGraph mode vs. real draw.io (embed.diagrams.net).
+ * @brief Per-entry visual parity: maxGraph mode vs. real draw.io (self-hosted v32.4.1 by default).
  *
  * For every entry of the draw.io palettes (src/drawio-shapes/palettes/data/*.json) and of the
  * ERTMS library (public/libraries/ertms.xml) one mxGraphModel is rendered twice at scale 2 with
  * a 10px border on white:
- *  - draw.io: tests/e2e/parity/drawio-host.html, routed at http://localhost/parity/drawio-host.html,
- *    embeds embed.diagrams.net (?embed=1&proto=json) and answers {action:'export', format:'png'};
+ *  - draw.io: tests/e2e/parity/drawio-host.html, routed at <app>/__parity/drawio-host.html
+ *    (http://localhost/parity/drawio-host.html with VITE_DRAWIO_URL),
+ *    embeds the self-hosted draw.io at <app>/drawio/ (scripts/drawio-selfhost, the same pinned tag as
+ *    the palette data) or VITE_DRAWIO_URL (e.g. https://embed.diagrams.net/) with ?embed=1&proto=json
+ *    and answers {action:'export', format:'png'};
  *  - app: window.__rdParity.render(xml, {scale, border, background}) → PNG data URI
  *    (debug hook provided by the app integration).
  * tests/e2e/parity/compare.ts trims, aligns and pixelmatches both images; the report goes to
  * test-results/drawio-parity/ (report.json, index.html, PNGs).
  *
- * Run (needs network, the devDependencies pixelmatch [+ pngjs] and the app on port 80):
- *   E2E_PORT=80 npx playwright test tests/e2e/drawio-parity.spec.ts --project=chromium
+ * Run (any port, offline; needs the devDependencies pixelmatch [+ pngjs]):
+ *   npx playwright test tests/e2e/drawio-parity.spec.ts --project=chromium
  * Options: PARITY_FILTER=<palette id or entry-id substring>, PARITY_LIMIT=<n per palette>,
- * VITE_DRAWIO_URL=<self-hosted draw.io>, PARITY_ANY_PORT=1 (skip the port-80 check, e.g. with a
- * self-hosted draw.io), E2E_OFFLINE=1 (skip).
+ * VITE_DRAWIO_URL=https://embed.diagrams.net/ (public editor: needs network and the app on port 80,
+ * E2E_PORT=80; PARITY_ANY_PORT=1 skips that check), E2E_OFFLINE=1 (skip, external draw.io only).
  * Thresholds: pass ≤ 2 %, warn ≤ 6 %, fail above; entries in tests/e2e/parity/expected-mismatch.json
  * are reported but never fail. Each palette test asserts zero failures among the other entries.
  */
@@ -52,9 +55,17 @@ declare global {
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const PORT = Number(process.env.E2E_PORT ?? 3000);
-const DRAWIO_URL = process.env.VITE_DRAWIO_URL ?? 'https://embed.diagrams.net/';
-const DRAWIO_ORIGIN = new URL(DRAWIO_URL).origin;
-const HOST_URL = 'http://localhost/parity/drawio-host.html';
+const APP_URL = PORT === 80 ? 'http://localhost/' : `http://localhost:${PORT}/`;
+/** External draw.io (VITE_DRAWIO_URL), else the self-hosted copy served next to the app. */
+const EXTERNAL_DRAWIO = process.env.VITE_DRAWIO_URL || null;
+const DRAWIO_URL = new URL(EXTERNAL_DRAWIO ?? 'drawio/', APP_URL).href;
+const DRAWIO_PREFIX = DRAWIO_URL.split(/[?#]/)[0];
+/**
+ * The routed host page: on http://localhost (port 80) for embed.diagrams.net (Referer without a port);
+ * on the app origin for the self-hosted copy, because Chrome's Local Network Access checks block a
+ * routed (address-space-less) http://localhost page from framing http://localhost:<port>.
+ */
+const HOST_URL = EXTERNAL_DRAWIO ? 'http://localhost/parity/drawio-host.html' : `${APP_URL}__parity/drawio-host.html`;
 const HOST_HTML = readFileSync(resolve(HERE, 'parity/drawio-host.html'), 'utf8');
 const RENDER: ParityRenderOptions = { scale: 2, border: 10, background: '#ffffff' };
 const READY_TIMEOUT = 45000;
@@ -75,7 +86,7 @@ let appPage: Page | null = null;
 async function openDrawioHost(page: Page): Promise<string | null> {
   await page.route(`${HOST_URL}*`, (route) => route.fulfill({ status: 200, contentType: 'text/html', body: HOST_HTML }));
   const editorStatus = page
-    .waitForResponse((r) => r.url().startsWith(DRAWIO_ORIGIN) && r.request().resourceType() === 'document', {
+    .waitForResponse((r) => r.url().startsWith(DRAWIO_PREFIX) && r.request().resourceType() === 'document', {
       timeout: READY_TIMEOUT,
     })
     .then((r) => r.status())
@@ -161,11 +172,12 @@ test.describe('draw.io parity', () => {
   test.describe.configure({ mode: 'default' });
 
   test.beforeAll(async ({ browser, request }, testInfo) => {
-    if (process.env.E2E_OFFLINE === '1') {
+    test.setTimeout(3 * READY_TIMEOUT);
+    if (EXTERNAL_DRAWIO && process.env.E2E_OFFLINE === '1') {
       skipReason = 'E2E_OFFLINE=1';
       return;
     }
-    if (PORT !== 80 && process.env.PARITY_ANY_PORT !== '1') {
+    if (EXTERNAL_DRAWIO && PORT !== 80 && process.env.PARITY_ANY_PORT !== '1') {
       skipReason =
         `draw.io parity needs the app on port 80 (E2E_PORT=${PORT}); embed.diagrams.net refuses non-default-port referers. ` +
         'Run: E2E_PORT=80 npx playwright test tests/e2e/drawio-parity.spec.ts --project=chromium';
@@ -205,6 +217,10 @@ test.describe('draw.io parity', () => {
   for (const [palette, entries] of groups) {
     test(`${palette} (${entries.length} entries)`, async ({ browserName }) => {
       test.skip(browserName !== 'chromium', 'draw.io parity runs on chromium only');
+      // The self-hosted copy is part of the build: unavailable is a failure, not a skip.
+      if (!EXTERNAL_DRAWIO && skipReason && !skipReason.startsWith('missing devDependencies')) {
+        expect(skipReason, `self-hosted draw.io at ${DRAWIO_URL}`).toBeNull();
+      }
       test.skip(!!skipReason, skipReason ?? '');
       test.setTimeout(60000 + entries.length * PER_ENTRY_MS);
 

@@ -1,6 +1,8 @@
 /// <reference types="vitest/config" />
 import { defineConfig, loadEnv } from 'vite'
 import { execSync } from 'child_process'
+// Self-hosted draw.io at <base>drawio/ (dev server + dist/drawio/), see scripts/drawio-selfhost/
+import { drawioSelfHost } from './scripts/drawio-selfhost/vite-plugin.ts'
 
 // Get git commit hash for build ID
 let buildId = 'dev'
@@ -28,6 +30,7 @@ export default defineConfig(({ mode }) => {
     [...SHAREPOINT_ENV_KEYS, ...GITLAB_ENV_KEYS].map((key) => [`import.meta.env.${key}`, JSON.stringify(env[key] ?? '')])
   )
   return {
+  plugins: [drawioSelfHost()],
   define: {
     'import.meta.env.VITE_BUILD_ID': JSON.stringify(buildId),
     'import.meta.env.VITE_BUILD_TIME': JSON.stringify(buildTime),

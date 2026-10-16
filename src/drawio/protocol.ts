@@ -178,7 +178,19 @@ export interface DrawioClient {
   dispose(): void;
 }
 
+/** Public draw.io embed server (refuses non-default ports and headless browsers with HTTP 403). */
 export const DEFAULT_DRAWIO_URL = 'https://embed.diagrams.net/';
+/**
+ * Self-hosted draw.io (pinned v32.4.1, offline config), relative to the app's base URL: served by the
+ * Vite plugin in dev and copied to dist/drawio/ on build (scripts/drawio-selfhost/).
+ */
+export const SELF_HOSTED_DRAWIO_PATH = 'drawio/';
+
+/** URL of the self-hosted draw.io for an app base URL ('/' in dev, './' in the relative build). */
+export function selfHostedDrawioUrl(baseUrl: string): string {
+  const base = baseUrl || './';
+  return (base.endsWith('/') ? base : `${base}/`) + SELF_HOSTED_DRAWIO_PATH;
+}
 const DEFAULT_EXPORT_TIMEOUT_MS = 15000;
 export const DEFAULT_CONFIG_TIMEOUT_MS = 10000;
 

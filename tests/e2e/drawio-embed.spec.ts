@@ -2,41 +2,70 @@
  * @file drawio-embed.spec.ts
  * @brief Smoke test for the embedded draw.io editor (?editor=drawio).
  *
- * Needs network access to the draw.io editor (VITE_DRAWIO_URL, default
- * https://embed.diagrams.net/). Skipped when unreachable or with E2E_OFFLINE=1.
+ * Default: the self-hosted draw.io (scripts/drawio-selfhost, served by the Vite plugin at
+ * <app>/drawio/), on any port, headless, offline: every request to another host is aborted and
+ * reported, and every 4xx/5xx of a draw.io file fails the test.
  *
- * embed.diagrams.net answers HTTP 403 to a "HeadlessChrome" user agent and to iframes
- * whose Referer has a non-default port (e.g. http://localhost:3000/). The chromium project
- * uses the Desktop Chrome device profile (regular UA); serve the app on a default port:
- *   E2E_PORT=80 npx playwright test tests/e2e/drawio-embed.spec.ts --project=chromium
- * or point VITE_DRAWIO_URL at a self-hosted draw.io. When the editor document is
- * refused the tests skip themselves with that hint instead of failing.
+ * VITE_DRAWIO_URL=https://embed.diagrams.net/ (the dev server and this spec both read it) targets
+ * the public editor instead; it answers HTTP 403 to a "HeadlessChrome" user agent and to iframes
+ * whose Referer has a non-default port, so serve the app on port 80 then:
+ *   E2E_PORT=80 VITE_DRAWIO_URL=https://embed.diagrams.net/ npx playwright test tests/e2e/drawio-embed.spec.ts
+ * When the editor document is refused the tests skip themselves with that hint instead of failing.
+ * Skipped when unreachable or with E2E_OFFLINE=1 (external draw.io only).
  */
 
 import { readFile } from 'node:fs/promises';
 import { test, expect } from '@playwright/test';
 import type { Page } from '@playwright/test';
 
-const DRAWIO_URL = process.env.VITE_DRAWIO_URL ?? 'https://embed.diagrams.net/';
+const PORT = Number(process.env.E2E_PORT ?? 3000);
+const APP_URL = PORT === 80 ? 'http://localhost/' : `http://localhost:${PORT}/`;
+const EXTERNAL_DRAWIO = process.env.VITE_DRAWIO_URL || null;
+const DRAWIO_URL = new URL(EXTERNAL_DRAWIO ?? 'drawio/', APP_URL).href;
 const AUTOSAVE_KEY = 'railway-drawer-drawio-doc';
-const DRAWIO_ORIGIN = new URL(DRAWIO_URL, 'http://localhost:3000/').origin;
+/** URL prefix of the draw.io editor document (origin + path, without the query). */
+const DRAWIO_PREFIX = DRAWIO_URL.split(/[?#]/)[0];
 const READY_TIMEOUT = 30000;
+
+const isLocalhost = (url: URL): boolean =>
+  url.hostname === 'localhost' || url.hostname === '127.0.0.1' || url.hostname === '[::1]';
+
+/** Self-hosted mode: no request may leave localhost and no draw.io file may be missing. */
+function guardSelfHosted(page: Page): { external: string[]; failed: string[] } {
+  const seen = { external: [] as string[], failed: [] as string[] };
+  if (EXTERNAL_DRAWIO) return seen;
+  void page.route(
+    (url) => /^(https?|wss?):$/.test(url.protocol) && !isLocalhost(url),
+    (route) => {
+      seen.external.push(route.request().url());
+      return route.abort('blockedbyclient');
+    }
+  );
+  page.on('response', (r) => {
+    if (r.url().startsWith(DRAWIO_PREFIX) && r.status() >= 400) seen.failed.push(`${r.status()} ${r.url()}`);
+  });
+  return seen;
+}
 
 /** Opens the draw.io mode; skips the test if the editor document is refused (HTTP 4xx/5xx). */
 async function openDrawioMode(page: Page): Promise<void> {
   const editorResponse = page
     .waitForResponse(
-      (r) => r.url().startsWith(DRAWIO_ORIGIN) && r.request().resourceType() === 'document',
+      (r) => r.url().startsWith(DRAWIO_PREFIX) && r.request().resourceType() === 'document',
       { timeout: READY_TIMEOUT }
     )
     .then((r) => r.status())
     .catch(() => 0);
   await page.goto('/?editor=drawio');
   const status = await editorResponse;
-  test.skip(
-    status >= 400,
-    `draw.io refused the embed request (HTTP ${status}) from ${page.url()}; run with E2E_PORT=80 or a self-hosted VITE_DRAWIO_URL`
-  );
+  if (EXTERNAL_DRAWIO) {
+    test.skip(
+      status >= 400,
+      `draw.io refused the embed request (HTTP ${status}) from ${page.url()}; run with E2E_PORT=80 or use the self-hosted copy`
+    );
+  } else {
+    expect(status, `self-hosted draw.io at ${DRAWIO_PREFIX}`).toBe(200);
+  }
   await expect(page.locator('[data-testid=drawio-embed]')).toHaveAttribute('data-state', 'ready', {
     timeout: READY_TIMEOUT,
   });
@@ -45,8 +74,10 @@ async function openDrawioMode(page: Page): Promise<void> {
 let drawioReachable = false;
 
 test.describe('draw.io embed', () => {
+  let guard: { external: string[]; failed: string[] } = { external: [], failed: [] };
+
   test.beforeAll(async ({ request }) => {
-    if (process.env.E2E_OFFLINE === '1') return;
+    if (EXTERNAL_DRAWIO && process.env.E2E_OFFLINE === '1') return;
     try {
       const response = await request.get(DRAWIO_URL, { timeout: 5000 });
       drawioReachable = response.ok();
@@ -55,10 +86,17 @@ test.describe('draw.io embed', () => {
     }
   });
 
-  test.beforeEach(({ browserName }) => {
+  test.beforeEach(({ browserName, page }) => {
     test.setTimeout(120000);
     test.skip(browserName !== 'chromium', 'draw.io embed smoke test runs on chromium only');
-    test.skip(!drawioReachable, 'draw.io unreachable (offline)');
+    if (EXTERNAL_DRAWIO) test.skip(!drawioReachable, 'draw.io unreachable (offline)');
+    else expect(drawioReachable, `self-hosted draw.io not served at ${DRAWIO_URL} (scripts/drawio-selfhost)`).toBe(true);
+    guard = guardSelfHosted(page);
+  });
+
+  test.afterEach(() => {
+    expect(guard.external, 'requests that left localhost (self-hosted draw.io must work offline)').toEqual([]);
+    expect(guard.failed, 'draw.io files that failed to load').toEqual([]);
   });
 
   test('loads with the ERTMS library, downloads uncompressed XML and restores after reload', async ({ page }) => {

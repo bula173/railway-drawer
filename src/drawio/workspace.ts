@@ -13,7 +13,7 @@
 
 import './workspace.css';
 import { logger } from './logger';
-import { buildEmbedUrl, createDrawioClient, DEFAULT_DRAWIO_URL, getDrawioOrigin } from './protocol';
+import { buildEmbedUrl, createDrawioClient, getDrawioOrigin, selfHostedDrawioUrl } from './protocol';
 import type { DrawioClient, DrawioClientError, DrawioClientState, DrawioConfig } from './protocol';
 import { buildDrawioConfig, loadErtmsLibrary } from './ertmsLibrary';
 import {
@@ -38,7 +38,7 @@ const LIBRARY_ERROR_MESSAGE = 'ERTMS shape library could not be loaded – the e
 const PUBLIC_DRAWIO_HOST = 'embed.diagrams.net';
 
 export interface DrawioWorkspaceOptions {
-  /** draw.io base URL. Default: `VITE_DRAWIO_URL` or https://embed.diagrams.net/. */
+  /** draw.io base URL. Default: `VITE_DRAWIO_URL` or the self-hosted copy at `<BASE_URL>drawio/`. */
   drawioUrl?: string;
   /** Extra URL params, e.g. `offline=1&pwa=0`. Default: `VITE_DRAWIO_PARAMS`. */
   extraParams?: string;
@@ -117,6 +117,12 @@ function unreachableHint(drawioUrl: string): string {
       'Serve the app on port 80/443, or set VITE_DRAWIO_URL to a self-hosted draw.io.'
     );
   }
+  if (host === window.location.hostname) {
+    return (
+      'The self-hosted draw.io copy is missing or failed to load. It is prepared by scripts/drawio-selfhost ' +
+      '(npm run dev / npm run build download the pinned draw.war; see the server or build log).'
+    );
+  }
   return 'Check that the draw.io server is running and allows embedding from this page.';
 }
 
@@ -136,6 +142,9 @@ function createEmbed(host: HTMLElement, opts: EmbedOptions): Embed {
   iframe.src = src;
   iframe.title = 'draw.io editor';
   iframe.setAttribute('allow', 'clipboard-read; clipboard-write');
+  // No sandbox: the default self-hosted draw.io is same-origin, where allow-scripts + allow-same-origin
+  // (both required by draw.io) would not be a boundary anyway; we trust the pinned, SHA-256-checked copy.
+  // embed.diagrams.net (VITE_DRAWIO_URL) is cross-origin and isolated by the browser. See CLAUDE.md.
 
   const spinner = el('div', 'rdw-spinner-overlay');
   const spinnerInner = el('div', 'rdw-spinner-label');
@@ -214,7 +223,8 @@ function defaultConfigPromise(): Promise<DrawioConfig> {
 
 /** Mounts the draw.io workspace (toolbar + embedded editor) into `root`. */
 export function mountDrawioWorkspace(root: HTMLElement, opts: DrawioWorkspaceOptions = {}): DrawioWorkspaceHandle {
-  const drawioUrl: string = opts.drawioUrl || import.meta.env.VITE_DRAWIO_URL || DEFAULT_DRAWIO_URL;
+  const drawioUrl: string =
+    opts.drawioUrl || import.meta.env.VITE_DRAWIO_URL || selfHostedDrawioUrl(import.meta.env.BASE_URL);
   const extraParams: string | undefined = opts.extraParams ?? (import.meta.env.VITE_DRAWIO_PARAMS || undefined);
   const connectTimeoutMs = opts.connectTimeoutMs ?? DRAWIO_CONNECT_TIMEOUT_MS;
   const autosaveDebounceMs = opts.autosaveDebounceMs ?? AUTOSAVE_DEBOUNCE_MS;

@@ -5,6 +5,7 @@ import {
   createDrawioClient,
   getDrawioOrigin,
   parseDrawioMessage,
+  selfHostedDrawioUrl,
 } from '../protocol';
 import type { DrawioClient, DrawioClientOptions, DrawioClientState, DrawioConfig } from '../protocol';
 import { buildDrawioConfig } from '../ertmsLibrary';
@@ -98,6 +99,15 @@ describe('buildEmbedUrl / getDrawioOrigin', () => {
     expect(url.searchParams.get('offline')).toBe('1');
     expect(url.searchParams.get('pwa')).toBe('0');
     expect(url.searchParams.has('libs')).toBe(false);
+  });
+
+  it('builds the self-hosted URL relative to the app base (dev "/", relative build "./")', () => {
+    expect(selfHostedDrawioUrl('/')).toBe('/drawio/');
+    expect(selfHostedDrawioUrl('./')).toBe('./drawio/');
+    expect(selfHostedDrawioUrl('/railway-drawer')).toBe('/railway-drawer/drawio/');
+    expect(selfHostedDrawioUrl('')).toBe('./drawio/');
+    // ./drawio/ resolves next to the app, also when it is served from a sub-folder (LAN /railway-drawer/)
+    expect(new URL('./drawio/', 'http://lan/railway-drawer/?editor=drawio').href).toBe('http://lan/railway-drawer/drawio/');
   });
 
   it('resolves the origin of absolute and relative URLs', () => {

@@ -6,6 +6,7 @@ import { DRAWIO_AUTOSAVE_KEY, loadAutosave, saveAutosave } from '../drawioStorag
 import { resetErtmsLibraryCache } from '../ertmsLibrary';
 
 const DRAWIO = 'https://embed.diagrams.net';
+const DRAWIO_URL = `${DRAWIO}/`;
 const OLD_XML = '<mxfile><diagram id="a">old</diagram></mxfile>';
 const NEW_XML = '<mxfile><diagram id="b">new</diagram></mxfile>';
 const LIBRARY =
@@ -19,6 +20,7 @@ const flush = () => new Promise<void>((resolve) => setTimeout(resolve, 0));
 
 function mount(opts: DrawioWorkspaceOptions = {}): DrawioWorkspaceHandle {
   handle = mountDrawioWorkspace(root, {
+    drawioUrl: DRAWIO_URL,
     configPromise: Promise.resolve({}),
     onSwitchToLegacy: () => undefined,
     ...opts,
@@ -162,6 +164,36 @@ describe('mountDrawioWorkspace DOM', () => {
     expect(root.querySelector<HTMLElement>('.rdw-spinner-overlay')?.hidden).toBe(true);
   });
 
+  it('defaults to the self-hosted draw.io next to the app and accepts its same-origin messages', async () => {
+    vi.useFakeTimers();
+    handle = mountDrawioWorkspace(root, { configPromise: Promise.resolve({}), onSwitchToLegacy: () => undefined });
+    const src = new URL(iframe().src);
+    expect(src.origin).toBe(window.location.origin);
+    expect(src.pathname).toBe('/drawio/');
+    expect(src.searchParams.get('embed')).toBe('1');
+    expect(src.searchParams.get('proto')).toBe('json');
+    spyOnIframe();
+    window.dispatchEvent(
+      new MessageEvent('message', {
+        data: JSON.stringify({ event: 'configure' }),
+        origin: window.location.origin,
+        source: iframe().contentWindow,
+      })
+    );
+    await vi.advanceTimersByTimeAsync(0);
+    expect(posted().some((m) => m.action === 'configure')).toBe(true);
+  });
+
+  it('shows the self-hosted hint when the local draw.io copy never answers', () => {
+    vi.useFakeTimers();
+    handle = mountDrawioWorkspace(root, { configPromise: Promise.resolve({}), onSwitchToLegacy: () => undefined });
+    vi.advanceTimersByTime(20000);
+    const banner = root.querySelector<HTMLElement>('.rdw-unreachable');
+    expect(banner?.hidden).toBe(false);
+    expect(banner?.textContent).toContain('draw.io not reachable at /drawio/');
+    expect(banner?.textContent).toContain('scripts/drawio-selfhost');
+  });
+
   it('does not show the unreachable banner once the handshake started', async () => {
     mount({ connectTimeoutMs: 50 });
     emit({ event: 'configure' });
@@ -172,7 +204,7 @@ describe('mountDrawioWorkspace DOM', () => {
   it('shows the library banner and still configures draw.io when the library fails', async () => {
     vi.stubGlobal('fetch', vi.fn(() => Promise.resolve(new Response('nope', { status: 404 }))));
     vi.spyOn(console, 'error').mockImplementation(() => undefined);
-    handle = mountDrawioWorkspace(root, { onSwitchToLegacy: () => undefined });
+    handle = mountDrawioWorkspace(root, { drawioUrl: DRAWIO_URL, onSwitchToLegacy: () => undefined });
     spyOnIframe();
     emit({ event: 'configure' });
     await waitUntil(() => posted().some((m) => m.action === 'configure'));
@@ -186,7 +218,7 @@ describe('mountDrawioWorkspace DOM', () => {
   it('sends the ERTMS library in the configure reply', async () => {
     const fetchMock = vi.fn((_url: string) => Promise.resolve(new Response(LIBRARY, { status: 200 })));
     vi.stubGlobal('fetch', fetchMock);
-    handle = mountDrawioWorkspace(root, { onSwitchToLegacy: () => undefined });
+    handle = mountDrawioWorkspace(root, { drawioUrl: DRAWIO_URL, onSwitchToLegacy: () => undefined });
     spyOnIframe();
     emit({ event: 'configure' });
     await waitUntil(() => posted().some((m) => m.action === 'configure'));
