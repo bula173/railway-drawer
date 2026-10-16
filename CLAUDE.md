@@ -69,6 +69,9 @@ CI (`.github/workflows/build-and-deploy.yml`) runs typecheck, typecheck:tests, l
   reopen; replace drawing (confirm, Ctrl+Z). `drawio-embed.spec.ts` also round-trips a scenario file through draw.io.
 - `tests/e2e/templates.spec.ts` (any port): ERTMS palette 18 entries, Templates tab 22 ERTMS templates (search,
   insert, open as new diagram, drag), tab bar labels not cut, Save as Template… -> reload -> insert, rename, delete.
+- `tests/e2e/style-edit.spec.ts` (any port): line color/width/dash and fill through the Properties panel on cells from an
+  ERTMS template, a user template and the draw.io/ERTMS palettes (group first click, child second click); checks the
+  cell's own style and the SVG. Reads the graph via `import('/src/services/service-registry.ts')` (dev server only).
 
 ## Architecture
 
@@ -109,6 +112,12 @@ CI (`.github/workflows/build-and-deploy.yml`) runs typecheck, typecheck:tests, l
   (`src/services/cache-service.ts`, version `'1'`; mismatch drops the cache; failed saves set
   `railway-drawer-cache-stale`). Call `tabManager.flushCache()` before anything that leaves the page.
   Tabs that fail to restore keep their cached XML until edited (`unrestoredTabXml`).
+- Style edits (`src/ui/style-edit.ts`, used by `PropertiesPanel`, `EdgePropertiesController`, `InteractiveUIController`):
+  like draw.io's setCellStyles, only the edited keys of each selected cell's OWN style change (one undoable edit). Never
+  write `graph.getCellStyle(cell)` back into a cell: it is the resolved style (maxGraph's stylesheet deletes `none`
+  values, base style names are merged away, light-dark()/default/inherit resolved), which brought back outlines, fills
+  and arrow heads on draw.io/template cells. Displays use the resolved style (`effectiveColor`: missing color = none).
+  maxGraph only dashes with `dashed=1`; `dashPattern` is space separated.
 - `src/services/graph-command-service.ts` `GraphCommandService` (one per tab): undo/redo via maxGraph
   `UndoManager` wired like `Editor.installUndoHandler` (records `InternalEvent.UNDO` from model and view;
   undo/redo replays do not re-record), plus copy/cut/paste/delete/selectAll. `SaveLoadController.load()` clears history.

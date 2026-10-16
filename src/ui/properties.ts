@@ -16,13 +16,35 @@
 
 import { Graph, constants } from '@maxgraph/core';
 import type { Geometry } from '@maxgraph/core';
-import type { AlignValue, Cell, CellStateStyle, VAlignValue } from '@maxgraph/core';
+import type { AlignValue, Cell, VAlignValue } from '@maxgraph/core';
+import {
+  applyStyleToCells,
+  dashPatternOf,
+  dashPatternStyle,
+  effectiveColor,
+  linePatternOf,
+  linePatternStyle,
+  toColorInputValue,
+} from './style-edit';
+import type { StyleRecord } from './style-edit';
 
 /** @brief Cell with the ad-hoc `locked` flag shared with context-menu/interactive-ui */
 type LockableCell = Cell & { locked?: boolean };
 
-/** @brief Cell style with access to keys not declared on CellStateStyle (fontWeight, blendMode, ...) */
-type EditableStyle = CellStateStyle & Record<string, unknown>;
+/** @brief A cell's own style as a record (keys not declared on CellStyle: fontWeight, blendMode, ...) */
+type EditableStyle = StyleRecord;
+
+/** @brief Selects `value` in a <select>, adding an option for values the list does not offer */
+function selectValue(select: HTMLSelectElement | null, value: string): void {
+  if (!select) return;
+  if (!Array.from(select.options).some((o) => o.value === value)) {
+    const option = document.createElement('option');
+    option.value = value;
+    option.textContent = value;
+    select.appendChild(option);
+  }
+  select.value = value;
+}
 
 /**
  * @class PropertiesPanel
@@ -207,14 +229,16 @@ export class PropertiesPanel {
     if (rotation) rotation.value = String(style.rotation || 0);
 
     // Style
+    // Colors: the effective (resolved) values, so light-dark()/default/inherit show the color
+    // that is drawn; `none` (deleted from the resolved style by maxGraph) unchecks the box
+    const fill = effectiveColor(style, 'fillColor');
     const fillCheckbox = document.getElementById('prop-useFill') as HTMLInputElement;
-    if (fillCheckbox) fillCheckbox.checked = style.fillColor && style.fillColor !== 'none';
+    if (fillCheckbox) fillCheckbox.checked = fill !== 'none';
 
     const fillColor = document.getElementById('prop-fillColor') as HTMLInputElement;
     const fillColorText = document.getElementById('prop-fillColorText') as HTMLInputElement;
-    const displayColor = style.fillColor && style.fillColor !== 'none' ? style.fillColor : '#ffffff';
-    if (fillColor) fillColor.value = displayColor;
-    if (fillColorText) fillColorText.value = displayColor;
+    if (fillColor) fillColor.value = toColorInputValue(fill, '#ffffff');
+    if (fillColorText) fillColorText.value = fill === 'none' ? 'none' : fill;
 
     // Gradient properties
     const gradientColor1 = document.getElementById('prop-gradientColor1') as HTMLInputElement;
@@ -235,11 +259,20 @@ export class PropertiesPanel {
     const fillPattern = document.getElementById('prop-fillPattern') as HTMLSelectElement;
     if (fillPattern) fillPattern.value = style.fillPattern || 'none';
 
+    const stroke = effectiveColor(style, 'strokeColor');
     const lineCheckbox = document.getElementById('prop-useLine') as HTMLInputElement;
-    if (lineCheckbox) lineCheckbox.checked = style.strokeColor && style.strokeColor !== 'none';
+    if (lineCheckbox) lineCheckbox.checked = stroke !== 'none';
+
+    const strokeColor = document.getElementById('prop-strokeColor') as HTMLInputElement;
+    const strokeColorText = document.getElementById('prop-strokeColorText') as HTMLInputElement;
+    if (strokeColor) strokeColor.value = toColorInputValue(stroke, '#000000');
+    if (strokeColorText) strokeColorText.value = stroke === 'none' ? 'none' : stroke;
+
+    const lineStyle = document.getElementById('prop-lineStyle') as HTMLSelectElement;
+    if (lineStyle) lineStyle.value = linePatternOf(style);
 
     const strokeWidth = document.getElementById('prop-strokeWidth') as HTMLInputElement;
-    if (strokeWidth) strokeWidth.value = String(style.strokeWidth || 1);
+    if (strokeWidth) strokeWidth.value = String(style.strokeWidth ?? 1);
 
     const strokeOpacity = document.getElementById('prop-strokeOpacity') as HTMLInputElement;
     const strokeOpacityValue = document.getElementById('prop-strokeOpacity-value');
@@ -247,8 +280,7 @@ export class PropertiesPanel {
     if (strokeOpacityValue) strokeOpacityValue.textContent = `${style.strokeOpacity || 100}%`;
 
     // Dash Pattern (Priority 3)
-    const dashPattern = document.getElementById('prop-dashPattern') as HTMLSelectElement;
-    if (dashPattern) dashPattern.value = style.dashPattern || 'none';
+    selectValue(document.getElementById('prop-dashPattern') as HTMLSelectElement | null, dashPatternOf(style));
 
     const opacity = document.getElementById('prop-opacity') as HTMLInputElement;
     const opacityValue = document.getElementById('prop-opacity-value');
@@ -357,19 +389,17 @@ export class PropertiesPanel {
   }
 
   /**
-   * @brief Apply a style mutation to the cell selected at event time
+   * @brief Apply a style mutation to the cells selected at event time
+   * @details Like draw.io's setCellStyles, only the edited keys of each cell's own style change
+   * (see style-edit.ts); `resolved` is the effective style, for edits that read a current value.
+   * Writing the resolved style back (as before) dropped every `none` value (black outlines,
+   * white fills and arrow heads appeared on draw.io/template cells), the base style names and
+   * light-dark() colors.
    */
-  private applyStyle(mutate: (style: EditableStyle) => void) {
+  private applyStyle(mutate: (style: EditableStyle, resolved: EditableStyle) => void) {
     const cells = this.getTargetCells();
     if (cells.length === 0) return;
-    this.graph.batchUpdate(() => {
-      cells.forEach((cell) => {
-        const style = this.graph.getCellStyle(cell) as EditableStyle;
-        mutate(style);
-        this.graph.model.setStyle(cell, style);
-      });
-    });
-    this.graph.refresh();
+    applyStyleToCells(this.graph, cells, (style, resolved) => mutate(style, resolved));
   }
 
   /**
@@ -386,10 +416,13 @@ export class PropertiesPanel {
   }
 
   /** @brief Bind a 'change' listener on an input/select that sets one style key */
-  private bindStyle(id: string, apply: (style: EditableStyle, input: HTMLInputElement) => void) {
+  private bindStyle(
+    id: string,
+    apply: (style: EditableStyle, input: HTMLInputElement, resolved: EditableStyle) => void,
+  ) {
     this.on(document.getElementById(id), 'change', (e) => {
       const input = e.target as HTMLInputElement;
-      this.applyStyle((style) => apply(style, input));
+      this.applyStyle((style, resolved) => apply(style, input, resolved));
     });
   }
 
@@ -399,6 +432,32 @@ export class PropertiesPanel {
       this.applyStyle((style) => {
         style[key] = value;
       });
+    });
+  }
+
+  /**
+   * @brief Color picker + text field (any CSS color or `none`) + on/off checkbox for one color key
+   * @details Sets the key on every selected cell (draw.io's Format panel applies a color to all
+   * selected cells), replacing light-dark()/default values with the explicit color.
+   */
+  private bindColor(key: string, pickerId: string, textId: string, checkboxId: string, fallback: string) {
+    const picker = document.getElementById(pickerId) as HTMLInputElement | null;
+    const text = document.getElementById(textId) as HTMLInputElement | null;
+    const checkbox = document.getElementById(checkboxId) as HTMLInputElement | null;
+    const setColor = (value: string) => {
+      const color = value.trim();
+      if (color === '') return;
+      this.applyStyle((style) => { style[key] = color; });
+      if (picker && color !== 'none') picker.value = toColorInputValue(color, picker.value);
+      if (text) text.value = color;
+      if (checkbox) checkbox.checked = color !== 'none';
+    };
+    this.on(picker, 'change', () => { if (picker) setColor(picker.value); });
+    this.on(text, 'change', () => { if (text) setColor(text.value); });
+    this.on(checkbox, 'change', () => {
+      if (!checkbox) return;
+      // Re-enabling uses the picker's color, like draw.io's checkbox + color button
+      setColor(checkbox.checked ? (picker?.value || fallback) : 'none');
     });
   }
 
@@ -421,9 +480,9 @@ export class PropertiesPanel {
     this.bindStyle('prop-fontFamily', (style, input) => { style.fontFamily = input.value; });
     this.bindStyle('prop-fontSize', (style, input) => { style.fontSize = parseInt(input.value); });
     this.bindStyle('prop-fontWeight', (style, input) => { style.fontWeight = input.value; });
-    this.bindStyle('prop-fontStyle', (style, input) => {
+    this.bindStyle('prop-fontStyle', (style, input, resolved) => {
       // maxGraph fontStyle is a bitmask; the select only controls the italic bit
-      const flags = style.fontStyle || 0;
+      const flags = Number(resolved.fontStyle) || 0;
       style.fontStyle = input.value === 'normal'
         ? flags & ~constants.FONT.ITALIC
         : flags | constants.FONT.ITALIC;
@@ -444,24 +503,9 @@ export class PropertiesPanel {
     this.bindStyle('prop-textAlign', (style, input) => { style.align = input.value as AlignValue; });
     this.bindStyle('prop-verticalAlign', (style, input) => { style.verticalAlign = input.value as VAlignValue; });
 
-    // Fill Color
-    this.bindStyle('prop-fillColor', (style, input) => {
-      style.fillColor = input.value;
-      // Update text input
-      const textInput = document.getElementById('prop-fillColorText') as HTMLInputElement;
-      if (textInput) textInput.value = input.value;
-    });
-
-    this.bindStyle('prop-fillColorText', (style, input) => {
-      style.fillColor = input.value;
-      // Update color picker
-      const colorInput = document.getElementById('prop-fillColor') as HTMLInputElement;
-      if (colorInput) colorInput.value = input.value;
-    });
-
-    this.bindStyle('prop-useFill', (style, input) => {
-      style.fillColor = input.checked ? (style.fillColor || '#ffffff') : 'none';
-    });
+    // Fill and line color: color picker, text field (any CSS color, `none`) and checkbox
+    this.bindColor('fillColor', 'prop-fillColor', 'prop-fillColorText', 'prop-useFill', '#ffffff');
+    this.bindColor('strokeColor', 'prop-strokeColor', 'prop-strokeColorText', 'prop-useLine', '#000000');
 
     // Fill type (solid, linear, radial)
     this.bindStyle('prop-fillType', (style, input) => {
@@ -485,11 +529,18 @@ export class PropertiesPanel {
     });
 
     // Stroke
-    this.bindStyle('prop-strokeWidth', (style, input) => { style.strokeWidth = parseFloat(input.value); });
+    this.bindStyle('prop-strokeWidth', (style, input) => {
+      const width = parseFloat(input.value);
+      if (Number.isFinite(width) && width >= 0) style.strokeWidth = width;
+    });
 
-    // Dash Pattern (Priority 3)
+    // Line pattern (draw.io: solid / dashed / dotted) and custom dash pattern. maxGraph only
+    // dashes lines with dashed=1; dashPattern alone (as written before) drew a solid line.
+    this.bindStyle('prop-lineStyle', (style, input) => {
+      Object.assign(style, linePatternStyle(input.value));
+    });
     this.bindStyle('prop-dashPattern', (style, input) => {
-      style.dashPattern = input.value === 'none' ? undefined : input.value;
+      Object.assign(style, dashPatternStyle(input.value));
     });
 
     // Opacity
@@ -576,8 +627,8 @@ export class PropertiesPanel {
 
     // Rotate 90
     this.on(document.getElementById('btn-rotate90'), 'click', () => {
-      this.applyStyle((style) => {
-        const current = style.rotation || 0;
+      this.applyStyle((style, resolved) => {
+        const current = Number(resolved.rotation) || 0;
         style.rotation = (current + 90) % 360;
         const rotInput = document.getElementById('prop-rotation') as HTMLInputElement;
         if (rotInput) rotInput.value = String(style.rotation);
@@ -587,15 +638,15 @@ export class PropertiesPanel {
     // Flip Horizontal / Vertical (one toggle per click). maxGraph reads flips from
     // the style; Geometry has no flipH/flipV, so geometry flags never rendered.
     this.on(document.getElementById('btn-flipHorizontal'), 'click', () => {
-      this.applyStyle((style) => {
-        style.flipH = !style.flipH;
+      this.applyStyle((style, resolved) => {
+        style.flipH = !resolved.flipH;
       });
       this.update();
     });
 
     this.on(document.getElementById('btn-flipVertical'), 'click', () => {
-      this.applyStyle((style) => {
-        style.flipV = !style.flipV;
+      this.applyStyle((style, resolved) => {
+        style.flipV = !resolved.flipV;
       });
       this.update();
     });

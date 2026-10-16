@@ -508,6 +508,10 @@
                         <input type="checkbox" id="prop-useLine" checked style="cursor: pointer;" />
                         <span style="font-weight: 600; color: #333;">Line</span>
                       </label>
+                      <div style="display: flex; gap: 6px; margin-bottom: 8px;">
+                        <input type="color" id="prop-strokeColor" value="#000000" title="Line color" style="width: 50px; height: 36px; cursor: pointer; border: 1px solid #ccc; border-radius: 3px;" />
+                        <input type="text" id="prop-strokeColorText" value="#000000" title="Line color" style="flex: 1; padding: 6px; border: 1px solid #ccc; border-radius: 3px; font-size: 12px; box-sizing: border-box;" />
+                      </div>
                       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 8px;">
                         <div>
                           <label style="display: block; margin-bottom: 3px; font-size: 11px; color: #666;">Style</label>
@@ -521,10 +525,11 @@
                           <label style="display: block; margin-bottom: 3px; font-size: 11px; color: #666;">Dash Pattern</label>
                           <select id="prop-dashPattern" style="width: 100%; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-size: 11px;">
                             <option value="none">None</option>
-                            <option value="5,3">Dashed</option>
-                            <option value="2,2">Dotted</option>
-                            <option value="5,3,2,3">Dash-Dot</option>
-                            <option value="5,3,2,3,2,3">Dash-Dot-Dot</option>
+                            <option value="3 3">Dashed</option>
+                            <option value="1 2">Dotted</option>
+                            <option value="8 4">Long Dash</option>
+                            <option value="8 3 1 3">Dash-Dot</option>
+                            <option value="8 3 1 3 1 3">Dash-Dot-Dot</option>
                           </select>
                         </div>
                         <div>

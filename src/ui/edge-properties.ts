@@ -1,8 +1,35 @@
 import { Graph } from '@maxgraph/core';
+import type { Cell } from '@maxgraph/core';
+import {
+  dashPatternOf,
+  dashPatternStyle,
+  effectiveColor,
+  linePatternOf,
+  linePatternStyle,
+  resolvedStyle,
+  setCellStyleValues,
+  toColorInputValue,
+} from './style-edit';
+import type { StyleRecord } from './style-edit';
+
+/** Dash-dot pattern of the "Dash-Dot" line style */
+const DASH_DOT_PATTERN = '8 3 1 3';
+
+/** Selects `value` in a <select>, adding an option for values the list does not offer (e.g. 'open') */
+function selectValue(select: HTMLSelectElement | null, value: string): void {
+  if (!select) return;
+  if (!Array.from(select.options).some((o) => o.value === value)) {
+    const option = document.createElement('option');
+    option.value = value;
+    option.textContent = value;
+    select.appendChild(option);
+  }
+  select.value = value;
+}
 
 export class EdgePropertiesController {
   private graph: Graph;
-  private currentEdge: any = null;
+  private currentEdge: Cell | null = null;
   private propertiesPanel: HTMLElement | null;
 
   constructor(graph: Graph) {
@@ -16,7 +43,6 @@ export class EdgePropertiesController {
 
   private update(): void {
     const cells = this.graph.getSelectionCells();
-    console.log('[EdgeProperties] Selection changed:', cells.length, cells.map((c: any) => ({ isEdge: c.isEdge?.(), isVertex: c.isVertex?.() })));
 
     if (cells.length === 0) {
       this.hideEdgeProperties();
@@ -25,17 +51,14 @@ export class EdgePropertiesController {
 
     const cell = cells[0];
     const isEdge = cell && cell.isEdge && cell.isEdge();
-    console.log('[EdgeProperties] Selected cell isEdge:', isEdge, 'cell:', cell);
 
     if (isEdge) {
       this.currentEdge = cell;
       this.showEdgeProperties();
       this.updateEdgeValues();
       this.setupEdgeHandlers();
-      console.log('[EdgeProperties] Edge properties shown');
     } else {
       this.hideEdgeProperties();
-      console.log('[EdgeProperties] Edge properties hidden (non-edge selected)');
     }
   }
 
@@ -204,114 +227,58 @@ export class EdgePropertiesController {
     return panel;
   }
 
+  /** @brief Selected edges, the cells an edit applies to (draw.io edits every selected cell) */
+  private selectedEdges(): Cell[] {
+    return this.graph.getSelectionCells().filter((cell) => cell.isEdge());
+  }
+
+  /**
+   * @brief Show the effective values of the first selected edge
+   * @details The resolved style has no `none` values (maxGraph's stylesheet deletes them), so a
+   * missing arrow means none; it used to show (and on the next edit write) 'classic'.
+   */
   private updateEdgeValues(): void {
     if (!this.currentEdge) return;
 
-    const style = this.graph.getCellStyle(this.currentEdge) as any;
+    const style = resolvedStyle(this.graph, this.currentEdge);
+    const arrow = (value: unknown) => (typeof value === 'string' && value !== '' ? value : 'none');
 
-    // Update select elements
-    const sourceArrow = document.getElementById('edge-source-arrow') as HTMLSelectElement;
-    if (sourceArrow) {
-      sourceArrow.value = style.startArrow || 'none';
-    }
-
-    const targetArrow = document.getElementById('edge-target-arrow') as HTMLSelectElement;
-    if (targetArrow) {
-      targetArrow.value = style.endArrow || 'classic';
-    }
+    selectValue(document.getElementById('edge-source-arrow') as HTMLSelectElement | null, arrow(style.startArrow));
+    selectValue(document.getElementById('edge-target-arrow') as HTMLSelectElement | null, arrow(style.endArrow));
 
     const lineStyle = document.getElementById('edge-line-style') as HTMLSelectElement;
     if (lineStyle) {
-      if (style.dashed) {
-        lineStyle.value = 'dashed';
-      } else if (style.dotted) {
-        lineStyle.value = 'dotted';
-      } else if (style.dashPattern) {
-        lineStyle.value = 'dashdot';
-      } else {
-        lineStyle.value = 'solid';
-      }
+      const pattern = linePatternOf(style);
+      lineStyle.value = pattern === 'dashed' && dashPatternOf(style) === DASH_DOT_PATTERN ? 'dashdot' : pattern;
     }
 
     const lineWidth = document.getElementById('edge-line-width') as HTMLInputElement;
-    if (lineWidth) {
-      lineWidth.value = String(style.strokeWidth || 2);
-    }
+    if (lineWidth) lineWidth.value = String(style.strokeWidth ?? 1);
 
     const lineColor = document.getElementById('edge-line-color') as HTMLInputElement;
-    if (lineColor) {
-      lineColor.value = style.strokeColor || '#000000';
-    }
+    if (lineColor) lineColor.value = toColorInputValue(effectiveColor(style, 'strokeColor'), '#000000');
   }
 
+  /** @brief Each control sets only its own keys, on every selected edge (re-bound per selection) */
   private setupEdgeHandlers(): void {
-    const sourceArrow = document.getElementById('edge-source-arrow') as HTMLSelectElement;
-    if (sourceArrow) {
-      sourceArrow.onchange = () => this.updateEdgeStyle();
-    }
-
-    const targetArrow = document.getElementById('edge-target-arrow') as HTMLSelectElement;
-    if (targetArrow) {
-      targetArrow.onchange = () => this.updateEdgeStyle();
-    }
-
-    const lineStyle = document.getElementById('edge-line-style') as HTMLSelectElement;
-    if (lineStyle) {
-      lineStyle.onchange = () => this.updateEdgeStyle();
-    }
-
-    const lineWidth = document.getElementById('edge-line-width') as HTMLInputElement;
-    if (lineWidth) {
-      lineWidth.onchange = () => this.updateEdgeStyle();
-    }
-
-    const lineColor = document.getElementById('edge-line-color') as HTMLInputElement;
-    if (lineColor) {
-      lineColor.onchange = () => this.updateEdgeStyle();
-    }
-  }
-
-  private updateEdgeStyle(): void {
-    if (!this.currentEdge) return;
-
-    const sourceArrow = (document.getElementById('edge-source-arrow') as HTMLSelectElement)?.value;
-    const targetArrow = (document.getElementById('edge-target-arrow') as HTMLSelectElement)?.value;
-    const lineStyle = (document.getElementById('edge-line-style') as HTMLSelectElement)?.value;
-    const lineWidth = (document.getElementById('edge-line-width') as HTMLInputElement)?.value;
-    const lineColor = (document.getElementById('edge-line-color') as HTMLInputElement)?.value;
-
-    this.graph.batchUpdate(() => {
-      const style = this.graph.getCellStyle(this.currentEdge) as any;
-
-      // Update arrows
-      if (sourceArrow) {
-        if (sourceArrow === 'none') {
-          delete style.startArrow;
-        } else {
-          style.startArrow = sourceArrow;
-        }
-      }
-
-      if (targetArrow) {
-        if (targetArrow === 'none') {
-          delete style.endArrow;
-        } else {
-          style.endArrow = targetArrow;
-        }
-      }
-
-      // Update line style
-      style.dashed = lineStyle === 'dashed' ? true : false;
-      style.dotted = lineStyle === 'dotted' ? true : false;
-      style.dashPattern = lineStyle === 'dashdot' ? '5 5' : undefined;
-
-      // Update line width and color
-      if (lineWidth) style.strokeWidth = parseFloat(lineWidth);
-      if (lineColor) style.strokeColor = lineColor;
-
-      this.graph.model.setStyle(this.currentEdge, style);
+    const bind = (id: string, values: (control: HTMLInputElement) => StyleRecord | null) => {
+      const control = document.getElementById(id) as HTMLInputElement | null;
+      if (!control) return;
+      control.onchange = () => {
+        const patch = values(control);
+        if (patch) setCellStyleValues(this.graph, this.selectedEdges(), patch);
+      };
+    };
+    // 'none' is written explicitly: the default edge style has endArrow=classic, so removing the
+    // key (as before) kept the arrow
+    bind('edge-source-arrow', (c) => ({ startArrow: c.value || 'none' }));
+    bind('edge-target-arrow', (c) => ({ endArrow: c.value || 'none' }));
+    bind('edge-line-style', (c) =>
+      c.value === 'dashdot' ? dashPatternStyle(DASH_DOT_PATTERN) : linePatternStyle(c.value));
+    bind('edge-line-width', (c) => {
+      const width = parseFloat(c.value);
+      return Number.isFinite(width) && width >= 0 ? { strokeWidth: width } : null;
     });
-
-    this.graph.refresh();
+    bind('edge-line-color', (c) => (c.value ? { strokeColor: c.value } : null));
   }
 }

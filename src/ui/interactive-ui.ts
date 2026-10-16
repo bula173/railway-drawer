@@ -1,5 +1,6 @@
 import { Graph } from '@maxgraph/core';
 import { GraphCommandService } from '../services/graph-command-service';
+import { applyStyleToCells, setCellStyleValues } from './style-edit';
 
 export class InteractiveUIController {
   private graph: Graph;
@@ -175,33 +176,15 @@ export class InteractiveUIController {
       this.graph.refresh();
     });
 
-    // Text styling buttons
-    document.querySelector('.text-bold')?.addEventListener('click', () => {
-      const cells = this.graph.getSelectionCells();
-      cells.forEach((cell) => {
-        const style = cell.style || {};
-        style.fontStyle = (style.fontStyle || 0) ^ 1; // Toggle bold
+    // Text styling buttons (one undoable model edit; the old in-place style mutation was not undoable)
+    const toggleFontStyle = (bit: number) => {
+      applyStyleToCells(this.graph, this.graph.getSelectionCells(), (style, resolved) => {
+        style.fontStyle = (Number(resolved.fontStyle) || 0) ^ bit;
       });
-      this.graph.refresh();
-    });
-
-    document.querySelector('.text-italic')?.addEventListener('click', () => {
-      const cells = this.graph.getSelectionCells();
-      cells.forEach((cell) => {
-        const style = cell.style || {};
-        style.fontStyle = (style.fontStyle || 0) ^ 2; // Toggle italic
-      });
-      this.graph.refresh();
-    });
-
-    document.querySelector('.text-underline')?.addEventListener('click', () => {
-      const cells = this.graph.getSelectionCells();
-      cells.forEach((cell) => {
-        const style = cell.style || {};
-        style.fontStyle = (style.fontStyle || 0) ^ 4; // Toggle underline
-      });
-      this.graph.refresh();
-    });
+    };
+    document.querySelector('.text-bold')?.addEventListener('click', () => toggleFontStyle(1));
+    document.querySelector('.text-italic')?.addEventListener('click', () => toggleFontStyle(2));
+    document.querySelector('.text-underline')?.addEventListener('click', () => toggleFontStyle(4));
 
     // Text position
     const textPosition = document.getElementById('prop-position') as HTMLSelectElement;
@@ -217,18 +200,9 @@ export class InteractiveUIController {
       this.updateCellStyle('textDirection', writingDirection.value);
     });
 
-    // Fill checkbox, stroke width, opacity, rounded, shadow, size/position, rotation, flips,
-    // z-order and lock are owned by PropertiesPanel (binding them here applied every edit twice)
-    const useLine = document.getElementById('prop-useLine') as HTMLInputElement;
-    useLine?.addEventListener('change', () => {
-      this.updateCellStyle('rounded', useLine.checked ? 1 : 0);
-    });
-
-    // Line style and width
-    const lineStyle = document.getElementById('prop-lineStyle') as HTMLSelectElement;
-    lineStyle?.addEventListener('change', () => {
-      this.updateCellStyle('dashed', lineStyle.value === 'dashed' ? 1 : 0);
-    });
+    // Fill/line checkboxes and colors, line pattern, stroke width, opacity, rounded, shadow,
+    // size/position, rotation, flips, z-order and lock are owned by PropertiesPanel (binding them
+    // here applied every edit twice; prop-useLine used to toggle `rounded` here)
 
     const sketch = document.getElementById('prop-sketch') as HTMLInputElement;
     sketch?.addEventListener('change', () => {
@@ -286,13 +260,8 @@ export class InteractiveUIController {
     });
   }
 
-  private updateCellStyle(key: string, value: any): void {
-    const cells = this.graph.getSelectionCells();
-    cells.forEach((cell) => {
-      const style = cell.style || {};
-      (style as any)[key] = value;
-    });
-    this.graph.refresh();
+  private updateCellStyle(key: string, value: unknown): void {
+    setCellStyleValues(this.graph, this.graph.getSelectionCells(), { [key]: value });
   }
 
   private updatePropertyPanel(): void {
