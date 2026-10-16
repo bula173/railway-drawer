@@ -65,6 +65,15 @@ describe('startEditor', () => {
     expect(localStorage.getItem(EDITOR_MODE_STORAGE_KEY)).toBe('legacy');
   });
 
+  it('opens a #R diagram link in the legacy editor without changing the remembered mode', async () => {
+    localStorage.setItem(EDITOR_MODE_STORAGE_KEY, 'drawio');
+    const loadLegacy = vi.fn(() => Promise.resolve());
+    started = await startEditor({ loadLegacy, search: '?editor=drawio', hash: '#Rabc' });
+    expect(started.mode).toBe('legacy');
+    expect(loadLegacy).toHaveBeenCalledTimes(1);
+    expect(localStorage.getItem(EDITOR_MODE_STORAGE_KEY)).toBe('drawio');
+  });
+
   it('mounts into a provided root', async () => {
     const root = document.createElement('div');
     document.body.appendChild(root);

@@ -153,7 +153,8 @@ export class MenuController {
     saveBtn.onclick = () => {
       const name = input.value || 'Untitled';
       this.saveLoadController.setProjectName(name);
-      this.saveLoadController.saveProject();
+      // "Save As" always downloads, also for a tab bound to a remote file
+      this.saveLoadController.saveProjectToDisk();
       document.body.removeChild(dialog);
     };
 
@@ -204,6 +205,11 @@ export class MenuController {
 
       case 'export':
         this.saveLoadController.save();
+        break;
+
+      case 'share':
+        // legacy-main.ts opens the Share dialog (link with diagram, downloads, cloud providers)
+        window.dispatchEvent(new CustomEvent('share-request'));
         break;
 
       case 'saveAsTemplate':

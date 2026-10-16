@@ -559,6 +559,8 @@ export class TabManager {
     // Only the highlight changes: keep the tab elements, so a double-click that started on an
     // inactive tab still reaches the same label and opens the rename editor
     this.updateActiveTabHighlight();
+    // Global listeners (custom shapes toolbar, remote-file status) follow the active tab
+    window.dispatchEvent(new CustomEvent('tab-changed', { detail: { tabId } }));
   }
 
   private updateActiveTabHighlight(): void {
@@ -588,6 +590,7 @@ export class TabManager {
     this.destroyTab(tabId);
     this.tabs.delete(tabId);
     this.saveLoadControllers.delete(tabId);
+    window.dispatchEvent(new CustomEvent('tab-closed', { detail: { tabId } }));
 
     // Switch to another tab if the closed tab was active
     if (this.activeTabId === tabId) {

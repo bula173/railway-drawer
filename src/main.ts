@@ -14,7 +14,21 @@
  */
 
 import { startEditor } from './drawio/boot';
+import { isAuthResponseUrl } from './share/providers/sharepoint/config';
 
-startEditor({ loadLegacy: () => import('./legacy-main') }).catch((error: unknown) => {
-  console.error('Failed to start the editor:', error);
-});
+// Microsoft sign-in answers come back to the app's own URL (the Entra redirect URI). Such a load
+// only hands the response to the window that started the sign-in; it does not start an editor.
+// Without VITE_MSAL_CLIENT_ID this is a constant null and the bridge chunk is not built.
+const loadAuthBridge = import.meta.env.VITE_MSAL_CLIENT_ID
+  ? () => import('./share/providers/sharepoint/auth-bridge')
+  : null;
+
+if (loadAuthBridge && isAuthResponseUrl(window.location)) {
+  loadAuthBridge()
+    .then((bridge) => bridge.runAuthBridge())
+    .catch((error: unknown) => console.error('Failed to complete the sign-in:', error));
+} else {
+  startEditor({ loadLegacy: () => import('./legacy-main') }).catch((error: unknown) => {
+    console.error('Failed to start the editor:', error);
+  });
+}

@@ -43,6 +43,7 @@ import { createDrawioPaletteView, ertmsPaletteSource, loadErtmsTemplates, setDra
 import { createTemplatesPanel, openTemplateAsNewDiagram, saveAsTemplate, TemplateStore } from './ui/templates';
 import { installParityHook } from './debug/parity-hook';
 import { installDarkModeToggle } from './drawio-shapes/theme/dark-mode';
+import { installSharing } from './share/install-sharing';
 
 /**
  * @brief Register all built-in shape definitions
@@ -529,6 +530,17 @@ createTemplatesPanel({
 
 // Visual parity harness hook (dev server / ?parity=1 only)
 installParityHook();
+
+// ============= SHARING =============
+
+/**
+ * @brief Share dialog, diagram links, cloud storage providers
+ * @details Top-bar Share button and File > Share…: link with the diagram in the URL hash (`#R…`,
+ * also as an app.diagrams.net link), .drawio/PNG/SVG downloads, Web Share; SharePoint/OneDrive
+ * (disabled until VITE_MSAL_CLIENT_ID is set, see docs/SHAREPOINT.md). A `#R` link in the start URL
+ * opens as new tabs. Tabs opened from / saved to a provider save back there with Ctrl+S.
+ */
+installSharing(tabManager, globalNotificationManager);
 
 // ============= CUSTOM SHAPES =============
 

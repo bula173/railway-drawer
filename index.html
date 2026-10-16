@@ -40,11 +40,14 @@
             <div class="menu-dropdown" data-menu="file" style="display: none;">
               <div class="menu-dropdown-item" data-action="new">New</div>
               <div class="menu-dropdown-item" data-action="open">Open</div>
+              <!-- "Open from <provider>…" / "Save to <provider>…" items of the cloud storage providers (src/share/providers) -->
+              <div id="file-menu-remote-items"></div>
               <div class="menu-dropdown-item" data-action="save">Save</div>
               <div class="menu-dropdown-item" data-action="saveAs">Save As...</div>
               <div class="menu-dropdown-item" data-action="saveAsTemplate" title="Save the selection (or the whole diagram) as a template">Save as Template…</div>
               <div style="height: 1px; background: #e0e0e0; margin: 4px 0;"></div>
               <div class="menu-dropdown-item" data-action="export">Export As...</div>
+              <div class="menu-dropdown-item" data-action="share" title="Link with the diagram, downloads, cloud storage">Share…</div>
               <div class="menu-dropdown-item" data-action="print">Print</div>
             </div>
           </div>
@@ -124,7 +127,7 @@
             <button type="button" class="editor-toggle-btn" data-editor-mode="drawio" aria-pressed="false" title="Switch to the draw.io editor (saves, then reloads the page)">draw.io</button>
           </div>
           <div class="save-status">Unsaved changes. Click here to save.</div>
-          <button class="share-btn">👤 Share</button>
+          <button type="button" class="share-btn" id="share-btn" aria-haspopup="dialog" title="Share: link with the diagram, downloads, cloud storage">👤 Share</button>
         </div>
       </div>
 
@@ -756,6 +759,10 @@
       <div id="statusbar-container" class="status-bar">
         <div class="status-message" id="status-message">Ready</div>
         <div class="status-items">
+          <div class="status-item status-remote" id="status-remote-item" hidden>
+            <span class="status-label">Stored in:</span>
+            <span class="status-value" id="status-remote"></span>
+          </div>
           <div class="status-item">
             <span class="status-label">Version:</span>
             <span class="status-value" id="status-version">0.6.0</span>

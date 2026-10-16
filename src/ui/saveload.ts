@@ -31,6 +31,18 @@ function base64ToUtf8(base64: string): string {
   return new TextDecoder().decode(Uint8Array.from(binary, (char) => char.charCodeAt(0)));
 }
 
+function readFileText(file: File): Promise<string> {
+  return new Promise<string>((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      if (typeof reader.result === 'string') resolve(reader.result);
+      else reject(new Error('Failed to read file'));
+    };
+    reader.onerror = () => reject(new Error('Failed to read file'));
+    reader.readAsText(file);
+  });
+}
+
 export class SaveLoadController {
   private graph: Graph;
   private projectService: ProjectService;
@@ -38,6 +50,8 @@ export class SaveLoadController {
   private commandService: GraphCommandService | null;
   /** Page settings of the loaded draw.io model, written back on save. */
   private pageSettings: PageSettings = {};
+  /** Set while the tab is bound to a remote file: saveProject() saves there instead. */
+  private saveHandler: (() => void) | null = null;
 
   constructor(graph: Graph, commandService: GraphCommandService | null = null) {
     this.graph = graph;
@@ -50,7 +64,30 @@ export class SaveLoadController {
     // from here overwrote autosave error messages.
   }
 
+  /**
+   * Ctrl/Cmd+S and File > Save. A tab bound to a remote file (SharePoint, ...) saves back there
+   * through the handler set by the remote session; otherwise the file is downloaded.
+   */
   saveProject(): void {
+    if (this.saveHandler) {
+      this.saveHandler();
+      return;
+    }
+    this.saveProjectToDisk();
+  }
+
+  /** Replaces what saveProject() does (null: download again). Used for remote-file tabs. */
+  setSaveHandler(handler: (() => void) | null): void {
+    this.saveHandler = handler;
+  }
+
+  /** The whole tab as a native draw.io file (`<mxfile>`: shown page plus the preserved pages). */
+  getProjectXml(): string {
+    return this.projectService.generateProjectXml(this.serializeToXml());
+  }
+
+  /** Downloads the tab as a file, whatever saveProject() is bound to. */
+  saveProjectToDisk(): void {
     try {
       console.log('[SaveLoad] Starting save...');
       const graphXml = this.serializeToXml();
@@ -72,9 +109,25 @@ export class SaveLoadController {
    * the user sees an error notification, and the returned promise rejects.
    */
   async loadProjectFromFile(file: File): Promise<void> {
+    let xml: string;
+    try {
+      xml = await readFileText(file);
+    } catch (error) {
+      globalNotificationManager.error(`Could not open ${file.name}: the file could not be read`);
+      throw error;
+    }
+    await this.loadProjectXml(xml, file.name);
+  }
+
+  /**
+   * Opens a project file's text (draw.io `<mxfile>`, legacy `<project>`, bare model) into this
+   * graph, like loadProjectFromFile. `quiet` skips the success notification (the caller reports).
+   */
+  async loadProjectXml(xml: string, sourceName: string, opts: { quiet?: boolean } = {}): Promise<void> {
+    const file = { name: sourceName };
     try {
       console.log('[SaveLoad] Starting file import:', file.name);
-      const result = await this.projectService.importFromFile(file);
+      const result = await this.projectService.parseProjectXml(xml);
       console.log('[SaveLoad] File imported, metadata:', result.metadata);
       console.log('[SaveLoad] Deserializing graph...');
 
@@ -94,7 +147,7 @@ export class SaveLoadController {
           `Opened ${file.name}: only the first page is shown. Not loaded: ${names}. ` +
             'They are kept unchanged when you save.'
         );
-      } else {
+      } else if (!opts.quiet) {
         globalNotificationManager.success(`Opened ${file.name}`);
       }
       console.log('[SaveLoad] Project loaded:', result.metadata.name);

@@ -276,10 +276,7 @@ export class InteractiveUIController {
   private setupTopBar(): void {
     // .save-status is owned by globalSaveStatusIndicator. The old click handler here only
     // faked a "Saved" text (nothing was saved) and could overwrite autosave error messages.
-
-    document.querySelector('.share-btn')?.addEventListener('click', () => {
-      console.log('[UI] Share diagram - Not yet implemented');
-    });
+    // .share-btn opens the Share dialog; bound once in legacy-main.ts (src/share/share-dialog.ts)
   }
 
   private setupGraphListeners(): void {

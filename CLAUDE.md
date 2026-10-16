@@ -60,6 +60,7 @@ CI (`.github/workflows/build-and-deploy.yml`) runs typecheck, typecheck:tests, l
   Sankey gradient band). ERTMS: 40/40 pass.
 - `tests/e2e/drawio-palette.spec.ts` (any port): Shapes tab (no draw.io/Stencils tabs) renders the palettes, "More shapes…" toggles palettes and app groups, inserts keep draw.io styles, autosave
   writes real draw.io shape names.
+- `tests/e2e/share.spec.ts` (any port): Share dialog, `#R` link round trip into a fresh browser context, downloads.
 - `tests/e2e/templates.spec.ts` (any port): ERTMS palette 18 entries, Templates tab 22 ERTMS templates (search,
   insert, open as new diagram, drag), tab bar labels not cut, Save as Template… -> reload -> insert, rename, delete.
 
@@ -244,6 +245,44 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
 - `VITE_DRAWIO_URL` (default `https://embed.diagrams.net/`) and `VITE_DRAWIO_PARAMS` select the draw.io server.
 - The maxGraph editor shows the same `public/libraries/ertms.xml` (elements in the Shapes/ERTMS tabs, scenarios as templates). The old maxGraph-side
   ERTMS placeholder shapes (`src/shapes/ertms/index.ts`) are only registered as renderers, for old files.
+
+### Sharing (`src/share/`)
+
+- `install-sharing.ts` (called from `legacy-main.ts`) wires everything: top-bar `#share-btn` and File > Share…
+  (`data-action="share"` -> `window` event `share-request`) open `share-dialog.ts`; File-menu items
+  "Open from/Save to <provider>…" are generated into `#file-menu-remote-items` for available providers.
+- **Link with the diagram** (`share-link.ts`, `share-mxfile.ts`): all tabs (+ each tab's preserved pages) as one
+  `<mxfile>` (`buildShareMxfile`, unique page ids) -> `#R` + base64url(deflateRaw(encodeURIComponent(xml)))
+  (CompressionStream). The app.diagrams.net link uses draw.io's exact format (`'#R' + encodeURIComponent(Graph.compress(xml))`,
+  standard base64; EditorUi.js:9545 / App.js:6669). The reader accepts both alphabets and raw-XML `#R` links,
+  caps the hash, the inflated stream and the decoded XML (5 MB), and never evaluates anything. Links over 32k chars get a warning.
+- Incoming links (`share-open.ts`): on start and on `hashchange`, the hash is stripped (replaceState) and each page opens in a
+  **new tab** via `SaveLoadController.loadProjectXml` (existing tabs kept; a lone empty tab is closed). `drawio/boot.ts`
+  starts the legacy editor for a `#R` hash even when draw.io mode is remembered (the remembered mode is not changed).
+- Downloads: .drawio (all tabs), PNG/SVG of the current tab via `src/ui/diagram-image-export.ts` (the parity
+  harness's draw.io-like export pipeline, now shared with `src/debug/parity-hook.ts`), Web Share API buttons only
+  when `navigator.canShare` accepts the file.
+- **Cloud providers** (`providers/types.ts`): `StorageProviderDescriptor` (main bundle: id, label, `availability()`,
+  `load()` = dynamic import, `resumePendingSignIn`) and `StorageProvider` (account, `list(path)` browse
+  containers->folders->files, `open`, `save(file, xml, expectedVersion)` -> conflict result, `saveAs(path, name, xml,
+  fail|replace|rename)`, optional `createShareLink`). `providers/registry.ts` lists them (SharePoint first; GitLab next).
+  Dialogs (`ui/remote-dialogs.ts`) and the Share dialog render providers generically.
+- `remote-session.ts`: per-tab binding (provider id + ref + version, in memory only), `SaveLoadController.setSaveHandler`
+  redirects Ctrl+S / File > Save to `saveBack` (version conflict -> overwrite / save as copy / cancel); File > Save As…
+  (`saveProjectToDisk`) always downloads. Status bar `#status-remote-item` "Stored in:". TabManager now dispatches
+  `window` events `tab-changed` (switchTab) and `tab-closed` (closeTab).
+- **SharePoint** (`providers/sharepoint/`, docs/SHAREPOINT.md): disabled unless `VITE_MSAL_CLIENT_ID` is set at build
+  time (`VITE_MSAL_TENANT_ID` default `organizations`, `VITE_SHAREPOINT_DEFAULT_SITE` `host:/sites/Name`). vite.config.ts
+  `define`s these keys (empty when unset) so `import.meta.env.VITE_MSAL_CLIENT_ID ? () => import(...) : null` is a
+  constant: unconfigured builds contain no MSAL code and no SharePoint chunk. Plain http (except localhost) ->
+  "SharePoint requires HTTPS — use https://railwaydrawer.mksystemdesign.org". `@azure/msal-browser` is pinned (5.24.0):
+  popup with redirect fallback; msal 5 needs `broadcastResponseToMainFrame` on the redirect page, and the redirect URI is
+  the app itself, so `main.ts` runs `auth-bridge.ts` instead of the editor when the URL carries `state`+`code|error`.
+  `graph-client.ts`: Graph v1.0 via fetch (nextLink paging, 429/503 retry, PUT < 4 MB else upload session, If-Match ->
+  412 `GraphConflictError`, createLink, invite). Scopes: Sites.Read.All (browse), Files.ReadWrite.All (content, links).
+- Tests: `src/share/__tests__/` (link codec incl. draw.io's algorithm via node:zlib, Graph client with mocked fetch,
+  dialog, remote session, provider, config), `tests/e2e/share.spec.ts` (any port: copy link -> fresh context opens the
+  tabs, downloads, damaged link, SharePoint "Not configured").
 
 ## Deploy
 
