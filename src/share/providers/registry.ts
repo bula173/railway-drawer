@@ -1,9 +1,10 @@
 /**
  * @file registry.ts
- * @brief The cloud storage providers, in the order the UI shows them (SharePoint first).
- *        A new provider (GitLab, ...) adds its descriptor here; the Share dialog, the File menu
- *        items and the Open from/Save to dialogs render every entry generically.
+ * @brief The cloud storage providers, in the order the UI shows them (SharePoint, GitLab).
+ *        A new provider adds its descriptor here; the Share dialog, the File menu items and the
+ *        Open from/Save to dialogs render every entry generically.
  */
+import { createGitLabDescriptor } from './gitlab';
 import { createSharePointDescriptor } from './sharepoint';
 import type { StorageProviderDescriptor } from './types';
 
@@ -13,5 +14,8 @@ export interface ProviderRegistryOptions {
 }
 
 export function createStorageProviders(opts: ProviderRegistryOptions = {}): StorageProviderDescriptor[] {
-  return [createSharePointDescriptor({ beforeRedirect: opts.beforeRedirect })];
+  return [
+    createSharePointDescriptor({ beforeRedirect: opts.beforeRedirect }),
+    createGitLabDescriptor({ beforeRedirect: opts.beforeRedirect }),
+  ];
 }

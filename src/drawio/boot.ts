@@ -23,7 +23,7 @@ export interface StartEditorOptions {
   drawioOptions?: DrawioWorkspaceOptions;
   /** Location search string to resolve the mode from. Default `window.location.search`. */
   search?: string;
-  /** Location hash. Default `window.location.hash`; a `#R…` diagram link forces the legacy editor. */
+  /** Location hash. Default `window.location.hash`; a `#R…` diagram link (or `?gitlab=`) forces the legacy editor. */
   hash?: string;
 }
 
@@ -48,7 +48,8 @@ export async function startEditor(opts: StartEditorOptions): Promise<StartedEdit
   const hash = opts.hash ?? window.location.hash;
   // A diagram link (`#R…`, src/share/share-link.ts) opens in the maxGraph editor, which loads it as
   // new tabs; the remembered mode is not changed (the next normal start uses it again).
-  const sharedDiagram = hash.startsWith('#R') && hash.length > 2;
+  // Same for a link to a GitLab file (`?gitlab=project:branch:path`, src/share/providers/gitlab).
+  const sharedDiagram = (hash.startsWith('#R') && hash.length > 2) || new URLSearchParams(search).has('gitlab');
   const mode = sharedDiagram ? 'legacy' : getEditorMode(search);
   // An explicit ?editor= choice becomes the remembered default.
   if (!sharedDiagram && new URLSearchParams(search).has('editor')) setEditorMode(mode);

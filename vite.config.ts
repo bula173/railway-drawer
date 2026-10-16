@@ -17,18 +17,21 @@ const buildTime = new Date().toISOString()
 // Workers Builds variables). Always defined (empty when unset), so `if (!import.meta.env.VITE_MSAL_CLIENT_ID)`
 // is a constant and the MSAL chunk is not even built for unconfigured deployments.
 const SHAREPOINT_ENV_KEYS = ['VITE_MSAL_CLIENT_ID', 'VITE_MSAL_TENANT_ID', 'VITE_SHAREPOINT_DEFAULT_SITE'] as const
+// GitLab (docs/GITLAB.md): build-time defaults; the URL and application id can also be set at
+// runtime in the Share dialog, so the GitLab chunk is always built (and only loaded when used).
+const GITLAB_ENV_KEYS = ['VITE_GITLAB_URL', 'VITE_GITLAB_CLIENT_ID', 'VITE_GITLAB_DEFAULT_PROJECT'] as const
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), 'VITE_')
-  const sharePointDefines = Object.fromEntries(
-    SHAREPOINT_ENV_KEYS.map((key) => [`import.meta.env.${key}`, JSON.stringify(env[key] ?? '')])
+  const providerDefines = Object.fromEntries(
+    [...SHAREPOINT_ENV_KEYS, ...GITLAB_ENV_KEYS].map((key) => [`import.meta.env.${key}`, JSON.stringify(env[key] ?? '')])
   )
   return {
   define: {
     'import.meta.env.VITE_BUILD_ID': JSON.stringify(buildId),
     'import.meta.env.VITE_BUILD_TIME': JSON.stringify(buildTime),
-    ...sharePointDefines,
+    ...providerDefines,
   },
   resolve: {
     alias: {

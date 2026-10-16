@@ -2,7 +2,8 @@
  * @file install-sharing.ts
  * @brief Wires sharing into the legacy editor (called once from legacy-main.ts):
  *        Share button + File > Share…, File menu items of the cloud providers, the remote-file
- *        session (Ctrl+S save-back, status bar), incoming `#R` diagram links, pending sign-ins.
+ *        session (Ctrl+S save-back, status bar), incoming `#R` diagram links, provider file links
+ *        (`?gitlab=`), pending sign-ins.
  */
 import type { TabData, TabManager } from '../ui/tabs';
 import { renderXmlToPngBlob, renderXmlToSvgDocument } from '../ui/diagram-image-export';
@@ -95,6 +96,10 @@ export function installSharing(tabManager: TabManager, notify: SharingNotifier):
       hasRemoteFile: (providerId) => !!remoteSession.activeBinding(providerId),
       remoteFileName: (providerId) => remoteSession.activeBinding(providerId)?.name ?? null,
       onProviderAction: runProviderAction,
+      onProviderSettingsChanged: () => {
+        renderProviderMenuItems();
+        void remoteSession.openIncomingLinks();
+      },
       notify,
     });
 
@@ -106,8 +111,11 @@ export function installSharing(tabManager: TabManager, notify: SharingNotifier):
   });
 
   // File menu: "Open from <provider>…" / "Save to <provider>…" for every usable provider
+  // (rebuilt when runtime provider settings change)
   const menuAnchor = document.getElementById('file-menu-remote-items');
-  if (menuAnchor) {
+  function renderProviderMenuItems(): void {
+    if (!menuAnchor) return;
+    menuAnchor.replaceChildren();
     for (const provider of providers) {
       if (provider.availability().state !== 'ready') continue;
       for (const [action, label] of [
@@ -122,8 +130,10 @@ export function installSharing(tabManager: TabManager, notify: SharingNotifier):
       }
     }
   }
+  renderProviderMenuItems();
 
-  void remoteSession.resumePendingSignIns();
+  // Redirect sign-ins first (they may be what an incoming link was waiting for)
+  void remoteSession.resumePendingSignIns().then(() => remoteSession.openIncomingLinks());
 
   const sharedLinkHandled = installShareLinkHandler(
     {

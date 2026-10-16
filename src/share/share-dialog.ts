@@ -6,15 +6,16 @@
  *   the same diagram as an app.diagrams.net link. Nothing is uploaded.
  * - File: Download .drawio, Export PNG/SVG (current tab), Share file… (Web Share API, only shown
  *   when the browser can share that file type).
- * - One section per cloud storage provider (SharePoint first): "Not configured" with a how-to
- *   link, "requires HTTPS", or Open from / Save to / Sharing link.
+ * - One section per cloud storage provider (SharePoint, GitLab): "Not configured" with a how-to
+ *   link, "requires HTTPS", or Open from / Save to / Sharing link; providers with runtime settings
+ *   (GitLab URL + application id) get a Settings form, and the section is redrawn after saving.
  */
 import {
   SHARE_LINK_WARN_LENGTH,
   buildAppShareLink,
   buildDrawioShareLink,
 } from './share-link';
-import type { StorageProviderDescriptor } from './providers/types';
+import type { SaveFieldValues, StorageProviderDescriptor } from './providers/types';
 import { button, copyText, el, openModal } from './ui/modal';
 import type { Modal } from './ui/modal';
 
@@ -43,6 +44,8 @@ export interface ShareDialogHost {
   /** Name of that file, for the button tooltip. */
   remoteFileName?(providerId: string): string | null;
   onProviderAction(providerId: string, action: ProviderAction): void;
+  /** A provider's runtime settings were saved or reset (rebuild menus, open pending links). */
+  onProviderSettingsChanged?(providerId: string): void;
   notify: ShareNotifier;
   /** Base URL of share links (default: this page without query/hash). */
   baseUrl?: string;
@@ -248,6 +251,7 @@ function renderProviderSection(provider: StorageProviderDescriptor, host: ShareD
   section.setAttribute('aria-labelledby', heading.id);
   section.appendChild(heading);
   const availability = provider.availability();
+  const settings = provider.settings ? renderSettings(provider, host, () => section.replaceWith(renderProviderSection(provider, host, modal)), availability.state !== 'ready') : null;
 
   if (availability.state !== 'ready') {
     const status = el('p', 'rd-share-hint');
@@ -266,6 +270,7 @@ function renderProviderSection(provider: StorageProviderDescriptor, host: ShareD
       status.appendChild(link);
     }
     section.appendChild(status);
+    if (settings) section.appendChild(settings);
     return section;
   }
 
@@ -288,5 +293,68 @@ function renderProviderSection(provider: StorageProviderDescriptor, host: ShareD
   linkBtn.dataset.testid = `share-provider-${provider.id}-link`;
   row.append(openBtn, saveBtn, linkBtn);
   section.appendChild(row);
+  if (settings) section.appendChild(settings);
   return section;
+}
+
+/** The provider's runtime settings (collapsed unless the provider still needs them). */
+function renderSettings(provider: StorageProviderDescriptor, host: ShareDialogHost, redraw: () => void, open: boolean): HTMLElement {
+  const settings = provider.settings!;
+  const details = el('details', 'rd-share-settings');
+  details.dataset.testid = `share-provider-${provider.id}-settings`;
+  details.open = open;
+  details.appendChild(el('summary', undefined, `${provider.label} settings`));
+  const values = settings.values();
+  const inputs: Array<{ id: string; kind: 'text' | 'checkbox'; input: HTMLInputElement }> = [];
+  for (const field of settings.fields) {
+    const row = el('div', field.kind === 'checkbox' ? 'rd-share-field rd-share-field-check' : 'rd-share-field');
+    const input = el('input', field.kind === 'checkbox' ? undefined : 'rd-share-input');
+    input.id = `rd-share-setting-${provider.id}-${field.id}`;
+    input.dataset.setting = field.id;
+    const label = el('label', 'rd-share-field-label', field.label);
+    label.htmlFor = input.id;
+    if (field.kind === 'checkbox') {
+      input.type = 'checkbox';
+      input.checked = values[field.id] === true;
+      row.append(input, label);
+    } else {
+      input.type = 'text';
+      input.spellcheck = false;
+      input.value = typeof values[field.id] === 'string' ? (values[field.id] as string) : '';
+      if (field.placeholder) input.placeholder = field.placeholder;
+      row.append(label, input);
+    }
+    if (field.hint) row.appendChild(el('div', 'rd-share-hint', field.hint));
+    details.appendChild(row);
+    inputs.push({ id: field.id, kind: field.kind, input });
+  }
+  const hint = settings.hint?.();
+  if (hint) details.appendChild(el('p', 'rd-share-hint', hint));
+  const error = el('div', 'rd-share-error');
+  error.setAttribute('role', 'alert');
+  error.hidden = true;
+  const row = el('div', 'rd-share-row');
+  const saveBtn = button('Save settings', 'rd-share-btn rd-share-btn-primary', () => {
+    const next: SaveFieldValues = Object.fromEntries(inputs.map(({ id, kind, input }) => [id, kind === 'checkbox' ? input.checked : input.value.trim()]));
+    try {
+      settings.save(next);
+    } catch (err) {
+      error.hidden = false;
+      error.textContent = err instanceof Error ? err.message : String(err);
+      return;
+    }
+    host.notify.success(`${provider.label} settings saved in this browser.`);
+    redraw();
+    host.onProviderSettingsChanged?.(provider.id);
+  });
+  saveBtn.dataset.testid = `share-provider-${provider.id}-settings-save`;
+  const resetBtn = button('Reset to defaults', 'rd-share-btn', () => {
+    settings.reset();
+    host.notify.info(`${provider.label} settings reset to the defaults of this deployment.`);
+    redraw();
+    host.onProviderSettingsChanged?.(provider.id);
+  });
+  row.append(saveBtn, resetBtn);
+  details.append(error, row);
+  return details;
 }

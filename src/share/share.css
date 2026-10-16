@@ -299,3 +299,49 @@
 .status-item.status-remote[hidden] {
   display: none;
 }
+
+/* Provider save fields (commit message, branch, merge request) and runtime settings */
+.rd-share-fields {
+  margin-top: 8px;
+}
+
+.rd-share-field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-top: 8px;
+}
+
+.rd-share-field .rd-share-input {
+  flex: none;
+  width: 100%;
+}
+
+.rd-share-field-check {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.rd-share-field-check .rd-share-hint {
+  flex-basis: 100%;
+}
+
+.rd-share-field-label {
+  font-weight: 600;
+}
+
+.rd-share-settings {
+  margin-top: 8px;
+}
+
+.rd-share-settings summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.rd-share-settings summary:focus-visible {
+  outline: 2px solid var(--rd-accent, #1a73e8);
+  outline-offset: 2px;
+}

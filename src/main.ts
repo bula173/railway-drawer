@@ -14,6 +14,7 @@
  */
 
 import { startEditor } from './drawio/boot';
+import { isGitLabAuthResponseUrl } from './share/providers/gitlab/config';
 import { isAuthResponseUrl } from './share/providers/sharepoint/config';
 
 // Microsoft sign-in answers come back to the app's own URL (the Entra redirect URI). Such a load
@@ -23,7 +24,12 @@ const loadAuthBridge = import.meta.env.VITE_MSAL_CLIENT_ID
   ? () => import('./share/providers/sharepoint/auth-bridge')
   : null;
 
-if (loadAuthBridge && isAuthResponseUrl(window.location)) {
+// GitLab sign-in answers carry `state=rdgl-…` (checked first: they would also look like Entra's).
+if (isGitLabAuthResponseUrl(window.location)) {
+  import('./share/providers/gitlab/auth-bridge')
+    .then((bridge) => bridge.runGitLabAuthBridge())
+    .catch((error: unknown) => console.error('Failed to complete the GitLab sign-in:', error));
+} else if (loadAuthBridge && isAuthResponseUrl(window.location)) {
   loadAuthBridge()
     .then((bridge) => bridge.runAuthBridge())
     .catch((error: unknown) => console.error('Failed to complete the sign-in:', error));

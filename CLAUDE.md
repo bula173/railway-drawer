@@ -61,6 +61,9 @@ CI (`.github/workflows/build-and-deploy.yml`) runs typecheck, typecheck:tests, l
 - `tests/e2e/drawio-palette.spec.ts` (any port): Shapes tab (no draw.io/Stencils tabs) renders the palettes, "More shapes…" toggles palettes and app groups, inserts keep draw.io styles, autosave
   writes real draw.io shape names.
 - `tests/e2e/share.spec.ts` (any port): Share dialog, `#R` link round trip into a fresh browser context, downloads.
+- `tests/e2e/gitlab.spec.ts` (any port): GitLab "Not configured" -> runtime settings -> Open/Save + sign-in button,
+  File-menu items without reload, `?gitlab=` link on an unconfigured browser. Requests to the fake GitLab URL are
+  intercepted and must not happen.
 - `tests/e2e/templates.spec.ts` (any port): ERTMS palette 18 entries, Templates tab 22 ERTMS templates (search,
   insert, open as new diagram, drag), tab bar labels not cut, Save as Template… -> reload -> insert, rename, delete.
 
@@ -265,8 +268,16 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
 - **Cloud providers** (`providers/types.ts`): `StorageProviderDescriptor` (main bundle: id, label, `availability()`,
   `load()` = dynamic import, `resumePendingSignIn`) and `StorageProvider` (account, `list(path)` browse
   containers->folders->files, `open`, `save(file, xml, expectedVersion)` -> conflict result, `saveAs(path, name, xml,
-  fail|replace|rename)`, optional `createShareLink`). `providers/registry.ts` lists them (SharePoint first; GitLab next).
-  Dialogs (`ui/remote-dialogs.ts`) and the Share dialog render providers generically.
+  fail|replace|rename)`, optional `createShareLink`). `providers/registry.ts` lists them (SharePoint, then GitLab).
+  Dialogs (`ui/remote-dialogs.ts`) and the Share dialog render providers generically. Optional generic extensions
+  (added for GitLab): `saveFields(ctx)` (extra save inputs: rendered in the Save-to browse dialog per location and
+  asked by `saveBack` on Ctrl+S via `askSaveOptions`; values are passed as an extra last argument only when present),
+  `conflictActions`/`resolveConflict` (extra buttons in the conflict dialog, `ConflictChoice` `action:<id>`),
+  `SaveResult.note/link` (link shown by `showResultLink`), `openRef` + descriptor `incomingLink/clearIncomingLink`
+  (`RemoteSession.openIncomingLinks`, run after `resumePendingSignIns`; `askSignIn` dialog so the popup has a user
+  gesture), descriptor `settings` (runtime settings form in the Share dialog; on save the section is redrawn and
+  `onProviderSettingsChanged` rebuilds the File-menu items and retries incoming links). `ShareLinkCapability`
+  `typesLegend/audiencesLegend`. The pending-redirect key moved to `providers/pending.ts`.
 - `remote-session.ts`: per-tab binding (provider id + ref + version, in memory only), `SaveLoadController.setSaveHandler`
   redirects Ctrl+S / File > Save to `saveBack` (version conflict -> overwrite / save as copy / cancel); File > Save As…
   (`saveProjectToDisk`) always downloads. Status bar `#status-remote-item` "Stored in:". TabManager now dispatches
@@ -280,9 +291,33 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   the app itself, so `main.ts` runs `auth-bridge.ts` instead of the editor when the URL carries `state`+`code|error`.
   `graph-client.ts`: Graph v1.0 via fetch (nextLink paging, 429/503 retry, PUT < 4 MB else upload session, If-Match ->
   412 `GraphConflictError`, createLink, invite). Scopes: Sites.Read.All (browse), Files.ReadWrite.All (content, links).
+- **GitLab** (`providers/gitlab/`, docs/GITLAB.md): gitlab.com or self-hosted (also plain-http LAN). Config =
+  build-time `VITE_GITLAB_URL`, `VITE_GITLAB_CLIENT_ID`, `VITE_GITLAB_DEFAULT_PROJECT` (vite.config.ts `define`s them,
+  empty when unset) overridden by runtime settings in localStorage `rd.gitlab.settings` (Share > GitLab settings;
+  only differences from the build defaults are stored; changing URL/app id drops tokens). Unlike SharePoint the chunk
+  (`gitlab-loader.ts`) is always built and only loaded when configured+used. Availability: not configured / invalid
+  URL / https page + http GitLab (mixed content) / ready. OAuth 2.0 code + PKCE S256 public client (`oauth.ts`,
+  `pkce.ts` with a JS SHA-256 fallback because `crypto.subtle` is missing on the http LAN page), scope `api` (smallest
+  that allows REST commits + MRs), `state` prefix `rdgl-`: `main.ts` routes such loads to `gitlab/auth-bridge.ts`
+  before the SharePoint check. Popup opened synchronously in the click, answer via BroadcastChannel `rd-gitlab-auth`
+  (GitLab's sign-in page sends COOP same-origin, so no opener); popup closed = rejected only when the app window has
+  focus again; blocked -> redirect (flow record in sessionStorage `rd.gitlab.oauth.flow`, bridge stores the answer
+  and `location.replace`s back, `completeRedirect` in the loader). Tokens in sessionStorage `rd.gitlab.auth`
+  (localStorage with "Stay signed in"), refresh 60 s before the 2 h expiry and after 401 (single flight). REST v4
+  client `gitlab-client.ts` (X-Next-Page / Link paging, file paths encoded incl. `.`, UTF-8 base64,
+  400 "changed since you started editing" -> `GitLabConflictError`, 413/"too large" -> `GitLabTooLargeError`).
+  Provider: projects (default, starred, member; search) -> branches -> tree; version = `last_commit_id` (new one via
+  HEAD `X-Gitlab-Last-Commit-Id`); save = PUT with commit message + `last_commit_id`; saveAs = POST (optional new
+  branch created from the base first, rename = `name (2).drawio`); MR checkbox (409 -> reuse the open MR); conflict
+  action "Save to new branch" branches from the version you started from; 50 MB client cap. Share link
+  `?gitlab=<project>:<branch>:<path>` (parts percent-encoded, `/` kept; parsed from the raw query) + GitLab blob
+  URL; the descriptor stores it in sessionStorage `rd.gitlab.pendingOpen` and strips it; `drawio/boot.ts` forces the
+  legacy editor for it. Status bar "GitLab: group/project › branch › path".
 - Tests: `src/share/__tests__/` (link codec incl. draw.io's algorithm via node:zlib, Graph client with mocked fetch,
-  dialog, remote session, provider, config), `tests/e2e/share.spec.ts` (any port: copy link -> fresh context opens the
-  tabs, downloads, damaged link, SharePoint "Not configured").
+  dialog, remote session, provider, config; `gitlab.test.ts`: PKCE vectors, OAuth popup/redirect/refresh, bridge,
+  client paging/errors, provider against an in-memory GitLab, config/links, descriptor; `gitlab-session.test.ts`:
+  save fields, conflict actions, incoming links, Share-dialog settings), `tests/e2e/share.spec.ts` (any port: copy
+  link -> fresh context opens the tabs, downloads, damaged link, SharePoint "Not configured"), `tests/e2e/gitlab.spec.ts`.
 
 ## Deploy
 

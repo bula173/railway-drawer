@@ -6,15 +6,80 @@
 import type {
   BrowseEntry,
   BrowseListing,
+  ConflictAction,
   ConflictBehavior,
   RemoteFileInfo,
+  ResultLink,
+  SaveField,
+  SaveFieldValues,
   StorageProvider,
 } from '../providers/types';
 import { button, copyText, el, openModal } from './modal';
 
 export type BrowseResult =
   | { mode: 'open'; path: BrowseEntry[]; file: BrowseEntry }
-  | { mode: 'save'; path: BrowseEntry[]; name: string; conflict: ConflictBehavior };
+  /** `values`: answers to the provider's `saveFields` (only when it has any). */
+  | { mode: 'save'; path: BrowseEntry[]; name: string; conflict: ConflictBehavior; values?: SaveFieldValues };
+
+let fieldCounter = 0;
+
+export interface RenderedFields {
+  element: HTMLElement;
+  values(): SaveFieldValues;
+  /** First input (for focus). */
+  first: HTMLElement | null;
+}
+
+/**
+ * Inputs for provider save fields (commit message, branch, checkboxes). `previous` keeps what
+ * the user already typed when the fields are rendered again (the location changed).
+ */
+export function renderSaveFields(fields: SaveField[], previous: SaveFieldValues = {}, onEnter?: () => void): RenderedFields {
+  const element = el('div', 'rd-share-fields');
+  const inputs: Array<{ field: SaveField; input: HTMLInputElement }> = [];
+  for (const field of fields) {
+    const id = `rd-share-field-${++fieldCounter}`;
+    const row = el('div', field.kind === 'checkbox' ? 'rd-share-field rd-share-field-check' : 'rd-share-field');
+    row.dataset.field = field.id;
+    const input = el('input', field.kind === 'checkbox' ? undefined : 'rd-share-input');
+    input.id = id;
+    input.dataset.field = field.id;
+    const label = el('label', 'rd-share-field-label', field.label);
+    label.htmlFor = id;
+    const kept = previous[field.id];
+    if (field.kind === 'checkbox') {
+      input.type = 'checkbox';
+      input.checked = typeof kept === 'boolean' ? kept : field.value === true;
+      row.append(input, label);
+    } else {
+      input.type = 'text';
+      input.value = typeof kept === 'string' ? kept : typeof field.value === 'string' ? field.value : '';
+      if (field.placeholder) input.placeholder = field.placeholder;
+      if (onEnter) {
+        input.addEventListener('keydown', (evt) => {
+          if (evt.key === 'Enter') {
+            evt.preventDefault();
+            onEnter();
+          }
+        });
+      }
+      row.append(label, input);
+    }
+    if (field.hint) {
+      const hint = el('div', 'rd-share-hint', field.hint);
+      hint.id = `${id}-hint`;
+      input.setAttribute('aria-describedby', hint.id);
+      row.appendChild(hint);
+    }
+    element.appendChild(row);
+    inputs.push({ field, input });
+  }
+  return {
+    element,
+    first: inputs[0]?.input ?? null,
+    values: () => Object.fromEntries(inputs.map(({ field, input }) => [field.id, field.kind === 'checkbox' ? input.checked : input.value.trim()])),
+  };
+}
 
 export interface BrowseOptions {
   mode: 'open' | 'save';
@@ -94,9 +159,23 @@ export function browseRemote(provider: StorageProvider, opts: BrowseOptions): Pr
     const saveRow = el('div', 'rd-share-row');
     const nameLabel = el('label', 'rd-share-hint', 'File name');
     saveRow.append(nameLabel, nameInput, conflictSelect);
+    // Provider save fields (GitLab: commit message, new branch, merge request), per location
+    const fieldsHost = el('div');
+    let fields: RenderedFields | null = null;
+    let fieldsKey = '';
+    const renderFields = (): void => {
+      if (!isSave) return;
+      const defs = provider.saveFields?.({ kind: 'saveAs', path }) ?? [];
+      const key = JSON.stringify(defs);
+      if (key === fieldsKey) return;
+      const kept = fields?.values() ?? {};
+      fieldsKey = key;
+      fields = defs.length > 0 ? renderSaveFields(defs, kept, () => confirm()) : null;
+      fieldsHost.replaceChildren(...(fields ? [fields.element] : []));
+    };
 
     modal.body.append(accountRow, message, crumbs, searchForm, heading, list, error);
-    if (isSave) modal.body.appendChild(saveRow);
+    if (isSave) modal.body.append(saveRow, fieldsHost);
 
     const cancelBtn = button('Cancel', 'rd-share-btn', () => modal.close());
     const confirmBtn = button(isSave ? 'Save' : 'Open', 'rd-share-btn rd-share-btn-primary');
@@ -183,6 +262,7 @@ export function browseRemote(provider: StorageProvider, opts: BrowseOptions): Pr
       selected = null;
       error.hidden = true;
       renderCrumbs();
+      renderFields();
       list.setAttribute('aria-busy', 'true');
       heading.textContent = 'Loading…';
       updateConfirm();
@@ -214,7 +294,8 @@ export function browseRemote(provider: StorageProvider, opts: BrowseOptions): Pr
       if (isSave) {
         let name = nameInput.value.trim();
         if (!/\.(drawio|xml)$/i.test(name)) name += '.drawio';
-        result = { mode: 'save', path, name, conflict: conflictSelect.value as ConflictBehavior };
+        const values = fields?.values();
+        result = { mode: 'save', path, name, conflict: conflictSelect.value as ConflictBehavior, ...(values ? { values } : {}) };
       } else if (selected) {
         result = { mode: 'open', path, file: selected };
       }
@@ -259,10 +340,11 @@ export function browseRemote(provider: StorageProvider, opts: BrowseOptions): Pr
   });
 }
 
-export type ConflictChoice = 'overwrite' | 'copy' | 'cancel';
+/** Overwrite / Save as copy / Cancel, or a provider's `ConflictAction` (`action:<id>`). */
+export type ConflictChoice = 'overwrite' | 'copy' | 'cancel' | `action:${string}`;
 
 /** The file changed remotely since it was opened/saved. */
-export function askSaveConflict(providerLabel: string, message: string): Promise<ConflictChoice> {
+export function askSaveConflict(providerLabel: string, message: string, actions: ConflictAction[] = []): Promise<ConflictChoice> {
   return new Promise((resolve) => {
     const modal = openModal({ title: 'The file was changed by someone else', testId: 'remote-conflict-dialog' });
     let choice: ConflictChoice = 'cancel';
@@ -276,15 +358,101 @@ export function askSaveConflict(providerLabel: string, message: string): Promise
           'Save as copy keeps both files.'
       )
     );
+    for (const action of actions) {
+      if (action.hint) modal.body.appendChild(el('p', 'rd-share-hint', `${action.label}: ${action.hint}`));
+    }
     const pick = (value: ConflictChoice) => () => {
       choice = value;
       modal.close();
     };
     const cancel = button('Cancel', 'rd-share-btn', pick('cancel'));
     const copy = button('Save as copy', 'rd-share-btn', pick('copy'));
+    const extra = actions.map((action) => {
+      const btn = button(action.label, 'rd-share-btn', pick(`action:${action.id}`));
+      btn.dataset.action = action.id;
+      return btn;
+    });
     const overwrite = button('Overwrite', 'rd-share-btn rd-share-btn-primary', pick('overwrite'));
-    modal.footer.append(cancel, copy, overwrite);
+    modal.footer.append(cancel, copy, ...extra, overwrite);
     copy.focus();
+  });
+}
+
+/** Asks for a provider's save fields (e.g. the commit message on Ctrl+S); null = cancelled. */
+export function askSaveOptions(opts: {
+  title: string;
+  intro?: string;
+  fields: SaveField[];
+  confirmLabel?: string;
+}): Promise<SaveFieldValues | null> {
+  return new Promise((resolve) => {
+    const modal = openModal({ title: opts.title, testId: 'remote-save-options-dialog' });
+    let result: SaveFieldValues | null = null;
+    modal.onClose(() => resolve(result));
+    const confirm = (): void => {
+      result = rendered.values();
+      modal.close();
+    };
+    const rendered = renderSaveFields(opts.fields, {}, confirm);
+    if (opts.intro) modal.body.appendChild(el('p', 'rd-share-hint', opts.intro));
+    modal.body.appendChild(rendered.element);
+    const ok = button(opts.confirmLabel ?? 'Save', 'rd-share-btn rd-share-btn-primary', confirm);
+    ok.dataset.testid = 'remote-save-options-confirm';
+    modal.footer.append(button('Cancel', 'rd-share-btn', () => modal.close()), ok);
+    (rendered.first ?? ok).focus();
+  });
+}
+
+/** After a save that produced something to open (e.g. a merge request). */
+export function showResultLink(title: string, message: string, link: ResultLink): Promise<void> {
+  return new Promise((resolve) => {
+    const modal = openModal({ title, testId: 'remote-result-link-dialog' });
+    modal.onClose(() => resolve());
+    const anchor = el('a', undefined, link.label);
+    anchor.href = link.url;
+    anchor.target = '_blank';
+    anchor.rel = 'noopener noreferrer';
+    const input = el('input', 'rd-share-input rd-share-link-input');
+    input.readOnly = true;
+    input.value = link.url;
+    input.setAttribute('aria-label', link.label);
+    const row = el('p');
+    row.appendChild(anchor);
+    modal.body.append(el('p', undefined, message), row, input);
+    const copyBtn = button('Copy link', 'rd-share-btn', async () => {
+      copyBtn.textContent = (await copyText(link.url)) ? 'Copied' : 'Copy the link above';
+    });
+    modal.footer.append(copyBtn, button('Close', 'rd-share-btn rd-share-btn-primary', () => modal.close()));
+    anchor.focus();
+  });
+}
+
+/** "Sign in to <provider>" (from a click, so the sign-in popup is allowed); true when signed in. */
+export function askSignIn(provider: StorageProvider, message: string): Promise<boolean> {
+  return new Promise((resolve) => {
+    const modal = openModal({ title: `Sign in to ${provider.label}`, testId: 'remote-signin-dialog' });
+    let signedIn = false;
+    modal.onClose(() => resolve(signedIn));
+    const error = el('div', 'rd-share-error');
+    error.setAttribute('role', 'alert');
+    error.hidden = true;
+    modal.body.append(el('p', undefined, message), error);
+    const signInBtn = button('Sign in', 'rd-share-btn rd-share-btn-primary', async () => {
+      signInBtn.disabled = true;
+      error.hidden = true;
+      try {
+        await provider.signIn();
+        signedIn = true;
+        modal.close();
+      } catch (err) {
+        error.hidden = false;
+        error.textContent = `Sign-in failed: ${errorText(err)}`;
+      } finally {
+        signInBtn.disabled = false;
+      }
+    });
+    modal.footer.append(button('Cancel', 'rd-share-btn', () => modal.close()), signInBtn);
+    signInBtn.focus();
   });
 }
 
@@ -301,7 +469,7 @@ export function shareLinkDialog(provider: StorageProvider, file: RemoteFileInfo)
     }
 
     const typeSet = el('fieldset', 'rd-share-fieldset');
-    typeSet.appendChild(el('legend', undefined, 'People with the link'));
+    typeSet.appendChild(el('legend', undefined, capability.typesLegend ?? 'People with the link'));
     capability.types.forEach((type, i) => {
       const label = el('label', 'rd-share-radio');
       const input = el('input');
@@ -314,7 +482,7 @@ export function shareLinkDialog(provider: StorageProvider, file: RemoteFileInfo)
     });
 
     const audienceSet = el('fieldset', 'rd-share-fieldset');
-    audienceSet.appendChild(el('legend', undefined, 'Who'));
+    audienceSet.appendChild(el('legend', undefined, capability.audiencesLegend ?? 'Who'));
     const recipients = el('input', 'rd-share-input');
     recipients.type = 'text';
     recipients.placeholder = 'name@company.com, other@company.com';

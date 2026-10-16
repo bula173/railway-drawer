@@ -10,11 +10,17 @@
  * page reload (the tab cache keeps only the diagram).
  */
 import type {
+  ConflictAction,
+  RemoteFileContent,
   RemoteFileInfo,
+  ResultLink,
+  SaveField,
+  SaveFieldValues,
+  SaveResult,
   StorageProvider,
   StorageProviderDescriptor,
 } from './providers/types';
-import { askSaveConflict, browseRemote, shareLinkDialog } from './ui/remote-dialogs';
+import { askSaveConflict, askSaveOptions, askSignIn, browseRemote, shareLinkDialog, showResultLink } from './ui/remote-dialogs';
 import type { BrowseOptions, BrowseResult, ConflictChoice } from './ui/remote-dialogs';
 
 /** What a tab must offer (TabData satisfies it). */
@@ -47,8 +53,13 @@ export interface RemoteNotifier {
 /** The dialogs (replaceable in tests). */
 export interface RemoteUi {
   browse(provider: StorageProvider, opts: BrowseOptions): Promise<BrowseResult | null>;
-  askConflict(providerLabel: string, message: string): Promise<ConflictChoice>;
+  askConflict(providerLabel: string, message: string, actions?: ConflictAction[]): Promise<ConflictChoice>;
   shareLink(provider: StorageProvider, file: RemoteFileInfo): Promise<void>;
+  /** Provider save fields (commit message, ...); null = cancelled. */
+  askOptions(opts: { title: string; intro?: string; fields: SaveField[]; confirmLabel?: string }): Promise<SaveFieldValues | null>;
+  showLink(title: string, message: string, link: ResultLink): Promise<void>;
+  /** Sign-in prompt for an incoming link (the click allows the popup); true when signed in. */
+  askSignIn(provider: StorageProvider, message: string): Promise<boolean>;
 }
 
 export interface RemoteSessionOptions {
@@ -69,6 +80,11 @@ function errorText(err: unknown): string {
 export function copyFileName(name: string): string {
   const match = /^(.*?)(\.[^.]+)?$/.exec(name);
   return `${match?.[1] || 'diagram'} (copy)${match?.[2] ?? '.drawio'}`;
+}
+
+/** `values` as an extra argument only when there are any (providers without save fields get the old call). */
+function withValues(values: SaveFieldValues | undefined): [] | [SaveFieldValues] {
+  return values ? [values] : [];
 }
 
 function stripExtension(name: string): string {
@@ -93,6 +109,9 @@ export class RemoteSession {
       browse: browseRemote,
       askConflict: askSaveConflict,
       shareLink: shareLinkDialog,
+      askOptions: askSaveOptions,
+      showLink: showResultLink,
+      askSignIn,
       ...opts.ui,
     };
     this.statusItem = opts.statusItem ?? null;
@@ -181,6 +200,11 @@ export class RemoteSession {
       this.notify.error(`Could not open "${choice.file.name}" from ${provider.label}: ${errorText(err)}`);
       return false;
     }
+    return this.openContent(provider, content);
+  }
+
+  /** Loads `content` into a new tab bound to the remote file. */
+  private async openContent(provider: StorageProvider, content: RemoteFileContent): Promise<boolean> {
     const tab = this.host.createTab(stripExtension(content.name));
     try {
       await tab.saveLoadController.loadProjectXml(content.xml, content.name, { quiet: true });
@@ -214,11 +238,17 @@ export class RemoteSession {
       const choice = await this.ui.browse(provider, opts);
       if (!choice || choice.mode !== 'save') return false;
       try {
-        const result = await provider.saveAs(choice.path, choice.name, tab.saveLoadController.getProjectXml(), choice.conflict);
+        const result = await provider.saveAs(
+          choice.path,
+          choice.name,
+          tab.saveLoadController.getProjectXml(),
+          choice.conflict,
+          ...withValues(choice.values)
+        );
         if (result.ok) {
           this.bind(tab, result.file);
           tab.saveLoadController.markAsSavedToDisk?.();
-          this.notify.success(`Saved "${result.file.name}" to ${provider.label}. Ctrl+S saves back to it.`);
+          this.reportSaved(provider, result, `Saved "${result.file.name}" to ${provider.label}. Ctrl+S saves back to it.`);
           return true;
         }
         // Name exists ("ask me"): back to the dialog with a hint
@@ -241,17 +271,38 @@ export class RemoteSession {
       const provider = await this.provider(binding.providerId);
       if (!provider) return false;
       const xml = tab.saveLoadController.getProjectXml();
-      let result = await provider.save(binding, xml, binding.version);
+      // Provider save fields (GitLab: commit message, merge request)
+      const fields = provider.saveFields?.({ kind: 'save', file: binding }) ?? [];
+      let values: SaveFieldValues | undefined;
+      if (fields.length > 0) {
+        values = (await this.ui.askOptions({ title: `Save to ${provider.label}`, intro: binding.location, fields })) ?? undefined;
+        if (!values) {
+          this.notify.info('Not saved. Your changes are still in this tab.');
+          return false;
+        }
+      }
+      let result: SaveResult = await provider.save(binding, xml, binding.version, ...withValues(values));
       if (!result.ok) {
-        const choice = await this.ui.askConflict(provider.label, result.message);
+        const actions = provider.conflictActions?.(binding) ?? [];
+        const choice = await this.ui.askConflict(provider.label, result.message, actions);
         if (choice === 'cancel') {
           this.notify.info('Not saved. Your changes are still in this tab.');
           return false;
         }
-        result =
-          choice === 'overwrite'
-            ? await provider.save(binding, xml, null)
-            : await provider.saveAs(binding.parentPath, copyFileName(binding.name), xml, 'rename');
+        if (choice === 'overwrite') {
+          result = await provider.save(binding, xml, null, ...withValues(values));
+        } else if (choice === 'copy') {
+          result = await provider.saveAs(binding.parentPath, copyFileName(binding.name), xml, 'rename', ...withValues(values));
+        } else {
+          const action = actions.find((a) => `action:${a.id}` === choice);
+          if (!action || !provider.resolveConflict) return false;
+          const answers = action.fields?.length ? await this.ui.askOptions({ title: action.label, fields: action.fields }) : {};
+          if (!answers) {
+            this.notify.info('Not saved. Your changes are still in this tab.');
+            return false;
+          }
+          result = await provider.resolveConflict(binding, xml, action.id, answers);
+        }
         if (!result.ok) {
           this.notify.error(result.message);
           return false;
@@ -259,7 +310,7 @@ export class RemoteSession {
       }
       this.bind(tab, result.file);
       tab.saveLoadController.markAsSavedToDisk?.();
-      this.notify.success(`Saved to ${provider.label}: ${result.file.name}`);
+      this.reportSaved(provider, result, `Saved to ${provider.label}: ${result.file.name}`);
       return true;
     } catch (err) {
       this.notify.error(`Could not save to ${this.descriptor(binding.providerId).label}: ${errorText(err)}`);
@@ -267,6 +318,13 @@ export class RemoteSession {
     } finally {
       this.saving.delete(tabId);
     }
+  }
+
+  /** Success message (+ the provider's note), and the result link (merge request) in a dialog. */
+  private reportSaved(provider: StorageProvider, result: SaveResult, message: string): void {
+    if (!result.ok) return;
+    this.notify.success(result.note ? `${message}. ${result.note}` : message);
+    if (result.link) void this.ui.showLink(`Saved to ${provider.label}`, result.note ?? message, result.link);
   }
 
   /** "Sharing link…" for the active tab's remote file. */
@@ -293,5 +351,59 @@ export class RemoteSession {
         this.notify.error(`${descriptor.label} sign-in failed: ${errorText(err)}`);
       }
     }
+  }
+
+  /**
+   * Startup (and after provider settings change): opens files of incoming provider links
+   * (`?gitlab=…`), asking to sign in first when needed. Resolves with the number of files opened.
+   */
+  async openIncomingLinks(): Promise<number> {
+    let opened = 0;
+    for (const descriptor of this.providers) {
+      const link = descriptor.incomingLink?.();
+      if (!link) continue;
+      const availability = descriptor.availability();
+      if (availability.state !== 'ready') {
+        if (availability.state === 'not-configured') {
+          // kept: it opens once the provider is set up (Share > settings)
+          this.notify.warning(
+            `This link opens "${link.label}" from ${descriptor.label}, but ${descriptor.label} is not set up in this browser. ` +
+              `Enter its settings under Share > ${descriptor.label}; the file opens afterwards.`
+          );
+        } else {
+          descriptor.clearIncomingLink?.();
+          this.notify.warning(`Could not open "${link.label}": ${descriptor.label}: ${availability.reason}`);
+        }
+        continue;
+      }
+      const provider = await this.provider(descriptor.id);
+      if (!provider?.openRef) {
+        descriptor.clearIncomingLink?.();
+        continue;
+      }
+      const prompt = `Sign in to ${provider.label} to open "${link.label}". You need access to the project.`;
+      if (!provider.getAccount() && !(await this.ui.askSignIn(provider, prompt))) {
+        descriptor.clearIncomingLink?.();
+        this.notify.info(`Not opened: "${link.label}" needs a ${provider.label} sign-in.`);
+        continue;
+      }
+      let content: RemoteFileContent | null = null;
+      try {
+        content = await provider.openRef(link.ref);
+      } catch (err) {
+        // The stored session may have expired meanwhile: one more sign-in, then retry
+        if (!provider.getAccount() && (await this.ui.askSignIn(provider, prompt))) {
+          content = await provider.openRef(link.ref).catch((again: unknown) => {
+            this.notify.error(`Could not open "${link.label}" from ${provider.label}: ${errorText(again)}`);
+            return null;
+          });
+        } else {
+          this.notify.error(`Could not open "${link.label}" from ${provider.label}: ${errorText(err)}`);
+        }
+      }
+      descriptor.clearIncomingLink?.();
+      if (content && (await this.openContent(provider, content))) opened++;
+    }
+    return opened;
   }
 }
