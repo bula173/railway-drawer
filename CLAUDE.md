@@ -2,396 +2,384 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Essential Commands
+Railway Drawer: vanilla TypeScript + Vite web app for railway (ERTMS/ETCS) diagrams. Two editors in one page:
+the **legacy maxGraph editor** (`@maxgraph/core` 0.10, default) and the **embedded draw.io editor**
+(diagrams.net iframe with the ERTMS shape library). No framework, no React.
 
-### Development
-- `npm run dev` — Start Vite dev server (port 3000, HMR enabled)
-- `npm run build` — Production build to `/dist` with sourcemaps
-- `npm run preview` — Serve production build locally for testing
+## Commands
 
-### Testing
-- `npm run test` — Run tests in watch mode (Vitest)
-- `npm run test:run` — Run all tests once (CI mode, 114 tests, all passing)
-- `npm run test:ui` — Visual test interface with Vitest UI
-- `npm run test:coverage` — Generate coverage report
-- `npm run test:e2e` — Run Playwright E2E tests
-- `npm run test:e2e:headed` — E2E tests with browser visible
+Node version: `.nvmrc` (24).
 
-### Code Quality
-- `npm run lint` — Run ESLint checks
-- `npm run lint:fix` — Auto-fix ESLint violations
-- `npm run typecheck` — TypeScript type checking without emit
-- `npm run ci` — Full CI pipeline (lint → typecheck → tests → build)
-
----
-
-## Architecture Overview
-
-### Application Structure
-```
-RailwayDrawerApp (main orchestrator)
-├── TopToolbar (zoom, grid, brush tools)
-├── TabPanel (multi-tab workspace management)
-│   └── DrawArea (SVG canvas with complex element system)
-├── Toolbox (drag-drop element library)
-├── DrawioPropertiesPanel (tabbed: General/Style/Text/Arrange)
-├── AlignmentToolbar (element alignment/distribution)
-├── ConnectorPanel (connector type selection)
-├── BrushPanel (brush stroke configuration)
-├── EditMenu (undo/redo/copy/paste)
-├── FloatingLayersPanel (element layers)
-└── StatusBar (info display)
-```
-
-### Data Flow
-1. **Toolbox** → User drags element → **DrawArea** creates DrawElement
-2. **DrawArea** manages:
-   - Element selection (1D objects like connectors vs 2D shapes)
-   - Canvas manipulation (zoom, pan, grid snap)
-   - Element modification (resize, rotate, position)
-3. **DrawioPropertiesPanel** binds to selected element → updates DrawArea
-4. **TabPanel** manages multiple canvas instances independently
-5. **File operations** (save/load/export) serialize tabs to FileData format
-
----
-
-## Key Data Models
-
-### DrawElement (Core Object Type)
-```typescript
-{
-  id: string;              // Unique identifier
-  type: 'shape' | 'connector' | 'brush' | 'text';
-  x: number; y: number;    // Position
-  width: number; height: number;
-  rotation: number;        // Degrees
-  shape: string;           // SVG content or shape ID
-  styles: ElementStyles;   // Colors, strokes, fills
-  shapeElements?: ShapeElement[];  // Sub-elements (for complex shapes)
-  textRegions?: TextRegion[];      // Editable text within shapes
-  connectorType?: string;  // For connectors: 'straight', 'bezier', etc.
-}
-```
-
-### Dimensionality Architecture
-- **2D Objects** (shapes, rectangles, circles): Full manipulation (resize, rotate)
-- **1D Objects** (connectors): Linear manipulation (length, angle, endpoints)
-- Selection and UI differs based on dimensionality
-
-### ToolboxItem (Reusable Element)
-```typescript
-{
-  id: string;
-  name: string;
-  type: 'custom' | 'ertms' | 'rail';
-  group: 'General' | 'ERTMS' | 'Signals' | etc;
-  shapeElements: ShapeElement[];
-  width: number; height: number;
-  dimensionality: '1D' | '2D';
-}
-```
-
----
-
-## Critical Architecture Decisions
-
-### 1. Unified Element System
-- **Connectors** are DrawElements (type='connector'), not separate objects
-- Allows treating all drawable things uniformly
-- Enables copy/paste/properties for connectors like shapes
-
-### 2. ERTMS SVG Enhancement
-- Base64-encoded SVGs in `src/config/ertmsSvgUrls.json`
-- Runtime enhancement via `enhanceToolboxWithRemoteSvgs()`
-- Can upgrade to external hosting (GitHub, CDN) by changing `baseUrl`
-- Automatic fallback to inline SVGs if enhancement fails
-
-### 3. Two-Level Selection
-- **Level 1**: Select DrawElement (shows bounding box)
-- **Level 2**: Click again to select specific ShapeElement within (for text editing)
-- Enables precise editing of complex shapes with multiple components
-
-### 4. Properties Panel Tabs
-- **General**: Element name, ID, dimensionality
-- **Style**: Colors, strokes, fills, opacity
-- **Text**: Text regions within shapes
-- **Arrange**: Position, size, rotation, stacking order
-
----
-
-## Component Interaction Patterns
-
-### Adding New Elements to Toolbox
-1. Edit `src/assets/toolboxConfig.json` with element definition
-2. Include SVG shape, dimensions, and grouping
-3. System auto-loads on app startup
-4. For ERTMS elements: Add to `src/config/ertmsSvgUrls.json` for enhanced SVG
-
-### Modifying Element Properties
-1. User selects element on canvas (DrawArea selection)
-2. DrawioPropertiesPanel reflects current element
-3. User edits property → fires onChange
-4. onChange updates DrawArea state → re-renders element
-
-### Creating New Connectors
-1. Select connector tool from TopToolbar
-2. Click two points on canvas
-3. ConnectorPanel lets user choose style (straight, bezier, etc.)
-4. Element stored as DrawElement with type='connector'
-
----
-
-## File I/O & Persistence
-
-### Saving/Loading
-- `utils/storageManager.ts` handles localStorage persistence
-- Each tab serializes to `DrawAreaTab` (elements + metadata)
-- `FileData` format includes version, timestamp, all tabs
-- Supports JSON export/import for sharing
-
-### Export Formats
-- **PNG/JPG**: html-to-image library
-- **SVG**: Native SVG rendering with cleanup
-- **PDF**: jsPDF with canvas rendering
-
----
-
-## State Management
-
-### Global State (RailwayDrawerApp)
-- Toolbox items
-- Active tabs
-- Global clipboard (for cross-tab copy/paste)
-- Themes and UI preferences
-
-### Local State (DrawArea)
-- Elements array
-- Selection state
-- Zoom/pan
-- Undo/redo history
-
-### Property Panel State
-- Selected element reference
-- Active tab (General/Style/Text/Arrange)
-- Property edit values
-
----
-
-## Testing Approach
-
-### Test Structure
-- **53 unit tests** in `src/components/__tests__/` (all passing)
-- **Vitest** for unit/component tests with React Testing Library
-- **Playwright** for E2E tests
-- All tests run in CI on Ubuntu, Windows, macOS with Node 18 & 20
-
-### Key Test Patterns
-- Mock file operations (`mock-file-ops.ts`)
-- Mock clipboard (`navigator.clipboard`)
-- Render components with props, interact, assert
-- No console errors or React act() warnings
-
-### Running Tests
 ```bash
-npm run test:run          # All tests once
-npm run test:coverage     # With coverage report
-npm run test:e2e          # Playwright headless
-npm run test:e2e:headed   # Playwright with browser visible
+npm run dev                 # Vite dev server on http://localhost:3000 (host: true, so also on the LAN)
+npm run build               # tsc (typecheck) + vite build --base ./  -> dist/ (relative base: same build works at / and /railway-drawer/)
+npm run preview             # serve dist/
+npm run typecheck           # tsc --noEmit (src, excluding __tests__)
+npm run typecheck:tests     # tsc --noEmit -p tsconfig.test.json (src/**/__tests__)
+npm run typecheck:e2e       # tsc --noEmit -p tsconfig.e2e.json (tests/e2e + playwright.config.ts)
+npm run lint                # eslint src (no-explicit-any is a warning; errors must stay at 0)
+npm test                    # vitest watch (jsdom)
+npm run test:run            # vitest once
+npx vitest run src/__tests__/ui/tab-cache-restore.test.ts   # single file
+npx vitest run -t "restores"                                 # tests by name
+npm run test:e2e            # Playwright, chromium, starts vite itself (E2E_PORT, default 3000)
+E2E_PORT=80 npm run test:e2e   # what the draw.io embed spec needs, see below
+E2E_PORT=80 npm run test:parity # maxGraph vs draw.io pixel comparison of every palette entry (see below)
+npm run drawio:palettes     # regenerate palettes + stencil sets from the pinned draw.io tag (Node >= 22.18)
 ```
 
----
+CI (`.github/workflows/build-and-deploy.yml`) runs typecheck, typecheck:tests, lint, test:run, build. It does not deploy.
 
-## Performance Considerations
+### E2E and port 80
 
-### Optimizations in Place
-- **Debounced updates** for frequent property changes
-- **Memoized calculations** for expensive geometry operations
-- **SVG caching** for remote ERTMS SVG loading
-- **Code splitting** in Vite build (vendor chunks for React, utils, etc.)
-- **Lazy loading** of features (Playwright for E2E, jsPDF for export)
+`embed.diagrams.net` answers **HTTP 403** to iframes whose Referer has a non-default port
+(`http://localhost:3000/`) and to the `HeadlessChrome` user agent. So:
 
-### Canvas Rendering
-- DrawArea uses React ref to SVG element (not declarative rendering)
-- Direct manipulation for performance on large element counts
-- Zoom/pan don't re-render all elements, just transform viewport
+- `tests/e2e/drawio-embed.spec.ts` skips itself with a hint on port 3000; it only runs for real with
+  `E2E_PORT=80` (macOS lets non-root bind :80; on Linux set `VITE_DRAWIO_URL` to a self-hosted draw.io).
+- The chromium project uses `devices['Desktop Chrome']`, which sends a normal Chrome UA even headless.
+- `tests/e2e/legacy-smoke.spec.ts` works on any port (drop shape, Ctrl+Z/Ctrl+Y, switch to draw.io and back,
+  draw.io mode loads no maxGraph module).
+- vitest includes `src/**/*.test.ts` and `tests/e2e/parity/__tests__/**/*.test.ts` (the parity harness's
+  own unit tests); Playwright only runs `tests/e2e/*.spec.ts` (`testMatch`). `tsconfig.json` only covers `src`.
+- `tests/e2e/drawio-parity.spec.ts`: renders every palette entry (7 draw.io palettes + ERTMS, 347) in
+  embed.diagrams.net (`export` message, served from a routed `http://localhost/parity/drawio-host.html`) and
+  in the app through `window.__rdParity.render(xml, {scale, border, background})` (`src/debug/parity-hook.ts`,
+  installed only in dev builds or with `?parity=1`; it mirrors draw.io's PNG export: an SVG at view scale 1
+  laid out like `Graph.getSvg`, rasterized with `ctx.scale(scale)` like `Editor.exportToCanvas`, so
+  rounding and the 0.5 px stroke offsets match; `__rdParity.svg(xml, opts)` returns that SVG for
+  debugging), then compares them (`tests/e2e/parity/compare.ts`: best
+  alignment within ±2 px, a pixel differs only if its colour is not found within 1 px in the other image;
+  pixelmatch gives the strict count). pass <= 2 %, warn <= 6 %, fail above; accepted differences are listed
+  with a reason in `tests/e2e/parity/expected-mismatch.json`. Do not edit `src/` while it runs: Vite reloads
+  the page and the remaining entries error.
+  Report: `test-results/drawio-parity/index.html`. `PARITY_FILTER=<palette|id>`, `PARITY_LIMIT=<n>`.
+  Skips itself on port != 80 (`PARITY_ANY_PORT=1` overrides), offline (`E2E_OFFLINE=1`) or on a 403.
+  Last full run: 335 pass, 0 warn, 0 fail, 12 expected (images with draw.io-relative `img/` paths,
+  sketch=1, `%date%` placeholders, the List templates draw.io's export does not lay out, the mermaid
+  Sankey gradient band). ERTMS: 40/40 pass.
+- `tests/e2e/drawio-palette.spec.ts` (any port): Shapes tab (no draw.io/Stencils tabs) renders the palettes, "More shapes…" toggles palettes and app groups, inserts keep draw.io styles, autosave
+  writes real draw.io shape names.
+- `tests/e2e/share.spec.ts` (any port): Share dialog, `#R` link round trip into a fresh browser context, downloads.
+- `tests/e2e/gitlab.spec.ts` (any port): GitLab "Not configured" -> runtime settings -> Open/Save + sign-in button,
+  File-menu items without reload, `?gitlab=` link on an unconfigured browser. Requests to the fake GitLab URL are
+  intercepted and must not happen.
+- `tests/e2e/scenarios.spec.ts` (any port): new scenario, 3 steps, ←/→ presentation, Esc restores the live drawing and
+  its undo history, rename/reorder (↓ and drag)/delete step, reload, File > Save pages "<Scenario> / <n>. <step>",
+  reopen; replace drawing (confirm, Ctrl+Z). `drawio-embed.spec.ts` also round-trips a scenario file through draw.io.
+- `tests/e2e/templates.spec.ts` (any port): ERTMS palette 18 entries, Templates tab 22 ERTMS templates (search,
+  insert, open as new diagram, drag), tab bar labels not cut, Save as Template… -> reload -> insert, rename, delete.
+- `tests/e2e/style-edit.spec.ts` (any port): line color/width/dash and fill through the Properties panel on cells from an
+  ERTMS template, a user template and the draw.io/ERTMS palettes (group first click, child second click); checks the
+  cell's own style and the SVG. Reads the graph via `import('/src/services/service-registry.ts')` (dev server only).
 
----
+## Architecture
 
-## Common Development Tasks
+### Boot: one editor per page load
 
-### Adding a New Shape Type
-1. Create SVG in Figma/draw.io/Inkscape
-2. Add entry to `src/assets/toolboxConfig.json`
-3. Define dimensions and grouping
-4. Test drag onto canvas in dev server
-5. Add unit test in `__tests__/`
+- `index.html` is the static shell of the legacy editor (`#app-container`: top bar, menus, toolbar,
+  panels, `#graph-container`, `#tabs-container`). Controllers bind to these ids. A `<style>` in `<head>`
+  hides `#app-container` when `body[data-editor="drawio"]`, so draw.io mode never flashes the shell.
+- `src/main.ts` only calls `startEditor({ loadLegacy: () => import('./legacy-main') })`.
+- `src/drawio/boot.ts` resolves the mode (`src/drawio/editorMode.ts`: `?editor=drawio|legacy` > localStorage
+  `railway-drawer-editor-mode` > `'legacy'`), sets `body[data-editor]`, then dynamically imports either
+  `legacy-main.ts` or `drawio/workspace.ts`. Both are lazy chunks: draw.io mode never downloads the
+  `maxgraph` chunk (vite `manualChunks`) and legacy mode never downloads the workspace.
+- Switching = `switchEditorMode(mode)`: persist + full reload with `?editor=<mode>`. Never mount both editors.
+  Legacy -> draw.io: top-bar toggle `.editor-toggle [data-editor-mode]` and View > "Switch to draw.io editor"
+  (`data-action="switchEditorDrawio"` -> `MenuController` dispatches `editor-switch-request` on `window`);
+  `legacy-main.ts` calls `tabManager.flushCache()` before reloading. draw.io -> legacy: the workspace's
+  "maxGraph editor" button flushes the draw.io autosave first. Both sides `confirm()` before reloading when that
+  write failed (storage full), since the reload would drop the unsaved edits.
+- `src/legacy-main.ts` is the whole legacy boot: `registerDrawioCodecs()` first (before any file or cache
+  load), shapes, `TabManager`, cache restore, the global keyboard dispatcher, drop handler, left panel,
+  Shapes tab (shape toolbar + draw.io palettes), shape designer. `beforeunload` flushes the cache, then destroys the tabs.
 
-### Implementing New Tool
-1. Add tool type to `DrawTool` in `src/types/index.ts`
-2. Add UI button in TopToolbar or menu
-3. Handle tool selection in RailwayDrawerApp
-4. Add mouse/keyboard handlers in DrawArea
-5. Create corresponding panel (e.g., ConnectorPanel, BrushPanel)
+### Legacy editor (maxGraph)
 
-### Debugging Canvas Rendering
-- Open browser DevTools → Elements tab
-- Inspect generated SVG structure
-- Check `DrawArea.tsx` render logic
-- Use logger system: `logger.debug('DrawArea', 'message', data)`
+- `src/ui/tabs.ts` `TabManager`: each tab owns its own `Graph` (a div inside `#graph-container`) and its own
+  full set of controllers (properties, menu, toolbar, clipboard, save/load, layers, zoom, ...).
+  **Listener capture rule:** controllers are constructed inside `captureSharedListeners()`, which patches
+  `EventTarget.prototype.addEventListener` and records every listener bound outside the tab's graph div
+  (shared DOM, `document`, `window`). Only the active tab's recorded listeners are attached; switching tabs
+  detaches/reattaches them; closing removes them. Consequences for a new controller:
+  - bind shared-DOM/document listeners in its constructor (so they are captured), or
+  - if it binds later (dialog open, edit start), scope the listener itself: remove it when the
+    dialog/edit ends and in `destroy()` (see `DuplicateOffsetController`, `TextEditorController`).
+  - `once` listeners are not recorded. Listeners added in `legacy-main.ts` are global, not per tab.
+  - add it to the controller object returned in `createTab()`; `destroyTab()` calls its `destroy()`.
+- Autosave: `TabManager.saveToCache()` every 5 s into localStorage `railway-drawer-cache`
+  (`src/services/cache-service.ts`, version `'1'`; mismatch drops the cache; failed saves set
+  `railway-drawer-cache-stale`). Call `tabManager.flushCache()` before anything that leaves the page.
+  Tabs that fail to restore keep their cached XML until edited (`unrestoredTabXml`).
+- Style edits (`src/ui/style-edit.ts`, used by `PropertiesPanel`, `EdgePropertiesController`, `InteractiveUIController`):
+  like draw.io's setCellStyles, only the edited keys of each selected cell's OWN style change (one undoable edit). Never
+  write `graph.getCellStyle(cell)` back into a cell: it is the resolved style (maxGraph's stylesheet deletes `none`
+  values, base style names are merged away, light-dark()/default/inherit resolved), which brought back outlines, fills
+  and arrow heads on draw.io/template cells. Displays use the resolved style (`effectiveColor`: missing color = none).
+  maxGraph only dashes with `dashed=1`; `dashPattern` is space separated.
+- `src/services/graph-command-service.ts` `GraphCommandService` (one per tab): undo/redo via maxGraph
+  `UndoManager` wired like `Editor.installUndoHandler` (records `InternalEvent.UNDO` from model and view;
+  undo/redo replays do not re-record), plus copy/cut/paste/delete/selectAll. `SaveLoadController.load()` clears history.
+- Keyboard: a single capture-phase `keydown` dispatcher in `legacy-main.ts` runs each shortcut once on the
+  active tab (Ctrl/Cmd+Z/Y/Shift+Z/C/X/V/A/S, Delete/Backspace, Escape). Per-tab controllers must not
+  bind their own `document` keydown for these. Everything except Ctrl+S is skipped when
+  `shouldIgnoreGraphShortcut(e, graph)` (`src/ui/delete.ts`) says the user is typing (input, textarea,
+  contentEditable, IME composition, cell editor active).
+- `src/services/service-registry.ts` holds tabManager/notifications/etc. instead of `window` globals
+  (leftovers: `window.__leftPanelTabs` set in `legacy-main.ts`, `window.__saveStatusIndicator` set in
+  `src/ui/save-status.ts`; `src/ui/project-name-editor.ts` still reads `window.__tabManager`, which nothing sets).
 
-### Working with Custom Shapes (Future: Shape Composer)
-- Planned feature to compose shapes from primitives
-- Will store in custom library with export/import
-- Integrate with existing toolbox system
+### File format (legacy editor): native draw.io XML
 
----
+`src/services/drawio-xml.ts`. maxGraph 0.10 reads mxGraph XML but only writes `<GraphDataModel>`, which
+draw.io cannot open; this module writes and reads draw.io `<mxfile>/<diagram>/<mxGraphModel>/<mxCell>`.
 
-## Recent Improvements & Architecture
+- Saves are `.drawio` (`SaveLoadController` + `ProjectService`); the cache stores `<mxGraphModel>` per tab,
+  plus pages 2..n (`extraPages`, `pageId`) so multi-page files survive a reload and a save.
+- App-only data lives in style keys draw.io preserves: `rdShape` (legacy app shape such as `customHexagon`
+  exported as a similar draw.io shape via `DRAWIO_SHAPE_MAP`; restored on import, added keys removed;
+  draw.io shape names are native now and never mapped), `rdOwn`, `rdLayerId`, `rdPlantUml`
+  (base64 JSON). `IMAGE_FALLBACK_SHAPES` (ertms-signal/track/train/balise) export as SVG images.
+- Import fixes maxGraph codec gaps (`registerDrawioCodecs()`: replacement `mxCell` codec, `mxRectangle`),
+  registers draw.io named styles, renders `UserObject`/`<object>` labels, rejects XML nested deeper than
+  `MAX_MODEL_XML_DEPTH`.
+- Legacy `<GraphDataModel>` files/caches still load (`importModelXml` / `isLegacyModelXml`). Restored legacy
+  cache tabs are rewritten to draw.io format immediately (`CacheService.isLegacyGraphXml` ->
+  `TabManager.restoreFromCache` calls `saveToCache`); the cache version was deliberately not bumped.
+- `load()` decodes into a scratch model first; the current diagram is only replaced on success.
 
-### Connectors Refactoring
-- **Before**: Separate connector state from elements
-- **After**: Connectors are DrawElements with type='connector'
-- **Benefit**: Unified copy/paste/properties, simpler state management
-- Related memory: [Connectors unified architecture](../memory/refactor_connectors_as_elements.md)
+### draw.io shapes in the maxGraph editor (`src/drawio-shapes/`, pinned to jgraph/drawio **v32.4.1**)
 
-### Dimensionality Architecture
-- **1D vs 2D** distinction affects UI (selection, resize, properties)
-- Connectors are 1D (start/end points)
-- Shapes are 2D (full bounding box manipulation)
-- Related memory: [Dimensionality architecture](../memory/dimensionality_architecture.md)
+Ports of draw.io's own code (Apache-2.0; attribution in `NOTICE`, every ported file has the header and
+upstream `file:line` references; `third_party/drawio/` has the license and the upstream file list).
+`DRAWIO_TAG` (engine and palettes) names the tag; bump it only together with `npm run drawio:palettes`.
 
-### ERTMS SVG Quality
-- Improved signal diagrams from simple shapes to realistic signals
-- Added proper balise representations (ground transponders)
-- Signal Heads: Vertical signals with colored lights
-- Balises: Ground-level transponders with antennas
-- Related memory: [ERTMS SVG Quality](../memory/ertms_svg_quality.md)
+- `engine/`: stencil engine. `installStencilEngine({ baseUrl })` (once, in `legacy-main.ts`) patches
+  `CellRenderer.createShape` for `shape=stencil(<base64 deflate>)` and wraps `StencilShapeRegistry.getStencil`
+  (JS shapes win over stencils of the same name, as in draw.io). Named stencil sets (`mxgraph.basic.*`, ...)
+  are fetched from `public/stencils/<basename>.xml` by `ensureStencilsForXml(xmlOrStyles)` (only basic,
+  flowchart, arrows and mscae/enterprise are vendored). `installDrawioCompat(graph)` resolves `light-dark()`
+  and `default` colours (light theme). `parseMxLibrary` / `entryToCells` read any `<mxlibrary>`.
+- `js/shapes-core/` (Shapes.js vertex shapes + perimeters), `js/shapes-edges/` (table, flexArrow, link,
+  partialRectangle, curvedText, ...; `installTableSupport(graph)`: table/stack layouts, collapsed tables),
+  `js/mx-libs/` (shapes/mxBasic.js, mxArrows.js, mxFlowchart.js). All registered under the exact draw.io
+  names by `registerDrawioJsShapes()` in `src/shapes/index.ts`, before the app's own shapes. draw.io's
+  `hexagon` replaces maxGraph's core hexagon; the app's hexagon is `customHexagon`/`hexagon-shape`.
+  `src/shapes/drawio-arrows/` keeps the old `mxarrows.Arrows2*` keys as aliases (export writes the real names).
+- `palettes/`: `PALETTES` + `loadPalette(id)` (one lazy chunk per palette): General 45, Misc 54, Advanced 33,
+  Basic 76, Arrows (arrows2) 31, Flowchart 34, legacy Arrows 34 (hidden by default). Generated JSON in
+  `palettes/data/`; never edit it by hand.
+- Regenerating (`npm run drawio:palettes`, see `scripts/drawio-palettes/README.md`): fetch-sources.ts downloads
+  the pinned files (SHA-256 checked) into `$DRAWIO_CACHE_DIR` or the OS temp dir, decode-stencils-bundle.ts
+  writes `public/stencils/*.xml` from js/stencils.min.js, extract-palettes.ts runs the real Sidebar-*.js
+  palette functions in a `node:vm` sandbox and writes `palettes/data/*.json`. Outputs are deterministic.
+- UI: `src/ui/drawio-palette/` (`createDrawioPaletteView`), mounted in `legacy-main.ts` inside the single
+  **Shapes** tab of the left panel (`#shapes-container` = `#app-shapes-container` (ShapeToolbar groups) +
+  `#custom-shapes-container` + `#drawio-palette-container`). There is no separate draw.io or Stencils tab:
+  the palette's "More shapes…" menu toggles the draw.io palettes and, via `extraMenuItems`, the app shape
+  groups (hidden groups in localStorage `railway-drawer-hidden-shape-groups`). Optional **ERTMS** tab (View > ERTMS Tab,
+  closeable, state in localStorage `railway-drawer-ertms-tab`): a second palette view with only the ERTMS
+  library (`userLibraries: false`, `showMoreMenu: false`, own flags via `storageKeySuffix`, no dropTarget —
+  the Shapes-tab view handles its drops since palette/entry ids are the same). Order: draw.io palettes, then ERTMS (`public/libraries/ertms.xml`,
+  the default ERTMS palette, showing only its 18 simple elements — the 22 scenario diagrams are ERTMS templates,
+  see Templates below; the `src/shapes/ertms` placeholders are renderers only, for old files), then
+  user libraries ("Import library…", stored in localStorage `rd.drawioLibraries`). Thumbnails come from one
+  hidden graph (draw.io defaults, table support). Click inserts at the view centre, drag drops at the pointer
+  (dataTransfer type `application/x-rd-drawio-entry`).
+- maxGraph 0.10.3 gaps fixed for draw.io content (engine/): `stencil-fixes.ts` (StencilShape read
+  `large-arc-flag="0"` as true, so stencil arcs were wrong; `<fillcolor color="accentColor" default=..>` style
+  keys), `html-labels.ts` (`html=1` cells render sanitized HTML labels; maxGraph only has a graph-wide flag),
+  `view-fixes.ts` (edge styles for edges without a source terminal; `inherit` style values),
+  `shape-fixes.ts` (rounded edges use `arcSize / 2` like mxPolyline; `shadow=1` is draw.io's CSS
+  `drop-shadow()` filter instead of maxGraph's offset copies, whose fill was the boolean flag), and
+  `graph-compat.ts` (`DrawioTextShape`: draw.io's label `baseSpacingTop = 5` / `baseSpacingBottom = 1`,
+  Graph.js:212; `minSvgStrokeWidth = 0.1`, Graph.js:941). maxGraph
+  registers its core shapes when the first `Graph` is created, which silently replaced draw.io's `hexagon`:
+  `registerDrawioJsShapes()` calls `Graph.prototype.registerDefaults()` first.
+- Tab graphs (`TabManager.createTab`): `applyDrawioDefaultStyles` (draw.io's styles/default.xml: white fill,
+  black stroke, Helvetica, rounded edges with classic arrow), named styles, `installDrawioCompat`,
+  `installDrawioHtmlLabels`, `installDanglingEdgeStyles`, `installInheritStyleValues`,
+  `installTableSupport`, `installStencilAutoload` (`src/ui/drawio-stencil-autoload.ts`: every model change
+  -> `ensureStencilsForXml` -> `graph.refresh()`, which covers open, cache restore, paste and inserts).
+  The palette's hidden thumbnail/parity graph gets the same set.
+  `ConnectionHandler` uses draw.io's connection points (`getDrawioConnectionConstraints`) when a shape has them.
+- Saving draw.io-styled cells is byte-identical: `parseDrawioStyle` (codec and palette inserts) remembers
+  the original string and the export writes it back while the parsed style is unchanged; `addAppDefaults`
+  only writes colours/arrows where the app would render differently from draw.io's defaults.
+  `src/__tests__/services/drawio-xml-palettes.test.ts` checks every palette entry and every ERTMS tile.
 
----
+### Templates (`src/ui/templates/`, left-panel tab "Templates")
 
-## Important Files & Modules
+- Built-in **ERTMS templates**: `splitErtmsLibrary` (`ertms-templates.ts`) classifies `public/libraries/ertms.xml`
+  by content: more than `TEMPLATE_CELL_THRESHOLD` (80) drawable cells (`mxCell` vertex/edge, nested included)
+  = template (scenarios have 102..265, the simple elements 1..44). 40 entries -> 18 elements / 22 templates
+  (tested against the real file). Names "ERTMS scenario <n>" (library order) + a subtitle of the 3 rarest
+  labels across scenarios (phrases before ids); every label is a search tag. Ids `ertms-tpl-<library index>`.
+  `ertmsPaletteSource` (Shapes and ERTMS tabs) filters to the elements, entry ids keep the library index
+  (`ertms-<index>-<slug>`); `loadErtmsTemplates` shares the one download. The parity harness reads the
+  library itself, so it still covers all 40 entries. The draw.io-mode library (`src/drawio/ertmsLibrary.ts`) is unchanged.
+- **User templates**: `TemplateStore` (`template-store.ts`), localStorage `railway-drawer-templates`,
+  `{ version: 1, templates: [{ id, name, description?, xml, width, height, created, updated }] }`; `xml` is a
+  native draw.io `<mxGraphModel>`. Bare arrays read as v1; a newer version makes the store read-only (writes
+  throw, data untouched); a failed write (quota) rolls back and throws `TemplateStorageError` -> notification.
+  Export/import as a draw.io library (`<mxlibrary>`, uncompressed `{xml,w,h,aspect,title,description}`; opens in
+  draw.io's sidebar); import uses the engine's `parseMxLibrary` (compressed entries, image entries -> image cell).
+- **Save as Template…**: File menu and canvas context menu (`data-action="saveAsTemplate"` -> `window`
+  event `save-template-request` -> `legacy-main.ts`), and the tab's "Save…" button. `extractTemplate`
+  (`template-extract.ts`): selected cells minus those with a selected ancestor (descendants come along) + unselected
+  edges whose both terminals are inside; a selected edge to an outside cell is kept dangling; absolute
+  coordinates, moved to (0,0), `rdLayerId` dropped, styles verbatim. Nothing selected = whole diagram (all
+  layers flattened; a context-menu click on the empty canvas clears the selection, so it saves everything).
+  Name dialog `promptTemplateDetails` (`template-dialogs.ts`, name required, Enter/Escape; a window capture
+  keydown listener keeps keys away from the shortcut dispatcher while it is open).
+- Panel (`templates-panel.ts`): search, "My templates" (Save…/Import…/Export…, empty-state hint, ✎/× on tiles)
+  above "ERTMS templates"; tiles 120x72 thumbnails from the shared palette renderer (lazy, IntersectionObserver).
+  Click -> popover: Insert into diagram (`insertTemplate` = `insertEntry` at the view centre, one undoable edit),
+  Open as new diagram (`openTemplateAsNewDiagram`: `tabManager.createTab(name)` + `saveLoadController.load`,
+  the tab is closed again if the load fails), Rename…/Delete… (user). Drag (`application/x-rd-template`) onto
+  `#graph-container` inserts at the drop point.
+- The left tab bar wraps (no cut labels at ~230px); tests in `src/ui/templates/__tests__/`.
 
-### Core Components
-- `RailwayDrawerApp.tsx` — Main app orchestrator (400+ lines, many responsibilities)
-- `DrawArea.tsx` — SVG canvas with element manipulation
-- `Toolbox.tsx` — Drag-drop element library
-- `DrawioPropertiesPanel.tsx` — Properties editor with tabs
-- `Elements.tsx` — SVG element rendering system
+### Scenarios (`src/scenarios/`, right panel "Properties | Scenarios")
 
-### Utilities
-- `utils/logger.ts` — Structured logging (use instead of console.log)
-- `utils/storageManager.ts` — localStorage persistence
-- `utils/toolboxEnhancer.ts` — ERTMS SVG enhancement system
-- `utils/svgLoader.ts` — SVG fetching with caching
-- `utils/connectorStyles.ts` — Connector type definitions
-- `utils/brushTools.ts` — Brush stroke presets and config
+- Per tab (diagram): `ScenarioSet` (`scenario-model.ts`) held by the tab's `ProjectService.scenarios`
+  (`saveLoadController.getScenarios()`); a scenario = id/name/description + ordered steps; a step =
+  id/name/description + `xml`, a snapshot of the tab's whole drawing (`serializeToXml()`, a draw.io `<mxGraphModel>`).
+  Reads return copies; changes notify subscribers. `sanitizeScenarios` cleans untrusted data (cache, files):
+  unique ids, names capped (80/200), steps without a model dropped.
+- **File format** (`scenario-format.ts`): main page first, with `rdScenarios='{"v":1,"scenarios":[{id,name,description}]}'`
+  on its `<diagram>` (order, empty scenarios); then one page per step, `name="<Scenario> / <n>. <step>"`, attributes
+  `rdScenarioId rdScenarioName [rdScenarioDescription] rdStepId rdStepName [rdStepDescription]`, page id = step id
+  when unique; then the preserved non-scenario `extraPages`. draw.io v32.4.1 keeps unknown `<diagram>` attributes
+  (page node kept as `DiagramPage.node` and cloned on save, Pages.js:12 / EditorUi.js:2520; also on "Duplicate page",
+  so duplicate step ids are made unique on load) — verified live in `tests/e2e/drawio-embed.spec.ts`. Parse:
+  pages with `rdStepId`/`rdScenarioId` become steps (compressed pages ok; an unreadable one stays a kept page),
+  scenarios in index order, then scenarios only named by step pages; `extraPageNames` (the "only the first page is
+  shown" warning) lists only non-step pages. Loading a file replaces the tab's scenarios.
+- Cache: `CacheData.tabs[].scenarios` (only when non-empty; restored even if the drawing fails). Steps duplicate the
+  model, so adding/updating a step flushes the cache at once and warns when storage is full (plus the usual indicator).
+- Share links: `buildShareMxfile` gets `pageAttributes` + `scenarioPages` (after the tab's page, before its kept pages);
+  `splitSharedFile` keeps step pages with the page before them (tabs, not pages, count against `MAX_SHARED_PAGES`).
+  Remote providers save `getProjectXml()`, so scenarios are included.
+- View (`scenario-view.ts` `ScenarioViewer`): a separate disabled Graph (`configureDiagramRendering` from
+  `src/ui/diagram-graph-setup.ts`, shared with tab graphs, + stencil autoload) mounted in `#graph-container` while the
+  live tab div is only hidden: the live model, selection and undo history are never touched. Banner "<Scenario> — step
+  i/n: <step>", Prev/Next, "Replace drawing with this step…" (confirm; `replaceDrawingWithSnapshot` = one undoable
+  root change), "Back to editing". `body.rd-scenario-viewing` disables menu bar, toolbar, left panel and properties.
+  Closes on tab switch/close and when its steps are deleted; follows renames/updates/reorders.
+- Keyboard: the dispatcher in `legacy-main.ts` calls `scenarios.handleKeydown(e)` right after Ctrl+S; only while the
+  view is open: ←/PageUp, →/PageDown, Home/End, Esc; editing shortcuts are prevented, every other key is stopped
+  (`scenario-keys.ts` `scenarioKeyAction`); fields/IME and Ctrl+S pass.
+- Panel (`scenarios-panel.ts`, `#scenarios-panel`): "+ New scenario", per scenario ▷ present / ✎ / ⧉ / × (confirm),
+  expandable step list (lazy 64x40 thumbnails from the palette's shared renderer, ↑ ↓ ⟳ update-from-drawing (confirm)
+  ✎ ⧉ ×, drag to reorder), "+ Add step". Dialogs = `promptTemplateDetails`/`confirmTemplateDialog`. Wiring:
+  `install-scenarios.ts`. File > New (model.clear) keeps the tab's scenarios, like its extra pages.
+- Tests: `src/scenarios/__tests__/` (model, format/round trip/draw.io edits/share split, tabs + cache + view + keys +
+  panel), `tests/e2e/scenarios.spec.ts` (any port).
 
-### Configuration
-- `src/assets/toolboxConfig.json` — Toolbox element definitions
-- `src/config/ertmsSvgUrls.json` — ERTMS SVG URLs/data URIs
-- `vite.config.ts` — Vite build config with vendor code splitting
-- `eslint.config.js` — ESLint rules (TypeScript, React hooks)
+### draw.io editor (`src/drawio/`)
 
-### Types
-- `src/types/index.ts` — Centralized type definitions
-- Re-exports from components (DrawElement, ToolboxItem, etc.)
-- App constants (GRID_SIZE, zoom limits, etc.)
+- `workspace.ts`: toolbar (New, Open…, Download .drawio, Export SVG, maxGraph editor), iframe, spinner,
+  "not reachable" banner after 20 s, debounced (1 s) autosave to localStorage `railway-drawer-drawio-doc`
+  (separate from the legacy cache), flushed on pagehide/hidden tab/dispose. Loading another document
+  remounts the iframe.
+- `protocol.ts`: embed client for `proto=json&configure=1`. Handshake: `configure` -> host sends
+  `{action:'configure', config}`; `init` -> host sends `{action:'load', xml, autosave:1, title}`; `load` -> ready.
+  Gotchas: every outgoing message must be a JSON **string** (objects are silently dropped); draw.io posts with
+  targetOrigin `*`, so incoming messages are checked for origin AND `source === iframe.contentWindow`; never put
+  `xml` in an export request (it replaces the open diagram); the `load` event's `xml` is an echo of the input,
+  not normalized output; error replies have no `event` field; configure has a timeout with a fallback config.
+- `ertmsLibrary.ts`: fetches `public/libraries/ertms.xml` (`<mxlibrary>`, 40 tiles; license in
+  `public/libraries/ERTMS-LICENSE.txt`) relative to `import.meta.env.BASE_URL`; the JSON body is read via
+  `textContent` (entity-decoded, otherwise every tile shows "Error:"); passed inline as `data`, never `url`
+  (draw.io would proxy it). Bump `DRAWIO_CONFIG_VERSION` when the config changes (resets draw.io sidebar state).
+- `VITE_DRAWIO_URL` (default `https://embed.diagrams.net/`) and `VITE_DRAWIO_PARAMS` select the draw.io server.
+- The maxGraph editor shows the same `public/libraries/ertms.xml` (elements in the Shapes/ERTMS tabs, scenarios as templates). The old maxGraph-side
+  ERTMS placeholder shapes (`src/shapes/ertms/index.ts`) are only registered as renderers, for old files.
 
----
+### Sharing (`src/share/`)
 
-## Debugging Tips
+- `install-sharing.ts` (called from `legacy-main.ts`) wires everything: top-bar `#share-btn` and File > Share…
+  (`data-action="share"` -> `window` event `share-request`) open `share-dialog.ts`; File-menu items
+  "Open from/Save to <provider>…" are generated into `#file-menu-remote-items` for available providers.
+- **Link with the diagram** (`share-link.ts`, `share-mxfile.ts`): all tabs (+ each tab's preserved pages) as one
+  `<mxfile>` (`buildShareMxfile`, unique page ids) -> `#R` + base64url(deflateRaw(encodeURIComponent(xml)))
+  (CompressionStream). The app.diagrams.net link uses draw.io's exact format (`'#R' + encodeURIComponent(Graph.compress(xml))`,
+  standard base64; EditorUi.js:9545 / App.js:6669). The reader accepts both alphabets and raw-XML `#R` links,
+  caps the hash, the inflated stream and the decoded XML (5 MB), and never evaluates anything. Links over 32k chars get a warning.
+- Incoming links (`share-open.ts`): on start and on `hashchange`, the hash is stripped (replaceState) and each page opens in a
+  **new tab** via `SaveLoadController.loadProjectXml` (existing tabs kept; a lone empty tab is closed). `drawio/boot.ts`
+  starts the legacy editor for a `#R` hash even when draw.io mode is remembered (the remembered mode is not changed).
+- Downloads: .drawio (all tabs), PNG/SVG of the current tab via `src/ui/diagram-image-export.ts` (the parity
+  harness's draw.io-like export pipeline, now shared with `src/debug/parity-hook.ts`), Web Share API buttons only
+  when `navigator.canShare` accepts the file.
+- **Cloud providers** (`providers/types.ts`): `StorageProviderDescriptor` (main bundle: id, label, `availability()`,
+  `load()` = dynamic import, `resumePendingSignIn`) and `StorageProvider` (account, `list(path)` browse
+  containers->folders->files, `open`, `save(file, xml, expectedVersion)` -> conflict result, `saveAs(path, name, xml,
+  fail|replace|rename)`, optional `createShareLink`). `providers/registry.ts` lists them (SharePoint, then GitLab).
+  Dialogs (`ui/remote-dialogs.ts`) and the Share dialog render providers generically. Optional generic extensions
+  (added for GitLab): `saveFields(ctx)` (extra save inputs: rendered in the Save-to browse dialog per location and
+  asked by `saveBack` on Ctrl+S via `askSaveOptions`; values are passed as an extra last argument only when present),
+  `conflictActions`/`resolveConflict` (extra buttons in the conflict dialog, `ConflictChoice` `action:<id>`),
+  `SaveResult.note/link` (link shown by `showResultLink`), `openRef` + descriptor `incomingLink/clearIncomingLink`
+  (`RemoteSession.openIncomingLinks`, run after `resumePendingSignIns`; `askSignIn` dialog so the popup has a user
+  gesture), descriptor `settings` (runtime settings form in the Share dialog; on save the section is redrawn and
+  `onProviderSettingsChanged` rebuilds the File-menu items and retries incoming links). `ShareLinkCapability`
+  `typesLegend/audiencesLegend`. The pending-redirect key moved to `providers/pending.ts`.
+- `remote-session.ts`: per-tab binding (provider id + ref + version, in memory only), `SaveLoadController.setSaveHandler`
+  redirects Ctrl+S / File > Save to `saveBack` (version conflict -> overwrite / save as copy / cancel); File > Save As…
+  (`saveProjectToDisk`) always downloads. Status bar `#status-remote-item` "Stored in:". TabManager now dispatches
+  `window` events `tab-changed` (switchTab) and `tab-closed` (closeTab).
+- **SharePoint** (`providers/sharepoint/`, docs/SHAREPOINT.md): disabled unless `VITE_MSAL_CLIENT_ID` is set at build
+  time (`VITE_MSAL_TENANT_ID` default `organizations`, `VITE_SHAREPOINT_DEFAULT_SITE` `host:/sites/Name`). vite.config.ts
+  `define`s these keys (empty when unset) so `import.meta.env.VITE_MSAL_CLIENT_ID ? () => import(...) : null` is a
+  constant: unconfigured builds contain no MSAL code and no SharePoint chunk. Plain http (except localhost) ->
+  "SharePoint requires HTTPS — use https://railwaydrawer.mksystemdesign.org". `@azure/msal-browser` is pinned (5.24.0):
+  popup with redirect fallback; msal 5 needs `broadcastResponseToMainFrame` on the redirect page, and the redirect URI is
+  the app itself, so `main.ts` runs `auth-bridge.ts` instead of the editor when the URL carries `state`+`code|error`.
+  `graph-client.ts`: Graph v1.0 via fetch (nextLink paging, 429/503 retry, PUT < 4 MB else upload session, If-Match ->
+  412 `GraphConflictError`, createLink, invite). Scopes: Sites.Read.All (browse), Files.ReadWrite.All (content, links).
+- **GitLab** (`providers/gitlab/`, docs/GITLAB.md): gitlab.com or self-hosted (also plain-http LAN). Config =
+  build-time `VITE_GITLAB_URL`, `VITE_GITLAB_CLIENT_ID`, `VITE_GITLAB_DEFAULT_PROJECT` (vite.config.ts `define`s them,
+  empty when unset) overridden by runtime settings in localStorage `rd.gitlab.settings` (Share > GitLab settings;
+  only differences from the build defaults are stored; changing URL/app id drops tokens). Unlike SharePoint the chunk
+  (`gitlab-loader.ts`) is always built and only loaded when configured+used. Availability: not configured / invalid
+  URL / https page + http GitLab (mixed content) / ready. OAuth 2.0 code + PKCE S256 public client (`oauth.ts`,
+  `pkce.ts` with a JS SHA-256 fallback because `crypto.subtle` is missing on the http LAN page), scope `api` (smallest
+  that allows REST commits + MRs), `state` prefix `rdgl-`: `main.ts` routes such loads to `gitlab/auth-bridge.ts`
+  before the SharePoint check. Popup opened synchronously in the click, answer via BroadcastChannel `rd-gitlab-auth`
+  (GitLab's sign-in page sends COOP same-origin, so no opener); popup closed = rejected only when the app window has
+  focus again; blocked -> redirect (flow record in sessionStorage `rd.gitlab.oauth.flow`, bridge stores the answer
+  and `location.replace`s back, `completeRedirect` in the loader). Tokens in sessionStorage `rd.gitlab.auth`
+  (localStorage with "Stay signed in"), refresh 60 s before the 2 h expiry and after 401 (single flight). REST v4
+  client `gitlab-client.ts` (X-Next-Page / Link paging, file paths encoded incl. `.`, UTF-8 base64,
+  400 "changed since you started editing" -> `GitLabConflictError`, 413/"too large" -> `GitLabTooLargeError`).
+  Provider: projects (default, starred, member; search) -> branches -> tree; version = `last_commit_id` (new one via
+  HEAD `X-Gitlab-Last-Commit-Id`); save = PUT with commit message + `last_commit_id`; saveAs = POST (optional new
+  branch created from the base first, rename = `name (2).drawio`); MR checkbox (409 -> reuse the open MR); conflict
+  action "Save to new branch" branches from the version you started from; 50 MB client cap. Share link
+  `?gitlab=<project>:<branch>:<path>` (parts percent-encoded, `/` kept; parsed from the raw query) + GitLab blob
+  URL; the descriptor stores it in sessionStorage `rd.gitlab.pendingOpen` and strips it; `drawio/boot.ts` forces the
+  legacy editor for it. Status bar "GitLab: group/project › branch › path".
+- Tests: `src/share/__tests__/` (link codec incl. draw.io's algorithm via node:zlib, Graph client with mocked fetch,
+  dialog, remote session, provider, config; `gitlab.test.ts`: PKCE vectors, OAuth popup/redirect/refresh, bridge,
+  client paging/errors, provider against an in-memory GitLab, config/links, descriptor; `gitlab-session.test.ts`:
+  save fields, conflict actions, incoming links, Share-dialog settings), `tests/e2e/share.spec.ts` (any port: copy
+  link -> fresh context opens the tabs, downloads, damaged link, SharePoint "Not configured"), `tests/e2e/gitlab.spec.ts`.
 
-### Enable Detailed Logging
-```typescript
-import { logger } from './utils/logger';
-logger.debug('ComponentName', 'message', { data });
-logger.error('ComponentName', 'error', { error });
-```
+## Deploy
 
-### Inspect Element State
-- DrawArea stores elements in ref → inspect via React DevTools
-- Check DrawElement.id matches selection
-- Verify styles applied to SVG (check CSS vs inline)
+- Production: **Cloudflare Workers Builds** on push (configured in the Cloudflare dashboard; reads
+  `wrangler.jsonc`: static-assets-only Worker serving `./dist`, SPA not-found handling). `npm run deploy`
+  (= build + `wrangler deploy`) does the same from a local machine; `npm run preview:cf` runs it in `wrangler dev`.
+- LAN: `./deploy.sh` -> `npm ci`, `npm run build`, timestamped backup of
+  `root@192.168.10.22:/var/www/html/railway-drawer`, scp `dist/`, verify. Served at
+  `http://192.168.10.22/railway-drawer/` (port 80, so the draw.io embed works there).
 
-### Common Issues
-1. **Element not appearing**: Check z-index, opacity, or position off-canvas
-2. **Text not editable**: Verify textRegions array in element
-3. **Connector not drawing**: Check start/end points are valid
-4. **Style not applying**: Check for conflicting CSS or vector-effect
+## Tests
 
----
-
-## Future Features & Roadmap
-
-### Planned: Shape Composer
-- Compose custom shapes from primitives (circle, line, rectangle, polygon, text, arc)
-- Visual drag-drop editor + configuration-based
-- Export/import custom shape library
-- Integrate with toolbox system
-
-### Known Limitations
-- Element containers may disappear on style changes (monitored)
-- Large SVG exports have performance implications
-- Mobile touch interactions need refinement
-
----
-
-## Development Workflow
-
-### Before Starting
-```bash
-npm install              # Install dependencies
-npm run typecheck        # Verify types
-npm run lint:fix         # Auto-fix style issues
-```
-
-### Development Loop
-```bash
-npm run dev              # Start dev server
-# Edit code → Vite HMR auto-reloads
-npm run test             # Watch tests as you code
-```
-
-### Before Committing
-```bash
-npm run typecheck        # Type safety
-npm run lint             # Code style
-npm run test:run         # All tests pass
-npm run build            # Production build works
-```
-
-### Full CI Pipeline (Local)
-```bash
-npm run ci               # Runs: lint → typecheck → tests → e2e → build
-```
-
----
-
-## Key Technologies & Versions
-
-- **React 19.1.0** — UI framework with hooks, concurrent rendering
-- **TypeScript 5.8** — Full type safety, strict mode enabled
-- **Vite 8.0** — Ultra-fast build, HMR development
-- **Vitest 4.1** — Modern test runner (Jest-compatible)
-- **React Testing Library** — Component testing, accessibility focus
-- **TailwindCSS 3.4** — Utility-first CSS
-- **Lucide Icons** — SVG icon library
-
----
-
-## Getting Help
-
-### Locate Code
-- Use IDE search (`Cmd+F` / `Ctrl+F`) for symbol names
-- Most types defined in `src/types/index.ts` — start there
-- Component hierarchy visible in `RailwayDrawerApp.tsx`
-
-### Understanding Features
-- Check README.md for user-facing feature descriptions
-- Memory system in `.claude/projects/.../memory/` has architectural notes
-- Test files (`__tests__/`) demonstrate expected behavior
-
-### Debugging
-- Enable logger in specific components
-- Use React DevTools to inspect component hierarchy
-- Browser DevTools → Elements tab for SVG inspection
+- Unit/integration: `src/**/__tests__/**/*.test.ts`, vitest + jsdom, setup `src/__tests__/setup.ts`.
+  `@maxgraph/core` is inlined (`server.deps.inline`) because its ESM has extensionless imports;
+  `--no-experimental-webstorage` keeps Node's own localStorage from shadowing jsdom's.
+- `src/__tests__/ui/tab-cache-restore.test.ts` mirrors the startup sequence of `legacy-main.ts`; keep them in sync.

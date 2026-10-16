@@ -1,0 +1,1074 @@
+{
+ "id": "basic",
+ "title": "Basic",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Basic.js:7",
+ "entries": [
+  {
+   "id": "basic-0-partial-rectangle",
+   "title": "Partial Rectangle",
+   "tags": "partial rectangle",
+   "kind": "vertex",
+   "width": 120,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.rect;fillColor2=none;strokeWidth=1;size=20;indent=5;",
+   "shapeNames": [
+    "mxgraph.basic.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:20"
+  },
+  {
+   "id": "basic-1-partial-rectangle",
+   "title": "Partial Rectangle",
+   "tags": "partial rectangle",
+   "kind": "vertex",
+   "width": 120,
+   "height": 60,
+   "style": "shape=partialRectangle;whiteSpace=wrap;html=1;top=0;bottom=0;fillColor=none;",
+   "shapeNames": [
+    "partialRectangle"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:21"
+  },
+  {
+   "id": "basic-2-partial-rectangle",
+   "title": "Partial Rectangle",
+   "tags": "partial rectangle",
+   "kind": "vertex",
+   "width": 120,
+   "height": 60,
+   "style": "shape=partialRectangle;whiteSpace=wrap;html=1;right=0;top=0;bottom=0;fillColor=none;routingCenterX=-0.5;",
+   "shapeNames": [
+    "partialRectangle"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:22"
+  },
+  {
+   "id": "basic-3-partial-rectangle",
+   "title": "Partial Rectangle",
+   "tags": "partial rectangle",
+   "kind": "vertex",
+   "width": 120,
+   "height": 60,
+   "style": "shape=partialRectangle;whiteSpace=wrap;html=1;bottom=0;right=0;fillColor=none;",
+   "shapeNames": [
+    "partialRectangle"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:23"
+  },
+  {
+   "id": "basic-4-partial-rectangle",
+   "title": "Partial Rectangle",
+   "tags": "partial rectangle",
+   "kind": "vertex",
+   "width": 120,
+   "height": 60,
+   "style": "shape=partialRectangle;whiteSpace=wrap;html=1;top=0;left=0;fillColor=none;",
+   "shapeNames": [
+    "partialRectangle"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:24"
+  },
+  {
+   "id": "basic-5-polygon",
+   "title": "Polygon",
+   "tags": "basic polygon  Polygon",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.polygon;polyCoords=[[0.25,0],[0.75,0],[1,0.25],[1,0.75],[0.75,1],[0.25,1],[0,0.75],[0,0.25]];polyline=0;",
+   "shapeNames": [
+    "mxgraph.basic.polygon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:25"
+  },
+  {
+   "id": "basic-6-polyline",
+   "title": "Polyline",
+   "tags": "basic polyline  Polyline",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.polygon;polyCoords=[[0.25,0],[0.75,0],[1,0.25],[1,0.75],[0.75,1],[0.25,1],[0,0.75],[0,0.25]];polyline=1;fillColor=none;",
+   "shapeNames": [
+    "mxgraph.basic.polygon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:26"
+  },
+  {
+   "id": "basic-7-rectangle-with-diagonal-fill",
+   "title": "Rectangle with diagonal fill",
+   "tags": "rectangle with diagonal fill",
+   "kind": "vertex",
+   "width": 120,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.patternFillRect;fillStyle=diag;step=5;fillStrokeWidth=0.2;fillStrokeColor=#dddddd;",
+   "shapeNames": [
+    "mxgraph.basic.patternFillRect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:27"
+  },
+  {
+   "id": "basic-8-rectangle-with-reverse-diagonal-fill",
+   "title": "Rectangle with reverse diagonal fill",
+   "tags": "rectangle with reverse diagonal fill",
+   "kind": "vertex",
+   "width": 120,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.patternFillRect;fillStyle=diagRev;step=5;fillStrokeWidth=0.2;fillStrokeColor=#dddddd;",
+   "shapeNames": [
+    "mxgraph.basic.patternFillRect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:28"
+  },
+  {
+   "id": "basic-9-rectangle-with-vertical-fill",
+   "title": "Rectangle with vertical fill",
+   "tags": "rectangle with vertical fill",
+   "kind": "vertex",
+   "width": 120,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.patternFillRect;fillStyle=vert;step=5;fillStrokeWidth=0.2;fillStrokeColor=#dddddd;",
+   "shapeNames": [
+    "mxgraph.basic.patternFillRect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:29"
+  },
+  {
+   "id": "basic-10-rectangle-with-horizontal-fill",
+   "title": "Rectangle with horizontal fill",
+   "tags": "rectangle with horizontal fill",
+   "kind": "vertex",
+   "width": 120,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.patternFillRect;fillStyle=hor;step=5;fillStrokeWidth=0.2;fillStrokeColor=#dddddd;",
+   "shapeNames": [
+    "mxgraph.basic.patternFillRect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:30"
+  },
+  {
+   "id": "basic-11-rectangle-with-grid-fill",
+   "title": "Rectangle with grid fill",
+   "tags": "rectangle with grid fill",
+   "kind": "vertex",
+   "width": 120,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.patternFillRect;fillStyle=grid;step=5;fillStrokeWidth=0.2;fillStrokeColor=#dddddd;",
+   "shapeNames": [
+    "mxgraph.basic.patternFillRect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:31"
+  },
+  {
+   "id": "basic-12-rectangle-with-diagonal-grid-fill",
+   "title": "Rectangle with diagonal grid fill",
+   "tags": "rectangle with diagonal grid fill",
+   "kind": "vertex",
+   "width": 120,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.patternFillRect;fillStyle=diagGrid;step=5;fillStrokeWidth=0.2;fillStrokeColor=#dddddd;",
+   "shapeNames": [
+    "mxgraph.basic.patternFillRect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:32"
+  },
+  {
+   "id": "basic-13-4-point-star",
+   "title": "4 Point Star",
+   "tags": "basic 4 point star  4 Point Star",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.4_point_star_2;dx=0.8;",
+   "shapeNames": [
+    "mxgraph.basic.4_point_star_2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:33"
+  },
+  {
+   "id": "basic-14-6-point-star",
+   "title": "6 Point Star",
+   "tags": "basic 6 point star  6 Point Star",
+   "kind": "vertex",
+   "width": 100,
+   "height": 90,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.6_point_star",
+   "shapeNames": [
+    "mxgraph.basic.6_point_star"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:34"
+  },
+  {
+   "id": "basic-15-8-point-star",
+   "title": "8 Point Star",
+   "tags": "basic 8 point star  8 Point Star",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.8_point_star",
+   "shapeNames": [
+    "mxgraph.basic.8_point_star"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:35"
+  },
+  {
+   "id": "basic-16-banner",
+   "title": "Banner",
+   "tags": "basic banner  Banner",
+   "kind": "vertex",
+   "width": 100,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.banner",
+   "shapeNames": [
+    "mxgraph.basic.banner"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:36"
+  },
+  {
+   "id": "basic-17-cloud-callout",
+   "title": "Cloud Callout",
+   "tags": "basic cloud callout  Cloud Callout",
+   "kind": "vertex",
+   "width": 90,
+   "height": 60,
+   "style": "whiteSpace=wrap;html=1;shape=mxgraph.basic.cloud_callout",
+   "shapeNames": [
+    "mxgraph.basic.cloud_callout"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:37"
+  },
+  {
+   "id": "basic-18-cloud-rectangle",
+   "title": "Cloud Rectangle",
+   "tags": "basic cloud rect  rectangle Cloud Rectangle",
+   "kind": "vertex",
+   "width": 120,
+   "height": 90,
+   "style": "whiteSpace=wrap;html=1;shape=mxgraph.basic.cloud_rect",
+   "shapeNames": [
+    "mxgraph.basic.cloud_rect"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:38"
+  },
+  {
+   "id": "basic-19-cone",
+   "title": "Cone",
+   "tags": "basic cone  Cone",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.cone",
+   "shapeNames": [
+    "mxgraph.basic.cone"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:39"
+  },
+  {
+   "id": "basic-20-cone-adjustable",
+   "title": "Cone (adjustable)",
+   "tags": "basic cone  Cone (adjustable)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.cone2;dx=0.5;dy=0.9;",
+   "shapeNames": [
+    "mxgraph.basic.cone2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:40"
+  },
+  {
+   "id": "basic-21-document",
+   "title": "Document",
+   "tags": "basic document  Document",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "whiteSpace=wrap;html=1;shape=mxgraph.basic.document",
+   "shapeNames": [
+    "mxgraph.basic.document"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:41"
+  },
+  {
+   "id": "basic-22-donut",
+   "title": "Donut",
+   "tags": "basic donut  Donut",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.donut;dx=25;",
+   "shapeNames": [
+    "mxgraph.basic.donut"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:42"
+  },
+  {
+   "id": "basic-23-drop",
+   "title": "Drop",
+   "tags": "basic drop  Drop",
+   "kind": "vertex",
+   "width": 70,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.drop",
+   "shapeNames": [
+    "mxgraph.basic.drop"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:43"
+  },
+  {
+   "id": "basic-24-flash",
+   "title": "Flash",
+   "tags": "basic flash  Flash",
+   "kind": "vertex",
+   "width": 60,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.flash",
+   "shapeNames": [
+    "mxgraph.basic.flash"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:44"
+  },
+  {
+   "id": "basic-25-half-circle",
+   "title": "Half Circle",
+   "tags": "basic half circle  semicircle Half Circle",
+   "kind": "vertex",
+   "width": 100,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.half_circle",
+   "shapeNames": [
+    "mxgraph.basic.half_circle"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:45"
+  },
+  {
+   "id": "basic-26-heart",
+   "title": "Heart",
+   "tags": "basic heart  Heart",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.heart",
+   "shapeNames": [
+    "mxgraph.basic.heart"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:46"
+  },
+  {
+   "id": "basic-27-regular-hexagon",
+   "title": "Regular Hexagon",
+   "tags": "hexagon regular polygon Regular Hexagon",
+   "kind": "vertex",
+   "width": 100,
+   "height": 86.6,
+   "style": "shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;",
+   "shapeNames": [
+    "hexagon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:47"
+  },
+  {
+   "id": "basic-28-isometric-cube",
+   "title": "Isometric Cube",
+   "tags": "basic isometric cube  Isometric Cube",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "html=1;shape=mxgraph.basic.isocube;isoAngle=15;",
+   "shapeNames": [
+    "mxgraph.basic.isocube"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:48"
+  },
+  {
+   "id": "basic-29-loud-callout",
+   "title": "Loud Callout",
+   "tags": "basic loud callout  Loud Callout",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "whiteSpace=wrap;html=1;shape=mxgraph.basic.loud_callout",
+   "shapeNames": [
+    "mxgraph.basic.loud_callout"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:49"
+  },
+  {
+   "id": "basic-30-moon",
+   "title": "Moon",
+   "tags": "basic moon  Moon",
+   "kind": "vertex",
+   "width": 75,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.moon",
+   "shapeNames": [
+    "mxgraph.basic.moon"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:50"
+  },
+  {
+   "id": "basic-31-no-symbol",
+   "title": "No Symbol",
+   "tags": "basic no symbol  No Symbol",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.no_symbol",
+   "shapeNames": [
+    "mxgraph.basic.no_symbol"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:51"
+  },
+  {
+   "id": "basic-32-octagon",
+   "title": "Octagon",
+   "tags": "basic octagon  Octagon",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "whiteSpace=wrap;html=1;shape=mxgraph.basic.octagon2;align=center;verticalAlign=middle;dx=15;",
+   "shapeNames": [
+    "mxgraph.basic.octagon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:52"
+  },
+  {
+   "id": "basic-33-orthogonal-triangle",
+   "title": "Orthogonal Triangle",
+   "tags": "basic orthogonal triangle  Orthogonal Triangle",
+   "kind": "vertex",
+   "width": 100,
+   "height": 70,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.orthogonal_triangle",
+   "shapeNames": [
+    "mxgraph.basic.orthogonal_triangle"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:53"
+  },
+  {
+   "id": "basic-34-acute-triangle",
+   "title": "Acute Triangle",
+   "tags": "basic acute triangle  Acute Triangle",
+   "kind": "vertex",
+   "width": 100,
+   "height": 70,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.acute_triangle;dx=0.5;",
+   "shapeNames": [
+    "mxgraph.basic.acute_triangle"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:54"
+  },
+  {
+   "id": "basic-35-obtuse-triangle",
+   "title": "Obtuse Triangle",
+   "tags": "basic obtuse triangle  Obtuse Triangle",
+   "kind": "vertex",
+   "width": 100,
+   "height": 70,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.obtuse_triangle;dx=0.25;",
+   "shapeNames": [
+    "mxgraph.basic.obtuse_triangle"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:55"
+  },
+  {
+   "id": "basic-36-oval-callout",
+   "title": "Oval Callout",
+   "tags": "basic oval callout  Oval Callout",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "whiteSpace=wrap;html=1;shape=mxgraph.basic.oval_callout",
+   "shapeNames": [
+    "mxgraph.basic.oval_callout"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:56"
+  },
+  {
+   "id": "basic-37-pentagon",
+   "title": "Pentagon",
+   "tags": "basic pentagon  Pentagon",
+   "kind": "vertex",
+   "width": 100,
+   "height": 90,
+   "style": "whiteSpace=wrap;html=1;shape=mxgraph.basic.pentagon",
+   "shapeNames": [
+    "mxgraph.basic.pentagon"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:57"
+  },
+  {
+   "id": "basic-38-pointed-oval",
+   "title": "Pointed Oval",
+   "tags": "basic pointed oval  Pointed Oval",
+   "kind": "vertex",
+   "width": 50,
+   "height": 100,
+   "style": "whiteSpace=wrap;html=1;shape=mxgraph.basic.pointed_oval",
+   "shapeNames": [
+    "mxgraph.basic.pointed_oval"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:58"
+  },
+  {
+   "id": "basic-39-pyramid",
+   "title": "Pyramid",
+   "tags": "basic pyramid  Pyramid",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.pyramid;dx1=0.4;dx2=0.6;dy1=0.9;dy2=0.8;",
+   "shapeNames": [
+    "mxgraph.basic.pyramid"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:59"
+  },
+  {
+   "id": "basic-40-diagonal-snip-rectangle",
+   "title": "Diagonal Snip Rectangle",
+   "tags": "basic diag snip rect  Diagonal Snip Rectangle",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.diag_snip_rect;dx=6;whiteSpace=wrap;",
+   "shapeNames": [
+    "mxgraph.basic.diag_snip_rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:60"
+  },
+  {
+   "id": "basic-41-diagonal-rounded-rectangle",
+   "title": "Diagonal Rounded Rectangle",
+   "tags": "basic diag round rect  Diagonal Rounded Rectangle",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.diag_round_rect;dx=6;whiteSpace=wrap;",
+   "shapeNames": [
+    "mxgraph.basic.diag_round_rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:61"
+  },
+  {
+   "id": "basic-42-corner-rounded-rectangle",
+   "title": "Corner Rounded Rectangle",
+   "tags": "basic corner round rect  Corner Rounded Rectangle",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.corner_round_rect;dx=6;whiteSpace=wrap;",
+   "shapeNames": [
+    "mxgraph.basic.corner_round_rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:62"
+  },
+  {
+   "id": "basic-43-rounded-rectangle-three-corners",
+   "title": "Rounded Rectangle (three corners)",
+   "tags": "basic three corner round rect  Rounded Rectangle (three corners)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.three_corner_round_rect;dx=6;whiteSpace=wrap;",
+   "shapeNames": [
+    "mxgraph.basic.three_corner_round_rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:63"
+  },
+  {
+   "id": "basic-44-plaque",
+   "title": "Plaque",
+   "tags": "basic plaque  Plaque",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.plaque;dx=6;whiteSpace=wrap;",
+   "shapeNames": [
+    "mxgraph.basic.plaque"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:64"
+  },
+  {
+   "id": "basic-45-frame",
+   "title": "Frame",
+   "tags": "basic frame  Frame",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.frame;dx=10;whiteSpace=wrap;",
+   "shapeNames": [
+    "mxgraph.basic.frame"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:65"
+  },
+  {
+   "id": "basic-46-rounded-frame",
+   "title": "Rounded Frame",
+   "tags": "basic rounded frame  Rounded Frame",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.rounded_frame;dx=10;whiteSpace=wrap;",
+   "shapeNames": [
+    "mxgraph.basic.rounded_frame"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:66"
+  },
+  {
+   "id": "basic-47-plaque-frame",
+   "title": "Plaque Frame",
+   "tags": "basic plaque frame  Plaque Frame",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.plaque_frame;dx=10;whiteSpace=wrap;",
+   "shapeNames": [
+    "mxgraph.basic.plaque_frame"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:67"
+  },
+  {
+   "id": "basic-48-frame-corner",
+   "title": "Frame Corner",
+   "tags": "basic frame corner  Frame Corner",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.frame_corner;dx=10;whiteSpace=wrap;",
+   "shapeNames": [
+    "mxgraph.basic.frame_corner"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:68"
+  },
+  {
+   "id": "basic-49-diagonal-stripe",
+   "title": "Diagonal Stripe",
+   "tags": "basic diag stripe  Diagonal Stripe",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.diag_stripe;dx=10;",
+   "shapeNames": [
+    "mxgraph.basic.diag_stripe"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:69"
+  },
+  {
+   "id": "basic-50-rectangular-callout",
+   "title": "Rectangular Callout",
+   "tags": "basic rectangular callout  Rectangular Callout",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "whiteSpace=wrap;html=1;shape=mxgraph.basic.rectCallout;dx=30;dy=15;boundedLbl=1;",
+   "shapeNames": [
+    "mxgraph.basic.rectCallout"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:70"
+  },
+  {
+   "id": "basic-51-rounded-rectangular-callout",
+   "title": "Rounded Rectangular Callout",
+   "tags": "basic rectangular callout  Rounded Rectangular Callout",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "whiteSpace=wrap;html=1;shape=mxgraph.basic.roundRectCallout;dx=30;dy=15;size=5;boundedLbl=1;",
+   "shapeNames": [
+    "mxgraph.basic.roundRectCallout"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:71"
+  },
+  {
+   "id": "basic-52-layered-rectangle",
+   "title": "Layered Rectangle",
+   "tags": "basic layered rect  Layered Rectangle",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "whiteSpace=wrap;html=1;shape=mxgraph.basic.layered_rect;dx=10;outlineConnect=0;boundedLbl=1;",
+   "shapeNames": [
+    "mxgraph.basic.layered_rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:72"
+  },
+  {
+   "id": "basic-53-smiley",
+   "title": "Smiley",
+   "tags": "basic smiley  Smiley",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.smiley",
+   "shapeNames": [
+    "mxgraph.basic.smiley"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:73"
+  },
+  {
+   "id": "basic-54-star",
+   "title": "Star",
+   "tags": "basic star  Star",
+   "kind": "vertex",
+   "width": 100,
+   "height": 95,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.star",
+   "shapeNames": [
+    "mxgraph.basic.star"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:74"
+  },
+  {
+   "id": "basic-55-sun",
+   "title": "Sun",
+   "tags": "basic sun  Sun",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.sun",
+   "shapeNames": [
+    "mxgraph.basic.sun"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:75"
+  },
+  {
+   "id": "basic-56-tick",
+   "title": "Tick",
+   "tags": "basic tick  Tick",
+   "kind": "vertex",
+   "width": 85,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.tick",
+   "shapeNames": [
+    "mxgraph.basic.tick"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:76"
+  },
+  {
+   "id": "basic-57-wave",
+   "title": "Wave",
+   "tags": "basic wave  Wave",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.wave2;dy=0.3;",
+   "shapeNames": [
+    "mxgraph.basic.wave2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:77"
+  },
+  {
+   "id": "basic-58-button",
+   "title": "Button",
+   "tags": "basic button  Button",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "labelPosition=center;verticalLabelPosition=middle;align=center;html=1;shape=mxgraph.basic.button;dx=10;whiteSpace=wrap;",
+   "value": "Button",
+   "shapeNames": [
+    "mxgraph.basic.button"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:78"
+  },
+  {
+   "id": "basic-59-button-shaded",
+   "title": "Button (shaded)",
+   "tags": "basic button  Button (shaded)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "labelPosition=center;verticalLabelPosition=middle;align=center;html=1;shape=mxgraph.basic.shaded_button;dx=10;fillColor=#E6E6E6;strokeColor=none;whiteSpace=wrap;",
+   "value": "Button",
+   "shapeNames": [
+    "mxgraph.basic.shaded_button"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:79"
+  },
+  {
+   "id": "basic-60-x",
+   "title": "X",
+   "tags": "basic x  X",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.x",
+   "shapeNames": [
+    "mxgraph.basic.x"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:80"
+  },
+  {
+   "id": "basic-61-pie",
+   "title": "Pie",
+   "tags": "basic pie  Pie",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.pie;startAngle=0.2;endAngle=0.9;",
+   "shapeNames": [
+    "mxgraph.basic.pie"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:81"
+  },
+  {
+   "id": "basic-62-arc",
+   "title": "Arc",
+   "tags": "basic arc  Arc",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.arc;startAngle=0.3;endAngle=0.1;",
+   "shapeNames": [
+    "mxgraph.basic.arc"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:82"
+  },
+  {
+   "id": "basic-63-partial-concentric-ellipse",
+   "title": "Partial Concentric Ellipse",
+   "tags": "basic partConcEllipse  Partial Concentric Ellipse",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.partConcEllipse;startAngle=0.25;endAngle=0.1;arcWidth=0.5;",
+   "shapeNames": [
+    "mxgraph.basic.partConcEllipse"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:83"
+  },
+  {
+   "id": "basic-64-message",
+   "title": "Message",
+   "tags": "message mail Message",
+   "kind": "vertex",
+   "width": 60,
+   "height": 40,
+   "style": "shape=message;html=1;html=1;outlineConnect=0;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;",
+   "shapeNames": [
+    "message"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:84"
+  },
+  {
+   "id": "basic-65-cylinder-stack",
+   "title": "Cylinder Stack",
+   "tags": "cylinder data database stack tube Cylinder Stack",
+   "kind": "vertex",
+   "width": 60,
+   "height": 80,
+   "style": "shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;lid=0;",
+   "shapeNames": [
+    "cylinder3"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:85"
+  },
+  {
+   "id": "basic-66-bang",
+   "title": "Bang",
+   "tags": "mindmap explosion Bang",
+   "kind": "vertex",
+   "width": 140,
+   "height": 80,
+   "style": "shape=mindmapBang;whiteSpace=wrap;html=1;perimeter=ellipsePerimeter;",
+   "shapeNames": [
+    "mindmapBang"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:86"
+  },
+  {
+   "id": "basic-67-tag",
+   "title": "Tag",
+   "tags": "tag label git tag Tag",
+   "kind": "vertex",
+   "width": 80,
+   "height": 20,
+   "style": "shape=gitTag;tabSize=8;tabInset=4;holeSize=1;whiteSpace=wrap;html=1;",
+   "shapeNames": [
+    "gitTag"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:87"
+  },
+  {
+   "id": "basic-68-sankey-link",
+   "title": "Sankey Link",
+   "tags": "sankey link flow band ribbon mermaid",
+   "kind": "edge",
+   "width": 100,
+   "height": 60,
+   "style": "shape=mermaidSankeyLink;width=20;fillColor=#AF7AA1;gradientColor=#76B7B2;gradientDirection=east;opacity=50;strokeColor=none;bendable=0;html=1;",
+   "shapeNames": [
+    "mermaidSankeyLink"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:88"
+  },
+  {
+   "id": "basic-69-person",
+   "title": "Person",
+   "tags": "person actor user human c4 mermaid Person",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "shape=mermaidPerson;perimeter=mermaidPersonPerimeter;whiteSpace=wrap;html=1;",
+   "shapeNames": [
+    "mermaidPerson"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:89"
+  },
+  {
+   "id": "basic-70-use-case-actor",
+   "title": "Use Case Actor",
+   "tags": "actor user stick figure use case uml mermaid Use Case Actor",
+   "kind": "vertex",
+   "width": 56,
+   "height": 72,
+   "style": "shape=mermaidUsecaseActor;actorType=normal;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;",
+   "shapeNames": [
+    "mermaidUsecaseActor"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:90"
+  },
+  {
+   "id": "basic-71-hollow-use-case-actor",
+   "title": "Hollow Use Case Actor",
+   "tags": "actor user hollow figure use case uml mermaid Hollow Use Case Actor",
+   "kind": "vertex",
+   "width": 56,
+   "height": 72,
+   "style": "shape=mermaidUsecaseActor;actorType=hollow;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;",
+   "shapeNames": [
+    "mermaidUsecaseActor"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:91"
+  },
+  {
+   "id": "basic-72-awesome-use-case-actor",
+   "title": "Awesome Use Case Actor",
+   "tags": "actor user silhouette bust use case uml mermaid Awesome Use Case Actor",
+   "kind": "vertex",
+   "width": 56,
+   "height": 72,
+   "style": "shape=mermaidUsecaseActor;actorType=awesome;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;",
+   "shapeNames": [
+    "mermaidUsecaseActor"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:92"
+  },
+  {
+   "id": "basic-73-smiley",
+   "title": "Smiley",
+   "tags": "smiley happy face emoticon emoji Smiley",
+   "kind": "vertex",
+   "width": 40,
+   "height": 40,
+   "style": "shape=smileyFace;aspect=fixed;smileyType=happy;perimeter=ellipsePerimeter;fillColor=#FFF8DC;strokeColor=#999999;strokeWidth=2;whiteSpace=wrap;html=1;",
+   "shapeNames": [
+    "smileyFace"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:93"
+  },
+  {
+   "id": "basic-74-neutral-smiley",
+   "title": "Neutral Smiley",
+   "tags": "smiley neutral face emoticon emoji Neutral Smiley",
+   "kind": "vertex",
+   "width": 40,
+   "height": 40,
+   "style": "shape=smileyFace;aspect=fixed;smileyType=neutral;perimeter=ellipsePerimeter;fillColor=#FFF8DC;strokeColor=#999999;strokeWidth=2;whiteSpace=wrap;html=1;",
+   "shapeNames": [
+    "smileyFace"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:94"
+  },
+  {
+   "id": "basic-75-sad-smiley",
+   "title": "Sad Smiley",
+   "tags": "smiley sad face emoticon emoji Sad Smiley",
+   "kind": "vertex",
+   "width": 40,
+   "height": 40,
+   "style": "shape=smileyFace;aspect=fixed;smileyType=sad;perimeter=ellipsePerimeter;fillColor=#FFF8DC;strokeColor=#999999;strokeWidth=2;whiteSpace=wrap;html=1;",
+   "shapeNames": [
+    "smileyFace"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Basic.js:95"
+  }
+ ]
+}

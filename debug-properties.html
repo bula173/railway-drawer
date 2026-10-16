@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Railway Drawer - Properties Panel Debug</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+        background: #f5f5f5;
+        padding: 20px;
+      }
+
+      .debug-container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      .debug-section {
+        background: white;
+        border-radius: 8px;
+        padding: 16px;
+        margin-bottom: 16px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+
+      .debug-section h2 {
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 12px;
+        color: #333;
+        border-bottom: 2px solid #0066cc;
+        padding-bottom: 8px;
+      }
+
+      .test-case {
+        padding: 12px;
+        margin-bottom: 8px;
+        background: #f9f9f9;
+        border-left: 3px solid #0066cc;
+        font-family: monospace;
+        font-size: 12px;
+        color: #333;
+      }
+
+      .test-case.pass {
+        background: #e8f5e9;
+        border-left-color: #4caf50;
+        color: #2e7d32;
+      }
+
+      .test-case.fail {
+        background: #ffebee;
+        border-left-color: #f44336;
+        color: #c62828;
+      }
+
+      .test-case.info {
+        background: #e3f2fd;
+        border-left-color: #2196f3;
+        color: #1565c0;
+      }
+
+      .test-status {
+        display: inline-block;
+        padding: 2px 8px;
+        border-radius: 3px;
+        font-weight: bold;
+        margin-right: 8px;
+        font-size: 11px;
+      }
+
+      .test-status.pass {
+        background: #4caf50;
+        color: white;
+      }
+
+      .test-status.fail {
+        background: #f44336;
+        color: white;
+      }
+
+      .test-status.info {
+        background: #2196f3;
+        color: white;
+      }
+
+      .control-panel {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+
+      .control-panel button {
+        padding: 10px 16px;
+        background: #0066cc;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.2s;
+      }
+
+      .control-panel button:hover {
+        background: #0052a3;
+      }
+
+      .control-panel button:active {
+        transform: scale(0.98);
+      }
+
+      .log-output {
+        background: #1e1e1e;
+        color: #d4d4d4;
+        padding: 12px;
+        border-radius: 4px;
+        font-family: 'Courier New', monospace;
+        font-size: 11px;
+        max-height: 300px;
+        overflow-y: auto;
+        white-space: pre-wrap;
+      }
+
+      .log-output.error {
+        background: #3f0000;
+        color: #ff6b6b;
+      }
+
+      .log-output.success {
+        background: #003f00;
+        color: #51cf66;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #e0e0e0;
+        font-size: 12px;
+      }
+
+      th {
+        background: #f5f5f5;
+        font-weight: 600;
+        color: #333;
+      }
+
+      td {
+        color: #666;
+      }
+
+      .status-indicator {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        margin-right: 4px;
+      }
+
+      .status-indicator.active {
+        background: #4caf50;
+      }
+
+      .status-indicator.inactive {
+        background: #f44336;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="debug-container">
+      <h1>🚂 Railway Drawer - Properties Panel Debug Tool</h1>
+
+      <div class="debug-section">
+        <h2>📋 Test Controls</h2>
+        <div class="control-panel">
+          <button onclick="runAllTests()">Run All Tests</button>
+          <button onclick="testShapeCreation()">Test Shape Creation</button>
+          <button onclick="testPropertiesPanel()">Test Properties Panel</button>
+          <button onclick="testSelection()">Test Selection</button>
+          <button onclick="testPropertyUpdate()">Test Property Update</button>
+          <button onclick="clearLogs()">Clear Logs</button>
+        </div>
+      </div>
+
+      <div class="debug-section">
+        <h2>🔍 Debug Status</h2>
+        <table>
+          <tr>
+            <th>Component</th>
+            <th>Status</th>
+            <th>Details</th>
+          </tr>
+          <tr>
+            <td>Window object</td>
+            <td><span class="status-indicator active"></span>Available</td>
+            <td id="status-window">✓</td>
+          </tr>
+          <tr>
+            <td>Document API</td>
+            <td><span class="status-indicator active"></span>Available</td>
+            <td id="status-document">✓</td>
+          </tr>
+          <tr>
+            <td>PropertiesPanelManager</td>
+            <td><span class="status-indicator" id="status-manager"></span><span id="status-manager-text">Loading...</span></td>
+            <td id="status-manager-details">-</td>
+          </tr>
+          <tr>
+            <td>Graph Instance</td>
+            <td><span class="status-indicator" id="status-graph"></span><span id="status-graph-text">Loading...</span></td>
+            <td id="status-graph-details">-</td>
+          </tr>
+          <tr>
+            <td>Property Content Element</td>
+            <td><span class="status-indicator" id="status-element"></span><span id="status-element-text">Loading...</span></td>
+            <td id="status-element-details">-</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="debug-section">
+        <h2>📊 Test Results</h2>
+        <div id="test-output" class="log-output">Waiting for tests to run...</div>
+      </div>
+
+      <div class="debug-section">
+        <h2>📝 Event Log</h2>
+        <div id="event-log" class="log-output">Monitoring for events...</div>
+      </div>
+    </div>
+
+    <script>
+      const logs = [];
+      const eventLogs = [];
+
+      function log(message, type = 'info') {
+        const timestamp = new Date().toLocaleTimeString();
+        const logEntry = `[${timestamp}] ${message}`;
+        logs.push({ message: logEntry, type });
+        updateLogs();
+      }
+
+      function logEvent(message) {
+        const timestamp = new Date().toLocaleTimeString();
+        eventLogs.push(`[${timestamp}] ${message}`);
+        if (eventLogs.length > 100) eventLogs.shift();
+        updateEventLog();
+      }
+
+      function updateLogs() {
+        const output = document.getElementById('test-output');
+        output.innerHTML = logs
+          .map(
+            (entry) =>
+              `<div class="test-case ${entry.type}"><span class="test-status ${entry.type}">${entry.type.toUpperCase()}</span>${entry.message}</div>`
+          )
+          .join('');
+        output.scrollTop = output.scrollHeight;
+      }
+
+      function updateEventLog() {
+        document.getElementById('event-log').textContent = eventLogs.join('\n');
+        document.getElementById('event-log').scrollTop = document.getElementById('event-log').scrollHeight;
+      }
+
+      function clearLogs() {
+        logs.length = 0;
+        eventLogs.length = 0;
+        updateLogs();
+        updateEventLog();
+      }
+
+      function checkEnvironment() {
+        log('Checking environment...');
+
+        // Check window
+        if (window) {
+          log('✓ Window object available', 'pass');
+        } else {
+          log('✗ Window object not available', 'fail');
+        }
+
+        // Check document
+        if (document) {
+          log('✓ Document object available', 'pass');
+        } else {
+          log('✗ Document object not available', 'fail');
+        }
+      }
+
+      function testShapeCreation() {
+        log('Testing shape creation...');
+
+        try {
+          const propertyContent = document.getElementById('property-content');
+          if (!propertyContent) {
+            log('✗ property-content element not found', 'fail');
+            return;
+          }
+
+          log('✓ property-content element found', 'pass');
+          log(`   - ID: ${propertyContent.id}`, 'info');
+          log(`   - Class: ${propertyContent.className}`, 'info');
+          log(`   - Visible: ${propertyContent.offsetHeight > 0 ? 'yes' : 'no'}`, 'info');
+
+          // Check CSS display
+          const computedStyle = window.getComputedStyle(propertyContent);
+          log(`   - Display: ${computedStyle.display}`, 'info');
+          log(`   - Visibility: ${computedStyle.visibility}`, 'info');
+          log(`   - Opacity: ${computedStyle.opacity}`, 'info');
+        } catch (error) {
+          log(`✗ Error: ${error}`, 'fail');
+        }
+      }
+
+      function testPropertiesPanel() {
+        log('Testing properties panel...');
+
+        try {
+          const propertyContent = document.getElementById('property-content');
+          if (!propertyContent) {
+            log('✗ property-content element not found', 'fail');
+            return;
+          }
+
+          const innerHTML = propertyContent.innerHTML || '';
+          log(`✓ property-content has content: ${innerHTML.length} characters`, innerHTML.length > 50 ? 'pass' : 'info');
+
+          if (innerHTML.includes('Click element to edit')) {
+            log('   → Currently showing placeholder (no shape selected)', 'info');
+          } else if (innerHTML.includes('properties-panel')) {
+            log('   → Properties panel is rendered', 'pass');
+            log(`   → Contains ${(innerHTML.match(/properties-section/g) || []).length} sections`, 'pass');
+            log(`   → Contains ${(innerHTML.match(/property-group/g) || []).length} property groups`, 'pass');
+          } else {
+            log('   → Content structure unknown', 'info');
+          }
+
+          // Count inputs
+          const inputs = propertyContent.querySelectorAll('input');
+          const selects = propertyContent.querySelectorAll('select');
+          const buttons = propertyContent.querySelectorAll('button');
+
+          log(`   - Input fields: ${inputs.length}`, 'info');
+          log(`   - Select fields: ${selects.length}`, 'info');
+          log(`   - Buttons: ${buttons.length}`, 'info');
+        } catch (error) {
+          log(`✗ Error: ${error}`, 'fail');
+        }
+      }
+
+      function testSelection() {
+        log('Testing selection listener...');
+
+        try {
+          // Listen for selection changes
+          logEvent('Selection test started - trying to detect shape selection...');
+
+          let selectionDetected = false;
+          const originalLog = window.console.log;
+
+          // Monitor for selection changes
+          const observer = setInterval(() => {
+            const propertyContent = document.getElementById('property-content');
+            if (propertyContent && propertyContent.innerHTML.includes('properties-panel')) {
+              selectionDetected = true;
+              clearInterval(observer);
+              log('✓ Selection detected - properties panel rendered', 'pass');
+              logEvent('✓ Selection listener working!');
+            }
+          }, 100);
+
+          setTimeout(() => {
+            clearInterval(observer);
+            if (!selectionDetected) {
+              log('⚠ No selection detected in 3 seconds', 'info');
+              log('   → Try clicking a shape in the canvas', 'info');
+              logEvent('Waiting for manual shape selection...');
+            }
+          }, 3000);
+        } catch (error) {
+          log(`✗ Error: ${error}`, 'fail');
+        }
+      }
+
+      function testPropertyUpdate() {
+        log('Testing property updates...');
+
+        try {
+          const propertyContent = document.getElementById('property-content');
+          if (!propertyContent) {
+            log('✗ property-content element not found', 'fail');
+            return;
+          }
+
+          // Find text input
+          const textInput = propertyContent.querySelector('#prop-text');
+          if (textInput) {
+            log('✓ Text input field found', 'pass');
+            log(`   - Current value: "${textInput.value}"`, 'info');
+          } else {
+            log('⚠ Text input not found (no shape selected?)', 'info');
+          }
+
+          // Find color inputs
+          const colorInputs = propertyContent.querySelectorAll('input[type="color"]');
+          log(`✓ Found ${colorInputs.length} color pickers`, 'pass');
+
+          // Find range inputs
+          const rangeInputs = propertyContent.querySelectorAll('input[type="range"]');
+          log(`✓ Found ${rangeInputs.length} range sliders`, 'pass');
+
+          // Find number inputs
+          const numberInputs = propertyContent.querySelectorAll('input[type="number"]');
+          log(`✓ Found ${numberInputs.length} number inputs`, 'pass');
+        } catch (error) {
+          log(`✗ Error: ${error}`, 'fail');
+        }
+      }
+
+      function runAllTests() {
+        clearLogs();
+        log('🚀 Starting comprehensive test suite...', 'info');
+        checkEnvironment();
+        setTimeout(() => testShapeCreation(), 500);
+        setTimeout(() => testPropertiesPanel(), 1000);
+        setTimeout(() => testPropertyUpdate(), 1500);
+        setTimeout(() => testSelection(), 2000);
+      }
+
+      // Auto-run on page load
+      window.addEventListener('load', () => {
+        checkEnvironment();
+        log('Debug tool ready!', 'pass');
+        log('Use the buttons above to run tests', 'info');
+      });
+
+      // Monitor for changes
+      document.addEventListener('click', (e) => {
+        if ((e.target as HTMLElement).id?.includes('editor') || (e.target as HTMLElement).closest('#editor-container')) {
+          logEvent(`Click detected on canvas area`);
+          setTimeout(() => testPropertiesPanel(), 100);
+        }
+      });
+    </script>
+  </body>
+</html>

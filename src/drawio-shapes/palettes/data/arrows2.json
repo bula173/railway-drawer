@@ -1,0 +1,442 @@
+{
+ "id": "arrows2",
+ "title": "Arrows",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Arrows2.js:8",
+ "entries": [
+  {
+   "id": "arrows2-0-arrow-right",
+   "title": "Arrow Right",
+   "tags": "arrows2 arrow arrow right Arrow Right",
+   "kind": "vertex",
+   "width": 100,
+   "height": 70,
+   "style": "html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=40;notch=0;",
+   "shapeNames": [
+    "mxgraph.arrows2.arrow"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Arrows2.js:18"
+  },
+  {
+   "id": "arrows2-1-arrow-left",
+   "title": "Arrow Left",
+   "tags": "arrows2 arrow arrow left Arrow Left",
+   "kind": "vertex",
+   "width": 100,
+   "height": 70,
+   "style": "html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=40;flipH=1;notch=0;",
+   "shapeNames": [
+    "mxgraph.arrows2.arrow"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Arrows2.js:20"
+  },
+  {
+   "id": "arrows2-2-arrow-up",
+   "title": "Arrow Up",
+   "tags": "arrows2 arrow arrow up Arrow Up",
+   "kind": "vertex",
+   "width": 70,
+   "height": 100,
+   "style": "html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=40;direction=north;notch=0;",
+   "shapeNames": [
+    "mxgraph.arrows2.arrow"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Arrows2.js:22"
+  },
+  {
+   "id": "arrows2-3-arrow-down",
+   "title": "Arrow Down",
+   "tags": "arrows2 arrow arrow down Arrow Down",
+   "kind": "vertex",
+   "width": 70,
+   "height": 100,
+   "style": "html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=40;direction=south;notch=0;",
+   "shapeNames": [
+    "mxgraph.arrows2.arrow"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Arrows2.js:24"
+  },
+  {
+   "id": "arrows2-4-chevron-arrow",
+   "title": "Chevron Arrow",
+   "tags": "arrows2 arrow arrow chevron Chevron Arrow",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=30;",
+   "shapeNames": [
+    "mxgraph.arrows2.arrow"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Arrows2.js:26"
+  },
+  {
+   "id": "arrows2-5-notched-arrow",
+   "title": "Notched Arrow",
+   "tags": "arrows2 arrow arrow notched Notched Arrow",
+   "kind": "vertex",
+   "width": 100,
+   "height": 70,
+   "style": "html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=40;notch=15;",
+   "shapeNames": [
+    "mxgraph.arrows2.arrow"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Arrows2.js:28"
+  },
+  {
+   "id": "arrows2-6-notched-signal-in-arrow",
+   "title": "Notched Signal-In Arrow",
+   "tags": "arrows2 arrow arrow notched signal in Notched Signal-In Arrow",
+   "kind": "vertex",
+   "width": 100,
+   "height": 30,
+   "style": "html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=10;notch=10;",
+   "shapeNames": [
+    "mxgraph.arrows2.arrow"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Arrows2.js:30"
+  },
+  {
+   "id": "arrows2-7-signal-in-arrow",
+   "title": "Signal-In Arrow",
+   "tags": "arrows2 arrow arrow signal in Signal-In Arrow",
+   "kind": "vertex",
+   "width": 100,
+   "height": 30,
+   "style": "html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=10;notch=0;",
+   "shapeNames": [
+    "mxgraph.arrows2.arrow"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Arrows2.js:32"
+  },
+  {
+   "id": "arrows2-8-slender-arrow",
+   "title": "Slender Arrow",
+   "tags": "arrows2 arrow arrow slender Slender Arrow",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.67;dx=20;notch=0;",
+   "shapeNames": [
+    "mxgraph.arrows2.arrow"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Arrows2.js:34"
+  },
+  {
+   "id": "arrows2-9-two-way-arrow",
+   "title": "Two Way Arrow",
+   "tags": "arrows2 arrow arrow two way Two Way Arrow",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.twoWayArrow;dy=0.6;dx=35;",
+   "shapeNames": [
+    "mxgraph.arrows2.twoWayArrow"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Arrows2.js:36"
+  },
+  {
+   "id": "arrows2-10-slender-two-way-arrow",
+   "title": "Slender Two Way Arrow",
+   "tags": "arrows2 arrow arrow slender two way Slender Two Way Arrow",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.twoWayArrow;dy=0.65;dx=22;",
+   "shapeNames": [
+    "mxgraph.arrows2.twoWayArrow"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Arrows2.js:38"
+  },
+  {
+   "id": "arrows2-11-stylised-arrow",
+   "title": "Stylised Arrow",
+   "tags": "arrows2 arrow arrow stylised notch notched Stylised Arrow",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.stylisedArrow;dy=0.6;dx=40;notch=15;feather=0.4;",
+   "shapeNames": [
+    "mxgraph.arrows2.stylisedArrow"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Arrows2.js:40"
+  },
+  {
+   "id": "arrows2-12-sharp-arrow",
+   "title": "Sharp Arrow",
+   "tags": "arrows2 arrow arrow sharp Sharp Arrow",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.sharpArrow;dy1=0.67;dx1=18;dx2=18;notch=0;",
+   "shapeNames": [
+    "mxgraph.arrows2.sharpArrow"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Arrows2.js:42"
+  },
+  {
+   "id": "arrows2-13-sharp-arrow",
+   "title": "Sharp Arrow",
+   "tags": "arrows2 arrow arrow sharp Sharp Arrow",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.sharpArrow2;dy1=0.67;dx1=18;dx2=18;dy3=0.15;dx3=27;notch=0;",
+   "shapeNames": [
+    "mxgraph.arrows2.sharpArrow2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Arrows2.js:44"
+  },
+  {
+   "id": "arrows2-14-callout-with-arrow",
+   "title": "Callout with Arrow",
+   "tags": "arrows2 arrow arrow callout Callout with Arrow",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.calloutArrow;dy=10;dx=20;notch=60;arrowHead=10;",
+   "shapeNames": [
+    "mxgraph.arrows2.calloutArrow"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Arrows2.js:46"
+  },
+  {
+   "id": "arrows2-15-bend-arrow",
+   "title": "Bend Arrow",
+   "tags": "arrows2 arrow arrow bend Bend Arrow",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.bendArrow;dy=15;dx=38;notch=0;arrowHead=55;rounded=0;",
+   "shapeNames": [
+    "mxgraph.arrows2.bendArrow"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Arrows2.js:48"
+  },
+  {
+   "id": "arrows2-16-bend-arrow-rounded",
+   "title": "Bend Arrow (rounded)",
+   "tags": "arrows2 arrow arrow bend rounded Bend Arrow (rounded)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.bendArrow;dy=15;dx=38;notch=0;arrowHead=55;rounded=1;",
+   "shapeNames": [
+    "mxgraph.arrows2.bendArrow"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Arrows2.js:50"
+  },
+  {
+   "id": "arrows2-17-bend-double-arrow",
+   "title": "Bend Double Arrow",
+   "tags": "arrows2 arrow arrow bend double two way Bend Double Arrow",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.bendDoubleArrow;dy=15;dx=38;arrowHead=55;rounded=0;",
+   "shapeNames": [
+    "mxgraph.arrows2.bendDoubleArrow"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Arrows2.js:52"
+  },
+  {
+   "id": "arrows2-18-bend-double-arrow",
+   "title": "Bend Double Arrow",
+   "tags": "arrows2 arrow arrow bend double two way Bend Double Arrow",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.bendDoubleArrow;dy=15;dx=38;arrowHead=55;rounded=1;",
+   "shapeNames": [
+    "mxgraph.arrows2.bendDoubleArrow"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Arrows2.js:54"
+  },
+  {
+   "id": "arrows2-19-callout-with-double-arrow",
+   "title": "Callout with Double Arrow",
+   "tags": "arrows2 arrow arrow callout double two way Callout with Double Arrow",
+   "kind": "vertex",
+   "width": 100,
+   "height": 50,
+   "style": "html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.calloutDoubleArrow;dy=10;dx=20;notch=24;arrowHead=10;",
+   "shapeNames": [
+    "mxgraph.arrows2.calloutDoubleArrow"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Arrows2.js:56"
+  },
+  {
+   "id": "arrows2-20-callout-with-quad-arrow",
+   "title": "Callout with Quad Arrow",
+   "tags": "arrows2 arrow arrow callout quad four war Callout with Quad Arrow",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.calloutQuadArrow;dy=10;dx=20;notch=24;arrowHead=10;",
+   "shapeNames": [
+    "mxgraph.arrows2.calloutQuadArrow"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Arrows2.js:58"
+  },
+  {
+   "id": "arrows2-21-callout-with-double-arrow-90",
+   "title": "Callout with Double Arrow 90°",
+   "tags": "arrows2 arrow arrow callout double two way orthogonal Callout with Double Arrow 90°",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.calloutDouble90Arrow;dy1=10;dx1=20;dx2=70;dy2=70;arrowHead=10;",
+   "shapeNames": [
+    "mxgraph.arrows2.calloutDouble90Arrow"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Arrows2.js:60"
+  },
+  {
+   "id": "arrows2-22-quad-arrow",
+   "title": "Quad Arrow",
+   "tags": "arrows2 arrow arrow four way quad Quad Arrow",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.quadArrow;dy=10;dx=20;notch=24;arrowHead=10;",
+   "shapeNames": [
+    "mxgraph.arrows2.quadArrow"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Arrows2.js:62"
+  },
+  {
+   "id": "arrows2-23-triad-arrow",
+   "title": "Triad Arrow",
+   "tags": "arrows2 arrow arrow three way triad Triad Arrow",
+   "kind": "vertex",
+   "width": 100,
+   "height": 70,
+   "style": "html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.triadArrow;dy=10;dx=20;arrowHead=40;",
+   "shapeNames": [
+    "mxgraph.arrows2.triadArrow"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Arrows2.js:64"
+  },
+  {
+   "id": "arrows2-24-tailed-arrow",
+   "title": "Tailed Arrow",
+   "tags": "arrows2 arrow arrow tailed Tailed Arrow",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.tailedArrow;dy1=10;dx1=20;notch=0;arrowHead=20;dx2=25;dy2=30;",
+   "shapeNames": [
+    "mxgraph.arrows2.tailedArrow"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Arrows2.js:66"
+  },
+  {
+   "id": "arrows2-25-tailed-arrow-with-notch",
+   "title": "Tailed Arrow with Notch",
+   "tags": "arrows2 arrow arrow tailed notch notched Tailed Arrow with Notch",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.tailedNotchedArrow;dy1=10;dx1=20;notch=20;arrowHead=20;dx2=25;dy2=30;",
+   "shapeNames": [
+    "mxgraph.arrows2.tailedNotchedArrow"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Arrows2.js:68"
+  },
+  {
+   "id": "arrows2-26-striped-arrow",
+   "title": "Striped Arrow",
+   "tags": "arrows2 arrow arrow striped Striped Arrow",
+   "kind": "vertex",
+   "width": 100,
+   "height": 70,
+   "style": "html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.stripedArrow;dy=0.6;dx=40;notch=25;",
+   "shapeNames": [
+    "mxgraph.arrows2.stripedArrow"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Arrows2.js:70"
+  },
+  {
+   "id": "arrows2-27-jump-in-arrow",
+   "title": "Jump-In Arrow",
+   "tags": "arrows2 arrow arrow jump in Jump-In Arrow",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.jumpInArrow;dy=15;dx=38;arrowHead=55;",
+   "shapeNames": [
+    "mxgraph.arrows2.jumpInArrow"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Arrows2.js:72"
+  },
+  {
+   "id": "arrows2-28-u-turn-arrow",
+   "title": "U Turn Arrow",
+   "tags": "arrows2 arrow arrow u turn uturn U Turn Arrow",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.uTurnArrow;dy=11;arrowHead=43;dx2=25;",
+   "shapeNames": [
+    "mxgraph.arrows2.uTurnArrow"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Arrows2.js:74"
+  },
+  {
+   "id": "arrows2-29-wedge-arrow",
+   "title": "Wedge Arrow",
+   "tags": "arrows2 wedge arrow arrow ",
+   "kind": "edge",
+   "width": 100,
+   "height": 100,
+   "style": "shape=mxgraph.arrows2.wedgeArrow;html=1;bendable=0;startWidth=50;fillColor=strokeColor;defaultFillColor=invert;defaultGradientColor=invert;",
+   "shapeNames": [
+    "mxgraph.arrows2.wedgeArrow"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Arrows2.js:76"
+  },
+  {
+   "id": "arrows2-30-wedge-arrow-dashed",
+   "title": "Wedge Arrow Dashed",
+   "tags": "arrows2 wedge arrow dashed arrow ",
+   "kind": "edge",
+   "width": 100,
+   "height": 100,
+   "style": "shape=mxgraph.arrows2.wedgeArrowDashed2;html=1;bendable=0;startWidth=50;stepSize=15;",
+   "shapeNames": [
+    "mxgraph.arrows2.wedgeArrowDashed2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Arrows2.js:77"
+  }
+ ]
+}

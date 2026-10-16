@@ -1,0 +1,16 @@
+{
+  "$comment": "Entries reported but never failing the draw.io parity spec. ids: exact entry id -> reason. xmlIncludes: substring of the rendered mxGraphModel XML -> reason (checked after ids).",
+  "ids": {
+    "basic-68-sankey-link": "mermaidSankeyLink: the gradient band at opacity=50 rasterizes differently (11.7%); geometry matches",
+    "misc-37-image-fixed-aspect": "image: img/clipart/* is resolved by draw.io's base URL only",
+    "misc-38-image-variable-aspect": "image: img/clipart/* is resolved by draw.io's base URL only",
+    "misc-39-icon": "image: img/clipart/* is resolved by draw.io's base URL only",
+    "misc-40-label-1": "image: img/clipart/* is resolved by draw.io's base URL only",
+    "misc-41-label-2": "image: img/clipart/* is resolved by draw.io's base URL only",
+    "general-31-list": "draw.io side: the export of the raw palette template does not run its stackLayout (all items are drawn in the header); the app lays the items out as draw.io's sidebar insert does",
+    "advanced-31-list": "draw.io side: the export of the raw palette template does not run its stackLayout (all items are drawn in the header); the app lays the items out as draw.io's sidebar insert does"
+  },
+  "xmlIncludes": {
+    "image=img/": "image: draw.io-relative image path"
+  }
+}

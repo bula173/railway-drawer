@@ -1,0 +1,58 @@
+# Doxyfile for Railway Drawer
+# Generate documentation with: doxygen Doxyfile
+
+PROJECT_NAME           = "Railway Drawer"
+PROJECT_NUMBER         = 0.6.0
+PROJECT_BRIEF          = "A TypeScript-based web application for displaying and editing railway diagrams using vector graphics"
+
+INPUT                  = src/
+INPUT_ENCODING         = UTF-8
+FILE_PATTERNS          = *.ts *.tsx *.md
+RECURSIVE              = YES
+
+EXCLUDE                = node_modules/ dist/ docs/
+EXCLUDE_PATTERNS       = */node_modules/* */dist/*
+
+OUTPUT_DIRECTORY       = docs/
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+HTML_TIMESTAMP         = YES
+
+GENERATE_LATEX         = NO
+GENERATE_MAN           = NO
+GENERATE_RTF           = NO
+
+EXTRACT_ALL            = NO
+EXTRACT_PRIVATE        = NO
+EXTRACT_STATIC         = YES
+EXTRACT_LOCAL_CLASSES  = YES
+
+QUIET                  = NO
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = YES
+
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = YES
+STRIP_CODE_COMMENTS    = NO
+
+HAVE_DOT               = NO
+CALL_GRAPH             = NO
+CALLER_GRAPH           = NO
+
+SEARCHENGINE           = NO
+SERVER_BASED_SEARCH    = NO
+
+ENABLE_PREPROCESSING   = YES
+
+SORT_MEMBER_DOCS       = YES
+SORT_GROUP_NAMES       = NO
+
+ALPHABETICAL_INDEX     = YES
+COLS_IN_ALPHA_INDEX    = 5
+
+# TypeScript/JavaScript specific settings
+LANGUAGE_MAPPING       = ts=C++ tsx=C++
+EXTENSION_MAPPING      = ts=c++ tsx=c++
+
+CLANG_ASSISTED_PARSING = NO
+CLANG_ADD_INC_PATHS    = YES

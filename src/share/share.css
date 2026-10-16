@@ -1,0 +1,347 @@
+/* Share dialog, cloud provider dialogs (src/share). Colours follow the app chrome (light/dark). */
+
+.rd-share-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10002;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.rd-share-modal {
+  display: flex;
+  flex-direction: column;
+  width: min(560px, calc(100vw - 32px));
+  max-height: calc(100vh - 32px);
+  box-sizing: border-box;
+  border: 1px solid var(--rd-chrome-border, #e0e0e0);
+  border-radius: 8px;
+  background: var(--rd-chrome-bg, #fff);
+  color: var(--rd-chrome-fg, #333);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  font-family: var(--font-family, Helvetica, Arial, sans-serif);
+  font-size: 13px;
+}
+
+.rd-share-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px 8px;
+}
+
+.rd-share-modal-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.rd-share-close {
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: inherit;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.rd-share-close:hover {
+  background: rgba(127, 127, 127, 0.15);
+}
+
+.rd-share-modal-body {
+  overflow: auto;
+  padding: 0 18px 12px;
+}
+
+.rd-share-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 10px 18px 14px;
+  border-top: 1px solid var(--rd-chrome-border, #e0e0e0);
+}
+
+.rd-share-section {
+  padding: 10px 0;
+  border-top: 1px solid var(--rd-chrome-border, #e0e0e0);
+}
+
+.rd-share-section:first-child {
+  border-top: none;
+}
+
+.rd-share-section h3 {
+  margin: 0 0 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.rd-share-hint {
+  margin: 0 0 8px;
+  color: var(--text-secondary, #666);
+  font-size: 12px;
+}
+
+:root[data-theme='dark'] .rd-share-hint {
+  color: #a0a0a0;
+}
+
+.rd-share-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.rd-share-input,
+.rd-share-select {
+  box-sizing: border-box;
+  padding: 6px 8px;
+  border: 1px solid var(--rd-chrome-border, #ccc);
+  border-radius: 4px;
+  background: var(--rd-chrome-bg, #fff);
+  color: inherit;
+  font: inherit;
+}
+
+.rd-share-input {
+  flex: 1 1 200px;
+  min-width: 0;
+}
+
+.rd-share-link-input {
+  width: 100%;
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  font-size: 12px;
+}
+
+.rd-share-btn {
+  padding: 6px 12px;
+  border: 1px solid var(--rd-chrome-border, #ccc);
+  border-radius: 4px;
+  background: var(--rd-chrome-bg, #fff);
+  color: inherit;
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.rd-share-btn:hover:not(:disabled) {
+  background: rgba(127, 127, 127, 0.12);
+}
+
+.rd-share-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.rd-share-btn-primary {
+  border-color: #1976d2;
+  background: #1976d2;
+  color: #fff;
+}
+
+.rd-share-btn-primary:hover:not(:disabled) {
+  background: #1565c0;
+}
+
+.rd-share-btn:focus-visible,
+.rd-share-close:focus-visible,
+.rd-share-entry:focus-visible,
+.rd-share-crumb:focus-visible {
+  outline: 2px solid #1976d2;
+  outline-offset: 1px;
+}
+
+.rd-share-meta {
+  margin-top: 4px;
+  color: var(--text-secondary, #666);
+  font-size: 12px;
+}
+
+.rd-share-warning {
+  margin-top: 6px;
+  padding: 6px 8px;
+  border-left: 3px solid #f9a825;
+  background: rgba(249, 168, 37, 0.12);
+  font-size: 12px;
+}
+
+.rd-share-error {
+  margin-top: 6px;
+  color: #c62828;
+  font-size: 12px;
+}
+
+:root[data-theme='dark'] .rd-share-error {
+  color: #ef9a9a;
+}
+
+.rd-share-status {
+  font-weight: 600;
+}
+
+.rd-share-warning[hidden],
+.rd-share-error[hidden],
+.rd-share-btn[hidden],
+.rd-share-row[hidden] {
+  display: none;
+}
+
+/* Cloud browser */
+
+.rd-share-crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  align-items: center;
+  margin: 4px 0 8px;
+  font-size: 12px;
+}
+
+.rd-share-crumb {
+  padding: 2px 4px;
+  border: none;
+  border-radius: 3px;
+  background: none;
+  color: #1976d2;
+  font: inherit;
+  cursor: pointer;
+}
+
+.rd-share-crumb[aria-current='location'] {
+  color: inherit;
+  font-weight: 600;
+  cursor: default;
+}
+
+.rd-share-list {
+  max-height: 300px;
+  min-height: 120px;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  border: 1px solid var(--rd-chrome-border, #ddd);
+  border-radius: 4px;
+  list-style: none;
+}
+
+.rd-share-entry {
+  display: flex;
+  width: 100%;
+  gap: 8px;
+  align-items: baseline;
+  padding: 6px 8px;
+  border: none;
+  border-bottom: 1px solid var(--rd-chrome-border, #eee);
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.rd-share-entry:hover {
+  background: rgba(127, 127, 127, 0.1);
+}
+
+.rd-share-entry[aria-pressed='true'] {
+  background: rgba(25, 118, 210, 0.15);
+}
+
+.rd-share-entry-name {
+  flex: 1 1 auto;
+  overflow-wrap: anywhere;
+}
+
+.rd-share-entry-detail {
+  flex: 0 1 auto;
+  color: var(--text-secondary, #888);
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+.rd-share-empty {
+  padding: 12px 8px;
+  color: var(--text-secondary, #888);
+}
+
+.rd-share-fieldset {
+  margin: 8px 0 0;
+  padding: 0;
+  border: none;
+}
+
+.rd-share-fieldset legend {
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.rd-share-radio {
+  display: block;
+  margin: 2px 0;
+}
+
+.status-remote .status-value {
+  max-width: 420px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.status-item.status-remote[hidden] {
+  display: none;
+}
+
+/* Provider save fields (commit message, branch, merge request) and runtime settings */
+.rd-share-fields {
+  margin-top: 8px;
+}
+
+.rd-share-field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-top: 8px;
+}
+
+.rd-share-field .rd-share-input {
+  flex: none;
+  width: 100%;
+}
+
+.rd-share-field-check {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.rd-share-field-check .rd-share-hint {
+  flex-basis: 100%;
+}
+
+.rd-share-field-label {
+  font-weight: 600;
+}
+
+.rd-share-settings {
+  margin-top: 8px;
+}
+
+.rd-share-settings summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.rd-share-settings summary:focus-visible {
+  outline: 2px solid var(--rd-accent, #1a73e8);
+  outline-offset: 2px;
+}

@@ -1,0 +1,470 @@
+{
+ "id": "advanced",
+ "title": "Advanced",
+ "drawioTag": "v32.4.1",
+ "source": "js/grapheditor/Sidebar.js:3076",
+ "entries": [
+  {
+   "id": "advanced-0-double-rectangle",
+   "title": "Double Rectangle",
+   "tags": "rect rectangle box double Double Rectangle",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "shape=ext;double=1;rounded=0;whiteSpace=wrap;html=1;",
+   "shapeNames": [
+    "ext"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:3113"
+  },
+  {
+   "id": "advanced-1-double-rounded-rectangle",
+   "title": "Double Rounded Rectangle",
+   "tags": "rounded rect rectangle box double Double Rounded Rectangle",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "shape=ext;double=1;rounded=1;whiteSpace=wrap;html=1;",
+   "shapeNames": [
+    "ext"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:3114"
+  },
+  {
+   "id": "advanced-2-double-ellipse",
+   "title": "Double Ellipse",
+   "tags": "oval ellipse start end state double Double Ellipse",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "ellipse;shape=doubleEllipse;whiteSpace=wrap;html=1;",
+   "shapeNames": [
+    "doubleEllipse"
+   ],
+   "cls": "a",
+   "source": "js/grapheditor/Sidebar.js:3115"
+  },
+  {
+   "id": "advanced-3-double-square",
+   "title": "Double Square",
+   "tags": "double square Double Square",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "shape=ext;double=1;whiteSpace=wrap;html=1;aspect=fixed;",
+   "shapeNames": [
+    "ext"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:3116"
+  },
+  {
+   "id": "advanced-4-double-circle",
+   "title": "Double Circle",
+   "tags": "double circle Double Circle",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "ellipse;shape=doubleEllipse;whiteSpace=wrap;html=1;aspect=fixed;",
+   "shapeNames": [
+    "doubleEllipse"
+   ],
+   "cls": "a",
+   "source": "js/grapheditor/Sidebar.js:3117"
+  },
+  {
+   "id": "advanced-5-tape-data",
+   "title": "Tape Data",
+   "tags": "tape data",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "shape=tapeData;whiteSpace=wrap;html=1;perimeter=ellipsePerimeter;",
+   "shapeNames": [
+    "tapeData"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:3118"
+  },
+  {
+   "id": "advanced-6-manual-input",
+   "title": "Manual Input",
+   "tags": "manual input",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "shape=manualInput;boundedLbl=1;whiteSpace=wrap;html=1;",
+   "shapeNames": [
+    "manualInput"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:3119"
+  },
+  {
+   "id": "advanced-7-loop-limit",
+   "title": "Loop Limit",
+   "tags": "loop limit",
+   "kind": "vertex",
+   "width": 100,
+   "height": 80,
+   "style": "shape=loopLimit;whiteSpace=wrap;html=1;",
+   "shapeNames": [
+    "loopLimit"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:3120"
+  },
+  {
+   "id": "advanced-8-off-page-connector",
+   "title": "Off Page Connector",
+   "tags": "off page connector",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "shape=offPageConnector;whiteSpace=wrap;html=1;",
+   "shapeNames": [
+    "offPageConnector"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:3121"
+  },
+  {
+   "id": "advanced-9-delay",
+   "title": "Delay",
+   "tags": "delay",
+   "kind": "vertex",
+   "width": 80,
+   "height": 40,
+   "style": "shape=delay;whiteSpace=wrap;html=1;",
+   "shapeNames": [
+    "delay"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:3122"
+  },
+  {
+   "id": "advanced-10-display",
+   "title": "Display",
+   "tags": "display",
+   "kind": "vertex",
+   "width": 80,
+   "height": 40,
+   "style": "shape=display;whiteSpace=wrap;html=1;",
+   "shapeNames": [
+    "display"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:3123"
+  },
+  {
+   "id": "advanced-11-arrow-left",
+   "title": "Arrow Left",
+   "tags": "arrow left",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "shape=singleArrow;direction=west;whiteSpace=wrap;html=1;",
+   "shapeNames": [
+    "singleArrow"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:3124"
+  },
+  {
+   "id": "advanced-12-arrow-right",
+   "title": "Arrow Right",
+   "tags": "arrow right",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "shape=singleArrow;whiteSpace=wrap;html=1;",
+   "shapeNames": [
+    "singleArrow"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:3125"
+  },
+  {
+   "id": "advanced-13-arrow-up",
+   "title": "Arrow Up",
+   "tags": "arrow up",
+   "kind": "vertex",
+   "width": 60,
+   "height": 100,
+   "style": "shape=singleArrow;direction=north;whiteSpace=wrap;html=1;",
+   "shapeNames": [
+    "singleArrow"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:3126"
+  },
+  {
+   "id": "advanced-14-arrow-down",
+   "title": "Arrow Down",
+   "tags": "arrow down",
+   "kind": "vertex",
+   "width": 60,
+   "height": 100,
+   "style": "shape=singleArrow;direction=south;whiteSpace=wrap;html=1;",
+   "shapeNames": [
+    "singleArrow"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:3127"
+  },
+  {
+   "id": "advanced-15-double-arrow",
+   "title": "Double Arrow",
+   "tags": "double arrow",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "shape=doubleArrow;whiteSpace=wrap;html=1;",
+   "shapeNames": [
+    "doubleArrow"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:3128"
+  },
+  {
+   "id": "advanced-16-double-arrow-vertical",
+   "title": "Double Arrow Vertical",
+   "tags": "double arrow Double Arrow Vertical",
+   "kind": "vertex",
+   "width": 60,
+   "height": 100,
+   "style": "shape=doubleArrow;direction=south;whiteSpace=wrap;html=1;",
+   "shapeNames": [
+    "doubleArrow"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:3129"
+  },
+  {
+   "id": "advanced-17-user",
+   "title": "User",
+   "tags": "user person human User",
+   "kind": "vertex",
+   "width": 40,
+   "height": 60,
+   "style": "shape=actor;whiteSpace=wrap;html=1;",
+   "shapeNames": [
+    "actor"
+   ],
+   "cls": "a",
+   "source": "js/grapheditor/Sidebar.js:3130"
+  },
+  {
+   "id": "advanced-18-cross",
+   "title": "Cross",
+   "tags": "cross",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "shape=cross;whiteSpace=wrap;html=1;",
+   "shapeNames": [
+    "cross"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:3131"
+  },
+  {
+   "id": "advanced-19-corner",
+   "title": "Corner",
+   "tags": "corner",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "shape=corner;whiteSpace=wrap;html=1;",
+   "shapeNames": [
+    "corner"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:3132"
+  },
+  {
+   "id": "advanced-20-tee",
+   "title": "Tee",
+   "tags": "tee",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "shape=tee;whiteSpace=wrap;html=1;",
+   "shapeNames": [
+    "tee"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:3133"
+  },
+  {
+   "id": "advanced-21-data-store",
+   "title": "Data Store",
+   "tags": "data store cylinder database Data Store",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "shape=datastore;whiteSpace=wrap;html=1;",
+   "shapeNames": [
+    "datastore"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:3134"
+  },
+  {
+   "id": "advanced-22-or",
+   "title": "Or",
+   "tags": "or circle oval ellipse Or",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "shape=orEllipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;",
+   "shapeNames": [
+    "orEllipse"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:3135"
+  },
+  {
+   "id": "advanced-23-sum",
+   "title": "Sum",
+   "tags": "sum circle oval ellipse Sum",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "shape=sumEllipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;",
+   "shapeNames": [
+    "sumEllipse"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:3136"
+  },
+  {
+   "id": "advanced-24-ellipse-with-horizontal-divider",
+   "title": "Ellipse with horizontal divider",
+   "tags": "circle oval ellipse Ellipse with horizontal divider",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "shape=lineEllipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;",
+   "shapeNames": [
+    "lineEllipse"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:3137"
+  },
+  {
+   "id": "advanced-25-ellipse-with-vertical-divider",
+   "title": "Ellipse with vertical divider",
+   "tags": "circle oval ellipse Ellipse with vertical divider",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "shape=lineEllipse;line=vertical;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;",
+   "shapeNames": [
+    "lineEllipse"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:3138"
+  },
+  {
+   "id": "advanced-26-sort",
+   "title": "Sort",
+   "tags": "sort Sort",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "shape=sortShape;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;",
+   "shapeNames": [
+    "sortShape"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:3139"
+  },
+  {
+   "id": "advanced-27-collate",
+   "title": "Collate",
+   "tags": "collate Collate",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "shape=collate;whiteSpace=wrap;html=1;",
+   "shapeNames": [
+    "collate"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:3140"
+  },
+  {
+   "id": "advanced-28-switch",
+   "title": "Switch",
+   "tags": "switch router Switch",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "shape=switch;whiteSpace=wrap;html=1;",
+   "shapeNames": [
+    "switch"
+   ],
+   "cls": "c",
+   "source": "js/grapheditor/Sidebar.js:3141"
+  },
+  {
+   "id": "advanced-29-process-bar",
+   "title": "Process Bar",
+   "tags": "process bar",
+   "kind": "cells",
+   "width": 296,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Process Bar\" style=\"swimlane;childLayout=stackLayout;horizontal=1;fillColor=none;horizontalStack=1;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;strokeColor=none;stackBorder=10;stackSpacing=-12;resizable=1;align=center;points=[];whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"296\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Step 1\" style=\"shape=step;perimeter=stepPerimeter;fixedSize=1;points=[];whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"10\" y=\"33\" width=\"100\" height=\"57\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Step 2\" style=\"shape=step;perimeter=stepPerimeter;fixedSize=1;points=[];whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"98\" y=\"33\" width=\"100\" height=\"57\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"Step 3\" style=\"shape=step;perimeter=stepPerimeter;fixedSize=1;points=[];whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"186\" y=\"33\" width=\"100\" height=\"57\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "swimlane",
+    "step"
+   ],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:3143"
+  },
+  {
+   "id": "advanced-30-container",
+   "title": "Container",
+   "tags": "container swimlane lane pool group Container",
+   "kind": "vertex",
+   "width": 200,
+   "height": 200,
+   "style": "swimlane;",
+   "value": "Container",
+   "shapeNames": [
+    "swimlane"
+   ],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:3147"
+  },
+  {
+   "id": "advanced-31-list",
+   "title": "List",
+   "tags": "list group erd table",
+   "kind": "cells",
+   "width": 140,
+   "height": 110,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"List\" style=\"swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"140\" height=\"110\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Item 1\" style=\"text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"60\" height=\"26\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Item 2\" style=\"text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"60\" height=\"26\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"Item 3\" style=\"text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"60\" height=\"26\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "swimlane"
+   ],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:3148"
+  },
+  {
+   "id": "advanced-32-list-item",
+   "title": "List Item",
+   "tags": "list item entry value group erd table",
+   "kind": "cells",
+   "width": 60,
+   "height": 26,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"List Item\" style=\"text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"60\" height=\"26\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/grapheditor/Sidebar.js:3160"
+  }
+ ]
+}

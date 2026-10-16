@@ -1,0 +1,53 @@
+Railway Drawer
+Copyright (c) 2025-2026 Marcin Kwiatkowski / Railway Drawer Team
+
+This product includes third-party software and data, listed below.
+
+-------------------------------------------------------------------------------
+draw.io (jgraph/drawio)
+-------------------------------------------------------------------------------
+
+This product includes software and data from draw.io
+(https://github.com/jgraph/drawio), tag v32.4.1,
+Copyright (c) 2006-2025, JGraph Holdings Ltd / draw.io AG,
+licensed under the Apache License, Version 2.0
+(see third_party/drawio/LICENSE and third_party/drawio/README.md).
+
+Ported shapes and the stencil engine are under src/drawio-shapes/:
+  - src/drawio-shapes/engine/        stencil engine, codec, light-dark() colours, <mxlibrary>
+                                     loading (from Graph.js, Editor.js, EditorUi.js)
+  - src/drawio-shapes/js/shapes-core/   vertex shapes and perimeters (from js/grapheditor/Shapes.js)
+  - src/drawio-shapes/js/shapes-edges/  edge, markup and table shapes, table/stack layouts,
+                                        isometric edge style (from Shapes.js and Graph.js)
+  - src/drawio-shapes/js/mx-libs/    shapes/mxBasic.js, shapes/mxArrows.js, shapes/mxFlowchart.js
+  - src/shapes/drawio-arrows/        legacy aliases of the mxArrows ports
+Palette data in src/drawio-shapes/palettes/data/ (from the Sidebar*.js palettes) and the
+stencil sets in public/stencils/ (from js/stencils.min.js) are generated from it by
+scripts/drawio-palettes/ (npm run drawio:palettes).
+
+Each ported file carries the draw.io copyright line, the Apache-2.0 notice and the upstream
+file/line references. Changes: translated to TypeScript for @maxgraph/core 0.10.
+
+The draw.io stencil libraries are subject to the additional terms in public/stencils/LICENSE
+(no use in Atlassian products or the Atlassian marketplace without written permission;
+diagrams created by end users are not affected).
+
+-------------------------------------------------------------------------------
+tiny-inflate and tinf (src/drawio-shapes/engine/inflate.ts)
+-------------------------------------------------------------------------------
+
+tiny-inflate 1.0.3 (https://github.com/foliojs/tiny-inflate)
+Copyright (c) 2015-present Devon Govett
+MIT License.
+
+tinf - tiny inflate library (https://github.com/jibsen/tinf)
+Copyright (c) 2003-2019 Joergen Ibsen
+zlib License.
+
+The full license texts are in the header of src/drawio-shapes/engine/inflate.ts.
+
+-------------------------------------------------------------------------------
+ERTMS shape library (public/libraries/ertms.xml)
+-------------------------------------------------------------------------------
+
+See public/libraries/ERTMS-LICENSE.txt.
