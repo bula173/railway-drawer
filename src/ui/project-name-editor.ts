@@ -1,3 +1,8 @@
+import type { TabData } from './tabs';
+
+/** Optional window global probed for the active tab (see ServiceRegistry, which replaces it). */
+type WindowWithTabManager = Window & { __tabManager?: { getActiveTab?: () => TabData | null } };
+
 export class ProjectNameEditor {
   private titleElement: HTMLElement | null;
   private isEditing = false;
@@ -59,7 +64,7 @@ export class ProjectNameEditor {
 
   private updateProjectName(name: string): void {
     // Get active tab and update its project name
-    const activeTab = (window as any).__tabManager?.getActiveTab?.();
+    const activeTab = (window as WindowWithTabManager).__tabManager?.getActiveTab?.();
     if (activeTab && activeTab.saveLoadController) {
       activeTab.saveLoadController.setProjectName(name);
     }

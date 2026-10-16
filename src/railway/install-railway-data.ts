@@ -1,6 +1,6 @@
 /**
  * @file install-railway-data.ts
- * @brief Wires railway object data into the legacy editor (called once from legacy-main.ts):
+ * @brief Wires railway object data into the main editor (called once from main-editor.ts):
  *        the right panel's Data and Checks views for the active tab, live (debounced) checks
  *        with a count badge, Edit Data… (Extras menu, context menu), Railway Checks, and the
  *        CSV/xlsx reports (File > Export Railway Data, Checks panel).
@@ -22,7 +22,6 @@ import type { Issue } from './validation';
 import { collectObjects, countIssues, validateModel } from './validation';
 import type { ReportId } from './report';
 import { REPORTS, buildReportTable, fileBaseName, getReport, tableToCsv } from './report';
-import { buildXlsx } from './xlsx';
 
 export interface RailwayNotifier {
   success(message: string): void;
@@ -169,7 +168,7 @@ export function installRailwayData(tabManager: TabManager, notify: RailwayNotifi
     }
   };
 
-  const exportReport = (id: ReportId | 'xlsx'): void => {
+  const exportReport = async (id: ReportId | 'xlsx'): Promise<void> => {
     const tab = tabManager.getActiveTab();
     if (!tab) return;
     const objects = collectObjects(tab.graph.getDataModel());
@@ -177,6 +176,8 @@ export function installRailwayData(tabManager: TabManager, notify: RailwayNotifi
     try {
       if (id === 'xlsx') {
         const tables = REPORTS.map((r) => buildReportTable(objects, r));
+        // The XLSX writer is a separate chunk, loaded on first use
+        const { buildXlsx } = await import('./xlsx');
         const bytes = buildXlsx(tables);
         download(new Blob([bytes as BlobPart], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' }), `${base}-railway-data.xlsx`);
         notify.success(`Exported ${objects.length} railway object${objects.length === 1 ? '' : 's'} to ${base}-railway-data.xlsx`);
@@ -270,7 +271,7 @@ export function installRailwayData(tabManager: TabManager, notify: RailwayNotifi
   };
   const onExport = (evt: Event): void => {
     const id = (evt as CustomEvent<string>).detail;
-    if (id === 'xlsx' || getReport(id)) exportReport(id as ReportId | 'xlsx');
+    if (id === 'xlsx' || getReport(id)) void exportReport(id as ReportId | 'xlsx');
   };
   window.addEventListener(RIGHT_PANEL_EVENT, onView);
   window.addEventListener('tab-changed', onTabChanged);

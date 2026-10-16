@@ -1,6 +1,8 @@
+import type { Cell, Graph } from '@maxgraph/core';
+
 export class ClipboardService {
   private static instance: ClipboardService;
-  private clipboard: any[] = [];
+  private clipboard: Cell[] = [];
   private listeners: Array<(hasContent: boolean) => void> = [];
 
   private constructor() {}
@@ -12,7 +14,7 @@ export class ClipboardService {
     return ClipboardService.instance;
   }
 
-  copy(cells: any[], graph: any): boolean {
+  copy(cells: Cell[], graph: Graph): boolean {
     if (cells.length === 0) return false;
     this.clipboard = graph.cloneCells(cells);
     this.notifyListeners();
@@ -20,7 +22,7 @@ export class ClipboardService {
     return true;
   }
 
-  cut(cells: any[], graph: any): boolean {
+  cut(cells: Cell[], graph: Graph): boolean {
     if (cells.length === 0) return false;
     this.clipboard = graph.cloneCells(cells);
     graph.batchUpdate(() => {
@@ -31,10 +33,10 @@ export class ClipboardService {
     return true;
   }
 
-  paste(graph: any, offsetX: number = 20, offsetY: number = 20): any[] {
+  paste(graph: Graph, offsetX: number = 20, offsetY: number = 20): Cell[] {
     if (this.clipboard.length === 0) return [];
 
-    const imported: any[] = [];
+    const imported: Cell[] = [];
     graph.batchUpdate(() => {
       const cloned = graph.cloneCells(this.clipboard);
       const result = graph.importCells(cloned, offsetX, offsetY);
@@ -50,7 +52,7 @@ export class ClipboardService {
     return this.clipboard.length > 0;
   }
 
-  getContent(): any[] {
+  getContent(): Cell[] {
     return this.clipboard;
   }
 

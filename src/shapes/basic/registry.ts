@@ -2,7 +2,7 @@
  * Basic shapes registry - Vertex-based geometric shapes
  */
 
-import { shapeRegistry } from '../registry';
+import { asShapeConstructor, shapeRegistry } from '../registry';
 import { CellRenderer } from '@maxgraph/core';
 import {
   RectangleShapeVertex,
@@ -27,24 +27,24 @@ import {
 
 // Register all shape classes with CellRenderer
 export function registerBasicShapeClasses(): void {
-  CellRenderer.defaultShapes['rectangle-shape'] = RectangleShapeVertex as any;
-  CellRenderer.defaultShapes['circle-shape'] = CircleShapeVertex as any;
-  CellRenderer.defaultShapes['diamond-shape'] = DiamondShapeVertex as any;
-  CellRenderer.defaultShapes['triangle-shape'] = TriangleShapeVertex as any;
-  CellRenderer.defaultShapes['ellipse-shape'] = EllipseShapeVertex as any;
-  CellRenderer.defaultShapes['rounded-rectangle-shape'] = RoundedRectangleShapeVertex as any;
-  CellRenderer.defaultShapes['hexagon-shape'] = HexagonShapeVertex as any;
-  CellRenderer.defaultShapes['pentagon-shape'] = PentagonShapeVertex as any;
-  CellRenderer.defaultShapes['star-shape'] = StarShapeVertex as any;
-  CellRenderer.defaultShapes['trapezoid-shape'] = TrapezoidShapeVertex as any;
-  CellRenderer.defaultShapes['cross-shape'] = CrossShapeVertex as any;
-  CellRenderer.defaultShapes['cylinder-shape'] = CylinderShapeVertex as any;
-  CellRenderer.defaultShapes['oval-shape'] = OvalShapeVertex as any;
-  CellRenderer.defaultShapes['double-rectangle-shape'] = DoubleRectangleShapeVertex as any;
-  CellRenderer.defaultShapes['lozenge-shape'] = LosangeShapeVertex as any;
-  CellRenderer.defaultShapes['chevron-shape'] = ChevronShapeVertex as any;
-  CellRenderer.defaultShapes['right-angle-shape'] = RightAngleShapeVertex as any;
-  CellRenderer.defaultShapes['line-shape'] = LineShapeVertex as any;
+  CellRenderer.defaultShapes['rectangle-shape'] = asShapeConstructor(RectangleShapeVertex);
+  CellRenderer.defaultShapes['circle-shape'] = asShapeConstructor(CircleShapeVertex);
+  CellRenderer.defaultShapes['diamond-shape'] = asShapeConstructor(DiamondShapeVertex);
+  CellRenderer.defaultShapes['triangle-shape'] = asShapeConstructor(TriangleShapeVertex);
+  CellRenderer.defaultShapes['ellipse-shape'] = asShapeConstructor(EllipseShapeVertex);
+  CellRenderer.defaultShapes['rounded-rectangle-shape'] = asShapeConstructor(RoundedRectangleShapeVertex);
+  CellRenderer.defaultShapes['hexagon-shape'] = asShapeConstructor(HexagonShapeVertex);
+  CellRenderer.defaultShapes['pentagon-shape'] = asShapeConstructor(PentagonShapeVertex);
+  CellRenderer.defaultShapes['star-shape'] = asShapeConstructor(StarShapeVertex);
+  CellRenderer.defaultShapes['trapezoid-shape'] = asShapeConstructor(TrapezoidShapeVertex);
+  CellRenderer.defaultShapes['cross-shape'] = asShapeConstructor(CrossShapeVertex);
+  CellRenderer.defaultShapes['cylinder-shape'] = asShapeConstructor(CylinderShapeVertex);
+  CellRenderer.defaultShapes['oval-shape'] = asShapeConstructor(OvalShapeVertex);
+  CellRenderer.defaultShapes['double-rectangle-shape'] = asShapeConstructor(DoubleRectangleShapeVertex);
+  CellRenderer.defaultShapes['lozenge-shape'] = asShapeConstructor(LosangeShapeVertex);
+  CellRenderer.defaultShapes['chevron-shape'] = asShapeConstructor(ChevronShapeVertex);
+  CellRenderer.defaultShapes['right-angle-shape'] = asShapeConstructor(RightAngleShapeVertex);
+  CellRenderer.defaultShapes['line-shape'] = asShapeConstructor(LineShapeVertex);
 }
 
 export function registerBasicShapes(): void {

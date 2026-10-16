@@ -3,10 +3,16 @@
  * These shapes render using maxGraph's AbstractCanvas2D API, allowing native styling
  */
 
-import { RectangleShape, EllipseShape } from '@maxgraph/core';
+import { RectangleShape, EllipseShape, type AbstractCanvas2D } from '@maxgraph/core';
 
 export class RectangleShapeVertex extends RectangleShape {
-  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+  override paintVertexShape(
+    c: AbstractCanvas2D,
+    x: number,
+    y: number,
+    w: number,
+    h: number
+  ): void {
     c.begin();
     c.rect(x, y, w, h);
     c.fillAndStroke();
@@ -14,7 +20,13 @@ export class RectangleShapeVertex extends RectangleShape {
 }
 
 export class CircleShapeVertex extends EllipseShape {
-  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+  override paintVertexShape(
+    c: AbstractCanvas2D,
+    x: number,
+    y: number,
+    w: number,
+    h: number
+  ): void {
     c.begin();
     c.ellipse(x, y, w, h);
     c.fillAndStroke();
@@ -22,7 +34,13 @@ export class CircleShapeVertex extends EllipseShape {
 }
 
 export class DiamondShapeVertex extends RectangleShape {
-  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+  override paintVertexShape(
+    c: AbstractCanvas2D,
+    x: number,
+    y: number,
+    w: number,
+    h: number
+  ): void {
     c.begin();
     c.moveTo(x + w / 2, y);
     c.lineTo(x + w, y + h / 2);
@@ -34,7 +52,13 @@ export class DiamondShapeVertex extends RectangleShape {
 }
 
 export class TriangleShapeVertex extends RectangleShape {
-  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+  override paintVertexShape(
+    c: AbstractCanvas2D,
+    x: number,
+    y: number,
+    w: number,
+    h: number
+  ): void {
     c.begin();
     c.moveTo(x + w / 2, y);
     c.lineTo(x + w, y + h);
@@ -45,7 +69,13 @@ export class TriangleShapeVertex extends RectangleShape {
 }
 
 export class EllipseShapeVertex extends EllipseShape {
-  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+  override paintVertexShape(
+    c: AbstractCanvas2D,
+    x: number,
+    y: number,
+    w: number,
+    h: number
+  ): void {
     c.begin();
     c.ellipse(x, y, w, h);
     c.fillAndStroke();
@@ -53,7 +83,13 @@ export class EllipseShapeVertex extends EllipseShape {
 }
 
 export class RoundedRectangleShapeVertex extends RectangleShape {
-  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+  override paintVertexShape(
+    c: AbstractCanvas2D,
+    x: number,
+    y: number,
+    w: number,
+    h: number
+  ): void {
     const round = Math.min(w, h) * 0.15;
     c.begin();
     c.moveTo(x + round, y);
@@ -71,7 +107,13 @@ export class RoundedRectangleShapeVertex extends RectangleShape {
 }
 
 export class HexagonShapeVertex extends RectangleShape {
-  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+  override paintVertexShape(
+    c: AbstractCanvas2D,
+    x: number,
+    y: number,
+    w: number,
+    h: number
+  ): void {
     c.begin();
     for (let i = 0; i < 6; i++) {
       const angle = (i * Math.PI) / 3 - Math.PI / 2;
@@ -86,7 +128,13 @@ export class HexagonShapeVertex extends RectangleShape {
 }
 
 export class PentagonShapeVertex extends RectangleShape {
-  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+  override paintVertexShape(
+    c: AbstractCanvas2D,
+    x: number,
+    y: number,
+    w: number,
+    h: number
+  ): void {
     c.begin();
     for (let i = 0; i < 5; i++) {
       const angle = (i * 2 * Math.PI) / 5 - Math.PI / 2;
@@ -101,7 +149,13 @@ export class PentagonShapeVertex extends RectangleShape {
 }
 
 export class StarShapeVertex extends RectangleShape {
-  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+  override paintVertexShape(
+    c: AbstractCanvas2D,
+    x: number,
+    y: number,
+    w: number,
+    h: number
+  ): void {
     c.begin();
     const cx = x + w / 2;
     const cy = y + h / 2;
@@ -121,7 +175,13 @@ export class StarShapeVertex extends RectangleShape {
 }
 
 export class TrapezoidShapeVertex extends RectangleShape {
-  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+  override paintVertexShape(
+    c: AbstractCanvas2D,
+    x: number,
+    y: number,
+    w: number,
+    h: number
+  ): void {
     c.begin();
     c.moveTo(x + w * 0.2, y);
     c.lineTo(x + w * 0.8, y);
@@ -133,7 +193,13 @@ export class TrapezoidShapeVertex extends RectangleShape {
 }
 
 export class CrossShapeVertex extends RectangleShape {
-  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+  override paintVertexShape(
+    c: AbstractCanvas2D,
+    x: number,
+    y: number,
+    w: number,
+    h: number
+  ): void {
     const barWidth = w * 0.25;
     const barHeight = h * 0.25;
 
@@ -150,7 +216,13 @@ export class CrossShapeVertex extends RectangleShape {
 }
 
 export class CylinderShapeVertex extends RectangleShape {
-  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+  override paintVertexShape(
+    c: AbstractCanvas2D,
+    x: number,
+    y: number,
+    w: number,
+    h: number
+  ): void {
     const topH = h * 0.25;
 
     // Top ellipse
@@ -172,7 +244,13 @@ export class CylinderShapeVertex extends RectangleShape {
 }
 
 export class OvalShapeVertex extends EllipseShape {
-  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+  override paintVertexShape(
+    c: AbstractCanvas2D,
+    x: number,
+    y: number,
+    w: number,
+    h: number
+  ): void {
     c.begin();
     c.ellipse(x, y, w, h);
     c.fillAndStroke();
@@ -180,7 +258,13 @@ export class OvalShapeVertex extends EllipseShape {
 }
 
 export class DoubleRectangleShapeVertex extends RectangleShape {
-  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+  override paintVertexShape(
+    c: AbstractCanvas2D,
+    x: number,
+    y: number,
+    w: number,
+    h: number
+  ): void {
     c.begin();
     c.rect(x, y, w, h);
     c.fillAndStroke();
@@ -194,7 +278,13 @@ export class DoubleRectangleShapeVertex extends RectangleShape {
 }
 
 export class LosangeShapeVertex extends RectangleShape {
-  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+  override paintVertexShape(
+    c: AbstractCanvas2D,
+    x: number,
+    y: number,
+    w: number,
+    h: number
+  ): void {
     c.begin();
     c.moveTo(x + w / 2, y);
     c.lineTo(x + w, y + h / 2);
@@ -206,7 +296,13 @@ export class LosangeShapeVertex extends RectangleShape {
 }
 
 export class ChevronShapeVertex extends RectangleShape {
-  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+  override paintVertexShape(
+    c: AbstractCanvas2D,
+    x: number,
+    y: number,
+    w: number,
+    h: number
+  ): void {
     c.begin();
     c.moveTo(x, y);
     c.lineTo(x + w * 0.75, y + h / 2);
@@ -218,7 +314,13 @@ export class ChevronShapeVertex extends RectangleShape {
 }
 
 export class RightAngleShapeVertex extends RectangleShape {
-  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+  override paintVertexShape(
+    c: AbstractCanvas2D,
+    x: number,
+    y: number,
+    w: number,
+    h: number
+  ): void {
     c.setFillColor(null);
     c.begin();
     c.moveTo(x + w * 0.75, y);
@@ -229,7 +331,13 @@ export class RightAngleShapeVertex extends RectangleShape {
 }
 
 export class LineShapeVertex extends RectangleShape {
-  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+  override paintVertexShape(
+    c: AbstractCanvas2D,
+    x: number,
+    y: number,
+    w: number,
+    h: number
+  ): void {
     c.setFillColor(null);
     c.begin();
     c.moveTo(x, y + h / 2);

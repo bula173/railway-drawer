@@ -1,6 +1,6 @@
 /**
  * @file drawio-palette.spec.ts
- * @brief draw.io palettes in the Shapes tab of the legacy editor: palettes render, entries insert with
+ * @brief draw.io palettes in the Shapes tab of the main editor: palettes render, entries insert with
  *        their exact draw.io style, and the saved diagram keeps the draw.io shape names.
  *
  * Runs on any port (no draw.io server is involved). Uses the 5 s autosave into localStorage
@@ -48,7 +48,7 @@ test.describe('draw.io palettes in the maxGraph editor', () => {
     const pageErrors: string[] = [];
     page.on('pageerror', (err) => pageErrors.push(err.message));
     await page.goto('/');
-    await expect(page.locator('body')).toHaveAttribute('data-editor', 'legacy');
+    await expect(page.locator('body')).toHaveAttribute('data-editor', 'main');
 
     // One Shapes tab holds app shapes and the draw.io palettes; no separate draw.io/Stencils tabs
     await expect(page.locator('.left-panel-tab-btn:visible')).toHaveText(['Shapes', 'Templates', 'Layers', /PlantUML/]);
@@ -87,7 +87,7 @@ test.describe('draw.io palettes in the maxGraph editor', () => {
 
     // Reload: the diagram restored from that XML is written again (autosave) with the same styles
     await page.reload();
-    await expect(page.locator('body')).toHaveAttribute('data-editor', 'legacy');
+    await expect(page.locator('body')).toHaveAttribute('data-editor', 'main');
     await expect(page.locator('#tabs-container .tab-button.active')).toHaveCount(1);
     await page.evaluate(() => localStorage.removeItem('railway-drawer-cache'));
     const again = await waitForCached(page, 'mxgraph.basic.flash');

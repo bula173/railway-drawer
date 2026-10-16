@@ -17,8 +17,9 @@
  *   reverse = the leg (vertex: the piece outside the straightest pair), toe = the straight piece
  *   most opposite to the reverse one, normal = the other one. toe<->normal needs the points in
  *   normal, toe<->reverse in reverse; normal<->reverse is impossible.
- * - **Direction**: "nominal" is the travel direction of increasing x along a piece (vertical
- *   pieces: increasing y), the way ERTMS "Signal Right" symbols face.
+ * - **Direction** (confirmed project convention): "nominal" is left to right, i.e. the travel
+ *   direction of increasing x along a piece (vertical pieces: increasing y), the way ERTMS
+ *   "Signal Right" symbols face; "reverse" is the opposite.
  */
 import type { KindId } from './catalogue';
 import { parseNumber } from './catalogue';

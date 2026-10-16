@@ -1,4 +1,7 @@
-import { Graph } from '@maxgraph/core';
+import { Graph, type Cell } from '@maxgraph/core';
+
+/** A cell tagged with the layer it was assigned to (expando property, not in maxGraph's typing) */
+type LayeredCell = Cell & { __layerId?: string };
 
 export interface Layer {
   id: string;
@@ -6,12 +9,14 @@ export interface Layer {
   visible: boolean;
   locked: boolean;
   color: string;
-  cells: any[];
+  cells: Cell[];
 }
 
 export class LayersController {
   private graph: Graph;
   private layers: Map<string, Layer> = new Map();
+  /** Deleted layers, kept so undoing the removal of their cells brings the layer back */
+  private deletedLayers: Map<string, Layer> = new Map();
   private currentLayerId: string | null = null;
   private layerListContainer: HTMLElement | null;
 
@@ -72,27 +77,36 @@ export class LayersController {
   }
 
   deleteCurrentLayer(): void {
-    if (!this.currentLayerId || this.layers.size <= 1) {
+    if (this.currentLayerId) this.deleteLayer(this.currentLayerId);
+  }
+
+  /**
+   * Deletes a layer and its cells (after a confirm when it has any). The cells are removed with
+   * graph.removeCells in one model edit, so Undo restores them; a restored cell still carries the
+   * layer id, and updateLayerCells then brings the layer back too.
+   * @returns true when the layer was deleted
+   */
+  deleteLayer(layerId: string): boolean {
+    const layer = this.layers.get(layerId);
+    if (!layer) return false;
+    if (this.layers.size <= 1) {
       alert('Cannot delete the last layer');
-      return;
+      return false;
+    }
+    if (layer.cells.length > 0 && !confirm(`Layer "${layer.name}" contains ${layer.cells.length} cell(s). Delete anyway?`)) {
+      return false;
     }
 
-    const layer = this.layers.get(this.currentLayerId);
-    if (layer && layer.cells.length > 0) {
-      if (!confirm(`Layer "${layer.name}" contains ${layer.cells.length} cell(s). Delete anyway?`)) {
-        return;
-      }
-      // Move cells to default layer or delete them
-      this.graph.batchUpdate(() => {
-        layer.cells.forEach((cell) => {
-          this.graph.model.remove(cell);
-        });
-      });
+    // Unregister first: the model change below re-runs updateLayerCells
+    this.layers.delete(layerId);
+    this.deletedLayers.set(layerId, layer);
+    if (this.currentLayerId === layerId) {
+      this.currentLayerId = Array.from(this.layers.keys())[0] || null;
     }
-
-    this.layers.delete(this.currentLayerId);
-    this.currentLayerId = Array.from(this.layers.keys())[0] || null;
+    const cells = layer.cells.filter((cell) => cell.getParent());
+    if (cells.length > 0) this.graph.removeCells(cells, true);
     this.render();
+    return true;
   }
 
   renameLayer(layerId: string, newName: string): void {
@@ -125,15 +139,15 @@ export class LayersController {
     this.render();
   }
 
-  addCellToLayer(cell: any, layerId: string): void {
+  addCellToLayer(cell: Cell, layerId: string): void {
     const layer = this.layers.get(layerId);
     if (layer && !layer.cells.includes(cell)) {
       layer.cells.push(cell);
-      (cell as any).__layerId = layerId;
+      (cell as LayeredCell).__layerId = layerId;
     }
   }
 
-  removeCellFromLayer(cell: any, layerId: string): void {
+  removeCellFromLayer(cell: Cell, layerId: string): void {
     const layer = this.layers.get(layerId);
     if (layer) {
       const index = layer.cells.indexOf(cell);
@@ -143,22 +157,35 @@ export class LayersController {
     }
   }
 
-  getCellLayer(cell: any): string | null {
-    return (cell as any).__layerId || Array.from(this.layers.keys())[0];
+  getCellLayer(cell: Cell): string | null {
+    return (cell as LayeredCell).__layerId || Array.from(this.layers.keys())[0];
   }
 
   private updateLayerCells(): void {
     // Get all cells from the graph
     const allCells = this.graph.model.cells;
-    const graphCells = Object.values(allCells || {}).filter((c: any) => c.isVertex && c.isVertex());
+    const graphCells = Object.values(allCells || {}).filter((c: Cell) => c.isVertex && c.isVertex());
 
     // Clear all layer cells
     this.layers.forEach((layer) => {
       layer.cells = [];
     });
 
+    // Undo of a layer deletion: its cells are back, so the layer comes back too
+    let restored = false;
+    graphCells.forEach((cell: Cell) => {
+      const layerId = (cell as LayeredCell).__layerId;
+      const deleted = layerId ? this.deletedLayers.get(layerId) : undefined;
+      if (layerId && deleted) {
+        this.deletedLayers.delete(layerId);
+        deleted.cells = [];
+        this.layers.set(layerId, deleted);
+        restored = true;
+      }
+    });
+
     // Assign cells to layers
-    graphCells.forEach((cell: any) => {
+    graphCells.forEach((cell: Cell) => {
       const layerId = this.getCellLayer(cell);
       if (layerId) {
         this.addCellToLayer(cell, layerId);
@@ -170,6 +197,7 @@ export class LayersController {
         }
       }
     });
+    if (restored) this.render();
   }
 
   private updateLayerCellsVisibility(layerId: string): void {
@@ -252,14 +280,7 @@ export class LayersController {
       deleteBtn.style.color = 'var(--rd-danger)';
       deleteBtn.addEventListener('click', (e) => {
         e.stopPropagation();
-        if (this.layers.size > 1) {
-          this.removeCellFromLayer(layer, layer.id);
-          this.layers.delete(layer.id);
-          if (this.currentLayerId === layer.id) {
-            this.currentLayerId = Array.from(this.layers.keys())[0] || null;
-          }
-          this.render();
-        }
+        this.deleteLayer(layer.id);
       });
 
       layerItem.appendChild(visibilityBtn);

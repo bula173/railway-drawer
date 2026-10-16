@@ -127,7 +127,7 @@ export class PlantUmlParser {
           type: 'participant',
           id: participantId,
           label: label || id,
-          stereotype: type.toLowerCase() as any,
+          stereotype: type.toLowerCase(),
         });
         continue;
       }

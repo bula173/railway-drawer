@@ -1,7 +1,7 @@
 /**
  * @file scenario-keys.ts
  * @brief Keyboard handling while the scenario view is shown (called from the single keydown
- *        dispatcher in legacy-main.ts, before the graph shortcuts).
+ *        dispatcher in main-editor.ts, before the graph shortcuts).
  *
  * The live drawing is hidden but its tab is still active, so no graph shortcut may reach it:
  * editing shortcuts are blocked, the arrows/PageUp/PageDown/Home/End step through the scenario,

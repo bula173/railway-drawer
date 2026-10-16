@@ -1,3 +1,4 @@
+import type { Graph } from '@maxgraph/core';
 import { GraphCommandService } from '../services/graph-command-service';
 
 /**
@@ -11,7 +12,7 @@ export class UndoRedoController {
   private redoBtn: HTMLButtonElement | null = null;
   private active = true;
 
-  constructor(_graph: any, commandService: GraphCommandService) {
+  constructor(_graph: Graph, commandService: GraphCommandService) {
     this.commandService = commandService;
     this.setupToolbarButtons();
     this.commandService.addListener('stateChanged', () => this.updateButtonStates());

@@ -1,7 +1,7 @@
 /**
  * @file install-railway-routes.ts
- * @brief Wires the railway engineering tools into the legacy editor (called once from
- *        legacy-main.ts after installRailwayData): the route tool (toolbar `#btn-route-tool`,
+ * @brief Wires the railway engineering tools into the main editor (called once from
+ *        main-editor.ts after installRailwayData): the route tool (toolbar `#btn-route-tool`,
  *        Extras > Route Tool), route and interlocking tables, Update Route Paths, Recalculate km,
  *        View > Snap to Track / Show Routes / km Ruler.
  *
@@ -19,7 +19,6 @@ import { formatChainage, kmScaleOf, recalculateKm, rulerTicks } from './km';
 import { getCellKind, setRailwayData } from './object-data';
 import { fileBaseName } from './report';
 import type { RouteTableTab } from './route-tables-dialog';
-import { openRouteTablesDialog } from './route-tables-dialog';
 import { RouteTool } from './route-tool';
 import { getRoutesLayer, setRoutesVisible, updateRoutePaths } from './route-store';
 import { buildConflictTable, buildRouteTable, detectConflicts, routeRecords } from './routes';
@@ -170,13 +169,20 @@ export function installRailwayRoutes(tabManager: TabManager, notify: RailwayNoti
     if (!active) return;
     const records = routeRecords(collectObjects(active.graph.getDataModel()));
     const conflicts = detectConflicts(records);
-    openRouteTablesDialog({
-      routes: buildRouteTable(records, conflicts),
-      conflicts: buildConflictTable(conflicts),
-      tab,
-      baseName: fileBaseName(active.name),
-      download,
-    });
+    // The dialog and its XLSX writer are a separate chunk, loaded on first use
+    import('./route-tables-dialog')
+      .then(({ openRouteTablesDialog }) =>
+        openRouteTablesDialog({
+          routes: buildRouteTable(records, conflicts),
+          conflicts: buildConflictTable(conflicts),
+          tab,
+          baseName: fileBaseName(active.name),
+          download,
+        })
+      )
+      .catch((error: unknown) => {
+        console.error('[Railway] route tables could not be loaded', error);
+      });
   };
 
   const run = (command: RouteCommand): void => {

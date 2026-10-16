@@ -1,5 +1,11 @@
-import { Graph, ConnectionConstraint, Point } from '@maxgraph/core';
+import { Graph, ConnectionConstraint, Point, type CellState } from '@maxgraph/core';
 import { getDrawioConnectionConstraints } from '../drawio-shapes/js/shapes-core';
+
+/** Legacy `graph.connectionHandler` flags; not in maxGraph's typings */
+interface LegacyConnectionHandlerFlags {
+  constrainedConnections?: boolean;
+  waypointsEnabled?: boolean;
+}
 
 export class ConnectionHandler {
   constructor(graph: Graph) {
@@ -8,9 +14,9 @@ export class ConnectionHandler {
 
   private configureConnectionConstraints(graph: Graph): void {
     // Override getAllConnectionConstraints to define connection points on all shapes
-    const originalGetAllConstraints = (graph as any).getAllConnectionConstraints.bind(graph);
+    const originalGetAllConstraints = graph.getAllConnectionConstraints.bind(graph);
 
-    (graph as any).getAllConnectionConstraints = function (terminal: any, source: boolean) {
+    graph.getAllConnectionConstraints = function (terminal: CellState | null, source: boolean) {
       // Get original constraints if they exist
       const constraints = originalGetAllConstraints(terminal, source);
 
@@ -32,7 +38,8 @@ export class ConnectionHandler {
     };
 
     // Enable constrained connections so connectors snap to connection points
-    const connectionHandler = (graph as any).connectionHandler;
+    const connectionHandler = (graph as Graph & { connectionHandler?: LegacyConnectionHandlerFlags })
+      .connectionHandler;
     if (connectionHandler) {
       connectionHandler.constrainedConnections = true;
       connectionHandler.waypointsEnabled = true;

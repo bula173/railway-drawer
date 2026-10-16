@@ -17,6 +17,8 @@ interface TrackedListener {
  */
 export abstract class UIController {
   private _trackedListeners: TrackedListener[] = [];
+  /** Set by setDestroyed(); undefined until then. */
+  private _destroyed?: boolean;
   /**
    * Initialize the controller
    * Called after construction, allows async initialization
@@ -41,14 +43,14 @@ export abstract class UIController {
    * Check if controller is still valid (not destroyed)
    */
   protected isDestroyed(): boolean {
-    return (this as any)._destroyed === true;
+    return this._destroyed === true;
   }
 
   /**
    * Mark controller as destroyed to prevent use after destruction
    */
   protected setDestroyed(): void {
-    (this as any)._destroyed = true;
+    this._destroyed = true;
   }
 
   /**

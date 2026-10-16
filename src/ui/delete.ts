@@ -28,7 +28,7 @@ export function shouldIgnoreGraphShortcut(event: KeyboardEvent, graph?: Graph | 
 /**
  * Deletes the selected cells of one graph.
  * Keyboard handling (Delete/Backspace) is dispatched once, to the active tab, by the global
- * shortcut handler in legacy-main.ts; this controller no longer binds to `document` itself, because
+ * shortcut handler in main-editor.ts; this controller no longer binds to `document` itself, because
  * one listener per tab acted on every tab (including hidden ones) and ignored text editing.
  */
 export class DeleteController {

@@ -1,6 +1,6 @@
 /**
  * Remote-file bindings in the tab cache with the real TabManager + installSharing (startup order of
- * legacy-main.ts: restoreFromCache, then installSharing), using the dev-only test provider
+ * main-editor.ts: restoreFromCache, then installSharing), using the dev-only test provider
  * (src/debug/fake-remote-provider.ts; vitest runs with import.meta.env.DEV = true).
  */
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';

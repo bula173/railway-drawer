@@ -79,7 +79,7 @@ export default defineConfig(({ mode }) => {
     coverage: {
       provider: 'v8',
       include: ['src/**/*.ts'],
-      exclude: ['src/**/*.d.ts', 'src/main.ts', 'src/legacy-main.ts', 'src/**/__tests__/**'],
+      exclude: ['src/**/*.d.ts', 'src/main.ts', 'src/main-editor.ts', 'src/**/__tests__/**'],
     },
   },
 }

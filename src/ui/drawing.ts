@@ -1,4 +1,5 @@
 import { Graph } from '@maxgraph/core';
+import type { CellStyle } from '@maxgraph/core';
 
 export class DrawingController {
   private graph: Graph;
@@ -176,7 +177,8 @@ export class DrawingController {
         minY,
         width,
         height,
-        style as any
+        // string style passed through unchanged (insertVertex is typed for CellStyle objects)
+        style as unknown as CellStyle
       );
       this.graph.setSelectionCells([cell]);
     });

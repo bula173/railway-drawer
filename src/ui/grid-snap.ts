@@ -14,7 +14,8 @@ export class GridSnapController {
   private setupGridSnap(): void {
     // Enable grid snap by default
     this.graph.gridSize = this.gridSize;
-    (this.graph as any).snapLarge = true;
+    // snapLarge is not declared by maxGraph's Graph typings; set as an ad-hoc flag as before
+    (this.graph as Graph & { snapLarge?: boolean }).snapLarge = true;
   }
 
   private setupToggleButton(): void {

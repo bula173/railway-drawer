@@ -34,6 +34,42 @@ type LockableCell = Cell & { locked?: boolean };
 /** @brief A cell's own style as a record (keys not declared on CellStyle: fontWeight, blendMode, ...) */
 type EditableStyle = StyleRecord;
 
+/** The resolved style keys read by updateValues() (several are draw.io keys CellStyle does not declare). */
+interface ResolvedPanelStyle extends StyleRecord {
+  fontFamily?: string;
+  fontSize?: number;
+  fontWeight?: string;
+  fontStyle?: number;
+  textDecoration?: string;
+  textOverflow?: string;
+  align?: string;
+  verticalAlign?: string;
+  fontColor?: string;
+  minWidth?: number;
+  maxWidth?: number;
+  minHeight?: number;
+  maxHeight?: number;
+  rotation?: number;
+  gradientColor?: string;
+  gradientColor2?: string;
+  gradientOpacity?: number;
+  fillType?: string;
+  fillPattern?: string;
+  strokeWidth?: number;
+  strokeOpacity?: number;
+  opacity?: number;
+  shadow?: boolean;
+  shadowColor?: string;
+  shadowBlur?: number;
+  shadowOffsetX?: number;
+  shadowOffsetY?: number;
+  rounded?: boolean;
+  arcSize?: number;
+  blendMode?: string;
+  flipH?: boolean;
+  flipV?: boolean;
+}
+
 /** @brief Selects `value` in a <select>, adding an option for values the list does not offer */
 function selectValue(select: HTMLSelectElement | null, value: string): void {
   if (!select) return;
@@ -174,7 +210,7 @@ export class PropertiesPanel {
     const cell = this.currentCell as LockableCell | null;
     if (!cell) return;
     const geo = cell.geometry;
-    const style = this.graph.getCellStyle(cell) as any;
+    const style = this.graph.getCellStyle(cell) as ResolvedPanelStyle;
 
     const fontFamily = document.getElementById('prop-fontFamily') as HTMLInputElement;
     if (fontFamily) fontFamily.value = style.fontFamily || 'Arial';

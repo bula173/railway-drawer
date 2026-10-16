@@ -3,15 +3,21 @@
  * @brief ERTMS shapes - railway signaling elements
  */
 
-import { RectangleShape } from '@maxgraph/core';
+import { RectangleShape, type AbstractCanvas2D } from '@maxgraph/core';
 import { CellRenderer } from '@maxgraph/core';
-import { shapeRegistry } from '../registry';
+import { asShapeConstructor, shapeRegistry } from '../registry';
 
 /**
  * Signal Light Shape - 3 lights in a column
  */
 class SignalLightShape extends RectangleShape {
-  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+  override paintVertexShape(
+    c: AbstractCanvas2D,
+    x: number,
+    y: number,
+    w: number,
+    h: number
+  ): void {
     c.setFillColor('none');
     c.setStrokeColor('#404040');
     c.setStrokeWidth(1);
@@ -44,7 +50,13 @@ class SignalLightShape extends RectangleShape {
  * Track Shape - railway line
  */
 class TrackLineShape extends RectangleShape {
-  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+  override paintVertexShape(
+    c: AbstractCanvas2D,
+    x: number,
+    y: number,
+    w: number,
+    h: number
+  ): void {
     // Draw rails
     c.setFillColor('#333333');
     c.rect(x + 1, y + 2, 2, h - 4);
@@ -62,16 +74,23 @@ class TrackLineShape extends RectangleShape {
 /**
  * Train Shape - ETCS L2
  */
-class TrainIconShape extends RectangleShape {
-  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+export class TrainIconShape extends RectangleShape {
+  override paintVertexShape(
+    c: AbstractCanvas2D,
+    x: number,
+    y: number,
+    w: number,
+    h: number
+  ): void {
     c.setFillColor('#f5f5f5');
     c.setStrokeColor('#404040');
     c.rect(x, y, w, h);
     c.fillAndStroke();
 
+    // Label centred in the box (maxGraph canvas text(): x/y are the centre for align center/middle)
     c.setFontSize(10);
-    c.setFillColor('#000000');
-    c.drawString('ETCS L2', x + 2, y + h / 2 - 5, w - 4, 12, 'center');
+    c.setFontColor('#000000');
+    c.text(x + w / 2, y + h / 2, w - 4, 12, 'ETCS L2', 'center', 'middle', false, '', 'visible', false, 0, '');
   }
 }
 
@@ -79,7 +98,13 @@ class TrainIconShape extends RectangleShape {
  * Balise Shape - Track Circuit marker
  */
 class BaliseMarkerShape extends RectangleShape {
-  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+  override paintVertexShape(
+    c: AbstractCanvas2D,
+    x: number,
+    y: number,
+    w: number,
+    h: number
+  ): void {
     // Draw antenna
     c.setFillColor('#000000');
     c.rect(x + w / 2 - 1, y, 2, h / 2);
@@ -98,10 +123,10 @@ class BaliseMarkerShape extends RectangleShape {
  * saved with them still open. The ERTMS palette is the draw.io library (public/libraries/ertms.xml).
  */
 export function registerErtmsShapeClasses(): void {
-  CellRenderer.registerShape('ertms-signal', SignalLightShape as any);
-  CellRenderer.registerShape('ertms-track', TrackLineShape as any);
-  CellRenderer.registerShape('ertms-train', TrainIconShape as any);
-  CellRenderer.registerShape('ertms-balise', BaliseMarkerShape as any);
+  CellRenderer.registerShape('ertms-signal', asShapeConstructor(SignalLightShape));
+  CellRenderer.registerShape('ertms-track', asShapeConstructor(TrackLineShape));
+  CellRenderer.registerShape('ertms-train', asShapeConstructor(TrainIconShape));
+  CellRenderer.registerShape('ertms-balise', asShapeConstructor(BaliseMarkerShape));
 }
 
 /**

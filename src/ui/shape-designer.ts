@@ -41,19 +41,8 @@ export class ShapeDesignerController {
   private drawMode = true; // true = draw, false = edit path
 
 
-  constructor(_graph: Graph) {
-    this.setupUI();
-  }
-
-  /**
-   * @brief Initialize shape designer UI
-   */
-  private setupUI(): void {
-    const designerBtn = document.getElementById('btn-shape-designer');
-    if (designerBtn) {
-      designerBtn.addEventListener('click', () => this.openDesigner());
-    }
-  }
+  /** Loaded on first use by main-editor.ts, which binds the toolbar button (#btn-shape-designer). */
+  constructor(_graph: Graph) {}
 
   /**
    * @brief Open shape designer modal
@@ -927,7 +916,7 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
 
       console.log('[DEBUG] drop at:', { x, y, displaySize: { width: rect.width, height: rect.height }, logicalSize: { width: canvas.width, height: canvas.height }, scale: { x: scaleX, y: scaleY } });
 
-      this.addShapeElement(shapeType as any, x, y);
+      this.addShapeElement(shapeType as ShapeElement['type'], x, y);
     });
 
 

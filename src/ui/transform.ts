@@ -1,4 +1,14 @@
-import { Graph } from '@maxgraph/core';
+import { Graph, type Cell } from '@maxgraph/core';
+
+/**
+ * Style keys as this controller reads and writes them: values may also be draw.io-style
+ * strings ('1', '90'), which maxGraph's CellStyle typing does not allow
+ */
+interface TransformStyle {
+  flipH?: boolean | string;
+  flipV?: boolean | string;
+  rotation?: number | string;
+}
 import { shouldIgnoreGraphShortcut } from './delete';
 
 export class TransformController {
@@ -65,10 +75,11 @@ export class TransformController {
     if (selected.length === 0) return;
 
     this.graph.batchUpdate(() => {
-      selected.forEach((cell: any) => {
+      selected.forEach((cell: Cell) => {
         if (cell.geometry) {
           cell.style = cell.style || {};
-          cell.style.flipH = !(cell.style.flipH === true || cell.style.flipH === '1');
+          const style = cell.style as TransformStyle;
+          style.flipH = !(style.flipH === true || style.flipH === '1');
           this.graph.refresh();
         }
       });
@@ -82,10 +93,11 @@ export class TransformController {
     if (selected.length === 0) return;
 
     this.graph.batchUpdate(() => {
-      selected.forEach((cell: any) => {
+      selected.forEach((cell: Cell) => {
         if (cell.geometry) {
           cell.style = cell.style || {};
-          cell.style.flipV = !(cell.style.flipV === true || cell.style.flipV === '1');
+          const style = cell.style as TransformStyle;
+          style.flipV = !(style.flipV === true || style.flipV === '1');
           this.graph.refresh();
         }
       });
@@ -99,7 +111,7 @@ export class TransformController {
     if (selected.length === 0) return;
 
     this.graph.batchUpdate(() => {
-      selected.forEach((cell: any) => {
+      selected.forEach((cell: Cell) => {
         if (cell.geometry) {
           // Rotate 90° clockwise: swap width/height and adjust position
           const tempWidth = cell.geometry.width;
@@ -108,8 +120,9 @@ export class TransformController {
 
           // Rotate style if it has rotation
           cell.style = cell.style || {};
-          const currentRotation = parseInt(cell.style.rotation || '0', 10);
-          cell.style.rotation = ((currentRotation + 90) % 360).toString();
+          const style = cell.style as TransformStyle;
+          const currentRotation = parseInt(String(style.rotation || '0'), 10);
+          style.rotation = ((currentRotation + 90) % 360).toString();
 
           this.graph.refresh();
         }
@@ -124,7 +137,7 @@ export class TransformController {
     if (selected.length === 0) return;
 
     this.graph.batchUpdate(() => {
-      selected.forEach((cell: any) => {
+      selected.forEach((cell: Cell) => {
         if (cell.geometry) {
           // Rotate 90° counter-clockwise: swap width/height and adjust position
           const tempWidth = cell.geometry.width;
@@ -133,8 +146,9 @@ export class TransformController {
 
           // Rotate style if it has rotation
           cell.style = cell.style || {};
-          const currentRotation = parseInt(cell.style.rotation || '0', 10);
-          cell.style.rotation = ((currentRotation - 90 + 360) % 360).toString();
+          const style = cell.style as TransformStyle;
+          const currentRotation = parseInt(String(style.rotation || '0'), 10);
+          style.rotation = ((currentRotation - 90 + 360) % 360).toString();
 
           this.graph.refresh();
         }
@@ -151,7 +165,7 @@ export class TransformController {
     const targetWidth = selected[0].geometry.width;
 
     this.graph.batchUpdate(() => {
-      selected.forEach((cell: any) => {
+      selected.forEach((cell: Cell) => {
         if (cell.geometry) {
           cell.geometry.width = targetWidth;
           this.graph.refresh();
@@ -169,7 +183,7 @@ export class TransformController {
     const targetHeight = selected[0].geometry.height;
 
     this.graph.batchUpdate(() => {
-      selected.forEach((cell: any) => {
+      selected.forEach((cell: Cell) => {
         if (cell.geometry) {
           cell.geometry.height = targetHeight;
           this.graph.refresh();
@@ -188,7 +202,7 @@ export class TransformController {
     const targetHeight = selected[0].geometry.height;
 
     this.graph.batchUpdate(() => {
-      selected.forEach((cell: any) => {
+      selected.forEach((cell: Cell) => {
         if (cell.geometry) {
           cell.geometry.width = targetWidth;
           cell.geometry.height = targetHeight;

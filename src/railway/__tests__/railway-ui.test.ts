@@ -271,6 +271,8 @@ describe('railway Data and Checks panels', () => {
     expect(notify.warning).toHaveBeenCalledWith(expect.stringContaining('only has the header row'));
 
     window.dispatchEvent(new CustomEvent('railway-export-request', { detail: 'xlsx' }));
+    // the XLSX writer is loaded on first use (dynamic import)
+    await vi.waitFor(() => expect(downloads).toHaveLength(3));
     expect(downloads[2].name).toBe('Stacja Łódź-railway-data.xlsx');
     const bytes = new Uint8Array(await downloads[2].blob.arrayBuffer());
     expect([bytes[0], bytes[1]]).toEqual([0x50, 0x4b]);

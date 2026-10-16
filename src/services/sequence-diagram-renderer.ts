@@ -4,7 +4,7 @@
  * @details Converts PlantUML sequence diagrams to maxGraph with proper layout
  */
 
-import { Graph } from '@maxgraph/core';
+import { Cell, CellStyle, Graph } from '@maxgraph/core';
 import { DiagramData } from './plantuml-parser';
 
 export class SequenceDiagramRenderer {
@@ -47,7 +47,7 @@ export class SequenceDiagramRenderer {
   /**
    * Render sequence diagram into a group
    */
-  renderIntoGroup(diagramData: DiagramData, groupCell: any): void {
+  renderIntoGroup(diagramData: DiagramData, groupCell: Cell): void {
     console.log('[SequenceDiagram] Rendering into group');
     const parent = groupCell;
 
@@ -62,7 +62,7 @@ export class SequenceDiagramRenderer {
 
     this.graph.batchUpdate(() => {
       // 1. Draw participant boxes and lifelines
-      const participantMap = new Map<string, { x: number; y: number; cell: any }>();
+      const participantMap = new Map<string, { x: number; y: number; cell: Cell }>();
       participants.forEach((participant, index) => {
         const x = this.startX + index * this.lifelineSpacing;
         const y = this.startY;
@@ -78,7 +78,7 @@ export class SequenceDiagramRenderer {
           y,
           this.participantWidth,
           this.participantHeight,
-          `${style}fontSize=12;fontStyle=bold;` as any
+          `${style}fontSize=12;fontStyle=bold;` as unknown as CellStyle
         );
 
         participantMap.set(participant.id, { x, y: y + this.participantHeight, cell: participantCell });
@@ -89,7 +89,7 @@ export class SequenceDiagramRenderer {
       const maxY = this.startY + this.participantHeight + diagramData.connections.length * this.messageSpacing;
 
       // Create invisible anchor points for messages
-      const messageAnchors = new Map<number, { from: any; to: any }>();
+      const messageAnchors = new Map<number, { from: Cell; to: Cell }>();
 
       diagramData.connections.forEach((connection, index) => {
         const fromInfo = participantMap.get(connection.from);
@@ -105,15 +105,15 @@ export class SequenceDiagramRenderer {
         const y = this.startY + this.participantHeight + (index + 1) * this.messageSpacing;
 
         // Create invisible anchor cells for edge endpoints
-        const fromAnchor = this.graph.insertVertex(parent, null, '', x1 - 5, y - 5, 10, 10, 'opacity=0;' as any);
-        const toAnchor = this.graph.insertVertex(parent, null, '', x2 - 5, y - 5, 10, 10, 'opacity=0;' as any);
+        const fromAnchor = this.graph.insertVertex(parent, null, '', x1 - 5, y - 5, 10, 10, 'opacity=0;' as unknown as CellStyle);
+        const toAnchor = this.graph.insertVertex(parent, null, '', x2 - 5, y - 5, 10, 10, 'opacity=0;' as unknown as CellStyle);
 
         // Draw message arrow between anchors
         const isAsync = connection.type === 'async';
         const isDashed = isAsync ? '1' : '0';
         const msgStyle = `dashed=${isDashed};endArrow=block;fontSize=11;labelBackgroundColor=white;`;
 
-        this.graph.insertEdge(parent, null, connection.label || '', fromAnchor, toAnchor, msgStyle as any);
+        this.graph.insertEdge(parent, null, connection.label || '', fromAnchor, toAnchor, msgStyle as unknown as CellStyle);
 
         messageAnchors.set(index, { from: fromAnchor, to: toAnchor });
       });
@@ -121,9 +121,9 @@ export class SequenceDiagramRenderer {
       // 3. Draw lifelines (vertical dashed lines)
       participantMap.forEach((info) => {
         const lifelineStyle = 'dashed=1;strokeColor=#999999;endArrow=none;startArrow=none;';
-        const lifelineStart = this.graph.insertVertex(parent, null, '', info.x - 5, lifelineY - 5, 10, 10, 'opacity=0;' as any);
-        const lifelineEnd = this.graph.insertVertex(parent, null, '', info.x - 5, maxY + this.messageSpacing - 5, 10, 10, 'opacity=0;' as any);
-        this.graph.insertEdge(parent, null, '', lifelineStart, lifelineEnd, lifelineStyle as any);
+        const lifelineStart = this.graph.insertVertex(parent, null, '', info.x - 5, lifelineY - 5, 10, 10, 'opacity=0;' as unknown as CellStyle);
+        const lifelineEnd = this.graph.insertVertex(parent, null, '', info.x - 5, maxY + this.messageSpacing - 5, 10, 10, 'opacity=0;' as unknown as CellStyle);
+        this.graph.insertEdge(parent, null, '', lifelineStart, lifelineEnd, lifelineStyle as unknown as CellStyle);
       });
     });
 
@@ -149,7 +149,7 @@ export class SequenceDiagramRenderer {
 
     this.graph.batchUpdate(() => {
       // 1. Draw participant boxes and lifelines
-      const participantMap = new Map<string, { x: number; y: number; cell: any }>();
+      const participantMap = new Map<string, { x: number; y: number; cell: Cell }>();
       participants.forEach((participant, index) => {
         const x = this.startX + index * this.lifelineSpacing;
         const y = this.startY;
@@ -165,7 +165,7 @@ export class SequenceDiagramRenderer {
           y,
           this.participantWidth,
           this.participantHeight,
-          `${style}fontSize=12;fontStyle=bold;` as any
+          `${style}fontSize=12;fontStyle=bold;` as unknown as CellStyle
         );
 
         participantMap.set(participant.id, { x, y: y + this.participantHeight, cell: participantCell });
@@ -176,7 +176,7 @@ export class SequenceDiagramRenderer {
       const maxY = this.startY + this.participantHeight + diagramData.connections.length * this.messageSpacing;
 
       // Create invisible anchor points for messages
-      const messageAnchors = new Map<number, { from: any; to: any }>();
+      const messageAnchors = new Map<number, { from: Cell; to: Cell }>();
 
       diagramData.connections.forEach((connection, index) => {
         const fromInfo = participantMap.get(connection.from);
@@ -192,15 +192,15 @@ export class SequenceDiagramRenderer {
         const y = this.startY + this.participantHeight + (index + 1) * this.messageSpacing;
 
         // Create invisible anchor cells for edge endpoints
-        const fromAnchor = this.graph.insertVertex(parent, null, '', x1 - 5, y - 5, 10, 10, 'opacity=0;' as any);
-        const toAnchor = this.graph.insertVertex(parent, null, '', x2 - 5, y - 5, 10, 10, 'opacity=0;' as any);
+        const fromAnchor = this.graph.insertVertex(parent, null, '', x1 - 5, y - 5, 10, 10, 'opacity=0;' as unknown as CellStyle);
+        const toAnchor = this.graph.insertVertex(parent, null, '', x2 - 5, y - 5, 10, 10, 'opacity=0;' as unknown as CellStyle);
 
         // Draw message arrow between anchors
         const isAsync = connection.type === 'async';
         const isDashed = isAsync ? '1' : '0';
         const msgStyle = `dashed=${isDashed};endArrow=block;fontSize=11;labelBackgroundColor=white;`;
 
-        this.graph.insertEdge(parent, null, connection.label || '', fromAnchor, toAnchor, msgStyle as any);
+        this.graph.insertEdge(parent, null, connection.label || '', fromAnchor, toAnchor, msgStyle as unknown as CellStyle);
 
         messageAnchors.set(index, { from: fromAnchor, to: toAnchor });
       });
@@ -208,9 +208,9 @@ export class SequenceDiagramRenderer {
       // 3. Draw lifelines (vertical dashed lines)
       participantMap.forEach((info) => {
         const lifelineStyle = 'dashed=1;strokeColor=#999999;endArrow=none;startArrow=none;';
-        const lifelineStart = this.graph.insertVertex(parent, null, '', info.x - 5, lifelineY - 5, 10, 10, 'opacity=0;' as any);
-        const lifelineEnd = this.graph.insertVertex(parent, null, '', info.x - 5, maxY + this.messageSpacing - 5, 10, 10, 'opacity=0;' as any);
-        this.graph.insertEdge(parent, null, '', lifelineStart, lifelineEnd, lifelineStyle as any);
+        const lifelineStart = this.graph.insertVertex(parent, null, '', info.x - 5, lifelineY - 5, 10, 10, 'opacity=0;' as unknown as CellStyle);
+        const lifelineEnd = this.graph.insertVertex(parent, null, '', info.x - 5, maxY + this.messageSpacing - 5, 10, 10, 'opacity=0;' as unknown as CellStyle);
+        this.graph.insertEdge(parent, null, '', lifelineStart, lifelineEnd, lifelineStyle as unknown as CellStyle);
       });
     });
 

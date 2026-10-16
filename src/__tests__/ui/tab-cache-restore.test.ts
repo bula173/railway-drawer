@@ -1,7 +1,7 @@
 /**
  * Regression: a corrupt or old-format cache made restoreFromCache() create no tab while startup
  * had already chosen the restore branch, leaving the app with zero tabs (no canvas, no "+").
- * The startup logic in legacy-main.ts is mirrored in startApp().
+ * The startup logic in main-editor.ts is mirrored in startApp().
  */
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { TabManager } from '../../ui/tabs';
@@ -14,7 +14,7 @@ import { resolve } from 'path';
 
 const CACHE_KEY = 'railway-drawer-cache';
 
-/** Same sequence as legacy-main.ts: try the cache, then make sure at least one tab exists. */
+/** Same sequence as main-editor.ts: try the cache, then make sure at least one tab exists. */
 function startApp(): TabManager {
   const tabManager = new TabManager('tabs-container', 'graph-container');
   if (CacheService.exists()) {

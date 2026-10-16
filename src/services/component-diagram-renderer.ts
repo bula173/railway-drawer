@@ -3,7 +3,7 @@
  * @brief Renderer for PlantUML component diagrams
  */
 
-import { Graph } from '@maxgraph/core';
+import { Cell, CellStyle, Graph } from '@maxgraph/core';
 import { DiagramData } from './plantuml-parser';
 
 export class ComponentDiagramRenderer {
@@ -19,7 +19,7 @@ export class ComponentDiagramRenderer {
     this.graph = graph;
   }
 
-  renderIntoGroup(diagramData: DiagramData, groupCell: any): void {
+  renderIntoGroup(diagramData: DiagramData, groupCell: Cell): void {
     console.log('[ComponentDiagram] Rendering into group');
     const parent = groupCell;
 
@@ -29,7 +29,7 @@ export class ComponentDiagramRenderer {
     if (components.length === 0) return;
 
     this.graph.batchUpdate(() => {
-      const componentMap = new Map<string, any>();
+      const componentMap = new Map<string, Cell>();
       let col = 0;
       let row = 0;
       const colsPerRow = Math.ceil(Math.sqrt(components.length));
@@ -46,7 +46,7 @@ export class ComponentDiagramRenderer {
           y,
           this.componentWidth,
           this.componentHeight,
-          'shape=rectangle;fillColor=#e8f4f8;strokeColor=#0c5aa0;fontSize=12;' as any
+          'shape=rectangle;fillColor=#e8f4f8;strokeColor=#0c5aa0;fontSize=12;' as unknown as CellStyle
         );
 
         componentMap.set(component.id, componentCell);
@@ -65,7 +65,7 @@ export class ComponentDiagramRenderer {
 
         if (fromComponent && toComponent) {
           const relationshipStyle = 'endArrow=block;strokeColor=#0c5aa0;dashed=0;';
-          this.graph.insertEdge(parent, null, conn.label || '', fromComponent, toComponent, relationshipStyle as any);
+          this.graph.insertEdge(parent, null, conn.label || '', fromComponent, toComponent, relationshipStyle as unknown as CellStyle);
         }
       });
     });
@@ -83,7 +83,7 @@ export class ComponentDiagramRenderer {
     if (components.length === 0) return;
 
     this.graph.batchUpdate(() => {
-      const componentMap = new Map<string, any>();
+      const componentMap = new Map<string, Cell>();
       let col = 0;
       let row = 0;
       const colsPerRow = Math.ceil(Math.sqrt(components.length));
@@ -100,7 +100,7 @@ export class ComponentDiagramRenderer {
           y,
           this.componentWidth,
           this.componentHeight,
-          'shape=rectangle;fillColor=#e8f4f8;strokeColor=#0c5aa0;fontSize=12;' as any
+          'shape=rectangle;fillColor=#e8f4f8;strokeColor=#0c5aa0;fontSize=12;' as unknown as CellStyle
         );
 
         componentMap.set(component.id, componentCell);
@@ -119,7 +119,7 @@ export class ComponentDiagramRenderer {
 
         if (fromComponent && toComponent) {
           const relationshipStyle = 'endArrow=block;strokeColor=#0c5aa0;dashed=0;';
-          this.graph.insertEdge(parent, null, conn.label || '', fromComponent, toComponent, relationshipStyle as any);
+          this.graph.insertEdge(parent, null, conn.label || '', fromComponent, toComponent, relationshipStyle as unknown as CellStyle);
         }
       });
     });

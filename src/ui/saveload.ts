@@ -1,4 +1,5 @@
 import { Graph, GraphDataModel, Rectangle } from '@maxgraph/core';
+import type { Cell } from '@maxgraph/core';
 import {
   emptyDrawioModelXml,
   exportModelToDrawioXml,
@@ -12,6 +13,19 @@ import { GraphCommandService } from '../services/graph-command-service';
 import type { ScenarioSet } from '../scenarios/scenario-model';
 import { globalNotificationManager } from './notification';
 import { globalSaveStatusIndicator } from './save-status';
+
+/** Model as read by exportAsJson: `children` is not declared on GraphDataModel (it is undefined there at runtime). */
+type ModelWithChildren = GraphDataModel & { children?: Cell[] };
+
+/** One entry of the PlantUML metadata comment embedded by embedPlantUmlMetadata(). */
+interface PlantUmlMetadataEntry {
+  cellId: string;
+  cellLabel: unknown;
+  plantumlSource: string;
+  diagramType: string;
+  createdAt: number;
+  lastModified: number;
+}
 
 /** Current marker: base64 of the UTF-8 encoded JSON. */
 const PLANTUML_METADATA_UTF8_MARKER = 'PLANTUML_METADATA_UTF8';
@@ -61,7 +75,7 @@ export class SaveLoadController {
     this.commandService = commandService;
     this.projectService = new ProjectService();
     this.plantumlGroupManager = new PlantUmlGroupManager(graph);
-    // Ctrl/Cmd+S is dispatched once, to the active tab, by the global shortcut handler in legacy-main.ts.
+    // Ctrl/Cmd+S is dispatched once, to the active tab, by the global shortcut handler in main-editor.ts.
     // A per-controller `document` listener here downloaded one file per open tab.
     // The .save-status element is owned by globalSaveStatusIndicator; writing it directly
     // from here overwrote autosave error messages.
@@ -267,9 +281,9 @@ export class SaveLoadController {
   }
 
   exportAsJson(): string {
-    const model = (this.graph as any).model;
-    const children = (model as any).children || [];
-    const data = children.map((cell: any) => {
+    const model: ModelWithChildren = this.graph.model;
+    const children = model.children || [];
+    const data = children.map((cell: Cell) => {
       // Clone style and remove large SVG data URLs to reduce export size
       const style = cell.style ? { ...cell.style } : null;
       if (style && style.image && style.image.startsWith('data:image/svg+xml')) {
@@ -389,13 +403,13 @@ export class SaveLoadController {
         return;
       }
 
-      const plantumlData = JSON.parse(json);
+      const plantumlData: PlantUmlMetadataEntry[] = JSON.parse(json);
       console.log('[SaveLoad] Restoring PlantUML metadata for', plantumlData.length, 'groups');
 
-      const model = (this.graph as any).model;
-      const cells = (model as any).cells || {};
+      const model = this.graph.model;
+      const cells: Record<string, Cell> = model.cells || {};
 
-      plantumlData.forEach((data: any) => {
+      plantumlData.forEach((data: PlantUmlMetadataEntry) => {
         const cell = cells[data.cellId];
         // The cell's own rdPlantUml style key (read by importModelXml) takes precedence
         if (cell && !this.plantumlGroupManager.hasPlantUmlMetadata(cell)) {

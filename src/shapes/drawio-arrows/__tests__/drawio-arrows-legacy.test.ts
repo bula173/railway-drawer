@@ -10,16 +10,10 @@ import {
   registerDrawioMxArrowsShapeClasses,
   registerDrawioMxArrowsShapes,
 } from '../registry';
-import { Arrows2ArrowShape, Arrows2UTurnArrowShape } from '../index';
 import { shapeRegistry } from '../../registry';
-import { mxShapeArrows2Arrow, mxShapeArrows2UTurnArrow } from '../../../drawio-shapes/js/mx-libs/arrows2/index';
+import { mxShapeArrows2Arrow } from '../../../drawio-shapes/js/mx-libs/arrows2/index';
 
 describe('drawio-arrows legacy aliases', () => {
-  it('keeps the old class names as aliases of the ports', () => {
-    expect(Arrows2ArrowShape).toBe(mxShapeArrows2Arrow);
-    expect(Arrows2UTurnArrowShape).toBe(mxShapeArrows2UTurnArrow);
-  });
-
   it('registers draw.io names and legacy keys to the same constructors (idempotent)', () => {
     const first = registerDrawioMxArrowsShapeClasses();
     const second = registerDrawioMxArrowsShapeClasses();

@@ -203,7 +203,7 @@ export class ShapeToolbar {
   }
 
   private createShapeItem(shape: ShapeConfig): HTMLElement {
-    const prototype = new Cell(shape.label, new Geometry(0, 0, shape.width, shape.height), shape.style as any);
+    const prototype = new Cell(shape.label, new Geometry(0, 0, shape.width, shape.height), shape.style);
     prototype.setVertex(true);
 
     const item = document.createElement('div');

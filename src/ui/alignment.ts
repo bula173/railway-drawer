@@ -1,4 +1,7 @@
-import { Graph } from '@maxgraph/core';
+import { Graph, type Cell, type Geometry } from '@maxgraph/core';
+
+/** A selected vertex; alignment assumes vertices carry a geometry */
+type VertexCell = Cell & { geometry: Geometry };
 
 export class AlignmentController {
   private graph: Graph;
@@ -44,19 +47,19 @@ export class AlignmentController {
     }
   }
 
-  private getSelectedVertices(): any[] {
+  private getSelectedVertices(): VertexCell[] {
     const selected = this.graph.getSelectionCells();
-    return selected.filter((cell: any) => cell.isVertex?.());
+    return selected.filter((cell: Cell): cell is VertexCell => cell.isVertex?.());
   }
 
   alignLeft(): void {
     const vertices = this.getSelectedVertices();
     if (vertices.length < 2) return;
 
-    const minX = Math.min(...vertices.map((v: any) => v.geometry.x));
+    const minX = Math.min(...vertices.map((v: VertexCell) => v.geometry.x));
 
     this.graph.batchUpdate(() => {
-      vertices.forEach((vertex: any) => {
+      vertices.forEach((vertex: VertexCell) => {
         vertex.geometry.x = minX;
         this.graph.refresh();
       });
@@ -67,14 +70,14 @@ export class AlignmentController {
     const vertices = this.getSelectedVertices();
     if (vertices.length < 2) return;
 
-    const minX = Math.min(...vertices.map((v: any) => v.geometry.x));
+    const minX = Math.min(...vertices.map((v: VertexCell) => v.geometry.x));
     const maxX = Math.max(
-      ...vertices.map((v: any) => v.geometry.x + v.geometry.width)
+      ...vertices.map((v: VertexCell) => v.geometry.x + v.geometry.width)
     );
     const centerX = (minX + maxX) / 2;
 
     this.graph.batchUpdate(() => {
-      vertices.forEach((vertex: any) => {
+      vertices.forEach((vertex: VertexCell) => {
         vertex.geometry.x = centerX - vertex.geometry.width / 2;
         this.graph.refresh();
       });
@@ -86,11 +89,11 @@ export class AlignmentController {
     if (vertices.length < 2) return;
 
     const maxX = Math.max(
-      ...vertices.map((v: any) => v.geometry.x + v.geometry.width)
+      ...vertices.map((v: VertexCell) => v.geometry.x + v.geometry.width)
     );
 
     this.graph.batchUpdate(() => {
-      vertices.forEach((vertex: any) => {
+      vertices.forEach((vertex: VertexCell) => {
         vertex.geometry.x = maxX - vertex.geometry.width;
         this.graph.refresh();
       });
@@ -101,10 +104,10 @@ export class AlignmentController {
     const vertices = this.getSelectedVertices();
     if (vertices.length < 2) return;
 
-    const minY = Math.min(...vertices.map((v: any) => v.geometry.y));
+    const minY = Math.min(...vertices.map((v: VertexCell) => v.geometry.y));
 
     this.graph.batchUpdate(() => {
-      vertices.forEach((vertex: any) => {
+      vertices.forEach((vertex: VertexCell) => {
         vertex.geometry.y = minY;
         this.graph.refresh();
       });
@@ -115,14 +118,14 @@ export class AlignmentController {
     const vertices = this.getSelectedVertices();
     if (vertices.length < 2) return;
 
-    const minY = Math.min(...vertices.map((v: any) => v.geometry.y));
+    const minY = Math.min(...vertices.map((v: VertexCell) => v.geometry.y));
     const maxY = Math.max(
-      ...vertices.map((v: any) => v.geometry.y + v.geometry.height)
+      ...vertices.map((v: VertexCell) => v.geometry.y + v.geometry.height)
     );
     const centerY = (minY + maxY) / 2;
 
     this.graph.batchUpdate(() => {
-      vertices.forEach((vertex: any) => {
+      vertices.forEach((vertex: VertexCell) => {
         vertex.geometry.y = centerY - vertex.geometry.height / 2;
         this.graph.refresh();
       });
@@ -134,11 +137,11 @@ export class AlignmentController {
     if (vertices.length < 2) return;
 
     const maxY = Math.max(
-      ...vertices.map((v: any) => v.geometry.y + v.geometry.height)
+      ...vertices.map((v: VertexCell) => v.geometry.y + v.geometry.height)
     );
 
     this.graph.batchUpdate(() => {
-      vertices.forEach((vertex: any) => {
+      vertices.forEach((vertex: VertexCell) => {
         vertex.geometry.y = maxY - vertex.geometry.height;
         this.graph.refresh();
       });
@@ -151,7 +154,7 @@ export class AlignmentController {
 
     // Sort by x position
     const sorted = [...vertices].sort(
-      (a: any, b: any) => a.geometry.x - b.geometry.x
+      (a: VertexCell, b: VertexCell) => a.geometry.x - b.geometry.x
     );
 
     const minX = sorted[0].geometry.x;
@@ -160,7 +163,7 @@ export class AlignmentController {
       sorted[sorted.length - 1].geometry.width;
 
     const totalWidth = sorted.reduce(
-      (sum: number, v: any) => sum + v.geometry.width,
+      (sum: number, v: VertexCell) => sum + v.geometry.width,
       0
     );
     const gaps = sorted.length - 1;
@@ -168,7 +171,7 @@ export class AlignmentController {
 
     this.graph.batchUpdate(() => {
       let currentX = minX;
-      sorted.forEach((vertex: any) => {
+      sorted.forEach((vertex: VertexCell) => {
         vertex.geometry.x = currentX;
         currentX += vertex.geometry.width + spacing;
         this.graph.refresh();
@@ -182,7 +185,7 @@ export class AlignmentController {
 
     // Sort by y position
     const sorted = [...vertices].sort(
-      (a: any, b: any) => a.geometry.y - b.geometry.y
+      (a: VertexCell, b: VertexCell) => a.geometry.y - b.geometry.y
     );
 
     const minY = sorted[0].geometry.y;
@@ -191,7 +194,7 @@ export class AlignmentController {
       sorted[sorted.length - 1].geometry.height;
 
     const totalHeight = sorted.reduce(
-      (sum: number, v: any) => sum + v.geometry.height,
+      (sum: number, v: VertexCell) => sum + v.geometry.height,
       0
     );
     const gaps = sorted.length - 1;
@@ -199,7 +202,7 @@ export class AlignmentController {
 
     this.graph.batchUpdate(() => {
       let currentY = minY;
-      sorted.forEach((vertex: any) => {
+      sorted.forEach((vertex: VertexCell) => {
         vertex.geometry.y = currentY;
         currentY += vertex.geometry.height + spacing;
         this.graph.refresh();

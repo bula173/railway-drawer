@@ -1,6 +1,6 @@
 /**
  * @file install-sharing.ts
- * @brief Wires sharing into the legacy editor (called once from legacy-main.ts):
+ * @brief Wires sharing into the main editor (called once from main-editor.ts):
  *        Share button + File > Share…, File menu items of the cloud providers, the remote-file
  *        session (Ctrl+S save-back, status bar), incoming `#R` diagram links, provider file links
  *        (`?gitlab=`), pending sign-ins; remote bindings persisted with the tab cache (Reload/Unlink,

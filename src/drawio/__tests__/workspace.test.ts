@@ -22,7 +22,7 @@ function mount(opts: DrawioWorkspaceOptions = {}): DrawioWorkspaceHandle {
   handle = mountDrawioWorkspace(root, {
     drawioUrl: DRAWIO_URL,
     configPromise: Promise.resolve({}),
-    onSwitchToLegacy: () => undefined,
+    onSwitchToMain: () => undefined,
     ...opts,
   });
   spyOnIframe();
@@ -117,7 +117,7 @@ describe('mountDrawioWorkspace DOM', () => {
     expect(frame.getAttribute('allow')).toBe('clipboard-read; clipboard-write');
     expect(frame.getAttribute('src')).toContain('proto=json');
     expect(frame.getAttribute('src')).toContain('configure=1');
-    for (const name of ['New', 'Open…', 'Download .drawio', 'Export SVG', 'maxGraph editor']) {
+    for (const name of ['New', 'Open…', 'Download .drawio', 'Export SVG', 'Back to Railway Drawer editor']) {
       expect(button(name)).toBeTruthy();
     }
     expect(root.querySelector('.rdw-title')?.textContent).toBe('Untitled diagram');
@@ -166,7 +166,7 @@ describe('mountDrawioWorkspace DOM', () => {
 
   it('defaults to the self-hosted draw.io next to the app and accepts its same-origin messages', async () => {
     vi.useFakeTimers();
-    handle = mountDrawioWorkspace(root, { configPromise: Promise.resolve({}), onSwitchToLegacy: () => undefined });
+    handle = mountDrawioWorkspace(root, { configPromise: Promise.resolve({}), onSwitchToMain: () => undefined });
     const src = new URL(iframe().src);
     expect(src.origin).toBe(window.location.origin);
     expect(src.pathname).toBe('/drawio/');
@@ -186,7 +186,7 @@ describe('mountDrawioWorkspace DOM', () => {
 
   it('shows the self-hosted hint when the local draw.io copy never answers', () => {
     vi.useFakeTimers();
-    handle = mountDrawioWorkspace(root, { configPromise: Promise.resolve({}), onSwitchToLegacy: () => undefined });
+    handle = mountDrawioWorkspace(root, { configPromise: Promise.resolve({}), onSwitchToMain: () => undefined });
     vi.advanceTimersByTime(20000);
     const banner = root.querySelector<HTMLElement>('.rdw-unreachable');
     expect(banner?.hidden).toBe(false);
@@ -204,7 +204,7 @@ describe('mountDrawioWorkspace DOM', () => {
   it('shows the library banner and still configures draw.io when the library fails', async () => {
     vi.stubGlobal('fetch', vi.fn(() => Promise.resolve(new Response('nope', { status: 404 }))));
     vi.spyOn(console, 'error').mockImplementation(() => undefined);
-    handle = mountDrawioWorkspace(root, { drawioUrl: DRAWIO_URL, onSwitchToLegacy: () => undefined });
+    handle = mountDrawioWorkspace(root, { drawioUrl: DRAWIO_URL, onSwitchToMain: () => undefined });
     spyOnIframe();
     emit({ event: 'configure' });
     await waitUntil(() => posted().some((m) => m.action === 'configure'));
@@ -218,7 +218,7 @@ describe('mountDrawioWorkspace DOM', () => {
   it('sends the ERTMS library in the configure reply', async () => {
     const fetchMock = vi.fn((_url: string) => Promise.resolve(new Response(LIBRARY, { status: 200 })));
     vi.stubGlobal('fetch', fetchMock);
-    handle = mountDrawioWorkspace(root, { drawioUrl: DRAWIO_URL, onSwitchToLegacy: () => undefined });
+    handle = mountDrawioWorkspace(root, { drawioUrl: DRAWIO_URL, onSwitchToMain: () => undefined });
     spyOnIframe();
     emit({ event: 'configure' });
     await waitUntil(() => posted().some((m) => m.action === 'configure'));
@@ -404,36 +404,36 @@ describe('mountDrawioWorkspace exports and mode switch', () => {
     expect(status()).toContain('not ready');
   });
 
-  it('flushes the autosave before switching to the maxGraph editor', async () => {
-    const onSwitchToLegacy = vi.fn(() => {
+  it('flushes the autosave before switching back to the Railway Drawer editor', async () => {
+    const onSwitchToMain = vi.fn(() => {
       expect(loadAutosave()?.xml).toBe(NEW_XML);
     });
-    mount({ onSwitchToLegacy });
+    mount({ onSwitchToMain });
     await handshake();
     emit({ event: 'autosave', xml: NEW_XML });
-    button('maxGraph editor').click();
-    expect(onSwitchToLegacy).toHaveBeenCalledTimes(1);
+    button('Back to Railway Drawer editor').click();
+    expect(onSwitchToMain).toHaveBeenCalledTimes(1);
   });
 
   it('asks before switching when the autosave flush fails', async () => {
     vi.spyOn(console, 'warn').mockImplementation(() => undefined);
-    const onSwitchToLegacy = vi.fn();
-    mount({ onSwitchToLegacy });
+    const onSwitchToMain = vi.fn();
+    mount({ onSwitchToMain });
     await handshake();
     emit({ event: 'autosave', xml: NEW_XML });
     const setItem = vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => {
       throw new DOMException('full', 'QuotaExceededError');
     });
     const confirm = vi.spyOn(window, 'confirm').mockReturnValue(false);
-    button('maxGraph editor').click();
+    button('Back to Railway Drawer editor').click();
     expect(confirm).toHaveBeenCalledTimes(1);
-    expect(onSwitchToLegacy).not.toHaveBeenCalled();
+    expect(onSwitchToMain).not.toHaveBeenCalled();
 
     // The failed flush is remembered: the next attempt still asks; OK switches
     confirm.mockReturnValue(true);
-    button('maxGraph editor').click();
+    button('Back to Railway Drawer editor').click();
     expect(confirm).toHaveBeenCalledTimes(2);
-    expect(onSwitchToLegacy).toHaveBeenCalledTimes(1);
+    expect(onSwitchToMain).toHaveBeenCalledTimes(1);
     setItem.mockRestore();
   });
 });

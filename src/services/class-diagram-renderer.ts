@@ -3,8 +3,8 @@
  * @brief Renderer for PlantUML class diagrams
  */
 
-import { Graph } from '@maxgraph/core';
-import { DiagramData } from './plantuml-parser';
+import { Cell, CellStyle, Graph } from '@maxgraph/core';
+import { DiagramData, DiagramElement } from './plantuml-parser';
 
 export class ClassDiagramRenderer {
   private graph: Graph;
@@ -19,7 +19,7 @@ export class ClassDiagramRenderer {
     this.graph = graph;
   }
 
-  renderIntoGroup(diagramData: DiagramData, groupCell: any): void {
+  renderIntoGroup(diagramData: DiagramData, groupCell: Cell): void {
     console.log('[ClassDiagram] Rendering into group');
     const parent = groupCell;
 
@@ -29,7 +29,7 @@ export class ClassDiagramRenderer {
     if (classes.length === 0) return;
 
     this.graph.batchUpdate(() => {
-      const classMap = new Map<string, any>();
+      const classMap = new Map<string, Cell>();
       let col = 0;
       let row = 0;
       const colsPerRow = Math.ceil(Math.sqrt(classes.length));
@@ -48,7 +48,7 @@ export class ClassDiagramRenderer {
           y,
           this.classWidth,
           this.classHeight,
-          'shape=rectangle;fillColor=#e8f4f8;strokeColor=#0c5aa0;align=left;verticalAlign=top;' as any
+          'shape=rectangle;fillColor=#e8f4f8;strokeColor=#0c5aa0;align=left;verticalAlign=top;' as unknown as CellStyle
         );
 
         classMap.set(cls.id, classCell);
@@ -67,7 +67,7 @@ export class ClassDiagramRenderer {
 
         if (fromClass && toClass) {
           const relationshipStyle = this.getRelationshipStyle(conn.type);
-          this.graph.insertEdge(parent, null, conn.label || '', fromClass, toClass, relationshipStyle as any);
+          this.graph.insertEdge(parent, null, conn.label || '', fromClass, toClass, relationshipStyle as unknown as CellStyle);
         }
       });
     });
@@ -85,7 +85,7 @@ export class ClassDiagramRenderer {
     if (classes.length === 0) return;
 
     this.graph.batchUpdate(() => {
-      const classMap = new Map<string, any>();
+      const classMap = new Map<string, Cell>();
       let col = 0;
       let row = 0;
       const colsPerRow = Math.ceil(Math.sqrt(classes.length));
@@ -104,7 +104,7 @@ export class ClassDiagramRenderer {
           y,
           this.classWidth,
           this.classHeight,
-          'shape=rectangle;fillColor=#e8f4f8;strokeColor=#0c5aa0;align=left;verticalAlign=top;fontSize=11;' as any
+          'shape=rectangle;fillColor=#e8f4f8;strokeColor=#0c5aa0;align=left;verticalAlign=top;fontSize=11;' as unknown as CellStyle
         );
 
         classMap.set(cls.id, classCell);
@@ -123,7 +123,7 @@ export class ClassDiagramRenderer {
 
         if (fromClass && toClass) {
           const relationshipStyle = this.getRelationshipStyle(conn.type);
-          this.graph.insertEdge(parent, null, conn.label || '', fromClass, toClass, relationshipStyle as any);
+          this.graph.insertEdge(parent, null, conn.label || '', fromClass, toClass, relationshipStyle as unknown as CellStyle);
         }
       });
     });
@@ -131,7 +131,7 @@ export class ClassDiagramRenderer {
     setTimeout(() => this.graph.fit(50), 100);
   }
 
-  private formatClassLabel(cls: any): string {
+  private formatClassLabel(cls: DiagramElement): string {
     let label = cls.label;
     if (cls.attributes && cls.attributes.length > 0) {
       label += '\n---\n' + cls.attributes.join('\n');

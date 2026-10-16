@@ -1,4 +1,4 @@
-import { Graph } from '@maxgraph/core';
+import { Graph, type Cell } from '@maxgraph/core';
 import { shouldIgnoreGraphShortcut } from './delete';
 
 export class DuplicateOffsetController {
@@ -186,11 +186,11 @@ export class DuplicateOffsetController {
     this.closeOpenDialog = closeDialog;
   }
 
-  private duplicateWithOffset(cells: any[], count: number, offset: number): void {
-    const selected = cells.filter((cell: any) => !cell.isEdge?.());
+  private duplicateWithOffset(cells: Cell[], count: number, offset: number): void {
+    const selected = cells.filter((cell: Cell) => !cell.isEdge?.());
     if (selected.length === 0) return;
 
-    const duplicated: any[] = [];
+    const duplicated: Cell[] = [];
 
     this.graph.batchUpdate(() => {
       for (let i = 0; i < count; i++) {

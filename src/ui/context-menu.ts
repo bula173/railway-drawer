@@ -13,9 +13,14 @@
  */
 
 import { Graph } from '@maxgraph/core';
+import type { Cell } from '@maxgraph/core';
 import { ClipboardService } from '../services/clipboard-service';
 import type { GraphCommandService } from '../services/graph-command-service';
 import { ensureDrawioMenuItems, executeDrawioMenuAction, updateDrawioMenuItems } from '../drawio-shapes/behaviour/menu';
+import type { GroupingController } from './grouping';
+
+/** Cell with the ad-hoc `locked` flag toggled by the Lock action. */
+type LockableCell = Cell & { locked?: boolean };
 
 /**
  * @class ContextMenuController
@@ -39,9 +44,9 @@ export class ContextMenuController {
   /** @brief The context menu DOM element */
   private contextMenu: HTMLElement | null;
   /** @brief Currently right-clicked cell (may be different from selection) */
-  private currentCell: any = null;
+  private currentCell: Cell | null = null;
   /** @brief Array of selected cells for multi-selection support */
-  private selectedCells: any[] = [];
+  private selectedCells: Cell[] = [];
   /** @brief Clipboard service for paste operations */
   private clipboardService: ClipboardService;
   /** @brief Last context menu X coordinate */
@@ -49,7 +54,7 @@ export class ContextMenuController {
   /** @brief Last context menu Y coordinate */
   private lastContextY = 0;
   /** @brief Reference to grouping controller for group/ungroup operations */
-  private groupingController: any;
+  private groupingController: GroupingController | undefined;
   /** @brief Reference to graph command service for z-order operations */
   private commandService: GraphCommandService | null = null;
   /** @brief Removes this controller's subscription to the shared ClipboardService */
@@ -69,7 +74,7 @@ export class ContextMenuController {
     this.setupClipboardListener();
   }
 
-  setGroupingController(controller: any): void {
+  setGroupingController(controller: GroupingController): void {
     this.groupingController = controller;
   }
 
@@ -116,7 +121,7 @@ export class ContextMenuController {
 
         if (cell && !cell.isEdge?.()) {
           // If clicking on a cell that's already selected, keep the multiple selection
-          const isCellInSelection = currentSelection.some((c: any) => c === cell);
+          const isCellInSelection = currentSelection.some((c: Cell) => c === cell);
 
           if (isCellInSelection && currentSelection.length > 1) {
             // Keep multiple selection
@@ -200,11 +205,8 @@ export class ContextMenuController {
 
       // Show group if 2+ objects selected, show ungroup if any are groups
       const canGroup = this.selectedCells.length >= 2;
-      const canUngroup = this.selectedCells.some((cell: any) => {
-        const model = (this.graph.model as any);
-        const children = model.getChildren?.(cell);
-        return children && children.length > 0;
-      });
+      // A group is a cell with children (GroupingController uses graph.groupCells)
+      const canUngroup = this.selectedCells.some((cell: Cell | null) => !!cell && cell.getChildCount() > 0);
 
       console.log('[ContextMenu] Cell context - selectedCells:', this.selectedCells.length, 'canGroup:', canGroup, 'canUngroup:', canUngroup);
       if (groupItem) {
@@ -229,7 +231,8 @@ export class ContextMenuController {
   }
 
   private executeAction(action: string): void {
-    const cellsToOperate = this.selectedCells.length > 0 ? this.selectedCells : [this.currentCell];
+    // currentCell may be null here; passed through unchanged as before
+    const cellsToOperate = (this.selectedCells.length > 0 ? this.selectedCells : [this.currentCell]) as Cell[];
 
     if (executeDrawioMenuAction(this.graph, action, this.currentCell)) {
       return;
@@ -266,12 +269,12 @@ export class ContextMenuController {
         break;
 
       case 'saveAsTemplate':
-        // legacy-main.ts: the selection (on a shape) or the whole diagram (on the empty canvas)
+        // main-editor.ts: the selection (on a shape) or the whole diagram (on the empty canvas)
         window.dispatchEvent(new CustomEvent('save-template-request'));
         break;
 
       case 'lock':
-        cellsToOperate.forEach((cell: any) => {
+        (cellsToOperate as LockableCell[]).forEach((cell) => {
           cell.locked = !cell.locked;
         });
         break;
@@ -304,7 +307,7 @@ export class ContextMenuController {
       }
 
       case 'editData':
-        // The Data panel edits the selection (src/railway, wired in legacy-main.ts)
+        // The Data panel edits the selection (src/railway, wired in main-editor.ts)
         if (this.selectedCells.length > 0) this.graph.setSelectionCells(this.selectedCells);
         window.dispatchEvent(new CustomEvent('railway-edit-data-request'));
         break;

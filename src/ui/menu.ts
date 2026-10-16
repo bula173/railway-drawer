@@ -1,12 +1,29 @@
 import { Graph } from '@maxgraph/core';
 import { GraphCommandService } from '../services/graph-command-service';
 import { SaveLoadController } from './saveload';
+import type { Cell } from '@maxgraph/core';
+import type { AlignmentController } from './alignment';
+import type { LeftPanelTabs } from './left-panel-tabs';
+
+/** Window global set by main-editor.ts so menu handlers can reach the left panel tabs. */
+type WindowWithLeftPanelTabs = Window & { __leftPanelTabs?: LeftPanelTabs };
+
+/**
+ * Model accessors the bringForward/sendBackward handlers call. maxGraph 0.10's GraphDataModel
+ * does not declare (or implement) getParent/getChildCount/getChildAt; kept as-is to preserve behaviour.
+ */
+interface ChildOrderModel {
+  getParent(cell: Cell): Cell | null;
+  getChildCount(parent: Cell): number;
+  getChildAt(parent: Cell, index: number): Cell | null;
+  add(parent: Cell | null, child: Cell | null, index?: number | null): Cell | null;
+}
 
 export class MenuController {
   private graph: Graph;
   private commandService: GraphCommandService;
   private saveLoadController: SaveLoadController;
-  private alignmentController: any;
+  private alignmentController: AlignmentController | null = null;
 
   constructor(graph: Graph, commandService: GraphCommandService, saveLoadController: SaveLoadController) {
     this.graph = graph;
@@ -15,7 +32,7 @@ export class MenuController {
     this.setupMenus();
   }
 
-  setAlignmentController(controller: any): void {
+  setAlignmentController(controller: AlignmentController): void {
     this.alignmentController = controller;
   }
 
@@ -81,9 +98,10 @@ export class MenuController {
     const input = document.createElement('input');
     input.type = 'file';
     input.accept = '.railwaydrawer,.drawio,.xml';
-    input.onchange = async (e: any) => {
-      console.log('[Menu] File selected:', e.target.files);
-      const file = e.target.files?.[0];
+    input.onchange = async (e: Event) => {
+      const target = e.target as HTMLInputElement;
+      console.log('[Menu] File selected:', target.files);
+      const file = target.files?.[0];
       if (file) {
         console.log('[Menu] Loading file:', file.name);
         try {
@@ -183,7 +201,7 @@ export class MenuController {
   private executeMenuAction(action: string): void {
     const cells = this.graph.getSelectionCells();
 
-    // File > Export Railway Data > ...: legacy-main.ts (src/railway) writes the list
+    // File > Export Railway Data > ...: main-editor.ts (src/railway) writes the list
     if (action.startsWith('exportRailway:')) {
       window.dispatchEvent(new CustomEvent('railway-export-request', { detail: action.slice('exportRailway:'.length) }));
       return;
@@ -219,7 +237,7 @@ export class MenuController {
         break;
 
       case 'share':
-        // legacy-main.ts opens the Share dialog (link with diagram, downloads, cloud providers)
+        // main-editor.ts opens the Share dialog (link with diagram, downloads, cloud providers)
         window.dispatchEvent(new CustomEvent('share-request'));
         break;
 
@@ -235,7 +253,7 @@ export class MenuController {
         break;
 
       case 'saveAsTemplate':
-        // legacy-main.ts asks for a name and stores the selection (or the whole diagram)
+        // main-editor.ts asks for a name and stores the selection (or the whole diagram)
         window.dispatchEvent(new CustomEvent('save-template-request'));
         break;
 
@@ -288,7 +306,7 @@ export class MenuController {
         break;
 
       case 'switchEditorDrawio':
-        // legacy-main.ts flushes the tab cache and reloads in draw.io mode
+        // main-editor.ts flushes the tab cache and reloads in draw.io mode
         window.dispatchEvent(new CustomEvent('editor-switch-request', { detail: 'drawio' }));
         break;
 
@@ -299,19 +317,19 @@ export class MenuController {
 
       case 'toFront':
         if (cells.length > 0) {
-          (this.graph as any).orderCells(false, cells);
+          this.graph.orderCells(false, cells);
         }
         break;
 
       case 'toBack':
         if (cells.length > 0) {
-          (this.graph as any).orderCells(true, cells);
+          this.graph.orderCells(true, cells);
         }
         break;
 
       case 'bringForward':
         if (cells.length > 0) {
-          const model = this.graph.model as any;
+          const model = this.graph.model as unknown as ChildOrderModel;
           this.graph.batchUpdate(() => {
             cells.forEach((cell) => {
               const parent = model.getParent(cell);
@@ -337,7 +355,7 @@ export class MenuController {
 
       case 'sendBackward':
         if (cells.length > 0) {
-          const model = this.graph.model as any;
+          const model = this.graph.model as unknown as ChildOrderModel;
           this.graph.batchUpdate(() => {
             cells.forEach((cell) => {
               const parent = model.getParent(cell);
@@ -381,7 +399,7 @@ export class MenuController {
 
       case 'plantumlEditor': {
         console.log('[Menu] PlantUML editor clicked');
-        const leftPanelTabs = (window as any).__leftPanelTabs;
+        const leftPanelTabs = (window as WindowWithLeftPanelTabs).__leftPanelTabs;
         if (leftPanelTabs) {
           // If tab is hidden, show it; otherwise switch to it
           if (leftPanelTabs.isTabHidden('plantuml')) {
@@ -398,8 +416,8 @@ export class MenuController {
       }
 
       case 'toggleErtmsTab': {
-        // Optional left-panel tab with only the ERTMS library; visibility is persisted by legacy-main.ts
-        const leftPanelTabs = (window as any).__leftPanelTabs;
+        // Optional left-panel tab with only the ERTMS library; visibility is persisted by main-editor.ts
+        const leftPanelTabs = (window as WindowWithLeftPanelTabs).__leftPanelTabs;
         if (leftPanelTabs) {
           if (leftPanelTabs.isTabHidden('ertms')) leftPanelTabs.showTab('ertms');
           else leftPanelTabs.closeTab('ertms');
@@ -412,7 +430,7 @@ export class MenuController {
         break;
 
       case 'editData':
-        // legacy-main.ts (src/railway) shows the Data panel for the selection
+        // main-editor.ts (src/railway) shows the Data panel for the selection
         window.dispatchEvent(new CustomEvent('railway-edit-data-request'));
         break;
 

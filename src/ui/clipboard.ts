@@ -4,8 +4,8 @@ import { ClipboardService } from '../services/clipboard-service';
 /**
  * Clipboard commands for one graph.
  * Ctrl/Cmd+C/X/V are dispatched once, to the active tab, by the global shortcut handler in
- * legacy-main.ts (guarded by `shouldIgnoreGraphShortcut` from ./delete). This controller no longer
- * binds its own `document` keydown listener: that listener ran in addition to legacy-main.ts (double
+ * main-editor.ts (guarded by `shouldIgnoreGraphShortcut` from ./delete). This controller no longer
+ * binds its own `document` keydown listener: that listener ran in addition to main-editor.ts (double
  * paste at the same offset), ran once per open tab, and hijacked copy/paste inside text fields.
  */
 export class ClipboardController {

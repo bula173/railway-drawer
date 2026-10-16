@@ -25,20 +25,20 @@ afterEach(() => {
 });
 
 describe('startEditor', () => {
-  it('boots the legacy editor by default', async () => {
-    const loadLegacy = vi.fn(() => Promise.resolve());
-    started = await startEditor({ loadLegacy, search: '' });
-    expect(started.mode).toBe('legacy');
-    expect(loadLegacy).toHaveBeenCalledTimes(1);
+  it('boots the main editor by default', async () => {
+    const loadMain = vi.fn(() => Promise.resolve());
+    started = await startEditor({ loadMain, search: '' });
+    expect(started.mode).toBe('main');
+    expect(loadMain).toHaveBeenCalledTimes(1);
     expect(document.querySelector('iframe')).toBeNull();
-    expect(document.body.dataset.editor).toBe('legacy');
+    expect(document.body.dataset.editor).toBe('main');
   });
 
-  it('mounts the draw.io workspace for ?editor=drawio without booting legacy', async () => {
-    const loadLegacy = vi.fn(() => Promise.resolve());
-    started = await startEditor({ loadLegacy, search: '?editor=drawio' });
+  it('mounts the draw.io workspace for ?editor=drawio without booting the main editor', async () => {
+    const loadMain = vi.fn(() => Promise.resolve());
+    started = await startEditor({ loadMain, search: '?editor=drawio' });
     expect(started.mode).toBe('drawio');
-    expect(loadLegacy).not.toHaveBeenCalled();
+    expect(loadMain).not.toHaveBeenCalled();
     const embed = document.querySelector(`#${DRAWIO_ROOT_ID} [data-testid="drawio-embed"]`);
     const iframe = embed?.querySelector('iframe[title="draw.io editor"]');
     expect(iframe?.getAttribute('src')).toContain('proto=json');
@@ -50,34 +50,53 @@ describe('startEditor', () => {
 
   it('uses the remembered mode when the URL has no editor parameter', async () => {
     localStorage.setItem(EDITOR_MODE_STORAGE_KEY, 'drawio');
-    const loadLegacy = vi.fn(() => Promise.resolve());
-    started = await startEditor({ loadLegacy, search: '' });
+    const loadMain = vi.fn(() => Promise.resolve());
+    started = await startEditor({ loadMain, search: '' });
     expect(started.mode).toBe('drawio');
     expect(document.querySelector('[data-testid="drawio-embed"]')).not.toBeNull();
   });
 
-  it('lets ?editor=legacy override the remembered mode', async () => {
+  it('lets ?editor=main override the remembered mode', async () => {
     localStorage.setItem(EDITOR_MODE_STORAGE_KEY, 'drawio');
-    const loadLegacy = vi.fn(() => Promise.resolve());
-    started = await startEditor({ loadLegacy, search: '?editor=legacy' });
-    expect(started.mode).toBe('legacy');
-    expect(loadLegacy).toHaveBeenCalledTimes(1);
-    expect(localStorage.getItem(EDITOR_MODE_STORAGE_KEY)).toBe('legacy');
+    const loadMain = vi.fn(() => Promise.resolve());
+    started = await startEditor({ loadMain, search: '?editor=main' });
+    expect(started.mode).toBe('main');
+    expect(loadMain).toHaveBeenCalledTimes(1);
+    expect(localStorage.getItem(EDITOR_MODE_STORAGE_KEY)).toBe('main');
   });
 
-  it('opens a #R diagram link in the legacy editor without changing the remembered mode', async () => {
+  it('still accepts the former name: ?editor=legacy opens the main editor', async () => {
     localStorage.setItem(EDITOR_MODE_STORAGE_KEY, 'drawio');
-    const loadLegacy = vi.fn(() => Promise.resolve());
-    started = await startEditor({ loadLegacy, search: '?editor=drawio', hash: '#Rabc' });
-    expect(started.mode).toBe('legacy');
-    expect(loadLegacy).toHaveBeenCalledTimes(1);
+    const loadMain = vi.fn(() => Promise.resolve());
+    started = await startEditor({ loadMain, search: '?editor=legacy' });
+    expect(started.mode).toBe('main');
+    expect(loadMain).toHaveBeenCalledTimes(1);
+    expect(document.body.dataset.editor).toBe('main');
+    expect(localStorage.getItem(EDITOR_MODE_STORAGE_KEY)).toBe('main');
+  });
+
+  it('still accepts the former name: a stored "legacy" choice opens the main editor and is migrated', async () => {
+    localStorage.setItem(EDITOR_MODE_STORAGE_KEY, 'legacy');
+    const loadMain = vi.fn(() => Promise.resolve());
+    started = await startEditor({ loadMain, search: '' });
+    expect(started.mode).toBe('main');
+    expect(loadMain).toHaveBeenCalledTimes(1);
+    expect(localStorage.getItem(EDITOR_MODE_STORAGE_KEY)).toBe('main');
+  });
+
+  it('opens a #R diagram link in the main editor without changing the remembered mode', async () => {
+    localStorage.setItem(EDITOR_MODE_STORAGE_KEY, 'drawio');
+    const loadMain = vi.fn(() => Promise.resolve());
+    started = await startEditor({ loadMain, search: '?editor=drawio', hash: '#Rabc' });
+    expect(started.mode).toBe('main');
+    expect(loadMain).toHaveBeenCalledTimes(1);
     expect(localStorage.getItem(EDITOR_MODE_STORAGE_KEY)).toBe('drawio');
   });
 
   it('mounts into a provided root', async () => {
     const root = document.createElement('div');
     document.body.appendChild(root);
-    started = await startEditor({ loadLegacy: () => Promise.resolve(), search: '?editor=drawio', drawioRoot: root });
+    started = await startEditor({ loadMain: () => Promise.resolve(), search: '?editor=drawio', drawioRoot: root });
     expect(root.querySelector('[data-testid="drawio-embed"]')).not.toBeNull();
     expect(document.getElementById(DRAWIO_ROOT_ID)).toBeNull();
     root.remove();

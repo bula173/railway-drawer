@@ -1,4 +1,14 @@
 import { Graph } from '@maxgraph/core';
+import type { Cell, GraphDataModel } from '@maxgraph/core';
+
+/**
+ * Legacy accessors this controller calls. maxGraph 0.10's Graph declares neither
+ * getModel() (it is getDataModel()) nor getCanvas(); the calls are kept unchanged.
+ */
+interface LegacyGraphAccessors {
+  getModel(): GraphDataModel;
+  getCanvas?: () => HTMLCanvasElement;
+}
 
 export class ExportImageController {
   private graph: Graph;
@@ -58,16 +68,16 @@ export class ExportImageController {
   }
 
   private createCanvas(): HTMLCanvasElement | null {
-    const model = (this.graph as any).getModel();
+    const model = (this.graph as unknown as LegacyGraphAccessors).getModel();
 
     // Get bounds
-    const cells = (model as any).cells || {};
+    const cells = model.cells || {};
     let minX = Infinity,
       minY = Infinity,
       maxX = -Infinity,
       maxY = -Infinity;
 
-    Object.values(cells).forEach((cell: any) => {
+    Object.values(cells).forEach((cell: Cell) => {
       if (cell.geometry) {
         minX = Math.min(minX, cell.geometry.x);
         minY = Math.min(minY, cell.geometry.y);
@@ -97,7 +107,7 @@ export class ExportImageController {
     ctx.fillRect(0, 0, width, height);
 
     // Render graph to canvas
-    const renderCanvas = (this.graph as any).getCanvas?.() as HTMLCanvasElement;
+    const renderCanvas = (this.graph as unknown as LegacyGraphAccessors).getCanvas?.() as HTMLCanvasElement;
     if (renderCanvas && renderCanvas.toDataURL) {
       try {
         const img = new Image();
@@ -141,16 +151,16 @@ export class ExportImageController {
   }
 
   private createSVGString(offsetX: number, offsetY: number): string {
-    const model = (this.graph as any).getModel();
+    const model = (this.graph as unknown as LegacyGraphAccessors).getModel();
 
     // Get bounds
-    const cells = (model as any).cells || {};
+    const cells = model.cells || {};
     let minX = Infinity,
       minY = Infinity,
       maxX = -Infinity,
       maxY = -Infinity;
 
-    Object.values(cells).forEach((cell: any) => {
+    Object.values(cells).forEach((cell: Cell) => {
       if (cell.geometry) {
         minX = Math.min(minX, cell.geometry.x);
         minY = Math.min(minY, cell.geometry.y);
@@ -183,7 +193,7 @@ export class ExportImageController {
 `;
 
     // Draw cells
-    Object.values(cells).forEach((cell: any) => {
+    Object.values(cells).forEach((cell: Cell) => {
       if (cell.isVertex?.() && cell.geometry) {
         const x = cell.geometry.x - minX + padding + offsetX;
         const y = cell.geometry.y - minY + padding + offsetY;

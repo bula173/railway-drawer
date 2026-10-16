@@ -220,8 +220,8 @@ test.describe('draw.io embed', () => {
     }, xml);
     expect(kept).toEqual([uml, text]);
 
-    // ... and the legacy editor rebuilds the scenario from draw.io's file
-    await page.goto('/?editor=legacy');
+    // ... and the main editor rebuilds the scenario from draw.io's file
+    await page.goto('/?editor=main');
     await page.evaluate(() => localStorage.removeItem('railway-drawer-cache'));
     await page.reload();
     await expect(page.locator('#tabs-container .tab-button.active')).toHaveCount(1);

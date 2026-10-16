@@ -119,4 +119,4 @@ export class SaveStatusIndicator {
 export const globalSaveStatusIndicator = new SaveStatusIndicator();
 
 // Make globally accessible for other modules
-(window as any).__saveStatusIndicator = globalSaveStatusIndicator;
+(window as Window & { __saveStatusIndicator?: SaveStatusIndicator }).__saveStatusIndicator = globalSaveStatusIndicator;

@@ -3,10 +3,10 @@
  * @brief Application entry point for Railway Drawer
  * @details
  * Starts exactly one editor per page load (see drawio/boot.ts):
- * - 'legacy' (default): the maxGraph editor in legacy-main.ts
- * - 'drawio': the embedded draw.io workspace
+ * - 'main' (default): the Railway Drawer editor (maxGraph) in main-editor.ts
+ * - 'drawio': the draw.io compatibility view (embedded draw.io workspace)
  *
- * The legacy editor is loaded with a dynamic import, so drawio mode never downloads
+ * The main editor is loaded with a dynamic import, so drawio mode never downloads
  * the maxGraph chunk. Switching modes reloads the page with `?editor=<mode>`.
  *
  * @author Marcin Kwiatkowski
@@ -34,7 +34,7 @@ if (isGitLabAuthResponseUrl(window.location)) {
     .then((bridge) => bridge.runAuthBridge())
     .catch((error: unknown) => console.error('Failed to complete the sign-in:', error));
 } else {
-  startEditor({ loadLegacy: () => import('./legacy-main') }).catch((error: unknown) => {
+  startEditor({ loadMain: () => import('./main-editor') }).catch((error: unknown) => {
     console.error('Failed to start the editor:', error);
   });
 }

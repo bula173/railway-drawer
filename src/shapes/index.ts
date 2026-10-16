@@ -2,6 +2,7 @@ import { CellRenderer, Graph } from '@maxgraph/core';
 import { HexagonShape, PentagonShape, StarShape, TrapezoidShape, CrossShape, CylinderShape, SimpleArrowShape, OvalShape, DoubleRectangleShape, ParallelogramShape, DelayShape, ChevronShape, RightAngleShape, LozengeShape, RoundedRectangleShape } from './basic/basic-shapes';
 import { registerBasicShapes, registerBasicShapeClasses } from './basic';
 import { registerErtmsShapeClasses } from './ertms';
+import { asShapeConstructor } from './registry';
 import { registerDrawioMxArrowsShapeClasses } from './drawio-arrows/registry';
 import { registerShapesCorePerimeters, registerShapesCoreShapes } from '../drawio-shapes/js/shapes-core';
 import { registerShapesEdgeShapes, registerShapesEdgeStyles } from '../drawio-shapes/js/shapes-edges';
@@ -33,21 +34,21 @@ export function registerShapes() {
   registerDrawioJsShapes();
 
   // Register basic vertex-based shapes with CellRenderer
-  CellRenderer.registerShape('customHexagon', HexagonShape as any);
-  CellRenderer.registerShape('customPentagon', PentagonShape as any);
-  CellRenderer.registerShape('customStar', StarShape as any);
-  CellRenderer.registerShape('customTrapezoid', TrapezoidShape as any);
-  CellRenderer.registerShape('customCross', CrossShape as any);
-  CellRenderer.registerShape('customCylinder', CylinderShape as any);
-  CellRenderer.registerShape('customSimpleArrow', SimpleArrowShape as any);
-  CellRenderer.registerShape('customOval', OvalShape as any);
-  CellRenderer.registerShape('customDoubleRectangle', DoubleRectangleShape as any);
-  CellRenderer.registerShape('customParallelogram', ParallelogramShape as any);
-  CellRenderer.registerShape('customDelay', DelayShape as any);
-  CellRenderer.registerShape('customChevron', ChevronShape as any);
-  CellRenderer.registerShape('customRightAngle', RightAngleShape as any);
-  CellRenderer.registerShape('customLozenge', LozengeShape as any);
-  CellRenderer.registerShape('customRoundedRectangle', RoundedRectangleShape as any);
+  CellRenderer.registerShape('customHexagon', asShapeConstructor(HexagonShape));
+  CellRenderer.registerShape('customPentagon', asShapeConstructor(PentagonShape));
+  CellRenderer.registerShape('customStar', asShapeConstructor(StarShape));
+  CellRenderer.registerShape('customTrapezoid', asShapeConstructor(TrapezoidShape));
+  CellRenderer.registerShape('customCross', asShapeConstructor(CrossShape));
+  CellRenderer.registerShape('customCylinder', asShapeConstructor(CylinderShape));
+  CellRenderer.registerShape('customSimpleArrow', asShapeConstructor(SimpleArrowShape));
+  CellRenderer.registerShape('customOval', asShapeConstructor(OvalShape));
+  CellRenderer.registerShape('customDoubleRectangle', asShapeConstructor(DoubleRectangleShape));
+  CellRenderer.registerShape('customParallelogram', asShapeConstructor(ParallelogramShape));
+  CellRenderer.registerShape('customDelay', asShapeConstructor(DelayShape));
+  CellRenderer.registerShape('customChevron', asShapeConstructor(ChevronShape));
+  CellRenderer.registerShape('customRightAngle', asShapeConstructor(RightAngleShape));
+  CellRenderer.registerShape('customLozenge', asShapeConstructor(LozengeShape));
+  CellRenderer.registerShape('customRoundedRectangle', asShapeConstructor(RoundedRectangleShape));
 
   // Register only Basic shapes via their registry functions
   registerBasicShapeClasses();

@@ -44,7 +44,7 @@ async function freshApp(page: Page, opts: { signedIn?: boolean } = {}): Promise<
 }
 
 async function ready(page: Page): Promise<void> {
-  await expect(page.locator('body')).toHaveAttribute('data-editor', 'legacy');
+  await expect(page.locator('body')).toHaveAttribute('data-editor', 'main');
   await expect(page.locator('#tabs-container .tab-button.active')).toHaveCount(1);
   // sharing (File-menu provider items) is wired a moment after the tabs appear
   await expect(page.locator('#file-menu-remote-items [data-provider="fake-remote"][data-remote-action="open"]')).toHaveCount(1);

@@ -1,11 +1,12 @@
 import { Graph } from '@maxgraph/core';
+import type { Cell, CellStyle, Geometry } from '@maxgraph/core';
 import { GraphCommandService } from '../services/graph-command-service';
 import { applyStyleToCells, setCellStyleValues } from './style-edit';
 
 export class InteractiveUIController {
   private graph: Graph;
   private commandService: GraphCommandService;
-  private selectedCells: any[] = [];
+  private selectedCells: Cell[] = [];
 
   constructor(graph: Graph, commandService: GraphCommandService) {
     this.graph = graph;
@@ -27,8 +28,8 @@ export class InteractiveUIController {
       this.graph.zoomOut();
     });
 
-    document.getElementById('zoom-level')?.addEventListener('change', (e: any) => {
-      const zoomLevel = parseInt(e.target.value);
+    document.getElementById('zoom-level')?.addEventListener('change', (e: Event) => {
+      const zoomLevel = parseInt((e.target as HTMLSelectElement).value);
       this.graph.zoomTo(zoomLevel / 100);
     });
 
@@ -190,7 +191,7 @@ export class InteractiveUIController {
     const textPosition = document.getElementById('prop-position') as HTMLSelectElement;
     textPosition?.addEventListener('change', () => {
       const value = textPosition.value;
-      const alignMap: any = { top: 'top', center: 'middle', bottom: 'bottom' };
+      const alignMap: Record<string, string> = { top: 'top', center: 'middle', bottom: 'bottom' };
       this.updateCellStyle('verticalAlign', alignMap[value] || 'middle');
     });
 
@@ -233,7 +234,7 @@ export class InteractiveUIController {
           for (let i = 1; i < cells.length; i++) {
             const targetGeo = cells[i].getGeometry();
             if (targetGeo) {
-              this.graph.model.setGeometry(cells[i], new (targetGeo.constructor as any)(
+              this.graph.model.setGeometry(cells[i], new (targetGeo.constructor as typeof Geometry)(
                 targetGeo.x,
                 targetGeo.y,
                 geo.width,
@@ -250,7 +251,7 @@ export class InteractiveUIController {
   private setupTopBar(): void {
     // .save-status is owned by globalSaveStatusIndicator. The old click handler here only
     // faked a "Saved" text (nothing was saved) and could overwrite autosave error messages.
-    // .share-btn opens the Share dialog; bound once in legacy-main.ts (src/share/share-dialog.ts)
+    // .share-btn opens the Share dialog; bound once in main-editor.ts (src/share/share-dialog.ts)
   }
 
   private setupGraphListeners(): void {
@@ -306,7 +307,8 @@ export class InteractiveUIController {
         centerY,
         width,
         height,
-        style as any
+        // string style passed through unchanged (insertVertex is typed for CellStyle objects)
+        style as unknown as CellStyle
       );
       this.graph.setSelectionCells([cell]);
       this.graph.refresh();

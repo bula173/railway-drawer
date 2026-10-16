@@ -95,20 +95,15 @@ shapeRegistry.register({
 
 ## Current Shape Groups
 
-| Group | Type | Count | Files |
-|-------|------|-------|-------|
-| **Arrows** | SVG | 20 | `svg-arrows.ts`, `registry.ts` |
-| **Basic** | Vertex | 15+ | `basic-shapes.ts`, `registry.ts` |
-| **Flowchart** | Vertex | 9 | `flowchart/` files + shape classes |
-| **Cloud** | Vertex | 5 | `cloud/` files + CloudShape, DatabaseShape |
-| **DFD** | Vertex | 3 | `dfd/` + shape classes |
-| **C4** | Vertex | 4 | `c4/` + shape classes |
-| **Network** | Vertex | 5 | `network/` + shape classes |
-| **BPMN** | Vertex | 5 | `bpmn/` + BpmnEventShape, etc |
-| **UML** | Vertex | 20+ | `uml/` + UmlClassShape, UmlStateShape, etc |
-| **Railway** | Vertex | 25+ | `railway/` + RailShape, SignalShape, etc |
-| **ERTMS** | Vertex | 8 | `ertms/` + ERTMSBaliseShape, etc |
-| **Custom** | Vertex | 1 | `custom/image-shape.ts` |
+| Group | Type | Files |
+|-------|------|-------|
+| **Basic** | Vertex | `basic/basic-shapes.ts`, `basic/shape-classes.ts`, `basic/registry.ts` |
+| **ERTMS** | Vertex | `ertms/` (ERTMS shape classes, legacy palette entries) |
+| **draw.io arrows2 (legacy keys)** | Vertex | `drawio-arrows/registry.ts` (old keys -> `src/drawio-shapes` ports) |
+
+The draw.io palettes (General, Basic, Arrows, Flowchart, ...) come from `src/drawio-shapes/`. The older
+hand-written groups (Arrows SVG, Flowchart, Cloud, DFD, C4, Network, BPMN, UML, Railway, Custom) were unused
+and have been removed; the examples below still show the registration pattern.
 
 ---
 

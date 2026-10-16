@@ -3,7 +3,7 @@
  * @brief Framework-free host page for the embedded draw.io editor.
  *
  * Vanilla port of the React `DrawioWorkspace` + `DrawioEmbed` pair:
- * - toolbar: title, New, Open…, Download .drawio, Export SVG, switch to the maxGraph editor, status line
+ * - toolbar: title, New, Open…, Download .drawio, Export SVG, back to the Railway Drawer editor, status line
  * - iframe embed with a spinner until the editor is ready and a banner when draw.io never answers
  * - debounced localStorage autosave, flushed on pagehide / hidden tab / dispose
  *
@@ -45,8 +45,8 @@ export interface DrawioWorkspaceOptions {
   extraParams?: string;
   /** Resolves the draw.io `configure` payload. Default: ERTMS library via `loadErtmsLibrary()`. */
   configPromise?: Promise<DrawioConfig>;
-  /** Called by the "maxGraph editor" button after the autosave is flushed. Default: `switchEditorMode('legacy')`. */
-  onSwitchToLegacy?: () => void;
+  /** Called by the "Back to Railway Drawer editor" button after the autosave is flushed. Default: `switchEditorMode('main')`. */
+  onSwitchToMain?: () => void;
   /** Default 20000 ms. */
   connectTimeoutMs?: number;
   /** Default 1000 ms. */
@@ -256,8 +256,8 @@ export function mountDrawioWorkspace(root: HTMLElement, opts: DrawioWorkspaceOpt
   const openBtn = button('Open…', () => fileInput.click());
   const downloadBtn = button('Download .drawio', () => void runExport('drawio'));
   const svgBtn = button('Export SVG', () => void runExport('svg'));
-  const legacyBtn = button('maxGraph editor', () => handleLegacy());
-  legacyBtn.title = 'Switch to the maxGraph editor (reloads the page)';
+  const mainBtn = button('Back to Railway Drawer editor', () => handleMain());
+  mainBtn.title = 'Leave the draw.io compatibility view and return to the Railway Drawer editor (reloads the page)';
 
   toolbar.append(
     titleEl,
@@ -268,7 +268,7 @@ export function mountDrawioWorkspace(root: HTMLElement, opts: DrawioWorkspaceOpt
     downloadBtn,
     svgBtn,
     el('span', 'rdw-sep'),
-    legacyBtn,
+    mainBtn,
     statusEl
   );
 
@@ -425,7 +425,7 @@ export function mountDrawioWorkspace(root: HTMLElement, opts: DrawioWorkspaceOpt
     }
   };
 
-  const handleLegacy = () => {
+  const handleMain = () => {
     // A failed write (e.g. storage full) would silently drop the edits on reload
     if (
       !flushAutosave() &&
@@ -436,8 +436,8 @@ export function mountDrawioWorkspace(root: HTMLElement, opts: DrawioWorkspaceOpt
     ) {
       return;
     }
-    if (opts.onSwitchToLegacy) opts.onSwitchToLegacy();
-    else switchEditorMode('legacy');
+    if (opts.onSwitchToMain) opts.onSwitchToMain();
+    else switchEditorMode('main');
   };
 
   return {

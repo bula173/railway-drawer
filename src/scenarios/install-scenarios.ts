@@ -1,6 +1,6 @@
 /**
  * @file install-scenarios.ts
- * @brief Wires scenarios into the legacy editor (called once from legacy-main.ts): the right
+ * @brief Wires scenarios into the main editor (called once from main-editor.ts): the right
  *        panel's "Properties | Scenarios" switch, the Scenarios panel for the active tab, the
  *        read-only scenario view on the canvas (with the UML & text side panel), the keyboard while
  *        that view is open, and File > Export Scenario (HTML/PDF/Slides)… (`scenario-export-request`,

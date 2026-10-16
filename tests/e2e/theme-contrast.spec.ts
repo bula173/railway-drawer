@@ -1,6 +1,6 @@
 /**
  * @file theme-contrast.spec.ts
- * @brief Light and dark theme of the legacy editor chrome: every visible text-bearing element of
+ * @brief Light and dark theme of the main editor chrome: every visible text-bearing element of
  *        every major surface must have a WCAG 2.x contrast ratio of at least 4.5 between its
  *        computed text color and its effective background (3 for large text and for symbol-only
  *        "icon" text; disabled controls are exempt).
@@ -213,7 +213,7 @@ async function openApp(page: Page, theme: Theme): Promise<void> {
     localStorage.setItem('rd.theme', t);
   }, theme);
   await page.reload();
-  await expect(page.locator('body')).toHaveAttribute('data-editor', 'legacy');
+  await expect(page.locator('body')).toHaveAttribute('data-editor', 'main');
   await expect(page.locator('#tabs-container .tab-button.active')).toHaveCount(1);
   await expect(page.locator('html')).toHaveAttribute('data-theme', theme);
   await page.locator(HEXAGON).waitFor();
@@ -473,7 +473,7 @@ async function openAppWithFakeRemote(page: Page, theme: Theme): Promise<void> {
     { t: theme, file: REMOTE_FILE, xml: REMOTE_XML }
   );
   await page.reload();
-  await expect(page.locator('body')).toHaveAttribute('data-editor', 'legacy');
+  await expect(page.locator('body')).toHaveAttribute('data-editor', 'main');
   await expect(page.locator('#tabs-container .tab-button.active')).toHaveCount(1);
   await expect(page.locator('html')).toHaveAttribute('data-theme', theme);
   await expect(page.locator('#file-menu-remote-items [data-provider="fake-remote"][data-remote-action="open"]')).toHaveCount(1);

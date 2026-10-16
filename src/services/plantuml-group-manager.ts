@@ -4,7 +4,7 @@
  * @details Associates PlantUML source code with diagram groups
  */
 
-import { Graph, Cell } from '@maxgraph/core';
+import { Graph, Cell, CellStyle } from '@maxgraph/core';
 
 export interface PlantUmlGroupMetadata {
   plantumlSource: string;
@@ -12,6 +12,9 @@ export interface PlantUmlGroupMetadata {
   createdAt: number;
   lastModified: number;
 }
+
+/** Cell carrying PlantUML metadata as an ad-hoc expando property. */
+type PlantUmlCell = Cell & { __plantuml?: PlantUmlGroupMetadata };
 
 /**
  * Manages PlantUML diagrams as groups with source code metadata
@@ -46,7 +49,7 @@ export class PlantUmlGroupManager {
       50,
       500,
       400,
-      groupStyle as any
+      groupStyle as unknown as CellStyle
     );
 
     // Store PlantUML metadata
@@ -65,7 +68,7 @@ export class PlantUmlGroupManager {
    * Set PlantUML metadata on a cell
    */
   setPlantUmlMetadata(cell: Cell, metadata: PlantUmlGroupMetadata): void {
-    (cell as any).__plantuml = metadata;
+    (cell as PlantUmlCell).__plantuml = metadata;
   }
 
   /**
@@ -73,7 +76,7 @@ export class PlantUmlGroupManager {
    */
   getPlantUmlMetadata(cell: Cell | null): PlantUmlGroupMetadata | null {
     if (!cell) return null;
-    return (cell as any).__plantuml || null;
+    return (cell as PlantUmlCell).__plantuml || null;
   }
 
   /**

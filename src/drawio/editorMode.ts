@@ -1,24 +1,31 @@
 /**
  * @file editorMode.ts
- * @brief Chooses between the legacy SVG editor and the embedded draw.io editor.
+ * @brief Chooses between the main Railway Drawer editor (maxGraph) and the draw.io
+ *        compatibility view (the embedded draw.io editor, for import/export fidelity).
  *
- * Resolution order: URL `?editor=drawio|legacy` > persisted choice > 'legacy'.
+ * Resolution order: URL `?editor=main|drawio` > persisted choice > 'main'.
+ * 'legacy' (the former name of the main editor) is still accepted in the URL and in storage.
  */
 
-export type EditorMode = 'legacy' | 'drawio';
+export type EditorMode = 'main' | 'drawio';
 
 export const EDITOR_MODE_STORAGE_KEY = 'railway-drawer-editor-mode';
-export const DEFAULT_EDITOR_MODE: EditorMode = 'legacy';
+export const DEFAULT_EDITOR_MODE: EditorMode = 'main';
 
+/** 'legacy' is the main editor's former name (old links, stored choices). */
 function asMode(value: string | null | undefined): EditorMode | null {
-  return value === 'legacy' || value === 'drawio' ? value : null;
+  if (value === 'main' || value === 'legacy') return 'main';
+  return value === 'drawio' ? value : null;
 }
 
 export function getEditorMode(search: string = window.location.search): EditorMode {
   const fromUrl = asMode(new URLSearchParams(search).get('editor'));
   if (fromUrl) return fromUrl;
   try {
-    const stored = asMode(localStorage.getItem(EDITOR_MODE_STORAGE_KEY));
+    const raw = localStorage.getItem(EDITOR_MODE_STORAGE_KEY);
+    const stored = asMode(raw);
+    // Migrate the former name once, so the stored value always uses the current one
+    if (stored && raw !== stored) localStorage.setItem(EDITOR_MODE_STORAGE_KEY, stored);
     if (stored) return stored;
   } catch {
     // Storage unavailable (private mode, blocked site data): fall through to the default.

@@ -3,7 +3,7 @@
  * @brief Renderer for PlantUML state diagrams
  */
 
-import { Graph } from '@maxgraph/core';
+import { Cell, CellStyle, Graph } from '@maxgraph/core';
 import { DiagramData } from './plantuml-parser';
 
 export class StateDiagramRenderer {
@@ -19,7 +19,7 @@ export class StateDiagramRenderer {
     this.graph = graph;
   }
 
-  renderIntoGroup(diagramData: DiagramData, groupCell: any): void {
+  renderIntoGroup(diagramData: DiagramData, groupCell: Cell): void {
     console.log('[StateDiagram] Rendering into group');
     const parent = groupCell;
 
@@ -29,7 +29,7 @@ export class StateDiagramRenderer {
     if (states.length === 0) return;
 
     this.graph.batchUpdate(() => {
-      const stateMap = new Map<string, any>();
+      const stateMap = new Map<string, Cell>();
       let col = 0;
       let row = 0;
       const colsPerRow = Math.ceil(Math.sqrt(states.length));
@@ -46,7 +46,7 @@ export class StateDiagramRenderer {
           y,
           this.stateWidth,
           this.stateHeight,
-          'rounded=1;fillColor=#b3e5fc;strokeColor=#0288d1;fontSize=12;' as any
+          'rounded=1;fillColor=#b3e5fc;strokeColor=#0288d1;fontSize=12;' as unknown as CellStyle
         );
 
         stateMap.set(state.id, stateCell);
@@ -60,8 +60,8 @@ export class StateDiagramRenderer {
 
       // Draw transitions
       diagramData.connections.forEach((conn) => {
-        let fromCell: any;
-        let toCell: any;
+        let fromCell: Cell | undefined;
+        let toCell: Cell | undefined;
 
         if (conn.from === 'initial') {
           // Create initial state (circle)
@@ -74,7 +74,7 @@ export class StateDiagramRenderer {
               this.startY,
               20,
               20,
-              'ellipse;fillColor=#000000;strokeColor=#000000;' as any
+              'ellipse;fillColor=#000000;strokeColor=#000000;' as unknown as CellStyle
             );
             stateMap.set('initial', initCell);
           }
@@ -94,7 +94,7 @@ export class StateDiagramRenderer {
               this.startY,
               20,
               20,
-              'ellipse;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;' as any
+              'ellipse;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;' as unknown as CellStyle
             );
             stateMap.set('final', finalCell);
           }
@@ -105,7 +105,7 @@ export class StateDiagramRenderer {
 
         if (fromCell && toCell) {
           const transitionStyle = 'endArrow=block;strokeColor=#0288d1;';
-          this.graph.insertEdge(parent, null, conn.label || '', fromCell, toCell, transitionStyle as any);
+          this.graph.insertEdge(parent, null, conn.label || '', fromCell, toCell, transitionStyle as unknown as CellStyle);
         }
       });
     });
@@ -123,7 +123,7 @@ export class StateDiagramRenderer {
     if (states.length === 0) return;
 
     this.graph.batchUpdate(() => {
-      const stateMap = new Map<string, any>();
+      const stateMap = new Map<string, Cell>();
       let col = 0;
       let row = 0;
       const colsPerRow = Math.ceil(Math.sqrt(states.length));
@@ -140,7 +140,7 @@ export class StateDiagramRenderer {
           y,
           this.stateWidth,
           this.stateHeight,
-          'rounded=1;fillColor=#b3e5fc;strokeColor=#0288d1;fontSize=12;' as any
+          'rounded=1;fillColor=#b3e5fc;strokeColor=#0288d1;fontSize=12;' as unknown as CellStyle
         );
 
         stateMap.set(state.id, stateCell);
@@ -154,8 +154,8 @@ export class StateDiagramRenderer {
 
       // Draw transitions
       diagramData.connections.forEach((conn) => {
-        let fromCell: any;
-        let toCell: any;
+        let fromCell: Cell | undefined;
+        let toCell: Cell | undefined;
 
         if (conn.from === 'initial') {
           if (!stateMap.has('initial')) {
@@ -167,7 +167,7 @@ export class StateDiagramRenderer {
               this.startY,
               20,
               20,
-              'ellipse;fillColor=#000000;strokeColor=#000000;' as any
+              'ellipse;fillColor=#000000;strokeColor=#000000;' as unknown as CellStyle
             );
             stateMap.set('initial', initCell);
           }
@@ -186,7 +186,7 @@ export class StateDiagramRenderer {
               this.startY,
               20,
               20,
-              'ellipse;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;' as any
+              'ellipse;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;' as unknown as CellStyle
             );
             stateMap.set('final', finalCell);
           }
@@ -197,7 +197,7 @@ export class StateDiagramRenderer {
 
         if (fromCell && toCell) {
           const transitionStyle = 'endArrow=block;strokeColor=#0288d1;';
-          this.graph.insertEdge(parent, null, conn.label || '', fromCell, toCell, transitionStyle as any);
+          this.graph.insertEdge(parent, null, conn.label || '', fromCell, toCell, transitionStyle as unknown as CellStyle);
         }
       });
     });

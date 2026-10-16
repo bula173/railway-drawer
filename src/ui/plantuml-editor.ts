@@ -4,7 +4,7 @@
  * @details Provides text input and rendering controls for PlantUML diagrams
  */
 
-import { Graph, Cell } from '@maxgraph/core';
+import { Graph, Cell, CellStyle } from '@maxgraph/core';
 import { UIController } from './base/ui-controller';
 import { PlantUmlParser, DiagramData, DiagramElement } from '../services/plantuml-parser';
 import { SequenceDiagramRenderer } from '../services/sequence-diagram-renderer';
@@ -193,7 +193,7 @@ Bob --> Alice: Hi
       console.log('[PlantUML] Parsed diagram type:', diagramData.type, diagramData);
 
       const parent = this.graph.getDefaultParent();
-      let groupToRender: any;
+      let groupToRender: Cell;
 
       // Create or get group
       if (this.currentEditingGroup) {
@@ -202,7 +202,7 @@ Bob --> Alice: Hi
         // Clear existing children (but keep the group)
         this.graph.batchUpdate(() => {
           const childCount = groupToRender.getChildCount();
-          const cellsToRemove: any[] = [];
+          const cellsToRemove: Cell[] = [];
           for (let i = 0; i < childCount; i++) {
             const child = groupToRender.getChildAt(i);
             if (child) {
@@ -235,7 +235,7 @@ Bob --> Alice: Hi
   /**
    * Render diagram using the appropriate renderer based on type
    */
-  private renderDiagramWithAppropriateRenderer(diagramData: DiagramData, groupToRender: any): void {
+  private renderDiagramWithAppropriateRenderer(diagramData: DiagramData, groupToRender: Cell): void {
     switch (diagramData.type) {
       case 'sequence':
         console.log('[PlantUML] Using sequence diagram renderer');
@@ -266,11 +266,11 @@ Bob --> Alice: Hi
   /**
    * Convert diagram data to maxGraph cells
    */
-  private convertAndAddToGraph(diagramData: DiagramData, parentGroup?: any): void {
+  private convertAndAddToGraph(diagramData: DiagramData, parentGroup?: Cell): void {
     // If no parent group provided, use default parent
     const parent = parentGroup || this.graph.getDefaultParent();
     const yPos = 30;
-    const elementMap = new Map<string, any>();
+    const elementMap = new Map<string, Cell>();
 
     this.graph.batchUpdate(() => {
       // Add all elements first
@@ -290,7 +290,7 @@ Bob --> Alice: Hi
           yActual,
           dims.width,
           dims.height,
-          styleStr as any
+          styleStr as unknown as CellStyle
         );
 
         elementMap.set(element.id, vertex);
@@ -303,7 +303,7 @@ Bob --> Alice: Hi
 
         if (fromCell && toCell) {
           const edgeStyleStr = this.getEdgeStyle(conn.type || 'default');
-          this.graph.insertEdge(parent, null, conn.label || '', fromCell, toCell, edgeStyleStr as any);
+          this.graph.insertEdge(parent, null, conn.label || '', fromCell, toCell, edgeStyleStr as unknown as CellStyle);
         }
       });
     });

@@ -1,8 +1,8 @@
 /**
- * @file legacy-main.ts
- * @brief Boot of the legacy maxGraph editor
+ * @file main-editor.ts
+ * @brief Boot of the main Railway Drawer editor (maxGraph)
  * @details
- * Imported by main.ts (through drawio/boot.ts) only in the 'legacy' editor mode, so the
+ * Imported by main.ts (through drawio/boot.ts) only in the 'main' editor mode, so the
  * draw.io mode never loads maxGraph. Initializes the entire Railway Drawer application including:
  * - Shape registration and toolbars
  * - Tab management for multiple diagrams
@@ -19,6 +19,7 @@
 
 import '@maxgraph/core/css/common.css';
 import './style.css';
+import type { CellStyle } from '@maxgraph/core';
 import { registerShapes, shapeRegistry, ShapeToolbar } from './shapes';
 import { ShortcutsHelpController } from './ui/shortcuts-help';
 import { TabManager } from './ui/tabs';
@@ -27,7 +28,7 @@ import { CacheService } from './services/cache-service';
 import { ProjectNameEditor } from './ui/project-name-editor';
 import { ResizablePanels } from './ui/resizable-panels';
 import { BUILD_ID, BUILD_TIME } from './config/build-id';
-import { ShapeDesignerController } from './ui/shape-designer';
+import type { ShapeDesignerController } from './ui/shape-designer';
 import { CustomShapeToolbar } from './ui/custom-shape-toolbar';
 import { globalNotificationManager } from './ui/notification';
 import { globalSaveStatusIndicator } from './ui/save-status';
@@ -284,11 +285,11 @@ window.addEventListener('pagehide', (evt) => {
 /**
  * @brief Switch to another editor (reloads the page)
  * @details Saves pending changes to the browser cache first: the autosave runs only every 5 s.
- * Triggered by the top-bar "Editor" toggle and by View > "Switch to draw.io editor"
+ * Triggered by the top-bar "Editor" toggle and by View > "Open in draw.io (compatibility view)"
  * (MenuController dispatches `editor-switch-request`).
  */
 function switchEditor(mode: EditorMode): void {
-  if (mode === 'legacy') return;
+  if (mode === 'main') return;
   // A failed write (e.g. storage full) would silently drop the edits since the last good autosave
   if (
     !tabManager.flushCache() &&
@@ -307,7 +308,7 @@ document.querySelectorAll<HTMLButtonElement>('.editor-toggle [data-editor-mode]'
 });
 window.addEventListener('editor-switch-request', (e) => {
   const mode = (e as CustomEvent<EditorMode>).detail;
-  if (mode === 'drawio' || mode === 'legacy') switchEditor(mode);
+  if (mode === 'drawio' || mode === 'main') switchEditor(mode);
 });
 
 // ============= DROP HANDLER =============
@@ -336,7 +337,7 @@ graphContainer.addEventListener('drop', (evt) => {
     if (!activeTab) return;
 
     // Convert to graph coordinates
-    const pt = activeTab.graph.getPointForEvent(evt as any);
+    const pt = activeTab.graph.getPointForEvent(evt);
 
     activeTab.graph.batchUpdate(() => {
       if (shapeJson) {
@@ -350,7 +351,7 @@ graphContainer.addEventListener('drop', (evt) => {
             pt.y - shape.height / 2,
             shape.width,
             shape.height,
-            shape.style as any
+            shape.style as CellStyle
           );
           // Railway shapes (signal, rail, points, ...) become railway objects with their kind
           assignKindForInsertedShape(activeTab.graph, cell);
@@ -377,7 +378,7 @@ graphContainer.addEventListener('drop', (evt) => {
             shape: 'image',
             image: svgDataUrl,
             html: false,
-          } as any
+          } as CellStyle
         );
         activeTab.graph.setSelectionCells([cell]);
       }
@@ -422,7 +423,7 @@ leftPanelTabs.registerTabContent('layers', 'layers-panel');
 leftPanelTabs.registerTabContent('plantuml', 'plantuml-panel');
 
 // Make leftPanelTabs globally accessible for menu handlers
-(window as any).__leftPanelTabs = leftPanelTabs;
+(window as Window & { __leftPanelTabs?: LeftPanelTabs }).__leftPanelTabs = leftPanelTabs;
 
 // ============= SHAPES TAB =============
 
@@ -593,16 +594,24 @@ installSharing(tabManager, globalNotificationManager);
  */
 const activeTabForShapes = tabManager.getActiveTab();
 if (activeTabForShapes) {
-  const shapeDesigner = new ShapeDesignerController(activeTabForShapes.graph);
+  // The designer (a large, rarely used module) is loaded on first use
+  const designerGraph = activeTabForShapes.graph;
+  let shapeDesigner: Promise<ShapeDesignerController> | null = null;
+  const openShapeDesigner = (shapeId?: string): void => {
+    shapeDesigner ??= import('./ui/shape-designer').then((m) => new m.ShapeDesignerController(designerGraph));
+    shapeDesigner.then((designer) => designer.openDesigner(shapeId)).catch((error: unknown) => {
+      shapeDesigner = null;
+      console.error('[ShapeDesigner] could not be loaded', error);
+      ServiceRegistry.getNotificationManager()?.error('The shape designer could not be loaded. Check the connection and try again.');
+    });
+  };
   const customShapeToolbar = new CustomShapeToolbar('custom-shapes-container');
 
   // Wire up event listeners for opening shape designer
-  window.addEventListener('open-shape-designer', () => {
-    shapeDesigner.openDesigner();
-  });
-
-  window.addEventListener('edit-custom-shape', (e: any) => {
-    shapeDesigner.openDesigner(e.detail?.shapeId);
+  document.getElementById('btn-shape-designer')?.addEventListener('click', () => openShapeDesigner());
+  window.addEventListener('open-shape-designer', () => openShapeDesigner());
+  window.addEventListener('edit-custom-shape', (e) => {
+    openShapeDesigner((e as CustomEvent<{ shapeId?: string } | undefined>).detail?.shapeId);
   });
 
   // Refresh custom shapes when tab changes
@@ -611,7 +620,6 @@ if (activeTabForShapes) {
   });
 
   // Services are registered in ServiceRegistry, no need for window globals
-  ServiceRegistry.register('shapeDesigner', shapeDesigner);
   ServiceRegistry.register('customShapeToolbar', customShapeToolbar);
 }
 

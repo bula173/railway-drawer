@@ -1,4 +1,5 @@
 import { Graph } from '@maxgraph/core';
+import type { EventObject } from '@maxgraph/core';
 import { applyGridBackground } from './grid-background';
 
 export type CanvasSize = 'A4' | 'A5' | 'Letter' | 'Fullscreen' | 'Custom';
@@ -36,7 +37,7 @@ export class CanvasProperties {
   }
 
   private setupGraphListeners() {
-    this.graph.addListener('click', (_sender: any, evt: any) => {
+    this.graph.addListener('click', (_sender: unknown, evt: EventObject) => {
       const cell = evt.getProperty('cell');
       if (!cell) {
         this.showCanvasProperties();

@@ -26,7 +26,7 @@ async function freshApp(page: Page): Promise<void> {
   await page.goto('/');
   await page.evaluate(() => localStorage.clear());
   await page.reload();
-  await expect(page.locator('body')).toHaveAttribute('data-editor', 'legacy');
+  await expect(page.locator('body')).toHaveAttribute('data-editor', 'main');
   await expect(page.locator('#tabs-container .tab-button.active')).toHaveCount(1);
 }
 
@@ -88,7 +88,7 @@ test.describe('share', () => {
     const receiverErrors: string[] = [];
     receiver.on('pageerror', (err) => receiverErrors.push(err.message));
     await receiver.goto(link);
-    await expect(receiver.locator('body')).toHaveAttribute('data-editor', 'legacy');
+    await expect(receiver.locator('body')).toHaveAttribute('data-editor', 'main');
     await expect(receiver.locator('.notification', { hasText: 'Opened the shared diagram in 2 new tabs' })).toBeVisible();
     // the lone empty start tab was replaced by the two shared tabs
     await expect(receiver.locator('#tabs-container .tab-button')).toHaveCount(2);

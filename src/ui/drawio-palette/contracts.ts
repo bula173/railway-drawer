@@ -3,7 +3,7 @@
  * @brief Palette-data and stencil-engine contracts used by the palette UI.
  *
  * The types come from `src/drawio-shapes/palettes` and `src/drawio-shapes/engine`. The app passes
- * the real engine functions as `PaletteEngine` (see `setDrawioPaletteEngine` in legacy-main.ts).
+ * the real engine functions as `PaletteEngine` (see `setDrawioPaletteEngine` in main-editor.ts).
  *
  * `fallbackEngine` is a minimal stand-in (tests, or before the engine is set): it parses plain or
  * entity-escaped `<mxlibrary>` files (no base64-deflate entries), loads no stencils and installs

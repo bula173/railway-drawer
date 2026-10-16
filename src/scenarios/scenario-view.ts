@@ -10,7 +10,7 @@
  * on the right shows the step's UML diagram (top) and Markdown text (bottom); Prev/Next switch all
  * three together; the collapsed state is kept in localStorage `rd.scenario.sidePanel`. While the view is open
  * `body.rd-scenario-viewing` disables the menus, toolbar, left panel and properties (they act on
- * the hidden live drawing); the keyboard is routed by legacy-main.ts through scenario-keys.ts.
+ * the hidden live drawing); the keyboard is routed by main-editor.ts through scenario-keys.ts.
  */
 import { Graph, GraphDataModel } from '@maxgraph/core';
 import { importModelXml, sanitizeXmlText } from '../services/drawio-xml';

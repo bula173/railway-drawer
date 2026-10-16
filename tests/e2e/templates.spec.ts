@@ -1,6 +1,6 @@
 /**
  * @file templates.spec.ts
- * @brief Templates in the legacy editor: the ERTMS palette shows only the simple elements, the
+ * @brief Templates in the main editor: the ERTMS palette shows only the simple elements, the
  *        Templates tab lists the 22 built-in ERTMS templates, and user templates are saved
  *        ("Save as Template…"), survive a reload, insert, rename and delete.
  *
@@ -45,7 +45,7 @@ async function freshApp(page: Page): Promise<void> {
   await page.goto('/');
   await page.evaluate(() => localStorage.clear());
   await page.reload();
-  await expect(page.locator('body')).toHaveAttribute('data-editor', 'legacy');
+  await expect(page.locator('body')).toHaveAttribute('data-editor', 'main');
   await expect(page.locator('#tabs-container .tab-button.active')).toHaveCount(1);
 }
 

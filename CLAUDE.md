@@ -2,9 +2,13 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-Railway Drawer: vanilla TypeScript + Vite web app for railway (ERTMS/ETCS) diagrams. Two editors in one page:
-the **legacy maxGraph editor** (`@maxgraph/core` 0.10, default) and the **embedded draw.io editor**
-(diagrams.net iframe with the ERTMS shape library). No framework, no React.
+Railway Drawer: vanilla TypeScript + Vite web app for railway (ERTMS/ETCS) diagrams. No framework, no React.
+
+**Decision: one main editor.** The **Railway Drawer editor** (maxGraph, `@maxgraph/core` 0.10, mode `'main'`,
+the default) is the product: all railway features (data, routes, checks, scenarios, sharing) live there. The
+embedded draw.io editor (diagrams.net iframe with the ERTMS shape library, mode `'drawio'`) is only the
+**draw.io compatibility view**, for import/export fidelity with draw.io files. New features go into the main
+editor; UI text says "Railway Drawer editor" and "draw.io compatibility view" (never "legacy"/"maxGraph editor").
 
 ## Commands
 
@@ -120,24 +124,34 @@ answers **HTTP 403** to iframes whose Referer has a non-default port (`http://lo
 
 ### Boot: one editor per page load
 
-- `index.html` is the static shell of the legacy editor (`#app-container`: top bar, menus, toolbar,
+- `index.html` is the static shell of the main editor (`#app-container`: top bar, menus, toolbar,
   panels, `#graph-container`, `#tabs-container`). Controllers bind to these ids. A `<style>` in `<head>`
   hides `#app-container` when `body[data-editor="drawio"]`, so draw.io mode never flashes the shell.
-- `src/main.ts` only calls `startEditor({ loadLegacy: () => import('./legacy-main') })`.
-- `src/drawio/boot.ts` resolves the mode (`src/drawio/editorMode.ts`: `?editor=drawio|legacy` > localStorage
-  `railway-drawer-editor-mode` > `'legacy'`), sets `body[data-editor]`, then dynamically imports either
-  `legacy-main.ts` or `drawio/workspace.ts`. Both are lazy chunks: draw.io mode never downloads the
-  `maxgraph` chunk (vite `manualChunks`) and legacy mode never downloads the workspace.
+- `src/main.ts` only calls `startEditor({ loadMain: () => import('./main-editor') })`.
+- `src/drawio/boot.ts` resolves the mode (`src/drawio/editorMode.ts`: `?editor=main|drawio` > localStorage
+  `railway-drawer-editor-mode` > `'main'`; the former name `legacy` is still accepted in both and a stored
+  `legacy` is rewritten to `main`), sets `body[data-editor]` (`main` | `drawio`), then dynamically imports either
+  `main-editor.ts` or `drawio/workspace.ts`. Both are lazy chunks: draw.io mode never downloads the
+  `maxgraph` chunk (vite `manualChunks`) and the main editor never downloads the workspace.
 - Switching = `switchEditorMode(mode)`: persist + full reload with `?editor=<mode>`. Never mount both editors.
-  Legacy -> draw.io: top-bar toggle `.editor-toggle [data-editor-mode]` and View > "Switch to draw.io editor"
+  Main -> draw.io: top-bar toggle `.editor-toggle [data-editor-mode]` ("Railway Drawer" | "draw.io") and View >
+  "Open in draw.io (compatibility view)"
   (`data-action="switchEditorDrawio"` -> `MenuController` dispatches `editor-switch-request` on `window`);
-  `legacy-main.ts` calls `tabManager.flushCache()` before reloading. draw.io -> legacy: the workspace's
-  "maxGraph editor" button flushes the draw.io autosave first. Both sides `confirm()` before reloading when that
+  `main-editor.ts` calls `tabManager.flushCache()` before reloading. draw.io -> main: the workspace's
+  "Back to Railway Drawer editor" button flushes the draw.io autosave first. Both sides `confirm()` before reloading when that
   write failed (storage full), since the reload would drop the unsaved edits.
-- `src/legacy-main.ts` is the whole legacy boot: `registerDrawioCodecs()` first (before any file or cache
+- `src/main-editor.ts` (formerly `legacy-main.ts`) is the whole main-editor boot: `registerDrawioCodecs()` first (before any file or cache
   load), shapes, `TabManager`, cache restore, the global keyboard dispatcher, drop handler, left panel,
   Shapes tab (shape toolbar + draw.io palettes), shape designer. `beforeunload` flushes the cache; the tabs are destroyed
   on `pagehide` (not persisted), because beforeunload can be cancelled (unsaved remote changes prompt).
+- Rarely used features are separate chunks loaded with `import()` on first use: the shape designer
+  (`ui/shape-designer.ts`, opened from `#btn-shape-designer` / `open-shape-designer` / `edit-custom-shape`), the
+  route tables dialog (`railway/route-tables-dialog.ts`), the XLSX writer (`railway/xlsx.ts`), scenario PDF/slides
+  export (`jspdf`, `svg2pdf.js`), GitLab/SharePoint loaders and the draw.io palette JSON. Keep new heavy,
+  user-triggered UI lazy the same way.
+- Dead code: modules not reachable from `src/main.ts` (and not test-only helpers) are deleted, not kept "for later";
+  the old hand-written shape classes (`src/shapes/{uml,bpmn,cloud,...}`), `src/store`, `src/contexts`,
+  `src/types`, the color picker/palette controllers etc. were removed in the cleanup.
 
 ### Theming (light / dark app chrome)
 
@@ -169,7 +183,7 @@ answers **HTTP 403** to iframes whose Referer has a non-default port (`http://lo
   (#e0e0e0 / draw.io dark #424242) are custom properties on the container and CSS picks one by `data-theme`, so a
   theme switch needs no listener and inactive tabs follow.
 
-### Legacy editor (maxGraph)
+### Main editor (Railway Drawer editor, maxGraph)
 
 - `src/ui/tabs.ts` `TabManager`: each tab owns its own `Graph` (a div inside `#graph-container`) and its own
   full set of controllers (properties, menu, toolbar, clipboard, save/load, layers, zoom, ...).
@@ -180,7 +194,7 @@ answers **HTTP 403** to iframes whose Referer has a non-default port (`http://lo
   - bind shared-DOM/document listeners in its constructor (so they are captured), or
   - if it binds later (dialog open, edit start), scope the listener itself: remove it when the
     dialog/edit ends and in `destroy()` (see `DuplicateOffsetController`, `TextEditorController`).
-  - `once` listeners are not recorded. Listeners added in `legacy-main.ts` are global, not per tab.
+  - `once` listeners are not recorded. Listeners added in `main-editor.ts` are global, not per tab.
   - add it to the controller object returned in `createTab()`; `destroyTab()` calls its `destroy()`.
 - Autosave: `TabManager.saveToCache()` every 5 s into localStorage `railway-drawer-cache`
   (`src/services/cache-service.ts`, version `'1'`; mismatch drops the cache; failed saves set
@@ -195,16 +209,16 @@ answers **HTTP 403** to iframes whose Referer has a non-default port (`http://lo
 - `src/services/graph-command-service.ts` `GraphCommandService` (one per tab): undo/redo via maxGraph
   `UndoManager` wired like `Editor.installUndoHandler` (records `InternalEvent.UNDO` from model and view;
   undo/redo replays do not re-record), plus copy/cut/paste/delete/selectAll. `SaveLoadController.load()` clears history.
-- Keyboard: a single capture-phase `keydown` dispatcher in `legacy-main.ts` runs each shortcut once on the
+- Keyboard: a single capture-phase `keydown` dispatcher in `main-editor.ts` runs each shortcut once on the
   active tab (Ctrl/Cmd+Z/Y/Shift+Z/C/X/V/A/S, Delete/Backspace, Escape). Per-tab controllers must not
   bind their own `document` keydown for these. Everything except Ctrl+S is skipped when
   `shouldIgnoreGraphShortcut(e, graph)` (`src/ui/delete.ts`) says the user is typing (input, textarea,
   contentEditable, IME composition, cell editor active).
 - `src/services/service-registry.ts` holds tabManager/notifications/etc. instead of `window` globals
-  (leftovers: `window.__leftPanelTabs` set in `legacy-main.ts`, `window.__saveStatusIndicator` set in
+  (leftovers: `window.__leftPanelTabs` set in `main-editor.ts`, `window.__saveStatusIndicator` set in
   `src/ui/save-status.ts`; `src/ui/project-name-editor.ts` still reads `window.__tabManager`, which nothing sets).
 
-### File format (legacy editor): native draw.io XML
+### File format (main editor): native draw.io XML
 
 `src/services/drawio-xml.ts`. maxGraph 0.10 reads mxGraph XML but only writes `<GraphDataModel>`, which
 draw.io cannot open; this module writes and reads draw.io `<mxfile>/<diagram>/<mxGraphModel>/<mxCell>`.
@@ -229,7 +243,7 @@ Ports of draw.io's own code (Apache-2.0; attribution in `NOTICE`, every ported f
 upstream `file:line` references; `third_party/drawio/` has the license and the upstream file list).
 `DRAWIO_TAG` (engine and palettes) names the tag; bump it only together with `npm run drawio:palettes`.
 
-- `engine/`: stencil engine. `installStencilEngine({ baseUrl })` (once, in `legacy-main.ts`) patches
+- `engine/`: stencil engine. `installStencilEngine({ baseUrl })` (once, in `main-editor.ts`) patches
   `CellRenderer.createShape` for `shape=stencil(<base64 deflate>)` and wraps `StencilShapeRegistry.getStencil`
   (JS shapes win over stencils of the same name, as in draw.io). Named stencil sets (`mxgraph.basic.*`, ...)
   are fetched from `public/stencils/<basename>.xml` by `ensureStencilsForXml(xmlOrStyles)` (only basic,
@@ -248,7 +262,7 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   the pinned files (SHA-256 checked) into `$DRAWIO_CACHE_DIR` or the OS temp dir, decode-stencils-bundle.ts
   writes `public/stencils/*.xml` from js/stencils.min.js, extract-palettes.ts runs the real Sidebar-*.js
   palette functions in a `node:vm` sandbox and writes `palettes/data/*.json`. Outputs are deterministic.
-- UI: `src/ui/drawio-palette/` (`createDrawioPaletteView`), mounted in `legacy-main.ts` inside the single
+- UI: `src/ui/drawio-palette/` (`createDrawioPaletteView`), mounted in `main-editor.ts` inside the single
   **Shapes** tab of the left panel (`#shapes-container` = `#app-shapes-container` (ShapeToolbar groups) +
   `#custom-shapes-container` + `#drawio-palette-container`). There is no separate draw.io or Stencils tab:
   the palette's "More shapes…" menu toggles the draw.io palettes and, via `extraMenuItems`, the app shape
@@ -300,7 +314,7 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   Export/import as a draw.io library (`<mxlibrary>`, uncompressed `{xml,w,h,aspect,title,description}`; opens in
   draw.io's sidebar); import uses the engine's `parseMxLibrary` (compressed entries, image entries -> image cell).
 - **Save as Template…**: File menu and canvas context menu (`data-action="saveAsTemplate"` -> `window`
-  event `save-template-request` -> `legacy-main.ts`), and the tab's "Save…" button. `extractTemplate`
+  event `save-template-request` -> `main-editor.ts`), and the tab's "Save…" button. `extractTemplate`
   (`template-extract.ts`): selected cells minus those with a selected ancestor (descendants come along) + unselected
   edges whose both terminals are inside; a selected edge to an outside cell is kept dangling; absolute
   coordinates, moved to (0,0), `rdLayerId` dropped, styles verbatim. Nothing selected = whole diagram (all
@@ -335,13 +349,13 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   track, Point Left/Right -> points with hand, Train/Train Connected -> train; MA/Distance/Line/Gradient/SSP: none)
   through the palette option `prepareInsert` -> `insertEntry(..., prepare)` (same undo step, only single-cell
   entries, only `ertms-*` entries, not draw.io palettes); app railway shapes by style shape (`kindForStyle`, drop
-  handler in `legacy-main.ts`). Templates/paste keep the data they carry.
+  handler in `main-editor.ts`). Templates/paste keep the data they carry.
 - **Checks** (`validation.ts`, model only, `geometry.ts` for absolute positions): duplicate-id, required (ID error,
   NID_C/NID_BG warning), invalid-value, unknown-kind, balise-without-group (error), group-count / group-position
   (warning), missing-reference (error), signal-off-track (warning: centre > `SIGNAL_TRACK_DISTANCE` 40 px from its
   track, or from every track when it names none and tracks/sections/points exist), km-order (warning: majority
   direction of km along the track polyline, needs >= 3 objects), km-outside-track (warning).
-- **UI** (`install-railway-data.ts`, called from `legacy-main.ts` after `installScenarios`): right-panel switch is
+- **UI** (`install-railway-data.ts`, called from `main-editor.ts` after `installScenarios`): right-panel switch is
   generic now (`installRightPanelSwitch`: buttons' `aria-controls` name the panels, `right-panel-view` window event):
   Properties | Data | Checks | Scenarios. `data-panel.ts`: kind select (+ none), fields (enum select, ref inputs with a
   datalist of IDs, problems from the last check under the field), multi-select edits common fields ("(mixed)", ID
@@ -369,8 +383,9 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   one node (edges with vertex terminals end at the vertex centre). Node with 3 pieces + a points leg (or at a points
   vertex) = points junction: reverse = leg (vertex: piece outside the straightest pair), toe = straight piece most
   opposite to reverse. `passage()`: turns over 90° impossible; toe<->normal needs normal, toe<->reverse reverse,
-  normal<->reverse impossible. **Direction convention**: nominal = increasing x (vertical: increasing y), like the
-  ERTMS "Signal Right" symbol. `locate()` puts objects on the nearest piece within 40, preferring their `rdTrackId`.
+  normal<->reverse impossible. **Direction convention** (confirmed project convention, not an assumption): nominal =
+  left to right, i.e. increasing x (vertical pieces: increasing y), like the ERTMS "Signal Right" symbol; reverse =
+  the opposite. `locate()` puts objects on the nearest piece within 40, preferring their `rdTrackId`.
 - **Routes** (`routes.ts`): `findRoutePaths(topo, entry, exit)` = DFS from the entry signal in its direction (none =
   both), each piece once, stops at the next signal facing the same way, ends when passing the exit signal in its
   direction; returns all paths (shortest first, max 8, deduplicated) with points + required positions, sections in
@@ -406,7 +421,7 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   of objects naming a track with km start/end (within 60, rounded to metres, one undo step). View > km Ruler
   (localStorage `rd.railway.kmRuler`): ticks/labels (`12+345`) along the selected track(s) in an overlay; round step so
   ticks are >= 40 units apart, every 5th step and the ends labelled.
-- Wiring (`install-railway-routes.ts`, one call in `legacy-main.ts`): menu items `data-action="railwayRoute:<cmd>"`
+- Wiring (`install-railway-routes.ts`, one call in `main-editor.ts`): menu items `data-action="railwayRoute:<cmd>"`
   (tool, routeTable, conflictTable, updateRoutes, recalcKm, toggleSnap, toggleRoutes, toggleKmRuler) -> MenuController
   dispatches window event `railway-route-request`; `aria-checked` kept in sync. `getRailwayRoutes()` returns the handle.
 - Tests: `src/railway/__tests__/routes.test.ts` (topology incl. sections/vertex points, path search over points and
@@ -517,7 +532,7 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   preset from the view's toggle). Tests inject `docDialog`, `renderDrawingPng`, `pdfDeps`.
 - Templates store only cells (no scenarios), so they are unaffected; cache, share links and remote providers serialize
   the step pages/JSON and carry `uml`/`text` automatically.
-- Keyboard: the dispatcher in `legacy-main.ts` calls `scenarios.handleKeydown(e)` right after Ctrl+S; only while the
+- Keyboard: the dispatcher in `main-editor.ts` calls `scenarios.handleKeydown(e)` right after Ctrl+S; only while the
   view is open: ←/PageUp, →/PageDown, Home/End, Esc, Space (autoplay); editing shortcuts are prevented, every other key is stopped
   (`scenario-keys.ts` `scenarioKeyAction`); fields/IME and Ctrl+S pass.
 - Panel (`scenarios-panel.ts`, `#scenarios-panel`): "+ New scenario", per scenario ▷ present / ✎ / ⧉ / × (confirm),
@@ -536,11 +551,11 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   hash = node:crypto SHA-256, navigation script run in jsdom), `scenario-doc-view.test.ts` (Show changes in the view graph,
   autoplay with fake timers, Space, exports through `installScenarios`, options dialog), `tests/e2e/scenario-doc.spec.ts`.
 
-### draw.io editor (`src/drawio/`)
+### draw.io compatibility view (`src/drawio/`)
 
-- `workspace.ts`: toolbar (New, Open…, Download .drawio, Export SVG, maxGraph editor), iframe, spinner,
+- `workspace.ts`: toolbar (New, Open…, Download .drawio, Export SVG, Back to Railway Drawer editor), iframe, spinner,
   "not reachable" banner after 20 s, debounced (1 s) autosave to localStorage `railway-drawer-drawio-doc`
-  (separate from the legacy cache), flushed on pagehide/hidden tab/dispose. Loading another document
+  (separate from the main editor's cache), flushed on pagehide/hidden tab/dispose. Loading another document
   remounts the iframe.
 - `protocol.ts`: embed client for `proto=json&configure=1`. Handshake: `configure` -> host sends
   `{action:'configure', config}`; `init` -> host sends `{action:'load', xml, autosave:1, title}`; `load` -> ready.
@@ -598,7 +613,7 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
 
 ### Sharing (`src/share/`)
 
-- `install-sharing.ts` (called from `legacy-main.ts`) wires everything: top-bar `#share-btn` and File > Share…
+- `install-sharing.ts` (called from `main-editor.ts`) wires everything: top-bar `#share-btn` and File > Share…
   (`data-action="share"` -> `window` event `share-request`) open `share-dialog.ts`; File-menu items
   "Open from/Save to <provider>…" are generated into `#file-menu-remote-items` for available providers.
 - **Link with the diagram** (`share-link.ts`, `share-mxfile.ts`): all tabs (+ each tab's preserved pages) as one
@@ -608,7 +623,7 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   caps the hash, the inflated stream and the decoded XML (5 MB), and never evaluates anything. Links over 32k chars get a warning.
 - Incoming links (`share-open.ts`): on start and on `hashchange`, the hash is stripped (replaceState) and each page opens in a
   **new tab** via `SaveLoadController.loadProjectXml` (existing tabs kept; a lone empty tab is closed). `drawio/boot.ts`
-  starts the legacy editor for a `#R` hash even when draw.io mode is remembered (the remembered mode is not changed).
+  starts the main editor for a `#R` hash even when draw.io mode is remembered (the remembered mode is not changed).
 - Downloads: .drawio (all tabs), PNG/SVG of the current tab via `src/ui/diagram-image-export.ts` (the parity
   harness's draw.io-like export pipeline, now shared with `src/debug/parity-hook.ts`), Web Share API buttons only
   when `navigator.canShare` accepts the file.
@@ -683,7 +698,7 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   action "Save to new branch" branches from the version you started from; 50 MB client cap. Share link
   `?gitlab=<project>:<branch>:<path>` (parts percent-encoded, `/` kept; parsed from the raw query) + GitLab blob
   URL; the descriptor stores it in sessionStorage `rd.gitlab.pendingOpen` and strips it; `drawio/boot.ts` forces the
-  legacy editor for it. Status bar "GitLab: group/project › branch › path".
+  main editor for it. Status bar "GitLab: group/project › branch › path".
 - Tests: `src/share/__tests__/` (link codec incl. draw.io's algorithm via node:zlib, Graph client with mocked fetch,
   dialog, remote session, provider, config; `gitlab.test.ts`: PKCE vectors, OAuth popup/redirect/refresh, bridge,
   client paging/errors, provider against an in-memory GitLab, config/links, descriptor; `gitlab-session.test.ts`:
@@ -706,4 +721,4 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
 - Unit/integration: `src/**/__tests__/**/*.test.ts`, vitest + jsdom, setup `src/__tests__/setup.ts`.
   `@maxgraph/core` is inlined (`server.deps.inline`) because its ESM has extensionless imports;
   `--no-experimental-webstorage` keeps Node's own localStorage from shadowing jsdom's.
-- `src/__tests__/ui/tab-cache-restore.test.ts` mirrors the startup sequence of `legacy-main.ts`; keep them in sync.
+- `src/__tests__/ui/tab-cache-restore.test.ts` mirrors the startup sequence of `main-editor.ts`; keep them in sync.

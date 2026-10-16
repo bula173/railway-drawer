@@ -33,8 +33,6 @@ import { AlignmentController } from './alignment';
 import { GroupingController } from './grouping';
 import { TransformController } from './transform';
 import { GridSnapController } from './grid-snap';
-import { ColorPickerController } from './color-picker';
-import { ColorPaletteController } from './color-palette';
 import { DuplicateOffsetController } from './duplicate-offset';
 import { ExportImageController } from './export-image';
 import { PlantUmlEditorController } from './plantuml-editor';
@@ -66,8 +64,6 @@ export interface TabData {
   groupingController: GroupingController;
   transformController: TransformController;
   gridSnapController: GridSnapController;
-  colorPickerController: ColorPickerController;
-  colorPaletteController: ColorPaletteController;
   duplicateOffsetController: DuplicateOffsetController;
   exportImageController: ExportImageController;
   plantumlEditorController: PlantUmlEditorController;
@@ -78,6 +74,15 @@ export interface TabData {
  * A DOM listener that a tab's controllers registered outside the tab's own graph element
  * (on `document`, `window`, or shared UI such as the menu bar, toolbar and properties panel).
  */
+/** TabData whose graph references are released (nulled) when the tab is destroyed. */
+type ReleasableTabData = Omit<TabData, 'graph' | 'graphCommandService'> & {
+  graph: Graph | null;
+  graphCommandService: GraphCommandService | null;
+};
+
+/** A tab controller that may expose an optional destroy() hook. */
+type MaybeDestroyable = { destroy?: unknown } | null | undefined;
+
 interface TabScopedListener {
   target: EventTarget;
   type: string;
@@ -216,7 +221,7 @@ export class TabManager {
     // Enable text editing on double-click
     const cellEditorHandler = new CellEditorHandler(graph);
     // Store on graph for access by TextEditorController
-    (graph as any).cellEditorHandler = cellEditorHandler;
+    (graph as Graph & { cellEditorHandler?: CellEditorHandler }).cellEditorHandler = cellEditorHandler;
 
     // Configure scrolling behavior
     graph.ignoreScrollbars = false; // Use native scrollbars
@@ -273,8 +278,6 @@ export class TabManager {
       menuController.setAlignmentController(alignmentController);
       const transformController = new TransformController(graph);
       const gridSnapController = new GridSnapController(graph);
-      const colorPickerController = new ColorPickerController(graph);
-      const colorPaletteController = new ColorPaletteController(graph);
       const duplicateOffsetController = new DuplicateOffsetController(graph);
       const exportImageController = new ExportImageController(graph);
 
@@ -302,8 +305,6 @@ export class TabManager {
         groupingController,
         transformController,
         gridSnapController,
-        colorPickerController,
-        colorPaletteController,
         duplicateOffsetController,
         exportImageController,
         plantumlEditorController,
@@ -673,18 +674,17 @@ export class TabManager {
         tab.groupingController,
         tab.transformController,
         tab.gridSnapController,
-        tab.colorPickerController,
-        tab.colorPaletteController,
         tab.duplicateOffsetController,
         tab.exportImageController,
         tab.plantumlEditorController,
         tab.textEditorController,
       ];
 
-      controllers.forEach((controller) => {
-        if (controller && typeof (controller as any).destroy === 'function') {
+      controllers.forEach((item) => {
+        const controller = item as MaybeDestroyable;
+        if (controller && typeof controller.destroy === 'function') {
           try {
-            (controller as any).destroy();
+            (controller as { destroy: () => void }).destroy();
           } catch (e) {
             console.warn('[TabManager] Error destroying controller:', e);
           }
@@ -703,8 +703,9 @@ export class TabManager {
       }
 
       // Nullify references for garbage collection
-      (tab as any).graph = null;
-      (tab as any).graphCommandService = null;
+      const released: ReleasableTabData = tab;
+      released.graph = null;
+      released.graphCommandService = null;
     } catch (e) {
       console.error('[TabManager] Error destroying tab:', tabId, e);
     }

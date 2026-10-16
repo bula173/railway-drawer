@@ -1,5 +1,11 @@
 import { EventObject, EventSource, Graph, InternalEvent, UndoManager } from '@maxgraph/core';
 import { ClipboardService } from './clipboard-service';
+import type { Cell, CellStyle } from '@maxgraph/core';
+
+/** getChildren probed on the data model (not declared by maxGraph 0.10's GraphDataModel). */
+interface ModelWithGetChildren {
+  getChildren(cell: Cell): Cell[] | null | undefined;
+}
 
 export class GraphCommandService {
   private graph: Graph;
@@ -127,7 +133,7 @@ export class GraphCommandService {
 
   selectAll(): void {
     const parent = this.graph.getDefaultParent();
-    const children = (this.graph.model as any).getChildren(parent) || [];
+    const children = (this.graph.model as unknown as ModelWithGetChildren).getChildren(parent) || [];
     this.graph.setSelectionCells(children);
     console.log('[GraphCommand] Select All executed');
   }
@@ -367,7 +373,7 @@ export class GraphCommandService {
   /**
    * Copy style from selected cells for format painter
    */
-  private copiedStyle: any = null;
+  private copiedStyle: CellStyle | null = null;
 
   copyStyle(): void {
     const cells = this.graph.getSelectionCells();
@@ -399,7 +405,7 @@ export class GraphCommandService {
     this.graph.batchUpdate(() => {
       cells.forEach((cell) => {
         if (!cell.isEdge()) {
-          cell.setStyle(this.copiedStyle);
+          cell.setStyle(this.copiedStyle as CellStyle);
         }
       });
     });

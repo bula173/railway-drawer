@@ -47,7 +47,7 @@
               <div class="menu-dropdown-item" data-action="saveAsTemplate" title="Save the selection (or the whole diagram) as a template">Save as Template…</div>
               <div class="rd-sep"></div>
               <div class="menu-dropdown-item" data-action="export">Export As...</div>
-              <!-- Railway object lists (src/railway/report.ts); handled by legacy-main via MenuController -->
+              <!-- Railway object lists (src/railway/report.ts); handled by main-editor via MenuController -->
               <div class="menu-submenu" tabindex="-1">
                 <div class="menu-submenu-title">Export Railway Data</div>
                 <div class="menu-submenu-list">
@@ -100,7 +100,7 @@
               <div class="menu-dropdown-item" data-action="railwayRoute:toggleRoutes" role="menuitemcheckbox" aria-checked="true" title="Show or hide the Routes layer">Show Routes</div>
               <div class="menu-dropdown-item" data-action="railwayRoute:toggleKmRuler" role="menuitemcheckbox" aria-checked="false" title="km ruler along the selected track (km start/end)">km Ruler</div>
               <div class="rd-sep"></div>
-              <div class="menu-dropdown-item" data-action="switchEditorDrawio">Switch to draw.io editor</div>
+              <div class="menu-dropdown-item" data-action="switchEditorDrawio" title="Opens the diagrams in the embedded draw.io editor for import/export fidelity (saves, then reloads the page)">Open in draw.io (compatibility view)</div>
             </div>
           </div>
 
@@ -150,8 +150,8 @@
         <div class="top-bar-right">
           <div class="editor-toggle" role="group" aria-label="Editor">
             <span class="editor-toggle-label">Editor:</span>
-            <button type="button" class="editor-toggle-btn active" data-editor-mode="legacy" aria-pressed="true" title="maxGraph editor (current)">maxGraph</button>
-            <button type="button" class="editor-toggle-btn" data-editor-mode="drawio" aria-pressed="false" title="Switch to the draw.io editor (saves, then reloads the page)">draw.io</button>
+            <button type="button" class="editor-toggle-btn active" data-editor-mode="main" aria-pressed="true" title="Railway Drawer editor (current)">Railway Drawer</button>
+            <button type="button" class="editor-toggle-btn" data-editor-mode="drawio" aria-pressed="false" title="Open in draw.io (compatibility view): saves, then reloads the page">draw.io</button>
           </div>
           <div class="save-status">Unsaved changes. Click here to save.</div>
           <button type="button" class="share-btn" id="share-btn" aria-haspopup="dialog" title="Share: link with the diagram, downloads, cloud storage">👤 Share</button>

@@ -1,10 +1,16 @@
-import { RectangleShape, EllipseShape } from '@maxgraph/core';
+import { RectangleShape, EllipseShape, type AbstractCanvas2D } from '@maxgraph/core';
 
 /**
  * Hexagon shape - 6-sided polygon
  */
 export class HexagonShape extends RectangleShape {
-  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+  override paintVertexShape(
+    c: AbstractCanvas2D,
+    x: number,
+    y: number,
+    w: number,
+    h: number
+  ): void {
     c.begin();
     c.moveTo(x + w * 0.25, y);
     c.lineTo(x + w * 0.75, y);
@@ -21,7 +27,13 @@ export class HexagonShape extends RectangleShape {
  * Pentagon shape - 5-sided polygon
  */
 export class PentagonShape extends RectangleShape {
-  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+  override paintVertexShape(
+    c: AbstractCanvas2D,
+    x: number,
+    y: number,
+    w: number,
+    h: number
+  ): void {
     c.begin();
     c.moveTo(x + w * 0.5, y);
     c.lineTo(x + w, y + h * 0.38);
@@ -37,7 +49,13 @@ export class PentagonShape extends RectangleShape {
  * Star shape - 5-pointed star
  */
 export class StarShape extends RectangleShape {
-  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+  override paintVertexShape(
+    c: AbstractCanvas2D,
+    x: number,
+    y: number,
+    w: number,
+    h: number
+  ): void {
     const cx = x + w * 0.5;
     const cy = y + h * 0.5;
     const radius = Math.min(w, h) * 0.5;
@@ -64,7 +82,13 @@ export class StarShape extends RectangleShape {
  * Trapezoid shape
  */
 export class TrapezoidShape extends RectangleShape {
-  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+  override paintVertexShape(
+    c: AbstractCanvas2D,
+    x: number,
+    y: number,
+    w: number,
+    h: number
+  ): void {
     c.begin();
     c.moveTo(x + w * 0.2, y);
     c.lineTo(x + w * 0.8, y);
@@ -79,7 +103,13 @@ export class TrapezoidShape extends RectangleShape {
  * Cross/Plus shape
  */
 export class CrossShape extends RectangleShape {
-  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+  override paintVertexShape(
+    c: AbstractCanvas2D,
+    x: number,
+    y: number,
+    w: number,
+    h: number
+  ): void {
     const thickness = Math.min(w, h) * 0.25;
     const dx = (w - thickness) * 0.5;
     const dy = (h - thickness) * 0.5;
@@ -97,7 +127,13 @@ export class CrossShape extends RectangleShape {
  * Cylinder shape (database-like)
  */
 export class CylinderShape extends RectangleShape {
-  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+  override paintVertexShape(
+    c: AbstractCanvas2D,
+    x: number,
+    y: number,
+    w: number,
+    h: number
+  ): void {
     const topHeight = h * 0.3;
 
     c.begin();
@@ -126,7 +162,13 @@ export class CylinderShape extends RectangleShape {
  * Arrow shape for connectors
  */
 export class SimpleArrowShape extends RectangleShape {
-  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+  override paintVertexShape(
+    c: AbstractCanvas2D,
+    x: number,
+    y: number,
+    w: number,
+    h: number
+  ): void {
     const arrowSize = Math.min(w, h) * 0.3;
 
     c.begin();
@@ -147,7 +189,13 @@ export class SimpleArrowShape extends RectangleShape {
  * Oval/Ellipse shape
  */
 export class OvalShape extends EllipseShape {
-  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+  override paintVertexShape(
+    c: AbstractCanvas2D,
+    x: number,
+    y: number,
+    w: number,
+    h: number
+  ): void {
     c.ellipse(x, y, w, h);
     c.fillAndStroke();
   }
@@ -157,7 +205,13 @@ export class OvalShape extends EllipseShape {
  * Rectangle with double border
  */
 export class DoubleRectangleShape extends RectangleShape {
-  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+  override paintVertexShape(
+    c: AbstractCanvas2D,
+    x: number,
+    y: number,
+    w: number,
+    h: number
+  ): void {
     const inset = 3;
     c.rect(x, y, w, h);
     c.stroke();
@@ -170,7 +224,13 @@ export class DoubleRectangleShape extends RectangleShape {
  * Parallelogram shape
  */
 export class ParallelogramShape extends RectangleShape {
-  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+  override paintVertexShape(
+    c: AbstractCanvas2D,
+    x: number,
+    y: number,
+    w: number,
+    h: number
+  ): void {
     const offset = w * 0.15;
 
     c.begin();
@@ -187,7 +247,13 @@ export class ParallelogramShape extends RectangleShape {
  * Delay shape (D-shaped rectangle)
  */
 export class DelayShape extends RectangleShape {
-  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+  override paintVertexShape(
+    c: AbstractCanvas2D,
+    x: number,
+    y: number,
+    w: number,
+    h: number
+  ): void {
     const arcWidth = w * 0.25;
 
     c.begin();
@@ -195,7 +261,7 @@ export class DelayShape extends RectangleShape {
     c.lineTo(x + w, y);
     c.lineTo(x + w, y + h);
     c.lineTo(x + arcWidth, y + h);
-    c.arcTo(arcWidth, h, 0, 0, 1, x + arcWidth, y);
+    c.arcTo(arcWidth, h, 0, false, true, x + arcWidth, y);
     c.fillAndStroke();
   }
 }
@@ -204,7 +270,13 @@ export class DelayShape extends RectangleShape {
  * Chevron/Arrow shape pointing right
  */
 export class ChevronShape extends RectangleShape {
-  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+  override paintVertexShape(
+    c: AbstractCanvas2D,
+    x: number,
+    y: number,
+    w: number,
+    h: number
+  ): void {
     c.begin();
     c.moveTo(x, y);
     c.lineTo(x + w * 0.85, y);
@@ -221,7 +293,13 @@ export class ChevronShape extends RectangleShape {
  * Right angle shape
  */
 export class RightAngleShape extends RectangleShape {
-  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+  override paintVertexShape(
+    c: AbstractCanvas2D,
+    x: number,
+    y: number,
+    w: number,
+    h: number
+  ): void {
     c.begin();
     c.moveTo(x + w, y);
     c.lineTo(x + w, y + h);
@@ -234,7 +312,13 @@ export class RightAngleShape extends RectangleShape {
  * Lozenge/Diamond alternative
  */
 export class LozengeShape extends RectangleShape {
-  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+  override paintVertexShape(
+    c: AbstractCanvas2D,
+    x: number,
+    y: number,
+    w: number,
+    h: number
+  ): void {
     c.begin();
     c.moveTo(x + w * 0.5, y);
     c.lineTo(x + w, y + h * 0.5);
@@ -249,17 +333,23 @@ export class LozengeShape extends RectangleShape {
  * Rounded rectangle shape
  */
 export class RoundedRectangleShape extends RectangleShape {
-  override paintVertexShape(c: any, x: number, y: number, w: number, h: number): void {
+  override paintVertexShape(
+    c: AbstractCanvas2D,
+    x: number,
+    y: number,
+    w: number,
+    h: number
+  ): void {
     const arcSize = Math.min(w, h) * 0.2;
     c.begin();
     c.moveTo(x + arcSize, y);
-    c.arcTo(arcSize, arcSize, 0, 0, 1, x + w, y);
+    c.arcTo(arcSize, arcSize, 0, false, true, x + w, y);
     c.lineTo(x + w, y + h - arcSize);
-    c.arcTo(arcSize, arcSize, 0, 0, 1, x + w - arcSize, y + h);
+    c.arcTo(arcSize, arcSize, 0, false, true, x + w - arcSize, y + h);
     c.lineTo(x + arcSize, y + h);
-    c.arcTo(arcSize, arcSize, 0, 0, 1, x, y + h - arcSize);
+    c.arcTo(arcSize, arcSize, 0, false, true, x, y + h - arcSize);
     c.lineTo(x, y + arcSize);
-    c.arcTo(arcSize, arcSize, 0, 0, 1, x + arcSize, y);
+    c.arcTo(arcSize, arcSize, 0, false, true, x + arcSize, y);
     c.fillAndStroke();
   }
 }

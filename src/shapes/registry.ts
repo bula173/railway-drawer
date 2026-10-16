@@ -8,6 +8,8 @@
  *   Rendered as image element with SVG data URL
  *   Icon: raw SVG string scaled for toolbar
  */
+import type { CellStyle, Shape } from '@maxgraph/core';
+
 export type ShapeType = 'vertex' | 'svg';
 
 export interface ShapeConfig {
@@ -18,8 +20,16 @@ export interface ShapeConfig {
   group: string;
   width: number;
   height: number;
-  style: any; // maxGraph style object
-  iconGeneratorClass?: any; // Optional: Shape class to generate icon from at runtime
+  style: CellStyle; // maxGraph style object
+  iconGeneratorClass?: typeof Shape; // Optional: Shape class to generate icon from at runtime
+}
+
+/**
+ * maxGraph types shape constructors as `typeof Shape` (no-arg constructor), while subclasses such as
+ * RectangleShape declare required constructor arguments; this narrows the cast to Shape subclasses.
+ */
+export function asShapeConstructor(ctor: new (...args: never[]) => Shape): typeof Shape {
+  return ctor as unknown as typeof Shape;
 }
 
 export class ShapeRegistry {
