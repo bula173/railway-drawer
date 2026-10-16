@@ -7,6 +7,7 @@ export { fallbackEngine, fallbackParseMxLibrary } from './contracts';
 export {
   createDrawioPaletteView,
   getDrawioPaletteEngine,
+  getDrawioThumbnailRenderer,
   renderEntryForParity,
   resetDrawioPaletteRenderer,
   setDrawioPaletteEngine,
@@ -24,5 +25,11 @@ export {
 } from './entry-cells';
 export { extractShapeNames, libraryToPaletteDef, LIBRARIES_STORAGE_KEY } from './library-adapter';
 export type { LibraryMeta, StoredLibrary } from './library-adapter';
-export { ertmsPaletteSource } from './ertms-source';
+export {
+  ertmsElementsPaletteDef,
+  ertmsPaletteSource,
+  loadErtmsLibraryEntries,
+  loadErtmsTemplates,
+  resetErtmsLibraryCache,
+} from './ertms-source';
 export { THUMB_BORDER, THUMB_SIZE, ThumbnailRenderer } from './thumbnail-renderer';

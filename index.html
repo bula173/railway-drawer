@@ -42,6 +42,7 @@
               <div class="menu-dropdown-item" data-action="open">Open</div>
               <div class="menu-dropdown-item" data-action="save">Save</div>
               <div class="menu-dropdown-item" data-action="saveAs">Save As...</div>
+              <div class="menu-dropdown-item" data-action="saveAsTemplate" title="Save the selection (or the whole diagram) as a template">Save as Template…</div>
               <div style="height: 1px; background: #e0e0e0; margin: 4px 0;"></div>
               <div class="menu-dropdown-item" data-action="export">Export As...</div>
               <div class="menu-dropdown-item" data-action="print">Print</div>
@@ -197,6 +198,8 @@
           </div>
           <!-- Optional ERTMS-only tab (View > ERTMS Tab) -->
           <div id="ertms-panel" class="panel-content"></div>
+          <!-- Templates tab: built-in ERTMS templates and the user's templates (src/ui/templates) -->
+          <div id="templates-panel" class="panel-content"></div>
           <div id="layers-panel" class="panel-content" style="display: none;">
             <div style="padding: 8px; border-bottom: 1px solid #e0e0e0; display: flex; gap: 4px;">
               <button id="btn-add-layer" style="flex: 1; padding: 6px; background: #1976d2; color: white; border: none; border-radius: 3px; cursor: pointer; font-size: 11px;">+ Layer</button>
@@ -784,6 +787,7 @@
       <div class="context-menu-item" data-action="copy" style="padding: 8px 12px; cursor: pointer;">Copy</div>
       <div class="context-menu-item" data-action="paste" style="padding: 8px 12px; cursor: pointer;">Paste</div>
       <div class="context-menu-item" data-action="duplicate" style="padding: 8px 12px; cursor: pointer;">Duplicate</div>
+      <div class="context-menu-item" data-action="saveAsTemplate" style="padding: 8px 12px; cursor: pointer;">Save as Template…</div>
       <div style="height: 1px; background: #e0e0e0; margin: 4px 0;"></div>
       <div class="context-menu-item" data-action="lock" style="padding: 8px 12px; cursor: pointer;">Lock/Unlock</div>
       <div class="context-menu-item" data-action="setDefaultStyle" style="padding: 8px 12px; cursor: pointer;">Set as Default Style</div>

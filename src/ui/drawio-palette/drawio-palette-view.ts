@@ -114,6 +114,11 @@ function getRenderer(): ThumbnailRenderer {
   return sharedRenderer;
 }
 
+/** The shared thumbnail renderer (one hidden graph per page), e.g. for the Templates tab. */
+export function getDrawioThumbnailRenderer(): ThumbnailRenderer {
+  return getRenderer();
+}
+
 /** Visual parity harness: renders an entry at a fixed scale with the palette's hidden graph. */
 export function renderEntryForParity(
   entry: PaletteEntry,

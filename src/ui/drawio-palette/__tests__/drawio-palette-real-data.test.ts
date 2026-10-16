@@ -15,6 +15,7 @@ import {
   fallbackEngine,
   renderEntryForParity,
   resetDrawioPaletteRenderer,
+  resetErtmsLibraryCache,
   setDrawioPaletteEngine,
 } from '..';
 import type { PaletteEngine } from '..';
@@ -49,6 +50,7 @@ afterAll(() => {
 });
 
 afterEach(() => {
+  resetErtmsLibraryCache();
   document.body.replaceChildren();
   resetDrawioPaletteRenderer();
   setDrawioPaletteEngine(fallbackEngine);
@@ -77,8 +79,9 @@ describe('drawio palette with the real data', () => {
     const items = container.querySelectorAll('[data-palette-id="general"] .rd-dp-item');
     expect(items.length).toBe(general.entries.length);
 
+    // only the 18 simple ERTMS elements; the 22 scenario diagrams are templates (Templates tab)
     const ertmsItems = container.querySelectorAll('[data-palette-id="ertms"] .rd-dp-item');
-    expect(ertmsItems.length).toBe(40);
+    expect(ertmsItems.length).toBe(18);
 
     // a vertex entry keeps draw.io's style string
     const rect = general.entries.find((e) => e.kind === 'vertex' && e.style)!;

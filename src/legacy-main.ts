@@ -39,7 +39,8 @@ import { switchEditorMode } from './drawio/editorMode';
 import type { EditorMode } from './drawio/editorMode';
 import { ensureStencilsForXml, installDrawioCompat, installStencilEngine, parseMxLibrary } from './drawio-shapes/engine';
 import { PALETTES, loadPalette } from './drawio-shapes/palettes';
-import { createDrawioPaletteView, ertmsPaletteSource, setDrawioPaletteEngine } from './ui/drawio-palette';
+import { createDrawioPaletteView, ertmsPaletteSource, loadErtmsTemplates, setDrawioPaletteEngine } from './ui/drawio-palette';
+import { createTemplatesPanel, openTemplateAsNewDiagram, saveAsTemplate, TemplateStore } from './ui/templates';
 import { installParityHook } from './debug/parity-hook';
 import { installDarkModeToggle } from './drawio-shapes/theme/dark-mode';
 
@@ -376,6 +377,7 @@ graphContainer.addEventListener('dragleave', (evt) => {
 const leftPanelTabs = new LeftPanelTabs('leftpanel-container');
 leftPanelTabs.registerTabContent('shapes', 'shapes-container');
 leftPanelTabs.registerTabContent('ertms', 'ertms-panel');
+leftPanelTabs.registerTabContent('templates', 'templates-panel');
 leftPanelTabs.registerTabContent('layers', 'layers-panel');
 leftPanelTabs.registerTabContent('plantuml', 'plantuml-panel');
 
@@ -487,6 +489,43 @@ if (ertmsTabWanted) {
 } else {
   leftPanelTabs.closeTab('ertms');
 }
+
+// ============= TEMPLATES TAB =============
+
+/**
+ * @brief Templates tab: built-in ERTMS templates and the user's own templates
+ * @details The complex scenario diagrams of public/libraries/ertms.xml are listed as "ERTMS
+ * templates" (the ERTMS palettes show only the simple elements). "Save as Template…" (File menu,
+ * canvas context menu, the tab's Save… button) stores the selection or the whole diagram in
+ * localStorage `railway-drawer-templates`. Tiles insert at the view centre, open as a new tab, or
+ * are dragged onto the canvas.
+ */
+const templateStore = new TemplateStore();
+if (templateStore.loadWarning) globalNotificationManager.warning(templateStore.loadWarning);
+const requestSaveAsTemplate = (): void => {
+  const graph = tabManager.getActiveTab()?.graph;
+  if (!graph) return;
+  void saveAsTemplate({
+    graph,
+    store: templateStore,
+    notify: globalNotificationManager,
+    onShow: () => leftPanelTabs.switchTab('templates'),
+  });
+};
+window.addEventListener('save-template-request', requestSaveAsTemplate);
+createTemplatesPanel({
+  container: document.getElementById('templates-panel')!,
+  store: templateStore,
+  loadBuiltIns: () => loadErtmsTemplates(import.meta.env.BASE_URL),
+  getGraph: () => tabManager.getActiveTab()?.graph ?? null,
+  openAsNewDiagram: (template) => {
+    openTemplateAsNewDiagram(tabManager, template);
+  },
+  saveAsTemplate: requestSaveAsTemplate,
+  parseLibrary: parseMxLibrary,
+  notify: globalNotificationManager,
+  dropTarget: graphContainer,
+});
 
 // Visual parity harness hook (dev server / ?parity=1 only)
 installParityHook();

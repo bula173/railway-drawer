@@ -60,6 +60,8 @@ CI (`.github/workflows/build-and-deploy.yml`) runs typecheck, typecheck:tests, l
   Sankey gradient band). ERTMS: 40/40 pass.
 - `tests/e2e/drawio-palette.spec.ts` (any port): Shapes tab (no draw.io/Stencils tabs) renders the palettes, "More shapes…" toggles palettes and app groups, inserts keep draw.io styles, autosave
   writes real draw.io shape names.
+- `tests/e2e/templates.spec.ts` (any port): ERTMS palette 18 entries, Templates tab 22 ERTMS templates (search,
+  insert, open as new diagram, drag), tab bar labels not cut, Save as Template… -> reload -> insert, rename, delete.
 
 ## Architecture
 
@@ -164,7 +166,8 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   closeable, state in localStorage `railway-drawer-ertms-tab`): a second palette view with only the ERTMS
   library (`userLibraries: false`, `showMoreMenu: false`, own flags via `storageKeySuffix`, no dropTarget —
   the Shapes-tab view handles its drops since palette/entry ids are the same). Order: draw.io palettes, then ERTMS (`public/libraries/ertms.xml`,
-  the default ERTMS palette; the `src/shapes/ertms` placeholders are renderers only, for old files), then
+  the default ERTMS palette, showing only its 18 simple elements — the 22 scenario diagrams are ERTMS templates,
+  see Templates below; the `src/shapes/ertms` placeholders are renderers only, for old files), then
   user libraries ("Import library…", stored in localStorage `rd.drawioLibraries`). Thumbnails come from one
   hidden graph (draw.io defaults, table support). Click inserts at the view centre, drag drops at the pointer
   (dataTransfer type `application/x-rd-drawio-entry`).
@@ -190,6 +193,38 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   only writes colours/arrows where the app would render differently from draw.io's defaults.
   `src/__tests__/services/drawio-xml-palettes.test.ts` checks every palette entry and every ERTMS tile.
 
+### Templates (`src/ui/templates/`, left-panel tab "Templates")
+
+- Built-in **ERTMS templates**: `splitErtmsLibrary` (`ertms-templates.ts`) classifies `public/libraries/ertms.xml`
+  by content: more than `TEMPLATE_CELL_THRESHOLD` (80) drawable cells (`mxCell` vertex/edge, nested included)
+  = template (scenarios have 102..265, the simple elements 1..44). 40 entries -> 18 elements / 22 templates
+  (tested against the real file). Names "ERTMS scenario <n>" (library order) + a subtitle of the 3 rarest
+  labels across scenarios (phrases before ids); every label is a search tag. Ids `ertms-tpl-<library index>`.
+  `ertmsPaletteSource` (Shapes and ERTMS tabs) filters to the elements, entry ids keep the library index
+  (`ertms-<index>-<slug>`); `loadErtmsTemplates` shares the one download. The parity harness reads the
+  library itself, so it still covers all 40 entries. The draw.io-mode library (`src/drawio/ertmsLibrary.ts`) is unchanged.
+- **User templates**: `TemplateStore` (`template-store.ts`), localStorage `railway-drawer-templates`,
+  `{ version: 1, templates: [{ id, name, description?, xml, width, height, created, updated }] }`; `xml` is a
+  native draw.io `<mxGraphModel>`. Bare arrays read as v1; a newer version makes the store read-only (writes
+  throw, data untouched); a failed write (quota) rolls back and throws `TemplateStorageError` -> notification.
+  Export/import as a draw.io library (`<mxlibrary>`, uncompressed `{xml,w,h,aspect,title,description}`; opens in
+  draw.io's sidebar); import uses the engine's `parseMxLibrary` (compressed entries, image entries -> image cell).
+- **Save as Template…**: File menu and canvas context menu (`data-action="saveAsTemplate"` -> `window`
+  event `save-template-request` -> `legacy-main.ts`), and the tab's "Save…" button. `extractTemplate`
+  (`template-extract.ts`): selected cells minus those with a selected ancestor (descendants come along) + unselected
+  edges whose both terminals are inside; a selected edge to an outside cell is kept dangling; absolute
+  coordinates, moved to (0,0), `rdLayerId` dropped, styles verbatim. Nothing selected = whole diagram (all
+  layers flattened; a context-menu click on the empty canvas clears the selection, so it saves everything).
+  Name dialog `promptTemplateDetails` (`template-dialogs.ts`, name required, Enter/Escape; a window capture
+  keydown listener keeps keys away from the shortcut dispatcher while it is open).
+- Panel (`templates-panel.ts`): search, "My templates" (Save…/Import…/Export…, empty-state hint, ✎/× on tiles)
+  above "ERTMS templates"; tiles 120x72 thumbnails from the shared palette renderer (lazy, IntersectionObserver).
+  Click -> popover: Insert into diagram (`insertTemplate` = `insertEntry` at the view centre, one undoable edit),
+  Open as new diagram (`openTemplateAsNewDiagram`: `tabManager.createTab(name)` + `saveLoadController.load`,
+  the tab is closed again if the load fails), Rename…/Delete… (user). Drag (`application/x-rd-template`) onto
+  `#graph-container` inserts at the drop point.
+- The left tab bar wraps (no cut labels at ~230px); tests in `src/ui/templates/__tests__/`.
+
 ### draw.io editor (`src/drawio/`)
 
 - `workspace.ts`: toolbar (New, Open…, Download .drawio, Export SVG, maxGraph editor), iframe, spinner,
@@ -207,7 +242,7 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   `textContent` (entity-decoded, otherwise every tile shows "Error:"); passed inline as `data`, never `url`
   (draw.io would proxy it). Bump `DRAWIO_CONFIG_VERSION` when the config changes (resets draw.io sidebar state).
 - `VITE_DRAWIO_URL` (default `https://embed.diagrams.net/`) and `VITE_DRAWIO_PARAMS` select the draw.io server.
-- The maxGraph editor shows the same `public/libraries/ertms.xml` in its draw.io tab. The old maxGraph-side
+- The maxGraph editor shows the same `public/libraries/ertms.xml` (elements in the Shapes/ERTMS tabs, scenarios as templates). The old maxGraph-side
   ERTMS placeholder shapes (`src/shapes/ertms/index.ts`) are only registered as renderers, for old files.
 
 ## Deploy

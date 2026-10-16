@@ -113,6 +113,11 @@ export class ThumbnailRenderer {
 
   constructor(private engine: PaletteEngine) {}
 
+  /** Drops the cached thumbnails of one entry id (e.g. a deleted user template). */
+  forget(entryId: string): void {
+    for (const key of [...this.cache.keys()]) if (key.startsWith(`${entryId}@`)) this.cache.delete(key);
+  }
+
   setEngine(engine: PaletteEngine): void {
     if (engine === this.engine) return;
     this.engine = engine;
@@ -120,12 +125,12 @@ export class ThumbnailRenderer {
     this.disposeGraph();
   }
 
-  /** Cached thumbnail (a fresh clone each call), keyed by entry id and size. */
-  thumbnail(entry: PaletteEntry, size = THUMB_SIZE): Promise<SVGSVGElement> {
-    const key = `${entry.id}@${size}`;
+  /** Cached thumbnail (a fresh clone each call), keyed by entry id and box size (default square). */
+  thumbnail(entry: PaletteEntry, size = THUMB_SIZE, height = size): Promise<SVGSVGElement> {
+    const key = height === size ? `${entry.id}@${size}` : `${entry.id}@${size}x${height}`;
     let pending = this.cache.get(key);
     if (!pending) {
-      pending = this.render(entry, { width: size, height: size });
+      pending = this.render(entry, { width: size, height });
       pending.catch(() => this.cache.delete(key));
       this.cache.set(key, pending);
     }

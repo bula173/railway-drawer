@@ -513,6 +513,8 @@ body {
 /* Left Panel Tabs */
 .left-panel-tabbar {
   display: flex;
+  /* Narrow panel: the tabs wrap onto a second row instead of cutting their labels */
+  flex-wrap: wrap;
   gap: 0;
   border-bottom: 1px solid #e0e0e0;
   background: #f9f9f9;
@@ -520,8 +522,9 @@ body {
 }
 
 .left-panel-tab-btn {
-  flex: 1;
-  padding: 8px;
+  flex: 1 0 auto;
+  padding: 7px 6px;
+  white-space: nowrap;
   background: #f5f5f5;
   border: none;
   border-bottom: 2px solid #e0e0e0;

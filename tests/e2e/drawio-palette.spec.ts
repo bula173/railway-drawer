@@ -51,17 +51,18 @@ test.describe('draw.io palettes in the maxGraph editor', () => {
     await expect(page.locator('body')).toHaveAttribute('data-editor', 'legacy');
 
     // One Shapes tab holds app shapes and the draw.io palettes; no separate draw.io/Stencils tabs
-    await expect(page.locator('.left-panel-tab-btn:visible')).toHaveText(['Shapes', 'Layers', /PlantUML/]);
+    await expect(page.locator('.left-panel-tab-btn:visible')).toHaveText(['Shapes', 'Templates', 'Layers', /PlantUML/]);
     await expect(page.locator('#stencils-container')).toHaveCount(0);
     const container = page.locator('#drawio-palette-container');
     await expect(container).toBeVisible();
     await expect(page.locator('#shapes-container #app-shapes-container .shapes-group-header').first()).toBeVisible();
 
-    // General (expanded by default) has draw.io's 45 entries; ERTMS is the ertms.xml library (40)
+    // General (expanded by default) has draw.io's 45 entries; ERTMS shows the 18 simple elements of
+    // the ertms.xml library (its 22 scenario diagrams are ERTMS templates, see templates.spec.ts)
     const general = container.locator('section[data-palette-id="general"]');
     await expect(general.locator('.rd-dp-item')).toHaveCount(45);
     const ertms = container.locator('section[data-palette-id="ertms"]');
-    await expect(ertms.locator('.rd-dp-item')).toHaveCount(40);
+    await expect(ertms.locator('.rd-dp-item')).toHaveCount(18);
     await expect(general.locator('.rd-dp-thumb-ready').first()).toBeVisible();
     await expect(general.locator('.rd-dp-thumb-error')).toHaveCount(0);
 
@@ -133,7 +134,7 @@ test.describe('draw.io palettes in the maxGraph editor', () => {
     const panel = page.locator('#ertms-panel');
     await expect(panel).toBeVisible();
     await expect(panel.locator('.rd-dp-category')).toHaveCount(1);
-    await expect(panel.locator('section[data-palette-id="ertms"] .rd-dp-item')).toHaveCount(40);
+    await expect(panel.locator('section[data-palette-id="ertms"] .rd-dp-item')).toHaveCount(18);
     await expect(panel.locator('.rd-dp-more')).toBeHidden();
     await expect(panel.locator('.rd-dp-import')).toBeHidden();
 

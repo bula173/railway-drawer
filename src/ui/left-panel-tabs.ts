@@ -1,4 +1,4 @@
-export type LeftPanelTab = 'shapes' | 'ertms' | 'layers' | 'plantuml';
+export type LeftPanelTab = 'shapes' | 'ertms' | 'templates' | 'layers' | 'plantuml';
 export type CloseableTab = 'plantuml' | 'ertms';
 
 export class LeftPanelTabs {
@@ -23,11 +23,14 @@ export class LeftPanelTabs {
     const shapeTabBtn = this.createTabButton('shapes', 'Shapes');
     const ertmsTabBtn = this.createTabButton('ertms', 'ERTMS');
     ertmsTabBtn.title = 'ERTMS library only (optional: View > ERTMS Tab)';
+    const templatesTabBtn = this.createTabButton('templates', 'Templates');
+    templatesTabBtn.title = 'ERTMS templates and my templates';
     const layerTabBtn = this.createTabButton('layers', 'Layers');
     const plantumlTabBtn = this.createTabButton('plantuml', '🌿 PlantUML');
 
     tabBar.appendChild(shapeTabBtn);
     tabBar.appendChild(ertmsTabBtn);
+    tabBar.appendChild(templatesTabBtn);
     tabBar.appendChild(layerTabBtn);
     tabBar.appendChild(plantumlTabBtn);
 
@@ -143,7 +146,7 @@ export class LeftPanelTabs {
 
     const btn = this.tabButtons.get(tabId);
     if (btn) {
-      btn.style.display = 'block';
+      btn.style.display = '';
     }
 
     const content = this.tabContents.get(tabId);

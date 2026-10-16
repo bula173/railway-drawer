@@ -265,6 +265,11 @@ export class ContextMenuController {
         }
         break;
 
+      case 'saveAsTemplate':
+        // legacy-main.ts: the selection (on a shape) or the whole diagram (on the empty canvas)
+        window.dispatchEvent(new CustomEvent('save-template-request'));
+        break;
+
       case 'lock':
         cellsToOperate.forEach((cell: any) => {
           cell.locked = !cell.locked;

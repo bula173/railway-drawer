@@ -206,6 +206,11 @@ export class MenuController {
         this.saveLoadController.save();
         break;
 
+      case 'saveAsTemplate':
+        // legacy-main.ts asks for a name and stores the selection (or the whole diagram)
+        window.dispatchEvent(new CustomEvent('save-template-request'));
+        break;
+
       case 'print':
         window.print();
         break;
