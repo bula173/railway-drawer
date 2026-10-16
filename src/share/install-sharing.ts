@@ -12,6 +12,7 @@ import { RemoteSession } from './remote-session';
 import { openShareDialog } from './share-dialog';
 import type { ShareDialogHandle } from './share-dialog';
 import { buildShareMxfile } from './share-mxfile';
+import { buildScenarioPages, scenarioIndexAttributes } from '../scenarios/scenario-format';
 import { installShareLinkHandler } from './share-open';
 import { downloadBlob, el, safeFileName } from './ui/modal';
 
@@ -59,7 +60,16 @@ export function installSharing(tabManager: TabManager, notify: SharingNotifier):
     buildShareMxfile(
       tabManager.getAllTabs().map((tab) => {
         const { extraPages, pageId } = tab.saveLoadController.getPreservedPages();
-        return { name: tab.name, modelXml: tab.saveLoadController.serializeToXml(), extraPages, pageId };
+        const scenarios = tab.saveLoadController.getScenarios().list();
+        return {
+          name: tab.name,
+          modelXml: tab.saveLoadController.serializeToXml(),
+          extraPages,
+          pageId,
+          // Scenarios travel with the link: index on the page, one page per step after it
+          pageAttributes: scenarioIndexAttributes(scenarios),
+          scenarioPages: buildScenarioPages(scenarios, new Set()),
+        };
       })
     );
   const activeModelXml = (): string => {

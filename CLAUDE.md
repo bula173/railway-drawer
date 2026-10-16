@@ -64,6 +64,9 @@ CI (`.github/workflows/build-and-deploy.yml`) runs typecheck, typecheck:tests, l
 - `tests/e2e/gitlab.spec.ts` (any port): GitLab "Not configured" -> runtime settings -> Open/Save + sign-in button,
   File-menu items without reload, `?gitlab=` link on an unconfigured browser. Requests to the fake GitLab URL are
   intercepted and must not happen.
+- `tests/e2e/scenarios.spec.ts` (any port): new scenario, 3 steps, ←/→ presentation, Esc restores the live drawing and
+  its undo history, rename/reorder (↓ and drag)/delete step, reload, File > Save pages "<Scenario> / <n>. <step>",
+  reopen; replace drawing (confirm, Ctrl+Z). `drawio-embed.spec.ts` also round-trips a scenario file through draw.io.
 - `tests/e2e/templates.spec.ts` (any port): ERTMS palette 18 entries, Templates tab 22 ERTMS templates (search,
   insert, open as new diagram, drag), tab bar labels not cut, Save as Template… -> reload -> insert, rename, delete.
 
@@ -228,6 +231,43 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   the tab is closed again if the load fails), Rename…/Delete… (user). Drag (`application/x-rd-template`) onto
   `#graph-container` inserts at the drop point.
 - The left tab bar wraps (no cut labels at ~230px); tests in `src/ui/templates/__tests__/`.
+
+### Scenarios (`src/scenarios/`, right panel "Properties | Scenarios")
+
+- Per tab (diagram): `ScenarioSet` (`scenario-model.ts`) held by the tab's `ProjectService.scenarios`
+  (`saveLoadController.getScenarios()`); a scenario = id/name/description + ordered steps; a step =
+  id/name/description + `xml`, a snapshot of the tab's whole drawing (`serializeToXml()`, a draw.io `<mxGraphModel>`).
+  Reads return copies; changes notify subscribers. `sanitizeScenarios` cleans untrusted data (cache, files):
+  unique ids, names capped (80/200), steps without a model dropped.
+- **File format** (`scenario-format.ts`): main page first, with `rdScenarios='{"v":1,"scenarios":[{id,name,description}]}'`
+  on its `<diagram>` (order, empty scenarios); then one page per step, `name="<Scenario> / <n>. <step>"`, attributes
+  `rdScenarioId rdScenarioName [rdScenarioDescription] rdStepId rdStepName [rdStepDescription]`, page id = step id
+  when unique; then the preserved non-scenario `extraPages`. draw.io v32.4.1 keeps unknown `<diagram>` attributes
+  (page node kept as `DiagramPage.node` and cloned on save, Pages.js:12 / EditorUi.js:2520; also on "Duplicate page",
+  so duplicate step ids are made unique on load) — verified live in `tests/e2e/drawio-embed.spec.ts`. Parse:
+  pages with `rdStepId`/`rdScenarioId` become steps (compressed pages ok; an unreadable one stays a kept page),
+  scenarios in index order, then scenarios only named by step pages; `extraPageNames` (the "only the first page is
+  shown" warning) lists only non-step pages. Loading a file replaces the tab's scenarios.
+- Cache: `CacheData.tabs[].scenarios` (only when non-empty; restored even if the drawing fails). Steps duplicate the
+  model, so adding/updating a step flushes the cache at once and warns when storage is full (plus the usual indicator).
+- Share links: `buildShareMxfile` gets `pageAttributes` + `scenarioPages` (after the tab's page, before its kept pages);
+  `splitSharedFile` keeps step pages with the page before them (tabs, not pages, count against `MAX_SHARED_PAGES`).
+  Remote providers save `getProjectXml()`, so scenarios are included.
+- View (`scenario-view.ts` `ScenarioViewer`): a separate disabled Graph (`configureDiagramRendering` from
+  `src/ui/diagram-graph-setup.ts`, shared with tab graphs, + stencil autoload) mounted in `#graph-container` while the
+  live tab div is only hidden: the live model, selection and undo history are never touched. Banner "<Scenario> — step
+  i/n: <step>", Prev/Next, "Replace drawing with this step…" (confirm; `replaceDrawingWithSnapshot` = one undoable
+  root change), "Back to editing". `body.rd-scenario-viewing` disables menu bar, toolbar, left panel and properties.
+  Closes on tab switch/close and when its steps are deleted; follows renames/updates/reorders.
+- Keyboard: the dispatcher in `legacy-main.ts` calls `scenarios.handleKeydown(e)` right after Ctrl+S; only while the
+  view is open: ←/PageUp, →/PageDown, Home/End, Esc; editing shortcuts are prevented, every other key is stopped
+  (`scenario-keys.ts` `scenarioKeyAction`); fields/IME and Ctrl+S pass.
+- Panel (`scenarios-panel.ts`, `#scenarios-panel`): "+ New scenario", per scenario ▷ present / ✎ / ⧉ / × (confirm),
+  expandable step list (lazy 64x40 thumbnails from the palette's shared renderer, ↑ ↓ ⟳ update-from-drawing (confirm)
+  ✎ ⧉ ×, drag to reorder), "+ Add step". Dialogs = `promptTemplateDetails`/`confirmTemplateDialog`. Wiring:
+  `install-scenarios.ts`. File > New (model.clear) keeps the tab's scenarios, like its extra pages.
+- Tests: `src/scenarios/__tests__/` (model, format/round trip/draw.io edits/share split, tabs + cache + view + keys +
+  panel), `tests/e2e/scenarios.spec.ts` (any port).
 
 ### draw.io editor (`src/drawio/`)
 

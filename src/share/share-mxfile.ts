@@ -6,6 +6,7 @@
  */
 import { xmlUtils } from '@maxgraph/core';
 import { generatePageId, sanitizeXmlText } from '../services/drawio-xml';
+import { isScenarioStepPage } from '../scenarios/scenario-format';
 
 /** One tab of the sender. */
 export interface SharePageSource {
@@ -17,6 +18,10 @@ export interface SharePageSource {
   pageId?: string | null;
   /** Pages 2..n of the file the tab opened, as serialized `<diagram>` elements. */
   extraPages?: string[];
+  /** Extra attributes of the shown page's `<diagram>` (the scenario index `rdScenarios`). */
+  pageAttributes?: Record<string, string>;
+  /** The tab's scenario step pages (serialized `<diagram>` elements), written right after its page. */
+  scenarioPages?: string[];
 }
 
 /** Largest number of pages a shared file may open as tabs. */
@@ -58,13 +63,15 @@ export function buildShareMxfile(sources: SharePageSource[], modified: string = 
       const diagram = doc.createElement('diagram');
       diagram.setAttribute('id', uniqueId(source.pageId));
       diagram.setAttribute('name', source.name || 'Page');
+      for (const [key, value] of Object.entries(source.pageAttributes ?? {})) diagram.setAttribute(key, value);
       diagram.appendChild(doc.importNode(model, true));
       modelDoc.childNodes.forEach((node) => {
         if (node.nodeType === Node.COMMENT_NODE) diagram.appendChild(doc.createComment(node.nodeValue ?? ''));
       });
       mxfile.appendChild(diagram);
     }
-    for (const pageXml of source.extraPages ?? []) {
+    // Step pages right after their tab's page: splitSharedFile keeps them with it
+    for (const pageXml of [...(source.scenarioPages ?? []), ...(source.extraPages ?? [])]) {
       const page = parse(pageXml)?.documentElement;
       if (!page || page.nodeName !== 'diagram') continue;
       const imported = doc.importNode(page, true) as Element;
@@ -76,14 +83,18 @@ export function buildShareMxfile(sources: SharePageSource[], modified: string = 
   return sanitizeXmlText(xmlUtils.getXml(mxfile));
 }
 
-/** One page of a shared file, as a single-page file for SaveLoadController.loadProjectXml. */
+/**
+ * One page of a shared file (with the scenario step pages that follow it), as a file for
+ * SaveLoadController.loadProjectXml.
+ */
 export interface SharedPage {
   name: string;
   fileXml: string;
 }
 
 /**
- * Splits a shared `<mxfile>` into single-page files (a bare `<mxGraphModel>` is one page).
+ * Splits a shared `<mxfile>` into one file per tab (a bare `<mxGraphModel>` is one page): every page
+ * that is not a scenario step starts a tab, step pages stay with the page before them.
  * Throws a user-readable error for anything else.
  */
 export function splitSharedFile(xml: string, fallbackName = 'Shared diagram'): SharedPage[] {
@@ -98,17 +109,23 @@ export function splitSharedFile(xml: string, fallbackName = 'Shared diagram'): S
   }
   const pages = Array.from(root.children).filter((el) => el.nodeName === 'diagram');
   if (pages.length === 0) throw new Error('The shared file has no pages');
-  if (pages.length > MAX_SHARED_PAGES) {
-    throw new Error(`The shared file has ${pages.length} pages; at most ${MAX_SHARED_PAGES} can be opened`);
+  const groups: Element[][] = [];
+  for (const page of pages) {
+    const last = groups[groups.length - 1];
+    if (last && isScenarioStepPage(page)) last.push(page);
+    else groups.push([page]);
   }
-  return pages.map((page, index) => {
+  if (groups.length > MAX_SHARED_PAGES) {
+    throw new Error(`The shared file has ${groups.length} pages; at most ${MAX_SHARED_PAGES} can be opened`);
+  }
+  return groups.map((group, index) => {
     const single = doc.implementation.createDocument(null, null, null);
     const file = single.createElement('mxfile');
     for (const attr of Array.from(root.attributes)) file.setAttribute(attr.name, attr.value);
-    file.appendChild(single.importNode(page, true));
+    for (const page of group) file.appendChild(single.importNode(page, true));
     single.appendChild(file);
     return {
-      name: page.getAttribute('name') || (pages.length > 1 ? `Page ${index + 1}` : fallbackName),
+      name: group[0].getAttribute('name') || (groups.length > 1 ? `Page ${index + 1}` : fallbackName),
       fileXml: xmlUtils.getXml(file),
     };
   });

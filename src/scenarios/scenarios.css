@@ -1,0 +1,324 @@
+/* Scenarios: right-panel switch, Scenarios panel, scenario view on the canvas (src/scenarios). */
+
+/* ---------------------------------------------------------------- right panel switch */
+.right-panel-switch {
+  display: flex;
+  flex-shrink: 0;
+  height: 36px;
+  background: var(--surface-light, #f9f9f9);
+  border-bottom: 1px solid var(--divider, #e0e0e0);
+}
+.right-panel-switch-btn {
+  flex: 1 1 0;
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary, #888);
+  cursor: pointer;
+}
+.right-panel-switch-btn:hover {
+  color: var(--text, #333);
+}
+.right-panel-switch-btn.active {
+  color: var(--text, #333);
+  border-bottom-color: var(--primary, #0066cc);
+}
+.right-panel-switch-btn:focus-visible {
+  outline: 2px solid var(--primary, #0066cc);
+  outline-offset: -2px;
+}
+#scenarios-panel[hidden],
+#property-content[hidden] {
+  display: none !important;
+}
+#scenarios-panel {
+  padding: 0;
+}
+
+/* ---------------------------------------------------------------- panel */
+.rd-scn-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  font-family: var(--font-family, Helvetica, Arial, sans-serif);
+  font-size: var(--font-size-sm, 12px);
+  color: var(--text, #333);
+}
+.rd-scn-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--divider, #e0e0e0);
+}
+.rd-scn-tabname {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--text-secondary, #666);
+}
+.rd-scn-empty,
+.rd-scn-steps-empty {
+  margin: 10px 8px;
+  color: var(--text-secondary, #777);
+  line-height: 1.4;
+}
+.rd-scn-list,
+.rd-scn-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.rd-scn-item {
+  border-bottom: 1px solid var(--divider, #e0e0e0);
+}
+.rd-scn-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 6px 6px 6px 4px;
+}
+.rd-scn-toggle {
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary, #666);
+  cursor: pointer;
+  font-size: 11px;
+  transition: transform 0.12s;
+}
+.rd-scn-toggle[aria-expanded='true'] {
+  transform: rotate(90deg);
+}
+.rd-scn-label {
+  flex: 1 1 auto;
+  min-width: 0;
+  cursor: pointer;
+}
+.rd-scn-name {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+.rd-scn-count {
+  margin-left: 4px;
+  color: var(--text-secondary, #888);
+  font-size: var(--font-size-xs, 11px);
+  white-space: nowrap;
+}
+.rd-scn-desc,
+.rd-scn-step-desc {
+  color: var(--text-secondary, #666);
+  font-size: var(--font-size-xs, 11px);
+  overflow-wrap: anywhere;
+}
+.rd-scn-actions,
+.rd-scn-step-actions {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 1px;
+}
+.rd-scn-icon {
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm, 4px);
+  background: transparent;
+  color: var(--text-secondary, #555);
+  font-size: 12px;
+  line-height: 1;
+  cursor: pointer;
+}
+.rd-scn-icon:hover:not(:disabled) {
+  border-color: var(--border, #ccc);
+  background: var(--surface, #fff);
+  color: var(--text, #222);
+}
+.rd-scn-icon:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+.rd-scn-icon.rd-scn-danger:hover:not(:disabled) {
+  color: var(--error-dark, #c62828);
+}
+.rd-scn-body {
+  padding: 0 6px 8px 24px;
+}
+.rd-scn-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin-bottom: 4px;
+  padding: 4px;
+  border: 1px solid var(--divider, #e0e0e0);
+  border-radius: var(--radius-sm, 4px);
+  background: var(--surface, #fff);
+  cursor: pointer;
+}
+.rd-scn-step:hover {
+  border-color: var(--primary, #0066cc);
+}
+.rd-scn-step.rd-scn-step-active {
+  border-color: var(--primary, #0066cc);
+  box-shadow: inset 3px 0 0 var(--primary, #0066cc);
+}
+.rd-scn-step.rd-scn-dragging {
+  opacity: 0.4;
+}
+.rd-scn-step.rd-scn-drop-before {
+  box-shadow: 0 -2px 0 var(--primary, #0066cc);
+}
+.rd-scn-step.rd-scn-drop-after {
+  box-shadow: 0 2px 0 var(--primary, #0066cc);
+}
+.rd-scn-thumb {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 2px;
+  background: #fff;
+  outline: 1px solid var(--divider, #eee);
+}
+.rd-scn-thumb svg {
+  max-width: 100%;
+  max-height: 100%;
+}
+.rd-scn-step-text {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.rd-scn-step-num {
+  color: var(--text-secondary, #888);
+  margin-right: 2px;
+}
+.rd-scn-step-name {
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+.rd-scn-step-actions {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  max-width: 70px;
+}
+.rd-scn-add-step {
+  width: 100%;
+  margin-top: 2px;
+}
+
+/* ---------------------------------------------------------------- scenario view on the canvas */
+.rd-scn-view {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+.rd-scn-view[hidden] {
+  display: none;
+}
+.rd-scn-banner {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 6px 10px;
+  background: #fff8e1;
+  border-bottom: 2px solid #f9a825;
+  color: #3e2b00;
+  font-family: var(--font-family, Helvetica, Arial, sans-serif);
+  font-size: 13px;
+  cursor: default;
+}
+.rd-scn-badge {
+  padding: 2px 6px;
+  border-radius: 3px;
+  background: #f9a825;
+  color: #2b1d00;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.rd-scn-banner-text {
+  flex: 1 1 200px;
+  min-width: 0;
+}
+.rd-scn-banner-title {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+.rd-scn-banner-desc {
+  font-size: 12px;
+  opacity: 0.85;
+}
+.rd-scn-banner-error {
+  color: #b71c1c;
+  font-size: 12px;
+}
+.rd-scn-banner-btn {
+  padding: 4px 10px;
+  border: 1px solid #c8a24a;
+  border-radius: 4px;
+  background: #fff;
+  color: #3e2b00;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+.rd-scn-banner-btn:hover:not(:disabled) {
+  background: #fff3c4;
+}
+.rd-scn-banner-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.rd-scn-banner-primary {
+  background: #f9a825;
+  border-color: #e09100;
+  font-weight: 600;
+}
+.rd-scn-banner-primary:hover:not(:disabled) {
+  background: #ffb93b;
+}
+.rd-scn-view-host {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+  cursor: default;
+}
+
+/* The live drawing is hidden while a step is shown: its tools would act on it unseen */
+body.rd-scenario-viewing #menu-bar,
+body.rd-scenario-viewing #toolbar-container,
+body.rd-scenario-viewing #leftpanel-container,
+body.rd-scenario-viewing #property-content {
+  pointer-events: none;
+  opacity: 0.45;
+  user-select: none;
+}
+
+:root[data-theme='dark'] .rd-scn-thumb {
+  outline-color: #555;
+}
+
+.rd-scn-step:focus {
+  outline: none;
+}
+.rd-scn-step:focus-visible {
+  outline: 2px solid var(--primary, #0066cc);
+  outline-offset: 1px;
+}

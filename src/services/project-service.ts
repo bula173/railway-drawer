@@ -1,5 +1,14 @@
 import { xmlUtils } from '@maxgraph/core';
 import { buildMxfile, emptyDrawioModelXml, generatePageId, sanitizeXmlText } from './drawio-xml';
+import { ScenarioSet } from '../scenarios/scenario-model';
+import type { ScenarioData } from '../scenarios/scenario-model';
+import {
+  assembleScenarios,
+  buildScenarioPages,
+  isScenarioStepPage,
+  scenarioIndexAttributes,
+} from '../scenarios/scenario-format';
+import type { ScenarioStepPage } from '../scenarios/scenario-format';
 
 export interface ProjectMetadata {
   name: string;
@@ -21,12 +30,14 @@ export interface ParsedProject {
   metadata: ProjectMetadata;
   /** Model XML of the first page, which is the one loaded into the graph. */
   graphXml: string;
-  /** Pages 2..n of a multi-page mxfile, as serialized <diagram> elements, kept unchanged. */
+  /** Pages 2..n of a multi-page mxfile that are not scenario steps, as serialized <diagram> elements, kept unchanged. */
   extraPages: string[];
   /** Names of the pages in `extraPages` (or "Page N" when unnamed), for telling the user. */
   extraPageNames: string[];
   /** Id of the loaded page's <diagram>, reused when saving; null when it had none. */
   pageId: string | null;
+  /** Scenarios rebuilt from the step pages and the main page's index (see scenario-format.ts). */
+  scenarios: ScenarioData[];
 }
 
 export class ProjectService {
@@ -34,6 +45,8 @@ export class ProjectService {
   private extraPages: string[] = [];
   /** Id of the shown page's <diagram>; kept between saves so files diff cleanly. */
   private pageId: string | null = null;
+  /** Scenarios of this diagram; written as one page per step after the shown page. */
+  readonly scenarios = new ScenarioSet();
 
   private projectMetadata: ProjectMetadata = {
     name: 'Untitled Diagram',
@@ -57,8 +70,8 @@ export class ProjectService {
 
   /**
    * Wraps the model XML of the shown page (a draw.io `<mxGraphModel>`, optionally followed by
-   * comments such as the PlantUML metadata) into a native draw.io `<mxfile>`. The preserved
-   * pages of the opened file (`extraPages`) are written after it unchanged.
+   * comments such as the PlantUML metadata) into a native draw.io `<mxfile>`. The scenario step
+   * pages follow it, then the preserved pages of the opened file (`extraPages`), unchanged.
    */
   generateProjectXml(graphXml: string): string {
     // The shown page's id must not collide with the ids of the preserved pages
@@ -72,6 +85,9 @@ export class ProjectService {
         this.pageId = generatePageId();
       } while (usedIds.has(this.pageId));
     }
+    usedIds.add(this.pageId);
+    const scenarios = this.scenarios.list();
+    const scenarioPages = buildScenarioPages(scenarios, usedIds);
 
     let model: Element | null = null;
     const comments: string[] = [];
@@ -91,8 +107,8 @@ export class ProjectService {
     }
 
     return buildMxfile(
-      [{ id: this.pageId, name: this.projectMetadata.name, model, comments }],
-      this.extraPages,
+      [{ id: this.pageId, name: this.projectMetadata.name, model, comments, attributes: scenarioIndexAttributes(scenarios) }],
+      [...scenarioPages, ...this.extraPages],
       {
         host: PROJECT_HOST,
         modified: this.projectMetadata.modifiedAt,
@@ -128,17 +144,34 @@ export class ProjectService {
     const extraPages: string[] = [];
     const extraPageNames: string[] = [];
     let pageId: string | null = null;
+    let scenarios: ScenarioData[] = [];
 
     // Handle mxfile format (standard draw.io)
     if (rootEl.nodeName === 'mxfile') {
       // Pages are the direct <diagram> children of <mxfile>
       const pages = Array.from(rootEl.children).filter((el) => el.nodeName === 'diagram');
       const diagramEl = pages[0];
-      pages.slice(1).forEach((page, index) => {
+      const stepPages: ScenarioStepPage[] = [];
+      for (const [index, page] of pages.slice(1).entries()) {
+        // Scenario steps become scenarios again; a step page that cannot be read stays a kept page
+        if (isScenarioStepPage(page)) {
+          try {
+            const stepXml = await this.extractDiagramModelXml(page);
+            if (stepXml !== null) {
+              ProjectService.validateGraphModelXml(stepXml);
+              if (!/^\s*<mxGraphModel[\s>/]/.test(stepXml)) throw new Error('not a draw.io model');
+              stepPages.push({ page, xml: stepXml });
+              continue;
+            }
+          } catch (error) {
+            console.warn('[Project] Keeping an unreadable scenario step page as a page:', page.getAttribute('name'), error);
+          }
+        }
         // getXml: newlines in attribute values (multi-line labels) must stay escaped
         extraPages.push(xmlUtils.getXml(page));
         extraPageNames.push(page.getAttribute('name') || `Page ${index + 2}`);
-      });
+      }
+      scenarios = assembleScenarios(diagramEl, stepPages);
       const isOwnFile = rootEl.getAttribute('host') === PROJECT_HOST;
       metadata = {
         name: diagramEl?.getAttribute('name') || 'Untitled Diagram',
@@ -180,7 +213,7 @@ export class ProjectService {
     }
     ProjectService.validateGraphModelXml(graphXml);
 
-    return { metadata, graphXml, extraPages, extraPageNames, pageId };
+    return { metadata, graphXml, extraPages, extraPageNames, pageId, scenarios };
   }
 
   /**

@@ -79,6 +79,8 @@ export interface MxfilePage {
   model: Element;
   /** Comments stored after the model inside `<diagram>` (e.g. PlantUML metadata). */
   comments?: string[];
+  /** Extra attributes of the `<diagram>` element (app metadata such as `rdScenarios`; draw.io keeps them). */
+  attributes?: Record<string, string>;
 }
 
 export interface MxfileMeta {
@@ -929,6 +931,7 @@ export function buildMxfile(pages: MxfilePage[], extraPages: string[], meta: Mxf
     const diagram = doc.createElement('diagram');
     diagram.setAttribute('id', page.id);
     diagram.setAttribute('name', page.name);
+    for (const [key, value] of Object.entries(page.attributes ?? {})) diagram.setAttribute(key, value);
     diagram.appendChild(doc.importNode(page.model, true));
     for (const comment of page.comments ?? []) diagram.appendChild(doc.createComment(comment));
     mxfile.appendChild(diagram);

@@ -9,6 +9,7 @@ import {
 import { ProjectService } from '../services/project-service';
 import { PlantUmlGroupManager } from '../services/plantuml-group-manager';
 import { GraphCommandService } from '../services/graph-command-service';
+import type { ScenarioSet } from '../scenarios/scenario-model';
 import { globalNotificationManager } from './notification';
 import { globalSaveStatusIndicator } from './save-status';
 
@@ -139,6 +140,8 @@ export class SaveLoadController {
       // Pages 2..n are not shown, but are kept so a save writes them back unchanged
       this.projectService.setExtraPages(result.extraPages);
       this.projectService.setPageId(result.pageId);
+      // The file's scenarios replace the tab's (none in the file: the tab has none afterwards)
+      this.projectService.scenarios.replaceAll(result.scenarios);
       this.updateProjectNameUI(result.metadata.name);
       this.markAsSavedToDisk();
       if (result.extraPageNames.length > 0) {
@@ -289,6 +292,11 @@ export class SaveLoadController {
    */
   getPreservedPages(): { extraPages: string[]; pageId: string | null } {
     return { extraPages: this.projectService.getExtraPages(), pageId: this.projectService.getPageId() };
+  }
+
+  /** Scenarios of this tab (saved as step pages in the file and in the tab cache). */
+  getScenarios(): ScenarioSet {
+    return this.projectService.scenarios;
   }
 
   /** Restores what getPreservedPages() returned (from the tab cache). */

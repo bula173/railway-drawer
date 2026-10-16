@@ -1,4 +1,5 @@
 import { isLegacyModelXml } from './drawio-xml';
+import type { ScenarioData } from '../scenarios/scenario-model';
 
 export interface CacheData {
   projectName: string;
@@ -13,6 +14,8 @@ export interface CacheData {
      */
     extraPages?: string[];
     pageId?: string | null;
+    /** The tab's scenarios (steps hold full drawing snapshots). Missing when there are none; sanitized on restore. */
+    scenarios?: ScenarioData[];
   }>;
   activeTabId: string;
   timestamp: number;

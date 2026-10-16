@@ -1,12 +1,5 @@
 import { Graph, RubberBandHandler, CellEditorHandler, InternalEvent } from '@maxgraph/core';
-import {
-  wideArrowPerimeter,
-  thinArrowPerimeter,
-  doubleArrowPerimeter,
-  splitArrowPerimeter,
-  chevronArrowPerimeter,
-  loopArrowPerimeter,
-} from '../shapes/arrows/perimeter';
+import { configureDiagramRendering } from './diagram-graph-setup';
 import { PropertiesPanel } from './properties';
 import { ToolbarController } from './toolbar';
 import { StatusBarController } from './statusbar';
@@ -20,18 +13,11 @@ import { CanvasProperties } from './canvas-properties';
 import { ContextMenuController } from './context-menu';
 import { MenuController } from './menu';
 import { InteractiveUIController } from './interactive-ui';
-import { applyDrawioDefaultStyles, installUserObjectLabels, registerDrawioNamedStyles } from '../services/drawio-xml';
-import {
-  installDanglingEdgeStyles,
-  installDrawioCompat,
-  installDrawioHtmlLabels,
-  installInheritStyleValues,
-} from '../drawio-shapes/engine';
-import { installTableSupport } from '../drawio-shapes/js/shapes-edges';
 import { installDrawioBehaviour } from '../drawio-shapes/behaviour';
 import { installDrawioHandles } from '../drawio-shapes/handles';
 import { installStencilAutoload } from './drawio-stencil-autoload';
 import { CacheService, CacheData, CacheSaveResult } from '../services/cache-service';
+import { sanitizeScenarios } from '../scenarios/scenario-model';
 import { globalSaveStatusIndicator } from './save-status';
 import { globalNotificationManager } from './notification';
 import { GraphCommandService } from '../services/graph-command-service';
@@ -225,50 +211,8 @@ export class TabManager {
     graph.ignoreScrollbars = false; // Use native scrollbars
     graph.translateToScrollPosition = false; // Don't convert scroll to translate
 
-    // Register SVG arrow perimeter styles with graph stylesheet
-    // This ensures perimeter functions are available for edge routing calculations
-    const stylesheet = graph.getStylesheet();
-    stylesheet.putCellStyle('wideArrow', {
-      shape: 'image',
-      perimeter: wideArrowPerimeter,
-    });
-    stylesheet.putCellStyle('thinArrow', {
-      shape: 'image',
-      perimeter: thinArrowPerimeter,
-    });
-    stylesheet.putCellStyle('doubleArrow', {
-      shape: 'image',
-      perimeter: doubleArrowPerimeter,
-    });
-    stylesheet.putCellStyle('splitArrow', {
-      shape: 'image',
-      perimeter: splitArrowPerimeter,
-    });
-    stylesheet.putCellStyle('chevronArrow', {
-      shape: 'image',
-      perimeter: chevronArrowPerimeter,
-    });
-    stylesheet.putCellStyle('loopArrow', {
-      shape: 'image',
-      perimeter: loopArrowPerimeter,
-    });
-    // draw.io's default colours, fonts and arrows (styles/default.xml), so draw.io shapes and
-    // files look as in draw.io; the export only writes values draw.io would resolve differently
-    applyDrawioDefaultStyles(stylesheet);
-    // Base style names used in draw.io files (text, ellipse, swimlane, ...)
-    registerDrawioNamedStyles(stylesheet);
-    // Labels of draw.io UserObject cells (values that are XML elements)
-    installUserObjectLabels(graph);
-    // light-dark()/default colours (after installUserObjectLabels: it wraps getLabel)
-    installDrawioCompat(graph);
-    // html=1 labels render as (sanitized) HTML, as in draw.io
-    installDrawioHtmlLabels(graph);
-    // edge styles (elbow, orthogonal, isometric) also for edges without a source, as in draw.io
-    installDanglingEdgeStyles(graph);
-    // strokeColor=inherit (tables, lists) takes the parent's value
-    installInheritStyleValues(graph);
-    // draw.io tables, lists, stack layouts, collapsed tables
-    installTableSupport(graph);
+    // Styles and rendering compat shared with the scenario view graph (diagram-graph-setup.ts)
+    configureDiagramRendering(graph);
     installDrawioBehaviour(graph);
     installDrawioHandles(graph);
     // Named stencils (mxgraph.basic.*, ...) are fetched when cells using them arrive (load, paste, insert)
@@ -404,6 +348,7 @@ export class TabManager {
       projectName: this.getProjectName(),
       tabs: Array.from(this.tabs.values()).map((tab) => {
         const { extraPages, pageId } = tab.saveLoadController.getPreservedPages();
+        const scenarios = tab.saveLoadController.getScenarios().toJSON();
         return {
           id: tab.id,
           name: tab.name,
@@ -411,6 +356,7 @@ export class TabManager {
           // Only written when there is something to keep, so single-page caches stay as they were
           ...(extraPages.length > 0 ? { extraPages } : {}),
           ...(pageId ? { pageId } : {}),
+          ...(scenarios.length > 0 ? { scenarios } : {}),
         };
       }),
       activeTabId: this.activeTabId,
@@ -466,6 +412,8 @@ export class TabManager {
         : [];
       const pageId = typeof tabCache.pageId === 'string' && tabCache.pageId ? tabCache.pageId : null;
       tabData.saveLoadController.setPreservedPages(extraPages, pageId);
+      // Scenarios are kept even when the drawing itself cannot be restored
+      tabData.saveLoadController.getScenarios().replaceAll(sanitizeScenarios(tabCache.scenarios));
       try {
         tabData.saveLoadController.load(tabCache.graphXml);
         if (CacheService.isLegacyGraphXml(tabCache.graphXml)) migratedTabs++;

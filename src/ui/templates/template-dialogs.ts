@@ -20,6 +20,10 @@ export interface TemplateDetailsOptions {
   name?: string;
   description?: string;
   confirmLabel?: string;
+  /** Placeholder of the name field (default: a template example). */
+  namePlaceholder?: string;
+  /** Label of the dialog (default: the heading). */
+  label?: string;
 }
 
 function el<K extends keyof HTMLElementTagNameMap>(tag: K, className?: string, text?: string): HTMLElementTagNameMap[K] {
@@ -98,7 +102,7 @@ export function promptTemplateDetails(opts: TemplateDetailsOptions): Promise<Tem
           submit();
         }
       },
-      opts.heading
+      opts.label ?? opts.heading
     );
     if (opts.hint) modal.dialog.appendChild(el('p', 'rd-tpl-modal-hint', opts.hint));
 
@@ -107,7 +111,7 @@ export function promptTemplateDetails(opts: TemplateDetailsOptions): Promise<Tem
     nameInput.type = 'text';
     nameInput.name = 'template-name';
     nameInput.maxLength = MAX_TEMPLATE_NAME;
-    nameInput.placeholder = 'e.g. Station layout with 2 points';
+    nameInput.placeholder = opts.namePlaceholder ?? 'e.g. Station layout with 2 points';
     nameInput.value = opts.name ?? '';
     nameInput.required = true;
     nameLabel.appendChild(nameInput);

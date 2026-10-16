@@ -218,7 +218,13 @@
 
         <!-- Right Panel -->
         <div id="rightpanel-container" class="right-panel">
-          <div class="panel-header">Properties</div>
+          <!-- Properties | Scenarios switch (src/scenarios/scenarios-panel.ts installRightPanelSwitch) -->
+          <div class="right-panel-switch" role="tablist" aria-label="Right panel">
+            <button type="button" class="right-panel-switch-btn active" role="tab" aria-selected="true" aria-controls="property-content" data-right-panel="properties">Properties</button>
+            <button type="button" class="right-panel-switch-btn" role="tab" aria-selected="false" aria-controls="scenarios-panel" data-right-panel="scenarios" tabindex="-1">Scenarios</button>
+          </div>
+          <!-- Scenarios of the active tab (src/scenarios) -->
+          <div id="scenarios-panel" class="panel-content" role="tabpanel" aria-label="Scenarios" hidden></div>
           <div id="property-content" class="panel-content">
             <!-- Placeholder when no selection -->
             <p id="prop-placeholder" style="color: #999; font-size: 12px; padding: 12px;">Click element to edit</p>

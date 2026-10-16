@@ -44,6 +44,7 @@ import { createTemplatesPanel, openTemplateAsNewDiagram, saveAsTemplate, Templat
 import { installParityHook } from './debug/parity-hook';
 import { installDarkModeToggle } from './drawio-shapes/theme/dark-mode';
 import { installSharing } from './share/install-sharing';
+import { installScenarios } from './scenarios/install-scenarios';
 
 /**
  * @brief Register all built-in shape definitions
@@ -151,6 +152,16 @@ if (activeTab?.statusBarController) {
   activeTab.statusBarController.setBuildDate(BUILD_TIME);
 }
 
+// ============= SCENARIOS =============
+
+/**
+ * @brief Scenarios of the active tab (right panel "Scenarios", next to Properties)
+ * @details Each step is a snapshot of the drawing, saved as its own draw.io page. Clicking a step
+ * shows it read-only on the canvas (the live drawing is only hidden); ←/→ step, Esc goes back.
+ */
+const graphContainer = document.getElementById('graph-container')!;
+const scenarios = installScenarios(tabManager, globalNotificationManager, graphContainer);
+
 // ============= GLOBAL KEYBOARD SHORTCUTS =============
 
 /**
@@ -182,6 +193,11 @@ document.addEventListener('keydown', (e) => {
   if (mod && key === 's') {
     e.preventDefault();
     activeTab.saveLoadController.saveProject();
+    return;
+  }
+
+  // Scenario view: ←/→/Home/End/Esc navigate, editing shortcuts are blocked (the drawing is hidden)
+  if (scenarios.handleKeydown(e)) {
     return;
   }
 
@@ -278,8 +294,6 @@ window.addEventListener('editor-switch-request', (e) => {
  * @details Enables users to drag shapes from the toolbox or stencils panel
  * and drop them onto the graph canvas. The shape is inserted at the drop location.
  */
-const graphContainer = document.getElementById('graph-container')!;
-
 /**
  * @brief Process drop event for shape insertion
  * @details Converts the drag coordinates to graph coordinates and creates

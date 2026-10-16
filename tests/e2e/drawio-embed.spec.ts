@@ -129,4 +129,62 @@ test.describe('draw.io embed', () => {
     expect(svg).toMatch(/<svg[\s>]/);
     expect(svg).toContain('content=');
   });
+  test('keeps scenario step pages and their metadata through a draw.io save (app -> draw.io -> app)', async ({ page }) => {
+    const model = (label: string): string =>
+      '<mxGraphModel><root><mxCell id="0"/><mxCell id="1" parent="0"/>' +
+      `<mxCell id="v" value="${label}" style="rounded=0;" vertex="1" parent="1"><mxGeometry x="40" y="40" width="80" height="40" as="geometry"/></mxCell>` +
+      '</root></mxGraphModel>';
+    const index = JSON.stringify({ v: 1, scenarios: [{ id: 'scn-a', name: 'Wjazd pociągu', description: 'opis "x" & <y>' }] })
+      .replace(/&/g, '&amp;')
+      .replace(/"/g, '&quot;')
+      .replace(/</g, '&lt;');
+    const step = (n: number, id: string, name: string): string =>
+      `<diagram id="${id}" name="Wjazd pociągu / ${n}. ${name}" rdScenarioId="scn-a" rdScenarioName="Wjazd pociągu" ` +
+      `rdStepId="${id}" rdStepName="${name}" rdStepDescription="krok ${n}">${model(`step ${n}`)}</diagram>`;
+    const fixture =
+      `<mxfile host="railway-drawer"><diagram id="main" name="Stacja" rdScenarios="${index}">${model('main')}</diagram>` +
+      step(1, 'stepOne', 'Sygnał') +
+      step(2, 'stepTwo', 'Zajęcie') +
+      '</mxfile>';
+    await page.addInitScript(
+      ([key, xml]) => {
+        window.localStorage.setItem(key, JSON.stringify({ xml, title: 'Scenarios', savedAt: '' }));
+      },
+      [AUTOSAVE_KEY, fixture] as const
+    );
+    await openDrawioMode(page);
+
+    // draw.io shows the steps as pages and writes them back with the app's attributes
+    const frame = page.frameLocator('iframe[title="draw.io editor"]');
+    await expect(frame.locator('.geTabContainer', { hasText: 'Wjazd pociągu / 2. Zajęcie' })).toBeVisible({ timeout: READY_TIMEOUT });
+    const downloadPromise = page.waitForEvent('download');
+    await page.getByRole('button', { name: 'Download .drawio' }).click();
+    const xml = await readFile(await (await downloadPromise).path(), 'utf8');
+    expect([...xml.matchAll(/<diagram [^>]*?name="([^"]*)"/g)].map((m) => m[1])).toEqual([
+      'Stacja',
+      'Wjazd pociągu / 1. Sygnał',
+      'Wjazd pociągu / 2. Zajęcie',
+    ]);
+    expect(xml).toContain('rdScenarios=');
+    expect(xml).toContain('rdStepId="stepTwo"');
+    expect(xml).toContain('rdStepDescription="krok 2"');
+
+    // ... and the legacy editor rebuilds the scenario from draw.io's file
+    await page.goto('/?editor=legacy');
+    await page.evaluate(() => localStorage.removeItem('railway-drawer-cache'));
+    await page.reload();
+    await expect(page.locator('#tabs-container .tab-button.active')).toHaveCount(1);
+    const chooserPromise = page.waitForEvent('filechooser');
+    await page.locator('.menu-item[data-menu="file"]').click();
+    await page.locator('.menu-dropdown-item[data-action="open"]').click();
+    await (await chooserPromise).setFiles({ name: 'from-drawio.drawio', mimeType: 'application/xml', buffer: Buffer.from(xml) });
+    await page.locator('[data-right-panel="scenarios"]').click();
+    const panel = page.locator('#scenarios-panel');
+    await expect(panel.locator('.rd-scn-name')).toHaveText('Wjazd pociągu');
+    await expect(panel.locator('.rd-scn-desc')).toHaveText('opis "x" & <y>');
+    await panel.locator('.rd-scn-toggle').click();
+    await expect(panel.locator('.rd-scn-step-name')).toHaveText(['Sygnał', 'Zajęcie']);
+    await panel.locator('.rd-scn-step').nth(1).click();
+    await expect(page.locator('.rd-scn-banner-title')).toHaveText('Wjazd pociągu — step 2/2: Zajęcie');
+  });
 });
