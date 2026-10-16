@@ -218,6 +218,11 @@ export class MenuController {
         window.dispatchEvent(new CustomEvent('share-request'));
         break;
 
+      case 'exportScenarioHtml':
+        // src/scenarios/install-scenarios.ts exports the scenario shown / the only one / the one picked
+        window.dispatchEvent(new CustomEvent('scenario-export-request'));
+        break;
+
       case 'saveAsTemplate':
         // legacy-main.ts asks for a name and stores the selection (or the whole diagram)
         window.dispatchEvent(new CustomEvent('save-template-request'));

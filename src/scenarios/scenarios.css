@@ -322,3 +322,316 @@ body.rd-scenario-viewing #property-content {
   outline: 2px solid var(--primary, #0066cc);
   outline-offset: 1px;
 }
+
+/* ---- step view: canvas + collapsible UML & text panel (scenario-view.ts) */
+.rd-scn-view-body {
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+.rd-scn-view-body > .rd-scn-view-host {
+  min-width: 0;
+}
+.rd-scn-side {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  width: min(420px, 40%);
+  min-width: 240px;
+  border-left: 2px solid #f9a825;
+  background: var(--surface, #fff);
+  color: var(--text, #333);
+  font-family: var(--font-family, Helvetica, Arial, sans-serif);
+  font-size: 13px;
+}
+.rd-scn-side.rd-scn-side-collapsed {
+  width: 28px;
+  min-width: 28px;
+}
+.rd-scn-side-collapsed .rd-scn-side-body,
+.rd-scn-side-collapsed .rd-scn-side-title {
+  display: none;
+}
+.rd-scn-side-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 6px;
+  background: #fff8e1;
+  border-bottom: 1px solid #f0d58a;
+}
+.rd-scn-side-title {
+  flex: 1 1 auto;
+  font-weight: 600;
+  color: #3e2b00;
+}
+.rd-scn-side-toggle {
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: 1px solid #c8a24a;
+  border-radius: 4px;
+  background: #fff;
+  color: #3e2b00;
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+}
+.rd-scn-side-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+  padding: 8px 10px;
+}
+.rd-scn-side-section + .rd-scn-side-section {
+  margin-top: 12px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border, #e0e0e0);
+}
+.rd-scn-side-heading {
+  margin: 0 0 6px;
+  color: var(--text-secondary, #777);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.rd-scn-side-uml svg,
+.rd-scn-uml-preview svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.rd-scn-busy {
+  opacity: 0.6;
+}
+.rd-scn-muted {
+  margin: 0;
+  color: var(--text-secondary, #888);
+  font-style: italic;
+}
+.rd-scn-uml-message {
+  margin: 0;
+  color: #b71c1c;
+  white-space: pre-wrap;
+}
+.rd-scn-uml-warnings {
+  margin: 4px 0 0;
+  color: #8a6d00;
+  font-size: 11px;
+}
+
+/* rendered Markdown (side panel, editor preview) */
+.rd-scn-markdown {
+  overflow-wrap: anywhere;
+  line-height: 1.45;
+}
+.rd-scn-markdown > :first-child {
+  margin-top: 0;
+}
+.rd-scn-markdown h1,
+.rd-scn-markdown h2,
+.rd-scn-markdown h3,
+.rd-scn-markdown h4 {
+  margin: 0.8em 0 0.3em;
+  line-height: 1.25;
+}
+.rd-scn-markdown h1 {
+  font-size: 1.4em;
+}
+.rd-scn-markdown h2 {
+  font-size: 1.2em;
+}
+.rd-scn-markdown h3 {
+  font-size: 1.05em;
+}
+.rd-scn-markdown p,
+.rd-scn-markdown ul,
+.rd-scn-markdown ol,
+.rd-scn-markdown pre,
+.rd-scn-markdown table,
+.rd-scn-markdown blockquote {
+  margin: 0 0 0.6em;
+}
+.rd-scn-markdown ul,
+.rd-scn-markdown ol {
+  padding-left: 1.4em;
+}
+.rd-scn-markdown code {
+  padding: 0 3px;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.06);
+  font-family: Menlo, Consolas, monospace;
+  font-size: 0.92em;
+}
+.rd-scn-markdown pre {
+  padding: 6px 8px;
+  overflow: auto;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.06);
+}
+.rd-scn-markdown pre code {
+  padding: 0;
+  background: none;
+}
+.rd-scn-markdown blockquote {
+  padding-left: 8px;
+  border-left: 3px solid #ccc;
+  color: var(--text-secondary, #555);
+}
+.rd-scn-markdown table {
+  border-collapse: collapse;
+}
+.rd-scn-markdown th,
+.rd-scn-markdown td {
+  padding: 2px 6px;
+  border: 1px solid var(--border, #ccc);
+}
+.rd-scn-markdown img {
+  max-width: 100%;
+}
+.rd-scn-markdown .rd-md-task {
+  list-style: none;
+  margin-left: -1.2em;
+}
+.rd-md-align-left {
+  text-align: left;
+}
+.rd-md-align-center {
+  text-align: center;
+}
+.rd-md-align-right {
+  text-align: right;
+}
+.rd-md-blocked {
+  color: #b71c1c;
+  text-decoration: line-through dotted;
+}
+
+/* ---- step list badges */
+.rd-scn-step-badges {
+  display: flex;
+  gap: 3px;
+  margin-top: 2px;
+}
+.rd-scn-badge-small {
+  padding: 0 4px;
+  border-radius: 3px;
+  background: #e8eaf6;
+  color: #283593;
+  font-size: 10px;
+  font-weight: 600;
+}
+.rd-scn-badge-text {
+  background: #e8f5e9;
+  color: #1b5e20;
+}
+
+/* ---- step editor (step-editor.ts) */
+.rd-tpl-modal.rd-scn-editor {
+  display: flex;
+  flex-direction: column;
+  width: min(1100px, calc(100vw - 32px));
+  max-height: calc(100vh - 32px);
+  overflow: auto;
+}
+.rd-scn-editor-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: 12px;
+}
+.rd-scn-editor-drawing {
+  margin: 0 0 10px;
+  padding: 4px 10px 8px;
+  border: 1px solid var(--border, #ddd);
+  border-radius: 4px;
+}
+.rd-scn-editor-drawing legend {
+  padding: 0 4px;
+  font-weight: 500;
+}
+.rd-scn-editor-radio {
+  margin-right: 16px;
+  cursor: pointer;
+}
+.rd-scn-editor-note {
+  margin: 2px 0;
+  color: var(--text-secondary, #666);
+  font-size: 12px;
+}
+.rd-scn-editor-panes {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 14px;
+  min-height: 0;
+}
+.rd-scn-editor-pane {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+.rd-scn-editor-pane-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.rd-scn-editor-pane-title {
+  font-weight: 500;
+}
+.rd-scn-editor-server {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+.rd-scn-editor-server[hidden] {
+  display: none;
+}
+.rd-scn-editor-server .rd-tpl-modal-input {
+  flex: 1 1 200px;
+  margin: 0;
+}
+.rd-scn-editor-text {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 160px;
+  padding: 6px 8px;
+  border: 1px solid var(--border, #ccc);
+  border-radius: 4px;
+  background: var(--surface, #fff);
+  color: inherit;
+  font: inherit;
+  resize: vertical;
+}
+.rd-scn-editor-code {
+  font-family: Menlo, Consolas, monospace;
+  font-size: 12px;
+}
+.rd-scn-editor-preview {
+  min-height: 120px;
+  max-height: 320px;
+  overflow: auto;
+  padding: 8px;
+  border: 1px dashed var(--border, #ccc);
+  border-radius: 4px;
+  background: var(--surface, #fff);
+}
+@media (max-width: 760px) {
+  .rd-scn-editor-head,
+  .rd-scn-editor-panes {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ---- scenario chooser (File > Export Scenario) */
+.rd-scn-choose-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.rd-scn-choose-item {
+  text-align: left;
+}

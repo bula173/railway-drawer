@@ -2,7 +2,8 @@
  * @file install-scenarios.ts
  * @brief Wires scenarios into the legacy editor (called once from legacy-main.ts): the right
  *        panel's "Properties | Scenarios" switch, the Scenarios panel for the active tab, the
- *        read-only scenario view on the canvas, and the keyboard while that view is open.
+ *        read-only scenario view on the canvas (with the UML & text side panel), the keyboard while
+ *        that view is open, and File > Export Scenario (HTML)… (`scenario-export-request`).
  */
 import type { TabData, TabManager } from '../ui/tabs';
 import { getDrawioThumbnailRenderer } from '../ui/drawio-palette/drawio-palette-view';
@@ -12,6 +13,15 @@ import { scenarioKeyAction } from './scenario-keys';
 import { ScenarioViewer } from './scenario-view';
 import type { RightPanelView, ScenarioNotifier, ScenariosPanel, ScenarioThumbnails } from './scenarios-panel';
 import { createScenariosPanel, installRightPanelSwitch } from './scenarios-panel';
+import { buildScenarioHtml, scenarioExportFileName } from './scenario-export';
+import { renderXmlToSvgDocument } from '../ui/diagram-image-export';
+import type { ScenarioExportDeps } from './scenario-export';
+import type { ScenarioData } from './scenario-model';
+import type { StepEditorOptions, StepEditorResult } from './step-editor';
+import type { UmlRenderResult } from './step-uml';
+
+/** `window` event of File > Export Scenario (HTML)… (MenuController). */
+export const SCENARIO_EXPORT_EVENT = 'scenario-export-request';
 
 export interface ScenariosHandle {
   viewer: ScenarioViewer;
@@ -23,6 +33,11 @@ export interface ScenariosHandle {
   handleKeydown(e: KeyboardEvent): boolean;
   /** Shows a view of the right panel (Properties, Data, Checks, Scenarios). */
   showPanel(view: RightPanelView): void;
+  /**
+   * Exports a scenario of the active tab as HTML (download). Without an id: the scenario being
+   * presented, the only one, or the one the user picks. Resolves the file name (null: nothing exported).
+   */
+  exportScenario(scenarioId?: string): Promise<string | null>;
   /** Removes the view, the panel and the window listeners (tests). */
   destroy(): void;
 }
@@ -30,6 +45,82 @@ export interface ScenariosHandle {
 export interface InstallScenariosOptions {
   /** Step thumbnails (default: the palette's shared renderer); null: none (tests). */
   thumbnails?: ScenarioThumbnails | null;
+  /** Step editor (tests); default: the modal step editor. */
+  stepEditor?: (opts: StepEditorOptions) => Promise<StepEditorResult | null>;
+  /** UML renderer of the view and the export (tests); default: local renderer / configured server. */
+  renderUml?: (source: string) => Promise<UmlRenderResult>;
+  /** Drawing renderer of the HTML export (tests); default: the draw.io-like SVG image export. */
+  renderDrawingSvg?: ScenarioExportDeps['renderDrawingSvg'];
+  /** Receives the exported file (tests); default: download. */
+  saveFile?: (blob: Blob, fileName: string) => void;
+}
+
+function downloadFile(blob: Blob, fileName: string): void {
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = fileName;
+  a.style.display = 'none';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 10_000);
+}
+
+/** Small modal: pick one of the scenarios (template dialog look). Resolves null when cancelled. */
+function chooseScenario(scenarios: ScenarioData[]): Promise<ScenarioData | null> {
+  return new Promise((resolve) => {
+    const overlay = document.createElement('div');
+    overlay.className = 'rd-tpl-modal-overlay';
+    const dialog = document.createElement('div');
+    dialog.className = 'rd-tpl-modal rd-scn-choose';
+    dialog.setAttribute('role', 'dialog');
+    dialog.setAttribute('aria-modal', 'true');
+    dialog.setAttribute('aria-label', 'Export scenario');
+    const title = document.createElement('h2');
+    title.className = 'rd-tpl-modal-title';
+    title.textContent = 'Export which scenario?';
+    dialog.appendChild(title);
+    const list = document.createElement('div');
+    list.className = 'rd-scn-choose-list';
+    const finish = (value: ScenarioData | null): void => {
+      window.removeEventListener('keydown', onKey, true);
+      overlay.remove();
+      resolve(value);
+    };
+    for (const scenario of scenarios) {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'rd-tpl-btn rd-scn-choose-item';
+      btn.textContent = `${scenario.name} (${scenario.steps.length} step${scenario.steps.length === 1 ? '' : 's'})`;
+      btn.disabled = scenario.steps.length === 0;
+      btn.addEventListener('click', () => finish(scenario));
+      list.appendChild(btn);
+    }
+    const actions = document.createElement('div');
+    actions.className = 'rd-tpl-modal-actions';
+    const cancel = document.createElement('button');
+    cancel.type = 'button';
+    cancel.className = 'rd-tpl-btn';
+    cancel.textContent = 'Cancel';
+    cancel.addEventListener('click', () => finish(null));
+    actions.appendChild(cancel);
+    dialog.append(list, actions);
+    overlay.appendChild(dialog);
+    const onKey = (evt: KeyboardEvent): void => {
+      evt.stopPropagation();
+      if (evt.key === 'Escape') {
+        evt.preventDefault();
+        finish(null);
+      }
+    };
+    window.addEventListener('keydown', onKey, true);
+    overlay.addEventListener('mousedown', (evt) => {
+      if (evt.target === overlay) finish(null);
+    });
+    document.body.appendChild(overlay);
+    (list.querySelector('button:not(:disabled)') as HTMLButtonElement | null)?.focus();
+  });
 }
 
 export function installScenarios(
@@ -42,6 +133,7 @@ export function installScenarios(
 
   const viewer = new ScenarioViewer({
     graphContainer,
+    renderUml: installOptions.renderUml,
     getActiveTabId: () => tabManager.getActiveTab()?.id ?? null,
     getScenarios: (id) => tabById(id)?.saveLoadController.getScenarios() ?? null,
     getLiveGraph: (id) => tabById(id)?.graph ?? null,
@@ -82,6 +174,10 @@ export function installScenarios(
     viewer,
     notify,
     thumbnails: installOptions.thumbnails === undefined ? getDrawioThumbnailRenderer() : installOptions.thumbnails,
+    stepEditor: installOptions.stepEditor,
+    onExportScenario: (_tabId, scenarioId) => {
+      void exportScenario(scenarioId);
+    },
     onStepsChanged: () => {
       // Steps hold whole drawings: write the cache now so a full storage is reported right away
       if (!tabManager.flushCache()) {
@@ -91,6 +187,45 @@ export function installScenarios(
       }
     },
   });
+
+  const exportScenario = async (scenarioId?: string): Promise<string | null> => {
+    const tab = tabManager.getActiveTab();
+    if (!tab) return null;
+    const set = tab.saveLoadController.getScenarios();
+    let scenario: ScenarioData | null = null;
+    const viewing = viewer.getState();
+    if (scenarioId) scenario = set.get(scenarioId);
+    else if (viewing && viewing.tabId === tab.id) scenario = set.get(viewing.scenarioId);
+    else {
+      const withSteps = set.list().filter((s) => s.steps.length > 0);
+      if (withSteps.length === 0) {
+        notify.warning('This diagram has no scenario with steps to export (right panel › Scenarios).');
+        return null;
+      }
+      scenario = withSteps.length === 1 ? withSteps[0] : await chooseScenario(set.list());
+    }
+    if (!scenario) return null;
+    if (scenario.steps.length === 0) {
+      notify.warning(`"${scenario.name}" has no steps to export.`);
+      return null;
+    }
+    try {
+      const renderDrawingSvg = installOptions.renderDrawingSvg ?? ((xml: string) => renderXmlToSvgDocument(xml));
+      const html = await buildScenarioHtml(scenario, tab.name, { renderDrawingSvg, renderUml: installOptions.renderUml });
+      const fileName = scenarioExportFileName(tab.name, scenario.name);
+      (installOptions.saveFile ?? downloadFile)(new Blob([html], { type: 'text/html;charset=utf-8' }), fileName);
+      notify.success(`Scenario "${scenario.name}" exported as ${fileName}`);
+      return fileName;
+    } catch (error) {
+      console.error('[Scenarios] Export failed:', error);
+      notify.error(`Could not export the scenario: ${error instanceof Error ? error.message : String(error)}`);
+      return null;
+    }
+  };
+  const onExportRequest = (): void => {
+    void exportScenario();
+  };
+  window.addEventListener(SCENARIO_EXPORT_EVENT, onExportRequest);
 
   const showPanel = installRightPanelSwitch((view) => {
     if (view === 'scenarios') panel.refresh();
@@ -128,9 +263,10 @@ export function installScenarios(
   const destroy = (): void => {
     window.removeEventListener('tab-changed', onTabChanged);
     window.removeEventListener('tab-closed', onTabClosed);
+    window.removeEventListener(SCENARIO_EXPORT_EVENT, onExportRequest);
     viewer.destroy();
     panel.destroy();
   };
 
-  return { viewer, panel, handleKeydown, showPanel, destroy };
+  return { viewer, panel, handleKeydown, showPanel, exportScenario, destroy };
 }

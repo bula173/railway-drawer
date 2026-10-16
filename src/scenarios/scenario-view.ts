@@ -6,7 +6,9 @@
  * diagram-graph-setup.ts) inside `#graph-container`, in place of the active tab's graph div, which
  * is only hidden: its model, selection, view and undo history are never touched, so "Back to
  * editing" shows the live drawing exactly as it was. A banner names the scenario and the step and
- * has Prev/Next, "Replace drawing with this step…" and "Back to editing". While the view is open
+ * has Prev/Next, "Replace drawing with this step…" and "Back to editing". A collapsible side panel
+ * on the right shows the step's UML diagram (top) and Markdown text (bottom); Prev/Next switch all
+ * three together; the collapsed state is kept in localStorage `rd.scenario.sidePanel`. While the view is open
  * `body.rd-scenario-viewing` disables the menus, toolbar, left panel and properties (they act on
  * the hidden live drawing); the keyboard is routed by legacy-main.ts through scenario-keys.ts.
  */
@@ -15,7 +17,29 @@ import { importModelXml, sanitizeXmlText } from '../services/drawio-xml';
 import { configureDiagramRendering } from '../ui/diagram-graph-setup';
 import { installStencilAutoload } from '../ui/drawio-stencil-autoload';
 import type { ScenarioData, ScenarioSet, ScenarioStepData } from './scenario-model';
+import { renderStepUml, showUmlResult } from './step-uml';
+import type { UmlRenderResult } from './step-uml';
+import { showMarkdown } from './markdown';
 import './scenarios.css';
+
+/** localStorage key of the side panel state ('collapsed' | 'open'). */
+export const SIDE_PANEL_KEY = 'rd.scenario.sidePanel';
+
+function readCollapsed(): boolean {
+  try {
+    return localStorage.getItem(SIDE_PANEL_KEY) === 'collapsed';
+  } catch {
+    return false;
+  }
+}
+
+function writeCollapsed(collapsed: boolean): void {
+  try {
+    localStorage.setItem(SIDE_PANEL_KEY, collapsed ? 'collapsed' : 'open');
+  } catch {
+    // storage blocked: remembered for this page only
+  }
+}
 
 export interface ScenarioViewState {
   tabId: string;
@@ -36,6 +60,8 @@ export interface ScenarioViewerOptions {
   onStateChange?(state: ScenarioViewState | null): void;
   /** Banner action "Replace drawing with this step…" (the caller confirms and replaces). */
   onReplaceDrawing?(state: ScenarioViewState, step: ScenarioStepData): void;
+  /** UML renderer of the side panel (default: renderStepUml). */
+  renderUml?(source: string): Promise<UmlRenderResult>;
 }
 
 function el<K extends keyof HTMLElementTagNameMap>(tag: K, className?: string, text?: string): HTMLElementTagNameMap[K] {
@@ -63,6 +89,15 @@ export class ScenarioViewer {
   private unsubscribe: (() => void) | null = null;
   /** Xml currently rendered (re-render only when the step's snapshot changed). */
   private renderedXml: string | null = null;
+  /** Side panel: UML (top) and Markdown text (bottom) of the shown step. */
+  private side: HTMLElement | null = null;
+  private sideToggle: HTMLButtonElement | null = null;
+  private umlEl: HTMLElement | null = null;
+  private textEl: HTMLElement | null = null;
+  private renderedUml: string | null = null;
+  private renderedText: string | null = null;
+  private umlSeq = 0;
+  private collapsed = readCollapsed();
 
   constructor(private readonly options: ScenarioViewerOptions) {}
 
@@ -127,6 +162,9 @@ export class ScenarioViewer {
     this.unsubscribe?.();
     this.unsubscribe = null;
     this.renderedXml = null;
+    this.renderedUml = null;
+    this.renderedText = null;
+    this.umlSeq++;
     if (this.wrapper) this.wrapper.hidden = true;
     this.graph?.getDataModel().clear();
     // Only the active tab's div is shown: after a tab switch the switch has shown the new one
@@ -191,8 +229,31 @@ export class ScenarioViewer {
     exit.title = 'Back to the live drawing (Esc)';
     banner.append(badge, prev, text, next, replace, exit);
     const host = el('div', 'rd-scn-view-host');
-    wrapper.append(banner, host);
+    const side = el('aside', 'rd-scn-side');
+    side.dataset.testid = 'scenario-side-panel';
+    side.setAttribute('aria-label', 'Step UML and text');
+    const sideHead = el('div', 'rd-scn-side-head');
+    const sideTitle = el('span', 'rd-scn-side-title', 'UML & text');
+    const sideToggle = el('button', 'rd-scn-side-toggle');
+    sideToggle.type = 'button';
+    sideHead.append(sideTitle, sideToggle);
+    const sideBody = el('div', 'rd-scn-side-body');
+    const umlSection = el('section', 'rd-scn-side-section');
+    umlSection.appendChild(el('h3', 'rd-scn-side-heading', 'UML'));
+    const umlEl = el('div', 'rd-scn-side-uml');
+    umlEl.setAttribute('aria-live', 'polite');
+    umlSection.appendChild(umlEl);
+    const textSection = el('section', 'rd-scn-side-section');
+    textSection.appendChild(el('h3', 'rd-scn-side-heading', 'Text'));
+    const textEl = el('div', 'rd-scn-side-text rd-scn-markdown');
+    textSection.appendChild(textEl);
+    sideBody.append(umlSection, textSection);
+    side.append(sideHead, sideBody);
+    const body = el('div', 'rd-scn-view-body');
+    body.append(host, side);
+    wrapper.append(banner, body);
     this.options.graphContainer.appendChild(wrapper);
+    sideToggle.addEventListener('click', () => this.setSideCollapsed(!this.collapsed));
 
     prev.addEventListener('click', () => this.go(-1));
     next.addEventListener('click', () => this.go(1));
@@ -211,6 +272,32 @@ export class ScenarioViewer {
     this.errorEl = error;
     this.prevBtn = prev;
     this.nextBtn = next;
+    this.side = side;
+    this.sideToggle = sideToggle;
+    this.umlEl = umlEl;
+    this.textEl = textEl;
+    this.applySideState();
+  }
+
+  /** Collapses/expands the UML & text panel (remembered in localStorage). */
+  setSideCollapsed(collapsed: boolean): void {
+    this.collapsed = collapsed;
+    writeCollapsed(collapsed);
+    this.applySideState();
+  }
+
+  isSideCollapsed(): boolean {
+    return this.collapsed;
+  }
+
+  private applySideState(): void {
+    if (!this.side || !this.sideToggle) return;
+    this.side.classList.toggle('rd-scn-side-collapsed', this.collapsed);
+    this.sideToggle.textContent = this.collapsed ? '‹' : '›';
+    const label = this.collapsed ? 'Show the UML and text panel' : 'Hide the UML and text panel';
+    this.sideToggle.title = label;
+    this.sideToggle.setAttribute('aria-label', label);
+    this.sideToggle.setAttribute('aria-expanded', String(!this.collapsed));
   }
 
   private ensureGraph(): Graph {
@@ -263,7 +350,27 @@ export class ScenarioViewer {
       this.renderedXml = step.xml;
       this.loadSnapshot(step.xml);
     }
+    this.renderSide(step);
     this.options.onStateChange?.({ ...this.state });
+  }
+
+  /** UML (async: a server rendering may take a while; stale answers are dropped) and Markdown. */
+  private renderSide(step: ScenarioStepData): void {
+    if (step.text !== this.renderedText) {
+      this.renderedText = step.text;
+      showMarkdown(this.textEl!, step.text, 'No text for this step.');
+    }
+    if (step.uml === this.renderedUml) return;
+    this.renderedUml = step.uml;
+    const seq = ++this.umlSeq;
+    const host = this.umlEl!;
+    host.classList.add('rd-scn-busy');
+    const render = this.options.renderUml ?? ((source: string) => renderStepUml(source));
+    void render(step.uml).then((result) => {
+      if (seq !== this.umlSeq) return;
+      host.classList.remove('rd-scn-busy');
+      showUmlResult(host, result, 'No UML diagram for this step.');
+    });
   }
 
   private loadSnapshot(xml: string): void {

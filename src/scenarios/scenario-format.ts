@@ -5,7 +5,8 @@
  * Layout of a saved tab:
  *   <diagram id=main name=<tab> rdScenarios='{"v":1,"scenarios":[{id,name,description},...]}'> (main page)
  *   <diagram id=<step id> name="<Scenario> / <n>. <step>" rdScenarioId rdScenarioName [rdScenarioDescription]
- *            rdStepId rdStepName [rdStepDescription]> <mxGraphModel/> </diagram>   (one per step, in order)
+ *            rdStepId rdStepName [rdStepDescription] [rdStepUml] [rdStepText]> <mxGraphModel/> </diagram>
+ *            (one per step, in order; rdStepUml = PlantUML source, rdStepText = Markdown, both multi-line)
  *   ...preserved pages of the opened file (extraPages)...
  *
  * draw.io keeps unknown `<diagram>` attributes: a page's DOM node is kept as `DiagramPage.node` and
@@ -26,6 +27,10 @@ export const SCENARIO_DESCRIPTION_ATTR = 'rdScenarioDescription';
 export const STEP_ID_ATTR = 'rdStepId';
 export const STEP_NAME_ATTR = 'rdStepName';
 export const STEP_DESCRIPTION_ATTR = 'rdStepDescription';
+/** PlantUML source of the step's UML diagram (multi-line; `\n` written as `&#xa;`). */
+export const STEP_UML_ATTR = 'rdStepUml';
+/** Markdown text of the step (multi-line; `\n` written as `&#xa;`). */
+export const STEP_TEXT_ATTR = 'rdStepText';
 
 const INDEX_VERSION = 1;
 
@@ -78,6 +83,8 @@ export function buildScenarioPages(scenarios: ScenarioData[], usedIds: Set<strin
       diagram.setAttribute(STEP_ID_ATTR, step.id);
       diagram.setAttribute(STEP_NAME_ATTR, step.name);
       if (step.description) diagram.setAttribute(STEP_DESCRIPTION_ATTR, step.description);
+      if (step.uml) diagram.setAttribute(STEP_UML_ATTR, step.uml);
+      if (step.text) diagram.setAttribute(STEP_TEXT_ATTR, step.text);
       diagram.appendChild(doc.importNode(model, true));
       modelDoc.childNodes.forEach((node) => {
         if (node.nodeType === Node.COMMENT_NODE) diagram.appendChild(doc.createComment(node.nodeValue ?? ''));
@@ -156,6 +163,8 @@ export function assembleScenarios(mainPage: Element | null | undefined, stepPage
       name: page.getAttribute(STEP_NAME_ATTR) ?? stepNameFromPageName(page.getAttribute('name')),
       description: page.getAttribute(STEP_DESCRIPTION_ATTR) ?? '',
       xml,
+      uml: page.getAttribute(STEP_UML_ATTR) ?? '',
+      text: page.getAttribute(STEP_TEXT_ATTR) ?? '',
     };
     scenario.steps.push(step);
   }

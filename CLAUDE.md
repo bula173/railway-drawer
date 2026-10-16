@@ -29,7 +29,8 @@ npm run drawio:palettes     # regenerate palettes + stencil sets from the pinned
 ```
 
 CI (`.github/workflows/build-and-deploy.yml`) runs typecheck, typecheck:tests, lint, test:run, build and the any-port
-Playwright subset (legacy-smoke, drawio-palette, templates, scenarios, style-edit, share, gitlab, ertms-data). It does not deploy.
+Playwright subset (legacy-smoke, drawio-palette, templates, scenarios, style-edit, share, gitlab, ertms-data,
+scenario-uml-text). It does not deploy.
 
 ### E2E and port 80
 
@@ -67,7 +68,12 @@ Playwright subset (legacy-smoke, drawio-palette, templates, scenarios, style-edi
   intercepted and must not happen.
 - `tests/e2e/scenarios.spec.ts` (any port): new scenario, 3 steps, ←/→ presentation, Esc restores the live drawing and
   its undo history, rename/reorder (↓ and drag)/delete step, reload, File > Save pages "<Scenario> / <n>. <step>",
-  reopen; replace drawing (confirm, Ctrl+Z). `drawio-embed.spec.ts` also round-trips a scenario file through draw.io.
+  reopen; replace drawing (confirm, Ctrl+Z). `drawio-embed.spec.ts` also round-trips a scenario file through draw.io
+  (incl. multi-line `rdStepUml`/`rdStepText` with quotes, markup and Polish characters).
+- `tests/e2e/scenario-uml-text.spec.ts` (any port): step editor with PlantUML sequence + Markdown (live previews), 2 steps,
+  view step 1 -> side panel UML svg + Markdown heading/list, Next -> step 2 content (drawing too), ← back, collapse kept
+  over a reload, edit keeps the values, File > Save `.drawio` has `rdStepUml`/`rdStepText`, File > Export Scenario (HTML)
+  has 2 drawings (data: SVG images), 2 UML SVGs and the Markdown. Fails if anything goes to a PlantUML server.
 - `tests/e2e/templates.spec.ts` (any port): ERTMS palette 18 entries, Templates tab 22 ERTMS templates (search,
   insert, open as new diagram, drag), tab bar labels not cut, Save as Template… -> reload -> insert, rename, delete.
 - `tests/e2e/ertms-data.spec.ts` (any port): ERTMS palette signal/balise get their kind and IDs on insert, Data panel
@@ -293,13 +299,19 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
 
 - Per tab (diagram): `ScenarioSet` (`scenario-model.ts`) held by the tab's `ProjectService.scenarios`
   (`saveLoadController.getScenarios()`); a scenario = id/name/description + ordered steps; a step =
-  id/name/description + `xml`, a snapshot of the tab's whole drawing (`serializeToXml()`, a draw.io `<mxGraphModel>`).
+  id/name/description + three parts: `xml`, a snapshot of the tab's whole drawing (`serializeToXml()`, a draw.io
+  `<mxGraphModel>`), `uml` (PlantUML source, usually a sequence diagram; '' = none) and `text` (Markdown; '' = none).
+  `cleanMultiline` normalizes both: `\n` line ends, tabs -> 4 spaces, XML-invalid control characters dropped, cap
+  100 000 chars (attribute normalization would turn literal tabs/CRs into spaces in draw.io).
   Reads return copies; changes notify subscribers. `sanitizeScenarios` cleans untrusted data (cache, files):
   unique ids, names capped (80/200), steps without a model dropped.
 - **File format** (`scenario-format.ts`): main page first, with `rdScenarios='{"v":1,"scenarios":[{id,name,description}]}'`
   on its `<diagram>` (order, empty scenarios); then one page per step, `name="<Scenario> / <n>. <step>"`, attributes
-  `rdScenarioId rdScenarioName [rdScenarioDescription] rdStepId rdStepName [rdStepDescription]`, page id = step id
-  when unique; then the preserved non-scenario `extraPages`. draw.io v32.4.1 keeps unknown `<diagram>` attributes
+  `rdScenarioId rdScenarioName [rdScenarioDescription] rdStepId rdStepName [rdStepDescription] [rdStepUml] [rdStepText]`,
+  page id = step id when unique; then the preserved non-scenario `extraPages`. `rdStepUml`/`rdStepText` are only written
+  when non-empty; newlines are character references (`&#10;` from Chrome's XMLSerializer, `&#xa;` from `xmlUtils.getXml`),
+  which draw.io's save keeps (verified in `drawio-embed.spec.ts`). Decision: no extra text cell is added to the step page
+  for draw.io viewers (it would change the snapshot); draw.io shows the attributes only in the file. draw.io v32.4.1 keeps unknown `<diagram>` attributes
   (page node kept as `DiagramPage.node` and cloned on save, Pages.js:12 / EditorUi.js:2520; also on "Duplicate page",
   so duplicate step ids are made unique on load) — verified live in `tests/e2e/drawio-embed.spec.ts`. Parse:
   pages with `rdStepId`/`rdScenarioId` become steps (compressed pages ok; an unreadable one stays a kept page),
@@ -316,6 +328,38 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   i/n: <step>", Prev/Next, "Replace drawing with this step…" (confirm; `replaceDrawingWithSnapshot` = one undoable
   root change), "Back to editing". `body.rd-scenario-viewing` disables menu bar, toolbar, left panel and properties.
   Closes on tab switch/close and when its steps are deleted; follows renames/updates/reorders.
+- **Side panel** of the view (`aside.rd-scn-side`, right of the canvas): UML on top, Markdown below, re-rendered only when
+  the step's `uml`/`text` changed (stale async UML results dropped); Prev/Next/keys switch drawing + UML + text together;
+  collapse toggle `.rd-scn-side-toggle`, state in localStorage `rd.scenario.sidePanel` (`collapsed`|`open`).
+- **Step editor** (`step-editor.ts` `openStepEditor`, used by "+ Add step" and ✎): `.rd-tpl-modal.rd-scn-editor` with
+  `template-name`/`template-description` inputs (same as the template dialogs, so old tests/flows work), drawing fieldset
+  (add: current drawing captured; edit: radio keep / replace with current drawing), PlantUML textarea `step-uml` + preview
+  `.rd-scn-uml-preview`, Markdown textarea `step-text` + preview `.rd-scn-md-preview` (debounced 300 ms), "Server…" row for
+  the optional PlantUML server. Enter in a text field or Ctrl/Cmd+Enter saves, Enter in a textarea is a newline, Esc
+  cancels; no click-outside cancel. Steps show UML/Text badges in the list.
+- **PlantUML** (decision): the app's PlantUML tab (`plantuml-parser.ts` + `*-diagram-renderer.ts`) builds maxGraph cells
+  and only knows participants/plain messages/one-line notes, so steps use a new local renderer
+  `src/services/plantuml-sequence-svg.ts` (PlantUML text -> SVG string, offline): participants (all 8 kinds, aliases,
+  colours, stereotypes), `->` `-->` `->>` `<-` `<->` `->x` `->o` `[->` `->]` `-[#c]>`, self messages, `\n`, autonumber,
+  notes (left/right/over, multi-line, hnote/rnote), ref, alt/else/opt/loop/par/break/critical/group (nested),
+  activate/deactivate/destroy, `++`/`--`/`return`, `== divider ==`, `...` delays, `|||`, title; unknown lines -> warnings
+  shown under the diagram. Text width is estimated (no canvas). All text escaped, colours validated.
+  `step-uml.ts` `renderStepUml`: sequence -> local; other diagram types -> PlantUML server only if the user set one
+  (`src/services/plantuml-server.ts`, localStorage `rd.plantuml.server`, no default: nothing is ever sent otherwise);
+  GET `<server>/svg/<encoded>` (UTF-8 -> deflate-raw via CompressionStream -> PlantUML base64 `0-9A-Za-z-_`),
+  credentials omitted, no referrer, 15 s timeout, answers sanitized (`sanitizeSvgMarkup`: no script/foreignObject/on*,
+  only `#`/data:image hrefs), cached per server+text; errors are shown ("PlantUML server offline — …", HTTP status).
+- **Markdown** (`markdown.ts`, in-house, no dependency): headings, paragraphs, hard breaks, emphasis/strong/strike, code
+  spans/fences, quotes, nested lists, task items, pipe tables (alignment classes), hr, links (http(s)/mailto/#, always
+  `target=_blank rel="noopener noreferrer"`), autolinks, images (https or base64 data:image only). Raw HTML is shown as
+  text; output then goes through the allow-list `sanitizeHtml` (DOM, `<template>`) before insertion/export.
+- **Export** (`scenario-export.ts`): File > "Export Scenario (HTML)…" (`data-action="exportScenarioHtml"` -> window event
+  `scenario-export-request` -> `install-scenarios.ts`: the scenario shown, else the only one with steps, else a chooser)
+  and ⇩ per scenario in the panel. One self-contained HTML file `<diagram> - <scenario>.html`: CSP meta (no scripts),
+  per step drawing as `data:image/svg+xml` `<img>` (`renderXmlToSvgDocument` from diagram-image-export),
+  UML inline SVG, sanitized Markdown; steps break pages when printed (for the later PDF).
+- Templates store only cells (no scenarios), so they are unaffected; cache, share links and remote providers serialize
+  the step pages/JSON and carry `uml`/`text` automatically.
 - Keyboard: the dispatcher in `legacy-main.ts` calls `scenarios.handleKeydown(e)` right after Ctrl+S; only while the
   view is open: ←/PageUp, →/PageDown, Home/End, Esc; editing shortcuts are prevented, every other key is stopped
   (`scenario-keys.ts` `scenarioKeyAction`); fields/IME and Ctrl+S pass.
@@ -324,7 +368,11 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   ✎ ⧉ ×, drag to reorder), "+ Add step". Dialogs = `promptTemplateDetails`/`confirmTemplateDialog`. Wiring:
   `install-scenarios.ts`. File > New (model.clear) keeps the tab's scenarios, like its extra pages.
 - Tests: `src/scenarios/__tests__/` (model, format/round trip/draw.io edits/share split, tabs + cache + view + keys +
-  panel), `tests/e2e/scenarios.spec.ts` (any port).
+  panel; `scenario-uml-text-format.test.ts` multi-line UML/Markdown round trips incl. a draw.io-style re-save, cache,
+  share; `markdown.test.ts` rendering + XSS payloads; `scenario-uml-text-view.test.ts` editor/previews, side panel
+  Prev/Next, collapse, edit keep/replace, HTML export), `src/__tests__/services/plantuml-scenario.test.ts` (sequence
+  parser/SVG, encoding vs PlantUML's documented example, mocked server, no request without a server),
+  `tests/e2e/scenarios.spec.ts` and `tests/e2e/scenario-uml-text.spec.ts` (any port).
 
 ### draw.io editor (`src/drawio/`)
 

@@ -138,9 +138,16 @@ test.describe('draw.io embed', () => {
       .replace(/&/g, '&amp;')
       .replace(/"/g, '&quot;')
       .replace(/</g, '&lt;');
+    // step 1 also carries a multi-line PlantUML diagram and Markdown text (quotes, markup, Polish)
+    const uml = '@startuml\nTrain -> RBC : MA "żądanie" <1> & więcej\n  RBC --> Train : MA\n@enduml';
+    const text = '## Krok 1 — „sygnał”\n- **S1** <zielony> & \'ok\'\n\n    wcięcie';
+    const attr = (value: string): string =>
+      value.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '&#xa;');
     const step = (n: number, id: string, name: string): string =>
       `<diagram id="${id}" name="Wjazd pociągu / ${n}. ${name}" rdScenarioId="scn-a" rdScenarioName="Wjazd pociągu" ` +
-      `rdStepId="${id}" rdStepName="${name}" rdStepDescription="krok ${n}">${model(`step ${n}`)}</diagram>`;
+      `rdStepId="${id}" rdStepName="${name}" rdStepDescription="krok ${n}"` +
+      (n === 1 ? ` rdStepUml="${attr(uml)}" rdStepText="${attr(text)}"` : '') +
+      `>${model(`step ${n}`)}</diagram>`;
     const fixture =
       `<mxfile host="railway-drawer"><diagram id="main" name="Stacja" rdScenarios="${index}">${model('main')}</diagram>` +
       step(1, 'stepOne', 'Sygnał') +
@@ -168,6 +175,12 @@ test.describe('draw.io embed', () => {
     expect(xml).toContain('rdScenarios=');
     expect(xml).toContain('rdStepId="stepTwo"');
     expect(xml).toContain('rdStepDescription="krok 2"');
+    // multi-line attribute values survive draw.io's save unchanged
+    const kept = await page.evaluate((fileXml) => {
+      const pages = Array.from(new DOMParser().parseFromString(fileXml, 'text/xml').getElementsByTagName('diagram'));
+      return [pages[1]?.getAttribute('rdStepUml'), pages[1]?.getAttribute('rdStepText')];
+    }, xml);
+    expect(kept).toEqual([uml, text]);
 
     // ... and the legacy editor rebuilds the scenario from draw.io's file
     await page.goto('/?editor=legacy');
@@ -186,5 +199,8 @@ test.describe('draw.io embed', () => {
     await expect(panel.locator('.rd-scn-step-name')).toHaveText(['Sygnał', 'Zajęcie']);
     await panel.locator('.rd-scn-step').nth(1).click();
     await expect(page.locator('.rd-scn-banner-title')).toHaveText('Wjazd pociągu — step 2/2: Zajęcie');
+    await page.locator('.rd-scn-prev').click();
+    await expect(page.locator('.rd-scn-side-text h2')).toHaveText('Krok 1 — „sygnał”');
+    await expect(page.locator('.rd-scn-side-uml')).toContainText('MA "żądanie" <1> & więcej');
   });
 });

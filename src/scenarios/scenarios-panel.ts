@@ -3,10 +3,11 @@
  * @brief "Scenarios" view of the right panel (next to Properties) for the ACTIVE tab.
  *
  * Lists the tab's scenarios; each expands to its ordered steps (thumbnail, number, name,
- * description). Scenario actions: new, edit (name/description), duplicate, delete (confirmed),
- * present from step 1. Step actions: add (captures the current drawing), update from the current
- * drawing (confirmed), edit, duplicate, delete (confirmed), reorder (drag, or ↑/↓). Clicking a step
- * shows it read-only on the canvas (ScenarioViewer). Dialogs are the app's template dialogs.
+ * description, UML/Text badges). Scenario actions: new, edit (name/description), duplicate, export
+ * as HTML, delete (confirmed), present from step 1. Step actions: add / edit in the step editor
+ * (step-editor.ts: name, description, drawing capture/keep, PlantUML, Markdown), update from the
+ * current drawing (confirmed), duplicate, delete (confirmed), reorder (drag, or ↑/↓). Clicking a
+ * step shows it read-only on the canvas (ScenarioViewer). Other dialogs are the template dialogs.
  */
 import { promptTemplateDetails, confirmTemplateDialog } from '../ui/templates/template-dialogs';
 import type { TemplateDetails, TemplateDetailsOptions } from '../ui/templates/template-dialogs';
@@ -14,6 +15,8 @@ import type { PaletteEntry } from '../ui/drawio-palette/contracts';
 import { extractShapeNames } from '../ui/drawio-palette/library-adapter';
 import type { ScenarioData, ScenarioSet, ScenarioStepData } from './scenario-model';
 import type { ScenarioViewState } from './scenario-view';
+import { openStepEditor } from './step-editor';
+import type { StepEditorOptions, StepEditorResult } from './step-editor';
 import './scenarios.css';
 
 export interface ScenarioTabRef {
@@ -55,6 +58,10 @@ export interface ScenariosPanelOptions {
   dialogs?: ScenarioDialogs;
   /** After a step was added or updated (e.g. write the tab cache now and report a full storage). */
   onStepsChanged?(): void;
+  /** Step editor (name, description, drawing, PlantUML, Markdown); default: openStepEditor. */
+  stepEditor?: (opts: StepEditorOptions) => Promise<StepEditorResult | null>;
+  /** "Export as HTML" of a scenario (button hidden when missing). */
+  onExportScenario?(tabId: string, scenarioId: string): void;
 }
 
 export interface ScenariosPanel {
@@ -112,6 +119,7 @@ export function stepThumbnailEntry(step: ScenarioStepData): PaletteEntry {
 export function createScenariosPanel(options: ScenariosPanelOptions): ScenariosPanel {
   const { container, viewer, notify } = options;
   const dialogs = options.dialogs ?? defaultDialogs;
+  const stepEditor = options.stepEditor ?? openStepEditor;
   const thumbnails = options.thumbnails ?? null;
   /** Expanded scenarios, per tab (`<tab id> <scenario id>`). */
   const expanded = new Set<string>();
@@ -201,11 +209,11 @@ export function createScenariosPanel(options: ScenariosPanelOptions): ScenariosP
   }
 
   async function addStep(t: ScenarioTabRef, scenario: ScenarioData): Promise<void> {
-    const details = await dialogs.prompt({
+    const details = await stepEditor({
       heading: 'Add step',
-      hint: `Step ${scenario.steps.length + 1} of "${scenario.name}": a snapshot of the current drawing.`,
+      hint: `Step ${scenario.steps.length + 1} of "${scenario.name}": the current drawing, plus an optional UML diagram and text.`,
       name: `Step ${scenario.steps.length + 1}`,
-      namePlaceholder: 'e.g. Route set',
+      mode: 'add',
       confirmLabel: 'Add step',
     });
     if (!details || !t.scenarios.get(scenario.id)) return;
@@ -216,7 +224,7 @@ export function createScenariosPanel(options: ScenariosPanelOptions): ScenariosP
       notify.error(`Could not capture the drawing: ${error instanceof Error ? error.message : String(error)}`);
       return;
     }
-    t.scenarios.addStep(scenario.id, { name: details.name, description: details.description, xml });
+    t.scenarios.addStep(scenario.id, { name: details.name, description: details.description, xml, uml: details.uml, text: details.text });
     expanded.add(xkey(t.id, scenario.id));
     render();
     options.onStepsChanged?.();
@@ -234,19 +242,38 @@ export function createScenariosPanel(options: ScenariosPanelOptions): ScenariosP
   }
 
   async function editStep(t: ScenarioTabRef, scenario: ScenarioData, index: number, step: ScenarioStepData): Promise<void> {
-    const details = await dialogs.prompt({
+    const details = await stepEditor({
       heading: `Edit step ${index + 1}`,
       name: step.name,
       description: step.description,
-      namePlaceholder: 'e.g. Route set',
+      uml: step.uml,
+      text: step.text,
+      mode: 'edit',
       confirmLabel: 'Save',
     });
     if (!details || !t.scenarios.get(scenario.id)) return;
+    let xml: string | undefined;
+    if (details.captureDrawing) {
+      try {
+        xml = t.captureDrawing();
+      } catch (error) {
+        notify.error(`Could not capture the drawing: ${error instanceof Error ? error.message : String(error)}`);
+        return;
+      }
+    }
     try {
-      t.scenarios.updateStep(scenario.id, step.id, details);
+      t.scenarios.updateStep(scenario.id, step.id, {
+        name: details.name,
+        description: details.description,
+        uml: details.uml,
+        text: details.text,
+        ...(xml !== undefined ? { xml } : {}),
+      });
     } catch {
       // the step was deleted meanwhile
+      return;
     }
+    options.onStepsChanged?.();
   }
 
   async function deleteStep(t: ScenarioTabRef, scenario: ScenarioData, index: number, step: ScenarioStepData): Promise<void> {
@@ -302,6 +329,12 @@ export function createScenariosPanel(options: ScenariosPanelOptions): ScenariosP
     title.append(el('span', 'rd-scn-step-num', `${index + 1}.`), el('span', 'rd-scn-step-name', step.name));
     text.appendChild(title);
     if (step.description) text.appendChild(el('div', 'rd-scn-step-desc', step.description));
+    if (step.uml || step.text) {
+      const badges = el('div', 'rd-scn-step-badges');
+      if (step.uml) badges.appendChild(el('span', 'rd-scn-badge-small rd-scn-badge-uml', 'UML'));
+      if (step.text) badges.appendChild(el('span', 'rd-scn-badge-small rd-scn-badge-text', 'Text'));
+      text.appendChild(badges);
+    }
 
     const actions = el('div', 'rd-scn-step-actions');
     const up = iconButton('rd-scn-step-up', '↑', 'Move step up');
@@ -309,7 +342,7 @@ export function createScenariosPanel(options: ScenariosPanelOptions): ScenariosP
     const down = iconButton('rd-scn-step-down', '↓', 'Move step down');
     down.disabled = index === scenario.steps.length - 1;
     const update = iconButton('rd-scn-step-update', '⟳', 'Update step from the current drawing');
-    const edit = iconButton('rd-scn-step-edit', '✎', 'Rename / edit description');
+    const edit = iconButton('rd-scn-step-edit', '✎', 'Edit step: name, drawing, UML, text');
     const dup = iconButton('rd-scn-step-duplicate', '⧉', 'Duplicate step');
     const del = iconButton('rd-scn-step-delete rd-scn-danger', '×', 'Delete step');
     actions.append(up, down, update, edit, dup, del);
@@ -412,7 +445,14 @@ export function createScenariosPanel(options: ScenariosPanelOptions): ScenariosP
     const edit = iconButton('rd-scn-edit', '✎', 'Rename / edit description');
     const dup = iconButton('rd-scn-duplicate', '⧉', 'Duplicate scenario');
     const del = iconButton('rd-scn-delete rd-scn-danger', '×', 'Delete scenario');
-    actions.append(play, edit, dup, del);
+    actions.append(play, edit, dup);
+    if (options.onExportScenario) {
+      const exportBtn = iconButton('rd-scn-export', '⇩', 'Export scenario as HTML (drawings, UML, text)');
+      exportBtn.disabled = n === 0;
+      exportBtn.addEventListener('click', () => options.onExportScenario?.(t.id, scenario.id));
+      actions.append(exportBtn);
+    }
+    actions.append(del);
     head.append(toggle, label, actions);
     item.appendChild(head);
 
@@ -443,7 +483,7 @@ export function createScenariosPanel(options: ScenariosPanelOptions): ScenariosP
       }
       const add = el('button', 'rd-tpl-btn rd-tpl-btn-small rd-scn-add-step', '+ Add step');
       add.type = 'button';
-      add.title = 'Add the current drawing as the next step';
+      add.title = 'Add the current drawing (plus optional UML and text) as the next step';
       add.addEventListener('click', () => run(() => addStep(t, scenario)));
       body.appendChild(add);
       item.appendChild(body);

@@ -14,6 +14,10 @@ export interface ScenarioStepData {
   description: string;
   /** Snapshot of the whole drawing: a native draw.io `<mxGraphModel>` (optionally followed by comments). */
   xml: string;
+  /** PlantUML source of the step's UML diagram (typically a sequence diagram); '' = none. */
+  uml: string;
+  /** Markdown text of the step; '' = none. */
+  text: string;
 }
 
 export interface ScenarioData {
@@ -25,6 +29,9 @@ export interface ScenarioData {
 
 export const MAX_SCENARIO_NAME = 80;
 export const MAX_SCENARIO_DESCRIPTION = 200;
+/** Caps of a step's PlantUML source and Markdown text (characters). */
+export const MAX_STEP_UML = 100_000;
+export const MAX_STEP_TEXT = 100_000;
 
 /** Random id in draw.io's page-id alphabet (step ids double as page ids of the step pages). */
 export function generateScenarioId(prefix = ''): string {
@@ -47,8 +54,26 @@ function cleanDescription(value: unknown): string {
   return (typeof value === 'string' ? value.trim() : '').slice(0, MAX_SCENARIO_DESCRIPTION);
 }
 
+/**
+ * Multi-line step content (PlantUML, Markdown): `\n` line ends (CR LF / CR converted) and tabs as 4
+ * spaces. Both are stored in `<diagram>` attributes; XML attribute-value normalization turns literal
+ * tabs and CRs into spaces, and browsers' XMLSerializer (draw.io's save) only escapes `\n` (as `&#xa;`
+ * via mxUtils.getXml), so only `\n` survives a round trip through draw.io. Control characters that XML
+ * cannot carry are dropped.
+ */
+export function cleanMultiline(value: unknown, max: number): string {
+  if (typeof value !== 'string') return '';
+  const text = value
+    .replace(/\r\n?/g, '\n')
+    .replace(/\t/g, '    ')
+    // characters XML cannot carry (they would make the saved file unreadable)
+    // eslint-disable-next-line no-control-regex
+    .replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f\ufffe\uffff]/g, '');
+  return text.trim() ? text.slice(0, max) : '';
+}
+
 function copyStep(step: ScenarioStepData): ScenarioStepData {
-  return { id: step.id, name: step.name, description: step.description, xml: step.xml };
+  return { id: step.id, name: step.name, description: step.description, xml: step.xml, uml: step.uml, text: step.text };
 }
 
 function copyScenario(scenario: ScenarioData): ScenarioData {
@@ -84,6 +109,8 @@ export function sanitizeScenarios(raw: unknown): ScenarioData[] {
           name: cleanName(st.name, `Step ${steps.length + 1}`),
           description: cleanDescription(st.description),
           xml: st.xml,
+          uml: cleanMultiline(st.uml, MAX_STEP_UML),
+          text: cleanMultiline(st.text, MAX_STEP_TEXT),
         });
       }
     }
@@ -228,14 +255,20 @@ export class ScenarioSet {
 
   // ------------------------------------------------------------------ steps
 
-  /** Appends a step (or inserts it at `index`) with the given drawing snapshot. */
-  addStep(scenarioId: string, step: { name: string; description?: string; xml: string }, index?: number): ScenarioStepData {
+  /** Appends a step (or inserts it at `index`) with the given drawing snapshot, UML and text. */
+  addStep(
+    scenarioId: string,
+    step: { name: string; description?: string; xml: string; uml?: string; text?: string },
+    index?: number
+  ): ScenarioStepData {
     const scenario = this.require(scenarioId);
     const created: ScenarioStepData = {
       id: this.newStepId(),
       name: cleanName(step.name, `Step ${scenario.steps.length + 1}`),
       description: cleanDescription(step.description),
       xml: step.xml,
+      uml: cleanMultiline(step.uml, MAX_STEP_UML),
+      text: cleanMultiline(step.text, MAX_STEP_TEXT),
     };
     const at = index === undefined ? scenario.steps.length : Math.max(0, Math.min(scenario.steps.length, index));
     scenario.steps.splice(at, 0, created);
@@ -250,11 +283,17 @@ export class ScenarioSet {
     return { scenario, step: scenario.steps[index], index };
   }
 
-  updateStep(scenarioId: string, stepId: string, fields: { name?: string; description?: string; xml?: string }): void {
+  updateStep(
+    scenarioId: string,
+    stepId: string,
+    fields: { name?: string; description?: string; xml?: string; uml?: string; text?: string }
+  ): void {
     const { step } = this.requireStep(scenarioId, stepId);
     if (fields.name !== undefined) step.name = cleanName(fields.name, step.name);
     if (fields.description !== undefined) step.description = cleanDescription(fields.description);
     if (fields.xml !== undefined) step.xml = fields.xml;
+    if (fields.uml !== undefined) step.uml = cleanMultiline(fields.uml, MAX_STEP_UML);
+    if (fields.text !== undefined) step.text = cleanMultiline(fields.text, MAX_STEP_TEXT);
     this.changed();
   }
 
