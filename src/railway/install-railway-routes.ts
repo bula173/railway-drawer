@@ -1,0 +1,277 @@
+/**
+ * @file install-railway-routes.ts
+ * @brief Wires the railway engineering tools into the legacy editor (called once from
+ *        legacy-main.ts after installRailwayData): the route tool (toolbar `#btn-route-tool`,
+ *        Extras > Route Tool), route and interlocking tables, Update Route Paths, Recalculate km,
+ *        View > Snap to Track / Show Routes / km Ruler.
+ *
+ * Menu items carry `data-action="railwayRoute:<command>"`; MenuController dispatches the window
+ * event `railway-route-request` with the command as detail (see RouteCommand).
+ */
+import { InternalEvent } from '@maxgraph/core';
+import type { EventSource, Graph } from '@maxgraph/core';
+import './railway-routes.css';
+import type { TabManager } from '../ui/tabs';
+import { GraphOverlay, pointsAttr, svgEl } from './graph-overlay';
+import { downloadBlob } from './install-railway-data';
+import type { RailwayNotifier } from './install-railway-data';
+import { formatChainage, kmScaleOf, recalculateKm, rulerTicks } from './km';
+import { getCellKind, setRailwayData } from './object-data';
+import { fileBaseName } from './report';
+import type { RouteTableTab } from './route-tables-dialog';
+import { openRouteTablesDialog } from './route-tables-dialog';
+import { RouteTool } from './route-tool';
+import { getRoutesLayer, setRoutesVisible, updateRoutePaths } from './route-store';
+import { buildConflictTable, buildRouteTable, detectConflicts, routeRecords } from './routes';
+import { installSnapToTrack, readSnapEnabled, writeSnapEnabled } from './snap';
+import { collectObjects } from './validation';
+
+export type RouteCommand =
+  | 'tool'
+  | 'routeTable'
+  | 'conflictTable'
+  | 'updateRoutes'
+  | 'recalcKm'
+  | 'toggleSnap'
+  | 'toggleRoutes'
+  | 'toggleKmRuler';
+
+export const ROUTE_REQUEST_EVENT = 'railway-route-request';
+export const KM_RULER_KEY = 'rd.railway.kmRuler';
+
+export interface RailwayRoutesHandle {
+  tool: RouteTool;
+  run(command: RouteCommand): void;
+  isSnapEnabled(): boolean;
+  isKmRulerOn(): boolean;
+  destroy(): void;
+}
+
+let current: RailwayRoutesHandle | null = null;
+
+/** The installed handle (tests, e2e through the dev server's module graph). */
+export function getRailwayRoutes(): RailwayRoutesHandle | null {
+  return current;
+}
+
+function readFlag(key: string, fallback: boolean): boolean {
+  try {
+    const v = localStorage.getItem(key);
+    return v === null ? fallback : v === '1';
+  } catch {
+    return fallback;
+  }
+}
+
+function writeFlag(key: string, on: boolean): void {
+  try {
+    localStorage.setItem(key, on ? '1' : '0');
+  } catch {
+    // session only
+  }
+}
+
+export interface InstallRailwayRoutesOptions {
+  download?: (blob: Blob, fileName: string) => void;
+}
+
+export function installRailwayRoutes(tabManager: TabManager, notify: RailwayNotifier, options: InstallRailwayRoutesOptions = {}): RailwayRoutesHandle {
+  const download = options.download ?? downloadBlob;
+  const getGraph = (): Graph | null => tabManager.getActiveTab()?.graph ?? null;
+  let snap = readSnapEnabled();
+  let ruler = readFlag(KM_RULER_KEY, false);
+  const button = document.getElementById('btn-route-tool');
+
+  const syncMenu = (): void => {
+    const set = (cmd: RouteCommand, on: boolean): void => {
+      document.querySelectorAll(`[data-action="railwayRoute:${cmd}"]`).forEach((item) => item.setAttribute('aria-checked', String(on)));
+    };
+    set('toggleSnap', snap);
+    set('toggleKmRuler', ruler);
+    const layer = getGraph() ? getRoutesLayer(getGraph()!.getDataModel()) : null;
+    set('toggleRoutes', layer ? layer.isVisible() : true);
+    set('tool', tool.isActive());
+  };
+
+  const tool = new RouteTool({
+    getGraph,
+    notify,
+    onChange: (active) => {
+      button?.classList.toggle('active', active);
+      button?.setAttribute('aria-pressed', String(active));
+      syncMenu();
+    },
+  });
+
+  // ---- per graph: snap to track
+  const snapInstalled = new WeakMap<Graph, () => void>();
+  const ensureSnap = (): void => {
+    for (const tab of tabManager.getAllTabs()) {
+      if (!snapInstalled.has(tab.graph)) snapInstalled.set(tab.graph, installSnapToTrack(tab.graph, () => snap));
+    }
+  };
+
+  // ---- km ruler of the selected track
+  let rulerGraph: Graph | null = null;
+  let rulerOverlay: GraphOverlay | null = null;
+  let rulerBound: { selection: EventSource; model: EventSource } | null = null;
+  const drawRuler = (): void => {
+    if (!rulerOverlay || !rulerGraph) return;
+    const selected = rulerGraph.getSelectionCells().filter((c) => getCellKind(c) === 'track' || getCellKind(c) === 'trackSection');
+    const objects = selected.length > 0 ? collectObjects(rulerGraph.getDataModel()) : [];
+    const children: SVGElement[] = [];
+    for (const cell of selected) {
+      const o = objects.find((x) => x.cell === cell);
+      const scale = o ? kmScaleOf(o) : null;
+      if (!scale) continue;
+      const g = svgEl('g', { class: 'rd-km-ruler', 'data-track': o!.id });
+      g.append(svgEl('polyline', { points: pointsAttr(scale.line), class: 'rd-km-ruler-line' }));
+      for (const t of rulerTicks(scale)) {
+        const len = t.major ? 10 : 5;
+        g.append(svgEl('line', { x1: t.point.x, y1: t.point.y, x2: t.point.x + t.normal.x * len, y2: t.point.y + t.normal.y * len, class: t.major ? 'rd-km-tick rd-km-major' : 'rd-km-tick' }));
+        if (t.major) {
+          const label = svgEl('text', { x: t.point.x + t.normal.x * 20, y: t.point.y + t.normal.y * 20 + 3, class: 'rd-km-label', 'text-anchor': 'middle' });
+          label.textContent = formatChainage(t.km);
+          g.append(label);
+        }
+      }
+      children.push(g);
+    }
+    rulerOverlay.set(children);
+  };
+  const unbindRuler = (): void => {
+    rulerBound?.selection.removeListener(drawRuler);
+    rulerBound?.model.removeListener(drawRuler);
+    rulerBound = null;
+    rulerOverlay?.destroy();
+    rulerOverlay = null;
+    rulerGraph = null;
+  };
+  const bindRuler = (): void => {
+    const graph = ruler ? getGraph() : null;
+    if (graph === rulerGraph) {
+      drawRuler();
+      return;
+    }
+    unbindRuler();
+    if (!graph) return;
+    rulerGraph = graph;
+    rulerOverlay = new GraphOverlay(graph, 'rd-km-ruler-overlay');
+    const selection = graph.getSelectionModel() as unknown as EventSource;
+    const model = graph.getDataModel() as unknown as EventSource;
+    selection.addListener(InternalEvent.CHANGE, drawRuler);
+    model.addListener(InternalEvent.CHANGE, drawRuler);
+    rulerBound = { selection, model };
+    drawRuler();
+  };
+
+  const showTables = (tab: RouteTableTab): void => {
+    const active = tabManager.getActiveTab();
+    if (!active) return;
+    const records = routeRecords(collectObjects(active.graph.getDataModel()));
+    const conflicts = detectConflicts(records);
+    openRouteTablesDialog({
+      routes: buildRouteTable(records, conflicts),
+      conflicts: buildConflictTable(conflicts),
+      tab,
+      baseName: fileBaseName(active.name),
+      download,
+    });
+  };
+
+  const run = (command: RouteCommand): void => {
+    ensureSnap();
+    const graph = getGraph();
+    switch (command) {
+      case 'tool':
+        tool.toggle();
+        break;
+      case 'routeTable':
+        showTables('routes');
+        break;
+      case 'conflictTable':
+        showTables('conflicts');
+        break;
+      case 'updateRoutes': {
+        if (!graph) break;
+        const r = updateRoutePaths(graph.getDataModel());
+        if (r.failed.length > 0) notify.warning(`Updated ${r.updated} route${r.updated === 1 ? '' : 's'}; no path in the drawing for ${r.failed.join(', ')}`);
+        else notify.success(`Updated ${r.updated} route path${r.updated === 1 ? '' : 's'}`);
+        break;
+      }
+      case 'recalcKm': {
+        if (!graph) break;
+        const updates = recalculateKm(collectObjects(graph.getDataModel()));
+        if (updates.length === 0) {
+          notify.success('km positions are up to date (objects need a track with km start and end)');
+          break;
+        }
+        const byCell = new Map(updates.map((u) => [u.cell, u.km]));
+        setRailwayData(graph.getDataModel(), [...byCell.keys()], (cell) => ({ values: { km: byCell.get(cell) ?? '' } }));
+        notify.success(`Recalculated km of ${updates.length} object${updates.length === 1 ? '' : 's'}`);
+        break;
+      }
+      case 'toggleSnap':
+        snap = !snap;
+        writeSnapEnabled(snap);
+        break;
+      case 'toggleRoutes': {
+        if (!graph) break;
+        const layer = getRoutesLayer(graph.getDataModel());
+        if (!layer) notify.warning('The diagram has no routes yet.');
+        else setRoutesVisible(graph, !layer.isVisible());
+        break;
+      }
+      case 'toggleKmRuler':
+        ruler = !ruler;
+        writeFlag(KM_RULER_KEY, ruler);
+        bindRuler();
+        if (ruler && graph && !graph.getSelectionCells().some((c) => getCellKind(c) === 'track' || getCellKind(c) === 'trackSection')) {
+          notify.warning('Select a track with km start and km end to see its km ruler.');
+        }
+        break;
+    }
+    syncMenu();
+  };
+
+  const onRequest = (evt: Event): void => {
+    const cmd = (evt as CustomEvent<string>).detail as RouteCommand;
+    run(cmd);
+  };
+  const onTab = (): void => {
+    if (tool.isActive()) tool.deactivate();
+    ensureSnap();
+    bindRuler();
+    syncMenu();
+  };
+  const onButton = (e: Event): void => {
+    e.preventDefault();
+    run('tool');
+  };
+  window.addEventListener(ROUTE_REQUEST_EVENT, onRequest);
+  window.addEventListener('tab-changed', onTab);
+  window.addEventListener('tab-closed', onTab);
+  button?.addEventListener('click', onButton);
+  ensureSnap();
+  bindRuler();
+  syncMenu();
+
+  const handle: RailwayRoutesHandle = {
+    tool,
+    run,
+    isSnapEnabled: () => snap,
+    isKmRulerOn: () => ruler,
+    destroy() {
+      tool.deactivate();
+      unbindRuler();
+      for (const tab of tabManager.getAllTabs()) snapInstalled.get(tab.graph)?.();
+      window.removeEventListener(ROUTE_REQUEST_EVENT, onRequest);
+      window.removeEventListener('tab-changed', onTab);
+      window.removeEventListener('tab-closed', onTab);
+      button?.removeEventListener('click', onButton);
+      if (current === handle) current = null;
+    },
+  };
+  current = handle;
+  return handle;
+}

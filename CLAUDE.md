@@ -30,7 +30,7 @@ npm run drawio:palettes     # regenerate palettes + stencil sets from the pinned
 
 CI (`.github/workflows/build-and-deploy.yml`) runs typecheck, typecheck:tests, lint, test:run, build and the any-port
 Playwright subset (legacy-smoke, drawio-palette, templates, scenarios, style-edit, share, gitlab, ertms-data,
-scenario-uml-text). It does not deploy.
+ertms-routes, scenario-uml-text). It does not deploy.
 
 ### E2E and port 80
 
@@ -80,6 +80,11 @@ scenario-uml-text). It does not deploy.
   fields (km chainage `12+345`, enum, text with Polish characters), duplicate signal ID -> Checks error + badge,
   click selects the cell, Edit -> fix clears it, Ctrl+Z/Ctrl+Y, File > Export Railway Data > Signals (CSV: BOM, rows),
   reload keeps the data, File > Save writes `<object rdKind=... rdId=...>`.
+- `tests/e2e/ertms-routes.spec.ts` (any port): loads a layout (T1, T2, points W1, S1-S3) with `saveLoadController.load`,
+  Route tool (toolbar `#btn-route-tool`, clicks on signals) creates R1 (S1->S3, W1 reverse) and R2 (S1->S2, W1 normal),
+  Extras > Route Table… rows + CSV/XLSX, Interlocking tab lists R1/R2, route edited in the Data panel, wrong points
+  position -> `route-points` issue, View > Show Routes, ERTMS signal dropped near T1 snaps (side, rdTrackId, km),
+  moved next to T2 re-snaps, Ctrl+Z/Ctrl+Y, Extras > Recalculate km, km ruler.
 - `tests/e2e/style-edit.spec.ts` (any port): line color/width/dash and fill through the Properties panel on cells from an
   ERTMS template, a user template and the draw.io/ERTMS palettes (group first click, child second click); checks the
   cell's own style and the SVG. Reads the graph via `import('/src/services/service-registry.ts')` (dev server only).
@@ -264,7 +269,8 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   Stored numbers are canonical (`12+345` / `12,345` -> `12.345`); unparseable input is stored as typed and reported.
 - **Catalogue** (`catalogue.ts`): 13 kinds (signal, balise, baliseGroup, track, trackSection, points, levelCrossing,
   bufferStop, rbc, leu, axleCounter, train, route), fields typed text/number/integer/km/enum/ref/refList with
-  unit/min/max (NID_C 0–1023, NID_BG/NID_RBC 0–16383, balises in group 1–8, aspects 1–6). Every kind has `id`
+  unit/min/max (NID_C 0–1023, NID_BG/NID_RBC 0–16383, balises in group 1–8, aspects 1–6); route fields see
+  "Railway engineering tools" below. Every kind has `id`
   (required, generated `S1`, `BG1`, ... from `idPrefix`, case-insensitive unique per kind).
 - **Pre-assigned kinds**: ERTMS library entries by title (`kindForLibraryTitle`: Signal Left/Right n -> signal with
   direction reverse/nominal and n aspects, (Single) Balise Left/Right -> balise, TC -> trackSection tc, Track ->
@@ -294,6 +300,60 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   per report (inline strings, numbers as numbers, bold frozen header).
 - Tests: `src/railway/__tests__/` (catalogue + real ERTMS library mapping, object data round trip/undo/insert,
   every rule, CSV/xlsx, panels with real tabs).
+
+### Railway engineering tools (`src/railway/`: topology, routes, snapping, km)
+
+- **Topology** (`topology.ts` `buildTopology(objects)`, model only): links = cells of kind track/trackSection/points
+  with a centre line (edges, or vertices whose long side >= 3x the short side, >= `MIN_LINK_LENGTH` 15; a 10x12 TC marker
+  is no link). A points edge (ERTMS "Point Left/Right") is the diverging leg; a compact points vertex is a junction node.
+  A section lying on a track (ends + middle within `JOIN_TOLERANCE` 8) is not a link but names the track pieces it covers.
+  Links are cut where another link's end, a points vertex or a covering section's end touches them; ends within 8 are
+  one node (edges with vertex terminals end at the vertex centre). Node with 3 pieces + a points leg (or at a points
+  vertex) = points junction: reverse = leg (vertex: piece outside the straightest pair), toe = straight piece most
+  opposite to reverse. `passage()`: turns over 90° impossible; toe<->normal needs normal, toe<->reverse reverse,
+  normal<->reverse impossible. **Direction convention**: nominal = increasing x (vertical: increasing y), like the
+  ERTMS "Signal Right" symbol. `locate()` puts objects on the nearest piece within 40, preferring their `rdTrackId`.
+- **Routes** (`routes.ts`): `findRoutePaths(topo, entry, exit)` = DFS from the entry signal in its direction (none =
+  both), each piece once, stops at the next signal facing the same way, ends when passing the exit signal in its
+  direction; returns all paths (shortest first, max 8, deduplicated) with points + required positions, sections in
+  order (`blockOf`: section, else track; points legs skipped), overlap (first section beyond the exit signal, normal
+  preferred), length (metres from the link's `rdLength` or km span; drawing units where unknown -> `approximate`).
+  Route kind fields: entry/exit signal, `points` (text `W1:normal, W2:reverse`; `parsePointsList` also takes N/R/+/-),
+  `sections`, `overlap` (refLists), `length` [m]. `detectConflicts` = pairs sharing a section (path or overlap) or
+  needing opposite points positions; `buildRouteTable` / `buildConflictTable` -> report.ts `Table`s.
+- **Route objects** (`route-store.ts`): an edge per route on its own layer `rd-routes` ("Routes", a root child, saved as a
+  draw.io layer), translucent orange, label `%rdId%`, `movable/bendable/editable=0`; `addRoute` = one undo step (layer
+  if missing + edge + the ID appended to the entry signal's `rdRoutes`). View > Show Routes toggles the layer's
+  `visible` directly (view state, saved with the file, not undoable). Extras > Update Route Paths recomputes
+  geometry/length from the drawing (path with the stored sections). Route edges are selectable -> Data panel edits them.
+- **Route tool** (`route-tool.ts` `RouteTool`): toolbar `#btn-route-tool` / Extras > Route Tool; while active a
+  capture-phase listener on `#graph-container` swallows pointer events (no selection/moves), hit test `signalAt`
+  (bounds + 6, else nearest centre within 25). Floating panel `.rd-route-tool` (status, path radios
+  `.rd-route-path`, ID input prefilled `R<n>`, "Create route"), highlight in `graph-overlay.ts` `GraphOverlay` (SVG
+  group in the view's overlay pane, transform = scale/translate, not in the model). Esc/✕ leaves; tab switch leaves.
+- **Tables** (`route-tables-dialog.ts`): Extras > Route Table… / Interlocking Table… -> `.rd-route-dialog` with tabs
+  Routes / Interlocking, Export CSV (shown tab, `<diagram>-routes.csv` / `-interlocking.csv`) and XLSX (both sheets).
+- **Checks** (`route-checks.ts`, run from `validateObjects`): `route-endpoint` (no entry/exit, same signal, endpoint
+  of another kind; the generic missing-reference skips such IDs), `route-path` (no path in the signal direction, or
+  sections not a continuous path), `route-points` (syntax, unknown/contradictory points, missing or wrong required
+  position; warning: listed points not on the path). Conflicts are not issues (interlocking table).
+- **Snap to track** (`snap.ts`): signals, balises, axle counters, LEUs inserted or moved within `SNAP_DISTANCE` 40 of a
+  track/section line are put on it (balise/axle counter centred; signal on the right-hand side of its travel direction:
+  nominal = below a left-to-right track, reverse above; LEU nominal side; gap `SNAP_GAP` 4), get `rdTrackId` (track
+  preferred over a section drawn on it) and, when the track has km start/end, `rdKm`. Runs in the model's
+  `BEFORE_UNDO` (like maxGraph's LayoutManager), so it is part of the same undo step; ignores edits with a RootChange
+  (loads, snapshots). View > Snap to Track, localStorage `rd.railway.snapToTrack` (default on). Installed on every tab
+  graph (`installRailwayRoutes` sweeps on start/`tab-changed`).
+- **km** (`km.ts`): linear from km start (first point of the centre line) to km end; Extras > Recalculate km sets `rdKm`
+  of objects naming a track with km start/end (within 60, rounded to metres, one undo step). View > km Ruler
+  (localStorage `rd.railway.kmRuler`): ticks/labels (`12+345`) along the selected track(s) in an overlay; round step so
+  ticks are >= 40 units apart, every 5th step and the ends labelled.
+- Wiring (`install-railway-routes.ts`, one call in `legacy-main.ts`): menu items `data-action="railwayRoute:<cmd>"`
+  (tool, routeTable, conflictTable, updateRoutes, recalcKm, toggleSnap, toggleRoutes, toggleKmRuler) -> MenuController
+  dispatches window event `railway-route-request`; `aria-checked` kept in sync. `getRailwayRoutes()` returns the handle.
+- Tests: `src/railway/__tests__/routes.test.ts` (topology incl. sections/vertex points, path search over points and
+  signal directions, route tool, route object draw.io round trip + undo, conflicts/tables, route checks, snapping math +
+  undoable snap, km interpolation/recalc/ruler), `tests/e2e/ertms-routes.spec.ts`.
 
 ### Scenarios (`src/scenarios/`, right panel "Properties | Data | Checks | Scenarios")
 

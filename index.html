@@ -92,6 +92,10 @@
               <div class="menu-dropdown-item" data-action="showGrid">Show Grid</div>
               <div class="menu-dropdown-item" data-action="toggleDarkMode" role="menuitemcheckbox" aria-checked="false">Dark Mode</div>
               <div class="menu-dropdown-item" data-action="toggleErtmsTab" role="menuitemcheckbox" aria-checked="false">ERTMS Tab</div>
+              <!-- src/railway/install-railway-routes.ts -->
+              <div class="menu-dropdown-item" data-action="railwayRoute:toggleSnap" role="menuitemcheckbox" aria-checked="true" title="Put signals, balises, axle counters and LEUs onto the nearest track and set their track">Snap to Track</div>
+              <div class="menu-dropdown-item" data-action="railwayRoute:toggleRoutes" role="menuitemcheckbox" aria-checked="true" title="Show or hide the Routes layer">Show Routes</div>
+              <div class="menu-dropdown-item" data-action="railwayRoute:toggleKmRuler" role="menuitemcheckbox" aria-checked="false" title="km ruler along the selected track (km start/end)">km Ruler</div>
               <div style="height: 1px; background: #e0e0e0; margin: 4px 0;"></div>
               <div class="menu-dropdown-item" data-action="switchEditorDrawio">Switch to draw.io editor</div>
             </div>
@@ -119,6 +123,11 @@
               <div style="height: 1px; background: #e0e0e0; margin: 4px 0;"></div>
               <div class="menu-dropdown-item" data-action="editData">Edit Data…</div>
               <div class="menu-dropdown-item" data-action="railwayChecks">Railway Checks</div>
+              <div class="menu-dropdown-item" data-action="railwayRoute:tool" role="menuitemcheckbox" aria-checked="false">Route Tool</div>
+              <div class="menu-dropdown-item" data-action="railwayRoute:routeTable">Route Table…</div>
+              <div class="menu-dropdown-item" data-action="railwayRoute:conflictTable">Interlocking Table…</div>
+              <div class="menu-dropdown-item" data-action="railwayRoute:updateRoutes">Update Route Paths</div>
+              <div class="menu-dropdown-item" data-action="railwayRoute:recalcKm">Recalculate km</div>
               <div class="menu-dropdown-item" data-action="editStyle">Edit Style</div>
               <div style="height: 1px; background: #e0e0e0; margin: 4px 0;"></div>
               <div class="menu-dropdown-item" data-action="preferences">Preferences</div>
@@ -191,6 +200,7 @@
           <button class="toolbar-btn" id="btn-brush" title="Brush - Draw thick strokes" data-tool="brush">🖌</button>
           <button class="toolbar-btn" id="btn-eraser" title="Eraser - Erase drawn content" data-tool="eraser">🧹</button>
           <button class="toolbar-btn" id="btn-line-tool" title="Line - Draw straight lines" data-tool="line">📏</button>
+          <button class="toolbar-btn" id="btn-route-tool" title="Route tool: click a start signal, then an end signal" aria-pressed="false">⇢R</button>
           <div class="toolbar-separator"></div>
           <button class="toolbar-btn" id="btn-upload-image" title="Upload custom shape image">🖼</button>
         </div>

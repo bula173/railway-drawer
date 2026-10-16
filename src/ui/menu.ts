@@ -188,6 +188,11 @@ export class MenuController {
       window.dispatchEvent(new CustomEvent('railway-export-request', { detail: action.slice('exportRailway:'.length) }));
       return;
     }
+    // View/Extras railway route tools: src/railway/install-railway-routes.ts
+    if (action.startsWith('railwayRoute:')) {
+      window.dispatchEvent(new CustomEvent('railway-route-request', { detail: action.slice('railwayRoute:'.length) }));
+      return;
+    }
 
     switch (action) {
       case 'new':
