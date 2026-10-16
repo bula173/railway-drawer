@@ -37,7 +37,7 @@ export class ImageUploadController {
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0,0,0,0.5);
+      background: var(--rd-overlay);
       align-items: center;
       justify-content: center;
       z-index: 10000;
@@ -45,31 +45,31 @@ export class ImageUploadController {
 
     const modalContent = document.createElement('div') as HTMLElement;
     (modalContent as HTMLElement).style.cssText = `
-      background: white;
+      background: var(--rd-surface);
       border-radius: 8px;
       padding: 24px;
       max-width: 500px;
       width: 90%;
       max-height: 80vh;
       overflow-y: auto;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+      box-shadow: 0 2px 12px var(--rd-shadow);
     `;
 
     // Title
     const title = document.createElement('h2');
     title.textContent = 'Upload Custom Shape Image';
-    title.style.cssText = 'margin: 0 0 16px 0; font-size: 18px; color: #333;';
+    title.style.cssText = 'margin: 0 0 16px 0; font-size: 18px; color: var(--rd-text);';
     modalContent.appendChild(title);
 
     // Upload area
     const uploadArea = document.createElement('div');
     uploadArea.style.cssText = `
-      border: 2px dashed #cccccc;
+      border: 2px dashed var(--rd-border-strong);
       border-radius: 8px;
       padding: 40px;
       text-align: center;
       cursor: pointer;
-      background: #f9f9f9;
+      background: var(--rd-surface-2);
       margin-bottom: 16px;
       transition: background 0.2s;
     `;
@@ -84,14 +84,14 @@ export class ImageUploadController {
     uploadArea.addEventListener('click', () => fileInput.click());
     uploadArea.addEventListener('dragover', (e) => {
       e.preventDefault();
-      uploadArea.style.background = '#f0f0f0';
+      uploadArea.style.background = 'var(--rd-hover)';
     });
     uploadArea.addEventListener('dragleave', () => {
-      uploadArea.style.background = '#f9f9f9';
+      uploadArea.style.background = 'var(--rd-surface-2)';
     });
     uploadArea.addEventListener('drop', (e) => {
       e.preventDefault();
-      uploadArea.style.background = '#f9f9f9';
+      uploadArea.style.background = 'var(--rd-surface-2)';
       const files = e.dataTransfer?.files;
       if (files?.[0]) {
         this.handleFileSelect(files[0], modalContent, uploadArea);
@@ -119,7 +119,7 @@ export class ImageUploadController {
     // Name input
     const nameLabel = document.createElement('label');
     nameLabel.textContent = 'Shape Name:';
-    nameLabel.style.cssText = 'display: block; margin-bottom: 8px; font-weight: 600; color: #333;';
+    nameLabel.style.cssText = 'display: block; margin-bottom: 8px; font-weight: 600; color: var(--rd-text);';
     modalContent.appendChild(nameLabel);
 
     const nameInput = document.createElement('input');
@@ -129,7 +129,7 @@ export class ImageUploadController {
     nameInput.style.cssText = `
       width: 100%;
       padding: 8px;
-      border: 1px solid #ccc;
+      border: 1px solid var(--rd-border-strong);
       border-radius: 4px;
       font-size: 14px;
       box-sizing: border-box;
@@ -140,13 +140,13 @@ export class ImageUploadController {
     // Existing images
     const existingImagesLabel = document.createElement('label');
     existingImagesLabel.textContent = 'Your Custom Shapes:';
-    existingImagesLabel.style.cssText = 'display: block; margin-bottom: 8px; font-weight: 600; color: #333;';
+    existingImagesLabel.style.cssText = 'display: block; margin-bottom: 8px; font-weight: 600; color: var(--rd-text);';
     modalContent.appendChild(existingImagesLabel);
 
     const imagesList = document.createElement('div');
     imagesList.id = 'custom-images-list';
     imagesList.style.cssText = `
-      border: 1px solid #e0e0e0;
+      border: 1px solid var(--rd-border);
       border-radius: 4px;
       max-height: 200px;
       overflow-y: auto;
@@ -167,8 +167,8 @@ export class ImageUploadController {
     uploadBtn.textContent = 'Upload & Create Shape';
     uploadBtn.style.cssText = `
       padding: 10px 16px;
-      background: #1976d2;
-      color: white;
+      background: var(--rd-accent);
+      color: var(--rd-accent-text);
       border: none;
       border-radius: 4px;
       cursor: pointer;
@@ -187,9 +187,9 @@ export class ImageUploadController {
     closeBtn.textContent = 'Close';
     closeBtn.style.cssText = `
       padding: 10px 16px;
-      background: #f5f5f5;
-      color: #333;
-      border: 1px solid #ddd;
+      background: var(--rd-surface-3);
+      color: var(--rd-text);
+      border: 1px solid var(--rd-border-strong);
       border-radius: 4px;
       cursor: pointer;
       font-weight: 600;
@@ -221,13 +221,13 @@ export class ImageUploadController {
         previewContainer.style.display = 'block';
         // Build via DOM APIs: file.name is user-controlled and must not be parsed as HTML
         const wrapper = document.createElement('div');
-        wrapper.style.cssText = 'border: 1px solid #ddd; border-radius: 4px; padding: 8px; background: #f9f9f9;';
+        wrapper.style.cssText = 'border: 1px solid var(--rd-border-strong); border-radius: 4px; padding: 8px; background: var(--rd-surface-2);';
         const img = document.createElement('img');
         const result = e.target?.result;
         if (typeof result === 'string') img.src = result;
         img.style.cssText = 'max-width: 100%; max-height: 200px; border-radius: 4px;';
         const caption = document.createElement('p');
-        caption.style.cssText = 'margin: 8px 0 0 0; font-size: 12px; color: #666;';
+        caption.style.cssText = 'margin: 8px 0 0 0; font-size: 12px; color: var(--rd-text-muted);';
         caption.textContent = `${file.name} (${(file.size / 1024).toFixed(1)} KB)`;
         wrapper.appendChild(img);
         wrapper.appendChild(caption);
@@ -247,7 +247,7 @@ export class ImageUploadController {
       const customImage = await this.imageService.uploadImage(file, name);
 
       uploadBtn.textContent = '✓ Upload & Create Shape';
-      uploadBtn.style.background = '#4caf50';
+      uploadBtn.style.background = 'var(--rd-success-solid)';
 
       // Update list
       const imagesList = modalContent.querySelector('#custom-images-list') as HTMLElement;
@@ -256,7 +256,7 @@ export class ImageUploadController {
       setTimeout(() => {
         (uploadBtn as HTMLButtonElement).disabled = false;
         uploadBtn.textContent = 'Upload & Create Shape';
-        (uploadBtn as HTMLElement).style.background = '#1976d2';
+        (uploadBtn as HTMLElement).style.background = 'var(--rd-accent)';
 
         // Reset form
         const nameInput = modalContent.querySelector('#image-name-input') as HTMLInputElement;
@@ -280,7 +280,7 @@ export class ImageUploadController {
     const images = this.imageService.getImages();
 
     if (images.length === 0) {
-      imagesList.innerHTML = '<p style="padding: 12px; text-align: center; color: #999;">No custom shapes uploaded yet</p>';
+      imagesList.innerHTML = '<p style="padding: 12px; text-align: center; color: var(--rd-text-subtle);">No custom shapes uploaded yet</p>';
       return;
     }
 
@@ -289,7 +289,7 @@ export class ImageUploadController {
       const item = document.createElement('div');
       item.style.cssText = `
         padding: 12px;
-        border-bottom: 1px solid #e0e0e0;
+        border-bottom: 1px solid var(--rd-border);
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -299,10 +299,10 @@ export class ImageUploadController {
       info.style.cssText = 'flex: 1;';
       // img.name is user-controlled (persisted in localStorage): use textContent, not innerHTML
       const nameEl = document.createElement('div');
-      nameEl.style.cssText = 'font-weight: 600; font-size: 13px; color: #333;';
+      nameEl.style.cssText = 'font-weight: 600; font-size: 13px; color: var(--rd-text);';
       nameEl.textContent = img.name;
       const sizeEl = document.createElement('div');
-      sizeEl.style.cssText = 'font-size: 11px; color: #999;';
+      sizeEl.style.cssText = 'font-size: 11px; color: var(--rd-text-subtle);';
       sizeEl.textContent = `${img.width}×${img.height}px`;
       info.appendChild(nameEl);
       info.appendChild(sizeEl);
@@ -314,7 +314,7 @@ export class ImageUploadController {
         background: none;
         border: none;
         font-size: 20px;
-        color: #d32f2f;
+        color: var(--rd-danger);
         cursor: pointer;
         padding: 0;
         width: 24px;

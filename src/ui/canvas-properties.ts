@@ -1,4 +1,5 @@
 import { Graph } from '@maxgraph/core';
+import { applyGridBackground } from './grid-background';
 
 export type CanvasSize = 'A4' | 'A5' | 'Letter' | 'Fullscreen' | 'Custom';
 
@@ -100,37 +101,8 @@ export class CanvasProperties {
 
   toggleGrid(enabled: boolean) {
     this.config.gridEnabled = enabled;
-    const gridColor = '#e0e0e0';
-    const container = this.graph.getContainer();
-
-    if (!container) return;
-
-    if (enabled) {
-      const gridSize = this.config.gridSize;
-      const gridImage = this.createGridSvg(gridColor, gridSize);
-      container.style.backgroundImage = `url('${gridImage}')`;
-      container.style.backgroundSize = `${gridSize}px ${gridSize}px`;
-      container.style.backgroundRepeat = 'repeat';
-      container.style.backgroundPosition = '0 0';
-    } else {
-      container.style.backgroundImage = 'none';
-    }
-  }
-
-  private createGridSvg(color: string, gridSize: number): string {
-    const svg = `
-      <svg width="${gridSize}" height="${gridSize}" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <pattern id="grid" width="${gridSize}" height="${gridSize}" patternUnits="userSpaceOnUse">
-            <path d="M ${gridSize} 0 L 0 0 0 ${gridSize}" fill="none" stroke="${color}" stroke-width="0.5"/>
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="white" />
-        <rect width="100%" height="100%" fill="url(#grid)" />
-      </svg>
-    `;
-    const blob = new Blob([svg], { type: 'image/svg+xml' });
-    return URL.createObjectURL(blob);
+    // Theme-aware tile (light/dark grid color), see grid-background.ts
+    applyGridBackground(this.graph.getContainer(), this.config.gridSize, enabled);
   }
 
   setGridSize(size: number) {

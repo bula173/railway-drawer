@@ -30,7 +30,7 @@ npm run drawio:palettes     # regenerate palettes + stencil sets from the pinned
 
 CI (`.github/workflows/build-and-deploy.yml`) runs typecheck, typecheck:tests, lint, test:run, build and the any-port
 Playwright subset (legacy-smoke, drawio-palette, templates, scenarios, style-edit, share, gitlab, ertms-data,
-scenario-uml-text). It does not deploy.
+scenario-uml-text, theme-contrast). It does not deploy.
 
 ### E2E and port 80
 
@@ -80,6 +80,14 @@ scenario-uml-text). It does not deploy.
   fields (km chainage `12+345`, enum, text with Polish characters), duplicate signal ID -> Checks error + badge,
   click selects the cell, Edit -> fix clears it, Ctrl+Z/Ctrl+Y, File > Export Railway Data > Signals (CSV: BOM, rows),
   reload keeps the data, File > Save writes `<object rdKind=... rdId=...>`.
+- `tests/e2e/theme-contrast.spec.ts` (any port): light and dark theme (localStorage `rd.theme` with the opposite
+  system preference emulated, and View > Dark Mode both ways): opens every surface (menus + submenu, toolbar, left tabs
+  Shapes/Templates/Layers/PlantUML/ERTMS, Properties canvas/Text/Style/Arrange, Data, Checks, Scenarios, scenario
+  dialog + step editor + view, context menu, Save as Template (with error), Share, Keyboard Shortcuts, image upload,
+  shape designer, all 4 notification types, status/tab bars) and requires WCAG contrast >= 4.5 (3 for large or
+  symbol-only text; disabled exempt) between each visible text's color and its effective background (ancestors
+  composited until opaque). Diagram content (tab graphs, thumbnails, SVG, canvas) is skipped. Offenders are listed as
+  `theme: surface | selector | "text" | fg on bg = ratio`. Screenshots: `test-results/theme-contrast/<theme>-*.png`.
 - `tests/e2e/style-edit.spec.ts` (any port): line color/width/dash and fill through the Properties panel on cells from an
   ERTMS template, a user template and the draw.io/ERTMS palettes (group first click, child second click); checks the
   cell's own style and the SVG. Reads the graph via `import('/src/services/service-registry.ts')` (dev server only).
@@ -105,6 +113,35 @@ scenario-uml-text). It does not deploy.
 - `src/legacy-main.ts` is the whole legacy boot: `registerDrawioCodecs()` first (before any file or cache
   load), shapes, `TabManager`, cache restore, the global keyboard dispatcher, drop handler, left panel,
   Shapes tab (shape toolbar + draw.io palettes), shape designer. `beforeunload` flushes the cache, then destroys the tabs.
+
+### Theming (light / dark app chrome)
+
+- One token set: `src/styles/variables.css` (imported by `style.css`; `drawio/workspace.ts` imports it too). Semantic
+  colors are `--rd-*` (`--rd-bg`, `--rd-surface`/`-2`/`-3`, `--rd-hover`, `--rd-active`, `--rd-text`, `--rd-text-muted`,
+  `--rd-text-subtle`, `--rd-border`, `--rd-border-strong`, `--rd-accent`(+`-hover`, `-text`), `--rd-link`, `--rd-focus`,
+  `--rd-selected`, `--rd-input-bg/-text/-border`, `--rd-button-bg/-text`, `--rd-danger`/`-solid`/`-bg`, `--rd-success*`,
+  `--rd-warning*`, `--rd-info*`, `--rd-hint-*`, `--rd-badge-*`, `--rd-scenario-*`, `--rd-shadow`, `--rd-overlay`,
+  `--rd-backdrop`, `--rd-scrollbar*`, `--rd-canvas-bg`). Light values on `:root`, dark on `:root[data-theme="dark"]`,
+  each with `color-scheme`. The older names (`--background`, `--surface`, `--text`, `--text-secondary`, `--border`,
+  `--rd-chrome-*`) are aliases of them. Never key chrome colors off `prefers-color-scheme`: `<html data-theme>`
+  (index.html before first paint, then `src/drawio-shapes/theme/dark-mode.ts`) already resolves the stored choice
+  (`rd.theme`) against the system.
+- **Never hard-code a chrome color** (CSS, `style=""` in index.html, `element.style.*`/`cssText`/innerHTML in TS): use
+  `var(--rd-...)` or a class. A literal color is only right in one theme (the old bug: dark backgrounds with the light
+  theme's `#333` text). No per-component `:root[data-theme="dark"] .x { color: #... }` overrides either: if a component
+  needs a new color, add a token with a light and a dark value. Text tokens meet WCAG AA (4.5:1) on the surfaces;
+  `theme-contrast.spec.ts` enforces it.
+- Shared classes in `style.css`: `.rd-input`, `.rd-btn` (`.rd-btn-on`, `.rd-btn-locked`), `.rd-btn-solid` +
+  `.rd-btn-primary/-danger`, `.rd-field-label`, `.rd-field-caption`, `.rd-section`, `.rd-caret`, `.rd-sep`, `.rd-strong`,
+  `.rd-tip`, `.context-menu(-item)`, `.prop-tab(.active)`, `.collapsible-header`. Dialogs built in TS with `cssText`
+  use `var(--rd-...)` in those strings. Unstyled
+  inputs/selects/textareas get `--rd-input-*` from a zero-specificity `:where()` rule.
+- Not chrome (keep their own colors): diagram cells (dark rendering = `graph-compat.ts` `setDrawioDarkMode`), palette /
+  template / step thumbnails, PlantUML SVGs (white background like PlantUML), the exported scenario HTML (light).
+- Canvas: tab graph divs get `--rd-canvas-bg` (#fff / draw.io's #121212); the grid is a transparent SVG tile from
+  `src/ui/grid-background.ts` (`applyGridBackground`, used by `GridController` and `CanvasProperties`): both tiles
+  (#e0e0e0 / draw.io dark #424242) are custom properties on the container and CSS picks one by `data-theme`, so a
+  theme switch needs no listener and inactive tabs follow.
 
 ### Legacy editor (maxGraph)
 

@@ -64,7 +64,7 @@ export class DuplicateOffsetController {
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0,0,0,0.5);
+      background: var(--rd-overlay);
       align-items: center;
       justify-content: center;
       z-index: 10000;
@@ -72,23 +72,23 @@ export class DuplicateOffsetController {
 
     const content = document.createElement('div');
     content.style.cssText = `
-      background: white;
+      background: var(--rd-surface);
       border-radius: 8px;
       padding: 24px;
       max-width: 400px;
       width: 90%;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+      box-shadow: 0 2px 12px var(--rd-shadow);
     `;
 
     const title = document.createElement('h3');
     title.textContent = 'Duplicate Multiple Times';
-    title.style.cssText = 'margin: 0 0 16px 0; color: #333;';
+    title.style.cssText = 'margin: 0 0 16px 0; color: var(--rd-text);';
     content.appendChild(title);
 
     // Number of duplicates
     const countLabel = document.createElement('label');
     countLabel.textContent = 'Number of copies:';
-    countLabel.style.cssText = 'display: block; margin-bottom: 8px; font-weight: 600; color: #333;';
+    countLabel.style.cssText = 'display: block; margin-bottom: 8px; font-weight: 600; color: var(--rd-text);';
     content.appendChild(countLabel);
 
     const countInput = document.createElement('input');
@@ -99,7 +99,7 @@ export class DuplicateOffsetController {
     countInput.style.cssText = `
       width: 100%;
       padding: 8px;
-      border: 1px solid #ccc;
+      border: 1px solid var(--rd-border-strong);
       border-radius: 4px;
       box-sizing: border-box;
       margin-bottom: 16px;
@@ -109,7 +109,7 @@ export class DuplicateOffsetController {
     // Offset
     const offsetLabel = document.createElement('label');
     offsetLabel.textContent = 'Offset (px):';
-    offsetLabel.style.cssText = 'display: block; margin-bottom: 8px; font-weight: 600; color: #333;';
+    offsetLabel.style.cssText = 'display: block; margin-bottom: 8px; font-weight: 600; color: var(--rd-text);';
     content.appendChild(offsetLabel);
 
     const offsetInput = document.createElement('input');
@@ -118,7 +118,7 @@ export class DuplicateOffsetController {
     offsetInput.style.cssText = `
       width: 100%;
       padding: 8px;
-      border: 1px solid #ccc;
+      border: 1px solid var(--rd-border-strong);
       border-radius: 4px;
       box-sizing: border-box;
       margin-bottom: 16px;
@@ -133,8 +133,8 @@ export class DuplicateOffsetController {
     createBtn.textContent = 'Create Duplicates';
     createBtn.style.cssText = `
       padding: 10px 16px;
-      background: #1976d2;
-      color: white;
+      background: var(--rd-accent);
+      color: var(--rd-accent-text);
       border: none;
       border-radius: 4px;
       cursor: pointer;
@@ -156,9 +156,9 @@ export class DuplicateOffsetController {
     closeBtn.textContent = 'Cancel';
     closeBtn.style.cssText = `
       padding: 10px 16px;
-      background: #f5f5f5;
-      color: #333;
-      border: 1px solid #ddd;
+      background: var(--rd-surface-3);
+      color: var(--rd-text);
+      border: 1px solid var(--rd-border-strong);
       border-radius: 4px;
       cursor: pointer;
       font-weight: 600;

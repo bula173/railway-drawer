@@ -11,6 +11,7 @@
  * exactly like changing the React `key`.
  */
 
+import '../styles/variables.css';
 import './workspace.css';
 import { logger } from './logger';
 import { buildEmbedUrl, createDrawioClient, DEFAULT_DRAWIO_URL, getDrawioOrigin } from './protocol';

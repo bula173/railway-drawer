@@ -321,8 +321,9 @@ export class PropertiesPanel {
     const flipV = style.flipV || false;
     const flipHBtn = document.getElementById('btn-flipHorizontal');
     const flipVBtn = document.getElementById('btn-flipVertical');
-    if (flipHBtn) flipHBtn.style.background = flipH ? '#e0e0e0' : '#f5f5f5';
-    if (flipVBtn) flipVBtn.style.background = flipV ? '#e0e0e0' : '#f5f5f5';
+    // Pressed look via the theme tokens (style.css .rd-btn-on), never a hard-coded color
+    flipHBtn?.classList.toggle('rd-btn-on', !!flipH);
+    flipVBtn?.classList.toggle('rd-btn-on', !!flipV);
 
     // Lock state of the displayed cell
     this.updateLockButton(!!cell.locked);
@@ -332,7 +333,7 @@ export class PropertiesPanel {
     const lockBtn = document.getElementById('btn-lock');
     if (lockBtn) {
       lockBtn.textContent = isLocked ? 'Unlock' : 'Lock';
-      lockBtn.style.background = isLocked ? '#ffd700' : '#f5f5f5';
+      lockBtn.classList.toggle('rd-btn-locked', isLocked);
     }
   }
 
@@ -350,8 +351,9 @@ export class PropertiesPanel {
     const tabs = document.querySelectorAll('.prop-tab') as NodeListOf<HTMLButtonElement>;
     tabs.forEach((tab) => {
       const isActive = tab.getAttribute('data-tab') === tabName;
-      tab.style.color = isActive ? '#333' : '#999';
-      tab.style.borderBottomColor = isActive ? '#2196F3' : 'transparent';
+      // Colors of .prop-tab / .prop-tab.active come from the theme tokens in style.css
+      tab.classList.toggle('active', isActive);
+      tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
     });
 
     const contents = document.querySelectorAll('.prop-tab-content') as NodeListOf<HTMLElement>;

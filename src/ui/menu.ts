@@ -114,10 +114,10 @@ export class MenuController {
     dialog.style.top = '50%';
     dialog.style.left = '50%';
     dialog.style.transform = 'translate(-50%, -50%)';
-    dialog.style.background = 'white';
+    dialog.style.background = 'var(--rd-surface)';
     dialog.style.padding = '20px';
     dialog.style.borderRadius = '8px';
-    dialog.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+    dialog.style.boxShadow = '0 4px 12px var(--rd-shadow)';
     dialog.style.zIndex = '10001';
     dialog.style.minWidth = '300px';
 
@@ -135,8 +135,8 @@ export class MenuController {
     saveBtn.textContent = 'Save';
     saveBtn.style.flex = '1';
     saveBtn.style.padding = '8px';
-    saveBtn.style.background = '#1976d2';
-    saveBtn.style.color = 'white';
+    saveBtn.style.background = 'var(--rd-accent)';
+    saveBtn.style.color = 'var(--rd-accent-text)';
     saveBtn.style.border = 'none';
     saveBtn.style.borderRadius = '4px';
     saveBtn.style.cursor = 'pointer';
@@ -145,8 +145,8 @@ export class MenuController {
     cancelBtn.textContent = 'Cancel';
     cancelBtn.style.flex = '1';
     cancelBtn.style.padding = '8px';
-    cancelBtn.style.background = '#f0f0f0';
-    cancelBtn.style.border = '1px solid #ccc';
+    cancelBtn.style.background = 'var(--rd-hover)';
+    cancelBtn.style.border = '1px solid var(--rd-border-strong)';
     cancelBtn.style.borderRadius = '4px';
     cancelBtn.style.cursor = 'pointer';
 
@@ -164,7 +164,7 @@ export class MenuController {
 
     input.style.width = '100%';
     input.style.padding = '8px';
-    input.style.border = '1px solid #ccc';
+    input.style.border = '1px solid var(--rd-border-strong)';
     input.style.borderRadius = '4px';
     input.style.boxSizing = 'border-box';
 

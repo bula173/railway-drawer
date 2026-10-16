@@ -41,7 +41,7 @@ export class ShortcutsHelpController {
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0,0,0,0.5);
+      background: var(--rd-overlay);
       align-items: center;
       justify-content: center;
       z-index: 10000;
@@ -49,20 +49,20 @@ export class ShortcutsHelpController {
 
     const modalContent = document.createElement('div');
     modalContent.style.cssText = `
-      background: white;
+      background: var(--rd-surface);
       border-radius: 8px;
       padding: 24px;
       max-width: 800px;
       width: 90%;
       max-height: 80vh;
       overflow-y: auto;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+      box-shadow: 0 2px 12px var(--rd-shadow);
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     `;
 
     const title = document.createElement('h2');
     title.textContent = '⌨️ Keyboard Shortcuts';
-    title.style.cssText = 'margin: 0 0 20px 0; font-size: 20px; color: #333;';
+    title.style.cssText = 'margin: 0 0 20px 0; font-size: 20px; color: var(--rd-text);';
     modalContent.appendChild(title);
 
     const shortcuts = [
@@ -110,7 +110,7 @@ export class ShortcutsHelpController {
       sectionTitle.style.cssText = `
         margin: 16px 0 8px 0;
         font-size: 14px;
-        color: #666;
+        color: var(--rd-text-muted);
         font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 0.5px;
@@ -126,7 +126,7 @@ export class ShortcutsHelpController {
 
       items.forEach(([shortcut, description]) => {
         const row = document.createElement('tr');
-        row.style.cssText = 'border-bottom: 1px solid #eee;';
+        row.style.cssText = 'border-bottom: 1px solid var(--rd-border);';
 
         const keyCell = document.createElement('td');
         keyCell.textContent = shortcut;
@@ -135,7 +135,7 @@ export class ShortcutsHelpController {
           font-family: 'Courier New', monospace;
           font-size: 12px;
           font-weight: 600;
-          color: #0066cc;
+          color: var(--rd-link);
           width: 200px;
           vertical-align: top;
         `;
@@ -145,7 +145,7 @@ export class ShortcutsHelpController {
         descCell.style.cssText = `
           padding: 8px 12px;
           font-size: 13px;
-          color: #555;
+          color: var(--rd-text-muted);
           vertical-align: top;
         `;
 
@@ -161,8 +161,8 @@ export class ShortcutsHelpController {
     closeBtn.textContent = 'Close (or press Escape)';
     closeBtn.style.cssText = `
       padding: 10px 16px;
-      background: #1976d2;
-      color: white;
+      background: var(--rd-accent);
+      color: var(--rd-accent-text);
       border: none;
       border-radius: 4px;
       cursor: pointer;

@@ -112,7 +112,7 @@ export class EdgePropertiesController {
     sourceSelect.id = 'edge-source-arrow';
     sourceSelect.style.width = '100%';
     sourceSelect.style.padding = '6px';
-    sourceSelect.style.border = '1px solid #ccc';
+    sourceSelect.style.border = '1px solid var(--rd-border-strong)';
     sourceSelect.style.borderRadius = '3px';
     sourceSelect.style.fontSize = '12px';
     sourceSelect.style.marginBottom = '12px';
@@ -140,7 +140,7 @@ export class EdgePropertiesController {
     targetSelect.id = 'edge-target-arrow';
     targetSelect.style.width = '100%';
     targetSelect.style.padding = '6px';
-    targetSelect.style.border = '1px solid #ccc';
+    targetSelect.style.border = '1px solid var(--rd-border-strong)';
     targetSelect.style.borderRadius = '3px';
     targetSelect.style.fontSize = '12px';
     targetSelect.style.marginBottom = '12px';
@@ -168,7 +168,7 @@ export class EdgePropertiesController {
     lineStyleSelect.id = 'edge-line-style';
     lineStyleSelect.style.width = '100%';
     lineStyleSelect.style.padding = '6px';
-    lineStyleSelect.style.border = '1px solid #ccc';
+    lineStyleSelect.style.border = '1px solid var(--rd-border-strong)';
     lineStyleSelect.style.borderRadius = '3px';
     lineStyleSelect.style.fontSize = '12px';
     lineStyleSelect.style.marginBottom = '12px';
@@ -197,7 +197,7 @@ export class EdgePropertiesController {
     widthInput.step = '0.5';
     widthInput.style.width = '100%';
     widthInput.style.padding = '6px';
-    widthInput.style.border = '1px solid #ccc';
+    widthInput.style.border = '1px solid var(--rd-border-strong)';
     widthInput.style.borderRadius = '3px';
     widthInput.style.fontSize = '12px';
     widthInput.style.boxSizing = 'border-box';
@@ -218,7 +218,7 @@ export class EdgePropertiesController {
     colorInput.type = 'color';
     colorInput.style.width = '100%';
     colorInput.style.height = '36px';
-    colorInput.style.border = '1px solid #ccc';
+    colorInput.style.border = '1px solid var(--rd-border-strong)';
     colorInput.style.borderRadius = '3px';
     colorInput.style.cursor = 'pointer';
     colorInput.style.marginBottom = '12px';

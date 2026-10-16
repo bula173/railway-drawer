@@ -1,4 +1,4 @@
-/* Share dialog, cloud provider dialogs (src/share). Colours follow the app chrome (light/dark). */
+/* Share dialog, cloud provider dialogs (src/share). Colors: --rd-* theme tokens only (styles/variables.css). */
 
 .rd-share-overlay {
   position: fixed;
@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: center;
   padding: 16px;
-  background: rgba(0, 0, 0, 0.35);
+  background: var(--rd-backdrop);
 }
 
 .rd-share-modal {
@@ -21,7 +21,7 @@
   border-radius: 8px;
   background: var(--rd-chrome-bg, #fff);
   color: var(--rd-chrome-fg, #333);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 24px var(--rd-shadow);
   font-family: var(--font-family, Helvetica, Arial, sans-serif);
   font-size: 13px;
 }
@@ -51,7 +51,7 @@
 }
 
 .rd-share-close:hover {
-  background: rgba(127, 127, 127, 0.15);
+  background: var(--rd-hover);
 }
 
 .rd-share-modal-body {
@@ -88,10 +88,6 @@
   font-size: 12px;
 }
 
-:root[data-theme='dark'] .rd-share-hint {
-  color: #a0a0a0;
-}
-
 .rd-share-row {
   display: flex;
   flex-wrap: wrap;
@@ -104,10 +100,10 @@
 .rd-share-select {
   box-sizing: border-box;
   padding: 6px 8px;
-  border: 1px solid var(--rd-chrome-border, #ccc);
+  border: 1px solid var(--rd-input-border);
   border-radius: 4px;
-  background: var(--rd-chrome-bg, #fff);
-  color: inherit;
+  background: var(--rd-input-bg);
+  color: var(--rd-input-text);
   font: inherit;
 }
 
@@ -124,9 +120,9 @@
 
 .rd-share-btn {
   padding: 6px 12px;
-  border: 1px solid var(--rd-chrome-border, #ccc);
+  border: 1px solid var(--rd-border-strong);
   border-radius: 4px;
-  background: var(--rd-chrome-bg, #fff);
+  background: var(--rd-surface);
   color: inherit;
   font: inherit;
   text-decoration: none;
@@ -134,7 +130,7 @@
 }
 
 .rd-share-btn:hover:not(:disabled) {
-  background: rgba(127, 127, 127, 0.12);
+  background: var(--rd-hover);
 }
 
 .rd-share-btn:disabled {
@@ -143,20 +139,20 @@
 }
 
 .rd-share-btn-primary {
-  border-color: #1976d2;
-  background: #1976d2;
-  color: #fff;
+  border-color: var(--rd-accent);
+  background: var(--rd-accent);
+  color: var(--rd-accent-text);
 }
 
 .rd-share-btn-primary:hover:not(:disabled) {
-  background: #1565c0;
+  background: var(--rd-accent-hover);
 }
 
 .rd-share-btn:focus-visible,
 .rd-share-close:focus-visible,
 .rd-share-entry:focus-visible,
 .rd-share-crumb:focus-visible {
-  outline: 2px solid #1976d2;
+  outline: 2px solid var(--rd-accent);
   outline-offset: 1px;
 }
 
@@ -169,19 +165,15 @@
 .rd-share-warning {
   margin-top: 6px;
   padding: 6px 8px;
-  border-left: 3px solid #f9a825;
-  background: rgba(249, 168, 37, 0.12);
+  border-left: 3px solid var(--rd-scenario);
+  background: var(--rd-warning-bg);
   font-size: 12px;
 }
 
 .rd-share-error {
   margin-top: 6px;
-  color: #c62828;
+  color: var(--rd-danger);
   font-size: 12px;
-}
-
-:root[data-theme='dark'] .rd-share-error {
-  color: #ef9a9a;
 }
 
 .rd-share-status {
@@ -211,7 +203,7 @@
   border: none;
   border-radius: 3px;
   background: none;
-  color: #1976d2;
+  color: var(--rd-link);
   font: inherit;
   cursor: pointer;
 }
@@ -249,11 +241,11 @@
 }
 
 .rd-share-entry:hover {
-  background: rgba(127, 127, 127, 0.1);
+  background: var(--rd-hover);
 }
 
 .rd-share-entry[aria-pressed='true'] {
-  background: rgba(25, 118, 210, 0.15);
+  background: var(--rd-selected);
 }
 
 .rd-share-entry-name {

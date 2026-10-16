@@ -28,7 +28,7 @@ export class ColorPaletteController {
       flex-wrap: wrap;
       gap: 4px;
       padding: 8px;
-      background: #f5f5f5;
+      background: var(--rd-surface-3);
       border-radius: 4px;
     `;
 
@@ -39,7 +39,7 @@ export class ColorPaletteController {
         height: 24px;
         border-radius: 3px;
         background: ${color};
-        border: 2px solid #ddd;
+        border: 2px solid var(--rd-border-strong);
         cursor: pointer;
         transition: all 0.2s;
       `;
@@ -48,12 +48,12 @@ export class ColorPaletteController {
 
       swatch.addEventListener('mouseenter', () => {
         swatch.style.transform = 'scale(1.1)';
-        swatch.style.borderColor = '#333';
+        swatch.style.borderColor = 'var(--rd-text)';
       });
 
       swatch.addEventListener('mouseleave', () => {
         swatch.style.transform = 'scale(1)';
-        swatch.style.borderColor = '#ddd';
+        swatch.style.borderColor = 'var(--rd-border-strong)';
       });
 
       swatch.addEventListener('click', () => {
@@ -73,7 +73,7 @@ export class ColorPaletteController {
     info.textContent = 'Click for fill • Right-click for stroke';
     info.style.cssText = `
       font-size: 11px;
-      color: #999;
+      color: var(--rd-text-subtle);
       margin-top: 4px;
       text-align: center;
       width: 100%;

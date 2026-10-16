@@ -26,8 +26,8 @@ export class ProjectNameEditor {
     input.value = currentName;
     input.style.fontSize = '16px';
     input.style.fontWeight = '500';
-    input.style.color = '#333';
-    input.style.border = '2px solid #2196F3';
+    input.style.color = 'var(--rd-text)';
+    input.style.border = '2px solid var(--rd-focus)';
     input.style.borderRadius = '4px';
     input.style.padding = '4px 8px';
     input.style.minWidth = '150px';

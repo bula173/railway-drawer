@@ -83,7 +83,7 @@ jobs:
         npx playwright test --project=chromium
         tests/e2e/legacy-smoke.spec.ts tests/e2e/drawio-palette.spec.ts tests/e2e/templates.spec.ts
         tests/e2e/scenarios.spec.ts tests/e2e/style-edit.spec.ts tests/e2e/share.spec.ts tests/e2e/gitlab.spec.ts
-        tests/e2e/ertms-data.spec.ts tests/e2e/scenario-uml-text.spec.ts
+        tests/e2e/ertms-data.spec.ts tests/e2e/scenario-uml-text.spec.ts tests/e2e/theme-contrast.spec.ts
 
     - name: Upload Playwright report
       if: failure()

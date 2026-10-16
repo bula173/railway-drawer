@@ -1,4 +1,5 @@
-/* Scenarios: right-panel switch, Scenarios panel, scenario view on the canvas (src/scenarios). */
+/* Scenarios: right-panel switch, Scenarios panel, scenario view on the canvas (src/scenarios).
+   Colors: --rd-* theme tokens only (styles/variables.css; the amber scenario palette is --rd-scenario-*). */
 
 /* ---------------------------------------------------------------- right panel switch */
 .right-panel-switch {
@@ -147,7 +148,7 @@
   cursor: default;
 }
 .rd-scn-icon.rd-scn-danger:hover:not(:disabled) {
-  color: var(--error-dark, #c62828);
+  color: var(--rd-danger);
 }
 .rd-scn-body {
   padding: 0 6px 8px 24px;
@@ -188,7 +189,7 @@
   height: 40px;
   overflow: hidden;
   border-radius: 2px;
-  background: #fff;
+  background: var(--rd-surface);
   outline: 1px solid var(--divider, #eee);
 }
 .rd-scn-thumb svg {
@@ -223,7 +224,7 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
-  background: #fff;
+  background: var(--rd-surface);
 }
 .rd-scn-view[hidden] {
   display: none;
@@ -235,9 +236,9 @@
   flex-wrap: wrap;
   gap: 6px;
   padding: 6px 10px;
-  background: #fff8e1;
-  border-bottom: 2px solid #f9a825;
-  color: #3e2b00;
+  background: var(--rd-scenario-bg);
+  border-bottom: 2px solid var(--rd-scenario);
+  color: var(--rd-scenario-text);
   font-family: var(--font-family, Helvetica, Arial, sans-serif);
   font-size: 13px;
   cursor: default;
@@ -245,8 +246,8 @@
 .rd-scn-badge {
   padding: 2px 6px;
   border-radius: 3px;
-  background: #f9a825;
-  color: #2b1d00;
+  background: var(--rd-scenario);
+  color: var(--rd-scenario-on-accent);
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
@@ -265,33 +266,34 @@
   opacity: 0.85;
 }
 .rd-scn-banner-error {
-  color: #b71c1c;
+  color: var(--rd-danger);
   font-size: 12px;
 }
 .rd-scn-banner-btn {
   padding: 4px 10px;
-  border: 1px solid #c8a24a;
+  border: 1px solid var(--rd-scenario-border);
   border-radius: 4px;
-  background: #fff;
-  color: #3e2b00;
+  background: var(--rd-surface);
+  color: var(--rd-scenario-text);
   font: inherit;
   font-size: 12px;
   cursor: pointer;
 }
 .rd-scn-banner-btn:hover:not(:disabled) {
-  background: #fff3c4;
+  background: var(--rd-scenario-hover);
 }
 .rd-scn-banner-btn:disabled {
   opacity: 0.4;
   cursor: default;
 }
 .rd-scn-banner-primary {
-  background: #f9a825;
-  border-color: #e09100;
+  background: var(--rd-scenario);
+  border-color: var(--rd-scenario-strong);
+  color: var(--rd-scenario-on-accent);
   font-weight: 600;
 }
 .rd-scn-banner-primary:hover:not(:disabled) {
-  background: #ffb93b;
+  background: var(--rd-scenario-accent-hover);
 }
 .rd-scn-view-host {
   position: relative;
@@ -309,10 +311,6 @@ body.rd-scenario-viewing #property-content {
   pointer-events: none;
   opacity: 0.45;
   user-select: none;
-}
-
-:root[data-theme='dark'] .rd-scn-thumb {
-  outline-color: #555;
 }
 
 .rd-scn-step:focus {
@@ -338,7 +336,7 @@ body.rd-scenario-viewing #property-content {
   flex-direction: column;
   width: min(420px, 40%);
   min-width: 240px;
-  border-left: 2px solid #f9a825;
+  border-left: 2px solid var(--rd-scenario);
   background: var(--surface, #fff);
   color: var(--text, #333);
   font-family: var(--font-family, Helvetica, Arial, sans-serif);
@@ -357,22 +355,22 @@ body.rd-scenario-viewing #property-content {
   align-items: center;
   gap: 6px;
   padding: 4px 6px;
-  background: #fff8e1;
-  border-bottom: 1px solid #f0d58a;
+  background: var(--rd-scenario-bg);
+  border-bottom: 1px solid var(--rd-scenario-line);
 }
 .rd-scn-side-title {
   flex: 1 1 auto;
   font-weight: 600;
-  color: #3e2b00;
+  color: var(--rd-scenario-text);
 }
 .rd-scn-side-toggle {
   width: 22px;
   height: 22px;
   padding: 0;
-  border: 1px solid #c8a24a;
+  border: 1px solid var(--rd-scenario-border);
   border-radius: 4px;
-  background: #fff;
-  color: #3e2b00;
+  background: var(--rd-surface);
+  color: var(--rd-scenario-text);
   font-size: 15px;
   line-height: 1;
   cursor: pointer;
@@ -412,12 +410,12 @@ body.rd-scenario-viewing #property-content {
 }
 .rd-scn-uml-message {
   margin: 0;
-  color: #b71c1c;
+  color: var(--rd-danger);
   white-space: pre-wrap;
 }
 .rd-scn-uml-warnings {
   margin: 4px 0 0;
-  color: #8a6d00;
+  color: var(--rd-warning);
   font-size: 11px;
 }
 
@@ -460,7 +458,7 @@ body.rd-scenario-viewing #property-content {
 .rd-scn-markdown code {
   padding: 0 3px;
   border-radius: 3px;
-  background: rgba(0, 0, 0, 0.06);
+  background: var(--rd-hover);
   font-family: Menlo, Consolas, monospace;
   font-size: 0.92em;
 }
@@ -468,7 +466,7 @@ body.rd-scenario-viewing #property-content {
   padding: 6px 8px;
   overflow: auto;
   border-radius: 4px;
-  background: rgba(0, 0, 0, 0.06);
+  background: var(--rd-hover);
 }
 .rd-scn-markdown pre code {
   padding: 0;
@@ -476,7 +474,7 @@ body.rd-scenario-viewing #property-content {
 }
 .rd-scn-markdown blockquote {
   padding-left: 8px;
-  border-left: 3px solid #ccc;
+  border-left: 3px solid var(--rd-border-strong);
   color: var(--text-secondary, #555);
 }
 .rd-scn-markdown table {
@@ -504,7 +502,7 @@ body.rd-scenario-viewing #property-content {
   text-align: right;
 }
 .rd-md-blocked {
-  color: #b71c1c;
+  color: var(--rd-danger);
   text-decoration: line-through dotted;
 }
 
@@ -517,14 +515,14 @@ body.rd-scenario-viewing #property-content {
 .rd-scn-badge-small {
   padding: 0 4px;
   border-radius: 3px;
-  background: #e8eaf6;
-  color: #283593;
+  background: var(--rd-badge-bg);
+  color: var(--rd-badge-text);
   font-size: 10px;
   font-weight: 600;
 }
 .rd-scn-badge-text {
-  background: #e8f5e9;
-  color: #1b5e20;
+  background: var(--rd-success-bg);
+  color: var(--rd-success);
 }
 
 /* ---- step editor (step-editor.ts) */

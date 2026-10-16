@@ -1,4 +1,5 @@
-/* draw.io workspace (src/drawio/workspace.ts). Uses the app tokens from styles/variables.css when loaded. */
+/* draw.io workspace (src/drawio/workspace.ts). Colors: the --rd-* theme tokens of styles/variables.css
+   (imported by workspace.ts, so draw.io mode follows <html data-theme> too). */
 
 /* In drawio mode the legacy layout from index.html is never booted: hide it. */
 body[data-editor='drawio'] #app-container {
@@ -80,9 +81,9 @@ body[data-editor='drawio'] {
 
 .rdw-library-error {
   padding: 4px 12px;
-  background: #fff8e1;
-  border-bottom: 1px solid var(--warning-light, #ffb74d);
-  color: var(--warning-dark, #e65100);
+  background: var(--rd-warning-bg);
+  border-bottom: 1px solid var(--rd-warning);
+  color: var(--rd-warning);
 }
 
 .rdw-embed-host {
@@ -110,7 +111,7 @@ body[data-editor='drawio'] {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.8);
+  background: color-mix(in srgb, var(--rd-surface) 80%, transparent);
   pointer-events: none;
 }
 
@@ -145,10 +146,10 @@ body[data-editor='drawio'] {
   transform: translateX(-50%);
   max-width: min(36rem, calc(100% - 32px));
   padding: 8px 12px;
-  background: #ffebee;
-  border: 1px solid var(--error-light, #ef5350);
+  background: var(--rd-danger-bg);
+  border: 1px solid var(--rd-danger);
   border-radius: 4px;
-  color: var(--error-dark, #c62828);
+  color: var(--rd-danger);
   font-size: 13px;
 }
 

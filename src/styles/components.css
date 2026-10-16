@@ -28,7 +28,7 @@
 
 .btn-primary {
   background: var(--primary);
-  color: white;
+  color: var(--rd-accent-text);
   border-color: var(--primary);
 }
 
@@ -39,14 +39,14 @@
 
 .btn-success {
   background: var(--success);
-  color: white;
+  color: var(--rd-accent-text);
   border-color: var(--success);
 }
 
 .btn-danger {
-  background: var(--error);
-  color: white;
-  border-color: var(--error);
+  background: var(--rd-danger-solid);
+  color: var(--rd-accent-text);
+  border-color: var(--rd-danger-solid);
 }
 
 .btn-sm {
@@ -170,7 +170,7 @@
 .tab.active {
   background: var(--background);
   border-bottom-color: var(--primary);
-  color: var(--primary);
+  color: var(--rd-link);
 }
 
 /* ========== DIVIDERS ========== */
@@ -301,11 +301,11 @@
 }
 
 .text-primary {
-  color: var(--primary);
+  color: var(--rd-link);
 }
 
 .text-error {
-  color: var(--error);
+  color: var(--rd-danger);
 }
 
 .text-success {

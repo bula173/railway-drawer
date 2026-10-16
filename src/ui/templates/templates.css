@@ -95,7 +95,7 @@
   justify-content: center;
   overflow: hidden;
   pointer-events: none;
-  background: #fff;
+  background: var(--rd-surface);
   border-radius: 2px;
   color-scheme: light;
 }
@@ -151,11 +151,11 @@
 
 .rd-tpl-icon-btn:hover {
   opacity: 1;
-  color: var(--primary, #0066cc);
+  color: var(--rd-link);
 }
 
 .rd-tpl-delete:hover {
-  color: var(--error-dark, #c62828);
+  color: var(--rd-danger);
 }
 
 .rd-tpl-empty {
@@ -191,7 +191,7 @@
 .rd-tpl-btn-primary {
   background: var(--primary, #0066cc);
   border-color: var(--primary, #0066cc);
-  color: #fff;
+  color: var(--rd-accent-text);
 }
 
 .rd-tpl-btn-primary:hover:not(:disabled) {
@@ -199,13 +199,14 @@
 }
 
 .rd-tpl-btn-danger {
-  background: var(--error-dark, #c62828);
-  border-color: var(--error-dark, #c62828);
-  color: #fff;
+  background: var(--rd-danger-solid);
+  border-color: var(--rd-danger-solid);
+  color: var(--rd-accent-text);
 }
 
 .rd-tpl-btn-danger:hover:not(:disabled) {
-  background: #a51f1f;
+  background: var(--rd-danger-solid);
+  filter: brightness(0.88);
 }
 
 /* Tile popover */
@@ -256,7 +257,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.3);
+  background: var(--rd-backdrop);
 }
 
 .rd-tpl-modal {
@@ -266,7 +267,7 @@
   border-radius: 8px;
   background: var(--surface, #fff);
   color: var(--text, #333);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px var(--rd-shadow);
   font-family: var(--font-family, Helvetica, Arial, sans-serif);
   font-size: 13px;
 }
@@ -305,12 +306,12 @@
 }
 
 .rd-tpl-modal-input[aria-invalid='true'] {
-  border-color: var(--error-dark, #c62828);
+  border-color: var(--rd-danger-solid);
 }
 
 .rd-tpl-modal-error {
   margin: -4px 0 8px;
-  color: var(--error-dark, #c62828);
+  color: var(--rd-danger);
   font-size: 12px;
 }
 

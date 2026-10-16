@@ -78,13 +78,14 @@ export class TextEditorController {
     this.editingInput.value = this.graph.convertValueToString(cell);
     this.editingInput.style.position = 'fixed';
     this.editingInput.style.zIndex = '10000';
-    this.editingInput.style.border = '2px solid #2196F3';
+    this.editingInput.style.border = '2px solid var(--rd-focus)';
     this.editingInput.style.borderRadius = '3px';
     this.editingInput.style.padding = '4px';
     this.editingInput.style.fontFamily = 'Arial, sans-serif';
     this.editingInput.style.fontSize = '14px';
     this.editingInput.style.boxSizing = 'border-box';
-    this.editingInput.style.backgroundColor = '#fff';
+    this.editingInput.style.backgroundColor = 'var(--rd-input-bg)';
+    this.editingInput.style.color = 'var(--rd-input-text)';
     this.editingInput.style.resize = 'none';
     this.editingInput.style.overflow = 'auto';
 

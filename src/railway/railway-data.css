@@ -1,4 +1,5 @@
-/* Railway object data: right-panel Data and Checks views, File > Export Railway Data submenu (src/railway). */
+/* Railway object data: right-panel Data and Checks views, File > Export Railway Data submenu (src/railway).
+   Colors: --rd-* theme tokens only (styles/variables.css), both themes. */
 
 #railway-data-panel[hidden],
 #railway-checks-panel[hidden] {
@@ -25,8 +26,8 @@
   margin-left: 4px;
   padding: 0 4px;
   border-radius: 8px;
-  background: #f0a020;
-  color: #fff;
+  background: var(--rd-warning-solid);
+  color: var(--rd-accent-text);
   font-size: 10px;
   line-height: 16px;
   text-align: center;
@@ -36,7 +37,7 @@
   display: none;
 }
 .rd-rw-badge.rd-rw-badge-error {
-  background: #d32f2f;
+  background: var(--rd-danger-solid);
 }
 
 .rd-rw-data,
@@ -72,7 +73,7 @@
   width: 100%;
   box-sizing: border-box;
   padding: 5px 6px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--rd-border-strong);
   border-radius: 3px;
   font: inherit;
   background: var(--surface, #fff);
@@ -82,8 +83,8 @@
   opacity: 0.6;
 }
 .rd-rw-input.rd-rw-invalid {
-  border-color: #d32f2f;
-  background: #fff5f5;
+  border-color: var(--rd-danger);
+  background: var(--rd-danger-bg);
 }
 .rd-rw-hint {
   color: var(--text-secondary, #888);
@@ -99,10 +100,10 @@
   font-size: 11px;
 }
 .rd-rw-problem-error {
-  color: #c62828;
+  color: var(--rd-danger);
 }
 .rd-rw-problem-warning {
-  color: #a86200;
+  color: var(--rd-warning);
 }
 .rd-rw-check {
   display: flex;
@@ -119,7 +120,7 @@
 }
 .rd-rw-btn {
   padding: 5px 10px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--rd-border-strong);
   border-radius: 3px;
   background: var(--surface, #fff);
   color: inherit;
@@ -128,28 +129,28 @@
   text-align: left;
 }
 .rd-rw-btn:hover {
-  background: #f2f2f2;
+  background: var(--rd-hover);
 }
 .rd-rw-btn-primary {
-  background: #1976d2;
-  border-color: #1976d2;
-  color: #fff;
+  background: var(--rd-accent);
+  border-color: var(--rd-accent);
+  color: var(--rd-accent-text);
 }
 .rd-rw-btn-primary:hover {
-  background: #1565c0;
+  background: var(--rd-accent-hover);
 }
 .rd-rw-summary {
   font-weight: 600;
   margin: 4px 0;
 }
 .rd-rw-summary-error {
-  color: #c62828;
+  color: var(--rd-danger);
 }
 .rd-rw-summary-warning {
-  color: #a86200;
+  color: var(--rd-warning);
 }
 .rd-rw-summary-ok {
-  color: #2e7d32;
+  color: var(--rd-success);
 }
 .rd-rw-objects {
   margin-bottom: 8px;
@@ -162,13 +163,13 @@
 .rd-rw-issue {
   display: flex;
   align-items: stretch;
-  border-left: 3px solid #f0a020;
+  border-left: 3px solid var(--rd-warning);
   margin-bottom: 4px;
-  background: #fffaf0;
+  background: var(--rd-warning-bg);
 }
 .rd-rw-issue-error {
-  border-left-color: #d32f2f;
-  background: #fff5f5;
+  border-left-color: var(--rd-danger);
+  background: var(--rd-danger-bg);
 }
 .rd-rw-issue-main {
   flex: 1 1 auto;
@@ -189,17 +190,17 @@
   font-size: 10px;
   font-weight: 700;
   text-transform: uppercase;
-  color: #a86200;
+  color: var(--rd-warning);
 }
 .rd-rw-issue-error .rd-rw-sev {
-  color: #c62828;
+  color: var(--rd-danger);
 }
 .rd-rw-issue-edit {
   flex: 0 0 auto;
   border: none;
-  border-left: 1px solid rgba(0, 0, 0, 0.08);
+  border-left: 1px solid var(--rd-border);
   background: transparent;
-  color: #1976d2;
+  color: var(--rd-link);
   font: inherit;
   font-size: 11px;
   padding: 0 8px;
@@ -225,7 +226,7 @@
 .menu-submenu-title {
   padding: 8px 12px;
   font-size: 13px;
-  color: #333;
+  color: var(--rd-text);
   cursor: default;
   white-space: nowrap;
 }
@@ -233,11 +234,11 @@
   content: '\25B8';
   float: right;
   margin-left: 16px;
-  color: #888;
+  color: var(--rd-text-subtle);
 }
 .menu-submenu:hover > .menu-submenu-title,
 .menu-submenu:focus-within > .menu-submenu-title {
-  background: #f5f5f5;
+  background: var(--rd-surface-3);
 }
 .menu-submenu-list {
   display: none;
@@ -245,10 +246,10 @@
   left: 100%;
   top: -4px;
   min-width: 220px;
-  background: #fff;
-  border: 1px solid #ddd;
+  background: var(--rd-surface);
+  border: 1px solid var(--rd-border-strong);
   border-radius: 4px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 8px var(--rd-shadow);
   z-index: 1001;
   padding: 4px 0;
 }
@@ -263,29 +264,4 @@ body.rd-scenario-viewing #railway-checks-panel {
   pointer-events: none;
   opacity: 0.45;
   user-select: none;
-}
-
-:root[data-theme='dark'] .rd-rw-input,
-:root[data-theme='dark'] .rd-rw-btn {
-  background: #2d2d30;
-  border-color: #3e3e42;
-}
-:root[data-theme='dark'] .rd-rw-input.rd-rw-invalid {
-  background: #3a2020;
-}
-:root[data-theme='dark'] .rd-rw-issue {
-  background: #33301f;
-}
-:root[data-theme='dark'] .rd-rw-issue-error {
-  background: #3a2020;
-}
-:root[data-theme='dark'] .menu-submenu-title {
-  color: #e0e0e0;
-}
-:root[data-theme='dark'] .menu-submenu-list {
-  background: #252526;
-  border-color: #3e3e42;
-}
-:root[data-theme='dark'] .menu-submenu:hover > .menu-submenu-title {
-  background: #2a2d2e;
 }

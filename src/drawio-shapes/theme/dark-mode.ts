@@ -9,8 +9,9 @@
  *
  * - The preference ('light' | 'dark' | 'auto') is stored in localStorage `rd.theme`; 'auto' (no
  *   stored value) follows `prefers-color-scheme`. index.html applies it before first paint.
- * - The resolved theme is written to `<html data-theme>` and `color-scheme` (app chrome CSS in
- *   src/style.css keys off `:root[data-theme="dark"]`) and to the diagram renderer via
+ * - The resolved theme is written to `<html data-theme>` and `color-scheme` (the app chrome's
+ *   --rd-* color tokens in src/styles/variables.css switch on `:root[data-theme="dark"]`) and to
+ *   the diagram renderer via
  *   setDrawioDarkMode (light-dark(), default colors and adaptive colors, see graph-compat.ts).
  * - View > "Dark Mode" (`[data-action="toggleDarkMode"]`) toggles between light and dark.
  */

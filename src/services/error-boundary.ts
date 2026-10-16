@@ -122,10 +122,10 @@ export class ErrorBoundary {
   private createDefaultFallbackUI(error: Error): HTMLElement {
     const container = document.createElement('div');
     container.style.padding = '16px';
-    container.style.background = '#ffebee';
-    container.style.border = '1px solid #f44336';
+    container.style.background = 'var(--rd-danger-bg)';
+    container.style.border = '1px solid var(--rd-danger)';
     container.style.borderRadius = '4px';
-    container.style.color = '#c62828';
+    container.style.color = 'var(--rd-danger)';
 
     const title = document.createElement('h3');
     title.textContent = `${this.config.name} Error`;
@@ -139,8 +139,8 @@ export class ErrorBoundary {
     const retryBtn = document.createElement('button');
     retryBtn.textContent = 'Try Again';
     retryBtn.style.padding = '6px 12px';
-    retryBtn.style.background = '#f44336';
-    retryBtn.style.color = 'white';
+    retryBtn.style.background = 'var(--rd-danger-solid)';
+    retryBtn.style.color = 'var(--rd-accent-text)';
     retryBtn.style.border = 'none';
     retryBtn.style.borderRadius = '3px';
     retryBtn.style.cursor = 'pointer';

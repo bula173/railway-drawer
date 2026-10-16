@@ -197,12 +197,12 @@ export class LayersController {
       const layerItem = document.createElement('div');
       layerItem.className = 'layer-item';
       layerItem.style.padding = '8px';
-      layerItem.style.borderBottom = '1px solid #e0e0e0';
+      layerItem.style.borderBottom = '1px solid var(--rd-border)';
       layerItem.style.cursor = 'pointer';
       layerItem.style.display = 'flex';
       layerItem.style.alignItems = 'center';
       layerItem.style.gap = '8px';
-      layerItem.style.backgroundColor = layer.id === this.currentLayerId ? '#e3f2fd' : 'transparent';
+      layerItem.style.backgroundColor = layer.id === this.currentLayerId ? 'var(--rd-selected)' : 'transparent';
       layerItem.style.borderLeft = `3px solid ${layer.color}`;
 
       // Visibility toggle
@@ -249,7 +249,7 @@ export class LayersController {
       deleteBtn.style.fontSize = '16px';
       deleteBtn.style.padding = '0';
       deleteBtn.style.width = '24px';
-      deleteBtn.style.color = '#d32f2f';
+      deleteBtn.style.color = 'var(--rd-danger)';
       deleteBtn.addEventListener('click', (e) => {
         e.stopPropagation();
         if (this.layers.size > 1) {

@@ -214,11 +214,11 @@ export class DrawingController {
       if (!btn) return;
       const actualToolName = toolName === 'line-tool' ? 'line' : toolName;
       if (actualToolName === tool) {
-        btn.style.background = '#2196F3';
-        btn.style.color = 'white';
+        btn.style.background = 'var(--rd-accent)';
+        btn.style.color = 'var(--rd-accent-text)';
       } else {
         btn.style.background = 'transparent';
-        btn.style.color = '#333';
+        btn.style.color = 'var(--rd-text)';
       }
     });
 

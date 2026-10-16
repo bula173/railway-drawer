@@ -1,10 +1,87 @@
 /**
  * @file variables.css
- * @brief CSS variables for theming and design tokens
- * @details Centralized design tokens for consistent styling across app
+ * @brief Design tokens: the ONE set of theme colors for the app chrome (light + dark)
+ * @details
+ *   Semantic color tokens are `--rd-*`. Light values live on `:root`, dark values on
+ *   `:root[data-theme="dark"]` (`<html data-theme>` is set before first paint by index.html and
+ *   by View > Dark Mode, src/drawio-shapes/theme/dark-mode.ts). Never key chrome colors off
+ *   `prefers-color-scheme`: the stored choice (localStorage `rd.theme`) wins over the system.
+ *
+ *   Chrome CSS, inline styles in index.html and colors set from TypeScript use these tokens
+ *   (`var(--rd-text)`, ...). Never hard-code a chrome color: it breaks one of the two themes.
+ *   Diagram content (cells, thumbnails) keeps its own colors; see graph-compat.ts.
+ *
+ *   The older names (--background, --surface, --text, ...) are aliases of the --rd-* tokens so
+ *   the modules that use them follow the theme too.
  */
 
 :root {
+  color-scheme: light;
+
+  /* ========== Theme colors (light) ========== */
+  --rd-bg: #ffffff;              /* window / page background */
+  --rd-surface: #ffffff;         /* panels, top bar, menus, dialogs */
+  --rd-surface-2: #fafafa;       /* toolbar, tab strip, section headers */
+  --rd-surface-3: #f5f5f5;       /* status bar, inactive tabs, quiet buttons */
+  --rd-hover: #f0f0f0;           /* hovered rows / buttons */
+  --rd-active: #e0e0e0;          /* pressed rows / buttons, toggled buttons */
+  --rd-pressed: #bfbfbf;         /* toolbar button while pressed */
+  --rd-text: #333333;            /* body text */
+  --rd-text-muted: #666666;      /* secondary text, field labels */
+  --rd-text-subtle: #6b6b6b;     /* hints, captions (AA on white, #f5f5f5 and --rd-selected) */
+  --rd-border: #e0e0e0;          /* panel and section borders, separators */
+  --rd-border-strong: #cccccc;   /* control borders */
+  --rd-accent: #1976d2;          /* primary buttons, active toggles */
+  --rd-accent-hover: #1565c0;
+  --rd-accent-text: #ffffff;     /* text on --rd-accent / --rd-danger-solid / --rd-success-solid */
+  --rd-link: #0066cc;            /* accent-colored text on surfaces (active tab, values) */
+  --rd-focus: #2196f3;           /* focus rings, active tab underline */
+  --rd-selected: #e3f2fd;        /* selected rows */
+  --rd-input-bg: #ffffff;
+  --rd-input-text: #333333;
+  --rd-input-border: #cccccc;
+  --rd-button-bg: #f5f5f5;       /* secondary buttons */
+  --rd-button-text: #333333;
+  --rd-locked-bg: #ffd700;       /* Lock button of a locked cell */
+  --rd-locked-text: #333333;
+  --rd-danger: #c62828;          /* error text */
+  --rd-danger-solid: #c62828;    /* danger buttons */
+  --rd-danger-bg: #ffebee;
+  --rd-success: #2e7d32;
+  --rd-success-solid: #2e7d32;
+  --rd-success-bg: #e8f5e9;
+  --rd-warning: #b54708;
+  --rd-warning-solid: #b54708;   /* badges with --rd-accent-text */
+  --rd-warning-bg: #fff3e0;
+  --rd-info: #0066cc;
+  --rd-info-bg: #e3f2fd;
+  --rd-hint-bg: #f0f7ff;         /* inline tip boxes */
+  --rd-hint-text: #1565c0;
+  --rd-badge-bg: #e8eaf6;        /* small info badges (step UML/Text) */
+  --rd-badge-text: #283593;
+  /* Scenario view (amber banner, side panel) */
+  --rd-scenario: #f9a825;
+  --rd-scenario-strong: #e09100;
+  --rd-scenario-accent-hover: #ffb93b;
+  --rd-scenario-on-accent: #2b1d00;
+  --rd-scenario-bg: #fff8e1;
+  --rd-scenario-text: #3e2b00;
+  --rd-scenario-border: #c8a24a;
+  --rd-scenario-line: #f0d58a;
+  --rd-scenario-hover: #fff3c4;
+  --rd-shadow: rgba(0, 0, 0, 0.15);
+  --rd-overlay: rgba(0, 0, 0, 0.5);
+  --rd-backdrop: rgba(0, 0, 0, 0.35); /* behind the Share / template dialogs */
+  --rd-scrollbar: #c0c0c0;
+  --rd-scrollbar-hover: #a0a0a0;
+  /* Canvas page color (the grid tiles' colors: src/ui/grid-background.ts) */
+  --rd-canvas-bg: #ffffff;
+
+  /* Former names (kept as aliases) */
+  --rd-chrome-bg: var(--rd-surface);
+  --rd-chrome-fg: var(--rd-text);
+  --rd-chrome-border: var(--rd-border);
+
   /* ========== Color Palette ========== */
   --primary: #0066cc;
   --primary-light: #61a8ff;
@@ -26,14 +103,14 @@
   --info-light: #64b5f6;
   --info-dark: #1565c0;
 
-  /* ========== Neutral Colors ========== */
-  --background: #ffffff;
-  --surface: #f5f5f5;
-  --surface-light: #fafafa;
-  --text: #333333;
-  --text-secondary: #666666;
-  --text-light: #999999;
-  --border: #e0e0e0;
+  /* ========== Neutral Colors (aliases of the theme tokens) ========== */
+  --background: var(--rd-bg);
+  --surface: var(--rd-surface-3);
+  --surface-light: var(--rd-surface-2);
+  --text: var(--rd-text);
+  --text-secondary: var(--rd-text-muted);
+  --text-light: var(--rd-text-subtle);
+  --border: var(--rd-border);
   --divider: #d0d0d0;
   --disabled: #cccccc;
 
@@ -64,8 +141,8 @@
 
   /* ========== Shadows ========== */
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.15);
-  --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-md: 0 2px 8px var(--rd-shadow);
+  --shadow-lg: 0 4px 12px var(--rd-shadow);
   --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.3);
 
   /* ========== Transitions ========== */
@@ -84,23 +161,73 @@
   --width-right-panel: 280px;
 }
 
-/* ========== Dark Mode ========== */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #1e1e1e;
-    --surface: #2d2d30;
-    --surface-light: #252526;
-    --text: #e0e0e0;
-    --text-secondary: #a0a0a0;
-    --text-light: #666666;
-    --border: #404040;
-    --divider: #404040;
-    --disabled: #555555;
+/* ========== Dark theme (<html data-theme="dark">) ========== */
+:root[data-theme="dark"] {
+  color-scheme: dark;
 
-    --primary-light: #61a8ff;
-    --success-light: #81c784;
-    --warning-light: #ffb74d;
-    --error-light: #ef5350;
-    --info-light: #64b5f6;
-  }
+  --rd-bg: #1e1e1e;
+  --rd-surface: #252526;
+  --rd-surface-2: #2d2d30;
+  --rd-surface-3: #333337;
+  --rd-hover: #3a3a3e;
+  --rd-active: #45454a;
+  --rd-pressed: #55555a;
+  --rd-text: #e0e0e0;
+  --rd-text-muted: #b4b4b4;
+  --rd-text-subtle: #a0a0a0;
+  --rd-border: #404040;
+  --rd-border-strong: #555555;
+  --rd-accent: #1976d2;
+  --rd-accent-hover: #1565c0;
+  --rd-accent-text: #ffffff;
+  --rd-link: #61a8ff;
+  --rd-focus: #61a8ff;
+  --rd-selected: #1d3a5c;
+  --rd-input-bg: #2a2a2d;
+  --rd-input-text: #e0e0e0;
+  --rd-input-border: #555555;
+  --rd-button-bg: #3a3a3e;
+  --rd-button-text: #e0e0e0;
+  --rd-locked-bg: #7a6000;
+  --rd-locked-text: #ffffff;
+  --rd-danger: #ff8a80;
+  --rd-danger-solid: #c62828;
+  --rd-danger-bg: #4a1517;
+  --rd-success: #81c784;
+  --rd-success-solid: #2e7d32;
+  --rd-success-bg: #173d1c;
+  --rd-warning: #ffb74d;
+  --rd-warning-solid: #a35200;
+  --rd-warning-bg: #3f2a12;
+  --rd-info: #61a8ff;
+  --rd-info-bg: #1d3a5c;
+  --rd-hint-bg: #1d2e44;
+  --rd-hint-text: #8cc4ff;
+  --rd-badge-bg: #2a2f55;
+  --rd-badge-text: #c5cae9;
+  --rd-scenario: #f9a825;
+  --rd-scenario-strong: #c78100;
+  --rd-scenario-accent-hover: #ffb93b;
+  --rd-scenario-on-accent: #2b1d00;
+  --rd-scenario-bg: #33290f;
+  --rd-scenario-text: #ffe08a;
+  --rd-scenario-border: #8a6d2a;
+  --rd-scenario-line: #5a4a1f;
+  --rd-scenario-hover: #4a3b14;
+  --rd-shadow: rgba(0, 0, 0, 0.5);
+  --rd-overlay: rgba(0, 0, 0, 0.6);
+  --rd-backdrop: rgba(0, 0, 0, 0.55);
+  --rd-scrollbar: #5a5a5e;
+  --rd-scrollbar-hover: #77777c;
+  /* draw.io Editor.darkColor page (grid #424242: src/ui/grid-background.ts) */
+  --rd-canvas-bg: #121212;
+
+  --primary-light: #61a8ff;
+  --success-light: #81c784;
+  --warning-light: #ffb74d;
+  --error-light: #ef5350;
+  --info-light: #64b5f6;
+
+  --divider: #404040;
+  --disabled: #555555;
 }

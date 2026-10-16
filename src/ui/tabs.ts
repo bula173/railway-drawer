@@ -739,7 +739,7 @@ export class TabManager {
     input.type = 'text';
     input.value = tab.name;
     input.style.padding = '2px 4px';
-    input.style.border = '1px solid #2196F3';
+    input.style.border = '1px solid var(--rd-focus)';
     input.style.borderRadius = '3px';
     input.style.fontSize = '12px';
     input.style.fontWeight = '500';

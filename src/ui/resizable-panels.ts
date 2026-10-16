@@ -21,18 +21,18 @@ export class ResizablePanels {
     handle.style.bottom = '0';
     handle.style.width = '4px';
     handle.style.cursor = position === 'right' ? 'col-resize' : 'col-resize';
-    handle.style.backgroundColor = '#e0e0e0';
+    handle.style.backgroundColor = 'var(--rd-active)';
     handle.style.transition = 'background-color 0.2s';
     handle.style[position] = '0';
     handle.style.userSelect = 'none';
 
     // Hover effect
     handle.addEventListener('mouseenter', () => {
-      handle.style.backgroundColor = '#0066cc';
+      handle.style.backgroundColor = 'var(--rd-accent)';
     });
 
     handle.addEventListener('mouseleave', () => {
-      handle.style.backgroundColor = '#e0e0e0';
+      handle.style.backgroundColor = 'var(--rd-active)';
     });
 
     // Resize logic

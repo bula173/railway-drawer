@@ -132,17 +132,17 @@ export class CustomShapeToolbar {
       menu.style.position = 'fixed';
       menu.style.top = `${(e as MouseEvent).clientY}px`;
       menu.style.left = `${(e as MouseEvent).clientX}px`;
-      menu.style.background = 'white';
-      menu.style.border = '1px solid #ccc';
+      menu.style.background = 'var(--rd-surface)';
+      menu.style.border = '1px solid var(--rd-border-strong)';
       menu.style.borderRadius = '4px';
-      menu.style.boxShadow = '0 2px 8px rgba(0,0,0,0.15)';
+      menu.style.boxShadow = '0 2px 8px var(--rd-shadow)';
       menu.style.zIndex = '10000';
       menu.innerHTML = `
         <div style="padding: 4px 0;">
           <div class="menu-item" data-action="edit" style="padding: 6px 16px; cursor: pointer; font-size: 12px;">
             ✏️ Edit
           </div>
-          <div class="menu-item" data-action="delete" style="padding: 6px 16px; cursor: pointer; font-size: 12px; color: #f44336;">
+          <div class="menu-item" data-action="delete" style="padding: 6px 16px; cursor: pointer; font-size: 12px; color: var(--rd-danger);">
             🗑️ Delete
           </div>
         </div>

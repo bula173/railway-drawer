@@ -50,7 +50,7 @@ export function ensureDrawioMenuItems(menu: HTMLElement | null): void {
 
   const separator = document.createElement('div');
   separator.setAttribute('data-drawio-menu', 'separator');
-  separator.style.borderTop = '1px solid #e0e0e0';
+  separator.style.borderTop = '1px solid var(--rd-border)';
   separator.style.display = 'none';
   menu.appendChild(separator);
 
