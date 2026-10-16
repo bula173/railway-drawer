@@ -4,7 +4,7 @@
  *        order, search over titles and tags, "More shapes…" visibility menu, real-rendered
  *        thumbnails, hover preview, click/drag insertion and user library import.
  */
-import type { Graph } from '@maxgraph/core';
+import type { Cell, Graph } from '@maxgraph/core';
 import './drawio-palette.css';
 import { logger } from '../../drawio/logger';
 import { fallbackEngine } from './contracts';
@@ -48,6 +48,11 @@ export interface DrawioPaletteViewOptions {
   defaultExpanded?: string[];
   /** Called after an insertion (e.g. to focus the graph). */
   onInsert?: (entry: PaletteEntry) => void;
+  /**
+   * Changes the new top-level cells of an entry before they are added (same undoable edit),
+   * e.g. pre-assigns railway object kinds to ERTMS library entries.
+   */
+  prepareInsert?: (graph: Graph, cells: Cell[], entry: PaletteEntry) => void;
   /** User-visible error reporting (default: logger + alert-free status line). */
   onError?: (message: string) => void;
   /**
@@ -303,7 +308,8 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
     const graph = options.getGraph();
     if (!graph) return;
     try {
-      const inserted = insertEntry(graph, entry, at);
+      const prepare = options.prepareInsert;
+      const inserted = insertEntry(graph, entry, at, prepare ? (cells) => prepare(graph, cells, entry) : undefined);
       if (inserted.length === 0) return;
       // Stencils the thumbnails have not loaded yet: repaint once they arrive
       engine()

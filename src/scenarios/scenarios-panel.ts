@@ -525,36 +525,48 @@ export function createScenariosPanel(options: ScenariosPanelOptions): ScenariosP
   };
 }
 
+/** Views of the right panel (one switch button each, `data-right-panel`). */
+export type RightPanelView = 'properties' | 'data' | 'checks' | 'scenarios';
+
+/** `window` event fired whenever the right panel shows a view (`detail: { view }`). */
+export const RIGHT_PANEL_EVENT = 'right-panel-view';
+
 /**
- * The "Properties | Scenarios" switch at the top of the right panel. Properties is the default;
- * returns a function that selects a view.
+ * The "Properties | Data | Checks | Scenarios" switch at the top of the right panel. Each button's
+ * `aria-controls` names the panel it shows; Properties is the default. Returns a function that
+ * selects a view; every change is also announced as a `right-panel-view` window event.
  */
-export function installRightPanelSwitch(onShow?: (view: 'properties' | 'scenarios') => void): (view: 'properties' | 'scenarios') => void {
+export function installRightPanelSwitch(onShow?: (view: RightPanelView) => void): (view: RightPanelView) => void {
   const buttons = Array.from(document.querySelectorAll<HTMLButtonElement>('.right-panel-switch-btn[data-right-panel]'));
-  const properties = document.getElementById('property-content');
-  const scenarios = document.getElementById('scenarios-panel');
-  const select = (view: 'properties' | 'scenarios'): void => {
+  const viewOf = (btn: HTMLButtonElement): RightPanelView => (btn.dataset.rightPanel ?? 'properties') as RightPanelView;
+  const panelOf = (btn: HTMLButtonElement): HTMLElement | null => {
+    const id = btn.getAttribute('aria-controls');
+    return id ? document.getElementById(id) : null;
+  };
+  const select = (view: RightPanelView): void => {
+    if (!buttons.some((b) => viewOf(b) === view)) view = 'properties';
     for (const btn of buttons) {
-      const active = btn.dataset.rightPanel === view;
+      const active = viewOf(btn) === view;
       btn.classList.toggle('active', active);
       btn.setAttribute('aria-selected', String(active));
       btn.tabIndex = active ? 0 : -1;
+      const panel = panelOf(btn);
+      if (panel) panel.hidden = !active;
     }
-    if (properties) properties.hidden = view !== 'properties';
-    if (scenarios) scenarios.hidden = view !== 'scenarios';
     onShow?.(view);
+    window.dispatchEvent(new CustomEvent(RIGHT_PANEL_EVENT, { detail: { view } }));
   };
-  for (const btn of buttons) {
-    btn.addEventListener('click', () => select(btn.dataset.rightPanel === 'scenarios' ? 'scenarios' : 'properties'));
+  buttons.forEach((btn, i) => {
+    btn.addEventListener('click', () => select(viewOf(btn)));
     btn.addEventListener('keydown', (e) => {
       if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
       e.preventDefault();
       e.stopPropagation();
-      const next = btn.dataset.rightPanel === 'scenarios' ? 'properties' : 'scenarios';
-      select(next);
-      buttons.find((b) => b.dataset.rightPanel === next)?.focus();
+      const next = buttons[(i + (e.key === 'ArrowRight' ? 1 : buttons.length - 1)) % buttons.length];
+      select(viewOf(next));
+      next.focus();
     });
-  }
+  });
   select('properties');
   return select;
 }

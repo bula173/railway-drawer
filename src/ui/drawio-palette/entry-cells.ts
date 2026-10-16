@@ -119,9 +119,15 @@ export function cloneWithTerminals(graph: Graph, cells: Cell[]): Cell[] {
 
 /**
  * Inserts an entry centred on `at` (graph coordinates; default: the view centre) as one
- * undoable edit, selects and returns the inserted cells.
+ * undoable edit, selects and returns the inserted cells. `prepare` may change the new top-level
+ * cells (e.g. give them railway data) before they are added, so it is part of the same edit.
  */
-export function insertEntry(graph: Graph, entry: PaletteEntry, at?: { x: number; y: number }): Cell[] {
+export function insertEntry(
+  graph: Graph,
+  entry: PaletteEntry,
+  at?: { x: number; y: number },
+  prepare?: (cells: Cell[]) => void
+): Cell[] {
   const cells = createCellsForEntry(entry);
   if (cells.length === 0) return [];
   const bounds = graph.getBoundingBoxFromGeometry(cells, true);
@@ -137,6 +143,7 @@ export function insertEntry(graph: Graph, entry: PaletteEntry, at?: { x: number;
   // importCells clones with isCloneInvalidEdges() and drops edges without terminals.
   const clones = cloneWithTerminals(graph, cells);
   for (const clone of clones) clone.getGeometry()?.translate(x - bx, y - by);
+  prepare?.(clones);
 
   let inserted: Cell[] = [];
   const model = graph.getDataModel();

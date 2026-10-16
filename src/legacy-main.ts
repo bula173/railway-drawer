@@ -45,6 +45,7 @@ import { installParityHook } from './debug/parity-hook';
 import { installDarkModeToggle } from './drawio-shapes/theme/dark-mode';
 import { installSharing } from './share/install-sharing';
 import { installScenarios } from './scenarios/install-scenarios';
+import { assignKindForInsertedShape, installRailwayData, prepareRailwayInsert } from './railway/install-railway-data';
 
 /**
  * @brief Register all built-in shape definitions
@@ -161,6 +162,16 @@ if (activeTab?.statusBarController) {
  */
 const graphContainer = document.getElementById('graph-container')!;
 const scenarios = installScenarios(tabManager, globalNotificationManager, graphContainer);
+
+// ============= RAILWAY OBJECT DATA =============
+
+/**
+ * @brief Railway object data (right panel "Data" and "Checks")
+ * @details Signals, balises, track sections, points, ... carry typed data stored as draw.io object
+ * attributes (`rdKind`, `rdId`, ...). ERTMS library entries and the app's railway shapes get their
+ * kind on insert; Checks validates the data live; File > Export Railway Data writes CSV/xlsx lists.
+ */
+installRailwayData(tabManager, globalNotificationManager, { showPanel: scenarios.showPanel });
 
 // ============= GLOBAL KEYBOARD SHORTCUTS =============
 
@@ -329,6 +340,8 @@ graphContainer.addEventListener('drop', (evt) => {
             shape.height,
             shape.style as any
           );
+          // Railway shapes (signal, rail, points, ...) become railway objects with their kind
+          assignKindForInsertedShape(activeTab.graph, cell);
           activeTab.graph.setSelectionCells([cell]);
         }
       } else if (customShapeJson) {
@@ -436,6 +449,7 @@ createDrawioPaletteView({
   extraLibraries: [ertmsPaletteSource(import.meta.env.BASE_URL)],
   dropTarget: graphContainer,
   onError: (message) => globalNotificationManager.error(message),
+  prepareInsert: prepareRailwayInsert,
   extraMenuItems: shapeRegistry.getGroups().map((group) => ({
     id: `app-${group}`,
     title: `${group} (Railway Drawer)`,
@@ -475,6 +489,7 @@ const ensureErtmsTabView = (): void => {
     showMoreMenu: false,
     storageKeySuffix: '.ertmsTab',
     onError: (message) => globalNotificationManager.error(message),
+    prepareInsert: prepareRailwayInsert,
   });
 };
 const syncErtmsMenuItem = (visible: boolean): void => {

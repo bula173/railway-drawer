@@ -10,7 +10,7 @@ import { confirmTemplateDialog } from '../ui/templates/template-dialogs';
 import { captureDrawing, replaceDrawingWithSnapshot } from './scenario-actions';
 import { scenarioKeyAction } from './scenario-keys';
 import { ScenarioViewer } from './scenario-view';
-import type { ScenarioNotifier, ScenariosPanel, ScenarioThumbnails } from './scenarios-panel';
+import type { RightPanelView, ScenarioNotifier, ScenariosPanel, ScenarioThumbnails } from './scenarios-panel';
 import { createScenariosPanel, installRightPanelSwitch } from './scenarios-panel';
 
 export interface ScenariosHandle {
@@ -21,8 +21,8 @@ export interface ScenariosHandle {
    * blocked editing shortcuts) and returns true, so no graph shortcut reaches the hidden drawing.
    */
   handleKeydown(e: KeyboardEvent): boolean;
-  /** Shows the Properties or the Scenarios view of the right panel. */
-  showPanel(view: 'properties' | 'scenarios'): void;
+  /** Shows a view of the right panel (Properties, Data, Checks, Scenarios). */
+  showPanel(view: RightPanelView): void;
   /** Removes the view, the panel and the window listeners (tests). */
   destroy(): void;
 }

@@ -183,6 +183,12 @@ export class MenuController {
   private executeMenuAction(action: string): void {
     const cells = this.graph.getSelectionCells();
 
+    // File > Export Railway Data > ...: legacy-main.ts (src/railway) writes the list
+    if (action.startsWith('exportRailway:')) {
+      window.dispatchEvent(new CustomEvent('railway-export-request', { detail: action.slice('exportRailway:'.length) }));
+      return;
+    }
+
     switch (action) {
       case 'new':
         if (confirm('Create a new diagram? Any unsaved changes will be lost.')) {
@@ -390,7 +396,12 @@ export class MenuController {
         break;
 
       case 'editData':
-        console.log('[Menu] Edit Data - Not yet implemented');
+        // legacy-main.ts (src/railway) shows the Data panel for the selection
+        window.dispatchEvent(new CustomEvent('railway-edit-data-request'));
+        break;
+
+      case 'railwayChecks':
+        window.dispatchEvent(new CustomEvent('railway-checks-request'));
         break;
 
       case 'editStyle':

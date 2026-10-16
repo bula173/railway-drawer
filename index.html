@@ -47,6 +47,18 @@
               <div class="menu-dropdown-item" data-action="saveAsTemplate" title="Save the selection (or the whole diagram) as a template">Save as Template…</div>
               <div style="height: 1px; background: #e0e0e0; margin: 4px 0;"></div>
               <div class="menu-dropdown-item" data-action="export">Export As...</div>
+              <!-- Railway object lists (src/railway/report.ts); handled by legacy-main via MenuController -->
+              <div class="menu-submenu" tabindex="-1">
+                <div class="menu-submenu-title">Export Railway Data</div>
+                <div class="menu-submenu-list">
+                  <div class="menu-dropdown-item" data-action="exportRailway:signals">Signals (CSV)</div>
+                  <div class="menu-dropdown-item" data-action="exportRailway:balises">Balises &amp; balise groups (CSV)</div>
+                  <div class="menu-dropdown-item" data-action="exportRailway:trackSections">Tracks &amp; track sections (CSV)</div>
+                  <div class="menu-dropdown-item" data-action="exportRailway:points">Points (CSV)</div>
+                  <div class="menu-dropdown-item" data-action="exportRailway:all">All railway objects (CSV)</div>
+                  <div class="menu-dropdown-item" data-action="exportRailway:xlsx">Workbook, all lists (.xlsx)</div>
+                </div>
+              </div>
               <div class="menu-dropdown-item" data-action="share" title="Link with the diagram, downloads, cloud storage">Share…</div>
               <div class="menu-dropdown-item" data-action="print">Print</div>
             </div>
@@ -103,7 +115,8 @@
               <div class="menu-dropdown-item" data-action="plantumlEditor">🌿 PlantUML Editor</div>
               <div class="menu-dropdown-item" data-action="designShapes">✏️📐 Design Custom Shapes</div>
               <div style="height: 1px; background: #e0e0e0; margin: 4px 0;"></div>
-              <div class="menu-dropdown-item" data-action="editData">Edit Data</div>
+              <div class="menu-dropdown-item" data-action="editData">Edit Data…</div>
+              <div class="menu-dropdown-item" data-action="railwayChecks">Railway Checks</div>
               <div class="menu-dropdown-item" data-action="editStyle">Edit Style</div>
               <div style="height: 1px; background: #e0e0e0; margin: 4px 0;"></div>
               <div class="menu-dropdown-item" data-action="preferences">Preferences</div>
@@ -218,11 +231,16 @@
 
         <!-- Right Panel -->
         <div id="rightpanel-container" class="right-panel">
-          <!-- Properties | Scenarios switch (src/scenarios/scenarios-panel.ts installRightPanelSwitch) -->
+          <!-- Properties | Data | Checks | Scenarios switch (src/scenarios/scenarios-panel.ts installRightPanelSwitch) -->
           <div class="right-panel-switch" role="tablist" aria-label="Right panel">
             <button type="button" class="right-panel-switch-btn active" role="tab" aria-selected="true" aria-controls="property-content" data-right-panel="properties">Properties</button>
+            <button type="button" class="right-panel-switch-btn" role="tab" aria-selected="false" aria-controls="railway-data-panel" data-right-panel="data" tabindex="-1" title="Railway object data of the selection">Data</button>
+            <button type="button" class="right-panel-switch-btn" role="tab" aria-selected="false" aria-controls="railway-checks-panel" data-right-panel="checks" tabindex="-1" title="Railway data checks and reports">Checks<span class="rd-rw-badge" hidden></span></button>
             <button type="button" class="right-panel-switch-btn" role="tab" aria-selected="false" aria-controls="scenarios-panel" data-right-panel="scenarios" tabindex="-1">Scenarios</button>
           </div>
+          <!-- Railway object data of the selection and checks/reports (src/railway) -->
+          <div id="railway-data-panel" class="panel-content" role="tabpanel" aria-label="Railway data" hidden></div>
+          <div id="railway-checks-panel" class="panel-content" role="tabpanel" aria-label="Railway checks" hidden></div>
           <!-- Scenarios of the active tab (src/scenarios) -->
           <div id="scenarios-panel" class="panel-content" role="tabpanel" aria-label="Scenarios" hidden></div>
           <div id="property-content" class="panel-content">

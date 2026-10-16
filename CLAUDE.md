@@ -28,7 +28,8 @@ E2E_PORT=80 npm run test:parity # maxGraph vs draw.io pixel comparison of every 
 npm run drawio:palettes     # regenerate palettes + stencil sets from the pinned draw.io tag (Node >= 22.18)
 ```
 
-CI (`.github/workflows/build-and-deploy.yml`) runs typecheck, typecheck:tests, lint, test:run, build. It does not deploy.
+CI (`.github/workflows/build-and-deploy.yml`) runs typecheck, typecheck:tests, lint, test:run, build and the any-port
+Playwright subset (legacy-smoke, drawio-palette, templates, scenarios, style-edit, share, gitlab, ertms-data). It does not deploy.
 
 ### E2E and port 80
 
@@ -69,6 +70,10 @@ CI (`.github/workflows/build-and-deploy.yml`) runs typecheck, typecheck:tests, l
   reopen; replace drawing (confirm, Ctrl+Z). `drawio-embed.spec.ts` also round-trips a scenario file through draw.io.
 - `tests/e2e/templates.spec.ts` (any port): ERTMS palette 18 entries, Templates tab 22 ERTMS templates (search,
   insert, open as new diagram, drag), tab bar labels not cut, Save as Template… -> reload -> insert, rename, delete.
+- `tests/e2e/ertms-data.spec.ts` (any port): ERTMS palette signal/balise get their kind and IDs on insert, Data panel
+  fields (km chainage `12+345`, enum, text with Polish characters), duplicate signal ID -> Checks error + badge,
+  click selects the cell, Edit -> fix clears it, Ctrl+Z/Ctrl+Y, File > Export Railway Data > Signals (CSV: BOM, rows),
+  reload keeps the data, File > Save writes `<object rdKind=... rdId=...>`.
 - `tests/e2e/style-edit.spec.ts` (any port): line color/width/dash and fill through the Properties panel on cells from an
   ERTMS template, a user template and the draw.io/ERTMS palettes (group first click, child second click); checks the
   cell's own style and the SVG. Reads the graph via `import('/src/services/service-registry.ts')` (dev server only).
@@ -241,7 +246,50 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   `#graph-container` inserts at the drop point.
 - The left tab bar wraps (no cut labels at ~230px); tests in `src/ui/templates/__tests__/`.
 
-### Scenarios (`src/scenarios/`, right panel "Properties | Scenarios")
+### Railway object data (`src/railway/`, right panel "Data" and "Checks")
+
+- **Storage** (`object-data.ts`): a railway object is a cell whose value is a draw.io `<object>` element (an existing
+  `<UserObject>` keeps its name) with `rdKind` plus one attribute per property (`rdId`, `rdKm`, `rdNidBg`, ...:
+  `rd` + PascalCase key). Files stay 1:1 draw.io (attributes show in draw.io's Edit Data). Plain cells keep string
+  values; removing the kind turns a value with only a `label` back into a string. "Show ID in label" writes
+  `%rdId%` + `placeholders="1"` (rendered by `drawio-shapes/engine/placeholders.ts`, so `graph.getLabel` shows the ID
+  and `convertValueToString` the raw `%rdId%`). Writes: `setRailwayData(model, cells, change, {autoId})` = one
+  `model.setValue` per cell inside one update (one undo step, values cloned, never mutated); no-op edits add no history.
+  Stored numbers are canonical (`12+345` / `12,345` -> `12.345`); unparseable input is stored as typed and reported.
+- **Catalogue** (`catalogue.ts`): 13 kinds (signal, balise, baliseGroup, track, trackSection, points, levelCrossing,
+  bufferStop, rbc, leu, axleCounter, train, route), fields typed text/number/integer/km/enum/ref/refList with
+  unit/min/max (NID_C 0–1023, NID_BG/NID_RBC 0–16383, balises in group 1–8, aspects 1–6). Every kind has `id`
+  (required, generated `S1`, `BG1`, ... from `idPrefix`, case-insensitive unique per kind).
+- **Pre-assigned kinds**: ERTMS library entries by title (`kindForLibraryTitle`: Signal Left/Right n -> signal with
+  direction reverse/nominal and n aspects, (Single) Balise Left/Right -> balise, TC -> trackSection tc, Track ->
+  track, Point Left/Right -> points with hand, Train/Train Connected -> train; MA/Distance/Line/Gradient/SSP: none)
+  through the palette option `prepareInsert` -> `insertEntry(..., prepare)` (same undo step, only single-cell
+  entries, only `ertms-*` entries, not draw.io palettes); app railway shapes by style shape (`kindForStyle`, drop
+  handler in `legacy-main.ts`). Templates/paste keep the data they carry.
+- **Checks** (`validation.ts`, model only, `geometry.ts` for absolute positions): duplicate-id, required (ID error,
+  NID_C/NID_BG warning), invalid-value, unknown-kind, balise-without-group (error), group-count / group-position
+  (warning), missing-reference (error), signal-off-track (warning: centre > `SIGNAL_TRACK_DISTANCE` 40 px from its
+  track, or from every track when it names none and tracks/sections/points exist), km-order (warning: majority
+  direction of km along the track polyline, needs >= 3 objects), km-outside-track (warning).
+- **UI** (`install-railway-data.ts`, called from `legacy-main.ts` after `installScenarios`): right-panel switch is
+  generic now (`installRightPanelSwitch`: buttons' `aria-controls` name the panels, `right-panel-view` window event):
+  Properties | Data | Checks | Scenarios. `data-panel.ts`: kind select (+ none), fields (enum select, ref inputs with a
+  datalist of IDs, problems from the last check under the field), multi-select edits common fields ("(mixed)", ID
+  disabled). Edits go to the cells the fields were rendered for (a field's blur `change` fires after a canvas click
+  already changed the selection). `checks-panel.ts`: Run checks, Live (debounced 400 ms on model changes; localStorage
+  `rd.railway.liveChecks`), badge on the switch, issue click selects the cell, "Edit" opens Data on the field, report
+  buttons. Global listeners bound to the active tab's selection/data model (rebound on `tab-changed`/`tab-closed`).
+  Menus dispatch window events: `railway-edit-data-request` (Extras > Edit Data…, context menu Edit Data...),
+  `railway-checks-request` (Extras > Railway Checks), `railway-export-request` (File > Export Railway Data submenu,
+  `data-action="exportRailway:<report>"` handled in `MenuController.executeMenuAction`).
+- **Reports** (`report.ts`, `xlsx.ts`): signals, balises + groups, tracks + sections, points, all objects; sorted by km
+  (`km`, else `kmStart`; none last), then kind order, then natural ID order. CSV = UTF-8 BOM, CRLF, RFC 4180 quoting,
+  formula injection guarded (`'` prefix unless numeric). `.xlsx` = dependency-free stored ZIP (CRC32) with one sheet
+  per report (inline strings, numbers as numbers, bold frozen header).
+- Tests: `src/railway/__tests__/` (catalogue + real ERTMS library mapping, object data round trip/undo/insert,
+  every rule, CSV/xlsx, panels with real tabs).
+
+### Scenarios (`src/scenarios/`, right panel "Properties | Data | Checks | Scenarios")
 
 - Per tab (diagram): `ScenarioSet` (`scenario-model.ts`) held by the tab's `ProjectService.scenarios`
   (`saveLoadController.getScenarios()`); a scenario = id/name/description + ordered steps; a step =

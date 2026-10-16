@@ -304,7 +304,9 @@ export class ContextMenuController {
       }
 
       case 'editData':
-        console.log('[ContextMenu] Edit Data - Not yet implemented');
+        // The Data panel edits the selection (src/railway, wired in legacy-main.ts)
+        if (this.selectedCells.length > 0) this.graph.setSelectionCells(this.selectedCells);
+        window.dispatchEvent(new CustomEvent('railway-edit-data-request'));
         break;
 
       case 'group':
