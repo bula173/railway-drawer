@@ -62,6 +62,8 @@ export interface ScenariosPanelOptions {
   stepEditor?: (opts: StepEditorOptions) => Promise<StepEditorResult | null>;
   /** "Export as HTML" of a scenario (button hidden when missing). */
   onExportScenario?(tabId: string, scenarioId: string): void;
+  /** "Export as PDF" / "Export as slides" of a scenario (buttons hidden when missing). */
+  onExportScenarioDoc?(tabId: string, scenarioId: string, format: 'pdf' | 'slides'): void;
 }
 
 export interface ScenariosPanel {
@@ -451,6 +453,15 @@ export function createScenariosPanel(options: ScenariosPanelOptions): ScenariosP
       exportBtn.disabled = n === 0;
       exportBtn.addEventListener('click', () => options.onExportScenario?.(t.id, scenario.id));
       actions.append(exportBtn);
+    }
+    if (options.onExportScenarioDoc) {
+      const pdfBtn = iconButton('rd-scn-export-pdf', '⎙', 'Export scenario as PDF (title page, one or more pages per step)');
+      pdfBtn.disabled = n === 0;
+      pdfBtn.addEventListener('click', () => options.onExportScenarioDoc?.(t.id, scenario.id, 'pdf'));
+      const slidesBtn = iconButton('rd-scn-export-slides', '▭', 'Export scenario as HTML slideshow (one step per slide)');
+      slidesBtn.disabled = n === 0;
+      slidesBtn.addEventListener('click', () => options.onExportScenarioDoc?.(t.id, scenario.id, 'slides'));
+      actions.append(pdfBtn, slidesBtn);
     }
     actions.append(del);
     head.append(toggle, label, actions);

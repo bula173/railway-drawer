@@ -223,6 +223,12 @@ export class MenuController {
         window.dispatchEvent(new CustomEvent('scenario-export-request'));
         break;
 
+      case 'exportScenarioPdf':
+      case 'exportScenarioSlides':
+        // src/scenarios/install-scenarios.ts: options dialog, then PDF / HTML slideshow
+        window.dispatchEvent(new CustomEvent('scenario-export-request', { detail: { format: action === 'exportScenarioPdf' ? 'pdf' : 'slides' } }));
+        break;
+
       case 'saveAsTemplate':
         // legacy-main.ts asks for a name and stores the selection (or the whole diagram)
         window.dispatchEvent(new CustomEvent('save-template-request'));

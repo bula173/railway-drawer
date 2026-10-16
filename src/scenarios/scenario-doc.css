@@ -1,0 +1,137 @@
+/* Scenario view additions (scenario-view.ts): autoplay, "Show changes" (legend, Changes list) and
+   the PDF / slides export options dialog (scenario-doc-export.ts). */
+.rd-scn-view-canvas {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+}
+.rd-scn-autoplay {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.rd-scn-autoplay-interval {
+  padding: 3px 2px;
+  border: 1px solid #c8a24a;
+  border-radius: 4px;
+  background: #fff;
+  color: #3e2b00;
+  font: inherit;
+  font-size: 12px;
+}
+.rd-scn-banner-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 12px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.rd-scn-playing .rd-scn-play-btn {
+  background: #fff3c4;
+  font-weight: 600;
+}
+.rd-scn-diff-legend {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  max-width: calc(100% - 16px);
+  padding: 4px 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #333;
+  font: 11px/1.4 var(--font-family, Helvetica, Arial, sans-serif);
+  pointer-events: none;
+}
+.rd-scn-diff-legend[hidden] {
+  display: none;
+}
+.rd-scn-diff-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.rd-scn-diff-swatch {
+  display: inline-block;
+  width: 12px;
+  height: 9px;
+  border: 2px solid;
+  border-radius: 2px;
+}
+.rd-scn-diff-removed .rd-scn-diff-swatch {
+  border-style: dashed;
+}
+.rd-scn-side-changes-section[hidden] {
+  display: none;
+}
+.rd-scn-diff-counts {
+  margin: 0 0 4px;
+  font-size: 12px;
+  color: #555;
+}
+.rd-scn-diff-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 12px;
+}
+.rd-scn-diff-item {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 1px 0;
+  overflow-wrap: anywhere;
+}
+.rd-scn-diff-dot {
+  flex: 0 0 auto;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.rd-scn-side-empty {
+  margin: 0;
+  color: #888;
+  font-size: 12px;
+  font-style: italic;
+}
+
+/* export options dialog */
+.rd-scn-export-options fieldset {
+  margin: 0 0 10px;
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.rd-scn-export-options legend {
+  padding: 0 4px;
+  font-size: 12px;
+  color: #666;
+}
+.rd-scn-export-options label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 3px 0;
+  font-size: 13px;
+  cursor: pointer;
+}
+.rd-scn-export-options .rd-scn-export-scenario {
+  width: 100%;
+  margin: 0 0 10px;
+  padding: 4px;
+  font: inherit;
+}
+
+:root[data-theme='dark'] .rd-scn-diff-legend {
+  background: rgba(40, 40, 40, 0.92);
+  border-color: #555;
+  color: #ddd;
+}

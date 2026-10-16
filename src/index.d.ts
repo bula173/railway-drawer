@@ -8,6 +8,11 @@ declare module '@maxgraph/core/css/*' {
   export default content;
 }
 
+declare module '*.ttf?url' {
+  const url: string;
+  export default url;
+}
+
 declare module '*.xml?raw' {
   const content: string;
   export default content;

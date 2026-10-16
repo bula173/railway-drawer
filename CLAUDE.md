@@ -30,7 +30,7 @@ npm run drawio:palettes     # regenerate palettes + stencil sets from the pinned
 
 CI (`.github/workflows/build-and-deploy.yml`) runs typecheck, typecheck:tests, lint, test:run, build and the
 Playwright subset (legacy-smoke, drawio-palette, templates, scenarios, style-edit, share, gitlab, ertms-data,
-scenario-uml-text, theme-contrast, remote-persist, drawio-embed, drawio-parity). `~/.cache/railway-drawer` (self-hosted draw.io) is kept with
+scenario-uml-text, theme-contrast, remote-persist, scenario-doc, drawio-embed, drawio-parity). `~/.cache/railway-drawer` (self-hosted draw.io) is kept with
 `actions/cache` (key = hash of `scripts/drawio-selfhost/**` + `scripts/drawio-palettes/fetch-sources.ts`). It does not deploy.
 
 ### E2E and draw.io
@@ -86,6 +86,11 @@ answers **HTTP 403** to iframes whose Referer has a non-default port (`http://lo
   view step 1 -> side panel UML svg + Markdown heading/list, Next -> step 2 content (drawing too), ← back, collapse kept
   over a reload, edit keeps the values, File > Save `.drawio` has `rdStepUml`/`rdStepText`, File > Export Scenario (HTML)
   has 2 drawings (data: SVG images), 2 UML SVGs and the Markdown. Fails if anything goes to a PlantUML server.
+- `tests/e2e/scenario-doc.spec.ts` (any port): 3 steps that add/move/restyle/remove hexagons (graph via the service
+  registry), "Show changes" (legend, data-diff-* counts, Changes list, highlight strokes in the view SVG, snapshots without
+  `rdDiff`), autoplay (1 s, Space plays to the end and stops, Space pauses), File > Export Scenario (PDF)… landscape (%PDF,
+  pages >= 4, DejaVu embedded, 3 images, no "UML as vector failed" warning), Slides from the panel button (3 step slides,
+  highlighted drawings, opened as a data: page under its CSP: keys move, counter).
 - `tests/e2e/templates.spec.ts` (any port): ERTMS palette 18 entries, Templates tab 22 ERTMS templates (search,
   insert, open as new diagram, drag), tab bar labels not cut, Save as Template… -> reload -> insert, rename, delete.
 - `tests/e2e/ertms-data.spec.ts` (any port): ERTMS palette signal/balise get their kind and IDs on insert, Data panel
@@ -408,10 +413,49 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   and ⇩ per scenario in the panel. One self-contained HTML file `<diagram> - <scenario>.html`: CSP meta (no scripts),
   per step drawing as `data:image/svg+xml` `<img>` (`renderXmlToSvgDocument` from diagram-image-export),
   UML inline SVG, sanitized Markdown; steps break pages when printed (for the later PDF).
+- **Step diff** (`scenario-diff.ts`, pure XML/DOMParser): `diffSnapshots(prev, cur)` matches drawable cells by id: added,
+  removed, moved (geometry x/y/parent, size; edges: terminals/points = rerouted) and changed (style keys, label — HTML stripped
+  only with `html=1` — and `<object>` data attributes, e.g. `rdAspects` -> "S2: aspects changed"); moved wins over changed for
+  the colour. `buildDiffHighlightXml` returns a NEW model XML (snapshots never change): the step plus highlight cells
+  (`rdDiff=<kind>` style; outlines green #2e7d32 / blue #1565c0 / orange #ef6c00, red dashed ghost #c62828 with the old name
+  at the old absolute place, edges as thick polylines) in an own top layer `rd-diff-layer` (view) or, with `inFirstLayer`,
+  at the end of the first layer — required for exports because the image export (thumbnail renderer's
+  `cellsFromModelXml`) only draws the FIRST layer (the same limit applies to the HTML export of multi-layer drawings).
+- **View additions** (`scenario-view.ts`, CSS `scenario-doc.css`): banner "Show changes" check box (localStorage
+  `rd.scenario.showChanges`) -> the view graph loads the highlight copy, legend `[data-testid=scenario-diff-legend]` over
+  the canvas, side-panel section "Changes" (`.rd-scn-side-changes li[data-kind]`, counts), `data-diff-added|removed|moved|changed`
+  on the view; first step: "nothing to compare". Autoplay (`scenario-autoplay.ts` `ScenarioAutoplay`): ▶ Play/⏸ Pause
+  `.rd-scn-play-btn`, interval select (1/2/3/5/10/20 s, default 3), Loop; settings in localStorage `rd.scenario.autoplay`;
+  stops at the last step (Play there restarts from step 1), manual Prev/Next restarts the interval, closing the view pauses.
+  Keys: Space = `toggle-play` in `scenarioKeyAction`; keys on focused check boxes/radios/buttons navigate (only text inputs,
+  selects, textareas pass).
+- **PDF** (`scenario-pdf.ts` + `pdf-layout.ts` + `pdf-fonts.ts`, all dynamic imports from `install-scenarios.ts`): decision —
+  jsPDF 4.2.1 + svg2pdf.js 2.8.1 (pinned, lazy chunks; jsPDF's optional html2canvas/purify chunks are emitted but never
+  loaded) give a real file without a print dialog; browser print-to-PDF cannot be triggered without the dialog. Title page
+  (name, description, diagram, date, step list with page numbers + internal links), per step: "Step i of n", name,
+  description, drawing (raster PNG 2x via `renderXmlToSvgDocument` + canvas: maxGraph SVG uses `<foreignObject>` for HTML
+  labels, which svg2pdf cannot draw), optional changes legend/list, UML as VECTORS (svg2pdf; fonts mapped to the doc
+  families; regular face set first because svg2pdf inherits the current style; raster fallback), Markdown laid out as PDF
+  text (headings, paragraphs with bold/italic/code/strike/links as link annotations, nested/ordered/task lists, quotes,
+  code blocks, pipe tables with alignment, hr, data: PNG/JPEG images), footer "Page i of n". A4 portrait/landscape. Fonts:
+  the standard 14 (Latin-1) unless any text needs more (`needsUnicodeFont`: Polish letters, ...) -> DejaVu Sans/Bold/Mono
+  TTFs (npm `dejavu-fonts-ttf`, emitted by Vite as `?url` assets, ~1.8 MB, fetched only then, embedded whole: such PDFs are
+  ~1–2 MB); fonts unavailable -> transliteration (`toLatin1`).
+- **Slides** (`scenario-slides.ts`): one HTML file "<diagram> - <scenario> (slides).html": title slide + one slide per step
+  (drawing as data: SVG img, optional Changes, UML inline SVG, sanitized Markdown). The only script is the constant
+  `SLIDES_SCRIPT` (←/→, PageUp/PageDown, Space/Shift+Space, Home/End, F fullscreen, buttons, `#n`), allowed by its SHA-256
+  in the CSP (`slidesScriptHash`, sync `sha256` from the GitLab PKCE module: works without crypto.subtle); selectors are
+  scoped (`#deck > section.slide`, `nav.controls > [data-rd=…]`) so UML/Markdown content cannot hijack them. No JS: slides
+  stacked; print: one per page. PPTX: not implemented (optional; would need pptxgenjs ~0.5 MB).
+- Export wiring: File > Export Scenario (PDF)… / (Slides)… (`data-action="exportScenarioPdf|exportScenarioSlides"` -> the same
+  `scenario-export-request` event with `detail.format`), panel buttons ⎙ (`.rd-scn-export-pdf`) and ▭
+  (`.rd-scn-export-slides`); `exportScenarioDoc(format, id?)` opens `openScenarioDocDialog` (`scenario-doc-export.ts`:
+  scenario select when several, A4 portrait/landscape remembered in `rd.scenario.pdfOrientation`, "Highlight changes"
+  preset from the view's toggle). Tests inject `docDialog`, `renderDrawingPng`, `pdfDeps`.
 - Templates store only cells (no scenarios), so they are unaffected; cache, share links and remote providers serialize
   the step pages/JSON and carry `uml`/`text` automatically.
 - Keyboard: the dispatcher in `legacy-main.ts` calls `scenarios.handleKeydown(e)` right after Ctrl+S; only while the
-  view is open: ←/PageUp, →/PageDown, Home/End, Esc; editing shortcuts are prevented, every other key is stopped
+  view is open: ←/PageUp, →/PageDown, Home/End, Esc, Space (autoplay); editing shortcuts are prevented, every other key is stopped
   (`scenario-keys.ts` `scenarioKeyAction`); fields/IME and Ctrl+S pass.
 - Panel (`scenarios-panel.ts`, `#scenarios-panel`): "+ New scenario", per scenario ▷ present / ✎ / ⧉ / × (confirm),
   expandable step list (lazy 64x40 thumbnails from the palette's shared renderer, ↑ ↓ ⟳ update-from-drawing (confirm)
@@ -422,7 +466,12 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   share; `markdown.test.ts` rendering + XSS payloads; `scenario-uml-text-view.test.ts` editor/previews, side panel
   Prev/Next, collapse, edit keep/replace, HTML export), `src/__tests__/services/plantuml-scenario.test.ts` (sequence
   parser/SVG, encoding vs PlantUML's documented example, mocked server, no request without a server),
-  `tests/e2e/scenarios.spec.ts` and `tests/e2e/scenario-uml-text.spec.ts` (any port).
+  `tests/e2e/scenarios.spec.ts` and `tests/e2e/scenario-uml-text.spec.ts` (any port). Scenario documents:
+  `scenario-diff.test.ts` (kinds, data keys, edges, nesting, highlight XML in own/first layer), `scenario-pdf.test.ts` (real
+  jsPDF in jsdom, streams inflated with node:zlib: pages, page numbers, Markdown text, link annotations, landscape, changes,
+  real DejaVu files vs. transliteration, svg2pdf vs. raster fallback), `scenario-slides.test.ts` (structure, escaping, CSP
+  hash = node:crypto SHA-256, navigation script run in jsdom), `scenario-doc-view.test.ts` (Show changes in the view graph,
+  autoplay with fake timers, Space, exports through `installScenarios`, options dialog), `tests/e2e/scenario-doc.spec.ts`.
 
 ### draw.io editor (`src/drawio/`)
 
