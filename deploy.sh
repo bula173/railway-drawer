@@ -82,6 +82,15 @@ ssh "${SERVER_USER}@${SERVER_HOST}" "cd '${SERVER_PATH}' && \
   fi"
 echo -e "${GREEN}✓ Backup step done${NC}"
 
+# Keep only the newest backups (names sort by timestamp); KEEP_BACKUPS=0 keeps all
+KEEP_BACKUPS="${KEEP_BACKUPS:-3}"
+if [ "$KEEP_BACKUPS" -gt 0 ] 2>/dev/null; then
+  ssh "${SERVER_USER}@${SERVER_HOST}" "cd '${SERVER_PATH}' && \
+    ls -1d '${BUILD_NAME}'.backup.[0-9]*_[0-9]* 2>/dev/null | sort -r | tail -n +$((KEEP_BACKUPS + 1)) | \
+    while read -r old; do rm -rf -- \"\$old\" && echo \"Removed old backup: \$old\"; done"
+  echo -e "${GREEN}✓ Kept the newest ${KEEP_BACKUPS} backups${NC}"
+fi
+
 # Step 6: Upload build
 echo -e "\n${YELLOW}Step 6: Uploading build...${NC}"
 scp -r "$BUILD_DIR" "${SERVER_USER}@${SERVER_HOST}:${SERVER_PATH}/${BUILD_NAME}"
