@@ -3,9 +3,14 @@
  * @brief Wires sharing into the legacy editor (called once from legacy-main.ts):
  *        Share button + File > Share…, File menu items of the cloud providers, the remote-file
  *        session (Ctrl+S save-back, status bar), incoming `#R` diagram links, provider file links
- *        (`?gitlab=`), pending sign-ins.
+ *        (`?gitlab=`), pending sign-ins; remote bindings persisted with the tab cache (Reload/Unlink,
+ *        unsaved-changes dot, close/leave warnings).
  */
+import { InternalEvent } from '@maxgraph/core';
 import type { TabData, TabManager } from '../ui/tabs';
+import { createFakeRemoteDescriptor } from '../debug/fake-remote-provider';
+import { openPopupMenu } from './ui/remote-menu';
+import type { PopupMenuItem } from './ui/remote-menu';
 import { renderXmlToPngBlob, renderXmlToSvgDocument } from '../ui/diagram-image-export';
 import { createStorageProviders } from './providers/registry';
 import { RemoteSession } from './remote-session';
@@ -42,19 +47,103 @@ function isTabEmpty(tab: TabData): boolean {
 
 export function installSharing(tabManager: TabManager, notify: SharingNotifier): SharingHandle {
   const providers = createStorageProviders({ beforeRedirect: () => tabManager.flushCache() });
+  // Test-only provider for the e2e specs: dev server + localStorage flag; dropped from production builds
+  if (import.meta.env.DEV) {
+    const fake = createFakeRemoteDescriptor();
+    if (fake) providers.push(fake);
+  }
 
+  const statusItem = document.getElementById('status-remote-item');
+  let installed = false;
   const remoteSession = new RemoteSession({
     host: tabManager,
     providers,
     notify,
-    statusItem: document.getElementById('status-remote-item'),
+    statusItem,
     statusValue: document.getElementById('status-remote'),
+    tabBar: document.getElementById('tabs-container'),
+    watchTab: (remoteTab, onChange) => {
+      const tab = tabManager.getAllTabs().find((t) => t.id === remoteTab.id);
+      if (!tab) return () => undefined;
+      const model = tab.graph.getDataModel();
+      const listener = (): void => onChange();
+      model.addListener(InternalEvent.CHANGE, listener);
+      const stopScenarios = tab.saveLoadController.getScenarios().subscribe(onChange);
+      return () => {
+        model.removeListener(listener);
+        stopScenarios();
+      };
+    },
+    onBindingsChanged: () => {
+      if (!installed) return;
+      renderProviderMenuItems();
+      // The new version/binding must survive a reload right away (not only at the next autosave)
+      tabManager.flushCache();
+    },
   });
-  window.addEventListener('tab-changed', () => remoteSession.updateStatus());
+  window.addEventListener('tab-changed', () => {
+    remoteSession.updateStatus();
+    renderProviderMenuItems();
+  });
   window.addEventListener('tab-closed', (evt) => {
     const tabId = (evt as CustomEvent<{ tabId: string }>).detail?.tabId;
     if (tabId) remoteSession.onTabClosed(tabId);
+    renderProviderMenuItems();
   });
+
+  // Bindings restored from the tab cache (restoreFromCache ran before this), then persisted with it
+  for (const tab of tabManager.getAllTabs()) {
+    const cached = tabManager.takeCachedRemote(tab.id);
+    if (cached !== undefined) remoteSession.restoreBinding(tab, cached);
+  }
+  tabManager.setRemoteCacheWriter((tabId) => remoteSession.persistedBinding(tabId));
+  tabManager.setCloseGuard((tabId) => remoteSession.confirmCloseTab(tabId));
+  tabManager.setTabDecorator((tabId, element) => remoteSession.decorateTab(tabId, element));
+  remoteSession.updateStatus();
+
+  // Leaving the page with changes not saved to SharePoint/GitLab: the browser's "Leave site?" prompt
+  window.addEventListener('beforeunload', (evt) => {
+    if (!remoteSession.hasUnsavedRemoteChanges()) return;
+    evt.preventDefault();
+    // Older browsers need returnValue set
+    evt.returnValue = '';
+  });
+
+  // Status bar "Stored in:" item: Reload / Unlink / open in the provider
+  const remoteActions = (): PopupMenuItem[] => {
+    const tab = tabManager.getActiveTab();
+    const binding = remoteSession.activeBinding();
+    if (!tab || !binding) return [];
+    const label = remoteSession.providerLabel(binding.providerId);
+    const items: PopupMenuItem[] = [];
+    if (remoteSession.isDirty(tab.id)) items.push({ note: `Unsaved changes: Ctrl+S saves them to ${label}.` });
+    if (!remoteSession.isVerified(tab.id)) {
+      items.push({ note: `Restored after a reload: the next save signs in if needed and checks for changes in ${label}.` });
+    }
+    items.push(
+      { label: `Save to ${label} now`, action: 'save-back', onSelect: () => void remoteSession.saveBack(tab.id) },
+      { label: `Reload from ${label}…`, action: 'reload', onSelect: () => void remoteSession.reloadFromRemote(tab.id) },
+      { label: `Unlink from ${label}`, action: 'unlink', onSelect: () => remoteSession.unlink(tab.id) }
+    );
+    if (binding.webUrl) items.push({ label: `Open in ${label} ↗`, action: 'web', href: binding.webUrl });
+    return items;
+  };
+  if (statusItem) {
+    statusItem.tabIndex = 0;
+    statusItem.setAttribute('role', 'button');
+    statusItem.setAttribute('aria-haspopup', 'menu');
+    const open = (): void => {
+      const items = remoteActions();
+      if (items.length > 0) openPopupMenu(statusItem, items);
+    };
+    statusItem.addEventListener('click', open);
+    statusItem.addEventListener('keydown', (evt) => {
+      if (evt.key === 'Enter' || evt.key === ' ') {
+        evt.preventDefault();
+        open();
+      }
+    });
+  }
 
   const shareXml = (): string =>
     buildShareMxfile(
@@ -139,8 +228,26 @@ export function installSharing(tabManager: TabManager, notify: SharingNotifier):
         menuAnchor.appendChild(item);
       }
     }
+    // The active tab's remote file (also when its provider is not usable here: Unlink still works)
+    const tab = tabManager.getActiveTab();
+    const binding = remoteSession.activeBinding();
+    if (tab && binding) {
+      const label = remoteSession.providerLabel(binding.providerId);
+      const reload = el('div', 'menu-dropdown-item', `Reload from ${label}…`);
+      reload.dataset.remoteAction = 'reload';
+      reload.dataset.provider = binding.providerId;
+      reload.title = `Discard local changes and load ${binding.name} again`;
+      reload.addEventListener('click', () => void remoteSession.reloadFromRemote(tab.id));
+      const unlink = el('div', 'menu-dropdown-item', `Unlink from ${label}`);
+      unlink.dataset.remoteAction = 'unlink';
+      unlink.dataset.provider = binding.providerId;
+      unlink.title = 'Keep the diagram, stop saving it back (Ctrl+S downloads again)';
+      unlink.addEventListener('click', () => remoteSession.unlink(tab.id));
+      menuAnchor.append(reload, unlink);
+    }
   }
   renderProviderMenuItems();
+  installed = true;
 
   // Redirect sign-ins first (they may be what an incoming link was waiting for)
   void remoteSession.resumePendingSignIns().then(() => remoteSession.openIncomingLinks());

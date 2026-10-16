@@ -345,3 +345,79 @@
   outline: 2px solid var(--rd-accent, #1a73e8);
   outline-offset: 2px;
 }
+
+/* ---- remote-bound tabs (remote-session.ts) ------------------------------------------------ */
+
+.rd-share-btn-danger {
+  border-color: #c62828;
+  background: #c62828;
+  color: #fff;
+}
+
+.rd-share-btn-danger:hover:not(:disabled) {
+  background: #b71c1c;
+}
+
+/* Unsaved changes since the last save to the provider */
+.tab-button .rd-remote-dirty-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-left: 5px;
+  border-radius: 50%;
+  background: #e65100;
+  vertical-align: middle;
+  flex: none;
+}
+
+#status-remote-item.rd-remote-clickable {
+  cursor: pointer;
+}
+
+#status-remote-item.rd-remote-clickable:hover .status-value {
+  text-decoration: underline;
+}
+
+#status-remote-item[data-dirty='true'] .status-value::after {
+  content: ' •';
+  color: #e65100;
+}
+
+.rd-remote-menu {
+  position: fixed;
+  z-index: 10050;
+  min-width: 200px;
+  padding: 4px 0;
+  border: 1px solid var(--rd-chrome-border, #ccc);
+  border-radius: 4px;
+  background: var(--rd-chrome-bg, #fff);
+  color: inherit;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  font-size: 13px;
+}
+
+.rd-remote-menu-item {
+  display: block;
+  width: 100%;
+  padding: 6px 14px;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.rd-remote-menu-item:hover,
+.rd-remote-menu-item:focus-visible {
+  background: rgba(127, 127, 127, 0.15);
+  outline: none;
+}
+
+.rd-remote-menu-note {
+  padding: 4px 14px 6px;
+  opacity: 0.75;
+  font-size: 12px;
+  white-space: normal;
+  max-width: 320px;
+}

@@ -257,6 +257,13 @@ export class SharePointProvider implements StorageProvider {
     return { ...this.toInfo(item, d.driveId, path), xml: text };
   }
 
+  /** "Reload from SharePoint": the bound item's current content and eTag. */
+  async reopen(file: RemoteFileInfo): Promise<RemoteFileContent> {
+    if (!isFileRef(file.ref)) throw new Error('Invalid SharePoint file reference');
+    const { item, text } = await this.client.downloadText(file.ref.driveId, file.ref.itemId);
+    return { ...this.toInfo(item, file.ref.driveId, file.parentPath), xml: text };
+  }
+
   async save(file: RemoteFileInfo, xml: string, expectedVersion: string | null): Promise<SaveResult> {
     if (!isFileRef(file.ref)) throw new Error('Invalid SharePoint file reference');
     const { driveId, itemId } = file.ref;

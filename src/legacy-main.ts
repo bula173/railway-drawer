@@ -259,6 +259,15 @@ window.addEventListener('beforeunload', () => {
   try {
     // The 5 s autosave interval may not have run since the last edit
     tabManager.flushCache();
+  } catch (error) {
+    console.error('Error during cleanup:', error);
+  }
+});
+// Teardown only once the page really goes: beforeunload can be cancelled (install-sharing.ts asks
+// when remote-bound tabs have unsaved changes), and the page must stay usable then
+window.addEventListener('pagehide', (evt) => {
+  if (evt.persisted) return;
+  try {
     tabManager.destroy();
     globalSaveStatusIndicator.destroy();
     globalNotificationManager.destroy();
