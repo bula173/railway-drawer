@@ -1,6 +1,6 @@
 /**
  * @file logger.ts
- * @brief Minimal structured logger for the draw.io modules.
+ * @brief Minimal structured logger for the draw.io shape engine, palettes and templates.
  *
  * Same call shape as the React app's `utils/logger` (`level(category, message, data?)`),
  * so the ported modules stay unchanged apart from the import path. `debug` is printed

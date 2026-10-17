@@ -29,14 +29,45 @@ export interface ShareOpenNotifier {
   warning(message: string): unknown;
 }
 
-/** Opens the diagram in `hash`; resolves with the number of tabs opened (0 on failure). */
-export async function openSharedDiagram(hash: string, host: ShareOpenHost, notify: ShareOpenNotifier): Promise<number> {
+/** Wording of the notifications of `openDiagramFile`. */
+export interface OpenDiagramMessages {
+  /** e.g. 'the shared diagram' */
+  what: string;
+  /** Appended to the success message. */
+  successHint: string;
+}
+
+export interface OpenDiagramResult {
+  opened: number;
+  failed: number;
+  /** The file was not a readable draw.io file (nothing was opened). */
+  invalid: boolean;
+}
+
+const SHARED_MESSAGES: OpenDiagramMessages = {
+  what: 'the shared diagram',
+  successHint: 'Save it (Ctrl+S) to keep your own copy.',
+};
+
+/**
+ * Opens every page group of a draw.io file (<mxfile> or <mxGraphModel>) as new tabs. Resolves with
+ * the number of tabs opened, of pages that could not be read, and whether the file itself was
+ * unreadable. With `skipEmpty`, pages without any content are not kept (and not counted).
+ */
+export async function openDiagramFile(
+  fileXml: string,
+  fallbackName: string,
+  host: ShareOpenHost,
+  notify: ShareOpenNotifier,
+  messages: OpenDiagramMessages = SHARED_MESSAGES,
+  opts: { skipEmpty?: boolean } = {}
+): Promise<OpenDiagramResult> {
   let pages;
   try {
-    pages = splitSharedFile(await decodeShareHash(hash), 'Shared diagram');
+    pages = splitSharedFile(fileXml, fallbackName);
   } catch (err) {
-    notify.error(`Could not open the shared diagram: ${err instanceof Error ? err.message : String(err)}`);
-    return 0;
+    notify.error(`Could not open ${messages.what}: ${err instanceof Error ? err.message : String(err)}`);
+    return { opened: 0, failed: 0, invalid: true };
   }
 
   const before = host.getAllTabs();
@@ -47,20 +78,33 @@ export async function openSharedDiagram(hash: string, host: ShareOpenHost, notif
     const tab = host.createTab(page.name);
     try {
       await tab.saveLoadController.loadProjectXml(page.fileXml, page.name, { quiet: true });
-      opened.push(tab.id);
+      if (opts.skipEmpty && host.isTabEmpty(tab.id)) host.closeTab(tab.id);
+      else opened.push(tab.id);
     } catch {
       // loadProjectXml showed the reason
       failed++;
       host.closeTab(tab.id);
     }
   }
-  if (opened.length === 0) return 0;
+  if (opened.length === 0) return { opened: 0, failed, invalid: false };
   host.switchTab(opened[0]);
   if (lonelyEmptyTab) host.closeTab(lonelyEmptyTab.id);
-  const what = opened.length === 1 ? 'a new tab' : `${opened.length} new tabs`;
-  if (failed > 0) notify.warning(`Opened the shared diagram in ${what}; ${failed} page(s) could not be read.`);
-  else notify.success(`Opened the shared diagram in ${what}. Save it (Ctrl+S) to keep your own copy.`);
-  return opened.length;
+  const where = opened.length === 1 ? 'a new tab' : `${opened.length} new tabs`;
+  if (failed > 0) notify.warning(`Opened ${messages.what} in ${where}; ${failed} page(s) could not be read.`);
+  else notify.success(`Opened ${messages.what} in ${where}. ${messages.successHint}`);
+  return { opened: opened.length, failed, invalid: false };
+}
+
+/** Opens the diagram in `hash`; resolves with the number of tabs opened (0 on failure). */
+export async function openSharedDiagram(hash: string, host: ShareOpenHost, notify: ShareOpenNotifier): Promise<number> {
+  let fileXml: string;
+  try {
+    fileXml = await decodeShareHash(hash);
+  } catch (err) {
+    notify.error(`Could not open the shared diagram: ${err instanceof Error ? err.message : String(err)}`);
+    return 0;
+  }
+  return (await openDiagramFile(fileXml, 'Shared diagram', host, notify)).opened;
 }
 
 /**

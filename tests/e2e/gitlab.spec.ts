@@ -16,7 +16,6 @@ async function freshApp(page: Page, path = '/'): Promise<void> {
     sessionStorage.clear();
   });
   await page.goto(path);
-  await expect(page.locator('body')).toHaveAttribute('data-editor', 'main');
   await expect(page.locator('#tabs-container .tab-button.active')).toHaveCount(1);
 }
 

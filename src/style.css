@@ -135,47 +135,6 @@ body {
   white-space: nowrap;
 }
 
-/* Editor switch: maxGraph | draw.io */
-.editor-toggle {
-  display: flex;
-  align-items: center;
-  font-size: 12px;
-}
-
-.editor-toggle-label {
-  color: var(--rd-text-muted);
-  margin-right: 6px;
-}
-
-.editor-toggle-btn {
-  padding: 4px 10px;
-  background: var(--rd-surface);
-  color: var(--rd-text);
-  border: 1px solid var(--rd-border-strong);
-  cursor: pointer;
-  font-size: 12px;
-}
-
-.editor-toggle-btn:first-of-type {
-  border-radius: 4px 0 0 4px;
-}
-
-.editor-toggle-btn:last-of-type {
-  border-radius: 0 4px 4px 0;
-  border-left: none;
-}
-
-.editor-toggle-btn:hover:not(.active) {
-  background: var(--rd-selected);
-}
-
-.editor-toggle-btn.active {
-  background: var(--rd-accent);
-  border-color: var(--rd-accent);
-  color: var(--rd-accent-text);
-  cursor: default;
-}
-
 .save-status {
   font-size: 12px;
   color: var(--rd-danger);

@@ -5,10 +5,6 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Railway Drawer</title>
-    <!-- draw.io mode never shows the maxGraph shell; hide it before any script runs (no flash) -->
-    <style>
-      body[data-editor="drawio"] #app-container { display: none; }
-    </style>
     <!-- Theme before first paint (src/drawio-shapes/theme/dark-mode.ts owns it afterwards) -->
     <script>
       (function () {
@@ -102,8 +98,6 @@
               <div class="menu-dropdown-item" data-action="railwayRoute:toggleSnap" role="menuitemcheckbox" aria-checked="true" title="Put signals, balises, axle counters and LEUs onto the nearest track and set their track">Snap to Track</div>
               <div class="menu-dropdown-item" data-action="railwayRoute:toggleRoutes" role="menuitemcheckbox" aria-checked="true" title="Show or hide the Routes layer">Show Routes</div>
               <div class="menu-dropdown-item" data-action="railwayRoute:toggleKmRuler" role="menuitemcheckbox" aria-checked="false" title="km ruler along the selected track (km start/end)">km Ruler</div>
-              <div class="rd-sep"></div>
-              <div class="menu-dropdown-item" data-action="switchEditorDrawio" title="Opens the diagrams in the embedded draw.io editor for import/export fidelity (saves, then reloads the page)">Open in draw.io (compatibility view)</div>
             </div>
           </div>
 
@@ -151,11 +145,6 @@
 
         <!-- Save Status & Share -->
         <div class="top-bar-right">
-          <div class="editor-toggle" role="group" aria-label="Editor">
-            <span class="editor-toggle-label">Editor:</span>
-            <button type="button" class="editor-toggle-btn active" data-editor-mode="main" aria-pressed="true" title="Railway Drawer editor (current)">Railway Drawer</button>
-            <button type="button" class="editor-toggle-btn" data-editor-mode="drawio" aria-pressed="false" title="Open in draw.io (compatibility view): saves, then reloads the page">draw.io</button>
-          </div>
           <div class="save-status">Unsaved changes. Click here to save.</div>
           <button type="button" class="share-btn" id="share-btn" aria-haspopup="dialog" title="Share: link with the diagram, downloads, cloud storage">👤 Share</button>
         </div>

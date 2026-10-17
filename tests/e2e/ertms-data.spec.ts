@@ -70,7 +70,6 @@ test('ERTMS objects: kinds on insert, data editing, checks, CSV, reload, saved f
   await page.goto('/');
   await page.evaluate(() => localStorage.clear());
   await page.reload();
-  await expect(page.locator('body')).toHaveAttribute('data-editor', 'main');
   await expect(page.locator('#tabs-container .tab-button.active')).toHaveCount(1);
 
   // Insert a signal and a balise from the ERTMS palette: kinds and IDs are pre-assigned

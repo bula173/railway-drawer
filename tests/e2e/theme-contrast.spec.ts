@@ -19,7 +19,7 @@
  * the scenario PDF export options dialog, and the remote status menu + Reload confirm dialog
  * (the dev-only fake provider, localStorage `rd.fakeRemote`, like remote-persist.spec.ts).
  *
- * Runs on any port (no draw.io server is involved).
+ * Runs on any port.
  */
 import { test, expect } from '@playwright/test';
 import type { Page } from '@playwright/test';
@@ -213,7 +213,6 @@ async function openApp(page: Page, theme: Theme): Promise<void> {
     localStorage.setItem('rd.theme', t);
   }, theme);
   await page.reload();
-  await expect(page.locator('body')).toHaveAttribute('data-editor', 'main');
   await expect(page.locator('#tabs-container .tab-button.active')).toHaveCount(1);
   await expect(page.locator('html')).toHaveAttribute('data-theme', theme);
   await page.locator(HEXAGON).waitFor();
@@ -473,7 +472,6 @@ async function openAppWithFakeRemote(page: Page, theme: Theme): Promise<void> {
     { t: theme, file: REMOTE_FILE, xml: REMOTE_XML }
   );
   await page.reload();
-  await expect(page.locator('body')).toHaveAttribute('data-editor', 'main');
   await expect(page.locator('#tabs-container .tab-button.active')).toHaveCount(1);
   await expect(page.locator('html')).toHaveAttribute('data-theme', theme);
   await expect(page.locator('#file-menu-remote-items [data-provider="fake-remote"][data-remote-action="open"]')).toHaveCount(1);

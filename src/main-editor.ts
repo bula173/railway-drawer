@@ -2,8 +2,8 @@
  * @file main-editor.ts
  * @brief Boot of the main Railway Drawer editor (maxGraph)
  * @details
- * Imported by main.ts (through drawio/boot.ts) only in the 'main' editor mode, so the
- * draw.io mode never loads maxGraph. Initializes the entire Railway Drawer application including:
+ * Imported lazily by main.ts (sign-in answer pages never load it). Initializes the entire
+ * Railway Drawer application including:
  * - Shape registration and toolbars
  * - Tab management for multiple diagrams
  * - UI components (stencils, panels, editors)
@@ -36,13 +36,10 @@ import { ServiceRegistry } from './services/service-registry';
 import { globalErrorHandler } from './services/error-handler';
 import { shouldIgnoreGraphShortcut } from './ui/delete';
 import { registerDrawioCodecs } from './services/drawio-xml';
-import { switchEditorMode } from './drawio/editorMode';
-import type { EditorMode } from './drawio/editorMode';
 import { ensureStencilsForXml, installDrawioCompat, installStencilEngine, parseMxLibrary } from './drawio-shapes/engine';
 import { PALETTES, loadPalette } from './drawio-shapes/palettes';
 import { createDrawioPaletteView, ertmsPaletteSource, loadErtmsTemplates, setDrawioPaletteEngine } from './ui/drawio-palette';
 import { createTemplatesPanel, openTemplateAsNewDiagram, saveAsTemplate, TemplateStore } from './ui/templates';
-import { installParityHook } from './debug/parity-hook';
 import { installDarkModeToggle } from './drawio-shapes/theme/dark-mode';
 import { installSharing } from './share/install-sharing';
 import { installScenarios } from './scenarios/install-scenarios';
@@ -278,37 +275,6 @@ window.addEventListener('pagehide', (evt) => {
   } catch (error) {
     console.error('Error during cleanup:', error);
   }
-});
-
-// ============= EDITOR MODE SWITCH =============
-
-/**
- * @brief Switch to another editor (reloads the page)
- * @details Saves pending changes to the browser cache first: the autosave runs only every 5 s.
- * Triggered by the top-bar "Editor" toggle and by View > "Open in draw.io (compatibility view)"
- * (MenuController dispatches `editor-switch-request`).
- */
-function switchEditor(mode: EditorMode): void {
-  if (mode === 'main') return;
-  // A failed write (e.g. storage full) would silently drop the edits since the last good autosave
-  if (
-    !tabManager.flushCache() &&
-    !window.confirm(
-      'Your latest changes could not be saved to browser storage and will be lost when switching editors. ' +
-        'Cancel and save to disk (Ctrl+S) first, or OK to switch anyway.'
-    )
-  ) {
-    return;
-  }
-  switchEditorMode(mode);
-}
-
-document.querySelectorAll<HTMLButtonElement>('.editor-toggle [data-editor-mode]').forEach((btn) => {
-  btn.addEventListener('click', () => switchEditor(btn.dataset.editorMode as EditorMode));
-});
-window.addEventListener('editor-switch-request', (e) => {
-  const mode = (e as CustomEvent<EditorMode>).detail;
-  if (mode === 'drawio' || mode === 'main') switchEditor(mode);
 });
 
 // ============= DROP HANDLER =============
@@ -569,9 +535,6 @@ createTemplatesPanel({
   notify: globalNotificationManager,
   dropTarget: graphContainer,
 });
-
-// Visual parity harness hook (dev server / ?parity=1 only)
-installParityHook();
 
 // ============= SHARING =============
 

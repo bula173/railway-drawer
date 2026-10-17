@@ -305,11 +305,6 @@ export class MenuController {
         this.graph.fit(10);
         break;
 
-      case 'switchEditorDrawio':
-        // main-editor.ts flushes the tab cache and reloads in draw.io mode
-        window.dispatchEvent(new CustomEvent('editor-switch-request', { detail: 'drawio' }));
-        break;
-
       case 'showGrid':
         this.graph.gridEnabled = !this.graph.gridEnabled;
         console.log('[Menu] Grid', this.graph.gridEnabled ? 'enabled' : 'disabled');

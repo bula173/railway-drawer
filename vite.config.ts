@@ -1,8 +1,6 @@
 /// <reference types="vitest/config" />
 import { defineConfig, loadEnv } from 'vite'
 import { execSync } from 'child_process'
-// Self-hosted draw.io at <base>drawio/ (dev server + dist/drawio/), see scripts/drawio-selfhost/
-import { drawioSelfHost } from './scripts/drawio-selfhost/vite-plugin.ts'
 
 // Get git commit hash for build ID
 let buildId = 'dev'
@@ -30,7 +28,6 @@ export default defineConfig(({ mode }) => {
     [...SHAREPOINT_ENV_KEYS, ...GITLAB_ENV_KEYS].map((key) => [`import.meta.env.${key}`, JSON.stringify(env[key] ?? '')])
   )
   return {
-  plugins: [drawioSelfHost()],
   define: {
     'import.meta.env.VITE_BUILD_ID': JSON.stringify(buildId),
     'import.meta.env.VITE_BUILD_TIME': JSON.stringify(buildTime),
@@ -62,7 +59,7 @@ export default defineConfig(({ mode }) => {
   test: {
     environment: 'jsdom',
     globals: true,
-    include: ['src/**/*.test.ts', 'tests/e2e/parity/__tests__/**/*.test.ts'],
+    include: ['src/**/*.test.ts'],
     // Playwright specs (tests/e2e) run with `npm run test:e2e`, never under vitest
     exclude: ['node_modules/**', 'dist/**', 'tests/e2e/*.spec.ts'],
     setupFiles: ['src/__tests__/setup.ts'],

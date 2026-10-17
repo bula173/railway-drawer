@@ -124,7 +124,7 @@ export function getDrawioThumbnailRenderer(): ThumbnailRenderer {
   return getRenderer();
 }
 
-/** Visual parity harness and image exports: renders an entry at a fixed scale with the palette's hidden graph. */
+/** Image exports: renders an entry at a fixed scale with the palette's hidden graph. */
 export function renderEntryForParity(
   entry: PaletteEntry,
   scale: number,

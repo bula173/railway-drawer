@@ -18,7 +18,9 @@ import { openShareDialog } from './share-dialog';
 import type { ShareDialogHandle } from './share-dialog';
 import { buildShareMxfile } from './share-mxfile';
 import { buildScenarioPages, scenarioIndexAttributes } from '../scenarios/scenario-format';
-import { installShareLinkHandler } from './share-open';
+import { installShareLinkHandler, openDiagramFile } from './share-open';
+import type { ShareOpenHost } from './share-open';
+import { discardRetiredDrawioDocument, readRetiredDrawioDocument } from '../services/retired-drawio-mode';
 import { downloadBlob, el, safeFileName } from './ui/modal';
 
 export interface SharingNotifier {
@@ -252,19 +254,34 @@ export function installSharing(tabManager: TabManager, notify: SharingNotifier):
   // Redirect sign-ins first (they may be what an incoming link was waiting for)
   void remoteSession.resumePendingSignIns().then(() => remoteSession.openIncomingLinks());
 
-  const sharedLinkHandled = installShareLinkHandler(
-    {
-      getAllTabs: () => tabManager.getAllTabs(),
-      createTab: (name) => tabManager.createTab(name),
-      switchTab: (id) => tabManager.switchTab(id),
-      closeTab: (id) => tabManager.closeTab(id),
-      isTabEmpty: (id) => {
-        const tab = tabManager.getAllTabs().find((t) => t.id === id);
-        return !!tab && isTabEmpty(tab);
-      },
+  const openHost: ShareOpenHost = {
+    getAllTabs: () => tabManager.getAllTabs(),
+    createTab: (name) => tabManager.createTab(name),
+    switchTab: (id) => tabManager.switchTab(id),
+    closeTab: (id) => tabManager.closeTab(id),
+    isTabEmpty: (id) => {
+      const tab = tabManager.getAllTabs().find((t) => t.id === id);
+      return !!tab && isTabEmpty(tab);
     },
-    notify
-  );
+  };
+  const sharedLinkHandled = installShareLinkHandler(openHost, notify);
+
+  // The removed draw.io view kept its own autosaved document: open it once as new tabs (blank pages
+  // are skipped), then drop it. Dropped after any attempt, so a broken one does not reopen on every start.
+  void sharedLinkHandled.then(async () => {
+    const retired = readRetiredDrawioDocument();
+    if (retired) {
+      await openDiagramFile(
+        retired.xml,
+        retired.title,
+        openHost,
+        notify,
+        { what: 'the diagram of the former draw.io view', successHint: 'Save it (Ctrl+S) to keep it as a file.' },
+        { skipEmpty: true }
+      );
+    }
+    discardRetiredDrawioDocument();
+  });
 
   return { remoteSession, openShareDialog: showShareDialog, sharedLinkHandled };
 }
