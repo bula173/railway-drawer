@@ -2,11 +2,18 @@ import { isLegacyModelXml } from './drawio-xml';
 import type { ScenarioData } from '../scenarios/scenario-model';
 
 export interface CacheData {
+  /** The active tab's project name (older versions kept only this one, for every tab). */
   projectName: string;
   tabs: Array<{
     id: string;
+    /** The tab's label in the tab bar. */
     name: string;
     graphXml: string;
+    /**
+     * The tab's own project name (top-bar title, file name of Save/Export, `<diagram name>`).
+     * Missing in caches of earlier versions: the active tab then gets the top-level projectName.
+     */
+    projectName?: string;
     /**
      * Pages 2..n of the file opened in the tab (serialized <diagram> elements) and the shown
      * page's <diagram> id, so a save after a reload still writes every page. Missing in

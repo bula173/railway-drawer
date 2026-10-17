@@ -8,6 +8,7 @@ import { TabManager } from '../../ui/tabs';
 import { CacheService } from '../../services/cache-service';
 import { ProjectService } from '../../services/project-service';
 import { globalNotificationManager } from '../../ui/notification';
+import { globalSaveStatusIndicator } from '../../ui/save-status';
 import { loadAppDom, clearAppDom } from './app-dom';
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
@@ -177,5 +178,104 @@ describe('TabManager cache restore', () => {
     (tabManager as unknown as { saveToCache(): void }).saveToCache();
 
     expect(CacheService.load()?.tabs[0].graphXml).toBe(broken);
+  });
+});
+
+describe('TabManager per-tab project names and cached old layers', () => {
+  let tabManager: TabManager | null = null;
+  const title = (): string => document.querySelector('.document-title')?.textContent ?? '';
+
+  beforeEach(() => {
+    vi.spyOn(console, 'log').mockImplementation(() => {});
+    vi.spyOn(console, 'warn').mockImplementation(() => {});
+    vi.spyOn(console, 'error').mockImplementation(() => {});
+    vi.spyOn(URL, 'createObjectURL').mockReturnValue('blob:test');
+    vi.spyOn(URL, 'revokeObjectURL').mockImplementation(() => {});
+    vi.spyOn(HTMLCanvasElement.prototype, 'getContext').mockReturnValue(null);
+    vi.stubGlobal('ResizeObserver', class { observe(): void {} unobserve(): void {} disconnect(): void {} });
+    loadAppDom();
+    localStorage.clear();
+  });
+
+  afterEach(() => {
+    tabManager?.destroy();
+    tabManager = null;
+    localStorage.clear();
+    clearAppDom();
+    vi.restoreAllMocks();
+    vi.unstubAllGlobals();
+  });
+
+  it('shows the active tab\'s project, renames only it (and a label equal to it), caches each', () => {
+    tabManager = startApp();
+    const first = tabManager.getActiveTab()!;
+    tabManager.renameActiveProject('Station A');
+    expect(title()).toBe('Station A');
+    expect(first.name).toBe('Diagram 1');
+    const second = tabManager.createTab('Yard');
+    // created in the background: the title stays the active tab's
+    expect(title()).toBe('Station A');
+    tabManager.switchTab(second.id);
+    expect(title()).toBe('Untitled Diagram');
+    second.saveLoadController.setProjectName('Yard');
+    tabManager.renameActiveProject('Yard North');
+    expect(second.name).toBe('Yard North');
+    expect(second.saveLoadController.getProjectName()).toBe('Yard North');
+    expect(first.saveLoadController.getProjectName()).toBe('Station A');
+    tabManager.switchTab(first.id);
+    expect(title()).toBe('Station A');
+    // a background tab's file load does not take over the title
+    second.saveLoadController.setProjectName('Elsewhere');
+    expect(title()).toBe('Station A');
+
+    expect(tabManager.flushCache()).toBe(true);
+    const cached = CacheService.load()!;
+    expect(cached.projectName).toBe('Station A');
+    expect(cached.tabs.map((t) => [t.name, t.projectName])).toEqual([['Diagram 1', 'Station A'], ['Yard North', 'Elsewhere']]);
+    tabManager.destroy();
+    clearAppDom();
+    loadAppDom();
+    tabManager = startApp();
+    expect(title()).toBe('Station A');
+    const [a, b] = tabManager.getAllTabs();
+    expect(a.saveLoadController.getProjectName()).toBe('Station A');
+    expect(b.saveLoadController.getProjectName()).toBe('Elsewhere');
+    tabManager.switchTab(b.id);
+    expect(title()).toBe('Elsewhere');
+  });
+
+  it('a cache of an earlier version (one project name) gives it to the active tab', () => {
+    const graphXml = '<mxGraphModel><root><mxCell id="0"/><mxCell id="1" parent="0"/></root></mxGraphModel>';
+    CacheService.save({
+      projectName: 'Old project',
+      tabs: [{ id: 't1', name: 'One', graphXml }, { id: 't2', name: 'Two', graphXml }],
+      activeTabId: 't2',
+      timestamp: 1,
+    });
+    tabManager = startApp();
+    const [one, two] = tabManager.getAllTabs();
+    expect(tabManager.getActiveTab()).toBe(two);
+    expect(two.saveLoadController.getProjectName()).toBe('Old project');
+    expect(one.saveLoadController.getProjectName()).toBe('Untitled Diagram');
+    expect(title()).toBe('Old project');
+  });
+
+  it('migrates old app layers of a cached tab once: real layers, cache rewritten, unsaved', () => {
+    const graphXml = `<mxGraphModel><root><mxCell id="0"/><mxCell id="1" parent="0"/>
+<mxCell id="a" value="A" style="rounded=0;rdLayerId=layer-0;" vertex="1" parent="1"><mxGeometry width="40" height="20" as="geometry"/></mxCell>
+<mxCell id="b" value="B" style="rounded=0;rdLayerId=layer-1700000000000;" vertex="1" parent="1"><mxGeometry x="60" width="40" height="20" as="geometry"/></mxCell>
+</root></mxGraphModel>`;
+    CacheService.save({ projectName: 'P', tabs: [{ id: 't', name: 'Layers', graphXml }], activeTabId: 't', timestamp: 1 });
+    const unsaved = vi.spyOn(globalSaveStatusIndicator, 'setUnsaved');
+    vi.spyOn(globalNotificationManager, 'info').mockReturnValue('');
+    tabManager = startApp();
+    const model = tabManager.getActiveTab()!.graph.getDataModel();
+    expect(model.getRoot()!.children!.map((l) => l.getId())).toEqual(['1', 'layer-1700000000000']);
+    expect(model.getCell('b')!.getParent()!.getId()).toBe('layer-1700000000000');
+    expect(unsaved).toHaveBeenCalled();
+    expect(globalNotificationManager.info).toHaveBeenCalledTimes(1);
+    const rewritten = CacheService.load()!.tabs[0].graphXml;
+    expect(rewritten).not.toContain('rdLayerId');
+    expect(rewritten).toContain('id="layer-1700000000000" value="Layer 2" parent="0"');
   });
 });

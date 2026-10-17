@@ -69,6 +69,15 @@ interface ResolvedPanelStyle extends StyleRecord {
   flipV?: boolean;
 }
 
+/**
+ * Arrange-tab controls that change a cell's geometry (position, size, rotation, flips). Disabled
+ * for a locked cell (`locked=1` on it, a group or its layer), like draw.io's Arrange panel.
+ */
+const GEOMETRY_CONTROL_IDS = [
+  'prop-x', 'prop-y', 'prop-w', 'prop-h', 'prop-constrainProportions',
+  'prop-rotation', 'btn-rotate90', 'btn-flipHorizontal', 'btn-flipVertical',
+];
+
 /** @brief Selects `value` in a <select>, adding an option for values the list does not offer */
 function selectValue(select: HTMLSelectElement | null, value: string): void {
   if (!select) return;
@@ -114,7 +123,9 @@ export class PropertiesPanel {
   private readonly selectionListener = () => this.update();
   /** @brief Model listener: keeps the Lock button in step with undo/redo and other lock edits */
   private readonly modelListener = () => {
-    if (this.currentCell) this.updateLockButton(hasLockedStyle(this.currentCell));
+    if (!this.currentCell || !this.isActive()) return;
+    this.updateLockButton(hasLockedStyle(this.currentCell));
+    this.updateGeometryControls();
   };
 
   /**
@@ -368,6 +379,24 @@ export class PropertiesPanel {
 
     // Lock state of the displayed cell
     this.updateLockButton(hasLockedStyle(cell));
+    this.updateGeometryControls();
+  }
+
+  /** @brief Whether the geometry of `cell` may change (not locked by itself, a group or its layer) */
+  private isGeometryEditable(cell: Cell | null): cell is Cell {
+    return !!cell && !this.graph.isCellLocked(cell);
+  }
+
+  /** @brief Disables the position/size/rotation/flip controls while the displayed cell is locked */
+  private updateGeometryControls() {
+    const locked = !!this.currentCell && !this.isGeometryEditable(this.currentCell);
+    for (const id of GEOMETRY_CONTROL_IDS) {
+      const control = document.getElementById(id) as HTMLInputElement | HTMLButtonElement | null;
+      if (!control) continue;
+      control.disabled = locked;
+      if (locked) control.title = 'Locked: unlock to change the geometry';
+      else if (control.title === 'Locked: unlock to change the geometry') control.removeAttribute('title');
+    }
   }
 
   private updateLockButton(isLocked: boolean) {
@@ -445,6 +474,13 @@ export class PropertiesPanel {
     applyStyleToCells(this.graph, cells, (style, resolved) => mutate(style, resolved));
   }
 
+  /** @brief applyStyle for rotation/flip keys: only the selected cells that are not locked */
+  private applyTransformStyle(mutate: (style: EditableStyle, resolved: EditableStyle) => void) {
+    const cells = this.getTargetCells().filter((cell) => this.isGeometryEditable(cell));
+    if (cells.length === 0) return;
+    applyStyleToCells(this.graph, cells, (style, resolved) => mutate(style, resolved));
+  }
+
   /**
    * @brief Change the geometry of the cell selected at event time through the model
    * @details model.setGeometry records an undoable change; editing the geometry in place did not.
@@ -452,7 +488,8 @@ export class PropertiesPanel {
   private applyGeometry(mutate: (geo: Geometry) => void) {
     const cell = this.getTargetCell();
     const current = cell?.getGeometry();
-    if (!cell || !current) return;
+    // A locked cell keeps its geometry (the fields are disabled; a late change event lands here)
+    if (!this.isGeometryEditable(cell) || !current) return;
     const geo = current.clone();
     mutate(geo);
     this.graph.model.setGeometry(cell, geo);
@@ -663,14 +700,17 @@ export class PropertiesPanel {
     this.bindStyle('prop-minHeight', (style, input) => { style.minHeight = parseInt(input.value); });
     this.bindStyle('prop-maxHeight', (style, input) => { style.maxHeight = parseInt(input.value); });
 
-    // Rotation
-    this.bindStyle('prop-rotation', (style, input) => { style.rotation = parseInt(input.value); });
+    // Rotation (not on locked cells)
+    this.on(document.getElementById('prop-rotation'), 'change', (e) => {
+      const input = e.target as HTMLInputElement;
+      this.applyTransformStyle((style) => { style.rotation = parseInt(input.value); });
+    });
 
     // Constrain Proportions: no listener needed - the state is read when width/height change
 
     // Rotate 90
     this.on(document.getElementById('btn-rotate90'), 'click', () => {
-      this.applyStyle((style, resolved) => {
+      this.applyTransformStyle((style, resolved) => {
         const current = Number(resolved.rotation) || 0;
         style.rotation = (current + 90) % 360;
         const rotInput = document.getElementById('prop-rotation') as HTMLInputElement;
@@ -681,14 +721,14 @@ export class PropertiesPanel {
     // Flip Horizontal / Vertical (one toggle per click). maxGraph reads flips from
     // the style; Geometry has no flipH/flipV, so geometry flags never rendered.
     this.on(document.getElementById('btn-flipHorizontal'), 'click', () => {
-      this.applyStyle((style, resolved) => {
+      this.applyTransformStyle((style, resolved) => {
         style.flipH = !resolved.flipH;
       });
       this.update();
     });
 
     this.on(document.getElementById('btn-flipVertical'), 'click', () => {
-      this.applyStyle((style, resolved) => {
+      this.applyTransformStyle((style, resolved) => {
         style.flipV = !resolved.flipV;
       });
       this.update();

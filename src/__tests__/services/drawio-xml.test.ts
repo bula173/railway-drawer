@@ -580,7 +580,9 @@ describe('golden fixtures and legacy files', () => {
 
     expect(model.getCell('a')?.getValue()).toBe('Signal\nA1');
     expect(model.getCell('a')?.isVertex()).toBe(true);
-    expect((model.getCell('a') as unknown as { __layerId: string }).__layerId).toBe('layer-2');
+    // the old app layer id (one old layer only) is dropped by the layer migration (legacy-layers.ts)
+    expect((model.getCell('a') as unknown as { __layerId?: string }).__layerId).toBeUndefined();
+    expect(controller.hasUnsavedLoadChanges()).toBe(true);
     expect(model.getCell('grp')?.getGeometry()?.alternateBounds).toEqual(new Rectangle(20, 20, 120, 30));
     expect(model.getCell('ab')?.getTerminal(false)).toBe(model.getCell('b'));
     expect(model.getCell('ab')?.getGeometry()?.points).toEqual([new Point(140, 100)]);
@@ -597,8 +599,8 @@ describe('golden fixtures and legacy files', () => {
     expect(parseStyleString(cells.get('a')!.getAttribute('style')!)).toMatchObject({
       baseStyleNames: ['ellipse'],
       rdShape: 'ellipse-shape',
-      rdLayerId: 'layer-2',
     });
+    expect(cells.get('a')!.getAttribute('style')).not.toContain('rdLayerId');
     expect(saved).toContain('PLANTUML_METADATA_UTF8:');
 
     // Reload of the converted file gives the same diagram back
@@ -608,7 +610,7 @@ describe('golden fixtures and legacy files', () => {
       new SaveLoadController(again).load(saved);
       const m = again.getDataModel();
       expect(m.getCell('a')?.getStyle()).toMatchObject({ shape: 'ellipse-shape', strokeColor: '#000000' });
-      expect((m.getCell('a') as unknown as { __layerId: string }).__layerId).toBe('layer-2');
+      expect((m.getCell('a') as unknown as { __layerId?: string }).__layerId).toBeUndefined();
       expect(m.getCell('grp')?.getGeometry()?.alternateBounds).toEqual(new Rectangle(20, 20, 120, 30));
       expect(new PlantUmlGroupManager(again).getPlantUmlMetadata(m.getCell('grp'))?.diagramType).toBe('sequence');
     } finally {

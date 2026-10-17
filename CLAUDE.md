@@ -42,7 +42,8 @@ node scripts/railml/validate.ts [--xsd railml3.xsd] [files]  # dev only: xmllint
 
 CI (`.github/workflows/build-and-deploy.yml`) runs typecheck, typecheck:tests, lint, test:run, build and the
 Playwright subset (legacy-smoke, drawio-palette, templates, scenarios, style-edit, share, gitlab, ertms-data,
-scenario-uml-text, theme-contrast, remote-persist, scenario-doc, editor-commands, dark-shapes, ertms-routes, railml, drawio-compat). No
+scenario-uml-text, theme-contrast, remote-persist, scenario-doc, editor-commands, dark-shapes, ertms-routes, railml, drawio-compat,
+interaction). No
 draw.io download is needed (`scripts/drawio-palettes` only runs locally, its output is committed). It does not deploy.
 
 ### E2E
@@ -122,6 +123,15 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   theme (PNG signature, white corner, the cell's own light fill; SVG parses, has the labels, `#dae8fc`, white
   background), `exportAsJson()` of the active tab, project rename in the top bar -> Export As… file name +
   `<diagram name>`, kept over a reload, Esc cancels.
+- `tests/e2e/interaction.spec.ts` (any port, real `page.mouse` input): press+drag in the middle of a rectangle/ellipse moves
+  it (one undo step, no edge), a multi-selection moves together, a connection starts from a connection point (A -> B),
+  group: first click selects the group, second the child, a drag on a child moves the group; an edge moves by its body
+  and reconnects by its end handle; ERTMS (Signal Right 3/Left 3, Single Balise Right, Train) and General palette shapes
+  move when dragged by the middle (the signal's centre is a gap of its group); locked cell / cell on a locked layer:
+  Arrange X/Y/W/H/rotation/flip disabled, late change events ignored; arrow keys nudge (1 px, Shift = grid, one undo
+  step each, never locked cells, not while typing); right-click Lock/Unlock keeps the selection (single, multi, group via
+  its child or a gap, edge); project name per tab (rename, switch, label = project name relabelled, export names,
+  reload); File > Open of a file with old app layers (`rdLayerId`) -> 3 draw.io layers, unsaved, saved without rdLayerId.
 - `tests/e2e/style-edit.spec.ts` (any port): line color/width/dash and fill through the Properties panel on cells from an
   ERTMS template, a user template and the draw.io/ERTMS palettes (group first click, child second click); checks the
   cell's own style and the SVG. Reads the graph via `import('/src/services/service-registry.ts')` (dev server only).
@@ -221,7 +231,7 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   `UndoManager` wired like `Editor.installUndoHandler` (records `InternalEvent.UNDO` from model and view;
   undo/redo replays do not re-record), plus copy/cut/paste/delete/selectAll. `SaveLoadController.load()` clears history.
 - Keyboard: a single capture-phase `keydown` dispatcher in `main-editor.ts` runs each shortcut once on the
-  active tab (Ctrl/Cmd+Z/Y/Shift+Z/C/X/V/A/S, Delete/Backspace, Escape). Per-tab controllers must not
+  active tab (Ctrl/Cmd+Z/Y/Shift+Z/C/X/V/A/S, Delete/Backspace, Escape, arrow-key nudge). Per-tab controllers must not
   bind their own `document` keydown for these. Everything except Ctrl+S is skipped when
   `shouldIgnoreGraphShortcut(e, graph)` (`src/ui/delete.ts`) says the user is typing (input, textarea,
   contentEditable, IME composition, cell editor active).
@@ -243,14 +253,39 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   are not selectable. Context menu Lock/Unlock and the Properties Lock button = `toggleCellsLocked` (draw.io
   `lockUnlock`: first cell decides; via `setCellStyleValues`, one undo step). Delete/cut/context Delete pass
   `graph.getDeletableCells(selection)` to `removeCells`, so a locked cell's edges stay too (draw.io deleteCells).
+  Properties Arrange X/Y/W/H, constrain, rotation, Rotate 90°, flips are disabled while the shown cell is locked
+  (`graph.isCellLocked`: also via its group/layer; refreshed on model changes) and their handlers skip locked cells.
+  Arrow keys = `GraphCommandService.nudge` (1 px, Shift = grid size; `getMovableCells` of the topmost selected cells,
+  one undo step; only when the focus is on the canvas/body).
+- Canvas interaction like draw.io (`src/ui/connections.ts` `installDrawioConnectionStart`, `src/ui/canvas-interaction.ts`):
+  maxGraph's ConnectionHandler started an edge from a vertex's central hotspot (and the old fallback had a centre
+  connection point), so a middle drag drew an edge and a click on a group child selected the child. Now
+  `isValidSource` is false until a connection started (only connection points start one; targets unchanged), the
+  fallback points are the 4 side midpoints, and a source press in the central 50 % of a vertex never hits a point.
+  `installGroupBackgroundHit`: a MOUSE_DOWN on the background inside a transparent group (vertex with children,
+  `getCellAt`) gets the group's state, so it is selected/moved (Alt+drag still forces the rubber band). Context menu
+  (`contextSelectionFor`): a right-click inside the selection (cell or ancestor selected) keeps it, else the topmost
+  selectable ancestor is selected; edges get the cell menu; maxGraph's PopupMenuHandler selection is off
+  (`selectOnPopup`/`clearSelectionOnBackground` = false: it changed/cleared the selection on mouse-up after Lock).
 - Layers panel (`src/ui/layers.ts`) = the model's real layers (root children, listed top-most first, unnamed =
   "Background", `rd-routes` = "Routes"): current layer = `graph.setDefaultParent`; + Layer = `model.add(root, …)`;
   delete = `removeCells([layer], false)`; eye = `model.setVisible`; padlock = `locked=1` on the layer cell. All undoable
   and saved in the .drawio file. The old app-only layers (`rdLayerId` / `__layerId`) are no longer used by the panel
-  (still read and written back verbatim by drawio-xml.ts).
-- Project name: top-bar `.document-title` (`ProjectNameEditor(tabManager)`, created after the TabManager): rename ->
-  active tab's `saveLoadController.setProjectName` (Save/Export file names, `<diagram name>`) + `flushCache()`; the
-  cache's `projectName` is put back on the title and the active tab's project on restore.
+  (still read and written back verbatim by drawio-xml.ts when a model already has real layers). One-time migration
+  (`src/services/legacy-layers.ts` `migrateLegacyLayers`, run by `SaveLoadController.load` on the scratch model, so
+  for files, cache, links and remote opens): a model with ONE real layer and cells carrying `rdLayerId` gets one draw.io
+  layer per old id (`layer-0` = the existing layer, then `layer-<timestamp>` in creation order, named `Layer <n>` like
+  the old defaults — the old names/visibility/lock were only ever in memory, never in a file or the cache; the old id
+  becomes the layer id when free), top-level cells move in z-order, edges follow a terminal, a layer whose cells were
+  all `visible=0` becomes a hidden layer; `rdLayerId` is dropped. Tab modified: `hasUnsavedLoadChanges()` ->
+  save status unsaved, cache rewritten on restore, remote binding dirty. Files without `rdLayerId` are untouched.
+  Tests: `src/services/__tests__/legacy-layers.test.ts` (fixture `fixtures/legacy/legacy-layers.drawio`).
+- Project name: each tab has its own project (`saveLoadController.getProjectName()`: Save/Export file names,
+  `<diagram name>`). Top-bar `.document-title` shows the active tab's (`TabManager.switchTab`; a background tab's
+  `setProjectName` does not touch it). Rename (`ProjectNameEditor(tabManager)`) -> `tabManager.renameActiveProject`:
+  the active tab's project, and its tab label too when the label equals the old project name (tabs opened from
+  links/remote files are named after it); cached at once. Cache: `tabs[].projectName` per tab (top-level
+  `projectName` = active tab's; caches of earlier versions without it give it to the active tab).
 - Image export: File > Export as PNG…/SVG… (`data-action="exportPng|exportSvg"`, per-tab `ExportImageController` set
   on the tab's MenuController) uses `diagram-image-export.ts` like the Share dialog and scenario exports: draw.io
   light colours even in the dark theme (thumbnail renderer option `light` pins the hidden graph with

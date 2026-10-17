@@ -41,6 +41,8 @@ export interface RemoteTab {
     loadProjectXml(xml: string, sourceName: string, opts?: { quiet?: boolean }): Promise<void>;
     setSaveHandler(handler: (() => void) | null): void;
     markAsSavedToDisk?(): void;
+    /** True when the last open changed the diagram against the file (old app layers migrated). */
+    hasUnsavedLoadChanges?(): boolean;
     /** Called after a file from disk was opened into the tab (File > Open): the tab is unbound. */
     onLocalFileOpened?(listener: () => void): () => void;
   };
@@ -218,11 +220,13 @@ export class RemoteSession {
 
   /** Binds `tab` to `file` as just opened/saved: verified, no unsaved changes. */
   bind(tab: RemoteTab, file: RemoteFileInfo, savedXml?: string): void {
+    // Just opened, but the open migrated the file (old app layers): unsaved until saved back
+    const changedOnOpen = savedXml === undefined && tab.saveLoadController.hasUnsavedLoadChanges?.() === true;
     this.setBinding(tab, file, {
       verified: true,
       savedAt: Date.now(),
-      savedHash: contentFingerprint(savedXml ?? tab.saveLoadController.getProjectXml()),
-      dirty: false,
+      savedHash: changedOnOpen ? '' : contentFingerprint(savedXml ?? tab.saveLoadController.getProjectXml()),
+      dirty: changedOnOpen,
     });
     // Edits made while a save was running are still unsaved
     if (savedXml !== undefined) this.scheduleCheck(tab.id);

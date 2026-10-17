@@ -78,6 +78,18 @@ async function clickSignal(page: Page, rdId: string): Promise<void> {
   await page.mouse.click(p.x, p.y);
 }
 
+/** A real mouse drag of the object by its middle, by (dx, dy) graph units. */
+async function dragObject(page: Page, rdId: string, dx: number, dy: number): Promise<void> {
+  const c = await cellCenter(page, rdId);
+  const from = await clientPoint(page, c.x, c.y);
+  const to = await clientPoint(page, c.x + dx, c.y + dy);
+  await page.mouse.move(from.x, from.y);
+  await page.mouse.down();
+  await page.mouse.move((from.x + to.x) / 2, (from.y + to.y) / 2, { steps: 5 });
+  await page.mouse.move(to.x, to.y, { steps: 5 });
+  await page.mouse.up();
+}
+
 async function menu(page: Page, name: string, action: string): Promise<void> {
   await page.locator(`.menu-item[data-menu="${name}"]`).click();
   await page.locator(`.menu-dropdown[data-menu="${name}"] [data-action="${action}"]`).click();
@@ -202,11 +214,16 @@ test('ERTMS routes: route tool, route/interlocking tables, snap to track, km', a
   expect(Math.abs(snapped.x - 300)).toBeLessThan(15);
   expect(Number((await attrsOf(page, 'S4'))!.rdKm)).toBeCloseTo(10 + snapped.x / 1000, 3);
 
-  // Moving it (the graph's move, as a mouse drag does) far away: no snap; next to T2: snaps onto T2
-  await inGraph(page, `const c = graph.getDataModel().getCell(arg); graph.moveCells([c], 0, 250);`, (await attrsOf(page, 'S4'))!.cellId);
+  // Dragging it by its middle (real mouse: the signal group moves, no connection starts) far
+  // away: no snap; next to T2: snaps onto T2
+  const cellsBefore = await inGraph<number>(page, 'return Object.keys(graph.getDataModel().cells).length;');
+  await dragObject(page, 'S4', 0, 250);
   const away = await cellCenter(page, 'S4');
-  expect(away.y).toBeCloseTo(snapped.y + 250, 1);
-  await inGraph(page, `const c = graph.getDataModel().getCell(arg); graph.moveCells([c], 50, -150);`, (await attrsOf(page, 'S4'))!.cellId);
+  // (a mouse move snaps the cell to the grid, gridSize 10)
+  expect(Math.abs(away.y - (snapped.y + 250))).toBeLessThanOrEqual(5);
+  expect((await attrsOf(page, 'S4'))?.rdTrackId).toBe('T1');
+  await dragObject(page, 'S4', 50, -150);
+  expect(await inGraph<number>(page, 'return Object.keys(graph.getDataModel().cells).length;')).toBe(cellsBefore);
   await expect.poll(async () => (await attrsOf(page, 'S4'))?.rdTrackId).toBe('T2');
   expect((await cellCenter(page, 'S4')).y).toBeCloseTo(180 + height / 2 + 4, 1);
   expect(Number((await attrsOf(page, 'S4'))!.rdKm)).toBeCloseTo(20 + ((await cellCenter(page, 'S4')).x - 150) / 1000, 3);

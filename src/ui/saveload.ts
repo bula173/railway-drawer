@@ -8,6 +8,7 @@ import {
   type PageSettings,
 } from '../services/drawio-xml';
 import { ProjectService } from '../services/project-service';
+import { migrateLegacyLayers, type LegacyLayerMigration } from '../services/legacy-layers';
 import { PlantUmlGroupManager } from '../services/plantuml-group-manager';
 import { GraphCommandService } from '../services/graph-command-service';
 import type { ScenarioSet } from '../scenarios/scenario-model';
@@ -145,6 +146,8 @@ export class SaveLoadController {
   private saveHandler: (() => void) | null = null;
   /** Told after a file from disk was opened into this tab (the remote session unbinds the tab). */
   private localFileOpenedListeners = new Set<() => void>();
+  /** What the last load() changed in the file itself (old app layers turned into draw.io layers). */
+  private loadMigration: LegacyLayerMigration | null = null;
 
   constructor(graph: Graph, commandService: GraphCommandService | null = null) {
     this.graph = graph;
@@ -244,7 +247,10 @@ export class SaveLoadController {
       // The file's scenarios replace the tab's (none in the file: the tab has none afterwards)
       this.projectService.scenarios.replaceAll(result.scenarios);
       this.updateProjectNameUI(result.metadata.name);
-      this.markAsSavedToDisk();
+      // A file whose old app layers were migrated differs from the file on disk: unsaved
+      if (this.loadMigration) globalSaveStatusIndicator.setUnsaved();
+      else this.markAsSavedToDisk();
+      this.reportLoadMigration(file.name);
       if (result.extraPageNames.length > 0) {
         const names = result.extraPageNames.map((name) => `"${name}"`).join(', ');
         globalNotificationManager.warning(
@@ -301,6 +307,8 @@ export class SaveLoadController {
     if (!loadedRoot || loadedRoot === emptyRoot) {
       throw new Error('The diagram data contains no cells');
     }
+    // Files of earlier versions: app-only layers (rdLayerId) -> real draw.io layers, once
+    const migration = migrateLegacyLayers(scratchModel);
 
     this.graph.clearSelection();
     this.graph.getDataModel().setRoot(loadedRoot);
@@ -311,7 +319,26 @@ export class SaveLoadController {
 
     this.graph.refresh();
     this.commandService?.clearHistory();
+    this.loadMigration = migration;
     console.log('[SaveLoad] Diagram loaded');
+  }
+
+  /**
+   * Whether the last load() changed the diagram against its source (old app layers migrated):
+   * the tab then has unsaved changes (the cache is rewritten, a remote-bound tab is dirty).
+   */
+  hasUnsavedLoadChanges(): boolean {
+    return this.loadMigration !== null;
+  }
+
+  /** Tells the user once that the old layers of `name` were converted. */
+  private reportLoadMigration(name: string): void {
+    const m = this.loadMigration;
+    if (!m || m.createdLayers === 0) return;
+    globalNotificationManager.info(
+      `${name}: the ${m.layers} layers of an earlier Railway Drawer version were converted to ` +
+        'draw.io layers (see the Layers panel). Save to keep the change.'
+    );
   }
 
 
@@ -400,9 +427,15 @@ export class SaveLoadController {
     return this.projectService.getProjectName();
   }
 
+  /**
+   * Shows the project name in the top-bar title, only while this tab is the shown one (each tab
+   * has its own project; TabManager.switchTab shows the new tab's). Not while it is being edited.
+   */
   private updateProjectNameUI(name: string): void {
-    const titleElement = document.querySelector('.document-title') as HTMLElement;
-    if (titleElement) {
+    const container = this.graph.container;
+    if (!container || !container.isConnected || container.style.display === 'none') return;
+    const titleElement = document.querySelector('.document-title') as HTMLElement | null;
+    if (titleElement && !titleElement.querySelector('input')) {
       titleElement.textContent = name;
     }
   }

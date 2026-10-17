@@ -151,6 +151,24 @@ export class GraphCommandService {
   }
 
   /**
+   * Arrow keys (draw.io nudge): moves the selection by (dx, dy) as one undoable edit. Only movable
+   * cells move: locked cells (`locked=1` on them, a group or their layer) stay put; children of a
+   * selected group move with it (only the topmost selected cells are moved).
+   * @returns whether anything moved
+   */
+  nudge(dx: number, dy: number): boolean {
+    const selection = this.graph.getSelectionCells();
+    const topmost = selection.filter((cell) => {
+      for (let p = cell.getParent(); p; p = p.getParent()) if (selection.includes(p)) return false;
+      return true;
+    });
+    const cells = this.graph.getMovableCells(topmost);
+    if (cells.length === 0 || (dx === 0 && dy === 0)) return false;
+    this.graph.moveCells(cells, dx, dy);
+    return true;
+  }
+
+  /**
    * Edit > Select All / Ctrl+A, like draw.io's `selectAll` action (`graph.selectAll(null, true)`):
    * every displayed cell of the default layer, descendants included; nothing when the layer is locked.
    */

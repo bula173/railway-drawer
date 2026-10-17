@@ -27,6 +27,7 @@ import { TextEditorController } from './text-editor';
 import { EdgePropertiesController } from './edge-properties';
 import { LayersController } from './layers';
 import { installCellLocking } from './cell-lock';
+import { installGroupBackgroundHit } from './canvas-interaction';
 import { ImageUploadController } from './image-upload';
 import { PasteImageController } from './paste-image';
 import { ZoomController } from './zoom';
@@ -233,6 +234,8 @@ export class TabManager {
     installDrawioBehaviour(graph);
     // draw.io lock: locked=1 on cells and layers (cell-lock.ts)
     installCellLocking(graph);
+    // A press in a gap of a transparent group (ERTMS symbols) moves the group (canvas-interaction.ts)
+    installGroupBackgroundHit(graph);
     installDrawioHandles(graph);
     // Named stencils (mxgraph.basic.*, ...) are fetched when cells using them arrive (load, paste, insert)
     installStencilAutoload(graph);
@@ -372,6 +375,7 @@ export class TabManager {
         return {
           id: tab.id,
           name: tab.name,
+          projectName: tab.saveLoadController.getProjectName(),
           graphXml: this.unrestoredTabXml.get(tab.id) ?? tab.saveLoadController.serializeToXml(),
           // Only written when there is something to keep, so single-page caches stay as they were
           ...(extraPages.length > 0 ? { extraPages } : {}),
@@ -452,11 +456,10 @@ export class TabManager {
     const cacheData = CacheService.load();
     if (!cacheData) return false;
 
-    this.restoreProjectName(cacheData.projectName);
-
     let activeTabId: string | null = null;
     let failedTabs = 0;
     let migratedTabs = 0;
+    let layerMigratedTabs = 0;
 
     for (const tabCache of cacheData.tabs) {
       const tabData = this.createTab(tabCache.name);
@@ -468,9 +471,18 @@ export class TabManager {
       tabData.saveLoadController.setPreservedPages(extraPages, pageId);
       // Scenarios are kept even when the drawing itself cannot be restored
       tabData.saveLoadController.getScenarios().replaceAll(sanitizeScenarios(tabCache.scenarios));
+      // Each tab's own project (caches of earlier versions: only the active tab's, set below)
+      if (typeof tabCache.projectName === 'string' && tabCache.projectName) {
+        tabData.saveLoadController.setProjectName(tabCache.projectName);
+      }
       try {
         tabData.saveLoadController.load(tabCache.graphXml);
         if (CacheService.isLegacyGraphXml(tabCache.graphXml)) migratedTabs++;
+        // Old app layers (rdLayerId) became draw.io layers: unsaved, and cached right away
+        if (tabData.saveLoadController.hasUnsavedLoadChanges()) {
+          migratedTabs++;
+          layerMigratedTabs++;
+        }
       } catch (error) {
         failedTabs++;
         console.error('[TabManager] Failed to restore tab from cache:', tabCache.name, error);
@@ -489,14 +501,26 @@ export class TabManager {
     if (activeTabId) {
       this.switchTab(activeTabId);
     }
-    // The project name (top-bar title, renamed there) names the active tab's files again
-    if (cacheData.projectName) this.getActiveTab()?.saveLoadController.setProjectName(cacheData.projectName);
+    // Caches of earlier versions kept one project name (the top-bar title): the active tab's
+    const active = this.getActiveTab();
+    const activeCache = cacheData.tabs.find((t) => t.id === cacheData.activeTabId) ?? cacheData.tabs[0];
+    if (active && typeof activeCache?.projectName !== 'string' && cacheData.projectName) {
+      active.saveLoadController.setProjectName(cacheData.projectName);
+    }
+    if (active) this.showProjectName(active);
 
     // Diagrams cached by earlier versions (<GraphDataModel>) are rewritten in the draw.io
     // format right away instead of at the next autosave. Tabs that failed keep their XML.
     if (migratedTabs > 0) {
       console.log('[TabManager] Migrating', migratedTabs, 'cached diagram(s) to the draw.io format');
       this.saveToCache();
+    }
+    if (layerMigratedTabs > 0) {
+      globalSaveStatusIndicator.setUnsaved();
+      globalNotificationManager.info(
+        `The layers of ${layerMigratedTabs} diagram(s) from an earlier version were converted to draw.io layers ` +
+          '(see the Layers panel). Save to keep the change in your files.'
+      );
     }
 
     if (failedTabs > 0) {
@@ -528,16 +552,36 @@ export class TabManager {
     CacheService.clear();
   }
 
+  /** The active tab's project name (the cache's top-level `projectName`, for older readers). */
   private getProjectName(): string {
-    const titleElement = document.querySelector('.document-title');
-    return titleElement?.textContent || 'Untitled Diagram';
+    return this.getActiveTab()?.saveLoadController.getProjectName() || 'Untitled Diagram';
   }
 
-  private restoreProjectName(name: string): void {
-    const titleElement = document.querySelector('.document-title') as HTMLElement;
-    if (titleElement) {
-      titleElement.textContent = name;
+  /** Puts `tab`'s project name on the top-bar title (each tab has its own project). */
+  private showProjectName(tab: TabData): void {
+    const titleElement = document.querySelector('.document-title') as HTMLElement | null;
+    // Not while the title is being edited (its input lives inside the element)
+    if (titleElement && !titleElement.querySelector('input')) {
+      titleElement.textContent = tab.saveLoadController.getProjectName();
     }
+  }
+
+  /**
+   * Renames the active tab's project (top-bar title): file name of Save/Export and `<diagram
+   * name>`. A tab labelled with the old project name (tabs opened from a file or link are named
+   * after it) is relabelled too; other labels are the user's own and stay. Cached at once.
+   */
+  renameActiveProject(newName: string): void {
+    const tab = this.getActiveTab();
+    if (!tab) return;
+    const oldName = tab.saveLoadController.getProjectName();
+    if (newName === oldName) return;
+    tab.saveLoadController.setProjectName(newName);
+    if (tab.name === oldName) {
+      tab.name = newName;
+      this.renderTabBar();
+    }
+    this.saveToCache();
   }
 
   switchTab(tabId: string): void {
@@ -561,7 +605,10 @@ export class TabManager {
 
     this.activeTabId = tabId;
     const newTab = this.tabs.get(tabId);
-    if (newTab) this.refreshSharedPanels(newTab);
+    if (newTab) {
+      this.refreshSharedPanels(newTab);
+      this.showProjectName(newTab);
+    }
     // Only the highlight changes: keep the tab elements, so a double-click that started on an
     // inactive tab still reaches the same label and opens the rename editor
     this.updateActiveTabHighlight();

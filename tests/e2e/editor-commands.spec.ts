@@ -130,13 +130,9 @@ function hasLockStyle(page: Page, id: string): Promise<boolean> {
   `, id);
 }
 
-/** Drags a cell from near its top-left corner (the centre hotspot would start a connection). */
+/** Drags a cell by its middle with the real mouse (moves it, like draw.io; no connection starts). */
 async function dragBy(page: Page, id: string, dx: number, dy: number): Promise<void> {
-  const r = await inTab<{ x: number; y: number; w: number; h: number }>(page, `
-    const b = graph.view.getState(graph.getDataModel().getCell(arg)).shape.node.getBoundingClientRect();
-    return { x: b.left, y: b.top, w: b.width, h: b.height };
-  `, id);
-  const c = { x: r.x + r.w * 0.2, y: r.y + r.h * 0.25 };
+  const c = await cellCenter(page, id);
   await page.mouse.move(c.x, c.y);
   await page.mouse.down();
   await page.mouse.move(c.x + dx / 2, c.y + dy / 2, { steps: 5 });
@@ -339,7 +335,8 @@ test.describe('editor commands', () => {
     await expect(lockItem).toHaveText('Lock');
     await lockItem.click();
     expect(await hasLockStyle(page, 'A')).toBe(true);
-    await select(page, ['A']);
+    // the selection is kept (draw.io lockUnlock)
+    expect(await selectedIds(page)).toEqual(['A']);
     await expect(page.locator('#btn-lock')).toHaveText('Unlock');
 
     // the locked cell stays put and stays selectable

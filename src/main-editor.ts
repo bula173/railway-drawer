@@ -190,11 +190,20 @@ installRailml(tabManager, globalNotificationManager);
  * - Ctrl/Cmd+S: Save project to disk
  * - Delete/Backspace: Delete selected items
  * - Escape: Clear selection
+ * - Arrow keys: Move the selection by 1 px (Shift: by the grid size); locked cells stay
  *
  * This is the single dispatcher for these shortcuts: each runs once, on the active tab
  * (the per-tab clipboard, delete and save controllers no longer listen on `document`).
  * Graph shortcuts are ignored while the user edits text (inputs, contentEditable, cell editor).
  */
+/** Arrow key -> unit move (draw.io nudge). */
+const ARROW_NUDGE: Record<string, [number, number]> = {
+  ArrowLeft: [-1, 0],
+  ArrowRight: [1, 0],
+  ArrowUp: [0, -1],
+  ArrowDown: [0, 1],
+};
+
 document.addEventListener('keydown', (e) => {
   const activeTab = tabManager.getActiveTab();
   if (!activeTab) return;
@@ -251,6 +260,16 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     e.preventDefault();
     activeTab.graph.clearSelection();
+  }
+  // Arrow keys nudge the selection like draw.io: 1 px, Shift: one grid step; locked cells stay
+  // (not while the focus is on a panel control that uses the arrows itself: lists, buttons, ...)
+  const nudge = ARROW_NUDGE[e.key];
+  const focus = document.activeElement;
+  const focusOnCanvas = !focus || focus === document.body || activeTab.graph.container.contains(focus);
+  if (nudge && focusOnCanvas && !mod && !e.altKey && activeTab.graph.getSelectionCount() > 0) {
+    e.preventDefault();
+    const step = e.shiftKey ? activeTab.graph.getGridSize() || 10 : 1;
+    activeTab.graphCommandService.nudge(nudge[0] * step, nudge[1] * step);
   }
 }, true);
 

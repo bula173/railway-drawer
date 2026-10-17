@@ -75,6 +75,8 @@ export class ShortcutsHelpController {
         ['Ctrl+X / Cmd+X', 'Cut'],
         ['Ctrl+V / Cmd+V', 'Paste'],
         ['Delete', 'Delete selected'],
+        ['Arrow keys', 'Move selected by 1 px'],
+        ['Shift+Arrow keys', 'Move selected by the grid size'],
         ['Ctrl+Z / Cmd+Z', 'Undo'],
         ['Ctrl+Y / Cmd+Y', 'Redo'],
       ]},

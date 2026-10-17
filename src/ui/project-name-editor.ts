@@ -3,14 +3,15 @@ import type { TabData } from './tabs';
 /** What the editor needs from the TabManager (main-editor.ts passes the real one). */
 export interface ProjectNameHost {
   getActiveTab(): TabData | null;
-  /** Persists the tab cache (which stores the project name) right away. */
-  flushCache(): boolean;
+  /** Renames the active tab's project (and its label when that is the project name) and caches it. */
+  renameActiveProject(name: string): void;
 }
 
 /**
  * Click on the top-bar `.document-title` to rename the project: Enter or leaving the field keeps
- * the name, Escape restores the old one. The name goes to the active tab's project (file name of
- * Save/Export, `<diagram name>`) and the tab cache (TabManager stores the title), so it survives a reload.
+ * the name, Escape restores the old one. Each tab has its own project: the title shows the active
+ * tab's (TabManager.switchTab), and a rename goes to the active tab's project (file name of
+ * Save/Export, `<diagram name>`) and the tab cache (per tab), so it survives a reload.
  */
 export class ProjectNameEditor {
   private titleElement: HTMLElement | null;
@@ -32,7 +33,8 @@ export class ProjectNameEditor {
     if (this.isEditing || !this.titleElement) return;
 
     this.isEditing = true;
-    const currentName = this.titleElement.textContent || 'Untitled Diagram';
+    const currentName = this.host.getActiveTab()?.saveLoadController.getProjectName() ||
+      this.titleElement.textContent || 'Untitled Diagram';
 
     // Create input element
     const input = document.createElement('input');
@@ -75,8 +77,7 @@ export class ProjectNameEditor {
   }
 
   private updateProjectName(name: string): void {
-    this.host.getActiveTab()?.saveLoadController.setProjectName(name);
-    this.host.flushCache();
+    this.host.renameActiveProject(name);
   }
 
   setTitle(name: string): void {

@@ -18,7 +18,26 @@ import { ClipboardService } from '../services/clipboard-service';
 import type { GraphCommandService } from '../services/graph-command-service';
 import { ensureDrawioMenuItems, executeDrawioMenuAction, updateDrawioMenuItems } from '../drawio-shapes/behaviour/menu';
 import type { GroupingController } from './grouping';
-import { hasLockedStyle, toggleCellsLocked } from './cell-lock';
+import { hasLockedStyle, isLayer, toggleCellsLocked } from './cell-lock';
+
+/**
+ * The cells a right-click on `hit` acts on, like a draw.io click: a hit inside the selection (the
+ * cell or one of its ancestors is selected) keeps the whole selection; otherwise the topmost
+ * selectable ancestor (a group before its children) becomes the selection. Null: nothing
+ * selectable was hit (canvas menu).
+ */
+export function contextSelectionFor(graph: Graph, hit: Cell | null): Cell[] | null {
+  if (!hit) return null;
+  const selection = graph.getSelectionCells();
+  for (let c: Cell | null = hit; c && !isLayer(graph, c); c = c.getParent()) {
+    if (selection.includes(c)) return selection;
+  }
+  let target: Cell | null = null;
+  for (let c: Cell | null = hit; c && !isLayer(graph, c) && (c.isVertex() || c.isEdge()); c = c.getParent()) {
+    if (graph.isCellSelectable(c)) target = c;
+  }
+  return target ? [target] : null;
+}
 
 
 /**
@@ -65,6 +84,14 @@ export class ContextMenuController {
    */
   constructor(graph: Graph) {
     this.graph = graph;
+    // This controller decides what a right-click selects. maxGraph's PopupMenuHandler (no menu of
+    // its own here) also selected the cell under the mouse-up, or cleared the selection when that
+    // was a gap (a group's transparent area, ERTMS symbols): the selection changed after Lock & co.
+    const popup = graph.getPlugin('PopupMenuHandler') as { selectOnPopup?: boolean; clearSelectionOnBackground?: boolean } | undefined;
+    if (popup) {
+      popup.selectOnPopup = false;
+      popup.clearSelectionOnBackground = false;
+    }
     this.contextMenu = document.getElementById('context-menu');
     this.clipboardService = ClipboardService.getInstance();
     // draw.io table/lane and collapse/expand items (bound below like the static items)
@@ -107,30 +134,26 @@ export class ContextMenuController {
       const target = e.target as HTMLElement;
       if (target.closest('#graph-container')) {
         e.preventDefault();
-        const rect = document.getElementById('graph-container')!.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
+        // Graph coordinates of the click (the tab's graph div may be scrolled)
+        const container = this.graph.container;
+        const rect = container.getBoundingClientRect();
+        const x = e.clientX - rect.left + container.scrollLeft;
+        const y = e.clientY - rect.top + container.scrollTop;
 
         this.lastContextX = e.clientX;
         this.lastContextY = e.clientY;
 
-        // Get cell at click position
+        // Cell at the click position (vertices and edges); the selection like a click
         const cell = this.graph.getCellAt(x, y);
-        const currentSelection = this.graph.getSelectionCells();
+        const cells = contextSelectionFor(this.graph, cell);
 
-        if (cell && !cell.isEdge?.()) {
-          // If clicking on a cell that's already selected, keep the multiple selection
-          const isCellInSelection = currentSelection.some((c: Cell) => c === cell);
-
-          if (isCellInSelection && currentSelection.length > 1) {
-            // Keep multiple selection
-            this.selectedCells = currentSelection;
-          } else {
-            // Single cell selection
-            this.selectedCells = [cell];
-            this.graph.setSelectionCells([cell]);
+        if (cell && cells) {
+          this.selectedCells = cells;
+          const current = this.graph.getSelectionCells();
+          if (cells.length !== current.length || cells.some((c) => !current.includes(c))) {
+            this.graph.setSelectionCells(cells);
           }
-
+          // The cell itself (table/lane items act on the clicked cell)
           this.currentCell = cell;
           this.showContextMenu(e.clientX, e.clientY, 'cell');
         } else {
