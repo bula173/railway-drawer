@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<railML xmlns="https://www.railml.org/schemas/3.2" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rd="https://railwaydrawer.mksystemdesign.org/railml/rd/1" version="3.2" xsi:schemaLocation="https://www.railml.org/schemas/3.2 https://www.railml.org/schemas/3.2/railml3.xsd">
+  <metadata>
+    <dc:title>Spec</dc:title>
+    <dc:creator>Railway Drawer</dc:creator>
+    <dc:date>2026-01-01T00:00:00Z</dc:date>
+  </metadata>
+  <common id="co01">
+    <positioning>
+      <linearPositioningSystems>
+        <linearPositioningSystem id="lps01" units="m" startMeasure="10000" endMeasure="20500" linearReferencingMethod="absolute">
+          <name name="km" language="en"/>
+        </linearPositioningSystem>
+      </linearPositioningSystems>
+    </positioning>
+  </common>
+  <infrastructure id="is01">
+    <topology>
+      <netElements>
+        <netElement id="ne_T1_1" length="200">
+          <associatedPositioningSystem id="ne_T1_1_aps">
+            <intrinsicCoordinate id="ne_T1_1_ic0" intrinsicCoord="0">
+              <linearCoordinate positioningSystemRef="lps01" measure="10000"/>
+            </intrinsicCoordinate>
+            <intrinsicCoordinate id="ne_T1_1_ic1" intrinsicCoord="1">
+              <linearCoordinate positioningSystemRef="lps01" measure="10200"/>
+            </intrinsicCoordinate>
+          </associatedPositioningSystem>
+        </netElement>
+        <netElement id="ne_T1_2" length="400">
+          <associatedPositioningSystem id="ne_T1_2_aps">
+            <intrinsicCoordinate id="ne_T1_2_ic0" intrinsicCoord="0">
+              <linearCoordinate positioningSystemRef="lps01" measure="10200"/>
+            </intrinsicCoordinate>
+            <intrinsicCoordinate id="ne_T1_2_ic1" intrinsicCoord="1">
+              <linearCoordinate positioningSystemRef="lps01" measure="10600"/>
+            </intrinsicCoordinate>
+          </associatedPositioningSystem>
+        </netElement>
+        <netElement id="ne_T2_1" length="500">
+          <associatedPositioningSystem id="ne_T2_1_aps">
+            <intrinsicCoordinate id="ne_T2_1_ic0" intrinsicCoord="0">
+              <linearCoordinate positioningSystemRef="lps01" measure="20000"/>
+            </intrinsicCoordinate>
+            <intrinsicCoordinate id="ne_T2_1_ic1" intrinsicCoord="1">
+              <linearCoordinate positioningSystemRef="lps01" measure="20500"/>
+            </intrinsicCoordinate>
+          </associatedPositioningSystem>
+        </netElement>
+        <netElement id="ne_W1_1" length="141.421">
+          <associatedPositioningSystem id="ne_W1_1_aps">
+            <intrinsicCoordinate id="ne_W1_1_ic0" intrinsicCoord="0"/>
+            <intrinsicCoordinate id="ne_W1_1_ic1" intrinsicCoord="1"/>
+          </associatedPositioningSystem>
+        </netElement>
+      </netElements>
+      <netRelations>
+        <netRelation id="nr_T1_1_T1_2" positionOnA="1" positionOnB="0" navigability="Both">
+          <elementA ref="ne_T1_1"/>
+          <elementB ref="ne_T1_2"/>
+        </netRelation>
+        <netRelation id="nr_T1_1_W1_1" positionOnA="1" positionOnB="0" navigability="Both">
+          <elementA ref="ne_T1_1"/>
+          <elementB ref="ne_W1_1"/>
+        </netRelation>
+        <netRelation id="nr_T1_2_W1_1" positionOnA="0" positionOnB="0" navigability="None">
+          <elementA ref="ne_T1_2"/>
+          <elementB ref="ne_W1_1"/>
+        </netRelation>
+        <netRelation id="nr_T2_1_W1_1" positionOnA="0" positionOnB="1" navigability="Both">
+          <elementA ref="ne_T2_1"/>
+          <elementB ref="ne_W1_1"/>
+        </netRelation>
+      </netRelations>
+      <networks>
+        <network id="nw01">
+          <level id="lv01" descriptionLevel="Micro">
+            <networkResource ref="ne_T1_1"/>
+            <networkResource ref="ne_T1_2"/>
+            <networkResource ref="ne_T2_1"/>
+            <networkResource ref="ne_W1_1"/>
+            <networkResource ref="nr_T1_1_T1_2"/>
+            <networkResource ref="nr_T1_1_W1_1"/>
+            <networkResource ref="nr_T1_2_W1_1"/>
+            <networkResource ref="nr_T2_1_W1_1"/>
+          </level>
+        </network>
+      </networks>
+    </topology>
+    <functionalInfrastructure>
+      <balises>
+        <balise id="bal_B1" belongsToBaliseGroup="bg_BG1">
+          <name name="B1" language="en"/>
+          <spotLocation id="bal_B1_sl" netElementRef="ne_T1_1" intrinsicCoord="0.45" applicationDirection="normal">
+            <linearCoordinate positioningSystemRef="lps01" measure="10090"/>
+          </spotLocation>
+          <designator register="_RailwayDrawer" entry="B1"/>
+          <isEurobalise positionInGroup="0"/>
+        </balise>
+        <balise id="bal_B2" belongsToBaliseGroup="bg_BG1">
+          <name name="B2" language="en"/>
+          <spotLocation id="bal_B2_sl" netElementRef="ne_T1_1" intrinsicCoord="0.55" applicationDirection="normal">
+            <linearCoordinate positioningSystemRef="lps01" measure="10110"/>
+          </spotLocation>
+          <designator register="_RailwayDrawer" entry="B2"/>
+          <isEurobalise positionInGroup="1"/>
+        </balise>
+      </balises>
+      <baliseGroups>
+        <baliseGroup id="bg_BG1" numberOfBalisesInGroup="2">
+          <name name="BG1" language="en"/>
+          <spotLocation id="bg_BG1_sl" netElementRef="ne_T1_1" intrinsicCoord="0.5" applicationDirection="normal"/>
+          <designator register="_RailwayDrawer" entry="BG1"/>
+          <applicationType value="ETCS"/>
+          <isEurobaliseGroup countryID="353" groupID="1201"/>
+        </baliseGroup>
+      </baliseGroups>
+      <signalsIS>
+        <signalIS id="sig_S1" isSwitchable="true">
+          <name name="S1" language="en"/>
+          <spotLocation id="sig_S1_sl" netElementRef="ne_T1_1" intrinsicCoord="0.25" applicationDirection="normal">
+            <linearCoordinate positioningSystemRef="lps01" measure="10050"/>
+          </spotLocation>
+          <designator register="_RailwayDrawer" entry="S1"/>
+          <isTrainMovementSignal/>
+          <signalConstruction type="light" positionAtTrack="right"/>
+        </signalIS>
+        <signalIS id="sig_S2" isSwitchable="true">
+          <name name="S2" language="en"/>
+          <spotLocation id="sig_S2_sl" netElementRef="ne_T1_2" intrinsicCoord="0.875" applicationDirection="normal">
+            <linearCoordinate positioningSystemRef="lps01" measure="10550"/>
+          </spotLocation>
+          <designator register="_RailwayDrawer" entry="S2"/>
+          <isTrainMovementSignal/>
+          <signalConstruction type="light" positionAtTrack="right"/>
+        </signalIS>
+        <signalIS id="sig_S3" isSwitchable="false">
+          <name name="S3" language="en"/>
+          <spotLocation id="sig_S3_sl" netElementRef="ne_T2_1" intrinsicCoord="0.8" applicationDirection="normal"/>
+          <designator register="_RailwayDrawer" entry="S3"/>
+          <isEtcsSignal/>
+          <signalConstruction type="board" positionAtTrack="right"/>
+        </signalIS>
+      </signalsIS>
+      <switchesIS>
+        <switchIS id="sw_W1" type="ordinarySwitch" continueCourse="left" branchCourse="right">
+          <name name="W1" language="en"/>
+          <spotLocation id="sw_W1_sl" netElementRef="ne_T1_1" intrinsicCoord="1"/>
+          <designator register="_RailwayDrawer" entry="W1"/>
+          <leftBranch netRelationRef="nr_T1_1_T1_2"/>
+          <rightBranch netRelationRef="nr_T1_1_W1_1"/>
+        </switchIS>
+      </switchesIS>
+      <tracks>
+        <track id="trk_T1" type="mainTrack">
+          <name name="Main line" language="en"/>
+          <linearLocation id="trk_T1_ll">
+            <associatedNetElement netElementRef="ne_T1_1" keepsOrientation="true" intrinsicCoordBegin="0" intrinsicCoordEnd="1" sequence="1"/>
+            <associatedNetElement netElementRef="ne_T1_2" keepsOrientation="true" intrinsicCoordBegin="0" intrinsicCoordEnd="1" sequence="2"/>
+          </linearLocation>
+          <designator register="_RailwayDrawer" entry="T1"/>
+        </track>
+        <track id="trk_T2" type="mainTrack">
+          <name name="T2" language="en"/>
+          <linearLocation id="trk_T2_ll">
+            <associatedNetElement netElementRef="ne_T2_1" keepsOrientation="true" intrinsicCoordBegin="0" intrinsicCoordEnd="1" sequence="1"/>
+          </linearLocation>
+          <designator register="_RailwayDrawer" entry="T2"/>
+        </track>
+      </tracks>
+      <trainDetectionElements>
+        <trainDetectionElement id="tde_AC1" type="axleCounter" detectedObject="axle">
+          <name name="AC1" language="en"/>
+          <spotLocation id="tde_AC1_sl" netElementRef="ne_T1_2" intrinsicCoord="0.5">
+            <linearCoordinate positioningSystemRef="lps01" measure="10400"/>
+          </spotLocation>
+          <designator register="_RailwayDrawer" entry="AC1"/>
+        </trainDetectionElement>
+      </trainDetectionElements>
+    </functionalInfrastructure>
+  </infrastructure>
+  <interlocking>
+    <assetsForInterlockings>
+      <assetsForInterlocking id="ail01">
+        <tvdSections>
+          <tvdSection id="tvd_TS1" technology="axleCounter">
+            <designator register="_RailwayDrawer" entry="TS1"/>
+            <hasDemarcatingTraindetector ref="tde_AC1"/>
+          </tvdSection>
+        </tvdSections>
+        <switchesIL>
+          <switchIL id="il_sw_W1">
+            <designator register="_RailwayDrawer" entry="W1"/>
+            <refersTo ref="sw_W1"/>
+            <branchLeft ref="trk_T1"/>
+            <branchRight ref="trk_T1"/>
+          </switchIL>
+        </switchesIL>
+        <signalsIL>
+          <signalIL id="il_sig_S1" function="main">
+            <designator register="_RailwayDrawer" entry="S1"/>
+            <refersTo ref="sig_S1"/>
+          </signalIL>
+          <signalIL id="il_sig_S2" function="main">
+            <designator register="_RailwayDrawer" entry="S2"/>
+            <refersTo ref="sig_S2"/>
+          </signalIL>
+          <signalIL id="il_sig_S3">
+            <designator register="_RailwayDrawer" entry="S3"/>
+            <refersTo ref="sig_S3"/>
+          </signalIL>
+        </signalsIL>
+        <routes>
+          <route id="rt_R1">
+            <designator register="_RailwayDrawer" entry="R1"/>
+            <facingSwitchInPosition id="rt_R1_sw_W1" inPosition="right">
+              <refersToSwitch ref="il_sw_W1"/>
+            </facingSwitchInPosition>
+            <routeEntry id="rt_R1_entry">
+              <refersTo ref="il_sig_S1"/>
+            </routeEntry>
+            <routeExit id="rt_R1_exit">
+              <refersTo ref="il_sig_S3"/>
+            </routeExit>
+          </route>
+        </routes>
+      </assetsForInterlocking>
+    </assetsForInterlockings>
+  </interlocking>
+  <visualizations>
+    <infrastructureVisualizations>
+      <infrastructureVisualization id="vis01">
+        <linearElementProjection id="vis_ne_T1_1" refersToElement="ne_T1_1">
+          <coordinate x="0" y="100"/>
+          <coordinate x="200" y="100"/>
+        </linearElementProjection>
+        <linearElementProjection id="vis_ne_T1_2" refersToElement="ne_T1_2">
+          <coordinate x="200" y="100"/>
+          <coordinate x="600" y="100"/>
+        </linearElementProjection>
+        <linearElementProjection id="vis_ne_T2_1" refersToElement="ne_T2_1">
+          <coordinate x="300" y="200"/>
+          <coordinate x="800" y="200"/>
+        </linearElementProjection>
+        <linearElementProjection id="vis_ne_W1_1" refersToElement="ne_W1_1">
+          <coordinate x="200" y="100"/>
+          <coordinate x="300" y="200"/>
+        </linearElementProjection>
+        <spotElementProjection id="vis_sig_S1" refersToElement="sig_S1">
+          <coordinate x="50" y="114"/>
+        </spotElementProjection>
+        <spotElementProjection id="vis_sig_S2" refersToElement="sig_S2">
+          <coordinate x="550" y="114"/>
+        </spotElementProjection>
+        <spotElementProjection id="vis_sig_S3" refersToElement="sig_S3">
+          <coordinate x="700" y="214"/>
+        </spotElementProjection>
+        <spotElementProjection id="vis_bal_B1" refersToElement="bal_B1">
+          <coordinate x="90" y="100"/>
+        </spotElementProjection>
+        <spotElementProjection id="vis_bal_B2" refersToElement="bal_B2">
+          <coordinate x="110" y="100"/>
+        </spotElementProjection>
+        <spotElementProjection id="vis_bg_BG1" refersToElement="bg_BG1">
+          <coordinate x="100" y="100"/>
+        </spotElementProjection>
+        <spotElementProjection id="vis_tde_AC1" refersToElement="tde_AC1">
+          <coordinate x="400" y="100"/>
+        </spotElementProjection>
+        <spotElementProjection id="vis_tvd_TS1" refersToElement="tvd_TS1">
+          <coordinate x="400" y="100"/>
+        </spotElementProjection>
+      </infrastructureVisualization>
+    </infrastructureVisualizations>
+  </visualizations>
+  <rd:railwayDrawer version="1">
+    <rd:object kind="track" ref="trk_T1" rdKmStart="10" rdKmEnd="10.6" style="endArrow=none;html=1;strokeWidth=4;"/>
+    <rd:object kind="track" ref="trk_T2" rdKmStart="20" rdKmEnd="20.5" style="endArrow=none;html=1;strokeWidth=4;"/>
+    <rd:object kind="points" ref="sw_W1" rdPosition="normal" rdTrackId="" netElements="ne_W1_1:+" style="endArrow=none;html=1;strokeWidth=4;strokeColor=#a5a5a5;"/>
+    <rd:object kind="signal" ref="sig_S1" rdAspects="3" style="triangle;whiteSpace=wrap;html=1;" w="20" h="20"/>
+    <rd:object kind="signal" ref="sig_S2" style="triangle;whiteSpace=wrap;html=1;" w="20" h="20"/>
+    <rd:object kind="signal" ref="sig_S3" rdNotes="Zażółć gęślą" style="triangle;whiteSpace=wrap;html=1;" w="20" h="20"/>
+    <rd:object kind="balise" ref="bal_B1" style="triangle;whiteSpace=wrap;html=1;" w="12" h="12"/>
+    <rd:object kind="balise" ref="bal_B2" style="triangle;whiteSpace=wrap;html=1;" w="12" h="12"/>
+    <rd:object kind="baliseGroup" ref="bg_BG1" rdTrackId="" style="rounded=1;dashed=1;fillColor=none;" w="40" h="24"/>
+    <rd:object kind="axleCounter" ref="tde_AC1" rdTrackId="" style="ellipse;fillColor=#000000;" w="10" h="10"/>
+    <rd:object kind="trackSection" ref="tvd_TS1" rdTrackId="T1" style="group;" w="10" h="12"/>
+    <rd:object kind="route" ref="rt_R1" rdLength="691" rdSections="T1, T2" rdOverlap="T2"/>
+  </rd:railwayDrawer>
+</railML>

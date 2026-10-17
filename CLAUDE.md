@@ -37,11 +37,12 @@ npx vitest run src/__tests__/ui/tab-cache-restore.test.ts   # single file
 npx vitest run -t "restores"                                 # tests by name
 npm run test:e2e            # Playwright, chromium, starts vite itself (E2E_PORT, default 3000)
 npm run drawio:palettes     # regenerate palettes + stencil sets from the pinned draw.io tag (Node >= 22.18)
+node scripts/railml/validate.ts [--xsd railml3.xsd] [files]  # dev only: xmllint against the railML 3.2 XSD (not vendored)
 ```
 
 CI (`.github/workflows/build-and-deploy.yml`) runs typecheck, typecheck:tests, lint, test:run, build and the
 Playwright subset (legacy-smoke, drawio-palette, templates, scenarios, style-edit, share, gitlab, ertms-data,
-scenario-uml-text, theme-contrast, remote-persist, scenario-doc, editor-commands, dark-shapes, ertms-routes, drawio-compat). No
+scenario-uml-text, theme-contrast, remote-persist, scenario-doc, editor-commands, dark-shapes, ertms-routes, railml, drawio-compat). No
 draw.io download is needed (`scripts/drawio-palettes` only runs locally, its output is committed). It does not deploy.
 
 ### E2E
@@ -108,6 +109,13 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   Extras > Route Table… rows + CSV/XLSX, Interlocking tab lists R1/R2, route edited in the Data panel, wrong points
   position -> `route-points` issue, View > Show Routes, ERTMS signal dropped near T1 snaps (side, rdTrackId, km),
   moved next to T2 re-snaps, Ctrl+Z/Ctrl+Y, Extras > Recalculate km, km ruler.
+- `tests/e2e/railml.spec.ts` (any port): layout (T1/T2, W1, S1-S3, BG1 with B1/B2, AC1, route R1) loaded with
+  `saveLoadController.load`; File > Export railML 3.2… dialog (counts, checks, extension box) -> download parsed in the
+  page (4 netElements, a None relation, signals, switch branchCourse, balise group, axle counter, route entry ->
+  signalIL -> signalIS, facing switch); File > Import railML… (file chooser, `station-topology.railml`) -> new active tab
+  "Station Arnau", notes dialog, cells per kind, signal data incl. `rdRailmlId`, ERTMS group symbol, route on
+  `rd-routes`; re-export keeps the preserved `operationalPoint`; File > Open of a `.railml` and a file drop on
+  `#graph-container` (`station-visualization.railml`) open new tabs at the visualization coordinates.
 - `tests/e2e/editor-commands.spec.ts` (any port): Arrange > Bring Forward / Send Backward (multi-selection, one undo
   step each) + To Front / To Back on the layer's child order and the SVG stacking, Edit > Select All and Ctrl+A (layer
   cells + descendants like draw.io; not while typing in the title field), File > Export as PNG/SVG in light and dark
@@ -137,7 +145,8 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
 - Rarely used features are separate chunks loaded with `import()` on first use: the shape designer
   (`ui/shape-designer.ts`, opened from `#btn-shape-designer` / `open-shape-designer` / `edit-custom-shape`), the
   route tables dialog (`railway/route-tables-dialog.ts`), the XLSX writer (`railway/xlsx.ts`), scenario PDF/slides
-  export (`jspdf`, `svg2pdf.js`), GitLab/SharePoint loaders and the draw.io palette JSON. Keep new heavy,
+  export (`jspdf`, `svg2pdf.js`), GitLab/SharePoint loaders, the draw.io palette JSON and railML import/export
+  (`railml/railml-ui.ts` with export/import/structure). Keep new heavy,
   user-triggered UI lazy the same way.
 - Dead code: modules not reachable from `src/main.ts` (and not test-only helpers) are deleted, not kept "for later";
   the old hand-written shape classes (`src/shapes/{uml,bpmn,cloud,...}`), `src/store`, `src/contexts`,
@@ -481,6 +490,54 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
 - Tests: `src/railway/__tests__/routes.test.ts` (topology incl. sections/vertex points, path search over points and
   signal directions, route tool, route object draw.io round trip + undo, conflicts/tables, route checks, snapping math +
   undoable snap, km interpolation/recalc/ruler), `tests/e2e/ertms-routes.spec.ts`.
+
+### railML 3.2 (`src/railml/`, details and the full table in docs/RAILML.md)
+
+- **UI** (`install-railml.ts`, main chunk, called from `main-editor.ts` after `installRailwayRoutes`): File > Import
+  railML… (`data-action="importRailml"`), File > Export railML 3.2… (`exportRailml`) -> `MenuController` dispatches
+  window event `railml-request` `{action}`; File > Open (`MenuController.openProject`, accepts `.railml`) and a file
+  dropped on `#graph-container` whose root is `<railML>` (`looksLikeRailml`) -> `{action:'open', text, name}`. The
+  handler lazy-loads `railml-ui.ts` (dialogs `.rd-railml-dialog` on the `.rd-route-dialog` classes, `railml.css`,
+  tokens only; `data-testid` `railml-export-dialog` / `railml-import-dialog`).
+- **Export** (`export.ts` `exportRailml(model, {title, date, extension, pretty})`, pure, jsdom): runs `validateModel`
+  first (counts in the dialog, never blocks). Topology = one `netElement` per `buildTopology` piece, oriented nominal
+  (increasing x / y), so `applicationDirection` normal = our nominal; length in m (track length/km scale, else
+  drawing units); ends' km as `linearCoordinate` on `lps01` (m); `netRelation` per piece pair at each node
+  (positionOnA/B, navigability from `passage()`: Both/None); `networks/network/level Micro`. Objects located with
+  `locateObject` (points: toe piece at the junction) -> `spotLocation` (`intrinsicCoord`, `applicationDirection`,
+  km). `infrastructureVisualization` = piece polylines + cell centres. Objects sorted by kind, natural ID (stable
+  output). Result: `xml`, `counts`, `unplaced` (no location), `extensionOnly` (LEU, train), `issues`, `preserved`.
+- **Mapping** (`mapping.ts` `KIND_MAPPINGS`; prefixes `sig_ bal_ bg_ trk_ sw_ tvd_ tde_ bus_ lc_ rbc_ rt_`, IL `il_`):
+  track -> `track` + `linearLocation`; points -> `switchIS` (ordinarySwitch, branchCourse = hand, left/rightBranch
+  netRelationRef) + `switchIL`; signal -> `signalIS` (main/shunting: isTrainMovementSignal + signalConstruction light;
+  marker board/stop marker: isEtcsSignal + board) + `signalIL@function`; balise -> `balise` (belongsToBaliseGroup,
+  isEurobalise positionInGroup = position-1); baliseGroup -> `baliseGroup` (applicationType ETCS, isEurobaliseGroup
+  countryID/groupID); axleCounter -> `trainDetectionElement` axleCounter; trackSection -> IL `tvdSection`
+  (hasDemarcatingTraindetector; no location in 3.2); bufferStop, levelCrossing (`protection`) -> IS; rbc -> IL
+  `radioBlockCentre`; route -> IL `route` (routeEntry/Exit refersTo signalIL, facing/trailingSwitchInPosition
+  left/right, hasTvdSection, overlap). **Unmapped**: leu, train (rd extension only). Name + `designator
+  register="_RailwayDrawer" entry=<rdId>` on every object.
+- **rd extension** (`rd:railwayDrawer` last root child, ns `https://railwaydrawer.mksystemdesign.org/railml/rd/1`,
+  option in the dialog): `rd:object kind ref` with the fields railML does not hold (aspects, remarks, km start/end,
+  route length, ...), single-cell `style`/`w`/`h`, `netElements` of points legs/section lines, `v_*` value attributes.
+- **Import** (`import.ts` `importRailml(text, {symbols})` -> `{modelXml, model, name, warnings, counts, preserved,
+  usedVisualization}`; UI: new tab via `createTab` + `saveLoadController.load`, notes dialog): layout from the
+  visualization when every netElement has a projection, else generated (left to right, km/length, diverging branch
+  one lane down/up by branchCourse); cells with the ERTMS library entries (`loadErtmsLibraryEntries`: Track, Point
+  Right, Signal Right 3/4, Signal Left 3, (Single) Balise Right/Left, TC, Train), simple shapes otherwise; routes
+  re-created on `rd-routes` through the drawn topology (undrawn TVD sections -> sections from the drawing, railML list
+  kept in `rdRailmlTvdSections`); objects without location in a row below. Imported ids kept in `rdRailmlId`,
+  `rdRailmlIlId`, `rdRailmlNetElements` (export reuses them: export -> import -> export is byte-stable).
+- **Preserved** (`preserve.ts`): unknown railML (containers by path, children/attributes of mapped objects by owner id
+  `<id>` or `<id>/<child>`) in the root cell's data attribute `rdRailml` (draw.io diagram data; saved/cached), written
+  back by the export (`applyPreserved`, schema order from `schema-order.ts`).
+- **Validation**: `structure.ts` `checkRailmlStructure(doc)` (required attrs/children, enums, NCName unique ids,
+  typed references), shown in the export dialog; the XSD is not vendored (railML.org licence: restricted CC BY-NC-ND
+  4.0, distribution only via railML.org) -> `scripts/railml/validate.ts` (xmllint, `RAILML_XSD`).
+- Tests: `src/railml/__tests__/` (`railml-export.test.ts` spec layout vs `fixtures/spec-layout.expected.railml`,
+  directions, unplaced, pure railML, structure checks; `railml-import.test.ts` `station-topology.railml` /
+  `station-visualization.railml`, preservation, .drawio round trip of the store, byte-stable round trips;
+  `railml-mapping.test.ts` every kind mapped + documented), `tests/e2e/railml.spec.ts`.
 
 ### Scenarios (`src/scenarios/`, right panel "Properties | Data | Checks | Scenarios")
 
