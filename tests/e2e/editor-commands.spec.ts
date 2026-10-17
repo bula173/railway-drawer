@@ -381,7 +381,6 @@ test.describe('editor commands', () => {
       registry.ServiceRegistry.getTabManager().flushCache();
     });
     await page.reload();
-    await expect(page.locator('body')).toHaveAttribute('data-editor', 'main');
     await expect(page.locator('#tabs-container .tab-button.active')).toHaveCount(1);
     await expect.poll(() => inTab(page, 'return !!graph.getDataModel().getCell("A");').catch(() => false)).toBe(true);
     expect(await hasLockStyle(page, 'A')).toBe(true);

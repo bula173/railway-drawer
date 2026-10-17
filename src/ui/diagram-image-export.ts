@@ -5,7 +5,7 @@
  *        default styles, named styles, light-dark compatibility, tables, every draw.io shape).
  *
  * Used by File > Export as PNG/SVG (export-image.ts), the Share dialog's "Export PNG/SVG", the
- * scenario exports and the visual parity harness (src/debug/parity-hook.ts). Exports render the
+ * scenario exports. Exports render the
  * light colours on the diagram's background (white unless the model sets one), as draw.io does,
  * also while the app shows the dark theme.
  */
