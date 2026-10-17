@@ -41,7 +41,7 @@ npm run drawio:palettes     # regenerate palettes + stencil sets from the pinned
 
 CI (`.github/workflows/build-and-deploy.yml`) runs typecheck, typecheck:tests, lint, test:run, build and the
 Playwright subset (legacy-smoke, drawio-palette, templates, scenarios, style-edit, share, gitlab, ertms-data,
-scenario-uml-text, theme-contrast, remote-persist, scenario-doc, editor-commands, ertms-routes, drawio-compat). No
+scenario-uml-text, theme-contrast, remote-persist, scenario-doc, editor-commands, dark-shapes, ertms-routes, drawio-compat). No
 draw.io download is needed (`scripts/drawio-palettes` only runs locally, its output is committed). It does not deploy.
 
 ### E2E
@@ -94,6 +94,15 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   symbol-only text; disabled exempt) between each visible text's color and its effective background (ancestors
   composited until opaque). Diagram content (tab graphs, thumbnails, SVG, canvas) is skipped. Offenders are listed as
   `theme: surface | selector | "text" | fg on bg = ratio`. Screenshots: `test-results/theme-contrast/<theme>-*.png`.
+- `tests/e2e/dark-shapes.spec.ts` (any port): dark theme diagram content. Inserts an ERTMS signal, balise, track, point,
+  train, a Text and a default Rectangle from the palette plus a `mxgraph.basic.star` with `strokeColor=#000000`, an
+  inline `stencil(...)` whose own XML paints `#000000`, a dark-grey HTML label and blue text, and requires every
+  rendered SVG stroke >= 3:1 and every label colour >= 4.5:1 against the canvas (#121212); the stored cell styles stay
+  unchanged; selection border/handles and `feedbackColor('#0000FF')` >= 3:1. General + ERTMS palette thumbnails (strokes
+  and text against the thumb's background) and the first template thumbnails (strokes) likewise; the Track thumbnail has
+  the canvas's stroke; View > Dark Mode back to light re-renders thumbnails light. File > Export As (.drawio, minus
+  `modified`/`etag`/`agent`/`version`) and the PNG export (decoded pixels, SHA-256) are identical in light and dark.
+  Screenshots: `test-results/dark-shapes/*.png`.
 - `tests/e2e/ertms-routes.spec.ts` (any port): loads a layout (T1, T2, points W1, S1-S3) with `saveLoadController.load`,
   Route tool (toolbar `#btn-route-tool`, clicks on signals) creates R1 (S1->S3, W1 reverse) and R2 (S1->S2, W1 normal),
   Extras > Route Table… rows + CSV/XLSX, Interlocking tab lists R1/R2, route edited in the Data panel, wrong points
@@ -159,6 +168,18 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   inputs/selects/textareas get `--rd-input-*` from a zero-specificity `:where()` rule.
 - Not chrome (keep their own colors): diagram cells (dark rendering = `graph-compat.ts` `setDrawioDarkMode`), palette /
   template / step thumbnails, PlantUML SVGs (white background like PlantUML), the exported scenario HTML (light).
+- Dark rendering of diagrams (render-time only; cell styles, saved files and image/PDF/slide exports stay light):
+  `colors.ts` `adaptiveDarkColor` inverts only neutral colours (chroma < `KEEP_CHROMA` 0.3: black -> #ededed,
+  white -> #121212, greys, draw.io's pale fills) like draw.io's `getInverseColor`; saturated colours (signal red / green /
+  yellow, track colours) are kept. `light-dark(a, b)` takes `b`, except a saturated `a` with a hue-less `b` (the ERTMS
+  library's stale `light-dark(#e00000, #5f5f5f)`) keeps `a`. Then `graph-compat.ts` `applyDarkContrast` floors the
+  resolved style: strokes / label borders >= 4.5:1 on the canvas (so >= 3:1 on the palette surface too), font >= 7:1 on
+  the canvas or >= 4.5:1 on the cell's opaque fill / label background (the light font colour wins when it reads better
+  there, e.g. white on a kept red fill). HTML label text colours get the same floor (`resolveHtmlLabelColors(..., text)`),
+  stencil-own colours (`<strokecolor color=...>`, node defaults) adapt in `stencil-fixes.ts` `stencilColor`, and maxGraph's
+  fixed blue drop-target / connected-edge-handle feedback is lightened in dark mode (`handle-colors.ts`). Thumbnails are
+  cached per colour mode (`drawioColorModeKey`) and the palette / Templates / Scenarios panels re-render them on
+  `onDrawioColorModeChange`. Images (`image=` / data-URI SVGs) are not recoloured.
 - Canvas: tab graph divs get `--rd-canvas-bg` (#fff / draw.io's #121212); the grid is a transparent SVG tile from
   `src/ui/grid-background.ts` (`applyGridBackground`, used by `GridController` and `CanvasProperties`): both tiles
   (#e0e0e0 / draw.io dark #424242) are custom properties on the container and CSS picks one by `data-theme`, so a

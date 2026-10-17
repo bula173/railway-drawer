@@ -205,7 +205,6 @@
   background: var(--rd-surface);
   box-shadow: var(--shadow-lg, 0 4px 16px rgba(0, 0, 0, 0.2));
   pointer-events: none;
-  color-scheme: light;
 }
 
 .rd-dp-preview-title {

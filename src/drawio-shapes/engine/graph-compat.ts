@@ -22,11 +22,20 @@
 import { TextShape } from '@maxgraph/core';
 import type { Cell, CellStateStyle, Graph } from '@maxgraph/core';
 import {
+  DARK_MIN_CANVAS_TEXT_CONTRAST,
+  DARK_MIN_GRAPHICS_CONTRAST,
+  DARK_MIN_TEXT_CONTRAST,
+  DARK_PAGE_BACKGROUND,
+  contrastRatio,
+  ensureContrast,
+  isDarkResolve,
+  parseColor,
   resolveColorValue,
   resolveHtmlLabelColors,
   type AdaptiveColors,
   type ColorResolveOptions,
   type DefaultColorMode,
+  type TextContrast,
 } from './colors';
 import { installPlaceholders } from './placeholders';
 
@@ -106,6 +115,7 @@ export function setDrawioDarkMode(dark: boolean): void {
   for (const graph of installedGraphs) {
     if ((graph as ModedGraph)[MODE]?.dark == null) applyGraphColorMode(graph);
   }
+  notifyColorModeListeners();
 }
 
 /** Graph.defaultAdaptiveColors for all graphs without their own value. */
@@ -115,6 +125,35 @@ export function setDefaultAdaptiveColors(value: AdaptiveColors): void {
   for (const graph of installedGraphs) {
     if ((graph as ModedGraph)[MODE]?.adaptive == null) applyGraphColorMode(graph);
   }
+  notifyColorModeListeners();
+}
+
+const colorModeListeners = new Set<() => void>();
+
+function notifyColorModeListeners(): void {
+  for (const listener of [...colorModeListeners]) {
+    try {
+      listener();
+    } catch {
+      // one failing view must not keep the others on the old colors
+    }
+  }
+}
+
+/**
+ * Calls `listener` after the global color mode (dark mode or default adaptive colors) changed,
+ * e.g. to re-render palette / template thumbnails. Returns the unsubscribe function.
+ */
+export function onDrawioColorModeChange(listener: () => void): () => void {
+  colorModeListeners.add(listener);
+  return () => {
+    colorModeListeners.delete(listener);
+  };
+}
+
+/** Cache key part for renderings that follow the global color mode ('' in light mode). */
+export function drawioColorModeKey(): string {
+  return globalDark && globalAdaptive !== 'none' ? `dark-${globalAdaptive}` : '';
 }
 
 /** Per-graph override: true/false pins dark/light (e.g. exports, parity), null follows the global mode. */
@@ -147,6 +186,13 @@ function defaultMode(style: Record<string, unknown>, key: string): DefaultColorM
 export function resolveStyleColors<T extends object>(style: T, options?: ColorResolveOptions): T {
   if (!style) return style;
   const rec = style as Record<string, unknown>;
+  const dark = isDarkResolve(options);
+  // the light value of the font color, a candidate when the dark one is unreadable on its fill
+  const font = rec.fontColor;
+  const lightFont =
+    dark && typeof font === 'string'
+      ? resolveColorValue(font, 'fontColor', font === 'default' ? defaultMode(rec, 'fontColor') : undefined)
+      : undefined;
   for (const key of Object.keys(rec)) {
     if (!key.endsWith('Color') && !EXTRA_COLOR_KEYS.has(key)) continue;
     const value = rec[key];
@@ -154,7 +200,75 @@ export function resolveStyleColors<T extends object>(style: T, options?: ColorRe
     const resolved = resolveColorValue(value, key, value === 'default' ? defaultMode(rec, key) : undefined, options);
     if (resolved !== value) rec[key] = resolved;
   }
+  if (dark) applyDarkContrast(rec, options!, typeof lightFont === 'string' ? lightFont : undefined);
   return style;
+}
+
+/** The dark canvas a cell is drawn on: the page background (resolved for dark mode) or #121212. */
+export function darkCanvasColor(options?: ColorResolveOptions): string {
+  const page = options?.pageBackground;
+  if (page && page !== 'none' && page !== 'transparent') {
+    const resolved = resolveColorValue(page, 'fillColor', undefined, { ...options, dark: true });
+    if (typeof resolved === 'string' && parseColor(resolved)?.a === 1) return resolved;
+  }
+  return DARK_PAGE_BACKGROUND;
+}
+
+const OUTSIDE_LABEL = /^(left|right|top|bottom)$/;
+
+/**
+ * What a cell's label is drawn on in a resolved style: an opaque labelBackgroundColor, else the
+ * opaque fill when the label sits inside the shape, else `canvas`.
+ */
+export function labelBackgroundOf(style: Record<string, unknown>, canvas: string): string {
+  const opaque = (v: unknown): v is string => typeof v === 'string' && parseColor(v)?.a === 1;
+  if (opaque(style.labelBackgroundColor)) return style.labelBackgroundColor;
+  const inside = !OUTSIDE_LABEL.test(String(style.labelPosition ?? '')) && !OUTSIDE_LABEL.test(String(style.verticalLabelPosition ?? ''));
+  const fillable = style.shape !== 'connector' && style.shape !== 'text' && style.noLabel !== 1;
+  if (inside && fillable && opaque(style.fillColor) && style.fillOpacity == null && style.opacity == null) return style.fillColor;
+  return canvas;
+}
+
+/**
+ * Dark mode contrast floors on a resolved style (after light-dark()/default/adaptive colors):
+ * strokes and label borders >= DARK_MIN_GRAPHICS_CONTRAST against the canvas; the font color
+ * >= DARK_MIN_TEXT_CONTRAST against the cell's own fill / label background (the light font color
+ * is used when it reads better there, e.g. white text on a kept red fill) or
+ * DARK_MIN_CANVAS_TEXT_CONTRAST against the canvas. Works on the resolved style only.
+ */
+export function applyDarkContrast(rec: Record<string, unknown>, options: ColorResolveOptions, lightFont?: string): void {
+  const canvas = darkCanvasColor(options);
+  for (const key of ['strokeColor', 'labelBorderColor', 'imageBorder']) {
+    const v = rec[key];
+    if (typeof v === 'string') {
+      const next = ensureContrast(v, canvas, DARK_MIN_GRAPHICS_CONTRAST);
+      if (next !== v) rec[key] = next;
+    }
+  }
+  const font = rec.fontColor;
+  if (typeof font !== 'string' || parseColor(font) == null) return;
+  const bg = labelBackgroundOf(rec, canvas);
+  const min = bg === canvas ? DARK_MIN_CANVAS_TEXT_CONTRAST : DARK_MIN_TEXT_CONTRAST;
+  let best = font;
+  if (lightFont && parseColor(lightFont) && (contrastRatio(lightFont, bg) ?? 0) > (contrastRatio(font, bg) ?? 0)) {
+    best = lightFont;
+  }
+  const next = ensureContrast(best, bg, min);
+  if (next !== font) rec.fontColor = next;
+}
+
+/** Background and minimum contrast for the dark-mode text colors of `cell`'s HTML label. */
+function labelTextContrast(graph: Graph, cell: Cell, options: ColorResolveOptions): TextContrast | undefined {
+  if (!isDarkResolve(options)) return undefined;
+  let style: Record<string, unknown> | null = null;
+  try {
+    style = (graph.view.getState(cell)?.style ?? graph.getCellStyle(cell)) as Record<string, unknown>;
+  } catch {
+    style = null;
+  }
+  const canvas = darkCanvasColor(options);
+  const background = style ? labelBackgroundOf(style, canvas) : canvas;
+  return { background, min: background === canvas ? DARK_MIN_CANVAS_TEXT_CONTRAST : DARK_MIN_TEXT_CONTRAST };
 }
 
 /**
@@ -205,9 +319,9 @@ export function installDrawioCompat(graph: Graph): void {
     const label = baseGetLabel(cell);
     if (typeof label !== 'string') return label;
     if (isGraphDarkMode(graph)) {
-      return graph.isHtmlLabel(cell) || LIGHT_DARK_RE.test(label)
-        ? resolveHtmlLabelColors(label, getColorResolveOptions(graph))
-        : label;
+      if (!graph.isHtmlLabel(cell) && !LIGHT_DARK_RE.test(label)) return label;
+      const options = getColorResolveOptions(graph);
+      return resolveHtmlLabelColors(label, options, labelTextContrast(graph, cell, options));
     }
     return LIGHT_DARK_RE.test(label) ? resolveHtmlLabelColors(label) : label;
   };

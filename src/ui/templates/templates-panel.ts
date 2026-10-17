@@ -10,6 +10,7 @@
 import type { Graph } from '@maxgraph/core';
 import './templates.css';
 import { logger } from '../../drawio/logger';
+import { onDrawioColorModeChange } from '../../drawio-shapes/engine/graph-compat';
 import type { LibraryEntry, PaletteEntry } from '../drawio-palette/contracts';
 import { getDrawioThumbnailRenderer } from '../drawio-palette/drawio-palette-view';
 import { insertTemplate } from './template-actions';
@@ -143,6 +144,17 @@ export function createTemplatesPanel(options: TemplatesPanelOptions): TemplatesP
   // ------------------------------------------------------------------ thumbnails
 
   const pendingThumbs = new WeakMap<HTMLElement, PaletteEntry>();
+  // Rendered thumbnails, re-rendered when the colour mode (app theme) changes
+  const renderedThumbs = new Map<HTMLElement, PaletteEntry>();
+  const stopColorModeWatch = onDrawioColorModeChange(() => {
+    if (destroyed) return;
+    for (const [host, entry] of [...renderedThumbs]) {
+      renderedThumbs.delete(host);
+      if (!host.isConnected) continue;
+      pendingThumbs.set(host, entry);
+      renderThumb(host);
+    }
+  });
   const observer =
     typeof IntersectionObserver === 'function'
       ? new IntersectionObserver(
@@ -167,6 +179,7 @@ export function createTemplatesPanel(options: TemplatesPanelOptions): TemplatesP
         if (destroyed) return;
         host.replaceChildren(svg);
         host.classList.add('rd-tpl-thumb-ready');
+        renderedThumbs.set(host, entry);
       })
       .catch((err: unknown) => {
         host.classList.add('rd-tpl-thumb-error');
@@ -481,6 +494,8 @@ export function createTemplatesPanel(options: TemplatesPanelOptions): TemplatesP
 
   function destroy(): void {
     destroyed = true;
+    stopColorModeWatch();
+    renderedThumbs.clear();
     unsubscribe();
     observer?.disconnect();
     document.removeEventListener('mousedown', onDocMouseDown);
