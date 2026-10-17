@@ -1,10 +1,28 @@
-import { EventObject, EventSource, Graph, InternalEvent, UndoManager } from '@maxgraph/core';
+import { EventObject, EventSource, Graph, InternalEvent, UndoManager, styleUtils } from '@maxgraph/core';
 import { ClipboardService } from './clipboard-service';
 import type { Cell, CellStyle } from '@maxgraph/core';
 
-/** getChildren probed on the data model (not declared by maxGraph 0.10's GraphDataModel). */
-interface ModelWithGetChildren {
-  getChildren(cell: Cell): Cell[] | null | undefined;
+/**
+ * The z-order of `children` after moving every selected cell one step up (`step` 1) or down (-1).
+ * A cell only swaps with an unselected neighbour, so adjacent selected cells move together and a
+ * cell already at the end (or blocked by such a cell) stays.
+ */
+export function stepOrder(children: readonly Cell[], selected: ReadonlySet<Cell>, step: 1 | -1): Cell[] {
+  const order = [...children];
+  const n = order.length;
+  const swap = (i: number, j: number): void => {
+    [order[i], order[j]] = [order[j], order[i]];
+  };
+  if (step === 1) {
+    for (let i = n - 2; i >= 0; i--) {
+      if (selected.has(order[i]) && !selected.has(order[i + 1])) swap(i, i + 1);
+    }
+  } else {
+    for (let i = 1; i < n; i++) {
+      if (selected.has(order[i]) && !selected.has(order[i - 1])) swap(i, i - 1);
+    }
+  }
+  return order;
 }
 
 export class GraphCommandService {
@@ -131,11 +149,15 @@ export class GraphCommandService {
     }
   }
 
+  /**
+   * Edit > Select All / Ctrl+A, like draw.io's `selectAll` action (`graph.selectAll(null, true)`):
+   * every displayed cell of the default layer, descendants included; nothing when the layer is locked.
+   */
   selectAll(): void {
     const parent = this.graph.getDefaultParent();
-    const children = (this.graph.model as unknown as ModelWithGetChildren).getChildren(parent) || [];
-    this.graph.setSelectionCells(children);
-    console.log('[GraphCommand] Select All executed');
+    const locked = (this.graph.getCellStyle(parent) as Record<string, unknown>).locked;
+    if (locked === true || locked === 1 || locked === '1') return;
+    this.graph.selectAll(parent, true);
   }
 
   clearSelection(): void {
@@ -158,60 +180,60 @@ export class GraphCommandService {
         case 'left':
           alignValue = Math.min(...bounds.map((b) => b?.x || 0));
           cells.forEach((cell) => {
-            const geo = cell.getGeometry();
+            const geo = cell.getGeometry()?.clone();
             if (geo) {
               geo.x = alignValue;
-              cell.setGeometry(geo);
+              this.graph.getDataModel().setGeometry(cell, geo);
             }
           });
           break;
         case 'center':
           alignValue = bounds.reduce((sum, b) => sum + (b?.x || 0) + (b?.width || 0) / 2, 0) / cells.length;
           cells.forEach((cell) => {
-            const geo = cell.getGeometry();
+            const geo = cell.getGeometry()?.clone();
             if (geo) {
               geo.x = alignValue - (geo.width || 0) / 2;
-              cell.setGeometry(geo);
+              this.graph.getDataModel().setGeometry(cell, geo);
             }
           });
           break;
         case 'right':
           alignValue = Math.max(...bounds.map((b) => (b?.x || 0) + (b?.width || 0)));
           cells.forEach((cell) => {
-            const geo = cell.getGeometry();
+            const geo = cell.getGeometry()?.clone();
             if (geo) {
               geo.x = alignValue - (geo.width || 0);
-              cell.setGeometry(geo);
+              this.graph.getDataModel().setGeometry(cell, geo);
             }
           });
           break;
         case 'top':
           alignValue = Math.min(...bounds.map((b) => b?.y || 0));
           cells.forEach((cell) => {
-            const geo = cell.getGeometry();
+            const geo = cell.getGeometry()?.clone();
             if (geo) {
               geo.y = alignValue;
-              cell.setGeometry(geo);
+              this.graph.getDataModel().setGeometry(cell, geo);
             }
           });
           break;
         case 'middle':
           alignValue = bounds.reduce((sum, b) => sum + (b?.y || 0) + (b?.height || 0) / 2, 0) / cells.length;
           cells.forEach((cell) => {
-            const geo = cell.getGeometry();
+            const geo = cell.getGeometry()?.clone();
             if (geo) {
               geo.y = alignValue - (geo.height || 0) / 2;
-              cell.setGeometry(geo);
+              this.graph.getDataModel().setGeometry(cell, geo);
             }
           });
           break;
         case 'bottom':
           alignValue = Math.max(...bounds.map((b) => (b?.y || 0) + (b?.height || 0)));
           cells.forEach((cell) => {
-            const geo = cell.getGeometry();
+            const geo = cell.getGeometry()?.clone();
             if (geo) {
               geo.y = alignValue - (geo.height || 0);
-              cell.setGeometry(geo);
+              this.graph.getDataModel().setGeometry(cell, geo);
             }
           });
           break;
@@ -244,10 +266,10 @@ export class GraphCommandService {
         const spacing = totalWidth / (cells.length - 1);
 
         sortedByX.forEach((item, i) => {
-          const geo = item.cell.getGeometry();
+          const geo = item.cell.getGeometry()?.clone();
           if (geo) {
             geo.x = minX + i * spacing;
-            item.cell.setGeometry(geo);
+            this.graph.getDataModel().setGeometry(item.cell, geo);
           }
         });
       } else {
@@ -261,10 +283,10 @@ export class GraphCommandService {
         const spacing = totalHeight / (cells.length - 1);
 
         sortedByY.forEach((item, i) => {
-          const geo = item.cell.getGeometry();
+          const geo = item.cell.getGeometry()?.clone();
           if (geo) {
             geo.y = minY + i * spacing;
-            item.cell.setGeometry(geo);
+            this.graph.getDataModel().setGeometry(item.cell, geo);
           }
         });
       }
@@ -294,80 +316,57 @@ export class GraphCommandService {
     }
   }
 
-  /**
-   * Move selected cells to front (top z-order)
-   */
+  /** Arrange > To Front: the selected cells on top of their parents, keeping their relative order. */
   toFront(): void {
-    const cells = this.graph.getSelectionCells();
-    if (cells.length === 0) return;
-
-    this.graph.batchUpdate(() => {
-      cells.forEach((cell) => {
-        if (!cell.isEdge()) {
-          this.graph.orderCells(true, [cell]);
-        }
-      });
-    });
-
-    this.notifyListeners('stateChanged');
-    console.log('[GraphCommand] Move to Front executed');
+    this.orderSelection(false);
   }
 
-  /**
-   * Move selected cells to back (bottom z-order)
-   */
+  /** Arrange > To Back: the selected cells at the bottom of their parents, keeping their relative order. */
   toBack(): void {
-    const cells = this.graph.getSelectionCells();
-    if (cells.length === 0) return;
-
-    this.graph.batchUpdate(() => {
-      cells.forEach((cell) => {
-        if (!cell.isEdge()) {
-          this.graph.orderCells(false, [cell]);
-        }
-      });
-    });
-
-    this.notifyListeners('stateChanged');
-    console.log('[GraphCommand] Move to Back executed');
+    this.orderSelection(true);
   }
 
-  /**
-   * Bring selected cells forward one step
-   */
+  /** Arrange > Bring Forward: each selected cell one step up within its parent (one undoable edit). */
   bringForward(): void {
-    const cells = this.graph.getSelectionCells();
-    if (cells.length === 0) return;
+    this.stepSelection(1);
+  }
 
-    this.graph.batchUpdate(() => {
-      cells.forEach((cell) => {
-        if (!cell.isEdge()) {
-          this.graph.orderCells(true, [cell]);
-        }
-      });
-    });
-
-    this.notifyListeners('stateChanged');
-    console.log('[GraphCommand] Bring Forward executed');
+  /** Arrange > Send Backward: each selected cell one step down within its parent (one undoable edit). */
+  sendBackward(): void {
+    this.stepSelection(-1);
   }
 
   /**
-   * Send selected cells backward one step
+   * draw.io's toFront/toBack (`graph.orderCells(back)` on the sorted selection). maxGraph 0.10's
+   * orderCells never sorts the selection itself, so the cells are passed in model order.
    */
-  sendBackward(): void {
+  private orderSelection(back: boolean): void {
     const cells = this.graph.getSelectionCells();
     if (cells.length === 0) return;
-
-    this.graph.batchUpdate(() => {
-      cells.forEach((cell) => {
-        if (!cell.isEdge()) {
-          this.graph.orderCells(false, [cell]);
-        }
-      });
-    });
-
+    this.graph.orderCells(back, styleUtils.sortCells(cells, true));
     this.notifyListeners('stateChanged');
-    console.log('[GraphCommand] Send Backward executed');
+  }
+
+  private stepSelection(step: 1 | -1): void {
+    const byParent = new Map<Cell, Set<Cell>>();
+    for (const cell of this.graph.getSelectionCells()) {
+      const parent = cell.getParent();
+      if (!parent) continue;
+      if (!byParent.has(parent)) byParent.set(parent, new Set());
+      byParent.get(parent)!.add(cell);
+    }
+    if (byParent.size === 0) return;
+    const model = this.graph.getDataModel();
+    model.batchUpdate(() => {
+      for (const [parent, selected] of byParent) {
+        const target = stepOrder(parent.children, selected, step);
+        // Earlier positions are final, so each add moves the wanted cell down to index k
+        target.forEach((cell, k) => {
+          if (parent.children[k] !== cell) model.add(parent, cell, k);
+        });
+      }
+    });
+    this.notifyListeners('stateChanged');
   }
 
   /**
@@ -382,7 +381,7 @@ export class GraphCommandService {
       return;
     }
 
-    this.copiedStyle = cells[0].getStyle();
+    this.copiedStyle = cells[0].getClonedStyle();
     this.notifyListeners('styleChanged');
     console.log('[GraphCommand] Style copied');
   }
@@ -402,10 +401,11 @@ export class GraphCommandService {
       return;
     }
 
-    this.graph.batchUpdate(() => {
+    const model = this.graph.getDataModel();
+    model.batchUpdate(() => {
       cells.forEach((cell) => {
         if (!cell.isEdge()) {
-          cell.setStyle(this.copiedStyle as CellStyle);
+          model.setStyle(cell, { ...(this.copiedStyle as CellStyle) });
         }
       });
     });

@@ -1,29 +1,19 @@
 import { Graph } from '@maxgraph/core';
 import { GraphCommandService } from '../services/graph-command-service';
 import { SaveLoadController } from './saveload';
-import type { Cell } from '@maxgraph/core';
 import type { AlignmentController } from './alignment';
+import type { ExportImageController } from './export-image';
 import type { LeftPanelTabs } from './left-panel-tabs';
 
 /** Window global set by main-editor.ts so menu handlers can reach the left panel tabs. */
 type WindowWithLeftPanelTabs = Window & { __leftPanelTabs?: LeftPanelTabs };
-
-/**
- * Model accessors the bringForward/sendBackward handlers call. maxGraph 0.10's GraphDataModel
- * does not declare (or implement) getParent/getChildCount/getChildAt; kept as-is to preserve behaviour.
- */
-interface ChildOrderModel {
-  getParent(cell: Cell): Cell | null;
-  getChildCount(parent: Cell): number;
-  getChildAt(parent: Cell, index: number): Cell | null;
-  add(parent: Cell | null, child: Cell | null, index?: number | null): Cell | null;
-}
 
 export class MenuController {
   private graph: Graph;
   private commandService: GraphCommandService;
   private saveLoadController: SaveLoadController;
   private alignmentController: AlignmentController | null = null;
+  private exportImageController: ExportImageController | null = null;
 
   constructor(graph: Graph, commandService: GraphCommandService, saveLoadController: SaveLoadController) {
     this.graph = graph;
@@ -34,6 +24,10 @@ export class MenuController {
 
   setAlignmentController(controller: AlignmentController): void {
     this.alignmentController = controller;
+  }
+
+  setExportImageController(controller: ExportImageController): void {
+    this.exportImageController = controller;
   }
 
   private setupMenus() {
@@ -199,8 +193,6 @@ export class MenuController {
   }
 
   private executeMenuAction(action: string): void {
-    const cells = this.graph.getSelectionCells();
-
     // File > Export Railway Data > ...: main-editor.ts (src/railway) writes the list
     if (action.startsWith('exportRailway:')) {
       window.dispatchEvent(new CustomEvent('railway-export-request', { detail: action.slice('exportRailway:'.length) }));
@@ -234,6 +226,14 @@ export class MenuController {
 
       case 'export':
         this.saveLoadController.save();
+        break;
+
+      case 'exportPng':
+        void this.exportImageController?.exportToPNG();
+        break;
+
+      case 'exportSvg':
+        void this.exportImageController?.exportToSVG();
         break;
 
       case 'share':
@@ -315,68 +315,21 @@ export class MenuController {
         console.log('[Menu] Grid', this.graph.gridEnabled ? 'enabled' : 'disabled');
         break;
 
+      // Same commands as the canvas context menu (GraphCommandService): one undoable edit each
       case 'toFront':
-        if (cells.length > 0) {
-          this.graph.orderCells(false, cells);
-        }
+        this.commandService.toFront();
         break;
 
       case 'toBack':
-        if (cells.length > 0) {
-          this.graph.orderCells(true, cells);
-        }
+        this.commandService.toBack();
         break;
 
       case 'bringForward':
-        if (cells.length > 0) {
-          const model = this.graph.model as unknown as ChildOrderModel;
-          this.graph.batchUpdate(() => {
-            cells.forEach((cell) => {
-              const parent = model.getParent(cell);
-              if (parent) {
-                let index = -1;
-                for (let i = 0; i < model.getChildCount(parent); i++) {
-                  if (model.getChildAt(parent, i) === cell) {
-                    index = i;
-                    break;
-                  }
-                }
-                if (index >= 0 && index < model.getChildCount(parent) - 1) {
-                  const temp = model.getChildAt(parent, index + 1);
-                  model.add(parent, temp, index);
-                  model.add(parent, cell, index + 1);
-                }
-              }
-            });
-          });
-          this.graph.refresh();
-        }
+        this.commandService.bringForward();
         break;
 
       case 'sendBackward':
-        if (cells.length > 0) {
-          const model = this.graph.model as unknown as ChildOrderModel;
-          this.graph.batchUpdate(() => {
-            cells.forEach((cell) => {
-              const parent = model.getParent(cell);
-              if (parent) {
-                let index = -1;
-                for (let i = 0; i < model.getChildCount(parent); i++) {
-                  if (model.getChildAt(parent, i) === cell) {
-                    index = i;
-                    break;
-                  }
-                }
-                if (index > 0) {
-                  const temp = model.getChildAt(parent, index - 1);
-                  model.add(parent, temp, index);
-                  model.add(parent, cell, index - 1);
-                }
-              }
-            });
-          });
-          this.graph.refresh();
-        }
+        this.commandService.sendBackward();
         break;
 
       case 'alignLeft':

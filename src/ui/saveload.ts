@@ -14,8 +14,84 @@ import type { ScenarioSet } from '../scenarios/scenario-model';
 import { globalNotificationManager } from './notification';
 import { globalSaveStatusIndicator } from './save-status';
 
-/** Model as read by exportAsJson: `children` is not declared on GraphDataModel (it is undefined there at runtime). */
-type ModelWithChildren = GraphDataModel & { children?: Cell[] };
+/** One cell of exportAsJson(), read from the draw.io XML the tab saves. */
+export interface JsonExportCell {
+  id: string;
+  parent: string | null;
+  /** Label (`value`, or the `label` attribute of an `<object>`/`<UserObject>`). */
+  value: string;
+  /** draw.io style string, exactly as saved. */
+  style: string | null;
+  vertex: boolean;
+  edge: boolean;
+  source: string | null;
+  target: string | null;
+  geometry: { x: number; y: number; width: number; height: number; relative: boolean; points?: Array<{ x: number; y: number }> } | null;
+  /** Data attributes of an `<object>`/`<UserObject>` value (railway data `rdKind`, `rdId`, ...). */
+  data?: Record<string, string>;
+}
+
+/** The JSON document of exportAsJson(). */
+export interface JsonExport {
+  format: 'railway-drawer-cells';
+  version: 1;
+  name: string;
+  cells: JsonExportCell[];
+}
+
+const OBJECT_ATTRIBUTES_SKIPPED = new Set(['id', 'label', 'placeholders']);
+
+function numberAttr(el: Element, name: string): number {
+  const n = parseFloat(el.getAttribute(name) ?? '');
+  return Number.isFinite(n) ? n : 0;
+}
+
+/** Cells of a draw.io `<mxGraphModel>` as plain objects (document order = z-order). */
+export function modelXmlToJsonCells(modelXml: string): JsonExportCell[] {
+  const doc = new DOMParser().parseFromString(modelXml, 'application/xml');
+  const root = doc.getElementsByTagName('root')[0];
+  if (!root) return [];
+  const cells: JsonExportCell[] = [];
+  for (const node of Array.from(root.children)) {
+    const wrapper = node.nodeName === 'mxCell' ? null : node;
+    const cell = wrapper ? wrapper.getElementsByTagName('mxCell')[0] : node;
+    if (!cell) continue;
+    const geo = Array.from(cell.children).find((c) => c.nodeName === 'mxGeometry') ?? null;
+    const points = geo
+      ? Array.from(geo.getElementsByTagName('mxPoint'))
+          .filter((p) => !p.getAttribute('as') && p.parentElement?.getAttribute('as') === 'points')
+          .map((p) => ({ x: numberAttr(p, 'x'), y: numberAttr(p, 'y') }))
+      : [];
+    const data: Record<string, string> = {};
+    if (wrapper) {
+      for (const attr of Array.from(wrapper.attributes)) {
+        if (!OBJECT_ATTRIBUTES_SKIPPED.has(attr.name)) data[attr.name] = attr.value;
+      }
+    }
+    cells.push({
+      id: (wrapper ?? cell).getAttribute('id') ?? '',
+      parent: cell.getAttribute('parent'),
+      value: (wrapper ? wrapper.getAttribute('label') : cell.getAttribute('value')) ?? '',
+      style: cell.getAttribute('style'),
+      vertex: cell.getAttribute('vertex') === '1',
+      edge: cell.getAttribute('edge') === '1',
+      source: cell.getAttribute('source'),
+      target: cell.getAttribute('target'),
+      geometry: geo
+        ? {
+            x: numberAttr(geo, 'x'),
+            y: numberAttr(geo, 'y'),
+            width: numberAttr(geo, 'width'),
+            height: numberAttr(geo, 'height'),
+            relative: geo.getAttribute('relative') === '1',
+            ...(points.length > 0 ? { points } : {}),
+          }
+        : null,
+      ...(wrapper ? { data } : {}),
+    });
+  }
+  return cells;
+}
 
 /** One entry of the PlantUML metadata comment embedded by embedPlantUmlMetadata(). */
 interface PlantUmlMetadataEntry {
@@ -280,34 +356,19 @@ export class SaveLoadController {
     }
   }
 
+  /**
+   * The tab's cells as JSON (root, layers, vertices, edges in z-order: id, parent, value, draw.io
+   * style string, vertex/edge, source/target, geometry, `<object>` data). Read from the same draw.io
+   * XML a save writes, so it matches the .drawio file. Not offered in the menu: File > Export As…
+   * (.drawio) is the exchange format; this is for scripts and tests.
+   */
   exportAsJson(): string {
-    const model: ModelWithChildren = this.graph.model;
-    const children = model.children || [];
-    const data = children.map((cell: Cell) => {
-      // Clone style and remove large SVG data URLs to reduce export size
-      const style = cell.style ? { ...cell.style } : null;
-      if (style && style.image && style.image.startsWith('data:image/svg+xml')) {
-        // Remove SVG data URL - will be regenerated from shape registry on load
-        delete style.image;
-      }
-
-      return {
-        id: cell.id,
-        label: cell.value,
-        geometry: cell.geometry
-          ? {
-              x: cell.geometry.x,
-              y: cell.geometry.y,
-              width: cell.geometry.width,
-              height: cell.geometry.height,
-            }
-          : null,
-        style: style,
-        isVertex: cell.isVertex?.(),
-        isEdge: cell.isEdge?.(),
-      };
-    });
-
+    const data: JsonExport = {
+      format: 'railway-drawer-cells',
+      version: 1,
+      name: this.projectService.getProjectName(),
+      cells: modelXmlToJsonCells(this.serializeToXml()),
+    };
     return JSON.stringify(data, null, 2);
   }
 

@@ -76,15 +76,6 @@ try {
  */
 new ShortcutsHelpController();
 
-// ============= PROJECT NAME EDITOR =============
-
-/**
- * @brief Initialize project name editor
- * @details Allows users to edit and display the current project name
- * in the application header.
- */
-new ProjectNameEditor();
-
 // ============= RESIZABLE PANELS =============
 
 /**
@@ -143,6 +134,14 @@ try {
 if (tabManager.getAllTabs().length === 0) {
   tabManager.createTab('Diagram 1');
 }
+
+// ============= PROJECT NAME EDITOR =============
+
+/**
+ * @brief Project name in the top bar (click to rename)
+ * @details The name goes to the active tab's project (Save/Export file names) and the tab cache.
+ */
+new ProjectNameEditor(tabManager);
 
 /**
  * @brief Set build ID and timestamp in status bar
@@ -242,7 +241,8 @@ document.addEventListener('keydown', (e) => {
   }
   if (mod && key === 'a') {
     e.preventDefault();
-    activeTab.graph.selectAll();
+    // Same command as Edit > Select All (draw.io: the layer's cells and their descendants)
+    activeTab.graphCommandService.selectAll();
   }
   if ((e.key === 'Delete' || e.key === 'Backspace') && activeTab.graph.getSelectionCount() > 0) {
     e.preventDefault();

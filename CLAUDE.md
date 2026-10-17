@@ -34,7 +34,7 @@ npm run drawio:palettes     # regenerate palettes + stencil sets from the pinned
 
 CI (`.github/workflows/build-and-deploy.yml`) runs typecheck, typecheck:tests, lint, test:run, build and the
 Playwright subset (legacy-smoke, drawio-palette, templates, scenarios, style-edit, share, gitlab, ertms-data,
-scenario-uml-text, theme-contrast, remote-persist, scenario-doc, ertms-routes, drawio-embed, drawio-parity). `~/.cache/railway-drawer` (self-hosted draw.io) is kept with
+scenario-uml-text, theme-contrast, remote-persist, scenario-doc, editor-commands, ertms-routes, drawio-embed, drawio-parity). `~/.cache/railway-drawer` (self-hosted draw.io) is kept with
 `actions/cache` (key = hash of `scripts/drawio-selfhost/**` + `scripts/drawio-palettes/fetch-sources.ts`). It does not deploy.
 
 ### E2E and draw.io
@@ -116,6 +116,12 @@ answers **HTTP 403** to iframes whose Referer has a non-default port (`http://lo
   Extras > Route Table… rows + CSV/XLSX, Interlocking tab lists R1/R2, route edited in the Data panel, wrong points
   position -> `route-points` issue, View > Show Routes, ERTMS signal dropped near T1 snaps (side, rdTrackId, km),
   moved next to T2 re-snaps, Ctrl+Z/Ctrl+Y, Extras > Recalculate km, km ruler.
+- `tests/e2e/editor-commands.spec.ts` (any port): Arrange > Bring Forward / Send Backward (multi-selection, one undo
+  step each) + To Front / To Back on the layer's child order and the SVG stacking, Edit > Select All and Ctrl+A (layer
+  cells + descendants like draw.io; not while typing in the title field), File > Export as PNG/SVG in light and dark
+  theme (PNG signature, white corner, the cell's own light fill; SVG parses, has the labels, `#dae8fc`, white
+  background), `exportAsJson()` of the active tab, project rename in the top bar -> Export As… file name +
+  `<diagram name>`, kept over a reload, Esc cancels.
 - `tests/e2e/style-edit.spec.ts` (any port): line color/width/dash and fill through the Properties panel on cells from an
   ERTMS template, a user template and the draw.io/ERTMS palettes (group first click, child second click); checks the
   cell's own style and the SVG. Reads the graph via `import('/src/services/service-registry.ts')` (dev server only).
@@ -216,7 +222,24 @@ answers **HTTP 403** to iframes whose Referer has a non-default port (`http://lo
   contentEditable, IME composition, cell editor active).
 - `src/services/service-registry.ts` holds tabManager/notifications/etc. instead of `window` globals
   (leftovers: `window.__leftPanelTabs` set in `main-editor.ts`, `window.__saveStatusIndicator` set in
-  `src/ui/save-status.ts`; `src/ui/project-name-editor.ts` still reads `window.__tabManager`, which nothing sets).
+  `src/ui/save-status.ts`).
+- maxGraph 0.10 API: `GraphDataModel` has no getParent/getChildCount/getChildAt/getChildren/`children` (use
+  `cell.parent`, `cell.children`, `cell.getChildAt`, `model.add(parent, cell, index)`), `Graph` has no `getModel()`
+  (`getDataModel()`) or `getCanvas()` (`graph.view.getCanvas()`). Edit cells through the model (`model.setGeometry`,
+  `model.setStyle`, `model.add`) inside one `batchUpdate`, never `cell.setGeometry/setStyle` (not undoable, no events).
+  `graph.orderCells` does not sort the selection itself: pass `styleUtils.sortCells(cells, true)`.
+- Z-order and selection commands live in `GraphCommandService` (`toFront`/`toBack`/`bringForward`/`sendBackward`,
+  `selectAll` = draw.io's `graph.selectAll(null, true)`, skipped on a `locked=1` layer); Arrange menu, context menu
+  and Ctrl+A call them. Bring Forward/Send Backward = `stepOrder`: a cell swaps only with an unselected neighbour.
+- Project name: top-bar `.document-title` (`ProjectNameEditor(tabManager)`, created after the TabManager): rename ->
+  active tab's `saveLoadController.setProjectName` (Save/Export file names, `<diagram name>`) + `flushCache()`; the
+  cache's `projectName` is put back on the title and the active tab's project on restore.
+- Image export: File > Export as PNG…/SVG… (`data-action="exportPng|exportSvg"`, per-tab `ExportImageController` set
+  on the tab's MenuController) uses `diagram-image-export.ts` like the Share dialog and scenario exports: draw.io
+  light colours even in the dark theme (thumbnail renderer option `light` pins the hidden graph with
+  `setGraphColorMode`), on the model's `background` (`modelBackground`, white by default). Only the first layer is
+  drawn (same limit as the scenario exports). `SaveLoadController.exportAsJson()` (no menu item; .drawio is the
+  exchange format) = `{format:'railway-drawer-cells', version:1, name, cells}` read from the saved draw.io XML.
 
 ### File format (main editor): native draw.io XML
 

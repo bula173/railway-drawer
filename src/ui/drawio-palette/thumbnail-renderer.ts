@@ -9,6 +9,7 @@ import { installUserObjectLabels, registerDrawioNamedStyles } from '../../servic
 import { installTableSupport } from '../../drawio-shapes/js/shapes-edges';
 import { installDrawioHtmlLabels } from '../../drawio-shapes/engine/html-labels';
 import { installDanglingEdgeStyles, installInheritStyleValues } from '../../drawio-shapes/engine/view-fixes';
+import { setGraphColorMode } from '../../drawio-shapes/engine/graph-compat';
 import type { PaletteEngine, PaletteEntry } from './contracts';
 import { applyDrawioDefaultStyles, createCellsForEntry, entryStyles } from './entry-cells';
 
@@ -34,6 +35,11 @@ export interface RenderOptions {
    * with the translate floored at this output scale; the caller rasterizes the SVG scaled by it.
    */
   exportScale?: number;
+  /**
+   * Light rendering whatever the app theme (image exports: draw.io exports the light colours
+   * unless asked for a dark export); the hidden graph follows the theme again afterwards.
+   */
+  light?: boolean;
 }
 
 /**
@@ -189,6 +195,7 @@ export class ThumbnailRenderer {
     const model = graph.getDataModel();
     const view = graph.view;
     const border = opts.border ?? THUMB_BORDER;
+    if (opts.light) setGraphColorMode(graph, false);
     try {
       view.scaleAndTranslate(opts.scale ?? 1, 0, 0);
       const cells = createCellsForEntry(entry);
@@ -256,6 +263,7 @@ export class ThumbnailRenderer {
     } finally {
       model.clear();
       view.scaleAndTranslate(1, 0, 0);
+      if (opts.light) setGraphColorMode(graph, null);
     }
   }
 

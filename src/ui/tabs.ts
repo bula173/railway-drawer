@@ -279,7 +279,12 @@ export class TabManager {
       const transformController = new TransformController(graph);
       const gridSnapController = new GridSnapController(graph);
       const duplicateOffsetController = new DuplicateOffsetController(graph);
-      const exportImageController = new ExportImageController(graph);
+      // File > Export as PNG/SVG: the tab's model, file named after the tab
+      const exportImageController = new ExportImageController({
+        getModelXml: () => saveLoadController.serializeToXml(),
+        getName: () => this.tabs.get(tabId)?.name ?? name,
+      });
+      menuController.setExportImageController(exportImageController);
 
       return {
         graphCommandService,
@@ -481,6 +486,8 @@ export class TabManager {
     if (activeTabId) {
       this.switchTab(activeTabId);
     }
+    // The project name (top-bar title, renamed there) names the active tab's files again
+    if (cacheData.projectName) this.getActiveTab()?.saveLoadController.setProjectName(cacheData.projectName);
 
     // Diagrams cached by earlier versions (<GraphDataModel>) are rewritten in the draw.io
     // format right away instead of at the next autosave. Tabs that failed keep their XML.

@@ -1,13 +1,22 @@
 import type { TabData } from './tabs';
 
-/** Optional window global probed for the active tab (see ServiceRegistry, which replaces it). */
-type WindowWithTabManager = Window & { __tabManager?: { getActiveTab?: () => TabData | null } };
+/** What the editor needs from the TabManager (main-editor.ts passes the real one). */
+export interface ProjectNameHost {
+  getActiveTab(): TabData | null;
+  /** Persists the tab cache (which stores the project name) right away. */
+  flushCache(): boolean;
+}
 
+/**
+ * Click on the top-bar `.document-title` to rename the project: Enter or leaving the field keeps
+ * the name, Escape restores the old one. The name goes to the active tab's project (file name of
+ * Save/Export, `<diagram name>`) and the tab cache (TabManager stores the title), so it survives a reload.
+ */
 export class ProjectNameEditor {
   private titleElement: HTMLElement | null;
   private isEditing = false;
 
-  constructor() {
+  constructor(private readonly host: ProjectNameHost) {
     this.titleElement = document.querySelector('.document-title');
     this.setupEditor();
   }
@@ -43,31 +52,31 @@ export class ProjectNameEditor {
     input.focus();
     input.select();
 
-    // Handle blur (save)
-    const saveEdit = () => {
-      const newName = input.value.trim() || 'Untitled Diagram';
-      this.titleElement!.textContent = newName;
+    // Enter / blur keep the name, Escape restores it; only the first of them counts (replacing the
+    // input can fire blur after Enter/Escape)
+    const finish = (keep: boolean): void => {
+      if (!this.isEditing) return;
       this.isEditing = false;
-      this.updateProjectName(newName);
+      const newName = keep ? input.value.trim() || 'Untitled Diagram' : currentName;
+      this.titleElement!.textContent = newName;
+      if (keep && newName !== currentName) this.updateProjectName(newName);
     };
 
-    input.addEventListener('blur', saveEdit);
+    input.addEventListener('blur', () => finish(true));
     input.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') {
-        saveEdit();
+        e.preventDefault();
+        finish(true);
       } else if (e.key === 'Escape') {
-        this.titleElement!.textContent = currentName;
-        this.isEditing = false;
+        e.preventDefault();
+        finish(false);
       }
     });
   }
 
   private updateProjectName(name: string): void {
-    // Get active tab and update its project name
-    const activeTab = (window as WindowWithTabManager).__tabManager?.getActiveTab?.();
-    if (activeTab && activeTab.saveLoadController) {
-      activeTab.saveLoadController.setProjectName(name);
-    }
+    this.host.getActiveTab()?.saveLoadController.setProjectName(name);
+    this.host.flushCache();
   }
 
   setTitle(name: string): void {

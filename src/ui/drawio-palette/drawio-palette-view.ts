@@ -124,15 +124,16 @@ export function getDrawioThumbnailRenderer(): ThumbnailRenderer {
   return getRenderer();
 }
 
-/** Visual parity harness: renders an entry at a fixed scale with the palette's hidden graph. */
+/** Visual parity harness and image exports: renders an entry at a fixed scale with the palette's hidden graph. */
 export function renderEntryForParity(
   entry: PaletteEntry,
   scale: number,
-  opts: { exportLayout?: boolean; border?: number } = {},
+  opts: { exportLayout?: boolean; border?: number; light?: boolean } = {},
 ): Promise<SVGSVGElement> {
+  const light = opts.light ? { light: true } : {};
   return getRenderer().render(
     entry,
-    opts.exportLayout ? { exportScale: scale, border: opts.border ?? 0 } : { scale, border: opts.border ?? 0 },
+    opts.exportLayout ? { exportScale: scale, border: opts.border ?? 0, ...light } : { scale, border: opts.border ?? 0, ...light },
   );
 }
 
