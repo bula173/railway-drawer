@@ -89,7 +89,6 @@ test('ERTMS routes: route tool, route/interlocking tables, snap to track, km', a
   await page.goto('/');
   await page.evaluate(() => localStorage.clear());
   await page.reload();
-  await expect(page.locator('body')).toHaveAttribute('data-editor', 'main');
   await expect(page.locator('#tabs-container .tab-button.active')).toHaveCount(1);
 
   // The layout, loaded like a file (no snapping on load)

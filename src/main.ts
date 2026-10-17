@@ -2,18 +2,16 @@
  * @file main.ts
  * @brief Application entry point for Railway Drawer
  * @details
- * Starts exactly one editor per page load (see drawio/boot.ts):
- * - 'main' (default): the Railway Drawer editor (maxGraph) in main-editor.ts
- * - 'drawio': the draw.io compatibility view (embedded draw.io workspace)
- *
- * The main editor is loaded with a dynamic import, so drawio mode never downloads
- * the maxGraph chunk. Switching modes reloads the page with `?editor=<mode>`.
+ * Boots the Railway Drawer editor (maxGraph, main-editor.ts). It is loaded with a dynamic import,
+ * so sign-in answer pages (which only hand the response back to the opener) never download it.
+ * The former embedded draw.io mode was removed: old `?editor=drawio|legacy|main` links simply
+ * open the editor (the parameter is ignored) and the remembered mode is dropped.
  *
  * @author Marcin Kwiatkowski
  * @version 0.6.0
  */
 
-import { startEditor } from './drawio/boot';
+import { clearRetiredEditorMode } from './services/retired-drawio-mode';
 import { isGitLabAuthResponseUrl } from './share/providers/gitlab/config';
 import { isAuthResponseUrl } from './share/providers/sharepoint/config';
 
@@ -34,7 +32,8 @@ if (isGitLabAuthResponseUrl(window.location)) {
     .then((bridge) => bridge.runAuthBridge())
     .catch((error: unknown) => console.error('Failed to complete the sign-in:', error));
 } else {
-  startEditor({ loadMain: () => import('./main-editor') }).catch((error: unknown) => {
+  clearRetiredEditorMode();
+  import('./main-editor').catch((error: unknown) => {
     console.error('Failed to start the editor:', error);
   });
 }

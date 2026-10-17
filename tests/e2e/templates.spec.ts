@@ -45,7 +45,6 @@ async function freshApp(page: Page): Promise<void> {
   await page.goto('/');
   await page.evaluate(() => localStorage.clear());
   await page.reload();
-  await expect(page.locator('body')).toHaveAttribute('data-editor', 'main');
   await expect(page.locator('#tabs-container .tab-button.active')).toHaveCount(1);
 }
 

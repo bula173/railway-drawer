@@ -50,12 +50,12 @@ echo -e "\n${YELLOW}Step 3: Building project...${NC}"
 # The build script uses `vite build --base ./`: the same build is served at /railway-drawer/ (LAN)
 # and at / (Cloudflare)
 npm run build
-if [ -f "$BUILD_DIR/index.html" ] && [ -f "$BUILD_DIR/drawio/index.html" ]; then
+if [ -f "$BUILD_DIR/index.html" ]; then
     echo -e "${GREEN}✓ Build successful${NC}"
     echo -e "${GREEN}  Build directory: $BUILD_DIR${NC}"
     echo -e "${GREEN}  Build size: $(du -sh "$BUILD_DIR" | cut -f1)${NC}"
 else
-    echo -e "${RED}Build failed - $BUILD_DIR/index.html or $BUILD_DIR/drawio/index.html (self-hosted draw.io) not found${NC}"
+    echo -e "${RED}Build failed - $BUILD_DIR/index.html not found${NC}"
     exit 1
 fi
 
@@ -98,13 +98,13 @@ echo -e "${GREEN}✓ Build uploaded${NC}"
 
 # Step 7: Verify deployment
 echo -e "\n${YELLOW}Step 7: Verifying deployment...${NC}"
-if ssh "${SERVER_USER}@${SERVER_HOST}" "[ -f '${SERVER_PATH}/${BUILD_NAME}/index.html' ] && [ -f '${SERVER_PATH}/${BUILD_NAME}/libraries/ertms.xml' ] && [ -f '${SERVER_PATH}/${BUILD_NAME}/drawio/index.html' ]"; then
+if ssh "${SERVER_USER}@${SERVER_HOST}" "[ -f '${SERVER_PATH}/${BUILD_NAME}/index.html' ] && [ -f '${SERVER_PATH}/${BUILD_NAME}/libraries/ertms.xml' ]"; then
     BUILD_SIZE=$(ssh "${SERVER_USER}@${SERVER_HOST}" "du -sh '${SERVER_PATH}/${BUILD_NAME}' | cut -f1")
     echo -e "${GREEN}✓ Deployment verified${NC}"
     echo -e "${GREEN}  Remote path: ${SERVER_PATH}/${BUILD_NAME}${NC}"
     echo -e "${GREEN}  Remote size: ${BUILD_SIZE}${NC}"
 else
-    echo -e "${RED}Deployment verification failed (index.html, libraries/ertms.xml or drawio/index.html missing)${NC}"
+    echo -e "${RED}Deployment verification failed (index.html or libraries/ertms.xml missing)${NC}"
     exit 1
 fi
 
@@ -124,7 +124,6 @@ echo -e "${YELLOW}=====================================${NC}"
 echo -e "Backup on server: ${SERVER_PATH}/${BACKUP_NAME} (if a previous build existed)"
 echo -e "\nYou can access the application at:"
 echo -e "${GREEN}  http://${SERVER_HOST}/${BUILD_NAME}/${NC}"
-echo -e "  draw.io editor: http://${SERVER_HOST}/${BUILD_NAME}/?editor=drawio"
 echo -e "\n${YELLOW}=====================================${NC}"
 
 exit 0

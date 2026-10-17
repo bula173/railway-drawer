@@ -30,7 +30,6 @@ async function freshApp(page: Page): Promise<void> {
   await page.goto('/');
   await page.evaluate(() => localStorage.clear());
   await page.reload();
-  await expect(page.locator('body')).toHaveAttribute('data-editor', 'main');
   await expect(page.locator('#tabs-container .tab-button.active')).toHaveCount(1);
 }
 
@@ -284,7 +283,7 @@ test.describe('editor commands', () => {
     expect((await readDownload(file)).toString('utf8')).toContain('name="Signalling plan"');
 
     await page.reload();
-    await expect(page.locator('body')).toHaveAttribute('data-editor', 'main');
+    await expect(page.locator('#tabs-container .tab-button.active')).toHaveCount(1);
     await expect(page.locator('.document-title')).toHaveText('Signalling plan');
     const [again] = await Promise.all([page.waitForEvent('download'), menu(page, 'file', 'export')]);
     expect(again.suggestedFilename()).toBe('Signalling plan.drawio');

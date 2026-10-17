@@ -6,7 +6,7 @@
  * The palette shows only the simple elements; the complex scenario diagrams of the same file are
  * the built-in "ERTMS templates" of the Templates tab (`loadErtmsTemplates`, classification in
  * src/ui/templates/ertms-templates.ts). Entry ids keep the library index (`ertms-<index>-<slug>`),
- * so they match the parity harness, which renders all library entries directly.
+ * so they stay stable when the palette's selection of entries changes.
  */
 import type { LazyPaletteSource } from './drawio-palette-view';
 import { getDrawioPaletteEngine } from './drawio-palette-view';

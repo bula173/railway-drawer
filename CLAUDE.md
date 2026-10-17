@@ -4,11 +4,20 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Railway Drawer: vanilla TypeScript + Vite web app for railway (ERTMS/ETCS) diagrams. No framework, no React.
 
-**Decision: one main editor.** The **Railway Drawer editor** (maxGraph, `@maxgraph/core` 0.10, mode `'main'`,
-the default) is the product: all railway features (data, routes, checks, scenarios, sharing) live there. The
-embedded draw.io editor (diagrams.net iframe with the ERTMS shape library, mode `'drawio'`) is only the
-**draw.io compatibility view**, for import/export fidelity with draw.io files. New features go into the main
-editor; UI text says "Railway Drawer editor" and "draw.io compatibility view" (never "legacy"/"maxGraph editor").
+**Decision: one editor.** The **Railway Drawer editor** (maxGraph, `@maxgraph/core` 0.10) is the product: all
+railway features (data, routes, checks, scenarios, sharing) live there. UI text says "Railway Drawer editor"
+(never "legacy"/"maxGraph editor").
+
+**The embedded draw.io mode (diagrams.net iframe, "draw.io compatibility view", self-hosted draw.io under
+`<app>/drawio/`) was removed on the user's decision.** draw.io compatibility now means the **file format and the
+shapes**: native `<mxfile>`/`<mxGraphModel>` read/write (`src/services/drawio-xml.ts`), `.drawio` open/save/import/
+export, `#R` share links (also as app.diagrams.net links), the stencil engine and the draw.io palettes/shapes
+(`src/drawio-shapes`, `src/ui/drawio-palette`, `scripts/drawio-palettes`, `public/stencils`), the ERTMS library
+(`public/libraries/ertms.xml`) and templates. Never weaken that path. **The guard is
+`src/services/__tests__/drawio-compat.test.ts`** (fixtures in draw.io's own file format plus the real ERTMS
+draw.io library: load -> save round trip must be semantically lossless and the output valid draw.io XML; see
+"draw.io compatibility guard" below). Old `?editor=drawio|legacy|main` links still open the
+app (the parameter is ignored).
 
 ## Commands
 
@@ -27,51 +36,26 @@ npm run test:run            # vitest once
 npx vitest run src/__tests__/ui/tab-cache-restore.test.ts   # single file
 npx vitest run -t "restores"                                 # tests by name
 npm run test:e2e            # Playwright, chromium, starts vite itself (E2E_PORT, default 3000)
-npm run test:parity         # maxGraph vs draw.io pixel comparison of every palette entry (see below)
-npm run drawio:selfhost     # download + stage the self-hosted draw.io (dev/build do it automatically)
 npm run drawio:palettes     # regenerate palettes + stencil sets from the pinned draw.io tag (Node >= 22.18)
 ```
 
 CI (`.github/workflows/build-and-deploy.yml`) runs typecheck, typecheck:tests, lint, test:run, build and the
 Playwright subset (legacy-smoke, drawio-palette, templates, scenarios, style-edit, share, gitlab, ertms-data,
-scenario-uml-text, theme-contrast, remote-persist, scenario-doc, editor-commands, ertms-routes, drawio-embed, drawio-parity). `~/.cache/railway-drawer` (self-hosted draw.io) is kept with
-`actions/cache` (key = hash of `scripts/drawio-selfhost/**` + `scripts/drawio-palettes/fetch-sources.ts`). It does not deploy.
+scenario-uml-text, theme-contrast, remote-persist, scenario-doc, editor-commands, ertms-routes, drawio-compat). No
+draw.io download is needed (`scripts/drawio-palettes` only runs locally, its output is committed). It does not deploy.
 
-### E2E and draw.io
+### E2E
 
-draw.io mode and the draw.io specs use the **self-hosted** draw.io (`<app>/drawio/`, see "Self-hosted draw.io"
-below): any port, headless, offline. `embed.diagrams.net` (only with `VITE_DRAWIO_URL=https://embed.diagrams.net/`)
-answers **HTTP 403** to iframes whose Referer has a non-default port (`http://localhost:3000/`) and to the
-`HeadlessChrome` user agent, so with it use `E2E_PORT=80` (macOS lets non-root bind :80).
-
-- `tests/e2e/drawio-embed.spec.ts` (any port): self-hosted by default; aborts and fails on every request that
-  leaves localhost and on every 4xx/5xx of a draw.io file. With `VITE_DRAWIO_URL` (the dev server and the spec
-  both read it) it targets that editor and skips itself with a hint on a 403 / when unreachable / `E2E_OFFLINE=1`.
-- The chromium project uses `devices['Desktop Chrome']`, which sends a normal Chrome UA even headless.
-- `tests/e2e/legacy-smoke.spec.ts` works on any port (drop shape, Ctrl+Z/Ctrl+Y, switch to draw.io and back,
-  draw.io mode loads no maxGraph module).
-- vitest includes `src/**/*.test.ts` and `tests/e2e/parity/__tests__/**/*.test.ts` (the parity harness's
-  own unit tests); Playwright only runs `tests/e2e/*.spec.ts` (`testMatch`). `tsconfig.json` only covers `src`.
-- `tests/e2e/drawio-parity.spec.ts` (any port): renders every palette entry (7 draw.io palettes + ERTMS, 347) in
-  the self-hosted draw.io v32.4.1 (`export` message from a host page routed at `<app>/__parity/drawio-host.html`;
-  a routed `http://localhost/` page may not frame `localhost:<port>`: Chrome Local Network Access) — or in
-  `VITE_DRAWIO_URL` (host page routed at `http://localhost/parity/drawio-host.html`) — and
-  in the app through `window.__rdParity.render(xml, {scale, border, background})` (`src/debug/parity-hook.ts`,
-  installed only in dev builds or with `?parity=1`; it mirrors draw.io's PNG export: an SVG at view scale 1
-  laid out like `Graph.getSvg`, rasterized with `ctx.scale(scale)` like `Editor.exportToCanvas`, so
-  rounding and the 0.5 px stroke offsets match; `__rdParity.svg(xml, opts)` returns that SVG for
-  debugging), then compares them (`tests/e2e/parity/compare.ts`: best
-  alignment within ±2 px, a pixel differs only if its colour is not found within 1 px in the other image;
-  pixelmatch gives the strict count). pass <= 2 %, warn <= 6 %, fail above; accepted differences are listed
-  with a reason in `tests/e2e/parity/expected-mismatch.json`. Do not edit `src/` while it runs: Vite reloads
-  the page and the remaining entries error.
-  Report: `test-results/drawio-parity/index.html`. `PARITY_FILTER=<palette|id>`, `PARITY_LIMIT=<n>`.
-  Self-hosted: a missing draw.io fails. With `VITE_DRAWIO_URL`: skips itself on port != 80
-  (`PARITY_ANY_PORT=1` overrides), offline (`E2E_OFFLINE=1`) or on a 403.
-  Last full run (self-hosted v32.4.1, port 3102, headless, ~50 s): 339 pass, 0 warn, 0 fail, 8 expected (images x3,
-  labels x2, lists x2, the Sankey link), ERTMS 40/40. Earlier run against embed.diagrams.net: 335 pass, 0 warn, 0 fail, 12 expected (images with draw.io-relative `img/` paths,
-  sketch=1, `%date%` placeholders, the List templates draw.io's export does not lay out, the mermaid
-  Sankey gradient band). ERTMS: 40/40 pass.
+- All specs run on any port, headless and offline (`E2E_PORT`, default 3000). The chromium project uses
+  `devices['Desktop Chrome']`.
+- vitest includes `src/**/*.test.ts`; Playwright only runs `tests/e2e/*.spec.ts` (`testMatch`). `tsconfig.json` only covers `src`.
+- `tests/e2e/legacy-smoke.spec.ts`: drop shape, Ctrl+Z/Ctrl+Y, reload keeps it; no editor switch in the top bar or
+  the View menu; `?editor=drawio|legacy|main` opens the editor and drops `railway-drawer-editor-mode`; the former
+  draw.io view's autosaved document (`railway-drawer-drawio-doc`) opens once as new tabs.
+- `tests/e2e/drawio-compat.spec.ts`: File > Open of draw.io files (compressed multi-page fixture, draw.io desktop
+  fixture) -> labels render -> File > Export As… writes a valid `<mxfile>` with the same pages, ids, cells, wrapper
+  attributes and styles, hidden pages unchanged, stable re-export; Templates > Import… of the ERTMS library
+  (40 entries) and Export… as `<mxlibrary>`.
 - `tests/e2e/drawio-palette.spec.ts` (any port): Shapes tab (no draw.io/Stencils tabs) renders the palettes, "More shapes…" toggles palettes and app groups, inserts keep draw.io styles, autosave
   writes real draw.io shape names.
 - `tests/e2e/share.spec.ts` (any port): Share dialog, `#R` link round trip into a fresh browser context, downloads.
@@ -84,8 +68,7 @@ answers **HTTP 403** to iframes whose Referer has a non-default port (`http://lo
   Unlink (also after reload); File > Open from disk unbinds.
 - `tests/e2e/scenarios.spec.ts` (any port): new scenario, 3 steps, ←/→ presentation, Esc restores the live drawing and
   its undo history, rename/reorder (↓ and drag)/delete step, reload, File > Save pages "<Scenario> / <n>. <step>",
-  reopen; replace drawing (confirm, Ctrl+Z). `drawio-embed.spec.ts` also round-trips a scenario file through draw.io
-  (incl. multi-line `rdStepUml`/`rdStepText` with quotes, markup and Polish characters).
+  reopen; replace drawing (confirm, Ctrl+Z).
 - `tests/e2e/scenario-uml-text.spec.ts` (any port): step editor with PlantUML sequence + Markdown (live previews), 2 steps,
   view step 1 -> side panel UML svg + Markdown heading/list, Next -> step 2 content (drawing too), ← back, collapse kept
   over a reload, edit keeps the values, File > Save `.drawio` has `rdStepUml`/`rdStepText`, File > Export Scenario (HTML)
@@ -128,24 +111,16 @@ answers **HTTP 403** to iframes whose Referer has a non-default port (`http://lo
 
 ## Architecture
 
-### Boot: one editor per page load
+### Boot
 
-- `index.html` is the static shell of the main editor (`#app-container`: top bar, menus, toolbar,
-  panels, `#graph-container`, `#tabs-container`). Controllers bind to these ids. A `<style>` in `<head>`
-  hides `#app-container` when `body[data-editor="drawio"]`, so draw.io mode never flashes the shell.
-- `src/main.ts` only calls `startEditor({ loadMain: () => import('./main-editor') })`.
-- `src/drawio/boot.ts` resolves the mode (`src/drawio/editorMode.ts`: `?editor=main|drawio` > localStorage
-  `railway-drawer-editor-mode` > `'main'`; the former name `legacy` is still accepted in both and a stored
-  `legacy` is rewritten to `main`), sets `body[data-editor]` (`main` | `drawio`), then dynamically imports either
-  `main-editor.ts` or `drawio/workspace.ts`. Both are lazy chunks: draw.io mode never downloads the
-  `maxgraph` chunk (vite `manualChunks`) and the main editor never downloads the workspace.
-- Switching = `switchEditorMode(mode)`: persist + full reload with `?editor=<mode>`. Never mount both editors.
-  Main -> draw.io: top-bar toggle `.editor-toggle [data-editor-mode]` ("Railway Drawer" | "draw.io") and View >
-  "Open in draw.io (compatibility view)"
-  (`data-action="switchEditorDrawio"` -> `MenuController` dispatches `editor-switch-request` on `window`);
-  `main-editor.ts` calls `tabManager.flushCache()` before reloading. draw.io -> main: the workspace's
-  "Back to Railway Drawer editor" button flushes the draw.io autosave first. Both sides `confirm()` before reloading when that
-  write failed (storage full), since the reload would drop the unsaved edits.
+- `index.html` is the static shell of the editor (`#app-container`: top bar, menus, toolbar,
+  panels, `#graph-container`, `#tabs-container`). Controllers bind to these ids.
+- `src/main.ts`: sign-in answer pages (GitLab / Entra redirect) only run their auth bridge; otherwise it drops the
+  remembered mode of the removed editor switch (`clearRetiredEditorMode()`, `src/services/retired-drawio-mode.ts`)
+  and dynamically imports `main-editor.ts` (so auth-bridge loads never download maxGraph). `?editor=` is ignored.
+- The removed draw.io view had its own autosave (`railway-drawer-drawio-doc`, `{xml,title,savedAt}`):
+  `install-sharing.ts` opens it once as new tabs after the `#R` link handling (`openDiagramFile` in
+  `share/share-open.ts`, blank pages skipped), then removes the key.
 - `src/main-editor.ts` (formerly `legacy-main.ts`) is the whole main-editor boot: `registerDrawioCodecs()` first (before any file or cache
   load), shapes, `TabManager`, cache restore, the global keyboard dispatcher, drop handler, left panel,
   Shapes tab (shape toolbar + draw.io palettes), shape designer. `beforeunload` flushes the cache; the tabs are destroyed
@@ -273,6 +248,28 @@ draw.io cannot open; this module writes and reads draw.io `<mxfile>/<diagram>/<m
   `TabManager.restoreFromCache` calls `saveToCache`); the cache version was deliberately not bumped.
 - `load()` decodes into a scratch model first; the current diagram is only replaced on success.
 
+### draw.io compatibility guard
+
+The embedded draw.io editor was removed on the user's decision, so nothing runs real draw.io any more.
+**`src/services/__tests__/drawio-compat.test.ts` is the guard** (with `tests/e2e/drawio-compat.spec.ts` in the app):
+- Fixtures in draw.io's own format (`src/services/__tests__/fixtures/drawio/`): `compat-multipage.drawio` (plain pages +
+  one compressed), `compat-compressed.drawio` (all pages compressed, `compressed="true"`), same content: 4 pages
+  (layout with rdScenarios, a scenario step page, "Notes", "Archive"), 3 layers (one hidden + locked), group, dangling
+  edge, orthogonal edge with waypoints + edge label, `<object>` with placeholders and custom attributes,
+  `<UserObject>` with link/tags, core shapes (hexagon, cylinder3, rhombus, ellipse), JS shape `mxgraph.arrows2.arrow`,
+  stencil `mxgraph.flowchart.collate`; `compat-library.xml` (`<mxlibrary>`: escaped, compressed and image entries).
+  Plus the older `src/__tests__/fixtures/drawio/*.drawio` and the real ERTMS library (`public/libraries/ertms.xml`,
+  identical to `ERTMSDrawioTemplate/ERTMS.xml`, 40 entries).
+- Path under test = File > Open / Save: `SaveLoadController.loadProjectXml` -> `getProjectXml`. Required: valid draw.io
+  XML (`<mxfile>`, one `<diagram>` per page, `mxGraphModel/root`, cells 0 and 1, no namespaces); same pages, order,
+  names, ids and `<diagram>` attributes; same cells in draw.io's depth-first order, kinds, parents, terminals, values,
+  every wrapper attribute; every original style entry and the style string itself kept (the save may only add
+  explicit app defaults); geometry incl. points/terminal points/offset/alternate bounds (1/1000 px); page settings;
+  hidden pages byte-identical (compressed stays compressed); stable second save; `rdShape` app shapes; `#R` links.
+- Change the fixtures only deliberately, by hand in draw.io's layout. A compressed page is
+  `base64(deflateRaw(encodeURIComponent(modelXml)))` (node:zlib `deflateRawSync`). Never weaken an assertion to make
+  a change pass.
+
 ### draw.io shapes in the maxGraph editor (`src/drawio-shapes/`, pinned to jgraph/drawio **v32.4.1**)
 
 Ports of draw.io's own code (Apache-2.0; attribution in `NOTICE`, every ported file has the header and
@@ -326,7 +323,7 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   `installDrawioHtmlLabels`, `installDanglingEdgeStyles`, `installInheritStyleValues`,
   `installTableSupport`, `installStencilAutoload` (`src/ui/drawio-stencil-autoload.ts`: every model change
   -> `ensureStencilsForXml` -> `graph.refresh()`, which covers open, cache restore, paste and inserts).
-  The palette's hidden thumbnail/parity graph gets the same set.
+  The palette's hidden thumbnail/export graph gets the same set.
   `ConnectionHandler` uses draw.io's connection points (`getDrawioConnectionConstraints`) when a shape has them.
 - Saving draw.io-styled cells is byte-identical: `parseDrawioStyle` (codec and palette inserts) remembers
   the original string and the export writes it back while the parsed style is unchanged; `addAppDefaults`
@@ -341,8 +338,8 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   (tested against the real file). Names "ERTMS scenario <n>" (library order) + a subtitle of the 3 rarest
   labels across scenarios (phrases before ids); every label is a search tag. Ids `ertms-tpl-<library index>`.
   `ertmsPaletteSource` (Shapes and ERTMS tabs) filters to the elements, entry ids keep the library index
-  (`ertms-<index>-<slug>`); `loadErtmsTemplates` shares the one download. The parity harness reads the
-  library itself, so it still covers all 40 entries. The draw.io-mode library (`src/drawio/ertmsLibrary.ts`) is unchanged.
+  (`ertms-<index>-<slug>`); `loadErtmsTemplates` shares the one download. `drawio-compat.test.ts` parses the
+  whole library (all 40 entries) as the draw.io compatibility guard.
 - **User templates**: `TemplateStore` (`template-store.ts`), localStorage `railway-drawer-templates`,
   `{ version: 1, templates: [{ id, name, description?, xml, width, height, created, updated }] }`; `xml` is a
   native draw.io `<mxGraphModel>`. Bare arrays read as v1; a newer version makes the store read-only (writes
@@ -479,10 +476,10 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   `rdScenarioId rdScenarioName [rdScenarioDescription] rdStepId rdStepName [rdStepDescription] [rdStepUml] [rdStepText]`,
   page id = step id when unique; then the preserved non-scenario `extraPages`. `rdStepUml`/`rdStepText` are only written
   when non-empty; newlines are character references (`&#10;` from Chrome's XMLSerializer, `&#xa;` from `xmlUtils.getXml`),
-  which draw.io's save keeps (verified in `drawio-embed.spec.ts`). Decision: no extra text cell is added to the step page
+  which draw.io's save keeps (verified against draw.io v32.4.1 while the embed mode existed). Decision: no extra text cell is added to the step page
   for draw.io viewers (it would change the snapshot); draw.io shows the attributes only in the file. draw.io v32.4.1 keeps unknown `<diagram>` attributes
   (page node kept as `DiagramPage.node` and cloned on save, Pages.js:12 / EditorUi.js:2520; also on "Duplicate page",
-  so duplicate step ids are made unique on load) — verified live in `tests/e2e/drawio-embed.spec.ts`. Parse:
+  so duplicate step ids are made unique on load) — verified live against draw.io v32.4.1 (former embed spec). Parse:
   pages with `rdStepId`/`rdScenarioId` become steps (compressed pages ok; an unreadable one stays a kept page),
   scenarios in index order, then scenarios only named by step pages; `extraPageNames` (the "only the first page is
   shown" warning) lists only non-step pages. Loading a file replaces the tab's scenarios.
@@ -586,66 +583,6 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   hash = node:crypto SHA-256, navigation script run in jsdom), `scenario-doc-view.test.ts` (Show changes in the view graph,
   autoplay with fake timers, Space, exports through `installScenarios`, options dialog), `tests/e2e/scenario-doc.spec.ts`.
 
-### draw.io compatibility view (`src/drawio/`)
-
-- `workspace.ts`: toolbar (New, Open…, Download .drawio, Export SVG, Back to Railway Drawer editor), iframe, spinner,
-  "not reachable" banner after 20 s, debounced (1 s) autosave to localStorage `railway-drawer-drawio-doc`
-  (separate from the main editor's cache), flushed on pagehide/hidden tab/dispose. Loading another document
-  remounts the iframe.
-- `protocol.ts`: embed client for `proto=json&configure=1`. Handshake: `configure` -> host sends
-  `{action:'configure', config}`; `init` -> host sends `{action:'load', xml, autosave:1, title}`; `load` -> ready.
-  Gotchas: every outgoing message must be a JSON **string** (objects are silently dropped); draw.io posts with
-  targetOrigin `*`, so incoming messages are checked for origin AND `source === iframe.contentWindow`; never put
-  `xml` in an export request (it replaces the open diagram); the `load` event's `xml` is an echo of the input,
-  not normalized output; error replies have no `event` field; configure has a timeout with a fallback config.
-- `ertmsLibrary.ts`: fetches `public/libraries/ertms.xml` (`<mxlibrary>`, 40 tiles; license in
-  `public/libraries/ERTMS-LICENSE.txt`) relative to `import.meta.env.BASE_URL`; the JSON body is read via
-  `textContent` (entity-decoded, otherwise every tile shows "Error:"); passed inline as `data`, never `url`
-  (draw.io would proxy it). Bump `DRAWIO_CONFIG_VERSION` when the config changes (resets draw.io sidebar state).
-- `VITE_DRAWIO_URL` (default: the self-hosted copy, `selfHostedDrawioUrl(import.meta.env.BASE_URL)` =
-  `/drawio/` in dev, `./drawio/` in the relative build, so it works at `/` and at `/railway-drawer/`) and
-  `VITE_DRAWIO_PARAMS` select the draw.io server; `VITE_DRAWIO_URL=https://embed.diagrams.net/` restores the
-  public editor.
-
-### Self-hosted draw.io (`scripts/drawio-selfhost/`)
-
-- `fetch-drawio.ts` (`npm run drawio:selfhost`; run automatically by the Vite plugin): downloads the official
-  `draw.war` of the pinned tag (`DRAWIO_TAG` from `scripts/drawio-palettes/fetch-sources.ts`, v32.4.1, 46 MiB),
-  checks `WAR_SHA256`, extracts a trimmed copy with a built-in zip reader into
-  `$DRAWIO_SELFHOST_CACHE_DIR` (default `~/.cache/railway-drawer/drawio-v32.4.1/`: `draw.war` + `site/`). The
-  site is rebuilt when the tag, the war hash, the script or `config/*.js` change (stamp `site/.rd-selfhost.json`).
-  `DRAWIO_WAR=<file>` uses a pre-downloaded war (offline machines). Nothing of it is in git.
-- Trimmed out (war 3154 files / 117 MiB -> **2796 files / 64.1 MiB**, largest `js/app.min.js` 9.7 MiB):
-  WEB-INF (servlet + placeholder OAuth secrets), META-INF, `*.map`, dev sources (`js/diagramly`,
-  `js/grapheditor`, `mxgraph/src`; only used with `?dev=1`), Atlassian/Teams/cloud integrations
-  (`js/integrate.min.js` 19 MB, `connect/`, `js/onedrive`, `js/dropbox`, `*.html` callbacks), `js/viewer.min.js`,
-  the service worker + workbox and `clear.html` (it would wipe the localStorage of the whole origin = the app's
-  data). Fails if > 20,000 files or a file > 25 MiB (Cloudflare Workers static assets limits).
-- `config/PreConfig.js` / `config/PostConfig.js` replace draw.io's: `DRAWIO_BASE_URL`/`DRAWIO_LIGHTBOX_URL` =
-  the copy's own folder, `DRAWIO_VIEWER_URL` = its `js/viewer-static.min.js`, `EXPORT_URL = null` (PDF via
-  print), and forced `urlParams` (bootstrap.js loads PreConfig before app.min.js on non-diagrams.net hosts):
-  `offline=1 stealth=1 lockdown=1 pwa=0 plugins=0`, no gapi/picker/db/od/gh/gl/tr/ms365; PostConfig nulls
-  `ICONSEARCH_PATH`, `ICON_SERVICE_PATH`, `DRAWIO_LOG_URL`. Verified: a full draw.io-mode session makes no
-  request outside localhost (the embed spec enforces it). Embed parameters still come from `protocol.ts`.
-- `vite-plugin.ts` (`drawioSelfHost()` in `vite.config.ts`): stages the site in `configResolved`, serves it at
-  `<base>drawio/` in the dev server (own middleware before Vite's, so draw.io's HTML is not transformed;
-  `index.html` for directories, 404 outside the site) and copies it to `dist/drawio/` in `writeBundle`.
-  Disabled under vitest and with `DRAWIO_SELFHOST=0` (then set `VITE_DRAWIO_URL`). A build fails when draw.io
-  cannot be prepared; the dev server only warns (draw.io mode then shows the "not reachable" banner with a
-  self-hosted hint).
-- Deploy: `npm run build` (also the Cloudflare Workers Builds command) downloads it (no persistent cache there,
-  ~46 MiB from GitHub per build); `dist/` = app + `drawio/`. Cloudflare Workers static assets: 20,000 files
-  (free plan) / 25 MiB per file, no total size limit -> fits. `deploy.sh` checks `dist/drawio/index.html`
-  locally and on the LAN server (`http://192.168.10.22/railway-drawer/drawio/` needs a directory index).
-- **Same-origin iframe (security)**: the self-hosted draw.io runs on the app's origin, so it could read the
-  app's DOM, localStorage (shared quota; draw.io's keys start with `.` / `mxSettings`) and cookies. We accept
-  that for the pinned, SHA-256-checked copy with external services disabled. No `sandbox` attribute: draw.io
-  needs `allow-scripts` + `allow-same-origin`, which together are no boundary for same-origin content (the
-  frame could remove its own sandbox); embed.diagrams.net is cross-origin and isolated by the browser anyway.
-  The protocol still checks `origin` (= the app origin) and `source === iframe.contentWindow`.
-- The maxGraph editor shows the same `public/libraries/ertms.xml` (elements in the Shapes/ERTMS tabs, scenarios as templates). The old maxGraph-side
-  ERTMS placeholder shapes (`src/shapes/ertms/index.ts`) are only registered as renderers, for old files.
-
 ### Sharing (`src/share/`)
 
 - `install-sharing.ts` (called from `main-editor.ts`) wires everything: top-bar `#share-btn` and File > Share…
@@ -657,10 +594,10 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   standard base64; EditorUi.js:9545 / App.js:6669). The reader accepts both alphabets and raw-XML `#R` links,
   caps the hash, the inflated stream and the decoded XML (5 MB), and never evaluates anything. Links over 32k chars get a warning.
 - Incoming links (`share-open.ts`): on start and on `hashchange`, the hash is stripped (replaceState) and each page opens in a
-  **new tab** via `SaveLoadController.loadProjectXml` (existing tabs kept; a lone empty tab is closed). `drawio/boot.ts`
-  starts the main editor for a `#R` hash even when draw.io mode is remembered (the remembered mode is not changed).
-- Downloads: .drawio (all tabs), PNG/SVG of the current tab via `src/ui/diagram-image-export.ts` (the parity
-  harness's draw.io-like export pipeline, now shared with `src/debug/parity-hook.ts`), Web Share API buttons only
+  **new tab** via `SaveLoadController.loadProjectXml` (existing tabs kept; a lone empty tab is closed). The same
+  `openDiagramFile` opens the removed draw.io view's leftover autosave once.
+- Downloads: .drawio (all tabs), PNG/SVG of the current tab via `src/ui/diagram-image-export.ts` (draw.io-like
+  export pipeline: `Graph.getSvg` layout, `Editor.exportToCanvas` rasterizing), Web Share API buttons only
   when `navigator.canShare` accepts the file.
 - **Cloud providers** (`providers/types.ts`): `StorageProviderDescriptor` (main bundle: id, label, `availability()`,
   `load()` = dynamic import, `resumePendingSignIn`) and `StorageProvider` (account, `list(path)` browse
@@ -732,8 +669,7 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   branch created from the base first, rename = `name (2).drawio`); MR checkbox (409 -> reuse the open MR); conflict
   action "Save to new branch" branches from the version you started from; 50 MB client cap. Share link
   `?gitlab=<project>:<branch>:<path>` (parts percent-encoded, `/` kept; parsed from the raw query) + GitLab blob
-  URL; the descriptor stores it in sessionStorage `rd.gitlab.pendingOpen` and strips it; `drawio/boot.ts` forces the
-  main editor for it. Status bar "GitLab: group/project › branch › path".
+  URL; the descriptor stores it in sessionStorage `rd.gitlab.pendingOpen` and strips it. Status bar "GitLab: group/project › branch › path".
 - Tests: `src/share/__tests__/` (link codec incl. draw.io's algorithm via node:zlib, Graph client with mocked fetch,
   dialog, remote session, provider, config; `gitlab.test.ts`: PKCE vectors, OAuth popup/redirect/refresh, bridge,
   client paging/errors, provider against an in-memory GitLab, config/links, descriptor; `gitlab-session.test.ts`:

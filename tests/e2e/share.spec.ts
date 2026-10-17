@@ -26,7 +26,6 @@ async function freshApp(page: Page): Promise<void> {
   await page.goto('/');
   await page.evaluate(() => localStorage.clear());
   await page.reload();
-  await expect(page.locator('body')).toHaveAttribute('data-editor', 'main');
   await expect(page.locator('#tabs-container .tab-button.active')).toHaveCount(1);
 }
 
@@ -76,7 +75,7 @@ test.describe('share', () => {
     // The sender's diagram, for comparison
     await expect.poll(async () => (await cachedXml(page)).includes('shape=hexagon'), { timeout: 15_000 }).toBe(true);
 
-    // A fresh browser that remembers the draw.io editor still opens the link in the maxGraph editor
+    // A fresh browser that still remembers the removed draw.io editor mode opens the link in the editor
     const other = await browser.newContext();
     await other.addInitScript(() => {
       if (!sessionStorage.getItem('rd-e2e-init')) {
@@ -88,7 +87,7 @@ test.describe('share', () => {
     const receiverErrors: string[] = [];
     receiver.on('pageerror', (err) => receiverErrors.push(err.message));
     await receiver.goto(link);
-    await expect(receiver.locator('body')).toHaveAttribute('data-editor', 'main');
+    await expect(receiver.locator('#tabs-container .tab-button.active')).toHaveCount(1);
     await expect(receiver.locator('.notification', { hasText: 'Opened the shared diagram in 2 new tabs' })).toBeVisible();
     // the lone empty start tab was replaced by the two shared tabs
     await expect(receiver.locator('#tabs-container .tab-button')).toHaveCount(2);
@@ -98,7 +97,8 @@ test.describe('share', () => {
     // the hash is gone (a reload does not open the diagram again)
     expect(receiver.url()).not.toContain('#R');
     await expect.poll(async () => (await cachedXml(receiver)).includes('shape=hexagon'), { timeout: 15_000 }).toBe(true);
-    expect(await receiver.evaluate(() => localStorage.getItem('railway-drawer-editor-mode'))).toBe('drawio');
+    // the remembered mode of the removed mode switch is dropped on boot
+    expect(await receiver.evaluate(() => localStorage.getItem('railway-drawer-editor-mode'))).toBeNull();
     expect(receiverErrors).toEqual([]);
     await other.close();
 
