@@ -48,6 +48,7 @@ import { installSharing } from './share/install-sharing';
 import { installScenarios } from './scenarios/install-scenarios';
 import { assignKindForInsertedShape, installRailwayData, prepareRailwayInsert } from './railway/install-railway-data';
 import { installRailwayRoutes } from './railway/install-railway-routes';
+import { installRailml, isRailmlFile, requestRailmlOpen } from './railml/install-railml';
 
 /**
  * @brief Register all built-in shape definitions
@@ -175,6 +176,8 @@ const scenarios = installScenarios(tabManager, globalNotificationManager, graphC
 installRailwayData(tabManager, globalNotificationManager, { showPanel: scenarios.showPanel });
 // Route tool, route/interlocking tables, snap to track, km ruler (src/railway/install-railway-routes.ts)
 installRailwayRoutes(tabManager, globalNotificationManager);
+// railML 3.2 import/export (File menu, File > Open and file drops of railML; lazy chunk)
+installRailml(tabManager, globalNotificationManager);
 
 // ============= GLOBAL KEYBOARD SHORTCUTS =============
 
@@ -326,6 +329,17 @@ window.addEventListener('editor-switch-request', (e) => {
  */
 graphContainer.addEventListener('drop', (evt) => {
   graphContainer.classList.remove('drag-over');
+
+  // A railML file dropped on the canvas opens in a new tab (src/railml)
+  const droppedFile = evt.dataTransfer?.files?.[0];
+  if (droppedFile && /\.(railml|xml)$/i.test(droppedFile.name)) {
+    evt.preventDefault();
+    void isRailmlFile(droppedFile).then((text) => {
+      if (text !== null) requestRailmlOpen(text, droppedFile.name);
+      else globalNotificationManager.warning(`${droppedFile.name} is not a railML file: use File > Open for draw.io files`);
+    });
+    return;
+  }
 
   const shapeJson = evt.dataTransfer?.getData('application/x-shape-json');
   const customShapeJson = evt.dataTransfer?.getData('application/x-custom-shape');

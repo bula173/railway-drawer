@@ -40,6 +40,8 @@
             <div class="menu-dropdown" data-menu="file" style="display: none;">
               <div class="menu-dropdown-item" data-action="new">New</div>
               <div class="menu-dropdown-item" data-action="open">Open</div>
+              <!-- src/railml (lazy chunk railml-ui.ts): new tab from a railML 3.2 file -->
+              <div class="menu-dropdown-item" data-action="importRailml" title="Open a railML 3.2 file (.railml, .xml) in a new tab">Import railML…</div>
               <!-- "Open from <provider>…" / "Save to <provider>…" items of the cloud storage providers (src/share/providers) -->
               <div id="file-menu-remote-items"></div>
               <div class="menu-dropdown-item" data-action="save">Save</div>
@@ -62,6 +64,7 @@
                   <div class="menu-dropdown-item" data-action="exportRailway:xlsx">Workbook, all lists (.xlsx)</div>
                 </div>
               </div>
+              <div class="menu-dropdown-item" data-action="exportRailml" title="railML 3.2 file of the current diagram: topology, infrastructure, routes, layout">Export railML 3.2…</div>
               <!-- src/scenarios/scenario-export.ts; handled by install-scenarios via the scenario-export-request event -->
               <div class="menu-dropdown-item" data-action="exportScenarioHtml" title="One HTML file with each step's drawing, UML diagram and text">Export Scenario (HTML)…</div>
               <!-- scenario-pdf.ts / scenario-slides.ts (loaded on demand), same event with detail.format -->

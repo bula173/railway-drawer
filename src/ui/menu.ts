@@ -1,6 +1,7 @@
 import { Graph } from '@maxgraph/core';
 import { GraphCommandService } from '../services/graph-command-service';
 import { SaveLoadController } from './saveload';
+import { isRailmlFile, requestRailmlOpen } from '../railml/install-railml';
 import type { AlignmentController } from './alignment';
 import type { ExportImageController } from './export-image';
 import type { LeftPanelTabs } from './left-panel-tabs';
@@ -91,13 +92,19 @@ export class MenuController {
     console.log('[Menu] Opening file dialog...');
     const input = document.createElement('input');
     input.type = 'file';
-    input.accept = '.railwaydrawer,.drawio,.xml';
+    input.accept = '.railwaydrawer,.drawio,.xml,.railml';
     input.onchange = async (e: Event) => {
       const target = e.target as HTMLInputElement;
       console.log('[Menu] File selected:', target.files);
       const file = target.files?.[0];
       if (file) {
         console.log('[Menu] Loading file:', file.name);
+        // railML (root <railML>): imported into a new tab by src/railml
+        const railml = await isRailmlFile(file);
+        if (railml !== null) {
+          requestRailmlOpen(railml, file.name);
+          return;
+        }
         try {
           await this.saveLoadController.loadProjectFromFile(file);
           console.log('[Menu] File loaded successfully');
@@ -250,6 +257,12 @@ export class MenuController {
       case 'exportScenarioSlides':
         // src/scenarios/install-scenarios.ts: options dialog, then PDF / HTML slideshow
         window.dispatchEvent(new CustomEvent('scenario-export-request', { detail: { format: action === 'exportScenarioPdf' ? 'pdf' : 'slides' } }));
+        break;
+
+      case 'importRailml':
+      case 'exportRailml':
+        // src/railml/install-railml.ts (lazy railml-ui chunk): new tab from railML / railML 3.2 download
+        window.dispatchEvent(new CustomEvent('railml-request', { detail: { action: action === 'importRailml' ? 'import' : 'export' } }));
         break;
 
       case 'saveAsTemplate':

@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hand-written railML 3.2 sample WITH an infrastructureVisualization (screen coordinates): one switch, two tracks, three signals,
+     a balise group, an axle counter section, two buffer stops, a level crossing, one route.
+     Includes content Railway Drawer does not map (operationalPoints, isSpeedSignal, a foreign
+     designator, track@type, a timetable) to test that it is preserved. -->
+<railML xmlns="https://www.railml.org/schemas/3.2" xmlns:dc="http://purl.org/dc/elements/1.1/" version="3.2">
+  <metadata>
+    <dc:title>Station Arnau</dc:title>
+    <dc:creator>Hand written</dc:creator>
+    <dc:subject>Test sample</dc:subject>
+  </metadata>
+  <common id="co_01">
+    <positioning>
+      <linearPositioningSystems>
+        <linearPositioningSystem id="lps_line1" units="m" startMeasure="0" endMeasure="1500" linearReferencingMethod="absolute">
+          <name name="Line 1" language="en"/>
+        </linearPositioningSystem>
+      </linearPositioningSystems>
+    </positioning>
+  </common>
+  <infrastructure id="is_01">
+    <topology>
+      <netElements>
+        <netElement id="ne_a01" length="1000">
+          <associatedPositioningSystem id="ne_a01_aps">
+            <intrinsicCoordinate id="ne_a01_ic0" intrinsicCoord="0"><linearCoordinate positioningSystemRef="lps_line1" measure="0"/></intrinsicCoordinate>
+            <intrinsicCoordinate id="ne_a01_ic1" intrinsicCoord="1"><linearCoordinate positioningSystemRef="lps_line1" measure="1000"/></intrinsicCoordinate>
+          </associatedPositioningSystem>
+        </netElement>
+        <netElement id="ne_a02" length="500">
+          <associatedPositioningSystem id="ne_a02_aps">
+            <intrinsicCoordinate id="ne_a02_ic0" intrinsicCoord="0"><linearCoordinate positioningSystemRef="lps_line1" measure="1000"/></intrinsicCoordinate>
+            <intrinsicCoordinate id="ne_a02_ic1" intrinsicCoord="1"><linearCoordinate positioningSystemRef="lps_line1" measure="1500"/></intrinsicCoordinate>
+          </associatedPositioningSystem>
+        </netElement>
+        <netElement id="ne_a03" length="500">
+          <associatedPositioningSystem id="ne_a03_aps">
+            <intrinsicCoordinate id="ne_a03_ic0" intrinsicCoord="0"/>
+            <intrinsicCoordinate id="ne_a03_ic1" intrinsicCoord="1"/>
+          </associatedPositioningSystem>
+        </netElement>
+      </netElements>
+      <netRelations>
+        <netRelation id="nr_a01a02" positionOnA="1" positionOnB="0" navigability="Both"><elementA ref="ne_a01"/><elementB ref="ne_a02"/></netRelation>
+        <netRelation id="nr_a01a03" positionOnA="1" positionOnB="0" navigability="Both"><elementA ref="ne_a01"/><elementB ref="ne_a03"/></netRelation>
+        <netRelation id="nr_a02a03" positionOnA="0" positionOnB="0" navigability="None"><elementA ref="ne_a02"/><elementB ref="ne_a03"/></netRelation>
+      </netRelations>
+      <networks>
+        <network id="nw01">
+          <level id="lv0" descriptionLevel="Micro">
+            <networkResource ref="ne_a01"/><networkResource ref="ne_a02"/><networkResource ref="ne_a03"/>
+            <networkResource ref="nr_a01a02"/><networkResource ref="nr_a01a03"/><networkResource ref="nr_a02a03"/>
+          </level>
+        </network>
+      </networks>
+    </topology>
+    <functionalInfrastructure>
+      <balises>
+        <balise id="bal01" belongsToBaliseGroup="bg01">
+          <name name="B11" language="en"/>
+          <spotLocation id="bal01_sl" netElementRef="ne_a01" intrinsicCoord="0.2" applicationDirection="normal"/>
+          <isEurobalise positionInGroup="0"/>
+        </balise>
+        <balise id="bal02" belongsToBaliseGroup="bg01">
+          <name name="B12" language="en"/>
+          <spotLocation id="bal02_sl" netElementRef="ne_a01" intrinsicCoord="0.21" applicationDirection="normal"/>
+          <isEurobalise positionInGroup="1"/>
+        </balise>
+      </balises>
+      <baliseGroups>
+        <baliseGroup id="bg01" numberOfBalisesInGroup="2">
+          <name name="BG11" language="en"/>
+          <spotLocation id="bg01_sl" netElementRef="ne_a01" intrinsicCoord="0.205" applicationDirection="normal"/>
+          <applicationType value="ETCS"/>
+          <isEurobaliseGroup countryID="353" groupID="4711"/>
+        </baliseGroup>
+      </baliseGroups>
+      <bufferStops>
+        <bufferStop id="bus01" type="fixedBufferStop">
+          <name name="BS1" language="en"/>
+          <spotLocation id="bus01_sl" netElementRef="ne_a02" intrinsicCoord="1"/>
+        </bufferStop>
+        <bufferStop id="bus02">
+          <name name="BS2" language="en"/>
+          <spotLocation id="bus02_sl" netElementRef="ne_a03" intrinsicCoord="1"/>
+        </bufferStop>
+      </bufferStops>
+      <levelCrossingsIS>
+        <levelCrossingIS id="lc01" activation="trainAutomatic">
+          <name name="LC1" language="en"/>
+          <spotLocation id="lc01_sl" netElementRef="ne_a02" intrinsicCoord="0.5"/>
+          <protection barriers="singleHalfBarrier" lights="flashing" hasActiveProtection="true"/>
+        </levelCrossingIS>
+      </levelCrossingsIS>
+      <operationalPoints>
+        <operationalPoint id="op01">
+          <name name="Arnau" language="en"/>
+        </operationalPoint>
+      </operationalPoints>
+      <signalsIS>
+        <signalIS id="sig01" isSwitchable="true">
+          <name name="A" language="en"/>
+          <spotLocation id="sig01_sl" netElementRef="ne_a01" intrinsicCoord="0.1" applicationDirection="normal">
+            <linearCoordinate positioningSystemRef="lps_line1" measure="100"/>
+          </spotLocation>
+          <designator register="_SimpleRegister" entry="68A"/>
+          <isTrainMovementSignal/>
+          <signalConstruction type="light" positionAtTrack="right"/>
+        </signalIS>
+        <signalIS id="sig02" isSwitchable="true">
+          <name name="N2" language="en"/>
+          <spotLocation id="sig02_sl" netElementRef="ne_a02" intrinsicCoord="0.9" applicationDirection="normal"/>
+          <isSpeedSignal/>
+          <isTrainMovementSignal/>
+        </signalIS>
+        <signalIS id="sig03" isSwitchable="false">
+          <name name="N3" language="en"/>
+          <spotLocation id="sig03_sl" netElementRef="ne_a03" intrinsicCoord="0.9" applicationDirection="normal"/>
+          <isEtcsSignal/>
+          <signalConstruction type="board"/>
+        </signalIS>
+      </signalsIS>
+      <switchesIS>
+        <switchIS id="swi01" type="ordinarySwitch" continueCourse="left" branchCourse="right">
+          <name name="W1" language="en"/>
+          <spotLocation id="swi01_sl" netElementRef="ne_a01" intrinsicCoord="1"/>
+          <designator register="DB" entry="68W01"/>
+          <leftBranch netRelationRef="nr_a01a02" branchingSpeed="100"/>
+          <rightBranch netRelationRef="nr_a01a03" branchingSpeed="40"/>
+        </switchIS>
+      </switchesIS>
+      <tracks>
+        <track id="trc01" type="mainTrack">
+          <name name="Track 1" language="en"/>
+          <linearLocation id="trc01_ll">
+            <associatedNetElement netElementRef="ne_a01" keepsOrientation="true" intrinsicCoordBegin="0" intrinsicCoordEnd="1" sequence="1"/>
+            <associatedNetElement netElementRef="ne_a02" keepsOrientation="true" intrinsicCoordBegin="0" intrinsicCoordEnd="1" sequence="2"/>
+          </linearLocation>
+          <designator register="_SimpleRegister" entry="T01"/>
+        </track>
+        <track id="trc02" type="sidingTrack">
+          <name name="Siding" language="en"/>
+          <linearLocation id="trc02_ll">
+            <associatedNetElement netElementRef="ne_a03" keepsOrientation="true" intrinsicCoordBegin="0" intrinsicCoordEnd="1"/>
+          </linearLocation>
+          <designator register="_SimpleRegister" entry="T02"/>
+        </track>
+      </tracks>
+      <trainDetectionElements>
+        <trainDetectionElement id="tde01" type="axleCounter" detectedObject="axle">
+          <name name="AC1" language="en"/>
+          <spotLocation id="tde01_sl" netElementRef="ne_a01" intrinsicCoord="0.5"/>
+        </trainDetectionElement>
+        <trainDetectionElement id="tde02" type="insulatedRailJoint">
+          <spotLocation id="tde02_sl" netElementRef="ne_a02" intrinsicCoord="0.2"/>
+        </trainDetectionElement>
+      </trainDetectionElements>
+    </functionalInfrastructure>
+  </infrastructure>
+  <interlocking>
+    <assetsForInterlockings>
+      <assetsForInterlocking id="ail_01">
+        <tvdSections>
+          <tvdSection id="tvd01" technology="axleCounter">
+            <designator register="_SimpleRegister" entry="A01T"/>
+            <hasDemarcatingTraindetector ref="tde01"/>
+            <hasResetStrategy ref="rst01"/>
+          </tvdSection>
+        </tvdSections>
+        <switchesIL>
+          <switchIL id="swil01" preferredPosition="left">
+            <refersTo ref="swi01"/>
+            <branchLeft ref="trc01"/>
+            <branchRight ref="trc02"/>
+          </switchIL>
+        </switchesIL>
+        <signalsIL>
+          <signalIL id="sigil01" function="main"><refersTo ref="sig01"/></signalIL>
+          <signalIL id="sigil03" function="exit"><refersTo ref="sig03"/></signalIL>
+        </signalsIL>
+        <routes>
+          <route id="rt01" locksAutomatically="false">
+            <designator register="_SimpleRegister" entry="R68A-N3"/>
+            <facingSwitchInPosition id="rt01_swi01" inPosition="right"><refersToSwitch ref="swil01"/></facingSwitchInPosition>
+            <hasTvdSection ref="tvd01"/>
+            <routeEntry id="rt01_entry"><refersTo ref="sigil01"/></routeEntry>
+            <routeExit id="rt01_exit"><refersTo ref="sigil03"/></routeExit>
+          </route>
+        </routes>
+      </assetsForInterlocking>
+    </assetsForInterlockings>
+  </interlocking>
+  <timetable id="tt01"/>
+  <visualizations>
+    <infrastructureVisualizations>
+      <infrastructureVisualization id="vis_main">
+        <linearElementProjection id="lp_ne_a01" refersToElement="ne_a01">
+          <coordinate x="0" y="100"/>
+          <coordinate x="500" y="100"/>
+        </linearElementProjection>
+        <linearElementProjection id="lp_ne_a02" refersToElement="ne_a02">
+          <coordinate x="500" y="100"/>
+          <coordinate x="750" y="100"/>
+        </linearElementProjection>
+        <linearElementProjection id="lp_ne_a03" refersToElement="ne_a03">
+          <coordinate x="500" y="100"/>
+          <coordinate x="560" y="180"/>
+          <coordinate x="750" y="180"/>
+        </linearElementProjection>
+        <spotElementProjection id="sp_op01" refersToElement="op01"><coordinate x="400" y="40"/></spotElementProjection>
+        <spotElementProjection id="sp_sig01" refersToElement="sig01"><coordinate x="50" y="114"/></spotElementProjection>
+        <spotElementProjection id="sp_sig02" refersToElement="sig02"><coordinate x="725" y="114"/></spotElementProjection>
+        <spotElementProjection id="sp_sig03" refersToElement="sig03"><coordinate x="725" y="194"/></spotElementProjection>
+        <spotElementProjection id="sp_bal01" refersToElement="bal01"><coordinate x="100" y="100"/></spotElementProjection>
+        <spotElementProjection id="sp_bal02" refersToElement="bal02"><coordinate x="105" y="100"/></spotElementProjection>
+        <spotElementProjection id="sp_bg01" refersToElement="bg01"><coordinate x="102.5" y="100"/></spotElementProjection>
+        <spotElementProjection id="sp_tde01" refersToElement="tde01"><coordinate x="250" y="100"/></spotElementProjection>
+        <spotElementProjection id="sp_bus01" refersToElement="bus01"><coordinate x="747" y="100"/></spotElementProjection>
+        <spotElementProjection id="sp_bus02" refersToElement="bus02"><coordinate x="747" y="180"/></spotElementProjection>
+        <spotElementProjection id="sp_lc01" refersToElement="lc01"><coordinate x="625" y="100"/></spotElementProjection>
+      </infrastructureVisualization>
+    </infrastructureVisualizations>
+  </visualizations>
+</railML>

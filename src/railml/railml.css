@@ -1,0 +1,42 @@
+/* railML import/export dialogs (railml-ui.ts); layout from .rd-route-dialog (railway-routes.css) */
+.rd-railml-dialog {
+  width: min(640px, calc(100vw - 32px));
+}
+
+.rd-railml-lead {
+  margin: 0 0 8px;
+}
+
+.rd-railml-h {
+  margin: 12px 0 4px;
+  font-size: 13px;
+}
+
+.rd-railml-list {
+  margin: 0;
+  padding-left: 20px;
+  max-height: 180px;
+  overflow: auto;
+}
+
+.rd-railml-more {
+  color: var(--rd-text-muted);
+  list-style: none;
+}
+
+.rd-railml-warn {
+  color: var(--rd-warning);
+  background: var(--rd-warning-bg);
+  padding: 4px 8px;
+  border-radius: 3px;
+}
+
+.rd-railml-ok {
+  color: var(--rd-text);
+}
+
+.rd-railml-option {
+  display: block;
+  margin-top: 12px;
+  color: var(--rd-text);
+}
