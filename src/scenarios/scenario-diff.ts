@@ -341,23 +341,15 @@ function escapeAttr(value: string): string {
 
 export const DIFF_LAYER_ID = 'rd-diff-layer';
 
-export interface DiffHighlightOptions {
-  /**
-   * Put the highlight cells at the end of the FIRST layer instead of an own top layer: the image
-   * export (thumbnail renderer) only draws the first layer's cells (PDF, slides).
-   */
-  inFirstLayer?: boolean;
-}
-
 /**
- * A copy of `curXml` with highlight cells for `diff` (computed when omitted) in an extra top layer.
+ * A copy of `curXml` with highlight cells for `diff` (computed when omitted) in an extra top layer
+ * (drawn top-most by the view and by the image exports, which render every visible layer).
  * Returns `curXml` unchanged when there is nothing to highlight or the XML cannot be read.
  */
 export function buildDiffHighlightXml(
   prevXml: string | null,
   curXml: string,
-  diff: SnapshotDiff = diffSnapshots(prevXml, curXml),
-  options: DiffHighlightOptions = {}
+  diff: SnapshotDiff = diffSnapshots(prevXml, curXml)
 ): string {
   if (diff.changes.length === 0) return curXml;
   const doc = new DOMParser().parseFromString(curXml, 'text/xml');
@@ -368,12 +360,8 @@ export function buildDiffHighlightXml(
     Array.from(root.children).find((c) => c.tagName === 'mxCell' && !c.getAttribute('parent'))?.getAttribute('id') ?? '0';
   const prev = prevXml ? parseSnapshotCells(prevXml) : new Map<string, SnapshotCell>();
   const cur = parseSnapshotCells(curXml);
-  const firstLayerId = Array.from(root.children)
-    .find((c) => c.tagName === 'mxCell' && c.getAttribute('parent') === rootCellId && c.getAttribute('vertex') !== '1' && c.getAttribute('edge') !== '1')
-    ?.getAttribute('id');
-  const inFirst = options.inFirstLayer === true && !!firstLayerId;
-  const parentId = inFirst ? escapeAttr(firstLayerId!) : DIFF_LAYER_ID;
-  const parts: string[] = inFirst ? [] : [`<mxCell id="${DIFF_LAYER_ID}" value="Changes" parent="${escapeAttr(rootCellId)}"/>`];
+  const parentId = DIFF_LAYER_ID;
+  const parts: string[] = [`<mxCell id="${DIFF_LAYER_ID}" value="Changes" parent="${escapeAttr(rootCellId)}"/>`];
   let n = 0;
   const PAD = 4;
   for (const change of diff.changes) {

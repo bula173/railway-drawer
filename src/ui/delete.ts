@@ -43,7 +43,8 @@ export class DeleteController {
     if (cells.length === 0) return;
 
     this.graph.batchUpdate(() => {
-      this.graph.removeCells(cells);
+      // draw.io deleteCells: locked cells (locked=1, cell-lock.ts) stay, and so do their edges
+      this.graph.removeCells(this.graph.getDeletableCells(cells));
     });
 
     console.log('[Delete] Deleted', cells.length, 'cell(s)');

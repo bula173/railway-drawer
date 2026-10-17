@@ -143,7 +143,8 @@ export class GraphCommandService {
   delete(): void {
     const cells = this.graph.getSelectionCells();
     if (cells.length > 0) {
-      this.graph.removeCells(cells);
+      // locked cells (locked=1) are not deleted, nor are their edges (draw.io deleteCells)
+      this.graph.removeCells(this.graph.getDeletableCells(cells));
       this.notifyListeners('stateChanged');
       console.log('[GraphCommand] Delete executed');
     }

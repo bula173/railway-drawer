@@ -26,7 +26,7 @@ export class ClipboardService {
     if (cells.length === 0) return false;
     this.clipboard = graph.cloneCells(cells);
     graph.batchUpdate(() => {
-      graph.removeCells(cells);
+      graph.removeCells(graph.getDeletableCells(cells));
     });
     this.notifyListeners();
     console.log('[Clipboard] Cut', cells.length, 'cell(s)');

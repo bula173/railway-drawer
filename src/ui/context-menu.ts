@@ -18,9 +18,8 @@ import { ClipboardService } from '../services/clipboard-service';
 import type { GraphCommandService } from '../services/graph-command-service';
 import { ensureDrawioMenuItems, executeDrawioMenuAction, updateDrawioMenuItems } from '../drawio-shapes/behaviour/menu';
 import type { GroupingController } from './grouping';
+import { hasLockedStyle, toggleCellsLocked } from './cell-lock';
 
-/** Cell with the ad-hoc `locked` flag toggled by the Lock action. */
-type LockableCell = Cell & { locked?: boolean };
 
 /**
  * @class ContextMenuController
@@ -198,7 +197,11 @@ export class ContextMenuController {
     } else {
       // For cells, show all items
       if (deleteItem) deleteItem.style.display = 'block';
-      if (lockItem) lockItem.style.display = 'block';
+      if (lockItem) {
+        lockItem.style.display = 'block';
+        const first = this.selectedCells[0] ?? this.currentCell;
+        lockItem.textContent = hasLockedStyle(first) ? 'Unlock' : 'Lock';
+      }
       zOrderItems.forEach((item) => {
         (item as HTMLElement).style.display = 'block';
       });
@@ -240,7 +243,7 @@ export class ContextMenuController {
 
     switch (action) {
       case 'delete':
-        this.graph.removeCells(cellsToOperate);
+        this.graph.removeCells(this.graph.getDeletableCells(cellsToOperate.filter((cell): cell is Cell => !!cell)));
         break;
 
       case 'cut':
@@ -274,9 +277,8 @@ export class ContextMenuController {
         break;
 
       case 'lock':
-        (cellsToOperate as LockableCell[]).forEach((cell) => {
-          cell.locked = !cell.locked;
-        });
+        // draw.io lockUnlock: locked=1 style key, one undoable edit
+        toggleCellsLocked(this.graph, cellsToOperate.filter((cell): cell is Cell => !!cell));
         break;
 
       case 'setDefaultStyle':

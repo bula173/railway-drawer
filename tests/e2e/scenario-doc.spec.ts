@@ -4,7 +4,8 @@
  *        restyle, remove), "Show changes" highlights + legend + Changes list in the step view,
  *        autoplay (Space, interval, stops at the last step), File > Export Scenario (PDF)… (real PDF:
  *        %PDF header, title page + >= 1 page per step, embedded Unicode font, UML as vectors) and the
- *        HTML slideshow from the panel button (every step, keyboard navigation).
+ *        HTML slideshow from the panel button (every step, keyboard navigation); the step drawings
+ *        of a multi-layer diagram show every visible layer (hidden ones left out), highlights on top.
  *
  * Runs on any port (dev server only: the graph is reached through the service registry module).
  */
@@ -209,6 +210,65 @@ test.describe('scenario as a document', () => {
     await deck.close();
     expect(deckErrors).toEqual([]);
 
+    expect(pageErrors).toEqual([]);
+  });
+
+  test('slides and PDF draw every visible layer of a step, hidden layers left out, highlights kept', async ({ page }) => {
+    test.setTimeout(120_000);
+    const pageErrors: string[] = [];
+    page.on('pageerror', (err) => pageErrors.push(err.message));
+    await freshApp(page);
+    await page.evaluate(async (xml) => {
+      const registry = await import('/src/services/service-registry.ts' as string);
+      registry.ServiceRegistry.getTabManager().getActiveTab().saveLoadController.load(xml);
+    }, `<mxGraphModel><root><mxCell id="0"/><mxCell id="1" parent="0"/>
+<mxCell id="A" value="Alpha" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="40" y="40" width="120" height="60" as="geometry"/></mxCell>
+<mxCell id="L2" value="Upper" parent="0"/>
+<mxCell id="U" value="Ulysses" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="L2"><mxGeometry x="220" y="40" width="120" height="60" as="geometry"/></mxCell>
+<mxCell id="L3" value="Hidden" parent="0" visible="0"/>
+<mxCell id="H" value="Hermes" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="L3"><mxGeometry x="40" y="160" width="120" height="60" as="geometry"/></mxCell>
+</root></mxGraphModel>`);
+    await expect.poll(() => withGraph<boolean>(page, 'return !!graph.getDataModel().getCell("U");')).toBe(true);
+
+    await page.locator('[data-right-panel="scenarios"]').click();
+    const panel = page.locator('#scenarios-panel');
+    await panel.locator('.rd-scn-new').click();
+    const dialog = page.locator('.rd-tpl-modal');
+    await dialog.locator('input[name="template-name"]').fill('Warstwy');
+    await dialog.locator('.rd-tpl-btn-primary').click();
+    await addStep(page, 'One');
+    // step 2: a cell added on the upper layer -> green highlight
+    await withGraph(page, `graph.insertVertex({ parent: graph.getDataModel().getCell('L2'), value: 'Zeus', position: [400, 40], size: [80, 40] });`);
+    await addStep(page, 'Two');
+
+    await panel.locator('.rd-scn-export-slides').click();
+    const optionsDialog = page.locator('[data-testid="scenario-doc-export-dialog"]');
+    await expect(optionsDialog).toBeVisible();
+    await optionsDialog.locator('input[name="showChanges"]').check();
+    const slidesDownload = page.waitForEvent('download');
+    await optionsDialog.locator('.rd-tpl-btn-primary').click();
+    const html = await readFile(await (await slidesDownload).path(), 'utf8');
+    const drawings = [...html.matchAll(/<img alt="Drawing of step \d[^"]*" src="data:image\/svg\+xml;base64,([^"]+)"/g)].map((m) =>
+      Buffer.from(m[1], 'base64').toString('utf8')
+    );
+    expect(drawings).toHaveLength(2);
+    for (const svg of drawings) {
+      expect(svg).toContain('Alpha');
+      expect(svg).toContain('Ulysses');
+      expect(svg).not.toContain('Hermes');
+    }
+    expect(drawings[1]).toContain('Zeus');
+    expect(drawings[1].toLowerCase()).toContain('#2e7d32');
+
+    // PDF of the same scenario: one image per step drawing (the second layer does not break it)
+    await page.locator('.menu-item[data-menu="file"]').click();
+    await page.locator('.menu-dropdown-item[data-action="exportScenarioPdf"]').click();
+    await expect(optionsDialog).toBeVisible();
+    const pdfDownload = page.waitForEvent('download');
+    await optionsDialog.locator('.rd-tpl-btn-primary').click();
+    const raw = (await readFile(await (await pdfDownload).path())).toString('latin1');
+    expect(raw.startsWith('%PDF-')).toBe(true);
+    expect((raw.match(/\/Subtype \/Image/g) ?? []).length).toBeGreaterThanOrEqual(2);
     expect(pageErrors).toEqual([]);
   });
 });

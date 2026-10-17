@@ -21,16 +21,48 @@ export function wrapModelXml(xml: string): string {
   return `<mxGraphModel><root><mxCell id="0"/><mxCell id="1" parent="0"/>${body}</root></mxGraphModel>`;
 }
 
-/** Top-level cells of a model XML (the children of its first layer). Throws on invalid XML. */
+/**
+ * Top-level cells of a model XML: the children of every visible layer, in model (z) order, so
+ * the image exports draw all layers as draw.io does (hidden layers, `visible="0"`, are skipped
+ * like draw.io's export). Group children stay inside their group. Throws on invalid XML.
+ */
 export function cellsFromModelXml(xml: string): Cell[] {
   const model = new GraphDataModel();
   importDrawioXmlIntoModel(wrapModelXml(xml), model);
   const root = model.getRoot();
-  const layer = root?.getChildAt(0);
-  if (!layer) return [];
-  const cells = [...(layer.children ?? [])];
-  for (const cell of cells) cell.setParent(null);
-  return cells;
+  if (!root) return [];
+  const cells: Cell[] = [];
+  for (const layer of [...(root.children ?? [])]) {
+    if (!layer.isVisible()) continue;
+    cells.push(...(layer.children ?? []));
+  }
+  const kept = new Set<Cell>();
+  const collect = (cell: Cell): void => {
+    kept.add(cell);
+    for (const child of cell.children ?? []) collect(child);
+  };
+  cells.forEach(collect);
+  // Edges into a hidden layer are not drawn (draw.io's view drops an edge whose terminal has no
+  // state); edges of a hidden layer must not stay attached to the exported terminals.
+  const dropped = new Set<Cell>();
+  for (const cell of kept) {
+    if (!cell.isEdge()) continue;
+    const src = cell.getTerminal(true);
+    const trg = cell.getTerminal(false);
+    if ((src && !kept.has(src)) || (trg && !kept.has(trg))) dropped.add(cell);
+  }
+  for (const cell of kept) {
+    if (dropped.has(cell)) continue;
+    for (const edge of [...(cell.edges ?? [])]) {
+      if (!kept.has(edge) || dropped.has(edge)) cell.edges.splice(cell.edges.indexOf(edge), 1);
+    }
+  }
+  for (const edge of dropped) {
+    edge.getParent()?.remove(edge.getParent()!.getIndex(edge));
+  }
+  const top = cells.filter((cell) => !dropped.has(cell));
+  for (const cell of top) cell.setParent(null);
+  return top;
 }
 
 /**

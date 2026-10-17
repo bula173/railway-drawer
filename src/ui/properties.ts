@@ -28,8 +28,7 @@ import {
 } from './style-edit';
 import type { StyleRecord } from './style-edit';
 
-/** @brief Cell with the ad-hoc `locked` flag shared with context-menu/interactive-ui */
-type LockableCell = Cell & { locked?: boolean };
+import { hasLockedStyle, toggleCellsLocked } from './cell-lock';
 
 /** @brief A cell's own style as a record (keys not declared on CellStyle: fontWeight, blendMode, ...) */
 type EditableStyle = StyleRecord;
@@ -113,6 +112,10 @@ export class PropertiesPanel {
   private readonly listenerAbort = new AbortController();
   /** @brief Selection model listener, kept for removal in destroy() */
   private readonly selectionListener = () => this.update();
+  /** @brief Model listener: keeps the Lock button in step with undo/redo and other lock edits */
+  private readonly modelListener = () => {
+    if (this.currentCell) this.updateLockButton(hasLockedStyle(this.currentCell));
+  };
 
   /**
    * @brief Initialize properties panel
@@ -128,6 +131,7 @@ export class PropertiesPanel {
     this.setupEventListeners();
 
     this.graph.getSelectionModel().addListener('change', this.selectionListener);
+    this.graph.getDataModel().addListener('change', this.modelListener);
   }
 
   /**
@@ -137,6 +141,7 @@ export class PropertiesPanel {
   destroy() {
     this.listenerAbort.abort();
     this.graph.getSelectionModel().removeListener(this.selectionListener);
+    this.graph.getDataModel().removeListener(this.modelListener);
     this.currentCell = null;
   }
 
@@ -207,7 +212,7 @@ export class PropertiesPanel {
   }
 
   private updateValues() {
-    const cell = this.currentCell as LockableCell | null;
+    const cell = this.currentCell;
     if (!cell) return;
     const geo = cell.geometry;
     const style = this.graph.getCellStyle(cell) as ResolvedPanelStyle;
@@ -362,7 +367,7 @@ export class PropertiesPanel {
     flipVBtn?.classList.toggle('rd-btn-on', !!flipV);
 
     // Lock state of the displayed cell
-    this.updateLockButton(!!cell.locked);
+    this.updateLockButton(hasLockedStyle(cell));
   }
 
   private updateLockButton(isLocked: boolean) {
@@ -697,14 +702,11 @@ export class PropertiesPanel {
     );
     this.bindZOrder('btn-sendBackward', (_parent, index) => Math.max(index - 1, 0));
 
-    // Lock: toggles each selected cell's own flag (same flag as the context menu)
+    // Lock/Unlock: draw.io's locked=1 style key (same action as the context menu), one undoable edit
     this.on(document.getElementById('btn-lock'), 'click', () => {
-      const cells = this.getTargetCells() as LockableCell[];
+      const cells = this.getTargetCells();
       if (cells.length === 0) return;
-      cells.forEach((cell) => {
-        cell.locked = !cell.locked;
-      });
-      this.updateLockButton(!!cells[0].locked);
+      this.updateLockButton(toggleCellsLocked(this.graph, cells));
     });
   }
 

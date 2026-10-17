@@ -175,7 +175,7 @@ export async function buildScenarioPdf(
     if (showChanges && prev) {
       try {
         diff = diffSnapshots(prev.xml, step.xml);
-        xml = buildDiffHighlightXml(prev.xml, step.xml, diff, { inFirstLayer: true });
+        xml = buildDiffHighlightXml(prev.xml, step.xml, diff);
       } catch {
         diff = null;
       }

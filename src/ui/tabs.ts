@@ -26,6 +26,7 @@ import { ConnectionHandler } from './connections';
 import { TextEditorController } from './text-editor';
 import { EdgePropertiesController } from './edge-properties';
 import { LayersController } from './layers';
+import { installCellLocking } from './cell-lock';
 import { ImageUploadController } from './image-upload';
 import { PasteImageController } from './paste-image';
 import { ZoomController } from './zoom';
@@ -230,6 +231,8 @@ export class TabManager {
     // Styles and rendering compat shared with the scenario view graph (diagram-graph-setup.ts)
     configureDiagramRendering(graph);
     installDrawioBehaviour(graph);
+    // draw.io lock: locked=1 on cells and layers (cell-lock.ts)
+    installCellLocking(graph);
     installDrawioHandles(graph);
     // Named stencils (mxgraph.basic.*, ...) are fetched when cells using them arrive (load, paste, insert)
     installStencilAutoload(graph);

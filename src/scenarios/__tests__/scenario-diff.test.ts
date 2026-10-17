@@ -4,6 +4,8 @@
  */
 import { describe, it, expect } from 'vitest';
 import { buildDiffHighlightXml, diffSnapshots, diffCountsText, parseSnapshotCells, DIFF_LAYER_ID } from '../scenario-diff';
+import { cellsFromModelXml } from '../../ui/drawio-palette/entry-cells';
+import { styleToString } from '../../services/drawio-xml';
 
 interface V {
   id: string;
@@ -166,15 +168,13 @@ describe('buildDiffHighlightXml', () => {
     expect(parsed.get('m')?.geometry?.x).toBe(50);
   });
 
-  it('inFirstLayer: highlight cells appended to the first layer (image export draws only that one)', () => {
-    const out = buildDiffHighlightXml(prev, cur, undefined, { inFirstLayer: true });
-    const doc = new DOMParser().parseFromString(out, 'text/xml');
-    const cells = Array.from(doc.getElementsByTagName('mxCell'));
-    expect(cells.some((c) => c.getAttribute('id') === DIFF_LAYER_ID)).toBe(false);
-    const marks = cells.filter((c) => /rdDiff=/.test(c.getAttribute('style') ?? ''));
+  it('image export cells (every visible layer): the highlight layer comes last, so it is drawn top-most', () => {
+    const out = buildDiffHighlightXml(prev, cur);
+    const cells = cellsFromModelXml(out);
+    const marks = cells.filter((c) => /rdDiff=/.test(styleToString(c.getStyle())));
     expect(marks).toHaveLength(5);
-    expect(new Set(marks.map((c) => c.getAttribute('parent')))).toEqual(new Set(['1']));
-    expect(cells.indexOf(marks[0])).toBeGreaterThan(cells.findIndex((c) => c.getAttribute('id') === 'n'));
+    expect(cells.slice(-5)).toEqual(marks);
+    expect(cells.some((c) => c.getId() === 'n')).toBe(true);
   });
 
   it('returns the snapshot itself when nothing changed', () => {

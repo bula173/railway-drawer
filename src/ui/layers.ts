@@ -1,241 +1,217 @@
-import { Graph, type Cell } from '@maxgraph/core';
-
-/** A cell tagged with the layer it was assigned to (expando property, not in maxGraph's typing) */
-type LayeredCell = Cell & { __layerId?: string };
+/**
+ * @file layers.ts
+ * @brief Layers panel on the model's real layers (the children of the model root), as draw.io's
+ *        Layers dialog: what a .drawio file stores and draw.io shows.
+ *
+ * - The current layer is the graph's default parent: new and pasted cells go there.
+ * - + Layer adds a layer cell on top (one undoable edit), × / Delete removes a layer with its
+ *   cells (graph.removeCells([layer], false), undoable), the eye toggles the layer's `visible`
+ *   (model.setVisible, undoable, saved as visible="0"), the padlock sets/removes `locked=1` on
+ *   the layer cell's style (cell-lock.ts: cells on a locked layer cannot be selected or edited).
+ * - Listed top-most first, like draw.io; an unnamed layer shows as "Background".
+ */
+import { Cell } from '@maxgraph/core';
+import type { Graph } from '@maxgraph/core';
+import { hasLockedStyle, setCellsLocked } from './cell-lock';
 
 export interface Layer {
   id: string;
   name: string;
   visible: boolean;
   locked: boolean;
-  color: string;
-  cells: Cell[];
+  /** The layer cell (a child of the model root). */
+  cell: Cell;
+  /** Number of top-level cells on the layer. */
+  cellCount: number;
 }
+
+const COLORS = ['#3498db', '#e74c3c', '#2ecc71', '#f39c12', '#9b59b6', '#1abc9c'];
 
 export class LayersController {
   private graph: Graph;
-  private layers: Map<string, Layer> = new Map();
-  /** Deleted layers, kept so undoing the removal of their cells brings the layer back */
-  private deletedLayers: Map<string, Layer> = new Map();
-  private currentLayerId: string | null = null;
   private layerListContainer: HTMLElement | null;
+  private readonly modelListener = () => this.onModelChange();
 
   constructor(graph: Graph) {
     this.graph = graph;
     this.layerListContainer = document.getElementById('layers-list');
 
-    this.initializeDefaultLayer();
     this.setupLayerControls();
     this.render();
 
-    // Update when cells change
-    this.graph.model.addListener('change', () => {
-      this.updateLayerCells();
-    });
-  }
-
-  private initializeDefaultLayer(): void {
-    const defaultLayer: Layer = {
-      id: 'layer-0',
-      name: 'Layer 1',
-      visible: true,
-      locked: false,
-      color: '#3498db',
-      cells: [],
-    };
-    this.layers.set(defaultLayer.id, defaultLayer);
-    this.currentLayerId = defaultLayer.id;
+    this.graph.getDataModel().addListener('change', this.modelListener);
   }
 
   private setupLayerControls(): void {
     const addLayerBtn = document.getElementById('btn-add-layer');
     if (addLayerBtn) {
-      addLayerBtn.addEventListener('click', () => this.addLayer());
+      addLayerBtn.addEventListener('click', () => {
+        if (this.isActive()) this.addLayer();
+      });
     }
 
     const deleteLayerBtn = document.getElementById('btn-delete-layer');
     if (deleteLayerBtn) {
-      deleteLayerBtn.addEventListener('click', () => this.deleteCurrentLayer());
+      deleteLayerBtn.addEventListener('click', () => {
+        if (this.isActive()) this.deleteCurrentLayer();
+      });
     }
   }
 
-  addLayer(): void {
-    const layerNum = this.layers.size + 1;
-    const newLayerId = `layer-${Date.now()}`;
-    const colors = ['#3498db', '#e74c3c', '#2ecc71', '#f39c12', '#9b59b6', '#1abc9c'];
-    const newLayer: Layer = {
-      id: newLayerId,
-      name: `Layer ${layerNum}`,
-      visible: true,
-      locked: false,
-      color: colors[this.layers.size % colors.length],
-      cells: [],
+  /** Whether this controller's graph is the one shown (#layers-list is shared by all tabs). */
+  private isActive(): boolean {
+    const container = this.graph.container;
+    return !!container && container.isConnected && container.style.display !== 'none';
+  }
+
+  private layerCells(): Cell[] {
+    return [...(this.graph.getDataModel().getRoot()?.children ?? [])];
+  }
+
+  private findLayer(layerId: string): Cell | null {
+    return this.layerCells().find((cell) => cell.getId() === layerId) ?? null;
+  }
+
+  private layerName(cell: Cell): string {
+    const label = this.graph.convertValueToString(cell);
+    return label && label.trim() !== '' ? label : 'Background';
+  }
+
+  private toLayer(cell: Cell): Layer {
+    return {
+      id: String(cell.getId()),
+      name: this.layerName(cell),
+      visible: cell.isVisible(),
+      locked: hasLockedStyle(cell),
+      cell,
+      cellCount: cell.getChildCount(),
     };
-    this.layers.set(newLayerId, newLayer);
-    this.currentLayerId = newLayerId;
+  }
+
+  /** A default parent that left the model (layer deleted, file loaded) falls back to the first layer. */
+  private onModelChange(): void {
+    const current = this.graph.defaultParent;
+    if (current && !this.layerCells().includes(current)) this.graph.setDefaultParent(null);
+    if (this.isActive()) this.render();
+  }
+
+  /** draw.io addLayer: a new layer on top, made the current layer. One undoable edit. */
+  addLayer(): Layer {
+    const model = this.graph.getDataModel();
+    const root = model.getRoot();
+    if (!root) throw new Error('The diagram has no root cell');
+    const used = new Set(this.layerCells().map((cell) => this.layerName(cell)));
+    let n = root.getChildCount() + 1;
+    while (used.has(`Layer ${n}`)) n++;
+    const layer = new Cell(`Layer ${n}`);
+    model.beginUpdate();
+    try {
+      model.add(root, layer);
+    } finally {
+      model.endUpdate();
+    }
+    this.graph.setDefaultParent(layer);
     this.render();
+    return this.toLayer(layer);
   }
 
   deleteCurrentLayer(): void {
-    if (this.currentLayerId) this.deleteLayer(this.currentLayerId);
+    const current = this.getCurrentLayer();
+    if (current) this.deleteLayer(current.id);
   }
 
   /**
-   * Deletes a layer and its cells (after a confirm when it has any). The cells are removed with
-   * graph.removeCells in one model edit, so Undo restores them; a restored cell still carries the
-   * layer id, and updateLayerCells then brings the layer back too.
+   * Deletes a layer and its cells (after a confirm when it has any) in one undoable model edit;
+   * Undo brings both back. The last layer cannot be deleted.
    * @returns true when the layer was deleted
    */
   deleteLayer(layerId: string): boolean {
-    const layer = this.layers.get(layerId);
+    const layer = this.findLayer(layerId);
     if (!layer) return false;
-    if (this.layers.size <= 1) {
+    if (this.layerCells().length <= 1) {
       alert('Cannot delete the last layer');
       return false;
     }
-    if (layer.cells.length > 0 && !confirm(`Layer "${layer.name}" contains ${layer.cells.length} cell(s). Delete anyway?`)) {
+    const count = layer.getChildCount();
+    if (count > 0 && !confirm(`Layer "${this.layerName(layer)}" contains ${count} cell(s). Delete anyway?`)) {
       return false;
     }
-
-    // Unregister first: the model change below re-runs updateLayerCells
-    this.layers.delete(layerId);
-    this.deletedLayers.set(layerId, layer);
-    if (this.currentLayerId === layerId) {
-      this.currentLayerId = Array.from(this.layers.keys())[0] || null;
-    }
-    const cells = layer.cells.filter((cell) => cell.getParent());
-    if (cells.length > 0) this.graph.removeCells(cells, true);
+    const removedSelection = this.graph.getSelectionCells().filter((cell) => this.isInside(cell, layer));
+    if (removedSelection.length > 0) this.graph.removeSelectionCells(removedSelection);
+    // like draw.io's Layers dialog: the layer cell itself, its descendants go with it
+    this.graph.removeCells([layer], false);
+    if (this.graph.defaultParent === layer) this.graph.setDefaultParent(null);
     this.render();
     return true;
   }
 
+  private isInside(cell: Cell, layer: Cell): boolean {
+    for (let c: Cell | null = cell; c; c = c.getParent()) if (c === layer) return true;
+    return false;
+  }
+
   renameLayer(layerId: string, newName: string): void {
-    const layer = this.layers.get(layerId);
+    const layer = this.findLayer(layerId);
     if (layer) {
-      layer.name = newName;
+      this.graph.getDataModel().setValue(layer, newName);
       this.render();
     }
   }
 
   toggleLayerVisibility(layerId: string): void {
-    const layer = this.layers.get(layerId);
-    if (layer) {
-      layer.visible = !layer.visible;
-      this.updateLayerCellsVisibility(layerId);
-      this.render();
+    const layer = this.findLayer(layerId);
+    if (!layer) return;
+    const visible = !layer.isVisible();
+    if (!visible) {
+      const hidden = this.graph.getSelectionCells().filter((cell) => this.isInside(cell, layer));
+      if (hidden.length > 0) this.graph.removeSelectionCells(hidden);
     }
-  }
-
-  toggleLayerLock(layerId: string): void {
-    const layer = this.layers.get(layerId);
-    if (layer) {
-      layer.locked = !layer.locked;
-      this.render();
-    }
-  }
-
-  selectLayer(layerId: string): void {
-    this.currentLayerId = layerId;
+    this.graph.getDataModel().setVisible(layer, visible);
     this.render();
   }
 
-  addCellToLayer(cell: Cell, layerId: string): void {
-    const layer = this.layers.get(layerId);
-    if (layer && !layer.cells.includes(cell)) {
-      layer.cells.push(cell);
-      (cell as LayeredCell).__layerId = layerId;
-    }
-  }
-
-  removeCellFromLayer(cell: Cell, layerId: string): void {
-    const layer = this.layers.get(layerId);
-    if (layer) {
-      const index = layer.cells.indexOf(cell);
-      if (index > -1) {
-        layer.cells.splice(index, 1);
-      }
-    }
-  }
-
-  getCellLayer(cell: Cell): string | null {
-    return (cell as LayeredCell).__layerId || Array.from(this.layers.keys())[0];
-  }
-
-  private updateLayerCells(): void {
-    // Get all cells from the graph
-    const allCells = this.graph.model.cells;
-    const graphCells = Object.values(allCells || {}).filter((c: Cell) => c.isVertex && c.isVertex());
-
-    // Clear all layer cells
-    this.layers.forEach((layer) => {
-      layer.cells = [];
-    });
-
-    // Undo of a layer deletion: its cells are back, so the layer comes back too
-    let restored = false;
-    graphCells.forEach((cell: Cell) => {
-      const layerId = (cell as LayeredCell).__layerId;
-      const deleted = layerId ? this.deletedLayers.get(layerId) : undefined;
-      if (layerId && deleted) {
-        this.deletedLayers.delete(layerId);
-        deleted.cells = [];
-        this.layers.set(layerId, deleted);
-        restored = true;
-      }
-    });
-
-    // Assign cells to layers
-    graphCells.forEach((cell: Cell) => {
-      const layerId = this.getCellLayer(cell);
-      if (layerId) {
-        this.addCellToLayer(cell, layerId);
-      } else {
-        // Add to default layer
-        const defaultLayerId = Array.from(this.layers.keys())[0];
-        if (defaultLayerId) {
-          this.addCellToLayer(cell, defaultLayerId);
-        }
-      }
-    });
-    if (restored) this.render();
-  }
-
-  private updateLayerCellsVisibility(layerId: string): void {
-    const layer = this.layers.get(layerId);
+  /** Sets/removes `locked=1` on the layer cell (one undoable edit, saved in the file). */
+  toggleLayerLock(layerId: string): void {
+    const layer = this.findLayer(layerId);
     if (!layer) return;
+    setCellsLocked(this.graph, [layer], !hasLockedStyle(layer));
+    this.render();
+  }
 
-    this.graph.batchUpdate(() => {
-      layer.cells.forEach((cell) => {
-        if (layer.visible) {
-          cell.setVisible(true);
-        } else {
-          cell.setVisible(false);
-        }
-      });
-    });
-    this.graph.refresh();
+  selectLayer(layerId: string): void {
+    const layer = this.findLayer(layerId);
+    if (!layer) return;
+    this.graph.setDefaultParent(layer);
+    this.render();
   }
 
   private render(): void {
     if (!this.layerListContainer) return;
 
     this.layerListContainer.innerHTML = '';
+    const layers = this.getLayers();
+    const currentId = this.getCurrentLayer()?.id ?? null;
 
-    this.layers.forEach((layer) => {
+    // top-most layer first, like draw.io's Layers dialog
+    [...layers].reverse().forEach((layer) => {
+      const index = layers.indexOf(layer);
       const layerItem = document.createElement('div');
       layerItem.className = 'layer-item';
+      layerItem.dataset.layerId = layer.id;
       layerItem.style.padding = '8px';
       layerItem.style.borderBottom = '1px solid var(--rd-border)';
       layerItem.style.cursor = 'pointer';
       layerItem.style.display = 'flex';
       layerItem.style.alignItems = 'center';
       layerItem.style.gap = '8px';
-      layerItem.style.backgroundColor = layer.id === this.currentLayerId ? 'var(--rd-selected)' : 'transparent';
-      layerItem.style.borderLeft = `3px solid ${layer.color}`;
+      layerItem.style.backgroundColor = layer.id === currentId ? 'var(--rd-selected)' : 'transparent';
+      layerItem.style.borderLeft = `3px solid ${COLORS[index % COLORS.length]}`;
 
       // Visibility toggle
       const visibilityBtn = document.createElement('button');
+      visibilityBtn.className = 'layer-visibility';
       visibilityBtn.textContent = layer.visible ? '👁' : '🚫';
+      visibilityBtn.title = layer.visible ? 'Hide layer' : 'Show layer';
       visibilityBtn.style.background = 'none';
       visibilityBtn.style.border = 'none';
       visibilityBtn.style.cursor = 'pointer';
@@ -247,9 +223,12 @@ export class LayersController {
         this.toggleLayerVisibility(layer.id);
       });
 
-      // Lock toggle
+      // Lock toggle (locked=1 on the layer cell)
       const lockBtn = document.createElement('button');
+      lockBtn.className = 'layer-lock';
       lockBtn.textContent = layer.locked ? '🔒' : '🔓';
+      lockBtn.title = layer.locked ? 'Unlock layer' : 'Lock layer';
+      lockBtn.setAttribute('aria-pressed', String(layer.locked));
       lockBtn.style.background = 'none';
       lockBtn.style.border = 'none';
       lockBtn.style.cursor = 'pointer';
@@ -263,14 +242,17 @@ export class LayersController {
 
       // Layer name
       const nameSpan = document.createElement('span');
-      nameSpan.textContent = `${layer.name} (${layer.cells.length})`;
+      nameSpan.className = 'layer-name';
+      nameSpan.textContent = `${layer.name} (${layer.cellCount})`;
       nameSpan.style.flex = '1';
       nameSpan.style.fontSize = '12px';
-      nameSpan.style.fontWeight = layer.id === this.currentLayerId ? '600' : '400';
+      nameSpan.style.fontWeight = layer.id === currentId ? '600' : '400';
 
       // Delete button
       const deleteBtn = document.createElement('button');
+      deleteBtn.className = 'layer-delete';
       deleteBtn.textContent = '×';
+      deleteBtn.title = 'Delete layer';
       deleteBtn.style.background = 'none';
       deleteBtn.style.border = 'none';
       deleteBtn.style.cursor = 'pointer';
@@ -286,7 +268,7 @@ export class LayersController {
       layerItem.appendChild(visibilityBtn);
       layerItem.appendChild(lockBtn);
       layerItem.appendChild(nameSpan);
-      if (this.layers.size > 1) {
+      if (layers.length > 1) {
         layerItem.appendChild(deleteBtn);
       }
 
@@ -305,18 +287,22 @@ export class LayersController {
     this.render();
   }
 
+  /** The current layer (the graph's default parent). */
   getCurrentLayer(): Layer | null {
-    return this.currentLayerId ? this.layers.get(this.currentLayerId) || null : null;
+    const parent = this.graph.getDefaultParent();
+    const layers = this.layerCells();
+    const index = parent ? layers.indexOf(parent) : -1;
+    return index >= 0 ? this.toLayer(layers[index]) : null;
   }
 
+  /** Every layer in model order (bottom first). */
   getLayers(): Layer[] {
-    return Array.from(this.layers.values());
+    return this.layerCells().map((cell) => this.toLayer(cell));
   }
 
   destroy(): void {
     // #layers-list is shared with the other tabs: it is left alone here and re-rendered by the
     // tab that is shown next, so closing a background tab does not empty the active tab's list.
-    this.layers.clear();
-    this.currentLayerId = null;
+    this.graph.getDataModel().removeListener(this.modelListener);
   }
 }

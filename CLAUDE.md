@@ -231,14 +231,27 @@ answers **HTTP 403** to iframes whose Referer has a non-default port (`http://lo
 - Z-order and selection commands live in `GraphCommandService` (`toFront`/`toBack`/`bringForward`/`sendBackward`,
   `selectAll` = draw.io's `graph.selectAll(null, true)`, skipped on a `locked=1` layer); Arrange menu, context menu
   and Ctrl+A call them. Bring Forward/Send Backward = `stepOrder`: a cell swaps only with an unselected neighbour.
+- Lock = draw.io's style key `locked=1` (`src/ui/cell-lock.ts`, installed per tab graph by `installCellLocking`):
+  `graph.isCellLocked` = maxGraph's || `locked=1` on the cell or an ancestor (group/layer), which maxGraph's
+  movable/resizable/bendable/editable/disconnectable/label-movable checks use; deletable, rotatable and
+  `isValidSource`/`isValidTarget` also refuse locked cells; locked cells stay selectable, cells on a `locked=1` layer
+  are not selectable. Context menu Lock/Unlock and the Properties Lock button = `toggleCellsLocked` (draw.io
+  `lockUnlock`: first cell decides; via `setCellStyleValues`, one undo step). Delete/cut/context Delete pass
+  `graph.getDeletableCells(selection)` to `removeCells`, so a locked cell's edges stay too (draw.io deleteCells).
+- Layers panel (`src/ui/layers.ts`) = the model's real layers (root children, listed top-most first, unnamed =
+  "Background", `rd-routes` = "Routes"): current layer = `graph.setDefaultParent`; + Layer = `model.add(root, …)`;
+  delete = `removeCells([layer], false)`; eye = `model.setVisible`; padlock = `locked=1` on the layer cell. All undoable
+  and saved in the .drawio file. The old app-only layers (`rdLayerId` / `__layerId`) are no longer used by the panel
+  (still read and written back verbatim by drawio-xml.ts).
 - Project name: top-bar `.document-title` (`ProjectNameEditor(tabManager)`, created after the TabManager): rename ->
   active tab's `saveLoadController.setProjectName` (Save/Export file names, `<diagram name>`) + `flushCache()`; the
   cache's `projectName` is put back on the title and the active tab's project on restore.
 - Image export: File > Export as PNG…/SVG… (`data-action="exportPng|exportSvg"`, per-tab `ExportImageController` set
   on the tab's MenuController) uses `diagram-image-export.ts` like the Share dialog and scenario exports: draw.io
   light colours even in the dark theme (thumbnail renderer option `light` pins the hidden graph with
-  `setGraphColorMode`), on the model's `background` (`modelBackground`, white by default). Only the first layer is
-  drawn (same limit as the scenario exports). `SaveLoadController.exportAsJson()` (no menu item; .drawio is the
+  `setGraphColorMode`), on the model's `background` (`modelBackground`, white by default). Every VISIBLE layer is
+  drawn in model order (`cellsFromModelXml`: children of each layer, groups kept, `visible="0"` layers skipped like
+  draw.io, edges into a hidden layer dropped), also `rd-routes` when shown and in the scenario exports. `SaveLoadController.exportAsJson()` (no menu item; .drawio is the
   exchange format) = `{format:'railway-drawer-cells', version:1, name, cells}` read from the saved draw.io XML.
 
 ### File format (main editor): native draw.io XML
@@ -519,9 +532,8 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   only with `html=1` — and `<object>` data attributes, e.g. `rdAspects` -> "S2: aspects changed"); moved wins over changed for
   the colour. `buildDiffHighlightXml` returns a NEW model XML (snapshots never change): the step plus highlight cells
   (`rdDiff=<kind>` style; outlines green #2e7d32 / blue #1565c0 / orange #ef6c00, red dashed ghost #c62828 with the old name
-  at the old absolute place, edges as thick polylines) in an own top layer `rd-diff-layer` (view) or, with `inFirstLayer`,
-  at the end of the first layer — required for exports because the image export (thumbnail renderer's
-  `cellsFromModelXml`) only draws the FIRST layer (the same limit applies to the HTML export of multi-layer drawings).
+  at the old absolute place, edges as thick polylines) in an own top layer `rd-diff-layer` (last root child = drawn
+  top-most in the view and in the image exports, which draw every visible layer; the old `inFirstLayer` option is gone).
 - **View additions** (`scenario-view.ts`, CSS `scenario-doc.css`): banner "Show changes" check box (localStorage
   `rd.scenario.showChanges`) -> the view graph loads the highlight copy, legend `[data-testid=scenario-diff-legend]` over
   the canvas, side-panel section "Changes" (`.rd-scn-side-changes li[data-kind]`, counts), `data-diff-added|removed|moved|changed`
@@ -568,7 +580,7 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   Prev/Next, collapse, edit keep/replace, HTML export), `src/__tests__/services/plantuml-scenario.test.ts` (sequence
   parser/SVG, encoding vs PlantUML's documented example, mocked server, no request without a server),
   `tests/e2e/scenarios.spec.ts` and `tests/e2e/scenario-uml-text.spec.ts` (any port). Scenario documents:
-  `scenario-diff.test.ts` (kinds, data keys, edges, nesting, highlight XML in own/first layer), `scenario-pdf.test.ts` (real
+  `scenario-diff.test.ts` (kinds, data keys, edges, nesting, highlight XML in own top layer, drawn last by `cellsFromModelXml`), `scenario-pdf.test.ts` (real
   jsPDF in jsdom, streams inflated with node:zlib: pages, page numbers, Markdown text, link annotations, landscape, changes,
   real DejaVu files vs. transliteration, svg2pdf vs. raster fallback), `scenario-slides.test.ts` (structure, escaping, CSP
   hash = node:crypto SHA-256, navigation script run in jsdom), `scenario-doc-view.test.ts` (Show changes in the view graph,

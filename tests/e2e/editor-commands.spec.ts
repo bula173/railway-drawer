@@ -102,6 +102,49 @@ function inspectSvg(page: Page, svg: string): Promise<{ error: boolean; text: st
   }, svg);
 }
 
+/** Two layers (+ a group with a nested cell on the upper one) for the layer/lock tests. */
+const LAYERS_XML = `<mxGraphModel><root><mxCell id="0"/><mxCell id="1" parent="0"/>
+<mxCell id="A" value="Alpha" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="40" y="40" width="120" height="60" as="geometry"/></mxCell>
+<mxCell id="L2" value="Upper" parent="0"/>
+<mxCell id="U" value="Ulysses" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="L2"><mxGeometry x="220" y="40" width="120" height="60" as="geometry"/></mxCell>
+<mxCell id="UG" value="" style="group" vertex="1" connectable="0" parent="L2"><mxGeometry x="40" y="160" width="120" height="60" as="geometry"/></mxCell>
+<mxCell id="UG1" value="Nested" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="UG"><mxGeometry width="120" height="60" as="geometry"/></mxCell>
+</root></mxGraphModel>`;
+
+/** Page coordinates of a cell's centre. */
+function cellCenter(page: Page, id: string): Promise<{ x: number; y: number }> {
+  return inTab(page, `
+    const r = graph.view.getState(graph.getDataModel().getCell(arg)).shape.node.getBoundingClientRect();
+    return { x: r.left + r.width / 2, y: r.top + r.height / 2 };
+  `, id);
+}
+
+function cellX(page: Page, id: string): Promise<number> {
+  return inTab(page, 'return graph.getDataModel().getCell(arg).getGeometry().x;', id);
+}
+
+function hasLockStyle(page: Page, id: string): Promise<boolean> {
+  return inTab(page, `
+    const st = graph.getDataModel().getCell(arg).getStyle();
+    const v = typeof st === 'string' ? (/(^|;)locked=1/.test(st) ? 1 : 0) : st && st.locked;
+    return v === 1 || v === true || v === '1';
+  `, id);
+}
+
+/** Drags a cell from near its top-left corner (the centre hotspot would start a connection). */
+async function dragBy(page: Page, id: string, dx: number, dy: number): Promise<void> {
+  const r = await inTab<{ x: number; y: number; w: number; h: number }>(page, `
+    const b = graph.view.getState(graph.getDataModel().getCell(arg)).shape.node.getBoundingClientRect();
+    return { x: b.left, y: b.top, w: b.width, h: b.height };
+  `, id);
+  const c = { x: r.x + r.w * 0.2, y: r.y + r.h * 0.25 };
+  await page.mouse.move(c.x, c.y);
+  await page.mouse.down();
+  await page.mouse.move(c.x + dx / 2, c.y + dy / 2, { steps: 5 });
+  await page.mouse.move(c.x + dx, c.y + dy, { steps: 5 });
+  await page.mouse.up();
+}
+
 test.describe('editor commands', () => {
   test('Arrange: Bring Forward / Send Backward step through the z-order (one undo each), To Front / To Back', async ({ page }) => {
     const errors: string[] = [];
@@ -251,5 +294,138 @@ test.describe('editor commands', () => {
     await page.locator('.document-title input').fill('Something else');
     await page.locator('.document-title input').press('Escape');
     await expect(page.locator('.document-title')).toHaveText('Signalling plan');
+  });
+
+  test('image export draws every visible layer (groups included) and leaves hidden layers out', async ({ page }) => {
+    const errors: string[] = [];
+    page.on('pageerror', (err) => errors.push(err.message));
+    await freshApp(page);
+    await loadModel(page, LAYERS_XML);
+
+    const exportSvgText = async (): Promise<string> => {
+      const [svg] = await Promise.all([page.waitForEvent('download'), menu(page, 'file', 'exportSvg')]);
+      return (await inspectSvg(page, (await readDownload(svg)).toString('utf8'))).text;
+    };
+    let text = await exportSvgText();
+    for (const label of ['Alpha', 'Ulysses', 'Nested']) expect(text).toContain(label);
+
+    // Layers panel: the Upper layer is listed first (top-most); its eye hides it
+    await page.locator('.left-panel-tab-btn', { hasText: 'Layers' }).click();
+    const items = page.locator('#layers-list .layer-item');
+    await expect(items.locator('.layer-name')).toHaveText(['Upper (2)', 'Background (1)']);
+    await items.nth(0).locator('.layer-visibility').click();
+    expect(await inTab(page, 'return graph.getDataModel().getCell("L2").isVisible();')).toBe(false);
+    text = await exportSvgText();
+    expect(text).toContain('Alpha');
+    expect(text).not.toContain('Ulysses');
+    expect(text).not.toContain('Nested');
+    expect(errors).toEqual([]);
+  });
+
+  test('Lock (locked=1): no drag, no Delete, Undo unlocks, Properties shows it, kept over a reload', async ({ page }) => {
+    const errors: string[] = [];
+    page.on('pageerror', (err) => errors.push(err.message));
+    await freshApp(page);
+    await loadModel(page, MODEL_XML);
+
+    // control: an unlocked cell moves
+    const c0 = await cellX(page, 'C');
+    await dragBy(page, 'C', 120, 0);
+    expect(await cellX(page, 'C')).toBeGreaterThan(c0 + 50);
+
+    // context menu Lock
+    const a = await cellCenter(page, 'A');
+    await page.mouse.click(a.x, a.y, { button: 'right' });
+    const lockItem = page.locator('#context-menu [data-action="lock"], .context-menu [data-action="lock"]').first();
+    await expect(lockItem).toHaveText('Lock');
+    await lockItem.click();
+    expect(await hasLockStyle(page, 'A')).toBe(true);
+    await select(page, ['A']);
+    await expect(page.locator('#btn-lock')).toHaveText('Unlock');
+
+    // the locked cell stays put and stays selectable
+    await dragBy(page, 'A', 150, 80);
+    expect(await cellX(page, 'A')).toBe(40);
+    await select(page, ['A', 'D']);
+    expect(await selectedIds(page)).toEqual(['A', 'D']);
+    await page.keyboard.press('Delete');
+    const present = (id: string): Promise<boolean> => inTab(page, 'return !!graph.getDataModel().getCell(arg);', id);
+    expect(await present('A')).toBe(true);
+    // its edge stays too (draw.io deletes only deletable cells and their edges)
+    expect(await present('E')).toBe(true);
+    expect(await present('D')).toBe(false);
+
+    // Undo: D back, then A unlocked; Redo locks again
+    await page.locator('#graph-container').click({ position: { x: 700, y: 450 } });
+    await page.keyboard.press('Control+z');
+    expect(await present('D')).toBe(true);
+    await page.keyboard.press('Control+z');
+    expect(await hasLockStyle(page, 'A')).toBe(false);
+    await page.keyboard.press('Control+y');
+    expect(await hasLockStyle(page, 'A')).toBe(true);
+
+    // Properties button toggles it too (one edit)
+    await select(page, ['B']);
+    await expect(page.locator('#btn-lock')).toHaveText('Lock');
+    await inTab(page, 'document.getElementById("btn-lock").click();');
+    expect(await hasLockStyle(page, 'B')).toBe(true);
+    await expect(page.locator('#btn-lock')).toHaveText('Unlock');
+    await page.locator('#graph-container').click({ position: { x: 700, y: 450 } });
+    await page.keyboard.press('Control+z');
+    expect(await hasLockStyle(page, 'B')).toBe(false);
+
+    // saved in the draw.io file and kept over a reload
+    const [file] = await Promise.all([page.waitForEvent('download'), menu(page, 'file', 'export')]);
+    expect((await readDownload(file)).toString('utf8')).toMatch(/<mxCell id="A" value="Alpha" style="[^"]*locked=1;/);
+    await page.evaluate(async () => {
+      const registry = await import('/src/services/service-registry.ts' as string);
+      registry.ServiceRegistry.getTabManager().flushCache();
+    });
+    await page.reload();
+    await expect(page.locator('body')).toHaveAttribute('data-editor', 'main');
+    await expect(page.locator('#tabs-container .tab-button.active')).toHaveCount(1);
+    await expect.poll(() => inTab(page, 'return !!graph.getDataModel().getCell("A");').catch(() => false)).toBe(true);
+    expect(await hasLockStyle(page, 'A')).toBe(true);
+    expect(await inTab(page, 'return graph.isCellMovable(graph.getDataModel().getCell("A"));')).toBe(false);
+    expect(errors).toEqual([]);
+  });
+
+  test('Layers panel lock (locked=1 on the layer): its cells cannot be selected; Undo unlocks; saved', async ({ page }) => {
+    const errors: string[] = [];
+    page.on('pageerror', (err) => errors.push(err.message));
+    await freshApp(page);
+    await loadModel(page, LAYERS_XML);
+    await page.locator('.left-panel-tab-btn', { hasText: 'Layers' }).click();
+    const items = page.locator('#layers-list .layer-item');
+    await items.nth(0).locator('.layer-lock').click();
+    expect(await hasLockStyle(page, 'L2')).toBe(true);
+    await expect(items.nth(0).locator('.layer-lock')).toHaveText('🔒');
+
+    // clicking a cell of the locked layer selects nothing; the other layer still works
+    const u = await cellCenter(page, 'U');
+    await page.mouse.click(u.x, u.y);
+    expect(await selectedIds(page)).toEqual([]);
+    const a = await cellCenter(page, 'A');
+    await page.mouse.click(a.x, a.y);
+    expect(await selectedIds(page)).toEqual(['A']);
+    // Select All on the locked layer (made current) selects nothing, on the other layer its cells
+    await items.nth(0).click();
+    await inTab(page, 'graph.clearSelection();');
+    await menu(page, 'edit', 'selectAll');
+    expect(await selectedIds(page)).toEqual([]);
+    await items.nth(1).click();
+    await menu(page, 'edit', 'selectAll');
+    expect(await selectedIds(page)).toEqual(['A']);
+
+    const [file] = await Promise.all([page.waitForEvent('download'), menu(page, 'file', 'export')]);
+    expect((await readDownload(file)).toString('utf8')).toMatch(/<mxCell id="L2" value="Upper" style="locked=1;" parent="0"\/>/);
+
+    await page.locator('#graph-container').click({ position: { x: 700, y: 450 } });
+    await page.keyboard.press('Control+z');
+    expect(await hasLockStyle(page, 'L2')).toBe(false);
+    await expect(items.nth(0).locator('.layer-lock')).toHaveText('🔓');
+    await page.mouse.click(u.x, u.y);
+    expect(await selectedIds(page)).toEqual(['U']);
+    expect(errors).toEqual([]);
   });
 });
