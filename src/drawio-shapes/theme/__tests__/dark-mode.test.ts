@@ -130,11 +130,20 @@ describe('dark mode on a graph (graph-compat.ts)', () => {
   it('resolves light-dark() in HTML labels to the dark value', () => {
     const g = newGraph();
     g.setHtmlLabels(true);
-    insert(g, {} as CellStyle, '<font style="color: light-dark(rgb(224, 0, 0), rgb(1, 2, 3));">Stop</font>');
+    insert(g, {} as CellStyle, '<font style="color: light-dark(rgb(224, 0, 0), rgb(201, 202, 203));">Stop</font>');
     expect(container.innerHTML).toContain('rgb(224, 0, 0)');
     setDrawioDarkMode(true);
-    expect(container.innerHTML).toContain('rgb(1, 2, 3)');
+    expect(container.innerHTML).toContain('rgb(201, 202, 203)');
     expect(container.innerHTML).not.toContain('light-dark(');
+  });
+
+  it('dark HTML label text below the minimum contrast is lightened (rendering only)', () => {
+    const g = newGraph();
+    g.setHtmlLabels(true);
+    const cell = insert(g, { fillColor: 'none' } as CellStyle, '<font style="color: light-dark(rgb(224, 0, 0), rgb(1, 2, 3));">Stop</font>');
+    setDrawioDarkMode(true);
+    expect(container.innerHTML).not.toContain('rgb(1, 2, 3)');
+    expect(String(cell.value)).toContain('rgb(1, 2, 3)');
   });
 
   it('per-graph overrides: pinned light mode and adaptiveColors=none', () => {

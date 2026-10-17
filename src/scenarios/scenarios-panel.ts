@@ -18,6 +18,7 @@ import type { ScenarioViewState } from './scenario-view';
 import { openStepEditor } from './step-editor';
 import type { StepEditorOptions, StepEditorResult } from './step-editor';
 import './scenarios.css';
+import { onDrawioColorModeChange } from '../drawio-shapes/engine/graph-compat';
 
 export interface ScenarioTabRef {
   id: string;
@@ -148,6 +149,8 @@ export function createScenariosPanel(options: ScenariosPanelOptions): ScenariosP
         )
       : null;
   const thumbSteps = new WeakMap<HTMLElement, ScenarioStepData>();
+  // Step thumbnails follow the app theme like the canvas: rebuild them when the colour mode changes
+  const stopColorModeWatch = onDrawioColorModeChange(() => render());
 
   function loadThumb(host: HTMLElement): void {
     const step = thumbSteps.get(host);
@@ -568,6 +571,7 @@ export function createScenariosPanel(options: ScenariosPanelOptions): ScenariosP
       }
     },
     destroy() {
+      stopColorModeWatch();
       unsubscribe?.();
       unsubscribe = null;
       observer?.disconnect();

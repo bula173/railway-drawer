@@ -7,6 +7,7 @@
 import type { Cell, Graph } from '@maxgraph/core';
 import './drawio-palette.css';
 import { logger } from '../../drawio/logger';
+import { onDrawioColorModeChange } from '../../drawio-shapes/engine/graph-compat';
 import { fallbackEngine } from './contracts';
 import type { PaletteDef, PaletteEngine, PaletteEntry, PaletteMeta } from './contracts';
 import { insertEntry } from './entry-cells';
@@ -274,6 +275,17 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
         )
       : null;
   const pendingThumbs = new WeakMap<HTMLElement, PaletteEntry>();
+  // Rendered thumbnails, re-rendered when the colour mode (app theme) changes
+  const renderedThumbs = new Map<HTMLElement, PaletteEntry>();
+  const stopColorModeWatch = onDrawioColorModeChange(() => {
+    if (destroyed) return;
+    for (const [host, entry] of [...renderedThumbs]) {
+      renderedThumbs.delete(host);
+      if (!host.isConnected) continue;
+      pendingThumbs.set(host, entry);
+      renderThumb(host);
+    }
+  });
 
   function renderThumb(host: HTMLElement): void {
     const entry = pendingThumbs.get(host);
@@ -285,6 +297,7 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
         if (destroyed) return;
         host.replaceChildren(svg);
         host.classList.add('rd-dp-thumb-ready');
+        renderedThumbs.set(host, entry);
       })
       .catch((err: unknown) => {
         host.classList.add('rd-dp-thumb-error');
@@ -690,6 +703,8 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
 
   function destroy(): void {
     destroyed = true;
+    stopColorModeWatch();
+    renderedThumbs.clear();
     hidePreview();
     observer?.disconnect();
     document.removeEventListener('mousedown', closeMenu);

@@ -22,6 +22,7 @@ import type { CellState } from '@maxgraph/core';
 import { logger } from '../../drawio/logger';
 import { decompress } from './codec';
 import { installStencilArcFix } from './stencil-fixes';
+import { installDarkFeedbackColors } from './handle-colors';
 import { installBoundingBoxFix, installDropShadowFix, installPolylineArcSizeFix, installTextCssFix } from './shape-fixes';
 import { installSketchSupport } from './sketch';
 
@@ -147,6 +148,8 @@ export function installStencilEngine(options: StencilEngineOptions = {}): void {
   installDropShadowFix();
   installTextCssFix();
   installBoundingBoxFix();
+  // selection / drop-target / connection feedback readable on the dark canvas
+  installDarkFeedbackColors();
   // sketch=1 (rough.js) and comic=1 hand-drawn shapes; after installBoundingBoxFix
   installSketchSupport();
   ensureNullPrototypeStore();

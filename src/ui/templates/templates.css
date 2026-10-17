@@ -97,7 +97,6 @@
   pointer-events: none;
   background: var(--rd-surface);
   border-radius: 2px;
-  color-scheme: light;
 }
 
 .rd-tpl-thumb-error {

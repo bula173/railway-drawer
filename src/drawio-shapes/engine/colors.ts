@@ -20,6 +20,9 @@
  * the default), keeps plain colors as they are ('simple') or ignores dark mode for the
  * diagram ('none', color-scheme: light). getInverseColor and parseColor are ported from
  * src/main/webapp/mxgraph/mxClient.js (mxUtils.getInverseColor / parseColor / getLightDarkColor).
+ * Railway Drawer's 'auto' differs on purpose (adaptiveDarkColor): only neutral colors invert,
+ * saturated ones are kept, and strokes / text get minimum contrast (ensureContrast, applied by
+ * graph-compat.ts applyDarkContrast). Light rendering is draw.io's.
  */
 
 export interface LightDark {
@@ -141,13 +144,105 @@ export function getInverseColor(color: string, lightness = 93, hue = 180): strin
   );
 }
 
+// ---------------------------------------------------------------------------------------------
+// Railway Drawer dark rendering (not draw.io code): which plain colors invert, contrast floors.
+// draw.io's 'auto' inverts every plain color, which turns signal red / green / yellow into pastel
+// or near-black tints (#ffff00 -> #323200) and keeps low-contrast greys low-contrast
+// (#a5a5a5 -> #5f5f5f, 2.9:1 on #121212). Here only neutral colors (greys, black, white and the
+// pale pastel fills, chroma < KEEP_CHROMA) invert; saturated colors are kept, and strokes and
+// text get a minimum contrast against what they are drawn on. Only the rendering changes: cell
+// styles and saved files keep the original values.
+
+/** Colors with chroma (max - min channel, 0..1) at or above this are kept in dark mode. */
+export const KEEP_CHROMA = 0.3;
+/**
+ * Minimum contrast of strokes against the dark canvas (#121212): 4.5 leaves >= 3:1 (WCAG non-text)
+ * also on the slightly lighter palette surface the thumbnails sit on.
+ */
+export const DARK_MIN_GRAPHICS_CONTRAST = 4.5;
+/** Minimum contrast of text drawn on the dark canvas (>= 4.5:1 on the palette surface too). */
+export const DARK_MIN_CANVAS_TEXT_CONTRAST = 7;
+/** Minimum contrast of text drawn on the cell's own fill / label background. */
+export const DARK_MIN_TEXT_CONTRAST = 4.5;
+
+/** WCAG 2.x relative luminance. */
+export function relativeLuminance(c: RgbaColor): number {
+  const ch = (v: number): number => {
+    const s = v / 255;
+    return s <= 0.04045 ? s / 12.92 : Math.pow((s + 0.055) / 1.055, 2.4);
+  };
+  return 0.2126 * ch(c.r) + 0.7152 * ch(c.g) + 0.0722 * ch(c.b);
+}
+
+/** WCAG 2.x contrast ratio of two opaque colors (alpha ignored); null when either does not parse. */
+export function contrastRatio(a: string, b: string): number | null {
+  const ca = parseColor(a);
+  const cb = parseColor(b);
+  if (!ca || !cb) return null;
+  const la = relativeLuminance(ca);
+  const lb = relativeLuminance(cb);
+  return (Math.max(la, lb) + 0.05) / (Math.min(la, lb) + 0.05);
+}
+
+function toHex(c: RgbaColor): string {
+  const h = (n: number) => Math.round(Math.max(0, Math.min(255, n))).toString(16).padStart(2, '0');
+  return `#${h(c.r)}${h(c.g)}${h(c.b)}${c.a < 1 ? h(c.a * 255) : ''}`;
+}
+
+/** True for colors dark mode keeps: saturated (chroma >= KEEP_CHROMA). */
+export function isSaturatedColor(color: string): boolean {
+  const c = parseColor(color);
+  if (!c) return false;
+  return (Math.max(c.r, c.g, c.b) - Math.min(c.r, c.g, c.b)) / 255 >= KEEP_CHROMA;
+}
+
+/**
+ * Dark-mode rendering of a plain color with adaptiveColors 'auto': neutral colors (black, white,
+ * greys, pale pastels) become mxUtils.getInverseColor(color) like draw.io (black -> #ededed,
+ * white -> #121212, #dae8fc -> #1d293b); saturated colors (signal red/green/yellow, track and
+ * route colors) are kept. Unparseable values ('none', var(), ...) are returned unchanged.
+ */
+export function adaptiveDarkColor(color: string): string {
+  if (parseColor(color) == null) return color;
+  return isSaturatedColor(color) ? color : getInverseColor(color);
+}
+
+/**
+ * `color` with at least `min` contrast against `background`: mixed towards white (dark
+ * background) or black (light background) in small steps, so the hue stays recognizable.
+ * Colors that already meet `min`, and values that do not parse, are returned unchanged.
+ */
+export function ensureContrast(color: string, background: string, min: number): string {
+  const c = parseColor(color);
+  const bg = parseColor(background);
+  if (!c || !bg) return color;
+  const lb = relativeLuminance(bg);
+  const ratio = (x: RgbaColor) => {
+    const l = relativeLuminance(x);
+    return (Math.max(l, lb) + 0.05) / (Math.min(l, lb) + 0.05);
+  };
+  if (ratio(c) >= min) return color;
+  const target = lb < 0.18 ? 255 : 0;
+  for (let t = 0.05; t <= 1.0001; t += 0.05) {
+    const m: RgbaColor = {
+      r: c.r + (target - c.r) * t,
+      g: c.g + (target - c.g) * t,
+      b: c.b + (target - c.b) * t,
+      a: c.a,
+    };
+    if (ratio(m) >= min) return toHex(m);
+  }
+  return toHex({ r: target, g: target, b: target, a: c.a });
+}
+
 /**
  * Dark side of a plain (non light-dark) color, as mxUtils.parseLightDarkColor derives it:
- * 'auto' inverts it, 'simple' keeps it; var(...) colors are kept.
+ * 'auto' adapts it (adaptiveDarkColor: neutral colors invert, saturated ones are kept),
+ * 'simple' keeps it; var(...) colors are kept.
  */
 export function adaptColor(color: string, adaptive: AdaptiveColors = 'auto'): string {
   if (adaptive !== 'auto' || /^var\(/i.test(color.trim())) return color;
-  return getInverseColor(color);
+  return adaptiveDarkColor(color);
 }
 
 /** Keys whose `default` value is the shape foreground color (Graph.js:15382-15392). */
@@ -232,11 +327,25 @@ export function resolveLightDark(value: string, dark = false, depth = 0): string
 export type DefaultColorMode = 'invert' | 'page' | undefined;
 
 /**
+ * The dark side of `light-dark(light, dark)`. With adaptiveColors 'auto' a saturated light color
+ * whose dark side is neutral (no hue, e.g. the ERTMS library's red track
+ * `light-dark(#e00000, #5f5f5f)` or `light-dark(#e00000, #ededed)`: dark sides left over from an
+ * earlier black / grey color) is kept like a plain saturated color instead of turning grey.
+ */
+function darkSide(ld: LightDark, adaptive: AdaptiveColors): string {
+  const dark = resolveLightDark(ld.dark, true);
+  if (adaptive !== 'auto') return dark;
+  const light = resolveLightDark(ld.light, false);
+  if (parseColor(dark) != null && isSaturatedColor(light) && !isSaturatedColor(dark)) return light;
+  return dark;
+}
+
+/**
  * Resolves one style color value for SVG output:
  * `light-dark(a, b)` -> a (b in dark mode); `default` -> the foreground/background color for
  * `key` (`invert` swaps light and dark, `page` uses the page background). In dark mode with
- * adaptiveColors 'auto' a plain color becomes mxUtils.getInverseColor(color), as draw.io's
- * SVG canvas renders it. `options` omitted = light theme.
+ * adaptiveColors 'auto' a plain color becomes adaptiveDarkColor(color) (neutral colors inverted
+ * like draw.io's SVG canvas, saturated colors kept). `options` omitted = light theme.
  */
 export function resolveColorValue(
   value: unknown,
@@ -266,7 +375,9 @@ export function resolveColorValue(
     return resolveLightDark(value);
   }
   // light-dark() has an explicit dark side; var() colors are never inverted (parseLightDarkColor)
-  if (parseLightDark(value) || /^\s*var\(/i.test(value)) return resolveLightDark(value, true);
+  const ld = parseLightDark(value);
+  if (ld) return darkSide(ld, options?.adaptive ?? 'auto');
+  if (/^\s*var\(/i.test(value)) return resolveLightDark(value, true);
   const resolved = value.indexOf('(') < 0 ? value : resolveLightDark(value, true);
   return parseColor(resolved) != null ? adaptColor(resolved, options?.adaptive ?? 'auto') : resolved;
 }
@@ -297,8 +408,20 @@ export function resolveLightDarkInCss(text: string, dark = false): string {
   return out + text.slice(last);
 }
 
+/** What dark-mode text in an HTML label must stay readable on (see resolveHtmlLabelColors). */
+export interface TextContrast {
+  /** The label's background: the cell fill, its label background or the canvas. */
+  background: string;
+  /** Minimum contrast ratio of text colors against it. */
+  min: number;
+}
+
+function floorText(color: string, text: TextContrast | undefined): string {
+  return text ? ensureContrast(color, text.background, text.min) : color;
+}
+
 /** One CSS declaration list (`a: b; c: d`): light-dark() picks a side; plain colors adapt in dark mode. */
-function adaptDeclarations(css: string, options: ColorResolveOptions): string {
+function adaptDeclarations(css: string, options: ColorResolveOptions, text?: TextContrast): string {
   const dark = isDarkResolve(options);
   return splitTopLevel(css, ';')
     .map((decl) => {
@@ -309,6 +432,9 @@ function adaptDeclarations(css: string, options: ColorResolveOptions): string {
       let next = value;
       if (/light-dark\(/i.test(value)) next = resolveLightDarkInCss(value, dark);
       else if (dark && parseColor(value) != null) next = adaptColor(value, options.adaptive ?? 'auto');
+      if (dark && options.adaptive !== 'none' && prop.trim().toLowerCase() === 'color' && parseColor(next) != null) {
+        next = floorText(next, text);
+      }
       return next === value ? decl : `${prop}: ${next}`;
     })
     .join('; ');
@@ -317,20 +443,21 @@ function adaptDeclarations(css: string, options: ColorResolveOptions): string {
 /**
  * HTML label colors for the current mode (Graph.addLightDarkColors, Graph.js): every
  * `light-dark()` in the label resolves to the light/dark side; in dark mode with adaptiveColors
- * 'auto' every plain color in `style` attributes and `<font color>` is inverted the way draw.io
- * renders it. Light mode is exactly resolveLightDarkInCss(html).
+ * 'auto' every plain color in `style` attributes and `<font color>` adapts (adaptiveDarkColor).
+ * With `text`, dark-mode text colors (`color:` and `<font color>`) also get its minimum
+ * contrast against its background. Light mode is exactly resolveLightDarkInCss(html).
  */
-export function resolveHtmlLabelColors(html: string, options?: ColorResolveOptions): string {
+export function resolveHtmlLabelColors(html: string, options?: ColorResolveOptions, text?: TextContrast): string {
   if (typeof html !== 'string') return html;
   if (!isDarkResolve(options)) return resolveLightDarkInCss(html);
   const opts = options!;
   const adaptive = opts.adaptive ?? 'auto';
   let out = html.replace(/(\sstyle\s*=\s*)(["'])([\s\S]*?)\2/gi, (_m, pre: string, q: string, css: string) =>
-    `${pre}${q}${adaptDeclarations(css, opts)}${q}`,
+    `${pre}${q}${adaptDeclarations(css, opts, text)}${q}`,
   );
   out = out.replace(/(<font\b[^>]*?\scolor\s*=\s*)(["'])([^"']*)\2/gi, (m, pre: string, q: string, color: string) => {
-    if (/light-dark\(/i.test(color)) return `${pre}${q}${resolveLightDarkInCss(color, true)}${q}`;
-    return parseColor(color) != null ? `${pre}${q}${adaptColor(color, adaptive)}${q}` : m;
+    if (/light-dark\(/i.test(color)) return `${pre}${q}${floorText(resolveLightDarkInCss(color, true), text)}${q}`;
+    return parseColor(color) != null ? `${pre}${q}${floorText(adaptColor(color, adaptive), text)}${q}` : m;
   });
   return resolveLightDarkInCss(out, true);
 }

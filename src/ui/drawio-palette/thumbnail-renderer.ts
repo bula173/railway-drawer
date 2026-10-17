@@ -9,7 +9,7 @@ import { installUserObjectLabels, registerDrawioNamedStyles } from '../../servic
 import { installTableSupport } from '../../drawio-shapes/js/shapes-edges';
 import { installDrawioHtmlLabels } from '../../drawio-shapes/engine/html-labels';
 import { installDanglingEdgeStyles, installInheritStyleValues } from '../../drawio-shapes/engine/view-fixes';
-import { setGraphColorMode } from '../../drawio-shapes/engine/graph-compat';
+import { drawioColorModeKey, setGraphColorMode } from '../../drawio-shapes/engine/graph-compat';
 import type { PaletteEngine, PaletteEntry } from './contracts';
 import { applyDrawioDefaultStyles, createCellsForEntry, entryStyles } from './entry-cells';
 
@@ -131,9 +131,13 @@ export class ThumbnailRenderer {
     this.disposeGraph();
   }
 
-  /** Cached thumbnail (a fresh clone each call), keyed by entry id and box size (default square). */
+  /**
+   * Cached thumbnail (a fresh clone each call), keyed by entry id, box size (default square) and
+   * the colour mode: thumbnails follow the app theme like the canvas (dark rendering in dark mode).
+   */
   thumbnail(entry: PaletteEntry, size = THUMB_SIZE, height = size): Promise<SVGSVGElement> {
-    const key = height === size ? `${entry.id}@${size}` : `${entry.id}@${size}x${height}`;
+    const mode = drawioColorModeKey();
+    const key = (height === size ? `${entry.id}@${size}` : `${entry.id}@${size}x${height}`) + (mode ? `@${mode}` : '');
     let pending = this.cache.get(key);
     if (!pending) {
       pending = this.render(entry, { width: size, height });

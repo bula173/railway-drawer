@@ -102,7 +102,7 @@ jobs:
         tests/e2e/legacy-smoke.spec.ts tests/e2e/drawio-palette.spec.ts tests/e2e/templates.spec.ts
         tests/e2e/scenarios.spec.ts tests/e2e/style-edit.spec.ts tests/e2e/share.spec.ts tests/e2e/gitlab.spec.ts
         tests/e2e/ertms-data.spec.ts tests/e2e/ertms-routes.spec.ts tests/e2e/scenario-uml-text.spec.ts tests/e2e/theme-contrast.spec.ts
-        tests/e2e/remote-persist.spec.ts tests/e2e/scenario-doc.spec.ts tests/e2e/editor-commands.spec.ts
+        tests/e2e/remote-persist.spec.ts tests/e2e/scenario-doc.spec.ts tests/e2e/editor-commands.spec.ts tests/e2e/dark-shapes.spec.ts
         tests/e2e/drawio-embed.spec.ts tests/e2e/drawio-parity.spec.ts
 
     - name: Upload Playwright report
