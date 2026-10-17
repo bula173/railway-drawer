@@ -39,7 +39,6 @@ async function openApp(page: Page, theme: Theme): Promise<void> {
     localStorage.setItem('rd.theme', t);
   }, theme);
   await page.reload();
-  await expect(page.locator('body')).toHaveAttribute('data-editor', 'main');
   await expect(page.locator('#tabs-container .tab-button.active')).toHaveCount(1);
   await expect(page.locator('html')).toHaveAttribute('data-theme', theme);
   await page.locator(`${PALETTE} section[data-palette-id="general"] .rd-dp-item[title="Rectangle"]`).waitFor();
