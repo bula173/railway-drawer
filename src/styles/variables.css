@@ -86,6 +86,10 @@
   --rd-scrollbar-hover: #a0a0a0;
   /* Canvas page color (the grid tiles' colors: src/ui/grid-background.ts) */
   --rd-canvas-bg: #ffffff;
+  /* Connection arrows around a hovered shape (src/ui/hover-arrows.ts; draw.io HoverIcons #29b6f2,
+     darkened to >= 3:1 on the white canvas) and their outline */
+  --rd-hover-arrow: #1a9bd7;
+  --rd-hover-arrow-outline: #ffffff;
 
   /* Former names (kept as aliases) */
   --rd-chrome-bg: var(--rd-surface);
@@ -240,6 +244,8 @@
   --rd-scrollbar-hover: #77777c;
   /* draw.io Editor.darkColor page (grid #424242: src/ui/grid-background.ts) */
   --rd-canvas-bg: #121212;
+  --rd-hover-arrow: #29b6f2;
+  --rd-hover-arrow-outline: #121212;
 
   --primary-light: #61a8ff;
   --success-light: #81c784;

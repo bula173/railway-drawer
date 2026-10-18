@@ -46,6 +46,7 @@ import { installScenarios } from './scenarios/install-scenarios';
 import { assignKindForInsertedShape, installRailwayData, prepareRailwayInsert } from './railway/install-railway-data';
 import { installRailwayRoutes } from './railway/install-railway-routes';
 import { installRailml, isRailmlFile, requestRailmlOpen } from './railml/install-railml';
+import { syncConnectionArrowsMenu, toggleConnectionArrows } from './ui/hover-arrows';
 
 /**
  * @brief Register all built-in shape definitions
@@ -189,7 +190,8 @@ installRailml(tabManager, globalNotificationManager);
  * - Ctrl/Cmd+A: Select all
  * - Ctrl/Cmd+S: Save project to disk
  * - Delete/Backspace: Delete selected items
- * - Escape: Clear selection
+ * - Escape: Clear selection (and hide the connection arrows)
+ * - Alt+Shift+A: View > Connection Arrows on/off (draw.io)
  * - Arrow keys: Move the selection by 1 px (Shift: by the grid size); locked cells stay
  *
  * This is the single dispatcher for these shortcuts: each runs once, on the active tab
@@ -259,7 +261,14 @@ document.addEventListener('keydown', (e) => {
   }
   if (e.key === 'Escape') {
     e.preventDefault();
+    // hides the connection arrows and cancels a connection dragged from one (hover-arrows.ts)
+    activeTab.hoverArrowsController.escape();
     activeTab.graph.clearSelection();
+  }
+  // draw.io's View > Connection Arrows shortcut (e.code: Alt changes e.key on macOS)
+  if (e.altKey && e.shiftKey && !mod && e.code === 'KeyA') {
+    e.preventDefault();
+    toggleConnectionArrows();
   }
   // Arrow keys nudge the selection like draw.io: 1 px, Shift: one grid step; locked cells stay
   // (not while the focus is on a panel control that uses the arrows itself: lists, buttons, ...)
@@ -504,6 +513,8 @@ const ensureErtmsTabView = (): void => {
     prepareInsert: prepareRailwayInsert,
   });
 };
+// View > Connection Arrows check mark from the stored setting (hover-arrows.ts)
+syncConnectionArrowsMenu();
 const syncErtmsMenuItem = (visible: boolean): void => {
   document
     .querySelectorAll('[data-action="toggleErtmsTab"]')

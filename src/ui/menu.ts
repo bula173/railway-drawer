@@ -2,6 +2,7 @@ import { Graph } from '@maxgraph/core';
 import { GraphCommandService } from '../services/graph-command-service';
 import { SaveLoadController } from './saveload';
 import { isRailmlFile, requestRailmlOpen } from '../railml/install-railml';
+import { toggleConnectionArrows } from './hover-arrows';
 import type { AlignmentController } from './alignment';
 import type { ExportImageController } from './export-image';
 import type { LeftPanelTabs } from './left-panel-tabs';
@@ -385,6 +386,11 @@ export class MenuController {
         }
         break;
       }
+
+      case 'toggleConnectionArrows':
+        // draw.io View > Connection Arrows (hover-arrows.ts; persisted, all tabs)
+        toggleConnectionArrows();
+        break;
 
       case 'designShapes':
         window.dispatchEvent(new CustomEvent('open-shape-designer'));

@@ -28,6 +28,7 @@ import { EdgePropertiesController } from './edge-properties';
 import { LayersController } from './layers';
 import { installCellLocking } from './cell-lock';
 import { installGroupBackgroundHit } from './canvas-interaction';
+import { HoverArrowsController } from './hover-arrows';
 import { ImageUploadController } from './image-upload';
 import { PasteImageController } from './paste-image';
 import { ZoomController } from './zoom';
@@ -70,6 +71,8 @@ export interface TabData {
   exportImageController: ExportImageController;
   plantumlEditorController: PlantUmlEditorController;
   textEditorController: TextEditorController;
+  /** draw.io connection arrows around the hovered shape (hover-arrows.ts) */
+  hoverArrowsController: HoverArrowsController;
 }
 
 /**
@@ -323,12 +326,16 @@ export class TabManager {
       };
     });
     const { saveLoadController } = controllers;
+    // draw.io hover arrows (hover-arrows.ts): after ConnectionHandler, whose plugin it wraps. Built
+    // outside captureSharedListeners: its listeners are on the graph div and its own arrow elements.
+    const hoverArrowsController = new HoverArrowsController(graph);
 
     const tabData: TabData = {
       id: tabId,
       name,
       graph,
       ...controllers,
+      hoverArrowsController,
     };
 
     this.tabs.set(tabId, tabData);
@@ -735,6 +742,7 @@ export class TabManager {
         tab.exportImageController,
         tab.plantumlEditorController,
         tab.textEditorController,
+        tab.hoverArrowsController,
       ];
 
       controllers.forEach((item) => {

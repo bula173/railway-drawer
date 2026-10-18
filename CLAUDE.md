@@ -43,7 +43,7 @@ node scripts/railml/validate.ts [--xsd railml3.xsd] [files]  # dev only: xmllint
 CI (`.github/workflows/build-and-deploy.yml`) runs typecheck, typecheck:tests, lint, test:run, build and the
 Playwright subset (legacy-smoke, drawio-palette, templates, scenarios, style-edit, share, gitlab, ertms-data,
 scenario-uml-text, theme-contrast, remote-persist, scenario-doc, editor-commands, dark-shapes, ertms-routes, railml, drawio-compat,
-interaction). No
+interaction, hover-arrows). No
 draw.io download is needed (`scripts/drawio-palettes` only runs locally, its output is committed). It does not deploy.
 
 ### E2E
@@ -132,6 +132,14 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   step each, never locked cells, not while typing); right-click Lock/Unlock keeps the selection (single, multi, group via
   its child or a gap, edge); project name per tab (rename, switch, label = project name relabelled, export names,
   reload); File > Open of a file with old app layers (`rdLayerId`) -> 3 draw.io layers, unsaved, saved without rdLayerId.
+- `tests/e2e/hover-arrows.spec.ts` (any port, real `page.mouse` input): hover shows 4 arrows just outside the shape
+  (constant size at zoom 2), leaving / Escape / a pressed button hide them; click on the right arrow -> clone 80 to the
+  right + edge, selected, one undo removes both (faded clone preview on arrow hover); a shape in the arrow's direction is
+  connected instead (target preview), Cmd/Ctrl+click clones anyway; drag from an arrow onto B -> edge A->B, onto the blank
+  canvas -> connected clone at the drop point (one undo step), an arrow lying on an edge is hidden; locked cell / locked
+  layer: none; Alt hides; View > Connection Arrows off (persisted over a reload), Alt+Shift+A on; ERTMS Signal Right 3
+  clone keeps kind/direction and gets `S2` (no duplicate-id check); a signal clone on a track snaps in the same undo
+  step (`rdTrackId`, `rdKm`); no arrows on the track edge or with the Route tool; arrow fill >= 3:1 on the light and dark canvas.
 - `tests/e2e/style-edit.spec.ts` (any port): line color/width/dash and fill through the Properties panel on cells from an
   ERTMS template, a user template and the draw.io/ERTMS palettes (group first click, child second click); checks the
   cell's own style and the SVG. Reads the graph via `import('/src/services/service-registry.ts')` (dev server only).
@@ -267,6 +275,26 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   (`contextSelectionFor`): a right-click inside the selection (cell or ancestor selected) keeps it, else the topmost
   selectable ancestor is selected; edges get the cell menu; maxGraph's PopupMenuHandler selection is off
   (`selectOnPopup`/`clearSelectionOnBackground` = false: it changed/cleared the selection on mouse-up after Lock).
+- Connection arrows = draw.io HoverIcons (`src/ui/hover-arrows.ts` `HoverArrowsController`, one per tab, built in
+  `TabManager.createTab` after `ConnectionHandler`, `tab.hoverArrowsController`): four DOM arrows (draw.io's images,
+  `--rd-hover-arrow` / `-outline` tokens, 50 % opacity until hovered) in the graph div around the cell a click would
+  select (`hoverArrowCell`: group before its children, unlocked incl. group/layer, connectable or a group, no edges,
+  `allowArrows=0` honoured) after a 140 ms rest; never while a button is down, editing, Route tool active
+  (`.rd-route-tool-active`) or in the scenario view (`body.rd-scenario-viewing`). Hidden outside the cell+arrows box
+  (+10 px), on container leave/scroll, selection change, edit start, Escape (dispatcher calls `escape()`), Alt;
+  repositioned on view/model changes; an arrow over another (not 3x larger) cell or an edge is hidden (draw.io
+  checkCollisions). Click = `connectVertex` (draw.io Graph.connectVertex, one batchUpdate so one undo step and the ERTMS
+  snap joins it): an unlocked cell within 40 px of the point 80 (`defaultEdgeLength`) beyond the side is connected,
+  else a clone (`graph.cloneCells`, `prepareClonedCells`: next free railway ID per kind, `rdRoutes`/`rdRailml*Id`/
+  `rdRailmlNetElements` dropped) is added 80 away in the source's parent and connected; Ctrl/Cmd = always clone,
+  Shift = no clone (dangling edge), Ctrl+Shift = clone without edge; the new cell (else the edge) is selected. Edges get
+  the connection handler's style (graph default). Drag = `ConnectionHandler.start` from the cell (draw.io
+  HoverIcons.drag); while it runs `isCreateTarget` is true, so a drop on blank canvas inserts a prepared clone at the
+  pointer (selected), a drop on a cell connects (floating / its connection point). Hovering an arrow shows
+  `.rd-hover-arrow-preview` (dashed clone box, or solid outline of the target). Setting: View > Connection Arrows
+  (`data-action="toggleConnectionArrows"`, Alt+Shift+A), localStorage `rd.connectionArrows` (default on). Not ported:
+  draw.io's shape picker on plain click / blank drop, containers as clone parents, Ctrl+Shift+drag port constraint,
+  touch. Tests: `src/__tests__/ui/hover-arrows.test.ts`, `tests/e2e/hover-arrows.spec.ts`.
 - Layers panel (`src/ui/layers.ts`) = the model's real layers (root children, listed top-most first, unnamed =
   "Background", `rd-routes` = "Routes"): current layer = `graph.setDefaultParent`; + Layer = `model.add(root, …)`;
   delete = `removeCells([layer], false)`; eye = `model.setVisible`; padlock = `locked=1` on the layer cell. All undoable

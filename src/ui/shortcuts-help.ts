@@ -80,6 +80,15 @@ export class ShortcutsHelpController {
         ['Ctrl+Z / Cmd+Z', 'Undo'],
         ['Ctrl+Y / Cmd+Y', 'Redo'],
       ]},
+      { section: 'Connection Arrows (hover a shape)', items: [
+        ['Click arrow', 'Connect to the shape in that direction, or add a connected copy'],
+        ['Ctrl+Click / Cmd+Click arrow', 'Always add a connected copy'],
+        ['Shift+Click arrow', 'Connect without copying (dangling edge if nothing is there)'],
+        ['Ctrl+Shift+Click arrow', 'Add a copy without an edge'],
+        ['Drag arrow', 'Connect to the shape you drop on, or add a connected copy on blank canvas'],
+        ['Alt (hold)', 'Hide the arrows'],
+        ['Alt+Shift+A', 'Connection Arrows on/off (View menu)'],
+      ]},
       { section: 'Zoom', items: [
         ['Ctrl++ / Cmd++', 'Zoom in'],
         ['Ctrl+- / Cmd+-', 'Zoom out'],
