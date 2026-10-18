@@ -103,7 +103,7 @@ optionally `VITE_MSAL_TENANT_ID` and `VITE_SHAREPOINT_DEFAULT_SITE`, then redepl
 
 For `npm run deploy` from a machine, `.env.local` (or exported variables) is used.
 
-### The LAN deployment (`http://192.168.10.22/railway-drawer/`)
+### The LAN deployment (`http://192.168.0.22/railway-drawer/`)
 
 Entra ID does not accept `http://` redirect URIs other than `localhost`, so SharePoint cannot work
 there. The Share dialog shows *"SharePoint requires HTTPS — use

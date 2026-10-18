@@ -3,7 +3,7 @@
  * @brief PKCE (RFC 7636) helpers: code verifier, S256 code challenge, random state.
  *
  * `crypto.subtle` exists only in secure contexts (https, localhost). The LAN deployment is plain
- * http (http://192.168.10.22/railway-drawer/), so SHA-256 falls back to the small implementation
+ * http (http://192.168.0.22/railway-drawer/), so SHA-256 falls back to the small implementation
  * below; `crypto.getRandomValues` works everywhere.
  */
 

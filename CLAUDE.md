@@ -797,8 +797,8 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   `wrangler.jsonc`: static-assets-only Worker serving `./dist`, SPA not-found handling). `npm run deploy`
   (= build + `wrangler deploy`) does the same from a local machine; `npm run preview:cf` runs it in `wrangler dev`.
 - LAN: `./deploy.sh` -> `npm ci`, `npm run build`, timestamped backup of
-  `root@192.168.10.22:/var/www/html/railway-drawer`, scp `dist/`, verify. Served at
-  `http://192.168.10.22/railway-drawer/` (port 80, so the draw.io embed works there).
+  `root@192.168.0.22:/var/www/html/railway-drawer`, scp `dist/`, verify. Served at
+  `http://192.168.0.22/railway-drawer/`. Override the host with `SERVER_HOST=<ip> ./deploy.sh`.
 
 ## Tests
 

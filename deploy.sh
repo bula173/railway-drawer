@@ -1,14 +1,14 @@
 #!/bin/bash
 
 # Railway Drawer LAN deployment
-# Builds the project and deploys it to root@192.168.10.22:/var/www/html/railway-drawer
-# (served at http://192.168.10.22/railway-drawer/). Production is deployed separately by
+# Builds the project and deploys it to root@192.168.0.22:/var/www/html/railway-drawer
+# (served at http://192.168.0.22/railway-drawer/). Production is deployed separately by
 # Cloudflare Workers Builds on push (wrangler.jsonc).
 
 set -e  # Exit on error
 
 # Configuration
-SERVER_HOST="192.168.10.22"
+SERVER_HOST="${SERVER_HOST:-192.168.0.22}"  # override: SERVER_HOST=<ip> ./deploy.sh
 SERVER_USER="root"
 SERVER_PATH="/var/www/html"
 BUILD_DIR="dist"

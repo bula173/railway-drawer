@@ -27,7 +27,7 @@ Fill in:
 
   ```
   https://railwaydrawer.mksystemdesign.org/
-  http://192.168.10.22/railway-drawer/
+  http://192.168.0.22/railway-drawer/
   http://localhost:3000/
   ```
 
@@ -94,7 +94,7 @@ a machine, `.env.local` or exported variables are used.
 | --- | --- | --- |
 | `https://railwaydrawer.mksystemdesign.org` | `https://gitlab.com` or any https GitLab | yes |
 | `https://…` | `http://gitlab.local` (plain http) | **no**: the browser blocks mixed content; the Share dialog says so. Use the LAN deployment, or give the GitLab HTTPS. |
-| `http://192.168.10.22/railway-drawer/` | `http://gitlab.local` or https GitLab | yes |
+| `http://192.168.0.22/railway-drawer/` | `http://gitlab.local` or https GitLab | yes |
 | `http://localhost:3000/` | anything | yes |
 
 A self-hosted GitLab with a self-signed certificate works only once the browser trusts the
