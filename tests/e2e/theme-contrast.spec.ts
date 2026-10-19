@@ -19,6 +19,12 @@
  * the scenario PDF export options dialog, and the remote status menu + Reload confirm dialog
  * (the dev-only fake provider, localStorage `rd.fakeRemote`, like remote-persist.spec.ts).
  *
+ * A third test per theme covers the left-panel tab "Railway Script": an example with an error and
+ * a warning (problem list, gutter line numbers, inline marks), the conflict banner (the drawing
+ * edited while the text has errors) and the toolbar (Apply, Auto-apply, Examples, From drawing).
+ * The marks lie on a text-transparent mirror of the textarea (`data-contrast-skip`, see
+ * auditInPage); their underline and the editor text over them are checked instead (MarkCheck).
+ *
  * Runs on any port.
  */
 import { test, expect } from '@playwright/test';
@@ -40,8 +46,26 @@ const SHOT_DIR = 'test-results/theme-contrast';
 const HEXAGON = '#drawio-palette-container section[data-palette-id="general"] .rd-dp-item[title="Hexagon"]';
 const ERTMS_SIGNAL = '#drawio-palette-container section[data-palette-id="ertms"] .rd-dp-item[title="Signal Left 3"]';
 
-/** Runs in the page: contrast offenders inside the elements matched by `rootSelectors`. */
-function auditInPage(rootSelectors: string[]): Omit<Offender, 'surface'>[] {
+/**
+ * Inline marks drawn on a text-transparent mirror layer under an editor (Railway Script): the
+ * mark's underline must have >= 3:1 against the editor background and against the mark's own
+ * background (it is the visible indicator; the tinted background alone is not), and the editor's
+ * text (`textFrom`, drawn on top of the mark) >= 4.5:1 against the mark's background.
+ */
+interface MarkCheck {
+  marks: string;
+  textFrom: string;
+}
+
+/**
+ * Runs in the page: contrast offenders inside the elements matched by `roots`, plus `marks`.
+ *
+ * `[data-contrast-skip]` (only the Railway Script editor's highlight mirror, script-ui.ts): text
+ * inside it is skipped only while its computed color is fully transparent (the mirror's glyphs are
+ * never painted; the textarea on top paints the text and is audited); anything opaque in it is
+ * still audited. Its marks are covered by `marks`.
+ */
+function auditInPage({ roots: rootSelectors, marks = [] }: { roots: string[]; marks?: MarkCheck[] }): Omit<Offender, 'surface'>[] {
   interface Rgba { r: number; g: number; b: number; a: number }
   const parse = (value: string): Rgba | null => {
     const m = /rgba?\(([^)]+)\)/.exec(value);
@@ -154,6 +178,7 @@ function auditInPage(rootSelectors: string[]): Omit<Offender, 'surface'>[] {
         const bg = effectiveBackground(el);
         const fgRaw = parse(cs.color);
         if (!bg || !fgRaw) continue;
+        if (fgRaw.a === 0 && el.closest('[data-contrast-skip]')) continue;
         let opacity = 1;
         for (let n: Element | null = el; n; n = n.parentElement) opacity *= Number(getComputedStyle(n).opacity || 1);
         const fg = over({ ...fgRaw, a: fgRaw.a * opacity }, bg);
@@ -177,6 +202,34 @@ function auditInPage(rootSelectors: string[]): Omit<Offender, 'surface'>[] {
       }
     }
   }
+
+  for (const { marks: markSelector, textFrom } of marks) {
+    const textEl = document.querySelector(textFrom);
+    const textColor = textEl ? parse(getComputedStyle(textEl).color) : null;
+    for (const mark of Array.from(document.querySelectorAll(markSelector))) {
+      const rect = mark.getBoundingClientRect();
+      if (rect.width < 1 || rect.height < 1 || !mark.parentElement) continue;
+      const cs = getComputedStyle(mark);
+      const markBg = effectiveBackground(mark);
+      const editorBg = effectiveBackground(mark.parentElement);
+      const deco = parse(cs.textDecorationColor);
+      if (!markBg || !editorBg) continue;
+      const push = (what: string, fg: Rgba, bg: Rgba, required: number): void => {
+        const ratio = ratioOf(fg, bg);
+        if (ratio + 1e-6 < required) {
+          out.push({ selector: `${describe(mark)} (${what})`, text: (mark.textContent ?? '').slice(0, 40), color: hex(fg), background: hex(bg), ratio: Math.round(ratio * 100) / 100, required });
+        }
+      };
+      if (!cs.textDecorationLine.includes('underline') || !deco || deco.a === 0) {
+        out.push({ selector: `${describe(mark)} (no underline)`, text: (mark.textContent ?? '').slice(0, 40), color: cs.textDecorationColor, background: hex(markBg), ratio: 0, required: 3 });
+        continue;
+      }
+      push('underline on editor', over(deco, editorBg), editorBg, 3);
+      push('underline on mark', over(deco, markBg), markBg, 3);
+      if (!textColor) out.push({ selector: `${textFrom} (missing)`, text: '', color: '', background: '', ratio: 0, required: 4.5 });
+      else push('editor text on mark', over(textColor, markBg), markBg, 4.5);
+    }
+  }
   return out;
 }
 
@@ -186,9 +239,14 @@ class Auditor {
   constructor(private readonly page: Page, private readonly theme: Theme) {}
 
   async check(surface: string, ...roots: string[]): Promise<void> {
+    await this.checkWith(surface, { roots });
+  }
+
+  /** check() with inline-mark checks (see MarkCheck). */
+  async checkWith(surface: string, opts: { roots: string[]; marks?: MarkCheck[] }): Promise<void> {
     // Let transitions (hover backgrounds, slide-ins) settle
     await this.page.waitForTimeout(350);
-    const found = await this.page.evaluate(auditInPage, roots.length ? roots : ['#app-container']);
+    const found = await this.page.evaluate(auditInPage, { roots: opts.roots.length ? opts.roots : ['#app-container'], marks: opts.marks ?? [] });
     this.surfaces.push(surface);
     for (const o of found) this.offenders.push({ surface: `${this.theme}: ${surface}`, ...o });
   }
@@ -581,6 +639,48 @@ async function auditFeatureSurfaces(page: Page, a: Auditor): Promise<void> {
   await expect(confirm).toHaveCount(0);
 }
 
+async function auditRailwayScript(page: Page, a: Auditor): Promise<void> {
+  await page.locator('.left-panel-tab-btn[data-tab="railwayScript"]').click();
+  const panel = page.locator('[data-testid="railway-script-panel"]');
+  const text = panel.locator('[data-testid="railway-script-text"]');
+  const status = panel.locator('[data-testid="railway-script-status"]');
+  await expect(text).toBeVisible();
+  await a.check('left: Railway Script tab (empty)', '#leftpanel-container');
+
+  // An example (applied), then an error (bad enum) and a warning (unknown key): not applied
+  await panel.locator('.rd-rs-examples').selectOption('simple-line');
+  await expect(status).toContainText('Applied:');
+  const example = await text.inputValue();
+  const broken = example
+    .replace('at: 1.000, direction: nominal', 'at: 1.000, direction: sideways')
+    .replace(/^railwayScript: 1$/m, 'railwayScript: 1\ncolour: red');
+  expect(broken).toContain('sideways');
+  expect(broken).toContain('colour: red');
+  await text.fill(broken);
+  await expect(panel.locator('[data-testid="railway-script-problems"] li[data-severity="error"]')).toHaveCount(1);
+  await expect(panel.locator('[data-testid="railway-script-problems"] li[data-severity="warning"]')).toHaveCount(1);
+  await expect(panel.locator('.rd-rs-mark-error')).toHaveCount(1);
+  await expect(panel.locator('.rd-rs-mark-warning')).toHaveCount(1);
+  await expect(panel.locator('.rd-rs-line-error')).toHaveCount(1);
+
+  // The drawing changes while the text has errors: conflict banner
+  await inGraph(page, "graph.insertVertex(graph.getDefaultParent(), null, 'Edit', 600, 400, 80, 30);");
+  await expect(panel.locator('[data-testid="railway-script-conflict"]')).toBeVisible();
+
+  // The only skipped layer is the transparent mirror of the textarea
+  const mirror = await panel.locator('[data-contrast-skip]').evaluateAll((nodes) =>
+    nodes.map((n) => ({ cls: n.className, color: getComputedStyle(n).color }))
+  );
+  expect(mirror).toEqual([{ cls: 'rd-rs-highlight', color: 'rgba(0, 0, 0, 0)' }]);
+
+  await panel.locator('[data-testid="railway-script-problems"] li').first().hover();
+  await a.checkWith('left: Railway Script tab (errors, marks, conflict banner, hovered problem)', {
+    roots: ['#leftpanel-container'],
+    marks: [{ marks: '.rd-rs-mark-error, .rd-rs-mark-warning', textFrom: '[data-testid="railway-script-text"]' }],
+  });
+  await a.shot('railway-script');
+}
+
 test.describe('theme contrast', () => {
   for (const theme of ['light', 'dark'] as const) {
     test(`${theme} theme (localStorage rd.theme): all surfaces meet WCAG AA contrast`, async ({ page }) => {
@@ -612,6 +712,22 @@ test.describe('theme contrast', () => {
       await auditFeatureSurfaces(page, a);
       await test.info().attach(`contrast-features-${theme}.txt`, { body: a.report() || 'no offenders', contentType: 'text/plain' });
       expect(a.surfaces.length).toBeGreaterThanOrEqual(10);
+      expect(a.offenders, `contrast offenders:\n${a.report()}`).toEqual([]);
+      expect(pageErrors).toEqual([]);
+    });
+  }
+
+  for (const theme of ['light', 'dark'] as const) {
+    test(`${theme} theme: Railway Script tab (problems, inline marks, conflict banner) meets WCAG AA contrast`, async ({ page }) => {
+      const pageErrors: string[] = [];
+      page.on('pageerror', (err) => pageErrors.push(err.message));
+      await page.setViewportSize({ width: 1440, height: 900 });
+      await openApp(page, theme);
+
+      const a = new Auditor(page, theme);
+      await auditRailwayScript(page, a);
+      await test.info().attach(`contrast-railway-script-${theme}.txt`, { body: a.report() || 'no offenders', contentType: 'text/plain' });
+      expect(a.surfaces).toHaveLength(2);
       expect(a.offenders, `contrast offenders:\n${a.report()}`).toEqual([]);
       expect(pageErrors).toEqual([]);
     });

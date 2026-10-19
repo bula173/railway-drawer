@@ -3,8 +3,8 @@
  * draft-07 (ajv), and the app's validator agrees with ajv; the script's storage in .drawio files,
  * share links and the tab cache.
  */
+import Ajv from 'ajv';
 import { readFileSync, writeFileSync } from 'node:fs';
-import { createRequire } from 'node:module';
 import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { parse as parseYaml } from 'yaml';
@@ -26,9 +26,11 @@ describe('JSON Schema', () => {
     expect(readFileSync(SCHEMA_PATH, 'utf8')).toBe(text);
   });
 
-  // ajv (draft-07) comes with ESLint's toolchain; it checks the schema itself and is the reference validator
-  const Ajv = createRequire(import.meta.url)('ajv') as new (opts: object) => { compile(s: object): ((d: unknown) => boolean) & { errors?: unknown[] } };
-  const ajv = new Ajv({ allErrors: true });
+  // ajv 8 (devDependency, pinned; its default class is draft-07) checks the schema itself (strict
+  // mode: unknown keywords are errors) and is the reference validator. The schema uses union types
+  // (`type: ['string', 'number']`) and the annotation `x-expected` (validate.ts's message text).
+  const ajv = new Ajv({ allErrors: true, allowUnionTypes: true });
+  ajv.addKeyword({ keyword: 'x-expected', schemaType: 'string' });
   const ajvValidate = ajv.compile(schema);
   const ours = new SchemaValidator(schema);
 

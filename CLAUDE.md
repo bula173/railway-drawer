@@ -92,7 +92,11 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   dialog + step editor + view, context menu, Save as Template (with error), Share, Keyboard Shortcuts, image upload,
   shape designer, all 4 notification types, status/tab bars; a second test per theme: Route tool panel + Route
   Table/Interlocking dialog on a loaded layout, scenario view with "Show changes" legend/Changes list and autoplay
-  running, scenario PDF export options, fake-remote (`rd.fakeRemote`) Open dialog, status menu, Reload confirm) and requires WCAG contrast >= 4.5 (3 for large or
+  running, scenario PDF export options, fake-remote (`rd.fakeRemote`) Open dialog, status menu, Reload confirm; a third test
+  per theme: Railway Script tab with an example made invalid (error + warning: problem list, gutter, inline marks), conflict
+  banner and toolbar; the editor's text-transparent highlight mirror carries `data-contrast-skip` (its text is skipped only
+  while fully transparent) and its `mark`s are checked instead: underline >= 3 on the editor and mark background, editor
+  text >= 4.5 on the mark background) and requires WCAG contrast >= 4.5 (3 for large or
   symbol-only text; disabled exempt) between each visible text's color and its effective background (ancestors
   composited until opaque). Diagram content (tab graphs, thumbnails, SVG, canvas) is skipped. Offenders are listed as
   `theme: surface | selector | "text" | fg on bg = ratio`. Screenshots: `test-results/theme-contrast/<theme>-*.png`.
@@ -618,7 +622,8 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   `language.ts` (lists, aliases, EXTRA_ATTRS `rdTrackKind/rdLane/rdPointsType/rdDivergingTrack`, train `rdTrackId/rdKm/rdDirection`).
 - Schema: `schema.ts` builds the draft-07 JSON Schema; `public/schemas/railway-script-1.schema.json` must equal it (test;
   `UPDATE_RS_SCHEMA=1 npx vitest run src/railway-script/__tests__/schema-storage.test.ts` rewrites it). `validate.ts` is a
-  small validator interpreting that schema (agreement with ajv 6 from ESLint's deps is tested); `model.ts` = semantic checks.
+  small validator interpreting that schema (agreement with ajv is tested: devDependency `ajv` 8.20.0 pinned, test-only,
+  strict mode with `allowUnionTypes` + the `x-expected` annotation keyword); `model.ts` = semantic checks.
 - Text -> drawing: `parse.ts` (npm `yaml` 2.9.1, eemeli/yaml, ISC; positions -> `line:col`), `layout.ts` (x from km with
   `page.scale`, y from lanes; auto lanes from points hand; legs to the diverging track's nearer end), `build.ts` (cells with
   `src/railml/schematic.ts` = `ModelBuilder`/`Symbols`/fallback styles moved out of the railML import and shared; routes via

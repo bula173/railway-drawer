@@ -155,6 +155,9 @@ export function mountPanel(container: HTMLElement, tabManager: TabManager, notif
   const code = el('div', 'rd-rs-code');
   const highlight = el('pre', 'rd-rs-highlight');
   highlight.setAttribute('aria-hidden', 'true');
+  // A text-transparent mirror of the textarea (only the marks' underline/background show):
+  // theme-contrast.spec.ts skips its transparent text and checks the marks separately
+  highlight.dataset.contrastSkip = 'mirror';
   const textarea = el('textarea', 'rd-rs-text');
   textarea.dataset.testid = 'railway-script-text';
   textarea.spellcheck = false;
