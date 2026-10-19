@@ -51,7 +51,7 @@ test.describe('draw.io palettes in the maxGraph editor', () => {
     await expect(page.locator('#tabs-container .tab-button.active')).toHaveCount(1);
 
     // One Shapes tab holds app shapes and the draw.io palettes; no separate draw.io/Stencils tabs
-    await expect(page.locator('.left-panel-tab-btn:visible')).toHaveText(['Shapes', 'Templates', 'Layers', /PlantUML/]);
+    await expect(page.locator('.left-panel-tab-btn:visible')).toHaveText(['Shapes', 'Templates', 'Layers', /PlantUML/, 'Railway Script']);
     await expect(page.locator('#stencils-container')).toHaveCount(0);
     const container = page.locator('#drawio-palette-container');
     await expect(container).toBeVisible();

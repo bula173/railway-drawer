@@ -266,6 +266,12 @@ export class MenuController {
         window.dispatchEvent(new CustomEvent('railml-request', { detail: { action: action === 'importRailml' ? 'import' : 'export' } }));
         break;
 
+      case 'importRailwayScript':
+      case 'exportRailwayScript':
+        // src/railway-script/install-railway-script.ts (lazy script-ui chunk): new tab from a script / .rdl.yaml|.rdl.json download
+        window.dispatchEvent(new CustomEvent('railway-script-request', { detail: { action: action === 'importRailwayScript' ? 'import' : 'export' } }));
+        break;
+
       case 'saveAsTemplate':
         // main-editor.ts asks for a name and stores the selection (or the whole diagram)
         window.dispatchEvent(new CustomEvent('save-template-request'));

@@ -23,6 +23,8 @@ export interface CacheData {
     pageId?: string | null;
     /** The tab's scenarios (steps hold full drawing snapshots). Missing when there are none; sanitized on restore. */
     scenarios?: ScenarioData[];
+    /** The tab's Railway Script text (src/railway-script). Missing when there is none. */
+    railwayScript?: string;
     /**
      * The tab's remote-file binding (SharePoint/GitLab: provider id, ref, version, ...; never a
      * token), in its own versioned format (`src/share/remote-binding.ts`). Opaque here; missing in

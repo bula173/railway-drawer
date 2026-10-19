@@ -12,6 +12,7 @@ import { migrateLegacyLayers, type LegacyLayerMigration } from '../services/lega
 import { PlantUmlGroupManager } from '../services/plantuml-group-manager';
 import { GraphCommandService } from '../services/graph-command-service';
 import type { ScenarioSet } from '../scenarios/scenario-model';
+import type { RailwayScriptStore } from '../railway-script/script-store';
 import { globalNotificationManager } from './notification';
 import { globalSaveStatusIndicator } from './save-status';
 
@@ -246,6 +247,8 @@ export class SaveLoadController {
       this.projectService.setPageId(result.pageId);
       // The file's scenarios replace the tab's (none in the file: the tab has none afterwards)
       this.projectService.scenarios.replaceAll(result.scenarios);
+      // Same for the Railway Script (src/railway-script)
+      this.projectService.railwayScript.set(result.railwayScript, 'load');
       this.updateProjectNameUI(result.metadata.name);
       // A file whose old app layers were migrated differs from the file on disk: unsaved
       if (this.loadMigration) globalSaveStatusIndicator.setUnsaved();
@@ -405,6 +408,11 @@ export class SaveLoadController {
    */
   getPreservedPages(): { extraPages: string[]; pageId: string | null } {
     return { extraPages: this.projectService.getExtraPages(), pageId: this.projectService.getPageId() };
+  }
+
+  /** Railway Script store of this tab (saved on the main page's `<diagram>` and in the tab cache). */
+  getRailwayScript(): RailwayScriptStore {
+    return this.projectService.railwayScript;
   }
 
   /** Scenarios of this tab (saved as step pages in the file and in the tab cache). */

@@ -38,6 +38,8 @@
               <div class="menu-dropdown-item" data-action="open">Open</div>
               <!-- src/railml (lazy chunk railml-ui.ts): new tab from a railML 3.2 file -->
               <div class="menu-dropdown-item" data-action="importRailml" title="Open a railML 3.2 file (.railml, .xml) in a new tab">Import railML…</div>
+              <!-- src/railway-script (lazy chunk script-ui.ts): new tab drawn from a Railway Script (.rdl.yaml, .rdl.json) -->
+              <div class="menu-dropdown-item" data-action="importRailwayScript" title="Open a Railway Script (.rdl.yaml, .rdl.json) in a new tab and draw it">Import Railway Script…</div>
               <!-- "Open from <provider>…" / "Save to <provider>…" items of the cloud storage providers (src/share/providers) -->
               <div id="file-menu-remote-items"></div>
               <div class="menu-dropdown-item" data-action="save">Save</div>
@@ -61,6 +63,7 @@
                 </div>
               </div>
               <div class="menu-dropdown-item" data-action="exportRailml" title="railML 3.2 file of the current diagram: topology, infrastructure, routes, layout">Export railML 3.2…</div>
+              <div class="menu-dropdown-item" data-action="exportRailwayScript" title="The diagram's Railway Script as .rdl.yaml or .rdl.json (generated from the drawing when it has none)">Export Railway Script…</div>
               <!-- src/scenarios/scenario-export.ts; handled by install-scenarios via the scenario-export-request event -->
               <div class="menu-dropdown-item" data-action="exportScenarioHtml" title="One HTML file with each step's drawing, UML diagram and text">Export Scenario (HTML)…</div>
               <!-- scenario-pdf.ts / scenario-slides.ts (loaded on demand), same event with detail.format -->
@@ -236,6 +239,8 @@
             <div id="layers-list" style="overflow-y: auto; max-height: calc(100% - 40px);"></div>
           </div>
           <div id="plantuml-panel" class="panel-content plantuml-panel-container"></div>
+          <!-- Railway Script tab (src/railway-script, panel built on first show) -->
+          <div id="railway-script-panel" class="panel-content"></div>
         </div>
 
         <!-- Graph Canvas -->

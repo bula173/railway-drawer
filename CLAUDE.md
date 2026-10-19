@@ -43,7 +43,7 @@ node scripts/railml/validate.ts [--xsd railml3.xsd] [files]  # dev only: xmllint
 CI (`.github/workflows/build-and-deploy.yml`) runs typecheck, typecheck:tests, lint, test:run, build and the
 Playwright subset (legacy-smoke, drawio-palette, templates, scenarios, style-edit, share, gitlab, ertms-data,
 scenario-uml-text, theme-contrast, remote-persist, scenario-doc, editor-commands, dark-shapes, ertms-routes, railml, drawio-compat,
-interaction, hover-arrows). No
+interaction, hover-arrows, railway-script). No
 draw.io download is needed (`scripts/drawio-palettes` only runs locally, its output is committed). It does not deploy.
 
 ### E2E
@@ -140,6 +140,12 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   layer: none; Alt hides; View > Connection Arrows off (persisted over a reload), Alt+Shift+A on; ERTMS Signal Right 3
   clone keeps kind/direction and gets `S2` (no duplicate-id check); a signal clone on a track snaps in the same undo
   step (`rdTrackId`, `rdKm`); no arrows on the track edge or with the Route tool; arrow fill >= 3:1 on the light and dark canvas.
+- `tests/e2e/railway-script.spec.ts` (any port): Railway Script tab: a typed script (tracks, points, signals, route) is drawn
+  by auto-apply ("Applied: 7 objects", `rdScript`, route on `rd-routes`), a text km edit moves the signal, a real mouse drag
+  of the signal updates `at` in the text (comments/other lines kept), an enum error is listed at `13:col`, click selects it,
+  the drawing stays unchanged, reload keeps the script ("In sync with the drawing"); File > Import Railway Script… (new
+  tab named after `name`), File > Export Railway Script… (.rdl.yaml = the text, .rdl.json = the data, generated for a tab
+  without a script).
 - `tests/e2e/style-edit.spec.ts` (any port): line color/width/dash and fill through the Properties panel on cells from an
   ERTMS template, a user template and the draw.io/ERTMS palettes (group first click, child second click); checks the
   cell's own style and the SVG. Reads the graph via `import('/src/services/service-registry.ts')` (dev server only).
@@ -601,6 +607,44 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   directions, unplaced, pure railML, structure checks; `railml-import.test.ts` `station-topology.railml` /
   `station-visualization.railml`, preservation, .drawio round trip of the store, byte-stable round trips;
   `railml-mapping.test.ts` every kind mapped + documented), `tests/e2e/railml.spec.ts`.
+
+### Railway Script (`src/railway-script/`, left-panel tab "Railway Script", docs/RAILWAY-SCRIPT.md)
+
+- Language: YAML or JSON, `railwayScript: 1`, km based (nominal = increasing km = left to right); lists `tracks` (with
+  `startKm/endKm`, aliases `kmStart/kmEnd`, metres `start/end/StartPos/EndPos`, `lane`, `kind`, `bufferStops`, nested lists),
+  `points` (`at`, `to`, `hand`), `signals`, `baliseGroups` (`balises`: count or list), `balises`, `axleCounters`, `sections`
+  (`from`/`to` km or detection point IDs), `levelCrossings`, `bufferStops`, `leus`, `rbcs`, `trains`, `routes` (`from`, `to`,
+  `via`, `overlap`); catalogue field names are keys, `x`/`y` override positions; unknown keys = warnings (kept).
+  `language.ts` (lists, aliases, EXTRA_ATTRS `rdTrackKind/rdLane/rdPointsType/rdDivergingTrack`, train `rdTrackId/rdKm/rdDirection`).
+- Schema: `schema.ts` builds the draft-07 JSON Schema; `public/schemas/railway-script-1.schema.json` must equal it (test;
+  `UPDATE_RS_SCHEMA=1 npx vitest run src/railway-script/__tests__/schema-storage.test.ts` rewrites it). `validate.ts` is a
+  small validator interpreting that schema (agreement with ajv 6 from ESLint's deps is tested); `model.ts` = semantic checks.
+- Text -> drawing: `parse.ts` (npm `yaml` 2.9.1, eemeli/yaml, ISC; positions -> `line:col`), `layout.ts` (x from km with
+  `page.scale`, y from lanes; auto lanes from points hand; legs to the diverging track's nearer end), `build.ts` (cells with
+  `src/railml/schematic.ts` = `ModelBuilder`/`Symbols`/fallback styles moved out of the railML import and shared; routes via
+  `findRoutePaths`); generated top cells carry `rdScript="<kind>:<id>"` + `rdScriptShape`. `apply.ts` reconciles into the tab
+  in ONE undoable edit (inside `withSnapSuspended`, snap.ts): remove gone, add new (generated order), replace on another
+  `rdScriptShape` or adoption (unmarked object with the same kind+ID), else geometry + owned data (label/style/user attrs
+  kept); unchanged text = no edit.
+- Drawing -> text: `session.ts` (one `ScriptSession` per tab with a script; created by `install-railway-script.ts` for tabs
+  whose store has text, so it works without the panel) listens to model CHANGE: ignored while applying; RootChange (load)
+  = take drawing as synced; undo/redo of an apply edit (UndoableEdit remembered from the model UNDO event) = text before/after
+  it; otherwise debounced `sync.ts`: diff against the snapshot of matched cells (moves -> `at`/`track` or `x`/`y`, tracks ->
+  `lane`/`y`/`x`, Data edits -> keys, deletes (+ routes of a deleted signal), new palette objects on script tracks and Route
+  tool routes -> appended). `editText` splices changed scalars into the original text (byte-exact elsewhere), structural edits
+  re-print via the yaml Document (comments kept); JSON stays JSON. Only while the text is in sync (= last applied/synced text);
+  else `conflict` (banner: Apply script / Use drawing).
+- Storage: `ProjectService.railwayScript` (`RailwayScriptStore`, `script-store.ts`, main chunk) -> main page `<diagram
+  rdRailwayScript>` (draw.io keeps it; `\n` as `&#xa;`, tabs -> 2 spaces), share links (`pageAttributes`), cache
+  `tabs[].railwayScript`, remote dirty tracking subscribes to it.
+- UI (`script-ui.ts` + `railway-script.css`, lazy chunk with yaml): editor (textarea + `pre` highlight backdrop with `mark`s +
+  line-number gutter), problems list (`[data-testid=railway-script-problems] li[data-severity]`, click selects the range),
+  Apply (Ctrl/Cmd+Enter), Auto-apply (localStorage `rd.railwayScript.autoApply`, default on, 500 ms, only without errors),
+  Examples (`templates.ts`), From drawing (`generate.ts`). File > Import Railway Script… (`importRailwayScript`, new tab) /
+  Export Railway Script… (`exportRailwayScript`, dialog `railway-script-export-dialog`, `.rdl.yaml`/`.rdl.json`) -> window
+  event `railway-script-request`. `LeftPanelTabs.onTabSwitch` creates the panel on first show.
+- Tests: `src/railway-script/__tests__/` (language/positions/aliases/templates, apply/sync/undo/conflict/generate round
+  trips, schema vs file vs ajv, storage), `tests/e2e/railway-script.spec.ts`.
 
 ### Scenarios (`src/scenarios/`, right panel "Properties | Data | Checks | Scenarios")
 

@@ -46,6 +46,7 @@ import { installScenarios } from './scenarios/install-scenarios';
 import { assignKindForInsertedShape, installRailwayData, prepareRailwayInsert } from './railway/install-railway-data';
 import { installRailwayRoutes } from './railway/install-railway-routes';
 import { installRailml, isRailmlFile, requestRailmlOpen } from './railml/install-railml';
+import { installRailwayScript } from './railway-script/install-railway-script';
 import { syncConnectionArrowsMenu, toggleConnectionArrows } from './ui/hover-arrows';
 
 /**
@@ -429,6 +430,9 @@ leftPanelTabs.registerTabContent('ertms', 'ertms-panel');
 leftPanelTabs.registerTabContent('templates', 'templates-panel');
 leftPanelTabs.registerTabContent('layers', 'layers-panel');
 leftPanelTabs.registerTabContent('plantuml', 'plantuml-panel');
+leftPanelTabs.registerTabContent('railwayScript', 'railway-script-panel');
+// Railway Script: layout as YAML/JSON text, two-way with the drawing (src/railway-script; lazy chunk)
+installRailwayScript(tabManager, globalNotificationManager, leftPanelTabs, document.getElementById('railway-script-panel')!);
 
 // Make leftPanelTabs globally accessible for menu handlers
 (window as Window & { __leftPanelTabs?: LeftPanelTabs }).__leftPanelTabs = leftPanelTabs;

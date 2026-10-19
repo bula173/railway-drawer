@@ -1,0 +1,229 @@
+/* Railway Script panel (src/railway-script/script-ui.ts). Theme tokens only (src/styles/variables.css). */
+
+.rd-rs-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  height: 100%;
+  min-height: 0;
+  padding: 6px;
+  box-sizing: border-box;
+  color: var(--rd-text);
+  font-size: 12px;
+}
+
+.rd-rs-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.rd-rs-apply {
+  padding: 4px 10px;
+  font-size: 12px;
+}
+
+.rd-rs-auto {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  color: var(--rd-text);
+  cursor: pointer;
+  user-select: none;
+}
+
+.rd-rs-examples {
+  max-width: 120px;
+  font-size: 12px;
+  padding: 2px 4px;
+}
+
+.rd-rs-generate {
+  font-size: 12px;
+  padding: 3px 8px;
+}
+
+.rd-rs-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  border: 1px solid var(--rd-warning);
+  border-radius: 4px;
+  background: var(--rd-warning-bg);
+  color: var(--rd-text);
+}
+
+.rd-rs-banner[hidden] {
+  display: none;
+}
+
+.rd-rs-banner-text {
+  flex: 1 1 100%;
+}
+
+.rd-rs-editor {
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 220px;
+  border: 1px solid var(--rd-input-border);
+  border-radius: 4px;
+  background: var(--rd-input-bg);
+  overflow: hidden;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.rd-rs-gutter {
+  flex: 0 0 auto;
+  min-width: 28px;
+  padding: 6px 4px 6px 2px;
+  overflow: hidden;
+  text-align: right;
+  color: var(--rd-text-muted);
+  background: var(--rd-surface-2);
+  border-right: 1px solid var(--rd-border);
+  user-select: none;
+}
+
+.rd-rs-line-no {
+  height: 16px;
+  padding-right: 2px;
+}
+
+.rd-rs-line-error {
+  color: var(--rd-danger);
+  font-weight: 700;
+}
+
+.rd-rs-line-warning {
+  color: var(--rd-warning);
+  font-weight: 700;
+}
+
+.rd-rs-code {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.rd-rs-highlight,
+.rd-rs-text {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  padding: 6px;
+  border: 0;
+  font: inherit;
+  line-height: inherit;
+  white-space: pre;
+  tab-size: 2;
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+.rd-rs-highlight {
+  color: transparent;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.rd-rs-text {
+  resize: none;
+  background: transparent;
+  color: var(--rd-input-text);
+  caret-color: var(--rd-input-text);
+  outline: none;
+}
+
+.rd-rs-text:focus-visible {
+  box-shadow: inset 0 0 0 2px var(--rd-focus);
+}
+
+.rd-rs-mark-error,
+.rd-rs-mark-warning {
+  color: transparent;
+  border-radius: 2px;
+}
+
+.rd-rs-mark-error {
+  background: var(--rd-danger-bg);
+  text-decoration: underline wavy var(--rd-danger);
+}
+
+.rd-rs-mark-warning {
+  background: var(--rd-warning-bg);
+  text-decoration: underline wavy var(--rd-warning);
+}
+
+.rd-rs-status {
+  color: var(--rd-text-muted);
+  min-height: 16px;
+}
+
+.rd-rs-panel[data-state='error'] .rd-rs-status {
+  color: var(--rd-danger);
+}
+
+.rd-rs-problems {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 160px;
+  overflow: auto;
+}
+
+.rd-rs-problem {
+  display: flex;
+  gap: 6px;
+  padding: 3px 4px;
+  border-radius: 3px;
+  cursor: pointer;
+  color: var(--rd-text);
+}
+
+.rd-rs-problem:hover,
+.rd-rs-problem:focus-visible {
+  background: var(--rd-hover);
+  outline: none;
+}
+
+.rd-rs-problem-pos {
+  flex: 0 0 auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color: var(--rd-text-muted);
+}
+
+.rd-rs-error .rd-rs-problem-pos::before {
+  content: '✕ ';
+  color: var(--rd-danger);
+}
+
+.rd-rs-warning .rd-rs-problem-pos::before {
+  content: '⚠ ';
+  color: var(--rd-warning);
+}
+
+.rd-rs-help {
+  color: var(--rd-text-muted);
+}
+
+.rd-rs-help a {
+  color: var(--rd-link);
+}
+
+.rd-rs-export-dialog {
+  width: min(460px, calc(100vw - 32px));
+}
+
+.rd-rs-hint {
+  color: var(--rd-text-muted);
+}
+
+#railway-script-panel {
+  height: 100%;
+  overflow: hidden;
+}

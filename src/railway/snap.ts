@@ -169,12 +169,27 @@ function editedCells(changes: unknown[]): Cell[] | null {
   return [...cells];
 }
 
+let suspended = 0;
+
+/**
+ * Runs `fn` without snapping (for edits that place objects exactly, such as the Railway Script's
+ * generated drawing: its km come from the script, not from the position).
+ */
+export function withSnapSuspended<T>(fn: () => T): T {
+  suspended++;
+  try {
+    return fn();
+  } finally {
+    suspended--;
+  }
+}
+
 /** Snaps objects moved or inserted on `graph` while `enabled()`; returns the uninstaller. */
 export function installSnapToTrack(graph: Graph, enabled: () => boolean): () => void {
   const model = graph.getDataModel();
   let busy = false;
   const onBeforeUndo = (_sender: EventSource, evt: EventObject): void => {
-    if (busy || !enabled()) return;
+    if (busy || suspended > 0 || !enabled()) return;
     const edit = evt.getProperty('edit') as { changes?: unknown[] } | undefined;
     const cells = editedCells(edit?.changes ?? []);
     if (!cells || cells.length === 0) return;

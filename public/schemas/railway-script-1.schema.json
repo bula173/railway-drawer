@@ -1,0 +1,1396 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://railwaydrawer.mksystemdesign.org/schemas/railway-script-1.schema.json",
+  "title": "Railway Script",
+  "description": "Railway Drawer schematic layout language (docs/RAILWAY-SCRIPT.md). YAML or JSON; km based, nominal direction = increasing km = left to right.",
+  "type": "object",
+  "required": [
+    "railwayScript"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "URL or path of this schema"
+    },
+    "railwayScript": {
+      "const": 1,
+      "description": "Railway Script language version (1)"
+    },
+    "name": {
+      "type": "string",
+      "description": "Diagram name"
+    },
+    "page": {
+      "$ref": "#/definitions/page"
+    },
+    "tracks": {
+      "type": "array",
+      "description": "Tracks",
+      "items": {
+        "$ref": "#/definitions/track"
+      }
+    },
+    "points": {
+      "type": "array",
+      "description": "Points",
+      "items": {
+        "allOf": [
+          {
+            "$ref": "#/definitions/points"
+          },
+          {
+            "required": [
+              "track"
+            ]
+          }
+        ]
+      }
+    },
+    "signals": {
+      "type": "array",
+      "description": "Signals",
+      "items": {
+        "allOf": [
+          {
+            "$ref": "#/definitions/signal"
+          },
+          {
+            "required": [
+              "track"
+            ]
+          }
+        ]
+      }
+    },
+    "baliseGroups": {
+      "type": "array",
+      "description": "Balise groups",
+      "items": {
+        "allOf": [
+          {
+            "$ref": "#/definitions/baliseGroup"
+          },
+          {
+            "required": [
+              "track"
+            ]
+          }
+        ]
+      }
+    },
+    "balises": {
+      "type": "array",
+      "description": "Balises",
+      "items": {
+        "allOf": [
+          {
+            "$ref": "#/definitions/balise"
+          },
+          {
+            "required": [
+              "track"
+            ]
+          }
+        ]
+      }
+    },
+    "axleCounters": {
+      "type": "array",
+      "description": "Axle counters",
+      "items": {
+        "allOf": [
+          {
+            "$ref": "#/definitions/axleCounter"
+          },
+          {
+            "required": [
+              "track"
+            ]
+          }
+        ]
+      }
+    },
+    "sections": {
+      "type": "array",
+      "description": "Track sections",
+      "items": {
+        "$ref": "#/definitions/trackSection"
+      }
+    },
+    "levelCrossings": {
+      "type": "array",
+      "description": "Level crossings",
+      "items": {
+        "allOf": [
+          {
+            "$ref": "#/definitions/levelCrossing"
+          },
+          {
+            "required": [
+              "track"
+            ]
+          }
+        ]
+      }
+    },
+    "bufferStops": {
+      "type": "array",
+      "description": "Buffer stops",
+      "items": {
+        "allOf": [
+          {
+            "$ref": "#/definitions/bufferStop"
+          },
+          {
+            "required": [
+              "track"
+            ]
+          }
+        ]
+      }
+    },
+    "leus": {
+      "type": "array",
+      "description": "LEUs",
+      "items": {
+        "allOf": [
+          {
+            "$ref": "#/definitions/leu"
+          },
+          {
+            "required": [
+              "track"
+            ]
+          }
+        ]
+      }
+    },
+    "rbcs": {
+      "type": "array",
+      "description": "RBCs",
+      "items": {
+        "$ref": "#/definitions/rbc"
+      }
+    },
+    "trains": {
+      "type": "array",
+      "description": "Trains",
+      "items": {
+        "allOf": [
+          {
+            "$ref": "#/definitions/train"
+          },
+          {
+            "required": [
+              "track"
+            ]
+          }
+        ]
+      }
+    },
+    "routes": {
+      "type": "array",
+      "description": "Routes",
+      "items": {
+        "$ref": "#/definitions/route"
+      }
+    }
+  },
+  "definitions": {
+    "id": {
+      "type": [
+        "string",
+        "number"
+      ],
+      "minLength": 1,
+      "description": "Object ID (unique per kind, case-insensitive)",
+      "x-expected": "an ID"
+    },
+    "idList": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/id"
+          }
+        }
+      ],
+      "description": "IDs: a list, or text separated by commas",
+      "x-expected": "a list of IDs or comma-separated text"
+    },
+    "km": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "string",
+          "pattern": "^\\s*-?\\d+\\+\\d{1,3}([.,]\\d+)?\\s*$"
+        }
+      ],
+      "description": "km value: a number (12.345) or chainage text (\"12+345\")",
+      "x-expected": "a km value (a number such as 12.345, or chainage text such as \"12+345\")"
+    },
+    "page": {
+      "type": "object",
+      "description": "Layout options of the generated drawing",
+      "properties": {
+        "scale": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "Drawing units per metre (default 0.5)"
+        },
+        "laneSpacing": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "Distance between lanes, drawing units (default 80)"
+        },
+        "origin": {
+          "type": "object",
+          "description": "Where the smallest km of lane 0 is drawn (default x 40, y 80)",
+          "properties": {
+            "x": {
+              "type": "number"
+            },
+            "y": {
+              "type": "number"
+            }
+          }
+        }
+      }
+    },
+    "track": {
+      "type": "object",
+      "description": "Track: a straight line from startKm to endKm on its lane (nominal direction = increasing km = left to right)",
+      "required": [
+        "id"
+      ],
+      "allOf": [
+        {
+          "anyOf": [
+            {
+              "required": [
+                "startKm"
+              ]
+            },
+            {
+              "required": [
+                "kmStart"
+              ]
+            },
+            {
+              "required": [
+                "start"
+              ]
+            },
+            {
+              "required": [
+                "StartPos"
+              ]
+            }
+          ]
+        },
+        {
+          "anyOf": [
+            {
+              "required": [
+                "endKm"
+              ]
+            },
+            {
+              "required": [
+                "kmEnd"
+              ]
+            },
+            {
+              "required": [
+                "end"
+              ]
+            },
+            {
+              "required": [
+                "EndPos"
+              ]
+            }
+          ]
+        }
+      ],
+      "properties": {
+        "id": {
+          "type": [
+            "string",
+            "number",
+            "boolean"
+          ],
+          "description": "Track ID"
+        },
+        "name": {
+          "type": [
+            "string",
+            "number",
+            "boolean"
+          ],
+          "description": "Name"
+        },
+        "length": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Length [m]"
+        },
+        "kmStart": {
+          "$ref": "#/definitions/km",
+          "description": "km start [km]"
+        },
+        "startKm": {
+          "$ref": "#/definitions/km",
+          "description": "km start [km]"
+        },
+        "kmEnd": {
+          "$ref": "#/definitions/km",
+          "description": "km end [km]"
+        },
+        "endKm": {
+          "$ref": "#/definitions/km",
+          "description": "km end [km]"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "number",
+            "boolean"
+          ],
+          "description": "Remarks"
+        },
+        "start": {
+          "type": "number",
+          "description": "Start position in metres (= startKm × 1000)"
+        },
+        "end": {
+          "type": "number",
+          "description": "End position in metres (= endKm × 1000)"
+        },
+        "StartPos": {
+          "type": "number",
+          "description": "Alias of start (metres)"
+        },
+        "EndPos": {
+          "type": "number",
+          "description": "Alias of end (metres)"
+        },
+        "lane": {
+          "type": "integer",
+          "description": "Vertical row (0 = top main line, 1 below, -1 above); automatic when omitted"
+        },
+        "kind": {
+          "enum": [
+            "main",
+            "siding"
+          ],
+          "description": "main (default) or siding (drawn thinner)"
+        },
+        "points": {
+          "type": "array",
+          "description": "Points on this track",
+          "items": {
+            "$ref": "#/definitions/points"
+          }
+        },
+        "signals": {
+          "type": "array",
+          "description": "Signals on this track",
+          "items": {
+            "$ref": "#/definitions/signal"
+          }
+        },
+        "baliseGroups": {
+          "type": "array",
+          "description": "Balise groups on this track",
+          "items": {
+            "$ref": "#/definitions/baliseGroup"
+          }
+        },
+        "balises": {
+          "type": "array",
+          "description": "Balises on this track",
+          "items": {
+            "$ref": "#/definitions/balise"
+          }
+        },
+        "axleCounters": {
+          "type": "array",
+          "description": "Axle counters on this track",
+          "items": {
+            "$ref": "#/definitions/axleCounter"
+          }
+        },
+        "sections": {
+          "type": "array",
+          "description": "Track sections on this track",
+          "items": {
+            "$ref": "#/definitions/trackSection"
+          }
+        },
+        "levelCrossings": {
+          "type": "array",
+          "description": "Level crossings on this track",
+          "items": {
+            "$ref": "#/definitions/levelCrossing"
+          }
+        },
+        "bufferStops": {
+          "type": "array",
+          "description": "Buffer stops on this track: \"start\" / \"end\" (ID BS-<track>-start/end) or { id, at: start|end|km }",
+          "items": {
+            "anyOf": [
+              {
+                "enum": [
+                  "start",
+                  "end"
+                ]
+              },
+              {
+                "$ref": "#/definitions/bufferStop"
+              }
+            ],
+            "x-expected": "\"start\", \"end\" or { id, at }"
+          }
+        },
+        "leus": {
+          "type": "array",
+          "description": "LEUs on this track",
+          "items": {
+            "$ref": "#/definitions/leu"
+          }
+        },
+        "trains": {
+          "type": "array",
+          "description": "Trains on this track",
+          "items": {
+            "$ref": "#/definitions/train"
+          }
+        },
+        "x": {
+          "type": "number",
+          "description": "Layout override: x of the centre (a track: of its first point), drawing units"
+        },
+        "y": {
+          "type": "number",
+          "description": "Layout override: y of the centre (a track: of its line), drawing units"
+        }
+      }
+    },
+    "points": {
+      "type": "object",
+      "description": "Points (switch) (railway object kind \"points\")",
+      "required": [
+        "id",
+        "at",
+        "to"
+      ],
+      "properties": {
+        "id": {
+          "type": [
+            "string",
+            "number",
+            "boolean"
+          ],
+          "description": "Points ID"
+        },
+        "hand": {
+          "enum": [
+            "left",
+            "right"
+          ],
+          "description": "Hand"
+        },
+        "position": {
+          "enum": [
+            "normal",
+            "reverse"
+          ],
+          "description": "Position"
+        },
+        "at": {
+          "$ref": "#/definitions/km",
+          "description": "km position on the track (number, or chainage text \"12+345\")"
+        },
+        "track": {
+          "$ref": "#/definitions/id",
+          "description": "Track ID (implied inside a track item)"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "number",
+            "boolean"
+          ],
+          "description": "Remarks"
+        },
+        "to": {
+          "$ref": "#/definitions/id",
+          "description": "Diverging track (its nearer end starts at the points)"
+        },
+        "type": {
+          "type": "string",
+          "description": "Points type (free text, e.g. ordinary, slip)"
+        },
+        "x": {
+          "type": "number",
+          "description": "Layout override: x of the centre (a track: of its first point), drawing units"
+        },
+        "y": {
+          "type": "number",
+          "description": "Layout override: y of the centre (a track: of its line), drawing units"
+        }
+      }
+    },
+    "signal": {
+      "type": "object",
+      "description": "Signal (railway object kind \"signal\")",
+      "required": [
+        "id",
+        "at"
+      ],
+      "properties": {
+        "id": {
+          "type": [
+            "string",
+            "number",
+            "boolean"
+          ],
+          "description": "Signal ID — e.g. S12"
+        },
+        "signalType": {
+          "enum": [
+            "main",
+            "shunting",
+            "markerBoard",
+            "etcsStopMarker"
+          ],
+          "description": "Type"
+        },
+        "type": {
+          "enum": [
+            "main",
+            "shunting",
+            "markerBoard",
+            "etcsStopMarker"
+          ],
+          "description": "Type"
+        },
+        "direction": {
+          "enum": [
+            "nominal",
+            "reverse"
+          ],
+          "description": "Direction"
+        },
+        "at": {
+          "$ref": "#/definitions/km",
+          "description": "km position on the track (number, or chainage text \"12+345\")"
+        },
+        "track": {
+          "$ref": "#/definitions/id",
+          "description": "Track ID (implied inside a track item)"
+        },
+        "aspects": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 6,
+          "description": "Aspects"
+        },
+        "routes": {
+          "$ref": "#/definitions/idList",
+          "description": "Routes — Route IDs, comma separated (computed when omitted)"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "number",
+            "boolean"
+          ],
+          "description": "Remarks"
+        },
+        "x": {
+          "type": "number",
+          "description": "Layout override: x of the centre (a track: of its first point), drawing units"
+        },
+        "y": {
+          "type": "number",
+          "description": "Layout override: y of the centre (a track: of its line), drawing units"
+        }
+      }
+    },
+    "baliseGroup": {
+      "type": "object",
+      "description": "Balise group (railway object kind \"baliseGroup\")",
+      "required": [
+        "id",
+        "at"
+      ],
+      "properties": {
+        "id": {
+          "type": [
+            "string",
+            "number",
+            "boolean"
+          ],
+          "description": "BG ID"
+        },
+        "nidC": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1023,
+          "description": "NID_C — Country/region (0–1023)"
+        },
+        "nidBg": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 16383,
+          "description": "NID_BG — Balise group identity (0–16383)"
+        },
+        "count": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 8,
+          "description": "Balises in group"
+        },
+        "direction": {
+          "enum": [
+            "nominal",
+            "reverse"
+          ],
+          "description": "Direction"
+        },
+        "at": {
+          "$ref": "#/definitions/km",
+          "description": "km position on the track (number, or chainage text \"12+345\")"
+        },
+        "track": {
+          "$ref": "#/definitions/id",
+          "description": "Track ID (implied inside a track item)"
+        },
+        "function": {
+          "enum": [
+            "fixed",
+            "switchable",
+            "infill"
+          ],
+          "description": "Function"
+        },
+        "leuId": {
+          "$ref": "#/definitions/id",
+          "description": "LEU"
+        },
+        "leu": {
+          "$ref": "#/definitions/id",
+          "description": "LEU"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "number",
+            "boolean"
+          ],
+          "description": "Remarks"
+        },
+        "balises": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 8
+            },
+            {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "$ref": "#/definitions/id"
+                  },
+                  {
+                    "type": "object",
+                    "required": [
+                      "id"
+                    ],
+                    "properties": {
+                      "id": {
+                        "$ref": "#/definitions/id"
+                      },
+                      "at": {
+                        "$ref": "#/definitions/km"
+                      },
+                      "direction": {
+                        "enum": [
+                          "nominal",
+                          "reverse"
+                        ]
+                      },
+                      "notes": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                ],
+                "x-expected": "a balise ID or { id, at }"
+              }
+            }
+          ],
+          "description": "Balises of the group: a count (IDs <group>-1, ...) or a list of IDs / { id, at }",
+          "x-expected": "a number of balises (1–8) or a list of balises"
+        },
+        "x": {
+          "type": "number",
+          "description": "Layout override: x of the centre (a track: of its first point), drawing units"
+        },
+        "y": {
+          "type": "number",
+          "description": "Layout override: y of the centre (a track: of its line), drawing units"
+        }
+      }
+    },
+    "balise": {
+      "type": "object",
+      "description": "Balise (railway object kind \"balise\")",
+      "required": [
+        "id",
+        "at"
+      ],
+      "properties": {
+        "id": {
+          "type": [
+            "string",
+            "number",
+            "boolean"
+          ],
+          "description": "Balise ID"
+        },
+        "groupId": {
+          "$ref": "#/definitions/id",
+          "description": "Balise group"
+        },
+        "group": {
+          "$ref": "#/definitions/id",
+          "description": "Balise group"
+        },
+        "position": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 8,
+          "description": "Position in group"
+        },
+        "direction": {
+          "enum": [
+            "nominal",
+            "reverse"
+          ],
+          "description": "Direction"
+        },
+        "at": {
+          "$ref": "#/definitions/km",
+          "description": "km position on the track (number, or chainage text \"12+345\")"
+        },
+        "track": {
+          "$ref": "#/definitions/id",
+          "description": "Track ID (implied inside a track item)"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "number",
+            "boolean"
+          ],
+          "description": "Remarks"
+        },
+        "x": {
+          "type": "number",
+          "description": "Layout override: x of the centre (a track: of its first point), drawing units"
+        },
+        "y": {
+          "type": "number",
+          "description": "Layout override: y of the centre (a track: of its line), drawing units"
+        }
+      }
+    },
+    "axleCounter": {
+      "type": "object",
+      "description": "Axle counter (railway object kind \"axleCounter\")",
+      "required": [
+        "id",
+        "at"
+      ],
+      "properties": {
+        "id": {
+          "type": [
+            "string",
+            "number",
+            "boolean"
+          ],
+          "description": "Detection point ID"
+        },
+        "at": {
+          "$ref": "#/definitions/km",
+          "description": "km position on the track (number, or chainage text \"12+345\")"
+        },
+        "track": {
+          "$ref": "#/definitions/id",
+          "description": "Track ID (implied inside a track item)"
+        },
+        "sections": {
+          "$ref": "#/definitions/idList",
+          "description": "Track sections — Section IDs, comma separated"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "number",
+            "boolean"
+          ],
+          "description": "Remarks"
+        },
+        "x": {
+          "type": "number",
+          "description": "Layout override: x of the centre (a track: of its first point), drawing units"
+        },
+        "y": {
+          "type": "number",
+          "description": "Layout override: y of the centre (a track: of its line), drawing units"
+        }
+      }
+    },
+    "trackSection": {
+      "type": "object",
+      "description": "Track section (railway object kind \"trackSection\")",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "type": [
+            "string",
+            "number",
+            "boolean"
+          ],
+          "description": "Section ID"
+        },
+        "sectionType": {
+          "enum": [
+            "tc",
+            "axleCounter"
+          ],
+          "description": "Detection"
+        },
+        "type": {
+          "enum": [
+            "tc",
+            "axleCounter"
+          ],
+          "description": "Detection"
+        },
+        "track": {
+          "$ref": "#/definitions/id",
+          "description": "Track ID (implied inside a track item)"
+        },
+        "length": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Length [m]"
+        },
+        "kmStart": {
+          "$ref": "#/definitions/km",
+          "description": "km start [km]"
+        },
+        "startKm": {
+          "$ref": "#/definitions/km",
+          "description": "km start [km]"
+        },
+        "kmEnd": {
+          "$ref": "#/definitions/km",
+          "description": "km end [km]"
+        },
+        "endKm": {
+          "$ref": "#/definitions/km",
+          "description": "km end [km]"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "number",
+            "boolean"
+          ],
+          "description": "Remarks"
+        },
+        "from": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/km"
+            },
+            {
+              "$ref": "#/definitions/id"
+            }
+          ],
+          "description": "Start: km, or the ID of an axle counter / balise on the track",
+          "x-expected": "a km value or a detection point ID"
+        },
+        "to": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/km"
+            },
+            {
+              "$ref": "#/definitions/id"
+            }
+          ],
+          "description": "End: km, or the ID of an axle counter on the track",
+          "x-expected": "a km value or a detection point ID"
+        },
+        "x": {
+          "type": "number",
+          "description": "Layout override: x of the centre (a track: of its first point), drawing units"
+        },
+        "y": {
+          "type": "number",
+          "description": "Layout override: y of the centre (a track: of its line), drawing units"
+        }
+      },
+      "allOf": [
+        {
+          "anyOf": [
+            {
+              "required": [
+                "from"
+              ]
+            },
+            {
+              "required": [
+                "startKm"
+              ]
+            },
+            {
+              "required": [
+                "kmStart"
+              ]
+            }
+          ]
+        },
+        {
+          "anyOf": [
+            {
+              "required": [
+                "to"
+              ]
+            },
+            {
+              "required": [
+                "endKm"
+              ]
+            },
+            {
+              "required": [
+                "kmEnd"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "levelCrossing": {
+      "type": "object",
+      "description": "Level crossing (railway object kind \"levelCrossing\")",
+      "required": [
+        "id",
+        "at"
+      ],
+      "properties": {
+        "id": {
+          "type": [
+            "string",
+            "number",
+            "boolean"
+          ],
+          "description": "ID"
+        },
+        "protection": {
+          "enum": [
+            "fullBarriers",
+            "halfBarriers",
+            "lights",
+            "passive"
+          ],
+          "description": "Protection"
+        },
+        "at": {
+          "$ref": "#/definitions/km",
+          "description": "km position on the track (number, or chainage text \"12+345\")"
+        },
+        "track": {
+          "$ref": "#/definitions/id",
+          "description": "Track ID (implied inside a track item)"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "number",
+            "boolean"
+          ],
+          "description": "Remarks"
+        },
+        "x": {
+          "type": "number",
+          "description": "Layout override: x of the centre (a track: of its first point), drawing units"
+        },
+        "y": {
+          "type": "number",
+          "description": "Layout override: y of the centre (a track: of its line), drawing units"
+        }
+      }
+    },
+    "bufferStop": {
+      "type": "object",
+      "description": "Buffer stop (railway object kind \"bufferStop\")",
+      "required": [
+        "id",
+        "at"
+      ],
+      "properties": {
+        "id": {
+          "type": [
+            "string",
+            "number",
+            "boolean"
+          ],
+          "description": "ID"
+        },
+        "at": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/km"
+            },
+            {
+              "enum": [
+                "start",
+                "end"
+              ]
+            }
+          ],
+          "description": "km, or the track end (start/end)",
+          "x-expected": "a km value, \"start\" or \"end\""
+        },
+        "track": {
+          "$ref": "#/definitions/id",
+          "description": "Track ID (implied inside a track item)"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "number",
+            "boolean"
+          ],
+          "description": "Remarks"
+        },
+        "x": {
+          "type": "number",
+          "description": "Layout override: x of the centre (a track: of its first point), drawing units"
+        },
+        "y": {
+          "type": "number",
+          "description": "Layout override: y of the centre (a track: of its line), drawing units"
+        }
+      }
+    },
+    "leu": {
+      "type": "object",
+      "description": "LEU (railway object kind \"leu\")",
+      "required": [
+        "id",
+        "at"
+      ],
+      "properties": {
+        "id": {
+          "type": [
+            "string",
+            "number",
+            "boolean"
+          ],
+          "description": "ID"
+        },
+        "at": {
+          "$ref": "#/definitions/km",
+          "description": "km position on the track (number, or chainage text \"12+345\")"
+        },
+        "track": {
+          "$ref": "#/definitions/id",
+          "description": "Track ID (implied inside a track item)"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "number",
+            "boolean"
+          ],
+          "description": "Remarks"
+        },
+        "x": {
+          "type": "number",
+          "description": "Layout override: x of the centre (a track: of its first point), drawing units"
+        },
+        "y": {
+          "type": "number",
+          "description": "Layout override: y of the centre (a track: of its line), drawing units"
+        }
+      }
+    },
+    "rbc": {
+      "type": "object",
+      "description": "RBC (railway object kind \"rbc\")",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "type": [
+            "string",
+            "number",
+            "boolean"
+          ],
+          "description": "ID"
+        },
+        "nidC": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1023,
+          "description": "NID_C"
+        },
+        "nidRbc": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 16383,
+          "description": "NID_RBC"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "number",
+            "boolean"
+          ],
+          "description": "Remarks"
+        },
+        "x": {
+          "type": "number",
+          "description": "Layout override: x of the centre (a track: of its first point), drawing units"
+        },
+        "y": {
+          "type": "number",
+          "description": "Layout override: y of the centre (a track: of its line), drawing units"
+        }
+      }
+    },
+    "train": {
+      "type": "object",
+      "description": "Train (railway object kind \"train\")",
+      "required": [
+        "id",
+        "at"
+      ],
+      "properties": {
+        "id": {
+          "type": [
+            "string",
+            "number",
+            "boolean"
+          ],
+          "description": "Train ID"
+        },
+        "etcsLevel": {
+          "enum": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "NTC",
+            0,
+            1,
+            2,
+            3
+          ],
+          "description": "ETCS level"
+        },
+        "maxSpeed": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 600,
+          "description": "Max speed [km/h]"
+        },
+        "length": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Length [m]"
+        },
+        "rbcId": {
+          "$ref": "#/definitions/id",
+          "description": "RBC"
+        },
+        "rbc": {
+          "$ref": "#/definitions/id",
+          "description": "RBC"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "number",
+            "boolean"
+          ],
+          "description": "Remarks"
+        },
+        "track": {
+          "$ref": "#/definitions/id",
+          "description": "Track ID (implied inside a track item)"
+        },
+        "at": {
+          "$ref": "#/definitions/km",
+          "description": "km of the train front"
+        },
+        "direction": {
+          "enum": [
+            "nominal",
+            "reverse"
+          ],
+          "description": "Direction of travel"
+        },
+        "x": {
+          "type": "number",
+          "description": "Layout override: x of the centre (a track: of its first point), drawing units"
+        },
+        "y": {
+          "type": "number",
+          "description": "Layout override: y of the centre (a track: of its line), drawing units"
+        }
+      }
+    },
+    "route": {
+      "type": "object",
+      "description": "Route (railway object kind \"route\")",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "type": [
+            "string",
+            "number",
+            "boolean"
+          ],
+          "description": "Route ID"
+        },
+        "entrySignal": {
+          "$ref": "#/definitions/id",
+          "description": "Entry signal"
+        },
+        "from": {
+          "$ref": "#/definitions/id",
+          "description": "Entry signal"
+        },
+        "exitSignal": {
+          "$ref": "#/definitions/id",
+          "description": "Exit signal"
+        },
+        "to": {
+          "$ref": "#/definitions/id",
+          "description": "Exit signal"
+        },
+        "points": {
+          "type": [
+            "string",
+            "number",
+            "boolean"
+          ],
+          "description": "Points (required positions) — e.g. W1:normal, W2:reverse"
+        },
+        "sections": {
+          "$ref": "#/definitions/idList",
+          "description": "Track sections — In order, comma separated"
+        },
+        "overlap": {
+          "$ref": "#/definitions/idList",
+          "description": "Overlap — Sections beyond the exit signal (optional)"
+        },
+        "length": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Length [m] (computed when omitted)"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "number",
+            "boolean"
+          ],
+          "description": "Remarks"
+        },
+        "via": {
+          "anyOf": [
+            {
+              "type": "object",
+              "additionalProperties": {
+                "enum": [
+                  "normal",
+                  "reverse",
+                  "N",
+                  "R",
+                  "+",
+                  "-"
+                ]
+              }
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "description": "Required points positions, e.g. { W1: reverse } or \"W1:reverse, W2:normal\" (computed when omitted)",
+          "x-expected": "a map of points positions such as { W1: reverse }"
+        },
+        "x": {
+          "type": "number",
+          "description": "Layout override: x of the centre (a track: of its first point), drawing units"
+        },
+        "y": {
+          "type": "number",
+          "description": "Layout override: y of the centre (a track: of its line), drawing units"
+        }
+      },
+      "allOf": [
+        {
+          "anyOf": [
+            {
+              "required": [
+                "from"
+              ]
+            },
+            {
+              "required": [
+                "entrySignal"
+              ]
+            }
+          ]
+        },
+        {
+          "anyOf": [
+            {
+              "required": [
+                "to"
+              ]
+            },
+            {
+              "required": [
+                "exitSignal"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

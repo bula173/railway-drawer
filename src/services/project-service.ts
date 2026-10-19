@@ -9,6 +9,7 @@ import {
   scenarioIndexAttributes,
 } from '../scenarios/scenario-format';
 import type { ScenarioStepPage } from '../scenarios/scenario-format';
+import { RailwayScriptStore, railwayScriptAttributes, readRailwayScriptAttribute } from '../railway-script/script-store';
 
 export interface ProjectMetadata {
   name: string;
@@ -38,6 +39,8 @@ export interface ParsedProject {
   pageId: string | null;
   /** Scenarios rebuilt from the step pages and the main page's index (see scenario-format.ts). */
   scenarios: ScenarioData[];
+  /** The main page's Railway Script (`rdRailwayScript`, src/railway-script); '' when none. */
+  railwayScript: string;
 }
 
 export class ProjectService {
@@ -47,6 +50,8 @@ export class ProjectService {
   private pageId: string | null = null;
   /** Scenarios of this diagram; written as one page per step after the shown page. */
   readonly scenarios = new ScenarioSet();
+  /** Railway Script of this diagram (src/railway-script); saved on the main page's `<diagram>`. */
+  readonly railwayScript = new RailwayScriptStore();
 
   private projectMetadata: ProjectMetadata = {
     name: 'Untitled Diagram',
@@ -107,7 +112,7 @@ export class ProjectService {
     }
 
     return buildMxfile(
-      [{ id: this.pageId, name: this.projectMetadata.name, model, comments, attributes: scenarioIndexAttributes(scenarios) }],
+      [{ id: this.pageId, name: this.projectMetadata.name, model, comments, attributes: { ...scenarioIndexAttributes(scenarios), ...railwayScriptAttributes(this.railwayScript.get()) } }],
       [...scenarioPages, ...this.extraPages],
       {
         host: PROJECT_HOST,
@@ -145,6 +150,7 @@ export class ProjectService {
     const extraPageNames: string[] = [];
     let pageId: string | null = null;
     let scenarios: ScenarioData[] = [];
+    let railwayScript = '';
 
     // Handle mxfile format (standard draw.io)
     if (rootEl.nodeName === 'mxfile') {
@@ -172,6 +178,7 @@ export class ProjectService {
         extraPageNames.push(page.getAttribute('name') || `Page ${index + 2}`);
       }
       scenarios = assembleScenarios(diagramEl, stepPages);
+      railwayScript = readRailwayScriptAttribute(diagramEl);
       const isOwnFile = rootEl.getAttribute('host') === PROJECT_HOST;
       metadata = {
         name: diagramEl?.getAttribute('name') || 'Untitled Diagram',
@@ -213,7 +220,7 @@ export class ProjectService {
     }
     ProjectService.validateGraphModelXml(graphXml);
 
-    return { metadata, graphXml, extraPages, extraPageNames, pageId, scenarios };
+    return { metadata, graphXml, extraPages, extraPageNames, pageId, scenarios, railwayScript };
   }
 
   /**

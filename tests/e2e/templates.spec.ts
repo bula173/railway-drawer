@@ -60,7 +60,7 @@ test.describe('templates', () => {
 
     // tab bar: no label is cut (the tabs wrap when the panel is narrow), also with the ERTMS tab
     const tabs = page.locator('.left-panel-tab-btn:visible');
-    await expect(tabs).toHaveText(['Shapes', 'Templates', 'Layers', /PlantUML/]);
+    await expect(tabs).toHaveText(['Shapes', 'Templates', 'Layers', /PlantUML/, 'Railway Script']);
     const clippedTabs = (): Promise<number> =>
       page.locator('.left-panel-tab-btn:visible').evaluateAll((btns) => {
         const bar = btns[0].parentElement!.getBoundingClientRect();
@@ -72,7 +72,7 @@ test.describe('templates', () => {
     expect(await clippedTabs()).toBe(0);
     await page.locator('.menu-item[data-menu="view"]').click();
     await page.locator('[data-action="toggleErtmsTab"]').click();
-    await expect(tabs).toHaveText(['Shapes', 'ERTMS×', 'Templates', 'Layers', /PlantUML/]);
+    await expect(tabs).toHaveText(['Shapes', 'ERTMS×', 'Templates', 'Layers', /PlantUML/, 'Railway Script']);
     expect(await clippedTabs()).toBe(0);
     await page.locator('#ertms-panel section[data-palette-id="ertms"] .rd-dp-item').first().waitFor();
     await expect(page.locator('#ertms-panel section[data-palette-id="ertms"] .rd-dp-item')).toHaveCount(18);

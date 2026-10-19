@@ -18,6 +18,7 @@ import { installDrawioHandles } from '../drawio-shapes/handles';
 import { installStencilAutoload } from './drawio-stencil-autoload';
 import { CacheService, CacheData, CacheSaveResult } from '../services/cache-service';
 import { sanitizeScenarios } from '../scenarios/scenario-model';
+import { sanitizeCachedScript } from '../railway-script/script-store';
 import { globalSaveStatusIndicator } from './save-status';
 import { globalNotificationManager } from './notification';
 import { GraphCommandService } from '../services/graph-command-service';
@@ -379,6 +380,7 @@ export class TabManager {
       tabs: Array.from(this.tabs.values()).map((tab) => {
         const { extraPages, pageId } = tab.saveLoadController.getPreservedPages();
         const scenarios = tab.saveLoadController.getScenarios().toJSON();
+        const railwayScript = tab.saveLoadController.getRailwayScript().get();
         return {
           id: tab.id,
           name: tab.name,
@@ -388,6 +390,7 @@ export class TabManager {
           ...(extraPages.length > 0 ? { extraPages } : {}),
           ...(pageId ? { pageId } : {}),
           ...(scenarios.length > 0 ? { scenarios } : {}),
+          ...(railwayScript.trim() ? { railwayScript } : {}),
           ...this.remoteCacheEntry(tab.id),
         };
       }),
@@ -478,6 +481,7 @@ export class TabManager {
       tabData.saveLoadController.setPreservedPages(extraPages, pageId);
       // Scenarios are kept even when the drawing itself cannot be restored
       tabData.saveLoadController.getScenarios().replaceAll(sanitizeScenarios(tabCache.scenarios));
+      tabData.saveLoadController.getRailwayScript().set(sanitizeCachedScript(tabCache.railwayScript), 'load');
       // Each tab's own project (caches of earlier versions: only the active tab's, set below)
       if (typeof tabCache.projectName === 'string' && tabCache.projectName) {
         tabData.saveLoadController.setProjectName(tabCache.projectName);

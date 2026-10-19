@@ -1,4 +1,4 @@
-export type LeftPanelTab = 'shapes' | 'ertms' | 'templates' | 'layers' | 'plantuml';
+export type LeftPanelTab = 'shapes' | 'ertms' | 'templates' | 'layers' | 'plantuml' | 'railwayScript';
 export type CloseableTab = 'plantuml' | 'ertms';
 
 export class LeftPanelTabs {
@@ -8,6 +8,7 @@ export class LeftPanelTabs {
   private activeTab: LeftPanelTab = 'shapes';
   private hiddenTabs: Set<CloseableTab> = new Set();
   private visibilityListeners: Array<(tabId: CloseableTab, visible: boolean) => void> = [];
+  private switchListeners: Array<(tabId: LeftPanelTab) => void> = [];
 
   constructor(containerId: string) {
     const el = document.getElementById(containerId);
@@ -27,12 +28,16 @@ export class LeftPanelTabs {
     templatesTabBtn.title = 'ERTMS templates and my templates';
     const layerTabBtn = this.createTabButton('layers', 'Layers');
     const plantumlTabBtn = this.createTabButton('plantuml', '🌿 PlantUML');
+    const scriptTabBtn = this.createTabButton('railwayScript', 'Railway Script');
+    scriptTabBtn.title = 'Railway Script: describe the layout as YAML/JSON text (src/railway-script)';
+    scriptTabBtn.dataset.tab = 'railwayScript';
 
     tabBar.appendChild(shapeTabBtn);
     tabBar.appendChild(ertmsTabBtn);
     tabBar.appendChild(templatesTabBtn);
     tabBar.appendChild(layerTabBtn);
     tabBar.appendChild(plantumlTabBtn);
+    tabBar.appendChild(scriptTabBtn);
 
     this.container.insertBefore(tabBar, this.container.firstChild);
   }
@@ -111,6 +116,12 @@ export class LeftPanelTabs {
     }
 
     this.activeTab = tabId;
+    this.switchListeners.forEach((listener) => listener(tabId));
+  }
+
+  /** Called after the active tab changed (e.g. to create a panel's content on first show). */
+  onTabSwitch(listener: (tabId: LeftPanelTab) => void): void {
+    this.switchListeners.push(listener);
   }
 
   getActiveTab(): LeftPanelTab {

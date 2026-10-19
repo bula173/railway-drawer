@@ -18,6 +18,7 @@ import { openShareDialog } from './share-dialog';
 import type { ShareDialogHandle } from './share-dialog';
 import { buildShareMxfile } from './share-mxfile';
 import { buildScenarioPages, scenarioIndexAttributes } from '../scenarios/scenario-format';
+import { railwayScriptAttributes } from '../railway-script/script-store';
 import { installShareLinkHandler, openDiagramFile } from './share-open';
 import type { ShareOpenHost } from './share-open';
 import { discardRetiredDrawioDocument, readRetiredDrawioDocument } from '../services/retired-drawio-mode';
@@ -71,9 +72,11 @@ export function installSharing(tabManager: TabManager, notify: SharingNotifier):
       const listener = (): void => onChange();
       model.addListener(InternalEvent.CHANGE, listener);
       const stopScenarios = tab.saveLoadController.getScenarios().subscribe(onChange);
+      const stopScript = tab.saveLoadController.getRailwayScript().subscribe(() => onChange());
       return () => {
         model.removeListener(listener);
         stopScenarios();
+        stopScript();
       };
     },
     onBindingsChanged: () => {
@@ -158,7 +161,7 @@ export function installSharing(tabManager: TabManager, notify: SharingNotifier):
           extraPages,
           pageId,
           // Scenarios travel with the link: index on the page, one page per step after it
-          pageAttributes: scenarioIndexAttributes(scenarios),
+          pageAttributes: { ...scenarioIndexAttributes(scenarios), ...railwayScriptAttributes(tab.saveLoadController.getRailwayScript().get()) },
           scenarioPages: buildScenarioPages(scenarios, new Set()),
         };
       })
