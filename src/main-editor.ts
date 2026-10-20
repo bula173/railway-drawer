@@ -59,6 +59,7 @@ import { syncConnectionArrowsMenu, toggleConnectionArrows } from './ui/hover-arr
 import { withErtmsDisplayTitles } from './ui/ertms-display';
 import { clickInsertPlacement } from './ui/click-insert';
 import { createStartCard } from './ui/start-card';
+import { installNarrowScreen } from './ui/narrow-screen';
 
 /**
  * @brief Register all built-in shape definitions
@@ -576,6 +577,11 @@ if (ertmsTabWanted) {
 } else {
   leftPanelTabs.closeTab('ertms');
 }
+
+// ============= NARROW SCREENS =============
+
+// < 900 px: body.rd-narrow (side panels hidden, canvas keeps the width) + a dismissible banner
+installNarrowScreen();
 
 // ============= START CARD =============
 

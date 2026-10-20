@@ -1,0 +1,47 @@
+/* Narrow screens (src/ui/narrow-screen.ts). Minimal fallback: the side panels give the canvas their
+   width (the panel collapse styles may refine this for body.rd-narrow). */
+body.rd-narrow #leftpanel-container,
+body.rd-narrow #rightpanel-container,
+body.rd-narrow .panel-resize-handle {
+  display: none;
+}
+body.rd-narrow #graph-container {
+  min-width: 0;
+}
+.rd-narrow-banner {
+  position: fixed;
+  right: 8px;
+  bottom: 8px;
+  left: 8px;
+  z-index: 950;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border: 1px solid var(--rd-warning);
+  border-radius: var(--radius-md, 6px);
+  background: var(--rd-warning-bg);
+  color: var(--rd-text);
+  box-shadow: 0 4px 16px var(--rd-shadow);
+  font-size: 13px;
+}
+.rd-narrow-banner[hidden] {
+  display: none;
+}
+.rd-narrow-banner span {
+  flex: 1 1 auto;
+}
+.rd-narrow-banner-close {
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: var(--radius-sm, 4px);
+  background: transparent;
+  color: inherit;
+  font-size: 18px;
+  cursor: pointer;
+}
+.rd-narrow-banner-close:focus-visible {
+  outline: 2px solid var(--rd-focus);
+}
