@@ -30,7 +30,7 @@ test.describe('main Railway Drawer editor', () => {
     await expect(drawPaneNodes(page)).toHaveCount(0);
 
     // Drag the first shape of the palette onto the canvas (HTML5 drag and drop)
-    const firstShape = page.locator('#shapes-container .shape-icon-only').first();
+    const firstShape = page.locator('#drawio-palette-container section[data-palette-id="general"] .rd-dp-item').first();
     await expect(firstShape).toBeVisible();
     await firstShape.dragTo(page.locator('#graph-container'));
     await expect(drawPaneNodes(page)).not.toHaveCount(0);
