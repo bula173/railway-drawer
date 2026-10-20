@@ -58,6 +58,7 @@ import { installRailwayScript } from './railway-script/install-railway-script';
 import { syncConnectionArrowsMenu, toggleConnectionArrows } from './ui/hover-arrows';
 import { withErtmsDisplayTitles } from './ui/ertms-display';
 import { clickInsertPlacement } from './ui/click-insert';
+import { createStartCard } from './ui/start-card';
 
 /**
  * @brief Register all built-in shape definitions
@@ -489,7 +490,7 @@ function readStringArray(key: string): string[] {
  * cells keep draw.io's style strings, so saved files open 1:1 in draw.io. ERTMS is the draw.io
  * library public/libraries/ertms.xml. Click inserts at the view centre, drag drops at the pointer.
  */
-createDrawioPaletteView({
+const shapesPaletteView = createDrawioPaletteView({
   container: document.getElementById('drawio-palette-container')!,
   getGraph: () => tabManager.getActiveTab()?.graph ?? null,
   palettes: [
@@ -575,6 +576,42 @@ if (ertmsTabWanted) {
 } else {
   leftPanelTabs.closeTab('ertms');
 }
+
+// ============= START CARD =============
+
+/**
+ * @brief Start card over the canvas of an empty tab (src/ui/start-card.ts)
+ * @details Insert ERTMS symbols (Shapes tab, ERTMS section expanded and focused), Open
+ * template… (Templates tab), Open file… / Import railML… (the File menu actions), Railway
+ * Script… (its tab), F1 shortcuts. Rechecked on tab switches and new tabs.
+ */
+const focusErtmsPalette = (): void => {
+  leftPanelTabs.switchTab('shapes');
+  shapesPaletteView.setPaletteVisible('ertms', true);
+  shapesPaletteView.setExpanded('ertms', true);
+  const section = document.querySelector<HTMLElement>('#drawio-palette-container section[data-palette-id="ertms"]');
+  section?.scrollIntoView({ block: 'start' });
+  void shapesPaletteView.ready.then(() => section?.querySelector<HTMLElement>('.rd-dp-item')?.focus());
+};
+const runMenuAction = (action: string): void => {
+  document.querySelector<HTMLElement>(`.menu-dropdown-item[data-action="${action}"]`)?.click();
+};
+const startCard = createStartCard({
+  container: graphContainer,
+  getActive: () => {
+    const tab = tabManager.getActiveTab();
+    return tab ? { id: tab.id, graph: tab.graph } : null;
+  },
+  onAction: (action) => {
+    if (action === 'ertms') focusErtmsPalette();
+    else if (action === 'template') leftPanelTabs.switchTab('templates');
+    else if (action === 'open') runMenuAction('open');
+    else if (action === 'railml') runMenuAction('importRailml');
+    else if (action === 'script') leftPanelTabs.switchTab('railwayScript');
+    else if (action === 'shortcuts') window.dispatchEvent(new CustomEvent('shortcuts-help-request'));
+  },
+});
+window.addEventListener('tab-changed', () => startCard.update());
 
 // ============= TEMPLATES TAB =============
 

@@ -1,0 +1,115 @@
+/* Start card over an empty canvas (src/ui/start-card.ts). Colors: --rd-* theme tokens only. */
+.rd-start-card {
+  position: fixed;
+  z-index: 900;
+  width: 380px;
+  box-sizing: border-box;
+  padding: 16px;
+  transform: translate(-50%, -50%);
+  border: 1px solid var(--rd-border);
+  border-radius: var(--radius-lg, 8px);
+  background: var(--rd-surface);
+  color: var(--rd-text);
+  box-shadow: 0 8px 28px var(--rd-shadow);
+  font-family: var(--font-family, Helvetica, Arial, sans-serif);
+  font-size: 13px;
+}
+.rd-start-card[hidden] {
+  display: none;
+}
+/* While something is dragged the canvas must get the drop */
+.rd-start-card.rd-start-dragging {
+  visibility: hidden;
+  pointer-events: none;
+}
+.rd-start-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.rd-start-head h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+.rd-start-close {
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: var(--radius-sm, 4px);
+  background: transparent;
+  color: var(--rd-text);
+  font-size: 18px;
+  cursor: pointer;
+}
+.rd-start-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.rd-start-action {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 40px;
+  padding: 6px 10px;
+  border: 1px solid var(--rd-border);
+  border-radius: var(--radius-md, 6px);
+  background: var(--rd-surface-2);
+  color: var(--rd-text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.rd-start-action:hover,
+.rd-start-close:hover,
+.rd-start-f1:hover,
+.rd-start-never:hover {
+  background: var(--rd-hover);
+}
+.rd-start-primary {
+  border-color: var(--rd-accent);
+  background: var(--rd-accent);
+  color: var(--rd-accent-text);
+}
+.rd-start-primary:hover {
+  background: var(--rd-accent-hover);
+}
+.rd-start-label {
+  font-weight: 600;
+}
+.rd-start-hint {
+  color: var(--rd-text-muted);
+  font-size: 12px;
+}
+.rd-start-primary .rd-start-hint {
+  color: var(--rd-accent-text);
+}
+.rd-start-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 12px;
+}
+.rd-start-f1,
+.rd-start-never {
+  min-height: 24px;
+  padding: 2px 6px;
+  border: none;
+  border-radius: var(--radius-sm, 4px);
+  background: transparent;
+  color: var(--rd-text-muted);
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+.rd-start-never {
+  color: var(--rd-link);
+  text-decoration: underline;
+}
+.rd-start-card button:focus-visible {
+  outline: 2px solid var(--rd-focus);
+  outline-offset: 1px;
+}
