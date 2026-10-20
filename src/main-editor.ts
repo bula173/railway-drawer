@@ -57,6 +57,7 @@ import { installRailml, isRailmlFile, requestRailmlOpen } from './railml/install
 import { installRailwayScript } from './railway-script/install-railway-script';
 import { syncConnectionArrowsMenu, toggleConnectionArrows } from './ui/hover-arrows';
 import { withErtmsDisplayTitles } from './ui/ertms-display';
+import { clickInsertPlacement } from './ui/click-insert';
 
 /**
  * @brief Register all built-in shape definitions
@@ -500,6 +501,7 @@ createDrawioPaletteView({
   dropTarget: graphContainer,
   onError: (message) => globalNotificationManager.error(message),
   prepareInsert: prepareRailwayInsert,
+  clickPlacement: clickInsertPlacement,
   extraMenuItems: separateAppGroups().map((group) => ({
     id: `app-${group}`,
     title: `${group} (Railway Drawer)`,
@@ -541,6 +543,7 @@ const ensureErtmsTabView = (): void => {
     storageKeySuffix: '.ertmsTab',
     onError: (message) => globalNotificationManager.error(message),
     prepareInsert: prepareRailwayInsert,
+    clickPlacement: clickInsertPlacement,
   });
 };
 // View > Connection Arrows check mark from the stored setting (hover-arrows.ts)
