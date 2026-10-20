@@ -62,11 +62,11 @@ test.describe('scenario as a document', () => {
     await expect(panel.locator('.rd-scn-name')).toHaveText('Przejazd');
 
     // step 1: one hexagon; step 2: it moved + a second one; step 3: first restyled, second removed
-    await page.locator(HEXAGON).click();
+    await page.locator(HEXAGON).click({ modifiers: ['Alt'] }); // Alt: not placed next to / connected to the selection
     await expect.poll(() => withGraph<number>(page, 'return graph.getChildVertices(graph.getDefaultParent()).length;')).toBe(1);
     await addStep(page, 'Start', { text: '## Wjazd pociągu\n- sygnał **S1**\n\n| Obiekt | Stan |\n|---|---|\n| S1 | zielony |' });
     await withGraph(page, 'const [a] = graph.getChildVertices(graph.getDefaultParent()); graph.moveCells([a], 160, 0);');
-    await page.locator(HEXAGON).click();
+    await page.locator(HEXAGON).click({ modifiers: ['Alt'] }); // Alt: not placed next to / connected to the selection
     await expect.poll(() => withGraph<number>(page, 'return graph.getChildVertices(graph.getDefaultParent()).length;')).toBe(2);
     await addStep(page, 'Move', { uml: '@startuml\nTrain -> RBC : MA Request\nRBC --> Train : Movement Authority\n@enduml' });
     await withGraph(

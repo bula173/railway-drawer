@@ -117,7 +117,7 @@ test.describe('templates', () => {
     await freshApp(page);
 
     // a selection: the inserted Hexagon (palette inserts select the new cells)
-    await page.locator('#drawio-palette-container section[data-palette-id="general"] .rd-dp-item[title="Hexagon"]').click();
+    await page.locator('#drawio-palette-container section[data-palette-id="general"] .rd-dp-item[title="Hexagon"]').click({ modifiers: ['Alt'] });
     await waitForCachedCount(page, 'shape=hexagon', 1);
 
     // the canvas context menu offers it too
@@ -126,7 +126,7 @@ test.describe('templates', () => {
     await page.keyboard.press('Escape');
     await expect(page.locator('#context-menu')).toBeHidden();
     // the right-click on the empty canvas cleared the selection: select the hexagon again
-    await page.locator('#drawio-palette-container section[data-palette-id="general"] .rd-dp-item[title="Hexagon"]').click();
+    await page.locator('#drawio-palette-container section[data-palette-id="general"] .rd-dp-item[title="Hexagon"]').click({ modifiers: ['Alt'] });
     await waitForCachedCount(page, 'shape=hexagon', 2);
 
     await page.locator('.menu-item[data-menu="file"]').click();

@@ -333,7 +333,7 @@ async function auditAllSurfaces(page: Page, a: Auditor): Promise<void> {
   await a.check('Properties: canvas', '#rightpanel-container');
 
   // Properties of a selected shape: Text / Style / Arrange
-  await page.locator(HEXAGON).click();
+  await page.locator(HEXAGON).click({ modifiers: ['Alt'] }); // Alt: not placed next to / connected to the selection
   await expect(page.locator('#prop-editor')).toBeVisible();
   await page.locator('.prop-tab[data-tab="text"]').click();
   await a.check('Properties: Text tab', '#rightpanel-container');
@@ -795,7 +795,7 @@ test.describe('theme contrast', () => {
     await closeMenus(page);
 
     const dark = new Auditor(page, 'dark');
-    await page.locator(HEXAGON).click();
+    await page.locator(HEXAGON).click({ modifiers: ['Alt'] }); // Alt: not placed next to / connected to the selection
     await dark.check('main window after View > Dark Mode');
     await openMenu(page, 'view');
     await dark.check('View menu after View > Dark Mode', '.menu-dropdown[data-menu="view"]');
