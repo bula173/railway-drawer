@@ -480,8 +480,9 @@ function readStringArray(key: string): string[] {
 }
 
 /**
- * @brief draw.io shape palettes (General, Misc, Advanced, Arrows, Flowchart, ERTMS, ...)
- * @details "General" also holds draw.io's Basic palette and the app's Basic shapes that draw.io
+ * @brief Shape palettes: ERTMS first, then draw.io's (General, Misc, Advanced, Arrows, Flowchart)
+ * @details ERTMS (the railway symbols, captioned tiles) is the first section and, like General,
+ * expanded for new users (stored expanded/visible flags still win). "General" also holds draw.io's Basic palette and the app's Basic shapes that draw.io
  * has no equivalent for (one section, see shapes-tab-palettes.ts). Otherwise the same entries,
  * titles, sizes and styles as draw.io (jgraph/drawio v32.4.1); inserted
  * cells keep draw.io's style strings, so saved files open 1:1 in draw.io. ERTMS is the draw.io
@@ -490,8 +491,12 @@ function readStringArray(key: string): string[] {
 createDrawioPaletteView({
   container: document.getElementById('drawio-palette-container')!,
   getGraph: () => tabManager.getActiveTab()?.graph ?? null,
-  palettes: shapesTabPalettes(() => MERGED_APP_GROUPS.flatMap((g) => shapeRegistry.getShapesByGroup(g))),
-  extraLibraries: [withErtmsDisplayTitles(ertmsPaletteSource(import.meta.env.BASE_URL))],
+  palettes: [
+    withErtmsDisplayTitles(ertmsPaletteSource(import.meta.env.BASE_URL)),
+    ...shapesTabPalettes(() => MERGED_APP_GROUPS.flatMap((g) => shapeRegistry.getShapesByGroup(g))),
+  ],
+  defaultExpanded: ['ertms', 'general'],
+  captionPalettes: ['ertms'],
   dropTarget: graphContainer,
   onError: (message) => globalNotificationManager.error(message),
   prepareInsert: prepareRailwayInsert,
@@ -530,6 +535,7 @@ const ensureErtmsTabView = (): void => {
     palettes: [],
     extraLibraries: [withErtmsDisplayTitles(ertmsPaletteSource(import.meta.env.BASE_URL))],
     defaultExpanded: ['ertms'],
+    captionPalettes: ['ertms'],
     userLibraries: false,
     showMoreMenu: false,
     storageKeySuffix: '.ertmsTab',

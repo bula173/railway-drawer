@@ -47,6 +47,8 @@ export interface DrawioPaletteViewOptions {
   dropTarget?: HTMLElement;
   /** Palettes expanded on first use (default: the first palette, and 'ertms'). */
   defaultExpanded?: string[];
+  /** Palettes whose tiles show their title under the thumbnail (e.g. ['ertms']). */
+  captionPalettes?: string[];
   /** Called after an insertion (e.g. to focus the graph). */
   onInsert?: (entry: PaletteEntry) => void;
   /**
@@ -222,6 +224,7 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
   const expandedFlags = readFlags(expandedKey);
   const firstId = options.palettes[0]?.id;
   const defaultExpanded = new Set(options.defaultExpanded ?? [firstId, 'ertms'].filter((x): x is string => !!x));
+  const captioned = new Set(options.captionPalettes ?? []);
 
   const root = el('div', 'rd-drawio-palette');
   const toolbar = el('div', 'rd-dp-toolbar');
@@ -421,6 +424,7 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
     thumb.style.width = `${THUMB_SIZE}px`;
     thumb.style.height = `${THUMB_SIZE}px`;
     item.appendChild(thumb);
+    if (captioned.has(cat.id) && entry.title) item.appendChild(el('span', 'rd-dp-caption', entry.title));
     pendingThumbs.set(thumb, entry);
     if (observer) observer.observe(thumb);
     else renderThumb(thumb);
@@ -485,6 +489,7 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
   function addCategory(source: PaletteSource, removable: boolean, before?: HTMLElement): Category {
     const meta = source as Partial<PaletteMeta> & { id: string; title: string };
     const catRoot = el('section', 'rd-dp-category');
+    if (captioned.has(meta.id)) catRoot.classList.add('rd-dp-captioned');
     catRoot.dataset.paletteId = meta.id;
     const header = el('button', 'rd-dp-header');
     header.type = 'button';

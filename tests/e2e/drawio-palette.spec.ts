@@ -58,7 +58,7 @@ test.describe('draw.io palettes in the maxGraph editor', () => {
     // draw.io General + Basic and the app's Basic group are one "General" section (no Basic header)
     await expect(page.locator('#shapes-container #app-shapes-container .shapes-group-header')).toHaveCount(0);
     const headers = page.locator('#shapes-container .rd-dp-category:not([hidden]) .rd-dp-header-title');
-    await expect(headers).toHaveText(['General', 'Misc', 'Advanced', 'Arrows', 'Flowchart', 'ERTMS']);
+    await expect(headers).toHaveText(['ERTMS', 'General', 'Misc', 'Advanced', 'Arrows', 'Flowchart']);
     await expect(container.locator('section[data-palette-id="basic"]')).toHaveCount(0);
 
     // General (expanded by default): draw.io's 45 General + 76 Basic entries + 4 merged app shapes;
@@ -111,7 +111,7 @@ test.describe('draw.io palettes in the maxGraph editor', () => {
 
     await page.locator('#drawio-palette-container .rd-dp-more').click();
     const menu = page.locator('#drawio-palette-container .rd-dp-menu');
-    await expect(menu.locator('.rd-dp-menu-row')).toHaveText(['General', 'Misc', 'Advanced', 'Arrows', 'Flowchart', 'Arrows (legacy)', 'ERTMS']);
+    await expect(menu.locator('.rd-dp-menu-row')).toHaveText(['ERTMS', 'General', 'Misc', 'Advanced', 'Arrows', 'Flowchart', 'Arrows (legacy)']);
     await expect(menu.locator('input[data-palette-id="basic"], input[data-menu-item-id="app-Basic"]')).toHaveCount(0);
     const generalBox = menu.locator('input[data-palette-id="general"]');
     await expect(generalBox).toBeChecked();

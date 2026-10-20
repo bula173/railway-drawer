@@ -123,6 +123,30 @@
   display: none;
 }
 
+/* Tiles with a caption (ERTMS): the short title under the thumbnail */
+.rd-dp-captioned .rd-dp-item {
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 62px;
+  height: auto;
+  min-height: 40px;
+  padding: 2px 1px;
+}
+
+.rd-dp-caption {
+  display: -webkit-box;
+  max-width: 100%;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  color: var(--rd-text-muted);
+  font-size: 10px;
+  line-height: 12px;
+  text-align: center;
+  overflow-wrap: anywhere;
+  pointer-events: none;
+}
+
 .rd-dp-item:hover,
 .rd-dp-item:focus-visible {
   border-color: var(--border, #ccc);
