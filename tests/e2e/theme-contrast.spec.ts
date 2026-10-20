@@ -295,6 +295,23 @@ async function fillTemplateDialog(page: Page, name: string): Promise<void> {
 }
 
 async function auditAllSurfaces(page: Page, a: Auditor): Promise<void> {
+  // Start card (not shown to automated browsers unless forced) and the narrow-screen banner
+  await page.evaluate(() => localStorage.setItem('rd.startCard.force', '1'));
+  await page.reload();
+  await expect(page.locator('.rd-start-card')).toBeVisible();
+  await a.check('start card', '.rd-start-card');
+  await a.shot('start-card');
+  await page.evaluate(() => localStorage.removeItem('rd.startCard.force'));
+  await page.keyboard.press('Escape');
+  await expect(page.locator('.rd-start-card')).toBeHidden();
+  const viewport = page.viewportSize();
+  await page.setViewportSize({ width: 390, height: 844 });
+  await expect(page.locator('.rd-narrow-banner')).toBeVisible();
+  await a.check('narrow-screen banner', '.rd-narrow-banner');
+  await a.shot('narrow-banner');
+  if (viewport) await page.setViewportSize(viewport);
+  await expect(page.locator('.rd-narrow-banner')).toBeHidden();
+
   await a.check('main window (Shapes tab, nothing selected)');
   await a.shot('main');
 
@@ -382,6 +399,13 @@ async function auditAllSurfaces(page: Page, a: Auditor): Promise<void> {
   await expect(editor).toHaveCount(0);
   await page.locator('#scenarios-panel .rd-scn-toggle').first().click().catch(() => undefined);
   await a.check('right: Scenarios panel (1 scenario, 1 step)', '#rightpanel-container');
+  // the scenario's "⋯" action menu
+  await page.locator('#scenarios-panel .rd-scn-head .rd-scn-more').first().click();
+  await expect(page.locator('#scenarios-panel .rd-scn-menu:not([hidden])')).toBeVisible();
+  await a.check('scenario "⋯" menu', '#scenarios-panel .rd-scn-menu:not([hidden])');
+  await a.shot('scenario-menu');
+  await page.keyboard.press('Escape');
+  await expect(page.locator('#scenarios-panel .rd-scn-menu:not([hidden])')).toHaveCount(0);
 
   // Scenario view (banner + side panel)
   await page.locator('#scenarios-panel .rd-scn-play').first().click();

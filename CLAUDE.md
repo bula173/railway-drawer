@@ -43,7 +43,7 @@ node scripts/railml/validate.ts [--xsd railml3.xsd] [files]  # dev only: xmllint
 CI (`.github/workflows/build-and-deploy.yml`) runs typecheck, typecheck:tests, lint, test:run, build and the
 Playwright subset (legacy-smoke, drawio-palette, templates, scenarios, style-edit, share, gitlab, ertms-data,
 scenario-uml-text, theme-contrast, remote-persist, scenario-doc, editor-commands, dark-shapes, ertms-routes, railml, drawio-compat,
-interaction, hover-arrows, railway-script, ux-batch). No
+interaction, hover-arrows, railway-script, ux-batch, ux-batch2b). No
 draw.io download is needed (`scripts/drawio-palettes` only runs locally, its output is committed). It does not deploy.
 
 ### E2E
@@ -154,6 +154,11 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   the drawing stays unchanged, reload keeps the script ("In sync with the drawing"); File > Import Railway Script… (new
   tab named after `name`), File > Export Railway Script… (.rdl.yaml = the text, .rdl.json = the data, generated for a tab
   without a script).
+- `tests/e2e/ux-batch2b.spec.ts` (any port): ERTMS palette first + expanded, captions, EN/PL search (zwrotnica, semafor,
+  balisa); palette click placement (cascade without overlap, next to the selected shape + edge, balise onto the selected
+  track = its track reference, one undo each); scenario "▶ Present" + "⋯" menu (items, Esc, Duplicate, 24 px targets);
+  start card (forced via `rd.startCard.force`: Esc, drop passes and dismisses, ERTMS action focuses the palette, "Don't
+  show again"); template topic names + hover preview; 390 px `rd-narrow` banner (dismissible) and canvas width > 300.
 - `tests/e2e/ux-batch.spec.ts` (any port): menubar keyboard pattern (roles, ↓/↑/Home/End, ←/→ between menus, Enter, Esc
   returns focus) and `<kbd>` shortcut hints, Help > Keyboard Shortcuts (keys + mouse), Help > About = `#status-version`
   (package.json), Properties states none / canvas / cell incl. a transparent group selected by a click in its gap and the
@@ -343,8 +348,24 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   draw.io's shape picker on plain click / blank drop, containers as clone parents, Ctrl+Shift+drag port constraint,
   touch. Tests: `src/__tests__/ui/hover-arrows.test.ts`, `tests/e2e/hover-arrows.spec.ts`.
 - ERTMS palette display (`src/ui/ertms-display.ts`, wraps `ertmsPaletteSource` in main-editor.ts): titles trimmed and
-  "SIgnal" -> "Signal" at display time only (ertms.xml stays byte-identical), points entries get the search tags
-  `points switch turnout zwrotnica`; UI text says "points" (catalogue label "Points").
+  "SIgnal" -> "Signal" at display time only (ertms.xml stays byte-identical), EN+PL railway search tags by kind / title
+  word (`RAILWAY_SEARCH_TAGS`: signal semafor sygnalizator, balise balisa, points switch turnout zwrotnica, axle counter
+  licznik osi, buffer stop kozioł, track tor, level crossing przejazd, LEU, RBC, train pociąg); UI text says "points"
+  (catalogue label "Points"). ERTMS is the FIRST section of the Shapes tab (`palettes: [ertms, ...shapesTabPalettes()]`,
+  `defaultExpanded: ['ertms', 'general']`, stored flags win) with captioned tiles (`captionPalettes: ['ertms']`,
+  `.rd-dp-caption`); the optional ERTMS tab stays off by default (the Shapes tab already leads with ERTMS).
+- Palette click placement (`src/ui/click-insert.ts` `clickInsertPlacement`, palette option `clickPlacement`; drag/drop
+  unchanged): snap-kind symbol (signal, balise, axle counter, LEU) + one selected track/track section -> the visible point
+  of its line nearest the view centre (snap.ts then snaps + sets track/km); one selected unlocked vertex + a vertex entry
+  -> 80 px east, vertically centred, moved down while taken, connected by an edge (draw.io dropAndConnect EAST; draw.io
+  needs Alt+Click, here Alt+Click skips it); else the view centre, cascading right/down to a free spot. One model update
+  (one undo), new cell selected, no container drop.
+- Start card (`src/ui/start-card.ts`, main-editor.ts): over an empty active tab (Insert ERTMS symbols / Open template… /
+  Open file… / Import railML… / Railway Script… / F1); dismissed by any model change making it non-empty, its actions,
+  Esc, ×; "Don't show again" = localStorage `rd.startCard.hidden`. Hidden while dragging (drops reach the canvas).
+  Automated browsers (`navigator.webdriver`) do not get it unless `rd.startCard.force` = '1' (e2e clicks the canvas centre).
+- Narrow screens (`src/ui/narrow-screen.ts`): < 900 px -> `body.rd-narrow` (fallback CSS hides both side panels and
+  `.panel-resize-handle`) + dismissible banner (`rd.narrowBanner.dismissed`).
 - Layers panel (`src/ui/layers.ts`) = the model's real layers (root children, listed top-most first, unnamed =
   "Background", `rd-routes` = "Routes"): current layer = `graph.setDefaultParent`; + Layer = `model.add(root, …)`;
   delete = `removeCells([layer], false)`; eye = `model.setVisible`; padlock = `locked=1` on the layer cell. All undoable
@@ -486,7 +507,9 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
 - Built-in **ERTMS templates**: `splitErtmsLibrary` (`ertms-templates.ts`) classifies `public/libraries/ertms.xml`
   by content: more than `TEMPLATE_CELL_THRESHOLD` (80) drawable cells (`mxCell` vertex/edge, nested included)
   = template (scenarios have 102..265, the simple elements 1..44). 40 entries -> 18 elements / 22 templates
-  (tested against the real file). Names "ERTMS scenario <n>" (library order) + a subtitle of the 3 rarest
+  (tested against the real file). Display names from the labels (`templateDisplayName`: first matching ERTMS topic in
+  `TOPICS`, e.g. "Level transition L0 → L1", "Section timer (L1)" + the ETCS level label; repeats numbered "… 2"),
+  `originalName` "ERTMS scenario <n>" (library order) in the tooltip and search; subtitle = the 3 rarest
   labels across scenarios (phrases before ids); every label is a search tag. Ids `ertms-tpl-<library index>`.
   `ertmsPaletteSource` (Shapes and ERTMS tabs) filters to the elements, entry ids keep the library index
   (`ertms-<index>-<slug>`); `loadErtmsTemplates` shares the one download. `drawio-compat.test.ts` parses the
@@ -506,7 +529,8 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   Name dialog `promptTemplateDetails` (`template-dialogs.ts`, name required, Enter/Escape; a window capture
   keydown listener keeps keys away from the shortcut dispatcher while it is open).
 - Panel (`templates-panel.ts`): search, "My templates" (Save…/Import…/Export…, empty-state hint, ✎/× on tiles)
-  above "ERTMS templates"; tiles 120x72 thumbnails from the shared palette renderer (lazy, IntersectionObserver).
+  above "ERTMS templates"; tiles 200x120 thumbnails from the shared palette renderer (lazy, IntersectionObserver),
+  one-line subtitle, hover = 480x300 preview (`.rd-tpl-preview`).
   Click -> popover: Insert into diagram (`insertTemplate` = `insertEntry` at the view centre, one undoable edit),
   Open as new diagram (`openTemplateAsNewDiagram`: `tabManager.createTab(name)` + `saveLoadController.load`,
   the tab is closed again if the load fails), Rename…/Delete… (user). Drag (`application/x-rd-template`) onto
@@ -805,9 +829,12 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
 - Keyboard: the dispatcher in `main-editor.ts` calls `scenarios.handleKeydown(e)` right after Ctrl+S; only while the
   view is open: ←/PageUp, →/PageDown, Home/End, Esc, Space (autoplay); editing shortcuts are prevented, every other key is stopped
   (`scenario-keys.ts` `scenarioKeyAction`); fields/IME and Ctrl+S pass.
-- Panel (`scenarios-panel.ts`, `#scenarios-panel`): "+ New scenario", per scenario ▷ present / ✎ / ⧉ / × (confirm),
-  expandable step list (lazy 64x40 thumbnails from the palette's shared renderer, ↑ ↓ ⟳ update-from-drawing (confirm)
-  ✎ ⧉ ×, drag to reorder), "+ Add step". Dialogs = `promptTemplateDetails`/`confirmTemplateDialog`. Wiring:
+- Panel (`scenarios-panel.ts`, `#scenarios-panel`): "+ New scenario", per scenario "▶ Present" (`.rd-scn-play`) + "⋯"
+  (`.rd-scn-more`, role=menu `.rd-scn-menu`, position fixed, Esc/↑/↓): Edit… / Duplicate / Export HTML / Export PDF /
+  Export Slides / Delete… (items keep the classes `.rd-scn-edit`, `-duplicate`, `-export`, `-export-pdf`,
+  `-export-slides`, `-delete`), expandable step list (lazy 64x40 thumbnails from the palette's shared renderer; per step
+  "⋯": Edit… / Update from drawing (confirm) / Duplicate / Move up / Move down / Delete…, classes `.rd-scn-step-*`;
+  drag to reorder), "+ Add step"; names ellipsize with a title tooltip; targets >= 24 px. E2E opens "⋯" first. Dialogs = `promptTemplateDetails`/`confirmTemplateDialog`. Wiring:
   `install-scenarios.ts`. File > New opens a new tab (the current tab and its scenarios stay).
 - Tests: `src/scenarios/__tests__/` (model, format/round trip/draw.io edits/share split, tabs + cache + view + keys +
   panel; `scenario-uml-text-format.test.ts` multi-line UML/Markdown round trips incl. a draw.io-style re-save, cache,
