@@ -4,6 +4,7 @@ import { SaveLoadController } from './saveload';
 import { isRailmlFile, requestRailmlOpen } from '../railml/install-railml';
 import { toggleConnectionArrows } from './hover-arrows';
 import { setGridShown } from './grid-toggle';
+import { togglePanel } from './side-panels';
 import type { AlignmentController } from './alignment';
 import type { ExportImageController } from './export-image';
 import type { LeftPanelTabs } from './left-panel-tabs';
@@ -453,6 +454,11 @@ export class MenuController {
       case 'showGrid':
         // Same as the toolbar grid button and Properties > Canvas > Grid: grid shown + snapping
         setGridShown(this.graph, !this.graph.gridEnabled);
+        break;
+
+      case 'toggleLeftPanel':
+      case 'toggleRightPanel':
+        togglePanel(action === 'toggleLeftPanel' ? 'left' : 'right');
         break;
 
       case 'importDrawio':

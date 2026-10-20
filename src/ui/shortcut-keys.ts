@@ -36,6 +36,8 @@ export const ACTION_SHORTCUTS: Readonly<Record<string, ShortcutSpec>> = {
   zoomActual: { mod: true, key: '0' },
   fitWindow: { mod: true, key: '1' },
   toggleConnectionArrows: { alt: true, shift: true, key: 'A' },
+  toggleLeftPanel: { mod: true, shift: true, key: 'K' },
+  toggleRightPanel: { mod: true, shift: true, key: 'P' },
   shortcuts: { key: 'F1' },
 };
 

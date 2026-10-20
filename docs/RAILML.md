@@ -2,11 +2,11 @@
 
 Railway Drawer reads and writes [railML](https://www.railml.org) **3.2** files (`src/railml/`).
 
-- **File > Export railML 3.2…** writes the active tab. The railway checks run first; a dialog shows
+- **File > Export > railML 3.2…** writes the active tab. The railway checks run first; a dialog shows
   what will be written, the check results, objects that could not be placed on the topology and
   objects without a railML element. It never blocks the export. Option: include the Railway Drawer
   extension (`rd:`, default on) for a lossless re-import; off = pure railML 3.2.
-- **File > Import railML…**, **File > Open** of a `.railml`/`.xml` whose root is `<railML>`, and a
+- **File > Import > railML 3.2…**, **File > Open** of a `.railml`/`.xml` whose root is `<railML>`, and a
   railML file **dropped on the canvas** open the file in a **new tab**. Notes (unplaced objects,
   preserved content, generated layout, ...) are listed in a dialog.
 

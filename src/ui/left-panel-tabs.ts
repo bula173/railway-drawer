@@ -1,12 +1,25 @@
 export type LeftPanelTab = 'shapes' | 'ertms' | 'templates' | 'layers' | 'plantuml' | 'railwayScript';
 export type CloseableTab = 'plantuml' | 'ertms';
 
+const CLOSEABLE: readonly CloseableTab[] = ['plantuml', 'ertms'];
+
+/**
+ * The left panel's tab strip: one row; the tabs that do not fit go into the "»" overflow menu
+ * (`.left-panel-tab-more` -> `.left-panel-overflow-menu` with `.left-panel-overflow-item[data-tab]`).
+ * The active tab always stays in the row. PlantUML and ERTMS are closeable (× in the tab; reopened
+ * from Extras > PlantUML Editor / View > ERTMS Tab).
+ */
 export class LeftPanelTabs {
   private container: HTMLElement;
+  private tabBar!: HTMLElement;
+  private moreButton!: HTMLButtonElement;
+  private overflowMenu!: HTMLElement;
   private tabButtons: Map<LeftPanelTab, HTMLElement> = new Map();
+  private tabLabels: Map<LeftPanelTab, string> = new Map();
   private tabContents: Map<LeftPanelTab, HTMLElement> = new Map();
   private activeTab: LeftPanelTab = 'shapes';
   private hiddenTabs: Set<CloseableTab> = new Set();
+  private overflowTabs: LeftPanelTab[] = [];
   private visibilityListeners: Array<(tabId: CloseableTab, visible: boolean) => void> = [];
   private switchListeners: Array<(tabId: LeftPanelTab) => void> = [];
 
@@ -20,6 +33,7 @@ export class LeftPanelTabs {
   private createTabBar() {
     const tabBar = document.createElement('div');
     tabBar.className = 'left-panel-tabbar';
+    this.tabBar = tabBar;
 
     const shapeTabBtn = this.createTabButton('shapes', 'Shapes');
     const ertmsTabBtn = this.createTabButton('ertms', 'ERTMS');
@@ -27,24 +41,57 @@ export class LeftPanelTabs {
     const templatesTabBtn = this.createTabButton('templates', 'Templates');
     templatesTabBtn.title = 'ERTMS templates and my templates';
     const layerTabBtn = this.createTabButton('layers', 'Layers');
-    const plantumlTabBtn = this.createTabButton('plantuml', '🌿 PlantUML');
+    const plantumlTabBtn = this.createTabButton('plantuml', 'PlantUML');
+    plantumlTabBtn.title = 'PlantUML editor (also Extras > PlantUML Editor)';
     const scriptTabBtn = this.createTabButton('railwayScript', 'Railway Script');
-    scriptTabBtn.title = 'Railway Script: describe the layout as YAML/JSON text (src/railway-script)';
-    scriptTabBtn.dataset.tab = 'railwayScript';
+    scriptTabBtn.title = 'Railway Script: describe the layout as YAML/JSON text (also Railway > Railway Script Editor)';
 
-    tabBar.appendChild(shapeTabBtn);
-    tabBar.appendChild(ertmsTabBtn);
-    tabBar.appendChild(templatesTabBtn);
-    tabBar.appendChild(layerTabBtn);
-    tabBar.appendChild(plantumlTabBtn);
-    tabBar.appendChild(scriptTabBtn);
+    tabBar.append(shapeTabBtn, ertmsTabBtn, templatesTabBtn, layerTabBtn, plantumlTabBtn, scriptTabBtn);
+
+    // "»": the tabs that do not fit
+    this.moreButton = document.createElement('button');
+    this.moreButton.type = 'button';
+    this.moreButton.className = 'left-panel-tab-more';
+    this.moreButton.textContent = '»';
+    this.moreButton.setAttribute('aria-label', 'More tabs');
+    this.moreButton.title = 'More tabs';
+    this.moreButton.setAttribute('aria-haspopup', 'menu');
+    this.moreButton.setAttribute('aria-expanded', 'false');
+    this.moreButton.hidden = true;
+    this.overflowMenu = document.createElement('div');
+    this.overflowMenu.className = 'left-panel-overflow-menu';
+    this.overflowMenu.setAttribute('role', 'menu');
+    this.overflowMenu.setAttribute('aria-label', 'More tabs');
+    this.overflowMenu.hidden = true;
+    this.moreButton.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (this.overflowMenu.hidden) this.openOverflowMenu();
+      else this.closeOverflowMenu(false);
+    });
+    this.moreButton.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        this.openOverflowMenu();
+      }
+    });
+    this.overflowMenu.addEventListener('keydown', (e) => this.onOverflowKeydown(e));
+    document.addEventListener('click', (e) => {
+      if (!this.overflowMenu.contains(e.target as Node)) this.closeOverflowMenu(false);
+    });
+    tabBar.append(this.moreButton);
 
     this.container.insertBefore(tabBar, this.container.firstChild);
+    this.container.append(this.overflowMenu);
+
+    if (typeof ResizeObserver !== 'undefined') new ResizeObserver(() => this.layoutTabs()).observe(tabBar);
+    this.layoutTabs();
   }
 
   private createTabButton(tabId: LeftPanelTab, label: string): HTMLElement {
     const btn = document.createElement('button');
+    btn.type = 'button';
     btn.className = 'left-panel-tab-btn';
+    btn.dataset.tab = tabId;
     if (tabId === this.activeTab) {
       btn.classList.add('active');
     }
@@ -53,17 +100,14 @@ export class LeftPanelTabs {
     const labelSpan = document.createElement('span');
     labelSpan.textContent = label;
     btn.appendChild(labelSpan);
+    this.tabLabels.set(tabId, label);
 
-    // Add close button for closeable tabs
-    const closeableTabs: CloseableTab[] = ['plantuml', 'ertms'];
-    if (closeableTabs.includes(tabId as CloseableTab)) {
+    // Close button for closeable tabs
+    if (CLOSEABLE.includes(tabId as CloseableTab)) {
       const closeBtn = document.createElement('span');
       closeBtn.className = 'tab-close-btn';
       closeBtn.textContent = '×';
-      closeBtn.style.marginLeft = '4px';
-      closeBtn.style.cursor = 'pointer';
-      closeBtn.style.fontSize = '16px';
-      closeBtn.style.fontWeight = 'bold';
+      closeBtn.title = `Close the ${label} tab`;
       closeBtn.addEventListener('click', (e) => {
         e.stopPropagation();
         this.closeTab(tabId as CloseableTab);
@@ -75,6 +119,93 @@ export class LeftPanelTabs {
 
     this.tabButtons.set(tabId, btn);
     return btn;
+  }
+
+  /** One row: hides the tabs that do not fit (the active one always stays) behind "»". */
+  layoutTabs(): void {
+    if (!this.tabBar) return;
+    const shown = Array.from(this.tabButtons.entries()).filter(([id]) => !this.hiddenTabs.has(id as CloseableTab));
+    for (const [, btn] of shown) btn.classList.remove('rd-tab-overflow');
+    this.moreButton.hidden = true;
+    const available = this.tabBar.clientWidth;
+    const widths = shown.map(([, btn]) => btn.getBoundingClientRect().width);
+    const total = widths.reduce((s, w) => s + w, 0);
+    this.overflowTabs = [];
+    if (available <= 0 || total <= available + 0.5) {
+      this.closeOverflowMenu(false);
+      return;
+    }
+    this.moreButton.hidden = false;
+    const room = available - this.moreButton.getBoundingClientRect().width;
+    const activeIndex = shown.findIndex(([id]) => id === this.activeTab);
+    const activeWidth = activeIndex >= 0 ? widths[activeIndex] : 0;
+    let used = activeWidth;
+    shown.forEach(([id, btn], i) => {
+      if (i === activeIndex) return;
+      if (used + widths[i] <= room + 0.5) {
+        used += widths[i];
+      } else {
+        btn.classList.add('rd-tab-overflow');
+        this.overflowTabs.push(id);
+      }
+    });
+    if (!this.overflowMenu.hidden) this.renderOverflowMenu();
+  }
+
+  private renderOverflowMenu(): void {
+    this.overflowMenu.replaceChildren(
+      ...this.overflowTabs.map((id) => {
+        const item = document.createElement('button');
+        item.type = 'button';
+        item.className = 'left-panel-overflow-item';
+        item.dataset.tab = id;
+        item.setAttribute('role', 'menuitem');
+        item.tabIndex = -1;
+        item.textContent = this.tabLabels.get(id) ?? id;
+        item.addEventListener('click', (e) => {
+          e.stopPropagation();
+          this.closeOverflowMenu(false);
+          this.switchTab(id);
+          this.tabButtons.get(id)?.focus();
+        });
+        return item;
+      })
+    );
+  }
+
+  private openOverflowMenu(): void {
+    this.renderOverflowMenu();
+    const bar = this.container.getBoundingClientRect();
+    const more = this.moreButton.getBoundingClientRect();
+    this.overflowMenu.style.top = `${Math.round(more.bottom - bar.top)}px`;
+    this.overflowMenu.hidden = false;
+    this.moreButton.setAttribute('aria-expanded', 'true');
+    this.overflowMenu.querySelector<HTMLElement>('[role="menuitem"]')?.focus();
+  }
+
+  private closeOverflowMenu(focusButton: boolean): void {
+    if (this.overflowMenu.hidden) return;
+    this.overflowMenu.hidden = true;
+    this.moreButton.setAttribute('aria-expanded', 'false');
+    if (focusButton) this.moreButton.focus();
+  }
+
+  private onOverflowKeydown(e: KeyboardEvent): void {
+    const items = Array.from(this.overflowMenu.querySelectorAll<HTMLElement>('[role="menuitem"]'));
+    const i = items.indexOf(document.activeElement as HTMLElement);
+    const focus = (to: number): void => {
+      e.preventDefault();
+      items[(to + items.length) % items.length]?.focus();
+    };
+    if (e.key === 'ArrowDown') focus(i + 1);
+    else if (e.key === 'ArrowUp') focus(i - 1);
+    else if (e.key === 'Home') focus(0);
+    else if (e.key === 'End') focus(items.length - 1);
+    else if (e.key === 'Escape') {
+      e.preventDefault();
+      e.stopPropagation();
+      this.closeOverflowMenu(true);
+    } else if (e.key === 'Tab') this.closeOverflowMenu(false);
   }
 
   registerTabContent(tabId: LeftPanelTab, contentId: string) {
@@ -116,6 +247,7 @@ export class LeftPanelTabs {
     }
 
     this.activeTab = tabId;
+    this.layoutTabs();
     this.switchListeners.forEach((listener) => listener(tabId));
   }
 
@@ -132,7 +264,6 @@ export class LeftPanelTabs {
    * Close (hide) a tab
    */
   closeTab(tabId: CloseableTab): void {
-    console.log('[LeftPanelTabs] Closing tab:', tabId);
     this.hiddenTabs.add(tabId);
 
     const btn = this.tabButtons.get(tabId);
@@ -145,6 +276,7 @@ export class LeftPanelTabs {
       const defaultTab: LeftPanelTab = 'shapes';
       this.switchTab(defaultTab);
     }
+    this.layoutTabs();
     this.visibilityListeners.forEach((listener) => listener(tabId, false));
   }
 
@@ -152,7 +284,6 @@ export class LeftPanelTabs {
    * Show (reopen) a hidden tab
    */
   showTab(tabId: CloseableTab): void {
-    console.log('[LeftPanelTabs] Showing tab:', tabId);
     this.hiddenTabs.delete(tabId);
 
     const btn = this.tabButtons.get(tabId);
@@ -168,6 +299,7 @@ export class LeftPanelTabs {
 
     // Switch to the newly shown tab
     this.switchTab(tabId);
+    this.layoutTabs();
     this.visibilityListeners.forEach((listener) => listener(tabId, true));
   }
 

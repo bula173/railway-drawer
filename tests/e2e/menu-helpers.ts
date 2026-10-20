@@ -2,6 +2,7 @@
  * Menu helpers shared by the e2e specs: items inside File > Import / Export (and the nested
  * Railway Data / Scenario submenus) are only visible while their submenu is hovered or focused.
  */
+import { expect } from '@playwright/test';
 import type { Locator, Page } from '@playwright/test';
 
 /** Hovers the submenu titles that contain `item` (outermost first), so the item is visible. */
@@ -24,4 +25,26 @@ export async function clickMenuItem(page: Page, menu: string, action: string): P
   const item = page.locator(`.menu-dropdown[data-menu="${menu}"] [data-action="${action}"]`);
   await revealMenuItem(item);
   await item.click();
+}
+
+/**
+ * Activates a left-panel tab (`data-tab`: shapes, ertms, templates, layers, plantuml, railwayScript)
+ * from the tab strip, or from its "»" overflow menu when it does not fit in the row.
+ */
+export async function openLeftTab(page: Page, tab: string): Promise<void> {
+  const button = page.locator(`.left-panel-tab-btn[data-tab="${tab}"]`);
+  if (!(await button.isVisible())) {
+    await page.locator('.left-panel-tab-more').click();
+    await page.locator(`.left-panel-overflow-item[data-tab="${tab}"]`).click();
+  } else {
+    await button.click();
+  }
+  await expect(button).toHaveClass(/\bactive\b/);
+}
+
+/** The labels of the left-panel tabs that are open (in the row or in the "»" menu), in order. */
+export async function leftTabLabels(page: Page): Promise<string[]> {
+  return page
+    .locator('.left-panel-tab-btn')
+    .evaluateAll((btns) => btns.filter((b) => (b as HTMLElement).style.display !== 'none').map((b) => b.querySelector('span')?.textContent ?? ''));
 }

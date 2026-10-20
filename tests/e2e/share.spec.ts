@@ -8,6 +8,7 @@
  */
 import { test, expect } from '@playwright/test';
 import type { Page } from '@playwright/test';
+import { openLeftTab } from './menu-helpers';
 
 function cachedXml(page: Page): Promise<string> {
   return page.evaluate(() => {
@@ -44,7 +45,7 @@ test.describe('share', () => {
 
     // Tab 1: a hexagon; tab 2: an ERTMS template opened as a new diagram
     await page.locator('#drawio-palette-container section[data-palette-id="general"] .rd-dp-item[title="Hexagon"]').click();
-    await page.locator('.left-panel-tab-btn', { hasText: 'Templates' }).click();
+    await openLeftTab(page, 'templates');
     await page.locator('#templates-panel [data-section="builtin"] .rd-tpl-tile').nth(1).click();
     await page.locator('.rd-tpl-popover [data-action="open"]').click();
     await expect(page.locator('#tabs-container .tab-button')).toHaveCount(2);

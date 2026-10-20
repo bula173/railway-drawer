@@ -13,7 +13,7 @@ import { readFile } from 'fs/promises';
 import { resolve } from 'path';
 import { test, expect } from '@playwright/test';
 import type { Page } from '@playwright/test';
-import { clickMenuItem } from './menu-helpers';
+import { clickMenuItem, openLeftTab } from './menu-helpers';
 
 const MODEL_XML = `<mxGraphModel><root><mxCell id="0"/><mxCell id="1" parent="0"/>
 <mxCell id="A" value="Alpha" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="60" y="60" width="120" height="60" as="geometry"/></mxCell>
@@ -448,7 +448,7 @@ test('a file with the old app-only layers (rdLayerId) opens with draw.io layers,
   const chooser = page.waitForEvent('filechooser');
   await menu(page, 'file', 'open');
   await (await chooser).setFiles({ name: 'old-layers.drawio', mimeType: 'application/xml', buffer: Buffer.from(text) });
-  await page.locator('.left-panel-tab-btn', { hasText: 'Layers' }).click();
+  await openLeftTab(page, 'layers');
   await expect(page.locator('#layers-list .layer-item .layer-name')).toHaveText(['Layer 3 (1)', 'Layer 2 (4)', 'Background (3)']);
   await expect(page.locator('.save-status')).toContainText('Unsaved');
   const [file] = await Promise.all([page.waitForEvent('download'), menu(page, 'file', 'export')]);

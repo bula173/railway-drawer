@@ -427,6 +427,64 @@ body {
   flex-direction: column;
 }
 
+/* Collapsible / resizable side panels (src/ui/side-panels.ts) */
+.left-panel.rd-panel-collapsed,
+.right-panel.rd-panel-collapsed {
+  display: none;
+}
+
+/* Narrow screens: body.rd-narrow (set below 900 px) hides both panels; a toggle opens one */
+body.rd-narrow .left-panel:not(.rd-panel-open-narrow),
+body.rd-narrow .right-panel:not(.rd-panel-open-narrow) {
+  display: none;
+}
+
+/* 8 px hit area along the panel's inner edge (not over the canvas and its scrollbars); a 2 px line shows on
+   hover, focus and while dragging */
+.panel-resize-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 8px;
+  z-index: 20;
+  cursor: col-resize;
+  touch-action: none;
+}
+
+.panel-resize-handle-right {
+  right: 0;
+}
+
+.panel-resize-handle-left {
+  left: 0;
+}
+
+.panel-resize-handle::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 3px;
+  width: 2px;
+  background: transparent;
+  transition: background-color 0.15s;
+}
+
+.panel-resize-handle:hover::after,
+.panel-resize-handle:focus-visible::after,
+.panel-resize-handle.rd-resizing::after {
+  background: var(--rd-accent);
+}
+
+.panel-resize-handle:focus-visible {
+  outline: none;
+}
+
+body.rd-col-resizing {
+  cursor: col-resize;
+  user-select: none;
+}
+
 /* Panel Header */
 .panel-header {
   height: 36px;
@@ -624,8 +682,9 @@ body {
 /* Left Panel Tabs */
 .left-panel-tabbar {
   display: flex;
-  /* Narrow panel: the tabs wrap onto a second row instead of cutting their labels */
-  flex-wrap: wrap;
+  /* One row: the tabs that do not fit go into the "»" menu (src/ui/left-panel-tabs.ts) */
+  flex-wrap: nowrap;
+  overflow: hidden;
   gap: 0;
   border-bottom: 1px solid var(--rd-border);
   background: var(--rd-surface-2);
@@ -649,6 +708,73 @@ body {
 .left-panel-tab-btn:hover {
   background: var(--rd-hover);
   color: var(--rd-text);
+}
+
+.left-panel-tab-btn.rd-tab-overflow {
+  display: none;
+}
+
+.left-panel-tab-btn:focus-visible,
+.left-panel-tab-more:focus-visible,
+.left-panel-overflow-item:focus-visible {
+  outline: 2px solid var(--rd-focus);
+  outline-offset: -2px;
+}
+
+.left-panel-tab-more {
+  flex: 0 0 auto;
+  min-width: 28px;
+  min-height: 28px;
+  margin-left: auto;
+  padding: 0 8px;
+  background: var(--rd-surface-3);
+  border: none;
+  border-bottom: 2px solid var(--rd-border);
+  color: var(--rd-text);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.left-panel-tab-more[hidden] {
+  display: none;
+}
+
+.left-panel-tab-more:hover {
+  background: var(--rd-hover);
+}
+
+.left-panel-overflow-menu {
+  position: absolute;
+  right: 4px;
+  z-index: 30;
+  min-width: 160px;
+  padding: 4px 0;
+  background: var(--rd-surface);
+  border: 1px solid var(--rd-border-strong);
+  border-radius: 4px;
+  box-shadow: 0 2px 8px var(--rd-shadow);
+}
+
+.left-panel-overflow-menu[hidden] {
+  display: none;
+}
+
+.left-panel-overflow-item {
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  padding: 4px 12px;
+  border: 0;
+  background: transparent;
+  color: var(--rd-text);
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.left-panel-overflow-item:hover,
+.left-panel-overflow-item:focus {
+  background: var(--rd-surface-3);
 }
 
 .left-panel-tab-btn.active {

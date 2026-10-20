@@ -117,6 +117,10 @@
               <div class="menu-dropdown-item" data-action="zoomActual">Reset Zoom</div>
               <div class="menu-dropdown-item" data-action="fitWindow">Fit to Window</div>
               <div class="rd-sep"></div>
+              <!-- src/ui/side-panels.ts (also the toolbar's panel buttons; draw.io: Ctrl+Shift+K / Ctrl+Shift+P) -->
+              <div class="menu-dropdown-item" data-action="toggleLeftPanel" role="menuitemcheckbox" aria-checked="true">Shapes Panel</div>
+              <div class="menu-dropdown-item" data-action="toggleRightPanel" role="menuitemcheckbox" aria-checked="true">Format Panel</div>
+              <div class="rd-sep"></div>
               <div class="menu-dropdown-item" data-action="showGrid" role="menuitemcheckbox" aria-checked="true" title="Show the grid and snap to it (also the toolbar grid button)">Grid</div>
               <div class="menu-dropdown-item" data-action="toggleDarkMode" role="menuitemcheckbox" aria-checked="false">Dark Mode</div>
               <div class="menu-dropdown-item" data-action="toggleErtmsTab" role="menuitemcheckbox" aria-checked="false">ERTMS Tab</div>
@@ -230,6 +234,8 @@
 
         <div class="toolbar-section">
           <div class="toolbar-group" role="group" aria-label="View">
+            <button type="button" class="toolbar-btn rd-icon-btn" id="btn-toggle-left-panel" data-icon="panelLeft" data-label="Shapes panel" data-shortcut="toggleLeftPanel" aria-pressed="true" aria-controls="leftpanel-container"></button>
+            <button type="button" class="toolbar-btn rd-icon-btn" id="btn-toggle-right-panel" data-icon="panelRight" data-label="Format panel" data-shortcut="toggleRightPanel" aria-pressed="true" aria-controls="rightpanel-container"></button>
             <button type="button" class="toolbar-btn rd-icon-btn" id="btn-fullscreen" data-icon="fullscreen" data-label="Fullscreen"></button>
           </div>
         </div>

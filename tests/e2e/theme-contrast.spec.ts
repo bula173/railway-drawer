@@ -29,7 +29,7 @@
  */
 import { test, expect } from '@playwright/test';
 import type { Page } from '@playwright/test';
-import { clickMenuItem, revealMenuItem } from './menu-helpers';
+import { clickMenuItem, openLeftTab, revealMenuItem } from './menu-helpers';
 
 type Theme = 'light' | 'dark';
 
@@ -350,19 +350,32 @@ async function auditAllSurfaces(page: Page, a: Auditor): Promise<void> {
   await page.locator('.status-bar').click({ position: { x: 4, y: 4 } });
 
   // Left panel tabs
-  await page.locator('.left-panel-tab-btn', { hasText: 'Templates' }).click();
+  await openLeftTab(page, 'templates');
   await page.locator('#templates-panel .rd-tpl-tile').first().waitFor();
   await a.check('left: Templates tab', '#leftpanel-container');
-  await page.locator('.left-panel-tab-btn', { hasText: 'Layers' }).click();
+  await openLeftTab(page, 'layers');
   await a.check('left: Layers tab', '#leftpanel-container');
-  await page.locator('.left-panel-tab-btn', { hasText: 'PlantUML' }).click();
+  // The tab strip's » overflow menu and the toolbar's Align / distribute dropdown
+  await page.locator('.left-panel-tab-more').click();
+  await expect(page.locator('.left-panel-overflow-menu')).toBeVisible();
+  await a.check('left: tab overflow (») menu', '#leftpanel-container');
+  await a.shot('tab-overflow');
+  await page.keyboard.press('Escape');
+  await page.locator('#btn-align').click();
+  await expect(page.locator('#align-menu')).toBeVisible();
+  await page.locator('#btn-align-middle').hover();
+  await a.check('toolbar: Align / distribute dropdown', '#align-menu', '#toolbar-container');
+  await a.shot('align-menu');
+  await page.keyboard.press('Escape');
+  await expect(page.locator('#align-menu')).toBeHidden();
+  await openLeftTab(page, 'plantuml');
   await a.check('left: PlantUML tab', '#leftpanel-container');
   await a.shot('plantuml');
   await openMenu(page, 'view');
   await page.locator('[data-action="toggleErtmsTab"]').click();
   await page.locator('#ertms-panel .rd-dp-item').first().waitFor();
   await a.check('left: ERTMS tab', '#leftpanel-container');
-  await page.locator('.left-panel-tab-btn', { hasText: 'Shapes' }).click();
+  await openLeftTab(page, 'shapes');
 
   // Right panel: Data (railway object selected), Checks, Scenarios
   await page.locator(ERTMS_SIGNAL).click();
@@ -675,7 +688,7 @@ async function auditFeatureSurfaces(page: Page, a: Auditor): Promise<void> {
 }
 
 async function auditRailwayScript(page: Page, a: Auditor): Promise<void> {
-  await page.locator('.left-panel-tab-btn[data-tab="railwayScript"]').click();
+  await openLeftTab(page, 'railwayScript');
   const panel = page.locator('[data-testid="railway-script-panel"]');
   const text = panel.locator('[data-testid="railway-script-text"]');
   const status = panel.locator('[data-testid="railway-script-status"]');

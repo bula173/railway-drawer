@@ -14,7 +14,7 @@
 import { mkdir } from 'node:fs/promises';
 import { test, expect } from '@playwright/test';
 import type { Download, Page } from '@playwright/test';
-import { clickMenuItem } from './menu-helpers';
+import { clickMenuItem, openLeftTab } from './menu-helpers';
 
 type Theme = 'light' | 'dark';
 
@@ -352,7 +352,7 @@ test.describe('dark theme: shapes are readable', () => {
     expect(trackThumb.strokes).not.toContain('#5f5f5f');
 
     // Templates tab
-    await page.locator('.left-panel-tab-btn', { hasText: 'Templates' }).click();
+    await openLeftTab(page, 'templates');
     await page.locator('#templates-panel .rd-tpl-tile').first().waitFor();
     const tiles = page.locator('#templates-panel .rd-tpl-thumb');
     for (let i = 0; i < Math.min(4, await tiles.count()); i++) await tiles.nth(i).scrollIntoViewIfNeeded();
@@ -364,7 +364,7 @@ test.describe('dark theme: shapes are readable', () => {
     expect(await offenders(page, templates.map((t) => ({ ...t, texts: [] })))).toEqual([]);
 
     // View > Dark Mode back to light: the thumbnails re-render with the light colours
-    await page.locator('.left-panel-tab-btn', { hasText: 'Shapes' }).click();
+    await openLeftTab(page, 'shapes');
     await menu(page, 'view', 'toggleDarkMode');
     await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
     await expect

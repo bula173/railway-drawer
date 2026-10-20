@@ -43,7 +43,7 @@ node scripts/railml/validate.ts [--xsd railml3.xsd] [files]  # dev only: xmllint
 CI (`.github/workflows/build-and-deploy.yml`) runs typecheck, typecheck:tests, lint, test:run, build and the
 Playwright subset (legacy-smoke, drawio-palette, templates, scenarios, style-edit, share, gitlab, ertms-data,
 scenario-uml-text, theme-contrast, remote-persist, scenario-doc, editor-commands, dark-shapes, ertms-routes, railml, drawio-compat,
-interaction, hover-arrows, railway-script, ux-batch). No
+interaction, hover-arrows, railway-script, ux-batch2a, ux-batch). No
 draw.io download is needed (`scripts/drawio-palettes` only runs locally, its output is committed). It does not deploy.
 
 ### E2E
@@ -87,10 +87,10 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   insert, open as new diagram, drag), tab bar labels not cut, Save as Template… -> reload -> insert, rename, delete.
 - `tests/e2e/ertms-data.spec.ts` (any port): ERTMS palette signal/balise get their kind and IDs on insert, Data panel
   fields (km chainage `12+345`, enum, text with Polish characters), duplicate signal ID -> Checks error + badge,
-  click selects the cell, Edit -> fix clears it, Ctrl+Z/Ctrl+Y, File > Export Railway Data > Signals (CSV: BOM, rows),
+  click selects the cell, Edit -> fix clears it, Ctrl+Z/Ctrl+Y, File > Export > Railway Data > Signals (CSV: BOM, rows),
   reload keeps the data, File > Save writes `<object rdKind=... rdId=...>`.
 - `tests/e2e/theme-contrast.spec.ts` (any port): light and dark theme (localStorage `rd.theme` with the opposite
-  system preference emulated, and View > Dark Mode both ways): opens every surface (menus + submenu, toolbar, left tabs
+  system preference emulated, and View > Dark Mode both ways): opens every surface (menus incl. Railway + File > Import / Export > Railway Data / Scenario submenus, toolbar, left tabs
   Shapes/Templates/Layers/PlantUML/ERTMS, Properties canvas/Text/Style/Arrange, Data, Checks, Scenarios, scenario
   dialog + step editor + view, context menu, Save as Template (with error), Share, Keyboard Shortcuts, About, Save As
   (with error), image upload,
@@ -115,19 +115,19 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   Screenshots: `test-results/dark-shapes/*.png`.
 - `tests/e2e/ertms-routes.spec.ts` (any port): loads a layout (T1, T2, points W1, S1-S3) with `saveLoadController.load`,
   Route tool (toolbar `#btn-route-tool`, clicks on signals) creates R1 (S1->S3, W1 reverse) and R2 (S1->S2, W1 normal),
-  Extras > Route Table… rows + CSV/XLSX, Interlocking tab lists R1/R2, route edited in the Data panel, wrong points
-  position -> `route-points` issue, View > Show Routes, ERTMS signal dropped near T1 snaps (side, rdTrackId, km),
-  moved next to T2 re-snaps, Ctrl+Z/Ctrl+Y, Extras > Recalculate km, km ruler.
+  Railway > Route Table… rows + CSV/XLSX, Interlocking tab lists R1/R2, route edited in the Data panel, wrong points
+  position -> `route-points` issue, Railway > Show Routes, ERTMS signal dropped near T1 snaps (side, rdTrackId, km),
+  moved next to T2 re-snaps, Ctrl+Z/Ctrl+Y, Railway > Recalculate km, km ruler.
 - `tests/e2e/railml.spec.ts` (any port): layout (T1/T2, W1, S1-S3, BG1 with B1/B2, AC1, route R1) loaded with
-  `saveLoadController.load`; File > Export railML 3.2… dialog (counts, checks, extension box) -> download parsed in the
+  `saveLoadController.load`; File > Export > railML 3.2… dialog (counts, checks, extension box) -> download parsed in the
   page (4 netElements, a None relation, signals, switch branchCourse, balise group, axle counter, route entry ->
-  signalIL -> signalIS, facing switch); File > Import railML… (file chooser, `station-topology.railml`) -> new active tab
+  signalIL -> signalIS, facing switch); File > Import > railML 3.2… (file chooser, `station-topology.railml`) -> new active tab
   "Station Arnau", notes dialog, cells per kind, signal data incl. `rdRailmlId`, ERTMS group symbol, route on
   `rd-routes`; re-export keeps the preserved `operationalPoint`; File > Open of a `.railml` and a file drop on
   `#graph-container` (`station-visualization.railml`) open new tabs at the visualization coordinates.
 - `tests/e2e/editor-commands.spec.ts` (any port): Arrange > Bring Forward / Send Backward (multi-selection, one undo
   step each) + To Front / To Back on the layer's child order and the SVG stacking, Edit > Select All and Ctrl+A (layer
-  cells + descendants like draw.io; not while typing in the title field), File > Export as PNG/SVG in light and dark
+  cells + descendants like draw.io; not while typing in the title field), File > Export > PNG/SVG in light and dark
   theme (PNG signature, white corner, the cell's own light fill; SVG parses, has the labels, `#dae8fc`, white
   background), `exportAsJson()` of the active tab, project rename in the top bar -> Export As… file name +
   `<diagram name>`, kept over a reload, Esc cancels.
@@ -151,8 +151,8 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
 - `tests/e2e/railway-script.spec.ts` (any port): Railway Script tab: a typed script (tracks, points, signals, route) is drawn
   by auto-apply ("Applied: 7 objects", `rdScript`, route on `rd-routes`), a text km edit moves the signal, a real mouse drag
   of the signal updates `at` in the text (comments/other lines kept), an enum error is listed at `13:col`, click selects it,
-  the drawing stays unchanged, reload keeps the script ("In sync with the drawing"); File > Import Railway Script… (new
-  tab named after `name`), File > Export Railway Script… (.rdl.yaml = the text, .rdl.json = the data, generated for a tab
+  the drawing stays unchanged, reload keeps the script ("In sync with the drawing"); File > Import > Railway Script… (new
+  tab named after `name`), File > Export > Railway Script… (.rdl.yaml = the text, .rdl.json = the data, generated for a tab
   without a script).
 - `tests/e2e/ux-batch.spec.ts` (any port): menubar keyboard pattern (roles, ↓/↑/Home/End, ←/→ between menus, Enter, Esc
   returns focus) and `<kbd>` shortcut hints, Help > Keyboard Shortcuts (keys + mouse), Help > About = `#status-version`
@@ -162,6 +162,16 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   inside the window at the bottom-right), Save As (themed, focus trap, Esc, Enter downloads `<name>.drawio` and renames),
   Share dialog (one "Not configured", "How to enable" and provider settings collapsed), no start-up toast, "Saved in
   browser", Undo/Redo buttons disabled/enabled with the history.
+- `tests/e2e/ux-batch2a.spec.ts` (any port): Railway menu (order of items, mouse, keyboard from File with →, End,
+  Enter toggles km Ruler and the toolbar button follows; no railway items left in View/Extras, no emoji in the menus), File
+  top level + Import / Export submenus (hover incl. nested Railway Data / Scenario, Download .drawio, keyboard → / ← / Enter /
+  Esc with aria-expanded, Import > Image opens the upload dialog), toolbar (no emoji, every visible button has an SVG icon,
+  aria-label, tooltip starting with it and >= 24 px, removed buttons and freehand tools gone, 6 groups, grid toggle =
+  View > Grid, Align dropdown keyboard + Align top), side panels (toolbar / Ctrl+Shift+P / Ctrl+Shift+K / View menu, kept
+  after reload, 8 px resize handle with hover line, drag + keyboard resize remembered, `body.rd-narrow` hides both and a
+  toggle opens one), left tab strip (one row, » overflow menu with keyboard, chosen tab moves into the row, PlantUML closeable
+  and reopened from Extras, a wide panel shows all tabs). e2e helpers in `tests/e2e/menu-helpers.ts`: `clickMenuItem`,
+  `revealMenuItem`, `openLeftTab` (row or » menu), `leftTabLabels`.
 - `tests/e2e/style-edit.spec.ts` (any port): line color/width/dash and fill through the Properties panel on cells from an
   ERTMS template, a user template and the draw.io/ERTMS palettes (group first click, child second click); checks the
   cell's own style and the SVG. Reads the graph via `import('/src/services/service-registry.ts')` (dev server only).
@@ -287,6 +297,17 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   `tests/e2e/menu-helpers.ts` `clickMenuItem(page, menu, action)` / `revealMenuItem(item)` hover the submenu chain.
   File > New = `TabManager.openNewTab()` (draw.io-like: new tab "Diagram <n>",
   shown, its project named alike); the "+" button and the first start do the same. Help > About = `showAboutDialog`.
+- Side panels (`src/ui/side-panels.ts` `installSidePanels`, replaces resizable-panels.ts): left (Shapes) / right
+  (Format) collapse via the toolbar's `#btn-toggle-left-panel` / `#btn-toggle-right-panel` (aria-pressed), View > Shapes
+  Panel / Format Panel (`toggleLeftPanel` / `toggleRightPanel`, menuitemcheckbox) and Ctrl/Cmd+Shift+K / +P (dispatcher, like
+  draw.io); `.rd-panel-collapsed`. Resize handles: role=separator, 8 px hit area along the inner edge (`.panel-resize-handle`, 2 px
+  accent line on hover/focus/drag), arrow keys 16 px (Shift 64). Widths (180-520) and collapsed state in localStorage
+  `rd.sidePanels`. Narrow screens: CSS hook `body.rd-narrow` (class set by the start-up code below 900 px) hides both panels;
+  a toggle then opens one for the session (`.rd-panel-open-narrow`), the stored state is untouched.
+- Left tab strip (`src/ui/left-panel-tabs.ts`): one row; tabs that do not fit (the active one always stays) get
+  `.rd-tab-overflow` and are listed in the "»" menu (`.left-panel-tab-more` -> `.left-panel-overflow-menu` role=menu,
+  `.left-panel-overflow-item[data-tab]`, arrows/Esc), relaid on resize / switch / close. Every tab button has `data-tab`.
+  PlantUML and ERTMS are closeable (×); reopened by Extras > PlantUML Editor / View > ERTMS Tab.
 - Toolbar (`index.html` `#toolbar-container` role=toolbar, chrome by `src/ui/toolbar.ts` `installToolbar`, once): groups
   (role=group) Zoom | Edit (Undo, Redo, Delete) | Insert (rectangle, ellipse, diamond, line, connect two selected, image as
   custom shape) | Arrange (Grid toggle = View > Grid, format painter, Align / distribute dropdown `#btn-align` ->
@@ -384,7 +405,7 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   the active tab's project, and its tab label too when the label equals the old project name (tabs opened from
   links/remote files are named after it); cached at once. Cache: `tabs[].projectName` per tab (top-level
   `projectName` = active tab's; caches of earlier versions without it give it to the active tab).
-- Image export: File > Export as PNG…/SVG… (`data-action="exportPng|exportSvg"`, per-tab `ExportImageController` set
+- Image export: File > Export > PNG Image…/SVG Image… (`data-action="exportPng|exportSvg"`, per-tab `ExportImageController` set
   on the tab's MenuController) uses `diagram-image-export.ts` like the Share dialog and scenario exports: draw.io
   light colours even in the dark theme (thumbnail renderer option `light` pins the hidden graph with
   `setGraphColorMode`), on the model's `background` (`modelBackground`, white by default). Every VISIBLE layer is
@@ -567,8 +588,8 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   already changed the selection). `checks-panel.ts`: Run checks, Live (debounced 400 ms on model changes; localStorage
   `rd.railway.liveChecks`), badge on the switch, issue click selects the cell, "Edit" opens Data on the field, report
   buttons. Global listeners bound to the active tab's selection/data model (rebound on `tab-changed`/`tab-closed`).
-  Menus dispatch window events: `railway-edit-data-request` (Extras > Edit Data…, context menu Edit Data...),
-  `railway-checks-request` (Extras > Railway Checks), `railway-export-request` (File > Export Railway Data submenu,
+  Menus dispatch window events: `railway-edit-data-request` (Railway > Edit Data…, context menu Edit Data...),
+  `railway-checks-request` (Railway > Run Checks, toolbar `#btn-railway-checks`), `railway-export-request` (File > Export > Railway Data submenu,
   `data-action="exportRailway:<report>"` handled in `MenuController.executeMenuAction`).
 - **Reports** (`report.ts`, `xlsx.ts`): signals, balises + groups, tracks + sections, points, all objects; sorted by km
   (`km`, else `kmStart`; none last), then kind order, then natural ID order. CSV = UTF-8 BOM, CRLF, RFC 4180 quoting,
@@ -600,15 +621,15 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   needing opposite points positions; `buildRouteTable` / `buildConflictTable` -> report.ts `Table`s.
 - **Route objects** (`route-store.ts`): an edge per route on its own layer `rd-routes` ("Routes", a root child, saved as a
   draw.io layer), translucent orange, label `%rdId%`, `movable/bendable/editable=0`; `addRoute` = one undo step (layer
-  if missing + edge + the ID appended to the entry signal's `rdRoutes`). View > Show Routes toggles the layer's
-  `visible` directly (view state, saved with the file, not undoable). Extras > Update Route Paths recomputes
+  if missing + edge + the ID appended to the entry signal's `rdRoutes`). Railway > Show Routes toggles the layer's
+  `visible` directly (view state, saved with the file, not undoable). Railway > Update Route Paths recomputes
   geometry/length from the drawing (path with the stored sections). Route edges are selectable -> Data panel edits them.
-- **Route tool** (`route-tool.ts` `RouteTool`): toolbar `#btn-route-tool` / Extras > Route Tool; while active a
+- **Route tool** (`route-tool.ts` `RouteTool`): toolbar `#btn-route-tool` / Railway > Route Tool; while active a
   capture-phase listener on `#graph-container` swallows pointer events (no selection/moves), hit test `signalAt`
   (bounds + 6, else nearest centre within 25). Floating panel `.rd-route-tool` (status, path radios
   `.rd-route-path`, ID input prefilled `R<n>`, "Create route"), highlight in `graph-overlay.ts` `GraphOverlay` (SVG
   group in the view's overlay pane, transform = scale/translate, not in the model). Esc/✕ leaves; tab switch leaves.
-- **Tables** (`route-tables-dialog.ts`): Extras > Route Table… / Interlocking Table… -> `.rd-route-dialog` with tabs
+- **Tables** (`route-tables-dialog.ts`): Railway > Route Table… / Interlocking Table… -> `.rd-route-dialog` with tabs
   Routes / Interlocking, Export CSV (shown tab, `<diagram>-routes.csv` / `-interlocking.csv`) and XLSX (both sheets).
 - **Checks** (`route-checks.ts`, run from `validateObjects`): `route-endpoint` (no entry/exit, same signal, endpoint
   of another kind; the generic missing-reference skips such IDs), `route-path` (no path in the signal direction, or
@@ -619,10 +640,10 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   nominal = below a left-to-right track, reverse above; LEU nominal side; gap `SNAP_GAP` 4), get `rdTrackId` (track
   preferred over a section drawn on it) and, when the track has km start/end, `rdKm`. Runs in the model's
   `BEFORE_UNDO` (like maxGraph's LayoutManager), so it is part of the same undo step; ignores edits with a RootChange
-  (loads, snapshots). View > Snap to Track, localStorage `rd.railway.snapToTrack` (default on). Installed on every tab
+  (loads, snapshots). Railway > Snap to Track, localStorage `rd.railway.snapToTrack` (default on). Installed on every tab
   graph (`installRailwayRoutes` sweeps on start/`tab-changed`).
-- **km** (`km.ts`): linear from km start (first point of the centre line) to km end; Extras > Recalculate km sets `rdKm`
-  of objects naming a track with km start/end (within 60, rounded to metres, one undo step). View > km Ruler
+- **km** (`km.ts`): linear from km start (first point of the centre line) to km end; Railway > Recalculate km sets `rdKm`
+  of objects naming a track with km start/end (within 60, rounded to metres, one undo step). Railway > km Ruler (toolbar `#btn-km-ruler`)
   (localStorage `rd.railway.kmRuler`): ticks/labels (`12+345`) along the selected track(s) in an overlay; round step so
   ticks are >= 40 units apart, every 5th step and the ends labelled.
 - Wiring (`install-railway-routes.ts`, one call in `main-editor.ts`): menu items `data-action="railwayRoute:<cmd>"`
@@ -634,8 +655,8 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
 
 ### railML 3.2 (`src/railml/`, details and the full table in docs/RAILML.md)
 
-- **UI** (`install-railml.ts`, main chunk, called from `main-editor.ts` after `installRailwayRoutes`): File > Import
-  railML… (`data-action="importRailml"`), File > Export railML 3.2… (`exportRailml`) -> `MenuController` dispatches
+- **UI** (`install-railml.ts`, main chunk, called from `main-editor.ts` after `installRailwayRoutes`): File > Import >
+  railML 3.2… (`data-action="importRailml"`), File > Export > railML 3.2… (`exportRailml`) -> `MenuController` dispatches
   window event `railml-request` `{action}`; File > Open (`MenuController.openProject`, accepts `.railml`) and a file
   dropped on `#graph-container` whose root is `<railML>` (`looksLikeRailml`) -> `{action:'open', text, name}`. The
   handler lazy-loads `railml-ui.ts` (dialogs `.rd-railml-dialog` on the `.rd-route-dialog` classes, `railml.css`,
@@ -713,7 +734,7 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
 - UI (`script-ui.ts` + `railway-script.css`, lazy chunk with yaml): editor (textarea + `pre` highlight backdrop with `mark`s +
   line-number gutter), problems list (`[data-testid=railway-script-problems] li[data-severity]`, click selects the range),
   Apply (Ctrl/Cmd+Enter), Auto-apply (localStorage `rd.railwayScript.autoApply`, default on, 500 ms, only without errors),
-  Examples (`templates.ts`), From drawing (`generate.ts`). File > Import Railway Script… (`importRailwayScript`, new tab) /
+  Examples (`templates.ts`), From drawing (`generate.ts`). File > Import > Railway Script… (`importRailwayScript`, new tab) /
   Export Railway Script… (`exportRailwayScript`, dialog `railway-script-export-dialog`, `.rdl.yaml`/`.rdl.json`) -> window
   event `railway-script-request`. `LeftPanelTabs.onTabSwitch` creates the panel on first show.
 - Tests: `src/railway-script/__tests__/` (language/positions/aliases/templates, apply/sync/undo/conflict/generate round

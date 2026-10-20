@@ -8,6 +8,7 @@
  */
 import { test, expect } from '@playwright/test';
 import type { Page } from '@playwright/test';
+import { leftTabLabels } from './menu-helpers';
 
 const HEXAGON = 'shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;';
 const FLASH = 'verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.flash';
@@ -51,7 +52,7 @@ test.describe('draw.io palettes in the maxGraph editor', () => {
     await expect(page.locator('#tabs-container .tab-button.active')).toHaveCount(1);
 
     // One Shapes tab holds app shapes and the draw.io palettes; no separate draw.io/Stencils tabs
-    await expect(page.locator('.left-panel-tab-btn:visible')).toHaveText(['Shapes', 'Templates', 'Layers', /PlantUML/, 'Railway Script']);
+    expect(await leftTabLabels(page)).toEqual(['Shapes', 'Templates', 'Layers', 'PlantUML', 'Railway Script']);
     await expect(page.locator('#stencils-container')).toHaveCount(0);
     const container = page.locator('#drawio-palette-container');
     await expect(container).toBeVisible();

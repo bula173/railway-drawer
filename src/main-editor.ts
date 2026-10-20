@@ -26,7 +26,7 @@ import { TabManager } from './ui/tabs';
 import { LeftPanelTabs } from './ui/left-panel-tabs';
 import { CacheService } from './services/cache-service';
 import { ProjectNameEditor } from './ui/project-name-editor';
-import { ResizablePanels } from './ui/resizable-panels';
+import { installSidePanels, togglePanel } from './ui/side-panels';
 import { APP_VERSION, BUILD_ID, BUILD_TIME } from './config/build-id';
 import type { ShapeDesignerController } from './ui/shape-designer';
 import { CustomShapeToolbar } from './ui/custom-shape-toolbar';
@@ -85,14 +85,10 @@ try {
  */
 new ShortcutsHelpController();
 
-// ============= RESIZABLE PANELS =============
+// ============= SIDE PANELS =============
 
-/**
- * @brief Initialize resizable panel system
- * @details Enables users to resize and rearrange the left panel, right panel,
- * and main graph canvas area using drag-enabled dividers.
- */
-new ResizablePanels();
+// Collapsible, resizable left/right panels; widths and collapsed state remembered (src/ui/side-panels.ts)
+installSidePanels();
 
 // Toolbar chrome: SVG icons, names + shortcut tooltips, Align / distribute dropdown (src/ui/toolbar.ts)
 installToolbar();
@@ -245,11 +241,18 @@ document.addEventListener('keydown', (e) => {
   if (shouldIgnoreGraphShortcut(e, activeTab.graph)) {
     return;
   }
-  // Keys on the menu bar / context menu navigate the menu (menu.ts, context-menu.ts), not the diagram
-  if (e.target instanceof Element && e.target.closest('#menu-bar, #context-menu')) {
+  // Keys on the menu bar / context menu / toolbar dropdowns navigate the menu (menu.ts, context-menu.ts,
+  // toolbar.ts, left-panel-tabs.ts), not the diagram (Escape there must not clear the selection)
+  if (e.target instanceof Element && e.target.closest('#menu-bar, #context-menu, .rd-toolbar-menu, .left-panel-overflow-menu')) {
     return;
   }
 
+  // Side panels like draw.io: Ctrl/Cmd+Shift+K = Shapes, Ctrl/Cmd+Shift+P = Format (src/ui/side-panels.ts)
+  if (mod && e.shiftKey && !e.altKey && (key === 'k' || key === 'p')) {
+    e.preventDefault();
+    togglePanel(key === 'k' ? 'left' : 'right');
+    return;
+  }
   if (mod && key === 'z' && !e.shiftKey) {
     e.preventDefault();
     activeTab.graphCommandService.undo();

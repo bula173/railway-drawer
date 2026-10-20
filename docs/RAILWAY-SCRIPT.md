@@ -5,7 +5,7 @@ balises, train detection, routes and trains by **km position**; Railway Drawer d
 with the ERTMS library symbols and keeps text and drawing in sync **both ways**.
 
 - Syntax: **YAML** (comments allowed) or **JSON** (JSON is valid YAML).
-- Files: `*.rdl.yaml` / `*.rdl.json` (File > Import Railway Script… / File > Export Railway Script…).
+- Files: `*.rdl.yaml` / `*.rdl.json` (File > Import > Railway Script… / File > Export > Railway Script…; the editor tab: Railway > Railway Script Editor).
 - Schema: [`public/schemas/railway-script-1.schema.json`](../public/schemas/railway-script-1.schema.json)
   (JSON Schema draft-07, `$id` `https://railwaydrawer.mksystemdesign.org/schemas/railway-script-1.schema.json`).
 - Version key: `railwayScript: 1` (required).
@@ -160,7 +160,7 @@ underlined in the text; line numbers of problem lines are coloured.
 
 ## Generate from drawing
 
-The tab's **From drawing** button (and File > Export Railway Script… on a diagram without a
+The tab's **From drawing** button (and File > Export > Railway Script… on a diagram without a
 script) writes a script for the railway objects of the drawing: tracks (km start/end; else
 km from their length or drawing length), `page.scale` / lanes / origin from the drawing, points legs
 (the track they leave, `at`, `to`), objects on tracks by `rdTrackId`/`rdKm` (else the nearest

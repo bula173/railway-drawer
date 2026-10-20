@@ -9,6 +9,7 @@
  */
 import { test, expect } from '@playwright/test';
 import type { Page } from '@playwright/test';
+import { leftTabLabels, openLeftTab } from './menu-helpers';
 
 const TEMPLATES_KEY = 'railway-drawer-templates';
 
@@ -58,9 +59,8 @@ test.describe('templates', () => {
     await expect(ertms.locator('.rd-dp-item')).toHaveCount(18);
     await expect(ertms.locator('.rd-dp-item[title="Signal Left 3"]')).toHaveCount(1);
 
-    // tab bar: no label is cut (the tabs wrap when the panel is narrow), also with the ERTMS tab
-    const tabs = page.locator('.left-panel-tab-btn:visible');
-    await expect(tabs).toHaveText(['Shapes', 'Templates', 'Layers', /PlantUML/, 'Railway Script']);
+    // tab bar: one row, no label is cut (the tabs that do not fit are in the » menu), also with the ERTMS tab
+    expect(await leftTabLabels(page)).toEqual(['Shapes', 'Templates', 'Layers', 'PlantUML', 'Railway Script']);
     const clippedTabs = (): Promise<number> =>
       page.locator('.left-panel-tab-btn:visible').evaluateAll((btns) => {
         const bar = btns[0].parentElement!.getBoundingClientRect();
@@ -72,12 +72,13 @@ test.describe('templates', () => {
     expect(await clippedTabs()).toBe(0);
     await page.locator('.menu-item[data-menu="view"]').click();
     await page.locator('[data-action="toggleErtmsTab"]').click();
-    await expect(tabs).toHaveText(['Shapes', 'ERTMS×', 'Templates', 'Layers', /PlantUML/, 'Railway Script']);
+    expect(await leftTabLabels(page)).toEqual(['Shapes', 'ERTMS', 'Templates', 'Layers', 'PlantUML', 'Railway Script']);
+    await expect(page.locator('.left-panel-tab-btn[data-tab="ertms"]')).toBeVisible();
     expect(await clippedTabs()).toBe(0);
     await page.locator('#ertms-panel section[data-palette-id="ertms"] .rd-dp-item').first().waitFor();
     await expect(page.locator('#ertms-panel section[data-palette-id="ertms"] .rd-dp-item')).toHaveCount(18);
 
-    await page.locator('.left-panel-tab-btn', { hasText: 'Templates' }).click();
+    await openLeftTab(page, 'templates');
     const panel = page.locator('#templates-panel');
     await expect(panel).toBeVisible();
     const builtin = panel.locator('[data-section="builtin"] .rd-tpl-tile');
@@ -152,7 +153,7 @@ test.describe('templates', () => {
     // survives a reload
     await page.reload();
     await expect(page.locator('#tabs-container .tab-button.active')).toHaveCount(1);
-    await page.locator('.left-panel-tab-btn', { hasText: 'Templates' }).click();
+    await openLeftTab(page, 'templates');
     const user = page.locator('#templates-panel [data-section="user"] .rd-tpl-tile');
     await expect(user).toHaveCount(1);
     await expect(user.locator('.rd-tpl-name')).toHaveText('My hexagon');

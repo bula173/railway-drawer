@@ -14,7 +14,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { test, expect } from '@playwright/test';
 import type { Page } from '@playwright/test';
-import { clickMenuItem } from './menu-helpers';
+import { clickMenuItem, openLeftTab } from './menu-helpers';
 
 const SCRIPT = `railwayScript: 1
 name: E2E line
@@ -96,7 +96,7 @@ async function freshPage(page: Page): Promise<void> {
 }
 
 async function openPanel(page: Page): Promise<void> {
-  await page.locator('.left-panel-tab-btn[data-tab="railwayScript"]').click();
+  await openLeftTab(page, 'railwayScript');
   await expect(page.locator('[data-testid="railway-script-text"]')).toBeVisible();
 }
 

@@ -53,6 +53,8 @@ export function shortcutSections(mac: boolean = isMacPlatform()): ShortcutSectio
         { keys: mac ? '⌘+Scroll' : 'Ctrl+Scroll', description: 'Zoom with the mouse wheel' },
         { keys: 'Space (hold) + drag', description: 'Pan the canvas' },
         { keys: k('toggleConnectionArrows'), description: 'Connection Arrows on/off' },
+        { keys: k('toggleLeftPanel'), description: 'Shapes panel on/off' },
+        { keys: k('toggleRightPanel'), description: 'Format panel on/off' },
       ],
     },
     {

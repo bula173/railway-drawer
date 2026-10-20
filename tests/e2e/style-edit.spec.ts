@@ -14,6 +14,7 @@
  */
 import { test, expect } from '@playwright/test';
 import type { Page } from '@playwright/test';
+import { openLeftTab } from './menu-helpers';
 
 /** Runs `body` (function body text) with `graph` = the active tab's graph and `arg`. */
 async function inGraph<T>(page: Page, body: string, arg?: unknown): Promise<T> {
@@ -142,7 +143,7 @@ test.describe('style edits on inserted templates and palette shapes', () => {
     page.on('pageerror', (err) => pageErrors.push(err.message));
     await freshApp(page);
 
-    await page.locator('.left-panel-tab-btn', { hasText: 'Templates' }).click();
+    await openLeftTab(page, 'templates');
     await page.locator('#templates-panel [data-section="builtin"] .rd-tpl-tile').first().click();
     await page.locator('.rd-tpl-popover [data-action="insert"]').click();
     await expect.poll(async () => (await selectionIds(page)).length).toBeGreaterThan(10);
@@ -254,7 +255,7 @@ test.describe('style edits on inserted templates and palette shapes', () => {
     await page.reload();
     await expect(page.locator('#tabs-container .tab-button.active')).toHaveCount(1);
 
-    await page.locator('.left-panel-tab-btn', { hasText: 'Templates' }).click();
+    await openLeftTab(page, 'templates');
     await page.locator('#templates-panel [data-section="user"] .rd-tpl-tile').first().click();
     await page.locator('.rd-tpl-popover [data-action="insert"]').click();
     await expect.poll(async () => (await selectionIds(page)).length).toBe(2);

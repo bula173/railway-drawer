@@ -10,7 +10,7 @@
  */
 import { test, expect } from '@playwright/test';
 import type { Download, Page } from '@playwright/test';
-import { clickMenuItem } from './menu-helpers';
+import { clickMenuItem, openLeftTab } from './menu-helpers';
 
 /** Four vertices A..D (z-order A bottom .. D top), an edge A->B and a group G with one child. */
 const MODEL_XML = `<mxGraphModel><root><mxCell id="0"/><mxCell id="1" parent="0"/>
@@ -305,7 +305,7 @@ test.describe('editor commands', () => {
     for (const label of ['Alpha', 'Ulysses', 'Nested']) expect(text).toContain(label);
 
     // Layers panel: the Upper layer is listed first (top-most); its eye hides it
-    await page.locator('.left-panel-tab-btn', { hasText: 'Layers' }).click();
+    await openLeftTab(page, 'layers');
     const items = page.locator('#layers-list .layer-item');
     await expect(items.locator('.layer-name')).toHaveText(['Upper (2)', 'Background (1)']);
     await items.nth(0).locator('.layer-visibility').click();
@@ -390,7 +390,7 @@ test.describe('editor commands', () => {
     page.on('pageerror', (err) => errors.push(err.message));
     await freshApp(page);
     await loadModel(page, LAYERS_XML);
-    await page.locator('.left-panel-tab-btn', { hasText: 'Layers' }).click();
+    await openLeftTab(page, 'layers');
     const items = page.locator('#layers-list .layer-item');
     await items.nth(0).locator('.layer-lock').click();
     expect(await hasLockStyle(page, 'L2')).toBe(true);

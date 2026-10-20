@@ -14,7 +14,7 @@ import { readFile } from 'fs/promises';
 import { resolve } from 'path';
 import { test, expect } from '@playwright/test';
 import type { Download, Page } from '@playwright/test';
-import { clickMenuItem } from './menu-helpers';
+import { clickMenuItem, openLeftTab } from './menu-helpers';
 
 const ROOT = process.cwd();
 const fixture = (path: string): Promise<string> => readFile(resolve(ROOT, path), 'utf8');
@@ -148,7 +148,7 @@ test.describe('draw.io files in the Railway Drawer editor', () => {
 
   test('Templates > Import… reads the ERTMS draw.io library and Export… writes a draw.io library', async ({ page }) => {
     await freshApp(page);
-    await page.locator('.left-panel-tab-btn', { hasText: 'Templates' }).click();
+    await openLeftTab(page, 'templates');
     const library = await fixture('public/libraries/ertms.xml');
     const chooser = page.waitForEvent('filechooser');
     await page.locator('.rd-tpl-import').click();
