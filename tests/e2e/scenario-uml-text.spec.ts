@@ -11,6 +11,7 @@
 import { readFile } from 'node:fs/promises';
 import { test, expect } from '@playwright/test';
 import type { Page } from '@playwright/test';
+import { revealMenuItem } from './menu-helpers';
 
 const HEXAGON = '#drawio-palette-container section[data-palette-id="general"] .rd-dp-item[title="Hexagon"]';
 
@@ -201,6 +202,7 @@ test.describe('scenario steps with UML and text', () => {
     // File > Export Scenario (HTML): every step with drawing, UML and text
     const exportPromise = page.waitForEvent('download');
     await page.locator('.menu-item[data-menu="file"]').click();
+    await revealMenuItem(page.locator('.menu-dropdown-item[data-action="exportScenarioHtml"]'));
     await page.locator('.menu-dropdown-item[data-action="exportScenarioHtml"]').click();
     const exported = await exportPromise;
     expect(exported.suggestedFilename()).toMatch(/ - Wjazd z RBC\.html$/);

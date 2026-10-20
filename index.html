@@ -29,46 +29,66 @@
           <h1 class="document-title">Untitled Diagram</h1>
         </div>
 
-        <!-- Menu Bar with Dropdowns -->
+        <!-- Menu Bar with Dropdowns (src/ui/menu.ts: WAI-ARIA menubar; submenus = .menu-submenu[data-submenu]) -->
         <div id="menu-bar" class="menu-bar">
           <div class="menu-item-container">
             <button class="menu-item" data-menu="file">File</button>
             <div class="menu-dropdown" data-menu="file" style="display: none;">
               <div class="menu-dropdown-item" data-action="new">New</div>
-              <div class="menu-dropdown-item" data-action="open">Open</div>
-              <!-- src/railml (lazy chunk railml-ui.ts): new tab from a railML 3.2 file -->
-              <div class="menu-dropdown-item" data-action="importRailml" title="Open a railML 3.2 file (.railml, .xml) in a new tab">Import railML…</div>
-              <!-- src/railway-script (lazy chunk script-ui.ts): new tab drawn from a Railway Script (.rdl.yaml, .rdl.json) -->
-              <div class="menu-dropdown-item" data-action="importRailwayScript" title="Open a Railway Script (.rdl.yaml, .rdl.json) in a new tab and draw it">Import Railway Script…</div>
+              <div class="menu-dropdown-item" data-action="open" title="Open a .drawio file in this tab (railML files open in a new tab)">Open…</div>
               <!-- "Open from <provider>…" / "Save to <provider>…" items of the cloud storage providers (src/share/providers) -->
               <div id="file-menu-remote-items"></div>
+              <div class="rd-sep"></div>
               <div class="menu-dropdown-item" data-action="save">Save</div>
-              <div class="menu-dropdown-item" data-action="saveAs">Save As...</div>
+              <div class="menu-dropdown-item" data-action="saveAs">Save As…</div>
               <div class="menu-dropdown-item" data-action="saveAsTemplate" title="Save the selection (or the whole diagram) as a template">Save as Template…</div>
               <div class="rd-sep"></div>
-              <div class="menu-dropdown-item" data-action="export">Export As...</div>
-              <!-- src/ui/export-image.ts (diagram-image-export.ts, the same images as Share > Export PNG/SVG) -->
-              <div class="menu-dropdown-item" data-action="exportPng" title="PNG image of the current diagram (2x, on its background)">Export as PNG…</div>
-              <div class="menu-dropdown-item" data-action="exportSvg" title="SVG image of the current diagram">Export as SVG…</div>
-              <!-- Railway object lists (src/railway/report.ts); handled by main-editor via MenuController -->
-              <div class="menu-submenu" tabindex="-1">
-                <div class="menu-submenu-title">Export Railway Data</div>
+              <div class="menu-submenu" data-submenu="import">
+                <div class="menu-submenu-title">Import</div>
                 <div class="menu-submenu-list">
-                  <div class="menu-dropdown-item" data-action="exportRailway:signals">Signals (CSV)</div>
-                  <div class="menu-dropdown-item" data-action="exportRailway:balises">Balises &amp; balise groups (CSV)</div>
-                  <div class="menu-dropdown-item" data-action="exportRailway:trackSections">Tracks &amp; track sections (CSV)</div>
-                  <div class="menu-dropdown-item" data-action="exportRailway:points">Points (CSV)</div>
-                  <div class="menu-dropdown-item" data-action="exportRailway:all">All railway objects (CSV)</div>
-                  <div class="menu-dropdown-item" data-action="exportRailway:xlsx">Workbook, all lists (.xlsx)</div>
+                  <div class="menu-dropdown-item" data-action="importDrawio" title="Open a .drawio / .xml file in a new tab">draw.io File (New Tab)…</div>
+                  <!-- src/railml (lazy chunk railml-ui.ts): new tab from a railML 3.2 file -->
+                  <div class="menu-dropdown-item" data-action="importRailml" title="Open a railML 3.2 file (.railml, .xml) in a new tab">railML 3.2…</div>
+                  <!-- src/railway-script (lazy chunk script-ui.ts): new tab drawn from a Railway Script (.rdl.yaml, .rdl.json) -->
+                  <div class="menu-dropdown-item" data-action="importRailwayScript" title="Open a Railway Script (.rdl.yaml, .rdl.json) in a new tab and draw it">Railway Script…</div>
+                  <!-- src/ui/image-upload.ts (Upload Custom Shape Image dialog) -->
+                  <div class="menu-dropdown-item" data-action="importImage" title="Add an image as a custom shape">Image as Custom Shape…</div>
                 </div>
               </div>
-              <div class="menu-dropdown-item" data-action="exportRailml" title="railML 3.2 file of the current diagram: topology, infrastructure, routes, layout">Export railML 3.2…</div>
-              <div class="menu-dropdown-item" data-action="exportRailwayScript" title="The diagram's Railway Script as .rdl.yaml or .rdl.json (generated from the drawing when it has none)">Export Railway Script…</div>
-              <!-- src/scenarios/scenario-export.ts; handled by install-scenarios via the scenario-export-request event -->
-              <div class="menu-dropdown-item" data-action="exportScenarioHtml" title="One HTML file with each step's drawing, UML diagram and text">Export Scenario (HTML)…</div>
-              <!-- scenario-pdf.ts / scenario-slides.ts (loaded on demand), same event with detail.format -->
-              <div class="menu-dropdown-item" data-action="exportScenarioPdf" title="PDF file: title page, then each step's drawing, UML diagram and text">Export Scenario (PDF)…</div>
-              <div class="menu-dropdown-item" data-action="exportScenarioSlides" title="HTML slideshow: one step per slide, keyboard navigation, fullscreen">Export Scenario (Slides)…</div>
+              <div class="menu-submenu" data-submenu="export">
+                <div class="menu-submenu-title">Export</div>
+                <div class="menu-submenu-list">
+                  <div class="menu-dropdown-item" data-action="export" title="Download the diagram as a .drawio file">Download .drawio</div>
+                  <!-- src/ui/export-image.ts (diagram-image-export.ts, the same images as Share > Export PNG/SVG) -->
+                  <div class="menu-dropdown-item" data-action="exportPng" title="PNG image of the current diagram (2x, on its background)">PNG Image…</div>
+                  <div class="menu-dropdown-item" data-action="exportSvg" title="SVG image of the current diagram">SVG Image…</div>
+                  <div class="rd-sep"></div>
+                  <div class="menu-dropdown-item" data-action="exportRailml" title="railML 3.2 file of the current diagram: topology, infrastructure, routes, layout">railML 3.2…</div>
+                  <div class="menu-dropdown-item" data-action="exportRailwayScript" title="The diagram's Railway Script as .rdl.yaml or .rdl.json (generated from the drawing when it has none)">Railway Script…</div>
+                  <!-- Railway object lists (src/railway/report.ts); handled by main-editor via MenuController -->
+                  <div class="menu-submenu" data-submenu="export-railway-data">
+                    <div class="menu-submenu-title">Railway Data</div>
+                    <div class="menu-submenu-list">
+                      <div class="menu-dropdown-item" data-action="exportRailway:signals">Signals (CSV)</div>
+                      <div class="menu-dropdown-item" data-action="exportRailway:balises">Balises &amp; balise groups (CSV)</div>
+                      <div class="menu-dropdown-item" data-action="exportRailway:trackSections">Tracks &amp; track sections (CSV)</div>
+                      <div class="menu-dropdown-item" data-action="exportRailway:points">Points (CSV)</div>
+                      <div class="menu-dropdown-item" data-action="exportRailway:all">All railway objects (CSV)</div>
+                      <div class="menu-dropdown-item" data-action="exportRailway:xlsx">Workbook, all lists (.xlsx)</div>
+                    </div>
+                  </div>
+                  <!-- src/scenarios: scenario-export-request event (HTML; PDF / slides with detail.format) -->
+                  <div class="menu-submenu" data-submenu="export-scenario">
+                    <div class="menu-submenu-title">Scenario</div>
+                    <div class="menu-submenu-list">
+                      <div class="menu-dropdown-item" data-action="exportScenarioPdf" title="PDF file: title page, then each step's drawing, UML diagram and text">PDF…</div>
+                      <div class="menu-dropdown-item" data-action="exportScenarioSlides" title="HTML slideshow: one step per slide, keyboard navigation, fullscreen">Slides (HTML)…</div>
+                      <div class="menu-dropdown-item" data-action="exportScenarioHtml" title="One HTML file with each step's drawing, UML diagram and text">HTML Document…</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="rd-sep"></div>
               <div class="menu-dropdown-item" data-action="share" title="Link with the diagram, downloads, cloud storage">Share…</div>
               <div class="menu-dropdown-item" data-action="print">Print</div>
             </div>
@@ -97,15 +117,11 @@
               <div class="menu-dropdown-item" data-action="zoomActual">Reset Zoom</div>
               <div class="menu-dropdown-item" data-action="fitWindow">Fit to Window</div>
               <div class="rd-sep"></div>
-              <div class="menu-dropdown-item" data-action="showGrid">Show Grid</div>
+              <div class="menu-dropdown-item" data-action="showGrid" role="menuitemcheckbox" aria-checked="true" title="Show the grid and snap to it (also the toolbar grid button)">Grid</div>
               <div class="menu-dropdown-item" data-action="toggleDarkMode" role="menuitemcheckbox" aria-checked="false">Dark Mode</div>
               <div class="menu-dropdown-item" data-action="toggleErtmsTab" role="menuitemcheckbox" aria-checked="false">ERTMS Tab</div>
               <!-- src/ui/hover-arrows.ts (draw.io View > Connection Arrows, Alt+Shift+A) -->
               <div class="menu-dropdown-item" data-action="toggleConnectionArrows" role="menuitemcheckbox" aria-checked="true" title="Arrows around the shape under the pointer: click to add a connected copy, drag to connect (Alt+Shift+A)">Connection Arrows</div>
-              <!-- src/railway/install-railway-routes.ts -->
-              <div class="menu-dropdown-item" data-action="railwayRoute:toggleSnap" role="menuitemcheckbox" aria-checked="true" title="Put signals, balises, axle counters and LEUs onto the nearest track and set their track">Snap to Track</div>
-              <div class="menu-dropdown-item" data-action="railwayRoute:toggleRoutes" role="menuitemcheckbox" aria-checked="true" title="Show or hide the Routes layer">Show Routes</div>
-              <div class="menu-dropdown-item" data-action="railwayRoute:toggleKmRuler" role="menuitemcheckbox" aria-checked="false" title="km ruler along the selected track (km start/end)">km Ruler</div>
             </div>
           </div>
 
@@ -123,20 +139,31 @@
             </div>
           </div>
 
+          <!-- Railway engineering (src/railway: install-railway-routes.ts, the Data / Checks panels; src/railway-script) -->
           <div class="menu-item-container">
-            <button class="menu-item" data-menu="extras">Extras</button>
-            <div class="menu-dropdown" data-menu="extras" style="display: none;">
-              <div class="menu-dropdown-item" data-action="plantumlEditor">🌿 PlantUML Editor</div>
-              <div class="menu-dropdown-item" data-action="designShapes">✏️📐 Design Custom Shapes</div>
-              <div class="rd-sep"></div>
-              <div class="menu-dropdown-item" data-action="editData">Edit Data…</div>
-              <div class="menu-dropdown-item" data-action="railwayChecks">Railway Checks</div>
-              <div class="menu-dropdown-item" data-action="railwayRoute:tool" role="menuitemcheckbox" aria-checked="false">Route Tool</div>
+            <button class="menu-item" data-menu="railway">Railway</button>
+            <div class="menu-dropdown" data-menu="railway" style="display: none;">
+              <div class="menu-dropdown-item" data-action="railwayRoute:tool" role="menuitemcheckbox" aria-checked="false" title="Click a start signal, then an end signal">Route Tool</div>
               <div class="menu-dropdown-item" data-action="railwayRoute:routeTable">Route Table…</div>
               <div class="menu-dropdown-item" data-action="railwayRoute:conflictTable">Interlocking Table…</div>
               <div class="menu-dropdown-item" data-action="railwayRoute:updateRoutes">Update Route Paths</div>
               <div class="menu-dropdown-item" data-action="railwayRoute:recalcKm">Recalculate km</div>
-              <div class="menu-dropdown-item" data-action="editStyle">Edit Style</div>
+              <div class="rd-sep"></div>
+              <div class="menu-dropdown-item" data-action="editData" title="Data panel of the selected railway object">Edit Data…</div>
+              <div class="menu-dropdown-item" data-action="railwayChecks" title="Checks panel: duplicate IDs, missing data, topology">Run Checks</div>
+              <div class="menu-dropdown-item" data-action="railwayScriptEditor" title="Left-panel tab Railway Script (import/export: File menu)">Railway Script Editor</div>
+              <div class="rd-sep"></div>
+              <div class="menu-dropdown-item" data-action="railwayRoute:toggleSnap" role="menuitemcheckbox" aria-checked="true" title="Put signals, balises, axle counters and LEUs onto the nearest track and set their track">Snap to Track</div>
+              <div class="menu-dropdown-item" data-action="railwayRoute:toggleRoutes" role="menuitemcheckbox" aria-checked="true" title="Show or hide the Routes layer">Show Routes</div>
+              <div class="menu-dropdown-item" data-action="railwayRoute:toggleKmRuler" role="menuitemcheckbox" aria-checked="false" title="km ruler along the selected track (km start/end)">km Ruler</div>
+            </div>
+          </div>
+
+          <div class="menu-item-container">
+            <button class="menu-item" data-menu="extras">Extras</button>
+            <div class="menu-dropdown" data-menu="extras" style="display: none;">
+              <div class="menu-dropdown-item" data-action="plantumlEditor" title="Left-panel tab PlantUML">PlantUML Editor</div>
+              <div class="menu-dropdown-item" data-action="designShapes">Design Custom Shapes…</div>
             </div>
           </div>
 

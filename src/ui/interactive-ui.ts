@@ -3,6 +3,7 @@ import { globalNotificationManager } from './notification';
 import type { Cell, CellStyle, Geometry } from '@maxgraph/core';
 import { GraphCommandService } from '../services/graph-command-service';
 import { applyStyleToCells, setCellStyleValues } from './style-edit';
+import { setGridShown, syncGridControls } from './grid-toggle';
 
 export class InteractiveUIController {
   private graph: Graph;
@@ -46,12 +47,8 @@ export class InteractiveUIController {
       this.commandService.delete();
     });
 
-    // Grid toggle
-    document.getElementById('btn-grid')?.addEventListener('click', () => {
-      this.graph.gridEnabled = !this.graph.gridEnabled;
-      const checkbox = document.getElementById('canvas-gridEnabled') as HTMLInputElement;
-      if (checkbox) checkbox.checked = this.graph.gridEnabled;
-    });
+    // Grid toggle (= View > Grid): grid shown + snapping
+    document.getElementById('btn-grid')?.addEventListener('click', () => setGridShown(this.graph, !this.graph.gridEnabled));
 
     // Format painter
     document.getElementById('btn-format-painter')?.addEventListener('click', () => {
@@ -120,6 +117,7 @@ export class InteractiveUIController {
     const gridCheckbox = document.getElementById('canvas-gridEnabled') as HTMLInputElement;
     gridCheckbox?.addEventListener('change', () => {
       this.graph.gridEnabled = gridCheckbox.checked;
+      syncGridControls(gridCheckbox.checked);
     });
 
     const gridSizeInput = document.getElementById('canvas-gridSize') as HTMLInputElement;

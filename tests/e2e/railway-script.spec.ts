@@ -14,6 +14,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { test, expect } from '@playwright/test';
 import type { Page } from '@playwright/test';
+import { clickMenuItem } from './menu-helpers';
 
 const SCRIPT = `railwayScript: 1
 name: E2E line
@@ -84,8 +85,7 @@ async function centreOnPage(page: Page, key: string): Promise<{ x: number; y: nu
 }
 
 async function menu(page: Page, name: string, action: string): Promise<void> {
-  await page.locator(`.menu-item[data-menu="${name}"]`).click();
-  await page.locator(`.menu-dropdown[data-menu="${name}"] [data-action="${action}"]`).click();
+  await clickMenuItem(page, name, action);
 }
 
 async function freshPage(page: Page): Promise<void> {

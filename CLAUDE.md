@@ -276,7 +276,16 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   aria-haspopup); ↓/Enter/Space open + first item, ↑ last item, ←/→ other menu, Home/End, Enter/Space run, Esc closes and
   focuses the button, Tab closes. Item clicks are delegated per dropdown (generated remote items keep their own handlers);
   `aria-disabled="true"` items do nothing (Edit > Undo/Redo follow the undo history, `UndoRedoController`). `data-action`
-  values and selectors are stable (tests). File > New = `TabManager.openNewTab()` (draw.io-like: new tab "Diagram <n>",
+  values and selectors are stable (tests). Menus: File (New, Open…, provider items, Save, Save As…, Save as Template…,
+  Import ▸ draw.io File (New Tab) / railML / Railway Script / Image as Custom Shape, Export ▸ Download .drawio (`export`) /
+  PNG / SVG / railML / Railway Script / Railway Data ▸ / Scenario ▸, Share…, Print), Edit, View (zoom, Grid = the toolbar grid
+  button = Properties > Canvas grid via `grid-toggle.ts`, Dark Mode, ERTMS Tab, Connection Arrows), Arrange, **Railway**
+  (route tool + tables, Update Route Paths, Recalculate km, Edit Data…, Run Checks, Railway Script Editor, Snap to Track,
+  Show Routes, km Ruler), Extras (PlantUML Editor, Design Custom Shapes…), Help. Each `data-action` exists once. Submenus =
+  `.menu-submenu[data-submenu]` > `.menu-submenu-title` (aria-haspopup, aria-expanded) + `.menu-submenu-list` (role=menu,
+  nestable), shown by CSS :hover / :focus-within; → / Enter open on the first item, ← / Esc back to the title. e2e:
+  `tests/e2e/menu-helpers.ts` `clickMenuItem(page, menu, action)` / `revealMenuItem(item)` hover the submenu chain.
+  File > New = `TabManager.openNewTab()` (draw.io-like: new tab "Diagram <n>",
   shown, its project named alike); the "+" button and the first start do the same. Help > About = `showAboutDialog`.
 - Themed dialogs (`src/ui/app-dialogs.ts`, `.rd-tpl-modal` look): `openAppModal` (role=dialog, aria-modal, labelledby,
   backdrop, focus trap, Esc cancel, Enter submit, focus returned, keys kept from the dispatcher), `promptSaveAs` (File >

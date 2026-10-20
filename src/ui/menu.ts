@@ -3,6 +3,7 @@ import { GraphCommandService } from '../services/graph-command-service';
 import { SaveLoadController } from './saveload';
 import { isRailmlFile, requestRailmlOpen } from '../railml/install-railml';
 import { toggleConnectionArrows } from './hover-arrows';
+import { setGridShown } from './grid-toggle';
 import type { AlignmentController } from './alignment';
 import type { ExportImageController } from './export-image';
 import type { LeftPanelTabs } from './left-panel-tabs';
@@ -70,6 +71,9 @@ export class MenuController {
         }
       });
       dropdown.addEventListener('keydown', (e) => this.onMenuKeydown(e, dropdown));
+      // Submenu titles: aria-expanded while their list shows (CSS :hover / :focus-within)
+      const syncExpanded = (): void => syncSubmenusExpanded(dropdown);
+      for (const type of ['focusin', 'focusout', 'mouseover', 'mouseleave']) dropdown.addEventListener(type, () => requestAnimationFrame(syncExpanded));
     });
 
     // Close menus when clicking elsewhere
@@ -252,6 +256,32 @@ export class MenuController {
     }
   }
 
+  /** File > Import > draw.io File (New Tab)…: like Open, into a new tab (the current diagram stays). */
+  private importDrawioFile(): void {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = '.drawio,.xml,.railwaydrawer';
+    input.onchange = async () => {
+      const file = input.files?.[0];
+      if (!file) return;
+      const railml = await isRailmlFile(file);
+      if (railml !== null) {
+        requestRailmlOpen(railml, file.name);
+        return;
+      }
+      const tabManager = ServiceRegistry.getTabManager();
+      if (!tabManager) return;
+      const tab = tabManager.openNewTab();
+      try {
+        await tab.saveLoadController.loadProjectFromFile(file);
+      } catch (error) {
+        // SaveLoadController showed the error; the new tab stays empty
+        console.error('[Menu] Import failed:', error);
+      }
+    };
+    input.click();
+  }
+
   private openProject(): void {
     console.log('[Menu] Opening file dialog...');
     const input = document.createElement('input');
@@ -303,7 +333,7 @@ export class MenuController {
       window.dispatchEvent(new CustomEvent('railway-export-request', { detail: action.slice('exportRailway:'.length) }));
       return;
     }
-    // View/Extras railway route tools: src/railway/install-railway-routes.ts
+    // Railway menu route tools and toggles: src/railway/install-railway-routes.ts
     if (action.startsWith('railwayRoute:')) {
       window.dispatchEvent(new CustomEvent('railway-route-request', { detail: action.slice('railwayRoute:'.length) }));
       return;
@@ -421,8 +451,21 @@ export class MenuController {
         break;
 
       case 'showGrid':
-        this.graph.gridEnabled = !this.graph.gridEnabled;
-        console.log('[Menu] Grid', this.graph.gridEnabled ? 'enabled' : 'disabled');
+        // Same as the toolbar grid button and Properties > Canvas > Grid: grid shown + snapping
+        setGridShown(this.graph, !this.graph.gridEnabled);
+        break;
+
+      case 'importDrawio':
+        this.importDrawioFile();
+        break;
+
+      case 'importImage':
+        // src/ui/image-upload.ts: Upload Custom Shape Image dialog
+        document.getElementById('btn-upload-image')?.click();
+        break;
+
+      case 'railwayScriptEditor':
+        (window as WindowWithLeftPanelTabs).__leftPanelTabs?.switchTab('railwayScript');
         break;
 
       // Same commands as the canvas context menu (GraphCommandService): one undoable edit each
@@ -506,13 +549,6 @@ export class MenuController {
         window.dispatchEvent(new CustomEvent('railway-checks-request'));
         break;
 
-      case 'editStyle':
-        {
-          const styleTab = document.querySelector('.prop-tab[data-tab="style"]') as HTMLElement;
-          if (styleTab) styleTab.click();
-        }
-        break;
-
       case 'shortcuts':
         // ShortcutsHelpController (main-editor.ts), also on F1
         window.dispatchEvent(new CustomEvent('shortcuts-help-request'));
@@ -541,7 +577,7 @@ function setRovingButton(button: HTMLElement): void {
 
 /**
  * Roles of a dropdown's items (also the generated "Open from <provider>…" items): menuitem unless
- * already a menuitemcheckbox, separators, the Export Railway Data submenu; shortcut hints.
+ * already a menuitemcheckbox, separators, the (nested) submenus; shortcut hints.
  */
 function setupMenuItemsAria(dropdown: HTMLElement): void {
   dropdown.querySelectorAll<HTMLElement>('.menu-dropdown-item').forEach((item) => {
@@ -558,6 +594,7 @@ function setupMenuItemsAria(dropdown: HTMLElement): void {
     if (title) {
       title.setAttribute('role', 'menuitem');
       title.setAttribute('aria-haspopup', 'menu');
+      if (!title.hasAttribute('aria-expanded')) title.setAttribute('aria-expanded', 'false');
       title.tabIndex = -1;
     }
     if (list) {
@@ -590,6 +627,14 @@ function setupMenubarAria(): void {
       button.setAttribute('aria-controls', dropdown.id);
       setupMenuItemsAria(dropdown);
     }
+  });
+}
+
+function syncSubmenusExpanded(dropdown: HTMLElement): void {
+  dropdown.querySelectorAll<HTMLElement>('.menu-submenu').forEach((submenu) => {
+    const list = submenu.querySelector<HTMLElement>(':scope > .menu-submenu-list');
+    const open = !!list && list.getClientRects().length > 0;
+    submenu.querySelector(':scope > .menu-submenu-title')?.setAttribute('aria-expanded', String(open));
   });
 }
 

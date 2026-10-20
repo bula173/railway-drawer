@@ -29,6 +29,7 @@
  */
 import { test, expect } from '@playwright/test';
 import type { Page } from '@playwright/test';
+import { revealMenuItem } from './menu-helpers';
 
 type Theme = 'light' | 'dark';
 
@@ -299,12 +300,22 @@ async function auditAllSurfaces(page: Page, a: Auditor): Promise<void> {
   await a.shot('main');
 
   // Menus
-  for (const menu of ['file', 'edit', 'view', 'arrange', 'extras', 'help']) {
+  for (const menu of ['file', 'edit', 'view', 'arrange', 'railway', 'extras', 'help']) {
     await openMenu(page, menu);
     if (menu === 'file') {
-      await page.locator('.menu-submenu-title').hover();
-      await a.check('File menu + Export Railway Data submenu', '.menu-dropdown[data-menu="file"]');
+      await page.locator('.menu-submenu[data-submenu="import"] > .menu-submenu-title').hover();
+      await a.check('File menu + Import submenu', '.menu-dropdown[data-menu="file"]');
+      await page.locator('.menu-submenu[data-submenu="export"] > .menu-submenu-title').hover();
+      await page.locator('.menu-submenu[data-submenu="export-railway-data"] > .menu-submenu-title').hover();
+      await expect(page.locator('[data-action="exportRailway:xlsx"]')).toBeVisible();
+      await a.check('File menu + Export > Railway Data submenus', '.menu-dropdown[data-menu="file"]');
       await a.shot('menu-file');
+      await page.locator('.menu-submenu[data-submenu="export-scenario"] > .menu-submenu-title').hover();
+      await expect(page.locator('[data-action="exportScenarioPdf"]')).toBeVisible();
+      await a.check('File menu + Export > Scenario submenus', '.menu-dropdown[data-menu="file"]');
+    } else if (menu === 'railway') {
+      await a.check('Railway menu', '.menu-dropdown[data-menu="railway"]');
+      await a.shot('menu-railway');
     } else {
       await a.check(`${menu} menu`, `.menu-dropdown[data-menu="${menu}"]`);
     }
@@ -578,8 +589,8 @@ async function auditFeatureSurfaces(page: Page, a: Auditor): Promise<void> {
   await expect(tool).toHaveCount(0);
 
   // Route Table / Interlocking dialog
-  await openMenu(page, 'extras');
-  await page.locator('.menu-dropdown[data-menu="extras"] [data-action="railwayRoute:routeTable"]').click();
+  await openMenu(page, 'railway');
+  await page.locator('.menu-dropdown[data-menu="railway"] [data-action="railwayRoute:routeTable"]').click();
   const routes = page.locator('.rd-route-dialog');
   await expect(routes.locator('.rd-route-table tbody tr')).toHaveCount(1);
   await a.check('Route Table dialog', '.rd-route-dialog-overlay');
@@ -626,6 +637,7 @@ async function auditFeatureSurfaces(page: Page, a: Auditor): Promise<void> {
 
   // File > Export Scenario (PDF)… options dialog
   await openMenu(page, 'file');
+  await revealMenuItem(page.locator('.menu-dropdown-item[data-action="exportScenarioPdf"]'));
   await page.locator('.menu-dropdown-item[data-action="exportScenarioPdf"]').click();
   const exportDialog = page.locator('[data-testid="scenario-doc-export-dialog"]');
   await expect(exportDialog).toBeVisible();

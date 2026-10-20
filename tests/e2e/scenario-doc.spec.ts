@@ -12,6 +12,7 @@
 import { readFile } from 'node:fs/promises';
 import { test, expect } from '@playwright/test';
 import type { Page } from '@playwright/test';
+import { revealMenuItem } from './menu-helpers';
 
 const HEXAGON = '#drawio-palette-container section[data-palette-id="general"] .rd-dp-item[title="Hexagon"]';
 
@@ -143,6 +144,7 @@ test.describe('scenario as a document', () => {
 
     // File > Export Scenario (PDF)…
     await page.locator('.menu-item[data-menu="file"]').click();
+    await revealMenuItem(page.locator('.menu-dropdown-item[data-action="exportScenarioPdf"]'));
     await page.locator('.menu-dropdown-item[data-action="exportScenarioPdf"]').click();
     const optionsDialog = page.locator('[data-testid="scenario-doc-export-dialog"]');
     await expect(optionsDialog).toBeVisible();
@@ -261,6 +263,7 @@ test.describe('scenario as a document', () => {
 
     // PDF of the same scenario: one image per step drawing (the second layer does not break it)
     await page.locator('.menu-item[data-menu="file"]').click();
+    await revealMenuItem(page.locator('.menu-dropdown-item[data-action="exportScenarioPdf"]'));
     await page.locator('.menu-dropdown-item[data-action="exportScenarioPdf"]').click();
     await expect(optionsDialog).toBeVisible();
     const pdfDownload = page.waitForEvent('download');

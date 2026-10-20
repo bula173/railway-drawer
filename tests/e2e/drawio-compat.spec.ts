@@ -14,6 +14,7 @@ import { readFile } from 'fs/promises';
 import { resolve } from 'path';
 import { test, expect } from '@playwright/test';
 import type { Download, Page } from '@playwright/test';
+import { clickMenuItem } from './menu-helpers';
 
 const ROOT = process.cwd();
 const fixture = (path: string): Promise<string> => readFile(resolve(ROOT, path), 'utf8');
@@ -26,8 +27,7 @@ async function freshApp(page: Page): Promise<void> {
 }
 
 async function menu(page: Page, menuName: string, action: string): Promise<void> {
-  await page.locator(`.menu-item[data-menu="${menuName}"]`).click();
-  await page.locator(`.menu-dropdown[data-menu="${menuName}"] .menu-dropdown-item[data-action="${action}"]`).click();
+  await clickMenuItem(page, menuName, action);
 }
 
 async function openFile(page: Page, name: string, text: string): Promise<void> {

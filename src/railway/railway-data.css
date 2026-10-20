@@ -218,46 +218,6 @@
   gap: 4px;
 }
 
-/* File > Export Railway Data submenu */
-.menu-submenu {
-  position: relative;
-  outline: none;
-}
-.menu-submenu-title {
-  padding: 8px 12px;
-  font-size: 13px;
-  color: var(--rd-text);
-  cursor: default;
-  white-space: nowrap;
-}
-.menu-submenu-title::after {
-  content: '\25B8';
-  float: right;
-  margin-left: 16px;
-  color: var(--rd-text-subtle);
-}
-.menu-submenu:hover > .menu-submenu-title,
-.menu-submenu:focus-within > .menu-submenu-title {
-  background: var(--rd-surface-3);
-}
-.menu-submenu-list {
-  display: none;
-  position: absolute;
-  left: 100%;
-  top: -4px;
-  min-width: 220px;
-  background: var(--rd-surface);
-  border: 1px solid var(--rd-border-strong);
-  border-radius: 4px;
-  box-shadow: 0 2px 8px var(--rd-shadow);
-  z-index: 1001;
-  padding: 4px 0;
-}
-.menu-submenu:hover > .menu-submenu-list,
-.menu-submenu:focus-within > .menu-submenu-list {
-  display: block;
-}
-
 /* Scenario view: the live drawing is hidden, so its data is not editable */
 body.rd-scenario-viewing #railway-data-panel,
 body.rd-scenario-viewing #railway-checks-panel {

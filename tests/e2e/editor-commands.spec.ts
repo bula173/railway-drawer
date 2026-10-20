@@ -10,6 +10,7 @@
  */
 import { test, expect } from '@playwright/test';
 import type { Download, Page } from '@playwright/test';
+import { clickMenuItem } from './menu-helpers';
 
 /** Four vertices A..D (z-order A bottom .. D top), an edge A->B and a group G with one child. */
 const MODEL_XML = `<mxGraphModel><root><mxCell id="0"/><mxCell id="1" parent="0"/>
@@ -60,8 +61,7 @@ function selectedIds(page: Page): Promise<string[]> {
 }
 
 async function menu(page: Page, menuName: string, action: string): Promise<void> {
-  await page.locator(`.menu-item[data-menu="${menuName}"]`).click();
-  await page.locator(`.menu-dropdown[data-menu="${menuName}"] .menu-dropdown-item[data-action="${action}"]`).click();
+  await clickMenuItem(page, menuName, action);
 }
 
 async function readDownload(download: Download): Promise<Buffer> {

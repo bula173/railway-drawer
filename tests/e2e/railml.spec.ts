@@ -14,6 +14,7 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { test, expect } from '@playwright/test';
 import type { Page } from '@playwright/test';
+import { clickMenuItem } from './menu-helpers';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const FIXTURES = resolve(HERE, '../../src/railml/__tests__/fixtures');
@@ -30,8 +31,7 @@ async function inGraph<T>(page: Page, body: string, arg?: unknown): Promise<T> {
 }
 
 async function menu(page: Page, name: string, action: string): Promise<void> {
-  await page.locator(`.menu-item[data-menu="${name}"]`).click();
-  await page.locator(`.menu-dropdown[data-menu="${name}"] [data-action="${action}"]`).click();
+  await clickMenuItem(page, name, action);
 }
 
 const obj = (id: string, attrs: string, style: string, geo: string, edge = false, parent = '1'): string =>

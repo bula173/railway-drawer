@@ -10,6 +10,7 @@
 import { readFile } from 'node:fs/promises';
 import { test, expect } from '@playwright/test';
 import type { Page } from '@playwright/test';
+import { revealMenuItem } from './menu-helpers';
 
 async function inGraph<T>(page: Page, body: string, arg?: unknown): Promise<T> {
   return page.evaluate(async ({ body, arg }) => {
@@ -134,7 +135,7 @@ test('ERTMS objects: kinds on insert, data editing, checks, CSV, reload, saved f
   // File > Export Railway Data > Signals (CSV)
   const csvPromise = page.waitForEvent('download');
   await page.locator('.menu-item[data-menu="file"]').click();
-  await page.locator('.menu-submenu-title', { hasText: 'Export Railway Data' }).hover();
+  await revealMenuItem(page.locator('.menu-dropdown-item[data-action="exportRailway:signals"]'));
   await page.locator('.menu-dropdown-item[data-action="exportRailway:signals"]').click();
   const csvDownload = await csvPromise;
   expect(csvDownload.suggestedFilename()).toMatch(/-signals\.csv$/);

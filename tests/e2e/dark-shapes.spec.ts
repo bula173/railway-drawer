@@ -14,6 +14,7 @@
 import { mkdir } from 'node:fs/promises';
 import { test, expect } from '@playwright/test';
 import type { Download, Page } from '@playwright/test';
+import { clickMenuItem } from './menu-helpers';
 
 type Theme = 'light' | 'dark';
 
@@ -69,8 +70,7 @@ async function insertFromPalette(page: Page, palette: string, title: string): Pr
 }
 
 async function menu(page: Page, menuName: string, action: string): Promise<void> {
-  await page.locator(`.menu-item[data-menu="${menuName}"]`).click();
-  await page.locator(`.menu-dropdown[data-menu="${menuName}"] .menu-dropdown-item[data-action="${action}"]`).click();
+  await clickMenuItem(page, menuName, action);
 }
 
 async function readDownload(download: Download): Promise<Buffer> {

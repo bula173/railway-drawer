@@ -13,6 +13,7 @@
 import { readFile } from 'node:fs/promises';
 import { test, expect } from '@playwright/test';
 import type { Page } from '@playwright/test';
+import { clickMenuItem } from './menu-helpers';
 
 async function inGraph<T>(page: Page, body: string, arg?: unknown): Promise<T> {
   return page.evaluate(async ({ body, arg }) => {
@@ -91,8 +92,7 @@ async function dragObject(page: Page, rdId: string, dx: number, dy: number): Pro
 }
 
 async function menu(page: Page, name: string, action: string): Promise<void> {
-  await page.locator(`.menu-item[data-menu="${name}"]`).click();
-  await page.locator(`.menu-dropdown[data-menu="${name}"] [data-action="${action}"]`).click();
+  await clickMenuItem(page, name, action);
 }
 
 test('ERTMS routes: route tool, route/interlocking tables, snap to track, km', async ({ page }) => {
@@ -146,7 +146,7 @@ test('ERTMS routes: route tool, route/interlocking tables, snap to track, km', a
   await expect(page.locator('#btn-route-tool')).toHaveAttribute('aria-pressed', 'false');
 
   // Route table and interlocking table
-  await menu(page, 'extras', 'railwayRoute:routeTable');
+  await menu(page, 'railway', 'railwayRoute:routeTable');
   const dialog = page.locator('.rd-route-dialog');
   await expect(dialog).toBeVisible();
   const rows = dialog.locator('.rd-route-table tbody tr');
@@ -167,7 +167,7 @@ test('ERTMS routes: route tool, route/interlocking tables, snap to track, km', a
   expect(xlsx.suggestedFilename()).toMatch(/-routes\.xlsx$/);
   await page.keyboard.press('Escape');
   await expect(dialog).toHaveCount(0);
-  await menu(page, 'extras', 'railwayRoute:conflictTable');
+  await menu(page, 'railway', 'railwayRoute:conflictTable');
   await expect(page.locator('.rd-route-tab[data-tab="conflicts"]')).toHaveAttribute('aria-selected', 'true');
   await page.locator('.rd-route-dialog-close').click();
 
@@ -192,10 +192,10 @@ test('ERTMS routes: route tool, route/interlocking tables, snap to track, km', a
   await inGraph(page, 'graph.clearSelection();');
 
   // View > Show Routes hides the Routes layer
-  await menu(page, 'view', 'railwayRoute:toggleRoutes');
+  await menu(page, 'railway', 'railwayRoute:toggleRoutes');
   expect(await inGraph<boolean>(page, "return graph.getDataModel().getCell('rd-routes').isVisible();")).toBe(false);
   await expect(page.locator('.menu-dropdown [data-action="railwayRoute:toggleRoutes"]')).toHaveAttribute('aria-checked', 'false');
-  await menu(page, 'view', 'railwayRoute:toggleRoutes');
+  await menu(page, 'railway', 'railwayRoute:toggleRoutes');
   expect(await inGraph<boolean>(page, "return graph.getDataModel().getCell('rd-routes').isVisible();")).toBe(true);
 
   // Snap to track: an ERTMS signal dropped next to T1 sits beside it, with track and km
@@ -237,15 +237,15 @@ test('ERTMS routes: route tool, route/interlocking tables, snap to track, km', a
 
   // Extras > Recalculate km: the balise at x=300 on T1 gets km 10.3
   expect((await attrsOf(page, 'B1'))?.rdKm).toBe('1');
-  await menu(page, 'extras', 'railwayRoute:recalcKm');
+  await menu(page, 'railway', 'railwayRoute:recalcKm');
   await expect.poll(async () => (await attrsOf(page, 'B1'))?.rdKm).toBe('10.3');
 
   // km ruler along the selected track
   await inGraph(page, "graph.setSelectionCell(graph.getDataModel().getCell('t1'));");
-  await menu(page, 'view', 'railwayRoute:toggleKmRuler');
+  await menu(page, 'railway', 'railwayRoute:toggleKmRuler');
   await expect(page.locator('.rd-km-ruler-overlay .rd-km-ruler[data-track="T1"]')).toHaveCount(1);
   await expect(page.locator('.rd-km-ruler-overlay .rd-km-label').first()).toHaveText('10+000');
-  await menu(page, 'view', 'railwayRoute:toggleKmRuler');
+  await menu(page, 'railway', 'railwayRoute:toggleKmRuler');
   await expect(page.locator('.rd-km-ruler-overlay')).toHaveCount(0);
 
   expect(pageErrors).toEqual([]);

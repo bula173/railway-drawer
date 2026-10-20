@@ -13,6 +13,7 @@ import { readFile } from 'fs/promises';
 import { resolve } from 'path';
 import { test, expect } from '@playwright/test';
 import type { Page } from '@playwright/test';
+import { clickMenuItem } from './menu-helpers';
 
 const MODEL_XML = `<mxGraphModel><root><mxCell id="0"/><mxCell id="1" parent="0"/>
 <mxCell id="A" value="Alpha" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="60" y="60" width="120" height="60" as="geometry"/></mxCell>
@@ -232,8 +233,7 @@ test.describe('canvas interaction (real mouse)', () => {
 });
 
 async function menu(page: Page, menuName: string, action: string): Promise<void> {
-  await page.locator(`.menu-item[data-menu="${menuName}"]`).click();
-  await page.locator(`.menu-dropdown[data-menu="${menuName}"] .menu-dropdown-item[data-action="${action}"]`).click();
+  await clickMenuItem(page, menuName, action);
 }
 
 function isLocked(page: Page, id: string): Promise<boolean> {
