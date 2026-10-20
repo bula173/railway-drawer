@@ -37,8 +37,16 @@ import { globalErrorHandler } from './services/error-handler';
 import { shouldIgnoreGraphShortcut } from './ui/delete';
 import { registerDrawioCodecs } from './services/drawio-xml';
 import { ensureStencilsForXml, installDrawioCompat, installStencilEngine, parseMxLibrary } from './drawio-shapes/engine';
-import { PALETTES, loadPalette } from './drawio-shapes/palettes';
-import { createDrawioPaletteView, ertmsPaletteSource, loadErtmsTemplates, setDrawioPaletteEngine } from './ui/drawio-palette';
+import {
+  APP_GROUPS_HIDDEN_KEY,
+  createDrawioPaletteView,
+  ertmsPaletteSource,
+  loadErtmsTemplates,
+  MERGED_APP_GROUPS,
+  migrateMergedPaletteFlags,
+  setDrawioPaletteEngine,
+  shapesTabPalettes,
+} from './ui/drawio-palette';
 import { createTemplatesPanel, openTemplateAsNewDiagram, saveAsTemplate, TemplateStore } from './ui/templates';
 import { installDarkModeToggle } from './drawio-shapes/theme/dark-mode';
 import { installSharing } from './share/install-sharing';
@@ -440,17 +448,20 @@ installRailwayScript(tabManager, globalNotificationManager, leftPanelTabs, docum
 // ============= SHAPES TAB =============
 
 /**
- * @brief App shape groups (Basic, ERTMS, ...) at the top of the Shapes tab
- * @details Draggable items that can be dropped onto the canvas. Hidden groups are stored in
- * localStorage and toggled from the "More shapes…" menu together with the draw.io palettes.
+ * @brief App shape groups at the top of the Shapes tab (none by default)
+ * @details The app's "Basic" group is merged into the palette's "General" section
+ * (shapes-tab-palettes.ts), so it is not shown here; any other registered group is. Hidden groups
+ * are stored in localStorage and toggled from the "More shapes…" menu with the draw.io palettes.
+ * Stored flags of the merged palettes/groups are moved to "General" first.
  */
-const APP_GROUPS_HIDDEN_KEY = 'railway-drawer-hidden-shape-groups';
+migrateMergedPaletteFlags();
 const hiddenAppGroups = new Set<string>(readStringArray(APP_GROUPS_HIDDEN_KEY));
+const separateAppGroups = (): string[] => shapeRegistry.getGroups().filter((g) => !MERGED_APP_GROUPS.includes(g));
 const shapeToolbar = new ShapeToolbar(document.getElementById('app-shapes-container')!, shapeRegistry);
 const applyAppGroupVisibility = (): void => {
-  shapeToolbar.setEnabledGroups(new Set(shapeRegistry.getGroups().filter((g) => !hiddenAppGroups.has(g))));
+  shapeToolbar.setEnabledGroups(new Set(separateAppGroups().filter((g) => !hiddenAppGroups.has(g))));
 };
-if (hiddenAppGroups.size > 0) applyAppGroupVisibility();
+applyAppGroupVisibility();
 
 function readStringArray(key: string): string[] {
   try {
@@ -462,20 +473,22 @@ function readStringArray(key: string): string[] {
 }
 
 /**
- * @brief draw.io shape palettes (General, Misc, Advanced, Basic, Arrows, Flowchart, ERTMS, ...)
- * @details Same entries, titles, sizes and styles as draw.io (jgraph/drawio v32.4.1); inserted
+ * @brief draw.io shape palettes (General, Misc, Advanced, Arrows, Flowchart, ERTMS, ...)
+ * @details "General" also holds draw.io's Basic palette and the app's Basic shapes that draw.io
+ * has no equivalent for (one section, see shapes-tab-palettes.ts). Otherwise the same entries,
+ * titles, sizes and styles as draw.io (jgraph/drawio v32.4.1); inserted
  * cells keep draw.io's style strings, so saved files open 1:1 in draw.io. ERTMS is the draw.io
  * library public/libraries/ertms.xml. Click inserts at the view centre, drag drops at the pointer.
  */
 createDrawioPaletteView({
   container: document.getElementById('drawio-palette-container')!,
   getGraph: () => tabManager.getActiveTab()?.graph ?? null,
-  palettes: PALETTES.map((meta) => ({ ...meta, load: () => loadPalette(meta.id) })),
+  palettes: shapesTabPalettes(() => MERGED_APP_GROUPS.flatMap((g) => shapeRegistry.getShapesByGroup(g))),
   extraLibraries: [ertmsPaletteSource(import.meta.env.BASE_URL)],
   dropTarget: graphContainer,
   onError: (message) => globalNotificationManager.error(message),
   prepareInsert: prepareRailwayInsert,
-  extraMenuItems: shapeRegistry.getGroups().map((group) => ({
+  extraMenuItems: separateAppGroups().map((group) => ({
     id: `app-${group}`,
     title: `${group} (Railway Drawer)`,
     isChecked: () => !hiddenAppGroups.has(group),

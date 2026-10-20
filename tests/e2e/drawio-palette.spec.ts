@@ -55,12 +55,17 @@ test.describe('draw.io palettes in the maxGraph editor', () => {
     await expect(page.locator('#stencils-container')).toHaveCount(0);
     const container = page.locator('#drawio-palette-container');
     await expect(container).toBeVisible();
-    await expect(page.locator('#shapes-container #app-shapes-container .shapes-group-header').first()).toBeVisible();
+    // draw.io General + Basic and the app's Basic group are one "General" section (no Basic header)
+    await expect(page.locator('#shapes-container #app-shapes-container .shapes-group-header')).toHaveCount(0);
+    const headers = page.locator('#shapes-container .rd-dp-category:not([hidden]) .rd-dp-header-title');
+    await expect(headers).toHaveText(['General', 'Misc', 'Advanced', 'Arrows', 'Flowchart', 'ERTMS']);
+    await expect(container.locator('section[data-palette-id="basic"]')).toHaveCount(0);
 
-    // General (expanded by default) has draw.io's 45 entries; ERTMS shows the 18 simple elements of
-    // the ertms.xml library (its 22 scenario diagrams are ERTMS templates, see templates.spec.ts)
+    // General (expanded by default): draw.io's 45 General + 76 Basic entries + 4 merged app shapes;
+    // ERTMS shows the 18 simple elements of the ertms.xml library (its 22 scenario diagrams are
+    // ERTMS templates, see templates.spec.ts)
     const general = container.locator('section[data-palette-id="general"]');
-    await expect(general.locator('.rd-dp-item')).toHaveCount(45);
+    await expect(general.locator('.rd-dp-item')).toHaveCount(125);
     const ertms = container.locator('section[data-palette-id="ertms"]');
     await expect(ertms.locator('.rd-dp-item')).toHaveCount(18);
     await expect(general.locator('.rd-dp-thumb-ready').first()).toBeVisible();
@@ -68,9 +73,7 @@ test.describe('draw.io palettes in the maxGraph editor', () => {
 
     // Click inserts at the view centre
     await general.locator('.rd-dp-item[title="Hexagon"]').click();
-    const basic = container.locator('section[data-palette-id="basic"]');
-    await basic.locator('.rd-dp-header').click();
-    await basic.locator('.rd-dp-item[title="Flash"]').click();
+    await general.locator('.rd-dp-item[title="Flash"]').click();
     await ertms.locator('.rd-dp-item').first().click();
 
     const xml = await waitForCached(page, 'mxgraph.basic.flash');
@@ -96,27 +99,68 @@ test.describe('draw.io palettes in the maxGraph editor', () => {
     expect(pageErrors).toEqual([]);
   });
 
-  test('"More shapes…" toggles draw.io palettes and app shape groups', async ({ page }) => {
+  test('"More shapes…" lists the merged General once and toggles it', async ({ page }) => {
     await page.goto('/');
-    await page.evaluate(() => localStorage.removeItem('railway-drawer-hidden-shape-groups'));
+    await page.evaluate(() => {
+      localStorage.removeItem('railway-drawer-hidden-shape-groups');
+      localStorage.removeItem('rd.drawioPalettes.visible');
+    });
     await page.reload();
-    const appShapes = page.locator('#app-shapes-container');
-    await expect(appShapes.locator('.shapes-group-header[data-group="Basic"]')).toBeVisible();
+    const general = page.locator('#drawio-palette-container section[data-palette-id="general"]');
+    await expect(general).toBeVisible();
 
     await page.locator('#drawio-palette-container .rd-dp-more').click();
     const menu = page.locator('#drawio-palette-container .rd-dp-menu');
-    await expect(menu.locator('input[data-palette-id="general"]')).toBeChecked();
-    const basicGroup = menu.locator('input[data-menu-item-id="app-Basic"]');
-    await expect(basicGroup).toBeChecked();
+    await expect(menu.locator('.rd-dp-menu-row')).toHaveText(['General', 'Misc', 'Advanced', 'Arrows', 'Flowchart', 'Arrows (legacy)', 'ERTMS']);
+    await expect(menu.locator('input[data-palette-id="basic"], input[data-menu-item-id="app-Basic"]')).toHaveCount(0);
+    const generalBox = menu.locator('input[data-palette-id="general"]');
+    await expect(generalBox).toBeChecked();
 
-    await basicGroup.uncheck();
-    await expect(appShapes.locator('.shapes-group-header[data-group="Basic"]')).toHaveCount(0);
+    await generalBox.uncheck();
+    await expect(general).toBeHidden();
     await page.reload();
-    await expect(appShapes.locator('.shapes-group-header[data-group="Basic"]')).toHaveCount(0);
+    await expect(general).toBeHidden();
 
     await page.locator('#drawio-palette-container .rd-dp-more').click();
-    await menu.locator('input[data-menu-item-id="app-Basic"]').check();
-    await expect(appShapes.locator('.shapes-group-header[data-group="Basic"]')).toBeVisible();
+    await menu.locator('input[data-palette-id="general"]').check();
+    await expect(general).toBeVisible();
+  });
+
+  test('stored Basic visibility migrates to the merged General', async ({ page }) => {
+    await page.goto('/');
+    // General hidden but draw.io Basic shown (old layout): the merged section is shown
+    await page.evaluate(() => {
+      localStorage.setItem('rd.drawioPalettes.visible', JSON.stringify({ general: false, basic: true }));
+      localStorage.setItem('railway-drawer-hidden-shape-groups', JSON.stringify(['Basic']));
+    });
+    await page.reload();
+    await expect(page.locator('#drawio-palette-container section[data-palette-id="general"]')).toBeVisible();
+    const stored = await page.evaluate(() => [
+      localStorage.getItem('rd.drawioPalettes.visible'),
+      localStorage.getItem('railway-drawer-hidden-shape-groups'),
+    ]);
+    expect(stored).toEqual(['{}', '[]']);
+  });
+
+  test('merged-in app shapes insert once, search lists them once', async ({ page }) => {
+    await page.goto('/');
+    await expect(page.locator('#tabs-container .tab-button.active')).toHaveCount(1);
+    await page.evaluate(() => localStorage.removeItem('rd.drawioPalettes.visible'));
+    const container = page.locator('#drawio-palette-container');
+    const general = container.locator('section[data-palette-id="general"]');
+    await expect(general.locator('.rd-dp-item')).toHaveCount(125);
+
+    // app shape with no draw.io equivalent: app shape, written as a draw.io shape plus rdShape
+    await general.locator('.rd-dp-item[title="Divided Rectangle"]').click();
+    // app shape with a draw.io equivalent outside General/Basic: inserted with the draw.io style
+    await general.locator('.rd-dp-item[title="Cross"]').click();
+    const xml = await waitForCached(page, 'rdShape=double-rectangle-shape');
+    expect(styleWith(xml, 'shape=cross')?.replace(/;?rdLayerId=[^;]*;$/, '')).toBe('shape=cross;whiteSpace=wrap;html=1;');
+
+    await container.locator('.rd-dp-search').fill('cross');
+    const hits = container.locator('.rd-dp-category:not([hidden]) .rd-dp-item:not([hidden])[title="Cross"]');
+    await expect(hits).toHaveCount(1);
+    await expect(general.locator('.rd-dp-item[title="Cross"]')).toBeVisible();
   });
 
   test('optional ERTMS tab shows only the ERTMS library and is remembered', async ({ page }) => {

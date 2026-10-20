@@ -10,7 +10,7 @@ import { logger } from '../../drawio/logger';
 import { onDrawioColorModeChange } from '../../drawio-shapes/engine/graph-compat';
 import { fallbackEngine } from './contracts';
 import type { PaletteDef, PaletteEngine, PaletteEntry, PaletteMeta } from './contracts';
-import { insertEntry } from './entry-cells';
+import { entrySignature, insertEntry } from './entry-cells';
 import {
   libraryToPaletteDef,
   readStoredLibraries,
@@ -541,6 +541,8 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
   function applyFilter(): void {
     const terms = query.toLowerCase().split(/\s+/).filter(Boolean);
     root.classList.toggle('rd-dp-searching', terms.length > 0);
+    // Search lists a shape once: an entry with the same cells as an earlier match is hidden
+    const matched = new Set<string>();
     for (const cat of categories) {
       const visible = isVisible(cat);
       if (!visible) {
@@ -554,7 +556,12 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
       }
       let matches = 0;
       for (const item of cat.items) {
-        const hit = terms.every((t) => item.text.includes(t));
+        let hit = terms.every((t) => item.text.includes(t));
+        if (hit) {
+          const sig = entrySignature(item.entry);
+          if (matched.has(sig)) hit = false;
+          else matched.add(sig);
+        }
         item.node.hidden = !hit;
         if (hit) matches++;
       }

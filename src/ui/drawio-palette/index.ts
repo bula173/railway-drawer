@@ -33,3 +33,17 @@ export {
   resetErtmsLibraryCache,
 } from './ertms-source';
 export { THUMB_BORDER, THUMB_SIZE, ThumbnailRenderer } from './thumbnail-renderer';
+export {
+  APP_BASIC_MERGE,
+  APP_GROUPS_HIDDEN_KEY,
+  appShapeEntry,
+  entrySignature,
+  MERGED_APP_GROUPS,
+  MERGED_DRAWIO_PALETTES,
+  MERGED_SECTION_ID,
+  MERGED_SECTION_TITLE,
+  mergeGeneralPalette,
+  migrateMergedPaletteFlags,
+  shapesTabPalettes,
+} from './shapes-tab-palettes';
+export type { AppShapeMerge } from './shapes-tab-palettes';

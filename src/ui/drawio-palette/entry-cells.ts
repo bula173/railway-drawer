@@ -88,6 +88,11 @@ export function createCellsForEntry(entry: PaletteEntry): Cell[] {
   return [cell];
 }
 
+/** Identity of an entry's cells (kind, style, label, composite XML), for de-duplication. */
+export function entrySignature(entry: PaletteEntry): string {
+  return [entry.kind, entry.style ?? '', entry.value ?? '', entry.xml ?? ''].join('\u0000');
+}
+
 /** Every style string of an entry, for stencil preloading. */
 export function entryStyles(entry: PaletteEntry): string[] {
   const styles: string[] = [];
