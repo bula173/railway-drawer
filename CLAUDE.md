@@ -191,6 +191,8 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
 - Dead code: modules not reachable from `src/main.ts` (and not test-only helpers) are deleted, not kept "for later";
   the old hand-written shape classes (`src/shapes/{uml,bpmn,cloud,...}`), `src/store`, `src/contexts`,
   `src/types`, the color picker/palette controllers etc. were removed in the cleanup.
+  The Pencil/Brush/Eraser/Line freehand tools (`src/ui/drawing.ts`, a raster canvas overlay whose strokes were never
+  saved, undone or exported) and their toolbar buttons were removed too; draw shapes/lines with the palette or toolbar.
 
 ### Theming (light / dark app chrome)
 

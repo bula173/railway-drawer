@@ -21,7 +21,6 @@ import { sanitizeCachedScript } from '../railway-script/script-store';
 import { globalSaveStatusIndicator } from './save-status';
 import { globalNotificationManager } from './notification';
 import { GraphCommandService } from '../services/graph-command-service';
-import { DrawingController } from './drawing';
 import { ConnectionHandler } from './connections';
 import { TextEditorController } from './text-editor';
 import { EdgePropertiesController } from './edge-properties';
@@ -57,7 +56,6 @@ export interface TabData {
   contextMenuController: ContextMenuController;
   menuController: MenuController;
   interactiveUIController: InteractiveUIController;
-  drawingController: DrawingController;
   layersController: LayersController;
   imageUploadController: ImageUploadController;
   pasteImageController: PasteImageController;
@@ -227,6 +225,8 @@ export class TabManager {
     graphDiv.id = `graph-${tabId}`;
     graphDiv.style.width = '100%';
     graphDiv.style.height = '100%';
+    // Positioned: overlays (hover arrows, previews) are absolute children of the graph div
+    graphDiv.style.position = 'relative';
     graphDiv.style.display = this.activeTabId ? 'none' : 'block';
     this.graphContainer.appendChild(graphDiv);
 
@@ -293,7 +293,6 @@ export class TabManager {
       const contextMenuController = new ContextMenuController(graph);
       const menuController = new MenuController(graph, graphCommandService, saveLoadController);
       const interactiveUIController = new InteractiveUIController(graph, graphCommandService);
-      const drawingController = new DrawingController(graph);
       const layersController = new LayersController(graph);
       const imageUploadController = new ImageUploadController(graph);
       const pasteImageController = new PasteImageController(graph);
@@ -328,7 +327,6 @@ export class TabManager {
         contextMenuController,
         menuController,
         interactiveUIController,
-        drawingController,
         layersController,
         imageUploadController,
         pasteImageController,
@@ -750,7 +748,6 @@ export class TabManager {
         tab.contextMenuController,
         tab.menuController,
         tab.interactiveUIController,
-        tab.drawingController,
         tab.layersController,
         tab.imageUploadController,
         tab.pasteImageController,
