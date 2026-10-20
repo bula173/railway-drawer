@@ -6,6 +6,9 @@
  * Defaults to 'dev' if git unavailable.
  */
 
+/** App version from package.json (vite.config.ts define); shown in the status bar and Help > About. */
+export const APP_VERSION = (import.meta.env.VITE_APP_VERSION as string | undefined) || '0.0.0';
+
 export const BUILD_ID = (import.meta.env.VITE_BUILD_ID as string | undefined) || 'dev';
 
 const buildTimeRaw = (import.meta.env.VITE_BUILD_TIME as string | undefined) || new Date().toISOString();

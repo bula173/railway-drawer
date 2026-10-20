@@ -68,8 +68,9 @@ export function sharePointAvailability(
   if (!config) {
     return {
       state: 'not-configured',
-      reason:
-        'Not configured. An administrator registers an app in Microsoft Entra ID and sets ' +
+      reason: 'SharePoint and OneDrive are not set up for this site. Ask your administrator.',
+      details:
+        'An administrator registers an app in Microsoft Entra ID and sets ' +
         'VITE_MSAL_CLIENT_ID (and optionally VITE_MSAL_TENANT_ID) when building the app.',
       helpUrl: SHAREPOINT_DOCS_URL,
     };

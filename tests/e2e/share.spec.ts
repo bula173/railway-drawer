@@ -56,7 +56,7 @@ test.describe('share', () => {
     await expect(dialog).toBeVisible();
     await expect(dialog).toHaveAttribute('role', 'dialog');
     await expect(dialog.locator('[data-testid="share-provider-sharepoint-status"]')).toHaveText('Not configured');
-    await expect(dialog.locator('[data-testid="share-provider-sharepoint"] a')).toHaveText('How to enable');
+    await expect(dialog.locator('[data-testid="share-provider-sharepoint-howto"] summary')).toHaveText('How to enable');
     const linkInput = dialog.locator('[data-testid="share-link"]');
     await expect(linkInput).toHaveValue(/#R[A-Za-z0-9_-]+$/);
     await expect(dialog.locator('[data-testid="share-link-length"]')).toContainText('Link length:');

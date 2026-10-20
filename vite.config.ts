@@ -1,6 +1,7 @@
 /// <reference types="vitest/config" />
 import { defineConfig, loadEnv } from 'vite'
 import { execSync } from 'child_process'
+import { readFileSync } from 'fs'
 
 // Get git commit hash for build ID
 let buildId = 'dev'
@@ -12,6 +13,9 @@ try {
 
 // Get build timestamp
 const buildTime = new Date().toISOString()
+
+// App version (status bar, Help > About): package.json is the one source
+const appVersion = String(JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 'utf8')).version ?? '')
 
 // SharePoint / OneDrive (docs/SHAREPOINT.md): from .env.local or the build environment (Cloudflare
 // Workers Builds variables). Always defined (empty when unset), so `if (!import.meta.env.VITE_MSAL_CLIENT_ID)`
@@ -31,6 +35,7 @@ export default defineConfig(({ mode }) => {
   define: {
     'import.meta.env.VITE_BUILD_ID': JSON.stringify(buildId),
     'import.meta.env.VITE_BUILD_TIME': JSON.stringify(buildTime),
+    'import.meta.env.VITE_APP_VERSION': JSON.stringify(appVersion),
     ...providerDefines,
   },
   resolve: {

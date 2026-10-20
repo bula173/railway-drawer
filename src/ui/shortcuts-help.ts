@@ -1,216 +1,154 @@
+/**
+ * @file shortcuts-help.ts
+ * @brief Help > Keyboard Shortcuts (and F1): the app's real bindings, grouped by menu, in the
+ *        themed modal (app-dialogs.ts). Opened by F1 and by the window event
+ *        `shortcuts-help-request` (MenuController, data-action="shortcuts").
+ */
+import { openAppModal, type AppModal } from './app-dialogs';
+import { ACTION_SHORTCUTS, formatShortcut, isMacPlatform, type ShortcutSpec } from './shortcut-keys';
+
+export interface ShortcutRow {
+  keys: string;
+  description: string;
+}
+
+export interface ShortcutSection {
+  section: string;
+  items: ShortcutRow[];
+}
+
+/** The shortcut sections (exported for tests); keys formatted for this platform. */
+export function shortcutSections(mac: boolean = isMacPlatform()): ShortcutSection[] {
+  const k = (action: string): string => formatShortcut(ACTION_SHORTCUTS[action], mac);
+  const f = (spec: ShortcutSpec): string => formatShortcut(spec, mac);
+  const click = mac ? '⌘+Click' : 'Ctrl+Click';
+  return [
+    {
+      section: 'File',
+      items: [{ keys: k('save'), description: 'Save (download the .drawio file, or save back to GitLab/SharePoint)' }],
+    },
+    {
+      section: 'Edit',
+      items: [
+        { keys: k('undo'), description: 'Undo' },
+        { keys: `${k('redo')} / ${f({ mod: true, shift: true, key: 'Z' })}`, description: 'Redo' },
+        { keys: k('cut'), description: 'Cut' },
+        { keys: k('copy'), description: 'Copy' },
+        { keys: k('paste'), description: 'Paste' },
+        { keys: k('duplicate'), description: 'Duplicate' },
+        { keys: 'Delete / Backspace', description: 'Delete the selection' },
+        { keys: k('selectAll'), description: 'Select all' },
+        { keys: 'Esc', description: 'Clear the selection' },
+        { keys: 'Arrow keys', description: 'Move the selection by 1 px' },
+        { keys: 'Shift+Arrow keys', description: 'Move the selection by the grid size' },
+      ],
+    },
+    {
+      section: 'View',
+      items: [
+        { keys: k('zoomIn'), description: 'Zoom in' },
+        { keys: k('zoomOut'), description: 'Zoom out' },
+        { keys: k('zoomActual'), description: 'Reset zoom (100%)' },
+        { keys: k('fitWindow'), description: 'Fit to window' },
+        { keys: mac ? '⌘+Scroll' : 'Ctrl+Scroll', description: 'Zoom with the mouse wheel' },
+        { keys: 'Space (hold) + drag', description: 'Pan the canvas' },
+        { keys: k('toggleConnectionArrows'), description: 'Connection Arrows on/off' },
+      ],
+    },
+    {
+      section: 'Arrange',
+      items: [
+        { keys: k('group'), description: 'Group' },
+        { keys: k('ungroup'), description: 'Ungroup' },
+        { keys: f({ mod: true, key: 'H' }), description: 'Flip horizontally' },
+        { keys: f({ mod: true, key: 'J' }), description: 'Flip vertically' },
+        { keys: f({ mod: true, key: 'R' }), description: 'Rotate 90° clockwise' },
+        { keys: f({ mod: true, shift: true, key: 'R' }), description: 'Rotate 90° counter-clockwise' },
+      ],
+    },
+    {
+      section: 'Connection arrows (hover a shape)',
+      items: [
+        { keys: 'Click arrow', description: 'Connect to the shape in that direction, or add a connected copy' },
+        { keys: `${click} arrow`, description: 'Always add a connected copy' },
+        { keys: 'Shift+Click arrow', description: 'Connect without copying (dangling edge if nothing is there)' },
+        { keys: `${mac ? '⇧⌘' : 'Ctrl+Shift'}+Click arrow`, description: 'Add a copy without an edge' },
+        { keys: 'Drag arrow', description: 'Connect to the shape you drop on, or add a connected copy on blank canvas' },
+        { keys: `${mac ? '⌥' : 'Alt'} (hold)`, description: 'Hide the arrows' },
+      ],
+    },
+    {
+      section: 'Menus',
+      items: [
+        { keys: 'Arrow keys', description: 'Move between menus and items' },
+        { keys: 'Home / End', description: 'First / last item' },
+        { keys: 'Enter / Space', description: 'Run the item' },
+        { keys: 'Esc', description: 'Close the menu' },
+      ],
+    },
+    {
+      section: 'Help',
+      items: [{ keys: k('shortcuts'), description: 'Keyboard shortcuts (this dialog)' }],
+    },
+  ];
+}
+
 export class ShortcutsHelpController {
-  private modal: HTMLDivElement | null = null;
+  private modal: AppModal | null = null;
+  private readonly onKeyDown = (e: KeyboardEvent): void => {
+    if (e.key === 'F1') {
+      e.preventDefault();
+      this.show();
+    }
+  };
+  private readonly onRequest = (): void => this.show();
 
   constructor() {
-    this.setupHelpButton();
+    document.addEventListener('keydown', this.onKeyDown);
+    window.addEventListener('shortcuts-help-request', this.onRequest);
   }
 
-  private setupHelpButton(): void {
-    const helpBtn = document.getElementById('btn-shortcuts-help');
-    if (helpBtn) {
-      helpBtn.addEventListener('click', () => this.showShortcuts());
-    }
-
-    // Also support F1 for help
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'F1') {
-        e.preventDefault();
-        this.showShortcuts();
-      }
-    });
-  }
-
-  private showShortcuts(): void {
-    if (this.modal) {
-      this.modal.style.display = 'flex';
+  /** Opens the dialog (or focuses the open one). */
+  show(): void {
+    if (this.modal && !this.modal.closed && this.modal.overlay.isConnected) {
+      this.modal.dialog.querySelector<HTMLButtonElement>('button')?.focus();
       return;
     }
-
-    this.createModal();
-    if (this.modal) {
-      (this.modal as HTMLDivElement).style.display = 'flex';
-    }
-  }
-
-  private createModal(): void {
-    this.modal = document.createElement('div') as HTMLDivElement;
-    this.modal.style.cssText = `
-      display: flex;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: var(--rd-overlay);
-      align-items: center;
-      justify-content: center;
-      z-index: 10000;
-    `;
-
-    const modalContent = document.createElement('div');
-    modalContent.style.cssText = `
-      background: var(--rd-surface);
-      border-radius: 8px;
-      padding: 24px;
-      max-width: 800px;
-      width: 90%;
-      max-height: 80vh;
-      overflow-y: auto;
-      box-shadow: 0 2px 12px var(--rd-shadow);
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    `;
-
-    const title = document.createElement('h2');
-    title.textContent = '⌨️ Keyboard Shortcuts';
-    title.style.cssText = 'margin: 0 0 20px 0; font-size: 20px; color: var(--rd-text);';
-    modalContent.appendChild(title);
-
-    const shortcuts = [
-      { section: 'Selection', items: [
-        ['Ctrl+A / Cmd+A', 'Select all objects'],
-        ['Escape', 'Deselect all'],
-      ]},
-      { section: 'Editing', items: [
-        ['Ctrl+C / Cmd+C', 'Copy'],
-        ['Ctrl+X / Cmd+X', 'Cut'],
-        ['Ctrl+V / Cmd+V', 'Paste'],
-        ['Delete', 'Delete selected'],
-        ['Arrow keys', 'Move selected by 1 px'],
-        ['Shift+Arrow keys', 'Move selected by the grid size'],
-        ['Ctrl+Z / Cmd+Z', 'Undo'],
-        ['Ctrl+Y / Cmd+Y', 'Redo'],
-      ]},
-      { section: 'Connection Arrows (hover a shape)', items: [
-        ['Click arrow', 'Connect to the shape in that direction, or add a connected copy'],
-        ['Ctrl+Click / Cmd+Click arrow', 'Always add a connected copy'],
-        ['Shift+Click arrow', 'Connect without copying (dangling edge if nothing is there)'],
-        ['Ctrl+Shift+Click arrow', 'Add a copy without an edge'],
-        ['Drag arrow', 'Connect to the shape you drop on, or add a connected copy on blank canvas'],
-        ['Alt (hold)', 'Hide the arrows'],
-        ['Alt+Shift+A', 'Connection Arrows on/off (View menu)'],
-      ]},
-      { section: 'Zoom', items: [
-        ['Ctrl++ / Cmd++', 'Zoom in'],
-        ['Ctrl+- / Cmd+-', 'Zoom out'],
-        ['Ctrl+0 / Cmd+0', 'Reset zoom (100%)'],
-        ['Ctrl+1 / Cmd+1', 'Fit to view'],
-        ['Ctrl+Scroll', 'Zoom with mouse wheel'],
-      ]},
-      { section: 'Alignment', items: [
-        ['N/A', 'Use toolbar buttons or right-click menu'],
-      ]},
-      { section: 'Transform', items: [
-        ['Ctrl+H / Cmd+H', 'Flip horizontal'],
-        ['Ctrl+J / Cmd+J', 'Flip vertical'],
-        ['Ctrl+R / Cmd+R', 'Rotate 90° clockwise'],
-        ['Ctrl+Shift+R / Cmd+Shift+R', 'Rotate 90° counter-clockwise'],
-      ]},
-      { section: 'Organization', items: [
-        ['Ctrl+G / Cmd+G', 'Group selected'],
-        ['Ctrl+Shift+G / Cmd+Shift+G', 'Ungroup'],
-      ]},
-      { section: 'Other', items: [
-        ['F1', 'Show this help dialog'],
-        ['Ctrl+S / Cmd+S', 'Save project'],
-      ]},
-    ];
-
-    shortcuts.forEach(({ section, items }) => {
-      const sectionTitle = document.createElement('h3');
-      sectionTitle.textContent = section;
-      sectionTitle.style.cssText = `
-        margin: 16px 0 8px 0;
-        font-size: 14px;
-        color: var(--rd-text-muted);
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-      `;
-      modalContent.appendChild(sectionTitle);
-
+    const modal = openAppModal({ title: 'Keyboard Shortcuts', testId: 'shortcuts-dialog', className: 'rd-shortcuts-dialog' });
+    for (const { section, items } of shortcutSections()) {
+      const heading = document.createElement('h3');
+      heading.className = 'rd-shortcuts-section';
+      heading.textContent = section;
       const table = document.createElement('table');
-      table.style.cssText = `
-        width: 100%;
-        border-collapse: collapse;
-        margin-bottom: 16px;
-      `;
-
-      items.forEach(([shortcut, description]) => {
+      table.className = 'rd-shortcuts-table';
+      for (const { keys, description } of items) {
         const row = document.createElement('tr');
-        row.style.cssText = 'border-bottom: 1px solid var(--rd-border);';
-
         const keyCell = document.createElement('td');
-        keyCell.textContent = shortcut;
-        keyCell.style.cssText = `
-          padding: 8px 12px;
-          font-family: 'Courier New', monospace;
-          font-size: 12px;
-          font-weight: 600;
-          color: var(--rd-link);
-          width: 200px;
-          vertical-align: top;
-        `;
-
+        const kbd = document.createElement('kbd');
+        kbd.className = 'rd-kbd';
+        kbd.textContent = keys;
+        keyCell.appendChild(kbd);
         const descCell = document.createElement('td');
         descCell.textContent = description;
-        descCell.style.cssText = `
-          padding: 8px 12px;
-          font-size: 13px;
-          color: var(--rd-text-muted);
-          vertical-align: top;
-        `;
-
-        row.appendChild(keyCell);
-        row.appendChild(descCell);
+        row.append(keyCell, descCell);
         table.appendChild(row);
-      });
-
-      modalContent.appendChild(table);
-    });
-
-    const closeBtn = document.createElement('button');
-    closeBtn.textContent = 'Close (or press Escape)';
-    closeBtn.style.cssText = `
-      padding: 10px 16px;
-      background: var(--rd-accent);
-      color: var(--rd-accent-text);
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: 600;
-      margin-top: 16px;
-    `;
-    closeBtn.addEventListener('click', () => this.closeModal());
-    modalContent.appendChild(closeBtn);
-
-    this.modal.appendChild(modalContent);
-    document.body.appendChild(this.modal);
-
-    // Close on background click
-    this.modal.addEventListener('click', (e) => {
-      if (e.target === this.modal) {
-        this.closeModal();
       }
-    });
-
-    // Close on escape
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && this.modal && this.modal.style.display === 'flex') {
-        this.closeModal();
-      }
-    });
-  }
-
-  private closeModal(): void {
-    if (this.modal) {
-      this.modal.style.display = 'none';
+      modal.body.append(heading, table);
     }
+    const close = document.createElement('button');
+    close.type = 'button';
+    close.className = 'rd-tpl-btn rd-tpl-btn-primary';
+    close.textContent = 'Close';
+    close.addEventListener('click', () => modal.close());
+    modal.actions.appendChild(close);
+    close.focus();
+    this.modal = modal;
   }
 
   destroy(): void {
-    if (this.modal?.parentElement) {
-      this.modal.parentElement.removeChild(this.modal);
-    }
+    document.removeEventListener('keydown', this.onKeyDown);
+    window.removeEventListener('shortcuts-help-request', this.onRequest);
+    this.modal?.close();
     this.modal = null;
   }
 }

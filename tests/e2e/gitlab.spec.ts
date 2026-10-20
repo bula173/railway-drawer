@@ -34,12 +34,16 @@ test.describe('gitlab', () => {
     const dialog = page.locator('[data-testid="share-dialog"]');
     const section = dialog.locator('[data-testid="share-provider-gitlab"]');
     await expect(section.locator('[data-testid="share-provider-gitlab-status"]')).toHaveText('Not configured');
-    await expect(section.locator('a', { hasText: 'How to enable' })).toHaveAttribute('href', /docs\/GITLAB\.md$/);
+    await section.locator('[data-testid="share-provider-gitlab-howto"] summary').click();
+    await expect(section.locator('[data-testid="share-provider-gitlab-howto"] a', { hasText: 'Setup guide' })).toHaveAttribute('href', /docs\/GITLAB\.md$/);
     // SharePoint is still there, first
     await expect(dialog.locator('[data-testid="share-provider-sharepoint-status"]')).toHaveText('Not configured');
     await expect(dialog.locator('.rd-share-section[data-provider]').first()).toHaveAttribute('data-provider', 'sharepoint');
 
     const settings = section.locator('[data-testid="share-provider-gitlab-settings"]');
+    // collapsed by default: end users rarely need the settings
+    await expect(settings).not.toHaveAttribute('open', '');
+    await settings.locator('summary').click();
     await expect(settings).toHaveAttribute('open', '');
     await expect(settings).toContainText('Register this redirect URI');
     await settings.locator('input[data-setting="url"]').fill('http://gitlab.e2e.invalid');

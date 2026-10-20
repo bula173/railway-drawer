@@ -241,7 +241,7 @@ describe('Share dialog: GitLab section', () => {
     expect(createStorageProviders().map((p) => p.id)).toEqual(['sharepoint', 'gitlab']);
   });
 
-  it('"Not configured" + docs link + open settings form; saving makes the actions appear', () => {
+  it('"Not configured" (once) + admin steps behind "How to enable" + collapsed settings form; saving makes the actions appear', () => {
     const loadModule = vi.fn();
     const gitlab = createGitLabDescriptor({
       env: {},
@@ -252,11 +252,18 @@ describe('Share dialog: GitLab section', () => {
     const h = host([gitlab], { onProviderSettingsChanged });
     openShareDialog(h);
     expect(q('share-provider-gitlab-status')!.textContent).toBe('Not configured');
-    const help = q('share-provider-gitlab')!.querySelector('a')!;
-    expect(help.textContent).toBe('How to enable');
+    const status = q('share-provider-gitlab-status')!.parentElement!.textContent!;
+    expect(status.match(/not configured/gi)).toHaveLength(1);
+    expect(status).not.toContain('VITE_');
+    const howTo = q('share-provider-gitlab-howto') as HTMLDetailsElement;
+    expect(howTo.open).toBe(false);
+    expect(howTo.querySelector('summary')!.textContent).toBe('How to enable');
+    expect(howTo.textContent).toContain('VITE_GITLAB_URL');
+    const help = howTo.querySelector('a')!;
+    expect(help.textContent).toBe('Setup guide');
     expect(help.href).toContain('docs/GITLAB.md');
     const settings = q('share-provider-gitlab-settings') as HTMLDetailsElement;
-    expect(settings.open).toBe(true);
+    expect(settings.open).toBe(false);
     expect(settings.textContent).toContain('http://localhost:3000/');
 
     const set = (id: string, value: string) => {

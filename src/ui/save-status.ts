@@ -5,6 +5,9 @@
 
 import { globalNotificationManager } from './notification';
 
+/** Wording of the autosave state: the diagrams are kept in this browser's storage, not in a file. */
+export const SAVED_IN_BROWSER = 'Saved in browser';
+
 export class SaveStatusIndicator {
   private statusElement: HTMLElement;
   private currentState: 'saved' | 'unsaved' | 'saving' | 'error' = 'saved';
@@ -24,7 +27,7 @@ export class SaveStatusIndicator {
 
     const element = document.createElement('div');
     element.className = 'save-status saved';
-    element.textContent = 'All changes saved';
+    element.textContent = SAVED_IN_BROWSER;
     container.insertBefore(element, container.firstChild);
     return element;
   }
@@ -56,15 +59,16 @@ export class SaveStatusIndicator {
   }
 
   /**
-   * Reports a successful save to disk. An active error (e.g. autosave quota) stays visible,
+   * Reports a real save (or open) of the diagram: "Saved to <target>" (the downloaded file name, or
+   * the storage provider such as GitLab). An active error (e.g. autosave quota) stays visible,
    * since writing a file does not fix the browser-storage problem behind it.
    */
-  setSavedToDisk(): void {
+  setSavedToDisk(target?: string): void {
     if (this.currentState === 'error') return;
     this.currentState = 'saved';
     this.statusElement.className = 'save-status saved';
     this.statusElement.style.opacity = '1';
-    this.statusElement.textContent = '✓ Saved to disk';
+    this.statusElement.textContent = target ? `✓ Saved to ${target}` : '✓ Saved to disk';
 
     if (this.saveTimeout) clearTimeout(this.saveTimeout);
     this.saveTimeout = setTimeout(() => {
@@ -83,7 +87,9 @@ export class SaveStatusIndicator {
 
     switch (state) {
       case 'saved':
-        this.statusElement.textContent = 'All changes saved';
+        // The 5 s autosave keeps the open diagrams in this browser only (not a file)
+        this.statusElement.textContent = SAVED_IN_BROWSER;
+        this.statusElement.title = 'Autosaved in this browser. Use File > Save to keep a .drawio file.';
         break;
       case 'unsaved':
         this.statusElement.textContent = 'Unsaved changes. Click here to save.';

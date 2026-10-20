@@ -1,5 +1,4 @@
 import { Graph } from '@maxgraph/core';
-import type { EventObject } from '@maxgraph/core';
 import { applyGridBackground } from './grid-background';
 
 export type CanvasSize = 'A4' | 'A5' | 'Letter' | 'Fullscreen' | 'Custom';
@@ -13,6 +12,11 @@ interface CanvasConfig {
   height?: number;
 }
 
+/**
+ * Canvas settings (grid, background, size) of the Canvas Properties section. When it is shown is
+ * decided by PropertiesPanel (properties-state.ts): after a click on the empty canvas, only while
+ * nothing is selected.
+ */
 export class CanvasProperties {
   private graph: Graph;
   private config: CanvasConfig = {
@@ -32,24 +36,7 @@ export class CanvasProperties {
 
   constructor(graph: Graph) {
     this.graph = graph;
-    this.setupGraphListeners();
     this.setupEventListeners();
-  }
-
-  private setupGraphListeners() {
-    this.graph.addListener('click', (_sender: unknown, evt: EventObject) => {
-      const cell = evt.getProperty('cell');
-      if (!cell) {
-        this.showCanvasProperties();
-      }
-    });
-
-    this.graph.getSelectionModel().addListener('change', () => {
-      const cells = this.graph.getSelectionCells();
-      if (cells.length > 0) {
-        this.hideCanvasProperties();
-      }
-    });
   }
 
   private setupEventListeners() {
@@ -83,21 +70,6 @@ export class CanvasProperties {
       const size = (e.target as HTMLInputElement).value as CanvasSize;
       this.setCanvasSize(size);
     });
-  }
-
-  private showCanvasProperties() {
-    const placeholder = document.getElementById('prop-placeholder');
-    const editor = document.getElementById('prop-editor');
-    const canvasProps = document.getElementById('canvas-props');
-
-    if (placeholder) placeholder.style.display = 'none';
-    if (editor) editor.style.display = 'none';
-    if (canvasProps) canvasProps.style.display = 'block';
-  }
-
-  private hideCanvasProperties() {
-    const canvasProps = document.getElementById('canvas-props');
-    if (canvasProps) canvasProps.style.display = 'none';
   }
 
   toggleGrid(enabled: boolean) {

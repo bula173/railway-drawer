@@ -38,7 +38,7 @@ export function insertTemplate(graph: Graph, template: DiagramTemplate, at?: { x
 
 /** The part of TabManager that "Open as new diagram" needs. */
 export interface TemplateTabHost {
-  createTab(name: string): { id: string; saveLoadController: { load(xml: string): void } };
+  createTab(name: string): { id: string; saveLoadController: { load(xml: string): void; setProjectName?(name: string): void } };
   switchTab(tabId: string): void;
   closeTab(tabId: string): void;
 }
@@ -52,6 +52,8 @@ export function openTemplateAsNewDiagram(host: TemplateTabHost, template: Diagra
     host.closeTab(tab.id);
     throw err;
   }
+  // The tab's project is named after the template too: top-bar title, Save/Export file names
+  tab.saveLoadController.setProjectName?.(template.name);
   host.switchTab(tab.id);
   return tab.id;
 }

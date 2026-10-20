@@ -318,6 +318,7 @@ async function auditAllSurfaces(page: Page, a: Auditor): Promise<void> {
   // Properties of a selected shape: Text / Style / Arrange
   await page.locator(HEXAGON).click();
   await expect(page.locator('#prop-editor')).toBeVisible();
+  await page.locator('.prop-tab[data-tab="text"]').click();
   await a.check('Properties: Text tab', '#rightpanel-container');
   await a.shot('properties-text');
   await page.locator('.prop-tab[data-tab="style"]').click();
@@ -427,6 +428,28 @@ async function auditAllSurfaces(page: Page, a: Auditor): Promise<void> {
   if (shortcutRoots > 0) await a.check('Keyboard Shortcuts dialog', '[data-rd-audit^="shortcuts-"]');
   await page.keyboard.press('Escape');
   await page.evaluate(() => document.querySelectorAll('[data-rd-audit^="shortcuts-"]').forEach((n) => n.remove()));
+
+  // Help > About (themed modal with the version and documentation links)
+  await openMenu(page, 'help');
+  await page.locator('.menu-dropdown-item[data-action="about"]').click();
+  await expect(page.locator('[data-testid="about-dialog"]')).toBeVisible();
+  await a.check('About dialog', '[data-testid="about-dialog"]');
+  await a.shot('about');
+  await page.keyboard.press('Escape');
+  await expect(page.locator('[data-testid="about-dialog"]')).toHaveCount(0);
+
+  // File > Save As (themed modal), also with its validation error
+  await openMenu(page, 'file');
+  await page.locator('.menu-dropdown-item[data-action="saveAs"]').click();
+  const saveAs = page.locator('[data-testid="save-as-dialog"]');
+  await expect(saveAs).toBeVisible();
+  await saveAs.locator('input').fill('');
+  await saveAs.locator('input').press('Enter');
+  await expect(saveAs.locator('.rd-tpl-modal-error')).toBeVisible();
+  await a.check('Save As dialog (with error)', '[data-testid="save-as-dialog"]');
+  await a.shot('save-as');
+  await page.keyboard.press('Escape');
+  await expect(saveAs).toHaveCount(0);
 
   // Toolbar dialogs: custom shape image upload, shape designer
   await page.locator('#btn-upload-image').click();

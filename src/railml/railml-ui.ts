@@ -86,12 +86,16 @@ function list(className: string, items: string[], max = 50): HTMLUListElement {
 /** Summary lines of an export (for the dialog and tests). */
 export function exportSummary(r: RailmlExportResult): string[] {
   const c = r.counts;
-  const n = (k: string): number => c[k] ?? 0;
+  // "1 track", "2 tracks"; "points" is the same in both
+  const n = (k: string, one: string, many = `${one}s`): string => {
+    const count = c[k] ?? 0;
+    return `${count} ${count === 1 ? one : many}`;
+  };
   return [
-    `${n('netElement')} netElements, ${n('netRelation')} netRelations`,
-    `${n('track')} tracks, ${n('switchIS')} switches, ${n('signalIS')} signals, ${n('balise')} balises in ${n('baliseGroup')} balise groups`,
-    `${n('trainDetectionElement')} axle counters, ${n('tvdSection')} TVD sections, ${n('bufferStop')} buffer stops, ${n('levelCrossingIS')} level crossings`,
-    `${n('route')} routes, ${n('overlap')} overlaps, ${n('radioBlockCentre')} RBCs`,
+    `${n('netElement', 'netElement')}, ${n('netRelation', 'netRelation')}`,
+    `${n('track', 'track')}, ${n('switchIS', 'points', 'points')}, ${n('signalIS', 'signal')}, ${n('balise', 'balise')} in ${n('baliseGroup', 'balise group')}`,
+    `${n('trainDetectionElement', 'axle counter')}, ${n('tvdSection', 'TVD section')}, ${n('bufferStop', 'buffer stop')}, ${n('levelCrossingIS', 'level crossing')}`,
+    `${n('route', 'route')}, ${n('overlap', 'overlap')}, ${n('radioBlockCentre', 'RBC')}`,
   ];
 }
 
@@ -210,7 +214,7 @@ export async function importIntoNewTab(tabManager: TabManager, notify: RailmlNot
     .map(([k, n]) => `${n} ${(n === 1 ? getKind(k)?.label : getKind(k)?.plural)?.toLowerCase() ?? k}`)
     .join(', ');
   if (warnings.length === 0) {
-    notify.success(`Imported ${fileName}: ${total} objects`);
+    notify.success(`Imported ${fileName}: ${total} object${total === 1 ? '' : 's'}`);
     return tab.id;
   }
   const parts = openDialog('railML import', 'railml-import-dialog');

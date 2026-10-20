@@ -156,9 +156,10 @@ export function gitLabAvailability(
   if (!config) {
     return {
       state: 'not-configured',
-      reason:
-        'Not configured. Create an OAuth application in GitLab and enter the GitLab URL and its Application ID ' +
-        'under Settings below (or set VITE_GITLAB_URL and VITE_GITLAB_CLIENT_ID when building the app).',
+      reason: 'GitLab is not set up for this site. Enter your GitLab details under "GitLab settings", or ask your administrator.',
+      details:
+        'Create an OAuth application in GitLab and enter the GitLab URL and its Application ID ' +
+        'under GitLab settings (or set VITE_GITLAB_URL and VITE_GITLAB_CLIENT_ID when building the app).',
       helpUrl: GITLAB_DOCS_URL,
     };
   }

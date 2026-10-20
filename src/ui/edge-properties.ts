@@ -70,11 +70,7 @@ export class EdgePropertiesController {
   }
 
   private showEdgeProperties(): void {
-    const placeholder = document.getElementById('prop-placeholder');
-    const editor = document.getElementById('prop-editor');
-    if (placeholder) placeholder.style.display = 'none';
-    if (editor) editor.style.display = 'none';
-
+    // The placeholder / editor / canvas states are PropertiesPanel's (properties-state.ts)
     // Create or show edge properties panel
     let edgePanel = document.getElementById('edge-properties');
     if (!edgePanel) {

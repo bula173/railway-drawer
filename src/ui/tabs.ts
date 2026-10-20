@@ -1,7 +1,6 @@
 import { Graph, RubberBandHandler, CellEditorHandler, InternalEvent } from '@maxgraph/core';
 import { configureDiagramRendering } from './diagram-graph-setup';
 import { PropertiesPanel } from './properties';
-import { ToolbarController } from './toolbar';
 import { StatusBarController } from './statusbar';
 import { ClipboardController } from './clipboard';
 import { DeleteController } from './delete';
@@ -47,7 +46,6 @@ export interface TabData {
   graph: Graph;
   graphCommandService: GraphCommandService;
   propertiesPanel: PropertiesPanel;
-  toolbarController: ToolbarController;
   statusBarController: StatusBarController;
   clipboardController: ClipboardController;
   deleteController: DeleteController;
@@ -200,7 +198,28 @@ export class TabManager {
     });
   }
 
-  createTab(name: string = 'Untitled'): TabData {
+  /** "Diagram <n>" with the lowest n that no open tab uses (the default name of new tabs). */
+  nextDefaultTabName(): string {
+    const used = new Set(Array.from(this.tabs.values(), (tab) => tab.name));
+    let n = 1;
+    while (used.has(`Diagram ${n}`)) n++;
+    return `Diagram ${n}`;
+  }
+
+  /**
+   * New empty diagram in its own tab, shown at once (tab bar "+", File > New): named "Diagram <n>",
+   * its project too, so the top-bar title, the tab label and the file name agree.
+   */
+  openNewTab(): TabData {
+    const tab = this.createTab();
+    tab.saveLoadController.setProjectName(tab.name);
+    this.switchTab(tab.id);
+    // The title follows the shown tab (setProjectName ran while the tab was still hidden)
+    this.showProjectName(tab);
+    return tab;
+  }
+
+  createTab(name: string = this.nextDefaultTabName()): TabData {
     const tabId = this.generateTabId();
 
     // Create new graph container
@@ -263,7 +282,6 @@ export class TabManager {
 
       // Initialize UI controllers
       const propertiesPanel = new PropertiesPanel(graph);
-      const toolbarController = new ToolbarController();
       const statusBarController = new StatusBarController(graph);
       const clipboardController = new ClipboardController(graph);
       const deleteController = new DeleteController(graph);
@@ -299,7 +317,6 @@ export class TabManager {
       return {
         graphCommandService,
         propertiesPanel,
-        toolbarController,
         statusBarController,
         clipboardController,
         deleteController,
@@ -644,6 +661,7 @@ export class TabManager {
     this.tabs.forEach((other) => other.undoRedoController.setActive(other === tab));
     tab.layersController.refresh();
     tab.propertiesPanel.update();
+    tab.statusBarController.syncZoom();
   }
 
   closeTab(tabId: string): void {
@@ -721,7 +739,6 @@ export class TabManager {
       const controllers = [
         tab.graphCommandService,
         tab.propertiesPanel,
-        tab.toolbarController,
         tab.statusBarController,
         tab.clipboardController,
         tab.deleteController,
@@ -843,9 +860,11 @@ export class TabManager {
     const newTabBtn = document.createElement('button');
     newTabBtn.className = 'tab-new-btn';
     newTabBtn.textContent = '+';
+    newTabBtn.title = 'New diagram';
+    newTabBtn.setAttribute('aria-label', 'New diagram');
 
     newTabBtn.addEventListener('click', () => {
-      this.createTab();
+      this.openNewTab();
     });
 
     this.tabBarContainer.appendChild(newTabBtn);

@@ -1,4 +1,5 @@
 import { Graph } from '@maxgraph/core';
+import { globalNotificationManager } from './notification';
 import type { Cell, CellStyle, Geometry } from '@maxgraph/core';
 import { GraphCommandService } from '../services/graph-command-service';
 import { applyStyleToCells, setCellStyleValues } from './style-edit';
@@ -19,15 +20,7 @@ export class InteractiveUIController {
   }
 
   private setupToolbarButtons(): void {
-    // Zoom controls
-    document.getElementById('btn-zoom-in')?.addEventListener('click', () => {
-      this.graph.zoomIn();
-    });
-
-    document.getElementById('btn-zoom-out')?.addEventListener('click', () => {
-      this.graph.zoomOut();
-    });
-
+    // Zoom buttons: ZoomController (binding them here too zoomed twice per click)
     document.getElementById('zoom-level')?.addEventListener('change', (e: Event) => {
       const zoomLevel = parseInt((e.target as HTMLSelectElement).value);
       this.graph.zoomTo(zoomLevel / 100);
@@ -96,7 +89,7 @@ export class InteractiveUIController {
         this.graph.insertEdge(this.graph.getDefaultParent(), null, '', cells[0], cells[1]);
         this.graph.refresh();
       } else {
-        alert('Select two shapes to create a connector');
+        globalNotificationManager.info('Select two shapes to connect them.');
       }
     });
 
@@ -120,10 +113,6 @@ export class InteractiveUIController {
       } else {
         document.exitFullscreen();
       }
-    });
-
-    document.getElementById('btn-more-options')?.addEventListener('click', () => {
-      console.log('[UI] More options - Not yet implemented');
     });
   }
 

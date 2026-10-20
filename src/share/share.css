@@ -324,16 +324,19 @@
   font-weight: 600;
 }
 
-.rd-share-settings {
+.rd-share-settings,
+.rd-share-howto {
   margin-top: 8px;
 }
 
-.rd-share-settings summary {
+.rd-share-settings summary,
+.rd-share-howto summary {
   cursor: pointer;
   font-weight: 600;
 }
 
-.rd-share-settings summary:focus-visible {
+.rd-share-settings summary:focus-visible,
+.rd-share-howto summary:focus-visible {
   outline: 2px solid var(--rd-accent, #1a73e8);
   outline-offset: 2px;
 }

@@ -106,7 +106,7 @@ test('railML export: summary dialog and a railML 3.2 download of the active tab'
   await menu(page, 'file', 'exportRailml');
   const dialog = page.locator('[data-testid="railml-export-dialog"]');
   await expect(dialog).toBeVisible();
-  await expect(dialog.locator('.rd-railml-counts')).toContainText('3 signals, 2 balises in 1 balise groups');
+  await expect(dialog.locator('.rd-railml-counts')).toContainText('3 signals, 2 balises in 1 balise group');
   await expect(dialog.locator('[data-testid="railml-checks"]')).toContainText('Railway checks:');
   await expect(dialog.locator('.rd-railml-extension')).toBeChecked();
   const [download] = await Promise.all([page.waitForEvent('download'), dialog.locator('.rd-railml-export-btn').click()]);

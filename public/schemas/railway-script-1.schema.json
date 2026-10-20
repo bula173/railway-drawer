@@ -484,7 +484,7 @@
     },
     "points": {
       "type": "object",
-      "description": "Points (switch) (railway object kind \"points\")",
+      "description": "Points (railway object kind \"points\")",
       "required": [
         "id",
         "at",

@@ -12,6 +12,8 @@
  */
 
 import { Graph } from '@maxgraph/core';
+import { confirmDialog } from './app-dialogs';
+import { globalNotificationManager } from './notification';
 import { customShapeRegistry, CustomShape } from '../services/custom-shape-registry';
 
 interface ShapeElement {
@@ -254,8 +256,9 @@ export class ShapeDesignerController {
 
     // Delete handler
     if (deleteBtn && editingShape) {
-      deleteBtn.addEventListener('click', () => {
-        if (confirm(`Delete shape "${editingShape.name}"?`)) {
+      deleteBtn.addEventListener('click', async () => {
+        const ok = await confirmDialog({ title: 'Delete shape', message: `Delete the custom shape "${editingShape.name}"?`, confirmLabel: 'Delete', danger: true });
+        if (ok) {
           customShapeRegistry.delete(editingShape.id);
           this.closeDesigner();
         }
@@ -1731,12 +1734,12 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
     const heightInput = this.modal?.querySelector('#shape-height') as HTMLInputElement;
 
     if (!nameInput?.value) {
-      alert('Please enter a shape name');
+      globalNotificationManager.warning('Please enter a shape name.');
       return;
     }
 
     if (!pathInput?.value) {
-      alert('Please draw a shape or enter an SVG path');
+      globalNotificationManager.warning('Please draw a shape or enter an SVG path.');
       return;
     }
 
@@ -1753,10 +1756,10 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
 
     if (this.editingShapeId) {
       customShapeRegistry.update(this.editingShapeId, shapeData);
-      alert('Shape updated!');
+      globalNotificationManager.success(`Shape "${shapeData.name}" updated.`);
     } else {
       customShapeRegistry.create(shapeData);
-      alert('Shape saved!');
+      globalNotificationManager.success(`Shape "${shapeData.name}" saved.`);
     }
 
     this.closeDesigner();

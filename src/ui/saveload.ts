@@ -191,10 +191,11 @@ export class SaveLoadController {
       console.log('[SaveLoad] Graph serialized, length:', graphXml.length);
       const projectXml = this.projectService.generateProjectXml(graphXml);
       console.log('[SaveLoad] Project XML generated, length:', projectXml.length);
-      const filename = `${this.projectService.getProjectName() || 'diagram'}.railwaydrawer`;
+      // A draw.io file (<mxfile>): .drawio, like Export As… and the Share dialog's download
+      const filename = `${this.projectService.getProjectName() || 'diagram'}.drawio`;
       console.log('[SaveLoad] Filename:', filename);
       this.projectService.exportToFile(projectXml, filename);
-      this.markAsSavedToDisk();
+      this.markAsSavedToDisk(filename);
       console.log('[SaveLoad] Project saved as', filename);
     } catch (error) {
       console.error('[SaveLoad] Save failed:', error);
@@ -252,7 +253,7 @@ export class SaveLoadController {
       this.updateProjectNameUI(result.metadata.name);
       // A file whose old app layers were migrated differs from the file on disk: unsaved
       if (this.loadMigration) globalSaveStatusIndicator.setUnsaved();
-      else this.markAsSavedToDisk();
+      else this.markAsSavedToDisk(file.name);
       this.reportLoadMigration(file.name);
       if (result.extraPageNames.length > 0) {
         const names = result.extraPageNames.map((name) => `"${name}"`).join(', ');
@@ -448,8 +449,9 @@ export class SaveLoadController {
     }
   }
 
-  markAsSavedToDisk(): void {
-    globalSaveStatusIndicator.setSavedToDisk();
+  /** Save status "Saved to <target>" (file name or storage provider) after a real save/open. */
+  markAsSavedToDisk(target?: string): void {
+    globalSaveStatusIndicator.setSavedToDisk(target);
   }
 
   /**

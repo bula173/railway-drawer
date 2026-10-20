@@ -43,7 +43,7 @@ node scripts/railml/validate.ts [--xsd railml3.xsd] [files]  # dev only: xmllint
 CI (`.github/workflows/build-and-deploy.yml`) runs typecheck, typecheck:tests, lint, test:run, build and the
 Playwright subset (legacy-smoke, drawio-palette, templates, scenarios, style-edit, share, gitlab, ertms-data,
 scenario-uml-text, theme-contrast, remote-persist, scenario-doc, editor-commands, dark-shapes, ertms-routes, railml, drawio-compat,
-interaction, hover-arrows, railway-script). No
+interaction, hover-arrows, railway-script, ux-batch). No
 draw.io download is needed (`scripts/drawio-palettes` only runs locally, its output is committed). It does not deploy.
 
 ### E2E
@@ -61,6 +61,9 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
 - `tests/e2e/drawio-palette.spec.ts` (any port): Shapes tab (no draw.io/Stencils tabs) renders the palettes, "More shapes…" toggles palettes and app groups, inserts keep draw.io styles, autosave
   writes real draw.io shape names.
 - `tests/e2e/share.spec.ts` (any port): Share dialog, `#R` link round trip into a fresh browser context, downloads.
+  Provider sections: "Not configured — <reason>" (user text), admin steps (`availability.details`: VITE_* variables, app
+  registrations) + `helpUrl` ("Setup guide") only in the collapsed "How to enable" disclosure (`share-provider-<id>-howto`);
+  runtime settings (`share-provider-<id>-settings`) are collapsed by default.
 - `tests/e2e/gitlab.spec.ts` (any port): GitLab "Not configured" -> runtime settings -> Open/Save + sign-in button,
   File-menu items without reload, `?gitlab=` link on an unconfigured browser. Requests to the fake GitLab URL are
   intercepted and must not happen.
@@ -89,7 +92,8 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
 - `tests/e2e/theme-contrast.spec.ts` (any port): light and dark theme (localStorage `rd.theme` with the opposite
   system preference emulated, and View > Dark Mode both ways): opens every surface (menus + submenu, toolbar, left tabs
   Shapes/Templates/Layers/PlantUML/ERTMS, Properties canvas/Text/Style/Arrange, Data, Checks, Scenarios, scenario
-  dialog + step editor + view, context menu, Save as Template (with error), Share, Keyboard Shortcuts, image upload,
+  dialog + step editor + view, context menu, Save as Template (with error), Share, Keyboard Shortcuts, About, Save As
+  (with error), image upload,
   shape designer, all 4 notification types, status/tab bars; a second test per theme: Route tool panel + Route
   Table/Interlocking dialog on a loaded layout, scenario view with "Show changes" legend/Changes list and autoplay
   running, scenario PDF export options, fake-remote (`rd.fakeRemote`) Open dialog, status menu, Reload confirm; a third test
@@ -150,6 +154,14 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   the drawing stays unchanged, reload keeps the script ("In sync with the drawing"); File > Import Railway Script… (new
   tab named after `name`), File > Export Railway Script… (.rdl.yaml = the text, .rdl.json = the data, generated for a tab
   without a script).
+- `tests/e2e/ux-batch.spec.ts` (any port): menubar keyboard pattern (roles, ↓/↑/Home/End, ←/→ between menus, Enter, Esc
+  returns focus) and `<kbd>` shortcut hints, Help > Keyboard Shortcuts (keys + mouse), Help > About = `#status-version`
+  (package.json), Properties states none / canvas / cell incl. a transparent group selected by a click in its gap and the
+  selection header ("Group", "2 shapes"), zoom select 100% at launch and after +/−/select/menu/fit, "+" and File > New open
+  and show "Diagram <n>" (title in sync, no native dialog), context menu (13px, hints, Delete last after a separator, kept
+  inside the window at the bottom-right), Save As (themed, focus trap, Esc, Enter downloads `<name>.drawio` and renames),
+  Share dialog (one "Not configured", "How to enable" and provider settings collapsed), no start-up toast, "Saved in
+  browser", Undo/Redo buttons disabled/enabled with the history.
 - `tests/e2e/style-edit.spec.ts` (any port): line color/width/dash and fill through the Properties panel on cells from an
   ERTMS template, a user template and the draw.io/ERTMS palettes (group first click, child second click); checks the
   cell's own style and the SVG. Reads the graph via `import('/src/services/service-registry.ts')` (dev server only).
@@ -252,7 +264,32 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   active tab (Ctrl/Cmd+Z/Y/Shift+Z/C/X/V/A/S, Delete/Backspace, Escape, arrow-key nudge). Per-tab controllers must not
   bind their own `document` keydown for these. Everything except Ctrl+S is skipped when
   `shouldIgnoreGraphShortcut(e, graph)` (`src/ui/delete.ts`) says the user is typing (input, textarea,
-  contentEditable, IME composition, cell editor active).
+  contentEditable, IME composition, cell editor active), and for keys on `#menu-bar` / `#context-menu`.
+  `src/ui/shortcut-keys.ts` `ACTION_SHORTCUTS` describes the real bindings (dispatcher, ZoomController, GroupingController,
+  DuplicateOffsetController, F1) by `data-action`; `applyShortcutHints` adds the right-aligned `<kbd class="rd-kbd">` (Ctrl+…,
+  ⌘ symbols on macOS) + `aria-keyshortcuts` to menu and context-menu items (text changes via `setMenuItemLabel`). Keep it in
+  step with the handlers. Help > Keyboard Shortcuts / F1 = `ShortcutsHelpController` (window event `shortcuts-help-request`).
+- Menus (`MenuController`, `src/ui/menu.ts`): WAI-ARIA menubar (`#menu-bar` role=menubar, buttons role=menuitem +
+  aria-haspopup/aria-expanded/aria-controls, roving tabindex, items role=menuitem / menuitemcheckbox, submenu title
+  aria-haspopup); ↓/Enter/Space open + first item, ↑ last item, ←/→ other menu, Home/End, Enter/Space run, Esc closes and
+  focuses the button, Tab closes. Item clicks are delegated per dropdown (generated remote items keep their own handlers);
+  `aria-disabled="true"` items do nothing (Edit > Undo/Redo follow the undo history, `UndoRedoController`). `data-action`
+  values and selectors are stable (tests). File > New = `TabManager.openNewTab()` (draw.io-like: new tab "Diagram <n>",
+  shown, its project named alike); the "+" button and the first start do the same. Help > About = `showAboutDialog`.
+- Themed dialogs (`src/ui/app-dialogs.ts`, `.rd-tpl-modal` look): `openAppModal` (role=dialog, aria-modal, labelledby,
+  backdrop, focus trap, Esc cancel, Enter submit, focus returned, keys kept from the dispatcher), `promptSaveAs` (File >
+  Save As…: name -> `renameActiveProject` + download `<name>.drawio`), `confirmDialog`, `messageDialog`, `showAboutDialog`
+  (`APP_VERSION`/`BUILD_ID`/`BUILD_TIME` from `config/build-id.ts`, the status bar's source; `VITE_APP_VERSION` =
+  package.json version via vite.config.ts). Use them (or notifications) instead of alert()/confirm() in the chrome.
+- Properties panel states (`src/ui/properties-state.ts` `setPropertiesPanelState`, the only place that toggles
+  `#prop-placeholder` / `#canvas-props` / `#prop-editor` / `#edge-properties` / `#prop-selection-header`; `data-state` on
+  `#property-content`): none (nothing selected), canvas (after a click on the empty canvas, checked after maxGraph handled
+  the click and only while the selection is empty), cell (header `selectionTitle`: "Signal S1" for railway objects, else the
+  label, "Shape"/"Group"/"Connector"; "3 shapes"/"2 connectors"/"4 items"). Owned by `PropertiesPanel`; the Style tab is
+  shown first (draw.io Format panel). Zoom: `StatusBarController.syncZoom` on SCALE and SCALE_AND_TRANSLATE and on tab
+  switch: `#status-zoom` + `#zoom-level` (a non-preset zoom gets its own `data-custom` option).
+- Save status (`save-status.ts`): "Saved in browser" (autosave), "✓ Saved to <file.drawio | provider>" after a real
+  save/open (`markAsSavedToDisk(target)`); File > Save / Save As download `<project>.drawio`.
 - `src/services/service-registry.ts` holds tabManager/notifications/etc. instead of `window` globals
   (leftovers: `window.__leftPanelTabs` set in `main-editor.ts`, `window.__saveStatusIndicator` set in
   `src/ui/save-status.ts`).
@@ -305,6 +342,9 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   (`data-action="toggleConnectionArrows"`, Alt+Shift+A), localStorage `rd.connectionArrows` (default on). Not ported:
   draw.io's shape picker on plain click / blank drop, containers as clone parents, Ctrl+Shift+drag port constraint,
   touch. Tests: `src/__tests__/ui/hover-arrows.test.ts`, `tests/e2e/hover-arrows.spec.ts`.
+- ERTMS palette display (`src/ui/ertms-display.ts`, wraps `ertmsPaletteSource` in main-editor.ts): titles trimmed and
+  "SIgnal" -> "Signal" at display time only (ertms.xml stays byte-identical), points entries get the search tags
+  `points switch turnout zwrotnica`; UI text says "points" (catalogue label "Points").
 - Layers panel (`src/ui/layers.ts`) = the model's real layers (root children, listed top-most first, unnamed =
   "Background", `rd-routes` = "Routes"): current layer = `graph.setDefaultParent`; + Layer = `model.add(root, …)`;
   delete = `removeCells([layer], false)`; eye = `model.setVisible`; padlock = `locked=1` on the layer cell. All undoable
@@ -760,7 +800,7 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
 - Panel (`scenarios-panel.ts`, `#scenarios-panel`): "+ New scenario", per scenario ▷ present / ✎ / ⧉ / × (confirm),
   expandable step list (lazy 64x40 thumbnails from the palette's shared renderer, ↑ ↓ ⟳ update-from-drawing (confirm)
   ✎ ⧉ ×, drag to reorder), "+ Add step". Dialogs = `promptTemplateDetails`/`confirmTemplateDialog`. Wiring:
-  `install-scenarios.ts`. File > New (model.clear) keeps the tab's scenarios, like its extra pages.
+  `install-scenarios.ts`. File > New opens a new tab (the current tab and its scenarios stay).
 - Tests: `src/scenarios/__tests__/` (model, format/round trip/draw.io edits/share split, tabs + cache + view + keys +
   panel; `scenario-uml-text-format.test.ts` multi-line UML/Markdown round trips incl. a draw.io-style re-save, cache,
   share; `markdown.test.ts` rendering + XSS payloads; `scenario-uml-text-view.test.ts` editor/previews, side panel

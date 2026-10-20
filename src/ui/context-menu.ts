@@ -19,6 +19,30 @@ import type { GraphCommandService } from '../services/graph-command-service';
 import { ensureDrawioMenuItems, executeDrawioMenuAction, updateDrawioMenuItems } from '../drawio-shapes/behaviour/menu';
 import type { GroupingController } from './grouping';
 import { hasLockedStyle, isLayer, toggleCellsLocked } from './cell-lock';
+import { applyShortcutHints, setMenuItemLabel } from './shortcut-keys';
+
+/** Gap kept between the context menu and the window edges. */
+const VIEWPORT_MARGIN = 4;
+
+/**
+ * Top-left corner for a menu of `width` x `height` opened at the pointer (x, y): flipped to the
+ * left of / above the pointer when it would leave the window, then clamped inside it.
+ */
+export function placeContextMenu(
+  x: number,
+  y: number,
+  width: number,
+  height: number,
+  viewWidth: number,
+  viewHeight: number,
+  margin = VIEWPORT_MARGIN
+): { left: number; top: number } {
+  let left = x + width > viewWidth - margin ? x - width : x;
+  let top = y + height > viewHeight - margin ? y - height : y;
+  left = Math.max(margin, Math.min(left, viewWidth - margin - width));
+  top = Math.max(margin, Math.min(top, viewHeight - margin - height));
+  return { left, top };
+}
 
 /**
  * The cells a right-click on `hit` acts on, like a draw.io click: a hit inside the selection (the
@@ -96,8 +120,28 @@ export class ContextMenuController {
     this.clipboardService = ClipboardService.getInstance();
     // draw.io table/lane and collapse/expand items (bound below like the static items)
     ensureDrawioMenuItems(this.contextMenu);
+    this.arrangeMenu();
     this.setupContextMenu();
     this.setupClipboardListener();
+  }
+
+  /**
+   * Delete last (after a separator, below the draw.io table/lane items appended above), menu roles
+   * and right-aligned shortcut hints. Idempotent: every tab's controller shares this element.
+   */
+  private arrangeMenu(): void {
+    const menu = this.contextMenu;
+    if (!menu) return;
+    const deleteSep = menu.querySelector<HTMLElement>('[data-sep="delete"]');
+    const deleteItem = menu.querySelector<HTMLElement>('.context-menu-item[data-action="delete"]');
+    if (deleteSep) menu.appendChild(deleteSep);
+    if (deleteItem) menu.appendChild(deleteItem);
+    menu.querySelectorAll<HTMLElement>('.context-menu-item').forEach((item) => {
+      item.setAttribute('role', 'menuitem');
+      item.tabIndex = -1;
+    });
+    menu.querySelectorAll<HTMLElement>('.rd-sep, [data-drawio-menu="separator"]').forEach((sep) => sep.setAttribute('role', 'separator'));
+    applyShortcutHints(menu.querySelectorAll<HTMLElement>('.context-menu-item[data-action]'));
   }
 
   setGroupingController(controller: GroupingController): void {
@@ -201,6 +245,7 @@ export class ContextMenuController {
 
     // Update menu items visibility based on type
     const deleteItem = this.contextMenu.querySelector('[data-action="delete"]') as HTMLElement;
+    const deleteSep = this.contextMenu.querySelector<HTMLElement>('[data-sep="delete"]');
     const lockItem = this.contextMenu.querySelector('[data-action="lock"]') as HTMLElement;
     const pasteItem = this.contextMenu.querySelector('[data-action="paste"]') as HTMLElement;
     const groupItem = this.contextMenu.querySelector('[data-action="group"]') as HTMLElement;
@@ -210,23 +255,25 @@ export class ContextMenuController {
     if (type === 'canvas') {
       // For empty canvas, hide cell-specific items and show only paste
       if (deleteItem) deleteItem.style.display = 'none';
+      if (deleteSep) deleteSep.style.display = 'none';
       if (lockItem) lockItem.style.display = 'none';
       if (groupItem) groupItem.style.display = 'none';
       if (ungroupItem) ungroupItem.style.display = 'none';
       zOrderItems.forEach((item) => {
         (item as HTMLElement).style.display = 'none';
       });
-      if (pasteItem) pasteItem.style.display = this.clipboardService.hasContent() ? 'block' : 'none';
+      if (pasteItem) pasteItem.style.display = this.clipboardService.hasContent() ? '' : 'none';
     } else {
       // For cells, show all items
-      if (deleteItem) deleteItem.style.display = 'block';
+      if (deleteItem) deleteItem.style.display = '';
+      if (deleteSep) deleteSep.style.display = '';
       if (lockItem) {
-        lockItem.style.display = 'block';
+        lockItem.style.display = '';
         const first = this.selectedCells[0] ?? this.currentCell;
-        lockItem.textContent = hasLockedStyle(first) ? 'Unlock' : 'Lock';
+        setMenuItemLabel(lockItem, hasLockedStyle(first) ? 'Unlock' : 'Lock');
       }
       zOrderItems.forEach((item) => {
-        (item as HTMLElement).style.display = 'block';
+        (item as HTMLElement).style.display = '';
       });
 
       // Show group if 2+ objects selected, show ungroup if any are groups
@@ -234,20 +281,22 @@ export class ContextMenuController {
       // A group is a cell with children (GroupingController uses graph.groupCells)
       const canUngroup = this.selectedCells.some((cell: Cell | null) => !!cell && cell.getChildCount() > 0);
 
-      console.log('[ContextMenu] Cell context - selectedCells:', this.selectedCells.length, 'canGroup:', canGroup, 'canUngroup:', canUngroup);
-      if (groupItem) {
-        groupItem.style.display = canGroup ? 'block' : 'none';
-        console.log('[ContextMenu] Group item display:', groupItem.style.display);
-      }
-      if (ungroupItem) ungroupItem.style.display = canUngroup ? 'block' : 'none';
-      if (pasteItem) pasteItem.style.display = this.clipboardService.hasContent() ? 'block' : 'none';
+      if (groupItem) groupItem.style.display = canGroup ? '' : 'none';
+      if (ungroupItem) ungroupItem.style.display = canUngroup ? '' : 'none';
+      if (pasteItem) pasteItem.style.display = this.clipboardService.hasContent() ? '' : 'none';
     }
 
     updateDrawioMenuItems(this.contextMenu, this.graph, type === 'cell' ? this.currentCell : null);
 
-    this.contextMenu.style.display = 'block';
-    this.contextMenu.style.left = `${x}px`;
-    this.contextMenu.style.top = `${y}px`;
+    // Measured where it opens, then flipped/clamped so it never leaves the window
+    const menu = this.contextMenu;
+    menu.style.left = `${x}px`;
+    menu.style.top = `${y}px`;
+    menu.style.display = 'block';
+    const { width, height } = menu.getBoundingClientRect();
+    const { left, top } = placeContextMenu(x, y, width, height, window.innerWidth, window.innerHeight);
+    menu.style.left = `${left}px`;
+    menu.style.top = `${top}px`;
   }
 
   private hideContextMenu() {

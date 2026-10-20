@@ -401,13 +401,16 @@ test('the project name follows the active tab: rename, switch, label, reload', a
     return file.suggestedFilename();
   };
 
+  // a new tab's project is named like the tab ("Diagram 1"), so renaming it relabels the tab
+  await expect(title).toHaveText('Diagram 1');
   await rename('Station A');
-  await expect(tabs.nth(0).locator('.tab-label')).toHaveText('Diagram 1');
-  // a second tab has its own project
+  await expect(tabs.nth(0).locator('.tab-label')).toHaveText('Station A');
+  // a second tab has its own project; "+" shows the new tab at once
   await page.locator('#tabs-container .tab-new-btn').click();
-  await tabs.nth(1).click();
   await expect(tabs.nth(1)).toHaveClass(/active/);
-  await expect(title).toHaveText('Untitled Diagram');
+  // default names take the lowest free number: "Diagram 1" is free again after the rename
+  await expect(tabs.nth(1).locator('.tab-label')).toHaveText('Diagram 1');
+  await expect(title).toHaveText('Diagram 1');
   await rename('Station B');
   expect(await exportName()).toBe('Station B.drawio');
   await tabs.nth(0).click();
@@ -421,7 +424,7 @@ test('the project name follows the active tab: rename, switch, label, reload', a
   await tabs.nth(1).locator('input').press('Enter');
   await rename('Station C');
   await expect(tabs.nth(1).locator('.tab-label')).toHaveText('Station C');
-  await expect(tabs.nth(0).locator('.tab-label')).toHaveText('Diagram 1');
+  await expect(tabs.nth(0).locator('.tab-label')).toHaveText('Station A');
 
   // kept per tab over a reload
   await page.evaluate(async () => {

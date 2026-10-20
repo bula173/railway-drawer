@@ -182,7 +182,8 @@ export const KINDS: readonly KindDef[] = [
   },
   {
     id: 'points',
-    label: 'Points (switch)',
+    // "points" in all UI text (switch / turnout are search tags of the ERTMS palette entries)
+    label: 'Points',
     plural: 'Points',
     idPrefix: 'W',
     fields: [

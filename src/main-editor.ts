@@ -27,7 +27,7 @@ import { LeftPanelTabs } from './ui/left-panel-tabs';
 import { CacheService } from './services/cache-service';
 import { ProjectNameEditor } from './ui/project-name-editor';
 import { ResizablePanels } from './ui/resizable-panels';
-import { BUILD_ID, BUILD_TIME } from './config/build-id';
+import { APP_VERSION, BUILD_ID, BUILD_TIME } from './config/build-id';
 import type { ShapeDesignerController } from './ui/shape-designer';
 import { CustomShapeToolbar } from './ui/custom-shape-toolbar';
 import { globalNotificationManager } from './ui/notification';
@@ -48,6 +48,7 @@ import { installRailwayRoutes } from './railway/install-railway-routes';
 import { installRailml, isRailmlFile, requestRailmlOpen } from './railml/install-railml';
 import { installRailwayScript } from './railway-script/install-railway-script';
 import { syncConnectionArrowsMenu, toggleConnectionArrows } from './ui/hover-arrows';
+import { withErtmsDisplayTitles } from './ui/ertms-display';
 
 /**
  * @brief Register all built-in shape definitions
@@ -63,7 +64,6 @@ setDrawioPaletteEngine({ ensureStencilsForXml, installDrawioCompat, parseMxLibra
 
 try {
   registerShapes();
-  globalNotificationManager.success('✓ Railway Drawer initialized');
 } catch (error) {
   globalErrorHandler.handleShapeError(error instanceof Error ? error : new Error(String(error)), true);
   globalNotificationManager.error('Failed to load shapes - some shapes may be unavailable');
@@ -132,7 +132,8 @@ try {
 }
 // Always end up with at least one tab (and so with the tab bar's "+" button)
 if (tabManager.getAllTabs().length === 0) {
-  tabManager.createTab('Diagram 1');
+  // "Diagram 1", its project (top-bar title) too
+  tabManager.openNewTab();
 }
 
 // ============= PROJECT NAME EDITOR =============
@@ -150,6 +151,8 @@ new ProjectNameEditor(tabManager);
  */
 const activeTab = tabManager.getActiveTab();
 if (activeTab?.statusBarController) {
+  // One source for the status bar and Help > About (config/build-id.ts, package.json version)
+  activeTab.statusBarController.setVersion(APP_VERSION);
   activeTab.statusBarController.setBuildId(BUILD_ID);
   activeTab.statusBarController.setBuildDate(BUILD_TIME);
 }
@@ -228,6 +231,10 @@ document.addEventListener('keydown', (e) => {
   }
 
   if (shouldIgnoreGraphShortcut(e, activeTab.graph)) {
+    return;
+  }
+  // Keys on the menu bar / context menu navigate the menu (menu.ts, context-menu.ts), not the diagram
+  if (e.target instanceof Element && e.target.closest('#menu-bar, #context-menu')) {
     return;
   }
 
@@ -471,7 +478,7 @@ createDrawioPaletteView({
   container: document.getElementById('drawio-palette-container')!,
   getGraph: () => tabManager.getActiveTab()?.graph ?? null,
   palettes: PALETTES.map((meta) => ({ ...meta, load: () => loadPalette(meta.id) })),
-  extraLibraries: [ertmsPaletteSource(import.meta.env.BASE_URL)],
+  extraLibraries: [withErtmsDisplayTitles(ertmsPaletteSource(import.meta.env.BASE_URL))],
   dropTarget: graphContainer,
   onError: (message) => globalNotificationManager.error(message),
   prepareInsert: prepareRailwayInsert,
@@ -508,7 +515,7 @@ const ensureErtmsTabView = (): void => {
     container: document.getElementById('ertms-panel')!,
     getGraph: () => tabManager.getActiveTab()?.graph ?? null,
     palettes: [],
-    extraLibraries: [ertmsPaletteSource(import.meta.env.BASE_URL)],
+    extraLibraries: [withErtmsDisplayTitles(ertmsPaletteSource(import.meta.env.BASE_URL))],
     defaultExpanded: ['ertms'],
     userLibraries: false,
     showMoreMenu: false,

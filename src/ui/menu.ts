@@ -6,6 +6,9 @@ import { toggleConnectionArrows } from './hover-arrows';
 import type { AlignmentController } from './alignment';
 import type { ExportImageController } from './export-image';
 import type { LeftPanelTabs } from './left-panel-tabs';
+import { promptSaveAs, showAboutDialog } from './app-dialogs';
+import { applyShortcutHints } from './shortcut-keys';
+import { ServiceRegistry } from '../services/service-registry';
 
 /** Window global set by main-editor.ts so menu handlers can reach the left panel tabs. */
 type WindowWithLeftPanelTabs = Window & { __leftPanelTabs?: LeftPanelTabs };
@@ -33,30 +36,40 @@ export class MenuController {
   }
 
   private setupMenus() {
+    // WAI-ARIA menubar roles (idempotent: every tab's controller runs this on the shared DOM)
+    setupMenubarAria();
+
     // Setup menu item clicks to toggle dropdowns
-    const menuItems = document.querySelectorAll('.menu-item');
-    console.log('[Menu] Found', menuItems.length, 'menu items');
+    const menuItems = document.querySelectorAll<HTMLElement>('.menu-item');
     menuItems.forEach((item) => {
       item.addEventListener('click', (e) => {
         e.stopPropagation();
         const menu = item.getAttribute('data-menu');
         this.toggleMenu(menu!);
       });
+      item.addEventListener('keydown', (e) => this.onMenubarKeydown(e, item));
     });
 
-    // Setup menu dropdown item clicks
-    const dropdownItems = document.querySelectorAll('.menu-dropdown-item');
-    console.log('[Menu] Found', dropdownItems.length, 'dropdown items');
-    dropdownItems.forEach((item) => {
-      item.addEventListener('click', (e) => {
+    // Setup menu dropdown item clicks (also the generated remote-provider items: delegated)
+    document.querySelectorAll<HTMLElement>('.menu-dropdown').forEach((dropdown) => {
+      dropdown.addEventListener('click', (e) => {
+        const item = (e.target as Element | null)?.closest<HTMLElement>('.menu-dropdown-item');
+        if (!item || !dropdown.contains(item)) return;
         e.stopPropagation();
+        if (item.getAttribute('aria-disabled') === 'true') return;
+        // Items that bring their own handler (File > Open from <provider>…) only close the menu
+        if (item.closest('#file-menu-remote-items')) {
+          this.closeAllMenus();
+          return;
+        }
         const action = item.getAttribute('data-action');
-        console.log('[Menu] Dropdown item clicked:', action);
+        // Close (and give the focus back to the page) before the action opens a dialog
+        this.closeAllMenus();
         if (action) {
           this.executeMenuAction(action);
         }
-        this.closeAllMenus();
       });
+      dropdown.addEventListener('keydown', (e) => this.onMenuKeydown(e, dropdown));
     });
 
     // Close menus when clicking elsewhere
@@ -72,13 +85,29 @@ export class MenuController {
     });
   }
 
-  private toggleMenu(menu: string) {
+  private toggleMenu(menu: string, focus: 'first' | 'last' | null = null) {
     const dropdown = document.querySelector(`.menu-dropdown[data-menu="${menu}"]`) as HTMLElement;
     if (dropdown) {
+      const wasOpen = dropdown.style.display !== 'none';
       // Close all other menus
       this.closeAllMenus();
-      // Toggle this menu
-      dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+      if (!wasOpen || focus) this.openMenu(menu, focus);
+    }
+  }
+
+  /** Opens one dropdown (the others closed) and optionally focuses its first/last item. */
+  private openMenu(menu: string, focus: 'first' | 'last' | null): void {
+    const dropdown = document.querySelector<HTMLElement>(`.menu-dropdown[data-menu="${menu}"]`);
+    const button = document.querySelector<HTMLElement>(`.menu-item[data-menu="${menu}"]`);
+    if (!dropdown || !button) return;
+    this.closeAllMenus();
+    setupMenuItemsAria(dropdown);
+    dropdown.style.display = 'block';
+    button.setAttribute('aria-expanded', 'true');
+    setRovingButton(button);
+    if (focus) {
+      const items = visibleMenuItems(dropdown);
+      (focus === 'first' ? items[0] : items[items.length - 1])?.focus();
     }
   }
 
@@ -87,6 +116,140 @@ export class MenuController {
     dropdowns.forEach((dropdown) => {
       (dropdown as HTMLElement).style.display = 'none';
     });
+    document.querySelectorAll('.menu-item[aria-expanded="true"]').forEach((button) => button.setAttribute('aria-expanded', 'false'));
+  }
+
+  /** The open dropdown's menu name, or null. */
+  private openMenuName(): string | null {
+    const open = Array.from(document.querySelectorAll<HTMLElement>('.menu-dropdown')).find((d) => d.style.display !== 'none');
+    return open?.getAttribute('data-menu') ?? null;
+  }
+
+  /** Keys on a menubar button (File, Edit, ...): WAI-ARIA menubar pattern. */
+  private onMenubarKeydown(e: KeyboardEvent, button: HTMLElement): void {
+    const buttons = menubarButtons();
+    const index = buttons.indexOf(button);
+    const menu = button.getAttribute('data-menu')!;
+    const moveTo = (target: HTMLElement | undefined): void => {
+      if (!target) return;
+      const wasOpen = this.openMenuName() !== null;
+      setRovingButton(target);
+      target.focus();
+      if (wasOpen) this.openMenu(target.getAttribute('data-menu')!, 'first');
+    };
+    switch (e.key) {
+      case 'ArrowDown':
+      case 'Enter':
+      case ' ':
+        e.preventDefault();
+        e.stopPropagation();
+        this.openMenu(menu, 'first');
+        break;
+      case 'ArrowUp':
+        e.preventDefault();
+        e.stopPropagation();
+        this.openMenu(menu, 'last');
+        break;
+      case 'ArrowRight':
+        e.preventDefault();
+        moveTo(buttons[(index + 1) % buttons.length]);
+        break;
+      case 'ArrowLeft':
+        e.preventDefault();
+        moveTo(buttons[(index - 1 + buttons.length) % buttons.length]);
+        break;
+      case 'Home':
+        e.preventDefault();
+        moveTo(buttons[0]);
+        break;
+      case 'End':
+        e.preventDefault();
+        moveTo(buttons[buttons.length - 1]);
+        break;
+      case 'Escape':
+        this.closeAllMenus();
+        break;
+    }
+  }
+
+  /** Keys inside an open dropdown (and its submenu). */
+  private onMenuKeydown(e: KeyboardEvent, dropdown: HTMLElement): void {
+    const target = e.target as HTMLElement;
+    const menu = dropdown.getAttribute('data-menu')!;
+    const button = document.querySelector<HTMLElement>(`.menu-item[data-menu="${menu}"]`);
+    const submenu = target.closest<HTMLElement>('.menu-submenu-list');
+    const list = submenu ?? dropdown;
+    const items = submenu ? visibleMenuItems(submenu, submenu) : visibleMenuItems(dropdown);
+    const index = items.indexOf(target);
+    const buttons = menubarButtons();
+    const buttonIndex = button ? buttons.indexOf(button) : -1;
+    const focusItem = (item: HTMLElement | undefined): void => item?.focus();
+    switch (e.key) {
+      case 'ArrowDown':
+        e.preventDefault();
+        focusItem(items[(index + 1) % items.length]);
+        break;
+      case 'ArrowUp':
+        e.preventDefault();
+        focusItem(items[(index - 1 + items.length) % items.length]);
+        break;
+      case 'Home':
+        e.preventDefault();
+        focusItem(items[0]);
+        break;
+      case 'End':
+        e.preventDefault();
+        focusItem(items[items.length - 1]);
+        break;
+      case 'Enter':
+      case ' ':
+        e.preventDefault();
+        e.stopPropagation();
+        if (target.classList.contains('menu-submenu-title')) {
+          const sub = target.parentElement?.querySelector<HTMLElement>('.menu-submenu-list');
+          if (sub) focusItem(visibleMenuItems(sub, sub)[0]);
+        } else {
+          // Focus back on the menubar first: a dialog opened by the item takes it from there and
+          // returns it there when it closes
+          button?.focus();
+          target.click();
+        }
+        break;
+      case 'ArrowRight':
+        e.preventDefault();
+        if (target.classList.contains('menu-submenu-title')) {
+          const sub = target.parentElement?.querySelector<HTMLElement>('.menu-submenu-list');
+          if (sub) focusItem(visibleMenuItems(sub, sub)[0]);
+        } else if (buttonIndex >= 0) {
+          const next = buttons[(buttonIndex + 1) % buttons.length];
+          setRovingButton(next);
+          this.openMenu(next.getAttribute('data-menu')!, 'first');
+        }
+        break;
+      case 'ArrowLeft':
+        e.preventDefault();
+        if (submenu && list !== dropdown) {
+          focusItem(submenu.parentElement?.querySelector<HTMLElement>('.menu-submenu-title') ?? undefined);
+        } else if (buttonIndex >= 0) {
+          const prev = buttons[(buttonIndex - 1 + buttons.length) % buttons.length];
+          setRovingButton(prev);
+          this.openMenu(prev.getAttribute('data-menu')!, 'first');
+        }
+        break;
+      case 'Escape':
+        e.preventDefault();
+        if (submenu) {
+          focusItem(submenu.parentElement?.querySelector<HTMLElement>('.menu-submenu-title') ?? undefined);
+          e.stopPropagation();
+        } else {
+          this.closeAllMenus();
+          button?.focus();
+        }
+        break;
+      case 'Tab':
+        this.closeAllMenus();
+        break;
+    }
   }
 
   private openProject(): void {
@@ -120,84 +283,18 @@ export class MenuController {
     input.click();
   }
 
-  private saveProjectAs(): void {
-    const titleElement = document.querySelector('.document-title');
-    const currentName = titleElement?.textContent || this.saveLoadController.getProjectName() || 'Untitled';
-
-    const input = document.createElement('input');
-    input.type = 'text';
-    input.value = currentName;
-    input.placeholder = 'Project name';
-
-    const dialog = document.createElement('div');
-    dialog.style.position = 'fixed';
-    dialog.style.top = '50%';
-    dialog.style.left = '50%';
-    dialog.style.transform = 'translate(-50%, -50%)';
-    dialog.style.background = 'var(--rd-surface)';
-    dialog.style.padding = '20px';
-    dialog.style.borderRadius = '8px';
-    dialog.style.boxShadow = '0 4px 12px var(--rd-shadow)';
-    dialog.style.zIndex = '10001';
-    dialog.style.minWidth = '300px';
-
-    const label = document.createElement('div');
-    label.textContent = 'Enter project name:';
-    label.style.marginBottom = '10px';
-    label.style.fontWeight = '600';
-
-    const buttonContainer = document.createElement('div');
-    buttonContainer.style.display = 'flex';
-    buttonContainer.style.gap = '8px';
-    buttonContainer.style.marginTop = '16px';
-
-    const saveBtn = document.createElement('button');
-    saveBtn.textContent = 'Save';
-    saveBtn.style.flex = '1';
-    saveBtn.style.padding = '8px';
-    saveBtn.style.background = 'var(--rd-accent)';
-    saveBtn.style.color = 'var(--rd-accent-text)';
-    saveBtn.style.border = 'none';
-    saveBtn.style.borderRadius = '4px';
-    saveBtn.style.cursor = 'pointer';
-
-    const cancelBtn = document.createElement('button');
-    cancelBtn.textContent = 'Cancel';
-    cancelBtn.style.flex = '1';
-    cancelBtn.style.padding = '8px';
-    cancelBtn.style.background = 'var(--rd-hover)';
-    cancelBtn.style.border = '1px solid var(--rd-border-strong)';
-    cancelBtn.style.borderRadius = '4px';
-    cancelBtn.style.cursor = 'pointer';
-
-    saveBtn.onclick = () => {
-      const name = input.value || 'Untitled';
-      this.saveLoadController.setProjectName(name);
-      // "Save As" always downloads, also for a tab bound to a remote file
-      this.saveLoadController.saveProjectToDisk();
-      document.body.removeChild(dialog);
-    };
-
-    cancelBtn.onclick = () => {
-      document.body.removeChild(dialog);
-    };
-
-    input.style.width = '100%';
-    input.style.padding = '8px';
-    input.style.border = '1px solid var(--rd-border-strong)';
-    input.style.borderRadius = '4px';
-    input.style.boxSizing = 'border-box';
-
-    buttonContainer.appendChild(saveBtn);
-    buttonContainer.appendChild(cancelBtn);
-
-    dialog.appendChild(label);
-    dialog.appendChild(input);
-    dialog.appendChild(buttonContainer);
-    document.body.appendChild(dialog);
-
-    input.focus();
-    input.select();
+  /**
+   * File > Save As…: asks for the file name in the themed dialog, renames the active tab's project
+   * (top-bar title, tab label when it was the project name) and downloads the .drawio file. It always
+   * downloads, also for a tab bound to a remote file.
+   */
+  private async saveProjectAs(): Promise<void> {
+    const name = await promptSaveAs(this.saveLoadController.getProjectName() || 'Untitled Diagram');
+    if (name === null) return;
+    const tabManager = ServiceRegistry.getTabManager();
+    if (tabManager) tabManager.renameActiveProject(name);
+    else this.saveLoadController.setProjectName(name);
+    this.saveLoadController.saveProjectToDisk();
   }
 
   private executeMenuAction(action: string): void {
@@ -214,10 +311,8 @@ export class MenuController {
 
     switch (action) {
       case 'new':
-        if (confirm('Create a new diagram? Any unsaved changes will be lost.')) {
-          this.graph.model.clear();
-          console.log('[Menu] New diagram');
-        }
+        // Like draw.io: a new, empty diagram in its own tab (the current one stays as it is)
+        ServiceRegistry.getTabManager()?.openNewTab();
         break;
 
       case 'open':
@@ -229,7 +324,7 @@ export class MenuController {
         break;
 
       case 'saveAs':
-        this.saveProjectAs();
+        void this.saveProjectAs();
         break;
 
       case 'export':
@@ -418,19 +513,96 @@ export class MenuController {
         }
         break;
 
-      case 'preferences':
-        console.log('[Menu] Preferences - Not yet implemented');
-        break;
-
       case 'shortcuts':
-        console.log('[Menu] Keyboard Shortcuts - Not yet implemented');
+        // ShortcutsHelpController (main-editor.ts), also on F1
+        window.dispatchEvent(new CustomEvent('shortcuts-help-request'));
         break;
 
       case 'about':
-        alert('Railway Drawer v0.1.0\nA professional diagram editor built with maxGraph');
+        showAboutDialog();
         break;
     }
 
     this.graph.refresh();
   }
+}
+
+// ---- WAI-ARIA menubar ---------------------------------------------------------------------------
+
+/** The menubar buttons (File, Edit, View, ...) in order. */
+function menubarButtons(): HTMLElement[] {
+  return Array.from(document.querySelectorAll<HTMLElement>('#menu-bar .menu-item[data-menu]'));
+}
+
+/** Roving tabindex: only `button` of the menubar is in the Tab order. */
+function setRovingButton(button: HTMLElement): void {
+  for (const other of menubarButtons()) other.tabIndex = other === button ? 0 : -1;
+}
+
+/**
+ * Roles of a dropdown's items (also the generated "Open from <provider>…" items): menuitem unless
+ * already a menuitemcheckbox, separators, the Export Railway Data submenu; shortcut hints.
+ */
+function setupMenuItemsAria(dropdown: HTMLElement): void {
+  dropdown.querySelectorAll<HTMLElement>('.menu-dropdown-item').forEach((item) => {
+    if (!item.getAttribute('role')) item.setAttribute('role', 'menuitem');
+    item.tabIndex = -1;
+  });
+  dropdown.querySelectorAll<HTMLElement>('.rd-sep').forEach((sep) => sep.setAttribute('role', 'separator'));
+  dropdown.querySelectorAll<HTMLElement>('#file-menu-remote-items').forEach((group) => group.setAttribute('role', 'none'));
+  dropdown.querySelectorAll<HTMLElement>('.menu-submenu').forEach((submenu) => {
+    submenu.setAttribute('role', 'none');
+    submenu.removeAttribute('tabindex');
+    const title = submenu.querySelector<HTMLElement>('.menu-submenu-title');
+    const list = submenu.querySelector<HTMLElement>('.menu-submenu-list');
+    if (title) {
+      title.setAttribute('role', 'menuitem');
+      title.setAttribute('aria-haspopup', 'menu');
+      title.tabIndex = -1;
+    }
+    if (list) {
+      list.setAttribute('role', 'menu');
+      if (title?.textContent) list.setAttribute('aria-label', title.textContent.trim());
+    }
+  });
+  applyShortcutHints(dropdown.querySelectorAll<HTMLElement>('.menu-dropdown-item[data-action]'));
+}
+
+/** Static roles of the menubar, its buttons and dropdowns (idempotent). */
+function setupMenubarAria(): void {
+  const bar = document.getElementById('menu-bar');
+  if (!bar) return;
+  bar.setAttribute('role', 'menubar');
+  bar.setAttribute('aria-label', 'Main menu');
+  bar.querySelectorAll<HTMLElement>('.menu-item-container').forEach((c) => c.setAttribute('role', 'none'));
+  menubarButtons().forEach((button, i) => {
+    const menu = button.getAttribute('data-menu')!;
+    const dropdown = bar.querySelector<HTMLElement>(`.menu-dropdown[data-menu="${menu}"]`);
+    button.setAttribute('role', 'menuitem');
+    button.setAttribute('aria-haspopup', 'menu');
+    if (!button.hasAttribute('aria-expanded')) button.setAttribute('aria-expanded', 'false');
+    if (!button.id) button.id = `menu-button-${menu}`;
+    if (button.getAttribute('tabindex') === null) button.tabIndex = i === 0 ? 0 : -1;
+    if (dropdown) {
+      if (!dropdown.id) dropdown.id = `menu-${menu}`;
+      dropdown.setAttribute('role', 'menu');
+      dropdown.setAttribute('aria-labelledby', button.id);
+      button.setAttribute('aria-controls', dropdown.id);
+      setupMenuItemsAria(dropdown);
+    }
+  });
+}
+
+function isShown(node: HTMLElement): boolean {
+  return node.getClientRects().length > 0 || node.style.display !== 'none' && !node.hidden && !node.closest('[hidden]');
+}
+
+/**
+ * The focusable items of a menu in order: menuitem / menuitemcheckbox / submenu titles whose
+ * nearest menu is `menu` (submenu children belong to their submenu list), not hidden.
+ */
+function visibleMenuItems(menu: HTMLElement, scope: HTMLElement = menu): HTMLElement[] {
+  return Array.from(scope.querySelectorAll<HTMLElement>('[role="menuitem"], [role="menuitemcheckbox"]')).filter(
+    (item) => item.parentElement?.closest('[role="menu"]') === menu && item.style.display !== 'none' && isShown(item)
+  );
 }

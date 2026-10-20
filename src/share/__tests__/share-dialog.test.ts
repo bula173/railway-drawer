@@ -68,8 +68,14 @@ describe('Share dialog', () => {
     openShareDialog(h);
     const section = q('share-provider-sharepoint')!;
     expect(q('share-provider-sharepoint-status')!.textContent).toBe('Not configured');
-    const link = section.querySelector('a')!;
-    expect(link.textContent).toBe('How to enable');
+    // admin steps (build variables) only behind the collapsed "How to enable" disclosure
+    const howTo = q('share-provider-sharepoint-howto') as HTMLDetailsElement;
+    expect(howTo.open).toBe(false);
+    expect(howTo.querySelector('summary')!.textContent).toBe('How to enable');
+    expect(howTo.textContent).toContain('VITE_MSAL_CLIENT_ID');
+    expect(q('share-provider-sharepoint-status')!.parentElement!.textContent).not.toContain('VITE_');
+    const link = howTo.querySelector('a')!;
+    expect(link.textContent).toBe('Setup guide');
     expect(link.href).toMatch(/docs\/SHAREPOINT\.md$/);
     expect(section.querySelectorAll('button')).toHaveLength(0);
   });

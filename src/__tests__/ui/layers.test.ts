@@ -13,6 +13,7 @@ let container: HTMLDivElement;
 let list: HTMLDivElement;
 let graph: Graph;
 let undo: UndoManager;
+let dialogs: { confirm: ReturnType<typeof vi.fn<(message: string) => Promise<boolean>>>; warn: ReturnType<typeof vi.fn<(message: string) => void>> };
 
 beforeEach(() => {
   list = document.createElement('div');
@@ -24,8 +25,7 @@ beforeEach(() => {
   installCellLocking(graph);
   undo = new UndoManager();
   graph.getDataModel().addListener(InternalEvent.UNDO, (_s: EventSource, evt: EventObject) => undo.undoableEditHappened(evt.getProperty('edit')));
-  vi.stubGlobal('confirm', vi.fn(() => true));
-  vi.stubGlobal('alert', vi.fn());
+  dialogs = { confirm: vi.fn(async () => true), warn: vi.fn() };
 });
 
 afterEach(() => {
@@ -36,7 +36,7 @@ afterEach(() => {
 });
 
 function setup(): { layers: LayersController; a: Cell; b: Cell; first: Cell; second: Cell } {
-  const layers = new LayersController(graph);
+  const layers = new LayersController(graph, dialogs);
   const first = graph.getDefaultParent();
   const a = graph.insertVertex({ parent: first, value: 'A', position: [10, 10], size: [40, 20] });
   const second = layers.addLayer().cell;
@@ -62,13 +62,15 @@ describe('LayersController', () => {
     expect(graph.getDefaultParent()).toBe(first);
   });
 
-  it('the × button deletes that layer and its shapes; Undo restores both', () => {
+  it('the × button deletes that layer and its shapes; Undo restores both', async () => {
     const { layers, a, b, first, second } = setup();
     const items = list.querySelectorAll('.layer-item');
     expect(items).toHaveLength(2);
     (items[0].querySelector('.layer-delete') as HTMLButtonElement).click();
+    await vi.waitFor(() => expect(list.querySelectorAll('.layer-item')).toHaveLength(1));
 
-    expect(confirm).toHaveBeenCalledTimes(1);
+    expect(dialogs.confirm).toHaveBeenCalledTimes(1);
+    expect(dialogs.confirm).toHaveBeenCalledWith('Layer "Layer 2" contains 1 shape. Delete the layer and its contents?');
     expect(ids(layers)).toEqual([String(first.getId())]);
     expect(b.getParent()?.getParent()).toBeFalsy();
     expect(graph.getDataModel().getCell(String(b.getId()))).toBeFalsy();
@@ -82,16 +84,16 @@ describe('LayersController', () => {
     expect(list.querySelectorAll('.layer-item')).toHaveLength(2);
   });
 
-  it('cancelling the confirm keeps the layer; the last layer cannot be deleted', () => {
+  it('cancelling the confirm keeps the layer; the last layer cannot be deleted', async () => {
     const { layers, b, first, second } = setup();
-    vi.mocked(confirm).mockReturnValueOnce(false);
-    expect(layers.deleteLayer(String(second.getId()))).toBe(false);
+    dialogs.confirm.mockResolvedValueOnce(false);
+    expect(await layers.deleteLayer(String(second.getId()))).toBe(false);
     expect(b.getParent()).toBe(second);
     expect(layers.getLayers()).toHaveLength(2);
 
-    expect(layers.deleteLayer(String(second.getId()))).toBe(true);
-    expect(layers.deleteLayer(String(first.getId()))).toBe(false);
-    expect(alert).toHaveBeenCalledWith('Cannot delete the last layer');
+    expect(await layers.deleteLayer(String(second.getId()))).toBe(true);
+    expect(await layers.deleteLayer(String(first.getId()))).toBe(false);
+    expect(dialogs.warn).toHaveBeenCalledWith('The last layer cannot be deleted.');
     expect(layers.getLayers()).toHaveLength(1);
   });
 

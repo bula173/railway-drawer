@@ -84,6 +84,7 @@ jobs:
         tests/e2e/ertms-data.spec.ts tests/e2e/ertms-routes.spec.ts tests/e2e/railml.spec.ts tests/e2e/scenario-uml-text.spec.ts tests/e2e/theme-contrast.spec.ts
         tests/e2e/remote-persist.spec.ts tests/e2e/scenario-doc.spec.ts tests/e2e/editor-commands.spec.ts tests/e2e/dark-shapes.spec.ts
         tests/e2e/drawio-compat.spec.ts tests/e2e/interaction.spec.ts tests/e2e/hover-arrows.spec.ts tests/e2e/railway-script.spec.ts
+        tests/e2e/ux-batch.spec.ts
 
     - name: Upload Playwright report
       if: failure()

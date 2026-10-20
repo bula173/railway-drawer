@@ -13,6 +13,19 @@
 import { Cell } from '@maxgraph/core';
 import type { Graph } from '@maxgraph/core';
 import { hasLockedStyle, setCellsLocked } from './cell-lock';
+import { confirmDialog } from './app-dialogs';
+import { globalNotificationManager } from './notification';
+
+/** Questions and notes of the Layers panel (themed dialog / notification; replaceable in tests). */
+export interface LayersDialogs {
+  confirm(message: string): Promise<boolean>;
+  warn(message: string): void;
+}
+
+const DEFAULT_DIALOGS: LayersDialogs = {
+  confirm: (message) => confirmDialog({ title: 'Delete layer', message, confirmLabel: 'Delete', danger: true }),
+  warn: (message) => globalNotificationManager.warning(message),
+};
 
 export interface Layer {
   id: string;
@@ -31,9 +44,11 @@ export class LayersController {
   private graph: Graph;
   private layerListContainer: HTMLElement | null;
   private readonly modelListener = () => this.onModelChange();
+  private readonly dialogs: LayersDialogs;
 
-  constructor(graph: Graph) {
+  constructor(graph: Graph, dialogs: LayersDialogs = DEFAULT_DIALOGS) {
     this.graph = graph;
+    this.dialogs = dialogs;
     this.layerListContainer = document.getElementById('layers-list');
 
     this.setupLayerControls();
@@ -117,7 +132,7 @@ export class LayersController {
 
   deleteCurrentLayer(): void {
     const current = this.getCurrentLayer();
-    if (current) this.deleteLayer(current.id);
+    if (current) void this.deleteLayer(current.id);
   }
 
   /**
@@ -125,16 +140,19 @@ export class LayersController {
    * Undo brings both back. The last layer cannot be deleted.
    * @returns true when the layer was deleted
    */
-  deleteLayer(layerId: string): boolean {
+  async deleteLayer(layerId: string): Promise<boolean> {
     const layer = this.findLayer(layerId);
     if (!layer) return false;
     if (this.layerCells().length <= 1) {
-      alert('Cannot delete the last layer');
+      this.dialogs.warn('The last layer cannot be deleted.');
       return false;
     }
     const count = layer.getChildCount();
-    if (count > 0 && !confirm(`Layer "${this.layerName(layer)}" contains ${count} cell(s). Delete anyway?`)) {
-      return false;
+    if (count > 0) {
+      const what = count === 1 ? '1 shape' : `${count} shapes`;
+      if (!(await this.dialogs.confirm(`Layer "${this.layerName(layer)}" contains ${what}. Delete the layer and its contents?`))) return false;
+      // The layer may have gone while the question was open (undo, another delete)
+      if (this.findLayer(layerId) !== layer || this.layerCells().length <= 1) return false;
     }
     const removedSelection = this.graph.getSelectionCells().filter((cell) => this.isInside(cell, layer));
     if (removedSelection.length > 0) this.graph.removeSelectionCells(removedSelection);
@@ -262,7 +280,7 @@ export class LayersController {
       deleteBtn.style.color = 'var(--rd-danger)';
       deleteBtn.addEventListener('click', (e) => {
         e.stopPropagation();
-        this.deleteLayer(layer.id);
+        void this.deleteLayer(layer.id);
       });
 
       layerItem.appendChild(visibilityBtn);

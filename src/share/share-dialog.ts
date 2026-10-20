@@ -251,7 +251,8 @@ function renderProviderSection(provider: StorageProviderDescriptor, host: ShareD
   section.setAttribute('aria-labelledby', heading.id);
   section.appendChild(heading);
   const availability = provider.availability();
-  const settings = provider.settings ? renderSettings(provider, host, () => section.replaceWith(renderProviderSection(provider, host, modal)), availability.state !== 'ready') : null;
+  // Settings start collapsed (end users rarely need them); "GitLab settings" opens them
+  const settings = provider.settings ? renderSettings(provider, host, () => section.replaceWith(renderProviderSection(provider, host, modal)), false) : null;
 
   if (availability.state !== 'ready') {
     const status = el('p', 'rd-share-hint');
@@ -261,15 +262,28 @@ function renderProviderSection(provider: StorageProviderDescriptor, host: ShareD
       availability.state === 'not-configured' ? 'Not configured' : 'Not available here'
     );
     strong.dataset.testid = `share-provider-${provider.id}-status`;
-    status.append(strong, document.createTextNode(` — ${availability.reason} `));
-    if (availability.helpUrl) {
-      const link = el('a', undefined, availability.state === 'not-configured' ? 'How to enable' : 'Open');
-      link.href = availability.helpUrl;
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
-      status.appendChild(link);
-    }
+    // The reason must not repeat the status ("Not configured — Not configured. …")
+    const reason = availability.reason.replace(/^(not configured|not available here)\s*[.:—-]?\s*/i, '');
+    status.append(strong);
+    if (reason) status.append(document.createTextNode(` — ${reason}`));
     section.appendChild(status);
+    // Setup steps for administrators (build variables, app registrations) stay behind a disclosure
+    if (availability.details || availability.helpUrl) {
+      const howTo = el('details', 'rd-share-howto');
+      howTo.dataset.testid = `share-provider-${provider.id}-howto`;
+      howTo.appendChild(el('summary', undefined, availability.state === 'not-configured' ? 'How to enable' : 'Details'));
+      if (availability.details) howTo.appendChild(el('p', 'rd-share-hint', availability.details));
+      if (availability.helpUrl) {
+        const link = el('a', undefined, availability.state === 'not-configured' ? 'Setup guide' : 'Open');
+        link.href = availability.helpUrl;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        const p = el('p', 'rd-share-hint');
+        p.appendChild(link);
+        howTo.appendChild(p);
+      }
+      section.appendChild(howTo);
+    }
     if (settings) section.appendChild(settings);
     return section;
   }
@@ -297,7 +311,7 @@ function renderProviderSection(provider: StorageProviderDescriptor, host: ShareD
   return section;
 }
 
-/** The provider's runtime settings (collapsed unless the provider still needs them). */
+/** The provider's runtime settings (a disclosure, collapsed by default). */
 function renderSettings(provider: StorageProviderDescriptor, host: ShareDialogHost, redraw: () => void, open: boolean): HTMLElement {
   const settings = provider.settings!;
   const details = el('details', 'rd-share-settings');

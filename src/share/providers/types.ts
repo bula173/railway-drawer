@@ -12,13 +12,17 @@
  * types; nothing provider-specific is imported outside `providers/<id>/`.
  */
 
-/** Whether a provider can be used on this deployment. */
+/**
+ * Whether a provider can be used on this deployment. `reason` is the short line for end users;
+ * `details` (setup steps for administrators: app registrations, VITE_* build variables, redirect
+ * URIs) is shown behind the Share dialog's "How to enable" disclosure, with `helpUrl`.
+ */
 export type ProviderAvailability =
   | { state: 'ready' }
   /** Build-time configuration missing (e.g. no Entra app registration yet). */
-  | { state: 'not-configured'; reason: string; helpUrl?: string }
+  | { state: 'not-configured'; reason: string; details?: string; helpUrl?: string }
   /** Configured, but not usable here (e.g. plain http). */
-  | { state: 'unavailable'; reason: string; helpUrl?: string };
+  | { state: 'unavailable'; reason: string; details?: string; helpUrl?: string };
 
 export interface RemoteAccount {
   /** Display name. */

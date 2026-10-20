@@ -14,7 +14,9 @@
  * directly to the graph model with immediate visual feedback.
  */
 
-import { Graph, constants } from '@maxgraph/core';
+import { Graph, InternalEvent, constants } from '@maxgraph/core';
+import type { EventObject } from '@maxgraph/core';
+import { selectionTitle, setPropertiesPanelState } from './properties-state';
 import type { Geometry } from '@maxgraph/core';
 import type { AlignValue, Cell, VAlignValue } from '@maxgraph/core';
 import {
@@ -121,9 +123,29 @@ export class PropertiesPanel {
   private readonly listenerAbort = new AbortController();
   /** @brief Selection model listener, kept for removal in destroy() */
   private readonly selectionListener = () => this.update();
+  /**
+   * @brief Canvas Properties were asked for (a click on the empty canvas); cleared when a cell is
+   * selected, so an empty selection shows the hint until the canvas itself is clicked.
+   */
+  private canvasRequested = false;
+  /**
+   * @brief Click on the empty canvas: Canvas Properties, but only once maxGraph has handled the click
+   * and the selection really is empty (a click in a group's gap keeps the group selected)
+   */
+  private readonly clickListener = (_sender: unknown, evt: EventObject) => {
+    if (evt.getProperty('cell')) return;
+    setTimeout(() => {
+      if (!this.isActive() || !this.graph.isSelectionEmpty()) return;
+      this.canvasRequested = true;
+      this.update();
+    }, 0);
+  };
   /** @brief Model listener: keeps the Lock button in step with undo/redo and other lock edits */
   private readonly modelListener = () => {
     if (!this.currentCell || !this.isActive()) return;
+    // The header follows renames and Data edits (railway ID) of the selection
+    const cells = this.graph.getSelectionCells();
+    if (cells.length > 0) setPropertiesPanelState('cell', selectionTitle(this.graph, cells));
     this.updateLockButton(hasLockedStyle(this.currentCell));
     this.updateGeometryControls();
   };
@@ -143,6 +165,7 @@ export class PropertiesPanel {
 
     this.graph.getSelectionModel().addListener('change', this.selectionListener);
     this.graph.getDataModel().addListener('change', this.modelListener);
+    this.graph.addListener(InternalEvent.CLICK, this.clickListener);
   }
 
   /**
@@ -153,6 +176,7 @@ export class PropertiesPanel {
     this.listenerAbort.abort();
     this.graph.getSelectionModel().removeListener(this.selectionListener);
     this.graph.getDataModel().removeListener(this.modelListener);
+    this.graph.removeListener(this.clickListener);
     this.currentCell = null;
   }
 
@@ -197,29 +221,14 @@ export class PropertiesPanel {
     const cells = this.graph.getSelectionCells();
     if (cells.length === 0) {
       this.currentCell = null;
-      this.showPlaceholder();
+      setPropertiesPanelState(this.canvasRequested ? 'canvas' : 'none');
       return;
     }
 
+    this.canvasRequested = false;
     this.currentCell = cells[0];
-    this.showEditor();
+    setPropertiesPanelState('cell', selectionTitle(this.graph, cells));
     this.updateValues();
-  }
-
-  private showPlaceholder() {
-    const placeholder = document.getElementById('prop-placeholder');
-    const editor = document.getElementById('prop-editor');
-    if (placeholder) placeholder.style.display = 'block';
-    if (editor) editor.style.display = 'none';
-  }
-
-  private showEditor() {
-    const placeholder = document.getElementById('prop-placeholder');
-    const editor = document.getElementById('prop-editor');
-    const canvasProps = document.getElementById('canvas-props');
-    if (placeholder) placeholder.style.display = 'none';
-    if (editor) editor.style.display = 'flex';
-    if (canvasProps) canvasProps.style.display = 'none';
   }
 
   private updateValues() {

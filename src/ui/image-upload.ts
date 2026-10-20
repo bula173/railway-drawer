@@ -1,4 +1,6 @@
 import { Graph } from '@maxgraph/core';
+import { confirmDialog } from './app-dialogs';
+import { globalNotificationManager } from './notification';
 import { ImageService } from '../services/image-service';
 
 export class ImageUploadController {
@@ -269,7 +271,7 @@ export class ImageUploadController {
       }, 1500);
     } catch (error) {
       console.error('[ImageUpload] Upload failed:', error);
-      alert('Failed to upload image. Please try again.');
+      globalNotificationManager.error('Failed to upload the image. Please try again.');
       const uploadBtn = modalContent.querySelector('button') as HTMLButtonElement;
       uploadBtn.disabled = false;
       uploadBtn.textContent = 'Upload & Create Shape';
@@ -320,8 +322,8 @@ export class ImageUploadController {
         width: 24px;
         height: 24px;
       `;
-      deleteBtn.addEventListener('click', () => {
-        if (confirm(`Delete "${img.name}"?`)) {
+      deleteBtn.addEventListener('click', async () => {
+        if (await confirmDialog({ title: 'Delete custom shape', message: `Delete "${img.name}"?`, confirmLabel: 'Delete', danger: true })) {
           this.imageService.deleteImage(img.id);
           this.updateImagesList(imagesList);
         }

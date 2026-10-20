@@ -40,7 +40,7 @@ export interface RemoteTab {
     getProjectXml(): string;
     loadProjectXml(xml: string, sourceName: string, opts?: { quiet?: boolean }): Promise<void>;
     setSaveHandler(handler: (() => void) | null): void;
-    markAsSavedToDisk?(): void;
+    markAsSavedToDisk?(target?: string): void;
     /** True when the last open changed the diagram against the file (old app layers migrated). */
     hasUnsavedLoadChanges?(): boolean;
     /** Called after a file from disk was opened into the tab (File > Open): the tab is unbound. */
@@ -485,7 +485,7 @@ export class RemoteSession {
     }
     this.host.switchTab(tab.id);
     this.bind(tab, withoutXml(content));
-    tab.saveLoadController.markAsSavedToDisk?.();
+    tab.saveLoadController.markAsSavedToDisk?.(provider.label);
     this.notify.success(`Opened "${content.name}" from ${provider.label}. Ctrl+S saves back to it.`);
     return true;
   }
@@ -510,7 +510,7 @@ export class RemoteSession {
         const result = await provider.saveAs(choice.path, choice.name, xml, choice.conflict, ...withValues(choice.values));
         if (result.ok) {
           this.bind(tab, result.file, xml);
-          tab.saveLoadController.markAsSavedToDisk?.();
+          tab.saveLoadController.markAsSavedToDisk?.(provider.label);
           this.reportSaved(provider, result, `Saved "${result.file.name}" to ${provider.label}. Ctrl+S saves back to it.`);
           return true;
         }
@@ -580,7 +580,7 @@ export class RemoteSession {
       }
       // The tab may have been closed or unlinked while the save ran
       if (this.bindings.has(tabId)) this.bind(tab, result.file, xml);
-      tab.saveLoadController.markAsSavedToDisk?.();
+      tab.saveLoadController.markAsSavedToDisk?.(provider.label);
       this.reportSaved(provider, result, `Saved to ${provider.label}: ${result.file.name}`);
       return true;
     } catch (err) {
@@ -662,7 +662,7 @@ export class RemoteSession {
       return false;
     }
     this.bind(tab, withoutXml(content));
-    tab.saveLoadController.markAsSavedToDisk?.();
+    tab.saveLoadController.markAsSavedToDisk?.(provider.label);
     this.notify.success(`Reloaded "${content.name}" from ${provider.label}.`);
     return true;
   }
