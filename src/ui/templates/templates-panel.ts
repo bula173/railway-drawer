@@ -253,7 +253,11 @@ export function createTemplatesPanel(options: TemplatesPanelOptions): TemplatesP
     popoverFor = null;
   }
 
+  /** When the popover was last opened: the scroll that brought its tile into view must not close it. */
+  let popoverShownAt = 0;
+
   function showPopover(template: DiagramTemplate, tile: HTMLElement): void {
+    popoverShownAt = performance.now();
     hidePopover();
     popoverFor = tile;
     tile.classList.add('rd-tpl-tile-active');
@@ -306,7 +310,10 @@ export function createTemplatesPanel(options: TemplatesPanelOptions): TemplatesP
   };
   document.addEventListener('mousedown', onDocMouseDown);
   document.addEventListener('keydown', onDocKeyDown);
-  list.addEventListener('scroll', hidePopover);
+  list.addEventListener('scroll', () => {
+    hidePreview();
+    if (performance.now() - popoverShownAt > 300) hidePopover();
+  });
 
   // ------------------------------------------------------------------ hover preview
 
