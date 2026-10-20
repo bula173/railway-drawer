@@ -43,7 +43,7 @@ export class ShapeDesignerController {
   private drawMode = true; // true = draw, false = edit path
 
 
-  /** Loaded on first use by main-editor.ts, which binds the toolbar button (#btn-shape-designer). */
+  /** Loaded on first use by main-editor.ts (Extras > Design Custom Shapes…, event open-shape-designer). */
   constructor(_graph: Graph) {}
 
   /**

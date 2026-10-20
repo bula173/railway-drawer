@@ -27,21 +27,6 @@ export class InteractiveUIController {
       this.graph.zoomTo(zoomLevel / 100);
     });
 
-    // Pan controls
-    document.getElementById('btn-pan-left')?.addEventListener('click', () => {
-      const container = this.graph.container;
-      if (container) {
-        container.scrollLeft -= 50;
-      }
-    });
-
-    document.getElementById('btn-pan-right')?.addEventListener('click', () => {
-      const container = this.graph.container;
-      if (container) {
-        container.scrollLeft += 50;
-      }
-    });
-
     // Delete button
     document.getElementById('btn-delete')?.addEventListener('click', () => {
       this.commandService.delete();
@@ -90,17 +75,7 @@ export class InteractiveUIController {
       }
     });
 
-    document.getElementById('btn-add-element')?.addEventListener('click', () => {
-      this.insertQuickShape('rectangle', 100, 60, '#a9d08e', '#70ad47');
-    });
-
-    document.getElementById('btn-align')?.addEventListener('click', () => {
-      this.commandService.alignShapes('center');
-    });
-
-    document.getElementById('btn-distribute')?.addEventListener('click', () => {
-      this.commandService.distributeShapes('horizontal');
-    });
+    // #btn-align opens the Align / distribute dropdown (toolbar.ts); AlignmentController binds its items
 
     document.getElementById('btn-fullscreen')?.addEventListener('click', () => {
       if (!document.fullscreenElement) {

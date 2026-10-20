@@ -29,7 +29,7 @@
  */
 import { test, expect } from '@playwright/test';
 import type { Page } from '@playwright/test';
-import { revealMenuItem } from './menu-helpers';
+import { clickMenuItem, revealMenuItem } from './menu-helpers';
 
 type Theme = 'light' | 'dark';
 
@@ -462,13 +462,13 @@ async function auditAllSurfaces(page: Page, a: Auditor): Promise<void> {
   await page.keyboard.press('Escape');
   await expect(saveAs).toHaveCount(0);
 
-  // Toolbar dialogs: custom shape image upload, shape designer
+  // Toolbar / Extras dialogs: custom shape image upload, shape designer
   await page.locator('#btn-upload-image').click();
   await expect(page.locator('#image-upload-modal')).toBeVisible();
   await a.check('Upload Custom Shape Image dialog', '#image-upload-modal');
   await page.locator('#image-upload-modal button', { hasText: 'Close' }).click();
   await expect(page.locator('#image-upload-modal')).toBeHidden();
-  await page.locator('#btn-shape-designer').click();
+  await clickMenuItem(page, 'extras', 'designShapes');
   const designer = page.locator('.shape-designer-modal').first();
   await expect(designer).toBeVisible();
   await a.check('Shape designer', '.shape-designer-modal');

@@ -332,7 +332,71 @@ body {
 }
 
 .toolbar-btn.rd-icon-btn {
-  padding: 4px 6px;
+  padding: 4px 5px;
+  min-width: 28px;
+}
+
+.toolbar-btn:focus-visible,
+.rd-toolbar-menu-item:focus-visible {
+  outline: 2px solid var(--rd-focus);
+  outline-offset: 1px;
+}
+
+/* Toggles (Grid, km ruler, Route tool, panels): pressed = on */
+.toolbar-btn[aria-pressed='true'] {
+  background: var(--rd-selected);
+  color: var(--rd-link);
+}
+
+/* Button groups (src/ui/toolbar.ts) */
+.toolbar-group {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+/* A dropdown button (Align / distribute): small caret after the icon */
+.toolbar-btn.rd-has-caret::after {
+  content: '';
+  margin-left: 2px;
+  border: 4px solid transparent;
+  border-top-color: currentColor;
+  border-bottom: 0;
+}
+
+.rd-toolbar-menu {
+  position: fixed;
+  z-index: 1100;
+  min-width: 200px;
+  padding: 4px 0;
+  background: var(--rd-surface);
+  border: 1px solid var(--rd-border-strong);
+  border-radius: 4px;
+  box-shadow: 0 2px 8px var(--rd-shadow);
+}
+
+.rd-toolbar-menu[hidden] {
+  display: none;
+}
+
+.rd-toolbar-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 28px;
+  padding: 4px 12px;
+  border: 0;
+  background: transparent;
+  color: var(--rd-text);
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.rd-toolbar-menu-item:hover,
+.rd-toolbar-menu-item:focus {
+  background: var(--rd-surface-3);
 }
 
 /* Workspace */

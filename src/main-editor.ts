@@ -57,6 +57,7 @@ import { installRailml, isRailmlFile, requestRailmlOpen } from './railml/install
 import { installRailwayScript } from './railway-script/install-railway-script';
 import { syncConnectionArrowsMenu, toggleConnectionArrows } from './ui/hover-arrows';
 import { withErtmsDisplayTitles } from './ui/ertms-display';
+import { installToolbar } from './ui/toolbar';
 
 /**
  * @brief Register all built-in shape definitions
@@ -92,6 +93,9 @@ new ShortcutsHelpController();
  * and main graph canvas area using drag-enabled dividers.
  */
 new ResizablePanels();
+
+// Toolbar chrome: SVG icons, names + shortcut tooltips, Align / distribute dropdown (src/ui/toolbar.ts)
+installToolbar();
 
 // ============= TAB MANAGER =============
 
@@ -639,7 +643,6 @@ if (activeTabForShapes) {
   const customShapeToolbar = new CustomShapeToolbar('custom-shapes-container');
 
   // Wire up event listeners for opening shape designer
-  document.getElementById('btn-shape-designer')?.addEventListener('click', () => openShapeDesigner());
   window.addEventListener('open-shape-designer', () => openShapeDesigner());
   window.addEventListener('edit-custom-shape', (e) => {
     openShapeDesigner((e as CustomEvent<{ shapeId?: string } | undefined>).detail?.shapeId);

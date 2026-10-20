@@ -183,7 +183,7 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   Shapes tab (shape toolbar + draw.io palettes), shape designer. `beforeunload` flushes the cache; the tabs are destroyed
   on `pagehide` (not persisted), because beforeunload can be cancelled (unsaved remote changes prompt).
 - Rarely used features are separate chunks loaded with `import()` on first use: the shape designer
-  (`ui/shape-designer.ts`, opened from `#btn-shape-designer` / `open-shape-designer` / `edit-custom-shape`), the
+  (`ui/shape-designer.ts`, opened from Extras > Design Custom Shapes… = `open-shape-designer` / `edit-custom-shape`), the
   route tables dialog (`railway/route-tables-dialog.ts`), the XLSX writer (`railway/xlsx.ts`), scenario PDF/slides
   export (`jspdf`, `svg2pdf.js`), GitLab/SharePoint loaders, the draw.io palette JSON and railML import/export
   (`railml/railml-ui.ts` with export/import/structure). Keep new heavy,
@@ -287,6 +287,15 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   `tests/e2e/menu-helpers.ts` `clickMenuItem(page, menu, action)` / `revealMenuItem(item)` hover the submenu chain.
   File > New = `TabManager.openNewTab()` (draw.io-like: new tab "Diagram <n>",
   shown, its project named alike); the "+" button and the first start do the same. Help > About = `showAboutDialog`.
+- Toolbar (`index.html` `#toolbar-container` role=toolbar, chrome by `src/ui/toolbar.ts` `installToolbar`, once): groups
+  (role=group) Zoom | Edit (Undo, Redo, Delete) | Insert (rectangle, ellipse, diamond, line, connect two selected, image as
+  custom shape) | Arrange (Grid toggle = View > Grid, format painter, Align / distribute dropdown `#btn-align` ->
+  `#align-menu` with AlignmentController's `#btn-align-*` / `#btn-distribute-*`) | Railway (Route tool, Run checks, km
+  ruler mirroring the menu item via `data-mirror-action`) | View (panels, fullscreen). Buttons carry `data-icon`
+  (`TOOLBAR_ICONS`, inline 24x24 stroke SVG, no emoji), `data-label` (-> aria-label) and optional `data-shortcut` (an
+  `ACTION_SHORTCUTS` key -> tooltip "Undo (Ctrl+Z)"); toggles use aria-pressed. Actions stay bound by id in the per-tab
+  controllers (InteractiveUIController, ZoomController, ...). Removed: pan ‹ ›, the green "+" rectangle, the toolbar
+  shape-designer button (Extras), the single Distribute button.
 - Themed dialogs (`src/ui/app-dialogs.ts`, `.rd-tpl-modal` look): `openAppModal` (role=dialog, aria-modal, labelledby,
   backdrop, focus trap, Esc cancel, Enter submit, focus returned, keys kept from the dispatcher), `promptSaveAs` (File >
   Save As…: name -> `renameActiveProject` + download `<name>.drawio`), `confirmDialog`, `messageDialog`, `showAboutDialog`
