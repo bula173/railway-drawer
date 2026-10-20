@@ -48,7 +48,7 @@ test.describe('share', () => {
     await page.locator('#templates-panel [data-section="builtin"] .rd-tpl-tile').nth(1).click();
     await page.locator('.rd-tpl-popover [data-action="open"]').click();
     await expect(page.locator('#tabs-container .tab-button')).toHaveCount(2);
-    await expect(page.locator('#tabs-container .tab-button.active')).toContainText('ERTMS scenario 2');
+    await expect(page.locator('#tabs-container .tab-button.active')).toContainText('MA length and speed');
 
     // Share dialog from the top bar
     await page.locator('#share-btn').click();
@@ -93,7 +93,7 @@ test.describe('share', () => {
     await expect(receiver.locator('#tabs-container .tab-button')).toHaveCount(2);
     const names = await tabNames(receiver);
     expect(names.join('|')).toContain('Diagram 1');
-    expect(names.join('|')).toContain('ERTMS scenario 2');
+    expect(names.join('|')).toContain('MA length and speed');
     // the hash is gone (a reload does not open the diagram again)
     expect(receiver.url()).not.toContain('#R');
     await expect.poll(async () => (await cachedXml(receiver)).includes('shape=hexagon'), { timeout: 15_000 }).toBe(true);

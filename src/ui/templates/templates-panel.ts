@@ -21,8 +21,11 @@ import { templateMatches, templateToPaletteEntry } from './template-types';
 import type { DiagramTemplate } from './template-types';
 
 export const TEMPLATE_DRAG_TYPE = 'application/x-rd-template';
-export const TEMPLATE_THUMB_WIDTH = 120;
-export const TEMPLATE_THUMB_HEIGHT = 72;
+export const TEMPLATE_THUMB_WIDTH = 200;
+export const TEMPLATE_THUMB_HEIGHT = 120;
+/** Hover preview size (the whole layout, readable labels). */
+export const TEMPLATE_PREVIEW_WIDTH = 480;
+export const TEMPLATE_PREVIEW_HEIGHT = 300;
 export const TEMPLATES_EXPORT_FILE = 'railway-drawer-templates.xml';
 
 export interface TemplateThumbnails {
@@ -305,6 +308,45 @@ export function createTemplatesPanel(options: TemplatesPanelOptions): TemplatesP
   document.addEventListener('keydown', onDocKeyDown);
   list.addEventListener('scroll', hidePopover);
 
+  // ------------------------------------------------------------------ hover preview
+
+  const preview = el('div', 'rd-tpl-preview');
+  preview.hidden = true;
+  preview.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(preview);
+  let previewTimer: ReturnType<typeof setTimeout> | null = null;
+  let previewToken = 0;
+
+  function hidePreview(): void {
+    if (previewTimer) clearTimeout(previewTimer);
+    previewTimer = null;
+    previewToken++;
+    preview.hidden = true;
+    preview.replaceChildren();
+  }
+
+  function showPreview(template: DiagramTemplate, entry: PaletteEntry, tile: HTMLElement): void {
+    hidePreview();
+    if (!thumbnails) return;
+    const token = previewToken;
+    previewTimer = setTimeout(() => {
+      thumbnails
+        .thumbnail(entry, TEMPLATE_PREVIEW_WIDTH, TEMPLATE_PREVIEW_HEIGHT)
+        .then((svg) => {
+          if (token !== previewToken || destroyed || !tile.isConnected) return;
+          preview.replaceChildren(svg, el('div', 'rd-tpl-preview-title', template.name));
+          const r = tile.getBoundingClientRect();
+          const panel = root.getBoundingClientRect();
+          const left = Math.max(panel.right, r.right) + 8;
+          preview.hidden = false;
+          const h = preview.offsetHeight || TEMPLATE_PREVIEW_HEIGHT;
+          preview.style.left = `${Math.round(Math.min(left, window.innerWidth - TEMPLATE_PREVIEW_WIDTH - 24))}px`;
+          preview.style.top = `${Math.round(Math.max(8, Math.min(r.top, window.innerHeight - h - 8)))}px`;
+        })
+        .catch(() => undefined);
+    }, 450);
+  }
+
   // ------------------------------------------------------------------ tiles
 
   function createTile(template: DiagramTemplate): HTMLElement {
@@ -316,11 +358,16 @@ export function createTemplatesPanel(options: TemplatesPanelOptions): TemplatesP
     tile.setAttribute('role', 'button');
     tile.setAttribute('aria-haspopup', 'menu');
     tile.setAttribute('aria-label', template.name);
-    tile.title = template.description ? `${template.name}\n${template.description}` : template.name;
+    tile.title = [template.name, template.description, template.originalName && template.originalName !== template.name ? `(${template.originalName})` : '']
+      .filter(Boolean)
+      .join('\n');
 
     const thumb = el('div', 'rd-tpl-thumb');
     thumb.style.width = `${TEMPLATE_THUMB_WIDTH}px`;
     thumb.style.height = `${TEMPLATE_THUMB_HEIGHT}px`;
+    tile.addEventListener('mouseenter', () => showPreview(template, entry, tile));
+    tile.addEventListener('mouseleave', hidePreview);
+    tile.addEventListener('mousedown', hidePreview);
     pendingThumbs.set(thumb, entry);
     if (observer) observer.observe(thumb);
     else renderThumb(thumb);
@@ -361,6 +408,7 @@ export function createTemplatesPanel(options: TemplatesPanelOptions): TemplatesP
     });
     tile.addEventListener('dragstart', (evt) => {
       hidePopover();
+      hidePreview();
       if (!evt.dataTransfer) return;
       evt.dataTransfer.effectAllowed = 'copy';
       evt.dataTransfer.setData(TEMPLATE_DRAG_TYPE, template.id);
@@ -494,6 +542,8 @@ export function createTemplatesPanel(options: TemplatesPanelOptions): TemplatesP
 
   function destroy(): void {
     destroyed = true;
+    hidePreview();
+    preview.remove();
     stopColorModeWatch();
     renderedThumbs.clear();
     unsubscribe();

@@ -63,7 +63,7 @@
 
 .rd-tpl-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(128px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(206px, 1fr));
   gap: 6px;
   padding: 6px;
 }
@@ -120,7 +120,7 @@
   color: var(--text-secondary, #666);
   font-size: var(--font-size-xs, 11px);
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
   line-height: 1.25;
@@ -323,4 +323,26 @@
   justify-content: flex-end;
   gap: 8px;
   margin-top: 6px;
+}
+
+/* Hover preview of a template (whole layout, larger) */
+.rd-tpl-preview {
+  position: fixed;
+  z-index: 1000;
+  padding: 6px;
+  border: 1px solid var(--rd-border);
+  border-radius: var(--radius-md, 6px);
+  background: var(--rd-surface);
+  box-shadow: 0 4px 16px var(--rd-shadow);
+  pointer-events: none;
+}
+.rd-tpl-preview[hidden] {
+  display: none;
+}
+.rd-tpl-preview-title {
+  margin-top: 4px;
+  color: var(--rd-text);
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
 }

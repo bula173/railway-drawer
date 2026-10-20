@@ -9,6 +9,8 @@ export interface DiagramTemplate {
   /** Stable id: `ertms-tpl-<library index>` (built-in) or `tpl-<random>` (user). */
   id: string;
   name: string;
+  /** Name before display naming (built-in: "ERTMS scenario <n>"), shown in the tooltip. */
+  originalName?: string;
   /** Short subtitle (built-in: distinctive labels of the diagram) or the user's description. */
   description?: string;
   /** Native draw.io `<mxGraphModel>` XML, styles verbatim. */

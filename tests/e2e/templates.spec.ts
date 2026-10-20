@@ -82,7 +82,7 @@ test.describe('templates', () => {
     await expect(panel).toBeVisible();
     const builtin = panel.locator('[data-section="builtin"] .rd-tpl-tile');
     await expect(builtin).toHaveCount(22);
-    await expect(builtin.first().locator('.rd-tpl-name')).toHaveText('ERTMS scenario 1');
+    await expect(builtin.first().locator('.rd-tpl-name')).toHaveText('Section timer (L1)');
     await expect(builtin.first().locator('.rd-tpl-desc')).not.toBeEmpty();
     await expect(panel.locator('[data-section="builtin"] .rd-tpl-thumb-ready').first()).toBeVisible();
     await expect(panel.locator('[data-section="user"] .rd-tpl-empty')).toContainText('Select shapes and use Save as template');
@@ -101,7 +101,7 @@ test.describe('templates', () => {
     // open as a new diagram tab named after the template
     await builtin.nth(1).click();
     await page.locator('.rd-tpl-popover [data-action="open"]').click();
-    await expect(page.locator('#tabs-container .tab-button.active')).toContainText('ERTMS scenario 2');
+    await expect(page.locator('#tabs-container .tab-button.active')).toContainText('MA length and speed');
     await expect(page.locator('#tabs-container .tab-button')).toHaveCount(2);
 
     // drag a tile onto the canvas
