@@ -86,8 +86,8 @@
 }
 .rd-scn-toggle {
   flex: 0 0 auto;
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   padding: 0;
   border: none;
   background: transparent;
@@ -105,8 +105,11 @@
   cursor: pointer;
 }
 .rd-scn-name {
+  display: block;
+  overflow: hidden;
   font-weight: 600;
-  overflow-wrap: anywhere;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .rd-scn-count {
   margin-left: 4px;
@@ -126,28 +129,84 @@
   flex: 0 0 auto;
   gap: 1px;
 }
-.rd-scn-icon {
-  width: 22px;
-  height: 22px;
+.rd-scn-play {
+  min-height: 24px;
+  padding: 2px 8px;
+  border: 1px solid var(--rd-border);
+  border-radius: var(--radius-sm, 4px);
+  background: var(--rd-button-bg);
+  color: var(--rd-button-text);
+  font: inherit;
+  font-size: var(--font-size-xs, 11px);
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.rd-scn-play:hover:not(:disabled) {
+  background: var(--rd-hover);
+}
+.rd-scn-play:disabled {
+  color: var(--rd-text-muted);
+  cursor: default;
+}
+.rd-scn-more {
+  width: 24px;
+  height: 24px;
   padding: 0;
   border: 1px solid transparent;
   border-radius: var(--radius-sm, 4px);
   background: transparent;
-  color: var(--text-secondary, #555);
-  font-size: 12px;
+  color: var(--rd-text);
+  font-size: 16px;
   line-height: 1;
   cursor: pointer;
 }
-.rd-scn-icon:hover:not(:disabled) {
-  border-color: var(--border, #ccc);
-  background: var(--surface, #fff);
-  color: var(--text, #222);
+.rd-scn-more:hover,
+.rd-scn-more[aria-expanded='true'] {
+  border-color: var(--rd-border);
+  background: var(--rd-hover);
 }
-.rd-scn-icon:disabled {
-  opacity: 0.35;
+.rd-scn-play:focus-visible,
+.rd-scn-more:focus-visible,
+.rd-scn-menu-item:focus-visible {
+  outline: 2px solid var(--rd-focus);
+  outline-offset: 1px;
+}
+.rd-scn-menu {
+  position: fixed;
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  min-width: 150px;
+  padding: 4px 0;
+  border: 1px solid var(--rd-border);
+  border-radius: var(--radius-md, 6px);
+  background: var(--rd-surface);
+  box-shadow: 0 4px 16px var(--rd-shadow);
+}
+.rd-scn-menu[hidden] {
+  display: none;
+}
+.rd-scn-menu-item {
+  min-height: 28px;
+  padding: 4px 12px;
+  border: none;
+  background: transparent;
+  color: var(--rd-text);
+  font: inherit;
+  text-align: left;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.rd-scn-menu-item:hover:not(:disabled),
+.rd-scn-menu-item:focus-visible {
+  background: var(--rd-hover);
+}
+.rd-scn-menu-item:disabled {
+  color: var(--rd-text-muted);
   cursor: default;
 }
-.rd-scn-icon.rd-scn-danger:hover:not(:disabled) {
+.rd-scn-menu-item.rd-scn-danger:not(:disabled) {
   color: var(--rd-danger);
 }
 .rd-scn-body {
@@ -204,18 +263,27 @@
   color: var(--text-secondary, #888);
   margin-right: 2px;
 }
-.rd-scn-step-name {
-  font-weight: 500;
-  overflow-wrap: anywhere;
+.rd-scn-step-title {
+  display: flex;
+  min-width: 0;
 }
-.rd-scn-step-actions {
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  max-width: 70px;
+.rd-scn-step-name {
+  overflow: hidden;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .rd-scn-add-step {
   width: 100%;
+  min-height: 24px;
   margin-top: 2px;
+}
+.rd-scn-new {
+  min-height: 24px;
+}
+.rd-scn-actions {
+  align-items: center;
+  gap: 4px;
 }
 
 /* ---------------------------------------------------------------- scenario view on the canvas */

@@ -167,6 +167,7 @@ test.describe('scenario as a document', () => {
     expect(warnings.filter((w) => /UML as vector failed|PDF fonts could not be loaded/.test(w))).toEqual([]);
 
     // Slides from the panel button
+    await panel.locator('.rd-scn-head .rd-scn-more').click();
     await panel.locator('.rd-scn-export-slides').click();
     await expect(optionsDialog).toBeVisible();
     const slidesDownload = page.waitForEvent('download');
@@ -239,6 +240,8 @@ test.describe('scenario as a document', () => {
     // step 2: a cell added on the upper layer -> green highlight
     await withGraph(page, `graph.insertVertex({ parent: graph.getDataModel().getCell('L2'), value: 'Zeus', position: [400, 40], size: [80, 40] });`);
     await addStep(page, 'Two');
+
+    await panel.locator('.rd-scn-head .rd-scn-more').click();
 
     await panel.locator('.rd-scn-export-slides').click();
     const optionsDialog = page.locator('[data-testid="scenario-doc-export-dialog"]');

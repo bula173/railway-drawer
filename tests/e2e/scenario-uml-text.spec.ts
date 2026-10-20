@@ -172,6 +172,7 @@ test.describe('scenario steps with UML and text', () => {
     await page.locator('.rd-scn-exit').click();
 
     // edit step 1 keeps its UML/text in the editor
+    await panel.locator('.rd-scn-step').first().locator('.rd-scn-more').click();
     await panel.locator('.rd-scn-step').first().locator('.rd-scn-step-edit').click();
     await expect(editor.locator('textarea[name="step-uml"]')).toHaveValue(UML_1);
     await expect(editor.locator('textarea[name="step-text"]')).toHaveValue(TEXT_1);
