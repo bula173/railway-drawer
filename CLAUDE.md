@@ -58,7 +58,7 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   fixture) -> labels render -> File > Export As… writes a valid `<mxfile>` with the same pages, ids, cells, wrapper
   attributes and styles, hidden pages unchanged, stable re-export; Templates > Import… of the ERTMS library
   (40 entries) and Export… as `<mxlibrary>`.
-- `tests/e2e/drawio-palette.spec.ts` (any port): Shapes tab (no draw.io/Stencils tabs) renders the palettes, "More shapes…" toggles palettes and app groups, inserts keep draw.io styles, autosave
+- `tests/e2e/drawio-palette.spec.ts` (any port): Shapes tab (no draw.io/Stencils tabs) renders the palettes, one merged "General" (no "Basic" section/menu entry, flag migration, merged app shapes insert, search without duplicates), "More shapes…" toggles, inserts keep draw.io styles, autosave
   writes real draw.io shape names.
 - `tests/e2e/share.spec.ts` (any port): Share dialog, `#R` link round trip into a fresh browser context, downloads.
 - `tests/e2e/gitlab.spec.ts` (any port): GitLab "Not configured" -> runtime settings -> Open/Save + sign-in button,
@@ -398,7 +398,15 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   **Shapes** tab of the left panel (`#shapes-container` = `#app-shapes-container` (ShapeToolbar groups) +
   `#custom-shapes-container` + `#drawio-palette-container`). There is no separate draw.io or Stencils tab:
   the palette's "More shapes…" menu toggles the draw.io palettes and, via `extraMenuItems`, the app shape
-  groups (hidden groups in localStorage `railway-drawer-hidden-shape-groups`). Optional **ERTMS** tab (View > ERTMS Tab,
+  groups (hidden groups in localStorage `railway-drawer-hidden-shape-groups`). **One "General" section**
+  (`shapes-tab-palettes.ts`, `shapesTabPalettes()`): draw.io General (draw.io order), then draw.io Basic
+  (entries with the same cell as General dropped), then app Basic shapes without a draw.io equivalent
+  (`APP_BASIC_MERGE`: duplicates such as rectangle/circle/hexagon/star are not listed; Cross and Line are
+  copies of draw.io's Advanced/Misc entries; Divided (app "Double") Rectangle and Chevron keep the app shape,
+  saved with `rdShape`). No separate "Basic" section, no app "Basic" group (registrations kept for old files),
+  one "General" toggle; `migrateMergedPaletteFlags()` moves stored `basic`/app-`Basic` flags onto `general`
+  (shown if any of the three was shown). Search lists a shape once (`entrySignature`, first section wins).
+  `PALETTES` itself still lists draw.io's palettes 1:1. Optional **ERTMS** tab (View > ERTMS Tab,
   closeable, state in localStorage `railway-drawer-ertms-tab`): a second palette view with only the ERTMS
   library (`userLibraries: false`, `showMoreMenu: false`, own flags via `storageKeySuffix`, no dropTarget —
   the Shapes-tab view handles its drops since palette/entry ids are the same). Order: draw.io palettes, then ERTMS (`public/libraries/ertms.xml`,

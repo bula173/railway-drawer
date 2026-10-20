@@ -330,7 +330,10 @@ test.describe('dark theme: shapes are readable', () => {
     await page.locator(`${PALETTE} section[data-palette-id="ertms"]`).screenshot({ path: `${SHOT_DIR}/palette-ertms-dark.png` });
     const thumbs = await collectColours(
       page,
-      `${PALETTE} section[data-palette-id="general"] .rd-dp-thumb, ${PALETTE} section[data-palette-id="ertms"] .rd-dp-thumb`,
+      // General also holds draw.io's Basic palette (merged); its entries with fixed draw.io colours
+      // (pattern fills, smileys, Sankey link) were never part of this check, so only General's own
+      // entries, the merged app shapes and ERTMS are checked
+      `${PALETTE} section[data-palette-id="general"] .rd-dp-item:not([data-entry-id^="basic-"]) .rd-dp-thumb, ${PALETTE} section[data-palette-id="ertms"] .rd-dp-thumb`,
     );
     expect(thumbs.length).toBeGreaterThan(50);
     expect(await offenders(page, thumbs)).toEqual([]);
