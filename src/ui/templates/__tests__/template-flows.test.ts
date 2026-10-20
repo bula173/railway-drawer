@@ -235,7 +235,7 @@ describe('with the app (TabManager)', () => {
     const id = openTemplateAsNewDiagram(tm, template);
     const tab = tm.getActiveTab()!;
     expect(tab.id).toBe(id);
-    expect(tab.name).toBe('ERTMS scenario 3');
+    expect(tab.name).toBe('Level transition L0 → L1');
     expect(tm.getAllTabs()).toHaveLength(2);
     expect(tab.graph.getDefaultParent().getChildCount()).toBeGreaterThan(10);
     expect(first.graph.getDefaultParent().getChildCount()).toBe(0);
@@ -299,7 +299,7 @@ describe('with the app (TabManager)', () => {
     const user = () => container.querySelectorAll<HTMLElement>('[data-section="user"] .rd-tpl-tile');
     expect(builtin()).toHaveLength(22);
     expect(user()).toHaveLength(1);
-    expect(thumbnails.thumbnail).toHaveBeenCalledWith(expect.objectContaining({ kind: 'cells' }), 120, 72);
+    expect(thumbnails.thumbnail).toHaveBeenCalledWith(expect.objectContaining({ kind: 'cells' }), 200, 120);
 
     // search over names, subtitles and labels
     panel.setSearch('entrance route');

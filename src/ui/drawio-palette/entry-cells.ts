@@ -163,7 +163,8 @@ export function insertEntry(
   graph: Graph,
   entry: PaletteEntry,
   at?: { x: number; y: number },
-  prepare?: (cells: Cell[]) => void
+  prepare?: (cells: Cell[]) => void,
+  dropIntoContainer = true
 ): Cell[] {
   const cells = createCellsForEntry(entry);
   if (cells.length === 0) return [];
@@ -188,7 +189,7 @@ export function insertEntry(
   try {
     inserted = graph.addCells(clones, graph.getDefaultParent(), null, null, null);
     // Dropped onto a container/List: move into it at the drop position, like draw.io
-    if (at) inserted = dropCellsIntoContainerAt(graph, inserted, target.x, target.y);
+    if (at && dropIntoContainer) inserted = dropCellsIntoContainerAt(graph, inserted, target.x, target.y);
   } finally {
     model.endUpdate();
   }

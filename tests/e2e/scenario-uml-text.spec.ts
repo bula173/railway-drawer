@@ -97,7 +97,7 @@ test.describe('scenario steps with UML and text', () => {
     await expect(panel.locator('.rd-scn-name')).toHaveText('Wjazd z RBC');
 
     // step 1: drawing (1 hexagon) + PlantUML sequence + Markdown
-    await page.locator(HEXAGON).click();
+    await page.locator(HEXAGON).click({ modifiers: ['Alt'] }); // Alt: not placed next to / connected to the selection
     await panel.locator('.rd-scn-add-step').click();
     await fillStepEditor(page, 'Żądanie MA', UML_1, TEXT_1);
     const editor = page.locator('[data-testid="scenario-step-editor"]');
@@ -110,7 +110,7 @@ test.describe('scenario steps with UML and text', () => {
     await expect(editor).toHaveCount(0);
 
     // step 2: another hexagon, other UML and text
-    await page.locator(HEXAGON).click();
+    await page.locator(HEXAGON).click({ modifiers: ['Alt'] }); // Alt: not placed next to / connected to the selection
     await panel.locator('.rd-scn-add-step').click();
     await fillStepEditor(page, 'Przebieg', UML_2, TEXT_2);
     await editor.locator('.rd-tpl-btn-primary').click();
@@ -173,6 +173,7 @@ test.describe('scenario steps with UML and text', () => {
     await page.locator('.rd-scn-exit').click();
 
     // edit step 1 keeps its UML/text in the editor
+    await panel.locator('.rd-scn-step').first().locator('.rd-scn-more').click();
     await panel.locator('.rd-scn-step').first().locator('.rd-scn-step-edit').click();
     await expect(editor.locator('textarea[name="step-uml"]')).toHaveValue(UML_1);
     await expect(editor.locator('textarea[name="step-text"]')).toHaveValue(TEXT_1);

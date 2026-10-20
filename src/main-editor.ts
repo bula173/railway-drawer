@@ -58,6 +58,9 @@ import { installRailwayScript } from './railway-script/install-railway-script';
 import { syncConnectionArrowsMenu, toggleConnectionArrows } from './ui/hover-arrows';
 import { withErtmsDisplayTitles } from './ui/ertms-display';
 import { installToolbar } from './ui/toolbar';
+import { clickInsertPlacement } from './ui/click-insert';
+import { createStartCard } from './ui/start-card';
+import { installNarrowScreen } from './ui/narrow-screen';
 
 /**
  * @brief Register all built-in shape definitions
@@ -487,21 +490,27 @@ function readStringArray(key: string): string[] {
 }
 
 /**
- * @brief draw.io shape palettes (General, Misc, Advanced, Arrows, Flowchart, ERTMS, ...)
- * @details "General" also holds draw.io's Basic palette and the app's Basic shapes that draw.io
+ * @brief Shape palettes: ERTMS first, then draw.io's (General, Misc, Advanced, Arrows, Flowchart)
+ * @details ERTMS (the railway symbols, captioned tiles) is the first section and, like General,
+ * expanded for new users (stored expanded/visible flags still win). "General" also holds draw.io's Basic palette and the app's Basic shapes that draw.io
  * has no equivalent for (one section, see shapes-tab-palettes.ts). Otherwise the same entries,
  * titles, sizes and styles as draw.io (jgraph/drawio v32.4.1); inserted
  * cells keep draw.io's style strings, so saved files open 1:1 in draw.io. ERTMS is the draw.io
  * library public/libraries/ertms.xml. Click inserts at the view centre, drag drops at the pointer.
  */
-createDrawioPaletteView({
+const shapesPaletteView = createDrawioPaletteView({
   container: document.getElementById('drawio-palette-container')!,
   getGraph: () => tabManager.getActiveTab()?.graph ?? null,
-  palettes: shapesTabPalettes(() => MERGED_APP_GROUPS.flatMap((g) => shapeRegistry.getShapesByGroup(g))),
-  extraLibraries: [withErtmsDisplayTitles(ertmsPaletteSource(import.meta.env.BASE_URL))],
+  palettes: [
+    withErtmsDisplayTitles(ertmsPaletteSource(import.meta.env.BASE_URL)),
+    ...shapesTabPalettes(() => MERGED_APP_GROUPS.flatMap((g) => shapeRegistry.getShapesByGroup(g))),
+  ],
+  defaultExpanded: ['ertms', 'general'],
+  captionPalettes: ['ertms'],
   dropTarget: graphContainer,
   onError: (message) => globalNotificationManager.error(message),
   prepareInsert: prepareRailwayInsert,
+  clickPlacement: clickInsertPlacement,
   extraMenuItems: separateAppGroups().map((group) => ({
     id: `app-${group}`,
     title: `${group} (Railway Drawer)`,
@@ -537,11 +546,13 @@ const ensureErtmsTabView = (): void => {
     palettes: [],
     extraLibraries: [withErtmsDisplayTitles(ertmsPaletteSource(import.meta.env.BASE_URL))],
     defaultExpanded: ['ertms'],
+    captionPalettes: ['ertms'],
     userLibraries: false,
     showMoreMenu: false,
     storageKeySuffix: '.ertmsTab',
     onError: (message) => globalNotificationManager.error(message),
     prepareInsert: prepareRailwayInsert,
+    clickPlacement: clickInsertPlacement,
   });
 };
 // View > Connection Arrows check mark from the stored setting (hover-arrows.ts)
@@ -573,6 +584,47 @@ if (ertmsTabWanted) {
 } else {
   leftPanelTabs.closeTab('ertms');
 }
+
+// ============= NARROW SCREENS =============
+
+// < 900 px: body.rd-narrow (side panels hidden, canvas keeps the width) + a dismissible banner
+installNarrowScreen();
+
+// ============= START CARD =============
+
+/**
+ * @brief Start card over the canvas of an empty tab (src/ui/start-card.ts)
+ * @details Insert ERTMS symbols (Shapes tab, ERTMS section expanded and focused), Open
+ * template… (Templates tab), Open file… / Import railML… (the File menu actions), Railway
+ * Script… (its tab), F1 shortcuts. Rechecked on tab switches and new tabs.
+ */
+const focusErtmsPalette = (): void => {
+  leftPanelTabs.switchTab('shapes');
+  shapesPaletteView.setPaletteVisible('ertms', true);
+  shapesPaletteView.setExpanded('ertms', true);
+  const section = document.querySelector<HTMLElement>('#drawio-palette-container section[data-palette-id="ertms"]');
+  section?.scrollIntoView({ block: 'start' });
+  void shapesPaletteView.ready.then(() => section?.querySelector<HTMLElement>('.rd-dp-item')?.focus());
+};
+const runMenuAction = (action: string): void => {
+  document.querySelector<HTMLElement>(`.menu-dropdown-item[data-action="${action}"]`)?.click();
+};
+const startCard = createStartCard({
+  container: graphContainer,
+  getActive: () => {
+    const tab = tabManager.getActiveTab();
+    return tab ? { id: tab.id, graph: tab.graph } : null;
+  },
+  onAction: (action) => {
+    if (action === 'ertms') focusErtmsPalette();
+    else if (action === 'template') leftPanelTabs.switchTab('templates');
+    else if (action === 'open') runMenuAction('open');
+    else if (action === 'railml') runMenuAction('importRailml');
+    else if (action === 'script') leftPanelTabs.switchTab('railwayScript');
+    else if (action === 'shortcuts') window.dispatchEvent(new CustomEvent('shortcuts-help-request'));
+  },
+});
+window.addEventListener('tab-changed', () => startCard.update());
 
 // ============= TEMPLATES TAB =============
 

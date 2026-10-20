@@ -47,6 +47,17 @@ export interface DrawioPaletteViewOptions {
   dropTarget?: HTMLElement;
   /** Palettes expanded on first use (default: the first palette, and 'ertms'). */
   defaultExpanded?: string[];
+  /** Palettes whose tiles show their title under the thumbnail (e.g. ['ertms']). */
+  captionPalettes?: string[];
+  /**
+   * Placement of a click insert (no drop point): centre point and an optional cell to connect the
+   * new vertex to (one undoable edit with the insert). Default: the view centre.
+   */
+  clickPlacement?: (
+    graph: Graph,
+    entry: PaletteEntry,
+    alt: boolean
+  ) => { at: { x: number; y: number }; connectFrom?: Cell } | null;
   /** Called after an insertion (e.g. to focus the graph). */
   onInsert?: (entry: PaletteEntry) => void;
   /**
@@ -222,6 +233,7 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
   const expandedFlags = readFlags(expandedKey);
   const firstId = options.palettes[0]?.id;
   const defaultExpanded = new Set(options.defaultExpanded ?? [firstId, 'ertms'].filter((x): x is string => !!x));
+  const captioned = new Set(options.captionPalettes ?? []);
 
   const root = el('div', 'rd-drawio-palette');
   const toolbar = el('div', 'rd-dp-toolbar');
@@ -318,13 +330,29 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
 
   // ------------------------------------------------------------------ insertion
 
-  function doInsert(entry: PaletteEntry, at?: { x: number; y: number }): void {
+  function doInsert(entry: PaletteEntry, at?: { x: number; y: number }, alt?: boolean): void {
     const graph = options.getGraph();
     if (!graph) return;
     try {
       const prepare = options.prepareInsert;
-      const inserted = insertEntry(graph, entry, at, prepare ? (cells) => prepare(graph, cells, entry) : undefined);
+      const prep = prepare ? (cells: Cell[]) => prepare(graph, cells, entry) : undefined;
+      // A click (no drop point): placement next to the selection / on a track / free spot
+      const placed = !at && alt !== undefined ? options.clickPlacement?.(graph, entry, alt) ?? null : null;
+      let inserted: Cell[] = [];
+      const model = graph.getDataModel();
+      model.beginUpdate();
+      try {
+        inserted = insertEntry(graph, entry, placed?.at ?? at, prep, !placed);
+        const source = placed?.connectFrom;
+        const target = inserted[0];
+        if (source && target && inserted.length === 1 && target.isVertex()) {
+          graph.insertEdge(graph.getDefaultParent(), null, '', source, target);
+        }
+      } finally {
+        model.endUpdate();
+      }
       if (inserted.length === 0) return;
+      graph.setSelectionCells(inserted);
       // Stencils the thumbnails have not loaded yet: repaint once they arrive
       engine()
         .ensureStencilsForXml(entry.xml ?? [entry.style ?? ''])
@@ -421,18 +449,19 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
     thumb.style.width = `${THUMB_SIZE}px`;
     thumb.style.height = `${THUMB_SIZE}px`;
     item.appendChild(thumb);
+    if (captioned.has(cat.id) && entry.title) item.appendChild(el('span', 'rd-dp-caption', entry.title));
     pendingThumbs.set(thumb, entry);
     if (observer) observer.observe(thumb);
     else renderThumb(thumb);
 
-    item.addEventListener('click', () => {
+    item.addEventListener('click', (evt) => {
       hidePreview();
-      doInsert(entry);
+      doInsert(entry, undefined, evt.altKey);
     });
     item.addEventListener('keydown', (evt) => {
       if (evt.key === 'Enter' || evt.key === ' ') {
         evt.preventDefault();
-        doInsert(entry);
+        doInsert(entry, undefined, evt.altKey);
       }
     });
     item.addEventListener('dragstart', (evt) => {
@@ -485,6 +514,7 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
   function addCategory(source: PaletteSource, removable: boolean, before?: HTMLElement): Category {
     const meta = source as Partial<PaletteMeta> & { id: string; title: string };
     const catRoot = el('section', 'rd-dp-category');
+    if (captioned.has(meta.id)) catRoot.classList.add('rd-dp-captioned');
     catRoot.dataset.paletteId = meta.id;
     const header = el('button', 'rd-dp-header');
     header.type = 'button';

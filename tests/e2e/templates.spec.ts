@@ -83,7 +83,7 @@ test.describe('templates', () => {
     await expect(panel).toBeVisible();
     const builtin = panel.locator('[data-section="builtin"] .rd-tpl-tile');
     await expect(builtin).toHaveCount(22);
-    await expect(builtin.first().locator('.rd-tpl-name')).toHaveText('ERTMS scenario 1');
+    await expect(builtin.first().locator('.rd-tpl-name')).toHaveText('Section timer (L1)');
     await expect(builtin.first().locator('.rd-tpl-desc')).not.toBeEmpty();
     await expect(panel.locator('[data-section="builtin"] .rd-tpl-thumb-ready').first()).toBeVisible();
     await expect(panel.locator('[data-section="user"] .rd-tpl-empty')).toContainText('Select shapes and use Save as template');
@@ -102,7 +102,7 @@ test.describe('templates', () => {
     // open as a new diagram tab named after the template
     await builtin.nth(1).click();
     await page.locator('.rd-tpl-popover [data-action="open"]').click();
-    await expect(page.locator('#tabs-container .tab-button.active')).toContainText('ERTMS scenario 2');
+    await expect(page.locator('#tabs-container .tab-button.active')).toContainText('MA length and speed');
     await expect(page.locator('#tabs-container .tab-button')).toHaveCount(2);
 
     // drag a tile onto the canvas
@@ -118,7 +118,7 @@ test.describe('templates', () => {
     await freshApp(page);
 
     // a selection: the inserted Hexagon (palette inserts select the new cells)
-    await page.locator('#drawio-palette-container section[data-palette-id="general"] .rd-dp-item[title="Hexagon"]').click();
+    await page.locator('#drawio-palette-container section[data-palette-id="general"] .rd-dp-item[title="Hexagon"]').click({ modifiers: ['Alt'] });
     await waitForCachedCount(page, 'shape=hexagon', 1);
 
     // the canvas context menu offers it too
@@ -127,7 +127,7 @@ test.describe('templates', () => {
     await page.keyboard.press('Escape');
     await expect(page.locator('#context-menu')).toBeHidden();
     // the right-click on the empty canvas cleared the selection: select the hexagon again
-    await page.locator('#drawio-palette-container section[data-palette-id="general"] .rd-dp-item[title="Hexagon"]').click();
+    await page.locator('#drawio-palette-container section[data-palette-id="general"] .rd-dp-item[title="Hexagon"]').click({ modifiers: ['Alt'] });
     await waitForCachedCount(page, 'shape=hexagon', 2);
 
     await page.locator('.menu-item[data-menu="file"]').click();

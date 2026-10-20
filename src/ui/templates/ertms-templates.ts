@@ -9,10 +9,12 @@
  * cells (largest: "Train Connected", 44) and the scenarios 102..265, so the threshold of 80 has a
  * wide margin on both sides. Image (`data`) entries are always elements.
  *
- * Built-in templates are named "ERTMS scenario <n>" (n in library order) with a subtitle made of
- * the scenario's most distinctive labels: the labels that occur in the fewest scenarios (phrases
- * before ids among equally rare ones), in document order (e.g. "S2_Exit, S4_Entry, Entrance Route").
- * All labels become search tags.
+ * Built-in templates get a display name derived from their labels (`templateDisplayName`: the
+ * ERTMS concept the drawing shows, e.g. "Level transition L0 → L1" or "Section timer (L1)", see
+ * TOPICS) and keep "ERTMS scenario <n>" (n in library order) as `originalName` (tooltip, search).
+ * The subtitle is made of the scenario's most distinctive labels: the labels that occur in the
+ * fewest scenarios (phrases before ids among equally rare ones), in document order (e.g. "S2_Exit,
+ * S4_Entry, Entrance Route"). All labels become search tags.
  */
 import type { LibraryEntry } from '../drawio-palette/contracts';
 import type { DiagramTemplate } from './template-types';
@@ -81,6 +83,45 @@ function isNameLike(label: string): boolean {
   return label.length >= 2 && label.length <= MAX_SUBTITLE_LABEL && !/^[\d\s.,:/-]+$/.test(label) && !/km\/h$/i.test(label);
 }
 
+/**
+ * ERTMS concepts recognised in a scenario's labels, most specific first: the first whose test
+ * matches names the template. Tests see every label (trimmed), case-insensitive.
+ */
+const TOPICS: ReadonlyArray<{ test: (has: (re: RegExp) => boolean) => boolean; name: string }> = [
+  { test: (has) => has(/powerless section/i), name: 'Powerless section' },
+  { test: (has) => has(/dynamic speed profile/i), name: 'Dynamic speed profile' },
+  { test: (has) => has(/pca window/i) || has(/^berth$/i), name: 'PCA window and berth' },
+  { test: (has) => has(/external ixl route/i), name: 'External interlocking route' },
+  { test: (has) => has(/section timer/i), name: 'Section timer' },
+  { test: (has) => has(/\bTSR\b/i), name: 'Temporary speed restrictions' },
+  { test: (has) => has(/acknowledgement area/i), name: 'On-sight acknowledgement area' },
+  { test: (has) => has(/^OS (MA|route|profile)$/i), name: 'On-sight movement authority' },
+  { test: (has) => has(/^L0 area$/i) && has(/shortened route/i), name: 'Level transition L0 → L1, shortened route' },
+  { test: (has) => has(/^L0 area$/i), name: 'Level transition L0 → L1' },
+  { test: (has) => has(/L1\/L2 area border/i) && has(/^SR$/i), name: 'Level transition L1 → L2, staff responsible' },
+  { test: (has) => has(/L1\/L2 area border/i), name: 'Level transition L1 → L2' },
+  { test: (has) => has(/^EOA$/i), name: 'End of authority' },
+  { test: (has) => has(/^conventional$/i), name: 'Conventional block' },
+  { test: (has) => has(/^MA length$/i), name: 'MA length and speed' },
+  { test: (has) => has(/\bstation\b/i), name: 'Train routes to a station' },
+  { test: (has) => has(/shortened route/i), name: 'Shortened route' },
+  { test: (has) => has(/^FS MA$/i), name: 'Full supervision MA' },
+];
+
+/**
+ * Display name of a scenario from its labels: the first matching TOPICS name, plus the ETCS level
+ * shown in the drawing ("ETCS L1"/"ETCS L2" label) when the name has none; else the most
+ * distinctive labels (`fallback`), else null.
+ */
+export function templateDisplayName(labels: string[], fallback = ''): string | null {
+  const has = (re: RegExp): boolean => labels.some((l) => re.test(l.trim()));
+  const topic = TOPICS.find((t) => t.test(has))?.name;
+  if (!topic) return fallback.trim() || null;
+  if (/\bL[0-3]\b/.test(topic)) return topic;
+  const level = has(/^ETCS L2$/i) ? 'L2' : has(/^ETCS L1$/i) ? 'L1' : '';
+  return level ? `${topic} (${level})` : topic;
+}
+
 export interface ErtmsLibrarySplit {
   /** Simple elements with their library index (palette ids stay `ertms-<index>-<slug>`). */
   elements: Array<{ index: number; entry: LibraryEntry }>;
@@ -100,6 +141,7 @@ export function splitErtmsLibrary(entries: LibraryEntry[]): ErtmsLibrarySplit {
   const docFreq = new Map<string, number>();
   for (const c of complex) for (const label of c.labels) docFreq.set(label, (docFreq.get(label) ?? 0) + 1);
 
+  const usedNames = new Map<string, number>();
   const templates = complex.map((c, n): DiagramTemplate => {
     const candidates = c.labels
       .map((label, order) => ({ label, order, freq: docFreq.get(label) ?? 0, words: /\s/.test(label) ? 0 : 1 }))
@@ -112,10 +154,17 @@ export function splitErtmsLibrary(entries: LibraryEntry[]): ErtmsLibrarySplit {
       .map((x) => x.label)
       .join(', ');
     const title = c.entry.title?.trim();
-    const tags = ['ertms', 'etcs', 'template', 'scenario', ...c.labels].join(' ').toLowerCase();
+    const originalName = title || `ERTMS scenario ${n + 1}`;
+    let name = title || templateDisplayName(c.labels, candidates.slice(0, 2).map((x) => x.label).join(', ')) || originalName;
+    // same concept drawn more than once: "Section timer (L1) 2"
+    const seen = (usedNames.get(name) ?? 0) + 1;
+    usedNames.set(name, seen);
+    if (seen > 1) name = `${name} ${seen}`;
+    const tags = ['ertms', 'etcs', 'template', 'scenario', originalName, ...c.labels].join(' ').toLowerCase();
     return {
       id: `ertms-tpl-${c.index}`,
-      name: title || `ERTMS scenario ${n + 1}`,
+      name,
+      originalName,
       ...(subtitle ? { description: subtitle } : {}),
       xml: c.entry.xml!,
       width: c.entry.w,

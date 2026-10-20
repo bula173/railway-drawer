@@ -433,11 +433,7 @@ body {
   display: none;
 }
 
-/* Narrow screens: body.rd-narrow (set below 900 px) hides both panels; a toggle opens one */
-body.rd-narrow .left-panel:not(.rd-panel-open-narrow),
-body.rd-narrow .right-panel:not(.rd-panel-open-narrow) {
-  display: none;
-}
+/* Narrow screens (body.rd-narrow): src/ui/narrow-screen.css */
 
 /* 8 px hit area along the panel's inner edge (not over the canvas and its scrollbars); a 2 px line shows on
    hover, focus and while dragging */

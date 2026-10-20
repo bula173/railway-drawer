@@ -120,7 +120,11 @@ describe('ERTMS display titles (ertms.xml unchanged)', () => {
   it('adds switch / turnout / zwrotnica as search tags of the points entries', () => {
     const entry = (title: string): PaletteEntry => ({ id: 'ertms-1-x', title, kind: 'cells', width: 10, height: 10, tags: 'ertms etcs', shapeNames: [], cls: 'library', source: 'libraries/ertms.xml#1' }) as unknown as PaletteEntry;
     expect(ertmsDisplayEntry(entry('Point Left')).tags).toBe(`ertms etcs ${POINTS_SEARCH_TAGS}`);
-    expect(ertmsDisplayEntry(entry('Signal Left 3')).tags).toBe('ertms etcs');
+    expect(ertmsDisplayEntry(entry('Signal Left 3')).tags).toBe('ertms etcs signal semafor sygnalizator');
+    expect(ertmsDisplayEntry(entry('Balise Left')).tags).toContain('balisa');
+    expect(ertmsDisplayEntry(entry('Train Connected')).tags).toContain('pociąg');
+    expect(ertmsDisplayEntry(entry('Track')).tags).toContain(' tor');
+    expect(ertmsDisplayEntry(entry('Gradient')).tags).toBe('ertms etcs');
     expect(ertmsDisplayEntry(entry('SIgnal Right 4')).title).toBe('Signal Right 4');
   });
 });

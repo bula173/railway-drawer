@@ -39,9 +39,19 @@ describe('ERTMS library classification', () => {
     expect(entries.filter(isTemplateLibraryEntry)).toHaveLength(22);
   });
 
-  it('names templates "ERTMS scenario n" with a subtitle of distinctive labels and searchable tags', () => {
+  it('names templates after their ERTMS topic, keeps "ERTMS scenario n" and a subtitle of distinctive labels', () => {
     const { templates } = splitErtmsLibrary(entries);
-    expect(templates.map((t) => t.name)).toEqual(templates.map((_t, i) => `ERTMS scenario ${i + 1}`));
+    expect(templates.map((t) => t.originalName)).toEqual(templates.map((_t, i) => `ERTMS scenario ${i + 1}`));
+    expect(templates.slice(0, 5).map((t) => t.name)).toEqual([
+      'Section timer (L1)',
+      'MA length and speed',
+      'Level transition L0 → L1',
+      'Level transition L0 → L1, shortened route',
+      'Level transition L1 → L2',
+    ]);
+    expect(new Set(templates.map((t) => t.name)).size).toBe(templates.length);
+    expect(templates.every((t) => !/^ERTMS scenario/.test(t.name))).toBe(true);
+    expect(templates[0].tags).toContain('ertms scenario 1');
     for (const t of templates) {
       expect(t.builtIn).toBe(true);
       expect(t.description, t.name).toBeTruthy();

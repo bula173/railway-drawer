@@ -90,12 +90,100 @@ function el<K extends keyof HTMLElementTagNameMap>(tag: K, className?: string, t
   return node;
 }
 
-function iconButton(className: string, text: string, title: string): HTMLButtonElement {
-  const btn = el('button', `rd-scn-icon ${className}`, text);
-  btn.type = 'button';
-  btn.title = title;
-  btn.setAttribute('aria-label', title);
-  return btn;
+interface MenuAction {
+  className: string;
+  label: string;
+  title?: string;
+  disabled?: boolean;
+  danger?: boolean;
+  run: () => void;
+}
+
+/** The menu currently open (one at a time). */
+let openActionMenu: { menu: HTMLElement; button: HTMLButtonElement } | null = null;
+
+function closeActionMenu(focusButton = false): void {
+  const open = openActionMenu;
+  if (!open) return;
+  openActionMenu = null;
+  open.menu.hidden = true;
+  open.button.setAttribute('aria-expanded', 'false');
+  if (focusButton) open.button.focus();
+}
+
+function onDocumentPointerDown(e: Event): void {
+  const open = openActionMenu;
+  if (open && !open.menu.contains(e.target as Node) && !open.button.contains(e.target as Node)) closeActionMenu();
+}
+
+/**
+ * A "⋯" button with a text menu of actions (role=menu). The items keep their own classes
+ * (e.g. `rd-scn-edit`), so they stay addressable; the menu is position: fixed under the button,
+ * so the panel's scrolling does not clip it. Esc closes it, ↑/↓ move between items.
+ */
+function actionMenu(label: string, actions: MenuAction[], extraClass = ''): HTMLElement {
+  const wrap = el('div', 'rd-scn-menu-wrap');
+  const button = el('button', `rd-scn-more ${extraClass}`.trim(), '⋯');
+  button.type = 'button';
+  button.title = label;
+  button.setAttribute('aria-label', label);
+  button.setAttribute('aria-haspopup', 'menu');
+  button.setAttribute('aria-expanded', 'false');
+  const menu = el('div', 'rd-scn-menu');
+  menu.setAttribute('role', 'menu');
+  menu.hidden = true;
+  const items: HTMLButtonElement[] = [];
+  for (const action of actions) {
+    const item = el('button', `rd-scn-menu-item ${action.className}${action.danger ? ' rd-scn-danger' : ''}`, action.label);
+    item.type = 'button';
+    item.setAttribute('role', 'menuitem');
+    if (action.title) item.title = action.title;
+    item.disabled = !!action.disabled;
+    item.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeActionMenu();
+      action.run();
+    });
+    items.push(item);
+    menu.appendChild(item);
+  }
+  const enabled = (): HTMLButtonElement[] => items.filter((i) => !i.disabled);
+  button.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (openActionMenu?.menu === menu) {
+      closeActionMenu();
+      return;
+    }
+    closeActionMenu();
+    const r = button.getBoundingClientRect();
+    menu.hidden = false;
+    const w = menu.offsetWidth || 160;
+    menu.style.left = `${Math.max(4, Math.min(r.right - w, window.innerWidth - w - 4))}px`;
+    const h = menu.offsetHeight || 0;
+    menu.style.top = `${r.bottom + 2 + h > window.innerHeight ? Math.max(4, r.top - h - 2) : r.bottom + 2}px`;
+    button.setAttribute('aria-expanded', 'true');
+    openActionMenu = { menu, button };
+    enabled()[0]?.focus();
+  });
+  menu.addEventListener('keydown', (e) => {
+    const list = enabled();
+    const i = list.indexOf(document.activeElement as HTMLButtonElement);
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      e.stopPropagation();
+      closeActionMenu(true);
+    } else if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+      e.preventDefault();
+      const next = list[(i + (e.key === 'ArrowDown' ? 1 : list.length - 1)) % list.length];
+      next?.focus();
+    } else if (e.key === 'Tab') {
+      closeActionMenu();
+    }
+  });
+  // clicks inside the menu must not reach the row (present / expand)
+  menu.addEventListener('click', (e) => e.stopPropagation());
+  wrap.append(button, menu);
+  return wrap;
 }
 
 /** Short stable hash of a snapshot, so a thumbnail is re-rendered when the step's drawing changes. */
@@ -134,6 +222,11 @@ export function createScenariosPanel(options: ScenariosPanelOptions): ScenariosP
 
   const root = el('div', 'rd-scn-panel');
   container.replaceChildren(root);
+  document.addEventListener('mousedown', onDocumentPointerDown, true);
+  const onPanelScroll = (): void => {
+    if (openActionMenu && root.contains(openActionMenu.menu)) closeActionMenu();
+  };
+  container.addEventListener('scroll', onPanelScroll);
 
   const observer =
     typeof IntersectionObserver === 'function'
@@ -331,7 +424,9 @@ export function createScenariosPanel(options: ScenariosPanelOptions): ScenariosP
 
     const text = el('div', 'rd-scn-step-text');
     const title = el('div', 'rd-scn-step-title');
-    title.append(el('span', 'rd-scn-step-num', `${index + 1}.`), el('span', 'rd-scn-step-name', step.name));
+    const stepName = el('span', 'rd-scn-step-name', step.name);
+    stepName.title = step.name;
+    title.append(el('span', 'rd-scn-step-num', `${index + 1}.`), stepName);
     text.appendChild(title);
     if (step.description) text.appendChild(el('div', 'rd-scn-step-desc', step.description));
     if (step.uml || step.text) {
@@ -342,41 +437,20 @@ export function createScenariosPanel(options: ScenariosPanelOptions): ScenariosP
     }
 
     const actions = el('div', 'rd-scn-step-actions');
-    const up = iconButton('rd-scn-step-up', '↑', 'Move step up');
-    up.disabled = index === 0;
-    const down = iconButton('rd-scn-step-down', '↓', 'Move step down');
-    down.disabled = index === scenario.steps.length - 1;
-    const update = iconButton('rd-scn-step-update', '⟳', 'Update step from the current drawing');
-    const edit = iconButton('rd-scn-step-edit', '✎', 'Edit step: name, drawing, UML, text');
-    const dup = iconButton('rd-scn-step-duplicate', '⧉', 'Duplicate step');
-    const del = iconButton('rd-scn-step-delete rd-scn-danger', '×', 'Delete step');
-    actions.append(up, down, update, edit, dup, del);
+    actions.appendChild(
+      actionMenu(`Step ${index + 1} actions`, [
+        { className: 'rd-scn-step-edit', label: 'Edit…', title: 'Edit step: name, drawing, UML, text', run: () => run(() => editStep(t, scenario, index, step)) },
+        { className: 'rd-scn-step-update', label: 'Update from drawing', title: 'Replace the snapshot with the current drawing', run: () => run(() => updateStepDrawing(t, scenario, index, step)) },
+        { className: 'rd-scn-step-duplicate', label: 'Duplicate', run: () => t.scenarios.duplicateStep(scenario.id, step.id) },
+        { className: 'rd-scn-step-up', label: 'Move up', disabled: index === 0, run: () => t.scenarios.moveStep(scenario.id, step.id, index - 1) },
+        { className: 'rd-scn-step-down', label: 'Move down', disabled: index === scenario.steps.length - 1, run: () => t.scenarios.moveStep(scenario.id, step.id, index + 1) },
+        { className: 'rd-scn-step-delete', label: 'Delete…', danger: true, run: () => run(() => deleteStep(t, scenario, index, step)) },
+      ]),
+    );
+    actions.addEventListener('click', (e) => e.stopPropagation());
+    actions.addEventListener('keydown', (e) => e.stopPropagation());
     item.append(thumb, text, actions);
 
-    up.addEventListener('click', (e) => {
-      e.stopPropagation();
-      t.scenarios.moveStep(scenario.id, step.id, index - 1);
-    });
-    down.addEventListener('click', (e) => {
-      e.stopPropagation();
-      t.scenarios.moveStep(scenario.id, step.id, index + 1);
-    });
-    update.addEventListener('click', (e) => {
-      e.stopPropagation();
-      run(() => updateStepDrawing(t, scenario, index, step));
-    });
-    edit.addEventListener('click', (e) => {
-      e.stopPropagation();
-      run(() => editStep(t, scenario, index, step));
-    });
-    dup.addEventListener('click', (e) => {
-      e.stopPropagation();
-      t.scenarios.duplicateStep(scenario.id, step.id);
-    });
-    del.addEventListener('click', (e) => {
-      e.stopPropagation();
-      run(() => deleteStep(t, scenario, index, step));
-    });
     item.addEventListener('click', () => present(t, scenario, index));
     item.addEventListener('keydown', (e) => {
       if (e.target !== item || (e.key !== 'Enter' && e.key !== ' ')) return;
@@ -440,33 +514,39 @@ export function createScenariosPanel(options: ScenariosPanelOptions): ScenariosP
     toggle.setAttribute('aria-label', `${isOpen ? 'Collapse' : 'Expand'} ${scenario.name}`);
     const label = el('div', 'rd-scn-label');
     const name = el('span', 'rd-scn-name', scenario.name);
+    name.title = scenario.name;
     const n = scenario.steps.length;
     const count = el('span', 'rd-scn-count', `${n} step${n === 1 ? '' : 's'}`);
     label.append(name, count);
     if (scenario.description) label.appendChild(el('div', 'rd-scn-desc', scenario.description));
     const actions = el('div', 'rd-scn-actions');
-    const play = iconButton('rd-scn-play', '▷', 'Present from step 1');
+    const play = el('button', 'rd-scn-play', '▶ Present');
+    play.type = 'button';
+    play.title = n === 0 ? 'Add a step first' : 'Present from step 1';
     play.disabled = n === 0;
-    const edit = iconButton('rd-scn-edit', '✎', 'Rename / edit description');
-    const dup = iconButton('rd-scn-duplicate', '⧉', 'Duplicate scenario');
-    const del = iconButton('rd-scn-delete rd-scn-danger', '×', 'Delete scenario');
-    actions.append(play, edit, dup);
+    const menuActions: MenuAction[] = [
+      { className: 'rd-scn-edit', label: 'Edit…', title: 'Rename / edit description', run: () => run(() => editScenario(t, scenario)) },
+      {
+        className: 'rd-scn-duplicate',
+        label: 'Duplicate',
+        run: () => {
+          const copy = t.scenarios.duplicate(scenario.id);
+          expanded.add(xkey(t.id, copy.id));
+          render();
+        },
+      },
+    ];
     if (options.onExportScenario) {
-      const exportBtn = iconButton('rd-scn-export', '⇩', 'Export scenario as HTML (drawings, UML, text)');
-      exportBtn.disabled = n === 0;
-      exportBtn.addEventListener('click', () => options.onExportScenario?.(t.id, scenario.id));
-      actions.append(exportBtn);
+      menuActions.push({ className: 'rd-scn-export', label: 'Export HTML', title: 'Export scenario as HTML (drawings, UML, text)', disabled: n === 0, run: () => options.onExportScenario?.(t.id, scenario.id) });
     }
     if (options.onExportScenarioDoc) {
-      const pdfBtn = iconButton('rd-scn-export-pdf', '⎙', 'Export scenario as PDF (title page, one or more pages per step)');
-      pdfBtn.disabled = n === 0;
-      pdfBtn.addEventListener('click', () => options.onExportScenarioDoc?.(t.id, scenario.id, 'pdf'));
-      const slidesBtn = iconButton('rd-scn-export-slides', '▭', 'Export scenario as HTML slideshow (one step per slide)');
-      slidesBtn.disabled = n === 0;
-      slidesBtn.addEventListener('click', () => options.onExportScenarioDoc?.(t.id, scenario.id, 'slides'));
-      actions.append(pdfBtn, slidesBtn);
+      menuActions.push(
+        { className: 'rd-scn-export-pdf', label: 'Export PDF', title: 'Title page, one or more pages per step', disabled: n === 0, run: () => options.onExportScenarioDoc?.(t.id, scenario.id, 'pdf') },
+        { className: 'rd-scn-export-slides', label: 'Export Slides', title: 'HTML slideshow, one step per slide', disabled: n === 0, run: () => options.onExportScenarioDoc?.(t.id, scenario.id, 'slides') },
+      );
     }
-    actions.append(del);
+    menuActions.push({ className: 'rd-scn-delete', label: 'Delete…', danger: true, run: () => run(() => deleteScenario(t, scenario)) });
+    actions.append(play, actionMenu(`${scenario.name}: more actions`, menuActions));
     head.append(toggle, label, actions);
     item.appendChild(head);
 
@@ -478,13 +558,6 @@ export function createScenariosPanel(options: ScenariosPanelOptions): ScenariosP
     toggle.addEventListener('click', flip);
     label.addEventListener('click', flip);
     play.addEventListener('click', () => present(t, scenario, 0));
-    edit.addEventListener('click', () => run(() => editScenario(t, scenario)));
-    dup.addEventListener('click', () => {
-      const copy = t.scenarios.duplicate(scenario.id);
-      expanded.add(xkey(t.id, copy.id));
-      render();
-    });
-    del.addEventListener('click', () => run(() => deleteScenario(t, scenario)));
 
     if (isOpen) {
       const body = el('div', 'rd-scn-body');
@@ -506,6 +579,7 @@ export function createScenariosPanel(options: ScenariosPanelOptions): ScenariosP
   }
 
   function render(): void {
+    if (openActionMenu && root.contains(openActionMenu.menu)) closeActionMenu();
     const t = tab();
     follow(t?.scenarios ?? null);
     const scrollTop = container.scrollTop;
@@ -571,6 +645,9 @@ export function createScenariosPanel(options: ScenariosPanelOptions): ScenariosP
       }
     },
     destroy() {
+      closeActionMenu();
+      document.removeEventListener('mousedown', onDocumentPointerDown, true);
+      container.removeEventListener('scroll', onPanelScroll);
       stopColorModeWatch();
       unsubscribe?.();
       unsubscribe = null;
