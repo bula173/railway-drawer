@@ -84,6 +84,10 @@
   --rd-backdrop: rgba(0, 0, 0, 0.35); /* behind the Share / template dialogs */
   --rd-scrollbar: #c0c0c0;
   --rd-scrollbar-hover: #a0a0a0;
+  /* Canvas scrollbars (the tab graph div scrolls, src/ui/canvas-scroll.ts): thumb >= 3:1 on the track */
+  --rd-canvas-scrollbar-thumb: #7a7a7a;
+  --rd-canvas-scrollbar-thumb-hover: #5c5c5c;
+  --rd-canvas-scrollbar-track: #ececec;
   /* Canvas page color (the grid tiles' colors: src/ui/grid-background.ts) */
   --rd-canvas-bg: #ffffff;
   /* Connection arrows around a hovered shape (src/ui/hover-arrows.ts; draw.io HoverIcons #29b6f2,
@@ -242,6 +246,9 @@
   --rd-backdrop: rgba(0, 0, 0, 0.55);
   --rd-scrollbar: #5a5a5e;
   --rd-scrollbar-hover: #77777c;
+  --rd-canvas-scrollbar-thumb: #7c7c7c;
+  --rd-canvas-scrollbar-thumb-hover: #9a9a9a;
+  --rd-canvas-scrollbar-track: #1f1f1f;
   /* draw.io Editor.darkColor page (grid #424242: src/ui/grid-background.ts) */
   --rd-canvas-bg: #121212;
   --rd-hover-arrow: #29b6f2;

@@ -96,9 +96,10 @@ export class TextEditorController {
     // Get container position for offset calculation
     const containerRect = container.getBoundingClientRect();
 
-    // Position input over the cell (using fixed positioning relative to viewport)
-    const left = containerRect.left + bounds.x + 4;
-    const top = containerRect.top + bounds.y + 4;
+    // Position input over the cell (using fixed positioning relative to viewport; the graph div
+    // is the scroll container)
+    const left = containerRect.left + container.clientLeft + bounds.x - container.scrollLeft + 4;
+    const top = containerRect.top + container.clientTop + bounds.y - container.scrollTop + 4;
     const width = Math.max(bounds.width - 8, 100);
     const height = Math.max(bounds.height - 8, 24);
 

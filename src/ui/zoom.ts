@@ -7,7 +7,6 @@ export class ZoomController {
     this.graph = graph;
     this.setupZoomButtons();
     this.setupKeyboardShortcuts();
-    this.setupMouseWheelZoom();
   }
 
   private setupZoomButtons(): void {
@@ -62,62 +61,24 @@ export class ZoomController {
     });
   }
 
-  private setupMouseWheelZoom(): void {
-    const container = this.graph.getContainer();
-
-    container.addEventListener('wheel', (e: WheelEvent) => {
-      // Only zoom if Ctrl/Cmd is pressed
-      if (!e.ctrlKey && !e.metaKey) {
-        return;
-      }
-
-      e.preventDefault();
-
-      if (e.deltaY < 0) {
-        this.zoomIn();
-      } else if (e.deltaY > 0) {
-        this.zoomOut();
-      }
-    });
-  }
+  // Ctrl/Cmd+wheel and pinch zoom around the pointer: canvas-scroll.ts (installCanvasScroll).
+  // The commands below go through the graph, which canvas-scroll.ts makes keep the view centre
+  // (zoom), and centre the content (zoomActual, fit). The status bar follows the SCALE events.
 
   zoomIn(): void {
-    const scale = 1.2;
-    const view = this.graph.getView();
-    const currentZoom = view.getScale();
-    const newZoom = Math.min(currentZoom * scale, 5); // Max 500%
-    view.setScale(newZoom);
-    this.updateStatusBar(newZoom);
+    this.graph.zoomIn();
   }
 
   zoomOut(): void {
-    const scale = 1 / 1.2;
-    const view = this.graph.getView();
-    const currentZoom = view.getScale();
-    const newZoom = Math.max(currentZoom * scale, 0.1); // Min 10%
-    view.setScale(newZoom);
-    this.updateStatusBar(newZoom);
+    this.graph.zoomOut();
   }
 
   zoomActual(): void {
-    const view = this.graph.getView();
-    view.setScale(1);
-    this.updateStatusBar(1);
+    this.graph.zoomActual();
   }
 
   zoomToFit(): void {
-    const border = 20;
-    this.graph.fit(border);
-    const view = this.graph.getView();
-    const zoom = view.getScale();
-    this.updateStatusBar(zoom);
-  }
-
-  private updateStatusBar(zoom: number): void {
-    const statusBar = document.querySelector('.status-bar-zoom') as HTMLElement;
-    if (statusBar) {
-      statusBar.textContent = `${Math.round(zoom * 100)}%`;
-    }
+    this.graph.fit(20);
   }
 
   destroy(): void {

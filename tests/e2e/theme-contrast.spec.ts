@@ -609,7 +609,7 @@ async function openAppWithFakeRemote(page: Page, theme: Theme): Promise<void> {
 
 async function auditFeatureSurfaces(page: Page, a: Auditor): Promise<void> {
   // Route tool floating panel (layout loaded like a file)
-  await inGraph(page, 'tab.saveLoadController.load(arg); graph.view.setTranslate(20, 20); graph.container.scrollLeft = 0; graph.container.scrollTop = 0;', RAIL_LAYOUT);
+  await inGraph(page, 'tab.saveLoadController.load(arg); graph.container.scrollLeft -= 20; graph.container.scrollTop -= 20;', RAIL_LAYOUT);
   await page.locator('#btn-route-tool').click();
   const tool = page.locator('.rd-route-tool');
   await expect(tool.locator('.rd-route-status')).toHaveText('Click the start (entry) signal.');

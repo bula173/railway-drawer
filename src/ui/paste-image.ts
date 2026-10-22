@@ -69,8 +69,9 @@ export class PasteImageController {
 
       // Get the center of the current view
       const container = this.graph.getContainer();
-      const centerX = container.scrollLeft + container.clientWidth / 2;
-      const centerY = container.scrollTop + container.clientHeight / 2;
+      const { scale, translate } = this.graph.view;
+      const centerX = (container.scrollLeft + container.clientWidth / 2) / scale - translate.x;
+      const centerY = (container.scrollTop + container.clientHeight / 2) / scale - translate.y;
 
       // Create the image cell
       this.graph.batchUpdate(() => {

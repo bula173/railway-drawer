@@ -61,6 +61,7 @@ import { installToolbar } from './ui/toolbar';
 import { clickInsertPlacement } from './ui/click-insert';
 import { createStartCard } from './ui/start-card';
 import { installNarrowScreen } from './ui/narrow-screen';
+import { scrollSelectionIntoView } from './ui/canvas-scroll';
 
 /**
  * @brief Register all built-in shape definitions
@@ -304,7 +305,8 @@ document.addEventListener('keydown', (e) => {
   if (nudge && focusOnCanvas && !mod && !e.altKey && activeTab.graph.getSelectionCount() > 0) {
     e.preventDefault();
     const step = e.shiftKey ? activeTab.graph.getGridSize() || 10 : 1;
-    activeTab.graphCommandService.nudge(nudge[0] * step, nudge[1] * step);
+    // Like draw.io, the nudged selection stays in view (scrolls at the canvas edge)
+    if (activeTab.graphCommandService.nudge(nudge[0] * step, nudge[1] * step)) scrollSelectionIntoView(activeTab.graph);
   }
 }, true);
 

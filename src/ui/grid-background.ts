@@ -7,30 +7,81 @@
  * container and style.css picks one by `<html data-theme>`, so a theme switch needs no
  * listener (and inactive tabs follow too). Colors as in draw.io: light grid #e0e0e0 (the app's
  * former grid), dark grid #424242 on the #121212 dark page (mxGraphView defaultDarkGridColor).
+ *
+ * The tab graph div is the scroll container (canvas-scroll.ts) and its background scrolls with
+ * the content (`background-attachment: local`), so the grid covers the whole scrollable area.
+ * canvas-scroll.ts reports the view (setGridView): the cells follow the zoom (doubled while
+ * smaller than MIN_GRID_TILE px, like draw.io) and start at the graph origin (the translate).
  */
 
 export const GRID_COLOR_LIGHT = '#e0e0e0';
 export const GRID_COLOR_DARK = '#424242';
+/** Smallest grid cell drawn on screen (px): smaller cells are doubled. */
+export const MIN_GRID_TILE = 5;
+
+interface GridSettings {
+  size: number;
+  enabled: boolean;
+}
+
+interface GridView {
+  scale: number;
+  /** Screen px of the graph origin from the container's scroll origin. */
+  originX: number;
+  originY: number;
+}
+
+const SETTINGS = new WeakMap<HTMLElement, GridSettings>();
+const VIEWS = new WeakMap<HTMLElement, GridView>();
 
 /** `data:` URL of one grid cell (lines on the top and left edge, transparent elsewhere). */
 export function gridTileUrl(color: string, size: number): string {
-  const s = Math.max(1, Math.round(size));
+  const s = Math.max(1, Math.round(size * 100) / 100);
   const svg =
     `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}">` +
     `<path d="M ${s} 0 L 0 0 0 ${s}" fill="none" stroke="${color}" stroke-width="0.5"/></svg>`;
   return `data:image/svg+xml,${encodeURIComponent(svg)}`;
 }
 
-/** Shows (or hides) the grid of `container` with cells of `size` px in both themes. */
+/** Screen size of one grid cell at `scale` (doubled up to MIN_GRID_TILE px). */
+export function gridTileSize(size: number, scale: number): number {
+  let tile = size * (scale > 0 ? scale : 1);
+  if (!(tile > 0)) return size;
+  while (tile < MIN_GRID_TILE) tile *= 2;
+  return Math.round(tile * 100) / 100;
+}
+
+function mod(value: number, m: number): number {
+  return Math.round((((value % m) + m) % m) * 100) / 100;
+}
+
+function paint(container: HTMLElement, size: number): void {
+  const view = VIEWS.get(container) ?? { scale: 1, originX: 0, originY: 0 };
+  const tile = gridTileSize(size, view.scale);
+  container.style.setProperty('--rd-grid-image-light', `url("${gridTileUrl(GRID_COLOR_LIGHT, tile)}")`);
+  container.style.setProperty('--rd-grid-image-dark', `url("${gridTileUrl(GRID_COLOR_DARK, tile)}")`);
+  container.style.backgroundSize = `${tile}px ${tile}px`;
+  container.style.backgroundRepeat = 'repeat';
+  container.style.backgroundPosition = `${mod(view.originX, tile)}px ${mod(view.originY, tile)}px`;
+}
+
+/** Shows (or hides) the grid of `container` with cells of `size` graph units in both themes. */
 export function applyGridBackground(container: HTMLElement | null | undefined, size: number, enabled: boolean): void {
   if (!container) return;
   // No inline background-image: it would override the theme's tile (style.css .rd-grid-on)
   container.style.backgroundImage = '';
   container.classList.toggle('rd-grid-on', enabled);
+  SETTINGS.set(container, { size, enabled });
   if (!enabled) return;
-  container.style.setProperty('--rd-grid-image-light', `url("${gridTileUrl(GRID_COLOR_LIGHT, size)}")`);
-  container.style.setProperty('--rd-grid-image-dark', `url("${gridTileUrl(GRID_COLOR_DARK, size)}")`);
-  container.style.backgroundSize = `${size}px ${size}px`;
-  container.style.backgroundRepeat = 'repeat';
-  container.style.backgroundPosition = '0 0';
+  paint(container, size);
+}
+
+/** The view of `container`'s graph changed (zoom, translate): the grid follows it. */
+export function setGridView(container: HTMLElement | null | undefined, scale: number, originX: number, originY: number): void {
+  if (!container) return;
+  const previous = VIEWS.get(container);
+  if (previous && previous.scale === scale && previous.originX === originX && previous.originY === originY) return;
+  VIEWS.set(container, { scale, originX, originY });
+  const settings = SETTINGS.get(container);
+  if (settings?.enabled) paint(container, settings.size);
 }

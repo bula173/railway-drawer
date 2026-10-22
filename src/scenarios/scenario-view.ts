@@ -12,7 +12,7 @@
  * `body.rd-scenario-viewing` disables the menus, toolbar, left panel and properties (they act on
  * the hidden live drawing); the keyboard is routed by main-editor.ts through scenario-keys.ts.
  */
-import { Graph, GraphDataModel } from '@maxgraph/core';
+import { Graph, GraphDataModel, Rectangle } from '@maxgraph/core';
 import { importModelXml, sanitizeXmlText } from '../services/drawio-xml';
 import { configureDiagramRendering } from '../ui/diagram-graph-setup';
 import { installStencilAutoload } from '../ui/drawio-stencil-autoload';
@@ -495,6 +495,11 @@ export class ScenarioViewer {
     // Same zoom and scroll as the live drawing, so steps line up with it
     if (live) {
       const { scale, translate } = live.view;
+      // The live graph's scrollable extent (canvas-scroll.ts: padding around the content), so its
+      // scroll position below is reachable here too
+      graph.minimumGraphSize = liveDiv && liveDiv.scrollWidth > 0
+        ? new Rectangle(0, 0, liveDiv.scrollWidth / scale, liveDiv.scrollHeight / scale)
+        : null;
       graph.view.scaleAndTranslate(scale, translate.x, translate.y);
     }
     const scrollLeft = liveDiv?.scrollLeft ?? 0;

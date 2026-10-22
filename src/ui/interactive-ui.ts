@@ -249,8 +249,10 @@ export class InteractiveUIController {
   ): void {
     const parent = this.graph.getDefaultParent();
     const container = this.graph.container as HTMLElement;
-    const centerX = (container.clientWidth / 2 - width / 2) / this.graph.view.scale + this.graph.view.translate.x;
-    const centerY = (container.clientHeight / 2 - height / 2) / this.graph.view.scale + this.graph.view.translate.y;
+    // Centre of the visible part of the canvas (the graph div scrolls), graph coordinates
+    const { scale, translate } = this.graph.view;
+    const centerX = (container.scrollLeft + container.clientWidth / 2) / scale - translate.x - width / 2;
+    const centerY = (container.scrollTop + container.clientHeight / 2) / scale - translate.y - height / 2;
 
     let style = `fillColor=${fillColor};strokeColor=${strokeColor};`;
     if (strokeWidth !== undefined) {

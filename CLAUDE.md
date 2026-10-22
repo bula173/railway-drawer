@@ -43,7 +43,7 @@ node scripts/railml/validate.ts [--xsd railml3.xsd] [files]  # dev only: xmllint
 CI (`.github/workflows/build-and-deploy.yml`) runs typecheck, typecheck:tests, lint, test:run, build and the
 Playwright subset (legacy-smoke, drawio-palette, templates, scenarios, style-edit, share, gitlab, ertms-data,
 scenario-uml-text, theme-contrast, remote-persist, scenario-doc, editor-commands, dark-shapes, ertms-routes, railml, drawio-compat,
-interaction, hover-arrows, railway-script, ux-batch, ux-batch2a, ux-batch2b, move-connect). No
+interaction, hover-arrows, railway-script, ux-batch, ux-batch2a, ux-batch2b, move-connect, canvas-scroll). No
 draw.io download is needed (`scripts/drawio-palettes` only runs locally, its output is committed). It does not deploy.
 
 ### E2E
@@ -156,6 +156,13 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   it, nor goes into a signal; the dragged cell is the one under the pointer; connecting: 16 visible 'x' points on a
   rectangle, from a quarter point (fixed exit, floating entry, blue target), balise -> signal group, signal point ->
   rectangle, a new edge ends at the release point, an edge end dropped on a body connects floating, hover-arrow drag.
+- `tests/e2e/canvas-scroll.spec.ts` (any port, real `page.mouse` / keyboard input, scrollbars shown: the spec drops
+  Playwright's `--hide-scrollbars`): zoomed in, the tab graph div scrolls (not `#graph-container`) with 12 px scrollbars;
+  wheel scrolls, Shift+wheel horizontally, Ctrl+wheel zooms keeping the point under the pointer (±3 px), zoom buttons /
+  View menu / zoom select keep the view centre, Fit centres the content; content at negative coordinates is reachable and
+  clickable (also at 400 %); grid lines in a far scrolled corner at 200 % and scrollbar thumb/track pixels (light, dark);
+  hover arrows and the km ruler stay on their shapes after zoom + scroll; dragging a shape / rubber band at the edge
+  autoscrolls; Space+drag and middle-drag pan; a tab keeps zoom and scroll across a tab switch.
 - `tests/e2e/railway-script.spec.ts` (any port): Railway Script tab: a typed script (tracks, points, signals, route) is drawn
   by auto-apply ("Applied: 7 objects", `rdScript`, route on `rd-routes`), a text km edit moves the signal, a real mouse drag
   of the signal updates `at` in the text (comments/other lines kept), an enum error is listed at `13:col`, click selects it,
@@ -257,7 +264,25 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
 - Canvas: tab graph divs get `--rd-canvas-bg` (#fff / draw.io's #121212); the grid is a transparent SVG tile from
   `src/ui/grid-background.ts` (`applyGridBackground`, used by `GridController` and `CanvasProperties`): both tiles
   (#e0e0e0 / draw.io dark #424242) are custom properties on the container and CSS picks one by `data-theme`, so a
-  theme switch needs no listener and inactive tabs follow.
+  theme switch needs no listener and inactive tabs follow. The grid follows the zoom (cells doubled while < 5 px) and
+  starts at the graph origin (`setGridView`, fed by canvas-scroll.ts); `background-attachment: local` makes it cover the
+  whole scrollable area. Canvas scrollbars: `--rd-canvas-scrollbar-thumb/-hover/-track` (thumb >= 3:1 on the track),
+  12 px `::-webkit-scrollbar` on `.rd-graph-canvas` (`scrollbar-color: auto` there, else Chromium ignores them).
+- Scrolling canvas (`src/ui/canvas-scroll.ts`, draw.io's infinite canvas, page view off): each tab graph div
+  (`.rd-graph-canvas`) is the scroll container, `#graph-container` is overflow hidden, so maxGraph's own scrolling
+  (scrollCellToVisible, autoscroll while dragging, PanningHandler) works. `graph.sizeDidChange` keeps the content's
+  400-unit tiles (`SCROLL_TILE`) plus padding (visible size - 34 px) on every side scrollable and sets `view.translate`
+  itself (content at negative coordinates reachable), compensating the scroll so nothing moves on screen: never rely on
+  `view.translate` being 0 or set it yourself (it is reset); convert with
+  `(scrollLeft + px) / scale - translate.x`. `graph.zoom` / `zoomTo` / `zoomIn` / `zoomOut` keep the view centre
+  (10-500 %), `zoomActual` and `fit` centre the content, Ctrl/Cmd+wheel and pinch zoom around the pointer
+  (`zoomCanvasAt`), Shift+wheel scrolls horizontally, a plain wheel scrolls natively. `resetCanvasScroll` after
+  `SaveLoadController.load` (origin at the top-left, or the content's top-left when it reaches into negative
+  coordinates); a hidden tab gets its scroll position back when shown (ResizeObserver). Arrow-key nudges scroll the
+  selection into view. Pan (`src/ui/pan.ts`): Space+drag (also over shapes) and middle-drag via the PanningHandler's
+  force-panning path; right-drag stays the context menu. Overlays positioned in view coordinates as absolute children of
+  the graph div (hover arrows, previews) or in the overlay pane (`GraphOverlay`: km ruler, route tool) scroll with it;
+  fixed-position editors subtract `scrollLeft/Top`.
 
 ### Main editor (Railway Drawer editor, maxGraph)
 

@@ -15,6 +15,7 @@ import type { ScenarioSet } from '../scenarios/scenario-model';
 import type { RailwayScriptStore } from '../railway-script/script-store';
 import { globalNotificationManager } from './notification';
 import { globalSaveStatusIndicator } from './save-status';
+import { resetCanvasScroll } from './canvas-scroll';
 
 /** One cell of exportAsJson(), read from the draw.io XML the tab saves. */
 export interface JsonExportCell {
@@ -322,6 +323,9 @@ export class SaveLoadController {
     this.restorePlantUmlMetadata(xml);
 
     this.graph.refresh();
+    // A loaded drawing is shown from its origin (or its top-left when it reaches into negative
+    // coordinates), like a freshly opened file in draw.io
+    resetCanvasScroll(this.graph);
     this.commandService?.clearHistory();
     this.loadMigration = migration;
     console.log('[SaveLoad] Diagram loaded');

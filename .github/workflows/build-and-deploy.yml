@@ -85,6 +85,7 @@ jobs:
         tests/e2e/remote-persist.spec.ts tests/e2e/scenario-doc.spec.ts tests/e2e/editor-commands.spec.ts tests/e2e/dark-shapes.spec.ts
         tests/e2e/drawio-compat.spec.ts tests/e2e/interaction.spec.ts tests/e2e/hover-arrows.spec.ts tests/e2e/railway-script.spec.ts
         tests/e2e/ux-batch.spec.ts tests/e2e/ux-batch2a.spec.ts tests/e2e/ux-batch2b.spec.ts tests/e2e/move-connect.spec.ts
+        tests/e2e/canvas-scroll.spec.ts
 
     - name: Upload Playwright report
       if: failure()

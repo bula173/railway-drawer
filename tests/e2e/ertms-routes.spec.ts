@@ -104,7 +104,7 @@ test('ERTMS routes: route tool, route/interlocking tables, snap to track, km', a
   await expect(page.locator('#tabs-container .tab-button.active')).toHaveCount(1);
 
   // The layout, loaded like a file (no snapping on load)
-  await inGraph(page, 'tab.saveLoadController.load(arg); graph.view.setTranslate(20, 20); graph.container.scrollLeft = 0; graph.container.scrollTop = 0;', LAYOUT);
+  await inGraph(page, 'tab.saveLoadController.load(arg); graph.container.scrollLeft -= 20; graph.container.scrollTop -= 20;', LAYOUT);
   expect((await attrsOf(page, 'S1'))?.rdKind).toBe('signal');
   await expect(page.locator('.menu-dropdown [data-action="railwayRoute:toggleSnap"]')).toHaveAttribute('aria-checked', 'true');
 

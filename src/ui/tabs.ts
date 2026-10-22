@@ -27,6 +27,7 @@ import { EdgePropertiesController } from './edge-properties';
 import { LayersController } from './layers';
 import { installCellLocking } from './cell-lock';
 import { installGroupBackgroundHit, installRailwaySplitRules } from './canvas-interaction';
+import { installCanvasScroll, uninstallCanvasScroll } from './canvas-scroll';
 import { HoverArrowsController } from './hover-arrows';
 import { ImageUploadController } from './image-upload';
 import { PasteImageController } from './paste-image';
@@ -225,8 +226,10 @@ export class TabManager {
     graphDiv.id = `graph-${tabId}`;
     graphDiv.style.width = '100%';
     graphDiv.style.height = '100%';
-    // Positioned: overlays (hover arrows, previews) are absolute children of the graph div
+    // Positioned: overlays (hover arrows, previews) are absolute children of the graph div, which
+    // is also the scroll container (.rd-graph-canvas, canvas-scroll.ts), so they scroll with it
     graphDiv.style.position = 'relative';
+    graphDiv.classList.add('rd-graph-canvas');
     graphDiv.style.display = this.activeTabId ? 'none' : 'block';
     this.graphContainer.appendChild(graphDiv);
 
@@ -264,6 +267,8 @@ export class TabManager {
     installDrawioHandles(graph);
     // Named stencils (mxgraph.basic.*, ...) are fetched when cells using them arrive (load, paste, insert)
     installStencilAutoload(graph);
+    // draw.io scrolling canvas: padding around the content, zoom around the focus (canvas-scroll.ts)
+    installCanvasScroll(graph);
 
     // Controllers bind to shared DOM and `document`; record those listeners so they are only
     // attached while this tab is active (see captureSharedListeners).
@@ -778,6 +783,7 @@ export class TabManager {
 
       // Dispose graph (removes event listeners, clears model, disposes view)
       if (tab.graph) {
+        uninstallCanvasScroll(tab.graph);
         tab.graph.destroy();
       }
 

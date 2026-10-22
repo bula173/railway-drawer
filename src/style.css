@@ -1871,6 +1871,49 @@ svg.mxGraph .mxHandle {
   background-color: var(--rd-canvas-bg);
 }
 
+/* Each tab's graph div is the scroll container (src/ui/canvas-scroll.ts), not #graph-container:
+   maxGraph scrolls its own container (zoom, autoscroll, panning, scrollCellToVisible). The
+   background (page color + grid) scrolls with the content and covers the whole scrollable area. */
+#graph-container {
+  overflow: hidden;
+}
+#graph-container > .rd-graph-canvas {
+  overflow: auto;
+  background-attachment: local;
+  /* auto: Chromium/WebKit then use the ::-webkit-scrollbar rules below (scrollbar-color would
+     replace them with thin overlay bars) */
+  scrollbar-color: auto;
+}
+#graph-container > .rd-graph-canvas.rd-pan-mode {
+  cursor: grab;
+}
+#graph-container > .rd-graph-canvas.rd-panning {
+  cursor: grabbing;
+}
+#graph-container > .rd-graph-canvas::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+#graph-container > .rd-graph-canvas::-webkit-scrollbar-track,
+#graph-container > .rd-graph-canvas::-webkit-scrollbar-corner {
+  background: var(--rd-canvas-scrollbar-track);
+}
+#graph-container > .rd-graph-canvas::-webkit-scrollbar-thumb {
+  background: var(--rd-canvas-scrollbar-thumb);
+  border: 2px solid var(--rd-canvas-scrollbar-track);
+  border-radius: 6px;
+  min-width: 24px;
+  min-height: 24px;
+}
+#graph-container > .rd-graph-canvas::-webkit-scrollbar-thumb:hover {
+  background: var(--rd-canvas-scrollbar-thumb-hover);
+}
+@supports not selector(::-webkit-scrollbar) {
+  #graph-container > .rd-graph-canvas {
+    scrollbar-color: var(--rd-canvas-scrollbar-thumb) var(--rd-canvas-scrollbar-track);
+  }
+}
+
 #graph-container > div.rd-grid-on {
   background-image: var(--rd-grid-image-light);
 }
