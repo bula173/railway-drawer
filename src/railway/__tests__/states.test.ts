@@ -11,6 +11,8 @@ import { GraphCommandService } from '../../services/graph-command-service';
 import { cleanupTestGraph, createTestGraph } from '../../__tests__/setup';
 import { adaptiveDarkColor, ensureContrast, isSaturatedColor } from '../../drawio-shapes/engine/colors';
 import { styleToString } from '../../services/drawio-xml';
+import { exportRailml } from '../../railml/export';
+import { diffSnapshots } from '../../scenarios/scenario-diff';
 import { allCells, readAttr } from '../object-data';
 import {
   STATE_COLORS,
@@ -357,5 +359,35 @@ describe('applying states', () => {
     expect(readAttr(restored.getCell('tc1'), 'rdState')).toBe('occupied');
     expect(styleToString(restored.getCell('s1a')!.getStyle())).toContain(`fillColor=${STATE_COLORS.lampCaution}`);
     expect(exportModelToDrawioXml(restored)).toBe(xml);
+  });
+
+  it('scenario change lists name the state change (parts folded in)', () => {
+    const { graph, cell } = setup();
+    const model = graph.getDataModel();
+    const before = exportModelToDrawioXml(model);
+    setStateOnCells(graph, [cell('tc1')], 'state', 'occupied');
+    setStateOnCells(graph, [cell('s1')], 'aspect', 'proceed');
+    setStateOnCells(graph, [cell('w1')], 'position', 'reverse');
+    setStateOnCells(graph, [cell('tc3')], 'state', 'locked');
+    const diff = diffSnapshots(before, exportModelToDrawioXml(model));
+    expect(diff.changes.map((c) => c.summary).sort()).toEqual(['S1: aspect stop → proceed', 'TC1: free → occupied', 'TC3: free → locked', 'W1: position normal → reverse']);
+    expect(diff.counts.changed).toBe(4);
+    // a style edit next to a state change is still listed
+    const later = exportModelToDrawioXml(model);
+    setStateOnCells(graph, [cell('tc1')], 'state', 'free');
+    model.setStyle(cell('tc2'), { ...(cell('tc2').getStyle() as object), strokeWidth: 8 } as never);
+    expect(diffSnapshots(later, exportModelToDrawioXml(model)).changes.map((c) => c.summary).sort()).toEqual(['TC1: occupied → free', 'TC2: style changed (strokeWidth)']);
+  });
+
+  it('railML export: no runtime state attributes, the drawn style in the rd extension', () => {
+    const { graph, cell } = setup();
+    const model = graph.getDataModel();
+    const plain = exportRailml(model, { date: '2026-01-01' }).xml;
+    setStateOnCells(graph, [cell('tc1'), cell('tc2'), cell('w1')], 'state', 'occupied');
+    runRouteCommand(graph, cell('r1'), 'set');
+    const xml = exportRailml(model, { date: '2026-01-01' }).xml;
+    for (const word of ['rdState', 'rdAspect', 'rdBaseStyle', 'rdRouteRestore', STATE_COLORS.occupied, STATE_COLORS.reserved]) expect(xml).not.toContain(word);
+    // only the points position (data) differs from the stateless export
+    expect(xml.replace(/ rdPosition="reverse"/g, '')).toBe(plain);
   });
 });

@@ -29,6 +29,7 @@ import type { TopoPiece } from '../railway/topology';
 import { buildTopology, forwardIsNominal, isNominalDirection, linkLine, locateObject, outgoing, passage, projectPoint } from '../railway/topology';
 import type { Issue, RailObject } from '../railway/validation';
 import { collectObjects, indexObjects, validateModel } from '../railway/validation';
+import { BASE_STYLE_ATTR, RUNTIME_STATE_ATTRS, parseBaseStyles, styleWithoutState } from '../railway/states';
 import { parseStyleString, styleToString } from '../services/drawio-xml';
 import { KIND_MAPPINGS, mappingOf, protectionToRailml, technologyToRailml } from './mapping';
 import type { ApplyResult } from './preserve';
@@ -728,7 +729,10 @@ function extensionAttrs(o: RailObject, ctx: ExtContext): Record<string, string> 
   const cell: Cell = o.cell;
   if (o.kind.id !== 'route' && (!cell.children || cell.children.length === 0)) {
     const raw = cell.getStyle() as Parameters<typeof styleToString>[0];
-    const style = styleToString(typeof raw === 'string' ? parseStyleString(raw) : raw);
+    const parsed = (typeof raw === 'string' ? parseStyleString(raw) : raw) as Record<string, unknown> | null | undefined;
+    // runtime states are not infrastructure: the drawn colours, not the state's (src/railway/states.ts)
+    const drawn = parsed ? styleWithoutState(parsed, parseBaseStyles(readAttr(cell, BASE_STYLE_ATTR))['']) : parsed;
+    const style = styleToString(drawn as Parameters<typeof styleToString>[0]);
     if (style) out.style = style;
     const geo = cell.getGeometry();
     if (cell.isVertex() && geo) {
@@ -746,7 +750,7 @@ function extensionAttrs(o: RailObject, ctx: ExtContext): Record<string, string> 
   const value = cell.getValue();
   if (isElementValue(value) && o.kind.id !== 'route') {
     for (const a of Array.from(value.attributes)) {
-      if (a.name === 'id' || a.name === KIND_ATTR || a.name === RAILML_ID_ATTR || a.name === RAILML_NE_ATTR || a.name === RAILML_IL_ID_ATTR || a.name === RAILML_TVD_ATTR || ALL_DATA_ATTRS.has(a.name)) continue;
+      if (a.name === 'id' || a.name === KIND_ATTR || a.name === RAILML_ID_ATTR || a.name === RAILML_NE_ATTR || a.name === RAILML_IL_ID_ATTR || a.name === RAILML_TVD_ATTR || ALL_DATA_ATTRS.has(a.name) || RUNTIME_STATE_ATTRS.has(a.name)) continue;
       if (a.name === 'label' && a.value === '') continue;
       out[`v_${a.name}`] = a.value;
     }

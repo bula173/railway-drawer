@@ -156,6 +156,51 @@
               <div class="menu-dropdown-item" data-action="editData" title="Data panel of the selected railway object">Edit Data…</div>
               <div class="menu-dropdown-item" data-action="railwayChecks" title="Checks panel: duplicate IDs, missing data, topology">Run Checks</div>
               <div class="menu-dropdown-item" data-action="railwayScriptEditor" title="Left-panel tab Railway Script (import/export: File menu)">Railway Script Editor</div>
+              <!-- src/railway/install-railway-states.ts: runtime states of the selected objects (also in the context menu) -->
+              <div class="menu-submenu" data-submenu="railwayState">
+                <div class="menu-submenu-title" title="Occupancy, route set, signal aspect, points position of the selected objects">Object State</div>
+                <div class="menu-submenu-list">
+                  <div class="menu-submenu" data-submenu="railwayStateState">
+                    <div class="menu-submenu-title">State</div>
+                    <div class="menu-submenu-list">
+                      <div class="menu-dropdown-item" data-action="railwayState:state:free">Free</div>
+                      <div class="menu-dropdown-item" data-action="railwayState:state:occupied">Occupied</div>
+                      <div class="menu-dropdown-item" data-action="railwayState:state:reserved">Reserved (route set)</div>
+                      <div class="menu-dropdown-item" data-action="railwayState:state:overlap">Overlap</div>
+                      <div class="menu-dropdown-item" data-action="railwayState:state:locked">Locked</div>
+                      <div class="menu-dropdown-item" data-action="railwayState:state:disturbed">Disturbed</div>
+                    </div>
+                  </div>
+                  <div class="menu-submenu" data-submenu="railwayStateAspect">
+                    <div class="menu-submenu-title">Signal Aspect</div>
+                    <div class="menu-submenu-list">
+                      <div class="menu-dropdown-item" data-action="railwayState:aspect:stop">Stop</div>
+                      <div class="menu-dropdown-item" data-action="railwayState:aspect:proceed">Proceed</div>
+                      <div class="menu-dropdown-item" data-action="railwayState:aspect:caution">Caution</div>
+                      <div class="menu-dropdown-item" data-action="railwayState:aspect:shunt">Shunt (lunar white)</div>
+                      <div class="menu-dropdown-item" data-action="railwayState:aspect:dark">Dark (no light)</div>
+                    </div>
+                  </div>
+                  <div class="menu-submenu" data-submenu="railwayStatePosition">
+                    <div class="menu-submenu-title">Points Position</div>
+                    <div class="menu-submenu-list">
+                      <div class="menu-dropdown-item" data-action="railwayState:position:normal">Normal</div>
+                      <div class="menu-dropdown-item" data-action="railwayState:position:reverse">Reverse</div>
+                      <div class="menu-dropdown-item" data-action="railwayState:position:moving">Moving</div>
+                      <div class="menu-dropdown-item" data-action="railwayState:position:outOfControl">Out of control</div>
+                    </div>
+                  </div>
+                  <div class="rd-sep"></div>
+                  <div class="menu-dropdown-item" data-action="railwayState:setRoute" title="Selected route: sections reserved, points in position, entry signal proceed">Set Route</div>
+                  <div class="menu-dropdown-item" data-action="railwayState:occupyRoute" title="Selected route: sections occupied, entry signal stop">Occupy Route</div>
+                  <div class="menu-dropdown-item" data-action="railwayState:releaseRoute" title="Selected route: sections free, entry signal stop, points back">Release Route</div>
+                  <div class="menu-dropdown-item" data-action="railwayState:occupyUnderTrain" title="Track sections under the selected train become occupied">Occupy Sections Under Train</div>
+                  <div class="rd-sep"></div>
+                  <div class="menu-dropdown-item" data-action="railwayState:reset" title="Selected objects back to their drawn colours">Reset State</div>
+                  <div class="menu-dropdown-item" data-action="railwayState:resetAll" title="Every object of the diagram back to its drawn colours">Reset All States</div>
+                  <div class="menu-dropdown-item" data-action="railwayState:toggleLegend" role="menuitemcheckbox" aria-checked="false" title="Legend of the state colours over the canvas">State Legend</div>
+                </div>
+              </div>
               <div class="rd-sep"></div>
               <div class="menu-dropdown-item" data-action="railwayRoute:toggleSnap" role="menuitemcheckbox" aria-checked="true" title="Put signals, balises, axle counters and LEUs onto the nearest track and set their track">Snap to Track</div>
               <div class="menu-dropdown-item" data-action="railwayRoute:toggleRoutes" role="menuitemcheckbox" aria-checked="true" title="Show or hide the Routes layer">Show Routes</div>

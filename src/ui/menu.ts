@@ -339,6 +339,11 @@ export class MenuController {
       window.dispatchEvent(new CustomEvent('railway-route-request', { detail: action.slice('railwayRoute:'.length) }));
       return;
     }
+    // Railway > Object State: src/railway/install-railway-states.ts (also the context menu)
+    if (action.startsWith('railwayState:')) {
+      window.dispatchEvent(new CustomEvent('railway-state-request', { detail: action.slice('railwayState:'.length) }));
+      return;
+    }
 
     switch (action) {
       case 'new':

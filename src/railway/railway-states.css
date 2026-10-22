@@ -1,0 +1,57 @@
+/* Object states legend over the canvas (install-railway-states.ts). Chrome colours are tokens;
+   the swatches show the diagram's state colours (states.ts). */
+.rd-state-legend {
+  position: fixed;
+  z-index: 800;
+  max-height: 60vh;
+  overflow: auto;
+  min-width: 210px;
+  padding: 6px 8px 8px;
+  background: var(--rd-surface);
+  color: var(--rd-text);
+  border: 1px solid var(--rd-border-strong);
+  border-radius: 6px;
+  box-shadow: 0 2px 8px var(--rd-shadow);
+  font: 12px/1.4 system-ui, sans-serif;
+}
+
+.rd-state-legend-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+
+.rd-state-legend-close {
+  min-width: 24px;
+  min-height: 24px;
+  padding: 0 6px;
+}
+
+.rd-state-legend-title {
+  margin-top: 6px;
+  color: var(--rd-text-muted);
+  font-weight: 600;
+}
+
+.rd-state-legend-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 16px;
+}
+
+.rd-state-swatch {
+  flex: none;
+}
+
+/* "as drawn" and the lamp outline follow the chrome text colour */
+.rd-state-swatch-drawn {
+  stroke: var(--rd-text-muted);
+}
+
+.rd-state-swatch-outline {
+  stroke: var(--rd-text-muted);
+  stroke-width: 1;
+}

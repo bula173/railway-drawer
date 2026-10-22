@@ -14,6 +14,9 @@ import type { Cell, Graph } from '@maxgraph/core';
 import type { FieldDef, KindDef, KindId } from './catalogue';
 import { KINDS, getKind, normalizeFieldInput } from './catalogue';
 import { getCellKind, getRawKind, labelIdChange, labelShowsId, readField, readObjectId, setRailwayData } from './object-data';
+import { applyObjectStates, cellSchemeId, readStates } from './state-apply';
+import { STATE_SCHEME } from './states';
+import type { StateDimension } from './states';
 import type { Issue } from './validation';
 import { collectObjects } from './validation';
 
@@ -234,6 +237,11 @@ export function createRailwayDataPanel(options: RailwayDataPanelOptions): Railwa
       input.addEventListener('change', () => {
         const value = input.value === '__mixed' ? null : input.value;
         if (value === null) return;
+        // the points position is also a runtime state: its look (diverging leg) follows
+        if (kind.id === 'points' && f.key === 'position') {
+          commitState(t, 'position', value);
+          return;
+        }
         commit(t, { values: { [f.key]: normalizeFieldInput(f, value) } });
       });
       if (input instanceof HTMLInputElement) {
@@ -257,6 +265,8 @@ export function createRailwayDataPanel(options: RailwayDataPanelOptions): Railwa
       controls.set(f.key, { field: f, input, problem });
     }
 
+    renderStateFields(t, form);
+
     // Label shows the ID (draw.io placeholder %rdId%)
     const toggleRow = el('label', 'rd-rw-row rd-rw-check');
     const toggle = el('input');
@@ -271,6 +281,51 @@ export function createRailwayDataPanel(options: RailwayDataPanelOptions): Railwa
     labelToggle = toggle;
     return form;
   }
+
+  /** Runtime state selects (State / Aspect; the points position is its catalogue field). */
+  function renderStateFields(t: Target, form: HTMLElement): void {
+    const schemes = new Set(t.cells.map((c) => cellSchemeId(c)));
+    if (schemes.size !== 1) return;
+    const scheme = [...schemes][0];
+    if (!scheme) return;
+    for (const dim of ['state', 'aspect'] as const) {
+      const def = STATE_SCHEME[scheme][dim];
+      if (!def) continue;
+      const row = el('div', 'rd-rw-row rd-rw-state');
+      const id = `rd-rw-f-${dim}`;
+      const label = el('label', 'rd-rw-label', dim === 'state' ? 'State' : 'Aspect');
+      label.htmlFor = id;
+      const select = el('select', 'rd-rw-input');
+      select.id = id;
+      select.dataset.field = dim;
+      const values = new Set(t.cells.map((c) => readStates(c)[dim]));
+      if (values.size > 1) {
+        const mixed = el('option', undefined, MIXED);
+        mixed.value = '__mixed';
+        mixed.disabled = true;
+        select.append(mixed);
+      }
+      for (const o of def.options) {
+        const opt = el('option', undefined, o.value === def.defaultValue ? `${o.label} (default)` : o.label);
+        opt.value = o.value;
+        select.append(opt);
+      }
+      const only = [...values][0] ?? '';
+      select.value = values.size > 1 ? '__mixed' : def.options.some((o) => o.value === only) ? only : def.defaultValue;
+      select.addEventListener('change', () => {
+        if (select.value !== '__mixed') commitState(t, dim, select.value);
+      });
+      row.append(label, select, el('div', 'rd-rw-hint', 'Runtime state: colours the object (see Railway > Object State > State Legend)'));
+      form.append(row);
+    }
+  }
+
+  const commitState = (t: Target, dim: StateDimension, value: string): void => {
+    const model = t.graph.getDataModel();
+    const cells = t.cells.filter((c) => model.contains(c));
+    applyObjectStates(t.graph, cells.map((cell) => ({ cell, change: { [dim]: value || null } })));
+    refresh();
+  };
 
   function setControlValue(f: FieldDef, input: HTMLInputElement | HTMLSelectElement, cells: Cell[]): void {
     const value = commonValue(cells, f);
@@ -333,7 +388,8 @@ export function createRailwayDataPanel(options: RailwayDataPanelOptions): Railwa
       signature = 'empty';
       return;
     }
-    const next = cells.map((c) => `${String(c.getId())}:${getRawKind(c) ?? ''}`).join('|');
+    // runtime states are part of the signature: their selects are rebuilt when a state changes
+    const next = cells.map((c) => `${String(c.getId())}:${getRawKind(c) ?? ''}:${readStates(c).state}:${readStates(c).aspect}`).join('|');
     if (next !== signature || !kindSelect || !root.contains(kindSelect)) {
       // Rebuild unless the user is typing in this panel (the edit triggered this refresh)
       signature = next;

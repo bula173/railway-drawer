@@ -53,6 +53,7 @@ import { installSharing } from './share/install-sharing';
 import { installScenarios } from './scenarios/install-scenarios';
 import { assignKindForInsertedShape, installRailwayData, prepareRailwayInsert } from './railway/install-railway-data';
 import { installRailwayRoutes } from './railway/install-railway-routes';
+import { installRailwayStates } from './railway/install-railway-states';
 import { installRailml, isRailmlFile, requestRailmlOpen } from './railml/install-railml';
 import { installRailwayScript } from './railway-script/install-railway-script';
 import { syncConnectionArrowsMenu, toggleConnectionArrows } from './ui/hover-arrows';
@@ -189,6 +190,7 @@ const scenarios = installScenarios(tabManager, globalNotificationManager, graphC
 installRailwayData(tabManager, globalNotificationManager, { showPanel: scenarios.showPanel });
 // Route tool, route/interlocking tables, snap to track, km ruler (src/railway/install-railway-routes.ts)
 installRailwayRoutes(tabManager, globalNotificationManager);
+installRailwayStates(tabManager, globalNotificationManager);
 // railML 3.2 import/export (File menu, File > Open and file drops of railML; lazy chunk)
 installRailml(tabManager, globalNotificationManager);
 
