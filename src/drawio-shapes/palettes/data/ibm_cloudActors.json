@@ -1,0 +1,98 @@
+{
+ "id": "ibm_cloudActors",
+ "title": "IBM / Actors",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:7",
+ "entries": [
+  {
+   "id": "ibm_cloudActors-0-user",
+   "title": "User",
+   "tags": "ibm cloud actors user",
+   "kind": "cells",
+   "width": 48,
+   "height": 48,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"User\" style=\"shape=ellipse;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0],[0.146,0.146,0],[0.854,0.146,0],[0.854,0.854,0],[0.146,0.854,0]];fillColor=#000000;aspect=fixed;resizable=0;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeColor=none;fontSize=14;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"48\" height=\"48\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"fillColor=#ffffff;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;shape=mxgraph.ibm_cloud.user\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "ellipse",
+    "mxgraph.ibm_cloud.user"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:401"
+  },
+  {
+   "id": "ibm_cloudActors-1-users",
+   "title": "Users",
+   "tags": "ibm cloud actors users",
+   "kind": "cells",
+   "width": 48,
+   "height": 48,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Users\" style=\"shape=ellipse;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0],[0.146,0.146,0],[0.854,0.146,0],[0.854,0.854,0],[0.146,0.854,0]];fillColor=#000000;aspect=fixed;resizable=0;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeColor=none;fontSize=14;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"48\" height=\"48\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"fillColor=#ffffff;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;shape=mxgraph.ibm_cloud.group\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "ellipse",
+    "mxgraph.ibm_cloud.group"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:401"
+  },
+  {
+   "id": "ibm_cloudActors-2-enterprise",
+   "title": "Enterprise",
+   "tags": "ibm cloud actors enterprise",
+   "kind": "cells",
+   "width": 48,
+   "height": 48,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Enterprise\" style=\"shape=ellipse;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0],[0.146,0.146,0],[0.854,0.146,0],[0.854,0.854,0],[0.146,0.854,0]];fillColor=#000000;aspect=fixed;resizable=0;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeColor=none;fontSize=14;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"48\" height=\"48\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"fillColor=#ffffff;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;shape=mxgraph.ibm_cloud.enterprise\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "ellipse",
+    "mxgraph.ibm_cloud.enterprise"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:401"
+  },
+  {
+   "id": "ibm_cloudActors-3-application",
+   "title": "Application",
+   "tags": "ibm cloud actors application",
+   "kind": "cells",
+   "width": 48,
+   "height": 48,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Application\" style=\"shape=ellipse;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0],[0.146,0.146,0],[0.854,0.146,0],[0.854,0.854,0],[0.146,0.854,0]];fillColor=#A56EFF;aspect=fixed;resizable=0;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeColor=none;fontSize=14;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"48\" height=\"48\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"fillColor=#ffffff;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;shape=mxgraph.ibm_cloud.application\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "ellipse",
+    "mxgraph.ibm_cloud.application"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:401"
+  },
+  {
+   "id": "ibm_cloudActors-4-web-application",
+   "title": "Web Application",
+   "tags": "ibm cloud actors web application",
+   "kind": "cells",
+   "width": 48,
+   "height": 48,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Web Application\" style=\"shape=ellipse;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0],[0.146,0.146,0],[0.854,0.146,0],[0.854,0.854,0],[0.146,0.854,0]];fillColor=#A56EFF;aspect=fixed;resizable=0;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeColor=none;fontSize=14;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"48\" height=\"48\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"fillColor=#ffffff;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;shape=mxgraph.ibm_cloud.application--web\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "ellipse",
+    "mxgraph.ibm_cloud.application--web"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:401"
+  },
+  {
+   "id": "ibm_cloudActors-5-microservice",
+   "title": "Microservice",
+   "tags": "ibm cloud actors microservice",
+   "kind": "cells",
+   "width": 48,
+   "height": 48,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Microservice\" style=\"shape=ellipse;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0],[0.146,0.146,0],[0.854,0.146,0],[0.854,0.854,0],[0.146,0.854,0]];fillColor=#A56EFF;aspect=fixed;resizable=0;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeColor=none;fontSize=14;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"48\" height=\"48\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"fillColor=#ffffff;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;shape=mxgraph.ibm_cloud.microservices--1\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "ellipse",
+    "mxgraph.ibm_cloud.microservices--1"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:401"
+  }
+ ]
+}

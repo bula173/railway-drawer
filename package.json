@@ -22,7 +22,7 @@
     "typecheck:e2e": "tsc --noEmit -p tsconfig.e2e.json",
     "typecheck:worker": "tsc --noEmit -p worker/tsconfig.json && tsc --noEmit -p tools/mcp-local/tsconfig.json",
     "build:mcp-local": "vite build --config tools/mcp-local/vite.config.ts",
-    "drawio:palettes": "node scripts/drawio-palettes/fetch-sources.ts && node scripts/drawio-palettes/decode-stencils-bundle.ts && node scripts/drawio-palettes/extract-palettes.ts"
+    "drawio:palettes": "node scripts/drawio-palettes/fetch-sources.ts && node scripts/drawio-palettes/decode-stencils-bundle.ts && node scripts/drawio-palettes/vendor-shapes.ts && node scripts/drawio-palettes/extract-palettes.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "1.1.0",

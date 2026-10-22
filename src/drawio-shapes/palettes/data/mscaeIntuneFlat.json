@@ -1,0 +1,638 @@
+{
+ "id": "mscaeIntuneFlat",
+ "title": "CAE / Intune (flat)",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:8",
+ "entries": [
+  {
+   "id": "mscaeIntuneFlat-0-account-portal",
+   "title": "Account Portal",
+   "tags": "mscae account portal ms microsoft cloud enterprise intune Account Portal",
+   "kind": "vertex",
+   "width": 43,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.account_portal",
+   "shapeNames": [
+    "mxgraph.mscae.intune.account_portal"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:433"
+  },
+  {
+   "id": "mscaeIntuneFlat-1-administration",
+   "title": "Administration",
+   "tags": "mscae administration ms microsoft cloud enterprise intune Administration",
+   "kind": "vertex",
+   "width": 30,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.administration",
+   "shapeNames": [
+    "mxgraph.mscae.intune.administration"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:435"
+  },
+  {
+   "id": "mscaeIntuneFlat-2-alerts",
+   "title": "Alerts",
+   "tags": "mscae alerts ms microsoft cloud enterprise intune Alerts",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.alerts",
+   "shapeNames": [
+    "mxgraph.mscae.intune.alerts"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:437"
+  },
+  {
+   "id": "mscaeIntuneFlat-3-apps",
+   "title": "Apps",
+   "tags": "mscae apps ms microsoft cloud enterprise intune Apps",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.apps",
+   "shapeNames": [
+    "mxgraph.mscae.intune.apps"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:439"
+  },
+  {
+   "id": "mscaeIntuneFlat-4-certificate-compliance",
+   "title": "Certificate (Compliance)",
+   "tags": "mscae certificate compliance ms microsoft cloud enterprise intune Certificate (Compliance)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.certificate",
+   "shapeNames": [
+    "mxgraph.mscae.intune.certificate"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:441"
+  },
+  {
+   "id": "mscaeIntuneFlat-5-client-software-deployment-wizard",
+   "title": "Client Software Deployment Wizard",
+   "tags": "mscae client software deployment wizard ms microsoft cloud enterprise intune Client Software Deployment Wizard",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.client_software",
+   "shapeNames": [
+    "mxgraph.mscae.intune.client_software"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:443"
+  },
+  {
+   "id": "mscaeIntuneFlat-6-company-portal",
+   "title": "Company Portal",
+   "tags": "mscae company portal ms microsoft cloud enterprise intune Company Portal",
+   "kind": "vertex",
+   "width": 50,
+   "height": 38,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.company_portal",
+   "shapeNames": [
+    "mxgraph.mscae.intune.company_portal"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:445"
+  },
+  {
+   "id": "mscaeIntuneFlat-7-computer-inventory",
+   "title": "Computer Inventory",
+   "tags": "mscae computer inventory ms microsoft cloud enterprise intune Computer Inventory",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.computer_inventory",
+   "shapeNames": [
+    "mxgraph.mscae.intune.computer_inventory"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:447"
+  },
+  {
+   "id": "mscaeIntuneFlat-8-conditional-access-exchange",
+   "title": "Conditional Access (Exchange)",
+   "tags": "mscae conditional access exchange ms microsoft cloud enterprise intune Conditional Access (Exchange)",
+   "kind": "vertex",
+   "width": 49,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.conditional_access_exchange;",
+   "shapeNames": [
+    "mxgraph.mscae.intune.conditional_access_exchange"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:449"
+  },
+  {
+   "id": "mscaeIntuneFlat-9-conditional-access-sharepoint",
+   "title": "Conditional Access (Sharepoint)",
+   "tags": "mscae conditional access sharepoint ms microsoft cloud enterprise intune Conditional Access (Sharepoint)",
+   "kind": "vertex",
+   "width": 44,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.conditional_access_sharepoint;",
+   "shapeNames": [
+    "mxgraph.mscae.intune.conditional_access_sharepoint"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:451"
+  },
+  {
+   "id": "mscaeIntuneFlat-10-connector",
+   "title": "Connector",
+   "tags": "mscae connector ms microsoft cloud enterprise intune Connector",
+   "kind": "vertex",
+   "width": 50,
+   "height": 17,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.connector",
+   "shapeNames": [
+    "mxgraph.mscae.intune.connector"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:453"
+  },
+  {
+   "id": "mscaeIntuneFlat-11-dashboard",
+   "title": "Dashboard",
+   "tags": "mscae dashboard ms microsoft cloud enterprise intune Dashboard",
+   "kind": "vertex",
+   "width": 50,
+   "height": 40,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.dashboard",
+   "shapeNames": [
+    "mxgraph.mscae.intune.dashboard"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:455"
+  },
+  {
+   "id": "mscaeIntuneFlat-12-data-migration-wizard",
+   "title": "Data Migration Wizard",
+   "tags": "mscae data migration wizard ms microsoft cloud enterprise intune Data Migration Wizard",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.data_migration_wizard",
+   "shapeNames": [
+    "mxgraph.mscae.intune.data_migration_wizard"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:457"
+  },
+  {
+   "id": "mscaeIntuneFlat-13-detected-software",
+   "title": "Detected Software",
+   "tags": "mscae detected software ms microsoft cloud enterprise intune Detected Software",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.detected_software",
+   "shapeNames": [
+    "mxgraph.mscae.intune.detected_software"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:459"
+  },
+  {
+   "id": "mscaeIntuneFlat-14-device-group",
+   "title": "Device Group",
+   "tags": "mscae device group ms microsoft cloud enterprise intune Device Group",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.device_group",
+   "shapeNames": [
+    "mxgraph.mscae.intune.device_group"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:461"
+  },
+  {
+   "id": "mscaeIntuneFlat-15-device-health",
+   "title": "Device Health",
+   "tags": "mscae device health ms microsoft cloud enterprise intune Device Health",
+   "kind": "vertex",
+   "width": 50,
+   "height": 31,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.device_health",
+   "shapeNames": [
+    "mxgraph.mscae.intune.device_health"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:463"
+  },
+  {
+   "id": "mscaeIntuneFlat-16-device-history",
+   "title": "Device History",
+   "tags": "mscae device history ms microsoft cloud enterprise intune Device History",
+   "kind": "vertex",
+   "width": 45,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.device_history",
+   "shapeNames": [
+    "mxgraph.mscae.intune.device_history"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:465"
+  },
+  {
+   "id": "mscaeIntuneFlat-17-device-os",
+   "title": "Device OS",
+   "tags": "mscae device os operating system ms microsoft cloud enterprise intune Device OS",
+   "kind": "vertex",
+   "width": 49,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.device_os",
+   "shapeNames": [
+    "mxgraph.mscae.intune.device_os"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:467"
+  },
+  {
+   "id": "mscaeIntuneFlat-18-end-protection",
+   "title": "End Protection",
+   "tags": "mscae end protection ms microsoft cloud enterprise intune End Protection",
+   "kind": "vertex",
+   "width": 48,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.end_protection",
+   "shapeNames": [
+    "mxgraph.mscae.intune.end_protection"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:469"
+  },
+  {
+   "id": "mscaeIntuneFlat-19-exchange-connector",
+   "title": "Exchange Connector",
+   "tags": "mscae exchange connector ms microsoft cloud enterprise intune Exchange Connector",
+   "kind": "vertex",
+   "width": 50,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.exchange_connector",
+   "shapeNames": [
+    "mxgraph.mscae.intune.exchange_connector"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:471"
+  },
+  {
+   "id": "mscaeIntuneFlat-20-groups",
+   "title": "Groups",
+   "tags": "mscae groups ms microsoft cloud enterprise intune Groups",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.groups",
+   "shapeNames": [
+    "mxgraph.mscae.intune.groups"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:473"
+  },
+  {
+   "id": "mscaeIntuneFlat-21-hybrid",
+   "title": "Hybrid",
+   "tags": "mscae hybrid ms microsoft cloud enterprise intune Hybrid",
+   "kind": "vertex",
+   "width": 50,
+   "height": 39,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.hybrid",
+   "shapeNames": [
+    "mxgraph.mscae.intune.hybrid"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:475"
+  },
+  {
+   "id": "mscaeIntuneFlat-22-intune-certificate-profiles",
+   "title": "Intune Certificate Profiles",
+   "tags": "mscae certificate profiles ms microsoft cloud enterprise intune Intune Certificate Profiles",
+   "kind": "vertex",
+   "width": 40,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.intune_certificate_profiles",
+   "shapeNames": [
+    "mxgraph.mscae.intune.intune_certificate_profiles"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:477"
+  },
+  {
+   "id": "mscaeIntuneFlat-23-intune-connector",
+   "title": "Intune Connector",
+   "tags": "mscae intune connector ms microsoft cloud enterprise intune Intune Connector",
+   "kind": "vertex",
+   "width": 82,
+   "height": 59,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.intune_connector",
+   "shapeNames": [
+    "mxgraph.mscae.intune.intune_connector"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:479"
+  },
+  {
+   "id": "mscaeIntuneFlat-24-intune-email-profiles",
+   "title": "Intune Email Profiles",
+   "tags": "mscae email profiles ms microsoft cloud enterprise intune Intune Email Profiles",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.intune_email_profiles",
+   "shapeNames": [
+    "mxgraph.mscae.intune.intune_email_profiles"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:481"
+  },
+  {
+   "id": "mscaeIntuneFlat-25-intune-managed-app",
+   "title": "Intune Managed App",
+   "tags": "mscae managed app application ms microsoft cloud enterprise intune Intune Managed App",
+   "kind": "vertex",
+   "width": 50,
+   "height": 38,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.intune_managed_app",
+   "shapeNames": [
+    "mxgraph.mscae.intune.intune_managed_app"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:483"
+  },
+  {
+   "id": "mscaeIntuneFlat-26-intune-mobile-application-management",
+   "title": "Intune Mobile Application Management",
+   "tags": "mscae mobile app aplication management ms microsoft cloud enterprise intune Intune Mobile Application Management",
+   "kind": "vertex",
+   "width": 49,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.intune_mobile_application_management",
+   "shapeNames": [
+    "mxgraph.mscae.intune.intune_mobile_application_management"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:485"
+  },
+  {
+   "id": "mscaeIntuneFlat-27-intune-vpn-profiles",
+   "title": "Intune VPN Profiles",
+   "tags": "mscae vpn virtual private network profiles ms microsoft cloud enterprise intune Intune VPN Profiles",
+   "kind": "vertex",
+   "width": 42,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.intune_vpn_profiles",
+   "shapeNames": [
+    "mxgraph.mscae.intune.intune_vpn_profiles"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:487"
+  },
+  {
+   "id": "mscaeIntuneFlat-28-intune-wifi-profiles",
+   "title": "Intune WiFi Profiles",
+   "tags": "mscae wifi profiles ms microsoft cloud enterprise intune Intune WiFi Profiles",
+   "kind": "vertex",
+   "width": 43,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.intune_wifi_profiles",
+   "shapeNames": [
+    "mxgraph.mscae.intune.intune_wifi_profiles"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:489"
+  },
+  {
+   "id": "mscaeIntuneFlat-29-inventory-license",
+   "title": "Inventory License",
+   "tags": "mscae inventory license ms microsoft cloud enterprise intune Inventory License",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.inventory_license",
+   "shapeNames": [
+    "mxgraph.mscae.intune.inventory_license"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:491"
+  },
+  {
+   "id": "mscaeIntuneFlat-30-inventory-software",
+   "title": "Inventory Software",
+   "tags": "mscae inventory software ms microsoft cloud enterprise intune Inventory Software",
+   "kind": "vertex",
+   "width": 50,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.inventory_software",
+   "shapeNames": [
+    "mxgraph.mscae.intune.inventory_software"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:493"
+  },
+  {
+   "id": "mscaeIntuneFlat-31-license-group",
+   "title": "License Group",
+   "tags": "mscae license group ms microsoft cloud enterprise intune License Group",
+   "kind": "vertex",
+   "width": 50,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.license_group",
+   "shapeNames": [
+    "mxgraph.mscae.intune.license_group"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:495"
+  },
+  {
+   "id": "mscaeIntuneFlat-32-license-installation",
+   "title": "License Installation",
+   "tags": "mscae license installation ms microsoft cloud enterprise intune License Installation",
+   "kind": "vertex",
+   "width": 50,
+   "height": 43,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.license_installation",
+   "shapeNames": [
+    "mxgraph.mscae.intune.license_installation"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:497"
+  },
+  {
+   "id": "mscaeIntuneFlat-33-ms-intune",
+   "title": "MS Intune",
+   "tags": "mscae microsoft ms microsoft cloud enterprise intune MS Intune",
+   "kind": "vertex",
+   "width": 50,
+   "height": 40,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.microsoft_intune",
+   "shapeNames": [
+    "mxgraph.mscae.intune.microsoft_intune"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:499"
+  },
+  {
+   "id": "mscaeIntuneFlat-34-mobile-inventory",
+   "title": "Mobile Inventory",
+   "tags": "mscae mobile inventory ms microsoft cloud enterprise intune Mobile Inventory",
+   "kind": "vertex",
+   "width": 44,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.mobile_inventory",
+   "shapeNames": [
+    "mxgraph.mscae.intune.mobile_inventory"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:501"
+  },
+  {
+   "id": "mscaeIntuneFlat-35-noncompliant-apps",
+   "title": "Noncompliant Apps",
+   "tags": "mscae noncompliant apps applications ms microsoft cloud enterprise intune Noncompliant Apps",
+   "kind": "vertex",
+   "width": 46,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.noncompliant_apps",
+   "shapeNames": [
+    "mxgraph.mscae.intune.noncompliant_apps"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:503"
+  },
+  {
+   "id": "mscaeIntuneFlat-36-policy",
+   "title": "Policy",
+   "tags": "mscae policy ms microsoft cloud enterprise intune Policy",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.policy",
+   "shapeNames": [
+    "mxgraph.mscae.intune.policy"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:505"
+  },
+  {
+   "id": "mscaeIntuneFlat-37-protection",
+   "title": "Protection",
+   "tags": "mscae protection ms microsoft cloud enterprise intune Protection",
+   "kind": "vertex",
+   "width": 48,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.protection",
+   "shapeNames": [
+    "mxgraph.mscae.intune.protection"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:507"
+  },
+  {
+   "id": "mscaeIntuneFlat-38-reports",
+   "title": "Reports",
+   "tags": "mscae reports ms microsoft cloud enterprise intune Reports",
+   "kind": "vertex",
+   "width": 46,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.reports",
+   "shapeNames": [
+    "mxgraph.mscae.intune.reports"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:509"
+  },
+  {
+   "id": "mscaeIntuneFlat-39-settings",
+   "title": "Settings",
+   "tags": "mscae settings ms microsoft cloud enterprise intune Settings",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.enterprise.settings",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.settings"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:511"
+  },
+  {
+   "id": "mscaeIntuneFlat-40-subscription-portal",
+   "title": "Subscription Portal",
+   "tags": "mscae subscription portal ms microsoft cloud enterprise intune Subscription Portal",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.subscription_portal",
+   "shapeNames": [
+    "mxgraph.mscae.intune.subscription_portal"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:513"
+  },
+  {
+   "id": "mscaeIntuneFlat-41-terms-and-conditions",
+   "title": "Terms and Conditions",
+   "tags": "mscae terms and conditions ms microsoft cloud enterprise intune Terms and Conditions",
+   "kind": "vertex",
+   "width": 37,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.terms_and_conditions",
+   "shapeNames": [
+    "mxgraph.mscae.intune.terms_and_conditions"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:515"
+  },
+  {
+   "id": "mscaeIntuneFlat-42-update",
+   "title": "Update",
+   "tags": "mscae update ms microsoft cloud enterprise intune Update",
+   "kind": "vertex",
+   "width": 48,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.update",
+   "shapeNames": [
+    "mxgraph.mscae.intune.update"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:517"
+  },
+  {
+   "id": "mscaeIntuneFlat-43-user-group",
+   "title": "User Group",
+   "tags": "mscae user group ms microsoft cloud enterprise intune User Group",
+   "kind": "vertex",
+   "width": 50,
+   "height": 37,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.user_group",
+   "shapeNames": [
+    "mxgraph.mscae.intune.user_group"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:519"
+  },
+  {
+   "id": "mscaeIntuneFlat-44-user-management",
+   "title": "User Management",
+   "tags": "mscae user management ms microsoft cloud enterprise intune User Management",
+   "kind": "vertex",
+   "width": 50,
+   "height": 46,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.user_management",
+   "shapeNames": [
+    "mxgraph.mscae.intune.user_management"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:521"
+  }
+ ]
+}

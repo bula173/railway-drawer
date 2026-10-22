@@ -1,0 +1,22 @@
+{
+ "id": "azure2Menu",
+ "title": "Azure / Menu",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Azure2.js:8",
+ "entries": [
+  {
+   "id": "azure2Menu-0-keys",
+   "title": "Keys",
+   "tags": "azure2 keys azure menu  Keys",
+   "kind": "vertex",
+   "width": 64,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/menu/Keys.svg;points=[[0.525,0,0],[0.431,1,0],[0,0.422,0],[1,0.461,0],[0.744,0.1,0],[0.957,0.777,0],[0.343,0.992,0],[0.059,0.27,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1304"
+  }
+ ]
+}

@@ -1,0 +1,414 @@
+{
+ "id": "gmdlIcons",
+ "title": "GMDL / Icons",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:7",
+ "entries": [
+  {
+   "id": "gmdlIcons-0-edit",
+   "title": "Edit",
+   "tags": "gmdl edit gmdl google media design library icon  Edit",
+   "kind": "vertex",
+   "width": 20,
+   "height": 20,
+   "style": "html=1;dashed=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.edit;strokeColor=none;fillColor=#737373;shadow=0;sketch=0;",
+   "shapeNames": [
+    "mxgraph.gmdl.edit"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:853"
+  },
+  {
+   "id": "gmdlIcons-1-star",
+   "title": "Star",
+   "tags": "gmdl star gmdl google media design library icon  Star",
+   "kind": "vertex",
+   "width": 20,
+   "height": 20,
+   "style": "html=1;dashed=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.star;strokeColor=none;fillColor=#737373;shadow=0;sketch=0;",
+   "shapeNames": [
+    "mxgraph.gmdl.star"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:855"
+  },
+  {
+   "id": "gmdlIcons-2-heart",
+   "title": "Heart",
+   "tags": "gmdl heart gmdl google media design library icon  Heart",
+   "kind": "vertex",
+   "width": 20,
+   "height": 18,
+   "style": "html=1;dashed=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.heart;strokeColor=none;fillColor=#737373;shadow=0;sketch=0;",
+   "shapeNames": [
+    "mxgraph.gmdl.heart"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:857"
+  },
+  {
+   "id": "gmdlIcons-3-reply",
+   "title": "Reply",
+   "tags": "gmdl reply gmdl google media design library icon  Reply",
+   "kind": "vertex",
+   "width": 20,
+   "height": 18,
+   "style": "html=1;dashed=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.reply;strokeColor=none;fillColor=#737373;shadow=0;sketch=0;",
+   "shapeNames": [
+    "mxgraph.gmdl.reply"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:859"
+  },
+  {
+   "id": "gmdlIcons-4-users",
+   "title": "Users",
+   "tags": "gmdl users gmdl google media design library icon  Users",
+   "kind": "vertex",
+   "width": 24,
+   "height": 16,
+   "style": "html=1;dashed=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.users;strokeColor=none;fillColor=#737373;shadow=0;sketch=0;",
+   "shapeNames": [
+    "mxgraph.gmdl.users"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:861"
+  },
+  {
+   "id": "gmdlIcons-5-gps",
+   "title": "GPS",
+   "tags": "gmdl gps gmdl google media design library icon  GPS",
+   "kind": "vertex",
+   "width": 20,
+   "height": 20,
+   "style": "html=1;dashed=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.gps;strokeColor=#737373;fillColor=#737373;shadow=0;strokeWidth=2;sketch=0;",
+   "shapeNames": [
+    "mxgraph.gmdl.gps"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:863"
+  },
+  {
+   "id": "gmdlIcons-6-share",
+   "title": "Share",
+   "tags": "gmdl share gmdl google media design library icon  Share",
+   "kind": "vertex",
+   "width": 20,
+   "height": 20,
+   "style": "html=1;dashed=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.share2;strokeColor=none;fillColor=#737373;shadow=0;sketch=0;",
+   "shapeNames": [
+    "mxgraph.gmdl.share2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:865"
+  },
+  {
+   "id": "gmdlIcons-7-navigate",
+   "title": "Navigate",
+   "tags": "gmdl navigate gmdl google media design library icon  Navigate",
+   "kind": "vertex",
+   "width": 20,
+   "height": 20,
+   "style": "html=1;dashed=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.navigate;strokeColor=none;fillColor=#737373;shadow=0;sketch=0;",
+   "shapeNames": [
+    "mxgraph.gmdl.navigate"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:867"
+  },
+  {
+   "id": "gmdlIcons-8-chat",
+   "title": "Chat",
+   "tags": "gmdl chat gmdl google media design library icon  Chat",
+   "kind": "vertex",
+   "width": 20,
+   "height": 20,
+   "style": "html=1;dashed=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.chat;strokeColor=none;fillColor=#737373;shadow=0;sketch=0;",
+   "shapeNames": [
+    "mxgraph.gmdl.chat"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:869"
+  },
+  {
+   "id": "gmdlIcons-9-voice",
+   "title": "Voice",
+   "tags": "gmdl voice gmdl google media design library icon  Voice",
+   "kind": "vertex",
+   "width": 12,
+   "height": 20,
+   "style": "html=1;dashed=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.voice;strokeColor=#737373;fillColor=#737373;shadow=0;strokeWidth=2;sketch=0;",
+   "shapeNames": [
+    "mxgraph.gmdl.voice"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:871"
+  },
+  {
+   "id": "gmdlIcons-10-google",
+   "title": "Google",
+   "tags": "gmdl google gmdl google media design library icon  Google",
+   "kind": "vertex",
+   "width": 16,
+   "height": 24,
+   "style": "html=1;dashed=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.google;strokeColor=none;fillColor=#737373;shadow=0;sketch=0;",
+   "shapeNames": [
+    "mxgraph.gmdl.google"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:873"
+  },
+  {
+   "id": "gmdlIcons-11-video",
+   "title": "Video",
+   "tags": "gmdl video gmdl google media design library icon  Video",
+   "kind": "vertex",
+   "width": 24,
+   "height": 16,
+   "style": "html=1;dashed=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.video;strokeColor=none;fillColor=#737373;shadow=0;sketch=0;",
+   "shapeNames": [
+    "mxgraph.gmdl.video"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:875"
+  },
+  {
+   "id": "gmdlIcons-12-gallery",
+   "title": "Gallery",
+   "tags": "gmdl gallery gmdl google media design library icon  Gallery",
+   "kind": "vertex",
+   "width": 24,
+   "height": 22,
+   "style": "html=1;dashed=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.gallery;strokeColor=none;fillColor=#737373;shadow=0;sketch=0;",
+   "shapeNames": [
+    "mxgraph.gmdl.gallery"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:877"
+  },
+  {
+   "id": "gmdlIcons-13-birthday",
+   "title": "Birthday",
+   "tags": "gmdl birthday gmdl google media design library icon  Birthday",
+   "kind": "vertex",
+   "width": 24,
+   "height": 22,
+   "style": "html=1;dashed=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.birthday;strokeColor=none;fillColor=#737373;shadow=0;sketch=0;",
+   "shapeNames": [
+    "mxgraph.gmdl.birthday"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:879"
+  },
+  {
+   "id": "gmdlIcons-14-cloud",
+   "title": "Cloud",
+   "tags": "gmdl cloud gmdl google media design library icon  Cloud",
+   "kind": "vertex",
+   "width": 24,
+   "height": 16,
+   "style": "html=1;dashed=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.cloud;strokeColor=none;fillColor=#737373;shadow=0;sketch=0;",
+   "shapeNames": [
+    "mxgraph.gmdl.cloud"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:881"
+  },
+  {
+   "id": "gmdlIcons-15-x",
+   "title": "X",
+   "tags": "gmdl x gmdl google media design library icon  X",
+   "kind": "vertex",
+   "width": 16,
+   "height": 16,
+   "style": "html=1;dashed=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.x;strokeColor=#737373;fillColor=#737373;shadow=0;strokeWidth=2;sketch=0;",
+   "shapeNames": [
+    "mxgraph.gmdl.x"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:883"
+  },
+  {
+   "id": "gmdlIcons-16-bookmark",
+   "title": "Bookmark",
+   "tags": "gmdl bookmark gmdl google media design library icon  Bookmark",
+   "kind": "vertex",
+   "width": 12,
+   "height": 20,
+   "style": "html=1;dashed=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.bookmark;strokeColor=none;fillColor=#737373;shadow=0;sketch=0;",
+   "shapeNames": [
+    "mxgraph.gmdl.bookmark"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:885"
+  },
+  {
+   "id": "gmdlIcons-17-calendar",
+   "title": "Calendar",
+   "tags": "gmdl calendar gmdl google media design library icon  Calendar",
+   "kind": "vertex",
+   "width": 20,
+   "height": 20,
+   "style": "html=1;dashed=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.calendar;strokeColor=none;fillColor=#737373;shadow=0;sketch=0;",
+   "shapeNames": [
+    "mxgraph.gmdl.calendar"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:887"
+  },
+  {
+   "id": "gmdlIcons-18-attraction",
+   "title": "Attraction",
+   "tags": "gmdl attraction gmdl google media design library icon  Attraction",
+   "kind": "vertex",
+   "width": 22,
+   "height": 18,
+   "style": "html=1;dashed=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.attractions;strokeColor=#ffffff;fillColor=#737373;shadow=0;strokeWidth=1;sketch=0;",
+   "shapeNames": [
+    "mxgraph.gmdl.attractions"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:889"
+  },
+  {
+   "id": "gmdlIcons-19-dining",
+   "title": "Dining",
+   "tags": "gmdl dining gmdl google media design library icon  Dining",
+   "kind": "vertex",
+   "width": 18,
+   "height": 20,
+   "style": "html=1;dashed=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.dining;strokeColor=none;fillColor=#737373;shadow=0;sketch=0;",
+   "shapeNames": [
+    "mxgraph.gmdl.dining"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:891"
+  },
+  {
+   "id": "gmdlIcons-20-education",
+   "title": "Education",
+   "tags": "gmdl education gmdl google media design library icon  Education",
+   "kind": "vertex",
+   "width": 20,
+   "height": 20,
+   "style": "html=1;dashed=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.education;strokeColor=none;fillColor=#737373;shadow=0;sketch=0;",
+   "shapeNames": [
+    "mxgraph.gmdl.education"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:893"
+  },
+  {
+   "id": "gmdlIcons-21-family",
+   "title": "Family",
+   "tags": "gmdl family gmdl google media design library icon  Family",
+   "kind": "vertex",
+   "width": 20,
+   "height": 20,
+   "style": "html=1;dashed=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.family;strokeColor=none;fillColor=#737373;shadow=0;sketch=0;",
+   "shapeNames": [
+    "mxgraph.gmdl.family"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:895"
+  },
+  {
+   "id": "gmdlIcons-22-health",
+   "title": "Health",
+   "tags": "gmdl health gmdl google media design library icon  Health",
+   "kind": "vertex",
+   "width": 20,
+   "height": 18,
+   "style": "html=1;dashed=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.health;strokeColor=none;fillColor=#737373;shadow=0;sketch=0;",
+   "shapeNames": [
+    "mxgraph.gmdl.health"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:897"
+  },
+  {
+   "id": "gmdlIcons-23-office",
+   "title": "Office",
+   "tags": "gmdl office gmdl google media design library icon  Office",
+   "kind": "vertex",
+   "width": 20,
+   "height": 20,
+   "style": "html=1;dashed=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.office;strokeColor=none;fillColor=#737373;shadow=0;sketch=0;",
+   "shapeNames": [
+    "mxgraph.gmdl.office"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:899"
+  },
+  {
+   "id": "gmdlIcons-24-promotion",
+   "title": "Promotion",
+   "tags": "gmdl promotion gmdl google media design library icon  Promotion",
+   "kind": "vertex",
+   "width": 20,
+   "height": 20,
+   "style": "html=1;dashed=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.promotions;strokeColor=none;fillColor=#737373;shadow=0;sketch=0;",
+   "shapeNames": [
+    "mxgraph.gmdl.promotions"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:901"
+  },
+  {
+   "id": "gmdlIcons-25-radio",
+   "title": "Radio",
+   "tags": "gmdl radio gmdl google media design library icon  Radio",
+   "kind": "vertex",
+   "width": 20,
+   "height": 20,
+   "style": "html=1;dashed=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.radio;strokeColor=none;fillColor=#737373;shadow=0;sketch=0;",
+   "shapeNames": [
+    "mxgraph.gmdl.radio"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:903"
+  },
+  {
+   "id": "gmdlIcons-26-recipe",
+   "title": "Recipe",
+   "tags": "gmdl recipe gmdl google media design library icon  Recipe",
+   "kind": "vertex",
+   "width": 20,
+   "height": 20,
+   "style": "html=1;dashed=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.recipes;strokeColor=none;fillColor=#737373;shadow=0;sketch=0;",
+   "shapeNames": [
+    "mxgraph.gmdl.recipes"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:905"
+  },
+  {
+   "id": "gmdlIcons-27-sports",
+   "title": "Sports",
+   "tags": "gmdl sports gmdl google media design library icon  Sports",
+   "kind": "vertex",
+   "width": 20,
+   "height": 20,
+   "style": "html=1;dashed=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.sports;strokeColor=none;fillColor=#737373;shadow=0;sketch=0;",
+   "shapeNames": [
+    "mxgraph.gmdl.sports"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:907"
+  },
+  {
+   "id": "gmdlIcons-28-travel",
+   "title": "Travel",
+   "tags": "gmdl travel gmdl google media design library icon  Travel",
+   "kind": "vertex",
+   "width": 20,
+   "height": 20,
+   "style": "html=1;dashed=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.travel;strokeColor=none;fillColor=#737373;shadow=0;direction=south;sketch=0;",
+   "shapeNames": [
+    "mxgraph.gmdl.travel"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:909"
+  }
+ ]
+}

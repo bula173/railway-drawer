@@ -1,0 +1,232 @@
+{
+ "id": "veeam2States",
+ "title": "Veeam / States",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:7",
+ "entries": [
+  {
+   "id": "veeam2States-0-turn-on-off",
+   "title": "Turn on / off",
+   "tags": "veeam2 turn on off veeam vm vmware virtual machine states Turn on / off",
+   "kind": "vertex",
+   "width": 21,
+   "height": 21,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.turn_on_off;",
+   "shapeNames": [
+    "mxgraph.veeam2.turn_on_off"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:641"
+  },
+  {
+   "id": "veeam2States-1-running-playing",
+   "title": "Running / Playing",
+   "tags": "veeam2 running playing veeam vm vmware virtual machine states Running / Playing",
+   "kind": "vertex",
+   "width": 21,
+   "height": 21,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.running_playing;",
+   "shapeNames": [
+    "mxgraph.veeam2.running_playing"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:643"
+  },
+  {
+   "id": "veeam2States-2-critical",
+   "title": "Critical",
+   "tags": "veeam2 critical veeam vm vmware virtual machine states Critical",
+   "kind": "vertex",
+   "width": 21,
+   "height": 21,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.critical;",
+   "shapeNames": [
+    "mxgraph.veeam2.critical"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:645"
+  },
+  {
+   "id": "veeam2States-3-failed",
+   "title": "Failed",
+   "tags": "veeam2 failed veeam vm vmware virtual machine states Failed",
+   "kind": "vertex",
+   "width": 21,
+   "height": 21,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.failed;",
+   "shapeNames": [
+    "mxgraph.veeam2.failed"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:647"
+  },
+  {
+   "id": "veeam2States-4-unavailable",
+   "title": "Unavailable",
+   "tags": "veeam2 unavailable veeam vm vmware virtual machine states Unavailable",
+   "kind": "vertex",
+   "width": 21,
+   "height": 21,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.unavailable;",
+   "shapeNames": [
+    "mxgraph.veeam2.unavailable"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:649"
+  },
+  {
+   "id": "veeam2States-5-paused-saved",
+   "title": "Paused / saved",
+   "tags": "veeam2 paused veeam vm vmware virtual machine states Paused / saved",
+   "kind": "vertex",
+   "width": 21,
+   "height": 21,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.paused;",
+   "shapeNames": [
+    "mxgraph.veeam2.paused"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:651"
+  },
+  {
+   "id": "veeam2States-6-zipped",
+   "title": "Zipped",
+   "tags": "veeam2 zipped veeam vm vmware virtual machine states Zipped",
+   "kind": "vertex",
+   "width": 21,
+   "height": 21,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.zipped;",
+   "shapeNames": [
+    "mxgraph.veeam2.zipped"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:653"
+  },
+  {
+   "id": "veeam2States-7-recording",
+   "title": "Recording",
+   "tags": "veeam2 recording veeam vm vmware virtual machine states Recording",
+   "kind": "vertex",
+   "width": 21,
+   "height": 21,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.recording;",
+   "shapeNames": [
+    "mxgraph.veeam2.recording"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:655"
+  },
+  {
+   "id": "veeam2States-8-locked",
+   "title": "Locked",
+   "tags": "veeam2 locked veeam vm vmware virtual machine states Locked",
+   "kind": "vertex",
+   "width": 21,
+   "height": 21,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.locked;",
+   "shapeNames": [
+    "mxgraph.veeam2.locked"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:657"
+  },
+  {
+   "id": "veeam2States-9-unlocked",
+   "title": "Unlocked",
+   "tags": "veeam2 unlocked veeam vm vmware virtual machine states Unlocked",
+   "kind": "vertex",
+   "width": 21,
+   "height": 21,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.unlocked;",
+   "shapeNames": [
+    "mxgraph.veeam2.unlocked"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:659"
+  },
+  {
+   "id": "veeam2States-10-encrypted",
+   "title": "encrypted",
+   "tags": "veeam2 enrypted veeam vm vmware virtual machine states encrypted",
+   "kind": "vertex",
+   "width": 21,
+   "height": 21,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.encrypted;",
+   "shapeNames": [
+    "mxgraph.veeam2.encrypted"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:661"
+  },
+  {
+   "id": "veeam2States-11-delayed",
+   "title": "Delayed",
+   "tags": "veeam2 delayed veeam vm vmware virtual machine states Delayed",
+   "kind": "vertex",
+   "width": 21,
+   "height": 21,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.delayed;",
+   "shapeNames": [
+    "mxgraph.veeam2.delayed"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:663"
+  },
+  {
+   "id": "veeam2States-12-restored",
+   "title": "Restored",
+   "tags": "veeam2 restored veeam vm vmware virtual machine states Restored",
+   "kind": "vertex",
+   "width": 21,
+   "height": 21,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.restored;",
+   "shapeNames": [
+    "mxgraph.veeam2.restored"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:665"
+  },
+  {
+   "id": "veeam2States-13-exported",
+   "title": "Exported",
+   "tags": "veeam2 exported veeam vm vmware virtual machine states Exported",
+   "kind": "vertex",
+   "width": 21,
+   "height": 21,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.exported;",
+   "shapeNames": [
+    "mxgraph.veeam2.exported"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:667"
+  },
+  {
+   "id": "veeam2States-14-ejected",
+   "title": "Ejected",
+   "tags": "veeam2 ejected veeam vm vmware virtual machine states Ejected",
+   "kind": "vertex",
+   "width": 21,
+   "height": 21,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.ejected;",
+   "shapeNames": [
+    "mxgraph.veeam2.ejected"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:669"
+  },
+  {
+   "id": "veeam2States-15-instant",
+   "title": "Instant",
+   "tags": "veeam2 instant veeam vm vmware virtual machine states Instant",
+   "kind": "vertex",
+   "width": 21,
+   "height": 21,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.instant;",
+   "shapeNames": [
+    "mxgraph.veeam2.instant"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:671"
+  }
+ ]
+}

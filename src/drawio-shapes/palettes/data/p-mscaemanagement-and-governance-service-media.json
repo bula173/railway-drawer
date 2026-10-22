@@ -1,0 +1,64 @@
+{
+ "id": "mscaeManagement and Governance Service Media",
+ "title": "CAE / Management and Governance Service - Media",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:8",
+ "entries": [
+  {
+   "id": "mscaeManagement and Governance Service Media-0-azure-media-player",
+   "title": "Azure Media Player",
+   "tags": "mscae azure media player ms microsoft cloud enterprise management and governance service media Azure Media Player",
+   "kind": "vertex",
+   "width": 45,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Azure_Media_Player.svg;points=[[0.5,0.05,0],[0.499,0.95,0],[0,0.497,0],[1,0.504,0],[0.877,0.203,0],[0.88,0.795,0],[0.117,0.792,0],[0.117,0.208,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1192"
+  },
+  {
+   "id": "mscaeManagement and Governance Service Media-1-content-protection",
+   "title": "Content Protection",
+   "tags": "mscae content protection ms microsoft cloud enterprise management and governance service media Content Protection",
+   "kind": "vertex",
+   "width": 45,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Content_Protection.svg;points=[[0.497,0,0],[0.499,1,0],[0,0.5,0],[0.997,0.5,0],[0.777,0.093,0],[0.975,0.967,0],[0.023,0.965,0],[0.225,0.085,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1194"
+  },
+  {
+   "id": "mscaeManagement and Governance Service Media-2-media-encoding",
+   "title": "Media Encoding",
+   "tags": "mscae media encoding ms microsoft cloud enterprise management and governance service media Media Encoding",
+   "kind": "vertex",
+   "width": 43,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Media_Encoding.svg;points=[[0.509,0,0],[0.5,0.953,0],[0,0.487,0],[0.988,0.417,0],[0.921,0.075,0],[0.927,0.75,0],[0.146,0.95,0],[0.216,0.025,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1196"
+  },
+  {
+   "id": "mscaeManagement and Governance Service Media-3-media-on-demand",
+   "title": "Media On Demand",
+   "tags": "mscae media on demand ms microsoft cloud enterprise management and governance service media Media On Demand",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Media_On_Demand.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.962,0.03,0],[0.97,0.962,0],[0.03,0.962,0],[0.04,0.028,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1198"
+  }
+ ]
+}

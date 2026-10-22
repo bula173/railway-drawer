@@ -1,0 +1,113 @@
+{
+ "id": "aws4bMigration",
+ "title": "AWS18 / Migration",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:8",
+ "entries": [
+  {
+   "id": "aws4bMigration-0-entry",
+   "title": "",
+   "tags": "aws4 migration hub aws amazon web service migration ",
+   "kind": "vertex",
+   "width": 80,
+   "height": 110,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.migration_hub;",
+   "value": "AWS Migration Hub",
+   "shapeNames": [
+    "mxgraph.aws4.productIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:858"
+  },
+  {
+   "id": "aws4bMigration-1-entry",
+   "title": "",
+   "tags": "aws4 application discovery service aws amazon web service migration ",
+   "kind": "vertex",
+   "width": 80,
+   "height": 135,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.application_discovery_service;",
+   "value": "AWS Application Discovery Service",
+   "shapeNames": [
+    "mxgraph.aws4.productIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:860"
+  },
+  {
+   "id": "aws4bMigration-2-entry",
+   "title": "",
+   "tags": "aws4 db database migration service aws amazon web service migration ",
+   "kind": "vertex",
+   "width": 80,
+   "height": 120,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.database_migration_service;",
+   "value": "AWS Database Migration Service",
+   "shapeNames": [
+    "mxgraph.aws4.productIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:862"
+  },
+  {
+   "id": "aws4bMigration-3-entry",
+   "title": "",
+   "tags": "aws4 server migration service aws amazon web service migration ",
+   "kind": "vertex",
+   "width": 80,
+   "height": 120,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.server_migration_service;",
+   "value": "AWS Server Migration Service",
+   "shapeNames": [
+    "mxgraph.aws4.productIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:864"
+  },
+  {
+   "id": "aws4bMigration-4-entry",
+   "title": "",
+   "tags": "aws4 snowball aws amazon web service migration ",
+   "kind": "vertex",
+   "width": 80,
+   "height": 100,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.snowball;",
+   "value": "AWS Snowball",
+   "shapeNames": [
+    "mxgraph.aws4.productIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:866"
+  },
+  {
+   "id": "aws4bMigration-5-entry",
+   "title": "",
+   "tags": "aws4 snowball edge aws amazon web service migration ",
+   "kind": "vertex",
+   "width": 80,
+   "height": 110,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.snowball_edge;",
+   "value": "AWS Snowball Edge",
+   "shapeNames": [
+    "mxgraph.aws4.productIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:868"
+  },
+  {
+   "id": "aws4bMigration-6-entry",
+   "title": "",
+   "tags": "aws4 snowmobile aws amazon web service migration ",
+   "kind": "vertex",
+   "width": 80,
+   "height": 110,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.snowmobile;",
+   "value": "AWS Snowmobile",
+   "shapeNames": [
+    "mxgraph.aws4.productIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:870"
+  }
+ ]
+}

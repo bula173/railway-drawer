@@ -1,0 +1,344 @@
+{
+ "id": "aws3Networking and Content Delivery",
+ "title": "AWS17 / Network and Content Delivery",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-AWS3.js:8",
+ "entries": [
+  {
+   "id": "aws3Networking and Content Delivery-0-cloudfront",
+   "title": "CloudFront",
+   "tags": "aws3 cloudfront cloud front aws amazon web service network and content delivery CloudFront",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 93,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.cloudfront;fillColor=#F58536;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.cloudfront"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:851"
+  },
+  {
+   "id": "aws3Networking and Content Delivery-1-route-53",
+   "title": "Route 53",
+   "tags": "aws3 route 53 aws amazon web service network and content delivery Route 53",
+   "kind": "vertex",
+   "width": 70.5,
+   "height": 85.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.route_53;fillColor=#F58536;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.route_53"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:853"
+  },
+  {
+   "id": "aws3Networking and Content Delivery-2-vpc",
+   "title": "VPC",
+   "tags": "aws3 vpc virtual private cloud aws amazon web service network and content delivery VPC",
+   "kind": "vertex",
+   "width": 67.5,
+   "height": 81,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.vpc;fillColor=#F58536;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.vpc"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:855"
+  },
+  {
+   "id": "aws3Networking and Content Delivery-3-network-access-controllist",
+   "title": "Network Access Controllist",
+   "tags": "aws3 network access controllist aws amazon web service network and content delivery Network Access Controllist",
+   "kind": "vertex",
+   "width": 69,
+   "height": 72,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.network_access_controllist;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.network_access_controllist"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:857"
+  },
+  {
+   "id": "aws3Networking and Content Delivery-4-elastic-load-balancing",
+   "title": "Elastic Load Balancing",
+   "tags": "aws3 elastic load balancing aws amazon web service network and content delivery Elastic Load Balancing",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 93,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.elastic_load_balancing;fillColor=#F58536;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.elastic_load_balancing"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:859"
+  },
+  {
+   "id": "aws3Networking and Content Delivery-5-direct-connect",
+   "title": "Direct Connect",
+   "tags": "aws3 direct connect aws amazon web service network and content delivery Direct Connect",
+   "kind": "vertex",
+   "width": 67.5,
+   "height": 81,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.direct_connect;fillColor=#F58536;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.direct_connect"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:861"
+  },
+  {
+   "id": "aws3Networking and Content Delivery-6-hosted-zone",
+   "title": "Hosted Zone",
+   "tags": "aws3 hosted zone aws amazon web service network and content delivery Hosted Zone",
+   "kind": "vertex",
+   "width": 63,
+   "height": 64.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.hosted_zone;fillColor=#F58536;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.hosted_zone"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:863"
+  },
+  {
+   "id": "aws3Networking and Content Delivery-7-route-table",
+   "title": "Route Table",
+   "tags": "aws3 route table aws amazon web service network and content delivery Route Table",
+   "kind": "vertex",
+   "width": 75,
+   "height": 69,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.route_table;fillColor=#F58536;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.route_table"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:865"
+  },
+  {
+   "id": "aws3Networking and Content Delivery-8-customer-gateway",
+   "title": "Customer Gateway",
+   "tags": "aws3 customer gateway aws amazon web service network and content delivery Customer Gateway",
+   "kind": "vertex",
+   "width": 69,
+   "height": 72,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.customer_gateway;fillColor=#F58536;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.customer_gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:867"
+  },
+  {
+   "id": "aws3Networking and Content Delivery-9-endpoints",
+   "title": "Endpoints",
+   "tags": "aws3 endpoints aws amazon web service network and content delivery Endpoints",
+   "kind": "vertex",
+   "width": 69,
+   "height": 72,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.endpoints;fillColor=#F58536;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.endpoints"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:869"
+  },
+  {
+   "id": "aws3Networking and Content Delivery-10-flow-logs",
+   "title": "Flow Logs",
+   "tags": "aws3 flow logs aws amazon web service network and content delivery Flow Logs",
+   "kind": "vertex",
+   "width": 69,
+   "height": 72,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.flow_logs;fillColor=#F58536;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.flow_logs"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:871"
+  },
+  {
+   "id": "aws3Networking and Content Delivery-11-internet-gateway",
+   "title": "Internet Gateway",
+   "tags": "aws3 internet gateway aws amazon web service network and content delivery Internet Gateway",
+   "kind": "vertex",
+   "width": 69,
+   "height": 72,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.internet_gateway;fillColor=#F58536;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.internet_gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:873"
+  },
+  {
+   "id": "aws3Networking and Content Delivery-12-router",
+   "title": "Router",
+   "tags": "aws3 router aws amazon web service network and content delivery Router",
+   "kind": "vertex",
+   "width": 69,
+   "height": 72,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.router;fillColor=#F58536;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:875"
+  },
+  {
+   "id": "aws3Networking and Content Delivery-13-vpc-nat-gateway",
+   "title": "VPC NAT Gateway",
+   "tags": "aws3 vpc nat gateway virtual private cloud aws amazon web service network and content delivery VPC NAT Gateway",
+   "kind": "vertex",
+   "width": 69,
+   "height": 72,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.vpc_nat_gateway;fillColor=#F58536;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.vpc_nat_gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:877"
+  },
+  {
+   "id": "aws3Networking and Content Delivery-14-vpc-peering",
+   "title": "VPC Peering",
+   "tags": "aws3 vpc peering virtual private cloud aws amazon web service network and content delivery VPC Peering",
+   "kind": "vertex",
+   "width": 69,
+   "height": 72,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.vpc_peering;fillColor=#F58536;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.vpc_peering"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:879"
+  },
+  {
+   "id": "aws3Networking and Content Delivery-15-vpn-connection",
+   "title": "VPN Connection",
+   "tags": "aws3 vpn connection aws amazon web service network and content delivery VPN Connection",
+   "kind": "vertex",
+   "width": 58.5,
+   "height": 48,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.vpn_connection;fillColor=#F58536;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.vpn_connection"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:881"
+  },
+  {
+   "id": "aws3Networking and Content Delivery-16-vpn-gateway",
+   "title": "VPN Gateway",
+   "tags": "aws3 vpn gateway aws amazon web service network and content delivery VPN Gateway",
+   "kind": "vertex",
+   "width": 69,
+   "height": 72,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.vpn_gateway;fillColor=#F58536;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.vpn_gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:883"
+  },
+  {
+   "id": "aws3Networking and Content Delivery-17-classic-load-balancer",
+   "title": "Classic Load Balancer",
+   "tags": "aws3 classic load balancer aws amazon web service network and content delivery Classic Load Balancer",
+   "kind": "vertex",
+   "width": 69,
+   "height": 72,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.classic_load_balancer;fillColor=#F58536;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.classic_load_balancer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:885"
+  },
+  {
+   "id": "aws3Networking and Content Delivery-18-elastic-network-adapter",
+   "title": "Elastic Network Adapter",
+   "tags": "aws3 elastic network adapter aws amazon web service network and content delivery Elastic Network Adapter",
+   "kind": "vertex",
+   "width": 75,
+   "height": 90,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.elastic_network_adapter;fillColor=#F58536;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.elastic_network_adapter"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:887"
+  },
+  {
+   "id": "aws3Networking and Content Delivery-19-elastic-network-interface",
+   "title": "Elastic Network Interface",
+   "tags": "aws3 elastic network interface aws amazon web service network and content delivery Elastic Network Interface",
+   "kind": "vertex",
+   "width": 69,
+   "height": 72,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.elastic_network_interface;fillColor=#F58536;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.elastic_network_interface"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:889"
+  },
+  {
+   "id": "aws3Networking and Content Delivery-20-application-load-balancer",
+   "title": "Application Load Balancer",
+   "tags": "aws3 application load balancer aws amazon web service network and content delivery Application Load Balancer",
+   "kind": "vertex",
+   "width": 69,
+   "height": 72,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.application_load_balancer;fillColor=#F58536;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.application_load_balancer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:891"
+  },
+  {
+   "id": "aws3Networking and Content Delivery-21-streaming-distribution",
+   "title": "Streaming Distribution",
+   "tags": "aws3 streaming distribution aws amazon web service network and content delivery Streaming Distribution",
+   "kind": "vertex",
+   "width": 69,
+   "height": 72,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.streaming_distribution;fillColor=#F58536;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.streaming_distribution"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:893"
+  },
+  {
+   "id": "aws3Networking and Content Delivery-22-download-distribution",
+   "title": "Download Distribution",
+   "tags": "aws3 download distribution aws amazon web service network and content delivery Download Distribution",
+   "kind": "vertex",
+   "width": 69,
+   "height": 72,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.download_distribution;fillColor=#F58536;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.download_distribution"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:895"
+  },
+  {
+   "id": "aws3Networking and Content Delivery-23-edge-location",
+   "title": "Edge Location",
+   "tags": "aws3 edge location aws amazon web service network and content delivery Edge Location",
+   "kind": "vertex",
+   "width": 58.5,
+   "height": 64.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.edge_location;fillColor=#F58536;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.edge_location"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:897"
+  }
+ ]
+}

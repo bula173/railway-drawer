@@ -1,0 +1,216 @@
+{
+ "id": "archimate4Relationships and Junctions",
+ "title": "ArchiMate 4 / Relationships and Junctions",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:8",
+ "entries": [
+  {
+   "id": "archimate4Relationships and Junctions-0-aggregation",
+   "title": "Aggregation",
+   "tags": "archimate4  archimate 4 relationship aggregation",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "html=1;startArrow=diamondThin;startFill=0;edgeStyle=elbowEdgeStyle;elbow=vertical;startSize=10;endArrow=none;endFill=0;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:102"
+  },
+  {
+   "id": "archimate4Relationships and Junctions-1-composition",
+   "title": "Composition",
+   "tags": "archimate4  archimate 4 relationship composition",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "html=1;startArrow=diamondThin;startFill=1;edgeStyle=elbowEdgeStyle;elbow=vertical;startSize=10;endArrow=none;endFill=0;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:104"
+  },
+  {
+   "id": "archimate4Relationships and Junctions-2-assignment",
+   "title": "Assignment",
+   "tags": "archimate4  archimate 4 relationship assignment",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "endArrow=block;html=1;endFill=1;startArrow=oval;startFill=1;edgeStyle=elbowEdgeStyle;elbow=vertical;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:106"
+  },
+  {
+   "id": "archimate4Relationships and Junctions-3-realization",
+   "title": "Realization",
+   "tags": "archimate4  archimate 4 relationship realization",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "edgeStyle=elbowEdgeStyle;html=1;endArrow=block;elbow=vertical;endFill=0;dashed=1;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:108"
+  },
+  {
+   "id": "archimate4Relationships and Junctions-4-serving",
+   "title": "Serving",
+   "tags": "archimate4  archimate 4 relationship serving",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "edgeStyle=elbowEdgeStyle;html=1;endArrow=open;elbow=vertical;endFill=1;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:110"
+  },
+  {
+   "id": "archimate4Relationships and Junctions-5-access",
+   "title": "Access",
+   "tags": "archimate4  archimate 4 relationship access",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "edgeStyle=elbowEdgeStyle;html=1;endArrow=none;elbow=vertical;dashed=1;startFill=0;dashPattern=1 4;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:112"
+  },
+  {
+   "id": "archimate4Relationships and Junctions-6-access",
+   "title": "Access",
+   "tags": "archimate4  archimate 4 relationship access",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "edgeStyle=elbowEdgeStyle;html=1;endArrow=open;elbow=vertical;endFill=0;dashed=1;startArrow=open;startFill=0;dashPattern=1 4;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:114"
+  },
+  {
+   "id": "archimate4Relationships and Junctions-7-access",
+   "title": "Access",
+   "tags": "archimate4  archimate 4 relationship access",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "edgeStyle=elbowEdgeStyle;html=1;endArrow=open;elbow=vertical;endFill=0;dashed=1;dashPattern=1 4;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:116"
+  },
+  {
+   "id": "archimate4Relationships and Junctions-8-influence",
+   "title": "Influence",
+   "tags": "archimate 4 relationship influence",
+   "kind": "cells",
+   "width": 160,
+   "height": 0,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"+/-\" style=\"edgeStyle=elbowEdgeStyle;html=1;endArrow=open;elbow=vertical;endFill=0;dashed=1;dashPattern=6 4;\" edge=\"1\" parent=\"1\"><mxGeometry x=\"1\" y=\"10\" relative=\"1\" as=\"geometry\"><mxPoint as=\"sourcePoint\"/><mxPoint x=\"160\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:119"
+  },
+  {
+   "id": "archimate4Relationships and Junctions-9-association",
+   "title": "Association",
+   "tags": "archimate4  archimate 4 relationship association",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "edgeStyle=elbowEdgeStyle;html=1;endArrow=none;elbow=vertical;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:132"
+  },
+  {
+   "id": "archimate4Relationships and Junctions-10-association-directed",
+   "title": "Association (Directed)",
+   "tags": "archimate4  archimate 4 relationship association directed",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "edgeStyle=elbowEdgeStyle;html=1;endArrow=openAsync;elbow=vertical;rounded=0;endFill=0;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:134"
+  },
+  {
+   "id": "archimate4Relationships and Junctions-11-triggering",
+   "title": "Triggering",
+   "tags": "archimate4  archimate 4 relationship triggering",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "edgeStyle=elbowEdgeStyle;html=1;endArrow=block;dashed=0;elbow=vertical;endFill=1;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:136"
+  },
+  {
+   "id": "archimate4Relationships and Junctions-12-flow",
+   "title": "Flow",
+   "tags": "archimate4  archimate 4 relationship flow",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "edgeStyle=elbowEdgeStyle;html=1;endArrow=block;dashed=1;elbow=vertical;endFill=1;dashPattern=6 4;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:138"
+  },
+  {
+   "id": "archimate4Relationships and Junctions-13-specialization",
+   "title": "Specialization",
+   "tags": "archimate4  archimate 4 relationship specialization",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "endArrow=block;html=1;endFill=0;edgeStyle=elbowEdgeStyle;elbow=vertical;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:140"
+  },
+  {
+   "id": "archimate4Relationships and Junctions-14-association-with-multiplicity",
+   "title": "Association with Multiplicity",
+   "tags": "archimate 4 relationship multiplicity cardinality association",
+   "kind": "cells",
+   "width": 160,
+   "height": 0,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"edgeStyle=elbowEdgeStyle;html=1;endArrow=none;elbow=vertical;\" edge=\"1\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint as=\"sourcePoint\"/><mxPoint x=\"160\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"3\" value=\"1\" style=\"edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;\" vertex=\"1\" connectable=\"0\" parent=\"2\"><mxGeometry x=\"-1\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"0..*\" style=\"edgeLabel;resizable=0;html=1;align=right;verticalAlign=bottom;\" vertex=\"1\" connectable=\"0\" parent=\"2\"><mxGeometry x=\"1\" relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:143"
+  },
+  {
+   "id": "archimate4Relationships and Junctions-15-and-junction",
+   "title": "And Junction",
+   "tags": "archimate4  archimate 4 relationship and junction And Junction",
+   "kind": "vertex",
+   "width": 10,
+   "height": 10,
+   "style": "ellipse;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;fillColor=strokeColor",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:166"
+  },
+  {
+   "id": "archimate4Relationships and Junctions-16-or-junction",
+   "title": "Or Junction",
+   "tags": "archimate4  archimate 4 relationship or junction Or Junction",
+   "kind": "vertex",
+   "width": 10,
+   "height": 10,
+   "style": "ellipse;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;fillColor=#ffffff",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:168"
+  }
+ ]
+}

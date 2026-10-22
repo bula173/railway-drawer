@@ -1,0 +1,400 @@
+{
+ "id": "rackHPE Aruba Gateways Controllers",
+ "title": "Rack / HPE Aruba / Gateways and Controllers",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Rack.js:7",
+ "entries": [
+  {
+   "id": "rackHPE Aruba Gateways Controllers-0-aruba-7010-mobility-controller-front",
+   "title": "Aruba 7010 Mobility Controller (front)",
+   "tags": "rack equipment hpe hp aruba hewlett packard enterprise gateway controller 7010 mobility front Aruba 7010 Mobility Controller (front)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.gateways_controllers.aruba_7010_mobility_controller_front;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.gateways_controllers.aruba_7010_mobility_controller_front"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:183"
+  },
+  {
+   "id": "rackHPE Aruba Gateways Controllers-1-aruba-7010-mobility-controller-rear",
+   "title": "Aruba 7010 Mobility Controller (rear)",
+   "tags": "rack equipment hpe hp aruba hewlett packard enterprise gateway controller 7010 mobility rear Aruba 7010 Mobility Controller (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.gateways_controllers.aruba_7010_mobility_controller_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.gateways_controllers.aruba_7010_mobility_controller_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:184"
+  },
+  {
+   "id": "rackHPE Aruba Gateways Controllers-2-aruba-7024-mobility-controller-front",
+   "title": "Aruba 7024 Mobility Controller (front)",
+   "tags": "rack equipment hpe hp aruba hewlett packard enterprise gateway controller 7024 mobility front Aruba 7024 Mobility Controller (front)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.gateways_controllers.aruba_7024_mobility_controller_front;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.gateways_controllers.aruba_7024_mobility_controller_front"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:185"
+  },
+  {
+   "id": "rackHPE Aruba Gateways Controllers-3-aruba-7024-mobility-controller-rear",
+   "title": "Aruba 7024 Mobility Controller (rear)",
+   "tags": "rack equipment hpe hp aruba hewlett packard enterprise gateway controller 7024 mobility rear Aruba 7024 Mobility Controller (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.gateways_controllers.aruba_7024_mobility_controller_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.gateways_controllers.aruba_7024_mobility_controller_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:186"
+  },
+  {
+   "id": "rackHPE Aruba Gateways Controllers-4-aruba-7030-mobility-controller-front",
+   "title": "Aruba 7030 Mobility Controller (front)",
+   "tags": "rack equipment hpe hp aruba hewlett packard enterprise gateway controller 7030 mobility front Aruba 7030 Mobility Controller (front)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.gateways_controllers.aruba_7030_mobility_controller_front;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.gateways_controllers.aruba_7030_mobility_controller_front"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:187"
+  },
+  {
+   "id": "rackHPE Aruba Gateways Controllers-5-aruba-7030-mobility-controller-rear",
+   "title": "Aruba 7030 Mobility Controller (rear)",
+   "tags": "rack equipment hpe hp aruba hewlett packard enterprise gateway controller 7030 mobility rear Aruba 7030 Mobility Controller (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.gateways_controllers.aruba_7030_mobility_controller_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.gateways_controllers.aruba_7030_mobility_controller_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:188"
+  },
+  {
+   "id": "rackHPE Aruba Gateways Controllers-6-aruba-7205-mobility-controller-front",
+   "title": "Aruba 7205 Mobility Controller (front)",
+   "tags": "rack equipment hpe hp aruba hewlett packard enterprise gateway controller 7205 mobility front Aruba 7205 Mobility Controller (front)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.gateways_controllers.aruba_7205_mobility_controller_front;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.gateways_controllers.aruba_7205_mobility_controller_front"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:189"
+  },
+  {
+   "id": "rackHPE Aruba Gateways Controllers-7-aruba-7205-mobility-controller-rear",
+   "title": "Aruba 7205 Mobility Controller (rear)",
+   "tags": "rack equipment hpe hp aruba hewlett packard enterprise gateway controller 7205 mobility rear Aruba 7205 Mobility Controller (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.gateways_controllers.aruba_7205_mobility_controller_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.gateways_controllers.aruba_7205_mobility_controller_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:190"
+  },
+  {
+   "id": "rackHPE Aruba Gateways Controllers-8-aruba-7210-mobility-controller-front",
+   "title": "Aruba 7210 Mobility Controller (front)",
+   "tags": "rack equipment hpe hp aruba hewlett packard enterprise gateway controller 7210 mobility front Aruba 7210 Mobility Controller (front)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.gateways_controllers.aruba_7210_mobility_controller_front;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.gateways_controllers.aruba_7210_mobility_controller_front"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:191"
+  },
+  {
+   "id": "rackHPE Aruba Gateways Controllers-9-aruba-7210-mobility-controller-rear",
+   "title": "Aruba 7210 Mobility Controller (rear)",
+   "tags": "rack equipment hpe hp aruba hewlett packard enterprise gateway controller 7210 mobility rear Aruba 7210 Mobility Controller (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.gateways_controllers.aruba_7210_mobility_controller_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.gateways_controllers.aruba_7210_mobility_controller_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:192"
+  },
+  {
+   "id": "rackHPE Aruba Gateways Controllers-10-aruba-7220-mobility-controller-front",
+   "title": "Aruba 7220 Mobility Controller (front)",
+   "tags": "rack equipment hpe hp aruba hewlett packard enterprise gateway controller 7220 mobility front Aruba 7220 Mobility Controller (front)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.gateways_controllers.aruba_7220_mobility_controller_front;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.gateways_controllers.aruba_7220_mobility_controller_front"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:193"
+  },
+  {
+   "id": "rackHPE Aruba Gateways Controllers-11-aruba-7220-mobility-controller-rear",
+   "title": "Aruba 7220 Mobility Controller (rear)",
+   "tags": "rack equipment hpe hp aruba hewlett packard enterprise gateway controller 7220 mobility rear Aruba 7220 Mobility Controller (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.gateways_controllers.aruba_7220_mobility_controller_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.gateways_controllers.aruba_7220_mobility_controller_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:194"
+  },
+  {
+   "id": "rackHPE Aruba Gateways Controllers-12-aruba-7240-mobility-controller-front",
+   "title": "Aruba 7240 Mobility Controller (front)",
+   "tags": "rack equipment hpe hp aruba hewlett packard enterprise gateway controller 7240 mobility front Aruba 7240 Mobility Controller (front)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.gateways_controllers.aruba_7240_mobility_controller_front;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.gateways_controllers.aruba_7240_mobility_controller_front"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:195"
+  },
+  {
+   "id": "rackHPE Aruba Gateways Controllers-13-aruba-7240-mobility-controller-rear",
+   "title": "Aruba 7240 Mobility Controller (rear)",
+   "tags": "rack equipment hpe hp aruba hewlett packard enterprise gateway controller 7240 mobility rear Aruba 7240 Mobility Controller (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.gateways_controllers.aruba_7240_mobility_controller_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.gateways_controllers.aruba_7240_mobility_controller_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:196"
+  },
+  {
+   "id": "rackHPE Aruba Gateways Controllers-14-aruba-7280-mobility-controller-front",
+   "title": "Aruba 7280 Mobility Controller (front)",
+   "tags": "rack equipment hpe hp aruba hewlett packard enterprise gateway controller 7280 mobility front Aruba 7280 Mobility Controller (front)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.gateways_controllers.aruba_7280_mobility_controller_front;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.gateways_controllers.aruba_7280_mobility_controller_front"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:197"
+  },
+  {
+   "id": "rackHPE Aruba Gateways Controllers-15-aruba-7280-mobility-controller-rear",
+   "title": "Aruba 7280 Mobility Controller (rear)",
+   "tags": "rack equipment hpe hp aruba hewlett packard enterprise gateway controller 7280 mobility rear Aruba 7280 Mobility Controller (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.gateways_controllers.aruba_7280_mobility_controller_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.gateways_controllers.aruba_7280_mobility_controller_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:198"
+  },
+  {
+   "id": "rackHPE Aruba Gateways Controllers-16-aruba-9004-4-port-gbe-gateway-back",
+   "title": "Aruba 9004 4-Port GbE Gateway (back)",
+   "tags": "rack equipment hpe hp aruba hewlett packard enterprise gateway controller 9004 port gbe front Aruba 9004 4-Port GbE Gateway (back)",
+   "kind": "vertex",
+   "width": 71,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.gateways_controllers.aruba_9004_4_port_gbe_gateway_front;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.gateways_controllers.aruba_9004_4_port_gbe_gateway_front"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:199"
+  },
+  {
+   "id": "rackHPE Aruba Gateways Controllers-17-aruba-9004-4-port-gbe-gateway-front",
+   "title": "Aruba 9004 4-Port GbE Gateway (front)",
+   "tags": "rack equipment hpe hp aruba hewlett packard enterprise gateway controller 9004 port gbe back Aruba 9004 4-Port GbE Gateway (front)",
+   "kind": "vertex",
+   "width": 71,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.gateways_controllers.aruba_9004_4_port_gbe_gateway_back;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.gateways_controllers.aruba_9004_4_port_gbe_gateway_back"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:200"
+  },
+  {
+   "id": "rackHPE Aruba Gateways Controllers-18-aruba-9004-dual-rackmount",
+   "title": "Aruba 9004 dual rackmount",
+   "tags": "rack equipment hpe hp aruba hewlett packard enterprise gateway controller 9004 dual rackmount Aruba 9004 dual rackmount",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.gateways_controllers.aruba_9004_dual_rackmount;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.gateways_controllers.aruba_9004_dual_rackmount"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:201"
+  },
+  {
+   "id": "rackHPE Aruba Gateways Controllers-19-aruba-9012-10-port-gbe-gateway-front",
+   "title": "Aruba 9012 10-Port GbE Gateway (front)",
+   "tags": "rack equipment hpe hp aruba hewlett packard enterprise gateway controller 9012 10 port gbe front Aruba 9012 10-Port GbE Gateway (front)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.gateways_controllers.aruba_9012_10_port_gbe_gateway_front;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.gateways_controllers.aruba_9012_10_port_gbe_gateway_front"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:202"
+  },
+  {
+   "id": "rackHPE Aruba Gateways Controllers-20-aruba-9012-10-port-gbe-gateway-back",
+   "title": "Aruba 9012 10-Port GbE Gateway (back)",
+   "tags": "rack equipment hpe hp aruba hewlett packard enterprise gateway controller 9012 10 port gbe back Aruba 9012 10-Port GbE Gateway (back)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.gateways_controllers.aruba_9012_10_port_gbe_gateway_back;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.gateways_controllers.aruba_9012_10_port_gbe_gateway_back"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:203"
+  },
+  {
+   "id": "rackHPE Aruba Gateways Controllers-21-aruba-clearpass-c1000-front",
+   "title": "Aruba ClearPass C1000 (front)",
+   "tags": "rack equipment hpe hp aruba hewlett packard enterprise gateway controller clearpass c1000 front Aruba ClearPass C1000 (front)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.gateways_controllers.aruba_clearpass_c1000_front;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.gateways_controllers.aruba_clearpass_c1000_front"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:204"
+  },
+  {
+   "id": "rackHPE Aruba Gateways Controllers-22-aruba-mobility-master-10k-front",
+   "title": "Aruba Mobility Master 10k (front)",
+   "tags": "rack equipment hpe hp aruba hewlett packard enterprise gateway controller mobility master 10k front Aruba Mobility Master 10k (front)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.gateways_controllers.aruba_mobility_master_10k_front;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.gateways_controllers.aruba_mobility_master_10k_front"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:205"
+  },
+  {
+   "id": "rackHPE Aruba Gateways Controllers-23-aruba-mobility-master-10k-rear",
+   "title": "Aruba Mobility Master 10k (rear)",
+   "tags": "rack equipment hpe hp aruba hewlett packard enterprise gateway controller mobility master 10k rear Aruba Mobility Master 10k (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.gateways_controllers.aruba_mobility_master_10k_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.gateways_controllers.aruba_mobility_master_10k_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:206"
+  },
+  {
+   "id": "rackHPE Aruba Gateways Controllers-24-aruba-mobility-master-1k-front",
+   "title": "Aruba Mobility Master 1k (front)",
+   "tags": "rack equipment hpe hp aruba hewlett packard enterprise gateway controller mobility master 1k front Aruba Mobility Master 1k (front)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.gateways_controllers.aruba_mobility_master_1k_front;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.gateways_controllers.aruba_mobility_master_1k_front"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:207"
+  },
+  {
+   "id": "rackHPE Aruba Gateways Controllers-25-aruba-mobility-master-1k-rear",
+   "title": "Aruba Mobility Master 1k (rear)",
+   "tags": "rack equipment hpe hp aruba hewlett packard enterprise gateway controller mobility master 1k rear Aruba Mobility Master 1k (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.gateways_controllers.aruba_mobility_master_1k_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.gateways_controllers.aruba_mobility_master_1k_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:208"
+  },
+  {
+   "id": "rackHPE Aruba Gateways Controllers-26-aruba-mobility-master-5k-front",
+   "title": "Aruba Mobility Master 5k (front)",
+   "tags": "rack equipment hpe hp aruba hewlett packard enterprise gateway controller mobility master 5k front Aruba Mobility Master 5k (front)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.gateways_controllers.aruba_mobility_master_5k_front;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.gateways_controllers.aruba_mobility_master_5k_front"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:209"
+  },
+  {
+   "id": "rackHPE Aruba Gateways Controllers-27-aruba-mobility-master-5k-rear",
+   "title": "Aruba Mobility Master 5k (rear)",
+   "tags": "rack equipment hpe hp aruba hewlett packard enterprise gateway controller mobility master 5k rear Aruba Mobility Master 5k (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.gateways_controllers.aruba_mobility_master_5k_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.gateways_controllers.aruba_mobility_master_5k_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:210"
+  }
+ ]
+}

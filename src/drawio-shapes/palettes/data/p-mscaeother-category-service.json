@@ -1,0 +1,176 @@
+{
+ "id": "mscaeOther Category Service",
+ "title": "CAE / Other Category Service",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:8",
+ "entries": [
+  {
+   "id": "mscaeOther Category Service-0-cloudsimple-nodes",
+   "title": "CloudSimple Nodes",
+   "tags": "mscae cloudsimple nodes ms microsoft cloud enterprise other category service CloudSimple Nodes",
+   "kind": "vertex",
+   "width": 49,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/CloudSimple_Nodes.svg;points=[[0.5,0.062,0],[0.575,1,0],[0.003,0.256,0],[0.997,0.438,0],[0.987,0.08,0],[0.938,0.955,0],[0.192,0.957,0],[0.062,0.093,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1353"
+  },
+  {
+   "id": "mscaeOther Category Service-1-cloudsimple-services",
+   "title": "CloudSimple Services",
+   "tags": "mscae cloudsimple services ms microsoft cloud enterprise other category service CloudSimple Services",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/CloudSimple_Services.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.99,0.013,0],[0.995,0.982,0],[0.013,0.99,0],[0.018,0.005,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1355"
+  },
+  {
+   "id": "mscaeOther Category Service-2-cloudsimple-virtual-machines",
+   "title": "CloudSimple Virtual Machines",
+   "tags": "mscae cloudsimple virtual machines ms microsoft cloud enterprise other category service CloudSimple Virtual Machines",
+   "kind": "vertex",
+   "width": 50,
+   "height": 32,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/CloudSimple_Virtual_Machines.svg;points=[[0.5,0.046,0],[0.5,0.951,0],[0.005,0.504,0],[0.943,0.5,0],[0.935,0.079,0],[0.905,0.937,0],[0.125,0.906,0],[0.143,0.079,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1357"
+  },
+  {
+   "id": "mscaeOther Category Service-3-controllers",
+   "title": "Controllers",
+   "tags": "mscae controllers ms microsoft cloud enterprise other category service Controllers",
+   "kind": "vertex",
+   "width": 50,
+   "height": 44,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Controllers.svg;points=[[0.496,0,0],[0.5,1,0],[0,0.602,0],[1,0.585,0],[0.735,0.097,0],[1,0.9,0],[0,0.9,0],[0.253,0.111,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1359"
+  },
+  {
+   "id": "mscaeOther Category Service-4-customer-lockbox",
+   "title": "Customer Lockbox",
+   "tags": "mscae customer lockbox ms microsoft cloud enterprise other category service Customer Lockbox",
+   "kind": "vertex",
+   "width": 47,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Customer_Lockbox.svg;points=[[0.5,0.081,0],[0.596,0.998,0],[0,0.5,0],[1,0.807,0],[0.67,0.404,0],[0.986,0.975,0],[0,0.86,0],[0.189,0.068,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1361"
+  },
+  {
+   "id": "mscaeOther Category Service-5-education",
+   "title": "Education",
+   "tags": "mscae education ms microsoft cloud enterprise other category service Education",
+   "kind": "vertex",
+   "width": 50,
+   "height": 39,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Education.svg;points=[[0.497,0,0],[0.497,0.987,0],[0.305,0.494,0],[0.876,0.494,0],[0.99,0.276,0],[0.892,0.766,0],[0.258,0.913,0],[0.01,0.276,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1363"
+  },
+  {
+   "id": "mscaeOther Category Service-6-image-definitions",
+   "title": "Image Definitions",
+   "tags": "mscae image definitions ms microsoft cloud enterprise other category service Image Definitions",
+   "kind": "vertex",
+   "width": 50,
+   "height": 39,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Image_Definitions.svg;points=[[0.41,0,0],[0.41,1,0],[0.1,0.5,0],[0.897,0.729,0],[0.72,0,0],[0.72,1,0],[0.1,1,0],[0.1,0,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1365"
+  },
+  {
+   "id": "mscaeOther Category Service-7-image-versions",
+   "title": "Image Versions",
+   "tags": "mscae image versions ms microsoft cloud enterprise other category service Image Versions",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Image_Versions.svg;points=[[0.5,0,0],[0.44,1,0],[0,0.448,0],[1,0.729,0],[0.68,0,0],[0.78,1,0],[0.1,1,0],[0,0,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1367"
+  },
+  {
+   "id": "mscaeOther Category Service-8-resource-explorer",
+   "title": "Resource Explorer",
+   "tags": "mscae resource explorer ms microsoft cloud enterprise other category service Resource Explorer",
+   "kind": "vertex",
+   "width": 50,
+   "height": 46,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Resource_Explorer.svg;points=[[0.161,0,0],[0.499,1,0],[0,0.482,0],[1,0.59,0],[0.962,0.128,0],[0.987,0.989,0],[0.013,0.989,0],[0,0,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1369"
+  },
+  {
+   "id": "mscaeOther Category Service-9-shared-image-galleries",
+   "title": "Shared Image Galleries",
+   "tags": "mscae shared image galleries ms microsoft cloud enterprise other category service Shared Image Galleries",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Shared_Image_Galleries.svg;points=[[0.5,0,0],[0.5,1,0],[0.02,0.5,0],[0.98,0.5,0],[0.98,0.125,0],[1,1,0],[0,1,0],[0.02,0,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1371"
+  },
+  {
+   "id": "mscaeOther Category Service-10-tenant-status",
+   "title": "Tenant Status",
+   "tags": "mscae tenant status ms microsoft cloud enterprise other category service Tenant Status",
+   "kind": "vertex",
+   "width": 46,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Tenant_Status.svg;points=[[0.323,0,0],[0.689,0.998,0],[0,0.6,0],[0.95,0.639,0],[0.99,0.754,0],[0,0.815,0],[0.182,0.055,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1373"
+  },
+  {
+   "id": "mscaeOther Category Service-11-web-app-firewall",
+   "title": "Web App Firewall",
+   "tags": "mscae web app firewall ms microsoft cloud enterprise other category service Web App Firewall",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Web_App_Firewall.svg;points=[[0.5,0.055,0],[0.42,0.998,0],[0,0.5,0],[0.94,0.5,0],[0.897,0.083,0],[0.837,0.995,0],[0.003,0.995,0],[0.005,0.42,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1375"
+  }
+ ]
+}

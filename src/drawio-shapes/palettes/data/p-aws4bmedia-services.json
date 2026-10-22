@@ -1,0 +1,113 @@
+{
+ "id": "aws4bMedia Services",
+ "title": "AWS18 / Media Services",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:8",
+ "entries": [
+  {
+   "id": "aws4bMedia Services-0-entry",
+   "title": "",
+   "tags": "aws4 elastic transcoder aws amazon web service media services ",
+   "kind": "vertex",
+   "width": 80,
+   "height": 110,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.elastic_transcoder;",
+   "value": "Amazon Elastic Transcoder",
+   "shapeNames": [
+    "mxgraph.aws4.productIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:835"
+  },
+  {
+   "id": "aws4bMedia Services-1-entry",
+   "title": "",
+   "tags": "aws4 kinesis video streams aws amazon web service media services ",
+   "kind": "vertex",
+   "width": 80,
+   "height": 120,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.kinesis_video_streams;",
+   "value": "Amazon Kinesis Video Streams",
+   "shapeNames": [
+    "mxgraph.aws4.productIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:837"
+  },
+  {
+   "id": "aws4bMedia Services-2-entry",
+   "title": "",
+   "tags": "aws4 elemental mediaconvert aws amazon web service media services ",
+   "kind": "vertex",
+   "width": 80,
+   "height": 110,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.elemental_mediaconvert;",
+   "value": "AWS Elemental MediaConvert",
+   "shapeNames": [
+    "mxgraph.aws4.productIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:839"
+  },
+  {
+   "id": "aws4bMedia Services-3-entry",
+   "title": "",
+   "tags": "aws4 elemental medialive aws amazon web service media services ",
+   "kind": "vertex",
+   "width": 80,
+   "height": 110,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.elemental_medialive;",
+   "value": "AWS Elemental MediaLive",
+   "shapeNames": [
+    "mxgraph.aws4.productIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:841"
+  },
+  {
+   "id": "aws4bMedia Services-4-entry",
+   "title": "",
+   "tags": "aws4 elemental mediapackage aws amazon web service media services ",
+   "kind": "vertex",
+   "width": 80,
+   "height": 110,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.elemental_mediapackage;",
+   "value": "AWS Elemental MediaPackage",
+   "shapeNames": [
+    "mxgraph.aws4.productIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:843"
+  },
+  {
+   "id": "aws4bMedia Services-5-entry",
+   "title": "",
+   "tags": "aws4 elemental mediastore aws amazon web service media services ",
+   "kind": "vertex",
+   "width": 80,
+   "height": 110,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.elemental_mediastore;",
+   "value": "AWS Elemental MediaStore",
+   "shapeNames": [
+    "mxgraph.aws4.productIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:845"
+  },
+  {
+   "id": "aws4bMedia Services-6-entry",
+   "title": "",
+   "tags": "aws4 elemental mediatailor aws amazon web service media services ",
+   "kind": "vertex",
+   "width": 80,
+   "height": 110,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.elemental_mediatailor;",
+   "value": "AWS Elemental MediaTailor",
+   "shapeNames": [
+    "mxgraph.aws4.productIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:847"
+  }
+ ]
+}

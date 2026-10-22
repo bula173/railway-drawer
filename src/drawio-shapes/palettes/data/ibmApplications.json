@@ -1,0 +1,288 @@
+{
+ "id": "ibmApplications",
+ "title": "IBM / Applications",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-IBM.js:7",
+ "entries": [
+  {
+   "id": "ibmApplications-0-actionable-insight",
+   "title": "Actionable Insight",
+   "tags": "actionable insight ibm  Actionable Insight",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/applications/actionable_insight.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:79"
+  },
+  {
+   "id": "ibmApplications-1-annotate",
+   "title": "Annotate",
+   "tags": "annotate ibm  Annotate",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/applications/annotate.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:81"
+  },
+  {
+   "id": "ibmApplications-2-api-developer-portal",
+   "title": "API Developer Portal",
+   "tags": "api developer portal ibm  API Developer Portal",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/applications/api_developer_portal.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:83"
+  },
+  {
+   "id": "ibmApplications-3-api-polyglot-runtimes",
+   "title": "API Polyglot Runtimes",
+   "tags": "api polyglot runtimes ibm  API Polyglot Runtimes",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/applications/api_polyglot_runtimes.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:85"
+  },
+  {
+   "id": "ibmApplications-4-app-server",
+   "title": "App Server",
+   "tags": "app server ibm  App Server",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/applications/app_server.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:87"
+  },
+  {
+   "id": "ibmApplications-5-application-logic",
+   "title": "Application Logic",
+   "tags": "application logic ibm  Application Logic",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/applications/application_logic.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:89"
+  },
+  {
+   "id": "ibmApplications-6-automation-tools",
+   "title": "Automation Tools",
+   "tags": "automation tools ibm  Automation Tools",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/applications/automation_tools.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:91"
+  },
+  {
+   "id": "ibmApplications-7-enterprise-applications",
+   "title": "Enterprise Applications",
+   "tags": "enterprise applications ibm  Enterprise Applications",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/applications/enterprise_applications.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:93"
+  },
+  {
+   "id": "ibmApplications-8-index",
+   "title": "Index",
+   "tags": "index ibm  Index",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/applications/index.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:95"
+  },
+  {
+   "id": "ibmApplications-9-iot-application",
+   "title": "IoT Application",
+   "tags": "iot application ibm  IoT Application",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/applications/iot_application.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:97"
+  },
+  {
+   "id": "ibmApplications-10-microservice",
+   "title": "Microservice",
+   "tags": "microservice ibm  Microservice",
+   "kind": "vertex",
+   "width": 82.2,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/applications/microservice.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:99"
+  },
+  {
+   "id": "ibmApplications-11-mobile-app",
+   "title": "Mobile App",
+   "tags": "mobile app ibm  Mobile App",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/applications/mobile_app.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:101"
+  },
+  {
+   "id": "ibmApplications-12-ontology",
+   "title": "Ontology",
+   "tags": "ontology ibm  Ontology",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/applications/ontology.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:103"
+  },
+  {
+   "id": "ibmApplications-13-open-source-tools",
+   "title": "Open Source Tools",
+   "tags": "open source tools ibm  Open Source Tools",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/applications/open_source_tools.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:105"
+  },
+  {
+   "id": "ibmApplications-14-runtime-services",
+   "title": "Runtime Services",
+   "tags": "runtime services ibm  Runtime Services",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/applications/runtime_services.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:107"
+  },
+  {
+   "id": "ibmApplications-15-saas-applications",
+   "title": "SaaS Applications",
+   "tags": "saas applications ibm  SaaS Applications",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/applications/saas_applications.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:109"
+  },
+  {
+   "id": "ibmApplications-16-service-broker",
+   "title": "Service Broker",
+   "tags": "service broker ibm  Service Broker",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/applications/service_broker.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:111"
+  },
+  {
+   "id": "ibmApplications-17-speech-to-text",
+   "title": "Speech to Text",
+   "tags": "speech to text ibm  Speech to Text",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/applications/speech_to_text.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:113"
+  },
+  {
+   "id": "ibmApplications-18-visual-recognition",
+   "title": "Visual Recognition",
+   "tags": "visual recognition ibm  Visual Recognition",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/applications/visual_recognition.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:115"
+  },
+  {
+   "id": "ibmApplications-19-visualization",
+   "title": "Visualization",
+   "tags": "visualization ibm  Visualization",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/applications/visualization.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:117"
+  }
+ ]
+}

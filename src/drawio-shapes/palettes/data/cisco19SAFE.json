@@ -1,0 +1,358 @@
+{
+ "id": "cisco19SAFE",
+ "title": "Cisco 19 / SAFE",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:8",
+ "entries": [
+  {
+   "id": "cisco19SAFE-0-next-generation-intrusion-prevention-system",
+   "title": "Next Generation Intrusion Prevention System",
+   "tags": "cisco19 next generation prevention system cisco stealthwatch Next Generation Intrusion Prevention System",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=next_generation_intrusion_prevention_system;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:530"
+  },
+  {
+   "id": "cisco19SAFE-1-access-control-and-trustsec",
+   "title": "Access Control and TrustSec",
+   "tags": "cisco19 access control and trustsec cisco stealthwatch Access Control and TrustSec",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=access_control_and_trustsec;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:532"
+  },
+  {
+   "id": "cisco19SAFE-2-load-balancer",
+   "title": "Load Balancer",
+   "tags": "cisco19 load balancer cisco stealthwatch Load Balancer",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=load_balancer;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:534"
+  },
+  {
+   "id": "cisco19SAFE-3-anomaly-detection",
+   "title": "Anomaly Detection",
+   "tags": "cisco19 anomaly detection cisco stealthwatch Anomaly Detection",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=anomaly_detection;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:536"
+  },
+  {
+   "id": "cisco19SAFE-4-web-reputation-filtering",
+   "title": "Web Reputation / Filtering",
+   "tags": "cisco19 web reputation filtering cisco stealthwatch Web Reputation / Filtering",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=web_reputation_filtering;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:538"
+  },
+  {
+   "id": "cisco19SAFE-5-avc-application-visibility-control",
+   "title": "AVC-Application Visibility Control",
+   "tags": "cisco19 avc application visibility control cisco stealthwatch AVC-Application Visibility Control",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=avc_application_visibility_control;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:540"
+  },
+  {
+   "id": "cisco19SAFE-6-anti-malware",
+   "title": "Anti-Malware",
+   "tags": "cisco19 anti malware cisco stealthwatch Anti-Malware",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=anti_malware2;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:542"
+  },
+  {
+   "id": "cisco19SAFE-7-web-application-firewall",
+   "title": "Web Application Firewall",
+   "tags": "cisco19 web application firewall cisco stealthwatch Web Application Firewall",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=web_application_firewall;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:544"
+  },
+  {
+   "id": "cisco19SAFE-8-policy-configuration",
+   "title": "Policy / Configuration",
+   "tags": "cisco19 policy configuration cisco stealthwatch Policy / Configuration",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=policy_configuration;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:546"
+  },
+  {
+   "id": "cisco19SAFE-9-analysis-correlation",
+   "title": "Analysis / Correlation",
+   "tags": "cisco19 analysis correlation cisco stealthwatch Analysis / Correlation",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=analysis_correlation;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:548"
+  },
+  {
+   "id": "cisco19SAFE-10-flow-analytics",
+   "title": "Flow Analytics",
+   "tags": "cisco19 flow analytics cisco stealthwatch Flow Analytics",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=flow_analytics;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:550"
+  },
+  {
+   "id": "cisco19SAFE-11-virtual-private-network",
+   "title": "Virtual Private Network",
+   "tags": "cisco19 virtual private network vpn cisco stealthwatch Virtual Private Network",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=virtual_private_network;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:552"
+  },
+  {
+   "id": "cisco19SAFE-12-web-reputation-filtering",
+   "title": "Web Reputation / Filtering",
+   "tags": "cisco19 web reputation filtering cisco stealthwatch Web Reputation / Filtering",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=web_reputation_filtering_2;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:554"
+  },
+  {
+   "id": "cisco19SAFE-13-avc-application-visibility-control",
+   "title": "AVC-Application Visibility Control",
+   "tags": "cisco19 avc application visibility control cisco stealthwatch AVC-Application Visibility Control",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=avc_application_visibility_control2;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:556"
+  },
+  {
+   "id": "cisco19SAFE-14-flow-analytics",
+   "title": "Flow Analytics",
+   "tags": "cisco19 flow analytics cisco stealthwatch Flow Analytics",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=flow_analytics2;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:558"
+  },
+  {
+   "id": "cisco19SAFE-15-virtual-private-network",
+   "title": "Virtual Private Network",
+   "tags": "cisco19 virtual private network cisco stealthwatch Virtual Private Network",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=virtual_private_network2;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:560"
+  },
+  {
+   "id": "cisco19SAFE-16-web-security-services",
+   "title": "Web Security Services",
+   "tags": "cisco19 web security services cisco stealthwatch Web Security Services",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=web_security_services;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:562"
+  },
+  {
+   "id": "cisco19SAFE-17-web-security-services",
+   "title": "Web Security Services",
+   "tags": "cisco19 web security services cisco stealthwatch Web Security Services",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=web_security_services2;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:564"
+  },
+  {
+   "id": "cisco19SAFE-18-posture-assessment",
+   "title": "Posture Assessment",
+   "tags": "cisco19 posture assessment cisco stealthwatch Posture Assessment",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=posture_assessment;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:566"
+  },
+  {
+   "id": "cisco19SAFE-19-anti-malware",
+   "title": "Anti-Malware",
+   "tags": "cisco19 anti malware cisco stealthwatch Anti-Malware",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=anti_malware;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:568"
+  },
+  {
+   "id": "cisco19SAFE-20-wireless-intrusion-prevention",
+   "title": "Wireless Intrusion Prevention",
+   "tags": "cisco19 wireless intrusion prevention cisco stealthwatch Wireless Intrusion Prevention",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=wireless_intrusion_prevention;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:570"
+  },
+  {
+   "id": "cisco19SAFE-21-host-based-security",
+   "title": "Host Based Security",
+   "tags": "cisco19 host based security cisco stealthwatch Host Based Security",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=host_based_security;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:572"
+  },
+  {
+   "id": "cisco19SAFE-22-monitoring",
+   "title": "Monitoring",
+   "tags": "cisco19 monitoring cisco stealthwatch Monitoring",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=monitoring;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:574"
+  },
+  {
+   "id": "cisco19SAFE-23-virtual-private-network-connector",
+   "title": "Virtual Private Network Connector",
+   "tags": "cisco19 connector cisco stealthwatch Virtual Private Network Connector",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=virtual_private_network_connector;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:576"
+  },
+  {
+   "id": "cisco19SAFE-24-monitoring",
+   "title": "Monitoring",
+   "tags": "cisco19 monitoring cisco stealthwatch Monitoring",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=threat_intelligence;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:578"
+  }
+ ]
+}

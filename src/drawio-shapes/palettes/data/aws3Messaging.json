@@ -1,0 +1,148 @@
+{
+ "id": "aws3Messaging",
+ "title": "AWS17 / Messaging",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-AWS3.js:8",
+ "entries": [
+  {
+   "id": "aws3Messaging-0-pinpoint",
+   "title": "Pinpoint",
+   "tags": "aws3 pinpoint aws amazon web service messaging Pinpoint",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 87,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.pinpoint;fillColor=#AD688B;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.pinpoint"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:766"
+  },
+  {
+   "id": "aws3Messaging-1-ses",
+   "title": "SES",
+   "tags": "aws3 ses aws amazon web service messaging SES",
+   "kind": "vertex",
+   "width": 79.5,
+   "height": 93,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.ses;fillColor=#D9A741;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.ses"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:768"
+  },
+  {
+   "id": "aws3Messaging-2-sns",
+   "title": "SNS",
+   "tags": "aws3 sns aws amazon web service messaging SNS",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 76.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.sns;fillColor=#D9A741;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.sns"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:770"
+  },
+  {
+   "id": "aws3Messaging-3-sqs",
+   "title": "SQS",
+   "tags": "aws3 sqs aws amazon web service messaging SQS",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 93,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.sqs;fillColor=#D9A741;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.sqs"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:772"
+  },
+  {
+   "id": "aws3Messaging-4-email",
+   "title": "Email",
+   "tags": "aws3 email aws amazon web service messaging Email",
+   "kind": "vertex",
+   "width": 81,
+   "height": 61.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.email;fillColor=#D9A741;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.email"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:774"
+  },
+  {
+   "id": "aws3Messaging-5-message",
+   "title": "Message",
+   "tags": "aws3 message aws amazon web service messaging Message",
+   "kind": "vertex",
+   "width": 42,
+   "height": 49.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.message;fillColor=#D9A741;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.message"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:776"
+  },
+  {
+   "id": "aws3Messaging-6-queue",
+   "title": "Queue",
+   "tags": "aws3 queue aws amazon web service messaging Queue",
+   "kind": "vertex",
+   "width": 73.5,
+   "height": 48,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.queue;fillColor=#D9A741;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.queue"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:778"
+  },
+  {
+   "id": "aws3Messaging-7-email-notification",
+   "title": "Email Notification",
+   "tags": "aws3 email notification aws amazon web service messaging Email Notification",
+   "kind": "vertex",
+   "width": 100.5,
+   "height": 63,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.email_notification;fillColor=#D9A741;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.email_notification"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:780"
+  },
+  {
+   "id": "aws3Messaging-8-http-notification",
+   "title": "HTTP Notification",
+   "tags": "aws3 http notification aws amazon web service messaging HTTP Notification",
+   "kind": "vertex",
+   "width": 100.5,
+   "height": 63,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.http_notification;fillColor=#D9A741;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.http_notification"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:782"
+  },
+  {
+   "id": "aws3Messaging-9-topic",
+   "title": "Topic",
+   "tags": "aws3 topic aws amazon web service messaging Topic",
+   "kind": "vertex",
+   "width": 93,
+   "height": 58.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.topic_2;fillColor=#D9A741;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.topic_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:784"
+  }
+ ]
+}

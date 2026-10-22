@@ -1,0 +1,116 @@
+{
+ "id": "ibmConnectors",
+ "title": "IBM / Connectors",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-IBM.js:7",
+ "entries": [
+  {
+   "id": "ibmConnectors-0-connector",
+   "title": "Connector",
+   "tags": "ibm connector",
+   "kind": "edge",
+   "width": 60,
+   "height": 60,
+   "style": "html=1;labelBackgroundColor=#ffffff;jettySize=auto;orthogonalLoop=1;strokeWidth=1;fontSize=14;endArrow=none;endFill=0;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:642"
+  },
+  {
+   "id": "ibmConnectors-1-connector-single-arrow",
+   "title": "Connector (Single Arrow)",
+   "tags": "ibm connector single arrow",
+   "kind": "edge",
+   "width": 60,
+   "height": 60,
+   "style": "html=1;labelBackgroundColor=#ffffff;endArrow=classic;endFill=1;endSize=6;jettySize=auto;orthogonalLoop=1;strokeWidth=1;fontSize=14;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:644"
+  },
+  {
+   "id": "ibmConnectors-2-connector-double-arrow",
+   "title": "Connector (Double Arrow)",
+   "tags": "ibm connector double arrow",
+   "kind": "edge",
+   "width": 60,
+   "height": 60,
+   "style": "html=1;labelBackgroundColor=#ffffff;startArrow=classic;startFill=1;startSize=6;endArrow=classic;endFill=1;endSize=6;jettySize=auto;orthogonalLoop=1;strokeWidth=1;fontSize=14;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:646"
+  },
+  {
+   "id": "ibmConnectors-3-dashed-connector",
+   "title": "Dashed Connector",
+   "tags": "ibm dashed connector",
+   "kind": "edge",
+   "width": 60,
+   "height": 60,
+   "style": "html=1;labelBackgroundColor=#ffffff;endArrow=none;endFill=0;jettySize=auto;orthogonalLoop=1;strokeWidth=1;dashed=1;fontSize=14;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:648"
+  },
+  {
+   "id": "ibmConnectors-4-dashed-connector-single-arrow",
+   "title": "Dashed Connector (Single Arrow)",
+   "tags": "ibm dashed connector single arrow",
+   "kind": "edge",
+   "width": 60,
+   "height": 60,
+   "style": "html=1;labelBackgroundColor=#ffffff;startArrow=none;startFill=0;startSize=6;endArrow=classic;endFill=1;endSize=6;jettySize=auto;orthogonalLoop=1;strokeWidth=1;dashed=1;fontSize=14;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:650"
+  },
+  {
+   "id": "ibmConnectors-5-dashed-connector-double-arrow",
+   "title": "Dashed Connector (Double Arrow)",
+   "tags": "ibm dashed connector double arrow",
+   "kind": "edge",
+   "width": 60,
+   "height": 60,
+   "style": "html=1;labelBackgroundColor=#ffffff;startArrow=classic;startFill=1;startSize=6;endArrow=classic;endFill=1;endSize=6;jettySize=auto;orthogonalLoop=1;strokeWidth=1;dashed=1;fontSize=14;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:652"
+  },
+  {
+   "id": "ibmConnectors-6-elbow-connector",
+   "title": "Elbow Connector",
+   "tags": "ibm elbow connector",
+   "kind": "edge",
+   "width": 60,
+   "height": 60,
+   "style": "edgeStyle=elbowEdgeStyle;rounded=0;elbow=vertical;html=1;labelBackgroundColor=#ffffff;jettySize=auto;orthogonalLoop=1;strokeWidth=1;fontSize=14;endArrow=none;endFill=0;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:654"
+  },
+  {
+   "id": "ibmConnectors-7-elbow-connector-single-arrow",
+   "title": "Elbow Connector (Single Arrow)",
+   "tags": "ibm elbow connector single arrow",
+   "kind": "edge",
+   "width": 60,
+   "height": 60,
+   "style": "edgeStyle=elbowEdgeStyle;rounded=0;elbow=vertical;html=1;labelBackgroundColor=#ffffff;endArrow=classic;endFill=1;endSize=6;jettySize=auto;orthogonalLoop=1;strokeWidth=1;fontSize=14;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:656"
+  },
+  {
+   "id": "ibmConnectors-8-elbow-connector-double-arrow",
+   "title": "Elbow Connector (Double Arrow)",
+   "tags": "ibm elbow connector double arrow",
+   "kind": "edge",
+   "width": 60,
+   "height": 60,
+   "style": "edgeStyle=elbowEdgeStyle;rounded=0;elbow=vertical;html=1;labelBackgroundColor=#ffffff;startArrow=classic;startFill=1;startSize=6;endArrow=classic;endFill=1;endSize=6;jettySize=auto;orthogonalLoop=1;strokeWidth=1;fontSize=14;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:658"
+  }
+ ]
+}

@@ -1,0 +1,218 @@
+{
+ "id": "ibmManagement",
+ "title": "IBM / Management",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-IBM.js:7",
+ "entries": [
+  {
+   "id": "ibmManagement-0-alert-notification",
+   "title": "Alert Notification",
+   "tags": "alert notification ibm  Alert Notification",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/management/alert_notification.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:330"
+  },
+  {
+   "id": "ibmManagement-1-api-management",
+   "title": "API Management",
+   "tags": "api management ibm  API Management",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/management/api_management.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:332"
+  },
+  {
+   "id": "ibmManagement-2-cloud-management",
+   "title": "Cloud Management",
+   "tags": "cloud management ibm  Cloud Management",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/management/cloud_management.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:334"
+  },
+  {
+   "id": "ibmManagement-3-cluster-management",
+   "title": "Cluster Management",
+   "tags": "cluster management ibm  Cluster Management",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/management/cluster_management.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:336"
+  },
+  {
+   "id": "ibmManagement-4-content-management",
+   "title": "Content Management",
+   "tags": "content management ibm  Content Management",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/management/content_management.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:338"
+  },
+  {
+   "id": "ibmManagement-5-data-services",
+   "title": "Data Services",
+   "tags": "data services ibm  Data Services",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/management/data_services.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:340"
+  },
+  {
+   "id": "ibmManagement-6-device-management",
+   "title": "Device Management",
+   "tags": "device management ibm  Device Management",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/management/device_management.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:342"
+  },
+  {
+   "id": "ibmManagement-7-information-governance",
+   "title": "Information Governance",
+   "tags": "information governance ibm  Information Governance",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/management/information_governance.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:344"
+  },
+  {
+   "id": "ibmManagement-8-it-service-management",
+   "title": "IT Service Management",
+   "tags": "it service management information technology ibm  IT Service Management",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/management/it_service_management.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:346"
+  },
+  {
+   "id": "ibmManagement-9-management",
+   "title": "Management",
+   "tags": "management ibm  Management",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/management/management.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:348"
+  },
+  {
+   "id": "ibmManagement-10-monitoring-metrics",
+   "title": "Monitoring & Metrics",
+   "tags": "monitoring metrics ibm  Monitoring & Metrics",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/management/monitoring_metrics.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:350"
+  },
+  {
+   "id": "ibmManagement-11-process-management",
+   "title": "Process Management",
+   "tags": "process management ibm  Process Management",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/management/process_management.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:352"
+  },
+  {
+   "id": "ibmManagement-12-provider-cloud-portal-service",
+   "title": "Provider Cloud Portal Service",
+   "tags": "provider cloud portal service ibm  Provider Cloud Portal Service",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/management/provider_cloud_portal_service.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:354"
+  },
+  {
+   "id": "ibmManagement-13-push-notifications",
+   "title": "Push Notifications",
+   "tags": "push notifications ibm  Push Notifications",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/management/push_notifications.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:356"
+  },
+  {
+   "id": "ibmManagement-14-service-management-tools",
+   "title": "Service Management Tools",
+   "tags": "service management tools ibm  Service Management Tools",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/management/service_management_tools.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:358"
+  }
+ ]
+}

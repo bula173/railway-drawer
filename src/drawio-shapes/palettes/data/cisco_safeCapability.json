@@ -1,0 +1,1240 @@
+{
+ "id": "cisco_safeCapability",
+ "title": "Cisco Safe / Capability",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:8",
+ "entries": [
+  {
+   "id": "cisco_safeCapability-0-access-control-using-trustsec",
+   "title": "Access Control Using TrustSec",
+   "tags": "cisco safe capability access control using trustsec cisco safe capability Access Control Using TrustSec",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.access_control_using_trustsec;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:275"
+  },
+  {
+   "id": "cisco_safeCapability-1-analysis-correlation",
+   "title": "Analysis Correlation",
+   "tags": "cisco safe capability analysis correlation cisco safe capability Analysis Correlation",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.analysis_correlation;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:277"
+  },
+  {
+   "id": "cisco_safeCapability-2-anomaly-detection",
+   "title": "Anomaly Detection",
+   "tags": "cisco safe capability anomaly detection cisco safe capability Anomaly Detection",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.anomaly_detection;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:279"
+  },
+  {
+   "id": "cisco_safeCapability-3-anti-malware",
+   "title": "Anti-Malware",
+   "tags": "cisco safe capability anti malware cisco safe capability Anti-Malware",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.anti_malware;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:281"
+  },
+  {
+   "id": "cisco_safeCapability-4-anti-spam",
+   "title": "Anti-Spam",
+   "tags": "cisco safe capability anti spam cisco safe capability Anti-Spam",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.anti_spam;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:283"
+  },
+  {
+   "id": "cisco_safeCapability-5-anti-virus",
+   "title": "Anti-Virus",
+   "tags": "cisco safe capability anti virus cisco safe capability Anti-Virus",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.anti_virus;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:285"
+  },
+  {
+   "id": "cisco_safeCapability-6-application",
+   "title": "Application",
+   "tags": "cisco safe capability application cisco safe capability Application",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.application;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:287"
+  },
+  {
+   "id": "cisco_safeCapability-7-application-visibility-control",
+   "title": "Application Visibility Control",
+   "tags": "cisco safe capability application visibility control cisco safe capability Application Visibility Control",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.application_visibility_control;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:289"
+  },
+  {
+   "id": "cisco_safeCapability-8-casb",
+   "title": "CASB",
+   "tags": "cisco safe capability casb cisco safe capability CASB",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.casb;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:291"
+  },
+  {
+   "id": "cisco_safeCapability-9-client-based-security",
+   "title": "Client-Based Security",
+   "tags": "cisco safe capability client based security cisco safe capability Client-Based Security",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.client_based_security;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:293"
+  },
+  {
+   "id": "cisco_safeCapability-10-block",
+   "title": "Block",
+   "tags": "cisco safe capability block cisco safe capability Block",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#6ABD46;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.block;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:295"
+  },
+  {
+   "id": "cisco_safeCapability-11-cloud-web-security",
+   "title": "Cloud Web Security",
+   "tags": "cisco safe capability cloud web security cisco safe capability Cloud Web Security",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.cloud_web_security;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:297"
+  },
+  {
+   "id": "cisco_safeCapability-12-conference-bridge",
+   "title": "Conference Bridge",
+   "tags": "cisco safe capability conference bridge cisco safe capability Conference Bridge",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.conference_bridge;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:299"
+  },
+  {
+   "id": "cisco_safeCapability-13-database",
+   "title": "Database",
+   "tags": "cisco safe capability database cisco safe capability Database",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.database;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:301"
+  },
+  {
+   "id": "cisco_safeCapability-14-data-loss-prevention",
+   "title": "Data Loss Prevention",
+   "tags": "cisco safe capability data loss prevention cisco safe capability Data Loss Prevention",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.data_loss_prevention;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:303"
+  },
+  {
+   "id": "cisco_safeCapability-15-device-profiling",
+   "title": "Device Profiling",
+   "tags": "cisco safe capability device profiling cisco safe capability Device Profiling",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.device_profiling;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:305"
+  },
+  {
+   "id": "cisco_safeCapability-16-device-trajectory",
+   "title": "Device Trajectory",
+   "tags": "cisco safe capability device trajectory cisco safe capability Device Trajectory",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.device_trajectory;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:307"
+  },
+  {
+   "id": "cisco_safeCapability-17-disk-encryption",
+   "title": "Disk Encryption",
+   "tags": "cisco safe capability disk encryption cisco safe capability Disk Encryption",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.disk_encryption;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:309"
+  },
+  {
+   "id": "cisco_safeCapability-18-distributed-denial-of-service-protection",
+   "title": "Distributed Denial of Service Protection",
+   "tags": "cisco safe capability distributed denial of service protection cisco safe capability Distributed Denial of Service Protection",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.distributed_denial_of_service_protection;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:311"
+  },
+  {
+   "id": "cisco_safeCapability-19-dns",
+   "title": "DNS",
+   "tags": "cisco safe capability dns cisco safe capability DNS",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.dns;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:313"
+  },
+  {
+   "id": "cisco_safeCapability-20-dns-security",
+   "title": "DNS Security",
+   "tags": "cisco safe capability dns security cisco safe capability DNS Security",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.dns_security;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:315"
+  },
+  {
+   "id": "cisco_safeCapability-21-email-encryption",
+   "title": "Email Encryption",
+   "tags": "cisco safe capability email encryption cisco safe capability Email Encryption",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.email_encryption;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:317"
+  },
+  {
+   "id": "cisco_safeCapability-22-email-security",
+   "title": "Email Security",
+   "tags": "cisco safe capability email security cisco safe capability Email Security",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.email_security;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:319"
+  },
+  {
+   "id": "cisco_safeCapability-23-file-trajectory",
+   "title": "File Trajectory",
+   "tags": "cisco safe capability file trajectory cisco safe capability File Trajectory",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.file_trajectory;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:321"
+  },
+  {
+   "id": "cisco_safeCapability-24-fabric-switching",
+   "title": "Fabric Switching",
+   "tags": "cisco safe capability fabric switching cisco safe capability Fabric Switching",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.fabric_switching;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:323"
+  },
+  {
+   "id": "cisco_safeCapability-25-firewall",
+   "title": "Firewall",
+   "tags": "cisco safe capability firewall cisco safe capability Firewall",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.firewall;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:325"
+  },
+  {
+   "id": "cisco_safeCapability-26-flow-analytics",
+   "title": "Flow Analytics",
+   "tags": "cisco safe capability flow analytics cisco safe capability Flow Analytics",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.flow_analytics;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:327"
+  },
+  {
+   "id": "cisco_safeCapability-27-identity-authorization",
+   "title": "Identity Authorization",
+   "tags": "cisco safe capability identity authorization cisco safe capability Identity Authorization",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.identity_authorization;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:329"
+  },
+  {
+   "id": "cisco_safeCapability-28-identity-authorization-alternative",
+   "title": "Identity Authorization (alternative)",
+   "tags": "cisco safe capability identity authorization alt alternative cisco safe capability Identity Authorization (alternative)",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.identity_authorization_alt;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:331"
+  },
+  {
+   "id": "cisco_safeCapability-29-intrusion-detection",
+   "title": "Intrusion Detection",
+   "tags": "cisco safe capability intrusion detection cisco safe capability Intrusion Detection",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.intrusion_detection;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:333"
+  },
+  {
+   "id": "cisco_safeCapability-30-intrusion-prevention",
+   "title": "Intrusion Prevention",
+   "tags": "cisco safe capability intrusion prevention cisco safe capability Intrusion Prevention",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.intrusion_prevention;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:335"
+  },
+  {
+   "id": "cisco_safeCapability-31-l2-l3-network",
+   "title": "L2 L3 Network",
+   "tags": "cisco safe capability l2 l3 network cisco safe capability L2 L3 Network",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.l2_l3_network;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:337"
+  },
+  {
+   "id": "cisco_safeCapability-32-l2-l3-network-virtual",
+   "title": "L2 L3 Network (virtual)",
+   "tags": "cisco safe capability l2 l3 network virtual cisco safe capability L2 L3 Network (virtual)",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.l2_l3_network_virtual;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:339"
+  },
+  {
+   "id": "cisco_safeCapability-33-l2-switching",
+   "title": "L2 Switching",
+   "tags": "cisco safe capability l2 switching cisco safe capability L2 Switching",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.l2_switching;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:341"
+  },
+  {
+   "id": "cisco_safeCapability-34-l3-switching",
+   "title": "L3 Switching",
+   "tags": "cisco safe capability l3 switching cisco safe capability L3 Switching",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.l3_switching;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:343"
+  },
+  {
+   "id": "cisco_safeCapability-35-load-balancer",
+   "title": "Load Balancer",
+   "tags": "cisco safe capability load balancer cisco safe capability Load Balancer",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.load_balancer;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:345"
+  },
+  {
+   "id": "cisco_safeCapability-36-logging-reporting",
+   "title": "Logging Reporting",
+   "tags": "cisco safe capability logging reporting cisco safe capability Logging Reporting",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.logging_reporting;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:347"
+  },
+  {
+   "id": "cisco_safeCapability-37-malware-sandbox",
+   "title": "Malware Sandbox",
+   "tags": "cisco safe capability malware sandbox cisco safe capability Malware Sandbox",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.malware_sandbox;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:349"
+  },
+  {
+   "id": "cisco_safeCapability-38-micro-segmentation",
+   "title": "Micro-Segmentation",
+   "tags": "cisco safe capability micro segmentation cisco safe capability Micro-Segmentation",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.micro_segmentation;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:351"
+  },
+  {
+   "id": "cisco_safeCapability-39-mobile-device-manager",
+   "title": "Mobile Device Manager",
+   "tags": "cisco safe capability mobile device manager cisco safe capability Mobile Device Manager",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.mobile_device_manager;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:353"
+  },
+  {
+   "id": "cisco_safeCapability-40-multi-factor-identification",
+   "title": "Multi-Factor Identification",
+   "tags": "cisco safe capability multi factor identification cisco safe capability Multi-Factor Identification",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.multi_factor_identification;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:355"
+  },
+  {
+   "id": "cisco_safeCapability-41-monitoring",
+   "title": "Monitoring",
+   "tags": "cisco safe capability monitoring cisco safe capability Monitoring",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.monitoring;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:357"
+  },
+  {
+   "id": "cisco_safeCapability-42-policy-configuration",
+   "title": "Policy Configuration",
+   "tags": "cisco safe capability policy configuration cisco safe capability Policy Configuration",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.policy_configuration;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:359"
+  },
+  {
+   "id": "cisco_safeCapability-43-posture-assessment",
+   "title": "Posture Assessment",
+   "tags": "cisco safe capability posture assessment cisco safe capability Posture Assessment",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.posture_assessment;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:361"
+  },
+  {
+   "id": "cisco_safeCapability-44-quarantine",
+   "title": "Quarantine",
+   "tags": "cisco safe capability quarantine cisco safe capability Quarantine",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#6ABD46;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.quarantine;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:363"
+  },
+  {
+   "id": "cisco_safeCapability-45-remediate",
+   "title": "Remediate",
+   "tags": "cisco safe capability remediate cisco safe capability Remediate",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#6ABD46;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.remediate;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:365"
+  },
+  {
+   "id": "cisco_safeCapability-46-routing",
+   "title": "Routing",
+   "tags": "cisco safe capability routing cisco safe capability Routing",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.routing;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:367"
+  },
+  {
+   "id": "cisco_safeCapability-47-server-based-security",
+   "title": "Server Based Security",
+   "tags": "cisco safe capability server based security cisco safe capability Server Based Security",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.server_based_security;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:369"
+  },
+  {
+   "id": "cisco_safeCapability-48-tagging",
+   "title": "Tagging",
+   "tags": "cisco safe capability tagging cisco safe capability Tagging",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.tagging;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:371"
+  },
+  {
+   "id": "cisco_safeCapability-49-ssl-tls-offload",
+   "title": "SSL TLS Offload",
+   "tags": "cisco safe capability ssl tls offload cisco safe capability SSL TLS Offload",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.ssl_tls_offload;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:373"
+  },
+  {
+   "id": "cisco_safeCapability-50-storage",
+   "title": "Storage",
+   "tags": "cisco safe capability storage cisco safe capability Storage",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.storage;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:375"
+  },
+  {
+   "id": "cisco_safeCapability-51-threat-intelligence",
+   "title": "Threat Intelligence",
+   "tags": "cisco safe capability threat intelligence cisco safe capability Threat Intelligence",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.threat_intelligence;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:377"
+  },
+  {
+   "id": "cisco_safeCapability-52-time-synchronization",
+   "title": "Time Synchronization",
+   "tags": "cisco safe capability time synchronization cisco safe capability Time Synchronization",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.time_synchronization;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:379"
+  },
+  {
+   "id": "cisco_safeCapability-53-user",
+   "title": "User",
+   "tags": "cisco safe capability user cisco safe capability User",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.user;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:381"
+  },
+  {
+   "id": "cisco_safeCapability-54-video",
+   "title": "Video",
+   "tags": "cisco safe capability video cisco safe capability Video",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.video;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:383"
+  },
+  {
+   "id": "cisco_safeCapability-55-virtualized-capability",
+   "title": "Virtualized Capability",
+   "tags": "cisco safe capability virtualized capability cisco safe capability Virtualized Capability",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.virtualized_capability;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:385"
+  },
+  {
+   "id": "cisco_safeCapability-56-virtual-firewall",
+   "title": "Virtual Firewall",
+   "tags": "cisco safe capability virtual firewall cisco safe capability Virtual Firewall",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.virtual_firewall;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:387"
+  },
+  {
+   "id": "cisco_safeCapability-57-virtual-l2-switching",
+   "title": "Virtual L2 Switching",
+   "tags": "cisco safe capability virtual l2 switching cisco safe capability Virtual L2 Switching",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.virtual_l2_switching;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:389"
+  },
+  {
+   "id": "cisco_safeCapability-58-virtual-private-network",
+   "title": "Virtual Private Network",
+   "tags": "cisco safe capability virtual private network vpn cisco safe capability Virtual Private Network",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.virtual_private_network;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:391"
+  },
+  {
+   "id": "cisco_safeCapability-59-voice",
+   "title": "Voice",
+   "tags": "cisco safe capability voice cisco safe capability Voice",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.voice;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:393"
+  },
+  {
+   "id": "cisco_safeCapability-60-vpn-concentrator",
+   "title": "VPN Concentrator",
+   "tags": "cisco safe capability vpn concentrator virtual private network cisco safe capability VPN Concentrator",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.vpn_concentrator;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:395"
+  },
+  {
+   "id": "cisco_safeCapability-61-vulnerability-management",
+   "title": "Vulnerability Management",
+   "tags": "cisco safe capability vulnerability management cisco safe capability Vulnerability Management",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.vulnerability_management;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:397"
+  },
+  {
+   "id": "cisco_safeCapability-62-web-application-firewall",
+   "title": "Web Application Firewall",
+   "tags": "cisco safe capability web application firewall cisco safe capability Web Application Firewall",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.web_application_firewall;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:399"
+  },
+  {
+   "id": "cisco_safeCapability-63-web-reputation-filtering-dcs",
+   "title": "Web Reputation Filtering DCS",
+   "tags": "cisco safe capability web reputation filtering dcs cisco safe capability Web Reputation Filtering DCS",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.web_reputation_filtering_dcs;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:401"
+  },
+  {
+   "id": "cisco_safeCapability-64-web-security",
+   "title": "Web Security",
+   "tags": "cisco safe capability web security cisco safe capability Web Security",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.web_security;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:403"
+  },
+  {
+   "id": "cisco_safeCapability-65-wireless-connection",
+   "title": "Wireless Connection",
+   "tags": "cisco safe capability wireless connection cisco safe capability Wireless Connection",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.wireless_connection;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:405"
+  },
+  {
+   "id": "cisco_safeCapability-66-wireless-intrusion-detection-system",
+   "title": "Wireless Intrusion Detection System",
+   "tags": "cisco safe capability wireless intrusion detection system cisco safe capability Wireless Intrusion Detection System",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.wireless_intrusion_detection_system;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:407"
+  },
+  {
+   "id": "cisco_safeCapability-67-wireless-intrusion-prevention-system",
+   "title": "Wireless Intrusion Prevention System",
+   "tags": "cisco safe capability wireless intrusion prevention system cisco safe capability Wireless Intrusion Prevention System",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.wireless_intrusion_prevention_system;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:409"
+  },
+  {
+   "id": "cisco_safeCapability-68-wireless-rogue-detection",
+   "title": "Wireless Rogue Detection",
+   "tags": "cisco safe capability wireless rogue detection cisco safe capability Wireless Rogue Detection",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#28A8E0;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.wireless_rogue_detection;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:411"
+  },
+  {
+   "id": "cisco_safeCapability-69-routing",
+   "title": "Routing",
+   "tags": "cisco safe capability routing cisco safe capability Routing",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#999999;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.routing;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:413"
+  },
+  {
+   "id": "cisco_safeCapability-70-l2-switching",
+   "title": "L2 Switching",
+   "tags": "cisco safe capability l2 switching cisco safe capability L2 Switching",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#999999;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.l2_switching;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:415"
+  },
+  {
+   "id": "cisco_safeCapability-71-l3-switching",
+   "title": "L3 Switching",
+   "tags": "cisco safe capability l3 switching cisco safe capability L3 Switching",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#999999;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.l3_switching;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:417"
+  },
+  {
+   "id": "cisco_safeCapability-72-fabric-switching",
+   "title": "Fabric Switching",
+   "tags": "cisco safe capability fabric switching cisco safe capability Fabric Switching",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#999999;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.fabric_switching;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:419"
+  },
+  {
+   "id": "cisco_safeCapability-73-l2-l3-network",
+   "title": "L2 L3 Network",
+   "tags": "cisco safe capability l2 l3 network cisco safe capability L2 L3 Network",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#999999;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.l2_l3_network;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:421"
+  },
+  {
+   "id": "cisco_safeCapability-74-wireless-connection",
+   "title": "Wireless Connection",
+   "tags": "cisco safe capability wireless connection cisco safe capability Wireless Connection",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#999999;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.wireless_connection;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:423"
+  },
+  {
+   "id": "cisco_safeCapability-75-application-optimization",
+   "title": "Application Optimization",
+   "tags": "cisco safe capability application optimization cisco safe capability Application Optimization",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#999999;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.application_optimization;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:425"
+  },
+  {
+   "id": "cisco_safeCapability-76-quality-of-service",
+   "title": "Quality of Service",
+   "tags": "cisco safe capability quality of service cisco safe capability Quality of Service",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#999999;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.quality_of_service;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:427"
+  },
+  {
+   "id": "cisco_safeCapability-77-path-control",
+   "title": "Path Control",
+   "tags": "cisco safe capability path control cisco safe capability Path Control",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#999999;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.path_control;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:429"
+  },
+  {
+   "id": "cisco_safeCapability-78-database",
+   "title": "Database",
+   "tags": "cisco safe capability database cisco safe capability Database",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#999999;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.database;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:431"
+  },
+  {
+   "id": "cisco_safeCapability-79-storage",
+   "title": "Storage",
+   "tags": "cisco safe capability storage cisco safe capability Storage",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#999999;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.storage;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:433"
+  },
+  {
+   "id": "cisco_safeCapability-80-secure-server",
+   "title": "Secure Server",
+   "tags": "cisco safe capability secure server cisco safe capability Secure Server",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#999999;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.secure_server;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:435"
+  },
+  {
+   "id": "cisco_safeCapability-81-voice",
+   "title": "Voice",
+   "tags": "cisco safe capability voice cisco safe capability Voice",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#999999;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.voice;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:437"
+  },
+  {
+   "id": "cisco_safeCapability-82-video",
+   "title": "Video",
+   "tags": "cisco safe capability video cisco safe capability Video",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#999999;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.video;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:439"
+  },
+  {
+   "id": "cisco_safeCapability-83-load-balancer",
+   "title": "Load Balancer",
+   "tags": "cisco safe capability load balancer cisco safe capability Load Balancer",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#999999;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.load_balancer;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:441"
+  },
+  {
+   "id": "cisco_safeCapability-84-host-context",
+   "title": "Host Context",
+   "tags": "cisco safe capability host context cisco safe capability Host Context",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#999999;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.host_context;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:443"
+  },
+  {
+   "id": "cisco_safeCapability-85-business-application",
+   "title": "Business Application",
+   "tags": "cisco safe capability business application cisco safe capability Business Application",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#999999;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.application;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:445"
+  },
+  {
+   "id": "cisco_safeCapability-86-infrastructure-redundancy",
+   "title": "Infrastructure Redundancy",
+   "tags": "cisco safe capability infrastructure redundancy cisco safe capability Infrastructure Redundancy",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#999999;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.infrastructure_redundancy;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:447"
+  },
+  {
+   "id": "cisco_safeCapability-87-standardized-system-images",
+   "title": "Standardized System Images",
+   "tags": "cisco safe capability standardized system images cisco safe capability Standardized System Images",
+   "kind": "vertex",
+   "width": 43,
+   "height": 43,
+   "style": "fillColor=#999999;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.standardized_system_images;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:449"
+  }
+ ]
+}

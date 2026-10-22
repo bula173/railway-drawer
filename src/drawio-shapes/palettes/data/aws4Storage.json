@@ -1,0 +1,1240 @@
+{
+ "id": "aws4Storage",
+ "title": "AWS / Storage",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-AWS4.js:8",
+ "entries": [
+  {
+   "id": "aws4Storage-0-storage",
+   "title": "Storage",
+   "tags": "aws4 storage aws amazon web service storage  Storage",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#7AA116;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.storage;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2188"
+  },
+  {
+   "id": "aws4Storage-1-elastic-block-store",
+   "title": "Elastic Block Store",
+   "tags": "aws4 elastic block store aws amazon web service storage  Elastic Block Store",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#7AA116;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.elastic_block_store;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2190"
+  },
+  {
+   "id": "aws4Storage-2-file-cache",
+   "title": "File Cache",
+   "tags": "aws4 file cache aws amazon web service storage  File Cache",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#7AA116;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.file_cache;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2192"
+  },
+  {
+   "id": "aws4Storage-3-elastic-file-system",
+   "title": "Elastic File System",
+   "tags": "aws4 elastic file system aws amazon web service storage  Elastic File System",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#7AA116;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.elastic_file_system;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2194"
+  },
+  {
+   "id": "aws4Storage-4-fsx",
+   "title": "FSx",
+   "tags": "aws4 fsx aws amazon web service storage  FSx",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#7AA116;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.fsx;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2196"
+  },
+  {
+   "id": "aws4Storage-5-fsx-for-lustre",
+   "title": "FSx for Lustre",
+   "tags": "aws4 fsx for lustre aws amazon web service storage  FSx for Lustre",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#7AA116;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.fsx_for_lustre;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2198"
+  },
+  {
+   "id": "aws4Storage-6-fsx-for-netapp-ontap",
+   "title": "FSx for NetApp ONTAP",
+   "tags": "aws4 fsx for netapp ontap aws amazon web service storage  FSx for NetApp ONTAP",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#7AA116;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.fsx_for_netapp_ontap;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2200"
+  },
+  {
+   "id": "aws4Storage-7-fsx-for-openzfs",
+   "title": "FSx for OpenZFS",
+   "tags": "aws4 fsx for openzfs aws amazon web service storage  FSx for OpenZFS",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#7AA116;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.fsx_for_openzfs;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2202"
+  },
+  {
+   "id": "aws4Storage-8-fsx-for-windows-file-server",
+   "title": "FSx for Windows File Server",
+   "tags": "aws4 fsx for windows file server wfs aws amazon web service storage  FSx for Windows File Server",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#7AA116;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.fsx_for_windows_file_server;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2204"
+  },
+  {
+   "id": "aws4Storage-9-s3-on-outposts",
+   "title": "S3 on Outposts",
+   "tags": "aws4 s3 on outposts storage aws amazon web service storage  S3 on Outposts",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#7AA116;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.s3_on_outposts_storage;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2206"
+  },
+  {
+   "id": "aws4Storage-10-s3-glacier",
+   "title": "S3 Glacier",
+   "tags": "aws4 s3 simple storage service glacier aws amazon web service storage  S3 Glacier",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#7AA116;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.glacier;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2208"
+  },
+  {
+   "id": "aws4Storage-11-simple-storage-service-s3",
+   "title": "Simple Storage Service (S3)",
+   "tags": "aws4 s3 simple storage service aws amazon web service storage  Simple Storage Service (S3)",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#7AA116;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.s3;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2210"
+  },
+  {
+   "id": "aws4Storage-12-backup",
+   "title": "Backup",
+   "tags": "aws4 backup aws amazon web service storage  Backup",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#7AA116;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.backup;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2212"
+  },
+  {
+   "id": "aws4Storage-13-snowball",
+   "title": "Snowball",
+   "tags": "aws4 snowball aws amazon web service storage  Snowball",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#7AA116;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.snowball;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2214"
+  },
+  {
+   "id": "aws4Storage-14-snowball-edge",
+   "title": "Snowball Edge",
+   "tags": "aws4 snowball edge aws amazon web service storage  Snowball Edge",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#7AA116;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.snowball_edge;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2216"
+  },
+  {
+   "id": "aws4Storage-15-storage-gateway",
+   "title": "Storage Gateway",
+   "tags": "aws4 storage gateway aws amazon web service storage  Storage Gateway",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#7AA116;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.storage_gateway;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2218"
+  },
+  {
+   "id": "aws4Storage-16-elastic-disaster-recovery",
+   "title": "Elastic Disaster Recovery",
+   "tags": "aws4 cloudendure elastic disaster recovery drs aws amazon web service storage  Elastic Disaster Recovery",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#7AA116;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cloudendure_disaster_recovery;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2220"
+  },
+  {
+   "id": "aws4Storage-17-elastic-block-store-amazon-data-lifecycle-manager",
+   "title": "Elastic Block Store Amazon Data Lifecycle Manager",
+   "tags": "aws4 elastic block store amazon data lifecycle manager aws amazon web service storage  Elastic Block Store Amazon Data Lifecycle Manager",
+   "kind": "vertex",
+   "width": 76,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.elastic_block_store_amazon_data_lifecycle_manager;",
+   "shapeNames": [
+    "mxgraph.aws4.elastic_block_store_amazon_data_lifecycle_manager"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2223"
+  },
+  {
+   "id": "aws4Storage-18-snapshot",
+   "title": "Snapshot",
+   "tags": "aws4 snapshot aws amazon web service storage  Snapshot",
+   "kind": "vertex",
+   "width": 56,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.snapshot;",
+   "shapeNames": [
+    "mxgraph.aws4.snapshot"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2225"
+  },
+  {
+   "id": "aws4Storage-19-volume",
+   "title": "Volume",
+   "tags": "aws4 volume aws amazon web service storage  Volume",
+   "kind": "vertex",
+   "width": 62,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.volume;",
+   "shapeNames": [
+    "mxgraph.aws4.volume"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2227"
+  },
+  {
+   "id": "aws4Storage-20-elastic-block-store-volume-gp3",
+   "title": "Elastic Block Store Volume gp3",
+   "tags": "aws4 elastic block store volume gp3 aws amazon web service storage  Elastic Block Store Volume gp3",
+   "kind": "vertex",
+   "width": 64,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.elastic_block_store_volume_gp3;",
+   "shapeNames": [
+    "mxgraph.aws4.elastic_block_store_volume_gp3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2229"
+  },
+  {
+   "id": "aws4Storage-21-elastic-file-system-elastic-throughput",
+   "title": "Elastic File System Elastic Throughput",
+   "tags": "aws4 elastic file system elastic throughput aws amazon web service storage  Elastic File System Elastic Throughput",
+   "kind": "vertex",
+   "width": 78,
+   "height": 76,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.elastic_file_system_elastic_throughput;",
+   "shapeNames": [
+    "mxgraph.aws4.elastic_file_system_elastic_throughput"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2231"
+  },
+  {
+   "id": "aws4Storage-22-file-gateway",
+   "title": "File Gateway",
+   "tags": "aws4 file gateway aws amazon web service storage  File Gateway",
+   "kind": "vertex",
+   "width": 69,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.file_gateway;",
+   "shapeNames": [
+    "mxgraph.aws4.file_gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2233"
+  },
+  {
+   "id": "aws4Storage-23-fsx-file-gateway",
+   "title": "FSx File Gateway",
+   "tags": "aws4 fsx file gateway aws amazon web service storage  FSx File Gateway",
+   "kind": "vertex",
+   "width": 75,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.fsx_file_gateway;",
+   "shapeNames": [
+    "mxgraph.aws4.fsx_file_gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2235"
+  },
+  {
+   "id": "aws4Storage-24-s3-file-gateway",
+   "title": "S3 File Gateway",
+   "tags": "aws4 s3 file gateway aws amazon web service storage  S3 File Gateway",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.s3_file_gateway;",
+   "shapeNames": [
+    "mxgraph.aws4.s3_file_gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2237"
+  },
+  {
+   "id": "aws4Storage-25-file-system",
+   "title": "File System",
+   "tags": "aws4 file system aws amazon web service storage  File System",
+   "kind": "vertex",
+   "width": 78,
+   "height": 73,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.file_system;",
+   "shapeNames": [
+    "mxgraph.aws4.file_system"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2239"
+  },
+  {
+   "id": "aws4Storage-26-elastic-file-system-intelligent-tiering",
+   "title": "Elastic File System Intelligent Tiering",
+   "tags": "aws4 elastic file system intelligent tiering aws amazon web service storage  Elastic File System Intelligent Tiering",
+   "kind": "vertex",
+   "width": 78,
+   "height": 77,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.elastic_file_system_intelligent_tiering;",
+   "shapeNames": [
+    "mxgraph.aws4.elastic_file_system_intelligent_tiering"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2241"
+  },
+  {
+   "id": "aws4Storage-27-elastic-file-system-one-zone",
+   "title": "Elastic File System One Zone",
+   "tags": "aws4 elastic file system one zone aws amazon web service storage  Elastic File System One Zone",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.elastic_file_system_one_zone;",
+   "shapeNames": [
+    "mxgraph.aws4.elastic_file_system_one_zone"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2243"
+  },
+  {
+   "id": "aws4Storage-28-elastic-file-system-standard-infrequent-access",
+   "title": "Elastic File System Standard Infrequent Access",
+   "tags": "aws4 efs elastic file system standard infrequent access efs infrequent access aws amazon web service storage  Elastic File System Standard Infrequent Access",
+   "kind": "vertex",
+   "width": 78,
+   "height": 76,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.elastic_file_system_infrequent_access;",
+   "shapeNames": [
+    "mxgraph.aws4.elastic_file_system_infrequent_access"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2245"
+  },
+  {
+   "id": "aws4Storage-29-elastic-file-system-one-zone-infrequent-access",
+   "title": "Elastic File System One Zone Infrequent Access",
+   "tags": "aws4 efs elastic file system one zone infrequent access aws amazon web service storage  Elastic File System One Zone Infrequent Access",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.elastic_file_system_one_zone_infrequent_access;",
+   "shapeNames": [
+    "mxgraph.aws4.elastic_file_system_one_zone_infrequent_access"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2247"
+  },
+  {
+   "id": "aws4Storage-30-elastic-file-system-standard",
+   "title": "Elastic File System Standard",
+   "tags": "aws4 efs elastic file system standard efs standard aws amazon web service storage  Elastic File System Standard",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.elastic_file_system_standard;",
+   "shapeNames": [
+    "mxgraph.aws4.elastic_file_system_standard"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2249"
+  },
+  {
+   "id": "aws4Storage-31-file-cache-hybrid-nfs-linked-datasets",
+   "title": "File Cache Hybrid NFS Linked Datasets",
+   "tags": "aws4 file cache hybrid nfs linked datasets aws amazon web service storage  File Cache Hybrid NFS Linked Datasets",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.file_cache_hybrid_nfs_linked_datasets;",
+   "shapeNames": [
+    "mxgraph.aws4.file_cache_hybrid_nfs_linked_datasets"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2251"
+  },
+  {
+   "id": "aws4Storage-32-file-cache-on-premises-nfs-linked-datasets",
+   "title": "File Cache On Premises NFS Linked Datasets",
+   "tags": "aws4 file cache premises nfs linked datasets aws amazon web service storage  File Cache On Premises NFS Linked Datasets",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.file_cache_on_premises_nfs_linked_datasets;",
+   "shapeNames": [
+    "mxgraph.aws4.file_cache_on_premises_nfs_linked_datasets"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2253"
+  },
+  {
+   "id": "aws4Storage-33-file-cache-s3-linked-datasets",
+   "title": "File Cache S3 Linked Datasets",
+   "tags": "aws4 file cache s3 linked datasets aws amazon web service storage  File Cache S3 Linked Datasets",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.file_cache_s3_linked_datasets;",
+   "shapeNames": [
+    "mxgraph.aws4.file_cache_s3_linked_datasets"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2255"
+  },
+  {
+   "id": "aws4Storage-34-access-points",
+   "title": "Access Points",
+   "tags": "aws4 access points aws amazon web service storage  Access Points",
+   "kind": "vertex",
+   "width": 65,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.general_access_points;",
+   "shapeNames": [
+    "mxgraph.aws4.general_access_points"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2257"
+  },
+  {
+   "id": "aws4Storage-35-vault",
+   "title": "Vault",
+   "tags": "aws4 s3 simple storage service glacier archive aws amazon web service storage  Vault",
+   "kind": "vertex",
+   "width": 63,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.archive;",
+   "shapeNames": [
+    "mxgraph.aws4.archive"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2259"
+  },
+  {
+   "id": "aws4Storage-36-backup-audit-manager",
+   "title": "Backup Audit Manager",
+   "tags": "aws4 backup audit manager aws amazon web service storage  Backup Audit Manager",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.backup_audit_manager;",
+   "shapeNames": [
+    "mxgraph.aws4.backup_audit_manager"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2261"
+  },
+  {
+   "id": "aws4Storage-37-backup-for-aws-cloudformation",
+   "title": "Backup for AWS CloudFormation",
+   "tags": "aws4 backup for cloudformation aws amazon web service storage  Backup for AWS CloudFormation",
+   "kind": "vertex",
+   "width": 78,
+   "height": 64,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.aws_backup_for_aws_cloudformation;",
+   "shapeNames": [
+    "mxgraph.aws4.aws_backup_for_aws_cloudformation"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2263"
+  },
+  {
+   "id": "aws4Storage-38-backup-support-for-amazon-fsx-for-netapp-ontap",
+   "title": "Backup Support for Amazon FSX for NetApp ONTAP",
+   "tags": "aws4 backup support for fsx netapp ontap aws amazon web service storage  Backup Support for Amazon FSX for NetApp ONTAP",
+   "kind": "vertex",
+   "width": 78,
+   "height": 64,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.aws_backup_support_for_amazon_fsx_for_netapp_ontap;",
+   "shapeNames": [
+    "mxgraph.aws4.aws_backup_support_for_amazon_fsx_for_netapp_ontap"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2265"
+  },
+  {
+   "id": "aws4Storage-39-backup-aws-backup-support-for-amazon-s3",
+   "title": "Backup AWS Backup Support for Amazon S3",
+   "tags": "aws4 backup aws backup support for amazon s3 aws amazon web service storage  Backup AWS Backup Support for Amazon S3",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.backup_aws_backup_support_for_amazon_s3;",
+   "shapeNames": [
+    "mxgraph.aws4.backup_aws_backup_support_for_amazon_s3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2267"
+  },
+  {
+   "id": "aws4Storage-40-backup-aws-backup-support-for-vmware-workloads",
+   "title": "Backup AWS Backup Support for VMware Workloads",
+   "tags": "aws4 backup aws backup support for vmware workloads aws amazon web service storage  Backup AWS Backup Support for VMware Workloads",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.backup_aws_backup_support_for_vmware_workloads;",
+   "shapeNames": [
+    "mxgraph.aws4.backup_aws_backup_support_for_vmware_workloads"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2269"
+  },
+  {
+   "id": "aws4Storage-41-backup-plan",
+   "title": "Backup Plan",
+   "tags": "aws4 backup plan aws amazon web service storage  Backup Plan",
+   "kind": "vertex",
+   "width": 60,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.backup_plan;",
+   "shapeNames": [
+    "mxgraph.aws4.backup_plan"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2271"
+  },
+  {
+   "id": "aws4Storage-42-backup-restore",
+   "title": "Backup Restore",
+   "tags": "aws4 backup restore aws amazon web service storage  Backup Restore",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.backup_restore;",
+   "shapeNames": [
+    "mxgraph.aws4.backup_restore"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2273"
+  },
+  {
+   "id": "aws4Storage-43-backup-vault",
+   "title": "Backup Vault",
+   "tags": "aws4 backup vault aws amazon web service storage  Backup Vault",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.backup_vault;",
+   "shapeNames": [
+    "mxgraph.aws4.backup_vault"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2275"
+  },
+  {
+   "id": "aws4Storage-44-backup-compliance-reporting",
+   "title": "Backup Compliance Reporting",
+   "tags": "aws4 backup compliance reporting aws amazon web service storage  Backup Compliance Reporting",
+   "kind": "vertex",
+   "width": 64,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.backup_compliance_reporting;",
+   "shapeNames": [
+    "mxgraph.aws4.backup_compliance_reporting"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2277"
+  },
+  {
+   "id": "aws4Storage-45-backup-compute",
+   "title": "Backup Compute",
+   "tags": "aws4 backup compute aws amazon web service storage  Backup Compute",
+   "kind": "vertex",
+   "width": 78,
+   "height": 77,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.backup_compute;",
+   "shapeNames": [
+    "mxgraph.aws4.backup_compute"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2279"
+  },
+  {
+   "id": "aws4Storage-46-backup-database",
+   "title": "Backup Database",
+   "tags": "aws4 backup database aws amazon web service storage  Backup Database",
+   "kind": "vertex",
+   "width": 78,
+   "height": 77,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.backup_database;",
+   "shapeNames": [
+    "mxgraph.aws4.backup_database"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2281"
+  },
+  {
+   "id": "aws4Storage-47-backup-gateway",
+   "title": "Backup Gateway",
+   "tags": "aws4 backup gateway aws amazon web service storage  Backup Gateway",
+   "kind": "vertex",
+   "width": 78,
+   "height": 77,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.backup_gateway;",
+   "shapeNames": [
+    "mxgraph.aws4.backup_gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2283"
+  },
+  {
+   "id": "aws4Storage-48-backup-legal-hold",
+   "title": "Backup Legal Hold",
+   "tags": "aws4 backup legal hold aws amazon web service storage  Backup Legal Hold",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.aws_backup_legal_hold;",
+   "shapeNames": [
+    "mxgraph.aws4.aws_backup_legal_hold"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2285"
+  },
+  {
+   "id": "aws4Storage-49-backup-recovery-point-objective",
+   "title": "Backup Recovery Point Objective",
+   "tags": "aws4 backup recovery point objective aws amazon web service storage  Backup Recovery Point Objective",
+   "kind": "vertex",
+   "width": 78,
+   "height": 77,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.backup_recovery_point_objective;",
+   "shapeNames": [
+    "mxgraph.aws4.backup_recovery_point_objective"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2287"
+  },
+  {
+   "id": "aws4Storage-50-backup-recovery-time-objective",
+   "title": "Backup Recovery Time Objective",
+   "tags": "aws4 backup recovery time objective aws amazon web service storage  Backup Recovery Time Objective",
+   "kind": "vertex",
+   "width": 78,
+   "height": 75,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.backup_recovery_time_objective;",
+   "shapeNames": [
+    "mxgraph.aws4.backup_recovery_time_objective"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2289"
+  },
+  {
+   "id": "aws4Storage-51-backup-storage",
+   "title": "Backup Storage",
+   "tags": "aws4 backup storage aws amazon web service storage  Backup Storage",
+   "kind": "vertex",
+   "width": 78,
+   "height": 77,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.backup_storage;",
+   "shapeNames": [
+    "mxgraph.aws4.backup_storage"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2291"
+  },
+  {
+   "id": "aws4Storage-52-backup-vault-lock",
+   "title": "Backup Vault Lock",
+   "tags": "aws4 backup vault lock aws amazon web service storage  Backup Vault Lock",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.aws_backup_vault_lock;",
+   "shapeNames": [
+    "mxgraph.aws4.aws_backup_vault_lock"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2293"
+  },
+  {
+   "id": "aws4Storage-53-backup-virtual-machine",
+   "title": "Backup Virtual Machine",
+   "tags": "aws4 backup virtual machine aws amazon web service storage  Backup Virtual Machine",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.backup_virtual_machine;",
+   "shapeNames": [
+    "mxgraph.aws4.backup_virtual_machine"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2295"
+  },
+  {
+   "id": "aws4Storage-54-backup-virtual-machine-monitor",
+   "title": "Backup Virtual Machine Monitor",
+   "tags": "aws4 backup virtual machine monitor aws amazon web service storage  Backup Virtual Machine Monitor",
+   "kind": "vertex",
+   "width": 70,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.backup_virtual_machine_monitor;",
+   "shapeNames": [
+    "mxgraph.aws4.backup_virtual_machine_monitor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2297"
+  },
+  {
+   "id": "aws4Storage-55-archive",
+   "title": "Archive",
+   "tags": "aws4 s3 simple storage service glacier vault aws amazon web service storage  Archive",
+   "kind": "vertex",
+   "width": 62,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.vault;",
+   "shapeNames": [
+    "mxgraph.aws4.vault"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2299"
+  },
+  {
+   "id": "aws4Storage-56-bucket",
+   "title": "Bucket",
+   "tags": "aws4 s3 simple storage service bucket aws amazon web service storage  Bucket",
+   "kind": "vertex",
+   "width": 75,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.bucket;",
+   "shapeNames": [
+    "mxgraph.aws4.bucket"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2301"
+  },
+  {
+   "id": "aws4Storage-57-intelligent-tiering",
+   "title": "Intelligent Tiering",
+   "tags": "aws4 intelligent tiering aws amazon web service storage  Intelligent Tiering",
+   "kind": "vertex",
+   "width": 75,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.intelligent_tiering;",
+   "shapeNames": [
+    "mxgraph.aws4.intelligent_tiering"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2303"
+  },
+  {
+   "id": "aws4Storage-58-s3-multi-region-access-points",
+   "title": "S3 Multi-Region Access Points",
+   "tags": "aws4 s3 multi region access points aws amazon web service storage  S3 Multi-Region Access Points",
+   "kind": "vertex",
+   "width": 76,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.s3_multi_region_access_points;",
+   "shapeNames": [
+    "mxgraph.aws4.s3_multi_region_access_points"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2305"
+  },
+  {
+   "id": "aws4Storage-59-s3-object-lambda",
+   "title": "S3 Object Lambda",
+   "tags": "aws4 s3 object lambda aws amazon web service storage  S3 Object Lambda",
+   "kind": "vertex",
+   "width": 53,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.s3_object_lambda;",
+   "shapeNames": [
+    "mxgraph.aws4.s3_object_lambda"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2307"
+  },
+  {
+   "id": "aws4Storage-60-s3-object-lambda-access-points",
+   "title": "S3 Object Lambda Access Points",
+   "tags": "aws4 s3 object lambda access points aws amazon web service storage  S3 Object Lambda Access Points",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.s3_object_lambda_access_points;",
+   "shapeNames": [
+    "mxgraph.aws4.s3_object_lambda_access_points"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2309"
+  },
+  {
+   "id": "aws4Storage-61-s3-object-lock",
+   "title": "S3 Object Lock",
+   "tags": "aws4 s3 object lock aws amazon web service storage  S3 Object Lock",
+   "kind": "vertex",
+   "width": 71,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.s3_object_lock;",
+   "shapeNames": [
+    "mxgraph.aws4.s3_object_lock"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2311"
+  },
+  {
+   "id": "aws4Storage-62-s3-on-outposts",
+   "title": "S3 On Outposts",
+   "tags": "aws4 s3 on outposts aws amazon web service storage  S3 On Outposts",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.s3_on_outposts;",
+   "shapeNames": [
+    "mxgraph.aws4.s3_on_outposts"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2313"
+  },
+  {
+   "id": "aws4Storage-63-standard-ia",
+   "title": "Standard IA",
+   "tags": "aws4 standard ia aws amazon web service storage  Standard IA",
+   "kind": "vertex",
+   "width": 75,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.standard_ia;",
+   "shapeNames": [
+    "mxgraph.aws4.standard_ia"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2315"
+  },
+  {
+   "id": "aws4Storage-64-s3-storage-lens",
+   "title": "S3 Storage Lens",
+   "tags": "aws4 s3 storage lens aws amazon web service storage  S3 Storage Lens",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.s3_storage_lens;",
+   "shapeNames": [
+    "mxgraph.aws4.s3_storage_lens"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2317"
+  },
+  {
+   "id": "aws4Storage-65-s3-tables",
+   "title": "S3 Tables",
+   "tags": "aws4 s3 tables aws amazon web service storage  S3 Tables",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.s3_tables;",
+   "shapeNames": [
+    "mxgraph.aws4.s3_tables"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2319"
+  },
+  {
+   "id": "aws4Storage-66-s3-vectors",
+   "title": "S3 Vectors",
+   "tags": "aws4 s3 vectors aws amazon web service storage  S3 Vectors",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.s3_vectors;",
+   "shapeNames": [
+    "mxgraph.aws4.s3_vectors"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2321"
+  },
+  {
+   "id": "aws4Storage-67-one-zone-ia",
+   "title": "One Zone IA",
+   "tags": "aws4 one zone ia aws amazon web service storage  One Zone IA",
+   "kind": "vertex",
+   "width": 75,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.one_zone_ia;",
+   "shapeNames": [
+    "mxgraph.aws4.one_zone_ia"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2323"
+  },
+  {
+   "id": "aws4Storage-68-glacier-flexible-retrieval",
+   "title": "Glacier Flexible Retrieval",
+   "tags": "aws4 glacier flexible retrieval aws amazon web service storage  Glacier Flexible Retrieval",
+   "kind": "vertex",
+   "width": 75,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.glacier;",
+   "shapeNames": [
+    "mxgraph.aws4.glacier"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2325"
+  },
+  {
+   "id": "aws4Storage-69-glacier-instant-retrieval",
+   "title": "Glacier Instant Retrieval",
+   "tags": "aws4 glacier instant retrieval aws amazon web service storage  Glacier Instant Retrieval",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.simple_storage_service_s3_glacier_instant_retrieval;",
+   "shapeNames": [
+    "mxgraph.aws4.simple_storage_service_s3_glacier_instant_retrieval"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2327"
+  },
+  {
+   "id": "aws4Storage-70-glacier-deep-archive",
+   "title": "Glacier Deep Archive",
+   "tags": "aws4 glacier deep archive aws amazon web service storage  Glacier Deep Archive",
+   "kind": "vertex",
+   "width": 75,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.glacier_deep_archive;",
+   "shapeNames": [
+    "mxgraph.aws4.glacier_deep_archive"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2329"
+  },
+  {
+   "id": "aws4Storage-71-bucket-with-objects",
+   "title": "Bucket with Objects",
+   "tags": "aws4 s3 simple storage service bucket with objects aws amazon web service storage  Bucket with Objects",
+   "kind": "vertex",
+   "width": 75,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.bucket_with_objects;",
+   "shapeNames": [
+    "mxgraph.aws4.bucket_with_objects"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2331"
+  },
+  {
+   "id": "aws4Storage-72-s3-directory-bucket",
+   "title": "S3 Directory Bucket",
+   "tags": "aws4 s3 simple storage service directory bucket aws amazon web service storage  S3 Directory Bucket",
+   "kind": "vertex",
+   "width": 75,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.simple_storage_service_directory_bucket;",
+   "shapeNames": [
+    "mxgraph.aws4.simple_storage_service_directory_bucket"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2333"
+  },
+  {
+   "id": "aws4Storage-73-replication",
+   "title": "Replication",
+   "tags": "aws4 replication aws amazon web service storage  Replication",
+   "kind": "vertex",
+   "width": 76,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.replication;",
+   "shapeNames": [
+    "mxgraph.aws4.replication"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2335"
+  },
+  {
+   "id": "aws4Storage-74-replication-time-control",
+   "title": "Replication Time Control",
+   "tags": "aws4 replication time control aws amazon web service storage  Replication Time Control",
+   "kind": "vertex",
+   "width": 76,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.replication_time_control;",
+   "shapeNames": [
+    "mxgraph.aws4.replication_time_control"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2337"
+  },
+  {
+   "id": "aws4Storage-75-s3-select",
+   "title": "S3 Select",
+   "tags": "aws4 s3 select aws amazon web service storage  S3 Select",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.s3_select;",
+   "shapeNames": [
+    "mxgraph.aws4.s3_select"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2339"
+  },
+  {
+   "id": "aws4Storage-76-object",
+   "title": "Object",
+   "tags": "aws4 s3 simple storage service object aws amazon web service storage  Object",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.object;",
+   "shapeNames": [
+    "mxgraph.aws4.object"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2341"
+  },
+  {
+   "id": "aws4Storage-77-s3-batch-operations",
+   "title": "S3 Batch Operations",
+   "tags": "aws4 s3 batch operations aws amazon web service storage  S3 Batch Operations",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.s3_batch_operations;",
+   "shapeNames": [
+    "mxgraph.aws4.s3_batch_operations"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2343"
+  },
+  {
+   "id": "aws4Storage-78-s3-express-one-zone",
+   "title": "S3 Express One-Zone",
+   "tags": "aws4 s3 express one zone aws amazon web service storage  S3 Express One-Zone",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.s3_express_one_zone;",
+   "shapeNames": [
+    "mxgraph.aws4.s3_express_one_zone"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2345"
+  },
+  {
+   "id": "aws4Storage-79-s3-files",
+   "title": "S3 Files",
+   "tags": "aws4 s3 files aws amazon web service storage  S3 Files",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.s3_files;",
+   "shapeNames": [
+    "mxgraph.aws4.s3_files"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2347"
+  },
+  {
+   "id": "aws4Storage-80-snowball-import-export",
+   "title": "Snowball Import Export",
+   "tags": "aws4 snowball import export aws amazon web service storage  Snowball Import Export",
+   "kind": "vertex",
+   "width": 78,
+   "height": 61,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.import_export;",
+   "shapeNames": [
+    "mxgraph.aws4.import_export"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2349"
+  },
+  {
+   "id": "aws4Storage-81-tape-gateway",
+   "title": "Tape Gateway",
+   "tags": "aws4 tape gateway aws amazon web service storage  Tape Gateway",
+   "kind": "vertex",
+   "width": 74,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.tape_gateway;",
+   "shapeNames": [
+    "mxgraph.aws4.tape_gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2351"
+  },
+  {
+   "id": "aws4Storage-82-volume-gateway",
+   "title": "Volume Gateway",
+   "tags": "aws4 volume gateway aws amazon web service storage  Volume Gateway",
+   "kind": "vertex",
+   "width": 65,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.volume_gateway;",
+   "shapeNames": [
+    "mxgraph.aws4.volume_gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2353"
+  },
+  {
+   "id": "aws4Storage-83-cached-volume",
+   "title": "Cached Volume",
+   "tags": "aws4 storage gateway cached volume aws amazon web service storage  Cached Volume",
+   "kind": "vertex",
+   "width": 62,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.cached_volume;",
+   "shapeNames": [
+    "mxgraph.aws4.cached_volume"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2355"
+  },
+  {
+   "id": "aws4Storage-84-non-cached-volume",
+   "title": "Non-Cached Volume",
+   "tags": "aws4 storage gateway non cached volume aws amazon web service storage  Non-Cached Volume",
+   "kind": "vertex",
+   "width": 62,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.non_cached_volume;",
+   "shapeNames": [
+    "mxgraph.aws4.non_cached_volume"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2357"
+  },
+  {
+   "id": "aws4Storage-85-virtual-tape-library",
+   "title": "Virtual Tape Library",
+   "tags": "aws4 storage gateway virtual tape library vtl aws amazon web service storage  Virtual Tape Library",
+   "kind": "vertex",
+   "width": 62,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.virtual_tape_library;",
+   "shapeNames": [
+    "mxgraph.aws4.virtual_tape_library"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2359"
+  },
+  {
+   "id": "aws4Storage-86-multiple-volumes",
+   "title": "Multiple Volumes",
+   "tags": "aws4 multiple volumes aws amazon web service storage  Multiple Volumes",
+   "kind": "vertex",
+   "width": 78,
+   "height": 60,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.multiple_volumes_resource;",
+   "shapeNames": [
+    "mxgraph.aws4.multiple_volumes_resource"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2361"
+  },
+  {
+   "id": "aws4Storage-87-vpc-access-points",
+   "title": "VPC Access Points",
+   "tags": "aws4 vpc virtual private cloud access points aws amazon web service storage  VPC Access Points",
+   "kind": "vertex",
+   "width": 53,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.vpc_access_points;",
+   "shapeNames": [
+    "mxgraph.aws4.vpc_access_points"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:2363"
+  }
+ ]
+}

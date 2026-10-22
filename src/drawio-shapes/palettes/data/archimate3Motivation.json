@@ -1,0 +1,298 @@
+{
+ "id": "archimate3Motivation",
+ "title": "Archimate 3.2 / Motivation",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:8",
+ "entries": [
+  {
+   "id": "archimate3Motivation-0-stakeholder",
+   "title": "Stakeholder",
+   "tags": "archimate3  archimate implementation motivation element stakeholder Stakeholder",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#CCCCFF;shape=mxgraph.archimate3.application;appType=role;archiType=oct;",
+   "value": "Stakeholder",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:300"
+  },
+  {
+   "id": "archimate3Motivation-1-stakeholder",
+   "title": "Stakeholder",
+   "tags": "archimate3  archimate implementation motivation element stakeholder Stakeholder",
+   "kind": "vertex",
+   "width": 60,
+   "height": 35,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#CCCCFF;shape=mxgraph.archimate3.role;",
+   "shapeNames": [
+    "mxgraph.archimate3.role"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:302"
+  },
+  {
+   "id": "archimate3Motivation-2-driver",
+   "title": "Driver",
+   "tags": "archimate3  archimate implementation motivation element driver Driver",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#CCCCFF;shape=mxgraph.archimate3.application;appType=driver;archiType=oct;",
+   "value": "Driver",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:304"
+  },
+  {
+   "id": "archimate3Motivation-3-driver",
+   "title": "Driver",
+   "tags": "archimate3  archimate implementation motivation element driver Driver",
+   "kind": "vertex",
+   "width": 40,
+   "height": 40,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#CCCCFF;shape=mxgraph.archimate3.driver;",
+   "shapeNames": [
+    "mxgraph.archimate3.driver"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:306"
+  },
+  {
+   "id": "archimate3Motivation-4-assessment",
+   "title": "Assessment",
+   "tags": "archimate3  archimate implementation motivation element assessment Assessment",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#CCCCFF;shape=mxgraph.archimate3.application;appType=assess;archiType=oct;",
+   "value": "Assessment",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:308"
+  },
+  {
+   "id": "archimate3Motivation-5-assessment",
+   "title": "Assessment",
+   "tags": "archimate3  archimate implementation motivation element assessment Assessment",
+   "kind": "vertex",
+   "width": 40,
+   "height": 40,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#CCCCFF;shape=mxgraph.archimate3.assess;",
+   "shapeNames": [
+    "mxgraph.archimate3.assess"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:310"
+  },
+  {
+   "id": "archimate3Motivation-6-goal",
+   "title": "Goal",
+   "tags": "archimate3  archimate implementation motivation element goal Goal",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#CCCCFF;shape=mxgraph.archimate3.application;appType=goal;archiType=oct;",
+   "value": "Goal",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:312"
+  },
+  {
+   "id": "archimate3Motivation-7-goal",
+   "title": "Goal",
+   "tags": "archimate3  archimate implementation motivation element goal Goal",
+   "kind": "vertex",
+   "width": 40,
+   "height": 40,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#CCCCFF;shape=mxgraph.archimate3.goal;",
+   "shapeNames": [
+    "mxgraph.archimate3.goal"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:314"
+  },
+  {
+   "id": "archimate3Motivation-8-outcome",
+   "title": "Outcome",
+   "tags": "archimate3  archimate implementation motivation element outcome Outcome",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#CCCCFF;shape=mxgraph.archimate3.application;appType=outcome;archiType=oct;",
+   "value": "Outcome",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:316"
+  },
+  {
+   "id": "archimate3Motivation-9-outcome",
+   "title": "Outcome",
+   "tags": "archimate3  archimate implementation motivation element outcome Outcome",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#CCCCFF;shape=mxgraph.archimate3.outcome;strokeWidth=2;",
+   "shapeNames": [
+    "mxgraph.archimate3.outcome"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:318"
+  },
+  {
+   "id": "archimate3Motivation-10-principle",
+   "title": "Principle",
+   "tags": "archimate3  archimate implementation motivation element principle Principle",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#CCCCFF;shape=mxgraph.archimate3.application;appType=principle;archiType=oct;",
+   "value": "Principle",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:320"
+  },
+  {
+   "id": "archimate3Motivation-11-principle",
+   "title": "Principle",
+   "tags": "archimate3  archimate implementation motivation element principle Principle",
+   "kind": "vertex",
+   "width": 40,
+   "height": 40,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#CCCCFF;shape=mxgraph.archimate3.principle;strokeWidth=2;",
+   "shapeNames": [
+    "mxgraph.archimate3.principle"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:322"
+  },
+  {
+   "id": "archimate3Motivation-12-requirement",
+   "title": "Requirement",
+   "tags": "archimate3  archimate implementation motivation element requirement Requirement",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#CCCCFF;shape=mxgraph.archimate3.application;appType=requirement;archiType=oct;",
+   "value": "Requirement",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:324"
+  },
+  {
+   "id": "archimate3Motivation-13-requirement",
+   "title": "Requirement",
+   "tags": "archimate3  archimate implementation motivation element requirement Requirement",
+   "kind": "vertex",
+   "width": 70,
+   "height": 35,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#CCCCFF;shape=mxgraph.archimate3.requirement;",
+   "shapeNames": [
+    "mxgraph.archimate3.requirement"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:326"
+  },
+  {
+   "id": "archimate3Motivation-14-constraint",
+   "title": "Constraint",
+   "tags": "archimate3  archimate implementation motivation element constraint Constraint",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#CCCCFF;shape=mxgraph.archimate3.application;appType=constraint;archiType=oct;",
+   "value": "Constraint",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:328"
+  },
+  {
+   "id": "archimate3Motivation-15-constraint",
+   "title": "Constraint",
+   "tags": "archimate3  archimate implementation motivation element constraint Constraint",
+   "kind": "vertex",
+   "width": 70,
+   "height": 35,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#CCCCFF;shape=mxgraph.archimate3.constraint;",
+   "shapeNames": [
+    "mxgraph.archimate3.constraint"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:330"
+  },
+  {
+   "id": "archimate3Motivation-16-meaning",
+   "title": "Meaning",
+   "tags": "archimate3  archimate implementation motivation element meaning Meaning",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#CCCCFF;shape=mxgraph.archimate3.application;appType=meaning;archiType=oct;",
+   "value": "Meaning",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:332"
+  },
+  {
+   "id": "archimate3Motivation-17-meaning",
+   "title": "Meaning",
+   "tags": "archimate3  archimate implementation motivation element meaning Meaning",
+   "kind": "vertex",
+   "width": 70,
+   "height": 45,
+   "style": "shape=mxgraph.basic.cloud_callout;html=1;whiteSpace=wrap;fillColor=#CCCCFF;",
+   "shapeNames": [
+    "mxgraph.basic.cloud_callout"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:334"
+  },
+  {
+   "id": "archimate3Motivation-18-value",
+   "title": "Value",
+   "tags": "archimate3  archimate implementation motivation element value Value",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#CCCCFF;shape=mxgraph.archimate3.application;appType=amValue;archiType=oct;",
+   "value": "Value",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:336"
+  },
+  {
+   "id": "archimate3Motivation-19-value",
+   "title": "Value",
+   "tags": "archimate3  archimate implementation motivation element value Value",
+   "kind": "vertex",
+   "width": 70,
+   "height": 35,
+   "style": "shape=ellipse;html=1;whiteSpace=wrap;fillColor=#CCCCFF;",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:338"
+  }
+ ]
+}

@@ -1,0 +1,120 @@
+{
+ "id": "electricalWaveforms",
+ "title": "Electrical / Waveforms",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Electrical.js:8",
+ "entries": [
+  {
+   "id": "electricalWaveforms-0-pulse",
+   "title": "Pulse",
+   "tags": "electrical waveforms pulse 1 electrical waveform signal  Pulse",
+   "kind": "vertex",
+   "width": 90,
+   "height": 90,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.waveforms.pulse_1;",
+   "shapeNames": [
+    "mxgraph.electrical.waveforms.pulse_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:910"
+  },
+  {
+   "id": "electricalWaveforms-1-pulse",
+   "title": "Pulse",
+   "tags": "electrical waveforms pulse 2 electrical waveform signal  Pulse",
+   "kind": "vertex",
+   "width": 90,
+   "height": 90,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.waveforms.pulse_2;",
+   "shapeNames": [
+    "mxgraph.electrical.waveforms.pulse_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:912"
+  },
+  {
+   "id": "electricalWaveforms-2-sawtooth",
+   "title": "Sawtooth",
+   "tags": "electrical waveforms sawtooth electrical waveform signal  Sawtooth",
+   "kind": "vertex",
+   "width": 90,
+   "height": 40,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.waveforms.sawtooth;",
+   "shapeNames": [
+    "mxgraph.electrical.waveforms.sawtooth"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:914"
+  },
+  {
+   "id": "electricalWaveforms-3-sine-wave",
+   "title": "Sine Wave",
+   "tags": "electrical waveforms sine wave electrical waveform signal  Sine Wave",
+   "kind": "vertex",
+   "width": 90,
+   "height": 66.18,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.waveforms.sine_wave;",
+   "shapeNames": [
+    "mxgraph.electrical.waveforms.sine_wave"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:916"
+  },
+  {
+   "id": "electricalWaveforms-4-chopped-square-wave",
+   "title": "Chopped Square Wave",
+   "tags": "electrical waveforms slow square wave electrical waveform signal  Chopped Square Wave",
+   "kind": "vertex",
+   "width": 90,
+   "height": 80,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.waveforms.slow_square_wave;",
+   "shapeNames": [
+    "mxgraph.electrical.waveforms.slow_square_wave"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:918"
+  },
+  {
+   "id": "electricalWaveforms-5-square-wave",
+   "title": "square_wave",
+   "tags": "electrical waveforms square wave electrical waveform signal  square_wave",
+   "kind": "vertex",
+   "width": 90,
+   "height": 80,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.waveforms.square_wave;",
+   "shapeNames": [
+    "mxgraph.electrical.waveforms.square_wave"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:920"
+  },
+  {
+   "id": "electricalWaveforms-6-step",
+   "title": "Step",
+   "tags": "electrical waveforms step 1 electrical waveform signal  Step",
+   "kind": "vertex",
+   "width": 90,
+   "height": 90,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.waveforms.step_1;",
+   "shapeNames": [
+    "mxgraph.electrical.waveforms.step_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:922"
+  },
+  {
+   "id": "electricalWaveforms-7-step",
+   "title": "Step",
+   "tags": "electrical waveforms step 2 electrical waveform signal  Step",
+   "kind": "vertex",
+   "width": 90,
+   "height": 90,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.waveforms.step_2;",
+   "shapeNames": [
+    "mxgraph.electrical.waveforms.step_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:924"
+  }
+ ]
+}

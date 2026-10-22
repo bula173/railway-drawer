@@ -1,0 +1,526 @@
+{
+ "id": "rackOracle",
+ "title": "Rack / Oracle",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Rack.js:7",
+ "entries": [
+  {
+   "id": "rackOracle-0-netra-blade-x3-2b-server",
+   "title": "Netra Blade X3-2B Server",
+   "tags": "rack oracle  Netra Blade X3-2B Server Netra Blade X3-2B Server",
+   "kind": "vertex",
+   "width": 19,
+   "height": 121,
+   "style": "shape=mxgraph.rack.oracle.netra_blade_x3-2b_server;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.oracle.netra_blade_x3-2b_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackOracle-1-netra-cp3260-atca-blade-server",
+   "title": "Netra CP3260 ATCA Blade Server",
+   "tags": "rack oracle  Netra CP3260 ATCA Blade Server Netra CP3260 ATCA Blade Server",
+   "kind": "vertex",
+   "width": 11,
+   "height": 114,
+   "style": "shape=mxgraph.rack.oracle.netra_cp3260_atca_blade_server;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.oracle.netra_cp3260_atca_blade_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackOracle-2-netra-cp3270-atca-blade-server",
+   "title": "Netra CP3270 ATCA Blade Server",
+   "tags": "rack oracle  Netra CP3270 ATCA Blade Server Netra CP3270 ATCA Blade Server",
+   "kind": "vertex",
+   "width": 11,
+   "height": 114,
+   "style": "shape=mxgraph.rack.oracle.netra_cp3270_atca_blade_server;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.oracle.netra_cp3270_atca_blade_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackOracle-3-netra-ct900-atca-blade-server",
+   "title": "Netra CT900 ATCA Blade Server",
+   "tags": "rack oracle  Netra CT900 ATCA Blade Server Netra CT900 ATCA Blade Server",
+   "kind": "vertex",
+   "width": 161,
+   "height": 178,
+   "style": "shape=mxgraph.rack.oracle.netra_ct900_atca_blade_server;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.oracle.netra_ct900_atca_blade_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackOracle-4-netra-ct9000-server",
+   "title": "Netra CT9000 Server",
+   "tags": "rack oracle  Netra CT9000 Server Netra CT9000 Server",
+   "kind": "vertex",
+   "width": 161,
+   "height": 178,
+   "style": "shape=mxgraph.rack.oracle.netra_ct9000_server;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.oracle.netra_ct9000_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackOracle-5-netra-server-x3-2",
+   "title": "Netra Server X3-2",
+   "tags": "rack oracle  Netra Server X3-2 Netra Server X3-2",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.oracle.netra_server_x3-2;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.oracle.netra_server_x3-2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackOracle-6-netra-sparc-t4-1-server",
+   "title": "Netra Sparc T4-1 Server",
+   "tags": "rack oracle  Netra Sparc T4-1 Server Netra Sparc T4-1 Server",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.oracle.netra_sparc_t4-1_server;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.oracle.netra_sparc_t4-1_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackOracle-7-netra-sparc-t4-1b-server-module",
+   "title": "Netra Sparc T4-1B Server Module",
+   "tags": "rack oracle  Netra Sparc T4-1B Server Module Netra Sparc T4-1B Server Module",
+   "kind": "vertex",
+   "width": 19,
+   "height": 121,
+   "style": "shape=mxgraph.rack.oracle.netra_sparc_t4-1b_server_module;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.oracle.netra_sparc_t4-1b_server_module"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackOracle-8-netra-sparc-t4-2-server",
+   "title": "Netra Sparc T4-2 Server",
+   "tags": "rack oracle  Netra Sparc T4-2 Server Netra Sparc T4-2 Server",
+   "kind": "vertex",
+   "width": 161,
+   "height": 60,
+   "style": "shape=mxgraph.rack.oracle.netra_sparc_t4-2_server;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.oracle.netra_sparc_t4-2_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackOracle-9-netra-x4270-server",
+   "title": "Netra X4270 Server",
+   "tags": "rack oracle  Netra X4270 Server Netra X4270 Server",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.oracle.netra_x4270_server;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.oracle.netra_x4270_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackOracle-10-netra-x6270-server-module",
+   "title": "Netra X6270 Server Module",
+   "tags": "rack oracle  Netra X6270 Server Module Netra X6270 Server Module",
+   "kind": "vertex",
+   "width": 19,
+   "height": 121,
+   "style": "shape=mxgraph.rack.oracle.netra_x6270_server_module;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.oracle.netra_x6270_server_module"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackOracle-11-sparc-enterprise-m4000-server",
+   "title": "Sparc Enterprise M4000 Server",
+   "tags": "rack oracle  Sparc Enterprise M4000 Server Sparc Enterprise M4000 Server",
+   "kind": "vertex",
+   "width": 161,
+   "height": 89,
+   "style": "shape=mxgraph.rack.oracle.sparc_enterprise_m4000_server;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.oracle.sparc_enterprise_m4000_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackOracle-12-sparc-enterprise-m5000-server",
+   "title": "Sparc Enterprise M5000 Server",
+   "tags": "rack oracle  Sparc Enterprise M5000 Server Sparc Enterprise M5000 Server",
+   "kind": "vertex",
+   "width": 161,
+   "height": 149,
+   "style": "shape=mxgraph.rack.oracle.sparc_enterprise_m5000_server;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.oracle.sparc_enterprise_m5000_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackOracle-13-sparc-t4-1-server",
+   "title": "Sparc T4-1 Server",
+   "tags": "rack oracle  Sparc T4-1 Server Sparc T4-1 Server",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.oracle.sparc_t4-1_server;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.oracle.sparc_t4-1_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackOracle-14-sparc-t4-1b-server-module",
+   "title": "Sparc T4-1B Server Module",
+   "tags": "rack oracle  Sparc T4-1B Server Module Sparc T4-1B Server Module",
+   "kind": "vertex",
+   "width": 19,
+   "height": 121,
+   "style": "shape=mxgraph.rack.oracle.sparc_t4-1b_server_module;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.oracle.sparc_t4-1b_server_module"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackOracle-15-sparc-t4-2-server",
+   "title": "Sparc T4-2 Server",
+   "tags": "rack oracle  Sparc T4-2 Server Sparc T4-2 Server",
+   "kind": "vertex",
+   "width": 161,
+   "height": 45,
+   "style": "shape=mxgraph.rack.oracle.sparc_t4-2_server;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.oracle.sparc_t4-2_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackOracle-16-sparc-t4-4-server",
+   "title": "Sparc T4-4 Server",
+   "tags": "rack oracle  Sparc T4-4 Server Sparc T4-4 Server",
+   "kind": "vertex",
+   "width": 161,
+   "height": 75,
+   "style": "shape=mxgraph.rack.oracle.sparc_t4-4_server;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.oracle.sparc_t4-4_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackOracle-17-sun-blade-6000-enclosure",
+   "title": "Sun Blade 6000 Enclosure",
+   "tags": "rack oracle  Sun Blade 6000 Enclosure Sun Blade 6000 Enclosure",
+   "kind": "vertex",
+   "width": 161,
+   "height": 149,
+   "style": "shape=mxgraph.rack.oracle.sun_blade_6000_enclosure;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.oracle.sun_blade_6000_enclosure"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackOracle-18-sun-blade-6000-ethernet-network-express-module-24p-10-gbe",
+   "title": "Sun Blade 6000 Ethernet Network Express Module 24p 10 GbE",
+   "tags": "rack oracle  Sun Blade 6000 Ethernet Network Express Module 24p 10 GbE Sun Blade 6000 Ethernet Network Express Module 24p 10 GbE",
+   "kind": "vertex",
+   "width": 19,
+   "height": 121,
+   "style": "shape=mxgraph.rack.oracle.sun_blade_6000_ethernet_network_express_module_24p_10_gbe;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.oracle.sun_blade_6000_ethernet_network_express_module_24p_10_gbe"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackOracle-19-sun-blade-6000-virtualized-40-gbe-network-express-module",
+   "title": "Sun Blade 6000 Virtualized 40 GbE Network Express Module",
+   "tags": "rack oracle  Sun Blade 6000 Virtualized 40 GbE Network Express Module Sun Blade 6000 Virtualized 40 GbE Network Express Module",
+   "kind": "vertex",
+   "width": 19,
+   "height": 121,
+   "style": "shape=mxgraph.rack.oracle.sun_blade_6000_virtualized_40_gbe_network_express_module;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.oracle.sun_blade_6000_virtualized_40_gbe_network_express_module"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackOracle-20-sun-blade-x3-2b-server",
+   "title": "Sun Blade X3-2B Server",
+   "tags": "rack oracle  Sun Blade X3-2B Server Sun Blade X3-2B Server",
+   "kind": "vertex",
+   "width": 19,
+   "height": 121,
+   "style": "shape=mxgraph.rack.oracle.sun_blade_x3-2b_server;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.oracle.sun_blade_x3-2b_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackOracle-21-sun-blade-x6270-m2-server-module",
+   "title": "Sun Blade X6270 M2 Server Module",
+   "tags": "rack oracle  Sun Blade X6270 M2 Server Module Sun Blade X6270 M2 Server Module",
+   "kind": "vertex",
+   "width": 19,
+   "height": 121,
+   "style": "shape=mxgraph.rack.oracle.sun_blade_x6270_m2_server_module;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.oracle.sun_blade_x6270_m2_server_module"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackOracle-22-sun-datacenter-infiniband-switch-36",
+   "title": "Sun DataCenter Infiniband Switch 36",
+   "tags": "rack oracle  Sun DataCenter Infiniband Switch 36 Sun DataCenter Infiniband Switch 36",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.oracle.sun_datacenter_infiniband_switch_36;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.oracle.sun_datacenter_infiniband_switch_36"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackOracle-23-sun-network-10gbe-switch-72p",
+   "title": "Sun Network 10GbE Switch 72p",
+   "tags": "rack oracle  Sun Network 10GbE Switch 72p Sun Network 10GbE Switch 72p",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.oracle.sun_network_10gbe_switch_72p;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.oracle.sun_network_10gbe_switch_72p"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackOracle-24-sun-network-qdr-infiniband-gateway-switch",
+   "title": "Sun Network QDR InfiniBand Gateway Switch",
+   "tags": "rack oracle  Sun Network QDR InfiniBand Gateway Switch Sun Network QDR InfiniBand Gateway Switch",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.oracle.sun_network_qdr_infiniband_gateway_switch;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.oracle.sun_network_qdr_infiniband_gateway_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackOracle-25-sun-server-x2-4",
+   "title": "Sun Server X2-4",
+   "tags": "rack oracle  Sun Server X2-4 Sun Server X2-4",
+   "kind": "vertex",
+   "width": 161,
+   "height": 45,
+   "style": "shape=mxgraph.rack.oracle.sun_server_x2-4;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.oracle.sun_server_x2-4"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackOracle-26-sun-server-x2-8",
+   "title": "Sun Server X2-8",
+   "tags": "rack oracle  Sun Server X2-8 Sun Server X2-8",
+   "kind": "vertex",
+   "width": 161,
+   "height": 75,
+   "style": "shape=mxgraph.rack.oracle.sun_server_x2-8;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.oracle.sun_server_x2-8"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackOracle-27-sun-server-x3-2",
+   "title": "Sun Server X3-2",
+   "tags": "rack oracle  Sun Server X3-2 Sun Server X3-2",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.oracle.sun_server_x3-2;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.oracle.sun_server_x3-2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackOracle-28-sun-server-x3-2l",
+   "title": "Sun Server X3-2L",
+   "tags": "rack oracle  Sun Server X3-2L Sun Server X3-2L",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.oracle.sun_server_x3-2l;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.oracle.sun_server_x3-2l"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackOracle-29-sun-storage-2500-m2-array",
+   "title": "Sun Storage 2500-M2 Array",
+   "tags": "rack oracle  Sun Storage 2500-M2 Array Sun Storage 2500-M2 Array",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.oracle.sun_storage_2500-m2_array;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.oracle.sun_storage_2500-m2_array"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackOracle-30-sun-zfs-storage-7120",
+   "title": "Sun ZFS Storage 7120",
+   "tags": "rack oracle  Sun ZFS Storage 7120 Sun ZFS Storage 7120",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.oracle.sun_zfs_storage_7120;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.oracle.sun_zfs_storage_7120"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackOracle-31-sun-zfs-storage-7320",
+   "title": "Sun ZFS Storage 7320",
+   "tags": "rack oracle  Sun ZFS Storage 7320 Sun ZFS Storage 7320",
+   "kind": "vertex",
+   "width": 161,
+   "height": 60,
+   "style": "shape=mxgraph.rack.oracle.sun_zfs_storage_7320;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.oracle.sun_zfs_storage_7320"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackOracle-32-sunfire-t1000",
+   "title": "SunFire T1000",
+   "tags": "rack oracle  SunFire T1000 SunFire T1000",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.oracle.sunfire_t1000;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.oracle.sunfire_t1000"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackOracle-33-sunfire-x2100",
+   "title": "SunFire X2100",
+   "tags": "rack oracle  SunFire X2100 SunFire X2100",
+   "kind": "vertex",
+   "width": 162,
+   "height": 15,
+   "style": "shape=mxgraph.rack.oracle.sunfire_x2100;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.oracle.sunfire_x2100"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackOracle-34-sunfire-x4100",
+   "title": "SunFire X4100",
+   "tags": "rack oracle  SunFire X4100 SunFire X4100",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.oracle.sunfire_x4100;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.oracle.sunfire_x4100"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackOracle-35-sunfire-x4500",
+   "title": "SunFire X4500",
+   "tags": "rack oracle  SunFire X4500 SunFire X4500",
+   "kind": "vertex",
+   "width": 161,
+   "height": 60,
+   "style": "shape=mxgraph.rack.oracle.sunfire_x4500;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.oracle.sunfire_x4500"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackOracle-36-sunfire-x4600",
+   "title": "SunFire X4600",
+   "tags": "rack oracle  SunFire X4600 SunFire X4600",
+   "kind": "vertex",
+   "width": 161,
+   "height": 60,
+   "style": "shape=mxgraph.rack.oracle.sunfire_x4600;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.oracle.sunfire_x4600"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  }
+ ]
+}

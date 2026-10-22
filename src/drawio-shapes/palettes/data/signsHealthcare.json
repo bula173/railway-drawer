@@ -1,0 +1,708 @@
+{
+ "id": "signsHealthcare",
+ "title": "Signs / Healthcare",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Signs.js:7",
+ "entries": [
+  {
+   "id": "signsHealthcare-0-alternative-medicine",
+   "title": "Alternative Medicine",
+   "tags": "signs healthcare  Alternative Medicine Alternative Medicine",
+   "kind": "vertex",
+   "width": 99,
+   "height": 95,
+   "style": "shape=mxgraph.signs.healthcare.alternative_medicine;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.alternative_medicine"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-1-anesthesia",
+   "title": "Anesthesia",
+   "tags": "signs healthcare  Anesthesia Anesthesia",
+   "kind": "vertex",
+   "width": 98,
+   "height": 85,
+   "style": "shape=mxgraph.signs.healthcare.anesthesia;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.anesthesia"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-2-assistive-listening-system",
+   "title": "Assistive Listening System",
+   "tags": "signs healthcare  Assistive Listening System Assistive Listening System",
+   "kind": "vertex",
+   "width": 86,
+   "height": 98,
+   "style": "shape=mxgraph.signs.healthcare.assistive_listening_system;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.assistive_listening_system"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-3-brain",
+   "title": "Brain",
+   "tags": "signs healthcare  Brain Brain",
+   "kind": "vertex",
+   "width": 98,
+   "height": 85,
+   "style": "shape=mxgraph.signs.healthcare.brain;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.brain"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-4-cardiology",
+   "title": "Cardiology",
+   "tags": "signs healthcare  Cardiology Cardiology",
+   "kind": "vertex",
+   "width": 98,
+   "height": 97,
+   "style": "shape=mxgraph.signs.healthcare.cardiology;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.cardiology"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-5-care-staff-area",
+   "title": "Care Staff Area",
+   "tags": "signs healthcare  Care Staff Area Care Staff Area",
+   "kind": "vertex",
+   "width": 97,
+   "height": 98,
+   "style": "shape=mxgraph.signs.healthcare.care_staff_area;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.care_staff_area"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-6-cath-lab",
+   "title": "Cath Lab",
+   "tags": "signs healthcare  Cath Lab Cath Lab",
+   "kind": "vertex",
+   "width": 98,
+   "height": 100,
+   "style": "shape=mxgraph.signs.healthcare.cath_lab;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.cath_lab"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-7-chapel",
+   "title": "Chapel",
+   "tags": "signs healthcare  Chapel Chapel",
+   "kind": "vertex",
+   "width": 72,
+   "height": 98,
+   "style": "shape=mxgraph.signs.healthcare.chapel;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.chapel"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-8-deaf",
+   "title": "Deaf",
+   "tags": "signs healthcare  Deaf Deaf",
+   "kind": "vertex",
+   "width": 79,
+   "height": 98,
+   "style": "shape=mxgraph.signs.healthcare.deaf;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.deaf"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-9-dermatology",
+   "title": "Dermatology",
+   "tags": "signs healthcare  Dermatology Dermatology",
+   "kind": "vertex",
+   "width": 99,
+   "height": 96,
+   "style": "shape=mxgraph.signs.healthcare.dermatology;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.dermatology"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-10-diabetes",
+   "title": "Diabetes",
+   "tags": "signs healthcare  Diabetes Diabetes",
+   "kind": "vertex",
+   "width": 98,
+   "height": 55,
+   "style": "shape=mxgraph.signs.healthcare.diabetes;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.diabetes"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-11-eye",
+   "title": "Eye",
+   "tags": "signs healthcare  Eye Eye",
+   "kind": "vertex",
+   "width": 99,
+   "height": 55,
+   "style": "shape=mxgraph.signs.healthcare.eye;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.eye"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-12-eye-wash",
+   "title": "Eye Wash",
+   "tags": "signs healthcare  Eye Wash Eye Wash",
+   "kind": "vertex",
+   "width": 93,
+   "height": 99,
+   "style": "shape=mxgraph.signs.healthcare.eye_wash;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.eye_wash"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-13-family-practice",
+   "title": "Family Practice",
+   "tags": "signs healthcare  Family Practice Family Practice",
+   "kind": "vertex",
+   "width": 98,
+   "height": 98,
+   "style": "shape=mxgraph.signs.healthcare.family_practice;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.family_practice"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-14-first-aid",
+   "title": "First Aid",
+   "tags": "signs healthcare  First Aid First Aid",
+   "kind": "vertex",
+   "width": 98,
+   "height": 98,
+   "style": "shape=mxgraph.signs.healthcare.first_aid;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.first_aid"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-15-genetics",
+   "title": "Genetics",
+   "tags": "signs healthcare  Genetics Genetics",
+   "kind": "vertex",
+   "width": 98,
+   "height": 99,
+   "style": "shape=mxgraph.signs.healthcare.genetics;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.genetics"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-16-health-education",
+   "title": "Health Education",
+   "tags": "signs healthcare  Health Education Health Education",
+   "kind": "vertex",
+   "width": 98,
+   "height": 98,
+   "style": "shape=mxgraph.signs.healthcare.health_education;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.health_education"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-17-heart-1",
+   "title": "Heart 1",
+   "tags": "signs healthcare  Heart 1 Heart 1",
+   "kind": "vertex",
+   "width": 103,
+   "height": 94,
+   "style": "shape=mxgraph.signs.healthcare.heart_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.heart_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-18-heart-2",
+   "title": "Heart 2",
+   "tags": "signs healthcare  Heart 2 Heart 2",
+   "kind": "vertex",
+   "width": 98,
+   "height": 93,
+   "style": "shape=mxgraph.signs.healthcare.heart_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.heart_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-19-hospital-1",
+   "title": "Hospital 1",
+   "tags": "signs healthcare  Hospital 1 Hospital 1",
+   "kind": "vertex",
+   "width": 98,
+   "height": 98,
+   "style": "shape=mxgraph.signs.healthcare.hospital_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.hospital_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-20-hospital-2",
+   "title": "Hospital 2",
+   "tags": "signs healthcare  Hospital 2 Hospital 2",
+   "kind": "vertex",
+   "width": 85,
+   "height": 98,
+   "style": "shape=mxgraph.signs.healthcare.hospital_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.hospital_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-21-immunizations",
+   "title": "Immunizations",
+   "tags": "signs healthcare  Immunizations Immunizations",
+   "kind": "vertex",
+   "width": 99,
+   "height": 98,
+   "style": "shape=mxgraph.signs.healthcare.immunizations;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.immunizations"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-22-infectious-disease",
+   "title": "Infectious Disease",
+   "tags": "signs healthcare  Infectious Disease Infectious Disease",
+   "kind": "vertex",
+   "width": 98,
+   "height": 98,
+   "style": "shape=mxgraph.signs.healthcare.infectious_disease;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.infectious_disease"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-23-inpatient",
+   "title": "Inpatient",
+   "tags": "signs healthcare  Inpatient Inpatient",
+   "kind": "vertex",
+   "width": 96,
+   "height": 98,
+   "style": "shape=mxgraph.signs.healthcare.inpatient;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.inpatient"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-24-intensive-care",
+   "title": "Intensive Care",
+   "tags": "signs healthcare  Intensive Care Intensive Care",
+   "kind": "vertex",
+   "width": 98,
+   "height": 98,
+   "style": "shape=mxgraph.signs.healthcare.intensive_care;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.intensive_care"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-25-internal-medicine",
+   "title": "Internal Medicine",
+   "tags": "signs healthcare  Internal Medicine Internal Medicine",
+   "kind": "vertex",
+   "width": 71,
+   "height": 98,
+   "style": "shape=mxgraph.signs.healthcare.internal_medicine;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.internal_medicine"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-26-kidney",
+   "title": "Kidney",
+   "tags": "signs healthcare  Kidney Kidney",
+   "kind": "vertex",
+   "width": 71,
+   "height": 98,
+   "style": "shape=mxgraph.signs.healthcare.kidney;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.kidney"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-27-lungs",
+   "title": "Lungs",
+   "tags": "signs healthcare  Lungs Lungs",
+   "kind": "vertex",
+   "width": 91,
+   "height": 99,
+   "style": "shape=mxgraph.signs.healthcare.lungs;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.lungs"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-28-mammogram",
+   "title": "Mammogram",
+   "tags": "signs healthcare  Mammogram Mammogram",
+   "kind": "vertex",
+   "width": 98,
+   "height": 98,
+   "style": "shape=mxgraph.signs.healthcare.mammogram;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.mammogram"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-29-medical-interpreter",
+   "title": "Medical Interpreter",
+   "tags": "signs healthcare  Medical Interpreter Medical Interpreter",
+   "kind": "vertex",
+   "width": 99,
+   "height": 85,
+   "style": "shape=mxgraph.signs.healthcare.medical_interpreter;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.medical_interpreter"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-30-medical-library",
+   "title": "Medical Library",
+   "tags": "signs healthcare  Medical Library Medical Library",
+   "kind": "vertex",
+   "width": 98,
+   "height": 98,
+   "style": "shape=mxgraph.signs.healthcare.medical_library;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.medical_library"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-31-medical-records",
+   "title": "Medical Records",
+   "tags": "signs healthcare  Medical Records Medical Records",
+   "kind": "vertex",
+   "width": 98,
+   "height": 98,
+   "style": "shape=mxgraph.signs.healthcare.medical_records;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.medical_records"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-32-mental-health",
+   "title": "Mental Health",
+   "tags": "signs healthcare  Mental Health Mental Health",
+   "kind": "vertex",
+   "width": 84,
+   "height": 98,
+   "style": "shape=mxgraph.signs.healthcare.mental_health;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.mental_health"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-33-mri",
+   "title": "MRI",
+   "tags": "signs healthcare  MRI MRI",
+   "kind": "vertex",
+   "width": 98,
+   "height": 93,
+   "style": "shape=mxgraph.signs.healthcare.mri;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.mri"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-34-neurology",
+   "title": "Neurology",
+   "tags": "signs healthcare  Neurology Neurology",
+   "kind": "vertex",
+   "width": 84,
+   "height": 98,
+   "style": "shape=mxgraph.signs.healthcare.neurology;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.neurology"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-35-nutrition",
+   "title": "Nutrition",
+   "tags": "signs healthcare  Nutrition Nutrition",
+   "kind": "vertex",
+   "width": 99,
+   "height": 99,
+   "style": "shape=mxgraph.signs.healthcare.nutrition;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.nutrition"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-36-oncology",
+   "title": "Oncology",
+   "tags": "signs healthcare  Oncology Oncology",
+   "kind": "vertex",
+   "width": 98,
+   "height": 98,
+   "style": "shape=mxgraph.signs.healthcare.oncology;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.oncology"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-37-out-patient",
+   "title": "Out Patient",
+   "tags": "signs healthcare  Out Patient Out Patient",
+   "kind": "vertex",
+   "width": 56,
+   "height": 99,
+   "style": "shape=mxgraph.signs.healthcare.out_patient;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.out_patient"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-38-pharmacy",
+   "title": "Pharmacy",
+   "tags": "signs healthcare  Pharmacy Pharmacy",
+   "kind": "vertex",
+   "width": 53,
+   "height": 98,
+   "style": "shape=mxgraph.signs.healthcare.pharmacy;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.pharmacy"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-39-physical-therapy",
+   "title": "Physical Therapy",
+   "tags": "signs healthcare  Physical Therapy Physical Therapy",
+   "kind": "vertex",
+   "width": 99,
+   "height": 89,
+   "style": "shape=mxgraph.signs.healthcare.physical_therapy;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.physical_therapy"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-40-registration",
+   "title": "Registration",
+   "tags": "signs healthcare  Registration Registration",
+   "kind": "vertex",
+   "width": 96,
+   "height": 98,
+   "style": "shape=mxgraph.signs.healthcare.registration;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.registration"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-41-sign-language",
+   "title": "Sign Language",
+   "tags": "signs healthcare  Sign Language Sign Language",
+   "kind": "vertex",
+   "width": 101,
+   "height": 84,
+   "style": "shape=mxgraph.signs.healthcare.sign_language;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.sign_language"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-42-social-services",
+   "title": "Social Services",
+   "tags": "signs healthcare  Social Services Social Services",
+   "kind": "vertex",
+   "width": 99,
+   "height": 98,
+   "style": "shape=mxgraph.signs.healthcare.social_services;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.social_services"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-43-surgery",
+   "title": "Surgery",
+   "tags": "signs healthcare  Surgery Surgery",
+   "kind": "vertex",
+   "width": 100,
+   "height": 98,
+   "style": "shape=mxgraph.signs.healthcare.surgery;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.surgery"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-44-tdd",
+   "title": "TDD",
+   "tags": "signs healthcare  TDD TDD",
+   "kind": "vertex",
+   "width": 84,
+   "height": 98,
+   "style": "shape=mxgraph.signs.healthcare.tdd;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.tdd"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-45-tooth",
+   "title": "Tooth",
+   "tags": "signs healthcare  Tooth Tooth",
+   "kind": "vertex",
+   "width": 80,
+   "height": 101,
+   "style": "shape=mxgraph.signs.healthcare.tooth;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.tooth"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-46-ultrasound",
+   "title": "Ultrasound",
+   "tags": "signs healthcare  Ultrasound Ultrasound",
+   "kind": "vertex",
+   "width": 90,
+   "height": 99,
+   "style": "shape=mxgraph.signs.healthcare.ultrasound;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.ultrasound"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-47-wheelchair-accessible-1",
+   "title": "Wheelchair Accessible 1",
+   "tags": "signs healthcare  Wheelchair Accessible 1 Wheelchair Accessible 1",
+   "kind": "vertex",
+   "width": 87,
+   "height": 99,
+   "style": "shape=mxgraph.signs.healthcare.wheelchair_accessible_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.wheelchair_accessible_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-48-wheelchair-accessible-2",
+   "title": "Wheelchair Accessible 2",
+   "tags": "signs healthcare  Wheelchair Accessible 2 Wheelchair Accessible 2",
+   "kind": "vertex",
+   "width": 87,
+   "height": 98,
+   "style": "shape=mxgraph.signs.healthcare.wheelchair_accessible_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.wheelchair_accessible_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsHealthcare-49-wheelchair-accessible-3",
+   "title": "Wheelchair Accessible 3",
+   "tags": "signs healthcare  Wheelchair Accessible 3 Wheelchair Accessible 3",
+   "kind": "vertex",
+   "width": 76,
+   "height": 99,
+   "style": "shape=mxgraph.signs.healthcare.wheelchair_accessible_3;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.healthcare.wheelchair_accessible_3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  }
+ ]
+}

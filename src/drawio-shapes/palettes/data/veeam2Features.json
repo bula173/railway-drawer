@@ -1,0 +1,288 @@
+{
+ "id": "veeam2Features",
+ "title": "Veeam / Features",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:7",
+ "entries": [
+  {
+   "id": "veeam2Features-0-veeam-logo",
+   "title": "Veeam logo",
+   "tags": "veeam2 logo veeam vm vmware virtual machine features Veeam logo",
+   "kind": "vertex",
+   "width": 136,
+   "height": 24,
+   "style": "pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#13B24B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.veeam_logo;",
+   "shapeNames": [
+    "mxgraph.veeam2.veeam_logo"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:223"
+  },
+  {
+   "id": "veeam2Features-1-backup-from-storage-snapshots",
+   "title": "Backup from Storage Snapshots",
+   "tags": "veeam2 backup from storage snapshots veeam vm vmware virtual machine features Backup from Storage Snapshots",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.backup_from_storage_snapshots;",
+   "shapeNames": [
+    "mxgraph.veeam2.backup_from_storage_snapshots"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:225"
+  },
+  {
+   "id": "veeam2Features-2-cdp",
+   "title": "CDP",
+   "tags": "veeam2 cdp veeam vm vmware virtual machine features CDP",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.cdp;",
+   "shapeNames": [
+    "mxgraph.veeam2.cdp"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:227"
+  },
+  {
+   "id": "veeam2Features-3-datalabs",
+   "title": "Datalabs",
+   "tags": "veeam2 datalabs veeam vm vmware virtual machine features Datalabs",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.datalabs;",
+   "shapeNames": [
+    "mxgraph.veeam2.datalabs"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:229"
+  },
+  {
+   "id": "veeam2Features-4-failover",
+   "title": "Failover",
+   "tags": "veeam2 failover veeam vm vmware virtual machine features Failover",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.failover;",
+   "shapeNames": [
+    "mxgraph.veeam2.failover"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:231"
+  },
+  {
+   "id": "veeam2Features-5-instant-vm-recovery",
+   "title": "Instant VM recovery",
+   "tags": "veeam2 instant recovery veeam vm vmware virtual machine features Instant VM recovery",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.instant_vm_recovery;",
+   "shapeNames": [
+    "mxgraph.veeam2.instant_vm_recovery"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:233"
+  },
+  {
+   "id": "veeam2Features-6-nas-backup",
+   "title": "NAS Backup",
+   "tags": "veeam2 nas backup veeam vm vmware virtual machine features NAS Backup",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.nas_backup;",
+   "shapeNames": [
+    "mxgraph.veeam2.nas_backup"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:235"
+  },
+  {
+   "id": "veeam2Features-7-object-storage-support",
+   "title": "Object Storage Support",
+   "tags": "veeam2 object storage support veeam vm vmware virtual machine features Object Storage Support",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.object_storage_support;",
+   "shapeNames": [
+    "mxgraph.veeam2.object_storage_support"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:237"
+  },
+  {
+   "id": "veeam2Features-8-on-demand-sandbox",
+   "title": "On-demand Sandbox",
+   "tags": "veeam2 on demand sandbox veeam vm vmware virtual machine features On-demand Sandbox",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.on_demand_sandbox;",
+   "shapeNames": [
+    "mxgraph.veeam2.on_demand_sandbox"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:239"
+  },
+  {
+   "id": "veeam2Features-9-restful-api",
+   "title": "RESTful API",
+   "tags": "veeam2 restful api application programming interface veeam vm vmware virtual machine features RESTful API",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.restful_api;",
+   "shapeNames": [
+    "mxgraph.veeam2.restful_api"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:241"
+  },
+  {
+   "id": "veeam2Features-10-scale-out-backup-repository",
+   "title": "Scale-out Backup Repository",
+   "tags": "veeam2 scale out backup repository veeam vm vmware virtual machine features Scale-out Backup Repository",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.scale_out_backup_repository2;",
+   "shapeNames": [
+    "mxgraph.veeam2.scale_out_backup_repository2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:243"
+  },
+  {
+   "id": "veeam2Features-11-scheduled-backups",
+   "title": "Scheduled Backups",
+   "tags": "veeam2 scheduled backups veeam vm vmware virtual machine features Scheduled Backups",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.scheduled_backups;",
+   "shapeNames": [
+    "mxgraph.veeam2.scheduled_backups"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:245"
+  },
+  {
+   "id": "veeam2Features-12-surebackup",
+   "title": "SureBackup",
+   "tags": "veeam2 surebackup veeam vm vmware virtual machine features SureBackup",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.surebackup;",
+   "shapeNames": [
+    "mxgraph.veeam2.surebackup"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:247"
+  },
+  {
+   "id": "veeam2Features-13-surereplica",
+   "title": "SureReplica",
+   "tags": "veeam2 surereplica veeam vm vmware virtual machine features SureReplica",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.surereplica;",
+   "shapeNames": [
+    "mxgraph.veeam2.surereplica"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:249"
+  },
+  {
+   "id": "veeam2Features-14-vbr-console",
+   "title": "VBR console",
+   "tags": "veeam2 vbr console veeam vm vmware virtual machine features VBR console",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.vbr_console;",
+   "shapeNames": [
+    "mxgraph.veeam2.vbr_console"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:251"
+  },
+  {
+   "id": "veeam2Features-15-veeam-cloud-connect",
+   "title": "Veeam Cloud Connect",
+   "tags": "veeam2 cloud connect veeam vm vmware virtual machine features Veeam Cloud Connect",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.veeam_cloud_connect;",
+   "shapeNames": [
+    "mxgraph.veeam2.veeam_cloud_connect"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:253"
+  },
+  {
+   "id": "veeam2Features-16-veeam-cloud-mobility",
+   "title": "Veeam Cloud Mobility",
+   "tags": "veeam2 cloud mobility veeam vm vmware virtual machine features Veeam Cloud Mobility",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.veeam_cloud_mobility;",
+   "shapeNames": [
+    "mxgraph.veeam2.veeam_cloud_mobility"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:255"
+  },
+  {
+   "id": "veeam2Features-17-veeamzip",
+   "title": "VeeamZIP",
+   "tags": "veeam2 veeamzip zip veeam vm vmware virtual machine features VeeamZIP",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.veeamzip;",
+   "shapeNames": [
+    "mxgraph.veeam2.veeamzip"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:257"
+  },
+  {
+   "id": "veeam2Features-18-veeam-explorers",
+   "title": "Veeam Explorers",
+   "tags": "veeam2 veeam explorers veeam vm vmware virtual machine features Veeam Explorers",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.veeam_explorers;",
+   "shapeNames": [
+    "mxgraph.veeam2.veeam_explorers"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:259"
+  },
+  {
+   "id": "veeam2Features-19-universal-storage-api",
+   "title": "Universal Storage API",
+   "tags": "veeam2 universal storage api application programming interface veeam vm vmware virtual machine features Universal Storage API",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.universal_storage_api;",
+   "shapeNames": [
+    "mxgraph.veeam2.universal_storage_api"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:261"
+  }
+ ]
+}

@@ -1,0 +1,106 @@
+{
+ "id": "allied_telesisSecurity",
+ "title": "Allied Telesis / Security",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:7",
+ "entries": [
+  {
+   "id": "allied_telesisSecurity-0-dvs-surveillance-monitor",
+   "title": "DVS Surveillance Monitor",
+   "tags": "dvs surveillance monitor allied telesis DVS Surveillance Monitor",
+   "kind": "vertex",
+   "width": 42,
+   "height": 60,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/security/DVS_Surveillance_Monitor.svg;points=[[0.105,0,0],[0.5,0.945,0],[0,0.5,0],[1,0.5,0],[0.999,0.373,0],[0.999,0.965,0],[0.093,0.772,0],[0.001,0.038,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:141"
+  },
+  {
+   "id": "allied_telesisSecurity-1-ethergrid",
+   "title": "EtherGRID",
+   "tags": "ethergrid allied telesis EtherGRID",
+   "kind": "vertex",
+   "width": 89.4,
+   "height": 64.80000000000001,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/security/EtherGRID.svg;points=[[0.352,0,0],[0.649,1,0],[0.046,0.5,0],[0.961,0.5,0],[0.997,0.748,0],[0.003,0.252,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:143"
+  },
+  {
+   "id": "allied_telesisSecurity-2-poe-dvs-camera",
+   "title": "POE DVS Camera",
+   "tags": "poe dvs camera allied telesis POE DVS Camera",
+   "kind": "vertex",
+   "width": 51,
+   "height": 40.2,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/security/POE_DVS_Camera.svg;points=[[0.757,0,0],[0.5,0.892,0],[0.085,0.5,0],[0.998,0.438,0],[0.957,0.137,0],[0.94,0.59,0],[0.068,0.907,0],[0.128,0.42,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:145"
+  },
+  {
+   "id": "allied_telesisSecurity-3-pos",
+   "title": "POS",
+   "tags": "pos allied telesis POS",
+   "kind": "vertex",
+   "width": 67.8,
+   "height": 72,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/security/POS.svg;points=[[0.5,0.031,0],[0.495,0.998,0],[0.154,0.499,0],[0.903,0.499,0],[0.901,0.353,0],[1,0.777,0],[0.003,0.722,0],[0.401,0.018,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:147"
+  },
+  {
+   "id": "allied_telesisSecurity-4-router-utm",
+   "title": "Router UTM",
+   "tags": "router utm allied telesis Router UTM",
+   "kind": "vertex",
+   "width": 55.800000000000004,
+   "height": 39.6,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/security/Router_UTM.svg;points=[[0.422,0,0],[0.575,1,0],[0,0.41,0],[0.998,0.597,0],[0.972,0.462,0],[0.987,0.697,0],[0.018,0.538,0],[0.008,0.31,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:149"
+  },
+  {
+   "id": "allied_telesisSecurity-5-router-vpn",
+   "title": "Router VPN",
+   "tags": "router vpn allied telesis Router VPN",
+   "kind": "vertex",
+   "width": 55.800000000000004,
+   "height": 39.6,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/security/Router_VPN.svg;points=[[0.422,0,0],[0.574,1,0],[0,0.41,0],[0.998,0.597,0],[0.977,0.469,0],[0.982,0.704,0],[0.023,0.542,0],[0.01,0.307,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:151"
+  },
+  {
+   "id": "allied_telesisSecurity-6-surveillance-camera-ceiling",
+   "title": "Surveillance Camera Ceiling",
+   "tags": "surveillance camera ceiling allied telesis Surveillance Camera Ceiling",
+   "kind": "vertex",
+   "width": 37.2,
+   "height": 35.4,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/security/Surveillance_Camera_Ceiling.svg;points=[[0.507,0,0],[0.489,0.995,0],[0,0.5,0],[0.995,0.5,0],[0.977,0.147,0],[0.825,0.863,0],[0.178,0.876,0],[0.028,0.137,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:153"
+  }
+ ]
+}

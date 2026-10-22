@@ -1,0 +1,120 @@
+{
+ "id": "ciscoPeople",
+ "title": "Cisco / People",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Cisco.js:9",
+ "entries": [
+  {
+   "id": "ciscoPeople-0-androgenous-person",
+   "title": "Androgenous Person",
+   "tags": "cisco androgenous person cisco people  Androgenous Person",
+   "kind": "vertex",
+   "width": 69,
+   "height": 82,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.people.androgenous_person;",
+   "shapeNames": [
+    "mxgraph.cisco.people.androgenous_person"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:335"
+  },
+  {
+   "id": "ciscoPeople-1-mac-woman",
+   "title": "Mac Woman",
+   "tags": "cisco mac macintosh woman cisco people  Mac Woman",
+   "kind": "vertex",
+   "width": 67,
+   "height": 107,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.people.mac_woman;",
+   "shapeNames": [
+    "mxgraph.cisco.people.mac_woman"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:336"
+  },
+  {
+   "id": "ciscoPeople-2-man-woman",
+   "title": "Man Woman",
+   "tags": "cisco man woman cisco people  Man Woman",
+   "kind": "vertex",
+   "width": 106,
+   "height": 155,
+   "style": "strokeColor=none;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.people.man_woman;",
+   "shapeNames": [
+    "mxgraph.cisco.people.man_woman"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:337"
+  },
+  {
+   "id": "ciscoPeople-3-pc-man",
+   "title": "PC Man",
+   "tags": "cisco pc man cisco people  PC Man",
+   "kind": "vertex",
+   "width": 104,
+   "height": 149,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.people.pc_man;",
+   "shapeNames": [
+    "mxgraph.cisco.people.pc_man"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:338"
+  },
+  {
+   "id": "ciscoPeople-4-running-man",
+   "title": "Running Man",
+   "tags": "cisco running man cisco people  Running Man",
+   "kind": "vertex",
+   "width": 83,
+   "height": 93,
+   "style": "strokeColor=none;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.people.running_man;",
+   "shapeNames": [
+    "mxgraph.cisco.people.running_man"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:339"
+  },
+  {
+   "id": "ciscoPeople-5-sitting-woman",
+   "title": "Sitting Woman",
+   "tags": "cisco sitting woman cisco people  Sitting Woman",
+   "kind": "vertex",
+   "width": 56.00000000000001,
+   "height": 90,
+   "style": "strokeColor=none;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.people.sitting_woman;",
+   "shapeNames": [
+    "mxgraph.cisco.people.sitting_woman"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:340"
+  },
+  {
+   "id": "ciscoPeople-6-standing-man",
+   "title": "Standing Man",
+   "tags": "cisco standing man cisco people  Standing Man",
+   "kind": "vertex",
+   "width": 22,
+   "height": 62,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.people.standing_man_2;",
+   "shapeNames": [
+    "mxgraph.cisco.people.standing_man_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:341"
+  },
+  {
+   "id": "ciscoPeople-7-standing-woman",
+   "title": "Standing Woman",
+   "tags": "cisco standing woman cisco people  Standing Woman",
+   "kind": "vertex",
+   "width": 22,
+   "height": 62,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.people.standing_woman_2;",
+   "shapeNames": [
+    "mxgraph.cisco.people.standing_woman_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:342"
+  }
+ ]
+}

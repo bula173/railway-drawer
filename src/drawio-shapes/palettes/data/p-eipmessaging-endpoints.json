@@ -1,0 +1,134 @@
+{
+ "id": "eipMessaging Endpoints",
+ "title": "EIP / Messaging Endpoints",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-EIP.js:7",
+ "entries": [
+  {
+   "id": "eipMessaging Endpoints-0-competing-consumers",
+   "title": "Competing Consumers",
+   "tags": "eip competing consumers eip enterprise integration pattern messaging endpoint  Competing Consumers",
+   "kind": "vertex",
+   "width": 150,
+   "height": 90,
+   "style": "fillColor=#c0f5a9;dashed=0;outlineConnect=0;strokeWidth=2;html=1;align=center;fontSize=8;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.eip.competing_consumers;",
+   "shapeNames": [
+    "mxgraph.eip.competing_consumers"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:215"
+  },
+  {
+   "id": "eipMessaging Endpoints-1-durable-subscriber",
+   "title": "Durable Subscriber",
+   "tags": "eip durable subscriber eip enterprise integration pattern messaging endpoint  Durable Subscriber",
+   "kind": "vertex",
+   "width": 30,
+   "height": 35,
+   "style": "dashed=0;outlineConnect=0;strokeWidth=2;html=1;align=center;fontSize=8;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.eip.durable_subscriber;fillColor=#a0a0a0;",
+   "shapeNames": [
+    "mxgraph.eip.durable_subscriber"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:217"
+  },
+  {
+   "id": "eipMessaging Endpoints-2-event-driven-consumer",
+   "title": "Event Driven Consumer",
+   "tags": "eip event driven consumer eip enterprise integration pattern messaging endpoint  Event Driven Consumer",
+   "kind": "vertex",
+   "width": 150,
+   "height": 90,
+   "style": "fillColor=#c0f5a9;dashed=0;outlineConnect=0;strokeWidth=2;html=1;align=center;fontSize=8;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.eip.event_driven_consumer;",
+   "shapeNames": [
+    "mxgraph.eip.event_driven_consumer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:219"
+  },
+  {
+   "id": "eipMessaging Endpoints-3-message-dispatcher",
+   "title": "Message Dispatcher",
+   "tags": "eip message dispatcher eip enterprise integration pattern messaging endpoint  Message Dispatcher",
+   "kind": "vertex",
+   "width": 150,
+   "height": 90,
+   "style": "fillColor=#c0f5a9;dashed=0;outlineConnect=0;strokeWidth=2;html=1;align=center;fontSize=8;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.eip.message_dispatcher;",
+   "shapeNames": [
+    "mxgraph.eip.message_dispatcher"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:221"
+  },
+  {
+   "id": "eipMessaging Endpoints-4-messaging-gateway",
+   "title": "Messaging Gateway",
+   "tags": "eip messaging gateway eip enterprise integration pattern messaging endpoint  Messaging Gateway",
+   "kind": "vertex",
+   "width": 150,
+   "height": 90,
+   "style": "fillColor=#c0f5a9;dashed=0;outlineConnect=0;strokeWidth=2;html=1;align=center;fontSize=8;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.eip.messaging_gateway;",
+   "shapeNames": [
+    "mxgraph.eip.messaging_gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:223"
+  },
+  {
+   "id": "eipMessaging Endpoints-5-polling-consumer",
+   "title": "Polling Consumer",
+   "tags": "eip polling consumer eip enterprise integration pattern messaging endpoint  Polling Consumer",
+   "kind": "vertex",
+   "width": 150,
+   "height": 90,
+   "style": "fillColor=#c0f5a9;dashed=0;outlineConnect=0;strokeWidth=2;html=1;align=center;fontSize=8;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.eip.polling_consumer;",
+   "shapeNames": [
+    "mxgraph.eip.polling_consumer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:225"
+  },
+  {
+   "id": "eipMessaging Endpoints-6-selective-consumer",
+   "title": "Selective Consumer",
+   "tags": "eip selective consumer eip enterprise integration pattern messaging endpoint  Selective Consumer",
+   "kind": "vertex",
+   "width": 150,
+   "height": 90,
+   "style": "fillColor=#c0f5a9;dashed=0;outlineConnect=0;strokeWidth=2;html=1;align=center;fontSize=8;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.eip.selective_consumer;",
+   "shapeNames": [
+    "mxgraph.eip.selective_consumer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:227"
+  },
+  {
+   "id": "eipMessaging Endpoints-7-service-activator",
+   "title": "Service Activator",
+   "tags": "eip service activator eip enterprise integration pattern messaging endpoint  Service Activator",
+   "kind": "vertex",
+   "width": 150,
+   "height": 90,
+   "style": "fillColor=#c0f5a9;dashed=0;outlineConnect=0;strokeWidth=2;html=1;align=center;fontSize=8;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.eip.service_activator;",
+   "shapeNames": [
+    "mxgraph.eip.service_activator"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:229"
+  },
+  {
+   "id": "eipMessaging Endpoints-8-transactional-client",
+   "title": "Transactional Client",
+   "tags": "eip transactional client eip enterprise integration pattern messaging endpoint  Transactional Client",
+   "kind": "vertex",
+   "width": 150,
+   "height": 90,
+   "style": "fillColor=#c0f5a9;dashed=0;outlineConnect=0;strokeWidth=2;html=1;align=center;fontSize=8;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.eip.transactional_client;",
+   "shapeNames": [
+    "mxgraph.eip.transactional_client"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:231"
+  }
+ ]
+}

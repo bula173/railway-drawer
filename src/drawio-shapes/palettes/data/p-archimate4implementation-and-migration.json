@@ -1,0 +1,95 @@
+{
+ "id": "archimate4Implementation and Migration",
+ "title": "ArchiMate 4 / Implementation and Migration",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:8",
+ "entries": [
+  {
+   "id": "archimate4Implementation and Migration-0-work-package",
+   "title": "Work Package",
+   "tags": "archimate4  archimate 4 implementation migration work package Work Package",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#F1BBB7;shape=mxgraph.archimate4.element;appType=workPackage;archiType=rounded;archiDomain=implementation;",
+   "value": "Work Package",
+   "shapeNames": [
+    "mxgraph.archimate4.element"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:511"
+  },
+  {
+   "id": "archimate4Implementation and Migration-1-work-package",
+   "title": "Work Package",
+   "tags": "archimate4  archimate 4 implementation migration work package Work Package",
+   "kind": "vertex",
+   "width": 60,
+   "height": 50,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#F1BBB7;shape=mxgraph.archimate4.workPackage;strokeWidth=5;",
+   "shapeNames": [
+    "mxgraph.archimate4.workPackage"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:513"
+  },
+  {
+   "id": "archimate4Implementation and Migration-2-deliverable",
+   "title": "Deliverable",
+   "tags": "archimate4  archimate 4 implementation migration deliverable Deliverable",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#F1BBB7;shape=mxgraph.archimate4.element;appType=deliverable;archiDomain=implementation;",
+   "value": "Deliverable",
+   "shapeNames": [
+    "mxgraph.archimate4.element"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:515"
+  },
+  {
+   "id": "archimate4Implementation and Migration-3-deliverable",
+   "title": "Deliverable",
+   "tags": "archimate4  archimate 4 implementation migration deliverable Deliverable",
+   "kind": "vertex",
+   "width": 60,
+   "height": 35,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#F1BBB7;shape=mxgraph.archimate4.deliverable;",
+   "shapeNames": [
+    "mxgraph.archimate4.deliverable"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:517"
+  },
+  {
+   "id": "archimate4Implementation and Migration-4-plateau",
+   "title": "Plateau",
+   "tags": "archimate4  archimate 4 implementation migration plateau Plateau",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#F1BBB7;shape=mxgraph.archimate4.element;appType=plateau;archiDomain=implementation;",
+   "value": "Plateau",
+   "shapeNames": [
+    "mxgraph.archimate4.element"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:519"
+  },
+  {
+   "id": "archimate4Implementation and Migration-5-plateau",
+   "title": "Plateau",
+   "tags": "archimate4  archimate 4 implementation migration plateau Plateau",
+   "kind": "vertex",
+   "width": 60,
+   "height": 40,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#F1BBB7;shape=mxgraph.archimate4.plateau;",
+   "shapeNames": [
+    "mxgraph.archimate4.plateau"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:521"
+  }
+ ]
+}

@@ -1,0 +1,330 @@
+{
+ "id": "pidHeat Exchangers",
+ "title": "Process Engineering / Heat Exchangers",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-PID.js:8",
+ "entries": [
+  {
+   "id": "pidHeat Exchangers-0-condenser",
+   "title": "Condenser",
+   "tags": "pid heat exchangers  Condenser Condenser",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "shape=mxgraph.pid.heat_exchangers.condenser;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.heat_exchangers.condenser"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidHeat Exchangers-1-double-pipe-heat-exchanger",
+   "title": "Double Pipe Heat Exchanger",
+   "tags": "pid heat exchangers  Double Pipe Heat Exchanger Double Pipe Heat Exchanger",
+   "kind": "vertex",
+   "width": 90,
+   "height": 50,
+   "style": "shape=mxgraph.pid.heat_exchangers.double_pipe_heat_exchanger;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.heat_exchangers.double_pipe_heat_exchanger"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidHeat Exchangers-2-electric-heater",
+   "title": "Electric Heater",
+   "tags": "pid heat exchangers  Electric Heater Electric Heater",
+   "kind": "vertex",
+   "width": 140,
+   "height": 100,
+   "style": "shape=mxgraph.pid.heat_exchangers.electric_heater;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.heat_exchangers.electric_heater"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidHeat Exchangers-3-fixed-straight-tubes-heat-exchanger",
+   "title": "Fixed Straight Tubes Heat Exchanger",
+   "tags": "pid heat exchangers  Fixed Straight Tubes Heat Exchanger Fixed Straight Tubes Heat Exchanger",
+   "kind": "vertex",
+   "width": 100,
+   "height": 40,
+   "style": "shape=mxgraph.pid.heat_exchangers.fixed_straight_tubes_heat_exchanger;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.heat_exchangers.fixed_straight_tubes_heat_exchanger"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidHeat Exchangers-4-hairpin-exchanger",
+   "title": "Hairpin Exchanger",
+   "tags": "pid heat exchangers  Hairpin Exchanger Hairpin Exchanger",
+   "kind": "vertex",
+   "width": 91,
+   "height": 30,
+   "style": "shape=mxgraph.pid.heat_exchangers.hairpin_exchanger;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.heat_exchangers.hairpin_exchanger"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidHeat Exchangers-5-heater",
+   "title": "Heater",
+   "tags": "pid heat exchangers  Heater Heater",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "shape=mxgraph.pid.heat_exchangers.heater;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.heat_exchangers.heater"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidHeat Exchangers-6-heat-exchanger-coil-tubes",
+   "title": "Heat Exchanger (Coil Tubes)",
+   "tags": "pid heat exchangers  Heat Exchanger (Coil Tubes) Heat Exchanger (Coil Tubes)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 30,
+   "style": "shape=mxgraph.pid.heat_exchangers.heat_exchanger_(coil_tubes);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.heat_exchangers.heat_exchanger_(coil_tubes)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidHeat Exchangers-7-heat-exchanger-finned-tubes",
+   "title": "Heat Exchanger (Finned Tubes)",
+   "tags": "pid heat exchangers  Heat Exchanger (Finned Tubes) Heat Exchanger (Finned Tubes)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 30,
+   "style": "shape=mxgraph.pid.heat_exchangers.heat_exchanger_(finned_tubes);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.heat_exchangers.heat_exchanger_(finned_tubes)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidHeat Exchangers-8-heat-exchanger-finned-tubes-fan",
+   "title": "Heat Exchanger (Finned Tubes, Fan)",
+   "tags": "pid heat exchangers  Heat Exchanger (Finned Tubes, Fan) Heat Exchanger (Finned Tubes, Fan)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "shape=mxgraph.pid.heat_exchangers.heat_exchanger_(finned_tubes,_fan);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.heat_exchangers.heat_exchanger_(finned_tubes,_fan)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidHeat Exchangers-9-heat-exchanger-floating-head",
+   "title": "Heat Exchanger (Floating Head)",
+   "tags": "pid heat exchangers  Heat Exchanger (Floating Head) Heat Exchanger (Floating Head)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 30,
+   "style": "shape=mxgraph.pid.heat_exchangers.heat_exchanger_(floating_head);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.heat_exchangers.heat_exchanger_(floating_head)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidHeat Exchangers-10-heat-exchanger-plate",
+   "title": "Heat Exchanger (Plate)",
+   "tags": "pid heat exchangers  Heat Exchanger (Plate) Heat Exchanger (Plate)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 30,
+   "style": "shape=mxgraph.pid.heat_exchangers.heat_exchanger_(plate);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.heat_exchangers.heat_exchanger_(plate)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidHeat Exchangers-11-heat-exchanger-spiral",
+   "title": "Heat Exchanger (Spiral)",
+   "tags": "pid heat exchangers  Heat Exchanger (Spiral) Heat Exchanger (Spiral)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "shape=mxgraph.pid.heat_exchangers.heat_exchanger_(spiral);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.heat_exchangers.heat_exchanger_(spiral)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidHeat Exchangers-12-heat-exchanger-straight-tubes",
+   "title": "Heat Exchanger (Straight Tubes)",
+   "tags": "pid heat exchangers  Heat Exchanger (Straight Tubes) Heat Exchanger (Straight Tubes)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 30,
+   "style": "shape=mxgraph.pid.heat_exchangers.heat_exchanger_(straight_tubes);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.heat_exchangers.heat_exchanger_(straight_tubes)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidHeat Exchangers-13-plate-and-frame-heat-exchanger",
+   "title": "Plate and Frame Heat Exchanger",
+   "tags": "pid heat exchangers  Plate and Frame Heat Exchanger Plate and Frame Heat Exchanger",
+   "kind": "vertex",
+   "width": 100,
+   "height": 120,
+   "style": "shape=mxgraph.pid.heat_exchangers.plate_and_frame_heat_exchanger;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.heat_exchangers.plate_and_frame_heat_exchanger"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidHeat Exchangers-14-reboiler",
+   "title": "Reboiler",
+   "tags": "pid heat exchangers  Reboiler Reboiler",
+   "kind": "vertex",
+   "width": 91,
+   "height": 33,
+   "style": "shape=mxgraph.pid.heat_exchangers.reboiler;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.heat_exchangers.reboiler"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidHeat Exchangers-15-shell-and-tube-heat-exchanger-1",
+   "title": "Shell and Tube Heat Exchanger 1",
+   "tags": "pid heat exchangers  Shell and Tube Heat Exchanger 1 Shell and Tube Heat Exchanger 1",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "shape=mxgraph.pid.heat_exchangers.shell_and_tube_heat_exchanger_1;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.heat_exchangers.shell_and_tube_heat_exchanger_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidHeat Exchangers-16-shell-and-tube-heat-exchanger-2",
+   "title": "Shell and Tube Heat Exchanger 2",
+   "tags": "pid heat exchangers  Shell and Tube Heat Exchanger 2 Shell and Tube Heat Exchanger 2",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "shape=mxgraph.pid.heat_exchangers.shell_and_tube_heat_exchanger_2;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.heat_exchangers.shell_and_tube_heat_exchanger_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidHeat Exchangers-17-shell-and-tube-heat-exchanger-3",
+   "title": "Shell and Tube Heat Exchanger 3",
+   "tags": "pid heat exchangers  Shell and Tube Heat Exchanger 3 Shell and Tube Heat Exchanger 3",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "shape=mxgraph.pid.heat_exchangers.shell_and_tube_heat_exchanger_3;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.heat_exchangers.shell_and_tube_heat_exchanger_3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidHeat Exchangers-18-single-pass-heat-exchanger",
+   "title": "Single Pass Heat Exchanger",
+   "tags": "pid heat exchangers  Single Pass Heat Exchanger Single Pass Heat Exchanger",
+   "kind": "vertex",
+   "width": 90,
+   "height": 30,
+   "style": "shape=mxgraph.pid.heat_exchangers.single_pass_heat_exchanger;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.heat_exchangers.single_pass_heat_exchanger"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidHeat Exchangers-19-spiral-heat-exchanger",
+   "title": "Spiral Heat Exchanger",
+   "tags": "pid heat exchangers  Spiral Heat Exchanger Spiral Heat Exchanger",
+   "kind": "vertex",
+   "width": 100,
+   "height": 95,
+   "style": "shape=mxgraph.pid.heat_exchangers.spiral_heat_exchanger;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.heat_exchangers.spiral_heat_exchanger"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidHeat Exchangers-20-thin-film-evaporator",
+   "title": "Thin-Film Evaporator",
+   "tags": "pid heat exchangers  Thin-Film Evaporator Thin-Film Evaporator",
+   "kind": "vertex",
+   "width": 80,
+   "height": 120,
+   "style": "shape=mxgraph.pid.heat_exchangers.thin-film_evaporator;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.heat_exchangers.thin-film_evaporator"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidHeat Exchangers-21-u-tube-heat-exchanger",
+   "title": "U-Tube Heat Exchanger",
+   "tags": "pid heat exchangers  U-Tube Heat Exchanger U-Tube Heat Exchanger",
+   "kind": "vertex",
+   "width": 91,
+   "height": 30,
+   "style": "shape=mxgraph.pid.heat_exchangers.u-tube_heat_exchanger;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.heat_exchangers.u-tube_heat_exchanger"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidHeat Exchangers-22-u-shaped-tubes-heat-exchanger",
+   "title": "U Shaped Tubes Heat Exchanger",
+   "tags": "pid heat exchangers  U Shaped Tubes Heat Exchanger U Shaped Tubes Heat Exchanger",
+   "kind": "vertex",
+   "width": 100,
+   "height": 30,
+   "style": "shape=mxgraph.pid.heat_exchangers.u_shaped_tubes_heat_exchanger;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.heat_exchangers.u_shaped_tubes_heat_exchanger"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  }
+ ]
+}

@@ -1,0 +1,158 @@
+{
+ "id": "ibm_cloudSecurity",
+ "title": "IBM / Security",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:7",
+ "entries": [
+  {
+   "id": "ibm_cloudSecurity-0-app-id",
+   "title": "App ID",
+   "tags": "ibm cloud security app id",
+   "kind": "cells",
+   "width": 48,
+   "height": 48,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"App ID\" style=\"shape=rect;fillColor=#FA4D56;aspect=fixed;resizable=0;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeColor=none;fontSize=14;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"48\" height=\"48\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"fillColor=#ffffff;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;shape=mxgraph.ibm_cloud.ibm-cloud--app-id\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.ibm-cloud--app-id"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:427"
+  },
+  {
+   "id": "ibm_cloudSecurity-1-key-protect",
+   "title": "Key Protect",
+   "tags": "ibm cloud security key protect",
+   "kind": "cells",
+   "width": 48,
+   "height": 48,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Key Protect\" style=\"shape=rect;fillColor=#FA4D56;aspect=fixed;resizable=0;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeColor=none;fontSize=14;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"48\" height=\"48\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"fillColor=#ffffff;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;shape=mxgraph.ibm_cloud.ibm-cloud--key-protect\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.ibm-cloud--key-protect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:427"
+  },
+  {
+   "id": "ibm_cloudSecurity-2-secrets-manager",
+   "title": "Secrets Manager",
+   "tags": "ibm cloud security secrets manager",
+   "kind": "cells",
+   "width": 48,
+   "height": 48,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Secrets Manager\" style=\"shape=rect;fillColor=#FA4D56;aspect=fixed;resizable=0;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeColor=none;fontSize=14;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"48\" height=\"48\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"fillColor=#ffffff;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;shape=mxgraph.ibm_cloud.ibm-cloud--secrets-manager\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.ibm-cloud--secrets-manager"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:427"
+  },
+  {
+   "id": "ibm_cloudSecurity-3-security-compliance-center",
+   "title": "Security Compliance Center",
+   "tags": "ibm cloud security security compliance center",
+   "kind": "cells",
+   "width": 48,
+   "height": 48,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Security Compliance Center\" style=\"shape=rect;fillColor=#FA4D56;aspect=fixed;resizable=0;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeColor=none;fontSize=14;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"48\" height=\"48\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"fillColor=#ffffff;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;shape=mxgraph.ibm_cloud.ibm-cloud--security-compliance-center\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.ibm-cloud--security-compliance-center"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:427"
+  },
+  {
+   "id": "ibm_cloudSecurity-4-ssh-key",
+   "title": "SSH Key",
+   "tags": "ibm cloud security ssh key",
+   "kind": "cells",
+   "width": 48,
+   "height": 48,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"SSH Key\" style=\"shape=rect;fillColor=#FA4D56;aspect=fixed;resizable=0;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeColor=none;fontSize=14;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"48\" height=\"48\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"fillColor=#ffffff;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;shape=mxgraph.ibm_cloud.password\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.password"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:427"
+  },
+  {
+   "id": "ibm_cloudSecurity-5-vpn-gateway",
+   "title": "VPN Gateway",
+   "tags": "ibm cloud security vpn gateway virtual private network",
+   "kind": "cells",
+   "width": 48,
+   "height": 48,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"VPN Gateway\" style=\"shape=rect;fillColor=#FA4D56;aspect=fixed;resizable=0;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeColor=none;fontSize=14;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"48\" height=\"48\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"fillColor=#ffffff;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;shape=mxgraph.ibm_cloud.ibm--vpn-for-vpc\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.ibm--vpn-for-vpc"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:427"
+  },
+  {
+   "id": "ibm_cloudSecurity-6-vpn-connection",
+   "title": "VPN Connection",
+   "tags": "ibm cloud security vpn connection virtual private network",
+   "kind": "cells",
+   "width": 48,
+   "height": 48,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"VPN Connection\" style=\"shape=rect;fillColor=#FA4D56;aspect=fixed;resizable=0;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeColor=none;fontSize=14;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"48\" height=\"48\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"fillColor=#ffffff;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;shape=mxgraph.ibm_cloud.vpn--connection\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.vpn--connection"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:427"
+  },
+  {
+   "id": "ibm_cloudSecurity-7-bastion-host",
+   "title": "Bastion Host",
+   "tags": "ibm cloud security bastion host",
+   "kind": "cells",
+   "width": 48,
+   "height": 48,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Bastion Host\" style=\"shape=rect;fillColor=#FA4D56;aspect=fixed;resizable=0;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeColor=none;fontSize=14;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"48\" height=\"48\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"fillColor=#ffffff;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;shape=mxgraph.ibm_cloud.bastion-host\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.bastion-host"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:427"
+  },
+  {
+   "id": "ibm_cloudSecurity-8-acl-rules",
+   "title": "ACL Rules",
+   "tags": "ibm cloud security acl rules",
+   "kind": "cells",
+   "width": 48,
+   "height": 48,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"ACL Rules\" style=\"shape=rect;fillColor=#FA4D56;aspect=fixed;resizable=0;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeColor=none;fontSize=14;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"48\" height=\"48\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"fillColor=#ffffff;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;shape=mxgraph.ibm_cloud.subnet-acl-rules\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.subnet-acl-rules"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:427"
+  },
+  {
+   "id": "ibm_cloudSecurity-9-security-pak",
+   "title": "Security Pak",
+   "tags": "ibm cloud security security pak",
+   "kind": "cells",
+   "width": 48,
+   "height": 48,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Security Pak\" style=\"shape=rect;fillColor=#FA4D56;aspect=fixed;resizable=0;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeColor=none;fontSize=14;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"48\" height=\"48\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"fillColor=#ffffff;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;shape=mxgraph.ibm_cloud.ibm-cloud-pak--security\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.ibm-cloud-pak--security"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:427"
+  }
+ ]
+}

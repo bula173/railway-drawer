@@ -1,0 +1,610 @@
+{
+ "id": "gcp2Product Cards",
+ "title": "GCP / Product Cards",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-GCP2.js:7",
+ "entries": [
+  {
+   "id": "gcp2Product Cards-0-kubernetes",
+   "title": "Kubernetes",
+   "tags": "gcp google cloud platform product kubernetes",
+   "kind": "cells",
+   "width": 130,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"130\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Kubernetes\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#5184F3;strokeColor=none;shape=mxgraph.gcp2.kubernetes_logo;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontColor=#999999;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"45\" height=\"43.65\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"7.675000000000001\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.kubernetes_logo"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2110"
+  },
+  {
+   "id": "gcp2Product Cards-1-kubernetes",
+   "title": "Kubernetes",
+   "tags": "gcp google cloud platform product kubernetes",
+   "kind": "cells",
+   "width": 130,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"130\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&lt;font color=&quot;#000000&quot;&gt;Name&lt;/font&gt;&lt;br&gt;Kubernetes\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#5184F3;strokeColor=none;shape=mxgraph.gcp2.kubernetes_logo;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontColor=#999999;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"45\" height=\"43.65\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"7.675000000000001\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.kubernetes_logo"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2126"
+  },
+  {
+   "id": "gcp2Product Cards-2-kubernetes",
+   "title": "Kubernetes",
+   "tags": "gcp google cloud platform product kubernetes",
+   "kind": "cells",
+   "width": 138,
+   "height": 68,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=mxgraph.gcp2.doubleRect;fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"138\" height=\"68\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&lt;font color=&quot;#000000&quot;&gt;Name&lt;/font&gt;&lt;br&gt;Kubernetes\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#5184F3;strokeColor=none;shape=mxgraph.gcp2.kubernetes_logo;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontColor=#999999;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"45\" height=\"43.65\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"7.675000000000001\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.doubleRect",
+    "mxgraph.gcp2.kubernetes_logo"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2141"
+  },
+  {
+   "id": "gcp2Product Cards-3-tensorflow",
+   "title": "TensorFlow",
+   "tags": "gcp google cloud platform product tensorflow",
+   "kind": "cells",
+   "width": 130,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"130\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"TensorFlow\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#5184F3;strokeColor=none;shape=mxgraph.gcp2.tensorflow_logo;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontColor=#999999;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"42.3\" height=\"45\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"7\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.tensorflow_logo"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2110"
+  },
+  {
+   "id": "gcp2Product Cards-4-tensorflow",
+   "title": "TensorFlow",
+   "tags": "gcp google cloud platform product tensorflow",
+   "kind": "cells",
+   "width": 130,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"130\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&lt;font color=&quot;#000000&quot;&gt;Name&lt;/font&gt;&lt;br&gt;TensorFlow\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#5184F3;strokeColor=none;shape=mxgraph.gcp2.tensorflow_logo;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontColor=#999999;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"42.3\" height=\"45\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"7\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.tensorflow_logo"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2126"
+  },
+  {
+   "id": "gcp2Product Cards-5-tensorflow",
+   "title": "TensorFlow",
+   "tags": "gcp google cloud platform product tensorflow",
+   "kind": "cells",
+   "width": 138,
+   "height": 68,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=mxgraph.gcp2.doubleRect;fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"138\" height=\"68\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&lt;font color=&quot;#000000&quot;&gt;Name&lt;/font&gt;&lt;br&gt;TensorFlow\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#5184F3;strokeColor=none;shape=mxgraph.gcp2.tensorflow_logo;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontColor=#999999;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"42.3\" height=\"45\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"7\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.doubleRect",
+    "mxgraph.gcp2.tensorflow_logo"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2141"
+  },
+  {
+   "id": "gcp2Product Cards-6-forseti-security",
+   "title": "Forseti Security",
+   "tags": "gcp google cloud platform product forseti",
+   "kind": "cells",
+   "width": 110,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"110\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Forseti&#xa;Security\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#5184F3;strokeColor=none;shape=mxgraph.gcp2.forseti_logo;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontColor=#999999;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"44.1\" height=\"45\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"7\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.forseti_logo"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2110"
+  },
+  {
+   "id": "gcp2Product Cards-7-forseti-security",
+   "title": "Forseti Security",
+   "tags": "gcp google cloud platform product forseti",
+   "kind": "cells",
+   "width": 150,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"150\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&lt;font color=&quot;#000000&quot;&gt;Name&lt;/font&gt;&lt;br&gt;Forseti Security\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#5184F3;strokeColor=none;shape=mxgraph.gcp2.forseti_logo;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontColor=#999999;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"44.1\" height=\"45\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"7\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.forseti_logo"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2126"
+  },
+  {
+   "id": "gcp2Product Cards-8-forseti-security",
+   "title": "Forseti Security",
+   "tags": "gcp google cloud platform product forseti",
+   "kind": "cells",
+   "width": 158,
+   "height": 68,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=mxgraph.gcp2.doubleRect;fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"158\" height=\"68\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&lt;font color=&quot;#000000&quot;&gt;Name&lt;/font&gt;&lt;br&gt;Forseti Security\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#5184F3;strokeColor=none;shape=mxgraph.gcp2.forseti_logo;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontColor=#999999;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"44.1\" height=\"45\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"7\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.doubleRect",
+    "mxgraph.gcp2.forseti_logo"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2141"
+  },
+  {
+   "id": "gcp2Product Cards-9-istio",
+   "title": "Istio",
+   "tags": "gcp google cloud platform product forseti",
+   "kind": "cells",
+   "width": 80,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"80\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Istio\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#5184F3;strokeColor=none;shape=mxgraph.gcp2.istio_logo;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontColor=#999999;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"30.150000000000002\" height=\"45\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"7\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.istio_logo"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2110"
+  },
+  {
+   "id": "gcp2Product Cards-10-istio",
+   "title": "Istio",
+   "tags": "gcp google cloud platform product forseti",
+   "kind": "cells",
+   "width": 90,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"90\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&lt;font color=&quot;#000000&quot;&gt;Name&lt;/font&gt;&lt;br&gt;Istio\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#5184F3;strokeColor=none;shape=mxgraph.gcp2.istio_logo;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontColor=#999999;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"30.150000000000002\" height=\"45\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"7\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.istio_logo"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2126"
+  },
+  {
+   "id": "gcp2Product Cards-11-istio",
+   "title": "Istio",
+   "tags": "gcp google cloud platform product forseti",
+   "kind": "cells",
+   "width": 98,
+   "height": 68,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=mxgraph.gcp2.doubleRect;fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"98\" height=\"68\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&lt;font color=&quot;#000000&quot;&gt;Name&lt;/font&gt;&lt;br&gt;Istio\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#5184F3;strokeColor=none;shape=mxgraph.gcp2.istio_logo;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontColor=#999999;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"30.150000000000002\" height=\"45\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"7\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.doubleRect",
+    "mxgraph.gcp2.istio_logo"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2141"
+  },
+  {
+   "id": "gcp2Product Cards-12-firebase",
+   "title": "Firebase",
+   "tags": "gcp google cloud platform product firebase",
+   "kind": "cells",
+   "width": 100,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"100\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Firebase\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#5184F3;strokeColor=none;shape=mxgraph.gcp2.firebase;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontColor=#999999;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"32.4\" height=\"45\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"7\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.firebase"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2110"
+  },
+  {
+   "id": "gcp2Product Cards-13-firebase",
+   "title": "Firebase",
+   "tags": "gcp google cloud platform product firebase",
+   "kind": "cells",
+   "width": 100,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"100\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&lt;font color=&quot;#000000&quot;&gt;Name&lt;/font&gt;&lt;br&gt;Firebase\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#5184F3;strokeColor=none;shape=mxgraph.gcp2.firebase;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontColor=#999999;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"32.4\" height=\"45\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"7\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.firebase"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2126"
+  },
+  {
+   "id": "gcp2Product Cards-14-firebase",
+   "title": "Firebase",
+   "tags": "gcp google cloud platform product firebase",
+   "kind": "cells",
+   "width": 108,
+   "height": 68,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=mxgraph.gcp2.doubleRect;fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"108\" height=\"68\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&lt;font color=&quot;#000000&quot;&gt;Name&lt;/font&gt;&lt;br&gt;Firebase\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#5184F3;strokeColor=none;shape=mxgraph.gcp2.firebase;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontColor=#999999;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"32.4\" height=\"45\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"7\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.doubleRect",
+    "mxgraph.gcp2.firebase"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2141"
+  },
+  {
+   "id": "gcp2Product Cards-15-fastly",
+   "title": "Fastly",
+   "tags": "gcp google cloud platform product fastly",
+   "kind": "cells",
+   "width": 100,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"100\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Fastly\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#5184F3;strokeColor=none;shape=mxgraph.gcp2.fastly;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontColor=#999999;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"45\" height=\"17.55\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"20.725\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.fastly"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2110"
+  },
+  {
+   "id": "gcp2Product Cards-16-fastly",
+   "title": "Fastly",
+   "tags": "gcp google cloud platform product fastly",
+   "kind": "cells",
+   "width": 100,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"100\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&lt;font color=&quot;#000000&quot;&gt;Name&lt;/font&gt;&lt;br&gt;Fastly\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#5184F3;strokeColor=none;shape=mxgraph.gcp2.fastly;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontColor=#999999;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"45\" height=\"17.55\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"20.725\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.fastly"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2126"
+  },
+  {
+   "id": "gcp2Product Cards-17-fastly",
+   "title": "Fastly",
+   "tags": "gcp google cloud platform product fastly",
+   "kind": "cells",
+   "width": 108,
+   "height": 68,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=mxgraph.gcp2.doubleRect;fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"108\" height=\"68\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&lt;font color=&quot;#000000&quot;&gt;Name&lt;/font&gt;&lt;br&gt;Fastly\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#5184F3;strokeColor=none;shape=mxgraph.gcp2.fastly;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontColor=#999999;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"45\" height=\"17.55\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"20.725\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.doubleRect",
+    "mxgraph.gcp2.fastly"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2141"
+  },
+  {
+   "id": "gcp2Product Cards-18-admob",
+   "title": "AdMob",
+   "tags": "gcp google cloud platform product admob",
+   "kind": "cells",
+   "width": 110,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"110\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"AdMob\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#5184F3;strokeColor=none;shape=mxgraph.gcp2.admob;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontColor=#999999;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"45\" height=\"45\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"7\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.admob"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2110"
+  },
+  {
+   "id": "gcp2Product Cards-19-admob",
+   "title": "AdMob",
+   "tags": "gcp google cloud platform product admob",
+   "kind": "cells",
+   "width": 110,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"110\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&lt;font color=&quot;#000000&quot;&gt;Name&lt;/font&gt;&lt;br&gt;AdMob\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#5184F3;strokeColor=none;shape=mxgraph.gcp2.admob;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontColor=#999999;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"45\" height=\"45\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"7\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.admob"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2126"
+  },
+  {
+   "id": "gcp2Product Cards-20-admob",
+   "title": "AdMob",
+   "tags": "gcp google cloud platform product admob",
+   "kind": "cells",
+   "width": 118,
+   "height": 68,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=mxgraph.gcp2.doubleRect;fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"118\" height=\"68\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&lt;font color=&quot;#000000&quot;&gt;Name&lt;/font&gt;&lt;br&gt;AdMob\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#5184F3;strokeColor=none;shape=mxgraph.gcp2.admob;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontColor=#999999;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"45\" height=\"45\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"7\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.doubleRect",
+    "mxgraph.gcp2.admob"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2141"
+  },
+  {
+   "id": "gcp2Product Cards-21-google-play-game-services",
+   "title": "Google Play Game Services",
+   "tags": "gcp google cloud platform product google play game services",
+   "kind": "cells",
+   "width": 150,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"150\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Google Play&#xa;Game Services\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#5184F3;strokeColor=none;shape=mxgraph.gcp2.google_play_game_service;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontColor=#999999;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"45\" height=\"31.049999999999997\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"13.975000000000001\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.google_play_game_service"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2110"
+  },
+  {
+   "id": "gcp2Product Cards-22-google-play-game-services",
+   "title": "Google Play Game Services",
+   "tags": "gcp google cloud platform product google play game services",
+   "kind": "cells",
+   "width": 220,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"220\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&lt;font color=&quot;#000000&quot;&gt;Name&lt;/font&gt;&lt;br&gt;Google Play Game Services\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#5184F3;strokeColor=none;shape=mxgraph.gcp2.google_play_game_service;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontColor=#999999;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"45\" height=\"31.049999999999997\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"13.975000000000001\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.google_play_game_service"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2126"
+  },
+  {
+   "id": "gcp2Product Cards-23-google-play-game-services",
+   "title": "Google Play Game Services",
+   "tags": "gcp google cloud platform product google play game services",
+   "kind": "cells",
+   "width": 228,
+   "height": 68,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=mxgraph.gcp2.doubleRect;fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"228\" height=\"68\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&lt;font color=&quot;#000000&quot;&gt;Name&lt;/font&gt;&lt;br&gt;Google Play Game Services\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#5184F3;strokeColor=none;shape=mxgraph.gcp2.google_play_game_service;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontColor=#999999;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"45\" height=\"31.049999999999997\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"13.975000000000001\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.doubleRect",
+    "mxgraph.gcp2.google_play_game_service"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2141"
+  },
+  {
+   "id": "gcp2Product Cards-24-campaign-manager",
+   "title": "Campaign Manager",
+   "tags": "gcp google cloud platform product campaign manager",
+   "kind": "cells",
+   "width": 120,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Campaign&#xa;Manager\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#5184F3;strokeColor=none;shape=mxgraph.gcp2.campaign_manager;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontColor=#999999;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"45\" height=\"45\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"7\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.campaign_manager"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2110"
+  },
+  {
+   "id": "gcp2Product Cards-25-campaign-manager",
+   "title": "Campaign Manager",
+   "tags": "gcp google cloud platform product campaign manager",
+   "kind": "cells",
+   "width": 170,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"170\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&lt;font color=&quot;#000000&quot;&gt;Name&lt;/font&gt;&lt;br&gt;Campaign Manager\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#5184F3;strokeColor=none;shape=mxgraph.gcp2.campaign_manager;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontColor=#999999;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"45\" height=\"45\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"7\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.campaign_manager"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2126"
+  },
+  {
+   "id": "gcp2Product Cards-26-campaign-manager",
+   "title": "Campaign Manager",
+   "tags": "gcp google cloud platform product campaign manager",
+   "kind": "cells",
+   "width": 178,
+   "height": 68,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=mxgraph.gcp2.doubleRect;fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"178\" height=\"68\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&lt;font color=&quot;#000000&quot;&gt;Name&lt;/font&gt;&lt;br&gt;Campaign Manager\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#5184F3;strokeColor=none;shape=mxgraph.gcp2.campaign_manager;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontColor=#999999;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"45\" height=\"45\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"7\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.doubleRect",
+    "mxgraph.gcp2.campaign_manager"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2141"
+  },
+  {
+   "id": "gcp2Product Cards-27-google-analytics",
+   "title": "Google Analytics",
+   "tags": "gcp google cloud platform product google analytics",
+   "kind": "cells",
+   "width": 120,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Google&#xa;Analytics\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#5184F3;strokeColor=none;shape=mxgraph.gcp2.google_analytics;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontColor=#999999;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"45\" height=\"45\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"7\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.google_analytics"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2110"
+  },
+  {
+   "id": "gcp2Product Cards-28-google-analytics",
+   "title": "Google Analytics",
+   "tags": "gcp google cloud platform product google analytics",
+   "kind": "cells",
+   "width": 160,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"160\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&lt;font color=&quot;#000000&quot;&gt;Name&lt;/font&gt;&lt;br&gt;Google Analytics\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#5184F3;strokeColor=none;shape=mxgraph.gcp2.google_analytics;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontColor=#999999;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"45\" height=\"45\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"7\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.google_analytics"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2126"
+  },
+  {
+   "id": "gcp2Product Cards-29-google-analytics",
+   "title": "Google Analytics",
+   "tags": "gcp google cloud platform product google analytics",
+   "kind": "cells",
+   "width": 168,
+   "height": 68,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=mxgraph.gcp2.doubleRect;fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"168\" height=\"68\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&lt;font color=&quot;#000000&quot;&gt;Name&lt;/font&gt;&lt;br&gt;Google Analytics\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#5184F3;strokeColor=none;shape=mxgraph.gcp2.google_analytics;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontColor=#999999;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"45\" height=\"45\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"7\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.doubleRect",
+    "mxgraph.gcp2.google_analytics"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2141"
+  },
+  {
+   "id": "gcp2Product Cards-30-google-ads",
+   "title": "Google Ads",
+   "tags": "gcp google cloud platform product google ads",
+   "kind": "cells",
+   "width": 100,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"100\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Google&#xa;Ads\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#5184F3;strokeColor=none;shape=mxgraph.gcp2.google_ads;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontColor=#999999;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"45\" height=\"45\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"7\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.google_ads"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2110"
+  },
+  {
+   "id": "gcp2Product Cards-31-google-ads",
+   "title": "Google Ads",
+   "tags": "gcp google cloud platform product google ads",
+   "kind": "cells",
+   "width": 130,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"130\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&lt;font color=&quot;#000000&quot;&gt;Name&lt;/font&gt;&lt;br&gt;Google Ads\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#5184F3;strokeColor=none;shape=mxgraph.gcp2.google_ads;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontColor=#999999;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"45\" height=\"45\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"7\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.google_ads"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2126"
+  },
+  {
+   "id": "gcp2Product Cards-32-google-ads",
+   "title": "Google Ads",
+   "tags": "gcp google cloud platform product google ads",
+   "kind": "cells",
+   "width": 138,
+   "height": 68,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=mxgraph.gcp2.doubleRect;fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"138\" height=\"68\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&lt;font color=&quot;#000000&quot;&gt;Name&lt;/font&gt;&lt;br&gt;Google Ads\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#5184F3;strokeColor=none;shape=mxgraph.gcp2.google_ads;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontColor=#999999;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"45\" height=\"45\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"7\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.doubleRect",
+    "mxgraph.gcp2.google_ads"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2141"
+  },
+  {
+   "id": "gcp2Product Cards-33-avere-physical-appliance",
+   "title": "Avere Physical Appliance",
+   "tags": "gcp google cloud platform product avere physical appliance",
+   "kind": "cells",
+   "width": 150,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"150\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Avere Physical&#xa;Appliance\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#5184F3;strokeColor=none;shape=mxgraph.gcp2.avere;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontColor=#999999;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"45\" height=\"14.850000000000001\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"22.075\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.avere"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2110"
+  },
+  {
+   "id": "gcp2Product Cards-34-avere-physical-appliance",
+   "title": "Avere Physical Appliance",
+   "tags": "gcp google cloud platform product avere physical appliance",
+   "kind": "cells",
+   "width": 200,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"200\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&lt;font color=&quot;#000000&quot;&gt;Name&lt;/font&gt;&lt;br&gt;Avere Physical Appliance\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#5184F3;strokeColor=none;shape=mxgraph.gcp2.avere;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontColor=#999999;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"45\" height=\"14.850000000000001\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"22.075\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.avere"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2126"
+  },
+  {
+   "id": "gcp2Product Cards-35-avere-physical-appliance",
+   "title": "Avere Physical Appliance",
+   "tags": "gcp google cloud platform product avere physical appliance",
+   "kind": "cells",
+   "width": 208,
+   "height": 68,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=mxgraph.gcp2.doubleRect;fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"208\" height=\"68\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&lt;font color=&quot;#000000&quot;&gt;Name&lt;/font&gt;&lt;br&gt;Avere Physical Appliance\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#5184F3;strokeColor=none;shape=mxgraph.gcp2.avere;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontColor=#999999;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"45\" height=\"14.850000000000001\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"22.075\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.doubleRect",
+    "mxgraph.gcp2.avere"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2141"
+  },
+  {
+   "id": "gcp2Product Cards-36-google-analytics-360",
+   "title": "Google Analytics 360",
+   "tags": "gcp google cloud platform product google analytics 360",
+   "kind": "cells",
+   "width": 140,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"140\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Google&#xa;Analytics 360\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#5184F3;strokeColor=none;shape=mxgraph.gcp2.google_analytics_360;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontColor=#999999;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"45\" height=\"44.1\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"7.45\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.google_analytics_360"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2110"
+  },
+  {
+   "id": "gcp2Product Cards-37-google-analytics-360",
+   "title": "Google Analytics 360",
+   "tags": "gcp google cloud platform product google analytics 360",
+   "kind": "cells",
+   "width": 180,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"180\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&lt;font color=&quot;#000000&quot;&gt;Name&lt;/font&gt;&lt;br&gt;Google Analytics 360\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#5184F3;strokeColor=none;shape=mxgraph.gcp2.google_analytics_360;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontColor=#999999;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"45\" height=\"44.1\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"7.45\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.google_analytics_360"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2126"
+  },
+  {
+   "id": "gcp2Product Cards-38-google-analytics-360",
+   "title": "Google Analytics 360",
+   "tags": "gcp google cloud platform product google analytics 360",
+   "kind": "cells",
+   "width": 188,
+   "height": 68,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=mxgraph.gcp2.doubleRect;fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"188\" height=\"68\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&lt;font color=&quot;#000000&quot;&gt;Name&lt;/font&gt;&lt;br&gt;Google Analytics 360\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#5184F3;strokeColor=none;shape=mxgraph.gcp2.google_analytics_360;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontColor=#999999;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"45\" height=\"44.1\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"7.45\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.doubleRect",
+    "mxgraph.gcp2.google_analytics_360"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2141"
+  },
+  {
+   "id": "gcp2Product Cards-39-google-ad-manager",
+   "title": "Google Ad Manager",
+   "tags": "gcp google cloud platform product google ad manager",
+   "kind": "cells",
+   "width": 120,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Google Ad&#xa;Manager\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#5184F3;strokeColor=none;shape=mxgraph.gcp2.google_ad_manager;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontColor=#999999;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"45\" height=\"45\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"7\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.google_ad_manager"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2110"
+  },
+  {
+   "id": "gcp2Product Cards-40-google-ad-manager",
+   "title": "Google Ad Manager",
+   "tags": "gcp google cloud platform product google ad manager",
+   "kind": "cells",
+   "width": 170,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"170\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&lt;font color=&quot;#000000&quot;&gt;Name&lt;/font&gt;&lt;br&gt;Google Ad Manager\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#5184F3;strokeColor=none;shape=mxgraph.gcp2.google_ad_manager;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontColor=#999999;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"45\" height=\"45\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"7\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.google_ad_manager"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2126"
+  },
+  {
+   "id": "gcp2Product Cards-41-google-ad-manager",
+   "title": "Google Ad Manager",
+   "tags": "gcp google cloud platform product google ad manager",
+   "kind": "cells",
+   "width": 178,
+   "height": 68,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=mxgraph.gcp2.doubleRect;fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"178\" height=\"68\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&lt;font color=&quot;#000000&quot;&gt;Name&lt;/font&gt;&lt;br&gt;Google Ad Manager\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#5184F3;strokeColor=none;shape=mxgraph.gcp2.google_ad_manager;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontColor=#999999;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"45\" height=\"45\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"7\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.doubleRect",
+    "mxgraph.gcp2.google_ad_manager"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2141"
+  }
+ ]
+}

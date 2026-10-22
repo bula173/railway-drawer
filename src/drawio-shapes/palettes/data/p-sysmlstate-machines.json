@@ -1,0 +1,313 @@
+{
+ "id": "sysmlState Machines",
+ "title": "SysML / State Machines",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Sysml.js:7",
+ "entries": [
+  {
+   "id": "sysmlState Machines-0-choice-pseudo-state",
+   "title": "Choice Pseudo State",
+   "tags": "sysml state machine choice pseudo state Choice Pseudo State",
+   "kind": "cells",
+   "width": 150,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=rhombus;html=1;labelPosition=right;align=left;verticalAlign=middle\" vertex=\"1\" parent=\"1\"><mxGeometry y=\"20\" width=\"40\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"edgeStyle=elbowEdgeStyle;html=1;elbow=horizontal;align=right;verticalAlign=bottom;rounded=0;labelBackgroundColor=none;endArrow=open;endSize=12;\" edge=\"1\" target=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint x=\"20\" as=\"sourcePoint\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"[Id&lt;=10]\" style=\"edgeStyle=elbowEdgeStyle;html=1;elbow=vertical;align=right;endArrow=open;rounded=0;labelBackgroundColor=none;endSize=12;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint x=\"20\" y=\"100\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"[Id&gt;10]\" style=\"edgeStyle=elbowEdgeStyle;html=1;elbow=vertical;align=left;endArrow=open;rounded=0;labelBackgroundColor=none;verticalAlign=bottom;endSize=12;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint x=\"150\" y=\"100\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rhombus"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2074"
+  },
+  {
+   "id": "sysmlState Machines-1-composite-state",
+   "title": "Composite State",
+   "tags": "sysml state machine composite state",
+   "kind": "cells",
+   "width": 220,
+   "height": 190,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"CompositeState1\" style=\"shape=mxgraph.sysml.compState;align=left;verticalAlign=top;spacingTop=-3;spacingLeft=18;strokeWidth=1;recursiveResize=0;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"220\" height=\"190\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"shape=ellipse;html=1;fillColor=strokeColor;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"20\" y=\"50\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"State1\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;shape=rect;html=1;rounded=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"80\" y=\"60\" width=\"100\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"State2\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;shape=rect;html=1;rounded=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"80\" y=\"130\" width=\"100\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;edgeStyle=none;html=1;endArrow=open;endSize=12;\" edge=\"1\" parent=\"2\" source=\"3\" target=\"4\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;edgeStyle=none;html=1;endArrow=open;endSize=12;\" edge=\"1\" parent=\"2\" source=\"4\" target=\"5\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.sysml.compState",
+    "ellipse",
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2077"
+  },
+  {
+   "id": "sysmlState Machines-2-composite-state",
+   "title": "Composite State",
+   "tags": "compState sysml state machine composite state Composite State",
+   "kind": "vertex",
+   "width": 200,
+   "height": 160,
+   "style": "shape=mxgraph.sysml.compState;html=1;align=left;verticalAlign=top;spacingTop=-3;spacingLeft=18;",
+   "value": "CompositeState1",
+   "shapeNames": [
+    "mxgraph.sysml.compState"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2106"
+  },
+  {
+   "id": "sysmlState Machines-3-entry-point",
+   "title": "Entry Point",
+   "tags": "compState sysml state machine entry point Entry Point",
+   "kind": "vertex",
+   "width": 20,
+   "height": 20,
+   "style": "ellipse;html=1;labelPosition=left;verticalLabelPosition=bottom;spacingBottom=10;align=right;verticalAlign=bottom;resizable=0;",
+   "value": "again",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2108"
+  },
+  {
+   "id": "sysmlState Machines-4-exit-point",
+   "title": "Exit Point",
+   "tags": "sysml state machine exit point",
+   "kind": "cells",
+   "width": 20,
+   "height": 20,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"aborted\" style=\"shape=mxgraph.sysml.flowFinal;labelPosition=right;verticalLabelPosition=top;spacingTop=5;spacingLeft=3;align=left;verticalAlign=top;resizable=0;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry y=\"10\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.sysml.flowFinal"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2111"
+  },
+  {
+   "id": "sysmlState Machines-5-final-state",
+   "title": "Final State",
+   "tags": "actFinal sysml state machine final state Final State",
+   "kind": "vertex",
+   "width": 40,
+   "height": 40,
+   "style": "shape=mxgraph.sysml.actFinal;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;",
+   "shapeNames": [
+    "mxgraph.sysml.actFinal"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2119"
+  },
+  {
+   "id": "sysmlState Machines-6-history-deep-pseudo-state",
+   "title": "History, Deep Pseudo State",
+   "tags": " sysml state machine history deep pseudo state History, Deep Pseudo State",
+   "kind": "vertex",
+   "width": 40,
+   "height": 40,
+   "style": "shape=ellipse;html=1;fontSize=18;align=center;",
+   "value": "H*",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2121"
+  },
+  {
+   "id": "sysmlState Machines-7-history-shallow-pseudo-state",
+   "title": "History, Shallow Pseudo State",
+   "tags": " sysml state machine history shallow pseudo state History, Shallow Pseudo State",
+   "kind": "vertex",
+   "width": 40,
+   "height": 40,
+   "style": "shape=ellipse;html=1;fontSize=18;align=center;",
+   "value": "H",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2123"
+  },
+  {
+   "id": "sysmlState Machines-8-initial-pseudo-state",
+   "title": "Initial Pseudo State",
+   "tags": " sysml state machine initial pseudo state Initial Pseudo State",
+   "kind": "vertex",
+   "width": 40,
+   "height": 40,
+   "style": "shape=ellipse;html=1;fillColor=strokeColor;fontSize=18;fontColor=#ffffff;",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2125"
+  },
+  {
+   "id": "sysmlState Machines-9-junction-pseudo-state",
+   "title": "Junction Pseudo State",
+   "tags": " sysml state machine junction pseudo state Junction Pseudo State",
+   "kind": "vertex",
+   "width": 40,
+   "height": 40,
+   "style": "shape=ellipse;html=1;fillColor=strokeColor;fontSize=18;fontColor=#ffffff;",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2127"
+  },
+  {
+   "id": "sysmlState Machines-10-receive-signal-action",
+   "title": "Receive Signal Action",
+   "tags": "accEvent sysml state machine receive signal action Receive Signal Action",
+   "kind": "vertex",
+   "width": 140,
+   "height": 40,
+   "style": "shape=mxgraph.sysml.accEvent;flipH=1;whiteSpace=wrap;align=center;html=1;",
+   "value": "Req(Id)",
+   "shapeNames": [
+    "mxgraph.sysml.accEvent"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2129"
+  },
+  {
+   "id": "sysmlState Machines-11-send-signal-action",
+   "title": "Send Signal Action",
+   "tags": "sendSigAct sysml state machine send signal action Send Signal Action",
+   "kind": "vertex",
+   "width": 140,
+   "height": 40,
+   "style": "shape=mxgraph.sysml.sendSigAct;whiteSpace=wrap;align=center;html=1;",
+   "value": "TurnOn",
+   "shapeNames": [
+    "mxgraph.sysml.sendSigAct"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2131"
+  },
+  {
+   "id": "sysmlState Machines-12-action",
+   "title": "Action",
+   "tags": " sysml state machine action Action",
+   "kind": "vertex",
+   "width": 140,
+   "height": 40,
+   "style": "shape=rect;html=1;whiteSpace=wrap;align=center;",
+   "value": "MinorReq := Id;",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2133"
+  },
+  {
+   "id": "sysmlState Machines-13-region",
+   "title": "Region",
+   "tags": " sysml state machine region Region",
+   "kind": "vertex",
+   "width": 200,
+   "height": 160,
+   "style": "shape=mxgraph.sysml.region;align=left;verticalAlign=top;spacingTop=-3;spacingLeft=25;html=1;",
+   "value": "S",
+   "shapeNames": [
+    "mxgraph.sysml.region"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2135"
+  },
+  {
+   "id": "sysmlState Machines-14-simple-state",
+   "title": "Simple State",
+   "tags": " sysml state machine simple state Simple State",
+   "kind": "vertex",
+   "width": 100,
+   "height": 40,
+   "style": "shape=rect;rounded=1;html=1;whiteSpace=wrap;align=center;",
+   "value": "State1",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2137"
+  },
+  {
+   "id": "sysmlState Machines-15-simple-state",
+   "title": "Simple State",
+   "tags": "sysml state machine simple state",
+   "kind": "cells",
+   "width": 200,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;marginBottom=0;rounded=1;absoluteArcSize=1;arcSize=22;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"200\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"State2\" style=\"html=1;align=center;spacing=0;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"200\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"line;strokeWidth=0.25;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"200\" height=\"8\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"html=1;align=left;spacing=0;spacingLeft=10;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"76\" width=\"200\" height=\"10\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"entry / entryActivity\" style=\"html=1;align=left;spacing=0;spacingLeft=10;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"200\" height=\"14\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"do / doActivity\" style=\"html=1;align=left;spacing=0;spacingLeft=10;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"200\" height=\"14\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"exit / exitActivity\" style=\"html=1;align=left;spacingLeft=10;spacing=0;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"200\" height=\"14\" as=\"geometry\"/></mxCell><mxCell id=\"9\" value=\"\" style=\"html=1;align=left;spacing=0;spacingLeft=10;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"76\" width=\"200\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "line"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2140"
+  },
+  {
+   "id": "sysmlState Machines-16-state-list",
+   "title": "State List",
+   "tags": " sysml state machine state list State List",
+   "kind": "vertex",
+   "width": 120,
+   "height": 40,
+   "style": "shape=rect;rounded=1;html=1;whiteSpace=wrap;align=center;",
+   "value": "State1, State2",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2169"
+  },
+  {
+   "id": "sysmlState Machines-17-state-machine",
+   "title": "State Machine",
+   "tags": "sysml state machine state machine",
+   "kind": "cells",
+   "width": 160,
+   "height": 120,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"ReadAmountSM\" style=\"shape=mxgraph.sysml.stateMachine;verticalAlign=top;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"160\" height=\"120\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"aborted\" style=\"resizable=0;html=1;verticalAlign=top;align=left;labelBackgroundColor=none;spacingLeft=5;spacingTop=-2;\" vertex=\"1\" connectable=\"0\" parent=\"2\"><mxGeometry x=\"160\" y=\"60\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.sysml.stateMachine"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2172"
+  },
+  {
+   "id": "sysmlState Machines-18-terminate-node",
+   "title": "Terminate Node",
+   "tags": "x sysml state machine terminate node Terminate Node",
+   "kind": "vertex",
+   "width": 40,
+   "height": 40,
+   "style": "shape=mxgraph.sysml.x;",
+   "shapeNames": [
+    "mxgraph.sysml.x"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2185"
+  },
+  {
+   "id": "sysmlState Machines-19-submachine-state",
+   "title": "Submachine State",
+   "tags": "sysml state machine submachine state",
+   "kind": "cells",
+   "width": 160,
+   "height": 120,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"ReadAmount :&#xa;ReadAmountSM\" style=\"shape=mxgraph.sysml.submState;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"160\" height=\"120\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"aborted\" style=\"resizable=0;html=1;verticalAlign=bottom;align=left;labelBackgroundColor=none;spacingLeft=5;spacingBottom=2;\" vertex=\"1\" connectable=\"0\" parent=\"2\"><mxGeometry x=\"160\" y=\"60\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.sysml.submState"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2188"
+  },
+  {
+   "id": "sysmlState Machines-20-transition",
+   "title": "Transition",
+   "tags": " sysml state machine transition",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "edgeStyle=none;html=1;endArrow=open;endSize=12;strokeWidth=3;verticalAlign=bottom;",
+   "value": "trigger[guard]/activity",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:2201"
+  }
+ ]
+}

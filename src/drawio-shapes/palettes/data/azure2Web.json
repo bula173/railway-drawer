@@ -1,0 +1,274 @@
+{
+ "id": "azure2Web",
+ "title": "Azure / Web",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Azure2.js:8",
+ "entries": [
+  {
+   "id": "azure2Web-0-agentic-web-apps",
+   "title": "Agentic Web Apps",
+   "tags": "azure2 agentic web apps ai azure web  Agentic Web Apps",
+   "kind": "vertex",
+   "width": 68,
+   "height": 59,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/web/Agentic_Web_Apps.svg;points=[[0.5,0.04,0],[0.5,0.965,0],[0.009,0.5,0],[1,0.595,0],[0.885,0.289,0],[0.88,0.902,0],[0.018,0.792,0],[0.125,0.09,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2096"
+  },
+  {
+   "id": "azure2Web-1-api-center",
+   "title": "API Center",
+   "tags": "azure2 api center azure web  API Center",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/web/API_Center.svg;points=[[0.5,0.265,0],[0.136,1,0],[0,0.861,0],[1,0.416,0],[0.967,0.333,0],[0.712,0.872,0],[0.048,0.967,0],[0.135,0.015,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2098"
+  },
+  {
+   "id": "azure2Web-2-api-connections",
+   "title": "API Connections",
+   "tags": "azure2 api connections application programming interface azure web  API Connections",
+   "kind": "vertex",
+   "width": 68,
+   "height": 45.32,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/devops/API_Connections.svg;points=[[0.5,0.007,0],[0.5,0.993,0],[0.015,0.5,0],[0.985,0.5,0],[0.897,0.341,0],[0.91,0.936,0],[0.093,0.647,0],[0.09,0.064,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2100"
+  },
+  {
+   "id": "azure2Web-3-api-management-services",
+   "title": "API Management Services",
+   "tags": "azure2 api application programming interface management services azure web  API Management Services",
+   "kind": "vertex",
+   "width": 68,
+   "height": 63,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/app_services/API_Management_Services.svg;points=[[0.512,0,0],[0.477,1,0],[0,0.496,0],[1,0.541,0],[0.717,0.084,0],[0.92,0.729,0],[0.09,0.712,0],[0.085,0.285,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2102"
+  },
+  {
+   "id": "azure2Web-4-app-service-certificates",
+   "title": "App Service Certificates",
+   "tags": "azure2 app service certificates azure web  App Service Certificates",
+   "kind": "vertex",
+   "width": 68,
+   "height": 62,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/app_services/App_Service_Certificates.svg;points=[[0.5,0,0],[0.5,0.774,0],[0,0.387,0],[1,0.388,0],[0.987,0.006,0],[0.985,0.77,0],[0.093,0.997,0],[0.013,0.006,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2104"
+  },
+  {
+   "id": "azure2Web-5-app-service-domains",
+   "title": "App Service Domains",
+   "tags": "azure2 app service domains azure web  App Service Domains",
+   "kind": "vertex",
+   "width": 68,
+   "height": 55.00000000000001,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/app_services/App_Service_Domains.svg;points=[[0.5,0,0],[0.5,1,0],[0.003,0.5,0],[0.998,0.5,0],[0.985,0.007,0],[0.985,0.993,0],[0.015,0.993,0],[0.015,0.007,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2106"
+  },
+  {
+   "id": "azure2Web-6-app-service-environments",
+   "title": "App Service Environments",
+   "tags": "azure2 app service environments azure web  App Service Environments",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/app_services/App_Service_Environments.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.98,0.018,0],[0.985,0.977,0],[0.015,0.977,0],[0.02,0.018,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2108"
+  },
+  {
+   "id": "azure2Web-7-app-service-plans",
+   "title": "App Service Plans",
+   "tags": "azure2 app service plans azure web  App Service Plans",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/app_services/App_Service_Plans.svg;points=[[0.5,0,0],[0.43,1,0],[0.005,0.5,0],[0.787,0.5,0],[0.582,0.008,0],[0.942,0.947,0],[0.013,0.99,0],[0.02,0.003,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2110"
+  },
+  {
+   "id": "azure2Web-8-app-services",
+   "title": "App Services",
+   "tags": "azure2 app services azure web  App Services",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/app_services/App_Services.svg;points=[[0.497,0,0],[0.504,1,0],[0,0.499,0],[1,0.5,0],[0.865,0.153,0],[0.875,0.835,0],[0.125,0.835,0],[0.133,0.155,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2112"
+  },
+  {
+   "id": "azure2Web-9-app-space",
+   "title": "App Space",
+   "tags": "azure2 app space azure web  App Space",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/web/App_Space.svg;points=[[0.5,0.081,0],[0.5,0.919,0],[0,0.477,0],[0.999,0.5,0],[0.99,0.005,0],[0.992,0.985,0],[0.113,0.765,0],[0.063,0.118,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2114"
+  },
+  {
+   "id": "azure2Web-10-cognitive-search",
+   "title": "Cognitive Search",
+   "tags": "azure2 cognitive search azure web  Cognitive Search",
+   "kind": "vertex",
+   "width": 68,
+   "height": 49.120000000000005,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/app_services/Search_Services.svg;points=[[0.512,0,0],[0.524,1,0],[0.02,0.5,0],[0.95,0.5,0],[0.69,0.077,0],[0.897,0.948,0],[0.108,0.92,0],[0.34,0.073,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2116"
+  },
+  {
+   "id": "azure2Web-11-cognitive-services",
+   "title": "Cognitive Services",
+   "tags": "azure2 cognitive services azure web  Cognitive Services",
+   "kind": "vertex",
+   "width": 68,
+   "height": 48,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/ai_machine_learning/Cognitive_Services.svg;points=[[0.514,0,0],[0.52,1,0],[0.02,0.5,0],[0.953,0.5,0],[0.682,0.068,0],[0.895,0.95,0],[0.11,0.925,0],[0.33,0.082,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2118"
+  },
+  {
+   "id": "azure2Web-12-front-door-and-cdn-profiles",
+   "title": "Front Door and CDN Profiles",
+   "tags": "azure2 front door and cdn profiles azure web  Front Door and CDN Profiles",
+   "kind": "vertex",
+   "width": 68,
+   "height": 60,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Front_Doors.svg;points=[[0.514,0,0],[0.504,1,0],[0,0.507,0],[1,0.554,0],[0.707,0.077,0],[0.932,0.733,0],[0.09,0.728,0],[0.085,0.292,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2120"
+  },
+  {
+   "id": "azure2Web-13-media-service",
+   "title": "Media Service",
+   "tags": "azure2 media service azure web  Media Service",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/web/Azure_Media_Service.svg;points=[[0.499,0,0],[0.496,1,0],[0,0.497,0],[1,0.502,0],[0.87,0.163,0],[0.837,0.87,0],[0.163,0.87,0],[0.148,0.143,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2122"
+  },
+  {
+   "id": "azure2Web-14-notification-hub-namespaces",
+   "title": "Notification Hub Namespaces",
+   "tags": "azure2 notification hub namespaces azure web  Notification Hub Namespaces",
+   "kind": "vertex",
+   "width": 67,
+   "height": 56.00000000000001,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/web/Notification_Hub_Namespaces.svg;points=[[0.5,0,0],[0.675,1,0],[0,0.424,0],[1,0.424,0],[0.992,0.012,0],[0.992,0.835,0],[0.015,0.844,0],[0.008,0.012,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2124"
+  },
+  {
+   "id": "azure2Web-15-power-platform",
+   "title": "Power Platform",
+   "tags": "azure2 power platform azure web  Power Platform",
+   "kind": "vertex",
+   "width": 64.92,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/analytics/Power_Platform.svg;points=[[0.61,0,0],[0.086,0.5,0],[1,0.164,0],[0.966,0.063,0],[0.814,0.552,0],[0.147,0.987,0],[0.343,0.013,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2126"
+  },
+  {
+   "id": "azure2Web-16-signalr",
+   "title": "SignalR",
+   "tags": "azure2 signalr azure web  SignalR",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/web/SignalR.svg;points=[[0.497,0,0],[0.5,0.998,0],[0,0.502,0],[1,0.496,0],[0.87,0.163,0],[0.867,0.837,0],[0.133,0.837,0],[0.148,0.143,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2128"
+  },
+  {
+   "id": "azure2Web-17-spring-apps",
+   "title": "Spring Apps",
+   "tags": "azure2 spring apps azure web  Spring Apps",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/compute/Azure_Spring_Cloud.svg;points=[[0.5,0.126,0],[0.5,0.794,0],[0.188,0.5,0],[0.845,0.5,0],[0.997,0.005,0],[0.997,0.995,0],[0.003,0.995,0],[0.003,0.005,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2130"
+  },
+  {
+   "id": "azure2Web-18-static-apps",
+   "title": "Static Apps",
+   "tags": "azure2 static apps azure web  Static Apps",
+   "kind": "vertex",
+   "width": 68,
+   "height": 54,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/preview/Static_Apps.svg;points=[[0.5,0,0],[0.5,1,0],[0.003,0.5,0],[0.998,0.5,0],[0.985,0.007,0],[0.985,0.993,0],[0.015,0.993,0],[0.015,0.007,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2132"
+  }
+ ]
+}

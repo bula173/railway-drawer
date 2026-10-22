@@ -1,0 +1,690 @@
+{
+ "id": "cumulus",
+ "title": "Cumulus",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:7",
+ "entries": [
+  {
+   "id": "cumulus-0-switch-bare-metal-empty",
+   "title": "Switch - Bare Metal (empty)",
+   "tags": "switch bare metal empty cumulus Switch - Bare Metal (empty)",
+   "kind": "vertex",
+   "width": 96,
+   "height": 24,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;fontSize=12;verticalAlign=top;fontColor=#364149;shadow=0;dashed=0;image=img/lib/cumulus/switch_bare_metal_empty.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:19"
+  },
+  {
+   "id": "cumulus-1-switch-cumulus-linux",
+   "title": "Switch - Cumulus Linux",
+   "tags": "switch cumulus linux cumulus Switch - Cumulus Linux",
+   "kind": "vertex",
+   "width": 96,
+   "height": 24,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;fontSize=12;verticalAlign=top;fontColor=#364149;shadow=0;dashed=0;image=img/lib/cumulus/switch_cumulus_linux.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:21"
+  },
+  {
+   "id": "cumulus-2-switch-out-of-band",
+   "title": "Switch - Out of Band",
+   "tags": "switch out of band cumulus Switch - Out of Band",
+   "kind": "vertex",
+   "width": 96,
+   "height": 24,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;fontSize=12;verticalAlign=top;fontColor=#364149;shadow=0;dashed=0;image=img/lib/cumulus/switch_out_of_band.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:23"
+  },
+  {
+   "id": "cumulus-3-switch-voyager",
+   "title": "Switch Voyager",
+   "tags": "switch voyager cumulus Switch Voyager",
+   "kind": "vertex",
+   "width": 96,
+   "height": 24,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;fontSize=12;verticalAlign=top;fontColor=#364149;shadow=0;dashed=0;image=img/lib/cumulus/switch_voyager.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:25"
+  },
+  {
+   "id": "cumulus-4-linux-icon",
+   "title": "Linux Icon",
+   "tags": "cumulus linux icon cumulus Linux Icon",
+   "kind": "vertex",
+   "width": 96,
+   "height": 96,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;fontSize=12;verticalAlign=top;fontColor=#364149;shadow=0;dashed=0;image=img/lib/cumulus/cumulus_linux_icon.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:28"
+  },
+  {
+   "id": "cumulus-5-netq-icon",
+   "title": "NetQ Icon",
+   "tags": " cumulus NetQ Icon",
+   "kind": "vertex",
+   "width": 96,
+   "height": 96,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;fontSize=12;verticalAlign=top;fontColor=#364149;shadow=0;dashed=0;image=img/lib/cumulus/cumulus_netq_icon.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:30"
+  },
+  {
+   "id": "cumulus-6-rack-bare-metal",
+   "title": "Rack Bare Metal",
+   "tags": "rack bare metal cumulus Rack Bare Metal",
+   "kind": "vertex",
+   "width": 96,
+   "height": 114,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;fontSize=12;verticalAlign=top;fontColor=#364149;shadow=0;dashed=0;image=img/lib/cumulus/rack_bare_metal.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:33"
+  },
+  {
+   "id": "cumulus-7-rack-cumulus-linux",
+   "title": "Rack Cumulus Linux",
+   "tags": "rack linux cumulus Rack Cumulus Linux",
+   "kind": "vertex",
+   "width": 96,
+   "height": 114,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;fontSize=12;verticalAlign=top;fontColor=#364149;shadow=0;dashed=0;image=img/lib/cumulus/rack_cumulus_linux.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:35"
+  },
+  {
+   "id": "cumulus-8-rack-out-of-band",
+   "title": "Rack Out of Band",
+   "tags": "rack out of band cumulus Rack Out of Band",
+   "kind": "vertex",
+   "width": 96,
+   "height": 114,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;fontSize=12;verticalAlign=top;fontColor=#364149;shadow=0;dashed=0;image=img/lib/cumulus/rack_out_of_band.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:37"
+  },
+  {
+   "id": "cumulus-9-rack-voyager",
+   "title": "Rack Voyager",
+   "tags": "rack voyager cumulus Rack Voyager",
+   "kind": "vertex",
+   "width": 96,
+   "height": 114,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;fontSize=12;verticalAlign=top;fontColor=#364149;shadow=0;dashed=0;image=img/lib/cumulus/rack_voyager.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:39"
+  },
+  {
+   "id": "cumulus-10-server-bare-metal",
+   "title": "Server - Bare Metal",
+   "tags": "server bare metal cumulus Server - Bare Metal",
+   "kind": "vertex",
+   "width": 96,
+   "height": 20,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;fontSize=12;verticalAlign=top;fontColor=#364149;shadow=0;dashed=0;image=img/lib/cumulus/server_bare_metal.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:42"
+  },
+  {
+   "id": "cumulus-11-chassis-bare-metal-empty",
+   "title": "Chassis - Bare Metal Empty",
+   "tags": "chassis bare metal empty cumulus Chassis - Bare Metal Empty",
+   "kind": "vertex",
+   "width": 106,
+   "height": 72,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;fontSize=12;verticalAlign=top;fontColor=#364149;shadow=0;dashed=0;image=img/lib/cumulus/chassis_bare_metal_empty.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:44"
+  },
+  {
+   "id": "cumulus-12-chassis-cumulus-linux",
+   "title": "Chassis - Cumulus Linux",
+   "tags": "chassis linux cumulus Chassis - Cumulus Linux",
+   "kind": "vertex",
+   "width": 106,
+   "height": 72,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;fontSize=12;verticalAlign=top;fontColor=#364149;shadow=0;dashed=0;image=img/lib/cumulus/chassis_cumulus_linux.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:46"
+  },
+  {
+   "id": "cumulus-13-netq-chassis",
+   "title": "NetQ Chassis",
+   "tags": "netq chassis cumulus NetQ Chassis",
+   "kind": "vertex",
+   "width": 106,
+   "height": 72,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;fontSize=12;verticalAlign=top;fontColor=#364149;shadow=0;dashed=0;image=img/lib/cumulus/netq_chassis.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:48"
+  },
+  {
+   "id": "cumulus-14-unspecified",
+   "title": "Unspecified",
+   "tags": "cumulusunspecified",
+   "kind": "edge",
+   "width": 100,
+   "height": 100,
+   "style": "endArrow=block;html=1;startArrow=block;startFill=1;endFill=1;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:51"
+  },
+  {
+   "id": "cumulus-15-1g",
+   "title": "1G",
+   "tags": "cumulus1g",
+   "kind": "edge",
+   "width": 100,
+   "height": 100,
+   "style": "endArrow=block;html=1;startArrow=block;startFill=1;endFill=1;strokeColor=#EB4770;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:52"
+  },
+  {
+   "id": "cumulus-16-10g",
+   "title": "10G",
+   "tags": "cumulus10g",
+   "kind": "edge",
+   "width": 100,
+   "height": 100,
+   "style": "endArrow=block;html=1;startArrow=block;startFill=1;endFill=1;strokeColor=#FB9F41;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:53"
+  },
+  {
+   "id": "cumulus-17-25g",
+   "title": "25G",
+   "tags": "cumulus25g",
+   "kind": "edge",
+   "width": 100,
+   "height": 100,
+   "style": "endArrow=block;html=1;startArrow=block;startFill=1;endFill=1;strokeColor=#FCC548;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:54"
+  },
+  {
+   "id": "cumulus-18-40g",
+   "title": "40G",
+   "tags": "cumulus40g",
+   "kind": "edge",
+   "width": 100,
+   "height": 100,
+   "style": "endArrow=block;html=1;startArrow=block;startFill=1;endFill=1;strokeColor=#83CA73;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:55"
+  },
+  {
+   "id": "cumulus-19-100g",
+   "title": "100G",
+   "tags": "cumulus100g",
+   "kind": "edge",
+   "width": 100,
+   "height": 100,
+   "style": "endArrow=block;html=1;startArrow=block;startFill=1;endFill=1;strokeColor=#2EAB6D;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:56"
+  },
+  {
+   "id": "cumulus-20-oob-rmp",
+   "title": "OOB / RMP",
+   "tags": "cumulusoob rmp",
+   "kind": "edge",
+   "width": 100,
+   "height": 100,
+   "style": "endArrow=block;html=1;startArrow=block;startFill=1;endFill=1;strokeColor=#4EFDC0;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:57"
+  },
+  {
+   "id": "cumulus-21-virtual",
+   "title": "Virtual",
+   "tags": "cumulusvirtual",
+   "kind": "edge",
+   "width": 100,
+   "height": 100,
+   "style": "endArrow=block;html=1;startArrow=block;startFill=1;endFill=1;strokeColor=#EB4770;dashed=1;dashPattern=5 5;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:59"
+  },
+  {
+   "id": "cumulus-22-virtual",
+   "title": "Virtual",
+   "tags": "cumulusvirtual",
+   "kind": "edge",
+   "width": 100,
+   "height": 100,
+   "style": "endArrow=block;html=1;startArrow=block;startFill=1;endFill=1;strokeColor=#FB9F41;dashed=1;dashPattern=5 5;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:60"
+  },
+  {
+   "id": "cumulus-23-virtual",
+   "title": "Virtual",
+   "tags": "cumulusvirtual",
+   "kind": "edge",
+   "width": 100,
+   "height": 100,
+   "style": "endArrow=block;html=1;startArrow=block;startFill=1;endFill=1;strokeColor=#FCC548;dashed=1;dashPattern=5 5;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:61"
+  },
+  {
+   "id": "cumulus-24-virtual",
+   "title": "Virtual",
+   "tags": "cumulusvirtual",
+   "kind": "edge",
+   "width": 100,
+   "height": 100,
+   "style": "endArrow=block;html=1;startArrow=block;startFill=1;endFill=1;strokeColor=#83CA73;dashed=1;dashPattern=5 5;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:62"
+  },
+  {
+   "id": "cumulus-25-virtual",
+   "title": "Virtual",
+   "tags": "cumulusvirtual",
+   "kind": "edge",
+   "width": 100,
+   "height": 100,
+   "style": "endArrow=block;html=1;startArrow=block;startFill=1;endFill=1;strokeColor=#2EAB6D;dashed=1;dashPattern=5 5;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:63"
+  },
+  {
+   "id": "cumulus-26-virtual",
+   "title": "Virtual",
+   "tags": "cumulusvirtual",
+   "kind": "edge",
+   "width": 100,
+   "height": 100,
+   "style": "endArrow=block;html=1;startArrow=block;startFill=1;endFill=1;strokeColor=#4EFDC0;dashed=1;dashPattern=5 5;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:64"
+  },
+  {
+   "id": "cumulus-27-netq-agent",
+   "title": "NetQ Agent",
+   "tags": "netq agent cumulus NetQ Agent",
+   "kind": "vertex",
+   "width": 18,
+   "height": 18,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;fontSize=12;verticalAlign=top;fontColor=#364149;shadow=0;dashed=0;image=img/lib/cumulus/netq_agent.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:66"
+  },
+  {
+   "id": "cumulus-28-netq-telemetry-server",
+   "title": "NetQ Telemetry Server",
+   "tags": "netq telemetry server cumulus NetQ Telemetry Server",
+   "kind": "vertex",
+   "width": 96,
+   "height": 24,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;fontSize=12;verticalAlign=top;fontColor=#364149;shadow=0;dashed=0;image=img/lib/cumulus/netq_telemetry_server.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:68"
+  },
+  {
+   "id": "cumulus-29-netq-server",
+   "title": "NetQ Server",
+   "tags": "netq server cumulus NetQ Server",
+   "kind": "vertex",
+   "width": 96,
+   "height": 20,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;fontSize=12;verticalAlign=top;fontColor=#364149;shadow=0;dashed=0;image=img/lib/cumulus/netq_server.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:70"
+  },
+  {
+   "id": "cumulus-30-internet",
+   "title": "Internet",
+   "tags": "internet cumulus Internet",
+   "kind": "vertex",
+   "width": 274,
+   "height": 98,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;image=img/lib/cumulus/internet.svg;labelPosition=center;verticalLabelPosition=middle;verticalAlign=middle;fontSize=14;fontColor=#36424A;whiteSpace=wrap;",
+   "value": "Internet",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:73"
+  },
+  {
+   "id": "cumulus-31-container",
+   "title": "Container",
+   "tags": "container cumulus Container",
+   "kind": "vertex",
+   "width": 90,
+   "height": 80,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;fontSize=12;verticalAlign=top;fontColor=#364149;shadow=0;dashed=0;image=img/lib/cumulus/container.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:76"
+  },
+  {
+   "id": "cumulus-32-package-diagram",
+   "title": "Package Diagram",
+   "tags": "cumuluspbr switch",
+   "kind": "cells",
+   "width": 120,
+   "height": 24,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"swp51\" style=\"rounded=0;whiteSpace=wrap;html=1;fillColor=#FB9F41;strokeColor=none;fontColor=#FFFFFF;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"60\" height=\"24\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"PBR\" style=\"text;verticalAlign=middle;align=center;fontColor=#FB9F41;fontStyle=1;html=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"60\" width=\"60\" height=\"24\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:79"
+  },
+  {
+   "id": "cumulus-33-ddos-server",
+   "title": "DDos Server",
+   "tags": "ddos server cumulus DDos Server",
+   "kind": "vertex",
+   "width": 96,
+   "height": 20,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;fontSize=12;verticalAlign=top;fontColor=#364149;shadow=0;dashed=0;image=img/lib/cumulus/ddos_server.svg;",
+   "value": "192.168.0.32",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:89"
+  },
+  {
+   "id": "cumulus-34-switch",
+   "title": "Switch",
+   "tags": "switch cumulus Switch",
+   "kind": "vertex",
+   "width": 96,
+   "height": 20,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;fontSize=12;verticalAlign=top;fontColor=#364149;shadow=0;dashed=0;image=img/lib/cumulus/switch.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:91"
+  },
+  {
+   "id": "cumulus-35-limed-spruce",
+   "title": "Limed Spruce",
+   "tags": "limed spruce cumulus Limed Spruce",
+   "kind": "vertex",
+   "width": 300,
+   "height": 68,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;fontSize=12;verticalAlign=top;fontColor=#364149;shadow=0;dashed=0;image=img/lib/cumulus/limed_spruce.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:94"
+  },
+  {
+   "id": "cumulus-36-limited-spruce",
+   "title": "Limited Spruce",
+   "tags": "color limited spruce cumulus Limited Spruce",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "fillColor=#36424A;strokeColor=none;whiteSpace=wrap;html=1;",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:97"
+  },
+  {
+   "id": "cumulus-37-nevada",
+   "title": "Nevada",
+   "tags": "color nevada cumulus Nevada",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "fillColor=#515D68;strokeColor=none;whiteSpace=wrap;html=1;",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:99"
+  },
+  {
+   "id": "cumulus-38-rolling-stone",
+   "title": "Rolling Stone",
+   "tags": "color rolling stone cumulus Rolling Stone",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "fillColor=#6E7B86;strokeColor=none;whiteSpace=wrap;html=1;",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:101"
+  },
+  {
+   "id": "cumulus-39-gray-chateau",
+   "title": "Gray Chateau",
+   "tags": "color gray chateau cumulus Gray Chateau",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "fillColor=#8C9AA6;strokeColor=none;whiteSpace=wrap;html=1;",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:103"
+  },
+  {
+   "id": "cumulus-40-cadet-blue",
+   "title": "Cadet Blue",
+   "tags": "color cadet blue cumulus Cadet Blue",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "fillColor=#AEB8C3;strokeColor=none;whiteSpace=wrap;html=1;",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:105"
+  },
+  {
+   "id": "cumulus-41-heather",
+   "title": "Heather",
+   "tags": "color heather cumulus Heather",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "fillColor=#D2D6DF;strokeColor=none;whiteSpace=wrap;html=1;",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:107"
+  },
+  {
+   "id": "cumulus-42-athens-gray",
+   "title": "Athens Gray",
+   "tags": "color athens gray cumulus Athens Gray",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "fillColor=#EAEDF2;strokeColor=none;whiteSpace=wrap;html=1;",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:109"
+  },
+  {
+   "id": "cumulus-43-mantis",
+   "title": "Mantis",
+   "tags": "color mantis cumulus Mantis",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "fillColor=#7CCC6C;strokeColor=none;whiteSpace=wrap;html=1;",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:111"
+  },
+  {
+   "id": "cumulus-44-fern",
+   "title": "Fern",
+   "tags": "color fern cumulus Fern",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "fillColor=#4BC05B;strokeColor=none;whiteSpace=wrap;html=1;",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:113"
+  },
+  {
+   "id": "cumulus-45-jade",
+   "title": "Jade",
+   "tags": "color jade cumulus Jade",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "fillColor=#00AD69;strokeColor=none;whiteSpace=wrap;html=1;",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:115"
+  },
+  {
+   "id": "cumulus-46-observatory",
+   "title": "Observatory",
+   "tags": "color observatory cumulus Observatory",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "fillColor=#009271;strokeColor=none;whiteSpace=wrap;html=1;",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:117"
+  },
+  {
+   "id": "cumulus-47-energy-jellow",
+   "title": "Energy Jellow",
+   "tags": "color energy jellow cumulus Energy Jellow",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "fillColor=#FFC82E;strokeColor=none;whiteSpace=wrap;html=1;",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:119"
+  },
+  {
+   "id": "cumulus-48-neon-carrot",
+   "title": "Neon Carrot",
+   "tags": "color neon carrot cumulus Neon Carrot",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "fillColor=#FFA12D;strokeColor=none;whiteSpace=wrap;html=1;",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:121"
+  },
+  {
+   "id": "cumulus-49-radical-red",
+   "title": "Radical Red",
+   "tags": "color radical red cumulus Radical Red",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "fillColor=#F1446F;strokeColor=none;whiteSpace=wrap;html=1;",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:123"
+  },
+  {
+   "id": "cumulus-50-rarity",
+   "title": "Rarity",
+   "tags": "color rarity cumulus Rarity",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "fillColor=#83389B;strokeColor=none;whiteSpace=wrap;html=1;",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:125"
+  },
+  {
+   "id": "cumulus-51-seagull",
+   "title": "Seagull",
+   "tags": "color seagull cumulus Seagull",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "fillColor=#1EB5BD;strokeColor=none;whiteSpace=wrap;html=1;",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:127"
+  },
+  {
+   "id": "cumulus-52-half-baked",
+   "title": "Half Baked",
+   "tags": "color half baked cumulus Half Baked",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "fillColor=#78CDD1;strokeColor=none;whiteSpace=wrap;html=1;",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Cumulus.js:129"
+  }
+ ]
+}

@@ -1,0 +1,848 @@
+{
+ "id": "azure2Networking",
+ "title": "Azure / Networking",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Azure2.js:8",
+ "entries": [
+  {
+   "id": "azure2Networking-0-access-point",
+   "title": "Access Point",
+   "tags": "azure2 access point azure network networking  Access Point",
+   "kind": "vertex",
+   "width": 68,
+   "height": 66.67999999999999,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Azure_Access_Point.svg;points=[[0.5,0.048,0],[0.521,1,0],[0.098,0.5,0],[1,0.503,0],[0.792,0.194,0],[0.852,0.819,0],[0.155,0.811,0],[0.073,0.176,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1437"
+  },
+  {
+   "id": "azure2Networking-1-application-gateway-containers",
+   "title": "Application Gateway Containers",
+   "tags": "azure2 application gateway containers azure network networking  Application Gateway Containers",
+   "kind": "vertex",
+   "width": 68,
+   "height": 64.24,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Application_Gateway_Containers.svg;points=[[0.5,0,0],[0.501,1,0],[0,0.466,0],[1,0.466,0],[0.755,0.008,0],[0.88,0.875,0],[0.12,0.873,0],[0.248,0.006,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1439"
+  },
+  {
+   "id": "azure2Networking-2-application-gateways",
+   "title": "Application Gateways",
+   "tags": "azure2 application gateways azure network networking  Application Gateways",
+   "kind": "vertex",
+   "width": 64,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Application_Gateways.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.758,0.242,0],[0.758,0.758,0],[0.242,0.758,0],[0.242,0.242,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1441"
+  },
+  {
+   "id": "azure2Networking-3-atm-multistack",
+   "title": "ATM Multistack",
+   "tags": "azure2 atm multistack azure network networking  ATM Multistack",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/ATM_Multistack.svg;points=[[0.752,0,0],[0.246,1,0],[0,0.772,0],[1,0.229,0],[0.995,0.003,0],[0.485,1,0],[0,0.992,0],[0.51,0.003,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1443"
+  },
+  {
+   "id": "azure2Networking-4-bastions",
+   "title": "Bastions",
+   "tags": "azure2 bastions azure network networking  Bastions",
+   "kind": "vertex",
+   "width": 57.99999999999999,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Bastions.svg;points=[[0.916,0.003,0],[0.5,1,0],[0.181,0.5,0],[0.828,0.5,0],[0.991,0.058,0],[0.997,0.67,0],[0.006,0.947,0],[0.009,0.333,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1445"
+  },
+  {
+   "id": "azure2Networking-5-cdn-profiles",
+   "title": "CDN Profiles",
+   "tags": "azure2 cdn profiles azure network networking  CDN Profiles",
+   "kind": "vertex",
+   "width": 68,
+   "height": 40,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/CDN_Profiles.svg;points=[[0.611,0.004,0],[0.62,0.996,0],[0,0.638,0],[0.963,0.5,0],[0.735,0.06,0],[0.907,0.957,0],[0.105,0.914,0],[0.108,0.358,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1447"
+  },
+  {
+   "id": "azure2Networking-6-communications-gateway",
+   "title": "Communications Gateway",
+   "tags": "azure2 communications gateway azure network networking  Communications Gateway",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Azure_Communications_Gateway.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.501,0],[1,0.501,0],[0.733,0.267,0],[0.733,0.733,0],[0.265,0.735,0],[0.265,0.265,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1449"
+  },
+  {
+   "id": "azure2Networking-7-connected-cache",
+   "title": "Connected Cache",
+   "tags": "azure2 connected cache azure network networking  Connected Cache",
+   "kind": "vertex",
+   "width": 68,
+   "height": 56.00000000000001,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Connected_Cache.svg;points=[[0.5,0.061,0],[0.5,0.964,0],[0,0.395,0],[1,0.5,0],[0.995,0.933,0],[0.07,0.571,0],[0.07,0.219,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1451"
+  },
+  {
+   "id": "azure2Networking-8-connections",
+   "title": "Connections",
+   "tags": "azure2 connections azure network networking  Connections",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Connections.svg;points=[[0.499,0,0],[0.5,1,0],[0,0.5,0],[1,0.501,0],[0.842,0.133,0],[0.865,0.845,0],[0.135,0.845,0],[0.148,0.143,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1453"
+  },
+  {
+   "id": "azure2Networking-9-ddos-custom-policy",
+   "title": "DDoS Custom Policy",
+   "tags": "azure2 ddos custom policy azure network networking  DDoS Custom Policy",
+   "kind": "vertex",
+   "width": 68,
+   "height": 65.64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/DDoS_Custom_Policy.svg;points=[[0.5,0.124,0],[0.5,0.927,0],[0,0.461,0],[1,0.11,0],[0.907,0.003,0],[0.572,0.873,0],[0.133,0.87,0],[0.1,0.218,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1455"
+  },
+  {
+   "id": "azure2Networking-10-ddos-protection-plans",
+   "title": "DDoS Protection Plans",
+   "tags": "azure2 ddos protection plans azure network networking  DDoS Protection Plans",
+   "kind": "vertex",
+   "width": 56.00000000000001,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/DDoS_Protection_Plans.svg;points=[[0.5,0,0],[0.5,1,0],[0.003,0.5,0],[0.997,0.5,0],[0.99,0.125,0],[0.86,0.752,0],[0.149,0.762,0],[0.01,0.125,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1457"
+  },
+  {
+   "id": "azure2Networking-11-dns-multistack",
+   "title": "DNS Multistack",
+   "tags": "azure2 dns multistack azure network networking  DNS Multistack",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/DNS_Multistack.svg;points=[[0.752,0,0],[0.247,1,0],[0,0.772,0],[1,0.229,0],[0.995,0.003,0],[0.485,1,0],[0,0.992,0],[0.51,0.003,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1459"
+  },
+  {
+   "id": "azure2Networking-12-dns-private-resolver",
+   "title": "DNS Private Resolver",
+   "tags": "azure2 dns private resolver azure network networking  DNS Private Resolver",
+   "kind": "vertex",
+   "width": 68,
+   "height": 60,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/DNS_Private_Resolver.svg;points=[[0.5,0.031,0],[0.5,0.963,0],[0,0.499,0],[1,0.496,0],[0.912,0.029,0],[0.85,0.903,0],[0.093,0.971,0],[0.153,0.088,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1461"
+  },
+  {
+   "id": "azure2Networking-13-dns-security-policy",
+   "title": "DNS Security Policy",
+   "tags": "azure2 dns security policy azure network networking  DNS Security Policy",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/DNS_Security_Policy.svg;points=[[0.5,0.02,0],[0.777,1,0],[0.022,0.5,0],[1,0.636,0],[0.655,0.123,0],[0.905,0.905,0],[0.113,0.645,0],[0.125,0.093,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1463"
+  },
+  {
+   "id": "azure2Networking-14-dns-zones",
+   "title": "DNS Zones",
+   "tags": "azure2 dns domain name server zones azure network networking  DNS Zones",
+   "kind": "vertex",
+   "width": 64,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/DNS_Zones.svg;points=[[0.497,0,0],[0.504,1,0],[0,0.499,0],[1,0.5,0],[0.85,0.14,0],[0.875,0.835,0],[0.125,0.835,0],[0.148,0.143,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1465"
+  },
+  {
+   "id": "azure2Networking-15-edge-actions",
+   "title": "Edge Actions",
+   "tags": "azure2 edge actions azure network networking  Edge Actions",
+   "kind": "vertex",
+   "width": 68,
+   "height": 54.279999999999994,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Edge_Actions.svg;points=[[0.5,0,0],[0.5,0.944,0],[0.037,0.5,0],[0.945,0.5,0],[0.59,0.004,0],[0.915,0.996,0],[0.083,0.993,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1467"
+  },
+  {
+   "id": "azure2Networking-16-expressroute-circuits",
+   "title": "ExpressRoute Circuits",
+   "tags": "azure2 expressroute circuits azure network networking  ExpressRoute Circuits",
+   "kind": "vertex",
+   "width": 70,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/ExpressRoute_Circuits.svg;points=[[0.504,0,0],[0.5,0.908,0],[0.003,0.855,0],[0.998,0.855,0],[0.597,0.039,0],[0.95,0.97,0],[0.05,0.97,0],[0.41,0.039,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1469"
+  },
+  {
+   "id": "azure2Networking-17-firewall-manager",
+   "title": "Firewall Manager",
+   "tags": "azure2 firewall manager azure network networking  Firewall Manager",
+   "kind": "vertex",
+   "width": 70,
+   "height": 60,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Azure_Firewall_Manager.svg;points=[[0.417,0,0],[0.749,1,0],[0,0.5,0],[1,0.515,0],[0.82,0.006,0],[0.845,0.924,0],[0.013,0.006,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1471"
+  },
+  {
+   "id": "azure2Networking-18-firewall-policy",
+   "title": "Firewall Policy",
+   "tags": "azure2 firewall policy azure network networking  Firewall Policy",
+   "kind": "vertex",
+   "width": 68,
+   "height": 49.32,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Azure_Firewall_Policy.svg;points=[[0.454,0,0],[0.5,0.99,0],[0,0.5,0],[1,0.5,0],[0.895,0.007,0],[0.995,0.996,0],[0.013,0.682,0],[0.018,0.004,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1473"
+  },
+  {
+   "id": "azure2Networking-19-firewalls",
+   "title": "Firewalls",
+   "tags": "azure2 firewalls azure network networking  Firewalls",
+   "kind": "vertex",
+   "width": 71,
+   "height": 60,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Firewalls.svg;points=[[0.514,0,0],[0.5,1,0],[0,0.528,0],[1,0.575,0],[0.705,0.077,0],[0.787,0.994,0],[0.213,0.994,0],[0.093,0.296,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1475"
+  },
+  {
+   "id": "azure2Networking-20-front-doors",
+   "title": "Front Doors",
+   "tags": "azure2 front doors azure network networking  Front Doors",
+   "kind": "vertex",
+   "width": 68,
+   "height": 60,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Front_Doors.svg;points=[[0.514,0,0],[0.504,1,0],[0,0.507,0],[1,0.554,0],[0.707,0.077,0],[0.932,0.733,0],[0.09,0.728,0],[0.085,0.292,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1477"
+  },
+  {
+   "id": "azure2Networking-21-ip-address-manager",
+   "title": "IP Address Manager",
+   "tags": "azure2 ip address manager azure network networking  IP Address Manager",
+   "kind": "vertex",
+   "width": 68,
+   "height": 60.440000000000005,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/IP_Address_Manager.svg;points=[[0.435,0.003,0],[0.792,0.997,0],[0,0.397,0],[1,0.758,0],[0.857,0.009,0],[0.922,0.943,0],[0.013,0.786,0],[0.008,0.012,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1479"
+  },
+  {
+   "id": "azure2Networking-22-ip-groups",
+   "title": "IP Groups",
+   "tags": "azure2 ip internet protocol groups azure network networking  IP Groups",
+   "kind": "vertex",
+   "width": 67,
+   "height": 52,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/IP_Groups.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.992,0.996,0],[0.01,0.58,0],[0.008,0.004,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1481"
+  },
+  {
+   "id": "azure2Networking-23-load-balancer-hub",
+   "title": "Load Balancer Hub",
+   "tags": "azure2 load balancer hub azure network networking  Load Balancer Hub",
+   "kind": "vertex",
+   "width": 54,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Load_Balancer_Hub.svg;points=[[0.531,0,0],[0.5,0.891,0],[0,0.48,0],[1,0.417,0],[0.99,0.018,0],[0.996,0.81,0],[0.123,1,0],[0.01,0.08,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1483"
+  },
+  {
+   "id": "azure2Networking-24-load-balancer-hub",
+   "title": "Load Balancer Hub",
+   "tags": "azure2 load balancer hub azure network networking  Load Balancer Hub",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Load_Balancer_Hub2.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.773,0.227,0],[0.773,0.773,0],[0.227,0.773,0],[0.227,0.227,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1485"
+  },
+  {
+   "id": "azure2Networking-25-load-balancers",
+   "title": "Load Balancers",
+   "tags": "azure2 load balancers azure network networking  Load Balancers",
+   "kind": "vertex",
+   "width": 72,
+   "height": 72,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Load_Balancers.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.758,0.242,0],[0.758,0.758,0],[0.242,0.758,0],[0.242,0.242,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1487"
+  },
+  {
+   "id": "azure2Networking-26-local-network-gateways",
+   "title": "Local Network Gateways",
+   "tags": "azure2 local network gateways azure network networking  Local Network Gateways",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Local_Network_Gateways.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.758,0.242,0],[0.758,0.758,0],[0.242,0.758,0],[0.242,0.242,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1489"
+  },
+  {
+   "id": "azure2Networking-27-nat",
+   "title": "NAT",
+   "tags": "azure2 nat azure network networking  NAT",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/NAT.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.758,0.242,0],[0.758,0.758,0],[0.242,0.758,0],[0.242,0.242,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1491"
+  },
+  {
+   "id": "azure2Networking-28-network-foundation-hub",
+   "title": "Network Foundation Hub",
+   "tags": "azure2 network foundation hub azure network networking  Network Foundation Hub",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Network_Foundation_Hub.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.937,0.04,0],[0.96,0.937,0],[0.04,0.937,0],[0.06,0.043,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1493"
+  },
+  {
+   "id": "azure2Networking-29-network-interfaces",
+   "title": "Network Interfaces",
+   "tags": "azure2 network interfaces azure network networking  Network Interfaces",
+   "kind": "vertex",
+   "width": 68,
+   "height": 60,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Network_Interfaces.svg;points=[[0.501,0,0],[0.501,1,0],[0,0.5,0],[1,0.516,0],[0.992,0.097,0],[0.99,0.934,0],[0.113,0.994,0],[0.113,0.006,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1495"
+  },
+  {
+   "id": "azure2Networking-30-network-security-groups",
+   "title": "Network Security Groups",
+   "tags": "azure2 network security groups azure network networking  Network Security Groups",
+   "kind": "vertex",
+   "width": 56.00000000000001,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Network_Security_Groups.svg;points=[[0.5,0,0],[0.5,1,0],[0.003,0.5,0],[0.997,0.5,0],[0.99,0.125,0],[0.86,0.752,0],[0.149,0.762,0],[0.01,0.125,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1497"
+  },
+  {
+   "id": "azure2Networking-31-network-security-hub",
+   "title": "Network Security Hub",
+   "tags": "azure2 network security hub azure network networking  Network Security Hub",
+   "kind": "vertex",
+   "width": 62.8,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Network_Security_Hub.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.991,0.153,0],[0.867,0.81,0],[0.122,0.8,0],[0.006,0.155,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1499"
+  },
+  {
+   "id": "azure2Networking-32-network-watcher",
+   "title": "Network Watcher",
+   "tags": "azure2 network watcher azure network networking  Network Watcher",
+   "kind": "vertex",
+   "width": 64,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Network_Watcher.svg;points=[[0.5,0.025,0],[0.5,0.796,0],[0.136,0.5,0],[0.97,0.5,0],[0.89,0.1,0],[0.897,0.615,0],[0.01,0.985,0],[0.395,0.088,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1501"
+  },
+  {
+   "id": "azure2Networking-33-on-premises-data-gateways",
+   "title": "On Premises Data Gateways",
+   "tags": "azure2 on premises data gateways azure network networking  On Premises Data Gateways",
+   "kind": "vertex",
+   "width": 68,
+   "height": 65.2,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/On_Premises_Data_Gateways.svg;points=[[0.514,0,0],[0.527,1,0],[0,0.466,0],[1,0.509,0],[0.71,0.073,0],[0.915,0.69,0],[0.088,0.671,0],[0.085,0.261,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1503"
+  },
+  {
+   "id": "azure2Networking-34-private-endpoint",
+   "title": "Private Endpoint",
+   "tags": "azure2 private endpoint azure network networking  Private Endpoint",
+   "kind": "vertex",
+   "width": 72,
+   "height": 66,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Private_Endpoint.svg;points=[[0.5,0,0],[0.5,0.818,0],[0,0.695,0],[1,0.695,0],[0.735,0.997,0],[0.265,0.997,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1505"
+  },
+  {
+   "id": "azure2Networking-35-private-link",
+   "title": "Private Link",
+   "tags": "azure2 private link azure network networking  Private Link",
+   "kind": "vertex",
+   "width": 72,
+   "height": 66,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Private_Link.svg;points=[[0.5,0,0],[0.5,0.898,0],[0.005,0.677,0],[0.995,0.696,0],[0.732,0.997,0],[0.268,0.978,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1507"
+  },
+  {
+   "id": "azure2Networking-36-private-link-hub",
+   "title": "Private Link Hub",
+   "tags": "azure2 private link hub azure network networking  Private Link Hub",
+   "kind": "vertex",
+   "width": 58.8,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Private_Link_Hub.svg;points=[[0.5,0.005,0],[0.5,0.995,0],[0,0.499,0],[1,0.5,0],[1,0.25,0],[1,0.75,0],[0,0.747,0],[0,0.25,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1509"
+  },
+  {
+   "id": "azure2Networking-37-private-link-service",
+   "title": "Private Link Service",
+   "tags": "azure2 private link service azure network networking  Private Link Service",
+   "kind": "vertex",
+   "width": 69,
+   "height": 40,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Private_Link_Service.svg;points=[[0.5,0.223,0],[0.5,0.833,0],[0,0.481,0],[1,0.515,0],[0.737,0.035,0],[0.735,0.995,0],[0.268,0.965,0],[0.26,0.005,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1511"
+  },
+  {
+   "id": "azure2Networking-38-proximity-placement-groups",
+   "title": "Proximity Placement Groups",
+   "tags": "azure2 proximity placement groups azure network networking  Proximity Placement Groups",
+   "kind": "vertex",
+   "width": 72,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Proximity_Placement_Groups.svg;points=[[0.5,0,0],[0.5,1,0],[0.007,0.503,0],[0.989,0.5,0],[0.99,0.111,0],[0.99,0.889,0],[0.013,0.891,0],[0.01,0.111,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1513"
+  },
+  {
+   "id": "azure2Networking-39-public-ip-addresses",
+   "title": "Public IP Addresses",
+   "tags": "azure2 public ip addresses azure network networking  Public IP Addresses",
+   "kind": "vertex",
+   "width": 65,
+   "height": 52,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Public_IP_Addresses.svg;points=[[0.5,0,0],[0.5,1,0],[0.003,0.5,0],[0.998,0.5,0],[0.985,0.007,0],[0.985,0.993,0],[0.015,0.993,0],[0.015,0.007,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1515"
+  },
+  {
+   "id": "azure2Networking-40-public-ip-addresses-classic",
+   "title": "Public IP Addresses (Classic)",
+   "tags": "azure2 public ip internet protocol addresses classic azure network networking  Public IP Addresses (Classic)",
+   "kind": "vertex",
+   "width": 64,
+   "height": 52,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Public_IP_Addresses_Classic.svg;points=[[0.499,0.003,0],[0.5,0.997,0],[0,0.5,0],[1,0.5,0],[0.99,0.013,0],[0.99,0.987,0],[0.01,0.987,0],[0.013,0.01,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1517"
+  },
+  {
+   "id": "azure2Networking-41-public-ip-prefixes",
+   "title": "Public IP Prefixes",
+   "tags": "azure2 public ip internet protocol prefixes azure network networking  Public IP Prefixes",
+   "kind": "vertex",
+   "width": 72,
+   "height": 56.00000000000001,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Public_IP_Prefixes.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.99,1,0],[0.003,0.007,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1519"
+  },
+  {
+   "id": "azure2Networking-42-reserved-ip-addresses-classic",
+   "title": "Reserved IP Addresses (Classic)",
+   "tags": "azure2 reserved ip internet protocol addresses classic azure network networking  Reserved IP Addresses (Classic)",
+   "kind": "vertex",
+   "width": 68,
+   "height": 55.00000000000001,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Reserved_IP_Addresses_Classic.svg;points=[[0.5,0.003,0],[0.5,0.997,0],[0,0.5,0],[1,0.5,0],[0.997,0.007,0],[0.997,0.993,0],[0.003,0.993,0],[0.003,0.007,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1521"
+  },
+  {
+   "id": "azure2Networking-43-resource-management-private-link",
+   "title": "Resource Management Private Link",
+   "tags": "azure2 resource management private link azure network networking  Resource Management Private Link",
+   "kind": "vertex",
+   "width": 68,
+   "height": 66,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Resource_Management_Private_Link.svg;points=[[0.5,0.002,0],[0.499,0.997,0],[0,0.722,0],[1,0.722,0],[0.807,0.93,0],[0.193,0.93,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1523"
+  },
+  {
+   "id": "azure2Networking-44-route-filters",
+   "title": "Route Filters",
+   "tags": "azure2 route filters azure network networking  Route Filters",
+   "kind": "vertex",
+   "width": 71,
+   "height": 44,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Route_Filters.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.508,0],[0.842,0.097,0],[0.84,0.923,0],[0.015,0.995,0],[0.015,0.005,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1525"
+  },
+  {
+   "id": "azure2Networking-45-route-tables",
+   "title": "Route Tables",
+   "tags": "azure2 route tables azure network networking  Route Tables",
+   "kind": "vertex",
+   "width": 64,
+   "height": 62,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Route_Tables.svg;points=[[0.593,0.07,0],[0.594,0.997,0],[0,0.36,0],[0.725,0.5,0],[0.74,0.124,0],[0.972,0.984,0],[0.21,0.982,0],[0.233,0.003,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1527"
+  },
+  {
+   "id": "azure2Networking-46-service-endpoint-policies",
+   "title": "Service Endpoint Policies",
+   "tags": "azure2 service endpoint policies azure network networking  Service Endpoint Policies",
+   "kind": "vertex",
+   "width": 62,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Service_Endpoint_Policies.svg;points=[[0.54,0,0],[0.5,1,0],[0.092,0.5,0],[0.779,0.5,0],[0.979,0.048,0],[0.744,0.955,0],[0.024,0.957,0],[0.124,0.048,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1529"
+  },
+  {
+   "id": "azure2Networking-47-spot-vm",
+   "title": "Spot VM",
+   "tags": "azure2 spot vm virtual machine azure network networking  Spot VM",
+   "kind": "vertex",
+   "width": 68,
+   "height": 62.8,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Spot_VM.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.985,0.003,0],[0.75,1,0],[0.25,1,0],[0.015,0.003,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1531"
+  },
+  {
+   "id": "azure2Networking-48-spot-vmss",
+   "title": "Spot VMSS",
+   "tags": "azure2 spot vmss virtual machine azure network networking  Spot VMSS",
+   "kind": "vertex",
+   "width": 68,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Spot_VMSS.svg;points=[[0.389,0,0],[0.61,1,0],[0,0.5,0],[1,0.516,0],[0.989,0.246,0],[0.802,1,0],[0.234,0.786,0],[0.013,0.003,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1533"
+  },
+  {
+   "id": "azure2Networking-49-subnet",
+   "title": "Subnet",
+   "tags": "azure2 subnet azure network networking  Subnet",
+   "kind": "vertex",
+   "width": 68,
+   "height": 40.72,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Subnet.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.498,0],[1,0.498,0],[0.717,0.001,0],[0.712,0.999,0],[0.288,0.999,0],[0.283,0.001,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1535"
+  },
+  {
+   "id": "azure2Networking-50-traffic-manager-profiles",
+   "title": "Traffic Manager Profiles",
+   "tags": "azure2 traffic manager profiles azure network networking  Traffic Manager Profiles",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Traffic_Manager_Profiles.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.855,0.145,0],[0.855,0.855,0],[0.145,0.855,0],[0.145,0.145,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1537"
+  },
+  {
+   "id": "azure2Networking-51-virtual-network-gateways",
+   "title": "Virtual Network Gateways",
+   "tags": "azure2 virtual network gateways azure network networking  Virtual Network Gateways",
+   "kind": "vertex",
+   "width": 52,
+   "height": 69,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Virtual_Network_Gateways.svg;points=[[0.492,0,0],[0.498,1,0],[0.007,0.5,0],[0.993,0.5,0],[0.79,0.115,0],[0.99,0.985,0],[0.014,0.99,0],[0.193,0.115,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1539"
+  },
+  {
+   "id": "azure2Networking-52-virtual-networks",
+   "title": "Virtual Networks",
+   "tags": "azure2 virtual networks azure network networking  Virtual Networks",
+   "kind": "vertex",
+   "width": 67,
+   "height": 40,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Virtual_Networks.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.498,0],[1,0.498,0],[0.722,0.005,0],[0.712,0.999,0],[0.288,0.999,0],[0.283,0.001,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1541"
+  },
+  {
+   "id": "azure2Networking-53-virtual-networks-classic",
+   "title": "Virtual Networks (Classic)",
+   "tags": "azure2 virtual networks classic azure network networking  Virtual Networks (Classic)",
+   "kind": "vertex",
+   "width": 67,
+   "height": 40,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Virtual_Networks_Classic.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.498,0],[1,0.498,0],[0.722,0.005,0],[0.712,0.999,0],[0.288,0.999,0],[0.283,0.001,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1543"
+  },
+  {
+   "id": "azure2Networking-54-virtual-router",
+   "title": "Virtual Router",
+   "tags": "azure2 virtual router azure network networking  Virtual Router",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Virtual_Router.svg;points=[[0.499,0,0],[0.5,1,0],[0,0.5,0],[1,0.501,0],[0.842,0.133,0],[0.865,0.845,0],[0.135,0.845,0],[0.148,0.143,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1545"
+  },
+  {
+   "id": "azure2Networking-55-virtual-wan-hub",
+   "title": "Virtual WAN Hub",
+   "tags": "azure2 virtual wan wide area network hub azure network networking  Virtual WAN Hub",
+   "kind": "vertex",
+   "width": 65,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Virtual_WAN_Hub.svg;points=[[0.5,0.259,0],[0.5,0.753,0],[0.005,0.501,0],[0.995,0.503,0],[0.79,0.011,0],[0.787,0.987,0],[0.228,0.989,0],[0.208,0.021,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1547"
+  },
+  {
+   "id": "azure2Networking-56-virtual-wans",
+   "title": "Virtual WANs",
+   "tags": "azure2 virtual wans wan wide area network azure network networking  Virtual WANs",
+   "kind": "vertex",
+   "width": 65,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Virtual_WANs.svg;points=[[0.514,0,0],[0.502,1,0],[0,0.454,0],[1,0.496,0],[0.71,0.071,0],[0.69,0.926,0],[0.325,0.934,0],[0.093,0.257,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1549"
+  },
+  {
+   "id": "azure2Networking-57-vnet-appliance",
+   "title": "VNet Appliance",
+   "tags": "azure2 vnet appliance virtual network azure network networking  VNet Appliance",
+   "kind": "vertex",
+   "width": 67.96,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/VNet_Appliance.svg;points=[[0.544,0,0],[0.544,1,0],[0,0.541,0],[1,0.541,0],[0.995,0,0],[1,0.995,0],[0,0.995,0],[0.003,0.003,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1551"
+  },
+  {
+   "id": "azure2Networking-58-vpn-client-windows",
+   "title": "VPN Client Windows",
+   "tags": "azure2 vpn client windows azure network networking  VPN Client Windows",
+   "kind": "vertex",
+   "width": 59.24,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/VPN_Client_Windows.svg;points=[[0.499,0,0],[0.499,1,0],[0.009,0.5,0],[0.991,0.5,0],[1,0.125,0],[0.842,0.775,0],[0.158,0.777,0],[0,0.125,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1553"
+  },
+  {
+   "id": "azure2Networking-59-web-application-firewall-policies-waf",
+   "title": "Web Application Firewall Policies (WAF)",
+   "tags": "azure2 web application firewall policies waf azure network networking  Web Application Firewall Policies (WAF)",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Web_Application_Firewall_Policies_WAF.svg;points=[[0.477,0.003,0],[0.5,0.998,0],[0,0.486,0],[0.965,0.5,0],[0.802,0.123,0],[0.992,0.99,0],[0.268,0.99,0],[0.15,0.133,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1555"
+  }
+ ]
+}

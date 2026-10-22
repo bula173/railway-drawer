@@ -1,0 +1,778 @@
+{
+ "id": "veeam2Products and Components",
+ "title": "Veeam / Products and Components",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:7",
+ "entries": [
+  {
+   "id": "veeam2Products and Components-0-veeam-logo",
+   "title": "Veeam logo",
+   "tags": "veeam2 logo veeam vm vmware virtual machine products and components Veeam logo",
+   "kind": "vertex",
+   "width": 136,
+   "height": 24,
+   "style": "pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#13B24B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.veeam_logo;",
+   "shapeNames": [
+    "mxgraph.veeam2.veeam_logo"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:404"
+  },
+  {
+   "id": "veeam2Products and Components-1-veeam-availability-suite",
+   "title": "Veeam Availability Suite",
+   "tags": "veeam2 availability suite veeam vm vmware virtual machine products and components Veeam Availability Suite",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.veeam_availability_suite;",
+   "shapeNames": [
+    "mxgraph.veeam2.veeam_availability_suite"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:406"
+  },
+  {
+   "id": "veeam2Products and Components-2-vas-server",
+   "title": "VAS server",
+   "tags": "veeam2 vas server veeam vm vmware virtual machine products and components VAS server",
+   "kind": "vertex",
+   "width": 40,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.vas_server;",
+   "shapeNames": [
+    "mxgraph.veeam2.vas_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:408"
+  },
+  {
+   "id": "veeam2Products and Components-3-veeam-backup-replication",
+   "title": "Veeam Backup & Replication",
+   "tags": "veeam2 backup and replication veeam vm vmware virtual machine products and components Veeam Backup & Replication",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.veeam_backup_replication;",
+   "shapeNames": [
+    "mxgraph.veeam2.veeam_backup_replication"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:410"
+  },
+  {
+   "id": "veeam2Products and Components-4-vbr-server",
+   "title": "VBR server",
+   "tags": "veeam2 vbr server veeam vm vmware virtual machine products and components VBR server",
+   "kind": "vertex",
+   "width": 40,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.vbr_server;",
+   "shapeNames": [
+    "mxgraph.veeam2.vbr_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:412"
+  },
+  {
+   "id": "veeam2Products and Components-5-proxy-server",
+   "title": "Proxy Server",
+   "tags": "veeam2 proxy server veeam vm vmware virtual machine products and components Proxy Server",
+   "kind": "vertex",
+   "width": 40,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.proxy_server;",
+   "shapeNames": [
+    "mxgraph.veeam2.proxy_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:414"
+  },
+  {
+   "id": "veeam2Products and Components-6-repository-server",
+   "title": "Repository Server",
+   "tags": "veeam2 repository server veeam vm vmware virtual machine products and components Repository Server",
+   "kind": "vertex",
+   "width": 40,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.repository_server;",
+   "shapeNames": [
+    "mxgraph.veeam2.repository_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:416"
+  },
+  {
+   "id": "veeam2Products and Components-7-mount-server",
+   "title": "Mount Server",
+   "tags": "veeam2 mount server veeam vm vmware virtual machine products and components Mount Server",
+   "kind": "vertex",
+   "width": 40,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.mount_server;",
+   "shapeNames": [
+    "mxgraph.veeam2.mount_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:418"
+  },
+  {
+   "id": "veeam2Products and Components-8-tape-server",
+   "title": "Tape Server",
+   "tags": "veeam2 tape server veeam vm vmware virtual machine products and components Tape Server",
+   "kind": "vertex",
+   "width": 40,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.tape_server;",
+   "shapeNames": [
+    "mxgraph.veeam2.tape_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:420"
+  },
+  {
+   "id": "veeam2Products and Components-9-veeam-backup-enterprise-manager",
+   "title": "Veeam Backup Enterprise Manager",
+   "tags": "veeam2 backup enterprise manager veeam vm vmware virtual machine products and components Veeam Backup Enterprise Manager",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.veeam_backup_enterprise_manager;",
+   "shapeNames": [
+    "mxgraph.veeam2.veeam_backup_enterprise_manager"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:422"
+  },
+  {
+   "id": "veeam2Products and Components-10-vbem-server",
+   "title": "VBEM Server",
+   "tags": "veeam2 vbem server veeam vm vmware virtual machine products and components VBEM Server",
+   "kind": "vertex",
+   "width": 40,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.vbem_server;",
+   "shapeNames": [
+    "mxgraph.veeam2.vbem_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:424"
+  },
+  {
+   "id": "veeam2Products and Components-11-search-server",
+   "title": "Search Server",
+   "tags": "veeam2 search server veeam vm vmware virtual machine products and components Search Server",
+   "kind": "vertex",
+   "width": 40,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.search_server;",
+   "shapeNames": [
+    "mxgraph.veeam2.search_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:426"
+  },
+  {
+   "id": "veeam2Products and Components-12-veeam-cloud-connect",
+   "title": "Veeam Cloud Connect",
+   "tags": "veeam2 cloud connect veeam vm vmware virtual machine products and components Veeam Cloud Connect",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.veeam_cloud_connect;",
+   "shapeNames": [
+    "mxgraph.veeam2.veeam_cloud_connect"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:428"
+  },
+  {
+   "id": "veeam2Products and Components-13-veeam-one",
+   "title": "Veeam ONE",
+   "tags": "veeam2 one veeam vm vmware virtual machine products and components Veeam ONE",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.veeam_one;",
+   "shapeNames": [
+    "mxgraph.veeam2.veeam_one"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:430"
+  },
+  {
+   "id": "veeam2Products and Components-14-one-server",
+   "title": "ONE Server",
+   "tags": "veeam2 one server veeam vm vmware virtual machine products and components ONE Server",
+   "kind": "vertex",
+   "width": 40,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.one_server;",
+   "shapeNames": [
+    "mxgraph.veeam2.one_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:432"
+  },
+  {
+   "id": "veeam2Products and Components-15-veeam-one-reporter",
+   "title": "Veeam ONE Reporter",
+   "tags": "veeam2 one reporter veeam vm vmware virtual machine products and components Veeam ONE Reporter",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.veeam_one_reporter;",
+   "shapeNames": [
+    "mxgraph.veeam2.veeam_one_reporter"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:434"
+  },
+  {
+   "id": "veeam2Products and Components-16-veeam-agents",
+   "title": "Veeam Agents",
+   "tags": "veeam2 agents veeam vm vmware virtual machine products and components Veeam Agents",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.veeam_agents;",
+   "shapeNames": [
+    "mxgraph.veeam2.veeam_agents"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:436"
+  },
+  {
+   "id": "veeam2Products and Components-17-server-with-veeam-agent",
+   "title": "Server with Veeam Agent",
+   "tags": "veeam2 server with agent veeam vm vmware virtual machine products and components Server with Veeam Agent",
+   "kind": "vertex",
+   "width": 40,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.server_with_veeam_agent;",
+   "shapeNames": [
+    "mxgraph.veeam2.server_with_veeam_agent"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:438"
+  },
+  {
+   "id": "veeam2Products and Components-18-veeam-agent-for-windows",
+   "title": "Veeam Agent for Windows",
+   "tags": "veeam2 agent for windows veeam vm vmware virtual machine products and components Veeam Agent for Windows",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.veeam_agent_for_windows;",
+   "shapeNames": [
+    "mxgraph.veeam2.veeam_agent_for_windows"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:440"
+  },
+  {
+   "id": "veeam2Products and Components-19-veeam-agent-for-linux",
+   "title": "Veeam Agent for Linux",
+   "tags": "veeam2 agent for linux veeam vm vmware virtual machine products and components Veeam Agent for Linux",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.veeam_agent_for_linux;",
+   "shapeNames": [
+    "mxgraph.veeam2.veeam_agent_for_linux"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:442"
+  },
+  {
+   "id": "veeam2Products and Components-20-veeam-agent-for-oracle-solaris",
+   "title": "Veeam Agent for Oracle Solaris",
+   "tags": "veeam2 agent for oracle solaris veeam vm vmware virtual machine products and components Veeam Agent for Oracle Solaris",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.veeam_agent_for_oracle_solaris;",
+   "shapeNames": [
+    "mxgraph.veeam2.veeam_agent_for_oracle_solaris"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:444"
+  },
+  {
+   "id": "veeam2Products and Components-21-veeam-agent-for-ibm-aix",
+   "title": "Veeam Agent for IBM AIX",
+   "tags": "veeam2 agent for ibm aix veeam vm vmware virtual machine products and components Veeam Agent for IBM AIX",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.veeam_agent_for_ibm_aix;",
+   "shapeNames": [
+    "mxgraph.veeam2.veeam_agent_for_ibm_aix"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:446"
+  },
+  {
+   "id": "veeam2Products and Components-22-veeam-explorer-for-exchange",
+   "title": "Veeam Explorer for Exchange",
+   "tags": "veeam2 explorer for exchange veeam vm vmware virtual machine products and components Veeam Explorer for Exchange",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.veeam_explorer_for_exchange;",
+   "shapeNames": [
+    "mxgraph.veeam2.veeam_explorer_for_exchange"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:448"
+  },
+  {
+   "id": "veeam2Products and Components-23-veeam-explorer-for-active-directory",
+   "title": "Veeam Explorer for Active Directory",
+   "tags": "veeam2 explorer for active directory veeam vm vmware virtual machine products and components Veeam Explorer for Active Directory",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.veeam_explorer_for_active_directory;",
+   "shapeNames": [
+    "mxgraph.veeam2.veeam_explorer_for_active_directory"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:450"
+  },
+  {
+   "id": "veeam2Products and Components-24-veeam-explorer-for-oracle",
+   "title": "Veeam Explorer for Oracle",
+   "tags": "veeam2 explorer for oracle veeam vm vmware virtual machine products and components Veeam Explorer for Oracle",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.veeam_explorer_for_oracle;",
+   "shapeNames": [
+    "mxgraph.veeam2.veeam_explorer_for_oracle"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:452"
+  },
+  {
+   "id": "veeam2Products and Components-25-veeam-explorer-for-onedrive",
+   "title": "Veeam Explorer for OneDrive",
+   "tags": "veeam2 explorer for onedrive veeam vm vmware virtual machine products and components Veeam Explorer for OneDrive",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.veeam_explorer_for_onedrive;",
+   "shapeNames": [
+    "mxgraph.veeam2.veeam_explorer_for_onedrive"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:454"
+  },
+  {
+   "id": "veeam2Products and Components-26-veeam-explorer-for-storage-snapshots",
+   "title": "Veeam Explorer for Storage Snapshots",
+   "tags": "veeam2 explorer for storage snapshots veeam vm vmware virtual machine products and components Veeam Explorer for Storage Snapshots",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.veeam_explorer_for_storage_snapshots;",
+   "shapeNames": [
+    "mxgraph.veeam2.veeam_explorer_for_storage_snapshots"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:456"
+  },
+  {
+   "id": "veeam2Products and Components-27-veeam-explorer-for-sql",
+   "title": "Veeam Explorer for SQL",
+   "tags": "veeam2 explorer for sql veeam vm vmware virtual machine products and components Veeam Explorer for SQL",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.veeam_explorer_for_sql;",
+   "shapeNames": [
+    "mxgraph.veeam2.veeam_explorer_for_sql"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:458"
+  },
+  {
+   "id": "veeam2Products and Components-28-veeam-explorer-for-sharepoint",
+   "title": "Veeam Explorer for SharePoint",
+   "tags": "veeam2 explorer for sharepoint veeam vm vmware virtual machine products and components Veeam Explorer for SharePoint",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.veeam_explorer_for_sharepoint;",
+   "shapeNames": [
+    "mxgraph.veeam2.veeam_explorer_for_sharepoint"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:460"
+  },
+  {
+   "id": "veeam2Products and Components-29-veeam-plugin-for-oracle-rman",
+   "title": "Veeam Plugin for Oracle RMAN",
+   "tags": "veeam2 plugin for oracle rman veeam vm vmware virtual machine products and components Veeam Plugin for Oracle RMAN",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.veeam_plugin_for_oracle_rman;",
+   "shapeNames": [
+    "mxgraph.veeam2.veeam_plugin_for_oracle_rman"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:462"
+  },
+  {
+   "id": "veeam2Products and Components-30-veeam-plugin-for-sap-hana",
+   "title": "Veeam Plugin for SAP HANA",
+   "tags": "veeam2 plugin for sap hana veeam vm vmware virtual machine products and components Veeam Plugin for SAP HANA",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.veeam_plugin_for_sap_hana;",
+   "shapeNames": [
+    "mxgraph.veeam2.veeam_plugin_for_sap_hana"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:464"
+  },
+  {
+   "id": "veeam2Products and Components-31-veeam-plugin-for-sap-on-oracle",
+   "title": "Veeam Plugin for SAP on Oracle",
+   "tags": "veeam2 plugin for sap on oracle veeam vm vmware virtual machine products and components Veeam Plugin for SAP on Oracle",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.veeam_plugin_for_sap_on_oracle;",
+   "shapeNames": [
+    "mxgraph.veeam2.veeam_plugin_for_sap_on_oracle"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:466"
+  },
+  {
+   "id": "veeam2Products and Components-32-veeam-backup-for-office-365",
+   "title": "Veeam Backup for Office 365",
+   "tags": "veeam2 plugin for office 365 veeam vm vmware virtual machine products and components Veeam Backup for Office 365",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.veeam_backup_for_office_365;",
+   "shapeNames": [
+    "mxgraph.veeam2.veeam_backup_for_office_365"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:468"
+  },
+  {
+   "id": "veeam2Products and Components-33-vbo-server",
+   "title": "VBO Server",
+   "tags": "veeam2 vbo server veeam vm vmware virtual machine products and components VBO Server",
+   "kind": "vertex",
+   "width": 40,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.vbo_server;",
+   "shapeNames": [
+    "mxgraph.veeam2.vbo_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:470"
+  },
+  {
+   "id": "veeam2Products and Components-34-veeam-mp",
+   "title": "Veeam MP",
+   "tags": "veeam2 mp veeam vm vmware virtual machine products and components Veeam MP",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.veeam_mp;",
+   "shapeNames": [
+    "mxgraph.veeam2.veeam_mp"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:472"
+  },
+  {
+   "id": "veeam2Products and Components-35-veeam-pn",
+   "title": "Veeam PN",
+   "tags": "veeam2 pn veeam vm vmware virtual machine products and components Veeam PN",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.veeam_pn;",
+   "shapeNames": [
+    "mxgraph.veeam2.veeam_pn"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:474"
+  },
+  {
+   "id": "veeam2Products and Components-36-vpn-server",
+   "title": "VPN Server",
+   "tags": "veeam2 vpn server veeam vm vmware virtual machine products and components VPN Server",
+   "kind": "vertex",
+   "width": 40,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.vpn_server;",
+   "shapeNames": [
+    "mxgraph.veeam2.vpn_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:476"
+  },
+  {
+   "id": "veeam2Products and Components-37-veeam-availability-orchestrator",
+   "title": "Veeam Availability Orchestrator",
+   "tags": "veeam2 availability orchestrator veeam vm vmware virtual machine products and components Veeam Availability Orchestrator",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.veeam_availability_orchestrator;",
+   "shapeNames": [
+    "mxgraph.veeam2.veeam_availability_orchestrator"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:478"
+  },
+  {
+   "id": "veeam2Products and Components-38-vao-server",
+   "title": "VAO Server",
+   "tags": "veeam2 vao server veeam vm vmware virtual machine products and components VAO Server",
+   "kind": "vertex",
+   "width": 40,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.vao_server;",
+   "shapeNames": [
+    "mxgraph.veeam2.vao_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:480"
+  },
+  {
+   "id": "veeam2Products and Components-39-veeam-service-provider-console",
+   "title": "Veeam Service Provider Console",
+   "tags": "veeam2 service provider console veeam vm vmware virtual machine products and components Veeam Service Provider Console",
+   "kind": "vertex",
+   "width": 34,
+   "height": 34,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.veeam_service_provider_console;",
+   "shapeNames": [
+    "mxgraph.veeam2.veeam_service_provider_console"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:482"
+  },
+  {
+   "id": "veeam2Products and Components-40-vspc-server",
+   "title": "VSPC Server",
+   "tags": "veeam2 vspc server veeam vm vmware virtual machine products and components VSPC Server",
+   "kind": "vertex",
+   "width": 40,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.vspc_server;",
+   "shapeNames": [
+    "mxgraph.veeam2.vspc_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:484"
+  },
+  {
+   "id": "veeam2Products and Components-41-agent",
+   "title": "Agent",
+   "tags": "veeam2 agent veeam vm vmware virtual machine products and components Agent",
+   "kind": "vertex",
+   "width": 21,
+   "height": 21,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.agent;",
+   "shapeNames": [
+    "mxgraph.veeam2.agent"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:486"
+  },
+  {
+   "id": "veeam2Products and Components-42-transport-service",
+   "title": "Transport Service",
+   "tags": "veeam2 transport service veeam vm vmware virtual machine products and components Transport Service",
+   "kind": "vertex",
+   "width": 21,
+   "height": 21,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.transport_service;",
+   "shapeNames": [
+    "mxgraph.veeam2.transport_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:488"
+  },
+  {
+   "id": "veeam2Products and Components-43-data-mover",
+   "title": "Data Mover",
+   "tags": "veeam2 data mover veeam vm vmware virtual machine products and components Data Mover",
+   "kind": "vertex",
+   "width": 21,
+   "height": 21,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.data_mover;",
+   "shapeNames": [
+    "mxgraph.veeam2.data_mover"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:490"
+  },
+  {
+   "id": "veeam2Products and Components-44-veeam-proxy",
+   "title": "Veeam Proxy",
+   "tags": "veeam2 veeam proxy veeam vm vmware virtual machine products and components Veeam Proxy",
+   "kind": "vertex",
+   "width": 21,
+   "height": 21,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.veeam_proxy;",
+   "shapeNames": [
+    "mxgraph.veeam2.veeam_proxy"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:492"
+  },
+  {
+   "id": "veeam2Products and Components-45-wan-accelerator",
+   "title": "WAN Accelerator",
+   "tags": "veeam2 wan accelerator wide area network veeam vm vmware virtual machine products and components WAN Accelerator",
+   "kind": "vertex",
+   "width": 21,
+   "height": 21,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.wan_accelerator;",
+   "shapeNames": [
+    "mxgraph.veeam2.wan_accelerator"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:494"
+  },
+  {
+   "id": "veeam2Products and Components-46-flr-helper-appliance",
+   "title": "FLR Helper Appliance",
+   "tags": "veeam2 flr helper appliance veeam vm vmware virtual machine products and components FLR Helper Appliance",
+   "kind": "vertex",
+   "width": 21,
+   "height": 21,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.flr_helper_appliance;",
+   "shapeNames": [
+    "mxgraph.veeam2.flr_helper_appliance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:496"
+  },
+  {
+   "id": "veeam2Products and Components-47-network-proxy",
+   "title": "Network Proxy",
+   "tags": "veeam2 network proxy veeam vm vmware virtual machine products and components Network Proxy",
+   "kind": "vertex",
+   "width": 28.000000000000004,
+   "height": 28.000000000000004,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.network_proxy;",
+   "shapeNames": [
+    "mxgraph.veeam2.network_proxy"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:498"
+  },
+  {
+   "id": "veeam2Products and Components-48-veeam-repository",
+   "title": "Veeam Repository",
+   "tags": "veeam2 repository veeam vm vmware virtual machine products and components Veeam Repository",
+   "kind": "vertex",
+   "width": 37,
+   "height": 38,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.veeam_repository;",
+   "shapeNames": [
+    "mxgraph.veeam2.veeam_repository"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:500"
+  },
+  {
+   "id": "veeam2Products and Components-49-windows-repository",
+   "title": "Windows Repository",
+   "tags": "veeam2 windows repository veeam vm vmware virtual machine products and components Windows Repository",
+   "kind": "vertex",
+   "width": 37,
+   "height": 38,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.windows_repository;",
+   "shapeNames": [
+    "mxgraph.veeam2.windows_repository"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:502"
+  },
+  {
+   "id": "veeam2Products and Components-50-linux-repository",
+   "title": "Linux Repository",
+   "tags": "veeam2 linux repository veeam vm vmware virtual machine products and components Linux Repository",
+   "kind": "vertex",
+   "width": 37,
+   "height": 38,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.linux_repository;",
+   "shapeNames": [
+    "mxgraph.veeam2.linux_repository"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:504"
+  },
+  {
+   "id": "veeam2Products and Components-51-cloud-repository",
+   "title": "Cloud Repository",
+   "tags": "veeam2 cloud repository veeam vm vmware virtual machine products and components Cloud Repository",
+   "kind": "vertex",
+   "width": 37,
+   "height": 38,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.cloud_repository;",
+   "shapeNames": [
+    "mxgraph.veeam2.cloud_repository"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:506"
+  },
+  {
+   "id": "veeam2Products and Components-52-scale-out-backup-repository",
+   "title": "Scale-Out Backup Repository",
+   "tags": "veeam2 scale out backup repository veeam vm vmware virtual machine products and components Scale-Out Backup Repository",
+   "kind": "vertex",
+   "width": 37,
+   "height": 38,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.scale_out_backup_repository;",
+   "shapeNames": [
+    "mxgraph.veeam2.scale_out_backup_repository"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:508"
+  },
+  {
+   "id": "veeam2Products and Components-53-vbo-repository",
+   "title": "VBO Repository",
+   "tags": "veeam2 vbo repository veeam vm vmware virtual machine products and components VBO Repository",
+   "kind": "vertex",
+   "width": 37,
+   "height": 38,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.vbo_repository;",
+   "shapeNames": [
+    "mxgraph.veeam2.vbo_repository"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:510"
+  },
+  {
+   "id": "veeam2Products and Components-54-vbr-repository",
+   "title": "VBR Repository",
+   "tags": "veeam2 vbr repository veeam vm vmware virtual machine products and components VBR Repository",
+   "kind": "vertex",
+   "width": 37,
+   "height": 38,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.vbr_repository;",
+   "shapeNames": [
+    "mxgraph.veeam2.vbr_repository"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:512"
+  }
+ ]
+}

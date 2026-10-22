@@ -1,0 +1,343 @@
+{
+ "id": "veeam2Auxiliary",
+ "title": "Veeam / Auxiliary",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:7",
+ "entries": [
+  {
+   "id": "veeam2Auxiliary-0-veeam-logo",
+   "title": "Veeam logo",
+   "tags": "veeam2 logo veeam vmware virtual machine auxiliary Veeam logo",
+   "kind": "vertex",
+   "width": 136,
+   "height": 24,
+   "style": "pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#13B24B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.veeam_logo;",
+   "shapeNames": [
+    "mxgraph.veeam2.veeam_logo"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:42"
+  },
+  {
+   "id": "veeam2Auxiliary-1-font",
+   "title": "Font",
+   "tags": "veeam2 font veeam vmware virtual machine auxiliary Font",
+   "kind": "vertex",
+   "width": 150,
+   "height": 110.00000000000001,
+   "style": "align=left;verticalAlign=middle;fontFamily=Tahoma;strokeColor=#ECECEC;strokeWidth=2;html=1;whiteSpace=wrap;spacing=6;fontStyle=0",
+   "value": "Please use Tahome font family, not less than 9 pt\n\nABCDEFGHIJKLM\nabcdefghijklm\n0123456789",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:44"
+  },
+  {
+   "id": "veeam2Auxiliary-2-veeam-sapphire",
+   "title": "Veeam Sapphire",
+   "tags": "veeam2 sapphite veeam vmware virtual machine auxiliary Veeam Sapphire",
+   "kind": "vertex",
+   "width": 150,
+   "height": 110.00000000000001,
+   "style": "align=left;verticalAlign=middle;fontFamily=Tahoma;fillColor=#005f4b;strokeColor=none;fontColor=#ffffff;strokeWidth=2;html=1;whiteSpace=wrap;spacing=6;fontStyle=0",
+   "value": "Veeam Sapphire\n\nR: 0\nG: 95\nB: 75\n\n #005f4b",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:46"
+  },
+  {
+   "id": "veeam2Auxiliary-3-veeam-sapphire",
+   "title": "Veeam Sapphire",
+   "tags": "veeam2 orange veeam vmware virtual machine auxiliary Veeam Sapphire",
+   "kind": "vertex",
+   "width": 150,
+   "height": 110.00000000000001,
+   "style": "align=left;verticalAlign=middle;fontFamily=Tahoma;fillColor=#df8c42;strokeColor=none;fontColor=#ffffff;strokeWidth=2;html=1;whiteSpace=wrap;spacing=6;fontStyle=0",
+   "value": "Orange\n\nR: 223\nG: 140\nB: 66\n\n #df8c42",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:48"
+  },
+  {
+   "id": "veeam2Auxiliary-4-grey-2",
+   "title": "Grey 2",
+   "tags": "veeam2 grey veeam vmware virtual machine auxiliary Grey 2",
+   "kind": "vertex",
+   "width": 150,
+   "height": 110.00000000000001,
+   "style": "align=left;verticalAlign=middle;fontFamily=Tahoma;fillColor=#d9d9d9;strokeColor=none;fontColor=#ffffff;strokeWidth=2;html=1;whiteSpace=wrap;spacing=6;fontStyle=0",
+   "value": "Grey 2\n\nR: 217\nG: 217\nB: 217\n\n #d9d9d9",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:50"
+  },
+  {
+   "id": "veeam2Auxiliary-5-inclusion",
+   "title": "Inclusion",
+   "tags": "veeam2 inclusion veeam vmware virtual machine auxiliary Inclusion",
+   "kind": "vertex",
+   "width": 40,
+   "height": 160,
+   "style": "triangle;whiteSpace=wrap;html=1;gradientColor=#D3D3D3;strokeColor=none;gradientDirection=east;points=[[0,0],[0,0.25],[0,0.5],[0,0.75],[0,1],[0.5,0.25],[0.5,0.75],[1,0.5]];",
+   "shapeNames": [
+    "triangle"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:52"
+  },
+  {
+   "id": "veeam2Auxiliary-6-frame-grey-2",
+   "title": "Frame (grey 2)",
+   "tags": "veeam2 grey frame veeam vmware virtual machine auxiliary Frame (grey 2)",
+   "kind": "vertex",
+   "width": 150,
+   "height": 110.00000000000001,
+   "style": "rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#d3d3d3;strokeWidth=2;",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:54"
+  },
+  {
+   "id": "veeam2Auxiliary-7-frame-topaz",
+   "title": "Frame (topaz)",
+   "tags": "veeam2 topaz frame veeam vmware virtual machine auxiliary Frame (topaz)",
+   "kind": "vertex",
+   "width": 150,
+   "height": 110.00000000000001,
+   "style": "rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#00B336;strokeWidth=2;",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:56"
+  },
+  {
+   "id": "veeam2Auxiliary-8-connector-topaz",
+   "title": "Connector (topaz)",
+   "tags": "veeam vmware virtual machine auxiliaryconnector topaz",
+   "kind": "edge",
+   "width": 100,
+   "height": 0,
+   "style": "edgeStyle=none;rounded=0;html=1;entryX=0;entryY=0.5;jettySize=auto;orthogonalLoop=1;strokeColor=#00B336;strokeWidth=2;fontColor=#000000;jumpStyle=none;endArrow=block;endFill=1;startArrow=block;startFill=1;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:58"
+  },
+  {
+   "id": "veeam2Auxiliary-9-connector-grey-3",
+   "title": "Connector (grey 3)",
+   "tags": "veeam vmware virtual machine auxiliaryconnector grey",
+   "kind": "edge",
+   "width": 100,
+   "height": 0,
+   "style": "edgeStyle=none;rounded=0;html=1;entryX=0;entryY=0.5;jettySize=auto;orthogonalLoop=1;strokeColor=#404040;strokeWidth=2;fontColor=#000000;jumpStyle=none;endArrow=block;endFill=1;startArrow=block;startFill=1;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:60"
+  },
+  {
+   "id": "veeam2Auxiliary-10-connector-grey-2",
+   "title": "Connector (grey 2)",
+   "tags": "veeam vmware virtual machine auxiliaryconnector grey",
+   "kind": "edge",
+   "width": 100,
+   "height": 0,
+   "style": "edgeStyle=none;rounded=0;html=1;entryX=0;entryY=0.5;jettySize=auto;orthogonalLoop=1;strokeColor=#D9D9D9;strokeWidth=2;fontColor=#000000;jumpStyle=none;endArrow=oval;endFill=1;startArrow=oval;startFill=1;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:62"
+  },
+  {
+   "id": "veeam2Auxiliary-11-connector-2-topaz",
+   "title": "Connector #2 (topaz)",
+   "tags": "veeam vmware virtual machine auxiliaryconnector topaz",
+   "kind": "edge",
+   "width": 100,
+   "height": 0,
+   "style": "edgeStyle=none;rounded=0;html=1;entryX=0;entryY=0.5;jettySize=auto;orthogonalLoop=1;strokeColor=#00B336;strokeWidth=2;fontColor=#000000;jumpStyle=none;endArrow=oval;endFill=1;startArrow=oval;startFill=1;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:64"
+  },
+  {
+   "id": "veeam2Auxiliary-12-arrow-grey-3",
+   "title": "Arrow (grey 3)",
+   "tags": "veeam vmware virtual machine auxiliaryarrow grey",
+   "kind": "edge",
+   "width": 100,
+   "height": 0,
+   "style": "edgeStyle=none;rounded=0;html=1;entryX=0;entryY=0.5;jettySize=auto;orthogonalLoop=1;strokeColor=#404040;strokeWidth=2;fontColor=#000000;jumpStyle=none;endArrow=block;endFill=1;startArrow=none;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:66"
+  },
+  {
+   "id": "veeam2Auxiliary-13-arrow-topaz",
+   "title": "Arrow (topaz)",
+   "tags": "veeam vmware virtual machine auxiliaryarrow topaz",
+   "kind": "edge",
+   "width": 100,
+   "height": 0,
+   "style": "edgeStyle=none;rounded=0;html=1;entryX=0;entryY=0.5;jettySize=auto;orthogonalLoop=1;strokeColor=#00B336;strokeWidth=2;fontColor=#000000;jumpStyle=none;endArrow=block;endFill=1;startArrow=none;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:68"
+  },
+  {
+   "id": "veeam2Auxiliary-14-dotted-line-topaz",
+   "title": "Dotted line (topaz)",
+   "tags": "veeam vmware virtual machine auxiliarydotted line topaz",
+   "kind": "edge",
+   "width": 100,
+   "height": 0,
+   "style": "edgeStyle=none;rounded=0;html=1;entryX=0;entryY=0.5;jettySize=auto;orthogonalLoop=1;strokeColor=#00B336;strokeWidth=2;fontColor=#000000;jumpStyle=none;endArrow=none;endFill=0;startArrow=none;dashed=1;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:70"
+  },
+  {
+   "id": "veeam2Auxiliary-15-dotted-line-grey-3",
+   "title": "Dotted line (grey 3)",
+   "tags": "veeam vmware virtual machine auxiliarydotted line grey",
+   "kind": "edge",
+   "width": 100,
+   "height": 0,
+   "style": "edgeStyle=none;rounded=0;html=1;entryX=0;entryY=0.5;jettySize=auto;orthogonalLoop=1;strokeColor=#404040;strokeWidth=2;fontColor=#000000;jumpStyle=none;endArrow=none;endFill=0;startArrow=none;dashed=1;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:72"
+  },
+  {
+   "id": "veeam2Auxiliary-16-number-one",
+   "title": "Number one",
+   "tags": "veeam2 number one veeam vmware virtual machine auxiliary Number one",
+   "kind": "vertex",
+   "width": 20,
+   "height": 20,
+   "style": "ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeWidth=2;fontFamily=Tahoma;spacingBottom=4;spacingRight=2;strokeColor=#d3d3d3;",
+   "value": "1",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:74"
+  },
+  {
+   "id": "veeam2Auxiliary-17-number-two",
+   "title": "Number two",
+   "tags": "veeam2 number two veeam vmware virtual machine auxiliary Number two",
+   "kind": "vertex",
+   "width": 20,
+   "height": 20,
+   "style": "ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeWidth=2;fontFamily=Tahoma;spacingBottom=4;spacingRight=2;strokeColor=#d3d3d3;",
+   "value": "2",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:76"
+  },
+  {
+   "id": "veeam2Auxiliary-18-number-three",
+   "title": "Number three",
+   "tags": "veeam2 number three veeam vmware virtual machine auxiliary Number three",
+   "kind": "vertex",
+   "width": 20,
+   "height": 20,
+   "style": "ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeWidth=2;fontFamily=Tahoma;spacingBottom=4;spacingRight=2;strokeColor=#d3d3d3;",
+   "value": "3",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:78"
+  },
+  {
+   "id": "veeam2Auxiliary-19-number-four",
+   "title": "Number four",
+   "tags": "veeam2 number four veeam vmware virtual machine auxiliary Number four",
+   "kind": "vertex",
+   "width": 20,
+   "height": 20,
+   "style": "ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeWidth=2;fontFamily=Tahoma;spacingBottom=4;spacingRight=2;strokeColor=#d3d3d3;",
+   "value": "4",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:80"
+  },
+  {
+   "id": "veeam2Auxiliary-20-number-five",
+   "title": "Number five",
+   "tags": "veeam2 number five veeam vmware virtual machine auxiliary Number five",
+   "kind": "vertex",
+   "width": 20,
+   "height": 20,
+   "style": "ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeWidth=2;fontFamily=Tahoma;spacingBottom=4;spacingRight=2;strokeColor=#d3d3d3;",
+   "value": "5",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:82"
+  },
+  {
+   "id": "veeam2Auxiliary-21-number-six",
+   "title": "Number six",
+   "tags": "veeam2 number six veeam vmware virtual machine auxiliary Number six",
+   "kind": "vertex",
+   "width": 20,
+   "height": 20,
+   "style": "ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeWidth=2;fontFamily=Tahoma;spacingBottom=4;spacingRight=2;strokeColor=#d3d3d3;",
+   "value": "6",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:84"
+  },
+  {
+   "id": "veeam2Auxiliary-22-number-seven",
+   "title": "Number seven",
+   "tags": "veeam2 number seven veeam vmware virtual machine auxiliary Number seven",
+   "kind": "vertex",
+   "width": 20,
+   "height": 20,
+   "style": "ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeWidth=2;fontFamily=Tahoma;spacingBottom=4;spacingRight=2;strokeColor=#d3d3d3;",
+   "value": "7",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:86"
+  },
+  {
+   "id": "veeam2Auxiliary-23-number-eight",
+   "title": "Number eight",
+   "tags": "veeam2 number eight veeam vmware virtual machine auxiliary Number eight",
+   "kind": "vertex",
+   "width": 20,
+   "height": 20,
+   "style": "ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeWidth=2;fontFamily=Tahoma;spacingBottom=4;spacingRight=2;strokeColor=#d3d3d3;",
+   "value": "8",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:88"
+  },
+  {
+   "id": "veeam2Auxiliary-24-number-nine",
+   "title": "Number nine",
+   "tags": "veeam2 number nine veeam vmware virtual machine auxiliary Number nine",
+   "kind": "vertex",
+   "width": 20,
+   "height": 20,
+   "style": "ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeWidth=2;fontFamily=Tahoma;spacingBottom=4;spacingRight=2;strokeColor=#d3d3d3;",
+   "value": "9",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam2.js:90"
+  }
+ ]
+}

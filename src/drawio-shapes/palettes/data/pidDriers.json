@@ -1,0 +1,120 @@
+{
+ "id": "pidDriers",
+ "title": "Process Engineering / Driers",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-PID.js:8",
+ "entries": [
+  {
+   "id": "pidDriers-0-drier",
+   "title": "Drier",
+   "tags": "pid driers  Drier Drier",
+   "kind": "vertex",
+   "width": 100,
+   "height": 140,
+   "style": "shape=mxgraph.pid.driers.drier;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.driers.drier"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidDriers-1-drier-fluidized-bed",
+   "title": "Drier (Fluidized Bed)",
+   "tags": "pid driers  Drier (Fluidized Bed) Drier (Fluidized Bed)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 140,
+   "style": "shape=mxgraph.pid.driers.drier_(fluidized_bed);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.driers.drier_(fluidized_bed)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidDriers-2-drier-roller-conveyor-belt",
+   "title": "Drier (Roller Conveyor Belt)",
+   "tags": "pid driers  Drier (Roller Conveyor Belt) Drier (Roller Conveyor Belt)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 140,
+   "style": "shape=mxgraph.pid.driers.drier_(roller_conveyor_belt);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.driers.drier_(roller_conveyor_belt)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidDriers-3-drying-oven-drying-chamber-shelf-dryer",
+   "title": "Drying Oven, Drying Chamber, Shelf Dryer",
+   "tags": "pid driers  Drying Oven, Chamber, Shelf Dryer Drying Oven, Drying Chamber, Shelf Dryer",
+   "kind": "vertex",
+   "width": 100,
+   "height": 140,
+   "style": "shape=mxgraph.pid.driers.drying_oven,_drying_chamber,_shelf_dryer;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.driers.drying_oven,_drying_chamber,_shelf_dryer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidDriers-4-heat-consumer",
+   "title": "Heat Consumer",
+   "tags": "pid driers  Heat Consumer Heat Consumer",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "shape=mxgraph.pid.driers.heat_consumer;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.driers.heat_consumer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidDriers-5-rotary-drum-drier-tumbling-drier",
+   "title": "Rotary Drum Drier, Tumbling Drier",
+   "tags": "pid driers  Rotary Drum Drier, Tumbling Drier Rotary Drum Drier, Tumbling Drier",
+   "kind": "vertex",
+   "width": 100,
+   "height": 140,
+   "style": "shape=mxgraph.pid.driers.rotary_drum_drier,_tumbling_drier;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.driers.rotary_drum_drier,_tumbling_drier"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidDriers-6-spray-drier",
+   "title": "Spray Drier",
+   "tags": "pid driers  Spray Drier Spray Drier",
+   "kind": "vertex",
+   "width": 100,
+   "height": 140,
+   "style": "shape=mxgraph.pid.driers.spray_drier;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.driers.spray_drier"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidDriers-7-turbo-drier-disc-drier-moving-shelf-drier",
+   "title": "Turbo Drier, Disc Drier, Moving Shelf Drier",
+   "tags": "pid driers  Turbo Drier, Disc Moving Shelf Drier Turbo Drier, Disc Drier, Moving Shelf Drier",
+   "kind": "vertex",
+   "width": 100,
+   "height": 140,
+   "style": "shape=mxgraph.pid.driers.turbo_drier,_disc_drier,_moving_shelf_drier;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.driers.turbo_drier,_disc_drier,_moving_shelf_drier"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  }
+ ]
+}

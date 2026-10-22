@@ -1,0 +1,1408 @@
+{
+ "id": "azure2General",
+ "title": "Azure / General",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Azure2.js:8",
+ "entries": [
+  {
+   "id": "azure2General-0-all-resources",
+   "title": "All Resources",
+   "tags": "azure2 all resources azure general  All Resources",
+   "kind": "vertex",
+   "width": 64,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/All_Resources.svg;points=[[0.501,0,0],[0.501,1,0],[0,0.5,0],[1,0.5,0],[0.99,0.013,0],[0.992,0.985,0],[0.013,0.99,0],[0.018,0.005,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:663"
+  },
+  {
+   "id": "azure2General-1-backlog",
+   "title": "Backlog",
+   "tags": "azure2 backlog azure general  Backlog",
+   "kind": "vertex",
+   "width": 68,
+   "height": 60,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Backlog.svg;points=[[0.5,0.105,0],[0.5,0.899,0],[0,0.506,0],[1,0.501,0],[0.98,0.117,0],[0.982,0.883,0],[0.115,0.988,0],[0.028,0.119,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:665"
+  },
+  {
+   "id": "azure2General-2-biz-talk",
+   "title": "Biz Talk",
+   "tags": "azure2 biz talk azure general  Biz Talk",
+   "kind": "vertex",
+   "width": 69,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Biz_Talk.svg;points=[[0.514,0,0],[0.506,1,0],[0.003,0.477,0],[0.998,0.52,0],[0.705,0.07,0],[0.925,0.692,0],[0.1,0.692,0],[0.088,0.275,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:667"
+  },
+  {
+   "id": "azure2General-3-blob-block",
+   "title": "Blob Block",
+   "tags": "azure2 blob block azure general  Blob Block",
+   "kind": "vertex",
+   "width": 65,
+   "height": 52,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Blob_Block.svg;points=[[0.5,0,0],[0.5,1,0],[0.003,0.498,0],[0.998,0.5,0],[0.985,0.007,0],[0.985,0.993,0],[0.015,0.993,0],[0.015,0.007,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:669"
+  },
+  {
+   "id": "azure2General-4-blob-page",
+   "title": "Blob Page",
+   "tags": "azure2 blob page azure general  Blob Page",
+   "kind": "vertex",
+   "width": 65,
+   "height": 52,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Blob_Page.svg;points=[[0.5,0,0],[0.5,1,0],[0.003,0.498,0],[0.998,0.5,0],[0.985,0.007,0],[0.985,0.993,0],[0.015,0.993,0],[0.015,0.007,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:671"
+  },
+  {
+   "id": "azure2General-5-branch",
+   "title": "Branch",
+   "tags": "azure2 branch azure general  Branch",
+   "kind": "vertex",
+   "width": 72,
+   "height": 72,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Branch.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.758,0.242,0],[0.758,0.758,0],[0.242,0.758,0],[0.242,0.242,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:673"
+  },
+  {
+   "id": "azure2General-6-browser",
+   "title": "Browser",
+   "tags": "azure2 browser azure general  Browser",
+   "kind": "vertex",
+   "width": 65,
+   "height": 52,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Browser.svg;points=[[0.5,0,0],[0.5,1,0],[0.003,0.498,0],[0.998,0.5,0],[0.985,0.007,0],[0.985,0.993,0],[0.015,0.993,0],[0.015,0.007,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:675"
+  },
+  {
+   "id": "azure2General-7-bug",
+   "title": "Bug",
+   "tags": "azure2 bug azure general  Bug",
+   "kind": "vertex",
+   "width": 59,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Bug.svg;points=[[0.5,0.119,0],[0.495,1,0],[0,0.665,0],[1,0.666,0],[0.696,0.005,0],[0.994,0.957,0],[0.006,0.957,0],[0.298,0.01,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:677"
+  },
+  {
+   "id": "azure2General-8-builds",
+   "title": "Builds",
+   "tags": "azure2 builds azure general  Builds",
+   "kind": "vertex",
+   "width": 64,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Builds.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.856,0],[1,0.856,0],[0.995,0.987,0],[0.013,0.995,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:679"
+  },
+  {
+   "id": "azure2General-9-cache",
+   "title": "Cache",
+   "tags": "azure2 cache azure general  Cache",
+   "kind": "vertex",
+   "width": 64,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Cache.svg;points=[[0.5,0.01,0],[0.5,0.94,0],[0.003,0.477,0],[0.998,0.5,0],[0.702,0.09,0],[0.985,0.942,0],[0.013,0.855,0],[0.023,0.085,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:681"
+  },
+  {
+   "id": "azure2General-10-code",
+   "title": "Code",
+   "tags": "azure2 code azure general  Code",
+   "kind": "vertex",
+   "width": 64,
+   "height": 52,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Code.svg;points=[[0.5,0.003,0],[0.5,0.997,0],[0,0.5,0],[1,0.5,0],[0.985,0.01,0],[0.985,0.99,0],[0.015,0.99,0],[0.015,0.01,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:683"
+  },
+  {
+   "id": "azure2General-11-commit",
+   "title": "Commit",
+   "tags": "azure2 commit azure general  Commit",
+   "kind": "vertex",
+   "width": 72,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Commit.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.829,0],[1,0.829,0],[0.985,0.997,0],[0.015,0.997,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:685"
+  },
+  {
+   "id": "azure2General-12-controls",
+   "title": "Controls",
+   "tags": "azure2 controls azure general  Controls",
+   "kind": "vertex",
+   "width": 56.00000000000001,
+   "height": 69,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Controls.svg;points=[[0.5,0,0],[0.5,1,0],[0.04,0.5,0],[0.957,0.5,0],[0.947,0.01,0],[0.95,0.987,0],[0.05,0.99,0],[0.05,0.01,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:687"
+  },
+  {
+   "id": "azure2General-13-controls-horizontal",
+   "title": "Controls Horizontal",
+   "tags": "azure2 controls horizontal azure general  Controls Horizontal",
+   "kind": "vertex",
+   "width": 69,
+   "height": 56.00000000000001,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Controls_Horizontal.svg;points=[[0.5,0.043,0],[0.5,0.96,0],[0,0.502,0],[1,0.502,0],[0.987,0.05,0],[0.982,0.956,0],[0.018,0.956,0],[0.013,0.05,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:689"
+  },
+  {
+   "id": "azure2General-14-cost-alerts",
+   "title": "Cost Alerts",
+   "tags": "azure2 cost alerts azure general  Cost Alerts",
+   "kind": "vertex",
+   "width": 67,
+   "height": 56.00000000000001,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Cost_Alerts.svg;points=[[0.5,0,0],[0.675,1,0],[0,0.424,0],[1,0.424,0],[0.992,0.012,0],[0.985,0.841,0],[0.015,0.841,0],[0.01,0.009,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:691"
+  },
+  {
+   "id": "azure2General-15-cost-analysis",
+   "title": "Cost Analysis",
+   "tags": "azure2 cost analysis azure general  Cost Analysis",
+   "kind": "vertex",
+   "width": 60,
+   "height": 70,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Cost_Analysis.svg;points=[[0.5,0.116,0],[0.5,0.864,0],[0,0.31,0],[0.796,0.5,0],[0.991,0.985,0],[0.018,0.79,0],[0.059,0.17,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:693"
+  },
+  {
+   "id": "azure2General-16-cost-budgets",
+   "title": "Cost Budgets",
+   "tags": "azure2 cost budgets azure general  Cost Budgets",
+   "kind": "vertex",
+   "width": 67,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Cost_Budgets.svg;points=[[0.475,0,0],[0.534,1,0],[0,0.471,0],[1,0.535,0],[0.878,0.22,0],[0.868,0.86,0],[0.059,0.782,0],[0.143,0.148,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:695"
+  },
+  {
+   "id": "azure2General-17-cost-management",
+   "title": "Cost Management",
+   "tags": "azure2 cost management azure general  Cost Management",
+   "kind": "vertex",
+   "width": 67,
+   "height": 60,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Cost_Management.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.501,0],[1,0.5,0],[0.77,0.031,0],[0.77,0.969,0],[0.23,0.969,0],[0.23,0.031,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:697"
+  },
+  {
+   "id": "azure2General-18-cost-management-and-billing",
+   "title": "Cost Management and Billing",
+   "tags": "azure2 cost management and billing azure general  Cost Management and Billing",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Cost_Management_and_Billing.svg;points=[[0.472,0,0],[0.468,1,0],[0,0.53,0],[1,0.532,0],[0.825,0.145,0],[0.822,0.847,0],[0.118,0.842,0],[0.143,0.19,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:699"
+  },
+  {
+   "id": "azure2General-19-counter",
+   "title": "Counter",
+   "tags": "azure2 counter azure general  Counter",
+   "kind": "vertex",
+   "width": 64,
+   "height": 52,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Counter.svg;points=[[0.5,0.003,0],[0.5,0.997,0],[0,0.5,0],[1,0.5,0],[0.985,0.01,0],[0.985,0.99,0],[0.015,0.99,0],[0.015,0.01,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:701"
+  },
+  {
+   "id": "azure2General-20-cubes",
+   "title": "Cubes",
+   "tags": "azure2 cubes azure general  Cubes",
+   "kind": "vertex",
+   "width": 67,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Cubes.svg;points=[[0.495,0,0],[0.5,1,0],[0,0.58,0],[1,0.58,0],[0.741,0.14,0],[1,0.86,0],[0,0.86,0],[0.252,0.14,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:703"
+  },
+  {
+   "id": "azure2General-21-dashboard",
+   "title": "Dashboard",
+   "tags": "azure2 dashboard azure general  Dashboard",
+   "kind": "vertex",
+   "width": 68,
+   "height": 48,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Dashboard.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.502,0],[1,0.5,0],[0.985,0.004,0],[0.992,0.989,0],[0.015,0.996,0],[0.015,0.004,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:705"
+  },
+  {
+   "id": "azure2General-22-dashboard",
+   "title": "Dashboard",
+   "tags": "azure2 dashboard azure general  Dashboard",
+   "kind": "vertex",
+   "width": 68,
+   "height": 48,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Dashboard2.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.985,0.004,0],[0.992,0.989,0],[0.015,0.996,0],[0.015,0.004,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:707"
+  },
+  {
+   "id": "azure2General-23-dev-console",
+   "title": "Dev Console",
+   "tags": "azure2 dev console azure general  Dev Console",
+   "kind": "vertex",
+   "width": 65,
+   "height": 52,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Dev_Console.svg;points=[[0.5,0,0],[0.5,1,0],[0.003,0.498,0],[0.998,0.5,0],[0.985,0.007,0],[0.985,0.993,0],[0.015,0.993,0],[0.015,0.007,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:709"
+  },
+  {
+   "id": "azure2General-24-download",
+   "title": "Download",
+   "tags": "azure2 download azure general  Download",
+   "kind": "vertex",
+   "width": 64,
+   "height": 67,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Download.svg;points=[[0.5,0.003,0],[0.501,0.998,0],[0,0.41,0],[1,0.41,0],[0.994,0.083,0],[0.78,0.997,0],[0.223,0.997,0],[0.006,0.083,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:711"
+  },
+  {
+   "id": "azure2General-25-error",
+   "title": "Error",
+   "tags": "azure2 error azure general  Error",
+   "kind": "vertex",
+   "width": 71,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Error.svg;points=[[0.514,0,0],[0.726,1,0],[0,0.467,0],[1,0.508,0],[0.717,0.079,0],[0.822,0.966,0],[0.088,0.668,0],[0.09,0.264,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:713"
+  },
+  {
+   "id": "azure2General-26-extensions",
+   "title": "Extensions",
+   "tags": "azure2 extensions azure general  Extensions",
+   "kind": "vertex",
+   "width": 65,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Extensions.svg;points=[[0.75,0,0],[0.459,1,0],[0,0.551,0],[1,0.256,0],[0.987,0.008,0],[0.902,0.995,0],[0.01,0.992,0],[0.013,0.11,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:715"
+  },
+  {
+   "id": "azure2General-27-file",
+   "title": "File",
+   "tags": "azure2 file azure general  File",
+   "kind": "vertex",
+   "width": 56.00000000000001,
+   "height": 69,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/File.svg;points=[[0.5,0.003,0],[0.5,0.998,0],[0,0.5,0],[1,0.5,0],[0.984,0.32,0],[0.993,0.985,0],[0.007,0.985,0],[0.007,0.015,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:717"
+  },
+  {
+   "id": "azure2General-28-files",
+   "title": "Files",
+   "tags": "azure2 files azure general  Files",
+   "kind": "vertex",
+   "width": 64,
+   "height": 70,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Files.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.765,0.093,0],[0.997,0.987,0],[0.274,0.985,0],[0.003,0.008,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:719"
+  },
+  {
+   "id": "azure2General-29-folder-blank",
+   "title": "Folder Blank",
+   "tags": "azure2 folder blank azure general  Folder Blank",
+   "kind": "vertex",
+   "width": 69,
+   "height": 56.00000000000001,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Folder_Blank.svg;points=[[0.5,0.083,0],[0.5,1,0],[0.003,0.5,0],[0.998,0.554,0],[0.99,0.114,0],[0.987,0.996,0],[0.013,0.996,0],[0.013,0.004,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:721"
+  },
+  {
+   "id": "azure2General-30-folder-website",
+   "title": "Folder Website",
+   "tags": "azure2 folder website azure general  Folder Website",
+   "kind": "vertex",
+   "width": 68,
+   "height": 56.00000000000001,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Folder_Website.svg;points=[[0.5,0.088,0],[0.5,0.997,0],[0,0.502,0],[1,0.555,0],[0.995,0.119,0],[0.99,0.993,0],[0.01,0.993,0],[0.01,0.007,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:723"
+  },
+  {
+   "id": "azure2General-31-free-services",
+   "title": "Free Services",
+   "tags": "azure2 free services azure general  Free Services",
+   "kind": "vertex",
+   "width": 68,
+   "height": 63,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Free_Services.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.992,0.011,0],[0.75,1,0],[0.25,1,0],[0.008,0.011,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:725"
+  },
+  {
+   "id": "azure2General-32-ftp",
+   "title": "FTP",
+   "tags": "azure2 ftp file transfer protocol azure general  FTP",
+   "kind": "vertex",
+   "width": 60,
+   "height": 48,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/FTP.svg;points=[[0.5,0,0],[0.5,1,0],[0.003,0.5,0],[0.998,0.5,0],[0.985,0.007,0],[0.985,0.993,0],[0.015,0.993,0],[0.015,0.007,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:727"
+  },
+  {
+   "id": "azure2General-33-gear",
+   "title": "Gear",
+   "tags": "azure2 gear azure general  Gear",
+   "kind": "vertex",
+   "width": 64,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Gear.svg;points=[[0.497,0.003,0],[0.502,0.998,0],[0,0.505,0],[1,0.5,0],[0.817,0.113,0],[0.895,0.81,0],[0.105,0.817,0],[0.185,0.11,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:729"
+  },
+  {
+   "id": "azure2General-34-globe",
+   "title": "Globe",
+   "tags": "azure2 globe azure general  Globe",
+   "kind": "vertex",
+   "width": 56.00000000000001,
+   "height": 66,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Globe.svg;points=[[0.422,0,0],[0.5,1,0],[0.038,0.5,0],[0.973,0.5,0],[0.873,0.048,0],[0.734,0.987,0],[0.266,0.987,0],[0.092,0.133,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:731"
+  },
+  {
+   "id": "azure2General-35-globe-error",
+   "title": "Globe Error",
+   "tags": "azure2 globe error azure general  Globe Error",
+   "kind": "vertex",
+   "width": 56.00000000000001,
+   "height": 66,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Globe_Error.svg;points=[[0.422,0,0],[0.5,1,0],[0.038,0.5,0],[0.973,0.5,0],[0.873,0.048,0],[0.734,0.987,0],[0.266,0.987,0],[0.092,0.133,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:733"
+  },
+  {
+   "id": "azure2General-36-globe-success",
+   "title": "Globe Success",
+   "tags": "azure2 globe success azure general  Globe Success",
+   "kind": "vertex",
+   "width": 56.00000000000001,
+   "height": 66,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Globe_Success.svg;points=[[0.422,0,0],[0.5,1,0],[0.038,0.5,0],[0.973,0.5,0],[0.873,0.048,0],[0.734,0.987,0],[0.266,0.987,0],[0.092,0.133,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:735"
+  },
+  {
+   "id": "azure2General-37-globe-warning",
+   "title": "Globe Warning",
+   "tags": "azure2 globe warning azure general  Globe Warning",
+   "kind": "vertex",
+   "width": 56.00000000000001,
+   "height": 66,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Globe_Warning.svg;points=[[0.422,0,0],[0.5,1,0],[0.038,0.5,0],[0.973,0.5,0],[0.873,0.048,0],[0.734,0.987,0],[0.266,0.987,0],[0.092,0.133,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:737"
+  },
+  {
+   "id": "azure2General-38-guide",
+   "title": "Guide",
+   "tags": "azure2 guide azure general  Guide",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Guide.svg;points=[[0.499,0,0],[0.5,1,0],[0,0.5,0],[1,0.501,0],[0.842,0.133,0],[0.865,0.845,0],[0.135,0.845,0],[0.148,0.143,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:739"
+  },
+  {
+   "id": "azure2General-39-heart",
+   "title": "Heart",
+   "tags": "azure2 heart azure general  Heart",
+   "kind": "vertex",
+   "width": 64,
+   "height": 60,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Heart.svg;points=[[0.5,0.172,0],[0.5,1,0],[0.037,0.5,0],[0.96,0.5,0],[0.897,0.054,0],[0.752,0.784,0],[0.26,0.8,0],[0.1,0.056,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:741"
+  },
+  {
+   "id": "azure2General-40-help-and-support",
+   "title": "Help and Support",
+   "tags": "azure2 help support azure general  Help and Support",
+   "kind": "vertex",
+   "width": 56.00000000000001,
+   "height": 69,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Help_and_Support.svg;points=[[0.492,0,0],[0.5,1,0],[0.307,0.5,0],[0.912,0.5,0],[0.84,0.135,0],[0.975,0.98,0],[0.019,0.975,0],[0.185,0.118,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:743"
+  },
+  {
+   "id": "azure2General-41-image",
+   "title": "Image",
+   "tags": "azure2 image azure general  Image",
+   "kind": "vertex",
+   "width": 64,
+   "height": 44,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Image.svg;points=[[0.5,0,0],[0.5,1,0],[0.003,0.5,0],[0.998,0.502,0],[0.985,0.008,0],[0.985,0.992,0],[0.015,0.992,0],[0.015,0.008,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:745"
+  },
+  {
+   "id": "azure2General-42-information",
+   "title": "Information",
+   "tags": "azure2 information azure general  Information",
+   "kind": "vertex",
+   "width": 64,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Information.svg;points=[[0.497,0,0],[0.504,1,0],[0,0.499,0],[1,0.5,0],[0.85,0.14,0],[0.875,0.835,0],[0.125,0.835,0],[0.148,0.143,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:747"
+  },
+  {
+   "id": "azure2General-43-input-output",
+   "title": "Input Output",
+   "tags": "azure2 input output azure general  Input Output",
+   "kind": "vertex",
+   "width": 64,
+   "height": 55.00000000000001,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Input_Output.svg;points=[[0.495,0.003,0],[0.495,0.997,0],[0,0.491,0],[1,0.49,0],[0.962,0.009,0],[0.962,0.991,0],[0.028,0.991,0],[0.028,0.009,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:749"
+  },
+  {
+   "id": "azure2General-44-journey-hub",
+   "title": "Journey Hub",
+   "tags": "azure2 journey hub azure general  Journey Hub",
+   "kind": "vertex",
+   "width": 60,
+   "height": 63,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Journey_Hub.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.494,0],[1,0.494,0],[0.997,0.005,0],[0.994,0.987,0],[0.006,0.987,0],[0.003,0.005,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:751"
+  },
+  {
+   "id": "azure2General-45-launch-portal",
+   "title": "Launch Portal",
+   "tags": "azure2 launch portal azure general  Launch Portal",
+   "kind": "vertex",
+   "width": 68,
+   "height": 67,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Launch_Portal.svg;points=[[0.811,0,0],[0.419,1,0],[0,0.594,0],[1,0.192,0],[0.995,0,0],[0.822,0.997,0],[0.01,0.995,0],[0.01,0.191,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:753"
+  },
+  {
+   "id": "azure2General-46-learn",
+   "title": "Learn",
+   "tags": "azure2 learn azure general  Learn",
+   "kind": "vertex",
+   "width": 48,
+   "height": 70,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Learn.svg;points=[[0.533,0,0],[0.5,0.819,0],[0,0.44,0],[1,0.388,0],[0.989,0.015,0],[0.989,0.757,0],[0.117,0.997,0],[0.001,0.078,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:755"
+  },
+  {
+   "id": "azure2General-47-load-test",
+   "title": "Load Test",
+   "tags": "azure2 load test azure general  Load Test",
+   "kind": "vertex",
+   "width": 68,
+   "height": 66,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Load_Test.svg;points=[[0.5,0,0],[0.5,1,0],[0.29,0.5,0],[0.71,0.5,0],[0.725,0.006,0],[0.977,0.997,0],[0.023,0.997,0],[0.275,0.006,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:757"
+  },
+  {
+   "id": "azure2General-48-location",
+   "title": "Location",
+   "tags": "azure2 location azure general  Location",
+   "kind": "vertex",
+   "width": 40,
+   "height": 71,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Location.svg;points=[[0.504,0.003,0],[0.5,0.998,0],[0,0.715,0],[1,0.715,0],[0.822,0.108,0],[0.937,0.855,0],[0.067,0.86,0],[0.178,0.113,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:759"
+  },
+  {
+   "id": "azure2General-49-log-streaming",
+   "title": "Log Streaming",
+   "tags": "azure2 log streaming azure general  Log Streaming",
+   "kind": "vertex",
+   "width": 56.00000000000001,
+   "height": 67,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Log_Streaming.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[1,0.093,0],[0.994,0.922,0],[0.006,0.922,0],[0,0.093,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:761"
+  },
+  {
+   "id": "azure2General-50-management-groups",
+   "title": "Management Groups",
+   "tags": "azure2 management groups azure general  Management Groups",
+   "kind": "vertex",
+   "width": 66,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Management_Groups.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.499,0],[1,0.5,0],[1,0.111,0],[1,0.889,0],[0,0.884,0],[0,0.114,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:763"
+  },
+  {
+   "id": "azure2General-51-management-portal",
+   "title": "Management Portal",
+   "tags": "azure2 management portal azure general  Management Portal",
+   "kind": "vertex",
+   "width": 60,
+   "height": 48,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Management_Portal.svg;points=[[0.5,0,0],[0.501,1,0],[0.003,0.5,0],[0.998,0.5,0],[0.985,0.007,0],[0.982,0.996,0],[0.015,0.993,0],[0.015,0.007,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:765"
+  },
+  {
+   "id": "azure2General-52-marketplace",
+   "title": "Marketplace",
+   "tags": "azure2 marketplace azure general  Marketplace",
+   "kind": "vertex",
+   "width": 56.00000000000001,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Marketplace.svg;points=[[0.5,0.014,0],[0.5,0.978,0],[0.016,0.5,0],[0.981,0.5,0],[0.968,0.245,0],[0.997,0.897,0],[0.003,0.942,0],[0.029,0.245,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:767"
+  },
+  {
+   "id": "azure2General-53-marketplace-management",
+   "title": "Marketplace Management",
+   "tags": "azure2 marketplace management azure general  Marketplace Management",
+   "kind": "vertex",
+   "width": 57.99999999999999,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Marketplace_Management.svg;points=[[0.582,0.005,0],[0.5,0.973,0],[0.014,0.501,0],[0.986,0.501,0],[0.976,0.255,0],[1,0.895,0],[0,0.94,0],[0.024,0.255,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:769"
+  },
+  {
+   "id": "azure2General-54-media",
+   "title": "Media",
+   "tags": "azure2 media azure general  Media",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Media.svg;points=[[0.499,0,0],[0.496,1,0],[0,0.499,0],[1,0.502,0],[0.87,0.163,0],[0.837,0.87,0],[0.163,0.87,0],[0.148,0.143,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:771"
+  },
+  {
+   "id": "azure2General-55-media-file",
+   "title": "Media File",
+   "tags": "azure2 media file azure general  Media File",
+   "kind": "vertex",
+   "width": 52,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Media_File.svg;points=[[0.5,0.003,0],[0.5,0.998,0],[0,0.5,0],[1,0.5,0],[0.984,0.32,0],[0.993,0.985,0],[0.007,0.985,0],[0.007,0.015,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:773"
+  },
+  {
+   "id": "azure2General-56-mobile",
+   "title": "Mobile",
+   "tags": "azure2 mobile azure general  Mobile",
+   "kind": "vertex",
+   "width": 40,
+   "height": 67,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Mobile.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.999,0.015,0],[0.995,0.99,0],[0.005,0.99,0],[0.005,0.01,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:775"
+  },
+  {
+   "id": "azure2General-57-mobile-engagement",
+   "title": "Mobile Engagement",
+   "tags": "azure2 mobile engagement azure general  Mobile Engagement",
+   "kind": "vertex",
+   "width": 40,
+   "height": 67,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Mobile_Engagement.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.999,0.015,0],[0.995,0.99,0],[0.005,0.99,0],[0.005,0.01,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:777"
+  },
+  {
+   "id": "azure2General-58-module",
+   "title": "Module",
+   "tags": "azure2 module azure general  Module",
+   "kind": "vertex",
+   "width": 64,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Module.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.995,0.013,0],[0.997,0.985,0],[0.013,0.995,0],[0.013,0.005,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:779"
+  },
+  {
+   "id": "azure2General-59-power",
+   "title": "Power",
+   "tags": "azure2 power azure general  Power",
+   "kind": "vertex",
+   "width": 44,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Power.svg;points=[[0.5,0,0],[0.5,0.745,0],[0,0.545,0],[0.912,0.5,0],[0.992,0.005,0],[0.996,0.452,0],[0.039,1,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:781"
+  },
+  {
+   "id": "azure2General-60-power-up",
+   "title": "Power Up",
+   "tags": "azure2 power up azure general  Power Up",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Power_Up.svg;points=[[0.5,0.106,0],[0.5,0.894,0],[0.106,0.5,0],[0.894,0.5,0],[0.947,0.048,0],[0.952,0.947,0],[0.048,0.947,0],[0.055,0.045,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:783"
+  },
+  {
+   "id": "azure2General-61-powershell",
+   "title": "Powershell",
+   "tags": "azure2 powershell azure general  Powershell",
+   "kind": "vertex",
+   "width": 65,
+   "height": 52,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Powershell.svg;points=[[0.5,0,0],[0.5,1,0],[0.003,0.498,0],[0.998,0.5,0],[0.985,0.007,0],[0.985,0.993,0],[0.015,0.993,0],[0.015,0.007,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:785"
+  },
+  {
+   "id": "azure2General-62-preview",
+   "title": "Preview",
+   "tags": "azure2 preview azure general  Preview",
+   "kind": "vertex",
+   "width": 44,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Preview.svg;points=[[0.5,0.003,0],[0.5,0.75,0],[0,0.505,0],[1,0.506,0],[0.996,0.02,0],[0.999,0.987,0],[0.001,0.985,0],[0.004,0.02,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:787"
+  },
+  {
+   "id": "azure2General-63-preview-features",
+   "title": "Preview Features",
+   "tags": "azure2 preview features azure general  Preview Features",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Preview_Features.svg;points=[[0.404,0,0],[0.5,1,0],[0,0.5,0],[1,0.596,0],[0.995,0.21,0],[0.997,0.985,0],[0.013,0.995,0],[0.013,0.005,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:789"
+  },
+  {
+   "id": "azure2General-64-process-explorer",
+   "title": "Process Explorer",
+   "tags": "azure2 process explorer azure general  Process Explorer",
+   "kind": "vertex",
+   "width": 70,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Process_Explorer.svg;points=[[0.5,0,0],[0.501,1,0],[0,0.5,0],[1,0.5,0],[0.985,0.006,0],[0.777,1,0],[0.225,1,0],[0.015,0.006,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:791"
+  },
+  {
+   "id": "azure2General-65-production-ready-database",
+   "title": "Production Ready Database",
+   "tags": "azure2 production ready database azure general  Production Ready Database",
+   "kind": "vertex",
+   "width": 48,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Production_Ready_Database.svg;points=[[0.497,0,0],[0.497,1,0],[0,0.501,0],[1,0.496,0],[0.983,0.1,0],[0.98,0.902,0],[0.017,0.9,0],[0.017,0.1,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:793"
+  },
+  {
+   "id": "azure2General-66-quickstart-center",
+   "title": "Quickstart Center",
+   "tags": "azure2 quickstart center azure general  Quickstart Center",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Quickstart_Center.svg;points=[[0.5,0.252,0],[0.5,0.979,0],[0.026,0.5,0],[0.745,0.5,0],[0.992,0,0],[0.602,0.905,0],[0,0.992,0],[0.09,0.415,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:795"
+  },
+  {
+   "id": "azure2General-67-recent",
+   "title": "Recent",
+   "tags": "azure2 recent azure general  Recent",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Recent.svg;points=[[0.499,0,0],[0.5,1,0],[0,0.5,0],[1,0.501,0],[0.842,0.133,0],[0.865,0.845,0],[0.135,0.845,0],[0.148,0.143,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:797"
+  },
+  {
+   "id": "azure2General-68-region-management",
+   "title": "Region Management",
+   "tags": "azure2 region management azure general  Region Management",
+   "kind": "vertex",
+   "width": 59.4,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Region_Management.svg;points=[[0.428,0,0],[0.427,1,0],[0,0.383,0],[0.983,0.5,0],[0.859,0.045,0],[0.644,0.992,0],[0.21,0.992,0],[0.095,0.138,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:799"
+  },
+  {
+   "id": "azure2General-69-reservations",
+   "title": "Reservations",
+   "tags": "azure2 reservations azure general  Reservations",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Reservations.svg;points=[[0.501,0,0],[0.499,1,0],[0,0.5,0],[1,0.5,0],[0.837,0.128,0],[0.865,0.845,0],[0.135,0.845,0],[0.163,0.128,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:801"
+  },
+  {
+   "id": "azure2General-70-resource-explorer",
+   "title": "Resource Explorer",
+   "tags": "azure2 resource exporer azure general  Resource Explorer",
+   "kind": "vertex",
+   "width": 68,
+   "height": 56.00000000000001,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Resource_Explorer.svg;points=[[0.5,0.085,0],[0.5,0.997,0],[0,0.5,0],[1,0.555,0],[0.99,0.116,0],[0.992,0.99,0],[0.008,0.99,0],[0.008,0.01,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:803"
+  },
+  {
+   "id": "azure2General-71-resource-group-list",
+   "title": "Resource Group List",
+   "tags": "azure2 resource group list azure general  Resource Group List",
+   "kind": "vertex",
+   "width": 68,
+   "height": 67,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Resource_Group_List.svg;points=[[0.59,0,0],[0.5,0.83,0],[0.171,0.5,0],[1,0.415,0],[0.982,0.003,0],[0.982,0.827,0],[0.02,0.997,0],[0.198,0.003,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:805"
+  },
+  {
+   "id": "azure2General-72-resource-groups",
+   "title": "Resource Groups",
+   "tags": "azure2 resource groups azure general  Resource Groups",
+   "kind": "vertex",
+   "width": 68,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Resource_Groups.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.995,0.109,0],[0.997,0.888,0],[0.003,0.888,0],[0.003,0.112,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:807"
+  },
+  {
+   "id": "azure2General-73-resource-linked",
+   "title": "Resource Linked",
+   "tags": "azure2 resource linked azure general  Resource Linked",
+   "kind": "vertex",
+   "width": 72,
+   "height": 72,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Resource_Linked.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.758,0.242,0],[0.758,0.758,0],[0.242,0.758,0],[0.242,0.242,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:809"
+  },
+  {
+   "id": "azure2General-74-scale",
+   "title": "Scale",
+   "tags": "azure2 scale azure general  Scale",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Scale.svg;points=[[0.459,0,0],[0.526,1,0],[0,0.476,0],[1,0.541,0],[0.995,0,0],[0.985,1,0],[0,1,0],[0,0.018,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:811"
+  },
+  {
+   "id": "azure2General-75-scheduler",
+   "title": "Scheduler",
+   "tags": "azure2 scheduler azure general  Scheduler",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Scheduler.svg;points=[[0.54,0,0],[0.5,0.916,0],[0.003,0.479,0],[0.998,0.459,0],[0.865,0.133,0],[0.89,0.757,0],[0.248,0.995,0],[0.15,0.133,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:813"
+  },
+  {
+   "id": "azure2General-76-search",
+   "title": "Search",
+   "tags": "azure2 search azure general  Search",
+   "kind": "vertex",
+   "width": 64,
+   "height": 65,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Search.svg;points=[[0.596,0,0],[0.5,0.776,0],[0.212,0.5,0],[0.997,0.393,0],[0.901,0.135,0],[0.903,0.647,0],[0.021,0.977,0],[0.313,0.115,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:815"
+  },
+  {
+   "id": "azure2General-77-search-grid",
+   "title": "Search Grid",
+   "tags": "azure2 search grid azure general  Search Grid",
+   "kind": "vertex",
+   "width": 68,
+   "height": 67,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Search_Grid.svg;points=[[0.59,0,0],[0.5,0.83,0],[0.171,0.5,0],[1,0.415,0],[0.982,0.003,0],[0.982,0.827,0],[0.02,0.997,0],[0.198,0.003,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:817"
+  },
+  {
+   "id": "azure2General-78-server-farm",
+   "title": "Server Farm",
+   "tags": "azure2 server farm azure general  Server Farm",
+   "kind": "vertex",
+   "width": 64,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Server_Farm.svg;points=[[0.5,0,0],[0.5,1,0],[0.003,0.471,0],[0.998,0.775,0],[0.605,0.008,0],[0.92,0.992,0],[0.01,0.932,0],[0.013,0.008,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:819"
+  },
+  {
+   "id": "azure2General-79-service-bus",
+   "title": "Service Bus",
+   "tags": "azure2 service bus azure general  Service Bus",
+   "kind": "vertex",
+   "width": 70,
+   "height": 60,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Service_Bus.svg;points=[[0.514,0,0],[0.494,1,0],[0,0.522,0],[1,0.57,0],[0.712,0.085,0],[0.932,0.752,0],[0.308,0.997,0],[0.098,0.289,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:821"
+  },
+  {
+   "id": "azure2General-80-service-health",
+   "title": "Service Health",
+   "tags": "azure2 service health azure general  Service Health",
+   "kind": "vertex",
+   "width": 68,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Service_Health.svg;points=[[0.5,0.172,0],[0.5,1,0],[0.037,0.5,0],[0.963,0.5,0],[0.9,0.056,0],[0.747,0.79,0],[0.24,0.779,0],[0.09,0.064,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:823"
+  },
+  {
+   "id": "azure2General-81-ssd",
+   "title": "SSD",
+   "tags": "azure2 ssd solid state drive azure general  SSD",
+   "kind": "vertex",
+   "width": 66,
+   "height": 60,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/SSD.svg;points=[[0.5,0,0],[0.5,1,0],[0.028,0.5,0],[0.973,0.5,0],[0.905,0.02,0],[0.967,0.986,0],[0.033,0.986,0],[0.095,0.02,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:825"
+  },
+  {
+   "id": "azure2General-82-storage-azure-files",
+   "title": "Storage Azure Files",
+   "tags": "azure2 storage files azure general  Storage Azure Files",
+   "kind": "vertex",
+   "width": 64,
+   "height": 52,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Storage_Azure_Files.svg;points=[[0.5,0.003,0],[0.5,0.997,0],[0,0.5,0],[1,0.5,0],[0.985,0.01,0],[0.985,0.99,0],[0.015,0.99,0],[0.015,0.01,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:827"
+  },
+  {
+   "id": "azure2General-83-storage-container",
+   "title": "Storage Container",
+   "tags": "azure2 storage container azure general  Storage Container",
+   "kind": "vertex",
+   "width": 64,
+   "height": 52,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Storage_Container.svg;points=[[0.5,0.003,0],[0.5,0.997,0],[0,0.5,0],[1,0.5,0],[0.985,0.01,0],[0.985,0.99,0],[0.015,0.99,0],[0.015,0.01,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:829"
+  },
+  {
+   "id": "azure2General-84-storage-queue",
+   "title": "Storage Queue",
+   "tags": "azure2 storage queue azure general  Storage Queue",
+   "kind": "vertex",
+   "width": 64,
+   "height": 52,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Storage_Queue.svg;points=[[0.5,0.003,0],[0.5,0.997,0],[0,0.5,0],[1,0.5,0],[0.985,0.01,0],[0.985,0.99,0],[0.015,0.99,0],[0.015,0.01,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:831"
+  },
+  {
+   "id": "azure2General-85-subscriptions",
+   "title": "Subscriptions",
+   "tags": "azure2 subscriptions azure general  Subscriptions",
+   "kind": "vertex",
+   "width": 44,
+   "height": 71,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Subscriptions.svg;points=[[0.498,0.003,0],[0.502,0.998,0],[0.22,0.5,0],[0.78,0.5,0],[0.979,0.258,0],[0.657,0.91,0],[0.343,0.91,0],[0.025,0.253,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:833"
+  },
+  {
+   "id": "azure2General-86-table",
+   "title": "Table",
+   "tags": "azure2 table azure general  Table",
+   "kind": "vertex",
+   "width": 64,
+   "height": 52,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Table.svg;points=[[0.5,0.003,0],[0.5,0.997,0],[0,0.5,0],[1,0.5,0],[0.985,0.01,0],[0.985,0.99,0],[0.015,0.99,0],[0.015,0.01,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:835"
+  },
+  {
+   "id": "azure2General-87-tag",
+   "title": "Tag",
+   "tags": "azure2 tag azure general  Tag",
+   "kind": "vertex",
+   "width": 68,
+   "height": 66.8,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Tag.svg;points=[[0.5,0.074,0],[0.399,1,0],[0.001,0.587,0],[0.907,0.5,0],[0.923,0.077,0],[0.705,0.705,0],[0.193,0.807,0],[0.29,0.29,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:837"
+  },
+  {
+   "id": "azure2General-88-tags",
+   "title": "Tags",
+   "tags": "azure2 tags azure general  Tags",
+   "kind": "vertex",
+   "width": 60,
+   "height": 65,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Tags.svg;points=[[0.5,0.013,0],[0.463,1,0],[0.012,0.5,0],[0.984,0.5,0],[0.886,0.12,0],[0.114,0.692,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:839"
+  },
+  {
+   "id": "azure2General-89-templates",
+   "title": "Templates",
+   "tags": "azure2 templates azure general  Templates",
+   "kind": "vertex",
+   "width": 56.00000000000001,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Templates.svg;points=[[0.5,0,0],[0.5,1,0],[0.003,0.5,0],[0.997,0.5,0],[0.981,0.32,0],[0.99,0.987,0],[0.01,0.987,0],[0.01,0.013,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:841"
+  },
+  {
+   "id": "azure2General-90-tfs-vc-repository",
+   "title": "TFS VC Repository",
+   "tags": "azure2 tfs vc repository azure general  TFS VC Repository",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/TFS_VC_Repository.svg;points=[[0.27,0,0],[0.279,1,0],[0,0.271,0],[1,0.388,0],[0.957,0.295,0],[0.77,0.855,0],[0.195,0.967,0],[0.098,0.06,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:843"
+  },
+  {
+   "id": "azure2General-91-toolbox",
+   "title": "Toolbox",
+   "tags": "azure2 toolbox azure general  Toolbox",
+   "kind": "vertex",
+   "width": 64,
+   "height": 56.00000000000001,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Toolbox.svg;points=[[0.502,0,0],[0.5,1,0],[0,0.6,0],[1,0.6,0],[0.992,0.212,0],[0.987,0.994,0],[0.013,0.994,0],[0.008,0.212,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:845"
+  },
+  {
+   "id": "azure2General-92-troubleshoot",
+   "title": "Troubleshoot",
+   "tags": "azure2 troubleshoot azure general  Troubleshoot",
+   "kind": "vertex",
+   "width": 66,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Troubleshoot.svg;points=[[0.228,0.007,0],[0.155,0.998,0],[0.351,0.5,0],[0.644,0.5,0],[0.984,0.003,0],[0.966,0.962,0],[0.004,0.841,0],[0.012,0.196,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:847"
+  },
+  {
+   "id": "azure2General-93-versions",
+   "title": "Versions",
+   "tags": "azure2 versions azure general  Versions",
+   "kind": "vertex",
+   "width": 62,
+   "height": 60,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Versions.svg;points=[[0.429,0.003,0],[0.571,0.997,0],[0,0.5,0],[1,0.5,0],[0.842,0.006,0],[0.987,0.994,0],[0.158,0.994,0],[0.01,0.008,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:849"
+  },
+  {
+   "id": "azure2General-94-web-slots",
+   "title": "Web Slots",
+   "tags": "azure2 web slots azure general  Web Slots",
+   "kind": "vertex",
+   "width": 57.99999999999999,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Web_Slots.svg;points=[[0.5,0.12,0],[0.501,1,0],[0.003,0.833,0],[0.997,0.83,0],[0.834,0.178,0],[0.991,0.99,0],[0.009,0.99,0],[0.235,0.24,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:851"
+  },
+  {
+   "id": "azure2General-95-web-test",
+   "title": "Web Test",
+   "tags": "azure2 web test azure general  Web Test",
+   "kind": "vertex",
+   "width": 72,
+   "height": 72,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Web_Test.svg;points=[[0.416,0,0],[0.5,1,0],[0,0.42,0],[0.864,0.5,0],[0.717,0.123,0],[0.997,0.99,0],[0.123,0.717,0],[0.113,0.133,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:853"
+  },
+  {
+   "id": "azure2General-96-website-power",
+   "title": "Website Power",
+   "tags": "azure2 website power azure general  Website Power",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Website_Power.svg;points=[[0.5,0.106,0],[0.5,0.894,0],[0.106,0.5,0],[0.894,0.5,0],[0.947,0.048,0],[0.952,0.947,0],[0.048,0.947,0],[0.058,0.043,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:855"
+  },
+  {
+   "id": "azure2General-97-website-staging",
+   "title": "Website Staging",
+   "tags": "azure2 website staging azure general  Website Staging",
+   "kind": "vertex",
+   "width": 64,
+   "height": 70,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Website_Staging.svg;points=[[0.512,0,0],[0.5,1,0],[0.003,0.405,0],[0.997,0.441,0],[0.74,0.093,0],[0.97,0.755,0],[0.077,0.995,0],[0.063,0.258,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:857"
+  },
+  {
+   "id": "azure2General-98-workbooks",
+   "title": "Workbooks",
+   "tags": "azure2 workbooks azure general  Workbooks",
+   "kind": "vertex",
+   "width": 60,
+   "height": 65,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Workbooks.svg;points=[[0.576,0,0],[0.492,1,0],[0,0.547,0],[1,0.476,0],[0.989,0.018,0],[0.991,0.925,0],[0.101,0.995,0],[0.16,0.023,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:859"
+  },
+  {
+   "id": "azure2General-99-workflow",
+   "title": "Workflow",
+   "tags": "azure2 workflow azure general  Workflow",
+   "kind": "vertex",
+   "width": 68,
+   "height": 70,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/general/Workflow.svg;points=[[0.499,0,0],[0.501,1,0],[0.095,0.5,0],[0.905,0.5,0],[0.663,0.015,0],[0.997,0.877,0],[0.006,0.88,0],[0.335,0.013,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:861"
+  }
+ ]
+}

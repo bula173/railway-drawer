@@ -1,0 +1,316 @@
+{
+ "id": "ibmBlockchain",
+ "title": "IBM / Blockchain",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-IBM.js:7",
+ "entries": [
+  {
+   "id": "ibmBlockchain-0-blockchain",
+   "title": "Blockchain",
+   "tags": " ibm  Blockchain",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/blockchain/blockchain.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:136"
+  },
+  {
+   "id": "ibmBlockchain-1-blockchain-developer",
+   "title": "Blockchain Developer",
+   "tags": "developer ibm  Blockchain Developer",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/blockchain/blockchain_developer.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:138"
+  },
+  {
+   "id": "ibmBlockchain-2-certificate-authority",
+   "title": "Certificate Authority",
+   "tags": "certificate authority ibm  Certificate Authority",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/blockchain/certificate_authority.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:140"
+  },
+  {
+   "id": "ibmBlockchain-3-client-application",
+   "title": "Client Application",
+   "tags": "client application ibm  Client Application",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/blockchain/client_application.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:142"
+  },
+  {
+   "id": "ibmBlockchain-4-communication",
+   "title": "Communication",
+   "tags": "communication ibm  Communication",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/blockchain/communication.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:144"
+  },
+  {
+   "id": "ibmBlockchain-5-consensus",
+   "title": "Consensus",
+   "tags": "communication ibm  Consensus",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/blockchain/consensus.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:146"
+  },
+  {
+   "id": "ibmBlockchain-6-e-cert",
+   "title": "E-Cert",
+   "tags": "ecert e-cert ibm  E-Cert",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/blockchain/e_cert.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:148"
+  },
+  {
+   "id": "ibmBlockchain-7-event",
+   "title": "Event",
+   "tags": "event ibm  Event",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/blockchain/event.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:150"
+  },
+  {
+   "id": "ibmBlockchain-8-event-listener",
+   "title": "Event Listener",
+   "tags": "event listener ibm  Event Listener",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/blockchain/event_listener.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:152"
+  },
+  {
+   "id": "ibmBlockchain-9-existing-enterprise-systems",
+   "title": "Existing Enterprise Systems",
+   "tags": "existing enterprise systems ibm  Existing Enterprise Systems",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/blockchain/existing_enterprise_systems.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:154"
+  },
+  {
+   "id": "ibmBlockchain-10-hyperledger-fabric",
+   "title": "Hyperledger Fabric",
+   "tags": "hyperledger fabric ibm  Hyperledger Fabric",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/blockchain/hyperledger_fabric.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:156"
+  },
+  {
+   "id": "ibmBlockchain-11-identity-access-manager",
+   "title": "Identity & Access Manager",
+   "tags": "identity access manager ibm  Identity & Access Manager",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/blockchain/identity_access_manager.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:158"
+  },
+  {
+   "id": "ibmBlockchain-12-key-management",
+   "title": "Key Management",
+   "tags": "key management ibm  Key Management",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/blockchain/key_management.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:160"
+  },
+  {
+   "id": "ibmBlockchain-13-ledger",
+   "title": "Ledger",
+   "tags": "ledger ibm  Ledger",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/blockchain/ledger.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:162"
+  },
+  {
+   "id": "ibmBlockchain-14-membership",
+   "title": "Membership",
+   "tags": "membership ibm  Membership",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/blockchain/membership.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:164"
+  },
+  {
+   "id": "ibmBlockchain-15-membership-services-provider-api",
+   "title": "Membership Services Provider API",
+   "tags": "membership services provider api ibm  Membership Services Provider API",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/blockchain/membership_services_provider_api.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:166"
+  },
+  {
+   "id": "ibmBlockchain-16-message-bus",
+   "title": "Message Bus",
+   "tags": "message bus ibm  Message Bus",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/blockchain/message_bus.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:168"
+  },
+  {
+   "id": "ibmBlockchain-17-node",
+   "title": "Node",
+   "tags": "node ibm  Node",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/blockchain/node.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:170"
+  },
+  {
+   "id": "ibmBlockchain-18-services",
+   "title": "Services",
+   "tags": "services ibm  Services",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/blockchain/services.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:172"
+  },
+  {
+   "id": "ibmBlockchain-19-smart-contract",
+   "title": "Smart Contract",
+   "tags": "smart contract ibm  Smart Contract",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/blockchain/smart_contract.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:174"
+  },
+  {
+   "id": "ibmBlockchain-20-transaction-manager",
+   "title": "Transaction Manager",
+   "tags": "transaction manager ibm  Transaction Manager",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/blockchain/transaction_manager.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:176"
+  },
+  {
+   "id": "ibmBlockchain-21-wallet",
+   "title": "Wallet",
+   "tags": "wallet ibm  Wallet",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/blockchain/wallet.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:178"
+  }
+ ]
+}

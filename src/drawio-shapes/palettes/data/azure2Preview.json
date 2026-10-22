@@ -1,0 +1,134 @@
+{
+ "id": "azure2Preview",
+ "title": "Azure / Preview",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Azure2.js:8",
+ "entries": [
+  {
+   "id": "azure2Preview-0-cloud-shell",
+   "title": "Cloud Shell",
+   "tags": "azure2 cloud shell azure preview  Cloud Shell",
+   "kind": "vertex",
+   "width": 68,
+   "height": 48,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/preview/Azure_Cloud_Shell.svg;points=[[0.435,0.004,0],[0.5,0.993,0],[0,0.498,0],[1,0.814,0],[0.862,0.004,0],[0.952,0.953,0],[0.008,0.992,0],[0.008,0.004,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1950"
+  },
+  {
+   "id": "azure2Preview-1-iot-edge",
+   "title": "IoT Edge",
+   "tags": "azure2 iot internet of things edge azure preview  IoT Edge",
+   "kind": "vertex",
+   "width": 68,
+   "height": 67,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/preview/IoT_Edge.svg;points=[[0.514,0,0],[0.499,1,0],[0.003,0.451,0],[0.998,0.492,0],[0.707,0.069,0],[0.917,0.665,0],[0.408,0.992,0],[0.09,0.257,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1952"
+  },
+  {
+   "id": "azure2Preview-2-private-link-hub",
+   "title": "Private Link Hub",
+   "tags": "azure2 private link hub azure preview  Private Link Hub",
+   "kind": "vertex",
+   "width": 60,
+   "height": 69,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/preview/Private_Link_Hub.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.497,0],[1,0.501,0],[1,0.25,0],[1,0.752,0],[0,0.747,0],[0,0.248,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1954"
+  },
+  {
+   "id": "azure2Preview-3-rtos",
+   "title": "RTOS",
+   "tags": "azure2 rtos azure preview  RTOS",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/preview/RTOS.svg;points=[[0.5,0.062,0],[0.5,0.94,0],[0.06,0.5,0],[0.939,0.5,0],[0.97,0.275,0],[0.895,0.87,0],[0.14,0.877,0],[0.14,0.123,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1956"
+  },
+  {
+   "id": "azure2Preview-4-sphere",
+   "title": "Sphere",
+   "tags": "azure2 sphere azure preview  Sphere",
+   "kind": "vertex",
+   "width": 66,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/preview/Azure_Sphere.svg;points=[[0.5,0,0],[0.5,1,0],[0.003,0.519,0],[0.997,0.519,0],[0.868,0.193,0],[0.953,0.867,0],[0.047,0.867,0],[0.132,0.193,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1958"
+  },
+  {
+   "id": "azure2Preview-5-static-apps",
+   "title": "Static Apps",
+   "tags": "azure2 static apps azure preview  Static Apps",
+   "kind": "vertex",
+   "width": 70,
+   "height": 56.00000000000001,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/preview/Static_Apps.svg;points=[[0.5,0,0],[0.5,1,0],[0.003,0.5,0],[0.998,0.5,0],[0.985,0.007,0],[0.985,0.993,0],[0.015,0.993,0],[0.015,0.007,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1960"
+  },
+  {
+   "id": "azure2Preview-6-time-series-data-sets",
+   "title": "Time Series Data Sets",
+   "tags": "azure2 time series data sets azure preview  Time Series Data Sets",
+   "kind": "vertex",
+   "width": 48,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/preview/Time_Series_Data_Sets.svg;points=[[0.5,0.003,0],[0.502,0.998,0],[0,0.499,0],[1,0.499,0],[0.976,0.093,0],[0.983,0.9,0],[0.017,0.9,0],[0.014,0.103,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1962"
+  },
+  {
+   "id": "azure2Preview-7-web-environment",
+   "title": "Web Environment",
+   "tags": "azure2 web environment azure preview  Web Environment",
+   "kind": "vertex",
+   "width": 64,
+   "height": 66,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/preview/Web_Environment.svg;points=[[0.425,0,0],[0.218,1,0],[0.003,0.411,0],[0.997,0.586,0],[0.744,0.13,0],[0.964,0.775,0],[0.057,0.93,0],[0.098,0.145,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1964"
+  },
+  {
+   "id": "azure2Preview-8-workbooks",
+   "title": "Workbooks",
+   "tags": "azure2 workbooks azure preview  Workbooks",
+   "kind": "vertex",
+   "width": 72,
+   "height": 72,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/preview/Azure_Workbooks.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.501,0],[0.962,0.015,0],[0.975,0.975,0],[0.025,0.975,0],[0.038,0.015,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1966"
+  }
+ ]
+}

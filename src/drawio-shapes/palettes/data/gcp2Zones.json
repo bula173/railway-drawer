@@ -1,0 +1,192 @@
+{
+ "id": "gcp2Zones",
+ "title": "GCP / Zones",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-GCP2.js:7",
+ "entries": [
+  {
+   "id": "gcp2Zones-0-user-1-default",
+   "title": "User 1 (Default)",
+   "tags": "gcp2 zones  gcp google cloud platform zone user User 1 (Default)",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[1,1,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];rounded=1;absoluteArcSize=1;arcSize=2;html=1;strokeColor=none;gradientColor=none;shadow=0;dashed=0;fontSize=12;fontColor=#9E9E9E;align=left;verticalAlign=top;spacing=10;spacingTop=-4;whiteSpace=wrap;fillColor=#ffffff;",
+   "value": "User 1",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:115"
+  },
+  {
+   "id": "gcp2Zones-1-infrastructure-system",
+   "title": "Infrastructure System",
+   "tags": "gcp2 zones  gcp google cloud platform zone infrastructure system Infrastructure System",
+   "kind": "vertex",
+   "width": 120,
+   "height": 150,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[1,1,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];rounded=1;absoluteArcSize=1;arcSize=2;html=1;strokeColor=none;gradientColor=none;shadow=0;dashed=0;fontSize=12;fontColor=#9E9E9E;align=left;verticalAlign=top;spacing=10;spacingTop=-4;whiteSpace=wrap;fillColor=#F3E5F5;",
+   "value": "Infrastructure\nSystem",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:117"
+  },
+  {
+   "id": "gcp2Zones-2-colo-dc-on-premises",
+   "title": "colo / dc / on-premises",
+   "tags": "gcp2 zones  gcp google cloud platform zone colo dc on premises colo / dc / on-premises",
+   "kind": "vertex",
+   "width": 120,
+   "height": 200,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[1,1,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];rounded=1;absoluteArcSize=1;arcSize=2;html=1;strokeColor=none;gradientColor=none;shadow=0;dashed=0;fontSize=12;fontColor=#9E9E9E;align=left;verticalAlign=top;spacing=10;spacingTop=-4;whiteSpace=wrap;fillColor=#EFEBE9;",
+   "value": "colo / dc /\non-premises",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:119"
+  },
+  {
+   "id": "gcp2Zones-3-system-1",
+   "title": "System 1",
+   "tags": "gcp2 zones  gcp google cloud platform zone system System 1",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[1,1,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];rounded=1;absoluteArcSize=1;arcSize=2;html=1;strokeColor=none;gradientColor=none;shadow=0;dashed=0;fontSize=12;fontColor=#9E9E9E;align=left;verticalAlign=top;spacing=10;spacingTop=-4;whiteSpace=wrap;fillColor=#F1F8E9;",
+   "value": "System 1",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:121"
+  },
+  {
+   "id": "gcp2Zones-4-external-saas-providers",
+   "title": "External SaaS Providers",
+   "tags": "gcp2 zones  gcp google cloud platform zone external saas providers External SaaS Providers",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[1,1,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];rounded=1;absoluteArcSize=1;arcSize=2;html=1;strokeColor=none;gradientColor=none;shadow=0;dashed=0;fontSize=12;fontColor=#9E9E9E;align=left;verticalAlign=top;spacing=10;spacingTop=-4;whiteSpace=wrap;fillColor=#FFEBEE;",
+   "value": "External SaaS\nProviders",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:123"
+  },
+  {
+   "id": "gcp2Zones-5-external-data-sources",
+   "title": "External Data Sources",
+   "tags": "gcp2 zones  gcp google cloud platform zone external data sources External Data Sources",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[1,1,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];rounded=1;absoluteArcSize=1;arcSize=2;html=1;strokeColor=none;gradientColor=none;shadow=0;dashed=0;fontSize=12;fontColor=#9E9E9E;align=left;verticalAlign=top;spacing=10;spacingTop=-4;whiteSpace=wrap;fillColor=#FFF8E1;",
+   "value": "External Data\nSources",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:125"
+  },
+  {
+   "id": "gcp2Zones-6-external-infrastructure-3rd-party",
+   "title": "External Infrastructure 3rd party",
+   "tags": "gcp2 zones  gcp google cloud platform zone external infrastructure 3rd party External Infrastructure 3rd party",
+   "kind": "vertex",
+   "width": 120,
+   "height": 75,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[1,1,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];rounded=1;absoluteArcSize=1;arcSize=2;html=1;strokeColor=none;gradientColor=none;shadow=0;dashed=0;fontSize=12;fontColor=#9E9E9E;align=left;verticalAlign=top;spacing=10;spacingTop=-4;whiteSpace=wrap;fillColor=#E0F2F1;",
+   "value": "External\nInfrastructure\n3<sup>rd</sup> Party",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:127"
+  },
+  {
+   "id": "gcp2Zones-7-external-infrastructure-1st-party",
+   "title": "External Infrastructure 1st party",
+   "tags": "gcp2 zones  gcp google cloud platform zone external infrastructure 1st party External Infrastructure 1st party",
+   "kind": "vertex",
+   "width": 120,
+   "height": 75,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[1,1,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];rounded=1;absoluteArcSize=1;arcSize=2;html=1;strokeColor=none;gradientColor=none;shadow=0;dashed=0;fontSize=12;fontColor=#9E9E9E;align=left;verticalAlign=top;spacing=10;spacingTop=-4;whiteSpace=wrap;fillColor=#E1F5FE;",
+   "value": "External\nInfrastructure\n1<sup>st</sup> Party",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:129"
+  },
+  {
+   "id": "gcp2Zones-8-project-zone-cloud-service-provider",
+   "title": "Project Zone / Cloud Service Provider",
+   "tags": "gcp google cloud platform zone project cloud service provider Project Zone / Cloud Service Provider",
+   "kind": "cells",
+   "width": 530,
+   "height": 490,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Project Zone / Cloud Service Provider\" style=\"shape=rect;strokeColor=none;strokeWidth=2;shadow=0;gradientColor=none;fontColor=#757575;align=left;html=1;fontStyle=0;spacingTop=3;fillColor=#F6F6F6;verticalAlign=top;fontSize=10;spacingLeft=10;spacing=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"530\" height=\"490\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Logical Grouping of Services / Instances\" style=\"shape=rect;strokeColor=none;strokeWidth=2;shadow=0;gradientColor=none;fontColor=#757575;align=left;html=1;fontStyle=0;spacingTop=3;fillColor=#E3F2FD;verticalAlign=top;fontSize=10;spacingLeft=10;spacing=0;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"250\" height=\"180\" relative=\"1\" as=\"geometry\"><mxPoint x=\"10\" y=\"50\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"Zone\" style=\"shape=rect;strokeColor=none;strokeWidth=2;shadow=0;gradientColor=none;fontColor=#757575;align=left;html=1;fontStyle=0;spacingTop=3;fillColor=#FFF3E0;verticalAlign=top;fontSize=10;spacingLeft=10;spacing=0;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"230\" height=\"120\" relative=\"1\" as=\"geometry\"><mxPoint x=\"10\" y=\"50\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"SubNetwork\" style=\"shape=rect;strokeColor=none;strokeWidth=2;shadow=0;gradientColor=none;fontColor=#757575;align=left;html=1;fontStyle=0;spacingTop=3;fillColor=#EDE7F6;verticalAlign=top;fontSize=10;spacingLeft=10;spacing=0;\" vertex=\"1\" parent=\"4\"><mxGeometry width=\"210\" height=\"60\" relative=\"1\" as=\"geometry\"><mxPoint x=\"10\" y=\"50\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"6\" value=\"Kubernetes cluster\" style=\"shape=rect;strokeColor=none;strokeWidth=2;shadow=0;gradientColor=none;fontColor=#757575;align=left;html=1;fontStyle=0;spacingTop=3;fillColor=#FCE4EC;verticalAlign=top;fontSize=10;spacingLeft=10;spacing=0;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"250\" height=\"120\" relative=\"1\" as=\"geometry\"><mxPoint x=\"10\" y=\"240\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"7\" value=\"pod\" style=\"shape=rect;strokeColor=none;strokeWidth=2;shadow=0;gradientColor=none;fontColor=#757575;align=left;html=1;fontStyle=0;spacingTop=3;fillColor=#E8F5E9;verticalAlign=top;fontSize=10;spacingLeft=10;spacing=0;\" vertex=\"1\" parent=\"6\"><mxGeometry width=\"210\" height=\"60\" relative=\"1\" as=\"geometry\"><mxPoint x=\"10\" y=\"50\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"8\" value=\"Account\" style=\"shape=rect;strokeColor=none;strokeWidth=2;shadow=0;gradientColor=none;fontColor=#757575;align=left;html=1;fontStyle=0;spacingTop=3;fillColor=#E8EAF6;verticalAlign=top;fontSize=10;spacingLeft=10;spacing=0;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"250\" height=\"60\" relative=\"1\" as=\"geometry\"><mxPoint x=\"10\" y=\"370\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"9\" value=\"Region\" style=\"shape=rect;strokeColor=none;strokeWidth=2;shadow=0;gradientColor=none;fontColor=#757575;align=left;html=1;fontStyle=0;spacingTop=3;fillColor=#ECEFF1;verticalAlign=top;fontSize=10;spacingLeft=10;spacing=0;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"250\" height=\"310\" relative=\"1\" as=\"geometry\"><mxPoint x=\"270\" y=\"50\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"10\" value=\"Zone\" style=\"shape=rect;strokeColor=none;strokeWidth=2;shadow=0;gradientColor=none;fontColor=#757575;align=left;html=1;fontStyle=0;spacingTop=3;fillColor=#FFF3E0;verticalAlign=top;fontSize=10;spacingLeft=10;spacing=0;\" vertex=\"1\" parent=\"9\"><mxGeometry width=\"230\" height=\"250\" relative=\"1\" as=\"geometry\"><mxPoint x=\"10\" y=\"50\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"11\" value=\"Firewall\" style=\"shape=rect;strokeColor=none;strokeWidth=2;shadow=0;gradientColor=none;fontColor=#757575;align=left;html=1;fontStyle=0;spacingTop=3;fillColor=#FBE9E7;verticalAlign=top;fontSize=10;spacingLeft=10;spacing=0;\" vertex=\"1\" parent=\"10\"><mxGeometry width=\"210\" height=\"190\" relative=\"1\" as=\"geometry\"><mxPoint x=\"10\" y=\"50\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"12\" value=\"Instance Group\" style=\"shape=rect;strokeColor=none;strokeWidth=2;shadow=0;gradientColor=none;fontColor=#757575;align=left;html=1;fontStyle=0;spacingTop=3;fillColor=#F9FBE7;verticalAlign=top;fontSize=10;spacingLeft=10;spacing=0;\" vertex=\"1\" parent=\"11\"><mxGeometry width=\"190\" height=\"60\" relative=\"1\" as=\"geometry\"><mxPoint x=\"10\" y=\"50\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"13\" value=\"Replica Pool\" style=\"shape=rect;strokeColor=none;strokeWidth=2;shadow=0;gradientColor=none;fontColor=#757575;align=left;html=1;fontStyle=0;spacingTop=3;fillColor=#E0F7FA;verticalAlign=top;fontSize=10;spacingLeft=10;spacing=0;\" vertex=\"1\" parent=\"11\"><mxGeometry width=\"190\" height=\"60\" relative=\"1\" as=\"geometry\"><mxPoint x=\"10\" y=\"120\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"14\" value=\"Optional Component\" style=\"rounded=1;absoluteArcSize=1;arcSize=2;html=1;strokeColor=none;gradientColor=none;shadow=0;dashed=1;strokeColor=#4284F3;fontSize=10;fontColor=#9E9E9E;align=left;verticalAlign=top;spacing=0;spacingTop=3;fillColor=none;dashPattern=1 2;strokeWidth=2;fontStyle=0;spacingLeft=10;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"250\" height=\"60\" relative=\"1\" as=\"geometry\"><mxPoint x=\"270\" y=\"370\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:132"
+  },
+  {
+   "id": "gcp2Zones-9-title-bar",
+   "title": "Title bar",
+   "tags": "gcp2 zones  gcp google cloud platform zone title bar Title bar",
+   "kind": "vertex",
+   "width": 1000,
+   "height": 40,
+   "style": "fillColor=#4DA1F5;strokeColor=none;shadow=1;gradientColor=none;fontSize=14;align=left;spacingLeft=50;fontColor=#ffffff;whiteSpace=wrap;html=1;",
+   "value": "Architecture: App Engine and Cloud Endpoints",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:134"
+  },
+  {
+   "id": "gcp2Zones-10-note",
+   "title": "Note",
+   "tags": "gcp2 zones  gcp google cloud platform zone note Note",
+   "kind": "vertex",
+   "width": 300,
+   "height": 350,
+   "style": "strokeColor=none;shadow=0;gradientColor=none;fontSize=11;align=left;spacing=10;fontColor=#;9E9E9E;verticalAlign=top;spacingTop=100;whiteSpace=wrap;html=1;fillColor=#ffffff;",
+   "value": "Use this note to call out\nor clarify parts of a diagram",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:136"
+  },
+  {
+   "id": "gcp2Zones-11-project-zone",
+   "title": "Project Zone",
+   "tags": "gcp google cloud platform zone project",
+   "kind": "cells",
+   "width": 650,
+   "height": 350,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"&lt;b&gt;Google &lt;/b&gt;Cloud Platform\" style=\"fillColor=#F6F6F6;strokeColor=none;shadow=0;gradientColor=none;fontSize=14;align=left;spacing=10;fontColor=#717171;9E9E9E;verticalAlign=top;spacingTop=-4;fontStyle=0;spacingLeft=40;html=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"650\" height=\"350\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"shape=mxgraph.gcp2.google_cloud_platform;fillColor=#F6F6F6;strokeColor=none;shadow=0;gradientColor=none;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"23\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"20\" y=\"10\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.google_cloud_platform"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:139"
+  },
+  {
+   "id": "gcp2Zones-12-markers",
+   "title": "Markers",
+   "tags": "gcp google cloud platform zone markers",
+   "kind": "cells",
+   "width": 260,
+   "height": 50,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"1\" style=\"shape=ellipse;perimeter=ellipsePerimeter;fillColor=#ffffff;strokeColor=#BDBDBD;strokeWidth=2;shadow=0;gradientColor=none;fontColor=#757575;align=center;html=1;fontStyle=1;spacingTop=-1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"20\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"2\" style=\"shape=ellipse;perimeter=ellipsePerimeter;fillColor=#ffffff;strokeColor=#BDBDBD;strokeWidth=2;shadow=0;gradientColor=none;fontColor=#757575;align=center;html=1;fontStyle=1;spacingTop=-1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"40\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"3\" style=\"shape=ellipse;perimeter=ellipsePerimeter;fillColor=#ffffff;strokeColor=#BDBDBD;strokeWidth=2;shadow=0;gradientColor=none;fontColor=#757575;align=center;html=1;fontStyle=1;spacingTop=-1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"80\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"4\" style=\"shape=ellipse;perimeter=ellipsePerimeter;fillColor=#ffffff;strokeColor=#BDBDBD;strokeWidth=2;shadow=0;gradientColor=none;fontColor=#757575;align=center;html=1;fontStyle=1;spacingTop=-1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"120\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"5\" style=\"shape=ellipse;perimeter=ellipsePerimeter;fillColor=#ffffff;strokeColor=#BDBDBD;strokeWidth=2;shadow=0;gradientColor=none;fontColor=#757575;align=center;html=1;fontStyle=1;spacingTop=-1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"160\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"6\" style=\"shape=ellipse;perimeter=ellipsePerimeter;fillColor=#ffffff;strokeColor=#BDBDBD;strokeWidth=2;shadow=0;gradientColor=none;fontColor=#757575;align=center;html=1;fontStyle=1;spacingTop=-1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"200\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"7\" style=\"shape=ellipse;perimeter=ellipsePerimeter;fillColor=#ffffff;strokeColor=#BDBDBD;strokeWidth=2;shadow=0;gradientColor=none;fontColor=#757575;align=center;html=1;fontStyle=1;spacingTop=-1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"240\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"9\" value=\"Markers to be used with the legend\" style=\"strokeColor=none;fillColor=none;fontColor=#757575;align=left;html=1;fontStyle=0;fontSize=11;\" vertex=\"1\" parent=\"1\"><mxGeometry y=\"20\" width=\"260\" height=\"30\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:156"
+  },
+  {
+   "id": "gcp2Zones-13-markers",
+   "title": "Markers",
+   "tags": "gcp google cloud platform zone markers",
+   "kind": "cells",
+   "width": 600,
+   "height": 70,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"fillColor=#ffffff;strokeColor=#BDBDBD;strokeWidth=1;shadow=0;gradientColor=none;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"600\" height=\"70\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"1 Commit code\" style=\"strokeColor=none;fillColor=none;fontColor=#757575;align=left;html=1;fontStyle=0;spacingLeft=5;fontSize=11;verticalAlign=top;whiteSpace=wrap;spacingRight=5;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"200\" height=\"30\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"2 Detect code change\" style=\"strokeColor=none;fillColor=none;fontColor=#757575;align=left;html=1;fontStyle=0;spacingLeft=5;fontSize=11;verticalAlign=top;whiteSpace=wrap;spacingRight=5;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"200\" height=\"30\" relative=\"1\" as=\"geometry\"><mxPoint y=\"30\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"3 Build immutable image\" style=\"strokeColor=none;fillColor=none;fontColor=#757575;align=left;html=1;fontStyle=0;spacingLeft=5;fontSize=11;verticalAlign=top;whiteSpace=wrap;spacingRight=5;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"200\" height=\"30\" relative=\"1\" as=\"geometry\"><mxPoint x=\"200\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"6\" value=\"4 Launch test instance from image\" style=\"strokeColor=none;fillColor=none;fontColor=#757575;align=left;html=1;fontStyle=0;spacingLeft=5;fontSize=11;verticalAlign=top;whiteSpace=wrap;spacingRight=5;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"200\" height=\"30\" relative=\"1\" as=\"geometry\"><mxPoint x=\"200\" y=\"30\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"7\" value=\"5 Run tests\" style=\"strokeColor=none;fillColor=none;fontColor=#757575;align=left;html=1;fontStyle=0;spacingLeft=5;fontSize=11;verticalAlign=top;whiteSpace=wrap;spacingRight=5;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"200\" height=\"30\" relative=\"1\" as=\"geometry\"><mxPoint x=\"400\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"8\" value=\"6 Perform rolling update of image to autoscaler\" style=\"strokeColor=none;fillColor=none;fontColor=#757575;align=left;html=1;fontStyle=0;spacingLeft=5;fontSize=11;verticalAlign=top;whiteSpace=wrap;spacingRight=5;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"200\" height=\"30\" relative=\"1\" as=\"geometry\"><mxPoint x=\"400\" y=\"30\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:181"
+  }
+ ]
+}

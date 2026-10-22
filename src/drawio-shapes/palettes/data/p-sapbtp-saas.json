@@ -1,0 +1,78 @@
+{
+ "id": "sapBTP SaaS",
+ "title": "SAP / BTP SaaS",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-SAP.js:8",
+ "entries": [
+  {
+   "id": "sapBTP SaaS-0-intelligent-situation-automation",
+   "title": "Intelligent Situation Automation",
+   "tags": "sap intelligent situation automation sap btp service icons saas software as  Intelligent Situation Automation",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=Intelligent_Situation_Automation",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:433"
+  },
+  {
+   "id": "sapBTP SaaS-1-sap-s-4hana-cloud-for-intelligent-intercompany-reconciliation",
+   "title": "SAP S/4HANA Cloud for Intelligent Intercompany Reconciliation",
+   "tags": "sap s4hana hana cloud for intelligent intercompany reconciliation sap btp service icons saas software as  SAP S/4HANA Cloud for Intelligent Intercompany Reconciliation",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_S4HANA_Cloud_for_Intelligent_Intercompany_Reconciliation",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:435"
+  },
+  {
+   "id": "sapBTP SaaS-2-sap-landscape-management-cloud",
+   "title": "SAP Landscape Management Cloud",
+   "tags": "sap landscape management cloud sap btp service icons saas software as  SAP Landscape Management Cloud",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Landscape_Management_Cloud",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:437"
+  },
+  {
+   "id": "sapBTP SaaS-3-sap-omnichannel-promotion-pricing",
+   "title": "SAP Omnichannel Promotion Pricing",
+   "tags": "sap omnichannel promotion pricing sap btp service icons saas software as  SAP Omnichannel Promotion Pricing",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Omnichannel_Promotion_Pricing",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:439"
+  },
+  {
+   "id": "sapBTP SaaS-4-sap-variant-configuration-and-pricing",
+   "title": "SAP Variant Configuration and Pricing",
+   "tags": "sap variant configuration config and pricing sap btp service icons saas software as  SAP Variant Configuration and Pricing",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Variant_Configuration_and_Pricing",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:441"
+  }
+ ]
+}

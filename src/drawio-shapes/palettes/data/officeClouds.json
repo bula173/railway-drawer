@@ -1,0 +1,190 @@
+{
+ "id": "officeClouds",
+ "title": "Office / Clouds",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Office.js:7",
+ "entries": [
+  {
+   "id": "officeClouds-0-azure",
+   "title": "Azure",
+   "tags": "office clouds azure office cloud  Azure",
+   "kind": "vertex",
+   "width": 103,
+   "height": 66,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;outlineConnect=0;verticalAlign=top;align=center;shape=mxgraph.office.clouds.azure;",
+   "shapeNames": [
+    "mxgraph.office.clouds.azure"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:47"
+  },
+  {
+   "id": "officeClouds-1-cloud",
+   "title": "Cloud",
+   "tags": "office clouds cloud office cloud  Cloud",
+   "kind": "vertex",
+   "width": 94,
+   "height": 55,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;outlineConnect=0;verticalAlign=top;align=center;shape=mxgraph.office.clouds.cloud;",
+   "shapeNames": [
+    "mxgraph.office.clouds.cloud"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:49"
+  },
+  {
+   "id": "officeClouds-2-cloud-disaster",
+   "title": "Cloud Disaster",
+   "tags": "office clouds cloud disaster office cloud  Cloud Disaster",
+   "kind": "vertex",
+   "width": 94,
+   "height": 74,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;outlineConnect=0;verticalAlign=top;align=center;shape=mxgraph.office.clouds.cloud_disaster;",
+   "shapeNames": [
+    "mxgraph.office.clouds.cloud_disaster"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:51"
+  },
+  {
+   "id": "officeClouds-3-cloud-disaster-red",
+   "title": "Cloud Disaster (Red)",
+   "tags": "office clouds cloud disaster office cloud  Cloud Disaster (Red)",
+   "kind": "vertex",
+   "width": 94,
+   "height": 74,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;outlineConnect=0;verticalAlign=top;align=center;shape=mxgraph.office.clouds.cloud_disaster;fillColor=#ff0000;",
+   "shapeNames": [
+    "mxgraph.office.clouds.cloud_disaster"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:53"
+  },
+  {
+   "id": "officeClouds-4-cloud-exchange-online",
+   "title": "Cloud Exchange Online",
+   "tags": "office clouds cloud exchange online office cloud  Cloud Exchange Online",
+   "kind": "vertex",
+   "width": 100,
+   "height": 61,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;outlineConnect=0;verticalAlign=top;align=center;shape=mxgraph.office.clouds.cloud_exchange_online;",
+   "shapeNames": [
+    "mxgraph.office.clouds.cloud_exchange_online"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:55"
+  },
+  {
+   "id": "officeClouds-5-cloud-service-request",
+   "title": "Cloud Service Request",
+   "tags": "office clouds cloud service request office cloud  Cloud Service Request",
+   "kind": "vertex",
+   "width": 102,
+   "height": 80,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;outlineConnect=0;verticalAlign=top;align=center;shape=mxgraph.office.clouds.cloud_service_request;",
+   "shapeNames": [
+    "mxgraph.office.clouds.cloud_service_request"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:57"
+  },
+  {
+   "id": "officeClouds-6-cloud-sharepoint",
+   "title": "Cloud SharePoint",
+   "tags": "office clouds cloud sharepoint office cloud  Cloud SharePoint",
+   "kind": "vertex",
+   "width": 101,
+   "height": 61,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;outlineConnect=0;verticalAlign=top;align=center;shape=mxgraph.office.clouds.cloud_sharepoint;",
+   "shapeNames": [
+    "mxgraph.office.clouds.cloud_sharepoint"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:59"
+  },
+  {
+   "id": "officeClouds-7-office-365",
+   "title": "Office 365",
+   "tags": "office clouds office 365 office cloud  Office 365",
+   "kind": "vertex",
+   "width": 101,
+   "height": 61,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;outlineConnect=0;verticalAlign=top;align=center;shape=mxgraph.office.clouds.office_365;",
+   "shapeNames": [
+    "mxgraph.office.clouds.office_365"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:61"
+  },
+  {
+   "id": "officeClouds-8-online-backup",
+   "title": "Online Backup",
+   "tags": "office clouds online backup office cloud  Online Backup",
+   "kind": "vertex",
+   "width": 94,
+   "height": 101,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;outlineConnect=0;verticalAlign=top;align=center;shape=mxgraph.office.clouds.online_backup;",
+   "shapeNames": [
+    "mxgraph.office.clouds.online_backup"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:63"
+  },
+  {
+   "id": "officeClouds-9-online-user",
+   "title": "Online User",
+   "tags": "office clouds online user office cloud  Online User",
+   "kind": "vertex",
+   "width": 93,
+   "height": 74,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;outlineConnect=0;verticalAlign=top;align=center;shape=mxgraph.office.clouds.online_user;",
+   "shapeNames": [
+    "mxgraph.office.clouds.online_user"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:65"
+  },
+  {
+   "id": "officeClouds-10-private-cloud",
+   "title": "Private Cloud",
+   "tags": "office clouds private cloud office cloud  Private Cloud",
+   "kind": "vertex",
+   "width": 94,
+   "height": 55,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;outlineConnect=0;verticalAlign=top;align=center;shape=mxgraph.office.clouds.private_cloud;",
+   "shapeNames": [
+    "mxgraph.office.clouds.private_cloud"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:67"
+  },
+  {
+   "id": "officeClouds-11-public-cloud",
+   "title": "Public Cloud",
+   "tags": "office clouds public cloud office cloud  Public Cloud",
+   "kind": "vertex",
+   "width": 101,
+   "height": 81,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;outlineConnect=0;verticalAlign=top;align=center;shape=mxgraph.office.clouds.public_cloud;",
+   "shapeNames": [
+    "mxgraph.office.clouds.public_cloud"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:69"
+  },
+  {
+   "id": "officeClouds-12-public-im-cloud-service",
+   "title": "Public IM Cloud Service",
+   "tags": "office clouds public im instant message cloud service office cloud  Public IM Cloud Service",
+   "kind": "vertex",
+   "width": 102,
+   "height": 99,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;outlineConnect=0;verticalAlign=top;align=center;shape=mxgraph.office.clouds.public_im_cloud_service;",
+   "shapeNames": [
+    "mxgraph.office.clouds.public_im_cloud_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:71"
+  }
+ ]
+}

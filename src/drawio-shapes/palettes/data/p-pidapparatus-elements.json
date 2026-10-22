@@ -1,0 +1,92 @@
+{
+ "id": "pidApparatus Elements",
+ "title": "Process Engineering / Apparatus Elements",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-PID.js:8",
+ "entries": [
+  {
+   "id": "pidApparatus Elements-0-manhole",
+   "title": "Manhole",
+   "tags": "pid apparatus elements  Manhole Manhole",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "shape=mxgraph.pid.apparatus_elements.manhole;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.apparatus_elements.manhole"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidApparatus Elements-1-socket-connection-nozzle",
+   "title": "Socket, Connection Nozzle",
+   "tags": "pid apparatus elements  Socket, Connection Nozzle Socket, Connection Nozzle",
+   "kind": "vertex",
+   "width": 30,
+   "height": 40,
+   "style": "shape=mxgraph.pid.apparatus_elements.socket,_connection_nozzle;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.apparatus_elements.socket,_connection_nozzle"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidApparatus Elements-2-support-bracket",
+   "title": "Support Bracket",
+   "tags": "pid apparatus elements  Support Bracket Support Bracket",
+   "kind": "vertex",
+   "width": 10,
+   "height": 10,
+   "style": "shape=mxgraph.pid.apparatus_elements.support_bracket;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.apparatus_elements.support_bracket"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidApparatus Elements-3-support-leg",
+   "title": "Support Leg",
+   "tags": "pid apparatus elements  Support Leg Support Leg",
+   "kind": "vertex",
+   "width": 25,
+   "height": 100,
+   "style": "shape=mxgraph.pid.apparatus_elements.support_leg;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.apparatus_elements.support_leg"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidApparatus Elements-4-support-ring",
+   "title": "Support Ring",
+   "tags": "pid apparatus elements  Support Ring Support Ring",
+   "kind": "vertex",
+   "width": 100,
+   "height": 25,
+   "style": "shape=mxgraph.pid.apparatus_elements.support_ring;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.apparatus_elements.support_ring"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidApparatus Elements-5-support-skirt",
+   "title": "Support Skirt",
+   "tags": "pid apparatus elements  Support Skirt Support Skirt",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "shape=mxgraph.pid.apparatus_elements.support_skirt;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.apparatus_elements.support_skirt"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  }
+ ]
+}

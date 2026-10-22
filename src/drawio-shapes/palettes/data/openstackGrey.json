@@ -1,0 +1,260 @@
+{
+ "id": "openstackGrey",
+ "title": "OpenStack / Grey",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-OpenStack.js:7",
+ "entries": [
+  {
+   "id": "openstackGrey-0-cinder-volume",
+   "title": "Cinder Volume",
+   "tags": "openstack cinder volume openstack open stack grey  Cinder Volume",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "fillColor=#808080;aspect=fixed;sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;outlineConnect=0;verticalAlign=top;align=center;shape=mxgraph.openstack.cinder_volume;",
+   "shapeNames": [
+    "mxgraph.openstack.cinder_volume"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-OpenStack.js:33"
+  },
+  {
+   "id": "openstackGrey-1-cinder-volumeattachment",
+   "title": "Cinder VolumeAttachment",
+   "tags": "openstack cinder volumeattachment volume attachment openstack open stack grey  Cinder VolumeAttachment",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "fillColor=#808080;aspect=fixed;sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;outlineConnect=0;verticalAlign=top;align=center;shape=mxgraph.openstack.cinder_volumeattachment;",
+   "shapeNames": [
+    "mxgraph.openstack.cinder_volumeattachment"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-OpenStack.js:35"
+  },
+  {
+   "id": "openstackGrey-2-designate-recordset",
+   "title": "Designate RecordSet",
+   "tags": "openstack designate recordset record set openstack open stack grey  Designate RecordSet",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "fillColor=#808080;aspect=fixed;sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;outlineConnect=0;verticalAlign=top;align=center;shape=mxgraph.openstack.designate_recordset;",
+   "shapeNames": [
+    "mxgraph.openstack.designate_recordset"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-OpenStack.js:37"
+  },
+  {
+   "id": "openstackGrey-3-designate-zone",
+   "title": "Designate Zone",
+   "tags": "openstack designate zone openstack open stack grey  Designate Zone",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "fillColor=#808080;aspect=fixed;sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;outlineConnect=0;verticalAlign=top;align=center;shape=mxgraph.openstack.designate_zone;",
+   "shapeNames": [
+    "mxgraph.openstack.designate_zone"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-OpenStack.js:39"
+  },
+  {
+   "id": "openstackGrey-4-heat-autoscalinggroup",
+   "title": "Heat AutoScalingGroup",
+   "tags": "openstack heat autoscalinggroup auto scaling group autoscaling openstack open stack grey  Heat AutoScalingGroup",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "fillColor=#808080;aspect=fixed;sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;outlineConnect=0;verticalAlign=top;align=center;shape=mxgraph.openstack.heat_autoscalinggroup;",
+   "shapeNames": [
+    "mxgraph.openstack.heat_autoscalinggroup"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-OpenStack.js:41"
+  },
+  {
+   "id": "openstackGrey-5-heat-resourcegroup",
+   "title": "Heat ResourceGroup",
+   "tags": "openstack heat resourcegroup resource group openstack open stack grey  Heat ResourceGroup",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "fillColor=#808080;aspect=fixed;sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;outlineConnect=0;verticalAlign=top;align=center;shape=mxgraph.openstack.heat_resourcegroup;",
+   "shapeNames": [
+    "mxgraph.openstack.heat_resourcegroup"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-OpenStack.js:43"
+  },
+  {
+   "id": "openstackGrey-6-heat-scalingpolicy",
+   "title": "Heat ScalingPolicy",
+   "tags": "openstack heat scalingpolicy scaling policy openstack open stack grey  Heat ScalingPolicy",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "fillColor=#808080;aspect=fixed;sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;outlineConnect=0;verticalAlign=top;align=center;shape=mxgraph.openstack.heat_scalingpolicy;",
+   "shapeNames": [
+    "mxgraph.openstack.heat_scalingpolicy"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-OpenStack.js:45"
+  },
+  {
+   "id": "openstackGrey-7-neutron-floatingip",
+   "title": "Neutron FloatingIP",
+   "tags": "openstack neutron floatingip floating ip openstack open stack grey  Neutron FloatingIP",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "fillColor=#808080;aspect=fixed;sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;outlineConnect=0;verticalAlign=top;align=center;shape=mxgraph.openstack.neutron_floatingip;",
+   "shapeNames": [
+    "mxgraph.openstack.neutron_floatingip"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-OpenStack.js:47"
+  },
+  {
+   "id": "openstackGrey-8-neutron-floatingipassociation",
+   "title": "Neutron FloatingIPAssociation",
+   "tags": "openstack neutron floatingipassociation floatingip floating ip association openstack open stack grey  Neutron FloatingIPAssociation",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "fillColor=#808080;aspect=fixed;sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;outlineConnect=0;verticalAlign=top;align=center;shape=mxgraph.openstack.neutron_floatingipassociation;",
+   "shapeNames": [
+    "mxgraph.openstack.neutron_floatingipassociation"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-OpenStack.js:49"
+  },
+  {
+   "id": "openstackGrey-9-neutron-net",
+   "title": "Neutron Net",
+   "tags": "openstack neutron net openstack open stack grey  Neutron Net",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "fillColor=#808080;aspect=fixed;sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;outlineConnect=0;verticalAlign=top;align=center;shape=mxgraph.openstack.neutron_net;",
+   "shapeNames": [
+    "mxgraph.openstack.neutron_net"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-OpenStack.js:51"
+  },
+  {
+   "id": "openstackGrey-10-neutron-port",
+   "title": "Neutron Port",
+   "tags": "openstack neutron port openstack open stack grey  Neutron Port",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "fillColor=#808080;aspect=fixed;sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;outlineConnect=0;verticalAlign=top;align=center;shape=mxgraph.openstack.neutron_port;",
+   "shapeNames": [
+    "mxgraph.openstack.neutron_port"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-OpenStack.js:53"
+  },
+  {
+   "id": "openstackGrey-11-neutron-router",
+   "title": "Neutron Router",
+   "tags": "openstack neutron router openstack open stack grey  Neutron Router",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "fillColor=#808080;aspect=fixed;sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;outlineConnect=0;verticalAlign=top;align=center;shape=mxgraph.openstack.neutron_router;",
+   "shapeNames": [
+    "mxgraph.openstack.neutron_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-OpenStack.js:55"
+  },
+  {
+   "id": "openstackGrey-12-neutron-routerinterface",
+   "title": "Neutron RouterInterface",
+   "tags": "openstack neutron routerinterface router interface openstack open stack grey  Neutron RouterInterface",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "fillColor=#808080;aspect=fixed;sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;outlineConnect=0;verticalAlign=top;align=center;shape=mxgraph.openstack.neutron_routerinterface;",
+   "shapeNames": [
+    "mxgraph.openstack.neutron_routerinterface"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-OpenStack.js:57"
+  },
+  {
+   "id": "openstackGrey-13-neutron-securitygroup",
+   "title": "Neutron SecurityGroup",
+   "tags": "openstack neutron securitygroup security group openstack open stack grey  Neutron SecurityGroup",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "fillColor=#808080;aspect=fixed;sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;outlineConnect=0;verticalAlign=top;align=center;shape=mxgraph.openstack.neutron_securitygroup;",
+   "shapeNames": [
+    "mxgraph.openstack.neutron_securitygroup"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-OpenStack.js:59"
+  },
+  {
+   "id": "openstackGrey-14-neutron-subnet",
+   "title": "Neutron Subnet",
+   "tags": "openstack neutron subnet openstack open stack grey  Neutron Subnet",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "fillColor=#808080;aspect=fixed;sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;outlineConnect=0;verticalAlign=top;align=center;shape=mxgraph.openstack.neutron_subnet;",
+   "shapeNames": [
+    "mxgraph.openstack.neutron_subnet"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-OpenStack.js:61"
+  },
+  {
+   "id": "openstackGrey-15-nova-keypair",
+   "title": "Nova Keypair",
+   "tags": "openstack nova keypair openstack open stack grey  Nova Keypair",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "fillColor=#808080;aspect=fixed;sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;outlineConnect=0;verticalAlign=top;align=center;shape=mxgraph.openstack.nova_keypair;",
+   "shapeNames": [
+    "mxgraph.openstack.nova_keypair"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-OpenStack.js:63"
+  },
+  {
+   "id": "openstackGrey-16-nova-server",
+   "title": "Nova Server",
+   "tags": "openstack nova server openstack open stack grey  Nova Server",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "fillColor=#808080;aspect=fixed;sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;outlineConnect=0;verticalAlign=top;align=center;shape=mxgraph.openstack.nova_server;",
+   "shapeNames": [
+    "mxgraph.openstack.nova_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-OpenStack.js:65"
+  },
+  {
+   "id": "openstackGrey-17-swift-container",
+   "title": "Swift Container",
+   "tags": "openstack swift container openstack open stack grey  Swift Container",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "fillColor=#808080;aspect=fixed;sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;outlineConnect=0;verticalAlign=top;align=center;shape=mxgraph.openstack.swift_container;",
+   "shapeNames": [
+    "mxgraph.openstack.swift_container"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-OpenStack.js:67"
+  }
+ ]
+}

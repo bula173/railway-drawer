@@ -1,0 +1,302 @@
+{
+ "id": "rackIBM",
+ "title": "Rack / IBM",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Rack.js:7",
+ "entries": [
+  {
+   "id": "rackIBM-0-ibm-11000va-ups",
+   "title": "IBM 11000VA UPS",
+   "tags": "rack ibm  IBM 11000VA UPS IBM 11000VA UPS",
+   "kind": "vertex",
+   "width": 161,
+   "height": 75,
+   "style": "shape=mxgraph.rack.ibm.ibm_11000va_ups;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.ibm.ibm_11000va_ups"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackIBM-1-ibm-1500-2200va-ups",
+   "title": "IBM 1500-2200VA UPS",
+   "tags": "rack ibm  IBM 1500-2200VA UPS IBM 1500-2200VA UPS",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.ibm.ibm_1500-2200va_ups;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.ibm.ibm_1500-2200va_ups"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackIBM-2-ibm-1754-local-console-manager",
+   "title": "IBM 1754 Local Console Manager",
+   "tags": "rack ibm  IBM 1754 Local Console Manager IBM 1754 Local Console Manager",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.ibm.ibm_1754_local_console_manager;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.ibm.ibm_1754_local_console_manager"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackIBM-3-ibm-1u-flat-panel-console-kit",
+   "title": "IBM 1U Flat Panel Console Kit",
+   "tags": "rack ibm  IBM 1U Flat Panel Console Kit IBM 1U Flat Panel Console Kit",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.ibm.ibm_1u_flat_panel_console_kit;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.ibm.ibm_1u_flat_panel_console_kit"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackIBM-4-ibm-3000va-ups",
+   "title": "IBM 3000VA UPS",
+   "tags": "rack ibm  IBM 3000VA UPS IBM 3000VA UPS",
+   "kind": "vertex",
+   "width": 161,
+   "height": 45,
+   "style": "shape=mxgraph.rack.ibm.ibm_3000va_ups;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.ibm.ibm_3000va_ups"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackIBM-5-ibm-6000va-ups",
+   "title": "IBM 6000VA UPS",
+   "tags": "rack ibm  IBM 6000VA UPS IBM 6000VA UPS",
+   "kind": "vertex",
+   "width": 161,
+   "height": 60,
+   "style": "shape=mxgraph.rack.ibm.ibm_6000va_ups;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.ibm.ibm_6000va_ups"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackIBM-6-ibm-dx360",
+   "title": "IBM dx360",
+   "tags": "rack ibm  IBM dx360 IBM dx360",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.ibm.ibm_dx360;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.ibm.ibm_dx360"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackIBM-7-ibm-ups10000",
+   "title": "IBM UPS10000",
+   "tags": "rack ibm  IBM UPS10000 IBM UPS10000",
+   "kind": "vertex",
+   "width": 161,
+   "height": 89,
+   "style": "shape=mxgraph.rack.ibm.ibm_ups10000;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.ibm.ibm_ups10000"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackIBM-8-ibm-ups5000-hv",
+   "title": "IBM UPS5000 HV",
+   "tags": "rack ibm  IBM UPS5000 HV IBM UPS5000 HV",
+   "kind": "vertex",
+   "width": 161,
+   "height": 45,
+   "style": "shape=mxgraph.rack.ibm.ibm_ups5000_hv;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.ibm.ibm_ups5000_hv"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackIBM-9-ibm-ups7500",
+   "title": "IBM UPS7500",
+   "tags": "rack ibm  IBM UPS7500 IBM UPS7500",
+   "kind": "vertex",
+   "width": 161,
+   "height": 89,
+   "style": "shape=mxgraph.rack.ibm.ibm_ups7500;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.ibm.ibm_ups7500"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackIBM-10-ibm-x3250-m4",
+   "title": "IBM x3250 M4",
+   "tags": "rack ibm  IBM x3250 M4 IBM x3250 M4",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.ibm.ibm_x3250_m4;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.ibm.ibm_x3250_m4"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackIBM-11-ibm-x3530-m4",
+   "title": "IBM x3530 M4",
+   "tags": "rack ibm  IBM x3530 M4 IBM x3530 M4",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.ibm.ibm_x3530_m4;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.ibm.ibm_x3530_m4"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackIBM-12-ibm-x3550-m4",
+   "title": "IBM x3550 M4",
+   "tags": "rack ibm  IBM x3550 M4 IBM x3550 M4",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.ibm.ibm_x3550_m4;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.ibm.ibm_x3550_m4"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackIBM-13-ibm-x3630-m3",
+   "title": "IBM x3630 M3",
+   "tags": "rack ibm  IBM x3630 M3 IBM x3630 M3",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.ibm.ibm_x3630_m3;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.ibm.ibm_x3630_m3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackIBM-14-ibm-x3630-m4",
+   "title": "IBM x3630 M4",
+   "tags": "rack ibm  IBM x3630 M4 IBM x3630 M4",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.ibm.ibm_x3630_m4;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.ibm.ibm_x3630_m4"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackIBM-15-ibm-x3650-m4",
+   "title": "IBM x3650 M4",
+   "tags": "rack ibm  IBM x3650 M4 IBM x3650 M4",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.ibm.ibm_x3650_m4;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.ibm.ibm_x3650_m4"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackIBM-16-ibm-x3690",
+   "title": "IBM x3690",
+   "tags": "rack ibm  IBM x3690 IBM x3690",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.ibm.ibm_x3690;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.ibm.ibm_x3690"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackIBM-17-ibm-x3750",
+   "title": "IBM x3750",
+   "tags": "rack ibm  IBM x3750 IBM x3750",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.ibm.ibm_x3750;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.ibm.ibm_x3750"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackIBM-18-ibm-x3755-m3",
+   "title": "IBM x3755 M3",
+   "tags": "rack ibm  IBM x3755 M3 IBM x3755 M3",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.ibm.ibm_x3755_m3;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.ibm.ibm_x3755_m3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackIBM-19-ibm-x3850-x5",
+   "title": "IBM x3850 X5",
+   "tags": "rack ibm  IBM x3850 X5 IBM x3850 X5",
+   "kind": "vertex",
+   "width": 161,
+   "height": 60,
+   "style": "shape=mxgraph.rack.ibm.ibm_x3850_x5;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.ibm.ibm_x3850_x5"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackIBM-20-ibm-x3950-x5",
+   "title": "IBM x3950 X5",
+   "tags": "rack ibm  IBM x3950 X5 IBM x3950 X5",
+   "kind": "vertex",
+   "width": 161,
+   "height": 60,
+   "style": "shape=mxgraph.rack.ibm.ibm_x3950_x5;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.ibm.ibm_x3950_x5"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  }
+ ]
+}

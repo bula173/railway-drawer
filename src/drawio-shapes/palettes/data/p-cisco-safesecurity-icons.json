@@ -1,0 +1,1016 @@
+{
+ "id": "cisco_safeSecurity Icons",
+ "title": "Cisco Safe / Security Icons",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:8",
+ "entries": [
+  {
+   "id": "cisco_safeSecurity Icons-0-ngips",
+   "title": "NGIPS",
+   "tags": "cisco safe security icons ngips cisco safe security NGIPS",
+   "kind": "vertex",
+   "width": 35.5,
+   "height": 42.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.ngips;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.ngips"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:868"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-1-ngfw",
+   "title": "NGFW",
+   "tags": "cisco safe security icons ngfw cisco safe security NGFW",
+   "kind": "vertex",
+   "width": 52.5,
+   "height": 46,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.ngfw;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.ngfw"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:870"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-2-ise",
+   "title": "ISE",
+   "tags": "cisco safe security icons ise cisco safe security ISE",
+   "kind": "vertex",
+   "width": 24.5,
+   "height": 34.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.ise;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.ise"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:872"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-3-ids",
+   "title": "IDS",
+   "tags": "cisco safe security icons ids cisco safe security IDS",
+   "kind": "vertex",
+   "width": 46,
+   "height": 35.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.ids;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.ids"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:874"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-4-nba",
+   "title": "NBA",
+   "tags": "cisco safe security icons nba cisco safe security NBA",
+   "kind": "vertex",
+   "width": 44.5,
+   "height": 33.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.nba;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.nba"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:876"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-5-nac",
+   "title": "NAC",
+   "tags": "cisco safe security icons nac cisco safe security NAC",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.nac;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.nac"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:878"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-6-iam",
+   "title": "IAM",
+   "tags": "cisco safe security icons iam cisco safe security IAM",
+   "kind": "vertex",
+   "width": 37.5,
+   "height": 47,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.iam;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.iam"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:880"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-7-amp",
+   "title": "AMP",
+   "tags": "cisco safe security icons amp cisco safe security AMP",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.amp;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.amp"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:882"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-8-utm",
+   "title": "UTM",
+   "tags": "cisco safe security icons utm cisco safe security UTM",
+   "kind": "vertex",
+   "width": 52,
+   "height": 11.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.utm;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.utm"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:884"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-9-firewall",
+   "title": "Firewall",
+   "tags": "cisco safe security icons firewall cisco safe security Firewall",
+   "kind": "vertex",
+   "width": 49.5,
+   "height": 35,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.firewall;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.firewall"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:886"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-10-vulnerability-management",
+   "title": "Vulnerability Management",
+   "tags": "cisco safe security icons vulnerability management cisco safe security Vulnerability Management",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.vulnerability_management;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.vulnerability_management"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:888"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-11-log-management",
+   "title": "Log Management",
+   "tags": "cisco safe security icons log management cisco safe security Log Management",
+   "kind": "vertex",
+   "width": 30,
+   "height": 37.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.log_management;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.log_management"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:890"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-12-application-control",
+   "title": "Application Control",
+   "tags": "cisco safe security icons application control cisco safe security Application Control",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.application_control;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.application_control"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:892"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-13-virtual",
+   "title": "Virtual",
+   "tags": "cisco safe security icons virtual cisco safe security Virtual",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.virtual;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.virtual"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:894"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-14-siem",
+   "title": "SIEM",
+   "tags": "cisco safe security icons siem cisco safe security SIEM",
+   "kind": "vertex",
+   "width": 50,
+   "height": 40.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.siem;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.siem"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:896"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-15-antivirus",
+   "title": "Antivirus",
+   "tags": "cisco safe security icons antivirus cisco safe security Antivirus",
+   "kind": "vertex",
+   "width": 50,
+   "height": 32.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.antivirus;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.antivirus"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:898"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-16-patch-management",
+   "title": "Patch Management",
+   "tags": "cisco safe security icons patch management cisco safe security Patch Management",
+   "kind": "vertex",
+   "width": 50,
+   "height": 39,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.patch_management;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.patch_management"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:900"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-17-inspection-forensics",
+   "title": "Inspection / Forensics",
+   "tags": "cisco safe security icons inspection forensics cisco safe security Inspection / Forensics",
+   "kind": "vertex",
+   "width": 50,
+   "height": 38.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.inspection_forensics;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.inspection_forensics"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:902"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-18-malware-sandbox",
+   "title": "Malware Sandbox",
+   "tags": "cisco safe security icons malware sandbox cisco safe security Malware Sandbox",
+   "kind": "vertex",
+   "width": 50,
+   "height": 31,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.malware_sandbox;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.malware_sandbox"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:904"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-19-ddos",
+   "title": "DDoS",
+   "tags": "cisco safe security icons ddos cisco safe security DDoS",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.ddos;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.ddos"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:906"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-20-talos",
+   "title": "Talos",
+   "tags": "cisco safe security icons talos cisco safe security Talos",
+   "kind": "vertex",
+   "width": 93,
+   "height": 21.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.talos;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.talos"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:908"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-21-services",
+   "title": "Services",
+   "tags": "cisco safe security icons services cisco safe security Services",
+   "kind": "vertex",
+   "width": 50,
+   "height": 46,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.services;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.services"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:910"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-22-vpn",
+   "title": "VPN",
+   "tags": "cisco safe security icons vpn cisco safe security VPN",
+   "kind": "vertex",
+   "width": 43,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.vpn;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.vpn"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:912"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-23-email",
+   "title": "Email",
+   "tags": "cisco safe security icons email cisco safe security Email",
+   "kind": "vertex",
+   "width": 50,
+   "height": 35.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.email;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.email"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:914"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-24-web",
+   "title": "Web",
+   "tags": "cisco safe security icons web cisco safe security Web",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.web;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.web"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:916"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-25-virtual-deployment",
+   "title": "Virtual Deployment",
+   "tags": "cisco safe security icons virtual deployment cisco safe security Virtual Deployment",
+   "kind": "vertex",
+   "width": 50,
+   "height": 44.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.virtual_deployment;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.virtual_deployment"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:918"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-26-cloud-based",
+   "title": "Cloud Based",
+   "tags": "cisco safe security icons cloud based cisco safe security Cloud Based",
+   "kind": "vertex",
+   "width": 50,
+   "height": 31.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.cloud_based;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.cloud_based"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:920"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-27-cloud-based-management",
+   "title": "Cloud Based Management",
+   "tags": "cisco safe security icons cloud based management cisco safe security Cloud Based Management",
+   "kind": "vertex",
+   "width": 50,
+   "height": 39,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.cloud_based_management;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.cloud_based_management"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:922"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-28-trustsec",
+   "title": "Trustsec",
+   "tags": "cisco safe security icons trustsec cisco safe security Trustsec",
+   "kind": "vertex",
+   "width": 41.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.trustsec;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.trustsec"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:924"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-29-retrospective-security",
+   "title": "Retrospective Security",
+   "tags": "cisco safe security icons retrospective security cisco safe security Retrospective Security",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.retrospective_security;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.retrospective_security"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:926"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-30-apic",
+   "title": "APIC",
+   "tags": "cisco safe security icons apic cisco safe security APIC",
+   "kind": "vertex",
+   "width": 50,
+   "height": 40.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.apic;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.apic"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:928"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-31-waf",
+   "title": "WAF",
+   "tags": "cisco safe security icons waf cisco safe security WAF",
+   "kind": "vertex",
+   "width": 40,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.waf;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.waf"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:930"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-32-entry",
+   "title": "",
+   "tags": "cisco safe security icons  cisco safe security ",
+   "kind": "vertex",
+   "width": 47.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.icon1;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.icon1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:932"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-33-entry",
+   "title": "",
+   "tags": "cisco safe security icons  cisco safe security ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.icon2;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.icon2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:934"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-34-entry",
+   "title": "",
+   "tags": "cisco safe security icons  cisco safe security ",
+   "kind": "vertex",
+   "width": 39,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.icon3;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.icon3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:936"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-35-entry",
+   "title": "",
+   "tags": "cisco safe security icons  cisco safe security ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 42,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.icon4;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.icon4"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:938"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-36-entry",
+   "title": "",
+   "tags": "cisco safe security icons  cisco safe security ",
+   "kind": "vertex",
+   "width": 41,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.icon5;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.icon5"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:940"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-37-entry",
+   "title": "",
+   "tags": "cisco safe security icons  cisco safe security ",
+   "kind": "vertex",
+   "width": 47.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.icon6;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.icon6"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:942"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-38-entry",
+   "title": "",
+   "tags": "cisco safe security icons  cisco safe security ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.icon7;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.icon7"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:944"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-39-entry",
+   "title": "",
+   "tags": "cisco safe security icons  cisco safe security ",
+   "kind": "vertex",
+   "width": 42.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.icon8;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.icon8"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:946"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-40-entry",
+   "title": "",
+   "tags": "cisco safe security icons  cisco safe security ",
+   "kind": "vertex",
+   "width": 34,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.icon9;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.icon9"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:948"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-41-entry",
+   "title": "",
+   "tags": "cisco safe security icons  cisco safe security ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 31,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.icon10;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.icon10"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:950"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-42-entry",
+   "title": "",
+   "tags": "cisco safe security icons  cisco safe security ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.icon11;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.icon11"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:952"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-43-entry",
+   "title": "",
+   "tags": "cisco safe security icons  cisco safe security ",
+   "kind": "vertex",
+   "width": 42,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.icon12;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.icon12"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:954"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-44-entry",
+   "title": "",
+   "tags": "cisco safe security icons  cisco safe security ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.icon13;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.icon13"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:956"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-45-entry",
+   "title": "",
+   "tags": "cisco safe security icons  cisco safe security ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.icon14;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.icon14"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:958"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-46-entry",
+   "title": "",
+   "tags": "cisco safe security icons  cisco safe security ",
+   "kind": "vertex",
+   "width": 39.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.icon15;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.icon15"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:960"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-47-entry",
+   "title": "",
+   "tags": "cisco safe security icons  cisco safe security ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 23.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.icon16;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.icon16"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:962"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-48-entry",
+   "title": "",
+   "tags": "cisco safe security icons  cisco safe security ",
+   "kind": "vertex",
+   "width": 28.999999999999996,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.icon17;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.icon17"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:964"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-49-entry",
+   "title": "",
+   "tags": "cisco safe security icons  cisco safe security ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.icon18;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.icon18"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:966"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-50-entry",
+   "title": "",
+   "tags": "cisco safe security icons  cisco safe security ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.icon19;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.icon19"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:968"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-51-entry",
+   "title": "",
+   "tags": "cisco safe security icons  cisco safe security ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.icon20;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.icon20"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:970"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-52-entry",
+   "title": "",
+   "tags": "cisco safe security icons  cisco safe security ",
+   "kind": "vertex",
+   "width": 43.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.icon21;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.icon21"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:972"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-53-entry",
+   "title": "",
+   "tags": "cisco safe security icons  cisco safe security ",
+   "kind": "vertex",
+   "width": 40.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.icon22;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.icon22"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:974"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-54-entry",
+   "title": "",
+   "tags": "cisco safe security icons  cisco safe security ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.icon23;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.icon23"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:976"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-55-entry",
+   "title": "",
+   "tags": "cisco safe security icons  cisco safe security ",
+   "kind": "vertex",
+   "width": 44.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.icon24;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.icon24"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:978"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-56-entry",
+   "title": "",
+   "tags": "cisco safe security icons  cisco safe security ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.icon25;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.icon25"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:980"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-57-entry",
+   "title": "",
+   "tags": "cisco safe security icons  cisco safe security ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.icon26;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.icon26"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:982"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-58-entry",
+   "title": "",
+   "tags": "cisco safe security icons  cisco safe security ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 35,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.icon27;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.icon27"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:984"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-59-entry",
+   "title": "",
+   "tags": "cisco safe security icons  cisco safe security ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 34.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.icon28;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.icon28"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:986"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-60-entry",
+   "title": "",
+   "tags": "cisco safe security icons  cisco safe security ",
+   "kind": "vertex",
+   "width": 46,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.icon29;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.icon29"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:988"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-61-entry",
+   "title": "",
+   "tags": "cisco safe security icons  cisco safe security ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 35,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.icon30;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.icon30"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:990"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-62-entry",
+   "title": "",
+   "tags": "cisco safe security icons  cisco safe security ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 43,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.icon31;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.icon31"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:992"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-63-entry",
+   "title": "",
+   "tags": "cisco safe security icons  cisco safe security ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 34.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.icon32;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.icon32"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:994"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-64-entry",
+   "title": "",
+   "tags": "cisco safe security icons  cisco safe security ",
+   "kind": "vertex",
+   "width": 49.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.icon33;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.icon33"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:996"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-65-entry",
+   "title": "",
+   "tags": "cisco safe security icons  cisco safe security ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.icon34;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.icon34"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:998"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-66-entry",
+   "title": "",
+   "tags": "cisco safe security icons  cisco safe security ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 28.499999999999996,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.icon35;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.icon35"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1000"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-67-entry",
+   "title": "",
+   "tags": "cisco safe security icons  cisco safe security ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 49,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.icon36;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.icon36"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1002"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-68-entry",
+   "title": "",
+   "tags": "cisco safe security icons  cisco safe security ",
+   "kind": "vertex",
+   "width": 40.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.icon37;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.icon37"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1004"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-69-entry",
+   "title": "",
+   "tags": "cisco safe security icons  cisco safe security ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.icon38;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.icon38"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1006"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-70-entry",
+   "title": "",
+   "tags": "cisco safe security icons  cisco safe security ",
+   "kind": "vertex",
+   "width": 36,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.icon39;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.icon39"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1008"
+  },
+  {
+   "id": "cisco_safeSecurity Icons-71-entry",
+   "title": "",
+   "tags": "cisco safe security icons  cisco safe security ",
+   "kind": "vertex",
+   "width": 50,
+   "height": 33,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#282828;strokeColor=none;verticalAlign=top;pointerEvents=1;align=center;shape=mxgraph.cisco_safe.security_icons.icon40;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.security_icons.icon40"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1010"
+  }
+ ]
+}

@@ -1,0 +1,666 @@
+{
+ "id": "bpmn2Tasks",
+ "title": "BPMN 2.0  Tasks",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-BPMN.js:8",
+ "entries": [
+  {
+   "id": "bpmn2Tasks-0-generic-task",
+   "title": "Generic Task",
+   "tags": "bpmn business process model notation task generic Generic Task",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:145"
+  },
+  {
+   "id": "bpmn2Tasks-1-standard-loop",
+   "title": "Standard Loop",
+   "tags": "bpmn business process model notation task standard loop Standard Loop",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;isLoopStandard=1;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:146"
+  },
+  {
+   "id": "bpmn2Tasks-2-standard-loop",
+   "title": "Standard Loop",
+   "tags": "bpmn business process model notation task standard loop Standard Loop",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;isLoopStandard=1;isLoopSub=1;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:147"
+  },
+  {
+   "id": "bpmn2Tasks-3-multi-instance-parallel",
+   "title": "Multi-Instance, Parallel",
+   "tags": "bpmn business process model notation task multi instance parallel Multi-Instance, Parallel",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;isLoopMultiParallel=1;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:148"
+  },
+  {
+   "id": "bpmn2Tasks-4-multi-instance-parallel",
+   "title": "Multi-Instance, Parallel",
+   "tags": "bpmn business process model notation task multi instance parallel Multi-Instance, Parallel",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;isLoopSub=1;isLoopMultiParallel=1;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:149"
+  },
+  {
+   "id": "bpmn2Tasks-5-multi-instance-sequential",
+   "title": "Multi-Instance, Sequential",
+   "tags": "bpmn business process model notation task multi instance sequential Multi-Instance, Sequential",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;isLoopMultiSeq=1;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:150"
+  },
+  {
+   "id": "bpmn2Tasks-6-multi-instance-sequential",
+   "title": "Multi-Instance, Sequential",
+   "tags": "bpmn business process model notation task multi instance sequential Multi-Instance, Sequential",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;isLoopSub=1;isLoopMultiSeq=1;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:151"
+  },
+  {
+   "id": "bpmn2Tasks-7-compensation",
+   "title": "Compensation",
+   "tags": "bpmn business process model notation task compensation Compensation",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;isLoopComp=1;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:152"
+  },
+  {
+   "id": "bpmn2Tasks-8-compensation",
+   "title": "Compensation",
+   "tags": "bpmn business process model notation task compensation Compensation",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;isLoopSub=1;isLoopComp=1;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:153"
+  },
+  {
+   "id": "bpmn2Tasks-9-loop-and-compensation",
+   "title": "Loop and Compensation",
+   "tags": "bpmn business process model notation task loop compensation Loop and Compensation",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;isLoopComp=1;isLoopStandard=1;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:154"
+  },
+  {
+   "id": "bpmn2Tasks-10-loop-and-compensation",
+   "title": "Loop and Compensation",
+   "tags": "bpmn business process model notation task loop compensation Loop and Compensation",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;isLoopComp=1;isLoopStandard=1;isLoopSub=1;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:155"
+  },
+  {
+   "id": "bpmn2Tasks-11-ad-hoc-collapsed",
+   "title": "Ad Hoc, Collapsed",
+   "tags": "bpmn business process model notation task ad hoc collapsed Ad Hoc, Collapsed",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;isAdHoc=1;isLoopSub=1;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:156"
+  },
+  {
+   "id": "bpmn2Tasks-12-ad-hoc-expanded",
+   "title": "Ad Hoc, Expanded",
+   "tags": "bpmn business process model notation task ad hoc expanded Ad Hoc, Expanded",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;isAdHoc=1;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:157"
+  },
+  {
+   "id": "bpmn2Tasks-13-service",
+   "title": "Service",
+   "tags": "bpmn business process model notation task service Service",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=service;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:159"
+  },
+  {
+   "id": "bpmn2Tasks-14-send",
+   "title": "Send",
+   "tags": "bpmn business process model notation task send Send",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=send;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:160"
+  },
+  {
+   "id": "bpmn2Tasks-15-receive",
+   "title": "Receive",
+   "tags": "bpmn business process model notation task receive Receive",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=receive;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:161"
+  },
+  {
+   "id": "bpmn2Tasks-16-user",
+   "title": "User",
+   "tags": "bpmn business process model notation task user User",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=user;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:162"
+  },
+  {
+   "id": "bpmn2Tasks-17-manual",
+   "title": "Manual",
+   "tags": "bpmn business process model notation task manual Manual",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=manual;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:163"
+  },
+  {
+   "id": "bpmn2Tasks-18-business-rule",
+   "title": "Business Rule",
+   "tags": "bpmn business process model notation task business rule Business Rule",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=businessRule;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:164"
+  },
+  {
+   "id": "bpmn2Tasks-19-script",
+   "title": "Script",
+   "tags": "bpmn business process model notation task script Script",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=script;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:165"
+  },
+  {
+   "id": "bpmn2Tasks-20-sub-process-collapsed",
+   "title": "Sub-Process, Collapsed",
+   "tags": "bpmn business process model notation task sub process subprocess collapsed Sub-Process, Collapsed",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;isLoopSub=1;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:166"
+  },
+  {
+   "id": "bpmn2Tasks-21-transaction-collapsed",
+   "title": "Transaction, Collapsed",
+   "tags": "bpmn business process model notation task transaction collapsed Transaction, Collapsed",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;bpmnShapeType=transaction;isLoopSub=1;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:168"
+  },
+  {
+   "id": "bpmn2Tasks-22-transaction-expanded",
+   "title": "Transaction, Expanded",
+   "tags": "bpmn business process model notation task transaction expanded Transaction, Expanded",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;bpmnShapeType=transaction;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:169"
+  },
+  {
+   "id": "bpmn2Tasks-23-message-event-sub-process-non-interrupting-collapsed",
+   "title": "Message-Event Sub-Process, Non-interrupting, Collapsed",
+   "tags": "bpmn business process model notation task non interrupting message event sub process collapsed Message-Event Sub-Process, Non-interrupting, Collapsed",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;bpmnShapeType=subprocess;isLoopSub=1;outline=eventNonint;symbol=message;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:171"
+  },
+  {
+   "id": "bpmn2Tasks-24-message-event-sub-process-interrupting-collapsed",
+   "title": "Message-Event Sub-Process, Interrupting, Collapsed",
+   "tags": "bpmn business process model notation task interrupting message event sub process collapsed Message-Event Sub-Process, Interrupting, Collapsed",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;bpmnShapeType=subprocess;isLoopSub=1;outline=eventInt;symbol=message;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:172"
+  },
+  {
+   "id": "bpmn2Tasks-25-timer-event-sub-process-non-interrupting-collapsed",
+   "title": "Timer-Event Sub-Process, Non-interrupting, Collapsed",
+   "tags": "bpmn business process model notation task non interrupting timer event sub process collapsed Timer-Event Sub-Process, Non-interrupting, Collapsed",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;bpmnShapeType=subprocess;isLoopSub=1;outline=eventNonint;symbol=timer;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:173"
+  },
+  {
+   "id": "bpmn2Tasks-26-timer-event-sub-process-interrupting-collapsed",
+   "title": "Timer-Event Sub-Process, Interrupting, Collapsed",
+   "tags": "bpmn business process model notation task interrupting timer event sub process collapsed Timer-Event Sub-Process, Interrupting, Collapsed",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;bpmnShapeType=subprocess;isLoopSub=1;outline=eventInt;symbol=timer;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:174"
+  },
+  {
+   "id": "bpmn2Tasks-27-conditional-event-sub-process-non-interrupting-collapsed",
+   "title": "Conditional-Event Sub-Process, Non-interrupting, Collapsed",
+   "tags": "bpmn business process model notation task non interrupting conditional event sub process collapsed Conditional-Event Sub-Process, Non-interrupting, Collapsed",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;bpmnShapeType=subprocess;isLoopSub=1;outline=eventNonint;symbol=conditional;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:175"
+  },
+  {
+   "id": "bpmn2Tasks-28-conditional-event-sub-process-interrupting-collapsed",
+   "title": "Conditional-Event Sub-Process, Interrupting, Collapsed",
+   "tags": "bpmn business process model notation task interrupting conditional event sub process collapsed Conditional-Event Sub-Process, Interrupting, Collapsed",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;bpmnShapeType=subprocess;isLoopSub=1;outline=eventInt;symbol=conditional;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:176"
+  },
+  {
+   "id": "bpmn2Tasks-29-signal-event-sub-process-non-interrupting-collapsed",
+   "title": "Signal-Event Sub-Process, Non-interrupting, Collapsed",
+   "tags": "bpmn business process model notation task non interrupting signal event sub process collapsed Signal-Event Sub-Process, Non-interrupting, Collapsed",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;bpmnShapeType=subprocess;isLoopSub=1;outline=eventNonint;symbol=signal;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:177"
+  },
+  {
+   "id": "bpmn2Tasks-30-signal-event-sub-process-interrupting-collapsed",
+   "title": "Signal-Event Sub-Process, Interrupting, Collapsed",
+   "tags": "bpmn business process model notation task interrupting signal event sub process collapsed Signal-Event Sub-Process, Interrupting, Collapsed",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;bpmnShapeType=subprocess;isLoopSub=1;outline=eventInt;symbol=signal;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:178"
+  },
+  {
+   "id": "bpmn2Tasks-31-multiple-event-sub-process-non-interrupting-collapsed",
+   "title": "Multiple-Event Sub-Process, Non-interrupting, Collapsed",
+   "tags": "bpmn business process model notation task non interrupting multiple event sub process collapsed Multiple-Event Sub-Process, Non-interrupting, Collapsed",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;bpmnShapeType=subprocess;isLoopSub=1;outline=eventNonint;symbol=multiple;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:179"
+  },
+  {
+   "id": "bpmn2Tasks-32-multiple-event-sub-process-interrupting-collapsed",
+   "title": "Multiple-Event Sub-Process, Interrupting, Collapsed",
+   "tags": "bpmn business process model notation task interrupting multiple event sub process collapsed Multiple-Event Sub-Process, Interrupting, Collapsed",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;bpmnShapeType=subprocess;isLoopSub=1;outline=eventInt;symbol=multiple;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:180"
+  },
+  {
+   "id": "bpmn2Tasks-33-parallel-multiple-event-sub-process-non-interrupting-collapsed",
+   "title": "Parallel Multiple Event Sub-Process, Non-interrupting, Collapsed",
+   "tags": "bpmn business process model notation task non interrupting parallel multiple event sub process collapsed Parallel Multiple Event Sub-Process, Non-interrupting, Collapsed",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;bpmnShapeType=subprocess;isLoopSub=1;outline=eventNonint;symbol=parallelMultiple;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:181"
+  },
+  {
+   "id": "bpmn2Tasks-34-parallel-multiple-event-sub-process-interrupting-collapsed",
+   "title": "Parallel Multiple Event Sub-Process, Interrupting , Collapsed",
+   "tags": "bpmn business process model notation task interrupting parallel multiple event sub process collapsed Parallel Multiple Event Sub-Process, Interrupting , Collapsed",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;bpmnShapeType=subprocess;isLoopSub=1;outline=eventInt;symbol=parallelMultiple;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:182"
+  },
+  {
+   "id": "bpmn2Tasks-35-escalation-event-sub-process-non-interrupting-collapsed",
+   "title": "Escalation-Event Sub-Process, Non-interrupting, Collapsed",
+   "tags": "bpmn business process model notation task non interrupting escalation event sub process collapsed Escalation-Event Sub-Process, Non-interrupting, Collapsed",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;bpmnShapeType=subprocess;isLoopSub=1;outline=eventNonint;symbol=escalation;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:183"
+  },
+  {
+   "id": "bpmn2Tasks-36-escalation-event-sub-process-interrupting-collapsed",
+   "title": "Escalation-Event Sub-Process, Interrupting, Collapsed",
+   "tags": "bpmn business process model notation task interrupting escalation event sub process collapsed Escalation-Event Sub-Process, Interrupting, Collapsed",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;bpmnShapeType=subprocess;isLoopSub=1;outline=eventInt;symbol=escalation;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:184"
+  },
+  {
+   "id": "bpmn2Tasks-37-error-event-sub-process-interrupting-collapsed",
+   "title": "Error-Event Sub-Process, Interrupting, Collapsed",
+   "tags": "bpmn business process model notation task interrupting error event sub process collapsed Error-Event Sub-Process, Interrupting, Collapsed",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;bpmnShapeType=subprocess;isLoopSub=1;outline=eventInt;symbol=error;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:185"
+  },
+  {
+   "id": "bpmn2Tasks-38-compensation-event-sub-process-interrupting-collapsed",
+   "title": "Compensation-Event Sub-Process, Interrupting, Collapsed",
+   "tags": "bpmn business process model notation task interrupting compensation event sub process collapsed Compensation-Event Sub-Process, Interrupting, Collapsed",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;bpmnShapeType=subprocess;isLoopSub=1;outline=eventInt;symbol=compensation;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:186"
+  },
+  {
+   "id": "bpmn2Tasks-39-event-sub-process-expanded",
+   "title": "Event Sub-Process, Expanded",
+   "tags": "bpmn business process model notation task event sub process expanded Event Sub-Process, Expanded",
+   "kind": "vertex",
+   "width": 180,
+   "height": 100,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;arcSize=10;taskMarker=abstract;outline=none;symbol=general;bpmnShapeType=subprocess;isLoopSub=0;verticalAlign=top;align=left;spacingLeft=5;html=1;whiteSpace=wrap;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:187"
+  },
+  {
+   "id": "bpmn2Tasks-40-call-activity",
+   "title": "Call Activity",
+   "tags": "bpmn business process model notation task call activity Call Activity",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;bpmnShapeType=call;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:189"
+  },
+  {
+   "id": "bpmn2Tasks-41-user-call-activity",
+   "title": "User Call Activity",
+   "tags": "bpmn business process model notation task user call activity User Call Activity",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;bpmnShapeType=call;taskMarker=user;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:190"
+  },
+  {
+   "id": "bpmn2Tasks-42-manual-call-activity",
+   "title": "Manual Call Activity",
+   "tags": "bpmn business process model notation task manual call activity Manual Call Activity",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;bpmnShapeType=call;taskMarker=manual;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:191"
+  },
+  {
+   "id": "bpmn2Tasks-43-business-rule-call-activity",
+   "title": "Business Rule Call Activity",
+   "tags": "bpmn business process model notation task business rule call activity Business Rule Call Activity",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;bpmnShapeType=call;taskMarker=businessRule;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:192"
+  },
+  {
+   "id": "bpmn2Tasks-44-script-call-activity",
+   "title": "Script Call Activity",
+   "tags": "bpmn business process model notation task script call activity Script Call Activity",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;bpmnShapeType=call;taskMarker=script;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:193"
+  },
+  {
+   "id": "bpmn2Tasks-45-call-activity-collapsed",
+   "title": "Call Activity, Collapsed",
+   "tags": "bpmn business process model notation task call activity collapsed Call Activity, Collapsed",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;bpmnShapeType=call;isLoopSub=1;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:194"
+  },
+  {
+   "id": "bpmn2Tasks-46-call-activity-expanded",
+   "title": "Call Activity, Expanded",
+   "tags": "bpmn business process model notation task call activity expanded Call Activity, Expanded",
+   "kind": "vertex",
+   "width": 180,
+   "height": 100,
+   "style": "points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;bpmnShapeType=call;verticalAlign=top;align=left;spacingLeft=5;",
+   "shapeNames": [
+    "mxgraph.bpmn.task2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-BPMN.js:195"
+  }
+ ]
+}

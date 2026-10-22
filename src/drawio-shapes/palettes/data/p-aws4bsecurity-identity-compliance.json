@@ -1,0 +1,413 @@
+{
+ "id": "aws4bSecurity Identity Compliance",
+ "title": "AWS18 / Security, Identity & Compliance",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:8",
+ "entries": [
+  {
+   "id": "aws4bSecurity Identity Compliance-0-entry",
+   "title": "",
+   "tags": "aws4 identity and access management aws amazon web service security identity compliance ",
+   "kind": "vertex",
+   "width": 80,
+   "height": 120,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.identity_and_access_management;",
+   "value": "AWS Identity and Access Management",
+   "shapeNames": [
+    "mxgraph.aws4.productIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:956"
+  },
+  {
+   "id": "aws4bSecurity Identity Compliance-1-entry",
+   "title": "",
+   "tags": "aws4 cognito aws amazon web service security identity compliance ",
+   "kind": "vertex",
+   "width": 80,
+   "height": 110,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.cognito;",
+   "value": "Amazon Cognito",
+   "shapeNames": [
+    "mxgraph.aws4.productIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:958"
+  },
+  {
+   "id": "aws4bSecurity Identity Compliance-2-entry",
+   "title": "",
+   "tags": "aws4 guard duty guardduty aws amazon web service security identity compliance ",
+   "kind": "vertex",
+   "width": 80,
+   "height": 110,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.guardduty;",
+   "value": "Amazon GuardDuty",
+   "shapeNames": [
+    "mxgraph.aws4.productIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:960"
+  },
+  {
+   "id": "aws4bSecurity Identity Compliance-3-entry",
+   "title": "",
+   "tags": "aws4 inspector aws amazon web service security identity compliance ",
+   "kind": "vertex",
+   "width": 80,
+   "height": 110,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.inspector;",
+   "value": "Amazon Inspector",
+   "shapeNames": [
+    "mxgraph.aws4.productIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:962"
+  },
+  {
+   "id": "aws4bSecurity Identity Compliance-4-entry",
+   "title": "",
+   "tags": "aws4 artifact aws amazon web service security identity compliance ",
+   "kind": "vertex",
+   "width": 80,
+   "height": 100,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.artifact;",
+   "value": "AWS Artifact",
+   "shapeNames": [
+    "mxgraph.aws4.productIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:964"
+  },
+  {
+   "id": "aws4bSecurity Identity Compliance-5-entry",
+   "title": "",
+   "tags": "aws4 certificate manager aws amazon web service security identity compliance ",
+   "kind": "vertex",
+   "width": 80,
+   "height": 110,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.certificate_manager_3;",
+   "value": "AWS Certificate Manager",
+   "shapeNames": [
+    "mxgraph.aws4.productIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:966"
+  },
+  {
+   "id": "aws4bSecurity Identity Compliance-6-entry",
+   "title": "",
+   "tags": "aws4 cloudhsm aws amazon web service security identity compliance ",
+   "kind": "vertex",
+   "width": 80,
+   "height": 110,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.cloudhsm;",
+   "value": "AWS CloudHSM",
+   "shapeNames": [
+    "mxgraph.aws4.productIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:968"
+  },
+  {
+   "id": "aws4bSecurity Identity Compliance-7-entry",
+   "title": "",
+   "tags": "aws4 directory service aws amazon web service security identity compliance ",
+   "kind": "vertex",
+   "width": 80,
+   "height": 110,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.directory_service;",
+   "value": "AWS Directory Service",
+   "shapeNames": [
+    "mxgraph.aws4.productIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:970"
+  },
+  {
+   "id": "aws4bSecurity Identity Compliance-8-entry",
+   "title": "",
+   "tags": "aws4 firewall manager aws amazon web service security identity compliance ",
+   "kind": "vertex",
+   "width": 80,
+   "height": 110,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.firewall_manager;",
+   "value": "AWS Firewall Manager",
+   "shapeNames": [
+    "mxgraph.aws4.productIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:972"
+  },
+  {
+   "id": "aws4bSecurity Identity Compliance-9-entry",
+   "title": "",
+   "tags": "aws4 key management service aws amazon web service security identity compliance ",
+   "kind": "vertex",
+   "width": 80,
+   "height": 120,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.key_management_service;",
+   "value": "AWS Key Management Service",
+   "shapeNames": [
+    "mxgraph.aws4.productIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:974"
+  },
+  {
+   "id": "aws4bSecurity Identity Compliance-10-entry",
+   "title": "",
+   "tags": "aws4 secrets manager aws amazon web service security identity compliance ",
+   "kind": "vertex",
+   "width": 80,
+   "height": 110,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.secrets_manager;",
+   "value": "AWS Secrets Manager",
+   "shapeNames": [
+    "mxgraph.aws4.productIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:976"
+  },
+  {
+   "id": "aws4bSecurity Identity Compliance-11-entry",
+   "title": "",
+   "tags": "aws4 shield aws amazon web service security identity compliance ",
+   "kind": "vertex",
+   "width": 80,
+   "height": 100,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.shield;",
+   "value": "AWS Shield",
+   "shapeNames": [
+    "mxgraph.aws4.productIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:978"
+  },
+  {
+   "id": "aws4bSecurity Identity Compliance-12-entry",
+   "title": "",
+   "tags": "aws4 single sign on aws amazon web service security identity compliance ",
+   "kind": "vertex",
+   "width": 80,
+   "height": 110,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.single_sign_on;",
+   "value": "AWS Single Sign-On",
+   "shapeNames": [
+    "mxgraph.aws4.productIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:980"
+  },
+  {
+   "id": "aws4bSecurity Identity Compliance-13-entry",
+   "title": "",
+   "tags": "aws4 waf aws amazon web service security identity compliance ",
+   "kind": "vertex",
+   "width": 80,
+   "height": 100,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.waf;",
+   "value": "AWS WAF",
+   "shapeNames": [
+    "mxgraph.aws4.productIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:982"
+  },
+  {
+   "id": "aws4bSecurity Identity Compliance-14-entry",
+   "title": "",
+   "tags": "aws4 addon add on aws amazon web service security identity compliance ",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#232F3E;fillColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.addon;",
+   "value": "Add-on",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:985"
+  },
+  {
+   "id": "aws4bSecurity Identity Compliance-15-entry",
+   "title": "",
+   "tags": "aws4 sts aws amazon web service security identity compliance ",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#232F3E;fillColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.sts;",
+   "value": "AWS STS",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:987"
+  },
+  {
+   "id": "aws4bSecurity Identity Compliance-16-entry",
+   "title": "",
+   "tags": "aws4 sts alternate aws amazon web service security identity compliance ",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#232F3E;fillColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.sts_alternate;",
+   "value": "AWS STS\n(alternate)",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:989"
+  },
+  {
+   "id": "aws4bSecurity Identity Compliance-17-entry",
+   "title": "",
+   "tags": "aws4 data encryption key aws amazon web service security identity compliance ",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#232F3E;fillColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.data_encryption_key;",
+   "value": "Data\nencryption\nkey",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:991"
+  },
+  {
+   "id": "aws4bSecurity Identity Compliance-18-entry",
+   "title": "",
+   "tags": "aws4 encrypted data aws amazon web service security identity compliance ",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#232F3E;fillColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.encrypted_data;",
+   "value": "Encrypted\ndata",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:993"
+  },
+  {
+   "id": "aws4bSecurity Identity Compliance-19-entry",
+   "title": "",
+   "tags": "aws4 long term security credential aws amazon web service security identity compliance ",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#232F3E;fillColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.long_term_security_credential;",
+   "value": "Long-term\nsecurity\ncredential",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:995"
+  },
+  {
+   "id": "aws4bSecurity Identity Compliance-20-entry",
+   "title": "",
+   "tags": "aws4 mfa token aws amazon web service security identity compliance ",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#232F3E;fillColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.mfa_token;",
+   "value": "MFA Token",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:997"
+  },
+  {
+   "id": "aws4bSecurity Identity Compliance-21-entry",
+   "title": "",
+   "tags": "aws4 permissions aws amazon web service security identity compliance ",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#232F3E;fillColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.permissions;",
+   "value": "Permissions",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:999"
+  },
+  {
+   "id": "aws4bSecurity Identity Compliance-22-entry",
+   "title": "",
+   "tags": "aws4 role aws amazon web service security identity compliance ",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#232F3E;fillColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.role;",
+   "value": "Role",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:1001"
+  },
+  {
+   "id": "aws4bSecurity Identity Compliance-23-entry",
+   "title": "",
+   "tags": "aws4 temporary security credential aws amazon web service security identity compliance ",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#232F3E;fillColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.temporary_security_credential;",
+   "value": "Temporary\nsecurity\ncredential",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:1003"
+  },
+  {
+   "id": "aws4bSecurity Identity Compliance-24-entry",
+   "title": "",
+   "tags": "aws4 agent aws amazon web service security identity compliance ",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#232F3E;fillColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.agent;",
+   "value": "Agent",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:1005"
+  },
+  {
+   "id": "aws4bSecurity Identity Compliance-25-entry",
+   "title": "",
+   "tags": "aws4 certificate manager aws amazon web service security identity compliance ",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#232F3E;fillColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.certificate_manager_2;",
+   "value": "Certificate\nmanager",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:1007"
+  },
+  {
+   "id": "aws4bSecurity Identity Compliance-26-entry",
+   "title": "",
+   "tags": "aws4 filtering rule aws amazon web service security identity compliance ",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#232F3E;fillColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.filtering_rule;",
+   "value": "Filtering rule",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:1009"
+  }
+ ]
+}

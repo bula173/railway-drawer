@@ -1,0 +1,268 @@
+{
+ "id": "threatModeling",
+ "title": "Threat Modeling",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-ThreatModeling.js:7",
+ "entries": [
+  {
+   "id": "threatModeling-0-external-entity",
+   "title": "External Entity",
+   "tags": "external entity threat modeling  External Entity",
+   "kind": "vertex",
+   "width": 120,
+   "height": 60,
+   "style": "rounded=0;whiteSpace=wrap;html=1;",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-ThreatModeling.js:17"
+  },
+  {
+   "id": "threatModeling-1-process",
+   "title": "Process",
+   "tags": "process threat modeling  Process",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "ellipse;whiteSpace=wrap;html=1;aspect=fixed;",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-ThreatModeling.js:18"
+  },
+  {
+   "id": "threatModeling-2-multi-process",
+   "title": "Multi-Process",
+   "tags": "multi process threat modeling  Multi-Process",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "ellipse;shape=doubleEllipse;whiteSpace=wrap;html=1;aspect=fixed;",
+   "shapeNames": [
+    "doubleEllipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-ThreatModeling.js:19"
+  },
+  {
+   "id": "threatModeling-3-data-store",
+   "title": "Data Store",
+   "tags": "data store threat modeling  Data Store",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "shape=partialRectangle;whiteSpace=wrap;html=1;left=0;right=0;fillColor=none;",
+   "shapeNames": [
+    "partialRectangle"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ThreatModeling.js:20"
+  },
+  {
+   "id": "threatModeling-4-data-flow",
+   "title": "Data Flow",
+   "tags": "threat modeling data flow",
+   "kind": "edge",
+   "width": 50,
+   "height": 50,
+   "style": "endArrow=classic;html=1;fontColor=#FF3333;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ThreatModeling.js:21"
+  },
+  {
+   "id": "threatModeling-5-bidirectional-data-flow",
+   "title": "Bidirectional Data Flow",
+   "tags": "threat modeling bidirectional data flow",
+   "kind": "edge",
+   "width": 50,
+   "height": 50,
+   "style": "endArrow=classic;startArrow=classic;html=1;fontColor=#FF3333;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ThreatModeling.js:22"
+  },
+  {
+   "id": "threatModeling-6-trust-boundary",
+   "title": "Trust Boundary",
+   "tags": "trust boundary threat modeling  Trust Boundary",
+   "kind": "vertex",
+   "width": 290,
+   "height": 140,
+   "style": "html=1;fontColor=#FF3333;fontStyle=1;align=left;verticalAlign=top;spacing=0;labelBorderColor=none;fillColor=none;dashed=1;strokeWidth=2;strokeColor=#FF3333;spacingLeft=4;spacingTop=-3;",
+   "value": "Trust Boundary",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-ThreatModeling.js:23"
+  },
+  {
+   "id": "threatModeling-7-trust-boundary",
+   "title": "Trust Boundary",
+   "tags": "trust boundary threat modeling  Trust Boundary",
+   "kind": "vertex",
+   "width": 20,
+   "height": 330,
+   "style": "shape=requiredInterface;html=1;verticalLabelPosition=bottom;dashed=1;strokeColor=#FF3333;strokeWidth=2;fillColor=none;fontColor=#FF3333;align=center;verticalAlign=top;labelPosition=center;",
+   "shapeNames": [
+    "requiredInterface"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ThreatModeling.js:24"
+  },
+  {
+   "id": "threatModeling-8-label",
+   "title": "Label",
+   "tags": "label threat modeling  Label",
+   "kind": "vertex",
+   "width": 80,
+   "height": 20,
+   "style": "text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;",
+   "value": "Label",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ThreatModeling.js:25"
+  },
+  {
+   "id": "threatModeling-9-asset-label",
+   "title": "Asset Label",
+   "tags": "asset label threat modeling  Asset Label",
+   "kind": "vertex",
+   "width": 40,
+   "height": 20,
+   "style": "text;html=1;strokeColor=#d6b656;fillColor=#fff2cc;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;",
+   "value": "A01",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ThreatModeling.js:26"
+  },
+  {
+   "id": "threatModeling-10-security-control-label",
+   "title": "Security Control Label",
+   "tags": "security control label threat modeling  Security Control Label",
+   "kind": "vertex",
+   "width": 30,
+   "height": 20,
+   "style": "text;html=1;strokeColor=#82b366;fillColor=#d5e8d4;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;",
+   "value": "C01",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ThreatModeling.js:27"
+  },
+  {
+   "id": "threatModeling-11-threat-actor-label",
+   "title": "Threat Actor Label",
+   "tags": "threat actor label threat modeling  Threat Actor Label",
+   "kind": "vertex",
+   "width": 40,
+   "height": 20,
+   "style": "text;html=1;strokeColor=#b85450;fillColor=#f8cecc;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;",
+   "value": "TA01",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ThreatModeling.js:28"
+  },
+  {
+   "id": "threatModeling-12-asset-table",
+   "title": "Asset Table",
+   "tags": "asset table Asset Table",
+   "kind": "cells",
+   "width": 360,
+   "height": 90,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Assets\" style=\"shape=table;startSize=30;container=1;collapsible=0;childLayout=tableLayout;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;shadow=1;swimlaneFillColor=#FFFFFF;fontColor=#000000;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"360\" height=\"90\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=inherit;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;fontColor=#000000;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"30\" width=\"360\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"ID\" style=\"html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;fontColor=#000000;fontStyle=1\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"120\" height=\"30\" as=\"geometry\"><mxRectangle width=\"120\" height=\"30\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"Description\" style=\"html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;fontColor=#000000;fontStyle=1\" vertex=\"1\" parent=\"3\"><mxGeometry x=\"120\" width=\"240\" height=\"30\" as=\"geometry\"><mxRectangle width=\"240\" height=\"30\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"6\" value=\"\" style=\"shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;fontColor=#000000;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"60\" width=\"360\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"A01\" style=\"html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;fontColor=#000000;fontStyle=1\" vertex=\"1\" parent=\"6\"><mxGeometry width=\"120\" height=\"30\" as=\"geometry\"><mxRectangle width=\"120\" height=\"30\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"8\" value=\"\" style=\"html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;fontColor=#000000;fontStyle=1\" vertex=\"1\" parent=\"6\"><mxGeometry x=\"120\" width=\"240\" height=\"30\" as=\"geometry\"><mxRectangle width=\"240\" height=\"30\" as=\"alternateBounds\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "table",
+    "tableRow"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ThreatModeling.js:30"
+  },
+  {
+   "id": "threatModeling-13-threat-actor-table",
+   "title": "Threat Actor Table",
+   "tags": "threat actor table Threat Actor Table",
+   "kind": "cells",
+   "width": 360,
+   "height": 90,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Threat Actors\" style=\"shape=table;startSize=30;container=1;collapsible=0;childLayout=tableLayout;fillColor=#F8CECC;strokeColor=#B85450;fontStyle=1;shadow=1;swimlaneFillColor=#FFFFFF;fontColor=#000000;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"360\" height=\"90\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=inherit;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;fontColor=#000000;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"30\" width=\"360\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"ID\" style=\"html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;fontColor=#000000;fontStyle=1\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"120\" height=\"30\" as=\"geometry\"><mxRectangle width=\"120\" height=\"30\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"Description\" style=\"html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;fontColor=#000000;fontStyle=1\" vertex=\"1\" parent=\"3\"><mxGeometry x=\"120\" width=\"240\" height=\"30\" as=\"geometry\"><mxRectangle width=\"240\" height=\"30\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"6\" value=\"\" style=\"shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;fontColor=#000000;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"60\" width=\"360\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"TA01\" style=\"html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;fontColor=#000000;fontStyle=1\" vertex=\"1\" parent=\"6\"><mxGeometry width=\"120\" height=\"30\" as=\"geometry\"><mxRectangle width=\"120\" height=\"30\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"8\" value=\"\" style=\"html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;fontColor=#000000;fontStyle=1\" vertex=\"1\" parent=\"6\"><mxGeometry x=\"120\" width=\"240\" height=\"30\" as=\"geometry\"><mxRectangle width=\"240\" height=\"30\" as=\"alternateBounds\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "table",
+    "tableRow"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ThreatModeling.js:31"
+  },
+  {
+   "id": "threatModeling-14-security-control-table",
+   "title": "Security Control Table",
+   "tags": "security control table Security Control Table",
+   "kind": "cells",
+   "width": 360,
+   "height": 90,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Security Controls\" style=\"shape=table;startSize=30;container=1;collapsible=0;childLayout=tableLayout;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;swimlaneFillColor=#FFFFFF;fontColor=#000000;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"360\" height=\"90\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=inherit;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;fontColor=#000000;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"30\" width=\"360\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"ID\" style=\"html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;fontColor=#000000;fontStyle=1\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"120\" height=\"30\" as=\"geometry\"><mxRectangle width=\"120\" height=\"30\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"Description\" style=\"html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;fontColor=#000000;fontStyle=1\" vertex=\"1\" parent=\"3\"><mxGeometry x=\"120\" width=\"240\" height=\"30\" as=\"geometry\"><mxRectangle width=\"240\" height=\"30\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"6\" value=\"\" style=\"shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;fontColor=#000000;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"60\" width=\"360\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"C01\" style=\"html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;fontColor=#000000;fontStyle=1\" vertex=\"1\" parent=\"6\"><mxGeometry width=\"120\" height=\"30\" as=\"geometry\"><mxRectangle width=\"120\" height=\"30\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"8\" value=\"\" style=\"html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;pointerEvents=1;fontColor=#000000;fontStyle=1\" vertex=\"1\" parent=\"6\"><mxGeometry x=\"120\" width=\"240\" height=\"30\" as=\"geometry\"><mxRectangle width=\"240\" height=\"30\" as=\"alternateBounds\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "table",
+    "tableRow"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-ThreatModeling.js:32"
+  },
+  {
+   "id": "threatModeling-15-note",
+   "title": "Note",
+   "tags": "note threat modeling  Note",
+   "kind": "vertex",
+   "width": 110.00000000000001,
+   "height": 80,
+   "style": "shape=note;strokeWidth=2;fontSize=14;size=20;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#666600;",
+   "value": "Note",
+   "shapeNames": [
+    "note"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ThreatModeling.js:34"
+  },
+  {
+   "id": "threatModeling-16-and-gate",
+   "title": "AND Gate",
+   "tags": "and gate threat modeling  AND Gate",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "shape=or;whiteSpace=wrap;html=1;direction=north;fillColor=#dae8fc;strokeColor=#6c8ebf;",
+   "value": "AND",
+   "shapeNames": [
+    "or"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ThreatModeling.js:35"
+  },
+  {
+   "id": "threatModeling-17-or-gate",
+   "title": "OR Gate",
+   "tags": "or gate threat modeling  OR Gate",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "shape=xor;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;direction=north;",
+   "value": "OR",
+   "shapeNames": [
+    "xor"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ThreatModeling.js:36"
+  },
+  {
+   "id": "threatModeling-18-leaf-node",
+   "title": "Leaf Node",
+   "tags": "leaf node threat modeling  Leaf Node",
+   "kind": "vertex",
+   "width": 120,
+   "height": 80,
+   "style": "rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;",
+   "value": "Leaf",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-ThreatModeling.js:37"
+  }
+ ]
+}

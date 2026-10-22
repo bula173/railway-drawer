@@ -1,0 +1,106 @@
+{
+ "id": "telco",
+ "title": "Clipart / Telecommunication",
+ "drawioTag": "v32.4.1",
+ "source": "",
+ "entries": [
+  {
+   "id": "telco-0-blackberry",
+   "title": "BlackBerry",
+   "tags": "blackberry",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/telecommunication/BlackBerry_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1579"
+  },
+  {
+   "id": "telco-1-cellphone",
+   "title": "Cellphone",
+   "tags": "cellphone",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/telecommunication/Cellphone_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1579"
+  },
+  {
+   "id": "telco-2-htc-smartphone",
+   "title": "HTC smartphone",
+   "tags": "htc smartphone",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/telecommunication/HTC_smartphone_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1579"
+  },
+  {
+   "id": "telco-3-iphone",
+   "title": "iPhone",
+   "tags": "iphone",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/telecommunication/iPhone_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1579"
+  },
+  {
+   "id": "telco-4-palm-treo",
+   "title": "Palm Treo",
+   "tags": "palm treo",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/telecommunication/Palm_Treo_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1579"
+  },
+  {
+   "id": "telco-5-signaltower-off",
+   "title": "Signaltower off",
+   "tags": "signaltower off",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/telecommunication/Signal_tower_off_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1579"
+  },
+  {
+   "id": "telco-6-signaltower-on",
+   "title": "Signaltower on",
+   "tags": "signaltower on",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "image;html=1;image=img/lib/clip_art/telecommunication/Signal_tower_on_128x128.png",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar.js:1579"
+  }
+ ]
+}

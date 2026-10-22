@@ -1,0 +1,736 @@
+{
+ "id": "aws4Artificial Intelligence",
+ "title": "AWS / Artificial Intelligence",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-AWS4.js:8",
+ "entries": [
+  {
+   "id": "aws4Artificial Intelligence-0-artificial-intelligence",
+   "title": "Artificial Intelligence",
+   "tags": "aws4 machine learning artificial intelligence ai aws amazon web service ai artificial intelligence  Artificial Intelligence",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.machine_learning;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1407"
+  },
+  {
+   "id": "aws4Artificial Intelligence-1-augmented-ai-a2i",
+   "title": "Augmented AI (A2I)",
+   "tags": "aws4 augmented ai a2i aws amazon web service ai artificial intelligence  Augmented AI (A2I)",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.augmented_ai;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1409"
+  },
+  {
+   "id": "aws4Artificial Intelligence-2-bedrock",
+   "title": "Bedrock",
+   "tags": "aws4 bedrock aws amazon web service ai artificial intelligence  Bedrock",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.bedrock;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1411"
+  },
+  {
+   "id": "aws4Artificial Intelligence-3-bedrock-agentcore",
+   "title": "Bedrock AgentCore",
+   "tags": "aws4 bedrock agentcore aws amazon web service ai artificial intelligence  Bedrock AgentCore",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.bedrock_agentcore;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1413"
+  },
+  {
+   "id": "aws4Artificial Intelligence-4-codeguru",
+   "title": "CodeGuru",
+   "tags": "aws4 codeguru aws amazon web service ai artificial intelligence  CodeGuru",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.codeguru_2;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1415"
+  },
+  {
+   "id": "aws4Artificial Intelligence-5-codewhisperer",
+   "title": "CodeWhisperer",
+   "tags": "aws4 codewhisperer aws amazon web service ai artificial intelligence  CodeWhisperer",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.codewhisperer;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1417"
+  },
+  {
+   "id": "aws4Artificial Intelligence-6-comprehend",
+   "title": "Comprehend",
+   "tags": "aws4 comprehend aws amazon web service ai artificial intelligence  Comprehend",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.comprehend;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1419"
+  },
+  {
+   "id": "aws4Artificial Intelligence-7-comprehend-medical",
+   "title": "Comprehend Medical",
+   "tags": "aws4 comprehend medical aws amazon web service ai artificial intelligence  Comprehend Medical",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.comprehend_medical;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1421"
+  },
+  {
+   "id": "aws4Artificial Intelligence-8-devops-guru",
+   "title": "DevOps Guru",
+   "tags": "aws4 devops guru aws amazon web service ai artificial intelligence  DevOps Guru",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.devops_guru;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1423"
+  },
+  {
+   "id": "aws4Artificial Intelligence-9-elastic-inference",
+   "title": "Elastic Inference",
+   "tags": "aws4 elastic inference aws amazon web service ai artificial intelligence  Elastic Inference",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.elastic_inference_2;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1425"
+  },
+  {
+   "id": "aws4Artificial Intelligence-10-forecast",
+   "title": "Forecast",
+   "tags": "aws4 forecast aws amazon web service ai artificial intelligence  Forecast",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.forecast;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1427"
+  },
+  {
+   "id": "aws4Artificial Intelligence-11-fraud-detector",
+   "title": "Fraud Detector",
+   "tags": "aws4 fraud detector aws amazon web service ai artificial intelligence  Fraud Detector",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.fraud_detector;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1429"
+  },
+  {
+   "id": "aws4Artificial Intelligence-12-healthlake",
+   "title": "HealthLake",
+   "tags": "aws4 healthlake aws amazon web service ai artificial intelligence  HealthLake",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.healthlake;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1431"
+  },
+  {
+   "id": "aws4Artificial Intelligence-13-kendra",
+   "title": "Kendra",
+   "tags": "aws4 kendra aws amazon web service ai artificial intelligence  Kendra",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.kendra;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1433"
+  },
+  {
+   "id": "aws4Artificial Intelligence-14-neuron",
+   "title": "Neuron",
+   "tags": "aws4 neuron ml sdk software development kit aws amazon web service ai artificial intelligence  Neuron",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.neuron_ml_sdk;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1435"
+  },
+  {
+   "id": "aws4Artificial Intelligence-15-panorama",
+   "title": "Panorama",
+   "tags": "aws4 panorama aws amazon web service ai artificial intelligence  Panorama",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.panorama;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1437"
+  },
+  {
+   "id": "aws4Artificial Intelligence-16-lex",
+   "title": "Lex",
+   "tags": "aws4 lex aws amazon web service ai artificial intelligence  Lex",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.lex;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1439"
+  },
+  {
+   "id": "aws4Artificial Intelligence-17-lookout-for-equipment",
+   "title": "Lookout for Equipment",
+   "tags": "aws4 lookout for equipment aws amazon web service ai artificial intelligence  Lookout for Equipment",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.lookout_for_equipment;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1441"
+  },
+  {
+   "id": "aws4Artificial Intelligence-18-lookout-for-vision",
+   "title": "Lookout for Vision",
+   "tags": "aws4 lookout for vision aws amazon web service ai artificial intelligence  Lookout for Vision",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.lookout_for_vision;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1443"
+  },
+  {
+   "id": "aws4Artificial Intelligence-19-monitron",
+   "title": "Monitron",
+   "tags": "aws4 monitron aws amazon web service ai artificial intelligence  Monitron",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.monitron;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1445"
+  },
+  {
+   "id": "aws4Artificial Intelligence-20-nova",
+   "title": "Nova",
+   "tags": "aws4 nova aws amazon web service ai artificial intelligence  Nova",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.nova2;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1447"
+  },
+  {
+   "id": "aws4Artificial Intelligence-21-healthomics",
+   "title": "HealthOmics",
+   "tags": "aws4 healthomics health omics aws amazon web service ai artificial intelligence  HealthOmics",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.omics;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1449"
+  },
+  {
+   "id": "aws4Artificial Intelligence-22-healthscribe",
+   "title": "HealthScribe",
+   "tags": "aws4 healthscribe aws amazon web service ai artificial intelligence  HealthScribe",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.healthscribe;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1451"
+  },
+  {
+   "id": "aws4Artificial Intelligence-23-personalize",
+   "title": "Personalize",
+   "tags": "aws4 personalize aws amazon web service ai artificial intelligence  Personalize",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.personalize;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1453"
+  },
+  {
+   "id": "aws4Artificial Intelligence-24-polly",
+   "title": "Polly",
+   "tags": "aws4 polly aws amazon web service ai artificial intelligence  Polly",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.polly;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1455"
+  },
+  {
+   "id": "aws4Artificial Intelligence-25-q",
+   "title": "Q",
+   "tags": "aws4 q aws amazon web service ai artificial intelligence  Q",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.q;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1457"
+  },
+  {
+   "id": "aws4Artificial Intelligence-26-rekognition",
+   "title": "Rekognition",
+   "tags": "aws4 rekognition aws amazon web service ai artificial intelligence  Rekognition",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.rekognition_2;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1459"
+  },
+  {
+   "id": "aws4Artificial Intelligence-27-sagemaker-ai",
+   "title": "SageMaker AI",
+   "tags": "aws4 sagemaker ai aws amazon web service ai artificial intelligence  SageMaker AI",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.sagemaker;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1461"
+  },
+  {
+   "id": "aws4Artificial Intelligence-28-sagemaker-ground-truth",
+   "title": "SageMaker Ground Truth",
+   "tags": "aws4 sagemaker ground truth aws amazon web service ai artificial intelligence  SageMaker Ground Truth",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.sagemaker_ground_truth;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1463"
+  },
+  {
+   "id": "aws4Artificial Intelligence-29-sagemaker-studio-lab",
+   "title": "SageMaker Studio Lab",
+   "tags": "aws4 sagemaker studio lab aws amazon web service ai artificial intelligence  SageMaker Studio Lab",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.sagemaker_studio_lab;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1465"
+  },
+  {
+   "id": "aws4Artificial Intelligence-30-textract",
+   "title": "Textract",
+   "tags": "aws4 textract aws amazon web service ai artificial intelligence  Textract",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.textract;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1467"
+  },
+  {
+   "id": "aws4Artificial Intelligence-31-transcribe",
+   "title": "Transcribe",
+   "tags": "aws4 transcribe aws amazon web service ai artificial intelligence  Transcribe",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.transcribe;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1469"
+  },
+  {
+   "id": "aws4Artificial Intelligence-32-translate",
+   "title": "Translate",
+   "tags": "aws4 translate aws amazon web service ai artificial intelligence  Translate",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.translate;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1471"
+  },
+  {
+   "id": "aws4Artificial Intelligence-33-apache-mxnet-on-aws",
+   "title": "Apache MXNet on AWS",
+   "tags": "aws4 apache mxnet on aws aws amazon web service ai artificial intelligence  Apache MXNet on AWS",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.apache_mxnet_on_aws;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1473"
+  },
+  {
+   "id": "aws4Artificial Intelligence-34-app-studio",
+   "title": "App Studio",
+   "tags": "aws4 app application studio aws amazon web service ai artificial intelligence  App Studio",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.app_studio;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1475"
+  },
+  {
+   "id": "aws4Artificial Intelligence-35-deep-learning-amis",
+   "title": "Deep Learning AMIs",
+   "tags": "aws4 deep learning amis aws amazon web service ai artificial intelligence  Deep Learning AMIs",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.deep_learning_amis;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1477"
+  },
+  {
+   "id": "aws4Artificial Intelligence-36-deepracer",
+   "title": "DeepRacer",
+   "tags": "aws4 deepracer aws amazon web service ai artificial intelligence  DeepRacer",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.deepracer;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1479"
+  },
+  {
+   "id": "aws4Artificial Intelligence-37-healthimaging",
+   "title": "HealthImaging",
+   "tags": "aws4 healthimaging aws amazon web service ai artificial intelligence  HealthImaging",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.healthimaging;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1481"
+  },
+  {
+   "id": "aws4Artificial Intelligence-38-tensorflow-on-aws",
+   "title": "TensorFlow on AWS",
+   "tags": "aws4 tensorflow on aws aws amazon web service ai artificial intelligence  TensorFlow on AWS",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.tensorflow_on_aws;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1483"
+  },
+  {
+   "id": "aws4Artificial Intelligence-39-pytorch-on-aws",
+   "title": "PyTorch on AWS",
+   "tags": "aws4 torchserve pytorch py torch on aws amazon web service ai artificial intelligence  PyTorch on AWS",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.torchserve;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1485"
+  },
+  {
+   "id": "aws4Artificial Intelligence-40-deep-learning-containers",
+   "title": "Deep Learning Containers",
+   "tags": "aws4 deep learning containers aws amazon web service ai artificial intelligence  Deep Learning Containers",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.deep_learning_containers;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1487"
+  },
+  {
+   "id": "aws4Artificial Intelligence-41-elemental-inference",
+   "title": "Elemental Inference",
+   "tags": "aws4 elemental inference aws amazon web service ai artificial intelligence  Elemental Inference",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.elemental_inference;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1489"
+  },
+  {
+   "id": "aws4Artificial Intelligence-42-devops-guru-insights",
+   "title": "DevOps Guru Insights",
+   "tags": "aws4 devops guru insights aws amazon web service ai artificial intelligence  DevOps Guru Insights",
+   "kind": "vertex",
+   "width": 77,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#01A88D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.devops_guru_insights;",
+   "shapeNames": [
+    "mxgraph.aws4.devops_guru_insights"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1492"
+  },
+  {
+   "id": "aws4Artificial Intelligence-43-rekognition-image",
+   "title": "Rekognition image",
+   "tags": "aws4 rekognition image aws amazon web service ai artificial intelligence  Rekognition image",
+   "kind": "vertex",
+   "width": 77,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#01A88D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.rekognition_image;",
+   "shapeNames": [
+    "mxgraph.aws4.rekognition_image"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1494"
+  },
+  {
+   "id": "aws4Artificial Intelligence-44-rekognition-video",
+   "title": "Rekognition video",
+   "tags": "aws4 rekognition video aws amazon web service ai artificial intelligence  Rekognition video",
+   "kind": "vertex",
+   "width": 77,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#01A88D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.rekognition_video;",
+   "shapeNames": [
+    "mxgraph.aws4.rekognition_video"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1496"
+  },
+  {
+   "id": "aws4Artificial Intelligence-45-sagemaker-canvas",
+   "title": "SageMaker Canvas",
+   "tags": "aws4 sagemaker canvas aws amazon web service ai artificial intelligence  SageMaker Canvas",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#01A88D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.sagemaker_canvas;",
+   "shapeNames": [
+    "mxgraph.aws4.sagemaker_canvas"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1498"
+  },
+  {
+   "id": "aws4Artificial Intelligence-46-sagemaker-geospatial-ml",
+   "title": "SageMaker Geospatial ML",
+   "tags": "aws4 sagemaker geospatial ml aws amazon web service ai artificial intelligence  SageMaker Geospatial ML",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#01A88D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.sagemaker_geospatial_ml;",
+   "shapeNames": [
+    "mxgraph.aws4.sagemaker_geospatial_ml"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1500"
+  },
+  {
+   "id": "aws4Artificial Intelligence-47-model",
+   "title": "Model",
+   "tags": "aws4 sagemaker model aws amazon web service ai artificial intelligence  Model",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#01A88D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.sagemaker_model;",
+   "shapeNames": [
+    "mxgraph.aws4.sagemaker_model"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1502"
+  },
+  {
+   "id": "aws4Artificial Intelligence-48-notebook",
+   "title": "Notebook",
+   "tags": "aws4 sagemaker notebook aws amazon web service ai artificial intelligence  Notebook",
+   "kind": "vertex",
+   "width": 68,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#01A88D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.sagemaker_notebook;",
+   "shapeNames": [
+    "mxgraph.aws4.sagemaker_notebook"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1504"
+  },
+  {
+   "id": "aws4Artificial Intelligence-49-shadow-testing",
+   "title": "Shadow Testing",
+   "tags": "aws4 sagemaker shadow testing aws amazon web service ai artificial intelligence  Shadow Testing",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#01A88D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.sagemaker_shadow_testing;",
+   "shapeNames": [
+    "mxgraph.aws4.sagemaker_shadow_testing"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1506"
+  },
+  {
+   "id": "aws4Artificial Intelligence-50-train",
+   "title": "Train",
+   "tags": "aws4 sagemaker train aws amazon web service ai artificial intelligence  Train",
+   "kind": "vertex",
+   "width": 78,
+   "height": 65,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#01A88D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.sagemaker_train;",
+   "shapeNames": [
+    "mxgraph.aws4.sagemaker_train"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1508"
+  },
+  {
+   "id": "aws4Artificial Intelligence-51-textract-analyze-lending",
+   "title": "Textract Analyze Lending",
+   "tags": "aws4 textract analyze lending aws amazon web service ai artificial intelligence  Textract Analyze Lending",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#01A88D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.textract_analyze_lending;",
+   "shapeNames": [
+    "mxgraph.aws4.textract_analyze_lending"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1510"
+  }
+ ]
+}

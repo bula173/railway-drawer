@@ -1,0 +1,153 @@
+{
+ "id": "archimate3Implementation and Migration",
+ "title": "Archimate 3.2 / Implementation and Migration",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:8",
+ "entries": [
+  {
+   "id": "archimate3Implementation and Migration-0-work-package",
+   "title": "Work Package",
+   "tags": "archimate3  archimate implementation migration element work package Work Package",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#FFE0E0;shape=mxgraph.archimate3.application;appType=workPackage;archiType=rounded;",
+   "value": "Work Package",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:255"
+  },
+  {
+   "id": "archimate3Implementation and Migration-1-work-package",
+   "title": "Work Package",
+   "tags": "archimate3  archimate implementation migration element work package Work Package",
+   "kind": "vertex",
+   "width": 60,
+   "height": 50,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#FFE0E0;shape=mxgraph.archimate3.workPackage;strokeWidth=5;",
+   "shapeNames": [
+    "mxgraph.archimate3.workPackage"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:257"
+  },
+  {
+   "id": "archimate3Implementation and Migration-2-deliverable",
+   "title": "Deliverable",
+   "tags": "archimate3  archimate implementation migration element deliverable Deliverable",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#FFE0E0;shape=mxgraph.archimate3.application;appType=deliverable;",
+   "value": "Deliverable",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:259"
+  },
+  {
+   "id": "archimate3Implementation and Migration-3-deliverable",
+   "title": "Deliverable",
+   "tags": "archimate3  archimate implementation migration element deliverable Deliverable",
+   "kind": "vertex",
+   "width": 60,
+   "height": 35,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#FFE0E0;shape=mxgraph.archimate3.deliverable;",
+   "shapeNames": [
+    "mxgraph.archimate3.deliverable"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:261"
+  },
+  {
+   "id": "archimate3Implementation and Migration-4-implementation-event",
+   "title": "Implementation Event",
+   "tags": "archimate3  archimate implementation migration element implementation event Implementation Event",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#FFE0E0;shape=mxgraph.archimate3.application;appType=event;archiType=rounded;",
+   "value": "Implementation Event",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:263"
+  },
+  {
+   "id": "archimate3Implementation and Migration-5-event",
+   "title": "Event",
+   "tags": "archimate3  archimate implementation migration element event Event",
+   "kind": "vertex",
+   "width": 60,
+   "height": 35,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#FFE0E0;shape=mxgraph.archimate3.event;",
+   "shapeNames": [
+    "mxgraph.archimate3.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:265"
+  },
+  {
+   "id": "archimate3Implementation and Migration-6-plateau",
+   "title": "Plateau",
+   "tags": "archimate3  archimate implementation migration element plateau Plateau",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#FFE0E0;shape=mxgraph.archimate3.application;appType=plateau;",
+   "value": "Plateau",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:267"
+  },
+  {
+   "id": "archimate3Implementation and Migration-7-plateau",
+   "title": "Plateau",
+   "tags": "archimate3  archimate implementation migration element plateau Plateau",
+   "kind": "vertex",
+   "width": 60,
+   "height": 40,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#FFE0E0;shape=mxgraph.archimate3.plateau;",
+   "shapeNames": [
+    "mxgraph.archimate3.plateau"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:269"
+  },
+  {
+   "id": "archimate3Implementation and Migration-8-gap",
+   "title": "Gap",
+   "tags": "archimate3  archimate implementation migration element gap Gap",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#FFE0E0;shape=mxgraph.archimate3.application;appType=gap;",
+   "value": "Gap",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:271"
+  },
+  {
+   "id": "archimate3Implementation and Migration-9-gap",
+   "title": "Gap",
+   "tags": "archimate3  archimate implementation migration element gap Gap",
+   "kind": "vertex",
+   "width": 55,
+   "height": 40,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#FFE0E0;shape=mxgraph.archimate3.gapIcon;",
+   "shapeNames": [
+    "mxgraph.archimate3.gapIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:273"
+  }
+ ]
+}

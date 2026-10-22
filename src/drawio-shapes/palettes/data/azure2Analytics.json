@@ -1,0 +1,246 @@
+{
+ "id": "azure2Analytics",
+ "title": "Azure / Analytics",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Azure2.js:8",
+ "entries": [
+  {
+   "id": "azure2Analytics-0-analysis-services",
+   "title": "Analysis Services",
+   "tags": "azure2 analysis services azure analytics  Analysis Services",
+   "kind": "vertex",
+   "width": 63,
+   "height": 48,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/analytics/Analysis_Services.svg;points=[[0.204,0,0],[0.281,1,0],[0,0.205,0],[1,0.441,0],[0.995,0.24,0],[0.995,0.642,0],[0.085,0.993,0],[0.005,0.004,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:194"
+  },
+  {
+   "id": "azure2Analytics-1-data-explorer-clusters",
+   "title": "Data Explorer Clusters",
+   "tags": "azure2 data explorer clusters azure analytics  Data Explorer Clusters",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/databases/Azure_Data_Explorer_Clusters.svg;points=[[0.522,0,0],[0.5,0.851,0],[0.141,0.5,0],[1,0.477,0],[0.995,0.013,0],[0.997,0.937,0],[0.013,0.957,0],[0.06,0.005,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:196"
+  },
+  {
+   "id": "azure2Analytics-2-data-factories",
+   "title": "Data Factories",
+   "tags": "azure2 data factories azure analytics  Data Factories",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/databases/Data_Factory.svg;points=[[0.25,0,0],[0.5,1,0],[0,0.529,0],[1,0.5,0],[0.995,0.348,0],[0.997,0.985,0],[0.013,0.995,0],[0.013,0.058,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:198"
+  },
+  {
+   "id": "azure2Analytics-3-data-lake-analytics",
+   "title": "Data Lake Analytics",
+   "tags": "azure2 data lake analytics azure analytics  Data Lake Analytics",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/analytics/Data_Lake_Analytics.svg;points=[[0.5,0.062,0],[0.5,0.94,0],[0.06,0.5,0],[0.938,0.5,0],[0.865,0.118,0],[0.88,0.87,0],[0.123,0.877,0],[0.125,0.123,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:200"
+  },
+  {
+   "id": "azure2Analytics-4-data-lake-store-gen1",
+   "title": "Data Lake Store Gen1",
+   "tags": "azure2 data lake store gen1 azure analytics  Data Lake Store Gen1",
+   "kind": "vertex",
+   "width": 64,
+   "height": 52,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/analytics/Data_Lake_Store_Gen1.svg;points=[[0.5,0.083,0],[0.5,1,0],[0.003,0.498,0],[0.998,0.554,0],[0.99,0.114,0],[0.987,0.996,0],[0.013,0.996,0],[0.013,0.004,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:202"
+  },
+  {
+   "id": "azure2Analytics-5-databricks",
+   "title": "Databricks",
+   "tags": "azure2 azure databricks azure analytics  Databricks",
+   "kind": "vertex",
+   "width": 62.8,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/analytics/Azure_Databricks.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.501,0],[0.886,0.5,0],[1,0.263,0],[1,0.742,0],[0,0.742,0],[0,0.26,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:204"
+  },
+  {
+   "id": "azure2Analytics-6-endpoint-analytics",
+   "title": "Endpoint Analytics",
+   "tags": "azure2 endpoint analytics azure analytics  Endpoint Analytics",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/analytics/Endpoint_Analytics.svg;points=[[0.465,0.003,0],[0.5,0.665,0],[0,0.5,0],[1,0.576,0],[0.922,0.013,0],[0.832,0.985,0],[0.005,0.655,0],[0.015,0.005,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:206"
+  },
+  {
+   "id": "azure2Analytics-7-event-hub-clusters",
+   "title": "Event Hub Clusters",
+   "tags": "azure2 event hub clusters azure analytics  Event Hub Clusters",
+   "kind": "vertex",
+   "width": 64,
+   "height": 52,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/analytics/Event_Hub_Clusters.svg;points=[[0.5,0.006,0],[0.5,0.997,0],[0.001,0.5,0],[0.999,0.5,0],[0.744,0.251,0],[0.992,0.996,0],[0.254,0.792,0],[0.013,0,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:208"
+  },
+  {
+   "id": "azure2Analytics-8-event-hubs",
+   "title": "Event Hubs",
+   "tags": "azure2 event hubs azure analytics  Event Hubs",
+   "kind": "vertex",
+   "width": 67,
+   "height": 60,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/analytics/Event_Hubs.svg;points=[[0.5,0.003,0],[0.5,0.997,0],[0,0.5,0],[1,0.5,0],[0.985,0.006,0],[0.985,0.994,0],[0.015,0.994,0],[0.015,0.006,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:210"
+  },
+  {
+   "id": "azure2Analytics-9-hd-insight-clusters",
+   "title": "HD Insight Clusters",
+   "tags": "azure2 hd insight clusters azure analytics  HD Insight Clusters",
+   "kind": "vertex",
+   "width": 63,
+   "height": 62,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/analytics/HD_Insight_Clusters.svg;points=[[0.5,0.003,0],[0.5,0.997,0],[0,0.393,0],[1,0.397,0],[0.847,0.117,0],[0.897,0.786,0],[0.1,0.786,0],[0.158,0.115,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:212"
+  },
+  {
+   "id": "azure2Analytics-10-log-analytics-workspaces",
+   "title": "Log Analytics Workspaces",
+   "tags": "azure2 log analytics workspaces azure analytics  Log Analytics Workspaces",
+   "kind": "vertex",
+   "width": 64,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/analytics/Log_Analytics_Workspaces.svg;points=[[0.5,0.03,0],[0.5,1,0],[0,0.5,0],[0.97,0.5,0],[0.88,0.083,0],[0.005,0.985,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:214"
+  },
+  {
+   "id": "azure2Analytics-11-power-bi-embedded",
+   "title": "Power BI Embedded",
+   "tags": "azure2 power bi embedded azure analytics  Power BI Embedded",
+   "kind": "vertex",
+   "width": 51,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/analytics/Power_BI_Embedded.svg;points=[[0.777,0,0],[0.5,1,0],[0.038,0.5,0],[1,0.5,0],[0.993,0.018,0],[0.993,0.982,0],[0.007,0.982,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:216"
+  },
+  {
+   "id": "azure2Analytics-12-power-platform",
+   "title": "Power Platform",
+   "tags": "azure2 power platform azure analytics  Power Platform",
+   "kind": "vertex",
+   "width": 64.92,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/analytics/Power_Platform.svg;points=[[0.61,0,0],[0.086,0.5,0],[1,0.164,0],[0.966,0.063,0],[0.814,0.552,0],[0.147,0.987,0],[0.343,0.013,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:218"
+  },
+  {
+   "id": "azure2Analytics-13-private-link-services",
+   "title": "Private Link Services",
+   "tags": "azure2 private link services azure analytics  Private Link Services",
+   "kind": "vertex",
+   "width": 58.8,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/networking/Private_Link_Hub.svg;points=[[0.5,0.005,0],[0.5,0.995,0],[0,0.499,0],[1,0.5,0],[1,0.25,0],[1,0.75,0],[0,0.747,0],[0,0.25,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:220"
+  },
+  {
+   "id": "azure2Analytics-14-stream-analytics-jobs",
+   "title": "Stream Analytics Jobs",
+   "tags": "azure2 Stream Analytics Jobs azure analytics  Stream Analytics Jobs",
+   "kind": "vertex",
+   "width": 68,
+   "height": 57.99999999999999,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/analytics/Stream_Analytics_Jobs.svg;points=[[0.576,0,0],[0.581,1,0],[0.069,0.5,0],[1,0.488,0],[0.852,0.085,0],[0.857,0.891,0],[0.03,0.651,0],[0.29,0.1,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:222"
+  },
+  {
+   "id": "azure2Analytics-15-synapse-analytics",
+   "title": "Synapse Analytics",
+   "tags": "azure2 synapse analytics azure analytics  Synapse Analytics",
+   "kind": "vertex",
+   "width": 60,
+   "height": 69,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/analytics/Azure_Synapse_Analytics.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.497,0],[1,0.5,0],[1,0.248,0],[1,0.752,0],[0,0.747,0],[0,0.248,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:224"
+  },
+  {
+   "id": "azure2Analytics-16-workbooks",
+   "title": "Workbooks",
+   "tags": "azure2 workbooks azure analytics  Workbooks",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/analytics/Azure_Workbooks.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.501,0],[0.962,0.015,0],[0.975,0.975,0],[0.025,0.975,0],[0.038,0.015,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:226"
+  }
+ ]
+}

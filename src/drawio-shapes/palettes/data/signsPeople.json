@@ -1,0 +1,274 @@
+{
+ "id": "signsPeople",
+ "title": "Signs / People",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Signs.js:7",
+ "entries": [
+  {
+   "id": "signsPeople-0-baby-1",
+   "title": "Baby 1",
+   "tags": "signs people  Baby 1 Baby 1",
+   "kind": "vertex",
+   "width": 76,
+   "height": 102,
+   "style": "shape=mxgraph.signs.people.baby_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.people.baby_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsPeople-1-baby-2",
+   "title": "Baby 2",
+   "tags": "signs people  Baby 2 Baby 2",
+   "kind": "vertex",
+   "width": 77,
+   "height": 99,
+   "style": "shape=mxgraph.signs.people.baby_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.people.baby_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsPeople-2-changing-station",
+   "title": "Changing Station",
+   "tags": "signs people  Changing Station Changing Station",
+   "kind": "vertex",
+   "width": 94,
+   "height": 98,
+   "style": "shape=mxgraph.signs.people.changing_station;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.people.changing_station"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsPeople-3-construction",
+   "title": "Construction",
+   "tags": "signs people  Construction Construction",
+   "kind": "vertex",
+   "width": 88,
+   "height": 99,
+   "style": "shape=mxgraph.signs.people.construction;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.people.construction"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsPeople-4-female",
+   "title": "Female",
+   "tags": "signs people  Female Female",
+   "kind": "vertex",
+   "width": 76,
+   "height": 98,
+   "style": "shape=mxgraph.signs.people.female;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.people.female"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsPeople-5-male",
+   "title": "Male",
+   "tags": "signs people  Male Male",
+   "kind": "vertex",
+   "width": 103,
+   "height": 103,
+   "style": "shape=mxgraph.signs.people.male;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.people.male"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsPeople-6-man-1",
+   "title": "Man 1",
+   "tags": "signs people  Man 1 Man 1",
+   "kind": "vertex",
+   "width": 37,
+   "height": 98,
+   "style": "shape=mxgraph.signs.people.man_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.people.man_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsPeople-7-man-2",
+   "title": "Man 2",
+   "tags": "signs people  Man 2 Man 2",
+   "kind": "vertex",
+   "width": 36,
+   "height": 99,
+   "style": "shape=mxgraph.signs.people.man_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.people.man_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsPeople-8-mummy",
+   "title": "Mummy",
+   "tags": "signs people  Mummy Mummy",
+   "kind": "vertex",
+   "width": 35,
+   "height": 99,
+   "style": "shape=mxgraph.signs.people.mummy;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.people.mummy"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsPeople-9-pedestrian",
+   "title": "Pedestrian",
+   "tags": "signs people  Pedestrian Pedestrian",
+   "kind": "vertex",
+   "width": 80,
+   "height": 99,
+   "style": "shape=mxgraph.signs.people.pedestrian;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.people.pedestrian"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsPeople-10-shower-1",
+   "title": "Shower 1",
+   "tags": "signs people  Shower 1 Shower 1",
+   "kind": "vertex",
+   "width": 101,
+   "height": 98,
+   "style": "shape=mxgraph.signs.people.shower_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.people.shower_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsPeople-11-shower-2",
+   "title": "Shower 2",
+   "tags": "signs people  Shower 2 Shower 2",
+   "kind": "vertex",
+   "width": 98,
+   "height": 92,
+   "style": "shape=mxgraph.signs.people.shower_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.people.shower_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsPeople-12-stroller",
+   "title": "Stroller",
+   "tags": "signs people  Stroller Stroller",
+   "kind": "vertex",
+   "width": 100,
+   "height": 85,
+   "style": "shape=mxgraph.signs.people.stroller;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.people.stroller"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsPeople-13-unisex",
+   "title": "Unisex",
+   "tags": "signs people  Unisex Unisex",
+   "kind": "vertex",
+   "width": 99,
+   "height": 93,
+   "style": "shape=mxgraph.signs.people.unisex;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.people.unisex"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsPeople-14-waiting-room-1",
+   "title": "Waiting Room 1",
+   "tags": "signs people  Waiting Room 1 Waiting Room 1",
+   "kind": "vertex",
+   "width": 77,
+   "height": 100,
+   "style": "shape=mxgraph.signs.people.waiting_room_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.people.waiting_room_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsPeople-15-waiting-room-2",
+   "title": "Waiting Room 2",
+   "tags": "signs people  Waiting Room 2 Waiting Room 2",
+   "kind": "vertex",
+   "width": 89,
+   "height": 98,
+   "style": "shape=mxgraph.signs.people.waiting_room_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.people.waiting_room_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsPeople-16-walking",
+   "title": "Walking",
+   "tags": "signs people  Walking Walking",
+   "kind": "vertex",
+   "width": 55,
+   "height": 99,
+   "style": "shape=mxgraph.signs.people.walking;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.people.walking"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsPeople-17-woman-1",
+   "title": "Woman 1",
+   "tags": "signs people  Woman 1 Woman 1",
+   "kind": "vertex",
+   "width": 48,
+   "height": 100,
+   "style": "shape=mxgraph.signs.people.woman_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.people.woman_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsPeople-18-woman-2",
+   "title": "Woman 2",
+   "tags": "signs people  Woman 2 Woman 2",
+   "kind": "vertex",
+   "width": 45,
+   "height": 99,
+   "style": "shape=mxgraph.signs.people.woman_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.people.woman_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  }
+ ]
+}

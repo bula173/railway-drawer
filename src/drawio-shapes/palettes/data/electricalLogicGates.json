@@ -1,0 +1,388 @@
+{
+ "id": "electricalLogicGates",
+ "title": "Electrical / Logic Gates",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Electrical.js:8",
+ "entries": [
+  {
+   "id": "electricalLogicGates-0-and",
+   "title": "AND",
+   "tags": "electrical logic gates and electrical logic gate  AND",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.logic_gate;operation=and;",
+   "shapeNames": [
+    "mxgraph.electrical.logic_gates.logic_gate"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:75"
+  },
+  {
+   "id": "electricalLogicGates-1-buffer",
+   "title": "Buffer",
+   "tags": "electrical logic gates buffer electrical logic gate  Buffer",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.buffer2;",
+   "shapeNames": [
+    "mxgraph.electrical.logic_gates.buffer2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:76"
+  },
+  {
+   "id": "electricalLogicGates-2-d-type-flip-flop",
+   "title": "D Type Flip-Flop",
+   "tags": "electrical logic gates d type flip-flop electrical logic gate  D Type Flip-Flop",
+   "kind": "vertex",
+   "width": 100,
+   "height": 80,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.d_type_flip-flop;",
+   "shapeNames": [
+    "mxgraph.electrical.logic_gates.d_type_flip-flop"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:77"
+  },
+  {
+   "id": "electricalLogicGates-3-d-type-flip-flop-with-clear",
+   "title": "D Type Flip-Flop With Clear",
+   "tags": "electrical logic gates d type flip-flop with clear electrical logic gate  D Type Flip-Flop With Clear",
+   "kind": "vertex",
+   "width": 100,
+   "height": 90,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.d_type_flip-flop_with_clear_2;",
+   "shapeNames": [
+    "mxgraph.electrical.logic_gates.d_type_flip-flop_with_clear_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:78"
+  },
+  {
+   "id": "electricalLogicGates-4-d-type-rs-flip-flop",
+   "title": "D Type RS Flip-Flop",
+   "tags": "electrical logic gates d type rs flip-flop electrical logic gate  D Type RS Flip-Flop",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.d_type_rs_flip-flop;",
+   "shapeNames": [
+    "mxgraph.electrical.logic_gates.d_type_rs_flip-flop"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:79"
+  },
+  {
+   "id": "electricalLogicGates-5-inverter",
+   "title": "Inverter",
+   "tags": "electrical logic gates inverter electrical logic gate  Inverter",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.inverter_2",
+   "shapeNames": [
+    "mxgraph.electrical.logic_gates.inverter_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:80"
+  },
+  {
+   "id": "electricalLogicGates-6-inverting-contact",
+   "title": "Inverting Contact",
+   "tags": "electrical logic gates inverting contact electrical logic gate  Inverting Contact",
+   "kind": "vertex",
+   "width": 10,
+   "height": 10,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.inverting_contact;",
+   "shapeNames": [
+    "mxgraph.electrical.logic_gates.inverting_contact"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:81"
+  },
+  {
+   "id": "electricalLogicGates-7-jk-flip-flop",
+   "title": "JK Flip-Flop",
+   "tags": "electrical logic gates jk flip-flop electrical logic gate  JK Flip-Flop",
+   "kind": "vertex",
+   "width": 100,
+   "height": 80,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.jk_flip-flop;",
+   "shapeNames": [
+    "mxgraph.electrical.logic_gates.jk_flip-flop"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:82"
+  },
+  {
+   "id": "electricalLogicGates-8-jk-flip-flop-with-clear",
+   "title": "JK Flip-Flop With Clear",
+   "tags": "electrical logic gates jk flip-flop with clear electrical logic gate  JK Flip-Flop With Clear",
+   "kind": "vertex",
+   "width": 100,
+   "height": 90,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.jk_flip-flop_with_clear_2;",
+   "shapeNames": [
+    "mxgraph.electrical.logic_gates.jk_flip-flop_with_clear_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:83"
+  },
+  {
+   "id": "electricalLogicGates-9-jk-flip-flop-with-sr",
+   "title": "JK Flip-Flop With SR",
+   "tags": "electrical logic gates jk flip-flop with sr electrical logic gate  JK Flip-Flop With SR",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.jk_flip-flop_with_sr;",
+   "shapeNames": [
+    "mxgraph.electrical.logic_gates.jk_flip-flop_with_sr"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:84"
+  },
+  {
+   "id": "electricalLogicGates-10-nand",
+   "title": "NAND",
+   "tags": "electrical logic gates nand not and electrical logic gate  NAND",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.logic_gate;operation=and;negating=1;negSize=0.15;",
+   "shapeNames": [
+    "mxgraph.electrical.logic_gates.logic_gate"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:85"
+  },
+  {
+   "id": "electricalLogicGates-11-or",
+   "title": "OR",
+   "tags": "electrical logic gates or electrical logic gate  OR",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.logic_gate;operation=or;",
+   "shapeNames": [
+    "mxgraph.electrical.logic_gates.logic_gate"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:86"
+  },
+  {
+   "id": "electricalLogicGates-12-nor",
+   "title": "NOR",
+   "tags": "electrical logic gates nor electrical logic gate  NOR",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.logic_gate;operation=or;negating=1;negSize=0.15;",
+   "shapeNames": [
+    "mxgraph.electrical.logic_gates.logic_gate"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:87"
+  },
+  {
+   "id": "electricalLogicGates-13-rs-latch",
+   "title": "RS Latch",
+   "tags": "electrical logic gates rs latch electrical logic gate  RS Latch",
+   "kind": "vertex",
+   "width": 100,
+   "height": 80,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.rs_latch;",
+   "shapeNames": [
+    "mxgraph.electrical.logic_gates.rs_latch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:88"
+  },
+  {
+   "id": "electricalLogicGates-14-rs-latch-synchronous",
+   "title": "RS Latch (Synchronous)",
+   "tags": "electrical logic gates synchronous rs latch electrical logic gate  RS Latch (Synchronous)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 80,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.synchronous_rs_latch;",
+   "shapeNames": [
+    "mxgraph.electrical.logic_gates.synchronous_rs_latch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:89"
+  },
+  {
+   "id": "electricalLogicGates-15-schmitt-trigger",
+   "title": "Schmitt Trigger",
+   "tags": "electrical logic gates schmitt trigger electrical logic gate  Schmitt Trigger",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.schmitt_trigger;",
+   "shapeNames": [
+    "mxgraph.electrical.logic_gates.schmitt_trigger"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:90"
+  },
+  {
+   "id": "electricalLogicGates-16-t-type-flip-flop",
+   "title": "T Type Flip-Flop",
+   "tags": "electrical logic gates t type flip-flop electrical logic gate  T Type Flip-Flop",
+   "kind": "vertex",
+   "width": 100,
+   "height": 80,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.t_type_flip-flop;",
+   "shapeNames": [
+    "mxgraph.electrical.logic_gates.t_type_flip-flop"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:91"
+  },
+  {
+   "id": "electricalLogicGates-17-xor",
+   "title": "XOR",
+   "tags": "electrical logic gates xor electrical logic gate  XOR",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.logic_gate;operation=xor;",
+   "shapeNames": [
+    "mxgraph.electrical.logic_gates.logic_gate"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:92"
+  },
+  {
+   "id": "electricalLogicGates-18-xnor",
+   "title": "XNOR",
+   "tags": "electrical logic gates xnor electrical logic gate  XNOR",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.logic_gate;operation=xor;negating=1;negSize=0.15;",
+   "shapeNames": [
+    "mxgraph.electrical.logic_gates.logic_gate"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:93"
+  },
+  {
+   "id": "electricalLogicGates-19-and-iec",
+   "title": "AND (IEC)",
+   "tags": "electrical iec logic gates and electrical iec logic gate  AND (IEC)",
+   "kind": "vertex",
+   "width": 60,
+   "height": 80,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.iec_logic_gates.and;",
+   "shapeNames": [
+    "mxgraph.electrical.iec_logic_gates.and"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:94"
+  },
+  {
+   "id": "electricalLogicGates-20-nand-iec",
+   "title": "NAND (IEC)",
+   "tags": "electrical iec logic gates nand electrical iec logic gate  NAND (IEC)",
+   "kind": "vertex",
+   "width": 66,
+   "height": 80,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.iec_logic_gates.nand_2;",
+   "shapeNames": [
+    "mxgraph.electrical.iec_logic_gates.nand_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:95"
+  },
+  {
+   "id": "electricalLogicGates-21-or-iec",
+   "title": "OR (IEC)",
+   "tags": "electrical iec logic gates or electrical iec logic gate  OR (IEC)",
+   "kind": "vertex",
+   "width": 60,
+   "height": 80,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.iec_logic_gates.or;",
+   "shapeNames": [
+    "mxgraph.electrical.iec_logic_gates.or"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:96"
+  },
+  {
+   "id": "electricalLogicGates-22-nor-iec",
+   "title": "NOR (IEC)",
+   "tags": "electrical iec logic gates nor electrical iec logic gate  NOR (IEC)",
+   "kind": "vertex",
+   "width": 66,
+   "height": 80,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.iec_logic_gates.nor_2;",
+   "shapeNames": [
+    "mxgraph.electrical.iec_logic_gates.nor_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:97"
+  },
+  {
+   "id": "electricalLogicGates-23-not-iec",
+   "title": "NOT (IEC)",
+   "tags": "electrical iec logic gates xor electrical iec logic gate  NOT (IEC)",
+   "kind": "vertex",
+   "width": 66,
+   "height": 80,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.iec_logic_gates.not_2;",
+   "shapeNames": [
+    "mxgraph.electrical.iec_logic_gates.not_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:98"
+  },
+  {
+   "id": "electricalLogicGates-24-xor-iec",
+   "title": "XOR (IEC)",
+   "tags": "electrical iec logic gates xor electrical iec logic gate  XOR (IEC)",
+   "kind": "vertex",
+   "width": 60,
+   "height": 80,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.iec_logic_gates.xor;",
+   "shapeNames": [
+    "mxgraph.electrical.iec_logic_gates.xor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:99"
+  },
+  {
+   "id": "electricalLogicGates-25-dual-in-line-ic",
+   "title": "Dual In-Line IC",
+   "tags": "electrical logic gates dual inline in line ic integrated circuit electrical logic gate  Dual In-Line IC",
+   "kind": "vertex",
+   "width": 100,
+   "height": 200,
+   "style": "shadow=0;dashed=0;align=center;html=1;strokeWidth=1;shape=mxgraph.electrical.logic_gates.dual_inline_ic;labelNames=a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t;whiteSpace=wrap;",
+   "value": "IC",
+   "shapeNames": [
+    "mxgraph.electrical.logic_gates.dual_inline_ic"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:100"
+  },
+  {
+   "id": "electricalLogicGates-26-quad-flat-package-ic",
+   "title": "Quad Flat Package IC",
+   "tags": "electrical logic gates quad flat package qfp ic integrated circuit electrical logic gate  Quad Flat Package IC",
+   "kind": "vertex",
+   "width": 200,
+   "height": 200,
+   "style": "shadow=0;dashed=0;align=center;html=1;strokeWidth=1;shape=mxgraph.electrical.logic_gates.qfp_ic;whiteSpace=wrap;labelNames=a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,a1,b1,c1,d1,e1,f1,g1,h1,i1,j1,k1,l1,m1,n1;",
+   "value": "IC",
+   "shapeNames": [
+    "mxgraph.electrical.logic_gates.qfp_ic"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:103"
+  }
+ ]
+}

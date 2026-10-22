@@ -1,0 +1,50 @@
+{
+ "id": "rackAPC",
+ "title": "Rack / APC",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Rack.js:7",
+ "entries": [
+  {
+   "id": "rackAPC-0-apc-smart-ups-1000-3000-va-2u",
+   "title": "APC Smart UPS 1000-3000 VA 2U",
+   "tags": "rack apc  APC Smart UPS 1000-3000 VA 2U APC Smart UPS 1000-3000 VA 2U",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.apc.apc_smart_ups_1000-3000_va_2u;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.apc.apc_smart_ups_1000-3000_va_2u"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackAPC-1-apc-smart-ups-5000-va-5u",
+   "title": "APC Smart UPS 5000 VA 5U",
+   "tags": "rack apc  APC Smart UPS 5000 VA 5U APC Smart UPS 5000 VA 5U",
+   "kind": "vertex",
+   "width": 161,
+   "height": 74,
+   "style": "shape=mxgraph.rack.apc.apc_smart_ups_5000_va_5u;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.apc.apc_smart_ups_5000_va_5u"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackAPC-2-apc-smart-ups-750-va-1u",
+   "title": "APC Smart UPS 750 VA 1U",
+   "tags": "rack apc  APC Smart UPS 750 VA 1U APC Smart UPS 750 VA 1U",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.apc.apc_smart_ups_750_va_1u;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.apc.apc_smart_ups_750_va_1u"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  }
+ ]
+}

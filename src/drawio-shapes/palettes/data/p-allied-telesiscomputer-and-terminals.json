@@ -1,0 +1,204 @@
+{
+ "id": "allied_telesisComputer and Terminals",
+ "title": "Allied Telesis / Computer and Terminals",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:7",
+ "entries": [
+  {
+   "id": "allied_telesisComputer and Terminals-0-ip-tv",
+   "title": "IP TV",
+   "tags": "ip tv internet protocol television allied telesis IP TV",
+   "kind": "vertex",
+   "width": 49.199999999999996,
+   "height": 50.4,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/computer_and_terminals/IP_TV.svg;points=[[0.5,0.083,0],[0.5,0.762,0],[0,0.578,0],[1,0.5,0],[0.997,0.373,0],[0.997,0.97,0],[0.013,0.72,0],[0.28,0.035,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:69"
+  },
+  {
+   "id": "allied_telesisComputer and Terminals-1-keypad",
+   "title": "Keypad",
+   "tags": "keypad allied telesis Keypad",
+   "kind": "vertex",
+   "width": 26.4,
+   "height": 48,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/computer_and_terminals/Keypad.svg;points=[[0.5,0.12,0],[0.5,0.875,0],[0,0.5,0],[1,0.5,0],[0.999,0.28,0],[0.999,0.965,0],[0.005,0.712,0],[0.005,0.03,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:71"
+  },
+  {
+   "id": "allied_telesisComputer and Terminals-2-laptop",
+   "title": "Laptop",
+   "tags": "laptop allied telesis Laptop",
+   "kind": "vertex",
+   "width": 42,
+   "height": 42.599999999999994,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/computer_and_terminals/Laptop.svg;points=[[0.496,0.009,0],[0.439,1,0],[0.306,0.5,0],[0.94,0.5,0],[0.992,0.27,0],[0.873,0.752,0],[0,0.74,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:73"
+  },
+  {
+   "id": "allied_telesisComputer and Terminals-3-personal-computer",
+   "title": "Personal Computer",
+   "tags": "personal computer allied telesis Personal Computer",
+   "kind": "vertex",
+   "width": 45.6,
+   "height": 61.800000000000004,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/computer_and_terminals/Personal_Computer.svg;points=[[0.5,0.102,0],[0.5,0.932,0],[0.172,0.5,0],[0.997,0.576,0],[0.993,0.323,0],[0.993,0.832,0],[0,0.782,0],[0.173,0.033,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:75"
+  },
+  {
+   "id": "allied_telesisComputer and Terminals-4-personal-computer-wireless",
+   "title": "Personal Computer Wireless",
+   "tags": "personal computer wireless allied telesis Personal Computer Wireless",
+   "kind": "vertex",
+   "width": 63,
+   "height": 64.2,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/computer_and_terminals/Personal_Computer_Wireless.svg;points=[[0.5,0.181,0],[0.5,0.943,0],[0.124,0.499,0],[1,0.785,0],[0.712,0.308,0],[0.997,0.902,0],[0,0.745,0],[0.125,0.03,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:77"
+  },
+  {
+   "id": "allied_telesisComputer and Terminals-5-personal-computer-with-server",
+   "title": "Personal Computer with Server",
+   "tags": "Personal Computer Server allied telesis Personal Computer with Server",
+   "kind": "vertex",
+   "width": 62.400000000000006,
+   "height": 62.400000000000006,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/computer_and_terminals/Personal_Computer_with_Server.svg;points=[[0.463,0,0],[0.5,0.922,0],[0,0.444,0],[1,0.578,0],[0.995,0.32,0],[1,0.83,0],[0.005,0.627,0],[0.005,0.26,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:79"
+  },
+  {
+   "id": "allied_telesisComputer and Terminals-6-pos-keypad",
+   "title": "POS Keypad",
+   "tags": "pos keypad allied telesis POS Keypad",
+   "kind": "vertex",
+   "width": 37.2,
+   "height": 27.6,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/computer_and_terminals/POS_keypad.svg;points=[[0.542,0,0],[0.46,1,0],[0,0.566,0],[1,0.488,0],[0.992,0.347,0],[0.992,0.626,0],[0.008,0.653,0],[0.34,0.139,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:81"
+  },
+  {
+   "id": "allied_telesisComputer and Terminals-7-pos-printer",
+   "title": "POS Printer",
+   "tags": "pos printer allied telesis POS Printer",
+   "kind": "vertex",
+   "width": 37.2,
+   "height": 32.400000000000006,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/computer_and_terminals/POS_Printer.svg;points=[[0.666,0,0],[0.459,0.994,0],[0.064,0.497,0],[1,0.555,0],[0.847,0.127,0],[0.99,0.675,0],[0.01,0.698,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:83"
+  },
+  {
+   "id": "allied_telesisComputer and Terminals-8-server-desktop",
+   "title": "Server Desktop",
+   "tags": "server desktop allied telesis Server Desktop",
+   "kind": "vertex",
+   "width": 42.599999999999994,
+   "height": 54,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/computer_and_terminals/Server_Desktop.svg;points=[[0.5,0.062,0],[0.5,0.932,0],[0,0.555,0],[1,0.44,0],[1,0.16,0],[0.996,0.725,0],[0.004,0.84,0],[0.004,0.27,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:85"
+  },
+  {
+   "id": "allied_telesisComputer and Terminals-9-smartphone",
+   "title": "Smartphone",
+   "tags": "smartphone allied telesis Smartphone",
+   "kind": "vertex",
+   "width": 19.8,
+   "height": 43.199999999999996,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/computer_and_terminals/Smartphone.svg;points=[[0.5,0.05,0],[0.5,0.953,0],[0,0.419,0],[1,0.585,0],[0.977,0.21,0],[0.999,0.932,0],[0.023,0.787,0],[0.012,0.07,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:87"
+  },
+  {
+   "id": "allied_telesisComputer and Terminals-10-tablet",
+   "title": "Tablet",
+   "tags": "tablet allied telesis Tablet",
+   "kind": "vertex",
+   "width": 27,
+   "height": 57,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/computer_and_terminals/Tablet.svg;points=[[0.5,0.07,0],[0.5,0.93,0],[0,0.394,0],[1,0.606,0],[0.967,0.23,0],[0.994,0.952,0],[0.027,0.757,0],[0.006,0.063,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:89"
+  },
+  {
+   "id": "allied_telesisComputer and Terminals-11-tablet-alternative",
+   "title": "Tablet Alternative",
+   "tags": "tablet alternative allied telesis Tablet Alternative",
+   "kind": "vertex",
+   "width": 34.8,
+   "height": 48,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/computer_and_terminals/Tablet_Alternative.svg;points=[[0.5,0.065,0],[0.91,0.995,0],[0.251,0.497,0],[1,0.5,0],[0.996,0.28,0],[0.996,0.965,0],[0.256,0.712,0],[0.004,0.218,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:91"
+  },
+  {
+   "id": "allied_telesisComputer and Terminals-12-vdeo-conference-terminal",
+   "title": "Vdeo Conference Terminal",
+   "tags": "vdeo conference terminal allied telesis Vdeo Conference Terminal",
+   "kind": "vertex",
+   "width": 31.8,
+   "height": 45,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/computer_and_terminals/Vdeo_Conference_Terminal.svg;points=[[0.562,0,0],[0.894,0.995,0],[0,0.5,0],[1,0.5,0],[0.713,0.06,0],[0.999,0.957,0],[0.004,0.627,0],[0.004,0.045,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:93"
+  },
+  {
+   "id": "allied_telesisComputer and Terminals-13-voip-ip-phone",
+   "title": "VOIP IP Phone",
+   "tags": "voip ip phone voice over internet protocol allied telesis VOIP IP Phone",
+   "kind": "vertex",
+   "width": 30,
+   "height": 45.6,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/computer_and_terminals/VOIP_IP_phone.svg;points=[[0.5,0.034,0],[0.5,0.935,0],[0.257,0.5,0],[0.743,0.5,0],[0.672,0.015,0],[0.992,0.895,0],[0.004,0.737,0],[0.274,0.048,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:95"
+  }
+ ]
+}

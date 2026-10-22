@@ -113,8 +113,9 @@ describe('Shapes tab palette list', () => {
   it('inserts appended entries: draw.io style verbatim, app shapes round-trip via rdShape', async () => {
     const container = document.body.appendChild(document.createElement('div'));
     const graph = new Graph(document.body.appendChild(document.createElement('div')));
-    const view = createDrawioPaletteView({ container, getGraph: () => graph, palettes: shapesTabPalettes(appBasic), userLibraries: false });
+    const view = createDrawioPaletteView({ container, getGraph: () => graph, palettes: shapesTabPalettes(appBasic), userLibraries: false, skipCataloguePalettes: ['basic'] });
     await view.ready;
+    await view.catalogueReady;
     const sections = Array.from(container.querySelectorAll<HTMLElement>('.rd-dp-category'));
     const headers = sections.map((s) => s.querySelector('.rd-dp-header-title')!.textContent);
     expect(headers.filter((t) => t === 'General')).toHaveLength(1);

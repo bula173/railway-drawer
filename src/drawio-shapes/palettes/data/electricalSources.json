@@ -1,0 +1,330 @@
+{
+ "id": "electricalSources",
+ "title": "Electrical / Sources",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Electrical.js:8",
+ "entries": [
+  {
+   "id": "electricalSources-0-source",
+   "title": "Source",
+   "tags": "electrical signal sources source electrical signal source  Source",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.signal_sources.source;aspect=fixed;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0]];elSignalType=ac;",
+   "shapeNames": [
+    "mxgraph.electrical.signal_sources.source"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:483"
+  },
+  {
+   "id": "electricalSources-1-source",
+   "title": "Source",
+   "tags": "electrical signal sources source electrical signal source  Source",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.signal_sources.source;aspect=fixed;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0]];elSignalType=dc1;",
+   "shapeNames": [
+    "mxgraph.electrical.signal_sources.source"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:485"
+  },
+  {
+   "id": "electricalSources-2-source",
+   "title": "Source",
+   "tags": "electrical signal sources source electrical signal source  Source",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.signal_sources.source;aspect=fixed;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0]];elSignalType=dc3;",
+   "shapeNames": [
+    "mxgraph.electrical.signal_sources.source"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:487"
+  },
+  {
+   "id": "electricalSources-3-source",
+   "title": "Source",
+   "tags": "electrical signal sources source electrical signal source  Source",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.signal_sources.source;aspect=fixed;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0]];elSignalType=none;elSourceType=dependent;",
+   "shapeNames": [
+    "mxgraph.electrical.signal_sources.source"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:489"
+  },
+  {
+   "id": "electricalSources-4-source",
+   "title": "Source",
+   "tags": "electrical signal sources source electrical signal source  Source",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.signal_sources.source;aspect=fixed;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0]];elSignalType=dc2;elSourceType=dependent;",
+   "shapeNames": [
+    "mxgraph.electrical.signal_sources.source"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:491"
+  },
+  {
+   "id": "electricalSources-5-source",
+   "title": "Source",
+   "tags": "electrical signal sources source electrical signal source  Source",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.signal_sources.source;aspect=fixed;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0]];elSourceType=dependent;elSignalType=dc3;",
+   "shapeNames": [
+    "mxgraph.electrical.signal_sources.source"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:493"
+  },
+  {
+   "id": "electricalSources-6-source",
+   "title": "Source",
+   "tags": "electrical signal sources source electrical signal source  Source",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.signal_sources.source;aspect=fixed;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0]];elSignalType=noise;",
+   "shapeNames": [
+    "mxgraph.electrical.signal_sources.source"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:495"
+  },
+  {
+   "id": "electricalSources-7-source",
+   "title": "Source",
+   "tags": "electrical signal sources source electrical signal source  Source",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.signal_sources.source;aspect=fixed;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0]];elSignalType=ideal;",
+   "shapeNames": [
+    "mxgraph.electrical.signal_sources.source"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:497"
+  },
+  {
+   "id": "electricalSources-8-source",
+   "title": "Source",
+   "tags": "electrical signal sources source electrical signal source  Source",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.signal_sources.source;aspect=fixed;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0]];elSignalType=expSquib;",
+   "shapeNames": [
+    "mxgraph.electrical.signal_sources.source"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:499"
+  },
+  {
+   "id": "electricalSources-9-current",
+   "title": "Current",
+   "tags": "electrical signal sources current source electrical signal source  Current",
+   "kind": "vertex",
+   "width": 40,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.signal_sources.current_source;",
+   "shapeNames": [
+    "mxgraph.electrical.signal_sources.current_source"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:501"
+  },
+  {
+   "id": "electricalSources-10-dc",
+   "title": "DC",
+   "tags": "electrical signal sources dc source 1 electrical signal source  DC",
+   "kind": "vertex",
+   "width": 70,
+   "height": 75,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.signal_sources.dc_source_1;",
+   "shapeNames": [
+    "mxgraph.electrical.signal_sources.dc_source_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:503"
+  },
+  {
+   "id": "electricalSources-11-accumulator-monocell-battery",
+   "title": "Accumulator / Monocell Battery",
+   "tags": "electrical signal sources accumulator monocell battery single cell electrical  Accumulator / Monocell Battery",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;fillColor=strokeColor;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.electrical.miscellaneous.monocell_battery;",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.monocell_battery"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:505"
+  },
+  {
+   "id": "electricalSources-12-battery-stack",
+   "title": "Battery Stack",
+   "tags": "electrical signal sources battery stack electrical signal source  Battery Stack",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.batteryStack;",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.batteryStack"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:507"
+  },
+  {
+   "id": "electricalSources-13-multicell-battery-tapped",
+   "title": "Multicell Battery Tapped",
+   "tags": "electrical signal sources accumulator multicell battery tapped multi multiple cell electrical  Multicell Battery Tapped",
+   "kind": "vertex",
+   "width": 100,
+   "height": 70,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;fillColor=strokeColor;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.electrical.miscellaneous.multicell_battery_tapped;",
+   "shapeNames": [
+    "mxgraph.electrical.miscellaneous.multicell_battery_tapped"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:509"
+  },
+  {
+   "id": "electricalSources-14-source-square",
+   "title": "Source, Square",
+   "tags": "electrical signal sources source square electrical signal source  Source, Square",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.signal_sources.source;aspect=fixed;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0]];elSignalType=square;",
+   "shapeNames": [
+    "mxgraph.electrical.signal_sources.source"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:511"
+  },
+  {
+   "id": "electricalSources-15-source-triangular",
+   "title": "Source, Triangular",
+   "tags": "electrical signal sources source triangular electrical signal source  Source, Triangular",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.signal_sources.source;aspect=fixed;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0]];elSignalType=triangular;",
+   "shapeNames": [
+    "mxgraph.electrical.signal_sources.source"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:513"
+  },
+  {
+   "id": "electricalSources-16-source-sawtooth",
+   "title": "Source, Sawtooth",
+   "tags": "electrical signal sources source sawtooth electrical signal source  Source, Sawtooth",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.signal_sources.source;aspect=fixed;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0]];elSignalType=sawtooth;",
+   "shapeNames": [
+    "mxgraph.electrical.signal_sources.source"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:515"
+  },
+  {
+   "id": "electricalSources-17-source-pulse",
+   "title": "Source, Pulse",
+   "tags": "electrical signal sources source pulse electrical signal source  Source, Pulse",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.signal_sources.source;aspect=fixed;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0]];elSignalType=pulse;",
+   "shapeNames": [
+    "mxgraph.electrical.signal_sources.source"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:517"
+  },
+  {
+   "id": "electricalSources-18-source-inverse-pulse",
+   "title": "Source, Inverse Pulse",
+   "tags": "electrical signal sources source inverse pulse electrical signal source  Source, Inverse Pulse",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.signal_sources.source;aspect=fixed;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0]];elSignalType=invPulse;",
+   "shapeNames": [
+    "mxgraph.electrical.signal_sources.source"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:519"
+  },
+  {
+   "id": "electricalSources-19-source-chopped-square",
+   "title": "Source, Chopped Square",
+   "tags": "electrical signal sources source chopped square electrical signal source  Source, Chopped Square",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.signal_sources.source;aspect=fixed;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0]];elSignalType=chopSquare;",
+   "shapeNames": [
+    "mxgraph.electrical.signal_sources.source"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:521"
+  },
+  {
+   "id": "electricalSources-20-source-step-on",
+   "title": "Source, Step On",
+   "tags": "electrical signal sources source step on electrical signal source  Source, Step On",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.signal_sources.source;aspect=fixed;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0]];elSignalType=stepOn;",
+   "shapeNames": [
+    "mxgraph.electrical.signal_sources.source"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:523"
+  },
+  {
+   "id": "electricalSources-21-source-step-off",
+   "title": "Source, Step Off",
+   "tags": "electrical signal sources source step off electrical signal source  Source, Step Off",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.signal_sources.source;aspect=fixed;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0]];elSignalType=stepOff;",
+   "shapeNames": [
+    "mxgraph.electrical.signal_sources.source"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:525"
+  },
+  {
+   "id": "electricalSources-22-source-dc",
+   "title": "Source, DC",
+   "tags": "electrical signal sources source dc vertical electrical signal source  Source, DC",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.signal_sources.source;aspect=fixed;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0]];elSignalType=dc2;",
+   "shapeNames": [
+    "mxgraph.electrical.signal_sources.source"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:527"
+  }
+ ]
+}

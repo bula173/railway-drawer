@@ -1,0 +1,1366 @@
+{
+ "id": "citrix",
+ "title": "Citrix (legacy)",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Citrix.js:7",
+ "entries": [
+  {
+   "id": "citrix-0-1u-2u-server",
+   "title": "1U 2U Server",
+   "tags": "citrix 1U 2U Server  1U 2U Server",
+   "kind": "vertex",
+   "width": 100,
+   "height": 39.1,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.1u_2u_server;",
+   "shapeNames": [
+    "mxgraph.citrix.1u_2u_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:18"
+  },
+  {
+   "id": "citrix-1-access-card",
+   "title": "Access Card",
+   "tags": "citrix Access Card  Access Card",
+   "kind": "vertex",
+   "width": 55.5,
+   "height": 75,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.access_card;",
+   "shapeNames": [
+    "mxgraph.citrix.access_card"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:19"
+  },
+  {
+   "id": "citrix-2-branch-repeater",
+   "title": "Branch Repeater",
+   "tags": "citrix Branch Repeater  Branch Repeater",
+   "kind": "vertex",
+   "width": 100,
+   "height": 39,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.branch_repeater;",
+   "shapeNames": [
+    "mxgraph.citrix.branch_repeater"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:20"
+  },
+  {
+   "id": "citrix-3-browser",
+   "title": "Browser",
+   "tags": "citrix Browser  Browser",
+   "kind": "vertex",
+   "width": 47.5,
+   "height": 72.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.browser;",
+   "shapeNames": [
+    "mxgraph.citrix.browser"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:21"
+  },
+  {
+   "id": "citrix-4-cache-server",
+   "title": "Cache Server",
+   "tags": "citrix Cache Server  Cache Server",
+   "kind": "vertex",
+   "width": 71,
+   "height": 97.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.cache_server;",
+   "shapeNames": [
+    "mxgraph.citrix.cache_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:22"
+  },
+  {
+   "id": "citrix-5-calendar",
+   "title": "Calendar",
+   "tags": "citrix Calendar  Calendar",
+   "kind": "vertex",
+   "width": 75,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.calendar;",
+   "shapeNames": [
+    "mxgraph.citrix.calendar"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:23"
+  },
+  {
+   "id": "citrix-6-cell-phone",
+   "title": "Cell Phone",
+   "tags": "citrix Cell Phone  Cell Phone",
+   "kind": "vertex",
+   "width": 25,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.cell_phone;",
+   "shapeNames": [
+    "mxgraph.citrix.cell_phone"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:24"
+  },
+  {
+   "id": "citrix-7-chassis",
+   "title": "Chassis",
+   "tags": "citrix Chassis  Chassis",
+   "kind": "vertex",
+   "width": 137.5,
+   "height": 177.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.chassis;",
+   "shapeNames": [
+    "mxgraph.citrix.chassis"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:25"
+  },
+  {
+   "id": "citrix-8-citrix-hdx",
+   "title": "Citrix HDX",
+   "tags": "citrix Citrix HDX  Citrix HDX",
+   "kind": "vertex",
+   "width": 77.5,
+   "height": 41,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.citrix_hdx;",
+   "shapeNames": [
+    "mxgraph.citrix.citrix_hdx"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:26"
+  },
+  {
+   "id": "citrix-9-citrix-logo",
+   "title": "Citrix Logo",
+   "tags": "citrix Citrix Logo  Citrix Logo",
+   "kind": "vertex",
+   "width": 160,
+   "height": 62.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.citrix_logo;fillColor=#4E4F53;",
+   "shapeNames": [
+    "mxgraph.citrix.citrix_logo"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:27"
+  },
+  {
+   "id": "citrix-10-cloud",
+   "title": "Cloud",
+   "tags": "citrix Cloud  Cloud",
+   "kind": "vertex",
+   "width": 95,
+   "height": 62,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.cloud;",
+   "shapeNames": [
+    "mxgraph.citrix.cloud"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:28"
+  },
+  {
+   "id": "citrix-11-command-center",
+   "title": "Command Center",
+   "tags": "citrix Command Center  Command Center",
+   "kind": "vertex",
+   "width": 75.5,
+   "height": 96,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.command_center;",
+   "shapeNames": [
+    "mxgraph.citrix.command_center"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:29"
+  },
+  {
+   "id": "citrix-12-database",
+   "title": "Database",
+   "tags": "citrix Database  Database",
+   "kind": "vertex",
+   "width": 42.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.database;",
+   "shapeNames": [
+    "mxgraph.citrix.database"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:30"
+  },
+  {
+   "id": "citrix-13-database-server",
+   "title": "Database Server",
+   "tags": "citrix Database Server  Database Server",
+   "kind": "vertex",
+   "width": 80,
+   "height": 90,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.database_server;",
+   "shapeNames": [
+    "mxgraph.citrix.database_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:31"
+  },
+  {
+   "id": "citrix-14-datacenter",
+   "title": "Datacenter",
+   "tags": "citrix Datacenter  Datacenter",
+   "kind": "vertex",
+   "width": 127.5,
+   "height": 135,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.datacenter;",
+   "shapeNames": [
+    "mxgraph.citrix.datacenter"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:32"
+  },
+  {
+   "id": "citrix-15-desktop",
+   "title": "Desktop",
+   "tags": "citrix Desktop  Desktop",
+   "kind": "vertex",
+   "width": 89,
+   "height": 98,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.desktop;",
+   "shapeNames": [
+    "mxgraph.citrix.desktop"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:33"
+  },
+  {
+   "id": "citrix-16-desktop-web",
+   "title": "Desktop Web",
+   "tags": "citrix Desktop Web  Desktop Web",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 90,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.desktop_web;",
+   "shapeNames": [
+    "mxgraph.citrix.desktop_web"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:34"
+  },
+  {
+   "id": "citrix-17-dhcp-server",
+   "title": "DHCP Server",
+   "tags": "citrix DHCP Server  DHCP Server",
+   "kind": "vertex",
+   "width": 76,
+   "height": 90,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.dhcp_server;",
+   "shapeNames": [
+    "mxgraph.citrix.dhcp_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:35"
+  },
+  {
+   "id": "citrix-18-directory-server",
+   "title": "Directory Server",
+   "tags": "citrix Directory Server  Directory Server",
+   "kind": "vertex",
+   "width": 65,
+   "height": 88.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.directory_server;",
+   "shapeNames": [
+    "mxgraph.citrix.directory_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:36"
+  },
+  {
+   "id": "citrix-19-dns-server",
+   "title": "DNS Server",
+   "tags": "citrix DNS Server  DNS Server",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 92.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.dns_server;",
+   "shapeNames": [
+    "mxgraph.citrix.dns_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:37"
+  },
+  {
+   "id": "citrix-20-document",
+   "title": "Document",
+   "tags": "citrix Document  Document",
+   "kind": "vertex",
+   "width": 47,
+   "height": 72,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.document;",
+   "shapeNames": [
+    "mxgraph.citrix.document"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:38"
+  },
+  {
+   "id": "citrix-21-edgesight-server",
+   "title": "EdgeSight Server",
+   "tags": "citrix EdgeSight Server  EdgeSight Server",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 90,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.edgesight_server;",
+   "shapeNames": [
+    "mxgraph.citrix.edgesight_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:39"
+  },
+  {
+   "id": "citrix-22-file-server",
+   "title": "File Server",
+   "tags": "citrix File Server  File Server",
+   "kind": "vertex",
+   "width": 71,
+   "height": 97,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.file_server;",
+   "shapeNames": [
+    "mxgraph.citrix.file_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:40"
+  },
+  {
+   "id": "citrix-23-firewall",
+   "title": "Firewall",
+   "tags": "citrix Firewall  Firewall",
+   "kind": "vertex",
+   "width": 75,
+   "height": 93,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.firewall;",
+   "shapeNames": [
+    "mxgraph.citrix.firewall"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:41"
+  },
+  {
+   "id": "citrix-24-ftp-server",
+   "title": "FTP Server",
+   "tags": "citrix FTP Server  FTP Server",
+   "kind": "vertex",
+   "width": 71,
+   "height": 97,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.ftp_server;",
+   "shapeNames": [
+    "mxgraph.citrix.ftp_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:42"
+  },
+  {
+   "id": "citrix-25-geolocation-database",
+   "title": "Geolocation Database",
+   "tags": "citrix Geolocation Database  Geolocation Database",
+   "kind": "vertex",
+   "width": 53,
+   "height": 49,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.geolocation_database;",
+   "shapeNames": [
+    "mxgraph.citrix.geolocation_database"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:43"
+  },
+  {
+   "id": "citrix-26-globe",
+   "title": "Globe",
+   "tags": "citrix Globe  Globe",
+   "kind": "vertex",
+   "width": 78.5,
+   "height": 75,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.globe;",
+   "shapeNames": [
+    "mxgraph.citrix.globe"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:44"
+  },
+  {
+   "id": "citrix-27-goto-meeting",
+   "title": "GoTo Meeting",
+   "tags": "citrix GoTo Meeting  GoTo Meeting",
+   "kind": "vertex",
+   "width": 37,
+   "height": 37,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.goto_meeting;fillColor=#FAB616;gradientColor=#E12800;gradientDirection=north;",
+   "shapeNames": [
+    "mxgraph.citrix.goto_meeting"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:45"
+  },
+  {
+   "id": "citrix-28-government",
+   "title": "Government",
+   "tags": "citrix Government  Government",
+   "kind": "vertex",
+   "width": 119,
+   "height": 52,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.government;",
+   "shapeNames": [
+    "mxgraph.citrix.government"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:46"
+  },
+  {
+   "id": "citrix-29-home-office",
+   "title": "Home Office",
+   "tags": "citrix Home Office  Home Office",
+   "kind": "vertex",
+   "width": 80,
+   "height": 55.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.home_office;",
+   "shapeNames": [
+    "mxgraph.citrix.home_office"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:47"
+  },
+  {
+   "id": "citrix-30-hq-enterprise",
+   "title": "HQ / Enterprise",
+   "tags": "citrix HQ Enterprise  HQ / Enterprise",
+   "kind": "vertex",
+   "width": 92,
+   "height": 88,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.hq_enterprise;",
+   "shapeNames": [
+    "mxgraph.citrix.hq_enterprise"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:48"
+  },
+  {
+   "id": "citrix-31-inspection",
+   "title": "Inspection",
+   "tags": "citrix Inspection  Inspection",
+   "kind": "vertex",
+   "width": 70,
+   "height": 65,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.inspection;",
+   "shapeNames": [
+    "mxgraph.citrix.inspection"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:49"
+  },
+  {
+   "id": "citrix-32-ip-phone",
+   "title": "IP Phone",
+   "tags": "citrix IP Phone  IP Phone",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 37,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.ip_phone;",
+   "shapeNames": [
+    "mxgraph.citrix.ip_phone"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:50"
+  },
+  {
+   "id": "citrix-33-kiosk",
+   "title": "Kiosk",
+   "tags": "citrix Kiosk  Kiosk",
+   "kind": "vertex",
+   "width": 65,
+   "height": 85,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.kiosk;",
+   "shapeNames": [
+    "mxgraph.citrix.kiosk"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:51"
+  },
+  {
+   "id": "citrix-34-laptop",
+   "title": "Laptop",
+   "tags": "citrix Laptop  Laptop",
+   "kind": "vertex",
+   "width": 91,
+   "height": 77,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.laptop_1;",
+   "shapeNames": [
+    "mxgraph.citrix.laptop_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:52"
+  },
+  {
+   "id": "citrix-35-laptop",
+   "title": "Laptop",
+   "tags": "citrix Laptop  Laptop",
+   "kind": "vertex",
+   "width": 116,
+   "height": 86.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.laptop_2;",
+   "shapeNames": [
+    "mxgraph.citrix.laptop_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:53"
+  },
+  {
+   "id": "citrix-36-license-server",
+   "title": "License Server",
+   "tags": "citrix License Server  License Server",
+   "kind": "vertex",
+   "width": 65,
+   "height": 85,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.license_server;",
+   "shapeNames": [
+    "mxgraph.citrix.license_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:54"
+  },
+  {
+   "id": "citrix-37-merchandising-server",
+   "title": "Merchandising Server",
+   "tags": "citrix Merchandising Server  Merchandising Server",
+   "kind": "vertex",
+   "width": 75,
+   "height": 90,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.merchandising_server;",
+   "shapeNames": [
+    "mxgraph.citrix.merchandising_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:55"
+  },
+  {
+   "id": "citrix-38-middleware",
+   "title": "Middleware",
+   "tags": "citrix Middleware  Middleware",
+   "kind": "vertex",
+   "width": 114,
+   "height": 68,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.middleware;",
+   "shapeNames": [
+    "mxgraph.citrix.middleware"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:56"
+  },
+  {
+   "id": "citrix-39-netscaler-gateway",
+   "title": "NetScaler Gateway",
+   "tags": "citrix NetScaler Gateway  NetScaler Gateway",
+   "kind": "vertex",
+   "width": 100,
+   "height": 39,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.netscaler_gateway;",
+   "shapeNames": [
+    "mxgraph.citrix.netscaler_gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:57"
+  },
+  {
+   "id": "citrix-40-netscaler-mpx",
+   "title": "NetScaler MPX",
+   "tags": "citrix NetScaler MPX  NetScaler MPX",
+   "kind": "vertex",
+   "width": 100,
+   "height": 39,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.netscaler_mpx;",
+   "shapeNames": [
+    "mxgraph.citrix.netscaler_mpx"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:58"
+  },
+  {
+   "id": "citrix-41-netscaler-sdx",
+   "title": "NetScaler SDX",
+   "tags": "citrix NetScaler SDX  NetScaler SDX",
+   "kind": "vertex",
+   "width": 100,
+   "height": 47.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.netscaler_sdx;",
+   "shapeNames": [
+    "mxgraph.citrix.netscaler_sdx"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:59"
+  },
+  {
+   "id": "citrix-42-netscaler-vpx",
+   "title": "NetScaler VPX",
+   "tags": "citrix NetScaler VPX  NetScaler VPX",
+   "kind": "vertex",
+   "width": 97,
+   "height": 36,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.netscaler_vpx;",
+   "shapeNames": [
+    "mxgraph.citrix.netscaler_vpx"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:60"
+  },
+  {
+   "id": "citrix-43-pbx-server",
+   "title": "PBX Server",
+   "tags": "citrix PBX Server  PBX Server",
+   "kind": "vertex",
+   "width": 65,
+   "height": 85,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.pbx_server;",
+   "shapeNames": [
+    "mxgraph.citrix.pbx_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:61"
+  },
+  {
+   "id": "citrix-44-pda",
+   "title": "PDA",
+   "tags": "citrix PDA  PDA",
+   "kind": "vertex",
+   "width": 30,
+   "height": 61,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.pda;",
+   "shapeNames": [
+    "mxgraph.citrix.pda"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:62"
+  },
+  {
+   "id": "citrix-45-podio",
+   "title": "Podio",
+   "tags": "citrix Podio  Podio",
+   "kind": "vertex",
+   "width": 37,
+   "height": 37,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.podio;fillColor=#72B8DE;gradientColor=#186BA2;gradientDirection=south;",
+   "shapeNames": [
+    "mxgraph.citrix.podio"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:63"
+  },
+  {
+   "id": "citrix-46-printer",
+   "title": "Printer",
+   "tags": "citrix Printer  Printer",
+   "kind": "vertex",
+   "width": 70,
+   "height": 70,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.printer;",
+   "shapeNames": [
+    "mxgraph.citrix.printer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:64"
+  },
+  {
+   "id": "citrix-47-process",
+   "title": "Process",
+   "tags": "citrix Process  Process",
+   "kind": "vertex",
+   "width": 52,
+   "height": 62,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.process;",
+   "shapeNames": [
+    "mxgraph.citrix.process"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:65"
+  },
+  {
+   "id": "citrix-48-provisioning-server",
+   "title": "Provisioning Server",
+   "tags": "citrix Provisioning Server  Provisioning Server",
+   "kind": "vertex",
+   "width": 76,
+   "height": 87,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.provisioning_server;",
+   "shapeNames": [
+    "mxgraph.citrix.provisioning_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:66"
+  },
+  {
+   "id": "citrix-49-proxy-server",
+   "title": "Proxy Server",
+   "tags": "citrix Proxy Server  Proxy Server",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 90,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.proxy_server;",
+   "shapeNames": [
+    "mxgraph.citrix.proxy_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:67"
+  },
+  {
+   "id": "citrix-50-radius-server",
+   "title": "Radius Server",
+   "tags": "citrix Radius Server  Radius Server",
+   "kind": "vertex",
+   "width": 75.5,
+   "height": 91,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.radius_server;",
+   "shapeNames": [
+    "mxgraph.citrix.radius_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:68"
+  },
+  {
+   "id": "citrix-51-remote-office",
+   "title": "Remote Office",
+   "tags": "citrix Remote Office  Remote Office",
+   "kind": "vertex",
+   "width": 92,
+   "height": 41.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.remote_office;",
+   "shapeNames": [
+    "mxgraph.citrix.remote_office"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:69"
+  },
+  {
+   "id": "citrix-52-reporting",
+   "title": "Reporting",
+   "tags": "citrix Reporting  Reporting",
+   "kind": "vertex",
+   "width": 61.5,
+   "height": 69,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.reporting;",
+   "shapeNames": [
+    "mxgraph.citrix.reporting"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:70"
+  },
+  {
+   "id": "citrix-53-role-appcontroller",
+   "title": "Role AppController",
+   "tags": "citrix Role AppController  Role AppController",
+   "kind": "vertex",
+   "width": 38,
+   "height": 38,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.role_appcontroller;fillColor=#CCCCCC;gradientColor=#000000;gradientDirection=south;",
+   "shapeNames": [
+    "mxgraph.citrix.role_appcontroller"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:71"
+  },
+  {
+   "id": "citrix-54-role-applications",
+   "title": "Role Applications",
+   "tags": "citrix Role Applications  Role Applications",
+   "kind": "vertex",
+   "width": 38,
+   "height": 38,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.role_applications;",
+   "shapeNames": [
+    "mxgraph.citrix.role_applications"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:72"
+  },
+  {
+   "id": "citrix-55-role-cloudbridge",
+   "title": "Role CloudBridge",
+   "tags": "citrix Role CloudBridge  Role CloudBridge",
+   "kind": "vertex",
+   "width": 38,
+   "height": 38,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.role_cloudbridge;fillColor=#CCCCCC;gradientColor=#000000;gradientDirection=south;",
+   "shapeNames": [
+    "mxgraph.citrix.role_cloudbridge"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:73"
+  },
+  {
+   "id": "citrix-56-role-desktops",
+   "title": "Role Desktops",
+   "tags": "citrix Role Desktops  Role Desktops",
+   "kind": "vertex",
+   "width": 38,
+   "height": 38,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.role_desktops;fillColor=#CCCCCC;gradientColor=#000000;gradientDirection=south;",
+   "shapeNames": [
+    "mxgraph.citrix.role_desktops"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:74"
+  },
+  {
+   "id": "citrix-57-role-load-testing-controller",
+   "title": "Role Load Testing Controller",
+   "tags": "citrix Role Load Testing Controller  Role Load Testing Controller",
+   "kind": "vertex",
+   "width": 24,
+   "height": 24,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.role_load_testing_controller;",
+   "shapeNames": [
+    "mxgraph.citrix.role_load_testing_controller"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:75"
+  },
+  {
+   "id": "citrix-58-role-load-testing-launcher",
+   "title": "Role Load Testing Launcher",
+   "tags": "citrix Role Load Testing Launcher  Role Load Testing Launcher",
+   "kind": "vertex",
+   "width": 41,
+   "height": 38,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.role_load_testing_launcher;",
+   "shapeNames": [
+    "mxgraph.citrix.role_load_testing_launcher"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:76"
+  },
+  {
+   "id": "citrix-59-role-receiver",
+   "title": "Role Receiver",
+   "tags": "citrix Role Receiver  Role Receiver",
+   "kind": "vertex",
+   "width": 38,
+   "height": 38,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.role_receiver;fillColor=#CCCCCC;gradientColor=#000000;gradientDirection=south;",
+   "shapeNames": [
+    "mxgraph.citrix.role_receiver"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:77"
+  },
+  {
+   "id": "citrix-60-role-repeater",
+   "title": "Role Repeater",
+   "tags": "citrix Role Repeater  Role Repeater",
+   "kind": "vertex",
+   "width": 38,
+   "height": 38,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.role_repeater;fillColor=#CCCCCC;gradientColor=#000000;gradientDirection=south;",
+   "shapeNames": [
+    "mxgraph.citrix.role_repeater"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:78"
+  },
+  {
+   "id": "citrix-61-role-secure-access",
+   "title": "Role Secure Access",
+   "tags": "citrix Role Secure Access  Role Secure Access",
+   "kind": "vertex",
+   "width": 38,
+   "height": 38,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.role_secure_access;fillColor=#CCCCCC;gradientColor=#000000;gradientDirection=south;",
+   "shapeNames": [
+    "mxgraph.citrix.role_secure_access"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:79"
+  },
+  {
+   "id": "citrix-62-role-security",
+   "title": "Role Security",
+   "tags": "citrix Role Security  Role Security",
+   "kind": "vertex",
+   "width": 38,
+   "height": 38,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.role_security;fillColor=#CCCCCC;gradientColor=#000000;gradientDirection=south;",
+   "shapeNames": [
+    "mxgraph.citrix.role_security"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:80"
+  },
+  {
+   "id": "citrix-63-role-services",
+   "title": "Role Services",
+   "tags": "citrix Role Services  Role Services",
+   "kind": "vertex",
+   "width": 38,
+   "height": 38,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.role_services;fillColor=#CCCCCC;gradientColor=#000000;gradientDirection=south;",
+   "shapeNames": [
+    "mxgraph.citrix.role_services"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:81"
+  },
+  {
+   "id": "citrix-64-role-storefront",
+   "title": "Role StoreFront",
+   "tags": "citrix Role StoreFront  Role StoreFront",
+   "kind": "vertex",
+   "width": 38,
+   "height": 38,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.role_storefront;fillColor=#CCCCCC;gradientColor=#000000;gradientDirection=south;",
+   "shapeNames": [
+    "mxgraph.citrix.role_storefront"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:82"
+  },
+  {
+   "id": "citrix-65-role-storefront-services",
+   "title": "Role StoreFront Services",
+   "tags": "citrix Role StoreFront Services  Role StoreFront Services",
+   "kind": "vertex",
+   "width": 38,
+   "height": 38,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.role_storefront_services;fillColor=#CCCCCC;gradientColor=#000000;gradientDirection=south;",
+   "shapeNames": [
+    "mxgraph.citrix.role_storefront_services"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:83"
+  },
+  {
+   "id": "citrix-66-role-synchronizer",
+   "title": "Role Synchronizer",
+   "tags": "citrix Role Synchronizer  Role Synchronizer",
+   "kind": "vertex",
+   "width": 38,
+   "height": 38,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.role_synchronizer;fillColor=#CCCCCC;gradientColor=#000000;gradientDirection=south;",
+   "shapeNames": [
+    "mxgraph.citrix.role_synchronizer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:84"
+  },
+  {
+   "id": "citrix-67-role-xenmobile",
+   "title": "Role XenMobile",
+   "tags": "citrix Role XenMobile  Role XenMobile",
+   "kind": "vertex",
+   "width": 38,
+   "height": 38,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.role_xenmobile;fillColor=#CCCCCC;gradientColor=#000000;gradientDirection=south;",
+   "shapeNames": [
+    "mxgraph.citrix.role_xenmobile"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:85"
+  },
+  {
+   "id": "citrix-68-role-xenmobile-device-manager",
+   "title": "Role XenMobile Device Manager",
+   "tags": "citrix Role XenMobile Device Manager  Role XenMobile Device Manager",
+   "kind": "vertex",
+   "width": 35,
+   "height": 38,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.role_xenmobile_device_manager;fillColor=#CCCCCC;gradientColor=#000000;gradientDirection=south;",
+   "shapeNames": [
+    "mxgraph.citrix.role_xenmobile_device_manager"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:86"
+  },
+  {
+   "id": "citrix-69-router",
+   "title": "Router",
+   "tags": "citrix Router  Router",
+   "kind": "vertex",
+   "width": 55,
+   "height": 36.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.router;",
+   "shapeNames": [
+    "mxgraph.citrix.router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:87"
+  },
+  {
+   "id": "citrix-70-security",
+   "title": "Security",
+   "tags": "citrix Security  Security",
+   "kind": "vertex",
+   "width": 40.5,
+   "height": 71,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.security;",
+   "shapeNames": [
+    "mxgraph.citrix.security"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:88"
+  },
+  {
+   "id": "citrix-71-sharefile",
+   "title": "ShareFile",
+   "tags": "citrix ShareFile  ShareFile",
+   "kind": "vertex",
+   "width": 38,
+   "height": 38,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.sharefile;fillColor=#386510;gradientColor=#C6CF2B;gradientDirection=south;",
+   "shapeNames": [
+    "mxgraph.citrix.sharefile"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:89"
+  },
+  {
+   "id": "citrix-72-site",
+   "title": "Site",
+   "tags": "citrix Site  Site",
+   "kind": "vertex",
+   "width": 107,
+   "height": 101,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.site;",
+   "shapeNames": [
+    "mxgraph.citrix.site"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:90"
+  },
+  {
+   "id": "citrix-73-smtp-server",
+   "title": "SMTP Server",
+   "tags": "citrix SMTP Server  SMTP Server",
+   "kind": "vertex",
+   "width": 76,
+   "height": 92,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.smtp_server;",
+   "shapeNames": [
+    "mxgraph.citrix.smtp_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:91"
+  },
+  {
+   "id": "citrix-74-storefront-services",
+   "title": "Storefront Services",
+   "tags": "citrix Storefront Services  Storefront Services",
+   "kind": "vertex",
+   "width": 76,
+   "height": 91,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.storefront_services;fillColor=#CCCCCC;gradientColor=#000000;gradientDirection=south;",
+   "shapeNames": [
+    "mxgraph.citrix.storefront_services"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:92"
+  },
+  {
+   "id": "citrix-75-switch",
+   "title": "Switch",
+   "tags": "citrix Switch  Switch",
+   "kind": "vertex",
+   "width": 92,
+   "height": 41.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.switch;",
+   "shapeNames": [
+    "mxgraph.citrix.switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:93"
+  },
+  {
+   "id": "citrix-76-tablet",
+   "title": "Tablet",
+   "tags": "citrix Tablet  Tablet",
+   "kind": "vertex",
+   "width": 61,
+   "height": 79,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.tablet_1;",
+   "shapeNames": [
+    "mxgraph.citrix.tablet_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:94"
+  },
+  {
+   "id": "citrix-77-tablet",
+   "title": "Tablet",
+   "tags": "citrix Tablet  Tablet",
+   "kind": "vertex",
+   "width": 82,
+   "height": 86,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.tablet_2;",
+   "shapeNames": [
+    "mxgraph.citrix.tablet_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:95"
+  },
+  {
+   "id": "citrix-78-thin-client",
+   "title": "Thin Client",
+   "tags": "citrix Thin Client  Thin Client",
+   "kind": "vertex",
+   "width": 71,
+   "height": 71,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.thin_client;",
+   "shapeNames": [
+    "mxgraph.citrix.thin_client"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:96"
+  },
+  {
+   "id": "citrix-79-tower-server",
+   "title": "Tower Server",
+   "tags": "citrix Tower Server  Tower Server",
+   "kind": "vertex",
+   "width": 65,
+   "height": 85,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.tower_server;",
+   "shapeNames": [
+    "mxgraph.citrix.tower_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:97"
+  },
+  {
+   "id": "citrix-80-users",
+   "title": "Users",
+   "tags": "citrix Users  Users",
+   "kind": "vertex",
+   "width": 64.5,
+   "height": 55,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.users;",
+   "shapeNames": [
+    "mxgraph.citrix.users"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:98"
+  },
+  {
+   "id": "citrix-81-user-control",
+   "title": "User Control",
+   "tags": "citrix User Control  User Control",
+   "kind": "vertex",
+   "width": 103,
+   "height": 84,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.user_control;",
+   "shapeNames": [
+    "mxgraph.citrix.user_control"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:99"
+  },
+  {
+   "id": "citrix-82-web-server",
+   "title": "Web Server",
+   "tags": "citrix Web Server  Web Server",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 90,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.web_server;",
+   "shapeNames": [
+    "mxgraph.citrix.web_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:100"
+  },
+  {
+   "id": "citrix-83-web-service",
+   "title": "Web Service",
+   "tags": "citrix Web Service  Web Service",
+   "kind": "vertex",
+   "width": 63,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.web_service;",
+   "shapeNames": [
+    "mxgraph.citrix.web_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:101"
+  },
+  {
+   "id": "citrix-84-worxenroll",
+   "title": "WorxEnroll",
+   "tags": "citrix WorxEnroll  WorxEnroll",
+   "kind": "vertex",
+   "width": 38,
+   "height": 38,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.worxenroll;fillColor=#386510;gradientColor=#C6CF2B;gradientDirection=south;",
+   "shapeNames": [
+    "mxgraph.citrix.worxenroll"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:102"
+  },
+  {
+   "id": "citrix-85-worxhome",
+   "title": "WorxHome",
+   "tags": "citrix WorxHome  WorxHome",
+   "kind": "vertex",
+   "width": 38,
+   "height": 38,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.worxhome;fillColor=#DB9EFF;gradientColor=#712FA2;gradientDirection=south;",
+   "shapeNames": [
+    "mxgraph.citrix.worxhome"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:103"
+  },
+  {
+   "id": "citrix-86-worxmail",
+   "title": "WorxMail",
+   "tags": "citrix WorxMail  WorxMail",
+   "kind": "vertex",
+   "width": 38,
+   "height": 38,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.worxmail;fillColor=#112356;gradientColor=#63AFC6;gradientDirection=south;",
+   "shapeNames": [
+    "mxgraph.citrix.worxmail"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:104"
+  },
+  {
+   "id": "citrix-87-worxweb",
+   "title": "WorxWeb",
+   "tags": "citrix WorxWeb  WorxWeb",
+   "kind": "vertex",
+   "width": 38,
+   "height": 38,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.worxweb;fillColor=#2A3437;gradientColor=#B8B9B9;gradientDirection=south;",
+   "shapeNames": [
+    "mxgraph.citrix.worxweb"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:105"
+  },
+  {
+   "id": "citrix-88-xenapp-server",
+   "title": "XenApp Server",
+   "tags": "citrix XenApp Server  XenApp Server",
+   "kind": "vertex",
+   "width": 76,
+   "height": 89,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.xenapp_server;",
+   "shapeNames": [
+    "mxgraph.citrix.xenapp_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:106"
+  },
+  {
+   "id": "citrix-89-xenapp-services",
+   "title": "XenApp Services",
+   "tags": "citrix XenApp Services  XenApp Services",
+   "kind": "vertex",
+   "width": 76,
+   "height": 90,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.xenapp_services;",
+   "shapeNames": [
+    "mxgraph.citrix.xenapp_services"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:107"
+  },
+  {
+   "id": "citrix-90-xenapp-web",
+   "title": "XenApp Web",
+   "tags": "citrix XenApp Web  XenApp Web",
+   "kind": "vertex",
+   "width": 76,
+   "height": 90,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.xenapp_web;",
+   "shapeNames": [
+    "mxgraph.citrix.xenapp_web"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:108"
+  },
+  {
+   "id": "citrix-91-xencenter",
+   "title": "XenCenter",
+   "tags": "citrix XenCenter  XenCenter",
+   "kind": "vertex",
+   "width": 76,
+   "height": 89,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.xencenter;",
+   "shapeNames": [
+    "mxgraph.citrix.xencenter"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:109"
+  },
+  {
+   "id": "citrix-92-xenclient",
+   "title": "XenClient",
+   "tags": "citrix XenClient  XenClient",
+   "kind": "vertex",
+   "width": 91,
+   "height": 77,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.xenclient;",
+   "shapeNames": [
+    "mxgraph.citrix.xenclient"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:110"
+  },
+  {
+   "id": "citrix-93-xenclient-synchronizer",
+   "title": "XenClient Synchronizer",
+   "tags": "citrix Synchronizer  XenClient Synchronizer",
+   "kind": "vertex",
+   "width": 76,
+   "height": 91,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.xenclient_synchronizer;fillColor=#CCCCCC;gradientColor=#000000;gradientDirection=south;",
+   "shapeNames": [
+    "mxgraph.citrix.xenclient_synchronizer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:111"
+  },
+  {
+   "id": "citrix-94-xendesktop-server",
+   "title": "XenDesktop Server",
+   "tags": "citrix XenDesktop Server  XenDesktop Server",
+   "kind": "vertex",
+   "width": 75,
+   "height": 91,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.xendesktop_server;",
+   "shapeNames": [
+    "mxgraph.citrix.xendesktop_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:112"
+  },
+  {
+   "id": "citrix-95-xenmobile",
+   "title": "XenMobile",
+   "tags": "citrix XenMobile  XenMobile",
+   "kind": "vertex",
+   "width": 70,
+   "height": 89,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.xenmobile;fillColor=#CCCCCC;gradientColor=#000000;gradientDirection=south;",
+   "shapeNames": [
+    "mxgraph.citrix.xenmobile"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:113"
+  },
+  {
+   "id": "citrix-96-xenserver",
+   "title": "XenServer",
+   "tags": "citrix XenServer  XenServer",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 90,
+   "style": "verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.xenserver;",
+   "shapeNames": [
+    "mxgraph.citrix.xenserver"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix.js:114"
+  }
+ ]
+}

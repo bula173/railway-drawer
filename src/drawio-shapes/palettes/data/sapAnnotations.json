@@ -1,0 +1,106 @@
+{
+ "id": "sapAnnotations",
+ "title": "SAP / Annotations and Interfaces",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-SAP.js:8",
+ "entries": [
+  {
+   "id": "sapAnnotations-0-interface",
+   "title": "Interface",
+   "tags": "sap interface sap annotation  Interface",
+   "kind": "vertex",
+   "width": 57,
+   "height": 16,
+   "style": "rounded=1;whiteSpace=wrap;html=1;arcSize=50;strokeColor=#0070f3;fillColor=default;strokeWidth=1.5;roundedPerimeter=1;",
+   "value": "<font size=\"1\" color=\"#0a74f3\"><b style=\"\">Interface</b></font>",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:67"
+  },
+  {
+   "id": "sapAnnotations-1-interface",
+   "title": "Interface",
+   "tags": "sap interface sap annotation  Interface",
+   "kind": "vertex",
+   "width": 57,
+   "height": 16,
+   "style": "rounded=1;whiteSpace=wrap;html=1;arcSize=50;strokeColor=#475f75;fillColor=default;strokeWidth=1.5;roundedPerimeter=1;",
+   "value": "<font size=\"1\" color=\"#475f75\"><b style=\"\">Interface</b></font>",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:69"
+  },
+  {
+   "id": "sapAnnotations-2-authenticate",
+   "title": "Authenticate",
+   "tags": "authenticate Authenticate",
+   "kind": "cells",
+   "width": 125,
+   "height": 16,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"&lt;p style=&quot;line-height: 114%;&quot;&gt;&lt;font color=&quot;#188918&quot; size=&quot;1&quot;&gt;&lt;b style=&quot;&quot;&gt;TEXT&lt;/b&gt;&lt;/font&gt;&lt;/p&gt;\" style=\"rounded=1;whiteSpace=wrap;html=1;arcSize=50;strokeColor=#188918;fillColor=#f5fae5;fontColor=#266f3a;strokeWidth=1.5;roundedPerimeterPoints=1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"40\" width=\"41.99\" height=\"16\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#178b1b;strokeWidth=1.5;\" edge=\"1\" target=\"2\" parent=\"1\"><mxGeometry width=\"50\" height=\"50\" relative=\"1\" as=\"geometry\"><mxPoint y=\"8\" as=\"sourcePoint\"/><mxPoint x=\"60\" y=\"-2\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"\" style=\"endArrow=blockThin;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#178b1b;strokeWidth=1.5;exitX=1.015;exitY=0.505;exitDx=0;exitDy=0;exitPerimeter=0;endFill=1;endSize=4;startSize=4;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry width=\"50\" height=\"50\" relative=\"1\" as=\"geometry\"><mxPoint x=\"85\" y=\"7.949999999999989\" as=\"sourcePoint\"/><mxPoint x=\"125\" y=\"7.949999999999989\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:71"
+  },
+  {
+   "id": "sapAnnotations-3-authorize",
+   "title": "Authorize",
+   "tags": "authorize Authorize",
+   "kind": "cells",
+   "width": 125,
+   "height": 16,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"&lt;p style=&quot;line-height: 114%;&quot;&gt;&lt;font color=&quot;#5d36ff&quot; size=&quot;1&quot;&gt;&lt;b style=&quot;&quot;&gt;TEXT&lt;/b&gt;&lt;/font&gt;&lt;/p&gt;\" style=\"rounded=1;whiteSpace=wrap;html=1;arcSize=50;strokeColor=#470bed;fillColor=#f1edff;fontColor=#266f3a;strokeWidth=1.5;roundedPerimeterPoints=1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"40\" width=\"41.99\" height=\"16\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#470bed;strokeWidth=1.5;\" edge=\"1\" target=\"2\" parent=\"1\"><mxGeometry width=\"50\" height=\"50\" relative=\"1\" as=\"geometry\"><mxPoint y=\"8\" as=\"sourcePoint\"/><mxPoint x=\"60\" y=\"-2\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"\" style=\"endArrow=blockThin;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#470bed;strokeWidth=1.5;exitX=1.015;exitY=0.505;exitDx=0;exitDy=0;exitPerimeter=0;endFill=1;endSize=4;startSize=4;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry width=\"50\" height=\"50\" relative=\"1\" as=\"geometry\"><mxPoint x=\"85\" y=\"7.949999999999989\" as=\"sourcePoint\"/><mxPoint x=\"125\" y=\"7.949999999999989\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:72"
+  },
+  {
+   "id": "sapAnnotations-4-generic-protocol",
+   "title": "Generic Protocol",
+   "tags": "generic protocol Generic Protocol",
+   "kind": "cells",
+   "width": 125,
+   "height": 16,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"&lt;p style=&quot;line-height: 114%;&quot;&gt;&lt;font color=&quot;#475f75&quot; size=&quot;1&quot;&gt;&lt;b style=&quot;&quot;&gt;TEXT&lt;/b&gt;&lt;/font&gt;&lt;/p&gt;\" style=\"rounded=1;whiteSpace=wrap;html=1;arcSize=50;strokeColor=#475f75;fillColor=#f5f6f7;fontColor=#266f3a;strokeWidth=1.5;roundedPerimeterPoints=1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"40\" width=\"41.99\" height=\"16\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#475f75;strokeWidth=1.5;\" edge=\"1\" target=\"2\" parent=\"1\"><mxGeometry width=\"50\" height=\"50\" relative=\"1\" as=\"geometry\"><mxPoint y=\"8\" as=\"sourcePoint\"/><mxPoint x=\"60\" y=\"-2\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"\" style=\"endArrow=blockThin;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#475f75;strokeWidth=1.5;exitX=1.015;exitY=0.505;exitDx=0;exitDy=0;exitPerimeter=0;endFill=1;endSize=4;startSize=4;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry width=\"50\" height=\"50\" relative=\"1\" as=\"geometry\"><mxPoint x=\"85\" y=\"7.9500000000000455\" as=\"sourcePoint\"/><mxPoint x=\"125\" y=\"7.9500000000000455\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:73"
+  },
+  {
+   "id": "sapAnnotations-5-trust",
+   "title": "Trust",
+   "tags": "trust Trust",
+   "kind": "cells",
+   "width": 125,
+   "height": 16,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"&lt;p style=&quot;line-height: 114%;&quot;&gt;&lt;font color=&quot;#cc00dc&quot; size=&quot;1&quot;&gt;&lt;b style=&quot;&quot;&gt;TEXT&lt;/b&gt;&lt;/font&gt;&lt;/p&gt;\" style=\"rounded=1;whiteSpace=wrap;html=1;arcSize=50;strokeColor=#CC00DC;fillColor=#fff0fa;fontColor=#266f3a;strokeWidth=1.5;roundedPerimeterPoints=1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"40\" width=\"41.99\" height=\"16\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#cc00dc;strokeWidth=1.5;\" edge=\"1\" target=\"2\" parent=\"1\"><mxGeometry width=\"50\" height=\"50\" relative=\"1\" as=\"geometry\"><mxPoint y=\"8\" as=\"sourcePoint\"/><mxPoint x=\"60\" y=\"-2\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"\" style=\"endArrow=blockThin;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#cc00dc;strokeWidth=1.5;exitX=1.015;exitY=0.505;exitDx=0;exitDy=0;exitPerimeter=0;endFill=1;endSize=4;startSize=4;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry width=\"50\" height=\"50\" relative=\"1\" as=\"geometry\"><mxPoint x=\"85\" y=\"7.949999999999989\" as=\"sourcePoint\"/><mxPoint x=\"125\" y=\"7.949999999999989\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:74"
+  },
+  {
+   "id": "sapAnnotations-6-protocol",
+   "title": "Protocol",
+   "tags": "protocol Protocol",
+   "kind": "cells",
+   "width": 125,
+   "height": 16,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"&lt;p style=&quot;line-height: 114%;&quot;&gt;&lt;font color=&quot;#0070f2&quot; size=&quot;1&quot;&gt;&lt;b style=&quot;&quot;&gt;TEXT&lt;/b&gt;&lt;/font&gt;&lt;/p&gt;\" style=\"rounded=1;whiteSpace=wrap;html=1;arcSize=50;strokeColor=#0070F2;fillColor=#EBF8FF;fontColor=#266f3a;strokeWidth=1.5;roundedPerimeterPoints=1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"40\" width=\"41.99\" height=\"16\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#0070F2;strokeWidth=1.5;\" edge=\"1\" target=\"2\" parent=\"1\"><mxGeometry width=\"50\" height=\"50\" relative=\"1\" as=\"geometry\"><mxPoint y=\"8\" as=\"sourcePoint\"/><mxPoint x=\"60\" y=\"-2\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"\" style=\"endArrow=blockThin;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#0070F2;strokeWidth=1.5;exitX=1.015;exitY=0.505;exitDx=0;exitDy=0;exitPerimeter=0;endFill=1;endSize=4;startSize=4;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry width=\"50\" height=\"50\" relative=\"1\" as=\"geometry\"><mxPoint x=\"85\" y=\"7.9500000000000455\" as=\"sourcePoint\"/><mxPoint x=\"125\" y=\"7.9500000000000455\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:75"
+  },
+  {
+   "id": "sapAnnotations-7-protocol",
+   "title": "Protocol",
+   "tags": "protocol Protocol",
+   "kind": "cells",
+   "width": 125,
+   "height": 16,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"&lt;p style=&quot;line-height: 114%;&quot;&gt;&lt;font color=&quot;#07838f&quot; size=&quot;1&quot;&gt;&lt;b style=&quot;&quot;&gt;TEXT&lt;/b&gt;&lt;/font&gt;&lt;/p&gt;\" style=\"rounded=1;whiteSpace=wrap;html=1;arcSize=50;strokeColor=#07838f;fillColor=#dafdf5;fontColor=#266f3a;strokeWidth=1.5;roundedPerimeterPoints=1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"40\" width=\"41.99\" height=\"16\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#07838f;strokeWidth=1.5;\" edge=\"1\" target=\"2\" parent=\"1\"><mxGeometry width=\"50\" height=\"50\" relative=\"1\" as=\"geometry\"><mxPoint y=\"8\" as=\"sourcePoint\"/><mxPoint x=\"60\" y=\"-2\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"\" style=\"endArrow=blockThin;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#07838f;strokeWidth=1.5;exitX=1.015;exitY=0.505;exitDx=0;exitDy=0;exitPerimeter=0;endFill=1;endSize=4;startSize=4;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry width=\"50\" height=\"50\" relative=\"1\" as=\"geometry\"><mxPoint x=\"85\" y=\"7.9500000000000455\" as=\"sourcePoint\"/><mxPoint x=\"125\" y=\"7.9500000000000455\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:76"
+  }
+ ]
+}

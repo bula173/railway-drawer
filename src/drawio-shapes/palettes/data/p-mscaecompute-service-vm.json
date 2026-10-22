@@ -1,0 +1,148 @@
+{
+ "id": "mscaeCompute Service VM",
+ "title": "CAE / Compute Service VM",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:8",
+ "entries": [
+  {
+   "id": "mscaeCompute Service VM-0-availability-sets",
+   "title": "Availability Sets",
+   "tags": "mscae availability sets ms microsoft cloud enterprise compute service vm virtual machine Availability Sets",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Virtual_Machines_Availability_Set.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.975,0.013,0],[0.99,0.972,0],[0.013,0.975,0],[0.028,0.01,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:748"
+  },
+  {
+   "id": "mscaeCompute Service VM-1-non-azure-machine",
+   "title": "Non-Azure Machine",
+   "tags": "mscae non azure machine ms microsoft cloud enterprise compute service vm virtual machine Non-Azure Machine",
+   "kind": "vertex",
+   "width": 31,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Non_Azure_Machine.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.551,0],[1,0.551,0],[0.967,0.053,0],[0.999,1,0],[0.001,1,0],[0.029,0.058,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:750"
+  },
+  {
+   "id": "mscaeCompute Service VM-2-os-images-classic",
+   "title": "OS Images (classic)",
+   "tags": "mscae os images classic ms microsoft cloud enterprise compute service vm virtual machine OS Images (classic)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 46,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/OS_Images_Classic.svg;points=[[0.497,0,0],[0.497,1,0],[0,0.397,0],[1,0.397,0],[0.98,0.014,0],[0.825,1,0],[0.17,1,0],[0.018,0.014,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:752"
+  },
+  {
+   "id": "mscaeCompute Service VM-3-vm",
+   "title": "VM",
+   "tags": "mscae  ms microsoft cloud enterprise compute service vm virtual machine VM",
+   "kind": "vertex",
+   "width": 50,
+   "height": 46,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Virtual_Machine_2.svg;points=[[0.497,0,0],[0.497,1,0],[0,0.397,0],[1,0.397,0],[0.982,0.017,0],[0.825,1,0],[0.17,1,0],[0.02,0.011,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:754"
+  },
+  {
+   "id": "mscaeCompute Service VM-4-vm-scale-sets",
+   "title": "VM Scale Sets",
+   "tags": "mscae scale sets ms microsoft cloud enterprise compute service vm virtual machine VM Scale Sets",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/VM_Scale_Set.svg;points=[[0.5,0,0],[0.62,1,0],[0,0.5,0],[1,0.578,0],[1,0.325,0],[0.87,1,0],[0.251,0.841,0],[0.018,0.005,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:756"
+  },
+  {
+   "id": "mscaeCompute Service VM-5-vm",
+   "title": "VM",
+   "tags": "mscae  ms microsoft cloud enterprise compute service vm virtual machine VM",
+   "kind": "vertex",
+   "width": 50,
+   "height": 46,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Virtual_Machine.svg;points=[[0.497,0,0],[0.5,1,0],[0,0.398,0],[1,0.397,0],[0.98,0.014,0],[0.827,1,0],[0.173,1,0],[0.018,0.014,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:758"
+  },
+  {
+   "id": "mscaeCompute Service VM-6-vm-linux",
+   "title": "VM (Linux)",
+   "tags": "mscae linux ms microsoft cloud enterprise compute service vm virtual machine VM (Linux)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 46,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/VM_Linux.svg;points=[[0.497,0,0],[0.51,1,0],[0,0.402,0],[1,0.404,0],[0.982,0.017,0],[0.84,1,0],[0.18,1,0],[0.018,0.014,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:760"
+  },
+  {
+   "id": "mscaeCompute Service VM-7-vm-linux-non-azure",
+   "title": "VM (Linux, Non-Azure)",
+   "tags": "mscae linux non azure ms microsoft cloud enterprise compute service vm virtual machine VM (Linux, Non-Azure)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 46,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/VM_Linux_Non_Azure.svg;points=[[0.497,0,0],[0.5,1,0],[0,0.402,0],[1,0.404,0],[0.982,0.017,0],[0.982,0.788,0],[0.02,0.793,0],[0.018,0.014,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:762"
+  },
+  {
+   "id": "mscaeCompute Service VM-8-vm-windows",
+   "title": "VM (Windows)",
+   "tags": "mscae windows ms microsoft cloud enterprise compute service vm virtual machine VM (Windows)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 46,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/VirtualMachineWindows.svg;points=[[0.497,0,0],[0.497,1,0],[0,0.397,0],[1,0.397,0],[0.982,0.017,0],[0.825,1,0],[0.17,1,0],[0.02,0.011,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:764"
+  },
+  {
+   "id": "mscaeCompute Service VM-9-vm-windows-non-azure",
+   "title": "VM (Windows, Non-Azure)",
+   "tags": "mscae windows non azure ms microsoft cloud enterprise compute service vm virtual machine VM (Windows, Non-Azure)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 46,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/VM_Windows_Non_Azure.svg;points=[[0.497,0,0],[0.5,1,0],[0,0.402,0],[1,0.404,0],[0.982,0.017,0],[0.982,0.788,0],[0.02,0.793,0],[0.018,0.014,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:766"
+  }
+ ]
+}

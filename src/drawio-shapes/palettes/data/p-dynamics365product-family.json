@@ -1,0 +1,22 @@
+{
+ "id": "dynamics365Product Family",
+ "title": "Dynamics365 / Product Family",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Dynamics365.js:8",
+ "entries": [
+  {
+   "id": "dynamics365Product Family-0-dynamics-365",
+   "title": "Dynamics 365",
+   "tags": "dynamics 365 product family  Dynamics 365",
+   "kind": "vertex",
+   "width": 50.12,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/dynamics365/Dynamics365.svg;points=[[0.5,0.114,0],[0.5,0.951,0],[0,0.209,0],[1,0.53,0],[0.972,0.255,0],[0.976,0.802,0],[0.265,0.977,0],[0.007,0.018,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Dynamics365.js:120"
+  }
+ ]
+}

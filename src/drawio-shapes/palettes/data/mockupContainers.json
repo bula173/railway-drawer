@@ -1,0 +1,171 @@
+{
+ "id": "mockupContainers",
+ "title": "Mockup Containers",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Mockup.js:8",
+ "entries": [
+  {
+   "id": "mockupContainers-0-video-player",
+   "title": "Video Player",
+   "tags": "mockup containers videoPlayer mockup container  Video Player",
+   "kind": "vertex",
+   "width": 300,
+   "height": 200,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.containers.videoPlayer;strokeColor=#666666;strokeColor2=#008cff;strokeColor3=#c4c4c4;textColor=#666666;fillColor2=#008cff;barHeight=30;barPos=20;",
+   "shapeNames": [
+    "mxgraph.mockup.containers.videoPlayer"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:144"
+  },
+  {
+   "id": "mockupContainers-1-accordion",
+   "title": "Accordion",
+   "tags": "accordion",
+   "kind": "cells",
+   "width": 100,
+   "height": 220,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"swimlane;strokeColor=#666666;swimlaneFillColor=#FFFFFF;fillColor=#ffffff;fontColor=#008CFF;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=0;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=17;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"100\" height=\"220\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Group 1\" style=\"text;spacing=0;strokeColor=inherit;align=center;verticalAlign=middle;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fillColor=inherit;fontColor=#666666;fontStyle=1;fontSize=17;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"100\" height=\"26\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Group 2\" style=\"text;spacing=0;strokeColor=inherit;align=center;verticalAlign=middle;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;rSize=5;fillColor=inherit;fontStyle=1;fontColor=#666666;fontSize=17;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"100\" height=\"26\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"Group 3\" style=\"text;spacing=0;strokeColor=#008CFF;align=center;verticalAlign=middle;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;rSize=5;fillColor=#008CFF;fontStyle=1;fontColor=#ffffff;fontSize=17;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"100\" height=\"26\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"\" style=\"text;spacing=0;strokeColor=inherit;align=center;verticalAlign=middle;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fillColor=inherit;fontStyle=1;fontColor=#666666;fontSize=17;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"100\" height=\"116\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"Group 4\" style=\"text;spacing=0;strokeColor=inherit;align=center;verticalAlign=middle;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fillColor=inherit;fontStyle=1;fontColor=#666666;fontSize=17;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"100\" height=\"26\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "swimlane"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:147"
+  },
+  {
+   "id": "mockupContainers-2-browser-window",
+   "title": "Browser Window",
+   "tags": "mockup container browser window",
+   "kind": "cells",
+   "width": 550,
+   "height": 380,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.browserWindow;rSize=0;strokeColor=#666666;strokeColor2=#008cff;strokeColor3=#c4c4c4;mainText=,;recursiveResize=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"550\" height=\"380\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Page 1\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.anchor;fontSize=17;fontColor=#666666;align=left;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"60\" y=\"12\" width=\"110\" height=\"26\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"https://www.draw.io\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.anchor;rSize=0;fontSize=17;fontColor=#666666;align=left;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"130\" y=\"60\" width=\"250\" height=\"26\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.mockup.containers.browserWindow",
+    "mxgraph.mockup.containers.anchor"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:176"
+  },
+  {
+   "id": "mockupContainers-3-user-male",
+   "title": "User, Male",
+   "tags": "mockup containers userMale mockup container  User, Male",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.containers.userMale;strokeColor=#666666;strokeColor2=#008cff;",
+   "shapeNames": [
+    "mxgraph.mockup.containers.userMale"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:190"
+  },
+  {
+   "id": "mockupContainers-4-user-female",
+   "title": "User, Female",
+   "tags": "mockup containers userFemale mockup container  User, Female",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.containers.userFemale;strokeColor=#666666;strokeColor2=#008cff;",
+   "shapeNames": [
+    "mxgraph.mockup.containers.userFemale"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:192"
+  },
+  {
+   "id": "mockupContainers-5-group",
+   "title": "Group",
+   "tags": "mockup container group",
+   "kind": "cells",
+   "width": 150,
+   "height": 200,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=mxgraph.mockup.containers.marginRect;rectMarginTop=10;strokeColor=#666666;strokeWidth=1;dashed=0;rounded=1;arcSize=5;recursiveResize=0;html=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"150\" height=\"200\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Group\" style=\"shape=rect;strokeColor=none;fillColor=#008cff;strokeWidth=1;dashed=0;rounded=1;arcSize=20;fontColor=#ffffff;fontSize=17;spacing=2;spacingTop=-2;align=left;autosize=1;spacingLeft=4;resizeWidth=0;resizeHeight=0;perimeter=none;html=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"5\" width=\"90\" height=\"30\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.mockup.containers.marginRect",
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:195"
+  },
+  {
+   "id": "mockupContainers-6-window",
+   "title": "Window",
+   "tags": "mockup containers window mockup container  Window",
+   "kind": "vertex",
+   "width": 550,
+   "height": 380,
+   "style": "strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.window;align=left;verticalAlign=top;spacingLeft=8;strokeColor2=#008cff;strokeColor3=#c4c4c4;fontColor=#666666;mainText=;fontSize=17;labelBackgroundColor=none;whiteSpace=wrap;",
+   "value": "Window Title",
+   "shapeNames": [
+    "mxgraph.mockup.containers.window"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:206"
+  },
+  {
+   "id": "mockupContainers-7-horizontal-tab-bar",
+   "title": "Horizontal Tab Bar",
+   "tags": "mockup container horizontal tab bar",
+   "kind": "cells",
+   "width": 400,
+   "height": 200,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.marginRect2;rectMarginTop=32;strokeColor=#666666;gradientColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"400\" height=\"200\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Tab 1\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.rrect;rSize=0;fontSize=17;fontColor=#666666;gradientColor=none;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"60\" height=\"25\" relative=\"1\" as=\"geometry\"><mxPoint x=\"10\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"Tab 2\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.rrect;rSize=0;fontSize=17;fontColor=#ffffff;strokeColor=#008cff;fillColor=#008cff;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"60\" height=\"25\" relative=\"1\" as=\"geometry\"><mxPoint x=\"75\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"Tab 3\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.rrect;rSize=0;fontSize=17;fontColor=#666666;gradientColor=none;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"60\" height=\"25\" relative=\"1\" as=\"geometry\"><mxPoint x=\"140\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"6\" value=\"\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.topButton;rSize=5;strokeColor=#008cff;fillColor=#008cff;gradientColor=none;resizeWidth=1;movable=0;deletable=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"400\" height=\"7\" relative=\"1\" as=\"geometry\"><mxPoint y=\"25\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.mockup.containers.marginRect2",
+    "mxgraph.mockup.containers.rrect",
+    "mxgraph.mockup.containers.topButton"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:209"
+  },
+  {
+   "id": "mockupContainers-8-vertical-tab-bar",
+   "title": "Vertical Tab Bar",
+   "tags": "mockup container vertical tab bar",
+   "kind": "cells",
+   "width": 400,
+   "height": 200,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.marginRect2;rectMarginLeft=67;strokeColor=#666666;gradientColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"400\" height=\"200\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Tab 1\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.rrect;rSize=0;fontSize=17;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"60\" height=\"25\" relative=\"1\" as=\"geometry\"><mxPoint y=\"10\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"Tab 2\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.rrect;rSize=0;fontSize=17;fontColor=#ffffff;strokeColor=#008cff;fillColor=#008cff;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"60\" height=\"25\" relative=\"1\" as=\"geometry\"><mxPoint y=\"40\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"Tab 3\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.rrect;rSize=0;fontSize=17;fontColor=#666666;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"60\" height=\"25\" relative=\"1\" as=\"geometry\"><mxPoint y=\"70\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"6\" value=\"\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.leftButton;rSize=5;strokeColor=#008cff;fillColor=#008cff;resizeHeight=1;movable=0;deletable=0;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"7\" height=\"200\" relative=\"1\" as=\"geometry\"><mxPoint x=\"60\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.mockup.containers.marginRect2",
+    "mxgraph.mockup.containers.rrect",
+    "mxgraph.mockup.containers.leftButton"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:237"
+  },
+  {
+   "id": "mockupContainers-9-dialog-box",
+   "title": "Dialog Box",
+   "tags": "mockup container dialog box Dialog Box",
+   "kind": "cells",
+   "width": 250,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Some default&#10;dialog&#10;text.\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.rrect;rSize=0;strokeColor=#666666;fontColor=#666666;fontSize=17;verticalAlign=top;whiteSpace=wrap;fillColor=#ffffff;spacingTop=32;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"250\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Dialog Title\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.rrect;rSize=0;fontSize=17;fontColor=#666666;strokeColor=#666666;align=left;spacingLeft=8;fillColor=none;resizeWidth=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"250\" height=\"30\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=ellipse;strokeColor=#008cff;resizable=0;fillColor=none;html=1;\" vertex=\"1\" parent=\"3\"><mxGeometry x=\"1\" y=\"0.5\" width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-25\" y=\"-10\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"Cancel\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.rrect;rSize=0;fontSize=16;fontColor=#666666;strokeColor=#c4c4c4;whiteSpace=wrap;fillColor=none;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.25\" y=\"1\" width=\"90\" height=\"25\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-45\" y=\"-33\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"6\" value=\"OK\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.rrect;rSize=0;fontSize=16;fontColor=#666666;strokeColor=#c4c4c4;whiteSpace=wrap;fillColor=none;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.75\" y=\"1\" width=\"90\" height=\"25\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-45\" y=\"-33\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.mockup.containers.rrect",
+    "ellipse"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:265"
+  },
+  {
+   "id": "mockupContainers-10-dialog-box",
+   "title": "Dialog Box",
+   "tags": "mockup container dialog box Dialog Box",
+   "kind": "cells",
+   "width": 250,
+   "height": 160,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Some default&#10;message&#10;text.\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.rrect;rSize=0;strokeColor=#666666;fontColor=#666666;fontSize=17;verticalAlign=top;whiteSpace=wrap;fillColor=#ffffff;spacingTop=32;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"250\" height=\"160\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Message Title\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.rrect;rSize=0;fontSize=17;fontColor=#666666;strokeColor=#666666;align=left;spacingLeft=8;fillColor=#ffffff;resizeWidth=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"250\" height=\"30\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=ellipse;strokeColor=#008cff;resizable=0;fillColor=none;html=1;\" vertex=\"1\" parent=\"3\"><mxGeometry x=\"1\" y=\"0.5\" width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-25\" y=\"-10\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"OK\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.rrect;rSize=0;fontSize=16;fontColor=#666666;strokeColor=#c4c4c4;resizable=0;whiteSpace=wrap;fillColor=#ffffff;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.5\" y=\"1\" width=\"120\" height=\"25\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-60\" y=\"-33\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.mockup.containers.rrect",
+    "ellipse"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:267"
+  }
+ ]
+}

@@ -1,0 +1,260 @@
+{
+ "id": "pidPumps",
+ "title": "Process Engineering / Pumps",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-PID.js:8",
+ "entries": [
+  {
+   "id": "pidPumps-0-cavity-pump",
+   "title": "Cavity Pump",
+   "tags": "pid pumps  Cavity Pump Cavity Pump",
+   "kind": "vertex",
+   "width": 123,
+   "height": 35,
+   "style": "shape=mxgraph.pid.pumps.cavity_pump;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.pumps.cavity_pump"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidPumps-1-centrifugal-pump-1",
+   "title": "Centrifugal Pump 1",
+   "tags": "pid pumps  Centrifugal Pump 1 Centrifugal Pump 1",
+   "kind": "vertex",
+   "width": 70,
+   "height": 67,
+   "style": "shape=mxgraph.pid.pumps.centrifugal_pump_1;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.pumps.centrifugal_pump_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidPumps-2-centrifugal-pump-2",
+   "title": "Centrifugal Pump 2",
+   "tags": "pid pumps  Centrifugal Pump 2 Centrifugal Pump 2",
+   "kind": "vertex",
+   "width": 62,
+   "height": 77,
+   "style": "shape=mxgraph.pid.pumps.centrifugal_pump_2;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.pumps.centrifugal_pump_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidPumps-3-centrifugal-pump-3",
+   "title": "Centrifugal Pump 3",
+   "tags": "pid pumps  Centrifugal Pump 3 Centrifugal Pump 3",
+   "kind": "vertex",
+   "width": 70,
+   "height": 67,
+   "style": "shape=mxgraph.pid.pumps.centrifugal_pump_3;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.pumps.centrifugal_pump_3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidPumps-4-feed-pump",
+   "title": "Feed Pump",
+   "tags": "pid pumps  Feed Pump Feed Pump",
+   "kind": "vertex",
+   "width": 100,
+   "height": 40,
+   "style": "shape=mxgraph.pid.pumps.feed_pump;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.pumps.feed_pump"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidPumps-5-gas-blower",
+   "title": "Gas Blower",
+   "tags": "pid pumps  Gas Blower Gas Blower",
+   "kind": "vertex",
+   "width": 72,
+   "height": 67,
+   "style": "shape=mxgraph.pid.pumps.gas_blower;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.pumps.gas_blower"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidPumps-6-gas-compressor",
+   "title": "Gas Compressor",
+   "tags": "pid pumps  Gas Compressor Gas Compressor",
+   "kind": "vertex",
+   "width": 100,
+   "height": 55,
+   "style": "shape=mxgraph.pid.pumps.gas_compressor;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.pumps.gas_compressor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidPumps-7-gear-pump",
+   "title": "Gear Pump",
+   "tags": "pid pumps  Gear Pump Gear Pump",
+   "kind": "vertex",
+   "width": 57,
+   "height": 91,
+   "style": "shape=mxgraph.pid.pumps.gear_pump;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.pumps.gear_pump"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidPumps-8-horizontal-pump",
+   "title": "Horizontal Pump",
+   "tags": "pid pumps  Horizontal Pump Horizontal Pump",
+   "kind": "vertex",
+   "width": 155,
+   "height": 111,
+   "style": "shape=mxgraph.pid.pumps.horizontal_pump;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.pumps.horizontal_pump"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidPumps-9-injector",
+   "title": "Injector",
+   "tags": "pid pumps  Injector Injector",
+   "kind": "vertex",
+   "width": 80,
+   "height": 40,
+   "style": "shape=mxgraph.pid.pumps.injector;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.pumps.injector"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidPumps-10-peristaltic",
+   "title": "Peristaltic",
+   "tags": "pid pumps  Peristaltic Peristaltic",
+   "kind": "vertex",
+   "width": 60,
+   "height": 69,
+   "style": "shape=mxgraph.pid.pumps.peristaltic;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.pumps.peristaltic"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidPumps-11-screw-pump",
+   "title": "Screw Pump",
+   "tags": "pid pumps  Screw Pump Screw Pump",
+   "kind": "vertex",
+   "width": 70,
+   "height": 66,
+   "style": "shape=mxgraph.pid.pumps.screw_pump;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.pumps.screw_pump"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidPumps-12-screw-pump-2",
+   "title": "Screw Pump 2",
+   "tags": "pid pumps  Screw Pump 2 Screw Pump 2",
+   "kind": "vertex",
+   "width": 123,
+   "height": 40,
+   "style": "shape=mxgraph.pid.pumps.screw_pump_2;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.pumps.screw_pump_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidPumps-13-submersible-pump",
+   "title": "Submersible Pump",
+   "tags": "pid pumps  Submersible Pump Submersible Pump",
+   "kind": "vertex",
+   "width": 103,
+   "height": 74,
+   "style": "shape=mxgraph.pid.pumps.submersible_pump;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.pumps.submersible_pump"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidPumps-14-sump-pump",
+   "title": "Sump Pump",
+   "tags": "pid pumps  Sump Pump Sump Pump",
+   "kind": "vertex",
+   "width": 103,
+   "height": 186,
+   "style": "shape=mxgraph.pid.pumps.sump_pump;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.pumps.sump_pump"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidPumps-15-turbine",
+   "title": "Turbine",
+   "tags": "pid pumps  Turbine Turbine",
+   "kind": "vertex",
+   "width": 98,
+   "height": 60,
+   "style": "shape=mxgraph.pid.pumps.turbine;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.pumps.turbine"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidPumps-16-vacuum-pump",
+   "title": "Vacuum Pump",
+   "tags": "pid pumps  Vacuum Pump Vacuum Pump",
+   "kind": "vertex",
+   "width": 99,
+   "height": 49,
+   "style": "shape=mxgraph.pid.pumps.vacuum_pump;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.pumps.vacuum_pump"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidPumps-17-vertical-pump",
+   "title": "Vertical Pump",
+   "tags": "pid pumps  Vertical Pump Vertical Pump",
+   "kind": "vertex",
+   "width": 120,
+   "height": 146,
+   "style": "shape=mxgraph.pid.pumps.vertical_pump;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.pumps.vertical_pump"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  }
+ ]
+}

@@ -1,0 +1,960 @@
+{
+ "id": "aws4Network Content Delivery",
+ "title": "AWS / Network & Content Delivery",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-AWS4.js:8",
+ "entries": [
+  {
+   "id": "aws4Network Content Delivery-0-networking-content-delivery",
+   "title": "Networking & Content Delivery",
+   "tags": "aws4 networking and content delivery aws amazon web service netowrk content delivery  Networking & Content Delivery",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.networking_and_content_delivery;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1833"
+  },
+  {
+   "id": "aws4Network Content Delivery-1-api-gateway",
+   "title": "API Gateway",
+   "tags": "aws4 api application programming interface gateway aws amazon web service netowrk content delivery  API Gateway",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.api_gateway;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1835"
+  },
+  {
+   "id": "aws4Network Content Delivery-2-application-recovery-controller",
+   "title": "Application Recovery Controller",
+   "tags": "aws4 application recovery controller route 53 application recovery controller aws amazon web service netowrk content delivery  Application Recovery Controller",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.application_recovery_controller;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1837"
+  },
+  {
+   "id": "aws4Network Content Delivery-3-cloud-directory",
+   "title": "Cloud Directory",
+   "tags": "aws4 cloud directory aws amazon web service netowrk content delivery  Cloud Directory",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cloud_directory;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1839"
+  },
+  {
+   "id": "aws4Network Content Delivery-4-cloudfront",
+   "title": "CloudFront",
+   "tags": "aws4 cloudfront aws amazon web service netowrk content delivery  CloudFront",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cloudfront;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1841"
+  },
+  {
+   "id": "aws4Network Content Delivery-5-route-53",
+   "title": "Route 53",
+   "tags": "aws4 route 53 aws amazon web service netowrk content delivery  Route 53",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.route_53;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1843"
+  },
+  {
+   "id": "aws4Network Content Delivery-6-privatelink",
+   "title": "PrivateLink",
+   "tags": "aws4 privatelink aws amazon web service netowrk content delivery  PrivateLink",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.vpc_privatelink;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1845"
+  },
+  {
+   "id": "aws4Network Content Delivery-7-vpc",
+   "title": "VPC",
+   "tags": "aws4 vpc virtual private cloud aws amazon web service netowrk content delivery  VPC",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.vpc;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1847"
+  },
+  {
+   "id": "aws4Network Content Delivery-8-vpc-lattice",
+   "title": "VPC Lattice",
+   "tags": "aws4 vpc virtual private lattice aws amazon web service netowrk content delivery  VPC Lattice",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.vpc_lattice;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1849"
+  },
+  {
+   "id": "aws4Network Content Delivery-9-app-mesh",
+   "title": "App Mesh",
+   "tags": "aws4 app application mesh aws amazon web service netowrk content delivery  App Mesh",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.app_mesh;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1851"
+  },
+  {
+   "id": "aws4Network Content Delivery-10-client-vpn",
+   "title": "Client VPN",
+   "tags": "aws4 client vpn virtual private network aws amazon web service netowrk content delivery  Client VPN",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.client_vpn;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1853"
+  },
+  {
+   "id": "aws4Network Content Delivery-11-site-to-site-vpn",
+   "title": "Site-to-Site VPN",
+   "tags": "aws4 site to site s2s vpn virtual private network aws amazon web service netowrk content delivery  Site-to-Site VPN",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.site_to_site_vpn;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1855"
+  },
+  {
+   "id": "aws4Network Content Delivery-12-elastic-load-balancing",
+   "title": "Elastic Load Balancing",
+   "tags": "aws4 elastic load balancing aws amazon web service netowrk content delivery  Elastic Load Balancing",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.elastic_load_balancing;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1857"
+  },
+  {
+   "id": "aws4Network Content Delivery-13-cloud-map",
+   "title": "Cloud Map",
+   "tags": "aws4 cloud map aws amazon web service netowrk content delivery  Cloud Map",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cloud_map;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1859"
+  },
+  {
+   "id": "aws4Network Content Delivery-14-cloud-wan",
+   "title": "Cloud WAN",
+   "tags": "aws4 cloud wan aws amazon web service netowrk content delivery  Cloud WAN",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cloud_wan;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1861"
+  },
+  {
+   "id": "aws4Network Content Delivery-15-direct-connect",
+   "title": "Direct Connect",
+   "tags": "aws4 direct connect aws amazon web service netowrk content delivery  Direct Connect",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.direct_connect;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1863"
+  },
+  {
+   "id": "aws4Network Content Delivery-16-global-accelerator",
+   "title": "Global Accelerator",
+   "tags": "aws4 global accelerator aws amazon web service netowrk content delivery  Global Accelerator",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.global_accelerator;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1865"
+  },
+  {
+   "id": "aws4Network Content Delivery-17-rtb-fabric",
+   "title": "RTB Fabric",
+   "tags": "aws4 rtb fabric aws amazon web service netowrk content delivery  RTB Fabric",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.rtb_fabric;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1867"
+  },
+  {
+   "id": "aws4Network Content Delivery-18-transit-gateway",
+   "title": "Transit Gateway",
+   "tags": "aws4 transit gateway aws amazon web service netowrk content delivery  Transit Gateway",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.transit_gateway;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1869"
+  },
+  {
+   "id": "aws4Network Content Delivery-19-verified-access",
+   "title": "Verified Access",
+   "tags": "aws4 verified access aws amazon web service netowrk content delivery  Verified Access",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.verified_access;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1871"
+  },
+  {
+   "id": "aws4Network Content Delivery-20-interconnect",
+   "title": "Interconnect",
+   "tags": "aws4 interconnect aws amazon web service netowrk content delivery  Interconnect",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.interconnect;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1873"
+  },
+  {
+   "id": "aws4Network Content Delivery-21-endpoint",
+   "title": "Endpoint",
+   "tags": "aws4 endpoint aws amazon web service netowrk content delivery  Endpoint",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.endpoint;",
+   "shapeNames": [
+    "mxgraph.aws4.endpoint"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1876"
+  },
+  {
+   "id": "aws4Network Content Delivery-22-download-distribution",
+   "title": "Download Distribution",
+   "tags": "aws4 download distribution aws amazon web service netowrk content delivery  Download Distribution",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.download_distribution;",
+   "shapeNames": [
+    "mxgraph.aws4.download_distribution"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1878"
+  },
+  {
+   "id": "aws4Network Content Delivery-23-cloudfront-functions",
+   "title": "CloudFront Functions",
+   "tags": "aws4 cloudfront functions aws amazon web service netowrk content delivery  CloudFront Functions",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.cloudfront_functions;",
+   "shapeNames": [
+    "mxgraph.aws4.cloudfront_functions"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1880"
+  },
+  {
+   "id": "aws4Network Content Delivery-24-edge-location",
+   "title": "Edge Location",
+   "tags": "aws4 edge location aws amazon web service netowrk content delivery  Edge Location",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.edge_location;",
+   "shapeNames": [
+    "mxgraph.aws4.edge_location"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1882"
+  },
+  {
+   "id": "aws4Network Content Delivery-25-streaming-distribution",
+   "title": "Streaming Distribution",
+   "tags": "aws4 streaming distribution aws amazon web service netowrk content delivery  Streaming Distribution",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.streaming_distribution;",
+   "shapeNames": [
+    "mxgraph.aws4.streaming_distribution"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1884"
+  },
+  {
+   "id": "aws4Network Content Delivery-26-route-53-readiness-checks",
+   "title": "Route 53 Readiness Checks",
+   "tags": "aws4 route 53 readiness checks aws amazon web service netowrk content delivery  Route 53 Readiness Checks",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.route_53_readiness_checks;",
+   "shapeNames": [
+    "mxgraph.aws4.route_53_readiness_checks"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1886"
+  },
+  {
+   "id": "aws4Network Content Delivery-27-hosted-zone",
+   "title": "Hosted Zone",
+   "tags": "aws4 hosted zone aws amazon web service netowrk content delivery  Hosted Zone",
+   "kind": "vertex",
+   "width": 78,
+   "height": 77,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.hosted_zone;",
+   "shapeNames": [
+    "mxgraph.aws4.hosted_zone"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1888"
+  },
+  {
+   "id": "aws4Network Content Delivery-28-vpc-carrier-gateway",
+   "title": "VPC Carrier Gateway",
+   "tags": "aws4 vpc carrier gateway aws amazon web service netowrk content delivery  VPC Carrier Gateway",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.vpc_carrier_gateway;",
+   "shapeNames": [
+    "mxgraph.aws4.vpc_carrier_gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1890"
+  },
+  {
+   "id": "aws4Network Content Delivery-29-route-53-resolver",
+   "title": "Route 53 Resolver",
+   "tags": "aws4 route 53 resolver aws amazon web service netowrk content delivery  Route 53 Resolver",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.route_53_resolver;",
+   "shapeNames": [
+    "mxgraph.aws4.route_53_resolver"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1892"
+  },
+  {
+   "id": "aws4Network Content Delivery-30-route-53-resolver-dns-firewall",
+   "title": "Route 53 Resolver DNS Firewall",
+   "tags": "aws4 route 53 resolver dns firewall aws amazon web service netowrk content delivery  Route 53 Resolver DNS Firewall",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.route_53_resolver_dns_firewall;",
+   "shapeNames": [
+    "mxgraph.aws4.route_53_resolver_dns_firewall"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1894"
+  },
+  {
+   "id": "aws4Network Content Delivery-31-route-53-resolver-query-logging",
+   "title": "Route 53 Resolver Query Logging",
+   "tags": "aws4 route 53 resolver query logging aws amazon web service netowrk content delivery  Route 53 Resolver Query Logging",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.route_53_resolver_query_logging;",
+   "shapeNames": [
+    "mxgraph.aws4.route_53_resolver_query_logging"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1896"
+  },
+  {
+   "id": "aws4Network Content Delivery-32-route-table",
+   "title": "Route Table",
+   "tags": "aws4 route table aws amazon web service netowrk content delivery  Route Table",
+   "kind": "vertex",
+   "width": 78,
+   "height": 76,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.route_table;",
+   "shapeNames": [
+    "mxgraph.aws4.route_table"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1898"
+  },
+  {
+   "id": "aws4Network Content Delivery-33-route-53-routing-controls",
+   "title": "Route 53 Routing Controls",
+   "tags": "aws4 route 53 routing controls aws amazon web service netowrk content delivery  Route 53 Routing Controls",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.route_53_routing_controls;",
+   "shapeNames": [
+    "mxgraph.aws4.route_53_routing_controls"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1900"
+  },
+  {
+   "id": "aws4Network Content Delivery-34-vpc-customer-gateway",
+   "title": "VPC Customer Gateway",
+   "tags": "aws4 vpc virtual private cloud customer gateway router aws amazon web service netowrk content delivery  VPC Customer Gateway",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.customer_gateway;",
+   "shapeNames": [
+    "mxgraph.aws4.customer_gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1902"
+  },
+  {
+   "id": "aws4Network Content Delivery-35-elastic-network-adapter",
+   "title": "Elastic Network Adapter",
+   "tags": "aws4 vpc virtual private cloud elastic network adapter aws amazon web service netowrk content delivery  Elastic Network Adapter",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.elastic_network_adapter;",
+   "shapeNames": [
+    "mxgraph.aws4.elastic_network_adapter"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1904"
+  },
+  {
+   "id": "aws4Network Content Delivery-36-elastic-network-interface",
+   "title": "Elastic Network Interface",
+   "tags": "aws4 vpc virtual private cloud elastic network interface aws amazon web service netowrk content delivery  Elastic Network Interface",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.elastic_network_interface;",
+   "shapeNames": [
+    "mxgraph.aws4.elastic_network_interface"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1906"
+  },
+  {
+   "id": "aws4Network Content Delivery-37-endpoints",
+   "title": "Endpoints",
+   "tags": "aws4 vpc virtual private cloud endpoints aws amazon web service netowrk content delivery  Endpoints",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.endpoints;",
+   "shapeNames": [
+    "mxgraph.aws4.endpoints"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1908"
+  },
+  {
+   "id": "aws4Network Content Delivery-38-flow-logs",
+   "title": "Flow Logs",
+   "tags": "aws4 vpc virtual private cloud flow logs aws amazon web service netowrk content delivery  Flow Logs",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.flow_logs;",
+   "shapeNames": [
+    "mxgraph.aws4.flow_logs"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1910"
+  },
+  {
+   "id": "aws4Network Content Delivery-39-gateway",
+   "title": "Gateway",
+   "tags": "aws4 gateway aws amazon web service netowrk content delivery  Gateway",
+   "kind": "vertex",
+   "width": 76,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.gateway;",
+   "shapeNames": [
+    "mxgraph.aws4.gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1912"
+  },
+  {
+   "id": "aws4Network Content Delivery-40-transit-gateway-attachment",
+   "title": "Transit Gateway Attachment",
+   "tags": "aws4 transit gateway attachment aws amazon web service netowrk content delivery  Transit Gateway Attachment",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.transit_gateway_attachment;",
+   "shapeNames": [
+    "mxgraph.aws4.transit_gateway_attachment"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1914"
+  },
+  {
+   "id": "aws4Network Content Delivery-41-internet-gateway",
+   "title": "Internet Gateway",
+   "tags": "aws4 vpc virtual private cloud internet gateway aws amazon web service netowrk content delivery  Internet Gateway",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.internet_gateway;",
+   "shapeNames": [
+    "mxgraph.aws4.internet_gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1916"
+  },
+  {
+   "id": "aws4Network Content Delivery-42-mesh",
+   "title": "Mesh",
+   "tags": "aws4 mesh aws amazon web service netowrk content delivery  Mesh",
+   "kind": "vertex",
+   "width": 78,
+   "height": 77,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.mesh;",
+   "shapeNames": [
+    "mxgraph.aws4.mesh"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1918"
+  },
+  {
+   "id": "aws4Network Content Delivery-43-nat-gateway",
+   "title": "NAT Gateway",
+   "tags": "aws4 vpc virtual private cloud nat gateway aws amazon web service netowrk content delivery  NAT Gateway",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.nat_gateway;",
+   "shapeNames": [
+    "mxgraph.aws4.nat_gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1920"
+  },
+  {
+   "id": "aws4Network Content Delivery-44-vpc-network-access-analyzer",
+   "title": "VPC Network Access Analyzer",
+   "tags": "aws4 vpc network access analyzer aws amazon web service netowrk content delivery  VPC Network Access Analyzer",
+   "kind": "vertex",
+   "width": 77,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.vpc_network_access_analyzer;",
+   "shapeNames": [
+    "mxgraph.aws4.vpc_network_access_analyzer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1922"
+  },
+  {
+   "id": "aws4Network Content Delivery-45-namespace",
+   "title": "Namespace",
+   "tags": "aws4 namespace aws amazon web service netowrk content delivery  Namespace",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.namespace;",
+   "shapeNames": [
+    "mxgraph.aws4.namespace"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1924"
+  },
+  {
+   "id": "aws4Network Content Delivery-46-network-access-control-list",
+   "title": "Network Access Control List",
+   "tags": "aws4 vpc virtual private cloud network access control list aws amazon web service netowrk content delivery  Network Access Control List",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.network_access_control_list;",
+   "shapeNames": [
+    "mxgraph.aws4.network_access_control_list"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1926"
+  },
+  {
+   "id": "aws4Network Content Delivery-47-peering-connection",
+   "title": "Peering Connection",
+   "tags": "aws4 peering connection aws amazon web service netowrk content delivery  Peering Connection",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.peering;",
+   "shapeNames": [
+    "mxgraph.aws4.peering"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1928"
+  },
+  {
+   "id": "aws4Network Content Delivery-48-vpc-reachability-analyzer",
+   "title": "VPC Reachability Analyzer",
+   "tags": "aws4 vpc reachability analyzer aws amazon web service netowrk content delivery  VPC Reachability Analyzer",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.vpc_reachability_analyzer;",
+   "shapeNames": [
+    "mxgraph.aws4.vpc_reachability_analyzer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1930"
+  },
+  {
+   "id": "aws4Network Content Delivery-49-resource",
+   "title": "Resource",
+   "tags": "aws4 resource aws amazon web service netowrk content delivery  Resource",
+   "kind": "vertex",
+   "width": 76,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.resource;",
+   "shapeNames": [
+    "mxgraph.aws4.resource"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1932"
+  },
+  {
+   "id": "aws4Network Content Delivery-50-cloud-wan-segment-network",
+   "title": "Cloud WAN Segment Network",
+   "tags": "aws4 cloud wan segment network wide area network aws amazon web service netowrk content delivery  Cloud WAN Segment Network",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.cloud_wan_segment_network;",
+   "shapeNames": [
+    "mxgraph.aws4.cloud_wan_segment_network"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1934"
+  },
+  {
+   "id": "aws4Network Content Delivery-51-cloud-wan-core-network-edge",
+   "title": "Cloud WAN Core Network Edge",
+   "tags": "aws4 cloud wan core network edge wide area network aws amazon web service netowrk content delivery  Cloud WAN Core Network Edge",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.cloud_wan_core_network_edge;",
+   "shapeNames": [
+    "mxgraph.aws4.cloud_wan_core_network_edge"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1936"
+  },
+  {
+   "id": "aws4Network Content Delivery-52-cloud-wan-transit-gateway-route-table-attachment",
+   "title": "Cloud WAN Transit Gateway Route Table Attachment",
+   "tags": "aws4 cloud wan transit gateway route table attachment aws amazon web service netowrk content delivery  Cloud WAN Transit Gateway Route Table Attachment",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.cloud_wan_transit_gateway_route_table_attachment;",
+   "shapeNames": [
+    "mxgraph.aws4.cloud_wan_transit_gateway_route_table_attachment"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1938"
+  },
+  {
+   "id": "aws4Network Content Delivery-53-cloud-wan-virtual-pop",
+   "title": "Cloud WAN Virtual PoP",
+   "tags": "aws4 cloud wan virtual pop wide area network aws amazon web service netowrk content delivery  Cloud WAN Virtual PoP",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.cloud_wan_virtual_pop;",
+   "shapeNames": [
+    "mxgraph.aws4.cloud_wan_virtual_pop"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1940"
+  },
+  {
+   "id": "aws4Network Content Delivery-54-service",
+   "title": "Service",
+   "tags": "aws4 service aws amazon web service netowrk content delivery  Service",
+   "kind": "vertex",
+   "width": 78,
+   "height": 76,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.service;",
+   "shapeNames": [
+    "mxgraph.aws4.service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1942"
+  },
+  {
+   "id": "aws4Network Content Delivery-55-application-load-balancer",
+   "title": "Application Load Balancer",
+   "tags": "aws4 application load balancer aws amazon web service netowrk content delivery  Application Load Balancer",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.application_load_balancer;",
+   "shapeNames": [
+    "mxgraph.aws4.application_load_balancer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1944"
+  },
+  {
+   "id": "aws4Network Content Delivery-56-classic-load-balancer",
+   "title": "Classic Load Balancer",
+   "tags": "aws4 classic load balancer aws amazon web service netowrk content delivery  Classic Load Balancer",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.classic_load_balancer;",
+   "shapeNames": [
+    "mxgraph.aws4.classic_load_balancer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1946"
+  },
+  {
+   "id": "aws4Network Content Delivery-57-gateway-load-balancer",
+   "title": "Gateway Load Balancer",
+   "tags": "aws4 gateway load balancer aws amazon web service netowrk content delivery  Gateway Load Balancer",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.gateway_load_balancer;",
+   "shapeNames": [
+    "mxgraph.aws4.gateway_load_balancer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1948"
+  },
+  {
+   "id": "aws4Network Content Delivery-58-router",
+   "title": "Router",
+   "tags": "aws4 router aws amazon web service netowrk content delivery  Router",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.router;",
+   "shapeNames": [
+    "mxgraph.aws4.router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1950"
+  },
+  {
+   "id": "aws4Network Content Delivery-59-virtual-gateway",
+   "title": "Virtual Gateway",
+   "tags": "aws4 virtual gateway aws amazon web service netowrk content delivery  Virtual Gateway",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.virtual_gateway;",
+   "shapeNames": [
+    "mxgraph.aws4.virtual_gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1952"
+  },
+  {
+   "id": "aws4Network Content Delivery-60-virtual-node",
+   "title": "Virtual Node",
+   "tags": "aws4 virtual node aws amazon web service netowrk content delivery  Virtual Node",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.virtual_node;",
+   "shapeNames": [
+    "mxgraph.aws4.virtual_node"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1954"
+  },
+  {
+   "id": "aws4Network Content Delivery-61-virtual-router",
+   "title": "Virtual Router",
+   "tags": "aws4 virtual router aws amazon web service netowrk content delivery  Virtual Router",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.virtual_router;",
+   "shapeNames": [
+    "mxgraph.aws4.virtual_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1956"
+  },
+  {
+   "id": "aws4Network Content Delivery-62-virtual-service",
+   "title": "Virtual Service",
+   "tags": "aws4 virtual service aws amazon web service netowrk content delivery  Virtual Service",
+   "kind": "vertex",
+   "width": 78,
+   "height": 74,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.virtual_service;",
+   "shapeNames": [
+    "mxgraph.aws4.virtual_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1958"
+  },
+  {
+   "id": "aws4Network Content Delivery-63-vpn-connection",
+   "title": "VPN Connection",
+   "tags": "aws4 vpc virtual private cloud vpn network connection aws amazon web service netowrk content delivery  VPN Connection",
+   "kind": "vertex",
+   "width": 70,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.vpn_connection;",
+   "shapeNames": [
+    "mxgraph.aws4.vpn_connection"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1960"
+  },
+  {
+   "id": "aws4Network Content Delivery-64-vpn-gateway",
+   "title": "VPN Gateway",
+   "tags": "aws4 vpc virtual private cloud vpn network gateway aws amazon web service netowrk content delivery  VPN Gateway",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.vpn_gateway;",
+   "shapeNames": [
+    "mxgraph.aws4.vpn_gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1962"
+  },
+  {
+   "id": "aws4Network Content Delivery-65-traffic-mirroring",
+   "title": "Traffic Mirroring",
+   "tags": "aws4 vpc virtual private cloud traffic mirroring aws amazon web service netowrk content delivery  Traffic Mirroring",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.vpc_traffic_mirroring;",
+   "shapeNames": [
+    "mxgraph.aws4.vpc_traffic_mirroring"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1964"
+  },
+  {
+   "id": "aws4Network Content Delivery-66-vpc",
+   "title": "VPC",
+   "tags": "aws4 vpc virtual private cloud aws amazon web service netowrk content delivery  VPC",
+   "kind": "vertex",
+   "width": 78,
+   "height": 76,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.vpc_virtual_private_cloud_vpc;",
+   "shapeNames": [
+    "mxgraph.aws4.vpc_virtual_private_cloud_vpc"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1966"
+  },
+  {
+   "id": "aws4Network Content Delivery-67-network-load-balancer",
+   "title": "Network Load Balancer",
+   "tags": "aws4 network load balancer aws amazon web service netowrk content delivery  Network Load Balancer",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.network_load_balancer;",
+   "shapeNames": [
+    "mxgraph.aws4.network_load_balancer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1968"
+  }
+ ]
+}

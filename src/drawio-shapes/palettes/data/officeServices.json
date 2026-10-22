@@ -1,0 +1,372 @@
+{
+ "id": "officeServices",
+ "title": "Office / Services",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Office.js:7",
+ "entries": [
+  {
+   "id": "officeServices-0-3rd-party-service",
+   "title": "3rd Party Service",
+   "tags": "office services 3rd party service office service  3rd Party Service",
+   "kind": "vertex",
+   "width": 53,
+   "height": 54,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.services.3rd_party_service;",
+   "shapeNames": [
+    "mxgraph.office.services.3rd_party_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1160"
+  },
+  {
+   "id": "officeServices-1-access-services",
+   "title": "Access Services",
+   "tags": "office services access services office service  Access Services",
+   "kind": "vertex",
+   "width": 59,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.services.access_services;",
+   "shapeNames": [
+    "mxgraph.office.services.access_services"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1162"
+  },
+  {
+   "id": "officeServices-2-business-connectivity-services",
+   "title": "Business Connectivity Services",
+   "tags": "office services business connectivity services office service  Business Connectivity Services",
+   "kind": "vertex",
+   "width": 34,
+   "height": 51,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.services.business_connectivity_services;",
+   "shapeNames": [
+    "mxgraph.office.services.business_connectivity_services"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1164"
+  },
+  {
+   "id": "officeServices-3-call-admission-control-service",
+   "title": "Call Admission Control Service",
+   "tags": "office services call admission control service office service  Call Admission Control Service",
+   "kind": "vertex",
+   "width": 50,
+   "height": 59,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.services.call_admission_control_service;",
+   "shapeNames": [
+    "mxgraph.office.services.call_admission_control_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1166"
+  },
+  {
+   "id": "officeServices-4-central-management-service",
+   "title": "Central Management Service",
+   "tags": "office services central management service office service  Central Management Service",
+   "kind": "vertex",
+   "width": 51,
+   "height": 54,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.services.central_management_service;",
+   "shapeNames": [
+    "mxgraph.office.services.central_management_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1168"
+  },
+  {
+   "id": "officeServices-5-conference-announcement-service",
+   "title": "Conference Announcement Service",
+   "tags": "office services conference announcement service office service  Conference Announcement Service",
+   "kind": "vertex",
+   "width": 59,
+   "height": 59,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.services.conference_announcement_service;",
+   "shapeNames": [
+    "mxgraph.office.services.conference_announcement_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1170"
+  },
+  {
+   "id": "officeServices-6-device-update-service",
+   "title": "Device Update Service",
+   "tags": "office services device update service office service  Device Update Service",
+   "kind": "vertex",
+   "width": 50,
+   "height": 54,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.services.device_update_service;",
+   "shapeNames": [
+    "mxgraph.office.services.device_update_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1172"
+  },
+  {
+   "id": "officeServices-7-email-service",
+   "title": "Email Service",
+   "tags": "office services email service office service  Email Service",
+   "kind": "vertex",
+   "width": 58,
+   "height": 48,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.services.email_service;",
+   "shapeNames": [
+    "mxgraph.office.services.email_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1174"
+  },
+  {
+   "id": "officeServices-8-excel-services",
+   "title": "Excel Services",
+   "tags": "office services excel services office service  Excel Services",
+   "kind": "vertex",
+   "width": 60,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.services.excel_services;",
+   "shapeNames": [
+    "mxgraph.office.services.excel_services"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1176"
+  },
+  {
+   "id": "officeServices-9-federation-service",
+   "title": "Federation Service",
+   "tags": "office services federation service office service  Federation Service",
+   "kind": "vertex",
+   "width": 58,
+   "height": 59,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.services.federation_service;",
+   "shapeNames": [
+    "mxgraph.office.services.federation_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1178"
+  },
+  {
+   "id": "officeServices-10-lync-storage-service",
+   "title": "Lync Storage Service",
+   "tags": "office services lync storage service office service  Lync Storage Service",
+   "kind": "vertex",
+   "width": 65,
+   "height": 58,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.services.lync_storage_service;",
+   "shapeNames": [
+    "mxgraph.office.services.lync_storage_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1180"
+  },
+  {
+   "id": "officeServices-11-lync-web-app-client",
+   "title": "Lync Web App Client",
+   "tags": "office services lync web app client office service  Lync Web App Client",
+   "kind": "vertex",
+   "width": 83,
+   "height": 51,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.services.lync_web_app_client;",
+   "shapeNames": [
+    "mxgraph.office.services.lync_web_app_client"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1182"
+  },
+  {
+   "id": "officeServices-12-mobility-service",
+   "title": "Mobility Service",
+   "tags": "office services mobility service office service  Mobility Service",
+   "kind": "vertex",
+   "width": 45,
+   "height": 53,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.services.mobility_service;",
+   "shapeNames": [
+    "mxgraph.office.services.mobility_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1184"
+  },
+  {
+   "id": "officeServices-13-network-file-share-service",
+   "title": "Network File Share Service",
+   "tags": "office services network file share service office service  Network File Share Service",
+   "kind": "vertex",
+   "width": 55,
+   "height": 53,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.services.network_file_share_service;",
+   "shapeNames": [
+    "mxgraph.office.services.network_file_share_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1186"
+  },
+  {
+   "id": "officeServices-14-online-hosted-services",
+   "title": "Online Hosted Services",
+   "tags": "office services online hosted services office service  Online Hosted Services",
+   "kind": "vertex",
+   "width": 56,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.services.online_hosted_services;",
+   "shapeNames": [
+    "mxgraph.office.services.online_hosted_services"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1188"
+  },
+  {
+   "id": "officeServices-15-outlook-web-app",
+   "title": "Outlook Web App",
+   "tags": "office services outlook web app office service  Outlook Web App",
+   "kind": "vertex",
+   "width": 83,
+   "height": 51,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.services.outlook_web_app;",
+   "shapeNames": [
+    "mxgraph.office.services.outlook_web_app"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1190"
+  },
+  {
+   "id": "officeServices-16-powerpoint-automation-services",
+   "title": "PowerPoint Automation Services",
+   "tags": "office services powerpoint automation services office service  PowerPoint Automation Services",
+   "kind": "vertex",
+   "width": 59,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.services.powerpoint_automation_services;",
+   "shapeNames": [
+    "mxgraph.office.services.powerpoint_automation_services"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1192"
+  },
+  {
+   "id": "officeServices-17-push-notification-service",
+   "title": "Push Notification Service",
+   "tags": "office services push notification service office service  Push Notification Service",
+   "kind": "vertex",
+   "width": 50,
+   "height": 58,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.services.push_notification_service;",
+   "shapeNames": [
+    "mxgraph.office.services.push_notification_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1194"
+  },
+  {
+   "id": "officeServices-18-registrar-service",
+   "title": "Registrar Service",
+   "tags": "office services registrar service office service  Registrar Service",
+   "kind": "vertex",
+   "width": 56,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.services.registrar_service;",
+   "shapeNames": [
+    "mxgraph.office.services.registrar_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1196"
+  },
+  {
+   "id": "officeServices-19-response-group-service",
+   "title": "Response Group Service",
+   "tags": "office services response group service office service  Response Group Service",
+   "kind": "vertex",
+   "width": 58,
+   "height": 54,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.services.response_group_service;",
+   "shapeNames": [
+    "mxgraph.office.services.response_group_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1198"
+  },
+  {
+   "id": "officeServices-20-skype-for-business-storage-service",
+   "title": "Skype for Business Storage Service",
+   "tags": "office services skype for business storage service office service  Skype for Business Storage Service",
+   "kind": "vertex",
+   "width": 62,
+   "height": 58,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.services.skype_for_business_storage_service;",
+   "shapeNames": [
+    "mxgraph.office.services.skype_for_business_storage_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1200"
+  },
+  {
+   "id": "officeServices-21-user-services",
+   "title": "User Services",
+   "tags": "office services user services office service  User Services",
+   "kind": "vertex",
+   "width": 59,
+   "height": 59,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.services.user_services;",
+   "shapeNames": [
+    "mxgraph.office.services.user_services"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1202"
+  },
+  {
+   "id": "officeServices-22-verification-service",
+   "title": "Verification Service",
+   "tags": "office services verification service office service  Verification Service",
+   "kind": "vertex",
+   "width": 57,
+   "height": 59,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.services.verification_service;",
+   "shapeNames": [
+    "mxgraph.office.services.verification_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1204"
+  },
+  {
+   "id": "officeServices-23-web-services",
+   "title": "Web Services",
+   "tags": "office services web services office service  Web Services",
+   "kind": "vertex",
+   "width": 60,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.services.web_services;",
+   "shapeNames": [
+    "mxgraph.office.services.web_services"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1206"
+  },
+  {
+   "id": "officeServices-24-word-automation-services",
+   "title": "Word Automation Services",
+   "tags": "office services word automation services office service  Word Automation Services",
+   "kind": "vertex",
+   "width": 60,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.services.word_automation_services;",
+   "shapeNames": [
+    "mxgraph.office.services.word_automation_services"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1208"
+  },
+  {
+   "id": "officeServices-25-xmpp-service",
+   "title": "XMPP Service",
+   "tags": "office services xmpp service office service  XMPP Service",
+   "kind": "vertex",
+   "width": 58,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.services.xmpp_service;",
+   "shapeNames": [
+    "mxgraph.office.services.xmpp_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1210"
+  }
+ ]
+}

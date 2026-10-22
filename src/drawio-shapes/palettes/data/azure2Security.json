@@ -1,0 +1,274 @@
+{
+ "id": "azure2Security",
+ "title": "Azure / Security",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Azure2.js:8",
+ "entries": [
+  {
+   "id": "azure2Security-0-ad-authentication-methods",
+   "title": "AD Authentication Methods",
+   "tags": "azure2 ad authentication methods azure security  AD Authentication Methods",
+   "kind": "vertex",
+   "width": 68,
+   "height": 66,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/identity/Managed_Identities.svg;points=[[0.5,0.01,0],[0.5,0.941,0],[0.089,0.5,0],[1,0.608,0],[0.748,0.307,0],[0.762,0.994,0],[0.003,0.613,0],[0.247,0.307,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1986"
+  },
+  {
+   "id": "azure2Security-1-ad-identity-protection",
+   "title": "AD Identity Protection",
+   "tags": "azure2 ad identity protection azure security  AD Identity Protection",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/identity/Azure_AD_Identity_Protection.svg;points=[[0.5,0.005,0],[0.496,1,0],[0.111,0.5,0],[0.889,0.5,0],[0.748,0.322,0],[1,0.646,0],[0.005,0.649,0],[0.248,0.321,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1988"
+  },
+  {
+   "id": "azure2Security-2-ad-privileged-identity-management",
+   "title": "AD Privileged Identity Management",
+   "tags": "azure2 ad privileged identity management azure security  AD Privileged Identity Management",
+   "kind": "vertex",
+   "width": 60,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/identity/PIM.svg;points=[[0.5,0.092,0],[0.819,1,0],[0,0.482,0],[1,0.839,0],[0.722,0.105,0],[0.963,0.94,0],[0.003,0.862,0],[0.006,0.1,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1990"
+  },
+  {
+   "id": "azure2Security-3-ad-risky-signins",
+   "title": "AD Risky Signins",
+   "tags": "azure2 ad risky signins azure security  AD Risky Signins",
+   "kind": "vertex",
+   "width": 67.75999999999999,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/security/Azure_AD_Risky_Signins.svg;points=[[0.445,0,0],[0.5,0.973,0],[0,0.494,0],[0.95,0.5,0],[0.807,0.148,0],[0.992,0.987,0],[0.091,0.852,0],[0.083,0.153,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1992"
+  },
+  {
+   "id": "azure2Security-4-ad-risky-users",
+   "title": "AD Risky Users",
+   "tags": "azure2 ad risky users azure security  AD Risky Users",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/security/Azure_AD_Risky_Users.svg;points=[[0.37,0,0],[0.5,0.968,0],[0,0.5,0],[0.74,0.5,0],[0.53,0.073,0],[0.995,0.977,0],[0,1,0],[0.235,0.048,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1994"
+  },
+  {
+   "id": "azure2Security-5-application-security-groups",
+   "title": "Application Security Groups",
+   "tags": "azure2 application security groups azure security  Application Security Groups",
+   "kind": "vertex",
+   "width": 56.00000000000001,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/security/Application_Security_Groups.svg;points=[[0.5,0,0],[0.503,1,0],[0,0.5,0],[1,0.5,0],[0.99,0.125,0],[0.845,0.77,0],[0.146,0.76,0],[0.007,0.125,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1996"
+  },
+  {
+   "id": "azure2Security-6-conditional-access",
+   "title": "Conditional Access",
+   "tags": "azure2 conditional access azure security  Conditional Access",
+   "kind": "vertex",
+   "width": 56.00000000000001,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/security/Conditional_Access.svg;points=[[0.5,0.005,0],[0.5,0.995,0],[0,0.5,0],[1,0.5,0],[0.993,0.13,0],[0.854,0.757,0],[0.152,0.765,0],[0.007,0.13,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1998"
+  },
+  {
+   "id": "azure2Security-7-defender",
+   "title": "Defender",
+   "tags": "azure2 defender azure security  Defender",
+   "kind": "vertex",
+   "width": 56.00000000000001,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/security/Azure_Defender.svg;points=[[0.5,0,0],[0.5,1,0],[0.003,0.5,0],[0.997,0.5,0],[0.99,0.125,0],[0.848,0.765,0],[0.162,0.775,0],[0.01,0.125,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2000"
+  },
+  {
+   "id": "azure2Security-8-detonation",
+   "title": "Detonation",
+   "tags": "azure2 detonation azure security  Detonation",
+   "kind": "vertex",
+   "width": 66,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/security/Detonation.svg;points=[[0.601,0.003,0],[0.5,0.766,0],[0.216,0.5,0],[1,0.39,0],[0.897,0.128,0],[0.897,0.652,0],[0.011,0.967,0],[0.307,0.125,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2002"
+  },
+  {
+   "id": "azure2Security-9-extended-security-updates",
+   "title": "Extended Security Updates",
+   "tags": "azure2 extended security updates azure security  Extended Security Updates",
+   "kind": "vertex",
+   "width": 64,
+   "height": 70,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/security/ExtendedSecurityUpdates.svg;points=[[0.439,0,0],[0.5,0.95,0],[0.008,0.5,0],[0.899,0.5,0],[0.868,0.125,0],[0.926,0.895,0],[0.178,0.787,0],[0.009,0.123,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2004"
+  },
+  {
+   "id": "azure2Security-10-identity-secure-score",
+   "title": "Identity Secure Score",
+   "tags": "azure2 identity secure score azure security  Identity Secure Score",
+   "kind": "vertex",
+   "width": 61.919999999999995,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/security/Identity_Secure_Score.svg;points=[[0.5,0,0],[0.5,1,0],[0.285,0.5,0],[0.715,0.5,0],[0.98,0.14,0],[0.794,0.995,0],[0.209,0.997,0],[0.022,0.138,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2006"
+  },
+  {
+   "id": "azure2Security-11-information-protection",
+   "title": "Information Protection",
+   "tags": "azure2 information protection azure security  Information Protection",
+   "kind": "vertex",
+   "width": 51.2,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/identity/Azure_Information_Protection.svg;points=[[0.492,0,0],[0.498,1,0],[0.007,0.5,0],[0.993,0.5,0],[0.79,0.115,0],[0.99,0.985,0],[0.014,0.99,0],[0.193,0.115,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2008"
+  },
+  {
+   "id": "azure2Security-12-key-vaults",
+   "title": "Key Vaults",
+   "tags": "azure2 key vaults azure security  Key Vaults",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/security/Key_Vaults.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.501,0],[0.855,0.145,0],[0.865,0.845,0],[0.135,0.845,0],[0.148,0.143,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2010"
+  },
+  {
+   "id": "azure2Security-13-keys",
+   "title": "Keys",
+   "tags": "azure2 keys azure security  Keys",
+   "kind": "vertex",
+   "width": 72,
+   "height": 76,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/security/Keys.svg;points=[[0.516,0,0],[0.431,1,0],[0,0.421,0],[1,0.459,0],[0.736,0.09,0],[0.965,0.767,0],[0.341,0.99,0],[0.064,0.265,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2012"
+  },
+  {
+   "id": "azure2Security-14-ms-defender-easm",
+   "title": "MS Defender EASM",
+   "tags": "azure2 ms defender easm azure security  MS Defender EASM",
+   "kind": "vertex",
+   "width": 55.44,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/security/MS_Defender_EASM.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.993,0.125,0],[0.849,0.765,0],[0.16,0.775,0],[0.007,0.125,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2014"
+  },
+  {
+   "id": "azure2Security-15-multifactor-authentication",
+   "title": "Multifactor Authentication",
+   "tags": "azure2 multifactor authentication azure security  Multifactor Authentication",
+   "kind": "vertex",
+   "width": 55.400000000000006,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/security/Multifactor_Authentication.svg;points=[[0.502,0,0],[0.5,1,0],[0,0.453,0],[1,0.455,0],[0.773,0.103,0],[0.825,0.842,0],[0.184,0.85,0],[0.237,0.098,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2016"
+  },
+  {
+   "id": "azure2Security-16-security-center",
+   "title": "Security Center",
+   "tags": "azure2 security center azure security  Security Center",
+   "kind": "vertex",
+   "width": 56.00000000000001,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/security/Security_Center.svg;points=[[0.5,0.005,0],[0.5,0.995,0],[0,0.5,0],[1,0.5,0],[0.993,0.13,0],[0.854,0.757,0],[0.143,0.755,0],[0.007,0.13,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2018"
+  },
+  {
+   "id": "azure2Security-17-sentinel",
+   "title": "Sentinel",
+   "tags": "azure2 sentinel azure security  Sentinel",
+   "kind": "vertex",
+   "width": 56.00000000000001,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/security/Azure_Sentinel.svg;points=[[0.5,0,0],[0.503,1,0],[0,0.5,0],[1,0.5,0],[0.99,0.125,0],[0.845,0.77,0],[0.146,0.76,0],[0.007,0.125,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2020"
+  },
+  {
+   "id": "azure2Security-18-user-settings",
+   "title": "User Settings",
+   "tags": "azure2 user settings azure security  User Settings",
+   "kind": "vertex",
+   "width": 68,
+   "height": 56.92,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/identity/User_Settings.svg;points=[[0.384,0,0],[0.381,1,0],[0.189,0.5,0],[1,0.467,0],[0.872,0.144,0],[0.735,0.985,0],[0.025,0.985,0],[0.243,0.06,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2022"
+  }
+ ]
+}

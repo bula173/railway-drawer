@@ -1,0 +1,286 @@
+{
+ "id": "rackGeneral",
+ "title": "Rack / General",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Rack.js:7",
+ "entries": [
+  {
+   "id": "rackGeneral-0-rack-cabinet",
+   "title": "Rack Cabinet",
+   "tags": "rack equipment general cabinet Rack Cabinet",
+   "kind": "vertex",
+   "width": 180,
+   "height": 219,
+   "style": "strokeColor=#666666;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rackGeneral.rackCabinet3;rackUnitSize=14.8;fillColor2=#f4f4f4;container=1;collapsible=0;childLayout=rack;allowGaps=1;marginLeft=9;marginRight=9;marginTop=21;marginBottom=22;textColor=#666666;numDisp=off;",
+   "shapeNames": [
+    "mxgraph.rackGeneral.rackCabinet3"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:62"
+  },
+  {
+   "id": "rackGeneral-1-numbered-rack-cabinet",
+   "title": "Numbered Rack Cabinet",
+   "tags": "rack equipment general cabinet numbered Numbered Rack Cabinet",
+   "kind": "vertex",
+   "width": 204,
+   "height": 219,
+   "style": "strokeColor=#666666;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rackGeneral.rackCabinet3;rackUnitSize=14.8;fillColor2=#f4f4f4;container=1;collapsible=0;childLayout=rack;allowGaps=1;marginLeft=33;marginRight=9;marginTop=21;marginBottom=22;textColor=#666666;numDisp=ascend;",
+   "shapeNames": [
+    "mxgraph.rackGeneral.rackCabinet3"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:63"
+  },
+  {
+   "id": "rackGeneral-2-spacing",
+   "title": "Spacing",
+   "tags": "rack equipment general spacing Spacing",
+   "kind": "vertex",
+   "width": 160,
+   "height": 15,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;text;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:64"
+  },
+  {
+   "id": "rackGeneral-3-cover-plate",
+   "title": "Cover Plate",
+   "tags": "rack equipment general cover plate Cover Plate",
+   "kind": "vertex",
+   "width": 160,
+   "height": 15,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rackGeneral.plate;fillColor=#e8e8e8;",
+   "shapeNames": [
+    "mxgraph.rackGeneral.plate"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:65"
+  },
+  {
+   "id": "rackGeneral-4-server",
+   "title": "Server",
+   "tags": "rack equipment general server Server",
+   "kind": "vertex",
+   "width": 160,
+   "height": 15,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.general.1u_rack_server;",
+   "shapeNames": [
+    "mxgraph.rack.general.1u_rack_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:66"
+  },
+  {
+   "id": "rackGeneral-5-horizontal-cable-duct",
+   "title": "Horizontal Cable Duct",
+   "tags": "rack equipment general horizontal cable duct Horizontal Cable Duct",
+   "kind": "vertex",
+   "width": 160,
+   "height": 15,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rackGeneral.horCableDuct;",
+   "shapeNames": [
+    "mxgraph.rackGeneral.horCableDuct"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:67"
+  },
+  {
+   "id": "rackGeneral-6-horizontal-routing-bank",
+   "title": "Horizontal Routing Bank",
+   "tags": "rack equipment general horizontal routing bank Horizontal Routing Bank",
+   "kind": "vertex",
+   "width": 160,
+   "height": 20,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rackGeneral.horRoutingBank;",
+   "shapeNames": [
+    "mxgraph.rackGeneral.horRoutingBank"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:68"
+  },
+  {
+   "id": "rackGeneral-7-neat-patch",
+   "title": "Neat-Patch",
+   "tags": "rack equipment general neat patch Neat-Patch",
+   "kind": "vertex",
+   "width": 160,
+   "height": 30,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rackGeneral.neatPatch;bodyColor=#666666;",
+   "shapeNames": [
+    "mxgraph.rackGeneral.neatPatch"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:69"
+  },
+  {
+   "id": "rackGeneral-8-shelf",
+   "title": "Shelf",
+   "tags": "rack equipment general shelf Shelf",
+   "kind": "vertex",
+   "width": 160,
+   "height": 15,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rackGeneral.shelf;container=1;collapsible=0",
+   "shapeNames": [
+    "mxgraph.rackGeneral.shelf"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:70"
+  },
+  {
+   "id": "rackGeneral-9-channel-base",
+   "title": "Channel Base",
+   "tags": "rack equipment general channel base Channel Base",
+   "kind": "vertex",
+   "width": 200,
+   "height": 30,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rackGeneral.channelBase;footColor=#000000;",
+   "shapeNames": [
+    "mxgraph.rackGeneral.channelBase"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:71"
+  },
+  {
+   "id": "rackGeneral-10-cabinet-leg",
+   "title": "Cabinet Leg",
+   "tags": "rack equipment general cabinet leg support Cabinet Leg",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.rackGeneral.cabinetLeg;html=1;shadow=0;dashed=0;fillColor=#444444;strokeColor=#444444;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;",
+   "shapeNames": [
+    "mxgraph.rackGeneral.cabinetLeg"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:72"
+  },
+  {
+   "id": "rackGeneral-11-cat5e-enhanced-patch-panel-48-ports",
+   "title": "CAT5e Enhanced Patch Panel 48 ports",
+   "tags": "rack equipment general cat5e enhanced patch panel port CAT5e Enhanced Patch Panel 48 ports",
+   "kind": "vertex",
+   "width": 160,
+   "height": 30,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.general.cat5e_enhanced_patch_panel_48_ports;",
+   "shapeNames": [
+    "mxgraph.rack.general.cat5e_enhanced_patch_panel_48_ports"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:75"
+  },
+  {
+   "id": "rackGeneral-12-cat5e-rack-mount-patch-panel-24-ports",
+   "title": "CAT5e Rack Mount Patch Panel 24 ports",
+   "tags": "rack equipment general cat5e mount patch panel port CAT5e Rack Mount Patch Panel 24 ports",
+   "kind": "vertex",
+   "width": 160,
+   "height": 15,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.general.cat5e_rack_mount_patch_panel_24_ports;",
+   "shapeNames": [
+    "mxgraph.rack.general.cat5e_rack_mount_patch_panel_24_ports"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:76"
+  },
+  {
+   "id": "rackGeneral-13-cat5e-rack-mount-patch-panel-96-ports",
+   "title": "CAT5e Rack Mount Patch Panel 96 ports",
+   "tags": "rack equipment general cat5e mount patch panel port CAT5e Rack Mount Patch Panel 96 ports",
+   "kind": "vertex",
+   "width": 160,
+   "height": 60,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.general.cat5e_rack_mount_patch_panel_96_ports;",
+   "shapeNames": [
+    "mxgraph.rack.general.cat5e_rack_mount_patch_panel_96_ports"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:77"
+  },
+  {
+   "id": "rackGeneral-14-hub",
+   "title": "Hub",
+   "tags": "rack equipment general hub Hub",
+   "kind": "vertex",
+   "width": 160,
+   "height": 30,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.general.hub;",
+   "shapeNames": [
+    "mxgraph.rack.general.hub"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:78"
+  },
+  {
+   "id": "rackGeneral-15-server-1",
+   "title": "Server 1",
+   "tags": "rack equipment general server Server 1",
+   "kind": "vertex",
+   "width": 73,
+   "height": 150,
+   "style": "strokeColor=#666666;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.general.server_1;",
+   "shapeNames": [
+    "mxgraph.rack.general.server_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:79"
+  },
+  {
+   "id": "rackGeneral-16-server-2",
+   "title": "Server 2",
+   "tags": "rack equipment general server Server 2",
+   "kind": "vertex",
+   "width": 73,
+   "height": 150,
+   "style": "strokeColor=#666666;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.general.server_2;",
+   "shapeNames": [
+    "mxgraph.rack.general.server_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:80"
+  },
+  {
+   "id": "rackGeneral-17-server-3",
+   "title": "Server 3",
+   "tags": "rack equipment general server Server 3",
+   "kind": "vertex",
+   "width": 73,
+   "height": 150,
+   "style": "strokeColor=#666666;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.general.server_3;",
+   "shapeNames": [
+    "mxgraph.rack.general.server_3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:81"
+  },
+  {
+   "id": "rackGeneral-18-switches-1",
+   "title": "Switches 1",
+   "tags": "rack equipment general server Switches 1",
+   "kind": "vertex",
+   "width": 160,
+   "height": 30,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.general.switches_1;",
+   "shapeNames": [
+    "mxgraph.rack.general.switches_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:82"
+  },
+  {
+   "id": "rackGeneral-19-switches-2",
+   "title": "Switches 2",
+   "tags": "rack equipment general server Switches 2",
+   "kind": "vertex",
+   "width": 160,
+   "height": 30,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.general.switches_2;",
+   "shapeNames": [
+    "mxgraph.rack.general.switches_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:83"
+  }
+ ]
+}

@@ -1,0 +1,274 @@
+{
+ "id": "rackHP",
+ "title": "Rack / HP",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Rack.js:7",
+ "entries": [
+  {
+   "id": "rackHP-0-hp-6125g-ethernet-blade-switch",
+   "title": "HP 6125G Ethernet Blade Switch",
+   "tags": "rack hp  HP 6125G Ethernet Blade Switch HP 6125G Ethernet Blade Switch",
+   "kind": "vertex",
+   "width": 19,
+   "height": 121,
+   "style": "shape=mxgraph.rack.hp.hp_6125g_ethernet_blade_switch;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.hp.hp_6125g_ethernet_blade_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackHP-1-hp-bladesystem-c3000-enclosure",
+   "title": "HP BladeSystem c3000 Enclosure",
+   "tags": "rack hp  HP BladeSystem c3000 Enclosure HP BladeSystem c3000 Enclosure",
+   "kind": "vertex",
+   "width": 161,
+   "height": 89,
+   "style": "shape=mxgraph.rack.hp.hp_bladesystem_c3000_enclosure;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.hp.hp_bladesystem_c3000_enclosure"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackHP-2-hp-bladesystem-c7000-enclosure",
+   "title": "HP BladeSystem c7000 Enclosure",
+   "tags": "rack hp  HP BladeSystem c7000 Enclosure HP BladeSystem c7000 Enclosure",
+   "kind": "vertex",
+   "width": 161,
+   "height": 141,
+   "style": "shape=mxgraph.rack.hp.hp_bladesystem_c7000_enclosure;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.hp.hp_bladesystem_c7000_enclosure"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackHP-3-hp-bladesystem-s6500-enclosure",
+   "title": "HP BladeSystem s6500 Enclosure",
+   "tags": "rack hp  HP BladeSystem s6500 Enclosure HP BladeSystem s6500 Enclosure",
+   "kind": "vertex",
+   "width": 161,
+   "height": 60,
+   "style": "shape=mxgraph.rack.hp.hp_bladesystem_s6500_enclosure;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.hp.hp_bladesystem_s6500_enclosure"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackHP-4-hp-infiniband-fdr-switch",
+   "title": "HP InfiniBand FDR Switch",
+   "tags": "rack hp  HP InfiniBand FDR Switch HP InfiniBand FDR Switch",
+   "kind": "vertex",
+   "width": 19,
+   "height": 241,
+   "style": "shape=mxgraph.rack.hp.hp_infiniband_fdr_switch;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.hp.hp_infiniband_fdr_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackHP-5-hp-proliant-bl620c-server-blade",
+   "title": "HP ProLiant BL620c Server Blade",
+   "tags": "rack hp  HP ProLiant BL620c Server Blade HP ProLiant BL620c Server Blade",
+   "kind": "vertex",
+   "width": 19,
+   "height": 121,
+   "style": "shape=mxgraph.rack.hp.hp_proliant_bl620c_server_blade;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.hp.hp_proliant_bl620c_server_blade"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackHP-6-hp-proliant-bl660c-server-blade",
+   "title": "HP ProLiant BL660c Server Blade",
+   "tags": "rack hp  HP ProLiant BL660c Server Blade HP ProLiant BL660c Server Blade",
+   "kind": "vertex",
+   "width": 19,
+   "height": 121,
+   "style": "shape=mxgraph.rack.hp.hp_proliant_bl660c_server_blade;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.hp.hp_proliant_bl660c_server_blade"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackHP-7-hp-proliant-bl685c-server-blade",
+   "title": "HP ProLiant BL685c Server Blade",
+   "tags": "rack hp  HP ProLiant BL685c Server Blade HP ProLiant BL685c Server Blade",
+   "kind": "vertex",
+   "width": 37,
+   "height": 121,
+   "style": "shape=mxgraph.rack.hp.hp_proliant_bl685c_server_blade;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.hp.hp_proliant_bl685c_server_blade"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackHP-8-hp-proliant-dl160-g8",
+   "title": "HP ProLiant DL160 G8",
+   "tags": "rack hp  HP ProLiant DL160 G8 HP ProLiant DL160 G8",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.hp.hp_proliant_dl160_g8;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.hp.hp_proliant_dl160_g8"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackHP-9-hp-proliant-dl320e-g8",
+   "title": "HP ProLiant DL320e G8",
+   "tags": "rack hp  HP ProLiant DL320e G8 HP ProLiant DL320e G8",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.hp.hp_proliant_dl320e_g8;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.hp.hp_proliant_dl320e_g8"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackHP-10-hp-proliant-dl360e-g8",
+   "title": "HP ProLiant DL360e G8",
+   "tags": "rack hp  HP ProLiant DL360e G8 HP ProLiant DL360e G8",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.hp.hp_proliant_dl360e_g8;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.hp.hp_proliant_dl360e_g8"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackHP-11-hp-proliant-dl360p-g8",
+   "title": "HP ProLiant DL360p G8",
+   "tags": "rack hp  HP ProLiant DL360p G8 HP ProLiant DL360p G8",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.hp.hp_proliant_dl360p_g8;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.hp.hp_proliant_dl360p_g8"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackHP-12-hp-proliant-dl380e-g8",
+   "title": "HP ProLiant DL380e G8",
+   "tags": "rack hp  HP ProLiant DL380e G8 HP ProLiant DL380e G8",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.hp.hp_proliant_dl380e_g8;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.hp.hp_proliant_dl380e_g8"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackHP-13-hp-proliant-dl380p-g8",
+   "title": "HP ProLiant DL380p G8",
+   "tags": "rack hp  HP ProLiant DL380p G8 HP ProLiant DL380p G8",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.hp.hp_proliant_dl380p_g8;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.hp.hp_proliant_dl380p_g8"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackHP-14-hp-proliant-dl385p-g8",
+   "title": "HP ProLiant DL385p G8",
+   "tags": "rack hp  HP ProLiant DL385p G8 HP ProLiant DL385p G8",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.hp.hp_proliant_dl385p_g8;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.hp.hp_proliant_dl385p_g8"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackHP-15-hp-proliant-dl560-g8",
+   "title": "HP ProLiant DL560 G8",
+   "tags": "rack hp  HP ProLiant DL560 G8 HP ProLiant DL560 G8",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.hp.hp_proliant_dl560_g8;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.hp.hp_proliant_dl560_g8"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackHP-16-hp-proliant-sl230s-g8",
+   "title": "HP ProLiant SL230s G8",
+   "tags": "rack hp  HP ProLiant SL230s G8 HP ProLiant SL230s G8",
+   "kind": "vertex",
+   "width": 81,
+   "height": 15,
+   "style": "shape=mxgraph.rack.hp.hp_proliant_sl230s_g8;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.hp.hp_proliant_sl230s_g8"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackHP-17-hp-proliant-sl250s-g8",
+   "title": "HP ProLiant SL250s G8",
+   "tags": "rack hp  HP ProLiant SL250s G8 HP ProLiant SL250s G8",
+   "kind": "vertex",
+   "width": 81,
+   "height": 30,
+   "style": "shape=mxgraph.rack.hp.hp_proliant_sl250s_g8;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.hp.hp_proliant_sl250s_g8"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackHP-18-hp-virtual-connect-flex-10-10d",
+   "title": "HP Virtual Connect Flex-10-10D",
+   "tags": "rack hp  HP Virtual Connect Flex-10-10D HP Virtual Connect Flex-10-10D",
+   "kind": "vertex",
+   "width": 19,
+   "height": 121,
+   "style": "shape=mxgraph.rack.hp.hp_virtual_connect_flex-10-10d;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.hp.hp_virtual_connect_flex-10-10d"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  }
+ ]
+}

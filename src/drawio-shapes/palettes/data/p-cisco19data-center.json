@@ -1,0 +1,470 @@
+{
+ "id": "cisco19Data Center",
+ "title": "Cisco 19 / Data Center",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:8",
+ "entries": [
+  {
+   "id": "cisco19Data Center-0-nexus-9300",
+   "title": "Nexus 9300",
+   "tags": "cisco19 nexus 9300 cisco data center Nexus 9300",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=nexus_9300;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:173"
+  },
+  {
+   "id": "cisco19Data Center-1-x-509-certificate",
+   "title": "x.509 Certificate",
+   "tags": "cisco19 x509 certificate cisco data center x.509 Certificate",
+   "kind": "vertex",
+   "width": 50,
+   "height": 47.5,
+   "style": "points=[[0.015,0.015,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[0.985,0.015,0],[1,0.22,0],[1,0.44,0],[1,0.67,0],[0.985,0.89,0],[0,0.22,0],[0,0.44,0],[0,0.67,0],[0.015,0.89,0],[0.25,0.91,0],[0.5,0.91,0],[0.785,0.955,0]];verticalLabelPosition=bottom;sketch=0;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.x509_certificate2;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.x509_certificate2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:175"
+  },
+  {
+   "id": "cisco19Data Center-2-hypervisor",
+   "title": "Hypervisor",
+   "tags": "cisco19 hypervisor cisco data center Hypervisor",
+   "kind": "vertex",
+   "width": 50,
+   "height": 65,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=hypervisor;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:177"
+  },
+  {
+   "id": "cisco19Data Center-3-nexus-9500",
+   "title": "Nexus 9500",
+   "tags": "cisco19 nexus 9500 cisco data center Nexus 9500",
+   "kind": "vertex",
+   "width": 50,
+   "height": 73,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=nexus_9500;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:179"
+  },
+  {
+   "id": "cisco19Data Center-4-fabric-interconnect",
+   "title": "Fabric Interconnect",
+   "tags": "cisco19 fabric interconnect cisco data center Fabric Interconnect",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=fabric_interconnect;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:181"
+  },
+  {
+   "id": "cisco19Data Center-5-fibre-channel-director-mds-9000",
+   "title": "Fibre Channel Director MDS 9000",
+   "tags": "cisco19 fibre channel director mds 9000 cisco data center Fibre Channel Director MDS 9000",
+   "kind": "vertex",
+   "width": 50,
+   "height": 73,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=fibre_channel_director_mds_9000;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:183"
+  },
+  {
+   "id": "cisco19Data Center-6-virtual-matrix-switch",
+   "title": "Virtual Matrix Switch",
+   "tags": "cisco19 virtual matrix switch cisco data center Virtual Matrix Switch",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=virtual_matrix_switch;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:185"
+  },
+  {
+   "id": "cisco19Data Center-7-ucs-c-series-server",
+   "title": "UCS C-Series Server",
+   "tags": "cisco19 ucs c series server cisco data center UCS C-Series Server",
+   "kind": "vertex",
+   "width": 60,
+   "height": 25,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=ucs_c_series_server;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:187"
+  },
+  {
+   "id": "cisco19Data Center-8-nexus-5k-with-integrated-vsm",
+   "title": "Nexus 5K with Integrated VSM",
+   "tags": "cisco19 nexus 5k with integrated vsm cisco data center Nexus 5K with Integrated VSM",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=nexus_5k_with_integrated_vsm;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:189"
+  },
+  {
+   "id": "cisco19Data Center-9-aci",
+   "title": "ACI",
+   "tags": "cisco19 aci cisco data center ACI",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0],[0.305,0.305,0],[0.695,0.305,0],[0.7,0.7,0],[0.3,0.7,0]];verticalLabelPosition=bottom;sketch=0;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=aci;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:191"
+  },
+  {
+   "id": "cisco19Data Center-10-aci",
+   "title": "ACI",
+   "tags": "cisco19 aci cisco data center ACI",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0],[0.305,0.305,0],[0.695,0.305,0],[0.7,0.7,0],[0.3,0.7,0]];verticalLabelPosition=bottom;sketch=0;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=aci2;fillColorStyles=fillColor2;fillColor=#fafafa;strokeColor=#005073;fillColor2=#fafafa;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:193"
+  },
+  {
+   "id": "cisco19Data Center-11-vts",
+   "title": "VTS",
+   "tags": "cisco19 vts cisco data center VTS",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=vts2;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:195"
+  },
+  {
+   "id": "cisco19Data Center-12-ucs-5108-blade-chassis",
+   "title": "UCS 5108 Blade Chassis",
+   "tags": "cisco19 ucs 5108 blade chassis cisco data center UCS 5108 Blade Chassis",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=ucs_5108_blade_chassis;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:197"
+  },
+  {
+   "id": "cisco19Data Center-13-storage",
+   "title": "Storage",
+   "tags": "cisco19 storage cisco data center Storage",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=storage;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:199"
+  },
+  {
+   "id": "cisco19Data Center-14-ups",
+   "title": "UPS",
+   "tags": "cisco19 ups cisco data center UPS",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=ups;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:201"
+  },
+  {
+   "id": "cisco19Data Center-15-rps",
+   "title": "RPS",
+   "tags": "cisco19 rps cisco data center RPS",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=rps;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:203"
+  },
+  {
+   "id": "cisco19Data Center-16-nexus-2000-10ge",
+   "title": "Nexus 2000 10GE",
+   "tags": "cisco19 nexus 2000 10ge cisco data center Nexus 2000 10GE",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=nexus_2000_10ge;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:205"
+  },
+  {
+   "id": "cisco19Data Center-17-blade-server-color",
+   "title": "Blade Server (color)",
+   "tags": "cisco19 blade server color cisco data center Blade Server (color)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=blade_server;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:207"
+  },
+  {
+   "id": "cisco19Data Center-18-blade-server-subdued",
+   "title": "Blade Server (subdued)",
+   "tags": "cisco19 blade server subdued cisco data center Blade Server (subdued)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=blade_server;fillColor=#FAFAFA;strokeColor=#6696AB;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:209"
+  },
+  {
+   "id": "cisco19Data Center-19-nexus-5k",
+   "title": "Nexus 5k",
+   "tags": "cisco19 nexus 5k cisco data center Nexus 5k",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=nexus_5k;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:211"
+  },
+  {
+   "id": "cisco19Data Center-20-nexus-4k",
+   "title": "Nexus 4k",
+   "tags": "cisco19 nexus 4k cisco data center Nexus 4k",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=nexus_4k;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:213"
+  },
+  {
+   "id": "cisco19Data Center-21-nexus-3k",
+   "title": "Nexus 3k",
+   "tags": "cisco19 nexus 3k cisco data center Nexus 3k",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=nexus_3k;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:215"
+  },
+  {
+   "id": "cisco19Data Center-22-nexus-2k",
+   "title": "Nexus 2k",
+   "tags": "cisco19 nexus 2k cisco data center Nexus 2k",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=nexus_2k;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:217"
+  },
+  {
+   "id": "cisco19Data Center-23-nexus-1kv-vsm",
+   "title": "Nexus 1KV VSM",
+   "tags": "cisco19 nexus 1kv vsm cisco data center Nexus 1KV VSM",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=nexus_1kv_vsm;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:219"
+  },
+  {
+   "id": "cisco19Data Center-24-nexus-1k",
+   "title": "Nexus 1k",
+   "tags": "cisco19 nexus 1k cisco data center Nexus 1k",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=nexus_1k;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:221"
+  },
+  {
+   "id": "cisco19Data Center-25-layer-3-nexus-5k-switch",
+   "title": "Layer 3 Nexus 5k Switch",
+   "tags": "cisco19 layer3 nexus 5k switch cisco data center Layer 3 Nexus 5k Switch",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=layer3_nexus_5k_switch;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:223"
+  },
+  {
+   "id": "cisco19Data Center-26-nexus-1010",
+   "title": "Nexus 1010",
+   "tags": "cisco19 nexus 1010 cisco data center Nexus 1010",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=nexus_1010;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:225"
+  },
+  {
+   "id": "cisco19Data Center-27-nexus-7k",
+   "title": "Nexus 7k",
+   "tags": "cisco19 nexus 7k cisco data center Nexus 7k",
+   "kind": "vertex",
+   "width": 50,
+   "height": 73,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=nexus_7k;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:227"
+  },
+  {
+   "id": "cisco19Data Center-28-fibre-channel-fabric-switch",
+   "title": "Fibre Channel Fabric Switch",
+   "tags": "cisco19 fibre channel fabric switch cisco data center Fibre Channel Fabric Switch",
+   "kind": "vertex",
+   "width": 50,
+   "height": 73,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=fibre_channel_fabric_switch;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:229"
+  },
+  {
+   "id": "cisco19Data Center-29-database-relational",
+   "title": "Database Relational",
+   "tags": "cisco19 database relational cisco data center Database Relational",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=database_relational;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:231"
+  },
+  {
+   "id": "cisco19Data Center-30-server",
+   "title": "Server",
+   "tags": "cisco19 server cisco data center Server",
+   "kind": "vertex",
+   "width": 27.500000000000004,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.server2;fillColor=#fafafa;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.server2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:233"
+  },
+  {
+   "id": "cisco19Data Center-31-dns-server",
+   "title": "DNS Server",
+   "tags": "cisco19 dns domain name server cisco data center DNS Server",
+   "kind": "vertex",
+   "width": 27.500000000000004,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.dns_server2;fillColor=#fafafa;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.dns_server2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:235"
+  },
+  {
+   "id": "cisco19Data Center-32-secure-server",
+   "title": "Secure Server",
+   "tags": "cisco19 secure server cisco data center Secure Server",
+   "kind": "vertex",
+   "width": 27.500000000000004,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.secure_server2;fillColor=#fafafa;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.secure_server2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:237"
+  }
+ ]
+}

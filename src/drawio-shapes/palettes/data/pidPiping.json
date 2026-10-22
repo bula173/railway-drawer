@@ -1,0 +1,533 @@
+{
+ "id": "pidPiping",
+ "title": "Process Engineering / Piping",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-PID.js:8",
+ "entries": [
+  {
+   "id": "pidPiping-0-basket-strainer",
+   "title": "Basket Strainer",
+   "tags": "pid piping basket strainer process instrumentation piping  Basket Strainer",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.piping.basket_strainer;",
+   "shapeNames": [
+    "mxgraph.pid.piping.basket_strainer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:344"
+  },
+  {
+   "id": "pidPiping-1-blank",
+   "title": "Blank",
+   "tags": "pid piping blank process instrumentation piping  Blank",
+   "kind": "vertex",
+   "width": 20,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.piping.blank2;",
+   "shapeNames": [
+    "mxgraph.pid.piping.blank2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:345"
+  },
+  {
+   "id": "pidPiping-2-breather",
+   "title": "Breather",
+   "tags": "pid piping breather process instrumentation piping  Breather",
+   "kind": "vertex",
+   "width": 50,
+   "height": 30,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.piping.breather;",
+   "shapeNames": [
+    "mxgraph.pid.piping.breather"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:346"
+  },
+  {
+   "id": "pidPiping-3-cap",
+   "title": "Cap",
+   "tags": "pid piping cap process instrumentation piping  Cap",
+   "kind": "vertex",
+   "width": 10,
+   "height": 20,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.piping.cap;",
+   "shapeNames": [
+    "mxgraph.pid.piping.cap"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:347"
+  },
+  {
+   "id": "pidPiping-4-closed-figure-8-blind",
+   "title": "Closed Figure 8 Blind",
+   "tags": "pid piping closed figure 8 blind process instrumentation piping  Closed Figure 8 Blind",
+   "kind": "vertex",
+   "width": 20,
+   "height": 80,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.piping.closed_figure_8_blind2;",
+   "shapeNames": [
+    "mxgraph.pid.piping.closed_figure_8_blind2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:348"
+  },
+  {
+   "id": "pidPiping-5-concentric-reducer",
+   "title": "Concentric Reducer",
+   "tags": "pid piping concentric reducer process instrumentation piping  Concentric Reducer",
+   "kind": "vertex",
+   "width": 20,
+   "height": 20,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.piping.concentric_reducer;",
+   "shapeNames": [
+    "mxgraph.pid.piping.concentric_reducer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:349"
+  },
+  {
+   "id": "pidPiping-6-cone-strainer",
+   "title": "Cone Strainer",
+   "tags": "pid piping cone strainer process instrumentation piping  Cone Strainer",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.piping.cone_strainer;",
+   "shapeNames": [
+    "mxgraph.pid.piping.cone_strainer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:350"
+  },
+  {
+   "id": "pidPiping-7-damper",
+   "title": "Damper",
+   "tags": "pid piping damper process instrumentation piping  Damper",
+   "kind": "vertex",
+   "width": 50,
+   "height": 20,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.piping.damper2;",
+   "shapeNames": [
+    "mxgraph.pid.piping.damper2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:351"
+  },
+  {
+   "id": "pidPiping-8-desuper-heater",
+   "title": "Desuper Heater",
+   "tags": "pid piping desuper heater process instrumentation piping  Desuper Heater",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "html=1;dashed=0;outlineConnect=0;align=center;shape=mxgraph.pid.piping.desuper_heater;",
+   "value": "DS",
+   "shapeNames": [
+    "mxgraph.pid.piping.desuper_heater"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:352"
+  },
+  {
+   "id": "pidPiping-9-detonation-arrestor",
+   "title": "Detonation Arrestor",
+   "tags": "pid piping detonation arrestor process instrumentation piping  Detonation Arrestor",
+   "kind": "vertex",
+   "width": 50,
+   "height": 20,
+   "style": "html=1;dashed=0;outlineConnect=0;align=center;shape=mxgraph.pid.piping.detonation_arrestor;",
+   "value": "D",
+   "shapeNames": [
+    "mxgraph.pid.piping.detonation_arrestor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:353"
+  },
+  {
+   "id": "pidPiping-10-diverter-valve",
+   "title": "Diverter Valve",
+   "tags": "pid piping diverter valve process instrumentation piping  Diverter Valve",
+   "kind": "vertex",
+   "width": 50,
+   "height": 35,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.piping.diverter_valve;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.pid.piping.diverter_valve"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:354"
+  },
+  {
+   "id": "pidPiping-11-double-flange",
+   "title": "Double Flange",
+   "tags": "pid piping double flange process instrumentation piping  Double Flange",
+   "kind": "vertex",
+   "width": 5,
+   "height": 20,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.piping.double_flange;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.pid.piping.double_flange"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:355"
+  },
+  {
+   "id": "pidPiping-12-duplex-strainer",
+   "title": "Duplex Strainer",
+   "tags": "pid piping duplex strainer process instrumentation piping  Duplex Strainer",
+   "kind": "vertex",
+   "width": 50,
+   "height": 40,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.piping.duplex_strainer;",
+   "shapeNames": [
+    "mxgraph.pid.piping.duplex_strainer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:356"
+  },
+  {
+   "id": "pidPiping-13-eccentric-reducer",
+   "title": "Eccentric Reducer",
+   "tags": "pid piping eccentric reducer process instrumentation piping  Eccentric Reducer",
+   "kind": "vertex",
+   "width": 20,
+   "height": 15,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.piping.eccentric_reducer;",
+   "shapeNames": [
+    "mxgraph.pid.piping.eccentric_reducer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:357"
+  },
+  {
+   "id": "pidPiping-14-excess-flow-valve",
+   "title": "Excess Flow Valve",
+   "tags": "pid piping excess flow valve process instrumentation piping  Excess Flow Valve",
+   "kind": "vertex",
+   "width": 50,
+   "height": 25,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.piping.excess_flow_valve2;",
+   "shapeNames": [
+    "mxgraph.pid.piping.excess_flow_valve2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:358"
+  },
+  {
+   "id": "pidPiping-15-exhaust-head",
+   "title": "Exhaust Head",
+   "tags": "pid piping exhaust head process instrumentation piping  Exhaust Head",
+   "kind": "vertex",
+   "width": 50,
+   "height": 40,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.piping.exhaust_head;",
+   "shapeNames": [
+    "mxgraph.pid.piping.exhaust_head"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:359"
+  },
+  {
+   "id": "pidPiping-16-expansion-joint",
+   "title": "Expansion Joint",
+   "tags": "pid piping expansion joint process instrumentation piping  Expansion Joint",
+   "kind": "vertex",
+   "width": 50,
+   "height": 20,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.piping.expansion_joint;",
+   "shapeNames": [
+    "mxgraph.pid.piping.expansion_joint"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:360"
+  },
+  {
+   "id": "pidPiping-17-flame-arrestor",
+   "title": "Flame Arrestor",
+   "tags": "pid piping flame arrestor process instrumentation piping  Flame Arrestor",
+   "kind": "vertex",
+   "width": 50,
+   "height": 20,
+   "style": "html=1;dashed=0;outlineConnect=0;align=center;shape=mxgraph.pid.piping.flame_arrestor;",
+   "value": "F",
+   "shapeNames": [
+    "mxgraph.pid.piping.flame_arrestor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:361"
+  },
+  {
+   "id": "pidPiping-18-flange",
+   "title": "Flange",
+   "tags": "pid piping flange process instrumentation piping  Flange",
+   "kind": "vertex",
+   "width": 5,
+   "height": 20,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.piping.flange;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.pid.piping.flange"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:362"
+  },
+  {
+   "id": "pidPiping-19-flange-in",
+   "title": "Flange In",
+   "tags": "pid piping flange in process instrumentation piping  Flange In",
+   "kind": "vertex",
+   "width": 10,
+   "height": 20,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.piping.flange_in;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.pid.piping.flange_in"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:363"
+  },
+  {
+   "id": "pidPiping-20-flexible-hose",
+   "title": "Flexible Hose",
+   "tags": "pid piping flexible hose process instrumentation piping  Flexible Hose",
+   "kind": "vertex",
+   "width": 50,
+   "height": 25,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.piping.flexible_hose;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.pid.piping.flexible_hose"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:364"
+  },
+  {
+   "id": "pidPiping-21-hose-connection",
+   "title": "Hose Connection",
+   "tags": "pid piping hose connection process instrumentation piping  Hose Connection",
+   "kind": "vertex",
+   "width": 20,
+   "height": 20,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.piping.hose_connection;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.pid.piping.hose_connection"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:365"
+  },
+  {
+   "id": "pidPiping-22-in-line-mixer",
+   "title": "In-Line Mixer",
+   "tags": "pid piping in-line mixer process instrumentation piping  In-Line Mixer",
+   "kind": "vertex",
+   "width": 50,
+   "height": 10,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.piping.in-line_mixer;",
+   "shapeNames": [
+    "mxgraph.pid.piping.in-line_mixer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:366"
+  },
+  {
+   "id": "pidPiping-23-in-line-silencer",
+   "title": "In-Line Silencer",
+   "tags": "pid piping in-line silencer process instrumentation piping  In-Line Silencer",
+   "kind": "vertex",
+   "width": 50,
+   "height": 20,
+   "style": "html=1;dashed=0;outlineConnect=0;align=center;shape=mxgraph.pid.piping.in-line_silencer;",
+   "value": "S",
+   "shapeNames": [
+    "mxgraph.pid.piping.in-line_silencer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:367"
+  },
+  {
+   "id": "pidPiping-24-open-figure-8-blind",
+   "title": "Open Figure 8 Blind",
+   "tags": "pid piping open figure 8 blind process instrumentation piping  Open Figure 8 Blind",
+   "kind": "vertex",
+   "width": 20,
+   "height": 80,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.piping.open_figure_8_blind2;",
+   "shapeNames": [
+    "mxgraph.pid.piping.open_figure_8_blind2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:368"
+  },
+  {
+   "id": "pidPiping-25-orifice-quick-change",
+   "title": "Orifice (Quick Change)",
+   "tags": "pid piping orifice (quick change) process instrumentation piping  Orifice (Quick Change)",
+   "kind": "vertex",
+   "width": 10,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.piping.orifice_(quick_change);",
+   "shapeNames": [
+    "mxgraph.pid.piping.orifice_(quick_change)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:369"
+  },
+  {
+   "id": "pidPiping-26-plug",
+   "title": "Plug",
+   "tags": "pid piping plug process instrumentation piping  Plug",
+   "kind": "vertex",
+   "width": 10,
+   "height": 10,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.piping.plug;",
+   "shapeNames": [
+    "mxgraph.pid.piping.plug"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:370"
+  },
+  {
+   "id": "pidPiping-27-pulsation-dampener",
+   "title": "Pulsation Dampener",
+   "tags": "pid piping pulsation dampener process instrumentation piping  Pulsation Dampener",
+   "kind": "vertex",
+   "width": 50,
+   "height": 150,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.piping.pulsation_dampener;",
+   "shapeNames": [
+    "mxgraph.pid.piping.pulsation_dampener"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:371"
+  },
+  {
+   "id": "pidPiping-28-removable-spool",
+   "title": "Removable Spool",
+   "tags": "pid piping removable spool process instrumentation piping  Removable Spool",
+   "kind": "vertex",
+   "width": 50,
+   "height": 30,
+   "style": "verticalAlign=bottom;pointerEvents=1;dashed=0;shape=mxgraph.pid.piping.removable_spool;html=1;overflow=fill;",
+   "value": "<table cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%;height:100%;\"><tr><td valign=\"bottom\" align=\"center\">RS</td></tr></table>",
+   "shapeNames": [
+    "mxgraph.pid.piping.removable_spool"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:372"
+  },
+  {
+   "id": "pidPiping-29-rotary-valve",
+   "title": "Rotary Valve",
+   "tags": "pid piping rotary valve process instrumentation piping  Rotary Valve",
+   "kind": "vertex",
+   "width": 50,
+   "height": 20,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.piping.rotary_valve;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.pid.piping.rotary_valve"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:379"
+  },
+  {
+   "id": "pidPiping-30-spacer",
+   "title": "Spacer",
+   "tags": "pid piping spacer process instrumentation piping  Spacer",
+   "kind": "vertex",
+   "width": 20,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.piping.spacer;",
+   "shapeNames": [
+    "mxgraph.pid.piping.spacer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:380"
+  },
+  {
+   "id": "pidPiping-31-steam-trap",
+   "title": "Steam Trap",
+   "tags": "pid piping steam trap process instrumentation piping  Steam Trap",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "html=1;dashed=0;outlineConnect=0;align=center;shape=mxgraph.pid.piping.steam_trap;",
+   "value": "T",
+   "shapeNames": [
+    "mxgraph.pid.piping.steam_trap"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:381"
+  },
+  {
+   "id": "pidPiping-32-t-type-strainer",
+   "title": "T-Type Strainer",
+   "tags": "pid piping t-type strainer process instrumentation piping  T-Type Strainer",
+   "kind": "vertex",
+   "width": 20,
+   "height": 35,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.piping.t-type_strainer;",
+   "shapeNames": [
+    "mxgraph.pid.piping.t-type_strainer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:382"
+  },
+  {
+   "id": "pidPiping-33-temporary-strainer",
+   "title": "Temporary Strainer",
+   "tags": "pid piping temporary strainer process instrumentation piping  Temporary Strainer",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.piping.temporary_strainer;",
+   "shapeNames": [
+    "mxgraph.pid.piping.temporary_strainer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:383"
+  },
+  {
+   "id": "pidPiping-34-vent-silencer",
+   "title": "Vent Silencer",
+   "tags": "pid piping vent silencer process instrumentation piping  Vent Silencer",
+   "kind": "vertex",
+   "width": 20,
+   "height": 80,
+   "style": "html=1;dashed=0;outlineConnect=0;align=center;shape=mxgraph.pid.piping.vent_silencer;",
+   "value": "S",
+   "shapeNames": [
+    "mxgraph.pid.piping.vent_silencer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:384"
+  },
+  {
+   "id": "pidPiping-35-welded-connection",
+   "title": "Welded Connection",
+   "tags": "pid piping welded connection process instrumentation piping  Welded Connection",
+   "kind": "vertex",
+   "width": 50,
+   "height": 20,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.piping.welded_connection2;",
+   "shapeNames": [
+    "mxgraph.pid.piping.welded_connection2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:385"
+  },
+  {
+   "id": "pidPiping-36-y-type-strainer",
+   "title": "Y-Type Strainer",
+   "tags": "pid piping y-type strainer process instrumentation piping  Y-Type Strainer",
+   "kind": "vertex",
+   "width": 50,
+   "height": 35,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.piping.y-type_strainer;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.pid.piping.y-type_strainer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:386"
+  }
+ ]
+}

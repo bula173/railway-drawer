@@ -1,0 +1,148 @@
+{
+ "id": "pidAgitators",
+ "title": "Process Engineering / Agitators",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-PID.js:8",
+ "entries": [
+  {
+   "id": "pidAgitators-0-agitator-stirrer",
+   "title": "Agitator, Stirrer",
+   "tags": "pid agitators  Agitator, Stirrer Agitator, Stirrer",
+   "kind": "vertex",
+   "width": 80,
+   "height": 120,
+   "style": "shape=mxgraph.pid.agitators.agitator,_stirrer;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.agitators.agitator,_stirrer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidAgitators-1-agitator-anchor",
+   "title": "Agitator (Anchor)",
+   "tags": "pid agitators  Agitator (Anchor) Agitator (Anchor)",
+   "kind": "vertex",
+   "width": 80,
+   "height": 120,
+   "style": "shape=mxgraph.pid.agitators.agitator_(anchor);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.agitators.agitator_(anchor)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidAgitators-2-agitator-cross-beam",
+   "title": "Agitator (Cross-Beam)",
+   "tags": "pid agitators  Agitator (Cross-Beam) Agitator (Cross-Beam)",
+   "kind": "vertex",
+   "width": 80,
+   "height": 120,
+   "style": "shape=mxgraph.pid.agitators.agitator_(cross-beam);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.agitators.agitator_(cross-beam)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidAgitators-3-agitator-disc",
+   "title": "Agitator (Disc)",
+   "tags": "pid agitators  Agitator (Disc) Agitator (Disc)",
+   "kind": "vertex",
+   "width": 80,
+   "height": 135,
+   "style": "shape=mxgraph.pid.agitators.agitator_(disc);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.agitators.agitator_(disc)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidAgitators-4-agitator-flate-blade-paddle",
+   "title": "Agitator (Flate-Blade Paddle)",
+   "tags": "pid agitators  Agitator (Flate-Blade Paddle) Agitator (Flate-Blade Paddle)",
+   "kind": "vertex",
+   "width": 80,
+   "height": 140,
+   "style": "shape=mxgraph.pid.agitators.agitator_(flate-blade_paddle);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.agitators.agitator_(flate-blade_paddle)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidAgitators-5-agitator-gat-paddle",
+   "title": "Agitator (Gat Paddle)",
+   "tags": "pid agitators  Agitator (Gat Paddle) Agitator (Gat Paddle)",
+   "kind": "vertex",
+   "width": 80,
+   "height": 120,
+   "style": "shape=mxgraph.pid.agitators.agitator_(gat_paddle);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.agitators.agitator_(gat_paddle)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidAgitators-6-agitator-helical",
+   "title": "Agitator (Helical)",
+   "tags": "pid agitators  Agitator (Helical) Agitator (Helical)",
+   "kind": "vertex",
+   "width": 80,
+   "height": 130,
+   "style": "shape=mxgraph.pid.agitators.agitator_(helical);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.agitators.agitator_(helical)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidAgitators-7-agitator-impeller",
+   "title": "Agitator (Impeller)",
+   "tags": "pid agitators  Agitator (Impeller) Agitator (Impeller)",
+   "kind": "vertex",
+   "width": 80,
+   "height": 130,
+   "style": "shape=mxgraph.pid.agitators.agitator_(impeller);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.agitators.agitator_(impeller)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidAgitators-8-agitator-propeller",
+   "title": "Agitator (Propeller)",
+   "tags": "pid agitators  Agitator (Propeller) Agitator (Propeller)",
+   "kind": "vertex",
+   "width": 92,
+   "height": 132,
+   "style": "shape=mxgraph.pid.agitators.agitator_(propeller);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.agitators.agitator_(propeller)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidAgitators-9-agitator-turbine",
+   "title": "Agitator (Turbine)",
+   "tags": "pid agitators  Agitator (Turbine) Agitator (Turbine)",
+   "kind": "vertex",
+   "width": 80,
+   "height": 135,
+   "style": "shape=mxgraph.pid.agitators.agitator_(turbine);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.agitators.agitator_(turbine)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  }
+ ]
+}

@@ -1,0 +1,120 @@
+{
+ "id": "mscaeAI and ML Service",
+ "title": "CAE / AI and ML Service",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:8",
+ "entries": [
+  {
+   "id": "mscaeAI and ML Service-0-batch-ai",
+   "title": "Batch AI",
+   "tags": "mscae batch ai ms microsoft cloud enterprise ai ml service Batch AI",
+   "kind": "vertex",
+   "width": 36,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Batch_AI.svg;points=[[0.5,0,0],[0.486,0.998,0],[0.104,0.5,0],[0.896,0.5,0],[0.93,0.13,0],[0.656,0.937,0],[0.337,0.94,0],[0.07,0.128,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:637"
+  },
+  {
+   "id": "mscaeAI and ML Service-1-bot-services",
+   "title": "Bot Services",
+   "tags": "mscae bot services ms microsoft cloud enterprise ai ml service Bot Services",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Bot_Services.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.842,0.133,0],[0.865,0.845,0],[0.135,0.845,0],[0.148,0.143,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:639"
+  },
+  {
+   "id": "mscaeAI and ML Service-2-cognitive-services",
+   "title": "Cognitive Services",
+   "tags": "mscae cognitive services ms microsoft cloud enterprise ai ml service Cognitive Services",
+   "kind": "vertex",
+   "width": 50,
+   "height": 30,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Cognitive_Services.svg;points=[[0.5,0.015,0],[0.495,1,0],[0,0.606,0],[1,0.6,0],[0.792,0.109,0],[0.92,0.845,0],[0.083,0.862,0],[0.223,0.113,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:641"
+  },
+  {
+   "id": "mscaeAI and ML Service-3-genomics-accounts",
+   "title": "Genomics Accounts",
+   "tags": "mscae genomics accounts ms microsoft cloud enterprise ai ml service Genomics Accounts",
+   "kind": "vertex",
+   "width": 26,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Genomics_Accounts.svg;points=[[0.5,0.056,0],[0.5,0.949,0],[0,0.5,0],[1,0.5,0],[0.985,0.015,0],[0.985,0.982,0],[0.01,0.982,0],[0.015,0.018,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:643"
+  },
+  {
+   "id": "mscaeAI and ML Service-4-machine-learning-service-workspaces",
+   "title": "Machine Learning Service Workspaces",
+   "tags": "mscae machine learning service workspaces ms microsoft cloud enterprise ai ml service Machine Learning Service Workspaces",
+   "kind": "vertex",
+   "width": 46,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Machine_Learning_Service_Workspaces.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.761,0],[1,0.762,0],[0.635,0,0],[0.934,1,0],[0.066,1,0],[0.365,0,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:645"
+  },
+  {
+   "id": "mscaeAI and ML Service-5-machine-learning-studio-web-service-plans",
+   "title": "Machine Learning Studio Web Service Plans",
+   "tags": "mscae machine learning studio web service plans ms microsoft cloud enterprise ai ml service Machine Learning Studio Web Service Plans",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Machine_Learning_Studio_Web_Service_Plans.svg;points=[[0.497,0,0],[0.5,1,0],[0,0.514,0],[1,0.522,0],[0.85,0.14,0],[0.985,0.63,0],[0.058,1,0],[0.145,0.143,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:647"
+  },
+  {
+   "id": "mscaeAI and ML Service-6-machine-learning-studio-web-services",
+   "title": "Machine Learning Studio Web Services",
+   "tags": "mscae machine learning studio web services ms microsoft cloud enterprise ai ml service Machine Learning Studio Web Services",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Machine_Learning_Studio_Web_Services.svg;points=[[0.5,0.033,0],[0.5,1,0],[0,0.901,0],[0.973,0.5,0],[0.872,0.083,0],[0.06,1,0],[0.145,0.305,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:649"
+  },
+  {
+   "id": "mscaeAI and ML Service-7-machine-learning-studio-workspaces",
+   "title": "Machine Learning Studio Workspaces",
+   "tags": "mscae machine learning studio workspaces ms microsoft cloud enterprise ai ml service Machine Learning Studio Workspaces",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Machine_Learning_Studio_Workspaces.svg;points=[[0.5,0,0],[0.486,1,0],[0,0.5,0],[1,0.5,0],[1,0,0],[0.752,1,0],[0.22,1,0],[0,0,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:651"
+  }
+ ]
+}

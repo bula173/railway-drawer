@@ -1,0 +1,92 @@
+{
+ "id": "aws3Mobile Services",
+ "title": "AWS17 / Mobile Services",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-AWS3.js:8",
+ "entries": [
+  {
+   "id": "aws3Mobile Services-0-api-gateway",
+   "title": "API Gateway",
+   "tags": "aws3 api gateway aws amazon web service mobile services API Gateway",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 93,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.api_gateway;fillColor=#D9A741;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.api_gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:826"
+  },
+  {
+   "id": "aws3Mobile Services-1-cognito",
+   "title": "Cognito",
+   "tags": "aws3 cognito aws amazon web service mobile services Cognito",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 93,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.cognito;fillColor=#AD688B;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.cognito"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:828"
+  },
+  {
+   "id": "aws3Mobile Services-2-mobile-analytics",
+   "title": "Mobile Analytics",
+   "tags": "aws3 mobile analytics aws amazon web service mobile services Mobile Analytics",
+   "kind": "vertex",
+   "width": 90,
+   "height": 93,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.mobile_analytics;fillColor=#AD688B;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.mobile_analytics"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:830"
+  },
+  {
+   "id": "aws3Mobile Services-3-pinpoint",
+   "title": "Pinpoint",
+   "tags": "aws3 pinpoint aws amazon web service mobile services Pinpoint",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 87,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.pinpoint;fillColor=#AD688B;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.pinpoint"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:832"
+  },
+  {
+   "id": "aws3Mobile Services-4-device-farm",
+   "title": "Device Farm",
+   "tags": "aws3 device farm aws amazon web service mobile services Device Farm",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 93,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.device_farm;fillColor=#AD688B;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.device_farm"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:834"
+  },
+  {
+   "id": "aws3Mobile Services-5-mobile-hub",
+   "title": "Mobile Hub",
+   "tags": "aws3 mobile hub aws amazon web service mobile services Mobile Hub",
+   "kind": "vertex",
+   "width": 75,
+   "height": 81,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.mobile_hub;fillColor=#AD688A;gradientColor=#F58435;gradientDirection=west;pointerEvents=1",
+   "shapeNames": [
+    "mxgraph.aws3.mobile_hub"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:836"
+  }
+ ]
+}

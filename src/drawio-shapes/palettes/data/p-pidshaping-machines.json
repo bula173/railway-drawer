@@ -1,0 +1,106 @@
+{
+ "id": "pidShaping Machines",
+ "title": "Process Engineering / Shaping Machines",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-PID.js:8",
+ "entries": [
+  {
+   "id": "pidShaping Machines-0-extruder-piston",
+   "title": "Extruder (Piston)",
+   "tags": "pid shaping machines  Extruder (Piston) Extruder (Piston)",
+   "kind": "vertex",
+   "width": 110,
+   "height": 60,
+   "style": "shape=mxgraph.pid.shaping_machines.extruder_(piston);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.shaping_machines.extruder_(piston)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidShaping Machines-1-extruder-screw",
+   "title": "Extruder (Screw)",
+   "tags": "pid shaping machines  Extruder (Screw) Extruder (Screw)",
+   "kind": "vertex",
+   "width": 110,
+   "height": 60,
+   "style": "shape=mxgraph.pid.shaping_machines.extruder_(screw);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.shaping_machines.extruder_(screw)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidShaping Machines-2-pelletizing-disc",
+   "title": "Pelletizing Disc",
+   "tags": "pid shaping machines  Pelletizing Disc Pelletizing Disc",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "shape=mxgraph.pid.shaping_machines.pelletizing_disc;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.shaping_machines.pelletizing_disc"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidShaping Machines-3-press-piston",
+   "title": "Press (Piston)",
+   "tags": "pid shaping machines  Press (Piston) Press (Piston)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "shape=mxgraph.pid.shaping_machines.press_(piston);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.shaping_machines.press_(piston)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidShaping Machines-4-press-roller",
+   "title": "Press (Roller)",
+   "tags": "pid shaping machines  Press (Roller) Press (Roller)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "shape=mxgraph.pid.shaping_machines.press_(roller);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.shaping_machines.press_(roller)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidShaping Machines-5-shaping-machine-horizontal",
+   "title": "Shaping Machine (Horizontal)",
+   "tags": "pid shaping machines  Shaping Machine (Horizontal) Shaping Machine (Horizontal)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "shape=mxgraph.pid.shaping_machines.shaping_machine_(horizontal);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.shaping_machines.shaping_machine_(horizontal)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidShaping Machines-6-shaping-machine-vertical",
+   "title": "Shaping Machine (Vertical)",
+   "tags": "pid shaping machines  Shaping Machine (Vertical) Shaping Machine (Vertical)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "shape=mxgraph.pid.shaping_machines.shaping_machine_(vertical);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.shaping_machines.shaping_machine_(vertical)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  }
+ ]
+}

@@ -1,0 +1,68 @@
+{
+ "id": "ibm_cloudContainers",
+ "title": "IBM / Containers",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:7",
+ "entries": [
+  {
+   "id": "ibm_cloudContainers-0-openshift",
+   "title": "OpenShift",
+   "tags": "ibm cloud containers openshift open shift",
+   "kind": "cells",
+   "width": 48,
+   "height": 48,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"OpenShift\" style=\"shape=rect;fillColor=#198038;aspect=fixed;resizable=0;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeColor=none;fontSize=14;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"48\" height=\"48\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"fillColor=#ffffff;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;shape=mxgraph.ibm_cloud.logo--openshift\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.logo--openshift"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:427"
+  },
+  {
+   "id": "ibm_cloudContainers-1-kubernetes-service",
+   "title": "Kubernetes Service",
+   "tags": "ibm cloud containers kubernetes service",
+   "kind": "cells",
+   "width": 48,
+   "height": 48,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Kubernetes Service\" style=\"shape=rect;fillColor=#198038;aspect=fixed;resizable=0;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeColor=none;fontSize=14;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"48\" height=\"48\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"fillColor=#ffffff;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;shape=mxgraph.ibm_cloud.ibm-cloud--kubernetes-service\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.ibm-cloud--kubernetes-service"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:427"
+  },
+  {
+   "id": "ibm_cloudContainers-2-z-containers",
+   "title": "Z Containers",
+   "tags": "ibm cloud containers z containers",
+   "kind": "cells",
+   "width": 48,
+   "height": 48,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Z Containers\" style=\"shape=rect;fillColor=#198038;aspect=fixed;resizable=0;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeColor=none;fontSize=14;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"48\" height=\"48\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"fillColor=#ffffff;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;shape=mxgraph.ibm_cloud.ibm-z-os--containers\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.ibm-z-os--containers"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:427"
+  },
+  {
+   "id": "ibm_cloudContainers-3-container-registry",
+   "title": "Container Registry",
+   "tags": "ibm cloud containers container registry",
+   "kind": "cells",
+   "width": 48,
+   "height": 48,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Container Registry\" style=\"shape=rect;fillColor=#198038;aspect=fixed;resizable=0;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeColor=none;fontSize=14;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"48\" height=\"48\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"fillColor=#ffffff;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;shape=mxgraph.ibm_cloud.cloud-registry\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.cloud-registry"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:427"
+  }
+ ]
+}

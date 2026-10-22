@@ -1,0 +1,288 @@
+{
+ "id": "aws3General",
+ "title": "AWS17 / General",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-AWS3.js:8",
+ "entries": [
+  {
+   "id": "aws3General-0-management-console",
+   "title": "Management Console",
+   "tags": "aws3 management console aws amazon web service general Management Console",
+   "kind": "vertex",
+   "width": 63,
+   "height": 63,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.management_console;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.management_console"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:443"
+  },
+  {
+   "id": "aws3General-1-cloud",
+   "title": "Cloud",
+   "tags": "aws3 cloud aws amazon web service general Cloud",
+   "kind": "vertex",
+   "width": 75,
+   "height": 75,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.cloud_2;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.cloud_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:445"
+  },
+  {
+   "id": "aws3General-2-forums",
+   "title": "Forums",
+   "tags": "aws3 forums aws amazon web service general Forums",
+   "kind": "vertex",
+   "width": 85.5,
+   "height": 82.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.forums;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.forums"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:447"
+  },
+  {
+   "id": "aws3General-3-virtual-private-cloud",
+   "title": "Virtual Private Cloud",
+   "tags": "aws3 virtual private cloud vpc aws amazon web service general Virtual Private Cloud",
+   "kind": "vertex",
+   "width": 79.5,
+   "height": 54,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.virtual_private_cloud;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.virtual_private_cloud"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:449"
+  },
+  {
+   "id": "aws3General-4-client",
+   "title": "Client",
+   "tags": "aws3 client aws amazon web service general Client",
+   "kind": "vertex",
+   "width": 63,
+   "height": 63,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.management_console;fillColor=#D2D3D3;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.management_console"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:451"
+  },
+  {
+   "id": "aws3General-5-mobile-client",
+   "title": "Mobile Client",
+   "tags": "aws3 mobile client aws amazon web service general Mobile Client",
+   "kind": "vertex",
+   "width": 40.5,
+   "height": 63,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.mobile_client;fillColor=#D2D3D3;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.mobile_client"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:453"
+  },
+  {
+   "id": "aws3General-6-multimedia",
+   "title": "Multimedia",
+   "tags": "aws3 multimedia aws amazon web service general Multimedia",
+   "kind": "vertex",
+   "width": 66,
+   "height": 63,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.multimedia;fillColor=#D2D3D3;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.multimedia"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:455"
+  },
+  {
+   "id": "aws3General-7-user",
+   "title": "User",
+   "tags": "aws3 user aws amazon web service general User",
+   "kind": "vertex",
+   "width": 45,
+   "height": 63,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.user;fillColor=#D2D3D3;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.user"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:457"
+  },
+  {
+   "id": "aws3General-8-users",
+   "title": "Users",
+   "tags": "aws3 users aws amazon web service general Users",
+   "kind": "vertex",
+   "width": 66,
+   "height": 63,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.users;fillColor=#D2D3D3;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.users"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:459"
+  },
+  {
+   "id": "aws3General-9-tape-storage",
+   "title": "Tape Storage",
+   "tags": "aws3 tape storage aws amazon web service general Tape Storage",
+   "kind": "vertex",
+   "width": 75,
+   "height": 39,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.tape_storage;fillColor=#7D7C7C;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.tape_storage"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:461"
+  },
+  {
+   "id": "aws3General-10-corporate-data-center",
+   "title": "Corporate Data Center",
+   "tags": "aws3 corporate data center aws amazon web service general Corporate Data Center",
+   "kind": "vertex",
+   "width": 46.5,
+   "height": 63,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.corporate_data_center;fillColor=#7D7C7C;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.corporate_data_center"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:463"
+  },
+  {
+   "id": "aws3General-11-traditional-server",
+   "title": "Traditional Server",
+   "tags": "aws3 traditional server aws amazon web service general Traditional Server",
+   "kind": "vertex",
+   "width": 46.5,
+   "height": 63,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.traditional_server;fillColor=#7D7C7C;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.traditional_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:465"
+  },
+  {
+   "id": "aws3General-12-disk",
+   "title": "Disk",
+   "tags": "aws3 disk aws amazon web service general Disk",
+   "kind": "vertex",
+   "width": 61.5,
+   "height": 64.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.disk;fillColor=#7D7C7C;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.disk"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:467"
+  },
+  {
+   "id": "aws3General-13-generic-database",
+   "title": "Generic Database",
+   "tags": "aws3 generic database aws amazon web service general Generic Database",
+   "kind": "vertex",
+   "width": 49.5,
+   "height": 64.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.generic_database;fillColor=#7D7C7C;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.generic_database"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:469"
+  },
+  {
+   "id": "aws3General-14-internet",
+   "title": "Internet",
+   "tags": "aws3 internet aws amazon web service general Internet",
+   "kind": "vertex",
+   "width": 79.5,
+   "height": 79.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.internet;fillColor=#D2D3D3;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.internet"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:471"
+  },
+  {
+   "id": "aws3General-15-internet",
+   "title": "Internet",
+   "tags": "aws3 internet aws amazon web service general Internet",
+   "kind": "vertex",
+   "width": 79.5,
+   "height": 54,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.internet_2;fillColor=#D2D3D3;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.internet_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:473"
+  },
+  {
+   "id": "aws3General-16-internet",
+   "title": "Internet",
+   "tags": "aws3 internet aws amazon web service general Internet",
+   "kind": "vertex",
+   "width": 79.5,
+   "height": 54,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.internet_3;fillColor=#D2D3D3;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.internet_3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:475"
+  },
+  {
+   "id": "aws3General-17-office-building",
+   "title": "Office Building",
+   "tags": "aws3 office building aws amazon web service general Office Building",
+   "kind": "vertex",
+   "width": 33,
+   "height": 79.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.office_building;fillColor=#7D7C7C;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.office_building"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:477"
+  },
+  {
+   "id": "aws3General-18-saml-token",
+   "title": "SAML Token",
+   "tags": "aws3 saml token aws amazon web service general SAML Token",
+   "kind": "vertex",
+   "width": 69,
+   "height": 72,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.saml_token;fillColor=#D2D3D3;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.saml_token"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:479"
+  },
+  {
+   "id": "aws3General-19-ssl-padlock",
+   "title": "SSL Padlock",
+   "tags": "aws3 ssl padlock aws amazon web service general SSL Padlock",
+   "kind": "vertex",
+   "width": 63,
+   "height": 78,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.ssl_padlock;fillColor=#D2D3D3;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.ssl_padlock"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:481"
+  }
+ ]
+}

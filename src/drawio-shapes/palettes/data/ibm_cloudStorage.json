@@ -1,0 +1,38 @@
+{
+ "id": "ibm_cloudStorage",
+ "title": "IBM / Storage",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:7",
+ "entries": [
+  {
+   "id": "ibm_cloudStorage-0-block-storage",
+   "title": "Block Storage",
+   "tags": "ibm cloud storage block storage",
+   "kind": "cells",
+   "width": 48,
+   "height": 48,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Block Storage\" style=\"shape=rect;fillColor=#0F62FE;aspect=fixed;resizable=0;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeColor=none;fontSize=14;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"48\" height=\"48\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"fillColor=#ffffff;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;shape=mxgraph.ibm_cloud.block-storage\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.block-storage"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:427"
+  },
+  {
+   "id": "ibm_cloudStorage-1-object-storage",
+   "title": "Object Storage",
+   "tags": "ibm cloud storage object storage",
+   "kind": "cells",
+   "width": 48,
+   "height": 48,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Object Storage\" style=\"shape=rect;fillColor=#0F62FE;aspect=fixed;resizable=0;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeColor=none;fontSize=14;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"48\" height=\"48\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"fillColor=#ffffff;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;shape=mxgraph.ibm_cloud.object-storage\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.object-storage"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:427"
+  }
+ ]
+}

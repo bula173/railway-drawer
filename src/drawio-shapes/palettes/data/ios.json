@@ -1,0 +1,907 @@
+{
+ "id": "ios",
+ "title": "iOS6",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Ios.js:8",
+ "entries": [
+  {
+   "id": "ios-0-iphone-portrait",
+   "title": "iPhone (portrait)",
+   "tags": "iphone (portrait)",
+   "kind": "vertex",
+   "width": 200,
+   "height": 400,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iPhone;bgStyle=bgGreen;fillColor=#aaaaaa;bodyColor=#000000;homeButtonColor=#bbbbbb;cameraColor=#000099;speakerColor=#444444;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios.iPhone"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:30"
+  },
+  {
+   "id": "ios-1-iphone-landscape",
+   "title": "iPhone (landscape)",
+   "tags": "iphone (landscape)",
+   "kind": "vertex",
+   "width": 400,
+   "height": 200,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iPhone;direction=north;bgStyle=bgGreen;fillColor=#aaaaaa;bodyColor=#000000;homeButtonColor=#bbbbbb;cameraColor=#000099;speakerColor=#444444;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios.iPhone"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:31"
+  },
+  {
+   "id": "ios-2-ipad-portrait",
+   "title": "iPad (portrait)",
+   "tags": "ipad (portrait)",
+   "kind": "vertex",
+   "width": 484.99999999999994,
+   "height": 625,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iPad;bgStyle=bgGreen;fillColor=#aaaaaa;bodyColor=#000000;homeButtonColor=#bbbbbb;cameraColor=#000099;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios.iPad"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:32"
+  },
+  {
+   "id": "ios-3-ipad-landscape",
+   "title": "iPad (landscape)",
+   "tags": "ipad (landscape)",
+   "kind": "vertex",
+   "width": 625,
+   "height": 484.99999999999994,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iPad;direction=north;bgStyle=bgGreen;fillColor=#aaaaaa;bodyColor=#000000;homeButtonColor=#bbbbbb;cameraColor=#000099;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios.iPad"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:33"
+  },
+  {
+   "id": "ios-4-ipad-background-white",
+   "title": "iPad background (white)",
+   "tags": "ipad background (white)",
+   "kind": "vertex",
+   "width": 175,
+   "height": 280,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iBgFlat;strokeColor=#18211b;",
+   "shapeNames": [
+    "mxgraph.ios.iBgFlat"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:34"
+  },
+  {
+   "id": "ios-5-ipad-background-green",
+   "title": "iPad background (green)",
+   "tags": "ipad background (green)",
+   "kind": "vertex",
+   "width": 175,
+   "height": 280,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iBgFlat;strokeColor=#18211b;fillColor=#1f2923;",
+   "shapeNames": [
+    "mxgraph.ios.iBgFlat"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:35"
+  },
+  {
+   "id": "ios-6-ipad-background-gray",
+   "title": "iPad background (gray)",
+   "tags": "ipad background (gray)",
+   "kind": "vertex",
+   "width": 175,
+   "height": 280,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iBgFlat;strokeColor=#18211b;fillColor=#dddddd;",
+   "shapeNames": [
+    "mxgraph.ios.iBgFlat"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:36"
+  },
+  {
+   "id": "ios-7-ipad-background-striped",
+   "title": "iPad background (striped)",
+   "tags": "ipad background (striped)",
+   "kind": "vertex",
+   "width": 175,
+   "height": 280,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iBgStriped;strokeColor=#18211b;fillColor=#5D7585;strokeColor2=#657E8F;",
+   "shapeNames": [
+    "mxgraph.ios.iBgStriped"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:37"
+  },
+  {
+   "id": "ios-8-ipad-background-map",
+   "title": "iPad background (map)",
+   "tags": "ipad background (map)",
+   "kind": "vertex",
+   "width": 175,
+   "height": 280,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iBgMap;strokeColor=#18211b;strokeColor2=#008cff;fillColor2=#96D1FF;",
+   "shapeNames": [
+    "mxgraph.ios.iBgMap"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:38"
+  },
+  {
+   "id": "ios-9-button-bar",
+   "title": "Button bar",
+   "tags": "button bar",
+   "kind": "cells",
+   "width": 165,
+   "height": 50,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"swimlane;shape=mxgraph.bootstrap.anchor;strokeColor=#C4C4C4;fillColor=#ffffff;fontColor=#666666;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=0;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"165\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Item 1\" style=\"text;strokeColor=inherit;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=10;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;shape=mxgraph.bootstrap.topButton;rSize=5;fillColor=inherit;fontColor=inherit;fontSize=8;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"165\" height=\"12.5\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=mxgraph.ios7.misc.right;strokeColor=#C4C4C4;\" vertex=\"1\" parent=\"3\"><mxGeometry x=\"1\" y=\"0.5\" width=\"6\" height=\"5\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-20\" y=\"-2.5\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"Item 2\" style=\"text;strokeColor=inherit;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=10;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;rSize=5;fillColor=#5D7585;gradientColor=#008cff;fontColor=#ffffff;fontSize=8;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"165\" height=\"12.5\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"\" style=\"shape=mxgraph.ios7.misc.right;strokeColor=#C4C4C4;\" vertex=\"1\" parent=\"5\"><mxGeometry x=\"1\" y=\"0.5\" width=\"6\" height=\"5\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-20\" y=\"-2.5\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"7\" value=\"Item 3\" style=\"text;strokeColor=inherit;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=10;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;rSize=5;fillColor=inherit;fontColor=inherit;fontSize=8;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"165\" height=\"12.5\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"\" style=\"shape=mxgraph.ios7.misc.right;strokeColor=#C4C4C4;\" vertex=\"1\" parent=\"7\"><mxGeometry x=\"1\" y=\"0.5\" width=\"6\" height=\"5\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-20\" y=\"-2.5\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"9\" value=\"Item 4\" style=\"text;strokeColor=inherit;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=10;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;shape=mxgraph.bootstrap.bottomButton;rSize=5;fillColor=inherit;fontColor=inherit;fontSize=8;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"165\" height=\"12.5\" as=\"geometry\"/></mxCell><mxCell id=\"10\" value=\"\" style=\"shape=mxgraph.ios7.misc.right;strokeColor=#C4C4C4;\" vertex=\"1\" parent=\"9\"><mxGeometry x=\"1\" y=\"0.5\" width=\"6\" height=\"5\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-20\" y=\"-2.5\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.bootstrap.anchor",
+    "mxgraph.bootstrap.topButton",
+    "mxgraph.ios7.misc.right",
+    "mxgraph.bootstrap.bottomButton"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:40"
+  },
+  {
+   "id": "ios-10-button-bar",
+   "title": "Button bar",
+   "tags": "button bar",
+   "kind": "cells",
+   "width": 165,
+   "height": 80,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"swimlane;shape=mxgraph.bootstrap.anchor;strokeColor=#C4C4C4;fillColor=#ffffff;fontColor=#999999;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=0;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"165\" height=\"80\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Item 1\" style=\"text;strokeColor=inherit;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=10;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;shape=mxgraph.bootstrap.topButton;rSize=5;fillColor=inherit;fontColor=inherit;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"165\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=mxgraph.ios7.misc.right;strokeColor=#C4C4C4;strokeWidth=3;\" vertex=\"1\" parent=\"3\"><mxGeometry x=\"1\" y=\"0.5\" width=\"6\" height=\"12\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-25\" y=\"-6\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"Item 2\" style=\"text;strokeColor=inherit;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=10;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;rSize=5;fillColor=#5D7585;gradientColor=#008cff;fontColor=#ffffff;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"165\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"\" style=\"shape=mxgraph.ios7.misc.right;strokeColor=#C4C4C4;strokeWidth=3;\" vertex=\"1\" parent=\"5\"><mxGeometry x=\"1\" y=\"0.5\" width=\"6\" height=\"12\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-25\" y=\"-6\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"7\" value=\"Item 3\" style=\"text;strokeColor=inherit;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=10;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;rSize=5;fillColor=inherit;fontColor=inherit;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"165\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"\" style=\"shape=mxgraph.ios7.misc.right;strokeColor=#C4C4C4;strokeWidth=3;\" vertex=\"1\" parent=\"7\"><mxGeometry x=\"1\" y=\"0.5\" width=\"6\" height=\"12\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-25\" y=\"-6\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"9\" value=\"Item 4\" style=\"text;strokeColor=inherit;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=10;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;shape=mxgraph.bootstrap.bottomButton;rSize=5;fillColor=inherit;fontColor=inherit;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"165\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"10\" value=\"\" style=\"shape=mxgraph.ios7.misc.right;strokeColor=#C4C4C4;strokeWidth=3;\" vertex=\"1\" parent=\"9\"><mxGeometry x=\"1\" y=\"0.5\" width=\"6\" height=\"12\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-25\" y=\"-6\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.bootstrap.anchor",
+    "mxgraph.bootstrap.topButton",
+    "mxgraph.ios7.misc.right",
+    "mxgraph.bootstrap.bottomButton"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:85"
+  },
+  {
+   "id": "ios-11-app-bar-portrait",
+   "title": "App bar (portrait)",
+   "kind": "cells",
+   "width": 175,
+   "height": 15,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"html=1;shadow=0;dashed=0;shape=mxgraph.ios.iAppBar;fillColor2=#eeeeee;fillColor3=#999999;signalColor=#0099ff;statusIconColor=#999999;statusIconAccentColor=#cccccc;compassNeedleColor=#990000;compassNeedleStroke=#333333;callBtnGradient=#E2FFEB;callBtnColor=#008215;strokeWidth=1;sketch=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"175\" height=\"15\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"CARRIER\" style=\"html=1;shadow=0;dashed=0;shape=mxgraph.ios.anchor;align=left;fontSize=8;spacingLeft=18;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"2\" width=\"50\" height=\"13\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"11:55PM\" style=\"html=1;shadow=0;dashed=0;shape=mxgraph.ios.rect;fontSize=8;strokeColor=none;fillColor=none;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"60\" y=\"2\" width=\"50\" height=\"13\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.ios.iAppBar",
+    "mxgraph.ios.anchor",
+    "mxgraph.ios.rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:130"
+  },
+  {
+   "id": "ios-12-app-bar-landscape",
+   "title": "App bar (landscape)",
+   "kind": "cells",
+   "width": 280,
+   "height": 15,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"html=1;shadow=0;dashed=0;shape=mxgraph.ios.iAppBar;fillColor2=#eeeeee;fillColor3=#999999;signalColor=#0099ff;statusIconColor=#999999;statusIconAccentColor=#cccccc;compassNeedleColor=#990000;compassNeedleStroke=#333333;callBtnGradient=#E2FFEB;callBtnColor=#008215;strokeWidth=1;sketch=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"280\" height=\"15\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"CARRIER\" style=\"html=1;shadow=0;dashed=0;shape=mxgraph.ios.anchor;align=left;fontSize=8;spacingLeft=18;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"2\" width=\"50\" height=\"13\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"11:55PM\" style=\"html=1;shadow=0;dashed=0;shape=mxgraph.ios.rect;fontSize=8;strokeColor=none;fillColor=none;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"115\" y=\"2\" width=\"50\" height=\"13\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.ios.iAppBar",
+    "mxgraph.ios.anchor",
+    "mxgraph.ios.rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:144"
+  },
+  {
+   "id": "ios-13-top-bar",
+   "title": "Top bar",
+   "kind": "cells",
+   "width": 175,
+   "height": 15,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"html=1;shadow=0;dashed=0;shape=mxgraph.ios.iTopBar2;opacity=50;fillColor=#999999;strokeColor=#cccccc;strokeWidth=1;sketch=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"175\" height=\"15\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"CARRIER\" style=\"html=1;shadow=0;dashed=0;shape=mxgraph.ios.rect;align=left;fontSize=7.5;spacingLeft=18;fontColor=#cccccc;textOpacity=50;strokeColor=none;fillColor=none;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"2\" width=\"50\" height=\"13\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"11:15AM\" style=\"html=1;shadow=0;dashed=0;shape=mxgraph.ios.rect;fontSize=7.5;fontColor=#cccccc;textOpacity=50;strokeColor=none;fillColor=none;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"60\" y=\"2\" width=\"50\" height=\"13\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.ios.iTopBar2",
+    "mxgraph.ios.rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:158"
+  },
+  {
+   "id": "ios-14-top-bar-locked",
+   "title": "Top bar locked",
+   "kind": "cells",
+   "width": 175,
+   "height": 15,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"html=1;shadow=0;dashed=0;shape=mxgraph.ios.iTopBarLocked;fillColor2=#000000;statusIconColor=#cccccc;strokeWidth=1;sketch=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"175\" height=\"15\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"CARRIER\" style=\"html=1;shadow=0;dashed=0;shape=mxgraph.ios.anchor;align=left;fontSize=7.5;spacingLeft=18;fontColor=#cccccc;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"2\" width=\"50\" height=\"13\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.ios.iTopBarLocked",
+    "mxgraph.ios.anchor"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:172"
+  },
+  {
+   "id": "ios-15-button",
+   "title": "Button",
+   "tags": "button",
+   "kind": "vertex",
+   "width": 43.5,
+   "height": 15,
+   "style": "strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.ios.iButton;strokeColor=#444444;fontColor=#ffffff;buttonText=;fontSize=8;fillColor=#dddddd;fillColor2=#3D5565;whiteSpace=wrap;align=center;sketch=0;",
+   "value": "Button",
+   "shapeNames": [
+    "mxgraph.ios.iButton"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:183"
+  },
+  {
+   "id": "ios-16-back-button",
+   "title": "Back button",
+   "tags": "back button",
+   "kind": "vertex",
+   "width": 43.5,
+   "height": 15,
+   "style": "strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.ios.iButtonBack;strokeColor=#444444;fontColor=#ffffff;buttonText=;fontSize=8;fillColor=#dddddd;fillColor2=#3D5565;spacingLeft=10;whiteSpace=wrap;align=center;sketch=0;",
+   "value": "Button",
+   "shapeNames": [
+    "mxgraph.ios.iButtonBack"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:185"
+  },
+  {
+   "id": "ios-17-forward-button",
+   "title": "Forward button",
+   "tags": "forward button",
+   "kind": "vertex",
+   "width": 43.5,
+   "height": 15,
+   "style": "strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.ios.iButtonFw;strokeColor=#444444;fontColor=#ffffff;buttonText=;fontSize=8;fillColor=#dddddd;fillColor2=#3D5565;spacingRight=10;whiteSpace=wrap;align=center;sketch=0;",
+   "value": "Button",
+   "shapeNames": [
+    "mxgraph.ios.iButtonFw"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:187"
+  },
+  {
+   "id": "ios-18-prev-next-button",
+   "title": "Prev/next button",
+   "tags": "prev/next button",
+   "kind": "vertex",
+   "width": 43.5,
+   "height": 15,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iPrevNext;strokeColor=#444444;fillColor=#dddddd;fillColor2=#3D5565;fillColor3=#ffffff;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios.iPrevNext"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:189"
+  },
+  {
+   "id": "ios-19-text-input",
+   "title": "Text input",
+   "tags": "text input",
+   "kind": "vertex",
+   "width": 43.5,
+   "height": 15,
+   "style": "strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.ios.iTextInput;strokeColor=#444444;buttonText=;fontSize=8;whiteSpace=wrap;align=left;",
+   "value": "Default text",
+   "shapeNames": [
+    "mxgraph.ios.iTextInput"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:191"
+  },
+  {
+   "id": "ios-20-radio-buttons",
+   "title": "Radio buttons",
+   "tags": "radio buttons",
+   "kind": "cells",
+   "width": 165,
+   "height": 50,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"swimlane;shape=mxgraph.bootstrap.rrect;rSize=3;strokeColor=#666666;fillColor=#ffffff;fontColor=#666666;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=0;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"165\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Option 1\" style=\"text;strokeColor=none;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=10;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;shape=mxgraph.bootstrap.topButton;rSize=3;fillColor=none;fontColor=inherit;fontSize=8;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"165\" height=\"12.5\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=ellipse;resizable=0;fillColor=#dddddd;html=1;\" vertex=\"1\" parent=\"3\"><mxGeometry y=\"0.5\" width=\"5\" height=\"5\" relative=\"1\" as=\"geometry\"><mxPoint x=\"3\" y=\"-2.5\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"Option 2\" style=\"text;strokeColor=none;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=10;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;rSize=5;fillColor=none;fontColor=inherit;fontSize=8;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"165\" height=\"12.5\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"\" style=\"shape=ellipse;resizable=0;fillColor=#dddddd;html=1;\" vertex=\"1\" parent=\"5\"><mxGeometry y=\"0.5\" width=\"5\" height=\"5\" relative=\"1\" as=\"geometry\"><mxPoint x=\"3\" y=\"-2.5\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"7\" value=\"Option 3\" style=\"text;strokeColor=none;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=10;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;rSize=5;fillColor=none;fontColor=inherit;fontSize=8;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"165\" height=\"12.5\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"\" style=\"shape=ellipse;resizable=0;fillColor=#444444;html=1;\" vertex=\"1\" parent=\"7\"><mxGeometry y=\"0.5\" width=\"5\" height=\"5\" relative=\"1\" as=\"geometry\"><mxPoint x=\"3\" y=\"-2.5\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"9\" value=\"Option 4\" style=\"text;strokeColor=none;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=10;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;shape=mxgraph.bootstrap.bottomButton;rSize=5;fillColor=none;fontColor=inherit;fontSize=8;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"165\" height=\"12.5\" as=\"geometry\"/></mxCell><mxCell id=\"10\" value=\"\" style=\"shape=ellipse;resizable=0;fillColor=#dddddd;html=1;\" vertex=\"1\" parent=\"9\"><mxGeometry y=\"0.5\" width=\"5\" height=\"5\" relative=\"1\" as=\"geometry\"><mxPoint x=\"3\" y=\"-2.5\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.bootstrap.rrect",
+    "mxgraph.bootstrap.topButton",
+    "ellipse",
+    "mxgraph.bootstrap.bottomButton"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:194"
+  },
+  {
+   "id": "ios-21-checkboxes",
+   "title": "Checkboxes",
+   "tags": "checkboxes",
+   "kind": "cells",
+   "width": 165,
+   "height": 50,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"swimlane;shape=mxgraph.bootstrap.rrect;rSize=3;strokeColor=#666666;fillColor=#ffffff;fontColor=#666666;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=0;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"165\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Setting 1\" style=\"text;strokeColor=none;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=10;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;shape=mxgraph.bootstrap.topButton;rSize=3;fillColor=none;fontColor=inherit;fontSize=8;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"165\" height=\"12.5\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"resizable=0;fillColor=#dddddd;html=1;\" vertex=\"1\" parent=\"3\"><mxGeometry y=\"0.5\" width=\"5\" height=\"5\" relative=\"1\" as=\"geometry\"><mxPoint x=\"3\" y=\"-2.5\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"Setting 2\" style=\"text;strokeColor=none;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=10;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;rSize=5;fillColor=none;fontColor=inherit;fontSize=8;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"165\" height=\"12.5\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"\" style=\"resizable=0;fillColor=#dddddd;html=1;\" vertex=\"1\" parent=\"5\"><mxGeometry y=\"0.5\" width=\"5\" height=\"5\" relative=\"1\" as=\"geometry\"><mxPoint x=\"3\" y=\"-2.5\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"7\" value=\"Setting 3\" style=\"text;strokeColor=none;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=10;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;rSize=5;fillColor=none;fontColor=inherit;fontSize=8;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"165\" height=\"12.5\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"\" style=\"shape=mxgraph.ios.checkbox;resizable=0;fillColor=#999999;html=1;\" vertex=\"1\" parent=\"7\"><mxGeometry y=\"0.5\" width=\"5\" height=\"5\" relative=\"1\" as=\"geometry\"><mxPoint x=\"3\" y=\"-2.5\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"9\" value=\"Setting 4\" style=\"text;strokeColor=none;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=10;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;shape=mxgraph.bootstrap.bottomButton;rSize=5;fillColor=none;fontColor=inherit;fontSize=8;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"165\" height=\"12.5\" as=\"geometry\"/></mxCell><mxCell id=\"10\" value=\"\" style=\"resizable=0;fillColor=#dddddd;html=1;\" vertex=\"1\" parent=\"9\"><mxGeometry y=\"0.5\" width=\"5\" height=\"5\" relative=\"1\" as=\"geometry\"><mxPoint x=\"3\" y=\"-2.5\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.bootstrap.rrect",
+    "mxgraph.bootstrap.topButton",
+    "mxgraph.ios.checkbox",
+    "mxgraph.bootstrap.bottomButton"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:239"
+  },
+  {
+   "id": "ios-22-combobox",
+   "title": "Combobox",
+   "tags": "combobox",
+   "kind": "vertex",
+   "width": 57.99999999999999,
+   "height": 15,
+   "style": "strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.ios.iComboBox;spacingTop=2;spacingLeft=2;align=left;strokeColor=#444444;fontColor=#666666;buttonText=;fontSize=8;fillColor=#dddddd;fillColor2=#3D5565;fillColor3=#ffffff;iconColor=#ffffff;textColor2=#666666;sketch=0;whiteSpace=wrap;",
+   "value": "Option 1",
+   "shapeNames": [
+    "mxgraph.ios.iComboBox"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:284"
+  },
+  {
+   "id": "ios-23-on-off-button",
+   "title": "On-off button",
+   "tags": "on-off button",
+   "kind": "vertex",
+   "width": 43.5,
+   "height": 15,
+   "style": "strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.ios.iOnOffButton;mainText=;strokeColor=#444444;fontSize=9;fontColor=#ffffff;spacingRight=14;buttonState=on;onGradient=#E2FFEB;onColor=#008215;offGradient=#cc9999;offColor=#881100;handleGradient=#ffffff;handleColor=#888888;sketch=0;",
+   "value": "ON",
+   "shapeNames": [
+    "mxgraph.ios.iOnOffButton"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:286"
+  },
+  {
+   "id": "ios-24-password-field",
+   "title": "Password field",
+   "tags": "password field",
+   "kind": "vertex",
+   "width": 43.5,
+   "height": 15,
+   "style": "strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.ios.iTextInput;strokeColor=#444444;align=left;buttonText=;fontSize=8;whiteSpace=wrap;",
+   "value": "********",
+   "shapeNames": [
+    "mxgraph.ios.iTextInput"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:288"
+  },
+  {
+   "id": "ios-25-alert-box",
+   "title": "Alert Box",
+   "tags": " Alert Box",
+   "kind": "cells",
+   "width": 150,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Alert description text&#10;description text second line\" style=\"html=1;shadow=0;dashed=0;shape=mxgraph.ios.fancyRRect;rSize=8;strokeColor=#dddddd;fillColor=#497198;gradientColor=#193168;opacity=80;fontColor=#ffffff;fontSize=8;whiteSpace=wrap;align=center;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Helvetica;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"150\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Something happened\" style=\"html=1;shadow=0;dashed=0;shape=mxgraph.ios.anchor;fontSize=12;fontColor=#ffffff;whiteSpace=wrap;resizeWidth=1;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Helvetica;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"150\" height=\"25\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Button\" style=\"html=1;shadow=0;dashed=0;shape=mxgraph.ios.rrect;rSize=3;fontSize=8;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#497198;gradientColor=#c5cee1;opacity=80;whiteSpace=wrap;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Helvetica;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.5\" y=\"1\" width=\"80\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-40\" y=\"-25\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.ios.fancyRRect",
+    "mxgraph.ios.anchor",
+    "mxgraph.ios.rrect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:290"
+  },
+  {
+   "id": "ios-26-dialog-box",
+   "title": "Dialog Box",
+   "tags": " Dialog Box",
+   "kind": "cells",
+   "width": 150,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Dialog question text&#10;question text second line\" style=\"html=1;shadow=0;dashed=0;shape=mxgraph.ios.fancyRRect;rSize=8;strokeColor=#dddddd;fillColor=#497198;gradientColor=#193168;opacity=80;fontColor=#ffffff;fontSize=8;whiteSpace=wrap;align=center;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Helvetica;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"150\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Something happened\" style=\"html=1;shadow=0;dashed=0;shape=mxgraph.ios.anchor;fontSize=12;fontColor=#ffffff;whiteSpace=wrap;resizeWidth=1;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Helvetica;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"150\" height=\"25\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Cancel\" style=\"html=1;shadow=0;dashed=0;shape=mxgraph.ios.rrect;rSize=3;fontSize=8;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#497198;gradientColor=#c5cee1;opacity=80;whiteSpace=wrap;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Helvetica;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.25\" y=\"1\" width=\"65\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-32.5\" y=\"-25\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"OK\" style=\"html=1;shadow=0;dashed=0;shape=mxgraph.ios.rrect;rSize=3;fontSize=8;fontColor=#ffffff;strokeColor=#ffffff;fillColor=#497198;gradientColor=#c5cee1;opacity=80;whiteSpace=wrap;sketch=0;hachureGap=4;pointerEvents=0;fontFamily=Helvetica;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.75\" y=\"1\" width=\"65\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-32.5\" y=\"-25\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.ios.fancyRRect",
+    "mxgraph.ios.anchor",
+    "mxgraph.ios.rrect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:292"
+  },
+  {
+   "id": "ios-27-lock-button",
+   "title": "Lock button",
+   "tags": "lock button",
+   "kind": "vertex",
+   "width": 174,
+   "height": 50,
+   "style": "strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.ios.iLockButton;fontColor=#cccccc;fontSize=13;mainText=;spacingLeft=50;spacingRight=10;fillColor2=#4A4F56;fillColor3=#70757B;barGradient=#18232D;barColor=#1F2933;handleGradient=#E9F3FD;handleColor=#ADB7C1;arrowGradient=#AEB7C1;arrowColor=#667079;align=center;sketch=0;whiteSpace=wrap;",
+   "value": "slide to unlock",
+   "shapeNames": [
+    "mxgraph.ios.iLockButton"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:295"
+  },
+  {
+   "id": "ios-28-arrow",
+   "title": "Arrow",
+   "tags": "arrow",
+   "kind": "vertex",
+   "width": 15,
+   "height": 15,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iArrowIcon;fillColor=#8BbEff;fillColor2=#135Ec8;strokeColor=#ffffff;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios.iArrowIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:296"
+  },
+  {
+   "id": "ios-29-delete",
+   "title": "Delete",
+   "tags": "delete",
+   "kind": "vertex",
+   "width": 15,
+   "height": 15,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iDeleteIcon;fillColor=#e8878E;fillColor2=#BD1421;strokeColor=#ffffff;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios.iDeleteIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:297"
+  },
+  {
+   "id": "ios-30-add",
+   "title": "Add",
+   "tags": "add",
+   "kind": "vertex",
+   "width": 15,
+   "height": 15,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iAddIcon;fillColor=#7AdF78;fillColor2=#1A9917;strokeColor=#ffffff;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios.iAddIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:298"
+  },
+  {
+   "id": "ios-31-info",
+   "title": "Info",
+   "tags": "info",
+   "kind": "vertex",
+   "width": 15,
+   "height": 15,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iInfoIcon;fillColor=#8BbEff;fillColor2=#135Ec8;strokeColor=#ffffff;iconColor=#ffffff;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios.iInfoIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:299"
+  },
+  {
+   "id": "ios-32-sort-find",
+   "title": "Sort/find",
+   "tags": "sort/find",
+   "kind": "vertex",
+   "width": 15,
+   "height": 15,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iSortFindIcon;fillColor=#8BbEff;fillColor2=#135Ec8;strokeColor=#ffffff;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios.iSortFindIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:300"
+  },
+  {
+   "id": "ios-33-check",
+   "title": "Check",
+   "tags": "check",
+   "kind": "vertex",
+   "width": 15,
+   "height": 15,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iCheckIcon;fillColor=#e8878E;fillColor2=#BD1421;strokeColor=#ffffff;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios.iCheckIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:301"
+  },
+  {
+   "id": "ios-34-keyboard-letters",
+   "title": "Keyboard (letters)",
+   "tags": "keyboard (letters)",
+   "kind": "vertex",
+   "width": 174,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iKeybLett;fillColor2=#8A97A7;fillColor3=#425163;keyGradient=#EEF3F9;keyColor=#DBE2E9;modifierGradient=#8B98A8;modifierColor=#677488;iconColor=#ffffff;textColor=#000000;textColor2=#666666;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios.iKeybLett"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:302"
+  },
+  {
+   "id": "ios-35-keyboard-numbers",
+   "title": "Keyboard (numbers)",
+   "tags": "keyboard (numbers)",
+   "kind": "vertex",
+   "width": 174,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iKeybNumb;fillColor2=#8A97A7;fillColor3=#425163;keyGradient=#EEF3F9;keyColor=#DBE2E9;modifierGradient=#8B98A8;modifierColor=#677488;iconColor=#ffffff;textColor=#000000;textColor2=#666666;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios.iKeybNumb"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:303"
+  },
+  {
+   "id": "ios-36-keyboard-symbols",
+   "title": "Keyboard (symbols)",
+   "tags": "keyboard (symbols)",
+   "kind": "vertex",
+   "width": 174,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iKeybSymb;fillColor2=#8A97A7;fillColor3=#425163;keyGradient=#EEF3F9;keyColor=#DBE2E9;modifierGradient=#8B98A8;modifierColor=#677488;iconColor=#ffffff;textColor=#000000;textColor2=#666666;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios.iKeybSymb"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:304"
+  },
+  {
+   "id": "ios-37-delete-app",
+   "title": "Delete app",
+   "tags": "delete app",
+   "kind": "vertex",
+   "width": 15,
+   "height": 15,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iDeleteApp;fillColor=#cccccc;fillColor2=#000000;strokeColor=#ffffff;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios.iDeleteApp"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:305"
+  },
+  {
+   "id": "ios-38-direction",
+   "title": "Direction",
+   "tags": "direction",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iDir;strokeColor2=#008cff;directionColor=#ffffff;strokeColor3=#006cdf;dotGradient=#ffffff;fillColor2=#007cef;",
+   "shapeNames": [
+    "mxgraph.ios.iDir"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:306"
+  },
+  {
+   "id": "ios-39-location-bar",
+   "title": "Location bar",
+   "tags": "location bar",
+   "kind": "vertex",
+   "width": 155,
+   "height": 32.5,
+   "style": "strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.ios.iLocBar;align=left;spacingLeft=4;spacingBottom=4;fontColor=#ffffff;fontSize=10;barPos=80;pointerPos=bottom;fillColor2=#000000;fillColor3=#888888;strokeColor2=#000000;buttonGradient=#8BbEff;buttonColor=#135Ec8;iconColor=#ffffff;buttonText=5th Street Music Store",
+   "shapeNames": [
+    "mxgraph.ios.iLocBar"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:307"
+  },
+  {
+   "id": "ios-40-call-dialog",
+   "title": "Call Dialog",
+   "tags": "call dialog",
+   "kind": "vertex",
+   "width": 150,
+   "height": 125,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iCallDialog;fillColor2=#000000;strokeColor2=#888888;iconColor=#ffffff;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios.iCallDialog"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:308"
+  },
+  {
+   "id": "ios-41-call-buttons",
+   "title": "Call buttons",
+   "tags": "call buttons",
+   "kind": "vertex",
+   "width": 174,
+   "height": 229.99999999999997,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iCallButtons;strokeColor2=#008cff;fillColor2=#0F1B2B;fillColor3=#4F5B6B;textColor=#ffffff;textColor2=#bbbbbb;callBtnGradient=#E2FFEB;callBtnColor=#008215;iconColor=#ffffff;strokeColor3=#0F1B2B;",
+   "shapeNames": [
+    "mxgraph.ios.iCallButtons"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:309"
+  },
+  {
+   "id": "ios-42-option",
+   "title": "Option",
+   "tags": "option",
+   "kind": "vertex",
+   "width": 75,
+   "height": 27.500000000000004,
+   "style": "strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.ios.iOption;barPos=80;pointerPos=bottom;buttonText=Option;fontSize=10;fontColor=#ffffff;spacingBottom=6;fillColor2=#000000;fillColor3=#888888;strokeColor2=#000000;",
+   "shapeNames": [
+    "mxgraph.ios.iOption"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:310"
+  },
+  {
+   "id": "ios-43-alphabet-list",
+   "title": "Alphabet list",
+   "tags": "alphabet list",
+   "kind": "vertex",
+   "width": 15,
+   "height": 225,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iAlphaList;fontSize=7.5;iconColor=#999999;",
+   "shapeNames": [
+    "mxgraph.ios.iAlphaList"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:311"
+  },
+  {
+   "id": "ios-44-button-group-horizontal",
+   "title": "Button group, horizontal",
+   "tags": "button group horizontal",
+   "kind": "cells",
+   "width": 165,
+   "height": 12.5,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"swimlane;shape=mxgraph.bootstrap.anchor;strokeColor=#444444;fillColor=#ffffff;fontColor=#999999;fontStyle=0;childLayout=stackLayout;horizontal=0;startSize=0;horizontalStack=1;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"165\" height=\"12.5\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Item 1\" style=\"text;strokeColor=inherit;align=center;verticalAlign=middle;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;shape=mxgraph.bootstrap.leftButton;rSize=3;fillColor=inherit;fontColor=inherit;fontSize=8;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"41.25\" height=\"12.5\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Item 2\" style=\"text;strokeColor=inherit;align=center;verticalAlign=middle;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;rSize=3;fillColor=#5D7585;gradientColor=#008cff;fontColor=#ffffff;fontSize=8;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"41.25\" height=\"12.5\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"Item 3\" style=\"text;strokeColor=inherit;align=center;verticalAlign=middle;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;rSize=3;fillColor=inherit;fontColor=inherit;fontSize=8;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"41.25\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"Item 4\" style=\"text;strokeColor=inherit;align=center;verticalAlign=middle;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;shape=mxgraph.bootstrap.rightButton;rSize=3;fillColor=inherit;fontColor=inherit;spacing=10;dropTarget=0;fontSize=8;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"41.25\" height=\"12.5\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.bootstrap.anchor",
+    "mxgraph.bootstrap.leftButton",
+    "mxgraph.bootstrap.rightButton"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:313"
+  },
+  {
+   "id": "ios-45-pin",
+   "title": "Pin",
+   "tags": "pin",
+   "kind": "vertex",
+   "width": 10,
+   "height": 25,
+   "style": "verticalLabelPosition=top;html=1;shadow=0;dashed=0;verticalAlign=bottom;strokeWidth=1;shape=mxgraph.ios.iPin;fillColor2=#00dd00;fillColor3=#004400;strokeColor=#006600;pinStemColor=#666666;",
+   "shapeNames": [
+    "mxgraph.ios.iPin"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:338"
+  },
+  {
+   "id": "ios-46-pin",
+   "title": "Pin",
+   "tags": "pin",
+   "kind": "vertex",
+   "width": 10,
+   "height": 25,
+   "style": "verticalLabelPosition=top;html=1;shadow=0;dashed=0;verticalAlign=bottom;strokeWidth=1;shape=mxgraph.ios.iPin;fillColor2=#dd0000;fillColor3=#440000;strokeColor=#660000;pinStemColor=#666666;",
+   "shapeNames": [
+    "mxgraph.ios.iPin"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:339"
+  },
+  {
+   "id": "ios-47-pin",
+   "title": "Pin",
+   "tags": "pin",
+   "kind": "vertex",
+   "width": 10,
+   "height": 25,
+   "style": "verticalLabelPosition=top;html=1;shadow=0;dashed=0;verticalAlign=bottom;strokeWidth=1;shape=mxgraph.ios.iPin;fillColor2=#ccccff;fillColor3=#0000ff;strokeColor=#000066;pinStemColor=#666666;",
+   "shapeNames": [
+    "mxgraph.ios.iPin"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:340"
+  },
+  {
+   "id": "ios-48-pin",
+   "title": "Pin",
+   "tags": "pin",
+   "kind": "vertex",
+   "width": 10,
+   "height": 25,
+   "style": "verticalLabelPosition=top;html=1;shadow=0;dashed=0;verticalAlign=bottom;strokeWidth=1;shape=mxgraph.ios.iPin;fillColor2=#ffff00;fillColor3=#888800;strokeColor=#999900;pinStemColor=#666666;",
+   "shapeNames": [
+    "mxgraph.ios.iPin"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:341"
+  },
+  {
+   "id": "ios-49-pin",
+   "title": "Pin",
+   "tags": "pin",
+   "kind": "vertex",
+   "width": 10,
+   "height": 25,
+   "style": "verticalLabelPosition=top;html=1;shadow=0;dashed=0;verticalAlign=bottom;strokeWidth=1;shape=mxgraph.ios.iPin;fillColor2=#ffa500;fillColor3=#885000;strokeColor=#997000;pinStemColor=#666666;",
+   "shapeNames": [
+    "mxgraph.ios.iPin"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:342"
+  },
+  {
+   "id": "ios-50-video-controls",
+   "title": "Video controls",
+   "tags": "video controls",
+   "kind": "vertex",
+   "width": 174,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iVideoControls;barPos=20;fillColor2=#000000;iconColor=#ffffff;barGradient=#444444;barColor=#ffffff;progressGradient=#96D1FF;progressColor=#003377;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios.iVideoControls"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:343"
+  },
+  {
+   "id": "ios-51-url-bar",
+   "title": "URL bar",
+   "kind": "cells",
+   "width": 175,
+   "height": 30,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Page title\" style=\"html=1;shadow=0;dashed=0;shape=mxgraph.ios.iURLBar;verticalAlign=top;fontSize=8;spacingTop=-5;fillColor2=#cccccc;fillColor3=#003377;fieldColor=#ffffff;fieldStroke=#008cff;cancelBtnGradient=#cccccc;cancelBtnColor=#001144;iconBgColor=#bbbbbb;iconColor=#ffffff;align=center;sketch=0;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"175\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"https://www.draw.io/\" style=\"html=1;shadow=0;dashed=0;shape=mxgraph.ios.anchor;fontSize=8;spacingLeft=3;align=left;spacingTop=2;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"5\" y=\"12\" width=\"115\" height=\"13\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Cancel\" style=\"html=1;shadow=0;dashed=0;shape=mxgraph.ios.anchor;fontSize=8;fontColor=#ffffff;spacingTop=2;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"137\" y=\"12\" width=\"32\" height=\"13\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.ios.iURLBar",
+    "mxgraph.ios.anchor"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:345"
+  },
+  {
+   "id": "ios-52-slider",
+   "title": "Slider",
+   "tags": "slider",
+   "kind": "vertex",
+   "width": 150,
+   "height": 10,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iSlider;barPos=20;barGradient=#444444;barColor=#ffffff;progressGradient=#96D1FF;progressColor=#003377;",
+   "shapeNames": [
+    "mxgraph.ios.iSlider"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:359"
+  },
+  {
+   "id": "ios-53-progress-bar",
+   "title": "Progress bar",
+   "tags": "progress bar",
+   "kind": "vertex",
+   "width": 150,
+   "height": 10,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iProgressBar;barPos=40;fillColor2=#444444;fillColor3=#ffffff;progressGradient=#96D1FF;progressColor=#003377;",
+   "shapeNames": [
+    "mxgraph.ios.iProgressBar"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:360"
+  },
+  {
+   "id": "ios-54-cloud-progress-bar",
+   "title": "Cloud progress bar",
+   "tags": "cloud progress bar",
+   "kind": "vertex",
+   "width": 150,
+   "height": 10,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iCloudProgressBar;barPos=20;fillColor2=#5C6E86;progressColor=#8AD155;",
+   "shapeNames": [
+    "mxgraph.ios.iCloudProgressBar"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:361"
+  },
+  {
+   "id": "ios-55-download-bar",
+   "title": "Download bar",
+   "tags": "download bar",
+   "kind": "vertex",
+   "width": 174,
+   "height": 30,
+   "style": "strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.ios.iDownloadBar;verticalAlign=top;spacingTop=-4;fontSize=8;fontColor=#ffffff;buttonText=;barPos=30;fillColor2=#00ccff;fillColor3=#0066cc;barGradient=#96D1FF;barColor=#003377;progressGradient=#aaaaaa;progressColor=#ffffff;align=center;sketch=0;whiteSpace=wrap;",
+   "value": "Downloading 2 of 6",
+   "shapeNames": [
+    "mxgraph.ios.iDownloadBar"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:362"
+  },
+  {
+   "id": "ios-56-screen-name-bar",
+   "title": "Screen name bar",
+   "tags": "screen name bar",
+   "kind": "vertex",
+   "width": 174,
+   "height": 25,
+   "style": "strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.ios.iScreenNameBar;fillColor2=#000000;fillColor3=#ffffff;buttonText=;fontColor=#ffffff;fontSize=10;whiteSpace=wrap;align=center;sketch=0;",
+   "value": "Screen Name",
+   "shapeNames": [
+    "mxgraph.ios.iScreenNameBar"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:363"
+  },
+  {
+   "id": "ios-57-icon-grid",
+   "title": "Icon grid",
+   "tags": "icon grid",
+   "kind": "vertex",
+   "width": 150,
+   "height": 150,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iIconGrid;gridSize=3,3;",
+   "shapeNames": [
+    "mxgraph.ios.iIconGrid"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:364"
+  },
+  {
+   "id": "ios-58-copy",
+   "title": "Copy",
+   "tags": "copy",
+   "kind": "vertex",
+   "width": 40,
+   "height": 27.500000000000004,
+   "style": "strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.ios.iCopy;fillColor=#000000;buttonText=;fontColor=#ffffff;spacingBottom=6;fontSize=9;fillColor2=#000000;fillColor3=#ffffff;align=center;sketch=0;whiteSpace=wrap;",
+   "value": "Copy",
+   "shapeNames": [
+    "mxgraph.ios.iCopy"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:365"
+  },
+  {
+   "id": "ios-59-copy-area",
+   "title": "Copy Area",
+   "kind": "cells",
+   "width": 60,
+   "height": 80,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Copy\" style=\"html=1;shadow=0;dashed=0;shape=mxgraph.ios.iCopy;fillColor=#000000;buttonText=;fontColor=#ffffff;spacingBottom=6;fontSize=9;fillColor2=#000000;fillColor3=#ffffff;align=center;sketch=0;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"10\" width=\"40\" height=\"27.500000000000004\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"html=1;shadow=0;dashed=0;shape=mxgraph.ios.rect;fillColor=#2266ff;strokeColor=none;opacity=30;sketch=0;\" vertex=\"1\" parent=\"1\"><mxGeometry y=\"27.500000000000004\" width=\"60\" height=\"52.5\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.ios.iCopy",
+    "mxgraph.ios.rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:367"
+  },
+  {
+   "id": "ios-60-home-page-control",
+   "title": "Home page control",
+   "tags": "home page control",
+   "kind": "vertex",
+   "width": 50,
+   "height": 5,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iHomePageControl;fillColor=#666666;strokeColor=#cccccc;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios.iHomePageControl"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:377"
+  },
+  {
+   "id": "ios-61-page-control",
+   "title": "Page control",
+   "tags": "page control",
+   "kind": "vertex",
+   "width": 50,
+   "height": 5,
+   "style": "verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iPageControl;fillColor=#666666;strokeColor=#cccccc;sketch=0;",
+   "shapeNames": [
+    "mxgraph.ios.iPageControl"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Ios.js:378"
+  }
+ ]
+}

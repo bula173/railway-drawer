@@ -1,0 +1,236 @@
+{
+ "id": "salesforceComponents",
+ "title": "Salesforce / Components",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:8",
+ "entries": [
+  {
+   "id": "salesforceComponents-0-header",
+   "title": "Header",
+   "tags": "salesforce components header",
+   "kind": "cells",
+   "width": 930,
+   "height": 160,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeColor=none;fillColor=#d9d9d9;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"930\" height=\"160\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"shape=delay;whiteSpace=wrap;html=1;strokeColor=none;resizeHeight=1;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"350\" height=\"160\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Your Logo Here\" style=\"rounded=0;whiteSpace=wrap;html=1;fillColor=#fd7298;strokeColor=none;align=left;spacingLeft=5;fontSize=10;part=1;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"90\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"20\" y=\"10\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"&lt;h3&gt;&lt;font style=&quot;font-weight: normal; font-size: 14px;&quot;&gt;Diagram Title Goes Here&lt;/font&gt;&lt;/h3&gt;&lt;p&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac semper velit. Quisque eget elit eros. Donec ullamcorper, sem viverra convallis cursus, ex eros aliquam ante, nec bibendum lacus augue non tellus.&lt;/font&gt;&lt;/p&gt;\" style=\"text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;part=1;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"310\" height=\"100\" relative=\"1\" as=\"geometry\"><mxPoint x=\"20\" y=\"40\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"6\" value=\"Key\" style=\"rounded=1;whiteSpace=wrap;html=1;strokeColor=none;verticalAlign=top;align=left;spacingLeft=10;fontSize=11;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"1\" width=\"270\" height=\"120\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-290\" y=\"20\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "delay"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:34"
+  },
+  {
+   "id": "salesforceComponents-1-header",
+   "title": "Header",
+   "tags": "salesforce components header",
+   "kind": "cells",
+   "width": 930,
+   "height": 160,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeColor=none;fillColor=#d9d9d9;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"930\" height=\"160\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"shape=delay;whiteSpace=wrap;html=1;strokeColor=none;resizeHeight=1;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"480\" height=\"160\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Your Logo Here\" style=\"rounded=0;whiteSpace=wrap;html=1;fillColor=#fd7298;strokeColor=none;align=left;spacingLeft=5;fontSize=10;part=1;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"90\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"20\" y=\"10\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"&lt;h3&gt;&lt;font style=&quot;font-weight: normal; font-size: 14px;&quot;&gt;A Very, Very, Long Diagram Title Should Go Right Here&lt;/font&gt;&lt;/h3&gt;&lt;p&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac semper velit. Quisque eget elit eros. Donec ullamcorper, sem viverra convallis cursus, ex eros aliquam ante, nec bibendum lacus augue non tellus.&lt;/font&gt;&lt;/p&gt;\" style=\"text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;part=1;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"440\" height=\"100\" relative=\"1\" as=\"geometry\"><mxPoint x=\"20\" y=\"40\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"6\" value=\"Larger Key\" style=\"rounded=1;whiteSpace=wrap;html=1;strokeColor=none;verticalAlign=top;align=left;spacingLeft=10;fontSize=11;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"1\" width=\"410\" height=\"120\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-430\" y=\"20\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "delay"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:72"
+  },
+  {
+   "id": "salesforceComponents-2-card",
+   "title": "Card",
+   "tags": "salesforce components card",
+   "kind": "cells",
+   "width": 200,
+   "height": 240,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;whiteSpace=wrap;html=1;strokeColor=#B3B3B3;arcSize=20;absoluteArcSize=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"200\" height=\"240\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeColor=none;fillColor=#e5e5e5;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"46\" height=\"46\" relative=\"1\" as=\"geometry\"><mxPoint x=\"15\" y=\"10\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"\" style=\"html=1;strokeColor=none;fillColor=#fd7298;part=1;\" vertex=\"1\" parent=\"3\"><mxGeometry x=\"0.5\" y=\"0.5\" width=\"19\" height=\"19\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-9.5\" y=\"-9.5\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"Card Title\" style=\"shape=partialRectangle;whiteSpace=wrap;html=1;top=0;left=0;fillColor=none;right=0;fontStyle=1;align=left;strokeColor=#B3B3B3;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"1\" width=\"130\" height=\"30\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-130\" y=\"20\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"6\" value=\"Attribute One\" style=\"text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"1\" width=\"130\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-130\" y=\"54\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"7\" value=\"Attribute 02\" style=\"text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"1\" width=\"130\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-130\" y=\"78\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"8\" value=\"Attribute Three 03\" style=\"text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"1\" width=\"130\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-130\" y=\"102\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"9\" value=\"A long footer title can go here and wraps text\" style=\"text;html=1;strokeColor=none;fillColor=#e5e5e5;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;spacingLeft=5;resizeWidth=1;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"200\" height=\"48\" relative=\"1\" as=\"geometry\"><mxPoint y=\"126\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"10\" value=\"\" style=\"ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeColor=none;fillColor=#e5e5e5;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.5\" y=\"1\" width=\"40\" height=\"40\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-50\" y=\"-55\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"11\" value=\"\" style=\"html=1;strokeColor=none;fillColor=#fd7298;part=1;\" vertex=\"1\" parent=\"10\"><mxGeometry x=\"0.5\" y=\"0.5\" width=\"16\" height=\"16\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-8\" y=\"-8\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"12\" value=\"\" style=\"ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeColor=none;fillColor=#e5e5e5;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.5\" y=\"1\" width=\"40\" height=\"40\" relative=\"1\" as=\"geometry\"><mxPoint x=\"10\" y=\"-55\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"13\" value=\"\" style=\"html=1;strokeColor=none;fillColor=#fd7298;part=1;\" vertex=\"1\" parent=\"12\"><mxGeometry x=\"0.5\" y=\"0.5\" width=\"16\" height=\"16\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-8\" y=\"-8\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "ellipse",
+    "partialRectangle"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:110"
+  },
+  {
+   "id": "salesforceComponents-3-card",
+   "title": "Card",
+   "tags": "salesforce components card",
+   "kind": "cells",
+   "width": 200,
+   "height": 220,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;whiteSpace=wrap;html=1;strokeColor=#B3B3B3;arcSize=20;absoluteArcSize=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"200\" height=\"220\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Card Title\" style=\"shape=partialRectangle;whiteSpace=wrap;html=1;top=0;left=0;fillColor=none;right=0;fontStyle=1;align=left;strokeColor=#B3B3B3;spacingLeft=15;part=1;resizeWidth=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"200\" height=\"30\" relative=\"1\" as=\"geometry\"><mxPoint y=\"20\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"Attribute One\" style=\"text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;spacingLeft=15;part=1;resizeWidth=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"200\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint y=\"54\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"Attribute 02\" style=\"text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;spacingLeft=15;part=1;resizeWidth=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"200\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint y=\"78\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"6\" value=\"Attribute Three 03\" style=\"text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;spacingLeft=15;part=1;resizeWidth=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"200\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint y=\"102\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"7\" value=\"Footer Title\" style=\"text;html=1;strokeColor=none;fillColor=#e5e5e5;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;spacingLeft=5;resizeWidth=1;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"200\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint y=\"126\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"8\" value=\"\" style=\"ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeColor=none;fillColor=#e5e5e5;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.5\" y=\"1\" width=\"36\" height=\"36\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-86\" y=\"-55\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"9\" value=\"\" style=\"html=1;strokeColor=none;fillColor=#fd7298;part=1;\" vertex=\"1\" parent=\"8\"><mxGeometry x=\"0.5\" y=\"0.5\" width=\"16\" height=\"16\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-8\" y=\"-8\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"10\" value=\"\" style=\"ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeColor=none;fillColor=#e5e5e5;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.5\" y=\"1\" width=\"36\" height=\"36\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-41\" y=\"-55\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"11\" value=\"\" style=\"html=1;strokeColor=none;fillColor=#fd7298;part=1;\" vertex=\"1\" parent=\"10\"><mxGeometry x=\"0.5\" y=\"0.5\" width=\"16\" height=\"16\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-8\" y=\"-8\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"12\" value=\"\" style=\"ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeColor=none;fillColor=#e5e5e5;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.5\" y=\"1\" width=\"36\" height=\"36\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"-55\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"13\" value=\"\" style=\"html=1;strokeColor=none;fillColor=#fd7298;part=1;\" vertex=\"1\" parent=\"12\"><mxGeometry x=\"0.5\" y=\"0.5\" width=\"16\" height=\"16\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-8\" y=\"-8\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"14\" value=\"\" style=\"ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeColor=none;fillColor=#e5e5e5;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.5\" y=\"1\" width=\"36\" height=\"36\" relative=\"1\" as=\"geometry\"><mxPoint x=\"50\" y=\"-55\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"15\" value=\"\" style=\"html=1;strokeColor=none;fillColor=#fd7298;part=1;\" vertex=\"1\" parent=\"14\"><mxGeometry x=\"0.5\" y=\"0.5\" width=\"16\" height=\"16\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-8\" y=\"-8\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "partialRectangle",
+    "ellipse"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:201"
+  },
+  {
+   "id": "salesforceComponents-4-card",
+   "title": "Card",
+   "tags": "salesforce components card",
+   "kind": "cells",
+   "width": 200,
+   "height": 170,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;whiteSpace=wrap;html=1;strokeColor=#B3B3B3;arcSize=20;absoluteArcSize=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"200\" height=\"170\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeColor=none;fillColor=#e5e5e5;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"46\" height=\"46\" relative=\"1\" as=\"geometry\"><mxPoint x=\"15\" y=\"10\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"\" style=\"html=1;strokeColor=none;fillColor=#fd7298;part=1;\" vertex=\"1\" parent=\"3\"><mxGeometry x=\"0.5\" y=\"0.5\" width=\"19\" height=\"19\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-9.5\" y=\"-9.5\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"Card Title\" style=\"shape=partialRectangle;whiteSpace=wrap;html=1;top=0;left=0;fillColor=none;right=0;fontStyle=1;align=left;strokeColor=#B3B3B3;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"1\" width=\"130\" height=\"30\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-130\" y=\"20\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"6\" value=\"Attribute One\" style=\"text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"1\" width=\"130\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-130\" y=\"54\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"7\" value=\"Attribute 02\" style=\"text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"1\" width=\"130\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-130\" y=\"78\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"8\" value=\"\" style=\"ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeColor=none;fillColor=#e5e5e5;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.5\" y=\"1\" width=\"36\" height=\"36\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-86\" y=\"-55\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"9\" value=\"\" style=\"html=1;strokeColor=none;fillColor=#fd7298;part=1;\" vertex=\"1\" parent=\"8\"><mxGeometry x=\"0.5\" y=\"0.5\" width=\"16\" height=\"16\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-8\" y=\"-8\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"10\" value=\"\" style=\"ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeColor=none;fillColor=#e5e5e5;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.5\" y=\"1\" width=\"36\" height=\"36\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-41\" y=\"-55\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"11\" value=\"\" style=\"html=1;strokeColor=none;fillColor=#fd7298;part=1;\" vertex=\"1\" parent=\"10\"><mxGeometry x=\"0.5\" y=\"0.5\" width=\"16\" height=\"16\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-8\" y=\"-8\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"12\" value=\"\" style=\"ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeColor=none;fillColor=#e5e5e5;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.5\" y=\"1\" width=\"36\" height=\"36\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"-55\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"13\" value=\"\" style=\"html=1;strokeColor=none;fillColor=#fd7298;part=1;\" vertex=\"1\" parent=\"12\"><mxGeometry x=\"0.5\" y=\"0.5\" width=\"16\" height=\"16\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-8\" y=\"-8\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"14\" value=\"\" style=\"ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeColor=none;fillColor=#e5e5e5;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"0.5\" y=\"1\" width=\"36\" height=\"36\" relative=\"1\" as=\"geometry\"><mxPoint x=\"50\" y=\"-55\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"15\" value=\"\" style=\"html=1;strokeColor=none;fillColor=#fd7298;part=1;\" vertex=\"1\" parent=\"14\"><mxGeometry x=\"0.5\" y=\"0.5\" width=\"16\" height=\"16\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-8\" y=\"-8\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "ellipse",
+    "partialRectangle"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:306"
+  },
+  {
+   "id": "salesforceComponents-5-card",
+   "title": "Card",
+   "tags": "salesforce components card",
+   "kind": "cells",
+   "width": 200,
+   "height": 190,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;whiteSpace=wrap;html=1;strokeColor=#B3B3B3;arcSize=20;absoluteArcSize=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"200\" height=\"190\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Card Title\" style=\"shape=partialRectangle;whiteSpace=wrap;html=1;top=0;left=0;fillColor=none;right=0;fontStyle=1;align=left;strokeColor=#B3B3B3;spacingLeft=15;part=1;resizeWidth=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"200\" height=\"30\" relative=\"1\" as=\"geometry\"><mxPoint y=\"20\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"Attribute One\" style=\"text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;spacingLeft=15;part=1;resizeWidth=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"200\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint y=\"54\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"Attribute 02\" style=\"text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;spacingLeft=15;part=1;resizeWidth=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"200\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint y=\"78\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"6\" value=\"Attribute Three 03\" style=\"text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;spacingLeft=15;part=1;resizeWidth=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"200\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint y=\"102\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"7\" value=\"Attribute 04\" style=\"text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;spacingLeft=15;part=1;resizeWidth=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"200\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint y=\"126\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"8\" value=\"Attribute 05\" style=\"text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;spacingLeft=15;part=1;resizeWidth=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"200\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint y=\"150\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "partialRectangle"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:409"
+  },
+  {
+   "id": "salesforceComponents-6-card",
+   "title": "Card",
+   "tags": "salesforce components card",
+   "kind": "cells",
+   "width": 200,
+   "height": 70,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;whiteSpace=wrap;html=1;strokeColor=#B3B3B3;arcSize=20;absoluteArcSize=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"200\" height=\"70\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Card Title\" style=\"shape=partialRectangle;whiteSpace=wrap;html=1;top=0;left=0;fillColor=none;right=0;fontStyle=1;align=left;strokeColor=#B3B3B3;spacingLeft=15;part=1;resizeWidth=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"200\" height=\"30\" relative=\"1\" as=\"geometry\"><mxPoint y=\"20\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "partialRectangle"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:466"
+  },
+  {
+   "id": "salesforceComponents-7-card",
+   "title": "Card",
+   "tags": "salesforce components card",
+   "kind": "cells",
+   "width": 200,
+   "height": 70,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;whiteSpace=wrap;html=1;strokeColor=#B3B3B3;arcSize=20;absoluteArcSize=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"200\" height=\"70\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeColor=none;fillColor=#e5e5e5;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"46\" height=\"46\" relative=\"1\" as=\"geometry\"><mxPoint x=\"15\" y=\"10\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"\" style=\"html=1;strokeColor=none;fillColor=#fd7298;part=1;\" vertex=\"1\" parent=\"3\"><mxGeometry x=\"0.5\" y=\"0.5\" width=\"19\" height=\"19\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-9.5\" y=\"-9.5\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"Card Title\" style=\"shape=partialRectangle;whiteSpace=wrap;html=1;top=0;left=0;fillColor=none;right=0;fontStyle=1;align=left;strokeColor=#B3B3B3;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"1\" width=\"130\" height=\"30\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-130\" y=\"20\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "ellipse",
+    "partialRectangle"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:483"
+  },
+  {
+   "id": "salesforceComponents-8-card",
+   "title": "Card",
+   "tags": "salesforce components card",
+   "kind": "cells",
+   "width": 220,
+   "height": 160,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;whiteSpace=wrap;html=1;strokeColor=#B3B3B3;arcSize=20;absoluteArcSize=1;collapsible=0;recursiveResize=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"220\" height=\"160\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeColor=none;fillColor=#e5e5e5;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"46\" height=\"46\" relative=\"1\" as=\"geometry\"><mxPoint x=\"15\" y=\"10\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"\" style=\"html=1;strokeColor=none;fillColor=#fd7298;part=1;\" vertex=\"1\" parent=\"3\"><mxGeometry x=\"0.5\" y=\"0.5\" width=\"19\" height=\"19\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-9.5\" y=\"-9.5\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"Card Title\" style=\"shape=partialRectangle;whiteSpace=wrap;html=1;top=0;left=0;fillColor=none;right=0;fontStyle=1;align=left;strokeColor=#B3B3B3;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"1\" width=\"130\" height=\"30\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-130\" y=\"20\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"6\" value=\"\" style=\"shape=rect;rounded=1;whiteSpace=wrap;html=1;strokeColor=#B3B3B3;arcSize=20;absoluteArcSize=1;part=1;resizeWidth=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"200\" height=\"70\" relative=\"1\" as=\"geometry\"><mxPoint x=\"10\" y=\"70\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"7\" value=\"Card Title\" style=\"shape=partialRectangle;whiteSpace=wrap;html=1;top=0;left=0;fillColor=none;right=0;fontStyle=1;align=left;strokeColor=#B3B3B3;spacingLeft=15;part=1;resizeWidth=1;\" vertex=\"1\" parent=\"6\"><mxGeometry width=\"200\" height=\"30\" relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "ellipse",
+    "partialRectangle",
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:514"
+  },
+  {
+   "id": "salesforceComponents-9-relationship",
+   "title": "Relationship",
+   "tags": "relationship",
+   "kind": "cells",
+   "width": 130,
+   "height": 30,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"edgeStyle=entityRelationEdgeStyle;html=1;startArrow=manyOptional;startFill=1;endArrow=none;rounded=0;endFill=0;\" edge=\"1\" parent=\"1\" target=\"3\"><mxGeometry width=\"50\" relative=\"1\" as=\"geometry\"><mxPoint y=\"15\" as=\"sourcePoint\"/></mxGeometry></mxCell><mxCell id=\"3\" value=\"Relationship\" style=\"html=1;rounded=1;absoluteArcSize=1;arcSize=80;whiteSpace=wrap;fontSize=11;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"50\" width=\"80\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"edgeStyle=entityRelationEdgeStyle;html=1;endArrow=manyOptional;endFill=1;startArrow=none;rounded=0;startFill=0;\" edge=\"1\" parent=\"1\" source=\"3\"><mxGeometry width=\"180\" relative=\"1\" as=\"geometry\"><mxPoint x=\"180\" y=\"15\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:559"
+  },
+  {
+   "id": "salesforceComponents-10-relationship",
+   "title": "Relationship",
+   "tags": "relationship",
+   "kind": "cells",
+   "width": 130,
+   "height": 30,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"edgeStyle=entityRelationEdgeStyle;html=1;startArrow=manyOptional;startFill=0;endArrow=none;rounded=0;endFill=0;dashed=1;\" edge=\"1\" parent=\"1\" target=\"3\"><mxGeometry width=\"50\" relative=\"1\" as=\"geometry\"><mxPoint y=\"15\" as=\"sourcePoint\"/></mxGeometry></mxCell><mxCell id=\"3\" value=\"Relationship\" style=\"html=1;rounded=1;absoluteArcSize=1;arcSize=80;whiteSpace=wrap;fontSize=11;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"50\" width=\"80\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"edgeStyle=entityRelationEdgeStyle;html=1;endArrow=manyOptional;endFill=0;startArrow=none;rounded=0;startFill=0;dashed=1;\" edge=\"1\" parent=\"1\" source=\"3\"><mxGeometry width=\"180\" relative=\"1\" as=\"geometry\"><mxPoint x=\"180\" y=\"15\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:579"
+  },
+  {
+   "id": "salesforceComponents-11-integration",
+   "title": "Integration",
+   "tags": "integration",
+   "kind": "cells",
+   "width": 130,
+   "height": 30,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"edgeStyle=entityRelationEdgeStyle;html=1;startArrow=blockThin;startFill=1;endArrow=none;rounded=0;endFill=0;\" edge=\"1\" parent=\"1\" target=\"3\"><mxGeometry width=\"50\" relative=\"1\" as=\"geometry\"><mxPoint y=\"15\" as=\"sourcePoint\"/></mxGeometry></mxCell><mxCell id=\"3\" value=\"Relationship\" style=\"html=1;rounded=1;absoluteArcSize=1;arcSize=80;whiteSpace=wrap;fontSize=11;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"50\" width=\"80\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"edgeStyle=entityRelationEdgeStyle;html=1;endArrow=blockThin;endFill=1;startArrow=none;rounded=0;startFill=0;\" edge=\"1\" parent=\"1\" source=\"3\"><mxGeometry width=\"180\" relative=\"1\" as=\"geometry\"><mxPoint x=\"180\" y=\"15\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:599"
+  },
+  {
+   "id": "salesforceComponents-12-integration",
+   "title": "Integration",
+   "tags": "integration",
+   "kind": "cells",
+   "width": 130,
+   "height": 30,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"edgeStyle=entityRelationEdgeStyle;html=1;startArrow=blockThin;startFill=1;endArrow=none;rounded=0;endFill=0;dashed=1;\" edge=\"1\" parent=\"1\" target=\"3\"><mxGeometry width=\"50\" relative=\"1\" as=\"geometry\"><mxPoint y=\"15\" as=\"sourcePoint\"/></mxGeometry></mxCell><mxCell id=\"3\" value=\"Relationship\" style=\"html=1;rounded=1;absoluteArcSize=1;arcSize=80;whiteSpace=wrap;fontSize=11;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"50\" width=\"80\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"edgeStyle=entityRelationEdgeStyle;html=1;endArrow=blockThin;endFill=1;startArrow=none;rounded=0;startFill=0;dashed=1;\" edge=\"1\" parent=\"1\" source=\"3\"><mxGeometry width=\"180\" relative=\"1\" as=\"geometry\"><mxPoint x=\"180\" y=\"15\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:619"
+  },
+  {
+   "id": "salesforceComponents-13-default-relationship-connector",
+   "title": "Default Relationship Connector",
+   "tags": "salesforce components default relationship connector",
+   "kind": "edge",
+   "width": 60,
+   "height": 60,
+   "style": "edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=manyOptional;endFill=1;startArrow=none;rounded=0;startFill=0;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:639"
+  },
+  {
+   "id": "salesforceComponents-14-default-relationship-connector",
+   "title": "Default Relationship Connector",
+   "tags": "salesforce components default relationship connector",
+   "kind": "edge",
+   "width": 60,
+   "height": 60,
+   "style": "edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=manyOptional;endFill=0;startArrow=none;rounded=0;startFill=0;dashed=1;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:640"
+  },
+  {
+   "id": "salesforceComponents-15-default-relationship-connector",
+   "title": "Default Relationship Connector",
+   "tags": "salesforce components default relationship connector",
+   "kind": "edge",
+   "width": 60,
+   "height": 60,
+   "style": "edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=blockThin;endFill=1;startArrow=none;rounded=0;startFill=0;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:641"
+  },
+  {
+   "id": "salesforceComponents-16-default-relationship-connector",
+   "title": "Default Relationship Connector",
+   "tags": "salesforce components default relationship connector",
+   "kind": "edge",
+   "width": 60,
+   "height": 60,
+   "style": "edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=blockThin;endFill=1;startArrow=none;rounded=0;startFill=0;dashed=1;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:642"
+  }
+ ]
+}

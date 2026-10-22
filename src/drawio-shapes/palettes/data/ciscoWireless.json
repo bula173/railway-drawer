@@ -1,0 +1,162 @@
+{
+ "id": "ciscoWireless",
+ "title": "Cisco / Wireless",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Cisco.js:9",
+ "entries": [
+  {
+   "id": "ciscoWireless-0-antenna",
+   "title": "Antenna",
+   "tags": "cisco antenna cisco wireless  Antenna",
+   "kind": "vertex",
+   "width": 88,
+   "height": 104,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=none;strokeColor=none;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.wireless.antenna;",
+   "shapeNames": [
+    "mxgraph.cisco.wireless.antenna"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:506"
+  },
+  {
+   "id": "ciscoWireless-1-ground-terminal",
+   "title": "Ground Terminal",
+   "tags": "cisco ground terminal cisco wireless  Ground Terminal",
+   "kind": "vertex",
+   "width": 99,
+   "height": 122,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.wireless.ground_terminal;",
+   "shapeNames": [
+    "mxgraph.cisco.wireless.ground_terminal"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:507"
+  },
+  {
+   "id": "ciscoWireless-2-radio-tower",
+   "title": "Radio Tower",
+   "tags": "cisco radio tower cisco wireless  Radio Tower",
+   "kind": "vertex",
+   "width": 37,
+   "height": 101,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.wireless.radio_tower;strokeColor=#036897;",
+   "shapeNames": [
+    "mxgraph.cisco.wireless.radio_tower"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:508"
+  },
+  {
+   "id": "ciscoWireless-3-satellite",
+   "title": "Satellite",
+   "tags": "cisco satellite cisco wireless  Satellite",
+   "kind": "vertex",
+   "width": 134,
+   "height": 45,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.wireless.satellite;",
+   "shapeNames": [
+    "mxgraph.cisco.wireless.satellite"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:509"
+  },
+  {
+   "id": "ciscoWireless-4-satellite-dish",
+   "title": "Satellite Dish",
+   "tags": "cisco satellite dish cisco wireless  Satellite Dish",
+   "kind": "vertex",
+   "width": 99,
+   "height": 74,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.wireless.satellite_dish;",
+   "shapeNames": [
+    "mxgraph.cisco.wireless.satellite_dish"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:510"
+  },
+  {
+   "id": "ciscoWireless-5-wi-fi-tag",
+   "title": "Wi-Fi Tag",
+   "tags": "cisco wi-fi wifi tag cisco wireless  Wi-Fi Tag",
+   "kind": "vertex",
+   "width": 74,
+   "height": 64,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.wireless.wi-fi_tag;",
+   "shapeNames": [
+    "mxgraph.cisco.wireless.wi-fi_tag"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:511"
+  },
+  {
+   "id": "ciscoWireless-6-wireless",
+   "title": "Wireless",
+   "tags": "cisco wireless cisco wireless  Wireless",
+   "kind": "vertex",
+   "width": 37,
+   "height": 67,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.wireless.wireless;",
+   "shapeNames": [
+    "mxgraph.cisco.wireless.wireless"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:512"
+  },
+  {
+   "id": "ciscoWireless-7-wireless-bridge",
+   "title": "Wireless Bridge",
+   "tags": "cisco wireless bridge cisco wireless  Wireless Bridge",
+   "kind": "vertex",
+   "width": 75,
+   "height": 61,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.wireless.wireless_bridge;",
+   "shapeNames": [
+    "mxgraph.cisco.wireless.wireless_bridge"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:513"
+  },
+  {
+   "id": "ciscoWireless-8-wireless-location-appliance",
+   "title": "Wireless Location Appliance",
+   "tags": "cisco wireless location appliance cisco wireless  Wireless Location Appliance",
+   "kind": "vertex",
+   "width": 98,
+   "height": 54,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.wireless.wireless_location_appliance;",
+   "shapeNames": [
+    "mxgraph.cisco.wireless.wireless_location_appliance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:514"
+  },
+  {
+   "id": "ciscoWireless-9-wireless-transport",
+   "title": "Wireless Transport",
+   "tags": "cisco wireless transport cisco wireless  Wireless Transport",
+   "kind": "vertex",
+   "width": 77,
+   "height": 54,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.wireless.wireless_transport;",
+   "shapeNames": [
+    "mxgraph.cisco.wireless.wireless_transport"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:515"
+  },
+  {
+   "id": "ciscoWireless-10-wlan-controller",
+   "title": "WLAN Controller",
+   "tags": "cisco wlan controller cisco wireless  WLAN Controller",
+   "kind": "vertex",
+   "width": 101,
+   "height": 56.00000000000001,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.wireless.wlan_controller;",
+   "shapeNames": [
+    "mxgraph.cisco.wireless.wlan_controller"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:516"
+  }
+ ]
+}

@@ -1,0 +1,116 @@
+{
+ "id": "sapTexts",
+ "title": "SAP / Text Elements",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-SAP.js:8",
+ "entries": [
+  {
+   "id": "sapTexts-0-entry",
+   "title": "",
+   "tags": " ",
+   "kind": "cells",
+   "width": 120,
+   "height": 30,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"&lt;font face=&quot;arial&quot; style=&quot;font-size: 16px;&quot;&gt;&lt;b style=&quot;font-size: 16px;&quot;&gt;Big Title (L0)&lt;/b&gt;&lt;/font&gt;\" style=\"text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#1d2d3e;fontFamily=Helvetica;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"30\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1390"
+  },
+  {
+   "id": "sapTexts-1-entry",
+   "title": "",
+   "tags": " ",
+   "kind": "cells",
+   "width": 100,
+   "height": 30,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"&lt;font face=&quot;arial&quot; style=&quot;font-size: 16px;&quot;&gt;&lt;b style=&quot;font-size: 16px;&quot;&gt;Big Name&lt;/b&gt;&lt;/font&gt;\" style=\"text;html=1;align=center;verticalAlign=middle;resizable=0;points=[[0,0.5,0,0,0],[0.5,0,0,0,0],[0.5,1,0,0,0],[1,0.5,0,0,0]];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#1D2D3E;fontFamily=Helvetica;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"100\" height=\"30\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1391"
+  },
+  {
+   "id": "sapTexts-2-entry",
+   "title": "",
+   "tags": " ",
+   "kind": "cells",
+   "width": 110,
+   "height": 30,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"&lt;font color=&quot;#1d2d3e&quot; size=&quot;1&quot; face=&quot;arial&quot; style=&quot;&quot;&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;Medium Title&amp;nbsp;&lt;/b&gt;&lt;/font&gt;\" style=\"text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=default;fontFamily=Helvetica;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"110\" height=\"30\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1392"
+  },
+  {
+   "id": "sapTexts-3-entry",
+   "title": "",
+   "tags": " ",
+   "kind": "cells",
+   "width": 130,
+   "height": 30,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"&lt;b style=&quot;border-color: var(--border-color); font-family: arial; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 14px;&quot;&gt;&lt;font color=&quot;#1d2d3e&quot;&gt;Service Name&lt;/font&gt;&lt;/b&gt;\" style=\"text;whiteSpace=wrap;html=1;align=center;verticalAlign=top;points=[[0,0,0,0,0],[0,0.25,0,0,0],[0,0.5,0,0,0],[0,0.75,0,0,0],[0,1,0,0,0],[0.25,0,0,0,0],[0.25,1,0,0,0],[0.5,0,0,0,0],[0.5,1,0,0,0],[0.75,0,0,0,0],[0.75,1,0,0,0],[1,0,0,0,0],[1,0.25,0,0,0],[1,0.5,0,0,0],[1,0.75,0,0,0],[1,1,0,0,0]];\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"130\" height=\"30\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1393"
+  },
+  {
+   "id": "sapTexts-4-entry",
+   "title": "",
+   "tags": " ",
+   "kind": "cells",
+   "width": 70,
+   "height": 30,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"&lt;font size=&quot;1&quot; face=&quot;arial&quot; style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;Long text&lt;/span&gt;&lt;/font&gt;\" style=\"text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#1D2D3E;fontFamily=Helvetica;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"70\" height=\"30\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1394"
+  },
+  {
+   "id": "sapTexts-5-entry",
+   "title": "",
+   "tags": " ",
+   "kind": "cells",
+   "width": 60,
+   "height": 30,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"&lt;font size=&quot;1&quot; face=&quot;arial&quot; style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;Name&lt;/span&gt;&lt;/font&gt;\" style=\"text;html=1;align=center;verticalAlign=middle;resizable=0;points=[[0,0.5,0,0,0],[0.5,0,0,0,0],[0.5,1,0,0,0],[1,0.5,0,0,0]];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#1D2D3E;fontFamily=Helvetica;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"60\" height=\"30\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1395"
+  },
+  {
+   "id": "sapTexts-6-entry",
+   "title": "",
+   "tags": " ",
+   "kind": "cells",
+   "width": 120,
+   "height": 30,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-family: arial; font-size: x-small; background-color: initial;&quot;&gt;&lt;font&gt;Small descriptive Text&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;\" style=\"text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#556B82;fontFamily=Helvetica;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"30\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1396"
+  },
+  {
+   "id": "sapTexts-7-entry",
+   "title": "",
+   "tags": " ",
+   "kind": "cells",
+   "width": 50,
+   "height": 30,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-family: arial; font-size: x-small; background-color: initial;&quot;&gt;&lt;font&gt;Label&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;\" style=\"text;html=1;align=center;verticalAlign=middle;resizable=0;points=[[0,0.5,0,0,0],[0.5,0,0,0,0],[0.5,1,0,0,0],[1,0.5,0,0,0]];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#556B82;fontFamily=Helvetica;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"50\" height=\"30\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1397"
+  },
+  {
+   "id": "sapTexts-8-entry",
+   "title": "",
+   "tags": " ",
+   "kind": "cells",
+   "width": 120,
+   "height": 30,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"&lt;font color=&quot;#0070f2&quot; face=&quot;arial&quot; style=&quot;font-size: 16px;&quot;&gt;&lt;b style=&quot;font-size: 16px;&quot;&gt;Diagram Title&lt;/b&gt;&lt;/font&gt;\" style=\"text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#1d2d3e;fontFamily=Helvetica;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"30\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1398"
+  }
+ ]
+}

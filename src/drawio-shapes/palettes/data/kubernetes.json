@@ -1,0 +1,1100 @@
+{
+ "id": "kubernetes",
+ "title": "Kubernetes",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:7",
+ "entries": [
+  {
+   "id": "kubernetes-0-api",
+   "title": "API",
+   "tags": "kubernetes api application programming interface kubernetes  API",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=api",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:19"
+  },
+  {
+   "id": "kubernetes-1-c-c-m",
+   "title": "C-C-M",
+   "tags": "kubernetes ccm kubernetes  C-C-M",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=c_c_m",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:20"
+  },
+  {
+   "id": "kubernetes-2-cm",
+   "title": "CM",
+   "tags": "kubernetes cm kubernetes  CM",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=cm",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:21"
+  },
+  {
+   "id": "kubernetes-3-c-m",
+   "title": "C-M",
+   "tags": "kubernetes cm kubernetes  C-M",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=c_m",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:22"
+  },
+  {
+   "id": "kubernetes-4-c-role",
+   "title": "C-Role",
+   "tags": "kubernetes crole role kubernetes  C-Role",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=c_role",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:23"
+  },
+  {
+   "id": "kubernetes-5-control-plane",
+   "title": "Control Plane",
+   "tags": "kubernetes crole role kubernetes  Control Plane",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=control_plane",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:24"
+  },
+  {
+   "id": "kubernetes-6-crb",
+   "title": "CRB",
+   "tags": "kubernetes crb kubernetes  CRB",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=crb",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:25"
+  },
+  {
+   "id": "kubernetes-7-crd",
+   "title": "CRD",
+   "tags": "kubernetes crb kubernetes  CRD",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=crd",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:26"
+  },
+  {
+   "id": "kubernetes-8-cronjob",
+   "title": "CronJob",
+   "tags": "kubernetes cronjob kubernetes  CronJob",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=cronjob",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:27"
+  },
+  {
+   "id": "kubernetes-9-deploy",
+   "title": "Deploy",
+   "tags": "kubernetes deploy kubernetes  Deploy",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=deploy",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:28"
+  },
+  {
+   "id": "kubernetes-10-ds",
+   "title": "DS",
+   "tags": "kubernetes ds kubernetes  DS",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=ds",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:29"
+  },
+  {
+   "id": "kubernetes-11-ep",
+   "title": "EP",
+   "tags": "kubernetes ep kubernetes  EP",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=ep",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:30"
+  },
+  {
+   "id": "kubernetes-12-etcd",
+   "title": "ETCD",
+   "tags": "kubernetes etcd kubernetes  ETCD",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=etcd",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:31"
+  },
+  {
+   "id": "kubernetes-13-group",
+   "title": "Group",
+   "tags": "kubernetes group kubernetes  Group",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=group",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:32"
+  },
+  {
+   "id": "kubernetes-14-hpa",
+   "title": "HPA",
+   "tags": "kubernetes group kubernetes  HPA",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=hpa",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:33"
+  },
+  {
+   "id": "kubernetes-15-ing",
+   "title": "ING",
+   "tags": "kubernetes ing kubernetes  ING",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=ing",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:34"
+  },
+  {
+   "id": "kubernetes-16-job",
+   "title": "Job",
+   "tags": "kubernetes job kubernetes  Job",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=job",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:35"
+  },
+  {
+   "id": "kubernetes-17-k-proxy",
+   "title": "K-proxy",
+   "tags": "kubernetes kproxy proxy kubernetes  K-proxy",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=k_proxy",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:36"
+  },
+  {
+   "id": "kubernetes-18-kubelet",
+   "title": "Kubelet",
+   "tags": "kubernetes kubelet kubernetes  Kubelet",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=kubelet",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:37"
+  },
+  {
+   "id": "kubernetes-19-limits",
+   "title": "Limits",
+   "tags": "kubernetes limits kubernetes  Limits",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=limits",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:38"
+  },
+  {
+   "id": "kubernetes-20-netpol",
+   "title": "Netpol",
+   "tags": "kubernetes netpol kubernetes  Netpol",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=netpol",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:39"
+  },
+  {
+   "id": "kubernetes-21-node",
+   "title": "Node",
+   "tags": "kubernetes node kubernetes  Node",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=node",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:40"
+  },
+  {
+   "id": "kubernetes-22-ns",
+   "title": "NS",
+   "tags": "kubernetes ns kubernetes  NS",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=ns",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:41"
+  },
+  {
+   "id": "kubernetes-23-pod",
+   "title": "Pod",
+   "tags": "kubernetes pod kubernetes  Pod",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=pod",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:42"
+  },
+  {
+   "id": "kubernetes-24-psp",
+   "title": "PSP",
+   "tags": "kubernetes psp kubernetes  PSP",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=psp",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:43"
+  },
+  {
+   "id": "kubernetes-25-pv",
+   "title": "PV",
+   "tags": "kubernetes pv kubernetes  PV",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=pv",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:44"
+  },
+  {
+   "id": "kubernetes-26-pvc",
+   "title": "PVC",
+   "tags": "kubernetes pvc kubernetes  PVC",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=pvc",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:45"
+  },
+  {
+   "id": "kubernetes-27-quota",
+   "title": "Quota",
+   "tags": "kubernetes quota kubernetes  Quota",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=quota",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:46"
+  },
+  {
+   "id": "kubernetes-28-rb",
+   "title": "RB",
+   "tags": "kubernetes rb kubernetes  RB",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=rb",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:47"
+  },
+  {
+   "id": "kubernetes-29-role",
+   "title": "Role",
+   "tags": "kubernetes role kubernetes  Role",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=role",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:48"
+  },
+  {
+   "id": "kubernetes-30-rs",
+   "title": "RS",
+   "tags": "kubernetes rs kubernetes  RS",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=rs",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:49"
+  },
+  {
+   "id": "kubernetes-31-sa",
+   "title": "SA",
+   "tags": "kubernetes sa kubernetes  SA",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=sa",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:50"
+  },
+  {
+   "id": "kubernetes-32-sc",
+   "title": "SC",
+   "tags": "kubernetes sc kubernetes  SC",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=sc",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:51"
+  },
+  {
+   "id": "kubernetes-33-sched",
+   "title": "Sched",
+   "tags": "kubernetes sched kubernetes  Sched",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=sched",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:52"
+  },
+  {
+   "id": "kubernetes-34-secret",
+   "title": "Secret",
+   "tags": "kubernetes secret kubernetes  Secret",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=secret",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:53"
+  },
+  {
+   "id": "kubernetes-35-sts",
+   "title": "STS",
+   "tags": "kubernetes sts kubernetes  STS",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=sts",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:54"
+  },
+  {
+   "id": "kubernetes-36-svc",
+   "title": "SVC",
+   "tags": "kubernetes sts kubernetes  SVC",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=svc",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:55"
+  },
+  {
+   "id": "kubernetes-37-user",
+   "title": "User",
+   "tags": "kubernetes user kubernetes  User",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=user",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:56"
+  },
+  {
+   "id": "kubernetes-38-vol",
+   "title": "Vol",
+   "tags": "kubernetes vol kubernetes  Vol",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=vol",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:57"
+  },
+  {
+   "id": "kubernetes-39-api",
+   "title": "API",
+   "tags": "kubernetes api application programming interface kubernetes  API",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=api",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:59"
+  },
+  {
+   "id": "kubernetes-40-c-c-m",
+   "title": "C-C-M",
+   "tags": "kubernetes ccm kubernetes  C-C-M",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=c_c_m",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:60"
+  },
+  {
+   "id": "kubernetes-41-cm",
+   "title": "CM",
+   "tags": "kubernetes cm kubernetes  CM",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=cm",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:61"
+  },
+  {
+   "id": "kubernetes-42-c-m",
+   "title": "C-M",
+   "tags": "kubernetes cm kubernetes  C-M",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=c_m",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:62"
+  },
+  {
+   "id": "kubernetes-43-c-role",
+   "title": "C-Role",
+   "tags": "kubernetes crole role kubernetes  C-Role",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=c_role",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:63"
+  },
+  {
+   "id": "kubernetes-44-control-plane",
+   "title": "Control Plane",
+   "tags": "kubernetes crole role kubernetes  Control Plane",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=control_plane",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:64"
+  },
+  {
+   "id": "kubernetes-45-crb",
+   "title": "CRB",
+   "tags": "kubernetes crb kubernetes  CRB",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=crb",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:65"
+  },
+  {
+   "id": "kubernetes-46-crd",
+   "title": "CRD",
+   "tags": "kubernetes crd kubernetes  CRD",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=crd",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:66"
+  },
+  {
+   "id": "kubernetes-47-cronjob",
+   "title": "CronJob",
+   "tags": "kubernetes cronjob kubernetes  CronJob",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=cronjob",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:67"
+  },
+  {
+   "id": "kubernetes-48-deploy",
+   "title": "Deploy",
+   "tags": "kubernetes deploy kubernetes  Deploy",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=deploy",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:68"
+  },
+  {
+   "id": "kubernetes-49-ds",
+   "title": "DS",
+   "tags": "kubernetes ds kubernetes  DS",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=ds",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:69"
+  },
+  {
+   "id": "kubernetes-50-ep",
+   "title": "EP",
+   "tags": "kubernetes ep kubernetes  EP",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=ep",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:70"
+  },
+  {
+   "id": "kubernetes-51-etcd",
+   "title": "ETCD",
+   "tags": "kubernetes etcd kubernetes  ETCD",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=etcd",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:71"
+  },
+  {
+   "id": "kubernetes-52-group",
+   "title": "Group",
+   "tags": "kubernetes group kubernetes  Group",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=group",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:72"
+  },
+  {
+   "id": "kubernetes-53-hpa",
+   "title": "HPA",
+   "tags": "kubernetes hpa kubernetes  HPA",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=hpa",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:73"
+  },
+  {
+   "id": "kubernetes-54-ing",
+   "title": "ING",
+   "tags": "kubernetes ing kubernetes  ING",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=ing",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:74"
+  },
+  {
+   "id": "kubernetes-55-job",
+   "title": "Job",
+   "tags": "kubernetes job kubernetes  Job",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=job",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:75"
+  },
+  {
+   "id": "kubernetes-56-k-proxy",
+   "title": "K-proxy",
+   "tags": "kubernetes kproxy proxy kubernetes  K-proxy",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=k_proxy",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:76"
+  },
+  {
+   "id": "kubernetes-57-kubelet",
+   "title": "Kubelet",
+   "tags": "kubernetes kubelet kubernetes  Kubelet",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=kubelet",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:77"
+  },
+  {
+   "id": "kubernetes-58-limits",
+   "title": "Limits",
+   "tags": "kubernetes limits kubernetes  Limits",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=limits",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:78"
+  },
+  {
+   "id": "kubernetes-59-netpol",
+   "title": "Netpol",
+   "tags": "kubernetes netpol kubernetes  Netpol",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=netpol",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:79"
+  },
+  {
+   "id": "kubernetes-60-node",
+   "title": "Node",
+   "tags": "kubernetes node kubernetes  Node",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=node",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:80"
+  },
+  {
+   "id": "kubernetes-61-ns",
+   "title": "NS",
+   "tags": "kubernetes ns kubernetes  NS",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=ns",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:81"
+  },
+  {
+   "id": "kubernetes-62-pod",
+   "title": "Pod",
+   "tags": "kubernetes pod kubernetes  Pod",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=pod",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:82"
+  },
+  {
+   "id": "kubernetes-63-psp",
+   "title": "PSP",
+   "tags": "kubernetes psp kubernetes  PSP",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=psp",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:83"
+  },
+  {
+   "id": "kubernetes-64-pv",
+   "title": "PV",
+   "tags": "kubernetes pv kubernetes  PV",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=pv",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:84"
+  },
+  {
+   "id": "kubernetes-65-pvc",
+   "title": "PVC",
+   "tags": "kubernetes pvc kubernetes  PVC",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=pvc",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:85"
+  },
+  {
+   "id": "kubernetes-66-quota",
+   "title": "Quota",
+   "tags": "kubernetes quota kubernetes  Quota",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=quota",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:86"
+  },
+  {
+   "id": "kubernetes-67-rb",
+   "title": "RB",
+   "tags": "kubernetes rb kubernetes  RB",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=rb",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:87"
+  },
+  {
+   "id": "kubernetes-68-role",
+   "title": "Role",
+   "tags": "kubernetes role kubernetes  Role",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=role",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:88"
+  },
+  {
+   "id": "kubernetes-69-rs",
+   "title": "RS",
+   "tags": "kubernetes rs kubernetes  RS",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=rs",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:89"
+  },
+  {
+   "id": "kubernetes-70-sa",
+   "title": "SA",
+   "tags": "kubernetes sa kubernetes  SA",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=sa",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:90"
+  },
+  {
+   "id": "kubernetes-71-sc",
+   "title": "SC",
+   "tags": "kubernetes sc kubernetes  SC",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=sc",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:91"
+  },
+  {
+   "id": "kubernetes-72-sched",
+   "title": "Sched",
+   "tags": "kubernetes sched kubernetes  Sched",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=sched",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:92"
+  },
+  {
+   "id": "kubernetes-73-secret",
+   "title": "Secret",
+   "tags": "kubernetes secret kubernetes  Secret",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=secret",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:93"
+  },
+  {
+   "id": "kubernetes-74-sts",
+   "title": "STS",
+   "tags": "kubernetes secret kubernetes  STS",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=sts",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:94"
+  },
+  {
+   "id": "kubernetes-75-svc",
+   "title": "SVC",
+   "tags": "kubernetes secret kubernetes  SVC",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=svc",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:95"
+  },
+  {
+   "id": "kubernetes-76-user",
+   "title": "User",
+   "tags": "kubernetes user kubernetes  User",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=user",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:96"
+  },
+  {
+   "id": "kubernetes-77-vol",
+   "title": "Vol",
+   "tags": "kubernetes vol kubernetes  Vol",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=vol",
+   "shapeNames": [
+    "mxgraph.kubernetes.icon2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Kubernetes.js:97"
+  }
+ ]
+}

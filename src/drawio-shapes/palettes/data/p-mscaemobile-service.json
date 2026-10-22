@@ -1,0 +1,50 @@
+{
+ "id": "mscaeMobile Service",
+ "title": "CAE / Mobile Service",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:8",
+ "entries": [
+  {
+   "id": "mscaeMobile Service-0-azure-app-service-mobile",
+   "title": "Azure App Service - Mobile",
+   "tags": "mscae azure app service mobile ms microsoft cloud enterprise mobile service Azure App Service - Mobile",
+   "kind": "vertex",
+   "width": 34,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/App_Service_Mobile_App.svg;points=[[0.498,0.005,0],[0.498,0.995,0],[0,0.5,0],[1,0.499,0],[0.988,0.033,0],[0.988,0.967,0],[0.012,0.967,0],[0.012,0.033,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1259"
+  },
+  {
+   "id": "mscaeMobile Service-1-azure-mobile-engagement",
+   "title": "Azure Mobile Engagement",
+   "tags": "mscae azure mobile engagement ms microsoft cloud enterprise mobile service Azure Mobile Engagement",
+   "kind": "vertex",
+   "width": 34,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Mobile_Engagement.svg;points=[[0.5,0.005,0],[0.5,0.995,0],[0,0.5,0],[1,0.5,0],[0.985,0.028,0],[0.985,0.972,0],[0.015,0.972,0],[0.015,0.028,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1261"
+  },
+  {
+   "id": "mscaeMobile Service-2-notification-hubs",
+   "title": "Notification_Hubs",
+   "tags": "mscae notification hubs ms microsoft cloud enterprise mobile service Notification_Hubs",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Notification_Hubs.svg;points=[[0.495,0,0],[0.613,0.998,0],[0,0.38,0],[1,0.389,0],[0.952,0.025,0],[0.962,0.745,0],[0.038,0.745,0],[0.043,0.023,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1263"
+  }
+ ]
+}

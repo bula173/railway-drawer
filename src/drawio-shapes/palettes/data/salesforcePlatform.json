@@ -1,0 +1,344 @@
+{
+ "id": "salesforcePlatform",
+ "title": "Salesforce / Platform",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:8",
+ "entries": [
+  {
+   "id": "salesforcePlatform-0-apps",
+   "title": "Apps",
+   "tags": "salesforce apps salesforce platform  Apps",
+   "kind": "vertex",
+   "width": 34.199999999999996,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.apps;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.apps"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:704"
+  },
+  {
+   "id": "salesforcePlatform-1-web",
+   "title": "Web",
+   "tags": "salesforce web salesforce platform  Web",
+   "kind": "vertex",
+   "width": 60,
+   "height": 47.400000000000006,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.web;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.web"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:705"
+  },
+  {
+   "id": "salesforcePlatform-2-channels",
+   "title": "Channels",
+   "tags": "salesforce channels salesforce platform  Channels",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.channels;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.channels"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:706"
+  },
+  {
+   "id": "salesforcePlatform-3-bots",
+   "title": "Bots",
+   "tags": "salesforce bots salesforce platform  Bots",
+   "kind": "vertex",
+   "width": 60,
+   "height": 57,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.bots;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.bots"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:707"
+  },
+  {
+   "id": "salesforcePlatform-4-automation",
+   "title": "Automation",
+   "tags": "salesforce automation salesforce platform  Automation",
+   "kind": "vertex",
+   "width": 60,
+   "height": 58.199999999999996,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.automation;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.automation"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:708"
+  },
+  {
+   "id": "salesforcePlatform-5-workflow",
+   "title": "Workflow",
+   "tags": "salesforce workflow salesforce platform  Workflow",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.workflow;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.workflow"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:709"
+  },
+  {
+   "id": "salesforcePlatform-6-personalization",
+   "title": "Personalization",
+   "tags": "salesforce personalization salesforce platform  Personalization",
+   "kind": "vertex",
+   "width": 60,
+   "height": 45,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.personalization;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.personalization"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:710"
+  },
+  {
+   "id": "salesforcePlatform-7-builders",
+   "title": "Builders",
+   "tags": "salesforce builders salesforce platform  Builders",
+   "kind": "vertex",
+   "width": 55.2,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.builders;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.builders"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:711"
+  },
+  {
+   "id": "salesforcePlatform-8-data",
+   "title": "Data",
+   "tags": "salesforce data salesforce platform  Data",
+   "kind": "vertex",
+   "width": 48.6,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.data;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.data"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:712"
+  },
+  {
+   "id": "salesforcePlatform-9-stream",
+   "title": "Stream",
+   "tags": "salesforce stream salesforce platform  Stream",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.stream;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.stream"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:713"
+  },
+  {
+   "id": "salesforcePlatform-10-segments",
+   "title": "Segments",
+   "tags": "salesforce segments salesforce platform  Segments",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.segments;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.segments"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:714"
+  },
+  {
+   "id": "salesforcePlatform-11-privacy",
+   "title": "Privacy",
+   "tags": "salesforce privacy salesforce platform  Privacy",
+   "kind": "vertex",
+   "width": 46.2,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.privacy;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.privacy"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:715"
+  },
+  {
+   "id": "salesforcePlatform-12-apps",
+   "title": "Apps",
+   "tags": "salesforce apps salesforce platform  Apps",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.apps2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.apps2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:717"
+  },
+  {
+   "id": "salesforcePlatform-13-web",
+   "title": "Web",
+   "tags": "salesforce web salesforce platform  Web",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.web2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.web2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:718"
+  },
+  {
+   "id": "salesforcePlatform-14-channels",
+   "title": "Channels",
+   "tags": "salesforce channels salesforce platform  Channels",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.channels2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.channels2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:719"
+  },
+  {
+   "id": "salesforcePlatform-15-bots",
+   "title": "Bots",
+   "tags": "salesforce bots salesforce platform  Bots",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.bots2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.bots2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:720"
+  },
+  {
+   "id": "salesforcePlatform-16-automation",
+   "title": "Automation",
+   "tags": "salesforce automation salesforce platform  Automation",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.automation2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.automation2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:721"
+  },
+  {
+   "id": "salesforcePlatform-17-workflow",
+   "title": "Workflow",
+   "tags": "salesforce workflow salesforce platform  Workflow",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.workflow2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.workflow2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:722"
+  },
+  {
+   "id": "salesforcePlatform-18-personalization",
+   "title": "Personalization",
+   "tags": "salesforce personalization salesforce platform  Personalization",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.personalization2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.personalization2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:723"
+  },
+  {
+   "id": "salesforcePlatform-19-builders",
+   "title": "Builders",
+   "tags": "salesforce builders salesforce platform  Builders",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.builders2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.builders2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:724"
+  },
+  {
+   "id": "salesforcePlatform-20-data",
+   "title": "Data",
+   "tags": "salesforce data salesforce platform  Data",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.data2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.data2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:725"
+  },
+  {
+   "id": "salesforcePlatform-21-stream",
+   "title": "Stream",
+   "tags": "salesforce stream salesforce platform  Stream",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.stream2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.stream2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:726"
+  },
+  {
+   "id": "salesforcePlatform-22-segments",
+   "title": "Segments",
+   "tags": "salesforce segments salesforce platform  Segments",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.segments2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.segments2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:727"
+  },
+  {
+   "id": "salesforcePlatform-23-privacy",
+   "title": "Privacy",
+   "tags": "salesforce privacy salesforce platform  Privacy",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.privacy2;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.salesforce.privacy2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Salesforce.js:728"
+  }
+ ]
+}

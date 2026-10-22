@@ -1,0 +1,190 @@
+{
+ "id": "mscaeIdentity Service",
+ "title": "CAE / Identity Service",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:8",
+ "entries": [
+  {
+   "id": "mscaeIdentity Service-0-access-review",
+   "title": "Access Review",
+   "tags": "mscae access review ms microsoft cloud enterprise identity service Access Review",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Access_Review.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[1,0,0],[1,1,0],[0,1,0],[0,0,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:963"
+  },
+  {
+   "id": "mscaeIdentity Service-1-active-directory-connect-health",
+   "title": "Active Directory Connect Health",
+   "tags": "mscae active directory connect health ms microsoft cloud enterprise identity service Active Directory Connect Health",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Active_Directory_Health_Monitoring.svg;points=[[0.5,0.024,0],[0.75,0.998,0],[0,0.44,0],[1,0.695,0],[0.712,0.235,0],[0.922,0.86,0],[0.235,0.712,0],[0.385,0.018,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:965"
+  },
+  {
+   "id": "mscaeIdentity Service-2-active-directory",
+   "title": "Active Directory",
+   "tags": "mscae active directory ms microsoft cloud enterprise identity service Active Directory",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Active_Directory.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.77,0.23,0],[0.77,0.77,0],[0.23,0.77,0],[0.23,0.23,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:967"
+  },
+  {
+   "id": "mscaeIdentity Service-3-app-registrations",
+   "title": "App Registrations",
+   "tags": "mscae app registrations ms microsoft cloud enterprise identity service App Registrations",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/App_Registrations.svg;points=[[0.43,0,0],[0.5,0.882,0],[0.028,0.401,0],[0.88,0.5,0],[0.832,0,0],[0.97,0.855,0],[0.028,0.802,0],[0.028,0,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:969"
+  },
+  {
+   "id": "mscaeIdentity Service-4-azure-ad-b2c",
+   "title": "Azure AD B2C",
+   "tags": "mscae azure ad b2c ms microsoft cloud enterprise identity service Azure AD B2C",
+   "kind": "vertex",
+   "width": 50,
+   "height": 46,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Azure_AD_B2C.svg;points=[[0.41,0,0],[0.699,0.997,0],[0,0.442,0],[0.819,0.499,0],[0.687,0.115,0],[0.985,0.75,0],[0.12,0.758,0],[0.135,0.112,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:971"
+  },
+  {
+   "id": "mscaeIdentity Service-5-azure-ad-domain-services",
+   "title": "Azure AD Domain Services",
+   "tags": "mscae azure ad domain services ms microsoft cloud enterprise identity service Azure AD Domain Services",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Azure_AD_Domain_Services.svg;points=[[0.5,0,0],[0.5,0.985,0],[0,0.612,0],[1,0.612,0],[0.75,0.305,0],[0.96,0.792,0],[0.25,0.8,0],[0.25,0.305,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:973"
+  },
+  {
+   "id": "mscaeIdentity Service-6-azure-ad-identity-protection",
+   "title": "Azure AD Identity Protection",
+   "tags": "mscae azure ad identity protection ms microsoft cloud enterprise identity service Azure AD Identity Protection",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Azure_AD_Identity_Protection.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[1,0,0],[1,1,0],[0,1,0],[0,0,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:975"
+  },
+  {
+   "id": "mscaeIdentity Service-7-azure-ad-privileged-identity-management",
+   "title": "Azure AD Privileged Identity Management",
+   "tags": "mscae azure ad privileged identity management ms microsoft cloud enterprise identity service Azure AD Privileged Identity Management",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Azure_AD_Privileged_Identity_Management.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.842,0.133,0],[0.867,0.842,0],[0.133,0.842,0],[0.148,0.143,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:977"
+  },
+  {
+   "id": "mscaeIdentity Service-8-azure-information-protection",
+   "title": "Azure Information Protection",
+   "tags": "mscae azure information protection ms microsoft cloud enterprise identity service Azure Information Protection",
+   "kind": "vertex",
+   "width": 42,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.mscae.cloud.azure_rights_management_rms;fillColor=#58B4D9;",
+   "shapeNames": [
+    "mxgraph.mscae.cloud.azure_rights_management_rms"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:979"
+  },
+  {
+   "id": "mscaeIdentity Service-9-conditional-access",
+   "title": "Conditional Access",
+   "tags": "mscae conditional access security center ms microsoft cloud enterprise identity service Conditional Access",
+   "kind": "vertex",
+   "width": 36,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Security_Center.svg;points=[[0.495,0,0],[0.495,1,0],[0,0.395,0],[0.99,0.396,0],[0.989,0.125,0],[0.923,0.772,0],[0.066,0.772,0],[0.001,0.125,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:981"
+  },
+  {
+   "id": "mscaeIdentity Service-10-enterprise-applications",
+   "title": "Enterprise Applications",
+   "tags": "mscae enterprise applications ms microsoft cloud enterprise identity service Enterprise Applications",
+   "kind": "vertex",
+   "width": 49,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Enterprise_Applications.svg;points=[[0.413,0,0],[0.5,0.917,0],[0,0.405,0],[0.913,0.5,0],[0.826,0,0],[0.933,0.89,0],[0,0.81,0],[0,0,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:983"
+  },
+  {
+   "id": "mscaeIdentity Service-11-identity-governance",
+   "title": "Identity Governance",
+   "tags": "mscae identity governance ms microsoft cloud enterprise identity service Identity Governance",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Identity_Governance.svg;points=[[0.497,0,0],[0.495,0.995,0],[0,0.495,0],[0.995,0.5,0],[0.912,0.07,0],[0.905,0.912,0],[0.065,0.907,0],[0.103,0.07,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:985"
+  },
+  {
+   "id": "mscaeIdentity Service-12-managed-identities",
+   "title": "Managed Identities",
+   "tags": "mscae managed identities ms microsoft cloud enterprise identity service Managed Identities",
+   "kind": "vertex",
+   "width": 38,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Managed_Identities.svg;points=[[0.388,0,0],[0.699,1,0],[0.21,0.5,0],[1,0.771,0],[0.753,0.233,0],[0.84,0.923,0],[0.208,0.815,0],[0.024,0.233,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:987"
+  }
+ ]
+}

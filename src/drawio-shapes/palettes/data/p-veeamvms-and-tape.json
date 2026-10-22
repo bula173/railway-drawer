@@ -1,0 +1,316 @@
+{
+ "id": "veeamVMs and Tape",
+ "title": "Veeam / VMs and Tape",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Veeam.js:7",
+ "entries": [
+  {
+   "id": "veeamVMs and Tape-0-virtual-machine",
+   "title": "Virtual Machine",
+   "tags": "veeam vmstape  veeam vmware virtual machine vm tape Virtual Machine",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.virtual_machine;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.virtual_machine"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:701"
+  },
+  {
+   "id": "veeamVMs and Tape-1-vm-checked",
+   "title": "VM Checked",
+   "tags": "veeam vmstape checked veeam vmware virtual machine vm tape VM Checked",
+   "kind": "vertex",
+   "width": 54,
+   "height": 52,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.vm_checked;",
+   "shapeNames": [
+    "mxgraph.veeam.vm_checked"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:703"
+  },
+  {
+   "id": "veeamVMs and Tape-2-vm-started",
+   "title": "VM Started",
+   "tags": "veeam vmstape vm started veeam vmware virtual machine vm tape VM Started",
+   "kind": "vertex",
+   "width": 54,
+   "height": 52,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.vm_running;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.vm_running"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:705"
+  },
+  {
+   "id": "veeamVMs and Tape-3-vm-locked",
+   "title": "VM Locked",
+   "tags": "veeam vmstape vm locked veeam vmware virtual machine vm tape VM Locked",
+   "kind": "vertex",
+   "width": 55.6,
+   "height": 52,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.vm_locked;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.vm_locked"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:707"
+  },
+  {
+   "id": "veeamVMs and Tape-4-vm-paused",
+   "title": "VM Paused",
+   "tags": "veeam vmstape vm paused veeam vmware virtual machine vm tape VM Paused",
+   "kind": "vertex",
+   "width": 54,
+   "height": 52,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.vm_paused;",
+   "shapeNames": [
+    "mxgraph.veeam.vm_paused"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:709"
+  },
+  {
+   "id": "veeamVMs and Tape-5-vm-failed",
+   "title": "VM Failed",
+   "tags": "veeam vmstape vm failed veeam vmware virtual machine vm tape VM Failed",
+   "kind": "vertex",
+   "width": 54,
+   "height": 52,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.vm_failed;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.vm_failed"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:711"
+  },
+  {
+   "id": "veeamVMs and Tape-6-vm-kernel",
+   "title": "VM Kernel",
+   "tags": "veeam vmstape vm kernel veeam vmware virtual machine vm tape VM Kernel",
+   "kind": "vertex",
+   "width": 54,
+   "height": 52,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.vm_kernel;",
+   "shapeNames": [
+    "mxgraph.veeam.vm_kernel"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:713"
+  },
+  {
+   "id": "veeamVMs and Tape-7-vm-windows",
+   "title": "VM Windows",
+   "tags": "veeam vmstape vm windows veeam vmware virtual machine vm tape VM Windows",
+   "kind": "vertex",
+   "width": 57.2,
+   "height": 55.2,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.vm_windows;",
+   "shapeNames": [
+    "mxgraph.veeam.vm_windows"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:715"
+  },
+  {
+   "id": "veeamVMs and Tape-8-vm-linux",
+   "title": "VM Linux",
+   "tags": "veeam vmstape vm linux veeam vmware virtual machine vm tape VM Linux",
+   "kind": "vertex",
+   "width": 57.2,
+   "height": 55.2,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.vm_linux;",
+   "shapeNames": [
+    "mxgraph.veeam.vm_linux"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:717"
+  },
+  {
+   "id": "veeamVMs and Tape-9-vm-snapshot",
+   "title": "VM Snapshot",
+   "tags": "veeam vmstape vm snapshot veeam vmware virtual machine vm tape VM Snapshot",
+   "kind": "vertex",
+   "width": 60.8,
+   "height": 58.4,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#A2C6E0;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.vm_snapshot;",
+   "shapeNames": [
+    "mxgraph.veeam.vm_snapshot"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:719"
+  },
+  {
+   "id": "veeamVMs and Tape-10-vapp",
+   "title": "vApp",
+   "tags": "veeam vmstape vapp veeam vmware virtual machine vm tape vApp",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.vapp;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.vapp"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:721"
+  },
+  {
+   "id": "veeamVMs and Tape-11-tape",
+   "title": "Tape",
+   "tags": "veeam vmstape tape veeam vmware virtual machine vm tape Tape",
+   "kind": "vertex",
+   "width": 62,
+   "height": 33.6,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.tape;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.tape"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:723"
+  },
+  {
+   "id": "veeamVMs and Tape-12-tape-device",
+   "title": "Tape Device",
+   "tags": "veeam vmstape tape device veeam vmware virtual machine vm tape Tape Device",
+   "kind": "vertex",
+   "width": 105.2,
+   "height": 106,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.tape_device;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.tape_device"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:725"
+  },
+  {
+   "id": "veeamVMs and Tape-13-tape-library",
+   "title": "Tape Library",
+   "tags": "veeam vmstape tape library veeam vmware virtual machine vm tape Tape Library",
+   "kind": "vertex",
+   "width": 96.8,
+   "height": 98,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.tape_library;",
+   "shapeNames": [
+    "mxgraph.veeam.tape_library"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:727"
+  },
+  {
+   "id": "veeamVMs and Tape-14-tape-writing-device",
+   "title": "Tape writing device",
+   "tags": "veeam vmstape tape writing device veeam vmware virtual machine vm tape Tape writing device",
+   "kind": "vertex",
+   "width": 82.4,
+   "height": 43.6,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.tape_writing_device;",
+   "shapeNames": [
+    "mxgraph.veeam.tape_writing_device"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:729"
+  },
+  {
+   "id": "veeamVMs and Tape-15-media-pool",
+   "title": "Media pool",
+   "tags": "veeam vmstape media pool veeam vmware virtual machine vm tape Media pool",
+   "kind": "vertex",
+   "width": 74.4,
+   "height": 71.6,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.media_pool;",
+   "shapeNames": [
+    "mxgraph.veeam.media_pool"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:731"
+  },
+  {
+   "id": "veeamVMs and Tape-16-unknown-tape",
+   "title": "Unknown tape",
+   "tags": "veeam vmstape unknown tape veeam vmware virtual machine vm tape Unknown tape",
+   "kind": "vertex",
+   "width": 67.2,
+   "height": 62.4,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.unknown_tape;",
+   "shapeNames": [
+    "mxgraph.veeam.unknown_tape"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:733"
+  },
+  {
+   "id": "veeamVMs and Tape-17-tape-eject",
+   "title": "Tape eject",
+   "tags": "veeam vmstape tape eject veeam vmware virtual machine vm tape Tape eject",
+   "kind": "vertex",
+   "width": 75.6,
+   "height": 49.6,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.tape_ejecting;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.tape_ejecting"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:735"
+  },
+  {
+   "id": "veeamVMs and Tape-18-tape-locked",
+   "title": "Tape locked",
+   "tags": "veeam vmstape tape locked veeam vmware virtual machine vm tape Tape locked",
+   "kind": "vertex",
+   "width": 70.4,
+   "height": 40,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.tape_locked;",
+   "shapeNames": [
+    "mxgraph.veeam.tape_locked"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:737"
+  },
+  {
+   "id": "veeamVMs and Tape-19-tape-licensed",
+   "title": "Tape Licensed",
+   "tags": "veeam vmstape tape licensed veeam vmware virtual machine vm tape Tape Licensed",
+   "kind": "vertex",
+   "width": 75.2,
+   "height": 44.4,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.tape_licensed;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.tape_licensed"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:739"
+  },
+  {
+   "id": "veeamVMs and Tape-20-tape-recording",
+   "title": "Tape Recording",
+   "tags": "veeam vmstape tape recording veeam vmware virtual machine vm tape Tape Recording",
+   "kind": "vertex",
+   "width": 71.2,
+   "height": 47.2,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.tape_recording;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.tape_recording"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:741"
+  },
+  {
+   "id": "veeamVMs and Tape-21-tape-checked",
+   "title": "Tape Checked",
+   "tags": "veeam vmstape tape checked veeam vmware virtual machine vm tape Tape Checked",
+   "kind": "vertex",
+   "width": 75.2,
+   "height": 45.6,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.tape_checked;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.tape_checked"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:743"
+  }
+ ]
+}

@@ -1,0 +1,498 @@
+{
+ "id": "pidValves",
+ "title": "Process Engineering / Valves",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-PID.js:8",
+ "entries": [
+  {
+   "id": "pidValves-0-gate-valve",
+   "title": "Gate Valve",
+   "tags": "pid2valves valve pid process instrumentation engineering gate Gate Valve",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;align=center;html=1;verticalAlign=top;pointerEvents=1;dashed=0;shape=mxgraph.pid2valves.valve;valveType=gate",
+   "shapeNames": [
+    "mxgraph.pid2valves.valve"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:150"
+  },
+  {
+   "id": "pidValves-1-normally-closed-gate-valve",
+   "title": "Normally Closed Gate Valve",
+   "tags": "pid2valves valve pid process instrumentation engineering normally closed nc gate Normally Closed Gate Valve",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;align=center;html=1;verticalAlign=top;pointerEvents=1;dashed=0;shape=mxgraph.pid2valves.valve;valveType=gate;defState=closed",
+   "shapeNames": [
+    "mxgraph.pid2valves.valve"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:151"
+  },
+  {
+   "id": "pidValves-2-ball-valve",
+   "title": "Ball Valve",
+   "tags": "pid2valves valve pid process instrumentation engineering ball Ball Valve",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;align=center;html=1;verticalAlign=top;pointerEvents=1;dashed=0;shape=mxgraph.pid2valves.valve;valveType=ball",
+   "shapeNames": [
+    "mxgraph.pid2valves.valve"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:152"
+  },
+  {
+   "id": "pidValves-3-normally-closed-ball-valve",
+   "title": "Normally Closed Ball Valve",
+   "tags": "pid2valves valve pid process instrumentation engineering normally closed nc ball Normally Closed Ball Valve",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;align=center;html=1;verticalAlign=top;pointerEvents=1;dashed=0;shape=mxgraph.pid2valves.valve;valveType=ball;defState=closed",
+   "shapeNames": [
+    "mxgraph.pid2valves.valve"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:153"
+  },
+  {
+   "id": "pidValves-4-globe-valve",
+   "title": "Globe Valve",
+   "tags": "pid2valves valve pid process instrumentation engineering globe Globe Valve",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;align=center;html=1;verticalAlign=top;pointerEvents=1;dashed=0;shape=mxgraph.pid2valves.valve;valveType=globe",
+   "shapeNames": [
+    "mxgraph.pid2valves.valve"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:154"
+  },
+  {
+   "id": "pidValves-5-butterfly-valve",
+   "title": "Butterfly Valve",
+   "tags": "pid2valves valve pid process instrumentation engineering butterfly Butterfly Valve",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;align=center;html=1;verticalAlign=top;pointerEvents=1;dashed=0;shape=mxgraph.pid2valves.valve;valveType=butterfly",
+   "shapeNames": [
+    "mxgraph.pid2valves.valve"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:155"
+  },
+  {
+   "id": "pidValves-6-check-valve",
+   "title": "Check Valve",
+   "tags": "pid2valves valve pid process instrumentation engineering check Check Valve",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;align=center;html=1;verticalAlign=top;pointerEvents=1;dashed=0;shape=mxgraph.pid2valves.valve;valveType=check;",
+   "shapeNames": [
+    "mxgraph.pid2valves.valve"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:156"
+  },
+  {
+   "id": "pidValves-7-plug-valve",
+   "title": "Plug Valve",
+   "tags": "pid2valves valve pid process instrumentation engineering plug Plug Valve",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;align=center;html=1;verticalAlign=top;pointerEvents=1;dashed=0;shape=mxgraph.pid2valves.valve;valveType=plug",
+   "shapeNames": [
+    "mxgraph.pid2valves.valve"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:157"
+  },
+  {
+   "id": "pidValves-8-needle-valve",
+   "title": "Needle Valve",
+   "tags": "pid2valves valve pid process instrumentation engineering needle Needle Valve",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;align=center;html=1;verticalAlign=top;pointerEvents=1;dashed=0;shape=mxgraph.pid2valves.valve;valveType=needle",
+   "shapeNames": [
+    "mxgraph.pid2valves.valve"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:158"
+  },
+  {
+   "id": "pidValves-9-self-draining-valve",
+   "title": "Self Draining Valve",
+   "tags": "pid2valves valve pid process instrumentation engineering self draining Self Draining Valve",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;align=center;html=1;verticalAlign=top;pointerEvents=1;dashed=0;shape=mxgraph.pid2valves.valve;valveType=selfDrain",
+   "shapeNames": [
+    "mxgraph.pid2valves.valve"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:159"
+  },
+  {
+   "id": "pidValves-10-gate-valve-manual",
+   "title": "Gate Valve (Manual)",
+   "tags": "pid2valves valve pid process instrumentation engineering gate manual Gate Valve (Manual)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;align=center;html=1;verticalAlign=top;pointerEvents=1;dashed=0;shape=mxgraph.pid2valves.valve;valveType=gate;actuator=man",
+   "shapeNames": [
+    "mxgraph.pid2valves.valve"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:160"
+  },
+  {
+   "id": "pidValves-11-gate-valve-diaphragm",
+   "title": "Gate Valve (Diaphragm)",
+   "tags": "pid2valves valve pid process instrumentation engineering gate diaphragm Gate Valve (Diaphragm)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;align=center;html=1;verticalAlign=top;pointerEvents=1;dashed=0;shape=mxgraph.pid2valves.valve;valveType=gate;actuator=diaph",
+   "shapeNames": [
+    "mxgraph.pid2valves.valve"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:161"
+  },
+  {
+   "id": "pidValves-12-gate-valve-balanced-diaphragm",
+   "title": "Gate Valve (Balanced Diaphragm)",
+   "tags": "pid2valves valve pid process instrumentation engineering gate balanced diaphragm Gate Valve (Balanced Diaphragm)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;align=center;html=1;verticalAlign=top;pointerEvents=1;dashed=0;shape=mxgraph.pid2valves.valve;valveType=gate;actuator=balDiaph",
+   "shapeNames": [
+    "mxgraph.pid2valves.valve"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:162"
+  },
+  {
+   "id": "pidValves-13-gate-valve-powered",
+   "title": "Gate Valve (Powered)",
+   "tags": "pid process instrumentation engineering valve gate powered",
+   "kind": "cells",
+   "width": 100,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"verticalLabelPosition=bottom;align=center;html=1;verticalAlign=top;pointerEvents=1;dashed=0;shape=mxgraph.pid2valves.valve;valveType=gate;actuator=powered\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"100\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"part=1;strokeColor=none;fillColor=none;fontStyle=1;fontSize=14;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"32.5\" width=\"35\" height=\"35\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.pid2valves.valve"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:164"
+  },
+  {
+   "id": "pidValves-14-gate-valve-digital",
+   "title": "Gate Valve (Digital)",
+   "tags": "pid2valves valve pid process instrumentation engineering gate digital Gate Valve (Digital)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;align=center;html=1;verticalAlign=top;pointerEvents=1;dashed=0;shape=mxgraph.pid2valves.valve;valveType=gate;actuator=digital",
+   "shapeNames": [
+    "mxgraph.pid2valves.valve"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:175"
+  },
+  {
+   "id": "pidValves-15-gate-valve-electro-hydraulic",
+   "title": "Gate Valve (Electro-Hydraulic)",
+   "tags": "pid2valves valve pid process instrumentation engineering gate electro hydraulic Gate Valve (Electro-Hydraulic)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;align=center;html=1;verticalAlign=top;pointerEvents=1;dashed=0;shape=mxgraph.pid2valves.valve;valveType=gate;actuator=elHyd",
+   "shapeNames": [
+    "mxgraph.pid2valves.valve"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:176"
+  },
+  {
+   "id": "pidValves-16-gate-valve-key",
+   "title": "Gate Valve (Key)",
+   "tags": "pid2valves valve pid process instrumentation engineering gate key Gate Valve (Key)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;align=center;html=1;verticalAlign=top;pointerEvents=1;dashed=0;shape=mxgraph.pid2valves.valve;valveType=gate;actuator=key",
+   "shapeNames": [
+    "mxgraph.pid2valves.valve"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:177"
+  },
+  {
+   "id": "pidValves-17-gate-valve-motor",
+   "title": "Gate Valve (Motor)",
+   "tags": "pid2valves valve pid process instrumentation engineering gate motor Gate Valve (Motor)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;align=center;html=1;verticalAlign=top;pointerEvents=1;dashed=0;shape=mxgraph.pid2valves.valve;valveType=gate;actuator=motor",
+   "shapeNames": [
+    "mxgraph.pid2valves.valve"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:178"
+  },
+  {
+   "id": "pidValves-18-gate-valve-pilot",
+   "title": "Gate Valve (Pilot)",
+   "tags": "pid2valves valve pid process instrumentation engineering gate pilot Gate Valve (Pilot)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;align=center;html=1;verticalAlign=top;pointerEvents=1;dashed=0;shape=mxgraph.pid2valves.valve;valveType=gate;actuator=pilot",
+   "shapeNames": [
+    "mxgraph.pid2valves.valve"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:179"
+  },
+  {
+   "id": "pidValves-19-gate-valve-solenoid",
+   "title": "Gate Valve (Solenoid)",
+   "tags": "pid2valves valve pid process instrumentation engineering gate solenoid Gate Valve (Solenoid)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;align=center;html=1;verticalAlign=top;pointerEvents=1;dashed=0;shape=mxgraph.pid2valves.valve;valveType=gate;actuator=solenoid",
+   "shapeNames": [
+    "mxgraph.pid2valves.valve"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:180"
+  },
+  {
+   "id": "pidValves-20-gate-valve-solenoid-with-manual-reset",
+   "title": "Gate Valve (Solenoid With Manual Reset)",
+   "tags": "pid2valves valve pid process instrumentation engineering gate solenoid manual reset Gate Valve (Solenoid With Manual Reset)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;align=center;html=1;verticalAlign=top;pointerEvents=1;dashed=0;shape=mxgraph.pid2valves.valve;valveType=gate;actuator=solenoidManRes",
+   "shapeNames": [
+    "mxgraph.pid2valves.valve"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:181"
+  },
+  {
+   "id": "pidValves-21-gate-valve-spring",
+   "title": "Gate Valve (Spring)",
+   "tags": "pid2valves valve pid process instrumentation engineering gate spring Gate Valve (Spring)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;align=center;html=1;verticalAlign=top;pointerEvents=1;dashed=0;shape=mxgraph.pid2valves.valve;valveType=gate;actuator=spring",
+   "shapeNames": [
+    "mxgraph.pid2valves.valve"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:182"
+  },
+  {
+   "id": "pidValves-22-gate-valve-weight",
+   "title": "Gate Valve (Weight)",
+   "tags": "pid2valves valve pid process instrumentation engineering gate weight Gate Valve (Weight)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;align=center;html=1;verticalAlign=top;pointerEvents=1;dashed=0;shape=mxgraph.pid2valves.valve;valveType=gate;actuator=weight",
+   "shapeNames": [
+    "mxgraph.pid2valves.valve"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:183"
+  },
+  {
+   "id": "pidValves-23-gate-valve-single-acting-cylinder",
+   "title": "Gate Valve (Single Acting Cylinder)",
+   "tags": "pid2valves valve pid process instrumentation engineering gate single acting cylinder Gate Valve (Single Acting Cylinder)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;align=center;html=1;verticalAlign=top;pointerEvents=1;dashed=0;shape=mxgraph.pid2valves.valve;valveType=gate;actuator=singActing",
+   "shapeNames": [
+    "mxgraph.pid2valves.valve"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:184"
+  },
+  {
+   "id": "pidValves-24-gate-valve-double-acting-cylinder",
+   "title": "Gate Valve (Double Acting Cylinder)",
+   "tags": "pid2valves valve pid process instrumentation engineering gate double acting cylinder Gate Valve (Double Acting Cylinder)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;align=center;html=1;verticalAlign=top;pointerEvents=1;dashed=0;shape=mxgraph.pid2valves.valve;valveType=gate;actuator=dblActing",
+   "shapeNames": [
+    "mxgraph.pid2valves.valve"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:185"
+  },
+  {
+   "id": "pidValves-25-angle-blowdown-valve",
+   "title": "Angle Blowdown Valve",
+   "tags": "pid2valves valve pid process instrumentation engineering angle blowdown Angle Blowdown Valve",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;align=center;html=1;verticalAlign=top;pointerEvents=1;dashed=0;shape=mxgraph.pid2valves.valve;valveType=gate;actuator=angBlow",
+   "shapeNames": [
+    "mxgraph.pid2valves.valve"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:186"
+  },
+  {
+   "id": "pidValves-26-integrated-block-and-bleed-valve",
+   "title": "Integrated Block and Bleed Valve",
+   "tags": "pid2valves blockBleedValve pid process instrumentation engineering integrated block bleed Integrated Block and Bleed Valve",
+   "kind": "vertex",
+   "width": 100,
+   "height": 130,
+   "style": "verticalLabelPosition=bottom;align=center;html=1;verticalAlign=top;pointerEvents=1;dashed=0;shape=mxgraph.pid2valves.blockBleedValve;actuator=none",
+   "shapeNames": [
+    "mxgraph.pid2valves.blockBleedValve"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:187"
+  },
+  {
+   "id": "pidValves-27-integrated-block-and-bleed-valve-manual",
+   "title": "Integrated Block and Bleed Valve (Manual)",
+   "tags": "pid2valves blockBleedValve pid process instrumentation engineering integrated block bleed manual Integrated Block and Bleed Valve (Manual)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 170,
+   "style": "verticalLabelPosition=bottom;align=center;html=1;verticalAlign=top;pointerEvents=1;dashed=0;shape=mxgraph.pid2valves.blockBleedValve;actuator=man",
+   "shapeNames": [
+    "mxgraph.pid2valves.blockBleedValve"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:188"
+  },
+  {
+   "id": "pidValves-28-angle-valve",
+   "title": "Angle Valve",
+   "tags": "pid2valves valve pid process instrumentation engineering angle Angle Valve",
+   "kind": "vertex",
+   "width": 100,
+   "height": 80,
+   "style": "verticalLabelPosition=bottom;align=center;html=1;verticalAlign=top;pointerEvents=1;dashed=0;shape=mxgraph.pid2valves.valve;valveType=angle;actuator=none",
+   "shapeNames": [
+    "mxgraph.pid2valves.valve"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:189"
+  },
+  {
+   "id": "pidValves-29-angle-valve-manual",
+   "title": "Angle Valve (Manual)",
+   "tags": "pid2valves valve pid process instrumentation engineering angle manual Angle Valve (Manual)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 120,
+   "style": "verticalLabelPosition=bottom;align=center;html=1;verticalAlign=top;pointerEvents=1;dashed=0;shape=mxgraph.pid2valves.valve;valveType=angle;actuator=man",
+   "shapeNames": [
+    "mxgraph.pid2valves.valve"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:190"
+  },
+  {
+   "id": "pidValves-30-angle-globe-valve",
+   "title": "Angle Globe Valve",
+   "tags": "pid2valves valve pid process instrumentation engineering angle globe Angle Globe Valve",
+   "kind": "vertex",
+   "width": 100,
+   "height": 80,
+   "style": "verticalLabelPosition=bottom;align=center;html=1;verticalAlign=top;pointerEvents=1;dashed=0;shape=mxgraph.pid2valves.valve;valveType=angleGlobe;actuator=none",
+   "shapeNames": [
+    "mxgraph.pid2valves.valve"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:191"
+  },
+  {
+   "id": "pidValves-31-angle-globe-valve-manual",
+   "title": "Angle Globe Valve (Manual)",
+   "tags": "pid2valves valve pid process instrumentation engineering angle globe manual Angle Globe Valve (Manual)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 120,
+   "style": "verticalLabelPosition=bottom;align=center;html=1;verticalAlign=top;pointerEvents=1;dashed=0;shape=mxgraph.pid2valves.valve;valveType=angleGlobe;actuator=man",
+   "shapeNames": [
+    "mxgraph.pid2valves.valve"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:192"
+  },
+  {
+   "id": "pidValves-32-3-way-valve",
+   "title": "3 Way Valve",
+   "tags": "pid2valves valve pid process instrumentation engineering three way 3 Way Valve",
+   "kind": "vertex",
+   "width": 100,
+   "height": 80,
+   "style": "verticalLabelPosition=bottom;align=center;html=1;verticalAlign=top;pointerEvents=1;dashed=0;shape=mxgraph.pid2valves.valve;valveType=threeWay;actuator=none",
+   "shapeNames": [
+    "mxgraph.pid2valves.valve"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:193"
+  },
+  {
+   "id": "pidValves-33-3-way-valve-manual",
+   "title": "3 Way Valve (Manual)",
+   "tags": "pid2valves valve pid process instrumentation engineering three way manual 3 Way Valve (Manual)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 120,
+   "style": "verticalLabelPosition=bottom;align=center;html=1;verticalAlign=top;pointerEvents=1;dashed=0;shape=mxgraph.pid2valves.valve;valveType=threeWay;actuator=man",
+   "shapeNames": [
+    "mxgraph.pid2valves.valve"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:194"
+  },
+  {
+   "id": "pidValves-34-auto-recirculation-valve",
+   "title": "Auto Recirculation Valve",
+   "tags": "pid2valves blockBleedValve pid process instrumentation engineering auto recirculation Auto Recirculation Valve",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;align=center;html=1;verticalAlign=top;pointerEvents=1;dashed=0;shape=mxgraph.pid2valves.autoRecircValve",
+   "shapeNames": [
+    "mxgraph.pid2valves.autoRecircValve"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:195"
+  }
+ ]
+}

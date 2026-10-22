@@ -1,0 +1,158 @@
+{
+ "id": "aws4bApplication Integration",
+ "title": "AWS18 / Application Integration",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:8",
+ "entries": [
+  {
+   "id": "aws4bApplication Integration-0-entry",
+   "title": "",
+   "tags": "aws4 step functions aws amazon web service application integration ",
+   "kind": "vertex",
+   "width": 80,
+   "height": 110,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.step_functions;",
+   "value": "AWS Step Functions",
+   "shapeNames": [
+    "mxgraph.aws4.productIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:297"
+  },
+  {
+   "id": "aws4bApplication Integration-1-entry",
+   "title": "",
+   "tags": "aws4 mq aws amazon web service application integration ",
+   "kind": "vertex",
+   "width": 80,
+   "height": 100,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.mq;",
+   "value": "Amazon MQ",
+   "shapeNames": [
+    "mxgraph.aws4.productIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:299"
+  },
+  {
+   "id": "aws4bApplication Integration-2-entry",
+   "title": "",
+   "tags": "aws4 sns aws amazon web service application integration ",
+   "kind": "vertex",
+   "width": 80,
+   "height": 100,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.sns;",
+   "value": "Amazon SNS",
+   "shapeNames": [
+    "mxgraph.aws4.productIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:301"
+  },
+  {
+   "id": "aws4bApplication Integration-3-entry",
+   "title": "",
+   "tags": "aws4 sqs aws amazon web service application integration ",
+   "kind": "vertex",
+   "width": 80,
+   "height": 100,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.sqs;",
+   "value": "Amazon SQS",
+   "shapeNames": [
+    "mxgraph.aws4.productIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:303"
+  },
+  {
+   "id": "aws4bApplication Integration-4-entry",
+   "title": "",
+   "tags": "aws4 appsync aws amazon web service application integration ",
+   "kind": "vertex",
+   "width": 80,
+   "height": 100,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.appsync;",
+   "value": "AWS AppSync",
+   "shapeNames": [
+    "mxgraph.aws4.productIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:305"
+  },
+  {
+   "id": "aws4bApplication Integration-5-entry",
+   "title": "",
+   "tags": "aws4 email notification aws amazon web service application integration ",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#232F3E;fillColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.email_notification;",
+   "value": "Email\nnotification",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:308"
+  },
+  {
+   "id": "aws4bApplication Integration-6-entry",
+   "title": "",
+   "tags": "aws4 http notification aws amazon web service application integration ",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#232F3E;fillColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.http_notification;",
+   "value": "HTTP\nnotification",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:310"
+  },
+  {
+   "id": "aws4bApplication Integration-7-entry",
+   "title": "",
+   "tags": "aws4 topic aws amazon web service application integration ",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#232F3E;fillColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.topic;",
+   "value": "Topic",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:312"
+  },
+  {
+   "id": "aws4bApplication Integration-8-entry",
+   "title": "",
+   "tags": "aws4 message aws amazon web service application integration ",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#232F3E;fillColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.message;",
+   "value": "Message",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:314"
+  },
+  {
+   "id": "aws4bApplication Integration-9-entry",
+   "title": "",
+   "tags": "aws4 queue aws amazon web service application integration ",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#232F3E;fillColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.queue;",
+   "value": "Queue",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4b.js:316"
+  }
+ ]
+}

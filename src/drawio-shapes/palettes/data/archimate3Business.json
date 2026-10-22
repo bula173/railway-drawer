@@ -1,0 +1,386 @@
+{
+ "id": "archimate3Business",
+ "title": "Archimate 3.2 / Business",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:8",
+ "entries": [
+  {
+   "id": "archimate3Business-0-business-actor",
+   "title": "Business Actor",
+   "tags": "archimate3  archimate business layer actor Business Actor",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffff99;shape=mxgraph.archimate3.application;appType=actor;archiType=square;",
+   "value": "Business Actor",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:176"
+  },
+  {
+   "id": "archimate3Business-1-actor",
+   "title": "Actor",
+   "tags": "archimate3  archimate business layer actor Actor",
+   "kind": "vertex",
+   "width": 26.5,
+   "height": 50,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffff99;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.archimate3.actor;",
+   "shapeNames": [
+    "mxgraph.archimate3.actor"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:178"
+  },
+  {
+   "id": "archimate3Business-2-business-role",
+   "title": "Business Role",
+   "tags": "archimate3  archimate business layer role Business Role",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffff99;shape=mxgraph.archimate3.application;appType=role;archiType=square;",
+   "value": "Business Role",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:180"
+  },
+  {
+   "id": "archimate3Business-3-business-role",
+   "title": "Business Role",
+   "tags": "archimate3  archimate business layer role Business Role",
+   "kind": "vertex",
+   "width": 60,
+   "height": 35,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffff99;shape=mxgraph.archimate3.role;",
+   "shapeNames": [
+    "mxgraph.archimate3.role"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:182"
+  },
+  {
+   "id": "archimate3Business-4-business-collaboration",
+   "title": "Business Collaboration",
+   "tags": "archimate3  archimate business layer collaboration Business Collaboration",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffff99;shape=mxgraph.archimate3.application;appType=collab;archiType=square;",
+   "value": "Business Collaboration",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:184"
+  },
+  {
+   "id": "archimate3Business-5-collaboration",
+   "title": "Collaboration",
+   "tags": "archimate3  archimate business layer collaboration Collaboration",
+   "kind": "vertex",
+   "width": 60,
+   "height": 35,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffff99;shape=mxgraph.archimate3.collaboration;",
+   "shapeNames": [
+    "mxgraph.archimate3.collaboration"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:186"
+  },
+  {
+   "id": "archimate3Business-6-business-interface",
+   "title": "Business Interface",
+   "tags": "archimate3  archimate business layer component Business Interface",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffff99;shape=mxgraph.archimate3.application;appType=interface;archiType=square;",
+   "value": "Business Interface",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:188"
+  },
+  {
+   "id": "archimate3Business-7-business-interface",
+   "title": "Business Interface",
+   "tags": "archimate3  archimate business layer interface Business Interface",
+   "kind": "vertex",
+   "width": 70,
+   "height": 35,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffff99;shape=mxgraph.archimate3.interface;",
+   "shapeNames": [
+    "mxgraph.archimate3.interface"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:190"
+  },
+  {
+   "id": "archimate3Business-8-business-process",
+   "title": "Business Process",
+   "tags": "archimate3  archimate business layer process Business Process",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffff99;shape=mxgraph.archimate3.application;appType=proc;archiType=rounded;",
+   "value": "Business Process",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:192"
+  },
+  {
+   "id": "archimate3Business-9-business-process",
+   "title": "Business Process",
+   "tags": "archimate3  archimate business layer process Business Process",
+   "kind": "vertex",
+   "width": 60,
+   "height": 30,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffff99;shape=mxgraph.archimate3.process;",
+   "shapeNames": [
+    "mxgraph.archimate3.process"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:194"
+  },
+  {
+   "id": "archimate3Business-10-business-function",
+   "title": "Business Function",
+   "tags": "archimate3  archimate business layer function Business Function",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffff99;shape=mxgraph.archimate3.application;appType=func;archiType=rounded;",
+   "value": "Business Function",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:196"
+  },
+  {
+   "id": "archimate3Business-11-business-function",
+   "title": "Business Function",
+   "tags": "archimate3  archimate business layer function Business Function",
+   "kind": "vertex",
+   "width": 60,
+   "height": 40,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffff99;shape=mxgraph.archimate3.function;",
+   "shapeNames": [
+    "mxgraph.archimate3.function"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:198"
+  },
+  {
+   "id": "archimate3Business-12-business-interaction",
+   "title": "Business Interaction",
+   "tags": "archimate3  archimate business layer interaction Business Interaction",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffff99;shape=mxgraph.archimate3.application;appType=interaction;archiType=rounded;",
+   "value": "Business Interaction",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:200"
+  },
+  {
+   "id": "archimate3Business-13-business-interaction",
+   "title": "Business Interaction",
+   "tags": "archimate3  archimate business layer interaction Business Interaction",
+   "kind": "vertex",
+   "width": 40,
+   "height": 40,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffff99;shape=mxgraph.archimate3.interaction;",
+   "shapeNames": [
+    "mxgraph.archimate3.interaction"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:202"
+  },
+  {
+   "id": "archimate3Business-14-business-event",
+   "title": "Business Event",
+   "tags": "archimate3  archimate business layer business event Business Event",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffff99;shape=mxgraph.archimate3.application;appType=event;archiType=rounded;",
+   "value": "Business Event",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:204"
+  },
+  {
+   "id": "archimate3Business-15-business-event",
+   "title": "Business Event",
+   "tags": "archimate3  archimate business layer business event Business Event",
+   "kind": "vertex",
+   "width": 60,
+   "height": 35,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffff99;shape=mxgraph.archimate3.event;",
+   "shapeNames": [
+    "mxgraph.archimate3.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:206"
+  },
+  {
+   "id": "archimate3Business-16-business-service",
+   "title": "Business Service",
+   "tags": "archimate3  archimate business layer service Business Service",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffff99;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded;",
+   "value": "Business Service",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:208"
+  },
+  {
+   "id": "archimate3Business-17-business-service",
+   "title": "Business Service",
+   "tags": "archimate3  archimate business layer service Business Service",
+   "kind": "vertex",
+   "width": 60,
+   "height": 35,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffff99;shape=mxgraph.archimate3.service;",
+   "shapeNames": [
+    "mxgraph.archimate3.service"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:210"
+  },
+  {
+   "id": "archimate3Business-18-business-object",
+   "title": "Business Object",
+   "tags": "archimate3  archimate business layer service Business Object",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffff99;shape=mxgraph.archimate3.application;appType=passive;archiType=square;",
+   "value": "Business Object",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:212"
+  },
+  {
+   "id": "archimate3Business-19-business-object",
+   "title": "Business Object",
+   "tags": "archimate3  archimate business layer data object Business Object",
+   "kind": "vertex",
+   "width": 70,
+   "height": 40,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffff99;shape=mxgraph.archimate3.businessObject;overflow=fill;",
+   "value": "<table cellpadding=\"0\" cellspacing=\"0\" style=\"font-size:1em;width:100%;height:100%;\"><tr style=\"height:20px;\"><td align=\"center\"></td></tr><tr><td align=\"left\" valign=\"top\" style=\"padding:4px;\"></td></tr></table>",
+   "shapeNames": [
+    "mxgraph.archimate3.businessObject"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:214"
+  },
+  {
+   "id": "archimate3Business-20-contract",
+   "title": "Contract",
+   "tags": "archimate3  archimate business layer contract Contract",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffff99;shape=mxgraph.archimate3.application;appType=contract;archiType=square;",
+   "value": "Contract",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:217"
+  },
+  {
+   "id": "archimate3Business-21-contract",
+   "title": "Contract",
+   "tags": "archimate3  archimate business layer contract Contract",
+   "kind": "vertex",
+   "width": 70,
+   "height": 40,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffff99;shape=mxgraph.archimate3.contract;",
+   "shapeNames": [
+    "mxgraph.archimate3.contract"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:219"
+  },
+  {
+   "id": "archimate3Business-22-representation",
+   "title": "Representation",
+   "tags": "archimate3  archimate business layer contract Representation",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffff99;shape=mxgraph.archimate3.application;appType=representation;archiType=square;",
+   "value": "Representation",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:221"
+  },
+  {
+   "id": "archimate3Business-23-representation",
+   "title": "Representation",
+   "tags": "archimate3  archimate business layer representation Representation",
+   "kind": "vertex",
+   "width": 70,
+   "height": 40,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffff99;shape=mxgraph.archimate3.representation;",
+   "shapeNames": [
+    "mxgraph.archimate3.representation"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:223"
+  },
+  {
+   "id": "archimate3Business-24-product",
+   "title": "Product",
+   "tags": "archimate3  archimate business layer product Product",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffff99;shape=mxgraph.archimate3.application;appType=product;archiType=square;",
+   "value": "Product",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:225"
+  },
+  {
+   "id": "archimate3Business-25-product",
+   "title": "Product",
+   "tags": "archimate3  archimate business layer product Product",
+   "kind": "vertex",
+   "width": 70,
+   "height": 40,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#ffff99;shape=mxgraph.archimate3.product;",
+   "shapeNames": [
+    "mxgraph.archimate3.product"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:227"
+  }
+ ]
+}

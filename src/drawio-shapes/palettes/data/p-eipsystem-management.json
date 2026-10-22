@@ -1,0 +1,106 @@
+{
+ "id": "eipSystem Management",
+ "title": "EIP / System Management",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-EIP.js:7",
+ "entries": [
+  {
+   "id": "eipSystem Management-0-channel-purger",
+   "title": "Channel Purger",
+   "tags": "eip channel purger eip enterprise integration pattern system management  Channel Purger",
+   "kind": "vertex",
+   "width": 150,
+   "height": 90,
+   "style": "html=1;strokeWidth=2;outlineConnect=0;dashed=0;align=center;fontSize=8;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.eip.channel_purger;fillColor=#c0f5a9",
+   "shapeNames": [
+    "mxgraph.eip.channel_purger"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:348"
+  },
+  {
+   "id": "eipSystem Management-1-control-bus",
+   "title": "Control Bus",
+   "tags": "eip control bus eip enterprise integration pattern system management  Control Bus",
+   "kind": "vertex",
+   "width": 60,
+   "height": 40,
+   "style": "html=1;strokeWidth=2;outlineConnect=0;dashed=0;align=center;fontSize=8;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.eip.control_bus;fillColor=#c0f5a9",
+   "shapeNames": [
+    "mxgraph.eip.control_bus"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:350"
+  },
+  {
+   "id": "eipSystem Management-2-detour",
+   "title": "Detour",
+   "tags": "eip detour eip enterprise integration pattern system management  Detour",
+   "kind": "vertex",
+   "width": 150,
+   "height": 90,
+   "style": "html=1;strokeWidth=2;outlineConnect=0;dashed=0;align=center;fontSize=8;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.eip.detour;fillColor=#c0f5a9",
+   "shapeNames": [
+    "mxgraph.eip.detour"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:352"
+  },
+  {
+   "id": "eipSystem Management-3-message-store",
+   "title": "Message Store",
+   "tags": "eip message store eip enterprise integration pattern system management  Message Store",
+   "kind": "vertex",
+   "width": 150,
+   "height": 90,
+   "style": "html=1;strokeWidth=2;outlineConnect=0;dashed=0;align=center;fontSize=8;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.eip.message_store;fillColor=#c0f5a9",
+   "shapeNames": [
+    "mxgraph.eip.message_store"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:354"
+  },
+  {
+   "id": "eipSystem Management-4-smart-proxy",
+   "title": "Smart Proxy",
+   "tags": "eip smart proxy eip enterprise integration pattern system management  Smart Proxy",
+   "kind": "vertex",
+   "width": 70,
+   "height": 90,
+   "style": "html=1;strokeWidth=2;outlineConnect=0;dashed=0;align=center;fontSize=8;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.eip.smart_proxy;fillColor=#c0f5a9",
+   "shapeNames": [
+    "mxgraph.eip.smart_proxy"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:356"
+  },
+  {
+   "id": "eipSystem Management-5-test-message",
+   "title": "Test Message",
+   "tags": "eip test message eip enterprise integration pattern system management  Test Message",
+   "kind": "vertex",
+   "width": 150,
+   "height": 90,
+   "style": "html=1;strokeWidth=2;outlineConnect=0;dashed=0;align=center;fontSize=8;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.eip.test_message;fillColor=#c0f5a9",
+   "shapeNames": [
+    "mxgraph.eip.test_message"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:358"
+  },
+  {
+   "id": "eipSystem Management-6-wire-tap",
+   "title": "Wire Tap",
+   "tags": "eip wire tap eip enterprise integration pattern system management  Wire Tap",
+   "kind": "vertex",
+   "width": 150,
+   "height": 90,
+   "style": "html=1;strokeWidth=2;outlineConnect=0;dashed=0;align=center;fontSize=8;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.eip.wire_tap;fillColor=#c0f5a9",
+   "shapeNames": [
+    "mxgraph.eip.wire_tap"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:360"
+  }
+ ]
+}

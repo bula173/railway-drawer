@@ -1,0 +1,260 @@
+{
+ "id": "mscaeStorage Service",
+ "title": "CAE / Storage Service",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:8",
+ "entries": [
+  {
+   "id": "mscaeStorage Service-0-archive-storage",
+   "title": "Archive Storage",
+   "tags": "mscae archive storage ms microsoft cloud enterprise storage service Archive Storage",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Archive_Storage.svg;points=[[0.5,0.041,0],[0.5,1,0],[0,0.47,0],[1,0.47,0],[1,0.042,0],[0.96,0.971,0],[0.04,0.971,0],[0,0.042,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1417"
+  },
+  {
+   "id": "mscaeStorage Service-1-azure-netapp-files",
+   "title": "Azure NetApp files",
+   "tags": "mscae azure netapp files ms microsoft cloud enterprise storage service Azure NetApp files",
+   "kind": "vertex",
+   "width": 50,
+   "height": 42,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Azure_NetApp_files.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.982,0.006,0],[0.982,0.994,0],[0.01,0.988,0],[0.01,0.012,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1419"
+  },
+  {
+   "id": "mscaeStorage Service-2-storsimple",
+   "title": "StorSimple",
+   "tags": "mscae storsimple ms microsoft cloud enterprise storage service StorSimple",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/StorSimple.svg;points=[[0.583,0,0],[0.647,0.997,0],[0,0.471,0],[1,0.576,0],[0.787,0.087,0],[0.765,0.997,0],[0.063,0.647,0],[0.08,0.278,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1421"
+  },
+  {
+   "id": "mscaeStorage Service-3-azurefxtedgefiler",
+   "title": "AzureFXTEdgeFiler",
+   "tags": "mscae azurefxtedgefiler ms microsoft cloud enterprise storage service AzureFXTEdgeFiler",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/AzureFXTEdgeFiler.svg;points=[[0.5,0.102,0],[0.594,1,0],[0,0.5,0],[1,0.5,0],[0.855,0.103,0],[0.997,0.992,0],[0.193,0.995,0],[0,0,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1423"
+  },
+  {
+   "id": "mscaeStorage Service-4-blob-storage",
+   "title": "Blob Storage",
+   "tags": "mscae blob storage ms microsoft cloud enterprise storage service Blob Storage",
+   "kind": "vertex",
+   "width": 50,
+   "height": 46,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Blog_Storage.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.447,0],[1,0.447,0],[1,0,0],[0.96,0.97,0],[0.04,0.97,0],[0,0,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1425"
+  },
+  {
+   "id": "mscaeStorage Service-5-data-box-edge-data-box-gateway",
+   "title": "Data Box Edge - Data Box Gateway",
+   "tags": "mscae data box edge data gateway ms microsoft cloud enterprise storage service Data Box Edge - Data Box Gateway",
+   "kind": "vertex",
+   "width": 50,
+   "height": 32,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Data_Box_Edge_Data_Box_Gateway.svg;points=[[0.496,0,0],[0.502,1,0],[0.005,0.5,0],[0.988,0.5,0],[0.882,0.286,0],[0.885,0.937,0],[0.12,0.937,0],[0.118,0.286,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1427"
+  },
+  {
+   "id": "mscaeStorage Service-6-data-box-import-export-storage",
+   "title": "Data Box / Import Export Storage",
+   "tags": "mscae data box ms microsoft cloud enterprise storage service Data Box / Import Export Storage",
+   "kind": "vertex",
+   "width": 50,
+   "height": 47,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Data_Box.svg;points=[[0.496,0,0],[0.5,0.9,0],[0,0.391,0],[1,0.412,0],[0.915,0.216,0],[0.615,0.997,0],[0.09,0.603,0],[0.093,0.181,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1429"
+  },
+  {
+   "id": "mscaeStorage Service-7-data-lake-storage",
+   "title": "Data Lake Storage",
+   "tags": "mscae data lake storage ms microsoft cloud enterprise storage service Data Lake Storage",
+   "kind": "vertex",
+   "width": 50,
+   "height": 46,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Data_Lake_Storage.svg;points=[[0.5,0,0],[0.5,0.992,0],[0,0.48,0],[1,0.48,0],[1,0.076,0],[0.955,0.964,0],[0.048,0.967,0],[0,0.076,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1431"
+  },
+  {
+   "id": "mscaeStorage Service-8-general-storage",
+   "title": "General Storage",
+   "tags": "mscae general storage ms microsoft cloud enterprise storage service General Storage",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/General_Storage.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.962,0.03,0],[0.97,0.962,0],[0.03,0.962,0],[0.04,0.028,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1433"
+  },
+  {
+   "id": "mscaeStorage Service-9-queues-storage",
+   "title": "Queues Storage",
+   "tags": "mscae queues storage ms microsoft cloud enterprise storage service Queues Storage",
+   "kind": "vertex",
+   "width": 50,
+   "height": 44,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Queues_Storage.svg;points=[[0.5,0,0],[0.511,1,0],[0,0.432,0],[1,0.446,0],[1,0,0],[0.962,0.977,0],[0.053,0.971,0],[0,0,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1435"
+  },
+  {
+   "id": "mscaeStorage Service-10-classic-storage",
+   "title": "Classic Storage",
+   "tags": "mscae classic storage ms microsoft cloud enterprise storage service Classic Storage",
+   "kind": "vertex",
+   "width": 50,
+   "height": 43,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/ClassicStorage.svg;points=[[0.494,0,0],[0.499,0.997,0],[0,0.499,0],[1,0.5,0],[0.992,0.018,0],[0.985,0.991,0],[0.018,0.994,0],[0.015,0.006,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1437"
+  },
+  {
+   "id": "mscaeStorage Service-11-storage-accounts",
+   "title": "Storage Accounts",
+   "tags": "mscae storage accounts ms microsoft cloud enterprise storage service Storage Accounts",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Storage_Accounts.svg;points=[[0.5,0,0],[0.499,1,0],[0,0.447,0],[1,0.446,0],[1,0,0],[0.96,0.969,0],[0.045,0.975,0],[0,0,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1439"
+  },
+  {
+   "id": "mscaeStorage Service-12-storage-explorer",
+   "title": "Storage Explorer",
+   "tags": "mscae storage explorer ms microsoft cloud enterprise storage service Storage Explorer",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Storage_Explorer.svg;points=[[0.188,0,0],[0.562,1,0],[0,0.105,0],[1,0.584,0],[0.987,0.17,0],[0.997,0.985,0],[0.13,0.99,0],[0,0,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1441"
+  },
+  {
+   "id": "mscaeStorage Service-13-storage-sync-services",
+   "title": "Storage Sync Services",
+   "tags": "mscae storage sync services ms microsoft cloud enterprise storage service Storage Sync Services",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Storage_sync_service.svg;points=[[0.5,0.037,0],[0.608,0.998,0],[0,0.441,0],[0.995,0.443,0],[0.812,0.065,0],[0.78,0.995,0],[0.425,0.985,0],[0.17,0.13,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1443"
+  },
+  {
+   "id": "mscaeStorage Service-14-storsimple-data-managers",
+   "title": "StorSimple Data Managers",
+   "tags": "mscae storsimple data managers ms microsoft cloud enterprise storage service StorSimple Data Managers",
+   "kind": "vertex",
+   "width": 37,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/StorSimple_Data_Managers.svg;points=[[0.497,0,0],[0.5,0.995,0],[0,0.496,0],[1,0.497,0],[0.986,0.095,0],[0.993,0.892,0],[0.014,0.892,0],[0.017,0.098,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1445"
+  },
+  {
+   "id": "mscaeStorage Service-15-storsimple-device-managers",
+   "title": "StorSimple Device Managers",
+   "tags": "mscae storsimple device managers ms microsoft cloud enterprise storage service StorSimple Device Managers",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45,
+   "style": "aspect=fixed;verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.storsimple;",
+   "shapeNames": [
+    "mxgraph.azure.storsimple"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1447"
+  },
+  {
+   "id": "mscaeStorage Service-16-storsimple-data-managers",
+   "title": "StorSimple Data Managers",
+   "tags": "mscae storsimple data managers ms microsoft cloud enterprise storage service StorSimple Data Managers",
+   "kind": "vertex",
+   "width": 37,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/StorSimple_Data_Managers.svg;points=[[0.497,0,0],[0.5,0.995,0],[0,0.496,0],[1,0.497,0],[0.986,0.095,0],[0.993,0.892,0],[0.014,0.892,0],[0.017,0.098,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1449"
+  },
+  {
+   "id": "mscaeStorage Service-17-table-storage",
+   "title": "Table Storage",
+   "tags": "mscae table storage ms microsoft cloud enterprise storage service Table Storage",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Table_Storage.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.955,0.026,0],[0.952,0.976,0],[0.048,0.976,0],[0.045,0.026,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1451"
+  }
+ ]
+}

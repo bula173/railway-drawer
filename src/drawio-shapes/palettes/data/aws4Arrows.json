@@ -1,0 +1,116 @@
+{
+ "id": "aws4Arrows",
+ "title": "AWS / Arrows",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-AWS4.js:8",
+ "entries": [
+  {
+   "id": "aws4Arrows-0-default-left",
+   "title": "Default (left)",
+   "tags": "aws4  aws amazon web service arrows arrow default left",
+   "kind": "edge",
+   "width": 100,
+   "height": 0,
+   "style": "edgeStyle=orthogonalEdgeStyle;html=1;endArrow=none;elbow=vertical;startArrow=block;startFill=1;strokeColor=#545B64;rounded=0;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:93"
+  },
+  {
+   "id": "aws4Arrows-1-default-right",
+   "title": "Default (right)",
+   "tags": "aws4  aws amazon web service arrows arrow default right",
+   "kind": "edge",
+   "width": 100,
+   "height": 0,
+   "style": "edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;elbow=vertical;startArrow=none;endFill=1;strokeColor=#545B64;rounded=0;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:95"
+  },
+  {
+   "id": "aws4Arrows-2-default-double",
+   "title": "Default (double)",
+   "tags": "aws4  aws amazon web service arrows arrow default double",
+   "kind": "edge",
+   "width": 100,
+   "height": 0,
+   "style": "edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;elbow=vertical;startArrow=block;startFill=1;endFill=1;strokeColor=#545B64;rounded=0;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:97"
+  },
+  {
+   "id": "aws4Arrows-3-open-thin-left",
+   "title": "Open (thin, left)",
+   "tags": "aws4  aws amazon web service arrows arrow open thin left",
+   "kind": "edge",
+   "width": 100,
+   "height": 0,
+   "style": "edgeStyle=orthogonalEdgeStyle;html=1;endArrow=none;elbow=vertical;startArrow=openThin;startFill=0;strokeColor=#545B64;rounded=0;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:99"
+  },
+  {
+   "id": "aws4Arrows-4-open-thin-right",
+   "title": "Open (thin, right)",
+   "tags": "aws4  aws amazon web service arrows arrow open thin right",
+   "kind": "edge",
+   "width": 100,
+   "height": 0,
+   "style": "edgeStyle=orthogonalEdgeStyle;html=1;endArrow=openThin;elbow=vertical;startArrow=none;endFill=0;strokeColor=#545B64;rounded=0;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:101"
+  },
+  {
+   "id": "aws4Arrows-5-open-thin-double",
+   "title": "Open (thin, double)",
+   "tags": "aws4  aws amazon web service arrows arrow open thin double",
+   "kind": "edge",
+   "width": 100,
+   "height": 0,
+   "style": "edgeStyle=orthogonalEdgeStyle;html=1;endArrow=openThin;elbow=vertical;startArrow=openThin;startFill=0;endFill=0;strokeColor=#545B64;rounded=0;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:103"
+  },
+  {
+   "id": "aws4Arrows-6-open-left",
+   "title": "Open (left)",
+   "tags": "aws4  aws amazon web service arrows arrow open left",
+   "kind": "edge",
+   "width": 100,
+   "height": 0,
+   "style": "edgeStyle=orthogonalEdgeStyle;html=1;endArrow=none;elbow=vertical;startArrow=open;startFill=0;strokeColor=#545B64;rounded=0;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:105"
+  },
+  {
+   "id": "aws4Arrows-7-open-right",
+   "title": "Open (right)",
+   "tags": "aws4  aws amazon web service arrows arrow open right",
+   "kind": "edge",
+   "width": 100,
+   "height": 0,
+   "style": "edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;elbow=vertical;startArrow=none;endFill=0;strokeColor=#545B64;rounded=0;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:107"
+  },
+  {
+   "id": "aws4Arrows-8-open-double",
+   "title": "Open (double)",
+   "tags": "aws4  aws amazon web service arrows arrow open double",
+   "kind": "edge",
+   "width": 100,
+   "height": 0,
+   "style": "edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;elbow=vertical;startArrow=open;startFill=0;endFill=0;strokeColor=#545B64;rounded=0;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:109"
+  }
+ ]
+}

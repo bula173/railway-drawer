@@ -1,0 +1,806 @@
+{
+ "id": "network2",
+ "title": "Network 2025",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Network2.js:7",
+ "entries": [
+  {
+   "id": "network2-0-antenna",
+   "title": "Antenna",
+   "tags": "networks2 antenna computer network  Antenna",
+   "kind": "vertex",
+   "width": 25.4,
+   "height": 49.985,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.antenna;network2IconYOffset=0.0004;network2IconW=0.508;network2IconH=0.9997;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:20"
+  },
+  {
+   "id": "network2-1-application",
+   "title": "Application",
+   "tags": "networks2 application computer network  Application",
+   "kind": "vertex",
+   "width": 29.635,
+   "height": 51,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.application;network2IconXOffset=0.0048;network2IconYOffset=-0.0000;network2IconW=0.5927;network2IconH=1.02;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:21"
+  },
+  {
+   "id": "network2-2-big-data",
+   "title": "Big Data",
+   "tags": "networks2 big data computer network  Big Data",
+   "kind": "vertex",
+   "width": 50,
+   "height": 49.8,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.big_data;network2IconXOffset=-0.0002;network2IconYOffset=0.0015;network2IconW=1;network2IconH= 0.996;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:22"
+  },
+  {
+   "id": "network2-3-biohazard",
+   "title": "Biohazard",
+   "tags": "networks2 biohazard computer network  Biohazard",
+   "kind": "vertex",
+   "width": 50.62,
+   "height": 46.5,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.biohazard;network2IconXOffset=-0.0048;network2IconYOffset=-0.001;network2IconW=1.0124;network2IconH=0.93;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:23"
+  },
+  {
+   "id": "network2-4-biometric-reader",
+   "title": "Biometric Reader",
+   "tags": "networks2 biometric reader computer network  Biometric Reader",
+   "kind": "vertex",
+   "width": 42.035,
+   "height": 49.855,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.biometric_reader;network2IconXOffset=0.00008;network2IconYOffset=0.00161;network2IconW=0.8407;network2IconH=0.9971;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:24"
+  },
+  {
+   "id": "network2-5-cctv",
+   "title": "CCTV",
+   "tags": "networks2 cctv computer network  CCTV",
+   "kind": "vertex",
+   "width": 50.019999999999996,
+   "height": 36.394999999999996,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.cctv;network2IconXOffset=-0.0002;network2IconYOffset=-0.0355;network2IconW=1.0004;network2IconH=0.7279;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:25"
+  },
+  {
+   "id": "network2-6-cloud",
+   "title": "Cloud",
+   "tags": "networks2 cloud computer network  Cloud",
+   "kind": "vertex",
+   "width": 50.019999999999996,
+   "height": 36.11,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.cloud;network2IconYOffset=-0.08;network2IconW=1.0004;network2IconH=0.7222;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:26"
+  },
+  {
+   "id": "network2-7-community",
+   "title": "Community",
+   "tags": "networks2 community computer network  Community",
+   "kind": "vertex",
+   "width": 43.8,
+   "height": 50.144999999999996,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.community;network2IconXOffset=-0.0036;network2IconYOffset=0.00087;network2IconW=0.876;network2IconH=1.0029;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:27"
+  },
+  {
+   "id": "network2-8-copier",
+   "title": "Copier",
+   "tags": "networks2 copier computer network  Copier",
+   "kind": "vertex",
+   "width": 44.305,
+   "height": 49.895,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.copier;network2IconXOffset=0.04746;network2IconYOffset=-0.00027;network2IconW=0.8861;network2IconH=0.9979;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:28"
+  },
+  {
+   "id": "network2-9-data-management",
+   "title": "Data Management",
+   "tags": "networks2 data management computer network  Data Management",
+   "kind": "vertex",
+   "width": 41.260000000000005,
+   "height": 49.945,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.data_management;network2IconW=0.8252;network2IconH=0.9989;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:29"
+  },
+  {
+   "id": "network2-10-data-storage",
+   "title": "Data Storage",
+   "tags": "networks2 data storage computer network  Data Storage",
+   "kind": "vertex",
+   "width": 41.260000000000005,
+   "height": 49.945,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.data_storage;network2IconW=0.8252;network2IconH=0.9989;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:30"
+  },
+  {
+   "id": "network2-11-desktop-pc",
+   "title": "Desktop PC",
+   "tags": "networks2 desktop pc personal computer computer network  Desktop PC",
+   "kind": "vertex",
+   "width": 22.650000000000002,
+   "height": 49.975,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.desktop_pc;network2IconXOffset=-0.0034;network2IconYOffset=0.00035;network2IconW=0.453;network2IconH=0.9995;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:31"
+  },
+  {
+   "id": "network2-12-encryption",
+   "title": "Encryption",
+   "tags": "networks2 encryption computer network  Encryption",
+   "kind": "vertex",
+   "width": 50.005,
+   "height": 35.095,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.encryption;network2IconXOffset=0.0006;network2IconYOffset=0.0881;network2IconW=1.0001;network2IconH=0.7019;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:32"
+  },
+  {
+   "id": "network2-13-external-storage",
+   "title": "External Storage",
+   "tags": "networks2 external storage computer network  External Storage",
+   "kind": "vertex",
+   "width": 50,
+   "height": 39.934999999999995,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.external_storage;network2IconYOffset=-0.0267;network2IconW=1;network2IconH=0.7987;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:33"
+  },
+  {
+   "id": "network2-14-firewall",
+   "title": "Firewall",
+   "tags": "networks2 firewall computer network  Firewall",
+   "kind": "vertex",
+   "width": 50,
+   "height": 30.4,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.firewall;network2IconXOffset=0.0001;network2IconYOffset=0.0001;network2IconW=1;network2IconH=0.608;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:34"
+  },
+  {
+   "id": "network2-15-gamepad",
+   "title": "Gamepad",
+   "tags": "networks2 gamepad computer network  Gamepad",
+   "kind": "vertex",
+   "width": 50.105,
+   "height": 36.79,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.gamepad;network2IconXOffset=0.00005;network2IconYOffset=0.00163;network2IconW=1.0021;network2IconH=0.7358;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:35"
+  },
+  {
+   "id": "network2-16-global-server",
+   "title": "Global Server",
+   "tags": "networks2 global server computer network  Global Server",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "fillColorStyles=neutralFill;neutralFill=#9DA6A8;shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.global_server;network2IconW=1;network2IconH=1;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:36"
+  },
+  {
+   "id": "network2-17-globe",
+   "title": "Globe",
+   "tags": "networks2 globe computer network  Globe",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.globe;network2IconW=1;network2IconH=1;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:37"
+  },
+  {
+   "id": "network2-18-hub",
+   "title": "Hub",
+   "tags": "networks2 hub computer network  Hub",
+   "kind": "vertex",
+   "width": 50,
+   "height": 14.69,
+   "style": "fillColorStyles=neutralFill;neutralFill=#9DA6A8;shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.hub;network2IconXOffset=0.0001;network2IconYOffset=0.0129;network2IconW=1;network2IconH=0.2938;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:38"
+  },
+  {
+   "id": "network2-19-internet",
+   "title": "Internet",
+   "tags": "networks2 internet computer network  Internet",
+   "kind": "vertex",
+   "width": 48.385,
+   "height": 38.61,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.internet;network2IconXOffset=0.0012;network2IconYOffset=0.0035;network2IconW=0.9677;network2IconH=0.7722;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:39"
+  },
+  {
+   "id": "network2-20-internet-security",
+   "title": "Internet Security",
+   "tags": "networks2 internet security computer network  Internet Security",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.internet_security;network2IconW=1;network2IconH=1;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:40"
+  },
+  {
+   "id": "network2-21-lan",
+   "title": "LAN",
+   "tags": "networks2 lan local area network computer network  LAN",
+   "kind": "vertex",
+   "width": 54.169999999999995,
+   "height": 37.82,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.lan;network2IconYOffset=0.0558;network2IconW=1.0834;network2IconH=0.7564;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:41"
+  },
+  {
+   "id": "network2-22-laptop",
+   "title": "Laptop",
+   "tags": "networks2 laptop computer network  Laptop",
+   "kind": "vertex",
+   "width": 50,
+   "height": 28.67,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.laptop;network2IconW=1;network2IconH=0.5734;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:42"
+  },
+  {
+   "id": "network2-23-load-balancer",
+   "title": "Load Balancer",
+   "tags": "networks2 load balancer computer network  Load Balancer",
+   "kind": "vertex",
+   "width": 43,
+   "height": 38,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.load_balancer;network2IconW=0.86;network2IconH=0.76;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:43"
+  },
+  {
+   "id": "network2-24-lock",
+   "title": "Lock",
+   "tags": "networks2 lock computer network  Lock",
+   "kind": "vertex",
+   "width": 40,
+   "height": 49.995,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.lock;network2IconW=0.8;network2IconH=0.9999;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:44"
+  },
+  {
+   "id": "network2-25-mail-server",
+   "title": "Mail Server",
+   "tags": "networks2 mail server computer network  Mail Server",
+   "kind": "vertex",
+   "width": 50,
+   "height": 39.375,
+   "style": "fillColorStyles=neutralFill;neutralFill=#9DA6A8;shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.mail_server;network2IconYOffset=-0.02556;network2IconW=1;network2IconH=0.7875;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:45"
+  },
+  {
+   "id": "network2-26-mainframe",
+   "title": "Mainframe",
+   "tags": "networks2 mainframe computer network  Mainframe",
+   "kind": "vertex",
+   "width": 23.605,
+   "height": 50,
+   "style": "fillColorStyles=neutralFill;neutralFill=#9DA6A8;shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.mainframe;network2IconW=0.4721;network2IconH=1;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:46"
+  },
+  {
+   "id": "network2-27-mobile-network",
+   "title": "Mobile Network",
+   "tags": "networks2 mobile network computer network  Mobile Network",
+   "kind": "vertex",
+   "width": 26.484999999999996,
+   "height": 51,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.mobile_network;network2IconXOffset=0.0049;network2IconW=0.5297;network2IconH=1.02;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:47"
+  },
+  {
+   "id": "network2-28-mobile-phone",
+   "title": "Mobile Phone",
+   "tags": "networks2 mobile phone cell computer network  Mobile Phone",
+   "kind": "vertex",
+   "width": 26.484999999999996,
+   "height": 51,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.mobile_phone;network2IconXOffset=0.0049;network2IconW=0.5297;network2IconH=1.02;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:48"
+  },
+  {
+   "id": "network2-29-modem",
+   "title": "Modem",
+   "tags": "networks2 modem computer network  Modem",
+   "kind": "vertex",
+   "width": 50,
+   "height": 14.69,
+   "style": "fillColorStyles=neutralFill;neutralFill=#9DA6A8;shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.modem;network2IconYOffset=0.0131;network2IconW=1;network2IconH=0.2938;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:49"
+  },
+  {
+   "id": "network2-30-monitor",
+   "title": "Monitor",
+   "tags": "networks2 monitor computer network  Monitor",
+   "kind": "vertex",
+   "width": 50,
+   "height": 37.1,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.monitor;network2IconYOffset=-0.009;network2IconW=1;network2IconH=0.742;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:50"
+  },
+  {
+   "id": "network2-31-nas-filer",
+   "title": "NAS Filer",
+   "tags": "networks2 nas filer computer network  NAS Filer",
+   "kind": "vertex",
+   "width": 50,
+   "height": 31,
+   "style": "fillColorStyles=neutralFill;neutralFill=#9DA6A8;shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.nas_filer;network2IconW=1;network2IconH=0.62;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:51"
+  },
+  {
+   "id": "network2-32-network",
+   "title": "Network",
+   "tags": "networks2 network computer network  Network",
+   "kind": "vertex",
+   "width": 50,
+   "height": 43.004999999999995,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.network;network2IconW=1;network2IconH=0.8601;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:52"
+  },
+  {
+   "id": "network2-33-network-security",
+   "title": "Network Security",
+   "tags": "networks2 network security computer network  Network Security",
+   "kind": "vertex",
+   "width": 50,
+   "height": 43,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.network_security;network2IconW=1;network2IconH=0.86;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:53"
+  },
+  {
+   "id": "network2-34-patch-panel",
+   "title": "Patch Panel",
+   "tags": "networks2 patch panel computer network  Patch Panel",
+   "kind": "vertex",
+   "width": 50,
+   "height": 16.794999999999998,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.patch_panel;network2IconXOffset=0.0001;network2IconYOffset=-0.0211;network2IconW=1;network2IconH=0.3359;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:54"
+  },
+  {
+   "id": "network2-35-pc",
+   "title": "PC",
+   "tags": "networks2 pc personal computer computer network  PC",
+   "kind": "vertex",
+   "width": 49.995,
+   "height": 35.480000000000004,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.pc;network2IconYOffset=-0.0593;network2IconW=0.9999;network2IconH=0.7096;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:55"
+  },
+  {
+   "id": "network2-36-phone",
+   "title": "Phone",
+   "tags": "networks2 phone computer network  Phone",
+   "kind": "vertex",
+   "width": 49.735,
+   "height": 39.735,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.phone;network2IconXOffset=0.0009;network2IconYOffset=-0.0064;network2IconW=0.9947;network2IconH=0.7947;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:56"
+  },
+  {
+   "id": "network2-37-printer",
+   "title": "Printer",
+   "tags": "networks2 printer computer network  Printer",
+   "kind": "vertex",
+   "width": 50,
+   "height": 52,
+   "style": "fillColorStyles=neutralFill;neutralFill=#9DA6A8;shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.printer;network2IconW=1;network2IconH=1.04;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:57"
+  },
+  {
+   "id": "network2-38-projector-canvas",
+   "title": "Projector Canvas",
+   "tags": "networks2 projector canvas computer network  Projector Canvas",
+   "kind": "vertex",
+   "width": 50,
+   "height": 52,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.projector_canvas;network2IconW=1;network2IconH=1.04;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:58"
+  },
+  {
+   "id": "network2-39-rack-cabinet",
+   "title": "Rack Cabinet",
+   "tags": "networks2 rack cabinet computer network  Rack Cabinet",
+   "kind": "vertex",
+   "width": 23.605,
+   "height": 50,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.rack_cabinet;network2IconW=0.4721;network2IconH=1;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:59"
+  },
+  {
+   "id": "network2-40-router",
+   "title": "Router",
+   "tags": "networks2 router computer network  Router",
+   "kind": "vertex",
+   "width": 50,
+   "height": 27.425,
+   "style": "fillColorStyles=neutralFill;neutralFill=#9DA6A8;shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.router;network2IconXOffset=0.0001;network2IconYOffset=-0.1142;network2IconW=1;network2IconH=0.5485;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:60"
+  },
+  {
+   "id": "network2-41-satellite-dish",
+   "title": "Satellite Dish",
+   "tags": "networks2 satellite dish computer network  Satellite Dish",
+   "kind": "vertex",
+   "width": 50.324999999999996,
+   "height": 49.785000000000004,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.satellite_dish;network2IconXOffset=-0.0067;network2IconYOffset=0.0022;network2IconW=1.0065;network2IconH=0.9957;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:61"
+  },
+  {
+   "id": "network2-42-satellite",
+   "title": "Satellite",
+   "tags": "networks2 satellite computer network  Satellite",
+   "kind": "vertex",
+   "width": 57.765,
+   "height": 48.705,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.satellite;network2IconXOffset=0.0149;network2IconYOffset=-0.00046;network2IconW=1.1553;network2IconH=0.9741;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:62"
+  },
+  {
+   "id": "network2-43-scanner",
+   "title": "Scanner",
+   "tags": "networks2 scanner computer network  Scanner",
+   "kind": "vertex",
+   "width": 50.005,
+   "height": 29.825000000000003,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.scanner;network2IconXOffset=0.00024;network2IconYOffset=-0.08;network2IconW=1.0001;network2IconH=0.5965;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:63"
+  },
+  {
+   "id": "network2-44-server",
+   "title": "Server",
+   "tags": "networks2 server computer network  Server",
+   "kind": "vertex",
+   "width": 50.005,
+   "height": 29.060000000000002,
+   "style": "fillColorStyles=neutralFill;neutralFill=#9DA6A8;shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.server;network2IconW=1.0001;network2IconH=0.5812;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:64"
+  },
+  {
+   "id": "network2-45-social-media",
+   "title": "Social Media",
+   "tags": "networks2 social media computer network  Social Media",
+   "kind": "vertex",
+   "width": 51,
+   "height": 46.6,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.social_media;network2IconYOffset=0.0153;network2IconW=1.02;network2IconH=0.932;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:65"
+  },
+  {
+   "id": "network2-46-tablet",
+   "title": "Tablet",
+   "tags": "networks2 tablet computer network  Tablet",
+   "kind": "vertex",
+   "width": 50,
+   "height": 32.83,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.tablet;network2IconW=1;network2IconH=0.6566;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:66"
+  },
+  {
+   "id": "network2-47-terminal",
+   "title": "Terminal",
+   "tags": "networks2 terminal computer network  Terminal",
+   "kind": "vertex",
+   "width": 42.77,
+   "height": 50,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.terminal;network2IconW=0.8554;network2IconH=1;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:67"
+  },
+  {
+   "id": "network2-48-threat",
+   "title": "Threat",
+   "tags": "networks2 threat computer network  Threat",
+   "kind": "vertex",
+   "width": 53.125,
+   "height": 47.915,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.threat;network2IconYOffset=-0.0472;network2IconW=1.0625;network2IconH=0.9583;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:68"
+  },
+  {
+   "id": "network2-49-ups",
+   "title": "UPS",
+   "tags": "networks2 ups uninterruptible power supply computer network  UPS",
+   "kind": "vertex",
+   "width": 31,
+   "height": 50.029999999999994,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.ups;network2IconXOffset=-0.0006;network2IconYOffset=0.0003;network2IconW=0.62;network2IconH=1.0006;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:69"
+  },
+  {
+   "id": "network2-50-user-female",
+   "title": "User, Female",
+   "tags": "networks2 user female computer network  User, Female",
+   "kind": "vertex",
+   "width": 40.48,
+   "height": 49.7,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.user_female;network2IconXOffset=-0.0011;network2IconYOffset=-0.003;network2IconW=0.8096;network2IconH=0.994;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:70"
+  },
+  {
+   "id": "network2-51-user-male",
+   "title": "User, Male",
+   "tags": "networks2 user male computer network  User, Male",
+   "kind": "vertex",
+   "width": 44.59,
+   "height": 50.015,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.user_male;network2IconW=0.8918;network2IconH=1.0003;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:71"
+  },
+  {
+   "id": "network2-52-users",
+   "title": "Users",
+   "tags": "networks2 users computer network  Users",
+   "kind": "vertex",
+   "width": 51.76500000000001,
+   "height": 33.115,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.users;network2IconXOffset=0.0019;network2IconYOffset=-0.0004;network2IconW=1.0353;network2IconH=0.6623;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:72"
+  },
+  {
+   "id": "network2-53-video-projector",
+   "title": "Video Projector",
+   "tags": "networks2 video projector computer network  Video Projector",
+   "kind": "vertex",
+   "width": 50,
+   "height": 14.7,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.video_projector;network2IconYOffset=0.013;network2IconW=1;network2IconH=0.294;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:73"
+  },
+  {
+   "id": "network2-54-vr",
+   "title": "VR",
+   "tags": "networks2 vr virtual reality computer network  VR",
+   "kind": "vertex",
+   "width": 50,
+   "height": 22.5,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.vr;network2IconYOffset=-0.015;network2IconW=1;network2IconH=0.45;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:74"
+  },
+  {
+   "id": "network2-55-web-hosting",
+   "title": "Web Hosting",
+   "tags": "networks2 web hosting computer network  Web Hosting",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45.625,
+   "style": "shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.web_hosting;network2IconW=1;network2IconH=0.9125;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:75"
+  },
+  {
+   "id": "network2-56-wireless-hub",
+   "title": "Wireless Hub",
+   "tags": "networks2 wireless hub computer network  Wireless Hub",
+   "kind": "vertex",
+   "width": 50,
+   "height": 27.425,
+   "style": "fillColorStyles=neutralFill;neutralFill=#9DA6A8;shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.wireless_hub;network2IconYOffset=-0.1142;network2IconW=1;network2IconH=0.5485;",
+   "shapeNames": [
+    "mxgraph.networks2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Network2.js:76"
+  }
+ ]
+}

@@ -20,6 +20,9 @@ import {
 } from './library-adapter';
 import type { StoredLibrary } from './library-adapter';
 import { THUMB_SIZE, ThumbnailRenderer } from './thumbnail-renderer';
+import { loadPalette, loadPaletteCatalogue } from '../../drawio-shapes/palettes';
+import type { PaletteCatalogue } from '../../drawio-shapes/palettes';
+import type { PaletteViewInternals } from './view-internals';
 
 export const VISIBLE_STORAGE_KEY = 'rd.drawioPalettes.visible';
 export const EXPANDED_STORAGE_KEY = 'rd.drawioPalettes.expanded';
@@ -93,6 +96,13 @@ export interface DrawioPaletteViewOptions {
    * ERTMS-only tab) keeps its own state. Default: the shared keys.
    */
   storageKeySuffix?: string;
+  /**
+   * Adds every other draw.io library (the generated catalogue, loaded lazily) as hidden sections
+   * that "More shapes…" turns on, and searches them all. Default: when the More shapes menu is shown.
+   */
+  catalogue?: boolean;
+  /** Catalogue palettes another section already shows (e.g. 'basic', merged into General). */
+  skipCataloguePalettes?: string[];
 }
 
 export interface PaletteMenuItem {
@@ -113,6 +123,29 @@ export interface DrawioPaletteView {
   /** Adds a user library from `<mxlibrary>` text, persists it and returns its palette id. */
   importLibraryText(text: string, title: string): string;
   removeLibrary(id: string): void;
+  /** Resolves once the draw.io catalogue sections exist (immediately without a catalogue). */
+  readonly catalogueReady: Promise<void>;
+  /** Resolves when the latest search over all draw.io libraries has rendered. */
+  readonly globalSearchDone: Promise<void>;
+  /** Shows or hides every palette of a draw.io library ("More shapes" entry), e.g. 'aws4'. */
+  setLibraryVisible(libraryId: string, visible: boolean): void;
+  isLibraryVisible(libraryId: string): boolean;
+  /** Opens the More shapes dialog. */
+  openMoreShapes(): void;
+  /** Creates an empty user library and returns its palette id. */
+  createLibrary(title: string): string;
+  /** Renames a user library. */
+  renameLibrary(id: string, title: string): void;
+  /** Adds the graph's selection to a user library; false when nothing is selected. */
+  addSelectionToLibrary(id: string): Promise<boolean>;
+  /** Adds a palette entry (e.g. dragged from another section) to a user library. */
+  addEntryToLibrary(id: string, entry: PaletteEntry): Promise<void>;
+  /** The `<mxlibrary>` text of a user library (what Export saves). */
+  getLibraryText(id: string): string | null;
+  /** Downloads a user library as a draw.io library file. */
+  exportLibrary(id: string): void;
+  /** Fetches a draw.io library from a URL and adds it; resolves its palette id (null on error). */
+  openLibraryUrl(url: string): Promise<string | null>;
   /** Inserts an entry into the current graph (default: at the view centre). */
   insert(entry: PaletteEntry, at?: { x: number; y: number }): void;
   /** Drop handler for `dropTarget`-like elements; returns true when it inserted an entry. */
@@ -224,6 +257,9 @@ interface Category {
   header: HTMLButtonElement;
   body: HTMLElement;
   items: Array<{ entry: PaletteEntry; node: HTMLElement; text: string }>;
+  /** draw.io library of a catalogue section. */
+  library?: string;
+  catalogue?: boolean;
 }
 
 export function createDrawioPaletteView(options: DrawioPaletteViewOptions): DrawioPaletteView {
@@ -241,6 +277,7 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
   const visibleKey = VISIBLE_STORAGE_KEY + (options.storageKeySuffix ?? '');
   const expandedKey = EXPANDED_STORAGE_KEY + (options.storageKeySuffix ?? '');
   const userLibraries = options.userLibraries ?? true;
+  const useCatalogue = options.catalogue ?? options.showMoreMenu !== false;
   const visibleFlags = readFlags(visibleKey);
   const expandedFlags = readFlags(expandedKey);
   const firstId = options.palettes[0]?.id;
@@ -260,7 +297,8 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
   const footer = el('div', 'rd-dp-footer');
   const moreBtn = el('button', 'rd-dp-more', 'More shapes…');
   moreBtn.type = 'button';
-  const importBtn = el('button', 'rd-dp-import', 'Import library…');
+  const importBtn = el('button', 'rd-dp-import', '＋ Add library');
+  importBtn.title = 'Add a draw.io library: import a .xml file, open one from a URL or start an empty one';
   importBtn.type = 'button';
   const fileInput = el('input');
   fileInput.type = 'file';
@@ -272,7 +310,8 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
   footer.hidden = moreBtn.hidden && importBtn.hidden;
   const menu = el('div', 'rd-dp-menu');
   menu.hidden = true;
-  menu.setAttribute('role', 'menu');
+  menu.setAttribute('role', 'dialog');
+  menu.setAttribute('aria-label', 'More shapes');
   const preview = el('div', 'rd-dp-preview');
   preview.hidden = true;
   root.append(toolbar, status, list, footer, menu);
@@ -523,7 +562,7 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
     return cat.loading;
   }
 
-  function addCategory(source: PaletteSource, removable: boolean, before?: HTMLElement): Category {
+  function addCategory(source: PaletteSource, removable: boolean, before?: Node): Category {
     const meta = source as Partial<PaletteMeta> & { id: string; title: string };
     const catRoot = el('section', 'rd-dp-category');
     if (captioned.has(meta.id)) catRoot.classList.add('rd-dp-captioned');
@@ -548,6 +587,23 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
       items: [],
     };
     if (removable) {
+      const tools: Array<[string, string, string, () => void]> = [
+        ['rd-dp-lib-add', '＋', `Add the selected shapes to "${meta.title}"`, () => void addSelectionToLibrary(cat.id)],
+        ['rd-dp-lib-rename', '✎', `Rename library "${meta.title}"`, () => renameLibraryInteractive(cat.id)],
+        ['rd-dp-lib-export', '⤓', `Export library "${meta.title}" (draw.io .xml)`, () => exportLibrary(cat.id)],
+      ];
+      for (const [cls, glyph, tip, run] of tools) {
+        const b = el('span', `rd-dp-lib-tool ${cls}`, glyph);
+        b.setAttribute('role', 'button');
+        b.title = tip;
+        b.setAttribute('aria-label', tip);
+        b.addEventListener('click', (evt) => {
+          evt.stopPropagation();
+          run();
+        });
+        header.appendChild(b);
+      }
+      installLibraryDropTarget(catRoot, meta.id);
       const remove = el('span', 'rd-dp-remove', '×');
       remove.setAttribute('role', 'button');
       remove.title = `Remove library "${meta.title}"`;
@@ -619,6 +675,36 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
       for (const cat of categories) if (isVisible(cat)) void loadCategory(cat);
     }
     applyFilter();
+    scheduleGlobalSearch();
+  }
+
+  // ------------------------------------------------------------------ search over all draw.io libraries
+
+  const searchResults = el('div', 'rd-dp-search-results');
+  searchResults.hidden = true;
+  let globalSearchTimer: ReturnType<typeof setTimeout> | null = null;
+  let globalSearchToken = 0;
+  /** Resolves when the latest global search finished rendering (tests). */
+  let globalSearchDone: Promise<void> = Promise.resolve();
+
+  function scheduleGlobalSearch(): void {
+    if (globalSearchTimer) clearTimeout(globalSearchTimer);
+    const token = ++globalSearchToken;
+    if (!useCatalogue || !query.trim()) {
+      searchResults.hidden = true;
+      searchResults.replaceChildren();
+      globalSearchDone = Promise.resolve();
+      return;
+    }
+    globalSearchDone = new Promise<void>((resolve) => {
+      globalSearchTimer = setTimeout(() => {
+        globalSearchTimer = null;
+        Promise.all([import('./global-search'), ensureCatalogue()])
+          .then(([m]) => (token === globalSearchToken && !destroyed ? m.renderGlobalSearch(searchResults, query, internals(), () => token === globalSearchToken) : undefined))
+          .catch((err: unknown) => logger.warn('drawio-palette', 'Library search failed', { error: err instanceof Error ? err.message : String(err) }))
+          .finally(resolve);
+      }, 150);
+    });
   }
 
   search.addEventListener('input', () => setSearch(search.value));
@@ -635,7 +721,18 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
 
   function syncMenu(): void {
     menu.replaceChildren();
+    const head = el('div', 'rd-dp-menu-head');
+    head.appendChild(el('span', 'rd-dp-menu-title', 'More shapes'));
+    const close = el('button', 'rd-dp-menu-close', '×');
+    close.type = 'button';
+    close.title = 'Close';
+    close.setAttribute('aria-label', 'Close');
+    close.addEventListener('click', () => { menu.hidden = true; });
+    head.appendChild(close);
+    menu.appendChild(head);
+    menu.appendChild(el('div', 'rd-dp-menu-section', 'In the Shapes tab'));
     for (const cat of categories) {
+      if (cat.catalogue) continue;
       const row = el('label', 'rd-dp-menu-row');
       const box = el('input');
       box.type = 'checkbox';
@@ -657,6 +754,24 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
       row.append(box, document.createTextNode(` ${item.title}`));
       menu.appendChild(row);
     }
+    if (useCatalogue) {
+      const host = el('div', 'rd-dp-libraries');
+      host.textContent = 'Loading the draw.io libraries…';
+      menu.appendChild(host);
+      Promise.all([import('./more-shapes-dialog'), ensureCatalogue()])
+        .then(([m]) => {
+          if (!destroyed && host.isConnected) m.renderLibraryChooser(host, internals());
+        })
+        .catch((err: unknown) => {
+          host.textContent = 'The draw.io libraries could not be loaded.';
+          logger.warn('drawio-palette', 'More shapes failed', { error: err instanceof Error ? err.message : String(err) });
+        });
+    }
+  }
+
+  function openMoreShapes(): void {
+    syncMenu();
+    menu.hidden = false;
   }
 
   moreBtn.addEventListener('click', (evt) => {
@@ -717,7 +832,148 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
     syncMenu();
   }
 
-  importBtn.addEventListener('click', () => fileInput.click());
+  type LibraryActions = typeof import('./user-library-actions');
+  function withLibraryActions<T>(run: (m: LibraryActions) => T | Promise<T>): Promise<T | undefined> {
+    return import('./user-library-actions')
+      .then(run)
+      .catch((err: unknown) => {
+        reportError(`Library action failed: ${err instanceof Error ? err.message : String(err)}`);
+        return undefined;
+      });
+  }
+
+  /** Replaces a user library's title and/or text, re-renders its section and persists it. */
+  function updateLibrary(id: string, patch: { title?: string; text?: string }): void {
+    const lib = stored.find((l) => l.id === id);
+    const cat = byId.get(id);
+    if (!lib || !cat) return;
+    const next: StoredLibrary = { ...lib, ...patch };
+    if (patch.text !== undefined) {
+      cat.def = libraryToPaletteDef(engine().parseMxLibrary(next.text), { id, title: next.title, source: next.title });
+      fillCategory(cat);
+    }
+    if (patch.title !== undefined) {
+      cat.title = next.title;
+      const label = cat.header.querySelector('.rd-dp-header-title');
+      if (label) label.textContent = next.title;
+    }
+    stored = stored.map((l) => (l.id === id ? next : l));
+    if (!writeStoredLibraries(stored)) {
+      reportError(`Library "${next.title}" was changed but could not be saved (browser storage full or blocked)`);
+    }
+    applyFilter();
+  }
+
+  function createLibrary(title: string): string {
+    return importLibraryText('<mxlibrary>[]</mxlibrary>', title);
+  }
+
+  function renameLibrary(id: string, title: string): void {
+    const clean = title.trim();
+    if (clean) updateLibrary(id, { title: clean });
+  }
+
+  function renameLibraryInteractive(id: string): void {
+    const lib = stored.find((l) => l.id === id);
+    if (!lib) return;
+    void withLibraryActions((m) => m.promptText('Rename library', 'Library name', lib.title)).then((title) => {
+      if (title) renameLibrary(id, title);
+    });
+  }
+
+  function getLibraryText(id: string): string | null {
+    return stored.find((l) => l.id === id)?.text ?? null;
+  }
+
+  function exportLibrary(id: string): void {
+    const lib = stored.find((l) => l.id === id);
+    if (!lib) return;
+    void withLibraryActions((m) => m.downloadLibrary(lib.title, lib.text));
+  }
+
+  async function addSelectionToLibrary(id: string): Promise<boolean> {
+    const graph = options.getGraph();
+    const lib = stored.find((l) => l.id === id);
+    if (!graph || !lib) return false;
+    if (graph.getSelectionCount() === 0) {
+      reportError('Select the shapes to add to the library first (or drag them onto it).');
+      return false;
+    }
+    const added = await withLibraryActions((m) => {
+      const item = m.selectionToLibraryItem(graph);
+      if (!item) return false;
+      updateLibrary(id, { text: m.appendToLibrary(lib.text, [item]) });
+      return true;
+    });
+    if (added) setExpanded(id, true);
+    return added === true;
+  }
+
+  async function addEntryToLibrary(id: string, entry: PaletteEntry): Promise<void> {
+    const lib = stored.find((l) => l.id === id);
+    if (!lib) return;
+    await withLibraryActions((m) => updateLibrary(id, { text: m.appendToLibrary(lib.text, [m.paletteEntryToLibraryItem(entry)]) }));
+    setExpanded(id, true);
+  }
+
+  function openLibraryUrl(url: string): Promise<string | null> {
+    return withLibraryActions((m) => m.openLibraryFromUrl(url, { getGraph: options.getGraph, importLibraryText, reportError })).then((r) => r ?? null);
+  }
+
+  /**
+   * A user library section accepts: palette tiles dragged from other sections (HTML drag and drop)
+   * and shapes dragged from the canvas (a maxGraph move gesture released over the section).
+   */
+  function installLibraryDropTarget(section: HTMLElement, id: string): void {
+    section.addEventListener('dragover', (evt) => {
+      if (evt.dataTransfer?.types && Array.from(evt.dataTransfer.types).includes(PALETTE_DRAG_TYPE)) {
+        evt.preventDefault();
+        evt.dataTransfer.dropEffect = 'copy';
+        section.classList.add('rd-dp-drop-hover');
+      }
+    });
+    section.addEventListener('dragleave', () => section.classList.remove('rd-dp-drop-hover'));
+    section.addEventListener('drop', (evt) => {
+      section.classList.remove('rd-dp-drop-hover');
+      const data = evt.dataTransfer?.getData(PALETTE_DRAG_TYPE);
+      if (!data) return;
+      evt.preventDefault();
+      evt.stopPropagation();
+      const [paletteId, entryId] = data.split('\n');
+      if (paletteId === id) return;
+      const entry = getEntry(paletteId, entryId ?? '');
+      if (entry) void addEntryToLibrary(id, entry);
+    });
+    const onRelease = (): void => {
+      const graph = options.getGraph();
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const handler = graph ? (graph.getPlugin('GraphHandler') as any) : null;
+      if (!graph || !handler || handler.first == null || graph.getSelectionCount() === 0) return;
+      // cancel the move on the canvas: the cells are copied into the library instead
+      handler.reset();
+      void addSelectionToLibrary(id);
+    };
+    section.addEventListener('pointerup', onRelease);
+    section.addEventListener('mouseup', onRelease);
+  }
+
+  importBtn.addEventListener('click', () => {
+    void withLibraryActions((m) => {
+      m.showAddLibraryMenu(importBtn, {
+        importFile: () => fileInput.click(),
+        openUrl: () => {
+          void m.promptText('Open library from URL', 'Library URL (draw.io .xml)', '', 'https://…/library.xml').then((url) => {
+            if (url) void openLibraryUrl(url);
+          });
+        },
+        create: () => {
+          void m.promptText('New library', 'Library name', 'My shapes').then((title) => {
+            if (title) createLibrary(title);
+          });
+        },
+      });
+    });
+  });
   fileInput.addEventListener('change', () => {
     const file = fileInput.files?.[0];
     fileInput.value = '';
@@ -734,6 +990,9 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
 
   for (const source of options.palettes) addCategory(source, false);
   for (const source of options.extraLibraries ?? []) addCategory(source, false);
+  // draw.io's other libraries go here (after the built-in sections, before the user libraries)
+  const catalogueAnchor = document.createComment('draw.io libraries');
+  list.appendChild(catalogueAnchor);
   for (const lib of stored) {
     try {
       addLibraryCategory(lib);
@@ -743,12 +1002,127 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
       });
     }
   }
-  applyFilter();
-  syncMenu();
+  list.appendChild(searchResults);
 
   const ready = Promise.all(
     categories.filter((cat) => isVisible(cat)).map((cat) => loadCategory(cat))
   ).then(() => undefined);
+
+  // ------------------------------------------------------------------ draw.io catalogue (lazy)
+
+  let catalogue: PaletteCatalogue | null = null;
+  const skipCatalogue = new Set(options.skipCataloguePalettes ?? []);
+
+  function addCataloguePalettes(c: PaletteCatalogue): void {
+    if (destroyed) return;
+    catalogue = c;
+    const libs = new Map(c.libraries.map((l) => [l.id, l]));
+    for (const p of c.palettes) {
+      if (byId.has(p.id) || skipCatalogue.has(p.id)) continue;
+      const cat = addCategory({ id: p.id, title: p.title, defaultVisible: false, load: () => loadPalette(p.id) }, false, catalogueAnchor);
+      cat.catalogue = true;
+      cat.library = p.library;
+      cat.root.classList.add('rd-dp-catalogue');
+      cat.root.dataset.library = p.library;
+      const info = libs.get(p.library)?.attribution;
+      if (info) {
+        const badge = el('span', 'rd-dp-info', 'ⓘ');
+        badge.title = info;
+        badge.setAttribute('aria-label', info);
+        cat.header.appendChild(badge);
+      }
+      if (isVisible(cat) && (isExpanded(cat) || query.trim())) void loadCategory(cat);
+    }
+    applyFilter();
+  }
+
+  // The catalogue (~120 kB) is fetched only when needed: More shapes, a search, or a stored choice
+  // that shows a draw.io library; first paint never waits for it.
+  let cataloguePromise: Promise<void> | null = null;
+  function ensureCatalogue(): Promise<void> {
+    if (!useCatalogue) return Promise.resolve();
+    if (!cataloguePromise) {
+      cataloguePromise = loadPaletteCatalogue()
+        .then(addCataloguePalettes)
+        .catch((err: unknown) => {
+          cataloguePromise = null;
+          logger.warn('drawio-palette', 'draw.io library catalogue failed to load', {
+            error: err instanceof Error ? err.message : String(err),
+          });
+        });
+    }
+    return cataloguePromise;
+  }
+  if (Object.entries(visibleFlags).some(([id, shown]) => shown && !byId.has(id))) void ensureCatalogue();
+
+  applyFilter();
+  syncMenu();
+
+  function libraryCategories(libraryId: string): Category[] {
+    return categories.filter((cat) => cat.catalogue && cat.library === libraryId);
+  }
+
+  function setLibraryVisible(libraryId: string, visible: boolean): void {
+    if (useCatalogue && !catalogue) {
+      void ensureCatalogue().then(() => {
+        if (catalogue) setLibraryVisible(libraryId, visible);
+      });
+      return;
+    }
+    const cats = libraryCategories(libraryId);
+    for (const cat of cats) {
+      visibleFlags[cat.id] = visible;
+      if (visible && (isExpanded(cat) || query.trim())) void loadCategory(cat);
+    }
+    // a newly shown library opens its first palette
+    if (visible && cats.length > 0 && !cats.some((c) => isExpanded(c))) setExpanded(cats[0].id, true);
+    writeFlags(visibleKey, visibleFlags);
+    applyFilter();
+    scheduleGlobalSearch();
+  }
+
+  function isLibraryVisible(libraryId: string): boolean {
+    return libraryCategories(libraryId).some((cat) => isVisible(cat));
+  }
+
+  function internals(): PaletteViewInternals {
+    return {
+      catalogue,
+      isLibraryVisible,
+      setLibraryVisible,
+      libraryPalettes: (libraryId) => libraryCategories(libraryId).map((c) => c.id),
+      isPaletteVisible: (id) => {
+        const cat = byId.get(id);
+        return cat ? isVisible(cat) : false;
+      },
+      loadEntries: async (paletteId) => {
+        const cat = byId.get(paletteId);
+        if (!cat) return [];
+        await loadCategory(cat);
+        return cat.def?.entries ?? [];
+      },
+      createTile: (paletteId, entry) => {
+        const cat = byId.get(paletteId);
+        return cat ? createItem(cat, entry) : null;
+      },
+      thumbnail: (entry, size) => renderer.thumbnail(entry, size),
+      shownSignatures: () => {
+        const out = new Set<string>();
+        for (const cat of categories) {
+          if (!isVisible(cat)) continue;
+          for (const item of cat.items) if (!item.node.hidden) out.add(entrySignature(item.entry));
+        }
+        return out;
+      },
+      revealPalette: (paletteId) => {
+        const cat = byId.get(paletteId);
+        if (!cat) return;
+        if (cat.library) setLibraryVisible(cat.library, true);
+        setExpanded(paletteId, true);
+        cat.root.scrollIntoView?.({ block: 'start' });
+      },
+    };
+  }
 
   function destroy(): void {
     destroyed = true;
@@ -768,6 +1142,22 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
   return {
     element: root,
     ready,
+    get catalogueReady() {
+      return ensureCatalogue();
+    },
+    get globalSearchDone() {
+      return globalSearchDone;
+    },
+    setLibraryVisible,
+    isLibraryVisible,
+    openMoreShapes,
+    createLibrary,
+    renameLibrary,
+    addSelectionToLibrary,
+    addEntryToLibrary,
+    getLibraryText,
+    exportLibrary,
+    openLibraryUrl,
     setSearch,
     isPaletteVisible: (id) => {
       const cat = byId.get(id);

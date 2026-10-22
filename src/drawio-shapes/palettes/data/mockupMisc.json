@@ -1,0 +1,365 @@
+{
+ "id": "mockupMisc",
+ "title": "Mockup Misc",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Mockup.js:8",
+ "entries": [
+  {
+   "id": "mockupMisc-0-help-icon",
+   "title": "Help Icon",
+   "tags": "mockup misc help icon mockup  Help Icon",
+   "kind": "vertex",
+   "width": 32,
+   "height": 32,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.misc.help_icon;fillColor=none;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.mockup.misc.help_icon"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:761"
+  },
+  {
+   "id": "mockupMisc-1-playback-controls",
+   "title": "Playback Controls",
+   "tags": "mockup misc playbackControls mockup  Playback Controls",
+   "kind": "vertex",
+   "width": 250,
+   "height": 30,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.misc.playbackControls;sketch=0;strokeColor=#999999;fillColor2=#99ddff;strokeColor2=none;fillColor3=#ffffff;strokeColor3=none;",
+   "shapeNames": [
+    "mxgraph.mockup.misc.playbackControls"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:763"
+  },
+  {
+   "id": "mockupMisc-2-progress-bar",
+   "title": "Progress Bar",
+   "tags": "mockup misc progress bar mockup  Progress Bar",
+   "kind": "vertex",
+   "width": 200,
+   "height": 20,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.misc.progressBar;fillColor=#cccccc;strokeColor=none;fillColor2=#99ddff;barPos=80;",
+   "shapeNames": [
+    "mxgraph.mockup.misc.progressBar"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:765"
+  },
+  {
+   "id": "mockupMisc-3-shopping-cart",
+   "title": "Shopping Cart",
+   "tags": "mockup misc shopping cart mockup  Shopping Cart",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.misc.shoppingCart;strokeColor=#999999;",
+   "shapeNames": [
+    "mxgraph.mockup.misc.shoppingCart"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:766"
+  },
+  {
+   "id": "mockupMisc-4-rating",
+   "title": "Rating",
+   "tags": "mockup misc rating mockup  Rating",
+   "kind": "vertex",
+   "width": 225,
+   "height": 30,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.misc.rating;strokeColor=#999999;fillColor=#ffff00;emptyFillColor=#ffffff;grade=4;ratingScale=5;ratingStyle=star;",
+   "shapeNames": [
+    "mxgraph.mockup.misc.rating"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:768"
+  },
+  {
+   "id": "mockupMisc-5-mail",
+   "title": "Mail",
+   "tags": "mockup misc mail mockup  Mail",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.misc.mail2;strokeColor=#999999;",
+   "shapeNames": [
+    "mxgraph.mockup.misc.mail2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:770"
+  },
+  {
+   "id": "mockupMisc-6-volume-slider",
+   "title": "Volume Slider",
+   "tags": "mockup misc volume slider mockup  Volume Slider",
+   "kind": "vertex",
+   "width": 250,
+   "height": 30,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.misc.volumeSlider;barPos=80;fillColor=#cccccc;strokeColor=#999999;fillColor2=#ddeeff;",
+   "shapeNames": [
+    "mxgraph.mockup.misc.volumeSlider"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:771"
+  },
+  {
+   "id": "mockupMisc-7-edit-icon",
+   "title": "Edit Icon",
+   "tags": "mockup misc editIcon mockup edit icon Edit Icon",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "strokeColor=#999999;verticalLabelPosition=bottom;shadow=0;dashed=0;verticalAlign=top;strokeWidth=2;html=1;shape=mxgraph.mockup.misc.editIcon;",
+   "shapeNames": [
+    "mxgraph.mockup.misc.editIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:773"
+  },
+  {
+   "id": "mockupMisc-8-print-icon",
+   "title": "Print Icon",
+   "tags": "mockup misc printIcon mockup print icon Print Icon",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "strokeColor=#999999;verticalLabelPosition=bottom;shadow=0;dashed=0;verticalAlign=top;strokeWidth=2;html=1;shape=mxgraph.mockup.misc.printIcon;",
+   "shapeNames": [
+    "mxgraph.mockup.misc.printIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:775"
+  },
+  {
+   "id": "mockupMisc-9-share-icon",
+   "title": "Share Icon",
+   "tags": "mockup misc shareIcon mockup share icon Share Icon",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "strokeColor=#999999;verticalLabelPosition=bottom;shadow=0;dashed=0;verticalAlign=top;strokeWidth=2;html=1;shape=mxgraph.mockup.misc.shareIcon;",
+   "shapeNames": [
+    "mxgraph.mockup.misc.shareIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:777"
+  },
+  {
+   "id": "mockupMisc-10-trashcan-icon",
+   "title": "Trashcan Icon",
+   "tags": "mockup misc trashcanIcon mockup trashcan icon Trashcan Icon",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "strokeColor=#999999;verticalLabelPosition=bottom;shadow=0;dashed=0;verticalAlign=top;strokeWidth=2;html=1;shape=mxgraph.mockup.misc.trashcanIcon;",
+   "shapeNames": [
+    "mxgraph.mockup.misc.trashcanIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:779"
+  },
+  {
+   "id": "mockupMisc-11-copyright",
+   "title": "Copyright",
+   "tags": "mockup misc copyrightIcon mockup copyright icon Copyright",
+   "kind": "vertex",
+   "width": 25,
+   "height": 25,
+   "style": "strokeColor=#999999;verticalLabelPosition=bottom;shadow=0;dashed=0;verticalAlign=top;strokeWidth=2;html=1;shape=mxgraph.mockup.misc.copyrightIcon;",
+   "shapeNames": [
+    "mxgraph.mockup.misc.copyrightIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:781"
+  },
+  {
+   "id": "mockupMisc-12-registered",
+   "title": "Registered",
+   "tags": "mockup misc registeredIcon mockup registered icon Registered",
+   "kind": "vertex",
+   "width": 25,
+   "height": 25,
+   "style": "strokeColor=#999999;verticalLabelPosition=bottom;shadow=0;dashed=0;verticalAlign=top;strokeWidth=2;html=1;shape=mxgraph.mockup.misc.registeredIcon;",
+   "shapeNames": [
+    "mxgraph.mockup.misc.registeredIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:783"
+  },
+  {
+   "id": "mockupMisc-13-volume",
+   "title": "Volume",
+   "tags": "mockup misc volumeIcon mockup volume icon Volume",
+   "kind": "vertex",
+   "width": 25,
+   "height": 25,
+   "style": "strokeColor=#999999;verticalLabelPosition=bottom;shadow=0;dashed=0;verticalAlign=top;strokeWidth=2;html=1;shape=mxgraph.mockup.misc.volumeIcon;",
+   "shapeNames": [
+    "mxgraph.mockup.misc.volumeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:785"
+  },
+  {
+   "id": "mockupMisc-14-horizontal-ruler",
+   "title": "Horizontal Ruler",
+   "tags": "mockup misc ruler mockup horizontal Horizontal Ruler",
+   "kind": "vertex",
+   "width": 350,
+   "height": 30,
+   "style": "strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.misc.ruler2;dx=100;rulerOrient=down;unitSize=10;fontColor=#999999;spacingLeft=96;align=left;verticalAlign=middle;spacingBottom=10;spacingTop=0;spacingRight=0;spacing=0;strokeColor=#999999;",
+   "value": "1",
+   "shapeNames": [
+    "mxgraph.mockup.misc.ruler2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:787"
+  },
+  {
+   "id": "mockupMisc-15-horizontal-ruler",
+   "title": "Horizontal Ruler",
+   "tags": "mockup misc ruler mockup horizontal Horizontal Ruler",
+   "kind": "vertex",
+   "width": 350,
+   "height": 30,
+   "style": "strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.misc.ruler2;dx=100;rulerOrient=up;unitSize=10;fontColor=#999999;spacingLeft=96;align=left;verticalAlign=middle;spacingBottom=0;spacingTop=10;spacingRight=0;spacing=0;strokeColor=#999999;",
+   "value": "1",
+   "shapeNames": [
+    "mxgraph.mockup.misc.ruler2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:789"
+  },
+  {
+   "id": "mockupMisc-16-vertical-ruler",
+   "title": "Vertical Ruler",
+   "tags": "mockup misc ruler mockup horizontal Vertical Ruler",
+   "kind": "vertex",
+   "width": 350,
+   "height": 30,
+   "style": "strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.misc.ruler2;dx=100;rulerOrient=down;unitSize=10;fontColor=#999999;spacingLeft=96;align=left;verticalAlign=middle;spacingBottom=10;spacingTop=0;spacingRight=0;rotation=-90;spacing=0;strokeColor=#999999;",
+   "value": "1",
+   "shapeNames": [
+    "mxgraph.mockup.misc.ruler2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:791"
+  },
+  {
+   "id": "mockupMisc-17-vertical-ruler",
+   "title": "Vertical Ruler",
+   "tags": "mockup misc ruler mockup horizontal Vertical Ruler",
+   "kind": "vertex",
+   "width": 350,
+   "height": 30,
+   "style": "strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.misc.ruler2;dx=100;rulerOrient=up;unitSize=10;fontColor=#999999;spacingLeft=96;align=left;verticalAlign=middle;spacingBottom=0;spacingTop=10;spacingRight=0;rotation=-90;spacing=0;strokeColor=#999999;",
+   "value": "1",
+   "shapeNames": [
+    "mxgraph.mockup.misc.ruler2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:793"
+  },
+  {
+   "id": "mockupMisc-18-revision-table",
+   "title": "Revision Table",
+   "tags": "mockup revision table",
+   "kind": "cells",
+   "width": 400,
+   "height": 75,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.misc.rrect;rSize=0;strokeColor=#666666;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"400\" height=\"75\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"REVISION HISTORY\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.misc.rrect;rSize=0;fontSize=17;fontColor=#999999;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"400\" height=\"25\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"REV\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.misc.rrect;rSize=0;fontSize=17;fontColor=#999999;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"25\" width=\"50\" height=\"25\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"DATE\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.misc.rrect;rSize=0;fontSize=17;fontColor=#999999;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"50\" y=\"25\" width=\"150\" height=\"25\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"DESCRIPTION\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.misc.rrect;rSize=0;fontSize=17;fontColor=#999999;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"200\" y=\"25\" width=\"200\" height=\"25\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"A\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.misc.rrect;rSize=0;fontSize=17;fontColor=#999999;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"50\" width=\"50\" height=\"25\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"10/23/2014\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.misc.rrect;rSize=0;fontSize=17;fontColor=#999999;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"50\" y=\"50\" width=\"150\" height=\"25\" as=\"geometry\"/></mxCell><mxCell id=\"9\" value=\"Design modified\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.misc.rrect;rSize=0;fontSize=17;fontColor=#999999;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"200\" y=\"50\" width=\"200\" height=\"25\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.mockup.misc.rrect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:796"
+  },
+  {
+   "id": "mockupMisc-19-status-bar",
+   "title": "Status Bar",
+   "tags": "mockup status bar Status Bar",
+   "kind": "cells",
+   "width": 500,
+   "height": 30,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.misc.rrect;rSize=0;strokeColor=#999999;fillColor=#ffffff;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"500\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Status text\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.misc.rrect;rSize=5;strokeColor=none;fontSize=15;fontColor=#999999;fillColor=#ddeeff;align=left;spacingLeft=5;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"5\" y=\"5\" width=\"195\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Text 2\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.misc.rrect;rSize=5;strokeColor=none;fontSize=15;fontColor=#999999;fillColor=#ddeeff;align=left;spacingLeft=5;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"205\" y=\"5\" width=\"100\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"Text 3\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.misc.rrect;rSize=5;strokeColor=none;fontSize=15;fontColor=#999999;fillColor=#ddeeff;align=left;spacingLeft=5;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"310\" y=\"5\" width=\"115\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.misc.anchor;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"495\" y=\"15\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"\" style=\"shape=ellipse;fillColor=none;strokeColor=#008cff;resizable=0;html=1;\" vertex=\"1\" parent=\"6\"><mxGeometry x=\"-20\" y=\"-10\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"\" style=\"strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.misc.anchor;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"465\" y=\"15\" as=\"geometry\"/></mxCell><mxCell id=\"9\" value=\"\" style=\"shape=line;strokeColor=#008cff;resizable=0;\" vertex=\"1\" parent=\"8\"><mxGeometry x=\"-20\" y=\"5\" width=\"20\" height=\"10\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.mockup.misc.rrect",
+    "mxgraph.mockup.misc.anchor",
+    "ellipse",
+    "line"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:825"
+  },
+  {
+   "id": "mockupMisc-20-pin",
+   "title": "Pin",
+   "tags": "mockup misc pin mockup  Pin",
+   "kind": "vertex",
+   "width": 10,
+   "height": 25,
+   "style": "verticalLabelPosition=top;shadow=0;dashed=0;align=center;html=1;verticalAlign=bottom;strokeWidth=1;shape=mxgraph.mockup.misc.pin;fillColor2=#00dd00;fillColor3=#004400;strokeColor=#006600;fillColor4=#ffffff;strokeColor2=#666666;",
+   "shapeNames": [
+    "mxgraph.mockup.misc.pin"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:828"
+  },
+  {
+   "id": "mockupMisc-21-pin",
+   "title": "Pin",
+   "tags": "mockup misc pin mockup  Pin",
+   "kind": "vertex",
+   "width": 10,
+   "height": 25,
+   "style": "verticalLabelPosition=top;shadow=0;dashed=0;align=center;html=1;verticalAlign=bottom;strokeWidth=1;shape=mxgraph.mockup.misc.pin;fillColor2=#dd0000;fillColor3=#440000;strokeColor=#660000;fillColor4=#ffffff;strokeColor2=#666666;",
+   "shapeNames": [
+    "mxgraph.mockup.misc.pin"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:830"
+  },
+  {
+   "id": "mockupMisc-22-pin",
+   "title": "Pin",
+   "tags": "mockup misc pin mockup  Pin",
+   "kind": "vertex",
+   "width": 10,
+   "height": 25,
+   "style": "verticalLabelPosition=top;shadow=0;dashed=0;align=center;html=1;verticalAlign=bottom;strokeWidth=1;shape=mxgraph.mockup.misc.pin;fillColor2=#ccccff;fillColor3=#0000ff;strokeColor=#000066;fillColor4=#ffffff;strokeColor2=#666666;",
+   "shapeNames": [
+    "mxgraph.mockup.misc.pin"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:832"
+  },
+  {
+   "id": "mockupMisc-23-pin",
+   "title": "Pin",
+   "tags": "mockup misc pin mockup  Pin",
+   "kind": "vertex",
+   "width": 10,
+   "height": 25,
+   "style": "verticalLabelPosition=top;shadow=0;dashed=0;align=center;html=1;verticalAlign=bottom;strokeWidth=1;shape=mxgraph.mockup.misc.pin;fillColor2=#ffff00;fillColor3=#888800;strokeColor=#999900;fillColor4=#ffffff;strokeColor2=#666666;",
+   "shapeNames": [
+    "mxgraph.mockup.misc.pin"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:834"
+  },
+  {
+   "id": "mockupMisc-24-pin",
+   "title": "Pin",
+   "tags": "mockup misc pin mockup  Pin",
+   "kind": "vertex",
+   "width": 10,
+   "height": 25,
+   "style": "verticalLabelPosition=top;shadow=0;dashed=0;align=center;html=1;verticalAlign=bottom;strokeWidth=1;shape=mxgraph.mockup.misc.pin;fillColor2=#ffa500;fillColor3=#885000;strokeColor=#997000;fillColor4=#ffffff;strokeColor2=#666666;",
+   "shapeNames": [
+    "mxgraph.mockup.misc.pin"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:836"
+  }
+ ]
+}

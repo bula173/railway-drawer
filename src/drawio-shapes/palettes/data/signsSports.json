@@ -1,0 +1,1128 @@
+{
+ "id": "signsSports",
+ "title": "Signs / Sports",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Signs.js:7",
+ "entries": [
+  {
+   "id": "signsSports-0-amphiteater",
+   "title": "Amphiteater",
+   "tags": "signs sports  Amphiteater Amphiteater",
+   "kind": "vertex",
+   "width": 95,
+   "height": 99,
+   "style": "shape=mxgraph.signs.sports.amphiteater;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.amphiteater"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-1-archery",
+   "title": "Archery",
+   "tags": "signs sports  Archery Archery",
+   "kind": "vertex",
+   "width": 72,
+   "height": 98,
+   "style": "shape=mxgraph.signs.sports.archery;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.archery"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-2-baseball",
+   "title": "Baseball",
+   "tags": "signs sports  Baseball Baseball",
+   "kind": "vertex",
+   "width": 58,
+   "height": 99,
+   "style": "shape=mxgraph.signs.sports.baseball;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.baseball"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-3-binoculars",
+   "title": "Binoculars",
+   "tags": "signs sports  Binoculars Binoculars",
+   "kind": "vertex",
+   "width": 98,
+   "height": 98,
+   "style": "shape=mxgraph.signs.sports.binoculars;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.binoculars"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-4-boardwalk",
+   "title": "Boardwalk",
+   "tags": "signs sports  Boardwalk Boardwalk",
+   "kind": "vertex",
+   "width": 96,
+   "height": 98,
+   "style": "shape=mxgraph.signs.sports.boardwalk;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.boardwalk"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-5-boat-launch",
+   "title": "Boat Launch",
+   "tags": "signs sports  Boat Launch Boat Launch",
+   "kind": "vertex",
+   "width": 98,
+   "height": 52,
+   "style": "shape=mxgraph.signs.sports.boat_launch;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.boat_launch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-6-camper-1",
+   "title": "Camper 1",
+   "tags": "signs sports  Camper 1 Camper 1",
+   "kind": "vertex",
+   "width": 99,
+   "height": 79,
+   "style": "shape=mxgraph.signs.sports.camper_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.camper_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-7-camper-2",
+   "title": "Camper 2",
+   "tags": "signs sports  Camper 2 Camper 2",
+   "kind": "vertex",
+   "width": 98,
+   "height": 59,
+   "style": "shape=mxgraph.signs.sports.camper_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.camper_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-8-campfire",
+   "title": "Campfire",
+   "tags": "signs sports  Campfire Campfire",
+   "kind": "vertex",
+   "width": 92,
+   "height": 98,
+   "style": "shape=mxgraph.signs.sports.campfire;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.campfire"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-9-campground",
+   "title": "Campground",
+   "tags": "signs sports  Campground Campground",
+   "kind": "vertex",
+   "width": 99,
+   "height": 84,
+   "style": "shape=mxgraph.signs.sports.campground;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.campground"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-10-canoe-1",
+   "title": "Canoe 1",
+   "tags": "signs sports  Canoe 1 Canoe 1",
+   "kind": "vertex",
+   "width": 98,
+   "height": 87,
+   "style": "shape=mxgraph.signs.sports.canoe_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.canoe_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-11-canoe-2",
+   "title": "Canoe 2",
+   "tags": "signs sports  Canoe 2 Canoe 2",
+   "kind": "vertex",
+   "width": 103,
+   "height": 49,
+   "style": "shape=mxgraph.signs.sports.canoe_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.canoe_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-12-chair-lift",
+   "title": "Chair Lift",
+   "tags": "signs sports  Chair Lift Chair Lift",
+   "kind": "vertex",
+   "width": 84,
+   "height": 98,
+   "style": "shape=mxgraph.signs.sports.chair_lift;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.chair_lift"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-13-climbing",
+   "title": "Climbing",
+   "tags": "signs sports  Climbing Climbing",
+   "kind": "vertex",
+   "width": 99,
+   "height": 99,
+   "style": "shape=mxgraph.signs.sports.climbing;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.climbing"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-14-cross-country-skiing-1",
+   "title": "Cross Country Skiing 1",
+   "tags": "signs sports  Cross Country Skiing 1 Cross Country Skiing 1",
+   "kind": "vertex",
+   "width": 98,
+   "height": 94,
+   "style": "shape=mxgraph.signs.sports.cross_country_skiing_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.cross_country_skiing_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-15-cross-country-skiing-2",
+   "title": "Cross Country Skiing 2",
+   "tags": "signs sports  Cross Country Skiing 2 Cross Country Skiing 2",
+   "kind": "vertex",
+   "width": 99,
+   "height": 92,
+   "style": "shape=mxgraph.signs.sports.cross_country_skiing_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.cross_country_skiing_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-16-cycling",
+   "title": "Cycling",
+   "tags": "signs sports  Cycling Cycling",
+   "kind": "vertex",
+   "width": 98,
+   "height": 84,
+   "style": "shape=mxgraph.signs.sports.cycling;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.cycling"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-17-dirt-bike",
+   "title": "Dirt Bike",
+   "tags": "signs sports  Dirt Bike Dirt Bike",
+   "kind": "vertex",
+   "width": 99,
+   "height": 94,
+   "style": "shape=mxgraph.signs.sports.dirt_bike;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.dirt_bike"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-18-diving",
+   "title": "Diving",
+   "tags": "signs sports  Diving Diving",
+   "kind": "vertex",
+   "width": 94,
+   "height": 99,
+   "style": "shape=mxgraph.signs.sports.diving;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.diving"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-19-downhill-skiing-1",
+   "title": "Downhill Skiing 1",
+   "tags": "signs sports  Downhill Skiing 1 Downhill Skiing 1",
+   "kind": "vertex",
+   "width": 99,
+   "height": 97,
+   "style": "shape=mxgraph.signs.sports.downhill_skiing_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.downhill_skiing_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-20-downhill-skiing-2",
+   "title": "Downhill Skiing 2",
+   "tags": "signs sports  Downhill Skiing 2 Downhill Skiing 2",
+   "kind": "vertex",
+   "width": 99,
+   "height": 84,
+   "style": "shape=mxgraph.signs.sports.downhill_skiing_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.downhill_skiing_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-21-exercise",
+   "title": "Exercise",
+   "tags": "signs sports  Exercise Exercise",
+   "kind": "vertex",
+   "width": 99,
+   "height": 94,
+   "style": "shape=mxgraph.signs.sports.exercise;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.exercise"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-22-firewood",
+   "title": "Firewood",
+   "tags": "signs sports  Firewood Firewood",
+   "kind": "vertex",
+   "width": 101,
+   "height": 90,
+   "style": "shape=mxgraph.signs.sports.firewood;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.firewood"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-23-fishing-1",
+   "title": "Fishing 1",
+   "tags": "signs sports  Fishing 1 Fishing 1",
+   "kind": "vertex",
+   "width": 100,
+   "height": 93,
+   "style": "shape=mxgraph.signs.sports.fishing_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.fishing_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-24-fishing-2",
+   "title": "Fishing 2",
+   "tags": "signs sports  Fishing 2 Fishing 2",
+   "kind": "vertex",
+   "width": 98,
+   "height": 117,
+   "style": "shape=mxgraph.signs.sports.fishing_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.fishing_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-25-fishing-pier",
+   "title": "Fishing Pier",
+   "tags": "signs sports  Fishing Pier Fishing Pier",
+   "kind": "vertex",
+   "width": 94,
+   "height": 98,
+   "style": "shape=mxgraph.signs.sports.fishing_pier;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.fishing_pier"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-26-fish-cleaning",
+   "title": "Fish Cleaning",
+   "tags": "signs sports  Fish Cleaning Fish Cleaning",
+   "kind": "vertex",
+   "width": 98,
+   "height": 63,
+   "style": "shape=mxgraph.signs.sports.fish_cleaning;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.fish_cleaning"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-27-golf",
+   "title": "Golf",
+   "tags": "signs sports  Golf Golf",
+   "kind": "vertex",
+   "width": 63,
+   "height": 99,
+   "style": "shape=mxgraph.signs.sports.golf;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.golf"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-28-golfing",
+   "title": "Golfing",
+   "tags": "signs sports  Golfing Golfing",
+   "kind": "vertex",
+   "width": 55,
+   "height": 99,
+   "style": "shape=mxgraph.signs.sports.golfing;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.golfing"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-29-gondola",
+   "title": "Gondola",
+   "tags": "signs sports  Gondola Gondola",
+   "kind": "vertex",
+   "width": 99,
+   "height": 89,
+   "style": "shape=mxgraph.signs.sports.gondola;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.gondola"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-30-hang-gliding",
+   "title": "Hang Gliding",
+   "tags": "signs sports  Hang Gliding Hang Gliding",
+   "kind": "vertex",
+   "width": 99,
+   "height": 66,
+   "style": "shape=mxgraph.signs.sports.hang_gliding;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.hang_gliding"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-31-hiker",
+   "title": "Hiker",
+   "tags": "signs sports  Hiker Hiker",
+   "kind": "vertex",
+   "width": 63,
+   "height": 98,
+   "style": "shape=mxgraph.signs.sports.hiker;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.hiker"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-32-hiking",
+   "title": "Hiking",
+   "tags": "signs sports  Hiking Hiking",
+   "kind": "vertex",
+   "width": 98,
+   "height": 93,
+   "style": "shape=mxgraph.signs.sports.hiking;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.hiking"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-33-horseback-trail",
+   "title": "Horseback Trail",
+   "tags": "signs sports  Horseback Trail Horseback Trail",
+   "kind": "vertex",
+   "width": 99,
+   "height": 99,
+   "style": "shape=mxgraph.signs.sports.horseback_trail;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.horseback_trail"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-34-ice-fishing",
+   "title": "Ice Fishing",
+   "tags": "signs sports  Ice Fishing Ice Fishing",
+   "kind": "vertex",
+   "width": 99,
+   "height": 99,
+   "style": "shape=mxgraph.signs.sports.ice_fishing;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.ice_fishing"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-35-ice-skating",
+   "title": "Ice Skating",
+   "tags": "signs sports  Ice Skating Ice Skating",
+   "kind": "vertex",
+   "width": 95,
+   "height": 100,
+   "style": "shape=mxgraph.signs.sports.ice_skating;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.ice_skating"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-36-indoor-swimming",
+   "title": "Indoor Swimming",
+   "tags": "signs sports  Indoor Swimming Indoor Swimming",
+   "kind": "vertex",
+   "width": 99,
+   "height": 89,
+   "style": "shape=mxgraph.signs.sports.indoor_swimming;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.indoor_swimming"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-37-jet-ski",
+   "title": "Jet Ski",
+   "tags": "signs sports  Jet Ski Jet Ski",
+   "kind": "vertex",
+   "width": 99,
+   "height": 86,
+   "style": "shape=mxgraph.signs.sports.jet_ski;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.jet_ski"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-38-kayak",
+   "title": "Kayak",
+   "tags": "signs sports  Kayak Kayak",
+   "kind": "vertex",
+   "width": 99,
+   "height": 99,
+   "style": "shape=mxgraph.signs.sports.kayak;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.kayak"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-39-life-jacket",
+   "title": "Life Jacket",
+   "tags": "signs sports  Life Jacket Life Jacket",
+   "kind": "vertex",
+   "width": 100,
+   "height": 99,
+   "style": "shape=mxgraph.signs.sports.life_jacket;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.life_jacket"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-40-motorboat-1",
+   "title": "Motorboat 1",
+   "tags": "signs sports  Motorboat 1 Motorboat 1",
+   "kind": "vertex",
+   "width": 99,
+   "height": 49,
+   "style": "shape=mxgraph.signs.sports.motorboat_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.motorboat_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-41-motorboat-2",
+   "title": "Motorboat 2",
+   "tags": "signs sports  Motorboat 2 Motorboat 2",
+   "kind": "vertex",
+   "width": 99,
+   "height": 36,
+   "style": "shape=mxgraph.signs.sports.motorboat_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.motorboat_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-42-picnic-shelter",
+   "title": "Picnic Shelter",
+   "tags": "signs sports  Picnic Shelter Picnic Shelter",
+   "kind": "vertex",
+   "width": 98,
+   "height": 94,
+   "style": "shape=mxgraph.signs.sports.picnic_shelter;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.picnic_shelter"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-43-picnic-table-1",
+   "title": "Picnic Table 1",
+   "tags": "signs sports  Picnic Table 1 Picnic Table 1",
+   "kind": "vertex",
+   "width": 99,
+   "height": 68,
+   "style": "shape=mxgraph.signs.sports.picnic_table_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.picnic_table_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-44-picnic-table-2",
+   "title": "Picnic Table 2",
+   "tags": "signs sports  Picnic Table 2 Picnic Table 2",
+   "kind": "vertex",
+   "width": 99,
+   "height": 87,
+   "style": "shape=mxgraph.signs.sports.picnic_table_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.picnic_table_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-45-ranger-station-1",
+   "title": "Ranger Station 1",
+   "tags": "signs sports  Ranger Station 1 Ranger Station 1",
+   "kind": "vertex",
+   "width": 92,
+   "height": 98,
+   "style": "shape=mxgraph.signs.sports.ranger_station_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.ranger_station_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-46-ranger-station-2",
+   "title": "Ranger Station 2",
+   "tags": "signs sports  Ranger Station 2 Ranger Station 2",
+   "kind": "vertex",
+   "width": 95,
+   "height": 98,
+   "style": "shape=mxgraph.signs.sports.ranger_station_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.ranger_station_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-47-rock-climbing",
+   "title": "Rock Climbing",
+   "tags": "signs sports  Rock Climbing Rock Climbing",
+   "kind": "vertex",
+   "width": 76,
+   "height": 98,
+   "style": "shape=mxgraph.signs.sports.rock_climbing;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.rock_climbing"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-48-rock-collection",
+   "title": "Rock Collection",
+   "tags": "signs sports  Rock Collection Rock Collection",
+   "kind": "vertex",
+   "width": 92,
+   "height": 98,
+   "style": "shape=mxgraph.signs.sports.rock_collection;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.rock_collection"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-49-rollerblading",
+   "title": "Rollerblading",
+   "tags": "signs sports  Rollerblading Rollerblading",
+   "kind": "vertex",
+   "width": 94,
+   "height": 99,
+   "style": "shape=mxgraph.signs.sports.rollerblading;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.rollerblading"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-50-rowboat",
+   "title": "Rowboat",
+   "tags": "signs sports  Rowboat Rowboat",
+   "kind": "vertex",
+   "width": 99,
+   "height": 81,
+   "style": "shape=mxgraph.signs.sports.rowboat;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.rowboat"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-51-running",
+   "title": "Running",
+   "tags": "signs sports  Running Running",
+   "kind": "vertex",
+   "width": 70,
+   "height": 98,
+   "style": "shape=mxgraph.signs.sports.running;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.running"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-52-rv",
+   "title": "RV",
+   "tags": "signs sports  RV RV",
+   "kind": "vertex",
+   "width": 99,
+   "height": 62,
+   "style": "shape=mxgraph.signs.sports.rv;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.rv"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-53-sail-boat",
+   "title": "Sail Boat",
+   "tags": "signs sports  Sail Boat Sail Boat",
+   "kind": "vertex",
+   "width": 92,
+   "height": 99,
+   "style": "shape=mxgraph.signs.sports.sail_boat;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.sail_boat"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-54-sanitary-disposal-station",
+   "title": "Sanitary Disposal Station",
+   "tags": "signs sports  Sanitary Disposal Station Sanitary Disposal Station",
+   "kind": "vertex",
+   "width": 99,
+   "height": 87,
+   "style": "shape=mxgraph.signs.sports.sanitary_disposal_station;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.sanitary_disposal_station"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-55-scenic-viewpoint",
+   "title": "Scenic Viewpoint",
+   "tags": "signs sports  Scenic Viewpoint Scenic Viewpoint",
+   "kind": "vertex",
+   "width": 80,
+   "height": 99,
+   "style": "shape=mxgraph.signs.sports.scenic_viewpoint;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.scenic_viewpoint"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-56-scuba-diving",
+   "title": "Scuba Diving",
+   "tags": "signs sports  Scuba Diving Scuba Diving",
+   "kind": "vertex",
+   "width": 99,
+   "height": 83,
+   "style": "shape=mxgraph.signs.sports.scuba_diving;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.scuba_diving"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-57-seesaw",
+   "title": "Seesaw",
+   "tags": "signs sports  Seesaw Seesaw",
+   "kind": "vertex",
+   "width": 99,
+   "height": 54,
+   "style": "shape=mxgraph.signs.sports.seesaw;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.seesaw"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-58-self-guiding-trail",
+   "title": "Self Guiding Trail",
+   "tags": "signs sports  Self Guiding Trail Self Guiding Trail",
+   "kind": "vertex",
+   "width": 99,
+   "height": 99,
+   "style": "shape=mxgraph.signs.sports.self_guiding_trail;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.self_guiding_trail"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-59-shelter",
+   "title": "Shelter",
+   "tags": "signs sports  Shelter Shelter",
+   "kind": "vertex",
+   "width": 98,
+   "height": 90,
+   "style": "shape=mxgraph.signs.sports.shelter;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.shelter"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-60-skateboarding",
+   "title": "Skateboarding",
+   "tags": "signs sports  Skateboarding Skateboarding",
+   "kind": "vertex",
+   "width": 66,
+   "height": 98,
+   "style": "shape=mxgraph.signs.sports.skateboarding;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.skateboarding"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-61-ski-jump",
+   "title": "Ski Jump",
+   "tags": "signs sports  Ski Jump Ski Jump",
+   "kind": "vertex",
+   "width": 93,
+   "height": 98,
+   "style": "shape=mxgraph.signs.sports.ski_jump;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.ski_jump"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-62-sledding",
+   "title": "Sledding",
+   "tags": "signs sports  Sledding Sledding",
+   "kind": "vertex",
+   "width": 98,
+   "height": 86,
+   "style": "shape=mxgraph.signs.sports.sledding;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.sledding"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-63-sleeping-shelter",
+   "title": "Sleeping Shelter",
+   "tags": "signs sports  Sleeping Shelter Sleeping Shelter",
+   "kind": "vertex",
+   "width": 99,
+   "height": 90,
+   "style": "shape=mxgraph.signs.sports.sleeping_shelter;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.sleeping_shelter"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-64-small-boat-launch",
+   "title": "Small Boat Launch",
+   "tags": "signs sports  Small Boat Launch Small Boat Launch",
+   "kind": "vertex",
+   "width": 100,
+   "height": 93,
+   "style": "shape=mxgraph.signs.sports.small_boat_launch;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.small_boat_launch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-65-snowboarder",
+   "title": "Snowboarder",
+   "tags": "signs sports  Snowboarder Snowboarder",
+   "kind": "vertex",
+   "width": 99,
+   "height": 99,
+   "style": "shape=mxgraph.signs.sports.snowboarder;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.snowboarder"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-66-snowmobile",
+   "title": "Snowmobile",
+   "tags": "signs sports  Snowmobile Snowmobile",
+   "kind": "vertex",
+   "width": 99,
+   "height": 80,
+   "style": "shape=mxgraph.signs.sports.snowmobile;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.snowmobile"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-67-snow-shoeing",
+   "title": "Snow Shoeing",
+   "tags": "signs sports  Snow Shoeing Snow Shoeing",
+   "kind": "vertex",
+   "width": 84,
+   "height": 99,
+   "style": "shape=mxgraph.signs.sports.snow_shoeing;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.snow_shoeing"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-68-surfing",
+   "title": "Surfing",
+   "tags": "signs sports  Surfing Surfing",
+   "kind": "vertex",
+   "width": 96,
+   "height": 99,
+   "style": "shape=mxgraph.signs.sports.surfing;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.surfing"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-69-swimming-1",
+   "title": "Swimming 1",
+   "tags": "signs sports  Swimming 1 Swimming 1",
+   "kind": "vertex",
+   "width": 98,
+   "height": 72,
+   "style": "shape=mxgraph.signs.sports.swimming_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.swimming_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-70-swimming-2",
+   "title": "Swimming 2",
+   "tags": "signs sports  Swimming 2 Swimming 2",
+   "kind": "vertex",
+   "width": 99,
+   "height": 45,
+   "style": "shape=mxgraph.signs.sports.swimming_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.swimming_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-71-swing",
+   "title": "Swing",
+   "tags": "signs sports  Swing Swing",
+   "kind": "vertex",
+   "width": 98,
+   "height": 100,
+   "style": "shape=mxgraph.signs.sports.swing;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.swing"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-72-tennis",
+   "title": "Tennis",
+   "tags": "signs sports  Tennis Tennis",
+   "kind": "vertex",
+   "width": 99,
+   "height": 99,
+   "style": "shape=mxgraph.signs.sports.tennis;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.tennis"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-73-trail",
+   "title": "Trail",
+   "tags": "signs sports  Trail Trail",
+   "kind": "vertex",
+   "width": 99,
+   "height": 99,
+   "style": "shape=mxgraph.signs.sports.trail;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.trail"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-74-view",
+   "title": "View",
+   "tags": "signs sports  View View",
+   "kind": "vertex",
+   "width": 87,
+   "height": 98,
+   "style": "shape=mxgraph.signs.sports.view;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.view"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-75-wading",
+   "title": "Wading",
+   "tags": "signs sports  Wading Wading",
+   "kind": "vertex",
+   "width": 99,
+   "height": 98,
+   "style": "shape=mxgraph.signs.sports.wading;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.wading"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-76-waterskiing",
+   "title": "Waterskiing",
+   "tags": "signs sports  Waterskiing Waterskiing",
+   "kind": "vertex",
+   "width": 99,
+   "height": 98,
+   "style": "shape=mxgraph.signs.sports.waterskiing;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.waterskiing"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-77-whale-viewing",
+   "title": "Whale Viewing",
+   "tags": "signs sports  Whale Viewing Whale Viewing",
+   "kind": "vertex",
+   "width": 98,
+   "height": 99,
+   "style": "shape=mxgraph.signs.sports.whale_viewing;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.whale_viewing"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-78-windsurfing",
+   "title": "Windsurfing",
+   "tags": "signs sports  Windsurfing Windsurfing",
+   "kind": "vertex",
+   "width": 99,
+   "height": 98,
+   "style": "shape=mxgraph.signs.sports.windsurfing;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.windsurfing"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsSports-79-wood-gathering",
+   "title": "Wood Gathering",
+   "tags": "signs sports  Wood Gathering Wood Gathering",
+   "kind": "vertex",
+   "width": 92,
+   "height": 98,
+   "style": "shape=mxgraph.signs.sports.wood_gathering;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.sports.wood_gathering"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  }
+ ]
+}

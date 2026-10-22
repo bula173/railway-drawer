@@ -1,0 +1,1828 @@
+{
+ "id": "aws4Compute",
+ "title": "AWS / Compute",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-AWS4.js:8",
+ "entries": [
+  {
+   "id": "aws4Compute-0-compute",
+   "title": "Compute",
+   "tags": "aws4 compute aws amazon web service compute  Compute",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.compute;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:593"
+  },
+  {
+   "id": "aws4Compute-1-ec2",
+   "title": "EC2",
+   "tags": "aws4 ec2 aws amazon web service compute  EC2",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.ec2;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:595"
+  },
+  {
+   "id": "aws4Compute-2-ec2-auto-scaling",
+   "title": "EC2 Auto Scaling",
+   "tags": "aws4 ec2 auto scaling aws amazon web service compute  EC2 Auto Scaling",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.auto_scaling2;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:597"
+  },
+  {
+   "id": "aws4Compute-3-auto-scaling",
+   "title": "Auto Scaling",
+   "tags": "aws4 auto scaling aws amazon web service compute  Auto Scaling",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.auto_scaling3;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:599"
+  },
+  {
+   "id": "aws4Compute-4-bottlerocket",
+   "title": "Bottlerocket",
+   "tags": "aws4 bottlerocket aws amazon web service compute  Bottlerocket",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.bottlerocket;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:601"
+  },
+  {
+   "id": "aws4Compute-5-lightsail",
+   "title": "Lightsail",
+   "tags": "aws4 lightsail aws amazon web service compute  Lightsail",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.lightsail;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:603"
+  },
+  {
+   "id": "aws4Compute-6-lightsail-for-research",
+   "title": " Lightsail for Research",
+   "tags": "aws4 lightsail for research aws amazon web service compute   Lightsail for Research",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.lightsail_for_research;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:605"
+  },
+  {
+   "id": "aws4Compute-7-app-runner",
+   "title": "App Runner",
+   "tags": "aws4 app application runner aws amazon web service compute  App Runner",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.app_runner;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:607"
+  },
+  {
+   "id": "aws4Compute-8-batch",
+   "title": "Batch",
+   "tags": "aws4 batch aws amazon web service compute  Batch",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.batch;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:609"
+  },
+  {
+   "id": "aws4Compute-9-compute-optimizer",
+   "title": "Compute Optimizer",
+   "tags": "aws4 compute optimizer aws amazon web service compute  Compute Optimizer",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.compute_optimizer;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:611"
+  },
+  {
+   "id": "aws4Compute-10-elastic-beanstalk",
+   "title": "Elastic Beanstalk",
+   "tags": "aws4 elastic beanstalk aws amazon web service compute  Elastic Beanstalk",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.elastic_beanstalk;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:613"
+  },
+  {
+   "id": "aws4Compute-11-elastic-fabric-adapter",
+   "title": "Elastic Fabric Adapter",
+   "tags": "aws4 elastic fabric adapter aws amazon web service compute  Elastic Fabric Adapter",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.elastic_fabric_adapter;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:615"
+  },
+  {
+   "id": "aws4Compute-12-fargate",
+   "title": "Fargate",
+   "tags": "aws4 fargate aws amazon web service compute  Fargate",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.fargate;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:617"
+  },
+  {
+   "id": "aws4Compute-13-ec2-image-builder",
+   "title": "EC2 Image Builder",
+   "tags": "aws4 ec2 image builder aws amazon web service compute  EC2 Image Builder",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.ec2_image_builder;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:619"
+  },
+  {
+   "id": "aws4Compute-14-elastic-vmware-service",
+   "title": "Elastic VMware Service",
+   "tags": "aws4 elastic vmware service aws amazon web service compute  Elastic VMware Service",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.elastic_vmware_service;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:621"
+  },
+  {
+   "id": "aws4Compute-15-lambda",
+   "title": "Lambda",
+   "tags": "aws4 lambda aws amazon web service compute  Lambda",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.lambda;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:623"
+  },
+  {
+   "id": "aws4Compute-16-local-zones",
+   "title": "Local Zones",
+   "tags": "aws4 local zones aws amazon web service compute  Local Zones",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.local_zones;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:625"
+  },
+  {
+   "id": "aws4Compute-17-dcv",
+   "title": "DCV",
+   "tags": "aws4 nice dcv aws amazon web service compute  DCV",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.nice_dcv;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:627"
+  },
+  {
+   "id": "aws4Compute-18-nitro-enclaves",
+   "title": "Nitro Enclaves",
+   "tags": "aws4 nitro enclaves aws amazon web service compute  Nitro Enclaves",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.nitro_enclaves;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:629"
+  },
+  {
+   "id": "aws4Compute-19-outposts-rack",
+   "title": "Outposts rack",
+   "tags": "aws4 outposts rack aws amazon web service compute  Outposts rack",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.outposts;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:631"
+  },
+  {
+   "id": "aws4Compute-20-outposts-servers",
+   "title": "Outposts servers",
+   "tags": "aws4 outposts servers aws amazon web service compute  Outposts servers",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.outposts_1u_and_2u_servers;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:633"
+  },
+  {
+   "id": "aws4Compute-21-parallel-cluster",
+   "title": "Parallel Cluster",
+   "tags": "aws4 parallel cluster aws amazon web service compute  Parallel Cluster",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.parallel_cluster;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:635"
+  },
+  {
+   "id": "aws4Compute-22-parallel-computing-service",
+   "title": "Parallel Computing Service",
+   "tags": "aws4 parallel computing service aws amazon web service compute  Parallel Computing Service",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.parallel_computing_service;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:637"
+  },
+  {
+   "id": "aws4Compute-23-serverless-application-repository",
+   "title": "Serverless Application Repository",
+   "tags": "aws4 serverless application repository aws amazon web service compute  Serverless Application Repository",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.serverless_application_repository;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:639"
+  },
+  {
+   "id": "aws4Compute-24-simspace-weaver",
+   "title": "SimSpace Weaver",
+   "tags": "aws4 simspace weaver aws amazon web service compute  SimSpace Weaver",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.simspace_weaver;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:641"
+  },
+  {
+   "id": "aws4Compute-25-elastic-load-balancing",
+   "title": "Elastic Load Balancing",
+   "tags": "aws4 elastic load balancing aws amazon web service compute  Elastic Load Balancing",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.elastic_load_balancing;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:643"
+  },
+  {
+   "id": "aws4Compute-26-wavelength",
+   "title": "Wavelength",
+   "tags": "aws4 wavelength aws amazon web service compute  Wavelength",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.wavelength;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:645"
+  },
+  {
+   "id": "aws4Compute-27-a1-instance",
+   "title": "A1 Instance",
+   "tags": "aws4 a1 aws amazon web service compute  A1 Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.a1_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.a1_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:648"
+  },
+  {
+   "id": "aws4Compute-28-ami-resource",
+   "title": "AMI Resource",
+   "tags": "aws4 ami resource aws amazon web service compute  AMI Resource",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.ami;",
+   "shapeNames": [
+    "mxgraph.aws4.ami"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:650"
+  },
+  {
+   "id": "aws4Compute-29-auto-scaling",
+   "title": "Auto Scaling",
+   "tags": "aws4 autoscaling auto scaling aws amazon web service compute  Auto Scaling",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.auto_scaling2;",
+   "shapeNames": [
+    "mxgraph.aws4.auto_scaling2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:652"
+  },
+  {
+   "id": "aws4Compute-30-c4-instance",
+   "title": "C4 Instance",
+   "tags": "aws4 c4 aws amazon web service compute  C4 Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.c4_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.c4_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:654"
+  },
+  {
+   "id": "aws4Compute-31-c5-instance",
+   "title": "C5 Instance",
+   "tags": "aws4 c5 aws amazon web service compute  C5 Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.c5_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.c5_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:656"
+  },
+  {
+   "id": "aws4Compute-32-c5a-instance",
+   "title": "C5a Instance",
+   "tags": "aws4 c5a aws amazon web service compute  C5a Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.c5a;",
+   "shapeNames": [
+    "mxgraph.aws4.c5a"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:658"
+  },
+  {
+   "id": "aws4Compute-33-c5ad-instance",
+   "title": "C5ad Instance",
+   "tags": "aws4 c5ad aws amazon web service compute  C5ad Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.c5ad;",
+   "shapeNames": [
+    "mxgraph.aws4.c5ad"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:660"
+  },
+  {
+   "id": "aws4Compute-34-c5d-instance",
+   "title": "C5d Instance",
+   "tags": "aws4 c5d aws amazon web service compute  C5d Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.c5d;",
+   "shapeNames": [
+    "mxgraph.aws4.c5d"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:662"
+  },
+  {
+   "id": "aws4Compute-35-c5n-instance",
+   "title": "C5n Instance",
+   "tags": "aws4 c5n aws amazon web service compute  C5n Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.c5n_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.c5n_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:664"
+  },
+  {
+   "id": "aws4Compute-36-c6a-instance",
+   "title": "C6a Instance",
+   "tags": "aws4 c6a aws amazon web service compute  C6a Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.ec2_c6a_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.ec2_c6a_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:666"
+  },
+  {
+   "id": "aws4Compute-37-c6gd-instance",
+   "title": "C6gd Instance",
+   "tags": "aws4 c6gd aws amazon web service compute  C6gd Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.c6gd;",
+   "shapeNames": [
+    "mxgraph.aws4.c6gd"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:668"
+  },
+  {
+   "id": "aws4Compute-38-c6g-instance",
+   "title": "C6g Instance",
+   "tags": "aws4 c6g aws amazon web service compute  C6g Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.c6g_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.c6g_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:670"
+  },
+  {
+   "id": "aws4Compute-39-c6gn-instance",
+   "title": "C6gn Instance",
+   "tags": "aws4 c6gn aws amazon web service compute  C6gn Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.ec2_c6gn_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.ec2_c6gn_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:672"
+  },
+  {
+   "id": "aws4Compute-40-c6i-instance",
+   "title": "C6i Instance",
+   "tags": "aws4 c6i aws amazon web service compute  C6i Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.ec2_c6i_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.ec2_c6i_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:674"
+  },
+  {
+   "id": "aws4Compute-41-c6in-instance",
+   "title": "C6in Instance",
+   "tags": "aws4 c6in aws amazon web service compute  C6in Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.ec2_c6in_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.ec2_c6in_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:676"
+  },
+  {
+   "id": "aws4Compute-42-c7g-instance",
+   "title": "C7g Instance",
+   "tags": "aws4 c7g aws amazon web service compute  C7g Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.ec2_c7g_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.ec2_c7g_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:678"
+  },
+  {
+   "id": "aws4Compute-43-c7gn-instance",
+   "title": "C7gn Instance",
+   "tags": "aws4 c7gn aws amazon web service compute  C7gn Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.ec2_c7gn_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.ec2_c7gn_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:680"
+  },
+  {
+   "id": "aws4Compute-44-d2-instance",
+   "title": "D2 Instance",
+   "tags": "aws4 d2 aws amazon web service compute  D2 Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.d2_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.d2_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:682"
+  },
+  {
+   "id": "aws4Compute-45-d3en-instance",
+   "title": "D3en Instance",
+   "tags": "aws4 d3en aws amazon web service compute  D3en Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.d3en_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.d3en_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:684"
+  },
+  {
+   "id": "aws4Compute-46-d3-instance",
+   "title": "D3 Instance",
+   "tags": "aws4 d3 aws amazon web service compute  D3 Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.d3_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.d3_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:686"
+  },
+  {
+   "id": "aws4Compute-47-db-instance",
+   "title": "DB Instance",
+   "tags": "aws4 db on database aws amazon web service compute  DB Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.db_on_instance2;",
+   "shapeNames": [
+    "mxgraph.aws4.db_on_instance2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:688"
+  },
+  {
+   "id": "aws4Compute-48-dl1-instance",
+   "title": "DL1 Instance",
+   "tags": "aws4 dl1 aws amazon web service compute  DL1 Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.ec2_dl1_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.ec2_dl1_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:690"
+  },
+  {
+   "id": "aws4Compute-49-rescue",
+   "title": "Rescue",
+   "tags": "aws4 rescue aws amazon web service compute  Rescue",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.rescue;",
+   "shapeNames": [
+    "mxgraph.aws4.rescue"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:692"
+  },
+  {
+   "id": "aws4Compute-50-elastic-beanstalk-application",
+   "title": "Elastic Beanstalk Application",
+   "tags": "aws4 elastic beanstalk application aws amazon web service compute  Elastic Beanstalk Application",
+   "kind": "vertex",
+   "width": 31,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.application;",
+   "shapeNames": [
+    "mxgraph.aws4.application"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:694"
+  },
+  {
+   "id": "aws4Compute-51-deployment",
+   "title": "Deployment",
+   "tags": "aws4 elastic beanstalk deployment aws amazon web service compute  Deployment",
+   "kind": "vertex",
+   "width": 48,
+   "height": 46,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.deployment;",
+   "shapeNames": [
+    "mxgraph.aws4.deployment"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:696"
+  },
+  {
+   "id": "aws4Compute-52-elastic-ip-address",
+   "title": "Elastic IP Address",
+   "tags": "aws4 elastic ip itnernet protocol address aws amazon web service compute  Elastic IP Address",
+   "kind": "vertex",
+   "width": 48,
+   "height": 20,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.elastic_ip_address;",
+   "shapeNames": [
+    "mxgraph.aws4.elastic_ip_address"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:698"
+  },
+  {
+   "id": "aws4Compute-53-f1-instance",
+   "title": "F1 Instance",
+   "tags": "aws4 f1 aws amazon web service compute  F1 Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.f1_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.f1_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:700"
+  },
+  {
+   "id": "aws4Compute-54-g3-instance",
+   "title": "G3 Instance",
+   "tags": "aws4 g3 aws amazon web service compute  G3 Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.g3_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.g3_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:702"
+  },
+  {
+   "id": "aws4Compute-55-g4ad-instance",
+   "title": "G4ad Instance",
+   "tags": "aws4 g4ad aws amazon web service compute  G4ad Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.g4ad_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.g4ad_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:704"
+  },
+  {
+   "id": "aws4Compute-56-g4dn-instance",
+   "title": "G4dn Instance",
+   "tags": "aws4 g4dn aws amazon web service compute  G4dn Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.g4dn;",
+   "shapeNames": [
+    "mxgraph.aws4.g4dn"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:706"
+  },
+  {
+   "id": "aws4Compute-57-g5g-instance",
+   "title": "G5g Instance",
+   "tags": "aws4 g5g aws amazon web service compute  G5g Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.ec2_g5g_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.ec2_g5g_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:708"
+  },
+  {
+   "id": "aws4Compute-58-g5-instance",
+   "title": "G5 Instance",
+   "tags": "aws4 g5 aws amazon web service compute  G5 Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.ec2_g5_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.ec2_g5_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:710"
+  },
+  {
+   "id": "aws4Compute-59-h1-instance",
+   "title": "H1 Instance",
+   "tags": "aws4 h1 aws amazon web service compute  H1 Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.h1_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.h1_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:712"
+  },
+  {
+   "id": "aws4Compute-60-habana-gaudi-instance",
+   "title": "Habana Gaudi Instance",
+   "tags": "aws4 habana gaudi aws amazon web service compute  Habana Gaudi Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.habana_gaudi;",
+   "shapeNames": [
+    "mxgraph.aws4.habana_gaudi"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:714"
+  },
+  {
+   "id": "aws4Compute-61-high-memory-instance",
+   "title": "High Memory Instance",
+   "tags": "aws4 high memory instance aws amazon web service compute  High Memory Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.high_memory_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.high_memory_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:716"
+  },
+  {
+   "id": "aws4Compute-62-hpc6a-instance",
+   "title": "Hpc6a Instance",
+   "tags": "aws4 hpc6a instance aws amazon web service compute  Hpc6a Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.ec2_hpc6a_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.ec2_hpc6a_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:718"
+  },
+  {
+   "id": "aws4Compute-63-hpc6id-instance",
+   "title": "Hpc6id Instance",
+   "tags": "aws4 hpc6id instance aws amazon web service compute  Hpc6id Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.ec2_hpc6id_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.ec2_hpc6id_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:720"
+  },
+  {
+   "id": "aws4Compute-64-i2-instance",
+   "title": "I2 Instance",
+   "tags": "aws4 i2 aws amazon web service compute  I2 Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.i2;",
+   "shapeNames": [
+    "mxgraph.aws4.i2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:722"
+  },
+  {
+   "id": "aws4Compute-65-i3en-instance",
+   "title": "I3en Instance",
+   "tags": "aws4 i3en aws amazon web service compute  I3en Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.i3en;",
+   "shapeNames": [
+    "mxgraph.aws4.i3en"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:724"
+  },
+  {
+   "id": "aws4Compute-66-i3-instance",
+   "title": "I3 Instance",
+   "tags": "aws4 i3 aws amazon web service compute  I3 Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.i3_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.i3_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:726"
+  },
+  {
+   "id": "aws4Compute-67-i4i-instance",
+   "title": "I4i Instance",
+   "tags": "aws4 i4i aws amazon web service compute  I4i Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.ec2_i4i_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.ec2_i4i_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:728"
+  },
+  {
+   "id": "aws4Compute-68-im4gn-instance",
+   "title": "Im4gn Instance",
+   "tags": "aws4 im4gn aws amazon web service compute  Im4gn Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.ec2_im4gn_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.ec2_im4gn_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:730"
+  },
+  {
+   "id": "aws4Compute-69-inf1",
+   "title": "Inf1",
+   "tags": "aws4 inf1 aws amazon web service compute  Inf1",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.inf1;",
+   "shapeNames": [
+    "mxgraph.aws4.inf1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:732"
+  },
+  {
+   "id": "aws4Compute-70-inf2",
+   "title": "Inf2",
+   "tags": "aws4 inf2 aws amazon web service compute  Inf2",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.ec2_inf2_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.ec2_inf2_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:734"
+  },
+  {
+   "id": "aws4Compute-71-inferentia",
+   "title": "Inferentia",
+   "tags": "aws4 inferentia aws amazon web service compute  Inferentia",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.inferentia;",
+   "shapeNames": [
+    "mxgraph.aws4.inferentia"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:736"
+  },
+  {
+   "id": "aws4Compute-72-ec2-aws-microservice-extractor-for-net",
+   "title": "EC2 AWS Microservice Extractor for .NET",
+   "tags": "aws4 ec2 aws microservice extractor for net aws amazon web service compute  EC2 AWS Microservice Extractor for .NET",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.ec2_aws_microservice_extractor_for_net;",
+   "shapeNames": [
+    "mxgraph.aws4.ec2_aws_microservice_extractor_for_net"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:738"
+  },
+  {
+   "id": "aws4Compute-73-instance",
+   "title": "Instance",
+   "tags": "aws4  aws amazon web service compute  Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.instance2;",
+   "shapeNames": [
+    "mxgraph.aws4.instance2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:740"
+  },
+  {
+   "id": "aws4Compute-74-instances",
+   "title": "Instances",
+   "tags": "aws4  aws amazon web service compute  Instances",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.instances;",
+   "shapeNames": [
+    "mxgraph.aws4.instances"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:742"
+  },
+  {
+   "id": "aws4Compute-75-instance-with-cloudwatch",
+   "title": "Instance with CloudWatch",
+   "tags": "aws4 instance with cloudwatch aws amazon web service compute  Instance with CloudWatch",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.instance_with_cloudwatch2;",
+   "shapeNames": [
+    "mxgraph.aws4.instance_with_cloudwatch2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:744"
+  },
+  {
+   "id": "aws4Compute-76-is4gen-instance",
+   "title": "Is4gen Instance",
+   "tags": "aws4 is4gen aws amazon web service compute  Is4gen Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.ec2_is4gen_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.ec2_is4gen_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:746"
+  },
+  {
+   "id": "aws4Compute-77-ec2-m1-mac-instance",
+   "title": "EC2 M1 Mac Instance",
+   "tags": "aws4 ec2 m1 mac instance aws amazon web service compute  EC2 M1 Mac Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.ec2_m1_mac_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.ec2_m1_mac_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:748"
+  },
+  {
+   "id": "aws4Compute-78-lambda-function",
+   "title": "Lambda Function",
+   "tags": "aws4 lambda function aws amazon web service compute  Lambda Function",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.lambda_function;",
+   "shapeNames": [
+    "mxgraph.aws4.lambda_function"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:750"
+  },
+  {
+   "id": "aws4Compute-79-m4-instance",
+   "title": "M4 Instance",
+   "tags": "aws4 m4 aws amazon web service compute  M4 Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.m4_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.m4_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:752"
+  },
+  {
+   "id": "aws4Compute-80-m5a-instance",
+   "title": "M5a Instance",
+   "tags": "aws4 m5a aws amazon web service compute  M5a Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.m5a_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.m5a_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:754"
+  },
+  {
+   "id": "aws4Compute-81-m5d-instance",
+   "title": "M5d Instance",
+   "tags": "aws4 m5d aws amazon web service compute  M5d Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.m5d_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.m5d_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:756"
+  },
+  {
+   "id": "aws4Compute-82-m5dn-instance",
+   "title": "M5dn Instance",
+   "tags": "aws4 m5dn aws amazon web service compute  M5dn Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.m5dn_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.m5dn_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:758"
+  },
+  {
+   "id": "aws4Compute-83-m5-instance",
+   "title": "M5 Instance",
+   "tags": "aws4 m5 aws amazon web service compute  M5 Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.m5_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.m5_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:760"
+  },
+  {
+   "id": "aws4Compute-84-m5n-instance",
+   "title": "M5n Instance",
+   "tags": "aws4 m5n aws amazon web service compute  M5n Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.m5n_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.m5n_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:762"
+  },
+  {
+   "id": "aws4Compute-85-m5zn-instance",
+   "title": "M5zn Instance",
+   "tags": "aws4 m5zn aws amazon web service compute  M5zn Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.m5zn_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.m5zn_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:764"
+  },
+  {
+   "id": "aws4Compute-86-m6a-instance",
+   "title": "M6a Instance",
+   "tags": "aws4 m6a aws amazon web service compute  M6a Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.ec2_m6a_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.ec2_m6a_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:766"
+  },
+  {
+   "id": "aws4Compute-87-m6gd-instance",
+   "title": "M6gd Instance",
+   "tags": "aws4 m6gd aws amazon web service compute  M6gd Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.m6gd_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.m6gd_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:768"
+  },
+  {
+   "id": "aws4Compute-88-m6g-instance",
+   "title": "M6g Instance",
+   "tags": "aws4 m6g aws amazon web service compute  M6g Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.m6g_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.m6g_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:770"
+  },
+  {
+   "id": "aws4Compute-89-m6idn-instance",
+   "title": "M6idn Instance",
+   "tags": "aws4 m6idn aws amazon web service compute  M6idn Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.ec2_m6idn_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.ec2_m6idn_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:772"
+  },
+  {
+   "id": "aws4Compute-90-m6i-instance",
+   "title": "M6i Instance",
+   "tags": "aws4 m6i aws amazon web service compute  M6i Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.ec2_m6i_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.ec2_m6i_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:774"
+  },
+  {
+   "id": "aws4Compute-91-m6in-instance",
+   "title": "M6in Instance",
+   "tags": "aws4 m6in aws amazon web service compute  M6in Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.ec2_m6in_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.ec2_m6in_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:776"
+  },
+  {
+   "id": "aws4Compute-92-mac-instance",
+   "title": "Mac Instance",
+   "tags": "aws4 mac aws amazon web service compute  Mac Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.mac_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.mac_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:778"
+  },
+  {
+   "id": "aws4Compute-93-optimized-instance",
+   "title": "Optimized Instance",
+   "tags": "aws4 optimized instance aws amazon web service compute  Optimized Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.optimized_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.optimized_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:780"
+  },
+  {
+   "id": "aws4Compute-94-p2-instance",
+   "title": "P2 Instance",
+   "tags": "aws4 p2 aws amazon web service compute  P2 Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.p2_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.p2_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:782"
+  },
+  {
+   "id": "aws4Compute-95-p3dn-instance",
+   "title": "P3dn Instance",
+   "tags": "aws4 p3dn aws amazon web service compute  P3dn Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.p3dn_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.p3dn_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:784"
+  },
+  {
+   "id": "aws4Compute-96-p3-instance",
+   "title": "P3 Instance",
+   "tags": "aws4 p3 aws amazon web service compute  P3 Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.p3_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.p3_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:786"
+  },
+  {
+   "id": "aws4Compute-97-p4de-instance",
+   "title": "P4de Instance",
+   "tags": "aws4 p4de aws amazon web service compute  P4de Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.ec2_p4de_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.ec2_p4de_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:788"
+  },
+  {
+   "id": "aws4Compute-98-p4d-instance",
+   "title": "P4d Instance",
+   "tags": "aws4 p4d aws amazon web service compute  P4d Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.p4d_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.p4d_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:790"
+  },
+  {
+   "id": "aws4Compute-99-p4-instance",
+   "title": "P4 Instance",
+   "tags": "aws4 p4 aws amazon web service compute  P4 Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.p4_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.p4_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:792"
+  },
+  {
+   "id": "aws4Compute-100-r4-instance",
+   "title": "R4 Instance",
+   "tags": "aws4 r4 aws amazon web service compute  R4 Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.r4_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.r4_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:794"
+  },
+  {
+   "id": "aws4Compute-101-r5ad-instance",
+   "title": "R5ad Instance",
+   "tags": "aws4 r5ad aws amazon web service compute  R5ad Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.r5ad_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.r5ad_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:796"
+  },
+  {
+   "id": "aws4Compute-102-r5a-instance",
+   "title": "R5a Instance",
+   "tags": "aws4 r5a aws amazon web service compute  R5a Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.r5a_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.r5a_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:798"
+  },
+  {
+   "id": "aws4Compute-103-r5b-instance",
+   "title": "R5b Instance",
+   "tags": "aws4 r5b aws amazon web service compute  R5b Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.r5b_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.r5b_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:800"
+  },
+  {
+   "id": "aws4Compute-104-r5d-instance",
+   "title": "R5d Instance",
+   "tags": "aws4 r5d aws amazon web service compute  R5d Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.r5d_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.r5d_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:802"
+  },
+  {
+   "id": "aws4Compute-105-r5gd-instance",
+   "title": "R5gd Instance",
+   "tags": "aws4 r5gd aws amazon web service compute  R5gd Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.r5gd_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.r5gd_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:804"
+  },
+  {
+   "id": "aws4Compute-106-r5-instance",
+   "title": "R5 Instance",
+   "tags": "aws4 r5 aws amazon web service compute  R5 Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.r5_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.r5_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:806"
+  },
+  {
+   "id": "aws4Compute-107-r5n-instance",
+   "title": "R5n Instance",
+   "tags": "aws4 r5n aws amazon web service compute  R5n Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.r5n_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.r5n_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:808"
+  },
+  {
+   "id": "aws4Compute-108-r6a-instance",
+   "title": "R6a Instance",
+   "tags": "aws4 r5a aws amazon web service compute  R6a Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.ec2_r6a_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.ec2_r6a_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:810"
+  },
+  {
+   "id": "aws4Compute-109-r6g-instance",
+   "title": "R6g Instance",
+   "tags": "aws4 r6g aws amazon web service compute  R6g Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.r6g_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.r6g_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:812"
+  },
+  {
+   "id": "aws4Compute-110-r6idn-instance",
+   "title": "R6idn Instance",
+   "tags": "aws4 r6idn aws amazon web service compute  R6idn Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.ec2_r6idn_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.ec2_r6idn_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:814"
+  },
+  {
+   "id": "aws4Compute-111-r6i-instance",
+   "title": "R6i Instance",
+   "tags": "aws4 r6i aws amazon web service compute  R6i Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.ec2_r6i_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.ec2_r6i_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:816"
+  },
+  {
+   "id": "aws4Compute-112-r6in-instance",
+   "title": "R6in Instance",
+   "tags": "aws4 r6in aws amazon web service compute  R6in Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.ec2_r6in_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.ec2_r6in_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:818"
+  },
+  {
+   "id": "aws4Compute-113-r7iz-instance",
+   "title": "R7iz Instance",
+   "tags": "aws4 r7iz aws amazon web service compute  R7iz Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.ec2_r7iz_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.ec2_r7iz_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:820"
+  },
+  {
+   "id": "aws4Compute-114-rdn-instance",
+   "title": "Rdn Instance",
+   "tags": "aws4 rdn aws amazon web service compute  Rdn Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.rdn_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.rdn_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:822"
+  },
+  {
+   "id": "aws4Compute-115-spot-instance",
+   "title": "Spot Instance",
+   "tags": "aws4 spot aws amazon web service compute  Spot Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.spot_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.spot_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:824"
+  },
+  {
+   "id": "aws4Compute-116-t2-instance",
+   "title": "T2 Instance",
+   "tags": "aws4 t2 aws amazon web service compute  T2 Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.t2_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.t2_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:826"
+  },
+  {
+   "id": "aws4Compute-117-t3a-instance",
+   "title": "T3a Instance",
+   "tags": "aws4 t3a aws amazon web service compute  T3a Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.t3a_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.t3a_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:828"
+  },
+  {
+   "id": "aws4Compute-118-t3-instance",
+   "title": "T3 Instance",
+   "tags": "aws4 t3 aws amazon web service compute  T3 Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.t3_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.t3_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:830"
+  },
+  {
+   "id": "aws4Compute-119-t4g-instance",
+   "title": "T4g Instance",
+   "tags": "aws4 t4g aws amazon web service compute  T4g Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.t4g_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.t4g_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:832"
+  },
+  {
+   "id": "aws4Compute-120-trainium-instance",
+   "title": "Trainium Instance",
+   "tags": "aws4 trainium aws amazon web service compute  Trainium Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.trainium_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.trainium_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:834"
+  },
+  {
+   "id": "aws4Compute-121-trn1-instance",
+   "title": "Trn1 Instance",
+   "tags": "aws4 trn1 aws amazon web service compute  Trn1 Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.ec2_trn1_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.ec2_trn1_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:836"
+  },
+  {
+   "id": "aws4Compute-122-vt1-instance",
+   "title": "Vt1 Instance",
+   "tags": "aws4 vt1 aws amazon web service compute  Vt1 Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.ec2_vt1_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.ec2_vt1_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:838"
+  },
+  {
+   "id": "aws4Compute-123-x1e-instance",
+   "title": "X1e Instance",
+   "tags": "aws4 x1e aws amazon web service compute  X1e Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.x1e_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.x1e_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:840"
+  },
+  {
+   "id": "aws4Compute-124-x1-instance",
+   "title": "X1 Instance",
+   "tags": "aws4 x1 aws amazon web service compute  X1 Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.x1_instance2;",
+   "shapeNames": [
+    "mxgraph.aws4.x1_instance2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:842"
+  },
+  {
+   "id": "aws4Compute-125-x2gd-instance",
+   "title": "X2gd Instance",
+   "tags": "aws4 x2gd aws amazon web service compute  X2gd Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.ec2_x2gd_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.ec2_x2gd_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:844"
+  },
+  {
+   "id": "aws4Compute-126-x2idn-instance",
+   "title": "X2idn Instance",
+   "tags": "aws4 x2idn aws amazon web service compute  X2idn Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.ec2_x2idn_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.ec2_x2idn_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:846"
+  },
+  {
+   "id": "aws4Compute-127-x2iedn-instance",
+   "title": "X2iedn Instance",
+   "tags": "aws4 x2eidn aws amazon web service compute  X2iedn Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.ec2_x2iedn_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.ec2_x2iedn_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:848"
+  },
+  {
+   "id": "aws4Compute-128-x2iezn-instance",
+   "title": "X2iezn Instance",
+   "tags": "aws4 x2eizn aws amazon web service compute  X2iezn Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.ec2_x2iezn_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.ec2_x2iezn_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:850"
+  },
+  {
+   "id": "aws4Compute-129-z1d-instance",
+   "title": "z1d Instance",
+   "tags": "aws4 z1d aws amazon web service compute  z1d Instance",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.z1d_instance;",
+   "shapeNames": [
+    "mxgraph.aws4.z1d_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:852"
+  }
+ ]
+}

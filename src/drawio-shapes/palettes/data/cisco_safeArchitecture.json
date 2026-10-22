@@ -1,0 +1,1002 @@
+{
+ "id": "cisco_safeArchitecture",
+ "title": "Cisco Safe / Architecture",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:8",
+ "entries": [
+  {
+   "id": "cisco_safeArchitecture-0-access-switch",
+   "title": "Access Switch",
+   "tags": "cisco safe architecture access switch cisco safe architecture Access Switch",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.switch;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:42"
+  },
+  {
+   "id": "cisco_safeArchitecture-1-aci-controller",
+   "title": "ACI Controller",
+   "tags": "cisco safe architecture aci controller cisco safe architecture ACI Controller",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.aci_controller;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:44"
+  },
+  {
+   "id": "cisco_safeArchitecture-2-aci-leaf-switch",
+   "title": "ACI Leaf Switch",
+   "tags": "cisco safe architecture aci leaf switch cisco safe architecture ACI Leaf Switch",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.aci_leaf_switch;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:46"
+  },
+  {
+   "id": "cisco_safeArchitecture-3-aci-spine-switch",
+   "title": "ACI Spine Switch",
+   "tags": "cisco safe architecture aci spine switch cisco safe architecture ACI Spine Switch",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.aci_spine_switch;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:48"
+  },
+  {
+   "id": "cisco_safeArchitecture-4-actuator",
+   "title": "Actuator",
+   "tags": "cisco safe architecture actuator cisco safe architecture Actuator",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.actuator;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:50"
+  },
+  {
+   "id": "cisco_safeArchitecture-5-adaptive-security-appliance",
+   "title": "Adaptive Security Appliance",
+   "tags": "cisco safe architecture adaptive security appliance cisco safe architecture Adaptive Security Appliance",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.adaptive_security_appliance;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:52"
+  },
+  {
+   "id": "cisco_safeArchitecture-6-automated-system",
+   "title": "Automated System",
+   "tags": "cisco safe architecture automated system cisco safe architecture Automated System",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.automated_system;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:54"
+  },
+  {
+   "id": "cisco_safeArchitecture-7-blade-server",
+   "title": "Blade Server",
+   "tags": "cisco safe architecture blade server cisco safe architecture Blade Server",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.blade_server;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:56"
+  },
+  {
+   "id": "cisco_safeArchitecture-8-catalyst-switch",
+   "title": "Catalyst Switch",
+   "tags": "cisco safe architecture catalyst switch cisco safe architecture Catalyst Switch",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.catalyst_switch;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:58"
+  },
+  {
+   "id": "cisco_safeArchitecture-9-cisco-appliance",
+   "title": "Cisco Appliance",
+   "tags": "cisco safe architecture cisco appliance cisco safe architecture Cisco Appliance",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.cisco_appliance;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:60"
+  },
+  {
+   "id": "cisco_safeArchitecture-10-core-switch",
+   "title": "Core Switch",
+   "tags": "cisco safe architecture core switch cisco safe architecture Core Switch",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.l3_switch;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:62"
+  },
+  {
+   "id": "cisco_safeArchitecture-11-corporate-device",
+   "title": "Corporate Device",
+   "tags": "cisco safe architecture corporate device cisco safe architecture Corporate Device",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.corporate_device1;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:64"
+  },
+  {
+   "id": "cisco_safeArchitecture-12-corporate-wireless-device",
+   "title": "Corporate Wireless Device",
+   "tags": "cisco safe architecture corporate wireless device cisco safe architecture Corporate Wireless Device",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.corporate_device;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:66"
+  },
+  {
+   "id": "cisco_safeArchitecture-13-ddos-protection-appliance",
+   "title": "DDOS Protection Appliance",
+   "tags": "cisco safe architecture ddos protection appliance cisco safe architecture DDOS Protection Appliance",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.ddos_protection_appliance;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:68"
+  },
+  {
+   "id": "cisco_safeArchitecture-14-distribution-switch",
+   "title": "Distribution Switch",
+   "tags": "cisco safe architecture distribution switch cisco safe architecture Distribution Switch",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.stacked_switch;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:70"
+  },
+  {
+   "id": "cisco_safeArchitecture-15-email-security",
+   "title": "Email Security",
+   "tags": "cisco safe architecture email security cisco safe architecture Email Security",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.email_security;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:72"
+  },
+  {
+   "id": "cisco_safeArchitecture-16-endpoint-concentrator",
+   "title": "Endpoint Concentrator",
+   "tags": "cisco safe architecture endpoint concentrator cisco safe architecture Endpoint Concentrator",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.endpoint_concentrator;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:74"
+  },
+  {
+   "id": "cisco_safeArchitecture-17-fabric-switch",
+   "title": "Fabric Switch",
+   "tags": "cisco safe architecture fabric switch cisco safe architecture Fabric Switch",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.fabric_switch;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:76"
+  },
+  {
+   "id": "cisco_safeArchitecture-18-firepower-appliance",
+   "title": "Firepower Appliance",
+   "tags": "cisco safe architecture firepower appliance cisco safe architecture Firepower Appliance",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.firepower_appliance;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:78"
+  },
+  {
+   "id": "cisco_safeArchitecture-19-firepower-management-center",
+   "title": "Firepower Management Center",
+   "tags": "cisco safe architecture firepower management center cisco safe architecture Firepower Management Center",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.firepower_management_center;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:80"
+  },
+  {
+   "id": "cisco_safeArchitecture-20-firewall",
+   "title": "Firewall",
+   "tags": "cisco safe architecture firewall cisco safe architecture Firewall",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.firewall;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:82"
+  },
+  {
+   "id": "cisco_safeArchitecture-21-flow-collector",
+   "title": "Flow Collector",
+   "tags": "cisco safe architecture flow collector cisco safe architecture Flow Collector",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.flow_collector;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:84"
+  },
+  {
+   "id": "cisco_safeArchitecture-22-flow-sensor",
+   "title": "Flow Sensor",
+   "tags": "cisco safe architecture flow sensor cisco safe architecture Flow Sensor",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.flow_sensor;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:86"
+  },
+  {
+   "id": "cisco_safeArchitecture-23-generic-appliance",
+   "title": "Generic Appliance",
+   "tags": "cisco safe architecture generic appliance cisco safe architecture Generic Appliance",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.generic_appliance;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:88"
+  },
+  {
+   "id": "cisco_safeArchitecture-24-identity-directory",
+   "title": "Identity Directory",
+   "tags": "cisco safe architecture identity directory cisco safe architecture Identity Directory",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.identity_directory;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:90"
+  },
+  {
+   "id": "cisco_safeArchitecture-25-intrusion-detection",
+   "title": "Intrusion Detection",
+   "tags": "cisco safe architecture intrusion detection cisco safe architecture Intrusion Detection",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.intrusion_detection;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:92"
+  },
+  {
+   "id": "cisco_safeArchitecture-26-intrusion-prevention",
+   "title": "Intrusion Prevention",
+   "tags": "cisco safe architecture intrusion prevention cisco safe architecture Intrusion Prevention",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.intrusion_detection;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:94"
+  },
+  {
+   "id": "cisco_safeArchitecture-27-l3-switch",
+   "title": "L3 Switch",
+   "tags": "cisco safe architecture l3 switch cisco safe architecture L3 Switch",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.l3_switch;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:96"
+  },
+  {
+   "id": "cisco_safeArchitecture-28-leaf-switch",
+   "title": "Leaf Switch",
+   "tags": "cisco safe architecture leaf switch cisco safe architecture Leaf Switch",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.aci_leaf_switch;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:98"
+  },
+  {
+   "id": "cisco_safeArchitecture-29-load-balancer",
+   "title": "Load Balancer",
+   "tags": "cisco safe architecture load balancer cisco safe architecture Load Balancer",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.load_balancer;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:100"
+  },
+  {
+   "id": "cisco_safeArchitecture-30-log-collector",
+   "title": "Log Collector",
+   "tags": "cisco safe architecture log collector cisco safe architecture Log Collector",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.log_collector;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:102"
+  },
+  {
+   "id": "cisco_safeArchitecture-31-management-console",
+   "title": "Management Console",
+   "tags": "cisco safe architecture mgmt management console cisco safe architecture Management Console",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.mgmt_console;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:104"
+  },
+  {
+   "id": "cisco_safeArchitecture-32-mdm",
+   "title": "MDM",
+   "tags": "cisco safe architecture mdm cisco safe architecture MDM",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.mdm;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:106"
+  },
+  {
+   "id": "cisco_safeArchitecture-33-mobile",
+   "title": "Mobile",
+   "tags": "cisco safe architecture mobile cisco safe architecture Mobile",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.mobile;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:108"
+  },
+  {
+   "id": "cisco_safeArchitecture-34-monitoring",
+   "title": "Monitoring",
+   "tags": "cisco safe architecture monitoring cisco safe architecture Monitoring",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.monitoring;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:110"
+  },
+  {
+   "id": "cisco_safeArchitecture-35-nexus-1kv",
+   "title": "Nexus 1kv",
+   "tags": "cisco safe architecture nexus 1kv cisco safe architecture Nexus 1kv",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.nexus_1kv;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:112"
+  },
+  {
+   "id": "cisco_safeArchitecture-36-nexus-data-center-switch",
+   "title": "Nexus Data Center Switch",
+   "tags": "cisco safe architecture nexus data center switch cisco safe architecture Nexus Data Center Switch",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.nexus_data_center_switch;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:114"
+  },
+  {
+   "id": "cisco_safeArchitecture-37-nexus-fabric-switch",
+   "title": "Nexus Fabric Switch",
+   "tags": "cisco safe architecture nexus fabric switch cisco safe architecture Nexus Fabric Switch",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.nexus_fabric_switch;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:116"
+  },
+  {
+   "id": "cisco_safeArchitecture-38-nexus-switch",
+   "title": "Nexus Switch",
+   "tags": "cisco safe architecture nexus switch cisco safe architecture Nexus Switch",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.nexus_switch;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:118"
+  },
+  {
+   "id": "cisco_safeArchitecture-39-ntp",
+   "title": "NTP",
+   "tags": "cisco safe architecture ntp cisco safe architecture NTP",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.ntp;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:120"
+  },
+  {
+   "id": "cisco_safeArchitecture-40-phone",
+   "title": "Phone",
+   "tags": "cisco safe architecture phone cisco safe architecture Phone",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.phone;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:122"
+  },
+  {
+   "id": "cisco_safeArchitecture-41-policy",
+   "title": "Policy",
+   "tags": "cisco safe architecture policy cisco safe architecture Policy",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.policy;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:124"
+  },
+  {
+   "id": "cisco_safeArchitecture-42-radware-appliance",
+   "title": "Radware Appliance",
+   "tags": "cisco safe architecture radware appliance cisco safe architecture Radware Appliance",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.radware_appliance;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:126"
+  },
+  {
+   "id": "cisco_safeArchitecture-43-router",
+   "title": "Router",
+   "tags": "cisco safe architecture router cisco safe architecture Router",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.router;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:128"
+  },
+  {
+   "id": "cisco_safeArchitecture-44-sandbox-appliance",
+   "title": "Sandbox Appliance",
+   "tags": "cisco safe architecture sandbox appliance cisco safe architecture Sandbox Appliance",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.sandbox_appliance;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:130"
+  },
+  {
+   "id": "cisco_safeArchitecture-45-sd-controller",
+   "title": "SD Controller",
+   "tags": "cisco safe architecture sd controller cisco safe architecture SD Controller",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.aci_controller;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:132"
+  },
+  {
+   "id": "cisco_safeArchitecture-46-sd-wan",
+   "title": "SD WAN",
+   "tags": "cisco safe architecture sd wan wireless area network cisco safe architecture SD WAN",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.sd_wan;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:134"
+  },
+  {
+   "id": "cisco_safeArchitecture-47-sd-wan",
+   "title": "SD WAN",
+   "tags": "cisco safe architecture sd wan wireless area network cisco safe architecture SD WAN",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.sd_wan_2;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:136"
+  },
+  {
+   "id": "cisco_safeArchitecture-48-secure-dns",
+   "title": "Secure DNS",
+   "tags": "cisco safe architecture secure dns domain name server cisco safe architecture Secure DNS",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.secure_dns;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:138"
+  },
+  {
+   "id": "cisco_safeArchitecture-49-secure-server",
+   "title": "Secure Server",
+   "tags": "cisco safe architecture secure server cisco safe architecture Secure Server",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.secure_server;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:140"
+  },
+  {
+   "id": "cisco_safeArchitecture-50-sensor",
+   "title": "Sensor",
+   "tags": "cisco safe architecture sensor cisco safe architecture Sensor",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.sensor;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:142"
+  },
+  {
+   "id": "cisco_safeArchitecture-51-server",
+   "title": "Server",
+   "tags": "cisco safe architecture server cisco safe architecture Server",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.server;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:144"
+  },
+  {
+   "id": "cisco_safeArchitecture-52-siem",
+   "title": "SIEM",
+   "tags": "cisco safe architecture siem cisco safe architecture SIEM",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.siem;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:146"
+  },
+  {
+   "id": "cisco_safeArchitecture-53-spine-switch",
+   "title": "Spine Switch",
+   "tags": "cisco safe architecture spine switch cisco safe architecture Spine Switch",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.aci_spine_switch;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:148"
+  },
+  {
+   "id": "cisco_safeArchitecture-54-stacked-switch",
+   "title": "Stacked Switch",
+   "tags": "cisco safe architecture stacked switch cisco safe architecture Stacked Switch",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.stacked_switch;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:150"
+  },
+  {
+   "id": "cisco_safeArchitecture-55-storage",
+   "title": "Storage",
+   "tags": "cisco safe architecture storage cisco safe architecture Storage",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.storage;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:152"
+  },
+  {
+   "id": "cisco_safeArchitecture-56-switch",
+   "title": "Switch",
+   "tags": "cisco safe architecture switch cisco safe architecture Switch",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.switch;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:154"
+  },
+  {
+   "id": "cisco_safeArchitecture-57-tetration-analytics",
+   "title": "Tetration Analytics",
+   "tags": "cisco safe architecture tetration analytics cisco safe architecture Tetration Analytics",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.tetration_analytics;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:156"
+  },
+  {
+   "id": "cisco_safeArchitecture-58-tls-appliance",
+   "title": "TLS Appliance",
+   "tags": "cisco safe architecture tls appliance cisco safe architecture TLS Appliance",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.tls_appliance;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:158"
+  },
+  {
+   "id": "cisco_safeArchitecture-59-unified-access-switch",
+   "title": "Unified Access Switch",
+   "tags": "cisco safe architecture unified access switch cisco safe architecture Unified Access Switch",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.unified_access_switch;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:160"
+  },
+  {
+   "id": "cisco_safeArchitecture-60-udp-director",
+   "title": "UDP Director",
+   "tags": "cisco safe architecture udp director cisco safe architecture UDP Director",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.udp_director;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:162"
+  },
+  {
+   "id": "cisco_safeArchitecture-61-video-endpoint",
+   "title": "Video Endpoint",
+   "tags": "cisco safe architecture video endpoint cisco safe architecture Video Endpoint",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.video_endpoint;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:164"
+  },
+  {
+   "id": "cisco_safeArchitecture-62-vpn-concentrator",
+   "title": "VPN Concentrator",
+   "tags": "cisco safe architecture vpn virtual private network concentrator cisco safe architecture VPN Concentrator",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.vpn_concentrator;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:166"
+  },
+  {
+   "id": "cisco_safeArchitecture-63-vulnerability-management",
+   "title": "Vulnerability Management",
+   "tags": "cisco safe architecture vulnerability management cisco safe architecture Vulnerability Management",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.vulnerability_management;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:168"
+  },
+  {
+   "id": "cisco_safeArchitecture-64-web-application-firewall",
+   "title": "Web Application Firewall",
+   "tags": "cisco safe architecture web application firewall cisco safe architecture Web Application Firewall",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.web_application_firewall;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:170"
+  },
+  {
+   "id": "cisco_safeArchitecture-65-web-application-firewall",
+   "title": "Web Application Firewall",
+   "tags": "cisco safe architecture web application firewall cisco safe architecture Web Application Firewall",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.web_application_firewall_2;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:172"
+  },
+  {
+   "id": "cisco_safeArchitecture-66-web-filtering",
+   "title": "Web Filtering",
+   "tags": "cisco safe architecture web filtering cisco safe architecture Web Filtering",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.web_filtering;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:174"
+  },
+  {
+   "id": "cisco_safeArchitecture-67-web-security",
+   "title": "Web Security",
+   "tags": "cisco safe architecture web security cisco safe architecture Web Security",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.web_security;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:176"
+  },
+  {
+   "id": "cisco_safeArchitecture-68-wide-area-application-engine",
+   "title": "Wide Area Application Engine",
+   "tags": "cisco safe architecture wide area application engine cisco safe architecture Wide Area Application Engine",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.wide_area_application_engine;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:178"
+  },
+  {
+   "id": "cisco_safeArchitecture-69-wireless-access-point",
+   "title": "Wireless Access Point",
+   "tags": "cisco safe architecture wireless access point cisco safe architecture Wireless Access Point",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.wireless_access_point;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:180"
+  },
+  {
+   "id": "cisco_safeArchitecture-70-wireless-lan-controller",
+   "title": "Wireless LAN Controller",
+   "tags": "cisco safe architecture wireless lan controller cisco safe architecture Wireless LAN Controller",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#6ABD46;strokeColor=#ffffff;bgColor=#C2E0AE;bgDotColor=#ffffff;verticalAlign=top;align=center;points=[[0.085,0.085,0],[0.915,0.085,0],[0.915,0.915,0],[0.085,0.915,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=mxgraph.cisco_safe.architecture.generic_appliance;resIcon=mxgraph.cisco_safe.architecture.wireless_lan_controller;",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:182"
+  }
+ ]
+}

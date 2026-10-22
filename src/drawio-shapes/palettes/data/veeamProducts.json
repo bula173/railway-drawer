@@ -1,0 +1,204 @@
+{
+ "id": "veeamProducts",
+ "title": "Veeam / Products",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Veeam.js:7",
+ "entries": [
+  {
+   "id": "veeamProducts-0-veeam-logo",
+   "title": "Veeam logo",
+   "tags": "veeam products veeam logo veeam vmware virtual machine products Veeam logo",
+   "kind": "vertex",
+   "width": 109.6,
+   "height": 19.2,
+   "style": "pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#07B152;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.veeam_logo;",
+   "shapeNames": [
+    "mxgraph.veeam.veeam_logo"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:644"
+  },
+  {
+   "id": "veeamProducts-1-backup-and-replication",
+   "title": "Backup and Replication",
+   "tags": "veeam products backup and replication veeam vmware virtual machine products Backup and Replication",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.backup_replication;",
+   "shapeNames": [
+    "mxgraph.veeam.backup_replication"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:646"
+  },
+  {
+   "id": "veeamProducts-2-enterprise-manager",
+   "title": "Enterprise Manager",
+   "tags": "veeam products enterprise manager veeam vmware virtual machine products Enterprise Manager",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.enterprise_manager;",
+   "shapeNames": [
+    "mxgraph.veeam.enterprise_manager"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:648"
+  },
+  {
+   "id": "veeamProducts-3-availability-suite",
+   "title": "Availability Suite",
+   "tags": "veeam products availability suite veeam vmware virtual machine products Availability Suite",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.veeam_availability_suite;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.veeam_availability_suite"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:650"
+  },
+  {
+   "id": "veeamProducts-4-availability-console",
+   "title": "Availability Console",
+   "tags": "veeam products availability console veeam vmware virtual machine products Availability Console",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.availability_console;",
+   "shapeNames": [
+    "mxgraph.veeam.availability_console"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:652"
+  },
+  {
+   "id": "veeamProducts-5-availability-orchestrator",
+   "title": "Availability Orchestrator",
+   "tags": "veeam products availability orchestrator veeam vmware virtual machine products Availability Orchestrator",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.availability_orchestrator;",
+   "shapeNames": [
+    "mxgraph.veeam.availability_orchestrator"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:654"
+  },
+  {
+   "id": "veeamProducts-6-agents",
+   "title": "Agents",
+   "tags": "veeam products agents veeam vmware virtual machine products Agents",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.agents;",
+   "shapeNames": [
+    "mxgraph.veeam.agents"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:656"
+  },
+  {
+   "id": "veeamProducts-7-powered-network",
+   "title": "Powered Network",
+   "tags": "veeam products powered network veeam vmware virtual machine products Powered Network",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.powered_network;",
+   "shapeNames": [
+    "mxgraph.veeam.powered_network"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:658"
+  },
+  {
+   "id": "veeamProducts-8-backup-for-office-365",
+   "title": "Backup for Office 365",
+   "tags": "veeam products backup for office 365 veeam vmware virtual machine products Backup for Office 365",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.backup_for_office_365;",
+   "shapeNames": [
+    "mxgraph.veeam.backup_for_office_365"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:660"
+  },
+  {
+   "id": "veeamProducts-9-endpoint-backup",
+   "title": "Endpoint Backup",
+   "tags": "veeam products endpoint backup veeam vmware virtual machine products Endpoint Backup",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.endpoint_backup;",
+   "shapeNames": [
+    "mxgraph.veeam.endpoint_backup"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:662"
+  },
+  {
+   "id": "veeamProducts-10-one-monitor",
+   "title": "ONE Monitor",
+   "tags": "veeam products one monitor veeam vmware virtual machine products ONE Monitor",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.veeam_one_monitor;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.veeam_one_monitor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:664"
+  },
+  {
+   "id": "veeamProducts-11-one-reporter",
+   "title": "ONE Reporter",
+   "tags": "veeam products one reporter veeam vmware virtual machine products ONE Reporter",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.veeam_one_reporter;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.veeam_one_reporter"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:666"
+  },
+  {
+   "id": "veeamProducts-12-one-business-view",
+   "title": "ONE (Business View)",
+   "tags": "veeam products one business view veeam vmware virtual machine products ONE (Business View)",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.veeam_one_business_view;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.veeam_one_business_view"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:668"
+  },
+  {
+   "id": "veeamProducts-13-one-server",
+   "title": "ONE Server",
+   "tags": "veeam products one server veeam vmware virtual machine products ONE Server",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#EF8F21;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.veeam_one_server;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.veeam_one_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:670"
+  }
+ ]
+}

@@ -1,0 +1,83 @@
+{
+ "id": "aws4Illustrations",
+ "title": "AWS / Illustrations",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-AWS4.js:8",
+ "entries": [
+  {
+   "id": "aws4Illustrations-0-entry",
+   "title": "",
+   "tags": "aws4 users aws amazon web service illustrations ",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "sketch=0;outlineConnect=0;gradientColor=none;fontColor=#545B64;strokeColor=none;fillColor=#879196;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.illustration_users;pointerEvents=1",
+   "value": "users",
+   "shapeNames": [
+    "mxgraph.aws4.illustration_users"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:244"
+  },
+  {
+   "id": "aws4Illustrations-1-entry",
+   "title": "",
+   "tags": "aws4 users aws amazon web service illustrations ",
+   "kind": "vertex",
+   "width": 100,
+   "height": 81,
+   "style": "sketch=0;outlineConnect=0;gradientColor=none;fontColor=#545B64;strokeColor=none;fillColor=#879196;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.illustration_notification;pointerEvents=1",
+   "value": "notification",
+   "shapeNames": [
+    "mxgraph.aws4.illustration_notification"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:246"
+  },
+  {
+   "id": "aws4Illustrations-2-entry",
+   "title": "",
+   "tags": "aws4 devices aws amazon web service illustrations ",
+   "kind": "vertex",
+   "width": 100,
+   "height": 73,
+   "style": "sketch=0;outlineConnect=0;gradientColor=none;fontColor=#545B64;strokeColor=none;fillColor=#879196;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.illustration_devices;pointerEvents=1",
+   "value": "devices",
+   "shapeNames": [
+    "mxgraph.aws4.illustration_devices"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:248"
+  },
+  {
+   "id": "aws4Illustrations-3-entry",
+   "title": "",
+   "tags": "aws4 desktop aws amazon web service illustrations ",
+   "kind": "vertex",
+   "width": 100,
+   "height": 91,
+   "style": "sketch=0;outlineConnect=0;gradientColor=none;fontColor=#545B64;strokeColor=none;fillColor=#879196;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.illustration_desktop;pointerEvents=1",
+   "value": "desktop",
+   "shapeNames": [
+    "mxgraph.aws4.illustration_desktop"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:250"
+  },
+  {
+   "id": "aws4Illustrations-4-entry",
+   "title": "",
+   "tags": "aws4 office building aws amazon web service illustrations ",
+   "kind": "vertex",
+   "width": 100,
+   "height": 71,
+   "style": "sketch=0;outlineConnect=0;gradientColor=none;fontColor=#545B64;strokeColor=none;fillColor=#879196;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.illustration_office_building;pointerEvents=1",
+   "value": "office building",
+   "shapeNames": [
+    "mxgraph.aws4.illustration_office_building"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:252"
+  }
+ ]
+}

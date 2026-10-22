@@ -1,0 +1,358 @@
+{
+ "id": "ibmVPC",
+ "title": "IBM / VPC",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-IBM.js:7",
+ "entries": [
+  {
+   "id": "ibmVPC-0-instance",
+   "title": "Instance",
+   "tags": "instance ibm  Instance",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/vpc/Instance.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:523"
+  },
+  {
+   "id": "ibmVPC-1-load-balancer",
+   "title": "Load Balancer",
+   "tags": "load balancer ibm  Load Balancer",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/vpc/LoadBalancer.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:525"
+  },
+  {
+   "id": "ibmVPC-2-block-storage",
+   "title": "Block Storage",
+   "tags": "block storage ibm  Block Storage",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/vpc/BlockStorage.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:527"
+  },
+  {
+   "id": "ibmVPC-3-floating-ip",
+   "title": "Floating IP",
+   "tags": "floating ip internet protocol ibm  Floating IP",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/vpc/FloatingIP.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:529"
+  },
+  {
+   "id": "ibmVPC-4-public-gateway",
+   "title": "Public Gateway",
+   "tags": "public gateway ibm  Public Gateway",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/vpc/PublicGateway.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:531"
+  },
+  {
+   "id": "ibmVPC-5-object-storage",
+   "title": "Object Storage",
+   "tags": "object storage ibm  Object Storage",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/vpc/ObjectStorage.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:533"
+  },
+  {
+   "id": "ibmVPC-6-vpn-connection",
+   "title": "VPN Connection",
+   "tags": "connection ibm  VPN Connection",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/vpc/VPNConnection.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:535"
+  },
+  {
+   "id": "ibmVPC-7-vpn-gateway",
+   "title": "VPN Gateway",
+   "tags": "gateway ibm  VPN Gateway",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/vpc/VPNGateway.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:537"
+  },
+  {
+   "id": "ibmVPC-8-direct-link",
+   "title": "Direct Link",
+   "tags": "direct link ibm  Direct Link",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/vpc/DirectLink.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:539"
+  },
+  {
+   "id": "ibmVPC-9-internet-services",
+   "title": "Internet Services",
+   "tags": "internet services ibm  Internet Services",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/vpc/InternetServices2.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:541"
+  },
+  {
+   "id": "ibmVPC-10-load-balancer-pool",
+   "title": "Load Balancer Pool",
+   "tags": "load balancer pool ibm  Load Balancer Pool",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/vpc/LoadBalancerPool.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:543"
+  },
+  {
+   "id": "ibmVPC-11-load-balancer-listener",
+   "title": "Load Balancer Listener",
+   "tags": "load balancer listener ibm  Load Balancer Listener",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/vpc/LoadBalancerListener.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:545"
+  },
+  {
+   "id": "ibmVPC-12-rules",
+   "title": "Rules",
+   "tags": "load balancer listener ibm  Rules",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/vpc/Rules.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:547"
+  },
+  {
+   "id": "ibmVPC-13-image-service",
+   "title": "Image Service",
+   "tags": "image service ibm  Image Service",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/vpc/ImageService.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:549"
+  },
+  {
+   "id": "ibmVPC-14-key",
+   "title": "Key",
+   "tags": "key ibm  Key",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/vpc/Key.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:551"
+  },
+  {
+   "id": "ibmVPC-15-vpn-policy",
+   "title": "VPN Policy",
+   "tags": "policy ibm  VPN Policy",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/vpc/VPNPolicy.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:553"
+  },
+  {
+   "id": "ibmVPC-16-router",
+   "title": "Router",
+   "tags": "router ibm  Router",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/vpc/Router.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:555"
+  },
+  {
+   "id": "ibmVPC-17-bridge",
+   "title": "Bridge",
+   "tags": "bridge ibm  Bridge",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/vpc/Bridge.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:557"
+  },
+  {
+   "id": "ibmVPC-18-cloud-services",
+   "title": "Cloud Services",
+   "tags": "cloud services ibm  Cloud Services",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/vpc/CloudServices.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:559"
+  },
+  {
+   "id": "ibmVPC-19-internet",
+   "title": "Internet",
+   "tags": "internet ibm  Internet",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/vpc/Internet.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:561"
+  },
+  {
+   "id": "ibmVPC-20-data-center",
+   "title": "Data Center",
+   "tags": "dat acenter ibm  Data Center",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/vpc/Enterprise.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:563"
+  },
+  {
+   "id": "ibmVPC-21-enterprise",
+   "title": "Enterprise",
+   "tags": "enterprise ibm  Enterprise",
+   "kind": "vertex",
+   "width": 60,
+   "height": 48,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/vpc/Enterprise2.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:565"
+  },
+  {
+   "id": "ibmVPC-22-power-instance",
+   "title": "Power Instance",
+   "tags": "power instance ibm  Power Instance",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/vpc/PowerInstance.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:567"
+  },
+  {
+   "id": "ibmVPC-23-transit-gateway",
+   "title": "Transit Gateway",
+   "tags": "transit gateway ibm  Transit Gateway",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/vpc/TransitGateway.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:569"
+  },
+  {
+   "id": "ibmVPC-24-bare-metal-server",
+   "title": "Bare Metal Server",
+   "tags": "bare metal server ibm  Bare Metal Server",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/vpc/BareMetalServer.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBM.js:571"
+  }
+ ]
+}

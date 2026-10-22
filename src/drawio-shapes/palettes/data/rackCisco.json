@@ -1,0 +1,1422 @@
+{
+ "id": "rackCisco",
+ "title": "Rack / Cisco",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Rack.js:7",
+ "entries": [
+  {
+   "id": "rackCisco-0-cisco-1905-serial-integrated-services-router",
+   "title": "Cisco 1905 Serial Integrated Services Router",
+   "tags": "rack cisco  Cisco 1905 Serial Integrated Services Router Cisco 1905 Serial Integrated Services Router",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.cisco.cisco_1905_serial_integrated_services_router;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_1905_serial_integrated_services_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-1-cisco-1921-integrated-services-router",
+   "title": "Cisco 1921 Integrated Services Router",
+   "tags": "rack cisco  Cisco 1921 Integrated Services Router Cisco 1921 Integrated Services Router",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.cisco.cisco_1921_integrated_services_router;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_1921_integrated_services_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-2-cisco-1941-series-integrated-services-router",
+   "title": "Cisco 1941 Series Integrated Services Router",
+   "tags": "rack cisco  Cisco 1941 Series Integrated Services Router Cisco 1941 Series Integrated Services Router",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.cisco.cisco_1941_series_integrated_services_router;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_1941_series_integrated_services_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-3-cisco-2901-integrated-services-router",
+   "title": "Cisco 2901 Integrated Services Router",
+   "tags": "rack cisco  Cisco 2901 Integrated Services Router Cisco 2901 Integrated Services Router",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.cisco.cisco_2901_integrated_services_router;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_2901_integrated_services_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-4-cisco-2911-integrated-services-router",
+   "title": "Cisco 2911 Integrated Services Router",
+   "tags": "rack cisco  Cisco 2911 Integrated Services Router Cisco 2911 Integrated Services Router",
+   "kind": "vertex",
+   "width": 161,
+   "height": 45,
+   "style": "shape=mxgraph.rack.cisco.cisco_2911_integrated_services_router;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_2911_integrated_services_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-5-cisco-2921-integrated-services-router",
+   "title": "Cisco 2921 Integrated Services Router",
+   "tags": "rack cisco  Cisco 2921 Integrated Services Router Cisco 2921 Integrated Services Router",
+   "kind": "vertex",
+   "width": 161,
+   "height": 45,
+   "style": "shape=mxgraph.rack.cisco.cisco_2921_integrated_services_router;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_2921_integrated_services_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-6-cisco-2951-integrated-services-router",
+   "title": "Cisco 2951 Integrated Services Router",
+   "tags": "rack cisco  Cisco 2951 Integrated Services Router Cisco 2951 Integrated Services Router",
+   "kind": "vertex",
+   "width": 161,
+   "height": 45,
+   "style": "shape=mxgraph.rack.cisco.cisco_2951_integrated_services_router;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_2951_integrated_services_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-7-cisco-3925-integrated-services-router",
+   "title": "Cisco 3925 Integrated Services Router",
+   "tags": "rack cisco  Cisco 3925 Integrated Services Router Cisco 3925 Integrated Services Router",
+   "kind": "vertex",
+   "width": 161,
+   "height": 45,
+   "style": "shape=mxgraph.rack.cisco.cisco_3925_integrated_services_router;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_3925_integrated_services_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-8-cisco-3945-integrated-services-router",
+   "title": "Cisco 3945 Integrated Services Router",
+   "tags": "rack cisco  Cisco 3945 Integrated Services Router Cisco 3945 Integrated Services Router",
+   "kind": "vertex",
+   "width": 161,
+   "height": 45,
+   "style": "shape=mxgraph.rack.cisco.cisco_3945_integrated_services_router;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_3945_integrated_services_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-9-cisco-7603-router",
+   "title": "Cisco 7603 Router",
+   "tags": "rack cisco  Cisco 7603 Router Cisco 7603 Router",
+   "kind": "vertex",
+   "width": 161,
+   "height": 60,
+   "style": "shape=mxgraph.rack.cisco.cisco_7603_router;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_7603_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-10-cisco-7604-router",
+   "title": "Cisco 7604 Router",
+   "tags": "rack cisco  Cisco 7604 Router Cisco 7604 Router",
+   "kind": "vertex",
+   "width": 161,
+   "height": 75,
+   "style": "shape=mxgraph.rack.cisco.cisco_7604_router;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_7604_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-11-cisco-7606-router",
+   "title": "Cisco 7606 Router",
+   "tags": "rack cisco  Cisco 7606 Router Cisco 7606 Router",
+   "kind": "vertex",
+   "width": 161,
+   "height": 104,
+   "style": "shape=mxgraph.rack.cisco.cisco_7606_router;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_7606_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-12-cisco-7609-router",
+   "title": "Cisco 7609 Router",
+   "tags": "rack cisco  Cisco 7609 Router Cisco 7609 Router",
+   "kind": "vertex",
+   "width": 161,
+   "height": 311,
+   "style": "shape=mxgraph.rack.cisco.cisco_7609_router;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_7609_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-13-cisco-7613-router",
+   "title": "Cisco 7613 Router",
+   "tags": "rack cisco  Cisco 7613 Router Cisco 7613 Router",
+   "kind": "vertex",
+   "width": 161,
+   "height": 267,
+   "style": "shape=mxgraph.rack.cisco.cisco_7613_router;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_7613_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-14-cisco-8340-application-oriented-networking-appliance",
+   "title": "Cisco 8340 Application-Oriented Networking Appliance",
+   "tags": "rack cisco  Cisco 8340 Application-Oriented Networking Appliance Cisco 8340 Application-Oriented Networking Appliance",
+   "kind": "vertex",
+   "width": 161,
+   "height": 45,
+   "style": "shape=mxgraph.rack.cisco.cisco_8340_application-oriented_networking_appliance;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_8340_application-oriented_networking_appliance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-15-cisco-asa-5585-x-adaptive-security-appliance",
+   "title": "Cisco ASA 5585-X Adaptive Security Appliance",
+   "tags": "rack cisco  Cisco ASA 5585-X Adaptive Security Appliance Cisco ASA 5585-X Adaptive Security Appliance",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.cisco.cisco_asa_5585-x_adaptive_security_appliance;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_asa_5585-x_adaptive_security_appliance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-16-cisco-asr-1001-router",
+   "title": "Cisco ASR 1001 Router",
+   "tags": "rack cisco  Cisco ASR 1001 Router Cisco ASR 1001 Router",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.cisco.cisco_asr_1001_router;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_asr_1001_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-17-cisco-asr-1002-router",
+   "title": "Cisco ASR 1002 Router",
+   "tags": "rack cisco  Cisco ASR 1002 Router Cisco ASR 1002 Router",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.cisco.cisco_asr_1002_router;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_asr_1002_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-18-cisco-asr-1002-x-router",
+   "title": "Cisco ASR 1002-X Router",
+   "tags": "rack cisco  Cisco ASR 1002-X Router Cisco ASR 1002-X Router",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.cisco.cisco_asr_1002-x_router;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_asr_1002-x_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-19-cisco-asr-1004-router",
+   "title": "Cisco ASR 1004 Router",
+   "tags": "rack cisco  Cisco ASR 1004 Router Cisco ASR 1004 Router",
+   "kind": "vertex",
+   "width": 161,
+   "height": 60,
+   "style": "shape=mxgraph.rack.cisco.cisco_asr_1004_router;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_asr_1004_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-20-cisco-asr-1006-router",
+   "title": "Cisco ASR 1006 Router",
+   "tags": "rack cisco  Cisco ASR 1006 Router Cisco ASR 1006 Router",
+   "kind": "vertex",
+   "width": 161,
+   "height": 89,
+   "style": "shape=mxgraph.rack.cisco.cisco_asr_1006_router;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_asr_1006_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-21-cisco-asr-1013-router",
+   "title": "Cisco ASR 1013 Router",
+   "tags": "rack cisco  Cisco ASR 1013 Router Cisco ASR 1013 Router",
+   "kind": "vertex",
+   "width": 161,
+   "height": 193,
+   "style": "shape=mxgraph.rack.cisco.cisco_asr_1013_router;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_asr_1013_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-22-cisco-asr-9001",
+   "title": "Cisco ASR 9001",
+   "tags": "rack cisco  Cisco ASR 9001 Cisco ASR 9001",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.cisco.cisco_asr_9001;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_asr_9001"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-23-cisco-asr-9006",
+   "title": "Cisco ASR 9006",
+   "tags": "rack cisco  Cisco ASR 9006 Cisco ASR 9006",
+   "kind": "vertex",
+   "width": 161,
+   "height": 149,
+   "style": "shape=mxgraph.rack.cisco.cisco_asr_9006;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_asr_9006"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-24-cisco-asr-9010",
+   "title": "Cisco ASR 9010",
+   "tags": "rack cisco  Cisco ASR 9010 Cisco ASR 9010",
+   "kind": "vertex",
+   "width": 161,
+   "height": 240,
+   "style": "shape=mxgraph.rack.cisco.cisco_asr_9010;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_asr_9010"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-25-cisco-asr-9922",
+   "title": "Cisco ASR 9922",
+   "tags": "rack cisco  Cisco ASR 9922 Cisco ASR 9922",
+   "kind": "vertex",
+   "width": 161,
+   "height": 652,
+   "style": "shape=mxgraph.rack.cisco.cisco_asr_9922;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_asr_9922"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-26-cisco-blade-switch-3030",
+   "title": "Cisco Blade Switch 3030",
+   "tags": "rack cisco  Cisco Blade Switch 3030 Cisco Blade Switch 3030",
+   "kind": "vertex",
+   "width": 19,
+   "height": 72,
+   "style": "shape=mxgraph.rack.cisco.cisco_blade_switch_3030;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_blade_switch_3030"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-27-cisco-carrier-packet-transport-200",
+   "title": "Cisco Carrier Packet Transport 200",
+   "tags": "rack cisco  Cisco Carrier Packet Transport 200 Cisco Carrier Packet Transport 200",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.cisco.cisco_carrier_packet_transport_200;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_carrier_packet_transport_200"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-28-cisco-carrier-packet-transport-50",
+   "title": "Cisco Carrier Packet Transport 50",
+   "tags": "rack cisco  Cisco Carrier Packet Transport 50 Cisco Carrier Packet Transport 50",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.cisco.cisco_carrier_packet_transport_50;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_carrier_packet_transport_50"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-29-cisco-carrier-packet-transport-600",
+   "title": "Cisco Carrier Packet Transport 600",
+   "tags": "rack cisco  Cisco Carrier Packet Transport 600 Cisco Carrier Packet Transport 600",
+   "kind": "vertex",
+   "width": 161,
+   "height": 89,
+   "style": "shape=mxgraph.rack.cisco.cisco_carrier_packet_transport_600;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_carrier_packet_transport_600"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-30-cisco-catalyst-4900m-switch",
+   "title": "Cisco Catalyst 4900M Switch",
+   "tags": "rack cisco  Cisco Catalyst 4900M Switch Cisco Catalyst 4900M Switch",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.cisco.cisco_catalyst_4900m_switch;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_catalyst_4900m_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-31-cisco-catalyst-4928-10-gigabit-ethernet-switch",
+   "title": "Cisco Catalyst 4928 10 Gigabit Ethernet Switch",
+   "tags": "rack cisco  Cisco Catalyst 4928 10 Gigabit Ethernet Switch Cisco Catalyst 4928 10 Gigabit Ethernet Switch",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.cisco.cisco_catalyst_4928_10_gigabit_ethernet_switch;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_catalyst_4928_10_gigabit_ethernet_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-32-cisco-catalyst-4948-10-gigabit-ethernet-switch",
+   "title": "Cisco Catalyst 4948 10 Gigabit Ethernet Switch",
+   "tags": "rack cisco  Cisco Catalyst 4948 10 Gigabit Ethernet Switch Cisco Catalyst 4948 10 Gigabit Ethernet Switch",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.cisco.cisco_catalyst_4948_10_gigabit_ethernet_switch;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_catalyst_4948_10_gigabit_ethernet_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-33-cisco-catalyst-4948-switch",
+   "title": "Cisco Catalyst 4948 Switch",
+   "tags": "rack cisco  Cisco Catalyst 4948 Switch Cisco Catalyst 4948 Switch",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.cisco.cisco_catalyst_4948_switch;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_catalyst_4948_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-34-cisco-catalyst-6503-e-switch",
+   "title": "Cisco Catalyst 6503-E Switch",
+   "tags": "rack cisco  Cisco Catalyst 6503-E Switch Cisco Catalyst 6503-E Switch",
+   "kind": "vertex",
+   "width": 148,
+   "height": 60,
+   "style": "shape=mxgraph.rack.cisco.cisco_catalyst_6503-e_switch;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_catalyst_6503-e_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-35-cisco-catalyst-6504-e-switch",
+   "title": "Cisco Catalyst 6504-E Switch",
+   "tags": "rack cisco  Cisco Catalyst 6504-E Switch Cisco Catalyst 6504-E Switch",
+   "kind": "vertex",
+   "width": 148,
+   "height": 75,
+   "style": "shape=mxgraph.rack.cisco.cisco_catalyst_6504-e_switch;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_catalyst_6504-e_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-36-cisco-catalyst-6506-e-switch",
+   "title": "Cisco Catalyst 6506-E Switch",
+   "tags": "rack cisco  Cisco Catalyst 6506-E Switch Cisco Catalyst 6506-E Switch",
+   "kind": "vertex",
+   "width": 148,
+   "height": 178,
+   "style": "shape=mxgraph.rack.cisco.cisco_catalyst_6506-e_switch;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_catalyst_6506-e_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-37-cisco-catalyst-6509-switch",
+   "title": "Cisco Catalyst 6509 Switch",
+   "tags": "rack cisco  Cisco Catalyst 6509 Switch Cisco Catalyst 6509 Switch",
+   "kind": "vertex",
+   "width": 148,
+   "height": 223,
+   "style": "shape=mxgraph.rack.cisco.cisco_catalyst_6509_switch;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_catalyst_6509_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-38-cisco-catalyst-6513-e",
+   "title": "Cisco Catalyst 6513-E",
+   "tags": "rack cisco  Cisco Catalyst 6513-E Cisco Catalyst 6513-E",
+   "kind": "vertex",
+   "width": 148,
+   "height": 297,
+   "style": "shape=mxgraph.rack.cisco.cisco_catalyst_6513-e;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_catalyst_6513-e"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-39-cisco-catalyst-blade-switch-3020-for-hp",
+   "title": "Cisco Catalyst Blade Switch 3020 for HP",
+   "tags": "rack cisco  Cisco Catalyst Blade Switch 3020 for HP Cisco Catalyst Blade Switch 3020 for HP",
+   "kind": "vertex",
+   "width": 19,
+   "height": 121,
+   "style": "shape=mxgraph.rack.cisco.cisco_catalyst_blade_switch_3020_for_hp;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_catalyst_blade_switch_3020_for_hp"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-40-cisco-catalyst-blade-switch-3032-for-dell",
+   "title": "Cisco Catalyst Blade Switch 3032 for Dell",
+   "tags": "rack cisco  Cisco Catalyst Blade Switch 3032 for Dell Cisco Catalyst Blade Switch 3032 for Dell",
+   "kind": "vertex",
+   "width": 19,
+   "height": 143,
+   "style": "shape=mxgraph.rack.cisco.cisco_catalyst_blade_switch_3032_for_dell;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_catalyst_blade_switch_3032_for_dell"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-41-cisco-catalyst-blade-switch-3040-for-dell",
+   "title": "Cisco Catalyst Blade Switch 3040 for Dell",
+   "tags": "rack cisco  Cisco Catalyst Blade Switch 3040 for Dell Cisco Catalyst Blade Switch 3040 for Dell",
+   "kind": "vertex",
+   "width": 19,
+   "height": 72,
+   "style": "shape=mxgraph.rack.cisco.cisco_catalyst_blade_switch_3040_for_dell;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_catalyst_blade_switch_3040_for_dell"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-42-cisco-catalyst-blade-switch-3100-for-dell",
+   "title": "Cisco Catalyst Blade Switch 3100 for Dell",
+   "tags": "rack cisco  Cisco Catalyst Blade Switch 3100 for Dell Cisco Catalyst Blade Switch 3100 for Dell",
+   "kind": "vertex",
+   "width": 19,
+   "height": 143,
+   "style": "shape=mxgraph.rack.cisco.cisco_catalyst_blade_switch_3100_for_dell;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_catalyst_blade_switch_3100_for_dell"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-43-cisco-catalyst-blade-switch-3120-for-hp",
+   "title": "Cisco Catalyst Blade Switch 3120 for HP",
+   "tags": "rack cisco  Cisco Catalyst Blade Switch 3120 for HP Cisco Catalyst Blade Switch 3120 for HP",
+   "kind": "vertex",
+   "width": 19,
+   "height": 121,
+   "style": "shape=mxgraph.rack.cisco.cisco_catalyst_blade_switch_3120_for_hp;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_catalyst_blade_switch_3120_for_hp"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-44-cisco-catalyst-blade-switch-3130-for-dell",
+   "title": "Cisco Catalyst Blade Switch 3130 for Dell",
+   "tags": "rack cisco  Cisco Catalyst Blade Switch 3130 for Dell Cisco Catalyst Blade Switch 3130 for Dell",
+   "kind": "vertex",
+   "width": 19,
+   "height": 143,
+   "style": "shape=mxgraph.rack.cisco.cisco_catalyst_blade_switch_3130_for_dell;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_catalyst_blade_switch_3130_for_dell"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-45-cisco-identity-services-engine",
+   "title": "Cisco Identity Services Engine",
+   "tags": "rack cisco  Cisco Identity Services Engine Cisco Identity Services Engine",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.cisco.cisco_identity_services_engine;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_identity_services_engine"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-46-cisco-ips-4500-sensor",
+   "title": "Cisco IPS 4500 Sensor",
+   "tags": "rack cisco  Cisco IPS 4500 Sensor Cisco IPS 4500 Sensor",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.cisco.cisco_ips_4500_sensor;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_ips_4500_sensor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-47-cisco-network-access-control",
+   "title": "Cisco Network Access Control",
+   "tags": "rack cisco  Cisco Network Access Control Cisco Network Access Control",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.cisco.cisco_network_access_control;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_network_access_control"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-48-cisco-nexus-1010-virtual-services-appliance",
+   "title": "Cisco Nexus 1010 Virtual Services Appliance",
+   "tags": "rack cisco  Cisco Nexus 1010 Virtual Services Appliance Cisco Nexus 1010 Virtual Services Appliance",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.cisco.cisco_nexus_1010_virtual_services_appliance;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_nexus_1010_virtual_services_appliance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-49-cisco-nexus-2148t-fabric-extender",
+   "title": "Cisco Nexus 2148T Fabric Extender",
+   "tags": "rack cisco  Cisco Nexus 2148T Fabric Extender Cisco Nexus 2148T Fabric Extender",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.cisco.cisco_nexus_2148t_fabric_extender;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_nexus_2148t_fabric_extender"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-50-cisco-nexus-2224tp-ge-fabric-extender",
+   "title": "Cisco Nexus 2224TP GE Fabric Extender",
+   "tags": "rack cisco  Cisco Nexus 2224TP GE Fabric Extender Cisco Nexus 2224TP GE Fabric Extender",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.cisco.cisco_nexus_2224tp_ge_fabric_extender;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_nexus_2224tp_ge_fabric_extender"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-51-cisco-nexus-2232pp-10ge-fabric-extender",
+   "title": "Cisco Nexus 2232PP 10GE Fabric Extender",
+   "tags": "rack cisco  Cisco Nexus 2232PP 10GE Fabric Extender Cisco Nexus 2232PP 10GE Fabric Extender",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.cisco.cisco_nexus_2232pp_10ge_fabric_extender;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_nexus_2232pp_10ge_fabric_extender"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-52-cisco-nexus-2232tm-10ge-fabric-extender",
+   "title": "Cisco Nexus 2232TM 10GE Fabric Extender",
+   "tags": "rack cisco  Cisco Nexus 2232TM 10GE Fabric Extender Cisco Nexus 2232TM 10GE Fabric Extender",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.cisco.cisco_nexus_2232tm_10ge_fabric_extender;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_nexus_2232tm_10ge_fabric_extender"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-53-cisco-nexus-2248pq-10ge-fabric-extender",
+   "title": "Cisco Nexus 2248PQ 10GE Fabric Extender",
+   "tags": "rack cisco  Cisco Nexus 2248PQ 10GE Fabric Extender Cisco Nexus 2248PQ 10GE Fabric Extender",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.cisco.cisco_nexus_2248pq_10ge_fabric_extender;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_nexus_2248pq_10ge_fabric_extender"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-54-cisco-nexus-2248tp-ge-fabric-extender",
+   "title": "Cisco Nexus 2248TP GE Fabric Extender",
+   "tags": "rack cisco  Cisco Nexus 2248TP GE Fabric Extender Cisco Nexus 2248TP GE Fabric Extender",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.cisco.cisco_nexus_2248tp_ge_fabric_extender;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_nexus_2248tp_ge_fabric_extender"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-55-cisco-nexus-3016-switch",
+   "title": "Cisco Nexus 3016 Switch",
+   "tags": "rack cisco  Cisco Nexus 3016 Switch Cisco Nexus 3016 Switch",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.cisco.cisco_nexus_3016_switch;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_nexus_3016_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-56-cisco-nexus-3048-switch",
+   "title": "Cisco Nexus 3048 Switch",
+   "tags": "rack cisco  Cisco Nexus 3048 Switch Cisco Nexus 3048 Switch",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.cisco.cisco_nexus_3048_switch;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_nexus_3048_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-57-cisco-nexus-3064-switch",
+   "title": "Cisco Nexus 3064 Switch",
+   "tags": "rack cisco  Cisco Nexus 3064 Switch Cisco Nexus 3064 Switch",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.cisco.cisco_nexus_3064_switch;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_nexus_3064_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-58-cisco-nexus-3548-switch",
+   "title": "Cisco Nexus 3548 Switch",
+   "tags": "rack cisco  Cisco Nexus 3548 Switch Cisco Nexus 3548 Switch",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.cisco.cisco_nexus_3548_switch;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_nexus_3548_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-59-cisco-nexus-5548p-switch",
+   "title": "Cisco Nexus 5548P Switch",
+   "tags": "rack cisco  Cisco Nexus 5548P Switch Cisco Nexus 5548P Switch",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.cisco.cisco_nexus_5548p_switch;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_nexus_5548p_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-60-cisco-nexus-5596t",
+   "title": "Cisco Nexus 5596T",
+   "tags": "rack cisco  Cisco Nexus 5596T Cisco Nexus 5596T",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.cisco.cisco_nexus_5596t;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_nexus_5596t"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-61-cisco-nexus-5596up-switch",
+   "title": "Cisco Nexus 5596UP Switch",
+   "tags": "rack cisco  Cisco Nexus 5596UP Switch Cisco Nexus 5596UP Switch",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.cisco.cisco_nexus_5596up_switch;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_nexus_5596up_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-62-cisco-nexus-6001-switch",
+   "title": "Cisco Nexus 6001 Switch",
+   "tags": "rack cisco  Cisco Nexus 6001 Switch Cisco Nexus 6001 Switch",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.cisco.cisco_nexus_6001_switch;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_nexus_6001_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-63-cisco-nexus-6004-switch",
+   "title": "Cisco Nexus 6004 Switch",
+   "tags": "rack cisco  Cisco Nexus 6004 Switch Cisco Nexus 6004 Switch",
+   "kind": "vertex",
+   "width": 161,
+   "height": 60,
+   "style": "shape=mxgraph.rack.cisco.cisco_nexus_6004_switch;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_nexus_6004_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-64-cisco-nexus-7000-10-slot-switch-chassis",
+   "title": "Cisco Nexus 7000 10-Slot Switch Chassis",
+   "tags": "rack cisco  Cisco Nexus 7000 10-Slot Switch Chassis Cisco Nexus 7000 10-Slot Switch Chassis",
+   "kind": "vertex",
+   "width": 161,
+   "height": 311,
+   "style": "shape=mxgraph.rack.cisco.cisco_nexus_7000_10-slot_switch_chassis;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_nexus_7000_10-slot_switch_chassis"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-65-cisco-nexus-7000-18-slot-switch-chassis",
+   "title": "Cisco Nexus 7000 18-Slot Switch Chassis",
+   "tags": "rack cisco  Cisco Nexus 7000 18-Slot Switch Chassis Cisco Nexus 7000 18-Slot Switch Chassis",
+   "kind": "vertex",
+   "width": 161,
+   "height": 371,
+   "style": "shape=mxgraph.rack.cisco.cisco_nexus_7000_18-slot_switch_chassis;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_nexus_7000_18-slot_switch_chassis"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-66-cisco-nexus-7000-4-slot-switch-chassis",
+   "title": "Cisco Nexus 7000 4-Slot Switch Chassis",
+   "tags": "rack cisco  Cisco Nexus 7000 4-Slot Switch Chassis Cisco Nexus 7000 4-Slot Switch Chassis",
+   "kind": "vertex",
+   "width": 161,
+   "height": 104,
+   "style": "shape=mxgraph.rack.cisco.cisco_nexus_7000_4-slot_switch_chassis;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_nexus_7000_4-slot_switch_chassis"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-67-cisco-nexus-7000-9-slot-switch-chassis",
+   "title": "Cisco Nexus 7000 9-Slot Switch Chassis",
+   "tags": "rack cisco  Cisco Nexus 7000 9-Slot Switch Chassis Cisco Nexus 7000 9-Slot Switch Chassis",
+   "kind": "vertex",
+   "width": 161,
+   "height": 208,
+   "style": "shape=mxgraph.rack.cisco.cisco_nexus_7000_9-slot_switch_chassis;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_nexus_7000_9-slot_switch_chassis"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-68-cisco-ons-15305-multiservice-customer-access-platform",
+   "title": "Cisco ONS 15305 Multiservice Customer Access Platform",
+   "tags": "rack cisco  Cisco ONS 15305 Multiservice Customer Access Platform Cisco ONS 15305 Multiservice Customer Access Platform",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.cisco.cisco_ons_15305_multiservice_customer_access_platform;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_ons_15305_multiservice_customer_access_platform"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-69-cisco-ons-15310-cl-sonet-multiservice-platform",
+   "title": "Cisco ONS 15310-CL SONET Multiservice Platform",
+   "tags": "rack cisco  Cisco ONS 15310-CL SONET Multiservice Platform Cisco ONS 15310-CL SONET Multiservice Platform",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.cisco.cisco_ons_15310-cl_sonet_multiservice_platform;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_ons_15310-cl_sonet_multiservice_platform"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-70-cisco-ons-15310-ma-sdh-multiservice-platform",
+   "title": "Cisco ONS 15310-MA SDH Multiservice Platform",
+   "tags": "rack cisco  Cisco ONS 15310-MA SDH Multiservice Platform Cisco ONS 15310-MA SDH Multiservice Platform",
+   "kind": "vertex",
+   "width": 86,
+   "height": 89,
+   "style": "shape=mxgraph.rack.cisco.cisco_ons_15310-ma_sdh_multiservice_platform;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_ons_15310-ma_sdh_multiservice_platform"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-71-cisco-ons-15454-sonet-sdh-multiservice-provisioning-platform",
+   "title": "Cisco ONS 15454 SONET-SDH Multiservice Provisioning Platform",
+   "tags": "rack cisco  Cisco ONS 15454 SONET-SDH Multiservice Provisioning Platform Cisco ONS 15454 SONET-SDH Multiservice Provisioning Platform",
+   "kind": "vertex",
+   "width": 161,
+   "height": 157,
+   "style": "shape=mxgraph.rack.cisco.cisco_ons_15454_sonet-sdh_multiservice_provisioning_platform;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_ons_15454_sonet-sdh_multiservice_provisioning_platform"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-72-cisco-ons-15600-multiservice-switching-platform",
+   "title": "Cisco ONS 15600 Multiservice Switching Platform",
+   "tags": "rack cisco  Cisco ONS 15600 Multiservice Switching Platform Cisco ONS 15600 Multiservice Switching Platform",
+   "kind": "vertex",
+   "width": 201,
+   "height": 212,
+   "style": "shape=mxgraph.rack.cisco.cisco_ons_15600_multiservice_switching_platform;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_ons_15600_multiservice_switching_platform"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-73-cisco-physical-security-4u-storage",
+   "title": "Cisco Physical Security 4U Storage",
+   "tags": "rack cisco  Cisco Physical Security 4U Storage Cisco Physical Security 4U Storage",
+   "kind": "vertex",
+   "width": 161,
+   "height": 60,
+   "style": "shape=mxgraph.rack.cisco.cisco_physical_security_4u_storage;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_physical_security_4u_storage"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-74-cisco-physical-security-multiservice-platform-1u",
+   "title": "Cisco Physical Security Multiservice Platform 1U",
+   "tags": "rack cisco  Cisco Physical Security Multiservice Platform 1U Cisco Physical Security Multiservice Platform 1U",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.cisco.cisco_physical_security_multiservice_platform_1u;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_physical_security_multiservice_platform_1u"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-75-cisco-physical-security-multiservice-platform-2u",
+   "title": "Cisco Physical Security Multiservice Platform 2U",
+   "tags": "rack cisco  Cisco Physical Security Multiservice Platform 2U Cisco Physical Security Multiservice Platform 2U",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.cisco.cisco_physical_security_multiservice_platform_2u;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_physical_security_multiservice_platform_2u"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-76-cisco-physical-security-multiservice-platform-4u",
+   "title": "Cisco Physical Security Multiservice Platform 4U",
+   "tags": "rack cisco  Cisco Physical Security Multiservice Platform 4U Cisco Physical Security Multiservice Platform 4U",
+   "kind": "vertex",
+   "width": 161,
+   "height": 60,
+   "style": "shape=mxgraph.rack.cisco.cisco_physical_security_multiservice_platform_4u;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_physical_security_multiservice_platform_4u"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-77-cisco-ucs-5100-chassis",
+   "title": "Cisco UCS 5100 Chassis",
+   "tags": "rack cisco  Cisco UCS 5100 Chassis Cisco UCS 5100 Chassis",
+   "kind": "vertex",
+   "width": 161,
+   "height": 89,
+   "style": "shape=mxgraph.rack.cisco.cisco_ucs_5100_chassis;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_ucs_5100_chassis"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-78-cisco-ucs-6248up-fabric-interconnect",
+   "title": "Cisco UCS 6248UP Fabric Interconnect",
+   "tags": "rack cisco  Cisco UCS 6248UP Fabric Interconnect Cisco UCS 6248UP Fabric Interconnect",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.cisco.cisco_ucs_6248up_fabric_interconnect;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_ucs_6248up_fabric_interconnect"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-79-cisco-ucs-6296up-fabric-interconnect",
+   "title": "Cisco UCS 6296UP Fabric Interconnect",
+   "tags": "rack cisco  Cisco UCS 6296UP Fabric Interconnect Cisco UCS 6296UP Fabric Interconnect",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.cisco.cisco_ucs_6296up_fabric_interconnect;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_ucs_6296up_fabric_interconnect"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-80-cisco-ucs-c22-m3-server",
+   "title": "Cisco UCS C22 M3 Server",
+   "tags": "rack cisco  Cisco UCS C22 M3 Server Cisco UCS C22 M3 Server",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.cisco.cisco_ucs_c22_m3_server;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_ucs_c22_m3_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-81-cisco-ucs-c220-m3-server",
+   "title": "Cisco UCS C220 M3 Server",
+   "tags": "rack cisco  Cisco UCS C220 M3 Server Cisco UCS C220 M3 Server",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.cisco.cisco_ucs_c220_m3_server;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_ucs_c220_m3_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-82-cisco-ucs-c24-m3-server",
+   "title": "Cisco UCS C24 M3 Server",
+   "tags": "rack cisco  Cisco UCS C24 M3 Server Cisco UCS C24 M3 Server",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.cisco.cisco_ucs_c24_m3_server;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_ucs_c24_m3_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-83-cisco-ucs-c240-m3-server",
+   "title": "Cisco UCS C240 M3 Server",
+   "tags": "rack cisco  Cisco UCS C240 M3 Server Cisco UCS C240 M3 Server",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.cisco.cisco_ucs_c240_m3_server;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_ucs_c240_m3_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-84-cisco-ucs-c260-m3-server",
+   "title": "Cisco UCS C260 M3 Server",
+   "tags": "rack cisco  Cisco UCS C260 M3 Server Cisco UCS C260 M3 Server",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.cisco.cisco_ucs_c260_m3_server;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_ucs_c260_m3_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-85-cisco-ucs-c420-m3-server",
+   "title": "Cisco UCS C420 M3 Server",
+   "tags": "rack cisco  Cisco UCS C420 M3 Server Cisco UCS C420 M3 Server",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.cisco.cisco_ucs_c420_m3_server;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_ucs_c420_m3_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-86-cisco-ucs-c460-m2-server",
+   "title": "Cisco UCS C460 M2 Server",
+   "tags": "rack cisco  Cisco UCS C460 M2 Server Cisco UCS C460 M2 Server",
+   "kind": "vertex",
+   "width": 161,
+   "height": 60,
+   "style": "shape=mxgraph.rack.cisco.cisco_ucs_c460_m2_server;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_ucs_c460_m2_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-87-cisco-wae-512",
+   "title": "Cisco WAE-512",
+   "tags": "rack cisco  Cisco WAE-512 Cisco WAE-512",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.cisco.cisco_wae-512;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_wae-512"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-88-cisco-wae-612",
+   "title": "Cisco WAE-612",
+   "tags": "rack cisco  Cisco WAE-612 Cisco WAE-612",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.cisco.cisco_wae-612;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_wae-612"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-89-cisco-wae-674",
+   "title": "Cisco WAE-674",
+   "tags": "rack cisco  Cisco WAE-674 Cisco WAE-674",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.cisco.cisco_wae-674;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_wae-674"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-90-cisco-wae-7341",
+   "title": "Cisco WAE-7341",
+   "tags": "rack cisco  Cisco WAE-7341 Cisco WAE-7341",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.cisco.cisco_wae-7341;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_wae-7341"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-91-cisco-wae-7371",
+   "title": "Cisco WAE-7371",
+   "tags": "rack cisco  Cisco WAE-7371 Cisco WAE-7371",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.cisco.cisco_wae-7371;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_wae-7371"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-92-cisco-wave-294",
+   "title": "Cisco WAVE 294",
+   "tags": "rack cisco  Cisco WAVE 294 Cisco WAVE 294",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.cisco.cisco_wave_294;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_wave_294"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-93-cisco-wave-594",
+   "title": "Cisco WAVE 594",
+   "tags": "rack cisco  Cisco WAVE 594 Cisco WAVE 594",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.cisco.cisco_wave_594;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_wave_594"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-94-cisco-wave-694",
+   "title": "Cisco WAVE 694",
+   "tags": "rack cisco  Cisco WAVE 694 Cisco WAVE 694",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.cisco.cisco_wave_694;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_wave_694"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-95-cisco-wave-7541",
+   "title": "Cisco WAVE 7541",
+   "tags": "rack cisco  Cisco WAVE 7541 Cisco WAVE 7541",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.cisco.cisco_wave_7541;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_wave_7541"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-96-cisco-wave-7571",
+   "title": "Cisco WAVE 7571",
+   "tags": "rack cisco  Cisco WAVE 7571 Cisco WAVE 7571",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.cisco.cisco_wave_7571;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_wave_7571"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-97-cisco-wave-8541",
+   "title": "Cisco WAVE 8541",
+   "tags": "rack cisco  Cisco WAVE 8541 Cisco WAVE 8541",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.cisco.cisco_wave_8541;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_wave_8541"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-98-cisco-web-security-appliance-s170",
+   "title": "Cisco Web Security Appliance S170",
+   "tags": "rack cisco  Cisco Web Security Appliance S170 Cisco Web Security Appliance S170",
+   "kind": "vertex",
+   "width": 161,
+   "height": 15,
+   "style": "shape=mxgraph.rack.cisco.cisco_web_security_appliance_s170;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_web_security_appliance_s170"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-99-cisco-web-security-appliance-s370",
+   "title": "Cisco Web Security Appliance S370",
+   "tags": "rack cisco  Cisco Web Security Appliance S370 Cisco Web Security Appliance S370",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.cisco.cisco_web_security_appliance_s370;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_web_security_appliance_s370"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  },
+  {
+   "id": "rackCisco-100-cisco-web-security-appliance-s670",
+   "title": "Cisco Web Security Appliance S670",
+   "tags": "rack cisco  Cisco Web Security Appliance S670 Cisco Web Security Appliance S670",
+   "kind": "vertex",
+   "width": 161,
+   "height": 30,
+   "style": "shape=mxgraph.rack.cisco.cisco_web_security_appliance_s670;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#ffffff;",
+   "shapeNames": [
+    "mxgraph.rack.cisco.cisco_web_security_appliance_s670"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:41"
+  }
+ ]
+}

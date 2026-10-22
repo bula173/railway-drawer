@@ -1,0 +1,2684 @@
+{
+ "id": "weblogos",
+ "title": "Web Logos",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:375",
+ "entries": [
+  {
+   "id": "weblogos-0-adfty",
+   "title": "Adfty",
+   "tags": "weblogos adfty web logos logo Adfty",
+   "kind": "vertex",
+   "width": 91.2,
+   "height": 91.60000000000001,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.adfty;fillColor=#66E8F3;gradientColor=#1C7CBA",
+   "shapeNames": [
+    "mxgraph.weblogos.adfty"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:387"
+  },
+  {
+   "id": "weblogos-1-adobe-pdf",
+   "title": "Adobe PDF",
+   "tags": "weblogos adobe pdf web logos logo Adobe PDF",
+   "kind": "vertex",
+   "width": 69.4,
+   "height": 67.60000000000001,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.adobe_pdf;fillColor=#A60908",
+   "shapeNames": [
+    "mxgraph.weblogos.adobe_pdf"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:389"
+  },
+  {
+   "id": "weblogos-2-aim",
+   "title": "Aim",
+   "tags": "weblogos aim web logos logo Aim",
+   "kind": "vertex",
+   "width": 62.400000000000006,
+   "height": 68.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.aim",
+   "shapeNames": [
+    "mxgraph.weblogos.aim"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:391"
+  },
+  {
+   "id": "weblogos-3-allvoices",
+   "title": "Allvoices",
+   "tags": "weblogos allvoices web logos logo Allvoices",
+   "kind": "vertex",
+   "width": 84,
+   "height": 79.60000000000001,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.allvoices",
+   "shapeNames": [
+    "mxgraph.weblogos.allvoices"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:393"
+  },
+  {
+   "id": "weblogos-4-amazon",
+   "title": "Amazon",
+   "tags": "weblogos amazon web logos logo Amazon",
+   "kind": "vertex",
+   "width": 62.800000000000004,
+   "height": 68.2,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.amazon",
+   "shapeNames": [
+    "mxgraph.weblogos.amazon"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:395"
+  },
+  {
+   "id": "weblogos-5-android",
+   "title": "Android",
+   "tags": "weblogos android web logos logo Android",
+   "kind": "vertex",
+   "width": 67.60000000000001,
+   "height": 80,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.android;fillColor=#A4CA39;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.android"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:397"
+  },
+  {
+   "id": "weblogos-6-apache",
+   "title": "Apache",
+   "tags": "weblogos apache db database web logos logo Apache",
+   "kind": "vertex",
+   "width": 42.6,
+   "height": 85.2,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.apache",
+   "shapeNames": [
+    "mxgraph.weblogos.apache"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:399"
+  },
+  {
+   "id": "weblogos-7-apple",
+   "title": "Apple",
+   "tags": "weblogos apple web logos logo Apple",
+   "kind": "vertex",
+   "width": 62.400000000000006,
+   "height": 76.2,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.apple;fillColor=#1B1C1C;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.apple"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:401"
+  },
+  {
+   "id": "weblogos-8-apple-classic",
+   "title": "Apple (classic)",
+   "tags": "weblogos apple classic web logos logo Apple (classic)",
+   "kind": "vertex",
+   "width": 62.400000000000006,
+   "height": 76.2,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.apple_classic",
+   "shapeNames": [
+    "mxgraph.weblogos.apple_classic"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:403"
+  },
+  {
+   "id": "weblogos-9-app-store",
+   "title": "App Store",
+   "tags": "weblogos app store application web logos logo App Store",
+   "kind": "vertex",
+   "width": 61.2,
+   "height": 20,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.app_store;fillColor=#000000;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.app_store"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:405"
+  },
+  {
+   "id": "weblogos-10-app-store-iphone",
+   "title": "App Store iPhone",
+   "tags": "weblogos app store iphone web logos logo App Store iPhone",
+   "kind": "vertex",
+   "width": 61.2,
+   "height": 20,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.app_store_iphone;fillColor=#75797C;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.app_store_iphone"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:407"
+  },
+  {
+   "id": "weblogos-11-arduino",
+   "title": "Arduino",
+   "tags": "weblogos arduino web logos logo Arduino",
+   "kind": "vertex",
+   "width": 67.4,
+   "height": 32,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.arduino;fillColor=#36868D;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.arduino"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:409"
+  },
+  {
+   "id": "weblogos-12-ask",
+   "title": "Ask",
+   "tags": "weblogos ask web logos logo Ask",
+   "kind": "vertex",
+   "width": 68.60000000000001,
+   "height": 50.6,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.ask;fillColor=#D22028;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.ask"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:411"
+  },
+  {
+   "id": "weblogos-13-atlassian",
+   "title": "Atlassian",
+   "tags": "weblogos atlassian logo web logos logo Atlassian",
+   "kind": "vertex",
+   "width": 66,
+   "height": 66,
+   "style": "image;image=img/lib/atlassian/Atlassian_Logo.svg;html=1;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:413"
+  },
+  {
+   "id": "weblogos-14-audioboo",
+   "title": "Audioboo",
+   "tags": "weblogos audioboo web logos logo Audioboo",
+   "kind": "vertex",
+   "width": 54,
+   "height": 79.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.audioboo;fillColor=#B9217E",
+   "shapeNames": [
+    "mxgraph.weblogos.audioboo"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:415"
+  },
+  {
+   "id": "weblogos-15-aws",
+   "title": "AWS",
+   "tags": "weblogos aws amazon web service web logos logo AWS",
+   "kind": "vertex",
+   "width": 63.6,
+   "height": 58.400000000000006,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.aws",
+   "shapeNames": [
+    "mxgraph.weblogos.aws"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:417"
+  },
+  {
+   "id": "weblogos-16-aws-s3",
+   "title": "AWS S3",
+   "tags": "weblogos aws s3 amazon web service web logos logo AWS S3",
+   "kind": "vertex",
+   "width": 61.6,
+   "height": 57.6,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.aws_s3",
+   "shapeNames": [
+    "mxgraph.weblogos.aws_s3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:419"
+  },
+  {
+   "id": "weblogos-17-baidu",
+   "title": "Baidu",
+   "tags": "weblogos baidu web logos logo Baidu",
+   "kind": "vertex",
+   "width": 71,
+   "height": 77,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.baidu;fillColor=#3F4D9E",
+   "shapeNames": [
+    "mxgraph.weblogos.baidu"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:421"
+  },
+  {
+   "id": "weblogos-18-bamboo",
+   "title": "Bamboo",
+   "tags": "weblogos bamboo logo web logos logo Bamboo",
+   "kind": "vertex",
+   "width": 64,
+   "height": 74,
+   "style": "image;image=img/lib/atlassian/Bamboo_Logo.svg;html=1;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:423"
+  },
+  {
+   "id": "weblogos-19-bebo",
+   "title": "Bebo",
+   "tags": "weblogos bebo web logos logo Bebo",
+   "kind": "vertex",
+   "width": 55.800000000000004,
+   "height": 71.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.bebo;fillColor=#EC1C23;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.bebo"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:425"
+  },
+  {
+   "id": "weblogos-20-behance",
+   "title": "Behance",
+   "tags": "weblogos behance web logos logo Behance",
+   "kind": "vertex",
+   "width": 73.8,
+   "height": 45.6,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.behance;fillColor=#3A3333",
+   "shapeNames": [
+    "mxgraph.weblogos.behance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:427"
+  },
+  {
+   "id": "weblogos-21-bing",
+   "title": "Bing",
+   "tags": "weblogos bing web logos logo Bing",
+   "kind": "vertex",
+   "width": 53,
+   "height": 66.2,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.bing;fillColor=#008373;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.bing"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:429"
+  },
+  {
+   "id": "weblogos-22-bitbucket",
+   "title": "Bitbucket",
+   "tags": "weblogos bitbucket logo atlassian web logos logo Bitbucket",
+   "kind": "vertex",
+   "width": 57,
+   "height": 50,
+   "style": "image;image=img/lib/atlassian/Bitbucket_Logo.svg;html=1;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:431"
+  },
+  {
+   "id": "weblogos-23-blinklist",
+   "title": "Blinklist",
+   "tags": "weblogos blinklist web logos logo Blinklist",
+   "kind": "vertex",
+   "width": 81.2,
+   "height": 72,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.blinklist;fillColor=#3A3333;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.blinklist"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:433"
+  },
+  {
+   "id": "weblogos-24-blogger",
+   "title": "Blogger",
+   "tags": "weblogos blogger web logos logo Blogger",
+   "kind": "vertex",
+   "width": 58,
+   "height": 58.2,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.blogger;fillColor=#F66C2A;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.blogger"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:435"
+  },
+  {
+   "id": "weblogos-25-blogmarks",
+   "title": "Blogmarks",
+   "tags": "weblogos blogmarks web logos logo Blogmarks",
+   "kind": "vertex",
+   "width": 37.6,
+   "height": 64.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.blogmarks",
+   "shapeNames": [
+    "mxgraph.weblogos.blogmarks"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:437"
+  },
+  {
+   "id": "weblogos-26-bookmarks-fr",
+   "title": "Bookmarks.fr",
+   "tags": "weblogos bookmarks.fr web logos logo Bookmarks.fr",
+   "kind": "vertex",
+   "width": 70.2,
+   "height": 62.800000000000004,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.bookmarks.fr",
+   "shapeNames": [
+    "mxgraph.weblogos.bookmarks.fr"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:439"
+  },
+  {
+   "id": "weblogos-27-box",
+   "title": "Box",
+   "tags": "weblogos box web logos logo Box",
+   "kind": "vertex",
+   "width": 44.6,
+   "height": 64.2,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.box;fillColor=#2771B9;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.box"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:441"
+  },
+  {
+   "id": "weblogos-28-buddymarks",
+   "title": "Buddymarks",
+   "tags": "weblogos buddymarks web logos logo Buddymarks",
+   "kind": "vertex",
+   "width": 79.4,
+   "height": 57,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.buddymarks",
+   "shapeNames": [
+    "mxgraph.weblogos.buddymarks"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:443"
+  },
+  {
+   "id": "weblogos-29-buffer",
+   "title": "Buffer",
+   "tags": "weblogos buffer web logos logo Buffer",
+   "kind": "vertex",
+   "width": 70.4,
+   "height": 60.400000000000006,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.buffer;fillColor=#221F1F;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.buffer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:445"
+  },
+  {
+   "id": "weblogos-30-buzzfeed",
+   "title": "Buzzfeed",
+   "tags": "weblogos buzzfeed web logos logo Buzzfeed",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.buzzfeed;fillColor=#ED3223;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.buzzfeed"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:447"
+  },
+  {
+   "id": "weblogos-31-chrome",
+   "title": "Chrome",
+   "tags": "weblogos chrome web logos logo Chrome",
+   "kind": "vertex",
+   "width": 74.8,
+   "height": 75.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.chrome",
+   "shapeNames": [
+    "mxgraph.weblogos.chrome"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:449"
+  },
+  {
+   "id": "weblogos-32-citeulike",
+   "title": "Citeulike",
+   "tags": "weblogos citeulike web logos logo Citeulike",
+   "kind": "vertex",
+   "width": 75.60000000000001,
+   "height": 36,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.citeulike;fillColor=#698139",
+   "shapeNames": [
+    "mxgraph.weblogos.citeulike"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:451"
+  },
+  {
+   "id": "weblogos-33-clover",
+   "title": "Clover",
+   "tags": "weblogos clover logo web logos logo Clover",
+   "kind": "vertex",
+   "width": 71,
+   "height": 71,
+   "style": "image;image=img/lib/atlassian/Clover_Logo.svg;html=1;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:453"
+  },
+  {
+   "id": "weblogos-34-confluence",
+   "title": "Confluence",
+   "tags": "weblogos confluence logo web logos logo Confluence",
+   "kind": "vertex",
+   "width": 63,
+   "height": 57,
+   "style": "image;image=img/lib/atlassian/Confluence_Logo.svg;html=1;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:455"
+  },
+  {
+   "id": "weblogos-35-connotea",
+   "title": "Connotea",
+   "tags": "weblogos connotea web logos logo Connotea",
+   "kind": "vertex",
+   "width": 81,
+   "height": 82.60000000000001,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.connotea",
+   "shapeNames": [
+    "mxgraph.weblogos.connotea"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:457"
+  },
+  {
+   "id": "weblogos-36-crowd",
+   "title": "Crowd",
+   "tags": "weblogos crowd logo web logos logo Crowd",
+   "kind": "vertex",
+   "width": 66,
+   "height": 65,
+   "style": "image;image=img/lib/atlassian/Crowd_Logo.svg;html=1;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:459"
+  },
+  {
+   "id": "weblogos-37-crucible",
+   "title": "Crucible",
+   "tags": "weblogos crucible logo web logos logo Crucible",
+   "kind": "vertex",
+   "width": 61,
+   "height": 61,
+   "style": "image;image=img/lib/atlassian/Crucible_Logo.svg;html=1;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:461"
+  },
+  {
+   "id": "weblogos-38-dealsplus",
+   "title": "Dealsplus",
+   "tags": "weblogos dealsplus web logos logo Dealsplus",
+   "kind": "vertex",
+   "width": 76,
+   "height": 66.60000000000001,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.dealsplus;fillColor=#935492",
+   "shapeNames": [
+    "mxgraph.weblogos.dealsplus"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:463"
+  },
+  {
+   "id": "weblogos-39-designfloat",
+   "title": "Designfloat",
+   "tags": "weblogos designfloat web logos logo Designfloat",
+   "kind": "vertex",
+   "width": 72,
+   "height": 72,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.designfloat;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.designfloat"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:465"
+  },
+  {
+   "id": "weblogos-40-deviantart",
+   "title": "Deviantart",
+   "tags": "weblogos deviantart web logos logo Deviantart",
+   "kind": "vertex",
+   "width": 62,
+   "height": 86.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.deviantart;fillColor=#009544;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.weblogos.deviantart"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:467"
+  },
+  {
+   "id": "weblogos-41-digg",
+   "title": "Digg",
+   "tags": "weblogos digg web logos logo Digg",
+   "kind": "vertex",
+   "width": 58,
+   "height": 56,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.digg",
+   "shapeNames": [
+    "mxgraph.weblogos.digg"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:469"
+  },
+  {
+   "id": "weblogos-42-diigo",
+   "title": "Diigo",
+   "tags": "weblogos diiigo web logos logo Diigo",
+   "kind": "vertex",
+   "width": 61.2,
+   "height": 68.8,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.diigo;fillColor=#2973D2;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.diigo"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:471"
+  },
+  {
+   "id": "weblogos-43-dopplr",
+   "title": "Dopplr",
+   "tags": "weblogos dopplr web logos logo Dopplr",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.dopplr;fillColor=#F9634D;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.dopplr"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:473"
+  },
+  {
+   "id": "weblogos-44-draw-io",
+   "title": "draw.io",
+   "tags": "weblogos diagrams.net drawio draw io draw.io web logos logo draw.io",
+   "kind": "vertex",
+   "width": 52.2,
+   "height": 70.8,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.drawio2;fillColor=#1A5BA3",
+   "shapeNames": [
+    "mxgraph.weblogos.drawio2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:475"
+  },
+  {
+   "id": "weblogos-45-diagrams-net",
+   "title": "diagrams.net",
+   "tags": "weblogos diagrams.net drawio draw io draw.io web logos logo diagrams.net",
+   "kind": "vertex",
+   "width": 52.2,
+   "height": 52.2,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.drawio3;fillColor=#1A5BA3;fontSize=15;fontColor=#1A5BA3;fontStyle=1",
+   "value": "diagrams.<font color=\"#f08707\">net</font>",
+   "shapeNames": [
+    "mxgraph.weblogos.drawio3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:477"
+  },
+  {
+   "id": "weblogos-46-diagrams-net",
+   "title": "diagrams.net",
+   "tags": "weblogos diagrams.net drawio draw io draw.io web logos logo diagrams.net",
+   "kind": "vertex",
+   "width": 52.2,
+   "height": 52.2,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.drawio4;fillColor=#1A5BA3;fontSize=15;fontColor=#1A5BA3;fontStyle=1",
+   "value": "diagrams.<font color=\"#f08707\">net</font>",
+   "shapeNames": [
+    "mxgraph.weblogos.drawio4"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:479"
+  },
+  {
+   "id": "weblogos-47-dribbble",
+   "title": "Dribbble",
+   "tags": "weblogos dribbble web logos logo Dribbble",
+   "kind": "vertex",
+   "width": 67.4,
+   "height": 67.2,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.dribbble;fillColor=#EB548D",
+   "shapeNames": [
+    "mxgraph.weblogos.dribbble"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:481"
+  },
+  {
+   "id": "weblogos-48-dropbox2",
+   "title": "Dropbox2",
+   "tags": "weblogos dropbox web logos logo Dropbox2",
+   "kind": "vertex",
+   "width": 73.4,
+   "height": 62,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.dropbox;fillColor=#0287EA",
+   "shapeNames": [
+    "mxgraph.weblogos.dropbox"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:483"
+  },
+  {
+   "id": "weblogos-49-drupal",
+   "title": "Drupal",
+   "tags": "weblogos drupal web logos logo Drupal",
+   "kind": "vertex",
+   "width": 60.6,
+   "height": 69,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.drupal",
+   "shapeNames": [
+    "mxgraph.weblogos.drupal"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:485"
+  },
+  {
+   "id": "weblogos-50-dzone",
+   "title": "Dzone",
+   "tags": "weblogos dzone web logos logo Dzone",
+   "kind": "vertex",
+   "width": 87.60000000000001,
+   "height": 61.2,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.dzone",
+   "shapeNames": [
+    "mxgraph.weblogos.dzone"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:487"
+  },
+  {
+   "id": "weblogos-51-ebay",
+   "title": "Ebay",
+   "tags": "weblogos ebay web logos logo Ebay",
+   "kind": "vertex",
+   "width": 81.2,
+   "height": 34.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.ebay",
+   "shapeNames": [
+    "mxgraph.weblogos.ebay"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:489"
+  },
+  {
+   "id": "weblogos-52-edmodo",
+   "title": "Edmodo",
+   "tags": "weblogos edmodo web logos logo Edmodo",
+   "kind": "vertex",
+   "width": 69.2,
+   "height": 73.8,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.edmodo;fillColor=#276CB0;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.edmodo"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:491"
+  },
+  {
+   "id": "weblogos-53-evernote",
+   "title": "Evernote",
+   "tags": "weblogos evernote web logos logo Evernote",
+   "kind": "vertex",
+   "width": 63.400000000000006,
+   "height": 75.2,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.evernote;fillColor=#3F3F3F",
+   "shapeNames": [
+    "mxgraph.weblogos.evernote"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:493"
+  },
+  {
+   "id": "weblogos-54-fancy",
+   "title": "Fancy",
+   "tags": "weblogos fancy web logos logo Fancy",
+   "kind": "vertex",
+   "width": 39.2,
+   "height": 79,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.fancy;fillColor=#6DB3E3",
+   "shapeNames": [
+    "mxgraph.weblogos.fancy"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:495"
+  },
+  {
+   "id": "weblogos-55-fark",
+   "title": "Fark",
+   "tags": "weblogos fark web logos logo Fark",
+   "kind": "vertex",
+   "width": 44.2,
+   "height": 70.2,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.fark;fillColor=#B1B0C7;gradientColor=#ffffff;strokeColor=#B1B0C7",
+   "shapeNames": [
+    "mxgraph.weblogos.fark"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:497"
+  },
+  {
+   "id": "weblogos-56-fashiolista",
+   "title": "Fashiolista",
+   "tags": "weblogos fashiolista web logos logo Fashiolista",
+   "kind": "vertex",
+   "width": 77.60000000000001,
+   "height": 73.2,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.fashiolista",
+   "shapeNames": [
+    "mxgraph.weblogos.fashiolista"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:499"
+  },
+  {
+   "id": "weblogos-57-feed",
+   "title": "Feed",
+   "tags": "weblogos feed web logos logo Feed",
+   "kind": "vertex",
+   "width": 60.400000000000006,
+   "height": 59.2,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.feed;fillColor=#000000",
+   "shapeNames": [
+    "mxgraph.weblogos.feed"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:501"
+  },
+  {
+   "id": "weblogos-58-feedburner",
+   "title": "Feedburner",
+   "tags": "weblogos feedburner web logos logo Feedburner",
+   "kind": "vertex",
+   "width": 68.4,
+   "height": 74.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.feedburner",
+   "shapeNames": [
+    "mxgraph.weblogos.feedburner"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:503"
+  },
+  {
+   "id": "weblogos-59-fisheye",
+   "title": "Fisheye",
+   "tags": "weblogos fisheye logo web logos logo Fisheye",
+   "kind": "vertex",
+   "width": 71,
+   "height": 59,
+   "style": "image;image=img/lib/atlassian/Fisheye_Logo.svg;html=1;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:505"
+  },
+  {
+   "id": "weblogos-60-flickr",
+   "title": "Flickr",
+   "tags": "weblogos flickr web logos logo Flickr",
+   "kind": "vertex",
+   "width": 71.2,
+   "height": 31.200000000000003,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.flickr",
+   "shapeNames": [
+    "mxgraph.weblogos.flickr"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:507"
+  },
+  {
+   "id": "weblogos-61-folkd",
+   "title": "Folkd",
+   "tags": "weblogos folkd web logos logo Folkd",
+   "kind": "vertex",
+   "width": 83.80000000000001,
+   "height": 43.6,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.folkd;fillColor=#165AA6",
+   "shapeNames": [
+    "mxgraph.weblogos.folkd"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:509"
+  },
+  {
+   "id": "weblogos-62-forrst",
+   "title": "Forrst",
+   "tags": "weblogos forrst web logos logo Forrst",
+   "kind": "vertex",
+   "width": 52.800000000000004,
+   "height": 73.2,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.forrst;fillColor=#27431F",
+   "shapeNames": [
+    "mxgraph.weblogos.forrst"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:511"
+  },
+  {
+   "id": "weblogos-63-fotolog",
+   "title": "Fotolog",
+   "tags": "weblogos fotolog web logos logo Fotolog",
+   "kind": "vertex",
+   "width": 47.6,
+   "height": 47.6,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.fotolog;fillColor=#000000;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.fotolog"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:513"
+  },
+  {
+   "id": "weblogos-64-freshbump",
+   "title": "Freshbump",
+   "tags": "weblogos freshbump web logos logo Freshbump",
+   "kind": "vertex",
+   "width": 71.2,
+   "height": 76,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.freshbump;fillColor=#C2D952;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.freshbump"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:515"
+  },
+  {
+   "id": "weblogos-65-fresqui",
+   "title": "Fresqui",
+   "tags": "weblogos fresqui web logos logo Fresqui",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.fresqui",
+   "shapeNames": [
+    "mxgraph.weblogos.fresqui"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:517"
+  },
+  {
+   "id": "weblogos-66-friendfeed",
+   "title": "Friendfeed",
+   "tags": "weblogos fiendfeed web logos logo Friendfeed",
+   "kind": "vertex",
+   "width": 73.8,
+   "height": 71,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.friendfeed;fillColor=#4172BB",
+   "shapeNames": [
+    "mxgraph.weblogos.friendfeed"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:519"
+  },
+  {
+   "id": "weblogos-67-funp",
+   "title": "Funp",
+   "tags": "weblogos funp web logos logo Funp",
+   "kind": "vertex",
+   "width": 75,
+   "height": 40,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.funp",
+   "shapeNames": [
+    "mxgraph.weblogos.funp"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:521"
+  },
+  {
+   "id": "weblogos-68-fwisp",
+   "title": "Fwisp",
+   "tags": "weblogos fwisp web logos logo Fwisp",
+   "kind": "vertex",
+   "width": 65.4,
+   "height": 66,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.fwisp;fillColor=#66676A;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.fwisp"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:523"
+  },
+  {
+   "id": "weblogos-69-gabbr",
+   "title": "Gabbr",
+   "tags": "weblogos gabbr web logos logo Gabbr",
+   "kind": "vertex",
+   "width": 64.4,
+   "height": 66,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.gabbr;fillColor=#F05B1E",
+   "shapeNames": [
+    "mxgraph.weblogos.gabbr"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:525"
+  },
+  {
+   "id": "weblogos-70-gamespot",
+   "title": "Gamespot",
+   "tags": "weblogos gamespot web logos logo Gamespot",
+   "kind": "vertex",
+   "width": 81.60000000000001,
+   "height": 81.60000000000001,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.gamespot",
+   "shapeNames": [
+    "mxgraph.weblogos.gamespot"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:527"
+  },
+  {
+   "id": "weblogos-71-github",
+   "title": "Github",
+   "tags": "weblogos github web logos logo Github",
+   "kind": "vertex",
+   "width": 75,
+   "height": 75,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.github",
+   "shapeNames": [
+    "mxgraph.weblogos.github"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:529"
+  },
+  {
+   "id": "weblogos-72-gmail",
+   "title": "Gmail",
+   "tags": "weblogos gmail web logos logo Gmail",
+   "kind": "vertex",
+   "width": 64.8,
+   "height": 46.800000000000004,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.gmail",
+   "shapeNames": [
+    "mxgraph.weblogos.gmail"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:531"
+  },
+  {
+   "id": "weblogos-73-google",
+   "title": "Google",
+   "tags": "weblogos google web logos logo Google",
+   "kind": "vertex",
+   "width": 65.2,
+   "height": 69.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.google",
+   "shapeNames": [
+    "mxgraph.weblogos.google"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:533"
+  },
+  {
+   "id": "weblogos-74-google-drive",
+   "title": "Google Drive",
+   "tags": "weblogos google drive web logos logo Google Drive",
+   "kind": "vertex",
+   "width": 66.4,
+   "height": 58,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.google_drive",
+   "shapeNames": [
+    "mxgraph.weblogos.google_drive"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:535"
+  },
+  {
+   "id": "weblogos-75-google-hangout",
+   "title": "Google Hangout",
+   "tags": "weblogos google hangout web logos logo Google Hangout",
+   "kind": "vertex",
+   "width": 64.8,
+   "height": 75.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.google_hangout;fillColor=#4BA139;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.google_hangout"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:537"
+  },
+  {
+   "id": "weblogos-76-google-play",
+   "title": "Google Play",
+   "tags": "weblogos google play web logos logo Google Play",
+   "kind": "vertex",
+   "width": 69.4,
+   "height": 20.6,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.google_play;fillColor=#000000",
+   "shapeNames": [
+    "mxgraph.weblogos.google_play"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:539"
+  },
+  {
+   "id": "weblogos-77-google-play-light",
+   "title": "Google Play Light",
+   "tags": "weblogos google play light web logos logo Google Play Light",
+   "kind": "vertex",
+   "width": 60,
+   "height": 10.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.google_play_light;fillColor=#66E8F3;gradientColor=#1C7CBA",
+   "shapeNames": [
+    "mxgraph.weblogos.google_play_light"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:541"
+  },
+  {
+   "id": "weblogos-78-google-photos",
+   "title": "Google Photos",
+   "tags": "weblogos google photos web logos logo Google Photos",
+   "kind": "vertex",
+   "width": 87.2,
+   "height": 87.2,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.google_photos",
+   "shapeNames": [
+    "mxgraph.weblogos.google_photos"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:543"
+  },
+  {
+   "id": "weblogos-79-google",
+   "title": "Google+",
+   "tags": "weblogos google plus web logos logo Google+",
+   "kind": "vertex",
+   "width": 65.60000000000001,
+   "height": 44,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.google_plus;fillColor=#DD4C40;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.google_plus"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:545"
+  },
+  {
+   "id": "weblogos-80-grooveshark",
+   "title": "Grooveshark",
+   "tags": "weblogos grooveshark web logos logo Grooveshark",
+   "kind": "vertex",
+   "width": 62.2,
+   "height": 62.2,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.grooveshark;fillColor=#000000;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.grooveshark"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:547"
+  },
+  {
+   "id": "weblogos-81-hatena",
+   "title": "Hatena",
+   "tags": "weblogos hatena web logos logo Hatena",
+   "kind": "vertex",
+   "width": 86.2,
+   "height": 44.2,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.hatena",
+   "shapeNames": [
+    "mxgraph.weblogos.hatena"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:549"
+  },
+  {
+   "id": "weblogos-82-hipchat",
+   "title": "Hipchat",
+   "tags": "weblogos hipchat logo atlassian web logos logo Hipchat",
+   "kind": "vertex",
+   "width": 66,
+   "height": 62,
+   "style": "image;image=img/lib/atlassian/Hipchat_Logo.svg;html=1;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:551"
+  },
+  {
+   "id": "weblogos-83-html5",
+   "title": "HTML5",
+   "tags": "weblogos html5 html web logos logo HTML5",
+   "kind": "vertex",
+   "width": 52.400000000000006,
+   "height": 74,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.html5",
+   "shapeNames": [
+    "mxgraph.weblogos.html5"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:553"
+  },
+  {
+   "id": "weblogos-84-identi-ca",
+   "title": "Identi.ca",
+   "tags": "weblogos identi.ca web logos logo Identi.ca",
+   "kind": "vertex",
+   "width": 74.2,
+   "height": 47.6,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.identi.ca",
+   "shapeNames": [
+    "mxgraph.weblogos.identi.ca"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:555"
+  },
+  {
+   "id": "weblogos-85-instagram",
+   "title": "Instagram",
+   "tags": "weblogos instagram web logos logo Instagram",
+   "kind": "vertex",
+   "width": 72.2,
+   "height": 72.2,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.instagram;fillColor=#6FC0E4;gradientColor=#1E305B",
+   "shapeNames": [
+    "mxgraph.weblogos.instagram"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:557"
+  },
+  {
+   "id": "weblogos-86-instapaper",
+   "title": "Instapaper",
+   "tags": "weblogos instapaper web logos logo Instapaper",
+   "kind": "vertex",
+   "width": 27.6,
+   "height": 70.2,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.instapaper",
+   "shapeNames": [
+    "mxgraph.weblogos.instapaper"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:559"
+  },
+  {
+   "id": "weblogos-87-ios",
+   "title": "iOS",
+   "tags": "weblogos ios web logos logo iOS",
+   "kind": "vertex",
+   "width": 73.60000000000001,
+   "height": 39.400000000000006,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.ios;fillColor=#695D5D;gradientColor=#100E0E",
+   "shapeNames": [
+    "mxgraph.weblogos.ios"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:561"
+  },
+  {
+   "id": "weblogos-88-jamespot",
+   "title": "Jamespot",
+   "tags": "weblogos jamespot web logos logo Jamespot",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.jamespot;fillColor=#695D5D;gradientColor=#100E0E",
+   "shapeNames": [
+    "mxgraph.weblogos.jamespot"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:563"
+  },
+  {
+   "id": "weblogos-89-java",
+   "title": "Java",
+   "tags": "weblogos java web logos logo Java",
+   "kind": "vertex",
+   "width": 34.4,
+   "height": 65,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.java",
+   "shapeNames": [
+    "mxgraph.weblogos.java"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:565"
+  },
+  {
+   "id": "weblogos-90-jira",
+   "title": "Jira",
+   "tags": "weblogos jira logo web logos logo Jira",
+   "kind": "vertex",
+   "width": 72,
+   "height": 72,
+   "style": "image;image=img/lib/atlassian/Jira_Logo.svg;html=1;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:567"
+  },
+  {
+   "id": "weblogos-91-jira-core",
+   "title": "Jira Core",
+   "tags": "weblogos jira core logo atlassian web logos logo Jira Core",
+   "kind": "vertex",
+   "width": 55,
+   "height": 66,
+   "style": "image;image=img/lib/atlassian/Jira_Core_Logo.svg;html=1;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:569"
+  },
+  {
+   "id": "weblogos-92-jira-service-desk",
+   "title": "Jira Service Desk",
+   "tags": "weblogos jira service desk logo atlassian web logos logo Jira Service Desk",
+   "kind": "vertex",
+   "width": 59,
+   "height": 76,
+   "style": "image;image=img/lib/atlassian/Jira_Service_Desk_Logo.svg;html=1;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:571"
+  },
+  {
+   "id": "weblogos-93-jira-software",
+   "title": "Jira Software",
+   "tags": "weblogos jira software logo atlassian web logos logo Jira Software",
+   "kind": "vertex",
+   "width": 74,
+   "height": 76,
+   "style": "image;image=img/lib/atlassian/Jira_Software_Logo.svg;html=1;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:573"
+  },
+  {
+   "id": "weblogos-94-joomla",
+   "title": "Joomla",
+   "tags": "weblogos joomla web logos logo Joomla",
+   "kind": "vertex",
+   "width": 66,
+   "height": 65.60000000000001,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.joomla;fillColor=#1F457D;gradientColor=#081220",
+   "shapeNames": [
+    "mxgraph.weblogos.joomla"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:575"
+  },
+  {
+   "id": "weblogos-95-jquery",
+   "title": "Jquery",
+   "tags": "weblogos jquery web logos logo Jquery",
+   "kind": "vertex",
+   "width": 73.8,
+   "height": 67,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.jquery;fillColor=#0BB9EA;gradientColor=#032F80",
+   "shapeNames": [
+    "mxgraph.weblogos.jquery"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:577"
+  },
+  {
+   "id": "weblogos-96-json",
+   "title": "JSON",
+   "tags": "weblogos json web logos logo JSON",
+   "kind": "vertex",
+   "width": 70,
+   "height": 75.8,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.json",
+   "shapeNames": [
+    "mxgraph.weblogos.json"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:579"
+  },
+  {
+   "id": "weblogos-97-json",
+   "title": "JSON",
+   "tags": "weblogos json web logos logo JSON",
+   "kind": "vertex",
+   "width": 80.4,
+   "height": 25.200000000000003,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.json_2",
+   "shapeNames": [
+    "mxgraph.weblogos.json_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:581"
+  },
+  {
+   "id": "weblogos-98-last-fm",
+   "title": "Last.fm",
+   "tags": "weblogos last.fm last fm web logos logo Last.fm",
+   "kind": "vertex",
+   "width": 83.2,
+   "height": 50,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.last.fm;fillColor=#F33543;gradientColor=#BD0E11",
+   "shapeNames": [
+    "mxgraph.weblogos.last.fm"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:583"
+  },
+  {
+   "id": "weblogos-99-linkagogo",
+   "title": "Linkagogo",
+   "tags": "weblogos linkagogo web logos logo Linkagogo",
+   "kind": "vertex",
+   "width": 102.2,
+   "height": 80,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.linkagogo;fillColor=#F6F5FA;gradientColor=#C8C1E1",
+   "shapeNames": [
+    "mxgraph.weblogos.linkagogo"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:585"
+  },
+  {
+   "id": "weblogos-100-linkedin",
+   "title": "LinkedIn",
+   "tags": "weblogos linkedin web logos logo LinkedIn",
+   "kind": "vertex",
+   "width": 57.400000000000006,
+   "height": 60.6,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.linkedin;fillColor=#0095DB;gradientColor=#006391",
+   "shapeNames": [
+    "mxgraph.weblogos.linkedin"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:587"
+  },
+  {
+   "id": "weblogos-101-livejournal",
+   "title": "Livejournal",
+   "tags": "weblogos livejournal web logos logo Livejournal",
+   "kind": "vertex",
+   "width": 64,
+   "height": 68.60000000000001,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.livejournal;fillColor=#2690E5;gradientColor=#0A2463",
+   "shapeNames": [
+    "mxgraph.weblogos.livejournal"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:589"
+  },
+  {
+   "id": "weblogos-102-mail-ru",
+   "title": "Mail.ru",
+   "tags": "weblogos mail.ru web logos logo Mail.ru",
+   "kind": "vertex",
+   "width": 81.2,
+   "height": 78.60000000000001,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.mail.ru;fillColor=#267BE0;gradientColor=#0A1F42",
+   "shapeNames": [
+    "mxgraph.weblogos.mail.ru"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:591"
+  },
+  {
+   "id": "weblogos-103-mathoverflow",
+   "title": "MathOverflow",
+   "tags": "weblogos mathoverflow web logos logo MathOverflow",
+   "kind": "vertex",
+   "width": 59,
+   "height": 48.2,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.mathoverflow;fillColor=#656463;gradientColor=#F28711;gradientDirection=east",
+   "shapeNames": [
+    "mxgraph.weblogos.mathoverflow"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:593"
+  },
+  {
+   "id": "weblogos-104-meetup",
+   "title": "Meetup",
+   "tags": "weblogos meetup web logos logo Meetup",
+   "kind": "vertex",
+   "width": 74.8,
+   "height": 30,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.meetup;fillColor=#413E3E;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.meetup"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:595"
+  },
+  {
+   "id": "weblogos-105-meneame",
+   "title": "Meneame",
+   "tags": "weblogos meneame web logos logo Meneame",
+   "kind": "vertex",
+   "width": 76,
+   "height": 67.60000000000001,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.meneame",
+   "shapeNames": [
+    "mxgraph.weblogos.meneame"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:597"
+  },
+  {
+   "id": "weblogos-106-messenger",
+   "title": "Messenger",
+   "tags": "weblogos messenger web logos logo Messenger",
+   "kind": "vertex",
+   "width": 82.60000000000001,
+   "height": 76.80000000000001,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.messenger",
+   "shapeNames": [
+    "mxgraph.weblogos.messenger"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:599"
+  },
+  {
+   "id": "weblogos-107-messenger",
+   "title": "Messenger",
+   "tags": "weblogos messenger web logos logo Messenger",
+   "kind": "vertex",
+   "width": 64.4,
+   "height": 64.8,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.messenger_2",
+   "shapeNames": [
+    "mxgraph.weblogos.messenger_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:601"
+  },
+  {
+   "id": "weblogos-108-messenger",
+   "title": "Messenger",
+   "tags": "weblogos messenger web logos logo Messenger",
+   "kind": "vertex",
+   "width": 64.4,
+   "height": 64.8,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.messenger_3;fillColor=#437BBD;strokeColor=#dddddd",
+   "shapeNames": [
+    "mxgraph.weblogos.messenger_3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:603"
+  },
+  {
+   "id": "weblogos-109-mind-body-green",
+   "title": "Mind Body Green",
+   "tags": "weblogos mind body green web logos logo Mind Body Green",
+   "kind": "vertex",
+   "width": 81.4,
+   "height": 92.80000000000001,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.mind_body_green;strokeColor=#888888",
+   "shapeNames": [
+    "mxgraph.weblogos.mind_body_green"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:605"
+  },
+  {
+   "id": "weblogos-110-mongodb",
+   "title": "MongoDb",
+   "tags": "weblogos mongodb web logos logo MongoDb",
+   "kind": "vertex",
+   "width": 41.2,
+   "height": 86.2,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.mongodb",
+   "shapeNames": [
+    "mxgraph.weblogos.mongodb"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:607"
+  },
+  {
+   "id": "weblogos-111-myspace",
+   "title": "MySpace",
+   "tags": "weblogos myspace web logos logo MySpace",
+   "kind": "vertex",
+   "width": 63,
+   "height": 70.2,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.myspace;fillColor=#003399;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.myspace"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:609"
+  },
+  {
+   "id": "weblogos-112-n4g",
+   "title": "N4g",
+   "tags": "weblogos n4g web logos logo N4g",
+   "kind": "vertex",
+   "width": 88.2,
+   "height": 31.8,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.n4g;fillColor=#000000;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.n4g"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:611"
+  },
+  {
+   "id": "weblogos-113-netlog",
+   "title": "Netlog",
+   "tags": "weblogos netlog web logos logo Netlog",
+   "kind": "vertex",
+   "width": 76.60000000000001,
+   "height": 68.8,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.netlog;fillColor=#F42424;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.netlog"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:613"
+  },
+  {
+   "id": "weblogos-114-netvibes",
+   "title": "Netvibes",
+   "tags": "weblogos netvibes web logos logo Netvibes",
+   "kind": "vertex",
+   "width": 61.800000000000004,
+   "height": 61.800000000000004,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.netvibes;fillColor=#84BD00;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.netvibes"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:615"
+  },
+  {
+   "id": "weblogos-115-netvouz",
+   "title": "Netvouz",
+   "tags": "weblogos netvouz web logos logo Netvouz",
+   "kind": "vertex",
+   "width": 57.2,
+   "height": 57.400000000000006,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.netvouz",
+   "shapeNames": [
+    "mxgraph.weblogos.netvouz"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:617"
+  },
+  {
+   "id": "weblogos-116-networkedblogs",
+   "title": "Networkedblogs",
+   "tags": "weblogos networkedblogs web logos logo Networkedblogs",
+   "kind": "vertex",
+   "width": 78.80000000000001,
+   "height": 78.80000000000001,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.networkedblogs",
+   "shapeNames": [
+    "mxgraph.weblogos.networkedblogs"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:619"
+  },
+  {
+   "id": "weblogos-117-newsvine",
+   "title": "Newsvine",
+   "tags": "weblogos newsvine web logos logo Newsvine",
+   "kind": "vertex",
+   "width": 40.6,
+   "height": 77.2,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.newsvine;fillColor=#005221;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.newsvine"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:621"
+  },
+  {
+   "id": "weblogos-118-odnoklassniki",
+   "title": "Odnoklassniki",
+   "tags": "weblogos odnoklassniki web logos logo Odnoklassniki",
+   "kind": "vertex",
+   "width": 49.400000000000006,
+   "height": 82,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.odnoklassniki;fillColor=#F58220;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.odnoklassniki"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:623"
+  },
+  {
+   "id": "weblogos-119-oknotizie",
+   "title": "Oknotizie",
+   "tags": "weblogos oknotizie web logos logo Oknotizie",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 70.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.oknotizie",
+   "shapeNames": [
+    "mxgraph.weblogos.oknotizie"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:625"
+  },
+  {
+   "id": "weblogos-120-onedrive",
+   "title": "OneDrive",
+   "tags": "weblogos onedrive web logos logo OneDrive",
+   "kind": "vertex",
+   "width": 71.2,
+   "height": 43.2,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.onedrive;fillColor=#094AB1;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.onedrive"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:627"
+  },
+  {
+   "id": "weblogos-121-oracle",
+   "title": "Oracle",
+   "tags": "weblogos oracle web logos logo Oracle",
+   "kind": "vertex",
+   "width": 90,
+   "height": 23,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.oracle;fillColor=#FF0000;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.oracle"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:629"
+  },
+  {
+   "id": "weblogos-122-paypal",
+   "title": "Paypal",
+   "tags": "weblogos paypal web logos logo Paypal",
+   "kind": "vertex",
+   "width": 51.2,
+   "height": 58,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.paypal",
+   "shapeNames": [
+    "mxgraph.weblogos.paypal"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:631"
+  },
+  {
+   "id": "weblogos-123-phone",
+   "title": "Phone",
+   "tags": "weblogos phone web logos logo Phone",
+   "kind": "vertex",
+   "width": 57.800000000000004,
+   "height": 54.2,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.phone;fillColor=#36BE0F;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.phone"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:633"
+  },
+  {
+   "id": "weblogos-124-phonefavs",
+   "title": "Phonefavs",
+   "tags": "weblogos phonefavs web logos logo Phonefavs",
+   "kind": "vertex",
+   "width": 64.4,
+   "height": 78.80000000000001,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.phonefavs",
+   "shapeNames": [
+    "mxgraph.weblogos.phonefavs"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:635"
+  },
+  {
+   "id": "weblogos-125-pinterest",
+   "title": "Pinterest",
+   "tags": "weblogos pinterest web logos logo Pinterest",
+   "kind": "vertex",
+   "width": 76.80000000000001,
+   "height": 74.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.pinterest;fillColor=#BD081C;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.pinterest"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:637"
+  },
+  {
+   "id": "weblogos-126-plaxo",
+   "title": "Plaxo",
+   "tags": "weblogos plaxo web logos logo Plaxo",
+   "kind": "vertex",
+   "width": 80,
+   "height": 80,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.plaxo;fillColor=#414F5C;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.plaxo"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:639"
+  },
+  {
+   "id": "weblogos-127-playfire",
+   "title": "Playfire",
+   "tags": "weblogos playfire web logos logo Playfire",
+   "kind": "vertex",
+   "width": 62,
+   "height": 61.6,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.playfire;fillColor=#FDA21A;gradientColor=#FEE635;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.playfire"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:641"
+  },
+  {
+   "id": "weblogos-128-plurk",
+   "title": "Plurk",
+   "tags": "weblogos plurk web logos logo Plurk",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.plurk;fillColor=#E9443D;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.plurk"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:643"
+  },
+  {
+   "id": "weblogos-129-pocket",
+   "title": "Pocket",
+   "tags": "weblogos pocket web logos logo Pocket",
+   "kind": "vertex",
+   "width": 62.800000000000004,
+   "height": 57.800000000000004,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.pocket;fillColor=#EE4056;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.pocket"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:645"
+  },
+  {
+   "id": "weblogos-130-protopage",
+   "title": "Protopage",
+   "tags": "weblogos protopage web logos logo Protopage",
+   "kind": "vertex",
+   "width": 78.80000000000001,
+   "height": 80,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.protopage;fillColor=#4B78C0;gradientColor=#294282",
+   "shapeNames": [
+    "mxgraph.weblogos.protopage"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:647"
+  },
+  {
+   "id": "weblogos-131-readernaut",
+   "title": "Readernaut",
+   "tags": "weblogos readernaut web logos logo Readernaut",
+   "kind": "vertex",
+   "width": 72,
+   "height": 72,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.readernaut;fillColor=#000000;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.readernaut"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:649"
+  },
+  {
+   "id": "weblogos-132-reddit",
+   "title": "Reddit",
+   "tags": "weblogos reddit web logos logo Reddit",
+   "kind": "vertex",
+   "width": 88,
+   "height": 73.60000000000001,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.reddit;fillColor=#F3F8FC;gradientColor=#B4D2F0",
+   "shapeNames": [
+    "mxgraph.weblogos.reddit"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:651"
+  },
+  {
+   "id": "weblogos-133-rss",
+   "title": "RSS",
+   "tags": "weblogos rss web logos logo RSS",
+   "kind": "vertex",
+   "width": 81.60000000000001,
+   "height": 81.60000000000001,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.rss;fillColor=#F56800;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.rss"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:653"
+  },
+  {
+   "id": "weblogos-134-scoopit",
+   "title": "Scoopit",
+   "tags": "weblogos scoopit web logos logo Scoopit",
+   "kind": "vertex",
+   "width": 58,
+   "height": 70,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.scoopit;fillColor=#6CAB36;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.scoopit"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:655"
+  },
+  {
+   "id": "weblogos-135-scribd",
+   "title": "Scribd",
+   "tags": "weblogos scribd web logos logo Scribd",
+   "kind": "vertex",
+   "width": 57.800000000000004,
+   "height": 69.2,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.scribd;fillColor=#3D3533;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.scribd"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:657"
+  },
+  {
+   "id": "weblogos-136-segnalo",
+   "title": "Segnalo",
+   "tags": "weblogos segnalo web logos logo Segnalo",
+   "kind": "vertex",
+   "width": 80.60000000000001,
+   "height": 77.80000000000001,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.segnalo",
+   "shapeNames": [
+    "mxgraph.weblogos.segnalo"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:659"
+  },
+  {
+   "id": "weblogos-137-sina",
+   "title": "Sina",
+   "tags": "weblogos sina web logos logo Sina",
+   "kind": "vertex",
+   "width": 85.80000000000001,
+   "height": 68.60000000000001,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.sina",
+   "shapeNames": [
+    "mxgraph.weblogos.sina"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:661"
+  },
+  {
+   "id": "weblogos-138-sitejot",
+   "title": "Sitejot",
+   "tags": "weblogos sitejot web logos logo Sitejot",
+   "kind": "vertex",
+   "width": 77.2,
+   "height": 66,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.sitejot",
+   "shapeNames": [
+    "mxgraph.weblogos.sitejot"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:663"
+  },
+  {
+   "id": "weblogos-139-skype",
+   "title": "Skype",
+   "tags": "weblogos skype web logos logo Skype",
+   "kind": "vertex",
+   "width": 77.60000000000001,
+   "height": 78.80000000000001,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.skype;fillColor=#2AACE2;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.skype"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:665"
+  },
+  {
+   "id": "weblogos-140-skyrock",
+   "title": "Skyrock",
+   "tags": "weblogos skyrock web logos logo Skyrock",
+   "kind": "vertex",
+   "width": 67.8,
+   "height": 70.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.skyrock;fillColor=#009AFF;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.skyrock"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:667"
+  },
+  {
+   "id": "weblogos-141-slashdot",
+   "title": "Slashdot",
+   "tags": "weblogos slashdot web logos logo Slashdot",
+   "kind": "vertex",
+   "width": 52.400000000000006,
+   "height": 62,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.slashdot;fillColor=#026664;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.slashdot"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:669"
+  },
+  {
+   "id": "weblogos-142-sms",
+   "title": "SMS",
+   "tags": "weblogos sms web logos logo SMS",
+   "kind": "vertex",
+   "width": 69.2,
+   "height": 64,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.sms;fillColor=#48B921;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.sms"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:671"
+  },
+  {
+   "id": "weblogos-143-socialvibe",
+   "title": "Socialvibe",
+   "tags": "weblogos socialvibe web logos logo Socialvibe",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.socialvibe;fillColor=#EE2F7F;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.socialvibe"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:673"
+  },
+  {
+   "id": "weblogos-144-society6",
+   "title": "Society6",
+   "tags": "weblogos society6 web logos logo Society6",
+   "kind": "vertex",
+   "width": 74.8,
+   "height": 53,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.society6;fillColor=#000000;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.society6"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:675"
+  },
+  {
+   "id": "weblogos-145-sonico",
+   "title": "Sonico",
+   "tags": "weblogos sonico web logos logo Sonico",
+   "kind": "vertex",
+   "width": 69.2,
+   "height": 63.2,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.sonico;fillColor=#01AEF0;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.sonico"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:677"
+  },
+  {
+   "id": "weblogos-146-soundcloud",
+   "title": "Soundcloud",
+   "tags": "weblogos soundcloud web logos logo Soundcloud",
+   "kind": "vertex",
+   "width": 73.4,
+   "height": 32.6,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.soundcloud;fillColor=#FE4600;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.soundcloud"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:679"
+  },
+  {
+   "id": "weblogos-147-sourceforge",
+   "title": "Sourceforge",
+   "tags": "weblogos sourceforge web logos logo Sourceforge",
+   "kind": "vertex",
+   "width": 74.2,
+   "height": 74.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.sourceforge",
+   "shapeNames": [
+    "mxgraph.weblogos.sourceforge"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:681"
+  },
+  {
+   "id": "weblogos-148-sourceforge",
+   "title": "Sourceforge",
+   "tags": "weblogos sourceforge web logos logo Sourceforge",
+   "kind": "vertex",
+   "width": 63.2,
+   "height": 46.800000000000004,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.sourceforge_2;fillColor=#00547E;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.sourceforge_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:683"
+  },
+  {
+   "id": "weblogos-149-sourcetree",
+   "title": "Sourcetree",
+   "tags": "weblogos sourcetree logo web logos logo Sourcetree",
+   "kind": "vertex",
+   "width": 57,
+   "height": 71,
+   "style": "image;image=img/lib/atlassian/Sourcetree_Logo.svg;html=1;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:685"
+  },
+  {
+   "id": "weblogos-150-spring-me",
+   "title": "Spring.me",
+   "tags": "weblogos spring me web logos logo Spring.me",
+   "kind": "vertex",
+   "width": 73.2,
+   "height": 31.6,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.spring.me;fillColor=#0374B8;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.spring.me"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:687"
+  },
+  {
+   "id": "weblogos-151-stackexchange",
+   "title": "Stackexchange",
+   "tags": "weblogos stackexchange stack exchange web logos logo Stackexchange",
+   "kind": "vertex",
+   "width": 63.800000000000004,
+   "height": 79,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.stackexchange",
+   "shapeNames": [
+    "mxgraph.weblogos.stackexchange"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:689"
+  },
+  {
+   "id": "weblogos-152-stackoverflow",
+   "title": "StackOverflow",
+   "tags": "weblogos stackoverflow stack overflow web logos logo StackOverflow",
+   "kind": "vertex",
+   "width": 54.400000000000006,
+   "height": 64,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.stackoverflow",
+   "shapeNames": [
+    "mxgraph.weblogos.stackoverflow"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:691"
+  },
+  {
+   "id": "weblogos-153-startaid",
+   "title": "Startaid",
+   "tags": "weblogos startaid web logos logo Startaid",
+   "kind": "vertex",
+   "width": 41.2,
+   "height": 42.6,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.startaid;fillColor=#409FCF;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.startaid"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:693"
+  },
+  {
+   "id": "weblogos-154-startlap",
+   "title": "Startlap",
+   "tags": "weblogos startlap web logos logo Startlap",
+   "kind": "vertex",
+   "width": 82,
+   "height": 84.2,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.startlap;fillColor=#B9E6F0;gradientColor=#3062A2",
+   "shapeNames": [
+    "mxgraph.weblogos.startlap"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:695"
+  },
+  {
+   "id": "weblogos-155-statuspage",
+   "title": "Statuspage",
+   "tags": "weblogos statuspage logo web logos logo Statuspage",
+   "kind": "vertex",
+   "width": 75,
+   "height": 52,
+   "style": "image;image=img/lib/atlassian/Statuspage_Logo.svg;html=1;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:697"
+  },
+  {
+   "id": "weblogos-156-steam",
+   "title": "Steam",
+   "tags": "weblogos steam web logos logo Steam",
+   "kind": "vertex",
+   "width": 85.2,
+   "height": 39.6,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.steam;fillColor=#695D5D;gradientColor=#100E0E",
+   "shapeNames": [
+    "mxgraph.weblogos.steam"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:699"
+  },
+  {
+   "id": "weblogos-157-stride",
+   "title": "Stride",
+   "tags": "weblogos stride logo atlassian web logos logo Stride",
+   "kind": "vertex",
+   "width": 69,
+   "height": 57,
+   "style": "image;image=img/lib/atlassian/Stride_Logo.svg;html=1;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:701"
+  },
+  {
+   "id": "weblogos-158-stumbleupon",
+   "title": "StumbleUpon",
+   "tags": "weblogos stumbleupon web logos logo StumbleUpon",
+   "kind": "vertex",
+   "width": 102.4,
+   "height": 102.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.stumbleupon;fillColor=#EB4924;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.stumbleupon"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:703"
+  },
+  {
+   "id": "weblogos-159-stumpedia",
+   "title": "Stumpedia",
+   "tags": "weblogos stumpedia web logos logo Stumpedia",
+   "kind": "vertex",
+   "width": 67,
+   "height": 67.60000000000001,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.stumpedia",
+   "shapeNames": [
+    "mxgraph.weblogos.stumpedia"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:705"
+  },
+  {
+   "id": "weblogos-160-translate",
+   "title": "Translate",
+   "tags": "weblogos translate web logos logo Translate",
+   "kind": "vertex",
+   "width": 68.4,
+   "height": 67,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.translate",
+   "shapeNames": [
+    "mxgraph.weblogos.translate"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:707"
+  },
+  {
+   "id": "weblogos-161-trello",
+   "title": "Trello",
+   "tags": "weblogos trello logo web logos logo Trello",
+   "kind": "vertex",
+   "width": 70,
+   "height": 70,
+   "style": "image;image=img/lib/atlassian/Trello_Logo.svg;html=1;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:709"
+  },
+  {
+   "id": "weblogos-162-tumblr",
+   "title": "Tumblr",
+   "tags": "weblogos tumblr web logos logo Tumblr",
+   "kind": "vertex",
+   "width": 40.6,
+   "height": 65.2,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.tumblr;fillColor=#36465D;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.tumblr"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:711"
+  },
+  {
+   "id": "weblogos-163-tunein",
+   "title": "Tunein",
+   "tags": "weblogos tunein web logos logo Tunein",
+   "kind": "vertex",
+   "width": 70,
+   "height": 70,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.tunein",
+   "shapeNames": [
+    "mxgraph.weblogos.tunein"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:713"
+  },
+  {
+   "id": "weblogos-164-twitter",
+   "title": "Twitter",
+   "tags": "weblogos twitter web logos logo Twitter",
+   "kind": "vertex",
+   "width": 80,
+   "height": 70,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.twitter;fillColor=#1DA1F2;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.twitter"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:715"
+  },
+  {
+   "id": "weblogos-165-two",
+   "title": "Two",
+   "tags": "weblogos two web logos logo Two",
+   "kind": "vertex",
+   "width": 75.4,
+   "height": 20,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.two;fillColor=#FF6D00;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.two"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:717"
+  },
+  {
+   "id": "weblogos-166-typepad",
+   "title": "Typepad",
+   "tags": "weblogos typepad web logos logo Typepad",
+   "kind": "vertex",
+   "width": 64.8,
+   "height": 38.400000000000006,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.typepad;fillColor=#ADB560;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.typepad"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:719"
+  },
+  {
+   "id": "weblogos-167-viadeo",
+   "title": "Viadeo",
+   "tags": "weblogos viadeo web logos logo Viadeo",
+   "kind": "vertex",
+   "width": 73.4,
+   "height": 84,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.viadeo",
+   "shapeNames": [
+    "mxgraph.weblogos.viadeo"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:721"
+  },
+  {
+   "id": "weblogos-168-viber",
+   "title": "Viber",
+   "tags": "weblogos viber web logos logo Viber",
+   "kind": "vertex",
+   "width": 77.4,
+   "height": 85.2,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.viber;fillColor=#7D539F;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.viber"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:723"
+  },
+  {
+   "id": "weblogos-169-viddler",
+   "title": "Viddler",
+   "tags": "weblogos viddler web logos logo Viddler",
+   "kind": "vertex",
+   "width": 82,
+   "height": 21.200000000000003,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.viddler;fillColor=#1896E0;gradientColor=#06253F",
+   "shapeNames": [
+    "mxgraph.weblogos.viddler"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:725"
+  },
+  {
+   "id": "weblogos-170-vimeo",
+   "title": "Vimeo",
+   "tags": "weblogos vimeo web logos logo Vimeo",
+   "kind": "vertex",
+   "width": 62.6,
+   "height": 58,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.vimeo;fillColor=#1AB7EA;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.vimeo"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:727"
+  },
+  {
+   "id": "weblogos-171-virb",
+   "title": "Virb",
+   "tags": "weblogos virb web logos logo Virb",
+   "kind": "vertex",
+   "width": 66,
+   "height": 70.60000000000001,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.virb;fillColor=#000000;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.virb"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:729"
+  },
+  {
+   "id": "weblogos-172-vkontakte",
+   "title": "Vkontakte",
+   "tags": "weblogos vkontakte web logos logo Vkontakte",
+   "kind": "vertex",
+   "width": 70.4,
+   "height": 40,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.vkontakte;fillColor=#4C75A3;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.vkontakte"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:731"
+  },
+  {
+   "id": "weblogos-173-wakoopa",
+   "title": "Wakoopa",
+   "tags": "weblogos wakoopa web logos logo Wakoopa",
+   "kind": "vertex",
+   "width": 82.60000000000001,
+   "height": 44.800000000000004,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.wakoopa;fillColor=#FF6D00;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.wakoopa"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:733"
+  },
+  {
+   "id": "weblogos-174-weheartit",
+   "title": "Weheartit",
+   "tags": "weblogos weheartit web logos logo Weheartit",
+   "kind": "vertex",
+   "width": 82.2,
+   "height": 69.60000000000001,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.weheartit;fillColor=#FF4577;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.weheartit"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:735"
+  },
+  {
+   "id": "weblogos-175-whatsapp",
+   "title": "Whatsapp",
+   "tags": "weblogos whatsapp web logos logo Whatsapp",
+   "kind": "vertex",
+   "width": 74.4,
+   "height": 74.8,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.whatsapp;fillColor=#00E676;strokeColor=#dddddd",
+   "shapeNames": [
+    "mxgraph.weblogos.whatsapp"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:737"
+  },
+  {
+   "id": "weblogos-176-wix",
+   "title": "Wix",
+   "tags": "weblogos wix web logos logo Wix",
+   "kind": "vertex",
+   "width": 74,
+   "height": 61.6,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.wix;strokeColor=#dddddd",
+   "shapeNames": [
+    "mxgraph.weblogos.wix"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:739"
+  },
+  {
+   "id": "weblogos-177-wordpress",
+   "title": "Wordpress",
+   "tags": "weblogos wordpress web logos logo Wordpress",
+   "kind": "vertex",
+   "width": 66.60000000000001,
+   "height": 65.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.wordpress;fillColor=#00A7DA;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.wordpress"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:741"
+  },
+  {
+   "id": "weblogos-178-wordpress",
+   "title": "Wordpress",
+   "tags": "weblogos wordpress web logos logo Wordpress",
+   "kind": "vertex",
+   "width": 68.8,
+   "height": 68.8,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.wordpress_2;fillColor=#00A7DA;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.wordpress_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:743"
+  },
+  {
+   "id": "weblogos-179-xanga",
+   "title": "Xanga",
+   "tags": "weblogos xanga web logos logo Xanga",
+   "kind": "vertex",
+   "width": 70,
+   "height": 38,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.xanga;fillColor=#000000;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.xanga"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:745"
+  },
+  {
+   "id": "weblogos-180-xerpi",
+   "title": "Xerpi",
+   "tags": "weblogos xerpi web logos logo Xerpi",
+   "kind": "vertex",
+   "width": 70.2,
+   "height": 65.60000000000001,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.xerpi;fillColor=#7F719B;gradientColor=#32264B;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.xerpi"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:747"
+  },
+  {
+   "id": "weblogos-181-xing",
+   "title": "Xing",
+   "tags": "weblogos xing web logos logo Xing",
+   "kind": "vertex",
+   "width": 65,
+   "height": 73.8,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.xing",
+   "shapeNames": [
+    "mxgraph.weblogos.xing"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:749"
+  },
+  {
+   "id": "weblogos-182-yahoo",
+   "title": "Yahoo",
+   "tags": "weblogos yahoo web logos logo Yahoo",
+   "kind": "vertex",
+   "width": 74.4,
+   "height": 43.6,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.yahoo;fillColor=#65106E;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.yahoo"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:751"
+  },
+  {
+   "id": "weblogos-183-yahoo",
+   "title": "Yahoo",
+   "tags": "weblogos yahoo web logos logo Yahoo",
+   "kind": "vertex",
+   "width": 80,
+   "height": 46.6,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.yahoo_2;fillColor=#65106E;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.yahoo_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:753"
+  },
+  {
+   "id": "weblogos-184-yammer",
+   "title": "Yammer",
+   "tags": "weblogos yammer web logos logo Yammer",
+   "kind": "vertex",
+   "width": 69.60000000000001,
+   "height": 59.6,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.yammer;fillColor=#0093BE;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.yammer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:755"
+  },
+  {
+   "id": "weblogos-185-yandex",
+   "title": "Yandex",
+   "tags": "weblogos yandex web logos logo Yandex",
+   "kind": "vertex",
+   "width": 31.8,
+   "height": 66.4,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.yandex",
+   "shapeNames": [
+    "mxgraph.weblogos.yandex"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:757"
+  },
+  {
+   "id": "weblogos-186-yelp",
+   "title": "Yelp",
+   "tags": "weblogos yelp web logos logo Yelp",
+   "kind": "vertex",
+   "width": 63.400000000000006,
+   "height": 83,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.yelp;fillColor=#C41200;strokeColor=none",
+   "shapeNames": [
+    "mxgraph.weblogos.yelp"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:759"
+  },
+  {
+   "id": "weblogos-187-yoolink",
+   "title": "Yoolink",
+   "tags": "weblogos yoolink web logos logo Yoolink",
+   "kind": "vertex",
+   "width": 79.2,
+   "height": 79.2,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.yoolink",
+   "shapeNames": [
+    "mxgraph.weblogos.yoolink"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:761"
+  },
+  {
+   "id": "weblogos-188-youmob",
+   "title": "Youmob",
+   "tags": "weblogos youmob web logos logo Youmob",
+   "kind": "vertex",
+   "width": 76,
+   "height": 76.2,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.youmob",
+   "shapeNames": [
+    "mxgraph.weblogos.youmob"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:763"
+  },
+  {
+   "id": "weblogos-189-youtube",
+   "title": "Youtube",
+   "tags": "weblogos youtube web logos logo Youtube",
+   "kind": "vertex",
+   "width": 157.20000000000002,
+   "height": 65.8,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.youtube;fillColor=#FF2626;gradientColor=#B5171F",
+   "shapeNames": [
+    "mxgraph.weblogos.youtube"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:765"
+  },
+  {
+   "id": "weblogos-190-youtube",
+   "title": "Youtube",
+   "tags": "weblogos youtube web logos logo Youtube",
+   "kind": "vertex",
+   "width": 46.400000000000006,
+   "height": 32.6,
+   "style": "dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.youtube_2;fillColor=#FF2626;gradientColor=#B5171F",
+   "shapeNames": [
+    "mxgraph.weblogos.youtube_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-WebIcons.js:767"
+  }
+ ]
+}

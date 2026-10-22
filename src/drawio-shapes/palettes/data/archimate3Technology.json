@@ -1,0 +1,501 @@
+{
+ "id": "archimate3Technology",
+ "title": "Archimate 3.2 / Technology",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:8",
+ "entries": [
+  {
+   "id": "archimate3Technology-0-node",
+   "title": "Node",
+   "tags": "archimate3  archimate technology node Node",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#AFFFAF;shape=mxgraph.archimate3.application;appType=node;archiType=square;",
+   "value": "Node",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:473"
+  },
+  {
+   "id": "archimate3Technology-1-node",
+   "title": "Node",
+   "tags": "archimate3  archimate technology node Node",
+   "kind": "vertex",
+   "width": 70,
+   "height": 40,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#AFFFAF;shape=mxgraph.archimate3.node;",
+   "shapeNames": [
+    "mxgraph.archimate3.node"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:475"
+  },
+  {
+   "id": "archimate3Technology-2-device",
+   "title": "Device",
+   "tags": "archimate3  archimate technology device Device",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#AFFFAF;shape=mxgraph.archimate3.application;appType=device;",
+   "value": "Device",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:477"
+  },
+  {
+   "id": "archimate3Technology-3-device",
+   "title": "Device",
+   "tags": "archimate3  archimate technology device Device",
+   "kind": "vertex",
+   "width": 70,
+   "height": 35,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#AFFFAF;shape=mxgraph.archimate3.device;",
+   "shapeNames": [
+    "mxgraph.archimate3.device"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:479"
+  },
+  {
+   "id": "archimate3Technology-4-system-software",
+   "title": "System Software",
+   "tags": "archimate3  archimate technology system software System Software",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#AFFFAF;shape=mxgraph.archimate3.application;appType=sysSw;archiType=square;",
+   "value": "System Software",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:481"
+  },
+  {
+   "id": "archimate3Technology-5-system-software",
+   "title": "System Software",
+   "tags": "archimate3  archimate technology device System Software",
+   "kind": "vertex",
+   "width": 40,
+   "height": 40,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#AFFFAF;shape=mxgraph.archimate3.sysSw;",
+   "shapeNames": [
+    "mxgraph.archimate3.sysSw"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:483"
+  },
+  {
+   "id": "archimate3Technology-6-technology-collaboration",
+   "title": "Technology Collaboration",
+   "tags": "archimate3  archimate technology collaboration Technology Collaboration",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#AFFFAF;shape=mxgraph.archimate3.application;appType=collab;archiType=square;",
+   "value": "Technology Collaboration",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:485"
+  },
+  {
+   "id": "archimate3Technology-7-collaboration",
+   "title": "Collaboration",
+   "tags": "archimate3  archimate technology collaboration Collaboration",
+   "kind": "vertex",
+   "width": 60,
+   "height": 35,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#AFFFAF;shape=mxgraph.archimate3.collaboration;",
+   "shapeNames": [
+    "mxgraph.archimate3.collaboration"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:487"
+  },
+  {
+   "id": "archimate3Technology-8-technology-interface",
+   "title": "Technology Interface",
+   "tags": "archimate3  archimate technology component Technology Interface",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#AFFFAF;shape=mxgraph.archimate3.application;appType=interface;archiType=square;",
+   "value": "Technology Interface",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:489"
+  },
+  {
+   "id": "archimate3Technology-9-interface",
+   "title": "Interface",
+   "tags": "archimate3  archimate technology interface Interface",
+   "kind": "vertex",
+   "width": 70,
+   "height": 35,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#AFFFAF;shape=mxgraph.archimate3.interface;",
+   "shapeNames": [
+    "mxgraph.archimate3.interface"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:491"
+  },
+  {
+   "id": "archimate3Technology-10-path",
+   "title": "Path",
+   "tags": "archimate3  archimate technology communication network Path",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#AFFFAF;shape=mxgraph.archimate3.application;appType=path;archiType=square;",
+   "value": "Path",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:493"
+  },
+  {
+   "id": "archimate3Technology-11-path",
+   "title": "Path",
+   "tags": "archimate3  archimate technology path Path",
+   "kind": "vertex",
+   "width": 100,
+   "height": 30,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#AFFFAF;shape=mxgraph.archimate3.path;strokeWidth=6;",
+   "shapeNames": [
+    "mxgraph.archimate3.path"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:495"
+  },
+  {
+   "id": "archimate3Technology-12-communication-network",
+   "title": "Communication Network",
+   "tags": "archimate3  archimate technology communication network Communication Network",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#AFFFAF;shape=mxgraph.archimate3.application;appType=netw;archiType=square;",
+   "value": "Communication Network",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:497"
+  },
+  {
+   "id": "archimate3Technology-13-communication-network",
+   "title": "Communication Network",
+   "tags": "archimate3  archimate technology communication network Communication Network",
+   "kind": "vertex",
+   "width": 65,
+   "height": 50,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#AFFFAF;shape=mxgraph.archimate3.network;",
+   "shapeNames": [
+    "mxgraph.archimate3.network"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:499"
+  },
+  {
+   "id": "archimate3Technology-14-technology-function",
+   "title": "Technology Function",
+   "tags": "archimate3  archimate technology function Technology Function",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#AFFFAF;shape=mxgraph.archimate3.application;appType=func;archiType=rounded;",
+   "value": "Technology Function",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:501"
+  },
+  {
+   "id": "archimate3Technology-15-function",
+   "title": "Function",
+   "tags": "archimate3  archimate technology function Function",
+   "kind": "vertex",
+   "width": 60,
+   "height": 40,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#AFFFAF;shape=mxgraph.archimate3.function;",
+   "shapeNames": [
+    "mxgraph.archimate3.function"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:503"
+  },
+  {
+   "id": "archimate3Technology-16-technology-process",
+   "title": "Technology Process",
+   "tags": "archimate3  archimate technology process Technology Process",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#AFFFAF;shape=mxgraph.archimate3.application;appType=proc;archiType=rounded;",
+   "value": "Technology Process",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:505"
+  },
+  {
+   "id": "archimate3Technology-17-process",
+   "title": "Process",
+   "tags": "archimate3  archimate technology process Process",
+   "kind": "vertex",
+   "width": 70,
+   "height": 35,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#AFFFAF;shape=mxgraph.archimate3.process;",
+   "shapeNames": [
+    "mxgraph.archimate3.process"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:507"
+  },
+  {
+   "id": "archimate3Technology-18-technology-interaction",
+   "title": "Technology Interaction",
+   "tags": "archimate3  archimate technology interaction Technology Interaction",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#AFFFAF;shape=mxgraph.archimate3.application;appType=interaction;archiType=rounded;",
+   "value": "Technology Interaction",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:509"
+  },
+  {
+   "id": "archimate3Technology-19-interaction",
+   "title": "Interaction",
+   "tags": "archimate3  archimate technology interaction Interaction",
+   "kind": "vertex",
+   "width": 40,
+   "height": 40,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#AFFFAF;shape=mxgraph.archimate3.interaction;",
+   "shapeNames": [
+    "mxgraph.archimate3.interaction"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:511"
+  },
+  {
+   "id": "archimate3Technology-20-technology-event",
+   "title": "Technology Event",
+   "tags": "archimate3  archimate technology event Technology Event",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#AFFFAF;shape=mxgraph.archimate3.application;appType=event;archiType=rounded",
+   "value": "Technology Event",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:513"
+  },
+  {
+   "id": "archimate3Technology-21-event",
+   "title": "Event",
+   "tags": "archimate3  archimate technology event Event",
+   "kind": "vertex",
+   "width": 60,
+   "height": 35,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#AFFFAF;shape=mxgraph.archimate3.event;",
+   "shapeNames": [
+    "mxgraph.archimate3.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:515"
+  },
+  {
+   "id": "archimate3Technology-22-technology-service",
+   "title": "Technology Service",
+   "tags": "archimate3  archimate technology service Technology Service",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#AFFFAF;shape=mxgraph.archimate3.application;appType=serv;archiType=rounded",
+   "value": "Technology Service",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:517"
+  },
+  {
+   "id": "archimate3Technology-23-service",
+   "title": "Service",
+   "tags": "archimate3  archimate technology service Service",
+   "kind": "vertex",
+   "width": 60,
+   "height": 35,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#AFFFAF;shape=mxgraph.archimate3.service;",
+   "shapeNames": [
+    "mxgraph.archimate3.service"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:519"
+  },
+  {
+   "id": "archimate3Technology-24-artifact",
+   "title": "Artifact",
+   "tags": "archimate3  archimate technology artifact Artifact",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#AFFFAF;shape=mxgraph.archimate3.application;appType=artifact;archiType=square;",
+   "value": "Artifact",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:521"
+  },
+  {
+   "id": "archimate3Technology-25-artifact",
+   "title": "Artifact",
+   "tags": "archimate3  archimate technology artifact Artifact",
+   "kind": "vertex",
+   "width": 70,
+   "height": 35,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#AFFFAF;shape=note;size=14;",
+   "shapeNames": [
+    "note"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:523"
+  },
+  {
+   "id": "archimate3Technology-26-equipment",
+   "title": "Equipment",
+   "tags": "archimate3  archimate technology artifact Equipment",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#AFFFAF;shape=mxgraph.archimate3.application;appType=equipment;archiType=square;",
+   "value": "Equipment",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:525"
+  },
+  {
+   "id": "archimate3Technology-27-equipment",
+   "title": "Equipment",
+   "tags": "archimate3  archimate technology artifact Equipment",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#AFFFAF;shape=mxgraph.archimate3.equipment;",
+   "shapeNames": [
+    "mxgraph.archimate3.equipment"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:527"
+  },
+  {
+   "id": "archimate3Technology-28-facility",
+   "title": "Facility",
+   "tags": "archimate3  archimate technology facility Facility",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#AFFFAF;shape=mxgraph.archimate3.application;appType=facility;archiType=square;",
+   "value": "Facility",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:529"
+  },
+  {
+   "id": "archimate3Technology-29-facility",
+   "title": "Facility",
+   "tags": "archimate3  archimate technology facility Facility",
+   "kind": "vertex",
+   "width": 60,
+   "height": 40,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#AFFFAF;shape=mxgraph.archimate3.facility;",
+   "shapeNames": [
+    "mxgraph.archimate3.facility"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:531"
+  },
+  {
+   "id": "archimate3Technology-30-distribution-network",
+   "title": "Distribution Network",
+   "tags": "archimate3  archimate technology distribution network Distribution Network",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#AFFFAF;shape=mxgraph.archimate3.application;appType=distribution;archiType=square;",
+   "value": "Distribution Network",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:533"
+  },
+  {
+   "id": "archimate3Technology-31-distribution-network",
+   "title": "Distribution Network",
+   "tags": "archimate3  archimate technology distribution network Distribution Network",
+   "kind": "vertex",
+   "width": 70,
+   "height": 30,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#AFFFAF;shape=mxgraph.archimate3.distribution;strokeWidth=4;",
+   "shapeNames": [
+    "mxgraph.archimate3.distribution"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:535"
+  },
+  {
+   "id": "archimate3Technology-32-material",
+   "title": "Material",
+   "tags": "archimate3  archimate technology material Material",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#AFFFAF;shape=mxgraph.archimate3.application;appType=material;archiType=square;",
+   "value": "Material",
+   "shapeNames": [
+    "mxgraph.archimate3.application"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:537"
+  },
+  {
+   "id": "archimate3Technology-33-material",
+   "title": "Material",
+   "tags": "archimate3  archimate technology material Material",
+   "kind": "vertex",
+   "width": 60,
+   "height": 50,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#AFFFAF;shape=mxgraph.archimate3.material;",
+   "shapeNames": [
+    "mxgraph.archimate3.material"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate3.js:539"
+  }
+ ]
+}

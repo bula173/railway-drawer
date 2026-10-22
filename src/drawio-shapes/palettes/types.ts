@@ -52,3 +52,45 @@ export interface PaletteMeta {
   title: string;
   defaultVisible: boolean;
 }
+
+/** A palette of the generated catalogue (data/catalogue.json). */
+export interface CataloguePalette {
+  id: string;
+  /** data/<file>.json */
+  file: string;
+  title: string;
+  /** Library ("More shapes" entry) the palette belongs to. */
+  library: string;
+  count: number;
+  /** JS shape names / stencil packages the entries use (for preloading). */
+  jsShapes: string[];
+  stencils: string[];
+}
+
+/** A draw.io library ("More shapes" entry): one or more palettes. */
+export interface CatalogueLibrary {
+  id: string;
+  title: string;
+  palettes: string[];
+  count: number;
+  /** Third-party notice file under third_party/drawio-libraries/ (vendor icon sets). */
+  notice?: string;
+  /** Short attribution / trademark note shown in the library info. */
+  attribution?: string;
+  /** True when the icons are fixed-colour vendor artwork (not recoloured in dark mode). */
+  vendorIcons?: boolean;
+}
+
+export interface PaletteCatalogue {
+  drawioTag: string;
+  /** draw.io's MoreShapesDialog sections (Standard, Software, Networking, Business, Other). */
+  categories: Array<{ title: string; libraries: Array<{ id: string; title: string }> }>;
+  libraries: CatalogueLibrary[];
+  palettes: CataloguePalette[];
+}
+
+/** Search index: per palette, `title\ttags` of every entry in entry order. */
+export interface PaletteSearchIndex {
+  drawioTag: string;
+  palettes: Array<[string, string[]]>;
+}

@@ -1,0 +1,1604 @@
+{
+ "id": "gcp2General Icons",
+ "title": "GCP / General Icons",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-GCP2.js:7",
+ "entries": [
+  {
+   "id": "gcp2General Icons-0-biomedical-trio",
+   "title": "Biomedical Trio",
+   "tags": "gcp2  gcp google cloud platform general icons icon biomedical trio Biomedical Trio",
+   "kind": "vertex",
+   "width": 100,
+   "height": 68,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.biomedical_trio",
+   "shapeNames": [
+    "mxgraph.gcp2.biomedical_trio"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:247"
+  },
+  {
+   "id": "gcp2General Icons-1-biomedical-beaker",
+   "title": "Biomedical Beaker",
+   "tags": "gcp2  gcp google cloud platform general icons icon biomedical beaker Biomedical Beaker",
+   "kind": "vertex",
+   "width": 69,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.biomedical_beaker",
+   "shapeNames": [
+    "mxgraph.gcp2.biomedical_beaker"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:249"
+  },
+  {
+   "id": "gcp2General Icons-2-biomedical-test-tube",
+   "title": "Biomedical Test Tube",
+   "tags": "gcp2  gcp google cloud platform general icons icon biomedical test tube Biomedical Test Tube",
+   "kind": "vertex",
+   "width": 31,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.biomedical_test_tube",
+   "shapeNames": [
+    "mxgraph.gcp2.biomedical_test_tube"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:251"
+  },
+  {
+   "id": "gcp2General Icons-3-check-available",
+   "title": "Check Available",
+   "tags": "gcp2  gcp google cloud platform general icons icon check available Check Available",
+   "kind": "vertex",
+   "width": 100,
+   "height": 87,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.check_available",
+   "shapeNames": [
+    "mxgraph.gcp2.check_available"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:253"
+  },
+  {
+   "id": "gcp2General Icons-4-cloud-monitoring",
+   "title": "Cloud Monitoring",
+   "tags": "gcp2  gcp google cloud platform general icons icon cloud monitoring Cloud Monitoring",
+   "kind": "vertex",
+   "width": 90,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.cloud_monitoring",
+   "shapeNames": [
+    "mxgraph.gcp2.cloud_monitoring"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:255"
+  },
+  {
+   "id": "gcp2General Icons-5-repository",
+   "title": "Repository",
+   "tags": "gcp2  gcp google cloud platform general icons icon repository Repository",
+   "kind": "vertex",
+   "width": 60,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.repository",
+   "shapeNames": [
+    "mxgraph.gcp2.repository"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:257"
+  },
+  {
+   "id": "gcp2General Icons-6-compute-engine",
+   "title": "Compute Engine",
+   "tags": "gcp2  gcp google cloud platform general icons icon compute engine Compute Engine",
+   "kind": "vertex",
+   "width": 54,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.compute_engine_2",
+   "shapeNames": [
+    "mxgraph.gcp2.compute_engine_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:259"
+  },
+  {
+   "id": "gcp2General Icons-7-capabilities",
+   "title": "Capabilities",
+   "tags": "gcp2  gcp google cloud platform general icons icon capabilities thumbs up gear Capabilities",
+   "kind": "vertex",
+   "width": 100,
+   "height": 76,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.capabilities",
+   "shapeNames": [
+    "mxgraph.gcp2.capabilities"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:261"
+  },
+  {
+   "id": "gcp2General Icons-8-world-network",
+   "title": "World Network",
+   "tags": "gcp2  gcp google cloud platform general icons icon globe global world network upload anywhere World Network",
+   "kind": "vertex",
+   "width": 100,
+   "height": 95,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.globe_world",
+   "shapeNames": [
+    "mxgraph.gcp2.globe_world"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:263"
+  },
+  {
+   "id": "gcp2General Icons-9-process",
+   "title": "Process",
+   "tags": "gcp2  gcp google cloud platform general icons icon process Process",
+   "kind": "vertex",
+   "width": 84,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.process",
+   "shapeNames": [
+    "mxgraph.gcp2.process"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:265"
+  },
+  {
+   "id": "gcp2General Icons-10-arrow-cycle",
+   "title": "Arrow Cycle",
+   "tags": "gcp2  gcp google cloud platform general icons icon arrow cycle Arrow Cycle",
+   "kind": "vertex",
+   "width": 100,
+   "height": 95,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.arrow_cycle",
+   "shapeNames": [
+    "mxgraph.gcp2.arrow_cycle"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:267"
+  },
+  {
+   "id": "gcp2General Icons-11-arrows-system",
+   "title": "Arrows System",
+   "tags": "gcp2  gcp google cloud platform general icons icon arrows system Arrows System",
+   "kind": "vertex",
+   "width": 100,
+   "height": 95,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.arrows_system",
+   "shapeNames": [
+    "mxgraph.gcp2.arrows_system"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:269"
+  },
+  {
+   "id": "gcp2General Icons-12-half-cloud",
+   "title": "Half Cloud",
+   "tags": "gcp2  gcp google cloud platform general icons icon half cloud Half Cloud",
+   "kind": "vertex",
+   "width": 100,
+   "height": 50,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.half_cloud",
+   "shapeNames": [
+    "mxgraph.gcp2.half_cloud"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:271"
+  },
+  {
+   "id": "gcp2General Icons-13-cloud",
+   "title": "Cloud",
+   "tags": "gcp2  gcp google cloud platform general icons icon cloud Cloud",
+   "kind": "vertex",
+   "width": 100,
+   "height": 69,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.cloud",
+   "shapeNames": [
+    "mxgraph.gcp2.cloud"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:273"
+  },
+  {
+   "id": "gcp2General Icons-14-speed",
+   "title": "Speed",
+   "tags": "gcp2  gcp google cloud platform general icons icon speed Speed",
+   "kind": "vertex",
+   "width": 100,
+   "height": 57,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.speed",
+   "shapeNames": [
+    "mxgraph.gcp2.speed"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:275"
+  },
+  {
+   "id": "gcp2General Icons-15-overtime",
+   "title": "Overtime",
+   "tags": "gcp2  gcp google cloud platform general icons icon time clock frozen cold overtime Overtime",
+   "kind": "vertex",
+   "width": 86,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.time_clock",
+   "shapeNames": [
+    "mxgraph.gcp2.time_clock"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:277"
+  },
+  {
+   "id": "gcp2General Icons-16-loading",
+   "title": "Loading",
+   "tags": "gcp2  gcp google cloud platform general icons icon loading Loading",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.loading",
+   "shapeNames": [
+    "mxgraph.gcp2.loading"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:279"
+  },
+  {
+   "id": "gcp2General Icons-17-clock",
+   "title": "Clock",
+   "tags": "gcp2  gcp google cloud platform general icons icon clock Clock",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.clock",
+   "shapeNames": [
+    "mxgraph.gcp2.clock"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:281"
+  },
+  {
+   "id": "gcp2General Icons-18-check",
+   "title": "Check",
+   "tags": "gcp2  gcp google cloud platform general icons icon check Check",
+   "kind": "vertex",
+   "width": 100,
+   "height": 80,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.check",
+   "shapeNames": [
+    "mxgraph.gcp2.check"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:283"
+  },
+  {
+   "id": "gcp2General Icons-19-check-yellow",
+   "title": "Check (yellow)",
+   "tags": "gcp2  gcp google cloud platform general icons icon check Check (yellow)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 80,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;align=center;fillColor=#F4AF20;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.check",
+   "shapeNames": [
+    "mxgraph.gcp2.check"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:285"
+  },
+  {
+   "id": "gcp2General Icons-20-check-green",
+   "title": "Check (green)",
+   "tags": "gcp2  gcp google cloud platform general icons icon check Check (green)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 80,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;align=center;fillColor=#2D9C5E;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.check",
+   "shapeNames": [
+    "mxgraph.gcp2.check"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:287"
+  },
+  {
+   "id": "gcp2General Icons-21-lock",
+   "title": "Lock",
+   "tags": "gcp2  gcp google cloud platform general icons icon lock Lock",
+   "kind": "vertex",
+   "width": 78,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.lock",
+   "shapeNames": [
+    "mxgraph.gcp2.lock"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:289"
+  },
+  {
+   "id": "gcp2General Icons-22-cloud-security",
+   "title": "Cloud Security",
+   "tags": "gcp2  gcp google cloud platform general icons icon cloud security Cloud Security",
+   "kind": "vertex",
+   "width": 100,
+   "height": 70,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.cloud_security",
+   "shapeNames": [
+    "mxgraph.gcp2.cloud_security"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:291"
+  },
+  {
+   "id": "gcp2General Icons-23-cloud-checkmark",
+   "title": "Cloud Checkmark",
+   "tags": "gcp2  gcp google cloud platform general icons icon cloud checkmark Cloud Checkmark",
+   "kind": "vertex",
+   "width": 100,
+   "height": 67,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.cloud_checkmark",
+   "shapeNames": [
+    "mxgraph.gcp2.cloud_checkmark"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:293"
+  },
+  {
+   "id": "gcp2General Icons-24-key",
+   "title": "Key",
+   "tags": "gcp2  gcp google cloud platform general icons icon key Key",
+   "kind": "vertex",
+   "width": 100,
+   "height": 47,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.key",
+   "shapeNames": [
+    "mxgraph.gcp2.key"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:295"
+  },
+  {
+   "id": "gcp2General Icons-25-aspect-ratio",
+   "title": "Aspect Ratio",
+   "tags": "gcp2  gcp google cloud platform general icons icon aspect ratio Aspect Ratio",
+   "kind": "vertex",
+   "width": 100,
+   "height": 92,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.aspect_ratio",
+   "shapeNames": [
+    "mxgraph.gcp2.aspect_ratio"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:297"
+  },
+  {
+   "id": "gcp2General Icons-26-check",
+   "title": "Check",
+   "tags": "gcp2  gcp google cloud platform general icons icon check scale aspect ratio Check",
+   "kind": "vertex",
+   "width": 100,
+   "height": 92,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.scale",
+   "shapeNames": [
+    "mxgraph.gcp2.scale"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:299"
+  },
+  {
+   "id": "gcp2General Icons-27-big-query",
+   "title": "Big Query",
+   "tags": "gcp2  gcp google cloud platform general icons icon big query Big Query",
+   "kind": "vertex",
+   "width": 99,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.big_query",
+   "shapeNames": [
+    "mxgraph.gcp2.big_query"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:301"
+  },
+  {
+   "id": "gcp2General Icons-28-search",
+   "title": "Search",
+   "tags": "gcp2  gcp google cloud platform general icons icon search Search",
+   "kind": "vertex",
+   "width": 99,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.search",
+   "shapeNames": [
+    "mxgraph.gcp2.search"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:303"
+  },
+  {
+   "id": "gcp2General Icons-29-search-green",
+   "title": "Search (green)",
+   "tags": "gcp2  gcp google cloud platform general icons icon search Search (green)",
+   "kind": "vertex",
+   "width": 99,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;align=center;fillColor=#2D9C5E;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.search",
+   "shapeNames": [
+    "mxgraph.gcp2.search"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:305"
+  },
+  {
+   "id": "gcp2General Icons-30-solution",
+   "title": "Solution",
+   "tags": "gcp2  gcp google cloud platform general icons icon solution Solution",
+   "kind": "vertex",
+   "width": 99,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.solution",
+   "shapeNames": [
+    "mxgraph.gcp2.solution"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:307"
+  },
+  {
+   "id": "gcp2General Icons-31-visibility",
+   "title": "Visibility",
+   "tags": "gcp2  gcp google cloud platform general icons icon visibility Visibility",
+   "kind": "vertex",
+   "width": 100,
+   "height": 94,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.visibility",
+   "shapeNames": [
+    "mxgraph.gcp2.visibility"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:309"
+  },
+  {
+   "id": "gcp2General Icons-32-anomaly-detection",
+   "title": "Anomaly Detection",
+   "tags": "gcp2  gcp google cloud platform general icons icon anomaly detection Anomaly Detection",
+   "kind": "vertex",
+   "width": 78,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.anomaly_detection",
+   "shapeNames": [
+    "mxgraph.gcp2.anomaly_detection"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:311"
+  },
+  {
+   "id": "gcp2General Icons-33-view-list",
+   "title": "View List",
+   "tags": "gcp2  gcp google cloud platform general icons icon view list View List",
+   "kind": "vertex",
+   "width": 81,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.view_list",
+   "shapeNames": [
+    "mxgraph.gcp2.view_list"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:313"
+  },
+  {
+   "id": "gcp2General Icons-34-admin",
+   "title": "Admin",
+   "tags": "gcp2  gcp google cloud platform general icons icon admin system connected Admin",
+   "kind": "vertex",
+   "width": 100,
+   "height": 72,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.connected",
+   "shapeNames": [
+    "mxgraph.gcp2.connected"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:315"
+  },
+  {
+   "id": "gcp2General Icons-35-cloud-server",
+   "title": "Cloud Server",
+   "tags": "gcp2  gcp google cloud platform general icons icon cloud server Cloud Server",
+   "kind": "vertex",
+   "width": 100,
+   "height": 89,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.cloud_server",
+   "shapeNames": [
+    "mxgraph.gcp2.cloud_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:317"
+  },
+  {
+   "id": "gcp2General Icons-36-primary",
+   "title": "Primary",
+   "tags": "gcp2  gcp google cloud platform general icons icon primary Primary",
+   "kind": "vertex",
+   "width": 100,
+   "height": 15,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.primary",
+   "shapeNames": [
+    "mxgraph.gcp2.primary"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:319"
+  },
+  {
+   "id": "gcp2General Icons-37-monitor",
+   "title": "Monitor",
+   "tags": "gcp2  gcp google cloud platform general icons icon monitor save help Monitor",
+   "kind": "vertex",
+   "width": 100,
+   "height": 85,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.monitor",
+   "shapeNames": [
+    "mxgraph.gcp2.monitor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:321"
+  },
+  {
+   "id": "gcp2General Icons-38-monitor",
+   "title": "Monitor",
+   "tags": "gcp2  gcp google cloud platform general icons icon monitor Monitor",
+   "kind": "vertex",
+   "width": 100,
+   "height": 85,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.monitor_2",
+   "shapeNames": [
+    "mxgraph.gcp2.monitor_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:323"
+  },
+  {
+   "id": "gcp2General Icons-39-website",
+   "title": "Website",
+   "tags": "gcp2  gcp google cloud platform general icons icon website Website",
+   "kind": "vertex",
+   "width": 100,
+   "height": 97,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.website",
+   "shapeNames": [
+    "mxgraph.gcp2.website"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:325"
+  },
+  {
+   "id": "gcp2General Icons-40-safety",
+   "title": "Safety",
+   "tags": "gcp2  gcp google cloud platform general icons icon safety Safety",
+   "kind": "vertex",
+   "width": 100,
+   "height": 96,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.safety",
+   "shapeNames": [
+    "mxgraph.gcp2.safety"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:327"
+  },
+  {
+   "id": "gcp2General Icons-41-gear-load",
+   "title": "Gear Load",
+   "tags": "gcp2  gcp google cloud platform general icons icon gear load Gear Load",
+   "kind": "vertex",
+   "width": 100,
+   "height": 92,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.gear_load",
+   "shapeNames": [
+    "mxgraph.gcp2.gear_load"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:329"
+  },
+  {
+   "id": "gcp2General Icons-42-files",
+   "title": "Files",
+   "tags": "gcp2  gcp google cloud platform general icons icon files data sharing Files",
+   "kind": "vertex",
+   "width": 100,
+   "height": 97,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.files",
+   "shapeNames": [
+    "mxgraph.gcp2.files"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:331"
+  },
+  {
+   "id": "gcp2General Icons-43-play-gear",
+   "title": "Play Gear",
+   "tags": "gcp2  gcp google cloud platform general icons icon play gear Play Gear",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.play_gear",
+   "shapeNames": [
+    "mxgraph.gcp2.play_gear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:333"
+  },
+  {
+   "id": "gcp2General Icons-44-play-start",
+   "title": "Play Start",
+   "tags": "gcp2  gcp google cloud platform general icons icon play start Play Start",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.play_start",
+   "shapeNames": [
+    "mxgraph.gcp2.play_start"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:335"
+  },
+  {
+   "id": "gcp2General Icons-45-replication-controller",
+   "title": "Replication Controller",
+   "tags": "gcp2  gcp google cloud platform general icons icon replication controller Replication Controller",
+   "kind": "vertex",
+   "width": 100,
+   "height": 91,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.replication_controller",
+   "shapeNames": [
+    "mxgraph.gcp2.replication_controller"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:337"
+  },
+  {
+   "id": "gcp2General Icons-46-replication-controller",
+   "title": "Replication Controller",
+   "tags": "gcp2  gcp google cloud platform general icons icon replication controller Replication Controller",
+   "kind": "vertex",
+   "width": 100,
+   "height": 91,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.replication_controller_2",
+   "shapeNames": [
+    "mxgraph.gcp2.replication_controller_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:339"
+  },
+  {
+   "id": "gcp2General Icons-47-replication-controller",
+   "title": "Replication Controller",
+   "tags": "gcp2  gcp google cloud platform general icons icon replication controller Replication Controller",
+   "kind": "vertex",
+   "width": 100,
+   "height": 66,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.replication_controller_3",
+   "shapeNames": [
+    "mxgraph.gcp2.replication_controller_3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:341"
+  },
+  {
+   "id": "gcp2General Icons-48-repository",
+   "title": "Repository",
+   "tags": "gcp2  gcp google cloud platform general icons icon repository upload swap Repository",
+   "kind": "vertex",
+   "width": 94,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.repository_2",
+   "shapeNames": [
+    "mxgraph.gcp2.repository_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:343"
+  },
+  {
+   "id": "gcp2General Icons-49-repository",
+   "title": "Repository",
+   "tags": "gcp2  gcp google cloud platform general icons icon repository Repository",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.repository_3",
+   "shapeNames": [
+    "mxgraph.gcp2.repository_3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:345"
+  },
+  {
+   "id": "gcp2General Icons-50-repository",
+   "title": "Repository",
+   "tags": "gcp2  gcp google cloud platform general icons icon repository primary Repository",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.repository_primary",
+   "shapeNames": [
+    "mxgraph.gcp2.repository_primary"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:347"
+  },
+  {
+   "id": "gcp2General Icons-51-database",
+   "title": "Database",
+   "tags": "gcp2  gcp google cloud platform general icons icon database db files Database",
+   "kind": "vertex",
+   "width": 70,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.database_3",
+   "shapeNames": [
+    "mxgraph.gcp2.database_3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:349"
+  },
+  {
+   "id": "gcp2General Icons-52-database-uploading",
+   "title": "Database Uploading",
+   "tags": "gcp2  gcp google cloud platform general icons icon database db uploading Database Uploading",
+   "kind": "vertex",
+   "width": 100,
+   "height": 84,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.database_uploading",
+   "shapeNames": [
+    "mxgraph.gcp2.database_uploading"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:351"
+  },
+  {
+   "id": "gcp2General Icons-53-servers-stacked",
+   "title": "Servers Stacked",
+   "tags": "gcp2  gcp google cloud platform general icons icon servers stacked Servers Stacked",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.servers_stacked",
+   "shapeNames": [
+    "mxgraph.gcp2.servers_stacked"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:353"
+  },
+  {
+   "id": "gcp2General Icons-54-segments",
+   "title": "Segments",
+   "tags": "gcp2  gcp google cloud platform general icons icon segments Segments",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.segments",
+   "shapeNames": [
+    "mxgraph.gcp2.segments"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:355"
+  },
+  {
+   "id": "gcp2General Icons-55-segments",
+   "title": "Segments",
+   "tags": "gcp2  gcp google cloud platform general icons icon segments Segments",
+   "kind": "vertex",
+   "width": 100,
+   "height": 92,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.segments_2",
+   "shapeNames": [
+    "mxgraph.gcp2.segments_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:357"
+  },
+  {
+   "id": "gcp2General Icons-56-segments-overlap",
+   "title": "Segments Overlap",
+   "tags": "gcp2  gcp google cloud platform general icons icon segments overlap Segments Overlap",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.segments_overlap",
+   "shapeNames": [
+    "mxgraph.gcp2.segments_overlap"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:359"
+  },
+  {
+   "id": "gcp2General Icons-57-cost-savings",
+   "title": "Cost Savings",
+   "tags": "gcp2  gcp google cloud platform general icons icon cost savings Cost Savings",
+   "kind": "vertex",
+   "width": 66,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.cost_savings",
+   "shapeNames": [
+    "mxgraph.gcp2.cost_savings"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:361"
+  },
+  {
+   "id": "gcp2General Icons-58-enhance-ui",
+   "title": "Enhance UI",
+   "tags": "gcp2  gcp google cloud platform general icons icon enhance ui Enhance UI",
+   "kind": "vertex",
+   "width": 76,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.enhance_ui",
+   "shapeNames": [
+    "mxgraph.gcp2.enhance_ui"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:363"
+  },
+  {
+   "id": "gcp2General Icons-59-phone",
+   "title": "Phone",
+   "tags": "gcp2  gcp google cloud platform general icons icon phone android Phone",
+   "kind": "vertex",
+   "width": 56,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.phone_android",
+   "shapeNames": [
+    "mxgraph.gcp2.phone_android"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:365"
+  },
+  {
+   "id": "gcp2General Icons-60-cost-arrows",
+   "title": "Cost Arrows",
+   "tags": "gcp2  gcp google cloud platform general icons icon cost arrows Cost Arrows",
+   "kind": "vertex",
+   "width": 76,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.cost_arrows",
+   "shapeNames": [
+    "mxgraph.gcp2.cost_arrows"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:367"
+  },
+  {
+   "id": "gcp2General Icons-61-increase-cost-arrows",
+   "title": "Increase Cost Arrows",
+   "tags": "gcp2  gcp google cloud platform general icons icon increase cost arrows Increase Cost Arrows",
+   "kind": "vertex",
+   "width": 100,
+   "height": 92,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.increase_cost_arrows",
+   "shapeNames": [
+    "mxgraph.gcp2.increase_cost_arrows"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:369"
+  },
+  {
+   "id": "gcp2General Icons-62-cost-file",
+   "title": "Cost File",
+   "tags": "gcp2  gcp google cloud platform general icons icon cost file Cost File",
+   "kind": "vertex",
+   "width": 85,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.cost",
+   "shapeNames": [
+    "mxgraph.gcp2.cost"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:371"
+  },
+  {
+   "id": "gcp2General Icons-63-database",
+   "title": "Database",
+   "tags": "gcp2  gcp google cloud platform general icons icon database db Database",
+   "kind": "vertex",
+   "width": 78,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.database_2",
+   "shapeNames": [
+    "mxgraph.gcp2.database_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:373"
+  },
+  {
+   "id": "gcp2General Icons-64-database-speed",
+   "title": "Database Speed",
+   "tags": "gcp2  gcp google cloud platform general icons icon database db speed Database Speed",
+   "kind": "vertex",
+   "width": 69,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.database_speed",
+   "shapeNames": [
+    "mxgraph.gcp2.database_speed"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:375"
+  },
+  {
+   "id": "gcp2General Icons-65-data-access",
+   "title": "Data Access",
+   "tags": "gcp2  gcp google cloud platform general icons icon data access file gear Data Access",
+   "kind": "vertex",
+   "width": 93,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.data_access",
+   "shapeNames": [
+    "mxgraph.gcp2.data_access"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:377"
+  },
+  {
+   "id": "gcp2General Icons-66-database-cycle",
+   "title": "Database Cycle",
+   "tags": "gcp2  gcp google cloud platform general icons icon database db cycle Database Cycle",
+   "kind": "vertex",
+   "width": 100,
+   "height": 98,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.database_cycle",
+   "shapeNames": [
+    "mxgraph.gcp2.database_cycle"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:379"
+  },
+  {
+   "id": "gcp2General Icons-67-data-increase",
+   "title": "Data Increase",
+   "tags": "gcp2  gcp google cloud platform general icons icon data increase Data Increase",
+   "kind": "vertex",
+   "width": 78,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.data_increase",
+   "shapeNames": [
+    "mxgraph.gcp2.data_increase"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:381"
+  },
+  {
+   "id": "gcp2General Icons-68-data-storage-cost",
+   "title": "Data Storage Cost",
+   "tags": "gcp2  gcp google cloud platform general icons icon data storage cost Data Storage Cost",
+   "kind": "vertex",
+   "width": 78,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.data_storage_cost",
+   "shapeNames": [
+    "mxgraph.gcp2.data_storage_cost"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:383"
+  },
+  {
+   "id": "gcp2General Icons-69-gear",
+   "title": "Gear",
+   "tags": "gcp2  gcp google cloud platform general icons icon gear Gear",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.gear",
+   "shapeNames": [
+    "mxgraph.gcp2.gear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:385"
+  },
+  {
+   "id": "gcp2General Icons-70-gear-chain",
+   "title": "Gear Chain",
+   "tags": "gcp2  gcp google cloud platform general icons icon gear chain Gear Chain",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.gear_chain",
+   "shapeNames": [
+    "mxgraph.gcp2.gear_chain"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:387"
+  },
+  {
+   "id": "gcp2General Icons-71-bucket-scale",
+   "title": "Bucket Scale",
+   "tags": "gcp2  gcp google cloud platform general icons icon bucket scale Bucket Scale",
+   "kind": "vertex",
+   "width": 100,
+   "height": 81,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.bucket_scale",
+   "shapeNames": [
+    "mxgraph.gcp2.bucket_scale"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:389"
+  },
+  {
+   "id": "gcp2General Icons-72-a7-power",
+   "title": "A7 Power",
+   "tags": "gcp2  gcp google cloud platform general icons icon a7 power A7 Power",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.a7_power",
+   "shapeNames": [
+    "mxgraph.gcp2.a7_power"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:391"
+  },
+  {
+   "id": "gcp2General Icons-73-gear-arrow",
+   "title": "Gear Arrow",
+   "tags": "gcp2  gcp google cloud platform general icons icon gear arrow Gear Arrow",
+   "kind": "vertex",
+   "width": 100,
+   "height": 61,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.gear_arrow",
+   "shapeNames": [
+    "mxgraph.gcp2.gear_arrow"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:393"
+  },
+  {
+   "id": "gcp2General Icons-74-swap",
+   "title": "Swap",
+   "tags": "gcp2  gcp google cloud platform general icons icon swap Swap",
+   "kind": "vertex",
+   "width": 100,
+   "height": 51,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.swap",
+   "shapeNames": [
+    "mxgraph.gcp2.swap"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:395"
+  },
+  {
+   "id": "gcp2General Icons-75-save",
+   "title": "Save",
+   "tags": "gcp2  gcp google cloud platform general icons icon save Save",
+   "kind": "vertex",
+   "width": 100,
+   "height": 84,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.save",
+   "shapeNames": [
+    "mxgraph.gcp2.save"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:397"
+  },
+  {
+   "id": "gcp2General Icons-76-social-media-time",
+   "title": "Social Media Time",
+   "tags": "gcp2  gcp google cloud platform general icons icon social media time Social Media Time",
+   "kind": "vertex",
+   "width": 97,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.social_media_time",
+   "shapeNames": [
+    "mxgraph.gcp2.social_media_time"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:399"
+  },
+  {
+   "id": "gcp2General Icons-77-tape-record",
+   "title": "Tape Record",
+   "tags": "gcp2  gcp google cloud platform general icons icon tape record Tape Record",
+   "kind": "vertex",
+   "width": 100,
+   "height": 71,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.tape_record",
+   "shapeNames": [
+    "mxgraph.gcp2.tape_record"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:401"
+  },
+  {
+   "id": "gcp2General Icons-78-folders",
+   "title": "Folders",
+   "tags": "gcp2  gcp google cloud platform general icons icon folders extensible Folders",
+   "kind": "vertex",
+   "width": 100,
+   "height": 85,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.folders",
+   "shapeNames": [
+    "mxgraph.gcp2.folders"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:403"
+  },
+  {
+   "id": "gcp2General Icons-79-maps-api",
+   "title": "Maps API",
+   "tags": "gcp2  gcp google cloud platform general icons icon maps api application programming interface Maps API",
+   "kind": "vertex",
+   "width": 61,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.maps_api",
+   "shapeNames": [
+    "mxgraph.gcp2.maps_api"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:405"
+  },
+  {
+   "id": "gcp2General Icons-80-enhance-ui",
+   "title": "Enhance UI",
+   "tags": "gcp2  gcp google cloud platform general icons icon enhance ui user interface Enhance UI",
+   "kind": "vertex",
+   "width": 100,
+   "height": 91,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.enhance_ui_2",
+   "shapeNames": [
+    "mxgraph.gcp2.enhance_ui_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:407"
+  },
+  {
+   "id": "gcp2General Icons-81-certified-industry-standard",
+   "title": "Certified Industry Standard",
+   "tags": "gcp2  gcp google cloud platform general icons icon certified industry standard Certified Industry Standard",
+   "kind": "vertex",
+   "width": 100,
+   "height": 78,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.certified_industry_standard",
+   "shapeNames": [
+    "mxgraph.gcp2.certified_industry_standard"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:409"
+  },
+  {
+   "id": "gcp2General Icons-82-calculator",
+   "title": "Calculator",
+   "tags": "gcp2  gcp google cloud platform general icons icon calculator Calculator",
+   "kind": "vertex",
+   "width": 100,
+   "height": 74,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.calculator",
+   "shapeNames": [
+    "mxgraph.gcp2.calculator"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:411"
+  },
+  {
+   "id": "gcp2General Icons-83-network",
+   "title": "Network",
+   "tags": "gcp2  gcp google cloud platform general icons icon network Network",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.network",
+   "shapeNames": [
+    "mxgraph.gcp2.network"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:413"
+  },
+  {
+   "id": "gcp2General Icons-84-cloud-computer",
+   "title": "Cloud Computer",
+   "tags": "gcp2  gcp google cloud platform general icons icon cloud computer Cloud Computer",
+   "kind": "vertex",
+   "width": 100,
+   "height": 88,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.cloud_computer",
+   "shapeNames": [
+    "mxgraph.gcp2.cloud_computer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:415"
+  },
+  {
+   "id": "gcp2General Icons-85-cloud-connected-insight",
+   "title": "Cloud Connected Insight",
+   "tags": "gcp2  gcp google cloud platform general icons icon cloud connected insight Cloud Connected Insight",
+   "kind": "vertex",
+   "width": 100,
+   "height": 91,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.cloud_connected_insight",
+   "shapeNames": [
+    "mxgraph.gcp2.cloud_connected_insight"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:417"
+  },
+  {
+   "id": "gcp2General Icons-86-cloud-information-portable",
+   "title": "Cloud Information Portable",
+   "tags": "gcp2  gcp google cloud platform general icons icon cloud information portable Cloud Information Portable",
+   "kind": "vertex",
+   "width": 100,
+   "height": 79,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.cloud_information",
+   "shapeNames": [
+    "mxgraph.gcp2.cloud_information"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:419"
+  },
+  {
+   "id": "gcp2General Icons-87-lifecycle",
+   "title": "Lifecycle",
+   "tags": "gcp2  gcp google cloud platform general icons icon lifecycle time folder loading Lifecycle",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.lifecycle",
+   "shapeNames": [
+    "mxgraph.gcp2.lifecycle"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:421"
+  },
+  {
+   "id": "gcp2General Icons-88-thumbs-up",
+   "title": "Thumbs Up",
+   "tags": "gcp2  gcp google cloud platform general icons icon thumbs up Thumbs Up",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.thumbs_up",
+   "shapeNames": [
+    "mxgraph.gcp2.thumbs_up"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:423"
+  },
+  {
+   "id": "gcp2General Icons-89-loading",
+   "title": "Loading",
+   "tags": "gcp2  gcp google cloud platform general icons icon loading Loading",
+   "kind": "vertex",
+   "width": 93,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.loading_2",
+   "shapeNames": [
+    "mxgraph.gcp2.loading_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:425"
+  },
+  {
+   "id": "gcp2General Icons-90-internet-connection",
+   "title": "Internet Connection",
+   "tags": "gcp2  gcp google cloud platform general icons icon internet connection Internet Connection",
+   "kind": "vertex",
+   "width": 100,
+   "height": 83,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.internet_connection",
+   "shapeNames": [
+    "mxgraph.gcp2.internet_connection"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:427"
+  },
+  {
+   "id": "gcp2General Icons-91-check-scale",
+   "title": "Check Scale",
+   "tags": "gcp2  gcp google cloud platform general icons icon check scale Check Scale",
+   "kind": "vertex",
+   "width": 100,
+   "height": 75,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.check_scale",
+   "shapeNames": [
+    "mxgraph.gcp2.check_scale"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:429"
+  },
+  {
+   "id": "gcp2General Icons-92-load-balancing",
+   "title": "Load Balancing",
+   "tags": "gcp2  gcp google cloud platform general icons icon load balancing Load Balancing",
+   "kind": "vertex",
+   "width": 100,
+   "height": 26,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.load_balancing",
+   "shapeNames": [
+    "mxgraph.gcp2.load_balancing"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:431"
+  },
+  {
+   "id": "gcp2General Icons-93-cloud-messaging",
+   "title": "Cloud Messaging",
+   "tags": "gcp2  gcp google cloud platform general icons icon cloud messaging Cloud Messaging",
+   "kind": "vertex",
+   "width": 100,
+   "height": 64,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.cloud_messaging",
+   "shapeNames": [
+    "mxgraph.gcp2.cloud_messaging"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:433"
+  },
+  {
+   "id": "gcp2General Icons-94-memory-card",
+   "title": "Memory Card",
+   "tags": "gcp2  gcp google cloud platform general icons icon memory card Memory Card",
+   "kind": "vertex",
+   "width": 93,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.memory_card",
+   "shapeNames": [
+    "mxgraph.gcp2.memory_card"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:435"
+  },
+  {
+   "id": "gcp2General Icons-95-admin-connected",
+   "title": "Admin Connected",
+   "tags": "gcp2  gcp google cloud platform general icons icon admin connected Admin Connected",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.admin_connected",
+   "shapeNames": [
+    "mxgraph.gcp2.admin_connected"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:437"
+  },
+  {
+   "id": "gcp2General Icons-96-images-service",
+   "title": "Images Service",
+   "tags": "gcp2  gcp google cloud platform general icons icon images service Images Service",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;align=center;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=ellipse",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:439"
+  },
+  {
+   "id": "gcp2General Icons-97-task-queues",
+   "title": "Task Queues",
+   "tags": "gcp2  gcp google cloud platform general icons icon task queues Task Queues",
+   "kind": "vertex",
+   "width": 100,
+   "height": 61,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.task_queues_2",
+   "shapeNames": [
+    "mxgraph.gcp2.task_queues_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:441"
+  },
+  {
+   "id": "gcp2General Icons-98-systems-check",
+   "title": "Systems Check",
+   "tags": "gcp2  gcp google cloud platform general icons icon systems check Systems Check",
+   "kind": "vertex",
+   "width": 99,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.systems_check",
+   "shapeNames": [
+    "mxgraph.gcp2.systems_check"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:443"
+  },
+  {
+   "id": "gcp2General Icons-99-google-network",
+   "title": "Google Network",
+   "tags": "gcp2  gcp google cloud platform general icons icon google network Google Network",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.google_network",
+   "shapeNames": [
+    "mxgraph.gcp2.google_network"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:445"
+  },
+  {
+   "id": "gcp2General Icons-100-check",
+   "title": "Check",
+   "tags": "gcp2  gcp google cloud platform general icons icon check Check",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.check_2",
+   "shapeNames": [
+    "mxgraph.gcp2.check_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:447"
+  },
+  {
+   "id": "gcp2General Icons-101-people-security-management",
+   "title": "People Security Management",
+   "tags": "gcp2  gcp google cloud platform general icons icon people security management People Security Management",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.people_security_management",
+   "shapeNames": [
+    "mxgraph.gcp2.people_security_management"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:449"
+  },
+  {
+   "id": "gcp2General Icons-102-search-api",
+   "title": "Search API",
+   "tags": "gcp2  gcp google cloud platform general icons icon search api application programming interface Search API",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.search_api",
+   "shapeNames": [
+    "mxgraph.gcp2.search_api"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:451"
+  },
+  {
+   "id": "gcp2General Icons-103-management-security",
+   "title": "Management Security",
+   "tags": "gcp2  gcp google cloud platform general icons icon management security Management Security",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.management_security",
+   "shapeNames": [
+    "mxgraph.gcp2.management_security"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:453"
+  },
+  {
+   "id": "gcp2General Icons-104-loading",
+   "title": "Loading",
+   "tags": "gcp2  gcp google cloud platform general icons icon loading Loading",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.loading_3",
+   "shapeNames": [
+    "mxgraph.gcp2.loading_3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:455"
+  },
+  {
+   "id": "gcp2General Icons-105-stacked-ownership",
+   "title": "Stacked Ownership",
+   "tags": "gcp2  gcp google cloud platform general icons icon stacked ownership Stacked Ownership",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.stacked_ownership",
+   "shapeNames": [
+    "mxgraph.gcp2.stacked_ownership"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:457"
+  },
+  {
+   "id": "gcp2General Icons-106-vpn",
+   "title": "VPN",
+   "tags": "gcp2  gcp google cloud platform general icons icon vpn virtual private network VPN",
+   "kind": "vertex",
+   "width": 100,
+   "height": 50,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.vpn",
+   "shapeNames": [
+    "mxgraph.gcp2.vpn"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:459"
+  },
+  {
+   "id": "gcp2General Icons-107-node",
+   "title": "Node",
+   "tags": "gcp2  gcp google cloud platform general icons icon node Node",
+   "kind": "vertex",
+   "width": 80,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.node",
+   "shapeNames": [
+    "mxgraph.gcp2.node"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:461"
+  },
+  {
+   "id": "gcp2General Icons-108-service",
+   "title": "Service",
+   "tags": "gcp2  gcp google cloud platform general icons icon service Service",
+   "kind": "vertex",
+   "width": 70,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.service",
+   "shapeNames": [
+    "mxgraph.gcp2.service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:463"
+  },
+  {
+   "id": "gcp2General Icons-109-external-data-center",
+   "title": "External Data Center",
+   "tags": "gcp2  gcp google cloud platform general icons icon external data center External Data Center",
+   "kind": "vertex",
+   "width": 77,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;align=center;fillColor=#2D9C5E;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.external_data_center",
+   "shapeNames": [
+    "mxgraph.gcp2.external_data_center"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:465"
+  },
+  {
+   "id": "gcp2General Icons-110-external-data-resource",
+   "title": "External Data Resource",
+   "tags": "gcp2  gcp google cloud platform general icons icon external data resource External Data Resource",
+   "kind": "vertex",
+   "width": 79,
+   "height": 100,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;align=center;fillColor=#2D9C5E;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.external_data_resource",
+   "shapeNames": [
+    "mxgraph.gcp2.external_data_resource"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:467"
+  },
+  {
+   "id": "gcp2General Icons-111-legacy-cloud",
+   "title": "Legacy Cloud",
+   "tags": "gcp2  gcp google cloud platform general icons icon legacy cloud Legacy Cloud",
+   "kind": "vertex",
+   "width": 100,
+   "height": 69,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;align=center;fillColor=#2D9C5E;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.legacy_cloud",
+   "shapeNames": [
+    "mxgraph.gcp2.legacy_cloud"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:469"
+  },
+  {
+   "id": "gcp2General Icons-112-legacy-cloud",
+   "title": "Legacy Cloud",
+   "tags": "gcp2  gcp google cloud platform general icons icon legacy cloud Legacy Cloud",
+   "kind": "vertex",
+   "width": 100,
+   "height": 69,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;align=center;fillColor=#2D9C5E;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.legacy_cloud_2",
+   "shapeNames": [
+    "mxgraph.gcp2.legacy_cloud_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:471"
+  },
+  {
+   "id": "gcp2General Icons-113-mem-instances",
+   "title": "Mem Instances",
+   "tags": "gcp2  gcp google cloud platform general icons icon mem instances Mem Instances",
+   "kind": "vertex",
+   "width": 100,
+   "height": 87,
+   "style": "sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.mem_instances",
+   "shapeNames": [
+    "mxgraph.gcp2.mem_instances"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:473"
+  }
+ ]
+}

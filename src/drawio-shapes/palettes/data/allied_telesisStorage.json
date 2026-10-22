@@ -1,0 +1,92 @@
+{
+ "id": "allied_telesisStorage",
+ "title": "Allied Telesis / Storage",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:7",
+ "entries": [
+  {
+   "id": "allied_telesisStorage-0-datacenter-server-half-rack-tor",
+   "title": "Datacenter Server Half Rack ToR",
+   "tags": "datacenter server half rack tor allied telesis Datacenter Server Half Rack ToR",
+   "kind": "vertex",
+   "width": 88.2,
+   "height": 114.6,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/storage/Datacenter_Server_Half_Rack_ToR.svg;points=[[0.401,0,0],[0.584,0.998,0],[0,0.436,0],[0.997,0.564,0],[0.977,0.255,0],[0.993,0.837,0],[0.039,0.762,0],[0.013,0.16,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:172"
+  },
+  {
+   "id": "allied_telesisStorage-1-datacenter-server-rack",
+   "title": "Datacenter Server Rack",
+   "tags": "datacenter server rack allied telesis Datacenter Server Rack",
+   "kind": "vertex",
+   "width": 88.2,
+   "height": 178.8,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/storage/Datacenter_Server_Rack.svg;points=[[0.391,0,0],[0.584,1,0],[0,0.454,0],[1,0.531,0],[0.999,0.178,0],[0.994,0.895,0],[0.011,0.825,0],[0.001,0.103,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:174"
+  },
+  {
+   "id": "allied_telesisStorage-2-datacenter-server-rack-eor",
+   "title": "Datacenter Server Rack EoR",
+   "tags": "datacenter server rack eor allied telesis Datacenter Server Rack EoR",
+   "kind": "vertex",
+   "width": 85.8,
+   "height": 173.4,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/storage/Datacenter_Server_Rack_EoR.svg;points=[[0.394,0,0],[0.583,1,0],[0,0.455,0],[1,0.534,0],[0.999,0.173,0],[0.999,0.895,0],[0.011,0.825,0],[0.001,0.103,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:176"
+  },
+  {
+   "id": "allied_telesisStorage-3-datacenter-server-rack-storage-unit-small",
+   "title": "Datacenter Server Rack Storage Unit Small",
+   "tags": "datacenter server rack storage unit small allied telesis Datacenter Server Rack Storage Unit Small",
+   "kind": "vertex",
+   "width": 77.4,
+   "height": 67.2,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/storage/Datacenter_Server_Rack_Storage_Unit_Small.svg;points=[[0.5,0.098,0],[0.5,0.902,0],[0,0.383,0],[0.999,0.499,0],[0.992,0.789,0],[0.005,0.559,0],[0.003,0.211,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:178"
+  },
+  {
+   "id": "allied_telesisStorage-4-datacenter-server-rack-tor",
+   "title": "Datacenter Server Rack ToR",
+   "tags": "datacenter server rack tor allied telesis Datacenter Server Rack ToR",
+   "kind": "vertex",
+   "width": 88.2,
+   "height": 178.8,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/storage/Datacenter_Server_Rack_ToR.svg;points=[[0.391,0,0],[0.584,1,0],[0,0.454,0],[1,0.531,0],[0.999,0.178,0],[0.994,0.895,0],[0.011,0.825,0],[0.001,0.103,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:180"
+  },
+  {
+   "id": "allied_telesisStorage-5-datacenter-server-storage-unit-large",
+   "title": "Datacenter Server Storage Unit Large",
+   "tags": "datacenter server storage unit large allied telesis Datacenter Server Storage Unit Large",
+   "kind": "vertex",
+   "width": 76.8,
+   "height": 79.2,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/storage/Datacenter_Server_Storage_Unit_Large.svg;points=[[0.5,0.083,0],[0.5,0.915,0],[0,0.401,0],[1,0.596,0],[0.997,0.37,0],[1,0.817,0],[0,0.622,0],[0,0.18,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:182"
+  }
+ ]
+}

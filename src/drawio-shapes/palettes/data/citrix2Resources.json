@@ -1,0 +1,246 @@
+{
+ "id": "citrix2Resources",
+ "title": "Citrix / Resources",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:7",
+ "entries": [
+  {
+   "id": "citrix2Resources-0-linux-app",
+   "title": "Linux App",
+   "tags": "citrix2 linux app citrix resources  Linux App",
+   "kind": "vertex",
+   "width": 50,
+   "height": 49.345,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.linux_app;",
+   "shapeNames": [
+    "mxgraph.citrix2.linux_app"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:150"
+  },
+  {
+   "id": "citrix2Resources-1-windows-app",
+   "title": "Windows App",
+   "tags": "citrix2 windows app citrix resources  Windows App",
+   "kind": "vertex",
+   "width": 50,
+   "height": 49.345,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.windows_app;",
+   "shapeNames": [
+    "mxgraph.citrix2.windows_app"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:151"
+  },
+  {
+   "id": "citrix2Resources-2-linux-apps",
+   "title": "Linux Apps",
+   "tags": "citrix2 linux apps citrix resources  Linux Apps",
+   "kind": "vertex",
+   "width": 42.714999999999996,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.linux_apps;",
+   "shapeNames": [
+    "mxgraph.citrix2.linux_apps"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:152"
+  },
+  {
+   "id": "citrix2Resources-3-windows-apps",
+   "title": "Windows Apps",
+   "tags": "citrix2 windows apps citrix resources  Windows Apps",
+   "kind": "vertex",
+   "width": 50,
+   "height": 42.285000000000004,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.windows_apps;",
+   "shapeNames": [
+    "mxgraph.citrix2.windows_apps"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:153"
+  },
+  {
+   "id": "citrix2Resources-4-web-saas-apps",
+   "title": "Web / SaaS Apps",
+   "tags": "citrix2 web saas apps citrix resources  Web / SaaS Apps",
+   "kind": "vertex",
+   "width": 50,
+   "height": 38.45,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.web_saas_apps;",
+   "shapeNames": [
+    "mxgraph.citrix2.web_saas_apps"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:154"
+  },
+  {
+   "id": "citrix2Resources-5-virtual-desktop",
+   "title": "Virtual Desktop",
+   "tags": "citrix2 virtual desktop citrix resources  Virtual Desktop",
+   "kind": "vertex",
+   "width": 39.23,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.virtual_desktop;",
+   "shapeNames": [
+    "mxgraph.citrix2.virtual_desktop"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:155"
+  },
+  {
+   "id": "citrix2Resources-6-professional-graphics-desktop",
+   "title": "Professional Graphics Desktop",
+   "tags": "citrix2 professional graphics desktop citrix resources  Professional Graphics Desktop",
+   "kind": "vertex",
+   "width": 50,
+   "height": 49.97,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.professional_graphics_desktop;",
+   "shapeNames": [
+    "mxgraph.citrix2.professional_graphics_desktop"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:156"
+  },
+  {
+   "id": "citrix2Resources-7-citrix-remote-pc",
+   "title": "Citrix Remote PC",
+   "tags": "citrix2 remote pc citrix resources  Citrix Remote PC",
+   "kind": "vertex",
+   "width": 42.455,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.citrix_remote_pc;",
+   "shapeNames": [
+    "mxgraph.citrix2.citrix_remote_pc"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:157"
+  },
+  {
+   "id": "citrix2Resources-8-citrix-provisioning-target-device",
+   "title": "Citrix Provisioning Target Device",
+   "tags": "citrix2 provisioning target device citrix resources  Citrix Provisioning Target Device",
+   "kind": "vertex",
+   "width": 41.815000000000005,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.citrix_provisioning_target_device;",
+   "shapeNames": [
+    "mxgraph.citrix2.citrix_provisioning_target_device"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:158"
+  },
+  {
+   "id": "citrix2Resources-9-single-and-multi-session-windows-and-linux-desktops",
+   "title": "Single and Multi-Session Windows and Linux Desktops",
+   "tags": "citrix2 single and multi session windows and linux desktops citrix resources  Single and Multi-Session Windows and Linux Desktops",
+   "kind": "vertex",
+   "width": 48.85,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.single_and_multi_session_windows_and_linux_desktops;",
+   "shapeNames": [
+    "mxgraph.citrix2.single_and_multi_session_windows_and_linux_desktops"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:159"
+  },
+  {
+   "id": "citrix2Resources-10-windows-and-linux-virtualized-apps",
+   "title": "Windows and Linux Virtualized Apps",
+   "tags": "citrix2 windows and linux virtualized apps citrix resources  Windows and Linux Virtualized Apps",
+   "kind": "vertex",
+   "width": 50,
+   "height": 39.519999999999996,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.windows_and_linux_virtualized_apps;",
+   "shapeNames": [
+    "mxgraph.citrix2.windows_and_linux_virtualized_apps"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:160"
+  },
+  {
+   "id": "citrix2Resources-11-windows-server-apps-and-desktops",
+   "title": "Windows Server Apps and Desktops",
+   "tags": "citrix2 windows server apps and desktops citrix resources  Windows Server Apps and Desktops",
+   "kind": "vertex",
+   "width": 50,
+   "height": 30.125,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.windows_server_apps_and_desktops;",
+   "shapeNames": [
+    "mxgraph.citrix2.windows_server_apps_and_desktops"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:161"
+  },
+  {
+   "id": "citrix2Resources-12-citrix-vda-for-macos",
+   "title": "Citrix VDA for MacOS",
+   "tags": "citrix2 vda for macos citrix resources  Citrix VDA for MacOS",
+   "kind": "vertex",
+   "width": 36.230000000000004,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.citrix_vda_for_macos;",
+   "shapeNames": [
+    "mxgraph.citrix2.citrix_vda_for_macos"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:162"
+  },
+  {
+   "id": "citrix2Resources-13-windows-image",
+   "title": "Windows Image",
+   "tags": "citrix2 windows image citrix resources  Windows Image",
+   "kind": "vertex",
+   "width": 37.035000000000004,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.windows_image;",
+   "shapeNames": [
+    "mxgraph.citrix2.windows_image"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:163"
+  },
+  {
+   "id": "citrix2Resources-14-linux-image",
+   "title": "Linux Image",
+   "tags": "citrix2 linux image citrix resources  Linux Image",
+   "kind": "vertex",
+   "width": 37.035000000000004,
+   "height": 50,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.linux_image;",
+   "shapeNames": [
+    "mxgraph.citrix2.linux_image"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:164"
+  },
+  {
+   "id": "citrix2Resources-15-citrix-enterprise-browser",
+   "title": "Citrix Enterprise Browser",
+   "tags": "citrix2 enterprise browser citrix resources  Citrix Enterprise Browser",
+   "kind": "vertex",
+   "width": 50,
+   "height": 42.955,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.citrix_enterprise_browser;",
+   "shapeNames": [
+    "mxgraph.citrix2.citrix_enterprise_browser"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:165"
+  },
+  {
+   "id": "citrix2Resources-16-hdx",
+   "title": "HDX",
+   "tags": "citrix2 hdx citrix resources  HDX",
+   "kind": "vertex",
+   "width": 50,
+   "height": 25.595000000000002,
+   "style": "sketch=0;verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;fillColor=#000000;align=center;outlineConnect=0;pointerEvents=1;shape=mxgraph.citrix2.hdx;",
+   "shapeNames": [
+    "mxgraph.citrix2.hdx"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Citrix2.js:166"
+  }
+ ]
+}

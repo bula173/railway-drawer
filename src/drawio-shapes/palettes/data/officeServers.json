@@ -1,0 +1,1366 @@
+{
+ "id": "officeServers",
+ "title": "Office / Servers",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Office.js:7",
+ "entries": [
+  {
+   "id": "officeServers-0-3rd-party-mail-server",
+   "title": "3rd Party Mail Server",
+   "tags": "office servers 3rd party mail server office server  3rd Party Mail Server",
+   "kind": "vertex",
+   "width": 47,
+   "height": 59,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.3rd_party_mail_server;",
+   "shapeNames": [
+    "mxgraph.office.servers.3rd_party_mail_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:941"
+  },
+  {
+   "id": "officeServers-1-active-directory-federation-services-proxy",
+   "title": "Active Directory Federation Services Proxy",
+   "tags": "office servers active directory federation services proxy office server  Active Directory Federation Services Proxy",
+   "kind": "vertex",
+   "width": 44,
+   "height": 55,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.active_directory_federation_services_proxy;",
+   "shapeNames": [
+    "mxgraph.office.servers.active_directory_federation_services_proxy"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:943"
+  },
+  {
+   "id": "officeServers-2-active-directory-federation-services-server",
+   "title": "Active Directory Federation Services Server",
+   "tags": "office servers active directory federation services server office server  Active Directory Federation Services Server",
+   "kind": "vertex",
+   "width": 45,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.active_directory_federation_services_server;",
+   "shapeNames": [
+    "mxgraph.office.servers.active_directory_federation_services_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:945"
+  },
+  {
+   "id": "officeServers-3-active-directory-federation-services-server-blue",
+   "title": "Active Directory Federation Services Server (blue)",
+   "tags": "office servers active directory federation services server office server  Active Directory Federation Services Server (blue)",
+   "kind": "vertex",
+   "width": 45,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.active_directory_federation_services_server_blue;",
+   "shapeNames": [
+    "mxgraph.office.servers.active_directory_federation_services_server_blue"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:947"
+  },
+  {
+   "id": "officeServers-4-active-directory-federation-services-server-orange",
+   "title": "Active Directory Federation Services Server (orange)",
+   "tags": "office servers active directory federation services server office server  Active Directory Federation Services Server (orange)",
+   "kind": "vertex",
+   "width": 45,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.active_directory_federation_services_server_orange;",
+   "shapeNames": [
+    "mxgraph.office.servers.active_directory_federation_services_server_orange"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:949"
+  },
+  {
+   "id": "officeServers-5-active-directory-federation-services-server-green",
+   "title": "Active Directory Federation Services Server (green)",
+   "tags": "office servers active directory federation services server office server  Active Directory Federation Services Server (green)",
+   "kind": "vertex",
+   "width": 45,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.active_directory_federation_services_server_green;",
+   "shapeNames": [
+    "mxgraph.office.servers.active_directory_federation_services_server_green"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:951"
+  },
+  {
+   "id": "officeServers-6-active-directory-federation-services-server-ghosted",
+   "title": "Active Directory Federation Services Server (ghosted)",
+   "tags": "office servers active directory federation services server office server  Active Directory Federation Services Server (ghosted)",
+   "kind": "vertex",
+   "width": 45,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.active_directory_federation_services_server_ghosted;",
+   "shapeNames": [
+    "mxgraph.office.servers.active_directory_federation_services_server_ghosted"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:953"
+  },
+  {
+   "id": "officeServers-7-application-server",
+   "title": "Application Server",
+   "tags": "office servers application server office server  Application Server",
+   "kind": "vertex",
+   "width": 46,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.application_server;",
+   "shapeNames": [
+    "mxgraph.office.servers.application_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:955"
+  },
+  {
+   "id": "officeServers-8-application-server-blue",
+   "title": "Application Server (blue)",
+   "tags": "office servers application server office server  Application Server (blue)",
+   "kind": "vertex",
+   "width": 46,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.application_server_blue;",
+   "shapeNames": [
+    "mxgraph.office.servers.application_server_blue"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:957"
+  },
+  {
+   "id": "officeServers-9-application-server-orange",
+   "title": "Application Server (orange)",
+   "tags": "office servers application server office server  Application Server (orange)",
+   "kind": "vertex",
+   "width": 46,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.application_server_orange;",
+   "shapeNames": [
+    "mxgraph.office.servers.application_server_orange"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:959"
+  },
+  {
+   "id": "officeServers-10-application-server-green",
+   "title": "Application Server (green)",
+   "tags": "office servers application server office server  Application Server (green)",
+   "kind": "vertex",
+   "width": 46,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.application_server_green;",
+   "shapeNames": [
+    "mxgraph.office.servers.application_server_green"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:961"
+  },
+  {
+   "id": "officeServers-11-application-server-ghosted",
+   "title": "Application Server (ghosted)",
+   "tags": "office servers application server office server  Application Server (ghosted)",
+   "kind": "vertex",
+   "width": 46,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.application_server_ghosted;",
+   "shapeNames": [
+    "mxgraph.office.servers.application_server_ghosted"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:963"
+  },
+  {
+   "id": "officeServers-12-call-admission-control-service",
+   "title": "Call Admission Control Service",
+   "tags": "office servers call admission control service office server  Call Admission Control Service",
+   "kind": "vertex",
+   "width": 50,
+   "height": 60,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.call_admission_control_service;",
+   "shapeNames": [
+    "mxgraph.office.servers.call_admission_control_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:965"
+  },
+  {
+   "id": "officeServers-13-certificate-authority",
+   "title": "Certificate Authority",
+   "tags": "office servers certificate authority office server  Certificate Authority",
+   "kind": "vertex",
+   "width": 46,
+   "height": 59,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.certificate_authority;",
+   "shapeNames": [
+    "mxgraph.office.servers.certificate_authority"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:967"
+  },
+  {
+   "id": "officeServers-14-cluster-server",
+   "title": "Cluster Server",
+   "tags": "office servers cluster server office server  Cluster Server",
+   "kind": "vertex",
+   "width": 49,
+   "height": 59,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.cluster_server;",
+   "shapeNames": [
+    "mxgraph.office.servers.cluster_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:969"
+  },
+  {
+   "id": "officeServers-15-database-server",
+   "title": "Database Server",
+   "tags": "office servers database server office server  Database Server",
+   "kind": "vertex",
+   "width": 43,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.database_server;",
+   "shapeNames": [
+    "mxgraph.office.servers.database_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:971"
+  },
+  {
+   "id": "officeServers-16-database-server-blue",
+   "title": "Database Server (blue)",
+   "tags": "office servers database server office server  Database Server (blue)",
+   "kind": "vertex",
+   "width": 43,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.database_server_blue;",
+   "shapeNames": [
+    "mxgraph.office.servers.database_server_blue"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:973"
+  },
+  {
+   "id": "officeServers-17-database-server-orange",
+   "title": "Database Server (orange)",
+   "tags": "office servers database server office server  Database Server (orange)",
+   "kind": "vertex",
+   "width": 43,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.database_server_orange;",
+   "shapeNames": [
+    "mxgraph.office.servers.database_server_orange"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:975"
+  },
+  {
+   "id": "officeServers-18-database-server-green",
+   "title": "Database Server (green)",
+   "tags": "office servers database server office server  Database Server (green)",
+   "kind": "vertex",
+   "width": 43,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.database_server_green;",
+   "shapeNames": [
+    "mxgraph.office.servers.database_server_green"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:977"
+  },
+  {
+   "id": "officeServers-19-database-server-ghosted",
+   "title": "Database Server (ghosted)",
+   "tags": "office servers database server office server  Database Server (ghosted)",
+   "kind": "vertex",
+   "width": 43,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.database_server_ghosted;",
+   "shapeNames": [
+    "mxgraph.office.servers.database_server_ghosted"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:979"
+  },
+  {
+   "id": "officeServers-20-datacenter",
+   "title": "Datacenter",
+   "tags": "office servers datacenter office server  Datacenter",
+   "kind": "vertex",
+   "width": 53,
+   "height": 53,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.datacenter;",
+   "shapeNames": [
+    "mxgraph.office.servers.datacenter"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:981"
+  },
+  {
+   "id": "officeServers-21-dirsync-server",
+   "title": "DirSync Server",
+   "tags": "office servers dirsync server office server  DirSync Server",
+   "kind": "vertex",
+   "width": 47,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.dirsync_server;",
+   "shapeNames": [
+    "mxgraph.office.servers.dirsync_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:983"
+  },
+  {
+   "id": "officeServers-22-domain-controller",
+   "title": "Domain Controller",
+   "tags": "office servers domain controller office server  Domain Controller",
+   "kind": "vertex",
+   "width": 45,
+   "height": 55,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.domain_controller;",
+   "shapeNames": [
+    "mxgraph.office.servers.domain_controller"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:985"
+  },
+  {
+   "id": "officeServers-23-exchange-client-access-server-role",
+   "title": "Exchange Client Access Server Role",
+   "tags": "office servers excahnge client access server role office server  Exchange Client Access Server Role",
+   "kind": "vertex",
+   "width": 52,
+   "height": 59,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.excahnge_client_access_server_role;",
+   "shapeNames": [
+    "mxgraph.office.servers.excahnge_client_access_server_role"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:987"
+  },
+  {
+   "id": "officeServers-24-exchange-edge-transport-server-role",
+   "title": "Exchange Edge Transport Server Role",
+   "tags": "office servers exchange edge transport server role office server  Exchange Edge Transport Server Role",
+   "kind": "vertex",
+   "width": 52,
+   "height": 55,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.exchange_edge_transport_server_role;",
+   "shapeNames": [
+    "mxgraph.office.servers.exchange_edge_transport_server_role"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:989"
+  },
+  {
+   "id": "officeServers-25-exchange-hub-transport-server-role",
+   "title": "Exchange Hub Transport Server Role",
+   "tags": "office servers exchange hub transport server role office server  Exchange Hub Transport Server Role",
+   "kind": "vertex",
+   "width": 52,
+   "height": 59,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.exchange_hub_transport_server_role;",
+   "shapeNames": [
+    "mxgraph.office.servers.exchange_hub_transport_server_role"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:991"
+  },
+  {
+   "id": "officeServers-26-exchange-mailbox-server-role",
+   "title": "Exchange Mailbox Server Role",
+   "tags": "office servers exchange mailbox server role office server  Exchange Mailbox Server Role",
+   "kind": "vertex",
+   "width": 52,
+   "height": 59,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.exchange_mailbox_server_role;",
+   "shapeNames": [
+    "mxgraph.office.servers.exchange_mailbox_server_role"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:993"
+  },
+  {
+   "id": "officeServers-27-exchange-um-server-role",
+   "title": "Exchange UM Server Role",
+   "tags": "office servers exchange um server role office server  Exchange UM Server Role",
+   "kind": "vertex",
+   "width": 52,
+   "height": 59,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.exchange_um_server_role;",
+   "shapeNames": [
+    "mxgraph.office.servers.exchange_um_server_role"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:995"
+  },
+  {
+   "id": "officeServers-28-exchange-client-access-server",
+   "title": "Exchange Client Access Server",
+   "tags": "office servers exchange client access server office server  Exchange Client Access Server",
+   "kind": "vertex",
+   "width": 57,
+   "height": 59,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.exchange_client_access_server;",
+   "shapeNames": [
+    "mxgraph.office.servers.exchange_client_access_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:997"
+  },
+  {
+   "id": "officeServers-29-exchange-edge-transport-server",
+   "title": "Exchange Edge Transport Server",
+   "tags": "office servers exchange edge transport server office server  Exchange Edge Transport Server",
+   "kind": "vertex",
+   "width": 57,
+   "height": 55,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.exchange_edge_transport_server;",
+   "shapeNames": [
+    "mxgraph.office.servers.exchange_edge_transport_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:999"
+  },
+  {
+   "id": "officeServers-30-exchange-mailbox-server",
+   "title": "Exchange Mailbox Server",
+   "tags": "office servers exchange mailbox server office server  Exchange Mailbox Server",
+   "kind": "vertex",
+   "width": 57,
+   "height": 59,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.exchange_mailbox_server;",
+   "shapeNames": [
+    "mxgraph.office.servers.exchange_mailbox_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1001"
+  },
+  {
+   "id": "officeServers-31-exchange-server",
+   "title": "Exchange Server",
+   "tags": "office servers exchange server office server  Exchange Server",
+   "kind": "vertex",
+   "width": 57,
+   "height": 55,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.exchange_server;",
+   "shapeNames": [
+    "mxgraph.office.servers.exchange_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1003"
+  },
+  {
+   "id": "officeServers-32-file-server",
+   "title": "File Server",
+   "tags": "office servers file server office server  File Server",
+   "kind": "vertex",
+   "width": 45,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.file_server;",
+   "shapeNames": [
+    "mxgraph.office.servers.file_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1005"
+  },
+  {
+   "id": "officeServers-33-hybrid-server",
+   "title": "Hybrid Server",
+   "tags": "office servers hybrid server office server  Hybrid Server",
+   "kind": "vertex",
+   "width": 59,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.hybrid_server;",
+   "shapeNames": [
+    "mxgraph.office.servers.hybrid_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1007"
+  },
+  {
+   "id": "officeServers-34-mainframe",
+   "title": "Mainframe",
+   "tags": "office servers mainframe office server  Mainframe",
+   "kind": "vertex",
+   "width": 58,
+   "height": 42,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.mainframe;",
+   "shapeNames": [
+    "mxgraph.office.servers.mainframe"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1009"
+  },
+  {
+   "id": "officeServers-35-mainframe-host",
+   "title": "Mainframe Host",
+   "tags": "office servers mainframe host office server  Mainframe Host",
+   "kind": "vertex",
+   "width": 44,
+   "height": 42,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.mainframe_host;",
+   "shapeNames": [
+    "mxgraph.office.servers.mainframe_host"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1011"
+  },
+  {
+   "id": "officeServers-36-monitoring-sql-reporting-services",
+   "title": "Monitoring SQL Reporting Services",
+   "tags": "office servers monitoring sql reporting services office server  Monitoring SQL Reporting Services",
+   "kind": "vertex",
+   "width": 50,
+   "height": 59,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.monitoring_sql_reporting_services;",
+   "shapeNames": [
+    "mxgraph.office.servers.monitoring_sql_reporting_services"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1013"
+  },
+  {
+   "id": "officeServers-37-network",
+   "title": "Network",
+   "tags": "office servers network office server  Network",
+   "kind": "vertex",
+   "width": 34,
+   "height": 57,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.network;",
+   "shapeNames": [
+    "mxgraph.office.servers.network"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1015"
+  },
+  {
+   "id": "officeServers-38-office-web-apps-server",
+   "title": "Office Web Apps Server",
+   "tags": "office servers office web apps server office server  Office Web Apps Server",
+   "kind": "vertex",
+   "width": 52,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.office_web_apps_server;",
+   "shapeNames": [
+    "mxgraph.office.servers.office_web_apps_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1017"
+  },
+  {
+   "id": "officeServers-39-on-premises-server",
+   "title": "On Premises Server",
+   "tags": "office servers on premises server office server  On Premises Server",
+   "kind": "vertex",
+   "width": 44,
+   "height": 58,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.on_premises_server;",
+   "shapeNames": [
+    "mxgraph.office.servers.on_premises_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1019"
+  },
+  {
+   "id": "officeServers-40-physical-host",
+   "title": "Physical Host",
+   "tags": "office servers physical host office server  Physical Host",
+   "kind": "vertex",
+   "width": 27,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.physical_host;fillColor=#2072B8;",
+   "shapeNames": [
+    "mxgraph.office.servers.physical_host"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1021"
+  },
+  {
+   "id": "officeServers-41-physical-host-farm",
+   "title": "Physical Host Farm",
+   "tags": "office servers physical host farm office server  Physical Host Farm",
+   "kind": "vertex",
+   "width": 56,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.physical_host_farm;fillColor=#2072B8;",
+   "shapeNames": [
+    "mxgraph.office.servers.physical_host_farm"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1023"
+  },
+  {
+   "id": "officeServers-42-reverse-proxy",
+   "title": "Reverse Proxy",
+   "tags": "office servers reverse proxy office server  Reverse Proxy",
+   "kind": "vertex",
+   "width": 41,
+   "height": 53,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.reverse_proxy;",
+   "shapeNames": [
+    "mxgraph.office.servers.reverse_proxy"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1025"
+  },
+  {
+   "id": "officeServers-43-scom",
+   "title": "SCOM",
+   "tags": "office servers scom office server  SCOM",
+   "kind": "vertex",
+   "width": 56,
+   "height": 53,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.scom;",
+   "shapeNames": [
+    "mxgraph.office.servers.scom"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1027"
+  },
+  {
+   "id": "officeServers-44-server-disaster",
+   "title": "Server Disaster",
+   "tags": "office servers server disaster office server  Server Disaster",
+   "kind": "vertex",
+   "width": 46,
+   "height": 57,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.server_disaster;",
+   "shapeNames": [
+    "mxgraph.office.servers.server_disaster"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1029"
+  },
+  {
+   "id": "officeServers-45-server-farm",
+   "title": "Server Farm",
+   "tags": "office servers server farm office server  Server Farm",
+   "kind": "vertex",
+   "width": 56,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.server_farm;",
+   "shapeNames": [
+    "mxgraph.office.servers.server_farm"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1031"
+  },
+  {
+   "id": "officeServers-46-server-farm-blue",
+   "title": "Server Farm (blue)",
+   "tags": "office servers server farm office server  Server Farm (blue)",
+   "kind": "vertex",
+   "width": 56,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.server_farm;fillColor=#2072B8;",
+   "shapeNames": [
+    "mxgraph.office.servers.server_farm"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1033"
+  },
+  {
+   "id": "officeServers-47-server-farm-orange",
+   "title": "Server Farm (orange)",
+   "tags": "office servers server farm office server  Server Farm (orange)",
+   "kind": "vertex",
+   "width": 56,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.server_farm;fillColor=#DA4026;",
+   "shapeNames": [
+    "mxgraph.office.servers.server_farm"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1035"
+  },
+  {
+   "id": "officeServers-48-server-farm-green",
+   "title": "Server Farm (green)",
+   "tags": "office servers server farm office server  Server Farm (green)",
+   "kind": "vertex",
+   "width": 56,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.server_farm;fillColor=#7FBA42;",
+   "shapeNames": [
+    "mxgraph.office.servers.server_farm"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1037"
+  },
+  {
+   "id": "officeServers-49-server-farm-ghosted",
+   "title": "Server Farm (ghosted)",
+   "tags": "office servers server farm office server  Server Farm (ghosted)",
+   "kind": "vertex",
+   "width": 56,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.server_farm;fillColor=#CCCBCB;",
+   "shapeNames": [
+    "mxgraph.office.servers.server_farm"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1039"
+  },
+  {
+   "id": "officeServers-50-server-generic",
+   "title": "Server, Generic",
+   "tags": "office servers server generic office server  Server, Generic",
+   "kind": "vertex",
+   "width": 27,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.server_generic;",
+   "shapeNames": [
+    "mxgraph.office.servers.server_generic"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1041"
+  },
+  {
+   "id": "officeServers-51-server-generic-blue",
+   "title": "Server, Generic (blue)",
+   "tags": "office servers server generic office server  Server, Generic (blue)",
+   "kind": "vertex",
+   "width": 27,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.server_generic;fillColor=#2072B8;",
+   "shapeNames": [
+    "mxgraph.office.servers.server_generic"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1043"
+  },
+  {
+   "id": "officeServers-52-server-generic-orange",
+   "title": "Server, Generic (orange)",
+   "tags": "office servers server generic office server  Server, Generic (orange)",
+   "kind": "vertex",
+   "width": 27,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.server_generic;fillColor=#DA4026;",
+   "shapeNames": [
+    "mxgraph.office.servers.server_generic"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1045"
+  },
+  {
+   "id": "officeServers-53-server-generic-green",
+   "title": "Server, Generic (green)",
+   "tags": "office servers server generic office server  Server, Generic (green)",
+   "kind": "vertex",
+   "width": 27,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.server_generic;fillColor=#7FBA42;",
+   "shapeNames": [
+    "mxgraph.office.servers.server_generic"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1047"
+  },
+  {
+   "id": "officeServers-54-server-generic-ghosted",
+   "title": "Server, Generic (ghosted)",
+   "tags": "office servers server generic office server  Server, Generic (ghosted)",
+   "kind": "vertex",
+   "width": 27,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.server_generic;fillColor=#CCCBCB;",
+   "shapeNames": [
+    "mxgraph.office.servers.server_generic"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1049"
+  },
+  {
+   "id": "officeServers-55-server-generic-small",
+   "title": "Server, Generic (small)",
+   "tags": "office servers server generic small office server  Server, Generic (small)",
+   "kind": "vertex",
+   "width": 20,
+   "height": 39,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.server_generic;",
+   "shapeNames": [
+    "mxgraph.office.servers.server_generic"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1051"
+  },
+  {
+   "id": "officeServers-56-server-side-code",
+   "title": "Server Side Code",
+   "tags": "office servers server side code office server  Server Side Code",
+   "kind": "vertex",
+   "width": 49,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.server_side_code;",
+   "shapeNames": [
+    "mxgraph.office.servers.server_side_code"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1053"
+  },
+  {
+   "id": "officeServers-57-sharepoint-server",
+   "title": "Sharepoint Server",
+   "tags": "office servers sharepoint server office server  Sharepoint Server",
+   "kind": "vertex",
+   "width": 56,
+   "height": 55,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.sharepoint_server;",
+   "shapeNames": [
+    "mxgraph.office.servers.sharepoint_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1055"
+  },
+  {
+   "id": "officeServers-58-skype-for-business-back-end-server",
+   "title": "Skype for Business Back End Server",
+   "tags": "office servers skype for business back end server office server  Skype for Business Back End Server",
+   "kind": "vertex",
+   "width": 54,
+   "height": 60,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.skype_for_business_back_end_server;",
+   "shapeNames": [
+    "mxgraph.office.servers.skype_for_business_back_end_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1057"
+  },
+  {
+   "id": "officeServers-59-skype-for-business-back-end-server-mirror",
+   "title": "Skype for Business Back End Server Mirror",
+   "tags": "office servers skype for business back end server mirror office server  Skype for Business Back End Server Mirror",
+   "kind": "vertex",
+   "width": 54,
+   "height": 60,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.skype_for_business_back_end_server_mirror;",
+   "shapeNames": [
+    "mxgraph.office.servers.skype_for_business_back_end_server_mirror"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1059"
+  },
+  {
+   "id": "officeServers-60-skype-for-business-director",
+   "title": "Skype for Business Director",
+   "tags": "office servers skype for business director office server  Skype for Business Director",
+   "kind": "vertex",
+   "width": 54,
+   "height": 55,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.skype_for_business_director;",
+   "shapeNames": [
+    "mxgraph.office.servers.skype_for_business_director"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1061"
+  },
+  {
+   "id": "officeServers-61-skype-for-business-director-array",
+   "title": "Skype for Business Director Array",
+   "tags": "office servers skype for business director array office server  Skype for Business Director Array",
+   "kind": "vertex",
+   "width": 70,
+   "height": 60,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.skype_for_business_director_array;",
+   "shapeNames": [
+    "mxgraph.office.servers.skype_for_business_director_array"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1063"
+  },
+  {
+   "id": "officeServers-62-skype-for-business-edge-server",
+   "title": "Skype for Business Edge Server",
+   "tags": "office servers skype for business edge server office server  Skype for Business Edge Server",
+   "kind": "vertex",
+   "width": 54,
+   "height": 55,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.skype_for_business_edge_server;",
+   "shapeNames": [
+    "mxgraph.office.servers.skype_for_business_edge_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1065"
+  },
+  {
+   "id": "officeServers-63-skype-for-business-edge-server-pool",
+   "title": "Skype for Business Edge Server Pool",
+   "tags": "office servers skype for business edge server pool office server  Skype for Business Edge Server Pool",
+   "kind": "vertex",
+   "width": 70,
+   "height": 60,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.skype_for_business_edge_server_pool;",
+   "shapeNames": [
+    "mxgraph.office.servers.skype_for_business_edge_server_pool"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1067"
+  },
+  {
+   "id": "officeServers-64-skype-for-business-front-end-pool",
+   "title": "Skype for Business Front End Pool",
+   "tags": "office servers skype for business front end pool office server  Skype for Business Front End Pool",
+   "kind": "vertex",
+   "width": 70,
+   "height": 60,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.skype_for_business_front_end_pool;",
+   "shapeNames": [
+    "mxgraph.office.servers.skype_for_business_front_end_pool"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1069"
+  },
+  {
+   "id": "officeServers-65-skype-for-business-front-end-server",
+   "title": "Skype for Business Front End Server",
+   "tags": "office servers skype for business front end server office server  Skype for Business Front End Server",
+   "kind": "vertex",
+   "width": 54,
+   "height": 60,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.skype_for_business_front_end_server;",
+   "shapeNames": [
+    "mxgraph.office.servers.skype_for_business_front_end_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1071"
+  },
+  {
+   "id": "officeServers-66-skype-for-business-mediation-server",
+   "title": "Skype for Business Mediation Server",
+   "tags": "office servers skype for business mediation server office server  Skype for Business Mediation Server",
+   "kind": "vertex",
+   "width": 54,
+   "height": 60,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.skype_for_business_mediation_server;",
+   "shapeNames": [
+    "mxgraph.office.servers.skype_for_business_mediation_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1073"
+  },
+  {
+   "id": "officeServers-67-skype-for-business-monitoring-server",
+   "title": "Skype for Business Monitoring Server",
+   "tags": "office servers skype for business monitoring server office server  Skype for Business Monitoring Server",
+   "kind": "vertex",
+   "width": 54,
+   "height": 60,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.skype_for_business_monitoring_server;",
+   "shapeNames": [
+    "mxgraph.office.servers.skype_for_business_monitoring_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1075"
+  },
+  {
+   "id": "officeServers-68-skype-for-business-persistent-chat-server",
+   "title": "Skype for Business Persistent Chat Server",
+   "tags": "office servers skype for business persistent chat server office server  Skype for Business Persistent Chat Server",
+   "kind": "vertex",
+   "width": 54,
+   "height": 58,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.skype_for_business_persistent_chat_server;",
+   "shapeNames": [
+    "mxgraph.office.servers.skype_for_business_persistent_chat_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1077"
+  },
+  {
+   "id": "officeServers-69-skype-for-business-server",
+   "title": "Skype for Business Server",
+   "tags": "office servers skype for business server office server  Skype for Business Server",
+   "kind": "vertex",
+   "width": 54,
+   "height": 55,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.skype_for_business_server;",
+   "shapeNames": [
+    "mxgraph.office.servers.skype_for_business_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1079"
+  },
+  {
+   "id": "officeServers-70-sql-server",
+   "title": "SQL Server",
+   "tags": "office servers sql server office server  SQL Server",
+   "kind": "vertex",
+   "width": 43,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.sql_server;",
+   "shapeNames": [
+    "mxgraph.office.servers.sql_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1081"
+  },
+  {
+   "id": "officeServers-71-survivable-branch-appliance",
+   "title": "Survivable Branch Appliance",
+   "tags": "office servers survivable branch appliance office server  Survivable Branch Appliance",
+   "kind": "vertex",
+   "width": 37,
+   "height": 59,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.survivable_branch_appliance;",
+   "shapeNames": [
+    "mxgraph.office.servers.survivable_branch_appliance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1083"
+  },
+  {
+   "id": "officeServers-72-survivable-branch-server",
+   "title": "Survivable Branch Server",
+   "tags": "office servers survivable branch server office server  Survivable Branch Server",
+   "kind": "vertex",
+   "width": 42,
+   "height": 58,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.survivable_branch_server;",
+   "shapeNames": [
+    "mxgraph.office.servers.survivable_branch_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1085"
+  },
+  {
+   "id": "officeServers-73-topology-builder",
+   "title": "Topology Builder",
+   "tags": "office servers topology builder office server  Topology Builder",
+   "kind": "vertex",
+   "width": 59,
+   "height": 59,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.topology_builder;",
+   "shapeNames": [
+    "mxgraph.office.servers.topology_builder"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1087"
+  },
+  {
+   "id": "officeServers-74-trusted-application-pool",
+   "title": "Trusted Application Pool",
+   "tags": "office servers trusted application pool office server  Trusted Application Pool",
+   "kind": "vertex",
+   "width": 59,
+   "height": 59,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.trusted_application_pool;",
+   "shapeNames": [
+    "mxgraph.office.servers.trusted_application_pool"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1089"
+  },
+  {
+   "id": "officeServers-75-trusted-application-server",
+   "title": "Trusted Application Server",
+   "tags": "office servers trusted application server office server  Trusted Application Server",
+   "kind": "vertex",
+   "width": 43,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.trusted_application_server;",
+   "shapeNames": [
+    "mxgraph.office.servers.trusted_application_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1091"
+  },
+  {
+   "id": "officeServers-76-tunnel-angled",
+   "title": "Tunnel Angled",
+   "tags": "office servers tunnel angled office server  Tunnel Angled",
+   "kind": "vertex",
+   "width": 55,
+   "height": 35,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.tunnel_angled;",
+   "shapeNames": [
+    "mxgraph.office.servers.tunnel_angled"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1093"
+  },
+  {
+   "id": "officeServers-77-tunnel-straight",
+   "title": "Tunnel Straight",
+   "tags": "office servers tunnel straight office server  Tunnel Straight",
+   "kind": "vertex",
+   "width": 59,
+   "height": 10,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.tunnel_straight;",
+   "shapeNames": [
+    "mxgraph.office.servers.tunnel_straight"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1095"
+  },
+  {
+   "id": "officeServers-78-universal-security-group",
+   "title": "Universal Security Group",
+   "tags": "office servers universal security group office server  Universal Security Group",
+   "kind": "vertex",
+   "width": 58,
+   "height": 58,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.universal_security_group;",
+   "shapeNames": [
+    "mxgraph.office.servers.universal_security_group"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1097"
+  },
+  {
+   "id": "officeServers-79-video-interop-server",
+   "title": "Video Interop Server",
+   "tags": "office servers video interop server office server  Video Interop Server",
+   "kind": "vertex",
+   "width": 54,
+   "height": 60,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.video_interop_server;",
+   "shapeNames": [
+    "mxgraph.office.servers.video_interop_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1099"
+  },
+  {
+   "id": "officeServers-80-virtual-application-server",
+   "title": "Virtual Application Server",
+   "tags": "office servers virtual application server office server  Virtual Application Server",
+   "kind": "vertex",
+   "width": 48,
+   "height": 55,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.virtual_application_server;",
+   "shapeNames": [
+    "mxgraph.office.servers.virtual_application_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1101"
+  },
+  {
+   "id": "officeServers-81-virtual-application-server-blue",
+   "title": "Virtual Application Server (blue)",
+   "tags": "office servers virtual application server office server  Virtual Application Server (blue)",
+   "kind": "vertex",
+   "width": 48,
+   "height": 55,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.virtual_application_server;fillColor=#2072B8;",
+   "shapeNames": [
+    "mxgraph.office.servers.virtual_application_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1103"
+  },
+  {
+   "id": "officeServers-82-virtual-database-server",
+   "title": "Virtual Database Server",
+   "tags": "office servers virtual database server office server  Virtual Database Server",
+   "kind": "vertex",
+   "width": 41,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.virtual_database_server;",
+   "shapeNames": [
+    "mxgraph.office.servers.virtual_database_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1105"
+  },
+  {
+   "id": "officeServers-83-virtual-database-server-blue",
+   "title": "Virtual Database Server (blue)",
+   "tags": "office servers virtual database server office server  Virtual Database Server (blue)",
+   "kind": "vertex",
+   "width": 41,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.virtual_database_server;fillColor=#2072B8;",
+   "shapeNames": [
+    "mxgraph.office.servers.virtual_database_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1107"
+  },
+  {
+   "id": "officeServers-84-virtual-server",
+   "title": "Virtual Server",
+   "tags": "office servers virtual server office server  Virtual Server",
+   "kind": "vertex",
+   "width": 28,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.virtual_server;",
+   "shapeNames": [
+    "mxgraph.office.servers.virtual_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1109"
+  },
+  {
+   "id": "officeServers-85-virtual-server-blue",
+   "title": "Virtual Server (blue)",
+   "tags": "office servers virtual server office server  Virtual Server (blue)",
+   "kind": "vertex",
+   "width": 28,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.virtual_server;fillColor=#2072B8;",
+   "shapeNames": [
+    "mxgraph.office.servers.virtual_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1111"
+  },
+  {
+   "id": "officeServers-86-virtual-server-small",
+   "title": "Virtual Server (small)",
+   "tags": "office servers virtual server small office server  Virtual Server (small)",
+   "kind": "vertex",
+   "width": 20,
+   "height": 37,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.virtual_server;",
+   "shapeNames": [
+    "mxgraph.office.servers.virtual_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1113"
+  },
+  {
+   "id": "officeServers-87-virtual-web-server",
+   "title": "Virtual Web Server",
+   "tags": "office servers virtual web server office server  Virtual Web Server",
+   "kind": "vertex",
+   "width": 44,
+   "height": 55,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.virtual_web_server;",
+   "shapeNames": [
+    "mxgraph.office.servers.virtual_web_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1115"
+  },
+  {
+   "id": "officeServers-88-virtual-web-server-blue",
+   "title": "Virtual Web Server (blue)",
+   "tags": "office servers virtual web server office server  Virtual Web Server (blue)",
+   "kind": "vertex",
+   "width": 44,
+   "height": 55,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.virtual_web_server;fillColor=#2072B8;",
+   "shapeNames": [
+    "mxgraph.office.servers.virtual_web_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1117"
+  },
+  {
+   "id": "officeServers-89-vociemail-preview-partner",
+   "title": "Vociemail Preview Partner",
+   "tags": "office servers vociemail preview partner office server  Vociemail Preview Partner",
+   "kind": "vertex",
+   "width": 46,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.vociemail_preview_partner;",
+   "shapeNames": [
+    "mxgraph.office.servers.vociemail_preview_partner"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1119"
+  },
+  {
+   "id": "officeServers-90-web-server",
+   "title": "Web Server",
+   "tags": "office servers web server office server  Web Server",
+   "kind": "vertex",
+   "width": 48,
+   "height": 57,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.web_server;",
+   "shapeNames": [
+    "mxgraph.office.servers.web_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1121"
+  },
+  {
+   "id": "officeServers-91-web-server-blue",
+   "title": "Web Server (blue)",
+   "tags": "office servers web server office server  Web Server (blue)",
+   "kind": "vertex",
+   "width": 48,
+   "height": 57,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.web_server_blue;",
+   "shapeNames": [
+    "mxgraph.office.servers.web_server_blue"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1123"
+  },
+  {
+   "id": "officeServers-92-web-server-orange",
+   "title": "Web Server (orange)",
+   "tags": "office servers web server office server  Web Server (orange)",
+   "kind": "vertex",
+   "width": 48,
+   "height": 57,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.web_server_orange;",
+   "shapeNames": [
+    "mxgraph.office.servers.web_server_orange"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1125"
+  },
+  {
+   "id": "officeServers-93-web-server-green",
+   "title": "Web Server (green)",
+   "tags": "office servers web server office server  Web Server (green)",
+   "kind": "vertex",
+   "width": 48,
+   "height": 57,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.web_server_green;",
+   "shapeNames": [
+    "mxgraph.office.servers.web_server_green"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1127"
+  },
+  {
+   "id": "officeServers-94-web-server-ghosted",
+   "title": "Web Server (ghosted)",
+   "tags": "office servers web server office server  Web Server (ghosted)",
+   "kind": "vertex",
+   "width": 48,
+   "height": 57,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.web_server_ghosted;",
+   "shapeNames": [
+    "mxgraph.office.servers.web_server_ghosted"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1129"
+  },
+  {
+   "id": "officeServers-95-windows-router",
+   "title": "Windows Router",
+   "tags": "office servers windows router office server  Windows Router",
+   "kind": "vertex",
+   "width": 52,
+   "height": 59,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.windows_router;",
+   "shapeNames": [
+    "mxgraph.office.servers.windows_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1131"
+  },
+  {
+   "id": "officeServers-96-windows-server",
+   "title": "Windows Server",
+   "tags": "office servers windows server office server  Windows Server",
+   "kind": "vertex",
+   "width": 52,
+   "height": 55,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.servers.windows_server;",
+   "shapeNames": [
+    "mxgraph.office.servers.windows_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:1133"
+  }
+ ]
+}

@@ -1,0 +1,134 @@
+{
+ "id": "azure2Hybrid and Multicloud",
+ "title": "Azure / Hybrid and Multicloud",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Azure2.js:8",
+ "entries": [
+  {
+   "id": "azure2Hybrid and Multicloud-0-ai-at-edge",
+   "title": "AI at Edge",
+   "tags": "azure2 ai edge azure hybrid and multicloud  AI at Edge",
+   "kind": "vertex",
+   "width": 68,
+   "height": 67.60000000000001,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/hybrid_multicloud/AI_at_Edge.svg;points=[[0.5,0.028,0],[0.5,0.902,0],[0,0.454,0],[1,0.563,0],[0.922,0.375,0],[0.907,0.761,0],[0.013,0.849,0],[0.038,0.018,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:880"
+  },
+  {
+   "id": "azure2Hybrid and Multicloud-1-azure-local",
+   "title": "Azure Local",
+   "tags": "azure2 azure local stack hci azure hybrid and multicloud  Azure Local",
+   "kind": "vertex",
+   "width": 68,
+   "height": 67.32000000000001,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/hybrid_multicloud/Azure_Local.svg;points=[[0.5,0,0],[0.485,1,0],[0,0.777,0],[1,0.768,0],[0.89,0.003,0],[0.957,0.894,0],[0.03,0.891,0],[0.11,0.003,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:882"
+  },
+  {
+   "id": "azure2Hybrid and Multicloud-2-azure-operator-5g-core",
+   "title": "Azure Operator 5G Core",
+   "tags": "azure2 operator 5g core azure hybrid and multicloud  Azure Operator 5G Core",
+   "kind": "vertex",
+   "width": 68,
+   "height": 45.32,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/hybrid_multicloud/Azure_Operator_5G_Core.svg;points=[[0.429,0,0],[0.504,1,0],[0,0.566,0],[0.89,0.5,0],[0.57,0.064,0],[0.952,0.85,0],[0.093,0.835,0],[0.283,0.064,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:884"
+  },
+  {
+   "id": "azure2Hybrid and Multicloud-3-azure-operator-insights",
+   "title": "Azure Operator Insights",
+   "tags": "azure2 operator insights azure hybrid and multicloud  Azure Operator Insights",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/hybrid_multicloud/Azure_Operator_Insights.svg;points=[[0.5,0.081,0],[0.5,1,0],[0,0.246,0],[1,0.75,0],[0.662,0.008,0],[0.945,0.91,0],[0.128,0.982,0],[0.093,0.003,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:886"
+  },
+  {
+   "id": "azure2Hybrid and Multicloud-4-azure-operator-nexus",
+   "title": "Azure Operator Nexus",
+   "tags": "azure2 operator nexus azure hybrid and multicloud  Azure Operator Nexus",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/hybrid_multicloud/Azure_Operator_Nexus.svg;points=[[0.5,0,0],[0.554,1,0],[0,0.799,0],[1,0.5,0],[0.995,0.013,0],[0.995,0.987,0],[0.06,0.952,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:888"
+  },
+  {
+   "id": "azure2Hybrid and Multicloud-5-azure-operator-service-manager",
+   "title": "Azure Operator Service Manager",
+   "tags": "azure2 operator service manager azure hybrid and multicloud  Azure Operator Service Manager",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/hybrid_multicloud/Azure_Operator_Service_Manager.svg;points=[[0.5,0.081,0],[0.5,1,0],[0,0.246,0],[1,0.75,0],[0.662,0.008,0],[0.945,0.91,0],[0.128,0.982,0],[0.085,0.008,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:890"
+  },
+  {
+   "id": "azure2Hybrid and Multicloud-6-azure-programmable-connectivity",
+   "title": "Azure Programmable Connectivity",
+   "tags": "azure2 operator programmable connectivity azure hybrid and multicloud  Azure Programmable Connectivity",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/hybrid_multicloud/Azure_Programmable_Connectivity.svg;points=[[0.5,0.085,0],[0.5,1,0],[0.087,0.5,0],[0.989,0.5,0],[0.997,0.992,0],[0.383,0.995,0],[0.098,0.07,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:892"
+  },
+  {
+   "id": "azure2Hybrid and Multicloud-7-edge-storage-accelerator",
+   "title": "Edge Storage Accelerator",
+   "tags": "azure2 edge storage accelerator azure hybrid and multicloud  Edge Storage Accelerator",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/hybrid_multicloud/Edge_Storage_Accelerator.svg;points=[[0.465,0,0],[0.5,0.988,0],[0,0.415,0],[1,0.5,0],[0.99,0.363,0],[0.995,0.94,0],[0.363,0.947,0],[0.09,0.22,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:894"
+  },
+  {
+   "id": "azure2Hybrid and Multicloud-8-workload-orchestration",
+   "title": "Workload Orchestration",
+   "tags": "azure2 workload orchestration toolchain orchestrator azure hybrid and multicloud  Workload Orchestration",
+   "kind": "vertex",
+   "width": 68,
+   "height": 66.08000000000001,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/hybrid_multicloud/Workload_Orchestration.svg;points=[[0.5,0,0],[0.499,1,0],[0.028,0.5,0],[0.973,0.5,0],[0.83,0.165,0],[0.827,0.866,0],[0.175,0.869,0],[0.178,0.157,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:896"
+  }
+ ]
+}

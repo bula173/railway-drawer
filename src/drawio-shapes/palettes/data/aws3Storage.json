@@ -1,0 +1,260 @@
+{
+ "id": "aws3Storage",
+ "title": "AWS17 / Storage",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-AWS3.js:8",
+ "entries": [
+  {
+   "id": "aws3Storage-0-s3",
+   "title": "S3",
+   "tags": "aws3 s3 aws amazon web service storage S3",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 93,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.s3;fillColor=#E05243;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.s3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:1039"
+  },
+  {
+   "id": "aws3Storage-1-glacier",
+   "title": "Glacier",
+   "tags": "aws3 glacier aws amazon web service storage Glacier",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 93,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.glacier;fillColor=#E05243;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.glacier"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:1041"
+  },
+  {
+   "id": "aws3Storage-2-storage-gateway",
+   "title": "Storage Gateway",
+   "tags": "aws3 storage gateway aws amazon web service storage Storage Gateway",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 93,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.storage_gateway;fillColor=#E05243;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.storage_gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:1043"
+  },
+  {
+   "id": "aws3Storage-3-efs",
+   "title": "EFS",
+   "tags": "aws3 efs aws amazon web service storage EFS",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 93,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.efs;fillColor=#E05243;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.efs"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:1045"
+  },
+  {
+   "id": "aws3Storage-4-archive",
+   "title": "Archive",
+   "tags": "aws3 archive aws amazon web service storage Archive",
+   "kind": "vertex",
+   "width": 57,
+   "height": 75,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.archive;fillColor=#E05243;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.archive"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:1047"
+  },
+  {
+   "id": "aws3Storage-5-vault",
+   "title": "Vault",
+   "tags": "aws3 vault aws amazon web service storage Vault",
+   "kind": "vertex",
+   "width": 54,
+   "height": 75,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.vault;fillColor=#E05243;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.vault"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:1049"
+  },
+  {
+   "id": "aws3Storage-6-bucket",
+   "title": "Bucket",
+   "tags": "aws3 bucket aws amazon web service storage Bucket",
+   "kind": "vertex",
+   "width": 60,
+   "height": 61.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.bucket;fillColor=#E05243;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.bucket"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:1051"
+  },
+  {
+   "id": "aws3Storage-7-bucket-with-objects",
+   "title": "Bucket with Objects",
+   "tags": "aws3 bucket with objects aws amazon web service storage Bucket with Objects",
+   "kind": "vertex",
+   "width": 60,
+   "height": 61.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.bucket_with_objects;fillColor=#E05243;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.bucket_with_objects"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:1053"
+  },
+  {
+   "id": "aws3Storage-8-object",
+   "title": "Object",
+   "tags": "aws3 object aws amazon web service storage Object",
+   "kind": "vertex",
+   "width": 42,
+   "height": 45,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.object;fillColor=#E05243;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.object"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:1055"
+  },
+  {
+   "id": "aws3Storage-9-virtual-tape-library",
+   "title": "Virtual Tape Library",
+   "tags": "aws3 virtual tape library aws amazon web service storage Virtual Tape Library",
+   "kind": "vertex",
+   "width": 60,
+   "height": 73.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.virtual_tape_library;fillColor=#E05243;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.virtual_tape_library"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:1057"
+  },
+  {
+   "id": "aws3Storage-10-cached-volume",
+   "title": "Cached Volume",
+   "tags": "aws3 cached volume aws amazon web service storage Cached Volume",
+   "kind": "vertex",
+   "width": 60,
+   "height": 73.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.cached_volume;fillColor=#E05243;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.cached_volume"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:1059"
+  },
+  {
+   "id": "aws3Storage-11-non-cached-volume",
+   "title": "Non-Cached Volume",
+   "tags": "aws3 non cached volume aws amazon web service storage Non-Cached Volume",
+   "kind": "vertex",
+   "width": 60,
+   "height": 73.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.non_cached_volume;fillColor=#E05243;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.non_cached_volume"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:1061"
+  },
+  {
+   "id": "aws3Storage-12-snapshot",
+   "title": "Snapshot",
+   "tags": "aws3 snapshot aws amazon web service storage Snapshot",
+   "kind": "vertex",
+   "width": 60,
+   "height": 73.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.snapshot;fillColor=#E05243;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.snapshot"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:1063"
+  },
+  {
+   "id": "aws3Storage-13-volume",
+   "title": "Volume",
+   "tags": "aws3 volume aws amazon web service storage Volume",
+   "kind": "vertex",
+   "width": 52.5,
+   "height": 75,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.volume;fillColor=#E05243;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.volume"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:1065"
+  },
+  {
+   "id": "aws3Storage-14-snowball",
+   "title": "Snowball",
+   "tags": "aws3 snowball aws amazon web service storage Snowball",
+   "kind": "vertex",
+   "width": 67.5,
+   "height": 81,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.snowball;fillColor=#E05243;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.snowball"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:1067"
+  },
+  {
+   "id": "aws3Storage-15-efs-share",
+   "title": "EFS Share",
+   "tags": "aws3 efs share aws amazon web service storage EFS Share",
+   "kind": "vertex",
+   "width": 69,
+   "height": 63,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.efs_share;fillColor=#E05243;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.efs_share"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:1069"
+  },
+  {
+   "id": "aws3Storage-16-import-export",
+   "title": "Import/Export",
+   "tags": "aws3 import export aws amazon web service storage Import/Export",
+   "kind": "vertex",
+   "width": 64.5,
+   "height": 63,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.import_export;fillColor=#E05243;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.import_export"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:1071"
+  },
+  {
+   "id": "aws3Storage-17-ebs",
+   "title": "EBS",
+   "tags": "aws3 ebs aws amazon web service storage EBS",
+   "kind": "vertex",
+   "width": 52.5,
+   "height": 75,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.volume;fillColor=#E05243;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.volume"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:1073"
+  }
+ ]
+}

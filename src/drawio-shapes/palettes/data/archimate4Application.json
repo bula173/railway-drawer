@@ -1,0 +1,241 @@
+{
+ "id": "archimate4Application",
+ "title": "ArchiMate 4 / Application",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:8",
+ "entries": [
+  {
+   "id": "archimate4Application-0-application-component",
+   "title": "Application Component",
+   "tags": "archimate4  archimate 4 application component Application Component",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#B0D0D9;shape=mxgraph.archimate4.element;appType=comp;archiType=square;archiDomain=application;",
+   "value": "Application Component",
+   "shapeNames": [
+    "mxgraph.archimate4.element"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:364"
+  },
+  {
+   "id": "archimate4Application-1-application-component",
+   "title": "Application Component",
+   "tags": "archimate4  archimate 4 application component Application Component",
+   "kind": "vertex",
+   "width": 48,
+   "height": 40,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#B0D0D9;shape=mxgraph.archimate4.component;",
+   "shapeNames": [
+    "mxgraph.archimate4.component"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:366"
+  },
+  {
+   "id": "archimate4Application-2-application-collaboration",
+   "title": "Application Collaboration",
+   "tags": "archimate4  archimate 4 application collaboration Application Collaboration",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#B0D0D9;shape=mxgraph.archimate4.element;appType=collab;archiType=square;archiDomain=application;",
+   "value": "Application Collaboration",
+   "shapeNames": [
+    "mxgraph.archimate4.element"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:368"
+  },
+  {
+   "id": "archimate4Application-3-application-collaboration",
+   "title": "Application Collaboration",
+   "tags": "archimate4  archimate 4 application collaboration Application Collaboration",
+   "kind": "vertex",
+   "width": 60,
+   "height": 35,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#B0D0D9;shape=mxgraph.archimate4.collaboration;",
+   "shapeNames": [
+    "mxgraph.archimate4.collaboration"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:370"
+  },
+  {
+   "id": "archimate4Application-4-application-interface",
+   "title": "Application Interface",
+   "tags": "archimate4  archimate 4 application interface Application Interface",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#B0D0D9;shape=mxgraph.archimate4.element;appType=interface;archiType=square;archiDomain=application;",
+   "value": "Application Interface",
+   "shapeNames": [
+    "mxgraph.archimate4.element"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:372"
+  },
+  {
+   "id": "archimate4Application-5-application-interface",
+   "title": "Application Interface",
+   "tags": "archimate4  archimate 4 application interface Application Interface",
+   "kind": "vertex",
+   "width": 70,
+   "height": 35,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#B0D0D9;shape=mxgraph.archimate4.interface;",
+   "shapeNames": [
+    "mxgraph.archimate4.interface"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:374"
+  },
+  {
+   "id": "archimate4Application-6-application-service",
+   "title": "Application Service",
+   "tags": "archimate4  archimate 4 application service Application Service",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#B0D0D9;shape=mxgraph.archimate4.element;appType=serv;archiType=rounded;archiDomain=application;",
+   "value": "Application Service",
+   "shapeNames": [
+    "mxgraph.archimate4.element"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:376"
+  },
+  {
+   "id": "archimate4Application-7-application-service",
+   "title": "Application Service",
+   "tags": "archimate4  archimate 4 application service Application Service",
+   "kind": "vertex",
+   "width": 60,
+   "height": 35,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#B0D0D9;shape=mxgraph.archimate4.service;",
+   "shapeNames": [
+    "mxgraph.archimate4.service"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:378"
+  },
+  {
+   "id": "archimate4Application-8-application-process",
+   "title": "Application Process",
+   "tags": "archimate4  archimate 4 application process Application Process",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#B0D0D9;shape=mxgraph.archimate4.element;appType=proc;archiType=rounded;archiDomain=application;",
+   "value": "Application Process",
+   "shapeNames": [
+    "mxgraph.archimate4.element"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:380"
+  },
+  {
+   "id": "archimate4Application-9-application-process",
+   "title": "Application Process",
+   "tags": "archimate4  archimate 4 application process Application Process",
+   "kind": "vertex",
+   "width": 60,
+   "height": 35,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#B0D0D9;shape=mxgraph.archimate4.process;",
+   "shapeNames": [
+    "mxgraph.archimate4.process"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:382"
+  },
+  {
+   "id": "archimate4Application-10-application-function",
+   "title": "Application Function",
+   "tags": "archimate4  archimate 4 application function Application Function",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#B0D0D9;shape=mxgraph.archimate4.element;appType=func;archiType=rounded;archiDomain=application;",
+   "value": "Application Function",
+   "shapeNames": [
+    "mxgraph.archimate4.element"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:384"
+  },
+  {
+   "id": "archimate4Application-11-application-function",
+   "title": "Application Function",
+   "tags": "archimate4  archimate 4 application function Application Function",
+   "kind": "vertex",
+   "width": 45,
+   "height": 45,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#B0D0D9;shape=mxgraph.archimate4.function;",
+   "shapeNames": [
+    "mxgraph.archimate4.function"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:386"
+  },
+  {
+   "id": "archimate4Application-12-application-event",
+   "title": "Application Event",
+   "tags": "archimate4  archimate 4 application event Application Event",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#B0D0D9;shape=mxgraph.archimate4.element;appType=event;archiType=rounded;archiDomain=application;",
+   "value": "Application Event",
+   "shapeNames": [
+    "mxgraph.archimate4.element"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:388"
+  },
+  {
+   "id": "archimate4Application-13-application-event",
+   "title": "Application Event",
+   "tags": "archimate4  archimate 4 application event Application Event",
+   "kind": "vertex",
+   "width": 60,
+   "height": 35,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#B0D0D9;shape=mxgraph.archimate4.event;",
+   "shapeNames": [
+    "mxgraph.archimate4.event"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:390"
+  },
+  {
+   "id": "archimate4Application-14-data-object",
+   "title": "Data Object",
+   "tags": "archimate4  archimate 4 application data object Data Object",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#B0D0D9;shape=mxgraph.archimate4.element;appType=passive;archiType=square;archiDomain=application;",
+   "value": "Data Object",
+   "shapeNames": [
+    "mxgraph.archimate4.element"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:392"
+  },
+  {
+   "id": "archimate4Application-15-data-object",
+   "title": "Data Object",
+   "tags": "archimate4  archimate 4 application data object Data Object",
+   "kind": "vertex",
+   "width": 70,
+   "height": 40,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#B0D0D9;shape=mxgraph.archimate4.businessObject;overflow=fill;",
+   "value": "<table cellpadding=\"0\" cellspacing=\"0\" style=\"font-size:1em;width:100%;height:100%;\"><tr style=\"height:20px;\"><td align=\"center\"></td></tr><tr><td align=\"left\" valign=\"top\" style=\"padding:4px;\"></td></tr></table>",
+   "shapeNames": [
+    "mxgraph.archimate4.businessObject"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:394"
+  }
+ ]
+}

@@ -1,0 +1,932 @@
+{
+ "id": "veeam3D",
+ "title": "Veeam / 3D",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Veeam.js:7",
+ "entries": [
+  {
+   "id": "veeam3D-0-1ftvm",
+   "title": "1FTVM",
+   "tags": "veeam 3d 1ftvm veeam 3d vmware virtual machine  1FTVM",
+   "kind": "vertex",
+   "width": 68,
+   "height": 62,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.1ftvm;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.1ftvm"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:772"
+  },
+  {
+   "id": "veeam3D-1-1ftvm-error",
+   "title": "1FTVM Error",
+   "tags": "veeam 3d 1ftvm error veeam 3d vmware virtual machine  1FTVM Error",
+   "kind": "vertex",
+   "width": 68,
+   "height": 62,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.1ftvm_error;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.1ftvm_error"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:774"
+  },
+  {
+   "id": "veeam3D-2-1ftvm-running",
+   "title": "1FTVM Running",
+   "tags": "veeam 3d 1ftvm running veeam 3d vmware virtual machine  1FTVM Running",
+   "kind": "vertex",
+   "width": 68,
+   "height": 62,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.1ftvm_running;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.1ftvm_running"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:776"
+  },
+  {
+   "id": "veeam3D-3-1ftvm-unavailable",
+   "title": "1FTVM Unavailable",
+   "tags": "veeam 3d 1ftvm unavailable veeam 3d vmware virtual machine  1FTVM Unavailable",
+   "kind": "vertex",
+   "width": 68,
+   "height": 62,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.1ftvm_unavailable;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.1ftvm_unavailable"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:778"
+  },
+  {
+   "id": "veeam3D-4-1ftvm-warning",
+   "title": "1FTVM Warning",
+   "tags": "veeam 3d 1ftvm warning veeam 3d vmware virtual machine  1FTVM Warning",
+   "kind": "vertex",
+   "width": 68,
+   "height": 62,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.1ftvm_warning;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.1ftvm_warning"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:780"
+  },
+  {
+   "id": "veeam3D-5-2ftvm",
+   "title": "2FTVM",
+   "tags": "veeam 3d 2ftvm veeam 3d vmware virtual machine  2FTVM",
+   "kind": "vertex",
+   "width": 68,
+   "height": 62,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.2ftvm;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.2ftvm"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:782"
+  },
+  {
+   "id": "veeam3D-6-2ftvm-error",
+   "title": "2FTVM Error",
+   "tags": "veeam 3d 2ftvm error veeam 3d vmware virtual machine  2FTVM Error",
+   "kind": "vertex",
+   "width": 68,
+   "height": 62,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.2ftvm_error;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.2ftvm_error"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:784"
+  },
+  {
+   "id": "veeam3D-7-2ftvm-running",
+   "title": "2FTVM Running",
+   "tags": "veeam 3d 2ftvm running veeam 3d vmware virtual machine  2FTVM Running",
+   "kind": "vertex",
+   "width": 68,
+   "height": 62,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.2ftvm_running;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.2ftvm_running"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:786"
+  },
+  {
+   "id": "veeam3D-8-2ftvm-unavailable",
+   "title": "2FTVM Unavailable",
+   "tags": "veeam 3d 2ftvm unavailable veeam 3d vmware virtual machine  2FTVM Unavailable",
+   "kind": "vertex",
+   "width": 68,
+   "height": 62,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.2ftvm_unavailable;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.2ftvm_unavailable"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:788"
+  },
+  {
+   "id": "veeam3D-9-2ftvm-warning",
+   "title": "2FTVM Warning",
+   "tags": "veeam 3d 2ftvm warning veeam 3d vmware virtual machine  2FTVM Warning",
+   "kind": "vertex",
+   "width": 68,
+   "height": 62,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.2ftvm_warning;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.2ftvm_warning"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:790"
+  },
+  {
+   "id": "veeam3D-10-backup-repository",
+   "title": "Backup Repository",
+   "tags": "veeam 3d backup repository veeam 3d vmware virtual machine  Backup Repository",
+   "kind": "vertex",
+   "width": 62,
+   "height": 62,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.backup_repository;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.backup_repository"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:792"
+  },
+  {
+   "id": "veeam3D-11-backup-repository",
+   "title": "Backup Repository",
+   "tags": "veeam 3d backup repository veeam 3d vmware virtual machine  Backup Repository",
+   "kind": "vertex",
+   "width": 62,
+   "height": 62,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.backup_repository_2;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.backup_repository_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:794"
+  },
+  {
+   "id": "veeam3D-12-cd",
+   "title": "CD",
+   "tags": "veeam 3d cd veeam 3d vmware virtual machine  CD",
+   "kind": "vertex",
+   "width": 68,
+   "height": 26,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.cd;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.cd"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:796"
+  },
+  {
+   "id": "veeam3D-13-database",
+   "title": "Database",
+   "tags": "veeam 3d database veeam 3d vmware virtual machine  Database",
+   "kind": "vertex",
+   "width": 58,
+   "height": 62,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.database;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.database"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:798"
+  },
+  {
+   "id": "veeam3D-14-datastore",
+   "title": "Datastore",
+   "tags": "veeam 3d datastore veeam 3d vmware virtual machine  Datastore",
+   "kind": "vertex",
+   "width": 44,
+   "height": 60,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.datastore;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.datastore"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:800"
+  },
+  {
+   "id": "veeam3D-15-datastore-snapshot",
+   "title": "Datastore Snapshot",
+   "tags": "veeam 3d datastore snapshot veeam 3d vmware virtual machine  Datastore Snapshot",
+   "kind": "vertex",
+   "width": 54,
+   "height": 34,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.datastore_snapshot;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.datastore_snapshot"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:802"
+  },
+  {
+   "id": "veeam3D-16-datastore-volume",
+   "title": "Datastore Volume",
+   "tags": "veeam 3d datastore volume veeam 3d vmware virtual machine  Datastore Volume",
+   "kind": "vertex",
+   "width": 54,
+   "height": 34,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.datastore_volume;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.datastore_volume"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:804"
+  },
+  {
+   "id": "veeam3D-17-esx-esxi",
+   "title": "ESX ESXi",
+   "tags": "veeam 3d esx esxi veeam 3d vmware virtual machine  ESX ESXi",
+   "kind": "vertex",
+   "width": 38,
+   "height": 52,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.esx_esxi;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.esx_esxi"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:806"
+  },
+  {
+   "id": "veeam3D-18-failover-protective-snapshot",
+   "title": "Failover Protective Snapshot",
+   "tags": "veeam 3d failover protective snapshot veeam 3d vmware virtual machine  Failover Protective Snapshot",
+   "kind": "vertex",
+   "width": 46,
+   "height": 46,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.failover_protective_snapshot;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.failover_protective_snapshot"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:808"
+  },
+  {
+   "id": "veeam3D-19-failover-protective-snapshot-locked",
+   "title": "Failover Protective Snapshot Locked",
+   "tags": "veeam 3d failover protective snapshot locked veeam 3d vmware virtual machine  Failover Protective Snapshot Locked",
+   "kind": "vertex",
+   "width": 56,
+   "height": 46,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.failover_protective_snapshot_locked;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.failover_protective_snapshot_locked"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:810"
+  },
+  {
+   "id": "veeam3D-20-failover-protective-snapshot-running",
+   "title": "Failover Protective Snapshot Running",
+   "tags": "veeam 3d failover protective snapshot running veeam 3d vmware virtual machine  Failover Protective Snapshot Running",
+   "kind": "vertex",
+   "width": 58,
+   "height": 46,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.failover_protective_snapshot_running;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.failover_protective_snapshot_running"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:812"
+  },
+  {
+   "id": "veeam3D-21-free-datastore",
+   "title": "Free Datastore",
+   "tags": "veeam 3d free datastore veeam 3d vmware virtual machine  Free Datastore",
+   "kind": "vertex",
+   "width": 44,
+   "height": 60,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.free_datastore;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.free_datastore"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:814"
+  },
+  {
+   "id": "veeam3D-22-full-datastore",
+   "title": "Full Datastore",
+   "tags": "veeam 3d full datastore veeam 3d vmware virtual machine  Full Datastore",
+   "kind": "vertex",
+   "width": 44,
+   "height": 60,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.full_datastore;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.full_datastore"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:816"
+  },
+  {
+   "id": "veeam3D-23-hard-drive",
+   "title": "Hard Drive",
+   "tags": "veeam 3d hard drive veeam 3d vmware virtual machine  Hard Drive",
+   "kind": "vertex",
+   "width": 62,
+   "height": 28,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.hard_drive;fillColor=#637D8A;gradientColor=#324752;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.hard_drive"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:818"
+  },
+  {
+   "id": "veeam3D-24-hyper-v-host",
+   "title": "Hyper-V Host",
+   "tags": "veeam 3d hyper-v host veeam 3d vmware virtual machine  Hyper-V Host",
+   "kind": "vertex",
+   "width": 110,
+   "height": 98,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.hyper_v_host;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.hyper_v_host"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:820"
+  },
+  {
+   "id": "veeam3D-25-lost-space",
+   "title": "Lost Space",
+   "tags": "veeam 3d lost space veeam 3d vmware virtual machine  Lost Space",
+   "kind": "vertex",
+   "width": 44,
+   "height": 60,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.lost_space;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.lost_space"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:822"
+  },
+  {
+   "id": "veeam3D-26-lun",
+   "title": "LUN",
+   "tags": "veeam 3d lun veeam 3d vmware virtual machine  LUN",
+   "kind": "vertex",
+   "width": 72,
+   "height": 40,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.lun;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.lun"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:824"
+  },
+  {
+   "id": "veeam3D-27-medium-datastore",
+   "title": "Medium Datastore",
+   "tags": "veeam 3d medium datastore veeam 3d vmware virtual machine  Medium Datastore",
+   "kind": "vertex",
+   "width": 44,
+   "height": 60,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.medium_datastore;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.medium_datastore"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:826"
+  },
+  {
+   "id": "veeam3D-28-network-card",
+   "title": "Network Card",
+   "tags": "veeam 3d network card veeam 3d vmware virtual machine  Network Card",
+   "kind": "vertex",
+   "width": 38,
+   "height": 40,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.network_card;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.network_card"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:828"
+  },
+  {
+   "id": "veeam3D-29-physical-storage",
+   "title": "Physical Storage",
+   "tags": "veeam 3d physical storage veeam 3d vmware virtual machine  Physical Storage",
+   "kind": "vertex",
+   "width": 108,
+   "height": 60,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.physical_storage;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.physical_storage"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:830"
+  },
+  {
+   "id": "veeam3D-30-proxy",
+   "title": "Proxy",
+   "tags": "veeam 3d proxy veeam 3d vmware virtual machine  Proxy",
+   "kind": "vertex",
+   "width": 46,
+   "height": 46,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.proxy;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.proxy"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:832"
+  },
+  {
+   "id": "veeam3D-31-proxy-appliance",
+   "title": "Proxy Appliance",
+   "tags": "veeam 3d proxy appliance veeam 3d vmware virtual machine  Proxy Appliance",
+   "kind": "vertex",
+   "width": 46,
+   "height": 46,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.proxy_appliance;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.proxy_appliance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:834"
+  },
+  {
+   "id": "veeam3D-32-remote-site",
+   "title": "Remote Site",
+   "tags": "veeam 3d remote site veeam 3d vmware virtual machine  Remote Site",
+   "kind": "vertex",
+   "width": 46,
+   "height": 60,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.remote_site;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.remote_site"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:836"
+  },
+  {
+   "id": "veeam3D-33-remote-storage",
+   "title": "Remote Storage",
+   "tags": "veeam 3d remote storage veeam 3d vmware virtual machine  Remote Storage",
+   "kind": "vertex",
+   "width": 52,
+   "height": 62,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.remote_storage;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.remote_storage"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:838"
+  },
+  {
+   "id": "veeam3D-34-resource-pool",
+   "title": "Resource Pool",
+   "tags": "veeam 3d resource pool veeam 3d vmware virtual machine  Resource Pool",
+   "kind": "vertex",
+   "width": 56,
+   "height": 32,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.resource_pool;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.resource_pool"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:840"
+  },
+  {
+   "id": "veeam3D-35-service-vnic",
+   "title": "Service vNIC",
+   "tags": "veeam 3d service vnic veeam 3d vmware virtual machine  Service vNIC",
+   "kind": "vertex",
+   "width": 72,
+   "height": 64,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.service_vnic;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.service_vnic"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:842"
+  },
+  {
+   "id": "veeam3D-36-switch",
+   "title": "Switch",
+   "tags": "veeam 3d switch veeam 3d vmware virtual machine  Switch",
+   "kind": "vertex",
+   "width": 110,
+   "height": 58,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.switch;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:844"
+  },
+  {
+   "id": "veeam3D-37-tape",
+   "title": "Tape",
+   "tags": "veeam 3d tape veeam 3d vmware virtual machine  Tape",
+   "kind": "vertex",
+   "width": 58,
+   "height": 58,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.tape;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.tape"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:846"
+  },
+  {
+   "id": "veeam3D-38-tape-checked",
+   "title": "Tape Checked",
+   "tags": "veeam 3d tape checked veeam 3d vmware virtual machine  Tape Checked",
+   "kind": "vertex",
+   "width": 70,
+   "height": 58,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.tape_checked;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.tape_checked"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:848"
+  },
+  {
+   "id": "veeam3D-39-tape-ejecting",
+   "title": "Tape Ejecting",
+   "tags": "veeam 3d tape ejecting veeam 3d vmware virtual machine  Tape Ejecting",
+   "kind": "vertex",
+   "width": 70,
+   "height": 58,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.tape_ejecting;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.tape_ejecting"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:850"
+  },
+  {
+   "id": "veeam3D-40-tape-library",
+   "title": "Tape Library",
+   "tags": "veeam 3d tape library veeam 3d vmware virtual machine  Tape Library",
+   "kind": "vertex",
+   "width": 62,
+   "height": 74,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.tape_library;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.tape_library"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:852"
+  },
+  {
+   "id": "veeam3D-41-tape-licensed",
+   "title": "Tape Licensed",
+   "tags": "veeam 3d tape licensed veeam 3d vmware virtual machine  Tape Licensed",
+   "kind": "vertex",
+   "width": 70,
+   "height": 58,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.tape_licensed;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.tape_licensed"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:854"
+  },
+  {
+   "id": "veeam3D-42-tape-recording",
+   "title": "Tape Recording",
+   "tags": "veeam 3d tape recording veeam 3d vmware virtual machine  Tape Recording",
+   "kind": "vertex",
+   "width": 70,
+   "height": 58,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.tape_recording;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.tape_recording"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:856"
+  },
+  {
+   "id": "veeam3D-43-tape-server",
+   "title": "Tape Server",
+   "tags": "veeam 3d tape server veeam 3d vmware virtual machine  Tape Server",
+   "kind": "vertex",
+   "width": 46,
+   "height": 46,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.tape_server;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.tape_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:858"
+  },
+  {
+   "id": "veeam3D-44-vapp",
+   "title": "vApp",
+   "tags": "veeam 3d vapp veeam 3d vmware virtual machine  vApp",
+   "kind": "vertex",
+   "width": 92,
+   "height": 62,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.vapp;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.vapp"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:860"
+  },
+  {
+   "id": "veeam3D-45-vapp-started",
+   "title": "vApp Started",
+   "tags": "veeam 3d vapp started veeam 3d vmware virtual machine  vApp Started",
+   "kind": "vertex",
+   "width": 92,
+   "height": 62,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.vapp_started;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.vapp_started"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:862"
+  },
+  {
+   "id": "veeam3D-46-veeam-availability-suite",
+   "title": "Veeam Availability Suite",
+   "tags": "veeam 3d veeam availability suite veeam 3d vmware virtual machine  Veeam Availability Suite",
+   "kind": "vertex",
+   "width": 46,
+   "height": 46,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.veeam_availability_suite;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.veeam_availability_suite"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:864"
+  },
+  {
+   "id": "veeam3D-47-veeam-backup-and-replication-server",
+   "title": "Veeam Backup and Replication Server",
+   "tags": "veeam 3d veeam backup and replication server veeam 3d vmware virtual machine  Veeam Backup and Replication Server",
+   "kind": "vertex",
+   "width": 46,
+   "height": 46,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.veeam_backup_and_replication_server;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.veeam_backup_and_replication_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:866"
+  },
+  {
+   "id": "veeam3D-48-veeam-backup-enterprise-manager-server",
+   "title": "Veeam Backup Enterprise Manager Server",
+   "tags": "veeam 3d veeam backup enterprise manager server veeam 3d vmware virtual machine  Veeam Backup Enterprise Manager Server",
+   "kind": "vertex",
+   "width": 46,
+   "height": 46,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.veeam_backup_enterprise_manager_server;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.veeam_backup_enterprise_manager_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:868"
+  },
+  {
+   "id": "veeam3D-49-veeam-backup-search-server",
+   "title": "Veeam Backup Search Server",
+   "tags": "veeam 3d veeam backup search server veeam 3d vmware virtual machine  Veeam Backup Search Server",
+   "kind": "vertex",
+   "width": 46,
+   "height": 46,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.veeam_backup_search_server;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.veeam_backup_search_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:870"
+  },
+  {
+   "id": "veeam3D-50-veeam-one-business-view",
+   "title": "Veeam ONE Business View",
+   "tags": "veeam 3d veeam one business view veeam 3d vmware virtual machine  Veeam ONE Business View",
+   "kind": "vertex",
+   "width": 46,
+   "height": 46,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.veeam_one_business_view;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.veeam_one_business_view"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:872"
+  },
+  {
+   "id": "veeam3D-51-veeam-one-monitor",
+   "title": "Veeam ONE Monitor",
+   "tags": "veeam 3d veeam one monitor veeam 3d vmware virtual machine  Veeam ONE Monitor",
+   "kind": "vertex",
+   "width": 46,
+   "height": 46,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.veeam_one_monitor;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.veeam_one_monitor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:874"
+  },
+  {
+   "id": "veeam3D-52-veeam-one-reporter",
+   "title": "Veeam ONE Reporter",
+   "tags": "veeam 3d veeam one reporter veeam 3d vmware virtual machine  Veeam ONE Reporter",
+   "kind": "vertex",
+   "width": 46,
+   "height": 46,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.veeam_one_reporter;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.veeam_one_reporter"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:876"
+  },
+  {
+   "id": "veeam3D-53-veeam-one-server",
+   "title": "Veeam ONE Server",
+   "tags": "veeam 3d veeam one server veeam 3d vmware virtual machine  Veeam ONE Server",
+   "kind": "vertex",
+   "width": 46,
+   "height": 46,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.veeam_one_server;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.veeam_one_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:878"
+  },
+  {
+   "id": "veeam3D-54-virtual-machine",
+   "title": "Virtual Machine",
+   "tags": "veeam 3d virtual machine veeam 3d vmware virtual machine  Virtual Machine",
+   "kind": "vertex",
+   "width": 46,
+   "height": 46,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.virtual_machine;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.virtual_machine"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:880"
+  },
+  {
+   "id": "veeam3D-55-vmware-host",
+   "title": "VMware Host",
+   "tags": "veeam 3d vmware host veeam 3d vmware virtual machine  VMware Host",
+   "kind": "vertex",
+   "width": 110,
+   "height": 98,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.vmware_host;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.vmware_host"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:882"
+  },
+  {
+   "id": "veeam3D-56-vm-failed",
+   "title": "VM Failed",
+   "tags": "veeam 3d vm failed veeam 3d vmware virtual machine  VM Failed",
+   "kind": "vertex",
+   "width": 56,
+   "height": 46,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.vm_failed;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.vm_failed"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:884"
+  },
+  {
+   "id": "veeam3D-57-vm-linux",
+   "title": "VM Linux",
+   "tags": "veeam 3d vm linux veeam 3d vmware virtual machine  VM Linux",
+   "kind": "vertex",
+   "width": 46,
+   "height": 60,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.vm_linux;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.vm_linux"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:886"
+  },
+  {
+   "id": "veeam3D-58-vm-no-network",
+   "title": "VM No Network",
+   "tags": "veeam 3d vm no network veeam 3d vmware virtual machine  VM No Network",
+   "kind": "vertex",
+   "width": 58,
+   "height": 46,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.vm_no_network;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.vm_no_network"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:888"
+  },
+  {
+   "id": "veeam3D-59-vm-problem",
+   "title": "VM Problem",
+   "tags": "veeam 3d vm problem veeam 3d vmware virtual machine  VM Problem",
+   "kind": "vertex",
+   "width": 56,
+   "height": 46,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.vm_problem;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.vm_problem"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:890"
+  },
+  {
+   "id": "veeam3D-60-vm-running",
+   "title": "VM Running",
+   "tags": "veeam 3d vm running veeam 3d vmware virtual machine  VM Running",
+   "kind": "vertex",
+   "width": 56,
+   "height": 46,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.vm_running;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.vm_running"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:892"
+  },
+  {
+   "id": "veeam3D-61-vm-saved-state",
+   "title": "VM Saved State",
+   "tags": "veeam 3d vm saved state veeam 3d vmware virtual machine  VM Saved State",
+   "kind": "vertex",
+   "width": 58,
+   "height": 48,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.vm_saved_state;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.vm_saved_state"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:894"
+  },
+  {
+   "id": "veeam3D-62-vm-windows",
+   "title": "VM Windows",
+   "tags": "veeam 3d vm windows veeam 3d vmware virtual machine  VM Windows",
+   "kind": "vertex",
+   "width": 46,
+   "height": 60,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.vm_windows;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.vm_windows"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:896"
+  },
+  {
+   "id": "veeam3D-63-vnic",
+   "title": "vNIC",
+   "tags": "veeam 3d vnic veeam 3d vmware virtual machine  vNIC",
+   "kind": "vertex",
+   "width": 62,
+   "height": 62,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.vnic;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.vnic"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:898"
+  },
+  {
+   "id": "veeam3D-64-wan-accelerator",
+   "title": "WAN Accelerator",
+   "tags": "veeam 3d wan accelerator veeam 3d vmware virtual machine  WAN Accelerator",
+   "kind": "vertex",
+   "width": 46,
+   "height": 46,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.wan_accelerator;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.wan_accelerator"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:900"
+  },
+  {
+   "id": "veeam3D-65-workstation",
+   "title": "Workstation",
+   "tags": "veeam 3d workstation veeam 3d vmware virtual machine  Workstation",
+   "kind": "vertex",
+   "width": 76,
+   "height": 62,
+   "style": "shadow=0;dashed=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.3d.workstation;",
+   "shapeNames": [
+    "mxgraph.veeam.3d.workstation"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:902"
+  }
+ ]
+}

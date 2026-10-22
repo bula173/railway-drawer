@@ -1,0 +1,176 @@
+{
+ "id": "sapAI",
+ "title": "SAP / AI",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-SAP.js:8",
+ "entries": [
+  {
+   "id": "sapAI-0-data-attribute-recommendation",
+   "title": "Data Attribute Recommendation",
+   "tags": "sap data attribute recommendation sap btp service icons ai artificial intelligence  Data Attribute Recommendation",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=Data_Attribute_Recommendation",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:399"
+  },
+  {
+   "id": "sapAI-1-document-information-extraction",
+   "title": "Document Information Extraction",
+   "tags": "sap document information extraction sap btp service icons ai artificial intelligence  Document Information Extraction",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=Document_Information_Extraction",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:401"
+  },
+  {
+   "id": "sapAI-2-personalized-recommendation",
+   "title": "Personalized Recommendation",
+   "tags": "sap personalized recommendation sap btp service icons ai artificial intelligence  Personalized Recommendation",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=Personalized_Recommendation",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:403"
+  },
+  {
+   "id": "sapAI-3-sap-translation-hub",
+   "title": "SAP Translation Hub",
+   "tags": "sap translation hub sap btp service icons ai artificial intelligence  SAP Translation Hub",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Translation_Hub",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:405"
+  },
+  {
+   "id": "sapAI-4-sap-digital-assistant",
+   "title": "SAP Digital Assistant",
+   "tags": "sap sap digital assistant sap btp service icons ai artificial intelligence  SAP Digital Assistant",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Digital_Assistant",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:407"
+  },
+  {
+   "id": "sapAI-5-sap-ai-core",
+   "title": "SAP_AI_Core",
+   "tags": "sap ai core artificial intelligence sap btp service icons ai artificial intelligence  SAP_AI_Core",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_AI_Core",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:409"
+  },
+  {
+   "id": "sapAI-6-invoice-object-recommendation",
+   "title": "Invoice Object Recommendation",
+   "tags": "sap invoice object recommendation sap btp service icons ai artificial intelligence  Invoice Object Recommendation",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=Invoice_Object_Recommendation2",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:411"
+  },
+  {
+   "id": "sapAI-7-sap-ai-launchpad",
+   "title": "SAP AI Launchpad",
+   "tags": "sap ai launchpad artificial intelligence sap btp service icons ai artificial intelligence  SAP AI Launchpad",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_AI_Launchpad",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:413"
+  },
+  {
+   "id": "sapAI-8-sap-document-grounding",
+   "title": "SAP Document Grounding",
+   "tags": "sap document grounding sap btp service icons ai artificial intelligence  SAP Document Grounding",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Document_Grounding",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:415"
+  },
+  {
+   "id": "sapAI-9-service-ticket-intelligence",
+   "title": "Service Ticket Intelligence",
+   "tags": "sap service ticket intelligence sap btp service icons ai artificial intelligence  Service Ticket Intelligence",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=Service_Ticket_Intelligence2",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:417"
+  },
+  {
+   "id": "sapAI-10-sap-hana-cloud",
+   "title": "SAP HANA Cloud",
+   "tags": "sap hana cloud sap btp service icons ai artificial intelligence  SAP HANA Cloud",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_HANA_Cloud",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:419"
+  },
+  {
+   "id": "sapAI-11-business-entity-recognition",
+   "title": "Business Entity Recognition",
+   "tags": "sap business entity recognition sap btp service icons ai artificial intelligence  Business Entity Recognition",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=Business_Entity_Recognition",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:421"
+  }
+ ]
+}

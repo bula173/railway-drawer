@@ -1,0 +1,246 @@
+{
+ "id": "ciscoServers",
+ "title": "Cisco / Servers",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Cisco.js:9",
+ "entries": [
+  {
+   "id": "ciscoServers-0-cisco-unified-presence-server",
+   "title": "Cisco Unified Presence Server",
+   "tags": "cisco cisco unified presence server cisco server  Cisco Unified Presence Server",
+   "kind": "vertex",
+   "width": 54,
+   "height": 67,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.servers.cisco_unified_presence_server;",
+   "shapeNames": [
+    "mxgraph.cisco.servers.cisco_unified_presence_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:416"
+  },
+  {
+   "id": "ciscoServers-1-communications-server",
+   "title": "Communications Server",
+   "tags": "cisco communications server cisco server  Communications Server",
+   "kind": "vertex",
+   "width": 54,
+   "height": 56.00000000000001,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.servers.communications_server;",
+   "shapeNames": [
+    "mxgraph.cisco.servers.communications_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:417"
+  },
+  {
+   "id": "ciscoServers-2-directory-server",
+   "title": "Directory Server",
+   "tags": "cisco directory server cisco server  Directory Server",
+   "kind": "vertex",
+   "width": 72,
+   "height": 59,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.servers.directory_server;",
+   "shapeNames": [
+    "mxgraph.cisco.servers.directory_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:418"
+  },
+  {
+   "id": "ciscoServers-3-fileserver",
+   "title": "Fileserver",
+   "tags": "cisco fileserver cisco server  Fileserver",
+   "kind": "vertex",
+   "width": 43,
+   "height": 62,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.servers.fileserver;",
+   "shapeNames": [
+    "mxgraph.cisco.servers.fileserver"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:419"
+  },
+  {
+   "id": "ciscoServers-4-file-server",
+   "title": "File Server",
+   "tags": "cisco file server cisco server  File Server",
+   "kind": "vertex",
+   "width": 43,
+   "height": 57.99999999999999,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.servers.file_server;",
+   "shapeNames": [
+    "mxgraph.cisco.servers.file_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:420"
+  },
+  {
+   "id": "ciscoServers-5-host",
+   "title": "Host",
+   "tags": "cisco host cisco server  Host",
+   "kind": "vertex",
+   "width": 104,
+   "height": 51,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.servers.host;",
+   "shapeNames": [
+    "mxgraph.cisco.servers.host"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:421"
+  },
+  {
+   "id": "ciscoServers-6-iptv-server",
+   "title": "IPTV Server",
+   "tags": "cisco iptv server cisco server  IPTV Server",
+   "kind": "vertex",
+   "width": 77,
+   "height": 51,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.servers.iptv_server;",
+   "shapeNames": [
+    "mxgraph.cisco.servers.iptv_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:422"
+  },
+  {
+   "id": "ciscoServers-7-microwebserver",
+   "title": "Microwebserver",
+   "tags": "cisco microwebserver cisco server  Microwebserver",
+   "kind": "vertex",
+   "width": 77,
+   "height": 51,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.servers.microwebserver;",
+   "shapeNames": [
+    "mxgraph.cisco.servers.microwebserver"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:423"
+  },
+  {
+   "id": "ciscoServers-8-moh-server",
+   "title": "MOH Server",
+   "tags": "cisco moh server cisco server  MOH Server",
+   "kind": "vertex",
+   "width": 43,
+   "height": 62,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.servers.moh_server;",
+   "shapeNames": [
+    "mxgraph.cisco.servers.moh_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:424"
+  },
+  {
+   "id": "ciscoServers-9-server-with-router",
+   "title": "Server with Router",
+   "tags": "cisco server with router cisco server  Server with Router",
+   "kind": "vertex",
+   "width": 38,
+   "height": 64,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.servers.server_with_router;",
+   "shapeNames": [
+    "mxgraph.cisco.servers.server_with_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:425"
+  },
+  {
+   "id": "ciscoServers-10-sip-proxy-server",
+   "title": "SIP Proxy Server",
+   "tags": "cisco sip proxy server cisco server  SIP Proxy Server",
+   "kind": "vertex",
+   "width": 45,
+   "height": 70,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.servers.sip_proxy_server;",
+   "shapeNames": [
+    "mxgraph.cisco.servers.sip_proxy_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:426"
+  },
+  {
+   "id": "ciscoServers-11-software-based-server",
+   "title": "Software Based Server",
+   "tags": "cisco software based server cisco server  Software Based Server",
+   "kind": "vertex",
+   "width": 67,
+   "height": 77,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.servers.software_based_server;",
+   "shapeNames": [
+    "mxgraph.cisco.servers.software_based_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:427"
+  },
+  {
+   "id": "ciscoServers-12-standard-host",
+   "title": "Standard Host",
+   "tags": "cisco standard host cisco server  Standard Host",
+   "kind": "vertex",
+   "width": 43,
+   "height": 62,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.servers.standard_host;",
+   "shapeNames": [
+    "mxgraph.cisco.servers.standard_host"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:428"
+  },
+  {
+   "id": "ciscoServers-13-storage-server",
+   "title": "Storage Server",
+   "tags": "cisco storage server cisco server  Storage Server",
+   "kind": "vertex",
+   "width": 54,
+   "height": 83,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.servers.storage_server;",
+   "shapeNames": [
+    "mxgraph.cisco.servers.storage_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:429"
+  },
+  {
+   "id": "ciscoServers-14-unity-server",
+   "title": "Unity Server",
+   "tags": "cisco unity server cisco server  Unity Server",
+   "kind": "vertex",
+   "width": 50,
+   "height": 69,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.servers.unity_server;",
+   "shapeNames": [
+    "mxgraph.cisco.servers.unity_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:430"
+  },
+  {
+   "id": "ciscoServers-15-voice-commserver",
+   "title": "Voice Commserver",
+   "tags": "cisco voice commserver cisco server  Voice Commserver",
+   "kind": "vertex",
+   "width": 54,
+   "height": 56.00000000000001,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.servers.voice_commserver;",
+   "shapeNames": [
+    "mxgraph.cisco.servers.voice_commserver"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:431"
+  },
+  {
+   "id": "ciscoServers-16-www-server",
+   "title": "WWW Server",
+   "tags": "cisco www server cisco server  WWW Server",
+   "kind": "vertex",
+   "width": 66,
+   "height": 67,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.servers.www_server;",
+   "shapeNames": [
+    "mxgraph.cisco.servers.www_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:432"
+  }
+ ]
+}

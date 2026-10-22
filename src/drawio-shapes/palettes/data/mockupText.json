@@ -1,0 +1,201 @@
+{
+ "id": "mockupText",
+ "title": "Mockup Text",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Mockup.js:8",
+ "entries": [
+  {
+   "id": "mockupText-0-link",
+   "title": "Link",
+   "tags": "mockup text link mockup text  Link",
+   "kind": "vertex",
+   "width": 150,
+   "height": 30,
+   "style": "shape=rectangle;strokeColor=none;fillColor=none;linkText=;fontSize=17;fontColor=#0000ff;fontStyle=4;html=1;align=center;",
+   "value": "Link",
+   "shapeNames": [
+    "rectangle"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:921"
+  },
+  {
+   "id": "mockupText-1-horizontal-button-bar",
+   "title": "Horizontal Button Bar",
+   "tags": "horizontal bar",
+   "kind": "cells",
+   "width": 500,
+   "height": 25,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"swimlane;shape=mxgraph.bootstrap.anchor;strokeColor=#666666;fillColor=#ffffff;fontColor=#0000FF;fontStyle=0;childLayout=stackLayout;horizontal=0;startSize=0;horizontalStack=1;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"500\" height=\"25\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Button 1\" style=\"text;strokeColor=#008CFF;align=center;verticalAlign=middle;spacingLeft=10;spacingRight=10;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fillColor=#008CFF;fontColor=#ffffff;fontSize=17;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"125\" height=\"25\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Button 2\" style=\"text;strokeColor=inherit;align=center;verticalAlign=middle;spacingLeft=10;spacingRight=10;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fillColor=inherit;fontColor=inherit;fontSize=17;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"125\" height=\"25\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"Button 3\" style=\"text;strokeColor=inherit;align=center;verticalAlign=middle;spacingLeft=10;spacingRight=10;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fillColor=inherit;fontColor=inherit;fontSize=17;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"125\" height=\"25\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"Button 4\" style=\"text;strokeColor=inherit;align=center;verticalAlign=middle;spacingLeft=10;spacingRight=10;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fillColor=inherit;fontColor=inherit;fontSize=17;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"125\" height=\"25\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.bootstrap.anchor"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:924"
+  },
+  {
+   "id": "mockupText-2-callout",
+   "title": "Callout",
+   "tags": "mockup text callout mockup text  Callout",
+   "kind": "vertex",
+   "width": 200,
+   "height": 100,
+   "style": "strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.text.callout;linkText=;textSize=17;textColor=#666666;callDir=NW;callStyle=line;fontSize=17;fontColor=#666666;align=left;verticalAlign=top;strokeColor=#666666;",
+   "value": "Callout",
+   "shapeNames": [
+    "mxgraph.mockup.text.callout"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:949"
+  },
+  {
+   "id": "mockupText-3-callout",
+   "title": "Callout",
+   "tags": "mockup text callout mockup text  Callout",
+   "kind": "vertex",
+   "width": 200,
+   "height": 100,
+   "style": "strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.text.callout;linkText=;textSize=17;textColor=#666666;callDir=NE;callStyle=line;fontSize=17;fontColor=#666666;align=right;verticalAlign=top;strokeColor=#666666;",
+   "value": "Callout",
+   "shapeNames": [
+    "mxgraph.mockup.text.callout"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:951"
+  },
+  {
+   "id": "mockupText-4-callout",
+   "title": "Callout",
+   "tags": "mockup text callout mockup text  Callout",
+   "kind": "vertex",
+   "width": 200,
+   "height": 100,
+   "style": "strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.text.callout;linkText=;textSize=17;textColor=#666666;callDir=SW;callStyle=line;fontSize=17;fontColor=#666666;align=left;verticalAlign=bottom;strokeColor=#666666;",
+   "value": "Callout",
+   "shapeNames": [
+    "mxgraph.mockup.text.callout"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:953"
+  },
+  {
+   "id": "mockupText-5-callout",
+   "title": "Callout",
+   "tags": "mockup text callout mockup text  Callout",
+   "kind": "vertex",
+   "width": 200,
+   "height": 100,
+   "style": "strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.text.callout;linkText=;textSize=17;textColor=#666666;callDir=SE;callStyle=line;fontSize=17;fontColor=#666666;align=right;verticalAlign=bottom;strokeColor=#666666;",
+   "value": "Callout",
+   "shapeNames": [
+    "mxgraph.mockup.text.callout"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:955"
+  },
+  {
+   "id": "mockupText-6-sticky-note",
+   "title": "Sticky Note",
+   "tags": "mockup text stickyNote mockup text  Sticky Note",
+   "kind": "vertex",
+   "width": 200,
+   "height": 200,
+   "style": "strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.text.stickyNote2;fontColor=#666666;mainText=;fontSize=17;whiteSpace=wrap;fillColor=#ffffcc;strokeColor=#F62E00;",
+   "value": "Note Line 1\nNote Line 2\nNote Line 3",
+   "shapeNames": [
+    "mxgraph.mockup.text.stickyNote2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:957"
+  },
+  {
+   "id": "mockupText-7-bulleted-list",
+   "title": "Bulleted List",
+   "tags": "mockup text bulletedList mockup text  Bulleted List",
+   "kind": "vertex",
+   "width": 150,
+   "height": 135,
+   "style": "strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.text.bulletedList;textColor=#666666;mainText=,,,,;textSize=17;bulletStyle=none;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=17;fontColor=#666666;",
+   "value": "-Line 1\n-Line 2\n-Line 3\n-Line 4",
+   "shapeNames": [
+    "mxgraph.mockup.text.bulletedList"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:959"
+  },
+  {
+   "id": "mockupText-8-text-box",
+   "title": "Text Box",
+   "tags": "mockup text textBox mockup text  Text Box",
+   "kind": "vertex",
+   "width": 150,
+   "height": 30,
+   "style": "strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.text.textBox;fontColor=#666666;align=left;fontSize=17;spacingLeft=4;spacingTop=-3;whiteSpace=wrap;strokeColor=#666666;mainText=",
+   "value": "Line 1",
+   "shapeNames": [
+    "mxgraph.mockup.text.textBox"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:961"
+  },
+  {
+   "id": "mockupText-9-captcha",
+   "title": "Captcha",
+   "tags": "mockup text captcha mockup text  Captcha",
+   "kind": "vertex",
+   "width": 150,
+   "height": 50,
+   "style": "strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.text.captcha;fontColor=#666666;fontSize=25;fillColor2=#88aaff;strokeColor=#666666;mainText=",
+   "value": "fG2yQ23",
+   "shapeNames": [
+    "mxgraph.mockup.text.captcha"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:963"
+  },
+  {
+   "id": "mockupText-10-alphanumeric",
+   "title": "Alphanumeric",
+   "tags": "mockup text alphanumeric mockup text  Alphanumeric",
+   "kind": "vertex",
+   "width": 450,
+   "height": 50,
+   "style": "strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.text.alphanumeric;linkText=;html=1;fontStyle=4;fontSize=17;fontColor=#0000ff;",
+   "value": "0-9 A B C D E F G H I J K L M N O P Q R S T U V X Y Z",
+   "shapeNames": [
+    "mxgraph.mockup.text.alphanumeric"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:965"
+  },
+  {
+   "id": "mockupText-11-paragraph-of-text",
+   "title": "Paragraph of Text",
+   "tags": "mockup text peragraph of text mockup text  Paragraph of Text",
+   "kind": "vertex",
+   "width": 250,
+   "height": 470,
+   "style": "text;spacingTop=-5;whiteSpace=wrap;html=1;align=left;fontSize=12;fontFamily=Helvetica;fillColor=none;strokeColor=none;",
+   "value": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:967"
+  },
+  {
+   "id": "mockupText-12-table",
+   "title": "Table",
+   "tags": "table Table",
+   "kind": "cells",
+   "width": 180,
+   "height": 80,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=table;html=1;whiteSpace=wrap;startSize=0;container=1;collapsible=0;childLayout=tableLayout;strokeWidth=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"180\" height=\"80\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"180\" height=\"27\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Header 1\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;fontStyle=1\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"90\" height=\"27\" as=\"geometry\"><mxRectangle width=\"90\" height=\"27\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"Header 2\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;fontStyle=1\" vertex=\"1\" parent=\"3\"><mxGeometry x=\"90\" width=\"90\" height=\"27\" as=\"geometry\"><mxRectangle width=\"90\" height=\"27\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"6\" value=\"\" style=\"shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"27\" width=\"180\" height=\"26\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"row 1, cell 1\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;\" vertex=\"1\" parent=\"6\"><mxGeometry width=\"90\" height=\"26\" as=\"geometry\"><mxRectangle width=\"90\" height=\"26\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"8\" value=\"row 1, cell 2\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;\" vertex=\"1\" parent=\"6\"><mxGeometry x=\"90\" width=\"90\" height=\"26\" as=\"geometry\"><mxRectangle width=\"90\" height=\"26\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"9\" value=\"\" style=\"shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"53\" width=\"180\" height=\"27\" as=\"geometry\"/></mxCell><mxCell id=\"10\" value=\"row 2, cell 1\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;\" vertex=\"1\" parent=\"9\"><mxGeometry width=\"90\" height=\"27\" as=\"geometry\"><mxRectangle width=\"90\" height=\"27\" as=\"alternateBounds\"/></mxGeometry></mxCell><mxCell id=\"11\" value=\"row 2, cell 2\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;\" vertex=\"1\" parent=\"9\"><mxGeometry x=\"90\" width=\"90\" height=\"27\" as=\"geometry\"><mxRectangle width=\"90\" height=\"27\" as=\"alternateBounds\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "table",
+    "tableRow",
+    "partialRectangle"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Mockup.js:970"
+  }
+ ]
+}

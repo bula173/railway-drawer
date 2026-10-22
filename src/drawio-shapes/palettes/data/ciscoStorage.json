@@ -1,0 +1,134 @@
+{
+ "id": "ciscoStorage",
+ "title": "Cisco / Storage",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Cisco.js:9",
+ "entries": [
+  {
+   "id": "ciscoStorage-0-cisco-file-engine",
+   "title": "Cisco File Engine",
+   "tags": "cisco cisco file engine cisco storage  Cisco File Engine",
+   "kind": "vertex",
+   "width": 90,
+   "height": 64,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.storage.cisco_file_engine;",
+   "shapeNames": [
+    "mxgraph.cisco.storage.cisco_file_engine"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:446"
+  },
+  {
+   "id": "ciscoStorage-1-cloud",
+   "title": "Cloud",
+   "tags": "cisco cloud cisco storage  Cloud",
+   "kind": "vertex",
+   "width": 186,
+   "height": 106,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.storage.cloud;",
+   "shapeNames": [
+    "mxgraph.cisco.storage.cloud"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:447"
+  },
+  {
+   "id": "ciscoStorage-2-diskette",
+   "title": "Diskette",
+   "tags": "cisco diskette cisco storage  Diskette",
+   "kind": "vertex",
+   "width": 51,
+   "height": 50,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.storage.diskette;",
+   "shapeNames": [
+    "mxgraph.cisco.storage.diskette"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:448"
+  },
+  {
+   "id": "ciscoStorage-3-fc-storage",
+   "title": "FC Storage",
+   "tags": "cisco fc storage cisco storage  FC Storage",
+   "kind": "vertex",
+   "width": 77,
+   "height": 43,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.storage.fc_storage;",
+   "shapeNames": [
+    "mxgraph.cisco.storage.fc_storage"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:449"
+  },
+  {
+   "id": "ciscoStorage-4-fibre-channel-disk-subsystem",
+   "title": "Fibre Channel Disk Subsystem",
+   "tags": "cisco fibre channel disk subsystem cisco storage  Fibre Channel Disk Subsystem",
+   "kind": "vertex",
+   "width": 43,
+   "height": 62,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.storage.fibre_channel_disk_subsystem;",
+   "shapeNames": [
+    "mxgraph.cisco.storage.fibre_channel_disk_subsystem"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:450"
+  },
+  {
+   "id": "ciscoStorage-5-file-cabinet",
+   "title": "File Cabinet",
+   "tags": "cisco file cabinet cisco storage  File Cabinet",
+   "kind": "vertex",
+   "width": 51,
+   "height": 62,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.storage.file_cabinet;",
+   "shapeNames": [
+    "mxgraph.cisco.storage.file_cabinet"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:451"
+  },
+  {
+   "id": "ciscoStorage-6-relational-database",
+   "title": "Relational Database",
+   "tags": "cisco relational database cisco storage  Relational Database",
+   "kind": "vertex",
+   "width": 66,
+   "height": 53,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.storage.relational_database;",
+   "shapeNames": [
+    "mxgraph.cisco.storage.relational_database"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:452"
+  },
+  {
+   "id": "ciscoStorage-7-tape-array",
+   "title": "Tape Array",
+   "tags": "cisco tape array cisco storage  Tape Array",
+   "kind": "vertex",
+   "width": 43,
+   "height": 62,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.storage.tape_array;",
+   "shapeNames": [
+    "mxgraph.cisco.storage.tape_array"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:453"
+  },
+  {
+   "id": "ciscoStorage-8-web-cluster",
+   "title": "Web Cluster",
+   "tags": "cisco web cluster cisco storage  Web Cluster",
+   "kind": "vertex",
+   "width": 186,
+   "height": 106,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.storage.web_cluster;",
+   "shapeNames": [
+    "mxgraph.cisco.storage.web_cluster"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:454"
+  }
+ ]
+}

@@ -1,0 +1,288 @@
+{
+ "id": "cisco19LAN Switching",
+ "title": "Cisco 19 / LAN Switching",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:8",
+ "entries": [
+  {
+   "id": "cisco19LAN Switching-0-l2-switch",
+   "title": "L2 Switch",
+   "tags": "cisco19 l2 switch cisco lan switching local area network L2 Switch",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=l2_switch;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:55"
+  },
+  {
+   "id": "cisco19LAN Switching-1-l3-switch",
+   "title": "L3 Switch",
+   "tags": "cisco19 l3 switch cisco lan switching local area network L3 Switch",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=l3_switch;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:57"
+  },
+  {
+   "id": "cisco19LAN Switching-2-l2-modular",
+   "title": "L2 Modular",
+   "tags": "cisco19 l2 modular cisco lan switching local area network L2 Modular",
+   "kind": "vertex",
+   "width": 50,
+   "height": 73,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=l2_modular;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:59"
+  },
+  {
+   "id": "cisco19LAN Switching-3-l3-modular",
+   "title": "L3 Modular",
+   "tags": "cisco19 l3 modular cisco lan switching local area network L3 Modular",
+   "kind": "vertex",
+   "width": 50,
+   "height": 73,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=l3_modular;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:61"
+  },
+  {
+   "id": "cisco19LAN Switching-4-6500-vss",
+   "title": "6500 VSS",
+   "tags": "cisco19 6500 vss cisco lan switching local area network 6500 VSS",
+   "kind": "vertex",
+   "width": 50,
+   "height": 73,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=6500_vss;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:63"
+  },
+  {
+   "id": "cisco19LAN Switching-5-l2-switch-with-dual-supervisor",
+   "title": "L2 Switch with Dual Supervisor",
+   "tags": "cisco19 l2 switch with dual supervisor cisco lan switching local area network L2 Switch with Dual Supervisor",
+   "kind": "vertex",
+   "width": 50,
+   "height": 95,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=l2_switch_with_dual_supervisor;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:65"
+  },
+  {
+   "id": "cisco19LAN Switching-6-l3-switch-with-dual-supervisor",
+   "title": "L3 Switch with Dual Supervisor",
+   "tags": "cisco19 l3 switch with dual supervisor cisco lan switching local area network L3 Switch with Dual Supervisor",
+   "kind": "vertex",
+   "width": 50,
+   "height": 95,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=l3_switch_with_dual_supervisor;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:67"
+  },
+  {
+   "id": "cisco19LAN Switching-7-l2-modular",
+   "title": "L2 Modular",
+   "tags": "cisco19 l2 modular cisco lan switching local area network L2 Modular",
+   "kind": "vertex",
+   "width": 50,
+   "height": 102.49999999999999,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=l2_modular2;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:69"
+  },
+  {
+   "id": "cisco19LAN Switching-8-l3-modular",
+   "title": "L3 Modular",
+   "tags": "cisco19 l3 modular cisco lan switching local area network L3 Modular",
+   "kind": "vertex",
+   "width": 50,
+   "height": 65,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=l3_modular2;fillColorStyles=fillColor2;fillColor2=#e6a9ab;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:71"
+  },
+  {
+   "id": "cisco19LAN Switching-9-6500-vss",
+   "title": "6500 VSS",
+   "tags": "cisco19 6500 vss cisco lan switching local area network 6500 VSS",
+   "kind": "vertex",
+   "width": 50,
+   "height": 65,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=6500_vss2;fillColorStyles=fillColor2;fillColor2=#e6a9ab;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:73"
+  },
+  {
+   "id": "cisco19LAN Switching-10-secure-catalyst-switch-color",
+   "title": "Secure Catalyst Switch (color)",
+   "tags": "cisco19 secure catalyst switch color cisco lan switching local area network Secure Catalyst Switch (color)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=secure_catalyst_switch_color;fillColorStyles=fillColor2;fillColor2=#e6a9ab;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:75"
+  },
+  {
+   "id": "cisco19LAN Switching-11-secure-catalyst-switch-color",
+   "title": "Secure Catalyst Switch (color)",
+   "tags": "cisco19 secure catalyst switch color cisco lan switching local area network Secure Catalyst Switch (color)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=secure_catalyst_switch_color;fillColorStyles=fillColor2,fillColor3;fillColor2=#e6a9ab;fillColor3=#fafafa;fillColor=#fafafa;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:77"
+  },
+  {
+   "id": "cisco19LAN Switching-12-secure-catalyst-switch-subdued",
+   "title": "Secure Catalyst Switch (subdued)",
+   "tags": "cisco19 secure catalyst switch subdued cisco lan switching local area network Secure Catalyst Switch (subdued)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=secure_catalyst_switch_subdued;fillColorStyles=fillColor2;fillColor2=#005073;fillColor=#FAFAFA;strokeColor=#6696AB;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:79"
+  },
+  {
+   "id": "cisco19LAN Switching-13-secure-switch-color",
+   "title": "Secure Switch (color)",
+   "tags": "cisco19 secure switch color cisco lan switching local area network Secure Switch (color)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=secure_switch;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:81"
+  },
+  {
+   "id": "cisco19LAN Switching-14-secure-switch-subdued",
+   "title": "Secure Switch (subdued)",
+   "tags": "cisco19 secure switch subdued cisco lan switching local area network Secure Switch (subdued)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=secure_switch;fillColor=#FAFAFA;strokeColor=#6696AB;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:83"
+  },
+  {
+   "id": "cisco19LAN Switching-15-workgroup-switch-color",
+   "title": "Workgroup Switch (color)",
+   "tags": "cisco19 workgroup switch color cisco lan switching local area network Workgroup Switch (color)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=workgroup_switch;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:85"
+  },
+  {
+   "id": "cisco19LAN Switching-16-workgroup-switch-subdued",
+   "title": "Workgroup Switch (subdued)",
+   "tags": "cisco19 workgroup switch subdued cisco lan switching local area network Workgroup Switch (subdued)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=workgroup_switch;fillColor=#FAFAFA;strokeColor=#6696AB;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:87"
+  },
+  {
+   "id": "cisco19LAN Switching-17-secure-catalyst-switch-color",
+   "title": "Secure Catalyst Switch (color)",
+   "tags": "cisco19 secure catalyst switch color cisco lan switching local area network Secure Catalyst Switch (color)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=secure_catalyst_switch_color3;fillColorStyles=fillColor2,fontColor2;fillColor2=#e6a9ab;fontColor2=#ffffff;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:89"
+  },
+  {
+   "id": "cisco19LAN Switching-18-secure-catalyst-switch-color",
+   "title": "Secure Catalyst Switch (color)",
+   "tags": "cisco19 secure catalyst switch color cisco lan switching local area network Secure Catalyst Switch (color)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=secure_catalyst_switch_color2;fillColorStyles=fillColor2;fillColor2=#e6a9ab;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:91"
+  },
+  {
+   "id": "cisco19LAN Switching-19-secure-catalyst-switch-subdued",
+   "title": "Secure Catalyst Switch (subdued)",
+   "tags": "cisco19 secure catalyst switch subdued cisco lan switching local area network Secure Catalyst Switch (subdued)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=secure_catalyst_switch_subdued2;fillColorStyles=fontColor2;fontColor2=#ffffff;fillColor=#FAFAFA;strokeColor=#6696AB;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:93"
+  }
+ ]
+}

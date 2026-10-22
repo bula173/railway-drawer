@@ -1,0 +1,1366 @@
+{
+ "id": "mscaeEnterpriseFlat",
+ "title": "CAE / Enterprise (flat)",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:8",
+ "entries": [
+  {
+   "id": "mscaeEnterpriseFlat-0-federation-services-proxy",
+   "title": "Federation Services Proxy",
+   "tags": "mscae active directory ad fs federation services proxy ms microsoft cloud enterprise flat Federation Services Proxy",
+   "kind": "vertex",
+   "width": 40,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.d",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.d"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:123"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-1-federation-services",
+   "title": "Federation Services",
+   "tags": "mscae active directory ad fs federation services ms microsoft cloud enterprise flat Federation Services",
+   "kind": "vertex",
+   "width": 40,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.ad_fs",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.ad_fs"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:126"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-2-android-phone",
+   "title": "Android Phone",
+   "tags": "mscae android phone ms microsoft cloud enterprise flat Android Phone",
+   "kind": "vertex",
+   "width": 30,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.android_phone",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.android_phone"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:129"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-3-application",
+   "title": "Application",
+   "tags": "mscae application ms microsoft cloud enterprise flat Application",
+   "kind": "vertex",
+   "width": 50,
+   "height": 34,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.application",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.application"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:132"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-4-application-blank",
+   "title": "Application (blank)",
+   "tags": "mscae application blank ms microsoft cloud enterprise flat Application (blank)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 43,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.application_blank",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.application_blank"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:135"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-5-application-generic",
+   "title": "Application (generic)",
+   "tags": "mscae application generic ms microsoft cloud enterprise flat Application (generic)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 39,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.app_generic",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.app_generic"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:138"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-6-application-server",
+   "title": "Application Server",
+   "tags": "mscae application server ms microsoft cloud enterprise flat Application Server",
+   "kind": "vertex",
+   "width": 43,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.application_server",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.application_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:141"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-7-application-server",
+   "title": "Application Server",
+   "tags": "mscae application server ms microsoft cloud enterprise flat Application Server",
+   "kind": "vertex",
+   "width": 43,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.application_server2",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.application_server2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:144"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-8-pack",
+   "title": "Pack",
+   "tags": "mscae pack ms microsoft cloud enterprise flat Pack",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.pack",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.pack"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:147"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-9-backup-local",
+   "title": "Backup (local)",
+   "tags": "mscae backup local ms microsoft cloud enterprise flat Backup (local)",
+   "kind": "vertex",
+   "width": 49,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.backup_local",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.backup_local"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:150"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-10-backup-local",
+   "title": "Backup (local)",
+   "tags": "mscae backup local ms microsoft cloud enterprise flat Backup (local)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 40,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.backup_online",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.backup_online"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:153"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-11-calendar",
+   "title": "Calendar",
+   "tags": "mscae calendar ms microsoft cloud enterprise flat Calendar",
+   "kind": "vertex",
+   "width": 50,
+   "height": 41,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.calendar",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.calendar"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:156"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-12-certificate",
+   "title": "Certificate",
+   "tags": "mscae certificate ms microsoft cloud enterprise flat Certificate",
+   "kind": "vertex",
+   "width": 50,
+   "height": 40,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.azure.certificate",
+   "shapeNames": [
+    "mxgraph.azure.certificate"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:159"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-13-client-application",
+   "title": "Client Application",
+   "tags": "mscae client application ms microsoft cloud enterprise flat Client Application",
+   "kind": "vertex",
+   "width": 50,
+   "height": 32,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.client_application",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.client_application"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:162"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-14-cloud",
+   "title": "Cloud",
+   "tags": "mscae cloud ms microsoft cloud enterprise flat Cloud",
+   "kind": "vertex",
+   "width": 50,
+   "height": 32,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.azure.cloud",
+   "shapeNames": [
+    "mxgraph.azure.cloud"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:165"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-15-cloud",
+   "title": "Cloud",
+   "tags": "mscae cloud ms microsoft cloud enterprise flat Cloud",
+   "kind": "vertex",
+   "width": 50,
+   "height": 31,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.internet",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.internet"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:168"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-16-cluster-server",
+   "title": "Cluster Server",
+   "tags": "mscae cluster server ms microsoft cloud enterprise flat Cluster Server",
+   "kind": "vertex",
+   "width": 40,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.cluster_server",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.cluster_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:171"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-17-code-file",
+   "title": "Code File",
+   "tags": "mscae code file ms microsoft cloud enterprise flat Code File",
+   "kind": "vertex",
+   "width": 49,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.code_file",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.code_file"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:174"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-18-connectors",
+   "title": "Connectors",
+   "tags": "mscae connectors ms microsoft cloud enterprise flat Connectors",
+   "kind": "vertex",
+   "width": 50,
+   "height": 34,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.connectors",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.connectors"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:177"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-19-database-generic",
+   "title": "Database (generic)",
+   "tags": "mscae database generic ms microsoft cloud enterprise flat Database (generic)",
+   "kind": "vertex",
+   "width": 37,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.database_generic",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.database_generic"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:180"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-20-database-server",
+   "title": "Database (server)",
+   "tags": "mscae database server ms microsoft cloud enterprise flat Database (server)",
+   "kind": "vertex",
+   "width": 38,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.database_server",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.database_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:183"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-21-database-synchronization",
+   "title": "Database (synchronization)",
+   "tags": "mscae database synchronization ms microsoft cloud enterprise flat Database (synchronization)",
+   "kind": "vertex",
+   "width": 39,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.database_synchronization",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.database_synchronization"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:186"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-22-device",
+   "title": "Device",
+   "tags": "mscae device ms microsoft cloud enterprise flat Device",
+   "kind": "vertex",
+   "width": 50,
+   "height": 26,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.device",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.device"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:189"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-23-direct-access-feature",
+   "title": "Direct Access (feature)",
+   "tags": "mscae direct access feature ms microsoft cloud enterprise flat Direct Access (feature)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 44,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.direct_access_feature",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.direct_access_feature"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:192"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-24-document-db-file",
+   "title": "Document DB file",
+   "tags": "mscae documentdb document db database file ms microsoft cloud enterprise flat Document DB file",
+   "kind": "vertex",
+   "width": 47,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.azure.code_file",
+   "shapeNames": [
+    "mxgraph.azure.code_file"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:195"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-25-document",
+   "title": "Document",
+   "tags": "mscae document ms microsoft cloud enterprise flat Document",
+   "kind": "vertex",
+   "width": 40,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.document",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.document"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:198"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-26-domain-controller",
+   "title": "Domain Controller",
+   "tags": "mscae domain controller ms microsoft cloud enterprise flat Domain Controller",
+   "kind": "vertex",
+   "width": 36,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.domain_controller",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.domain_controller"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:201"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-27-enterprise-building",
+   "title": "Enterprise Building",
+   "tags": "mscae enterprise building ms microsoft cloud enterprise flat Enterprise Building",
+   "kind": "vertex",
+   "width": 30,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.azure.enterprise",
+   "shapeNames": [
+    "mxgraph.azure.enterprise"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:204"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-28-file-general",
+   "title": "File (general)",
+   "tags": "mscae file ms microsoft cloud enterprise flat File (general)",
+   "kind": "vertex",
+   "width": 47,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.azure.file",
+   "shapeNames": [
+    "mxgraph.azure.file"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:207"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-29-filter",
+   "title": "Filter",
+   "tags": "mscae filter ms microsoft cloud enterprise flat Filter",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.filter",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.filter"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:210"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-30-firewall",
+   "title": "Firewall",
+   "tags": "mscae firewall ms microsoft cloud enterprise flat Firewall",
+   "kind": "vertex",
+   "width": 50,
+   "height": 44,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.firewall",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.firewall"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:213"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-31-folder",
+   "title": "Folder",
+   "tags": "mscae folder ms microsoft cloud enterprise flat Folder",
+   "kind": "vertex",
+   "width": 50,
+   "height": 43,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.folder",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.folder"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:216"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-32-gateway",
+   "title": "Gateway",
+   "tags": "mscae gateway ms microsoft cloud enterprise flat Gateway",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.gateway",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:219"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-33-graph",
+   "title": "Graph",
+   "tags": "mscae graph ms microsoft cloud enterprise flat Graph",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.general.graph",
+   "shapeNames": [
+    "mxgraph.mscae.general.graph"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:222"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-34-health-monitoring",
+   "title": "Health Monitoring",
+   "tags": "mscae health monitoring ms microsoft cloud enterprise flat Health Monitoring",
+   "kind": "vertex",
+   "width": 50,
+   "height": 42,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.azure.health_monitoring",
+   "shapeNames": [
+    "mxgraph.azure.health_monitoring"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:225"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-35-healthy",
+   "title": "Healthy",
+   "tags": "mscae healthy ms microsoft cloud enterprise flat Healthy",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.azure.healthy",
+   "shapeNames": [
+    "mxgraph.azure.healthy"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:228"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-36-import-generic",
+   "title": "Import (generic)",
+   "tags": "mscae import generic ms microsoft cloud enterprise flat Import (generic)",
+   "kind": "vertex",
+   "width": 40,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.import_generic",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.import_generic"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:231"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-37-internet-hollow",
+   "title": "Internet (hollow)",
+   "tags": "mscae internet hollow ms microsoft cloud enterprise flat Internet (hollow)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 31,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.internet_hollow",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.internet_hollow"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:234"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-38-internet",
+   "title": "Internet",
+   "tags": "mscae internet ms microsoft cloud enterprise flat Internet",
+   "kind": "vertex",
+   "width": 50,
+   "height": 31,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.internet",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.internet"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:237"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-39-key-permissions",
+   "title": "Key, Permissions",
+   "tags": "mscae key permissions ms microsoft cloud enterprise flat Key, Permissions",
+   "kind": "vertex",
+   "width": 26,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.key_permissions",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.key_permissions"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:240"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-40-keyboard",
+   "title": "Keyboard",
+   "tags": "mscae keyboard ms microsoft cloud enterprise flat Keyboard",
+   "kind": "vertex",
+   "width": 50,
+   "height": 30,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.keyboard",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.keyboard"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:243"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-41-laptop",
+   "title": "Laptop",
+   "tags": "mscae laptop ms microsoft cloud enterprise flat Laptop",
+   "kind": "vertex",
+   "width": 50,
+   "height": 30,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.azure.laptop",
+   "shapeNames": [
+    "mxgraph.azure.laptop"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:246"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-42-load-balancer-generic",
+   "title": "Load Balancer (generic)",
+   "tags": "mscae load balancer generic ms microsoft cloud enterprise flat Load Balancer (generic)",
+   "kind": "vertex",
+   "width": 37,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.azure.load_balancer_generic",
+   "shapeNames": [
+    "mxgraph.azure.load_balancer_generic"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:249"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-43-load-testing",
+   "title": "Load Testing",
+   "tags": "mscae load testing ms microsoft cloud enterprise flat Load Testing",
+   "kind": "vertex",
+   "width": 48,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.load_testing",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.load_testing"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:252"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-44-lock-unlocked",
+   "title": "Lock (unlocked)",
+   "tags": "mscae lock unlocked unprotected accessible ms microsoft cloud enterprise flat Lock (unlocked)",
+   "kind": "vertex",
+   "width": 37,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.lock_unlocked",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.lock_unlocked"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:255"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-45-lock-protected",
+   "title": "Lock, protected",
+   "tags": "mscae lock protected ms microsoft cloud enterprise flat Lock, protected",
+   "kind": "vertex",
+   "width": 39,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.lock",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.lock"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:258"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-46-maintenance",
+   "title": "Maintenance",
+   "tags": "mscae maintenance ms microsoft cloud enterprise flat Maintenance",
+   "kind": "vertex",
+   "width": 39,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.maintenance",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.maintenance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:261"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-47-management-console",
+   "title": "Management Console",
+   "tags": "mscae management console ms microsoft cloud enterprise flat Management Console",
+   "kind": "vertex",
+   "width": 50,
+   "height": 34,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.management_console;",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.management_console"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:264"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-48-message",
+   "title": "Message",
+   "tags": "mscae message ms microsoft cloud enterprise flat Message",
+   "kind": "vertex",
+   "width": 50,
+   "height": 37,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.azure.message2;",
+   "shapeNames": [
+    "mxgraph.azure.message2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:267"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-49-monitor-running-apps",
+   "title": "Monitor Running Apps",
+   "tags": "mscae monitor running apps ms microsoft cloud enterprise flat Monitor Running Apps",
+   "kind": "vertex",
+   "width": 50,
+   "height": 39,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.monitor_running_apps",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.monitor_running_apps"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:270"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-50-monitor",
+   "title": "Monitor",
+   "tags": "mscae monitor computer ms microsoft cloud enterprise flat Monitor",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.azure.computer",
+   "shapeNames": [
+    "mxgraph.azure.computer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:273"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-51-mouse",
+   "title": "Mouse",
+   "tags": "mscae mouse ms microsoft cloud enterprise flat Mouse",
+   "kind": "vertex",
+   "width": 30,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.mouse",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.mouse"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:276"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-52-network-card",
+   "title": "Network Card",
+   "tags": "mscae network card ms microsoft cloud enterprise flat Network Card",
+   "kind": "vertex",
+   "width": 50,
+   "height": 35,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.network_card",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.network_card"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:279"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-53-not-allowed",
+   "title": "Not Allowed",
+   "tags": "mscae not allowed ms microsoft cloud enterprise flat Not Allowed",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.mscae.enterprise.not_allowed;fillColor=#EA1C24;",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.not_allowed"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:282"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-54-performance-monitor",
+   "title": "Performance Monitor",
+   "tags": "mscae performance monitor ms microsoft cloud enterprise flat Performance Monitor",
+   "kind": "vertex",
+   "width": 50,
+   "height": 36,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.performance_monitor",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.performance_monitor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:285"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-55-performance",
+   "title": "Performance",
+   "tags": "mscae performance ms microsoft cloud enterprise flat Performance",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.performance",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.performance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:288"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-56-mobile",
+   "title": "Mobile",
+   "tags": "mscae mobile ms microsoft cloud enterprise flat Mobile",
+   "kind": "vertex",
+   "width": 35,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.azure.mobile",
+   "shapeNames": [
+    "mxgraph.azure.mobile"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:291"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-57-plug-and-play",
+   "title": "Plug and Play",
+   "tags": "mscae plug and play ms microsoft cloud enterprise flat Plug and Play",
+   "kind": "vertex",
+   "width": 40,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.plug_and_play",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.plug_and_play"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:294"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-58-powerpoint",
+   "title": "PowerPoint",
+   "tags": "mscae powerpoint ms microsoft cloud enterprise flat PowerPoint",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.mscae.other.powerpoint;fillColor=#DE5D24;",
+   "shapeNames": [
+    "mxgraph.mscae.other.powerpoint"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:297"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-59-powershell-file",
+   "title": "PowerShell file",
+   "tags": "mscae powershell file ms microsoft cloud enterprise flat PowerShell file",
+   "kind": "vertex",
+   "width": 47,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.azure.powershell_file",
+   "shapeNames": [
+    "mxgraph.azure.powershell_file"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:300"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-60-protocol-stack",
+   "title": "Protocol Stack",
+   "tags": "mscae protocol stack ms microsoft cloud enterprise flat Protocol Stack",
+   "kind": "vertex",
+   "width": 50,
+   "height": 34,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.protocol_stack",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.protocol_stack"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:303"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-61-queue-generic",
+   "title": "Queue Generic",
+   "tags": "mscae queue generic ms microsoft cloud enterprise flat Queue Generic",
+   "kind": "vertex",
+   "width": 50,
+   "height": 15,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.azure.queue_generic",
+   "shapeNames": [
+    "mxgraph.azure.queue_generic"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:306"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-62-rms-connector",
+   "title": "RMS Connector",
+   "tags": "mscae rms connector ms microsoft cloud enterprise flat RMS Connector",
+   "kind": "vertex",
+   "width": 38,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.rms_connector",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.rms_connector"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:309"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-63-router",
+   "title": "Router",
+   "tags": "mscae router ms microsoft cloud enterprise flat Router",
+   "kind": "vertex",
+   "width": 50,
+   "height": 39,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.router",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:312"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-64-router",
+   "title": "Router",
+   "tags": "mscae router ms microsoft cloud enterprise flat Router",
+   "kind": "vertex",
+   "width": 50,
+   "height": 39,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.router",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:315"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-65-rpd-remoting-file",
+   "title": "RPD Remoting file",
+   "tags": "mscae rpd remoting file ms microsoft cloud enterprise flat RPD Remoting file",
+   "kind": "vertex",
+   "width": 48,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.azure.rdp_remoting_file;fillColor=#0078D7;",
+   "shapeNames": [
+    "mxgraph.azure.rdp_remoting_file"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:318"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-66-script-file",
+   "title": "Script file",
+   "tags": "mscae script file ms microsoft cloud enterprise flat Script file",
+   "kind": "vertex",
+   "width": 47,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.azure.script_file",
+   "shapeNames": [
+    "mxgraph.azure.script_file"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:321"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-67-secure-virtual-machine",
+   "title": "Secure Virtual Machine",
+   "tags": "mscae secure virtual machine ms microsoft cloud enterprise flat Secure Virtual Machine",
+   "kind": "vertex",
+   "width": 50,
+   "height": 38,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.secure_virtual_machine",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.secure_virtual_machine"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:324"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-68-server-blade",
+   "title": "Server (blade)",
+   "tags": "mscae server ms microsoft cloud enterprise flat Server (blade)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 15,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.azure.server",
+   "shapeNames": [
+    "mxgraph.azure.server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:327"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-69-server-generic",
+   "title": "Server (generic)",
+   "tags": "mscae server generic ms microsoft cloud enterprise flat Server (generic)",
+   "kind": "vertex",
+   "width": 24,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.server_generic",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.server_generic"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:330"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-70-server-directory",
+   "title": "Server Directory",
+   "tags": "mscae server directory ms microsoft cloud enterprise flat Server Directory",
+   "kind": "vertex",
+   "width": 36,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.server_directory",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.server_directory"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:333"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-71-server-farm",
+   "title": "Server Farm",
+   "tags": "mscae server farm ms microsoft cloud enterprise flat Server Farm",
+   "kind": "vertex",
+   "width": 50,
+   "height": 32,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.server_farm",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.server_farm"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:336"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-72-server-rack",
+   "title": "Server Rack",
+   "tags": "mscae server rack ms microsoft cloud enterprise flat Server Rack",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.azure.server_rack",
+   "shapeNames": [
+    "mxgraph.azure.server_rack"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:339"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-73-settings",
+   "title": "Settings",
+   "tags": "mscae settings ms microsoft cloud enterprise flat Settings",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.settings",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.settings"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:342"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-74-shared-folder",
+   "title": "Shared Folder",
+   "tags": "mscae shared folder ms microsoft cloud enterprise flat Shared Folder",
+   "kind": "vertex",
+   "width": 43,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.shared_folder",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.shared_folder"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:345"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-75-smartcard",
+   "title": "Smartcard",
+   "tags": "mscae smartcard ms microsoft cloud enterprise flat Smartcard",
+   "kind": "vertex",
+   "width": 50,
+   "height": 32,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.smartcard",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.smartcard"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:348"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-76-startup-task",
+   "title": "Startup Task",
+   "tags": "mscae startup task ms microsoft cloud enterprise flat Startup Task",
+   "kind": "vertex",
+   "width": 48,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.azure.startup_task;fillColor=#0078D7;",
+   "shapeNames": [
+    "mxgraph.azure.startup_task"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:351"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-77-storage",
+   "title": "Storage",
+   "tags": "mscae storage ms microsoft cloud enterprise flat Storage",
+   "kind": "vertex",
+   "width": 50,
+   "height": 41,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.storage",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.storage"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:354"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-78-table",
+   "title": "Table",
+   "tags": "mscae table ms microsoft cloud enterprise flat Table",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.table",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.table"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:357"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-79-tablet",
+   "title": "Tablet",
+   "tags": "mscae tablet ms microsoft cloud enterprise flat Tablet",
+   "kind": "vertex",
+   "width": 50,
+   "height": 37,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.azure.tablet;",
+   "shapeNames": [
+    "mxgraph.azure.tablet"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:360"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-80-tool",
+   "title": "Tool",
+   "tags": "mscae tool ms microsoft cloud enterprise flat Tool",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.tool;",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.tool"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:363"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-81-triggers",
+   "title": "Triggers",
+   "tags": "mscae triggers ms microsoft cloud enterprise flat Triggers",
+   "kind": "vertex",
+   "width": 47,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.mscae.enterprise.triggers;fillColor=#0078D7;",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.triggers"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:366"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-82-tunnel",
+   "title": "Tunnel",
+   "tags": "mscae tunnel ms microsoft cloud enterprise flat Tunnel",
+   "kind": "vertex",
+   "width": 50,
+   "height": 9,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.general.tunnel",
+   "shapeNames": [
+    "mxgraph.mscae.general.tunnel"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:369"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-83-udf-function",
+   "title": "UDF Function",
+   "tags": "mscae udf function ms microsoft cloud enterprise flat UDF Function",
+   "kind": "vertex",
+   "width": 47,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.mscae.enterprise.udf_function;fillColor=#0078D7;",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.udf_function"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:372"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-84-unhealthy",
+   "title": "Unhealthy",
+   "tags": "mscae unhealthy ms microsoft cloud enterprise flat Unhealthy",
+   "kind": "vertex",
+   "width": 50,
+   "height": 41,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.mscae.enterprise.unhealthy;fillColor=#0078D7;",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.unhealthy"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:375"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-85-unhealthy",
+   "title": "Unhealthy",
+   "tags": "mscae unhealthy ms microsoft cloud enterprise flat Unhealthy",
+   "kind": "vertex",
+   "width": 50,
+   "height": 41,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.unhealthy",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.unhealthy"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:378"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-86-usb",
+   "title": "USB",
+   "tags": "mscae usb ms microsoft cloud enterprise flat USB",
+   "kind": "vertex",
+   "width": 50,
+   "height": 23,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.usb",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.usb"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:381"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-87-user-enterprise",
+   "title": "User (enterprise)",
+   "tags": "mscae user ms microsoft cloud enterprise flat User (enterprise)",
+   "kind": "vertex",
+   "width": 47,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.azure.user",
+   "shapeNames": [
+    "mxgraph.azure.user"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:384"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-88-user-permissions",
+   "title": "User permissions",
+   "tags": "mscae user permissions ms microsoft cloud enterprise flat User permissions",
+   "kind": "vertex",
+   "width": 47,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.mscae.enterprise.user_permissions;fillColor=#0078D7;",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.user_permissions"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:387"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-89-video",
+   "title": "Video",
+   "tags": "mscae video ms microsoft cloud enterprise flat Video",
+   "kind": "vertex",
+   "width": 49,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.general.video",
+   "shapeNames": [
+    "mxgraph.mscae.general.video"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:390"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-90-virtual-machine",
+   "title": "Virtual Machine",
+   "tags": "mscae virtual machine ms microsoft cloud enterprise flat Virtual Machine",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.azure.virtual_machine_feature",
+   "shapeNames": [
+    "mxgraph.azure.virtual_machine_feature"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:393"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-91-web-server",
+   "title": "Web Server",
+   "tags": "mscae web server ms microsoft cloud enterprise flat Web Server",
+   "kind": "vertex",
+   "width": 38,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.web_server",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.web_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:396"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-92-website-generic",
+   "title": "Website (generic)",
+   "tags": "mscae website generic ms microsoft cloud enterprise flat Website (generic)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 44,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.mscae.enterprise.website_generic;fillColor=#7D7D7D;",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.website_generic"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:399"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-93-windows-server",
+   "title": "Windows Server",
+   "tags": "mscae windows server ms microsoft cloud enterprise flat Windows Server",
+   "kind": "vertex",
+   "width": 39,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.windows_server",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.windows_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:402"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-94-wireless-connection",
+   "title": "Wireless Connection",
+   "tags": "mscae wireless connection ms microsoft cloud enterprise flat Wireless Connection",
+   "kind": "vertex",
+   "width": 42,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.wireless_connection",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.wireless_connection"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:405"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-95-workstation-client",
+   "title": "Workstation Client",
+   "tags": "mscae workstation client ms microsoft cloud enterprise flat Workstation Client",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.workstation_client",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.workstation_client"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:408"
+  },
+  {
+   "id": "mscaeEnterpriseFlat-96-xml-web-service",
+   "title": "XML Web Service",
+   "tags": "mscae xml web service ms microsoft cloud enterprise flat XML Web Service",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#00188D;shape=mxgraph.mscae.enterprise.xml_web_service",
+   "shapeNames": [
+    "mxgraph.mscae.enterprise.xml_web_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:411"
+  }
+ ]
+}

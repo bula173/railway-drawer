@@ -1,0 +1,78 @@
+{
+ "id": "allied_telesisMedia Converters",
+ "title": "Allied Telesis / Media Converters",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:7",
+ "entries": [
+  {
+   "id": "allied_telesisMedia Converters-0-industrial-media-converter",
+   "title": "Industrial Media Converter",
+   "tags": "industrial media converter allied telesis Industrial Media Converter",
+   "kind": "vertex",
+   "width": 30,
+   "height": 57,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/media_converters/Industrial_Media_Converter.svg;points=[[0.5,0.043,0],[0.5,0.927,0],[0,0.568,0],[1,0.429,0],[0.999,0.068,0],[0.999,0.79,0],[0.005,0.93,0],[0.001,0.21,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:114"
+  },
+  {
+   "id": "allied_telesisMedia Converters-1-industrial-media-converter-poe",
+   "title": "Industrial Media Converter POE",
+   "tags": "industrial media converter poe allied telesis Industrial Media Converter POE",
+   "kind": "vertex",
+   "width": 30,
+   "height": 57,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/media_converters/Industrial_Media_Converter_POE.svg;points=[[0.5,0.043,0],[0.5,0.927,0],[0,0.568,0],[1,0.429,0],[0.999,0.068,0],[0.999,0.79,0],[0.005,0.93,0],[0.001,0.21,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:116"
+  },
+  {
+   "id": "allied_telesisMedia Converters-2-media-converter-modular",
+   "title": "Media Converter Modular",
+   "tags": "media converter modular allied telesis Media Converter Modular",
+   "kind": "vertex",
+   "width": 70.8,
+   "height": 54.6,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/media_converters/Media_Converter_Modular.svg;points=[[0.386,0,0],[0.613,0.997,0],[0,0.393,0],[1,0.602,0],[0.995,0.468,0],[0.995,0.74,0],[0.003,0.525,0],[0.003,0.26,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:118"
+  },
+  {
+   "id": "allied_telesisMedia Converters-3-media-converter-standalone",
+   "title": "Media Converter Standalone",
+   "tags": "media converter standalone allied telesis Media Converter Standalone",
+   "kind": "vertex",
+   "width": 45.6,
+   "height": 37.2,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/media_converters/Media_Converter_Standalone.svg;points=[[0.468,0,0],[0.527,1,0],[0,0.465,0],[0.998,0.543,0],[0.987,0.384,0],[0.99,0.705,0],[0.005,0.622,0],[0.008,0.304,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:120"
+  },
+  {
+   "id": "allied_telesisMedia Converters-4-media-converter-standalone-poe",
+   "title": "Media Converter Standalone POE",
+   "tags": "media converter standalone poe allied telesis Media Converter Standalone POE",
+   "kind": "vertex",
+   "width": 45.6,
+   "height": 37.2,
+   "style": "image;aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/media_converters/Media_Converter_Standalone_POE.svg;points=[[0.468,0,0],[0.527,1,0],[0,0.465,0],[0.998,0.544,0],[0.987,0.384,0],[0.99,0.705,0],[0.005,0.622,0],[0.008,0.304,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AlliedTelesis.js:122"
+  }
+ ]
+}

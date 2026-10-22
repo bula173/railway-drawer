@@ -1,0 +1,274 @@
+{
+ "id": "azure2Storage",
+ "title": "Azure / Storage",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Azure2.js:8",
+ "entries": [
+  {
+   "id": "azure2Storage-0-data-box",
+   "title": "Data Box",
+   "tags": "azure2 data box azure storage  Data Box",
+   "kind": "vertex",
+   "width": 71,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/storage/Data_Box.svg;points=[[0.514,0,0],[0.526,1,0],[0,0.465,0],[1,0.508,0],[0.717,0.079,0],[0.922,0.684,0],[0.098,0.681,0],[0.095,0.251,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2041"
+  },
+  {
+   "id": "azure2Storage-1-data-box-edge",
+   "title": "Data Box Edge",
+   "tags": "azure2 data box edge azure storage  Data Box Edge",
+   "kind": "vertex",
+   "width": 67,
+   "height": 48,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/storage/Data_Box_Edge.svg;points=[[0.546,0,0],[0.5,0.923,0],[0.058,0.5,0],[0.975,0.5,0],[0.715,0.074,0],[0.915,0.867,0],[0.09,0.951,0],[0.38,0.07,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2043"
+  },
+  {
+   "id": "azure2Storage-2-data-lake-storage-gen1",
+   "title": "Data Lake Storage Gen1",
+   "tags": "azure2 data lake storage gen1 azure storage  Data Lake Storage Gen1",
+   "kind": "vertex",
+   "width": 64,
+   "height": 52,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/storage/Data_Lake_Storage_Gen1.svg;points=[[0.5,0.083,0],[0.5,1,0],[0.003,0.498,0],[0.998,0.554,0],[0.99,0.114,0],[0.987,0.996,0],[0.013,0.996,0],[0.013,0.004,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2045"
+  },
+  {
+   "id": "azure2Storage-3-data-share-invitations",
+   "title": "Data Share Invitations",
+   "tags": "azure2 data share invitations azure storage  Data Share Invitations",
+   "kind": "vertex",
+   "width": 68,
+   "height": 44.800000000000004,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/storage/Data_Share_Invitations.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.987,0.008,0],[0.987,0.992,0],[0.013,0.992,0],[0.013,0.008,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2047"
+  },
+  {
+   "id": "azure2Storage-4-data-shares",
+   "title": "Data Shares",
+   "tags": "azure2 data shares azure storage  Data Shares",
+   "kind": "vertex",
+   "width": 64,
+   "height": 55.00000000000001,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/storage/Data_Shares.svg;points=[[0.5,0.026,0],[0.5,0.974,0],[0,0.499,0],[0.791,0.5,0],[0.97,0.108,0],[0.955,0.953,0],[0.025,0.915,0],[0.025,0.085,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2049"
+  },
+  {
+   "id": "azure2Storage-5-data-virtualization",
+   "title": "Data Virtualization",
+   "tags": "azure2 data virtualization azure storage  Data Virtualization",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/storage/Data_Virtualization.svg;points=[[0.17,0,0],[0.83,1,0],[0,0.17,0],[1,0.83,0],[0.802,0.19,0],[0.962,0.94,0],[0.19,0.802,0],[0.06,0.038,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2051"
+  },
+  {
+   "id": "azure2Storage-6-fileshare",
+   "title": "Fileshare",
+   "tags": "azure2 fileshare azure storage  Fileshare",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/storage/Azure_Fileshare.svg;points=[[0.5,0.214,0],[0.5,0.791,0],[0,0.635,0],[0.981,0.5,0],[0.925,0.015,0],[0.985,0.97,0],[0.035,0.712,0],[0.283,0.28,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2053"
+  },
+  {
+   "id": "azure2Storage-7-hcp-cache",
+   "title": "HCP Cache",
+   "tags": "azure2 hcp cache azure storage  HCP Cache",
+   "kind": "vertex",
+   "width": 68,
+   "height": 63,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/storage/Azure_HCP_Cache.svg;points=[[0.512,0.005,0],[0.5,0.995,0],[0,0.496,0],[1,0.54,0],[0.712,0.084,0],[0.92,0.989,0],[0.09,0.711,0],[0.093,0.281,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2055"
+  },
+  {
+   "id": "azure2Storage-8-import-export-jobs",
+   "title": "Import Export Jobs",
+   "tags": "azure2 import export jobs azure storage  Import Export Jobs",
+   "kind": "vertex",
+   "width": 64,
+   "height": 67,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/storage/Import_Export_Jobs.svg;points=[[0.517,0,0],[0.517,1,0],[0,0.427,0],[1,0.466,0],[0.738,0.09,0],[0.952,0.595,0],[0.068,0.592,0],[0.061,0.27,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2057"
+  },
+  {
+   "id": "azure2Storage-9-netapp-files",
+   "title": "NetApp Files",
+   "tags": "azure2 netapp files azure storage  NetApp Files",
+   "kind": "vertex",
+   "width": 65,
+   "height": 52,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/storage/Azure_NetApp_Files.svg;points=[[0.5,0,0],[0.5,1,0],[0.003,0.5,0],[0.998,0.5,0],[0.985,0.007,0],[0.985,0.993,0],[0.015,0.993,0],[0.015,0.007,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2059"
+  },
+  {
+   "id": "azure2Storage-10-recovery-services-vaults",
+   "title": "Recovery Services Vaults",
+   "tags": "azure2 recovery services vaults azure storage  Recovery Services Vaults",
+   "kind": "vertex",
+   "width": 69,
+   "height": 60,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/storage/Recovery_Services_Vaults.svg;points=[[0.5,0.043,0],[0.405,1,0],[0,0.763,0],[1,0.432,0],[0.775,0.058,0],[0.72,0.954,0],[0.078,0.945,0],[0.305,0.225,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2061"
+  },
+  {
+   "id": "azure2Storage-11-stack-edge",
+   "title": "Stack Edge",
+   "tags": "azure2 stack edge azure storage  Stack Edge",
+   "kind": "vertex",
+   "width": 68,
+   "height": 48,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/storage/Azure_Stack_Edge.svg;points=[[0.514,0,0],[0.5,1,0],[0.018,0.5,0],[0.95,0.5,0],[0.682,0.068,0],[0.902,0.939,0],[0.118,0.939,0],[0.345,0.068,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2063"
+  },
+  {
+   "id": "azure2Storage-12-storage-accounts",
+   "title": "Storage Accounts",
+   "tags": "azure2 storage accounts azure storage  Storage Accounts",
+   "kind": "vertex",
+   "width": 65,
+   "height": 52,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/storage/Storage_Accounts.svg;points=[[0.5,0,0],[0.5,1,0],[0.003,0.5,0],[0.998,0.5,0],[0.985,0.007,0],[0.985,0.993,0],[0.015,0.993,0],[0.015,0.007,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2065"
+  },
+  {
+   "id": "azure2Storage-13-storage-accounts-classic",
+   "title": "Storage Accounts (Classic)",
+   "tags": "azure2 storage accounts classic azure storage  Storage Accounts (Classic)",
+   "kind": "vertex",
+   "width": 65,
+   "height": 52,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/storage/Storage_Accounts_Classic.svg;points=[[0.5,0,0],[0.5,1,0],[0.003,0.5,0],[0.998,0.5,0],[0.985,0.007,0],[0.985,0.993,0],[0.015,0.993,0],[0.015,0.007,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2067"
+  },
+  {
+   "id": "azure2Storage-14-storage-explorer",
+   "title": "Storage Explorer",
+   "tags": "azure2 storage explorer azure storage  Storage Explorer",
+   "kind": "vertex",
+   "width": 58.4,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/storage/Storage_Explorer.svg;points=[[0.157,0,0],[0.499,1,0],[0,0.496,0],[1,0.5,0],[0.994,0.375,0],[0.994,0.99,0],[0.003,0.987,0],[0.003,0.005,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2069"
+  },
+  {
+   "id": "azure2Storage-15-storage-hubs",
+   "title": "Storage Hubs",
+   "tags": "azure2 storage hubs azure storage  Storage Hubs",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/storage/Storage_Hubs.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.937,0.04,0],[0.957,0.94,0],[0.04,0.937,0],[0.06,0.043,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2071"
+  },
+  {
+   "id": "azure2Storage-16-storage-sync-services",
+   "title": "Storage Sync Services",
+   "tags": "azure2 storage sync services azure storage  Storage Sync Services",
+   "kind": "vertex",
+   "width": 72,
+   "height": 60,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/storage/Storage_Sync_Services.svg;points=[[0.514,0,0],[0.532,1,0],[0,0.535,0],[1,0.584,0],[0.702,0.076,0],[0.912,0.792,0],[0.1,0.777,0],[0.093,0.301,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2073"
+  },
+  {
+   "id": "azure2Storage-17-storsimple-data-managers",
+   "title": "StorSimple Data Managers",
+   "tags": "azure2 storsimple data managers azure storage  StorSimple Data Managers",
+   "kind": "vertex",
+   "width": 48,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/storage/StorSimple_Data_Managers.svg;points=[[0.492,0,0],[0.505,1,0],[0,0.499,0],[1,0.504,0],[0.976,0.095,0],[0.98,0.905,0],[0.014,0.897,0],[0.014,0.1,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2075"
+  },
+  {
+   "id": "azure2Storage-18-storsimple-device-managers",
+   "title": "StorSimple Device Managers",
+   "tags": "azure2 storsimple device managers azure storage  StorSimple Device Managers",
+   "kind": "vertex",
+   "width": 70,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/storage/StorSimple_Device_Managers.svg;points=[[0.514,0,0],[0.631,1,0],[0,0.486,0],[1,0.531,0],[0.702,0.069,0],[0.74,1,0],[0.1,0.707,0],[0.09,0.276,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:2077"
+  }
+ ]
+}

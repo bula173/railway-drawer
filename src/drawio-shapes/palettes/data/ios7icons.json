@@ -1,0 +1,1534 @@
+{
+ "id": "ios7icons",
+ "title": "iOS Icons",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Ios7.js:8",
+ "entries": [
+  {
+   "id": "ios7icons-0-add",
+   "title": "Add",
+   "tags": "ios7 icons add ios icon  Add",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.add;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.add"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:28"
+  },
+  {
+   "id": "ios7icons-1-alarm-clock",
+   "title": "Alarm Clock",
+   "tags": "ios7 icons alarm clock ios icon  Alarm Clock",
+   "kind": "vertex",
+   "width": 27,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.alarm_clock;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.alarm_clock"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:29"
+  },
+  {
+   "id": "ios7icons-2-back",
+   "title": "Back",
+   "tags": "ios7 icons back ios icon  Back",
+   "kind": "vertex",
+   "width": 30,
+   "height": 25.5,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.back;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.back"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:30"
+  },
+  {
+   "id": "ios7icons-3-backward",
+   "title": "Backward",
+   "tags": "ios7 icons backward ios icon  Backward",
+   "kind": "vertex",
+   "width": 30,
+   "height": 16.8,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.backward;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.backward"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:31"
+  },
+  {
+   "id": "ios7icons-4-bag",
+   "title": "Bag",
+   "tags": "ios7 icons bag ios icon  Bag",
+   "kind": "vertex",
+   "width": 21,
+   "height": 21,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.bag;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.bag"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:32"
+  },
+  {
+   "id": "ios7icons-5-basket-cancel",
+   "title": "Basket Cancel",
+   "tags": "ios7 icons basket cancel ios icon  Basket Cancel",
+   "kind": "vertex",
+   "width": 30,
+   "height": 12,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.basket_cancel;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.basket_cancel"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:33"
+  },
+  {
+   "id": "ios7icons-6-basketball",
+   "title": "Basketball",
+   "tags": "ios7 icons basketball ios icon  Basketball",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.basketball;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.basketball"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:34"
+  },
+  {
+   "id": "ios7icons-7-battery",
+   "title": "Battery",
+   "tags": "ios7 icons battery ios icon  Battery",
+   "kind": "vertex",
+   "width": 30,
+   "height": 12,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.battery;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.battery"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:35"
+  },
+  {
+   "id": "ios7icons-8-bell",
+   "title": "Bell",
+   "tags": "ios7 icons bell ios icon  Bell",
+   "kind": "vertex",
+   "width": 24,
+   "height": 23.099999999999998,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.bell;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.bell"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:36"
+  },
+  {
+   "id": "ios7icons-9-bluetooth",
+   "title": "Bluetooth",
+   "tags": "ios7 icons bluetooth ios icon  Bluetooth",
+   "kind": "vertex",
+   "width": 15,
+   "height": 28.799999999999997,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.bluetooth;pointerEvents=1",
+   "shapeNames": [
+    "mxgraph.ios7.icons.bluetooth"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:37"
+  },
+  {
+   "id": "ios7icons-10-book",
+   "title": "Book",
+   "tags": "ios7 icons book ios icon  Book",
+   "kind": "vertex",
+   "width": 30,
+   "height": 25.5,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.book;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.book"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:38"
+  },
+  {
+   "id": "ios7icons-11-bookmark",
+   "title": "Bookmark",
+   "tags": "ios7 icons bookmark ios icon  Bookmark",
+   "kind": "vertex",
+   "width": 18,
+   "height": 24,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.bookmark;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.bookmark"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:39"
+  },
+  {
+   "id": "ios7icons-12-box",
+   "title": "Box",
+   "tags": "ios7 icons box ios icon  Box",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.box;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.box"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:40"
+  },
+  {
+   "id": "ios7icons-13-briefcase",
+   "title": "Briefcase",
+   "tags": "ios7 icons briefcase ios icon  Briefcase",
+   "kind": "vertex",
+   "width": 30,
+   "height": 20.099999999999998,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.briefcase;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.briefcase"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:41"
+  },
+  {
+   "id": "ios7icons-14-calculator",
+   "title": "Calculator",
+   "tags": "ios7 icons calculator ios icon  Calculator",
+   "kind": "vertex",
+   "width": 24,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.calculator;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.calculator"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:42"
+  },
+  {
+   "id": "ios7icons-15-calendar",
+   "title": "Calendar",
+   "tags": "ios7 icons calendar ios icon  Calendar",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.calendar2;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.calendar2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:43"
+  },
+  {
+   "id": "ios7icons-16-camera",
+   "title": "Camera",
+   "tags": "ios7 icons camera ios icon  Camera",
+   "kind": "vertex",
+   "width": 30,
+   "height": 17.4,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.camera;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.camera"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:44"
+  },
+  {
+   "id": "ios7icons-17-chat",
+   "title": "Chat",
+   "tags": "ios7 icons chat ios icon  Chat",
+   "kind": "vertex",
+   "width": 30,
+   "height": 18,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.chat;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.chat"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:45"
+  },
+  {
+   "id": "ios7icons-18-clock",
+   "title": "Clock",
+   "tags": "ios7 icons clock ios icon  Clock",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.clock;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.clock"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:46"
+  },
+  {
+   "id": "ios7icons-19-cloud",
+   "title": "Cloud",
+   "tags": "ios7 icons cloud ios icon  Cloud",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.cloud;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.cloud"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:47"
+  },
+  {
+   "id": "ios7icons-20-compose",
+   "title": "Compose",
+   "tags": "ios7 icons compose ios icon  Compose",
+   "kind": "vertex",
+   "width": 29.099999999999998,
+   "height": 29.099999999999998,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.compose;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.compose"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:48"
+  },
+  {
+   "id": "ios7icons-21-controls",
+   "title": "Controls",
+   "tags": "ios7 icons controls ios icon  Controls",
+   "kind": "vertex",
+   "width": 27,
+   "height": 24,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.controls2;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.controls2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:49"
+  },
+  {
+   "id": "ios7icons-22-credit-card",
+   "title": "Credit Card",
+   "tags": "ios7 icons credit card ios icon  Credit Card",
+   "kind": "vertex",
+   "width": 30,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.credit_card;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.credit_card"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:50"
+  },
+  {
+   "id": "ios7icons-23-crop",
+   "title": "Crop",
+   "tags": "ios7 icons crop ios icon  Crop",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.crop;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.crop"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:51"
+  },
+  {
+   "id": "ios7icons-24-cube",
+   "title": "Cube",
+   "tags": "ios7 icons cube ios icon  Cube",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.cube;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.cube"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:52"
+  },
+  {
+   "id": "ios7icons-25-cup",
+   "title": "Cup",
+   "tags": "ios7 icons cup ios icon  Cup",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.cup;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.cup"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:53"
+  },
+  {
+   "id": "ios7icons-26-data",
+   "title": "Data",
+   "tags": "ios7 icons data ios icon  Data",
+   "kind": "vertex",
+   "width": 24,
+   "height": 29.099999999999998,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.data;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.data"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:54"
+  },
+  {
+   "id": "ios7icons-27-delete",
+   "title": "Delete",
+   "tags": "ios7 icons delete ios icon  Delete",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.delete;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.delete"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:55"
+  },
+  {
+   "id": "ios7icons-28-document",
+   "title": "Document",
+   "tags": "ios7 icons document ios icon  Document",
+   "kind": "vertex",
+   "width": 21,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.document;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.document"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:56"
+  },
+  {
+   "id": "ios7icons-29-documents",
+   "title": "Documents",
+   "tags": "ios7 icons documents ios icon  Documents",
+   "kind": "vertex",
+   "width": 22.5,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.documents;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.documents"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:57"
+  },
+  {
+   "id": "ios7icons-30-down",
+   "title": "Down",
+   "tags": "ios7 icons down ios icon  Down",
+   "kind": "vertex",
+   "width": 21,
+   "height": 25.5,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.down;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.down"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:58"
+  },
+  {
+   "id": "ios7icons-31-edit",
+   "title": "Edit",
+   "tags": "ios7 icons edit ios icon  Edit",
+   "kind": "vertex",
+   "width": 29.4,
+   "height": 29.4,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.edit;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.edit"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:59"
+  },
+  {
+   "id": "ios7icons-32-envelope-empty",
+   "title": "Envelope (Empty)",
+   "tags": "ios7 icons envelope (empty) ios icon  Envelope (Empty)",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.envelope_(empty);",
+   "shapeNames": [
+    "mxgraph.ios7.icons.envelope_(empty)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:60"
+  },
+  {
+   "id": "ios7icons-33-envelope-message",
+   "title": "Envelope (Message)",
+   "tags": "ios7 icons envelope (message) ios icon  Envelope (Message)",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.envelope_(message);",
+   "shapeNames": [
+    "mxgraph.ios7.icons.envelope_(message)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:61"
+  },
+  {
+   "id": "ios7icons-34-eye",
+   "title": "Eye",
+   "tags": "ios7 icons eye ios icon  Eye",
+   "kind": "vertex",
+   "width": 30,
+   "height": 14.1,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.eye;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.eye"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:62"
+  },
+  {
+   "id": "ios7icons-35-flag",
+   "title": "Flag",
+   "tags": "ios7 icons flag ios icon  Flag",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.flag;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.flag"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:63"
+  },
+  {
+   "id": "ios7icons-36-flash",
+   "title": "Flash",
+   "tags": "ios7 icons flash ios icon  Flash",
+   "kind": "vertex",
+   "width": 18,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.flash;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.flash"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:64"
+  },
+  {
+   "id": "ios7icons-37-flashlight",
+   "title": "Flashlight",
+   "tags": "ios7 icons flashlight ios icon  Flashlight",
+   "kind": "vertex",
+   "width": 15,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.flashlight;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.flashlight"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:65"
+  },
+  {
+   "id": "ios7icons-38-folder",
+   "title": "Folder",
+   "tags": "ios7 icons folder ios icon  Folder",
+   "kind": "vertex",
+   "width": 30,
+   "height": 19.5,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.folder;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.folder"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:66"
+  },
+  {
+   "id": "ios7icons-39-folders",
+   "title": "Folders",
+   "tags": "ios7 icons folders ios icon  Folders",
+   "kind": "vertex",
+   "width": 30,
+   "height": 25.5,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.folders;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.folders"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:67"
+  },
+  {
+   "id": "ios7icons-40-folders",
+   "title": "Folders",
+   "tags": "ios7 icons folders 2 ios icon  Folders",
+   "kind": "vertex",
+   "width": 30,
+   "height": 22.5,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.folders_2;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.folders_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:68"
+  },
+  {
+   "id": "ios7icons-41-forward",
+   "title": "Forward",
+   "tags": "ios7 icons forward ios icon  Forward",
+   "kind": "vertex",
+   "width": 30,
+   "height": 16.8,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.forward;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.forward"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:69"
+  },
+  {
+   "id": "ios7icons-42-gauge",
+   "title": "Gauge",
+   "tags": "ios7 icons gauge ios icon  Gauge",
+   "kind": "vertex",
+   "width": 32.4,
+   "height": 31.5,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.gauge;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.gauge"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:70"
+  },
+  {
+   "id": "ios7icons-43-glasses",
+   "title": "Glasses",
+   "tags": "ios7 icons glasses ios icon  Glasses",
+   "kind": "vertex",
+   "width": 30,
+   "height": 12,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.glasses;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.glasses"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:71"
+  },
+  {
+   "id": "ios7icons-44-globe",
+   "title": "Globe",
+   "tags": "ios7 icons globe ios icon  Globe",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.globe;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.globe"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:72"
+  },
+  {
+   "id": "ios7icons-45-heart",
+   "title": "Heart",
+   "tags": "ios7 icons heart ios icon  Heart",
+   "kind": "vertex",
+   "width": 30.599999999999998,
+   "height": 27.3,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.heart;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.heart"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:73"
+  },
+  {
+   "id": "ios7icons-46-help",
+   "title": "Help",
+   "tags": "ios7 icons help ios icon  Help",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.help;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.help"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:74"
+  },
+  {
+   "id": "ios7icons-47-home",
+   "title": "Home",
+   "tags": "ios7 icons home ios icon  Home",
+   "kind": "vertex",
+   "width": 24,
+   "height": 25.5,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.home;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.home"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:75"
+  },
+  {
+   "id": "ios7icons-48-info",
+   "title": "Info",
+   "tags": "ios7 icons info ios icon  Info",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.info;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.info"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:76"
+  },
+  {
+   "id": "ios7icons-49-keypad",
+   "title": "Keypad",
+   "tags": "ios7 icons keypad ios icon  Keypad",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.keypad;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.keypad"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:77"
+  },
+  {
+   "id": "ios7icons-50-lightbulb",
+   "title": "Lightbulb",
+   "tags": "ios7 icons lightbulb ios icon  Lightbulb",
+   "kind": "vertex",
+   "width": 22.8,
+   "height": 29.7,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.lightbulb;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.lightbulb"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:78"
+  },
+  {
+   "id": "ios7icons-51-link",
+   "title": "Link",
+   "tags": "ios7 icons link ios icon  Link",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.link;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.link"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:79"
+  },
+  {
+   "id": "ios7icons-52-location",
+   "title": "Location",
+   "tags": "ios7 icons location ios icon  Location",
+   "kind": "vertex",
+   "width": 24,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.location;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.location"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:80"
+  },
+  {
+   "id": "ios7icons-53-location",
+   "title": "Location",
+   "tags": "ios7 icons location 2 ios icon  Location",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.location_22;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.location_22"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:81"
+  },
+  {
+   "id": "ios7icons-54-locked",
+   "title": "Locked",
+   "tags": "ios7 icons locked ios icon  Locked",
+   "kind": "vertex",
+   "width": 24,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.locked;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.locked"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:82"
+  },
+  {
+   "id": "ios7icons-55-looking-glass",
+   "title": "Looking Glass",
+   "tags": "ios7 icons looking glass ios icon  Looking Glass",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.looking_glass;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.looking_glass"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:83"
+  },
+  {
+   "id": "ios7icons-56-loud",
+   "title": "Loud",
+   "tags": "ios7 icons loud ios icon  Loud",
+   "kind": "vertex",
+   "width": 30.599999999999998,
+   "height": 32.4,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.loud;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.loud"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:84"
+  },
+  {
+   "id": "ios7icons-57-magnet",
+   "title": "Magnet",
+   "tags": "ios7 icons magnet ios icon  Magnet",
+   "kind": "vertex",
+   "width": 24,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.magnet;pointerEvents=1",
+   "shapeNames": [
+    "mxgraph.ios7.icons.magnet"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:85"
+  },
+  {
+   "id": "ios7icons-58-mail",
+   "title": "Mail",
+   "tags": "ios7 icons mail ios icon  Mail",
+   "kind": "vertex",
+   "width": 30,
+   "height": 16.5,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.mail;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.mail"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:86"
+  },
+  {
+   "id": "ios7icons-59-map",
+   "title": "Map",
+   "tags": "ios7 icons map ios icon  Map",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.map;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.map"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:87"
+  },
+  {
+   "id": "ios7icons-60-message",
+   "title": "Message",
+   "tags": "ios7 icons message ios icon  Message",
+   "kind": "vertex",
+   "width": 30,
+   "height": 19.5,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.message;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.message"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:88"
+  },
+  {
+   "id": "ios7icons-61-messages",
+   "title": "Messages",
+   "tags": "ios7 icons messages ios icon  Messages",
+   "kind": "vertex",
+   "width": 30,
+   "height": 25.5,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.messages;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.messages"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:89"
+  },
+  {
+   "id": "ios7icons-62-microphone",
+   "title": "Microphone",
+   "tags": "ios7 icons microphone ios icon  Microphone",
+   "kind": "vertex",
+   "width": 12,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.microphone;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.microphone"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:90"
+  },
+  {
+   "id": "ios7icons-63-monitor",
+   "title": "Monitor",
+   "tags": "ios7 icons monitor ios icon  Monitor",
+   "kind": "vertex",
+   "width": 30,
+   "height": 19.5,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.monitor;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.monitor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:91"
+  },
+  {
+   "id": "ios7icons-64-moon",
+   "title": "Moon",
+   "tags": "ios7 icons moon ios icon  Moon",
+   "kind": "vertex",
+   "width": 29.4,
+   "height": 29.4,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.moon;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.moon"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:92"
+  },
+  {
+   "id": "ios7icons-65-most-viewed",
+   "title": "Most Viewed",
+   "tags": "ios7 icons most viewed ios icon  Most Viewed",
+   "kind": "vertex",
+   "width": 28.2,
+   "height": 22.8,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.most_viewed;pointerEvents=1",
+   "shapeNames": [
+    "mxgraph.ios7.icons.most_viewed"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:93"
+  },
+  {
+   "id": "ios7icons-66-move-to-folder",
+   "title": "Move to Folder",
+   "tags": "ios7 icons move to folder ios icon  Move to Folder",
+   "kind": "vertex",
+   "width": 30,
+   "height": 22.5,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.move_to_folder;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.move_to_folder"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:94"
+  },
+  {
+   "id": "ios7icons-67-note",
+   "title": "Note",
+   "tags": "ios7 icons note ios icon  Note",
+   "kind": "vertex",
+   "width": 29.7,
+   "height": 29.7,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.note;pointerEvents=1",
+   "shapeNames": [
+    "mxgraph.ios7.icons.note"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:95"
+  },
+  {
+   "id": "ios7icons-68-options",
+   "title": "Options",
+   "tags": "ios7 icons options ios icon  Options",
+   "kind": "vertex",
+   "width": 30,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.options;pointerEvents=1",
+   "shapeNames": [
+    "mxgraph.ios7.icons.options"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:96"
+  },
+  {
+   "id": "ios7icons-69-orientation-lock",
+   "title": "Orientation Lock",
+   "tags": "ios7 icons orientation lock ios icon  Orientation Lock",
+   "kind": "vertex",
+   "width": 23.099999999999998,
+   "height": 21,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.orientation_lock2;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.orientation_lock2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:97"
+  },
+  {
+   "id": "ios7icons-70-page-navigation",
+   "title": "Page Navigation",
+   "tags": "ios7 icons page navigation ios icon  Page Navigation",
+   "kind": "vertex",
+   "width": 30,
+   "height": 4.8,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.page_navigation;pointerEvents=1",
+   "shapeNames": [
+    "mxgraph.ios7.icons.page_navigation"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:98"
+  },
+  {
+   "id": "ios7icons-71-paint",
+   "title": "Paint",
+   "tags": "ios7 icons paint ios icon  Paint",
+   "kind": "vertex",
+   "width": 30,
+   "height": 25.5,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.paint;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.paint"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:99"
+  },
+  {
+   "id": "ios7icons-72-pause",
+   "title": "Pause",
+   "tags": "ios7 icons pause ios icon  Pause",
+   "kind": "vertex",
+   "width": 15,
+   "height": 24,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.pause;pointerEvents=1",
+   "shapeNames": [
+    "mxgraph.ios7.icons.pause"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:100"
+  },
+  {
+   "id": "ios7icons-73-pen",
+   "title": "Pen",
+   "tags": "ios7 icons pen ios icon  Pen",
+   "kind": "vertex",
+   "width": 29.4,
+   "height": 29.7,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.pen;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.pen"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:101"
+  },
+  {
+   "id": "ios7icons-74-pie-chart",
+   "title": "Pie Chart",
+   "tags": "ios7 icons pie chart ios icon  Pie Chart",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.pie_chart;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.pie_chart"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:102"
+  },
+  {
+   "id": "ios7icons-75-play",
+   "title": "Play",
+   "tags": "ios7 icons play ios icon  Play",
+   "kind": "vertex",
+   "width": 21,
+   "height": 24,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.play;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.play"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:103"
+  },
+  {
+   "id": "ios7icons-76-pointer",
+   "title": "Pointer",
+   "tags": "ios7 icons pointer ios icon  Pointer",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.pointer;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.pointer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:104"
+  },
+  {
+   "id": "ios7icons-77-preferences",
+   "title": "Preferences",
+   "tags": "ios7 icons preferences ios icon  Preferences",
+   "kind": "vertex",
+   "width": 30,
+   "height": 24,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.preferences;pointerEvents=1",
+   "shapeNames": [
+    "mxgraph.ios7.icons.preferences"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:105"
+  },
+  {
+   "id": "ios7icons-78-printer",
+   "title": "Printer",
+   "tags": "ios7 icons printer ios icon  Printer",
+   "kind": "vertex",
+   "width": 30,
+   "height": 25.5,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.printer;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.printer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:106"
+  },
+  {
+   "id": "ios7icons-79-privacy",
+   "title": "Privacy",
+   "tags": "ios7 icons privacy ios icon  Privacy",
+   "kind": "vertex",
+   "width": 16.8,
+   "height": 28.5,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.privacy;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.privacy"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:107"
+  },
+  {
+   "id": "ios7icons-80-radio",
+   "title": "Radio",
+   "tags": "ios7 icons radio ios icon  Radio",
+   "kind": "vertex",
+   "width": 30,
+   "height": 22.5,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.radio;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.radio"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:108"
+  },
+  {
+   "id": "ios7icons-81-reload",
+   "title": "Reload",
+   "tags": "ios7 icons reload ios icon  Reload",
+   "kind": "vertex",
+   "width": 24,
+   "height": 27,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.reload;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.reload"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:109"
+  },
+  {
+   "id": "ios7icons-82-repeat",
+   "title": "Repeat",
+   "tags": "ios7 icons repeat ios icon  Repeat",
+   "kind": "vertex",
+   "width": 30,
+   "height": 24,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.repeat;pointerEvents=1",
+   "shapeNames": [
+    "mxgraph.ios7.icons.repeat"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:110"
+  },
+  {
+   "id": "ios7icons-83-retry",
+   "title": "Retry",
+   "tags": "ios7 icons retry ios icon  Retry",
+   "kind": "vertex",
+   "width": 27.599999999999998,
+   "height": 14.399999999999999,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.retry;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.retry"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:111"
+  },
+  {
+   "id": "ios7icons-84-select",
+   "title": "Select",
+   "tags": "ios7 icons select ios icon  Select",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.select;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.select"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:112"
+  },
+  {
+   "id": "ios7icons-85-settings",
+   "title": "Settings",
+   "tags": "ios7 icons settings ios icon  Settings",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.settings;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.settings"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:113"
+  },
+  {
+   "id": "ios7icons-86-share",
+   "title": "Share",
+   "tags": "ios7 icons share ios icon  Share",
+   "kind": "vertex",
+   "width": 21,
+   "height": 28.5,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.share;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.share"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:114"
+  },
+  {
+   "id": "ios7icons-87-shopping-cart",
+   "title": "Shopping Cart",
+   "tags": "ios7 icons shopping cart ios icon  Shopping Cart",
+   "kind": "vertex",
+   "width": 30,
+   "height": 25.5,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.shopping_cart;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.shopping_cart"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:115"
+  },
+  {
+   "id": "ios7icons-88-shuffle",
+   "title": "Shuffle",
+   "tags": "ios7 icons shuffle ios icon  Shuffle",
+   "kind": "vertex",
+   "width": 30,
+   "height": 21,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.shuffle;pointerEvents=1",
+   "shapeNames": [
+    "mxgraph.ios7.icons.shuffle"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:116"
+  },
+  {
+   "id": "ios7icons-89-silent",
+   "title": "Silent",
+   "tags": "ios7 icons silent ios icon  Silent",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.silent;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.silent"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:117"
+  },
+  {
+   "id": "ios7icons-90-smartphone",
+   "title": "Smartphone",
+   "tags": "ios7 icons smartphone ios icon  Smartphone",
+   "kind": "vertex",
+   "width": 18,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.smartphone;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.smartphone"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:118"
+  },
+  {
+   "id": "ios7icons-91-star",
+   "title": "Star",
+   "tags": "ios7 icons star ios icon  Star",
+   "kind": "vertex",
+   "width": 30,
+   "height": 27,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.star;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.star"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:119"
+  },
+  {
+   "id": "ios7icons-92-stopwatch",
+   "title": "Stopwatch",
+   "tags": "ios7 icons stopwatch ios icon  Stopwatch",
+   "kind": "vertex",
+   "width": 27,
+   "height": 28.2,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.stopwatch;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.stopwatch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:120"
+  },
+  {
+   "id": "ios7icons-93-storage",
+   "title": "Storage",
+   "tags": "ios7 icons storage ios icon  Storage",
+   "kind": "vertex",
+   "width": 30,
+   "height": 10.5,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.storage;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.storage"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:121"
+  },
+  {
+   "id": "ios7icons-94-sun",
+   "title": "Sun",
+   "tags": "ios7 icons sun ios icon  Sun",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.sun;pointerEvents=1",
+   "shapeNames": [
+    "mxgraph.ios7.icons.sun"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:122"
+  },
+  {
+   "id": "ios7icons-95-tape",
+   "title": "Tape",
+   "tags": "ios7 icons tape ios icon  Tape",
+   "kind": "vertex",
+   "width": 30,
+   "height": 12,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.tape;pointerEvents=1",
+   "shapeNames": [
+    "mxgraph.ios7.icons.tape"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:123"
+  },
+  {
+   "id": "ios7icons-96-tools",
+   "title": "Tools",
+   "tags": "ios7 icons tools ios icon  Tools",
+   "kind": "vertex",
+   "width": 29.7,
+   "height": 29.7,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.tools;pointerEvents=1",
+   "shapeNames": [
+    "mxgraph.ios7.icons.tools"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:124"
+  },
+  {
+   "id": "ios7icons-97-trashcan",
+   "title": "Trashcan",
+   "tags": "ios7 icons trashcan ios icon  Trashcan",
+   "kind": "vertex",
+   "width": 24,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.trashcan;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.trashcan"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:125"
+  },
+  {
+   "id": "ios7icons-98-trophy",
+   "title": "Trophy",
+   "tags": "ios7 icons trophy ios icon  Trophy",
+   "kind": "vertex",
+   "width": 28.5,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.trophy;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.trophy"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:126"
+  },
+  {
+   "id": "ios7icons-99-umbrella",
+   "title": "Umbrella",
+   "tags": "ios7 icons umbrella ios icon  Umbrella",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.umbrella;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.umbrella"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:127"
+  },
+  {
+   "id": "ios7icons-100-unlocked",
+   "title": "Unlocked",
+   "tags": "ios7 icons unlocked ios icon  Unlocked",
+   "kind": "vertex",
+   "width": 24,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.unlocked;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.unlocked"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:128"
+  },
+  {
+   "id": "ios7icons-101-up",
+   "title": "Up",
+   "tags": "ios7 icons up ios icon  Up",
+   "kind": "vertex",
+   "width": 21,
+   "height": 25.5,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.up;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.up"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:129"
+  },
+  {
+   "id": "ios7icons-102-user",
+   "title": "User",
+   "tags": "ios7 icons user ios icon  User",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.user;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.user"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:130"
+  },
+  {
+   "id": "ios7icons-103-video-conversation",
+   "title": "Video Conversation",
+   "tags": "ios7 icons video conversation ios icon  Video Conversation",
+   "kind": "vertex",
+   "width": 30,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.video_conversation;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.video_conversation"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:131"
+  },
+  {
+   "id": "ios7icons-104-volume",
+   "title": "Volume",
+   "tags": "ios7 icons volume ios icon  Volume",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.volume;pointerEvents=1",
+   "shapeNames": [
+    "mxgraph.ios7.icons.volume"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:132"
+  },
+  {
+   "id": "ios7icons-105-volume",
+   "title": "Volume",
+   "tags": "ios7 icons volume 2 ios icon  Volume",
+   "kind": "vertex",
+   "width": 30.299999999999997,
+   "height": 28.2,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.volume_2;pointerEvents=1",
+   "shapeNames": [
+    "mxgraph.ios7.icons.volume_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:133"
+  },
+  {
+   "id": "ios7icons-106-wallet",
+   "title": "Wallet",
+   "tags": "ios7 icons wallet ios icon  Wallet",
+   "kind": "vertex",
+   "width": 30,
+   "height": 24,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.wallet;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.wallet"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:134"
+  },
+  {
+   "id": "ios7icons-107-wifi",
+   "title": "WiFi",
+   "tags": "ios7 icons wifi ios icon  WiFi",
+   "kind": "vertex",
+   "width": 29.7,
+   "height": 21,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.wifi;pointerEvents=1",
+   "shapeNames": [
+    "mxgraph.ios7.icons.wifi"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:135"
+  },
+  {
+   "id": "ios7icons-108-window",
+   "title": "Window",
+   "tags": "ios7 icons window ios icon  Window",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.window;",
+   "shapeNames": [
+    "mxgraph.ios7.icons.window"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Ios7.js:136"
+  }
+ ]
+}

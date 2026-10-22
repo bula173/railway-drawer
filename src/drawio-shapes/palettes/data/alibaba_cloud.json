@@ -1,0 +1,4348 @@
+{
+ "id": "alibaba_cloud",
+ "title": "Alibaba Cloud",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:7",
+ "entries": [
+  {
+   "id": "alibaba_cloud-0-abap-business-application-platform",
+   "title": "ABAP Business Application Platform",
+   "tags": "abap business application platform alibaba cloud ABAP Business Application Platform",
+   "kind": "vertex",
+   "width": 54.6,
+   "height": 49.5,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.abap_business_application_platform;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.abap_business_application_platform"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:25"
+  },
+  {
+   "id": "alibaba_cloud-1-acms-application-configuration-manangement",
+   "title": "ACMS Application Configuration Manangement",
+   "tags": "acms application configuration manangement alibaba cloud ACMS Application Configuration Manangement",
+   "kind": "vertex",
+   "width": 51,
+   "height": 47.400000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.acms_application_configuration_manangement;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.acms_application_configuration_manangement"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:27"
+  },
+  {
+   "id": "alibaba_cloud-2-acr-cloud-container-registry",
+   "title": "ACR Cloud Container Registry",
+   "tags": "acr cloud container registry alibaba cloud ACR Cloud Container Registry",
+   "kind": "vertex",
+   "width": 48.6,
+   "height": 56.4,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.acr_cloud_container_registry;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.acr_cloud_container_registry"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:29"
+  },
+  {
+   "id": "alibaba_cloud-3-actiontrail",
+   "title": "ActionTrail",
+   "tags": "actiontrail alibaba cloud ActionTrail",
+   "kind": "vertex",
+   "width": 50.099999999999994,
+   "height": 50.099999999999994,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.actiontrail;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.actiontrail"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:31"
+  },
+  {
+   "id": "alibaba_cloud-4-adam-advanced-database-and-application-migration",
+   "title": "ADAM Advanced Database and Application Migration",
+   "tags": "adam advanced database and application migration alibaba cloud ADAM Advanced Database and Application Migration",
+   "kind": "vertex",
+   "width": 42.9,
+   "height": 51.3,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.adam_advanced_database_and_application_migration;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.adam_advanced_database_and_application_migration"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:33"
+  },
+  {
+   "id": "alibaba_cloud-5-adb-analyticdb-for-mysql",
+   "title": "ADB AnalyticDB for MySQL",
+   "tags": "adb analyticdb for mysql my sql alibaba cloud ADB AnalyticDB for MySQL",
+   "kind": "vertex",
+   "width": 48.9,
+   "height": 54.900000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.adb_analyticdb_for_mysql;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.adb_analyticdb_for_mysql"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:35"
+  },
+  {
+   "id": "alibaba_cloud-6-address-purification",
+   "title": "Address Purification",
+   "tags": "address purification alibaba cloud Address Purification",
+   "kind": "vertex",
+   "width": 50.699999999999996,
+   "height": 53.7,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.address_purification;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.address_purification"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:37"
+  },
+  {
+   "id": "alibaba_cloud-7-afs-fraud-service",
+   "title": "AFS Fraud Service",
+   "tags": "afs fraud service alibaba cloud AFS Fraud Service",
+   "kind": "vertex",
+   "width": 44.1,
+   "height": 49.8,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.afs_fraud_service;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.afs_fraud_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:39"
+  },
+  {
+   "id": "alibaba_cloud-8-agw-aligateway",
+   "title": "AGW AliGateWay",
+   "tags": "agw aligateway alibaba cloud AGW AliGateWay",
+   "kind": "vertex",
+   "width": 47.1,
+   "height": 39.6,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.agw_aligateway;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.agw_aligateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:41"
+  },
+  {
+   "id": "alibaba_cloud-9-ahas-application-high-availability-service",
+   "title": "AHAS Application High Availability Service",
+   "tags": "ahas application high availability service alibaba cloud AHAS Application High Availability Service",
+   "kind": "vertex",
+   "width": 46.5,
+   "height": 53.7,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.ahas_application_high_availability_service;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.ahas_application_high_availability_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:43"
+  },
+  {
+   "id": "alibaba_cloud-10-airec-artificial-intelligence-recommendation",
+   "title": "AIRec Artificial Intelligence Recommendation",
+   "tags": "airec artificial intelligence recommendation alibaba cloud AIRec Artificial Intelligence Recommendation",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.airec_artificial_intelligence_recommendation;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.airec_artificial_intelligence_recommendation"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:45"
+  },
+  {
+   "id": "alibaba_cloud-11-alb-application-load-balancer",
+   "title": "ALB Application Load Balancer",
+   "tags": "alb application load balancer alibaba cloud ALB Application Load Balancer",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 40.2,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.alb_application_load_balancer_01;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.alb_application_load_balancer_01"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:47"
+  },
+  {
+   "id": "alibaba_cloud-12-alb-application-load-balancer",
+   "title": "ALB Application Load Balancer",
+   "tags": "alb application load balancer alibaba cloud ALB Application Load Balancer",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.alb_application_load_balancer_02;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.alb_application_load_balancer_02"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:49"
+  },
+  {
+   "id": "alibaba_cloud-13-alibaba-cloud-logo-chinese",
+   "title": "Alibaba Cloud Logo Chinese",
+   "tags": "alibaba cloud logo chinese alibaba cloud Alibaba Cloud Logo Chinese",
+   "kind": "vertex",
+   "width": 153.6,
+   "height": 34.199999999999996,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.alibaba_cloud_logo_chinese;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.alibaba_cloud_logo_chinese"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:51"
+  },
+  {
+   "id": "alibaba_cloud-14-alibaba-cloud-logo-english",
+   "title": "Alibaba Cloud Logo English",
+   "tags": "alibaba cloud logo english alibaba cloud Alibaba Cloud Logo English",
+   "kind": "vertex",
+   "width": 154.8,
+   "height": 19.5,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.alibaba_cloud_logo_english;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.alibaba_cloud_logo_english"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:53"
+  },
+  {
+   "id": "alibaba_cloud-15-alibaba-cloud-logo",
+   "title": "Alibaba Cloud Logo",
+   "tags": "alibaba cloud logo alibaba cloud Alibaba Cloud Logo",
+   "kind": "vertex",
+   "width": 96.60000000000001,
+   "height": 60,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.alibaba_cloud_logo;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.alibaba_cloud_logo"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:55"
+  },
+  {
+   "id": "alibaba_cloud-16-alimail",
+   "title": "AliMail",
+   "tags": "alimail alibaba cloud AliMail",
+   "kind": "vertex",
+   "width": 57.599999999999994,
+   "height": 39,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.alimail;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.alimail"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:57"
+  },
+  {
+   "id": "alibaba_cloud-17-alimt-machine-translation",
+   "title": "AliMT Machine Translation",
+   "tags": "alimt machine translation alibaba cloud AliMT Machine Translation",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 47.7,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.alimt_machine_translation;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.alimt_machine_translation"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:59"
+  },
+  {
+   "id": "alibaba_cloud-18-aliyun-linux",
+   "title": "Aliyun Linux",
+   "tags": "aliyun linux alibaba cloud Aliyun Linux",
+   "kind": "vertex",
+   "width": 52.5,
+   "height": 52.5,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.aliyun_linux;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.aliyun_linux"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:61"
+  },
+  {
+   "id": "alibaba_cloud-19-amqp-advanced-message-queuing-protocol",
+   "title": "AMQP Advanced Message Queuing Protocol",
+   "tags": "amqp advanced message queuing protocol alibaba cloud AMQP Advanced Message Queuing Protocol",
+   "kind": "vertex",
+   "width": 45.9,
+   "height": 48,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.amqp_advanced_message_queuing_protocol;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.amqp_advanced_message_queuing_protocol"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:63"
+  },
+  {
+   "id": "alibaba_cloud-20-amscloudapp",
+   "title": "AMSCloudApp",
+   "tags": "amscloudapp ams cloud app alibaba cloud AMSCloudApp",
+   "kind": "vertex",
+   "width": 56.699999999999996,
+   "height": 39.6,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.amscloudapp;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.amscloudapp"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:65"
+  },
+  {
+   "id": "alibaba_cloud-21-analyticdb-for-postgresql",
+   "title": "AnalyticDB for PostgreSQL",
+   "tags": "analyticdb for postgresql alibaba cloud AnalyticDB for PostgreSQL",
+   "kind": "vertex",
+   "width": 50.099999999999994,
+   "height": 49.5,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.analyticdb_for_postgresql;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.analyticdb_for_postgresql"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:67"
+  },
+  {
+   "id": "alibaba_cloud-22-antibot",
+   "title": "AntiBot",
+   "tags": "antibot alibaba cloud AntiBot",
+   "kind": "vertex",
+   "width": 55.5,
+   "height": 49.5,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.antibot;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.antibot"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:69"
+  },
+  {
+   "id": "alibaba_cloud-23-apigateway",
+   "title": "APIGateway",
+   "tags": "apigateway api gateway application programming interface alibaba cloud APIGateway",
+   "kind": "vertex",
+   "width": 43.199999999999996,
+   "height": 41.699999999999996,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.apigateway;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.apigateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:71"
+  },
+  {
+   "id": "alibaba_cloud-24-apsara-file-storage-for-hdfs",
+   "title": "Apsara File Storage for HDFS",
+   "tags": "apsara file storage for hdfs alibaba cloud Apsara File Storage for HDFS",
+   "kind": "vertex",
+   "width": 48,
+   "height": 47.400000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.apsara_file_storage_for_hdfs;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.apsara_file_storage_for_hdfs"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:73"
+  },
+  {
+   "id": "alibaba_cloud-25-apsaravideo-vod",
+   "title": "ApsaraVideo VOD",
+   "tags": "apsaravideo vod alibaba cloud ApsaraVideo VOD",
+   "kind": "vertex",
+   "width": 53.7,
+   "height": 39,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.apsaravideo_vod;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.apsaravideo_vod"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:75"
+  },
+  {
+   "id": "alibaba_cloud-26-arms-application-real-time-monitoring-service",
+   "title": "ARMS Application Real-Time Monitoring Service",
+   "tags": "arms application real-time monitoring service alibaba cloud ARMS Application Real-Time Monitoring Service",
+   "kind": "vertex",
+   "width": 54.900000000000006,
+   "height": 26.4,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.arms_application_real-time_monitoring_service;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.arms_application_real-time_monitoring_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:77"
+  },
+  {
+   "id": "alibaba_cloud-27-ask-ack-container-service-for-kubernetes",
+   "title": "ASK ACK Container Service for Kubernetes",
+   "tags": "ask ack container service for kubernetes alibaba cloud ASK ACK Container Service for Kubernetes",
+   "kind": "vertex",
+   "width": 44.7,
+   "height": 51.3,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.ask_ack_container_service_for_kubernetes;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.ask_ack_container_service_for_kubernetes"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:79"
+  },
+  {
+   "id": "alibaba_cloud-28-asm-service-mesh",
+   "title": "ASM Service Mesh",
+   "tags": "asm service mesh alibaba cloud ASM Service Mesh",
+   "kind": "vertex",
+   "width": 43.199999999999996,
+   "height": 50.099999999999994,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.asm_service_mesh;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.asm_service_mesh"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:81"
+  },
+  {
+   "id": "alibaba_cloud-29-assettech",
+   "title": "AssetTech",
+   "tags": "assettech asset tech alibaba cloud AssetTech",
+   "kind": "vertex",
+   "width": 43.199999999999996,
+   "height": 41.699999999999996,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.assettech;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.assettech"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:83"
+  },
+  {
+   "id": "alibaba_cloud-30-avds-vulnerability-db-scanning",
+   "title": "AVDS Vulnerability DB Scanning",
+   "tags": "avds vulnerability db scanning alibaba cloud AVDS Vulnerability DB Scanning",
+   "kind": "vertex",
+   "width": 54.900000000000006,
+   "height": 54.900000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.avds_vulnerability_db_scanning;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.avds_vulnerability_db_scanning"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:85"
+  },
+  {
+   "id": "alibaba_cloud-31-baas-blockchain-as-a-service",
+   "title": "BaaS Blockchain as a Service",
+   "tags": "baas blockchain as a service alibaba cloud BaaS Blockchain as a Service",
+   "kind": "vertex",
+   "width": 43.199999999999996,
+   "height": 47.400000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.baas_blockchain_as_a_service;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.baas_blockchain_as_a_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:87"
+  },
+  {
+   "id": "alibaba_cloud-32-bandwidth-bag",
+   "title": "Bandwidth Bag",
+   "tags": "bandwidth bag alibaba cloud Bandwidth Bag",
+   "kind": "vertex",
+   "width": 54.900000000000006,
+   "height": 39.900000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.bandwidth_bag;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.bandwidth_bag"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:89"
+  },
+  {
+   "id": "alibaba_cloud-33-bastionhost",
+   "title": "BastionHost",
+   "tags": "bastionhost bastion host alibaba cloud BastionHost",
+   "kind": "vertex",
+   "width": 50.4,
+   "height": 39.900000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.bastionhost;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.bastionhost"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:91"
+  },
+  {
+   "id": "alibaba_cloud-34-batchcompute",
+   "title": "BatchCompute",
+   "tags": "batchcompute batch compute alibaba cloud BatchCompute",
+   "kind": "vertex",
+   "width": 46.800000000000004,
+   "height": 48,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.batchcompute;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.batchcompute"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:93"
+  },
+  {
+   "id": "alibaba_cloud-35-bccluster",
+   "title": "BCCluster",
+   "tags": "bccluster bc cluster alibaba cloud BCCluster",
+   "kind": "vertex",
+   "width": 50.099999999999994,
+   "height": 37.2,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.bccluster;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.bccluster"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:95"
+  },
+  {
+   "id": "alibaba_cloud-36-beebot",
+   "title": "BeeBot",
+   "tags": "beebot bee bot alibaba cloud BeeBot",
+   "kind": "vertex",
+   "width": 59.7,
+   "height": 54.900000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.beebot;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.beebot"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:97"
+  },
+  {
+   "id": "alibaba_cloud-37-beian",
+   "title": "Beian",
+   "tags": "beian alibaba cloud Beian",
+   "kind": "vertex",
+   "width": 47.1,
+   "height": 48.300000000000004,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.beian;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.beian"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:99"
+  },
+  {
+   "id": "alibaba_cloud-38-bizdevops",
+   "title": "BizDevOps",
+   "tags": "bizdevops biz dev ops alibaba cloud BizDevOps",
+   "kind": "vertex",
+   "width": 60.3,
+   "height": 50.099999999999994,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.bizdevops;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.bizdevops"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:101"
+  },
+  {
+   "id": "alibaba_cloud-39-bizworks",
+   "title": "BizWorks",
+   "tags": "bizworks biz works alibaba cloud BizWorks",
+   "kind": "vertex",
+   "width": 43.199999999999996,
+   "height": 41.699999999999996,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.bizworks;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.bizworks"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:103"
+  },
+  {
+   "id": "alibaba_cloud-40-bpstudio",
+   "title": "BPStudio",
+   "tags": "bp studio alibaba cloud BPStudio",
+   "kind": "vertex",
+   "width": 50.099999999999994,
+   "height": 36.3,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.bpstudio;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.bpstudio"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:105"
+  },
+  {
+   "id": "alibaba_cloud-41-cas-ssl-central-authentication-service",
+   "title": "CAS SSL Central Authentication Service",
+   "tags": "cas ssl central authentication service alibaba cloud CAS SSL Central Authentication Service",
+   "kind": "vertex",
+   "width": 43.8,
+   "height": 49.5,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.cas_ssl_central_authentication_service;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.cas_ssl_central_authentication_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:107"
+  },
+  {
+   "id": "alibaba_cloud-42-cassandra-wide-column-database",
+   "title": "Cassandra Wide-Column Database",
+   "tags": "cassandra wide column database alibaba cloud Cassandra Wide-Column Database",
+   "kind": "vertex",
+   "width": 43.8,
+   "height": 46.800000000000004,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.cassandra_wide-column_database_01;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.cassandra_wide-column_database_01"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:109"
+  },
+  {
+   "id": "alibaba_cloud-43-cassandra-wide-column-database",
+   "title": "Cassandra Wide-Column Database",
+   "tags": "cassandra wide column database alibaba cloud Cassandra Wide-Column Database",
+   "kind": "vertex",
+   "width": 51.3,
+   "height": 54.900000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.cassandra_wide-column_database_02;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.cassandra_wide-column_database_02"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:111"
+  },
+  {
+   "id": "alibaba_cloud-44-ccc-cloud-call-center",
+   "title": "CCC Cloud Call Center",
+   "tags": "ccc cloud call center alibaba cloud CCC Cloud Call Center",
+   "kind": "vertex",
+   "width": 53.7,
+   "height": 52.2,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.ccc_cloud_call_center;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.ccc_cloud_call_center"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:113"
+  },
+  {
+   "id": "alibaba_cloud-45-ccn-cloud-connect-network",
+   "title": "CCN Cloud Connect Network",
+   "tags": "ccn cloud connect network alibaba cloud CCN Cloud Connect Network",
+   "kind": "vertex",
+   "width": 56.1,
+   "height": 45.9,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.ccn_cloud_connect_network;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.ccn_cloud_connect_network"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:115"
+  },
+  {
+   "id": "alibaba_cloud-46-ccs-customer-service",
+   "title": "CCS Customer Service",
+   "tags": "ccs customer service alibaba cloud CCS Customer Service",
+   "kind": "vertex",
+   "width": 54,
+   "height": 54.6,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.ccs_customer_service_01;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.ccs_customer_service_01"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:117"
+  },
+  {
+   "id": "alibaba_cloud-47-ccs-customer-service",
+   "title": "CCS Customer Service",
+   "tags": "ccs customer service alibaba cloud CCS Customer Service",
+   "kind": "vertex",
+   "width": 52.2,
+   "height": 55.2,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.ccs_customer_service_02;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.ccs_customer_service_02"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:119"
+  },
+  {
+   "id": "alibaba_cloud-48-cddc-cloud-database-dedicated-cluster",
+   "title": "CDDC Cloud Database Dedicated Cluster",
+   "tags": "cddc cloud database dedicated cluster alibaba cloud CDDC Cloud Database Dedicated Cluster",
+   "kind": "vertex",
+   "width": 50.4,
+   "height": 45.6,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.cddc_cloud_database_dedicated_cluster;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.cddc_cloud_database_dedicated_cluster"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:121"
+  },
+  {
+   "id": "alibaba_cloud-49-cdn-content-distribution-network",
+   "title": "CDN Content Distribution Network",
+   "tags": "cdn content distribution network alibaba cloud CDN Content Distribution Network",
+   "kind": "vertex",
+   "width": 51,
+   "height": 42.3,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.cdn_content_distribution_network;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.cdn_content_distribution_network"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:123"
+  },
+  {
+   "id": "alibaba_cloud-50-cdp-cloudera-cdp",
+   "title": "CDP Cloudera CDP",
+   "tags": "cdp cloudera alibaba cloud CDP Cloudera CDP",
+   "kind": "vertex",
+   "width": 54.900000000000006,
+   "height": 34.199999999999996,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.cdp_cloudera_cdp;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.cdp_cloudera_cdp"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:125"
+  },
+  {
+   "id": "alibaba_cloud-51-cdt-cloud-datatransfer",
+   "title": "CDT Cloud DataTransfer",
+   "tags": "cdt cloud datatransfer data transfer alibaba cloud CDT Cloud DataTransfer",
+   "kind": "vertex",
+   "width": 50.099999999999994,
+   "height": 42.3,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.cdt_cloud_datatransfer;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.cdt_cloud_datatransfer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:127"
+  },
+  {
+   "id": "alibaba_cloud-52-cen-cloud-enterprise-network",
+   "title": "CEN Cloud Enterprise Network",
+   "tags": "cen cloud enterprise network alibaba cloud CEN Cloud Enterprise Network",
+   "kind": "vertex",
+   "width": 53.4,
+   "height": 54.900000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.cen_cloud_enterprise_network;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.cen_cloud_enterprise_network"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:129"
+  },
+  {
+   "id": "alibaba_cloud-53-cfw-cloud-firewall",
+   "title": "CFW Cloud Firewall",
+   "tags": "cfw cloud firewall alibaba cloud CFW Cloud Firewall",
+   "kind": "vertex",
+   "width": 55.5,
+   "height": 39,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.cfw_cloud_firewall;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.cfw_cloud_firewall"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:131"
+  },
+  {
+   "id": "alibaba_cloud-54-cityvisual",
+   "title": "CityVisual",
+   "tags": "cityvisual city visual alibaba cloud CityVisual",
+   "kind": "vertex",
+   "width": 52.5,
+   "height": 36.9,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.cityvisual;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.cityvisual"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:133"
+  },
+  {
+   "id": "alibaba_cloud-55-clb-classic-load-balancer",
+   "title": "CLB Classic Load Balancer",
+   "tags": "clb classic load balancer alibaba cloud CLB Classic Load Balancer",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 40.2,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.clb_classic_load_balancer_01;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.clb_classic_load_balancer_01"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:135"
+  },
+  {
+   "id": "alibaba_cloud-56-clb-classic-load-balancer",
+   "title": "CLB Classic Load Balancer",
+   "tags": "clb classic load balancer alibaba cloud CLB Classic Load Balancer",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.clb_classic_load_balancer_02;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.clb_classic_load_balancer_02"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:137"
+  },
+  {
+   "id": "alibaba_cloud-57-clickhouse",
+   "title": "ClickHouse",
+   "tags": "clickhouse click house alibaba cloud ClickHouse",
+   "kind": "vertex",
+   "width": 48,
+   "height": 54.900000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.clickhouse;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.clickhouse"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:139"
+  },
+  {
+   "id": "alibaba_cloud-58-cloud-auth",
+   "title": "Cloud Auth",
+   "tags": "cloud auth alibaba cloud Cloud Auth",
+   "kind": "vertex",
+   "width": 60,
+   "height": 54.6,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.cloud_auth;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.cloud_auth"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:141"
+  },
+  {
+   "id": "alibaba_cloud-59-cloud-config",
+   "title": "Cloud Config",
+   "tags": "cloud config alibaba cloud Cloud Config",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 48,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.cloud_config;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.cloud_config"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:143"
+  },
+  {
+   "id": "alibaba_cloud-60-cloud-display",
+   "title": "Cloud Display",
+   "tags": "cloud display alibaba cloud Cloud Display",
+   "kind": "vertex",
+   "width": 54.900000000000006,
+   "height": 43.199999999999996,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.cloud_display;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.cloud_display"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:145"
+  },
+  {
+   "id": "alibaba_cloud-61-cloud-governance-center",
+   "title": "Cloud Governance Center",
+   "tags": "cloud governance center alibaba cloud Cloud Governance Center",
+   "kind": "vertex",
+   "width": 50.099999999999994,
+   "height": 43.5,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.cloud_governance_center;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.cloud_governance_center"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:147"
+  },
+  {
+   "id": "alibaba_cloud-62-cloud-security-center",
+   "title": "Cloud Security Center",
+   "tags": "Cloud Security Center alibaba cloud Cloud Security Center",
+   "kind": "vertex",
+   "width": 43.199999999999996,
+   "height": 48.9,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.cloud_security_center;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.cloud_security_center"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:149"
+  },
+  {
+   "id": "alibaba_cloud-63-cloud-shield",
+   "title": "Cloud Shield",
+   "tags": "cloud shield alibaba cloud Cloud Shield",
+   "kind": "vertex",
+   "width": 45.6,
+   "height": 48.9,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.cloud_shield;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.cloud_shield"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:151"
+  },
+  {
+   "id": "alibaba_cloud-64-cloudap",
+   "title": "CloudAP",
+   "tags": "cloudap cloud ap alibaba cloud CloudAP",
+   "kind": "vertex",
+   "width": 54.900000000000006,
+   "height": 55.2,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.cloudap;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.cloudap"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:153"
+  },
+  {
+   "id": "alibaba_cloud-65-cloudbox",
+   "title": "CloudBox",
+   "tags": "cloudbox cloud box alibaba cloud CloudBox",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 54.900000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.cloudbox;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.cloudbox"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:155"
+  },
+  {
+   "id": "alibaba_cloud-66-clouddesktop",
+   "title": "CloudDesktop",
+   "tags": "clouddesktop cloud desktop alibaba cloud CloudDesktop",
+   "kind": "vertex",
+   "width": 54.900000000000006,
+   "height": 55.2,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.clouddesktop;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.clouddesktop"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:157"
+  },
+  {
+   "id": "alibaba_cloud-67-clouddev",
+   "title": "CloudDev",
+   "tags": "clouddev alibaba cloud CloudDev",
+   "kind": "vertex",
+   "width": 56.699999999999996,
+   "height": 40.5,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.clouddev;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.clouddev"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:159"
+  },
+  {
+   "id": "alibaba_cloud-68-cloudphoto",
+   "title": "CloudPhoto",
+   "tags": "cloudphoto cloud photo alibaba cloud CloudPhoto",
+   "kind": "vertex",
+   "width": 45,
+   "height": 45,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.cloudphoto;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.cloudphoto"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:161"
+  },
+  {
+   "id": "alibaba_cloud-69-cloudproc",
+   "title": "CloudProc",
+   "tags": "cloudproc alibaba cloud CloudProc",
+   "kind": "vertex",
+   "width": 43.199999999999996,
+   "height": 41.699999999999996,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.cloudproc;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.cloudproc"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:163"
+  },
+  {
+   "id": "alibaba_cloud-70-cloudshell",
+   "title": "CloudShell",
+   "tags": "cloudshell alibaba cloud CloudShell",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 37.8,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.cloudshell;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.cloudshell"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:165"
+  },
+  {
+   "id": "alibaba_cloud-71-cmn-cloud-managed-network",
+   "title": "CMN Cloud Managed Network",
+   "tags": "cmn cloud managed network alibaba cloud CMN Cloud Managed Network",
+   "kind": "vertex",
+   "width": 51.9,
+   "height": 37.8,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.cmn_cloud_managed_network;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.cmn_cloud_managed_network"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:167"
+  },
+  {
+   "id": "alibaba_cloud-72-cmp-cloud-mobile-push",
+   "title": "CMP Cloud Mobile Push",
+   "tags": "cmp cloud mobile push alibaba cloud CMP Cloud Mobile Push",
+   "kind": "vertex",
+   "width": 49.199999999999996,
+   "height": 35.699999999999996,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.cmp_cloud_mobile_push;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.cmp_cloud_mobile_push"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:169"
+  },
+  {
+   "id": "alibaba_cloud-73-cms-cloud-monitor-service",
+   "title": "CMS Cloud Monitor Service",
+   "tags": "cms cloud monitor service alibaba cloud CMS Cloud Monitor Service",
+   "kind": "vertex",
+   "width": 52.2,
+   "height": 41.4,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.cms_cloud_monitor_service;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.cms_cloud_monitor_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:171"
+  },
+  {
+   "id": "alibaba_cloud-74-codepipeline",
+   "title": "CodePipeline",
+   "tags": "codepipeline alibaba cloud CodePipeline",
+   "kind": "vertex",
+   "width": 41.1,
+   "height": 52.2,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.codepipeline;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.codepipeline"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:173"
+  },
+  {
+   "id": "alibaba_cloud-75-codestore",
+   "title": "CodeStore",
+   "tags": "codestore alibaba cloud CodeStore",
+   "kind": "vertex",
+   "width": 43.199999999999996,
+   "height": 41.699999999999996,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.codestore;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.codestore"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:175"
+  },
+  {
+   "id": "alibaba_cloud-76-companyreg",
+   "title": "CompanyReg",
+   "tags": "companyreg alibaba cloud CompanyReg",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 52.5,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.companyreg;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.companyreg"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:177"
+  },
+  {
+   "id": "alibaba_cloud-77-computenest",
+   "title": "ComputeNest",
+   "tags": "computenest alibaba cloud ComputeNest",
+   "kind": "vertex",
+   "width": 50.099999999999994,
+   "height": 44.4,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.computenest;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.computenest"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:179"
+  },
+  {
+   "id": "alibaba_cloud-78-content-security",
+   "title": "Content Security",
+   "tags": "content security alibaba cloud Content Security",
+   "kind": "vertex",
+   "width": 46.5,
+   "height": 47.1,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.content_security;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.content_security"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:181"
+  },
+  {
+   "id": "alibaba_cloud-79-coo",
+   "title": "COO",
+   "tags": "coo alibaba cloud COO",
+   "kind": "vertex",
+   "width": 43.5,
+   "height": 47.400000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.coo;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.coo"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:183"
+  },
+  {
+   "id": "alibaba_cloud-80-cpns-cell-phone-number-service",
+   "title": "CPNS Cell Phone Number Service",
+   "tags": "cpns cell phone number service alibaba cloud CPNS Cell Phone Number Service",
+   "kind": "vertex",
+   "width": 39.900000000000006,
+   "height": 54.900000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.cpns_cell_phone_number_service;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.cpns_cell_phone_number_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:185"
+  },
+  {
+   "id": "alibaba_cloud-81-csas-cloud-security-access-service",
+   "title": "CSAS Cloud Security Access Service",
+   "tags": "csas cloud security access service alibaba cloud CSAS Cloud Security Access Service",
+   "kind": "vertex",
+   "width": 43.199999999999996,
+   "height": 50.099999999999994,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.csas_cloud_security_access_service;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.csas_cloud_security_access_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:187"
+  },
+  {
+   "id": "alibaba_cloud-82-cvc-cloud-video-conferencing",
+   "title": "CVC Cloud Video Conferencing",
+   "tags": "cvc cloud video conferencing alibaba cloud CVC Cloud Video Conferencing",
+   "kind": "vertex",
+   "width": 39.900000000000006,
+   "height": 54.6,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.cvc_cloud_video_conferencing;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.cvc_cloud_video_conferencing"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:189"
+  },
+  {
+   "id": "alibaba_cloud-83-cwh-cloud-web-hosting",
+   "title": "CWH Cloud Web Hosting",
+   "tags": "cwh cloud web hosting alibaba cloud CWH Cloud Web Hosting",
+   "kind": "vertex",
+   "width": 49.8,
+   "height": 45.6,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.cwh_cloud_web_hosting;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.cwh_cloud_web_hosting"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:191"
+  },
+  {
+   "id": "alibaba_cloud-84-das-database-autonomy-service",
+   "title": "DAS Database Autonomy Service",
+   "tags": "das database autonomy service alibaba cloud DAS Database Autonomy Service",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 47.400000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.das_database_autonomy_service;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.das_database_autonomy_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:193"
+  },
+  {
+   "id": "alibaba_cloud-85-databot",
+   "title": "DataBot",
+   "tags": "databot data bot alibaba cloud DataBot",
+   "kind": "vertex",
+   "width": 45.3,
+   "height": 52.2,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.databot;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.databot"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:195"
+  },
+  {
+   "id": "alibaba_cloud-86-datahub",
+   "title": "DataHub",
+   "tags": "datahub data hub alibaba cloud DataHub",
+   "kind": "vertex",
+   "width": 47.7,
+   "height": 47.7,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.datahub;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.datahub"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:197"
+  },
+  {
+   "id": "alibaba_cloud-87-dataphin",
+   "title": "Dataphin",
+   "tags": "dataphin alibaba cloud Dataphin",
+   "kind": "vertex",
+   "width": 54.6,
+   "height": 54.6,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.dataphin;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.dataphin"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:199"
+  },
+  {
+   "id": "alibaba_cloud-88-dataquotient",
+   "title": "DataQuotient",
+   "tags": "dataquotient data quotient alibaba cloud DataQuotient",
+   "kind": "vertex",
+   "width": 48.300000000000004,
+   "height": 48.300000000000004,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.dataquotient;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.dataquotient"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:201"
+  },
+  {
+   "id": "alibaba_cloud-89-datav",
+   "title": "DataV",
+   "tags": "datav data alibaba cloud DataV",
+   "kind": "vertex",
+   "width": 49.199999999999996,
+   "height": 44.4,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.datav;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.datav"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:203"
+  },
+  {
+   "id": "alibaba_cloud-90-dataworks-dataide",
+   "title": "DataWorks DataIDE",
+   "tags": "dataworks dataide data works ide integrated development environment alibaba cloud DataWorks DataIDE",
+   "kind": "vertex",
+   "width": 45.6,
+   "height": 52.5,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.dataworks_dataide;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.dataworks_dataide"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:205"
+  },
+  {
+   "id": "alibaba_cloud-91-dbaudit",
+   "title": "DBAudit",
+   "tags": "dbaudit db database audit alibaba cloud DBAudit",
+   "kind": "vertex",
+   "width": 48.9,
+   "height": 48.9,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.dbaudit;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.dbaudit"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:207"
+  },
+  {
+   "id": "alibaba_cloud-92-dbes-database-expert-service",
+   "title": "DBES Database Expert Service",
+   "tags": "dbes database expert service alibaba cloud DBES Database Expert Service",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 47.400000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.dbes_database_expert_service;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.dbes_database_expert_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:209"
+  },
+  {
+   "id": "alibaba_cloud-93-dbfs-database-file-system",
+   "title": "DBFS Database File System",
+   "tags": "dbfs database file system alibaba cloud DBFS Database File System",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 48,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.dbfs_database_file_system;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.dbfs_database_file_system"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:211"
+  },
+  {
+   "id": "alibaba_cloud-94-dbs-database-backup",
+   "title": "DBS Database Backup",
+   "tags": "dbs database backup alibaba cloud DBS Database Backup",
+   "kind": "vertex",
+   "width": 68.39999999999999,
+   "height": 63.9,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.dbs_database_backup;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.dbs_database_backup"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:213"
+  },
+  {
+   "id": "alibaba_cloud-95-dcdn-dynamic-route-for-cdn",
+   "title": "DCDN Dynamic Route for CDN",
+   "tags": "dcdn dynamic route for cdn alibaba cloud DCDN Dynamic Route for CDN",
+   "kind": "vertex",
+   "width": 46.5,
+   "height": 54.900000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.dcdn_dynamic_route_for_cdn;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.dcdn_dynamic_route_for_cdn"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:215"
+  },
+  {
+   "id": "alibaba_cloud-96-ddh-dedicated-host",
+   "title": "DDH Dedicated Host",
+   "tags": "ddh dedicated host alibaba cloud DDH Dedicated Host",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 47.400000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.ddh_dedicated_host;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.ddh_dedicated_host"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:217"
+  },
+  {
+   "id": "alibaba_cloud-97-ddos-protection",
+   "title": "DDoS Protection",
+   "tags": "ddos protection alibaba cloud DDoS Protection",
+   "kind": "vertex",
+   "width": 41.4,
+   "height": 47.400000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.ddos_protection;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.ddos_protection"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:219"
+  },
+  {
+   "id": "alibaba_cloud-98-ddos-bgp",
+   "title": "DDoS-BGP",
+   "tags": "ddos bgp alibaba cloud DDoS-BGP",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 47.1,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.ddos-bgp;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.ddos-bgp"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:221"
+  },
+  {
+   "id": "alibaba_cloud-99-ddos-dip",
+   "title": "DDoS-DIP",
+   "tags": "ddos dip alibaba cloud DDoS-DIP",
+   "kind": "vertex",
+   "width": 48.300000000000004,
+   "height": 55.2,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.ddos-dip;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.ddos-dip"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:223"
+  },
+  {
+   "id": "alibaba_cloud-100-ddos-pro",
+   "title": "DDoS-Pro",
+   "tags": "ddos pro alibaba cloud DDoS-Pro",
+   "kind": "vertex",
+   "width": 47.7,
+   "height": 46.800000000000004,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.ddos-pro;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.ddos-pro"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:225"
+  },
+  {
+   "id": "alibaba_cloud-101-devops",
+   "title": "DevOps",
+   "tags": "devops dev ops alibaba cloud DevOps",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.devops;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.devops"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:227"
+  },
+  {
+   "id": "alibaba_cloud-102-dg-database-gateway",
+   "title": "DG Database Gateway",
+   "tags": "dg database gateway alibaba cloud DG Database Gateway",
+   "kind": "vertex",
+   "width": 39.900000000000006,
+   "height": 54.900000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.dg_database_gateway;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.dg_database_gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:229"
+  },
+  {
+   "id": "alibaba_cloud-103-directmail",
+   "title": "DirectMail",
+   "tags": "directmail direct mail alibaba cloud DirectMail",
+   "kind": "vertex",
+   "width": 52.5,
+   "height": 34.8,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.directmail;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.directmail"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:231"
+  },
+  {
+   "id": "alibaba_cloud-104-disk-block-storage",
+   "title": "Disk Block Storage",
+   "tags": "disk block storage alibaba cloud Disk Block Storage",
+   "kind": "vertex",
+   "width": 51.6,
+   "height": 41.4,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.disk_block_storage;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.disk_block_storage"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:233"
+  },
+  {
+   "id": "alibaba_cloud-105-dlf-data-lake-formation",
+   "title": "DLF Data Lake Formation",
+   "tags": "dlf data lake formation alibaba cloud DLF Data Lake Formation",
+   "kind": "vertex",
+   "width": 53.4,
+   "height": 50.099999999999994,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.dlf_data_lake_formation;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.dlf_data_lake_formation"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:235"
+  },
+  {
+   "id": "alibaba_cloud-106-dms-data-management-service",
+   "title": "DMS Data Management Service",
+   "tags": "dms data management service alibaba cloud DMS Data Management Service",
+   "kind": "vertex",
+   "width": 45.9,
+   "height": 47.400000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.dms_data_management_service;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.dms_data_management_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:237"
+  },
+  {
+   "id": "alibaba_cloud-107-dns-domain-name-system",
+   "title": "DNS Domain Name System",
+   "tags": "dns domain name system alibaba cloud DNS Domain Name System",
+   "kind": "vertex",
+   "width": 55.800000000000004,
+   "height": 54.900000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.dns_domain_name_system;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.dns_domain_name_system"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:239"
+  },
+  {
+   "id": "alibaba_cloud-108-dns-privatezone",
+   "title": "DNS PrivateZone",
+   "tags": "dns privatezone private zone alibaba cloud DNS PrivateZone",
+   "kind": "vertex",
+   "width": 55.800000000000004,
+   "height": 54.900000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.dns_privatezone_01;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.dns_privatezone_01"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:241"
+  },
+  {
+   "id": "alibaba_cloud-109-dns-privatezone",
+   "title": "DNS PrivateZone",
+   "tags": "dns privatezone private zone alibaba cloud DNS PrivateZone",
+   "kind": "vertex",
+   "width": 49.8,
+   "height": 52.2,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.dns_privatezone_02;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.dns_privatezone_02"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:243"
+  },
+  {
+   "id": "alibaba_cloud-110-domain-and-website",
+   "title": "Domain and Website",
+   "tags": "domain and website alibaba cloud Domain and Website",
+   "kind": "vertex",
+   "width": 51.3,
+   "height": 41.4,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.domain_and_website;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.domain_and_website"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:245"
+  },
+  {
+   "id": "alibaba_cloud-111-domain",
+   "title": "Domain",
+   "tags": "domain alibaba cloud Domain",
+   "kind": "vertex",
+   "width": 54.900000000000006,
+   "height": 54.900000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.domain;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.domain"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:247"
+  },
+  {
+   "id": "alibaba_cloud-112-drds-distribute-relational-database-service",
+   "title": "DRDS Distribute Relational Database Service",
+   "tags": "drds distribute relational database service alibaba cloud DRDS Distribute Relational Database Service",
+   "kind": "vertex",
+   "width": 44.4,
+   "height": 47.400000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.drds_distribute_relational_database_service;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.drds_distribute_relational_database_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:249"
+  },
+  {
+   "id": "alibaba_cloud-113-dsi-data-security-insurance",
+   "title": "DSI Data Security Insurance",
+   "tags": "dsi data security insurance alibaba cloud DSI Data Security Insurance",
+   "kind": "vertex",
+   "width": 43.5,
+   "height": 51.3,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.dsi_data_security_insurance;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.dsi_data_security_insurance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:251"
+  },
+  {
+   "id": "alibaba_cloud-114-dts-data-transmission-service",
+   "title": "DTS Data Transmission Service",
+   "tags": "dts data transmission service alibaba cloud DTS Data Transmission Service",
+   "kind": "vertex",
+   "width": 48,
+   "height": 47.400000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.dts_data_transmission_service;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.dts_data_transmission_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:253"
+  },
+  {
+   "id": "alibaba_cloud-115-e-mapreduce",
+   "title": "E-MapReduce",
+   "tags": "emapreduce map reduce mapreduce alibaba cloud E-MapReduce",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.e-mapreduce;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.e-mapreduce"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:255"
+  },
+  {
+   "id": "alibaba_cloud-116-eais-elastic-accelerated-computing-instances",
+   "title": "EAIS Elastic Accelerated Computing Instances",
+   "tags": "eais elastic accelerated computing instances alibaba cloud EAIS Elastic Accelerated Computing Instances",
+   "kind": "vertex",
+   "width": 51.9,
+   "height": 36,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.eais_elastic_accelerated_computing_instances;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.eais_elastic_accelerated_computing_instances"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:257"
+  },
+  {
+   "id": "alibaba_cloud-117-eci-elastic-container-instance",
+   "title": "ECI Elastic Container Instance",
+   "tags": "eci elastic container instance alibaba cloud ECI Elastic Container Instance",
+   "kind": "vertex",
+   "width": 54.900000000000006,
+   "height": 38.4,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.eci_elastic_container_instance;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.eci_elastic_container_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:259"
+  },
+  {
+   "id": "alibaba_cloud-118-ecs-elastic-compute-service",
+   "title": "ECS Elastic Compute Service",
+   "tags": "ecs elastic compute service alibaba cloud ECS Elastic Compute Service",
+   "kind": "vertex",
+   "width": 48.6,
+   "height": 45.3,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.ecs_elastic_compute_service;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.ecs_elastic_compute_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:261"
+  },
+  {
+   "id": "alibaba_cloud-119-edas-enterprise-distributed-application-service",
+   "title": "EDAS Enterprise Distributed Application Service",
+   "tags": "edas enterprise distributed application service alibaba cloud EDAS Enterprise Distributed Application Service",
+   "kind": "vertex",
+   "width": 46.5,
+   "height": 47.400000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.edas_enterprise_distributed_application_service;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.edas_enterprise_distributed_application_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:263"
+  },
+  {
+   "id": "alibaba_cloud-120-ehpc-elastic-high-performance-computing",
+   "title": "EHPC Elastic High Performance Computing",
+   "tags": "ehpc elastic high performance computing alibaba cloud EHPC Elastic High Performance Computing",
+   "kind": "vertex",
+   "width": 43.199999999999996,
+   "height": 47.7,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.ehpc_elastic_high_performance_computing;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.ehpc_elastic_high_performance_computing"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:265"
+  },
+  {
+   "id": "alibaba_cloud-121-eip-elastic-ip-address",
+   "title": "EIP Elastic IP Address",
+   "tags": "eip elastic ip address internet protocol alibaba cloud EIP Elastic IP Address",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 46.5,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.eip_elastic_ip_address;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.eip_elastic_ip_address"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:267"
+  },
+  {
+   "id": "alibaba_cloud-122-elastic-web-hosting",
+   "title": "Elastic Web Hosting",
+   "tags": "elastic web hosting alibaba cloud Elastic Web Hosting",
+   "kind": "vertex",
+   "width": 53.4,
+   "height": 51.3,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.elastic_web_hosting;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.elastic_web_hosting"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:269"
+  },
+  {
+   "id": "alibaba_cloud-123-elasticsearch",
+   "title": "Elasticsearch",
+   "tags": "elasticsearch alibaba cloud Elasticsearch",
+   "kind": "vertex",
+   "width": 45.9,
+   "height": 50.099999999999994,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.elasticsearch;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.elasticsearch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:271"
+  },
+  {
+   "id": "alibaba_cloud-124-emas-enterprise-mobile-application-studio",
+   "title": "EMAS Enterprise Mobile Application Studio",
+   "tags": "emas enterprise mobile application studio alibaba cloud EMAS Enterprise Mobile Application Studio",
+   "kind": "vertex",
+   "width": 43.199999999999996,
+   "height": 41.699999999999996,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.emas_enterprise_mobile_application_studio;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.emas_enterprise_mobile_application_studio"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:273"
+  },
+  {
+   "id": "alibaba_cloud-125-energyexpert",
+   "title": "EnergyExpert",
+   "tags": "energyexpert energy expert alibaba cloud EnergyExpert",
+   "kind": "vertex",
+   "width": 43.199999999999996,
+   "height": 41.699999999999996,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.energyexpert;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.energyexpert"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:275"
+  },
+  {
+   "id": "alibaba_cloud-126-ens-edge-node-service",
+   "title": "ENS Edge Node Service",
+   "tags": "ens edge node service alibaba cloud ENS Edge Node Service",
+   "kind": "vertex",
+   "width": 54.900000000000006,
+   "height": 54.900000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.ens_edge_node_service;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.ens_edge_node_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:277"
+  },
+  {
+   "id": "alibaba_cloud-127-enterprise-website",
+   "title": "Enterprise Website",
+   "tags": "enterprise website alibaba cloud Enterprise Website",
+   "kind": "vertex",
+   "width": 53.1,
+   "height": 41.4,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.enterprise_website;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.enterprise_website"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:279"
+  },
+  {
+   "id": "alibaba_cloud-128-eprofile",
+   "title": "EProfile",
+   "tags": "eprofile profile alibaba cloud EProfile",
+   "kind": "vertex",
+   "width": 50.099999999999994,
+   "height": 43.199999999999996,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.eprofile;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.eprofile"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:281"
+  },
+  {
+   "id": "alibaba_cloud-129-esign",
+   "title": "eSign",
+   "tags": "esign sign alibaba cloud eSign",
+   "kind": "vertex",
+   "width": 41.699999999999996,
+   "height": 45.9,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.esign;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.esign"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:283"
+  },
+  {
+   "id": "alibaba_cloud-130-ess-elastic-scaling-service",
+   "title": "ESS Elastic Scaling Service",
+   "tags": "ess elastic scaling service alibaba cloud ESS Elastic Scaling Service",
+   "kind": "vertex",
+   "width": 55.2,
+   "height": 30.3,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.ess_elastic_scaling_service;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.ess_elastic_scaling_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:285"
+  },
+  {
+   "id": "alibaba_cloud-131-eventbridge",
+   "title": "EventBridge",
+   "tags": "eventbridge event bridge alibaba cloud EventBridge",
+   "kind": "vertex",
+   "width": 48.9,
+   "height": 48.9,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.eventbridge;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.eventbridge"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:287"
+  },
+  {
+   "id": "alibaba_cloud-132-express-connect",
+   "title": "Express Connect",
+   "tags": "express connect alibaba cloud Express Connect",
+   "kind": "vertex",
+   "width": 51.6,
+   "height": 47.400000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.express_connect;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.express_connect"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:289"
+  },
+  {
+   "id": "alibaba_cloud-133-face-recognition",
+   "title": "Face Recognition",
+   "tags": "face recognition alibaba cloud Face Recognition",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 46.800000000000004,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.face_recognition;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.face_recognition"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:291"
+  },
+  {
+   "id": "alibaba_cloud-134-fc-function-compute",
+   "title": "FC Function Compute",
+   "tags": "fc function compute alibaba cloud FC Function Compute",
+   "kind": "vertex",
+   "width": 51.6,
+   "height": 51.3,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.fc_function_compute;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.fc_function_compute"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:293"
+  },
+  {
+   "id": "alibaba_cloud-135-flow-service",
+   "title": "Flow Service",
+   "tags": "flow service alibaba cloud Flow Service",
+   "kind": "vertex",
+   "width": 39.900000000000006,
+   "height": 52.5,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.flow_service;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.flow_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:295"
+  },
+  {
+   "id": "alibaba_cloud-136-flowbag",
+   "title": "Flowbag",
+   "tags": "flowbag alibaba cloud Flowbag",
+   "kind": "vertex",
+   "width": 55.2,
+   "height": 35.4,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.flowbag;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.flowbag"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:297"
+  },
+  {
+   "id": "alibaba_cloud-137-fnf-serverless-function-flow",
+   "title": "FNF Serverless Function Flow",
+   "tags": "fnf serverless function flow alibaba cloud FNF Serverless Function Flow",
+   "kind": "vertex",
+   "width": 48,
+   "height": 55.5,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.fnf_serverless_function_flow;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.fnf_serverless_function_flow"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:299"
+  },
+  {
+   "id": "alibaba_cloud-138-fpga-field-programmable-gate-array",
+   "title": "FPGA Field Programmable Gate Array",
+   "tags": "fpga field programmable gate array alibaba cloud FPGA Field Programmable Gate Array",
+   "kind": "vertex",
+   "width": 45.6,
+   "height": 45.3,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.fpga_field_programmable_gate_array;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.fpga_field_programmable_gate_array"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:301"
+  },
+  {
+   "id": "alibaba_cloud-139-fraud-detection",
+   "title": "Fraud Detection",
+   "tags": "fraud detection alibaba cloud Fraud Detection",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 47.400000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.fraud_detection;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.fraud_detection"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:303"
+  },
+  {
+   "id": "alibaba_cloud-140-ga-global-accelerator",
+   "title": "GA Global Accelerator",
+   "tags": "ga global accelerator alibaba cloud GA Global Accelerator",
+   "kind": "vertex",
+   "width": 54.900000000000006,
+   "height": 54.900000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.ga_global_accelerator;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.ga_global_accelerator"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:305"
+  },
+  {
+   "id": "alibaba_cloud-141-gameshield",
+   "title": "GameShield",
+   "tags": "gameshield alibaba cloud GameShield",
+   "kind": "vertex",
+   "width": 51.3,
+   "height": 44.4,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.gameshield;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.gameshield"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:307"
+  },
+  {
+   "id": "alibaba_cloud-142-gdb-graph-database",
+   "title": "GDB Graph Database",
+   "tags": "gdb graph database alibaba cloud GDB Graph Database",
+   "kind": "vertex",
+   "width": 54.900000000000006,
+   "height": 47.400000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.gdb_graph_database;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.gdb_graph_database"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:309"
+  },
+  {
+   "id": "alibaba_cloud-143-graphanalytics",
+   "title": "GraphAnalytics",
+   "tags": "graphanalytics graph analytics alibaba cloud GraphAnalytics",
+   "kind": "vertex",
+   "width": 39.900000000000006,
+   "height": 49.8,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.graphanalytics;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.graphanalytics"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:311"
+  },
+  {
+   "id": "alibaba_cloud-144-graphcompute",
+   "title": "GraphCompute",
+   "tags": "graphcompute graph compute alibaba cloud GraphCompute",
+   "kind": "vertex",
+   "width": 49.8,
+   "height": 50.099999999999994,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.graphcompute;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.graphcompute"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:313"
+  },
+  {
+   "id": "alibaba_cloud-145-gtm-global-traffic-manager",
+   "title": "GTM Global Traffic Manager",
+   "tags": "gtm global traffic manager alibaba cloud GTM Global Traffic Manager",
+   "kind": "vertex",
+   "width": 55.5,
+   "height": 54.300000000000004,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.gtm_global_traffic_manager;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.gtm_global_traffic_manager"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:315"
+  },
+  {
+   "id": "alibaba_cloud-146-gts-global-transaction-service",
+   "title": "GTS Global Transaction Service",
+   "tags": "gts global transaction service alibaba cloud GTS Global Transaction Service",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 48,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.gts_global_transaction_service;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.gts_global_transaction_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:317"
+  },
+  {
+   "id": "alibaba_cloud-147-gws-graphic-workstation",
+   "title": "GWS Graphic Workstation",
+   "tags": "gws graphic workstation alibaba cloud GWS Graphic Workstation",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 47.400000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.gws_graphic_workstation;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.gws_graphic_workstation"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:319"
+  },
+  {
+   "id": "alibaba_cloud-148-havip-high-availability-virtual-ip-address",
+   "title": "HaVip High-Availability Virtual IP Address",
+   "tags": "havip high availability virtual ip address internet protocol alibaba cloud HaVip High-Availability Virtual IP Address",
+   "kind": "vertex",
+   "width": 52.5,
+   "height": 52.5,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.havip_high-availability_virtual_ip_address;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.havip_high-availability_virtual_ip_address"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:321"
+  },
+  {
+   "id": "alibaba_cloud-149-hbase",
+   "title": "HBase",
+   "tags": "hbase base alibaba cloud HBase",
+   "kind": "vertex",
+   "width": 45.3,
+   "height": 45.6,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.hbase;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.hbase"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:323"
+  },
+  {
+   "id": "alibaba_cloud-150-hbr-hybrid-backup-recovery",
+   "title": "HBR Hybrid Backup Recovery",
+   "tags": "hbr hybrid backup recovery alibaba cloud HBR Hybrid Backup Recovery",
+   "kind": "vertex",
+   "width": 48.300000000000004,
+   "height": 54.900000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.hbr_hybrid_backup_recovery;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.hbr_hybrid_backup_recovery"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:325"
+  },
+  {
+   "id": "alibaba_cloud-151-hcs-hgw-hybrid-cloud-storage-array",
+   "title": "HCS-HGW Hybrid Cloud Storage Array",
+   "tags": "hcs hgw hybrid cloud storage array alibaba cloud HCS-HGW Hybrid Cloud Storage Array",
+   "kind": "vertex",
+   "width": 40.5,
+   "height": 47.1,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.hcs-hgw_hybrid_cloud_storage_array;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.hcs-hgw_hybrid_cloud_storage_array"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:327"
+  },
+  {
+   "id": "alibaba_cloud-152-hcs-mgw-hybrid-cloud-storage-datatransport",
+   "title": "HCS-MGW Hybrid Cloud Storage Datatransport",
+   "tags": "hcs mgw hybrid cloud storage datatransport data transport alibaba cloud HCS-MGW Hybrid Cloud Storage Datatransport",
+   "kind": "vertex",
+   "width": 50.699999999999996,
+   "height": 40.5,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.hcs-mgw_hybrid_cloud_storage_datatransport;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.hcs-mgw_hybrid_cloud_storage_datatransport"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:329"
+  },
+  {
+   "id": "alibaba_cloud-153-hcs-sgw-hybrid-cloud-storage-gateway",
+   "title": "HCS-SGW Hybrid Cloud Storage Gateway",
+   "tags": "hcs sgw hybrid cloud storage gateway alibaba cloud HCS-SGW Hybrid Cloud Storage Gateway",
+   "kind": "vertex",
+   "width": 51,
+   "height": 39.900000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.hcs-sgw_hybrid_cloud_storage_gateway;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.hcs-sgw_hybrid_cloud_storage_gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:331"
+  },
+  {
+   "id": "alibaba_cloud-154-hdr-hybrid-disaster-recovery",
+   "title": "HDR Hybrid Disaster Recovery",
+   "tags": "hdr hybrid disaster recovery alibaba cloud HDR Hybrid Disaster Recovery",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 47.400000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.hdr_hybrid_disaster_recovery;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.hdr_hybrid_disaster_recovery"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:333"
+  },
+  {
+   "id": "alibaba_cloud-155-hologres",
+   "title": "Hologres",
+   "tags": "hologres alibaba cloud Hologres",
+   "kind": "vertex",
+   "width": 54.900000000000006,
+   "height": 50.099999999999994,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.hologres;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.hologres"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:335"
+  },
+  {
+   "id": "alibaba_cloud-156-holowatcher",
+   "title": "HoloWatcher",
+   "tags": "holowatcher holo watcher alibaba cloud HoloWatcher",
+   "kind": "vertex",
+   "width": 43.199999999999996,
+   "height": 50.099999999999994,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.holowatcher;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.holowatcher"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:337"
+  },
+  {
+   "id": "alibaba_cloud-157-hsm-hardware-security-module",
+   "title": "HSM Hardware Security Module",
+   "tags": "hsm hardware security module alibaba cloud HSM Hardware Security Module",
+   "kind": "vertex",
+   "width": 46.5,
+   "height": 49.5,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.hsm_hardware_security_module;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.hsm_hardware_security_module"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:339"
+  },
+  {
+   "id": "alibaba_cloud-158-httpdns",
+   "title": "HTTPDNS",
+   "tags": "httpdns http dns domain name server alibaba cloud HTTPDNS",
+   "kind": "vertex",
+   "width": 50.099999999999994,
+   "height": 36.3,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.httpdns;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.httpdns"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:341"
+  },
+  {
+   "id": "alibaba_cloud-159-idrsservice",
+   "title": "IDRSService",
+   "tags": "idrsservice alibaba cloud IDRSService",
+   "kind": "vertex",
+   "width": 56.1,
+   "height": 56.1,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.idrsservice;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.idrsservice"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:343"
+  },
+  {
+   "id": "alibaba_cloud-160-image-recognition",
+   "title": "Image Recognition",
+   "tags": "image recognition alibaba cloud Image Recognition",
+   "kind": "vertex",
+   "width": 48.9,
+   "height": 47.7,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.image_recognition;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.image_recognition"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:345"
+  },
+  {
+   "id": "alibaba_cloud-161-imagesearch",
+   "title": "ImageSearch",
+   "tags": "imagesearch image search alibaba cloud ImageSearch",
+   "kind": "vertex",
+   "width": 47.7,
+   "height": 47.7,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.imagesearch;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.imagesearch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:347"
+  },
+  {
+   "id": "alibaba_cloud-162-imarketing",
+   "title": "iMarketing",
+   "tags": "imarketing marketing alibaba cloud iMarketing",
+   "kind": "vertex",
+   "width": 43.199999999999996,
+   "height": 41.699999999999996,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.imarketing;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.imarketing"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:349"
+  },
+  {
+   "id": "alibaba_cloud-163-imm-intelligent-media-management",
+   "title": "IMM Intelligent Media Management",
+   "tags": "imm intelligent media management alibaba cloud IMM Intelligent Media Management",
+   "kind": "vertex",
+   "width": 54.6,
+   "height": 54.6,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.imm_intelligent_media_management;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.imm_intelligent_media_management"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:351"
+  },
+  {
+   "id": "alibaba_cloud-164-imp-intelligent-media-production",
+   "title": "IMP Intelligent Media Production",
+   "tags": "imp intelligent media production alibaba cloud IMP Intelligent Media Production",
+   "kind": "vertex",
+   "width": 52.8,
+   "height": 36.6,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.imp_intelligent_media_production;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.imp_intelligent_media_production"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:353"
+  },
+  {
+   "id": "alibaba_cloud-165-imp-low-code-video-factory",
+   "title": "IMP Low Code Video Factory",
+   "tags": "imp low code video factory alibaba cloud IMP Low Code Video Factory",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48.6,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.imp_low_code_video_factory;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.imp_low_code_video_factory"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:355"
+  },
+  {
+   "id": "alibaba_cloud-166-indvi-industrial-visual-intelligence",
+   "title": "IndVI Industrial Visual Intelligence",
+   "tags": "indvi industrial visual intelligence alibaba cloud IndVI Industrial Visual Intelligence",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 47.400000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.indvi_industrial_visual_intelligence;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.indvi_industrial_visual_intelligence"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:357"
+  },
+  {
+   "id": "alibaba_cloud-167-intelligent-advisor",
+   "title": "Intelligent Advisor",
+   "tags": "intelligent advisor alibaba cloud Intelligent Advisor",
+   "kind": "vertex",
+   "width": 47.1,
+   "height": 54.900000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.intelligent_advisor;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.intelligent_advisor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:359"
+  },
+  {
+   "id": "alibaba_cloud-168-iot-internet-of-things-platform",
+   "title": "IoT Internet of Things Platform",
+   "tags": "iot internet of things platform alibaba cloud IoT Internet of Things Platform",
+   "kind": "vertex",
+   "width": 56.4,
+   "height": 55.5,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.iot_internet_of_things_platform;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.iot_internet_of_things_platform"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:361"
+  },
+  {
+   "id": "alibaba_cloud-169-iot-wireless-connection-service",
+   "title": "IoT Wireless Connection Service",
+   "tags": "iot wireless connection service alibaba cloud IoT Wireless Connection Service",
+   "kind": "vertex",
+   "width": 42.3,
+   "height": 49.8,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.iot_wireless_connection_service;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.iot_wireless_connection_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:363"
+  },
+  {
+   "id": "alibaba_cloud-170-iotid-identity",
+   "title": "IoTID Identity",
+   "tags": "iotid identity alibaba cloud IoTID Identity",
+   "kind": "vertex",
+   "width": 47.7,
+   "height": 47.7,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.iotid_identity;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.iotid_identity"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:365"
+  },
+  {
+   "id": "alibaba_cloud-171-iov-iot-vehicle-cloud",
+   "title": "IoV IoT Vehicle Cloud",
+   "tags": "iov iot vehicle cloud alibaba cloud IoV IoT Vehicle Cloud",
+   "kind": "vertex",
+   "width": 54.900000000000006,
+   "height": 33,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.iov_iot_vehicle_cloud;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.iov_iot_vehicle_cloud"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:367"
+  },
+  {
+   "id": "alibaba_cloud-172-ipv6-gateway",
+   "title": "IPv6 Gateway",
+   "tags": "ipv6 gateway alibaba cloud IPv6 Gateway",
+   "kind": "vertex",
+   "width": 51.9,
+   "height": 60,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.ipv6_gateway;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.ipv6_gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:369"
+  },
+  {
+   "id": "alibaba_cloud-173-isoc-iot-security-operations-center",
+   "title": "ISOC IoT Security Operations Center",
+   "tags": "isoc iot security operations center alibaba cloud ISOC IoT Security Operations Center",
+   "kind": "vertex",
+   "width": 49.5,
+   "height": 54.900000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.isoc_iot_security_operations_center;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.isoc_iot_security_operations_center"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:371"
+  },
+  {
+   "id": "alibaba_cloud-174-isu-intelligent-semantic-understanding",
+   "title": "ISU Intelligent Semantic Understanding",
+   "tags": "isu intelligent semantic understanding alibaba cloud ISU Intelligent Semantic Understanding",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 46.800000000000004,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.isu_intelligent_semantic_understanding;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.isu_intelligent_semantic_understanding"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:373"
+  },
+  {
+   "id": "alibaba_cloud-175-ivision",
+   "title": "iVision",
+   "tags": "ivision vision alibaba cloud iVision",
+   "kind": "vertex",
+   "width": 55.2,
+   "height": 54.900000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.ivision;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.ivision"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:375"
+  },
+  {
+   "id": "alibaba_cloud-176-ivpd-intelligent-visual-production",
+   "title": "iVPD Intelligent Visual Production",
+   "tags": "ivpd intelligent visual production alibaba cloud iVPD Intelligent Visual Production",
+   "kind": "vertex",
+   "width": 46.5,
+   "height": 46.5,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.ivpd_intelligent_visual_production;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.ivpd_intelligent_visual_production"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:377"
+  },
+  {
+   "id": "alibaba_cloud-177-kafka",
+   "title": "Kafka",
+   "tags": "kafka alibaba cloud Kafka",
+   "kind": "vertex",
+   "width": 56.699999999999996,
+   "height": 42,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.kafka;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.kafka"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:379"
+  },
+  {
+   "id": "alibaba_cloud-178-linkedmall",
+   "title": "LinkedMall",
+   "tags": "linkedmall linked mall alibaba cloud LinkedMall",
+   "kind": "vertex",
+   "width": 43.199999999999996,
+   "height": 42,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.linkedmall;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.linkedmall"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:381"
+  },
+  {
+   "id": "alibaba_cloud-179-linkwan",
+   "title": "LinkWan",
+   "tags": "linkwan link wan alibaba cloud LinkWan",
+   "kind": "vertex",
+   "width": 52.5,
+   "height": 54.900000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.linkwan;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.linkwan"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:383"
+  },
+  {
+   "id": "alibaba_cloud-180-live",
+   "title": "Live",
+   "tags": "live alibaba cloud Live",
+   "kind": "vertex",
+   "width": 48.9,
+   "height": 44.7,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.live;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.live"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:385"
+  },
+  {
+   "id": "alibaba_cloud-181-livinglink",
+   "title": "LivingLink",
+   "tags": "livinglink living link alibaba cloud LivingLink",
+   "kind": "vertex",
+   "width": 43.8,
+   "height": 50.699999999999996,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.livinglink;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.livinglink"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:387"
+  },
+  {
+   "id": "alibaba_cloud-182-log-streaming",
+   "title": "Log Streaming",
+   "tags": "log streaming alibaba cloud Log Streaming",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 45.3,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.log_streaming;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.log_streaming"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:389"
+  },
+  {
+   "id": "alibaba_cloud-183-logic-composer",
+   "title": "Logic Composer",
+   "tags": "logic composer alibaba cloud Logic Composer",
+   "kind": "vertex",
+   "width": 53.7,
+   "height": 53.4,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.logic_composer;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.logic_composer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:391"
+  },
+  {
+   "id": "alibaba_cloud-184-machine-learning",
+   "title": "Machine Learning",
+   "tags": "machine learning alibaba cloud Machine Learning",
+   "kind": "vertex",
+   "width": 49.8,
+   "height": 50.099999999999994,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.machine_learning;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.machine_learning"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:393"
+  },
+  {
+   "id": "alibaba_cloud-185-man-mobile-analytics",
+   "title": "MAN Mobile Analytics",
+   "tags": "man mobile analytics alibaba cloud MAN Mobile Analytics",
+   "kind": "vertex",
+   "width": 50.099999999999994,
+   "height": 41.4,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.man_mobile_analytics;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.man_mobile_analytics"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:395"
+  },
+  {
+   "id": "alibaba_cloud-186-mariadb",
+   "title": "MariaDB",
+   "tags": "mariadb maria db database alibaba cloud MariaDB",
+   "kind": "vertex",
+   "width": 51,
+   "height": 38.4,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.mariadb;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.mariadb"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:397"
+  },
+  {
+   "id": "alibaba_cloud-187-mas-mobile-acceleration-service",
+   "title": "MAS Mobile Acceleration Service",
+   "tags": "mas mobile acceleration service alibaba cloud MAS Mobile Acceleration Service",
+   "kind": "vertex",
+   "width": 51.3,
+   "height": 37.8,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.mas_mobile_acceleration_service;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.mas_mobile_acceleration_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:399"
+  },
+  {
+   "id": "alibaba_cloud-188-maxcompute",
+   "title": "MaxCompute",
+   "tags": "maxcompute max compute alibaba cloud MaxCompute",
+   "kind": "vertex",
+   "width": 50.099999999999994,
+   "height": 50.099999999999994,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.maxcompute;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.maxcompute"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:401"
+  },
+  {
+   "id": "alibaba_cloud-189-memcache",
+   "title": "Memcache",
+   "tags": "memcache alibaba cloud Memcache",
+   "kind": "vertex",
+   "width": 50.099999999999994,
+   "height": 45.3,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.memcache;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.memcache"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:403"
+  },
+  {
+   "id": "alibaba_cloud-190-miniappdev",
+   "title": "MiniAppDev",
+   "tags": "miniappdev mini app dev application developer development alibaba cloud MiniAppDev",
+   "kind": "vertex",
+   "width": 49.199999999999996,
+   "height": 35.699999999999996,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.miniappdev;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.miniappdev"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:405"
+  },
+  {
+   "id": "alibaba_cloud-191-mns-message-service",
+   "title": "MNS Message Service",
+   "tags": "mns message service alibaba cloud MNS Message Service",
+   "kind": "vertex",
+   "width": 39.900000000000006,
+   "height": 39.900000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.mns_message_service;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.mns_message_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:407"
+  },
+  {
+   "id": "alibaba_cloud-192-mobile-hotfix",
+   "title": "Mobile Hotfix",
+   "tags": "mobile hotfix alibaba cloud Mobile Hotfix",
+   "kind": "vertex",
+   "width": 50.099999999999994,
+   "height": 50.099999999999994,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.mobile_hotfix;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.mobile_hotfix"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:409"
+  },
+  {
+   "id": "alibaba_cloud-193-mobsec",
+   "title": "MobSec",
+   "tags": "mobsec alibaba cloud MobSec",
+   "kind": "vertex",
+   "width": 51,
+   "height": 43.199999999999996,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.mobsec;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.mobsec"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:411"
+  },
+  {
+   "id": "alibaba_cloud-194-mongodb",
+   "title": "MongoDB",
+   "tags": "mongodb mongo db database alibaba cloud MongoDB",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 47.400000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.mongodb;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.mongodb"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:413"
+  },
+  {
+   "id": "alibaba_cloud-195-mps-apsaravideo-media-processing",
+   "title": "MPS ApsaraVideo Media Processing",
+   "tags": "mps apsaravideo media processing apsara video alibaba cloud MPS ApsaraVideo Media Processing",
+   "kind": "vertex",
+   "width": 43.5,
+   "height": 51.9,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.mps_apsaravideo_media_processing;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.mps_apsaravideo_media_processing"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:415"
+  },
+  {
+   "id": "alibaba_cloud-196-mps-ai",
+   "title": "MPS-AI",
+   "tags": "mps ai artificial intelligence alibaba cloud MPS-AI",
+   "kind": "vertex",
+   "width": 52.2,
+   "height": 52.5,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.mps-ai;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.mps-ai"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:417"
+  },
+  {
+   "id": "alibaba_cloud-197-mps-censor",
+   "title": "MPS-Censor",
+   "tags": "mps censor alibaba cloud MPS-Censor",
+   "kind": "vertex",
+   "width": 56.1,
+   "height": 54.900000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.mps-censor;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.mps-censor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:419"
+  },
+  {
+   "id": "alibaba_cloud-198-mps-cover",
+   "title": "MPS-Cover",
+   "tags": "mps cover alibaba cloud MPS-Cover",
+   "kind": "vertex",
+   "width": 56.1,
+   "height": 54.900000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.mps-cover;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.mps-cover"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:421"
+  },
+  {
+   "id": "alibaba_cloud-199-mps-dna",
+   "title": "MPS-DNA",
+   "tags": "mps dna alibaba cloud MPS-DNA",
+   "kind": "vertex",
+   "width": 57.3,
+   "height": 55.800000000000004,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.mps-dna;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.mps-dna"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:423"
+  },
+  {
+   "id": "alibaba_cloud-200-mps-multimod",
+   "title": "MPS-Multimod",
+   "tags": "mps multimod alibaba cloud MPS-Multimod",
+   "kind": "vertex",
+   "width": 60.6,
+   "height": 54.900000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.mps-multimod;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.mps-multimod"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:425"
+  },
+  {
+   "id": "alibaba_cloud-201-mps-produce",
+   "title": "MPS-Produce",
+   "tags": "mps produce alibaba cloud MPS-Produce",
+   "kind": "vertex",
+   "width": 60.6,
+   "height": 52.5,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.mps-produce;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.mps-produce"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:427"
+  },
+  {
+   "id": "alibaba_cloud-202-mq-message-queue",
+   "title": "MQ Message Queue",
+   "tags": "mq message queue alibaba cloud MQ Message Queue",
+   "kind": "vertex",
+   "width": 45,
+   "height": 49.8,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.mq_message_queue;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.mq_message_queue"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:429"
+  },
+  {
+   "id": "alibaba_cloud-203-mqc-mobile-quality-center",
+   "title": "MQC Mobile Quality Center",
+   "tags": "mqc mobile quality center alibaba cloud MQC Mobile Quality Center",
+   "kind": "vertex",
+   "width": 49.5,
+   "height": 49.5,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.mqc_mobile_quality_center;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.mqc_mobile_quality_center"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:431"
+  },
+  {
+   "id": "alibaba_cloud-204-mse-microservices-engine",
+   "title": "MSE Microservices Engine",
+   "tags": "mse Microservices engine alibaba cloud MSE Microservices Engine",
+   "kind": "vertex",
+   "width": 54.900000000000006,
+   "height": 54.900000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.mse_microservices_engine;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.mse_microservices_engine"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:433"
+  },
+  {
+   "id": "alibaba_cloud-205-multi-cloud-finops",
+   "title": "Multi-Cloud FinOps",
+   "tags": "multi cloud finops fin ops operations alibaba cloud Multi-Cloud FinOps",
+   "kind": "vertex",
+   "width": 52.5,
+   "height": 37.5,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.multi-cloud_finops;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.multi-cloud_finops"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:435"
+  },
+  {
+   "id": "alibaba_cloud-206-multi-mode-database-lindorm",
+   "title": "Multi-mode Database Lindorm",
+   "tags": "multi mode database lindorm alibaba cloud Multi-mode Database Lindorm",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 50.099999999999994,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.multi-mode_database_lindorm;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.multi-mode_database_lindorm"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:437"
+  },
+  {
+   "id": "alibaba_cloud-207-multimediaai",
+   "title": "MultiMediaAI",
+   "tags": "multimediai multi media multimedia ai artificial intelligence alibaba cloud MultiMediaAI",
+   "kind": "vertex",
+   "width": 60,
+   "height": 59.1,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.multimediaai;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.multimediaai"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:439"
+  },
+  {
+   "id": "alibaba_cloud-208-mysql",
+   "title": "MySQL",
+   "tags": "mysql my sql alibaba cloud MySQL",
+   "kind": "vertex",
+   "width": 48.300000000000004,
+   "height": 45,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.mysql;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.mysql"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:441"
+  },
+  {
+   "id": "alibaba_cloud-209-nas-network-attached-storage",
+   "title": "NAS Network Attached Storage",
+   "tags": "nas network attached storage alibaba cloud NAS Network Attached Storage",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.nas_network_attached_storage;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.nas_network_attached_storage"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:443"
+  },
+  {
+   "id": "alibaba_cloud-210-nat-gateway",
+   "title": "NAT Gateway",
+   "tags": "nat gateway alibaba cloud NAT Gateway",
+   "kind": "vertex",
+   "width": 51.6,
+   "height": 41.699999999999996,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.nat_gateway;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.nat_gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:445"
+  },
+  {
+   "id": "alibaba_cloud-211-network-acl-access-control-list",
+   "title": "Network ACL Access Control List",
+   "tags": "network acl access control list alibaba cloud Network ACL Access Control List",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 42.599999999999994,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.network_acl_access_control_list;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.network_acl_access_control_list"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:447"
+  },
+  {
+   "id": "alibaba_cloud-212-nlb-network-load-balancer",
+   "title": "NLB Network Load Balancer",
+   "tags": "nlb network load balancer alibaba cloud NLB Network Load Balancer",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 40.2,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.nlb_network_load_balancer_01;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.nlb_network_load_balancer_01"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:449"
+  },
+  {
+   "id": "alibaba_cloud-213-nlb-network-load-balancer",
+   "title": "NLB Network Load Balancer",
+   "tags": "nlb network load balancer alibaba cloud NLB Network Load Balancer",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.nlb_network_load_balancer_02;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.nlb_network_load_balancer_02"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:451"
+  },
+  {
+   "id": "alibaba_cloud-214-nlp-natural-language-processing",
+   "title": "NLP Natural Language Processing",
+   "tags": "nlp natural language processing alibaba cloud NLP Natural Language Processing",
+   "kind": "vertex",
+   "width": 50.099999999999994,
+   "height": 55.2,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.nlp_natural_language_processing;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.nlp_natural_language_processing"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:453"
+  },
+  {
+   "id": "alibaba_cloud-215-nlp-address",
+   "title": "NLP-Address",
+   "tags": "nlp-address alibaba cloud NLP-Address",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 47.400000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.nlp-address;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.nlp-address"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:455"
+  },
+  {
+   "id": "alibaba_cloud-216-nlp-automl",
+   "title": "NLP-AutoML",
+   "tags": "nlp-automl auto ml alibaba cloud NLP-AutoML",
+   "kind": "vertex",
+   "width": 48.300000000000004,
+   "height": 47.1,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.nlp-automl;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.nlp-automl"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:457"
+  },
+  {
+   "id": "alibaba_cloud-217-nlp-ie-text-information-extraction",
+   "title": "NLP-IE Text Information Extraction",
+   "tags": "nlp ie text information extraction alibaba cloud NLP-IE Text Information Extraction",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 47.400000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.nlp-ie_text_information_extraction;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.nlp-ie_text_information_extraction"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:459"
+  },
+  {
+   "id": "alibaba_cloud-218-nlp-ke-keyword-extraction",
+   "title": "NLP-KE Keyword Extraction",
+   "tags": "nlp ke keyword extraction alibaba cloud NLP-KE Keyword Extraction",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 47.400000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.nlp-ke_keyword_extraction;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.nlp-ke_keyword_extraction"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:461"
+  },
+  {
+   "id": "alibaba_cloud-219-nlp-ner-named-entity-recognition",
+   "title": "NLP-NER Named Entity Recognition",
+   "tags": "nlp ner named entity recognition alibaba cloud NLP-NER Named Entity Recognition",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 47.400000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.nlp-ner_named_entity_recognition;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.nlp-ner_named_entity_recognition"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:463"
+  },
+  {
+   "id": "alibaba_cloud-220-nlp-pos-part-of-speech-tagging",
+   "title": "NLP-POS Part-of-Speech Tagging",
+   "tags": "nlp pos part of speech tagging alibaba cloud NLP-POS Part-of-Speech Tagging",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 47.400000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.nlp-pos_part-of-speech_tagging;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.nlp-pos_part-of-speech_tagging"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:465"
+  },
+  {
+   "id": "alibaba_cloud-221-nlp-ra-reflexive-anaphora",
+   "title": "NLP-RA Reflexive Anaphora",
+   "tags": "nlp ra reflexive anaphora alibaba cloud NLP-RA Reflexive Anaphora",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 47.400000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.nlp-ra_reflexive_anaphora;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.nlp-ra_reflexive_anaphora"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:467"
+  },
+  {
+   "id": "alibaba_cloud-222-nlp-sa-sentiment-analysis",
+   "title": "NLP-SA Sentiment Analysis",
+   "tags": "nlp sa sentiment analysis alibaba cloud NLP-SA Sentiment Analysis",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 47.400000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.nlp-sa_sentiment_analysis;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.nlp-sa_sentiment_analysis"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:469"
+  },
+  {
+   "id": "alibaba_cloud-223-nlp-tc-text-categorization",
+   "title": "NLP-TC Text Categorization",
+   "tags": "nlp tc text categorization alibaba cloud NLP-TC Text Categorization",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 47.400000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.nlp-tc_text_categorization;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.nlp-tc_text_categorization"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:471"
+  },
+  {
+   "id": "alibaba_cloud-224-nlp-ws-word-segmentation",
+   "title": "NLP-WS Word Segmentation",
+   "tags": "nlp ws word segmentation alibaba cloud NLP-WS Word Segmentation",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 47.400000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.nlp-ws_word_segmentation;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.nlp-ws_word_segmentation"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:473"
+  },
+  {
+   "id": "alibaba_cloud-225-nls-asrbag",
+   "title": "NLS-ASRBag",
+   "tags": "nls asrbag asr bag alibaba cloud NLS-ASRBag",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 47.400000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.nls-asrbag;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.nls-asrbag"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:475"
+  },
+  {
+   "id": "alibaba_cloud-226-nls-asrcustommodel",
+   "title": "NLS-ASRCustomModel",
+   "tags": "nls asrcustommodel asr custom model alibaba cloud NLS-ASRCustomModel",
+   "kind": "vertex",
+   "width": 54.900000000000006,
+   "height": 54.900000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.nls-asrcustommodel;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.nls-asrcustommodel"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:477"
+  },
+  {
+   "id": "alibaba_cloud-227-nls-filebag",
+   "title": "NLS-Filebag",
+   "tags": "nls filebag alibaba cloud NLS-Filebag",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 47.400000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.nls-filebag;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.nls-filebag"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:479"
+  },
+  {
+   "id": "alibaba_cloud-228-nls-service",
+   "title": "NLS-Service",
+   "tags": "nls service alibaba cloud NLS-Service",
+   "kind": "vertex",
+   "width": 47.1,
+   "height": 47.400000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.nls-service;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.nls-service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:481"
+  },
+  {
+   "id": "alibaba_cloud-229-nls-shortasrbag",
+   "title": "NLS-ShortASRBag",
+   "tags": "nls shortasrbag short asr bag alibaba cloud NLS-ShortASRBag",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 47.400000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.nls-shortasrbag;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.nls-shortasrbag"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:483"
+  },
+  {
+   "id": "alibaba_cloud-230-nls-ttsbag",
+   "title": "NLS-TTSBag",
+   "tags": "nls ttsbag tts bag alibaba cloud NLS-TTSBag",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 47.400000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.nls-ttsbag;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.nls-ttsbag"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:485"
+  },
+  {
+   "id": "alibaba_cloud-231-nls",
+   "title": "NLS",
+   "tags": "nls alibaba cloud NLS",
+   "kind": "vertex",
+   "width": 54.900000000000006,
+   "height": 49.199999999999996,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.nls;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.nls"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:487"
+  },
+  {
+   "id": "alibaba_cloud-232-node-js-performance-platform",
+   "title": "Node.js Performance Platform",
+   "tags": "node.js nodejs node js performance platform alibaba cloud Node.js Performance Platform",
+   "kind": "vertex",
+   "width": 42,
+   "height": 47.400000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.nodejs_performance_platform;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.nodejs_performance_platform"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:489"
+  },
+  {
+   "id": "alibaba_cloud-233-oceanbase",
+   "title": "OceanBase",
+   "tags": "oceanbase ocean base alibaba cloud OceanBase",
+   "kind": "vertex",
+   "width": 50.099999999999994,
+   "height": 44.1,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.oceanbase;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.oceanbase"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:491"
+  },
+  {
+   "id": "alibaba_cloud-234-ocr-optical-character-recognition",
+   "title": "OCR Optical Character Recognition",
+   "tags": "ocr optical character recognition alibaba cloud OCR Optical Character Recognition",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60.6,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.ocr_optical_character_recognition;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.ocr_optical_character_recognition"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:493"
+  },
+  {
+   "id": "alibaba_cloud-235-onsmqtt-micro-message-queuing-telemetry-transport",
+   "title": "OnsMQTT Micro Message Queuing Telemetry Transport",
+   "tags": "onsmqtt micro message queuing telemetry transport alibaba cloud OnsMQTT Micro Message Queuing Telemetry Transport",
+   "kind": "vertex",
+   "width": 54.900000000000006,
+   "height": 39.300000000000004,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.onsmqtt_micro_message_queuing_telemetry_transport;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.onsmqtt_micro_message_queuing_telemetry_transport"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:495"
+  },
+  {
+   "id": "alibaba_cloud-236-oos-operation-orchestration-service",
+   "title": "OOS Operation Orchestration Service",
+   "tags": "oos operation orchestration service alibaba cloud OOS Operation Orchestration Service",
+   "kind": "vertex",
+   "width": 49.8,
+   "height": 50.099999999999994,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.oos_operation_orchestration_service;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.oos_operation_orchestration_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:497"
+  },
+  {
+   "id": "alibaba_cloud-237-openanalytics",
+   "title": "OpenAnalytics",
+   "tags": "openanalytics alibaba cloud OpenAnalytics",
+   "kind": "vertex",
+   "width": 54.900000000000006,
+   "height": 54.900000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.openanalytics;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.openanalytics"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:499"
+  },
+  {
+   "id": "alibaba_cloud-238-openapi-explorer",
+   "title": "OpenAPI Explorer",
+   "tags": "openapi open api application programming interface explorer alibaba cloud OpenAPI Explorer",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 47.400000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.openapi_explorer;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.openapi_explorer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:501"
+  },
+  {
+   "id": "alibaba_cloud-239-opensearch",
+   "title": "OpenSearch",
+   "tags": "opensearch open search alibaba cloud OpenSearch",
+   "kind": "vertex",
+   "width": 60.3,
+   "height": 60,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.opensearch;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.opensearch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:503"
+  },
+  {
+   "id": "alibaba_cloud-240-oss-object-storage-service",
+   "title": "OSS Object Storage Service",
+   "tags": "oss object storage service alibaba cloud OSS Object Storage Service",
+   "kind": "vertex",
+   "width": 50.699999999999996,
+   "height": 38.7,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.oss_object_storage_service;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.oss_object_storage_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:505"
+  },
+  {
+   "id": "alibaba_cloud-241-ots-tablestore",
+   "title": "OTS Tablestore",
+   "tags": "ots tablestore table store alibaba cloud OTS Tablestore",
+   "kind": "vertex",
+   "width": 53.1,
+   "height": 42.599999999999994,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.ots_tablestore;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.ots_tablestore"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:507"
+  },
+  {
+   "id": "alibaba_cloud-242-outboundbot",
+   "title": "OutboundBot",
+   "tags": "outboundbot outbound bot alibaba cloud OutboundBot",
+   "kind": "vertex",
+   "width": 58.5,
+   "height": 58.5,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.outboundbot;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.outboundbot"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:509"
+  },
+  {
+   "id": "alibaba_cloud-243-pcdn-p2p-cdn",
+   "title": "PCDN P2P CDN",
+   "tags": "pcdn p2p cdn alibaba cloud PCDN P2P CDN",
+   "kind": "vertex",
+   "width": 39.900000000000006,
+   "height": 46.5,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.pcdn_p2p_cdn;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.pcdn_p2p_cdn"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:511"
+  },
+  {
+   "id": "alibaba_cloud-244-petadata-hybriddb-for-mysql",
+   "title": "PetaData HybridDB for MySQL",
+   "tags": "petadata peta data hybriddb hybrid db database for mysql my sql alibaba cloud PetaData HybridDB for MySQL",
+   "kind": "vertex",
+   "width": 56.699999999999996,
+   "height": 56.1,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.petadata_hybriddb_for_mysql;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.petadata_hybriddb_for_mysql"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:513"
+  },
+  {
+   "id": "alibaba_cloud-245-physical-connection",
+   "title": "Physical Connection",
+   "tags": "physical connection alibaba cloud Physical Connection",
+   "kind": "vertex",
+   "width": 54.300000000000004,
+   "height": 40.5,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.physical_connection;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.physical_connection"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:515"
+  },
+  {
+   "id": "alibaba_cloud-246-pnvs-phone-number-verification-service",
+   "title": "PNVS Phone Number Verification Service",
+   "tags": "pnvs phone number verification service alibaba cloud PNVS Phone Number Verification Service",
+   "kind": "vertex",
+   "width": 35.4,
+   "height": 50.099999999999994,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.pnvs_phone_number_verification_service;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.pnvs_phone_number_verification_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:517"
+  },
+  {
+   "id": "alibaba_cloud-247-polardb",
+   "title": "PolarDB",
+   "tags": "polardb polar db database alibaba cloud PolarDB",
+   "kind": "vertex",
+   "width": 55.5,
+   "height": 57.3,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.polardb;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.polardb"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:519"
+  },
+  {
+   "id": "alibaba_cloud-248-porana-portrait-analysis",
+   "title": "Porana Portrait Analysis",
+   "tags": "porana portrait analysis alibaba cloud Porana Portrait Analysis",
+   "kind": "vertex",
+   "width": 49.199999999999996,
+   "height": 45.3,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.porana_portrait_analysis;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.porana_portrait_analysis"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:521"
+  },
+  {
+   "id": "alibaba_cloud-249-postgresql",
+   "title": "PostgreSQL",
+   "tags": "postgre sql postgresql alibaba cloud PostgreSQL",
+   "kind": "vertex",
+   "width": 48,
+   "height": 47.7,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.postgresql;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.postgresql"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:523"
+  },
+  {
+   "id": "alibaba_cloud-250-ppas-pay-as-you-go-database",
+   "title": "PPAS Pay-As-You-Go Database",
+   "tags": "ppas pay as you go database db alibaba cloud PPAS Pay-As-You-Go Database",
+   "kind": "vertex",
+   "width": 39.900000000000006,
+   "height": 54.6,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.ppas_pay-as-you-go_database;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.ppas_pay-as-you-go_database"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:525"
+  },
+  {
+   "id": "alibaba_cloud-251-privatelink",
+   "title": "PrivateLink",
+   "tags": "privatelink private link alibaba cloud PrivateLink",
+   "kind": "vertex",
+   "width": 56.1,
+   "height": 56.699999999999996,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.privatelink;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.privatelink"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:527"
+  },
+  {
+   "id": "alibaba_cloud-252-prometheus",
+   "title": "Prometheus",
+   "tags": "prometheus alibaba cloud Prometheus",
+   "kind": "vertex",
+   "width": 48.9,
+   "height": 48.9,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.prometheus;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.prometheus"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:529"
+  },
+  {
+   "id": "alibaba_cloud-253-prophet",
+   "title": "Prophet",
+   "tags": "prophet alibaba cloud Prophet",
+   "kind": "vertex",
+   "width": 46.800000000000004,
+   "height": 47.7,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.prophet;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.prophet"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:531"
+  },
+  {
+   "id": "alibaba_cloud-254-pts-performance-test-service",
+   "title": "PTS Performance Test Service",
+   "tags": "pts performance test service alibaba cloud PTS Performance Test Service",
+   "kind": "vertex",
+   "width": 49.8,
+   "height": 41.1,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.pts_performance_test_service;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.pts_performance_test_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:533"
+  },
+  {
+   "id": "alibaba_cloud-255-quickbi",
+   "title": "QuickBI",
+   "tags": "quick bi quickbi alibaba cloud QuickBI",
+   "kind": "vertex",
+   "width": 47.7,
+   "height": 48,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.quickbi;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.quickbi"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:535"
+  },
+  {
+   "id": "alibaba_cloud-256-ram-resource-access-management",
+   "title": "RAM Resource Access Management",
+   "tags": "ram resource access management alibaba cloud RAM Resource Access Management",
+   "kind": "vertex",
+   "width": 55.2,
+   "height": 36,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.ram_resource_access_management;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.ram_resource_access_management"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:537"
+  },
+  {
+   "id": "alibaba_cloud-257-re-recommendation-engine",
+   "title": "RE Recommendation Engine",
+   "tags": "re recommendation engine alibaba cloud RE Recommendation Engine",
+   "kind": "vertex",
+   "width": 49.5,
+   "height": 48.300000000000004,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.re_recommendation_engine;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.re_recommendation_engine"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:539"
+  },
+  {
+   "id": "alibaba_cloud-258-realtime-compute",
+   "title": "Realtime Compute",
+   "tags": "realtime compute alibaba cloud Realtime Compute",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.realtime_compute;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.realtime_compute"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:541"
+  },
+  {
+   "id": "alibaba_cloud-259-redis-kvstore",
+   "title": "Redis KVStore",
+   "tags": "redis kvstore alibaba cloud Redis KVStore",
+   "kind": "vertex",
+   "width": 52.5,
+   "height": 41.4,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.redis_kvstore;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.redis_kvstore"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:543"
+  },
+  {
+   "id": "alibaba_cloud-260-region",
+   "title": "Region",
+   "tags": "region alibaba cloud Region",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 54.300000000000004,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.region;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.region"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:545"
+  },
+  {
+   "id": "alibaba_cloud-261-retailir",
+   "title": "RetailIR",
+   "tags": "retailir retail ir alibaba cloud RetailIR",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 47.400000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.retailir;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.retailir"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:547"
+  },
+  {
+   "id": "alibaba_cloud-262-ros-resource-orchestration-service",
+   "title": "ROS Resource Orchestration Service",
+   "tags": "ros resource orchestration service alibaba cloud ROS Resource Orchestration Service",
+   "kind": "vertex",
+   "width": 50.099999999999994,
+   "height": 43.5,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.ros_resource_orchestration_service;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.ros_resource_orchestration_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:549"
+  },
+  {
+   "id": "alibaba_cloud-263-route-table",
+   "title": "Route Table",
+   "tags": "route table alibaba cloud Route Table",
+   "kind": "vertex",
+   "width": 37.5,
+   "height": 47.400000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.route_table;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.route_table"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:551"
+  },
+  {
+   "id": "alibaba_cloud-264-router",
+   "title": "Router",
+   "tags": "router alibaba cloud Router",
+   "kind": "vertex",
+   "width": 55.2,
+   "height": 57.599999999999994,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.router;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:553"
+  },
+  {
+   "id": "alibaba_cloud-265-rsimganalys",
+   "title": "RSImgAnalys",
+   "tags": "rsimganalys rs img analysis alibaba cloud RSImgAnalys",
+   "kind": "vertex",
+   "width": 50.099999999999994,
+   "height": 44.4,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.rsimganalys;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.rsimganalys"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:555"
+  },
+  {
+   "id": "alibaba_cloud-266-rtc-real-time-communication",
+   "title": "RTC Real-Time Communication",
+   "tags": "rtc real time communication alibaba cloud RTC Real-Time Communication",
+   "kind": "vertex",
+   "width": 52.5,
+   "height": 52.8,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.rtc_real-time_communication;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.rtc_real-time_communication"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:557"
+  },
+  {
+   "id": "alibaba_cloud-267-sae-serverless-app-engine",
+   "title": "SAE Serverless App Engine",
+   "tags": "sae serverless app engine alibaba cloud SAE Serverless App Engine",
+   "kind": "vertex",
+   "width": 48.6,
+   "height": 54.900000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.sae_serverless_app_engine;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.sae_serverless_app_engine"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:559"
+  },
+  {
+   "id": "alibaba_cloud-268-sag-smart-access-gateway",
+   "title": "SAG Smart Access Gateway",
+   "tags": "sag smart access gateway alibaba cloud SAG Smart Access Gateway",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 37.5,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.sag_smart_access_gateway_01;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.sag_smart_access_gateway_01"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:561"
+  },
+  {
+   "id": "alibaba_cloud-269-sag-smart-access-gateway",
+   "title": "SAG Smart Access Gateway",
+   "tags": "sag smart access gateway alibaba cloud SAG Smart Access Gateway",
+   "kind": "vertex",
+   "width": 50.099999999999994,
+   "height": 41.4,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.sag_smart_access_gateway_02;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.sag_smart_access_gateway_02"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:563"
+  },
+  {
+   "id": "alibaba_cloud-270-sas-situational-awareness",
+   "title": "SAS Situational Awareness",
+   "tags": "sas situational awareness alibaba cloud SAS Situational Awareness",
+   "kind": "vertex",
+   "width": 46.5,
+   "height": 49.199999999999996,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.sas_situational_awareness;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.sas_situational_awareness"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:565"
+  },
+  {
+   "id": "alibaba_cloud-271-sca-smart-conversation-analysis",
+   "title": "SCA Smart Conversation Analysis",
+   "tags": "sca smart conversation analysis alibaba cloud SCA Smart Conversation Analysis",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 47.400000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.sca_smart_conversation_analysis_01;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.sca_smart_conversation_analysis_01"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:567"
+  },
+  {
+   "id": "alibaba_cloud-272-sca-smart-conversation-analysis",
+   "title": "SCA Smart Conversation Analysis",
+   "tags": "sca smart conversation analysis alibaba cloud SCA Smart Conversation Analysis",
+   "kind": "vertex",
+   "width": 55.800000000000004,
+   "height": 56.1,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.sca_smart_conversation_analysis_02;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.sca_smart_conversation_analysis_02"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:569"
+  },
+  {
+   "id": "alibaba_cloud-273-scc-super-computing-cluster",
+   "title": "SCC Super Computing Cluster",
+   "tags": "scc super computing cluster alibaba cloud SCC Super Computing Cluster",
+   "kind": "vertex",
+   "width": 48.6,
+   "height": 53.4,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.scc_super_computing_cluster;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.scc_super_computing_cluster"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:571"
+  },
+  {
+   "id": "alibaba_cloud-274-scdn-secure-cdn",
+   "title": "SCDN Secure CDN",
+   "tags": "scdn secure cdn alibaba cloud SCDN Secure CDN",
+   "kind": "vertex",
+   "width": 57.599999999999994,
+   "height": 59.4,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.scdn_secure_cdn;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.scdn_secure_cdn"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:573"
+  },
+  {
+   "id": "alibaba_cloud-275-scu-storage-capacity-unit",
+   "title": "SCU Storage Capacity Unit",
+   "tags": "scu storage capacity unit alibaba cloud SCU Storage Capacity Unit",
+   "kind": "vertex",
+   "width": 51,
+   "height": 54.900000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.scu_storage_capacity_unit;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.scu_storage_capacity_unit"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:575"
+  },
+  {
+   "id": "alibaba_cloud-276-sddp-sensitive-data-protection",
+   "title": "SDDP Sensitive Data Protection",
+   "tags": "sddp sensitive data protection alibaba cloud SDDP Sensitive Data Protection",
+   "kind": "vertex",
+   "width": 48.9,
+   "height": 57.9,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.sddp_sensitive_data_protection;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.sddp_sensitive_data_protection"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:577"
+  },
+  {
+   "id": "alibaba_cloud-277-shared-bandwidth",
+   "title": "Shared Bandwidth",
+   "tags": "shared bandwidth alibaba cloud Shared Bandwidth",
+   "kind": "vertex",
+   "width": 50.099999999999994,
+   "height": 50.099999999999994,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.shared_bandwidth;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.shared_bandwidth"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:579"
+  },
+  {
+   "id": "alibaba_cloud-278-shared-flow-bag",
+   "title": "Shared Flow Bag",
+   "tags": "shared flow bag alibaba cloud Shared Flow Bag",
+   "kind": "vertex",
+   "width": 54.900000000000006,
+   "height": 35.099999999999994,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.shared_flow_bag;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.shared_flow_bag"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:581"
+  },
+  {
+   "id": "alibaba_cloud-279-shc-shield-hybrid-cloud",
+   "title": "SHC Shield Hybrid Cloud",
+   "tags": "shc shield hybrid cloud alibaba cloud SHC Shield Hybrid Cloud",
+   "kind": "vertex",
+   "width": 49.199999999999996,
+   "height": 45.3,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.shc_shield_hybrid_cloud;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.shc_shield_hybrid_cloud"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:583"
+  },
+  {
+   "id": "alibaba_cloud-280-slb-server-load-balancer",
+   "title": "SLB Server Load Balancer",
+   "tags": "slb server load balancer alibaba cloud SLB Server Load Balancer",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 40.2,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.slb_server_load_balancer_01;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.slb_server_load_balancer_01"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:585"
+  },
+  {
+   "id": "alibaba_cloud-281-slb-server-load-balancer",
+   "title": "SLB Server Load Balancer",
+   "tags": "slb server load balancer alibaba cloud SLB Server Load Balancer",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.slb_server_load_balancer_02;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.slb_server_load_balancer_02"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:587"
+  },
+  {
+   "id": "alibaba_cloud-282-slb-server-load-balancer",
+   "title": "SLB Server Load Balancer",
+   "tags": "slb server load balancer alibaba cloud SLB Server Load Balancer",
+   "kind": "vertex",
+   "width": 50.099999999999994,
+   "height": 42.599999999999994,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.slb_server_load_balancer_03;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.slb_server_load_balancer_03"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:589"
+  },
+  {
+   "id": "alibaba_cloud-283-sls-simple-log-service",
+   "title": "SLS Simple Log Service",
+   "tags": "sls simple log service alibaba cloud SLS Simple Log Service",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.sls_simple_log_service;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.sls_simple_log_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:591"
+  },
+  {
+   "id": "alibaba_cloud-284-smc-server-migration-center",
+   "title": "SMC Server Migration Center",
+   "tags": "smc server migration center alibaba cloud SMC Server Migration Center",
+   "kind": "vertex",
+   "width": 54.900000000000006,
+   "height": 54.900000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.smc_server_migration_center;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.smc_server_migration_center"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:593"
+  },
+  {
+   "id": "alibaba_cloud-285-sms-short-message-service",
+   "title": "SMS Short Message Service",
+   "tags": "sms short message service alibaba cloud SMS Short Message Service",
+   "kind": "vertex",
+   "width": 49.8,
+   "height": 45.6,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.sms_short_message_service;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.sms_short_message_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:595"
+  },
+  {
+   "id": "alibaba_cloud-286-sos",
+   "title": "SOS",
+   "tags": "sos alibaba cloud SOS",
+   "kind": "vertex",
+   "width": 46.5,
+   "height": 47.400000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.sos;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.sos"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:597"
+  },
+  {
+   "id": "alibaba_cloud-287-spark-data-insights",
+   "title": "Spark Data Insights",
+   "tags": "spark data insights alibaba cloud Spark Data Insights",
+   "kind": "vertex",
+   "width": 46.2,
+   "height": 50.099999999999994,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.spark_data_insights;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.spark_data_insights"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:599"
+  },
+  {
+   "id": "alibaba_cloud-288-sppc",
+   "title": "SPPC",
+   "tags": "sppc alibaba cloud SPPC",
+   "kind": "vertex",
+   "width": 50.4,
+   "height": 44.1,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.sppc;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.sppc"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:601"
+  },
+  {
+   "id": "alibaba_cloud-289-sqlserver",
+   "title": "SQLServer",
+   "tags": "sqlserver sql server alibaba cloud SQLServer",
+   "kind": "vertex",
+   "width": 39.6,
+   "height": 54.900000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.sqlserver;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.sqlserver"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:603"
+  },
+  {
+   "id": "alibaba_cloud-290-swas-simple-application-server",
+   "title": "SWAS Simple Application Server",
+   "tags": "swas simple application server alibaba cloud SWAS Simple Application Server",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.swas_simple_application_server;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.swas_simple_application_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:605"
+  },
+  {
+   "id": "alibaba_cloud-291-tr-transit-router",
+   "title": "TR Transit Router",
+   "tags": "tr transit router alibaba cloud TR Transit Router",
+   "kind": "vertex",
+   "width": 52.5,
+   "height": 52.5,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.tr_transit_router;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.tr_transit_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:607"
+  },
+  {
+   "id": "alibaba_cloud-292-trademark-service",
+   "title": "Trademark Service",
+   "tags": "trademark service alibaba cloud Trademark Service",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 53.1,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.trademark_service;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.trademark_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:609"
+  },
+  {
+   "id": "alibaba_cloud-293-uis-ultimate-internet-service",
+   "title": "UIS Ultimate Internet Service",
+   "tags": "uis ultimate internet service alibaba cloud UIS Ultimate Internet Service",
+   "kind": "vertex",
+   "width": 54.900000000000006,
+   "height": 54,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.uis_ultimate_internet_service;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.uis_ultimate_internet_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:611"
+  },
+  {
+   "id": "alibaba_cloud-294-user-feedback",
+   "title": "User Feedback",
+   "tags": "user feedback alibaba cloud User Feedback",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 47.400000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.user_feedback_01;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.user_feedback_01"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:613"
+  },
+  {
+   "id": "alibaba_cloud-295-user-feedback",
+   "title": "User Feedback",
+   "tags": "user feedback alibaba cloud User Feedback",
+   "kind": "vertex",
+   "width": 43.199999999999996,
+   "height": 50.099999999999994,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.user_feedback_02;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.user_feedback_02"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:615"
+  },
+  {
+   "id": "alibaba_cloud-296-user",
+   "title": "User",
+   "tags": "user alibaba cloud User",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.user;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.user"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:617"
+  },
+  {
+   "id": "alibaba_cloud-297-vbr-virtual-border-router",
+   "title": "VBR Virtual Border Router",
+   "tags": "vbr virtual border router alibaba cloud VBR Virtual Border Router",
+   "kind": "vertex",
+   "width": 57.599999999999994,
+   "height": 57.599999999999994,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.vbr_virtual_border_router;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.vbr_virtual_border_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:619"
+  },
+  {
+   "id": "alibaba_cloud-298-vcs-visual-computing-service",
+   "title": "VCS Visual Computing Service",
+   "tags": "vcs visual computing service alibaba cloud VCS Visual Computing Service",
+   "kind": "vertex",
+   "width": 51.3,
+   "height": 52.5,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.vcs_visual_computing_service;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.vcs_visual_computing_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:621"
+  },
+  {
+   "id": "alibaba_cloud-299-vms-voice-messaging-service",
+   "title": "VMS Voice Messaging Service",
+   "tags": "vms voice messaging service alibaba cloud VMS Voice Messaging Service",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 45.6,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.vms_voice_messaging_service;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.vms_voice_messaging_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:623"
+  },
+  {
+   "id": "alibaba_cloud-300-voicebot-intelligent-voice-navigation",
+   "title": "VoiceBot Intelligent Voice Navigation",
+   "tags": "voicebot intelligent voice navigation alibaba cloud VoiceBot Intelligent Voice Navigation",
+   "kind": "vertex",
+   "width": 58.8,
+   "height": 57,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.voicebot_intelligent_voice_navigation;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.voicebot_intelligent_voice_navigation"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:625"
+  },
+  {
+   "id": "alibaba_cloud-301-vpc-virtual-private-cloud",
+   "title": "VPC Virtual Private Cloud",
+   "tags": "vpc virtual private cloud alibaba cloud VPC Virtual Private Cloud",
+   "kind": "vertex",
+   "width": 57,
+   "height": 36.6,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.vpc_virtual_private_cloud;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.vpc_virtual_private_cloud"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:627"
+  },
+  {
+   "id": "alibaba_cloud-302-vpn-gateway",
+   "title": "VPN Gateway",
+   "tags": "vpn gateway virtual private network alibaba cloud VPN Gateway",
+   "kind": "vertex",
+   "width": 54.900000000000006,
+   "height": 54.900000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.vpn_gateway;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.vpn_gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:629"
+  },
+  {
+   "id": "alibaba_cloud-303-vs-video-surveillance",
+   "title": "VS Video Surveillance",
+   "tags": "vs video surveillance alibaba cloud VS Video Surveillance",
+   "kind": "vertex",
+   "width": 54.900000000000006,
+   "height": 54.900000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.vs_video_surveillance;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.vs_video_surveillance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:631"
+  },
+  {
+   "id": "alibaba_cloud-304-vswitch",
+   "title": "vSwitch",
+   "tags": "vswitch switch alibaba cloud vSwitch",
+   "kind": "vertex",
+   "width": 52.5,
+   "height": 37.5,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.vswitch;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.vswitch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:633"
+  },
+  {
+   "id": "alibaba_cloud-305-waf-web-application-firewall",
+   "title": "WAF Web Application Firewall",
+   "tags": "waf web application firewall alibaba cloud WAF Web Application Firewall",
+   "kind": "vertex",
+   "width": 49.199999999999996,
+   "height": 43.199999999999996,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.waf_web_application_firewall;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.waf_web_application_firewall"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:635"
+  },
+  {
+   "id": "alibaba_cloud-306-web-web-app-service",
+   "title": "Web+ Web App Service",
+   "tags": "webplus web app service alibaba cloud Web+ Web App Service",
+   "kind": "vertex",
+   "width": 54.900000000000006,
+   "height": 54.900000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.webplus_web_app_service;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.webplus_web_app_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:637"
+  },
+  {
+   "id": "alibaba_cloud-307-xdragon-bare-metal-server",
+   "title": "XDragon Bare Metal Server",
+   "tags": "xdragon bare metal server alibaba cloud XDragon Bare Metal Server",
+   "kind": "vertex",
+   "width": 49.199999999999996,
+   "height": 47.7,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.xdragon_bare_metal_server;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.xdragon_bare_metal_server"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:639"
+  },
+  {
+   "id": "alibaba_cloud-308-xtrace",
+   "title": "XTrace",
+   "tags": "xtrace alibaba cloud XTrace",
+   "kind": "vertex",
+   "width": 41.4,
+   "height": 50.099999999999994,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.xtrace;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.xtrace"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:641"
+  },
+  {
+   "id": "alibaba_cloud-309-yida",
+   "title": "Yida",
+   "tags": "yida alibaba cloud Yida",
+   "kind": "vertex",
+   "width": 47.400000000000006,
+   "height": 47.400000000000006,
+   "style": "aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.yida;",
+   "shapeNames": [
+    "mxgraph.alibaba_cloud.yida"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AlibabaCloud.js:643"
+  }
+ ]
+}

@@ -1,0 +1,120 @@
+{
+ "id": "pidCentrifuges",
+ "title": "Process Engineering / Centrifuges",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-PID.js:8",
+ "entries": [
+  {
+   "id": "pidCentrifuges-0-centrifuge-decanter-screw-solid-shell",
+   "title": "Centrifuge, Decanter (Screw, Solid Shell)",
+   "tags": "pid centrifuges  Centrifuge, Decanter (Screw, Solid Shell) Centrifuge, Decanter (Screw, Solid Shell)",
+   "kind": "vertex",
+   "width": 110,
+   "height": 100,
+   "style": "shape=mxgraph.pid.centrifuges.centrifuge,_decanter_(screw,_solid_shell);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.centrifuges.centrifuge,_decanter_(screw,_solid_shell)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidCentrifuges-1-centrifuge-high-speed",
+   "title": "Centrifuge (High Speed)",
+   "tags": "pid centrifuges  Centrifuge (High Speed) Centrifuge (High Speed)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 110,
+   "style": "shape=mxgraph.pid.centrifuges.centrifuge_(high_speed);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.centrifuges.centrifuge_(high_speed)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidCentrifuges-2-centrifuge-perforated-shell",
+   "title": "Centrifuge (Perforated Shell)",
+   "tags": "pid centrifuges  Centrifuge (Perforated Shell) Centrifuge (Perforated Shell)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 110,
+   "style": "shape=mxgraph.pid.centrifuges.centrifuge_(perforated_shell);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.centrifuges.centrifuge_(perforated_shell)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidCentrifuges-3-centrifuge-pusher",
+   "title": "Centrifuge (Pusher)",
+   "tags": "pid centrifuges  Centrifuge (Pusher) Centrifuge (Pusher)",
+   "kind": "vertex",
+   "width": 110,
+   "height": 100,
+   "style": "shape=mxgraph.pid.centrifuges.centrifuge_(pusher);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.centrifuges.centrifuge_(pusher)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidCentrifuges-4-centrifuge-screw-perforated-shell",
+   "title": "Centrifuge (Screw, Perforated Shell)",
+   "tags": "pid centrifuges  Centrifuge (Screw, Perforated Shell) Centrifuge (Screw, Perforated Shell)",
+   "kind": "vertex",
+   "width": 110,
+   "height": 100,
+   "style": "shape=mxgraph.pid.centrifuges.centrifuge_(screw,_perforated_shell);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.centrifuges.centrifuge_(screw,_perforated_shell)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidCentrifuges-5-centrifuge-separator-disc",
+   "title": "Centrifuge (Separator Disc)",
+   "tags": "pid centrifuges  Centrifuge (Separator Disc) Centrifuge (Separator Disc)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 110,
+   "style": "shape=mxgraph.pid.centrifuges.centrifuge_(separator_disc);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.centrifuges.centrifuge_(separator_disc)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidCentrifuges-6-centrifuge-skimmer",
+   "title": "Centrifuge (Skimmer)",
+   "tags": "pid centrifuges  Centrifuge (Skimmer) Centrifuge (Skimmer)",
+   "kind": "vertex",
+   "width": 110,
+   "height": 100,
+   "style": "shape=mxgraph.pid.centrifuges.centrifuge_(skimmer);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.centrifuges.centrifuge_(skimmer)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidCentrifuges-7-centrifuge-solid-shell",
+   "title": "Centrifuge (Solid Shell)",
+   "tags": "pid centrifuges  Centrifuge (Solid Shell) Centrifuge (Solid Shell)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 110,
+   "style": "shape=mxgraph.pid.centrifuges.centrifuge_(solid_shell);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.centrifuges.centrifuge_(solid_shell)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  }
+ ]
+}

@@ -1,0 +1,162 @@
+{
+ "id": "eipMessage Routing",
+ "title": "EIP / Message Routing",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-EIP.js:7",
+ "entries": [
+  {
+   "id": "eipMessage Routing-0-aggregator",
+   "title": "Aggregator",
+   "tags": "eip aggregator eip enterprise integration pattern message routing  Aggregator",
+   "kind": "vertex",
+   "width": 150,
+   "height": 90,
+   "style": "html=1;strokeWidth=2;outlineConnect=0;dashed=0;align=center;fontSize=8;fillColor=#c0f5a9;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.eip.aggregator;",
+   "shapeNames": [
+    "mxgraph.eip.aggregator"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:113"
+  },
+  {
+   "id": "eipMessage Routing-1-composed-message-processor",
+   "title": "Composed Message Processor",
+   "tags": "eip composed message processor eip enterprise integration pattern message routing  Composed Message Processor",
+   "kind": "vertex",
+   "width": 150,
+   "height": 90,
+   "style": "html=1;strokeWidth=2;outlineConnect=0;dashed=0;align=center;fontSize=8;fillColor=#c0f5a9;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.eip.composed_message_processor;",
+   "shapeNames": [
+    "mxgraph.eip.composed_message_processor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:115"
+  },
+  {
+   "id": "eipMessage Routing-2-content-based-router",
+   "title": "Content Based Router",
+   "tags": "eip content based router eip enterprise integration pattern message routing  Content Based Router",
+   "kind": "vertex",
+   "width": 150,
+   "height": 90,
+   "style": "html=1;strokeWidth=2;outlineConnect=0;dashed=0;align=center;fontSize=8;fillColor=#c0f5a9;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.eip.content_based_router;",
+   "shapeNames": [
+    "mxgraph.eip.content_based_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:117"
+  },
+  {
+   "id": "eipMessage Routing-3-dynamic-router",
+   "title": "Dynamic Router",
+   "tags": "eip dynamic router eip enterprise integration pattern message routing  Dynamic Router",
+   "kind": "vertex",
+   "width": 150,
+   "height": 90,
+   "style": "html=1;strokeWidth=2;outlineConnect=0;dashed=0;align=center;fontSize=8;fillColor=#c0f5a9;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.eip.dynamic_router;",
+   "shapeNames": [
+    "mxgraph.eip.dynamic_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:119"
+  },
+  {
+   "id": "eipMessage Routing-4-message-broker",
+   "title": "Message Broker",
+   "tags": "eip enterprise integration pattern message routing message broker Message Broker",
+   "kind": "cells",
+   "width": 120,
+   "height": 90,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeWidth=2;dashed=0;align=center;fontSize=8;shape=rect;fillColor=#fffbc0;strokeColor=#000000;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"47\" width=\"26\" height=\"18\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"strokeWidth=2;dashed=0;align=center;fontSize=8;shape=rect;fillColor=#fffbc0;strokeColor=#000000;\" vertex=\"1\" parent=\"1\"><mxGeometry y=\"18\" width=\"26\" height=\"18\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"strokeWidth=2;dashed=0;align=center;fontSize=8;shape=rect;fillColor=#fffbc0;strokeColor=#000000;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"94\" y=\"18\" width=\"26\" height=\"18\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"strokeWidth=2;dashed=0;align=center;fontSize=8;shape=rect;fillColor=#fffbc0;strokeColor=#000000;\" vertex=\"1\" parent=\"1\"><mxGeometry y=\"54\" width=\"26\" height=\"18\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"\" style=\"strokeWidth=2;dashed=0;align=center;fontSize=8;shape=rect;fillColor=#fffbc0;strokeColor=#000000;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"94\" y=\"54\" width=\"26\" height=\"18\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"\" style=\"strokeWidth=2;dashed=0;align=center;fontSize=8;shape=rect;fillColor=#fffbc0;strokeColor=#000000;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"47\" y=\"72\" width=\"26\" height=\"18\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"\" style=\"strokeWidth=2;dashed=0;align=center;fontSize=8;shape=rect;fillColor=#c0f5a9;strokeColor=#000000;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"47\" y=\"36\" width=\"26\" height=\"18\" as=\"geometry\"/></mxCell><mxCell id=\"9\" value=\"\" style=\"edgeStyle=none;endArrow=none;dashed=0;html=1;strokeWidth=2;\" edge=\"1\" source=\"8\" target=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"10\" value=\"\" style=\"edgeStyle=none;endArrow=none;dashed=0;html=1;strokeWidth=2;\" edge=\"1\" source=\"8\" target=\"3\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"11\" value=\"\" style=\"edgeStyle=none;endArrow=none;dashed=0;html=1;strokeWidth=2;\" edge=\"1\" source=\"8\" target=\"4\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"12\" value=\"\" style=\"edgeStyle=none;endArrow=none;dashed=0;html=1;strokeWidth=2;\" edge=\"1\" source=\"8\" target=\"5\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"13\" value=\"\" style=\"edgeStyle=none;endArrow=none;dashed=0;html=1;strokeWidth=2;\" edge=\"1\" source=\"8\" target=\"6\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"14\" value=\"\" style=\"edgeStyle=none;endArrow=none;dashed=0;html=1;strokeWidth=2;\" edge=\"1\" source=\"8\" target=\"7\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:121"
+  },
+  {
+   "id": "eipMessage Routing-5-message-filter",
+   "title": "Message Filter",
+   "tags": "eip message filter eip enterprise integration pattern message routing  Message Filter",
+   "kind": "vertex",
+   "width": 150,
+   "height": 90,
+   "style": "html=1;strokeWidth=2;outlineConnect=0;dashed=0;align=center;fontSize=8;fillColor=#c0f5a9;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.eip.message_filter;",
+   "shapeNames": [
+    "mxgraph.eip.message_filter"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:123"
+  },
+  {
+   "id": "eipMessage Routing-6-process-manager",
+   "title": "Process Manager",
+   "tags": "eip process manager eip enterprise integration pattern message routing  Process Manager",
+   "kind": "vertex",
+   "width": 150,
+   "height": 90,
+   "style": "html=1;strokeWidth=2;outlineConnect=0;dashed=0;align=center;fontSize=8;fillColor=#c0f5a9;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.eip.process_manager;",
+   "shapeNames": [
+    "mxgraph.eip.process_manager"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:125"
+  },
+  {
+   "id": "eipMessage Routing-7-recipient-list",
+   "title": "Recipient List",
+   "tags": "eip recipient list eip enterprise integration pattern message routing  Recipient List",
+   "kind": "vertex",
+   "width": 150,
+   "height": 90,
+   "style": "html=1;strokeWidth=2;outlineConnect=0;dashed=0;align=center;fontSize=8;fillColor=#c0f5a9;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.eip.recipient_list;",
+   "shapeNames": [
+    "mxgraph.eip.recipient_list"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:127"
+  },
+  {
+   "id": "eipMessage Routing-8-resequencer",
+   "title": "Resequencer",
+   "tags": "eip resequencer eip enterprise integration pattern message routing  Resequencer",
+   "kind": "vertex",
+   "width": 150,
+   "height": 90,
+   "style": "html=1;strokeWidth=2;outlineConnect=0;dashed=0;align=center;fontSize=8;fillColor=#c0f5a9;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.eip.resequencer;",
+   "shapeNames": [
+    "mxgraph.eip.resequencer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:129"
+  },
+  {
+   "id": "eipMessage Routing-9-routing-slip",
+   "title": "Routing Slip",
+   "tags": "eip routing slip eip enterprise integration pattern message routing  Routing Slip",
+   "kind": "vertex",
+   "width": 150,
+   "height": 90,
+   "style": "html=1;strokeWidth=2;outlineConnect=0;dashed=0;align=center;fontSize=8;fillColor=#c0f5a9;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.eip.routing_slip;",
+   "shapeNames": [
+    "mxgraph.eip.routing_slip"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:131"
+  },
+  {
+   "id": "eipMessage Routing-10-splitter",
+   "title": "Splitter",
+   "tags": "eip splitter eip enterprise integration pattern message routing  Splitter",
+   "kind": "vertex",
+   "width": 150,
+   "height": 90,
+   "style": "html=1;strokeWidth=2;outlineConnect=0;dashed=0;align=center;fontSize=8;fillColor=#c0f5a9;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.eip.splitter;",
+   "shapeNames": [
+    "mxgraph.eip.splitter"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:133"
+  }
+ ]
+}

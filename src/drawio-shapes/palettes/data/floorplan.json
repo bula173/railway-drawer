@@ -1,0 +1,1158 @@
+{
+ "id": "floorplan",
+ "title": "Floorplans",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:8",
+ "entries": [
+  {
+   "id": "floorplan-0-wall-horizontal",
+   "title": "Wall (Horizontal)",
+   "tags": "floorplan wall floorplan  Wall (Horizontal)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 10,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.wall;fillColor=strokeColor;",
+   "shapeNames": [
+    "mxgraph.floorplan.wall"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:21"
+  },
+  {
+   "id": "floorplan-1-wall-vertical",
+   "title": "Wall (Vertical)",
+   "tags": "floorplan wall floorplan  Wall (Vertical)",
+   "kind": "vertex",
+   "width": 10,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.wall;fillColor=strokeColor;direction=south;",
+   "shapeNames": [
+    "mxgraph.floorplan.wall"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:23"
+  },
+  {
+   "id": "floorplan-2-wall-corner-nw",
+   "title": "Wall (Corner NW)",
+   "tags": "floorplan wallCorner floorplan  Wall (Corner NW)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.wallCorner;fillColor=strokeColor;",
+   "shapeNames": [
+    "mxgraph.floorplan.wallCorner"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:25"
+  },
+  {
+   "id": "floorplan-3-wall-corner-ne",
+   "title": "Wall (Corner NE)",
+   "tags": "floorplan wallCorner floorplan  Wall (Corner NE)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.wallCorner;fillColor=strokeColor;direction=south;",
+   "shapeNames": [
+    "mxgraph.floorplan.wallCorner"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:27"
+  },
+  {
+   "id": "floorplan-4-wall-corner-se",
+   "title": "Wall (Corner SE)",
+   "tags": "floorplan wallCorner floorplan  Wall (Corner SE)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.wallCorner;fillColor=strokeColor;direction=west",
+   "shapeNames": [
+    "mxgraph.floorplan.wallCorner"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:29"
+  },
+  {
+   "id": "floorplan-5-wall-corner-sw",
+   "title": "Wall (Corner SW)",
+   "tags": "floorplan wallCorner floorplan  Wall (Corner SW)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.wallCorner;fillColor=strokeColor;direction=north",
+   "shapeNames": [
+    "mxgraph.floorplan.wallCorner"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:31"
+  },
+  {
+   "id": "floorplan-6-wall-u",
+   "title": "Wall (U)",
+   "tags": "floorplan wallU floorplan  Wall (U)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.wallU;fillColor=strokeColor;",
+   "shapeNames": [
+    "mxgraph.floorplan.wallU"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:33"
+  },
+  {
+   "id": "floorplan-7-room",
+   "title": "Room",
+   "tags": "floorplan room floorplan  Room",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.room;fillColor=strokeColor;",
+   "shapeNames": [
+    "mxgraph.floorplan.room"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:35"
+  },
+  {
+   "id": "floorplan-8-horizontal-dimension",
+   "title": "Horizontal Dimension",
+   "tags": "horizontal dimension measure distance unit Horizontal Dimension",
+   "kind": "vertex",
+   "width": 100,
+   "height": 40,
+   "style": "shape=dimension;whiteSpace=wrap;html=1;align=center;points=[];verticalAlign=bottom;spacingBottom=3;labelBackgroundColor=none;",
+   "value": "Label",
+   "shapeNames": [
+    "dimension"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:37"
+  },
+  {
+   "id": "floorplan-9-horizontal-dimension",
+   "title": "Horizontal Dimension",
+   "tags": "horizontal dimension measure distance unit Horizontal Dimension",
+   "kind": "vertex",
+   "width": 100,
+   "height": 40,
+   "style": "shape=dimension;direction=west;whiteSpace=wrap;html=1;align=center;points=[];verticalAlign=top;spacingTop=-15;labelBackgroundColor=none;",
+   "value": "Label",
+   "shapeNames": [
+    "dimension"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:38"
+  },
+  {
+   "id": "floorplan-10-vertical-dimension",
+   "title": "Vertical Dimension",
+   "tags": "vertical dimension measure distance unit Vertical Dimension",
+   "kind": "vertex",
+   "width": 40,
+   "height": 100,
+   "style": "shape=dimension;direction=north;whiteSpace=wrap;html=1;align=center;points=[];verticalAlign=bottom;labelBackgroundColor=none;horizontal=0;spacingBottom=3;",
+   "value": "Label",
+   "shapeNames": [
+    "dimension"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:39"
+  },
+  {
+   "id": "floorplan-11-vertical-dimension",
+   "title": "Vertical Dimension",
+   "tags": "vertical dimension measure distance unit Vertical Dimension",
+   "kind": "vertex",
+   "width": 40,
+   "height": 100,
+   "style": "shape=dimension;direction=south;whiteSpace=wrap;html=1;align=center;points=[];verticalAlign=top;labelBackgroundColor=none;horizontal=0;spacingTop=-15;",
+   "value": "Label",
+   "shapeNames": [
+    "dimension"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:40"
+  },
+  {
+   "id": "floorplan-12-window",
+   "title": "Window",
+   "tags": "floorplan window floorplan  Window",
+   "kind": "vertex",
+   "width": 100,
+   "height": 10,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.window;",
+   "shapeNames": [
+    "mxgraph.floorplan.window"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:41"
+  },
+  {
+   "id": "floorplan-13-window-glider",
+   "title": "Window, Glider",
+   "tags": "floorplan windowGlider floorplan  Window, Glider",
+   "kind": "vertex",
+   "width": 100,
+   "height": 10,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.windowGlider;dx=0.25;",
+   "shapeNames": [
+    "mxgraph.floorplan.windowGlider"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:43"
+  },
+  {
+   "id": "floorplan-14-window-garden",
+   "title": "Window, Garden",
+   "tags": "floorplan windowGarden floorplan  Window, Garden",
+   "kind": "vertex",
+   "width": 100,
+   "height": 20,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.windowGarden;dx=0.25;",
+   "shapeNames": [
+    "mxgraph.floorplan.windowGarden"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:45"
+  },
+  {
+   "id": "floorplan-15-window-bow",
+   "title": "Window, Bow",
+   "tags": "floorplan windowBow floorplan  Window, Bow",
+   "kind": "vertex",
+   "width": 100,
+   "height": 20,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.windowBow;strokeWidth=3;",
+   "shapeNames": [
+    "mxgraph.floorplan.windowBow"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:47"
+  },
+  {
+   "id": "floorplan-16-window-bay",
+   "title": "Window, Bay",
+   "tags": "floorplan windowBay floorplan  Window, Bay",
+   "kind": "vertex",
+   "width": 100,
+   "height": 40,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.windowBay;strokeWidth=3;aspect=fixed;",
+   "shapeNames": [
+    "mxgraph.floorplan.windowBay"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:49"
+  },
+  {
+   "id": "floorplan-17-stairs",
+   "title": "Stairs",
+   "tags": "floorplan stairs floorplan  Stairs",
+   "kind": "vertex",
+   "width": 300,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.stairs;",
+   "shapeNames": [
+    "mxgraph.floorplan.stairs"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:51"
+  },
+  {
+   "id": "floorplan-18-stairs",
+   "title": "Stairs",
+   "tags": "floorplan stairs floorplan  Stairs",
+   "kind": "vertex",
+   "width": 100,
+   "height": 300,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.stairs;direction=south;",
+   "shapeNames": [
+    "mxgraph.floorplan.stairs"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:53"
+  },
+  {
+   "id": "floorplan-19-stairs",
+   "title": "Stairs",
+   "tags": "floorplan stairsRest floorplan  Stairs",
+   "kind": "vertex",
+   "width": 300,
+   "height": 200,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.stairsRest;",
+   "shapeNames": [
+    "mxgraph.floorplan.stairsRest"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:55"
+  },
+  {
+   "id": "floorplan-20-door",
+   "title": "Door",
+   "tags": "floorplan doorLeft floorplan  Door",
+   "kind": "vertex",
+   "width": 80,
+   "height": 85,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.doorLeft;aspect=fixed;",
+   "shapeNames": [
+    "mxgraph.floorplan.doorLeft"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:57"
+  },
+  {
+   "id": "floorplan-21-door",
+   "title": "Door",
+   "tags": "floorplan doorRight floorplan  Door",
+   "kind": "vertex",
+   "width": 80,
+   "height": 85,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.doorRight;aspect=fixed;",
+   "shapeNames": [
+    "mxgraph.floorplan.doorRight"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:59"
+  },
+  {
+   "id": "floorplan-22-door-double",
+   "title": "Door, Double",
+   "tags": "floorplan doorDouble floorplan  Door, Double",
+   "kind": "vertex",
+   "width": 160,
+   "height": 85,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.doorDouble;aspect=fixed;",
+   "shapeNames": [
+    "mxgraph.floorplan.doorDouble"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:61"
+  },
+  {
+   "id": "floorplan-23-door-uneven",
+   "title": "Door, Uneven",
+   "tags": "floorplan doorUneven floorplan  Door, Uneven",
+   "kind": "vertex",
+   "width": 160,
+   "height": 85,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.doorUneven;dx=0.5;",
+   "shapeNames": [
+    "mxgraph.floorplan.doorUneven"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:63"
+  },
+  {
+   "id": "floorplan-24-door-opposing",
+   "title": "Door, Opposing",
+   "tags": "floorplan doorOpposing floorplan  Door, Opposing",
+   "kind": "vertex",
+   "width": 160,
+   "height": 165,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.doorOpposing;dx=0.5;",
+   "shapeNames": [
+    "mxgraph.floorplan.doorOpposing"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:65"
+  },
+  {
+   "id": "floorplan-25-door-revolving",
+   "title": "Door, Revolving",
+   "tags": "floorplan doorLeft floorplan  Door, Revolving",
+   "kind": "vertex",
+   "width": 80,
+   "height": 85,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.doorRevolving;aspect=fixed;",
+   "shapeNames": [
+    "mxgraph.floorplan.doorRevolving"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:67"
+  },
+  {
+   "id": "floorplan-26-door-pocket",
+   "title": "Door, Pocket",
+   "tags": "floorplan doorPocket floorplan  Door, Pocket",
+   "kind": "vertex",
+   "width": 104,
+   "height": 10,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.doorPocket;dx=0.5;",
+   "shapeNames": [
+    "mxgraph.floorplan.doorPocket"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:69"
+  },
+  {
+   "id": "floorplan-27-door-double-pocket",
+   "title": "Door, Double Pocket",
+   "tags": "floorplan doorDoublePocket floorplan  Door, Double Pocket",
+   "kind": "vertex",
+   "width": 104,
+   "height": 10,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.doorDoublePocket;dx=0.25;",
+   "shapeNames": [
+    "mxgraph.floorplan.doorDoublePocket"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:71"
+  },
+  {
+   "id": "floorplan-28-door-by-pass",
+   "title": "Door, By-pass",
+   "tags": "floorplan doorBypass floorplan  Door, By-pass",
+   "kind": "vertex",
+   "width": 104,
+   "height": 10,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.doorBypass;dx=0.25;",
+   "shapeNames": [
+    "mxgraph.floorplan.doorBypass"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:73"
+  },
+  {
+   "id": "floorplan-29-door-bi-fold",
+   "title": "Door, Bi-fold",
+   "tags": "floorplan doorBifold floorplan  Door, Bi-fold",
+   "kind": "vertex",
+   "width": 160,
+   "height": 40,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.doorBifold;dx=0.3;",
+   "shapeNames": [
+    "mxgraph.floorplan.doorBifold"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:75"
+  },
+  {
+   "id": "floorplan-30-door-slidingglass",
+   "title": "Door, SlidingGlass",
+   "tags": "floorplan doorSlidingGlass floorplan  Door, SlidingGlass",
+   "kind": "vertex",
+   "width": 104,
+   "height": 10,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.doorSlidingGlass;dx=0.25;",
+   "shapeNames": [
+    "mxgraph.floorplan.doorSlidingGlass"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:77"
+  },
+  {
+   "id": "floorplan-31-door-overhead",
+   "title": "Door, Overhead",
+   "tags": "floorplan doorOverhead floorplan  Door, Overhead",
+   "kind": "vertex",
+   "width": 104,
+   "height": 30,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.doorOverhead;",
+   "shapeNames": [
+    "mxgraph.floorplan.doorOverhead"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:79"
+  },
+  {
+   "id": "floorplan-32-door-accordion",
+   "title": "Door, Accordion",
+   "tags": "floorplan accordion floorplan  Door, Accordion",
+   "kind": "vertex",
+   "width": 160,
+   "height": 30,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.doorAccordion;dx=0.6;",
+   "shapeNames": [
+    "mxgraph.floorplan.doorAccordion"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:81"
+  },
+  {
+   "id": "floorplan-33-door-double-action",
+   "title": "Door, Double Action",
+   "tags": "floorplan doorDoubleAction floorplan  Door, Double Action",
+   "kind": "vertex",
+   "width": 80,
+   "height": 165,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.doorDoubleAction;aspect=fixed;",
+   "shapeNames": [
+    "mxgraph.floorplan.doorDoubleAction"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:83"
+  },
+  {
+   "id": "floorplan-34-opening",
+   "title": "Opening",
+   "tags": "floorplan opening floorplan  Opening",
+   "kind": "vertex",
+   "width": 50,
+   "height": 10,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.opening;",
+   "shapeNames": [
+    "mxgraph.floorplan.opening"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:85"
+  },
+  {
+   "id": "floorplan-35-bathtub",
+   "title": "Bathtub",
+   "tags": "floorplan bathtub floorplan  Bathtub",
+   "kind": "vertex",
+   "width": 180,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.bathtub2;",
+   "shapeNames": [
+    "mxgraph.floorplan.bathtub2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:87"
+  },
+  {
+   "id": "floorplan-36-bed-double",
+   "title": "Bed, Double",
+   "tags": "floorplan bed double floorplan  Bed, Double",
+   "kind": "vertex",
+   "width": 200,
+   "height": 180,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.bed_double;",
+   "shapeNames": [
+    "mxgraph.floorplan.bed_double"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:89"
+  },
+  {
+   "id": "floorplan-37-bed-single",
+   "title": "Bed Single",
+   "tags": "floorplan bed single floorplan  Bed Single",
+   "kind": "vertex",
+   "width": 100,
+   "height": 180,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.bed_single;",
+   "shapeNames": [
+    "mxgraph.floorplan.bed_single"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:91"
+  },
+  {
+   "id": "floorplan-38-bookcase",
+   "title": "Bookcase",
+   "tags": "floorplan bookcase floorplan  Bookcase",
+   "kind": "vertex",
+   "width": 120,
+   "height": 30,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.bookcase;",
+   "shapeNames": [
+    "mxgraph.floorplan.bookcase"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:93"
+  },
+  {
+   "id": "floorplan-39-chair",
+   "title": "Chair",
+   "tags": "floorplan chair floorplan  Chair",
+   "kind": "vertex",
+   "width": 41,
+   "height": 52,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.chair;",
+   "shapeNames": [
+    "mxgraph.floorplan.chair"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:95"
+  },
+  {
+   "id": "floorplan-40-copier",
+   "title": "Copier",
+   "tags": "floorplan copier floorplan  Copier",
+   "kind": "vertex",
+   "width": 110,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.copier;",
+   "shapeNames": [
+    "mxgraph.floorplan.copier"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:97"
+  },
+  {
+   "id": "floorplan-41-couch",
+   "title": "Couch",
+   "tags": "floorplan couch floorplan  Couch",
+   "kind": "vertex",
+   "width": 150,
+   "height": 80,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.couch;",
+   "shapeNames": [
+    "mxgraph.floorplan.couch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:99"
+  },
+  {
+   "id": "floorplan-42-crt-tv",
+   "title": "CRT TV",
+   "tags": "floorplan crt tv floorplan  CRT TV",
+   "kind": "vertex",
+   "width": 60,
+   "height": 40,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.crt_tv;",
+   "shapeNames": [
+    "mxgraph.floorplan.crt_tv"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:101"
+  },
+  {
+   "id": "floorplan-43-desk-corner",
+   "title": "Desk Corner",
+   "tags": "floorplan desk corner floorplan  Desk Corner",
+   "kind": "vertex",
+   "width": 150,
+   "height": 150,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.desk_corner;",
+   "shapeNames": [
+    "mxgraph.floorplan.desk_corner"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:103"
+  },
+  {
+   "id": "floorplan-44-desk-corner-2",
+   "title": "Desk Corner 2",
+   "tags": "floorplan desk corner 2 floorplan  Desk Corner 2",
+   "kind": "vertex",
+   "width": 150,
+   "height": 120,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.desk_corner_2;",
+   "shapeNames": [
+    "mxgraph.floorplan.desk_corner_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:105"
+  },
+  {
+   "id": "floorplan-45-dresser",
+   "title": "Dresser",
+   "tags": "floorplan dresser floorplan  Dresser",
+   "kind": "vertex",
+   "width": 100,
+   "height": 65,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.dresser;",
+   "shapeNames": [
+    "mxgraph.floorplan.dresser"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:107"
+  },
+  {
+   "id": "floorplan-46-drying-machine",
+   "title": "Drying Machine",
+   "tags": "floorplan drying machine floorplan  Drying Machine",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.drying_machine;aspect=fixed;",
+   "shapeNames": [
+    "mxgraph.floorplan.drying_machine"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:109"
+  },
+  {
+   "id": "floorplan-47-elevator",
+   "title": "Elevator",
+   "tags": "floorplan elevator floorplan  Elevator",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.elevator;",
+   "shapeNames": [
+    "mxgraph.floorplan.elevator"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:111"
+  },
+  {
+   "id": "floorplan-48-fireplace",
+   "title": "Fireplace",
+   "tags": "floorplan fireplace floorplan  Fireplace",
+   "kind": "vertex",
+   "width": 304,
+   "height": 200,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.fireplace;",
+   "shapeNames": [
+    "mxgraph.floorplan.fireplace"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:113"
+  },
+  {
+   "id": "floorplan-49-flat-tv",
+   "title": "Flat TV",
+   "tags": "floorplan flat tv floorplan  Flat TV",
+   "kind": "vertex",
+   "width": 70,
+   "height": 10,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.flat_tv;",
+   "shapeNames": [
+    "mxgraph.floorplan.flat_tv"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:115"
+  },
+  {
+   "id": "floorplan-50-floor-lamp",
+   "title": "Floor Lamp",
+   "tags": "floorplan floor lamp floorplan  Floor Lamp",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.floor_lamp;",
+   "shapeNames": [
+    "mxgraph.floorplan.floor_lamp"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:117"
+  },
+  {
+   "id": "floorplan-51-laptop",
+   "title": "Laptop",
+   "tags": "floorplan laptop floorplan  Laptop",
+   "kind": "vertex",
+   "width": 40,
+   "height": 35,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.laptop;",
+   "shapeNames": [
+    "mxgraph.floorplan.laptop"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:119"
+  },
+  {
+   "id": "floorplan-52-office-chair",
+   "title": "Office Chair",
+   "tags": "floorplan office chair floorplan  Office Chair",
+   "kind": "vertex",
+   "width": 40,
+   "height": 43,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;",
+   "shapeNames": [
+    "mxgraph.floorplan.office_chair"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:121"
+  },
+  {
+   "id": "floorplan-53-piano",
+   "title": "Piano",
+   "tags": "floorplan piano floorplan  Piano",
+   "kind": "vertex",
+   "width": 135,
+   "height": 143,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.piano;",
+   "shapeNames": [
+    "mxgraph.floorplan.piano"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:123"
+  },
+  {
+   "id": "floorplan-54-plant",
+   "title": "Plant",
+   "tags": "floorplan plant floorplan  Plant",
+   "kind": "vertex",
+   "width": 47,
+   "height": 51,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.plant;",
+   "shapeNames": [
+    "mxgraph.floorplan.plant"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:125"
+  },
+  {
+   "id": "floorplan-55-printer",
+   "title": "Printer",
+   "tags": "floorplan printer floorplan  Printer",
+   "kind": "vertex",
+   "width": 40,
+   "height": 47,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.printer;",
+   "shapeNames": [
+    "mxgraph.floorplan.printer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:127"
+  },
+  {
+   "id": "floorplan-56-range-1",
+   "title": "Range 1",
+   "tags": "floorplan range 1 floorplan  Range 1",
+   "kind": "vertex",
+   "width": 50,
+   "height": 62,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.range_1;",
+   "shapeNames": [
+    "mxgraph.floorplan.range_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:129"
+  },
+  {
+   "id": "floorplan-57-range-2",
+   "title": "Range 2",
+   "tags": "floorplan range 2 floorplan  Range 2",
+   "kind": "vertex",
+   "width": 75,
+   "height": 62,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.range_2;",
+   "shapeNames": [
+    "mxgraph.floorplan.range_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:131"
+  },
+  {
+   "id": "floorplan-58-refrigerator",
+   "title": "Refrigerator",
+   "tags": "floorplan refrigerator floorplan  Refrigerator",
+   "kind": "vertex",
+   "width": 60,
+   "height": 62,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.refrigerator;",
+   "shapeNames": [
+    "mxgraph.floorplan.refrigerator"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:133"
+  },
+  {
+   "id": "floorplan-59-shower",
+   "title": "Shower",
+   "tags": "floorplan shower floorplan  Shower",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.shower2;",
+   "shapeNames": [
+    "mxgraph.floorplan.shower2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:135"
+  },
+  {
+   "id": "floorplan-60-sink-1",
+   "title": "Sink 1",
+   "tags": "floorplan sink 1 floorplan  Sink 1",
+   "kind": "vertex",
+   "width": 40,
+   "height": 35,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.sink_1;",
+   "shapeNames": [
+    "mxgraph.floorplan.sink_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:137"
+  },
+  {
+   "id": "floorplan-61-sink-2",
+   "title": "Sink 2",
+   "tags": "floorplan sink 2 floorplan  Sink 2",
+   "kind": "vertex",
+   "width": 40,
+   "height": 35,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.sink_22;",
+   "shapeNames": [
+    "mxgraph.floorplan.sink_22"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:139"
+  },
+  {
+   "id": "floorplan-62-sink-double",
+   "title": "Sink Double",
+   "tags": "floorplan sink double floorplan  Sink Double",
+   "kind": "vertex",
+   "width": 80,
+   "height": 35,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.sink_double2;",
+   "shapeNames": [
+    "mxgraph.floorplan.sink_double2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:141"
+  },
+  {
+   "id": "floorplan-63-sofa",
+   "title": "Sofa",
+   "tags": "floorplan sofa floorplan  Sofa",
+   "kind": "vertex",
+   "width": 90,
+   "height": 80,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.sofa;",
+   "shapeNames": [
+    "mxgraph.floorplan.sofa"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:143"
+  },
+  {
+   "id": "floorplan-64-spiral-stairs",
+   "title": "Spiral Stairs",
+   "tags": "floorplan spiral stairs floorplan  Spiral Stairs",
+   "kind": "vertex",
+   "width": 200,
+   "height": 200,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.spiral_stairs;",
+   "shapeNames": [
+    "mxgraph.floorplan.spiral_stairs"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:145"
+  },
+  {
+   "id": "floorplan-65-table",
+   "title": "Table",
+   "tags": "floorplan table floorplan  Table",
+   "kind": "vertex",
+   "width": 90,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.table;",
+   "shapeNames": [
+    "mxgraph.floorplan.table"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:147"
+  },
+  {
+   "id": "floorplan-66-toilet",
+   "title": "Toilet",
+   "tags": "floorplan toilet floorplan  Toilet",
+   "kind": "vertex",
+   "width": 50,
+   "height": 67,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.toilet_2;",
+   "shapeNames": [
+    "mxgraph.floorplan.toilet_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:149"
+  },
+  {
+   "id": "floorplan-67-washing-machine",
+   "title": "Washing Machine",
+   "tags": "floorplan washing machine floorplan  Washing Machine",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.washing_machine;aspect=fixed;",
+   "shapeNames": [
+    "mxgraph.floorplan.washing_machine"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:151"
+  },
+  {
+   "id": "floorplan-68-water-cooler",
+   "title": "Water Cooler",
+   "tags": "floorplan water cooler floorplan  Water Cooler",
+   "kind": "vertex",
+   "width": 40,
+   "height": 40,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.water_cooler_2;",
+   "shapeNames": [
+    "mxgraph.floorplan.water_cooler_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:153"
+  },
+  {
+   "id": "floorplan-69-workstation",
+   "title": "Workstation",
+   "tags": "floorplan workstation floorplan  Workstation",
+   "kind": "vertex",
+   "width": 50,
+   "height": 40,
+   "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.workstation;",
+   "shapeNames": [
+    "mxgraph.floorplan.workstation"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:155"
+  },
+  {
+   "id": "floorplan-70-small-kitchen-table",
+   "title": "Small kitchen table",
+   "tags": "floorplan kitchen table small",
+   "kind": "cells",
+   "width": 80,
+   "height": 120,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.chair;shadow=0;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"20\" width=\"40\" height=\"52\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.chair;shadow=0;rotation=180;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"20\" y=\"68\" width=\"40\" height=\"52\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=rect;shadow=0;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry y=\"20\" width=\"80\" height=\"80\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.floorplan.chair",
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:158"
+  },
+  {
+   "id": "floorplan-71-kitchen-table",
+   "title": "Kitchen table",
+   "tags": "floorplan kitchen table",
+   "kind": "cells",
+   "width": 140,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.chair;shadow=0;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"50\" width=\"40\" height=\"52\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.chair;shadow=0;direction=west;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"50\" y=\"88\" width=\"40\" height=\"52\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.chair;shadow=0;direction=north;\" vertex=\"1\" parent=\"1\"><mxGeometry y=\"50\" width=\"52\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.chair;shadow=0;direction=south\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"88\" y=\"50\" width=\"52\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"\" style=\"shape=rect;shadow=0;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"20\" y=\"20\" width=\"100\" height=\"100\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.floorplan.chair",
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:169"
+  },
+  {
+   "id": "floorplan-72-round-kitchen-table",
+   "title": "Round kitchen table",
+   "tags": "floorplan kitchen table round",
+   "kind": "cells",
+   "width": 140,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.chair;shadow=0;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"50\" width=\"40\" height=\"52\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.chair;shadow=0;direction=west;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"50\" y=\"88\" width=\"40\" height=\"52\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.chair;shadow=0;direction=north;\" vertex=\"1\" parent=\"1\"><mxGeometry y=\"50\" width=\"52\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.chair;shadow=0;direction=south\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"88\" y=\"50\" width=\"52\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"\" style=\"shape=ellipse;shadow=0;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"20\" y=\"20\" width=\"100\" height=\"100\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.floorplan.chair",
+    "ellipse"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:185"
+  },
+  {
+   "id": "floorplan-73-large-kitchen-table",
+   "title": "Large kitchen table",
+   "tags": "floorplan kitchen table large",
+   "kind": "cells",
+   "width": 200,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.chair;shadow=0;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"50\" width=\"40\" height=\"52\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.chair;shadow=0;direction=west;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"50\" y=\"88\" width=\"40\" height=\"52\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.chair;shadow=0;direction=north;\" vertex=\"1\" parent=\"1\"><mxGeometry y=\"50\" width=\"52\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.chair;shadow=0;direction=south\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"148\" y=\"50\" width=\"52\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.chair;shadow=0;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"110\" width=\"40\" height=\"52\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.chair;shadow=0;direction=west;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"110\" y=\"88\" width=\"40\" height=\"52\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"\" style=\"shape=rect;shadow=0;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"20\" y=\"20\" width=\"160\" height=\"100\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.floorplan.chair",
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:201"
+  },
+  {
+   "id": "floorplan-74-large-oval-kitchen-table",
+   "title": "Large oval kitchen table",
+   "tags": "floorplan kitchen table large oval",
+   "kind": "cells",
+   "width": 200,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.chair;shadow=0;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"50\" width=\"40\" height=\"52\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.chair;shadow=0;direction=west;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"50\" y=\"88\" width=\"40\" height=\"52\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.chair;shadow=0;direction=north;\" vertex=\"1\" parent=\"1\"><mxGeometry y=\"50\" width=\"52\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.chair;shadow=0;direction=south\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"148\" y=\"50\" width=\"52\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.chair;shadow=0;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"110\" width=\"40\" height=\"52\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.chair;shadow=0;direction=west;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"110\" y=\"88\" width=\"40\" height=\"52\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"\" style=\"shape=ellipse;shadow=0;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"20\" y=\"20\" width=\"160\" height=\"100\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.floorplan.chair",
+    "ellipse"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:221"
+  },
+  {
+   "id": "floorplan-75-office-table",
+   "title": "Office table",
+   "tags": "floorplan office table",
+   "kind": "cells",
+   "width": 80,
+   "height": 70,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"20\" width=\"40\" height=\"43\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"shape=rect;shadow=0;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry y=\"20\" width=\"80\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.workstation;shadow=0;flipV=1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"15\" y=\"30\" width=\"50\" height=\"40\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.floorplan.office_chair",
+    "rect",
+    "mxgraph.floorplan.workstation"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:241"
+  },
+  {
+   "id": "floorplan-76-office-table",
+   "title": "Office table",
+   "tags": "floorplan office table",
+   "kind": "cells",
+   "width": 140,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"50\" width=\"40\" height=\"43\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;direction=west;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"50\" y=\"97\" width=\"40\" height=\"43\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;direction=north;\" vertex=\"1\" parent=\"1\"><mxGeometry y=\"50\" width=\"43\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;direction=south\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"97\" y=\"50\" width=\"43\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"\" style=\"shape=rect;shadow=0;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"20\" y=\"20\" width=\"100\" height=\"100\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.floorplan.office_chair",
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:253"
+  },
+  {
+   "id": "floorplan-77-large-office-table",
+   "title": "Large office table",
+   "tags": "floorplan office table large",
+   "kind": "cells",
+   "width": 200,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"50\" width=\"40\" height=\"43\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;direction=west;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"50\" y=\"97\" width=\"40\" height=\"43\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;direction=north;\" vertex=\"1\" parent=\"1\"><mxGeometry y=\"50\" width=\"43\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;direction=south\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"157\" y=\"50\" width=\"43\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"110\" width=\"40\" height=\"43\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;direction=west;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"110\" y=\"97\" width=\"40\" height=\"43\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"\" style=\"shape=rect;shadow=0;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"20\" y=\"20\" width=\"160\" height=\"100\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.floorplan.office_chair",
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:269"
+  },
+  {
+   "id": "floorplan-78-large-oval-office-table",
+   "title": "Large oval office table",
+   "tags": "floorplan office table large oval",
+   "kind": "cells",
+   "width": 200,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"50\" width=\"40\" height=\"43\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;direction=west;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"50\" y=\"97\" width=\"40\" height=\"43\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;direction=north;\" vertex=\"1\" parent=\"1\"><mxGeometry y=\"50\" width=\"43\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;direction=south\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"157\" y=\"50\" width=\"43\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"110\" width=\"40\" height=\"43\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;direction=west;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"110\" y=\"97\" width=\"40\" height=\"43\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"\" style=\"shape=ellipse;shadow=0;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"20\" y=\"20\" width=\"160\" height=\"100\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.floorplan.office_chair",
+    "ellipse"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:289"
+  },
+  {
+   "id": "floorplan-79-large-oval-office-table",
+   "title": "Large oval office table",
+   "tags": "floorplan office table large oval",
+   "kind": "cells",
+   "width": 320,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"50\" width=\"40\" height=\"43\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;direction=west;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"50\" y=\"97\" width=\"40\" height=\"43\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;direction=north;\" vertex=\"1\" parent=\"1\"><mxGeometry y=\"50\" width=\"43\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;direction=south\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"277\" y=\"50\" width=\"43\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"110\" width=\"40\" height=\"43\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;direction=west;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"110\" y=\"97\" width=\"40\" height=\"43\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"170\" width=\"40\" height=\"43\" as=\"geometry\"/></mxCell><mxCell id=\"9\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;direction=west;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"170\" y=\"97\" width=\"40\" height=\"43\" as=\"geometry\"/></mxCell><mxCell id=\"10\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"230\" width=\"40\" height=\"43\" as=\"geometry\"/></mxCell><mxCell id=\"11\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;direction=west;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"230\" y=\"97\" width=\"40\" height=\"43\" as=\"geometry\"/></mxCell><mxCell id=\"12\" value=\"\" style=\"shape=ellipse;shadow=0;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"20\" y=\"20\" width=\"280\" height=\"100\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.floorplan.office_chair",
+    "ellipse"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:309"
+  },
+  {
+   "id": "floorplan-80-conference-table",
+   "title": "Conference table",
+   "tags": "floorplan office table conference large huge",
+   "kind": "cells",
+   "width": 560,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"50\" width=\"40\" height=\"43\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;direction=west;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"50\" y=\"97\" width=\"40\" height=\"43\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;direction=north;\" vertex=\"1\" parent=\"1\"><mxGeometry y=\"50\" width=\"43\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;direction=south\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"517\" y=\"50\" width=\"43\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"110\" width=\"40\" height=\"43\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;direction=west;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"110\" y=\"97\" width=\"40\" height=\"43\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"170\" width=\"40\" height=\"43\" as=\"geometry\"/></mxCell><mxCell id=\"9\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;direction=west;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"170\" y=\"97\" width=\"40\" height=\"43\" as=\"geometry\"/></mxCell><mxCell id=\"10\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"230\" width=\"40\" height=\"43\" as=\"geometry\"/></mxCell><mxCell id=\"11\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;direction=west;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"230\" y=\"97\" width=\"40\" height=\"43\" as=\"geometry\"/></mxCell><mxCell id=\"12\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"290\" width=\"40\" height=\"43\" as=\"geometry\"/></mxCell><mxCell id=\"13\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;direction=west;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"290\" y=\"97\" width=\"40\" height=\"43\" as=\"geometry\"/></mxCell><mxCell id=\"14\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"350\" width=\"40\" height=\"43\" as=\"geometry\"/></mxCell><mxCell id=\"15\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;direction=west;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"350\" y=\"97\" width=\"40\" height=\"43\" as=\"geometry\"/></mxCell><mxCell id=\"16\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"410\" width=\"40\" height=\"43\" as=\"geometry\"/></mxCell><mxCell id=\"17\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;direction=west;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"410\" y=\"97\" width=\"40\" height=\"43\" as=\"geometry\"/></mxCell><mxCell id=\"18\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"470\" width=\"40\" height=\"43\" as=\"geometry\"/></mxCell><mxCell id=\"19\" value=\"\" style=\"verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;shape=mxgraph.floorplan.office_chair;shadow=0;direction=west;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"470\" y=\"97\" width=\"40\" height=\"43\" as=\"geometry\"/></mxCell><mxCell id=\"20\" value=\"\" style=\"shape=ellipse;shadow=0;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"20\" y=\"20\" width=\"520\" height=\"100\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.floorplan.office_chair",
+    "ellipse"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Floorplan.js:337"
+  }
+ ]
+}

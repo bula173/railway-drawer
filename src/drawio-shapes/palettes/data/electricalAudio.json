@@ -1,0 +1,134 @@
+{
+ "id": "electricalAudio",
+ "title": "Electrical / Audio",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Electrical.js:8",
+ "entries": [
+  {
+   "id": "electricalAudio-0-dipole",
+   "title": "Dipole",
+   "tags": "electrical radio dipole electrical radio audio  Dipole",
+   "kind": "vertex",
+   "width": 100,
+   "height": 40,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.radio.dipole;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.electrical.radio.dipole"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:814"
+  },
+  {
+   "id": "electricalAudio-1-electret-microphone",
+   "title": "Electret Microphone",
+   "tags": "electrical radio electret microphone electrical radio audio  Electret Microphone",
+   "kind": "vertex",
+   "width": 70,
+   "height": 70,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.radio.electret_microphone;",
+   "shapeNames": [
+    "mxgraph.electrical.radio.electret_microphone"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:816"
+  },
+  {
+   "id": "electricalAudio-2-microphone",
+   "title": "Microphone",
+   "tags": "electrical radio microphone 1 electrical radio audio  Microphone",
+   "kind": "vertex",
+   "width": 70,
+   "height": 70,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.radio.microphone_1;",
+   "shapeNames": [
+    "mxgraph.electrical.radio.microphone_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:818"
+  },
+  {
+   "id": "electricalAudio-3-microphone",
+   "title": "Microphone",
+   "tags": "electrical radio microphone 2 electrical radio audio  Microphone",
+   "kind": "vertex",
+   "width": 42,
+   "height": 70,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.radio.microphone_2;",
+   "shapeNames": [
+    "mxgraph.electrical.radio.microphone_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:820"
+  },
+  {
+   "id": "electricalAudio-4-piezo-sounder",
+   "title": "Piezo Sounder",
+   "tags": "electrical electro-mechanical piezo sounder electrical switch relay  Piezo Sounder",
+   "kind": "vertex",
+   "width": 100,
+   "height": 40,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.piezo_sounder;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.piezo_sounder"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:822"
+  },
+  {
+   "id": "electricalAudio-5-buzzer",
+   "title": "Buzzer",
+   "tags": "electrical electro-mechanical buzzer electrical switch relay  Buzzer",
+   "kind": "vertex",
+   "width": 45,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.buzzer;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.buzzer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:824"
+  },
+  {
+   "id": "electricalAudio-6-loudspeaker",
+   "title": "Loudspeaker",
+   "tags": "electrical electro-mechanical loudspeaker electrical switch relay  Loudspeaker",
+   "kind": "vertex",
+   "width": 25,
+   "height": 50,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.loudspeaker;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.loudspeaker"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:826"
+  },
+  {
+   "id": "electricalAudio-7-headphones",
+   "title": "Headphones",
+   "tags": "electrical radio headphones electrical radio audio  Headphones",
+   "kind": "vertex",
+   "width": 66,
+   "height": 56,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.radio.headphones;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.electrical.radio.headphones"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:828"
+  },
+  {
+   "id": "electricalAudio-8-bell",
+   "title": "Bell",
+   "tags": "electrical electro-mechanical bell electrical switch relay  Bell",
+   "kind": "vertex",
+   "width": 47,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.bell;",
+   "shapeNames": [
+    "mxgraph.electrical.electro-mechanical.bell"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:830"
+  }
+ ]
+}

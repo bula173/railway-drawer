@@ -1,0 +1,162 @@
+{
+ "id": "azure2Containers",
+ "title": "Azure / Containers",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Azure2.js:8",
+ "entries": [
+  {
+   "id": "azure2Containers-0-aks-network-policy",
+   "title": "AKS Network Policy",
+   "tags": "azure2 aks kubernetes network policy azure containers  AKS Network Policy",
+   "kind": "vertex",
+   "width": 68,
+   "height": 61.72,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/containers/AKS_Network_Policy.svg;points=[[0.409,0,0],[0.409,1,0],[0.003,0.5,0],[1,0.517,0],[0.975,0.182,0],[0.967,0.859,0],[0.155,0.843,0],[0.015,0.155,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:481"
+  },
+  {
+   "id": "azure2Containers-1-app-services",
+   "title": "App Services",
+   "tags": "azure2 app services azure containers  App Services",
+   "kind": "vertex",
+   "width": 64,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/containers/App_Services.svg;points=[[0.497,0,0],[0.504,1,0],[0,0.499,0],[1,0.5,0],[0.865,0.153,0],[0.875,0.835,0],[0.125,0.835,0],[0.133,0.155,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:483"
+  },
+  {
+   "id": "azure2Containers-2-batch-accounts",
+   "title": "Batch Accounts",
+   "tags": "azure2 batch accounts azure containers  Batch Accounts",
+   "kind": "vertex",
+   "width": 68,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/containers/Batch_Accounts.svg;points=[[0.5,0,0],[0.5,0.928,0],[0.001,0.5,0],[0.905,0.5,0],[0.725,0.006,0],[0.987,0.997,0],[0.015,0.006,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:485"
+  },
+  {
+   "id": "azure2Containers-3-container-instances",
+   "title": "Container Instances",
+   "tags": "azure2 container instances azure containers  Container Instances",
+   "kind": "vertex",
+   "width": 64,
+   "height": 69,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/containers/Container_Instances.svg;points=[[0.516,0.005,0],[0.503,0.995,0],[0,0.42,0],[1,0.458,0],[0.738,0.095,0],[0.797,0.887,0],[0.227,0.937,0],[0.062,0.265,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:487"
+  },
+  {
+   "id": "azure2Containers-4-container-registries",
+   "title": "Container Registries",
+   "tags": "azure2 container registries azure containers  Container Registries",
+   "kind": "vertex",
+   "width": 68,
+   "height": 61,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/containers/Container_Registries.svg;points=[[0.499,0,0],[0.56,1,0],[0,0.481,0],[0.935,0.5,0],[0.687,0.076,0],[1,0.902,0],[0.095,0.699,0],[0.088,0.271,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:489"
+  },
+  {
+   "id": "azure2Containers-5-container-storage",
+   "title": "Container Storage",
+   "tags": "azure2 container storage azure containers  Container Storage",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/containers/Azure_Container_Storage.svg;points=[[0.501,0,0],[0.501,1,0],[0,0.499,0],[1,0.499,0],[0.902,0.235,0],[0.912,0.75,0],[0.1,0.762,0],[0.11,0.228,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:491"
+  },
+  {
+   "id": "azure2Containers-6-kubernetes-hub",
+   "title": "Kubernetes Hub",
+   "tags": "azure2 kubernetes hub azure containers  Kubernetes Hub",
+   "kind": "vertex",
+   "width": 67.96,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/containers/Kubernetes_Hub.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.937,0.04,0],[0.957,0.94,0],[0.04,0.937,0],[0.06,0.043,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:493"
+  },
+  {
+   "id": "azure2Containers-7-kubernetes-services",
+   "title": "Kubernetes Services",
+   "tags": "azure2 kubernetes services azure containers  Kubernetes Services",
+   "kind": "vertex",
+   "width": 68,
+   "height": 60,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/containers/Kubernetes_Services.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.494,0],[1,0.493,0],[0.822,0.066,0],[0.817,0.929,0],[0.158,0.957,0],[0.163,0.034,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:495"
+  },
+  {
+   "id": "azure2Containers-8-service-fabric-clusters",
+   "title": "Service Fabric Clusters",
+   "tags": "azure2 service fabric clusters azure containers  Service Fabric Clusters",
+   "kind": "vertex",
+   "width": 67,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/containers/Service_Fabric_Clusters.svg;points=[[0.5,0,0],[0.5,0.885,0],[0,0.411,0],[1,0.411,0],[0.95,0.296,0],[0.815,0.96,0],[0.183,0.966,0],[0.05,0.296,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:497"
+  },
+  {
+   "id": "azure2Containers-9-red-hat-openshift",
+   "title": "Red Hat OpenShift",
+   "tags": "azure2 azure red hat openshift azure containers  Red Hat OpenShift",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/containers/Azure_Red_Hat_OpenShift.svg;points=[[0.52,0.04,0],[0.522,0.96,0],[0.062,0.5,0],[0.981,0.5,0],[0.965,0.21,0],[0.862,0.81,0],[0.07,0.795,0],[0.215,0.155,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:499"
+  },
+  {
+   "id": "azure2Containers-10-service-groups",
+   "title": "Service Groups",
+   "tags": "azure2 service groups azure containers  Service Groups",
+   "kind": "vertex",
+   "width": 68,
+   "height": 64.2,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/containers/Service_Groups.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.501,0],[1,0.5,0],[0.997,0.111,0],[0.995,0.889,0],[0,0.886,0],[0.003,0.111,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:501"
+  }
+ ]
+}

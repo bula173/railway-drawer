@@ -1,0 +1,134 @@
+{
+ "id": "ciscoBuildings",
+ "title": "Cisco / Buildings",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Cisco.js:9",
+ "entries": [
+  {
+   "id": "ciscoBuildings-0-branch-office",
+   "title": "Branch Office",
+   "tags": "cisco branch office cisco building  Branch Office",
+   "kind": "vertex",
+   "width": 51,
+   "height": 75,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.buildings.branch_office;",
+   "shapeNames": [
+    "mxgraph.cisco.buildings.branch_office"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:53"
+  },
+  {
+   "id": "ciscoBuildings-1-end-office",
+   "title": "End Office",
+   "tags": "cisco end office cisco building  End Office",
+   "kind": "vertex",
+   "width": 54,
+   "height": 56.00000000000001,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.buildings.end_office;",
+   "shapeNames": [
+    "mxgraph.cisco.buildings.end_office"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:54"
+  },
+  {
+   "id": "ciscoBuildings-2-generic-building",
+   "title": "Generic Building",
+   "tags": "cisco generic building cisco building  Generic Building",
+   "kind": "vertex",
+   "width": 90,
+   "height": 136,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.buildings.generic_building;",
+   "shapeNames": [
+    "mxgraph.cisco.buildings.generic_building"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:55"
+  },
+  {
+   "id": "ciscoBuildings-3-government-building",
+   "title": "Government Building",
+   "tags": "cisco government building cisco building  Government Building",
+   "kind": "vertex",
+   "width": 107,
+   "height": 78,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.buildings.government_building;",
+   "shapeNames": [
+    "mxgraph.cisco.buildings.government_building"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:56"
+  },
+  {
+   "id": "ciscoBuildings-4-mdu",
+   "title": "MDU",
+   "tags": "cisco mdu cisco building  MDU",
+   "kind": "vertex",
+   "width": 66,
+   "height": 80,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.buildings.mdu;",
+   "shapeNames": [
+    "mxgraph.cisco.buildings.mdu"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:57"
+  },
+  {
+   "id": "ciscoBuildings-5-small-business",
+   "title": "Small Business",
+   "tags": "cisco small business cisco building  Small Business",
+   "kind": "vertex",
+   "width": 98,
+   "height": 54,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.buildings.small_business;",
+   "shapeNames": [
+    "mxgraph.cisco.buildings.small_business"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:58"
+  },
+  {
+   "id": "ciscoBuildings-6-telecommuter-house",
+   "title": "Telecommuter House",
+   "tags": "cisco telecommuter house cisco building  Telecommuter House",
+   "kind": "vertex",
+   "width": 104,
+   "height": 88,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.buildings.telecommuter_house;",
+   "shapeNames": [
+    "mxgraph.cisco.buildings.telecommuter_house"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:59"
+  },
+  {
+   "id": "ciscoBuildings-7-telecommuter-house-pc",
+   "title": "Telecommuter House PC",
+   "tags": "cisco telecommuter house pc personal computer cisco building  Telecommuter House PC",
+   "kind": "vertex",
+   "width": 104,
+   "height": 88,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.buildings.telecommuter_house_pc;",
+   "shapeNames": [
+    "mxgraph.cisco.buildings.telecommuter_house_pc"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:60"
+  },
+  {
+   "id": "ciscoBuildings-8-university",
+   "title": "University",
+   "tags": "cisco university cisco building  University",
+   "kind": "vertex",
+   "width": 133,
+   "height": 53,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.buildings.university;",
+   "shapeNames": [
+    "mxgraph.cisco.buildings.university"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:61"
+  }
+ ]
+}

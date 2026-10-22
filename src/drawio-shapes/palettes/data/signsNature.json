@@ -1,0 +1,246 @@
+{
+ "id": "signsNature",
+ "title": "Signs / Nature",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Signs.js:7",
+ "entries": [
+  {
+   "id": "signsNature-0-earth",
+   "title": "Earth",
+   "tags": "signs nature  Earth Earth",
+   "kind": "vertex",
+   "width": 98,
+   "height": 98,
+   "style": "shape=mxgraph.signs.nature.earth;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.nature.earth"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsNature-1-jupiter",
+   "title": "Jupiter",
+   "tags": "signs nature  Jupiter Jupiter",
+   "kind": "vertex",
+   "width": 83,
+   "height": 99,
+   "style": "shape=mxgraph.signs.nature.jupiter;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.nature.jupiter"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsNature-2-maple-leaf",
+   "title": "Maple Leaf",
+   "tags": "signs nature  Maple Leaf Maple Leaf",
+   "kind": "vertex",
+   "width": 88,
+   "height": 98,
+   "style": "shape=mxgraph.signs.nature.maple_leaf;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.nature.maple_leaf"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsNature-3-mars",
+   "title": "Mars",
+   "tags": "signs nature  Mars Mars",
+   "kind": "vertex",
+   "width": 98,
+   "height": 98,
+   "style": "shape=mxgraph.signs.nature.mars;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.nature.mars"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsNature-4-mercury",
+   "title": "Mercury",
+   "tags": "signs nature  Mercury Mercury",
+   "kind": "vertex",
+   "width": 62,
+   "height": 99,
+   "style": "shape=mxgraph.signs.nature.mercury;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.nature.mercury"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsNature-5-moon",
+   "title": "Moon",
+   "tags": "signs nature  Moon Moon",
+   "kind": "vertex",
+   "width": 76,
+   "height": 99,
+   "style": "shape=mxgraph.signs.nature.moon;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.nature.moon"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsNature-6-neptune",
+   "title": "Neptune",
+   "tags": "signs nature  Neptune Neptune",
+   "kind": "vertex",
+   "width": 87,
+   "height": 98,
+   "style": "shape=mxgraph.signs.nature.neptune;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.nature.neptune"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsNature-7-pluto",
+   "title": "Pluto",
+   "tags": "signs nature  Pluto Pluto",
+   "kind": "vertex",
+   "width": 63,
+   "height": 98,
+   "style": "shape=mxgraph.signs.nature.pluto;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.nature.pluto"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsNature-8-saturn",
+   "title": "Saturn",
+   "tags": "signs nature  Saturn Saturn",
+   "kind": "vertex",
+   "width": 60,
+   "height": 99,
+   "style": "shape=mxgraph.signs.nature.saturn;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.nature.saturn"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsNature-9-snowflake",
+   "title": "Snowflake",
+   "tags": "signs nature  Snowflake Snowflake",
+   "kind": "vertex",
+   "width": 87,
+   "height": 98,
+   "style": "shape=mxgraph.signs.nature.snowflake;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.nature.snowflake"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsNature-10-sun-1",
+   "title": "Sun 1",
+   "tags": "signs nature  Sun 1 Sun 1",
+   "kind": "vertex",
+   "width": 99,
+   "height": 99,
+   "style": "shape=mxgraph.signs.nature.sun_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.nature.sun_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsNature-11-sun-2",
+   "title": "Sun 2",
+   "tags": "signs nature  Sun 2 Sun 2",
+   "kind": "vertex",
+   "width": 99,
+   "height": 99,
+   "style": "shape=mxgraph.signs.nature.sun_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.nature.sun_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsNature-12-sun-3",
+   "title": "Sun 3",
+   "tags": "signs nature  Sun 3 Sun 3",
+   "kind": "vertex",
+   "width": 98,
+   "height": 98,
+   "style": "shape=mxgraph.signs.nature.sun_3;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.nature.sun_3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsNature-13-sun-4",
+   "title": "Sun 4",
+   "tags": "signs nature  Sun 4 Sun 4",
+   "kind": "vertex",
+   "width": 98,
+   "height": 98,
+   "style": "shape=mxgraph.signs.nature.sun_4;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.nature.sun_4"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsNature-14-tsunami",
+   "title": "Tsunami",
+   "tags": "signs nature  Tsunami Tsunami",
+   "kind": "vertex",
+   "width": 99,
+   "height": 88,
+   "style": "shape=mxgraph.signs.nature.tsunami;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.nature.tsunami"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsNature-15-uranus",
+   "title": "Uranus",
+   "tags": "signs nature  Uranus Uranus",
+   "kind": "vertex",
+   "width": 64,
+   "height": 99,
+   "style": "shape=mxgraph.signs.nature.uranus;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.nature.uranus"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsNature-16-venus",
+   "title": "Venus",
+   "tags": "signs nature  Venus Venus",
+   "kind": "vertex",
+   "width": 65,
+   "height": 98,
+   "style": "shape=mxgraph.signs.nature.venus;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.nature.venus"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  }
+ ]
+}

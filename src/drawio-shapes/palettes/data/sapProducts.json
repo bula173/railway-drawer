@@ -1,0 +1,287 @@
+{
+ "id": "sapProducts",
+ "title": "SAP / Brand Names",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-SAP.js:8",
+ "entries": [
+  {
+   "id": "sapProducts-0-sap-ariba-text-only",
+   "title": "SAP Ariba (text only)",
+   "tags": "sap  sap product ariba SAP Ariba (text only)",
+   "kind": "vertex",
+   "width": 120,
+   "height": 30,
+   "style": "text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontColor=#1A2733;fontFamily=Helvetica;fontStyle=1",
+   "value": "SAP Ariba",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1248"
+  },
+  {
+   "id": "sapProducts-1-sap-concur-text-only",
+   "title": "SAP Concur (text only)",
+   "tags": "sap  sap product concur SAP Concur (text only)",
+   "kind": "vertex",
+   "width": 120,
+   "height": 30,
+   "style": "text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontColor=#1A2733;fontFamily=Helvetica;fontStyle=1",
+   "value": "SAP Concur",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1251"
+  },
+  {
+   "id": "sapProducts-2-sap-fieldglass-text-only",
+   "title": "SAP Fieldglass (text only)",
+   "tags": "sap  sap product fieldglass SAP Fieldglass (text only)",
+   "kind": "vertex",
+   "width": 120,
+   "height": 30,
+   "style": "text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontColor=#1A2733;fontFamily=Helvetica;fontStyle=1",
+   "value": "SAP Fieldglass",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1254"
+  },
+  {
+   "id": "sapProducts-3-sap-signavio-text-only",
+   "title": "SAP Signavio (text only)",
+   "tags": "sap  sap product signavio SAP Signavio (text only)",
+   "kind": "vertex",
+   "width": 120,
+   "height": 30,
+   "style": "text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontColor=#1A2733;fontFamily=Helvetica;fontStyle=1",
+   "value": "SAP Signavio",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1257"
+  },
+  {
+   "id": "sapProducts-4-sap-successfactors-text-only",
+   "title": "SAP SuccessFactors (text only)",
+   "tags": "sap  sap product success factors SAP SuccessFactors (text only)",
+   "kind": "vertex",
+   "width": 120,
+   "height": 30,
+   "style": "text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontColor=#1A2733;fontFamily=Helvetica;fontStyle=1",
+   "value": "SAP SuccessFactors",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1260"
+  },
+  {
+   "id": "sapProducts-5-sap-s-4hana-text-only",
+   "title": "SAP S/4HANA (text only)",
+   "tags": "sap  sap product s4 hana SAP S/4HANA (text only)",
+   "kind": "vertex",
+   "width": 120,
+   "height": 30,
+   "style": "text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontColor=#1A2733;fontFamily=Helvetica;fontStyle=1",
+   "value": "SAP S/4HANA",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1263"
+  },
+  {
+   "id": "sapProducts-6-sap-s-4hana-cloud-text-only",
+   "title": "SAP S/4HANA Cloud (text only)",
+   "tags": "sap  sap product s4 hana cloud SAP S/4HANA Cloud (text only)",
+   "kind": "vertex",
+   "width": 120,
+   "height": 30,
+   "style": "text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontColor=#1A2733;fontFamily=Helvetica;fontStyle=1",
+   "value": "SAP S/4HANA Cloud",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1266"
+  },
+  {
+   "id": "sapProducts-7-sap-customer-experience-text-only",
+   "title": "SAP Customer Experience (text only)",
+   "tags": "sap  sap product customer experience SAP Customer Experience (text only)",
+   "kind": "vertex",
+   "width": 120,
+   "height": 30,
+   "style": "text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontColor=#1A2733;fontFamily=Helvetica;fontStyle=1",
+   "value": "SAP Customer Experience",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1269"
+  },
+  {
+   "id": "sapProducts-8-sap-business-network-text-only",
+   "title": "SAP Business Network (text only)",
+   "tags": "sap  sap product business network SAP Business Network (text only)",
+   "kind": "vertex",
+   "width": 120,
+   "height": 30,
+   "style": "text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontColor=#1A2733;fontFamily=Helvetica;fontStyle=1",
+   "value": "SAP Business Network",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1272"
+  },
+  {
+   "id": "sapProducts-9-sap-btp-text-only",
+   "title": "SAP BTP (text only)",
+   "tags": "sap  sap product btp SAP BTP (text only)",
+   "kind": "vertex",
+   "width": 120,
+   "height": 30,
+   "style": "text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontColor=#1A2733;fontFamily=Helvetica;fontStyle=1",
+   "value": "SAP BTP",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1275"
+  },
+  {
+   "id": "sapProducts-10-sap",
+   "title": "SAP",
+   "tags": "sap  sap product  SAP",
+   "kind": "vertex",
+   "width": 37,
+   "height": 19,
+   "style": "image;image=img/lib/sap/SAP_Logo.svg;editableCssRules=.*;verticalLabelPosition=middle;labelBackgroundColor=none;verticalAlign=middle;imageAspect=0;labelPosition=right;align=left;fontSize=16;fontStyle=1;spacingLeft=0;fontColor=#002A86;spacing=0;points=[[0.5,0.015,0],[0.5,0.985,0],[0,0.5,0],[0.753,0.5,0],[1,0.015,0],[0,0.985,0],[0,0.015,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1278"
+  },
+  {
+   "id": "sapProducts-11-sap-concur",
+   "title": "SAP Concur",
+   "tags": "sap  sap product  SAP Concur",
+   "kind": "vertex",
+   "width": 37,
+   "height": 19,
+   "style": "image;image=img/lib/sap/SAP_Logo.svg;editableCssRules=.*;verticalLabelPosition=middle;labelBackgroundColor=none;verticalAlign=middle;imageAspect=0;labelPosition=right;align=left;fontSize=16;fontStyle=1;spacingLeft=0;fontColor=#002A86;spacing=0;points=[[0.5,0.015,0],[0.5,0.985,0],[0,0.5,0],[0.753,0.5,0],[1,0.015,0],[0,0.985,0],[0,0.015,0]];",
+   "value": "Concur",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1281"
+  },
+  {
+   "id": "sapProducts-12-sap-signavio",
+   "title": "SAP Signavio",
+   "tags": "sap  sap product  SAP Signavio",
+   "kind": "vertex",
+   "width": 37,
+   "height": 19,
+   "style": "image;image=img/lib/sap/SAP_Logo.svg;editableCssRules=.*;verticalLabelPosition=middle;labelBackgroundColor=none;verticalAlign=middle;imageAspect=0;labelPosition=right;align=left;fontSize=16;fontStyle=1;spacingLeft=0;fontColor=#002A86;spacing=0;points=[[0.5,0.015,0],[0.5,0.985,0],[0,0.5,0],[0.753,0.5,0],[1,0.015,0],[0,0.985,0],[0,0.015,0]];",
+   "value": "Signavio",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1284"
+  },
+  {
+   "id": "sapProducts-13-sap-successfactors",
+   "title": "SAP SuccessFactors",
+   "tags": "sap  sap product  SAP SuccessFactors",
+   "kind": "vertex",
+   "width": 37,
+   "height": 19,
+   "style": "image;image=img/lib/sap/SAP_Logo.svg;editableCssRules=.*;verticalLabelPosition=middle;labelBackgroundColor=none;verticalAlign=middle;imageAspect=0;labelPosition=right;align=left;fontSize=16;fontStyle=1;spacingLeft=0;fontColor=#002A86;spacing=0;points=[[0.5,0.015,0],[0.5,0.985,0],[0,0.5,0],[0.753,0.5,0],[1,0.015,0],[0,0.985,0],[0,0.015,0]];",
+   "value": "SuccessFactors",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1287"
+  },
+  {
+   "id": "sapProducts-14-sap-business-network",
+   "title": "SAP Business Network",
+   "tags": "sap  sap product  SAP Business Network",
+   "kind": "vertex",
+   "width": 37,
+   "height": 19,
+   "style": "image;image=img/lib/sap/SAP_Logo.svg;editableCssRules=.*;verticalLabelPosition=middle;labelBackgroundColor=none;verticalAlign=middle;imageAspect=0;labelPosition=right;align=left;fontSize=16;fontStyle=1;spacingLeft=0;fontColor=#002A86;spacing=0;points=[[0.5,0.015,0],[0.5,0.985,0],[0,0.5,0],[0.753,0.5,0],[1,0.015,0],[0,0.985,0],[0,0.015,0]];",
+   "value": "Business Network",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1290"
+  },
+  {
+   "id": "sapProducts-15-sap-customer-experience",
+   "title": "SAP Customer Experience",
+   "tags": "sap  sap product  SAP Customer Experience",
+   "kind": "vertex",
+   "width": 37,
+   "height": 19,
+   "style": "image;image=img/lib/sap/SAP_Logo.svg;editableCssRules=.*;verticalLabelPosition=middle;labelBackgroundColor=none;verticalAlign=middle;imageAspect=0;labelPosition=right;align=left;fontSize=16;fontStyle=1;spacingLeft=0;fontColor=#002A86;spacing=0;points=[[0.5,0.015,0],[0.5,0.985,0],[0,0.5,0],[0.753,0.5,0],[1,0.015,0],[0,0.985,0],[0,0.015,0]];",
+   "value": "Customer Experience",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1293"
+  },
+  {
+   "id": "sapProducts-16-sap-s-4hana",
+   "title": "SAP S/4HANA",
+   "tags": "sap  sap product  SAP S/4HANA",
+   "kind": "vertex",
+   "width": 37,
+   "height": 19,
+   "style": "image;image=img/lib/sap/SAP_Logo.svg;editableCssRules=.*;verticalLabelPosition=middle;labelBackgroundColor=none;verticalAlign=middle;imageAspect=0;labelPosition=right;align=left;fontSize=16;fontStyle=1;spacingLeft=0;fontColor=#002A86;spacing=0;points=[[0.5,0.015,0],[0.5,0.985,0],[0,0.5,0],[0.753,0.5,0],[1,0.015,0],[0,0.985,0],[0,0.015,0]];",
+   "value": "S/4HANA",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1296"
+  },
+  {
+   "id": "sapProducts-17-sap-s-4hana-cloud",
+   "title": "SAP s/4HANA Cloud",
+   "tags": "sap  sap product  SAP s/4HANA Cloud",
+   "kind": "vertex",
+   "width": 37,
+   "height": 19,
+   "style": "image;image=img/lib/sap/SAP_Logo.svg;editableCssRules=.*;verticalLabelPosition=middle;labelBackgroundColor=none;verticalAlign=middle;imageAspect=0;labelPosition=right;align=left;fontSize=16;fontStyle=1;spacingLeft=0;fontColor=#002A86;spacing=0;points=[[0.5,0.015,0],[0.5,0.985,0],[0,0.5,0],[0.753,0.5,0],[1,0.015,0],[0,0.985,0],[0,0.015,0]];",
+   "value": "S/4HANA Cloud",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1299"
+  },
+  {
+   "id": "sapProducts-18-sap-ariba",
+   "title": "SAP Ariba",
+   "tags": "sap  sap product  SAP Ariba",
+   "kind": "vertex",
+   "width": 37,
+   "height": 19,
+   "style": "image;image=img/lib/sap/SAP_Logo.svg;editableCssRules=.*;verticalLabelPosition=middle;labelBackgroundColor=none;verticalAlign=middle;imageAspect=0;labelPosition=right;align=left;fontSize=16;fontStyle=1;spacingLeft=0;fontColor=#002A86;spacing=0;points=[[0.5,0.015,0],[0.5,0.985,0],[0,0.5,0],[0.753,0.5,0],[1,0.015,0],[0,0.985,0],[0,0.015,0]];",
+   "value": "Ariba",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1302"
+  },
+  {
+   "id": "sapProducts-19-sap-leanix",
+   "title": "SAP LeanIX",
+   "tags": "sap  sap product  SAP LeanIX",
+   "kind": "vertex",
+   "width": 37,
+   "height": 19,
+   "style": "image;image=img/lib/sap/SAP_Logo.svg;editableCssRules=.*;verticalLabelPosition=middle;labelBackgroundColor=none;verticalAlign=middle;imageAspect=0;labelPosition=right;align=left;fontSize=16;fontStyle=1;spacingLeft=0;fontColor=#002A86;spacing=0;points=[[0.5,0.015,0],[0.5,0.985,0],[0,0.5,0],[0.753,0.5,0],[1,0.015,0],[0,0.985,0],[0,0.015,0]];",
+   "value": "LeanIX",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:1305"
+  }
+ ]
+}

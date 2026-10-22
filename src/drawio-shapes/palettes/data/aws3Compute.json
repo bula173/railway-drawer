@@ -1,0 +1,596 @@
+{
+ "id": "aws3Compute",
+ "title": "AWS17 / Compute",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-AWS3.js:8",
+ "entries": [
+  {
+   "id": "aws3Compute-0-ami",
+   "title": "AMI",
+   "tags": "aws3 ami aws amazon web service compute AMI",
+   "kind": "vertex",
+   "width": 60,
+   "height": 63,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.ami;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.ami"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:190"
+  },
+  {
+   "id": "aws3Compute-1-ec2",
+   "title": "EC2",
+   "tags": "aws3 ec2 aws amazon web service compute EC2",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 93,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.ec2;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.ec2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:192"
+  },
+  {
+   "id": "aws3Compute-2-elastic-load-balancing",
+   "title": "Elastic Load Balancing",
+   "tags": "aws3 elastic load balancing aws amazon web service compute Elastic Load Balancing",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 93,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.elastic_load_balancing;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.elastic_load_balancing"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:194"
+  },
+  {
+   "id": "aws3Compute-3-auto-scaling",
+   "title": "Auto Scaling",
+   "tags": "aws3 auto scaling aws amazon web service compute Auto Scaling",
+   "kind": "vertex",
+   "width": 79.5,
+   "height": 76.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.auto_scaling;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.auto_scaling"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:196"
+  },
+  {
+   "id": "aws3Compute-4-elastic-ip",
+   "title": "Elastic IP",
+   "tags": "aws3 elastic ip aws amazon web service compute Elastic IP",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 21,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.elastic_ip;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.elastic_ip"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:198"
+  },
+  {
+   "id": "aws3Compute-5-elastic-beanstalk",
+   "title": "Elastic Beanstalk",
+   "tags": "aws3 elastic beanstalk aws amazon web service compute Elastic Beanstalk",
+   "kind": "vertex",
+   "width": 67.5,
+   "height": 93,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.elastic_beanstalk;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.elastic_beanstalk"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:200"
+  },
+  {
+   "id": "aws3Compute-6-lambda",
+   "title": "Lambda",
+   "tags": "aws3 lambda aws amazon web service compute Lambda",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 93,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.lambda;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.lambda"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:202"
+  },
+  {
+   "id": "aws3Compute-7-ecs",
+   "title": "ECS",
+   "tags": "aws3 ecs aws amazon web service compute ECS",
+   "kind": "vertex",
+   "width": 72,
+   "height": 67.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.ecs;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.ecs"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:204"
+  },
+  {
+   "id": "aws3Compute-8-db-on-instance",
+   "title": "DB on Instance",
+   "tags": "aws3 db on instance database aws amazon web service compute DB on Instance",
+   "kind": "vertex",
+   "width": 60,
+   "height": 64.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.db_on_instance;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.db_on_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:206"
+  },
+  {
+   "id": "aws3Compute-9-instance",
+   "title": "Instance",
+   "tags": "aws3 instance aws amazon web service compute Instance",
+   "kind": "vertex",
+   "width": 60,
+   "height": 63,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.instance;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:208"
+  },
+  {
+   "id": "aws3Compute-10-lightsail",
+   "title": "Lightsail",
+   "tags": "aws3 lightsail aws amazon web service compute Lightsail",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 82.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.lightsail;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.lightsail"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:210"
+  },
+  {
+   "id": "aws3Compute-11-endpoints",
+   "title": "Endpoints",
+   "tags": "aws3 endpoints aws amazon web service compute Endpoints",
+   "kind": "vertex",
+   "width": 69,
+   "height": 72,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.endpoints;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.endpoints"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:212"
+  },
+  {
+   "id": "aws3Compute-12-instances",
+   "title": "Instances",
+   "tags": "aws3 instances aws amazon web service compute Instances",
+   "kind": "vertex",
+   "width": 60,
+   "height": 63,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.instances;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.instances"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:214"
+  },
+  {
+   "id": "aws3Compute-13-elastic-network-interface",
+   "title": "Elastic Network Interface",
+   "tags": "aws3 elastic network interface aws amazon web service compute Elastic Network Interface",
+   "kind": "vertex",
+   "width": 69,
+   "height": 72,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.elastic_network_interface;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.elastic_network_interface"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:216"
+  },
+  {
+   "id": "aws3Compute-14-internet-gateway",
+   "title": "Internet Gateway",
+   "tags": "aws3 internet gateway aws amazon web service compute Internet Gateway",
+   "kind": "vertex",
+   "width": 69,
+   "height": 72,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.internet_gateway;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.internet_gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:218"
+  },
+  {
+   "id": "aws3Compute-15-flow-logs",
+   "title": "Flow Logs",
+   "tags": "aws3 flow logs aws amazon web service compute Flow Logs",
+   "kind": "vertex",
+   "width": 69,
+   "height": 72,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.flow_logs;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.flow_logs"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:220"
+  },
+  {
+   "id": "aws3Compute-16-customer-gateway",
+   "title": "Customer Gateway",
+   "tags": "aws3 customer gateway aws amazon web service compute Customer Gateway",
+   "kind": "vertex",
+   "width": 69,
+   "height": 72,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.customer_gateway;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.customer_gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:222"
+  },
+  {
+   "id": "aws3Compute-17-instance-with-cloudwatch",
+   "title": "Instance with CloudWatch",
+   "tags": "aws3 instance with cloudwatch aws amazon web service compute Instance with CloudWatch",
+   "kind": "vertex",
+   "width": 60,
+   "height": 63,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.instance_with_cloudwatch;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.instance_with_cloudwatch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:224"
+  },
+  {
+   "id": "aws3Compute-18-elastic-network-adapter",
+   "title": "Elastic Network Adapter",
+   "tags": "aws3 elastic network adapter aws amazon web service compute Elastic Network Adapter",
+   "kind": "vertex",
+   "width": 75,
+   "height": 90,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.elastic_network_adapter;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.elastic_network_adapter"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:226"
+  },
+  {
+   "id": "aws3Compute-19-optimized-instance",
+   "title": "Optimized Instance",
+   "tags": "aws3 optimized instance aws amazon web service compute Optimized Instance",
+   "kind": "vertex",
+   "width": 60,
+   "height": 63,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.optimized_instance;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.optimized_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:228"
+  },
+  {
+   "id": "aws3Compute-20-rescue",
+   "title": "Rescue",
+   "tags": "aws3 rescue aws amazon web service compute Rescue",
+   "kind": "vertex",
+   "width": 63,
+   "height": 66,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.rescue;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.rescue"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:230"
+  },
+  {
+   "id": "aws3Compute-21-spot-instance",
+   "title": "Spot Instance",
+   "tags": "aws3 spot instance aws amazon web service compute Spot Instance",
+   "kind": "vertex",
+   "width": 60,
+   "height": 63,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.spot_instance;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.spot_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:232"
+  },
+  {
+   "id": "aws3Compute-22-spot-fleet",
+   "title": "Spot Fleet",
+   "tags": "aws amazon web service computeSpot Fleet",
+   "kind": "cells",
+   "width": 200,
+   "height": 230,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=1;fillColor=none;gradientColor=none;arcSize=10;dashed=1;\" vertex=\"1\" parent=\"1\"><mxGeometry y=\"30\" width=\"200\" height=\"200\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.spot_instance;fillColor=#F58534;strokeColor=none;gradientColor=none;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"20\" width=\"43\" height=\"40\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.aws3.spot_instance"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:235"
+  },
+  {
+   "id": "aws3Compute-23-ecr",
+   "title": "ECR",
+   "tags": "aws3 ecr aws amazon web service compute ECR",
+   "kind": "vertex",
+   "width": 69,
+   "height": 72,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.ecr;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.ecr"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:245"
+  },
+  {
+   "id": "aws3Compute-24-vpn-gateway",
+   "title": "VPN Gateway",
+   "tags": "aws3 vpn gateway virtual private network aws amazon web service compute VPN Gateway",
+   "kind": "vertex",
+   "width": 69,
+   "height": 72,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.vpn_gateway;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.vpn_gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:247"
+  },
+  {
+   "id": "aws3Compute-25-deployment",
+   "title": "Deployment",
+   "tags": "aws3 deployment aws amazon web service compute Deployment",
+   "kind": "vertex",
+   "width": 55.5,
+   "height": 73.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.deployment;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.deployment"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:249"
+  },
+  {
+   "id": "aws3Compute-26-vpn-connection",
+   "title": "VPN Connection",
+   "tags": "aws3 vpn connection virtual private network aws amazon web service compute VPN Connection",
+   "kind": "vertex",
+   "width": 58.5,
+   "height": 48,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.vpn_connection;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.vpn_connection"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:251"
+  },
+  {
+   "id": "aws3Compute-27-vpc-peering",
+   "title": "VPC Peering",
+   "tags": "aws3 vpc peering virtual private cloud aws amazon web service compute VPC Peering",
+   "kind": "vertex",
+   "width": 69,
+   "height": 72,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.vpc_peering;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.vpc_peering"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:253"
+  },
+  {
+   "id": "aws3Compute-28-application",
+   "title": "Application",
+   "tags": "aws3 application aws amazon web service compute Application",
+   "kind": "vertex",
+   "width": 34.5,
+   "height": 64.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.application;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.application"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:255"
+  },
+  {
+   "id": "aws3Compute-29-ec2-compute-container",
+   "title": "EC2 Compute Container",
+   "tags": "aws3 ec2 compute container aws amazon web service compute EC2 Compute Container",
+   "kind": "vertex",
+   "width": 60,
+   "height": 34.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.ec2_compute_container;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.ec2_compute_container"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:257"
+  },
+  {
+   "id": "aws3Compute-30-ec2-compute-container",
+   "title": "EC2 Compute Container",
+   "tags": "aws3 ec2 compute container aws amazon web service compute EC2 Compute Container",
+   "kind": "vertex",
+   "width": 60,
+   "height": 34.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.ec2_compute_container_2;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.ec2_compute_container_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:259"
+  },
+  {
+   "id": "aws3Compute-31-ec2-compute-container",
+   "title": "EC2 Compute Container",
+   "tags": "aws3 ec2 compute container aws amazon web service compute EC2 Compute Container",
+   "kind": "vertex",
+   "width": 60,
+   "height": 34.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.ec2_compute_container_3;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.ec2_compute_container_3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:261"
+  },
+  {
+   "id": "aws3Compute-32-vpc-nat-gateway",
+   "title": "VPC NAT Gateway",
+   "tags": "aws3 vpc nat gateway virtual private cloud aws amazon web service compute VPC NAT Gateway",
+   "kind": "vertex",
+   "width": 69,
+   "height": 72,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.vpc_nat_gateway;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.vpc_nat_gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:263"
+  },
+  {
+   "id": "aws3Compute-33-ecr-registry",
+   "title": "ECR Registry",
+   "tags": "aws3 ecr registry aws amazon web service compute ECR Registry",
+   "kind": "vertex",
+   "width": 57,
+   "height": 60,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.ecr_registry;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.ecr_registry"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:265"
+  },
+  {
+   "id": "aws3Compute-34-batch",
+   "title": "Batch",
+   "tags": "aws3 batch aws amazon web service compute Batch",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 93,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.batch;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.batch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:267"
+  },
+  {
+   "id": "aws3Compute-35-router",
+   "title": "Router",
+   "tags": "aws3 router aws amazon web service compute Router",
+   "kind": "vertex",
+   "width": 69,
+   "height": 72,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.router;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:269"
+  },
+  {
+   "id": "aws3Compute-36-vpc",
+   "title": "VPC",
+   "tags": "aws3 vpc virtual private cloud aws amazon web service compute VPC",
+   "kind": "vertex",
+   "width": 67.5,
+   "height": 81,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.vpc;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.vpc"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:271"
+  },
+  {
+   "id": "aws3Compute-37-network-access-controllist",
+   "title": "Network Access Controllist",
+   "tags": "aws3 network access controllist aws amazon web service compute Network Access Controllist",
+   "kind": "vertex",
+   "width": 69,
+   "height": 72,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.network_access_controllist;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.network_access_controllist"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:273"
+  },
+  {
+   "id": "aws3Compute-38-lambda-function",
+   "title": "Lambda Function",
+   "tags": "aws3 lambda function aws amazon web service compute Lambda Function",
+   "kind": "vertex",
+   "width": 69,
+   "height": 72,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.lambda_function;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.lambda_function"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:275"
+  },
+  {
+   "id": "aws3Compute-39-classic-load-balancer",
+   "title": "Classic Load Balancer",
+   "tags": "aws3 classic load balancer aws amazon web service compute Classic Load Balancer",
+   "kind": "vertex",
+   "width": 69,
+   "height": 72,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.classic_load_balancer;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.classic_load_balancer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:277"
+  },
+  {
+   "id": "aws3Compute-40-application-load-balancer",
+   "title": "Application Load Balancer",
+   "tags": "aws3 application load balancer aws amazon web service compute Application Load Balancer",
+   "kind": "vertex",
+   "width": 69,
+   "height": 72,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.application_load_balancer;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.application_load_balancer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:279"
+  },
+  {
+   "id": "aws3Compute-41-x1-instance",
+   "title": "X1 Instance",
+   "tags": "aws3 x1 instance aws amazon web service compute X1 Instance",
+   "kind": "vertex",
+   "width": 60,
+   "height": 63,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.x1_instance;fillColor=#F58534;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.x1_instance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:281"
+  }
+ ]
+}

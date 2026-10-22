@@ -1,0 +1,2094 @@
+{
+ "id": "uml25",
+ "title": "UML 2.5",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-UML25.js:8",
+ "entries": [
+  {
+   "id": "uml25-0-diagram",
+   "title": "Diagram",
+   "tags": "diagram Diagram",
+   "kind": "vertex",
+   "width": 340,
+   "height": 180,
+   "style": "shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;recursiveResize=0;container=1;collapsible=0;width=160;",
+   "value": "Diagram Heading",
+   "shapeNames": [
+    "umlFrame"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:33"
+  },
+  {
+   "id": "uml25-1-comment",
+   "title": "Comment",
+   "tags": "uml comment note Comment",
+   "kind": "vertex",
+   "width": 120,
+   "height": 60,
+   "style": "shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=25;verticalAlign=top;align=center;",
+   "value": "Comment1 body",
+   "shapeNames": [
+    "note2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:34"
+  },
+  {
+   "id": "uml25-2-template-signature",
+   "title": "Template signature",
+   "tags": "template signature Template signature",
+   "kind": "vertex",
+   "width": 200,
+   "height": 20,
+   "style": "shape=partialRectangle;html=1;top=1;align=left;dashed=1;",
+   "value": "Template1 signature",
+   "shapeNames": [
+    "partialRectangle"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:35"
+  },
+  {
+   "id": "uml25-3-template-signature",
+   "title": "Template signature",
+   "tags": "template signature Template signature",
+   "kind": "vertex",
+   "width": 200,
+   "height": 50,
+   "style": "shape=partialRectangle;html=1;top=1;align=left;dashed=1;",
+   "value": "Template parameter 1\nTemplate parameter 2",
+   "shapeNames": [
+    "partialRectangle"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:36"
+  },
+  {
+   "id": "uml25-4-constraint",
+   "title": "Constraint",
+   "tags": "constraint",
+   "kind": "cells",
+   "width": 160,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Constraint1 specification\" style=\"shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=25;verticalAlign=top;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"160\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&lt;&lt;keyword&gt;&gt;\" style=\"resizeWidth=1;part=1;strokeColor=none;fillColor=none;align=left;spacingLeft=5;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"160\" height=\"25\" relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "note2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:37"
+  },
+  {
+   "id": "uml25-5-classifier",
+   "title": "Classifier",
+   "tags": "uml classifier",
+   "kind": "cells",
+   "width": 140,
+   "height": 183,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"&amp;lt;&amp;lt;keyword&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;Classifier1&lt;/b&gt;&lt;br&gt;{abstract}\" style=\"swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=55;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"140\" height=\"183\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"attributes\" style=\"text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"140\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"attribute1\" style=\"text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"140\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"inherited attribute2\" style=\"text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#808080;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"140\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"...\" style=\"text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"140\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"\" style=\"line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"40\" height=\"8\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"operations\" style=\"text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"140\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"9\" value=\"operation1\" style=\"text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"140\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "swimlane",
+    "line"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:48"
+  },
+  {
+   "id": "uml25-6-classifier",
+   "title": "Classifier",
+   "tags": "classifier Classifier",
+   "kind": "vertex",
+   "width": 140,
+   "height": 40,
+   "style": "shape=process2;fixedSize=1;size=5;fontStyle=1;html=1;whiteSpace=wrap;",
+   "value": "Classifier1",
+   "shapeNames": [
+    "process2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:81"
+  },
+  {
+   "id": "uml25-7-classifier",
+   "title": "Classifier",
+   "tags": "uml classifier",
+   "kind": "cells",
+   "width": 140,
+   "height": 183,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Classifier1\" style=\"swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"140\" height=\"183\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"internal structure\" style=\"html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;rotatable=0;points=[[0,0.5],[1,0.5]];resizeWidth=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"140\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"swimlane;fontStyle=1;align=center;verticalAlign=top;horizontal=1;startSize=0;collapsible=0;marginBottom=0;html=1;strokeColor=none;fillColor=none;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"140\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"property1\" style=\"html=1;align=center;verticalAlign=middle;rotatable=0;whiteSpace=wrap;\" vertex=\"1\" parent=\"4\"><mxGeometry width=\"100\" height=\"30\" relative=\"1\" as=\"geometry\"><mxPoint x=\"20\" y=\"20\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"6\" value=\"property2\" style=\"html=1;align=center;verticalAlign=middle;rotatable=0;whiteSpace=wrap;\" vertex=\"1\" parent=\"4\"><mxGeometry width=\"100\" height=\"30\" relative=\"1\" as=\"geometry\"><mxPoint x=\"20\" y=\"90\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"7\" value=\"connector1\" style=\"edgeStyle=none;endArrow=none;verticalAlign=middle;labelBackgroundColor=none;endSize=12;html=1;align=left;endFill=0;exitX=0.15;exitY=1;entryX=0.15;entryY=0;spacingLeft=4;\" edge=\"1\" parent=\"4\" source=\"5\" target=\"6\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "swimlane"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:82"
+  },
+  {
+   "id": "uml25-8-association",
+   "title": "Association",
+   "tags": "association Association",
+   "kind": "vertex",
+   "width": 140,
+   "height": 30,
+   "style": "fontStyle=1;whiteSpace=wrap;html=1;",
+   "value": "Association1",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:116"
+  },
+  {
+   "id": "uml25-9-classifier",
+   "title": "Classifier",
+   "tags": "uml classifier",
+   "kind": "cells",
+   "width": 140,
+   "height": 138,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Instance1\" style=\"swimlane;fontStyle=4;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"140\" height=\"138\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"slot1\" style=\"html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;rotatable=0;points=[[0,0.5],[1,0.5]];resizeWidth=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"140\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"40\" height=\"8\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"internal structure\" style=\"html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;rotatable=0;points=[[0,0.5],[1,0.5]];resizeWidth=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"140\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"\" style=\"swimlane;fontStyle=1;align=center;verticalAlign=top;horizontal=1;startSize=0;collapsible=0;marginBottom=0;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"140\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"instance2\" style=\"html=1;align=center;verticalAlign=middle;rotatable=0;whiteSpace=wrap;\" vertex=\"1\" parent=\"6\"><mxGeometry width=\"80\" height=\"30\" relative=\"1\" as=\"geometry\"><mxPoint x=\"30\" y=\"10\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "swimlane",
+    "line"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:117"
+  },
+  {
+   "id": "uml25-10-instance",
+   "title": "Instance",
+   "tags": "instance Instance",
+   "kind": "vertex",
+   "width": 120,
+   "height": 40,
+   "style": "fontStyle=0;html=1;whiteSpace=wrap;",
+   "value": "Instance1 value",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:144"
+  },
+  {
+   "id": "uml25-11-classifier",
+   "title": "Classifier",
+   "tags": "uml classifier",
+   "kind": "cells",
+   "width": 140,
+   "height": 70,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"&amp;lt;&amp;lt;enumeration&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;Enum1&lt;/b&gt;\" style=\"swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"140\" height=\"70\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"literal1\" style=\"text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"140\" height=\"30\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "swimlane"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:145"
+  },
+  {
+   "id": "uml25-12-interface-generalization",
+   "title": "Interface Generalization",
+   "tags": "uml interface generalization",
+   "kind": "cells",
+   "width": 160,
+   "height": 0,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Interface1, Interface2...\" style=\"html=1;verticalAlign=bottom;labelBackgroundColor=none;startArrow=oval;startFill=0;startSize=8;endArrow=none;\" edge=\"1\" parent=\"1\"><mxGeometry x=\"-1\" y=\"3\" relative=\"1\" as=\"geometry\"><mxPoint as=\"sourcePoint\"/><mxPoint x=\"160\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:157"
+  },
+  {
+   "id": "uml25-13-required-interface",
+   "title": "Required Interface",
+   "tags": "uml required interface",
+   "kind": "cells",
+   "width": 160,
+   "height": 0,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Interface1\" style=\"html=1;verticalAlign=bottom;labelBackgroundColor=none;startArrow=halfCircle;startFill=0;startSize=2;endArrow=none;\" edge=\"1\" parent=\"1\"><mxGeometry x=\"-1\" y=\"3\" relative=\"1\" as=\"geometry\"><mxPoint as=\"sourcePoint\"/><mxPoint x=\"160\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:169"
+  },
+  {
+   "id": "uml25-14-property",
+   "title": "Property",
+   "tags": "uml property",
+   "kind": "cells",
+   "width": 120,
+   "height": 50,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"0..1\" style=\"align=right;verticalAlign=top;spacingRight=2;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Property1\" style=\"text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;resizeWidth=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"1\" width=\"120\" height=\"30\" relative=\"1\" as=\"geometry\"><mxPoint y=\"-30\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:181"
+  },
+  {
+   "id": "uml25-15-property",
+   "title": "Property",
+   "tags": "property Property",
+   "kind": "vertex",
+   "width": 140,
+   "height": 30,
+   "style": "fontStyle=0;dashed=1;html=1;whiteSpace=wrap;",
+   "value": "Property1",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:196"
+  },
+  {
+   "id": "uml25-16-port",
+   "title": "Port",
+   "tags": "port Port",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "fontStyle=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=2;",
+   "value": "port1",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:197"
+  },
+  {
+   "id": "uml25-17-port-with-provided-interface",
+   "title": "Port with provided interface",
+   "tags": "uml port provided interface lollipop notation",
+   "kind": "cells",
+   "width": 60,
+   "height": 30,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"html=1;rounded=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"endArrow=none;html=1;rounded=0;align=center;verticalAlign=top;endFill=0;labelBackgroundColor=none;endSize=2;\" edge=\"1\" parent=\"1\" source=\"2\" target=\"4\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"ellipse;html=1;fontSize=11;align=center;fillColor=none;points=[];aspect=fixed;resizable=0;verticalAlign=bottom;labelPosition=center;verticalLabelPosition=top;flipH=1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"52\" y=\"11\" width=\"8\" height=\"8\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:198"
+  },
+  {
+   "id": "uml25-18-port-with-required-interface",
+   "title": "Port with required interface",
+   "tags": "uml port required interface lollipop notation",
+   "kind": "cells",
+   "width": 60,
+   "height": 30,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"html=1;rounded=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"endArrow=none;html=1;rounded=0;align=center;verticalAlign=top;endFill=0;labelBackgroundColor=none;endSize=2;\" edge=\"1\" parent=\"1\" source=\"2\" target=\"4\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=requiredInterface;html=1;fontSize=11;align=center;fillColor=none;points=[];aspect=fixed;resizable=0;verticalAlign=bottom;labelPosition=center;verticalLabelPosition=top;flipH=1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"55\" y=\"10\" width=\"5\" height=\"10\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "requiredInterface"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:212"
+  },
+  {
+   "id": "uml25-19-component",
+   "title": "Component",
+   "tags": "uml component",
+   "kind": "cells",
+   "width": 140,
+   "height": 161,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;marginBottom=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"140\" height=\"161\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Component\" style=\"html=1;align=left;spacingLeft=4;verticalAlign=top;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"140\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=module;jettyWidth=10;jettyHeight=4;\" vertex=\"1\" parent=\"3\"><mxGeometry x=\"1\" width=\"16\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-25\" y=\"9\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"\" style=\"line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"40\" height=\"8\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"provided interfaces\" style=\"html=1;align=center;spacingLeft=4;verticalAlign=top;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"140\" height=\"25\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"Interface1\" style=\"html=1;align=left;spacingLeft=4;verticalAlign=top;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"140\" height=\"25\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"\" style=\"line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"40\" height=\"8\" as=\"geometry\"/></mxCell><mxCell id=\"9\" value=\"required interfaces\" style=\"html=1;align=center;spacingLeft=4;verticalAlign=top;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"140\" height=\"25\" as=\"geometry\"/></mxCell><mxCell id=\"10\" value=\"Interface2\" style=\"html=1;align=left;spacingLeft=4;verticalAlign=top;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"140\" height=\"30\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "module",
+    "line"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:225"
+  },
+  {
+   "id": "uml25-20-classifier",
+   "title": "Classifier",
+   "tags": "uml classifier",
+   "kind": "cells",
+   "width": 270,
+   "height": 230,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=ellipse;container=1;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;html=1;dashed=1;collapsible=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"270\" height=\"230\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Collaboration1\" style=\"html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;rotatable=0;points=[[0,0.5],[1,0.5]];resizeWidth=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"270\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"line;strokeWidth=1;fillColor=none;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;dashed=1;resizeWidth=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"39\" y=\"30\" width=\"192\" height=\"8\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"Classifier1\" style=\"html=1;align=center;verticalAlign=middle;rotatable=0;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"100\" height=\"30\" relative=\"1\" as=\"geometry\"><mxPoint x=\"85\" y=\"50\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"6\" value=\"Collaboration use 1\" style=\"shape=ellipse;html=1;align=center;verticalAlign=middle;rotatable=0;dashed=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"140\" height=\"30\" relative=\"1\" as=\"geometry\"><mxPoint x=\"65\" y=\"110\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"7\" value=\"property1\" style=\"edgeStyle=none;endArrow=none;verticalAlign=middle;labelBackgroundColor=none;endSize=12;html=1;align=left;endFill=0;spacingLeft=4;\" edge=\"1\" parent=\"2\" source=\"5\" target=\"6\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"Classifier2\" style=\"html=1;align=center;verticalAlign=middle;rotatable=0;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"100\" height=\"30\" relative=\"1\" as=\"geometry\"><mxPoint x=\"85\" y=\"170\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"9\" value=\"property1\" style=\"edgeStyle=none;endArrow=none;verticalAlign=middle;labelBackgroundColor=none;endSize=12;html=1;align=left;endFill=0;spacingLeft=4;\" edge=\"1\" parent=\"2\" source=\"6\" target=\"8\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "ellipse",
+    "line"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:254"
+  },
+  {
+   "id": "uml25-21-package",
+   "title": "Package",
+   "tags": "uml package Package",
+   "kind": "vertex",
+   "width": 150,
+   "height": 80,
+   "style": "shape=folder;fontStyle=1;tabWidth=80;tabHeight=30;tabPosition=left;html=1;boundedLbl=1;whiteSpace=wrap;",
+   "value": "Package1",
+   "shapeNames": [
+    "folder"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:299"
+  },
+  {
+   "id": "uml25-22-package",
+   "title": "Package",
+   "tags": "uml package",
+   "kind": "cells",
+   "width": 150,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Package1\" style=\"shape=folder;fontStyle=1;tabWidth=110;tabHeight=30;tabPosition=left;html=1;boundedLbl=1;labelInHeader=1;container=1;collapsible=0;recursiveResize=0;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"150\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Packaged element1\" style=\"html=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"110\" height=\"30\" relative=\"1\" as=\"geometry\"><mxPoint x=\"20\" y=\"50\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "folder"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:301"
+  },
+  {
+   "id": "uml25-23-package",
+   "title": "Package",
+   "tags": "uml package",
+   "kind": "cells",
+   "width": 150,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Package\" style=\"shape=folder;fontStyle=1;tabWidth=110;tabHeight=30;tabPosition=left;html=1;boundedLbl=1;labelInHeader=1;container=1;collapsible=0;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"150\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Text\" style=\"html=1;strokeColor=none;resizeWidth=1;resizeHeight=1;fillColor=none;part=1;connectable=0;allowArrows=0;deletable=0;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"150\" height=\"70\" relative=\"1\" as=\"geometry\"><mxPoint y=\"30\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "folder"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:315"
+  },
+  {
+   "id": "uml25-24-model",
+   "title": "Model",
+   "tags": "uml model",
+   "kind": "cells",
+   "width": 150,
+   "height": 80,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Model1\" style=\"shape=folder;fontStyle=1;tabWidth=110;tabHeight=30;tabPosition=left;html=1;boundedLbl=1;folderSymbol=triangle;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"150\" height=\"80\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "folder"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:329"
+  },
+  {
+   "id": "uml25-25-stereotype",
+   "title": "Stereotype",
+   "tags": "uml stereotype",
+   "kind": "cells",
+   "width": 160,
+   "height": 75,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=note2;size=25;childLayout=stackLayout;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;container=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"160\" height=\"75\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&amp;lt;&amp;lt;stereotype1&amp;gt;&amp;gt;\" style=\"text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"160\" height=\"25\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"stereotype property 1\" style=\"text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"160\" height=\"25\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"stereotype property 2\" style=\"text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"160\" height=\"25\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "note2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:337"
+  },
+  {
+   "id": "uml25-26-class",
+   "title": "Class",
+   "tags": "uml class",
+   "kind": "cells",
+   "width": 140,
+   "height": 79,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Class1\" style=\"swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=29;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"140\" height=\"79\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&amp;lt;&amp;lt;stereotype1&amp;gt;&amp;gt;\" style=\"text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"140\" height=\"25\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"stereotype property 1\" style=\"text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"140\" height=\"25\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "swimlane"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:357"
+  },
+  {
+   "id": "uml25-27-stereotype-label",
+   "title": "Stereotype Label",
+   "tags": "uml stereotype label Stereotype Label",
+   "kind": "vertex",
+   "width": 200,
+   "height": 25,
+   "style": "text;html=1;align=center;",
+   "value": "&lt;&lt;stereotype1, stereotype2...&gt;&gt;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:373"
+  },
+  {
+   "id": "uml25-28-icon",
+   "title": "Icon",
+   "tags": "uml icon Icon",
+   "kind": "vertex",
+   "width": 50,
+   "height": 25,
+   "style": "ellipse;html=1;whiteSpace=wrap;",
+   "value": "icon",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:375"
+  },
+  {
+   "id": "uml25-29-region",
+   "title": "Region",
+   "tags": "uml region",
+   "kind": "cells",
+   "width": 130,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"line;strokeWidth=1;direction=south;html=1;dashed=1;dashPattern=20 20;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"60\" width=\"10\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Region 1\" style=\"text;align=right;\" vertex=\"1\" parent=\"1\"><mxGeometry y=\"40\" width=\"60\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Region 2\" style=\"text;align=left;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"70\" y=\"40\" width=\"60\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "line"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:377"
+  },
+  {
+   "id": "uml25-30-state",
+   "title": "State",
+   "tags": "uml state",
+   "kind": "cells",
+   "width": 140,
+   "height": 176,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"State1&lt;br&gt;[invariant1]&lt;br&gt;&amp;lt;&amp;lt;extended/final&amp;gt;&amp;gt;\" style=\"swimlane;fontStyle=4;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=60;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;rounded=1;absoluteArcSize=1;arcSize=50;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"140\" height=\"176\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"fillColor=none;strokeColor=none;container=1;collapsible=0;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"140\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"State2\" style=\"html=1;align=center;verticalAlign=middle;rounded=1;absoluteArcSize=1;arcSize=10;whiteSpace=wrap;\" vertex=\"1\" parent=\"3\"><mxGeometry x=\"30\" y=\"10\" width=\"80\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"40\" height=\"8\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"behavior1\" style=\"fillColor=none;strokeColor=none;align=left;verticalAlign=middle;spacingLeft=5;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"140\" height=\"25\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"\" style=\"line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"40\" height=\"8\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"transition1\" style=\"fillColor=none;strokeColor=none;align=left;verticalAlign=middle;spacingLeft=5;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"140\" height=\"25\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "swimlane",
+    "line"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:393"
+  },
+  {
+   "id": "uml25-31-state",
+   "title": "State",
+   "tags": "uml state State",
+   "kind": "vertex",
+   "width": 140,
+   "height": 40,
+   "style": "html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=1;whiteSpace=wrap;",
+   "value": "State1",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:419"
+  },
+  {
+   "id": "uml25-32-state",
+   "title": "State",
+   "tags": "uml state State",
+   "kind": "vertex",
+   "width": 140,
+   "height": 40,
+   "style": "html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;whiteSpace=wrap;",
+   "value": "State",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:421"
+  },
+  {
+   "id": "uml25-33-state",
+   "title": "State",
+   "tags": "uml state State",
+   "kind": "vertex",
+   "width": 140,
+   "height": 90,
+   "style": "shape=folder;align=center;verticalAlign=middle;fontStyle=0;tabWidth=100;tabHeight=30;tabPosition=left;html=1;boundedLbl=1;labelInHeader=1;rounded=1;absoluteArcSize=1;arcSize=10;whiteSpace=wrap;",
+   "value": "State1",
+   "shapeNames": [
+    "folder"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:423"
+  },
+  {
+   "id": "uml25-34-state",
+   "title": "State",
+   "tags": "uml state State",
+   "kind": "vertex",
+   "width": 140,
+   "height": 40,
+   "style": "html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;whiteSpace=wrap;",
+   "value": "State1, State2, ...",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:425"
+  },
+  {
+   "id": "uml25-35-state",
+   "title": "State",
+   "tags": "uml state State",
+   "kind": "vertex",
+   "width": 140,
+   "height": 60,
+   "style": "shape=umlState;rounded=1;verticalAlign=top;spacingTop=5;umlStateSymbol=collapseState;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;",
+   "value": "State1",
+   "shapeNames": [
+    "umlState"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:427"
+  },
+  {
+   "id": "uml25-36-state-with-entry-point",
+   "title": "State with entry point",
+   "tags": "uml state entry point",
+   "kind": "cells",
+   "width": 140,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"State1\" style=\"shape=umlState;rounded=1;verticalAlign=middle;align=center;absoluteArcSize=1;arcSize=10;umlStateConnection=connPointRefEntry;boundedLbl=1;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"140\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Entry1\" style=\"text;verticalAlign=middle;align=center;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"-40\" y=\"40\" width=\"50\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "umlState"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:429"
+  },
+  {
+   "id": "uml25-37-state-with-exit-point",
+   "title": "State with exit point",
+   "tags": "uml state exit point",
+   "kind": "cells",
+   "width": 140,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"State1\" style=\"shape=umlState;rounded=1;verticalAlign=middle;spacingTop=0;absoluteArcSize=1;arcSize=10;umlStateConnection=connPointRefExit;boundedLbl=1;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"140\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Exit1\" style=\"text;verticalAlign=middle;align=center;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"-40\" y=\"40\" width=\"50\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "umlState"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:440"
+  },
+  {
+   "id": "uml25-38-initial-preudostate-node",
+   "title": "Initial preudostate / node",
+   "tags": "uml initial pseudostate Initial preudostate / node",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "ellipse;fillColor=strokeColor;html=1;",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:452"
+  },
+  {
+   "id": "uml25-39-final-state-node",
+   "title": "Final state / node",
+   "tags": "uml final state Final state / node",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "ellipse;html=1;shape=endState;fillColor=strokeColor;",
+   "shapeNames": [
+    "endState"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:454"
+  },
+  {
+   "id": "uml25-40-shallow-history",
+   "title": "Shallow History",
+   "tags": "uml shallow history pseudostate Shallow History",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "ellipse;html=1;",
+   "value": "H",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:456"
+  },
+  {
+   "id": "uml25-41-deep-history",
+   "title": "Deep History",
+   "tags": "uml deep history pseudostate Deep History",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "ellipse;html=1;",
+   "value": "H*",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:458"
+  },
+  {
+   "id": "uml25-42-entry-point",
+   "title": "Entry Point",
+   "tags": "uml entry point pseudostate Entry Point",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "ellipse;",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:460"
+  },
+  {
+   "id": "uml25-43-exit-point-flow-final-node",
+   "title": "Exit Point / Flow Final Node",
+   "tags": "uml exit point pseudostate Exit Point / Flow Final Node",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "shape=sumEllipse;perimeter=ellipsePerimeter;html=1;backgroundOutline=1;",
+   "shapeNames": [
+    "sumEllipse"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:462"
+  },
+  {
+   "id": "uml25-44-junction",
+   "title": "Junction",
+   "tags": "uml junction pseudostate Junction",
+   "kind": "vertex",
+   "width": 20,
+   "height": 20,
+   "style": "ellipse;fillColor=strokeColor;html=1;",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:464"
+  },
+  {
+   "id": "uml25-45-choice-merge-node-decision-node",
+   "title": "Choice / Merge Node / Decision Node",
+   "tags": "uml choice pseudostate merge decision node Choice / Merge Node / Decision Node",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "rhombus;",
+   "shapeNames": [
+    "rhombus"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:466"
+  },
+  {
+   "id": "uml25-46-terminate",
+   "title": "Terminate",
+   "tags": "uml terminate pseudostate Terminate",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "shape=umlDestroy;html=1;",
+   "shapeNames": [
+    "umlDestroy"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:468"
+  },
+  {
+   "id": "uml25-47-join-fork-node",
+   "title": "Join/Fork Node",
+   "tags": "uml join fork pseudostate Join/Fork Node",
+   "kind": "vertex",
+   "width": 5,
+   "height": 80,
+   "style": "html=1;points=[];perimeter=orthogonalPerimeter;fillColor=strokeColor;",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:470"
+  },
+  {
+   "id": "uml25-48-opaque-action",
+   "title": "Opaque Action",
+   "tags": "uml opaque action Opaque Action",
+   "kind": "vertex",
+   "width": 140,
+   "height": 40,
+   "style": "text;align=center;verticalAlign=middle;dashed=0;whiteSpace=wrap;",
+   "value": "OpaqueAction1 spec.",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:472"
+  },
+  {
+   "id": "uml25-49-trigger",
+   "title": "Trigger",
+   "tags": "uml trigger Trigger",
+   "kind": "vertex",
+   "width": 160,
+   "height": 40,
+   "style": "html=1;shape=mxgraph.infographic.ribbonSimple;notch1=20;notch2=0;align=center;verticalAlign=middle;fontSize=14;fontStyle=0;flipH=1;fillColor=#FFFFFF;whiteSpace=wrap;",
+   "value": "Trigger1 spec.",
+   "shapeNames": [
+    "mxgraph.infographic.ribbonSimple"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:474"
+  },
+  {
+   "id": "uml25-50-send-signal-action",
+   "title": "Send Signal Action",
+   "tags": "uml send signal action Send Signal Action",
+   "kind": "vertex",
+   "width": 160,
+   "height": 40,
+   "style": "html=1;shape=mxgraph.infographic.ribbonSimple;notch1=0;notch2=20;align=center;verticalAlign=middle;fontSize=14;fontStyle=0;fillColor=#FFFFFF;whiteSpace=wrap;",
+   "value": "SendSignalAction1",
+   "shapeNames": [
+    "mxgraph.infographic.ribbonSimple"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:476"
+  },
+  {
+   "id": "uml25-51-single-execution",
+   "title": "Single Execution",
+   "tags": "uml single execution Single Execution",
+   "kind": "vertex",
+   "width": 300,
+   "height": 160,
+   "style": "html=1;align=right;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=50;dashed=0;spacingTop=10;spacingRight=30;whiteSpace=wrap;",
+   "value": "&lt;&lt;singleExecution&gt;&gt;",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:478"
+  },
+  {
+   "id": "uml25-52-parameter",
+   "title": "Parameter",
+   "tags": "uml parameter",
+   "kind": "cells",
+   "width": 140,
+   "height": 40,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry y=\"10\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Parameter1 spec.\" style=\"text;verticalAlign=middle;align=center;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"40\" width=\"100\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"triangle;html=1;direction=north;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"50\" y=\"25\" width=\"30\" height=\"15\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "triangle"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:480"
+  },
+  {
+   "id": "uml25-53-action",
+   "title": "Action",
+   "tags": "uml action Action",
+   "kind": "vertex",
+   "width": 140,
+   "height": 40,
+   "style": "html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;whiteSpace=wrap;",
+   "value": "Action1",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:495"
+  },
+  {
+   "id": "uml25-54-activity-partition",
+   "title": "Activity Partition",
+   "tags": "uml activity partition Activity Partition",
+   "kind": "vertex",
+   "width": 140,
+   "height": 70,
+   "style": "html=1;align=center;verticalAlign=middle;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;whiteSpace=wrap;",
+   "value": "&lt;&lt;external&gt;&gt;<br>Action1<br>(partition1)",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:497"
+  },
+  {
+   "id": "uml25-55-object-node",
+   "title": "Object Node",
+   "tags": "uml object node",
+   "kind": "cells",
+   "width": 140,
+   "height": 90,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"ObjectNode1&lt;br&gt;&lt;br&gt;[State1, State2...]\" style=\"html=1;align=center;verticalAlign=middle;rounded=0;absoluteArcSize=1;arcSize=10;dashed=0;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"140\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"{annotation1}\" style=\"text;verticalAlign=middle;align=center;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry y=\"60\" width=\"140\" height=\"30\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:499"
+  },
+  {
+   "id": "uml25-56-activity-parameter-node",
+   "title": "Activity Parameter Node",
+   "tags": "uml activity parameter node",
+   "kind": "cells",
+   "width": 140,
+   "height": 90,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Parameter1 spec.\" style=\"html=1;align=center;verticalAlign=middle;rounded=0;absoluteArcSize=1;arcSize=10;dashed=0;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"140\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"{stream}\" style=\"text;verticalAlign=middle;align=center;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry y=\"60\" width=\"140\" height=\"30\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:511"
+  },
+  {
+   "id": "uml25-57-object-node",
+   "title": "Object Node",
+   "tags": "uml object node Object Node",
+   "kind": "vertex",
+   "width": 160,
+   "height": 40,
+   "style": "html=1;shape=mxgraph.infographic.ribbonSimple;notch1=20;notch2=20;align=center;verticalAlign=middle;fontSize=14;fontStyle=0;fillColor=#FFFFFF;whiteSpace=wrap;",
+   "value": "ObjectNode1",
+   "shapeNames": [
+    "mxgraph.infographic.ribbonSimple"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:523"
+  },
+  {
+   "id": "uml25-58-behavior",
+   "title": "Behavior",
+   "tags": "behavior selection transformation decision input",
+   "kind": "cells",
+   "width": 160,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Behavior1 spec.\" style=\"shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=25;verticalAlign=top;align=left;spacingLeft=5;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"160\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&amp;lt;&amp;lt;keyword&amp;gt;&amp;gt;\" style=\"resizeWidth=1;part=1;strokeColor=none;fillColor=none;align=left;spacingLeft=5;html=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"160\" height=\"25\" relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "note2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:525"
+  },
+  {
+   "id": "uml25-59-join-node",
+   "title": "Join Node",
+   "tags": "uml join node Join Node",
+   "kind": "vertex",
+   "width": 5,
+   "height": 80,
+   "style": "html=1;points=[];perimeter=orthogonalPerimeter;fillColor=strokeColor;align=left;verticalAlign=top;spacingLeft=10;",
+   "value": "{joinSpec = join spec}",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:536"
+  },
+  {
+   "id": "uml25-60-activity-partition",
+   "title": "Activity Partition",
+   "tags": "activity partition Activity Partition",
+   "kind": "cells",
+   "width": 180,
+   "height": 200,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"dimension1\" style=\"shape=table;html=1;whiteSpace=wrap;startSize=20;container=1;collapsible=0;childLayout=tableLayout;fillColor=none;swimlaneFillColor=#ffffff;strokeColor=none;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"180\" height=\"200\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;top=0;left=0;bottom=0;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;strokeColor=none;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"20\" width=\"180\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=1;left=1;bottom=1;right=1;overflow=hidden;strokeColor=none;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"20\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"Partition1\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=1;left=1;bottom=1;right=1;overflow=hidden;\" vertex=\"1\" parent=\"3\"><mxGeometry x=\"20\" width=\"80\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"Partition2\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=1;left=1;bottom=1;right=1;overflow=hidden;\" vertex=\"1\" parent=\"3\"><mxGeometry x=\"100\" width=\"80\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;top=1;left=1;bottom=1;right=1;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"40\" width=\"180\" height=\"70\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"Partition3\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=1;left=1;bottom=1;right=1;overflow=hidden;horizontal=0;\" vertex=\"1\" parent=\"7\"><mxGeometry width=\"20\" height=\"70\" as=\"geometry\"/></mxCell><mxCell id=\"9\" value=\"\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=1;left=1;bottom=1;right=1;overflow=hidden;\" vertex=\"1\" parent=\"7\"><mxGeometry x=\"20\" width=\"80\" height=\"70\" as=\"geometry\"/></mxCell><mxCell id=\"10\" value=\"\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=1;left=1;bottom=1;right=1;overflow=hidden;\" vertex=\"1\" parent=\"7\"><mxGeometry x=\"100\" width=\"80\" height=\"70\" as=\"geometry\"/></mxCell><mxCell id=\"11\" value=\"\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;top=1;left=1;bottom=1;right=1;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"110\" width=\"180\" height=\"90\" as=\"geometry\"/></mxCell><mxCell id=\"12\" value=\"Partition4\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=1;left=1;bottom=1;right=1;overflow=hidden;horizontal=0;\" vertex=\"1\" parent=\"11\"><mxGeometry width=\"20\" height=\"90\" as=\"geometry\"/></mxCell><mxCell id=\"13\" value=\"\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=1;left=1;bottom=1;right=1;overflow=hidden;\" vertex=\"1\" parent=\"11\"><mxGeometry x=\"20\" width=\"80\" height=\"90\" as=\"geometry\"/></mxCell><mxCell id=\"14\" value=\"\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=1;left=1;bottom=1;right=1;overflow=hidden;\" vertex=\"1\" parent=\"11\"><mxGeometry x=\"100\" width=\"80\" height=\"90\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "table",
+    "partialRectangle"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:538"
+  },
+  {
+   "id": "uml25-61-interruptible-activity-region",
+   "title": "Interruptible Activity Region",
+   "tags": "uml interruptible activity region Interruptible Activity Region",
+   "kind": "vertex",
+   "width": 200,
+   "height": 100,
+   "style": "html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=20;dashed=1;whiteSpace=wrap;",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:539"
+  },
+  {
+   "id": "uml25-62-state",
+   "title": "State",
+   "tags": "uml state State",
+   "kind": "vertex",
+   "width": 140,
+   "height": 40,
+   "style": "html=1;align=center;verticalAlign=middle;rounded=1;absoluteArcSize=1;arcSize=10;dashed=1;whiteSpace=wrap;",
+   "value": "State1",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:541"
+  },
+  {
+   "id": "uml25-63-constraint-precondition-postcondition",
+   "title": "Constraint / Precondition / Postcondition",
+   "tags": "constraint precondition postcondition selection transformation decision input",
+   "kind": "cells",
+   "width": 160,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Constraint1 spec.\" style=\"shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=25;verticalAlign=top;align=left;spacingLeft=5;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"160\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&amp;lt;&amp;lt;keyword&amp;gt;&amp;gt;\" style=\"resizeWidth=1;part=1;html=1;strokeColor=none;fillColor=none;align=left;spacingLeft=5;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"160\" height=\"25\" relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "note2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:543"
+  },
+  {
+   "id": "uml25-64-port",
+   "title": "Port",
+   "tags": "port Port",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "fontStyle=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=2;html=1;",
+   "value": "Pin1<br>[State1]<br>{control}<br>Parameter1 spec.",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:554"
+  },
+  {
+   "id": "uml25-65-object-flow",
+   "title": "Object Flow",
+   "tags": "object flow",
+   "kind": "cells",
+   "width": 160,
+   "height": 30,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"html=1;rounded=0;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"50\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"endArrow=open;html=1;rounded=0;align=center;verticalAlign=top;endFill=0;labelBackgroundColor=none;endSize=6;\" edge=\"1\" parent=\"1\" target=\"2\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint y=\"15\" as=\"sourcePoint\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"\" style=\"endArrow=open;html=1;rounded=0;align=center;verticalAlign=top;endFill=0;labelBackgroundColor=none;endSize=6;\" edge=\"1\" parent=\"1\" source=\"2\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint x=\"130\" y=\"15\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:557"
+  },
+  {
+   "id": "uml25-66-pin",
+   "title": "Pin ",
+   "tags": "pin Pin ",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "fontStyle=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=2;html=1;points=[[0,0.5],[1,0.5]];fillColor=strokeColor;",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:574"
+  },
+  {
+   "id": "uml25-67-input-pin",
+   "title": "Input Pin",
+   "tags": "input pin Input Pin",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "shape=mxgraph.uml25.inputPin;html=1;points=[[0,0.5],[1,0.5]];",
+   "shapeNames": [
+    "mxgraph.uml25.inputPin"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:575"
+  },
+  {
+   "id": "uml25-68-input-pin",
+   "title": "Input Pin",
+   "tags": "input pin Input Pin",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "shape=mxgraph.uml25.inputPin;html=1;points=[[0,0.5],[1,0.5]];strokeColor=#ffffff;fillColor=#000000;",
+   "shapeNames": [
+    "mxgraph.uml25.inputPin"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:576"
+  },
+  {
+   "id": "uml25-69-output-pin",
+   "title": "Output Pin",
+   "tags": "output pin Output Pin",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "shape=mxgraph.uml25.inputPin;html=1;points=[[0,0.5],[1,0.5]];flipH=1;",
+   "shapeNames": [
+    "mxgraph.uml25.inputPin"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:577"
+  },
+  {
+   "id": "uml25-70-output-pin",
+   "title": "Output Pin",
+   "tags": "output pin Output Pin",
+   "kind": "vertex",
+   "width": 30,
+   "height": 30,
+   "style": "shape=mxgraph.uml25.inputPin;html=1;points=[[0,0.5],[1,0.5]];strokeColor=#ffffff;fillColor=#000000;flipH=1;",
+   "shapeNames": [
+    "mxgraph.uml25.inputPin"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:578"
+  },
+  {
+   "id": "uml25-71-behavior-action",
+   "title": "Behavior Action",
+   "tags": "behavior action Behavior Action",
+   "kind": "vertex",
+   "width": 190,
+   "height": 60,
+   "style": "shape=mxgraph.uml25.behaviorAction;html=1;rounded=1;absoluteArcSize=1;arcSize=10;align=left;spacingLeft=5;whiteSpace=wrap;",
+   "value": "CallBehaviorAction1",
+   "shapeNames": [
+    "mxgraph.uml25.behaviorAction"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:579"
+  },
+  {
+   "id": "uml25-72-call-operation-action",
+   "title": "Call Operation Action",
+   "tags": "uml call operation action Call Operation Action",
+   "kind": "vertex",
+   "width": 140,
+   "height": 40,
+   "style": "html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;whiteSpace=wrap;",
+   "value": "Action1<br>(Operation1)",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:580"
+  },
+  {
+   "id": "uml25-73-value-specification-action",
+   "title": "Value Specification Action",
+   "tags": "uml value specification action Value Specification Action",
+   "kind": "vertex",
+   "width": 140,
+   "height": 40,
+   "style": "html=1;align=center;verticalAlign=middle;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;whiteSpace=wrap;",
+   "value": "ValueSpecAction1 spec.",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:582"
+  },
+  {
+   "id": "uml25-74-action-with-output",
+   "title": "Action with output",
+   "tags": "uml action with output",
+   "kind": "cells",
+   "width": 170,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Action1\" style=\"shape=mxgraph.uml25.action;html=1;align=center;verticalAlign=middle;absoluteArcSize=1;arcSize=10;dashed=0;spacingRight=10;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry y=\"20\" width=\"110\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"variable1\" style=\"text;verticalAlign=middle;align=left;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"110\" width=\"60\" height=\"30\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.uml25.action"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:584"
+  },
+  {
+   "id": "uml25-75-action-with-input",
+   "title": "Action with input",
+   "tags": "uml action with input",
+   "kind": "cells",
+   "width": 110,
+   "height": 40,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Action1\" style=\"shape=mxgraph.uml25.action;html=1;align=center;verticalAlign=middle;absoluteArcSize=1;arcSize=10;dashed=0;spacingLeft=10;flipH=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"110\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"variable1\" style=\"text;verticalAlign=middle;align=right;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"-60\" width=\"60\" height=\"40\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.uml25.action"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:596"
+  },
+  {
+   "id": "uml25-76-read-self-object-action",
+   "title": "Read self object action",
+   "tags": "uml read self object action",
+   "kind": "cells",
+   "width": 110,
+   "height": 40,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Action1\" style=\"shape=mxgraph.uml25.action;html=1;align=center;verticalAlign=middle;absoluteArcSize=1;arcSize=10;dashed=0;spacingLeft=10;flipH=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"110\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"self\" style=\"text;verticalAlign=middle;align=right;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"-60\" width=\"60\" height=\"40\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.uml25.action"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:608"
+  },
+  {
+   "id": "uml25-77-value-specification-action",
+   "title": "Value specification action",
+   "tags": "uml value specification action",
+   "kind": "cells",
+   "width": 110,
+   "height": 40,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Action1\" style=\"shape=mxgraph.uml25.action;html=1;align=center;verticalAlign=middle;absoluteArcSize=1;arcSize=10;dashed=0;spacingLeft=10;flipH=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"110\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"value1\" style=\"text;verticalAlign=middle;align=right;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"-60\" width=\"60\" height=\"40\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.uml25.action"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:621"
+  },
+  {
+   "id": "uml25-78-send-object-action",
+   "title": "Send Object Action",
+   "tags": "uml send object action Send Object Action",
+   "kind": "vertex",
+   "width": 160,
+   "height": 40,
+   "style": "html=1;shape=mxgraph.infographic.ribbonSimple;notch1=0;notch2=20;align=center;verticalAlign=middle;fontSize=14;fontStyle=0;fillColor=#FFFFFF;whiteSpace=wrap;",
+   "value": "SendObjectAction1",
+   "shapeNames": [
+    "mxgraph.infographic.ribbonSimple"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:633"
+  },
+  {
+   "id": "uml25-79-accept-event-action",
+   "title": "Accept Event Action",
+   "tags": "uml acceppt event action Accept Event Action",
+   "kind": "vertex",
+   "width": 170,
+   "height": 40,
+   "style": "html=1;shape=mxgraph.infographic.ribbonSimple;notch1=20;notch2=0;align=center;verticalAlign=middle;fontSize=14;fontStyle=0;fillColor=#FFFFFF;flipH=0;spacingRight=0;spacingLeft=14;whiteSpace=wrap;",
+   "value": "AcceptEventAction1",
+   "shapeNames": [
+    "mxgraph.infographic.ribbonSimple"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:635"
+  },
+  {
+   "id": "uml25-80-time-event-trigger",
+   "title": "Time Event Trigger",
+   "tags": "uml time event trigger Time Event Trigger",
+   "kind": "vertex",
+   "width": 40,
+   "height": 40,
+   "style": "shape=collate;html=1;",
+   "shapeNames": [
+    "collate"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:637"
+  },
+  {
+   "id": "uml25-81-action-with-parameters",
+   "title": "Action with Parameters",
+   "tags": "uml action with parameters Action with Parameters",
+   "kind": "vertex",
+   "width": 150,
+   "height": 50,
+   "style": "shape=mxgraph.uml25.actionParams;html=1;align=center;verticalAlign=top;absoluteArcSize=1;arcSize=10;dashed=0;spacingLeft=10;spacingTop=5;whiteSpace=wrap;",
+   "value": "Action1",
+   "shapeNames": [
+    "mxgraph.uml25.actionParams"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:639"
+  },
+  {
+   "id": "uml25-82-structured-activity-node",
+   "title": "Structured Activity Node",
+   "tags": "uml structured activity node Structured Activity Node",
+   "kind": "vertex",
+   "width": 200,
+   "height": 100,
+   "style": "dashed=1;rounded=1;absoluteArcSize=1;arcSize=20;html=1;verticalAlign=top;align=left;spacingTop=5;spacingLeft=10;whiteSpace=wrap;",
+   "value": "&lt;&lt;structured&gt;&gt;",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:641"
+  },
+  {
+   "id": "uml25-83-expansion",
+   "title": "Expansion",
+   "tags": "uml expansion Expansion",
+   "kind": "cells",
+   "width": 300,
+   "height": 300,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"&amp;lt;&amp;lt;keyword&amp;gt;&amp;gt;\" style=\"html=1;dashed=1;rounded=1;absoluteArcSize=1;arcSize=20;verticalAlign=top;align=left;spacingTop=20;spacingLeft=20;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"300\" height=\"300\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"group;resizeWidth=0;resizeHeight=0;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"80\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"30\" y=\"-10\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"\" style=\"resizeWidth=0;resizeHeight=0;points=[[0,0],[0.5,0],[1,0]];html=1;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"\" style=\"resizeWidth=0;resizeHeight=0;points=[[0,0],[0.5,0],[1,0]];html=1;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"20\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"6\" value=\"\" style=\"resizeWidth=0;resizeHeight=0;points=[[0,0],[0.5,0],[1,0]];html=1;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"40\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"7\" value=\"\" style=\"resizeWidth=0;resizeHeight=0;points=[[0,0],[0.5,0],[1,0]];html=1;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"60\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"8\" value=\"\" style=\"group;resizeWidth=0;resizeHeight=0;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"1\" width=\"80\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-110\" y=\"-10\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"9\" value=\"\" style=\"resizeWidth=0;resizeHeight=0;points=[[0,0],[0.5,0],[1,0]];html=1;\" vertex=\"1\" parent=\"8\"><mxGeometry width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"10\" value=\"\" style=\"resizeWidth=0;resizeHeight=0;points=[[0,0],[0.5,0],[1,0]];html=1;\" vertex=\"1\" parent=\"8\"><mxGeometry width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"20\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"11\" value=\"\" style=\"resizeWidth=0;resizeHeight=0;points=[[0,0],[0.5,0],[1,0]];html=1;\" vertex=\"1\" parent=\"8\"><mxGeometry width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"40\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"12\" value=\"\" style=\"resizeWidth=0;resizeHeight=0;points=[[0,0],[0.5,0],[1,0]];html=1;\" vertex=\"1\" parent=\"8\"><mxGeometry width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"60\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"13\" value=\"\" style=\"group;resizeWidth=0;resizeHeight=0;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"1\" width=\"80\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"30\" y=\"-10\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"14\" value=\"\" style=\"resizeWidth=0;resizeHeight=0;points=[[0,1],[0.5,1],[1,1]];html=1;\" vertex=\"1\" parent=\"13\"><mxGeometry width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"15\" value=\"\" style=\"resizeWidth=0;resizeHeight=0;points=[[0,1],[0.5,1],[1,1]];html=1;\" vertex=\"1\" parent=\"13\"><mxGeometry width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"20\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"16\" value=\"\" style=\"resizeWidth=0;resizeHeight=0;points=[[0,1],[0.5,1],[1,1]];html=1;\" vertex=\"1\" parent=\"13\"><mxGeometry width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"40\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"17\" value=\"\" style=\"resizeWidth=0;resizeHeight=0;points=[[0,1],[0.5,1],[1,1]];html=1;\" vertex=\"1\" parent=\"13\"><mxGeometry width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"60\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"18\" value=\"\" style=\"group;resizeWidth=0;resizeHeight=0;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"1\" y=\"1\" width=\"80\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-110\" y=\"-10\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"19\" value=\"\" style=\"resizeWidth=0;resizeHeight=0;points=[[0,1],[0.5,1],[1,1]];html=1;\" vertex=\"1\" parent=\"18\"><mxGeometry width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"20\" value=\"\" style=\"resizeWidth=0;resizeHeight=0;points=[[0,1],[0.5,1],[1,1]];html=1;\" vertex=\"1\" parent=\"18\"><mxGeometry width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"20\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"21\" value=\"\" style=\"resizeWidth=0;resizeHeight=0;points=[[0,1],[0.5,1],[1,1]];html=1;\" vertex=\"1\" parent=\"18\"><mxGeometry width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"40\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"22\" value=\"\" style=\"resizeWidth=0;resizeHeight=0;points=[[0,1],[0.5,1],[1,1]];html=1;\" vertex=\"1\" parent=\"18\"><mxGeometry width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"60\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"23\" value=\"\" style=\"group;resizeWidth=0;resizeHeight=0;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"20\" height=\"80\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-10\" y=\"30\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"24\" value=\"\" style=\"resizeWidth=0;resizeHeight=0;points=[[0,0],[0.5,0],[1,0]];html=1;\" vertex=\"1\" parent=\"23\"><mxGeometry width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"25\" value=\"\" style=\"resizeWidth=0;resizeHeight=0;points=[[0,0],[0.5,0],[1,0]];html=1;\" vertex=\"1\" parent=\"23\"><mxGeometry width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint y=\"20\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"26\" value=\"\" style=\"resizeWidth=0;resizeHeight=0;points=[[0,0],[0.5,0],[1,0]];html=1;\" vertex=\"1\" parent=\"23\"><mxGeometry width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint y=\"40\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"27\" value=\"\" style=\"resizeWidth=0;resizeHeight=0;points=[[0,0],[0.5,0],[1,0]];html=1;\" vertex=\"1\" parent=\"23\"><mxGeometry width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint y=\"60\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"28\" value=\"\" style=\"group;resizeWidth=0;resizeHeight=0;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"1\" width=\"20\" height=\"80\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-10\" y=\"-110\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"29\" value=\"\" style=\"resizeWidth=0;resizeHeight=0;points=[[0,0],[0.5,0],[1,0]];html=1;\" vertex=\"1\" parent=\"28\"><mxGeometry width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"30\" value=\"\" style=\"resizeWidth=0;resizeHeight=0;points=[[0,0],[0.5,0],[1,0]];html=1;\" vertex=\"1\" parent=\"28\"><mxGeometry width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint y=\"20\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"31\" value=\"\" style=\"resizeWidth=0;resizeHeight=0;points=[[0,0],[0.5,0],[1,0]];html=1;\" vertex=\"1\" parent=\"28\"><mxGeometry width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint y=\"40\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"32\" value=\"\" style=\"resizeWidth=0;resizeHeight=0;points=[[0,0],[0.5,0],[1,0]];html=1;\" vertex=\"1\" parent=\"28\"><mxGeometry width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint y=\"60\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"33\" value=\"\" style=\"group;resizeWidth=0;resizeHeight=0;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"1\" width=\"20\" height=\"80\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-10\" y=\"30\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"34\" value=\"\" style=\"resizeWidth=0;resizeHeight=0;points=[[0,0],[0.5,0],[1,0]];html=1;\" vertex=\"1\" parent=\"33\"><mxGeometry width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"35\" value=\"\" style=\"resizeWidth=0;resizeHeight=0;points=[[0,0],[0.5,0],[1,0]];html=1;\" vertex=\"1\" parent=\"33\"><mxGeometry width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint y=\"20\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"36\" value=\"\" style=\"resizeWidth=0;resizeHeight=0;points=[[0,0],[0.5,0],[1,0]];html=1;\" vertex=\"1\" parent=\"33\"><mxGeometry width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint y=\"40\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"37\" value=\"\" style=\"resizeWidth=0;resizeHeight=0;points=[[0,0],[0.5,0],[1,0]];html=1;\" vertex=\"1\" parent=\"33\"><mxGeometry width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint y=\"60\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"38\" value=\"\" style=\"group;resizeWidth=0;resizeHeight=0;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"1\" y=\"1\" width=\"20\" height=\"80\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-10\" y=\"-110\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"39\" value=\"\" style=\"resizeWidth=0;resizeHeight=0;points=[[0,0],[0.5,0],[1,0]];html=1;\" vertex=\"1\" parent=\"38\"><mxGeometry width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"40\" value=\"\" style=\"resizeWidth=0;resizeHeight=0;points=[[0,0],[0.5,0],[1,0]];html=1;\" vertex=\"1\" parent=\"38\"><mxGeometry width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint y=\"20\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"41\" value=\"\" style=\"resizeWidth=0;resizeHeight=0;points=[[0,0],[0.5,0],[1,0]];html=1;\" vertex=\"1\" parent=\"38\"><mxGeometry width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint y=\"40\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"42\" value=\"\" style=\"resizeWidth=0;resizeHeight=0;points=[[0,0],[0.5,0],[1,0]];html=1;\" vertex=\"1\" parent=\"38\"><mxGeometry width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint y=\"59\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:643"
+  },
+  {
+   "id": "uml25-84-execution-region",
+   "title": "Execution region",
+   "tags": "uml execution region",
+   "kind": "cells",
+   "width": 160,
+   "height": 50,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Action\" style=\"html=1;dashed=0;rounded=1;absoluteArcSize=1;arcSize=20;verticalAlign=middle;align=center;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"160\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"*\" style=\"text;resizeWidth=0;resizeHeight=0;points=[];part=1;verticalAlign=middle;align=center;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"1\" y=\"0.5\" width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-20\" y=\"-10\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:644"
+  },
+  {
+   "id": "uml25-85-execution-node-with-action",
+   "title": "Execution node with action",
+   "tags": "uml execution node action Execution node with action",
+   "kind": "cells",
+   "width": 210,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Action1\" style=\"html=1;dashed=0;rounded=1;absoluteArcSize=1;arcSize=20;verticalAlign=middle;align=center;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"210\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"group;resizeWidth=0;resizeHeight=0;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"80\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"30\" y=\"-10\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"\" style=\"resizeWidth=0;resizeHeight=0;points=[[0,0],[0.5,0],[1,0]];html=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"\" style=\"resizeWidth=0;resizeHeight=0;points=[[0,0],[0.5,0],[1,0]];html=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"20\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"6\" value=\"\" style=\"resizeWidth=0;resizeHeight=0;points=[[0,0],[0.5,0],[1,0]];html=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"40\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"7\" value=\"\" style=\"resizeWidth=0;resizeHeight=0;points=[[0,0],[0.5,0],[1,0]];html=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"60\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"8\" value=\"\" style=\"group;resizeWidth=0;resizeHeight=0;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"1\" width=\"80\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"30\" y=\"-10\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"9\" value=\"\" style=\"resizeWidth=0;resizeHeight=0;points=[[0,1],[0.5,1],[1,1]];html=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"8\"><mxGeometry width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"10\" value=\"\" style=\"resizeWidth=0;resizeHeight=0;points=[[0,1],[0.5,1],[1,1]];html=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"8\"><mxGeometry width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"20\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"11\" value=\"\" style=\"resizeWidth=0;resizeHeight=0;points=[[0,1],[0.5,1],[1,1]];html=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"8\"><mxGeometry width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"40\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"12\" value=\"\" style=\"resizeWidth=0;resizeHeight=0;points=[[0,1],[0.5,1],[1,1]];html=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"8\"><mxGeometry width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"60\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:658"
+  },
+  {
+   "id": "uml25-86-interaction",
+   "title": "Interaction",
+   "tags": "uml interaction",
+   "kind": "cells",
+   "width": 290,
+   "height": 160,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Interaction heading\" style=\"shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;recursiveResize=0;container=1;collapsible=0;width=170;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"290\" height=\"160\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Property1\" style=\"text;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"100\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"20\" y=\"40\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"Property2\" style=\"shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=25;verticalAlign=top;align=left;spacingLeft=10;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"150\" height=\"60\" relative=\"1\" as=\"geometry\"><mxPoint x=\"120\" y=\"80\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "umlFrame",
+    "note2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:659"
+  },
+  {
+   "id": "uml25-87-lifelines",
+   "title": "Lifelines",
+   "tags": "uml lifeline sequence participant Lifelines",
+   "kind": "cells",
+   "width": 220,
+   "height": 300,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Lifeline1\" style=\"shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;sequenceEdgeStyle&quot;,&quot;libavoidRouting&quot;:0,&quot;curved&quot;:0,&quot;rounded&quot;:0};\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"100\" height=\"300\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Lifeline2\" style=\"shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;sequenceEdgeStyle&quot;,&quot;libavoidRouting&quot;:0,&quot;curved&quot;:0,&quot;rounded&quot;:0};\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"120\" width=\"100\" height=\"300\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "umlLifeline"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:678"
+  },
+  {
+   "id": "uml25-88-lifelines",
+   "title": "Lifelines",
+   "tags": "uml lifeline execution Lifelines",
+   "kind": "cells",
+   "width": 220,
+   "height": 300,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Lifeline2\" style=\"shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;sequenceEdgeStyle&quot;,&quot;libavoidRouting&quot;:0,&quot;curved&quot;:0,&quot;rounded&quot;:0};\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"120\" width=\"100\" height=\"300\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;sequenceEdgeStyle&quot;,&quot;libavoidRouting&quot;:0,&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#808080;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"45\" y=\"90\" width=\"10\" height=\"120\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Lifeline1\" style=\"shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;sequenceEdgeStyle&quot;,&quot;libavoidRouting&quot;:0,&quot;curved&quot;:0,&quot;rounded&quot;:0};\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"100\" height=\"300\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;sequenceEdgeStyle&quot;,&quot;libavoidRouting&quot;:0,&quot;curved&quot;:0,&quot;rounded&quot;:0};\" vertex=\"1\" parent=\"4\"><mxGeometry x=\"45\" y=\"90\" width=\"10\" height=\"120\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "umlLifeline"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:680"
+  },
+  {
+   "id": "uml25-89-destruction-occurence-specification",
+   "title": "Destruction Occurence Specification",
+   "tags": "uml destruction occurence specification Destruction Occurence Specification",
+   "kind": "cells",
+   "width": 100,
+   "height": 300,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Lifeline1\" style=\"shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;sequenceEdgeStyle&quot;,&quot;libavoidRouting&quot;:0,&quot;curved&quot;:0,&quot;rounded&quot;:0};\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"100\" height=\"300\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"shape=umlDestroy;dashed=0;targetShapes=umlLifeline;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"30\" y=\"280\" width=\"40\" height=\"40\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "umlLifeline",
+    "umlDestroy"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:682"
+  },
+  {
+   "id": "uml25-90-interaction",
+   "title": "Interaction",
+   "tags": "uml interaction",
+   "kind": "cells",
+   "width": 290,
+   "height": 250,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Interaction heading\" style=\"shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;recursiveResize=0;container=1;collapsible=0;width=170;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"290\" height=\"250\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"[constraint1]\" style=\"text;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"100\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"20\" y=\"40\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"[constraint2]\" style=\"line;strokeWidth=1;dashed=1;labelPosition=center;verticalLabelPosition=bottom;align=left;verticalAlign=top;spacingLeft=20;spacingTop=15;html=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"125\" width=\"290\" height=\"10\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "umlFrame",
+    "line"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:684"
+  },
+  {
+   "id": "uml25-91-lifeline-continuation",
+   "title": "Lifeline Continuation",
+   "tags": "uml lifeline continuation",
+   "kind": "cells",
+   "width": 220,
+   "height": 200,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Continuation1\" style=\"rounded=1;dashed=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"30\" y=\"60\" width=\"160\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Lifeline1\" style=\"shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;sequenceEdgeStyle&quot;,&quot;libavoidRouting&quot;:0,&quot;curved&quot;:0,&quot;rounded&quot;:0};\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"100\" height=\"200\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Lifeline2\" style=\"shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;sequenceEdgeStyle&quot;,&quot;libavoidRouting&quot;:0,&quot;curved&quot;:0,&quot;rounded&quot;:0};\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"120\" width=\"100\" height=\"200\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "umlLifeline"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:702"
+  },
+  {
+   "id": "uml25-92-lifeline-state-invariant",
+   "title": "Lifeline State Invariant",
+   "tags": "uml lifeline state invariant",
+   "kind": "cells",
+   "width": 100,
+   "height": 200,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Lifeline1\" style=\"shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;sequenceEdgeStyle&quot;,&quot;libavoidRouting&quot;:0,&quot;curved&quot;:0,&quot;rounded&quot;:0};\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"100\" height=\"200\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"State1 inv.\" style=\"rounded=1;dashed=0;point=[];connectable=0;targetShapes=umlLifeline;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"10\" y=\"50\" width=\"80\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"{State2 inv.}\" style=\"text;align=center;point=[];connectable=0;targetShapes=umlLifeline;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"140\" width=\"100\" height=\"30\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "umlLifeline"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:713"
+  },
+  {
+   "id": "uml25-93-interaction",
+   "title": "Interaction",
+   "tags": "uml interaction use",
+   "kind": "cells",
+   "width": 260,
+   "height": 120,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Ref\" style=\"shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;recursiveResize=0;container=1;collapsible=0;width=50;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"260\" height=\"120\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Interaction1\" style=\"text;align=center;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"100\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"60\" y=\"50\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "umlFrame"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:728"
+  },
+  {
+   "id": "uml25-94-lifeline",
+   "title": "Lifeline",
+   "tags": "uml lifeline",
+   "kind": "cells",
+   "width": 100,
+   "height": 200,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Lifeline1\" style=\"shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;sequenceEdgeStyle&quot;,&quot;libavoidRouting&quot;:0,&quot;curved&quot;:0,&quot;rounded&quot;:0};\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"100\" height=\"200\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"shape=partialRectangle;whiteSpace=wrap;html=1;bottom=0;fillColor=none;point=[];connectable=0;targetShapes=umlLifeline;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"30\" y=\"70\" width=\"40\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=partialRectangle;whiteSpace=wrap;html=1;top=0;fillColor=none;point=[];connectable=0;targetShapes=umlLifeline;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"30\" y=\"150\" width=\"40\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "umlLifeline",
+    "partialRectangle"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:741"
+  },
+  {
+   "id": "uml25-95-use-case",
+   "title": "Use Case",
+   "tags": "uml use case",
+   "kind": "cells",
+   "width": 180,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Class1\" style=\"swimlane;fontStyle=1;align=center;horizontal=1;startSize=30;collapsible=0;html=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"180\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Heading1\" style=\"shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;recursiveResize=0;container=1;collapsible=0;width=80;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"140\" height=\"70\" relative=\"1\" as=\"geometry\"><mxPoint x=\"20\" y=\"50\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"Interaction1\" style=\"text;align=left;html=1;\" vertex=\"1\" parent=\"3\"><mxGeometry width=\"100\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"10\" y=\"40\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "swimlane",
+    "umlFrame"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:756"
+  },
+  {
+   "id": "uml25-96-observation",
+   "title": "Observation",
+   "tags": "observation",
+   "kind": "cells",
+   "width": 160,
+   "height": 0,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"observation\" style=\"endArrow=none;html=1;endSize=12;startArrow=none;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;align=center;verticalAlign=bottom;endFill=0;\" edge=\"1\" parent=\"1\"><mxGeometry y=\"3\" relative=\"1\" as=\"geometry\"><mxPoint as=\"sourcePoint\"/><mxPoint x=\"160\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:776"
+  },
+  {
+   "id": "uml25-97-time-constraint",
+   "title": "Time constraint",
+   "tags": "time constraint",
+   "kind": "cells",
+   "width": 160,
+   "height": 0,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"{Time constraint 1}\" style=\"endArrow=none;html=1;endSize=12;startArrow=none;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;align=center;verticalAlign=bottom;endFill=0;\" edge=\"1\" parent=\"1\"><mxGeometry y=\"3\" relative=\"1\" as=\"geometry\"><mxPoint as=\"sourcePoint\"/><mxPoint x=\"160\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:788"
+  },
+  {
+   "id": "uml25-98-duration-constraint",
+   "title": "Duration constraint",
+   "tags": "duration constraint",
+   "kind": "cells",
+   "width": 160,
+   "height": 0,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"{Duration constraint 1}\" style=\"endArrow=open;html=1;endSize=12;startArrow=open;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;align=center;verticalAlign=bottom;endFill=0;\" edge=\"1\" parent=\"1\"><mxGeometry y=\"3\" relative=\"1\" as=\"geometry\"><mxPoint as=\"sourcePoint\"/><mxPoint x=\"160\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:800"
+  },
+  {
+   "id": "uml25-99-classifier",
+   "title": "Classifier",
+   "tags": "uml classifier",
+   "kind": "cells",
+   "width": 180,
+   "height": 120,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=ellipse;container=1;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;html=1;dashed=0;collapsible=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"180\" height=\"120\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"UseCase1\" style=\"html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rotatable=0;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"180\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"line;strokeWidth=1;fillColor=none;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;dashed=0;resizeWidth=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"9\" y=\"30\" width=\"162\" height=\"10\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"extension points\" style=\"text;html=1;align=center;verticalAlign=middle;rotatable=0;fillColor=none;strokeColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"40\" width=\"180\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"Extension point 1\" style=\"text;html=1;align=left;verticalAlign=middle;rotatable=0;spacingLeft=25;fillColor=none;strokeColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"70\" width=\"180\" height=\"30\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "ellipse",
+    "line"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:812"
+  },
+  {
+   "id": "uml25-100-extension-point-classifier",
+   "title": "Extension Point Classifier",
+   "tags": "uml extension point classifier",
+   "kind": "cells",
+   "width": 160,
+   "height": 88,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;marginBottom=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"160\" height=\"88\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"UseCase1\" style=\"html=1;align=left;spacingLeft=4;verticalAlign=middle;strokeColor=none;fillColor=none;fontStyle=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"160\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=ellipse;\" vertex=\"1\" parent=\"3\"><mxGeometry x=\"1\" width=\"20\" height=\"16\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-25\" y=\"7\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"\" style=\"line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"40\" height=\"8\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"extension points\" style=\"html=1;align=center;spacingLeft=4;verticalAlign=top;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"160\" height=\"25\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"Extension point 1\" style=\"html=1;align=left;spacingLeft=4;verticalAlign=top;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"160\" height=\"25\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "ellipse",
+    "line"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:835"
+  },
+  {
+   "id": "uml25-101-actor",
+   "title": "Actor",
+   "tags": "uml actor Actor",
+   "kind": "vertex",
+   "width": 30,
+   "height": 60,
+   "style": "shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;",
+   "value": "Actor",
+   "shapeNames": [
+    "umlActor"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:857"
+  },
+  {
+   "id": "uml25-102-actor",
+   "title": "Actor",
+   "tags": "uml actor Actor",
+   "kind": "vertex",
+   "width": 160,
+   "height": 70,
+   "style": "html=1;align=center;verticalAlign=middle;dashed=0;whiteSpace=wrap;",
+   "value": "&lt;&lt;actor&gt;&gt;<br><br><b>Actor1</b>",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:858"
+  },
+  {
+   "id": "uml25-103-extension",
+   "title": "Extension",
+   "tags": "extension point extend",
+   "kind": "cells",
+   "width": 140,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Extension point 1\" style=\"shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=25;verticalAlign=top;align=left;spacingLeft=5;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"140\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Extend condition 1\" style=\"resizeWidth=1;part=1;strokeColor=none;fillColor=none;align=left;spacingLeft=5;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"140\" height=\"25\" relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "note2"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:862"
+  },
+  {
+   "id": "uml25-104-deployment",
+   "title": "Deployment",
+   "tags": "deployment target diagram",
+   "kind": "cells",
+   "width": 130,
+   "height": 140,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"DeploymentTarget1\" style=\"verticalAlign=top;align=left;shape=cube;size=10;direction=south;fontStyle=0;html=1;boundedLbl=1;spacingLeft=5;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"130\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Node1\" style=\"verticalAlign=top;align=center;shape=cube;size=10;direction=south;html=1;boundedLbl=1;spacingLeft=5;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"100\" height=\"80\" relative=\"1\" as=\"geometry\"><mxPoint x=\"10\" y=\"50\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "cube"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:873"
+  },
+  {
+   "id": "uml25-105-deployment-specification",
+   "title": "Deployment Specification",
+   "tags": "uml deployment specification Deployment Specification",
+   "kind": "vertex",
+   "width": 180,
+   "height": 60,
+   "style": "html=1;align=center;verticalAlign=middle;dashed=0;whiteSpace=wrap;",
+   "value": "&lt;&lt;deployment spec&gt;&gt;<br><br><b>Deployment1</b>",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:885"
+  },
+  {
+   "id": "uml25-106-artifact",
+   "title": "Artifact",
+   "tags": "uml artifact Artifact",
+   "kind": "vertex",
+   "width": 180,
+   "height": 60,
+   "style": "html=1;align=center;verticalAlign=middle;dashed=0;whiteSpace=wrap;",
+   "value": "&lt;&lt;artifact&gt;&gt;<br><br><b>Artifact1</b>",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:888"
+  },
+  {
+   "id": "uml25-107-information-item",
+   "title": "Information item",
+   "tags": "information item",
+   "kind": "cells",
+   "width": 200,
+   "height": 50,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"InformationItem1\" style=\"align=left;spacingLeft=10;html=1;dashed=0;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"200\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"shape=triangle;fillColor=strokeColor;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"1\" y=\"0.5\" width=\"30\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-45\" y=\"-10\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "triangle"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:891"
+  },
+  {
+   "id": "uml25-108-template-binding",
+   "title": "Template Binding",
+   "tags": "template binding",
+   "kind": "cells",
+   "width": 160,
+   "height": 0,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"&amp;lt;&amp;lt;bind&amp;gt;&amp;gt;\" style=\"endArrow=open;html=1;rounded=0;align=center;verticalAlign=bottom;dashed=1;endFill=0;labelBackgroundColor=none;\" edge=\"1\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint as=\"sourcePoint\"/><mxPoint x=\"160\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"3\" value=\"Binding1 information\" style=\"resizable=0;html=1;align=center;verticalAlign=top;labelBackgroundColor=none;\" vertex=\"1\" connectable=\"0\" parent=\"2\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:903"
+  },
+  {
+   "id": "uml25-109-inner-class",
+   "title": "Inner class",
+   "tags": "inner class",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "endArrow=circlePlus;startArrow=none;endFill=0;startFill=0;endSize=8;html=1;labelBackgroundColor=none;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:918"
+  },
+  {
+   "id": "uml25-110-element-package-merge-package-import-substitution",
+   "title": "Element / Package Merge / Package Import, Substitution",
+   "tags": "element package import substitution merge",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "endArrow=open;startArrow=none;endFill=0;startFill=0;endSize=8;html=1;verticalAlign=bottom;dashed=1;labelBackgroundColor=none;",
+   "value": "&lt;&lt;keyword&gt;&gt;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:919"
+  },
+  {
+   "id": "uml25-111-constraint",
+   "title": "Constraint",
+   "tags": "constraint",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "endArrow=none;startArrow=none;endFill=0;startFill=0;endSize=8;html=1;verticalAlign=bottom;dashed=1;labelBackgroundColor=none;dashPattern=10 10;",
+   "value": "{constraint spec.}",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:920"
+  },
+  {
+   "id": "uml25-112-dependency",
+   "title": "Dependency",
+   "tags": "dependency",
+   "kind": "cells",
+   "width": 160,
+   "height": 0,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"&amp;lt;&amp;lt;keyword&amp;gt;&amp;gt;\" style=\"endArrow=open;html=1;rounded=0;align=center;verticalAlign=bottom;dashed=1;endFill=0;labelBackgroundColor=none;\" edge=\"1\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint as=\"sourcePoint\"/><mxPoint x=\"160\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"3\" value=\"Dependency1\" style=\"resizable=0;html=1;align=center;verticalAlign=top;labelBackgroundColor=none;\" vertex=\"1\" connectable=\"0\" parent=\"2\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:921"
+  },
+  {
+   "id": "uml25-113-dependency",
+   "title": "Dependency",
+   "tags": "dependency",
+   "kind": "cells",
+   "width": 140,
+   "height": 80,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"ellipse;resizable=0;aspect=fixed;fillColor=strokeColor;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"68\" y=\"38\" width=\"4\" height=\"4\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&amp;lt;&amp;lt;keyword&amp;gt;&amp;gt;\" style=\"endArrow=open;html=1;rounded=0;align=center;verticalAlign=bottom;dashed=1;endFill=0;labelBackgroundColor=none;spacingBottom=35;\" edge=\"1\" parent=\"1\" target=\"2\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint as=\"sourcePoint\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"&amp;lt;&amp;lt;keyword&amp;gt;&amp;gt;\" style=\"endArrow=open;html=1;rounded=0;align=center;verticalAlign=top;dashed=1;endFill=0;labelBackgroundColor=none;spacingTop=35;\" edge=\"1\" parent=\"1\" target=\"2\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint y=\"80\" as=\"sourcePoint\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"\" style=\"endArrow=open;html=1;rounded=0;align=center;verticalAlign=bottom;dashed=1;endFill=0;labelBackgroundColor=none;spacingBottom=35;\" edge=\"1\" parent=\"1\" source=\"2\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint x=\"140\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"6\" value=\"\" style=\"endArrow=open;html=1;rounded=0;align=center;verticalAlign=top;dashed=1;endFill=0;labelBackgroundColor=none;spacingTop=35;\" edge=\"1\" parent=\"1\" source=\"2\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint x=\"140\" y=\"80\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:936"
+  },
+  {
+   "id": "uml25-114-realization",
+   "title": "Realization",
+   "tags": "realization",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "endArrow=block;startArrow=none;endFill=0;startFill=0;endSize=8;html=1;verticalAlign=bottom;dashed=1;labelBackgroundColor=none;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:963"
+  },
+  {
+   "id": "uml25-115-generalization-set",
+   "title": "Generalization Set",
+   "tags": "generalization set",
+   "kind": "cells",
+   "width": 160,
+   "height": 0,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"GeneralizationSet1\" style=\"endArrow=block;html=1;rounded=0;align=center;verticalAlign=bottom;endFill=0;labelBackgroundColor=none;endSize=8;\" edge=\"1\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint as=\"sourcePoint\"/><mxPoint x=\"160\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"3\" value=\":powertype {constraint1}\" style=\"resizable=0;html=1;align=center;verticalAlign=top;labelBackgroundColor=none;\" vertex=\"1\" connectable=\"0\" parent=\"2\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:964"
+  },
+  {
+   "id": "uml25-116-association-connector-instance-specification-property-connector-end",
+   "title": "Association / Connector / Instance Specification / Property / Connector End",
+   "tags": "association connector instance specification property connector end",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "endArrow=none;startArrow=none;endFill=0;startFill=0;endSize=8;html=1;verticalAlign=bottom;labelBackgroundColor=none;strokeWidth=3;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:979"
+  },
+  {
+   "id": "uml25-117-association-connector-instance-specification-property-connector-end-navigability-notation",
+   "title": "Association / Connector / Instance Specification / Property / Connector End / Navigability notation",
+   "tags": "association connector instance specification property connector end navigability notation",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "endArrow=open;startArrow=none;endFill=0;startFill=0;endSize=8;html=1;verticalAlign=bottom;labelBackgroundColor=none;strokeWidth=1;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:980"
+  },
+  {
+   "id": "uml25-118-association-connector-instance-specification-property-connector-end",
+   "title": "Association / Connector / Instance Specification / Property / Connector End",
+   "tags": "association connector instance specification property connector end",
+   "kind": "cells",
+   "width": 160,
+   "height": 0,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"endArrow=none;html=1;rounded=0;align=center;verticalAlign=top;endFill=0;labelBackgroundColor=none;endSize=6;startArrow=oval;startFill=1;\" edge=\"1\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint as=\"sourcePoint\"/><mxPoint x=\"160\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:981"
+  },
+  {
+   "id": "uml25-119-association-connector-instance-specification-property-connector-end-non-navigability-notation",
+   "title": "Association / Connector / Instance Specification / Property / Connector End / Non-Navigability notation",
+   "tags": "association connector instance specification property connector end non navigability notation",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "endArrow=none;startArrow=sysMLx;endFill=0;startFill=0;html=1;verticalAlign=bottom;labelBackgroundColor=none;strokeWidth=1;startSize=8;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:991"
+  },
+  {
+   "id": "uml25-120-association-connector-instance-specification-property-connector-end-shared-association",
+   "title": "Association / Connector / Instance Specification / Property / Connector End / Shared Association",
+   "tags": "association connector instance specification property connector end shared",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "endArrow=none;startArrow=diamondThin;endFill=0;startFill=0;html=1;verticalAlign=bottom;labelBackgroundColor=none;strokeWidth=1;startSize=8;endSize=8;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:992"
+  },
+  {
+   "id": "uml25-121-association-connector-instance-specification-property-connector-end-composite-association",
+   "title": "Association / Connector / Instance Specification / Property / Connector End / Composite Association",
+   "tags": "association connector instance specification property connector end composite",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "endArrow=none;startArrow=diamondThin;endFill=0;startFill=1;html=1;verticalAlign=bottom;labelBackgroundColor=none;strokeWidth=1;startSize=8;endSize=8;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:993"
+  },
+  {
+   "id": "uml25-122-association-instance-secification",
+   "title": "Association / Instance Secification",
+   "tags": "association instance specification connector",
+   "kind": "cells",
+   "width": 140,
+   "height": 20,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rhombus;aspect=fixed;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"60\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"endArrow=none;html=1;rounded=0;align=center;verticalAlign=bottom;labelBackgroundColor=none;\" edge=\"1\" parent=\"1\" target=\"2\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint y=\"10\" as=\"sourcePoint\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"\" style=\"endArrow=none;html=1;rounded=0;align=center;verticalAlign=bottom;labelBackgroundColor=none;\" edge=\"1\" parent=\"1\" source=\"2\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint x=\"140\" y=\"10\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rhombus"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:994"
+  },
+  {
+   "id": "uml25-123-association-instance-secification",
+   "title": "Association / Instance Secification",
+   "tags": "association instance specification connector",
+   "kind": "cells",
+   "width": 140,
+   "height": 22,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"triangle;aspect=fixed;fillColor=strokeColor;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"65\" width=\"6\" height=\"12\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"endArrow=none;html=1;rounded=0;align=center;verticalAlign=bottom;labelBackgroundColor=none;\" edge=\"1\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint y=\"22\" as=\"sourcePoint\"/><mxPoint x=\"140\" y=\"22\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "triangle"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:1011"
+  },
+  {
+   "id": "uml25-124-redefine",
+   "title": "Redefine",
+   "tags": "Redefine",
+   "kind": "cells",
+   "width": 200,
+   "height": 0,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"{redefines}\" style=\"endArrow=none;html=1;rounded=0;align=center;verticalAlign=top;endFill=0;labelBackgroundColor=none;\" edge=\"1\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint as=\"sourcePoint\"/><mxPoint x=\"200\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"3\" value=\"end1\" style=\"resizable=0;html=1;align=left;verticalAlign=bottom;labelBackgroundColor=none;\" vertex=\"1\" connectable=\"0\" parent=\"2\"><mxGeometry x=\"-1\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"0..1\" style=\"resizable=0;html=1;align=left;verticalAlign=top;labelBackgroundColor=none;\" vertex=\"1\" connectable=\"0\" parent=\"2\"><mxGeometry x=\"-1\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"Association1\" style=\"resizable=0;html=1;align=right;verticalAlign=bottom;labelBackgroundColor=none;\" vertex=\"1\" connectable=\"0\" parent=\"2\"><mxGeometry x=\"1\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"{modifier1}\" style=\"resizable=0;html=1;align=right;verticalAlign=top;labelBackgroundColor=none;\" vertex=\"1\" connectable=\"0\" parent=\"2\"><mxGeometry x=\"1\" relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:1023"
+  },
+  {
+   "id": "uml25-125-qualifier",
+   "title": "Qualifier",
+   "tags": "uml qualifier Qualifier",
+   "kind": "vertex",
+   "width": 60,
+   "height": 30,
+   "style": "html=1;align=center;verticalAlign=middle;dashed=0;whiteSpace=wrap;",
+   "value": "qualifier1",
+   "shapeNames": [],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:1053"
+  },
+  {
+   "id": "uml25-126-connector",
+   "title": "Connector",
+   "tags": "connector",
+   "kind": "cells",
+   "width": 160,
+   "height": 0,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"endArrow=none;html=1;rounded=0;align=center;verticalAlign=top;endFill=0;labelBackgroundColor=none;\" edge=\"1\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint as=\"sourcePoint\"/><mxPoint x=\"160\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"3\" value=\"end1\" style=\"resizable=0;html=1;align=left;verticalAlign=bottom;labelBackgroundColor=none;\" vertex=\"1\" connectable=\"0\" parent=\"2\"><mxGeometry x=\"-1\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"0..1\" style=\"resizable=0;html=1;align=left;verticalAlign=top;labelBackgroundColor=none;\" vertex=\"1\" connectable=\"0\" parent=\"2\"><mxGeometry x=\"-1\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"Connector1\" style=\"resizable=0;html=1;align=right;verticalAlign=bottom;labelBackgroundColor=none;\" vertex=\"1\" connectable=\"0\" parent=\"2\"><mxGeometry x=\"1\" relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:1056"
+  },
+  {
+   "id": "uml25-127-provided-interface",
+   "title": "Provided Interface",
+   "tags": "provided interface",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=oval;endFill=0;endSize=8;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:1081"
+  },
+  {
+   "id": "uml25-128-required-interface",
+   "title": "Required Interface",
+   "tags": "required interface",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=halfCircle;endFill=0;endSize=2;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:1082"
+  },
+  {
+   "id": "uml25-129-structural-feature",
+   "title": "Structural Feature",
+   "tags": "structural feature",
+   "kind": "cells",
+   "width": 160,
+   "height": 0,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"feature1\" style=\"html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=none;endFill=0;endSize=6;align=left;\" edge=\"1\" parent=\"1\"><mxGeometry x=\"-1\" relative=\"1\" as=\"geometry\"><mxPoint as=\"sourcePoint\"/><mxPoint x=\"160\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:1083"
+  },
+  {
+   "id": "uml25-130-usage",
+   "title": "Usage",
+   "tags": "usage",
+   "kind": "cells",
+   "width": 120,
+   "height": 30,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"resizable=0;html=1;align=left;verticalAlign=bottom;labelBackgroundColor=none;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"60\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"endArrow=halfCircle;html=1;rounded=0;align=center;verticalAlign=top;endFill=0;labelBackgroundColor=none;endSize=2;\" edge=\"1\" parent=\"1\" source=\"2\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint x=\"120\" y=\"15\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:1093"
+  },
+  {
+   "id": "uml25-131-collaboration",
+   "title": "Collaboration",
+   "tags": "collaboration",
+   "kind": "cells",
+   "width": 100,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Collaboration1\" style=\"ellipse;html=1;dashed=1;dashPattern=10 10;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"100\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Classifier1\" style=\"html=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"10\" y=\"70\" width=\"80\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"ConnectableElement\" style=\"html=1;rounded=0;labelBackgroundColor=none;align=left;spacingLeft=5;endArrow=none;endFill=0;\" edge=\"1\" parent=\"1\" source=\"2\" target=\"3\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:1105"
+  },
+  {
+   "id": "uml25-132-collaboration-use",
+   "title": "Collaboration Use",
+   "tags": "collaboration use",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;",
+   "value": "&lt;&lt;occurence&gt;&gt;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:1119"
+  },
+  {
+   "id": "uml25-133-extension",
+   "title": "Extension",
+   "tags": "Extension",
+   "kind": "cells",
+   "width": 160,
+   "height": 0,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"{required}\" style=\"html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=block;endFill=1;endSize=6;align=left;\" edge=\"1\" parent=\"1\"><mxGeometry x=\"-1\" relative=\"1\" as=\"geometry\"><mxPoint as=\"sourcePoint\"/><mxPoint x=\"160\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:1120"
+  },
+  {
+   "id": "uml25-134-transition",
+   "title": "Transition",
+   "tags": "transition",
+   "kind": "cells",
+   "width": 160,
+   "height": 0,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Transition1 spec.\" style=\"endArrow=open;html=1;rounded=0;align=center;verticalAlign=bottom;endFill=0;labelBackgroundColor=none;\" edge=\"1\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint as=\"sourcePoint\"/><mxPoint x=\"160\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"3\" value=\"(via connectionPoint1)\" style=\"resizable=0;html=1;align=center;verticalAlign=top;labelBackgroundColor=none;\" vertex=\"1\" connectable=\"0\" parent=\"2\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:1130"
+  },
+  {
+   "id": "uml25-135-activity",
+   "title": "Activity",
+   "tags": "activity",
+   "kind": "cells",
+   "width": 160,
+   "height": 0,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"{annotation1}\" style=\"endArrow=open;html=1;rounded=0;align=center;verticalAlign=top;endFill=0;labelBackgroundColor=none;\" edge=\"1\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint as=\"sourcePoint\"/><mxPoint x=\"160\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"3\" value=\"Edge1\" style=\"resizable=0;html=1;align=left;verticalAlign=bottom;labelBackgroundColor=none;\" vertex=\"1\" connectable=\"0\" parent=\"2\"><mxGeometry x=\"-1\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"[guard]\" style=\"resizable=0;html=1;align=right;verticalAlign=bottom;labelBackgroundColor=none;\" vertex=\"1\" connectable=\"0\" parent=\"2\"><mxGeometry x=\"1\" relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:1145"
+  },
+  {
+   "id": "uml25-136-control-flow",
+   "title": "Control Flow",
+   "tags": "control flow",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "html=1;verticalAlign=top;labelBackgroundColor=none;endArrow=open;endFill=0;",
+   "value": "&lt;&lt;multicast/multireceive&gt;&gt;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:1165"
+  },
+  {
+   "id": "uml25-137-action",
+   "title": "Action",
+   "tags": "action",
+   "kind": "cells",
+   "width": 300,
+   "height": 35,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Action1\" style=\"html=1;rounded=1;absoluteArcSize=1;arcSize=10;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry y=\"5\" width=\"100\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Action2\" style=\"html=1;rounded=1;absoluteArcSize=1;arcSize=10;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"180\" y=\"5\" width=\"100\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"132\" width=\"16\" height=\"16\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"html=1;rounded=0;labelBackgroundColor=none;align=left;spacingLeft=5;endArrow=open;endFill=0;\" edge=\"1\" parent=\"1\" source=\"2\" target=\"3\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:1166"
+  },
+  {
+   "id": "uml25-138-object-node",
+   "title": "Object Node",
+   "tags": "object node",
+   "kind": "cells",
+   "width": 120,
+   "height": 30,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"ObjectNode1\" style=\"html=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"40\" width=\"80\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"endArrow=block;html=1;rounded=0;align=center;verticalAlign=top;endFill=1;labelBackgroundColor=none;endSize=6;\" edge=\"1\" parent=\"1\" target=\"2\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint y=\"15\" as=\"sourcePoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:1182"
+  },
+  {
+   "id": "uml25-139-activity",
+   "title": "Activity",
+   "tags": "activity",
+   "kind": "cells",
+   "width": 70,
+   "height": 30,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"ellipse;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"40\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"endArrow=open;html=1;rounded=0;align=center;verticalAlign=top;endFill=0;labelBackgroundColor=none;endSize=6;\" edge=\"1\" parent=\"1\" target=\"2\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint y=\"15\" as=\"sourcePoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:1194"
+  },
+  {
+   "id": "uml25-140-activity",
+   "title": "Activity",
+   "tags": "activity",
+   "kind": "cells",
+   "width": 70,
+   "height": 30,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"ellipse;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"endArrow=open;html=1;rounded=0;align=center;verticalAlign=top;endFill=0;labelBackgroundColor=none;endSize=6;\" edge=\"1\" parent=\"1\" source=\"2\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint x=\"70\" y=\"15\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:1206"
+  },
+  {
+   "id": "uml25-141-activity",
+   "title": "Activity",
+   "tags": "activity",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "shape=mxgraph.lean_mapping.electronic_info_flow_edge;html=1;",
+   "shapeNames": [
+    "mxgraph.lean_mapping.electronic_info_flow_edge"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:1218"
+  },
+  {
+   "id": "uml25-142-activity",
+   "title": "Activity",
+   "tags": "activity",
+   "kind": "cells",
+   "width": 70,
+   "height": 30,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"endArrow=open;html=1;rounded=0;align=center;verticalAlign=top;endFill=0;labelBackgroundColor=none;endSize=6;\" edge=\"1\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint y=\"40\" as=\"sourcePoint\"/><mxPoint x=\"160\" y=\"40\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"3\" value=\"\" style=\"shape=mxgraph.lean_mapping.electronic_info_flow_edge;html=1;\" edge=\"1\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint x=\"60\" as=\"sourcePoint\"/><mxPoint x=\"100\" y=\"20\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.lean_mapping.electronic_info_flow_edge"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:1219"
+  },
+  {
+   "id": "uml25-143-message",
+   "title": "Message",
+   "tags": "message async asynchronous signal call",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;",
+   "value": "Message1 label",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:1234"
+  },
+  {
+   "id": "uml25-144-message-synchronous-call",
+   "title": "Message, synchronous call",
+   "tags": "message sync synchronous call",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=block;endFill=1;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:1235"
+  },
+  {
+   "id": "uml25-145-message-reply",
+   "title": "Message, reply",
+   "tags": "message reply",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=block;endFill=1;dashed=1;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:1236"
+  },
+  {
+   "id": "uml25-146-message-create",
+   "title": "Message, create",
+   "tags": "message create",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:1237"
+  },
+  {
+   "id": "uml25-147-message-lost",
+   "title": "Message lost",
+   "tags": "message lost",
+   "kind": "cells",
+   "width": 164,
+   "height": 4,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"ellipse;html=1;fillColor=strokeColor;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"160\" width=\"4\" height=\"4\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"endArrow=open;html=1;rounded=0;align=center;verticalAlign=top;endFill=0;labelBackgroundColor=none;endSize=6;\" edge=\"1\" parent=\"1\" target=\"2\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint y=\"2\" as=\"sourcePoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:1238"
+  },
+  {
+   "id": "uml25-148-message-found",
+   "title": "Message found",
+   "tags": "message found",
+   "kind": "cells",
+   "width": 164,
+   "height": 4,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"ellipse;html=1;fillColor=strokeColor;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"4\" height=\"4\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"endArrow=open;html=1;rounded=0;align=center;verticalAlign=top;endFill=0;labelBackgroundColor=none;endSize=6;\" edge=\"1\" parent=\"1\" source=\"2\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint x=\"164\" y=\"2\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:1250"
+  },
+  {
+   "id": "uml25-149-lifeline",
+   "title": "Lifeline",
+   "tags": "uml lifeline execution",
+   "kind": "cells",
+   "width": 160,
+   "height": 160,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"rounded=0;dashed=0;container=0;collapsible=0;recursiveResize=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"160\" height=\"160\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"LifeLine1\" style=\"rounded=0;dashed=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"30\" y=\"10\" width=\"100\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"rounded=0;dashed=0;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"75\" y=\"60\" width=\"10\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"html=1;verticalAlign=bottom;startArrow=none;endArrow=none;dashed=1;\" edge=\"1\" parent=\"2\" source=\"4\" target=\"3\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"\" style=\"html=1;verticalAlign=bottom;startArrow=none;endArrow=none;dashed=1;\" edge=\"1\" parent=\"2\" target=\"4\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint x=\"80\" y=\"150\" as=\"sourcePoint\"/></mxGeometry></mxCell><mxCell id=\"7\" value=\"\" style=\"html=1;verticalAlign=bottom;startArrow=none;endArrow=open;endFill=0;\" edge=\"1\" parent=\"2\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint y=\"60\" as=\"sourcePoint\"/><mxPoint x=\"75\" y=\"60\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:1262"
+  },
+  {
+   "id": "uml25-150-message",
+   "title": "Message",
+   "tags": "message",
+   "kind": "cells",
+   "width": 120,
+   "height": 30,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Message1\" style=\"html=1;rounded=1;absoluteArcSize=1;arcSize=10;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"40\" width=\"80\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"endArrow=open;html=1;rounded=0;align=center;verticalAlign=top;endFill=0;labelBackgroundColor=none;endSize=6;\" edge=\"1\" parent=\"1\" target=\"2\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint y=\"15\" as=\"sourcePoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:1296"
+  },
+  {
+   "id": "uml25-151-message",
+   "title": "Message",
+   "tags": "message",
+   "kind": "cells",
+   "width": 120,
+   "height": 30,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Message1\" style=\"html=1;rounded=1;absoluteArcSize=1;arcSize=10;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"80\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"endArrow=open;html=1;rounded=0;align=center;verticalAlign=top;endFill=0;labelBackgroundColor=none;endSize=6;\" edge=\"1\" parent=\"1\" source=\"2\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint x=\"120\" y=\"15\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:1308"
+  },
+  {
+   "id": "uml25-152-extend",
+   "title": "Extend",
+   "tags": "extend",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;",
+   "value": "&lt;&lt;extend&gt;&gt;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:1320"
+  },
+  {
+   "id": "uml25-153-include",
+   "title": "Include",
+   "tags": "include",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;",
+   "value": "&lt;&lt;include&gt;&gt;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:1321"
+  },
+  {
+   "id": "uml25-154-deploy",
+   "title": "Deploy",
+   "tags": "deploy",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;",
+   "value": "&lt;&lt;deploy&gt;&gt;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-UML25.js:1322"
+  }
+ ]
+}

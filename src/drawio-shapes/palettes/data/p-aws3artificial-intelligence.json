@@ -1,0 +1,64 @@
+{
+ "id": "aws3Artificial Intelligence",
+ "title": "AWS17 / Artificial Intelligence",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-AWS3.js:8",
+ "entries": [
+  {
+   "id": "aws3Artificial Intelligence-0-lex",
+   "title": "Lex",
+   "tags": "aws3 lex aws amazon web service ai artificial intelligence Lex",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 81,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.lex;fillColor=#2E73B8;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.lex"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:149"
+  },
+  {
+   "id": "aws3Artificial Intelligence-1-machine-learning",
+   "title": "Machine Learning",
+   "tags": "aws3 machine learning aws amazon web service ai artificial intelligence Machine Learning",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 93,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.machine_learning;fillColor=#2E73B8;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.machine_learning"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:151"
+  },
+  {
+   "id": "aws3Artificial Intelligence-2-polly",
+   "title": "Polly",
+   "tags": "aws3 polly aws amazon web service ai artificial intelligence Polly",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 93,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.polly;fillColor=#2E73B8;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.polly"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:153"
+  },
+  {
+   "id": "aws3Artificial Intelligence-3-rekognition",
+   "title": "Rekognition",
+   "tags": "aws3 rekognition aws amazon web service ai artificial intelligence Rekognition",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 93,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.rekognition;fillColor=#2E73B8;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.rekognition"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:155"
+  }
+ ]
+}

@@ -1,0 +1,293 @@
+{
+ "id": "gcp3Core Products",
+ "title": "GCP Core Products",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-GCP3.js:7",
+ "entries": [
+  {
+   "id": "gcp3Core Products-0-entry",
+   "title": "",
+   "tags": "gcp3  gcp google cloud platform categories ai artificial intelligence hypercomputer hyper computer",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;fontSize=11;fontStyle=0;fontColor=#000000;aspect=fixed;pointerEvents=1;shape=mxgraph.gcp3.aihypercomputer;fillColor=#4285f4",
+   "value": "AI\nHypercomputer",
+   "shapeNames": [
+    "mxgraph.gcp3.aihypercomputer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP3.js:99"
+  },
+  {
+   "id": "gcp3Core Products-1-entry",
+   "title": "",
+   "tags": "gcp3  gcp google cloud platform categories alloydb alloy db database",
+   "kind": "vertex",
+   "width": 49.915,
+   "height": 50,
+   "style": "sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;fontSize=11;fontStyle=0;fontColor=#000000;aspect=fixed;pointerEvents=1;shape=mxgraph.gcp3.alloydb;fillColor=#4285f4",
+   "value": "AlloyDB",
+   "shapeNames": [
+    "mxgraph.gcp3.alloydb"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP3.js:101"
+  },
+  {
+   "id": "gcp3Core Products-2-entry",
+   "title": "",
+   "tags": "gcp3  gcp google cloud platform categories anthos",
+   "kind": "vertex",
+   "width": 50,
+   "height": 49.495,
+   "style": "sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;fontSize=11;fontStyle=0;fontColor=#000000;aspect=fixed;pointerEvents=1;shape=mxgraph.gcp3.anthos;fillColor=#4285f4",
+   "value": "Anthos",
+   "shapeNames": [
+    "mxgraph.gcp3.anthos"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP3.js:103"
+  },
+  {
+   "id": "gcp3Core Products-3-entry",
+   "title": "",
+   "tags": "gcp3  gcp google cloud platform categories apigee",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48.74,
+   "style": "sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;fontSize=11;fontStyle=0;fontColor=#000000;aspect=fixed;pointerEvents=1;shape=mxgraph.gcp3.apigee;fillColor=#4285f4",
+   "value": "Apigee",
+   "shapeNames": [
+    "mxgraph.gcp3.apigee"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP3.js:105"
+  },
+  {
+   "id": "gcp3Core Products-4-entry",
+   "title": "",
+   "tags": "gcp3  gcp google cloud platform categories bigquery big query",
+   "kind": "vertex",
+   "width": 50,
+   "height": 49.84,
+   "style": "sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;fontSize=11;fontStyle=0;fontColor=#000000;aspect=fixed;pointerEvents=1;shape=mxgraph.gcp3.bigquery;fillColor=#4285f4",
+   "value": "BigQuery",
+   "shapeNames": [
+    "mxgraph.gcp3.bigquery"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP3.js:107"
+  },
+  {
+   "id": "gcp3Core Products-5-entry",
+   "title": "",
+   "tags": "gcp3  gcp google cloud platform categories cloudrun cloud run",
+   "kind": "vertex",
+   "width": 50,
+   "height": 49.745,
+   "style": "sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;fontSize=11;fontStyle=0;fontColor=#000000;aspect=fixed;pointerEvents=1;shape=mxgraph.gcp3.cloudrun;fillColor=#4285f4",
+   "value": "Cloud Run",
+   "shapeNames": [
+    "mxgraph.gcp3.cloudrun"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP3.js:109"
+  },
+  {
+   "id": "gcp3Core Products-6-entry",
+   "title": "",
+   "tags": "gcp3  gcp google cloud platform categories cloudspanner cloud spanner",
+   "kind": "vertex",
+   "width": 50,
+   "height": 45.715,
+   "style": "sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;fontSize=11;fontStyle=0;fontColor=#000000;aspect=fixed;pointerEvents=1;shape=mxgraph.gcp3.cloudspanner;fillColor=#4285f4",
+   "value": "Spanner",
+   "shapeNames": [
+    "mxgraph.gcp3.cloudspanner"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP3.js:111"
+  },
+  {
+   "id": "gcp3Core Products-7-entry",
+   "title": "",
+   "tags": "gcp3  gcp google cloud platform categories cloudsql cloud sql",
+   "kind": "vertex",
+   "width": 50,
+   "height": 49.56,
+   "style": "sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;fontSize=11;fontStyle=0;fontColor=#000000;aspect=fixed;pointerEvents=1;shape=mxgraph.gcp3.cloudsql;fillColor=#4285f4",
+   "value": "Cloud SQL",
+   "shapeNames": [
+    "mxgraph.gcp3.cloudsql"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP3.js:113"
+  },
+  {
+   "id": "gcp3Core Products-8-entry",
+   "title": "",
+   "tags": "gcp3  gcp google cloud platform categories cloud storage",
+   "kind": "vertex",
+   "width": 49.915,
+   "height": 50,
+   "style": "sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;fontSize=11;fontStyle=0;fontColor=#000000;aspect=fixed;pointerEvents=1;shape=mxgraph.gcp3.cloud_storage;fillColor=#4285f4",
+   "value": "Cloud Storage",
+   "shapeNames": [
+    "mxgraph.gcp3.cloud_storage"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP3.js:115"
+  },
+  {
+   "id": "gcp3Core Products-9-entry",
+   "title": "",
+   "tags": "gcp3  gcp google cloud platform categories compute engine",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;fontSize=11;fontStyle=0;fontColor=#000000;aspect=fixed;pointerEvents=1;shape=mxgraph.gcp3.computeengine;fillColor=#4285f4",
+   "value": "Compute\nEngine",
+   "shapeNames": [
+    "mxgraph.gcp3.computeengine"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP3.js:117"
+  },
+  {
+   "id": "gcp3Core Products-10-entry",
+   "title": "",
+   "tags": "gcp3  gcp google cloud platform categories distributed cloud",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;fontSize=11;fontStyle=0;fontColor=#000000;aspect=fixed;pointerEvents=1;shape=mxgraph.gcp3.distributedcloud;fillColor=#4285f4",
+   "value": "Google\nDistributed Cloud",
+   "shapeNames": [
+    "mxgraph.gcp3.distributedcloud"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP3.js:119"
+  },
+  {
+   "id": "gcp3Core Products-11-entry",
+   "title": "",
+   "tags": "gcp3  gcp google cloud platform categories gke google kubernetes engine",
+   "kind": "vertex",
+   "width": 45.365,
+   "height": 50,
+   "style": "sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;fontSize=11;fontStyle=0;fontColor=#000000;aspect=fixed;pointerEvents=1;shape=mxgraph.gcp3.gke;fillColor=#4285f4",
+   "value": "GKE",
+   "shapeNames": [
+    "mxgraph.gcp3.gke"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP3.js:121"
+  },
+  {
+   "id": "gcp3Core Products-12-entry",
+   "title": "",
+   "tags": "gcp3  gcp google cloud platform categories hyperdisk hyper disk",
+   "kind": "vertex",
+   "width": 50,
+   "height": 43.3,
+   "style": "sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;fontSize=11;fontStyle=0;fontColor=#000000;aspect=fixed;pointerEvents=1;shape=mxgraph.gcp3.hyperdisk;fillColor=#4285f4",
+   "value": "Hyperdisk",
+   "shapeNames": [
+    "mxgraph.gcp3.hyperdisk"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP3.js:123"
+  },
+  {
+   "id": "gcp3Core Products-13-entry",
+   "title": "",
+   "tags": "gcp3  gcp google cloud platform categories looker",
+   "kind": "vertex",
+   "width": 36.62,
+   "height": 50,
+   "style": "sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;fontSize=11;fontStyle=0;fontColor=#000000;aspect=fixed;pointerEvents=1;shape=mxgraph.gcp3.looker;fillColor=#4285f4",
+   "value": "Looker",
+   "shapeNames": [
+    "mxgraph.gcp3.looker"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP3.js:125"
+  },
+  {
+   "id": "gcp3Core Products-14-entry",
+   "title": "",
+   "tags": "gcp3  gcp google cloud platform categories mandiant",
+   "kind": "vertex",
+   "width": 46.105,
+   "height": 50,
+   "style": "sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;fontSize=11;fontStyle=0;fontColor=#000000;aspect=fixed;pointerEvents=1;shape=mxgraph.gcp3.mandiant;fillColor=#4285f4",
+   "value": "Mandiant",
+   "shapeNames": [
+    "mxgraph.gcp3.mandiant"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP3.js:127"
+  },
+  {
+   "id": "gcp3Core Products-15-entry",
+   "title": "",
+   "tags": "gcp3  gcp google cloud platform categories security command center",
+   "kind": "vertex",
+   "width": 46.1,
+   "height": 50,
+   "style": "sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;fontSize=11;fontStyle=0;fontColor=#000000;aspect=fixed;pointerEvents=1;shape=mxgraph.gcp3.securitycommandcenter;fillColor=#4285f4",
+   "value": "Security Command\nCenter",
+   "shapeNames": [
+    "mxgraph.gcp3.securitycommandcenter"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP3.js:129"
+  },
+  {
+   "id": "gcp3Core Products-16-entry",
+   "title": "",
+   "tags": "gcp3  gcp google cloud platform categories secops security operations",
+   "kind": "vertex",
+   "width": 46.01,
+   "height": 50,
+   "style": "sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;fontSize=11;fontStyle=0;fontColor=#000000;aspect=fixed;pointerEvents=1;shape=mxgraph.gcp3.secops;fillColor=#4285f4",
+   "value": "Google Security\nOperations",
+   "shapeNames": [
+    "mxgraph.gcp3.secops"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP3.js:131"
+  },
+  {
+   "id": "gcp3Core Products-17-entry",
+   "title": "",
+   "tags": "gcp3  gcp google cloud platform categories threat intelligence",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;fontSize=11;fontStyle=0;fontColor=#000000;aspect=fixed;pointerEvents=1;shape=mxgraph.gcp3.threatintelligence;fillColor=#4285f4",
+   "value": "Google Threat\nIntelligence",
+   "shapeNames": [
+    "mxgraph.gcp3.threatintelligence"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP3.js:133"
+  },
+  {
+   "id": "gcp3Core Products-18-entry",
+   "title": "",
+   "tags": "gcp3  gcp google cloud platform categories vertexai vertex ai artificial intelligence",
+   "kind": "vertex",
+   "width": 50,
+   "height": 49.45,
+   "style": "sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;fontSize=11;fontStyle=0;fontColor=#000000;aspect=fixed;pointerEvents=1;shape=mxgraph.gcp3.vertexai;fillColor=#4285f4",
+   "value": "Vertex AI",
+   "shapeNames": [
+    "mxgraph.gcp3.vertexai"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-GCP3.js:135"
+  }
+ ]
+}

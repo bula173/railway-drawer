@@ -1,0 +1,341 @@
+{
+ "id": "sysmlPorts and Flows",
+ "title": "SysML / Ports and Flows",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Sysml.js:7",
+ "entries": [
+  {
+   "id": "sysmlPorts and Flows-0-port",
+   "title": "Port",
+   "tags": "sysml port flow port",
+   "kind": "cells",
+   "width": 160,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Transmission\" style=\"html=1;shape=mxgraph.sysml.port1;fontStyle=1;whiteSpace=wrap;align=center;points=[[0,0.5,0],[1,0.5,0]];\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"160\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"p1\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;shape=rect;points=[[0,0.5,0]];html=1;resizable=1;align=right;verticalAlign=bottom;labelPosition=left;verticalLabelPosition=top;labelBackgroundColor=none;fontSize=10;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"20\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"p2\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;shape=rect;points=[[1,0.5,0]];html=1;resizable=1;labelBackgroundColor=none;fontSize=10;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"140\" y=\"20\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.sysml.port1",
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1049"
+  },
+  {
+   "id": "sysmlPorts and Flows-1-port-conjugated-ports",
+   "title": "Port (Conjugated Ports)",
+   "tags": "sysml port flow port conjugated",
+   "kind": "cells",
+   "width": 200,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Transmission\" style=\"html=1;shape=mxgraph.sysml.port2;fontStyle=1;spacingRight=20;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"200\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"p1 : ~T1\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;shape=rect;points=[[0,0.5,0]];html=1;resizable=1;align=right;verticalAlign=bottom;labelPositin=left;verticalLabelPosition=top;labelBackgroundColor=none;fontSize=10;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"20\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"p2 : ~T2\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;shape=rect;points=[[1,0.5,0]];html=1;resizable=1;labelBackgroundColor=none;fontSize=10;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"140\" y=\"20\" width=\"60\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.sysml.port2",
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1066"
+  },
+  {
+   "id": "sysmlPorts and Flows-2-ports-with-flow-properties",
+   "title": "Ports with Flow Properties",
+   "tags": "sysml port flow port flow property Ports with Flow Properties",
+   "kind": "cells",
+   "width": 160,
+   "height": 80,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Transmission\" style=\"html=1;shape=mxgraph.sysml.port3;fontStyle=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"160\" height=\"80\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"p1\" style=\"resizable=0;html=1;align=right;verticalAlign=bottom;labelPosition=left;verticalLabelPosition=top;labelBackgroundColor=none;fontSize=10\" connectable=\"0\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"10\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"p2\" style=\"resizable=0;html=1;align=right;verticalAlign=bottom;labelPosition=left;verticalLabelPosition=top;labelBackgroundColor=none;fontSize=10\" connectable=\"0\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"p3\" style=\"resizable=0;html=1;align=left;verticalAlign=bottom;labelBackgroundColor=none;fontSize=10\" connectable=\"0\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"160\" y=\"30\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.sysml.port3"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1082"
+  },
+  {
+   "id": "sysmlPorts and Flows-3-port-compartment-notation",
+   "title": "Port (Compartment Notation)",
+   "tags": "sysml port flow property specific type",
+   "kind": "cells",
+   "width": 160,
+   "height": 70,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;marginBottom=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"160\" height=\"70\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Transmission\" style=\"html=1;align=center;spacing=0;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;fontStyle=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"160\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"line;strokeWidth=0.25;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"20\" width=\"160\" height=\"8\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"ports\" style=\"html=1;align=center;spacing=0;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;fontSize=10;fontStyle=2;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"28\" width=\"160\" height=\"16\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"p1 : ITransCmd\" style=\"html=1;align=left;spacing=0;spacingLeft=10;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"44\" width=\"160\" height=\"16\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"\" style=\"html=1;align=left;spacing=0;spacingLeft=10;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"76\" width=\"160\" height=\"10\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "line"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1085"
+  },
+  {
+   "id": "sysmlPorts and Flows-4-nested-port",
+   "title": "Nested Port",
+   "tags": "sysml port flow nested port Nested Port",
+   "kind": "cells",
+   "width": 160,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Transmission\" style=\"html=1;shape=mxgraph.sysml.nestedPort;fontStyle=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"160\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"p1.1\" style=\"resizable=0;html=1;align=right;verticalAlign=middle;labelPosition=left;verticalLabelPosition=top;labelBackgroundColor=none;fontSize=10\" connectable=\"0\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"14\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"p1.2\" style=\"resizable=0;html=1;align=right;verticalAlign=middle;labelPosition=left;verticalLabelPosition=top;labelBackgroundColor=none;fontSize=10\" connectable=\"0\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"p1.3\" style=\"resizable=0;html=1;align=right;verticalAlign=middle;labelPosition=left;verticalLabelPosition=top;labelBackgroundColor=none;fontSize=10\" connectable=\"0\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"46\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"p1\" style=\"resizable=0;html=1;align=left;verticalAlign=middle;labelPosition=left;verticalLabelPosition=top;labelBackgroundColor=none;fontSize=10\" connectable=\"0\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"22\" y=\"10\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.sysml.nestedPort"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1108"
+  },
+  {
+   "id": "sysmlPorts and Flows-5-proxy-port",
+   "title": "Proxy Port",
+   "tags": "sysml port flow proxy port",
+   "kind": "cells",
+   "width": 160,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Transmission\" style=\"html=1;shape=mxgraph.sysml.port1;fontStyle=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"160\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&amp;lt;&amp;lt;proxy&amp;gt;&amp;gt;&#xa;p1\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;shape=rect;points=[[0,0.5,0]];html=1;resizable=1;align=right;verticalAlign=bottom;labelPosition=left;verticalLabelPosition=top;labelBackgroundColor=none;fontSize=10;part=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"20\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.sysml.port1",
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1111"
+  },
+  {
+   "id": "sysmlPorts and Flows-6-full-port",
+   "title": "Full Port",
+   "tags": "sysml port flow full port",
+   "kind": "cells",
+   "width": 160,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Transmission\" style=\"html=1;shape=mxgraph.sysml.port1;fontStyle=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"160\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&amp;lt;&amp;lt;full&amp;gt;&amp;gt;&#xa;p1\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;shape=rect;points=[[0,0.5,0]];html=1;resizable=1;align=right;verticalAlign=bottom;labelPosition=left;verticalLabelPosition=top;labelBackgroundColor=none;fontSize=10;paart=1;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"20\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.sysml.port1",
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1123"
+  },
+  {
+   "id": "sysmlPorts and Flows-7-flow-property",
+   "title": "Flow Property",
+   "tags": "sysml port flow flow property",
+   "kind": "cells",
+   "width": 200,
+   "height": 70,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;marginBottom=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"200\" height=\"70\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Transmission\" style=\"html=1;align=center;spacing=0;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;fontStyle=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"200\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"line;strokeWidth=0.25;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"20\" width=\"200\" height=\"8\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"flow properties\" style=\"html=1;align=center;spacing=0;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;fontSize=10;fontStyle=2;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"28\" width=\"200\" height=\"16\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"in gearSelect: Gear\" style=\"html=1;align=left;spacing=0;spacingLeft=10;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"44\" width=\"200\" height=\"16\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"in engineTorque: Torque\" style=\"html=1;align=left;spacing=0;spacingLeft=10;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"44\" width=\"200\" height=\"16\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"out wheelsTorque: Torque\" style=\"html=1;align=left;spacing=0;spacingLeft=10;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"44\" width=\"200\" height=\"16\" as=\"geometry\"/></mxCell><mxCell id=\"9\" value=\"\" style=\"html=1;align=left;spacing=0;spacingLeft=10;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"76\" width=\"200\" height=\"8\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "line"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1135"
+  },
+  {
+   "id": "sysmlPorts and Flows-8-required-and-provided-features",
+   "title": "Required and Provided Features",
+   "tags": "sysml port flow required provided feature",
+   "kind": "cells",
+   "width": 200,
+   "height": 70,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;marginBottom=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"250\" height=\"150\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Transmission\" style=\"html=1;align=center;spacing=0;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;fontStyle=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"250\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"line;strokeWidth=0.25;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"20\" width=\"250\" height=\"8\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"operations\" style=\"html=1;align=center;spacing=0;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;fontSize=10;fontStyle=2;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"28\" width=\"250\" height=\"16\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"prov Boolean selectGear(g : Gear)\" style=\"html=1;align=left;spacing=0;spacingLeft=10;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"44\" width=\"250\" height=\"16\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"reqd Torque getTorque()\" style=\"html=1;align=left;spacing=0;spacingLeft=10;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"44\" width=\"250\" height=\"16\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"\" style=\"line;strokeWidth=0.25;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"20\" width=\"250\" height=\"8\" as=\"geometry\"/></mxCell><mxCell id=\"9\" value=\"properties\" style=\"html=1;align=center;spacing=0;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;fontSize=10;fontStyle=2;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"28\" width=\"250\" height=\"16\" as=\"geometry\"/></mxCell><mxCell id=\"10\" value=\"prov temperature : Integer\" style=\"html=1;align=left;spacing=0;spacingLeft=10;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"44\" width=\"250\" height=\"16\" as=\"geometry\"/></mxCell><mxCell id=\"11\" value=\"reqd geometry : Spline\" style=\"html=1;align=left;spacing=0;spacingLeft=10;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"44\" width=\"250\" height=\"16\" as=\"geometry\"/></mxCell><mxCell id=\"12\" value=\"\" style=\"html=1;align=left;spacing=0;spacingLeft=10;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"76\" width=\"250\" height=\"18\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "line"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1164"
+  },
+  {
+   "id": "sysmlPorts and Flows-9-interface-block",
+   "title": "Interface Block",
+   "tags": "sysml port flow interface block",
+   "kind": "cells",
+   "width": 200,
+   "height": 70,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;marginBottom=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"200\" height=\"80\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&amp;lt;&amp;lt;InterfaceBlock&amp;gt;&amp;gt;\" style=\"html=1;align=center;spacing=0;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"200\" height=\"18\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"ISpeedObserver\" style=\"html=1;align=center;spacing=0;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;fontStyle=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"200\" height=\"18\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"line;strokeWidth=0.25;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"20\" width=\"200\" height=\"8\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"notifySpeedChange(): void\" style=\"html=1;align=left;spacing=0;spacingLeft=10;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"44\" width=\"200\" height=\"16\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"\" style=\"html=1;align=left;spacing=0;spacingLeft=10;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"76\" width=\"200\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "line"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1200"
+  },
+  {
+   "id": "sysmlPorts and Flows-10-item-flow",
+   "title": "Item Flow",
+   "tags": "sysml port flow item flow Item Flow",
+   "kind": "cells",
+   "width": 120,
+   "height": 180,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"eng: engine&#10;\" style=\"html=1;shape=mxgraph.sysml.itemFlow;fontStyle=1;flowDir=S;flowType=out;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"20\" width=\"80\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&#10;trns: Transmission\" style=\"html=1;shape=mxgraph.sysml.itemFlow;fontStyle=1;flowDir=N;flowType=in;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry y=\"120\" width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Torque\" style=\"edgeStyle=none;html=1;align=right;endArrow=none;exitX=0.5;exitY=1;entryX=0.5;entryY=0;\" edge=\"1\" source=\"2\" target=\"3\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"p\" style=\"resizable=0;html=1;align=left;spacingLeft=10;verticalAlign=top;labelPosition=left;verticalLabelPosition=bottom;labelBackgroundColor=none;fontSize=10\" connectable=\"0\" vertex=\"1\" parent=\"4\"><mxGeometry x=\"-1\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"p\" style=\"resizable=0;html=1;align=left;spacingLeft=10;verticalAlign=bottom;labelPosition=left;verticalLabelPosition=bottom;labelBackgroundColor=none;fontSize=10\" connectable=\"0\" vertex=\"1\" parent=\"4\"><mxGeometry x=\"1\" relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.sysml.itemFlow"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1223"
+  },
+  {
+   "id": "sysmlPorts and Flows-11-item-flow-item-property",
+   "title": "Item Flow (Item Property)",
+   "tags": "sysml port flow item flow property Item Flow (Item Property)",
+   "kind": "cells",
+   "width": 140,
+   "height": 180,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"eng: engine&#10;\" style=\"html=1;shape=mxgraph.sysml.itemFlow;fontStyle=1;flowDir=S;flowType=out;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"40\" width=\"80\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&#10;trns: Transmission\" style=\"html=1;shape=mxgraph.sysml.itemFlow;fontStyle=1;flowDir=N;flowType=in;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"20\" y=\"120\" width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"torque: Torque\" style=\"edgeStyle=none;html=1;align=right;endArrow=none;exitX=0.5;exitY=1;entryX=0.5;entryY=0;\" edge=\"1\" source=\"2\" target=\"3\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"p\" style=\"resizable=0;html=1;align=left;spacingLeft=10;verticalAlign=top;labelPosition=left;verticalLabelPosition=bottom;labelBackgroundColor=none;fontSize=10\" connectable=\"0\" vertex=\"1\" parent=\"4\"><mxGeometry x=\"-1\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"p\" style=\"resizable=0;html=1;align=left;spacingLeft=10;verticalAlign=bottom;labelPosition=left;verticalLabelPosition=bottom;labelBackgroundColor=none;fontSize=10\" connectable=\"0\" vertex=\"1\" parent=\"4\"><mxGeometry x=\"1\" relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.sysml.itemFlow"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1225"
+  },
+  {
+   "id": "sysmlPorts and Flows-12-item-flow-north-in",
+   "title": "Item Flow North In",
+   "tags": " sysml port flow item flow north in Item Flow North In",
+   "kind": "vertex",
+   "width": 200,
+   "height": 80,
+   "style": "html=1;shape=mxgraph.sysml.itemFlow;fontStyle=1;flowDir=n;flowType=in;whiteSpace=wrap;align=center;",
+   "value": "eng:Engine",
+   "shapeNames": [
+    "mxgraph.sysml.itemFlow"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1228"
+  },
+  {
+   "id": "sysmlPorts and Flows-13-item-flow-east-out",
+   "title": "Item Flow East Out",
+   "tags": " sysml port flow item flow east out Item Flow East Out",
+   "kind": "vertex",
+   "width": 200,
+   "height": 80,
+   "style": "html=1;shape=mxgraph.sysml.itemFlow;fontStyle=1;flowDir=e;flowType=out;whiteSpace=wrap;align=center;",
+   "value": "eng:Engine",
+   "shapeNames": [
+    "mxgraph.sysml.itemFlow"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1230"
+  },
+  {
+   "id": "sysmlPorts and Flows-14-item-flow",
+   "title": "Item Flow",
+   "tags": "sysml port flow item flow",
+   "kind": "cells",
+   "width": 470,
+   "height": 370,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"eng: engine\" style=\"html=1;shape=mxgraph.sysml.itemFlow;fontStyle=1;flowDir=e;flowType=none;spacingRight=20;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"40\" width=\"100\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"trns: Translation\" style=\"html=1;shape=mxgraph.sysml.itemFlow;fontStyle=1;flowDir=w;flowType=none;spacingLeft=15;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"260\" width=\"140\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"Torque\" style=\"edgeStyle=none;html=1;align=left;verticalAlign=top;endArrow=none;exitX=1;exitY=0.5;entryX=0;entryY=0.5;\" edge=\"1\" parent=\"1\" source=\"2\" target=\"3\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"ep:EP\" style=\"resizable=0;html=1;align=left;spacingLeft=5;verticalAlign=bottom;labelPosition=left;verticalLabelPosition=bottom;labelBackgroundColor=none;fontSize=10\" vertex=\"1\" connectable=\"0\" parent=\"4\"><mxGeometry x=\"-1\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"tp:TP\" style=\"resizable=0;html=1;align=right;spacingRight=5;verticalAlign=bottom;labelPosition=left;verticalLabelPosition=bottom;labelBackgroundColor=none;fontSize=10\" vertex=\"1\" connectable=\"0\" parent=\"4\"><mxGeometry x=\"1\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;c1: Association-1&lt;/b&gt;&lt;/p&gt;&lt;hr/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;text-align:left;font-size:0.9em;&quot;&gt;&amp;lt;&amp;lt;participant&amp;gt;&amp;gt;{end = ep} epInLink : EP[1]&lt;br/&gt;&amp;lt;&amp;lt;participant&amp;gt;&amp;gt;{end = tp} etInLink : TP[1]&lt;hr/&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;text-align:center;font-size:0.9em;&quot;&gt;structure&lt;/p&gt;\" style=\"shape=rect;html=1;overflow=fill;whiteSpace=wrap;recursiveResize=0;\" vertex=\"1\" parent=\"1\"><mxGeometry y=\"120\" width=\"470\" height=\"250\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"epInLink : EP\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;html=1;shape=mxgraph.sysml.itemFlowRight;fontStyle=1;spacingRight=40;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"7\"><mxGeometry x=\"30\" y=\"100\" width=\"160\" height=\"120\" as=\"geometry\"/></mxCell><mxCell id=\"9\" value=\"ep.1\" style=\"resizable=0;html=1;align=right;spacingRight=22;verticalAlign=middle;labelPosition=right;verticalLabelPosition=top;labelBackgroundColor=none;fontSize=10\" vertex=\"1\" connectable=\"0\" parent=\"8\"><mxGeometry x=\"160\" y=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"10\" value=\"ep.2\" style=\"resizable=0;html=1;align=right;spacingRight=22;verticalAlign=middle;labelPosition=right;verticalLabelPosition=top;labelBackgroundColor=none;fontSize=10\" vertex=\"1\" connectable=\"0\" parent=\"8\"><mxGeometry x=\"160\" y=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"11\" value=\"ep.3\" style=\"resizable=0;html=1;align=right;spacingRight=22;verticalAlign=middle;labelPosition=right;verticalLabelPosition=top;labelBackgroundColor=none;fontSize=10\" vertex=\"1\" connectable=\"0\" parent=\"8\"><mxGeometry x=\"160\" y=\"90\" as=\"geometry\"/></mxCell><mxCell id=\"12\" value=\"tpInLink : TP\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;html=1;shape=mxgraph.sysml.itemFlowLeft;fontStyle=1;spacingLeft=40;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"7\"><mxGeometry x=\"280\" y=\"100\" width=\"160\" height=\"120\" as=\"geometry\"/></mxCell><mxCell id=\"13\" value=\"tp.1\" style=\"resizable=0;html=1;align=left;spacingLeft=22;verticalAlign=middle;labelPosition=left;verticalLabelPosition=top;labelBackgroundColor=none;fontSize=10\" vertex=\"1\" connectable=\"0\" parent=\"12\"><mxGeometry y=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"14\" value=\"tp.2\" style=\"resizable=0;html=1;align=left;spacingLeft=22;verticalAlign=middle;labelPosition=left;verticalLabelPosition=top;labelBackgroundColor=none;fontSize=10\" vertex=\"1\" connectable=\"0\" parent=\"12\"><mxGeometry y=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"15\" value=\"tp.3\" style=\"resizable=0;html=1;align=left;spacingLeft=22;verticalAlign=middle;labelPosition=left;verticalLabelPosition=top;labelBackgroundColor=none;fontSize=10\" vertex=\"1\" connectable=\"0\" parent=\"12\"><mxGeometry y=\"90\" as=\"geometry\"/></mxCell><mxCell id=\"16\" value=\"Vibration\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;edgeStyle=none;html=1;verticalAlign=bottom;endArrow=none;exitX=1;exitY=0.25;entryX=0;entryY=0.25;labelBackgroundColor=none;\" edge=\"1\" parent=\"7\" source=\"8\" target=\"12\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"17\" value=\"Heat\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;edgeStyle=none;html=1;verticalAlign=bottom;endArrow=none;exitX=1;exitY=0.5;entryX=0;entryY=0.5;labelBackgroundColor=none;\" edge=\"1\" parent=\"7\" source=\"8\" target=\"12\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"18\" value=\"Current\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;edgeStyle=none;html=1;verticalAlign=bottom;endArrow=none;exitX=1;exitY=0.75;entryX=0;entryY=0.75;labelBackgroundColor=none;\" edge=\"1\" parent=\"7\" source=\"8\" target=\"12\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"19\" value=\"\" style=\"endArrow=none;html=1;edgeStyle=elbowEdgeStyle;elbow=horizontal;dashed=1;\" edge=\"1\" parent=\"1\" target=\"7\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint x=\"160\" y=\"30\" as=\"sourcePoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.sysml.itemFlow",
+    "rect",
+    "mxgraph.sysml.itemFlowRight",
+    "mxgraph.sysml.itemFlowLeft"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1233"
+  },
+  {
+   "id": "sysmlPorts and Flows-15-item-flow",
+   "title": "Item Flow",
+   "tags": "sysml port flow item flow Item Flow",
+   "kind": "cells",
+   "width": 200,
+   "height": 120,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"tpInLink : TP\" style=\"html=1;shape=mxgraph.sysml.itemFlowLeft;fontStyle=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"200\" height=\"120\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"tp.1\" style=\"resizable=0;html=1;align=left;spacingLeft=22;verticalAlign=middle;labelPosition=left;verticalLabelPosition=top;labelBackgroundColor=none;fontSize=10\" connectable=\"0\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"tp.2\" style=\"resizable=0;html=1;align=left;spacingLeft=22;verticalAlign=middle;labelPosition=left;verticalLabelPosition=top;labelBackgroundColor=none;fontSize=10\" connectable=\"0\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"tp.3\" style=\"resizable=0;html=1;align=left;spacingLeft=22;verticalAlign=middle;labelPosition=left;verticalLabelPosition=top;labelBackgroundColor=none;fontSize=10\" connectable=\"0\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"90\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.sysml.itemFlowLeft"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1329"
+  },
+  {
+   "id": "sysmlPorts and Flows-16-item-flow",
+   "title": "Item Flow",
+   "tags": "sysml port flow item flow Item Flow",
+   "kind": "cells",
+   "width": 200,
+   "height": 120,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"epInLink : EP\" style=\"html=1;shape=mxgraph.sysml.itemFlowRight;fontStyle=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"200\" height=\"120\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"ep.1\" style=\"resizable=0;html=1;align=right;spacingRight=22;verticalAlign=middle;labelPosition=right;verticalLabelPosition=top;labelBackgroundColor=none;fontSize=10\" connectable=\"0\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"200\" y=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"ep.2\" style=\"resizable=0;html=1;align=right;spacingRight=22;verticalAlign=middle;labelPosition=right;verticalLabelPosition=top;labelBackgroundColor=none;fontSize=10\" connectable=\"0\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"200\" y=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"ep.3\" style=\"resizable=0;html=1;align=right;spacingRight=22;verticalAlign=middle;labelPosition=right;verticalLabelPosition=top;labelBackgroundColor=none;fontSize=10\" connectable=\"0\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"200\" y=\"90\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.sysml.itemFlowRight"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1331"
+  },
+  {
+   "id": "sysmlPorts and Flows-17-interface",
+   "title": "Interface",
+   "tags": "sysml port flow interface",
+   "kind": "cells",
+   "width": 200,
+   "height": 70,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;marginBottom=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"200\" height=\"80\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;\" style=\"html=1;align=center;spacing=0;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"200\" height=\"18\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"ISpeedObserver\" style=\"html=1;align=center;spacing=0;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;fontStyle=1;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"200\" height=\"18\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"line;strokeWidth=0.25;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"20\" width=\"200\" height=\"8\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"notifySpeedChange(): void\" style=\"html=1;align=left;spacing=0;spacingLeft=10;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"44\" width=\"200\" height=\"16\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"\" style=\"html=1;align=left;spacing=0;spacingLeft=10;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"76\" width=\"200\" height=\"20\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "line"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1334"
+  },
+  {
+   "id": "sysmlPorts and Flows-18-required-interface",
+   "title": "Required Interface",
+   "tags": "sysml port flow required interface",
+   "kind": "cells",
+   "width": 250,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Transmission\" style=\"html=1;shape=mxgraph.sysml.port4;fontStyle=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"90\" width=\"160\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"p1\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;shape=rect;html=1;resizable=0;align=left;verticalAlign=bottom;labelPosition=right;verticalLabelPosition=top;labelBackgroundColor=none;fontSize=10;\" vertex=\"1\" connectable=\"0\" parent=\"2\"><mxGeometry y=\"20\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"ITransCmd\" style=\"edgeStyle=none;html=1;align=left;verticalAlign=bottom;endArrow=oval;endFill=0;endSize=8;exitX=0;exitY=0.5;\" edge=\"1\" parent=\"1\" source=\"2\"><mxGeometry x=\"1\" relative=\"1\" as=\"geometry\"><mxPoint as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"ITransData\" style=\"edgeStyle=none;html=1;align=left;verticalAlign=top;endArrow=halfCircle;endFill=0;endSize=5;exitX=0;exitY=0.5;\" edge=\"1\" parent=\"1\" source=\"2\"><mxGeometry x=\"1\" relative=\"1\" as=\"geometry\"><mxPoint y=\"60\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.sysml.port4",
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1357"
+  },
+  {
+   "id": "sysmlPorts and Flows-19-provided-interface",
+   "title": "Provided Interface",
+   "tags": "sysml port flow provided interface",
+   "kind": "cells",
+   "width": 250,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Transmission\" style=\"html=1;shape=mxgraph.sysml.port4;fontStyle=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"90\" width=\"160\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"p1\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;shape=rect;html=1;resizable=0;labelBackgroundColor=none;fontSize=10;\" vertex=\"1\" connectable=\"0\" parent=\"2\"><mxGeometry y=\"20\" width=\"20\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"ITransCmd\" style=\"edgeStyle=none;html=1;align=left;verticalAlign=bottom;endArrow=oval;endFill=0;endSize=8;exitX=0;exitY=0.5;\" edge=\"1\" parent=\"1\" source=\"2\"><mxGeometry x=\"1\" relative=\"1\" as=\"geometry\"><mxPoint as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"ITransData\" style=\"edgeStyle=none;html=1;align=left;verticalAlign=top;endArrow=halfCircle;endFill=0;endSize=5;exitX=0;exitY=0.5;\" edge=\"1\" parent=\"1\" source=\"2\"><mxGeometry x=\"1\" relative=\"1\" as=\"geometry\"><mxPoint y=\"60\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.sysml.port4",
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1382"
+  },
+  {
+   "id": "sysmlPorts and Flows-20-port-flow-north",
+   "title": "Port, Flow North",
+   "tags": " sysml port flow item flow north Port, Flow North",
+   "kind": "vertex",
+   "width": 20,
+   "height": 20,
+   "style": "html=1;shape=mxgraph.sysml.port;sysMLPortType=flowN;",
+   "shapeNames": [
+    "mxgraph.sysml.port"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1407"
+  },
+  {
+   "id": "sysmlPorts and Flows-21-port-double-flow-horizontal",
+   "title": "Port, Double Flow, Horizontal",
+   "tags": " sysml port flow item double flow horizontal Port, Double Flow, Horizontal",
+   "kind": "vertex",
+   "width": 20,
+   "height": 20,
+   "style": "html=1;shape=mxgraph.sysml.port;sysMLPortType=doubleH;",
+   "shapeNames": [
+    "mxgraph.sysml.port"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1409"
+  },
+  {
+   "id": "sysmlPorts and Flows-22-ports",
+   "title": "Ports",
+   "tags": "sysml port flow ports",
+   "kind": "cells",
+   "width": 220,
+   "height": 160,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"whiteSpace=wrap;align=center;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"200\" height=\"140\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"port1\" style=\"html=1;shape=mxgraph.sysml.port;html=1;resizable=0;sysMLPortType=flowS;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"50\" y=\"-10\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"port2\" style=\"html=1;shape=mxgraph.sysml.port;html=1;resizable=0;sysMLPortType=empty;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"1\" width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-70\" y=\"-10\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"port3\" style=\"html=1;shape=mxgraph.sysml.port;html=1;resizable=0;sysMLPortType=flowE;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-10\" y=\"30\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"6\" value=\"port4\" style=\"html=1;shape=mxgraph.sysml.port;html=1;resizable=0;sysMLPortType=doubleH;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"1\" width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-10\" y=\"-50\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"7\" value=\"port5\" style=\"html=1;shape=mxgraph.sysml.port;html=1;resizable=0;sysMLPortType=flowE;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"1\" width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-10\" y=\"30\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"8\" value=\"port6\" style=\"html=1;shape=mxgraph.sysml.port;html=1;resizable=0;sysMLPortType=doubleH;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"1\" y=\"1\" width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-10\" y=\"-50\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"9\" value=\"port7\" style=\"html=1;shape=mxgraph.sysml.port;html=1;resizable=0;sysMLPortType=flowN;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"1\" width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"50\" y=\"-10\" as=\"offset\"/></mxGeometry></mxCell><mxCell id=\"10\" value=\"port8\" style=\"html=1;shape=mxgraph.sysml.port;html=1;resizable=0;sysMLPortType=doubleV;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"1\" y=\"1\" width=\"20\" height=\"20\" relative=\"1\" as=\"geometry\"><mxPoint x=\"-70\" y=\"-10\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.sysml.port"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1412"
+  }
+ ]
+}

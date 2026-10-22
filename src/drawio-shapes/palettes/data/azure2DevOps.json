@@ -1,0 +1,190 @@
+{
+ "id": "azure2DevOps",
+ "title": "Azure / DevOps",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Azure2.js:8",
+ "entries": [
+  {
+   "id": "azure2DevOps-0-api-connections",
+   "title": "API Connections",
+   "tags": "azure2 api connections application programming interface azure devops  API Connections",
+   "kind": "vertex",
+   "width": 68,
+   "height": 45.32,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/devops/API_Connections.svg;points=[[0.5,0.007,0],[0.5,0.993,0],[0.015,0.5,0],[0.985,0.5,0],[0.897,0.341,0],[0.91,0.936,0],[0.093,0.647,0],[0.09,0.064,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:618"
+  },
+  {
+   "id": "azure2DevOps-1-api-management-services",
+   "title": "API Management Services",
+   "tags": "azure2 api application programming interface management services azure devops  API Management Services",
+   "kind": "vertex",
+   "width": 65,
+   "height": 60,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/app_services/API_Management_Services.svg;points=[[0.512,0,0],[0.477,1,0],[0,0.496,0],[1,0.541,0],[0.717,0.084,0],[0.92,0.729,0],[0.09,0.712,0],[0.085,0.285,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:620"
+  },
+  {
+   "id": "azure2DevOps-2-application-insights",
+   "title": "Application Insights",
+   "tags": "azure2 application insights azure devops  Application Insights",
+   "kind": "vertex",
+   "width": 44,
+   "height": 63,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/devops/Application_Insights.svg;points=[[0.5,0,0],[0.5,1,0],[0.061,0.5,0],[0.939,0.5,0],[0.91,0.145,0],[0.67,0.945,0],[0.327,0.942,0],[0.09,0.145,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:622"
+  },
+  {
+   "id": "azure2DevOps-3-azure-app-testing",
+   "title": "Azure App Testing",
+   "tags": "azure2 app testing load playwright azure devops  Azure App Testing",
+   "kind": "vertex",
+   "width": 67.88,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/devops/Azure_App_Testing.svg;points=[[0.5,0.113,0],[0.5,1,0],[0,0.444,0],[1,0.57,0],[0.744,0.193,0],[0.985,0.99,0],[0.121,0.695,0],[0.116,0.178,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:624"
+  },
+  {
+   "id": "azure2DevOps-4-change-analysis",
+   "title": "Change Analysis",
+   "tags": "azure2 change analysis azure devops  Change Analysis",
+   "kind": "vertex",
+   "width": 68,
+   "height": 67.67999999999999,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/devops/Change_Analysis.svg;points=[[0.616,0,0],[0.5,0.808,0],[0,0.899,0],[1,0.573,0],[0.79,0.063,0],[0.69,0.944,0],[0.04,0.982,0],[0.438,0.068,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:626"
+  },
+  {
+   "id": "azure2DevOps-5-cloudtest",
+   "title": "CloudTest",
+   "tags": "azure2 cloudtest cloud test azure devops  CloudTest",
+   "kind": "vertex",
+   "width": 58.8,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/devops/CloudTest.svg;points=[[0.519,0,0],[0.431,1,0],[0,0.386,0],[1,0.421,0],[0.737,0.083,0],[0.846,0.987,0],[0.015,0.99,0],[0.061,0.245,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:628"
+  },
+  {
+   "id": "azure2DevOps-6-code-optimization",
+   "title": "Code Optimization",
+   "tags": "azure2 code optimization azure devops  Code Optimization",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/devops/Code_Optimization.svg;points=[[0.389,0,0],[0.5,0.779,0],[0,0.389,0],[0.945,0.5,0],[0.76,0.013,0],[0.86,0.985,0],[0.013,0.76,0],[0.018,0.013,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:631"
+  },
+  {
+   "id": "azure2DevOps-7-devops",
+   "title": "DevOps",
+   "tags": "azure2 devops azure devops  DevOps",
+   "kind": "vertex",
+   "width": 64,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/devops/Azure_DevOps.svg;points=[[0.43,0,0],[0.5,0.91,0],[0,0.51,0],[1,0.492,0],[1,0.188,0],[1,0.797,0],[0,0.655,0],[0.1,0.238,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:634"
+  },
+  {
+   "id": "azure2DevOps-8-devops-starter",
+   "title": "DevOps Starter",
+   "tags": "azure2 devops starter azure devops  DevOps Starter",
+   "kind": "vertex",
+   "width": 68,
+   "height": 63.75999999999999,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/devops/DevOps_Starter.svg;points=[[0.514,0,0],[0.5,0.971,0],[0,0.459,0],[1,0.517,0],[0.712,0.078,0],[0.837,0.917,0],[0.09,0.68,0],[0.07,0.283,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:636"
+  },
+  {
+   "id": "azure2DevOps-9-devtest-labs",
+   "title": "DevTest Labs",
+   "tags": "azure2 devtest labs azure devops  DevTest Labs",
+   "kind": "vertex",
+   "width": 66,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/devops/DevTest_Labs.svg;points=[[0.514,0.003,0],[0.559,0.997,0],[0,0.461,0],[1,0.505,0],[0.702,0.067,0],[0.852,0.994,0],[0.265,0.994,0],[0.085,0.266,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:638"
+  },
+  {
+   "id": "azure2DevOps-10-lab-accounts",
+   "title": "Lab Accounts",
+   "tags": "azure2 lab accounts azure devops  Lab Accounts",
+   "kind": "vertex",
+   "width": 65.16,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/devops/Lab_Accounts.svg;points=[[0.406,0,0],[0.765,1,0],[0.145,0.5,0],[1,0.507,0],[0.595,0.01,0],[0.866,0.912,0],[0.008,0.747,0],[0.214,0.013,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:640"
+  },
+  {
+   "id": "azure2DevOps-11-lab-services",
+   "title": "Lab Services",
+   "tags": "azure2 lab services azure devops  Lab Services",
+   "kind": "vertex",
+   "width": 66,
+   "height": 64,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/devops/Lab_Services.svg;points=[[0.514,0.003,0],[0.559,0.997,0],[0,0.461,0],[1,0.505,0],[0.702,0.067,0],[0.852,0.994,0],[0.265,0.994,0],[0.085,0.266,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:642"
+  },
+  {
+   "id": "azure2DevOps-12-load-testing",
+   "title": "Load Testing",
+   "tags": "azure2 load testing azure devops  Load Testing",
+   "kind": "vertex",
+   "width": 59.199999999999996,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/other/Load_Testing.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.497,0],[1,0.501,0],[1,0.25,0],[1,0.752,0],[0,0.747,0],[0,0.248,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:644"
+  }
+ ]
+}

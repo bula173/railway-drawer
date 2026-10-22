@@ -1,0 +1,456 @@
+{
+ "id": "rackDell",
+ "title": "Rack / Dell",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Rack.js:7",
+ "entries": [
+  {
+   "id": "rackDell-0-poweredge-1u",
+   "title": "PowerEdge 1U",
+   "tags": "rack equipment dell poweredge 1u PowerEdge 1U",
+   "kind": "vertex",
+   "width": 162,
+   "height": 15,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.dell.dell_poweredge_1u;",
+   "shapeNames": [
+    "mxgraph.rack.dell.dell_poweredge_1u"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:137"
+  },
+  {
+   "id": "rackDell-1-poweredge-2u",
+   "title": "PowerEdge 2U",
+   "tags": "rack equipment dell poweredge 2u PowerEdge 2U",
+   "kind": "vertex",
+   "width": 162,
+   "height": 30,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.dell.dell_poweredge_2u;",
+   "shapeNames": [
+    "mxgraph.rack.dell.dell_poweredge_2u"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:138"
+  },
+  {
+   "id": "rackDell-2-poweredge-4u",
+   "title": "PowerEdge 4U",
+   "tags": "rack equipment dell poweredge 4u PowerEdge 4U",
+   "kind": "vertex",
+   "width": 162,
+   "height": 60,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.dell.dell_poweredge_4u;",
+   "shapeNames": [
+    "mxgraph.rack.dell.dell_poweredge_4u"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:139"
+  },
+  {
+   "id": "rackDell-3-power-strip",
+   "title": "Power Strip",
+   "tags": "rack equipment dell power strip Power Strip",
+   "kind": "vertex",
+   "width": 162,
+   "height": 15,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.dell.power_strip;",
+   "shapeNames": [
+    "mxgraph.rack.dell.power_strip"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:140"
+  },
+  {
+   "id": "rackDell-4-poweredge-630",
+   "title": "PowerEdge 630",
+   "tags": "rack equipment dell poweredge 630 PowerEdge 630",
+   "kind": "vertex",
+   "width": 162,
+   "height": 15,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.dell.poweredge_630;",
+   "shapeNames": [
+    "mxgraph.rack.dell.poweredge_630"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:141"
+  },
+  {
+   "id": "rackDell-5-poweredge-c4140",
+   "title": "PowerEdge C4140",
+   "tags": "rack equipment dell poweredge c4140 PowerEdge C4140",
+   "kind": "vertex",
+   "width": 162,
+   "height": 15,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.dell.poweredge_c4140;",
+   "shapeNames": [
+    "mxgraph.rack.dell.poweredge_c4140"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:142"
+  },
+  {
+   "id": "rackDell-6-poweredge-m1000e-enclosure",
+   "title": "PowerEdge M1000e Enclosure",
+   "tags": "rack equipment dell poweredge m1000e enclosure PowerEdge M1000e Enclosure",
+   "kind": "vertex",
+   "width": 162,
+   "height": 150,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.dell.poweredge_m1000e_enclosure;",
+   "shapeNames": [
+    "mxgraph.rack.dell.poweredge_m1000e_enclosure"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:143"
+  },
+  {
+   "id": "rackDell-7-poweredge-m420",
+   "title": "PowerEdge M420",
+   "tags": "rack equipment dell poweredge m420 PowerEdge M420",
+   "kind": "vertex",
+   "width": 20,
+   "height": 37,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.dell.poweredge_m420;",
+   "shapeNames": [
+    "mxgraph.rack.dell.poweredge_m420"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:144"
+  },
+  {
+   "id": "rackDell-8-poweredge-m520",
+   "title": "PowerEdge M520",
+   "tags": "rack equipment dell poweredge m520 PowerEdge M520",
+   "kind": "vertex",
+   "width": 20,
+   "height": 74,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.dell.poweredge_m520;",
+   "shapeNames": [
+    "mxgraph.rack.dell.poweredge_m520"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:145"
+  },
+  {
+   "id": "rackDell-9-poweredge-m610x",
+   "title": "PowerEdge M610x",
+   "tags": "rack equipment dell poweredge m610x PowerEdge M610x",
+   "kind": "vertex",
+   "width": 20,
+   "height": 148,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.dell.poweredge_m610x;",
+   "shapeNames": [
+    "mxgraph.rack.dell.poweredge_m610x"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:146"
+  },
+  {
+   "id": "rackDell-10-poweredge-m620",
+   "title": "PowerEdge M620",
+   "tags": "rack equipment dell poweredge m620 PowerEdge M620",
+   "kind": "vertex",
+   "width": 20,
+   "height": 74,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.dell.poweredge_m620;",
+   "shapeNames": [
+    "mxgraph.rack.dell.poweredge_m620"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:147"
+  },
+  {
+   "id": "rackDell-11-poweredge-m820",
+   "title": "PowerEdge M820",
+   "tags": "rack equipment dell poweredge m820 PowerEdge M820",
+   "kind": "vertex",
+   "width": 20,
+   "height": 143,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.dell.poweredge_m820;",
+   "shapeNames": [
+    "mxgraph.rack.dell.poweredge_m820"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:148"
+  },
+  {
+   "id": "rackDell-12-poweredge-m915",
+   "title": "PowerEdge M915",
+   "tags": "rack equipment dell poweredge m820 PowerEdge M915",
+   "kind": "vertex",
+   "width": 20,
+   "height": 143,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.dell.poweredge_m915;",
+   "shapeNames": [
+    "mxgraph.rack.dell.poweredge_m915"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:149"
+  },
+  {
+   "id": "rackDell-13-poweredge-r240",
+   "title": "PowerEdge R240",
+   "tags": "rack equipment dell poweredge r240 PowerEdge R240",
+   "kind": "vertex",
+   "width": 162,
+   "height": 15,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.dell.poweredge_r240;",
+   "shapeNames": [
+    "mxgraph.rack.dell.poweredge_r240"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:150"
+  },
+  {
+   "id": "rackDell-14-poweredge-r340",
+   "title": "PowerEdge R340",
+   "tags": "rack equipment dell poweredge r340 PowerEdge R340",
+   "kind": "vertex",
+   "width": 162,
+   "height": 15,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.dell.poweredge_r340;",
+   "shapeNames": [
+    "mxgraph.rack.dell.poweredge_r340"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:151"
+  },
+  {
+   "id": "rackDell-15-poweredge-r440",
+   "title": "PowerEdge R440",
+   "tags": "rack equipment dell poweredge r440 PowerEdge R440",
+   "kind": "vertex",
+   "width": 162,
+   "height": 15,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.dell.poweredge_r440;",
+   "shapeNames": [
+    "mxgraph.rack.dell.poweredge_r440"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:152"
+  },
+  {
+   "id": "rackDell-16-poweredge-r540",
+   "title": "PowerEdge R540",
+   "tags": "rack equipment dell poweredge r540 PowerEdge R540",
+   "kind": "vertex",
+   "width": 162,
+   "height": 27,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.dell.poweredge_r540;",
+   "shapeNames": [
+    "mxgraph.rack.dell.poweredge_r540"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:153"
+  },
+  {
+   "id": "rackDell-17-poweredge-r640",
+   "title": "PowerEdge R640",
+   "tags": "rack equipment dell poweredge r640 PowerEdge R640",
+   "kind": "vertex",
+   "width": 162,
+   "height": 15,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.dell.poweredge_r640;",
+   "shapeNames": [
+    "mxgraph.rack.dell.poweredge_r640"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:154"
+  },
+  {
+   "id": "rackDell-18-poweredge-r6415",
+   "title": "PowerEdge R6415",
+   "tags": "rack equipment dell poweredge r6415 PowerEdge R6415",
+   "kind": "vertex",
+   "width": 162,
+   "height": 15,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.dell.poweredge_r6415;",
+   "shapeNames": [
+    "mxgraph.rack.dell.poweredge_r6415"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:155"
+  },
+  {
+   "id": "rackDell-19-poweredge-r6515",
+   "title": "PowerEdge R6515",
+   "tags": "rack equipment dell poweredge r6515 PowerEdge R6515",
+   "kind": "vertex",
+   "width": 162,
+   "height": 15,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.dell.poweredge_r6515;",
+   "shapeNames": [
+    "mxgraph.rack.dell.poweredge_r6515"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:156"
+  },
+  {
+   "id": "rackDell-20-poweredge-r6525",
+   "title": "PowerEdge R6525",
+   "tags": "rack equipment dell poweredge r6525 PowerEdge R6525",
+   "kind": "vertex",
+   "width": 162,
+   "height": 15,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.dell.poweredge_r6525;",
+   "shapeNames": [
+    "mxgraph.rack.dell.poweredge_r6525"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:157"
+  },
+  {
+   "id": "rackDell-21-poweredge-r730",
+   "title": "PowerEdge R730",
+   "tags": "rack equipment dell poweredge r730 PowerEdge R730",
+   "kind": "vertex",
+   "width": 162,
+   "height": 30,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.dell.poweredge_r730;",
+   "shapeNames": [
+    "mxgraph.rack.dell.poweredge_r730"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:158"
+  },
+  {
+   "id": "rackDell-22-poweredge-r730xd",
+   "title": "PowerEdge R730xd",
+   "tags": "rack equipment dell poweredge r730xd PowerEdge R730xd",
+   "kind": "vertex",
+   "width": 162,
+   "height": 30,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.dell.poweredge_r730xd;",
+   "shapeNames": [
+    "mxgraph.rack.dell.poweredge_r730xd"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:159"
+  },
+  {
+   "id": "rackDell-23-poweredge-r740",
+   "title": "PowerEdge R740",
+   "tags": "rack equipment dell poweredge r740 PowerEdge R740",
+   "kind": "vertex",
+   "width": 162,
+   "height": 30,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.dell.poweredge_r740;",
+   "shapeNames": [
+    "mxgraph.rack.dell.poweredge_r740"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:160"
+  },
+  {
+   "id": "rackDell-24-poweredge-r740xd",
+   "title": "PowerEdge R740xd",
+   "tags": "rack equipment dell poweredge r740xd PowerEdge R740xd",
+   "kind": "vertex",
+   "width": 162,
+   "height": 30,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.dell.poweredge_r740xd;",
+   "shapeNames": [
+    "mxgraph.rack.dell.poweredge_r740xd"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:161"
+  },
+  {
+   "id": "rackDell-25-poweredge-r740xd2",
+   "title": "PowerEdge R740xd2",
+   "tags": "rack equipment dell poweredge r740xd2 PowerEdge R740xd2",
+   "kind": "vertex",
+   "width": 162,
+   "height": 30,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.dell.poweredge_r740xd2;",
+   "shapeNames": [
+    "mxgraph.rack.dell.poweredge_r740xd2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:162"
+  },
+  {
+   "id": "rackDell-26-poweredge-r7415",
+   "title": "PowerEdge R7415",
+   "tags": "rack equipment dell poweredge r7415 PowerEdge R7415",
+   "kind": "vertex",
+   "width": 162,
+   "height": 30,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.dell.poweredge_r7415;",
+   "shapeNames": [
+    "mxgraph.rack.dell.poweredge_r7415"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:163"
+  },
+  {
+   "id": "rackDell-27-poweredge-r7425",
+   "title": "PowerEdge R7425",
+   "tags": "rack equipment dell poweredge r7425 PowerEdge R7425",
+   "kind": "vertex",
+   "width": 162,
+   "height": 30,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.dell.poweredge_r7425;",
+   "shapeNames": [
+    "mxgraph.rack.dell.poweredge_r7425"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:164"
+  },
+  {
+   "id": "rackDell-28-poweredge-r7515",
+   "title": "PowerEdge R7515",
+   "tags": "rack equipment dell poweredge r7515 PowerEdge R7515",
+   "kind": "vertex",
+   "width": 162,
+   "height": 30,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.dell.poweredge_r7515;",
+   "shapeNames": [
+    "mxgraph.rack.dell.poweredge_r7515"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:165"
+  },
+  {
+   "id": "rackDell-29-poweredge-r840",
+   "title": "PowerEdge R840",
+   "tags": "rack equipment dell poweredge r840 PowerEdge R840",
+   "kind": "vertex",
+   "width": 162,
+   "height": 30,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.dell.poweredge_r840;",
+   "shapeNames": [
+    "mxgraph.rack.dell.poweredge_r840"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:166"
+  },
+  {
+   "id": "rackDell-30-poweredge-r940",
+   "title": "PowerEdge R940",
+   "tags": "rack equipment dell poweredge r940 PowerEdge R940",
+   "kind": "vertex",
+   "width": 162,
+   "height": 45,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.dell.poweredge_r940;",
+   "shapeNames": [
+    "mxgraph.rack.dell.poweredge_r940"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:167"
+  },
+  {
+   "id": "rackDell-31-poweredge-xr2",
+   "title": "PowerEdge XR2",
+   "tags": "rack equipment dell poweredge xr2 PowerEdge XR2",
+   "kind": "vertex",
+   "width": 162,
+   "height": 15,
+   "style": "strokeColor=#666666;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.dell.poweredge_xr2;",
+   "shapeNames": [
+    "mxgraph.rack.dell.poweredge_xr2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:168"
+  }
+ ]
+}

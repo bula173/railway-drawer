@@ -1,0 +1,1058 @@
+{
+ "id": "signsTransportation",
+ "title": "Signs / Transportation",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Signs.js:7",
+ "entries": [
+  {
+   "id": "signsTransportation-0-4-wheeler",
+   "title": "4 Wheeler",
+   "tags": "signs transportation  4 Wheeler 4 Wheeler",
+   "kind": "vertex",
+   "width": 98,
+   "height": 71,
+   "style": "shape=mxgraph.signs.transportation.4_wheeler;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.4_wheeler"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-1-airbag",
+   "title": "Airbag",
+   "tags": "signs transportation  Airbag Airbag",
+   "kind": "vertex",
+   "width": 103,
+   "height": 96,
+   "style": "shape=mxgraph.signs.transportation.airbag;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.airbag"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-2-airplane-1",
+   "title": "Airplane 1",
+   "tags": "signs transportation  Airplane 1 Airplane 1",
+   "kind": "vertex",
+   "width": 99,
+   "height": 35,
+   "style": "shape=mxgraph.signs.transportation.airplane_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.airplane_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-3-airplane-2",
+   "title": "Airplane 2",
+   "tags": "signs transportation  Airplane 2 Airplane 2",
+   "kind": "vertex",
+   "width": 102,
+   "height": 57,
+   "style": "shape=mxgraph.signs.transportation.airplane_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.airplane_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-4-airplane-3",
+   "title": "Airplane 3",
+   "tags": "signs transportation  Airplane 3 Airplane 3",
+   "kind": "vertex",
+   "width": 97,
+   "height": 98,
+   "style": "shape=mxgraph.signs.transportation.airplane_3;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.airplane_3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-5-airplane-4",
+   "title": "Airplane 4",
+   "tags": "signs transportation  Airplane 4 Airplane 4",
+   "kind": "vertex",
+   "width": 91,
+   "height": 98,
+   "style": "shape=mxgraph.signs.transportation.airplane_4;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.airplane_4"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-6-airplane-5",
+   "title": "Airplane 5",
+   "tags": "signs transportation  Airplane 5 Airplane 5",
+   "kind": "vertex",
+   "width": 95,
+   "height": 98,
+   "style": "shape=mxgraph.signs.transportation.airplane_5;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.airplane_5"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-7-airplane-6",
+   "title": "Airplane 6",
+   "tags": "signs transportation  Airplane 6 Airplane 6",
+   "kind": "vertex",
+   "width": 97,
+   "height": 101,
+   "style": "shape=mxgraph.signs.transportation.airplane_6;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.airplane_6"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-8-airplane-7",
+   "title": "Airplane 7",
+   "tags": "signs transportation  Airplane 7 Airplane 7",
+   "kind": "vertex",
+   "width": 100,
+   "height": 44,
+   "style": "shape=mxgraph.signs.transportation.airplane_7;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.airplane_7"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-9-ambulance",
+   "title": "Ambulance",
+   "tags": "signs transportation  Ambulance Ambulance",
+   "kind": "vertex",
+   "width": 99,
+   "height": 68,
+   "style": "shape=mxgraph.signs.transportation.ambulance;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.ambulance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-10-anchor-1",
+   "title": "Anchor 1",
+   "tags": "signs transportation  Anchor 1 Anchor 1",
+   "kind": "vertex",
+   "width": 92,
+   "height": 98,
+   "style": "shape=mxgraph.signs.transportation.anchor_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.anchor_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-11-anchor-2",
+   "title": "Anchor 2",
+   "tags": "signs transportation  Anchor 2 Anchor 2",
+   "kind": "vertex",
+   "width": 94,
+   "height": 98,
+   "style": "shape=mxgraph.signs.transportation.anchor_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.anchor_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-12-anchor-3",
+   "title": "Anchor 3",
+   "tags": "signs transportation  Anchor 3 Anchor 3",
+   "kind": "vertex",
+   "width": 99,
+   "height": 98,
+   "style": "shape=mxgraph.signs.transportation.anchor_3;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.anchor_3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-13-anchor-4",
+   "title": "Anchor 4",
+   "tags": "signs transportation  Anchor 4 Anchor 4",
+   "kind": "vertex",
+   "width": 98,
+   "height": 98,
+   "style": "shape=mxgraph.signs.transportation.anchor_4;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.anchor_4"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-14-bicycler",
+   "title": "Bicycler",
+   "tags": "signs transportation  Bicycler Bicycler",
+   "kind": "vertex",
+   "width": 95,
+   "height": 98,
+   "style": "shape=mxgraph.signs.transportation.bicycler;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.bicycler"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-15-bicycle-1",
+   "title": "Bicycle 1",
+   "tags": "signs transportation  Bicycle 1 Bicycle 1",
+   "kind": "vertex",
+   "width": 99,
+   "height": 62,
+   "style": "shape=mxgraph.signs.transportation.bicycle_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.bicycle_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-16-bicycle-2",
+   "title": "Bicycle 2",
+   "tags": "signs transportation  Bicycle 2 Bicycle 2",
+   "kind": "vertex",
+   "width": 99,
+   "height": 56,
+   "style": "shape=mxgraph.signs.transportation.bicycle_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.bicycle_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-17-bicycle-3",
+   "title": "Bicycle 3",
+   "tags": "signs transportation  Bicycle 3 Bicycle 3",
+   "kind": "vertex",
+   "width": 99,
+   "height": 59,
+   "style": "shape=mxgraph.signs.transportation.bicycle_3;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.bicycle_3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-18-bicycle-4",
+   "title": "Bicycle 4",
+   "tags": "signs transportation  Bicycle 4 Bicycle 4",
+   "kind": "vertex",
+   "width": 99,
+   "height": 58,
+   "style": "shape=mxgraph.signs.transportation.bicycle_4;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.bicycle_4"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-19-bicycle-5",
+   "title": "Bicycle 5",
+   "tags": "signs transportation  Bicycle 5 Bicycle 5",
+   "kind": "vertex",
+   "width": 98,
+   "height": 54,
+   "style": "shape=mxgraph.signs.transportation.bicycle_5;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.bicycle_5"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-20-bus-1",
+   "title": "Bus 1",
+   "tags": "signs transportation  Bus 1 Bus 1",
+   "kind": "vertex",
+   "width": 99,
+   "height": 98,
+   "style": "shape=mxgraph.signs.transportation.bus_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.bus_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-21-bus-2",
+   "title": "Bus 2",
+   "tags": "signs transportation  Bus 2 Bus 2",
+   "kind": "vertex",
+   "width": 99,
+   "height": 26,
+   "style": "shape=mxgraph.signs.transportation.bus_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.bus_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-22-bus-3",
+   "title": "Bus 3",
+   "tags": "signs transportation  Bus 3 Bus 3",
+   "kind": "vertex",
+   "width": 99,
+   "height": 33,
+   "style": "shape=mxgraph.signs.transportation.bus_3;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.bus_3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-23-bus-4",
+   "title": "Bus 4",
+   "tags": "signs transportation  Bus 4 Bus 4",
+   "kind": "vertex",
+   "width": 81,
+   "height": 100,
+   "style": "shape=mxgraph.signs.transportation.bus_4;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.bus_4"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-24-car-1",
+   "title": "Car 1",
+   "tags": "signs transportation  Car 1 Car 1",
+   "kind": "vertex",
+   "width": 99,
+   "height": 88,
+   "style": "shape=mxgraph.signs.transportation.car_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.car_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-25-car-2",
+   "title": "Car 2",
+   "tags": "signs transportation  Car 2 Car 2",
+   "kind": "vertex",
+   "width": 100,
+   "height": 33,
+   "style": "shape=mxgraph.signs.transportation.car_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.car_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-26-car-3",
+   "title": "Car 3",
+   "tags": "signs transportation  Car 3 Car 3",
+   "kind": "vertex",
+   "width": 99,
+   "height": 38,
+   "style": "shape=mxgraph.signs.transportation.car_3;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.car_3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-27-car-4",
+   "title": "Car 4",
+   "tags": "signs transportation  Car 4 Car 4",
+   "kind": "vertex",
+   "width": 98,
+   "height": 86,
+   "style": "shape=mxgraph.signs.transportation.car_4;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.car_4"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-28-car-lock",
+   "title": "Car Lock",
+   "tags": "signs transportation  Car Lock Car Lock",
+   "kind": "vertex",
+   "width": 98,
+   "height": 75,
+   "style": "shape=mxgraph.signs.transportation.car_lock;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.car_lock"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-29-divided-highway",
+   "title": "Divided Highway",
+   "tags": "signs transportation  Divided Highway Divided Highway",
+   "kind": "vertex",
+   "width": 84,
+   "height": 98,
+   "style": "shape=mxgraph.signs.transportation.divided_highway;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.divided_highway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-30-ferry",
+   "title": "Ferry",
+   "tags": "signs transportation  Ferry Ferry",
+   "kind": "vertex",
+   "width": 98,
+   "height": 69,
+   "style": "shape=mxgraph.signs.transportation.ferry;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.ferry"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-31-firetruck",
+   "title": "Firetruck",
+   "tags": "signs transportation  Firetruck Firetruck",
+   "kind": "vertex",
+   "width": 99,
+   "height": 31,
+   "style": "shape=mxgraph.signs.transportation.firetruck;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.firetruck"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-32-forklift",
+   "title": "Forklift",
+   "tags": "signs transportation  Forklift Forklift",
+   "kind": "vertex",
+   "width": 98,
+   "height": 87,
+   "style": "shape=mxgraph.signs.transportation.forklift;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.forklift"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-33-gas-1",
+   "title": "Gas 1",
+   "tags": "signs transportation  Gas 1 Gas 1",
+   "kind": "vertex",
+   "width": 63,
+   "height": 98,
+   "style": "shape=mxgraph.signs.transportation.gas_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.gas_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-34-gas-2",
+   "title": "Gas 2",
+   "tags": "signs transportation  Gas 2 Gas 2",
+   "kind": "vertex",
+   "width": 75,
+   "height": 98,
+   "style": "shape=mxgraph.signs.transportation.gas_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.gas_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-35-gas-3",
+   "title": "Gas 3",
+   "tags": "signs transportation  Gas 3 Gas 3",
+   "kind": "vertex",
+   "width": 97,
+   "height": 98,
+   "style": "shape=mxgraph.signs.transportation.gas_3;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.gas_3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-36-gas-4",
+   "title": "Gas 4",
+   "tags": "signs transportation  Gas 4 Gas 4",
+   "kind": "vertex",
+   "width": 75,
+   "height": 98,
+   "style": "shape=mxgraph.signs.transportation.gas_4;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.gas_4"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-37-ground-transportation",
+   "title": "Ground Transportation",
+   "tags": "signs transportation  Ground Transportation Ground Transportation",
+   "kind": "vertex",
+   "width": 98,
+   "height": 62,
+   "style": "shape=mxgraph.signs.transportation.ground_transportation;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.ground_transportation"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-38-harbor",
+   "title": "Harbor",
+   "tags": "signs transportation  Harbor Harbor",
+   "kind": "vertex",
+   "width": 98,
+   "height": 90,
+   "style": "shape=mxgraph.signs.transportation.harbor;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.harbor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-39-helicopter",
+   "title": "Helicopter",
+   "tags": "signs transportation  Helicopter Helicopter",
+   "kind": "vertex",
+   "width": 100,
+   "height": 63,
+   "style": "shape=mxgraph.signs.transportation.helicopter;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.helicopter"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-40-highway",
+   "title": "Highway",
+   "tags": "signs transportation  Highway Highway",
+   "kind": "vertex",
+   "width": 68,
+   "height": 98,
+   "style": "shape=mxgraph.signs.transportation.highway;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.highway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-41-jeep-1",
+   "title": "Jeep 1",
+   "tags": "signs transportation  Jeep 1 Jeep 1",
+   "kind": "vertex",
+   "width": 98,
+   "height": 53,
+   "style": "shape=mxgraph.signs.transportation.jeep_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.jeep_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-42-jeep-2",
+   "title": "Jeep 2",
+   "tags": "signs transportation  Jeep 2 Jeep 2",
+   "kind": "vertex",
+   "width": 99,
+   "height": 48,
+   "style": "shape=mxgraph.signs.transportation.jeep_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.jeep_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-43-lighthouse-1",
+   "title": "Lighthouse 1",
+   "tags": "signs transportation  Lighthouse 1 Lighthouse 1",
+   "kind": "vertex",
+   "width": 98,
+   "height": 98,
+   "style": "shape=mxgraph.signs.transportation.lighthouse_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.lighthouse_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-44-lighthouse-2",
+   "title": "Lighthouse 2",
+   "tags": "signs transportation  Lighthouse 2 Lighthouse 2",
+   "kind": "vertex",
+   "width": 55,
+   "height": 98,
+   "style": "shape=mxgraph.signs.transportation.lighthouse_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.lighthouse_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-45-moped-1",
+   "title": "Moped 1",
+   "tags": "signs transportation  Moped 1 Moped 1",
+   "kind": "vertex",
+   "width": 98,
+   "height": 57,
+   "style": "shape=mxgraph.signs.transportation.moped_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.moped_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-46-moped-2",
+   "title": "Moped 2",
+   "tags": "signs transportation  Moped 2 Moped 2",
+   "kind": "vertex",
+   "width": 98,
+   "height": 54,
+   "style": "shape=mxgraph.signs.transportation.moped_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.moped_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-47-motorcycle",
+   "title": "Motorcycle",
+   "tags": "signs transportation  Motorcycle Motorcycle",
+   "kind": "vertex",
+   "width": 98,
+   "height": 66,
+   "style": "shape=mxgraph.signs.transportation.motorcycle;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.motorcycle"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-48-partially-submerged-wreck",
+   "title": "Partially Submerged Wreck",
+   "tags": "signs transportation  Partially Submerged Wreck Partially Submerged Wreck",
+   "kind": "vertex",
+   "width": 98,
+   "height": 76,
+   "style": "shape=mxgraph.signs.transportation.partially_submerged_wreck;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.partially_submerged_wreck"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-49-radiator-water",
+   "title": "Radiator Water",
+   "tags": "signs transportation  Radiator Water Radiator Water",
+   "kind": "vertex",
+   "width": 98,
+   "height": 94,
+   "style": "shape=mxgraph.signs.transportation.radiator_water;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.radiator_water"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-50-scooter",
+   "title": "Scooter",
+   "tags": "signs transportation  Scooter Scooter",
+   "kind": "vertex",
+   "width": 99,
+   "height": 64,
+   "style": "shape=mxgraph.signs.transportation.scooter;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.scooter"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-51-seat-belt",
+   "title": "Seat Belt",
+   "tags": "signs transportation  Seat Belt Seat Belt",
+   "kind": "vertex",
+   "width": 81,
+   "height": 98,
+   "style": "shape=mxgraph.signs.transportation.seat_belt;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.seat_belt"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-52-sea-plane",
+   "title": "Sea Plane",
+   "tags": "signs transportation  Sea Plane Sea Plane",
+   "kind": "vertex",
+   "width": 99,
+   "height": 68,
+   "style": "shape=mxgraph.signs.transportation.sea_plane;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.sea_plane"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-53-ship-1",
+   "title": "Ship 1",
+   "tags": "signs transportation  Ship 1 Ship 1",
+   "kind": "vertex",
+   "width": 98,
+   "height": 52,
+   "style": "shape=mxgraph.signs.transportation.ship_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.ship_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-54-ship-2",
+   "title": "Ship 2",
+   "tags": "signs transportation  Ship 2 Ship 2",
+   "kind": "vertex",
+   "width": 99,
+   "height": 98,
+   "style": "shape=mxgraph.signs.transportation.ship_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.ship_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-55-tank",
+   "title": "Tank",
+   "tags": "signs transportation  Tank Tank",
+   "kind": "vertex",
+   "width": 100,
+   "height": 50,
+   "style": "shape=mxgraph.signs.transportation.tank;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.tank"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-56-taxi",
+   "title": "Taxi",
+   "tags": "signs transportation  Taxi Taxi",
+   "kind": "vertex",
+   "width": 98,
+   "height": 94,
+   "style": "shape=mxgraph.signs.transportation.taxi;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.taxi"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-57-tow-away",
+   "title": "Tow Away",
+   "tags": "signs transportation  Tow Away Tow Away",
+   "kind": "vertex",
+   "width": 98,
+   "height": 31,
+   "style": "shape=mxgraph.signs.transportation.tow_away;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.tow_away"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-58-tractor-1",
+   "title": "Tractor 1",
+   "tags": "signs transportation  Tractor 1 Tractor 1",
+   "kind": "vertex",
+   "width": 99,
+   "height": 76,
+   "style": "shape=mxgraph.signs.transportation.tractor_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.tractor_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-59-tractor-2",
+   "title": "Tractor 2",
+   "tags": "signs transportation  Tractor 2 Tractor 2",
+   "kind": "vertex",
+   "width": 99,
+   "height": 75,
+   "style": "shape=mxgraph.signs.transportation.tractor_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.tractor_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-60-train-1",
+   "title": "Train 1",
+   "tags": "signs transportation  Train 1 Train 1",
+   "kind": "vertex",
+   "width": 51,
+   "height": 98,
+   "style": "shape=mxgraph.signs.transportation.train_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.train_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-61-train-2",
+   "title": "Train 2",
+   "tags": "signs transportation  Train 2 Train 2",
+   "kind": "vertex",
+   "width": 66,
+   "height": 99,
+   "style": "shape=mxgraph.signs.transportation.train_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.train_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-62-train-3",
+   "title": "Train 3",
+   "tags": "signs transportation  Train 3 Train 3",
+   "kind": "vertex",
+   "width": 99,
+   "height": 62,
+   "style": "shape=mxgraph.signs.transportation.train_3;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.train_3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-63-train-station",
+   "title": "Train Station",
+   "tags": "signs transportation  Train Station Train Station",
+   "kind": "vertex",
+   "width": 98,
+   "height": 99,
+   "style": "shape=mxgraph.signs.transportation.train_station;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.train_station"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-64-tram-1",
+   "title": "Tram 1",
+   "tags": "signs transportation  Tram 1 Tram 1",
+   "kind": "vertex",
+   "width": 98,
+   "height": 51,
+   "style": "shape=mxgraph.signs.transportation.tram_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.tram_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-65-tram-2",
+   "title": "Tram 2",
+   "tags": "signs transportation  Tram 2 Tram 2",
+   "kind": "vertex",
+   "width": 99,
+   "height": 52,
+   "style": "shape=mxgraph.signs.transportation.tram_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.tram_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-66-truck-1",
+   "title": "Truck 1",
+   "tags": "signs transportation  Truck 1 Truck 1",
+   "kind": "vertex",
+   "width": 99,
+   "height": 51,
+   "style": "shape=mxgraph.signs.transportation.truck_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.truck_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-67-truck-2",
+   "title": "Truck 2",
+   "tags": "signs transportation  Truck 2 Truck 2",
+   "kind": "vertex",
+   "width": 99,
+   "height": 49,
+   "style": "shape=mxgraph.signs.transportation.truck_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.truck_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-68-truck-3",
+   "title": "Truck 3",
+   "tags": "signs transportation  Truck 3 Truck 3",
+   "kind": "vertex",
+   "width": 98,
+   "height": 44,
+   "style": "shape=mxgraph.signs.transportation.truck_3;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.truck_3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-69-truck-4",
+   "title": "Truck 4",
+   "tags": "signs transportation  Truck 4 Truck 4",
+   "kind": "vertex",
+   "width": 99,
+   "height": 33,
+   "style": "shape=mxgraph.signs.transportation.truck_4;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.truck_4"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-70-truck-5",
+   "title": "Truck 5",
+   "tags": "signs transportation  Truck 5 Truck 5",
+   "kind": "vertex",
+   "width": 99,
+   "height": 27,
+   "style": "shape=mxgraph.signs.transportation.truck_5;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.truck_5"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-71-truck-6",
+   "title": "Truck 6",
+   "tags": "signs transportation  Truck 6 Truck 6",
+   "kind": "vertex",
+   "width": 79,
+   "height": 98,
+   "style": "shape=mxgraph.signs.transportation.truck_6;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.truck_6"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-72-truck-7",
+   "title": "Truck 7",
+   "tags": "signs transportation  Truck 7 Truck 7",
+   "kind": "vertex",
+   "width": 99,
+   "height": 41,
+   "style": "shape=mxgraph.signs.transportation.truck_7;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.truck_7"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-73-uneven-road",
+   "title": "Uneven Road",
+   "tags": "signs transportation  Uneven Road Uneven Road",
+   "kind": "vertex",
+   "width": 99,
+   "height": 68,
+   "style": "shape=mxgraph.signs.transportation.uneven_road;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.uneven_road"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  },
+  {
+   "id": "signsTransportation-74-vehicle-ferry",
+   "title": "Vehicle Ferry",
+   "tags": "signs transportation  Vehicle Ferry Vehicle Ferry",
+   "kind": "vertex",
+   "width": 99,
+   "height": 66,
+   "style": "shape=mxgraph.signs.transportation.vehicle_ferry;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;",
+   "shapeNames": [
+    "mxgraph.signs.transportation.vehicle_ferry"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Signs.js:12"
+  }
+ ]
+}

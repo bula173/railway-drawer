@@ -1,0 +1,330 @@
+{
+ "id": "ciscoRouters",
+ "title": "Cisco / Routers",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Cisco.js:9",
+ "entries": [
+  {
+   "id": "ciscoRouters-0-10700",
+   "title": "10700",
+   "tags": "cisco 10700 cisco router  10700",
+   "kind": "vertex",
+   "width": 78,
+   "height": 53,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.routers.10700;",
+   "shapeNames": [
+    "mxgraph.cisco.routers.10700"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:356"
+  },
+  {
+   "id": "ciscoRouters-1-atm-router",
+   "title": "ATM Router",
+   "tags": "cisco atm router cisco router  ATM Router",
+   "kind": "vertex",
+   "width": 78,
+   "height": 53,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.routers.atm_router;",
+   "shapeNames": [
+    "mxgraph.cisco.routers.atm_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:357"
+  },
+  {
+   "id": "ciscoRouters-2-atm-tag-switch-router",
+   "title": "ATM Tag Switch Router",
+   "tags": "cisco atm tag switch router cisco router  ATM Tag Switch Router",
+   "kind": "vertex",
+   "width": 64,
+   "height": 82,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.routers.atm_tag_switch_router;",
+   "shapeNames": [
+    "mxgraph.cisco.routers.atm_tag_switch_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:358"
+  },
+  {
+   "id": "ciscoRouters-3-broadcast-router",
+   "title": "Broadcast Router",
+   "tags": "cisco broadcast router cisco router  Broadcast Router",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.routers.broadcast_router;",
+   "shapeNames": [
+    "mxgraph.cisco.routers.broadcast_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:359"
+  },
+  {
+   "id": "ciscoRouters-4-content-service-router",
+   "title": "Content Service Router",
+   "tags": "cisco content service router cisco router  Content Service Router",
+   "kind": "vertex",
+   "width": 78,
+   "height": 53,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.routers.content_service_router;",
+   "shapeNames": [
+    "mxgraph.cisco.routers.content_service_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:360"
+  },
+  {
+   "id": "ciscoRouters-5-gigabit-switch-atm-tag-router",
+   "title": "Gigabit Switch ATM Tag Router",
+   "tags": "cisco gigabit switch atm tag router cisco router  Gigabit Switch ATM Tag Router",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.routers.gigabit_switch_atm_tag_router;",
+   "shapeNames": [
+    "mxgraph.cisco.routers.gigabit_switch_atm_tag_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:361"
+  },
+  {
+   "id": "ciscoRouters-6-iad-router",
+   "title": "IAD Router",
+   "tags": "cisco iad router cisco router  IAD Router",
+   "kind": "vertex",
+   "width": 78,
+   "height": 53,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.routers.iad_router;",
+   "shapeNames": [
+    "mxgraph.cisco.routers.iad_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:362"
+  },
+  {
+   "id": "ciscoRouters-7-ip-telephony-router",
+   "title": "IP Telephony Router",
+   "tags": "cisco ip telephony router cisco router  IP Telephony Router",
+   "kind": "vertex",
+   "width": 78,
+   "height": 69,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.routers.ip_telephony_router;",
+   "shapeNames": [
+    "mxgraph.cisco.routers.ip_telephony_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:363"
+  },
+  {
+   "id": "ciscoRouters-8-isci-router",
+   "title": "ISCI Router",
+   "tags": "cisco isci router cisco router  ISCI Router",
+   "kind": "vertex",
+   "width": 101,
+   "height": 75,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.routers.isci_router;",
+   "shapeNames": [
+    "mxgraph.cisco.routers.isci_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:364"
+  },
+  {
+   "id": "ciscoRouters-9-mobile-access-router",
+   "title": "Mobile Access Router",
+   "tags": "cisco mobile access router cisco router  Mobile Access Router",
+   "kind": "vertex",
+   "width": 99,
+   "height": 57.99999999999999,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.routers.mobile_access_router;",
+   "shapeNames": [
+    "mxgraph.cisco.routers.mobile_access_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:365"
+  },
+  {
+   "id": "ciscoRouters-10-nce-router",
+   "title": "NCE Router",
+   "tags": "cisco nce router cisco router  NCE Router",
+   "kind": "vertex",
+   "width": 78,
+   "height": 53,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.routers.nce_router;",
+   "shapeNames": [
+    "mxgraph.cisco.routers.nce_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:366"
+  },
+  {
+   "id": "ciscoRouters-11-netflow-router",
+   "title": "NetFlow Router",
+   "tags": "cisco netflow router cisco router  NetFlow Router",
+   "kind": "vertex",
+   "width": 77,
+   "height": 50,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.routers.netflow_router;",
+   "shapeNames": [
+    "mxgraph.cisco.routers.netflow_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:367"
+  },
+  {
+   "id": "ciscoRouters-12-optical-services-router",
+   "title": "Optical Services Router",
+   "tags": "cisco optical services router cisco router  Optical Services Router",
+   "kind": "vertex",
+   "width": 74,
+   "height": 64,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.routers.optical_services_router;",
+   "shapeNames": [
+    "mxgraph.cisco.routers.optical_services_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:368"
+  },
+  {
+   "id": "ciscoRouters-13-router",
+   "title": "Router",
+   "tags": "cisco router cisco router  Router",
+   "kind": "vertex",
+   "width": 78,
+   "height": 53,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.routers.router;",
+   "shapeNames": [
+    "mxgraph.cisco.routers.router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:369"
+  },
+  {
+   "id": "ciscoRouters-14-router-in-building",
+   "title": "Router In Building",
+   "tags": "cisco router in building cisco router  Router In Building",
+   "kind": "vertex",
+   "width": 91,
+   "height": 138,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.routers.router_in_building;",
+   "shapeNames": [
+    "mxgraph.cisco.routers.router_in_building"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:370"
+  },
+  {
+   "id": "ciscoRouters-15-router-with-silicon-switch",
+   "title": "Router with Silicon Switch",
+   "tags": "cisco router with silicon switch cisco router  Router with Silicon Switch",
+   "kind": "vertex",
+   "width": 72,
+   "height": 48,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.routers.router_with_silicon_switch;",
+   "shapeNames": [
+    "mxgraph.cisco.routers.router_with_silicon_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:371"
+  },
+  {
+   "id": "ciscoRouters-16-service-router",
+   "title": "Service Router",
+   "tags": "cisco service router cisco router  Service Router",
+   "kind": "vertex",
+   "width": 78,
+   "height": 53,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.routers.service_router;",
+   "shapeNames": [
+    "mxgraph.cisco.routers.service_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:372"
+  },
+  {
+   "id": "ciscoRouters-17-space-router",
+   "title": "Space Router",
+   "tags": "cisco space router cisco router  Space Router",
+   "kind": "vertex",
+   "width": 134,
+   "height": 70,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.routers.space_router;",
+   "shapeNames": [
+    "mxgraph.cisco.routers.space_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:373"
+  },
+  {
+   "id": "ciscoRouters-18-storage-router",
+   "title": "Storage Router",
+   "tags": "cisco storage router cisco router  Storage Router",
+   "kind": "vertex",
+   "width": 69,
+   "height": 51,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.routers.storage_router;",
+   "shapeNames": [
+    "mxgraph.cisco.routers.storage_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:374"
+  },
+  {
+   "id": "ciscoRouters-19-tdm-router",
+   "title": "TDM Router",
+   "tags": "cisco tdm router cisco router  TDM Router",
+   "kind": "vertex",
+   "width": 78,
+   "height": 53,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.routers.tdm_router;",
+   "shapeNames": [
+    "mxgraph.cisco.routers.tdm_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:375"
+  },
+  {
+   "id": "ciscoRouters-20-voice-router",
+   "title": "Voice Router",
+   "tags": "cisco voice router cisco router  Voice Router",
+   "kind": "vertex",
+   "width": 78,
+   "height": 53,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.routers.voice_router;",
+   "shapeNames": [
+    "mxgraph.cisco.routers.voice_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:376"
+  },
+  {
+   "id": "ciscoRouters-21-wavelength-router",
+   "title": "Wavelength Router",
+   "tags": "cisco wavelength router cisco router  Wavelength Router",
+   "kind": "vertex",
+   "width": 77,
+   "height": 50,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.routers.wavelength_router;",
+   "shapeNames": [
+    "mxgraph.cisco.routers.wavelength_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:377"
+  },
+  {
+   "id": "ciscoRouters-22-wireless-router",
+   "title": "Wireless Router",
+   "tags": "cisco wireless router cisco router  Wireless Router",
+   "kind": "vertex",
+   "width": 78,
+   "height": 77,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.routers.wireless_router;",
+   "shapeNames": [
+    "mxgraph.cisco.routers.wireless_router"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:378"
+  }
+ ]
+}

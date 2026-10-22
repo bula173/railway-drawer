@@ -1,0 +1,78 @@
+{
+ "id": "eipMessage Transformation",
+ "title": "EIP / Message Transformation",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-EIP.js:7",
+ "entries": [
+  {
+   "id": "eipMessage Transformation-0-claim-check",
+   "title": "Claim Check",
+   "tags": "eip claim check eip enterprise integration pattern message transformation  Claim Check",
+   "kind": "vertex",
+   "width": 150,
+   "height": 90,
+   "style": "html=1;strokeWidth=2;outlineConnect=0;dashed=0;align=center;fontSize=8;fillColor=#c0f5a9;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.eip.claim_check;",
+   "shapeNames": [
+    "mxgraph.eip.claim_check"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:154"
+  },
+  {
+   "id": "eipMessage Transformation-1-content-enricher",
+   "title": "Content Enricher",
+   "tags": "eip content enricher eip enterprise integration pattern message transformation  Content Enricher",
+   "kind": "vertex",
+   "width": 150,
+   "height": 90,
+   "style": "html=1;strokeWidth=2;outlineConnect=0;dashed=0;align=center;fontSize=8;fillColor=#c0f5a9;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.eip.content_enricher;",
+   "shapeNames": [
+    "mxgraph.eip.content_enricher"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:156"
+  },
+  {
+   "id": "eipMessage Transformation-2-content-filter",
+   "title": "Content Filter",
+   "tags": "eip content filter eip enterprise integration pattern message transformation  Content Filter",
+   "kind": "vertex",
+   "width": 150,
+   "height": 90,
+   "style": "html=1;strokeWidth=2;outlineConnect=0;dashed=0;align=center;fontSize=8;fillColor=#c0f5a9;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.eip.content_filter;",
+   "shapeNames": [
+    "mxgraph.eip.content_filter"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:158"
+  },
+  {
+   "id": "eipMessage Transformation-3-envelope-wrapper",
+   "title": "Envelope Wrapper",
+   "tags": "eip envelope wrapper eip enterprise integration pattern message transformation  Envelope Wrapper",
+   "kind": "vertex",
+   "width": 150,
+   "height": 90,
+   "style": "html=1;strokeWidth=2;outlineConnect=0;dashed=0;align=center;fontSize=8;fillColor=#c0f5a9;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.eip.envelope_wrapper;",
+   "shapeNames": [
+    "mxgraph.eip.envelope_wrapper"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:160"
+  },
+  {
+   "id": "eipMessage Transformation-4-normalizer",
+   "title": "Normalizer",
+   "tags": "eip normalizer eip enterprise integration pattern message transformation  Normalizer",
+   "kind": "vertex",
+   "width": 150,
+   "height": 90,
+   "style": "html=1;strokeWidth=2;outlineConnect=0;dashed=0;align=center;fontSize=8;fillColor=#c0f5a9;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.eip.normalizer;",
+   "shapeNames": [
+    "mxgraph.eip.normalizer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-EIP.js:162"
+  }
+ ]
+}

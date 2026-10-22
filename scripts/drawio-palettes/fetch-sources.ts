@@ -62,8 +62,122 @@ export const SHA256: Record<string, string> = {
   'src/main/webapp/shapes/mxFlowchart.js': 'd427b1de3d5ea968d06c7bbbc20decb429d69269ed09574819eb90d4ade3d3b5',
 };
 
+/**
+ * Commit the tag points to (annotated tag ea90828c… -> commit). Everything below is fetched by
+ * commit, not by tag, and each file is checked against the git blob SHA-1 of that commit's tree,
+ * so a moved tag or a corrupt download cannot change the generated data.
+ */
+export const DRAWIO_COMMIT = '9034053fba80a435e27d68d374bc564b83917ae9';
+export const DRAWIO_TREE = '033aec3d561f0a4c099ae3dda9317090cf5a8d6a';
+export const COMMIT_RAW_BASE = `https://raw.githubusercontent.com/jgraph/drawio/${DRAWIO_COMMIT}/`;
+export const TREE_API_URL = `https://api.github.com/repos/jgraph/drawio/git/trees/${DRAWIO_COMMIT}?recursive=1`;
+
+/**
+ * Directories fetched in full (every file listed in the commit's tree, markdown skipped):
+ * all sidebar palettes, all JS shape libraries, all palette images (img/lib, clipart, ...).
+ */
+export const SOURCE_DIRS = [
+  WEBAPP + 'js/diagramly/sidebar/',
+  WEBAPP + 'shapes/',
+  WEBAPP + 'img/',
+] as const;
+
+/** Single files fetched by commit in addition to SOURCE_FILES. */
+export const COMMIT_FILES = [
+  // mxStencilRegistry.libraries (basename -> stencil XML / shape JS files)
+  WEBAPP + 'js/diagramly/Editor.js',
+  // MoreShapesDialog: the "More shapes" categories and library titles
+  WEBAPP + 'js/diagramly/Dialogs.js',
+  // English UI strings (mxResources.get) used for palette titles
+  WEBAPP + 'resources/dia.txt',
+  WEBAPP + 'templates/LICENSE',
+  // constants and helpers the vendored shape libraries use (values / reference for the shim)
+  WEBAPP + 'mxgraph/src/util/mxConstants.js',
+  WEBAPP + 'mxgraph/src/util/mxUtils.js',
+  WEBAPP + 'js/grapheditor/Graph.js',
+] as const;
+
 export function sourceUrl(repoPath: string): string {
   return RAW_BASE + repoPath;
+}
+
+interface TreeEntry { path: string; type: string; sha: string; size?: number }
+
+/** git blob id: sha1("blob <len>\0" + content). */
+function gitBlobSha(buf: Buffer): string {
+  return createHash('sha1').update(`blob ${buf.length}\0`).update(buf).digest('hex');
+}
+
+/** Loads (and caches) the recursive git tree of DRAWIO_COMMIT. */
+async function loadTree(force: boolean): Promise<TreeEntry[]> {
+  const dest = path.join(CACHE_DIR, `tree-${DRAWIO_COMMIT}.json`);
+  let json: { sha?: string; truncated?: boolean; tree: TreeEntry[] };
+  if (!force && fs.existsSync(dest)) {
+    json = JSON.parse(fs.readFileSync(dest, 'utf8'));
+  } else {
+    const res = await fetch(TREE_API_URL, { headers: { Accept: 'application/vnd.github+json' } });
+    if (!res.ok) throw new Error(`GET ${TREE_API_URL} -> HTTP ${res.status}`);
+    json = await res.json() as typeof json;
+    fs.writeFileSync(dest, JSON.stringify(json));
+  }
+  if (json.truncated) throw new Error('git tree listing is truncated');
+  if (json.sha !== DRAWIO_TREE && json.sha !== DRAWIO_COMMIT) {
+    throw new Error(`unexpected tree ${json.sha} for commit ${DRAWIO_COMMIT}`);
+  }
+  return json.tree;
+}
+
+/** Repo paths (+ blob ids) of every file under SOURCE_DIRS plus COMMIT_FILES. */
+export function selectTreeFiles(tree: readonly TreeEntry[]): TreeEntry[] {
+  return tree.filter((e) => e.type === 'blob' && !/\.md$/i.test(e.path) &&
+    (SOURCE_DIRS.some((d) => e.path.startsWith(d)) || (COMMIT_FILES as readonly string[]).includes(e.path)));
+}
+
+/** Lists the cached repo paths under a directory prefix (after fetchTreeSources). */
+export function listSources(prefix: string): string[] {
+  const manifest = path.join(CACHE_DIR, 'tree-files.json');
+  if (!fs.existsSync(manifest)) throw new Error(`Missing ${manifest}. Run: node scripts/drawio-palettes/fetch-sources.ts`);
+  const files = JSON.parse(fs.readFileSync(manifest, 'utf8')) as string[];
+  return files.filter((f) => f.startsWith(prefix));
+}
+
+/** Downloads SOURCE_DIRS + COMMIT_FILES by commit (cached), verifying each git blob id. */
+export async function fetchTreeSources(opts: { force?: boolean } = {}): Promise<void> {
+  const tree = await loadTree(!!opts.force);
+  const files = selectTreeFiles(tree);
+  for (const f of COMMIT_FILES) if (!files.some((e) => e.path === f)) throw new Error(`${f} not in tree`);
+  let fetched = 0;
+  let next = 0;
+  const worker = async (): Promise<void> => {
+    while (next < files.length) {
+      const e = files[next++];
+      const dest = cachePath(e.path);
+      let buf: Buffer | null = null;
+      if (!opts.force && fs.existsSync(dest)) {
+        buf = fs.readFileSync(dest);
+        if (gitBlobSha(buf) !== e.sha) buf = null;
+      }
+      if (buf == null) {
+        const url = COMMIT_RAW_BASE + e.path.split('/').map(encodeURIComponent).join('/');
+        let lastErr: unknown = null;
+        for (let attempt = 0; attempt < 4 && buf == null; attempt++) {
+          try {
+            const res = await fetch(url);
+            if (!res.ok) throw new Error(`GET ${url} -> HTTP ${res.status}`);
+            buf = Buffer.from(await res.arrayBuffer());
+          } catch (err) { lastErr = err; }
+        }
+        if (buf == null) throw lastErr instanceof Error ? lastErr : new Error(String(lastErr));
+        if (gitBlobSha(buf) !== e.sha) throw new Error(`git blob mismatch for ${e.path}`);
+        fs.mkdirSync(path.dirname(dest), { recursive: true });
+        fs.writeFileSync(dest, buf);
+        fetched++;
+      }
+    }
+  };
+  await Promise.all(Array.from({ length: 16 }, worker));
+  fs.writeFileSync(path.join(CACHE_DIR, 'tree-files.json'), JSON.stringify(files.map((e) => e.path).sort()));
+  console.log(`draw.io ${DRAWIO_TAG} (${DRAWIO_COMMIT.slice(0, 10)}): ${files.length} tree files OK (${fetched} downloaded)`);
 }
 
 export function cachePath(repoPath: string): string {
@@ -134,6 +248,7 @@ const isMain = process.argv[1] != null && path.resolve(process.argv[1]) === file
 if (isMain) {
   const args = process.argv.slice(2);
   fetchSources({ force: args.includes('--force'), printHashes: args.includes('--print-hashes') })
+    .then(() => fetchTreeSources({ force: args.includes('--force') }))
     .then(() => copyLicenses())
     .catch((e: unknown) => {
       console.error(e instanceof Error ? e.message : e);

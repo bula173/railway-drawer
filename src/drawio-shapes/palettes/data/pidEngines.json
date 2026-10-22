@@ -1,0 +1,127 @@
+{
+ "id": "pidEngines",
+ "title": "Process Engineering / Engines",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-PID.js:8",
+ "entries": [
+  {
+   "id": "pidEngines-0-electric-motor",
+   "title": "Electric Motor",
+   "tags": "pid engines electric motor pid process instrumentation engine motor  Electric Motor",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "dashed=0;outlineConnect=0;align=center;html=1;shape=mxgraph.pid.engines.electric_motor;fontSize=45;",
+   "value": "M",
+   "shapeNames": [
+    "mxgraph.pid.engines.electric_motor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:237"
+  },
+  {
+   "id": "pidEngines-1-electric-motor-ac",
+   "title": "Electric Motor (AC)",
+   "tags": "pid engines electric motor (ac) pid process instrumentation engine motor  Electric Motor (AC)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "dashed=0;outlineConnect=0;align=center;html=1;shape=mxgraph.pid.engines.electric_motor_(ac);fontSize=45;",
+   "value": "M",
+   "shapeNames": [
+    "mxgraph.pid.engines.electric_motor_(ac)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:238"
+  },
+  {
+   "id": "pidEngines-2-electric-motor-dc",
+   "title": "Electric Motor (DC)",
+   "tags": "pid engines electric motor (dc) pid process instrumentation engine motor  Electric Motor (DC)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "dashed=0;outlineConnect=0;align=center;html=1;shape=mxgraph.pid.engines.electric_motor_(dc);fontSize=45;",
+   "value": "M",
+   "shapeNames": [
+    "mxgraph.pid.engines.electric_motor_(dc)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:239"
+  },
+  {
+   "id": "pidEngines-3-gear",
+   "title": "Gear",
+   "tags": "pid engines gear pid process instrumentation engine motor  Gear",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "dashed=0;outlineConnect=0;align=center;html=1;shape=mxgraph.pid.engines.gear;fontSize=45;",
+   "value": "G",
+   "shapeNames": [
+    "mxgraph.pid.engines.gear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:240"
+  },
+  {
+   "id": "pidEngines-4-generator",
+   "title": "Generator",
+   "tags": "pid engines generator pid process instrumentation engine motor  Generator",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "dashed=0;outlineConnect=0;align=center;html=1;shape=mxgraph.pid.engines.generator;fontSize=45;",
+   "value": "G",
+   "shapeNames": [
+    "mxgraph.pid.engines.generator"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:241"
+  },
+  {
+   "id": "pidEngines-5-generator-ac",
+   "title": "Generator (AC)",
+   "tags": "pid engines generator (ac) pid process instrumentation engine motor  Generator (AC)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "dashed=0;outlineConnect=0;align=center;html=1;shape=mxgraph.pid.engines.generator_(ac);fontSize=45;",
+   "value": "G",
+   "shapeNames": [
+    "mxgraph.pid.engines.generator_(ac)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:242"
+  },
+  {
+   "id": "pidEngines-6-generator-dc",
+   "title": "Generator (DC)",
+   "tags": "pid engines generator (dc) pid process instrumentation engine motor  Generator (DC)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "dashed=0;outlineConnect=0;align=center;html=1;shape=mxgraph.pid.engines.generator_(dc);fontSize=45;",
+   "value": "G",
+   "shapeNames": [
+    "mxgraph.pid.engines.generator_(dc)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:243"
+  },
+  {
+   "id": "pidEngines-7-turbine",
+   "title": "Turbine",
+   "tags": "pid engines turbine pid process instrumentation engine motor  Turbine",
+   "kind": "vertex",
+   "width": 70,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.engines.turbine",
+   "shapeNames": [
+    "mxgraph.pid.engines.turbine"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:244"
+  }
+ ]
+}

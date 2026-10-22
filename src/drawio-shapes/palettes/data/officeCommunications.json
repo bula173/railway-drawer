@@ -1,0 +1,988 @@
+{
+ "id": "officeCommunications",
+ "title": "Office / Communications",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Office.js:7",
+ "entries": [
+  {
+   "id": "officeCommunications-0-3rd-party-call-center-solution",
+   "title": "3rd Party Call Center Solution",
+   "tags": "office communications 3rd party call center solution office communication  3rd Party Call Center Solution",
+   "kind": "vertex",
+   "width": 98,
+   "height": 101,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.3rd_party_call_center_solution;",
+   "shapeNames": [
+    "mxgraph.office.communications.3rd_party_call_center_solution"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:98"
+  },
+  {
+   "id": "officeCommunications-1-3rd-party-integration",
+   "title": "3rd Party Integration",
+   "tags": "office communications 3rd party integration office communication  3rd Party Integration",
+   "kind": "vertex",
+   "width": 54,
+   "height": 55,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.3rd_party_integration;",
+   "shapeNames": [
+    "mxgraph.office.communications.3rd_party_integration"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:100"
+  },
+  {
+   "id": "officeCommunications-2-3rd-party-service",
+   "title": "3rd Party Service",
+   "tags": "office communications 3rd party service office communication  3rd Party Service",
+   "kind": "vertex",
+   "width": 53,
+   "height": 54,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.3rd_party_service;",
+   "shapeNames": [
+    "mxgraph.office.communications.3rd_party_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:102"
+  },
+  {
+   "id": "officeCommunications-3-application-sharing-workload",
+   "title": "Application Sharing Workload",
+   "tags": "office communications application sharing workload office communication  Application Sharing Workload",
+   "kind": "vertex",
+   "width": 57,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.application_sharing_workload;",
+   "shapeNames": [
+    "mxgraph.office.communications.application_sharing_workload"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:104"
+  },
+  {
+   "id": "officeCommunications-4-audio-conferencing-application",
+   "title": "Audio Conferencing Application",
+   "tags": "office communications audio conferencing application office communication  Audio Conferencing Application",
+   "kind": "vertex",
+   "width": 59,
+   "height": 46,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.audio_conferencing_application;",
+   "shapeNames": [
+    "mxgraph.office.communications.audio_conferencing_application"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:106"
+  },
+  {
+   "id": "officeCommunications-5-central-management-service",
+   "title": "Central Management Service",
+   "tags": "office communications central management service office communication  Central Management Service",
+   "kind": "vertex",
+   "width": 52,
+   "height": 55,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.central_management_service;",
+   "shapeNames": [
+    "mxgraph.office.communications.central_management_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:108"
+  },
+  {
+   "id": "officeCommunications-6-chat-room",
+   "title": "Chat Room",
+   "tags": "office communications chat room office communication  Chat Room",
+   "kind": "vertex",
+   "width": 46,
+   "height": 48,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.chat_room;",
+   "shapeNames": [
+    "mxgraph.office.communications.chat_room"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:110"
+  },
+  {
+   "id": "officeCommunications-7-conference-announcement-service",
+   "title": "Conference Announcement Service",
+   "tags": "office communications conference announcement service office communication  Conference Announcement Service",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.conference_announcement_service;",
+   "shapeNames": [
+    "mxgraph.office.communications.conference_announcement_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:112"
+  },
+  {
+   "id": "officeCommunications-8-disconnected-mailbox",
+   "title": "Disconnected Mailbox",
+   "tags": "office communications disconnected mailbox office communication  Disconnected Mailbox",
+   "kind": "vertex",
+   "width": 60,
+   "height": 55,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.disconnected_mailbox;",
+   "shapeNames": [
+    "mxgraph.office.communications.disconnected_mailbox"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:114"
+  },
+  {
+   "id": "officeCommunications-9-discovery-search-mailbox",
+   "title": "Discovery Search Mailbox",
+   "tags": "office communications discovery search mailbox office communication  Discovery Search Mailbox",
+   "kind": "vertex",
+   "width": 55,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.discovery_search_mailbox;",
+   "shapeNames": [
+    "mxgraph.office.communications.discovery_search_mailbox"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:116"
+  },
+  {
+   "id": "officeCommunications-10-dynamic-distribution-group",
+   "title": "Dynamic Distribution Group",
+   "tags": "office communications dynamic distribution group office communication  Dynamic Distribution Group",
+   "kind": "vertex",
+   "width": 58,
+   "height": 59,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.dynamic_distribution_group;",
+   "shapeNames": [
+    "mxgraph.office.communications.dynamic_distribution_group"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:118"
+  },
+  {
+   "id": "officeCommunications-11-edge-subscription",
+   "title": "Edge Subscription",
+   "tags": "office communications edge subscription office communication  Edge Subscription",
+   "kind": "vertex",
+   "width": 57,
+   "height": 59,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.edge_subscription;",
+   "shapeNames": [
+    "mxgraph.office.communications.edge_subscription"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:120"
+  },
+  {
+   "id": "officeCommunications-12-email-workloaad",
+   "title": "Email Workloaad",
+   "tags": "office communications email workloaad office communication  Email Workloaad",
+   "kind": "vertex",
+   "width": 57,
+   "height": 47,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.email_workloaad;",
+   "shapeNames": [
+    "mxgraph.office.communications.email_workloaad"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:122"
+  },
+  {
+   "id": "officeCommunications-13-equipment-mailbox",
+   "title": "Equipment Mailbox",
+   "tags": "office communications equipment mailbox office communication  Equipment Mailbox",
+   "kind": "vertex",
+   "width": 59,
+   "height": 59,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.equipment_mailbox;",
+   "shapeNames": [
+    "mxgraph.office.communications.equipment_mailbox"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:124"
+  },
+  {
+   "id": "officeCommunications-14-exchange-active-sync",
+   "title": "Exchange Active Sync",
+   "tags": "office communications exchange active sync office communication  Exchange Active Sync",
+   "kind": "vertex",
+   "width": 49,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.exchange_active_sync;",
+   "shapeNames": [
+    "mxgraph.office.communications.exchange_active_sync"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:126"
+  },
+  {
+   "id": "officeCommunications-15-exchange-active-sync-blue",
+   "title": "Exchange Active Sync - Blue",
+   "tags": "office communications exchange active sync office communication  Exchange Active Sync - Blue",
+   "kind": "vertex",
+   "width": 49,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.exchange_active_sync;fillColor=#2072B8;",
+   "shapeNames": [
+    "mxgraph.office.communications.exchange_active_sync"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:128"
+  },
+  {
+   "id": "officeCommunications-16-fax-partner",
+   "title": "Fax Partner",
+   "tags": "office communications fax partner office communication  Fax Partner",
+   "kind": "vertex",
+   "width": 45,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.fax_partner;",
+   "shapeNames": [
+    "mxgraph.office.communications.fax_partner"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:130"
+  },
+  {
+   "id": "officeCommunications-17-global-address-list",
+   "title": "Global Address List",
+   "tags": "office communications global address list office communication  Global Address List",
+   "kind": "vertex",
+   "width": 59,
+   "height": 53,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.global_address_list;",
+   "shapeNames": [
+    "mxgraph.office.communications.global_address_list"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:132"
+  },
+  {
+   "id": "officeCommunications-18-hybrid-voip-gateway",
+   "title": "Hybrid VOIP Gateway",
+   "tags": "office communications hybrid voip gateway office communication  Hybrid VOIP Gateway",
+   "kind": "vertex",
+   "width": 59,
+   "height": 38,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.hybrid_voip_gateway;",
+   "shapeNames": [
+    "mxgraph.office.communications.hybrid_voip_gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:134"
+  },
+  {
+   "id": "officeCommunications-19-im-workload",
+   "title": "IM Workload",
+   "tags": "office communications im workload instant message office communication  IM Workload",
+   "kind": "vertex",
+   "width": 56,
+   "height": 54,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.im_workload;",
+   "shapeNames": [
+    "mxgraph.office.communications.im_workload"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:136"
+  },
+  {
+   "id": "officeCommunications-20-journaling-rule",
+   "title": "Journaling Rule",
+   "tags": "office communications journaling rule office communication  Journaling Rule",
+   "kind": "vertex",
+   "width": 52,
+   "height": 58,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.journaling_rule;",
+   "shapeNames": [
+    "mxgraph.office.communications.journaling_rule"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:138"
+  },
+  {
+   "id": "officeCommunications-21-local-move-request",
+   "title": "Local Move Request",
+   "tags": "office communications local move request office communication  Local Move Request",
+   "kind": "vertex",
+   "width": 57,
+   "height": 57,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.local_move_request;",
+   "shapeNames": [
+    "mxgraph.office.communications.local_move_request"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:140"
+  },
+  {
+   "id": "officeCommunications-22-lync-control-panel",
+   "title": "Lync Control Panel",
+   "tags": "office communications lync control panel office communication  Lync Control Panel",
+   "kind": "vertex",
+   "width": 69,
+   "height": 58,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.lync_control_panel;",
+   "shapeNames": [
+    "mxgraph.office.communications.lync_control_panel"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:142"
+  },
+  {
+   "id": "officeCommunications-23-lync-phone-edition",
+   "title": "Lync Phone Edition",
+   "tags": "office communications lync phone edition office communication  Lync Phone Edition",
+   "kind": "vertex",
+   "width": 80,
+   "height": 45,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.lync_phone_edition;",
+   "shapeNames": [
+    "mxgraph.office.communications.lync_phone_edition"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:144"
+  },
+  {
+   "id": "officeCommunications-24-lync-room-system",
+   "title": "Lync Room System",
+   "tags": "office communications lync room system office communication  Lync Room System",
+   "kind": "vertex",
+   "width": 80,
+   "height": 42,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.lync_room_system;",
+   "shapeNames": [
+    "mxgraph.office.communications.lync_room_system"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:146"
+  },
+  {
+   "id": "officeCommunications-25-lync-server-management-tool",
+   "title": "Lync Server Management Tool",
+   "tags": "office communications lync server management tool office communication  Lync Server Management Tool",
+   "kind": "vertex",
+   "width": 75,
+   "height": 47,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.lync_server_management_tool;",
+   "shapeNames": [
+    "mxgraph.office.communications.lync_server_management_tool"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:148"
+  },
+  {
+   "id": "officeCommunications-26-lync-storage-service",
+   "title": "Lync Storage Service",
+   "tags": "office communications lync storage service office communication  Lync Storage Service",
+   "kind": "vertex",
+   "width": 66,
+   "height": 59,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.lync_storage_service;",
+   "shapeNames": [
+    "mxgraph.office.communications.lync_storage_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:150"
+  },
+  {
+   "id": "officeCommunications-27-lync-web-app-client",
+   "title": "Lync Web App Client",
+   "tags": "office communications lync web app client office communication  Lync Web App Client",
+   "kind": "vertex",
+   "width": 83,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.lync_web_app_client;",
+   "shapeNames": [
+    "mxgraph.office.communications.lync_web_app_client"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:152"
+  },
+  {
+   "id": "officeCommunications-28-mail-enabled-public-folder",
+   "title": "Mail-Enabled Public Folder",
+   "tags": "office communications mail enabled public folder office communication  Mail-Enabled Public Folder",
+   "kind": "vertex",
+   "width": 58,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.mail_enabled_public_folder;",
+   "shapeNames": [
+    "mxgraph.office.communications.mail_enabled_public_folder"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:154"
+  },
+  {
+   "id": "officeCommunications-29-mailbox-assistant",
+   "title": "Mailbox Assistant",
+   "tags": "office communications mailbox assistant office communication  Mailbox Assistant",
+   "kind": "vertex",
+   "width": 59,
+   "height": 57,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.mailbox_assistant;",
+   "shapeNames": [
+    "mxgraph.office.communications.mailbox_assistant"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:156"
+  },
+  {
+   "id": "officeCommunications-30-messages-queued",
+   "title": "Messages Queued",
+   "tags": "office communications messages queued office communication  Messages Queued",
+   "kind": "vertex",
+   "width": 59,
+   "height": 57,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.messages_queued;",
+   "shapeNames": [
+    "mxgraph.office.communications.messages_queued"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:158"
+  },
+  {
+   "id": "officeCommunications-31-offline-address-book",
+   "title": "Offline Address Book",
+   "tags": "office communications offline address book office communication  Offline Address Book",
+   "kind": "vertex",
+   "width": 59,
+   "height": 53,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.offline_address_book;",
+   "shapeNames": [
+    "mxgraph.office.communications.offline_address_book"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:160"
+  },
+  {
+   "id": "officeCommunications-32-personal-archive-mailbox",
+   "title": "Personal Archive Mailbox",
+   "tags": "office communications personal archive mailbox office communication  Personal Archive Mailbox",
+   "kind": "vertex",
+   "width": 59,
+   "height": 58,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.personal_archive_mailbox;",
+   "shapeNames": [
+    "mxgraph.office.communications.personal_archive_mailbox"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:162"
+  },
+  {
+   "id": "officeCommunications-33-public-im-cloud-service",
+   "title": "Public IM Cloud Service",
+   "tags": "office communications public im cloud service instant message office communication  Public IM Cloud Service",
+   "kind": "vertex",
+   "width": 60,
+   "height": 58,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.public_im_cloud_service;",
+   "shapeNames": [
+    "mxgraph.office.communications.public_im_cloud_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:164"
+  },
+  {
+   "id": "officeCommunications-34-push-notification-service",
+   "title": "Push Notification Service",
+   "tags": "office communications push notification service office communication  Push Notification Service",
+   "kind": "vertex",
+   "width": 50,
+   "height": 58,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.push_notification_service;",
+   "shapeNames": [
+    "mxgraph.office.communications.push_notification_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:166"
+  },
+  {
+   "id": "officeCommunications-35-queue-viewer",
+   "title": "Queue Viewer",
+   "tags": "office communications queue viewer office communication  Queue Viewer",
+   "kind": "vertex",
+   "width": 59,
+   "height": 57,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.queue_viewer;",
+   "shapeNames": [
+    "mxgraph.office.communications.queue_viewer"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:168"
+  },
+  {
+   "id": "officeCommunications-36-remote-mailbox",
+   "title": "Remote Mailbox",
+   "tags": "office communications remote mailbox office communication  Remote Mailbox",
+   "kind": "vertex",
+   "width": 59,
+   "height": 57,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.remote_mailbox;",
+   "shapeNames": [
+    "mxgraph.office.communications.remote_mailbox"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:170"
+  },
+  {
+   "id": "officeCommunications-37-remote-move-request",
+   "title": "Remote Move Request",
+   "tags": "office communications remote move request office communication  Remote Move Request",
+   "kind": "vertex",
+   "width": 60,
+   "height": 57,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.remote_move_request;",
+   "shapeNames": [
+    "mxgraph.office.communications.remote_move_request"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:172"
+  },
+  {
+   "id": "officeCommunications-38-response-group",
+   "title": "Response Group",
+   "tags": "office communications response group office communication  Response Group",
+   "kind": "vertex",
+   "width": 58,
+   "height": 54,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.response_group;",
+   "shapeNames": [
+    "mxgraph.office.communications.response_group"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:174"
+  },
+  {
+   "id": "officeCommunications-39-room-mailbox",
+   "title": "Room Mailbox",
+   "tags": "office communications room mailbox office communication  Room Mailbox",
+   "kind": "vertex",
+   "width": 60,
+   "height": 57,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.room_mailbox;",
+   "shapeNames": [
+    "mxgraph.office.communications.room_mailbox"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:176"
+  },
+  {
+   "id": "officeCommunications-40-shared-mailbox",
+   "title": "Shared Mailbox",
+   "tags": "office communications shared mailbox office communication  Shared Mailbox",
+   "kind": "vertex",
+   "width": 60,
+   "height": 55,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.shared_mailbox;",
+   "shapeNames": [
+    "mxgraph.office.communications.shared_mailbox"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:178"
+  },
+  {
+   "id": "officeCommunications-41-sip-uri-um-dial-plan",
+   "title": "SIP URI UM Dial Plan",
+   "tags": "office communications sip uri um dial plan office communication  SIP URI UM Dial Plan",
+   "kind": "vertex",
+   "width": 55,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.sip_uri_um_dial_plan;",
+   "shapeNames": [
+    "mxgraph.office.communications.sip_uri_um_dial_plan"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:180"
+  },
+  {
+   "id": "officeCommunications-42-site-mailbox",
+   "title": "Site Mailbox",
+   "tags": "office communications site mailbox office communication  Site Mailbox",
+   "kind": "vertex",
+   "width": 59,
+   "height": 54,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.site_mailbox;",
+   "shapeNames": [
+    "mxgraph.office.communications.site_mailbox"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:182"
+  },
+  {
+   "id": "officeCommunications-43-skype-for-business-control-panel",
+   "title": "Skype for Business Control Panel",
+   "tags": "office communications skype for business control panel office communication  Skype for Business Control Panel",
+   "kind": "vertex",
+   "width": 65,
+   "height": 59,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.skype_for_business_control_panel;",
+   "shapeNames": [
+    "mxgraph.office.communications.skype_for_business_control_panel"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:184"
+  },
+  {
+   "id": "officeCommunications-44-skype-for-business-phone-edition",
+   "title": "Skype for Business Phone Edition",
+   "tags": "office communications skype for business phone edition office communication  Skype for Business Phone Edition",
+   "kind": "vertex",
+   "width": 76,
+   "height": 45,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.skype_for_business_phone_edition;",
+   "shapeNames": [
+    "mxgraph.office.communications.skype_for_business_phone_edition"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:186"
+  },
+  {
+   "id": "officeCommunications-45-skype-for-business-room-system",
+   "title": "Skype for Business Room System",
+   "tags": "office communications skype for business room system office communication  Skype for Business Room System",
+   "kind": "vertex",
+   "width": 74,
+   "height": 41,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.skype_for_business_room_system;",
+   "shapeNames": [
+    "mxgraph.office.communications.skype_for_business_room_system"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:188"
+  },
+  {
+   "id": "officeCommunications-46-skype-for-business-server-management-tool",
+   "title": "Skype for Business Server Management Tool",
+   "tags": "office communications skype for business server management tool office communication  Skype for Business Server Management Tool",
+   "kind": "vertex",
+   "width": 72,
+   "height": 48,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.skype_for_business_server_management_tool;",
+   "shapeNames": [
+    "mxgraph.office.communications.skype_for_business_server_management_tool"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:190"
+  },
+  {
+   "id": "officeCommunications-47-skype-for-business-storage-service",
+   "title": "Skype for Business Storage Service",
+   "tags": "office communications skype for business storage service office communication  Skype for Business Storage Service",
+   "kind": "vertex",
+   "width": 62,
+   "height": 58,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.skype_for_business_storage_service;",
+   "shapeNames": [
+    "mxgraph.office.communications.skype_for_business_storage_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:192"
+  },
+  {
+   "id": "officeCommunications-48-skype-for-business-web-app-client",
+   "title": "Skype for Business Web App Client",
+   "tags": "office communications skype for business web app client office communication  Skype for Business Web App Client",
+   "kind": "vertex",
+   "width": 80,
+   "height": 51,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.skype_for_business_web_app_client;",
+   "shapeNames": [
+    "mxgraph.office.communications.skype_for_business_web_app_client"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:194"
+  },
+  {
+   "id": "officeCommunications-49-sms-gateway",
+   "title": "SMS Gateway",
+   "tags": "office communications sms gateway office communication  SMS Gateway",
+   "kind": "vertex",
+   "width": 59,
+   "height": 37,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.sms_gateway;",
+   "shapeNames": [
+    "mxgraph.office.communications.sms_gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:196"
+  },
+  {
+   "id": "officeCommunications-50-smtp-connector",
+   "title": "SMTP Connector",
+   "tags": "office communications smtp connector office communication  SMTP Connector",
+   "kind": "vertex",
+   "width": 47,
+   "height": 49,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.smtp_connector;",
+   "shapeNames": [
+    "mxgraph.office.communications.smtp_connector"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:198"
+  },
+  {
+   "id": "officeCommunications-51-system-mailbox",
+   "title": "System Mailbox",
+   "tags": "office communications system mailbox office communication  System Mailbox",
+   "kind": "vertex",
+   "width": 58,
+   "height": 55,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.system_mailbox;",
+   "shapeNames": [
+    "mxgraph.office.communications.system_mailbox"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:200"
+  },
+  {
+   "id": "officeCommunications-52-tdm-pbx",
+   "title": "TDM PBX",
+   "tags": "office communications tdm pbx office communication  TDM PBX",
+   "kind": "vertex",
+   "width": 59,
+   "height": 46,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.tdm_pbx;",
+   "shapeNames": [
+    "mxgraph.office.communications.tdm_pbx"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:202"
+  },
+  {
+   "id": "officeCommunications-53-telephone-extension-dial-plan",
+   "title": "Telephone Extension Dial Plan",
+   "tags": "office communications telephone extension dial plan office communication  Telephone Extension Dial Plan",
+   "kind": "vertex",
+   "width": 55,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.telephone_extension_dial_plan;",
+   "shapeNames": [
+    "mxgraph.office.communications.telephone_extension_dial_plan"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:204"
+  },
+  {
+   "id": "officeCommunications-54-transport-rule",
+   "title": "Transport Rule",
+   "tags": "office communications transport rule office communication  Transport Rule",
+   "kind": "vertex",
+   "width": 56,
+   "height": 57,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.transport_rule;",
+   "shapeNames": [
+    "mxgraph.office.communications.transport_rule"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:206"
+  },
+  {
+   "id": "officeCommunications-55-ucma-application",
+   "title": "UCMA Application",
+   "tags": "office communications ucma application office communication  UCMA Application",
+   "kind": "vertex",
+   "width": 53,
+   "height": 40,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.ucma_application;",
+   "shapeNames": [
+    "mxgraph.office.communications.ucma_application"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:208"
+  },
+  {
+   "id": "officeCommunications-56-ucwa-application",
+   "title": "UCWA Application",
+   "tags": "office communications ucwa application office communication  UCWA Application",
+   "kind": "vertex",
+   "width": 53,
+   "height": 40,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.ucwa_application;",
+   "shapeNames": [
+    "mxgraph.office.communications.ucwa_application"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:210"
+  },
+  {
+   "id": "officeCommunications-57-um-auto-attendant",
+   "title": "UM Auto Attendant",
+   "tags": "office communications um auto attendant office communication  UM Auto Attendant",
+   "kind": "vertex",
+   "width": 57,
+   "height": 57,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.um_auto_attendant;",
+   "shapeNames": [
+    "mxgraph.office.communications.um_auto_attendant"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:212"
+  },
+  {
+   "id": "officeCommunications-58-um-dial-plan-e164",
+   "title": "UM Dial Plan E164",
+   "tags": "office communications um dial plan e164 office communication  UM Dial Plan E164",
+   "kind": "vertex",
+   "width": 55,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.um_dial_plan_e164;",
+   "shapeNames": [
+    "mxgraph.office.communications.um_dial_plan_e164"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:214"
+  },
+  {
+   "id": "officeCommunications-59-um-dial-plan-secondary",
+   "title": "UM Dial Plan Secondary",
+   "tags": "office communications um dial plan secondary office communication  UM Dial Plan Secondary",
+   "kind": "vertex",
+   "width": 55,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.um_dial_plan_secondary;",
+   "shapeNames": [
+    "mxgraph.office.communications.um_dial_plan_secondary"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:216"
+  },
+  {
+   "id": "officeCommunications-60-um-enabled-mailbox",
+   "title": "UM Enabled Mailbox",
+   "tags": "office communications um enabled mailbox office communication  UM Enabled Mailbox",
+   "kind": "vertex",
+   "width": 59,
+   "height": 57,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.um_enabled_mailbox;",
+   "shapeNames": [
+    "mxgraph.office.communications.um_enabled_mailbox"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:218"
+  },
+  {
+   "id": "officeCommunications-61-um-hunt-group",
+   "title": "UM Hunt Group",
+   "tags": "office communications um hunt group office communication  UM Hunt Group",
+   "kind": "vertex",
+   "width": 59,
+   "height": 48,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.um_hunt_group;",
+   "shapeNames": [
+    "mxgraph.office.communications.um_hunt_group"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:220"
+  },
+  {
+   "id": "officeCommunications-62-um-ip-gateway",
+   "title": "UM IP Gateway",
+   "tags": "office communications um ip gateway internet protocol office communication  UM IP Gateway",
+   "kind": "vertex",
+   "width": 59,
+   "height": 38,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.um_ip_gateway;",
+   "shapeNames": [
+    "mxgraph.office.communications.um_ip_gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:222"
+  },
+  {
+   "id": "officeCommunications-63-user-mailbox",
+   "title": "User Mailbox",
+   "tags": "office communications user mailbox office communication  User Mailbox",
+   "kind": "vertex",
+   "width": 59,
+   "height": 55,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.user_mailbox;",
+   "shapeNames": [
+    "mxgraph.office.communications.user_mailbox"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:224"
+  },
+  {
+   "id": "officeCommunications-64-video-workload",
+   "title": "Video Workload",
+   "tags": "office communications video workload office communication  Video Workload",
+   "kind": "vertex",
+   "width": 57,
+   "height": 50,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.video_workload;",
+   "shapeNames": [
+    "mxgraph.office.communications.video_workload"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:226"
+  },
+  {
+   "id": "officeCommunications-65-voice-mail-preview",
+   "title": "Voice Mail Preview",
+   "tags": "office communications voice mail preview office communication  Voice Mail Preview",
+   "kind": "vertex",
+   "width": 46,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.voice_mail_preview;",
+   "shapeNames": [
+    "mxgraph.office.communications.voice_mail_preview"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:228"
+  },
+  {
+   "id": "officeCommunications-66-voice-workload",
+   "title": "Voice Workload",
+   "tags": "office communications voice workload office communication  Voice Workload",
+   "kind": "vertex",
+   "width": 58,
+   "height": 51,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.voice_workload;",
+   "shapeNames": [
+    "mxgraph.office.communications.voice_workload"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:230"
+  },
+  {
+   "id": "officeCommunications-67-voip-gateway",
+   "title": "VoIP Gateway",
+   "tags": "office communications voip gateway voice over ip internet protocol office communication  VoIP Gateway",
+   "kind": "vertex",
+   "width": 51,
+   "height": 15,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.voip_gateway;",
+   "shapeNames": [
+    "mxgraph.office.communications.voip_gateway"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:232"
+  },
+  {
+   "id": "officeCommunications-68-watcher-node",
+   "title": "Watcher Node",
+   "tags": "office communications watcher node office communication  Watcher Node",
+   "kind": "vertex",
+   "width": 52,
+   "height": 56,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.watcher_node;",
+   "shapeNames": [
+    "mxgraph.office.communications.watcher_node"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:234"
+  },
+  {
+   "id": "officeCommunications-69-xmpp-service",
+   "title": "XMPP Service",
+   "tags": "office communications xmpp service office communication  XMPP Service",
+   "kind": "vertex",
+   "width": 58,
+   "height": 52,
+   "style": "sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.xmpp_service;",
+   "shapeNames": [
+    "mxgraph.office.communications.xmpp_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Office.js:236"
+  }
+ ]
+}

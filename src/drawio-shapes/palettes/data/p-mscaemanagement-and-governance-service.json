@@ -1,0 +1,260 @@
+{
+ "id": "mscaeManagement and Governance Service",
+ "title": "CAE / Management and Governance Service",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:8",
+ "entries": [
+  {
+   "id": "mscaeManagement and Governance Service-0-activity-log",
+   "title": "Activity Log",
+   "tags": "mscae activity log ms microsoft cloud enterprise management and governance service Activity Log",
+   "kind": "vertex",
+   "width": 45,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Log.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.975,0.04,0],[1,0.907,0],[0,0.907,0],[0.025,0.04,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1139"
+  },
+  {
+   "id": "mscaeManagement and Governance Service-1-advisor",
+   "title": "Advisor",
+   "tags": "mscae advisor ms microsoft cloud enterprise management and governance service Advisor",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Advisor.svg;points=[[0.571,0,0],[0.5,0.974,0],[0,0.412,0],[1,0.509,0],[0.77,0.07,0],[0.745,1,0],[0.06,0.26,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1141"
+  },
+  {
+   "id": "mscaeManagement and Governance Service-2-alerts",
+   "title": "Alerts",
+   "tags": "mscae notification alert alerts ms microsoft cloud enterprise management and governance service Alerts",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Notification.svg;points=[[0.494,0,0],[0.614,0.998,0],[0,0.38,0],[1,0.381,0],[0.957,0.03,0],[0.97,0.735,0],[0.035,0.74,0],[0.033,0.03,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1143"
+  },
+  {
+   "id": "mscaeManagement and Governance Service-3-automation-accounts",
+   "title": "Automation Accounts",
+   "tags": "mscae automation accounts ms microsoft cloud enterprise management and governance service Automation Accounts",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Automation.svg;points=[[0.5,0.107,0],[0.5,0.853,0],[0,0.79,0],[0.926,0.501,0],[0.832,0.1,0],[0.9,0.75,0],[0.035,0.895,0],[0.335,0.208,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1145"
+  },
+  {
+   "id": "mscaeManagement and Governance Service-4-blueprints",
+   "title": "Blueprints",
+   "tags": "mscae blueprints ms microsoft cloud enterprise management and governance service Blueprints",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Blueprints.svg;points=[[0.5,0.107,0],[0.5,0.891,0],[0,0.436,0],[1,0.579,0],[0.962,0.154,0],[0.965,0.966,0],[0.033,0.862,0],[0.028,0.032,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1147"
+  },
+  {
+   "id": "mscaeManagement and Governance Service-5-billinghub",
+   "title": "BillingHub",
+   "tags": "mscae billinghub ms microsoft cloud enterprise management and governance service BillingHub",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/BillingHub.svg;points=[[0.501,0,0],[0.501,1,0],[0,0.496,0],[1,0.501,0],[0.842,0.133,0],[0.86,0.85,0],[0.128,0.837,0],[0.148,0.143,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1149"
+  },
+  {
+   "id": "mscaeManagement and Governance Service-6-diagnostic-settings",
+   "title": "Diagnostic Settings",
+   "tags": "mscae diagnostic settings log ms microsoft cloud enterprise management and governance service Diagnostic Settings",
+   "kind": "vertex",
+   "width": 45,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/LogDiagnostics.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[0.975,0.04,0],[1,0.907,0],[0,0.907,0],[0.025,0.04,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1151"
+  },
+  {
+   "id": "mscaeManagement and Governance Service-7-free-services",
+   "title": "Free Services",
+   "tags": "mscae free services ms microsoft cloud enterprise management and governance service Free Services",
+   "kind": "vertex",
+   "width": 50,
+   "height": 46,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Free_Services.svg;points=[[0.496,0,0],[0.5,0.995,0],[0,0.394,0],[0.998,0.394,0],[0.982,0.019,0],[0.827,0.994,0],[0.173,0.994,0],[0.02,0.011,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1153"
+  },
+  {
+   "id": "mscaeManagement and Governance Service-8-guest-assignments",
+   "title": "Guest Assignments",
+   "tags": "mscae guest assignments ms microsoft cloud enterprise management and governance service Guest Assignments",
+   "kind": "vertex",
+   "width": 44,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Guest_Assignments.svg;points=[[0.5,0,0],[0.5,1,0],[0,0.5,0],[1,0.5,0],[1,0.18,0],[1,1,0],[0,1,0],[0,0.18,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1155"
+  },
+  {
+   "id": "mscaeManagement and Governance Service-9-managed-applications",
+   "title": "Managed Applications",
+   "tags": "mscae managed applications ms microsoft cloud enterprise management and governance service Managed Applications",
+   "kind": "vertex",
+   "width": 47,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Managed_Applications.svg;points=[[0.577,0,0],[0.406,0.998,0],[0,0.752,0],[1,0.515,0],[0.973,0.198,0],[0.981,0.822,0],[0,0.845,0],[0.179,0.195,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1157"
+  },
+  {
+   "id": "mscaeManagement and Governance Service-10-metrics",
+   "title": "Metrics",
+   "tags": "mscae metrics chart ms microsoft cloud enterprise management and governance service Metrics",
+   "kind": "vertex",
+   "width": 50,
+   "height": 48,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Chart.svg;points=[[0.43,0,0],[0.5,1,0],[0,0.5,0],[1,0.53,0],[0.972,0.019,0],[1,1,0],[0,1,0],[0.028,0.279,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1159"
+  },
+  {
+   "id": "mscaeManagement and Governance Service-11-monitor",
+   "title": "Monitor",
+   "tags": "mscae monitor ms microsoft cloud enterprise management and governance service Monitor",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Monitor.svg;points=[[0.497,0,0],[0.496,1,0],[0,0.499,0],[1,0.5,0],[0.87,0.163,0],[0.88,0.825,0],[0.123,0.832,0],[0.148,0.143,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1161"
+  },
+  {
+   "id": "mscaeManagement and Governance Service-12-network-watcher",
+   "title": "Network Watcher",
+   "tags": "mscae network watcher ms microsoft cloud enterprise management and governance service Network Watcher",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Network_watcher.svg;points=[[0.5,0.03,0],[0.499,0.849,0],[0.151,0.5,0],[0.97,0.5,0],[0.905,0.118,0],[0.912,0.595,0],[0.01,0.975,0],[0.405,0.088,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1163"
+  },
+  {
+   "id": "mscaeManagement and Governance Service-13-policy",
+   "title": "Policy",
+   "tags": "mscae policy ms microsoft cloud enterprise management and governance service Policy",
+   "kind": "vertex",
+   "width": 45,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Policy.svg;points=[[0.501,0,0],[0.501,1,0],[0,0.5,0],[1,0.505,0],[0.983,0.238,0],[0.994,0.755,0],[0,0.752,0],[0,0.248,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1165"
+  },
+  {
+   "id": "mscaeManagement and Governance Service-14-recovery-services-vault",
+   "title": "Recovery Services Vault",
+   "tags": "mscae recovery services vault backup ms microsoft cloud enterprise management and governance service Recovery Services Vault",
+   "kind": "vertex",
+   "width": 50,
+   "height": 42,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Backup.svg;points=[[0.5,0.095,0],[0.411,0.991,0],[0.107,0.5,0],[1,0.452,0],[0.827,0.057,0],[0.757,0.946,0],[0.068,0.949,0],[0.323,0.122,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1167"
+  },
+  {
+   "id": "mscaeManagement and Governance Service-15-resource-graph-explorer",
+   "title": "Resource Graph Explorer",
+   "tags": "mscae resource graph explorer ms microsoft cloud enterprise management and governance service Resource Graph Explorer",
+   "kind": "vertex",
+   "width": 49,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Resource_Graph_Explorer.svg;points=[[0.818,0.02,0],[0.592,0.98,0],[0,0.199,0],[1,0.199,0],[0.959,0.083,0],[0.77,0.907,0],[0.401,0.892,0],[0.039,0.1,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1169"
+  },
+  {
+   "id": "mscaeManagement and Governance Service-16-scheduler-job-collections",
+   "title": "Scheduler Job Collections",
+   "tags": "mscae scheduler job collection collections ms microsoft cloud enterprise management and governance service Scheduler Job Collections",
+   "kind": "vertex",
+   "width": 50,
+   "height": 43,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/SchedulerJobCollection.svg;points=[[0.497,0.022,0],[0.5,0.91,0],[0,0.469,0],[0.995,0.471,0],[0.965,0.102,0],[0.97,0.834,0],[0.03,0.837,0],[0.03,0.102,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1171"
+  },
+  {
+   "id": "mscaeManagement and Governance Service-17-solutions",
+   "title": "Solutions",
+   "tags": "mscae solutions ms microsoft cloud enterprise management and governance service Solutions",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Solutions.svg;points=[[0.5,0.045,0],[0.5,1,0],[0,0.5,0],[0.955,0.5,0],[0.885,0.075,0],[0.64,1,0],[0,1,0],[0,0.36,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1173"
+  }
+ ]
+}

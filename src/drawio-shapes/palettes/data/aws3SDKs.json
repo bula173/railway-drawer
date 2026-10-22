@@ -1,0 +1,204 @@
+{
+ "id": "aws3SDKs",
+ "title": "AWS17 / SDK",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-AWS3.js:8",
+ "entries": [
+  {
+   "id": "aws3SDKs-0-android",
+   "title": "Android",
+   "tags": "aws3 android aws amazon web service sdk software development kit Android",
+   "kind": "vertex",
+   "width": 73.5,
+   "height": 84,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.android;fillColor=#96BF3D;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.android"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:935"
+  },
+  {
+   "id": "aws3SDKs-1-cli",
+   "title": "CLI",
+   "tags": "aws3 cli aws amazon web service sdk software development kit CLI",
+   "kind": "vertex",
+   "width": 72,
+   "height": 82.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.cli;fillColor=#444444;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.cli"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:937"
+  },
+  {
+   "id": "aws3SDKs-2-toolkit-for-eclipse",
+   "title": "Toolkit for Eclipse",
+   "tags": "aws3 toolkit for eclipse aws amazon web service sdk software development kit Toolkit for Eclipse",
+   "kind": "vertex",
+   "width": 70.5,
+   "height": 78,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.toolkit_for_eclipse;fillColor=#342074;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.toolkit_for_eclipse"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:939"
+  },
+  {
+   "id": "aws3SDKs-3-toolkit-for-visual-studio",
+   "title": "Toolkit for Visual Studio",
+   "tags": "aws3 toolkit for visual studio aws amazon web service sdk software development kit Toolkit for Visual Studio",
+   "kind": "vertex",
+   "width": 70.5,
+   "height": 78,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.toolkit_for_visual_studio;fillColor=#53B1CB;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.toolkit_for_visual_studio"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:941"
+  },
+  {
+   "id": "aws3SDKs-4-toolkit-for-windows-powershell",
+   "title": "Toolkit for Windows PowerShell",
+   "tags": "aws3 toolkit for windows powershell aws amazon web service sdk software development kit Toolkit for Windows PowerShell",
+   "kind": "vertex",
+   "width": 70.5,
+   "height": 78,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.toolkit_for_windows_powershell;fillColor=#737373;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.toolkit_for_windows_powershell"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:943"
+  },
+  {
+   "id": "aws3SDKs-5-ios",
+   "title": "iOS",
+   "tags": "aws3 ios aws amazon web service sdk software development kit iOS",
+   "kind": "vertex",
+   "width": 73.5,
+   "height": 84,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.android;fillColor=#CFCFCF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.android"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:945"
+  },
+  {
+   "id": "aws3SDKs-6-ruby",
+   "title": "Ruby",
+   "tags": "aws3 ruby aws amazon web service sdk software development kit Ruby",
+   "kind": "vertex",
+   "width": 73.5,
+   "height": 84,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.android;fillColor=#AE1F23;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.android"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:947"
+  },
+  {
+   "id": "aws3SDKs-7-python-boto",
+   "title": "Python (boto)",
+   "tags": "aws3 python boto aws amazon web service sdk software development kit Python (boto)",
+   "kind": "vertex",
+   "width": 73.5,
+   "height": 84,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.android;fillColor=#FFD44F;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.android"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:949"
+  },
+  {
+   "id": "aws3SDKs-8-php",
+   "title": "PHP",
+   "tags": "aws3 php aws amazon web service sdk software development kit PHP",
+   "kind": "vertex",
+   "width": 73.5,
+   "height": 84,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.android;fillColor=#5A69A4;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.android"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:951"
+  },
+  {
+   "id": "aws3SDKs-9-net",
+   "title": ".NET",
+   "tags": "aws3 dot net dotnet aws amazon web service sdk software development kit .NET",
+   "kind": "vertex",
+   "width": 73.5,
+   "height": 84,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.android;fillColor=#115193;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.android"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:953"
+  },
+  {
+   "id": "aws3SDKs-10-javascript",
+   "title": "JavaScript",
+   "tags": "aws3 js javascript aws amazon web service sdk software development kit JavaScript",
+   "kind": "vertex",
+   "width": 73.5,
+   "height": 84,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.android;fillColor=#205E00;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.android"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:955"
+  },
+  {
+   "id": "aws3SDKs-11-java",
+   "title": "Java",
+   "tags": "aws3 java aws amazon web service sdk software development kit Java",
+   "kind": "vertex",
+   "width": 73.5,
+   "height": 84,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.android;fillColor=#EE472A;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.android"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:957"
+  },
+  {
+   "id": "aws3SDKs-12-xamarin",
+   "title": "Xamarin",
+   "tags": "aws3 xamarin aws amazon web service sdk software development kit Xamarin",
+   "kind": "vertex",
+   "width": 73.5,
+   "height": 84,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.android;fillColor=#4090D7;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.android"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:959"
+  },
+  {
+   "id": "aws3SDKs-13-node-js",
+   "title": "Node.js",
+   "tags": "aws3 node js nodejs aws amazon web service sdk software development kit Node.js",
+   "kind": "vertex",
+   "width": 73.5,
+   "height": 84,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.android;fillColor=#8CC64F;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.android"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:961"
+  }
+ ]
+}

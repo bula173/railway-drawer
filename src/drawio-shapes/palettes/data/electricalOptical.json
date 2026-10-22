@@ -1,0 +1,204 @@
+{
+ "id": "electricalOptical",
+ "title": "Electrical / Optical",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Electrical.js:8",
+ "entries": [
+  {
+   "id": "electricalOptical-0-7-segment-display",
+   "title": "7 Segment Display",
+   "tags": "electrical opto electronics 7 segment display electrical optical  7 Segment Display",
+   "kind": "vertex",
+   "width": 74.7,
+   "height": 96.1,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.opto_electronics.7_segment_display;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.electrical.opto_electronics.7_segment_display"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:856"
+  },
+  {
+   "id": "electricalOptical-1-7-segment-display-with-dp",
+   "title": "7 Segment Display with DP",
+   "tags": "electrical opto electronics 7 segment display with dp electrical optical  7 Segment Display with DP",
+   "kind": "vertex",
+   "width": 79.8,
+   "height": 96.9,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.opto_electronics.7_segment_display_with_dp;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.electrical.opto_electronics.7_segment_display_with_dp"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:858"
+  },
+  {
+   "id": "electricalOptical-2-9-segment-display",
+   "title": "9 Segment Display",
+   "tags": "electrical opto electronics 9 segment display electrical optical  9 Segment Display",
+   "kind": "vertex",
+   "width": 74.7,
+   "height": 96.1,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.opto_electronics.9_segment_display;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.electrical.opto_electronics.9_segment_display"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:860"
+  },
+  {
+   "id": "electricalOptical-3-9-segment-display-with-dp",
+   "title": "9 Segment Display with DP",
+   "tags": "electrical opto electronics 9 segment display with dp electrical optical  9 Segment Display with DP",
+   "kind": "vertex",
+   "width": 79.8,
+   "height": 96.9,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.opto_electronics.9_segment_display_with_dp;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.electrical.opto_electronics.9_segment_display_with_dp"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:862"
+  },
+  {
+   "id": "electricalOptical-4-led",
+   "title": "LED",
+   "tags": "electrical opto electronics led 1 electrical optical  LED",
+   "kind": "vertex",
+   "width": 100,
+   "height": 65,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.opto_electronics.led_1;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.electrical.opto_electronics.led_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:864"
+  },
+  {
+   "id": "electricalOptical-5-led",
+   "title": "LED",
+   "tags": "electrical opto electronics led 2 electrical optical  LED",
+   "kind": "vertex",
+   "width": 100,
+   "height": 70,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.opto_electronics.led_2;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.electrical.opto_electronics.led_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:866"
+  },
+  {
+   "id": "electricalOptical-6-light-activated-scr",
+   "title": "Light Activated SCR",
+   "tags": "electrical opto electronics light-activated scr electrical optical  Light Activated SCR",
+   "kind": "vertex",
+   "width": 100,
+   "height": 70,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.opto_electronics.light-activated_scr;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.electrical.opto_electronics.light-activated_scr"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:868"
+  },
+  {
+   "id": "electricalOptical-7-opto-coupler",
+   "title": "Opto-coupler",
+   "tags": "electrical opto electronics opto-coupler electrical optical  Opto-coupler",
+   "kind": "vertex",
+   "width": 99,
+   "height": 60,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.opto_electronics.opto-coupler;",
+   "shapeNames": [
+    "mxgraph.electrical.opto_electronics.opto-coupler"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:870"
+  },
+  {
+   "id": "electricalOptical-8-opto-transistor",
+   "title": "Opto-transistor",
+   "tags": "electrical opto electronics opto-transistor electrical optical  Opto-transistor",
+   "kind": "vertex",
+   "width": 100,
+   "height": 110,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.opto_electronics.opto-transistor;",
+   "shapeNames": [
+    "mxgraph.electrical.opto_electronics.opto-transistor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:872"
+  },
+  {
+   "id": "electricalOptical-9-photodiode",
+   "title": "Photodiode",
+   "tags": "electrical opto electronics photodiode electrical optical  Photodiode",
+   "kind": "vertex",
+   "width": 100,
+   "height": 70,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.opto_electronics.photodiode;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.electrical.opto_electronics.photodiode"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:874"
+  },
+  {
+   "id": "electricalOptical-10-photo-resistor",
+   "title": "Photo Resistor",
+   "tags": "electrical opto electronics photo resistor 1 electrical optical  Photo Resistor",
+   "kind": "vertex",
+   "width": 100,
+   "height": 90,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.opto_electronics.photo_resistor_1;",
+   "shapeNames": [
+    "mxgraph.electrical.opto_electronics.photo_resistor_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:876"
+  },
+  {
+   "id": "electricalOptical-11-photo-resistor",
+   "title": "Photo Resistor",
+   "tags": "electrical opto electronics photo resistor 2 electrical optical  Photo Resistor",
+   "kind": "vertex",
+   "width": 100,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.opto_electronics.photo_resistor_2;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.electrical.opto_electronics.photo_resistor_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:878"
+  },
+  {
+   "id": "electricalOptical-12-photo-resistor",
+   "title": "Photo Resistor",
+   "tags": "electrical opto electronics photo resistor 3 electrical optical  Photo Resistor",
+   "kind": "vertex",
+   "width": 100,
+   "height": 90,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.opto_electronics.photo_resistor_3;",
+   "shapeNames": [
+    "mxgraph.electrical.opto_electronics.photo_resistor_3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:880"
+  },
+  {
+   "id": "electricalOptical-13-solar-cell",
+   "title": "Solar Cell",
+   "tags": "electrical opto electronics solar cell electrical optical  Solar Cell",
+   "kind": "vertex",
+   "width": 100,
+   "height": 70,
+   "style": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.opto_electronics.solar_cell;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.electrical.opto_electronics.solar_cell"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:882"
+  }
+ ]
+}

@@ -1,0 +1,568 @@
+{
+ "id": "cisco_safeThreat",
+ "title": "Cisco Safe / Threat",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:8",
+ "entries": [
+  {
+   "id": "cisco_safeThreat-0-threat-a1",
+   "title": "Threat A1",
+   "tags": "cisco safe threat threat cisco safe threat  Threat A1",
+   "kind": "vertex",
+   "width": 49,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#F06650;strokeColor=#ffffff;verticalAlign=top;align=center;pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=threat1;resIcon=mxgraph.cisco_safe.threat.threat_a1;points=[[0.685,0.003,0],[0.46,1,0],[0.02,0.551,0],[1,0.425,0],[0.857,0.105,0],[0.732,0.912,0],[0.207,0.825,0],[0.304,0.035,0]];",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1103"
+  },
+  {
+   "id": "cisco_safeThreat-1-threat-a2",
+   "title": "Threat A2",
+   "tags": "cisco safe threat threat cisco safe threat  Threat A2",
+   "kind": "vertex",
+   "width": 49,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#F06650;strokeColor=#ffffff;verticalAlign=top;align=center;pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=threat1;resIcon=mxgraph.cisco_safe.threat.threat_a2;points=[[0.685,0.003,0],[0.46,1,0],[0.02,0.551,0],[1,0.425,0],[0.857,0.108,0],[0.732,0.912,0],[0.207,0.825,0],[0.304,0.035,0]];",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1105"
+  },
+  {
+   "id": "cisco_safeThreat-2-threat-a3",
+   "title": "Threat A3",
+   "tags": "cisco safe threat threat cisco safe threat  Threat A3",
+   "kind": "vertex",
+   "width": 49,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#F06650;strokeColor=#ffffff;verticalAlign=top;align=center;pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=threat1;resIcon=mxgraph.cisco_safe.threat.threat_a3;points=[[0.685,0.003,0],[0.46,1,0],[0.02,0.551,0],[1,0.425,0],[0.857,0.105,0],[0.732,0.912,0],[0.207,0.825,0],[0.304,0.035,0]];",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1107"
+  },
+  {
+   "id": "cisco_safeThreat-3-threat-a4",
+   "title": "Threat A4",
+   "tags": "cisco safe threat threat cisco safe threat  Threat A4",
+   "kind": "vertex",
+   "width": 49,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#F06650;strokeColor=#ffffff;verticalAlign=top;align=center;pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=threat1;resIcon=mxgraph.cisco_safe.threat.threat_a4;points=[[0.685,0.003,0],[0.46,1,0],[0.02,0.551,0],[1,0.425,0],[0.857,0.105,0],[0.732,0.912,0],[0.207,0.825,0],[0.304,0.035,0]];",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1109"
+  },
+  {
+   "id": "cisco_safeThreat-4-threat-a5",
+   "title": "Threat A5",
+   "tags": "cisco safe threat threat cisco safe threat  Threat A5",
+   "kind": "vertex",
+   "width": 49,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#F06650;strokeColor=#ffffff;verticalAlign=top;align=center;pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=threat1;resIcon=mxgraph.cisco_safe.threat.threat_a5;points=[[0.685,0.003,0],[0.46,1,0],[0.02,0.551,0],[1,0.425,0],[0.857,0.108,0],[0.732,0.912,0],[0.207,0.825,0],[0.304,0.035,0]];",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1111"
+  },
+  {
+   "id": "cisco_safeThreat-5-threat-a6",
+   "title": "Threat A6",
+   "tags": "cisco safe threat threat cisco safe threat  Threat A6",
+   "kind": "vertex",
+   "width": 49,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#F06650;strokeColor=#ffffff;verticalAlign=top;align=center;pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=threat1;resIcon=mxgraph.cisco_safe.threat.threat_a6;points=[[0.685,0.003,0],[0.46,1,0],[0.02,0.551,0],[1,0.425,0],[0.857,0.105,0],[0.732,0.912,0],[0.207,0.825,0],[0.304,0.035,0]];",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1113"
+  },
+  {
+   "id": "cisco_safeThreat-6-threat-a7",
+   "title": "Threat A7",
+   "tags": "cisco safe threat threat cisco safe threat  Threat A7",
+   "kind": "vertex",
+   "width": 49,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#F06650;strokeColor=#ffffff;verticalAlign=top;align=center;pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=threat1;resIcon=mxgraph.cisco_safe.threat.threat_a7;points=[[0.685,0.003,0],[0.46,1,0],[0.02,0.551,0],[1,0.425,0],[0.857,0.108,0],[0.732,0.912,0],[0.207,0.825,0],[0.304,0.035,0]];",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1115"
+  },
+  {
+   "id": "cisco_safeThreat-7-threat-a8",
+   "title": "Threat A8",
+   "tags": "cisco safe threat threat cisco safe threat  Threat A8",
+   "kind": "vertex",
+   "width": 49,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#F06650;strokeColor=#ffffff;verticalAlign=top;align=center;pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=threat1;resIcon=mxgraph.cisco_safe.threat.threat_a8;points=[[0.685,0.003,0],[0.46,1,0],[0.02,0.551,0],[1,0.425,0],[0.857,0.108,0],[0.732,0.912,0],[0.207,0.825,0],[0.304,0.035,0]];",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1117"
+  },
+  {
+   "id": "cisco_safeThreat-8-threat-b1",
+   "title": "Threat B1",
+   "tags": "cisco safe threat threat cisco safe threat  Threat B1",
+   "kind": "vertex",
+   "width": 31.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#F06650;strokeColor=#ffffff;verticalAlign=top;align=center;pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=threat2;resIcon=mxgraph.cisco_safe.threat.threat_b1;points=[[0.506,0,0],[0.669,1,0],[0.079,0.5,0],[0.901,0.5,0],[0.928,0.145,0],[0.876,0.817,0],[0.143,0.845,0],[0.072,0.148,0]];",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1119"
+  },
+  {
+   "id": "cisco_safeThreat-9-threat-b2",
+   "title": "Threat B2",
+   "tags": "cisco safe threat threat cisco safe threat  Threat B2",
+   "kind": "vertex",
+   "width": 31.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#F06650;strokeColor=#ffffff;verticalAlign=top;align=center;pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=threat2;resIcon=mxgraph.cisco_safe.threat.threat_b2;points=[[0.506,0,0],[0.669,1,0],[0.079,0.5,0],[0.901,0.5,0],[0.928,0.145,0],[0.876,0.817,0],[0.139,0.84,0],[0.072,0.148,0]];",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1121"
+  },
+  {
+   "id": "cisco_safeThreat-10-threat-b3",
+   "title": "Threat B3",
+   "tags": "cisco safe threat threat cisco safe threat  Threat B3",
+   "kind": "vertex",
+   "width": 31.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#F06650;strokeColor=#ffffff;verticalAlign=top;align=center;pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=threat2;resIcon=mxgraph.cisco_safe.threat.threat_b3;points=[[0.506,0,0],[0.669,1,0],[0.079,0.5,0],[0.901,0.5,0],[0.928,0.145,0],[0.876,0.817,0],[0.132,0.832,0],[0.072,0.148,0]];",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1123"
+  },
+  {
+   "id": "cisco_safeThreat-11-threat-b4",
+   "title": "Threat B4",
+   "tags": "cisco safe threat threat cisco safe threat  Threat B4",
+   "kind": "vertex",
+   "width": 31.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#F06650;strokeColor=#ffffff;verticalAlign=top;align=center;pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=threat2;resIcon=mxgraph.cisco_safe.threat.threat_b4;points=[[0.506,0,0],[0.669,1,0],[0.083,0.5,0],[0.901,0.5,0],[0.928,0.145,0],[0.876,0.817,0],[0.136,0.837,0],[0.072,0.148,0]];",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1125"
+  },
+  {
+   "id": "cisco_safeThreat-12-threat-b5",
+   "title": "Threat B5",
+   "tags": "cisco safe threat threat cisco safe threat  Threat B5",
+   "kind": "vertex",
+   "width": 31.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#F06650;strokeColor=#ffffff;verticalAlign=top;align=center;pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=threat2;resIcon=mxgraph.cisco_safe.threat.threat_b5;points=[[0.506,0,0],[0.669,1,0],[0.079,0.5,0],[0.901,0.5,0],[0.928,0.145,0],[0.876,0.817,0],[0.132,0.832,0],[0.072,0.148,0]];",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1127"
+  },
+  {
+   "id": "cisco_safeThreat-13-threat-b6",
+   "title": "Threat B6",
+   "tags": "cisco safe threat threat cisco safe threat  Threat B6",
+   "kind": "vertex",
+   "width": 31.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#F06650;strokeColor=#ffffff;verticalAlign=top;align=center;pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=threat2;resIcon=mxgraph.cisco_safe.threat.threat_b6;points=[[0.506,0,0],[0.669,1,0],[0.079,0.5,0],[0.901,0.5,0],[0.928,0.145,0],[0.876,0.817,0],[0.132,0.832,0],[0.072,0.148,0]];",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1129"
+  },
+  {
+   "id": "cisco_safeThreat-14-threat-b7",
+   "title": "Threat B7",
+   "tags": "cisco safe threat threat cisco safe threat  Threat B7",
+   "kind": "vertex",
+   "width": 31.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#F06650;strokeColor=#ffffff;verticalAlign=top;align=center;pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=threat2;resIcon=mxgraph.cisco_safe.threat.threat_b7;points=[[0.506,0,0],[0.669,1,0],[0.079,0.5,0],[0.901,0.5,0],[0.928,0.145,0],[0.876,0.817,0],[0.136,0.837,0],[0.072,0.148,0]];",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1131"
+  },
+  {
+   "id": "cisco_safeThreat-15-threat-b8",
+   "title": "Threat B8",
+   "tags": "cisco safe threat threat cisco safe threat  Threat B8",
+   "kind": "vertex",
+   "width": 31.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#F06650;strokeColor=#ffffff;verticalAlign=top;align=center;pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=threat2;resIcon=mxgraph.cisco_safe.threat.threat_b8;points=[[0.506,0,0],[0.669,1,0],[0.079,0.5,0],[0.901,0.5,0],[0.936,0.153,0],[0.876,0.817,0],[0.136,0.837,0],[0.072,0.148,0]];",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1133"
+  },
+  {
+   "id": "cisco_safeThreat-16-threat-c1",
+   "title": "Threat C1",
+   "tags": "cisco safe threat threat cisco safe threat  Threat C1",
+   "kind": "vertex",
+   "width": 50,
+   "height": 40.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#F06650;strokeColor=#ffffff;verticalAlign=top;align=center;pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=threat3;resIcon=mxgraph.cisco_safe.threat.threat_c1;points=[[0.501,0.08,0],[0.502,1,0],[0.003,0.696,0],[1,0.696,0],[0.96,0.158,0],[0.925,1,0],[0.075,0.996,0],[0.048,0.155,0]];",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1135"
+  },
+  {
+   "id": "cisco_safeThreat-17-threat-c2",
+   "title": "Threat C2",
+   "tags": "cisco safe threat threat cisco safe threat  Threat C2",
+   "kind": "vertex",
+   "width": 50,
+   "height": 40.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#F06650;strokeColor=#ffffff;verticalAlign=top;align=center;pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=threat3;resIcon=mxgraph.cisco_safe.threat.threat_c2;points=[[0.501,0.08,0],[0.502,1,0],[0.003,0.696,0],[1,0.696,0],[0.957,0.155,0],[0.925,1,0],[0.075,0.996,0],[0.043,0.158,0]];",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1137"
+  },
+  {
+   "id": "cisco_safeThreat-18-threat-c3",
+   "title": "Threat C3",
+   "tags": "cisco safe threat threat cisco safe threat  Threat C3",
+   "kind": "vertex",
+   "width": 50,
+   "height": 40.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#F06650;strokeColor=#ffffff;verticalAlign=top;align=center;pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=threat3;resIcon=mxgraph.cisco_safe.threat.threat_c3;points=[[0.501,0.08,0],[0.502,1,0],[0.003,0.694,0],[1,0.696,0],[0.96,0.158,0],[0.925,1,0],[0.075,0.996,0],[0.048,0.155,0]];",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1139"
+  },
+  {
+   "id": "cisco_safeThreat-19-threat-c4",
+   "title": "Threat C4",
+   "tags": "cisco safe threat threat cisco safe threat  Threat C4",
+   "kind": "vertex",
+   "width": 50,
+   "height": 40.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#F06650;strokeColor=#ffffff;verticalAlign=top;align=center;pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=threat3;resIcon=mxgraph.cisco_safe.threat.threat_c4;points=[[0.501,0.08,0],[0.501,1,0],[0.003,0.694,0],[1,0.696,0],[0.957,0.155,0],[0.925,1,0],[0.078,1,0],[0.043,0.158,0]];",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1141"
+  },
+  {
+   "id": "cisco_safeThreat-20-threat-c5",
+   "title": "Threat C5",
+   "tags": "cisco safe threat threat cisco safe threat  Threat C5",
+   "kind": "vertex",
+   "width": 50,
+   "height": 40.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#F06650;strokeColor=#ffffff;verticalAlign=top;align=center;pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=threat3;resIcon=mxgraph.cisco_safe.threat.threat_c5;points=[[0.501,0.08,0],[0.502,1,0],[0.003,0.696,0],[1,0.696,0],[0.96,0.158,0],[0.925,1,0],[0.075,0.996,0],[0.048,0.155,0]];",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1143"
+  },
+  {
+   "id": "cisco_safeThreat-21-threat-c6",
+   "title": "Threat C6",
+   "tags": "cisco safe threat threat cisco safe threat  Threat C6",
+   "kind": "vertex",
+   "width": 50,
+   "height": 40.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#F06650;strokeColor=#ffffff;verticalAlign=top;align=center;pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=threat3;resIcon=mxgraph.cisco_safe.threat.threat_c6;points=[[0.501,0.08,0],[0.502,1,0],[0.003,0.696,0],[1,0.696,0],[0.96,0.158,0],[0.925,1,0],[0.075,0.996,0],[0.048,0.155,0]];",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1145"
+  },
+  {
+   "id": "cisco_safeThreat-22-threat-c7",
+   "title": "Threat C7",
+   "tags": "cisco safe threat threat cisco safe threat  Threat C7",
+   "kind": "vertex",
+   "width": 50,
+   "height": 40.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#F06650;strokeColor=#ffffff;verticalAlign=top;align=center;pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=threat3;resIcon=mxgraph.cisco_safe.threat.threat_c7;points=[[0.501,0.08,0],[0.502,1,0],[0.003,0.696,0],[1,0.696,0],[0.96,0.158,0],[0.925,1,0],[0.075,0.996,0],[0.048,0.155,0]];",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1147"
+  },
+  {
+   "id": "cisco_safeThreat-23-threat-c8",
+   "title": "Threat C8",
+   "tags": "cisco safe threat threat cisco safe threat  Threat C8",
+   "kind": "vertex",
+   "width": 50,
+   "height": 40.5,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#F06650;strokeColor=#ffffff;verticalAlign=top;align=center;pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=threat3;resIcon=mxgraph.cisco_safe.threat.threat_c8;points=[[0.501,0.08,0],[0.501,1,0],[0.003,0.694,0],[1,0.694,0],[0.96,0.158,0],[0.93,0.996,0],[0.078,1,0],[0.048,0.155,0]];",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1149"
+  },
+  {
+   "id": "cisco_safeThreat-24-threat-d1",
+   "title": "Threat D1",
+   "tags": "cisco safe threat threat cisco safe threat  Threat D1",
+   "kind": "vertex",
+   "width": 46.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#F06650;strokeColor=#ffffff;verticalAlign=top;align=center;pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=threat4;resIcon=mxgraph.cisco_safe.threat.threat_d1;points=[[0.501,0.019,0],[0.5,1,0],[0.083,0.5,0],[0.919,0.5,0],[0.91,0,0],[0.989,0.84,0],[0.017,0.837,0],[0.092,0,0]];",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1151"
+  },
+  {
+   "id": "cisco_safeThreat-25-threat-d2",
+   "title": "Threat D2",
+   "tags": "cisco safe threat threat cisco safe threat  Threat D2",
+   "kind": "vertex",
+   "width": 46.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#F06650;strokeColor=#ffffff;verticalAlign=top;align=center;pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=threat4;resIcon=mxgraph.cisco_safe.threat.threat_d2;points=[[0.501,0.019,0],[0.5,1,0],[0.086,0.5,0],[0.919,0.5,0],[0.91,0,0],[0.989,0.84,0],[0.017,0.837,0],[0.092,0,0]];",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1153"
+  },
+  {
+   "id": "cisco_safeThreat-26-threat-d3",
+   "title": "Threat D3",
+   "tags": "cisco safe threat threat cisco safe threat  Threat D3",
+   "kind": "vertex",
+   "width": 46.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#F06650;strokeColor=#ffffff;verticalAlign=top;align=center;pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=threat4;resIcon=mxgraph.cisco_safe.threat.threat_d3;points=[[0.501,0.019,0],[0.5,1,0],[0.083,0.5,0],[0.919,0.5,0],[0.91,0,0],[0.989,0.84,0],[0.017,0.837,0],[0.092,0,0]];",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1155"
+  },
+  {
+   "id": "cisco_safeThreat-27-threat-d4",
+   "title": "Threat D4",
+   "tags": "cisco safe threat threat cisco safe threat  Threat D4",
+   "kind": "vertex",
+   "width": 46.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#F06650;strokeColor=#ffffff;verticalAlign=top;align=center;pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=threat4;resIcon=mxgraph.cisco_safe.threat.threat_d4;points=[[0.501,0.019,0],[0.5,1,0],[0.086,0.5,0],[0.919,0.5,0],[0.91,0,0],[0.989,0.84,0],[0.017,0.837,0],[0.092,0,0]];",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1157"
+  },
+  {
+   "id": "cisco_safeThreat-28-threat-d5",
+   "title": "Threat D5",
+   "tags": "cisco safe threat threat cisco safe threat  Threat D5",
+   "kind": "vertex",
+   "width": 46.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#F06650;strokeColor=#ffffff;verticalAlign=top;align=center;pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=threat4;resIcon=mxgraph.cisco_safe.threat.threat_d5;points=[[0.501,0.019,0],[0.5,1,0],[0.083,0.5,0],[0.919,0.5,0],[0.91,0,0],[0.989,0.84,0],[0.017,0.837,0],[0.092,0,0]];",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1159"
+  },
+  {
+   "id": "cisco_safeThreat-29-threat-d6",
+   "title": "Threat D6",
+   "tags": "cisco safe threat threat cisco safe threat  Threat D6",
+   "kind": "vertex",
+   "width": 46.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#F06650;strokeColor=#ffffff;verticalAlign=top;align=center;pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=threat4;resIcon=mxgraph.cisco_safe.threat.threat_d6;points=[[0.501,0.019,0],[0.5,1,0],[0.086,0.5,0],[0.919,0.5,0],[0.91,0,0],[0.989,0.84,0],[0.017,0.837,0],[0.092,0,0]];",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1161"
+  },
+  {
+   "id": "cisco_safeThreat-30-threat-d7",
+   "title": "Threat D7",
+   "tags": "cisco safe threat threat cisco safe threat  Threat D7",
+   "kind": "vertex",
+   "width": 46.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#F06650;strokeColor=#ffffff;verticalAlign=top;align=center;pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=threat4;resIcon=mxgraph.cisco_safe.threat.threat_d7;points=[[0.501,0.019,0],[0.5,1,0],[0.083,0.5,0],[0.919,0.5,0],[0.91,0,0],[0.989,0.84,0],[0.017,0.84,0],[0.092,0,0]];",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1163"
+  },
+  {
+   "id": "cisco_safeThreat-31-threat-d8",
+   "title": "Threat D8",
+   "tags": "cisco safe threat threat cisco safe threat  Threat D8",
+   "kind": "vertex",
+   "width": 46.5,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#F06650;strokeColor=#ffffff;verticalAlign=top;align=center;pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=threat4;resIcon=mxgraph.cisco_safe.threat.threat_d8;points=[[0.501,0.019,0],[0.5,1,0],[0.086,0.5,0],[0.919,0.5,0],[0.91,0,0],[0.989,0.84,0],[0.017,0.837,0],[0.092,0,0]];",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1165"
+  },
+  {
+   "id": "cisco_safeThreat-32-threat-e1",
+   "title": "Threat E1",
+   "tags": "cisco safe threat threat cisco safe threat  Threat E1",
+   "kind": "vertex",
+   "width": 50,
+   "height": 47,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#F06650;strokeColor=#ffffff;verticalAlign=top;align=center;pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=threat5;resIcon=mxgraph.cisco_safe.threat.threat_e1;points=[[0.496,0,0],[0.496,0.894,0],[0.003,0.626,0],[0.99,0.594,0],[0.72,0.085,0],[0.887,0.965,0],[0.108,0.909,0],[0.265,0.093,0]];",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1167"
+  },
+  {
+   "id": "cisco_safeThreat-33-threat-e2",
+   "title": "Threat E2",
+   "tags": "cisco safe threat threat cisco safe threat  Threat E2",
+   "kind": "vertex",
+   "width": 50,
+   "height": 47,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#F06650;strokeColor=#ffffff;verticalAlign=top;align=center;pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=threat5;resIcon=mxgraph.cisco_safe.threat.threat_e2;points=[[0.496,0,0],[0.497,0.894,0],[0.005,0.626,0],[0.99,0.594,0],[0.72,0.085,0],[0.897,0.957,0],[0.1,0.904,0],[0.263,0.096,0]];",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1169"
+  },
+  {
+   "id": "cisco_safeThreat-34-threat-e3",
+   "title": "Threat E3",
+   "tags": "cisco safe threat threat cisco safe threat  Threat E3",
+   "kind": "vertex",
+   "width": 50,
+   "height": 47,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#F06650;strokeColor=#ffffff;verticalAlign=top;align=center;pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=threat5;resIcon=mxgraph.cisco_safe.threat.threat_e3;points=[[0.496,0,0],[0.499,0.894,0],[0.005,0.628,0],[0.993,0.598,0],[0.72,0.085,0],[0.887,0.965,0],[0.1,0.904,0],[0.263,0.096,0]];",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1171"
+  },
+  {
+   "id": "cisco_safeThreat-35-threat-e4",
+   "title": "Threat E4",
+   "tags": "cisco safe threat threat cisco safe threat  Threat E4",
+   "kind": "vertex",
+   "width": 50,
+   "height": 47,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#F06650;strokeColor=#ffffff;verticalAlign=top;align=center;pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=threat5;resIcon=mxgraph.cisco_safe.threat.threat_e4;points=[[0.496,0,0],[0.496,0.894,0],[0.003,0.626,0],[0.99,0.597,0],[0.72,0.085,0],[0.887,0.965,0],[0.103,0.907,0],[0.265,0.093,0]];",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1173"
+  },
+  {
+   "id": "cisco_safeThreat-36-threat-e5",
+   "title": "Threat E5",
+   "tags": "cisco safe threat threat cisco safe threat  Threat E5",
+   "kind": "vertex",
+   "width": 50,
+   "height": 47,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#F06650;strokeColor=#ffffff;verticalAlign=top;align=center;pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=threat5;resIcon=mxgraph.cisco_safe.threat.threat_e5;points=[[0.496,0,0],[0.497,0.894,0],[0.005,0.628,0],[0.99,0.594,0],[0.72,0.085,0],[0.89,0.962,0],[0.1,0.904,0],[0.263,0.096,0]];",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1175"
+  },
+  {
+   "id": "cisco_safeThreat-37-threat-e6",
+   "title": "Threat E6",
+   "tags": "cisco safe threat threat cisco safe threat  Threat E6",
+   "kind": "vertex",
+   "width": 50,
+   "height": 47,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#F06650;strokeColor=#ffffff;verticalAlign=top;align=center;pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=threat5;resIcon=mxgraph.cisco_safe.threat.threat_e6;points=[[0.496,0,0],[0.497,0.894,0],[0.005,0.626,0],[0.99,0.594,0],[0.72,0.085,0],[0.897,0.957,0],[0.1,0.904,0],[0.263,0.096,0]];",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1177"
+  },
+  {
+   "id": "cisco_safeThreat-38-threat-e7",
+   "title": "Threat E7",
+   "tags": "cisco safe threat threat cisco safe threat  Threat E7",
+   "kind": "vertex",
+   "width": 50,
+   "height": 47,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#F06650;strokeColor=#ffffff;verticalAlign=top;align=center;pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=threat5;resIcon=mxgraph.cisco_safe.threat.threat_e7;points=[[0.496,0,0],[0.499,0.894,0],[0.005,0.628,0],[0.993,0.598,0],[0.72,0.085,0],[0.887,0.965,0],[0.103,0.907,0],[0.263,0.096,0]];",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1179"
+  },
+  {
+   "id": "cisco_safeThreat-39-threat-e8",
+   "title": "Threat E8",
+   "tags": "cisco safe threat threat cisco safe threat  Threat E8",
+   "kind": "vertex",
+   "width": 50,
+   "height": 47,
+   "style": "verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#F06650;strokeColor=#ffffff;verticalAlign=top;align=center;pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=threat5;resIcon=mxgraph.cisco_safe.threat.threat_e8;points=[[0.496,0,0],[0.496,0.894,0],[0.003,0.626,0],[0.99,0.594,0],[0.72,0.085,0],[0.89,0.962,0],[0.108,0.909,0],[0.265,0.093,0]];",
+   "shapeNames": [
+    "mxgraph.cisco_safe.compositeIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-CiscoSafe.js:1181"
+  }
+ ]
+}

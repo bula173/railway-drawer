@@ -1,0 +1,162 @@
+{
+ "id": "pidCompressors ISO",
+ "title": "Process Engineering / Compressors ISO",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-PID.js:8",
+ "entries": [
+  {
+   "id": "pidCompressors ISO-0-blower-fan",
+   "title": "Blower, Fan",
+   "tags": "pid compressors - iso  Blower, Fan Blower, Fan",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "shape=mxgraph.pid.compressors_-_iso.blower,_fan;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.compressors_-_iso.blower,_fan"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidCompressors ISO-1-compressor-vacuum-pump",
+   "title": "Compressor, Vacuum Pump",
+   "tags": "pid compressors - iso  Compressor, Vacuum Pump Compressor, Vacuum Pump",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "shape=mxgraph.pid.compressors_-_iso.compressor,_vacuum_pump;html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.compressors_-_iso.compressor,_vacuum_pump"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidCompressors ISO-2-compressor-centrifugal",
+   "title": "Compressor (Centrifugal)",
+   "tags": "pid compressors - iso  Compressor (Centrifugal) Compressor (Centrifugal)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "shape=mxgraph.pid.compressors_-_iso.compressor_(centrifugal);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.compressors_-_iso.compressor_(centrifugal)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidCompressors ISO-3-compressor-diaphragm",
+   "title": "Compressor (Diaphragm)",
+   "tags": "pid compressors - iso  Compressor (Diaphragm) Compressor (Diaphragm)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "shape=mxgraph.pid.compressors_-_iso.compressor_(diaphragm);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.compressors_-_iso.compressor_(diaphragm)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidCompressors ISO-4-compressor-ejector",
+   "title": "Compressor (Ejector)",
+   "tags": "pid compressors - iso  Compressor (Ejector) Compressor (Ejector)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "shape=mxgraph.pid.compressors_-_iso.compressor_(ejector);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.compressors_-_iso.compressor_(ejector)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidCompressors ISO-5-compressor-piston",
+   "title": "Compressor (Piston)",
+   "tags": "pid compressors - iso  Compressor (Piston) Compressor (Piston)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "shape=mxgraph.pid.compressors_-_iso.compressor_(piston);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.compressors_-_iso.compressor_(piston)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidCompressors ISO-6-compressor-ring",
+   "title": "Compressor (Ring)",
+   "tags": "pid compressors - iso  Compressor (Ring) Compressor (Ring)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "shape=mxgraph.pid.compressors_-_iso.compressor_(ring);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.compressors_-_iso.compressor_(ring)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidCompressors ISO-7-compressor-roller-vane",
+   "title": "Compressor (Roller Vane)",
+   "tags": "pid compressors - iso  Compressor (Roller Vane) Compressor (Roller Vane)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "shape=mxgraph.pid.compressors_-_iso.compressor_(roller_vane);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.compressors_-_iso.compressor_(roller_vane)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidCompressors ISO-8-compressor-rotary",
+   "title": "Compressor (Rotary)",
+   "tags": "pid compressors - iso  Compressor (Rotary) Compressor (Rotary)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "shape=mxgraph.pid.compressors_-_iso.compressor_(rotary);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.compressors_-_iso.compressor_(rotary)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidCompressors ISO-9-compressor-screw",
+   "title": "Compressor (Screw)",
+   "tags": "pid compressors - iso  Compressor (Screw) Compressor (Screw)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "shape=mxgraph.pid.compressors_-_iso.compressor_(screw);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.compressors_-_iso.compressor_(screw)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidCompressors ISO-10-compressor-turbo",
+   "title": "Compressor (Turbo)",
+   "tags": "pid compressors - iso  Compressor (Turbo) Compressor (Turbo)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "shape=mxgraph.pid.compressors_-_iso.compressor_(turbo);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.compressors_-_iso.compressor_(turbo)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  }
+ ]
+}

@@ -1,0 +1,526 @@
+{
+ "id": "aws3Management Tools",
+ "title": "AWS17 / Management Tools",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-AWS3.js:8",
+ "entries": [
+  {
+   "id": "aws3Management Tools-0-cloudwatch",
+   "title": "CloudWatch",
+   "tags": "aws3 cloudwatch cloud watch aws amazon web service management tools CloudWatch",
+   "kind": "vertex",
+   "width": 82.5,
+   "height": 93,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.cloudwatch;fillColor=#759C3E;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.cloudwatch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:679"
+  },
+  {
+   "id": "aws3Management Tools-1-cloudformation",
+   "title": "CloudFormation",
+   "tags": "aws3 cloudformation cloud formation aws amazon web service management tools CloudFormation",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 93,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.cloudformation;fillColor=#759C3E;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.cloudformation"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:681"
+  },
+  {
+   "id": "aws3Management Tools-2-cloudtrail",
+   "title": "CloudTrail",
+   "tags": "aws3 cloudtrail cloud trail aws amazon web service management tools CloudTrail",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 93,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.cloudtrail;fillColor=#759C3E;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.cloudtrail"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:683"
+  },
+  {
+   "id": "aws3Management Tools-3-config",
+   "title": "Config",
+   "tags": "aws3 config aws amazon web service management tools Config",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 93,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.config;fillColor=#759C3E;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.config"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:685"
+  },
+  {
+   "id": "aws3Management Tools-4-managed-services",
+   "title": "Managed Services",
+   "tags": "aws3 managed services aws amazon web service management tools Managed Services",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 93,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.managed_services;fillColor=#759C3E;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.managed_services"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:687"
+  },
+  {
+   "id": "aws3Management Tools-5-opsworks",
+   "title": "OpsWorks",
+   "tags": "aws3 opsworks ops works aws amazon web service management tools OpsWorks",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 93,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.opsworks;fillColor=#759C3E;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.opsworks"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:689"
+  },
+  {
+   "id": "aws3Management Tools-6-service-catalog",
+   "title": "Service Catalog",
+   "tags": "aws3 service catalog aws amazon web service management tools Service Catalog",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 93,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.service_catalog;fillColor=#759C3E;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.service_catalog"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:691"
+  },
+  {
+   "id": "aws3Management Tools-7-trusted-advisor",
+   "title": "Trusted Advisor",
+   "tags": "aws3 trusted advisor aws amazon web service management tools Trusted Advisor",
+   "kind": "vertex",
+   "width": 67.5,
+   "height": 81,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.trusted_advisor;fillColor=#759C3E;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.trusted_advisor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:693"
+  },
+  {
+   "id": "aws3Management Tools-8-alarm",
+   "title": "Alarm",
+   "tags": "aws3 alarm aws amazon web service management tools Alarm",
+   "kind": "vertex",
+   "width": 54,
+   "height": 66,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.alarm;fillColor=#759C3E;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.alarm"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:695"
+  },
+  {
+   "id": "aws3Management Tools-9-event-time-based",
+   "title": "Event (Time Based)",
+   "tags": "aws3 event time based aws amazon web service management tools Event (Time Based)",
+   "kind": "vertex",
+   "width": 63,
+   "height": 82.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.event_time_based;fillColor=#759C3E;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.event_time_based"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:697"
+  },
+  {
+   "id": "aws3Management Tools-10-event-event-based",
+   "title": "Event (Event Based)",
+   "tags": "aws3 event based aws amazon web service management tools Event (Event Based)",
+   "kind": "vertex",
+   "width": 60,
+   "height": 82.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.event_event_based;fillColor=#759C3E;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.event_event_based"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:699"
+  },
+  {
+   "id": "aws3Management Tools-11-config-rule",
+   "title": "Config Rule",
+   "tags": "aws3 config rule aws amazon web service management tools Config Rule",
+   "kind": "vertex",
+   "width": 55.5,
+   "height": 72,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.config_rule;fillColor=#759C3E;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.config_rule"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:701"
+  },
+  {
+   "id": "aws3Management Tools-12-automation",
+   "title": "Automation",
+   "tags": "aws3 automation aws amazon web service management tools Automation",
+   "kind": "vertex",
+   "width": 78,
+   "height": 81,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.automation;fillColor=#759C3E;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.automation"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:703"
+  },
+  {
+   "id": "aws3Management Tools-13-documents",
+   "title": "Documents",
+   "tags": "aws3 documents aws amazon web service management tools Documents",
+   "kind": "vertex",
+   "width": 90,
+   "height": 100.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.documents;fillColor=#759C3E;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.documents"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:705"
+  },
+  {
+   "id": "aws3Management Tools-14-inventory",
+   "title": "Inventory",
+   "tags": "aws3 inventory aws amazon web service management tools Inventory",
+   "kind": "vertex",
+   "width": 90,
+   "height": 105,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.inventory;fillColor=#759C3E;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.inventory"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:707"
+  },
+  {
+   "id": "aws3Management Tools-15-maintenance-window",
+   "title": "Maintenance Window",
+   "tags": "aws3 maintenance window aws amazon web service management tools Maintenance Window",
+   "kind": "vertex",
+   "width": 75,
+   "height": 78,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.maintenance_window;fillColor=#759C3E;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.maintenance_window"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:709"
+  },
+  {
+   "id": "aws3Management Tools-16-parameter-store",
+   "title": "Parameter Store",
+   "tags": "aws3 parameter store aws amazon web service management tools Parameter Store",
+   "kind": "vertex",
+   "width": 75,
+   "height": 102,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.parameter_store;fillColor=#759C3E;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.parameter_store"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:711"
+  },
+  {
+   "id": "aws3Management Tools-17-patch-manager",
+   "title": "Patch Manager",
+   "tags": "aws3 patch manager aws amazon web service management tools Patch Manager",
+   "kind": "vertex",
+   "width": 85.5,
+   "height": 90,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.patch_manager;fillColor=#759C3E;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.patch_manager"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:713"
+  },
+  {
+   "id": "aws3Management Tools-18-run-command",
+   "title": "Run Command",
+   "tags": "aws3 run command aws amazon web service management tools Run Command",
+   "kind": "vertex",
+   "width": 114,
+   "height": 82.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.run_command;fillColor=#759C3E;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.run_command"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:715"
+  },
+  {
+   "id": "aws3Management Tools-19-state-manager",
+   "title": "State Manager",
+   "tags": "aws3 state manager aws amazon web service management tools State Manager",
+   "kind": "vertex",
+   "width": 79.5,
+   "height": 82.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.state_manager;fillColor=#759C3E;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.state_manager"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:717"
+  },
+  {
+   "id": "aws3Management Tools-20-ec2-systems-manager",
+   "title": "EC2 Systems Manager",
+   "tags": "aws3 ec2 systems manager aws amazon web service management tools EC2 Systems Manager",
+   "kind": "vertex",
+   "width": 79.5,
+   "height": 82.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.ec2_systems_manager;fillColor=#759C3E;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.ec2_systems_manager"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:719"
+  },
+  {
+   "id": "aws3Management Tools-21-stack-aws-cloudformation",
+   "title": "Stack AWS CloudFormation",
+   "tags": "aws3 stack cloudformation cloud formation aws amazon web service management tools Stack AWS CloudFormation",
+   "kind": "vertex",
+   "width": 73.5,
+   "height": 58.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.stack_aws_cloudformation;fillColor=#759C3E;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.stack_aws_cloudformation"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:721"
+  },
+  {
+   "id": "aws3Management Tools-22-change-set",
+   "title": "Change Set",
+   "tags": "aws3 change set aws amazon web service management tools Change Set",
+   "kind": "vertex",
+   "width": 55.5,
+   "height": 64.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.change_set;fillColor=#759C3E;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.change_set"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:723"
+  },
+  {
+   "id": "aws3Management Tools-23-template",
+   "title": "Template",
+   "tags": "aws3 template aws amazon web service management tools Template",
+   "kind": "vertex",
+   "width": 55.5,
+   "height": 64.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.template;fillColor=#759C3E;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.template"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:725"
+  },
+  {
+   "id": "aws3Management Tools-24-apps",
+   "title": "Apps",
+   "tags": "aws3 apps aws amazon web service management tools Apps",
+   "kind": "vertex",
+   "width": 81,
+   "height": 79.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.apps;fillColor=#759C3E;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.apps"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:727"
+  },
+  {
+   "id": "aws3Management Tools-25-deployments",
+   "title": "Deployments",
+   "tags": "aws3 deployments aws amazon web service management tools Deployments",
+   "kind": "vertex",
+   "width": 81,
+   "height": 76.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.deployments;fillColor=#759C3E;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.deployments"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:729"
+  },
+  {
+   "id": "aws3Management Tools-26-instances",
+   "title": "Instances",
+   "tags": "aws3 instances aws amazon web service management tools Instances",
+   "kind": "vertex",
+   "width": 81,
+   "height": 81,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.instances_2;fillColor=#759C3E;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.instances_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:731"
+  },
+  {
+   "id": "aws3Management Tools-27-layers",
+   "title": "Layers",
+   "tags": "aws3 layers aws amazon web service management tools Layers",
+   "kind": "vertex",
+   "width": 81,
+   "height": 79.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.layers;fillColor=#759C3E;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.layers"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:733"
+  },
+  {
+   "id": "aws3Management Tools-28-monitoring",
+   "title": "Monitoring",
+   "tags": "aws3 monitoring aws amazon web service management tools Monitoring",
+   "kind": "vertex",
+   "width": 81,
+   "height": 67.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.monitoring;fillColor=#759C3E;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.monitoring"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:735"
+  },
+  {
+   "id": "aws3Management Tools-29-permissions",
+   "title": "Permissions",
+   "tags": "aws3 permissions aws amazon web service management tools Permissions",
+   "kind": "vertex",
+   "width": 67.5,
+   "height": 79.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.permissions;fillColor=#759C3E;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.permissions"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:737"
+  },
+  {
+   "id": "aws3Management Tools-30-resources",
+   "title": "Resources",
+   "tags": "aws3 resources aws amazon web service management tools Resources",
+   "kind": "vertex",
+   "width": 67.5,
+   "height": 79.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.resources;fillColor=#759C3E;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.resources"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:739"
+  },
+  {
+   "id": "aws3Management Tools-31-stack-aws-opsworks",
+   "title": "Stack AWS OpsWorks",
+   "tags": "aws3 stack opsworks ops works aws amazon web service management tools Stack AWS OpsWorks",
+   "kind": "vertex",
+   "width": 79.5,
+   "height": 79.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.stack_aws_opsworks;fillColor=#759C3E;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.stack_aws_opsworks"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:741"
+  },
+  {
+   "id": "aws3Management Tools-32-checklist",
+   "title": "Checklist",
+   "tags": "aws3 checklist aws amazon web service management tools Checklist",
+   "kind": "vertex",
+   "width": 55.5,
+   "height": 64.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.checklist;fillColor=#759C3E;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.checklist"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:743"
+  },
+  {
+   "id": "aws3Management Tools-33-checklist-cost",
+   "title": "Checklist Cost",
+   "tags": "aws3 checklist cost aws amazon web service management tools Checklist Cost",
+   "kind": "vertex",
+   "width": 67.5,
+   "height": 75,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.checklist_cost;fillColor=#759C3E;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.checklist_cost"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:745"
+  },
+  {
+   "id": "aws3Management Tools-34-checklist-fault-tolerance",
+   "title": "Checklist Fault Tolerance",
+   "tags": "aws3 checklist fault tolerance aws amazon web service management tools Checklist Fault Tolerance",
+   "kind": "vertex",
+   "width": 57,
+   "height": 72,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.checklist_fault_tolerance;fillColor=#759C3E;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.checklist_fault_tolerance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:747"
+  },
+  {
+   "id": "aws3Management Tools-35-checklist-performance",
+   "title": "Checklist Performance",
+   "tags": "aws3 checklist performance aws amazon web service management tools Checklist Performance",
+   "kind": "vertex",
+   "width": 61.5,
+   "height": 73.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.checklist_performance;fillColor=#759C3E;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.checklist_performance"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:749"
+  },
+  {
+   "id": "aws3Management Tools-36-checklist-security",
+   "title": "Checklist Security",
+   "tags": "aws3 checklist security aws amazon web service management tools Checklist Security",
+   "kind": "vertex",
+   "width": 54,
+   "height": 69,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.checklist_security;fillColor=#759C3E;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.checklist_security"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:751"
+  }
+ ]
+}

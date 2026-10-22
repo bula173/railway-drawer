@@ -1,0 +1,2626 @@
+{
+ "id": "rackHPE Aruba Switches",
+ "title": "Rack / HPE Aruba / Switches",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Rack.js:7",
+ "entries": [
+  {
+   "id": "rackHPE Aruba Switches-0-direct-qsfp",
+   "title": "Direct QSFP",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba direct qsfp Direct QSFP",
+   "kind": "vertex",
+   "width": 11,
+   "height": 5.7,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.direct_qsfp;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.direct_qsfp"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:242"
+  },
+  {
+   "id": "rackHPE Aruba Switches-1-direct-sfp",
+   "title": "Direct SFP",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba direct sfp Direct SFP",
+   "kind": "vertex",
+   "width": 11,
+   "height": 8,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.direct_sfp;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.direct_sfp"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:243"
+  },
+  {
+   "id": "rackHPE Aruba Switches-2-fibre-qsfp",
+   "title": "Fibre QSFP",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba fibre qsfp Fibre QSFP",
+   "kind": "vertex",
+   "width": 20,
+   "height": 5.7,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.fibre_qsfp;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.fibre_qsfp"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:244"
+  },
+  {
+   "id": "rackHPE Aruba Switches-3-j9772a-2530-48g-poe-switch",
+   "title": "J9772A 2530-48G PoE+ Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba j9772a 2530 48g poeplus switch J9772A 2530-48G PoE+ Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.j9772a_2530_48g_poeplus_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.j9772a_2530_48g_poeplus_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:245"
+  },
+  {
+   "id": "rackHPE Aruba Switches-4-j9773a-2530-24g-poe-switch",
+   "title": "J9773A 2530-24G PoE+ Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba j9773a 2530 24g poeplus switch J9773A 2530-24G PoE+ Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.j9773a_2530_24g_poeplus_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.j9773a_2530_24g_poeplus_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:246"
+  },
+  {
+   "id": "rackHPE Aruba Switches-5-j9774a-2530-8g-poe-front",
+   "title": "J9774A 2530-8G PoE+ (front)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba j9774a 2530 8g poeplus front J9774A 2530-8G PoE+ (front)",
+   "kind": "vertex",
+   "width": 87,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.j9774a_2530_8g_poeplus_front;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.j9774a_2530_8g_poeplus_front"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:247"
+  },
+  {
+   "id": "rackHPE Aruba Switches-6-j9774a-2530-8g-poeplus-rear",
+   "title": "J9774A 2530-8G PoEplus (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba j9774a 2530 8g poeplus rear J9774A 2530-8G PoEplus (rear)",
+   "kind": "vertex",
+   "width": 87,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.j9774a_2530_8g_poeplus_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.j9774a_2530_8g_poeplus_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:248"
+  },
+  {
+   "id": "rackHPE Aruba Switches-7-j9775a-2530-48g-switch",
+   "title": "J9775A 2530-48G Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba j9775a 2530 48g switch J9775A 2530-48G Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.j9775a_2530_48g_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.j9775a_2530_48g_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:249"
+  },
+  {
+   "id": "rackHPE Aruba Switches-8-j9776a-2530-24g-switch",
+   "title": "J9776A 2530-24G Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba j9776a 2530 24g switch J9776A 2530-24G Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.j9776a_2530_24g_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.j9776a_2530_24g_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:250"
+  },
+  {
+   "id": "rackHPE Aruba Switches-9-j9777a-2530-8g-front",
+   "title": "J9777A 2530-8G (front)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba j9777a 2530 8g front J9777A 2530-8G (front)",
+   "kind": "vertex",
+   "width": 87,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.j9777a_2530_8g_front;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.j9777a_2530_8g_front"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:251"
+  },
+  {
+   "id": "rackHPE Aruba Switches-10-j9777a-2530-8g-rear",
+   "title": "J9777A 2530-8G (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba j9777a 2530 8g rear J9777A 2530-8G (rear)",
+   "kind": "vertex",
+   "width": 87,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.j9777a_2530_8g_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.j9777a_2530_8g_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:252"
+  },
+  {
+   "id": "rackHPE Aruba Switches-11-j9778a-2530-48-poe-front",
+   "title": "J9778A 2530-48 PoE+ (front)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba j9778a 2530 48 poeplus front J9778A 2530-48 PoE+ (front)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.j9778a_2530_48_poeplus_front;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.j9778a_2530_48_poeplus_front"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:253"
+  },
+  {
+   "id": "rackHPE Aruba Switches-12-j9780a-2530-8-poe-front",
+   "title": "J9780A 2530-8 PoE+ (front)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba j9780a 2530 poeplus front J9780A 2530-8 PoE+ (front)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.j9780a_2530_8_poeplus_front;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.j9780a_2530_8_poeplus_front"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:254"
+  },
+  {
+   "id": "rackHPE Aruba Switches-13-j9780a-2530-8-poe-rear",
+   "title": "J9780A 2530-8 PoE+ (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba j9780a 2530 poeplus rear J9780A 2530-8 PoE+ (rear)",
+   "kind": "vertex",
+   "width": 87,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.j9780a_2530_8_poeplus_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.j9780a_2530_8_poeplus_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:255"
+  },
+  {
+   "id": "rackHPE Aruba Switches-14-j9781a-2530-48-front",
+   "title": "J9781A 2530-48 (front)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba j9781a 2530 48 front J9781A 2530-48 (front)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.j9781a_2530_48_front;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.j9781a_2530_48_front"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:256"
+  },
+  {
+   "id": "rackHPE Aruba Switches-15-j9782a-2530-24-front",
+   "title": "J9782A 2530-24 (front)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba j9782a 2530 24 front J9782A 2530-24 (front)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.j9782a_2530_24_front;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.j9782a_2530_24_front"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:257"
+  },
+  {
+   "id": "rackHPE Aruba Switches-16-j9821a-540r-zl2-switch-rear",
+   "title": "J9821A 540R zl2 Switch (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba j9821a 540r zl2 switch rear J9821A 540R zl2 Switch (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 56,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.j9821a_540r_zl2_switch_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.j9821a_540r_zl2_switch_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:258"
+  },
+  {
+   "id": "rackHPE Aruba Switches-17-j9822a-5412r-zl2-switch",
+   "title": "J9822A 5412R zl2 Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba j9822a 5412r zl2 switch J9822A 5412R zl2 Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 98,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.j9822a_5412r_zl2_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.j9822a_5412r_zl2_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:259"
+  },
+  {
+   "id": "rackHPE Aruba Switches-18-j9822a-5412r-zl2-switch-rear",
+   "title": "J9822A 5412R zl2 Switch (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba j9822a 5412r zl2 switch rear J9822A 5412R zl2 Switch (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 98,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.j9822a_5412r_zl2_switch_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.j9822a_5412r_zl2_switch_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:260"
+  },
+  {
+   "id": "rackHPE Aruba Switches-19-j9827a-5400r-management-module",
+   "title": "J9827A 5400R Management Module",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba j9827a 5400r management module J9827A 5400R Management Module",
+   "kind": "vertex",
+   "width": 98,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.j9827a_5400r_management_module;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.j9827a_5400r_management_module"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:261"
+  },
+  {
+   "id": "rackHPE Aruba Switches-20-j9828a-5400r-700w-poe-zl2-power-supply",
+   "title": "J9828A 5400R 700W PoE+ zl2 Power Supply",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba j9828a 5400r 700w poeplus zl2 power supply J9828A 5400R 700W PoE+ zl2 Power Supply",
+   "kind": "vertex",
+   "width": 63,
+   "height": 43,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.j9828a_5400r_700w_poeplus_zl2_power_supply;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.j9828a_5400r_700w_poeplus_zl2_power_supply"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:262"
+  },
+  {
+   "id": "rackHPE Aruba Switches-21-j9829a-5400r-1100w-poe-zl2-power-supply",
+   "title": "J9829A 5400R 1100W PoE+ zl2 Power Supply",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba j9829a 5400r 1100w poeplus zl2 power supply J9829A 5400R 1100W PoE+ zl2 Power Supply",
+   "kind": "vertex",
+   "width": 63,
+   "height": 43,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.j9829a_5400r_1100w_poeplus_zl2_power_supply;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.j9829a_5400r_1100w_poeplus_zl2_power_supply"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:263"
+  },
+  {
+   "id": "rackHPE Aruba Switches-22-j9830b-5400r-2750w-poe-zl2-power-supply",
+   "title": "J9830B 5400R 2750W PoE+ zl2 Power Supply",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba j9830b 5400r 2750w poeplus zl2 power supply J9830B 5400R 2750W PoE+ zl2 Power Supply",
+   "kind": "vertex",
+   "width": 63,
+   "height": 43,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.j9830b_5400r_2750w_poeplus_zl2_power_supply;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.j9830b_5400r_2750w_poeplus_zl2_power_supply"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:264"
+  },
+  {
+   "id": "rackHPE Aruba Switches-23-j9831a-5406r-zl2-switch-fan-tray",
+   "title": "J9831A 5406R zl2 Switch Fan Tray",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba j9831a 5406r zl2 switch fan tray J9831A 5406R zl2 Switch Fan Tray",
+   "kind": "vertex",
+   "width": 15,
+   "height": 53,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.j9831a_5406r_zl2_switch_fan_tray;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.j9831a_5406r_zl2_switch_fan_tray"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:265"
+  },
+  {
+   "id": "rackHPE Aruba Switches-24-j9832a-5412r-zl2-switch-fan-tray",
+   "title": "J9832A 5412R zl2 Switch Fan Tray",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba j9832a 5412r zl2 switch fan tray J9832A 5412R zl2 Switch Fan Tray",
+   "kind": "vertex",
+   "width": 15,
+   "height": 96,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.j9832a_5412r_zl2_switch_fan_tray;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.j9832a_5412r_zl2_switch_fan_tray"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:266"
+  },
+  {
+   "id": "rackHPE Aruba Switches-25-j9840a-msm-775zl-v2-zl-module",
+   "title": "J9840A MSM 775zl v2 zl Module",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba j9840a msm 775zl v2 zl module J9840A MSM 775zl v2 zl Module",
+   "kind": "vertex",
+   "width": 75,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.j9840a_msm_775zl_v2_zl_module;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.j9840a_msm_775zl_v2_zl_module"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:267"
+  },
+  {
+   "id": "rackHPE Aruba Switches-26-j9850a-5406r-zl2-switch-rear",
+   "title": "J9850A 5406R zl2 Switch (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba j9850a 5406r zl2 switch rear J9850A 5406R zl2 Switch (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 55,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.j9850a_5406r_zl2_switch_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.j9850a_5406r_zl2_switch_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:268"
+  },
+  {
+   "id": "rackHPE Aruba Switches-27-j9850a-540r-zl2-switch",
+   "title": "J9850A 540R zl2 Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba j9850a 540r zl2 switch J9850A 540R zl2 Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 55,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.j9850a_540r_zl2_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.j9850a_540r_zl2_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:269"
+  },
+  {
+   "id": "rackHPE Aruba Switches-28-j9851a-5412r-zl2-switch",
+   "title": "J9851A 5412R zl2 Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba j9851a 5412r zl2 switch J9851A 5412R zl2 Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 98,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.j9851a_5412r_zl2_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.j9851a_5412r_zl2_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:270"
+  },
+  {
+   "id": "rackHPE Aruba Switches-29-j9851a-5412r-zl2-switch-rear",
+   "title": "J9851A 5412R zl2 Switch (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba j9851a 5412r zl2 switch rear J9851A 5412R zl2 Switch (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 98,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.j9851a_5412r_zl2_switch_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.j9851a_5412r_zl2_switch_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:271"
+  },
+  {
+   "id": "rackHPE Aruba Switches-30-j9853a-2530-48g-poe-2sfp-switch",
+   "title": "J9853A 2530-48G PoE+ 2SFP+ Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba j9853a 2530 48g poeplus 2sfpplus switch J9853A 2530-48G PoE+ 2SFP+ Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.j9853a_2530_48g_poeplus_2sfpplus_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.j9853a_2530_48g_poeplus_2sfpplus_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:272"
+  },
+  {
+   "id": "rackHPE Aruba Switches-31-j9854a-2530-24g-poe-2sfp-switch",
+   "title": "J9854A 2530-24G PoE+ 2SFP+ Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba j9854a 2530 24g poeplus 2sfpplus Switch J9854A 2530-24G PoE+ 2SFP+ Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.j9854a_2530_24g_poeplus_2sfpplus_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.j9854a_2530_24g_poeplus_2sfpplus_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:273"
+  },
+  {
+   "id": "rackHPE Aruba Switches-32-j9855a-2530-48g-2sfp-switch",
+   "title": "J9855A 2530-48G 2SFP+ Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba j9855a 2530 48g 2sfpplus switch J9855A 2530-48G 2SFP+ Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.j9855a_2530_48g_2sfpplus_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.j9855a_2530_48g_2sfpplus_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:274"
+  },
+  {
+   "id": "rackHPE Aruba Switches-33-j9856a-2530-24g-2sfp-switch",
+   "title": "J9856A 2530-24G 2SFP+ Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba j9856a 2530 24g 2sfpplus switch J9856A 2530-24G 2SFP+ Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.j9856a_2530_24g_2sfpplus_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.j9856a_2530_24g_2sfpplus_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:275"
+  },
+  {
+   "id": "rackHPE Aruba Switches-34-j9857a-adv-svcs-v2-zl-module",
+   "title": "J9857A Adv Svcs v2 zl Module",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba j9857a adv svcs v2 zl module J9857A Adv Svcs v2 zl Module",
+   "kind": "vertex",
+   "width": 75,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.j9857a_adv_svcs_v2_zl_module;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.j9857a_adv_svcs_v2_zl_module"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:276"
+  },
+  {
+   "id": "rackHPE Aruba Switches-35-j9858a-adv-svcs-v2-zl-module",
+   "title": "J9858A Adv Svcs v2 zl Module",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba j9858a adv svcs v2 zl module J9858A Adv Svcs v2 zl Module",
+   "kind": "vertex",
+   "width": 75,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.j9858a_adv_svcs_v2_zl_module;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.j9858a_adv_svcs_v2_zl_module"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:277"
+  },
+  {
+   "id": "rackHPE Aruba Switches-36-j993a-8-port-1g-10gbe-sfp-with-macsec-v3-zl2-module",
+   "title": "J993A 8-port 1G 10GbE SFP+ with MACsec v3 zl2 Module",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba j993a 8 port 1g 10gbe sfpplus with macsec v3 zl2 module J993A 8-port 1G 10GbE SFP+ with MACsec v3 zl2 Module",
+   "kind": "vertex",
+   "width": 75,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.j993a_8_port_1g_10gbe_sfpplus_with_macsec_v3_zl2_module;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.j993a_8_port_1g_10gbe_sfpplus_with_macsec_v3_zl2_module"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:278"
+  },
+  {
+   "id": "rackHPE Aruba Switches-37-j9986a-24p-gigt-module",
+   "title": "J9986A 24p GigT Module",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba j9986a 24p gigt module J9986A 24p GigT Module",
+   "kind": "vertex",
+   "width": 75,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.j9986a_24p_gigt_module;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.j9986a_24p_gigt_module"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:279"
+  },
+  {
+   "id": "rackHPE Aruba Switches-38-j9987a-24-port-10-100-1000base-t-with-macsec-v3-zl2-module",
+   "title": "J9987A 24-port 10/100/1000BASE-T with MACsec v3 zl2 Module",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba j9987a 24 port 10 100 1000base with macsec v3 zl2 module J9987A 24-port 10/100/1000BASE-T with MACsec v3 zl2 Module",
+   "kind": "vertex",
+   "width": 75,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.j9987a_24_port_10_100_1000base_t_with_macsec_v3_zl2_module;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.j9987a_24_port_10_100_1000base_t_with_macsec_v3_zl2_module"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:280"
+  },
+  {
+   "id": "rackHPE Aruba Switches-39-j9988a-24-port-1gbe-sfp-with-magsec-v3-zl2-module",
+   "title": "J9988A 24-port 1GbE SFP with MAGsec v3 zl2 Module",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba j9988A 24 port 1gbe sfp with magsec v3 zl2 module J9988A 24-port 1GbE SFP with MAGsec v3 zl2 Module",
+   "kind": "vertex",
+   "width": 75,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.j9988a_24_port_1gbe_sfp_with_magsec_v3_zl2_module;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.j9988a_24_port_1gbe_sfp_with_magsec_v3_zl2_module"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:281"
+  },
+  {
+   "id": "rackHPE Aruba Switches-40-j9989a-12-port-10-100-1000base-t-poe-and-12-port-1gbe-sfp-with-macsec-v3-zl2-module",
+   "title": "J9989A 12-port 10/100/1000BASE-T PoE+ and 12-port 1GbE SFP with MACsec v3 zl2 Module",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba j9989a 12 port 10 100 1000base poeplus and 12 port 1gbe sfp with macsec v3 zl2 module J9989A 12-port 10/100/1000BASE-T PoE+ and 12-port 1GbE SFP with MACsec v3 zl2 Module",
+   "kind": "vertex",
+   "width": 75,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.j9989a_12_port_10_100_1000base_t_poeplus_and_12_port_1gbe_sfp_with_macsec_v3_zl2_module;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.j9989a_12_port_10_100_1000base_t_poeplus_and_12_port_1gbe_sfp_with_macsec_v3_zl2_module"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:282"
+  },
+  {
+   "id": "rackHPE Aruba Switches-41-j9990a-20p-gigt-4p-sfp-module",
+   "title": "J9990A 20p GigT 4p SFP+ Module",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba j9990a 20p gigt 4p sfpplus module J9990A 20p GigT 4p SFP+ Module",
+   "kind": "vertex",
+   "width": 75,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.j9990a_20p_gigt_4p_sfpplus_module;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.j9990a_20p_gigt_4p_sfpplus_module"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:283"
+  },
+  {
+   "id": "rackHPE Aruba Switches-42-j9991a-20-port-10-100-1000base-t-poe-and-4-port-1-2-5-5-10gbase-t-poe-with-macsec-v3-zl2-module",
+   "title": "J9991A 20-port 10/100/1000BASE-T PoE+ and 4 port 1/2.5/5/10GBASE-T PoE+ with MACsec v3 zl2 Module",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba j9991a 20 port 10 100 1000base poeplus and port 2.5 10gbase poeplus with macsec v3 zl2 module J9991A 20-port 10/100/1000BASE-T PoE+ and 4 port 1/2.5/5/10GBASE-T PoE+ with MACsec v3 zl2 Module",
+   "kind": "vertex",
+   "width": 75,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.j9991a_20_port_10_100_1000base_t_poeplus_and_4_port_1_2.5_5_10gbase_t_poeplus_with_macsec_v3_zl2_module;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.j9991a_20_port_10_100_1000base_t_poeplus_and_4_port_1_2.5_5_10gbase_t_poeplus_with_macsec_v3_zl2_module"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:284"
+  },
+  {
+   "id": "rackHPE Aruba Switches-43-j9992a-20-port-10-100-1000base-t-poe-and-1-port-40gbe-qsfp-with-macsec-v3-zl2-module",
+   "title": "J9992A 20-port 10/100/1000BASE-T PoE+ and 1-port 40GbE QSFP+ with MACsec v3 zl2 Module",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba j9992a 20 port 10 100 1000base poeplus and port 40gbe qsfpplus withmacsec v3 zl2 module J9992A 20-port 10/100/1000BASE-T PoE+ and 1-port 40GbE QSFP+ with MACsec v3 zl2 Module",
+   "kind": "vertex",
+   "width": 75,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.j9992a_20_port_10_100_1000base_t_poeplus_and_1_port_40gbe_qsfpplus_withmacsec_v3_zl2_module;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.j9992a_20_port_10_100_1000base_t_poeplus_and_1_port_40gbe_qsfpplus_withmacsec_v3_zl2_module"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:285"
+  },
+  {
+   "id": "rackHPE Aruba Switches-44-j9995a-8p-smart-rate-poe-module",
+   "title": "J9995A 8p Smart Rate PoE+ Module",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba j9995a 8p smart rate poeplus module J9995A 8p Smart Rate PoE+ Module",
+   "kind": "vertex",
+   "width": 75,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.j9995a_8p_smart_rate_poeplus_module;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.j9995a_8p_smart_rate_poeplus_module"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:286"
+  },
+  {
+   "id": "rackHPE Aruba Switches-45-j9996a-2-port-40gbe-qsfp-with-macsec-v3-zl2-module",
+   "title": "J9996A 2-port 40GbE QSFP+ with MACsec v3 zl2 Module",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba j9996a port 40gbe qsfpplus with macsec v3 zl2 module J9996A 2-port 40GbE QSFP+ with MACsec v3 zl2 Module",
+   "kind": "vertex",
+   "width": 75,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.j9996a_2_port_40gbe_qsfpplus_with_macsec_v3_zl2_module;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.j9996a_2_port_40gbe_qsfpplus_with_macsec_v3_zl2_module"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:287"
+  },
+  {
+   "id": "rackHPE Aruba Switches-46-jl070a-2530-8-poe-internal-ps-switch",
+   "title": "JL070A 2530-8 PoE+ Internal PS Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jL070a 2530 poeplus internal ps switch JL070A 2530-8 PoE+ Internal PS Switch",
+   "kind": "vertex",
+   "width": 82,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl070a_2530_8_poeplus_internal_ps_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl070a_2530_8_poeplus_internal_ps_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:288"
+  },
+  {
+   "id": "rackHPE Aruba Switches-47-jl071a-hpe-aruba-3810m-24-port-gt-1-slot-switch",
+   "title": "JL071A HPE Aruba 3810M 24-port GT 1-slot Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl071a 3810m 24 port gt slot switch JL071A HPE Aruba 3810M 24-port GT 1-slot Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl071a_hpe_aruba_3810m_24_port_gt_1_slot_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl071a_hpe_aruba_3810m_24_port_gt_1_slot_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:289"
+  },
+  {
+   "id": "rackHPE Aruba Switches-48-jl071a-hpe-aruba-3810m-24-port-gt-1-slot-switch-rear",
+   "title": "JL071A HPE Aruba 3810M 24-port GT 1-slot Switch (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl071a 3810m 24 port gt slot switch rear JL071A HPE Aruba 3810M 24-port GT 1-slot Switch (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl071a_hpe_aruba_3810m_24_port_gt_1_slot_switch_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl071a_hpe_aruba_3810m_24_port_gt_1_slot_switch_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:290"
+  },
+  {
+   "id": "rackHPE Aruba Switches-49-jl072a-hpe-aruba-3810m-48-port-gt-1-slot-switch",
+   "title": "JL072A HPE Aruba 3810M 48-port GT 1-slot Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl072a hpe aruba 3810m 48 port gt slot switch JL072A HPE Aruba 3810M 48-port GT 1-slot Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl072a_hpe_aruba_3810m_48_port_gt_1_slot_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl072a_hpe_aruba_3810m_48_port_gt_1_slot_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:291"
+  },
+  {
+   "id": "rackHPE Aruba Switches-50-jl072a-hpe-aruba-3810m-48-port-gt-1-slot-switch-rear",
+   "title": "JL072A HPE Aruba 3810M 48-port GT 1-slot Switch (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl072a 3810m 48 port gt slot switch rear JL072A HPE Aruba 3810M 48-port GT 1-slot Switch (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl072a_hpe_aruba_3810m_48_port_gt_1_slot_switch_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl072a_hpe_aruba_3810m_48_port_gt_1_slot_switch_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:292"
+  },
+  {
+   "id": "rackHPE Aruba Switches-51-jl073a-hpe-aruba-3810m-24-port-gt-poeplus-1-slot-switch",
+   "title": "JL073A HPE Aruba 3810M 24-port GT PoEplus 1-slot Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl073a 3810m 24 port gt poeplus slot switch JL073A HPE Aruba 3810M 24-port GT PoEplus 1-slot Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl073a_hpe_aruba_3810m_24_port_gt_poeplus_1_slot_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl073a_hpe_aruba_3810m_24_port_gt_poeplus_1_slot_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:293"
+  },
+  {
+   "id": "rackHPE Aruba Switches-52-jl073a-hpe-aruba-3810m-24-port-gt-poe-1-slot-switch-rear",
+   "title": "JL073A HPE Aruba 3810M 24-port GT PoE 1-slot Switch (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl073a 3810m 24 port gt poeplus slot switch rear JL073A HPE Aruba 3810M 24-port GT PoE 1-slot Switch (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl073a_hpe_aruba_3810m_24_port_gt_poeplus_1_slot_switch_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl073a_hpe_aruba_3810m_24_port_gt_poeplus_1_slot_switch_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:294"
+  },
+  {
+   "id": "rackHPE Aruba Switches-53-jl074a-hpe-aruba-3810m-48-port-gt-poe-1-slot-switch",
+   "title": "JL074A HPE Aruba 3810M 48-port GT PoE+ 1-slot Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl074a 3810m 48 port gt poeplus slot switch JL074A HPE Aruba 3810M 48-port GT PoE+ 1-slot Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl074a_hpe_aruba_3810m_48_port_gt_poeplus_1_slot_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl074a_hpe_aruba_3810m_48_port_gt_poeplus_1_slot_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:295"
+  },
+  {
+   "id": "rackHPE Aruba Switches-54-jl075a-hpe-aruba-3810m-16-port-sfp-2-slot-switch",
+   "title": "JL075A HPE Aruba 3810M 16-port SFP+ 2-slot Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl075a 3810m 16 port sfpplus slot switch JL075A HPE Aruba 3810M 16-port SFP+ 2-slot Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl075a_hpe_aruba_3810m_16_port_sfpplus_2_slot_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl075a_hpe_aruba_3810m_16_port_sfpplus_2_slot_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:296"
+  },
+  {
+   "id": "rackHPE Aruba Switches-55-jl075a-hpe-aruba-3810m-16-port-sfp-2-slot-switch-rear",
+   "title": "JL075A HPE Aruba 3810M 16-port SFP+ 2-slot Switch (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl075a 3810m 16 port sfpplus slot switch rear JL075A HPE Aruba 3810M 16-port SFP+ 2-slot Switch (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl075a_hpe_aruba_3810m_16_port_sfpplus_2_slot_switch_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl075a_hpe_aruba_3810m_16_port_sfpplus_2_slot_switch_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:297"
+  },
+  {
+   "id": "rackHPE Aruba Switches-56-jl076a-hpe-aruba-3810m-40-port-gt-poe-8-port-1-2-5-5-10gbase-t-poe-1-slot-switch",
+   "title": "JL076A HPE Aruba 3810M 40-port GT PoE+ 8-port 1/2.5/5/10GBASE-T PoE+ 1-slot Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl076a 3810m 40 port gt poeplus port 10gbase poeplus slot switch JL076A HPE Aruba 3810M 40-port GT PoE+ 8-port 1/2.5/5/10GBASE-T PoE+ 1-slot Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl076a_hpe_aruba_3810m_40_port_gt_poeplus_8_port_1_2_5_5_10gbase_t_poeplus_1_slot_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl076a_hpe_aruba_3810m_40_port_gt_poeplus_8_port_1_2_5_5_10gbase_t_poeplus_1_slot_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:298"
+  },
+  {
+   "id": "rackHPE Aruba Switches-57-jl076a-hpe-aruba-3810m-40-port-gt-poe-8-port-1-2-5-5-10gbase-t-poe-1-slot-switch-rear",
+   "title": "JL076A HPE Aruba 3810M 40-port GT PoE+ 8-port 1/2.5/5/10GBASE-T PoE+ 1-slot Switch (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl076a 3810m 40 port gt poeplus port 10gbase poeplus slot switch rear JL076A HPE Aruba 3810M 40-port GT PoE+ 8-port 1/2.5/5/10GBASE-T PoE+ 1-slot Switch (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl076a_hpe_aruba_3810m_40_port_gt_poeplus_8_port_1_2_5_5_10gbase_t_poeplus_1_slot_switch_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl076a_hpe_aruba_3810m_40_port_gt_poeplus_8_port_1_2_5_5_10gbase_t_poeplus_1_slot_switch_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:299"
+  },
+  {
+   "id": "rackHPE Aruba Switches-58-jl079a3810m-2930m-2-port-40gbe-qsfp-module",
+   "title": "JL079A3810M 2930M 2-port 40GbE QSFP+ Module",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl079a3810m 2930m port 40gbe qsfpplus module JL079A3810M 2930M 2-port 40GbE QSFP+ Module",
+   "kind": "vertex",
+   "width": 41,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl079a3810m_2930m_2_port_40gbe_qsfpplus_module;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl079a3810m_2930m_2_port_40gbe_qsfpplus_module"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:300"
+  },
+  {
+   "id": "rackHPE Aruba Switches-59-jl081a-3810m-2930m-4-1-2-5-5-10-gbe-hpe-smart-rate-module",
+   "title": "JL081A 3810M 2930M 4 1/2.5/5/10 GbE HPE Smart Rate Module",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl081a 3810m 2930m 10 gbe smart rate module JL081A 3810M 2930M 4 1/2.5/5/10 GbE HPE Smart Rate Module",
+   "kind": "vertex",
+   "width": 41,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl081a_3810m_2930m_4_1_2_5_5_10_gbe_hpe_smart_rate_module;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl081a_3810m_2930m_4_1_2_5_5_10_gbe_hpe_smart_rate_module"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:301"
+  },
+  {
+   "id": "rackHPE Aruba Switches-60-jl083a-3810m-2930m-4-port-10gbe-sfp-module",
+   "title": "JL083A 3810M 2930M 4-port 10GbE SFP+ Module",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl083a 3810m 2930m port 10gbe sfpplus module JL083A 3810M 2930M 4-port 10GbE SFP+ Module",
+   "kind": "vertex",
+   "width": 41,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl083a_3810m_2930m_4_port_10gbe_sfpplus_module;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl083a_3810m_2930m_4_port_10gbe_sfpplus_module"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:302"
+  },
+  {
+   "id": "rackHPE Aruba Switches-61-jl084a-3810m-2930m-4-port-stacking-module",
+   "title": "JL084A 3810M 2930M 4-port Stacking Module",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl084a 3810m 2930m port stacking module JL084A 3810M 2930M 4-port Stacking Module",
+   "kind": "vertex",
+   "width": 82,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl084a_3810m_2930m_4_port_stacking_module;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl084a_3810m_2930m_4_port_stacking_module"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:303"
+  },
+  {
+   "id": "rackHPE Aruba Switches-62-jl085a-aruba-6300m-psu-module",
+   "title": "JL085A Aruba 6300M PSU Module",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl085a 6300m psu module JL085A Aruba 6300M PSU Module",
+   "kind": "vertex",
+   "width": 27,
+   "height": 13,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl085a_aruba_6300m_psu_module;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl085a_aruba_6300m_psu_module"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:304"
+  },
+  {
+   "id": "rackHPE Aruba Switches-63-jl086a-aruba-6300m-psu-module",
+   "title": "JL086A Aruba 6300M PSU Module",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl086a 6300m psu module JL086A Aruba 6300M PSU Module",
+   "kind": "vertex",
+   "width": 27,
+   "height": 13,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl086a_aruba_6300m_psu_module;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl086a_aruba_6300m_psu_module"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:305"
+  },
+  {
+   "id": "rackHPE Aruba Switches-64-jl087a-3810m-2930m-1-port-40gbe-qsfp-module",
+   "title": "JL087A 3810M 2930M 1-port 40GbE QSFP+ Module",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl087a 3810m 2930m port 40gbe qsfpplus module JL087A 3810M 2930M 1-port 40GbE QSFP+ Module",
+   "kind": "vertex",
+   "width": 41,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl087a_3810m_2930m_1_port_40gbe_qsfpplus_module;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl087a_3810m_2930m_1_port_40gbe_qsfpplus_module"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:306"
+  },
+  {
+   "id": "rackHPE Aruba Switches-65-jl087a-aruba-6300m-psu-module",
+   "title": "JL087A Aruba 6300M PSU Module",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl087a 6300m psu module JL087A Aruba 6300M PSU Module",
+   "kind": "vertex",
+   "width": 27,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl087a_aruba_6300m_psu_module;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl087a_aruba_6300m_psu_module"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:307"
+  },
+  {
+   "id": "rackHPE Aruba Switches-66-jl253a-aruba-2930f-24g-4sfp-switch",
+   "title": "JL253A Aruba 2930F-24G 4SFP+ switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl253a 2930f 24g 4sfpplus switch JL253A Aruba 2930F-24G 4SFP+ switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl253a_aruba_2930f_24g_4sfpplus_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl253a_aruba_2930f_24g_4sfpplus_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:308"
+  },
+  {
+   "id": "rackHPE Aruba Switches-67-jl254a-aruba-2930f-48g-4sfp-switch",
+   "title": "JL254A Aruba 2930F-48G 4SFP+ switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl254a 2930f 48g 4sfpplus switch JL254A Aruba 2930F-48G 4SFP+ switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl254a_aruba_2930f_48g_4sfpplus_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl254a_aruba_2930f_48g_4sfpplus_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:309"
+  },
+  {
+   "id": "rackHPE Aruba Switches-68-jl255a-aruba-2930f-24g-poe-4sfp-switch",
+   "title": "JL255A Aruba 2930F-24G PoE+ 4SFP+ switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl255a 2930f 24g poeplus 4sfpplus switch JL255A Aruba 2930F-24G PoE+ 4SFP+ switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl255a_aruba_2930f_24g_poeplus_4sfpplus_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl255a_aruba_2930f_24g_poeplus_4sfpplus_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:310"
+  },
+  {
+   "id": "rackHPE Aruba Switches-69-jl256a-aruba-2930f-48g-poe-4sfp-switch",
+   "title": "JL256A Aruba 2930F-48G PoE+ 4SFP+ switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl256a 2930f 48g poeplus 4sfpplus switch JL256A Aruba 2930F-48G PoE+ 4SFP+ switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl256a_aruba_2930f_48g_poeplus_4sfpplus_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl256a_aruba_2930f_48g_poeplus_4sfpplus_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:311"
+  },
+  {
+   "id": "rackHPE Aruba Switches-70-jl258a-aruba-2930f-8g-poe-2sfp-rear",
+   "title": "JL258A Aruba 2930F-8G PoE+ 2SFP+ (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl258a 2930f 8g poeplus 2sfpplus rear JL258A Aruba 2930F-8G PoE+ 2SFP+ (rear)",
+   "kind": "vertex",
+   "width": 82,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl258a_aruba_2930f_8g_poeplus_2sfpplus_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl258a_aruba_2930f_8g_poeplus_2sfpplus_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:312"
+  },
+  {
+   "id": "rackHPE Aruba Switches-71-jl258a-aruba-2930f-8g-poe-2sfp-switch",
+   "title": "JL258A Aruba 2930F-8G PoE+ 2SFP+ switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl258a 2930f 8g poeplus 2sfpplus switch JL258A Aruba 2930F-8G PoE+ 2SFP+ switch",
+   "kind": "vertex",
+   "width": 82,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl258a_aruba_2930f_8g_poeplus_2sfpplus_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl258a_aruba_2930f_8g_poeplus_2sfpplus_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:313"
+  },
+  {
+   "id": "rackHPE Aruba Switches-72-jl258a-aruba-2930f-8g-poe-2sfp-switch-rear",
+   "title": "JL258A Aruba 2930F-8G PoE+ 2SFP+ switch (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl258a 2930f 8g poeplus 2sfpplus switch rear JL258A Aruba 2930F-8G PoE+ 2SFP+ switch (rear)",
+   "kind": "vertex",
+   "width": 82,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl258a_aruba_2930f_8g_poeplus_2sfpplus_switch_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl258a_aruba_2930f_8g_poeplus_2sfpplus_switch_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:314"
+  },
+  {
+   "id": "rackHPE Aruba Switches-73-jl259a-aruba-2930f-24g-4sfp-switch",
+   "title": "JL259A Aruba 2930F-24G 4SFP switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl259a 2930f 24g 4sfp switch JL259A Aruba 2930F-24G 4SFP switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl259a_aruba_2930f_24g_4sfp_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl259a_aruba_2930f_24g_4sfp_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:315"
+  },
+  {
+   "id": "rackHPE Aruba Switches-74-jl260a-aruba-2930f-48g-4sfp-switch",
+   "title": "JL260A Aruba 2930F-48G 4SFP switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl260a 2930f 48g 4sfp switch JL260A Aruba 2930F-48G 4SFP switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl260a_aruba_2930f_48g_4sfp_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl260a_aruba_2930f_48g_4sfp_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:316"
+  },
+  {
+   "id": "rackHPE Aruba Switches-75-jl261a-aruba-2930f-24g-poe-4sfp-switch",
+   "title": "JL261A Aruba 2930F-24G PoE+ 4SFP switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl261a 2930f 24g poeplus 4sfp switch JL261A Aruba 2930F-24G PoE+ 4SFP switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl261a_aruba_2930f_24g_poeplus_4sfp_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl261a_aruba_2930f_24g_poeplus_4sfp_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:317"
+  },
+  {
+   "id": "rackHPE Aruba Switches-76-jl262a-aruba-2930f-48g-poe-4sfp-switch",
+   "title": "JL262A Aruba 2930F-48G PoE+ 4SFP switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl262a 2930f 48g poeplus 4sfp switch JL262A Aruba 2930F-48G PoE+ 4SFP switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl262a_aruba_2930f_48g_poeplus_4sfp_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl262a_aruba_2930f_48g_poeplus_4sfp_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:318"
+  },
+  {
+   "id": "rackHPE Aruba Switches-77-jl263a-aruba-2930f-24g-poe-4sfp-taa-switch",
+   "title": "JL263A Aruba 2930F-24G PoE+ 4SFP+ TAA Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl263a 2930f 24g poeplus 4sfpplus taa switch JL263A Aruba 2930F-24G PoE+ 4SFP+ TAA Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl263a_aruba_2930f_24g_poeplus_4sfpplus_taa_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl263a_aruba_2930f_24g_poeplus_4sfpplus_taa_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:319"
+  },
+  {
+   "id": "rackHPE Aruba Switches-78-jl264a-aruba-2930f-48g-poe-4sfp-taa-switch",
+   "title": "JL264A Aruba 2930F-48G PoE+ 4SFP+ TAA switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl264a 2930f 48g poeplus 4sfpplus taa switch JL264A Aruba 2930F-48G PoE+ 4SFP+ TAA switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl264a_aruba_2930f_48g_poeplus_4sfpplus_taa_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl264a_aruba_2930f_48g_poeplus_4sfpplus_taa_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:320"
+  },
+  {
+   "id": "rackHPE Aruba Switches-79-jl319a-aruba-2930m-24g-1-slot-switch",
+   "title": "JL319A Aruba 2930M-24G 1-slot Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl319a 2930m 24g slot switch JL319A Aruba 2930M-24G 1-slot Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl319a_aruba_2930m_24g_1_slot_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl319a_aruba_2930m_24g_1_slot_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:321"
+  },
+  {
+   "id": "rackHPE Aruba Switches-80-jl319a-aruba-2930m-24g-1-slot-switch-rear",
+   "title": "JL319A Aruba 2930M-24G 1-slot Switch (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl319a 2930m 24g slot switch rear JL319A Aruba 2930M-24G 1-slot Switch (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl319a_aruba_2930m_24g_1_slot_switch_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl319a_aruba_2930m_24g_1_slot_switch_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:322"
+  },
+  {
+   "id": "rackHPE Aruba Switches-81-jl320a-aruba-2930m-24g-poe-1-slot-switch",
+   "title": "JL320A Aruba 2930M-24G PoE+ 1-slot Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl320a 2930m 24g poeplus slot switch JL320A Aruba 2930M-24G PoE+ 1-slot Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl320a_aruba_2930m_24g_poeplus_1_slot_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl320a_aruba_2930m_24g_poeplus_1_slot_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:323"
+  },
+  {
+   "id": "rackHPE Aruba Switches-82-jl320a-aruba-2930m-24g-poe-1-slot-switch-rear",
+   "title": "JL320A Aruba 2930M-24G PoE+ 1-slot Switch (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl320a 2930m 24g poeplus slot switch rear JL320A Aruba 2930M-24G PoE+ 1-slot Switch (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl320a_aruba_2930m_24g_poeplus_1_slot_switch_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl320a_aruba_2930m_24g_poeplus_1_slot_switch_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:324"
+  },
+  {
+   "id": "rackHPE Aruba Switches-83-jl321a-aruba-2930m-48g-1-slot-switch",
+   "title": "JL321A Aruba 2930M-48G 1-slot Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl321a 2930m 48g slot switch JL321A Aruba 2930M-48G 1-slot Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl321a_aruba_2930m_48g_1_slot_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl321a_aruba_2930m_48g_1_slot_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:325"
+  },
+  {
+   "id": "rackHPE Aruba Switches-84-jl321a-aruba-2930m-48g-1-slot-switch-rear",
+   "title": "JL321A Aruba 2930M-48G 1-slot Switch (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl321a 2930m 48g slot switch rear JL321A Aruba 2930M-48G 1-slot Switch (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl321a_aruba_2930m_48g_1_slot_switch_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl321a_aruba_2930m_48g_1_slot_switch_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:326"
+  },
+  {
+   "id": "rackHPE Aruba Switches-85-jl322a-aruba-2930m-48g-poe-1-slot-switch",
+   "title": "JL322A Aruba 2930M-48G PoE+ 1-slot Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl322a 2930m 48g poeplus slot switch JL322A Aruba 2930M-48G PoE+ 1-slot Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl322a_aruba_2930m_48g_poeplus_1_slot_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl322a_aruba_2930m_48g_poeplus_1_slot_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:327"
+  },
+  {
+   "id": "rackHPE Aruba Switches-86-jl322a-aruba-2930m-48g-poe-1-slot-switch-rear",
+   "title": "JL322A Aruba 2930M-48G PoE+ 1-slot Switch (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl322a 2930m 48g poeplus slot switch rear JL322A Aruba 2930M-48G PoE+ 1-slot Switch (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl322a_aruba_2930m_48g_poeplus_1_slot_switch_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl322a_aruba_2930m_48g_poeplus_1_slot_switch_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:328"
+  },
+  {
+   "id": "rackHPE Aruba Switches-87-jl323a-aruba-2930m-40g-8-smart-rate-poe-1-slot-switch",
+   "title": "JL323A Aruba 2930M-40G 8 Smart Rate PoE+ 1-slot Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl323a 2930m 40g smart rate poeplus slot switch JL323A Aruba 2930M-40G 8 Smart Rate PoE+ 1-slot Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl323a_aruba_2930m_40g_8_smart_rate_poeplus_1_slot_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl323a_aruba_2930m_40g_8_smart_rate_poeplus_1_slot_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:329"
+  },
+  {
+   "id": "rackHPE Aruba Switches-88-jl324a-aruba-2930m-24-smart-rate-poe-1-slot-switch",
+   "title": "JL324A Aruba 2930M-24 Smart Rate PoE+ 1-slot Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl324a 2930m 24 smart rate poeplus slot switch JL324A Aruba 2930M-24 Smart Rate PoE+ 1-slot Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl324a_aruba_2930m_24_smart_rate_poeplus_1_slot_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl324a_aruba_2930m_24_smart_rate_poeplus_1_slot_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:330"
+  },
+  {
+   "id": "rackHPE Aruba Switches-89-jl325a-2930m-2-port-stacking-module",
+   "title": "JL325A 2930M 2-port Stacking Module",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl325a 2930m port stacking module JL325A 2930M 2-port Stacking Module",
+   "kind": "vertex",
+   "width": 23,
+   "height": 10,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl325a_2930m_2_port_stacking_module;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl325a_2930m_2_port_stacking_module"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:331"
+  },
+  {
+   "id": "rackHPE Aruba Switches-90-jl354a-aruba-2540-24g-4sfp-switch",
+   "title": "JL354A Aruba 2540-24G 4SFP+ switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl354a 2540 24g 4sfpplus switch JL354A Aruba 2540-24G 4SFP+ switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl354a_aruba_2540_24g_4sfpplus_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl354a_aruba_2540_24g_4sfpplus_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:332"
+  },
+  {
+   "id": "rackHPE Aruba Switches-91-jl355a-aruba-2540-48g-4sfp-switch",
+   "title": "JL355A Aruba 2540-48G 4SFP Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl355a 2540 48g 4sfpplus switch JL355A Aruba 2540-48G 4SFP Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl355a_aruba_2540_48g_4sfpplus_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl355a_aruba_2540_48g_4sfpplus_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:333"
+  },
+  {
+   "id": "rackHPE Aruba Switches-92-jl356a-aruba-2540-24g-poe-4sfp-switch",
+   "title": "JL356A Aruba 2540-24G PoE+ 4SFP+ Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl356a 2540 24g poeplus 4sfpplus switch JL356A Aruba 2540-24G PoE+ 4SFP+ Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl356a_aruba_2540_24g_poeplus_4sfpplus_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl356a_aruba_2540_24g_poeplus_4sfpplus_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:334"
+  },
+  {
+   "id": "rackHPE Aruba Switches-93-jl357a-aruba-2540-48g-poe-4sfp-switch",
+   "title": "JL357A Aruba 2540-48G PoE+ 4SFP+ Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl357a 2540 48g poeplus 4sfpplus switch JL357A Aruba 2540-48G PoE+ 4SFP+ Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl357a_aruba_2540_48g_poeplus_4sfpplus_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl357a_aruba_2540_48g_poeplus_4sfpplus_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:335"
+  },
+  {
+   "id": "rackHPE Aruba Switches-94-jl363a-32p-sfp-adv",
+   "title": "JL363A-32P SFP+ Adv",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl363a 32p sfpplus adv JL363A-32P SFP+ Adv",
+   "kind": "vertex",
+   "width": 14,
+   "height": 107,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl363a_32p_sfpplus_adv;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl363a_32p_sfpplus_adv"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:336"
+  },
+  {
+   "id": "rackHPE Aruba Switches-95-jl365a-8p-qsfp-adv",
+   "title": "JL365A-8P QSFP+ Adv",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl365a 8p qsfpplus adv JL365A-8P QSFP+ Adv",
+   "kind": "vertex",
+   "width": 14,
+   "height": 107,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl365a_8p_qsfpplus_adv;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl365a_8p_qsfpplus_adv"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:337"
+  },
+  {
+   "id": "rackHPE Aruba Switches-96-jl366a-6p-qsfp28-adv",
+   "title": "JL366A-6P QSFP28 Adv",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl366a 6p qsfpP28 adv JL366A-6P QSFP28 Adv",
+   "kind": "vertex",
+   "width": 14,
+   "height": 107,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl366a_6p_qsfp28_adv;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl366a_6p_qsfp28_adv"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:338"
+  },
+  {
+   "id": "rackHPE Aruba Switches-97-jl368a-aruba-8400-mgmt-mod",
+   "title": "JL368A Aruba 8400 Mgmt Mod",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl368a 8400 mgmt management mod JL368A Aruba 8400 Mgmt Mod",
+   "kind": "vertex",
+   "width": 14,
+   "height": 122,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl368a_aruba_8400_mgmt_mod;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl368a_aruba_8400_mgmt_mod"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:339"
+  },
+  {
+   "id": "rackHPE Aruba Switches-98-jl369a-aruba-8400-x731-fan-tray",
+   "title": "JL369A Aruba 8400 X731 Fan tray",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl369a 8400 x731 Fan tray JL369A Aruba 8400 X731 Fan tray",
+   "kind": "vertex",
+   "width": 142,
+   "height": 27,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl369a_aruba_8400_x731_fan_tray;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl369a_aruba_8400_x731_fan_tray"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:340"
+  },
+  {
+   "id": "rackHPE Aruba Switches-99-jl370a-aruba-8400-fan-for-x731-fan-tray",
+   "title": "JL370A Aruba 8400 Fan for X731 Fan tray",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl370a 8400 fan for x731 fan tray JL370A Aruba 8400 Fan for X731 Fan tray",
+   "kind": "vertex",
+   "width": 20,
+   "height": 23,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl370a_aruba_8400_fan_for_x731_fan_tray;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl370a_aruba_8400_fan_for_x731_fan_tray"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:341"
+  },
+  {
+   "id": "rackHPE Aruba Switches-100-jl371a-aruba-8400-fan-tray-and-6-fans-bundle",
+   "title": "JL371A Aruba 8400 Fan tray and 6 fans bundle",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl371a 8400 fan tray and fans bundle JL371A Aruba 8400 Fan tray and 6 fans bundle",
+   "kind": "vertex",
+   "width": 142,
+   "height": 27,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl371a_aruba8400_fan_tray_and_6_fans_bundle;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl371a_aruba8400_fan_tray_and_6_fans_bundle"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:342"
+  },
+  {
+   "id": "rackHPE Aruba Switches-101-jl375a-aruba-8400-front",
+   "title": "JL375A Aruba 8400 (front)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl375a 8400 front JL375A Aruba 8400 (front)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 112,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl375a_aruba_8400_front;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl375a_aruba_8400_front"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:343"
+  },
+  {
+   "id": "rackHPE Aruba Switches-102-jl375a-aruba-8400-rear",
+   "title": "JL375A Aruba 8400 (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl375a 8400 rear JL375A Aruba 8400 (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 112,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl375a_aruba_8400_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl375a_aruba_8400_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:344"
+  },
+  {
+   "id": "rackHPE Aruba Switches-103-jl375a-aruba-8400-rear-empty",
+   "title": "JL375A Aruba 8400 (rear, empty)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl375a 8400 rear empty JL375A Aruba 8400 (rear, empty)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 112,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl375a_aruba_8400_rear_empty;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl375a_aruba_8400_rear_empty"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:345"
+  },
+  {
+   "id": "rackHPE Aruba Switches-104-jl376a-aruba-8400-front",
+   "title": "JL376A Aruba 8400 (front)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl376a 8400 front JL376A Aruba 8400 (front)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 112,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl376a_aruba_8400_front;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl376a_aruba_8400_front"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:346"
+  },
+  {
+   "id": "rackHPE Aruba Switches-105-jl376a-aruba-8400-rear",
+   "title": "JL376A Aruba 8400 (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl376a 8400 rear JL376A Aruba 8400 (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 112,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl376a_aruba_8400_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl376a_aruba_8400_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:347"
+  },
+  {
+   "id": "rackHPE Aruba Switches-106-jl376a-aruba-8400-rear-empty",
+   "title": "JL376A Aruba 8400 (rear, empty)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl376a 8400 rear empty JL376A Aruba 8400 (rear, empty)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 112,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl376a_aruba_8400_rear_empty;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl376a_aruba_8400_rear_empty"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:348"
+  },
+  {
+   "id": "rackHPE Aruba Switches-107-jl479a-aruba-8320-48p-10g-sfp-sfp-and-6p-40g-qsfp-5-fan-2-ps-switch-bundle",
+   "title": "JL479A Aruba 8320-48p 10G SFP SFP+ and 6p 40G QSFP+ 5 fan 2 PS Switch Bundle",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl479a 8320 48p 10g sfp sfpplus and 6p 40g qsfpplus fan ps switch bundle JL479A Aruba 8320-48p 10G SFP SFP+ and 6p 40G QSFP+ 5 fan 2 PS Switch Bundle",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl479a_aruba_8320_48p_10g_sfp_sfpplus_and_6p_40g_qsfpplus_5_fan_2_ps_switch_bundle;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl479a_aruba_8320_48p_10g_sfp_sfpplus_and_6p_40g_qsfpplus_5_fan_2_ps_switch_bundle"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:349"
+  },
+  {
+   "id": "rackHPE Aruba Switches-108-jl479a-aruba-8320-48p-10g-sfp-sfp-and-6p-40g-qsfp-5-fan-2-ps-switch-bundle-rear",
+   "title": "JL479A Aruba 8320 48p 10G SFP SFP+ and 6p 40G QSFP+ 5 fan 2 PS Switch Bundle (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl479a 8320 48p 10g sfp sfpplus and 6p 40g qsfpplus fan ps switch bundle rear JL479A Aruba 8320 48p 10G SFP SFP+ and 6p 40G QSFP+ 5 fan 2 PS Switch Bundle (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl479a_aruba_8320_48p_10g_sfp_sfpplus_and_6p_40g_qsfpplus_5_fan_2_ps_switch_bundle_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl479a_aruba_8320_48p_10g_sfp_sfpplus_and_6p_40g_qsfpplus_5_fan_2_ps_switch_bundle_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:350"
+  },
+  {
+   "id": "rackHPE Aruba Switches-109-jl557a-aruba-2930f-48g-poe-4sfp-740w-switch",
+   "title": "JL557A Aruba 2930F-48G PoE+ 4SFP 740W Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl557a 2930f 48g poeplus 4sfp 740w switch JL557A Aruba 2930F-48G PoE+ 4SFP 740W Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl557a_aruba_2930f_48g_poeplus_4sfp_740w_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl557a_aruba_2930f_48g_poeplus_4sfp_740w_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:351"
+  },
+  {
+   "id": "rackHPE Aruba Switches-110-jl557a-aruba-2930f-48g-poe-4sfp-740w-switch-rear",
+   "title": "JL557A Aruba 2930F-48G PoE+ 4SFP 740W Switch (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl557a 2930f 48g poeplus 4sfp 740w switch rear JL557A Aruba 2930F-48G PoE+ 4SFP 740W Switch (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl557a_aruba_2930f_48g_poeplus_4sfp_740w_switch_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl557a_aruba_2930f_48g_poeplus_4sfp_740w_switch_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:352"
+  },
+  {
+   "id": "rackHPE Aruba Switches-111-jl558a-aruba-2930f-48g-poe-4sfp-740w-switch",
+   "title": "JL558A Aruba 2930F-48G PoE+ 4SFP+ 740W Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl558a 2930f 48g poeplus 4sfpplus 740w switch JL558A Aruba 2930F-48G PoE+ 4SFP+ 740W Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl558a_aruba_2930f_48g_poeplus_4sfpplus_740w_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl558a_aruba_2930f_48g_poeplus_4sfpplus_740w_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:353"
+  },
+  {
+   "id": "rackHPE Aruba Switches-112-jl558a-aruba-2930f-48g-poe-4sfp-740w-switch-rear",
+   "title": "JL558A Aruba 2930F-48G PoE+ 4SFP+ 740W Switch (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl558a 2930f 48g poeplus 4sfpplus 740w switch rear JL558A Aruba 2930F-48G PoE+ 4SFP+ 740W Switch (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl558a_aruba_2930f_48g_poeplus_4sfpplus_740w_switch_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl558a_aruba_2930f_48g_poeplus_4sfpplus_740w_switch_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:354"
+  },
+  {
+   "id": "rackHPE Aruba Switches-113-jl559a-aruba-2930f-48g-poe-4sfp-740w-taa-switch",
+   "title": "JL559A Aruba 2930F-48G PoE+ 4SFP+ 740W TAA switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl559a 2930f 48g poeplus 4sfpplus 740w taa switch JL559A Aruba 2930F-48G PoE+ 4SFP+ 740W TAA switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl559a_aruba_2930f_48g_poeplus_4sfpplus_740w_taa_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl559a_aruba_2930f_48g_poeplus_4sfpplus_740w_taa_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:355"
+  },
+  {
+   "id": "rackHPE Aruba Switches-114-jl559a-aruba-2930f-48g-poe-4sfp-740w-taa-switch-rear",
+   "title": "JL559A Aruba 2930F-48G PoE+ 4SFP+ 740W TAA switch (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl559a 2930f 48g poeplus 4sfpplus 740w taa switch rear JL559A Aruba 2930F-48G PoE+ 4SFP+ 740W TAA switch (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl559a_aruba_2930f_48g_poeplus_4sfpplus_740w_taa_switch_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl559a_aruba_2930f_48g_poeplus_4sfpplus_740w_taa_switch_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:356"
+  },
+  {
+   "id": "rackHPE Aruba Switches-115-jl579a-aruba-8320-32p-40g-qsfp-5-fans-2-ps-switch-bundle",
+   "title": "JL579A Aruba 8320-32p-40G QSFP+ 5 fans 2 PS Switch Bundle",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl579a 8320 32p 40g qsfpplus fans ps switch bundle JL579A Aruba 8320-32p-40G QSFP+ 5 fans 2 PS Switch Bundle",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl579a_aruba_8320_32p_40g_qsfpplus_5_fans_2_ps_switch_bundle;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl579a_aruba_8320_32p_40g_qsfpplus_5_fans_2_ps_switch_bundle"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:357"
+  },
+  {
+   "id": "rackHPE Aruba Switches-116-jl579a-aruba-8320-32p-40g-qsfp-5-fans-2-ps-switch-bundle-rear",
+   "title": "JL579A Aruba 8320-32p-40G QSFP+ 5 fans 2 PS Switch Bundle (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl579a 8320 32p 40g qsfpplus fans ps switch bundle rear JL579A Aruba 8320-32p-40G QSFP+ 5 fans 2 PS Switch Bundle (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl579a_aruba_8320_32p_40g_qsfpplus_5_fans_2_ps_switch_bundle_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl579a_aruba_8320_32p_40g_qsfpplus_5_fans_2_ps_switch_bundle_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:358"
+  },
+  {
+   "id": "rackHPE Aruba Switches-117-jl581a-aruba-8320-48p-1g-10gbase-t-and-6p-40g-qsfp-5-fans-2-ps-switch-bundle",
+   "title": "JL581A Aruba 8320-48p-1G 10GBASE-T and 6p 40G QSFP+ 5 fans 2 PS Switch Bundle",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl581a 8320 48p 1g 10gbase and 6p 40g qsfpplus fans ps switch bundle JL581A Aruba 8320-48p-1G 10GBASE-T and 6p 40G QSFP+ 5 fans 2 PS Switch Bundle",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl581a_aruba_8320_48p_1g_10gbase_t_and_6p_40g_qsfpplus_5_fans_2_ps_switch_bundle;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl581a_aruba_8320_48p_1g_10gbase_t_and_6p_40g_qsfpplus_5_fans_2_ps_switch_bundle"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:359"
+  },
+  {
+   "id": "rackHPE Aruba Switches-118-jl581a-aruba-8320-48p-1g-10gbase-t-and-6p-40g-qsfp-5-fans-2-ps-switch-bundle-rear",
+   "title": "JL581A Aruba 8320-48p-1G 10GBASE-T and 6p 40G QSFP+ 5 fans 2 PS Switch Bundle (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl581a 8320 48p 1g 10gbase and 6p 40g qsfpplus fans ps switch bundle rear JL581A Aruba 8320-48p-1G 10GBASE-T and 6p 40G QSFP+ 5 fans 2 PS Switch Bundle (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl581a_aruba_8320_48p_1g_10gbase_t_and_6p_40g_qsfpplus_5_fans_2_ps_switch_bundle_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl581a_aruba_8320_48p_1g_10gbase_t_and_6p_40g_qsfpplus_5_fans_2_ps_switch_bundle_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:360"
+  },
+  {
+   "id": "rackHPE Aruba Switches-119-jl624a-aruba-8325-32y8c-f2b-front",
+   "title": "JL624A Aruba 8325 32Y8C F2B (front)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl624a 8325 32y8c f2b front JL624A Aruba 8325 32Y8C F2B (front)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl624a_aruba_8325_32y8c_f2b_front;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl624a_aruba_8325_32y8c_f2b_front"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:361"
+  },
+  {
+   "id": "rackHPE Aruba Switches-120-jl624a-aruba-8325-32y8c-f2b-rear",
+   "title": "JL624A Aruba 8325 32Y8C F2B (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl624a 8325 32y8c f2b rear JL624A Aruba 8325 32Y8C F2B (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl624a_aruba_8325_32y8c_f2b_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl624a_aruba_8325_32y8c_f2b_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:362"
+  },
+  {
+   "id": "rackHPE Aruba Switches-121-jl625a-aruba-8325-32y-8c-b2f-front",
+   "title": "JL625A Aruba 8325 32Y 8C B2F (front)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl625a 8325 32y 8c b2f front JL625A Aruba 8325 32Y 8C B2F (front)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl625a_aruba_8325_32y_8c_b2f_front;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl625a_aruba_8325_32y_8c_b2f_front"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:363"
+  },
+  {
+   "id": "rackHPE Aruba Switches-122-jl625a-aruba-8325-32y-8c-b2f-rear",
+   "title": "JL625A Aruba 8325 32Y 8C B2F (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl625a 8325 32y 8c b2f rear JL625A Aruba 8325 32Y 8C B2F (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl625a_aruba_8325_32y_8c_b2f_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl625a_aruba_8325_32y_8c_b2f_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:364"
+  },
+  {
+   "id": "rackHPE Aruba Switches-123-jl626a-aruba-8325-32c-f2b-front",
+   "title": "JL626A Aruba 8325 32C F2B (front)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl626a 8325 32c f2b front JL626A Aruba 8325 32C F2B (front)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl626a_aruba_8325_32c_f2b_front;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl626a_aruba_8325_32c_f2b_front"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:365"
+  },
+  {
+   "id": "rackHPE Aruba Switches-124-jl626a-aruba-8325-32c-f2b-rear",
+   "title": "JL626A Aruba 8325 32C F2B (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl626a 8325 32c f2b rear JL626A Aruba 8325 32C F2B (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl626a_aruba_8325_32c_f2b_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl626a_aruba_8325_32c_f2b_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:366"
+  },
+  {
+   "id": "rackHPE Aruba Switches-125-jl627a-aruba-8325-32c-b2f-front",
+   "title": "JL627A Aruba 8325 32C B2F (front)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl627a 8325 32c b2f front JL627A Aruba 8325 32C B2F (front)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl627a_aruba_8325_32c_b2f_front;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl627a_aruba_8325_32c_b2f_front"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:367"
+  },
+  {
+   "id": "rackHPE Aruba Switches-126-jl627a-aruba-8325-32c-b2f-rear",
+   "title": "JL627A Aruba 8325 32C B2F (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl627a 8325 32c b2f rear JL627A Aruba 8325 32C B2F (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl627a_aruba_8325_32c_b2f_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl627a_aruba_8325_32c_b2f_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:368"
+  },
+  {
+   "id": "rackHPE Aruba Switches-127-jl658a-aruba-6300m-24-port-sfp-and-4-port-sfp56-switch",
+   "title": "JL658A Aruba 6300M 24-port SFP+ and 4 port SFP56 Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl658a 6300m 24 port sfpplus and port sfp56 switch JL658A Aruba 6300M 24-port SFP+ and 4 port SFP56 Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl658a_aruba_6300m_24_port_sfpplus_and_4_port_sfp56_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl658a_aruba_6300m_24_port_sfpplus_and_4_port_sfp56_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:369"
+  },
+  {
+   "id": "rackHPE Aruba Switches-128-jl658a-aruba-6300m-24-port-sfp-and-4-port-sfp56-switch-rear",
+   "title": "JL658A Aruba 6300M 24-port SFP+ and 4 port SFP56 Switch (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl658a 6300m 24 port sfpplus and port sfp56 switch rear JL658A Aruba 6300M 24-port SFP+ and 4 port SFP56 Switch (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl658a_aruba_6300m_24_port_sfpplus_and_4_port_sfp56_switch_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl658a_aruba_6300m_24_port_sfpplus_and_4_port_sfp56_switch_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:370"
+  },
+  {
+   "id": "rackHPE Aruba Switches-129-jl659a-aruba-6300m-48-port-hpe-smart-rate-1-2-5-5gbe-class-6-poe-and-4-port-switch",
+   "title": "JL659A Aruba 6300M 48-port HPE Smart Rate 1/2.5/5GbE Class 6 PoE and 4-port Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl659a a6300m 48 port smart rate 5gbe class poe and port switch JL659A Aruba 6300M 48-port HPE Smart Rate 1/2.5/5GbE Class 6 PoE and 4-port Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl659a_aruba_6300m_48_port_hpe_smart_rate_1_2_5_5gbe_class_6_poe_and_4_port_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl659a_aruba_6300m_48_port_hpe_smart_rate_1_2_5_5gbe_class_6_poe_and_4_port_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:371"
+  },
+  {
+   "id": "rackHPE Aruba Switches-130-jl659a-aruba-6300m-48-port-hpe-smart-rate-1-2-5-5gbe-class-6-poe-and-4-port-switch-rear",
+   "title": "JL659A Aruba 6300M 48-port HPE Smart Rate 1/2.5/5GbE Class 6 PoE and 4-port Switch (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl659a 6300m 48 port smart rate 5gbe class poe and port switch rear JL659A Aruba 6300M 48-port HPE Smart Rate 1/2.5/5GbE Class 6 PoE and 4-port Switch (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl659a_aruba_6300m_48_port_hpe_smart_rate_1_2_5_5gbe_class_6_poe_and_4_port_switch_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl659a_aruba_6300m_48_port_hpe_smart_rate_1_2_5_5gbe_class_6_poe_and_4_port_switch_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:372"
+  },
+  {
+   "id": "rackHPE Aruba Switches-131-jl660a-aruba-6300m-24-port-hpe-smart-rate-1-2-5-5-gbe-class-6-poe-and-4-port-switch",
+   "title": "JL660A Aruba 6300M 24-port HPE Smart Rate 1/2.5/5 GbE Class 6 PoE and 4-port switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl660a 6300m 24 port smart rate gbe class poe and port switch JL660A Aruba 6300M 24-port HPE Smart Rate 1/2.5/5 GbE Class 6 PoE and 4-port switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl660a_aruba_6300m_24_port_hpe_smart_rate_1_2_5_5_gbe_class_6_poe_and_4_port_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl660a_aruba_6300m_24_port_hpe_smart_rate_1_2_5_5_gbe_class_6_poe_and_4_port_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:373"
+  },
+  {
+   "id": "rackHPE Aruba Switches-132-jl660a-aruba-6300m-24-port-hpe-smart-rate-1-2-5-5-gbe-class-6-poe-and-4-port-switch-rear",
+   "title": "JL660A Aruba 6300M 24-port HPE Smart Rate 1/2.5/5 GbE Class 6 PoE and 4-port switch (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl660a 6300m 24 port smart rate 1 2 5 5 gbe class 6 poe and 4 port switch rear JL660A Aruba 6300M 24-port HPE Smart Rate 1/2.5/5 GbE Class 6 PoE and 4-port switch (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl660a_aruba_6300m_24_port_hpe_smart_rate_1_2_5_5_gbe_class_6_poe_and_4_port_switch_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl660a_aruba_6300m_24_port_hpe_smart_rate_1_2_5_5_gbe_class_6_poe_and_4_port_switch_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:374"
+  },
+  {
+   "id": "rackHPE Aruba Switches-133-jl661a-aruba-6300m-48-port-1gbe-class-4-poe-and-4-port-sfp56-switch",
+   "title": "JL661A Aruba 6300M 48-port 1GbE Class 4 PoE and 4-port SFP56 Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl661a 6300m 48 port 1gbe class poe and port sfp56 switch JL661A Aruba 6300M 48-port 1GbE Class 4 PoE and 4-port SFP56 Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl661a_aruba_6300m_48_port_1gbe_class_4_poe_and_4_port_sfp56_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl661a_aruba_6300m_48_port_1gbe_class_4_poe_and_4_port_sfp56_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:375"
+  },
+  {
+   "id": "rackHPE Aruba Switches-134-jl661a-aruba-6300m-48-port-1gbe-class-4-poe-and-4-port-sfp56-switch-rear",
+   "title": "JL661A Aruba 6300M 48-port 1GbE Class 4 PoE and 4-port SFP56 Switch (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl661a 6300m 48 port 1gbe class poe and port sfp56 switch rear JL661A Aruba 6300M 48-port 1GbE Class 4 PoE and 4-port SFP56 Switch (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl661a_aruba_6300m_48_port_1gbe_class_4_poe_and_4_port_sfp56_switch_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl661a_aruba_6300m_48_port_1gbe_class_4_poe_and_4_port_sfp56_switch_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:376"
+  },
+  {
+   "id": "rackHPE Aruba Switches-135-jl662a-aruba-6300m-24-port-1gbe-class-4-poe-4-port-sfp56-switch",
+   "title": "JL662A Aruba 6300M 24-port 1GbE Class 4 PoE 4-port SFP56 Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jlJL662a 6300m 24 port 1gbe class poe port sfp56 switch JL662A Aruba 6300M 24-port 1GbE Class 4 PoE 4-port SFP56 Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl662a_aruba_6300m_24_port_1gbe_class_4_poe_4_port_sfp56_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl662a_aruba_6300m_24_port_1gbe_class_4_poe_4_port_sfp56_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:377"
+  },
+  {
+   "id": "rackHPE Aruba Switches-136-jl662a-aruba-6300m-24-port-1gbe-class-4-poe-4-port-sfp56-switch-rear",
+   "title": "JL662A Aruba 6300M 24-port 1GbE Class 4 PoE 4-port SFP56 Switch (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl662a 6300m 24 port 1gbe class poe port sfp56 switch rear JL662A Aruba 6300M 24-port 1GbE Class 4 PoE 4-port SFP56 Switch (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl662a_aruba_6300m_24_port_1gbe_class_4_poe_4_port_sfp56_switch_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl662a_aruba_6300m_24_port_1gbe_class_4_poe_4_port_sfp56_switch_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:378"
+  },
+  {
+   "id": "rackHPE Aruba Switches-137-jl663a-aruba-6300m-48-port-1gbe-and-4-port-sfp56-switch",
+   "title": "JL663A Aruba 6300M 48-port 1GbE and 4-port SFP56 Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl663a 6300m 48 port 1gbe and port sfp56 switch JL663A Aruba 6300M 48-port 1GbE and 4-port SFP56 Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl663a_aruba_6300m_48_port_1gbe_and_4_port_sfp56_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl663a_aruba_6300m_48_port_1gbe_and_4_port_sfp56_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:379"
+  },
+  {
+   "id": "rackHPE Aruba Switches-138-jl663a-aruba-6300m-48-port-1gbe-and-4-port-sfp56-switch-rear",
+   "title": "JL663A Aruba 6300M 48-port 1GbE and 4-port SFP56 Switch (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl663a 6300m 48 port 1gbe and port sfp56 switch rear JL663A Aruba 6300M 48-port 1GbE and 4-port SFP56 Switch (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl663a_aruba_6300m_48_port_1gbe_and_4_port_sfp56_switch_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl663a_aruba_6300m_48_port_1gbe_and_4_port_sfp56_switch_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:380"
+  },
+  {
+   "id": "rackHPE Aruba Switches-139-jl664a-aruba-6300m-24-port-1gbe-and-4-port-sfp56-switch",
+   "title": "JL664A Aruba 6300M 24-port 1GbE and 4-port SFP56 Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl664a 6300m 24 port 1gbe and port sfp56 switch JL664A Aruba 6300M 24-port 1GbE and 4-port SFP56 Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl664a_aruba_6300m_24_port_1gbe_and_4_port_sfp56_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl664a_aruba_6300m_24_port_1gbe_and_4_port_sfp56_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:381"
+  },
+  {
+   "id": "rackHPE Aruba Switches-140-jl664a-aruba-6300m-24-port-1gbe-and-4-port-sfp56-switch-rear",
+   "title": "JL664A Aruba 6300M 24-port 1GbE and 4-port SFP56 Switch (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl664a 6300m 24 port 1gbe and port sfp56 Switch rear JL664A Aruba 6300M 24-port 1GbE and 4-port SFP56 Switch (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl664a_aruba_6300m_24_port_1gbe_and_4_port_sfp56_switch_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl664a_aruba_6300m_24_port_1gbe_and_4_port_sfp56_switch_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:382"
+  },
+  {
+   "id": "rackHPE Aruba Switches-141-jl665a-aruba-6300f-48-port-1gbe-class-4-poe-and-4-port-sfp56-switch",
+   "title": "JL665A Aruba 6300F 48-port 1GbE Class 4 PoE and 4-port SFP56 Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl665a 6300f 48 port 1gbe class poe and port sfp56 switch JL665A Aruba 6300F 48-port 1GbE Class 4 PoE and 4-port SFP56 Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl665a_aruba_6300f_48_port_1gbe_class_4_poe_and_4_port_sfp56_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl665a_aruba_6300f_48_port_1gbe_class_4_poe_and_4_port_sfp56_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:383"
+  },
+  {
+   "id": "rackHPE Aruba Switches-142-jl665a-aruba-6300f-48-port-1gbe-class-4-poe-and-4-port-sfp56-switch-rear",
+   "title": "JL665A Aruba 6300F 48-port 1GbE Class 4 PoE and 4-port SFP56 Switch (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl665a 6300f 48 port 1gbe class poe and port sfp56 switch rear JL665A Aruba 6300F 48-port 1GbE Class 4 PoE and 4-port SFP56 Switch (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl665a_aruba_6300f_48_port_1gbe_class_4_poe_and_4_port_sfp56_switch_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl665a_aruba_6300f_48_port_1gbe_class_4_poe_and_4_port_sfp56_switch_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:384"
+  },
+  {
+   "id": "rackHPE Aruba Switches-143-jl666a-aruba-6300f-24-port-1gbe-class-4-poe-and-4-port-sfp56-switch",
+   "title": "JL666A Aruba 6300F 24-port 1GbE Class 4 PoE and 4-port SFP56 Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl666a 6300f 24 port 1gbe class poe and port sfp56 switch JL666A Aruba 6300F 24-port 1GbE Class 4 PoE and 4-port SFP56 Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl666a_aruba_6300f_24_port_1gbe_class_4_poe_and_4_port_sfp56_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl666a_aruba_6300f_24_port_1gbe_class_4_poe_and_4_port_sfp56_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:385"
+  },
+  {
+   "id": "rackHPE Aruba Switches-144-jl666a-aruba-6300f-24-port-1gbe-class-4-poe-and-4-port-sfp56-switch-rear",
+   "title": "JL666A Aruba 6300F 24-port 1GbE Class 4 PoE and 4-port SFP56 Switch (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl666a 6300f 24 port 1gbe class poe and port sfp56 switch rear JL666A Aruba 6300F 24-port 1GbE Class 4 PoE and 4-port SFP56 Switch (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl666a_aruba_6300f_24_port_1gbe_class_4_poe_and_4_port_sfp56_switch_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl666a_aruba_6300f_24_port_1gbe_class_4_poe_and_4_port_sfp56_switch_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:386"
+  },
+  {
+   "id": "rackHPE Aruba Switches-145-jl667a-aruba-6300f-48-port-1gbe-and-4-port-sfp56-switch",
+   "title": "JL667A Aruba 6300F 48-port 1GbE and 4-port SFP56 Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl667a 6300f 48 port 1gbe and port sfp56 switch JL667A Aruba 6300F 48-port 1GbE and 4-port SFP56 Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl667a_aruba_6300f_48_port_1gbe_and_4_port_sfp56_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl667a_aruba_6300f_48_port_1gbe_and_4_port_sfp56_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:387"
+  },
+  {
+   "id": "rackHPE Aruba Switches-146-jl667a-aruba-6300f-48-port-1gbe-and-4-port-sfp56-switch-rear",
+   "title": "JL667A Aruba 6300F 48-port 1GbE and 4-port SFP56 Switch (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl667a 6300f 48 port 1gbe and port sfp56 switch rear JL667A Aruba 6300F 48-port 1GbE and 4-port SFP56 Switch (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl667a_aruba_6300f_48_port_1gbe_and_4_port_sfp56_switch_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl667a_aruba_6300f_48_port_1gbe_and_4_port_sfp56_switch_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:388"
+  },
+  {
+   "id": "rackHPE Aruba Switches-147-jl668a-aruba-6300f-24-port-1gbe-and-4-port-sfp56-rear",
+   "title": "JL668A aruba 6300F 24-port 1GbE and 4-port SFP56 (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl668a 6300f 24 port 1gbe and port sfp56 rear JL668A aruba 6300F 24-port 1GbE and 4-port SFP56 (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl668a_aruba_6300f_24_port_1gbe_and_4_port_sfp56_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl668a_aruba_6300f_24_port_1gbe_and_4_port_sfp56_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:389"
+  },
+  {
+   "id": "rackHPE Aruba Switches-148-jl668a-aruba-6300f-24-port-1gbe-and-4-port-sfp56-switch",
+   "title": "JL668A Aruba 6300F 24-port 1GbE and 4-port SFP56 Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl668a 6300f 24 port 1gbe and port sfp56 switch JL668A Aruba 6300F 24-port 1GbE and 4-port SFP56 Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl668a_aruba_6300f_24_port_1gbe_and_4_port_sfp56_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl668a_aruba_6300f_24_port_1gbe_and_4_port_sfp56_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:390"
+  },
+  {
+   "id": "rackHPE Aruba Switches-149-jl669-aruba-6300m-fan-module",
+   "title": "JL669 Aruba 6300M Fan Module",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl669 6300m fan module JL669 Aruba 6300M Fan Module",
+   "kind": "vertex",
+   "width": 41,
+   "height": 13,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl669_aruba_6300m_fan_module;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl669_aruba_6300m_fan_module"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:391"
+  },
+  {
+   "id": "rackHPE Aruba Switches-150-jl670a-aruba-6300m-psu-module",
+   "title": "JL670A Aruba 6300M PSU Module",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl670a 6300m psu module JL670A Aruba 6300M PSU Module",
+   "kind": "vertex",
+   "width": 27,
+   "height": 13,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl670a_aruba_6300m_psu_module;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl670a_aruba_6300m_psu_module"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:392"
+  },
+  {
+   "id": "rackHPE Aruba Switches-151-jl687a-aruba-8400x-32y-32p-1-10-25g-sfp-sfp-sfp28-module",
+   "title": "JL687A Aruba 8400X 32Y 32p 1/10/25G SFP SFP+ SFP28 Module",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl687a 8400x 32y 32p 10 25g sfp sfpplus sfp28 module JL687A Aruba 8400X 32Y 32p 1/10/25G SFP SFP+ SFP28 Module",
+   "kind": "vertex",
+   "width": 14,
+   "height": 107,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl687a_aruba_8400x_32y_32p_1_10_25g_sfp_sfpplus_sfp28_module;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl687a_aruba_8400x_32y_32p_1_10_25g_sfp_sfpplus_sfp28_module"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:393"
+  },
+  {
+   "id": "rackHPE Aruba Switches-152-jl693a-aruba-12g-poe-2g-2sfp-switch",
+   "title": "JL693A Aruba 12G PoE+ 2G 2SFP+ Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl693a 12g poeplus 2G 2sfpplus switch JL693A Aruba 12G PoE+ 2G 2SFP+ Switch",
+   "kind": "vertex",
+   "width": 82,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl693a_aruba_12g_poeplus_2g_2sfpplus_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl693a_aruba_12g_poeplus_2g_2sfpplus_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:394"
+  },
+  {
+   "id": "rackHPE Aruba Switches-153-jl693a-aruba-12g-poe-2g-2sfp-switch-rear",
+   "title": "JL693A Aruba 12G PoE+ 2G 2SFP+ Switch (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl693a 12g poeplus 2g 2sfpplus switch rear JL693A Aruba 12G PoE+ 2G 2SFP+ Switch (rear)",
+   "kind": "vertex",
+   "width": 82,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl693a_aruba_12g_poeplus_2g_2sfpplus_switch_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl693a_aruba_12g_poeplus_2g_2sfpplus_switch_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:395"
+  },
+  {
+   "id": "rackHPE Aruba Switches-154-jl724a-aruba-6200f-24-port-1gbe-and-4-port-sfp-switch",
+   "title": "JL724A Aruba 6200F 24-port 1GbE and 4-port SFP+ switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl724a 6200f 24 port 1gbe and port sfpplus switch JL724A Aruba 6200F 24-port 1GbE and 4-port SFP+ switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl724a_aruba_6200f_24_port_1gbe_and_4_port_sfpplus_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl724a_aruba_6200f_24_port_1gbe_and_4_port_sfpplus_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:396"
+  },
+  {
+   "id": "rackHPE Aruba Switches-155-jl724a-aruba-6200f-24-port-1gbe-and-4-port-sfp-switch-rear",
+   "title": "JL724A Aruba 6200F 24-port 1GbE and 4-port SFP+ switch (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl724a 6200f 24 port 1gbe and port sfpplus switch rear JL724A Aruba 6200F 24-port 1GbE and 4-port SFP+ switch (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl724a_aruba_6200f_24_port_1gbe_and_4_port_sfpplus_switch_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl724a_aruba_6200f_24_port_1gbe_and_4_port_sfpplus_switch_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:397"
+  },
+  {
+   "id": "rackHPE Aruba Switches-156-jl725a-aruba-6200f-24-port-1gbe-class-4-poe-and-4-port-sfp-370w-switch",
+   "title": "JL725A Aruba 6200F 24-port 1GbE Class 4 PoE and 4-port SFP+ 370W Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl725a 6200f 24 port 1gbe class poe and port sfpplus 370w switch JL725A Aruba 6200F 24-port 1GbE Class 4 PoE and 4-port SFP+ 370W Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl725a_aruba_6200f_24_port_1gbe_class_4_poe_and_4_port_sfpplus_370w_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl725a_aruba_6200f_24_port_1gbe_class_4_poe_and_4_port_sfpplus_370w_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:398"
+  },
+  {
+   "id": "rackHPE Aruba Switches-157-jl725a-aruba-6200f-24-port-1gbe-class-4-poe-and-4-port-sfp-370w-switch-rear",
+   "title": "JL725A Aruba 6200F 24-port 1GbE Class 4 PoE and 4-port SFP+ 370W Switch (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl725a 6200f 24 port 1gbe class poe and port sfpplus 370w switch rear JL725A Aruba 6200F 24-port 1GbE Class 4 PoE and 4-port SFP+ 370W Switch (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl725a_aruba_6200f_24_port_1gbe_class_4_poe_and_4_port_sfpplus_370w_switch_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl725a_aruba_6200f_24_port_1gbe_class_4_poe_and_4_port_sfpplus_370w_switch_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:399"
+  },
+  {
+   "id": "rackHPE Aruba Switches-158-jl726a-aruba-6200f-48-port-1gbe-and-4-port-sfp-switch",
+   "title": "JL726A Aruba 6200F 48-port 1GbE and 4-port SFP+ Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl726a 6200f 48 port 1gbe and port sfpplus switch JL726A Aruba 6200F 48-port 1GbE and 4-port SFP+ Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl726a_aruba_6200f_48_port_1gbe_and_4_port_sfpplus_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl726a_aruba_6200f_48_port_1gbe_and_4_port_sfpplus_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:400"
+  },
+  {
+   "id": "rackHPE Aruba Switches-159-jl726a-aruba-6200f-48-port-1gbe-and-4-port-sfp-switch-rear",
+   "title": "JL726A Aruba 6200F 48-port 1GbE and 4-port SFP+ Switch (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl726a 6200f 48 port 1gbe and port sfpplus switch rear JL726A Aruba 6200F 48-port 1GbE and 4-port SFP+ Switch (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl726a_aruba_6200f_48_port_1gbe_and_4_port_sfpplus_switch_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl726a_aruba_6200f_48_port_1gbe_and_4_port_sfpplus_switch_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:401"
+  },
+  {
+   "id": "rackHPE Aruba Switches-160-jl727a-aruba-6200f-48-port-1gbe-class-4-poe-and-4-port-sfp-370w-switch",
+   "title": "JL727A Aruba 6200F 48-port 1GbE Class 4 PoE and 4-port SFP+ 370W Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl727a 6200f 48 port 1gbe class poe and port sfpplus 370w switch JL727A Aruba 6200F 48-port 1GbE Class 4 PoE and 4-port SFP+ 370W Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl727a_aruba_6200f_48_port_1gbe_class_4_poe_and_4_port_sfpplus_370w_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl727a_aruba_6200f_48_port_1gbe_class_4_poe_and_4_port_sfpplus_370w_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:402"
+  },
+  {
+   "id": "rackHPE Aruba Switches-161-jl727a-aruba-6200f-48-port-1gbe-class-4-poe-and-4-port-sfp-370w-switch-rear",
+   "title": "JL727A Aruba 6200F 48-port 1GbE Class 4 PoE and 4-port SFP+ 370W Switch (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl727a 6200f 48 port 1gbe class poe and port sfpplus 370w switch rear JL727A Aruba 6200F 48-port 1GbE Class 4 PoE and 4-port SFP+ 370W Switch (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl727a_aruba_6200f_48_port_1gbe_class_4_poe_and_4_port_sfpplus_370w_switch_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl727a_aruba_6200f_48_port_1gbe_class_4_poe_and_4_port_sfpplus_370w_switch_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:403"
+  },
+  {
+   "id": "rackHPE Aruba Switches-162-jl728a-aruba-6200f-48-port-1gbe-class-4-poe-and-4-port-sfp-740w-switch",
+   "title": "JL728A Aruba 6200F 48-port 1GbE Class 4 PoE and 4-port SFP+ 740W Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl728a 6200f 48 port 1gbe class poe and port sfpplus 740w switch JL728A Aruba 6200F 48-port 1GbE Class 4 PoE and 4-port SFP+ 740W Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl728a_aruba_6200f_48_port_1gbe_class_4_poe_and_4_port_sfpplus_740w_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl728a_aruba_6200f_48_port_1gbe_class_4_poe_and_4_port_sfpplus_740w_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:404"
+  },
+  {
+   "id": "rackHPE Aruba Switches-163-jl728a-aruba-6200f-48-port-1gbe-class-4-poe-and-4-port-sfp-740w-switch-rear",
+   "title": "JL728A Aruba 6200F 48-port 1GbE Class 4 PoE and 4-port SFP+ 740W Switch (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl728a 6200f 48 port 1gbe class poe and port sfpplus 740w switch rear JL728A Aruba 6200F 48-port 1GbE Class 4 PoE and 4-port SFP+ 740W Switch (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl728a_aruba_6200f_48_port_1gbe_class_4_poe_and_4_port_sfpplus_740w_switch_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl728a_aruba_6200f_48_port_1gbe_class_4_poe_and_4_port_sfpplus_740w_switch_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:405"
+  },
+  {
+   "id": "rackHPE Aruba Switches-164-jl9826a-5412r-92g-poe-4sfp-zl2-switch",
+   "title": "JL9826A 5412R 92G PoE+ 4SFP zl2 Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba jl9826a 5412r 92g poeplus 4sfp zl2 switch JL9826A 5412R 92G PoE+ 4SFP zl2 Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 98,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl9826a_5412r_92g_poeplus_4sfp_zl2_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.jl9826a_5412r_92g_poeplus_4sfp_zl2_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:406"
+  },
+  {
+   "id": "rackHPE Aruba Switches-165-lc-sfp",
+   "title": "LC SFP",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba lc sfp LC SFP",
+   "kind": "vertex",
+   "width": 17,
+   "height": 6,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.lc_sfp;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.lc_sfp"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:407"
+  },
+  {
+   "id": "rackHPE Aruba Switches-166-r0x26a-aruba-cx-6400-switch",
+   "title": "R0X26A Aruba CX 6400 Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba r0X26a cx 6400 switch R0X26A Aruba CX 6400 Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 98,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.r0x26a_aruba_cx_6400_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.r0x26a_aruba_cx_6400_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:408"
+  },
+  {
+   "id": "rackHPE Aruba Switches-167-r0x26a-aruba-cx-6405-switch-rear",
+   "title": "R0X26A Aruba CX 6405 Switch (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba r0X26a cx 6405 switch rear R0X26A Aruba CX 6405 Switch (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 98,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.r0x26a_aruba_cx_6405_switch_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.r0x26a_aruba_cx_6405_switch_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:409"
+  },
+  {
+   "id": "rackHPE Aruba Switches-168-r0x27a-aruba-cx-6410-switch",
+   "title": "R0X27A Aruba CX 6410 Switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba r0X27a cx 6410 switch R0X27A Aruba CX 6410 Switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 169,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.r0x27a_aruba_cx_6410_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.r0x27a_aruba_cx_6410_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:410"
+  },
+  {
+   "id": "rackHPE Aruba Switches-169-r0x27a-aruba-cx-6410-switch-rear",
+   "title": "R0X27A Aruba CX 6410 Switch (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba r0X27a cx 6410 switch rear R0X27A Aruba CX 6410 Switch (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 169,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.r0x27a_aruba_cx_6410_switch_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.r0x27a_aruba_cx_6410_switch_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:411"
+  },
+  {
+   "id": "rackHPE Aruba Switches-170-r0x31a-aruba-6400-management-module",
+   "title": "R0X31A Aruba 6400 Management Module",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba r0X31a 6400 management module R0X31A Aruba 6400 Management Module",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.r0x31a_aruba_6400_management_module;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.r0x31a_aruba_6400_management_module"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:412"
+  },
+  {
+   "id": "rackHPE Aruba Switches-171-r0x35a-aruba-6400-1800w-ps-w-c16",
+   "title": "R0X35A Aruba 6400 1800W PS w/C16",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba r0x35a 6400 1800w ps c16 R0X35A Aruba 6400 1800W PS w/C16",
+   "kind": "vertex",
+   "width": 41,
+   "height": 20,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.r0x35a_aruba_6400_1800w_ps_w_c16;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.r0x35a_aruba_6400_1800w_ps_w_c16"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:413"
+  },
+  {
+   "id": "rackHPE Aruba Switches-172-r0x36a-aruba-6400-3000w-ps-w-c20",
+   "title": "R0X36A Aruba 6400 3000W PS w/C20",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba r0x36a 6400 3000w ps c20 R0X36A Aruba 6400 3000W PS w/C20",
+   "kind": "vertex",
+   "width": 41,
+   "height": 20,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.r0x36a_aruba_6400_3000w_ps_w_c20;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.r0x36a_aruba_6400_3000w_ps_w_c20"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:414"
+  },
+  {
+   "id": "rackHPE Aruba Switches-173-r0x38a-aruba-6400-48p-1gbe-cls4-poe-module",
+   "title": "R0X38A Aruba 6400-48p 1GbE CLS4 PoE Module",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba r0x38a 6400 48p 1gbe cls4 poe module R0X38A Aruba 6400-48p 1GbE CLS4 PoE Module",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.r0x38a_aruba_6400_48p_1gbe_cls4_poe_module;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.r0x38a_aruba_6400_48p_1gbe_cls4_poe_module"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:415"
+  },
+  {
+   "id": "rackHPE Aruba Switches-174-r0x39a-aruba-6400-48p-1gbe-cls4-poe-4sfp56-module",
+   "title": "R0X39A Aruba 6400-48p 1GbE CLS4 PoE 4SFP56 Module",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba r0x39a 6400 48p 1gbe cls4 poe 4sfp56 module R0X39A Aruba 6400-48p 1GbE CLS4 PoE 4SFP56 Module",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.r0x39a_aruba_6400_48p_1gbe_cls4_poe_4sfp56_module;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.r0x39a_aruba_6400_48p_1gbe_cls4_poe_4sfp56_module"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:416"
+  },
+  {
+   "id": "rackHPE Aruba Switches-175-r0x40a-aruba-6400-48p-1gbe-cls6-poe-4sfp56-module",
+   "title": "R0X40A Aruba 6400-48p 1GbE CLS6 PoE 4SFP56 Module",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba r0x40a 6400 48p 1gbe cls6 poe 4sfp56 module R0X40A Aruba 6400-48p 1GbE CLS6 PoE 4SFP56 Module",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.r0x40a_aruba_6400_48p_1gbe_cls6_poe_4sfp56_module;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.r0x40a_aruba_6400_48p_1gbe_cls6_poe_4sfp56_module"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:417"
+  },
+  {
+   "id": "rackHPE Aruba Switches-176-r0x41a-aruba-6400-48p-smart-rate-csl6-poe-4sfp56-module",
+   "title": "R0X41A Aruba 6400-48p Smart Rate CSL6 PoE 4SFP56 Module",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba r0x41a 6400 48p smart rate csl6 poe 4sfp56 module R0X41A Aruba 6400-48p Smart Rate CSL6 PoE 4SFP56 Module",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.r0x41a_aruba_6400_48p_smart_rate_cls6_poe_4sfp56_module;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.r0x41a_aruba_6400_48p_smart_rate_cls6_poe_4sfp56_module"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:418"
+  },
+  {
+   "id": "rackHPE Aruba Switches-177-r0x42a-aruba-6400-24p-10gt-4sfp56-module",
+   "title": "R0X42A Aruba 6400-24p 10GT 4SFP56 Module",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba r0x42a 6400 24p 10gt 4sfp56 module R0X42A Aruba 6400-24p 10GT 4SFP56 Module",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.r0x42a_aruba_6400_24p_10gt_4sfp56_module;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.r0x42a_aruba_6400_24p_10gt_4sfp56_module"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:419"
+  },
+  {
+   "id": "rackHPE Aruba Switches-178-r0x43a-aruba-6400-24p-sfp-4sfp56-module",
+   "title": "R0X43A Aruba 6400-24p SFP 4SFP56 Module",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba r0x43a 6400 24p sfp 4sfp56 module R0X43A Aruba 6400-24p SFP 4SFP56 Module",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.r0x43a_aruba_6400_24p_sfp_4sfp56_module;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.r0x43a_aruba_6400_24p_sfp_4sfp56_module"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:420"
+  },
+  {
+   "id": "rackHPE Aruba Switches-179-r0x44-aruba-6400-48p-10g-25g-sfp28-module",
+   "title": "R0X44 Aruba 6400-48p 10G/25G SFP28 Module",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba r0x44 6400 48p 10g 25g sfp28 module R0X44 Aruba 6400-48p 10G/25G SFP28 Module",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.r0x44_aruba_6400_48p_10g_25g_sfp28_module;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.r0x44_aruba_6400_48p_10g_25g_sfp28_module"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:421"
+  },
+  {
+   "id": "rackHPE Aruba Switches-180-r0x45a-aruba-6400-12p-40g-100g-qsfp28-module",
+   "title": "R0X45A Aruba 6400-12p 40G/100G QSFP28 Module",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba r0x45a 6400 12p 40g 100g qsfp28 module R0X45A Aruba 6400-12p 40G/100G QSFP28 Module",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.r0x45a_aruba_6400_12p_40g_100g_qsfp28_module;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.r0x45a_aruba_6400_12p_40g_100g_qsfp28_module"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:422"
+  },
+  {
+   "id": "rackHPE Aruba Switches-181-rj45-sfp",
+   "title": "rj45 SFP",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba rj45 sfp rj45 SFP",
+   "kind": "vertex",
+   "width": 8,
+   "height": 6,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.rj45_sfp;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.rj45_sfp"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:423"
+  },
+  {
+   "id": "rackHPE Aruba Switches-182-rj45-sfp-alt",
+   "title": "rj45 SFP alt",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba rj45 sfp alt alternative rj45 SFP alt",
+   "kind": "vertex",
+   "width": 5,
+   "height": 4,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.rj45_sfp_alt;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.rj45_sfp_alt"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:424"
+  },
+  {
+   "id": "rackHPE Aruba Switches-183-rom67a-aruba-2930m-48p-poe-class-6-switch",
+   "title": "ROM67A Aruba 2930M-48p PoE class 6 switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba rom67a 2930m 48p poe class switch ROM67A Aruba 2930M-48p PoE class 6 switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.rom67a_aruba_2930m_48p_poe_class_6_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.rom67a_aruba_2930m_48p_poe_class_6_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:425"
+  },
+  {
+   "id": "rackHPE Aruba Switches-184-rom67a-aruba-2930m-poe-class-6-switch-rear",
+   "title": "ROM67A Aruba 2930M PoE class 6 switch (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba rom67a 2930m poe class switch rear ROM67A Aruba 2930M PoE class 6 switch (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.rom67a_aruba_2930m_poe_class_6_switch_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.rom67a_aruba_2930m_poe_class_6_switch_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:426"
+  },
+  {
+   "id": "rackHPE Aruba Switches-185-rom68a-aruba-2930m-24p-poe-class-6-switch",
+   "title": "ROM68A Aruba 2930M-24p PoE class 6 switch",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba rom68a 2930m 24p poe class switch ROM68A Aruba 2930M-24p PoE class 6 switch",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.rom68a_aruba_2930m_24p_poe_class_6_switch;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.rom68a_aruba_2930m_24p_poe_class_6_switch"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:427"
+  },
+  {
+   "id": "rackHPE Aruba Switches-186-rom68a-aruba-2930m-24p-poe-class-6-switch-rear",
+   "title": "ROM68A Aruba 2930M-24p PoE class 6 switch (rear)",
+   "tags": "rack equipment hpe hp hewlett packard enterprise aruba rom68a 2930m 24p poe class switch rear ROM68A Aruba 2930M-24p PoE class 6 switch (rear)",
+   "kind": "vertex",
+   "width": 142,
+   "height": 15,
+   "style": "html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.rom68a_aruba_2930m_24p_poe_class_6_switch_rear;",
+   "shapeNames": [
+    "mxgraph.rack.hpe_aruba.switches.rom68a_aruba_2930m_24p_poe_class_6_switch_rear"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Rack.js:428"
+  }
+ ]
+}

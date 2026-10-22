@@ -1,0 +1,235 @@
+{
+ "id": "pidFilters",
+ "title": "Process Engineering / Filters",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-PID.js:8",
+ "entries": [
+  {
+   "id": "pidFilters-0-filter",
+   "title": "Filter",
+   "tags": "pid filters filter pid process instrumentation filter  Filter",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.filters.filter;",
+   "shapeNames": [
+    "mxgraph.pid.filters.filter"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:257"
+  },
+  {
+   "id": "pidFilters-1-gas-filter",
+   "title": "Gas Filter",
+   "tags": "pid filters gas filter pid process instrumentation filter  Gas Filter",
+   "kind": "vertex",
+   "width": 50,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.filters.gas_filter;",
+   "shapeNames": [
+    "mxgraph.pid.filters.gas_filter"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:259"
+  },
+  {
+   "id": "pidFilters-2-gas-filter-bag-candle-cartridge",
+   "title": "Gas Filter (Bag, Candle, Cartridge)",
+   "tags": "pid filters gas filter (bag, candle, cartridge) pid process instrumentation filter  Gas Filter (Bag, Candle, Cartridge)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.filters.gas_filter_(bag,_candle,_cartridge);",
+   "shapeNames": [
+    "mxgraph.pid.filters.gas_filter_(bag,_candle,_cartridge)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:261"
+  },
+  {
+   "id": "pidFilters-3-gas-filter-belt-roll",
+   "title": "Gas Filter (Belt, Roll)",
+   "tags": "pid filters gas filter (belt, roll) pid process instrumentation filter  Gas Filter (Belt, Roll)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.filters.gas_filter_(belt,_roll);",
+   "shapeNames": [
+    "mxgraph.pid.filters.gas_filter_(belt,_roll)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:263"
+  },
+  {
+   "id": "pidFilters-4-gas-filter-fixed-bed",
+   "title": "Gas Filter (Fixed Bed)",
+   "tags": "pid filters gas filter (fixed bed) pid process instrumentation filter  Gas Filter (Fixed Bed)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.filters.gas_filter_(fixed_bed);",
+   "shapeNames": [
+    "mxgraph.pid.filters.gas_filter_(fixed_bed)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:265"
+  },
+  {
+   "id": "pidFilters-5-gas-filter-hepa",
+   "title": "Gas Filter (HEPA)",
+   "tags": "pid filters gas filter (hepa) pid process instrumentation filter  Gas Filter (HEPA)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 100,
+   "style": "html=1;dashed=0;outlineConnect=0;align=center;shape=mxgraph.pid.filters.gas_filter_(hepa);",
+   "value": "HEPA",
+   "shapeNames": [
+    "mxgraph.pid.filters.gas_filter_(hepa)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:267"
+  },
+  {
+   "id": "pidFilters-6-liquid-filter",
+   "title": "Liquid Filter",
+   "tags": "pid filters liquid filter pid process instrumentation filter  Liquid Filter",
+   "kind": "vertex",
+   "width": 50,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.filters.liquid_filter;",
+   "shapeNames": [
+    "mxgraph.pid.filters.liquid_filter"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:269"
+  },
+  {
+   "id": "pidFilters-7-liquid-filter-bag-candle-cartridge",
+   "title": "Liquid Filter (Bag, Candle, Cartridge)",
+   "tags": "pid filters liquid Filter (bag, candle, cartridge) pid process instrumentation filter  Liquid Filter (Bag, Candle, Cartridge)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.filters.liquid_Filter_(bag,_candle,_cartridge);",
+   "shapeNames": [
+    "mxgraph.pid.filters.liquid_Filter_(bag,_candle,_cartridge)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:271"
+  },
+  {
+   "id": "pidFilters-8-liquid-filter-belt-roll",
+   "title": "Liquid Filter (Belt, Roll)",
+   "tags": "pid filters liquid filter (belt, roll) pid process instrumentation filter  Liquid Filter (Belt, Roll)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.filters.liquid_filter_(belt,_roll);",
+   "shapeNames": [
+    "mxgraph.pid.filters.liquid_filter_(belt,_roll)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:273"
+  },
+  {
+   "id": "pidFilters-9-liquid-filter-biological",
+   "title": "Liquid Filter (Biological)",
+   "tags": "pid filters liquid filter (biological) pid process instrumentation filter  Liquid Filter (Biological)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 100,
+   "style": "html=1;dashed=0;outlineConnect=0;align=center;shape=mxgraph.pid.filters.liquid_filter_(biological);",
+   "value": "BIO",
+   "shapeNames": [
+    "mxgraph.pid.filters.liquid_filter_(biological)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:275"
+  },
+  {
+   "id": "pidFilters-10-liquid-filter-fixed-bed",
+   "title": "Liquid Filter (Fixed Bed)",
+   "tags": "pid filters liquid filter (fixed bed) pid process instrumentation filter  Liquid Filter (Fixed Bed)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.filters.liquid_filter_(fixed_bed);",
+   "shapeNames": [
+    "mxgraph.pid.filters.liquid_filter_(fixed_bed)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:277"
+  },
+  {
+   "id": "pidFilters-11-liquid-filter-ion-exchanger",
+   "title": "Liquid Filter (Ion Exchanger)",
+   "tags": "pid filters liquid filter (ion exchanger) pid process instrumentation filter  Liquid Filter (Ion Exchanger)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 100,
+   "style": "html=1;dashed=0;outlineConnect=0;align=center;shape=mxgraph.pid.filters.liquid_filter_(ion_exchanger);",
+   "value": "ION",
+   "shapeNames": [
+    "mxgraph.pid.filters.liquid_filter_(ion_exchanger)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:279"
+  },
+  {
+   "id": "pidFilters-12-liquid-filter-rotary-drum-or-disc",
+   "title": "Liquid Filter (Rotary, Drum or Disc)",
+   "tags": "pid filters liquid filter (rotary, drum or disc) pid process instrumentation filter  Liquid Filter (Rotary, Drum or Disc)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.filters.liquid_filter_(rotary,_drum_or_disc);",
+   "shapeNames": [
+    "mxgraph.pid.filters.liquid_filter_(rotary,_drum_or_disc)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:281"
+  },
+  {
+   "id": "pidFilters-13-liquid-filter-rotary-drum-or-disc-scraper",
+   "title": "Liquid Filter (Rotary, Drum or Disc, Scraper)",
+   "tags": "pid filters liquid filter (rotary, drum or disc, scraper) pid process instrumentation filter  Liquid Filter (Rotary, Drum or Disc, Scraper)",
+   "kind": "vertex",
+   "width": 55,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.filters.liquid_filter_(rotary,_drum_or_disc,_scraper);",
+   "shapeNames": [
+    "mxgraph.pid.filters.liquid_filter_(rotary,_drum_or_disc,_scraper)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:283"
+  },
+  {
+   "id": "pidFilters-14-press-filter",
+   "title": "Press Filter",
+   "tags": "pid filters press filter pid process instrumentation filter  Press Filter",
+   "kind": "vertex",
+   "width": 100,
+   "height": 50,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.filters.press_filter;",
+   "shapeNames": [
+    "mxgraph.pid.filters.press_filter"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:285"
+  },
+  {
+   "id": "pidFilters-15-suction-filter",
+   "title": "Suction Filter",
+   "tags": "pid filters suction filter pid process instrumentation filter  Suction Filter",
+   "kind": "vertex",
+   "width": 50,
+   "height": 100,
+   "style": "verticalLabelPosition=bottom;align=center;dashed=0;html=1;verticalAlign=top;shape=mxgraph.pid.filters.suction_filter;",
+   "shapeNames": [
+    "mxgraph.pid.filters.suction_filter"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:287"
+  }
+ ]
+}

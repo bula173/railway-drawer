@@ -1,0 +1,92 @@
+{
+ "id": "dynamics365Mixed Reality",
+ "title": "Dynamics365 / Mixed Reality",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Dynamics365.js:8",
+ "entries": [
+  {
+   "id": "dynamics365Mixed Reality-0-import-tool",
+   "title": "Import Tool",
+   "tags": "import tool mixed reality  Import Tool",
+   "kind": "vertex",
+   "width": 60.12,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/dynamics365/ImportTool.svg;points=[[0.5,0,0],[0.499,0.998,0],[0.011,0.5,0],[1,0.499,0],[0.997,0.25,0],[0.988,0.757,0],[0.26,0.882,0],[0.003,0.25,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Dynamics365.js:91"
+  },
+  {
+   "id": "dynamics365Mixed Reality-1-layout",
+   "title": "Layout",
+   "tags": "layout mixed reality  Layout",
+   "kind": "vertex",
+   "width": 60.760000000000005,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/dynamics365/Layout.svg;points=[[0.5,0,0],[0.478,1,0],[0,0.505,0],[1,0.499,0],[0.994,0.255,0],[0.986,0.75,0],[0.006,0.752,0],[0.006,0.255,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Dynamics365.js:93"
+  },
+  {
+   "id": "dynamics365Mixed Reality-2-mr-portal",
+   "title": "MR Portal",
+   "tags": "mr portal mixed reality  MR Portal",
+   "kind": "vertex",
+   "width": 68,
+   "height": 62.32,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/dynamics365/MRPortal.svg;points=[[0.5,0,0],[0.499,1,0],[0.062,0.5,0],[0.938,0.5,0],[0.972,0.074,0],[0.732,0.904,0],[0.265,0.902,0],[0.03,0.071,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Dynamics365.js:95"
+  },
+  {
+   "id": "dynamics365Mixed Reality-3-product-visualize",
+   "title": "Product Visualize",
+   "tags": "product visualize mixed reality  Product Visualize",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/dynamics365/ProductVisualize.svg;points=[[0.5,0.005,0],[0.5,1,0],[0,0.594,0],[1,0.594,0],[0.802,0.175,0],[0.995,0.71,0],[0.008,0.712,0],[0.205,0.168,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Dynamics365.js:97"
+  },
+  {
+   "id": "dynamics365Mixed Reality-4-remote-assist",
+   "title": "Remote Assist",
+   "tags": "remote assist mixed reality  Remote Assist",
+   "kind": "vertex",
+   "width": 60.12,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/dynamics365/RemoteAssist.svg;points=[[0.5,0,0],[0.5,0.998,0],[0,0.502,0],[1,0.502,0],[0.997,0.25,0],[0.994,0.757,0],[0.006,0.757,0],[0.003,0.25,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Dynamics365.js:99"
+  },
+  {
+   "id": "dynamics365Mixed Reality-5-voice-assistant",
+   "title": "Voice Assistant",
+   "tags": "voice assistant mixed reality  Voice Assistant",
+   "kind": "vertex",
+   "width": 60.760000000000005,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/dynamics365/VoiceAssistant.svg;points=[[0.5,0,0],[0.476,1,0],[0,0.505,0],[1,0.419,0],[0.991,0.245,0],[0.988,0.595,0],[0.006,0.76,0],[0.009,0.245,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Dynamics365.js:101"
+  }
+ ]
+}

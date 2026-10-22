@@ -1,0 +1,732 @@
+{
+ "id": "sysmlActivities",
+ "title": "SysML / Activities",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Sysml.js:7",
+ "entries": [
+  {
+   "id": "sysmlActivities-0-action",
+   "title": "Action",
+   "tags": " sysml activity action Action",
+   "kind": "vertex",
+   "width": 160,
+   "height": 80,
+   "style": "shape=rect;html=1;rounded=1;whiteSpace=wrap;align=center;",
+   "value": "Action",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1590"
+  },
+  {
+   "id": "sysmlActivities-1-call-behavior-action",
+   "title": "Call Behavior Action",
+   "tags": "callBehAct sysml activity call behavior action Call Behavior Action",
+   "kind": "vertex",
+   "width": 160,
+   "height": 80,
+   "style": "html=1;shape=mxgraph.sysml.callBehAct;whiteSpace=wrap;align=center;",
+   "value": "action name:\nbehavior name",
+   "shapeNames": [
+    "mxgraph.sysml.callBehAct"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1592"
+  },
+  {
+   "id": "sysmlActivities-2-accept-event-action",
+   "title": "Accept Event Action",
+   "tags": "accEvent sysml activity accept event action Accept Event Action",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "html=1;shape=mxgraph.sysml.accEvent;strokeWidth=2;whiteSpace=wrap;align=center;",
+   "value": "Event",
+   "shapeNames": [
+    "mxgraph.sysml.accEvent"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1594"
+  },
+  {
+   "id": "sysmlActivities-3-time-event",
+   "title": "Time Event",
+   "tags": "timeEvent sysml activity time event Time Event",
+   "kind": "vertex",
+   "width": 35,
+   "height": 40,
+   "style": "html=1;shape=mxgraph.sysml.timeEvent;strokeWidth=2;verticalLabelPosition=bottom;verticalAlignment=top;",
+   "shapeNames": [
+    "mxgraph.sysml.timeEvent"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1596"
+  },
+  {
+   "id": "sysmlActivities-4-send-signal-action",
+   "title": "Send Signal Action",
+   "tags": "sendSigAct sysml activity send signal action Send Signal Action",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "html=1;shape=mxgraph.sysml.sendSigAct;strokeWidth=2;whiteSpace=wrap;align=center;",
+   "value": "Signal",
+   "shapeNames": [
+    "mxgraph.sysml.sendSigAct"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1598"
+  },
+  {
+   "id": "sysmlActivities-5-activity-final",
+   "title": "Activity Final",
+   "tags": "actFinal sysml activity activity final Activity Final",
+   "kind": "vertex",
+   "width": 40,
+   "height": 40,
+   "style": "html=1;shape=mxgraph.sysml.actFinal;strokeWidth=2;verticalLabelPosition=bottom;verticalAlignment=top;",
+   "shapeNames": [
+    "mxgraph.sysml.actFinal"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1600"
+  },
+  {
+   "id": "sysmlActivities-6-activity-parameter-node",
+   "title": "Activity Parameter Node",
+   "tags": "act sysml activity activity parameter node Activity Parameter Node",
+   "kind": "vertex",
+   "width": 300,
+   "height": 135,
+   "style": "html=1;shape=mxgraph.sysml.actParamNode;align=left;spacingLeft=15;verticalAlign=top;spacingTop=-3;",
+   "value": "act",
+   "shapeNames": [
+    "mxgraph.sysml.actParamNode"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1602"
+  },
+  {
+   "id": "sysmlActivities-7-control-operator",
+   "title": "Control Operator",
+   "tags": " sysml activity control operator Control Operator",
+   "kind": "vertex",
+   "width": 160,
+   "height": 80,
+   "style": "shape=rect;rounded=1;html=1;whiteSpace=wrap;align=center;",
+   "value": "&lt;&lt;controlOperator&gt;&gt;\nCallBehaviorAction",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1604"
+  },
+  {
+   "id": "sysmlActivities-8-control-operator",
+   "title": "Control Operator",
+   "tags": "package sysml activity control operator Control Operator",
+   "kind": "vertex",
+   "width": 250,
+   "height": 120,
+   "style": "html=1;shape=mxgraph.sysml.package;align=left;spacingLeft=5;verticalAlign=top;spacingTop=-3;labelX=135;html=1;overflow=fill;",
+   "value": "<p style=\"margin:0px;margin-top:4px;margin-left:10px;text-align:left;\"><b>act</b>   [ControlOperator]</p>",
+   "shapeNames": [
+    "mxgraph.sysml.package"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1606"
+  },
+  {
+   "id": "sysmlActivities-9-decision-node",
+   "title": "Decision Node",
+   "tags": "sysml activity decision node Decision Node",
+   "kind": "cells",
+   "width": 200,
+   "height": 80,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=rhombus;html=1;verticalLabelPosition=bottom;verticalAlignment=top;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"80\" y=\"40\" width=\"40\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"edgeStyle=elbowEdgeStyle;html=1;elbow=horizontal;align=right;verticalAlign=bottom;endArrow=none;rounded=0;labelBackgroundColor=none;startArrow=open;startSize=12;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint x=\"100\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"[guard]\" style=\"edgeStyle=elbowEdgeStyle;html=1;elbow=vertical;verticalAlign=bottom;endArrow=open;rounded=0;labelBackgroundColor=none;endSize=12;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint x=\"200\" y=\"60\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"[else]\" style=\"edgeStyle=elbowEdgeStyle;html=1;elbow=vertical;verticalAlign=bottom;endArrow=open;rounded=0;labelBackgroundColor=none;endSize=12;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint y=\"60\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rhombus"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1609"
+  },
+  {
+   "id": "sysmlActivities-10-flow-final",
+   "title": "Flow Final",
+   "tags": "flowFinal sysml activity flow final Flow Final",
+   "kind": "vertex",
+   "width": 40,
+   "height": 40,
+   "style": "html=1;shape=mxgraph.sysml.flowFinal;strokeWidth=2;verticalLabelPosition=bottom;verticalAlignment=top;",
+   "shapeNames": [
+    "mxgraph.sysml.flowFinal"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1612"
+  },
+  {
+   "id": "sysmlActivities-11-fork-node",
+   "title": "Fork Node",
+   "tags": "sysml activity fork node Fork Node",
+   "kind": "cells",
+   "width": 200,
+   "height": 80,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=rect;html=1;fillColor=strokeColor;verticalLabelPosition=bottom;verticalAlignment=top;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"60\" width=\"4\" height=\"80\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"edgeStyle=elbowEdgeStyle;html=1;elbow=horizontal;endArrow=none;rounded=0;startArrow=open;strokeWidth=3;startSize=12;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint y=\"40\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"\" style=\"edgeStyle=elbowEdgeStyle;html=1;elbow=vertical;endArrow=open;rounded=0;strokeWidth=3;endSize=12;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint x=\"200\" y=\"10\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"\" style=\"edgeStyle=elbowEdgeStyle;html=1;elbow=vertical;endArrow=open;rounded=0;strokeWidth=3;endSize=12;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint x=\"200\" y=\"30\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"6\" value=\"\" style=\"edgeStyle=elbowEdgeStyle;html=1;elbow=vertical;endArrow=open;rounded=0;strokeWidth=3;endSize=12;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint x=\"200\" y=\"50\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"7\" value=\"\" style=\"edgeStyle=elbowEdgeStyle;html=1;elbow=vertical;endArrow=open;rounded=0;strokeWidth=3;endSize=12;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint x=\"200\" y=\"70\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1614"
+  },
+  {
+   "id": "sysmlActivities-12-initial-node",
+   "title": "Initial Node",
+   "tags": " sysml activity initial node Initial Node",
+   "kind": "vertex",
+   "width": 40,
+   "height": 40,
+   "style": "shape=ellipse;html=1;fillColor=strokeColor;strokeWidth=2;verticalLabelPosition=bottom;verticalAlignment=top;perimeter=ellipsePerimeter;",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1617"
+  },
+  {
+   "id": "sysmlActivities-13-join-node",
+   "title": "Join Node",
+   "tags": "sysml activity join node Join Node",
+   "kind": "cells",
+   "width": 200,
+   "height": 80,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"{joinspec=...}\" style=\"shape=rect;html=1;fillColor=strokeColor;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"136\" width=\"4\" height=\"80\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"edgeStyle=elbowEdgeStyle;html=1;elbow=horizontal;rounded=0;endArrow=open;strokeWidth=3;endSize=12;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint x=\"200\" y=\"40\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"\" style=\"edgeStyle=elbowEdgeStyle;html=1;elbow=vertical;startArrow=open;endArrow=none;rounded=0;strokeWidth=3;startSize=12;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint y=\"10\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"\" style=\"edgeStyle=elbowEdgeStyle;html=1;elbow=vertical;startArrow=open;endArrow=none;rounded=0;strokeWidth=3;startSize=12;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint y=\"30\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"6\" value=\"\" style=\"edgeStyle=elbowEdgeStyle;html=1;elbow=vertical;startArrow=open;endArrow=none;rounded=0;strokeWidth=3;startSize=12;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint y=\"50\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"7\" value=\"\" style=\"edgeStyle=elbowEdgeStyle;html=1;elbow=vertical;startArrow=open;endArrow=none;rounded=0;strokeWidth=3;startSize=12;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint y=\"70\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1619"
+  },
+  {
+   "id": "sysmlActivities-14-is-control",
+   "title": "Is Control",
+   "tags": "sysml activity is control Is Control",
+   "kind": "cells",
+   "width": 300,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Action\" style=\"html=1;shape=mxgraph.sysml.isControl;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"90\" width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"{control}\" style=\"edgeStyle=elbowEdgeStyle;html=1;elbow=horizontal;startArrow=open;rounded=0;endArrow=none;verticalAlign=bottom;exitX=0;exitY=0.5;startSize=12;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint y=\"30\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"{control}\" style=\"edgeStyle=elbowEdgeStyle;html=1;elbow=vertical;endArrow=open;rounded=0;verticalAlign=bottom;entryX=0;entryY=0.5;endSize=12;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint x=\"300\" y=\"30\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.sysml.isControl"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1621"
+  },
+  {
+   "id": "sysmlActivities-15-is-stream",
+   "title": "Is Stream",
+   "tags": "sysml activity is stream Is Stream",
+   "kind": "cells",
+   "width": 300,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Action\" style=\"html=1;shape=mxgraph.sysml.isControl;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"90\" width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"{stream}\" style=\"edgeStyle=elbowEdgeStyle;html=1;elbow=horizontal;startArrow=open;rounded=0;endArrow=none;verticalAlign=bottom;exitX=0;exitY=0.5;startSize=12;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint y=\"30\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"{stream}\" style=\"edgeStyle=elbowEdgeStyle;html=1;elbow=vertical;endArrow=open;rounded=0;verticalAlign=bottom;entryX=0;entryY=0.5;endSize=12;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint x=\"300\" y=\"30\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.sysml.isControl"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1623"
+  },
+  {
+   "id": "sysmlActivities-16-is-stream",
+   "title": "Is Stream",
+   "tags": "sysml activity is stream Is Stream",
+   "kind": "cells",
+   "width": 300,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Action\" style=\"html=1;shape=mxgraph.sysml.isStream;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"90\" width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"edgeStyle=elbowEdgeStyle;html=1;elbow=horizontal;startArrow=open;rounded=0;endArrow=none;exitX=0;exitY=0.5;startSize=12;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint y=\"30\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"\" style=\"edgeStyle=elbowEdgeStyle;html=1;elbow=vertical;endArrow=open;rounded=0;entryX=0;entryY=0.5;endSize=12;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint x=\"300\" y=\"30\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.sysml.isStream"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1625"
+  },
+  {
+   "id": "sysmlActivities-17-is-stream",
+   "title": "Is Stream",
+   "tags": "sysml activity is stream",
+   "kind": "cells",
+   "width": 250,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"act\" style=\"html=1;shape=mxgraph.sysml.isActStream;align=left;spacingLeft=5;verticalAlign=top;spacingTop=-3;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"200\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"{stream}\" style=\"resizable=0;html=1;align=left;verticalAlign=top;labelPosition=left;verticalLabelPosition=middle;labelBackgroundColor=none;fontSize=10;spacingTop=5;\" vertex=\"1\" connectable=\"0\" parent=\"2\"><mxGeometry x=\"200\" y=\"50\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.sysml.isActStream"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1628"
+  },
+  {
+   "id": "sysmlActivities-18-local-pre-and-postconditions",
+   "title": "Local Pre- and Postconditions",
+   "tags": "sysml activity local pre precondition post postcondition Local Pre- and Postconditions",
+   "kind": "cells",
+   "width": 150,
+   "height": 180,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"localPrecondition&#10;constraint\" style=\"shape=note;html=1;size=15;strokeWidth=2;align=left;spacingLeft=5;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Action\" style=\"shape=rect;html=1;rounded=1;strokeWidth=2;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"10\" y=\"65\" width=\"100\" height=\"50\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"localPostcondition&#10;constraint\" style=\"shape=note;html=1;size=15;strokeWidth=2;align=left;spacingLeft=5;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"20\" y=\"140\" width=\"130\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"edgeStyle=elbowEdgeStyle;html=1;elbow=horizontal;rounded=0;endArrow=none;\" edge=\"1\" source=\"2\" target=\"3\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"\" style=\"edgeStyle=elbowEdgeStyle;html=1;elbow=horizontal;rounded=0;endArrow=none;\" edge=\"1\" source=\"3\" target=\"4\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "note",
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1640"
+  },
+  {
+   "id": "sysmlActivities-19-merge-node",
+   "title": "Merge Node",
+   "tags": "sysml activity merge node Merge Node",
+   "kind": "cells",
+   "width": 200,
+   "height": 80,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=rhombus;html=1;verticalLabelPosition=top;verticalAlignment=bottom;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"80\" width=\"40\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"edgeStyle=elbowEdgeStyle;html=1;elbow=horizontal;align=right;verticalAlign=bottom;rounded=0;labelBackgroundColor=none;endArrow=open;endSize=12;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint x=\"100\" y=\"80\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"\" style=\"edgeStyle=elbowEdgeStyle;html=1;elbow=vertical;verticalAlign=bottom;startArrow=open;endArrow=none;rounded=0;labelBackgroundColor=none;startSize=12;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint x=\"200\" y=\"20\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"\" style=\"edgeStyle=elbowEdgeStyle;html=1;elbow=vertical;verticalAlign=bottom;startArrow=open;endArrow=none;rounded=0;labelBackgroundColor=none;startSize=12;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint y=\"20\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rhombus"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1642"
+  },
+  {
+   "id": "sysmlActivities-20-no-buffer",
+   "title": "No Buffer",
+   "tags": "sysml activity no buffer No Buffer",
+   "kind": "cells",
+   "width": 300,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Action\" style=\"html=1;shape=mxgraph.sysml.isControl;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"90\" width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&amp;lt;&amp;lt;noBuffer&amp;gt;&amp;gt;\" style=\"edgeStyle=elbowEdgeStyle;html=1;elbow=horizontal;startArrow=open;rounded=0;endArrow=none;verticalAlign=bottom;exitX=0;exitY=0.5;startSize=12;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint y=\"30\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"&amp;lt;&amp;lt;noBuffer&amp;gt;&amp;gt;\" style=\"edgeStyle=elbowEdgeStyle;html=1;elbow=vertical;endArrow=open;rounded=0;verticalAlign=bottom;entryX=0;entryY=0.5;endSize=12;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint x=\"300\" y=\"30\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.sysml.isControl"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1644"
+  },
+  {
+   "id": "sysmlActivities-21-object-node",
+   "title": "Object Node",
+   "tags": " sysml activity object node Object Node",
+   "kind": "vertex",
+   "width": 160,
+   "height": 80,
+   "style": "shape=rect;html=1;whiteSpace=wrap;align=center;",
+   "value": "object node name:\n type name\n[state, state ...]",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1647"
+  },
+  {
+   "id": "sysmlActivities-22-object-node",
+   "title": "Object Node",
+   "tags": "sysml activity object node",
+   "kind": "cells",
+   "width": 120,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Action\" style=\"html=1;shape=mxgraph.sysml.isControl;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"pin name: type name&#xa;[state, state ...]\" style=\"resizable=0;html=1;align=right;verticalAlign=middle;labelPosition=left;verticalLabelPosition=middle;labelBackgroundColor=none;spacingRight=5;\" vertex=\"1\" connectable=\"0\" parent=\"2\"><mxGeometry y=\"30\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.sysml.isControl"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1650"
+  },
+  {
+   "id": "sysmlActivities-23-optional",
+   "title": "Optional",
+   "tags": "sysml activity optional Optional",
+   "kind": "cells",
+   "width": 300,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Action\" style=\"html=1;shape=mxgraph.sysml.isControl;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"90\" width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&amp;lt;&amp;lt;optional&amp;gt;&amp;gt;\" style=\"edgeStyle=elbowEdgeStyle;html=1;elbow=horizontal;startArrow=open;rounded=0;endArrow=none;verticalAlign=bottom;exitX=0;exitY=0.5;startSize=12;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint y=\"30\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"&amp;lt;&amp;lt;optional&amp;gt;&amp;gt;\" style=\"edgeStyle=elbowEdgeStyle;html=1;elbow=vertical;endArrow=open;rounded=0;verticalAlign=bottom;entryX=0;entryY=0.5;endSize=12;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint x=\"300\" y=\"30\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.sysml.isControl"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1662"
+  },
+  {
+   "id": "sysmlActivities-24-optional",
+   "title": "Optional",
+   "tags": "sysml activity optional",
+   "kind": "cells",
+   "width": 200,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"act\" style=\"html=1;shape=mxgraph.sysml.isActStream;align=left;spacingLeft=5;verticalAlign=top;spacingTop=-3;fontStyle=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"200\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&amp;lt;&amp;lt;optional&amp;gt;&amp;gt;\" style=\"resizable=0;html=1;align=left;verticalAlign=top;labelPosition=left;verticalLabelPosition=middle;labelBackgroundColor=none;fontSize=10;spacingTop=5;\" vertex=\"1\" connectable=\"0\" parent=\"2\"><mxGeometry x=\"200\" y=\"50\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.sysml.isActStream"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1665"
+  },
+  {
+   "id": "sysmlActivities-25-overwrite",
+   "title": "Overwrite",
+   "tags": "sysml activity overwrite Overwrite",
+   "kind": "cells",
+   "width": 300,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Action\" style=\"html=1;shape=mxgraph.sysml.isControl;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"90\" width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&amp;lt;&amp;lt;overwrite&amp;gt;&amp;gt;\" style=\"edgeStyle=elbowEdgeStyle;html=1;elbow=horizontal;startArrow=open;rounded=0;endArrow=none;verticalAlign=bottom;exitX=0;exitY=0.5;startSize=12;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint y=\"30\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"&amp;lt;&amp;lt;overwrite&amp;gt;&amp;gt;\" style=\"edgeStyle=elbowEdgeStyle;html=1;elbow=vertical;endArrow=open;rounded=0;verticalAlign=bottom;entryX=0;entryY=0.5;endSize=12;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint x=\"300\" y=\"30\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.sysml.isControl"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1677"
+  },
+  {
+   "id": "sysmlActivities-26-parameter-set",
+   "title": "Parameter Set",
+   "tags": "paramSet sysml activity parameter set Parameter Set",
+   "kind": "vertex",
+   "width": 160,
+   "height": 100,
+   "style": "html=1;shape=mxgraph.sysml.paramSet;whiteSpace=wrap;align=center;",
+   "value": "Action",
+   "shapeNames": [
+    "mxgraph.sysml.paramSet"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1680"
+  },
+  {
+   "id": "sysmlActivities-27-parameter-set",
+   "title": "Parameter Set",
+   "tags": "paramActSet sysml activity parameter set Parameter Set",
+   "kind": "vertex",
+   "width": 250,
+   "height": 120,
+   "style": "html=1;shape=mxgraph.sysml.paramActSet;align=left;spacingLeft=15;verticalAlign=top;spacingTop=-3;fontStyle=1;",
+   "value": "act",
+   "shapeNames": [
+    "mxgraph.sysml.paramActSet"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1682"
+  },
+  {
+   "id": "sysmlActivities-28-probability",
+   "title": "Probability",
+   "tags": "sysml activity probability Probability",
+   "kind": "cells",
+   "width": 120,
+   "height": 160,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Action\" style=\"html=1;shape=mxgraph.sysml.probability;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"160\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"{ probability =&#10;valueSpecification }\" style=\"resizable=0;html=1;align=left;verticalAlign=bottom;labelPosition=left;verticalLabelPosition=bottom;labelBackgroundColor=none;fontSize=10;spacingBottom=25;\" connectable=\"0\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"120\" y=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"{ probability =&#10;valueSpecification }\" style=\"resizable=0;html=1;align=left;verticalAlign=top;labelPosition=left;verticalLabelPosition=top;labelBackgroundColor=none;fontSize=10;spacingTop=25;\" connectable=\"0\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"120\" y=\"120\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.sysml.probability"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1684"
+  },
+  {
+   "id": "sysmlActivities-29-probability",
+   "title": "Probability",
+   "tags": "sysml activity probability Probability",
+   "kind": "cells",
+   "width": 120,
+   "height": 160,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"act\" style=\"html=1;shape=mxgraph.sysml.actProb;align=left;spacingLeft=5;verticalAlign=top;spacingTop=-3;fontStyle=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"160\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"{ probability =&#10;valueSpecification }\" style=\"resizable=0;html=1;align=left;verticalAlign=bottom;labelPosition=left;verticalLabelPosition=bottom;labelBackgroundColor=none;fontSize=10;spacingBottom=25;\" connectable=\"0\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"120\" y=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"{ probability =&#10;valueSpecification }\" style=\"resizable=0;html=1;align=left;verticalAlign=top;labelPosition=left;verticalLabelPosition=top;labelBackgroundColor=none;fontSize=10;spacingTop=25;\" connectable=\"0\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"120\" y=\"120\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.sysml.actProb"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1686"
+  },
+  {
+   "id": "sysmlActivities-30-rate",
+   "title": "Rate",
+   "tags": "sysml activity rate",
+   "kind": "cells",
+   "width": 120,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;marginBottom=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"html=1;align=left;spacing=0;spacingLeft=10;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"76\" width=\"200\" height=\"12\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"&amp;lt;&amp;lt;continuous&amp;gt;&amp;gt;\" style=\"html=1;align=center;spacing=0;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"200\" height=\"18\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"Object Node\" style=\"html=1;align=center;spacing=0;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"200\" height=\"18\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"\" style=\"html=1;align=left;spacing=0;spacingLeft=10;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"76\" width=\"200\" height=\"12\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1689"
+  },
+  {
+   "id": "sysmlActivities-31-rate",
+   "title": "Rate",
+   "tags": "sysml activity rate",
+   "kind": "cells",
+   "width": 120,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;marginBottom=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"html=1;align=left;spacing=0;spacingLeft=10;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"76\" width=\"200\" height=\"12\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"&amp;lt;&amp;lt;discrete&amp;gt;&amp;gt;\" style=\"html=1;align=center;spacing=0;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"200\" height=\"18\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"Object Node\" style=\"html=1;align=center;spacing=0;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"200\" height=\"18\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"\" style=\"html=1;align=left;spacing=0;spacingLeft=10;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"76\" width=\"200\" height=\"12\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1709"
+  },
+  {
+   "id": "sysmlActivities-32-rate",
+   "title": "Rate",
+   "tags": "sysml activity rate",
+   "kind": "cells",
+   "width": 140,
+   "height": 120,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;marginBottom=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"140\" height=\"120\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"html=1;align=left;spacing=0;spacingLeft=10;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"76\" width=\"140\" height=\"25\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"{ rate = constant }\" style=\"html=1;align=center;spacing=0;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"140\" height=\"14\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"{ rate = distribution }\" style=\"html=1;align=center;spacing=0;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"140\" height=\"14\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"&amp;lt;&amp;lt;continuous&amp;gt;&amp;gt;\" style=\"html=1;align=center;spacing=0;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"140\" height=\"14\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"&amp;lt;&amp;lt;discrete&amp;gt;&amp;gt;\" style=\"html=1;align=center;spacing=0;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"140\" height=\"14\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"Object Node\" style=\"html=1;align=center;spacing=0;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"140\" height=\"14\" as=\"geometry\"/></mxCell><mxCell id=\"9\" value=\"\" style=\"html=1;align=left;spacing=0;spacingLeft=10;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"76\" width=\"140\" height=\"25\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1729"
+  },
+  {
+   "id": "sysmlActivities-33-rate",
+   "title": "Rate",
+   "tags": "sysml activity rate",
+   "kind": "cells",
+   "width": 140,
+   "height": 120,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;marginBottom=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"140\" height=\"120\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Object Node\" style=\"html=1;align=center;spacing=0;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"140\" height=\"20\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"line;strokeWidth=0.25;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"40\" height=\"8\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"&amp;lt;&amp;lt;rate&amp;gt;&amp;gt;\" style=\"html=1;align=center;spacing=0;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"140\" height=\"14\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"rate = constant\" style=\"html=1;align=center;spacing=0;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"140\" height=\"14\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"rate = distribution\" style=\"html=1;align=center;spacing=0;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"140\" height=\"14\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"\" style=\"html=1;align=left;spacing=0;spacingLeft=10;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"76\" width=\"140\" height=\"10\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "line"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1758"
+  },
+  {
+   "id": "sysmlActivities-34-rate",
+   "title": "Rate",
+   "tags": "sysml activity rate",
+   "kind": "cells",
+   "width": 200,
+   "height": 100,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"act\" style=\"html=1;shape=mxgraph.sysml.isActStream;align=left;spacingLeft=5;verticalAlign=top;spacingTop=-3;fontStyle=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"200\" height=\"100\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"{ rate = constant }&#xa;{ rate = distributuion}&#xa;&amp;lt;&amp;lt;continuous&amp;gt;&amp;gt;&#xa;&amp;lt;&amp;lt;discrete&amp;gt;&amp;gt;\" style=\"resizable=0;html=1;align=left;verticalAlign=top;labelPosition=left;verticalLabelPosition=middle;labelBackgroundColor=none;fontSize=10;spacingTop=5;\" vertex=\"1\" connectable=\"0\" parent=\"2\"><mxGeometry x=\"200\" y=\"50\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.sysml.isActStream"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1784"
+  },
+  {
+   "id": "sysmlActivities-35-rate",
+   "title": "Rate",
+   "tags": "sysml activity rate Rate",
+   "kind": "cells",
+   "width": 300,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Action\" style=\"html=1;shape=mxgraph.sysml.isControl;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"90\" width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"{ rate = constant }&#10;{ rate = distributuion}&#10;&amp;lt;&amp;lt;continuous&amp;gt;&amp;gt;&#10;&amp;lt;&amp;lt;discrete&amp;gt;&amp;gt;\" style=\"edgeStyle=elbowEdgeStyle;html=1;elbow=horizontal;startArrow=open;rounded=0;endArrow=none;verticalAlign=top;exitX=0;exitY=0.5;labelBackgroundColor=none;startSize=12;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint y=\"30\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"{ rate = constant }&#10;{ rate = distributuion}&#10;&amp;lt;&amp;lt;continuous&amp;gt;&amp;gt;&#10;&amp;lt;&amp;lt;discrete&amp;gt;&amp;gt;\" style=\"edgeStyle=elbowEdgeStyle;html=1;elbow=vertical;endArrow=open;rounded=0;verticalAlign=top;entryX=0;entryY=0.5;labelBackgroundColor=none;endSize=12;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint x=\"300\" y=\"30\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.sysml.isControl"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1798"
+  },
+  {
+   "id": "sysmlActivities-36-control-flow",
+   "title": "Control Flow",
+   "tags": "sysml activity control flow",
+   "kind": "cells",
+   "width": 160,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=rect;html=1;rounded=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"60\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"shape=rect;html=1;rounded=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"100\" width=\"60\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"edgeStyle=elbowEdgeStyle;html=1;elbow=horizontal;endArrow=open;labelBackgroundColor=none;endSize=12;\" edge=\"1\" parent=\"1\" source=\"2\" target=\"3\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1801"
+  },
+  {
+   "id": "sysmlActivities-37-control-flow",
+   "title": "Control Flow",
+   "tags": "sysml activity control flow Control Flow",
+   "kind": "cells",
+   "width": 160,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=rect;html=1;rounded=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"60\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"shape=rect;html=1;rounded=1;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"100\" width=\"60\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"edgeStyle=elbowEdgeStyle;html=1;elbow=horizontal;endArrow=open;labelBackgroundColor=none;dashed=1;endSize=12;\" edge=\"1\" source=\"2\" target=\"3\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1815"
+  },
+  {
+   "id": "sysmlActivities-38-object-flow",
+   "title": "Object Flow",
+   "tags": "sysml activity object flow Object Flow",
+   "kind": "cells",
+   "width": 260,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=rect;html=1;rounded=1;strokeWidth=2;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"60\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"shape=rect;html=1;strokeWidth=2;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"100\" width=\"60\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"shape=rect;html=1;rounded=1;strokeWidth=2;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"200\" width=\"60\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"\" style=\"edgeStyle=elbowEdgeStyle;html=1;elbow=horizontal;endArrow=open;labelBackgroundColor=none;strokeWidth=2;endSize=12;\" edge=\"1\" source=\"2\" target=\"3\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"\" style=\"edgeStyle=elbowEdgeStyle;html=1;elbow=horizontal;endArrow=open;labelBackgroundColor=none;strokeWidth=2;endSize=12;\" edge=\"1\" source=\"3\" target=\"4\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1817"
+  },
+  {
+   "id": "sysmlActivities-39-object-flow",
+   "title": "Object Flow",
+   "tags": "sysml activity object flow",
+   "kind": "cells",
+   "width": 200,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"html=1;shape=mxgraph.sysml.objFlowR;strokeWidth=2;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"60\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"html=1;shape=mxgraph.sysml.objFlowL;strokeWidth=2;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"140\" width=\"60\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"\" style=\"edgeStyle=elbowEdgeStyle;html=1;elbow=horizontal;endArrow=open;labelBackgroundColor=none;strokeWidth=2;endSize=12;\" edge=\"1\" parent=\"1\" source=\"2\" target=\"3\"><mxGeometry relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.sysml.objFlowR",
+    "mxgraph.sysml.objFlowL"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1820"
+  },
+  {
+   "id": "sysmlActivities-40-object-flow",
+   "title": "Object Flow",
+   "tags": "objFlowR sysml activity object flow Object Flow",
+   "kind": "vertex",
+   "width": 120,
+   "height": 60,
+   "style": "html=1;shape=mxgraph.sysml.objFlowR;whiteSpace=wrap;",
+   "shapeNames": [
+    "mxgraph.sysml.objFlowR"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1835"
+  },
+  {
+   "id": "sysmlActivities-41-object-flow",
+   "title": "Object Flow",
+   "tags": "objFlowL sysml activity object flow Object Flow",
+   "kind": "vertex",
+   "width": 120,
+   "height": 60,
+   "style": "html=1;shape=mxgraph.sysml.objFlowL;whiteSpace=wrap;",
+   "shapeNames": [
+    "mxgraph.sysml.objFlowL"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1837"
+  },
+  {
+   "id": "sysmlActivities-42-probability",
+   "title": "Probability",
+   "tags": "sysml activity probability Probability",
+   "kind": "cells",
+   "width": 350,
+   "height": 80,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"shape=rhombus;html=1;whiteSpace=wrap;verticalLabelPosition=bottom;verticalAlignment=top;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"155\" y=\"40\" width=\"40\" height=\"40\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"edgeStyle=elbowEdgeStyle;html=1;elbow=horizontal;align=right;verticalAlign=bottom;endArrow=none;rounded=0;labelBackgroundColor=none;startArrow=open;startSize=12;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint x=\"175\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"{ probability = valueSpecification }\" style=\"edgeStyle=elbowEdgeStyle;html=1;elbow=vertical;verticalAlign=bottom;endArrow=open;rounded=0;labelBackgroundColor=none;endSize=12;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint x=\"350\" y=\"60\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"5\" value=\"{ probability = valueSpecification }\" style=\"edgeStyle=elbowEdgeStyle;html=1;elbow=vertical;verticalAlign=bottom;endArrow=open;rounded=0;labelBackgroundColor=none;endSize=12;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry relative=\"1\" as=\"geometry\"><mxPoint y=\"60\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rhombus"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1839"
+  },
+  {
+   "id": "sysmlActivities-43-probability",
+   "title": "Probability",
+   "tags": "sysml activity probability Probability",
+   "kind": "cells",
+   "width": 250,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Action\" style=\"html=1;shape=mxgraph.sysml.objFlowR;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"160\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"{ probability = valueSpecification }\" style=\"edgeStyle=none;html=1;align=center;verticalAlign=bottom;endArrow=open;endSize=12;exitX=1;exitY=0.5;fillColor=#ffffff;labelBackgroundColor=none;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry x=\"1\" relative=\"1\" as=\"geometry\"><mxPoint x=\"250\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"{ probability = valueSpecification }\" style=\"edgeStyle=none;html=1;align=center;verticalAlign=top;endArrow=open;endSize=12;exitX=1;exitY=0.5;fillColor=#ffffff;labelBackgroundColor=none;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry x=\"1\" relative=\"1\" as=\"geometry\"><mxPoint x=\"250\" y=\"60\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.sysml.objFlowR"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1841"
+  },
+  {
+   "id": "sysmlActivities-44-probability",
+   "title": "Probability",
+   "tags": "sysml activity probability Probability",
+   "kind": "cells",
+   "width": 250,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Object Node\" style=\"shape=rect;whiteSpace=wrap;align=center;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"160\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"{ probability = valueSpecification }\" style=\"edgeStyle=none;html=1;align=center;verticalAlign=bottom;endArrow=open;endSize=12;exitX=1;exitY=0.3;fillColor=#ffffff;labelBackgroundColor=none;rounded=0;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry x=\"1\" relative=\"1\" as=\"geometry\"><mxPoint x=\"250\" as=\"targetPoint\"/></mxGeometry></mxCell><mxCell id=\"4\" value=\"{ probability = valueSpecification }\" style=\"edgeStyle=none;html=1;align=center;verticalAlign=top;endArrow=open;endSize=12;exitX=1;exitY=0.7;fillColor=#ffffff;labelBackgroundColor=none;rounded=0;\" edge=\"1\" source=\"2\" parent=\"1\"><mxGeometry x=\"1\" relative=\"1\" as=\"geometry\"><mxPoint x=\"250\" y=\"60\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1843"
+  },
+  {
+   "id": "sysmlActivities-45-rate",
+   "title": "Rate",
+   "tags": "rate",
+   "kind": "edge",
+   "width": 160,
+   "height": 0,
+   "style": "edgeStyle=none;html=1;endArrow=open;endSize=12;verticalAlign=top;labelBackgroundColor=none;",
+   "value": "{ rate = constant }\n{rate = distribution}\n&lt;&lt;continuous&gt;&gt;\n&lt;&lt;discrete&gt;&gt;",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1846"
+  },
+  {
+   "id": "sysmlActivities-46-in-block-definition-diagrams-activity-association",
+   "title": "In Block Definition Diagrams, Activity, Association",
+   "tags": "sysml activity in block definition diagram activity association",
+   "kind": "cells",
+   "width": 400,
+   "height": 250,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"bdd\" style=\"html=1;shape=mxgraph.sysml.package;labelX=45;align=left;spacingLeft=5;verticalAlign=top;spacingTop=-3;fontStyle=1;strokeWidth=1;recursiveResize=0;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"330\" height=\"250\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"&amp;lt;&amp;lt;activity&amp;gt;&amp;gt;&#xa;activity name\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;shape=rect;html=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"30\" y=\"40\" width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"&amp;lt;&amp;lt;activity&amp;gt;&amp;gt;&#xa;activity name\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;shape=rect;html=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"30\" y=\"160\" width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"action&#xa;name\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;endArrow=none;html=1;edgeStyle=none;endFill=0;startArrow=diamondThin;startFill=1;startSize=12;align=left;verticalAlign=bottom;labelBackgroundColor=none;\" edge=\"1\" parent=\"2\" source=\"3\" target=\"4\"><mxGeometry x=\"1\" relative=\"1\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"&amp;lt;&amp;lt;activity&amp;gt;&amp;gt;&#xa;activity name\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;shape=rect;html=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"180\" y=\"40\" width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"&amp;lt;&amp;lt;block&amp;gt;&amp;gt;&#xa;block name\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;shape=rect;html=1;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"2\"><mxGeometry x=\"180\" y=\"160\" width=\"120\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"8\" value=\"object&#xa;node&#xa;name\" style=\"strokeColor=inherit;fillColor=inherit;gradientColor=inherit;endArrow=none;html=1;edgeStyle=none;endFill=0;startFill=1;startSize=12;align=left;verticalAlign=bottom;labelBackgroundColor=none;\" edge=\"1\" parent=\"2\" source=\"6\" target=\"7\"><mxGeometry x=\"1\" relative=\"1\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.sysml.package",
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1850"
+  },
+  {
+   "id": "sysmlActivities-47-activity-partition",
+   "title": "Activity Partition",
+   "tags": "actPart sysml activity activity partition Activity Partition",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "html=1;shape=mxgraph.sysml.actPart;strokeWidth=3;verticalAlign=top;rotation=-90;whiteSpace=wrap;",
+   "value": "Partition Name",
+   "shapeNames": [
+    "mxgraph.sysml.actPart"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1884"
+  },
+  {
+   "id": "sysmlActivities-48-activity-partition",
+   "title": "Activity Partition",
+   "tags": " sysml activity activity partition Activity Partition",
+   "kind": "vertex",
+   "width": 140,
+   "height": 50,
+   "style": "shape=rect;html=1;rounded=1;strokeWidth=2;verticalAlign=top;whiteSpace=wrap;align=center;",
+   "value": "(Partition Name)\nAction",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1886"
+  },
+  {
+   "id": "sysmlActivities-49-interruptible-activity-region",
+   "title": "Interruptible Activity Region",
+   "tags": "sysml activity interruptible activity region",
+   "kind": "cells",
+   "width": 250,
+   "height": 60,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"region name\" style=\"shape=rect;html=1;rounded=1;verticalAlign=top;dashed=1;strokeWidth=2;whiteSpace=wrap;align=center;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"160\" height=\"60\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"shape=mxgraph.lean_mapping.electronic_info_flow_edge;html=1;edgeStyle=none;align=center;verticalAlign=bottom;exitX=1;exitY=0.5;fillColor=#ffffff;\" edge=\"1\" parent=\"1\" source=\"2\"><mxGeometry x=\"1\" relative=\"1\" as=\"geometry\"><mxPoint x=\"250\" y=\"30\" as=\"targetPoint\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.lean_mapping.electronic_info_flow_edge"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1889"
+  },
+  {
+   "id": "sysmlActivities-50-structured-activity-node",
+   "title": "Structured Activity Node",
+   "tags": " sysml activity structured activity node Structured Activity Node",
+   "kind": "vertex",
+   "width": 160,
+   "height": 60,
+   "style": "shape=rect;html=1;rounded=1;dashed=1;strokeWidth=2;verticalAlign=top;whiteSpace=wrap;align=center;",
+   "value": "&lt;&lt;structured&gt;&gt; node name",
+   "shapeNames": [
+    "rect"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Sysml.js:1903"
+  }
+ ]
+}

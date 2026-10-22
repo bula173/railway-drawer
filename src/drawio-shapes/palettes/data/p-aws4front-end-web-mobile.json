@@ -1,0 +1,148 @@
+{
+ "id": "aws4Front End Web Mobile",
+ "title": "AWS / Front End Web Mobile",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-AWS4.js:8",
+ "entries": [
+  {
+   "id": "aws4Front End Web Mobile-0-front-end-web-mobile",
+   "title": "Front-End Web & Mobile",
+   "tags": "aws4 mobile front end web aws amazon web service mobile  Front-End Web & Mobile",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#DD344C;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.mobile;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1167"
+  },
+  {
+   "id": "aws4Front End Web Mobile-1-amplify",
+   "title": "Amplify",
+   "tags": "aws4 amplify aws amazon web service mobile  Amplify",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#DD344C;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.amplify;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1169"
+  },
+  {
+   "id": "aws4Front End Web Mobile-2-device-farm",
+   "title": "Device Farm",
+   "tags": "aws4 device farm aws amazon web service mobile  Device Farm",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#DD344C;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.device_farm;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1171"
+  },
+  {
+   "id": "aws4Front End Web Mobile-3-location-service",
+   "title": "Location Service",
+   "tags": "aws4 location service aws amazon web service mobile  Location Service",
+   "kind": "vertex",
+   "width": 78,
+   "height": 78,
+   "style": "sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#DD344C;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.location_service;",
+   "shapeNames": [
+    "mxgraph.aws4.resourceIcon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1173"
+  },
+  {
+   "id": "aws4Front End Web Mobile-4-location-service-geofence",
+   "title": "Location Service Geofence",
+   "tags": "aws4 location service geofence aws amazon web service mobile  Location Service Geofence",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#DD344C;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.location_service_geofence;",
+   "shapeNames": [
+    "mxgraph.aws4.location_service_geofence"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1176"
+  },
+  {
+   "id": "aws4Front End Web Mobile-5-location-service-map",
+   "title": "Location Service Map",
+   "tags": "aws4 location service map aws amazon web service mobile  Location Service Map",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#DD344C;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.location_service_map;",
+   "shapeNames": [
+    "mxgraph.aws4.location_service_map"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1178"
+  },
+  {
+   "id": "aws4Front End Web Mobile-6-location-service-place",
+   "title": "Location Service Place",
+   "tags": "aws4 location service place aws amazon web service mobile  Location Service Place",
+   "kind": "vertex",
+   "width": 37,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#DD344C;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.location_service_place;",
+   "shapeNames": [
+    "mxgraph.aws4.location_service_place"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1180"
+  },
+  {
+   "id": "aws4Front End Web Mobile-7-location-service-routes",
+   "title": "Location Service Routes",
+   "tags": "aws4 location service routes aws amazon web service mobile  Location Service Routes",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#DD344C;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.location_service_routes;",
+   "shapeNames": [
+    "mxgraph.aws4.location_service_routes"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1182"
+  },
+  {
+   "id": "aws4Front End Web Mobile-8-location-service-track",
+   "title": "Location Service Track",
+   "tags": "aws4 location service track aws amazon web service mobile  Location Service Track",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#DD344C;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.location_service_track;",
+   "shapeNames": [
+    "mxgraph.aws4.location_service_track"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1184"
+  },
+  {
+   "id": "aws4Front End Web Mobile-9-amplify-studio",
+   "title": "Amplify Studio",
+   "tags": "aws4 amplify studio aws amazon web service mobile  Amplify Studio",
+   "kind": "vertex",
+   "width": 48,
+   "height": 44,
+   "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#DD344C;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.amplify_aws_amplify_studio;",
+   "shapeNames": [
+    "mxgraph.aws4.amplify_aws_amplify_studio"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS4.js:1186"
+  }
+ ]
+}

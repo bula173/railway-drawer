@@ -1,0 +1,610 @@
+{
+ "id": "aws3Internet of Things",
+ "title": "AWS17 / Internet of Things",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-AWS3.js:8",
+ "entries": [
+  {
+   "id": "aws3Internet of Things-0-aws-iot",
+   "title": "AWS IoT",
+   "tags": "aws3 iot internet of things aws amazon web service iot internet of things AWS IoT",
+   "kind": "vertex",
+   "width": 67.5,
+   "height": 81,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.aws_iot;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.aws_iot"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:580"
+  },
+  {
+   "id": "aws3Internet of Things-1-greengrass",
+   "title": "Greengrass",
+   "tags": "aws3 greengrass aws amazon web service iot internet of things Greengrass",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 93,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.greengrass;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.greengrass"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:582"
+  },
+  {
+   "id": "aws3Internet of Things-2-action",
+   "title": "Action",
+   "tags": "aws3 action aws amazon web service iot internet of things Action",
+   "kind": "vertex",
+   "width": 63,
+   "height": 64.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.action;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.action"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:584"
+  },
+  {
+   "id": "aws3Internet of Things-3-actuator",
+   "title": "Actuator",
+   "tags": "aws3 actuator aws amazon web service iot internet of things Actuator",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 90,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.actuator;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.actuator"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:586"
+  },
+  {
+   "id": "aws3Internet of Things-4-certificate",
+   "title": "Certificate",
+   "tags": "aws3 certificate aws amazon web service iot internet of things Certificate",
+   "kind": "vertex",
+   "width": 63,
+   "height": 85.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.certificate;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.certificate"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:588"
+  },
+  {
+   "id": "aws3Internet of Things-5-desired-state",
+   "title": "Desired State",
+   "tags": "aws3 desired state aws amazon web service iot internet of things Desired State",
+   "kind": "vertex",
+   "width": 60,
+   "height": 63,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.desired_state;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.desired_state"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:590"
+  },
+  {
+   "id": "aws3Internet of Things-6-hardware-board",
+   "title": "Hardware Board",
+   "tags": "aws3 hardware board aws amazon web service iot internet of things Hardware Board",
+   "kind": "vertex",
+   "width": 84,
+   "height": 100.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.hardware_board;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.hardware_board"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:592"
+  },
+  {
+   "id": "aws3Internet of Things-7-http-protocol",
+   "title": "HTTP Protocol",
+   "tags": "aws3 http protocol aws amazon web service iot internet of things HTTP Protocol",
+   "kind": "vertex",
+   "width": 63,
+   "height": 66,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.http_protocol;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.http_protocol"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:594"
+  },
+  {
+   "id": "aws3Internet of Things-8-http-2-protocol",
+   "title": "HTTP/2 Protocol",
+   "tags": "aws3 http 2 protocol aws amazon web service iot internet of things HTTP/2 Protocol",
+   "kind": "vertex",
+   "width": 63,
+   "height": 66,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.http_2_protocol;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.http_2_protocol"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:596"
+  },
+  {
+   "id": "aws3Internet of Things-9-lambda-function",
+   "title": "Lambda Function",
+   "tags": "aws3 lambda function aws amazon web service iot internet of things Lambda Function",
+   "kind": "vertex",
+   "width": 60,
+   "height": 63,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.lambda_function;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.lambda_function"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:598"
+  },
+  {
+   "id": "aws3Internet of Things-10-mqtt-protocol",
+   "title": "MQTT Protocol",
+   "tags": "aws3 mqtt protocol aws amazon web service iot internet of things MQTT Protocol",
+   "kind": "vertex",
+   "width": 63,
+   "height": 66,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.mqtt_protocol;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.mqtt_protocol"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:600"
+  },
+  {
+   "id": "aws3Internet of Things-11-policy",
+   "title": "Policy",
+   "tags": "aws3 policy aws amazon web service iot internet of things Policy",
+   "kind": "vertex",
+   "width": 55.5,
+   "height": 90,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.policy;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.policy"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:602"
+  },
+  {
+   "id": "aws3Internet of Things-12-reported-state",
+   "title": "Reported State",
+   "tags": "aws3 reported state aws amazon web service iot internet of things Reported State",
+   "kind": "vertex",
+   "width": 60,
+   "height": 63,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.reported_state;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.reported_state"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:604"
+  },
+  {
+   "id": "aws3Internet of Things-13-rule",
+   "title": "Rule",
+   "tags": "aws3 rule aws amazon web service iot internet of things Rule",
+   "kind": "vertex",
+   "width": 49.5,
+   "height": 99,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.rule;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.rule"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:606"
+  },
+  {
+   "id": "aws3Internet of Things-14-sensor",
+   "title": "Sensor",
+   "tags": "aws3 sensor aws amazon web service iot internet of things Sensor",
+   "kind": "vertex",
+   "width": 76.5,
+   "height": 90,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.sensor;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.sensor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:608"
+  },
+  {
+   "id": "aws3Internet of Things-15-servo",
+   "title": "Servo",
+   "tags": "aws3 servo aws amazon web service iot internet of things Servo",
+   "kind": "vertex",
+   "width": 84,
+   "height": 60,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.servo;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.servo"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:610"
+  },
+  {
+   "id": "aws3Internet of Things-16-shadow",
+   "title": "Shadow",
+   "tags": "aws3 shadow aws amazon web service iot internet of things Shadow",
+   "kind": "vertex",
+   "width": 85.5,
+   "height": 91.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.shadow;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.shadow"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:612"
+  },
+  {
+   "id": "aws3Internet of Things-17-simulator",
+   "title": "Simulator",
+   "tags": "aws3 simulator aws amazon web service iot internet of things Simulator",
+   "kind": "vertex",
+   "width": 75,
+   "height": 78,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.simulator;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.simulator"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:614"
+  },
+  {
+   "id": "aws3Internet of Things-18-topic",
+   "title": "Topic",
+   "tags": "aws3 topic aws amazon web service iot internet of things Topic",
+   "kind": "vertex",
+   "width": 49.5,
+   "height": 66,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.topic;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.topic"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:616"
+  },
+  {
+   "id": "aws3Internet of Things-19-bank",
+   "title": "Bank",
+   "tags": "aws3 bank aws amazon web service iot internet of things Bank",
+   "kind": "vertex",
+   "width": 79.5,
+   "height": 79.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.bank;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.bank"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:618"
+  },
+  {
+   "id": "aws3Internet of Things-20-bicycle",
+   "title": "Bicycle",
+   "tags": "aws3 bicycle aws amazon web service iot internet of things Bicycle",
+   "kind": "vertex",
+   "width": 79.5,
+   "height": 79.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.bicycle;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.bicycle"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:620"
+  },
+  {
+   "id": "aws3Internet of Things-21-camera",
+   "title": "Camera",
+   "tags": "aws3 camera aws amazon web service iot internet of things Camera",
+   "kind": "vertex",
+   "width": 79.5,
+   "height": 79.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.camera;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.camera"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:622"
+  },
+  {
+   "id": "aws3Internet of Things-22-utility",
+   "title": "Utility",
+   "tags": "aws3 utility aws amazon web service iot internet of things Utility",
+   "kind": "vertex",
+   "width": 79.5,
+   "height": 79.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.utility;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.utility"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:624"
+  },
+  {
+   "id": "aws3Internet of Things-23-cart",
+   "title": "Cart",
+   "tags": "aws3 cart aws amazon web service iot internet of things Cart",
+   "kind": "vertex",
+   "width": 79.5,
+   "height": 79.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.cart;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.cart"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:626"
+  },
+  {
+   "id": "aws3Internet of Things-24-car",
+   "title": "Car",
+   "tags": "aws3 car aws amazon web service iot internet of things Car",
+   "kind": "vertex",
+   "width": 79.5,
+   "height": 79.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.car;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.car"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:628"
+  },
+  {
+   "id": "aws3Internet of Things-25-windfarm",
+   "title": "Windfarm",
+   "tags": "aws3 windfarm aws amazon web service iot internet of things Windfarm",
+   "kind": "vertex",
+   "width": 79.5,
+   "height": 79.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.windfarm;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.windfarm"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:630"
+  },
+  {
+   "id": "aws3Internet of Things-26-house",
+   "title": "House",
+   "tags": "aws3 house aws amazon web service iot internet of things House",
+   "kind": "vertex",
+   "width": 79.5,
+   "height": 79.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.house;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.house"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:632"
+  },
+  {
+   "id": "aws3Internet of Things-27-generic",
+   "title": "Generic",
+   "tags": "aws3 generic aws amazon web service iot internet of things Generic",
+   "kind": "vertex",
+   "width": 79.5,
+   "height": 79.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.generic;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.generic"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:634"
+  },
+  {
+   "id": "aws3Internet of Things-28-factory",
+   "title": "Factory",
+   "tags": "aws3 factory aws amazon web service iot internet of things Factory",
+   "kind": "vertex",
+   "width": 79.5,
+   "height": 79.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.factory;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.factory"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:636"
+  },
+  {
+   "id": "aws3Internet of Things-29-coffee-pot",
+   "title": "Coffee Pot",
+   "tags": "aws3 coffee pot aws amazon web service iot internet of things Coffee Pot",
+   "kind": "vertex",
+   "width": 79.5,
+   "height": 79.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.coffee_pot;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.coffee_pot"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:638"
+  },
+  {
+   "id": "aws3Internet of Things-30-door-lock",
+   "title": "Door Lock",
+   "tags": "aws3 door lock aws amazon web service iot internet of things Door Lock",
+   "kind": "vertex",
+   "width": 79.5,
+   "height": 79.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.door_lock;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.door_lock"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:640"
+  },
+  {
+   "id": "aws3Internet of Things-31-lightbulb",
+   "title": "Lightbulb",
+   "tags": "aws3 lightbulb aws amazon web service iot internet of things Lightbulb",
+   "kind": "vertex",
+   "width": 79.5,
+   "height": 79.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.lightbulb;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.lightbulb"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:642"
+  },
+  {
+   "id": "aws3Internet of Things-32-medical-emergency",
+   "title": "Medical Emergency",
+   "tags": "aws3 medical emergency aws amazon web service iot internet of things Medical Emergency",
+   "kind": "vertex",
+   "width": 79.5,
+   "height": 79.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.medical_emergency;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.medical_emergency"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:644"
+  },
+  {
+   "id": "aws3Internet of Things-33-police-emergency",
+   "title": "Police Emergency",
+   "tags": "aws3 police emergency aws amazon web service iot internet of things Police Emergency",
+   "kind": "vertex",
+   "width": 79.5,
+   "height": 79.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.police_emergency;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.police_emergency"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:646"
+  },
+  {
+   "id": "aws3Internet of Things-34-thermostat",
+   "title": "Thermostat",
+   "tags": "aws3 thermostat aws amazon web service iot internet of things Thermostat",
+   "kind": "vertex",
+   "width": 79.5,
+   "height": 79.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.thermostat;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.thermostat"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:648"
+  },
+  {
+   "id": "aws3Internet of Things-35-travel",
+   "title": "Travel",
+   "tags": "aws3 travel aws amazon web service iot internet of things Travel",
+   "kind": "vertex",
+   "width": 79.5,
+   "height": 79.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.travel;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.travel"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:650"
+  },
+  {
+   "id": "aws3Internet of Things-36-echo",
+   "title": "Echo",
+   "tags": "aws3 echo aws amazon web service iot internet of things Echo",
+   "kind": "vertex",
+   "width": 40.5,
+   "height": 93,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.echo;fillColor=#205B99;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.echo"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:652"
+  },
+  {
+   "id": "aws3Internet of Things-37-alexa-skill",
+   "title": "Alexa Skill",
+   "tags": "aws3 alexa skill aws amazon web service iot internet of things Alexa Skill",
+   "kind": "vertex",
+   "width": 60,
+   "height": 63,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.alexa_skill;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.alexa_skill"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:654"
+  },
+  {
+   "id": "aws3Internet of Things-38-alexa-smart-home-skill",
+   "title": "Alexa Smart Home Skill",
+   "tags": "aws3 alexa smart home skill aws amazon web service iot internet of things Alexa Smart Home Skill",
+   "kind": "vertex",
+   "width": 90,
+   "height": 70.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.alexa_smart_home_skill;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.alexa_smart_home_skill"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:656"
+  },
+  {
+   "id": "aws3Internet of Things-39-alexa-voice-service",
+   "title": "Alexa Voice Service",
+   "tags": "aws3 alexa voice service aws amazon web service iot internet of things Alexa Voice Service",
+   "kind": "vertex",
+   "width": 60,
+   "height": 63,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.alexa_voice_service;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.alexa_voice_service"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:658"
+  },
+  {
+   "id": "aws3Internet of Things-40-alexa-enabled-device",
+   "title": "Alexa Enabled Device",
+   "tags": "aws3 alexa enabled device aws amazon web service iot internet of things Alexa Enabled Device",
+   "kind": "vertex",
+   "width": 79.5,
+   "height": 79.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.alexa_enabled_device;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.alexa_enabled_device"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:660"
+  },
+  {
+   "id": "aws3Internet of Things-41-fire-tv",
+   "title": "Fire TV",
+   "tags": "aws3 fire tv aws amazon web service iot internet of things Fire TV",
+   "kind": "vertex",
+   "width": 75,
+   "height": 55.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.fire_tv;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.fire_tv"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:662"
+  },
+  {
+   "id": "aws3Internet of Things-42-fire-tv-stick",
+   "title": "Fire TV Stick",
+   "tags": "aws3 fire tv stick aws amazon web service iot internet of things Fire TV Stick",
+   "kind": "vertex",
+   "width": 85.5,
+   "height": 33,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.fire_tv_stick;fillColor=#5294CF;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.fire_tv_stick"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:664"
+  }
+ ]
+}

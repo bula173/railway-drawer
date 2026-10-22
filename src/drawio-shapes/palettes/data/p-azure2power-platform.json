@@ -1,0 +1,134 @@
+{
+ "id": "azure2Power Platform",
+ "title": "Azure / Power Platform",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Azure2.js:8",
+ "entries": [
+  {
+   "id": "azure2Power Platform-0-ai-builder",
+   "title": "AI Builder",
+   "tags": "azure2 ai artificial intelligence builder azure power platform  AI Builder",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/power_platform/AIBuilder.svg;points=[[0.5,0.044,0],[0.5,0.956,0],[0,0.526,0],[1,0.526,0],[0.9,0.183,0],[0.82,0.86,0],[0.18,0.86,0],[0.105,0.178,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1915"
+  },
+  {
+   "id": "azure2Power Platform-1-copilot-studio",
+   "title": "Copilot Studio",
+   "tags": "azure2 copilot studio azure power platform  Copilot Studio",
+   "kind": "vertex",
+   "width": 68,
+   "height": 62.32,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/power_platform/CopilotStudio.svg;points=[[0.5,0.025,0],[0.5,0.975,0],[0.003,0.5,0],[0.998,0.5,0],[0.98,0.158,0],[0.725,0.937,0],[0.023,0.844,0],[0.275,0.063,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1917"
+  },
+  {
+   "id": "azure2Power Platform-2-dataverse",
+   "title": "Dataverse",
+   "tags": "azure2 dataverse azure power platform  Dataverse",
+   "kind": "vertex",
+   "width": 68,
+   "height": 52.400000000000006,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/power_platform/Dataverse.svg;points=[[0.424,0,0],[0.583,1,0],[0,0.591,0],[1,0.407,0],[0.907,0.056,0],[0.837,0.876,0],[0.085,0.938,0],[0.165,0.121,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1919"
+  },
+  {
+   "id": "azure2Power Platform-3-powerapps",
+   "title": "PowerApps",
+   "tags": "azure2 powerapps power apps azure power platform  PowerApps",
+   "kind": "vertex",
+   "width": 68,
+   "height": 65.16,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/power_platform/PowerApps.svg;points=[[0.5,0.049,0],[0.5,0.951,0],[0.003,0.5,0],[0.998,0.5,0],[0.59,0.008,0],[0.592,0.989,0],[0.393,0.992,0],[0.39,0.011,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1921"
+  },
+  {
+   "id": "azure2Power Platform-4-powerautomate",
+   "title": "PowerAutomate",
+   "tags": "azure2 powerautomate power automate azure power platform  PowerAutomate",
+   "kind": "vertex",
+   "width": 68,
+   "height": 53.839999999999996,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/power_platform/PowerAutomate.svg;points=[[0.5,0,0],[0.5,1,0],[0.302,0.5,0],[1,0.5,0],[0.662,0.007,0],[0.662,0.993,0],[0.015,0.99,0],[0.015,0.01,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1923"
+  },
+  {
+   "id": "azure2Power Platform-5-powerbi",
+   "title": "PowerBI",
+   "tags": "azure2 powerbi power bi azure power platform  PowerBI",
+   "kind": "vertex",
+   "width": 51,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/power_platform/PowerBI.svg;points=[[0.778,0,0],[0.5,1,0],[0.036,0.5,0],[1,0.5,0],[0.993,0.018,0],[0.99,0.985,0],[0.007,0.982,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1925"
+  },
+  {
+   "id": "azure2Power Platform-6-powerfx",
+   "title": "PowerFx",
+   "tags": "azure2 powerfx power fx effects azure power platform  PowerFx",
+   "kind": "vertex",
+   "width": 68,
+   "height": 64.92,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/power_platform/PowerFx.svg;points=[[0.522,0,0],[0.5,1,0],[0.089,0.5,0],[0.911,0.5,0],[0.805,0.008,0],[0.985,0.989,0],[0.015,0.989,0],[0.108,0.066,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1927"
+  },
+  {
+   "id": "azure2Power Platform-7-powerpages",
+   "title": "PowerPages",
+   "tags": "azure2 powerpages power pages azure power platform  PowerPages",
+   "kind": "vertex",
+   "width": 68,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/power_platform/PowerPages.svg;points=[[0.5,0,0],[0.5,1,0],[0.114,0.5,0],[0.889,0.5,0],[0.865,0.263,0],[0.99,0.645,0],[0.143,0.745,0],[0.023,0.343,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1929"
+  },
+  {
+   "id": "azure2Power Platform-8-powerplatform",
+   "title": "PowerPlatform",
+   "tags": "azure2 powerplatform power platform azure power platform  PowerPlatform",
+   "kind": "vertex",
+   "width": 64.32,
+   "height": 68,
+   "style": "image;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/azure2/power_platform/PowerPlatform.svg;points=[[0.608,0.005,0],[0.087,0.5,0],[1,0.169,0],[0.965,0.068,0],[0.817,0.547,0],[0.143,0.977,0],[0.344,0.018,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Azure2.js:1931"
+  }
+ ]
+}

@@ -1,0 +1,112 @@
+{
+ "Graph": [
+  "createHandle",
+  "handleFactory",
+  "sanitizeHtml",
+  "scopeHtmlStyles"
+ ],
+ "mxActor": [
+  "call",
+  "prototype.paintVertexShape"
+ ],
+ "mxArrow": [
+  "call"
+ ],
+ "mxCellRenderer": [
+  "defaultShapes",
+  "prototype.getShape",
+  "registerShape"
+ ],
+ "mxConnector": [
+  "call"
+ ],
+ "mxConstants": [
+  "ALIGN_BOTTOM",
+  "ALIGN_CENTER",
+  "ALIGN_LEFT",
+  "ALIGN_MIDDLE",
+  "ALIGN_RIGHT",
+  "ALIGN_TOP",
+  "DEFAULT_FONTFAMILY",
+  "DEFAULT_FONTSIZE",
+  "DIRECTION_EAST",
+  "DIRECTION_NORTH",
+  "DIRECTION_SOUTH",
+  "DIRECTION_WEST",
+  "FONT_BOLD",
+  "LINE_ARCSIZE",
+  "NONE",
+  "RECTANGLE_ROUNDING_FACTOR",
+  "STYLE_ALIGN",
+  "STYLE_ARCSIZE",
+  "STYLE_DASHED",
+  "STYLE_FILLCOLOR",
+  "STYLE_FIX_DASH",
+  "STYLE_FONTCOLOR",
+  "STYLE_FONTFAMILY",
+  "STYLE_FONTSIZE",
+  "STYLE_FONTSTYLE",
+  "STYLE_GRADIENTCOLOR",
+  "STYLE_HORIZONTAL",
+  "STYLE_LABEL_BACKGROUNDCOLOR",
+  "STYLE_LABEL_BORDERCOLOR",
+  "STYLE_POINTER_EVENTS",
+  "STYLE_SPACING",
+  "STYLE_SPACING_BOTTOM",
+  "STYLE_SPACING_LEFT",
+  "STYLE_SPACING_RIGHT",
+  "STYLE_SPACING_TOP",
+  "STYLE_STROKECOLOR",
+  "STYLE_STROKEWIDTH",
+  "STYLE_SWIMLANE_FILLCOLOR",
+  "STYLE_TEXTCOLOR",
+  "STYLE_VERTICAL_ALIGN",
+  "STYLE_WHITE_SPACE"
+ ],
+ "mxCylinder": [
+  "call"
+ ],
+ "mxDoubleEllipse": [
+  "call"
+ ],
+ "mxEllipse": [
+  "call",
+  "prototype.constraints",
+  "prototype.paintVertexShape"
+ ],
+ "mxMarker": [
+  "addMarker"
+ ],
+ "mxPolyline": [
+  "prototype.paintEdgeShape"
+ ],
+ "mxRectangleShape": [
+  "call",
+  "prototype.constraints",
+  "prototype.paintBackground",
+  "prototype.paintForeground"
+ ],
+ "mxShape": [
+  "call",
+  "prototype.getFlowAnimationPath",
+  "prototype.intersectsRectangle"
+ ],
+ "mxStencilRegistry": [
+  "getStencil"
+ ],
+ "mxSwimlane": [
+  "prototype.paintVertexShape"
+ ],
+ "mxUtils": [
+  "clone",
+  "extend",
+  "getColorValue",
+  "getNumber",
+  "getSizeForString",
+  "getValue",
+  "parseColorList",
+  "rectangleIntersectsSegment",
+  "safeDecodeURIComponent",
+  "toRadians"
+ ]
+}

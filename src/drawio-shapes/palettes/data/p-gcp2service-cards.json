@@ -1,0 +1,424 @@
+{
+ "id": "gcp2Service Cards",
+ "title": "GCP / Service Cards",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-GCP2.js:7",
+ "entries": [
+  {
+   "id": "gcp2Service Cards-0-gateway",
+   "title": "Gateway",
+   "tags": "gcp google cloud platform service cards gateway",
+   "kind": "cells",
+   "width": 100,
+   "height": 44,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeColor=#dddddd;fillColor=#FFFFFF;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"100\" height=\"44\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Gateway\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.gateway;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"0.5\" width=\"32\" height=\"32\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"-16\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.gateway"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2164"
+  },
+  {
+   "id": "gcp2Service Cards-1-memcache",
+   "title": "Memcache",
+   "tags": "gcp google cloud platform service cards memcache",
+   "kind": "cells",
+   "width": 110,
+   "height": 44,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeColor=#dddddd;fillColor=#FFFFFF;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"110\" height=\"44\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Memcache\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.memcache;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"0.5\" width=\"32\" height=\"32\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"-16\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.memcache"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2164"
+  },
+  {
+   "id": "gcp2Service Cards-2-logs-api",
+   "title": "Logs API",
+   "tags": "gcp google cloud platform service cards logs api application programming interface",
+   "kind": "cells",
+   "width": 100,
+   "height": 44,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeColor=#dddddd;fillColor=#FFFFFF;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"100\" height=\"44\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Logs API\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.logs_api;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"0.5\" width=\"32\" height=\"32\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"-16\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.logs_api"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2164"
+  },
+  {
+   "id": "gcp2Service Cards-3-cluster",
+   "title": "Cluster",
+   "tags": "gcp google cloud platform service cards cluster",
+   "kind": "cells",
+   "width": 90,
+   "height": 44,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeColor=#dddddd;fillColor=#FFFFFF;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"90\" height=\"44\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Cluster\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.cluster;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"0.5\" width=\"32\" height=\"32\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"-16\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.cluster"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2164"
+  },
+  {
+   "id": "gcp2Service Cards-4-nat",
+   "title": "NAT",
+   "tags": "gcp google cloud platform service cards nat network address translation",
+   "kind": "cells",
+   "width": 80,
+   "height": 44,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeColor=#dddddd;fillColor=#FFFFFF;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"80\" height=\"44\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"NAT\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.nat;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"0.5\" width=\"32\" height=\"32\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"-16\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.nat"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2164"
+  },
+  {
+   "id": "gcp2Service Cards-5-squid-proxy",
+   "title": "Squid Proxy",
+   "tags": "gcp google cloud platform service cards squid proxy",
+   "kind": "cells",
+   "width": 120,
+   "height": 44,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeColor=#dddddd;fillColor=#FFFFFF;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"44\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Squid Proxy\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.squid_proxy;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"0.5\" width=\"32\" height=\"32\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"-16\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.squid_proxy"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2164"
+  },
+  {
+   "id": "gcp2Service Cards-6-bucket",
+   "title": "Bucket",
+   "tags": "gcp google cloud platform service cards bucket",
+   "kind": "cells",
+   "width": 100,
+   "height": 44,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeColor=#dddddd;fillColor=#FFFFFF;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"100\" height=\"44\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Bucket\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.bucket;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"0.5\" width=\"32\" height=\"32\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"-16\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.bucket"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2164"
+  },
+  {
+   "id": "gcp2Service Cards-7-service-discovery",
+   "title": "Service Discovery",
+   "tags": "gcp google cloud platform service cards service discovery",
+   "kind": "cells",
+   "width": 150,
+   "height": 44,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeColor=#dddddd;fillColor=#FFFFFF;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"150\" height=\"44\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Service Discovery\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.service_discovery;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"0.5\" width=\"32\" height=\"32\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"-16\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.service_discovery"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2164"
+  },
+  {
+   "id": "gcp2Service Cards-8-task-queues",
+   "title": "Task Queues",
+   "tags": "gcp google cloud platform service cards task queues",
+   "kind": "cells",
+   "width": 90,
+   "height": 44,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeColor=#dddddd;fillColor=#FFFFFF;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"90\" height=\"44\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Task&#xa;Queues\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.task_queues;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"0.5\" width=\"32\" height=\"32\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"-16\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.task_queues"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2164"
+  },
+  {
+   "id": "gcp2Service Cards-9-image-services",
+   "title": "Image Services",
+   "tags": "gcp google cloud platform service cards image services",
+   "kind": "cells",
+   "width": 100,
+   "height": 44,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeColor=#dddddd;fillColor=#FFFFFF;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"100\" height=\"44\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Image&#xa;Services\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.image_services;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"0.5\" width=\"32\" height=\"32\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"-16\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.image_services"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2164"
+  },
+  {
+   "id": "gcp2Service Cards-10-dedicated-game-server",
+   "title": "Dedicated Game Server",
+   "tags": "gcp google cloud platform service cards dedicated game server",
+   "kind": "cells",
+   "width": 120,
+   "height": 44,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeColor=#dddddd;fillColor=#FFFFFF;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"44\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Dedicated&#xa;Game Server\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.dedicated_game_server;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"0.5\" width=\"32\" height=\"32\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"-16\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.dedicated_game_server"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2164"
+  },
+  {
+   "id": "gcp2Service Cards-11-frontend-platform-services",
+   "title": "Frontend Platform Services",
+   "tags": "gcp google cloud platform service cards frontend platform services",
+   "kind": "cells",
+   "width": 150,
+   "height": 44,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeColor=#dddddd;fillColor=#FFFFFF;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"150\" height=\"44\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Frontend&#xa;Platform Services\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.frontend_platform_services;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"0.5\" width=\"32\" height=\"32\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"-16\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.frontend_platform_services"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2164"
+  },
+  {
+   "id": "gcp2Service Cards-12-google-edge-pop",
+   "title": "Google Edge POP",
+   "tags": "gcp google cloud platform service cards google edge pop point of presence",
+   "kind": "cells",
+   "width": 110,
+   "height": 56,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeColor=#dddddd;fillColor=#FFFFFF;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"110\" height=\"56\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Google&#xa;Edge POP\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.google_network_edge_cache;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"0.5\" width=\"32\" height=\"32\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"-16\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.google_network_edge_cache"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2164"
+  },
+  {
+   "id": "gcp2Service Cards-13-external-payment-form",
+   "title": "External Payment Form",
+   "tags": "gcp google cloud platform service cards external payment form",
+   "kind": "cells",
+   "width": 130,
+   "height": 44,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeColor=#dddddd;fillColor=#FFFFFF;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"130\" height=\"44\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"External&#xa;Payment Form\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.external_payment_form;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"0.5\" width=\"32\" height=\"32\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"-16\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.external_payment_form"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2164"
+  },
+  {
+   "id": "gcp2Service Cards-14-internal-payment-authorization",
+   "title": "Internal Payment Authorization",
+   "tags": "gcp google cloud platform service cards internal payment authorization",
+   "kind": "cells",
+   "width": 150,
+   "height": 44,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeColor=#dddddd;fillColor=#FFFFFF;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"150\" height=\"44\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Internal Payment&#xa;Authorization\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.internal_payment_authorization;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"0.5\" width=\"32\" height=\"32\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"-16\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.internal_payment_authorization"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2164"
+  },
+  {
+   "id": "gcp2Service Cards-15-vpn-gateway",
+   "title": "VPN Gateway",
+   "tags": "gcp google cloud platform service cards vpn gateway virtual private network",
+   "kind": "cells",
+   "width": 130,
+   "height": 44,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeColor=#dddddd;fillColor=#FFFFFF;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"130\" height=\"44\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"VPN Gateway\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.gateway;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"0.5\" width=\"32\" height=\"32\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"-16\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.gateway"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2164"
+  },
+  {
+   "id": "gcp2Service Cards-16-application-system-s",
+   "title": "Application System(s)",
+   "tags": "gcp google cloud platform service cards application system systems",
+   "kind": "cells",
+   "width": 110,
+   "height": 44,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeColor=#dddddd;fillColor=#FFFFFF;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"110\" height=\"44\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Application&#xa;System(s)\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.application_system;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"0.5\" width=\"32\" height=\"32\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"-16\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.application_system"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2164"
+  },
+  {
+   "id": "gcp2Service Cards-17-virtual-file-system",
+   "title": "Virtual File System",
+   "tags": "gcp google cloud platform service cards virtual file system",
+   "kind": "cells",
+   "width": 110,
+   "height": 44,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeColor=#dddddd;fillColor=#FFFFFF;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"110\" height=\"44\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Virtual&#xa;File System\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.virtual_file_system;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"0.5\" width=\"32\" height=\"32\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"-16\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.virtual_file_system"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2164"
+  },
+  {
+   "id": "gcp2Service Cards-18-cdn-interconnect",
+   "title": "CDN Interconnect",
+   "tags": "gcp google cloud platform service cards cdn content delivery network interconnect",
+   "kind": "cells",
+   "width": 120,
+   "height": 44,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeColor=#dddddd;fillColor=#FFFFFF;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"44\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"CDN&#xa;Interconnect\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.google_network_edge_cache;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"0.5\" width=\"32\" height=\"32\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"-16\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.google_network_edge_cache"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2164"
+  },
+  {
+   "id": "gcp2Service Cards-19-scheduled-tasks",
+   "title": "Scheduled Tasks",
+   "tags": "gcp google cloud platform service cards scheduled tasks",
+   "kind": "cells",
+   "width": 110,
+   "height": 44,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeColor=#dddddd;fillColor=#FFFFFF;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"110\" height=\"44\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Scheduled&#xa;Tasks\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.scheduled_tasks;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"0.5\" width=\"32\" height=\"32\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"-16\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.scheduled_tasks"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2164"
+  },
+  {
+   "id": "gcp2Service Cards-20-https-load-balancer",
+   "title": "HTTPS Load Balancer",
+   "tags": "gcp google cloud platform service cards https secure load balancer",
+   "kind": "cells",
+   "width": 130,
+   "height": 44,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeColor=#dddddd;fillColor=#FFFFFF;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"130\" height=\"44\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"HTTPS&#xa;Load Balancer\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.network_load_balancer;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"0.5\" width=\"32\" height=\"32\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"-16\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.network_load_balancer"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2164"
+  },
+  {
+   "id": "gcp2Service Cards-21-persistent-disk-snapshot",
+   "title": "Persistent Disk Snapshot",
+   "tags": "gcp google cloud platform service cards persistent disk snapshot",
+   "kind": "cells",
+   "width": 130,
+   "height": 44,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeColor=#dddddd;fillColor=#FFFFFF;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"130\" height=\"44\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Persistent&#xa;Disk Snapshot\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.persistent_disk_snapshot;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"0.5\" width=\"32\" height=\"32\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"-16\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.persistent_disk_snapshot"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2164"
+  },
+  {
+   "id": "gcp2Service Cards-22-persistent-disk",
+   "title": "Persistent Disk",
+   "tags": "gcp google cloud platform service cards persistent disk",
+   "kind": "cells",
+   "width": 110,
+   "height": 44,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeColor=#dddddd;fillColor=#FFFFFF;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"110\" height=\"44\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Persistent&#xa;Disk\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.persistent_disk_snapshot;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"0.5\" width=\"32\" height=\"32\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"-16\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.persistent_disk_snapshot"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2164"
+  },
+  {
+   "id": "gcp2Service Cards-23-network-load-balancer",
+   "title": "Network Load\nBalancer",
+   "tags": "gcp google cloud platform service cards network load balancer",
+   "kind": "cells",
+   "width": 100,
+   "height": 56,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeColor=#dddddd;fillColor=#FFFFFF;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"100\" height=\"56\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Network&#xa;Load&#xa;Balancer\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.network_load_balancer;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"0.5\" width=\"32\" height=\"32\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"-16\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.network_load_balancer"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2164"
+  },
+  {
+   "id": "gcp2Service Cards-24-google-network-w-edge-cache",
+   "title": "Google  Network W/\nEdge Cache",
+   "tags": "gcp google cloud platform service cards google network witch edge cache",
+   "kind": "cells",
+   "width": 120,
+   "height": 56,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeColor=#dddddd;fillColor=#FFFFFF;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"56\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Google&#xa; Network W/&#xa;Edge Cache\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.google_network_edge_cache;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"0.5\" width=\"32\" height=\"32\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"-16\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.google_network_edge_cache"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2164"
+  },
+  {
+   "id": "gcp2Service Cards-25-push-notification-service",
+   "title": "Push Notification\nService",
+   "tags": "gcp google cloud platform service cards push notification service",
+   "kind": "cells",
+   "width": 110,
+   "height": 56,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeColor=#dddddd;fillColor=#FFFFFF;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"110\" height=\"56\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Push&#xa;Notification&#xa;Service\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.push_notification_service;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"0.5\" width=\"32\" height=\"32\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"-16\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.push_notification_service"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2164"
+  },
+  {
+   "id": "gcp2Service Cards-26-blank-one-line",
+   "title": "Blank One Line",
+   "tags": "gcp google cloud platform service cards blank one line",
+   "kind": "cells",
+   "width": 140,
+   "height": 44,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeColor=#dddddd;fillColor=#FFFFFF;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"140\" height=\"44\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Blank One Line\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.blank;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"0.5\" width=\"32\" height=\"32\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"-16\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.blank"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2164"
+  },
+  {
+   "id": "gcp2Service Cards-27-blank-one-line",
+   "title": "Blank One Line",
+   "tags": "gcp google cloud platform service cards blank one line",
+   "kind": "cells",
+   "width": 100,
+   "height": 44,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Blank One Line\" style=\"dashed=0;fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;labelPosition=center;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontSize=12;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"100\" height=\"44\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:521"
+  },
+  {
+   "id": "gcp2Service Cards-28-blank-two-three-line",
+   "title": "Blank Two & Three Line",
+   "tags": "gcp google cloud platform service cards blank two and three line",
+   "kind": "cells",
+   "width": 120,
+   "height": 44,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"\" style=\"strokeColor=#dddddd;fillColor=#FFFFFF;shadow=1;strokeWidth=1;rounded=1;absoluteArcSize=1;arcSize=2;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"120\" height=\"44\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"Blank Two&#xa;&amp; Three Line\" style=\"sketch=0;dashed=0;connectable=0;html=1;fillColor=#757575;strokeColor=none;shape=mxgraph.gcp2.blank;part=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontSize=12;\" vertex=\"1\" parent=\"2\"><mxGeometry y=\"0.5\" width=\"32\" height=\"32\" relative=\"1\" as=\"geometry\"><mxPoint x=\"5\" y=\"-16\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "mxgraph.gcp2.blank"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:2164"
+  },
+  {
+   "id": "gcp2Service Cards-29-blank-two-and-three-line",
+   "title": "Blank Two and Three Line",
+   "tags": "gcp google cloud platform service cards blank two and three line",
+   "kind": "cells",
+   "width": 100,
+   "height": 44,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Blank Two&#xa;&amp; Three Line\" style=\"dashed=0;fillColor=#ffffff;strokeColor=#dddddd;shadow=1;strokeWidth=1;labelPosition=center;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=5;fontSize=12;whiteSpace=wrap;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"90\" height=\"44\" as=\"geometry\"/></mxCell></root></mxGraphModel>",
+   "shapeNames": [],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-GCP2.js:533"
+  }
+ ]
+}

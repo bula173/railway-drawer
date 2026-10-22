@@ -1,0 +1,269 @@
+{
+ "id": "archimate4Motivation",
+ "title": "ArchiMate 4 / Motivation",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:8",
+ "entries": [
+  {
+   "id": "archimate4Motivation-0-stakeholder",
+   "title": "Stakeholder",
+   "tags": "archimate4  archimate 4 motivation stakeholder Stakeholder",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#D1BADC;shape=mxgraph.archimate4.element;appType=role;archiType=oct;archiDomain=motivation;",
+   "value": "Stakeholder",
+   "shapeNames": [
+    "mxgraph.archimate4.element"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:195"
+  },
+  {
+   "id": "archimate4Motivation-1-stakeholder",
+   "title": "Stakeholder",
+   "tags": "archimate4  archimate 4 motivation stakeholder Stakeholder",
+   "kind": "vertex",
+   "width": 60,
+   "height": 35,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#D1BADC;shape=mxgraph.archimate4.role;",
+   "shapeNames": [
+    "mxgraph.archimate4.role"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:197"
+  },
+  {
+   "id": "archimate4Motivation-2-driver",
+   "title": "Driver",
+   "tags": "archimate4  archimate 4 motivation driver Driver",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#D1BADC;shape=mxgraph.archimate4.element;appType=driver;archiType=oct;archiDomain=motivation;",
+   "value": "Driver",
+   "shapeNames": [
+    "mxgraph.archimate4.element"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:199"
+  },
+  {
+   "id": "archimate4Motivation-3-driver",
+   "title": "Driver",
+   "tags": "archimate4  archimate 4 motivation driver Driver",
+   "kind": "vertex",
+   "width": 40,
+   "height": 40,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#D1BADC;shape=mxgraph.archimate4.driver;",
+   "shapeNames": [
+    "mxgraph.archimate4.driver"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:201"
+  },
+  {
+   "id": "archimate4Motivation-4-assessment",
+   "title": "Assessment",
+   "tags": "archimate4  archimate 4 motivation assessment Assessment",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#D1BADC;shape=mxgraph.archimate4.element;appType=assess;archiType=oct;archiDomain=motivation;",
+   "value": "Assessment",
+   "shapeNames": [
+    "mxgraph.archimate4.element"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:203"
+  },
+  {
+   "id": "archimate4Motivation-5-assessment",
+   "title": "Assessment",
+   "tags": "archimate4  archimate 4 motivation assessment Assessment",
+   "kind": "vertex",
+   "width": 40,
+   "height": 40,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#D1BADC;shape=mxgraph.archimate4.assess;",
+   "shapeNames": [
+    "mxgraph.archimate4.assess"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:205"
+  },
+  {
+   "id": "archimate4Motivation-6-goal",
+   "title": "Goal",
+   "tags": "archimate4  archimate 4 motivation goal Goal",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#D1BADC;shape=mxgraph.archimate4.element;appType=goal;archiType=oct;archiDomain=motivation;",
+   "value": "Goal",
+   "shapeNames": [
+    "mxgraph.archimate4.element"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:207"
+  },
+  {
+   "id": "archimate4Motivation-7-goal",
+   "title": "Goal",
+   "tags": "archimate4  archimate 4 motivation goal Goal",
+   "kind": "vertex",
+   "width": 40,
+   "height": 40,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#D1BADC;shape=mxgraph.archimate4.goal;",
+   "shapeNames": [
+    "mxgraph.archimate4.goal"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:209"
+  },
+  {
+   "id": "archimate4Motivation-8-outcome",
+   "title": "Outcome",
+   "tags": "archimate4  archimate 4 motivation outcome Outcome",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#D1BADC;shape=mxgraph.archimate4.element;appType=outcome;archiType=oct;archiDomain=motivation;",
+   "value": "Outcome",
+   "shapeNames": [
+    "mxgraph.archimate4.element"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:211"
+  },
+  {
+   "id": "archimate4Motivation-9-outcome",
+   "title": "Outcome",
+   "tags": "archimate4  archimate 4 motivation outcome Outcome",
+   "kind": "vertex",
+   "width": 60,
+   "height": 60,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#D1BADC;shape=mxgraph.archimate4.outcome;strokeWidth=2;",
+   "shapeNames": [
+    "mxgraph.archimate4.outcome"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:213"
+  },
+  {
+   "id": "archimate4Motivation-10-principle",
+   "title": "Principle",
+   "tags": "archimate4  archimate 4 motivation principle Principle",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#D1BADC;shape=mxgraph.archimate4.element;appType=principle;archiType=oct;archiDomain=motivation;",
+   "value": "Principle",
+   "shapeNames": [
+    "mxgraph.archimate4.element"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:215"
+  },
+  {
+   "id": "archimate4Motivation-11-principle",
+   "title": "Principle",
+   "tags": "archimate4  archimate 4 motivation principle Principle",
+   "kind": "vertex",
+   "width": 40,
+   "height": 40,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#D1BADC;shape=mxgraph.archimate4.principle;strokeWidth=2;",
+   "shapeNames": [
+    "mxgraph.archimate4.principle"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:217"
+  },
+  {
+   "id": "archimate4Motivation-12-requirement",
+   "title": "Requirement",
+   "tags": "archimate4  archimate 4 motivation requirement Requirement",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#D1BADC;shape=mxgraph.archimate4.element;appType=requirement;archiType=oct;archiDomain=motivation;",
+   "value": "Requirement",
+   "shapeNames": [
+    "mxgraph.archimate4.element"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:219"
+  },
+  {
+   "id": "archimate4Motivation-13-requirement",
+   "title": "Requirement",
+   "tags": "archimate4  archimate 4 motivation requirement Requirement",
+   "kind": "vertex",
+   "width": 70,
+   "height": 35,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#D1BADC;shape=mxgraph.archimate4.requirement;",
+   "shapeNames": [
+    "mxgraph.archimate4.requirement"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:221"
+  },
+  {
+   "id": "archimate4Motivation-14-meaning",
+   "title": "Meaning",
+   "tags": "archimate4  archimate 4 motivation meaning Meaning",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#D1BADC;shape=mxgraph.archimate4.element;appType=meaning;archiType=oct;archiDomain=motivation;",
+   "value": "Meaning",
+   "shapeNames": [
+    "mxgraph.archimate4.element"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:223"
+  },
+  {
+   "id": "archimate4Motivation-15-meaning",
+   "title": "Meaning",
+   "tags": "archimate4  archimate 4 motivation meaning Meaning",
+   "kind": "vertex",
+   "width": 70,
+   "height": 45,
+   "style": "shape=mxgraph.basic.cloud_callout;html=1;whiteSpace=wrap;fillColor=#D1BADC;",
+   "shapeNames": [
+    "mxgraph.basic.cloud_callout"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:225"
+  },
+  {
+   "id": "archimate4Motivation-16-value",
+   "title": "Value",
+   "tags": "archimate4  archimate 4 motivation value Value",
+   "kind": "vertex",
+   "width": 150,
+   "height": 75,
+   "style": "html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#D1BADC;shape=mxgraph.archimate4.element;appType=amValue;archiType=oct;archiDomain=motivation;",
+   "value": "Value",
+   "shapeNames": [
+    "mxgraph.archimate4.element"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:227"
+  },
+  {
+   "id": "archimate4Motivation-17-value",
+   "title": "Value",
+   "tags": "archimate4  archimate 4 motivation value Value",
+   "kind": "vertex",
+   "width": 70,
+   "height": 35,
+   "style": "shape=ellipse;html=1;whiteSpace=wrap;fillColor=#D1BADC;",
+   "shapeNames": [
+    "ellipse"
+   ],
+   "cls": "a",
+   "source": "js/diagramly/sidebar/Sidebar-ArchiMate4.js:229"
+  }
+ ]
+}

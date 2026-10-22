@@ -1,0 +1,148 @@
+{
+ "id": "ciscoSecurity",
+ "title": "Cisco / Security",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Cisco.js:9",
+ "entries": [
+  {
+   "id": "ciscoSecurity-0-centri-firewall",
+   "title": "Centri Firewall",
+   "tags": "cisco centri firewall cisco security  Centri Firewall",
+   "kind": "vertex",
+   "width": 43,
+   "height": 62,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.security.centri_firewall;",
+   "shapeNames": [
+    "mxgraph.cisco.security.centri_firewall"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:393"
+  },
+  {
+   "id": "ciscoSecurity-1-cisco-security",
+   "title": "Cisco Security",
+   "tags": "cisco cisco security cisco security  Cisco Security",
+   "kind": "vertex",
+   "width": 78,
+   "height": 70,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.security.cisco_security;",
+   "shapeNames": [
+    "mxgraph.cisco.security.cisco_security"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:394"
+  },
+  {
+   "id": "ciscoSecurity-2-firewall",
+   "title": "Firewall",
+   "tags": "cisco firewall cisco security  Firewall",
+   "kind": "vertex",
+   "width": 28.999999999999996,
+   "height": 67,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.security.firewall;",
+   "shapeNames": [
+    "mxgraph.cisco.security.firewall"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:395"
+  },
+  {
+   "id": "ciscoSecurity-3-gatekeeper",
+   "title": "Gatekeeper",
+   "tags": "cisco gatekeeper cisco security  Gatekeeper",
+   "kind": "vertex",
+   "width": 85,
+   "height": 59,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.security.gatekeeper;",
+   "shapeNames": [
+    "mxgraph.cisco.security.gatekeeper"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:396"
+  },
+  {
+   "id": "ciscoSecurity-4-guard",
+   "title": "Guard",
+   "tags": "cisco guard cisco security  Guard",
+   "kind": "vertex",
+   "width": 88,
+   "height": 54,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.security.guard;",
+   "shapeNames": [
+    "mxgraph.cisco.security.guard"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:397"
+  },
+  {
+   "id": "ciscoSecurity-5-ios-firewall",
+   "title": "iOS Firewall",
+   "tags": "cisco ios firewall cisco security  iOS Firewall",
+   "kind": "vertex",
+   "width": 40,
+   "height": 66,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.security.ios_firewall;",
+   "shapeNames": [
+    "mxgraph.cisco.security.ios_firewall"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:398"
+  },
+  {
+   "id": "ciscoSecurity-6-lock",
+   "title": "Lock",
+   "tags": "cisco lock cisco security  Lock",
+   "kind": "vertex",
+   "width": 53,
+   "height": 61,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.security.lock;",
+   "shapeNames": [
+    "mxgraph.cisco.security.lock"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:399"
+  },
+  {
+   "id": "ciscoSecurity-7-network-security",
+   "title": "Network Security",
+   "tags": "cisco network security cisco security  Network Security",
+   "kind": "vertex",
+   "width": 45,
+   "height": 57.99999999999999,
+   "style": "sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.security.network_security_2;strokeColor=#000000;",
+   "shapeNames": [
+    "mxgraph.cisco.security.network_security_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:400"
+  },
+  {
+   "id": "ciscoSecurity-8-pix-firewall",
+   "title": "PIX Firewall",
+   "tags": "cisco pix firewall cisco security  PIX Firewall",
+   "kind": "vertex",
+   "width": 77,
+   "height": 51,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.security.pix_firewall;",
+   "shapeNames": [
+    "mxgraph.cisco.security.pix_firewall"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:401"
+  },
+  {
+   "id": "ciscoSecurity-9-router-firewall",
+   "title": "Router Firewall",
+   "tags": "cisco router firewall cisco security  Router Firewall",
+   "kind": "vertex",
+   "width": 78,
+   "height": 62,
+   "style": "strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.security.router_firewall;",
+   "shapeNames": [
+    "mxgraph.cisco.security.router_firewall"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco.js:402"
+  }
+ ]
+}

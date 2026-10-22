@@ -1,0 +1,134 @@
+{
+ "id": "pidPumps ISO",
+ "title": "Process Engineering / Pumps ISO",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-PID.js:8",
+ "entries": [
+  {
+   "id": "pidPumps ISO-0-jet-pump-liquid",
+   "title": "Jet Pump (Liquid)",
+   "tags": "pid pumps - iso  Jet Pump (Liquid) Jet Pump (Liquid)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "shape=mxgraph.pid.pumps_-_iso.jet_pump_(liquid);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.pumps_-_iso.jet_pump_(liquid)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidPumps ISO-1-pump-centrifugal",
+   "title": "Pump (Centrifugal)",
+   "tags": "pid pumps - iso  Pump (Centrifugal) Pump (Centrifugal)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "shape=mxgraph.pid.pumps_-_iso.pump_(centrifugal);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.pumps_-_iso.pump_(centrifugal)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidPumps ISO-2-pump-diaphragm",
+   "title": "Pump (Diaphragm)",
+   "tags": "pid pumps - iso  Pump (Diaphragm) Pump (Diaphragm)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "shape=mxgraph.pid.pumps_-_iso.pump_(diaphragm);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.pumps_-_iso.pump_(diaphragm)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidPumps ISO-3-pump-gear",
+   "title": "Pump (Gear)",
+   "tags": "pid pumps - iso  Pump (Gear) Pump (Gear)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "shape=mxgraph.pid.pumps_-_iso.pump_(gear);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.pumps_-_iso.pump_(gear)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidPumps ISO-4-pump-liquid",
+   "title": "Pump (Liquid)",
+   "tags": "pid pumps - iso  Pump (Liquid) Pump (Liquid)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "shape=mxgraph.pid.pumps_-_iso.pump_(liquid);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.pumps_-_iso.pump_(liquid)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidPumps ISO-5-pump-positive-displacement",
+   "title": "Pump (Positive Displacement)",
+   "tags": "pid pumps - iso  Pump (Positive Displacement) Pump (Positive Displacement)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "shape=mxgraph.pid.pumps_-_iso.pump_(positive_displacement);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.pumps_-_iso.pump_(positive_displacement)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidPumps ISO-6-pump-progressive-cavity",
+   "title": "Pump (Progressive Cavity)",
+   "tags": "pid pumps - iso  Pump (Progressive Cavity) Pump (Progressive Cavity)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "shape=mxgraph.pid.pumps_-_iso.pump_(progressive_cavity);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.pumps_-_iso.pump_(progressive_cavity)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidPumps ISO-7-pump-reciprocating-piston",
+   "title": "Pump (Reciprocating Piston)",
+   "tags": "pid pumps - iso  Pump (Reciprocating Piston) Pump (Reciprocating Piston)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "shape=mxgraph.pid.pumps_-_iso.pump_(reciprocating_piston);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.pumps_-_iso.pump_(reciprocating_piston)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  },
+  {
+   "id": "pidPumps ISO-8-pump-screw",
+   "title": "Pump (Screw)",
+   "tags": "pid pumps - iso  Pump (Screw) Pump (Screw)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 100,
+   "style": "shape=mxgraph.pid.pumps_-_iso.pump_(screw);html=1;pointerEvents=1;align=center;verticalLabelPosition=bottom;verticalAlign=top;dashed=0;",
+   "shapeNames": [
+    "mxgraph.pid.pumps_-_iso.pump_(screw)"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-PID.js:40"
+  }
+ ]
+}

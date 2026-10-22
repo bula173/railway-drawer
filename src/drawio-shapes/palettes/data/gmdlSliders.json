@@ -1,0 +1,400 @@
+{
+ "id": "gmdlSliders",
+ "title": "GMDL / Sliders",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:7",
+ "entries": [
+  {
+   "id": "gmdlSliders-0-slider-normal",
+   "title": "Slider (normal)",
+   "tags": "gmdl slider normal gmdl google media design library slider  Slider (normal)",
+   "kind": "vertex",
+   "width": 200,
+   "height": 10,
+   "style": "dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.slider2;inactiveTrackColor=#bbbbbb;barPos=0;strokeColor=#bbbbbb;opacity=100;strokeWidth=2;handleSize=10;shadow=0;html=1;",
+   "shapeNames": [
+    "mxgraph.gmdl.slider2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:1995"
+  },
+  {
+   "id": "gmdlSliders-1-slider-normal",
+   "title": "Slider (normal)",
+   "tags": "gmdl slider normal gmdl google media design library slider  Slider (normal)",
+   "kind": "vertex",
+   "width": 200,
+   "height": 10,
+   "style": "dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.slider2;inactiveTrackColor=#bbbbbb;barPos=50;strokeColor=#3F51B5;opacity=100;strokeWidth=2;fillColor=#3F51B5;handleSize=10;shadow=0;html=1;",
+   "shapeNames": [
+    "mxgraph.gmdl.slider2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:1997"
+  },
+  {
+   "id": "gmdlSliders-2-slider-normal",
+   "title": "Slider (normal)",
+   "tags": "gmdl slider normal gmdl google media design library slider  Slider (normal)",
+   "kind": "vertex",
+   "width": 200,
+   "height": 10,
+   "style": "dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.slider2;inactiveTrackColor=#bbbbbb;barPos=100;strokeColor=#3F51B5;opacity=100;strokeWidth=2;fillColor=#3F51B5;handleSize=10;shadow=0;html=1;",
+   "shapeNames": [
+    "mxgraph.gmdl.slider2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:1999"
+  },
+  {
+   "id": "gmdlSliders-3-slider-focused",
+   "title": "Slider (focused)",
+   "tags": "gmdl slider focused gmdl google media design library slider  Slider (focused)",
+   "kind": "vertex",
+   "width": 200,
+   "height": 30,
+   "style": "dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.sliderFocused;inactiveTrackColor=#bbbbbb;barPos=0;strokeColor=#bbbbbb;opacity=100;strokeWidth=2;handleSize=30;shadow=0;html=1;",
+   "shapeNames": [
+    "mxgraph.gmdl.sliderFocused"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:2001"
+  },
+  {
+   "id": "gmdlSliders-4-slider-focused",
+   "title": "Slider (focused)",
+   "tags": "gmdl slider focused gmdl google media design library slider  Slider (focused)",
+   "kind": "vertex",
+   "width": 200,
+   "height": 30,
+   "style": "dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.sliderFocused;inactiveTrackColor=#bbbbbb;barPos=50;strokeColor=#3F51B5;opacity=100;strokeWidth=2;fillColor=#3F51B5;handleSize=30;shadow=0;html=1;",
+   "shapeNames": [
+    "mxgraph.gmdl.sliderFocused"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:2003"
+  },
+  {
+   "id": "gmdlSliders-5-slider-focused",
+   "title": "Slider (focused)",
+   "tags": "gmdl slider focused gmdl google media design library slider  Slider (focused)",
+   "kind": "vertex",
+   "width": 200,
+   "height": 30,
+   "style": "dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.sliderFocused;inactiveTrackColor=#bbbbbb;barPos=100;strokeColor=#3F51B5;opacity=100;strokeWidth=2;fillColor=#3F51B5;handleSize=30;shadow=0;html=1;",
+   "shapeNames": [
+    "mxgraph.gmdl.sliderFocused"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:2005"
+  },
+  {
+   "id": "gmdlSliders-6-slider-click",
+   "title": "Slider (click)",
+   "tags": "gmdl slider click gmdl google media design library slider  Slider (click)",
+   "kind": "vertex",
+   "width": 200,
+   "height": 20,
+   "style": "dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.slider2;inactiveTrackColor=#bbbbbb;barPos=0;strokeColor=#bbbbbb;opacity=100;strokeWidth=2;handleSize=20;shadow=0;html=1;",
+   "shapeNames": [
+    "mxgraph.gmdl.slider2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:2007"
+  },
+  {
+   "id": "gmdlSliders-7-slider-click",
+   "title": "Slider (click)",
+   "tags": "gmdl slider click gmdl google media design library slider  Slider (click)",
+   "kind": "vertex",
+   "width": 200,
+   "height": 20,
+   "style": "dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.slider2;inactiveTrackColor=#bbbbbb;barPos=50;strokeColor=#3F51B5;opacity=100;strokeWidth=2;fillColor=#3F51B5;handleSize=20;shadow=0;html=1;",
+   "shapeNames": [
+    "mxgraph.gmdl.slider2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:2009"
+  },
+  {
+   "id": "gmdlSliders-8-slider-click",
+   "title": "Slider (click)",
+   "tags": "gmdl slider click gmdl google media design library slider  Slider (click)",
+   "kind": "vertex",
+   "width": 200,
+   "height": 20,
+   "style": "dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.slider2;inactiveTrackColor=#bbbbbb;barPos=100;strokeColor=#3F51B5;opacity=100;strokeWidth=2;fillColor=#3F51B5;handleSize=20;shadow=0;html=1;",
+   "shapeNames": [
+    "mxgraph.gmdl.slider2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:2011"
+  },
+  {
+   "id": "gmdlSliders-9-slider-disabled",
+   "title": "Slider (disabled)",
+   "tags": "gmdl slider disabled gmdl google media design library slider  Slider (disabled)",
+   "kind": "vertex",
+   "width": 210,
+   "height": 20,
+   "style": "dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.sliderDisabled2;strokeColor=#b0b0b0;strokeWidth=2;fillColor=none;handleSize=6;shadow=0;hPos=0;html=1;",
+   "shapeNames": [
+    "mxgraph.gmdl.sliderDisabled2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:2013"
+  },
+  {
+   "id": "gmdlSliders-10-slider-disabled",
+   "title": "Slider (disabled)",
+   "tags": "gmdl slider disabled gmdl google media design library slider  Slider (disabled)",
+   "kind": "vertex",
+   "width": 210,
+   "height": 20,
+   "style": "dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.sliderDisabled2;strokeColor=#b0b0b0;strokeWidth=2;fillColor=#b0b0b0;handleSize=6;shadow=0;hPos=50;html=1;",
+   "shapeNames": [
+    "mxgraph.gmdl.sliderDisabled2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:2015"
+  },
+  {
+   "id": "gmdlSliders-11-slider-disabled",
+   "title": "Slider (disabled)",
+   "tags": "gmdl slider disabled gmdl google media design library slider  Slider (disabled)",
+   "kind": "vertex",
+   "width": 210,
+   "height": 20,
+   "style": "dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.sliderDisabled2;strokeColor=#b0b0b0;strokeWidth=2;fillColor=#b0b0b0;handleSize=6;shadow=0;hPos=100;html=1;",
+   "shapeNames": [
+    "mxgraph.gmdl.sliderDisabled2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:2017"
+  },
+  {
+   "id": "gmdlSliders-12-discrete-slider-normal-light",
+   "title": "Discrete slider (normal, light)",
+   "tags": "gmdl discrete slider normal light gmdl google media design library slider  Discrete slider (normal, light)",
+   "kind": "vertex",
+   "width": 200,
+   "height": 10,
+   "style": "dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.slider2;inactiveTrackColor=#bbbbbb;barPos=0;opacity=100;strokeWidth=2;fillColor=#000000;handleSize=10;shadow=0;html=1;",
+   "shapeNames": [
+    "mxgraph.gmdl.slider2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:2019"
+  },
+  {
+   "id": "gmdlSliders-13-discrete-slider-normal",
+   "title": "Discrete slider (normal)",
+   "tags": "gmdl slider normal gmdl google media design library slider  Discrete slider (normal)",
+   "kind": "vertex",
+   "width": 200,
+   "height": 10,
+   "style": "dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.slider2;inactiveTrackColor=#bbbbbb;barPos=60;strokeColor=#0F9D58;opacity=100;strokeWidth=2;fillColor=#0F9D58;handleSize=10;shadow=0;html=1;",
+   "shapeNames": [
+    "mxgraph.gmdl.slider2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:2021"
+  },
+  {
+   "id": "gmdlSliders-14-discrete-slider-normal",
+   "title": "Discrete slider (normal)",
+   "tags": "gmdl slider normal gmdl google media design library slider  Discrete slider (normal)",
+   "kind": "vertex",
+   "width": 200,
+   "height": 10,
+   "style": "dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.slider2;inactiveTrackColor=#bbbbbb;barPos=100;strokeColor=#0F9D58;opacity=100;strokeWidth=2;fillColor=#0F9D58;handleSize=10;shadow=0;html=1;",
+   "shapeNames": [
+    "mxgraph.gmdl.slider2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:2023"
+  },
+  {
+   "id": "gmdlSliders-15-discrete-slider-focused",
+   "title": "Discrete slider (focused)",
+   "tags": "gmdl slider focused gmdl google media design library slider  Discrete slider (focused)",
+   "kind": "vertex",
+   "width": 200,
+   "height": 45,
+   "style": "dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.sliderDiscrete;inactiveTrackColor=#bbbbbb;barPos=1;strokeColor=#BEBEBE;opacity=100;strokeWidth=2;fillColor=#BEBEBE;handleSize=10;shadow=0;fontSize=12;fontColor=#ffffff;html=1;",
+   "shapeNames": [
+    "mxgraph.gmdl.sliderDiscrete"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:2025"
+  },
+  {
+   "id": "gmdlSliders-16-discrete-slider-focused",
+   "title": "Discrete slider (focused)",
+   "tags": "gmdl slider focused gmdl google media design library slider  Discrete slider (focused)",
+   "kind": "vertex",
+   "width": 200,
+   "height": 45,
+   "style": "dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.sliderDiscrete;inactiveTrackColor=#bbbbbb;barPos=60;strokeColor=#0F9D58;opacity=100;strokeWidth=2;fillColor=#0F9D58;handleSize=10;shadow=0;fontSize=12;fontColor=#ffffff;html=1;",
+   "shapeNames": [
+    "mxgraph.gmdl.sliderDiscrete"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:2027"
+  },
+  {
+   "id": "gmdlSliders-17-discrete-slider-focused",
+   "title": "Discrete slider (focused)",
+   "tags": "gmdl slider focused gmdl google media design library slider  Discrete slider (focused)",
+   "kind": "vertex",
+   "width": 200,
+   "height": 45,
+   "style": "dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.sliderDiscrete;inactiveTrackColor=#bbbbbb;barPos=100;strokeColor=#0F9D58;opacity=100;strokeWidth=2;fillColor=#0F9D58;handleSize=10;shadow=0;fontSize=12;fontColor=#ffffff;html=1;",
+   "shapeNames": [
+    "mxgraph.gmdl.sliderDiscrete"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:2029"
+  },
+  {
+   "id": "gmdlSliders-18-discrete-slider-click",
+   "title": "Discrete slider (click)",
+   "tags": "gmdl slider click gmdl google media design library slider  Discrete slider (click)",
+   "kind": "vertex",
+   "width": 200,
+   "height": 45,
+   "style": "dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.sliderDiscreteDots;inactiveTrackColor=#bebebe;barPos=0;bright=1;dotColor=#000000;strokeColor=#0F9D58;opacity=100;strokeWidth=2;fillColor=#0F9D58;handleSize=10;shadow=0;fontSize=12;fontColor=#ffffff;html=1;",
+   "shapeNames": [
+    "mxgraph.gmdl.sliderDiscreteDots"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:2031"
+  },
+  {
+   "id": "gmdlSliders-19-discrete-slider-click-light",
+   "title": "Discrete slider (click, light)",
+   "tags": "gmdl slider click light gmdl google media design library slider  Discrete slider (click, light)",
+   "kind": "vertex",
+   "width": 200,
+   "height": 45,
+   "style": "dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.sliderDiscreteDots;inactiveTrackColor=#bebebe;barPos=60;bright=1;dotColor=#000000;strokeColor=#0F9D58;opacity=100;strokeWidth=2;fillColor=#0F9D58;handleSize=10;shadow=0;fontSize=12;fontColor=#ffffff;html=1;",
+   "shapeNames": [
+    "mxgraph.gmdl.sliderDiscreteDots"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:2033"
+  },
+  {
+   "id": "gmdlSliders-20-discrete-slider-click-light",
+   "title": "Discrete slider (click, light)",
+   "tags": "gmdl slider click light gmdl google media design library slider  Discrete slider (click, light)",
+   "kind": "vertex",
+   "width": 200,
+   "height": 45,
+   "style": "dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.sliderDiscreteDots;inactiveTrackColor=#bebebe;barPos=100;bright=1;dotColor=#000000;strokeColor=#0F9D58;opacity=100;strokeWidth=2;fillColor=#0F9D58;handleSize=10;shadow=0;fontSize=12;fontColor=#ffffff;html=1;",
+   "shapeNames": [
+    "mxgraph.gmdl.sliderDiscreteDots"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:2035"
+  },
+  {
+   "id": "gmdlSliders-21-discrete-slider-disabled",
+   "title": "Discrete slider (disabled)",
+   "tags": "gmdl discrete slider disabled gmdl google media design library slider  Discrete slider (disabled)",
+   "kind": "vertex",
+   "width": 200,
+   "height": 20,
+   "style": "dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.sliderDisabled2;strokeColor=#b0b0b0;strokeWidth=2;fillColor=#b0b0b0;handleSize=6;shadow=0;hPos=0;html=1;",
+   "shapeNames": [
+    "mxgraph.gmdl.sliderDisabled2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:2037"
+  },
+  {
+   "id": "gmdlSliders-22-discrete-slider-disabled",
+   "title": "Discrete slider (disabled)",
+   "tags": "gmdl discrete slider disabled gmdl google media design library slider  Discrete slider (disabled)",
+   "kind": "vertex",
+   "width": 200,
+   "height": 20,
+   "style": "dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.sliderDisabled2;strokeColor=#b0b0b0;strokeWidth=2;fillColor=#b0b0b0;handleSize=6;shadow=0;hPos=50;html=1;",
+   "shapeNames": [
+    "mxgraph.gmdl.sliderDisabled2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:2039"
+  },
+  {
+   "id": "gmdlSliders-23-discrete-slider-disabled",
+   "title": "Discrete slider (disabled)",
+   "tags": "gmdl discrete slider disabled gmdl google media design library slider  Discrete slider (disabled)",
+   "kind": "vertex",
+   "width": 200,
+   "height": 20,
+   "style": "dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.sliderDisabled2;strokeColor=#b0b0b0;strokeWidth=2;fillColor=#b0b0b0;handleSize=6;shadow=0;hPos=100;html=1;",
+   "shapeNames": [
+    "mxgraph.gmdl.sliderDisabled2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:2041"
+  },
+  {
+   "id": "gmdlSliders-24-discrete-slider-normal-dark",
+   "title": "Discrete slider (normal, dark)",
+   "tags": "gmdl discrete slider normal dark gmdl google media design library slider  Discrete slider (normal, dark)",
+   "kind": "vertex",
+   "width": 200,
+   "height": 10,
+   "style": "dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.slider2;inactiveTrackColor=#bbbbbb;barPos=0;strokeColor=#ffffff;opacity=100;strokeWidth=2;handleSize=10;shadow=0;html=1;",
+   "shapeNames": [
+    "mxgraph.gmdl.slider2"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:2043"
+  },
+  {
+   "id": "gmdlSliders-25-discrete-slider-click-dark",
+   "title": "Discrete slider (click, dark)",
+   "tags": "gmdl discrete slider click dark gmdl google media design library slider  Discrete slider (click, dark)",
+   "kind": "vertex",
+   "width": 200,
+   "height": 45,
+   "style": "dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.sliderDiscreteDots;inactiveTrackColor=#bebebe;barPos=0;bright=0;dotColor=#ffffff;strokeColor=#0F9D58;opacity=100;strokeWidth=2;fillColor=#0F9D58;handleSize=10;shadow=0;fontSize=12;fontColor=#ffffff;html=1;",
+   "shapeNames": [
+    "mxgraph.gmdl.sliderDiscreteDots"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:2045"
+  },
+  {
+   "id": "gmdlSliders-26-discrete-slider-click-dark",
+   "title": "Discrete slider (click, dark)",
+   "tags": "gmdl discrete slider click dark gmdl google media design library slider  Discrete slider (click, dark)",
+   "kind": "vertex",
+   "width": 200,
+   "height": 45,
+   "style": "dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.sliderDiscreteDots;inactiveTrackColor=#bebebe;barPos=60;bright=0;dotColor=#ffffff;strokeColor=#0F9D58;opacity=100;strokeWidth=2;fillColor=#0F9D58;handleSize=10;shadow=0;fontSize=12;fontColor=#ffffff;html=1;",
+   "shapeNames": [
+    "mxgraph.gmdl.sliderDiscreteDots"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:2047"
+  },
+  {
+   "id": "gmdlSliders-27-discrete-slider-click-dark",
+   "title": "Discrete slider (click, dark)",
+   "tags": "gmdl discrete slider click dark gmdl google media design library slider  Discrete slider (click, dark)",
+   "kind": "vertex",
+   "width": 200,
+   "height": 45,
+   "style": "dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.sliderDiscreteDots;inactiveTrackColor=#bebebe;barPos=100;bright=0;dotColor=#ffffff;strokeColor=#0F9D58;opacity=100;strokeWidth=2;fillColor=#0F9D58;handleSize=10;shadow=0;fontSize=12;fontColor=#ffffff;html=1;",
+   "shapeNames": [
+    "mxgraph.gmdl.sliderDiscreteDots"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Gmdl.js:2049"
+  }
+ ]
+}

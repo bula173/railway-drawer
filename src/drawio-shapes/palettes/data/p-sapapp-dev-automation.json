@@ -1,0 +1,246 @@
+{
+ "id": "sapApp Dev Automation",
+ "title": "SAP / App Dev Automation",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-SAP.js:8",
+ "entries": [
+  {
+   "id": "sapApp Dev Automation-0-business-application-studio",
+   "title": "Business Application Studio",
+   "tags": "sap business application studio sap btp service services icons app dev automation application development  Business Application Studio",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=Business_Application_Studio",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:329"
+  },
+  {
+   "id": "sapApp Dev Automation-1-sap-build-work-zone-standard-edition",
+   "title": "SAP Build Work Zone - Standard Edition",
+   "tags": "sap build work zone standard edition sap btp service services icons app dev automation application development  SAP Build Work Zone - Standard Edition",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Build_Work_Zone_-_Standard_Edition",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:331"
+  },
+  {
+   "id": "sapApp Dev Automation-2-sap-build-work-zone-advanced-edition",
+   "title": "SAP Build Work Zone - Advanced Edition",
+   "tags": "sap build work zone advanced edition sap btp service services icons app dev automation application development  SAP Build Work Zone - Advanced Edition",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Build_Work_Zone_-_Advanced_Edition",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:333"
+  },
+  {
+   "id": "sapApp Dev Automation-3-ui-theme-designer",
+   "title": "UI Theme Designer",
+   "tags": "sap ui user interface theme designer sap btp service services icons app dev automation application development  UI Theme Designer",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=UI_Theme_Designer",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:335"
+  },
+  {
+   "id": "sapApp Dev Automation-4-sap-build-apps",
+   "title": "SAP Build Apps",
+   "tags": "sap build apps sap btp service services icons app dev automation application development  SAP Build Apps",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Build_Apps",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:337"
+  },
+  {
+   "id": "sapApp Dev Automation-5-sap-build-code",
+   "title": "SAP Build Code",
+   "tags": "sap build code sap btp service services icons app dev automation application development  SAP Build Code",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Build_Code",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:339"
+  },
+  {
+   "id": "sapApp Dev Automation-6-sap-build-process-automation",
+   "title": "SAP Build Process Automation",
+   "tags": "sap build process automation sap btp service services icons app dev automation application development  SAP Build Process Automation",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Build_Process_Automation",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:341"
+  },
+  {
+   "id": "sapApp Dev Automation-7-sap-task-center",
+   "title": "SAP Task Center",
+   "tags": "sap task center sap btp service services icons app dev automation application development  SAP Task Center",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Task_Center",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:343"
+  },
+  {
+   "id": "sapApp Dev Automation-8-sap-btp-abap-environment",
+   "title": "SAP BTP, ABAP environment",
+   "tags": "sap abap environment sap btp service services icons app dev automation application development  SAP BTP, ABAP environment",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_BTP,_ABAP_environment",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:345"
+  },
+  {
+   "id": "sapApp Dev Automation-9-extensibility-services-for-sap-btp",
+   "title": "Extensibility Services for SAP BTP",
+   "tags": "sap extensibility for sap btp service services icons app dev automation application development  Extensibility Services for SAP BTP",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=Extensibility_Service",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:347"
+  },
+  {
+   "id": "sapApp Dev Automation-10-sap-cloud-application-programming-model",
+   "title": "SAP Cloud Application Programming Model",
+   "tags": "sap cloud application programming model sap btp service services icons app dev automation application development  SAP Cloud Application Programming Model",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Cloud_Application_Programming_Model",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:349"
+  },
+  {
+   "id": "sapApp Dev Automation-11-sap-build",
+   "title": "SAP Build",
+   "tags": "sap build sap btp service services icons app dev automation application development  SAP Build",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Build",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:351"
+  },
+  {
+   "id": "sapApp Dev Automation-12-application-frontend-service",
+   "title": "Application Frontend Service",
+   "tags": "sap application frontend service sap btp service services icons app dev automation application development  Application Frontend Service",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=Application_Frontend_Service",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:353"
+  },
+  {
+   "id": "sapApp Dev Automation-13-html5-app-repository",
+   "title": "HTML5_App_Repository",
+   "tags": "sap html5 app repository sap btp service services icons app dev automation application development  HTML5_App_Repository",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=HTML5_App_Repository",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:355"
+  },
+  {
+   "id": "sapApp Dev Automation-14-ui5-flexibility-for-key-users",
+   "title": "UI5 flexibility for key users",
+   "tags": "sap ui5 flexibility for key users sap btp service services icons app dev automation application development  UI5 flexibility for key users",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=UI5_flexibility_for_key_users",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:357"
+  },
+  {
+   "id": "sapApp Dev Automation-15-sap-mobile-services",
+   "title": "SAP Mobile Services",
+   "tags": "sap mobile services sap btp service services icons app dev automation application development  SAP Mobile Services",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Mobile_Services",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:359"
+  },
+  {
+   "id": "sapApp Dev Automation-16-joule-studio",
+   "title": "Joule Studio",
+   "tags": "sap joule studio ai assistant sap btp service services icons app dev automation application development  Joule Studio",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=Joule_Studio",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:361"
+  }
+ ]
+}

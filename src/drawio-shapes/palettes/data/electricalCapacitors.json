@@ -1,0 +1,232 @@
+{
+ "id": "electricalCapacitors",
+ "title": "Electrical / Capacitors",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Electrical.js:8",
+ "entries": [
+  {
+   "id": "electricalCapacitors-0-capacitor-us",
+   "title": "Capacitor (US)",
+   "tags": "electrical capacitors capacitor 1 electrical capacitor  Capacitor (US)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.capacitors.capacitor_1;",
+   "shapeNames": [
+    "mxgraph.electrical.capacitors.capacitor_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:161"
+  },
+  {
+   "id": "electricalCapacitors-1-capacitor-us",
+   "title": "Capacitor (US)",
+   "tags": "electrical capacitors capacitor 2 electrical capacitor  Capacitor (US)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.capacitors.capacitor_2;",
+   "shapeNames": [
+    "mxgraph.electrical.capacitors.capacitor_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:163"
+  },
+  {
+   "id": "electricalCapacitors-2-electrolytic-capacitor-us",
+   "title": "Electrolytic Capacitor (US)",
+   "tags": "electrical capacitors capacitor 3 electrical capacitor  Electrolytic Capacitor (US)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.capacitors.capacitor_3;",
+   "shapeNames": [
+    "mxgraph.electrical.capacitors.capacitor_3"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:165"
+  },
+  {
+   "id": "electricalCapacitors-3-capacitor-uk",
+   "title": "Capacitor (UK)",
+   "tags": "electrical capacitors capacitor 4 electrical capacitor  Capacitor (UK)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.capacitors.capacitor_4;",
+   "shapeNames": [
+    "mxgraph.electrical.capacitors.capacitor_4"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:167"
+  },
+  {
+   "id": "electricalCapacitors-4-electrolytic-capacitor-us",
+   "title": "Electrolytic Capacitor (US)",
+   "tags": "electrical capacitors capacitor 5 electrical capacitor  Electrolytic Capacitor (US)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.capacitors.capacitor_5;",
+   "shapeNames": [
+    "mxgraph.electrical.capacitors.capacitor_5"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:169"
+  },
+  {
+   "id": "electricalCapacitors-5-capacitor",
+   "title": "Capacitor",
+   "tags": "electrical capacitors capacitor 6 electrical capacitor  Capacitor",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.capacitors.capacitor_6;",
+   "shapeNames": [
+    "mxgraph.electrical.capacitors.capacitor_6"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:171"
+  },
+  {
+   "id": "electricalCapacitors-6-differential-capacitor",
+   "title": "Differential Capacitor",
+   "tags": "electrical capacitors differential capacitor electrical capacitor  Differential Capacitor",
+   "kind": "vertex",
+   "width": 100,
+   "height": 80,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.capacitors.differential_capacitor;",
+   "shapeNames": [
+    "mxgraph.electrical.capacitors.differential_capacitor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:173"
+  },
+  {
+   "id": "electricalCapacitors-7-tuning-variable-capacitor-us",
+   "title": "Tuning Variable Capacitor (US)",
+   "tags": "electrical capacitors trimmer capacitor 1 electrical capacitor  Tuning Variable Capacitor (US)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 65.5,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.capacitors.trimmer_capacitor_1;",
+   "shapeNames": [
+    "mxgraph.electrical.capacitors.trimmer_capacitor_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:175"
+  },
+  {
+   "id": "electricalCapacitors-8-tuning-variable-capacitor-us",
+   "title": "Tuning Variable Capacitor (US)",
+   "tags": "electrical capacitors trimmer capacitor 2 electrical capacitor  Tuning Variable Capacitor (US)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 65.5,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.capacitors.trimmer_capacitor_2;",
+   "shapeNames": [
+    "mxgraph.electrical.capacitors.trimmer_capacitor_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:177"
+  },
+  {
+   "id": "electricalCapacitors-9-trimmer-variable-capacitor-us",
+   "title": "Trimmer Variable Capacitor (US)",
+   "tags": "electrical capacitors variable capacitor 1 electrical capacitor  Trimmer Variable Capacitor (US)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.capacitors.variable_capacitor_1;",
+   "shapeNames": [
+    "mxgraph.electrical.capacitors.variable_capacitor_1"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:179"
+  },
+  {
+   "id": "electricalCapacitors-10-trimmer-variable-capacitor-us",
+   "title": "Trimmer Variable Capacitor (US)",
+   "tags": "electrical capacitors variable capacitor 2 electrical capacitor  Trimmer Variable Capacitor (US)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 60,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.capacitors.variable_capacitor_2;",
+   "shapeNames": [
+    "mxgraph.electrical.capacitors.variable_capacitor_2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:181"
+  },
+  {
+   "id": "electricalCapacitors-11-feed-through-capacitor",
+   "title": "Feed Through Capacitor",
+   "tags": "electrical capacitors feed through capacitor electrical capacitor  Feed Through Capacitor",
+   "kind": "vertex",
+   "width": 100,
+   "height": 90,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.capacitors.feed_through_capacitor;",
+   "shapeNames": [
+    "mxgraph.electrical.capacitors.feed_through_capacitor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:183"
+  },
+  {
+   "id": "electricalCapacitors-12-ganged-capacitor",
+   "title": "Ganged Capacitor",
+   "tags": "electrical capacitors ganged capacitor electrical capacitor  Ganged Capacitor",
+   "kind": "vertex",
+   "width": 100,
+   "height": 130,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.capacitors.ganged_capacitor;",
+   "shapeNames": [
+    "mxgraph.electrical.capacitors.ganged_capacitor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:185"
+  },
+  {
+   "id": "electricalCapacitors-13-multiple-capacitor",
+   "title": "Multiple Capacitor",
+   "tags": "electrical capacitors multiple capacitor electrical capacitor  Multiple Capacitor",
+   "kind": "vertex",
+   "width": 100,
+   "height": 130,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.capacitors.multiple_capacitor;",
+   "shapeNames": [
+    "mxgraph.electrical.capacitors.multiple_capacitor"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:187"
+  },
+  {
+   "id": "electricalCapacitors-14-multiple-electrolytic-capacitor-common-negative",
+   "title": "Multiple Electrolytic Capacitor (Common Negative)",
+   "tags": "electrical capacitors multiple electrolytic capacitor comm neg electrical capacitor  Multiple Electrolytic Capacitor (Common Negative)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 130,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.capacitors.multiple_electrolytic_capacitor_comm_neg;",
+   "shapeNames": [
+    "mxgraph.electrical.capacitors.multiple_electrolytic_capacitor_comm_neg"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:189"
+  },
+  {
+   "id": "electricalCapacitors-15-multiple-electrolytic-capacitor-common-positive",
+   "title": "Multiple Electrolytic Capacitor (Common Positive)",
+   "tags": "electrical capacitors multiple electrolytic capacitor comm pos electrical capacitor  Multiple Electrolytic Capacitor (Common Positive)",
+   "kind": "vertex",
+   "width": 100,
+   "height": 130,
+   "style": "pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.capacitors.multiple_electrolytic_capacitor_comm_pos;",
+   "shapeNames": [
+    "mxgraph.electrical.capacitors.multiple_electrolytic_capacitor_comm_pos"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Electrical.js:191"
+  }
+ ]
+}

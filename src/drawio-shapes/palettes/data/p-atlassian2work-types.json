@@ -1,0 +1,330 @@
+{
+ "id": "atlassian2Work Types",
+ "title": "Atlassian / Work Types",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:9",
+ "entries": [
+  {
+   "id": "atlassian2Work Types-0-blog",
+   "title": "Blog",
+   "tags": "atlassian2 blog jira work item type object confluence blogpost Blog",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.object_blog;tileColor=#669DF1;fillColor=#292A2E;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:85"
+  },
+  {
+   "id": "atlassian2Work Types-1-branch",
+   "title": "Branch",
+   "tags": "atlassian2 branch jira work item type object git bitbucket Branch",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.object_branch;tileColor=#669DF1;fillColor=#292A2E;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:86"
+  },
+  {
+   "id": "atlassian2Work Types-2-bug",
+   "title": "Bug",
+   "tags": "atlassian2 bug jira work item type object issue defect Bug",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.object_bug;tileColor=#F87168;fillColor=#292A2E;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:87"
+  },
+  {
+   "id": "atlassian2Work Types-3-calendar",
+   "title": "Calendar",
+   "tags": "atlassian2 calendar jira work item type object confluence team calendar Calendar",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.object_calendar;tileColor=#F87168;fillColor=#292A2E;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:88"
+  },
+  {
+   "id": "atlassian2Work Types-4-changes",
+   "title": "Changes",
+   "tags": "atlassian2 changes jira work item type object Changes",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.object_changes;tileColor=#EED12B;fillColor=#292A2E;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:89"
+  },
+  {
+   "id": "atlassian2Work Types-5-code",
+   "title": "Code",
+   "tags": "atlassian2 code jira work item type object git bitbucket repository Code",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.object_code;tileColor=#C97CF4;fillColor=#292A2E;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:90"
+  },
+  {
+   "id": "atlassian2Work Types-6-commit",
+   "title": "Commit",
+   "tags": "atlassian2 commit jira work item type object git bitbucket Commit",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.object_commit;tileColor=#EED12B;fillColor=#292A2E;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:91"
+  },
+  {
+   "id": "atlassian2Work Types-7-database",
+   "title": "Database",
+   "tags": "atlassian2 database jira work item type object confluence Database",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.object_database;tileColor=#C97CF4;fillColor=#292A2E;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:92"
+  },
+  {
+   "id": "atlassian2Work Types-8-epic",
+   "title": "Epic",
+   "tags": "atlassian2 epic jira work item type object issue Epic",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.object_epic;tileColor=#C97CF4;fillColor=#292A2E;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:93"
+  },
+  {
+   "id": "atlassian2Work Types-9-idea",
+   "title": "Idea",
+   "tags": "atlassian2 idea jira work item type object jira product discovery jpd Idea",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.object_idea;tileColor=#EED12B;fillColor=#292A2E;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:94"
+  },
+  {
+   "id": "atlassian2Work Types-10-improvement",
+   "title": "Improvement",
+   "tags": "atlassian2 improvement jira work item type object enhancement Improvement",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.object_improvement;tileColor=#4BCE97;fillColor=#292A2E;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:95"
+  },
+  {
+   "id": "atlassian2Work Types-11-incident",
+   "title": "Incident",
+   "tags": "atlassian2 incident jira work item type object itsm jsm Incident",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.object_incident;tileColor=#F87168;fillColor=#292A2E;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:96"
+  },
+  {
+   "id": "atlassian2Work Types-12-new-feature",
+   "title": "New Feature",
+   "tags": "atlassian2 new feature jira work item type object feature request New Feature",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.object_new_feature;tileColor=#4BCE97;fillColor=#292A2E;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:97"
+  },
+  {
+   "id": "atlassian2Work Types-13-page",
+   "title": "Page",
+   "tags": "atlassian2 page jira work item type object confluence Page",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.object_page;tileColor=#669DF1;fillColor=#292A2E;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:98"
+  },
+  {
+   "id": "atlassian2Work Types-14-page-live-doc",
+   "title": "Page Live Doc",
+   "tags": "atlassian2 page live doc jira work item type object confluence live doc Page Live Doc",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.object_page_live_doc;tileColor=#E774BB;fillColor=#292A2E;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:99"
+  },
+  {
+   "id": "atlassian2Work Types-15-problem",
+   "title": "Problem",
+   "tags": "atlassian2 problem jira work item type object itsm jsm Problem",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.object_problem;tileColor=#F87168;fillColor=#292A2E;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:100"
+  },
+  {
+   "id": "atlassian2Work Types-16-pull-request",
+   "title": "Pull Request",
+   "tags": "atlassian2 pull request jira work item type object git bitbucket pr review Pull Request",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.object_pull_request;tileColor=#4BCE97;fillColor=#292A2E;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:101"
+  },
+  {
+   "id": "atlassian2Work Types-17-question",
+   "title": "Question",
+   "tags": "atlassian2 question jira work item type object jsm Question",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.object_question;tileColor=#C97CF4;fillColor=#292A2E;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:102"
+  },
+  {
+   "id": "atlassian2Work Types-18-story",
+   "title": "Story",
+   "tags": "atlassian2 story jira work item type object issue Story",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.object_story;tileColor=#4BCE97;fillColor=#292A2E;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:103"
+  },
+  {
+   "id": "atlassian2Work Types-19-subtask",
+   "title": "Subtask",
+   "tags": "atlassian2 subtask jira work item type object issue sub task Subtask",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.object_subtask;tileColor=#669DF1;fillColor=#292A2E;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:104"
+  },
+  {
+   "id": "atlassian2Work Types-20-task",
+   "title": "Task",
+   "tags": "atlassian2 task jira work item type object issue Task",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.object_task;tileColor=#669DF1;fillColor=#292A2E;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:105"
+  },
+  {
+   "id": "atlassian2Work Types-21-whiteboard",
+   "title": "Whiteboard",
+   "tags": "atlassian2 whiteboard jira work item type object confluence Whiteboard",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.object_whiteboard;tileColor=#6CC3E0;fillColor=#292A2E;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:106"
+  },
+  {
+   "id": "atlassian2Work Types-22-work-item",
+   "title": "Work Item",
+   "tags": "atlassian2 work item jira work item type object issue ticket Work Item",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.object_work_item;tileColor=#669DF1;fillColor=#292A2E;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:107"
+  }
+ ]
+}

@@ -1,0 +1,176 @@
+{
+ "id": "sapOther",
+ "title": "SAP / Other",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-SAP.js:8",
+ "entries": [
+  {
+   "id": "sapOther-0-sap-responsibility-management-service",
+   "title": "SAP Responsibility Management Service",
+   "tags": "sap responsibility management service sap btp service icons other  SAP Responsibility Management Service",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Responsibility_Management_Service",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:453"
+  },
+  {
+   "id": "sapOther-1-sap-green-token",
+   "title": "SAP Green Token",
+   "tags": "sap green token sap btp service icons other  SAP Green Token",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Green_Token",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:455"
+  },
+  {
+   "id": "sapOther-2-sap-health-data-services-for-fhir",
+   "title": "SAP Health Data Services for FHIR",
+   "tags": "sap health data services for fhir sap btp service icons other  SAP Health Data Services for FHIR",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Health_Data_Services_for_FHIR",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:457"
+  },
+  {
+   "id": "sapOther-3-sap-digital-manufacturing",
+   "title": "SAP Digital Manufacturing",
+   "tags": "sap digital manufacturing sap btp service icons other  SAP Digital Manufacturing",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Digital_Manufacturing",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:459"
+  },
+  {
+   "id": "sapOther-4-sap-sustainability-data-exchange",
+   "title": "SAP Sustainability Data Exchange",
+   "tags": "sap sustainability data exchange sap btp service icons other  SAP Sustainability Data Exchange",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Sustainability_Data_Exchange",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:461"
+  },
+  {
+   "id": "sapOther-5-sap-collaborative-demand-and-capacity-management",
+   "title": "SAP Collaborative Demand and Capacity Management",
+   "tags": "sap collaborative demand and capacity management sap btp service icons other  SAP Collaborative Demand and Capacity Management",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Collaborative_Demand_and_Capacity_Management",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:463"
+  },
+  {
+   "id": "sapOther-6-sap-watch-list-screening",
+   "title": "SAP Watch List Screening",
+   "tags": "sap watch list screening sap btp service icons other  SAP Watch List Screening",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Watch_List_Screening",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:465"
+  },
+  {
+   "id": "sapOther-7-business-process-model-connector-for-sap-signavio-solutions",
+   "title": "Business Process Model Connector for SAP Signavio Solutions",
+   "tags": "sap business process model connector for signavio solutions sap btp service icons other  Business Process Model Connector for SAP Signavio Solutions",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=Business_Process_Model_Connector_for_SAP_Signavio_Solutions",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:467"
+  },
+  {
+   "id": "sapOther-8-sap-asset-performance-management",
+   "title": "SAP Asset Performance Management",
+   "tags": "sap asset performance management sap btp service icons other  SAP Asset Performance Management",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Asset_Performance_Management",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:469"
+  },
+  {
+   "id": "sapOther-9-sap-project-and-resource-management",
+   "title": "SAP Project and Resource Management",
+   "tags": "sap project and resource management sap btp service icons other  SAP Project and Resource Management",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Project_and_Resource_Management",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:471"
+  },
+  {
+   "id": "sapOther-10-sap-s-4hana-for-ms-teams",
+   "title": "SAP S/4HANA for MS Teams",
+   "tags": "sap s4 hana 4hana for ms teams sap btp service icons other  SAP S/4HANA for MS Teams",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_S4HANA_for_MS_Teams",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:473"
+  },
+  {
+   "id": "sapOther-11-sap-cloud-alm",
+   "title": "SAP Cloud ALM",
+   "tags": "sap cloud alm sap btp service icons other  SAP Cloud ALM",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=SAP_Cloud_ALM",
+   "shapeNames": [
+    "mxgraph.sap.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-SAP.js:475"
+  }
+ ]
+}

@@ -1,0 +1,50 @@
+{
+ "id": "aws3Business Productivity",
+ "title": "AWS17 / Business Productivity",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-AWS3.js:8",
+ "entries": [
+  {
+   "id": "aws3Business Productivity-0-chime",
+   "title": "Chime",
+   "tags": "aws3 chime aws amazon web service business productivity Chime",
+   "kind": "vertex",
+   "width": 99,
+   "height": 99,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.chime;fillColor=#03B5BB;gradientColor=none;",
+   "shapeNames": [
+    "mxgraph.aws3.chime"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:170"
+  },
+  {
+   "id": "aws3Business Productivity-1-workdocs",
+   "title": "WorkDocs",
+   "tags": "aws3 workdocs work docs documents aws amazon web service business productivity WorkDocs",
+   "kind": "vertex",
+   "width": 82.5,
+   "height": 94.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.workdocs;fillColor=#D16A28;gradientColor=#F58435;gradientDirection=north;",
+   "shapeNames": [
+    "mxgraph.aws3.workdocs"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:172"
+  },
+  {
+   "id": "aws3Business Productivity-2-workmail",
+   "title": "WorkMail",
+   "tags": "aws3 workmail work mail aws amazon web service business productivity WorkMail",
+   "kind": "vertex",
+   "width": 82.5,
+   "height": 94.5,
+   "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.workmail;fillColor=#D16A28;gradientColor=#F58435;gradientDirection=north;",
+   "shapeNames": [
+    "mxgraph.aws3.workmail"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-AWS3.js:174"
+  }
+ ]
+}

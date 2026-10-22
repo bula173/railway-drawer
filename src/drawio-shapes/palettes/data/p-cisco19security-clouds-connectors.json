@@ -1,0 +1,330 @@
+{
+ "id": "cisco19Security Clouds Connectors",
+ "title": "Cisco 19 / Security, Clouds and Connectors",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:8",
+ "entries": [
+  {
+   "id": "cisco19Security Clouds Connectors-0-acs",
+   "title": "ACS",
+   "tags": "cisco19 acs cisco security clouds connectors ACS",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=acs;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:382"
+  },
+  {
+   "id": "cisco19Security Clouds Connectors-1-ise",
+   "title": "ISE",
+   "tags": "cisco19 ise cisco security clouds connectors ISE",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=ise;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:384"
+  },
+  {
+   "id": "cisco19Security Clouds Connectors-2-email-security",
+   "title": "Email Security",
+   "tags": "cisco19 email security cisco security clouds connectors Email Security",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=email_security;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:386"
+  },
+  {
+   "id": "cisco19Security Clouds Connectors-3-vpn-concentrator",
+   "title": "VPN Concentrator",
+   "tags": "cisco19 vpn concentrator virtual private network cisco security clouds connectors VPN Concentrator",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=vpn_concentrator;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:388"
+  },
+  {
+   "id": "cisco19Security Clouds Connectors-4-ssl-terminator",
+   "title": "SSL Terminator",
+   "tags": "cisco19 ssl terminator cisco security clouds connectors SSL Terminator",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=ssl_terminator;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:390"
+  },
+  {
+   "id": "cisco19Security Clouds Connectors-5-cisco-security-manager",
+   "title": "Cisco Security Manager",
+   "tags": "cisco19 cisco security manager cisco security clouds connectors Cisco Security Manager",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=cisco_security_manager;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:392"
+  },
+  {
+   "id": "cisco19Security Clouds Connectors-6-web-security",
+   "title": "Web Security",
+   "tags": "cisco19 web security cisco security clouds connectors Web Security",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=web_security;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:394"
+  },
+  {
+   "id": "cisco19Security Clouds Connectors-7-nac-appliance",
+   "title": "NAC Appliance",
+   "tags": "cisco19 nac appliance cisco security clouds connectors NAC Appliance",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=nac_appliance;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:396"
+  },
+  {
+   "id": "cisco19Security Clouds Connectors-8-ironport",
+   "title": "Ironport",
+   "tags": "cisco19 ironport cisco security clouds connectors Ironport",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=ironport;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:398"
+  },
+  {
+   "id": "cisco19Security Clouds Connectors-9-ips-ids",
+   "title": "IPS/IDS",
+   "tags": "cisco19 ips ids cisco security clouds connectors IPS/IDS",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=ips_ids;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:400"
+  },
+  {
+   "id": "cisco19Security Clouds Connectors-10-firewall",
+   "title": "Firewall",
+   "tags": "cisco19 firewall cisco security clouds connectors Firewall",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=firewall;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:402"
+  },
+  {
+   "id": "cisco19Security Clouds Connectors-11-asa-5500",
+   "title": "ASA 5500",
+   "tags": "cisco19 asa 5500 cisco security clouds connectors ASA 5500",
+   "kind": "vertex",
+   "width": 64,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=asa_5500;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:404"
+  },
+  {
+   "id": "cisco19Security Clouds Connectors-12-ldap",
+   "title": "LDAP",
+   "tags": "cisco19 ldap cisco security clouds connectors LDAP",
+   "kind": "vertex",
+   "width": 50,
+   "height": 42.5,
+   "style": "points=[[0.5,0,0],[0.765,0.48,0],[0.99,0.98,0],[0.5,1,0],[0.01,0.98,0],[0.235,0.48,0]];verticalLabelPosition=bottom;sketch=0;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.ldap2;fillColor=#fafafa;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.ldap2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:406"
+  },
+  {
+   "id": "cisco19Security Clouds Connectors-13-key",
+   "title": "Key",
+   "tags": "cisco19 key cisco security clouds connectors Key",
+   "kind": "vertex",
+   "width": 50,
+   "height": 22.5,
+   "style": "points=[[0,0.5,0],[0.24,0,0],[0.5,0.28,0],[0.995,0.475,0],[0.5,0.72,0],[0.24,1,0]];verticalLabelPosition=bottom;sketch=0;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.key2;fillColor=none;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.key2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:408"
+  },
+  {
+   "id": "cisco19Security Clouds Connectors-14-lock",
+   "title": "Lock",
+   "tags": "cisco19 lock cisco security clouds connectors Lock",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0],[0.145,0.145,0],[0.8555,0.145,0],[0.855,0.8555,0],[0.145,0.855,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.lock2;fillColor=#fafafa;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.lock2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:410"
+  },
+  {
+   "id": "cisco19Security Clouds Connectors-15-cloud",
+   "title": "Cloud",
+   "tags": "cisco19 cloud cisco security clouds connectors Cloud",
+   "kind": "vertex",
+   "width": 50,
+   "height": 30,
+   "style": "points=[[0,0.64,0],[0.2,0.15,0],[0.4,0.01,0],[0.79,0.25,0],[1,0.65,0],[0.8,0.86,0],[0.41,1,0],[0.16,0.86,0]];verticalLabelPosition=bottom;sketch=0;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.cloud;fillColor=#6B6B6B;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.cisco19.cloud"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:412"
+  },
+  {
+   "id": "cisco19Security Clouds Connectors-16-cloud",
+   "title": "Cloud",
+   "tags": "cisco19 cloud cisco security clouds connectors Cloud",
+   "kind": "vertex",
+   "width": 50,
+   "height": 30,
+   "style": "points=[[0,0.64,0],[0.2,0.15,0],[0.4,0.01,0],[0.79,0.25,0],[1,0.65,0],[0.8,0.86,0],[0.41,1,0],[0.16,0.86,0]];verticalLabelPosition=bottom;sketch=0;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.cloud;fillColor=#A6A6A6;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.cisco19.cloud"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:414"
+  },
+  {
+   "id": "cisco19Security Clouds Connectors-17-cloud",
+   "title": "Cloud",
+   "tags": "cisco19 cloud cisco security clouds connectors Cloud",
+   "kind": "vertex",
+   "width": 50,
+   "height": 30,
+   "style": "points=[[0,0.64,0],[0.2,0.15,0],[0.4,0.01,0],[0.79,0.25,0],[1,0.65,0],[0.8,0.86,0],[0.41,1,0],[0.16,0.86,0]];verticalLabelPosition=bottom;sketch=0;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.cloud;fillColor=#FABD66;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.cisco19.cloud"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:416"
+  },
+  {
+   "id": "cisco19Security Clouds Connectors-18-cloud",
+   "title": "Cloud",
+   "tags": "cisco19 cloud cisco security clouds connectors Cloud",
+   "kind": "vertex",
+   "width": 50,
+   "height": 30,
+   "style": "points=[[0,0.64,0],[0.2,0.15,0],[0.4,0.01,0],[0.79,0.25,0],[1,0.65,0],[0.8,0.86,0],[0.41,1,0],[0.16,0.86,0]];verticalLabelPosition=bottom;sketch=0;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.cloud;fillColor=#186180;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.cisco19.cloud"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:418"
+  },
+  {
+   "id": "cisco19Security Clouds Connectors-19-cloud",
+   "title": "Cloud",
+   "tags": "cisco19 cloud cisco security clouds connectors Cloud",
+   "kind": "vertex",
+   "width": 50,
+   "height": 30,
+   "style": "points=[[0,0.64,0],[0.2,0.15,0],[0.4,0.01,0],[0.79,0.25,0],[1,0.65,0],[0.8,0.86,0],[0.41,1,0],[0.16,0.86,0]];verticalLabelPosition=bottom;sketch=0;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.cloud2;fillColor=#FFE9AA;strokeColor=none;",
+   "shapeNames": [
+    "mxgraph.cisco19.cloud2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:420"
+  },
+  {
+   "id": "cisco19Security Clouds Connectors-20-security-management-color",
+   "title": "Security Management (color)",
+   "tags": "cisco19 security management color cisco security clouds connectors Security Management (color)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=security_management;fillColor=#FAFAFA;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:422"
+  },
+  {
+   "id": "cisco19Security Clouds Connectors-21-security-management-subdued",
+   "title": "Security Management (subdued)",
+   "tags": "cisco19 security management subdued cisco security clouds connectors Security Management (subdued)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=security_management;fillColor=#FAFAFA;strokeColor=#6696AB;",
+   "shapeNames": [
+    "mxgraph.cisco19.rect"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:424"
+  },
+  {
+   "id": "cisco19Security Clouds Connectors-22-secure-endpoint-laptop",
+   "title": "Secure Endpoint (laptop)",
+   "tags": "cisco19 secure endpoints laptop cisco security clouds connectors Secure Endpoint (laptop)",
+   "kind": "vertex",
+   "width": 50,
+   "height": 35,
+   "style": "points=[[0.13,0.02,0],[0.5,0,0],[0.87,0.02,0],[0.885,0.4,0],[0.985,0.985,0],[0.5,1,0],[0.015,0.985,0],[0.115,0.4,0]];verticalLabelPosition=bottom;sketch=0;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.secure_endpoints2;fillColor=#fafafa;strokeColor=#005073;",
+   "shapeNames": [
+    "mxgraph.cisco19.secure_endpoints2"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Cisco19.js:426"
+  }
+ ]
+}

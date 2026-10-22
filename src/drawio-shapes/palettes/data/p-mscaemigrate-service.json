@@ -1,0 +1,50 @@
+{
+ "id": "mscaeMigrate Service",
+ "title": "CAE / Migrate Service",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:8",
+ "entries": [
+  {
+   "id": "mscaeMigrate Service-0-azure-database-migration-services",
+   "title": "Azure Database Migration Services",
+   "tags": "mscae azure database migration services ms microsoft cloud enterprise migrate service Azure Database Migration Services",
+   "kind": "vertex",
+   "width": 50,
+   "height": 50,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Azure_Database_Migration_Services.svg;points=[[0.571,0,0],[0.524,1,0],[0,0.412,0],[1,0.509,0],[0.77,0.07,0],[0.77,0.942,0],[0.255,0.925,0],[0.078,0.245,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1217"
+  },
+  {
+   "id": "mscaeMigrate Service-1-migration-projects",
+   "title": "Migration Projects",
+   "tags": "mscae migration projects ms microsoft cloud enterprise migrate service Migration Projects",
+   "kind": "vertex",
+   "width": 50,
+   "height": 32,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Migration_Projects.svg;points=[[0.505,0,0],[0.435,0.996,0],[0.117,0.5,0],[1,0.518,0],[0.917,0.29,0],[0.875,0.945,0],[0.058,0.976,0],[0.355,0.063,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1219"
+  },
+  {
+   "id": "mscaeMigrate Service-2-recovery-services-vaults",
+   "title": "Recovery Services Vaults",
+   "tags": "mscae recovery services vaults vault ms microsoft cloud enterprise migrate service Recovery Services Vaults",
+   "kind": "vertex",
+   "width": 50,
+   "height": 42,
+   "style": "image;sketch=0;aspect=fixed;html=1;align=center;fontSize=12;image=img/lib/mscae/Backup.svg;points=[[0.5,0.095,0],[0.411,0.991,0],[0.107,0.5,0],[1,0.452,0],[0.827,0.057,0],[0.757,0.946,0],[0.068,0.949,0],[0.323,0.122,0]];",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-MSCAE.js:1221"
+  }
+ ]
+}

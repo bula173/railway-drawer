@@ -1,0 +1,638 @@
+{
+ "id": "atlassian2Apps",
+ "title": "Atlassian / Apps",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:9",
+ "entries": [
+  {
+   "id": "atlassian2Apps-0-admin",
+   "title": "Admin",
+   "tags": "atlassian2 admin app product Admin",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.admin;tileColor=#dddee1;fillColor=#101214;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:28"
+  },
+  {
+   "id": "atlassian2Apps-1-align",
+   "title": "Align",
+   "tags": "atlassian2 align app product Align",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.align;tileColor=#fb9700;fillColor=#101214;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:29"
+  },
+  {
+   "id": "atlassian2Apps-2-analytics",
+   "title": "Analytics",
+   "tags": "atlassian2 analytics app product Analytics",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.analytics;tileColor=#dddee1;fillColor=#101214;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:30"
+  },
+  {
+   "id": "atlassian2Apps-3-assets",
+   "title": "Assets",
+   "tags": "atlassian2 assets app product insight cmdb Assets",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.assets;tileColor=#ffc716;fillColor=#101214;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:31"
+  },
+  {
+   "id": "atlassian2Apps-4-atlassian",
+   "title": "Atlassian",
+   "tags": "atlassian2 atlassian app product Atlassian",
+   "kind": "vertex",
+   "width": 48,
+   "height": 47.9,
+   "style": "shape=mxgraph.atlassian2.atlassian;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#1868db;",
+   "shapeNames": [
+    "mxgraph.atlassian2.atlassian"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:32"
+  },
+  {
+   "id": "atlassian2Apps-5-atlassian-marketplace",
+   "title": "Atlassian Marketplace",
+   "tags": "atlassian2 marketplace app product atlassian Atlassian Marketplace",
+   "kind": "vertex",
+   "width": 48,
+   "height": 47.9,
+   "style": "shape=mxgraph.atlassian2.marketplace;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#1868db;",
+   "shapeNames": [
+    "mxgraph.atlassian2.marketplace"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:33"
+  },
+  {
+   "id": "atlassian2Apps-6-bamboo",
+   "title": "Bamboo",
+   "tags": "atlassian2 bamboo app product Bamboo",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.bamboo;tileColor=#fff;fillColor=#1868db;tileOutlineColor=#dddee1;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:34"
+  },
+  {
+   "id": "atlassian2Apps-7-bitbucket",
+   "title": "Bitbucket",
+   "tags": "atlassian2 bitbucket app product Bitbucket",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.bitbucket;tileColor=#94c748;fillColor=#101214;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:35"
+  },
+  {
+   "id": "atlassian2Apps-8-bitbucket-data-center",
+   "title": "Bitbucket Data Center",
+   "tags": "atlassian2 bitbucket data center app product Bitbucket Data Center",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.bitbucket-data-center;tileColor=#fff;fillColor=#1868db;tileOutlineColor=#dddee1;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:36"
+  },
+  {
+   "id": "atlassian2Apps-9-chat",
+   "title": "Chat",
+   "tags": "atlassian2 chat app product rovo chat Chat",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.chat;tileColor=#dddee1;fillColor=#101214;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:37"
+  },
+  {
+   "id": "atlassian2Apps-10-company-hub",
+   "title": "Company Hub",
+   "tags": "atlassian2 company hub app product intranet Company Hub",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.company-hub;tileColor=#dddee1;fillColor=#101214;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:38"
+  },
+  {
+   "id": "atlassian2Apps-11-compass",
+   "title": "Compass",
+   "tags": "atlassian2 compass app product Compass",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.compass;tileColor=#94c748;fillColor=#101214;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:39"
+  },
+  {
+   "id": "atlassian2Apps-12-confluence",
+   "title": "Confluence",
+   "tags": "atlassian2 confluence app product Confluence",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.confluence;tileColor=#1868db;fillColor=#fff;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:40"
+  },
+  {
+   "id": "atlassian2Apps-13-confluence-data-center",
+   "title": "Confluence Data Center",
+   "tags": "atlassian2 confluence data center app product Confluence Data Center",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.confluence-data-center;tileColor=#fff;fillColor=#1868db;tileOutlineColor=#dddee1;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:41"
+  },
+  {
+   "id": "atlassian2Apps-14-crowd",
+   "title": "Crowd",
+   "tags": "atlassian2 crowd app product Crowd",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.crowd;tileColor=#fff;fillColor=#1868db;tileOutlineColor=#dddee1;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:42"
+  },
+  {
+   "id": "atlassian2Apps-15-customer-service-management",
+   "title": "Customer Service Management",
+   "tags": "atlassian2 customer service management app product Customer Service Management",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.customer-service-management;tileColor=#ffc716;fillColor=#101214;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:43"
+  },
+  {
+   "id": "atlassian2Apps-16-dx",
+   "title": "DX",
+   "tags": "atlassian2 dx app product DX",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.dx;tileColor=#94c748;fillColor=#101214;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:44"
+  },
+  {
+   "id": "atlassian2Apps-17-feedback",
+   "title": "Feedback",
+   "tags": "atlassian2 feedback app product Feedback",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.feedback;tileColor=#c97cf4;fillColor=#101214;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:45"
+  },
+  {
+   "id": "atlassian2Apps-18-focus",
+   "title": "Focus",
+   "tags": "atlassian2 focus app product Focus",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.focus;tileColor=#fb9700;fillColor=#101214;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:46"
+  },
+  {
+   "id": "atlassian2Apps-19-goals",
+   "title": "Goals",
+   "tags": "atlassian2 goals app product atlas Goals",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.goals;tileColor=#dddee1;fillColor=#101214;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:47"
+  },
+  {
+   "id": "atlassian2Apps-20-guard",
+   "title": "Guard",
+   "tags": "atlassian2 guard app product atlassian access Guard",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.guard;tileColor=#dddee1;fillColor=#101214;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:48"
+  },
+  {
+   "id": "atlassian2Apps-21-guard-detect",
+   "title": "Guard Detect",
+   "tags": "atlassian2 guard detect app product atlassian access Guard Detect",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.guard-detect;tileColor=#dddee1;fillColor=#101214;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:49"
+  },
+  {
+   "id": "atlassian2Apps-22-home",
+   "title": "Home",
+   "tags": "atlassian2 home app product atlas start Home",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.home;tileColor=#dddee1;fillColor=#101214;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:50"
+  },
+  {
+   "id": "atlassian2Apps-23-hub",
+   "title": "Hub",
+   "tags": "atlassian2 hub app product Hub",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.hub;tileColor=#dddee1;fillColor=#101214;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:51"
+  },
+  {
+   "id": "atlassian2Apps-24-jira",
+   "title": "Jira",
+   "tags": "atlassian2 jira app product jira software jira core Jira",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.jira;tileColor=#1868db;fillColor=#fff;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:52"
+  },
+  {
+   "id": "atlassian2Apps-25-jira-align",
+   "title": "Jira Align",
+   "tags": "atlassian2 jira align app product agilecraft Jira Align",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.jira_align;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#1868db;",
+   "shapeNames": [
+    "mxgraph.atlassian2.jira_align"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:53"
+  },
+  {
+   "id": "atlassian2Apps-26-jira-coding-agent",
+   "title": "Jira Coding Agent",
+   "tags": "atlassian2 jira coding agent app product Jira Coding Agent",
+   "kind": "vertex",
+   "width": 43.1,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.jira-coding-agent;tileColor=#1868db;fillColor=#fff;tileShape=hex;glyphScale=0.8971;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:54"
+  },
+  {
+   "id": "atlassian2Apps-27-jira-data-center",
+   "title": "Jira Data Center",
+   "tags": "atlassian2 jira data center app product jira software Jira Data Center",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.jira-data-center;tileColor=#fff;fillColor=#1868db;tileOutlineColor=#dddee1;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:55"
+  },
+  {
+   "id": "atlassian2Apps-28-jira-product-discovery",
+   "title": "Jira Product Discovery",
+   "tags": "atlassian2 jira product discovery app product Jira Product Discovery",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.jira-product-discovery;tileColor=#c97cf4;fillColor=#101214;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:56"
+  },
+  {
+   "id": "atlassian2Apps-29-jira-service-management",
+   "title": "Jira Service Management",
+   "tags": "atlassian2 jira service management app product jira service desk jsm Jira Service Management",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.jira-service-management;tileColor=#ffc716;fillColor=#101214;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:57"
+  },
+  {
+   "id": "atlassian2Apps-30-jira-service-management-data-center",
+   "title": "Jira Service Management Data Center",
+   "tags": "atlassian2 jira service management data center app product jira service desk jsm Jira Service Management Data Center",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.jira-service-management-data-center;tileColor=#fff;fillColor=#1868db;tileOutlineColor=#dddee1;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:58"
+  },
+  {
+   "id": "atlassian2Apps-31-loom",
+   "title": "Loom",
+   "tags": "atlassian2 loom app product Loom",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.loom;tileColor=#1868db;fillColor=#fff;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:59"
+  },
+  {
+   "id": "atlassian2Apps-32-loom-internal",
+   "title": "Loom Internal",
+   "tags": "atlassian2 loom internal app product Loom Internal",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.loom-internal;tileColor=#625df5;fillColor=#fff;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:60"
+  },
+  {
+   "id": "atlassian2Apps-33-opsgenie",
+   "title": "Opsgenie",
+   "tags": "atlassian2 opsgenie app product Opsgenie",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.opsgenie;tileColor=#ffc716;fillColor=#101214;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:61"
+  },
+  {
+   "id": "atlassian2Apps-34-projects",
+   "title": "Projects",
+   "tags": "atlassian2 projects app product Projects",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.projects;tileColor=#dddee1;fillColor=#101214;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:62"
+  },
+  {
+   "id": "atlassian2Apps-35-rovo",
+   "title": "Rovo",
+   "tags": "atlassian2 rovo app product Rovo",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.rovo;tileColor=#1868db;fillColor=#fff;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:63"
+  },
+  {
+   "id": "atlassian2Apps-36-rovo-dev",
+   "title": "Rovo Dev",
+   "tags": "atlassian2 rovo dev app product Rovo Dev",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.rovo-dev;tileColor=#94c748;fillColor=#101214;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:64"
+  },
+  {
+   "id": "atlassian2Apps-37-rovo-dev-agent",
+   "title": "Rovo Dev Agent",
+   "tags": "atlassian2 rovo dev agent app product Rovo Dev Agent",
+   "kind": "vertex",
+   "width": 43.1,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.rovo-dev-agent;tileColor=#94c748;fillColor=#101214;tileShape=hex;glyphScale=0.98;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:65"
+  },
+  {
+   "id": "atlassian2Apps-38-search",
+   "title": "Search",
+   "tags": "atlassian2 search app product rovo search Search",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.search;tileColor=#dddee1;fillColor=#101214;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:66"
+  },
+  {
+   "id": "atlassian2Apps-39-sourcetree",
+   "title": "Sourcetree",
+   "tags": "atlassian2 sourcetree app product logo Sourcetree",
+   "kind": "vertex",
+   "width": 38.6,
+   "height": 48,
+   "style": "image;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;image=img/lib/atlassian/Sourcetree_Logo.svg;",
+   "shapeNames": [
+    "image"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:67"
+  },
+  {
+   "id": "atlassian2Apps-40-statuspage",
+   "title": "Statuspage",
+   "tags": "atlassian2 statuspage app product Statuspage",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.statuspage;tileColor=#ffc716;fillColor=#101214;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:68"
+  },
+  {
+   "id": "atlassian2Apps-41-studio",
+   "title": "Studio",
+   "tags": "atlassian2 studio app product Studio",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.studio;tileColor=#dddee1;fillColor=#101214;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:69"
+  },
+  {
+   "id": "atlassian2Apps-42-talent",
+   "title": "Talent",
+   "tags": "atlassian2 talent app product Talent",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.talent;tileColor=#fb9700;fillColor=#101214;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:70"
+  },
+  {
+   "id": "atlassian2Apps-43-teams",
+   "title": "Teams",
+   "tags": "atlassian2 teams app product Teams",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.teams;tileColor=#dddee1;fillColor=#101214;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:71"
+  },
+  {
+   "id": "atlassian2Apps-44-trello",
+   "title": "Trello",
+   "tags": "atlassian2 trello app product Trello",
+   "kind": "vertex",
+   "width": 48,
+   "height": 48,
+   "style": "shape=mxgraph.atlassian2.icon;html=1;aspect=fixed;strokeColor=none;labelBackgroundColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;atlassian2Icon=mxgraph.atlassian2.trello;tileColor=#1558bc;fillColor=#fff;",
+   "shapeNames": [
+    "mxgraph.atlassian2.icon"
+   ],
+   "cls": "c",
+   "source": "js/diagramly/sidebar/Sidebar-Atlassian2.js:72"
+  }
+ ]
+}

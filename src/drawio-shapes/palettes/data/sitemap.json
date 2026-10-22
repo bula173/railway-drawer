@@ -1,0 +1,758 @@
+{
+ "id": "sitemap",
+ "title": "Sitemap",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:8",
+ "entries": [
+  {
+   "id": "sitemap-0-page",
+   "title": "Page",
+   "tags": "sitemap page  Page",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.page;",
+   "value": "Page",
+   "shapeNames": [
+    "mxgraph.sitemap.page"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:24"
+  },
+  {
+   "id": "sitemap-1-about-us",
+   "title": "About us",
+   "tags": "sitemap about  About us",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.about_us;",
+   "value": "About us",
+   "shapeNames": [
+    "mxgraph.sitemap.about_us"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:26"
+  },
+  {
+   "id": "sitemap-2-audio",
+   "title": "Audio",
+   "tags": "sitemap audio  Audio",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.audio;",
+   "value": "Audio",
+   "shapeNames": [
+    "mxgraph.sitemap.audio"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:28"
+  },
+  {
+   "id": "sitemap-3-biography",
+   "title": "Biography",
+   "tags": "sitemap biography  Biography",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.biography;",
+   "value": "Biography",
+   "shapeNames": [
+    "mxgraph.sitemap.biography"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:30"
+  },
+  {
+   "id": "sitemap-4-blog",
+   "title": "Blog",
+   "tags": "sitemap blog  Blog",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.blog;",
+   "value": "Blog",
+   "shapeNames": [
+    "mxgraph.sitemap.blog"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:32"
+  },
+  {
+   "id": "sitemap-5-calendar",
+   "title": "Calendar",
+   "tags": "sitemap calendar  Calendar",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.calendar;",
+   "value": "Calendar",
+   "shapeNames": [
+    "mxgraph.sitemap.calendar"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:34"
+  },
+  {
+   "id": "sitemap-6-chart",
+   "title": "Chart",
+   "tags": "sitemap chart  Chart",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.chart;",
+   "value": "Chart",
+   "shapeNames": [
+    "mxgraph.sitemap.chart"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:36"
+  },
+  {
+   "id": "sitemap-7-chat",
+   "title": "Chat",
+   "tags": "sitemap chat  Chat",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.chat;",
+   "value": "Chat",
+   "shapeNames": [
+    "mxgraph.sitemap.chat"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:38"
+  },
+  {
+   "id": "sitemap-8-cloud",
+   "title": "Cloud",
+   "tags": "sitemap cloud  Cloud",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.cloud;",
+   "value": "Cloud",
+   "shapeNames": [
+    "mxgraph.sitemap.cloud"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:40"
+  },
+  {
+   "id": "sitemap-9-contact",
+   "title": "Contact",
+   "tags": "sitemap contact  Contact",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.contact;",
+   "value": "Contact",
+   "shapeNames": [
+    "mxgraph.sitemap.contact"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:42"
+  },
+  {
+   "id": "sitemap-10-contact-us",
+   "title": "Contact us",
+   "tags": "sitemap contact  Contact us",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.contact_us;",
+   "value": "Contact us",
+   "shapeNames": [
+    "mxgraph.sitemap.contact_us"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:44"
+  },
+  {
+   "id": "sitemap-11-document",
+   "title": "Document",
+   "tags": "sitemap document  Document",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.document;",
+   "value": "Document",
+   "shapeNames": [
+    "mxgraph.sitemap.document"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:46"
+  },
+  {
+   "id": "sitemap-12-download",
+   "title": "Download",
+   "tags": "sitemap download  Download",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.download;",
+   "value": "Download",
+   "shapeNames": [
+    "mxgraph.sitemap.download"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:48"
+  },
+  {
+   "id": "sitemap-13-error",
+   "title": "Error",
+   "tags": "sitemap error  Error",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.error;",
+   "value": "Error",
+   "shapeNames": [
+    "mxgraph.sitemap.error"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:50"
+  },
+  {
+   "id": "sitemap-14-faq",
+   "title": "FAQ",
+   "tags": "sitemap faq frequently asked questions  FAQ",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.faq;",
+   "value": "FAQ",
+   "shapeNames": [
+    "mxgraph.sitemap.faq"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:52"
+  },
+  {
+   "id": "sitemap-15-form",
+   "title": "Form",
+   "tags": "sitemap form  Form",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.form;",
+   "value": "Form",
+   "shapeNames": [
+    "mxgraph.sitemap.form"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:54"
+  },
+  {
+   "id": "sitemap-16-gallery",
+   "title": "Gallery",
+   "tags": "sitemap gallery  Gallery",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.gallery;",
+   "value": "Gallery",
+   "shapeNames": [
+    "mxgraph.sitemap.gallery"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:56"
+  },
+  {
+   "id": "sitemap-17-game",
+   "title": "Game",
+   "tags": "sitemap game  Game",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.game;",
+   "value": "Game",
+   "shapeNames": [
+    "mxgraph.sitemap.game"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:58"
+  },
+  {
+   "id": "sitemap-18-home",
+   "title": "Home",
+   "tags": "sitemap home  Home",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.home;",
+   "value": "Home",
+   "shapeNames": [
+    "mxgraph.sitemap.home"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:60"
+  },
+  {
+   "id": "sitemap-19-info",
+   "title": "Info",
+   "tags": "sitemap info  Info",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.info;",
+   "value": "Info",
+   "shapeNames": [
+    "mxgraph.sitemap.info"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:62"
+  },
+  {
+   "id": "sitemap-20-jobs",
+   "title": "Jobs",
+   "tags": "sitemap jobs  Jobs",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.jobs;",
+   "value": "Jobs",
+   "shapeNames": [
+    "mxgraph.sitemap.jobs"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:64"
+  },
+  {
+   "id": "sitemap-21-log",
+   "title": "Log",
+   "tags": "sitemap log  Log",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.log;",
+   "value": "Log",
+   "shapeNames": [
+    "mxgraph.sitemap.log"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:66"
+  },
+  {
+   "id": "sitemap-22-login",
+   "title": "Login",
+   "tags": "sitemap login  Login",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.login;",
+   "value": "Login",
+   "shapeNames": [
+    "mxgraph.sitemap.login"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:68"
+  },
+  {
+   "id": "sitemap-23-mail",
+   "title": "Mail",
+   "tags": "sitemap mail  Mail",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.mail;",
+   "value": "Mail",
+   "shapeNames": [
+    "mxgraph.sitemap.mail"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:70"
+  },
+  {
+   "id": "sitemap-24-map",
+   "title": "Map",
+   "tags": "sitemap map  Map",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.map;",
+   "value": "Map",
+   "shapeNames": [
+    "mxgraph.sitemap.map"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:72"
+  },
+  {
+   "id": "sitemap-25-news",
+   "title": "News",
+   "tags": "sitemap news  News",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.news;",
+   "value": "News",
+   "shapeNames": [
+    "mxgraph.sitemap.news"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:74"
+  },
+  {
+   "id": "sitemap-26-payment",
+   "title": "Payment",
+   "tags": "sitemap payment  Payment",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.payment;",
+   "value": "Payment",
+   "shapeNames": [
+    "mxgraph.sitemap.payment"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:76"
+  },
+  {
+   "id": "sitemap-27-photo",
+   "title": "Photo",
+   "tags": "sitemap photo  Photo",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.photo;",
+   "value": "Photo",
+   "shapeNames": [
+    "mxgraph.sitemap.photo"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:78"
+  },
+  {
+   "id": "sitemap-28-portfolio",
+   "title": "Portfolio",
+   "tags": "sitemap portfolio  Portfolio",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.portfolio;",
+   "value": "Portfolio",
+   "shapeNames": [
+    "mxgraph.sitemap.portfolio"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:80"
+  },
+  {
+   "id": "sitemap-29-post",
+   "title": "Post",
+   "tags": "sitemap post  Post",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.post;",
+   "value": "Post",
+   "shapeNames": [
+    "mxgraph.sitemap.post"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:82"
+  },
+  {
+   "id": "sitemap-30-pricing",
+   "title": "Pricing",
+   "tags": "sitemap pricing  Pricing",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.pricing;",
+   "value": "Pricing",
+   "shapeNames": [
+    "mxgraph.sitemap.pricing"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:84"
+  },
+  {
+   "id": "sitemap-31-print",
+   "title": "Print",
+   "tags": "sitemap print  Print",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.print;",
+   "value": "Print",
+   "shapeNames": [
+    "mxgraph.sitemap.print"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:86"
+  },
+  {
+   "id": "sitemap-32-products",
+   "title": "Products",
+   "tags": "sitemap products  Products",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.products;",
+   "value": "Products",
+   "shapeNames": [
+    "mxgraph.sitemap.products"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:88"
+  },
+  {
+   "id": "sitemap-33-profile",
+   "title": "Profile",
+   "tags": "sitemap profile  Profile",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.profile;",
+   "value": "Profile",
+   "shapeNames": [
+    "mxgraph.sitemap.profile"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:90"
+  },
+  {
+   "id": "sitemap-34-references",
+   "title": "References",
+   "tags": "sitemap references  References",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.references;",
+   "value": "References",
+   "shapeNames": [
+    "mxgraph.sitemap.references"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:92"
+  },
+  {
+   "id": "sitemap-35-script",
+   "title": "Script",
+   "tags": "sitemap script  Script",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.script;",
+   "value": "Script",
+   "shapeNames": [
+    "mxgraph.sitemap.script"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:94"
+  },
+  {
+   "id": "sitemap-36-search",
+   "title": "Search",
+   "tags": "sitemap search  Search",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.search;",
+   "value": "Search",
+   "shapeNames": [
+    "mxgraph.sitemap.search"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:96"
+  },
+  {
+   "id": "sitemap-37-security",
+   "title": "Security",
+   "tags": "sitemap security  Security",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.security;",
+   "value": "Security",
+   "shapeNames": [
+    "mxgraph.sitemap.security"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:98"
+  },
+  {
+   "id": "sitemap-38-services",
+   "title": "Services",
+   "tags": "sitemap services  Services",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.services;",
+   "value": "Services",
+   "shapeNames": [
+    "mxgraph.sitemap.services"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:100"
+  },
+  {
+   "id": "sitemap-39-settings",
+   "title": "Settings",
+   "tags": "sitemap settings  Settings",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.settings;",
+   "value": "Settings",
+   "shapeNames": [
+    "mxgraph.sitemap.settings"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:102"
+  },
+  {
+   "id": "sitemap-40-shopping",
+   "title": "Shopping",
+   "tags": "sitemap shopping  Shopping",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.shopping;",
+   "value": "Shopping",
+   "shapeNames": [
+    "mxgraph.sitemap.shopping"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:104"
+  },
+  {
+   "id": "sitemap-41-sitemap",
+   "title": "Sitemap",
+   "tags": "sitemap sitemap  Sitemap",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.sitemap;",
+   "value": "Sitemap",
+   "shapeNames": [
+    "mxgraph.sitemap.sitemap"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:106"
+  },
+  {
+   "id": "sitemap-42-slideshow",
+   "title": "Slideshow",
+   "tags": "sitemap slideshow  Slideshow",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.slideshow;",
+   "value": "Slideshow",
+   "shapeNames": [
+    "mxgraph.sitemap.slideshow"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:108"
+  },
+  {
+   "id": "sitemap-43-sports",
+   "title": "Sports",
+   "tags": "sitemap sports  Sports",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.sports;",
+   "value": "Sports",
+   "shapeNames": [
+    "mxgraph.sitemap.sports"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:110"
+  },
+  {
+   "id": "sitemap-44-success",
+   "title": "Success",
+   "tags": "sitemap success  Success",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.success;",
+   "value": "Success",
+   "shapeNames": [
+    "mxgraph.sitemap.success"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:112"
+  },
+  {
+   "id": "sitemap-45-text",
+   "title": "Text",
+   "tags": "sitemap text  Text",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.text;",
+   "value": "Text",
+   "shapeNames": [
+    "mxgraph.sitemap.text"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:114"
+  },
+  {
+   "id": "sitemap-46-upload",
+   "title": "Upload",
+   "tags": "sitemap upload  Upload",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.upload;",
+   "value": "Upload",
+   "shapeNames": [
+    "mxgraph.sitemap.upload"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:116"
+  },
+  {
+   "id": "sitemap-47-user",
+   "title": "User",
+   "tags": "sitemap user  User",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.user;",
+   "value": "User",
+   "shapeNames": [
+    "mxgraph.sitemap.user"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:118"
+  },
+  {
+   "id": "sitemap-48-video",
+   "title": "Video",
+   "tags": "sitemap video  Video",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.video;",
+   "value": "Video",
+   "shapeNames": [
+    "mxgraph.sitemap.video"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:120"
+  },
+  {
+   "id": "sitemap-49-warning",
+   "title": "Warning",
+   "tags": "sitemap warning  Warning",
+   "kind": "vertex",
+   "width": 120,
+   "height": 70,
+   "style": "html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.warning;",
+   "value": "Warning",
+   "shapeNames": [
+    "mxgraph.sitemap.warning"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Sitemap.js:122"
+  }
+ ]
+}

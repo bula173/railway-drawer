@@ -1,0 +1,400 @@
+{
+ "id": "veeamMisc",
+ "title": "Veeam / Miscellaneous",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-Veeam.js:7",
+ "entries": [
+  {
+   "id": "veeamMisc-0-alarm",
+   "title": "Alarm",
+   "tags": "veeam misc alarm veeam vmware virtual machine misc miscellaneous Alarm",
+   "kind": "vertex",
+   "width": 52.8,
+   "height": 37.6,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.alarm;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.alarm"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:140"
+  },
+  {
+   "id": "veeamMisc-1-building",
+   "title": "Building",
+   "tags": "veeam misc building veeam vmware virtual machine misc miscellaneous Building",
+   "kind": "vertex",
+   "width": 63.2,
+   "height": 55.2,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.building;",
+   "shapeNames": [
+    "mxgraph.veeam.building"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:142"
+  },
+  {
+   "id": "veeamMisc-2-cloud",
+   "title": "Cloud",
+   "tags": "veeam misc cloud veeam vmware virtual machine misc miscellaneous Cloud",
+   "kind": "vertex",
+   "width": 58.8,
+   "height": 41.6,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.cloud;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.cloud"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:144"
+  },
+  {
+   "id": "veeamMisc-3-checked-doc",
+   "title": "Checked doc",
+   "tags": "veeam misc checked doc document veeam vmware virtual machine misc miscellaneous Checked doc",
+   "kind": "vertex",
+   "width": 50.8,
+   "height": 61.6,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.checked_doc;",
+   "shapeNames": [
+    "mxgraph.veeam.checked_doc"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:146"
+  },
+  {
+   "id": "veeamMisc-4-download",
+   "title": "Download",
+   "tags": "veeam misc download veeam vmware virtual machine misc miscellaneous Download",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.download;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.download"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:148"
+  },
+  {
+   "id": "veeamMisc-5-dns",
+   "title": "DNS",
+   "tags": "veeam misc dns domain name server veeam vmware virtual machine misc miscellaneous DNS",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.dns;",
+   "shapeNames": [
+    "mxgraph.veeam.dns"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:150"
+  },
+  {
+   "id": "veeamMisc-6-encryption-key",
+   "title": "Encryption key",
+   "tags": "veeam misc dns domain name server veeam vmware virtual machine misc miscellaneous Encryption key",
+   "kind": "vertex",
+   "width": 36.8,
+   "height": 50.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.encryption_key;",
+   "shapeNames": [
+    "mxgraph.veeam.encryption_key"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:152"
+  },
+  {
+   "id": "veeamMisc-7-file",
+   "title": "File",
+   "tags": "veeam misc file veeam vmware virtual machine misc miscellaneous File",
+   "kind": "vertex",
+   "width": 36.8,
+   "height": 50.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.file;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.file"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:154"
+  },
+  {
+   "id": "veeamMisc-8-folder",
+   "title": "Folder",
+   "tags": "veeam misc folder veeam vmware virtual machine misc miscellaneous Folder",
+   "kind": "vertex",
+   "width": 55.2,
+   "height": 51.2,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.folder;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.folder"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:156"
+  },
+  {
+   "id": "veeamMisc-9-globe",
+   "title": "Globe",
+   "tags": "veeam misc globe veeam vmware virtual machine misc miscellaneous Globe",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.globe;",
+   "shapeNames": [
+    "mxgraph.veeam.globe"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:158"
+  },
+  {
+   "id": "veeamMisc-10-iso",
+   "title": "ISO",
+   "tags": "veeam misc iso international standard organization veeam vmware virtual machine misc miscellaneous ISO",
+   "kind": "vertex",
+   "width": 36.8,
+   "height": 50.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.iso;",
+   "shapeNames": [
+    "mxgraph.veeam.iso"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:160"
+  },
+  {
+   "id": "veeamMisc-11-letter",
+   "title": "Letter",
+   "tags": "veeam misc letter veeam vmware virtual machine misc miscellaneous Letter",
+   "kind": "vertex",
+   "width": 46.4,
+   "height": 34.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.letter;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.letter"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:162"
+  },
+  {
+   "id": "veeamMisc-12-library",
+   "title": "Library",
+   "tags": "veeam misc library veeam vmware virtual machine misc miscellaneous Library",
+   "kind": "vertex",
+   "width": 48,
+   "height": 36.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.library;",
+   "shapeNames": [
+    "mxgraph.veeam.library"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:164"
+  },
+  {
+   "id": "veeamMisc-13-license",
+   "title": "License",
+   "tags": "veeam misc license veeam vmware virtual machine misc miscellaneous License",
+   "kind": "vertex",
+   "width": 50.8,
+   "height": 56.4,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.license;",
+   "shapeNames": [
+    "mxgraph.veeam.license"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:166"
+  },
+  {
+   "id": "veeamMisc-14-magnifying-glass",
+   "title": "Magnifying Glass",
+   "tags": "veeam misc magnifying glass veeam vmware virtual machine misc miscellaneous Magnifying Glass",
+   "kind": "vertex",
+   "width": 55.2,
+   "height": 54.4,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.magnifying_glass;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.veeam.magnifying_glass"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:168"
+  },
+  {
+   "id": "veeamMisc-15-script",
+   "title": "Script",
+   "tags": "veeam misc script veeam vmware virtual machine misc miscellaneous Script",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.script;",
+   "shapeNames": [
+    "mxgraph.veeam.script"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:170"
+  },
+  {
+   "id": "veeamMisc-16-search",
+   "title": "Search",
+   "tags": "veeam misc search veeam vmware virtual machine misc miscellaneous Search",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.search;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.search"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:172"
+  },
+  {
+   "id": "veeamMisc-17-smb",
+   "title": "SMB",
+   "tags": "veeam misc smb veeam vmware virtual machine misc miscellaneous SMB",
+   "kind": "vertex",
+   "width": 80,
+   "height": 56.4,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.smb;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.veeam.smb"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:174"
+  },
+  {
+   "id": "veeamMisc-18-tasks",
+   "title": "Tasks",
+   "tags": "veeam misc tasks veeam vmware virtual machine misc miscellaneous Tasks",
+   "kind": "vertex",
+   "width": 36.8,
+   "height": 50.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.tasks;",
+   "shapeNames": [
+    "mxgraph.veeam.tasks"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:176"
+  },
+  {
+   "id": "veeamMisc-19-table",
+   "title": "Table",
+   "tags": "veeam misc table veeam vmware virtual machine misc miscellaneous Table",
+   "kind": "vertex",
+   "width": 50.8,
+   "height": 50.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.table;",
+   "shapeNames": [
+    "mxgraph.veeam.table"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:178"
+  },
+  {
+   "id": "veeamMisc-20-time",
+   "title": "Time",
+   "tags": "veeam misc time veeam vmware virtual machine misc miscellaneous Time",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.time;",
+   "shapeNames": [
+    "mxgraph.veeam.time"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:180"
+  },
+  {
+   "id": "veeamMisc-21-part",
+   "title": "Part",
+   "tags": "veeam misc resource pool veeam vmware virtual machine misc miscellaneous Part",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.resource_pool;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.resource_pool"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:182"
+  },
+  {
+   "id": "veeamMisc-22-private-key",
+   "title": "Private Key",
+   "tags": "veeam misc private key veeam vmware virtual machine misc miscellaneous Private Key",
+   "kind": "vertex",
+   "width": 55.6,
+   "height": 50.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.private_key;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.private_key"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:184"
+  },
+  {
+   "id": "veeamMisc-23-report",
+   "title": "Report",
+   "tags": "veeam misc report veeam vmware virtual machine misc miscellaneous Report",
+   "kind": "vertex",
+   "width": 36.8,
+   "height": 50.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.report;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.report"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:186"
+  },
+  {
+   "id": "veeamMisc-24-policy",
+   "title": "Policy",
+   "tags": "veeam misc policy veeam vmware virtual machine misc miscellaneous Policy",
+   "kind": "vertex",
+   "width": 60.4,
+   "height": 58,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.privilege;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.privilege"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:188"
+  },
+  {
+   "id": "veeamMisc-25-restore",
+   "title": "Restore",
+   "tags": "veeam misc restore veeam vmware virtual machine misc miscellaneous Restore",
+   "kind": "vertex",
+   "width": 44.8,
+   "height": 44.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.restore;pointerEvents=1;",
+   "shapeNames": [
+    "mxgraph.veeam.restore"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:190"
+  },
+  {
+   "id": "veeamMisc-26-role",
+   "title": "Role",
+   "tags": "veeam misc role veeam vmware virtual machine misc miscellaneous Role",
+   "kind": "vertex",
+   "width": 36.8,
+   "height": 50.8,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.role;",
+   "shapeNames": [
+    "mxgraph.veeam.2d.role"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:192"
+  },
+  {
+   "id": "veeamMisc-27-transportation",
+   "title": "Transportation",
+   "tags": "veeam misc transportation veeam vmware virtual machine misc miscellaneous Transportation",
+   "kind": "vertex",
+   "width": 55.2,
+   "height": 38.4,
+   "style": "shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.transportation;",
+   "shapeNames": [
+    "mxgraph.veeam.transportation"
+   ],
+   "cls": "b",
+   "source": "js/diagramly/sidebar/Sidebar-Veeam.js:194"
+  }
+ ]
+}

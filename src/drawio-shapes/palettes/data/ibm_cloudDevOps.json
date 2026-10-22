@@ -1,0 +1,128 @@
+{
+ "id": "ibm_cloudDevOps",
+ "title": "IBM / DevOps",
+ "drawioTag": "v32.4.1",
+ "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:7",
+ "entries": [
+  {
+   "id": "ibm_cloudDevOps-0-continuous-delivery",
+   "title": "Continuous Delivery",
+   "tags": "ibm cloud devops continuous delivery",
+   "kind": "cells",
+   "width": 48,
+   "height": 48,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Continuous Delivery\" style=\"shape=rect;fillColor=#EE5396;aspect=fixed;resizable=0;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeColor=none;fontSize=14;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"48\" height=\"48\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"fillColor=#ffffff;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;shape=mxgraph.ibm_cloud.ibm-cloud--continuous-delivery\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.ibm-cloud--continuous-delivery"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:427"
+  },
+  {
+   "id": "ibm_cloudDevOps-1-continuous-integration",
+   "title": "Continuous Integration",
+   "tags": "ibm cloud devops continuous integration",
+   "kind": "cells",
+   "width": 48,
+   "height": 48,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Continuous Integration\" style=\"shape=rect;fillColor=#EE5396;aspect=fixed;resizable=0;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeColor=none;fontSize=14;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"48\" height=\"48\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"fillColor=#ffffff;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;shape=mxgraph.ibm_cloud.continuous-integration\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.continuous-integration"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:427"
+  },
+  {
+   "id": "ibm_cloudDevOps-2-source-code-repository",
+   "title": "Source Code Repository",
+   "tags": "ibm cloud devops source code repository",
+   "kind": "cells",
+   "width": 48,
+   "height": 48,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Source Code Repository\" style=\"shape=rect;fillColor=#EE5396;aspect=fixed;resizable=0;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeColor=none;fontSize=14;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"48\" height=\"48\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"fillColor=#ffffff;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;shape=mxgraph.ibm_cloud.repo--source-code\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.repo--source-code"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:427"
+  },
+  {
+   "id": "ibm_cloudDevOps-3-toolchain",
+   "title": "Toolchain",
+   "tags": "ibm cloud devops toolchain",
+   "kind": "cells",
+   "width": 48,
+   "height": 48,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Toolchain\" style=\"shape=rect;fillColor=#EE5396;aspect=fixed;resizable=0;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeColor=none;fontSize=14;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"48\" height=\"48\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"fillColor=#ffffff;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;shape=mxgraph.ibm_cloud.ibm--toolchain\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.ibm--toolchain"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:427"
+  },
+  {
+   "id": "ibm_cloudDevOps-4-mq",
+   "title": "MQ",
+   "tags": "ibm cloud devops mq",
+   "kind": "cells",
+   "width": 48,
+   "height": 48,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"MQ\" style=\"shape=rect;fillColor=#EE5396;aspect=fixed;resizable=0;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeColor=none;fontSize=14;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"48\" height=\"48\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"fillColor=#ffffff;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;shape=mxgraph.ibm_cloud.ibm--mq\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.ibm--mq"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:427"
+  },
+  {
+   "id": "ibm_cloudDevOps-5-ansible",
+   "title": "Ansible",
+   "tags": "ibm cloud devops ansible",
+   "kind": "cells",
+   "width": 48,
+   "height": 48,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Ansible\" style=\"shape=rect;fillColor=#EE5396;aspect=fixed;resizable=0;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeColor=none;fontSize=14;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"48\" height=\"48\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"fillColor=#ffffff;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;shape=mxgraph.ibm_cloud.logo--ansible-community\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.logo--ansible-community"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:427"
+  },
+  {
+   "id": "ibm_cloudDevOps-6-gitlab",
+   "title": "GitLab",
+   "tags": "ibm cloud devops gitlab",
+   "kind": "cells",
+   "width": 48,
+   "height": 48,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"GitLab\" style=\"shape=rect;fillColor=#EE5396;aspect=fixed;resizable=0;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeColor=none;fontSize=14;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"48\" height=\"48\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"fillColor=#ffffff;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;shape=mxgraph.ibm_cloud.logo--gitlab\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.logo--gitlab"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:427"
+  },
+  {
+   "id": "ibm_cloudDevOps-7-integration-pak",
+   "title": "Integration Pak",
+   "tags": "ibm cloud devops integration pak",
+   "kind": "cells",
+   "width": 48,
+   "height": 48,
+   "xml": "<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"Integration Pak\" style=\"shape=rect;fillColor=#EE5396;aspect=fixed;resizable=0;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeColor=none;fontSize=14;\" vertex=\"1\" parent=\"1\"><mxGeometry width=\"48\" height=\"48\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"\" style=\"fillColor=#ffffff;strokeColor=none;dashed=0;outlineConnect=0;html=1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;part=1;movable=0;resizable=0;rotatable=0;shape=mxgraph.ibm_cloud.ibm-cloud-pak--integration\" vertex=\"1\" parent=\"2\"><mxGeometry width=\"24\" height=\"24\" relative=\"1\" as=\"geometry\"><mxPoint x=\"12\" y=\"12\" as=\"offset\"/></mxGeometry></mxCell></root></mxGraphModel>",
+   "shapeNames": [
+    "rect",
+    "mxgraph.ibm_cloud.ibm-cloud-pak--integration"
+   ],
+   "cls": "d",
+   "source": "js/diagramly/sidebar/Sidebar-IBMCloud.js:427"
+  }
+ ]
+}
