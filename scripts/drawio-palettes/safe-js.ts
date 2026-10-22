@@ -149,7 +149,16 @@ function callbackOf(it: Interpreter, fn: unknown): (...a: unknown[]) => unknown 
   return (...a: unknown[]) => it.call(fn, undefined, a);
 }
 
-const STRING_METHODS: Record<string, (s: string, args: unknown[], it: Interpreter) => unknown> = {
+/** Prototype-less method table: only its own keys exist (no `constructor`, `__proto__`, ...). */
+function methodTable<F>(table: Record<string, F>): Record<string, F> {
+  return Object.assign(Object.create(null) as Record<string, F>, table);
+}
+
+type StrMethod = (s: string, args: unknown[], it: Interpreter) => unknown;
+type ArrMethod = (arr: unknown[], args: unknown[], it: Interpreter) => unknown;
+type NumMethod = (n: number, args: unknown[]) => unknown;
+
+const STRING_METHODS = methodTable<StrMethod>({
   charAt: (s, a) => s.charAt(Number(a[0] ?? 0)),
   charCodeAt: (s, a) => s.charCodeAt(Number(a[0] ?? 0)),
   concat: (s, a) => s.concat(...a.map(toStr)),
@@ -173,12 +182,12 @@ const STRING_METHODS: Record<string, (s: string, args: unknown[], it: Interprete
   substring: (s, a) => s.substring(Number(a[0] ?? 0), a[1] == null ? undefined : Number(a[1])),
   toLowerCase: (s) => s.toLowerCase(),
   toUpperCase: (s) => s.toUpperCase(),
-  toString: (s) => s,
+  toString: (s: string) => s,
   trim: (s) => s.trim(),
-  valueOf: (s) => s,
-};
+  valueOf: (s: string) => s,
+});
 
-const ARRAY_METHODS: Record<string, (arr: unknown[], args: unknown[], it: Interpreter) => unknown> = {
+const ARRAY_METHODS = methodTable<ArrMethod>({
   concat: (arr, a) => arr.concat(...a.map((x) => (Array.isArray(x) ? x : [x]))),
   every: (arr, a, it) => { const f = callbackOf(it, a[0]); return arr.every((x, i) => !!f(x, i, arr)); },
   filter: (arr, a, it) => { const f = callbackOf(it, a[0]); return arr.filter((x, i) => !!f(x, i, arr)); },
@@ -199,15 +208,15 @@ const ARRAY_METHODS: Record<string, (arr: unknown[], args: unknown[], it: Interp
     return arr.sort((x, y) => Number(f(x, y)));
   },
   splice: (arr, a) => arr.splice(Number(a[0]), a[1] == null ? arr.length : Number(a[1]), ...a.slice(2)),
-  toString: (arr) => toStr(arr),
+  toString: (arr: unknown[]) => toStr(arr),
   unshift: (arr, a) => arr.unshift(...a),
-};
+});
 
-const NUMBER_METHODS: Record<string, (n: number, args: unknown[]) => unknown> = {
+const NUMBER_METHODS = methodTable<NumMethod>({
   toFixed: (n, a) => n.toFixed(a[0] == null ? 0 : Number(a[0])),
-  toString: (n, a) => n.toString(a[0] == null ? undefined : Number(a[0])),
-  valueOf: (n) => n,
-};
+  toString: (n: number, a: unknown[]) => n.toString(a[0] == null ? undefined : Number(a[0])),
+  valueOf: (n: number) => n,
+});
 
 // ---------------------------------------------------------------------------------------
 // interpreter

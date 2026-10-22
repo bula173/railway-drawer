@@ -60,7 +60,7 @@ export function decodeEntryXml(raw: string): string | null {
   }
 }
 
-function readLibraryJson(text: string): unknown {
+export function readLibraryJson(text: string): unknown {
   const trimmed = (text.charCodeAt(0) === 0xfeff ? text.slice(1) : text).trim();
   if (trimmed.startsWith('[')) return JSON.parse(trimmed);
   const doc = new DOMParser().parseFromString(trimmed, 'application/xml');

@@ -1560,9 +1560,7 @@
    "modules": []
   },
   "sap": {
-   "stencils": [
-    "sap.xml"
-   ],
+   "stencils": [],
    "modules": [
     "mxSAP"
    ]

@@ -71,7 +71,7 @@ describe('drawio palette with the real data', () => {
     });
     await view.ready;
 
-    const ids = Array.from(container.querySelectorAll<HTMLElement>('.rd-dp-category')).map((s) => s.dataset.paletteId);
+    const ids = Array.from(container.querySelectorAll<HTMLElement>('.rd-dp-category:not(.rd-dp-catalogue)')).map((s) => s.dataset.paletteId);
     expect(ids).toEqual(['general', 'misc', 'advanced', 'basic', 'arrows2', 'flowchart', 'arrows', 'ertms']);
     expect(view.isPaletteVisible('arrows')).toBe(false);
 

@@ -517,6 +517,8 @@ const shapesPaletteView = createDrawioPaletteView({
     ...shapesTabPalettes(() => MERGED_APP_GROUPS.flatMap((g) => shapeRegistry.getShapesByGroup(g))),
   ],
   defaultExpanded: ['ertms', 'general'],
+  // draw.io's Basic palette is part of the merged General section
+  skipCataloguePalettes: ['basic'],
   captionPalettes: ['ertms', ...RAILWAY_LIBRARIES.map((lib) => lib.id)],
   dropTarget: graphContainer,
   onError: (message) => globalNotificationManager.error(message),

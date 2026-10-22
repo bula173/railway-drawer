@@ -21,12 +21,21 @@ Ported shapes and the stencil engine are under src/drawio-shapes/:
                                         isometric edge style (from Shapes.js and Graph.js)
   - src/drawio-shapes/js/mx-libs/    shapes/mxBasic.js, shapes/mxArrows.js, shapes/mxFlowchart.js
   - src/shapes/drawio-arrows/        legacy aliases of the mxArrows ports
-Palette data in src/drawio-shapes/palettes/data/ (from the Sidebar*.js palettes) and the
-stencil sets in public/stencils/ (from js/stencils.min.js) are generated from it by
-scripts/drawio-palettes/ (npm run drawio:palettes).
+  - src/drawio-shapes/vendor/        draw.io's shape libraries (shapes/**/*.js and the Shapes.js
+                                     shapes not ported above), unmodified, wrapped as ES modules
+  - src/drawio-shapes/vendor-runtime/  mxGraph compatibility layer for those modules
+Palette data in src/drawio-shapes/palettes/data/ (from all Sidebar*.js palettes), the stencil
+sets in public/stencils/ (all of js/stencils.min.js) and the palette images in public/img/
+(src/main/webapp/img/) are generated from it by scripts/drawio-palettes/ (npm run drawio:palettes).
+
+Vendor icon sets among the draw.io libraries (AWS, Microsoft Azure/Office, Google Cloud, Cisco,
+IBM, Alibaba Cloud, Salesforce, SAP, Veeam, Citrix, VMware, Kubernetes, OpenStack, Atlassian,
+...) are third-party artwork and trademarks of their owners, redistributed by draw.io; see
+third_party/drawio-libraries/ (one notice per vendor).
 
 Each ported file carries the draw.io copyright line, the Apache-2.0 notice and the upstream
-file/line references. Changes: translated to TypeScript for @maxgraph/core 0.10.
+file/line references. Changes: translated to TypeScript for @maxgraph/core 0.10. The vendored
+modules carry a header naming the upstream file; their upstream code is not modified.
 
 The draw.io stencil libraries are subject to the additional terms in public/stencils/LICENSE
 (no use in Atlassian products or the Atlassian marketplace without written permission;

@@ -325,7 +325,13 @@ for (const key of Object.keys(libs).sort()) {
   const stencils: string[] = [];
   const mods: string[] = [];
   for (const p of list) {
-    if (p.startsWith('stencils/')) stencils.push(p.slice('stencils/'.length));
+    if (p.startsWith('stencils/')) {
+      // Editor.js lists a few sets js/stencils.min.js does not have (e.g. sap.xml): draw.io's own
+      // request 404s, so they are left out here
+      const file = p.slice('stencils/'.length);
+      if (fs.existsSync(path.join(REPO_ROOT, 'public', 'stencils', file))) stencils.push(file);
+      else console.log(`note: Editor.js library ${key} lists ${p}, which is not in the stencil bundle`);
+    }
     else if (p.startsWith('shapes/')) {
       if (PORTED.has(p)) continue;
       const id = byFile.get(p);

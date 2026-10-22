@@ -181,6 +181,13 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   the drawing stays unchanged, reload keeps the script ("In sync with the drawing"); File > Import > Railway Script… (new
   tab named after `name`), File > Export > Railway Script… (.rdl.yaml = the text, .rdl.json = the data, generated for a tab
   without a script).
+- `tests/e2e/all-shapes.spec.ts` (any port): every draw.io library. More shapes… dialog (draw.io's categories, all
+  libraries off, ⓘ trademark note on vendor sets, preview pane, filter) turns on UML, BPMN 2.0, AWS 2026; their
+  sections render (vendored JS shapes + stencils, no thumbnail errors); Actor, Lambda, Actor Lifeline insert and the
+  autosave holds their exact draw.io styles; the choice survives a reload. Search "actor"/"lambda"/"router" lists
+  hidden libraries grouped by library (a result inserts, "Show library" adds it). User libraries: ＋ Add library > import
+  file, insert + ＋ (add selection), drag a General tile onto it, ✎ rename, reload keeps it, ⤓ export = draw.io
+  `<mxlibrary>` (escaped JSON body, 3 entries, style verbatim), × removes.
 - `tests/e2e/railway-shapes.spec.ts` (any port): the railway library sections follow ERTMS (ERTMS/ETCS extra, Polish
   signalling (PKP PLK), Track layout; captioned, > 30 tiles each); "Semafor 3-komorowy prawy" inserts as signal S1
   (main, nominal, 3 aspects) and Railway > Object State > Proceed / Stop paints its 3 lamps; a second semafor gets S2;
@@ -605,8 +612,8 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
 - `engine/`: stencil engine. `installStencilEngine({ baseUrl })` (once, in `main-editor.ts`) patches
   `CellRenderer.createShape` for `shape=stencil(<base64 deflate>)` and wraps `StencilShapeRegistry.getStencil`
   (JS shapes win over stencils of the same name, as in draw.io). Named stencil sets (`mxgraph.basic.*`, ...)
-  are fetched from `public/stencils/<basename>.xml` by `ensureStencilsForXml(xmlOrStyles)` (only basic,
-  flowchart, arrows and mscae/enterprise are vendored). `installDrawioCompat(graph)` resolves `light-dark()`
+  are fetched from `public/stencils/<basename>.xml` by `ensureStencilsForXml(xmlOrStyles)` (all 204 sets are vendored; see "All draw.io
+  libraries"). `installDrawioCompat(graph)` resolves `light-dark()`
   and `default` colours (light theme). `parseMxLibrary` / `entryToCells` read any `<mxlibrary>`.
 - `js/shapes-core/` (Shapes.js vertex shapes + perimeters), `js/shapes-edges/` (table, flexArrow, link,
   partialRectangle, curvedText, ...; `installTableSupport(graph)`: table/stack layouts, collapsed tables),
@@ -614,7 +621,8 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   names by `registerDrawioJsShapes()` in `src/shapes/index.ts`, before the app's own shapes. draw.io's
   `hexagon` replaces maxGraph's core hexagon; the app's hexagon is `customHexagon`/`hexagon-shape`.
   `src/shapes/drawio-arrows/` keeps the old `mxarrows.Arrows2*` keys as aliases (export writes the real names).
-- `palettes/`: `PALETTES` + `loadPalette(id)` (one lazy chunk per palette): General 45, Misc 54, Advanced 33,
+- `palettes/`: `PALETTES` + `loadPalette(id)` (one lazy chunk per palette, any of the 504 ids; `loadPaletteCatalogue()`,
+  `loadPaletteSearchIndex()`): General 45, Misc 54, Advanced 33,
   Basic 76, Arrows (arrows2) 31, Flowchart 34, legacy Arrows 34 (hidden by default). Generated JSON in
   `palettes/data/`; never edit it by hand.
 - Regenerating (`npm run drawio:palettes`, see `scripts/drawio-palettes/README.md`): fetch-sources.ts downloads
@@ -639,7 +647,7 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   the Shapes-tab view handles its drops since palette/entry ids are the same). Order: draw.io palettes, then ERTMS (`public/libraries/ertms.xml`,
   the default ERTMS palette, showing only its 18 simple elements — the 19 scenario diagrams are ERTMS templates,
   see Templates below; the `src/shapes/ertms` placeholders are renderers only, for old files), then
-  user libraries ("Import library…", stored in localStorage `rd.drawioLibraries`). Thumbnails come from one
+  user libraries ("＋ Add library", stored in localStorage `rd.drawioLibraries`; see "All draw.io libraries"). Thumbnails come from one
   hidden graph (draw.io defaults, table support). Click inserts at the view centre, drag drops at the pointer
   (dataTransfer type `application/x-rd-drawio-entry`).
 - maxGraph 0.10.3 gaps fixed for draw.io content (engine/): `stencil-fixes.ts` (StencilShape read
@@ -663,6 +671,62 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   the original string and the export writes it back while the parsed style is unchanged; `addAppDefaults`
   only writes colours/arrows where the app would render differently from draw.io's defaults.
   `src/__tests__/services/drawio-xml-palettes.test.ts` checks every palette entry and every ERTMS tile.
+
+### All draw.io libraries (504 palettes, 13,971 entries; "More shapes…", search, user libraries)
+
+- **Generator** (`npm run drawio:palettes`, `scripts/drawio-palettes/README.md`): `fetch-sources.ts` fetches every
+  `js/diagramly/sidebar/Sidebar-*.js`, `shapes/**`, `img/**` (+ Editor.js, Dialogs.js, resources/dia.txt, mxConstants.js)
+  **by commit** `9034053f…` (tag v32.4.1), each file checked against the commit's git blob id. Downloaded sources are
+  data: `safe-js.ts` is a closed tree-walking interpreter (TypeScript parser, no eval/vm/Function; prototype-less
+  objects, allow-listed pure methods) in which `extract-palettes.ts` runs grapheditor Sidebar.js (General..UML), every
+  Sidebar-*.js (not Sidebar-Advanced.js: ELK live layout containers) and Sidebar.js `initPalettes()`/`updateEntries()`
+  against a recording Sidebar stub. The 7 old palette files are byte-identical. Writes `palettes/data/<id>.json` (file =
+  id, or `p-<slug>` for ids with spaces), `catalogue.json` (draw.io's More shapes categories, 69 libraries =
+  `Sidebar.configuration`, palettes with counts/JS shapes/stencils, vendor `attribution`/`notice`/`vendorIcons` from
+  `libraries.ts`), `search-index.json` (`title\ttags` per entry), `third_party/drawio-libraries/*.md` (one notice per
+  vendor), copies all 2094 `img/**` images to `public/img/` (styles keep `image=img/lib/...`, resolved against the app
+  base). `decode-stencils-bundle.ts` writes all 204 stencil sets. Never edit generated files by hand.
+- **JS shape libraries** (`vendor-shapes.ts` -> `src/drawio-shapes/vendor/*.js`, 46 modules / 703 shapes): upstream
+  `shapes/**/*.js` (not mxBasic/mxArrows/mxFlowchart, which are TS ports) and the 40 Shapes.js shapes the TS port lacks
+  (`Shapes-extra.js`: statements of those classes + their local dependencies, AST-selected), copied **unmodified** into
+  `export default function install(mx) { var mxShape = mx.mxShape, ...; <upstream> }` (`// @ts-nocheck`,
+  `/* eslint-disable */`). Free identifiers are checked against the shim (unknown global = generator error); undeclared
+  assignments become module `var`s; top-level names other files use go through `mx.publish`/`mx.lookup` (`deps` in
+  `vendor/index.json`, e.g. ArchiMate4 -> ArchiMate3). `index.json` also has `mxStencilRegistry.libraries` from
+  Editor.js (basename -> stencil files + modules; sets missing from the bundle, e.g. sap.xml, dropped) and per module the
+  stencils it draws itself. `vendor-runtime/mx-shim.ts`: mxShape/mxActor/... = ES5-callable wrappers of the maxGraph
+  classes (or the app's registered draw.io ports): `Base.call(this)` copies a fresh instance's fields that the upstream
+  prototypes do not define; `strokewidth` alias; mxUtils/mxConstants subsets (`vendor/mx-constants.json`);
+  `mxCellRenderer.registerShape` never replaces an app shape; `getShape()` wraps TS classes (statics `cst`/
+  `customProperties` on the prototype); `Graph.handleFactory` -> `registerDrawioHandleFactory` (handles/install.ts);
+  `GraphDataModel.prototype.getParent` added for mxRack.js. `vendor-runtime/loader.ts` (lazy chunk) installs modules
+  (deps first, once) via `import.meta.glob`.
+- **Loading**: `ensureStencilsForXml` (engine) collects unknown shape names and, for registered vendored JS shapes, the
+  basenames whose library was not requested yet; then dynamically imports the loader -> modules + stencil files ->
+  `js:<module>` in the result so callers refresh. Opening a drawing, inserting, thumbnails and pastes all go through it.
+- **UI** (`src/ui/drawio-palette/`): `createDrawioPaletteView({ catalogue (default = showMoreMenu), skipCataloguePalettes })`
+  adds every catalogue palette as a hidden lazy section (`.rd-dp-catalogue`, `data-library`, ⓘ attribution) after the
+  built-in sections, before user libraries, once `loadPaletteCatalogue()` resolved (`view.catalogueReady`); palette data
+  loads on expand/search only; `ready` still covers just the built-in sections. Main editor passes
+  `skipCataloguePalettes: ['basic']` (merged General). "More shapes…" = dialog `.rd-dp-menu` (`role=dialog`): "In the
+  Shapes tab" rows (unchanged `.rd-dp-menu-row`, data-palette-id / data-menu-item-id), then `more-shapes-dialog.ts`
+  (lazy): filter, draw.io categories + "Legacy" (azure, veeam, arrows not in draw.io's dialog), one checkbox per library
+  (`input[data-library-id]`, toggles all its palettes, flags in `rd.drawioPalettes.visible`, first palette expands),
+  preview pane (count, attribution, 24 thumbnails). Defaults unchanged (ERTMS, railway libraries, General, Misc, Advanced,
+  Arrows, Flowchart on; every draw.io library off). Search: the inline filter as before, plus `global-search.ts` (lazy,
+  150 ms debounce): `search-index.json` over palettes that are not shown, grouped by library (sorted by hits, 6 groups
+  with up to 24 tiles, others "Show N results", "Show library"), deduped against the visible results. Thumbnails:
+  shared renderer cache + IntersectionObserver as before; dark mode: draw.io libraries use the adaptive rendering,
+  vendor icons (images, fixed-colour stencils; `vendorIcons`) are not recoloured.
+- **User libraries** (localStorage `rd.drawioLibraries`, `{ id, title, text }`, text = native `<mxlibrary>`):
+  "＋ Add library" (`user-library-actions.ts`, lazy) = import file / open from URL / new empty library; sections have ＋
+  (add selection: `extractTemplate` -> `{xml, w, h, aspect, title}`), ✎ rename, ⤓ export (`<title>.xml`), × remove;
+  palette tiles dragged onto a library section are added, and a canvas move gesture released over it adds the selection
+  (GraphHandler reset, the cells stay). Serialized JSON body is XML-escaped (well-formed; draw.io reads it). The
+  Templates tab stays separate (whole diagrams/scenarios with name/description, own store and mxlibrary export).
+- Tests: `src/__tests__/drawio-palettes/safe-js.test.ts`, `src/drawio-shapes/palettes/__tests__/catalogue.test.ts`,
+  `src/drawio-shapes/vendor-runtime/__tests__/vendor-shapes.test.ts` (renders all 9,400+ JS/stencil vertex entries),
+  `src/ui/drawio-palette/__tests__/user-libraries.test.ts`, `tests/e2e/all-shapes.spec.ts`.
 
 ### Templates (`src/ui/templates/`, left-panel tab "Templates")
 
