@@ -438,6 +438,15 @@ async function auditAllSurfaces(page: Page, a: Auditor): Promise<void> {
   await a.shot('scenario-view');
   await page.locator('.rd-scn-exit').click();
   await expect(page.locator('[data-testid="scenario-view"]')).toBeHidden();
+  // AI panel: settings (no key: open, key note), MCP pairing code
+  await page.locator('[data-right-panel="ai"]').click();
+  await expect(page.getByTestId('ai-panel')).toBeVisible();
+  await page.getByTestId('ai-connect').locator('summary').click();
+  await page.getByTestId('ai-pair-create').click();
+  await expect(page.getByTestId('ai-pair-url')).toBeVisible();
+  await a.check('right: AI panel (settings, pairing)', '#rightpanel-container');
+  await a.shot('ai-panel');
+  await page.getByTestId('ai-pair-disconnect').click();
   await page.locator('[data-right-panel="properties"]').click();
 
   // Save as Template dialog, also with its validation error

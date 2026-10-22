@@ -37,13 +37,17 @@ npx vitest run src/__tests__/ui/tab-cache-restore.test.ts   # single file
 npx vitest run -t "restores"                                 # tests by name
 npm run test:e2e            # Playwright, chromium, starts vite itself (E2E_PORT, default 3000)
 npm run drawio:palettes     # regenerate palettes + stencil sets from the pinned draw.io tag (Node >= 22.18)
+npm run typecheck:worker    # tsc for worker/ (workers-types) and tools/mcp-local (node)
+npm run build:mcp-local     # local stdio MCP server -> tools/mcp-local/dist/railway-drawer-mcp.mjs (docs/AI.md)
+npx wrangler deploy --dry-run --outdir <tmp>   # validate the Worker bundle (needs dist/); never deploy from here
 node scripts/railml/validate.ts [--xsd railml3.xsd] [files]  # dev only: xmllint against the railML 3.2 XSD (not vendored)
 ```
 
-CI (`.github/workflows/build-and-deploy.yml`) runs typecheck, typecheck:tests, lint, test:run, build and the
+CI (`.github/workflows/build-and-deploy.yml`) runs typecheck, typecheck:tests, typecheck:worker, lint (src, worker,
+tools/mcp-local/src), test:run, build, `wrangler deploy --dry-run` and the
 Playwright subset (legacy-smoke, drawio-palette, templates, scenarios, style-edit, share, gitlab, ertms-data,
 scenario-uml-text, theme-contrast, remote-persist, scenario-doc, editor-commands, dark-shapes, ertms-routes, railml, drawio-compat,
-interaction, hover-arrows, railway-script, ux-batch, ux-batch2a, ux-batch2b, move-connect, object-states, canvas-scroll). No
+interaction, hover-arrows, railway-script, ux-batch, ux-batch2a, ux-batch2b, move-connect, object-states, canvas-scroll, ai). No
 draw.io download is needed (`scripts/drawio-palettes` only runs locally, its output is committed). It does not deploy.
 
 ### E2E
@@ -91,7 +95,7 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   reload keeps the data, File > Save writes `<object rdKind=... rdId=...>`.
 - `tests/e2e/theme-contrast.spec.ts` (any port): light and dark theme (localStorage `rd.theme` with the opposite
   system preference emulated, and View > Dark Mode both ways): opens every surface (menus incl. Railway + File > Import / Export > Railway Data / Scenario submenus, toolbar, left tabs
-  Shapes/Templates/Layers/PlantUML/ERTMS, Properties canvas/Text/Style/Arrange, Data, Checks, Scenarios, scenario
+  Shapes/Templates/Layers/PlantUML/ERTMS, Properties canvas/Text/Style/Arrange, Data, Checks, Scenarios, AI (settings, pairing), scenario
   dialog + step editor + view, context menu, Save as Template (with error), Share, Keyboard Shortcuts, About, Save As
   (with error), image upload,
   shape designer, all 4 notification types, status/tab bars; a second test per theme: context menu with the railway Position ▸ submenu open, Railway > Object State submenu,
@@ -174,6 +178,12 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   (one undo); Data panel State select; route Set (sections/route green, W1 reverse, S1 proceed) / Railway > Object State >
   Occupy Route / Release (W1 back); State Legend; scenario "Show changes" lists `TC2: free → occupied` and `S2: aspect stop →
   proceed`; dark theme renders the state colours unchanged; Reset All States. Screenshots `test-results/object-states/`.
+- `tests/e2e/ai.spec.ts` (any port, Anthropic API mocked with `page.route`, SSE from `src/ai/__tests__/sse.ts`, no key/network):
+  AI panel key masked + only in localStorage `rd.ai.settings` (cache/other storage/requests never contain it), Remove; a typed
+  request -> mocked tool calls (get_drawing, apply_railway_script, set_states) draw T1/S1/S2 -> "Undo AI turn" (2 steps);
+  confirm mode card -> Discard undoes and the next request's tool_result says so; "Create pairing code" (URL `/mcp?pair=rdp1.…`,
+  Claude Code command, kept over a reload in sessionStorage `rd.ai.pairing`, Disconnect); local bridge round trip
+  (`tools/mcp-local/src/bridge-server.ts` started in the test process, panel connects, relayed apply draws, wrong secret refused).
 - `tests/e2e/railway-script.spec.ts` (any port): Railway Script tab: a typed script (tracks, points, signals, route) is drawn
   by auto-apply ("Applied: 7 objects", `rdScript`, route on `rd-routes`), a text km edit moves the signal, a real mouse drag
   of the signal updates `at` in the text (comments/other lines kept), an enum error is listed at `13:col`, click selects it,
@@ -1028,6 +1038,34 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   hash = node:crypto SHA-256, navigation script run in jsdom), `scenario-doc-view.test.ts` (Show changes in the view graph,
   autoplay with fake timers, Space, exports through `installScenarios`, options dialog), `tests/e2e/scenario-doc.spec.ts`.
 
+### AI assistant (`src/ai/`, docs/AI.md)
+
+- One tool core for the in-app chat and MCP: `tool-defs.ts` (12 tools, JSON Schemas, `additionalProperties: false`),
+  `schema-check.ts` (strict validator, also used by the Worker / local server), `tools.ts` `executeAiTool(target, name,
+  input)` (never throws; at most ONE undoable edit per call, edits reported for "Undo AI turn"), `target.ts` `AiTarget`
+  (graph, undo, Railway Script store/session, optional catalogue/templates/render/download), `app-target.ts` (the ACTIVE
+  tab, resolved per call), `shape-search.ts`, `system-prompt.ts` (Railway Script reference generated from catalogue +
+  language tables + `SCRIPT_TEMPLATES`; deterministic for caching). Pure modules (no DOM at import): tool-defs,
+  schema-check, system-prompt, bridge/protocol, bridge/relay, mcp/* — keep them so (the Worker bundles them).
+- Chat: right panel view `ai` (`index.html` `[data-right-panel="ai"]` -> `#ai-panel`; `install-ai.ts` in the main chunk
+  lazy-loads `ai-panel.ts` with `@anthropic-ai/sdk`). `chat/chat-loop.ts` `ChatSession`: manual streaming loop on
+  `client.beta.messages.stream` (user's key, `dangerouslyAllowBrowser`), adaptive thinking (summarized), effort, top-level
+  `cache_control`, `eager_input_streaming` tools, `fallbacks: "default"` for models that support it, append-only history,
+  30 tool rounds, Stop closes open tool_use blocks. `chat/settings.ts`: localStorage `rd.ai.settings` (key, model default
+  `claude-opus-5-5`, effort, confirmChanges). Confirm mode applies, shows a diffSnapshots summary and waits Keep/Discard
+  (Discard = `undoOwnEdits`). Assistant Markdown via scenarios/markdown.ts, images removed (no exfiltration via URLs).
+- Bridge/MCP: `bridge/protocol.ts` (token `rdp1.<session>.<secret>`, SHA-256 hash via the pure-JS sha256 of gitlab/pkce.ts,
+  frames, limits), `bridge/relay.ts` `BridgeRelay` (hello/claim, constant-time auth, expiry <= 12 h, one browser,
+  60 calls/min, 180 s timeout), `bridge/client.ts` (browser WebSocket, sequential calls, backoff), `bridge/pairing.ts`
+  (sessionStorage `rd.ai.pairing`, localStorage `rd.ai.local`, client configs), `mcp/mcp-server.ts`
+  (`@modelcontextprotocol/server` McpServer, JSON Schemas as Standard Schema), `mcp/http.ts` (stateless `createMcpHandler`,
+  Bearer or `?pair=`, 512 KB cap). Worker: `worker/index.ts` (`/mcp`, `/api/ai-bridge/<session>/ws` same-origin only,
+  else ASSETS), `worker/ai-bridge.ts` Durable Object `AiBridge` (hibernation API, pairing in storage, alarm cleanup).
+  Local: `tools/mcp-local/src` (`main.ts` stdio, `bridge-server.ts` ws on 127.0.0.1 with origin allow-list,
+  `headless*.ts` jsdom + tool core on a `.drawio` file).
+- Tests: `src/ai/__tests__/` (tools on a jsdom tab, system prompt, chat loop against a fake SSE Messages API, protocol/relay,
+  MCP endpoint over HTTP, local bridge + headless file), `tests/e2e/ai.spec.ts`; the AI panel is in theme-contrast.
+
 ### Sharing (`src/share/`)
 
 - `install-sharing.ts` (called from `main-editor.ts`) wires everything: top-bar `#share-btn` and File > Share…
@@ -1126,7 +1164,9 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
 ## Deploy
 
 - Production: **Cloudflare Workers Builds** on push (configured in the Cloudflare dashboard; reads
-  `wrangler.jsonc`: static-assets-only Worker serving `./dist`, SPA not-found handling). `npm run deploy`
+  `wrangler.jsonc`: Worker `worker/index.ts` + static assets `./dist` with SPA not-found handling; `run_worker_first` only
+  for `/mcp` and `/api/ai-bridge/*`, every other path is served from the assets as before; Durable Object `AiBridge`,
+  migration `v1` sqlite). The site is behind Cloudflare Access: `/mcp` needs its own Bypass application (docs/AI.md). `npm run deploy`
   (= build + `wrangler deploy`) does the same from a local machine; `npm run preview:cf` runs it in `wrangler dev`.
 - LAN: `./deploy.sh` -> `npm ci`, `npm run build`, timestamped backup of
   `root@192.168.0.22:/var/www/html/railway-drawer`, scp `dist/`, verify. Served at
