@@ -1,0 +1,41 @@
+/* Loaded with global-search.ts (lazy chunk). Theme tokens: src/styles/variables.css. */
+
+.rd-dp-search-results {
+  border-top: 1px solid var(--rd-border, #ccc);
+}
+
+.rd-dp-sr-title {
+  padding: 6px;
+  color: var(--rd-text-muted, #666);
+  font-size: var(--font-size-xs, 11px);
+  font-weight: var(--font-weight-medium, 600);
+}
+
+.rd-dp-sr-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 6px;
+  background: var(--rd-surface-2, #fafafa);
+}
+
+.rd-dp-sr-library {
+  flex: 1 1 auto;
+  font-weight: var(--font-weight-medium, 500);
+}
+
+.rd-dp-sr-show,
+.rd-dp-sr-more {
+  padding: 1px 6px;
+  border: 1px solid var(--rd-border, #ccc);
+  border-radius: var(--radius-sm, 4px);
+  background: var(--rd-button-bg, #fff);
+  color: var(--rd-button-text, inherit);
+  font: inherit;
+  font-size: var(--font-size-xs, 11px);
+  cursor: pointer;
+}
+
+.rd-dp-sr-body {
+  display: flex;
+}

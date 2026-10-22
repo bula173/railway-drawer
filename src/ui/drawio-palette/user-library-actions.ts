@@ -6,6 +6,7 @@
  *        native draw.io libraries: entries are `{xml, w, h, title, aspect}` with uncompressed
  *        `<mxGraphModel>` XML, which draw.io's sidebar opens as is.
  */
+import './user-library-actions.css';
 import type { Graph } from '@maxgraph/core';
 import { readLibraryJson } from '../../drawio-shapes/engine/mxlibrary';
 import { extractTemplate } from '../templates/template-extract';

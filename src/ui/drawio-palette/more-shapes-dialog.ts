@@ -6,6 +6,7 @@
  *        library's size, attribution/trademark note (ⓘ) and sample thumbnails. A checkbox shows or
  *        hides all palettes of the library in the Shapes tab right away (persisted).
  */
+import './more-shapes-dialog.css';
 import type { CatalogueLibrary, PaletteEntry } from '../../drawio-shapes/palettes';
 import type { PaletteViewInternals } from './view-internals';
 

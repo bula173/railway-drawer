@@ -5,6 +5,7 @@
  *        libraries that are not in the Shapes tab, grouped by library, below the tab's own results.
  *        Palette data is only fetched for the libraries whose tiles are shown.
  */
+import './global-search.css';
 import { loadPaletteSearchIndex } from '../../drawio-shapes/palettes';
 import type { PaletteCatalogue, PaletteSearchIndex } from '../../drawio-shapes/palettes';
 import { entrySignature } from './entry-cells';
