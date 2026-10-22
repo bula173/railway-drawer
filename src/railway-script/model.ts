@@ -10,7 +10,7 @@ import type { KindId } from '../railway/catalogue';
 import { formatStoredNumber, getKind, parseNumber, splitRefList } from '../railway/catalogue';
 import type { PointsEntry } from '../railway/routes';
 import { parsePointsList } from '../railway/routes';
-import { COMMON_SCRIPT_KEYS, EXTRA_ATTRS, KEY_ALIASES, LISTS, TRACK_NESTED_LISTS, kindForList, matchKey, objectKey } from './language';
+import { COMMON_SCRIPT_KEYS, EXTRA_ATTRS, KEY_ALIASES, LISTS, STATE_KEYS, TRACK_NESTED_LISTS, kindForList, matchKey, objectKey, stateValuesFor } from './language';
 import type { JsonPath } from './validate';
 
 export interface PageOptions {
@@ -170,6 +170,19 @@ export function readScriptModel(doc: unknown): ReadResult {
     for (const [key, attr] of Object.entries(EXTRA_ATTRS[kind] ?? {})) {
       if (item[key] !== undefined && item[key] !== null && !(key in COMMON_SCRIPT_KEYS && def.fields.some((f) => f.key === COMMON_SCRIPT_KEYS[key]))) {
         o.attrs[attr] = str(item[key]);
+      }
+    }
+    // runtime states (state / aspect): stored as rdState / rdAspect, the look is applied by apply.ts
+    for (const [key, attr] of Object.entries(STATE_KEYS) as Array<['state' | 'aspect', string]>) {
+      if (item[key] === undefined || item[key] === null) continue;
+      const v = str(item[key]);
+      const allowed = stateValuesFor(kind, key, o.values.signalType ?? '');
+      if (!allowed) {
+        issues.push({ severity: 'warning', path: [...path, key], message: `${def.label} ${id}: has no ${key} (ignored)` });
+      } else if (!allowed.includes(v)) {
+        issues.push({ severity: 'error', path: [...path, key], message: `${def.label} ${id}: ${key} "${v}" is not one of ${allowed.join(', ')}` });
+      } else {
+        o.attrs[attr] = v;
       }
     }
     if (typeof item.x === 'number') o.x = item.x;

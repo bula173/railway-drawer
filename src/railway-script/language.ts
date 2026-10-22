@@ -7,6 +7,7 @@
  */
 import type { KindId } from '../railway/catalogue';
 import { getKind } from '../railway/catalogue';
+import { ASPECT_ATTR, STATE_ATTR, STATE_SCHEME, schemeIdFor } from '../railway/states';
 
 /** Value of the required `railwayScript` key. */
 export const SCRIPT_VERSION = 1;
@@ -73,6 +74,21 @@ export const EXTRA_ATTRS: Partial<Record<KindId, Record<string, string>>> = {
   points: { type: 'rdPointsType', to: 'rdDivergingTrack' },
   train: { direction: 'rdDirection', track: 'rdTrackId', at: 'rdKm' },
 };
+
+/**
+ * Runtime state keys (docs/STATES.md; scenarios in text): `state` -> `rdState` (sections, tracks,
+ * points, routes, level crossings, balises / LEUs / axle counters / joints), `aspect` -> `rdAspect`
+ * (signals). The points position is the catalogue field `position`. Missing = the default (free,
+ * open, stop): the script is the source, applying it sets the look (state-apply.ts).
+ */
+export const STATE_KEYS: Readonly<Record<'state' | 'aspect', string>> = { state: STATE_ATTR, aspect: ASPECT_ATTR };
+
+/** Allowed values of a state key for a kind (signals: by type), or null when the kind has none. */
+export function stateValuesFor(kind: KindId, key: 'state' | 'aspect', signalType = ''): string[] | null {
+  const scheme = schemeIdFor(kind, signalType);
+  const dim = scheme ? STATE_SCHEME[scheme][key] : undefined;
+  return dim ? dim.options.map((o) => o.value) : null;
+}
 
 /** Layout keys (x/y of the object's centre; a track: its first point). */
 export const LAYOUT_KEYS = ['x', 'y'] as const;

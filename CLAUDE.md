@@ -868,6 +868,10 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   (`from`/`to` km or detection point IDs), `levelCrossings`, `bufferStops`, `leus`, `rbcs`, `trains`, `routes` (`from`, `to`,
   `via`, `overlap`); catalogue field names are keys, `x`/`y` override positions; unknown keys = warnings (kept).
   `language.ts` (lists, aliases, EXTRA_ATTRS `rdTrackKind/rdLane/rdPointsType/rdDivergingTrack`, train `rdTrackId/rdKm/rdDirection`).
+  Runtime states: optional `state` / `aspect` keys (`STATE_KEYS` -> rdState/rdAspect, enums from `STATE_SCHEME` per kind,
+  `stateValuesFor`), points `position` = catalogue field; the script is the source (missing = default): `apply.ts`
+  `stateChangeFor` -> `applyObjectStates` (look) in the same edit only where the effective state differs; `sync.ts`
+  writes/unsets the keys on canvas state changes; `generate.ts` writes non-default states.
 - Schema: `schema.ts` builds the draft-07 JSON Schema; `public/schemas/railway-script-1.schema.json` must equal it (test;
   `UPDATE_RS_SCHEMA=1 npx vitest run src/railway-script/__tests__/schema-storage.test.ts` rewrites it). `validate.ts` is a
   small validator interpreting that schema (agreement with ajv is tested: devDependency `ajv` 8.20.0 pinned, test-only,

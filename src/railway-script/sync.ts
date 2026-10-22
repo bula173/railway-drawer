@@ -27,7 +27,7 @@ import { SNAP_DISTANCE } from '../railway/snap';
 import { collectObjects } from '../railway/validation';
 import type { RailObject } from '../railway/validation';
 import { adoptableCells, generatedCells, scriptKeyOf } from './apply';
-import { COMPUTED_FIELDS, EXTRA_ATTRS, ON_TRACK_KINDS, listForKind, matchKey, scriptKeysForField } from './language';
+import { COMPUTED_FIELDS, EXTRA_ATTRS, ON_TRACK_KINDS, STATE_KEYS, listForKind, matchKey, scriptKeysForField, stateValuesFor } from './language';
 import type { ScriptModel, ScriptObject, TrackObject } from './model';
 import type { JsonPath } from './validate';
 
@@ -199,6 +199,19 @@ export function drawingEdits(ctx: SyncContext): ScriptEdit[] {
         edits.push({ op: 'set', path: [...obj.path, 'x'], value: r1(c.x) });
         edits.push({ op: 'set', path: [...obj.path, 'y'], value: r1(c.y) });
       }
+    }
+
+    // ---- runtime states (`state` / `aspect`; the points position is the catalogue field below):
+    // the default (free / open / stop) is not written
+    for (const [key, attr] of Object.entries(STATE_KEYS) as Array<['state' | 'aspect', string]>) {
+      const a = before.attrs[attr] ?? '';
+      const b = now[attr] ?? '';
+      if (a === b) continue;
+      const allowed = stateValuesFor(obj.kind, key, now.rdSignalType ?? '');
+      if (!allowed) continue;
+      if (!b || b === allowed[0]) {
+        if (doc.hasIn([...obj.path, key])) edits.push({ op: 'unset', path: [...obj.path, key] });
+      } else edits.push({ op: 'set', path: [...obj.path, key], value: b });
     }
 
     // ---- data

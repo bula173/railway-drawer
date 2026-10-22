@@ -97,6 +97,37 @@ script keys:
 | `trains` | train | `track`, `at` (front), `direction`, `length`, `etcsLevel`, `maxSpeed`, `rbc` |
 | `routes` | route | `from`/`to` (= `entrySignal`/`exitSignal`), `via: { W1: reverse }` or `"W1:reverse, W2:normal"` (required points positions; the path is computed with the route search, `src/railway/routes.ts`), `overlap`, `sections` (optional; computed); `length` is computed |
 
+### Runtime states (scenarios in text)
+
+Optional keys describe the runtime state of an object (docs/STATES.md), so a scenario can be written
+as text:
+
+| Key | Objects | Values (default first) |
+|---|---|---|
+| `state` | tracks, sections, points, routes | `free`, `occupied`, `reserved`, `overlap`, `locked`, `disturbed` |
+| `state` | level crossings | `open`, `closed`, `disturbed` |
+| `state` | balise groups' balises, LEUs, axle counters, joints | `free`, `disturbed` |
+| `aspect` | signals (not marker boards / ETCS stop markers) | `stop`, `proceed`, `caution`, `shunt`, `dark` |
+| `position` | points (the catalogue field) | `normal`, `reverse`, `moving`, `outOfControl` |
+
+```yaml
+sections:
+  - { id: TC1, track: T1, from: 0.000, to: 0.300, state: occupied }
+signals:
+  - { id: S1, track: T1, at: 0.100, aspect: proceed }
+tracks:
+  - id: T1
+    points:
+      - { id: W1, at: 0.300, to: T2, hand: right, position: reverse }
+```
+
+The script is the source: a missing key is the default (as drawn). Applying sets the state **and
+its look** (colours, lamps, faded legs; `applyObjectStates`, same undo step); objects whose state
+already matches are not touched (applying twice changes nothing). An unknown value is an error, a
+key on an object without that state a warning (ignored). Drawing -> text: a state set on the canvas
+(context menu, Railway menu, Data panel, Alt shortcuts, route commands) writes the key; back to the
+default removes it. "Generate from drawing" writes the non-default states.
+
 ### Layout rules
 
 - x from km: `x = origin.x + (km − smallest km) × 1000 × scale`; y from the lane:

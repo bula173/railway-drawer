@@ -173,6 +173,60 @@ test('Railway Script: text draws the layout, edits flow both ways, errors are li
   expect(pageErrors).toEqual([]);
 });
 
+test('Railway Script: state / aspect / position keys set the states; canvas state changes update the text', async ({ page }) => {
+  const pageErrors: string[] = [];
+  page.on('pageerror', (err) => pageErrors.push(err.message));
+  await freshPage(page);
+  await openPanel(page);
+  const text = page.locator('[data-testid="railway-script-text"]');
+  const status = page.locator('[data-testid="railway-script-status"]');
+  const cellData = (key: string): Promise<{ state: string; aspect: string; position: string; stroke: string }> =>
+    page.evaluate(async (key) => {
+      const registry = await import('/src/services/service-registry.ts' as string);
+      const validation = await import('/src/railway/validation.ts' as string);
+      const tab = registry.ServiceRegistry.getTabManager().getActiveTab();
+      const o = validation.collectObjects(tab.graph.getDataModel()).find((x: { kind: { id: string }; id: string }) => `${x.kind.id}:${x.id}` === key);
+      const v = o.cell.getValue();
+      return { state: v.getAttribute('rdState') ?? '', aspect: v.getAttribute('rdAspect') ?? '', position: v.getAttribute('rdPosition') ?? '', stroke: String(o.cell.getStyle()?.strokeColor ?? '') };
+    }, key);
+
+  // a scenario in text: T2 occupied, W1 reverse, S1 proceed
+  await text.fill(
+    SCRIPT.replace('{ id: T2, startKm: 0.500, endKm: 1.100 }', '{ id: T2, startKm: 0.500, endKm: 1.100, state: occupied }')
+      .replace('hand: right }', 'hand: right, position: reverse }')
+      .replace('direction: nominal, type: main }', 'direction: nominal, type: main, aspect: proceed }')
+  );
+  await expect(status).toContainText('Applied: 7 objects');
+  expect(await cellData('track:T2')).toMatchObject({ state: 'occupied', stroke: '#ff0000' });
+  expect((await cellData('points:W1')).position).toBe('reverse');
+  expect((await cellData('signal:S1')).aspect).toBe('proceed');
+  // the reverse points fade their straight continuation
+  await expect(page.locator('#graph-container .rd-points-fade polyline')).toHaveCount(1);
+
+  // canvas -> text: S2 to caution with the keyboard (Alt+3), T2 free (Alt+F)
+  await page.locator('#graph-container').click({ position: { x: 5, y: 5 } });
+  await page.evaluate(async () => {
+    const registry = await import('/src/services/service-registry.ts' as string);
+    const validation = await import('/src/railway/validation.ts' as string);
+    const tab = registry.ServiceRegistry.getTabManager().getActiveTab();
+    const s2 = validation.collectObjects(tab.graph.getDataModel()).find((x: { id: string }) => x.id === 'S2');
+    tab.graph.setSelectionCells([s2.cell]);
+  });
+  await page.keyboard.press('Alt+Digit3');
+  await expect(text).toHaveValue(/- \{ id: S2, track: T1, at: 1\.000, direction: nominal, aspect: caution \}/);
+  await page.evaluate(async () => {
+    const registry = await import('/src/services/service-registry.ts' as string);
+    const validation = await import('/src/railway/validation.ts' as string);
+    const tab = registry.ServiceRegistry.getTabManager().getActiveTab();
+    const t2 = validation.collectObjects(tab.graph.getDataModel()).find((x: { kind: { id: string }; id: string }) => x.kind.id === 'track' && x.id === 'T2');
+    tab.graph.setSelectionCells([t2.cell]);
+  });
+  await page.keyboard.press('Alt+KeyF');
+  await expect(text).toHaveValue(/- \{ id: T2, startKm: 0\.500, endKm: 1\.100 \}/);
+  await expect(status).toContainText('In sync with the drawing');
+  expect(pageErrors).toEqual([]);
+});
+
 test('Railway Script: File > Import opens a script in a new tab, File > Export downloads YAML and JSON', async ({ page }) => {
   const pageErrors: string[] = [];
   page.on('pageerror', (err) => pageErrors.push(err.message));

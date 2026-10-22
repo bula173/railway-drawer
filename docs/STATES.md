@@ -127,4 +127,5 @@ train's base line, else tracks.
 
 railML export skips `rdState`, `rdAspect`, `rdBaseStyle`, `rdRouteRestore`, and the rd extension's
 `style` is the drawn style (state keys put back). `rdPosition` stays a points data field.
-Railway Script: no `state` / `aspect` keys yet (follow-up); `position` of points is the existing field.
+Railway Script (docs/RAILWAY-SCRIPT.md "Runtime states"): optional `state` / `aspect` keys (and the
+points' `position` field) describe states in text; applying sets the look, canvas changes update the text.

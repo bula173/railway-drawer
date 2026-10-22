@@ -407,6 +407,17 @@
           ],
           "description": "main (default) or siding (drawn thinner)"
         },
+        "state": {
+          "enum": [
+            "free",
+            "occupied",
+            "reserved",
+            "overlap",
+            "locked",
+            "disturbed"
+          ],
+          "description": "Runtime state (default free; docs/STATES.md)"
+        },
         "points": {
           "type": "array",
           "description": "Points on this track",
@@ -554,6 +565,17 @@
           ],
           "description": "Remarks"
         },
+        "state": {
+          "enum": [
+            "free",
+            "occupied",
+            "reserved",
+            "overlap",
+            "locked",
+            "disturbed"
+          ],
+          "description": "Runtime state (default free; docs/STATES.md)"
+        },
         "to": {
           "$ref": "#/definitions/id",
           "description": "Diverging track (its nearer end starts at the points)"
@@ -638,6 +660,16 @@
             "boolean"
           ],
           "description": "Remarks"
+        },
+        "aspect": {
+          "enum": [
+            "stop",
+            "proceed",
+            "caution",
+            "shunt",
+            "dark"
+          ],
+          "description": "Signal aspect (default stop; not for marker boards / stop markers)"
         },
         "x": {
           "type": "number",
@@ -830,6 +862,13 @@
           ],
           "description": "Remarks"
         },
+        "state": {
+          "enum": [
+            "free",
+            "disturbed"
+          ],
+          "description": "Runtime state (default free; docs/STATES.md)"
+        },
         "x": {
           "type": "number",
           "description": "Layout override: x of the centre (a track: of its first point), drawing units"
@@ -876,6 +915,13 @@
           ],
           "description": "Remarks"
         },
+        "state": {
+          "enum": [
+            "free",
+            "disturbed"
+          ],
+          "description": "Runtime state (default free; docs/STATES.md)"
+        },
         "x": {
           "type": "number",
           "description": "Layout override: x of the centre (a track: of its first point), drawing units"
@@ -921,6 +967,13 @@
             "boolean"
           ],
           "description": "Remarks"
+        },
+        "state": {
+          "enum": [
+            "free",
+            "disturbed"
+          ],
+          "description": "Runtime state (default free; docs/STATES.md)"
         },
         "x": {
           "type": "number",
@@ -993,6 +1046,17 @@
             "boolean"
           ],
           "description": "Remarks"
+        },
+        "state": {
+          "enum": [
+            "free",
+            "occupied",
+            "reserved",
+            "overlap",
+            "locked",
+            "disturbed"
+          ],
+          "description": "Runtime state (default free; docs/STATES.md)"
         },
         "from": {
           "anyOf": [
@@ -1109,6 +1173,14 @@
           ],
           "description": "Remarks"
         },
+        "state": {
+          "enum": [
+            "open",
+            "closed",
+            "disturbed"
+          ],
+          "description": "Runtime state (default open; docs/STATES.md)"
+        },
         "x": {
           "type": "number",
           "description": "Layout override: x of the centre (a track: of its first point), drawing units"
@@ -1203,6 +1275,13 @@
             "boolean"
           ],
           "description": "Remarks"
+        },
+        "state": {
+          "enum": [
+            "free",
+            "disturbed"
+          ],
+          "description": "Runtime state (default free; docs/STATES.md)"
         },
         "x": {
           "type": "number",
@@ -1400,6 +1479,14 @@
             "boolean"
           ],
           "description": "Remarks"
+        },
+        "state": {
+          "enum": [
+            "free",
+            "reserved",
+            "occupied"
+          ],
+          "description": "Runtime state (default free; docs/STATES.md)"
         },
         "via": {
           "anyOf": [
