@@ -57,7 +57,7 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
 - `tests/e2e/drawio-compat.spec.ts`: File > Open of draw.io files (compressed multi-page fixture, draw.io desktop
   fixture) -> labels render -> File > Export As… writes a valid `<mxfile>` with the same pages, ids, cells, wrapper
   attributes and styles, hidden pages unchanged, stable re-export; Templates > Import… of the ERTMS library
-  (40 entries) and Export… as `<mxlibrary>`.
+  (37 entries) and Export… as `<mxlibrary>`.
 - `tests/e2e/drawio-palette.spec.ts` (any port): Shapes tab (no draw.io/Stencils tabs) renders the palettes, one merged "General" (no "Basic" section/menu entry, flag migration, merged app shapes insert, search without duplicates), "More shapes…" toggles, inserts keep draw.io styles, autosave
   writes real draw.io shape names.
 - `tests/e2e/share.spec.ts` (any port): Share dialog, `#R` link round trip into a fresh browser context, downloads.
@@ -83,7 +83,7 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   `rdDiff`), autoplay (1 s, Space plays to the end and stops, Space pauses), File > Export Scenario (PDF)… landscape (%PDF,
   pages >= 4, DejaVu embedded, 3 images, no "UML as vector failed" warning), Slides from the panel button (3 step slides,
   highlighted drawings, opened as a data: page under its CSP: keys move, counter).
-- `tests/e2e/templates.spec.ts` (any port): ERTMS palette 18 entries, Templates tab 22 ERTMS templates (search,
+- `tests/e2e/templates.spec.ts` (any port): ERTMS palette 18 entries, Templates tab 19 ERTMS templates (search,
   insert, open as new diagram, drag), tab bar labels not cut, Save as Template… -> reload -> insert, rename, delete.
 - `tests/e2e/ertms-data.spec.ts` (any port): ERTMS palette signal/balise get their kind and IDs on insert, Data panel
   fields (km chainage `12+345`, enum, text with Polish characters), duplicate signal ID -> Checks error + badge,
@@ -486,7 +486,7 @@ The embedded draw.io editor was removed on the user's decision, so nothing runs 
   `<UserObject>` with link/tags, core shapes (hexagon, cylinder3, rhombus, ellipse), JS shape `mxgraph.arrows2.arrow`,
   stencil `mxgraph.flowchart.collate`; `compat-library.xml` (`<mxlibrary>`: escaped, compressed and image entries).
   Plus the older `src/__tests__/fixtures/drawio/*.drawio` and the real ERTMS library (`public/libraries/ertms.xml`,
-  identical to `ERTMSDrawioTemplate/ERTMS.xml`, 40 entries).
+  the app's copy of the user's `ERTMSDrawioTemplate/ERTMS.xml` (never edit that original), 37 entries: see Templates).
 - Path under test = File > Open / Save: `SaveLoadController.loadProjectXml` -> `getProjectXml`. Required: valid draw.io
   XML (`<mxfile>`, one `<diagram>` per page, `mxGraphModel/root`, cells 0 and 1, no namespaces); same pages, order,
   names, ids and `<diagram>` attributes; same cells in draw.io's depth-first order, kinds, parents, terminals, values,
@@ -538,7 +538,7 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   closeable, state in localStorage `railway-drawer-ertms-tab`): a second palette view with only the ERTMS
   library (`userLibraries: false`, `showMoreMenu: false`, own flags via `storageKeySuffix`, no dropTarget —
   the Shapes-tab view handles its drops since palette/entry ids are the same). Order: draw.io palettes, then ERTMS (`public/libraries/ertms.xml`,
-  the default ERTMS palette, showing only its 18 simple elements — the 22 scenario diagrams are ERTMS templates,
+  the default ERTMS palette, showing only its 18 simple elements — the 19 scenario diagrams are ERTMS templates,
   see Templates below; the `src/shapes/ertms` placeholders are renderers only, for old files), then
   user libraries ("Import library…", stored in localStorage `rd.drawioLibraries`). Thumbnails come from one
   hidden graph (draw.io defaults, table support). Click inserts at the view centre, drag drops at the pointer
@@ -569,14 +569,18 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
 
 - Built-in **ERTMS templates**: `splitErtmsLibrary` (`ertms-templates.ts`) classifies `public/libraries/ertms.xml`
   by content: more than `TEMPLATE_CELL_THRESHOLD` (80) drawable cells (`mxCell` vertex/edge, nested included)
-  = template (scenarios have 102..265, the simple elements 1..44). 40 entries -> 18 elements / 22 templates
+  = template (scenarios have 102..265, the simple elements 1..44). 37 entries -> 18 elements / 19 templates
   (tested against the real file). Display names from the labels (`templateDisplayName`: first matching ERTMS topic in
   `TOPICS`, e.g. "Level transition L0 → L1", "Section timer (L1)" + the ETCS level label; repeats numbered "… 2"),
   `originalName` "ERTMS scenario <n>" (library order) in the tooltip and search; subtitle = the 3 rarest
   labels across scenarios (phrases before ids); every label is a search tag. Ids `ertms-tpl-<library index>`.
   `ertmsPaletteSource` (Shapes and ERTMS tabs) filters to the elements, entry ids keep the library index
   (`ertms-<index>-<slug>`); `loadErtmsTemplates` shares the one download. `drawio-compat.test.ts` parses the
-  whole library (all 40 entries) as the draw.io compatibility guard.
+  whole library (all 37 entries) as the draw.io compatibility guard.
+- App library vs the user's export: scenarios 14, 15 and 18 of `ERTMSDrawioTemplate/ERTMS.xml` ("On-sight
+  acknowledgement area (L2)", "On-sight movement authority (L1)", "PCA window and berth (L2)") were removed on the
+  user's request; `REMOVED_ERTMS_SCENARIOS` keeps the original numbers in `originalName` (scenario 16 stays
+  "ERTMS scenario 16"). Template ids `ertms-tpl-<library index>` follow the app file.
 - **User templates**: `TemplateStore` (`template-store.ts`), localStorage `railway-drawer-templates`,
   `{ version: 1, templates: [{ id, name, description?, xml, width, height, created, updated }] }`; `xml` is a
   native draw.io `<mxGraphModel>`. Bare arrays read as v1; a newer version makes the store read-only (writes

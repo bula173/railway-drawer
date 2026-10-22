@@ -200,12 +200,12 @@ test.describe('UX batch 2b', () => {
     await fresh(page);
     await openLeftTab(page, 'templates');
     const tiles = page.locator('#templates-panel [data-section="builtin"] .rd-tpl-tile');
-    await expect(tiles).toHaveCount(22);
+    await expect(tiles).toHaveCount(19);
     await expect(tiles.first().locator('.rd-tpl-name')).toHaveText('Section timer (L1)');
     await expect(tiles.first()).toHaveAttribute('title', /ERTMS scenario 1/);
     const names = await tiles.locator('.rd-tpl-name').allTextContents();
     expect(names.some((n) => /^ERTMS scenario/.test(n))).toBe(false);
-    expect(new Set(names).size).toBe(22);
+    expect(new Set(names).size).toBe(19);
     await tiles.first().hover();
     await expect(page.locator('.rd-tpl-preview:not([hidden]) svg')).toBeVisible();
   });

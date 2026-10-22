@@ -13,18 +13,18 @@ import {
   resetErtmsLibraryCache,
   setDrawioPaletteEngine,
 } from '../../drawio-palette';
-import { countDrawableCells, isTemplateLibraryEntry, modelLabels, splitErtmsLibrary, TEMPLATE_CELL_THRESHOLD } from '..';
+import { countDrawableCells, isTemplateLibraryEntry, modelLabels, originalScenarioNumber, REMOVED_ERTMS_SCENARIOS, splitErtmsLibrary, TEMPLATE_CELL_THRESHOLD } from '..';
 
 const ROOT = resolve(__dirname, '../../../..');
 const LIBRARY_TEXT = readFileSync(resolve(ROOT, 'public/libraries/ertms.xml'), 'utf8');
 const entries = parseMxLibrary(LIBRARY_TEXT);
 
 describe('ERTMS library classification', () => {
-  it('splits the 40 entries into 18 elements and 22 templates', () => {
-    expect(entries).toHaveLength(40);
+  it('splits the 37 entries into 18 elements and 19 templates', () => {
+    expect(entries).toHaveLength(37);
     const { elements, templates } = splitErtmsLibrary(entries);
     expect(elements).toHaveLength(18);
-    expect(templates).toHaveLength(22);
+    expect(templates).toHaveLength(19);
     // every titled entry is a simple element, every untitled one a scenario
     expect(elements.every((e) => e.entry.title.trim() !== '')).toBe(true);
     expect(templates.every((t) => entries[Number(t.id.replace('ertms-tpl-', ''))].title.trim() === '')).toBe(true);
@@ -36,12 +36,20 @@ describe('ERTMS library classification', () => {
     const complex = counts.filter((n) => n > TEMPLATE_CELL_THRESHOLD);
     expect(Math.max(...simple)).toBeLessThanOrEqual(TEMPLATE_CELL_THRESHOLD / 2 + 10);
     expect(Math.min(...complex)).toBeGreaterThanOrEqual(TEMPLATE_CELL_THRESHOLD + 20);
-    expect(entries.filter(isTemplateLibraryEntry)).toHaveLength(22);
+    expect(entries.filter(isTemplateLibraryEntry)).toHaveLength(19);
   });
 
   it('names templates after their ERTMS topic, keeps "ERTMS scenario n" and a subtitle of distinctive labels', () => {
     const { templates } = splitErtmsLibrary(entries);
-    expect(templates.map((t) => t.originalName)).toEqual(templates.map((_t, i) => `ERTMS scenario ${i + 1}`));
+    // the original numbers of the user's library; 14, 15 and 18 were removed from the app copy
+    expect(REMOVED_ERTMS_SCENARIOS).toEqual([14, 15, 18]);
+    expect(templates.map((t) => t.originalName)).toEqual(
+      [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 16, 17, 19, 20, 21, 22].map((n) => `ERTMS scenario ${n}`));
+    expect(originalScenarioNumber(13)).toBe(16);
+    const names = templates.map((t) => t.name);
+    for (const removed of ['On-sight acknowledgement area (L2)', 'On-sight movement authority (L1)', 'PCA window and berth (L2)']) {
+      expect(names).not.toContain(removed);
+    }
     expect(templates.slice(0, 5).map((t) => t.name)).toEqual([
       'Section timer (L1)',
       'MA length and speed',
@@ -109,10 +117,10 @@ describe('ERTMS sources', () => {
     for (const e of def.entries) expect(e.id).toMatch(/^ertms-(\d|1[0-7])-/);
   });
 
-  it('loadErtmsTemplates returns the 22 scenarios, sharing one download with the palette', async () => {
+  it('loadErtmsTemplates returns the 19 scenarios, sharing one download with the palette', async () => {
     fetchMock.mockClear();
     const [templates] = await Promise.all([loadErtmsTemplates('/'), ertmsPaletteSource('/').load()]);
-    expect(templates).toHaveLength(22);
+    expect(templates).toHaveLength(19);
     expect(templates[0].id).toBe('ertms-tpl-18');
     expect(fetchMock).toHaveBeenCalledTimes(1);
   });

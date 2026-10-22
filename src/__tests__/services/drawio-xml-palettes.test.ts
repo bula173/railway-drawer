@@ -120,8 +120,8 @@ describe('draw.io palette entries round-trip through the save path', () => {
 });
 
 describe('ERTMS library (public/libraries/ertms.xml) round-trips', () => {
-  it('has the 40 tiles', () => {
-    expect(ertmsEntries).toHaveLength(40);
+  it('has the 37 tiles', () => {
+    expect(ertmsEntries).toHaveLength(37);
   });
 
   it.each(ertmsEntries.map((e, i) => [i, e] as const))('entry %i keeps its draw.io styles', (_i, entry) => {
