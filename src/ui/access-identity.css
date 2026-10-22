@@ -1,0 +1,63 @@
+/* Top-bar Cloudflare Access user (access-identity.ts): email + Log out; theme tokens only */
+.rd-access-user {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.rd-access-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+  max-width: 220px;
+  color: var(--rd-text);
+  font-size: 12px;
+}
+
+.rd-access-email-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rd-access-logout {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 28px;
+  min-width: 28px;
+  padding: 4px 8px;
+  background: var(--rd-surface);
+  color: var(--rd-text);
+  border: 1px solid var(--rd-border-strong);
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.rd-access-logout:hover {
+  background: var(--rd-hover);
+}
+
+.rd-access-logout:focus-visible {
+  outline: 2px solid var(--rd-focus);
+  outline-offset: 1px;
+}
+
+/* Narrow screens: the email lives in the tooltips, Log out becomes an icon button */
+@media (max-width: 899px) {
+  .rd-access-email {
+    display: none;
+  }
+
+  .rd-access-logout {
+    padding: 4px;
+    justify-content: center;
+  }
+
+  .rd-access-logout-text {
+    display: none;
+  }
+}

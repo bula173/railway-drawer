@@ -36,6 +36,10 @@ export interface SharingHandle {
   openShareDialog(): ShareDialogHandle;
   /** Resolves once a `#R` link in the start URL was handled (number of tabs opened). */
   sharedLinkHandled: Promise<number>;
+  /** Number of open tabs with changes not saved to their remote provider. */
+  unsavedRemoteTabs(): number;
+  /** The next page leave skips the "Leave site?" prompt (the user already confirmed, e.g. Log out). */
+  allowLeave(): void;
 }
 
 function documentTitle(): string {
@@ -107,8 +111,9 @@ export function installSharing(tabManager: TabManager, notify: SharingNotifier):
   remoteSession.updateStatus();
 
   // Leaving the page with changes not saved to SharePoint/GitLab: the browser's "Leave site?" prompt
+  let leaveAllowed = false;
   window.addEventListener('beforeunload', (evt) => {
-    if (!remoteSession.hasUnsavedRemoteChanges()) return;
+    if (leaveAllowed || !remoteSession.hasUnsavedRemoteChanges()) return;
     evt.preventDefault();
     // Older browsers need returnValue set
     evt.returnValue = '';
@@ -286,5 +291,17 @@ export function installSharing(tabManager: TabManager, notify: SharingNotifier):
     discardRetiredDrawioDocument();
   });
 
-  return { remoteSession, openShareDialog: showShareDialog, sharedLinkHandled };
+  const unsavedRemoteTabs = (): number => {
+    if (!remoteSession.hasUnsavedRemoteChanges()) return 0;
+    return tabManager.getAllTabs().filter((t) => remoteSession.isDirty(t.id)).length || 1;
+  };
+  return {
+    remoteSession,
+    openShareDialog: showShareDialog,
+    sharedLinkHandled,
+    unsavedRemoteTabs,
+    allowLeave: () => {
+      leaveAllowed = true;
+    },
+  };
 }

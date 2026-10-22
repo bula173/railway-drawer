@@ -50,6 +50,8 @@ import {
 import { createTemplatesPanel, openTemplateAsNewDiagram, saveAsTemplate, TemplateStore } from './ui/templates';
 import { installDarkModeToggle } from './drawio-shapes/theme/dark-mode';
 import { installSharing } from './share/install-sharing';
+import { installAccessIdentity } from './ui/access-identity';
+import { confirmDialog } from './ui/app-dialogs';
 import { installScenarios } from './scenarios/install-scenarios';
 import { assignKindForInsertedShape, installRailwayData, prepareRailwayInsert } from './railway/install-railway-data';
 import { installRailwayRoutes } from './railway/install-railway-routes';
@@ -696,7 +698,20 @@ createTemplatesPanel({
  * (disabled until VITE_MSAL_CLIENT_ID is set, see docs/SHAREPOINT.md). A `#R` link in the start URL
  * opens as new tabs. Tabs opened from / saved to a provider save back there with Ctrl+S.
  */
-installSharing(tabManager, globalNotificationManager);
+const sharing = installSharing(tabManager, globalNotificationManager);
+
+// ============= CLOUDFLARE ACCESS USER =============
+
+/**
+ * @brief Top-bar email + Log out of Cloudflare Access (production only, see access-identity.ts)
+ * @details Asynchronous after boot; nothing shown (and nothing logged) without Access.
+ */
+void installAccessIdentity({
+  container: document.querySelector<HTMLElement>('.top-bar-right'),
+  unsavedRemoteTabs: () => sharing.unsavedRemoteTabs(),
+  confirm: (opts) => confirmDialog(opts),
+  allowLeave: () => sharing.allowLeave(),
+});
 
 // ============= CUSTOM SHAPES =============
 

@@ -48,7 +48,7 @@ tools/mcp-local/src), test:run, build, `wrangler deploy --dry-run` and the
 Playwright subset (legacy-smoke, drawio-palette, templates, scenarios, style-edit, share, gitlab, ertms-data,
 scenario-uml-text, theme-contrast, remote-persist, scenario-doc, editor-commands, dark-shapes, ertms-routes, railml, drawio-compat,
 interaction, hover-arrows, railway-script, ux-batch, ux-batch2a, ux-batch2b, move-connect, object-states, canvas-scroll,
-railway-shapes, backlog-ui, ai, all-shapes). No
+railway-shapes, backlog-ui, ai, all-shapes, access-identity). No
 draw.io download is needed (`scripts/drawio-palettes` only runs locally, its output is committed). It does not deploy.
 
 ### E2E
@@ -226,6 +226,10 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   toggle opens one), left tab strip (one row, » overflow menu with keyboard, chosen tab moves into the row, PlantUML closeable
   and reopened from Extras, a wide panel shows all tabs). e2e helpers in `tests/e2e/menu-helpers.ts`: `clickMenuItem`,
   `revealMenuItem`, `openLeftTab` (row or » menu), `leftTabLabels`.
+- `tests/e2e/access-identity.spec.ts` (any port): top-bar Cloudflare Access user (`src/ui/access-identity.ts`; dev-only
+  localStorage `rd.accessProbe` = '1' makes the localhost app ask): `/cdn-cgi/access/get-identity` routed to JSON ->
+  email (ellipsis, tooltip) + "Log out" button before Share, icon-only below 900 px, click -> `/cdn-cgi/access/logout`;
+  404 -> nothing shown, no app console errors; contrast (text 4.5, icons 3) of the element in light and dark.
 - `tests/e2e/backlog-ui.spec.ts` (any port, real mouse / keyboard input): Align left / Distribute vertically on a
   rubber-band selection with a locked cell (locked one stays, one Ctrl+Z step each, Ctrl+Y); left tabs: no button in a
   button, PlantUML's "Close PlantUML tab" reached by Tab + Enter, Delete on the focused tab closes it (the selected shape
@@ -1302,6 +1306,15 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   for `/mcp` and `/api/ai-bridge/*`, every other path is served from the assets as before; Durable Object `AiBridge`,
   migration `v1` sqlite). The site is behind Cloudflare Access: `/mcp` needs its own Bypass application (docs/AI.md). `npm run deploy`
   (= build + `wrangler deploy`) does the same from a local machine; `npm run preview:cf` runs it in `wrangler dev`.
+  **Top-bar Access user** (`src/ui/access-identity.ts`, wired in `main-editor.ts`): after boot (never delays first paint),
+  only on https and not localhost / LAN IP / `.local`, one same-origin `fetch('/cdn-cgi/access/get-identity',
+  {credentials: 'same-origin'})`; JSON with `email` -> `.rd-access-user` first in `.top-bar-right`: user icon + email
+  (max 220 px, ellipsis, tooltip "Signed in as ..."), `button.rd-access-logout` "Log out" (aria-label "Log out (<email>)")
+  -> `/cdn-cgi/access/logout`, with a themed `confirmDialog` first when tabs have changes not saved to their remote
+  provider (`SharingHandle.unsavedRemoteTabs`; confirmed -> `allowLeave()` skips the browser's leave prompt); below
+  900 px email hidden, icon-only button. Failure / 404 / HTML / no email: nothing shown, nothing logged. `/cdn-cgi/*`
+  is answered by Cloudflare's edge (the Worker only runs first for /mcp and /api/ai-bridge and does not route
+  `/cdn-cgi`). Dev-only localStorage `rd.accessProbe` = '1' forces the request (e2e).
 - LAN: `./deploy.sh` -> `npm ci`, `npm run build`, timestamped backup of
   `root@192.168.0.22:/var/www/html/railway-drawer`, scp `dist/`, verify. Served at
   `http://192.168.0.22/railway-drawer/`. Override the host with `SERVER_HOST=<ip> ./deploy.sh`.
