@@ -9,6 +9,7 @@
  *   show "(mixed)", a change sets the value on all of them (the ID only for a single cell).
  * - Every change is one undoable model edit (object-data.ts `setRailwayData`).
  * - Problems the checks find for a field are shown under it.
+ * - Nothing selected: the diagram's railway settings (project-settings.ts: default NID_C).
  */
 import type { Cell, Graph } from '@maxgraph/core';
 import type { FieldDef, KindDef, KindId } from './catalogue';
@@ -19,6 +20,7 @@ import { STATE_SCHEME } from './states';
 import type { StateDimension } from './states';
 import type { Issue } from './validation';
 import { collectObjects } from './validation';
+import { COUNTRY_ATTR, DEFAULT_COUNTRY_ID, normalizeCountryId, readCountryId, readCountryIdRaw, setCountryId } from './project-settings';
 
 export interface RailwayDataPanelOptions {
   container: HTMLElement;
@@ -94,6 +96,8 @@ export function createRailwayDataPanel(options: RailwayDataPanelOptions): Railwa
   const root = el('div', 'rd-rw-data');
   options.container.replaceChildren(root);
   let signature = '';
+  // the graph the diagram settings were rendered for (tab switches re-render them)
+  let settingsGraph: Graph | null = null;
   let destroyed = false;
   // Field controls of the current render, by key
   let controls = new Map<string, { field: FieldDef; input: HTMLInputElement | HTMLSelectElement; problem: HTMLElement }>();
@@ -121,7 +125,7 @@ export function createRailwayDataPanel(options: RailwayDataPanelOptions): Railwa
     refresh();
   };
 
-  function renderEmpty(text: string): void {
+  function renderEmpty(text: string, graph?: Graph): void {
     controls = new Map();
     kindSelect = null;
     labelToggle = null;
@@ -135,6 +139,56 @@ export function createRailwayDataPanel(options: RailwayDataPanelOptions): Railwa
       )
     );
     root.replaceChildren(hint);
+    settingsGraph = graph ?? null;
+    if (graph) root.append(renderDiagramSettings(graph));
+  }
+
+  /** The diagram's railway settings (root cell attributes), shown when nothing is selected. */
+  function renderDiagramSettings(graph: Graph): HTMLElement {
+    const box = el('div', 'rd-rw-fields rd-rw-diagram');
+    box.dataset.testid = 'railway-diagram-settings';
+    box.append(el('div', 'rd-rw-title', 'Diagram railway settings'));
+    const row = el('div', 'rd-rw-row');
+    const id = 'rd-rw-country';
+    const label = el('label', 'rd-rw-label', 'Default NID_C (country)');
+    label.htmlFor = id;
+    const input = el('input', 'rd-rw-input');
+    input.id = id;
+    input.type = 'text';
+    input.inputMode = 'numeric';
+    input.autocomplete = 'off';
+    input.dataset.field = COUNTRY_ATTR;
+    input.placeholder = `${DEFAULT_COUNTRY_ID} (built-in default)`;
+    input.value = readCountryIdRaw(graph.getDataModel()) ?? '';
+    input.title = 'Range 0–1023 · empty = 510 (Poland)';
+    const problem = el('div', 'rd-rw-problem');
+    const commitCountry = (): void => {
+      const text = input.value.trim();
+      if (text !== '' && normalizeCountryId(text) === null) {
+        problem.replaceChildren(el('div', 'rd-rw-problem-error', 'NID_C must be an integer 0–1023'));
+        input.classList.add('rd-rw-invalid');
+        return;
+      }
+      problem.replaceChildren();
+      input.classList.remove('rd-rw-invalid');
+      setCountryId(graph.getDataModel(), text);
+      input.value = readCountryIdRaw(graph.getDataModel()) ?? '';
+    };
+    input.addEventListener('change', commitCountry);
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        commitCountry();
+      }
+    });
+    row.append(
+      label,
+      input,
+      problem,
+      el('div', 'rd-rw-hint', 'Used by balise groups without their own NID_C (checks, railML countryID). Saved with the diagram.')
+    );
+    box.append(row);
+    return box;
   }
 
   function renderFields(graph: Graph, cells: Cell[]): void {
@@ -351,6 +405,12 @@ export function createRailwayDataPanel(options: RailwayDataPanelOptions): Railwa
     } else {
       input.value = value ?? '';
       input.placeholder = value === null ? MIXED : '';
+      // a balise group without NID_C uses the diagram default
+      const graph = options.getGraph();
+      if (value === '' && f.key === 'nidC' && graph && cells.every((c) => getCellKind(c) === 'baliseGroup')) {
+        const country = readCountryId(graph.getDataModel());
+        if (country) input.placeholder = `${country} (diagram default)`;
+      }
     }
   }
 
@@ -384,7 +444,10 @@ export function createRailwayDataPanel(options: RailwayDataPanelOptions): Railwa
     }
     const { graph, cells } = now;
     if (cells.length === 0) {
-      if (signature !== 'empty') renderEmpty('Select a shape to edit its railway data.');
+      // the settings are re-read on every refresh (undo, file load) unless being typed in
+      const country = root.querySelector<HTMLInputElement>('#rd-rw-country');
+      if (signature !== 'empty' || !country || settingsGraph !== graph) renderEmpty('Select a shape to edit its railway data.', graph);
+      else if (document.activeElement !== country) country.value = readCountryIdRaw(graph.getDataModel()) ?? '';
       signature = 'empty';
       return;
     }

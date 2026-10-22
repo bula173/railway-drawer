@@ -39,7 +39,7 @@ describe('import of a railML 3.2 sample without visualization', () => {
   it('creates every object with its data', () => {
     expect(r.name).toBe('Station Arnau');
     expect(r.usedVisualization).toBe(false);
-    expect(r.counts).toEqual({ track: 2, points: 1, signal: 3, balise: 2, axleCounter: 1, bufferStop: 2, levelCrossing: 1, baliseGroup: 1, trackSection: 1, route: 1 });
+    expect(r.counts).toEqual({ track: 2, points: 1, signal: 3, balise: 2, axleCounter: 1, insulatedJoint: 1, bufferStop: 2, levelCrossing: 1, baliseGroup: 1, trackSection: 1, route: 1 });
     const m = r.model;
     expect(nonEmpty(get(m, 'track:T01').values)).toEqual({ id: 'T01', name: 'Track 1', kmStart: '0', kmEnd: '1.5' });
     expect(nonEmpty(get(m, 'track:T02').values)).toEqual({ id: 'T02', name: 'Siding', length: '500' });
@@ -106,8 +106,9 @@ describe('import of a railML 3.2 sample without visualization', () => {
     expect(Array.from(id('swi01').children).find((c) => c.localName === 'rightBranch')!.getAttribute('branchingSpeed')).toBe('40');
     expect(all(id('swi01'), 'designator').map((d) => d.getAttribute('register'))).toEqual(['_RailwayDrawer', 'DB']);
     expect(all(id('tvd01'), 'hasResetStrategy')).toHaveLength(1);
-    // insulated rail joint: not an axle counter, kept as it was (its netElement id is kept too)
+    // insulated rail joint: imported as an insulatedJoint (TC joint), written back with its id and type
     expect(id('tde02').getAttribute('type')).toBe('insulatedRailJoint');
+    expect(collectObjects(r.model).filter((o) => o.kind.id === 'insulatedJoint').map((o) => o.id)).toEqual(['tde02']);
     expect(all(doc, 'timetable')).toHaveLength(1);
     expect(doc.getElementsByTagNameNS('http://purl.org/dc/elements/1.1/', 'subject')[0].textContent).toBe('Test sample');
   });

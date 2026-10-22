@@ -134,6 +134,8 @@ test('track section, signal, points: right-click states, save, reset, undo', asy
   expect(await attr(page, 'tc2', 'rdState')).toBe('occupied');
   expect(await styleKey(page, 'tc2', 'strokeColor')).toBe('#ff0000');
   expect((await rendered(page, 'tc2')).stroke).toBe('#ff0000');
+  // thicker than drawn (6 -> 9): occupied differs from a track drawn red
+  expect(await styleKey(page, 'tc2', 'strokeWidth')).toBe(9);
 
   const [download] = await Promise.all([page.waitForEvent('download'), clickMenuItem(page, 'file', 'save')]);
   const saved = await readFile((await download.path())!, 'utf8');
@@ -173,11 +175,17 @@ test('track section, signal, points: right-click states, save, reset, undo', asy
   await pickState(page, 'position', 'normal');
   expect(await styleKey(page, 'w1', 'opacity')).toBe(30);
   expect(Number((await rendered(page, 'w1')).opacity)).toBeCloseTo(0.3, 2);
+  const fade = page.locator('#graph-container .rd-points-fade polyline');
+  await expect(fade).toHaveCount(0);
   await rightClick(page, 190, 140);
   await pickState(page, 'position', 'reverse');
   expect(await attr(page, 'w1', 'rdPosition')).toBe('reverse');
   expect(await styleKey(page, 'w1', 'opacity')).toBeNull();
   expect((await rendered(page, 'w1')).opacity).not.toBe('0.3');
+  // reverse: the straight continuation (TC2 from the junction for the leg's length) is faded
+  await expect(fade).toHaveCount(1);
+  await expect(fade).toHaveAttribute('points', '150,100 230,100');
+  await expect(fade).toHaveAttribute('stroke-opacity', '0.7');
 
   // multi-selection: TC1 + TC3 locked together (one undo step)
   await inGraph(page, "graph.setSelectionCells(['tc1', 'tc3'].map((id) => graph.getDataModel().getCell(id)));");
@@ -187,6 +195,25 @@ test('track section, signal, points: right-click states, save, reset, undo', asy
   await page.locator('#graph-container').click({ position: { x: 5, y: 5 } });
   await page.keyboard.press('ControlOrMeta+z');
   expect([await attr(page, 'tc1', 'rdState'), await attr(page, 'tc3', 'rdState')]).toEqual(['', '']);
+
+  // keyboard: Alt+O / Alt+F on the selection, Alt+V / Alt+N on points (matched by event.code)
+  await inGraph(page, "graph.setSelectionCells([graph.getDataModel().getCell('tc1')]);");
+  await page.keyboard.press('Alt+KeyO');
+  expect(await attr(page, 'tc1', 'rdState')).toBe('occupied');
+  await page.keyboard.press('Alt+KeyF');
+  expect(await attr(page, 'tc1', 'rdState')).toBe('free');
+  await inGraph(page, "graph.setSelectionCells([graph.getDataModel().getCell('w1')]);");
+  await page.keyboard.press('Alt+KeyN');
+  expect(await attr(page, 'w1', 'rdPosition')).toBe('normal');
+  await page.keyboard.press('Alt+KeyV');
+  expect(await attr(page, 'w1', 'rdPosition')).toBe('reverse');
+  // the context menu shows the hints
+  await rightClick(page, 75, 100);
+  await page.locator('#context-menu .rd-ctx-sub[data-state-submenu="state"]').hover();
+  await expect(page.locator('#context-menu [data-state-cmd="state:occupied"] kbd.rd-kbd')).toHaveText(/O$/);
+  await page.keyboard.press('Escape');
+  await page.locator('#graph-container').click({ position: { x: 5, y: 5 } });
+  await expect(page.locator('#context-menu')).toBeHidden();
 
   // Data panel: the state select of the selected section
   await inGraph(page, "graph.setSelectionCells([graph.getDataModel().getCell('tc3')]);");

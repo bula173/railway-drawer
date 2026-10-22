@@ -3,6 +3,7 @@
  * editing, undo through the tab's command service, live checks with the badge, click-to-select,
  * reports through the menu events, Edit Data… without a selection.
  */
+import { readCountryId, readCountryIdRaw } from '../project-settings';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import type { Cell } from '@maxgraph/core';
 import { TabManager } from '../../ui/tabs';
@@ -297,6 +298,39 @@ describe('railway Data and Checks panels', () => {
     (document.querySelector('.menu-dropdown [data-action="editData"]') as HTMLElement).click();
     expect(dataPanel().hidden).toBe(false);
     expect(notify.warning).toHaveBeenCalledWith(expect.stringContaining('Select a shape first'));
+  });
+
+  it('nothing selected: diagram settings edit the default NID_C (undoable, per tab); balise groups show it', () => {
+    const tab1 = start();
+    scenarios!.showPanel('data');
+    expect(dataPanel().querySelector('[data-testid="railway-diagram-settings"]')).not.toBeNull();
+    const country = field('rdCountryId') as HTMLInputElement;
+    expect(country.value).toBe('');
+    expect(country.placeholder).toContain('510');
+    setField('rdCountryId', '2000');
+    expect(dataPanel().textContent).toContain('NID_C must be an integer 0–1023');
+    expect(readCountryIdRaw(tab1.graph.getDataModel())).toBeNull();
+    setField('rdCountryId', '353');
+    expect(readCountryId(tab1.graph.getDataModel())).toBe('353');
+    tab1.graphCommandService.undo();
+    expect(readCountryIdRaw(tab1.graph.getDataModel())).toBeNull();
+    expect((field('rdCountryId') as HTMLInputElement).value).toBe('');
+    tab1.graphCommandService.redo();
+    expect((field('rdCountryId') as HTMLInputElement).value).toBe('353');
+
+    // a balise group without NID_C shows the default as placeholder
+    const cell = vertex(tab1, '');
+    tab1.graph.setSelectionCell(cell);
+    setField('kind', 'baliseGroup');
+    expect((field('nidC') as HTMLInputElement).placeholder).toBe('353 (diagram default)');
+
+    // another tab has its own setting
+    const tab2 = tabManager!.createTab('Second');
+    tabManager!.switchTab(tab2.id);
+    expect((field('rdCountryId') as HTMLInputElement).value).toBe('');
+    setField('rdCountryId', '12');
+    expect(readCountryId(tab2.graph.getDataModel())).toBe('12');
+    expect(readCountryId(tab1.graph.getDataModel())).toBe('353');
   });
 
   it('follows the active tab', () => {

@@ -10,7 +10,7 @@ import type { KindId } from '../railway/catalogue';
 import { formatStoredNumber, getKind, parseNumber, splitRefList } from '../railway/catalogue';
 import type { PointsEntry } from '../railway/routes';
 import { parsePointsList } from '../railway/routes';
-import { COMMON_SCRIPT_KEYS, EXTRA_ATTRS, KEY_ALIASES, LISTS, TRACK_NESTED_LISTS, kindForList, matchKey, objectKey } from './language';
+import { COMMON_SCRIPT_KEYS, EXTRA_ATTRS, KEY_ALIASES, LISTS, STATE_KEYS, TRACK_NESTED_LISTS, kindForList, matchKey, objectKey, stateValuesFor } from './language';
 import type { JsonPath } from './validate';
 
 export interface PageOptions {
@@ -170,6 +170,19 @@ export function readScriptModel(doc: unknown): ReadResult {
     for (const [key, attr] of Object.entries(EXTRA_ATTRS[kind] ?? {})) {
       if (item[key] !== undefined && item[key] !== null && !(key in COMMON_SCRIPT_KEYS && def.fields.some((f) => f.key === COMMON_SCRIPT_KEYS[key]))) {
         o.attrs[attr] = str(item[key]);
+      }
+    }
+    // runtime states (state / aspect): stored as rdState / rdAspect, the look is applied by apply.ts
+    for (const [key, attr] of Object.entries(STATE_KEYS) as Array<['state' | 'aspect', string]>) {
+      if (item[key] === undefined || item[key] === null) continue;
+      const v = str(item[key]);
+      const allowed = stateValuesFor(kind, key, o.values.signalType ?? '');
+      if (!allowed) {
+        issues.push({ severity: 'warning', path: [...path, key], message: `${def.label} ${id}: has no ${key} (ignored)` });
+      } else if (!allowed.includes(v)) {
+        issues.push({ severity: 'error', path: [...path, key], message: `${def.label} ${id}: ${key} "${v}" is not one of ${allowed.join(', ')}` });
+      } else {
+        o.attrs[attr] = v;
       }
     }
     if (typeof item.x === 'number') o.x = item.x;
@@ -386,7 +399,7 @@ export function readScriptModel(doc: unknown): ReadResult {
     const km = kmOf(ref);
     if (km !== null && !(typeof ref === 'string' && !/^\s*-?\d/.test(ref))) return km;
     const id = str(ref);
-    const target = model.objects.find((o) => (o.kind === 'axleCounter' || o.kind === 'balise' || o.kind === 'signal' || o.kind === 'baliseGroup') && o.id.toUpperCase() === id.toUpperCase());
+    const target = model.objects.find((o) => (o.kind === 'axleCounter' || o.kind === 'insulatedJoint' || o.kind === 'balise' || o.kind === 'signal' || o.kind === 'baliseGroup') && o.id.toUpperCase() === id.toUpperCase());
     if (!target || target.km === undefined) {
       issues.push({ severity: 'error', path: [...path, key], message: `Section ${s.id}: "${id}" is not a detection point with a km on a track` });
       return null;
@@ -395,7 +408,7 @@ export function readScriptModel(doc: unknown): ReadResult {
       s.trackId = target.trackId;
       s.values.trackId = target.trackId;
     }
-    if (target.kind === 'axleCounter') {
+    if (target.kind === 'axleCounter' || target.kind === 'insulatedJoint') {
       const list = splitRefList(target.values.sections);
       if (!list.some((x) => x.toUpperCase() === s.id.toUpperCase())) target.values.sections = [...list, s.id].join(', ');
     }

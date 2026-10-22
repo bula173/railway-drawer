@@ -262,6 +262,13 @@ export class TabManager {
     installCellLocking(graph);
     // A press in a gap of a transparent group (ERTMS symbols) moves the group (canvas-interaction.ts)
     installGroupBackgroundHit(graph);
+    // maxGraph cancels the default of presses on the canvas, so a text field elsewhere (Railway
+    // Script, Data panel) kept the focus and swallowed canvas shortcuts; a press on the canvas
+    // moves the focus off it, like draw.io
+    graphDiv.addEventListener('pointerdown', () => {
+      const active = document.activeElement;
+      if (active instanceof HTMLElement && active !== document.body && !graphDiv.contains(active)) active.blur();
+    }, true);
     // No edge split when a railway symbol is dropped on a track (or with Alt/Shift, like draw.io)
     installRailwaySplitRules(graph);
     installDrawioHandles(graph);

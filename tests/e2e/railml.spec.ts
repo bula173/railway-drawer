@@ -58,6 +58,8 @@ ${obj('bg1', 'rdKind="baliseGroup" rdId="BG1" rdNidC="353" rdNidBg="17" rdCount=
 ${obj('b1', 'rdKind="balise" rdId="B1" rdGroupId="BG1" rdPosition="1" rdTrackId="T1"', 'rhombus;html=1;', box(82, 100, 12, 12))}
 ${obj('b2', 'rdKind="balise" rdId="B2" rdGroupId="BG1" rdPosition="2" rdTrackId="T1"', 'rhombus;html=1;', box(98, 100, 12, 12))}
 ${obj('ac1', 'rdKind="axleCounter" rdId="AC1" rdTrackId="T1"', 'ellipse;fillColor=#000000;', box(300, 100, 10, 10))}
+${obj('j1', 'rdKind="insulatedJoint" rdId="J1" rdTrackId="T1"', 'group', box(400, 100, 10, 12))}
+${obj('bg2', 'rdKind="baliseGroup" rdId="BG2" rdNidBg="18" rdCount="1"', 'rounded=1;dashed=1;fillColor=none;', box(350, 100, 40, 24))}
 <mxCell id="rd-routes" value="Routes" parent="0"/>
 ${obj('r1', 'rdKind="route" rdId="R1" rdEntrySignal="S1" rdExitSignal="S3" rdPoints="W1:reverse" rdSections="T1, T2"', 'endArrow=block;strokeColor=#ff8f00;', line(40, 100, 440, 180), true, 'rd-routes')}
 </root></mxGraphModel>`;
@@ -82,6 +84,8 @@ async function inspectRailml(page: Page, xml: string): Promise<Record<string, un
       groupID: all('isEurobaliseGroup')[0]?.getAttribute('groupID'),
       balises: all('balise').map((b) => b.getAttribute('belongsToBaliseGroup')),
       detector: all('trainDetectionElement')[0]?.getAttribute('type'),
+      detectors: all('trainDetectionElement').map((e) => `${e.getAttribute('id')}:${e.getAttribute('type')}`),
+      countries: all('isEurobaliseGroup').map((e) => e.getAttribute('countryID')),
       routeEntry: byId(entryIl)?.getElementsByTagNameNS(NS, 'refersTo')[0]?.getAttribute('ref'),
       facing: route?.getElementsByTagNameNS(NS, 'facingSwitchInPosition')[0]?.getAttribute('inPosition'),
       projections: all('spotElementProjection').length,
@@ -106,7 +110,8 @@ test('railML export: summary dialog and a railML 3.2 download of the active tab'
   await menu(page, 'file', 'exportRailml');
   const dialog = page.locator('[data-testid="railml-export-dialog"]');
   await expect(dialog).toBeVisible();
-  await expect(dialog.locator('.rd-railml-counts')).toContainText('3 signals, 2 balises in 1 balise group');
+  await expect(dialog.locator('.rd-railml-counts')).toContainText('3 signals, 2 balises in 2 balise groups');
+  await expect(dialog.locator('.rd-railml-counts')).toContainText('2 detection points');
   await expect(dialog.locator('[data-testid="railml-checks"]')).toContainText('Railway checks:');
   await expect(dialog.locator('.rd-railml-extension')).toBeChecked();
   const [download] = await Promise.all([page.waitForEvent('download'), dialog.locator('.rd-railml-export-btn').click()]);
@@ -126,6 +131,9 @@ test('railML export: summary dialog and a railML 3.2 download of the active tab'
     groupID: '17',
     balises: ['bg_BG1', 'bg_BG1'],
     detector: 'axleCounter',
+    // the TC joint marker = insulated rail joint; BG2 has no NID_C: the diagram default 510
+    detectors: ['tde_AC1:axleCounter', 'ij_J1:insulatedRailJoint'],
+    countries: ['353', '510'],
     routeEntry: 'sig_S1',
     facing: 'right',
   });
@@ -159,7 +167,7 @@ test('railML import: file chooser -> new tab with the cells, data and route; re-
      const route = rail.find((c) => c.value.getAttribute('rdKind') === 'route');
      return { kinds, signal: data(signal), route: data(route), routeLayer: route.parent.id, groupChildren: signal.children ? signal.children.length : 0 };`
   );
-  expect(summary.kinds).toEqual({ track: 2, points: 1, signal: 3, balise: 2, axleCounter: 1, bufferStop: 2, levelCrossing: 1, baliseGroup: 1, trackSection: 1, route: 1 });
+  expect(summary.kinds).toEqual({ track: 2, points: 1, signal: 3, balise: 2, axleCounter: 1, insulatedJoint: 1, bufferStop: 2, levelCrossing: 1, baliseGroup: 1, trackSection: 1, route: 1 });
   expect(summary.signal).toMatchObject({ rdKind: 'signal', rdSignalType: 'main', rdDirection: 'nominal', rdKm: '0.1', rdTrackId: 'T01', rdRailmlId: 'sig01' });
   // drawn with the ERTMS library "Signal Right 3" (a group of stencils)
   expect(summary.groupChildren).toBeGreaterThan(3);

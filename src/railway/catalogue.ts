@@ -24,6 +24,7 @@ export type KindId =
   | 'rbc'
   | 'leu'
   | 'axleCounter'
+  | 'insulatedJoint'
   | 'train'
   | 'route';
 
@@ -253,6 +254,20 @@ export const KINDS: readonly KindDef[] = [
     ],
   },
   {
+    // the joint of a track circuit (ERTMS "TC" marker): railML trainDetectionElement insulatedRailJoint
+    id: 'insulatedJoint',
+    label: 'Insulated rail joint',
+    plural: 'Insulated rail joints',
+    idPrefix: 'J',
+    fields: [
+      idField('Joint ID'),
+      kmField(),
+      trackField(),
+      field('sections', 'Track sections', 'refList', { refKinds: ['trackSection'], help: 'Track circuit sections it separates, comma separated' }),
+      notesField(),
+    ],
+  },
+  {
     id: 'train',
     label: 'Train',
     plural: 'Trains',
@@ -403,7 +418,8 @@ export function kindForLibraryTitle(title: string): KindPreset | null {
   if (m) return { kind: 'signal', values: { signalType: 'main', direction: m[1] === 'left' ? 'reverse' : 'nominal', aspects: m[2] } };
   m = /^(?:single )?balise (left|right)$/.exec(t);
   if (m) return { kind: 'balise', values: { direction: m[1] === 'left' ? 'reverse' : 'nominal' } };
-  if (t === 'tc') return { kind: 'trackSection', values: { sectionType: 'tc' } };
+  // the "TC" tile is the joint marker of a track circuit (10x12), not a section line
+  if (t === 'tc') return { kind: 'insulatedJoint' };
   if (t === 'track') return { kind: 'track' };
   m = /^point (left|right)$/.exec(t);
   if (m) return { kind: 'points', values: { hand: m[1], position: 'normal' } };

@@ -10,7 +10,7 @@ exported to railML.
 |---|---|---|
 | `rdState` | track sections, tracks, points, routes | `free` (default), `occupied`, `reserved` (route set), `overlap`, `locked`, `disturbed` |
 | `rdState` | level crossings | `open` (default), `closed`, `disturbed` (failure) |
-| `rdState` | balises, LEUs, axle counters | `free` (working, default), `disturbed` (failed) |
+| `rdState` | balises, LEUs, axle counters, insulated joints | `free` (working, default), `disturbed` (failed) |
 | `rdAspect` | signals (main / shunting; not marker boards or ETCS stop markers) | `stop` (default), `proceed`, `caution`, `shunt`, `dark` |
 | `rdPosition` | points (also the points' Data field "Position") | `normal` (default), `reverse`, `moving`, `outOfControl` |
 | `rdBaseStyle` | any object with a state look | JSON of the drawn values of the style keys a state changed, per part |
@@ -28,13 +28,13 @@ the Data panel, the legend and the change lists all read it.
 | Group | State | Look |
 |---|---|---|
 | Sections, tracks, points | Free | as drawn |
-| | Occupied | stroke `#ff0000` (red) |
+| | Occupied | stroke `#ff0000` (red), **thicker**: drawn `strokeWidth` x 1.5, at least + 2 (6 -> 9, 2 -> 4) |
 | | Reserved (route set) | stroke `#009e00` (green) |
 | | Overlap | stroke `#7a9a00` (yellow-green), dashed `8 4` |
 | | Locked | stroke `#2979ff` (blue) |
 | | Disturbed | stroke `#e000e0` (magenta), dashed `2 2` ("flashing") |
 | Points position (the diverging leg = the points cell) | Normal | leg at opacity 30 (faint) |
-| | Reverse | leg as drawn |
+| | Reverse | leg as drawn; the straight continuation faded (view overlay, 30 % visible) |
 | | Moving | leg dashed `4 4` |
 | | Out of control | stroke `#e000e0`, dashed `2 2` |
 | Routes (edges on the Routes layer) | Not set | as drawn (translucent orange) |
@@ -46,10 +46,17 @@ the Data panel, the legend and the change lists all read it.
 | | Shunt (lunar white) | lamp fill `#9aa7ff` |
 | | Dark (no light) | lamp fill `none` |
 | Level crossings | Open / Closed (secured) / Failure | as drawn / stroke `#2979ff` / stroke `#e000e0` dashed |
-| Balises, LEUs, axle counters | Working / Failed | as drawn / stroke `#e000e0` dashed |
+| Balises, LEUs, axle counters, joints | Working / Failed | as drawn / stroke `#e000e0` dashed |
 
 A position look wins over the state look (points out of control are magenta even when occupied);
 occupancy and position combine otherwise (occupied + normal = red, faint leg).
+
+**Occupied vs. lines drawn red**: some ERTMS library templates (and users) draw tracks and
+points legs red (`#e00000`, `#dc0000`); a red stroke alone would make an occupied section look
+like them. Occupied therefore also widens the line (`OCCUPIED_WIDTH_SCALE` 1.5, at least
+`OCCUPIED_WIDTH_MIN_ADD` 2 more than drawn; `widthScale` of the visual): the drawn `strokeWidth`
+is remembered in `rdBaseStyle` like the colour and put back by Free / Reset. Dashes stay reserved
+for overlap / disturbed / moving, so occupied stays a solid line.
 
 **Colour rules**: every state colour is saturated (chroma >= 0.3), strokes have >= 3:1 against the
 white and >= 4.5:1 against the dark canvas (#121212). The dark rendering (`colors.ts`) keeps saturated
@@ -66,8 +73,14 @@ rendered SVG in the dark theme).
 - Signals: the lamps = round-ish filled leaf vertices of the symbol (|w - h| <= 25 %, not text; the
   ERTMS signal groups' 9x9 lamp stencils); they get `fillColor` + `gradientColor=none`. All lamps take
   the aspect colour. A signal without such parts (a single shape) gets its own fill.
-- Points: the points cell is the diverging leg (ERTMS "Point Left/Right"); the straight leg belongs
-  to the track and is not faded.
+- Points: the points cell is the diverging leg (ERTMS "Point Left/Right"): faint while normal. The
+  straight leg belongs to the track (one track edge), so in **Reverse** it is faded by a view overlay
+  (`points-fade.ts`): from the junction along the straight continuation, for the length of the
+  diverging leg along it (at least 15), a line in the canvas colour at 70 % opacity (2 wider than the
+  drawn track / section) covers the track, so it shows at the same 30 % as a normal-position leg.
+  Chosen over splitting the tracks at the points: no model change (topology, railML, templates and
+  saved files unchanged); the overlay follows the model and the zoom but is not saved and not in
+  image exports (like the km ruler).
 
 ## Applying and resetting (`src/railway/state-apply.ts`)
 
@@ -100,6 +113,12 @@ train's base line, else tracks.
   localStorage `rd.railway.stateLegend`).
 - Data panel: "State" / "Aspect" selects for objects with states; the points' Position field applies
   its look too.
+- Keyboard (selected objects; `src/railway/state-shortcuts.ts`, dispatched by install-railway-states.ts):
+  **Alt+F** free, **Alt+O** occupied, **Alt+R** reserved, **Alt+N** / **Alt+V** points normal / reverse,
+  **Alt+1..4** aspect stop / proceed / caution / shunt. Matched by `event.code` (Alt types characters
+  on macOS: ⌥O = "ø"); no Ctrl/Cmd/Shift, so no clash with the app's bindings (only Alt+Shift+A uses
+  Alt); only while the focus is on the canvas (not in fields or panels). Shown in Railway > Object
+  State, the context menu's state submenus and Help > Keyboard Shortcuts.
 - Scenarios: a step stores the drawing, so states are part of the step; "Show changes" lists
   `TC3: free → occupied`, `S1: aspect stop → proceed`, `W1: position normal → reverse` (the colour
   keys and lamp parts are folded into that line).
@@ -108,4 +127,5 @@ train's base line, else tracks.
 
 railML export skips `rdState`, `rdAspect`, `rdBaseStyle`, `rdRouteRestore`, and the rd extension's
 `style` is the drawn style (state keys put back). `rdPosition` stays a points data field.
-Railway Script: no `state` / `aspect` keys yet (follow-up); `position` of points is the existing field.
+Railway Script (docs/RAILWAY-SCRIPT.md "Runtime states"): optional `state` / `aspect` keys (and the
+points' `position` field) describe states in text; applying sets the look, canvas changes update the text.
