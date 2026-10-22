@@ -29,7 +29,7 @@ describe('catalogue', () => {
   it('every kind has a required ID field and rd-prefixed attributes', () => {
     expect(KINDS.map((k) => k.id)).toEqual([
       'signal', 'balise', 'baliseGroup', 'track', 'trackSection', 'points', 'levelCrossing',
-      'bufferStop', 'rbc', 'leu', 'axleCounter', 'train', 'route',
+      'bufferStop', 'rbc', 'leu', 'axleCounter', 'insulatedJoint', 'train', 'route',
     ]);
     for (const kind of KINDS) {
       expect(kind.fields[0]).toMatchObject({ key: 'id', attr: 'rdId', required: 'error' });
@@ -96,7 +96,7 @@ describe('catalogue', () => {
       ['Train', 'train'],
       ['Signal Right 3', 'signal'],
       ['Single Balise Right', 'balise'],
-      ['TC', 'trackSection'],
+      ['TC', 'insulatedJoint'],
       ['SIgnal Right 4', 'signal'],
       ['Track', 'track'],
       ['Point Left', 'points'],
@@ -120,7 +120,8 @@ describe('catalogue', () => {
     expect(kindForLibraryTitle('SIgnal Right 4')?.values).toMatchObject({ direction: 'nominal', aspects: '4' });
     expect(kindForLibraryTitle('Balise Left')?.values).toEqual({ direction: 'reverse' });
     expect(kindForLibraryTitle('Point Right')?.values).toEqual({ hand: 'right', position: 'normal' });
-    expect(kindForLibraryTitle('TC')?.values).toEqual({ sectionType: 'tc' });
+    // the TC tile is the joint marker of a track circuit, not a section line
+    expect(kindForLibraryTitle('TC')).toEqual({ kind: 'insulatedJoint' });
     // draw.io palettes are not mapped even with the same title
     expect(kindForPaletteEntry({ id: 'general-3-track', title: 'Track', source: 'js/Sidebar.js:1' })).toBeNull();
   });

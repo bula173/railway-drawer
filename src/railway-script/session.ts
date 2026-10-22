@@ -245,6 +245,8 @@ export class ScriptSession {
       const next = editText(text, edits, parsed.json);
       this.lastSynced = next;
       this.store.set(next, 'drawing');
+      // The text now follows the drawing: the status reads "In sync", not the last apply
+      this.lastApply = null;
     }
     const after = this.revalidate();
     this.snapshot = after.model ? takeSnapshot(this.graph.getDataModel(), after.model) : this.snapshot;

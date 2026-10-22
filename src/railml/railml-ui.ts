@@ -94,7 +94,7 @@ export function exportSummary(r: RailmlExportResult): string[] {
   return [
     `${n('netElement', 'netElement')}, ${n('netRelation', 'netRelation')}`,
     `${n('track', 'track')}, ${n('switchIS', 'points', 'points')}, ${n('signalIS', 'signal')}, ${n('balise', 'balise')} in ${n('baliseGroup', 'balise group')}`,
-    `${n('trainDetectionElement', 'axle counter')}, ${n('tvdSection', 'TVD section')}, ${n('bufferStop', 'buffer stop')}, ${n('levelCrossingIS', 'level crossing')}`,
+    `${n('trainDetectionElement', 'detection point')}, ${n('tvdSection', 'TVD section')}, ${n('bufferStop', 'buffer stop')}, ${n('levelCrossingIS', 'level crossing')}`,
     `${n('route', 'route')}, ${n('overlap', 'overlap')}, ${n('radioBlockCentre', 'RBC')}`,
   ];
 }

@@ -4,9 +4,14 @@
  */
 import { describe, expect, it } from 'vitest';
 import { exportRailml } from '../export';
+import { importRailml } from '../import';
 import { checkRailmlStructure } from '../structure';
 import { RAILML_NS, RD_NS, isNcName } from '../xml';
 import { Layout, all, fixture, parse, specLayout } from './helpers';
+import { readCountryId, setCountryId } from '../../railway/project-settings';
+import { exportModelToDrawioXml, importDrawioXmlIntoModel } from '../../services/drawio-xml';
+import { GraphDataModel } from '@maxgraph/core';
+import { collectObjects } from '../../railway/validation';
 
 const DATE = '2026-01-01T00:00:00Z';
 
@@ -195,5 +200,64 @@ describe('railML export details', () => {
         '<associatedNetElement> (ll) @netElementRef="zz" refers to no element',
       ])
     );
+  });
+});
+
+describe('railML export: diagram default NID_C (rdCountryId)', () => {
+  const countryOf = (model: Parameters<typeof exportRailml>[0], id: string): string | null => {
+    const doc = parse(exportRailml(model, { date: DATE }).xml);
+    const eu = all(doc, 'isEurobaliseGroup').find((e) => (e.parentNode as Element).getAttribute('id') === id);
+    return eu?.getAttribute('countryID') ?? null;
+  };
+
+  it('a balise group without NID_C gets countryID from the diagram default (510 when not set)', () => {
+    const l = new Layout();
+    l.line('track', { id: 'T1', kmStart: '0', kmEnd: '1' }, [[0, 100], [600, 100]]);
+    l.obj('baliseGroup', { id: 'BG1', nidBg: '12', count: '1' }, 100, 100, 40, 24, 'rounded=1;dashed=1;fillColor=none;');
+    l.obj('baliseGroup', { id: 'BG2', nidC: '7', nidBg: '13', count: '1' }, 300, 100, 40, 24, 'rounded=1;dashed=1;fillColor=none;');
+    expect(countryOf(l.model, 'bg_BG1')).toBe('510');
+    expect(countryOf(l.model, 'bg_BG2')).toBe('7');
+    setCountryId(l.model, '353');
+    expect(countryOf(l.model, 'bg_BG1')).toBe('353');
+    const r = exportRailml(l.model, { date: DATE });
+    expect(r.issues.filter((i) => i.rule === 'required')).toEqual([]);
+    expect(checkRailmlStructure(parse(r.xml))).toEqual([]);
+    // the default is not written into the drawing
+    expect(collectObjects(l.model).find((o) => o.id === 'BG1')!.values.nidC).toBe('');
+  });
+
+  it('the setting is saved in the .drawio file (root cell attribute) and read back', () => {
+    const l = new Layout();
+    setCountryId(l.model, '353');
+    const xml = exportModelToDrawioXml(l.model);
+    expect(xml).toMatch(/<object [^>]*rdCountryId="353"[^>]*id="0"/);
+    const back = new GraphDataModel();
+    importDrawioXmlIntoModel(xml, back);
+    expect(readCountryId(back)).toBe('353');
+  });
+});
+
+describe('railML export: insulated rail joints (TC joint markers)', () => {
+  it('writes trainDetectionElement insulatedRailJoint and the sections it demarcates; import reads them back', () => {
+    const l = new Layout();
+    l.line('track', { id: 'T1', kmStart: '0', kmEnd: '0.6' }, [[0, 100], [600, 100]]);
+    l.line('trackSection', { id: 'TC1', sectionType: 'tc', trackId: 'T1' }, [[0, 100], [300, 100]]);
+    l.line('trackSection', { id: 'TC2', sectionType: 'tc', trackId: 'T1' }, [[300, 100], [600, 100]]);
+    l.obj('insulatedJoint', { id: 'J1', trackId: 'T1', sections: 'TC1, TC2' }, 300, 100, 10, 12, 'group');
+    const r = exportRailml(l.model, { date: DATE });
+    const doc = parse(r.xml);
+    expect(checkRailmlStructure(doc)).toEqual([]);
+    expect(r.unplaced).toEqual([]);
+    const tde = byId(doc, 'ij_J1');
+    expect(tde.localName).toBe('trainDetectionElement');
+    expect(tde.getAttribute('type')).toBe('insulatedRailJoint');
+    expect(child(tde, 'spotLocation')).not.toBeNull();
+    for (const id of ['tvd_TC1', 'tvd_TC2']) {
+      expect(all(byId(doc, id), 'hasDemarcatingTraindetector').map((e) => e.getAttribute('ref'))).toEqual(['ij_J1']);
+    }
+    const back = importRailml(r.xml);
+    const joint = collectObjects(back.model).find((o) => o.kind.id === 'insulatedJoint')!;
+    expect(joint.id).toBe('J1');
+    expect(joint.values.sections).toBe('TC1, TC2');
   });
 });

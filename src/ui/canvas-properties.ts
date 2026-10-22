@@ -72,18 +72,19 @@ export class CanvasProperties {
     });
   }
 
+  // The tab's graph holds the grid state (gridEnabled / gridSize, also set by a loaded file's page
+  // settings, grid-toggle.ts applyGridSettings), so the background follows it
   toggleGrid(enabled: boolean) {
     this.config.gridEnabled = enabled;
     // Theme-aware tile (light/dark grid color), see grid-background.ts
-    applyGridBackground(this.graph.getContainer(), this.config.gridSize, enabled);
+    applyGridBackground(this.graph.getContainer(), this.graph.gridSize, enabled);
   }
 
   setGridSize(size: number) {
+    if (!Number.isFinite(size) || size <= 0) return;
     this.config.gridSize = size;
     this.graph.gridSize = size;
-    if (this.config.gridEnabled) {
-      this.toggleGrid(true);
-    }
+    applyGridBackground(this.graph.getContainer(), size, this.graph.gridEnabled);
   }
 
   setBackgroundColor(color: string) {

@@ -26,7 +26,7 @@ import { TabManager } from './ui/tabs';
 import { LeftPanelTabs } from './ui/left-panel-tabs';
 import { CacheService } from './services/cache-service';
 import { ProjectNameEditor } from './ui/project-name-editor';
-import { installSidePanels, togglePanel } from './ui/side-panels';
+import { ensurePanelShown, installSidePanels, togglePanel } from './ui/side-panels';
 import { APP_VERSION, BUILD_ID, BUILD_TIME } from './config/build-id';
 import type { ShapeDesignerController } from './ui/shape-designer';
 import { CustomShapeToolbar } from './ui/custom-shape-toolbar';
@@ -58,6 +58,7 @@ import { installRailml, isRailmlFile, requestRailmlOpen } from './railml/install
 import { installRailwayScript } from './railway-script/install-railway-script';
 import { syncConnectionArrowsMenu, toggleConnectionArrows } from './ui/hover-arrows';
 import { withErtmsDisplayTitles } from './ui/ertms-display';
+import { RAILWAY_LIBRARIES, railwayLibrarySources } from './ui/railway-libraries';
 import { installToolbar } from './ui/toolbar';
 import { clickInsertPlacement } from './ui/click-insert';
 import { createStartCard } from './ui/start-card';
@@ -250,6 +251,10 @@ document.addEventListener('keydown', (e) => {
   // Keys on the menu bar / context menu / toolbar dropdowns navigate the menu (menu.ts, context-menu.ts,
   // toolbar.ts, left-panel-tabs.ts), not the diagram (Escape there must not clear the selection)
   if (e.target instanceof Element && e.target.closest('#menu-bar, #context-menu, .rd-toolbar-menu, .left-panel-overflow-menu')) {
+    return;
+  }
+  // Delete / Backspace on a left-panel tab closes that tab (left-panel-tabs.ts), never the diagram selection
+  if ((e.key === 'Delete' || e.key === 'Backspace') && e.target instanceof Element && e.target.closest('.left-panel-tabbar')) {
     return;
   }
 
@@ -507,10 +512,12 @@ const shapesPaletteView = createDrawioPaletteView({
   getGraph: () => tabManager.getActiveTab()?.graph ?? null,
   palettes: [
     withErtmsDisplayTitles(ertmsPaletteSource(import.meta.env.BASE_URL)),
+    // ERTMS/ETCS extra, Polish signalling (PKP PLK), Track layout (src/ui/railway-libraries.ts)
+    ...railwayLibrarySources(import.meta.env.BASE_URL),
     ...shapesTabPalettes(() => MERGED_APP_GROUPS.flatMap((g) => shapeRegistry.getShapesByGroup(g))),
   ],
   defaultExpanded: ['ertms', 'general'],
-  captionPalettes: ['ertms'],
+  captionPalettes: ['ertms', ...RAILWAY_LIBRARIES.map((lib) => lib.id)],
   dropTarget: graphContainer,
   onError: (message) => globalNotificationManager.error(message),
   prepareInsert: prepareRailwayInsert,
@@ -603,6 +610,8 @@ installNarrowScreen();
  * Script… (its tab), F1 shortcuts. Rechecked on tab switches and new tabs.
  */
 const focusErtmsPalette = (): void => {
+  // the palette lives in the left panel: hidden on narrow screens (body.rd-narrow) or collapsed
+  ensurePanelShown('left');
   leftPanelTabs.switchTab('shapes');
   shapesPaletteView.setPaletteVisible('ertms', true);
   shapesPaletteView.setExpanded('ertms', true);
@@ -621,10 +630,16 @@ const startCard = createStartCard({
   },
   onAction: (action) => {
     if (action === 'ertms') focusErtmsPalette();
-    else if (action === 'template') leftPanelTabs.switchTab('templates');
+    else if (action === 'template') {
+      ensurePanelShown('left');
+      leftPanelTabs.switchTab('templates');
+    }
     else if (action === 'open') runMenuAction('open');
     else if (action === 'railml') runMenuAction('importRailml');
-    else if (action === 'script') leftPanelTabs.switchTab('railwayScript');
+    else if (action === 'script') {
+      ensurePanelShown('left');
+      leftPanelTabs.switchTab('railwayScript');
+    }
     else if (action === 'shortcuts') window.dispatchEvent(new CustomEvent('shortcuts-help-request'));
   },
 });

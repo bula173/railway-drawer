@@ -9,6 +9,7 @@ import {
   PANEL_MIN_WIDTH,
   SIDE_PANELS_KEY,
   clampPanelWidth,
+  ensurePanelShown,
   installSidePanels,
   readPanelState,
   setPanelShown,
@@ -79,6 +80,20 @@ describe('collapse / expand', () => {
     togglePanel('left');
     expect(getComputedStyle(left()).display).toBe('none');
     expect(stored().left.collapsed).toBe(false);
+  });
+
+  it('ensurePanelShown: opens a hidden panel (narrow: session only), leaves a shown one alone', () => {
+    document.body.classList.add('rd-narrow');
+    ensurePanelShown('left');
+    expect(left().classList.contains('rd-panel-open-narrow')).toBe(true);
+    expect(getComputedStyle(left()).display).not.toBe('none');
+    expect(stored().left.collapsed).toBe(false);
+    ensurePanelShown('left');
+    expect(left().classList.contains('rd-panel-open-narrow')).toBe(true);
+    togglePanel('left');
+    document.body.classList.remove('rd-narrow');
+    ensurePanelShown('left');
+    expect(left().classList.contains('rd-panel-collapsed')).toBe(false);
   });
 
   it('resize handle: separator with keyboard steps, saved', () => {

@@ -140,10 +140,10 @@ export class CustomShapeToolbar {
       menu.innerHTML = `
         <div style="padding: 4px 0;">
           <div class="menu-item" data-action="edit" style="padding: 6px 16px; cursor: pointer; font-size: 12px;">
-            ✏️ Edit
+            Edit
           </div>
           <div class="menu-item" data-action="delete" style="padding: 6px 16px; cursor: pointer; font-size: 12px; color: var(--rd-danger);">
-            🗑️ Delete
+            Delete
           </div>
         </div>
       `;

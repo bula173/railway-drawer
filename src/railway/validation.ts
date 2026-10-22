@@ -5,7 +5,8 @@
  * Works on the model only (geometry from cell geometries), so it runs on any tab and in tests.
  * Rules:
  * - `duplicate-id`       error    two objects of the same kind share an ID (case-insensitive)
- * - `required`           error/warning  a required field is empty (ID: error; NID_C/NID_BG: warning)
+ * - `required`           error/warning  a required field is empty (ID: error; NID_C/NID_BG: warning;
+ *                                     a balise group without NID_C uses the diagram default rdCountryId)
  * - `invalid-value`      error    not a number, not a whole number, out of range, unknown option
  * - `unknown-kind`       warning  `rdKind` names a kind this version does not know
  * - `balise-without-group` error  a balise has no balise group
@@ -18,6 +19,7 @@
  * - `km-outside-track`   warning  an object's km lies outside its track's km start/end
  * - `route-endpoint`, `route-path`, `route-points`: route rules, see route-checks.ts
  */
+import { applyProjectDefaults, readCountryId } from './project-settings';
 import type { Cell, GraphDataModel } from '@maxgraph/core';
 import type { FieldDef, KindDef, KindId } from './catalogue';
 import { fieldValueProblem, getKind, parseNumber, splitRefList } from './catalogue';
@@ -122,7 +124,8 @@ export interface ValidateOptions {
 
 /** Runs every rule on the model; issues sorted errors first, then in model order. */
 export function validateModel(model: GraphDataModel, options: ValidateOptions = {}): Issue[] {
-  const objects = collectObjects(model);
+  // diagram defaults (project-settings.ts): balise groups without NID_C use the diagram's country
+  const objects = applyProjectDefaults(collectObjects(model), readCountryId(model));
   const issues = validateObjects(objects, options);
   // Unknown kinds (e.g. a file from a newer version)
   for (const cell of allCells(model)) {

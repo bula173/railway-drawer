@@ -43,7 +43,8 @@ node scripts/railml/validate.ts [--xsd railml3.xsd] [files]  # dev only: xmllint
 CI (`.github/workflows/build-and-deploy.yml`) runs typecheck, typecheck:tests, lint, test:run, build and the
 Playwright subset (legacy-smoke, drawio-palette, templates, scenarios, style-edit, share, gitlab, ertms-data,
 scenario-uml-text, theme-contrast, remote-persist, scenario-doc, editor-commands, dark-shapes, ertms-routes, railml, drawio-compat,
-interaction, hover-arrows, railway-script, ux-batch, ux-batch2a, ux-batch2b, move-connect, object-states, canvas-scroll). No
+interaction, hover-arrows, railway-script, ux-batch, ux-batch2a, ux-batch2b, move-connect, object-states, canvas-scroll,
+railway-shapes, backlog-ui). No
 draw.io download is needed (`scripts/drawio-palettes` only runs locally, its output is committed). It does not deploy.
 
 ### E2E
@@ -109,7 +110,7 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   train, a Text and a default Rectangle from the palette plus a `mxgraph.basic.star` with `strokeColor=#000000`, an
   inline `stencil(...)` whose own XML paints `#000000`, a dark-grey HTML label and blue text, and requires every
   rendered SVG stroke >= 3:1 and every label colour >= 4.5:1 against the canvas (#121212); the stored cell styles stay
-  unchanged; selection border/handles and `feedbackColor('#0000FF')` >= 3:1. General + ERTMS palette thumbnails (strokes
+  unchanged; selection border/handles and `feedbackColor('#0000FF')` >= 3:1. General + ERTMS + the three railway library thumbnails (strokes
   and text against the thumb's background) and the first template thumbnails (strokes) likewise; the Track thumbnail has
   the canvas's stroke; View > Dark Mode back to light re-renders thumbnails light. File > Export As (.drawio, minus
   `modified`/`etag`/`agent`/`version`) and the PNG export (decoded pixels, SHA-256) are identical in light and dark.
@@ -180,7 +181,12 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   the drawing stays unchanged, reload keeps the script ("In sync with the drawing"); File > Import > Railway Script… (new
   tab named after `name`), File > Export > Railway Script… (.rdl.yaml = the text, .rdl.json = the data, generated for a tab
   without a script).
-- `tests/e2e/ux-batch2b.spec.ts` (any port): ERTMS palette first + expanded, captions, EN/PL search (zwrotnica, semafor,
+- `tests/e2e/railway-shapes.spec.ts` (any port): the railway library sections follow ERTMS (ERTMS/ETCS extra, Polish
+  signalling (PKP PLK), Track layout; captioned, > 30 tiles each); "Semafor 3-komorowy prawy" inserts as signal S1
+  (main, nominal, 3 aspects) and Railway > Object State > Proceed / Stop paints its 3 lamps; a second semafor gets S2;
+  search "tarcza" (Polish tarcze) and "marker board" (the 4 ETCS marker boards); "Turnout 1:9 Left (toe left)" inserts T1
+  + W1 (hand left) and File > Export railML 3.2… downloads a parseable file with one `switchIS`.
+- `tests/e2e/ux-batch2b.spec.ts` (any port): ERTMS palette first + expanded, captions, EN/PL search in the ERTMS section (zwrotnica, semafor,
   balisa); palette click placement (cascade without overlap, next to the selected shape + edge, balise onto the selected
   track = its track reference, one undo each); scenario "▶ Present" + "⋯" menu (items, Esc, Duplicate, 24 px targets);
   start card (forced via `rd.startCard.force`: Esc, drop passes and dismisses, ERTMS action focuses the palette, "Don't
@@ -203,6 +209,16 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   toggle opens one), left tab strip (one row, » overflow menu with keyboard, chosen tab moves into the row, PlantUML closeable
   and reopened from Extras, a wide panel shows all tabs). e2e helpers in `tests/e2e/menu-helpers.ts`: `clickMenuItem`,
   `revealMenuItem`, `openLeftTab` (row or » menu), `leftTabLabels`.
+- `tests/e2e/backlog-ui.spec.ts` (any port, real mouse / keyboard input): Align left / Distribute vertically on a
+  rubber-band selection with a locked cell (locked one stays, one Ctrl+Z step each, Ctrl+Y); left tabs: no button in a
+  button, PlantUML's "Close PlantUML tab" reached by Tab + Enter, Delete on the focused tab closes it (the selected shape
+  stays), with a 180 px panel the » menu's "Close PlantUML" item (keyboard); 390 px: start card "Insert ERTMS symbols"
+  opens the left panel for the session (`rd-panel-open-narrow`, stored state unchanged, hidden again after a reload);
+  File > Open of a draw.io file with `grid="0" gridSize="20"` -> grid off (View > Grid / toolbar / `.rd-grid-on`), a new
+  tab has its own grid, switching back, Download .drawio writes grid/gridSize back, toolbar toggle -> `grid="1"`, kept
+  over a reload; palette click next to a selection: below when the east side is taken, Shift east, Ctrl/Cmd north,
+  Ctrl/Cmd+Shift west, one undo each; tab label rename renames the matching project (title, export name), Save As
+  relabels a tab named like the project, a label of its own stays (also over a reload).
 - `tests/e2e/style-edit.spec.ts` (any port): line color/width/dash and fill through the Properties panel on cells from an
   ERTMS template, a user template and the draw.io/ERTMS palettes (group first click, child second click); checks the
   cell's own style and the SVG. Reads the graph via `import('/src/services/service-registry.ts')` (dev server only).
@@ -226,9 +242,12 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
 - Rarely used features are separate chunks loaded with `import()` on first use: the shape designer
   (`ui/shape-designer.ts`, opened from Extras > Design Custom Shapes… = `open-shape-designer` / `edit-custom-shape`), the
   route tables dialog (`railway/route-tables-dialog.ts`), the XLSX writer (`railway/xlsx.ts`), scenario PDF/slides
-  export (`jspdf`, `svg2pdf.js`), GitLab/SharePoint loaders, the draw.io palette JSON and railML import/export
-  (`railml/railml-ui.ts` with export/import/structure). Keep new heavy,
-  user-triggered UI lazy the same way.
+  export (`jspdf`, `svg2pdf.js`), GitLab/SharePoint loaders, the draw.io palette JSON, railML import/export
+  (`railml/railml-ui.ts` with export/import/structure) and the local PlantUML sequence renderer
+  (`services/plantuml-sequence-svg.ts`, imported by `scenarios/step-uml.ts` on the first rendering). Keep new heavy,
+  user-triggered UI lazy the same way. Build chunks (vite.config.ts `manualChunks`): `maxgraph` (@maxgraph/core,
+  ~542 kB), `drawio-shapes` (`src/drawio-shapes/js`, ~228 kB, self-contained: only maxGraph imports, so no chunk cycle;
+  preloaded in parallel with `main-editor`, ~700 kB, was ~941 kB); `chunkSizeWarningLimit` 800 (reason in the config).
 - Dead code: modules not reachable from `src/main.ts` (and not test-only helpers) are deleted, not kept "for later";
   the old hand-written shape classes (`src/shapes/{uml,bpmn,cloud,...}`), `src/store`, `src/contexts`,
   `src/types`, the color picker/palette controllers etc. were removed in the cleanup.
@@ -361,14 +380,22 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
 - Left tab strip (`src/ui/left-panel-tabs.ts`): one row; tabs that do not fit (the active one always stays) get
   `.rd-tab-overflow` and are listed in the "»" menu (`.left-panel-tab-more` -> `.left-panel-overflow-menu` role=menu,
   `.left-panel-overflow-item[data-tab]`, arrows/Esc), relaid on resize / switch / close. Every tab button has `data-tab`.
-  PlantUML and ERTMS are closeable (×); reopened by Extras > PlantUML Editor / View > ERTMS Tab.
+  Each tab is a `.left-panel-tab-btn[data-tab]` wrapper (no button in a button) with its `button.left-panel-tab-label`
+  (label in a span); PlantUML and ERTMS also get a sibling `button.tab-close-btn` ("Close <tab> tab", Tab-reachable),
+  Delete on the focused tab closes it (main-editor's dispatcher ignores Delete/Backspace on `.left-panel-tabbar`), and
+  the » menu lists `.left-panel-overflow-close[data-tab]` "Close <tab>" after such a tab (Delete on its item too);
+  reopened by Extras > PlantUML Editor / View > ERTMS Tab.
 - Toolbar (`index.html` `#toolbar-container` role=toolbar, chrome by `src/ui/toolbar.ts` `installToolbar`, once): groups
   (role=group) Zoom | Edit (Undo, Redo, Delete) | Insert (rectangle, ellipse, diamond, line, connect two selected, image as
   custom shape) | Arrange (Grid toggle = View > Grid, format painter, Align / distribute dropdown `#btn-align` ->
   `#align-menu` with AlignmentController's `#btn-align-*` / `#btn-distribute-*`) | Railway (Route tool, Run checks, km
   ruler mirroring the menu item via `data-mirror-action`) | View (panels, fullscreen). Buttons carry `data-icon`
   (`TOOLBAR_ICONS`, inline 24x24 stroke SVG, no emoji), `data-label` (-> aria-label) and optional `data-shortcut` (an
-  `ACTION_SHORTCUTS` key -> tooltip "Undo (Ctrl+Z)"); toggles use aria-pressed. Actions stay bound by id in the per-tab
+  `ACTION_SHORTCUTS` key -> tooltip "Undo (Ctrl+Z)"); toggles use aria-pressed. The same icon set serves the rest of the
+  chrome (`applyInlineIcons` for `[data-rd-icon]`, `setInlineIcon`): top-bar logo (train) and Share, Properties text
+  alignment, layer eye/lock, shape designer, remote file browser; no emoji anywhere in the chrome. Align / distribute
+  (AlignmentController): cloned geometries via `model.setGeometry` in one batchUpdate (one undo step), locked cells
+  skipped (also as reference). Actions stay bound by id in the per-tab
   controllers (InteractiveUIController, ZoomController, ...). Removed: pan ‹ ›, the green "+" rectangle, the toolbar
   shape-designer button (Extras), the single Distribute button.
 - Themed dialogs (`src/ui/app-dialogs.ts`, `.rd-tpl-modal` look): `openAppModal` (role=dialog, aria-modal, labelledby,
@@ -425,7 +452,8 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   connectable (its points show, an edge end dropped in a gap connects). `installRailwaySplitRules`: no edge split when a
   railway object is dropped on an edge or an edge is a railway object (a balise on a track split the track into two
   edges connected to it) or with Alt/Shift (draw.io); a group with `rdKind` is never a drop target. Moving: draw.io's
-  grid (gridSize 10, `gridEnabled` = View > Grid; `snapDelta` aligns an off-grid cell only on moves of half a grid step or
+  grid (gridSize 10, `gridEnabled` = View > Grid; per tab: a file's `grid` / `gridSize` on `<mxGraphModel>` are applied on
+  load and written back on save, `grid-toggle.ts` `applyGridSettings` / `syncGridUi` on tab switch and load; `snapDelta` aligns an off-grid cell only on moves of half a grid step or
   more), Alt held during the drag = no grid and no track snap (Alt or Shift pressed before a press on the empty
   background = rubber band; a plain drag there pans, src/ui/pan.ts), no guides, drag start tolerance 4 px. Context menu
   (`contextSelectionFor`): a right-click inside the selection (cell or ancestor selected) keeps it, else the topmost
@@ -458,18 +486,47 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   (catalogue label "Points"). ERTMS is the FIRST section of the Shapes tab (`palettes: [ertms, ...shapesTabPalettes()]`,
   `defaultExpanded: ['ertms', 'general']`, stored flags win) with captioned tiles (`captionPalettes: ['ertms']`,
   `.rd-dp-caption`); the optional ERTMS tab stays off by default (the Shapes tab already leads with ERTMS).
+- **Railway libraries** (`src/ui/railway-libraries.ts` `RAILWAY_LIBRARIES` / `railwayLibrarySources`, the only hook:
+  three entries in the Shapes-tab `palettes` after ERTMS + `captionPalettes`): "ERTMS/ETCS extra" (`etcs-extra`,
+  `public/libraries/ertms-extra.xml`: ETCS stop/location marker boards, level transition / RBC border / cab signalling /
+  neutral section / pantograph / track condition / release speed boards, fixed + switchable balises, balise groups (2, 3,
+  linked), Euroloop, RBC, LEU, axle counter head + evaluator, insulated rail joint, radio infill, GSM-R mast, IXL, OC,
+  ETCS trains, MA arrows, EoA, danger point, SvL, overlap), "Polish signalling (PKP PLK)" (`rail-pl`,
+  `railway-pl.xml`: semafory 2–5-komorowe, wjazdowy/wyjazdowy/drogowy/odstępowy, powtarzacz, tarcze To/Osp/Tz/Tm,
+  Sz, semafory kształtowe, wskaźniki W1/W4/W8/W9/W24/D1 (code boards), przejazdy kat. A–D, rogatka, sygnalizator,
+  kozioł, rozjazdy zwyczajne/łukowe, skrzyżowanie, Rkp/Rkpd, krzyżownica, styk, wykolejnice, perony, nastawnia,
+  posterunek, hektometr, km) and "Track layout" (`track-layout`, `track-layout.xml`: straight/vertical/diagonal
+  tracks, track section, track ends, turnouts 1:9/1:12 x hand x toe side, crossovers single/scissors, diamond, slips,
+  platforms, bridge, tunnel, level crossing, km post/hectometre/km ruler, gradient/speed boards, track number). Lazy
+  (fetched when a section opens or a search runs). **Generated**: `python3 -I scripts/railway-libraries/build_railway_libraries.py
+  public/libraries` (deterministic; never hand-edit the three files; the docstring has the conventions). Plain
+  draw.io styles and inline `stencil(...)` shapes (accents `fillColor2`), editable colours, connection points; tags EN +
+  PL per entry (`tags` key of the `<mxlibrary>` entries, ignored by draw.io). Typed entries store catalogue
+  attributes (`rdKind`, `rdSignalType`, `rdDirection` Right/prawy = nominal, `rdAspects` = lamps, `rdHand` physical
+  from the toe, `rdProtection`, `rdFunction`, ...); signals are groups with round filled lamp vertices (states);
+  turnouts/crossovers/slips are multi-cell sets (track edges + points legs, topology.ts). On insert
+  `prepareRailwayInsert` runs `renumberInsertedObjects` for every non-ERTMS entry (free IDs, `BG1`/`B1` references
+  follow); `kindForPaletteEntry` reads the first `rdKind` of a non-ERTMS entry's XML (click placement). **Licensing:
+  the symbols are original work of this repository (no proprietary symbol files copied); the Polish/ETCS pictograms
+  are conventional schematic depictions, not copies of PKP PLK / ERA drawings.** Tests:
+  `src/railway/__tests__/railway-libraries.test.ts`, `tests/e2e/railway-shapes.spec.ts`, dark-shapes thumbnails.
 - Palette click placement (`src/ui/click-insert.ts` `clickInsertPlacement`, palette option `clickPlacement`; drag/drop
   unchanged): snap-kind symbol (signal, balise, axle counter, LEU) + one selected track/track section -> the visible point
   of its line nearest the view centre (snap.ts then snaps + sets track/km); one selected unlocked vertex + a vertex entry
-  -> 80 px east, vertically centred, moved down while taken, connected by an edge (draw.io dropAndConnect EAST; draw.io
-  needs Alt+Click, here Alt+Click skips it); else the view centre, cascading right/down to a free spot. One model update
-  (one undo), new cell selected, no container drop.
+  -> 80 px beside it, centred on that side, moved along the side while taken (down for east/west, right for
+  south/north), connected by an edge (draw.io dropAndConnect). Side = draw.io itemClicked's modifiers without its Alt
+  (draw.io connects only on Alt+Click; here Alt+Click skips it): plain click east, or south when a shape already lies
+  in the band east of the selection (`hasEastNeighbour`), Shift east, Ctrl/Cmd north, Ctrl/Cmd+Shift west (also Enter /
+  Space on a tile; `clickDirection`, `placeBeside`). Else the view centre, cascading right/down to a free spot. One
+  model update (one undo), new cell selected, no container drop. Not ported: draw.io's Shift+Click shape replace.
 - Start card (`src/ui/start-card.ts`, main-editor.ts): over an empty active tab (Insert ERTMS symbols / Open template… /
   Open file… / Import railML… / Railway Script… / F1); dismissed by any model change making it non-empty, its actions,
   Esc, ×; "Don't show again" = localStorage `rd.startCard.hidden`. Hidden while dragging (drops reach the canvas).
   Automated browsers (`navigator.webdriver`) do not get it unless `rd.startCard.force` = '1' (e2e clicks the canvas centre).
 - Narrow screens (`src/ui/narrow-screen.ts`): < 900 px -> `body.rd-narrow` (fallback CSS hides both side panels and
-  `.panel-resize-handle`) + dismissible banner (`rd.narrowBanner.dismissed`).
+  `.panel-resize-handle`) + dismissible banner (`rd.narrowBanner.dismissed`). Start card actions that need the left
+  panel (Insert ERTMS symbols, Open template…, Railway Script…) call `ensurePanelShown('left')` (side-panels.ts): opened
+  for the session there (`.rd-panel-open-narrow`), stored state untouched.
 - Layers panel (`src/ui/layers.ts`) = the model's real layers (root children, listed top-most first, unnamed =
   "Background", `rd-routes` = "Routes"): current layer = `graph.setDefaultParent`; + Layer = `model.add(root, …)`;
   delete = `removeCells([layer], false)`; eye = `model.setVisible`; padlock = `locked=1` on the layer cell. All undoable
@@ -487,7 +544,8 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   `<diagram name>`). Top-bar `.document-title` shows the active tab's (`TabManager.switchTab`; a background tab's
   `setProjectName` does not touch it). Rename (`ProjectNameEditor(tabManager)`) -> `tabManager.renameActiveProject`:
   the active tab's project, and its tab label too when the label equals the old project name (tabs opened from
-  links/remote files are named after it); cached at once. Cache: `tabs[].projectName` per tab (top-level
+  links/remote files are named after it); cached at once. File > Save As… goes through it too. Mirror rule: renaming a
+  tab label (double-click, `editTabName`) that equals the tab's project name renames the project as well. Cache: `tabs[].projectName` per tab (top-level
   `projectName` = active tab's; caches of earlier versions without it give it to the active tab).
 - Image export: File > Export > PNG Image…/SVG Image… (`data-action="exportPng|exportSvg"`, per-tab `ExportImageController` set
   on the tab's MenuController) uses `diagram-image-export.ts` like the Share dialog and scenario exports: draw.io
@@ -631,12 +689,17 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   palette elements = the title presets (`kindForLibraryTitle`, no ID: generated on insert); templates: signals
   (group with heads 229/231: type main / shunting for `SS<n>`, direction nominal when the mast is left of the lamps,
   aspects = lamps, ID from the label), balises (12x12 triangles within 40 of a track; direction west = reverse;
-  group/position from a `BG<n>` label within 40, which becomes the `baliseGroup` with NID_BG n and count), trains,
+  group/position from a `BG<n>` label within 40, which becomes the `baliseGroup` with NID_BG n and count; a balise
+  without a BG label becomes its own group (count 1, next free BG<n>, NID_BG n, `infill` for `*_infill`) on its function
+  label within 25 (LTA/LTO/S2_BG/S4_infill in the two "Level transition L1 → L2" templates; not grouped by distance:
+  LTA and S4_infill are 26 px apart but different groups); no NID_C (diagram default)), trains,
   tracks (all `vsdxID=17` stroke >= 4 horizontal edges on one y merged into one `track` T<n> edge; extra grey edges
   removed; coloured MA/route highlight edges stay decoration on top), points (diagonal track edges, hand down-right =
   left; short legs extended onto the track) and TVD sections: `trackSection` TC<n> edges with the track's style on
   top of the track (below the highlights), split at the TC joint markers on it (fallback: points legs, then
-  signals, else one section), `rdTrackId`, `rdSectionType=tc`. TC markers, labels, arrows, highlights: no kind.
+  signals, else one section), `rdTrackId`, `rdSectionType=tc`. TC joint markers on a track (centre within 8 of the line)
+  = `insulatedJoint` J<n> with `rdTrackId` + `rdSections` (sections starting/ending within 15: railML
+  `hasDemarcatingTraindetector`); markers off the tracks, labels, arrows, highlights: no kind.
   Sections drawn ON the track = topology.ts "sections on tracks" (names the pieces, not separate links), so routes,
   snap and the railML export (tracks + `tvdSection`s) work; recolouring a section = its own edge's strokeColor.
   The library stores no `rdState`/`rdAspect` (state feature: defaults free/stop/normal). `insertTemplate` renumbers
@@ -677,19 +740,25 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   and `convertValueToString` the raw `%rdId%`). Writes: `setRailwayData(model, cells, change, {autoId})` = one
   `model.setValue` per cell inside one update (one undo step, values cloned, never mutated); no-op edits add no history.
   Stored numbers are canonical (`12+345` / `12,345` -> `12.345`); unparseable input is stored as typed and reported.
-- **Catalogue** (`catalogue.ts`): 13 kinds (signal, balise, baliseGroup, track, trackSection, points, levelCrossing,
-  bufferStop, rbc, leu, axleCounter, train, route), fields typed text/number/integer/km/enum/ref/refList with
+- **Catalogue** (`catalogue.ts`): 14 kinds (signal, balise, baliseGroup, track, trackSection, points, levelCrossing,
+  bufferStop, rbc, leu, axleCounter, insulatedJoint, train, route; insulatedJoint = the TC joint marker, ID `J<n>`,
+  `sections` it separates), fields typed text/number/integer/km/enum/ref/refList with
   unit/min/max (NID_C 0–1023, NID_BG/NID_RBC 0–16383, balises in group 1–8, aspects 1–6); route fields see
   "Railway engineering tools" below. Every kind has `id`
   (required, generated `S1`, `BG1`, ... from `idPrefix`, case-insensitive unique per kind).
 - **Pre-assigned kinds**: the ERTMS library entries store them (generated, see Templates); on insert also by title (`kindForLibraryTitle`: Signal Left/Right n -> signal with
-  direction reverse/nominal and n aspects, (Single) Balise Left/Right -> balise, TC -> trackSection tc, Track ->
+  direction reverse/nominal and n aspects, (Single) Balise Left/Right -> balise, TC -> insulatedJoint (the tile is the 10x12 joint marker; sections are lines on the track), Track ->
   track, Point Left/Right -> points with hand, Train/Train Connected -> train; MA/Distance/Line/Gradient/SSP: none)
   through the palette option `prepareInsert` -> `insertEntry(..., prepare)` (same undo step, only single-cell
   entries, only `ertms-*` entries, not draw.io palettes); app railway shapes by style shape (`kindForStyle`, drop
   handler in `main-editor.ts`). Templates/paste keep the data they carry.
+- **Diagram settings** (`project-settings.ts`): root cell (id 0) attribute `rdCountryId` = default NID_C of the
+  diagram (missing = `DEFAULT_COUNTRY_ID` 510, Poland; invalid = no default); balise groups without NID_C use it
+  (`applyProjectDefaults` in `validateModel` and the railML export -> `countryID`; the drawing is not changed). Edited
+  in the Data panel with nothing selected ("Diagram railway settings", `#rd-rw-country`, one undo step); a balise
+  group's empty NID_C field shows it as placeholder. Library templates do not pin NID_C (they follow the diagram).
 - **Checks** (`validation.ts`, model only, `geometry.ts` for absolute positions): duplicate-id, required (ID error,
-  NID_C/NID_BG warning), invalid-value, unknown-kind, balise-without-group (error), group-count / group-position
+  NID_C/NID_BG warning; NID_C only when the diagram has no usable default), invalid-value, unknown-kind, balise-without-group (error), group-count / group-position
   (warning), missing-reference (error), signal-off-track (warning: centre > `SIGNAL_TRACK_DISTANCE` 40 px from its
   track, or from every track when it names none and tracks/sections/points exist), km-order (warning: majority
   direction of km along the track polyline, needs >= 3 objects), km-outside-track (warning).
@@ -778,7 +847,8 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   disturbed), `rdAspect` (signals except marker boards / stop markers: stop | proceed | caution | shunt | dark), `rdPosition`
   (points: the catalogue field, normal | reverse | moving | outOfControl). Missing = default (free / open / stop / normal) =
   as drawn. **One table** `STATE_SCHEME` + `STATE_COLORS` (saturated, >= 3:1 on white and >= 4.5:1 on #121212, so the dark
-  rendering keeps them unchanged; unit-tested).
+  rendering keeps them unchanged; unit-tested). Occupied
+  also draws the line thicker (`widthScale` 1.5, at least +2; drawn width kept in `rdBaseStyle`) so it differs from tracks drawn red.
 - `applyObjectStates` = attributes + style keys (`strokeColor`/`fillColor`/`gradientColor`/`dashed`/`dashPattern`/`opacity`)
   of the object, its drawn parts (groups) or a signal's lamps (round-ish filled leaf vertices; else the signal's own fill)
   via `applyStyleToCells`, ONE undo step; the drawn values are remembered in `rdBaseStyle` (JSON per part path) and put back
@@ -792,7 +862,13 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   `railway-state-request`, handled on the active tab's selection); State Legend (`rd.railway.stateLegend`); Data panel
   State/Aspect selects (points Position field applies its look). Scenario diff: `TC3: free → occupied`, colour keys and
   lamp parts folded in (`describeStateChanges`). railML export skips the state attributes and writes the drawn style.
-- Tests: `src/railway/__tests__/states.test.ts`, `states-templates.test.ts`, `tests/e2e/object-states.spec.ts`.
+- Keyboard: Alt+F/O/R (free/occupied/reserved), Alt+N/V (points), Alt+1..4 (aspects) on the selection
+  (`state-shortcuts.ts` by `event.code`; keydown listener in install-railway-states.ts, canvas focus only; hints via
+  `ACTION_SHORTCUTS['railwayState:<cmd>']`, context menu kbd, Help section "Object states").
+- Points reverse: the straight continuation (part of the track) is faded by a view overlay (`points-fade.ts`
+  `installPointsFade` per tab graph from install-railway-states: topology junction -> normal piece for the leg's
+  length, canvas-coloured line at 70 % in the overlay pane, class `rd-points-fade`; not in the model/exports).
+- Tests: `src/railway/__tests__/states.test.ts`, `states-templates.test.ts`, `points-fade.test.ts`, `tests/e2e/object-states.spec.ts`.
 
 ### railML 3.2 (`src/railml/`, details and the full table in docs/RAILML.md)
 
@@ -810,10 +886,10 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   `locateObject` (points: toe piece at the junction) -> `spotLocation` (`intrinsicCoord`, `applicationDirection`,
   km). `infrastructureVisualization` = piece polylines + cell centres. Objects sorted by kind, natural ID (stable
   output). Result: `xml`, `counts`, `unplaced` (no location), `extensionOnly` (LEU, train), `issues`, `preserved`.
-- **Mapping** (`mapping.ts` `KIND_MAPPINGS`; prefixes `sig_ bal_ bg_ trk_ sw_ tvd_ tde_ bus_ lc_ rbc_ rt_`, IL `il_`):
+- **Mapping** (`mapping.ts` `KIND_MAPPINGS`; prefixes `sig_ bal_ bg_ trk_ sw_ tvd_ tde_ ij_ bus_ lc_ rbc_ rt_`, IL `il_`):
   track -> `track` + `linearLocation`; points -> `switchIS` (ordinarySwitch, branchCourse = hand, left/rightBranch
   netRelationRef) + `switchIL`; signal -> `signalIS` (main/shunting: isTrainMovementSignal + signalConstruction light;
-  marker board/stop marker: isEtcsSignal + board) + `signalIL@function`; balise -> `balise` (belongsToBaliseGroup,
+  marker board/stop marker: isEtcsSignal + board) + `signalIL@function`; insulatedJoint -> `trainDetectionElement` type insulatedRailJoint (+ demarcation like axle counters); balise -> `balise` (belongsToBaliseGroup,
   isEurobalise positionInGroup = position-1); baliseGroup -> `baliseGroup` (applicationType ETCS, isEurobaliseGroup
   countryID/groupID); axleCounter -> `trainDetectionElement` axleCounter; trackSection -> IL `tvdSection`
   (hasDemarcatingTraindetector; no location in 3.2); bufferStop, levelCrossing (`protection`) -> IS; rbc -> IL
@@ -850,6 +926,10 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   (`from`/`to` km or detection point IDs), `levelCrossings`, `bufferStops`, `leus`, `rbcs`, `trains`, `routes` (`from`, `to`,
   `via`, `overlap`); catalogue field names are keys, `x`/`y` override positions; unknown keys = warnings (kept).
   `language.ts` (lists, aliases, EXTRA_ATTRS `rdTrackKind/rdLane/rdPointsType/rdDivergingTrack`, train `rdTrackId/rdKm/rdDirection`).
+  Runtime states: optional `state` / `aspect` keys (`STATE_KEYS` -> rdState/rdAspect, enums from `STATE_SCHEME` per kind,
+  `stateValuesFor`), points `position` = catalogue field; the script is the source (missing = default): `apply.ts`
+  `stateChangeFor` -> `applyObjectStates` (look) in the same edit only where the effective state differs; `sync.ts`
+  writes/unsets the keys on canvas state changes; `generate.ts` writes non-default states.
 - Schema: `schema.ts` builds the draft-07 JSON Schema; `public/schemas/railway-script-1.schema.json` must equal it (test;
   `UPDATE_RS_SCHEMA=1 npx vitest run src/railway-script/__tests__/schema-storage.test.ts` rewrites it). `validate.ts` is a
   small validator interpreting that schema (agreement with ajv is tested: devDependency `ajv` 8.20.0 pinned, test-only,

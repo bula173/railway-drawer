@@ -5,9 +5,9 @@
  * Sequence diagrams (the usual case: `Train -> RBC : MA Request`) are rendered locally by
  * plantuml-sequence-svg.ts — offline, nothing leaves the browser. Other diagram types go to the
  * PlantUML server only when the user configured one (plantuml-server.ts); otherwise the result is an
- * error telling how to enable it.
+ * error telling how to enable it. The local renderer is a separate chunk, loaded on the first
+ * rendering (scenario steps with UML are rare; it is not needed for the first paint).
  */
-import { isSequenceDiagram, PlantUmlSyntaxError, renderSequenceSvg } from '../services/plantuml-sequence-svg';
 import { getPlantUmlServer, PlantUmlServerError, renderOnPlantUmlServer } from '../services/plantuml-server';
 import type { ServerRenderOptions } from '../services/plantuml-server';
 
@@ -25,30 +25,31 @@ const cache = new Map<string, Promise<UmlRenderResult>>();
 const CACHE_SIZE = 40;
 
 /** Renders PlantUML text; never throws. Server results are cached per server + text. */
-export function renderStepUml(source: string, opts: UmlRenderOptions = {}): Promise<UmlRenderResult> {
+export async function renderStepUml(source: string, opts: UmlRenderOptions = {}): Promise<UmlRenderResult> {
   const text = source.trim();
-  if (!text) return Promise.resolve({ status: 'empty' });
+  if (!text) return { status: 'empty' };
   const server = opts.server ?? getPlantUmlServer();
   let localError: string | null = null;
-  if (isSequenceDiagram(text)) {
+  const sequence = await import('../services/plantuml-sequence-svg');
+  if (sequence.isSequenceDiagram(text)) {
     try {
-      const result = renderSequenceSvg(text);
-      return Promise.resolve({ status: 'ok', svg: result.svg, renderer: 'local', warnings: result.warnings });
+      const result = sequence.renderSequenceSvg(text);
+      return { status: 'ok', svg: result.svg, renderer: 'local', warnings: result.warnings };
     } catch (error) {
-      if (!(error instanceof PlantUmlSyntaxError)) {
+      if (!(error instanceof sequence.PlantUmlSyntaxError)) {
         console.error('[Scenarios] Local PlantUML rendering failed:', error);
       }
       localError = error instanceof Error ? error.message : String(error);
     }
   }
   if (!server) {
-    return Promise.resolve({
+    return {
       status: 'error',
       offline: false,
       message: localError
         ? `Cannot render this diagram: ${localError}.`
         : 'Only sequence diagrams are rendered locally. To render other PlantUML diagrams, set a PlantUML server in the step editor.',
-    });
+    };
   }
   const key = `${server}\n${text}`;
   const cached = cache.get(key);

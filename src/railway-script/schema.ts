@@ -11,7 +11,7 @@
  */
 import type { FieldDef, KindId } from '../railway/catalogue';
 import { getKind } from '../railway/catalogue';
-import { COMPUTED_FIELDS, KEY_ALIASES, LISTS, SCHEMA_ID, SCRIPT_VERSION, TRACK_NESTED_LISTS } from './language';
+import { COMPUTED_FIELDS, KEY_ALIASES, LISTS, SCHEMA_ID, SCRIPT_VERSION, TRACK_NESTED_LISTS, stateValuesFor } from './language';
 
 export type JsonSchema = Record<string, unknown>;
 
@@ -65,6 +65,16 @@ function catalogueProperties(kind: KindId): Record<string, JsonSchema> {
   return props;
 }
 
+/** Runtime state keys of a kind (`state` / `aspect`, docs/STATES.md). */
+function stateProperties(kind: KindId): Record<string, JsonSchema> {
+  const out: Record<string, JsonSchema> = {};
+  const state = stateValuesFor(kind, 'state');
+  if (state) out.state = { enum: state, description: `Runtime state (default ${state[0]}; docs/STATES.md)` };
+  const aspect = stateValuesFor(kind, 'aspect');
+  if (aspect) out.aspect = { enum: aspect, description: `Signal aspect (default ${aspect[0]}; not for marker boards / stop markers)` };
+  return out;
+}
+
 const layout = (): Record<string, JsonSchema> => ({
   x: num('Layout override: x of the centre (a track: of its first point), drawing units'),
   y: num('Layout override: y of the centre (a track: of its line), drawing units'),
@@ -76,7 +86,7 @@ function objectDef(kind: KindId, extra: Record<string, JsonSchema>, required: st
     type: 'object',
     description: `${def.label} (railway object kind "${kind}")`,
     required,
-    properties: { id: ref('id'), ...catalogueProperties(kind), ...extra, ...layout() },
+    properties: { id: ref('id'), ...catalogueProperties(kind), ...stateProperties(kind), ...extra, ...layout() },
     ...more,
   };
 }
@@ -133,6 +143,7 @@ export function buildRailwayScriptSchema(): JsonSchema {
         EndPos: num('Alias of end (metres)'),
         lane: { type: 'integer', description: 'Vertical row (0 = top main line, 1 below, -1 above); automatic when omitted' },
         kind: { enum: ['main', 'siding'], description: 'main (default) or siding (drawn thinner)' },
+        ...stateProperties('track'),
         ...nestedLists(),
         bufferStops: {
           type: 'array',
@@ -176,11 +187,12 @@ export function buildRailwayScriptSchema(): JsonSchema {
     ),
     balise: objectDef('balise', {}, ['id', 'at']),
     axleCounter: objectDef('axleCounter', {}, ['id', 'at']),
+    insulatedJoint: objectDef('insulatedJoint', {}, ['id', 'at']),
     trackSection: objectDef(
       'trackSection',
       {
-        from: { anyOf: [ref('km'), ref('id')], description: 'Start: km, or the ID of an axle counter / balise on the track', 'x-expected': 'a km value or a detection point ID' },
-        to: { anyOf: [ref('km'), ref('id')], description: 'End: km, or the ID of an axle counter on the track', 'x-expected': 'a km value or a detection point ID' },
+        from: { anyOf: [ref('km'), ref('id')], description: 'Start: km, or the ID of an axle counter / insulated joint / balise on the track', 'x-expected': 'a km value or a detection point ID' },
+        to: { anyOf: [ref('km'), ref('id')], description: 'End: km, or the ID of an axle counter / insulated joint on the track', 'x-expected': 'a km value or a detection point ID' },
       },
       ['id'],
       { allOf: [anyRequired('from', 'startKm', 'kmStart'), anyRequired('to', 'endKm', 'kmEnd')] }

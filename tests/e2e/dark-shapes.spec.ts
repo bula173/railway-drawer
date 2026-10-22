@@ -21,6 +21,8 @@ type Theme = 'light' | 'dark';
 const SHOT_DIR = 'test-results/dark-shapes';
 const CANVAS = '#121212';
 const PALETTE = '#drawio-palette-container';
+/** The railway libraries after ERTMS (ERTMS/ETCS extra, Polish signalling, Track layout). */
+const RAILWAY_SECTIONS = ['etcs-extra', 'rail-pl', 'track-layout'];
 
 interface Colours {
   strokes: string[];
@@ -320,7 +322,8 @@ test.describe('dark theme: shapes are readable', () => {
   test('palette and template thumbnails use the dark rendering (and follow a theme switch)', async ({ page }) => {
     await openApp(page, 'dark');
     await mkdir(SHOT_DIR, { recursive: true });
-    for (const id of ['general', 'ertms']) {
+    // general, ERTMS and the railway libraries (src/ui/railway-libraries.ts)
+    for (const id of ['general', 'ertms', ...RAILWAY_SECTIONS]) {
       await expandSection(page, id);
       const thumbs = page.locator(`${PALETTE} section[data-palette-id="${id}"] .rd-dp-thumb`);
       const n = await thumbs.count();
@@ -333,9 +336,12 @@ test.describe('dark theme: shapes are readable', () => {
       // General also holds draw.io's Basic palette (merged); its entries with fixed draw.io colours
       // (pattern fills, smileys, Sankey link) were never part of this check, so only General's own
       // entries, the merged app shapes and ERTMS are checked
-      `${PALETTE} section[data-palette-id="general"] .rd-dp-item:not([data-entry-id^="basic-"]) .rd-dp-thumb, ${PALETTE} section[data-palette-id="ertms"] .rd-dp-thumb`,
+      [
+        `${PALETTE} section[data-palette-id="general"] .rd-dp-item:not([data-entry-id^="basic-"]) .rd-dp-thumb`,
+        ...['ertms', ...RAILWAY_SECTIONS].map((id) => `${PALETTE} section[data-palette-id="${id}"] .rd-dp-thumb`),
+      ].join(', '),
     );
-    expect(thumbs.length).toBeGreaterThan(50);
+    expect(thumbs.length).toBeGreaterThan(200);
     expect(await offenders(page, thumbs)).toEqual([]);
 
     // the thumbnail matches the canvas: same stroke as the inserted ERTMS track

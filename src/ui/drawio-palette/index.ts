@@ -15,7 +15,14 @@ export {
   PALETTE_DRAG_TYPE,
   VISIBLE_STORAGE_KEY,
 } from './drawio-palette-view';
-export type { DrawioPaletteView, DrawioPaletteViewOptions, LazyPaletteSource, PaletteMenuItem, PaletteSource } from './drawio-palette-view';
+export type {
+  DrawioPaletteView,
+  DrawioPaletteViewOptions,
+  LazyPaletteSource,
+  PaletteClickModifiers,
+  PaletteMenuItem,
+  PaletteSource,
+} from './drawio-palette-view';
 export {
   applyDrawioDefaultStyles,
   cellsFromModelXml,

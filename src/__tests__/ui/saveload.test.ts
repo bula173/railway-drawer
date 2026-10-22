@@ -198,4 +198,29 @@ describe('SaveLoadController', () => {
     expect(result.metadata.version).toBe('2.0');
     expect(result.extraPages).toEqual([]);
   });
+
+  it('applies the page grid (grid / gridSize on <mxGraphModel>) to the tab and writes it back', () => {
+    const events: unknown[] = [];
+    const onGrid = (e: Event): void => {
+      events.push((e as CustomEvent).detail.graph);
+    };
+    window.addEventListener('rd-grid-settings', onGrid);
+    controller.load(MODEL_XML.replace('<mxGraphModel>', '<mxGraphModel grid="0" gridSize="20">'));
+    expect(graph.gridEnabled).toBe(false);
+    expect(graph.gridSize).toBe(20);
+    expect(events).toEqual([graph]);
+    let model = new DOMParser().parseFromString(controller.serializeToXml(), 'text/xml').documentElement;
+    expect(model.getAttribute('grid')).toBe('0');
+    expect(model.getAttribute('gridSize')).toBe('20');
+    // View > Grid on -> saved as grid="1"
+    graph.gridEnabled = true;
+    model = new DOMParser().parseFromString(controller.serializeToXml(), 'text/xml').documentElement;
+    expect(model.getAttribute('grid')).toBe('1');
+    // no attributes: draw.io's defaults (grid on, 10)
+    graph.gridEnabled = false;
+    controller.load(MODEL_XML);
+    expect(graph.gridEnabled).toBe(true);
+    expect(graph.gridSize).toBe(10);
+    window.removeEventListener('rd-grid-settings', onGrid);
+  });
 });

@@ -394,7 +394,7 @@ test.describe('editor commands', () => {
     const items = page.locator('#layers-list .layer-item');
     await items.nth(0).locator('.layer-lock').click();
     expect(await hasLockStyle(page, 'L2')).toBe(true);
-    await expect(items.nth(0).locator('.layer-lock')).toHaveText('🔒');
+    await expect(items.nth(0).locator('.layer-lock')).toHaveAttribute('data-rd-icon', 'lock');
 
     // clicking a cell of the locked layer selects nothing; the other layer still works
     const u = await cellCenter(page, 'U');
@@ -418,7 +418,7 @@ test.describe('editor commands', () => {
     await page.locator('#graph-container').click({ position: { x: 700, y: 450 } });
     await page.keyboard.press('Control+z');
     expect(await hasLockStyle(page, 'L2')).toBe(false);
-    await expect(items.nth(0).locator('.layer-lock')).toHaveText('🔓');
+    await expect(items.nth(0).locator('.layer-lock')).toHaveAttribute('data-rd-icon', 'unlock');
     await page.mouse.click(u.x, u.y);
     expect(await selectedIds(page)).toEqual(['U']);
     expect(errors).toEqual([]);

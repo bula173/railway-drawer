@@ -14,6 +14,7 @@
 import { Graph } from '@maxgraph/core';
 import { confirmDialog } from './app-dialogs';
 import { globalNotificationManager } from './notification';
+import { applyInlineIcons } from './toolbar';
 import { customShapeRegistry, CustomShape } from '../services/custom-shape-registry';
 
 interface ShapeElement {
@@ -58,6 +59,7 @@ export class ShapeDesignerController {
     const editingShape = shapeId ? customShapeRegistry.getById(shapeId) : undefined;
 
     this.modal = this.createModalHTML(editingShape);
+    applyInlineIcons(this.modal);
     document.body.appendChild(this.modal);
 
     this.setupModalHandlers(editingShape);
@@ -97,12 +99,12 @@ export class ShapeDesignerController {
 
               <div class="palette-label">Generic Shapes:</div>
               <div class="palette-grid">
-                <button class="palette-shape" data-shape="actor" title="Actor">🧑</button>
+                <button class="palette-shape" data-shape="actor" title="Actor" data-rd-icon="user"></button>
                 <button class="palette-shape" data-shape="arrow" title="Arrow">➤</button>
                 <button class="palette-shape" data-shape="cloud" title="Cloud">☁</button>
                 <button class="palette-shape" data-shape="cylinder" title="Cylinder">⌗</button>
                 <button class="palette-shape" data-shape="double-ellipse" title="Double Ellipse">⧗</button>
-                <button class="palette-shape" data-shape="image" title="Image">🖼</button>
+                <button class="palette-shape" data-shape="image" title="Image" data-rd-icon="image"></button>
                 <button class="palette-shape" data-shape="label" title="Label">▢</button>
                 <button class="palette-shape" data-shape="rhombus" title="Rhombus">◇</button>
                 <button class="palette-shape" data-shape="swimlane" title="Swimlane">⊞</button>
@@ -116,16 +118,16 @@ export class ShapeDesignerController {
 
             <div class="canvas-controls">
               <button class="btn-undo" title="Undo last vertex">↶ Undo</button>
-              <button class="btn-delete-shape" title="Delete selected shape">🗑️ Delete</button>
-              <button class="btn-clear" title="Clear all">🗑️ Clear All</button>
-              <button class="btn-close-path" title="Close path">🔒 Close</button>
+              <button class="btn-delete-shape" title="Delete selected shape" data-rd-icon="trash" data-rd-icon-size="14">Delete</button>
+              <button class="btn-clear" title="Clear all" data-rd-icon="trash" data-rd-icon-size="14">Clear All</button>
+              <button class="btn-close-path" title="Close path" data-rd-icon="closePath" data-rd-icon-size="14">Close</button>
             </div>
 
             <div class="canvas-controls">
-              <button class="btn-bring-forward" title="Bring forward">⬆ Forward</button>
-              <button class="btn-send-backward" title="Send backward">⬇ Backward</button>
-              <button class="btn-to-front" title="Bring to front">⬆⬆ Front</button>
-              <button class="btn-to-back" title="Send to back">⬇⬇ Back</button>
+              <button class="btn-bring-forward" title="Bring forward" data-rd-icon="arrowUp" data-rd-icon-size="14">Forward</button>
+              <button class="btn-send-backward" title="Send backward" data-rd-icon="arrowDown" data-rd-icon-size="14">Backward</button>
+              <button class="btn-to-front" title="Bring to front" data-rd-icon="toFront" data-rd-icon-size="14">Front</button>
+              <button class="btn-to-back" title="Send to back" data-rd-icon="toBack" data-rd-icon-size="14">Back</button>
             </div>
           </div>
 
@@ -204,7 +206,7 @@ export class ShapeDesignerController {
             <div class="vertex-code-section">
               <label>Vertex Code:</label>
               <textarea id="vertex-code" class="vertex-code-output" readonly spellcheck="false"></textarea>
-              <button id="copy-vertex-code" class="btn btn-small" title="Copy to clipboard">📋 Copy Code</button>
+              <button id="copy-vertex-code" class="btn btn-small" title="Copy to clipboard" data-rd-icon="copy" data-rd-icon-size="14">Copy Code</button>
             </div>
           </div>
         </div>
@@ -360,10 +362,11 @@ export class ShapeDesignerController {
       if (vertexCodeArea && vertexCodeArea.value) {
         navigator.clipboard.writeText(vertexCodeArea.value).then(() => {
           const btn = copyCodeBtn as HTMLElement;
-          const originalText = btn.textContent;
-          btn.textContent = '✅ Copied!';
+          const label = btn.lastChild;
+          const originalText = label?.textContent ?? 'Copy Code';
+          if (label) label.textContent = 'Copied';
           setTimeout(() => {
-            btn.textContent = originalText;
+            if (label) label.textContent = originalText;
           }, 2000);
         });
       }
@@ -882,7 +885,7 @@ CellRenderer.registerShape('custom${className}', ${className} as any);
     paletteShapes?.forEach((btn) => {
       (btn as HTMLElement).draggable = true;
       btn.addEventListener('dragstart', (e) => {
-        const shapeType = (e.target as HTMLElement).dataset.shape;
+        const shapeType = (btn as HTMLElement).dataset.shape;
         (e as DragEvent).dataTransfer!.effectAllowed = 'copy';
         (e as DragEvent).dataTransfer!.setData('shapeType', shapeType || '');
       });

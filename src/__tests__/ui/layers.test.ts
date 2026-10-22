@@ -112,7 +112,7 @@ describe('LayersController', () => {
     (list.querySelectorAll('.layer-item')[0].querySelector('.layer-lock') as HTMLButtonElement).click();
     expect(hasLockedStyle(second)).toBe(true);
     expect(layers.getLayers()[1].locked).toBe(true);
-    expect(list.querySelectorAll('.layer-lock')[0].textContent).toBe('🔒');
+    expect((list.querySelectorAll('.layer-lock')[0] as HTMLElement).dataset.rdIcon).toBe('lock');
     // the locked layer's cell left the selection and cannot be selected again
     expect(graph.getSelectionCells()).toEqual([a]);
     graph.setSelectionCells([a, b]);
@@ -122,7 +122,7 @@ describe('LayersController', () => {
 
     undo.undo();
     expect(hasLockedStyle(second)).toBe(false);
-    expect(list.querySelectorAll('.layer-lock')[0].textContent).toBe('🔓');
+    expect((list.querySelectorAll('.layer-lock')[0] as HTMLElement).dataset.rdIcon).toBe('unlock');
     graph.setSelectionCell(b);
     expect(graph.getSelectionCells()).toEqual([b]);
   });

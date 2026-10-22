@@ -22,13 +22,24 @@ Steps (deterministic; entries that do not change keep their exact bytes):
       top of the track, below the highlights) split at the TC joint markers drawn on it and at the
       points legs' ends; a track without markers or points is split at its signals; a track
       without any of these is one section. Sections carry rdTrackId and rdSectionType=tc (when
-      demarcated by TC markers). TC joint markers themselves stay untyped (decoration);
+      demarcated by TC markers);
+    - TC joint markers on a track (the marker group, or a loose vsdxID 73 bar; centre within 8 px
+      of the track line, within its ends +- 8): `insulatedJoint` J<n> (railML trainDetectionElement
+      insulatedRailJoint) with rdTrackId and rdSections = the sections that start or end within
+      15 px of it (railML tvdSection hasDemarcatingTraindetector); markers away from the tracks
+      (legends) stay decoration;
     - signals: groups with signal heads (vsdxID 229/231): `signal`, type main (shunting for
       "SS<n>" labels), direction nominal when the mast is left of the lamps ("Signal Right"),
       reverse otherwise, aspects = number of lamps, ID from the label inside/next to it (S<n>, ...);
     - balises: 12x12 triangles within 40 px of a track (others are legend symbols): `balise` B<n>, direction from the triangle (west = reverse); a
       "BG<n>" label with balises within 40 px becomes their `baliseGroup` (ID BG<n>, NID_BG n,
-      count); balises get groupId and position (left to right);
+      count); a balise without a BG label becomes its own group (count 1, generated BG<n> /
+      NID_BG n, function infill for "*_infill") on the text label within 25 px whose nearest
+      balise it is (LTA, LTO, S2_BG, S4_infill: the level transition templates); balises are not
+      grouped by distance, since neighbouring balises there (LTA / S4_infill, 26 px) are different
+      groups; balises get groupId and position (left to right); balise groups get no NID_C: they use
+      the diagram's default country (rdCountryId on the root cell, 510 when not set; the app's
+      project-settings.ts), so a template follows the country of the diagram it is inserted into;
     - trains: groups with the train stencils: `train` TR<n>.
     IDs are unique per template; the app renumbers colliding IDs on insert (insertTemplate).
 """
@@ -44,6 +55,8 @@ REMOVED_INDICES = (31, 32, 35)  # ERTMS scenario 14, 15, 18
 KBS = re.compile(r'(?<![A-Za-z0-9+/])[Kk][Bb][Ss](\d+[A-Za-z0-9_]*)(?![A-Za-z0-9+/=])')
 ID_LABEL = re.compile(r'^[A-Z]{1,3}\d+[A-Za-z0-9_]*$')
 GREY = '#a5a5a5'
+# a balise without a BG<n> label becomes a group on the text label this close to it (centres)
+LABEL_GROUP_DISTANCE = 25
 
 
 # ------------------------------------------------------------------------------------------------
@@ -229,7 +242,8 @@ def element_preset(title):
     if m:
         return {'rdKind': 'balise', 'rdDirection': 'reverse' if m.group(1) == 'left' else 'nominal'}
     if t == 'tc':
-        return {'rdKind': 'trackSection', 'rdSectionType': 'tc'}
+        # the "TC" tile is the joint marker (10x12), not a section line
+        return {'rdKind': 'insulatedJoint'}
     if t == 'track':
         return {'rdKind': 'track'}
     m = re.match(r'^point (left|right)$', t)
@@ -495,12 +509,12 @@ def annotate_template(xml, report):
         elif kind == 'train':
             set_data(model, el, {'rdKind': 'train', 'rdId': unique('TR')})
         elif kind == 'tc':
-            tcs.append(b)
+            tcs.append((el, b))
     # loose TC joint bars (vsdxID 73 without their group)
     for el in model.top():
         if model.is_edge(el) or model.children(el) or style_map(el).get('vsdxID') != '73':
             continue
-        tcs.append(model.box(el))
+        tcs.append((el, model.box(el)))
 
     balises = []
     for el in list(model.top()):
@@ -526,6 +540,7 @@ def annotate_template(xml, report):
         if near and near[0][0] <= 40:
             groups[near[0][1]]['members'].append(bal)
     group_of = {}
+    report_ungrouped = []
     for g in groups:
         if not g['members']:
             continue
@@ -538,6 +553,37 @@ def annotate_template(xml, report):
         set_data(model, g['el'], attrs)
         for pos, m in enumerate(sorted(g['members'], key=lambda b: b[1][0]), 1):
             group_of[id(m[0])] = (ident, pos)
+    # balises without a BG label: each is its own group, typed on its function label (LTA, LTO,
+    # S4_infill, S2_BG, ...: the text within LABEL_GROUP_DISTANCE whose nearest balise it is).
+    # Not grouped by distance: in "Level transition L1 -> L2 (staff responsible)" the LTA and the
+    # S4_infill balises are 26 px apart but are two groups with different functions.
+    taken = {id(g['el']) for g in groups}
+    free_texts = [(el, lab, tb) for el, lab, tb in texts
+                  if id(el) not in taken and lab and not re.match(r'^BG\d+$', lab)]
+    for bal in sorted(balises, key=lambda b: (b[1][0], b[1][1])):
+        if id(bal[0]) in group_of:
+            continue
+        best = None
+        for el, lab, tb in free_texts:
+            tc = (tb[0] + tb[2] / 2, tb[1] + tb[3] / 2)
+            d = math.hypot(tc[0] - bal[1][0], tc[1] - bal[1][1])
+            if d > LABEL_GROUP_DISTANCE:
+                continue
+            nearest = min(balises, key=lambda b: math.hypot(tc[0] - b[1][0], tc[1] - b[1][1]))
+            if nearest is bal and (best is None or d < best[0]):
+                best = (d, el, lab)
+        if best is None:
+            report_ungrouped.append(bal)
+            continue
+        _d, el, lab = best
+        free_texts = [t for t in free_texts if t[0] is not el]
+        ident = unique('BG')
+        attrs = {'rdKind': 'baliseGroup', 'rdId': ident, 'rdNidBg': ident[2:], 'rdCount': '1',
+                 'rdDirection': 'reverse' if bal[2] else 'nominal'}
+        if 'infill' in lab.lower():
+            attrs['rdFunction'] = 'infill'
+        set_data(model, el, attrs)
+        group_of[id(bal[0])] = (ident, 1)
     for bal in sorted(balises, key=lambda b: (b[1][1], b[1][0])):
         attrs = {'rdKind': 'balise', 'rdId': unique('B'), 'rdDirection': 'reverse' if bal[2] else 'nominal'}
         if id(bal[0]) in group_of:
@@ -552,7 +598,7 @@ def annotate_template(xml, report):
         y, x0, x1 = line['y'], line['x0'], line['x1']
         cuts = []
         by_tc = False
-        for (bx, by, bw, bh) in tcs:
+        for _el, (bx, by, bw, bh) in tcs:
             cx, cy = bx + bw / 2, by + bh / 2
             if abs(cy - y) <= 8 and x0 + 15 < cx < x1 - 15:
                 cuts.append(cx)
@@ -576,6 +622,7 @@ def annotate_template(xml, report):
         bounds = [x0] + clean + [x1]
         insert_at = list(model.root).index(line['el']) + 1
         names = []
+        spans = []
         for a, b in zip(bounds, bounds[1:]):
             sec_n += 1
             ident = unique('TC', f'TC{sec_n}')
@@ -584,8 +631,26 @@ def annotate_template(xml, report):
             model.root.insert(insert_at, cell)
             insert_at += 1
             names.append(ident)
+            spans.append((a, b, ident))
+        line['spans'] = spans
         sections_report.append(f"{line['id']}: {', '.join(names)} ({rule})")
-    report.append('; '.join(sections_report))
+    # ---- TC joint markers on a track: insulated rail joints demarcating the sections next to them
+    joints = []
+    for el, (bx, by, bw, bh) in tcs:
+        cx, cy = bx + bw / 2, by + bh / 2
+        for line in lines:
+            if abs(cy - line['y']) <= 8 and line['x0'] - 8 <= cx <= line['x1'] + 8:
+                joints.append((lines.index(line), cx, el, line))
+                break
+    for _i, cx, el, line in sorted(joints, key=lambda j: (j[0], j[1])):
+        near = [ident for a, b, ident in line['spans'] if abs(a - cx) <= 15 or abs(b - cx) <= 15]
+        attrs = {'rdKind': 'insulatedJoint', 'rdId': unique('J'), 'rdTrackId': line['id']}
+        if near:
+            attrs['rdSections'] = ', '.join(near)
+        set_data(model, el, attrs)
+    if joints:
+        sections_report.append(f'{len(joints)} joints')
+    report.append('; '.join(sections_report) + (f'; {len(report_ungrouped)} balise(s) without group' if report_ungrouped else ''))
     return model_text(model.doc)
 
 

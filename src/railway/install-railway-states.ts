@@ -12,9 +12,12 @@ import type { TabManager } from '../ui/tabs';
 import type { RailwayNotifier } from './install-railway-data';
 import { getCellKind } from './object-data';
 import { STATE_REQUEST_EVENT } from './state-menu';
+import { installPointsFade } from './points-fade';
+import { stateShortcutCommand } from './state-shortcuts';
+import { shouldIgnoreGraphShortcut } from '../ui/delete';
 import { applicableCells, occupyUnderTrains, resetAllStates, resetObjectStates, runRouteCommand, setStateOnCells } from './state-apply';
 import type { StateDimension, StateVisual } from './states';
-import { STATE_SCHEME } from './states';
+import { STATE_SCHEME, scaledStrokeWidth } from './states';
 
 export const STATE_LEGEND_KEY = 'rd.railway.stateLegend';
 
@@ -72,7 +75,7 @@ function swatch(visual: StateVisual, lamp: boolean): SVGSVGElement {
   l.setAttribute('y1', '6');
   l.setAttribute('x2', '26');
   l.setAttribute('y2', '6');
-  l.setAttribute('stroke-width', '4');
+  l.setAttribute('stroke-width', String(visual.widthScale ? scaledStrokeWidth(4, visual.widthScale) : 4));
   if (visual.stroke) l.setAttribute('stroke', visual.stroke);
   else l.setAttribute('class', 'rd-state-swatch-drawn');
   if (visual.dashPattern) l.setAttribute('stroke-dasharray', visual.dashPattern);
@@ -91,7 +94,7 @@ function legendRows(): Array<[string, Array<[string, StateVisual, boolean]>]> {
     ['Routes', of('route', 'state')],
     ['Signal aspects (lamps)', of('signal', 'aspect', true)],
     ['Level crossings', of('levelCrossing', 'state')],
-    ['Balises, LEUs, axle counters', of('equipment', 'state')],
+    ['Balises, LEUs, axle counters, joints', of('equipment', 'state')],
   ];
 }
 
@@ -233,9 +236,39 @@ export function installRailwayStates(tabManager: TabManager, notify: RailwayNoti
     const detail = (evt as CustomEvent<string>).detail;
     if (typeof detail === 'string') run(detail);
   };
+  // points in reverse: the straight continuation faded (view overlay per tab graph, points-fade.ts)
+  const fades = new Map<Graph, () => void>();
+  const syncFades = (): void => {
+    const graphs = new Set(tabManager.getAllTabs().map((t) => t.graph));
+    for (const g of graphs) if (!fades.has(g)) fades.set(g, installPointsFade(g));
+    for (const [g, off] of fades) {
+      if (graphs.has(g)) continue;
+      off();
+      fades.delete(g);
+    }
+  };
+
+  // Alt+F/O/R/N/V/1-4 on the selection (state-shortcuts.ts; event.code: Alt types characters on
+  // macOS). Bubble phase after main-editor's dispatcher; the scenario view swallows Alt keys before.
+  const onKey = (e: KeyboardEvent): void => {
+    const command = stateShortcutCommand(e);
+    const graph = getGraph();
+    if (!command || !graph || e.defaultPrevented || shouldIgnoreGraphShortcut(e, graph)) return;
+    if (e.target instanceof Element && e.target.closest('#menu-bar, #context-menu, .rd-toolbar-menu, .left-panel-overflow-menu, [role="dialog"]')) return;
+    // only for the canvas (panels use their own keys)
+    const focus = document.activeElement;
+    if (focus && focus !== document.body && !graph.container.contains(focus)) return;
+    e.preventDefault();
+    if (!e.repeat) run(command);
+  };
+
   window.addEventListener(STATE_REQUEST_EVENT, onRequest);
   window.addEventListener('resize', placeLegend);
+  document.addEventListener('keydown', onKey);
+  window.addEventListener('tab-changed', syncFades);
+  window.addEventListener('tab-closed', syncFades);
   syncLegend();
+  syncFades();
 
   const handle: RailwayStatesHandle = {
     run,
@@ -243,6 +276,11 @@ export function installRailwayStates(tabManager: TabManager, notify: RailwayNoti
     destroy() {
       window.removeEventListener(STATE_REQUEST_EVENT, onRequest);
       window.removeEventListener('resize', placeLegend);
+      document.removeEventListener('keydown', onKey);
+      window.removeEventListener('tab-changed', syncFades);
+      window.removeEventListener('tab-closed', syncFades);
+      for (const off of fades.values()) off();
+      fades.clear();
       legend?.remove();
       legend = null;
       if (current === handle) current = null;

@@ -17,6 +17,7 @@
  * - **rd extension** (`rd:railwayDrawer`, last child of the root, optional): data railML cannot hold.
  * - **Preserved** unknown railML of an imported file is written back (preserve.ts).
  */
+import { applyProjectDefaults, readCountryId } from '../railway/project-settings';
 import type { Cell, GraphDataModel } from '@maxgraph/core';
 import type { KindId } from '../railway/catalogue';
 import { ALL_DATA_ATTRS, KIND_ATTR, parseNumber, splitRefList } from '../railway/catalogue';
@@ -120,13 +121,17 @@ function describe(o: RailObject): string {
   return o.id ? `${o.kind.label} ${o.id}` : `${o.kind.label} (cell ${o.cellId})`;
 }
 
+/** Kinds written as `trainDetectionElement` that demarcate TVD sections (their `sections` field). */
+const DETECTOR_KINDS: ReadonlySet<string> = new Set(['axleCounter', 'insulatedJoint']);
+
 /** Exports the model as a railML 3.2 document. */
 export function exportRailml(model: GraphDataModel, options: RailmlExportOptions = {}): RailmlExportResult {
   const extension = options.extension !== false;
   // Stable order (kind, then natural ID): independent of the z-order of the drawing
   const kindOrder = new Map(KIND_MAPPINGS.map((m, i) => [m.kind, i]));
   const collator = new Intl.Collator(undefined, { numeric: true, sensitivity: 'base' });
-  const objects = collectObjects(model).sort(
+  // balise groups without NID_C: the diagram's default country (project-settings.ts)
+  const objects = applyProjectDefaults(collectObjects(model), readCountryId(model)).sort(
     (a, b) => (kindOrder.get(a.kind.id) ?? 99) - (kindOrder.get(b.kind.id) ?? 99) || collator.compare(a.id, b.id) || collator.compare(a.cellId, b.cellId)
   );
   const issues = validateModel(model);
@@ -479,6 +484,7 @@ export function exportRailml(model: GraphDataModel, options: RailmlExportOptions
     }
   };
   simpleSpot('axleCounter', 'trainDetectionElements', 'trainDetectionElement', () => ({ type: 'axleCounter', detectedObject: 'axle' }));
+  simpleSpot('insulatedJoint', 'trainDetectionElements', 'trainDetectionElement', () => ({ type: 'insulatedRailJoint' }));
   simpleSpot('bufferStop', 'bufferStops', 'bufferStop', () => ({}));
   simpleSpot('levelCrossing', 'levelCrossingsIS', 'levelCrossingIS', () => ({}), (e, o) => {
     const p = protectionToRailml((o.values.protection ?? '').trim());
@@ -495,7 +501,8 @@ export function exportRailml(model: GraphDataModel, options: RailmlExportOptions
   for (const o of objects.filter((x) => x.kind.id === 'trackSection')) {
     const e = el(ensureOrdered(assets(), 'tvdSections'), 'tvdSection', { id: idOf(o), technology: technologyToRailml((o.values.sectionType ?? '').trim()) });
     if (o.id) el(e, 'designator', { register: RD_REGISTER, entry: o.id });
-    for (const ac of objects.filter((x) => x.kind.id === 'axleCounter' && splitRefList(x.values.sections).some((s) => s.toUpperCase() === o.id.toUpperCase()))) {
+    // detection points bounding the section: axle counters and insulated rail joints (TC)
+    for (const ac of objects.filter((x) => DETECTOR_KINDS.has(x.kind.id) && splitRefList(x.values.sections).some((s) => s.toUpperCase() === o.id.toUpperCase()))) {
       el(e, 'hasDemarcatingTraindetector', { ref: idOf(ac) });
     }
     count('tvdSection');
@@ -639,7 +646,7 @@ export function exportRailml(model: GraphDataModel, options: RailmlExportOptions
   const unmappedKeys = (o: RailObject): string[] => {
     const keys: string[] = [];
     if (o.kind.id === 'balise' && o.values.groupId && !byKindId('baliseGroup', o.values.groupId)) keys.push('groupId');
-    if (o.kind.id === 'axleCounter' && !splitRefList(o.values.sections).every(isTvd)) keys.push('sections');
+    if (DETECTOR_KINDS.has(o.kind.id) && !splitRefList(o.values.sections).every(isTvd)) keys.push('sections');
     if (o.kind.id === 'levelCrossing' && o.values.protection && !protectionToRailml(o.values.protection.trim())) keys.push('protection');
     if (o.kind.id === 'points' && o.values.hand && !handOf.has(o.id.toUpperCase())) keys.push('hand');
     return keys;
