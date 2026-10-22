@@ -13,6 +13,7 @@ import type { RightPanelView } from '../scenarios/scenarios-panel';
 import { RIGHT_PANEL_EVENT } from '../scenarios/scenarios-panel';
 import type { PaletteEntry } from '../ui/drawio-palette/contracts';
 import { KINDS, isErtmsLibraryEntry, kindForPaletteEntry, kindForStyle } from './catalogue';
+import { handOfLegCell } from './hand';
 import { renumberInsertedObjects } from './insert-ids';
 import { applyPresetToNewCells, setRailwayData } from './object-data';
 import { createRailwayDataPanel } from './data-panel';
@@ -93,7 +94,9 @@ export function prepareRailwayInsert(graph: Graph, cells: Cell[], entry: Palette
   }
   const preset = kindForPaletteEntry(entry);
   if (!preset || cells.length !== 1) return;
-  applyPresetToNewCells(graph.getDataModel(), cells, preset);
+  // points ("Point Left/Right"): the hand is read from the toe, from the leg's geometry (not the title)
+  const hand = preset.kind === 'points' ? handOfLegCell(cells[0]) : null;
+  applyPresetToNewCells(graph.getDataModel(), cells, hand ? { ...preset, values: { ...preset.values, hand } } : preset);
 }
 
 /** App shapes dropped from the Shapes tab: railway shapes get their kind (inside the caller's update). */

@@ -431,8 +431,17 @@ def track_data():
     return {'rdKind': 'track'}
 
 
+def hand_from_geometry(toe, leg):
+    """Hand of points read from the TOE (looking from the toe / blade tips towards the frog, the
+    diverging leg to the left = 'left'). `toe` = direction from the junction to the toe, `leg` =
+    direction from the junction along the diverging leg; screen y grows downwards. Mirrors
+    src/railway/hand.ts handFromGeometry."""
+    return 'left' if toe[0] * leg[1] - toe[1] * leg[0] > 0 else 'right'
+
+
 def points_data(toe_left, up):
-    hand = 'left' if up == toe_left else 'right'
+    side = -1 if toe_left else 1
+    hand = hand_from_geometry((side, 0), (-side, -1 if up else 1))
     return {'rdKind': 'points', 'rdHand': hand, 'rdPosition': 'normal'}
 
 
@@ -742,7 +751,7 @@ def track_layout():
     for ratio in (9, 12):
         for toe_left in (True, False):
             for up in (True, False):
-                hand = 'Left' if up == toe_left else 'Right'
+                hand = points_data(toe_left, up)['rdHand'].capitalize()
                 toe = 'toe left' if toe_left else 'toe right'
                 out.append(turnout_set(f'Turnout 1:{ratio} {hand} ({toe})', ratio, toe_left, up,
                                        f'1:{ratio} {hand.lower()} {"lewy" if hand == "Left" else "prawy"}'))

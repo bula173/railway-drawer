@@ -61,7 +61,7 @@ const RULES = `You are the drawing assistant of Railway Drawer, a draw.io-compat
 
 Railway conventions of this app:
 - Positions are kilometre chainages (km, e.g. 12.345 or "12+345"). Nominal direction = increasing km = left to right; reverse = right to left. Signals stand on the right-hand side of their direction of travel.
-- Tracks run horizontally; lane 0 is the first row, lane 1 below, -1 above. Points (switches/turnouts, IDs W1, W2...) connect a track to a diverging track; hand left|right.
+- Tracks run horizontally; lane 0 is the first row, lane 1 below, -1 above. Points (switches/turnouts, IDs W1, W2...) connect a track to a diverging track; hand left|right, read from the toe (looking from the toe towards the frog, diverging leg to the left = left; on screen: toe on the left + leg up = left).
 - Signal types: main, shunting, markerBoard (ETCS Level 2/3 block marker), etcsStopMarker. ETCS: balise groups carry NID_C (country, 0-1023) and NID_BG; RBCs carry NID_RBC; trains have an ETCS level.
 - IDs follow railway practice: tracks T1, points W1, signals S1 (marker boards MB1), balise groups BG1, axle counters AC1, joints J1, sections TC1/TS1, routes R1.
 

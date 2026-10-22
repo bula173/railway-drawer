@@ -27,7 +27,7 @@ import { kmAtAlong, kmScaleOf } from '../railway/km';
 import { isElementValue, readAttr } from '../railway/object-data';
 import { findRoutePaths, parsePointsList } from '../railway/routes';
 import type { TopoPiece } from '../railway/topology';
-import { buildTopology, forwardIsNominal, isNominalDirection, linkLine, locateObject, outgoing, passage, projectPoint } from '../railway/topology';
+import { buildTopology, forwardIsNominal, isNominalDirection, junctionHand, linkLine, locateObject, passage, projectPoint } from '../railway/topology';
 import type { Issue, RailObject } from '../railway/validation';
 import { collectObjects, indexObjects, validateModel } from '../railway/validation';
 import { BASE_STYLE_ATTR, RUNTIME_STATE_ATTRS, parseBaseStyles, styleWithoutState } from '../railway/states';
@@ -404,10 +404,7 @@ export function exportRailml(model: GraphDataModel, options: RailmlExportOptions
     const node = topo.nodes.find((n) => n.points?.cellId === o.cellId);
     let hand = (o.values.hand ?? '').trim() as 'left' | 'right' | '';
     if (node?.points && hand === '') {
-      const t0 = outgoing(topo.pieces[node.points.toe], node.id);
-      const t = { x: -t0.x, y: -t0.y };
-      const r = outgoing(topo.pieces[node.points.reverse], node.id);
-      hand = t.x * r.y - t.y * r.x > 0 ? 'right' : 'left';
+      hand = junctionHand(topo, node.id) ?? '';
     }
     if (hand) handOf.set(o.id.toUpperCase(), hand);
     const e = el(ensureOrdered(fi(), 'switchesIS'), 'switchIS', {

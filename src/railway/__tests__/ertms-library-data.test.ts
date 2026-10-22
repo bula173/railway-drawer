@@ -19,10 +19,14 @@ import { cleanupTestGraph, createTestGraph } from '../../__tests__/setup';
 import { exportRailml } from '../../railml/export';
 import { importRailml } from '../../railml/import';
 import { checkRailmlStructure } from '../../railml/structure';
-import { kindForLibraryTitle } from '../catalogue';
+import { kindForLibraryTitle, kindForPaletteEntry } from '../catalogue';
+import { handOfLeg, handOfLegCell } from '../hand';
+import { prepareRailwayInsert } from '../install-railway-data';
+import { insertEntry } from '../../ui/drawio-palette';
+import type { PaletteEntry } from '../../ui/drawio-palette';
 import { findRoutePaths } from '../routes';
-import { getCellKind } from '../object-data';
-import { buildTopology, linkLine, projectPoint } from '../topology';
+import { getCellKind, readAttr } from '../object-data';
+import { buildTopology, junctionHand, linkLine, projectPoint } from '../topology';
 import type { RailObject } from '../validation';
 import { collectObjects, validateModel } from '../validation';
 
@@ -78,6 +82,67 @@ describe('ERTMS palette elements carry their railway data', () => {
       expect(objs[0].getAttribute('rdId')).toBeNull();
     }
     expect(typed).toBe(11);
+  });
+});
+
+/** rdHand and the hand of the leg geometry (toe rule, railway/hand.ts) of every points edge of a model XML. */
+function pointsHands(xml: string): Array<{ id: string; stored: string | null; geometry: string | null }> {
+  return objectsOf(xml)
+    .filter((o) => o.getAttribute('rdKind') === 'points')
+    .map((o) => {
+      const pts = Array.from(o.querySelectorAll('mxCell[edge="1"] > mxGeometry > mxPoint'));
+      const at = (as: string): { x: number; y: number } | null => {
+        const p = pts.find((x) => x.getAttribute('as') === as);
+        return p ? { x: Number(p.getAttribute('x') ?? 0), y: Number(p.getAttribute('y') ?? 0) } : null;
+      };
+      const a = at('sourcePoint');
+      const b = at('targetPoint');
+      return { id: o.getAttribute('rdId') ?? '', stored: o.getAttribute('rdHand'), geometry: a && b ? handOfLeg(a, b) : null };
+    });
+}
+
+describe('ERTMS points hand: read from the toe, from the geometry (not the title)', () => {
+  it('"Point Left/Right" palette entries keep their titles; rdHand follows the leg', () => {
+    const hands = Object.fromEntries(elements.filter(({ entry }) => /^point /i.test(entry.title ?? '')).map(({ entry }) => [entry.title, pointsHands(entry.xml!)]));
+    // the user's "Point Left" leg falls to the right (right-hand from the toe), "Point Right" rises (left-hand)
+    expect(hands).toEqual({
+      'Point Left': [{ id: '', stored: 'right', geometry: 'right' }],
+      'Point Right': [{ id: '', stored: 'left', geometry: 'left' }],
+    });
+  });
+
+  it('every template points leg stores the hand of its geometry, and the topology junctions agree', () => {
+    let legs = 0;
+    for (const t of templates) {
+      for (const h of pointsHands(t.xml)) {
+        legs++;
+        expect(h.stored, `${t.name} ${h.id}`).toBe(h.geometry);
+      }
+    }
+    expect(legs).toBeGreaterThanOrEqual(15);
+    const graph = graphWith(...templates.filter((t) => pointsHands(t.xml).length > 0).slice(0, 4));
+    const objects = collectObjects(graph.getDataModel());
+    const topo = buildTopology(objects);
+    let junctions = 0;
+    for (const node of topo.nodes) {
+      if (!node.points) continue;
+      junctions++;
+      const o = objects.find((x) => x.cellId === node.points!.cellId)!;
+      expect(junctionHand(topo, node.id), o.id).toBe(o.values.hand);
+    }
+    expect(junctions).toBeGreaterThan(0);
+  });
+
+  it('inserting "Point Left/Right" sets the hand from the inserted leg', () => {
+    const graph = graphWith();
+    for (const { entry } of elements.filter((e) => /^point /i.test(e.entry.title ?? ''))) {
+      const pe = { id: `ertms-x-${entry.title}`, title: entry.title ?? '', source: 'libraries/ertms.xml#0', xml: entry.xml };
+      expect(kindForPaletteEntry(pe)?.values).toEqual({ position: 'normal' });
+      const cells = insertEntry(graph, pe as PaletteEntry, { x: 100, y: 100 }, (c) => prepareRailwayInsert(graph, c, pe as PaletteEntry), false);
+      const points = cells.find((c) => getCellKind(c) === 'points')!;
+      expect(readAttr(points, 'rdHand'), entry.title).toBe(handOfLegCell(points));
+      expect(readAttr(points, 'rdId'), entry.title).toMatch(/^W\d+$/);
+    }
   });
 });
 

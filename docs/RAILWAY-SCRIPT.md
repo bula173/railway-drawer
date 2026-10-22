@@ -83,7 +83,7 @@ script keys:
 | List | Kind | Keys (besides the catalogue fields) |
 |---|---|---|
 | `tracks` | track | `startKm`/`kmStart`, `endKm`/`kmEnd` or `start`/`end`/`StartPos`/`EndPos` (metres); `lane` (row: 0, 1 below, -1 above; automatic when omitted), `kind: main\|siding`, `bufferStops: [start, end]` (IDs `BS-<track>-start/end`) or `[{ id, at: start\|end\|km }]`, nested lists |
-| `points` | points | `track`, `at`, `to` (diverging track; its nearer end starts at the points), `hand: left\|right` (derived from the drawing when omitted), `position`, `type` (free text) |
+| `points` | points | `track`, `at`, `to` (diverging track; its nearer end starts at the points), `hand: left\|right` (read from the toe: looking from the toe towards the frog, leg to the left = left; derived from the drawing when omitted), `position`, `type` (free text) |
 | `signals` | signal | `track`, `at`, `direction: nominal\|reverse`, `type` (= `signalType`: `main`, `shunting`, `markerBoard`, `etcsStopMarker`), `aspects` (1–6); `routes` is computed |
 | `baliseGroups` | baliseGroup | `track`, `at`, `direction`, `nidC`, `nidBg`, `function`, `leu`, `balises`: a count (`2` → balises `<group>-1`, `<group>-2`) or a list of IDs / `{ id, at, direction }` |
 | `balises` | balise | `track`, `at`, `group` (= `groupId`), `position`, `direction` |
@@ -134,7 +134,9 @@ default removes it. "Generate from drawing" writes the non-default states.
   `y = origin.y + lane × laneSpacing`.
 - Lanes not given: the first track is lane 0; a track reached through points goes one lane
   **below** for a right-hand points in the direction of the leg (above for left-hand), like the
-  railML import's generated layout. Lanes that are taken (overlapping x) are skipped.
+  railML import's generated layout. The hand is read from the toe: the hand is read from the **toe**: standing at the switch toe (blade tips) and looking towards the frog, a diverging leg to the left = `left`, to the right = `right` (on screen: toe on the left and leg going up = left, leg going down = right; toe on the right: leg going down = left); e.g. points
+  at km 0.4 with the diverging track further on (toe on the left) and `hand: left` draw that track
+  one lane above. Lanes that are taken (overlapping x) are skipped.
 - A points leg runs from the points' km on its track to the nearer end of the diverging track;
   that end is moved so the leg is at least one lane spacing long (45°).
 - Signals and LEUs sit beside the track on the right-hand side of their direction (nominal below a

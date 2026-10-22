@@ -10,14 +10,17 @@ Steps (deterministic; entries that do not change keep their exact bytes):
  2. renames the signal labels "KBS<n>" to "S<n>" (numbers and suffixes kept, image data untouched);
  3. palette elements (the 18 titled entries): the railway data the app pre-assigned by title on
     insert is stored in the entry as a draw.io <object>/<UserObject> (rdKind + preset values, no ID:
-    the ID is generated on insert);
+    the ID is generated on insert); "Point Left/Right" get rdHand from their leg's geometry, read
+    from the toe (`hand_from_geometry`), not from the title: the user's "Point Left" leg falls to
+    the right = right-hand, "Point Right" rises to the right = left-hand (titles kept);
  4. scenario templates: every railway symbol gets its kind and data, decorations stay untyped:
     - tracks: horizontal track lines (vsdxID=17, stroke >= 4, length >= 15) on the same y are
       merged into one `track` edge T<n> (the grey drawing edge, extended over the drawn union and
       kept at the position of the first edge of that line, so coloured MA/route highlight edges
       drawn over the line stay on top; the other grey edges of that line are removed); diagonal
-      track edges are points legs `points` W<n> (hand from the leg: down to the right = left, as
-      the library's "Point Left"; coloured highlight legs over a grey leg stay decoration; leg ends drawn up to 12 px short of a track are extended onto it);
+      track edges are points legs `points` W<n> (hand from the leg, read from the toe: falling to
+      the right = right, rising to the right = left, `hand_from_geometry`; coloured highlight legs
+      over a grey leg stay decoration; leg ends drawn up to 12 px short of a track are extended onto it);
     - TVD sections (Part 6): each track is covered by `trackSection` edges TC<n> (same stroke, on
       top of the track, below the highlights) split at the TC joint markers drawn on it and at the
       points legs' ends; a track without markers or points is split at its signals; a track
@@ -246,12 +249,27 @@ def element_preset(title):
         return {'rdKind': 'insulatedJoint'}
     if t == 'track':
         return {'rdKind': 'track'}
-    m = re.match(r'^point (left|right)$', t)
-    if m:
-        return {'rdKind': 'points', 'rdHand': m.group(1), 'rdPosition': 'normal'}
+    if re.match(r'^point (left|right)$', t):
+        # rdHand: from the geometry (annotate_element), not from the title
+        return {'rdKind': 'points', 'rdPosition': 'normal'}
     if t in ('train', 'train connected'):
         return {'rdKind': 'train'}
     return None
+
+
+def hand_from_geometry(toe, leg):
+    """Hand of points read from the TOE (looking from the toe / blade tips towards the frog, the
+    diverging leg to the left = 'left'). `toe` = direction from the junction to the toe, `leg` =
+    direction from the junction along the diverging leg; screen y grows downwards. Mirrors
+    src/railway/hand.ts handFromGeometry."""
+    return 'left' if toe[0] * leg[1] - toe[1] * leg[0] > 0 else 'right'
+
+
+def hand_of_leg(a, b):
+    """Hand of a straight leg between two horizontal tracks (both ends give the same hand):
+    rising to the right = left, falling to the right = right (src/railway/hand.ts handOfLeg)."""
+    l, r = (a, b) if a[0] <= b[0] else (b, a)
+    return hand_from_geometry((-1, 0), (r[0] - l[0], r[1] - l[1]))
 
 
 def annotate_element(xml, title):
@@ -261,6 +279,9 @@ def annotate_element(xml, title):
     model = Model(xml)
     top = model.top()
     assert len(top) == 1, title
+    if preset['rdKind'] == 'points':
+        a, b = model.edge_points(top[0])
+        preset = {'rdKind': 'points', 'rdHand': hand_of_leg(a, b), 'rdPosition': 'normal'}
     set_data(model, top[0], preset)
     return model_text(model.doc)
 
@@ -482,9 +503,7 @@ def annotate_template(xml, report):
         fixed_legs.append((el, ends[0], ends[1]))
     legs = fixed_legs
     for el, s, t in sorted(legs, key=lambda l: (min(l[1][0], l[2][0]), min(l[1][1], l[2][1]))):
-        a, b = (s, t) if s[0] <= t[0] else (t, s)
-        hand = 'left' if b[1] > a[1] else 'right'
-        set_data(model, el, {'rdKind': 'points', 'rdId': unique('W'), 'rdHand': hand, 'rdPosition': 'normal'})
+        set_data(model, el, {'rdKind': 'points', 'rdId': unique('W'), 'rdHand': hand_of_leg(s, t), 'rdPosition': 'normal'})
 
     # ---- symbols
     signals, tcs = [], []

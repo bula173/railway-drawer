@@ -409,8 +409,8 @@ function normalizeTitle(title: string): string {
 
 /**
  * ERTMS library entries (public/libraries/ertms.xml, matched by title, case-insensitive) that
- * represent railway objects. "Left"/"Right" symbols get the reverse/nominal direction, the
- * number in a signal title is its aspect count.
+ * represent railway objects. "Left"/"Right" signals and balises get the reverse/nominal direction,
+ * the number in a signal title is its aspect count; points get their hand from the geometry.
  */
 export function kindForLibraryTitle(title: string): KindPreset | null {
   const t = normalizeTitle(title);
@@ -421,8 +421,9 @@ export function kindForLibraryTitle(title: string): KindPreset | null {
   // the "TC" tile is the joint marker of a track circuit (10x12), not a section line
   if (t === 'tc') return { kind: 'insulatedJoint' };
   if (t === 'track') return { kind: 'track' };
-  m = /^point (left|right)$/.exec(t);
-  if (m) return { kind: 'points', values: { hand: m[1], position: 'normal' } };
+  // the hand of "Point Left/Right" is NOT the title's word: it is read from the toe, from the
+  // entry's geometry (railway/hand.ts; stored as rdHand by the library generator, set again on insert)
+  if (/^point (left|right)$/.test(t)) return { kind: 'points', values: { position: 'normal' } };
   if (t === 'train' || t === 'train connected') return { kind: 'train' };
   return null;
 }

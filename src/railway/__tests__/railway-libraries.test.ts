@@ -21,6 +21,7 @@ import { allCells, getCellKind, readAttr } from '../object-data';
 import { STATE_COLORS } from '../states';
 import { cellSchemeId, setStateOnCells, signalLamps } from '../state-apply';
 import { prepareRailwayInsert } from '../install-railway-data';
+import { handOfLegCell } from '../hand';
 import { validateModel } from '../validation';
 
 const ROOT = resolve(__dirname, '../../../public');
@@ -187,5 +188,21 @@ describe('railway libraries', () => {
       typed(insert(graph!, pl.find((e) => e.title === title)!)).filter((c) => getCellKind(c) === 'points').map((c) => readAttr(c, 'rdHand'))[0];
     expect(hand('Rozjazd zwyczajny lewy')).toBe('left');
     expect(hand('Rozjazd zwyczajny prawy')).toBe('right');
+  });
+
+  it('every points leg (turnouts, crossovers, slips) has the hand of its geometry, read from the toe', () => {
+    graph = createTestGraph();
+    let legs = 0;
+    for (const lib of LIBS) {
+      for (const entry of lib.entries) {
+        for (const c of typed(insert(graph, entry)).filter((x) => getCellKind(x) === 'points')) {
+          const fromGeometry = handOfLegCell(c);
+          if (!fromGeometry) continue;
+          legs++;
+          expect(readAttr(c, 'rdHand'), `${lib.id} ${entry.title}`).toBe(fromGeometry);
+        }
+      }
+    }
+    expect(legs).toBeGreaterThanOrEqual(16);
   });
 });

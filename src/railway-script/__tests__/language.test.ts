@@ -5,6 +5,7 @@
 import { describe, expect, it } from 'vitest';
 import { ROUTES_LAYER_ID } from '../../railway/route-store';
 import { centerOf, trackPolyline } from '../../railway/geometry';
+import { handOfLeg } from '../../railway/hand';
 import { collectObjects, validateModel } from '../../railway/validation';
 import { ertmsEntries } from '../../railml/__tests__/helpers';
 import { buildScriptModel } from '../build';
@@ -195,5 +196,44 @@ describe('text -> drawing (example templates)', () => {
     const p = parseScript(text);
     const b = buildScriptModel(p.model!, ertmsEntries());
     expect(b.issues.map((i) => i.message)).toEqual([expect.stringContaining('Route R1: no path from S1 to S2')]);
+  });
+});
+
+describe('points hand (read from the toe: leg to the left looking from the toe towards the frog = left)', () => {
+  const script = (hand: string, t2: [number, number]): string =>
+    [
+      'railwayScript: 1',
+      'tracks:',
+      '  - id: T1',
+      '    startKm: 0',
+      '    endKm: 1',
+      ...(hand ? [] : ['    lane: 0']),
+      '    points:',
+      `      - { id: W1, at: 0.5, to: T2${hand ? `, hand: ${hand}` : ''} }`,
+      `  - { id: T2, startKm: ${t2[0]}, endKm: ${t2[1]}${hand ? '' : ', lane: 1'} }`,
+    ].join('\n');
+  const AFTER: [number, number] = [0.6, 0.9]; // toe on the left of W1
+  const BEFORE: [number, number] = [0.1, 0.4]; // toe on the right of W1
+
+  it.each([
+    ['left', AFTER, 'up'],
+    ['right', AFTER, 'down'],
+    ['left', BEFORE, 'down'],
+    ['right', BEFORE, 'up'],
+  ] as const)('hand %s, diverging track %j -> drawn %s', (hand, t2, side) => {
+    const b = buildScriptModel(parseScript(script(hand, t2)).model!, ertmsEntries());
+    const objs = new Map(collectObjects(b.model).map((o) => [`${o.kind.id}:${o.id}`, o]));
+    const y1 = trackPolyline(objs.get('track:T1')!.cell)![0].y;
+    const y2 = trackPolyline(objs.get('track:T2')!.cell)![0].y;
+    expect(side === 'up' ? y2 < y1 : y2 > y1).toBe(true);
+    const leg = trackPolyline(objs.get('points:W1')!.cell)!;
+    expect(handOfLeg(leg[0], leg[leg.length - 1])).toBe(hand);
+  });
+
+  it('without a hand, it is derived from the drawn leg (diverging track a lane below, toe left = right)', () => {
+    const b = buildScriptModel(parseScript(script('', AFTER)).model!, ertmsEntries());
+    expect(collectObjects(b.model).find((o) => o.kind.id === 'points')!.values.hand).toBe('right');
+    const before = buildScriptModel(parseScript(script('', BEFORE)).model!, ertmsEntries());
+    expect(collectObjects(before.model).find((o) => o.kind.id === 'points')!.values.hand).toBe('left');
   });
 });

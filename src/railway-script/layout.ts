@@ -12,6 +12,7 @@
  */
 import type { KindId } from '../railway/catalogue';
 import type { Pt } from '../railway/geometry';
+import { handFromGeometry, legSide } from '../railway/hand';
 import { snapOffset } from '../railway/snap';
 import type { PointsObject, ScriptModel, ScriptObject, SectionObject, TrackObject } from './model';
 import type { JsonPath } from './validate';
@@ -81,8 +82,8 @@ export function layoutScript(model: ScriptModel): Layout {
     const [a, b] = xRange(to);
     // the leg runs towards the diverging track's far end: right when its nearer end is its left end
     const legRight = Math.abs(a - at) <= Math.abs(b - at);
-    const hand = p.hand ?? 'right';
-    return (hand === 'right') === legRight ? 1 : -1;
+    // hand read from the toe (hand.ts): toe on the left + leg up = left
+    return legSide(p.hand ?? 'right', legRight ? 1 : -1);
   };
   const placeNear = (t: TrackObject, wanted: number, step: 1 | -1): void => {
     let l = wanted;
@@ -150,9 +151,9 @@ export function layoutScript(model: ScriptModel): Layout {
     }
     legs.set(p, [p0, { x: endPt.x, y: endPt.y }]);
     if (!p.hand) {
-      // right-hand when the leg turns right in its own direction (screen y grows downwards)
+      // read from the toe, which lies behind the junction, away from the leg (hand.ts)
       const dirX = Math.sign(endPt.x - p0.x) || 1;
-      p.values.hand = (dy > 0) === (dirX > 0) ? 'right' : 'left';
+      p.values.hand = handFromGeometry({ x: -dirX, y: 0 }, { x: endPt.x - p0.x, y: dy });
     }
   }
 

@@ -772,8 +772,8 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   label within 25 (LTA/LTO/S2_BG/S4_infill in the two "Level transition L1 → L2" templates; not grouped by distance:
   LTA and S4_infill are 26 px apart but different groups); no NID_C (diagram default)), trains,
   tracks (all `vsdxID=17` stroke >= 4 horizontal edges on one y merged into one `track` T<n> edge; extra grey edges
-  removed; coloured MA/route highlight edges stay decoration on top), points (diagonal track edges, hand down-right =
-  left; short legs extended onto the track) and TVD sections: `trackSection` TC<n> edges with the track's style on
+  removed; coloured MA/route highlight edges stay decoration on top), points (diagonal track edges, hand from the leg read from the toe
+  (`hand_from_geometry`): falling to the right = right, rising = left; short legs extended onto the track) and TVD sections: `trackSection` TC<n> edges with the track's style on
   top of the track (below the highlights), split at the TC joint markers on it (fallback: points legs, then
   signals, else one section), `rdTrackId`, `rdSectionType=tc`. TC joint markers on a track (centre within 8 of the line)
   = `insulatedJoint` J<n> with `rdTrackId` + `rdSections` (sections starting/ending within 15: railML
@@ -826,7 +826,9 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   (required, generated `S1`, `BG1`, ... from `idPrefix`, case-insensitive unique per kind).
 - **Pre-assigned kinds**: the ERTMS library entries store them (generated, see Templates); on insert also by title (`kindForLibraryTitle`: Signal Left/Right n -> signal with
   direction reverse/nominal and n aspects, (Single) Balise Left/Right -> balise, TC -> insulatedJoint (the tile is the 10x12 joint marker; sections are lines on the track), Track ->
-  track, Point Left/Right -> points with hand, Train/Train Connected -> train; MA/Distance/Line/Gradient/SSP: none)
+  track, Point Left/Right -> points (hand NOT from the title: from the leg geometry, `handOfLegCell` in
+  `prepareRailwayInsert`; the user's "Point Left" leg falls to the right = right-hand, "Point Right" = left-hand;
+  titles kept), Train/Train Connected -> train; MA/Distance/Line/Gradient/SSP: none)
   through the palette option `prepareInsert` -> `insertEntry(..., prepare)` (same undo step, only single-cell
   entries, only `ertms-*` entries, not draw.io palettes); app railway shapes by style shape (`kindForStyle`, drop
   handler in `main-editor.ts`). Templates/paste keep the data they carry.
@@ -867,7 +869,13 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   Links are cut where another link's end, a points vertex or a covering section's end touches them; ends within 8 are
   one node (edges with vertex terminals end at the vertex centre). Node with 3 pieces + a points leg (or at a points
   vertex) = points junction: reverse = leg (vertex: piece outside the straightest pair), toe = straight piece most
-  opposite to reverse. `passage()`: turns over 90° impossible; toe<->normal needs normal, toe<->reverse reverse,
+  opposite to reverse. **Points hand convention** (user-confirmed): read from the TOE: standing at the toe (blade tips)
+  looking towards the frog, the diverging leg to the left = left-hand (screen: toe left + leg up = left, toe left + leg
+  down = right, toe right + leg down = left). ONE helper `src/railway/hand.ts` (`handFromGeometry(toe, leg)`,
+  `handOfLeg` for a leg between two horizontal tracks: rising to the right = left, `legSide` for layouts,
+  `handOfLegCell`) used by `junctionHand(topo, node)` (railML export when the hand is empty), railML import layout,
+  Railway Script layout, ERTMS palette inserts; the generators mirror it as `hand_from_geometry` (both scripts);
+  tests: `hand.test.ts`, `railml-hand.test.ts`, library data tests (stored rdHand = geometry). `passage()`: turns over 90° impossible; toe<->normal needs normal, toe<->reverse reverse,
   normal<->reverse impossible. **Direction convention** (confirmed project convention, not an assumption): nominal =
   left to right, i.e. increasing x (vertical pieces: increasing y), like the ERTMS "Signal Right" symbol; reverse =
   the opposite. `locate()` puts objects on the nearest piece within 40, preferring their `rdTrackId`.
@@ -965,7 +973,7 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   km). `infrastructureVisualization` = piece polylines + cell centres. Objects sorted by kind, natural ID (stable
   output). Result: `xml`, `counts`, `unplaced` (no location), `extensionOnly` (LEU, train), `issues`, `preserved`.
 - **Mapping** (`mapping.ts` `KIND_MAPPINGS`; prefixes `sig_ bal_ bg_ trk_ sw_ tvd_ tde_ ij_ bus_ lc_ rbc_ rt_`, IL `il_`):
-  track -> `track` + `linearLocation`; points -> `switchIS` (ordinarySwitch, branchCourse = hand, left/rightBranch
+  track -> `track` + `linearLocation`; points -> `switchIS` (ordinarySwitch, branchCourse = hand (toe rule; empty -> `junctionHand`), left/rightBranch
   netRelationRef) + `switchIL`; signal -> `signalIS` (main/shunting: isTrainMovementSignal + signalConstruction light;
   marker board/stop marker: isEtcsSignal + board) + `signalIL@function`; insulatedJoint -> `trainDetectionElement` type insulatedRailJoint (+ demarcation like axle counters); balise -> `balise` (belongsToBaliseGroup,
   isEurobalise positionInGroup = position-1); baliseGroup -> `baliseGroup` (applicationType ETCS, isEurobaliseGroup
@@ -1013,7 +1021,7 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   small validator interpreting that schema (agreement with ajv is tested: devDependency `ajv` 8.20.0 pinned, test-only,
   strict mode with `allowUnionTypes` + the `x-expected` annotation keyword); `model.ts` = semantic checks.
 - Text -> drawing: `parse.ts` (npm `yaml` 2.9.1, eemeli/yaml, ISC; positions -> `line:col`), `layout.ts` (x from km with
-  `page.scale`, y from lanes; auto lanes from points hand; legs to the diverging track's nearer end), `build.ts` (cells with
+  `page.scale`, y from lanes; auto lanes from points hand (toe rule, `legSide`); legs to the diverging track's nearer end), `build.ts` (cells with
   `src/railml/schematic.ts` = `ModelBuilder`/`Symbols`/fallback styles moved out of the railML import and shared; routes via
   `findRoutePaths`); generated top cells carry `rdScript="<kind>:<id>"` + `rdScriptShape`. `apply.ts` reconciles into the tab
   in ONE undoable edit (inside `withSnapSuspended`, snap.ts): remove gone, add new (generated order), replace on another

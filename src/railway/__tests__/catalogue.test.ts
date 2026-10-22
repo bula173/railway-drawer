@@ -119,7 +119,8 @@ describe('catalogue', () => {
     expect(kindForLibraryTitle('Signal Left 3')).toEqual({ kind: 'signal', values: { signalType: 'main', direction: 'reverse', aspects: '3' } });
     expect(kindForLibraryTitle('SIgnal Right 4')?.values).toMatchObject({ direction: 'nominal', aspects: '4' });
     expect(kindForLibraryTitle('Balise Left')?.values).toEqual({ direction: 'reverse' });
-    expect(kindForLibraryTitle('Point Right')?.values).toEqual({ hand: 'right', position: 'normal' });
+    // the hand comes from the entry's geometry (read from the toe), not from the title
+    expect(kindForLibraryTitle('Point Right')?.values).toEqual({ position: 'normal' });
     // the TC tile is the joint marker of a track circuit, not a section line
     expect(kindForLibraryTitle('TC')).toEqual({ kind: 'insulatedJoint' });
     // draw.io palettes are not mapped even with the same title

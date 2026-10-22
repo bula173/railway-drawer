@@ -25,6 +25,8 @@ import type { KindId } from './catalogue';
 import { parseNumber } from './catalogue';
 import type { Box, Pt } from './geometry';
 import { absoluteBounds, centerOf, trackPolyline } from './geometry';
+import type { Hand } from './hand';
+import { handFromGeometry } from './hand';
 import type { RailObject } from './validation';
 
 /** Ends (and cut points) closer than this (graph units) are connected. */
@@ -382,6 +384,17 @@ export function outgoing(piece: TopoPiece, nodeId: number): Pt {
   const [from, to] = piece.a === nodeId ? [pointAlong(piece.line, 0), pointAlong(piece.line, reach)] : [pointAlong(piece.line, piece.length), pointAlong(piece.line, piece.length - reach)];
   const len = Math.hypot(to.x - from.x, to.y - from.y) || 1;
   return { x: (to.x - from.x) / len, y: (to.y - from.y) / len };
+}
+
+/**
+ * Hand of the points at a junction node from its geometry (null when the node is no points
+ * junction), read from the toe: the reverse leg to the left looking from the toe towards the
+ * frog = left (hand.ts `handFromGeometry`).
+ */
+export function junctionHand(topo: Topology, nodeId: number): Hand | null {
+  const j = topo.nodes[nodeId]?.points;
+  if (!j) return null;
+  return handFromGeometry(outgoing(topo.pieces[j.toe], nodeId), outgoing(topo.pieces[j.reverse], nodeId));
 }
 
 /** Max turn between two pieces at a node: the directions must not differ by more than 90°. */

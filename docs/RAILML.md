@@ -56,7 +56,7 @@ the main bundle only carries `install-railml.ts` and the root sniffing (`xml.ts`
 | Kind (`rdKind`) | railML 3.2 | Fields in railML | rd extension |
 |---|---|---|---|
 | track | `functionalInfrastructure/tracks/track` (`type="mainTrack"`), `linearLocation` over its netElements (`associatedNetElement` with `sequence`, `intrinsicCoordBegin/End`, `keepsOrientation`) | id (designator), name | kmStart, kmEnd, length, remarks (km also as netElement linearCoordinates) |
-| points | `switchIS` `type="ordinarySwitch"`, `branchCourse` = hand, `continueCourse` = the other side, `leftBranch`/`rightBranch` `netRelationRef`, `spotLocation` on the toe netElement at the junction; plus `switchIL` (`refersTo`, `branchLeft`/`branchRight` = tracks) | id, hand (from the geometry when empty), km | position, remarks, the leg's netElements |
+| points | `switchIS` `type="ordinarySwitch"`, `branchCourse` = hand (read from the toe, see *Points hand* below; empty hand: derived from the drawing), `continueCourse` = the other side, `leftBranch`/`rightBranch` `netRelationRef`, `spotLocation` on the toe netElement at the junction; plus `switchIL` (`refersTo`, `branchLeft`/`branchRight` = tracks) | id, hand (from the geometry when empty), km | position, remarks, the leg's netElements |
 | signal | `signalIS` with `spotLocation` (`applicationDirection`); main/shunting: `isTrainMovementSignal` + `signalConstruction type="light"`, `isSwitchable="true"`; marker board / ETCS stop marker: `isEtcsSignal` + `signalConstruction type="board"`; plus `signalIL` (`refersTo`, `function` main/shunting) | id, type (stop marker: rd), direction, km, routes (derived) | aspects, remarks, signalType=etcsStopMarker |
 | balise | `balise` `belongsToBaliseGroup`, `isEurobalise positionInGroup` = position - 1 | id, group, position, direction, km | remarks |
 | baliseGroup | `baliseGroup` `numberOfBalisesInGroup`, `applicationType value="ETCS"`, `isEurobaliseGroup countryID` (NID_C) `groupID` (NID_BG) | id, NID_C + NID_BG (both needed; a group without NID_C exports the diagram's default `rdCountryId`, 510 when not set), count, direction, km | function, LEU, remarks |
@@ -110,7 +110,7 @@ Not confirmed: whether the railML 3.2 XSD accepts a foreign-namespace element as
   (spot projections = object centres). Otherwise a schematic layout is generated: netElements left
   to right (intrinsic 0 -> 1), lengths from the km of their ends, else `length`, else 100 m; the
   diverging branch of each switch goes one lane down (right-hand branch of a switch facing the
-  nominal direction) or up; objects at their `intrinsicCoord`, signals beside the track like the
+  nominal direction, i.e. toe on the left) or up (`branchCourse` read from the toe, see *Points hand*); objects at their `intrinsicCoord`, signals beside the track like the
   snap tool does (right-hand side of their direction). Disconnected parts are stacked.
 - **Shapes**: the same ERTMS library entries the palette inserts (Track, Point Right, Signal
   Right 3 / Right 4 / Left 3, Single Balise Right / Balise Left, TC, Train) with their styles;
@@ -176,3 +176,8 @@ contains no copied wiki text. railML® is a registered trademark of railML.org e
 - `facingSwitchInPosition` vs `trailingSwitchInPosition` comes from the route's path in the drawing.
 - railML 3.2 TVD sections have no location: without the extension a section's line is lost unless a
   visualization projection refers to it.
+
+## Points hand
+
+One convention everywhere (drawing, ERTMS and railway libraries, Railway Script, railML):
+the hand is read from the **toe**: standing at the switch toe (blade tips) and looking towards the frog, a diverging leg to the left = `left`, to the right = `right` (on screen: toe on the left and leg going up = left, leg going down = right; toe on the right: leg going down = left). `branchCourse` is this hand, `continueCourse` the other side, `leftBranch`/`rightBranch` the netRelations from the toe to the leg on that side. Export derives an empty hand from the drawing (`junctionHand`, `src/railway/hand.ts` `handFromGeometry`); import keeps `branchCourse` as the hand and its generated layout draws the leg on that side, so an export -> import -> export round trip keeps the hand. The ERTMS palette entries "Point Left" / "Point Right" keep their titles but their hand comes from their drawn leg ("Point Left" falls to the right = right-hand, "Point Right" = left-hand).

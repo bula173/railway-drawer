@@ -7,7 +7,8 @@
  * Layout: the `infrastructureVisualization` projections when every netElement has one (our own
  * exports), otherwise a schematic layout from the topology (left to right along each netElement,
  * lengths from km/`length`, the diverging branch of each switch one lane below/above: right-hand
- * branches below when the switch faces the nominal direction).
+ * branches below when the switch faces the nominal direction: the hand is read from the toe,
+ * railway/hand.ts).
  *
  * Content the importer does not map is kept in a PreservedStore on the root cell (preserve.ts) and
  * written back by the export.
@@ -17,6 +18,8 @@ import type { KindId } from '../railway/catalogue';
 import { formatStoredNumber, getKind } from '../railway/catalogue';
 import type { Pt } from '../railway/geometry';
 import { centerOf } from '../railway/geometry';
+import type { Hand } from '../railway/hand';
+import { legSide } from '../railway/hand';
 import { ID_PLACEHOLDER, buildDataValue } from '../railway/object-data';
 import { ensureRoutesLayer, routeEdgeStyle, routeGeometry, simplifyLine } from '../railway/route-store';
 import { findRoutePaths, formatPointsList } from '../railway/routes';
@@ -485,7 +488,7 @@ export function importRailml(text: string, options: RailmlImportOptions = {}): R
     toeEnd: 0 | 1;
     diverging: string | null;
     divergingEnd: 0 | 1;
-    side: 1 | -1;
+    hand: Hand;
   }
   const switches: SwitchInfo[] = [];
   for (const it of items.filter((x) => x.kind === 'points')) {
@@ -503,7 +506,7 @@ export function importRailml(text: string, options: RailmlImportOptions = {}): R
     const toeEnd = rel.a === toe ? rel.posA : rel.posB;
     const div = rel.a === toe ? rel.b : rel.a;
     const divEnd = rel.a === toe ? rel.posB : rel.posA;
-    switches.push({ item: it, toe, toeEnd, diverging: div, divergingEnd: divEnd, side: branch === 'right' ? 1 : -1 });
+    switches.push({ item: it, toe, toeEnd, diverging: div, divergingEnd: divEnd, hand: branch });
     if (!it.loc) it.loc = { ne: toe, coord: toeEnd, dir: 'both', km: null };
     if (!owner.has(div)) {
       owner.set(div, { item: it, role: 'leg', forward: true });
@@ -874,7 +877,7 @@ function sizeOf(it: Item, w: number, h: number): { w: number; h: number } {
 // Generated schematic layout
 // ---------------------------------------------------------------------------------------------
 
-function generateLayout(nes: Map<string, NeData>, rels: RelData[], switches: Array<{ toe: string; toeEnd: 0 | 1; diverging: string | null; divergingEnd: 0 | 1; side: 1 | -1 }>): void {
+function generateLayout(nes: Map<string, NeData>, rels: RelData[], switches: Array<{ toe: string; toeEnd: 0 | 1; diverging: string | null; divergingEnd: 0 | 1; hand: Hand }>): void {
   const key = (ne: string, end: 0 | 1): string => `${ne}:${end}`;
   const parent = new Map<string, string>();
   const find = (k: string): string => {
@@ -897,9 +900,9 @@ function generateLayout(nes: Map<string, NeData>, rels: RelData[], switches: Arr
     if (ne.m0 !== null && ne.m1 !== null && ne.m0 !== ne.m1) return Math.abs(ne.m1 - ne.m0);
     return ne.length && ne.length > 0 ? ne.length : 100;
   };
-  // diverging: cluster of the switch + netElement -> side
-  const diverging = new Map<string, 1 | -1>();
-  for (const s of switches) if (s.diverging) diverging.set(`${find(key(s.toe, s.toeEnd))}|${s.diverging}`, s.side);
+  // diverging: cluster of the switch + netElement -> hand
+  const diverging = new Map<string, Hand>();
+  for (const s of switches) if (s.diverging) diverging.set(`${find(key(s.toe, s.toeEnd))}|${s.diverging}`, s.hand);
   const adj = new Map<string, Array<{ ne: NeData; from: 0 | 1 }>>();
   for (const ne of nes.values()) {
     for (const end of [0, 1] as const) {
@@ -927,8 +930,9 @@ function generateLayout(nes: Map<string, NeData>, rels: RelData[], switches: Arr
         const other = find(key(ne.id, from === 0 ? 1 : 0));
         if (pos.has(other)) continue;
         const sign = from === 0 ? 1 : -1;
-        const side = diverging.get(`${c}|${ne.id}`);
-        const lane = here.lane + (side ? side * sign : 0);
+        const hand = diverging.get(`${c}|${ne.id}`);
+        // the leg heads in x direction `sign`; side from the hand read from the toe (hand.ts)
+        const lane = here.lane + (hand ? legSide(hand, sign) : 0);
         pos.set(other, { x: here.x + sign * lengthOf(ne), lane });
         minLane = Math.min(minLane, lane);
         maxLane = Math.max(maxLane, lane);
