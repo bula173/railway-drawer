@@ -12,6 +12,7 @@
  * snapshot plus one extra top layer (`rd-diff-layer`) holding outline/ghost cells at absolute
  * coordinates (style key `rdDiff=<kind>`).
  */
+import { BASE_STYLE_ATTR, POSITION_ATTR, RUNTIME_STATE_ATTRS, STATE_STYLE_KEYS, describeStateChanges } from '../railway/states';
 
 export type CellChangeKind = 'added' | 'removed' | 'moved' | 'changed';
 
@@ -60,6 +61,8 @@ export interface CellChange {
   dataKeys: string[];
   /** Edge source/target or points changed. */
   rerouted: boolean;
+  /** Runtime state changes of a railway object, e.g. `free → occupied`, `aspect stop → proceed`. */
+  states?: string[];
   /** One line for the "Changes" list, e.g. "S2: aspects changed". */
   summary: string;
 }
@@ -229,6 +232,7 @@ function summarize(c: Omit<CellChange, 'summary' | 'kind'> & { added?: boolean; 
   else if (c.moved) parts.push('moved');
   else if (c.resized) parts.push('resized');
   if (c.rerouted) parts.push('rerouted');
+  if (c.states?.length) parts.push(...c.states);
   if (c.labelChanged) parts.push('label changed');
   if (c.dataKeys.length) parts.push(`${joinWords(c.dataKeys)} changed`);
   if (c.styleKeys.length) parts.push(`style changed (${c.styleKeys.slice(0, 4).join(', ')}${c.styleKeys.length > 4 ? ', …' : ''})`);
@@ -240,6 +244,17 @@ export function diffSnapshots(prevXml: string | null, curXml: string): SnapshotD
   const prev = prevXml ? parseSnapshotCells(prevXml) : new Map<string, SnapshotCell>();
   const cur = parseSnapshotCells(curXml);
   const changes: CellChange[] = [];
+  // Objects whose runtime state look changed (src/railway/states.ts): the colours of their parts
+  // (lamps, marker strokes) are part of the state change, not changes of their own
+  const restyled = new Set<string>();
+  for (const [id, cell] of cur) {
+    const old = prev.get(id);
+    if (old && (old.data[BASE_STYLE_ATTR] ?? '') !== (cell.data[BASE_STYLE_ATTR] ?? '')) restyled.add(id);
+  }
+  const insideRestyled = (cell: SnapshotCell): boolean => {
+    for (let p = cur.get(cell.parent); p; p = cur.get(p.parent)) if (restyled.has(p.id)) return true;
+    return false;
+  };
   for (const [id, cell] of cur) {
     const old = prev.get(id);
     const name = cellDisplayName(cell);
@@ -267,12 +282,30 @@ export function diffSnapshots(prevXml: string | null, curXml: string): SnapshotD
       moved = true;
     }
     const labelChanged = old.label !== cell.label;
-    const styleKeys = changedKeys(parseStyleString(old.style), parseStyleString(cell.style)).map((k) => k || 'base style');
-    const dataKeys = changedKeys(old.data, cell.data).map(dataKeyName);
+    let styleKeys = changedKeys(parseStyleString(old.style), parseStyleString(cell.style)).map((k) => k || 'base style');
+    let dataKeys = changedKeys(old.data, cell.data);
+    const states = describeStateChanges(old.data, cell.data);
+    if (restyled.has(id) || states.length > 0 || insideRestyled(cell)) {
+      // the state phrase stands for its colours and bookkeeping attributes
+      styleKeys = styleKeys.filter((k) => !STATE_STYLE_KEYS.has(k));
+      const stateAttrs = new Set([...RUNTIME_STATE_ATTRS, ...(states.some((w) => w.startsWith('position ')) ? [POSITION_ATTR] : [])]);
+      dataKeys = dataKeys.filter((k) => !stateAttrs.has(k));
+    }
+    dataKeys = dataKeys.map(dataKeyName);
     const geometric = moved || resized || rerouted;
-    const other = labelChanged || styleKeys.length > 0 || dataKeys.length > 0;
+    const other = labelChanged || styleKeys.length > 0 || dataKeys.length > 0 || states.length > 0;
     if (!geometric && !other) continue;
-    const base = { id, name: old.label && labelChanged ? `${cellDisplayName(old)} → ${name}` : name, moved, resized, labelChanged, styleKeys, dataKeys, rerouted };
+    const base = {
+      id,
+      name: old.label && labelChanged ? `${cellDisplayName(old)} → ${name}` : name,
+      moved,
+      resized,
+      labelChanged,
+      styleKeys,
+      dataKeys,
+      rerouted,
+      ...(states.length > 0 ? { states } : {}),
+    };
     changes.push({ ...base, kind: geometric ? 'moved' : 'changed', summary: summarize(base) });
   }
   for (const [id, old] of prev) {

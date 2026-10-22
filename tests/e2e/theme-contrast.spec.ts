@@ -610,6 +610,32 @@ async function openAppWithFakeRemote(page: Page, theme: Theme): Promise<void> {
 async function auditFeatureSurfaces(page: Page, a: Auditor): Promise<void> {
   // Route tool floating panel (layout loaded like a file)
   await inGraph(page, 'tab.saveLoadController.load(arg); graph.container.scrollLeft -= 20; graph.container.scrollTop -= 20;', RAIL_LAYOUT);
+
+  // Context menu of points W1 with the railway state submenus (Position ▸ open), states legend
+  const w1 = await inGraph<{ x: number; y: number }>(
+    page,
+    `const s = graph.view.scale, t = graph.view.translate, c = graph.container, r = c.getBoundingClientRect();
+     return { x: r.left + (190 + t.x) * s - c.scrollLeft, y: r.top + (140 + t.y) * s - c.scrollTop };`
+  );
+  await page.mouse.click(w1.x, w1.y, { button: 'right' });
+  const positionSub = page.locator('#context-menu .rd-ctx-sub[data-state-submenu="position"]');
+  await positionSub.hover();
+  await expect(positionSub).toHaveAttribute('aria-expanded', 'true');
+  await positionSub.locator('[data-state-cmd="position:reverse"]').hover();
+  await a.check('context menu: railway state submenu (Position)', '#context-menu');
+  await a.shot('context-state-submenu');
+  await page.keyboard.press('Escape');
+  await expect(page.locator('#context-menu')).toBeHidden();
+  await openMenu(page, 'railway');
+  await revealMenuItem(page.locator('.menu-dropdown-item[data-action="railwayState:toggleLegend"]'));
+  await a.check('Railway > Object State submenu', '.menu-dropdown[data-menu="railway"]');
+  await page.locator('.menu-dropdown-item[data-action="railwayState:toggleLegend"]').click();
+  await expect(page.locator('[data-testid="state-legend"]')).toBeVisible();
+  await a.check('object states legend', '[data-testid="state-legend"]');
+  await a.shot('state-legend');
+  await page.locator('[data-testid="state-legend"] .rd-state-legend-close').click();
+  await expect(page.locator('[data-testid="state-legend"]')).toHaveCount(0);
+
   await page.locator('#btn-route-tool').click();
   const tool = page.locator('.rd-route-tool');
   await expect(tool.locator('.rd-route-status')).toHaveText('Click the start (entry) signal.');

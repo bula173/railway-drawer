@@ -20,6 +20,8 @@ import { ensureDrawioMenuItems, executeDrawioMenuAction, updateDrawioMenuItems }
 import type { GroupingController } from './grouping';
 import { hasLockedStyle, isLayer, toggleCellsLocked } from './cell-lock';
 import { applyShortcutHints, setMenuItemLabel } from './shortcut-keys';
+import { STATE_REQUEST_EVENT, buildStateMenu } from '../railway/state-menu';
+import type { StateMenuEntry } from '../railway/state-menu';
 
 /** Gap kept between the context menu and the window edges. */
 const VIEWPORT_MARGIN = 4;
@@ -101,6 +103,8 @@ export class ContextMenuController {
   private commandService: GraphCommandService | null = null;
   /** @brief Removes this controller's subscription to the shared ClipboardService */
   private unsubscribeClipboard: (() => void) | null = null;
+  /** @brief Runtime state items of railway objects (State ▸ / Aspect ▸ / Position ▸, route commands) */
+  private stateSection: HTMLElement | null = null;
 
   /**
    * @brief Initialize context menu controller
@@ -121,6 +125,7 @@ export class ContextMenuController {
     // draw.io table/lane and collapse/expand items (bound below like the static items)
     ensureDrawioMenuItems(this.contextMenu);
     this.arrangeMenu();
+    this.stateSection = this.ensureStateSection();
     this.setupContextMenu();
     this.setupClipboardListener();
   }
@@ -142,6 +147,204 @@ export class ContextMenuController {
     });
     menu.querySelectorAll<HTMLElement>('.rd-sep, [data-drawio-menu="separator"]').forEach((sep) => sep.setAttribute('role', 'separator'));
     applyShortcutHints(menu.querySelectorAll<HTMLElement>('.context-menu-item[data-action]'));
+  }
+
+  /**
+   * The container of the railway state items, before "Edit Data..." (shared by every tab's
+   * controller). Clicks and keys are delegated from it; its submenus are `position: fixed` so the
+   * menu's own scrolling (overflow) does not clip them.
+   */
+  private ensureStateSection(): HTMLElement | null {
+    const menu = this.contextMenu;
+    if (!menu) return null;
+    let section = menu.querySelector<HTMLElement>(':scope > [data-rd-state-menu]');
+    if (!section) {
+      section = document.createElement('div');
+      section.setAttribute('data-rd-state-menu', '');
+      section.setAttribute('role', 'none');
+      section.className = 'rd-ctx-state-section';
+      section.style.display = 'none';
+      const anchor = menu.querySelector(':scope > [data-action="editData"]');
+      menu.insertBefore(section, anchor);
+    }
+    section.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement;
+      const item = target.closest<HTMLElement>('[data-state-cmd]');
+      e.stopPropagation();
+      if (item) {
+        window.dispatchEvent(new CustomEvent(STATE_REQUEST_EVENT, { detail: item.dataset.stateCmd }));
+        this.hideContextMenu();
+        return;
+      }
+      const sub = target.closest<HTMLElement>('.rd-ctx-sub');
+      if (sub) this.openStateSubmenu(sub, true);
+    });
+    // hover opens a submenu; hovering another item of the menu closes it
+    menu.addEventListener('mouseover', (e) => {
+      const sub = (e.target as HTMLElement).closest<HTMLElement>('.rd-ctx-sub');
+      if (!sub) this.closeStateSubmenus();
+      else if (sub.getAttribute('aria-expanded') !== 'true') this.openStateSubmenu(sub, false);
+    });
+    section.addEventListener('keydown', (e) => this.onStateKey(e));
+    return section;
+  }
+
+  private closeStateSubmenus(except?: HTMLElement): void {
+    this.stateSection?.querySelectorAll<HTMLElement>('.rd-ctx-sub').forEach((sub) => {
+      if (sub === except) return;
+      sub.setAttribute('aria-expanded', 'false');
+      const list = sub.querySelector<HTMLElement>('.rd-ctx-submenu');
+      if (list) list.style.display = 'none';
+    });
+  }
+
+  /** Shows a submenu right of its item (left of it near the window edge), inside the window. */
+  private openStateSubmenu(sub: HTMLElement, focusFirst: boolean): void {
+    this.closeStateSubmenus(sub);
+    const list = sub.querySelector<HTMLElement>('.rd-ctx-submenu');
+    if (!list) return;
+    sub.setAttribute('aria-expanded', 'true');
+    list.style.display = 'block';
+    const r = sub.getBoundingClientRect();
+    const { width, height } = list.getBoundingClientRect();
+    let left = r.right - 2;
+    if (left + width > window.innerWidth - VIEWPORT_MARGIN) left = Math.max(VIEWPORT_MARGIN, r.left - width + 2);
+    const top = Math.max(VIEWPORT_MARGIN, Math.min(r.top - 5, window.innerHeight - VIEWPORT_MARGIN - height));
+    list.style.left = `${left}px`;
+    list.style.top = `${top}px`;
+    if (focusFirst) list.querySelector<HTMLElement>('[data-state-cmd]')?.focus();
+  }
+
+  /** Keys in the state items: ↓/↑ move, →/Enter open a submenu, ←/Esc close it, Enter runs. */
+  private onStateKey(e: KeyboardEvent): void {
+    const target = e.target as HTMLElement;
+    const sub = target.classList.contains('rd-ctx-sub') ? target : null;
+    const list = target.closest<HTMLElement>('.rd-ctx-submenu');
+    if (sub && (e.key === 'ArrowRight' || e.key === 'Enter' || e.key === ' ')) {
+      e.preventDefault();
+      e.stopPropagation();
+      this.openStateSubmenu(sub, true);
+    } else if (list && (e.key === 'ArrowLeft' || e.key === 'Escape')) {
+      e.preventDefault();
+      e.stopPropagation();
+      const owner = list.closest<HTMLElement>('.rd-ctx-sub');
+      this.closeStateSubmenus();
+      owner?.focus();
+    } else if (target.dataset.stateCmd && (e.key === 'Enter' || e.key === ' ')) {
+      e.preventDefault();
+      e.stopPropagation();
+      target.click();
+    } else if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+      const scope = list ?? this.stateSection;
+      if (!scope) return;
+      const items = Array.from(scope.querySelectorAll<HTMLElement>(list ? '[data-state-cmd]' : ':scope > [tabindex]'));
+      const i = items.indexOf(target);
+      if (i < 0) return;
+      e.preventDefault();
+      e.stopPropagation();
+      items[(i + (e.key === 'ArrowDown' ? 1 : items.length - 1)) % items.length].focus();
+    }
+  }
+
+  private renderStateSection(entries: StateMenuEntry[]): void {
+    const section = this.stateSection;
+    if (!section) return;
+    if (entries.length === 0) {
+      section.replaceChildren();
+      section.style.display = 'none';
+      return;
+    }
+    const nodes: HTMLElement[] = [];
+    const sep = document.createElement('div');
+    sep.className = 'rd-sep';
+    sep.setAttribute('role', 'separator');
+    nodes.push(sep);
+    for (const entry of entries) {
+      if (entry.type === 'item') {
+        const item = document.createElement('div');
+        item.className = 'context-menu-item';
+        item.setAttribute('role', 'menuitem');
+        item.tabIndex = -1;
+        item.dataset.stateCmd = entry.command;
+        item.textContent = entry.label;
+        if (entry.title) item.title = entry.title;
+        nodes.push(item);
+        continue;
+      }
+      const sub = document.createElement('div');
+      sub.className = 'context-menu-item rd-ctx-sub';
+      sub.setAttribute('role', 'menuitem');
+      sub.setAttribute('aria-haspopup', 'menu');
+      sub.setAttribute('aria-expanded', 'false');
+      sub.dataset.stateSubmenu = entry.dimension;
+      sub.tabIndex = -1;
+      const label = document.createElement('span');
+      label.className = 'rd-menu-label';
+      label.textContent = entry.label;
+      const caret = document.createElement('span');
+      caret.className = 'rd-ctx-caret';
+      caret.setAttribute('aria-hidden', 'true');
+      caret.textContent = '▸';
+      const list = document.createElement('div');
+      list.className = 'rd-ctx-submenu';
+      list.setAttribute('role', 'menu');
+      list.setAttribute('aria-label', entry.label);
+      list.style.display = 'none';
+      for (const o of entry.options) {
+        const item = document.createElement('div');
+        item.className = 'context-menu-item rd-ctx-radio';
+        item.setAttribute('role', 'menuitemradio');
+        item.setAttribute('aria-checked', String(o.checked));
+        item.tabIndex = -1;
+        item.dataset.stateCmd = o.command;
+        const check = document.createElement('span');
+        check.className = 'rd-ctx-check';
+        check.setAttribute('aria-hidden', 'true');
+        check.textContent = o.checked ? '✓' : '';
+        const text = document.createElement('span');
+        text.className = 'rd-menu-label';
+        text.textContent = o.label;
+        item.append(check, this.stateSwatch(o.visual, entry.dimension === 'aspect'), text);
+        list.append(item);
+      }
+      sub.append(label, caret, list);
+      nodes.push(sub);
+    }
+    section.replaceChildren(...nodes);
+    section.style.display = '';
+  }
+
+  /** Colour sample of a state (the diagram colour, like the legend). */
+  private stateSwatch(visual: { stroke?: string; lamp?: string; dashPattern?: string; opacity?: number }, lamp: boolean): SVGSVGElement {
+    const ns = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(ns, 'svg');
+    svg.setAttribute('width', '22');
+    svg.setAttribute('height', '10');
+    svg.setAttribute('viewBox', '0 0 22 10');
+    svg.setAttribute('aria-hidden', 'true');
+    svg.setAttribute('class', 'rd-ctx-swatch');
+    if (lamp) {
+      const c = document.createElementNS(ns, 'circle');
+      c.setAttribute('cx', '11');
+      c.setAttribute('cy', '5');
+      c.setAttribute('r', '4');
+      c.setAttribute('fill', visual.lamp && visual.lamp !== 'none' ? visual.lamp : 'none');
+      c.setAttribute('class', 'rd-ctx-swatch-outline');
+      svg.append(c);
+    } else {
+      const l = document.createElementNS(ns, 'line');
+      l.setAttribute('x1', '1');
+      l.setAttribute('y1', '5');
+      l.setAttribute('x2', '21');
+      l.setAttribute('y2', '5');
+      l.setAttribute('stroke-width', '3');
+      if (visual.stroke) l.setAttribute('stroke', visual.stroke);
+      else l.setAttribute('class', 'rd-ctx-swatch-drawn');
+      if (visual.dashPattern) l.setAttribute('stroke-dasharray', visual.dashPattern);
+      if (visual.opacity !== undefined) l.setAttribute('opacity', String(visual.opacity / 100));
+      svg.append(l);
+    }
+    return svg;
   }
 
   setGroupingController(controller: GroupingController): void {
@@ -287,6 +490,8 @@ export class ContextMenuController {
     }
 
     updateDrawioMenuItems(this.contextMenu, this.graph, type === 'cell' ? this.currentCell : null);
+    this.closeStateSubmenus();
+    this.renderStateSection(type === 'cell' ? buildStateMenu(this.selectedCells) : []);
 
     // Measured where it opens, then flipped/clamped so it never leaves the window
     const menu = this.contextMenu;
@@ -300,6 +505,7 @@ export class ContextMenuController {
   }
 
   private hideContextMenu() {
+    this.closeStateSubmenus();
     if (this.contextMenu) {
       this.contextMenu.style.display = 'none';
     }

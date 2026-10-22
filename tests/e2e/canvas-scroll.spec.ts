@@ -7,8 +7,9 @@
  *        view centre, Fit centres the content; content at negative coordinates is reachable and the
  *        canvas scrolls beyond the content on every side; the grid covers a far scrolled area and
  *        follows the zoom; hover arrows and the km ruler stay on their shapes when scrolled and
- *        zoomed; dragging near the edge autoscrolls; Space+drag and middle-drag pan; a tab keeps its
- *        scroll position across a tab switch.
+ *        zoomed; the State Legend stays fixed in the view above the scrollbar; dragging near the
+ *        edge autoscrolls; Space+drag and middle-drag pan; a tab keeps its scroll position across a
+ *        tab switch.
  *
  * Reads the graph through the dev server's module graph (like hover-arrows.spec.ts). Any port.
  */
@@ -366,6 +367,25 @@ test.describe('scrolling canvas (real input)', () => {
     await setScroll(page, v.scrollLeft - 55, v.scrollTop + 41);
     await check();
     await clickMenuItem(page, 'railway', 'railwayRoute:toggleKmRuler');
+  });
+
+  test('the State Legend stays fixed in the view, above the canvas scrollbar', async ({ page }) => {
+    await freshApp(page);
+    await loadModel(page, MODEL_XML);
+    await page.locator('#zoom-level').selectOption('200');
+    await clickMenuItem(page, 'railway', 'railwayState:toggleLegend');
+    const legend = page.locator('[data-testid="state-legend"]');
+    await expect(legend).toBeVisible();
+    const v = await view(page);
+    const box = (await legend.boundingBox())!;
+    expect(box.x).toBeGreaterThanOrEqual(v.left);
+    expect(box.y).toBeGreaterThanOrEqual(v.top);
+    // not over the horizontal scrollbar (the client area ends where the scrollbar starts)
+    expect(box.y + box.height).toBeLessThanOrEqual(v.top + v.clientHeight);
+    await setScroll(page, v.scrollLeft + 300, v.scrollTop + 200);
+    expect(await legend.boundingBox()).toEqual(box);
+    await legend.locator('.rd-state-legend-close').click();
+    await expect(legend).toHaveCount(0);
   });
 
   test('dragging a shape or a rubber band near the edge autoscrolls', async ({ page }) => {

@@ -509,7 +509,9 @@
         "position": {
           "enum": [
             "normal",
-            "reverse"
+            "reverse",
+            "moving",
+            "outOfControl"
           ],
           "description": "Position"
         },
