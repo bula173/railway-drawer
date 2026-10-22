@@ -539,7 +539,6 @@ P.addStencilPalette = hostFn('addStencilPalette', (t, a) => {
   const file = stencilFile.replace(/^stencils\//, '');
   const set = STENCIL_SETS.get(file);
   if (!set) throw new Error(`stencil set not in stencils.min.js: ${stencilFile}`);
-  usedStencilFiles.add(file);
   for (const s of set) {
     if (ignore != null && ignore.indexOf(s.stencilName) >= 0) continue;
     const tmp = (P.getTagsForStencil as HostFn).impl(t, [s.pkg, s.stencilName], interp) as string[];
@@ -552,7 +551,6 @@ P.addStencilPalette = hostFn('addStencilPalette', (t, a) => {
   }
   pushPalette(id, title, entries);
 });
-const usedStencilFiles = new Set<string>();
 
 // ---------- resources (mxResources.get, English) ----------
 const RESOURCES = new Map<string, string>();
@@ -886,7 +884,6 @@ fs.writeFileSync(path.join(NOTICE_DIR, 'README.md'), [
   '',
 ].join('\n'));
 
-fs.writeFileSync(path.join(OUT_DIR, '..', 'used-stencils.json'), JSON.stringify([...usedStencilFiles].sort()) + '\n');
 console.log(`palettes: ${catPalettes.length}, entries: ${catPalettes.reduce((n, p) => n + p.count, 0)}, libraries: ${libraries.length}, images: ${imageCount}`);
 console.log(JSON.stringify(summary));
 if (orphanLibs.length) console.log('libraries not in More shapes:', orphanLibs.join(', '));

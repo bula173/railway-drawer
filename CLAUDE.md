@@ -724,6 +724,10 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   palette tiles dragged onto a library section are added, and a canvas move gesture released over it adds the selection
   (GraphHandler reset, the cells stay). Serialized JSON body is XML-escaped (well-formed; draw.io reads it). The
   Templates tab stays separate (whole diagrams/scenarios with name/description, own store and mxlibrary export).
+- **Shape catalogue API** (for code that picks shapes by name, e.g. the AI assistant): `src/drawio-shapes/palettes/
+  shape-catalogue.ts` (import it dynamically): `listShapeLibraries()` (id, title, More shapes category, count, palettes,
+  attribution), `searchShapes(query, { limit, libraries })` -> `{ library, palette, entry }` (entry = PaletteEntry with
+  the exact draw.io style / XML, insert with `insertEntry`), `paletteEntries(id)`.
 - Tests: `src/__tests__/drawio-palettes/safe-js.test.ts`, `src/drawio-shapes/palettes/__tests__/catalogue.test.ts`,
   `src/drawio-shapes/vendor-runtime/__tests__/vendor-shapes.test.ts` (renders all 9,400+ JS/stencil vertex entries),
   `src/ui/drawio-palette/__tests__/user-libraries.test.ts`, `tests/e2e/all-shapes.spec.ts`.

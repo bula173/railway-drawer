@@ -103,3 +103,18 @@ describe('draw.io catalogue', () => {
     for (const lib of Object.values(index.libraries)) for (const f of lib.stencils) expect(existsSync(`public/stencils/${f}`), f).toBe(true);
   });
 });
+
+describe('shape catalogue API (shape-catalogue.ts)', () => {
+  it('lists libraries and returns insertable entries for a query', async () => {
+    const { listShapeLibraries, searchShapes, paletteEntries } = await import('../shape-catalogue');
+    const libs = await listShapeLibraries();
+    expect(libs.find((l) => l.id === 'aws4')).toMatchObject({ category: 'Networking', title: 'AWS 2026' });
+    const lambda = await searchShapes('lambda', { libraries: ['aws4'], limit: 5 });
+    expect(lambda.length).toBeGreaterThan(0);
+    expect(lambda.every((r) => r.library === 'aws4')).toBe(true);
+    expect(lambda[0].entry.style).toContain('mxgraph.aws4');
+    expect((await searchShapes('actor', { limit: 3 })).length).toBe(3);
+    expect(await searchShapes('  ')).toEqual([]);
+    expect((await paletteEntries('uml')).length).toBe(65);
+  });
+});
