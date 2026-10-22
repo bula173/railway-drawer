@@ -22,7 +22,7 @@ describe('draw.io catalogue', () => {
     let total = 0;
     for (const p of cat.palettes) {
       expect(p.file).toBe(paletteFileName(p.id));
-      expect(hasPalette(p.id)).toBe(true);
+      expect(await hasPalette(p.id)).toBe(true);
       expect(libs.get(p.library)?.palettes).toContain(p.id);
       const def = JSON.parse(readFileSync(`${DATA}/${p.file}.json`, 'utf8')) as { id: string; entries: unknown[] };
       expect(def.id).toBe(p.id);

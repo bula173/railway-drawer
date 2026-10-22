@@ -251,11 +251,17 @@ function cloneCell(c: SObj): SObj {
   return n;
 }
 Object.assign(cellProto, {
+  // mxCell.insert: the child leaves its previous parent first (re-inserting moves it to the end)
   insert: hostFn('insert', (t, a) => {
     const c = a[0] as SObj;
-    const kids = (t as SObj).children as SObj[];
-    if (a[1] != null) kids.splice(Number(a[1]), 0, c); else kids.push(c);
-    c.parent = t;
+    if (c == null) return c;
+    const self = t as SObj;
+    let index = a[1] == null ? (self.children as SObj[]).length : Number(a[1]);
+    if (a[1] == null && c.parent === self) index--;
+    const old = c.parent as SObj | null;
+    if (old) old.children = (old.children as SObj[]).filter((x) => x !== c);
+    c.parent = self;
+    (self.children as SObj[]).splice(index, 0, c);
     return c;
   }),
   insertEdge: hostFn('insertEdge', (t, a) => { (a[0] as SObj)[a[1] ? 'source' : 'target'] = t; return a[0]; }),
@@ -302,6 +308,21 @@ function setCellAttr(cell: SObj, key: string, value: string): void {
 
 /** Serializes cells as mxCodec would (default 0/false values omitted) inside an mxGraphModel. */
 function cellsToModelXml(cells: SObj[]): string {
+  // A cell listed at the top level that is also a child of another listed cell (e.g. UML 2.5
+  // "Parameter": [cell1, field1, field2] with field1/2 inserted into cell1) is one object in draw.io:
+  // Graph.cloneCells maps it to the same clone and the drop adds it to the target, i.e. it ends up
+  // at the top level (mxGraphModel.cloneCells / importCells). Mirror that.
+  const listed = new Set(cells);
+  for (const c of cells) {
+    for (let p = c.parent as SObj | null; p; p = p.parent as SObj | null) {
+      if (listed.has(p)) {
+        const parent = c.parent as SObj;
+        parent.children = (parent.children as SObj[]).filter((x) => x !== c);
+        c.parent = null;
+        break;
+      }
+    }
+  }
   let nextId = 2;
   const ids = new Map<SObj, string>();
   const assign = (c: SObj): void => { ids.set(c, String(nextId++)); (c.children as SObj[]).forEach(assign); };

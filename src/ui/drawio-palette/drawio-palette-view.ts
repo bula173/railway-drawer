@@ -699,7 +699,7 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
     globalSearchDone = new Promise<void>((resolve) => {
       globalSearchTimer = setTimeout(() => {
         globalSearchTimer = null;
-        Promise.all([import('./global-search'), catalogueReady])
+        Promise.all([import('./global-search'), ensureCatalogue()])
           .then(([m]) => (token === globalSearchToken && !destroyed ? m.renderGlobalSearch(searchResults, query, internals(), () => token === globalSearchToken) : undefined))
           .catch((err: unknown) => logger.warn('drawio-palette', 'Library search failed', { error: err instanceof Error ? err.message : String(err) }))
           .finally(resolve);
@@ -758,7 +758,7 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
       const host = el('div', 'rd-dp-libraries');
       host.textContent = 'Loading the draw.io libraries…';
       menu.appendChild(host);
-      Promise.all([import('./more-shapes-dialog'), catalogueReady])
+      Promise.all([import('./more-shapes-dialog'), ensureCatalogue()])
         .then(([m]) => {
           if (!destroyed && host.isConnected) m.renderLibraryChooser(host, internals());
         })
@@ -1036,15 +1036,24 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
     applyFilter();
   }
 
-  const catalogueReady: Promise<void> = useCatalogue
-    ? loadPaletteCatalogue()
+  // The catalogue (~120 kB) is fetched only when needed: More shapes, a search, or a stored choice
+  // that shows a draw.io library; first paint never waits for it.
+  let cataloguePromise: Promise<void> | null = null;
+  function ensureCatalogue(): Promise<void> {
+    if (!useCatalogue) return Promise.resolve();
+    if (!cataloguePromise) {
+      cataloguePromise = loadPaletteCatalogue()
         .then(addCataloguePalettes)
         .catch((err: unknown) => {
+          cataloguePromise = null;
           logger.warn('drawio-palette', 'draw.io library catalogue failed to load', {
             error: err instanceof Error ? err.message : String(err),
           });
-        })
-    : Promise.resolve();
+        });
+    }
+    return cataloguePromise;
+  }
+  if (Object.entries(visibleFlags).some(([id, shown]) => shown && !byId.has(id))) void ensureCatalogue();
 
   applyFilter();
   syncMenu();
@@ -1054,6 +1063,12 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
   }
 
   function setLibraryVisible(libraryId: string, visible: boolean): void {
+    if (useCatalogue && !catalogue) {
+      void ensureCatalogue().then(() => {
+        if (catalogue) setLibraryVisible(libraryId, visible);
+      });
+      return;
+    }
     const cats = libraryCategories(libraryId);
     for (const cat of cats) {
       visibleFlags[cat.id] = visible;
@@ -1127,7 +1142,9 @@ export function createDrawioPaletteView(options: DrawioPaletteViewOptions): Draw
   return {
     element: root,
     ready,
-    catalogueReady,
+    get catalogueReady() {
+      return ensureCatalogue();
+    },
     get globalSearchDone() {
       return globalSearchDone;
     },

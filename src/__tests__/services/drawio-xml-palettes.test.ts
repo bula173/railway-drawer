@@ -25,9 +25,12 @@ import { LEGACY_MXARROWS_TO_DRAWIO } from '../../shapes/drawio-arrows/registry';
 const ROOT = path.resolve(__dirname, '../../..');
 const DATA = path.join(ROOT, 'src/drawio-shapes/palettes/data');
 
+/** The palettes this file covers entry by entry; all other draw.io palettes: drawio-xml-all-palettes.test.ts. */
+const CORE_PALETTE_FILES = ['general', 'misc', 'advanced', 'basic', 'arrows2', 'flowchart', 'arrows'].map((id) => `${id}.json`);
+
 const palettes: PaletteDef[] = fs
   .readdirSync(DATA)
-  .filter((f) => f.endsWith('.json'))
+  .filter((f) => CORE_PALETTE_FILES.includes(f))
   .sort()
   .map((f) => JSON.parse(fs.readFileSync(path.join(DATA, f), 'utf8')) as PaletteDef);
 

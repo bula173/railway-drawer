@@ -64,9 +64,6 @@ export function isDrawioPaletteId(id: string): id is DrawioPaletteId {
   return Object.prototype.hasOwnProperty.call(LOADERS, id);
 }
 
-/** Every generated palette file (one lazy chunk each), by file name. */
-const DATA_FILES = import.meta.glob<{ default: unknown }>(['./data/*.json', '!./data/catalogue.json', '!./data/search-index.json']);
-
 const cache = new Map<string, Promise<PaletteDef>>();
 
 /**
@@ -80,16 +77,24 @@ export function paletteFileName(id: string): string {
 }
 
 /** True when a generated palette with this id exists (any of the 504 draw.io palettes). */
-export function hasPalette(id: string): boolean {
-  return isDrawioPaletteId(id) || Object.prototype.hasOwnProperty.call(DATA_FILES, `./data/${paletteFileName(id)}.json`);
+export async function hasPalette(id: string): Promise<boolean> {
+  if (isDrawioPaletteId(id)) return true;
+  const { paletteDataLoader } = await import('./all-data');
+  return paletteDataLoader(paletteFileName(id)) != null;
 }
 
 /** Loads a palette's data (code-split JSON chunk). Rejects for unknown ids. */
 export function loadPalette(id: string): Promise<PaletteDef> {
   let p = cache.get(id);
   if (!p) {
-    const loader = isDrawioPaletteId(id) ? LOADERS[id] : DATA_FILES[`./data/${paletteFileName(id)}.json`];
-    if (!loader) return Promise.reject(new Error(`Unknown draw.io palette: ${id}`));
+    // the 504-entry chunk map lives in its own lazy module (it would add ~50 kB to the main chunk)
+    const loader = isDrawioPaletteId(id)
+      ? LOADERS[id]
+      : () => import('./all-data').then(({ paletteDataLoader }) => {
+          const load = paletteDataLoader(paletteFileName(id));
+          if (!load) throw new Error(`Unknown draw.io palette: ${id}`);
+          return load();
+        });
     p = loader().then((m) => m.default as PaletteDef);
     p.catch(() => cache.delete(id));
     cache.set(id, p);
