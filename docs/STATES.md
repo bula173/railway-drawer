@@ -28,7 +28,7 @@ the Data panel, the legend and the change lists all read it.
 | Group | State | Look |
 |---|---|---|
 | Sections, tracks, points | Free | as drawn |
-| | Occupied | stroke `#ff0000` (red) |
+| | Occupied | stroke `#ff0000` (red), **thicker**: drawn `strokeWidth` x 1.5, at least + 2 (6 -> 9, 2 -> 4) |
 | | Reserved (route set) | stroke `#009e00` (green) |
 | | Overlap | stroke `#7a9a00` (yellow-green), dashed `8 4` |
 | | Locked | stroke `#2979ff` (blue) |
@@ -50,6 +50,13 @@ the Data panel, the legend and the change lists all read it.
 
 A position look wins over the state look (points out of control are magenta even when occupied);
 occupancy and position combine otherwise (occupied + normal = red, faint leg).
+
+**Occupied vs. lines drawn red**: some ERTMS library templates (and users) draw tracks and
+points legs red (`#e00000`, `#dc0000`); a red stroke alone would make an occupied section look
+like them. Occupied therefore also widens the line (`OCCUPIED_WIDTH_SCALE` 1.5, at least
+`OCCUPIED_WIDTH_MIN_ADD` 2 more than drawn; `widthScale` of the visual): the drawn `strokeWidth`
+is remembered in `rdBaseStyle` like the colour and put back by Free / Reset. Dashes stay reserved
+for overlap / disturbed / moving, so occupied stays a solid line.
 
 **Colour rules**: every state colour is saturated (chroma >= 0.3), strokes have >= 3:1 against the
 white and >= 4.5:1 against the dark canvas (#121212). The dark rendering (`colors.ts`) keeps saturated

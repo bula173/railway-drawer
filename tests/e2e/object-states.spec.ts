@@ -134,6 +134,8 @@ test('track section, signal, points: right-click states, save, reset, undo', asy
   expect(await attr(page, 'tc2', 'rdState')).toBe('occupied');
   expect(await styleKey(page, 'tc2', 'strokeColor')).toBe('#ff0000');
   expect((await rendered(page, 'tc2')).stroke).toBe('#ff0000');
+  // thicker than drawn (6 -> 9): occupied differs from a track drawn red
+  expect(await styleKey(page, 'tc2', 'strokeWidth')).toBe(9);
 
   const [download] = await Promise.all([page.waitForEvent('download'), clickMenuItem(page, 'file', 'save')]);
   const saved = await readFile((await download.path())!, 'utf8');

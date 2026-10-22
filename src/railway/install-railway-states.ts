@@ -14,7 +14,7 @@ import { getCellKind } from './object-data';
 import { STATE_REQUEST_EVENT } from './state-menu';
 import { applicableCells, occupyUnderTrains, resetAllStates, resetObjectStates, runRouteCommand, setStateOnCells } from './state-apply';
 import type { StateDimension, StateVisual } from './states';
-import { STATE_SCHEME } from './states';
+import { STATE_SCHEME, scaledStrokeWidth } from './states';
 
 export const STATE_LEGEND_KEY = 'rd.railway.stateLegend';
 
@@ -72,7 +72,7 @@ function swatch(visual: StateVisual, lamp: boolean): SVGSVGElement {
   l.setAttribute('y1', '6');
   l.setAttribute('x2', '26');
   l.setAttribute('y2', '6');
-  l.setAttribute('stroke-width', '4');
+  l.setAttribute('stroke-width', String(visual.widthScale ? scaledStrokeWidth(4, visual.widthScale) : 4));
   if (visual.stroke) l.setAttribute('stroke', visual.stroke);
   else l.setAttribute('class', 'rd-state-swatch-drawn');
   if (visual.dashPattern) l.setAttribute('stroke-dasharray', visual.dashPattern);

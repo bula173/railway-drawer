@@ -778,7 +778,8 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   disturbed), `rdAspect` (signals except marker boards / stop markers: stop | proceed | caution | shunt | dark), `rdPosition`
   (points: the catalogue field, normal | reverse | moving | outOfControl). Missing = default (free / open / stop / normal) =
   as drawn. **One table** `STATE_SCHEME` + `STATE_COLORS` (saturated, >= 3:1 on white and >= 4.5:1 on #121212, so the dark
-  rendering keeps them unchanged; unit-tested).
+  rendering keeps them unchanged; unit-tested). Occupied
+  also draws the line thicker (`widthScale` 1.5, at least +2; drawn width kept in `rdBaseStyle`) so it differs from tracks drawn red.
 - `applyObjectStates` = attributes + style keys (`strokeColor`/`fillColor`/`gradientColor`/`dashed`/`dashPattern`/`opacity`)
   of the object, its drawn parts (groups) or a signal's lamps (round-ish filled leaf vertices; else the signal's own fill)
   via `applyStyleToCells`, ONE undo step; the drawn values are remembered in `rdBaseStyle` (JSON per part path) and put back
