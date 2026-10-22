@@ -86,14 +86,24 @@ const attr = (page: Page, id: string, name: string): Promise<string> =>
 const styleKey = (page: Page, id: string, key: string): Promise<unknown> =>
   inGraph(page, 'const s = graph.getDataModel().getCell(arg.id).getStyle(); return s && typeof s === "object" ? s[arg.key] ?? null : null;', { id, key });
 
-/** What the view draws: stroke / fill of the shape's first path or ellipse, and its opacity. */
+/**
+ * What the view draws: stroke / fill / opacity of the shape's visible element (maxGraph adds an
+ * invisible white hit-detection path to edges, skipped here).
+ */
 const rendered = (page: Page, id: string): Promise<{ stroke: string; fill: string; opacity: string }> =>
   inGraph(page, `
     const st = graph.view.getState(graph.getDataModel().getCell(arg));
     const node = st.shape.node;
-    const el = node.querySelector('path, ellipse, rect') || node;
-    const op = node.getAttribute('opacity') ?? el.getAttribute('opacity') ?? el.getAttribute('stroke-opacity') ?? '';
-    return { stroke: (el.getAttribute('stroke') || '').toLowerCase(), fill: (el.getAttribute('fill') || '').toLowerCase(), opacity: String(op) };`, id);
+    const els = [node, ...node.querySelectorAll('path, ellipse, rect')].filter((e) => e.getAttribute('visibility') !== 'hidden');
+    const real = (v) => !!v && !['white', 'transparent', 'none'].includes(v.toLowerCase());
+    const strokeEl = els.find((e) => real(e.getAttribute('stroke')));
+    const fillEl = els.find((e) => real(e.getAttribute('fill')));
+    const op = node.getAttribute('opacity') ?? strokeEl?.getAttribute('stroke-opacity') ?? strokeEl?.getAttribute('opacity') ?? '';
+    return {
+      stroke: (strokeEl?.getAttribute('stroke') || '').toLowerCase(),
+      fill: (fillEl?.getAttribute('fill') || '').toLowerCase(),
+      opacity: String(op),
+    };`, id);
 
 async function openApp(page: Page, theme: 'light' | 'dark' = 'light'): Promise<void> {
   await page.setViewportSize({ width: 1440, height: 900 });

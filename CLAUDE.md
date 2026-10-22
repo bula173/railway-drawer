@@ -43,7 +43,7 @@ node scripts/railml/validate.ts [--xsd railml3.xsd] [files]  # dev only: xmllint
 CI (`.github/workflows/build-and-deploy.yml`) runs typecheck, typecheck:tests, lint, test:run, build and the
 Playwright subset (legacy-smoke, drawio-palette, templates, scenarios, style-edit, share, gitlab, ertms-data,
 scenario-uml-text, theme-contrast, remote-persist, scenario-doc, editor-commands, dark-shapes, ertms-routes, railml, drawio-compat,
-interaction, hover-arrows, railway-script, ux-batch, ux-batch2a, ux-batch2b, move-connect). No
+interaction, hover-arrows, railway-script, ux-batch, ux-batch2a, ux-batch2b, move-connect, object-states). No
 draw.io download is needed (`scripts/drawio-palettes` only runs locally, its output is committed). It does not deploy.
 
 ### E2E
@@ -94,7 +94,8 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   Shapes/Templates/Layers/PlantUML/ERTMS, Properties canvas/Text/Style/Arrange, Data, Checks, Scenarios, scenario
   dialog + step editor + view, context menu, Save as Template (with error), Share, Keyboard Shortcuts, About, Save As
   (with error), image upload,
-  shape designer, all 4 notification types, status/tab bars; a second test per theme: Route tool panel + Route
+  shape designer, all 4 notification types, status/tab bars; a second test per theme: context menu with the railway Position ▸ submenu open, Railway > Object State submenu,
+  states legend, Route tool panel + Route
   Table/Interlocking dialog on a loaded layout, scenario view with "Show changes" legend/Changes list and autoplay
   running, scenario PDF export options, fake-remote (`rd.fakeRemote`) Open dialog, status menu, Reload confirm; a third test
   per theme: Railway Script tab with an example made invalid (error + warning: problem list, gutter, inline marks), conflict
@@ -156,6 +157,13 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   it, nor goes into a signal; the dragged cell is the one under the pointer; connecting: 16 visible 'x' points on a
   rectangle, from a quarter point (fixed exit, floating entry, blue target), balise -> signal group, signal point ->
   rectangle, a new edge ends at the release point, an edge end dropped on a body connects floating, hover-arrow drag.
+- `tests/e2e/object-states.spec.ts` (any port, real right-clicks; layout with sections TC1-TC3, points W1, lamp-group
+  signal S1, route R1 via `saveLoadController.load`): TC2 State ▸ Occupied -> rendered stroke red, File > Save has
+  `rdState="occupied"` + `rdBaseStyle` + `strokeColor=#ff0000`, radio check, Reset State restores, one Ctrl+Z step each;
+  S1 Aspect ▸ Proceed -> both lamps green (mast unchanged); W1 Position ▸ Normal (opacity 0.3) / Reverse; multi-selection
+  (one undo); Data panel State select; route Set (sections/route green, W1 reverse, S1 proceed) / Railway > Object State >
+  Occupy Route / Release (W1 back); State Legend; scenario "Show changes" lists `TC2: free → occupied` and `S2: aspect stop →
+  proceed`; dark theme renders the state colours unchanged; Reset All States. Screenshots `test-results/object-states/`.
 - `tests/e2e/railway-script.spec.ts` (any port): Railway Script tab: a typed script (tracks, points, signals, route) is drawn
   by auto-apply ("Applied: 7 objects", `rdScript`, route on `rd-routes`), a text km edit moves the signal, a real mouse drag
   of the signal updates `at` in the text (comments/other lines kept), an enum error is listed at `13:col`, click selects it,
@@ -303,8 +311,8 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   Import ▸ draw.io File (New Tab) / railML / Railway Script / Image as Custom Shape, Export ▸ Download .drawio (`export`) /
   PNG / SVG / railML / Railway Script / Railway Data ▸ / Scenario ▸, Share…, Print), Edit, View (zoom, Grid = the toolbar grid
   button = Properties > Canvas grid via `grid-toggle.ts`, Dark Mode, ERTMS Tab, Connection Arrows), Arrange, **Railway**
-  (route tool + tables, Update Route Paths, Recalculate km, Edit Data…, Run Checks, Railway Script Editor, Snap to Track,
-  Show Routes, km Ruler), Extras (PlantUML Editor, Design Custom Shapes…), Help. Each `data-action` exists once. Submenus =
+  (route tool + tables, Update Route Paths, Recalculate km, Edit Data…, Run Checks, Railway Script Editor, Object State ▸,
+  Snap to Track, Show Routes, km Ruler), Extras (PlantUML Editor, Design Custom Shapes…), Help. Each `data-action` exists once. Submenus =
   `.menu-submenu[data-submenu]` > `.menu-submenu-title` (aria-haspopup, aria-expanded) + `.menu-submenu-list` (role=menu,
   nestable), shown by CSS :hover / :focus-within; → / Enter open on the first item, ← / Esc back to the title. e2e:
   `tests/e2e/menu-helpers.ts` `clickMenuItem(page, menu, action)` / `revealMenuItem(item)` hover the submenu chain.
@@ -729,6 +737,29 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
 - Tests: `src/railway/__tests__/routes.test.ts` (topology incl. sections/vertex points, path search over points and
   signal directions, route tool, route object draw.io round trip + undo, conflicts/tables, route checks, snapping math +
   undoable snap, km interpolation/recalc/ruler), `tests/e2e/ertms-routes.spec.ts`.
+
+### Object states (`src/railway/states.ts`, `state-apply.ts`, `state-menu.ts`, `install-railway-states.ts`; docs/STATES.md)
+
+- Runtime states (not infrastructure, not exported to railML): `rdState` (sections/tracks/points/routes: free | occupied |
+  reserved | overlap | locked | disturbed; level crossings open | closed | disturbed; balises/LEUs/axle counters free |
+  disturbed), `rdAspect` (signals except marker boards / stop markers: stop | proceed | caution | shunt | dark), `rdPosition`
+  (points: the catalogue field, normal | reverse | moving | outOfControl). Missing = default (free / open / stop / normal) =
+  as drawn. **One table** `STATE_SCHEME` + `STATE_COLORS` (saturated, >= 3:1 on white and >= 4.5:1 on #121212, so the dark
+  rendering keeps them unchanged; unit-tested).
+- `applyObjectStates` = attributes + style keys (`strokeColor`/`fillColor`/`gradientColor`/`dashed`/`dashPattern`/`opacity`)
+  of the object, its drawn parts (groups) or a signal's lamps (round-ish filled leaf vertices; else the signal's own fill)
+  via `applyStyleToCells`, ONE undo step; the drawn values are remembered in `rdBaseStyle` (JSON per part path) and put back
+  exactly (key order + remembered draw.io string: `applyStyleToCells` now copies `copyRawDrawioStyle`, so a reset saves
+  byte-identical styles; tested on every ERTMS template). Reset State keeps `rdPosition` (data), drops state/aspect/look.
+  `runRouteCommand` set / occupy / release (sections, overlap, points with `rdRouteRestore`, entry signal);
+  `occupyUnderTrains`.
+- UI: context menu section `[data-rd-state-menu]` before Edit Data (State ▸ / Aspect ▸ / Position ▸ as `.rd-ctx-sub` with
+  `position: fixed` `.rd-ctx-submenu` lists of `menuitemradio`s `[data-state-cmd]`, route/train items, Reset State; hover or
+  →/Enter opens, ←/Esc closes); Railway > Object State ▸ (`data-action="railwayState:<cmd>"` -> window event
+  `railway-state-request`, handled on the active tab's selection); State Legend (`rd.railway.stateLegend`); Data panel
+  State/Aspect selects (points Position field applies its look). Scenario diff: `TC3: free → occupied`, colour keys and
+  lamp parts folded in (`describeStateChanges`). railML export skips the state attributes and writes the drawn style.
+- Tests: `src/railway/__tests__/states.test.ts`, `states-templates.test.ts`, `tests/e2e/object-states.spec.ts`.
 
 ### railML 3.2 (`src/railml/`, details and the full table in docs/RAILML.md)
 
