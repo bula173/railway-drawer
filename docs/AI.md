@@ -1,0 +1,231 @@
+# AI assistant (in-app chat + MCP)
+
+Describe what the drawing should show and have it drawn in the active diagram tab — either in the
+app's own **AI** panel with your own Anthropic API key, or from an MCP client (Claude Desktop,
+Claude Code, a claude.ai custom connector) paired with your open browser tab.
+
+```
+                         ┌──────────────────────────── browser tab (railwaydrawer.mksystemdesign.org) ───────────────────────────┐
+ you ── prompt ──► AI panel (src/ai/ai-panel.ts, lazy chunk)                                                                     │
+                   │  ChatSession (chat-loop.ts) ── HTTPS, your key ──► api.anthropic.com /v1/messages (stream, tools)          │
+                   │        ▲ tool_use / tool_result                                                                             │
+                   │        ▼                                                                                                    │
+                   │  runTool (confirm mode, turn undo) ──► executeAiTool (tools.ts) ──► ACTIVE TAB: graph, undo, Railway Script │
+                   │        ▲                                                                                                    │
+                   │  BridgeClient (bridge/client.ts) ◄── WebSocket ───────────────────┐                                        │
+                   └───────────────────────────────────────────────────────────────────────┼────────────────────────────────────────┘
+                                                                                        │ wss://<site>/api/ai-bridge/<session>/ws (same origin)
+ Claude Desktop / Code / claude.ai ── MCP Streamable HTTP ──► Worker /mcp (worker/index.ts, src/ai/mcp/http.ts)
+                                       pairing token            │  validate input (JSON Schema) ─► RPC relayCall()
+                                                                ▼
+                                                   Durable Object AiBridge (worker/ai-bridge.ts) ── BridgeRelay (src/ai/bridge/relay.ts)
+
+ Claude Desktop / Code ── stdio ──► tools/mcp-local (Node) ── ws://127.0.0.1:7391/bridge ◄── BridgeClient (same page)
+                                     └─ no browser connected + RAILWAY_DRAWER_FILE: edits a .drawio file headless (jsdom)
+```
+
+One tool core (`src/ai/tools.ts`, definitions in `src/ai/tool-defs.ts`) serves all three paths: the
+chat runs it in the page, MCP calls are relayed to the page and run there, the local server's
+headless mode runs it in Node.
+
+## Tools
+
+Every tool: JSON Schema (`additionalProperties: false`), input validated before it runs
+(`schema-check.ts`; MCP inputs are validated in the Worker / local server too), at most **one undo
+step** per call, compact JSON result + a one-line summary for the visible log.
+
+| Tool | What it does |
+|---|---|
+| `get_drawing` | The tab's Railway Script (stored, or generated from the drawing), railway object counts, other cells (id, label, shape, bounds). |
+| `apply_railway_script` | Replaces the tab's Railway Script and redraws what it owns (one undo step). Errors come back with `line:col`; nothing changes then. |
+| `add_shapes` | Generic draw.io shapes (catalogue name, title, or style string) + connectors, placed at x/y. ERTMS symbols get their railway kind and ID. |
+| `search_shapes` | Searches the draw.io palettes, the ERTMS library and user libraries. |
+| `delete_cells` | By cell id or railway object id, or everything. |
+| `set_states` | `state` / `aspect` / `position` per object (docs/STATES.md), reset, reset all. |
+| `routes` | list / find / add / set / occupy / release on the drawn topology. |
+| `list_templates`, `insert_template` | ERTMS + user templates; insert at x/y or open as a new tab. |
+| `check_drawing` | The railway data checks (Checks panel). |
+| `export_drawing` | png (returned as an image so the model can look at the drawing), svg, drawio, railML 3.2, Railway Script YAML/JSON; optional download. |
+| `undo` | Undo n steps of the tab. |
+
+The system prompt (`system-prompt.ts`) teaches the Railway Script from the same sources as its JSON
+Schema (catalogue fields, aliases, state keys, nested lists, joints), the three built-in examples and
+the conventions (km chainage, nominal = increasing km = left to right, signals on the right of their
+direction, ETCS NID_C/NID_BG/RBC, ID prefixes). It is deterministic, so it is cached.
+
+## In-app chat
+
+Right panel **AI** (`[data-right-panel="ai"]`; the chunk with the Anthropic SDK loads on first show).
+
+- **Settings**: API key (password field, Show/Hide, Save, Remove; shown masked `sk-ant-…abcd`),
+  model (default **Claude Opus 5.5**, also Sonnet 5.5, Haiku 5.5, Fable 5.1 or any model id), effort
+  (default high), **Confirm each change**.
+- **Prompt box**: Enter sends, Shift+Enter new line, Esc stops while running. The answer streams;
+  the model's summarized thinking is in a collapsed "Thinking" line; Markdown is rendered (images are
+  never loaded).
+- **Tool log**: one line per call, e.g. `✓ Applied Railway Script: 1 track, 2 points, 5 signals`;
+  errors show the first `line:col` problems.
+- **Confirm mode**: each change is applied, shown on the canvas with a summary (`3 added, 1 changed`)
+  and waits for **Keep** / **Discard**; Discard undoes it and tells the model.
+- **Stop** aborts the stream or the waiting tool; unanswered tool calls are closed properly.
+- **Undo AI turn** undoes every edit of the last turn (only while they are still the newest edits of
+  their tab; later manual edits are kept and reported).
+- **New conversation** forgets the history (the drawing stays).
+
+API details (claude-api skill): `client.beta.messages.stream` (official SDK `@anthropic-ai/sdk`,
+`dangerouslyAllowBrowser: true`), `max_tokens` 64000, adaptive thinking with summarized display,
+`output_config.effort`, top-level `cache_control` (tools + system + history cached), tools with
+`eager_input_streaming` (inputs are validated before running; `max_tokens`/`refusal` stops never run
+tools), server-side refusal fallback (`fallbacks: "default"`, beta `server-side-fallback-2026-07-01`)
+for models that support it, append-only history (thinking blocks sent back unchanged), at most 30
+tool rounds per turn.
+
+### Security of the key
+
+- Stored only in this browser: localStorage `rd.ai.settings`. Never in the diagram cache, files,
+  share links or any Railway Drawer server; never logged. Sent only to `api.anthropic.com`.
+- The browser calls the API directly; the SDK marks this with the header
+  `anthropic-dangerous-direct-browser-access: true`. Anyone who can run script in this page
+  (an XSS, a malicious browser extension) or use this browser profile can read the key. Use a key
+  with a spending limit (Console > Limits), don't use shared computers, press Remove when done.
+- What the model receives: your prompts and the tool results (the active tab's script, cell
+  summaries, exports you ask for). Tools never send data anywhere else; assistant Markdown is
+  sanitized and images in it are not loaded (no exfiltration through image URLs).
+- No CSP `connect-src` is set by the site (index.html / Worker); if one is added, allow
+  `https://api.anthropic.com` (and `wss:` same origin for the bridge).
+
+## MCP
+
+### Remote (production site)
+
+1. Open the app, right panel **AI** > **Connect to AI assistant (MCP)** > **Create pairing code**.
+   The panel shows the status (Connected / Connecting), the MCP URL, the Claude Code command and the
+   bare pairing code `rdp1.<session>.<secret>`. Keep the tab open (calls run in it, on the active
+   tab). The code is valid while you keep it, at most 12 hours; **New code** / **Disconnect** revoke it.
+2. Configure the client:
+   - **claude.ai** (Settings > Connectors > Add custom connector) or **Claude Desktop** (Settings >
+     Connectors > Add custom connector): URL =
+     `https://railwaydrawer.mksystemdesign.org/mcp?pair=rdp1.<session>.<secret>`, no OAuth.
+   - **Claude Code**:
+     `claude mcp add --transport http railway-drawer https://railwaydrawer.mksystemdesign.org/mcp --header "Authorization: Bearer rdp1.<session>.<secret>"`
+   - Any client config JSON (e.g. `.mcp.json`):
+     ```json
+     { "mcpServers": { "railway-drawer": { "type": "http", "url": "https://railwaydrawer.mksystemdesign.org/mcp",
+       "headers": { "Authorization": "Bearer rdp1.<session>.<secret>" } } } }
+     ```
+3. Ask: "Draw a station with two points and four signals in Railway Drawer". The calls appear in the
+   AI panel log as `MCP · ✓ …`; with **Confirm each change** on, each waits for Keep / Discard (the
+   MCP call waits up to 3 minutes).
+
+How it works: `/mcp` is a stateless Streamable HTTP MCP endpoint (official SDK
+`@modelcontextprotocol/server`, `createMcpHandler`, JSON responses). The pairing token comes from
+`Authorization: Bearer` or `?pair=`; tool inputs are validated against the schemas, then relayed by
+RPC to the Durable Object `AiBridge` named by the session. The browser connected to that DO with
+`wss://<site>/api/ai-bridge/<session>/ws` and registered SHA-256(secret); the DO compares in constant
+time, forwards the call over the WebSocket, waits for the result (180 s) and returns it (PNG exports as
+MCP image content). The DO uses the WebSocket Hibernation API, keeps only `{hash, expiry}` in its
+storage and deletes it with an alarm at the expiry.
+
+Decision: the Worker uses `@modelcontextprotocol/server`'s `createMcpHandler` directly instead of
+the Agents SDK `McpAgent` — the Agents docs mark `McpAgent` deprecated in favour of
+`createMcpHandler`, the server needs no per-MCP-session state (all state is the pairing, held by our
+own Durable Object), and the `agents` package would add a large dependency tree (esbuild, babel,
+rolldown plugins) to the build for nothing.
+
+### Local (offline / LAN, `tools/mcp-local`)
+
+```bash
+npm ci
+npm run build:mcp-local          # -> tools/mcp-local/dist/railway-drawer-mcp.mjs
+```
+
+1. In the app: AI panel > Connect to AI assistant > **Local MCP server**: copy the config. It holds a
+   long-lived local token (this browser's localStorage `rd.ai.local`; **New local token** rotates it)
+   and the port (default 7391).
+2. Put it into Claude Desktop (`claude_desktop_config.json`) or Claude Code (`.mcp.json` /
+   `claude mcp add-json railway-drawer-local '<json>'`):
+   ```json
+   { "mcpServers": { "railway-drawer-local": { "command": "node",
+       "args": ["/path/to/railway-drawer/tools/mcp-local/dist/railway-drawer-mcp.mjs"],
+       "env": { "RAILWAY_DRAWER_TOKEN": "rdp1.<session>.<secret>", "RAILWAY_DRAWER_PORT": "7391" } } } }
+   ```
+   Optional env: `RAILWAY_DRAWER_FILE=/path/plan.drawio` (headless mode below),
+   `RAILWAY_DRAWER_ORIGINS` (comma-separated page origins allowed to connect; default the production
+   site, `http://192.168.0.22`, `http://localhost:*`, `http://127.0.0.1:*`).
+3. Start the MCP client (it starts the server), then press **Connect local server** in the panel.
+
+Browser rules: an https page may open `ws://127.0.0.1` (localhost is a potentially trustworthy
+origin, so it is not mixed content in Chrome, Edge and Firefox; Safari blocks it). Newer Chrome
+versions may ask "Allow this site to access devices on your local network" (Local Network Access) —
+allow it. The plain-http LAN copy can always connect. The server listens on 127.0.0.1 only, refuses
+other page origins, and only the browser that knows the token's secret can attach.
+
+**Headless mode**: when no browser is connected and `RAILWAY_DRAWER_FILE` is set, the server runs the
+same tool core in Node (jsdom + maxGraph) on that `.drawio` file: it reads the first page (compressed
+pages too) and its Railway Script, runs the tool, and writes the file back after every change (other
+pages kept verbatim). Not available there: `export_drawing` png/svg (no rendering engine) — use
+drawio / railml / Railway Script. Undo works within the server process.
+
+### Cloudflare: what to do before it works on the domain
+
+Nothing has been changed in the Cloudflare account. After the reviewed push, Workers Builds deploys
+the new `wrangler.jsonc` (now a Worker script + the same static assets):
+
+- `main: worker/index.ts`, `assets.binding: ASSETS`, `run_worker_first: ["/mcp", "/mcp/",
+  "/api/ai-bridge/*"]` — every other request is served from `dist/` exactly as before (SPA
+  not-found handling), without running the script.
+- Durable Object binding `AI_BRIDGE` -> class `AiBridge`, migration `v1` with
+  `new_sqlite_classes: ["AiBridge"]` (works on the Workers Free plan). The first deploy applies the
+  migration automatically; nothing to create by hand.
+- Build command stays `npm run build` (Workers Builds runs `npm ci`; `@modelcontextprotocol/server`
+  is a regular dependency).
+
+**Cloudflare Access** (the whole site is behind Access, email OTP): MCP clients cannot do the OTP
+login, so add one more Access application for the MCP path **before** pairing:
+
+1. Zero Trust > Access > Applications > Add an application > Self-hosted.
+2. Name "Railway Drawer MCP"; destinations: `railwaydrawer.mksystemdesign.org` path `mcp`, and the
+   workers.dev hostname of the Worker with path `mcp` (Access matches the path and everything below).
+3. Policy: **Action Bypass**, Include **Everyone**. Save. (A more specific path wins over the
+   site-wide application, so only `/mcp` is opened.)
+
+Why Bypass and not Service Auth: claude.ai custom connectors and the Claude Desktop connector dialog
+take only a URL (or OAuth), so they cannot send `CF-Access-Client-Id` / `CF-Access-Client-Secret`
+headers; Service Auth would only work with Claude Code (`--header` twice). `/mcp` is protected by the
+pairing secret (256 random bits, hashed, constant-time compared, rate limited to 60 calls/min, bodies
+<= 512 KB, up to 12 h, revocable), returns nothing without it, and only reaches a drawing while its
+owner's tab is open and paired. If you prefer Service Auth anyway (Claude Code only): create a service
+token, set the policy action to Service Auth with that token, and add
+`--header "CF-Access-Client-Id: <id>" --header "CF-Access-Client-Secret: <secret>"` to the
+`claude mcp add` command.
+
+Leave `/api/ai-bridge/*` under the normal Access policy: the browser opens that WebSocket from the
+logged-in page (same origin), so the `CF_Authorization` cookie is sent with the upgrade request and
+Access validates it like any page request (Access supports WebSockets). The Worker also refuses the
+upgrade unless the `Origin` is the site itself. If the bridge shows "Connecting…" forever on the
+domain, check the Access logs for the `/api/ai-bridge/` request (an expired Access session needs a
+page reload).
+
+## Safety summary
+
+- The chat's key never leaves the browser except to api.anthropic.com; the MCP paths involve no
+  Anthropic key at all.
+- Tools only read/modify the active diagram and return results to the model that asked; no tool
+  makes network requests.
+- Pairing: random session + secret, only the hash is sent/stored, constant-time compare, expiry
+  (<= 12 h, alarm cleanup), one paired browser window per pairing (a new window replaces the old),
+  at most 4 sockets per pairing, same-origin WebSocket only, frames <= 2 MB, MCP bodies <= 512 KB,
+  60 tool calls/min, 180 s per call, every input validated against its schema.
+- Local server: 127.0.0.1 only, origin allow-list, token secret required, stdout reserved for MCP
+  (logs on stderr).
+
+## Files
+
+- `src/ai/tool-defs.ts`, `schema-check.ts`, `tools.ts`, `target.ts`, `shape-search.ts`, `system-prompt.ts`
+- `src/ai/app-target.ts` (active tab), `src/ai/ai-panel.ts` + `.css`, `src/ai/install-ai.ts` (main chunk)
+- `src/ai/chat/chat-loop.ts`, `chat/settings.ts`
+- `src/ai/bridge/protocol.ts`, `relay.ts`, `client.ts`, `pairing.ts`; `src/ai/mcp/mcp-server.ts`, `mcp/http.ts`
+- `worker/index.ts`, `worker/ai-bridge.ts`, `worker/env.ts`, `worker/tsconfig.json`; `wrangler.jsonc`
+- `tools/mcp-local/` (Node stdio server: `src/main.ts`, `src/bridge-server.ts`, `src/headless.ts`, `vite.config.ts`)
+- Tests: `src/ai/__tests__/` (tools on a jsdom tab, system prompt, chat loop with a mocked Messages
+  API over SSE, bridge protocol/relay, MCP endpoint, local server), `tests/e2e/ai.spec.ts`.

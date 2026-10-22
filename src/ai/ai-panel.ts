@@ -498,14 +498,19 @@ export function mountAiPanel(container: HTMLElement, options: AiPanelOptions): A
   };
   const startRemote = (pairing: RemotePairing): void => {
     remote?.client.close();
+    let everConnected = false;
     const client = new BridgeClient({
       url: remoteBridgeUrl(origin, pairing.token),
       auth: hashSecret(pairing.token.secret),
       ttlSeconds: Math.max(60, Math.round((pairing.expiresAt - Date.now()) / 1000)),
       run: bridgeRun,
       onStatus: (s, detail, expiresAt) => {
+        if (s === 'connected') everConnected = true;
         remoteStatus.dataset.status = s;
-        remoteStatus.textContent = s === 'refused' && /WebSocket|connect/i.test(detail ?? '') ? 'Not connected: this server has no AI bridge (it needs the Railway Drawer Worker, e.g. the production site).' : statusText(s, detail, expiresAt);
+        remoteStatus.textContent =
+          s === 'connecting' && !everConnected && detail
+            ? `Waiting for the AI bridge (${detail.toLowerCase()}). It needs the Railway Drawer Worker: the production site has it, a plain static or dev server does not.`
+            : statusText(s, detail, expiresAt);
       },
     });
     remote = { pairing, client };
@@ -572,13 +577,18 @@ export function mountAiPanel(container: HTMLElement, options: AiPanelOptions): A
   });
   const localConnect = btn('Connect local server', '', 'ai-local-connect', () => {
     localClient?.close();
+    let localEver = false;
     localClient = new BridgeClient({
       url: localBridgeUrl(local.port),
       auth: hashSecret(local.token.secret),
       run: bridgeRun,
       onStatus: (s, detail, expiresAt) => {
+        if (s === 'connected') localEver = true;
         localStatus.dataset.status = s;
-        localStatus.textContent = statusText(s, detail, expiresAt);
+        localStatus.textContent =
+          s === 'connecting' && !localEver && detail
+            ? `Waiting for the local MCP server on port ${local.port} (${detail.toLowerCase()}). Is it running (started by your MCP client)?`
+            : statusText(s, detail, expiresAt);
       },
     });
     localClient.connect();
