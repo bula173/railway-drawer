@@ -242,7 +242,7 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   (`services/plantuml-sequence-svg.ts`, imported by `scenarios/step-uml.ts` on the first rendering). Keep new heavy,
   user-triggered UI lazy the same way. Build chunks (vite.config.ts `manualChunks`): `maxgraph` (@maxgraph/core,
   ~542 kB), `drawio-shapes` (`src/drawio-shapes/js`, ~228 kB, self-contained: only maxGraph imports, so no chunk cycle;
-  preloaded in parallel with `main-editor`, ~693 kB, was ~941 kB); `chunkSizeWarningLimit` 800 (reason in the config).
+  preloaded in parallel with `main-editor`, ~700 kB, was ~941 kB); `chunkSizeWarningLimit` 800 (reason in the config).
 - Dead code: modules not reachable from `src/main.ts` (and not test-only helpers) are deleted, not kept "for later";
   the old hand-written shape classes (`src/shapes/{uml,bpmn,cloud,...}`), `src/store`, `src/contexts`,
   `src/types`, the color picker/palette controllers etc. were removed in the cleanup.

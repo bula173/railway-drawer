@@ -65,7 +65,7 @@ export default defineConfig(({ mode }) => {
       },
       // The two big startup chunks cannot be split further cheaply: @maxgraph/core is one library
       // (~542 kB minified, ~144 kB gzip, no deep imports in 0.10) and main-editor is the editor itself
-      // (~693 kB / ~216 kB gzip: every per-tab controller is built for the first tab; it was ~941 kB
+      // (~700 kB / ~219 kB gzip: every per-tab controller is built for the first tab; it was ~941 kB
       // before draw.io's JS shapes got their own chunk). Rarely used features are lazy chunks
       // (CLAUDE.md "Boot"). 800 kB leaves room for growth while a chunk beyond it still warns.
       chunkSizeWarningLimit: 800,

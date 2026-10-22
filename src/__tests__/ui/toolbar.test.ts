@@ -74,7 +74,7 @@ describe('Align / distribute dropdown', () => {
 
 describe('chrome without emoji', () => {
   it('index.html has no emoji (logo, Share, Properties text alignment use inline SVG icons)', () => {
-    expect(indexHtml).not.toMatch(/[\p{Extended_Pictographic}\u2B05-\u2B07\uFE0F]/u);
+    expect(indexHtml).not.toMatch(/\p{Extended_Pictographic}|[\u2B05-\u2B07]|\uFE0F/u);
     for (const name of ['train', 'share', 'textLeft', 'textCenter', 'textRight', 'valignTop', 'valignMiddle', 'valignBottom']) {
       expect(indexHtml, name).toContain(`data-rd-icon="${name}"`);
     }
