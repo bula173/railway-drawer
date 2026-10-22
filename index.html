@@ -337,7 +337,10 @@
             <button type="button" class="right-panel-switch-btn" role="tab" aria-selected="false" aria-controls="railway-data-panel" data-right-panel="data" tabindex="-1" title="Railway object data of the selection">Data</button>
             <button type="button" class="right-panel-switch-btn" role="tab" aria-selected="false" aria-controls="railway-checks-panel" data-right-panel="checks" tabindex="-1" title="Railway data checks and reports">Checks<span class="rd-rw-badge" hidden></span></button>
             <button type="button" class="right-panel-switch-btn" role="tab" aria-selected="false" aria-controls="scenarios-panel" data-right-panel="scenarios" tabindex="-1">Scenarios</button>
+            <button type="button" class="right-panel-switch-btn" role="tab" aria-selected="false" aria-controls="ai-panel" data-right-panel="ai" tabindex="-1" title="AI assistant: describe the drawing (your own Anthropic API key, or an MCP client)">AI</button>
           </div>
+          <!-- AI assistant (src/ai, lazy chunk) -->
+          <div id="ai-panel" class="panel-content" role="tabpanel" aria-label="AI assistant" hidden></div>
           <!-- Railway object data of the selection and checks/reports (src/railway) -->
           <div id="railway-data-panel" class="panel-content" role="tabpanel" aria-label="Railway data" hidden></div>
           <div id="railway-checks-panel" class="panel-content" role="tabpanel" aria-label="Railway checks" hidden></div>

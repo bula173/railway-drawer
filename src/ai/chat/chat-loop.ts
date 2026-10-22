@@ -88,11 +88,16 @@ export class ChatSession {
   readonly messages: BetaMessageParam[] = [];
   private controller: AbortController | null = null;
 
+  private readonly clientFor: () => Anthropic;
+
+  /** `client`: a client, or a function giving the client for the current key (settings may change). */
   constructor(
-    private readonly client: Anthropic,
+    client: Anthropic | (() => Anthropic),
     private readonly system: string,
     private readonly settings: () => AiSettings
-  ) {}
+  ) {
+    this.clientFor = typeof client === 'function' ? client : () => client;
+  }
 
   get running(): boolean {
     return this.controller !== null;
@@ -135,7 +140,7 @@ export class ChatSession {
       for (let round = 0; round < MAX_TOOL_ROUNDS; round++) {
         if (controller.signal.aborted) return { end: 'stopped' };
         events.onMessageStart?.();
-        const stream = this.client.beta.messages.stream(this.params(), { signal: controller.signal });
+        const stream = this.clientFor().beta.messages.stream(this.params(), { signal: controller.signal });
         stream.on('text', (delta) => events.onText?.(delta));
         stream.on('thinking', (delta) => events.onThinking?.(delta));
         let message: BetaMessage;

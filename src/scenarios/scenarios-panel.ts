@@ -658,7 +658,7 @@ export function createScenariosPanel(options: ScenariosPanelOptions): ScenariosP
 }
 
 /** Views of the right panel (one switch button each, `data-right-panel`). */
-export type RightPanelView = 'properties' | 'data' | 'checks' | 'scenarios';
+export type RightPanelView = 'properties' | 'data' | 'checks' | 'scenarios' | 'ai';
 
 /** `window` event fired whenever the right panel shows a view (`detail: { view }`). */
 export const RIGHT_PANEL_EVENT = 'right-panel-view';

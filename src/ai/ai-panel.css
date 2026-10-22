@@ -1,0 +1,240 @@
+/* AI panel (src/ai/ai-panel.ts): right panel view "AI". Tokens only (theme-contrast). */
+#ai-panel[hidden] {
+  display: none !important;
+}
+#ai-panel {
+  padding: 0;
+}
+
+.rd-ai-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  font-size: 12px;
+  color: var(--rd-text);
+}
+
+.rd-ai-log {
+  flex: 1 1 auto;
+  min-height: 160px;
+  max-height: 55vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 6px;
+  border: 1px solid var(--rd-border);
+  border-radius: 4px;
+  background: var(--rd-surface);
+}
+.rd-ai-log:focus-visible {
+  outline: 2px solid var(--rd-focus);
+  outline-offset: 1px;
+}
+
+.rd-ai-empty {
+  margin: 0;
+  color: var(--rd-text-muted);
+  line-height: 1.4;
+}
+
+.rd-ai-msg {
+  padding: 6px 8px;
+  border-radius: 6px;
+  line-height: 1.4;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.rd-ai-msg.rd-ai-user {
+  align-self: flex-end;
+  max-width: 90%;
+  background: var(--rd-selected);
+  color: var(--rd-text);
+}
+.rd-ai-msg.rd-ai-assistant {
+  background: var(--rd-surface-2);
+  color: var(--rd-text);
+  white-space: normal;
+}
+.rd-ai-msg.rd-ai-assistant p,
+.rd-ai-msg.rd-ai-assistant ul,
+.rd-ai-msg.rd-ai-assistant ol,
+.rd-ai-msg.rd-ai-assistant pre {
+  margin: 0 0 4px;
+}
+.rd-ai-msg.rd-ai-assistant a {
+  color: var(--rd-link);
+}
+.rd-ai-msg.rd-ai-assistant code,
+.rd-ai-msg.rd-ai-assistant pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11px;
+  background: var(--rd-surface-3);
+  color: var(--rd-text);
+}
+.rd-ai-msg.rd-ai-assistant pre {
+  padding: 4px;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+.rd-ai-thinking {
+  color: var(--rd-text-muted);
+  font-size: 11px;
+}
+.rd-ai-thinking summary {
+  cursor: pointer;
+}
+.rd-ai-thinking-body {
+  white-space: pre-wrap;
+  padding: 2px 0 0 12px;
+}
+
+.rd-ai-tool {
+  padding: 3px 6px;
+  border-left: 3px solid var(--rd-border-strong);
+  font-size: 11px;
+  color: var(--rd-text);
+  overflow-wrap: anywhere;
+}
+.rd-ai-tool[data-status='ok'] {
+  border-left-color: var(--rd-success);
+}
+.rd-ai-tool[data-status='error'] {
+  border-left-color: var(--rd-danger);
+}
+.rd-ai-tool-detail {
+  color: var(--rd-text-muted);
+}
+
+.rd-ai-confirm {
+  padding: 6px;
+  border: 1px solid var(--rd-warning);
+  border-radius: 4px;
+  background: var(--rd-warning-bg);
+  color: var(--rd-text);
+}
+.rd-ai-confirm-title {
+  font-weight: 600;
+}
+.rd-ai-confirm-diff {
+  margin: 2px 0 6px;
+}
+
+.rd-ai-status {
+  font-size: 11px;
+  color: var(--rd-text-muted);
+}
+.rd-ai-status.rd-ai-error {
+  padding: 4px 6px;
+  border-radius: 4px;
+  background: var(--rd-danger-bg);
+  color: var(--rd-danger);
+}
+
+.rd-ai-composer {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.rd-ai-input {
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+  min-height: 52px;
+  padding: 6px;
+  font: inherit;
+}
+
+.rd-ai-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+.rd-ai-row > .rd-input {
+  flex: 1 1 120px;
+  min-width: 0;
+}
+.rd-ai-btn {
+  min-height: 26px;
+  padding: 3px 10px;
+  font-size: 12px;
+}
+.rd-ai-btn:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+.rd-ai-btn:focus-visible,
+.rd-ai-panel summary:focus-visible {
+  outline: 2px solid var(--rd-focus);
+  outline-offset: 1px;
+}
+
+.rd-ai-section {
+  border: 1px solid var(--rd-border);
+  border-radius: 4px;
+  padding: 6px 8px;
+  background: var(--rd-surface);
+}
+.rd-ai-section > *:not(summary) {
+  margin-top: 6px;
+}
+.rd-ai-summary {
+  cursor: pointer;
+  font-weight: 600;
+  min-height: 24px;
+  line-height: 24px;
+}
+.rd-ai-subtitle {
+  margin: 8px 0 4px;
+  font-size: 12px;
+}
+.rd-ai-note {
+  margin: 4px 0;
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--rd-text-muted);
+}
+.rd-ai-key-status,
+.rd-ai-conn-status {
+  font-size: 11px;
+  color: var(--rd-text);
+}
+.rd-ai-conn-status[data-status='connected'] {
+  color: var(--rd-success);
+}
+.rd-ai-conn-status[data-status='refused'] {
+  color: var(--rd-danger);
+}
+.rd-ai-panel select.rd-input,
+.rd-ai-panel input.rd-input {
+  min-height: 26px;
+  padding: 2px 6px;
+  box-sizing: border-box;
+  width: 100%;
+}
+.rd-ai-readonly {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11px;
+}
+textarea.rd-ai-readonly {
+  resize: vertical;
+}
+.rd-ai-check {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  min-height: 24px;
+}
+.rd-ai-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}

@@ -56,6 +56,7 @@ import { installRailwayRoutes } from './railway/install-railway-routes';
 import { installRailwayStates } from './railway/install-railway-states';
 import { installRailml, isRailmlFile, requestRailmlOpen } from './railml/install-railml';
 import { installRailwayScript } from './railway-script/install-railway-script';
+import { installAi } from './ai/install-ai';
 import { syncConnectionArrowsMenu, toggleConnectionArrows } from './ui/hover-arrows';
 import { withErtmsDisplayTitles } from './ui/ertms-display';
 import { installToolbar } from './ui/toolbar';
@@ -462,6 +463,8 @@ leftPanelTabs.registerTabContent('plantuml', 'plantuml-panel');
 leftPanelTabs.registerTabContent('railwayScript', 'railway-script-panel');
 // Railway Script: layout as YAML/JSON text, two-way with the drawing (src/railway-script; lazy chunk)
 installRailwayScript(tabManager, globalNotificationManager, leftPanelTabs, document.getElementById('railway-script-panel')!);
+// AI assistant: right panel view "AI" (src/ai; lazy chunk, docs/AI.md)
+installAi(tabManager, globalNotificationManager);
 
 // Make leftPanelTabs globally accessible for menu handlers
 (window as Window & { __leftPanelTabs?: LeftPanelTabs }).__leftPanelTabs = leftPanelTabs;
