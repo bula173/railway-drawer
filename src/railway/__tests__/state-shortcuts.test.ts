@@ -79,7 +79,7 @@ describe('state shortcuts dispatch', () => {
   function section(tab: TabData): Cell {
     let cell!: Cell;
     tab.graph.batchUpdate(() => {
-      cell = tab.graph.insertEdge(tab.graph.getDefaultParent(), null, buildDataValue('', { kind: 'trackSection', values: { id: 'TC1' } }), null, null, { endArrow: 'none', strokeWidth: 4 });
+      cell = tab.graph.insertEdge(tab.graph.getDefaultParent(), null, buildDataValue('', { kind: 'trackSection', values: { id: 'TC1' } }) as never, null, null, { endArrow: 'none', strokeWidth: 4 });
       cell.getGeometry()!.setTerminalPoint({ x: 0, y: 100 } as never, true);
       cell.getGeometry()!.setTerminalPoint({ x: 200, y: 100 } as never, false);
     });
