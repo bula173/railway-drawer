@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "module": "es2020",
-    "lib": ["dom", "es2020"],
+    "lib": ["dom", "es2020", "es2022.error"],
     "target": "es2020",
     "types": ["vite/client"],
     "moduleResolution": "bundler",
