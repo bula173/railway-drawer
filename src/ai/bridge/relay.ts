@@ -88,8 +88,8 @@ export class BridgeRelay {
     return this.pairing;
   }
 
-  /** Re-attaches a browser socket after a restart (Durable Object hibernation wake-up). */
-  restore(socket: RelaySocket, state: PairingState): void {
+  /** Restores the pairing (and the browser socket, if one is still open) after a restart (Durable Object hibernation wake-up). */
+  restore(socket: RelaySocket | null, state: PairingState): void {
     this.pairing = state;
     this.browser = socket;
   }

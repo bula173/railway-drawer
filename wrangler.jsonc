@@ -1,11 +1,22 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  // Static-assets-only Worker. Production is deployed by Cloudflare Workers
-  // Builds (dashboard); `npm run deploy` does the same from a local machine.
+  // Production is deployed by Cloudflare Workers Builds (dashboard); `npm run deploy` does the same
+  // from a local machine. The app is static assets (dist/, SPA not-found handling) served WITHOUT
+  // running the script; only the AI paths below run worker/index.ts (docs/AI.md):
+  //   /mcp                        remote MCP server (pairing token, no Anthropic key)
+  //   /api/ai-bridge/<session>/ws the browser tab's WebSocket to its pairing's Durable Object
   "name": "railway-drawer",
+  "main": "worker/index.ts",
   "compatibility_date": "2026-07-17",
   "assets": {
     "directory": "./dist",
-    "not_found_handling": "single-page-application"
-  }
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/mcp", "/mcp/", "/api/ai-bridge/*"]
+  },
+  "durable_objects": {
+    "bindings": [{ "name": "AI_BRIDGE", "class_name": "AiBridge" }]
+  },
+  // SQLite-backed Durable Object class (free plan compatible); never edit a deployed migration
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["AiBridge"] }]
 }

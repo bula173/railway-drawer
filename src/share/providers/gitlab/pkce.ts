@@ -96,7 +96,7 @@ export function sha256(data: Uint8Array): Uint8Array {
 }
 
 /** S256 code challenge: base64url(SHA-256(ASCII(verifier))). */
-export async function codeChallengeS256(verifier: string, subtle: SubtleCrypto | undefined = globalThis.crypto?.subtle): Promise<string> {
+export async function codeChallengeS256(verifier: string, subtle: SubtleCrypto | undefined = (globalThis as { crypto?: Crypto }).crypto?.subtle): Promise<string> {
   const bytes = new TextEncoder().encode(verifier);
   if (subtle) {
     try {
