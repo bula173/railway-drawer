@@ -84,10 +84,10 @@ describe('railway Data and Checks panels', () => {
   };
   const badge = (): HTMLElement => document.querySelector('[data-right-panel="checks"] .rd-rw-badge') as HTMLElement;
 
-  it('switch has Properties | Data | Checks | Scenarios and shows one panel at a time', () => {
+  it('switch has Properties | Data | Checks | Scenarios | AI and shows one panel at a time', () => {
     start();
     const buttons = Array.from(document.querySelectorAll<HTMLButtonElement>('.right-panel-switch-btn'));
-    expect(buttons.map((b) => b.dataset.rightPanel)).toEqual(['properties', 'data', 'checks', 'scenarios']);
+    expect(buttons.map((b) => b.dataset.rightPanel)).toEqual(['properties', 'data', 'checks', 'scenarios', 'ai']);
     buttons[1].click();
     expect(dataPanel().hidden).toBe(false);
     expect(document.getElementById('property-content')!.hidden).toBe(true);

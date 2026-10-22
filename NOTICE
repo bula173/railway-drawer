@@ -64,3 +64,13 @@ DejaVu fonts 2.37 (DejaVuSans, DejaVuSans-Bold, DejaVuSansMono; npm dejavu-fonts
 in exported PDFs: Bitstream Vera Fonts Copyright (c) 2003 Bitstream, Inc.; DejaVu changes are
 in the public domain; Arev Fonts Copyright (c) 2006 Tavmjong Bah. Free license (Bitstream Vera
 / Arev font license): https://dejavu-fonts.github.io/License.html
+
+-------------------------------------------------------------------------------
+AI assistant (src/ai, loaded on demand; worker/; tools/mcp-local)
+-------------------------------------------------------------------------------
+Anthropic TypeScript SDK 1.1.0 (@anthropic-ai/sdk, https://github.com/anthropics/anthropic-sdk-typescript),
+Copyright Anthropic, PBC, Apache License 2.0; with its dependencies OpenTelemetry API (Apache 2.0),
+standardwebhooks (MIT), json-schema-to-ts (MIT).
+MCP TypeScript SDK 2.3.1 (@modelcontextprotocol/server, @modelcontextprotocol/core,
+https://github.com/modelcontextprotocol/typescript-sdk), Apache License 2.0; with zod 4 (MIT).
+ws 8.22.0 (local MCP server, https://github.com/websockets/ws), MIT License.
