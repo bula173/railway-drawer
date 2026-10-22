@@ -631,7 +631,10 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   palette elements = the title presets (`kindForLibraryTitle`, no ID: generated on insert); templates: signals
   (group with heads 229/231: type main / shunting for `SS<n>`, direction nominal when the mast is left of the lamps,
   aspects = lamps, ID from the label), balises (12x12 triangles within 40 of a track; direction west = reverse;
-  group/position from a `BG<n>` label within 40, which becomes the `baliseGroup` with NID_BG n and count), trains,
+  group/position from a `BG<n>` label within 40, which becomes the `baliseGroup` with NID_BG n and count; a balise
+  without a BG label becomes its own group (count 1, next free BG<n>, NID_BG n, `infill` for `*_infill`) on its function
+  label within 25 (LTA/LTO/S2_BG/S4_infill in the two "Level transition L1 → L2" templates; not grouped by distance:
+  LTA and S4_infill are 26 px apart but different groups); no NID_C (diagram default)), trains,
   tracks (all `vsdxID=17` stroke >= 4 horizontal edges on one y merged into one `track` T<n> edge; extra grey edges
   removed; coloured MA/route highlight edges stay decoration on top), points (diagonal track edges, hand down-right =
   left; short legs extended onto the track) and TVD sections: `trackSection` TC<n> edges with the track's style on

@@ -24,7 +24,7 @@ import { findRoutePaths } from '../routes';
 import { getCellKind } from '../object-data';
 import { buildTopology, linkLine, projectPoint } from '../topology';
 import type { RailObject } from '../validation';
-import { collectObjects } from '../validation';
+import { collectObjects, validateModel } from '../validation';
 
 const ROOT = resolve(__dirname, '../../..');
 const LIBRARY = readFileSync(resolve(ROOT, 'public/libraries/ertms.xml'), 'utf8');
@@ -118,6 +118,36 @@ describe('ERTMS templates: railway symbols typed, tracks split into TVD sections
       }
       // no state is stored in the library (defaults free/stop/normal are implied)
       expect(t.xml).not.toMatch(/rdState=|rdAspect=/);
+    }
+  });
+
+  it('every balise belongs to a balise group; balises without a BG label are grouped on their function label', () => {
+    for (const t of templates) {
+      const objs = objectsOf(t.xml);
+      const groups = objs.filter((o) => o.getAttribute('rdKind') === 'baliseGroup');
+      for (const o of objs.filter((x) => x.getAttribute('rdKind') === 'balise')) {
+        expect(o.getAttribute('rdGroupId'), `${t.name} ${o.getAttribute('rdId')}`).toBeTruthy();
+      }
+      // NID_BG = the number of the group ID; NID_C comes from the diagram default (not pinned)
+      for (const g of groups) {
+        expect(g.getAttribute('rdNidBg'), `${t.name} ${g.getAttribute('rdId')}`).toBe(/^BG(\d+)$/.exec(g.getAttribute('rdId') ?? '')?.[1]);
+        expect(g.hasAttribute('rdNidC')).toBe(false);
+      }
+    }
+    // the level transition templates (L1 -> L2 and staff responsible) had balises without BG labels:
+    // one group per balise on its function label; neighbouring balises are not merged (LTA / infill)
+    const groupsOf = (t: DiagramTemplate): string[] =>
+      objectsOf(t.xml)
+        .filter((o) => o.getAttribute('rdKind') === 'baliseGroup')
+        .map((o) => `${o.getAttribute('rdId')}:${(o.getAttribute('label') ?? '').replace(/<[^>]+>/g, '')}:${o.getAttribute('rdCount')}${o.getAttribute('rdFunction') ? `:${o.getAttribute('rdFunction')}` : ''}`)
+        .sort();
+    const transitions = templates.filter((t) => t.name.startsWith('Level transition L1 → L2'));
+    expect(transitions.map((t) => t.name).sort()).toEqual(['Level transition L1 → L2', 'Level transition L1 → L2, staff responsible']);
+    for (const t of transitions) expect(groupsOf(t), t.name).toEqual(['BG1:S2_BG:1', 'BG2:LTA:1', 'BG3:S4_infill:1:infill', 'BG4:LTO:1']);
+    // checks: no balise without group, no required NID_C warning (diagram default 510)
+    for (const t of templates) {
+      const issues = validateModel(graphWith(t).getDataModel());
+      expect(issues.filter((i) => i.rule === 'balise-without-group' || (i.rule === 'required' && i.field === 'nidC')).map((i) => i.message), t.name).toEqual([]);
     }
   });
 
