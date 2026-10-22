@@ -365,7 +365,7 @@ describe('draw.io compatibility guard', () => {
 
     it('every entry of the ERTMS draw.io library opens and saves losslessly', () => {
       const entries = parseMxLibrary(ERTMS_LIBRARY);
-      expect(entries).toHaveLength(40);
+      expect(entries).toHaveLength(37);
       expect(entries.every((e) => e.xml?.startsWith('<mxGraphModel'))).toBe(true);
       const { controller } = newTab();
       for (const [index, entry] of entries.entries()) {

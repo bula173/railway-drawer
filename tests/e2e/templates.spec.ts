@@ -1,7 +1,7 @@
 /**
  * @file templates.spec.ts
  * @brief Templates in the main editor: the ERTMS palette shows only the simple elements, the
- *        Templates tab lists the 22 built-in ERTMS templates, and user templates are saved
+ *        Templates tab lists the 19 built-in ERTMS templates, and user templates are saved
  *        ("Save as Template…"), survive a reload, insert, rename and delete.
  *
  * Runs on any port (no draw.io server is involved). The diagram is checked through the 5 s
@@ -50,7 +50,7 @@ async function freshApp(page: Page): Promise<void> {
 }
 
 test.describe('templates', () => {
-  test('ERTMS palette shows the elements, the Templates tab the 22 ERTMS templates', async ({ page }) => {
+  test('ERTMS palette shows the elements, the Templates tab the 19 ERTMS templates', async ({ page }) => {
     const pageErrors: string[] = [];
     page.on('pageerror', (err) => pageErrors.push(err.message));
     await freshApp(page);
@@ -82,7 +82,7 @@ test.describe('templates', () => {
     const panel = page.locator('#templates-panel');
     await expect(panel).toBeVisible();
     const builtin = panel.locator('[data-section="builtin"] .rd-tpl-tile');
-    await expect(builtin).toHaveCount(22);
+    await expect(builtin).toHaveCount(19);
     await expect(builtin.first().locator('.rd-tpl-name')).toHaveText('Section timer (L1)');
     await expect(builtin.first().locator('.rd-tpl-desc')).not.toBeEmpty();
     await expect(panel.locator('[data-section="builtin"] .rd-tpl-thumb-ready').first()).toBeVisible();
@@ -92,7 +92,7 @@ test.describe('templates', () => {
     await panel.locator('.rd-tpl-search').fill('entrance route');
     await expect(builtin).toHaveCount(1);
     await panel.locator('.rd-tpl-search').fill('');
-    await expect(builtin).toHaveCount(22);
+    await expect(builtin).toHaveCount(19);
 
     // insert into the diagram (an HTML label of scenario 1)
     await builtin.first().click();

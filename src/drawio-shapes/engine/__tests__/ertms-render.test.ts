@@ -60,8 +60,8 @@ function attributesContaining(el: Element, needle: string): string[] {
 }
 
 describe('ERTMS library in maxGraph', () => {
-  it('has 40 entries', () => {
-    expect(entries.length).toBe(40);
+  it('has 37 entries', () => {
+    expect(entries.length).toBe(37);
   });
 
   it.each(entries.map((e, i) => [i, e.title || `#${i}`, e] as const))('renders entry %i (%s)', (_i, _title, entry) => {

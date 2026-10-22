@@ -26,7 +26,7 @@ import { TextEditorController } from './text-editor';
 import { EdgePropertiesController } from './edge-properties';
 import { LayersController } from './layers';
 import { installCellLocking } from './cell-lock';
-import { installGroupBackgroundHit } from './canvas-interaction';
+import { installGroupBackgroundHit, installRailwaySplitRules } from './canvas-interaction';
 import { HoverArrowsController } from './hover-arrows';
 import { ImageUploadController } from './image-upload';
 import { PasteImageController } from './paste-image';
@@ -259,6 +259,8 @@ export class TabManager {
     installCellLocking(graph);
     // A press in a gap of a transparent group (ERTMS symbols) moves the group (canvas-interaction.ts)
     installGroupBackgroundHit(graph);
+    // No edge split when a railway symbol is dropped on a track (or with Alt/Shift, like draw.io)
+    installRailwaySplitRules(graph);
     installDrawioHandles(graph);
     // Named stencils (mxgraph.basic.*, ...) are fetched when cells using them arrive (load, paste, insert)
     installStencilAutoload(graph);

@@ -18,15 +18,15 @@ const PNG = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJA
 afterEach(() => vi.unstubAllGlobals());
 
 describe('parseMxLibrary', () => {
-  it('reads public/libraries/ertms.xml (40 entries)', () => {
+  it('reads public/libraries/ertms.xml (37 entries)', () => {
     const entries = parseMxLibrary(fs.readFileSync(ERTMS_PATH, 'utf8'));
-    expect(entries.length).toBe(40);
+    expect(entries.length).toBe(37);
     for (const e of entries) {
       expect(e.xml?.startsWith('<mxGraphModel')).toBe(true);
       expect(e.w).toBeGreaterThan(0);
       expect(e.h).toBeGreaterThan(0);
     }
-    expect(entries.filter((e) => e.xml!.includes('shape=stencil(')).length).toBe(26);
+    expect(entries.filter((e) => e.xml!.includes('shape=stencil(')).length).toBe(23);
   });
 
   it('decodes base64-deflate entries (draw.io compressed and our compress)', () => {
@@ -83,7 +83,7 @@ describe('entryToCells / loaders', () => {
   it('loads from a URL and from a File', async () => {
     const text = fs.readFileSync(ERTMS_PATH, 'utf8');
     vi.stubGlobal('fetch', vi.fn(async () => new Response(text)));
-    expect((await loadMxLibraryFromUrl('/libraries/ertms.xml')).length).toBe(40);
+    expect((await loadMxLibraryFromUrl('/libraries/ertms.xml')).length).toBe(37);
     vi.stubGlobal('fetch', vi.fn(async () => new Response('', { status: 404 })));
     await expect(loadMxLibraryFromUrl('/missing.xml')).rejects.toThrow(/404/);
     const body = JSON.stringify([{ xml: MODEL, w: 40, h: 20 }]).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');

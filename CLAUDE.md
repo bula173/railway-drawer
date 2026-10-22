@@ -43,7 +43,7 @@ node scripts/railml/validate.ts [--xsd railml3.xsd] [files]  # dev only: xmllint
 CI (`.github/workflows/build-and-deploy.yml`) runs typecheck, typecheck:tests, lint, test:run, build and the
 Playwright subset (legacy-smoke, drawio-palette, templates, scenarios, style-edit, share, gitlab, ertms-data,
 scenario-uml-text, theme-contrast, remote-persist, scenario-doc, editor-commands, dark-shapes, ertms-routes, railml, drawio-compat,
-interaction, hover-arrows, railway-script, ux-batch, ux-batch2a, ux-batch2b). No
+interaction, hover-arrows, railway-script, ux-batch, ux-batch2a, ux-batch2b, move-connect). No
 draw.io download is needed (`scripts/drawio-palettes` only runs locally, its output is committed). It does not deploy.
 
 ### E2E
@@ -57,7 +57,7 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
 - `tests/e2e/drawio-compat.spec.ts`: File > Open of draw.io files (compressed multi-page fixture, draw.io desktop
   fixture) -> labels render -> File > Export As… writes a valid `<mxfile>` with the same pages, ids, cells, wrapper
   attributes and styles, hidden pages unchanged, stable re-export; Templates > Import… of the ERTMS library
-  (40 entries) and Export… as `<mxlibrary>`.
+  (37 entries) and Export… as `<mxlibrary>`.
 - `tests/e2e/drawio-palette.spec.ts` (any port): Shapes tab (no draw.io/Stencils tabs) renders the palettes, one merged "General" (no "Basic" section/menu entry, flag migration, merged app shapes insert, search without duplicates), "More shapes…" toggles, inserts keep draw.io styles, autosave
   writes real draw.io shape names.
 - `tests/e2e/share.spec.ts` (any port): Share dialog, `#R` link round trip into a fresh browser context, downloads.
@@ -83,7 +83,7 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   `rdDiff`), autoplay (1 s, Space plays to the end and stops, Space pauses), File > Export Scenario (PDF)… landscape (%PDF,
   pages >= 4, DejaVu embedded, 3 images, no "UML as vector failed" warning), Slides from the panel button (3 step slides,
   highlighted drawings, opened as a data: page under its CSP: keys move, counter).
-- `tests/e2e/templates.spec.ts` (any port): ERTMS palette 18 entries, Templates tab 22 ERTMS templates (search,
+- `tests/e2e/templates.spec.ts` (any port): ERTMS palette 18 entries, Templates tab 19 ERTMS templates (search,
   insert, open as new diagram, drag), tab bar labels not cut, Save as Template… -> reload -> insert, rename, delete.
 - `tests/e2e/ertms-data.spec.ts` (any port): ERTMS palette signal/balise get their kind and IDs on insert, Data panel
   fields (km chainage `12+345`, enum, text with Polish characters), duplicate signal ID -> Checks error + badge,
@@ -148,6 +148,14 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   layer: none; Alt hides; View > Connection Arrows off (persisted over a reload), Alt+Shift+A on; ERTMS Signal Right 3
   clone keeps kind/direction and gets `S2` (no duplicate-id check); a signal clone on a track snaps in the same undo
   step (`rdTrackId`, `rdKm`); no arrows on the track edge or with the Route tool; arrow fill >= 3:1 on the light and dark canvas.
+- `tests/e2e/move-connect.spec.ts` (any port, real `page.mouse` input, 1600x1100 viewport): drags of a rectangle, an ERTMS
+  signal (group), a balise, a track (edge) and a template text cell land where released (±1 px) with the grid off and on the
+  grid with it on, at zoom 100 % and 150 %; Alt held while dragging ignores grid and track snap; a signal 60 px from a track
+  stays, 8 px snaps beside it with the track highlighted during the drag (`.rd-track-snap-highlight`,
+  `data-rd-track-snap` on the graph div); ArrowDown moves a snapped signal 1 px; a balise dropped on a track does not split
+  it, nor goes into a signal; the dragged cell is the one under the pointer; connecting: 16 visible 'x' points on a
+  rectangle, from a quarter point (fixed exit, floating entry, blue target), balise -> signal group, signal point ->
+  rectangle, a new edge ends at the release point, an edge end dropped on a body connects floating, hover-arrow drag.
 - `tests/e2e/railway-script.spec.ts` (any port): Railway Script tab: a typed script (tracks, points, signals, route) is drawn
   by auto-apply ("Applied: 7 objects", `rdScript`, route on `rd-routes`), a text km edit moves the signal, a real mouse drag
   of the signal updates `at` in the text (comments/other lines kept), an enum error is listed at `13:col`, click selects it,
@@ -357,14 +365,28 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   Properties Arrange X/Y/W/H, constrain, rotation, Rotate 90°, flips are disabled while the shown cell is locked
   (`graph.isCellLocked`: also via its group/layer; refreshed on model changes) and their handlers skip locked cells.
   Arrow keys = `GraphCommandService.nudge` (1 px, Shift = grid size; `getMovableCells` of the topmost selected cells,
-  one undo step; only when the focus is on the canvas/body).
+  one undo step; only when the focus is on the canvas/body; snap to track only refreshes km/track, never moves: `withSnapDataOnly`).
 - Canvas interaction like draw.io (`src/ui/connections.ts` `installDrawioConnectionStart`, `src/ui/canvas-interaction.ts`):
   maxGraph's ConnectionHandler started an edge from a vertex's central hotspot (and the old fallback had a centre
   connection point), so a middle drag drew an edge and a click on a group child selected the child. Now
-  `isValidSource` is false until a connection started (only connection points start one; targets unchanged), the
-  fallback points are the 4 side midpoints, and a source press in the central 50 % of a vertex never hits a point.
-  `installGroupBackgroundHit`: a MOUSE_DOWN on the background inside a transparent group (vertex with children,
-  `getCellAt`) gets the group's state, so it is selected/moved (Alt+drag still forces the rubber band). Context menu
+  `isValidSource` is false until a connection started (only connection points start one; targets unchanged), and a
+  source press in the central 50 % of a vertex never hits a point. Connection points like draw.io: shapes without own
+  points (`points` style, stencil, JS-shape constraints) get draw.io's per-shape defaults (`defaultConnectionConstraints`:
+  rectangle/group/image 16 = corners, quarters, midpoints; ellipse 8; rhombus; triangle), drawn with draw.io's blue 'x'
+  (`CONNECTION_POINT_IMAGE`, data: SVG; maxGraph's `images/point.gif` is not shipped, so points were invisible); valid
+  targets outlined `#00a8ff` (`installDrawioEdgeEnds`). An edge end dropped on a body (not on a point) connects floating:
+  maxGraph 0.10.3's EdgeHandler passed `outline = true` to updatePreviewState, which stored the drop position as a fixed
+  entry point; `outline` is set to `outlineConnect` (false) per edge handler. ERTMS symbols connect as a whole
+  (`installSymbolGroupConnect`, a `Cell.prototype.isConnectable` patch): a group vertex with `rdKind` is connectable
+  (the library's `connectable="0"` stays in the file), its descendants are not, so maxGraph's connectable-parent
+  fallback hits the group. `installGroupBackgroundHit`: a MOUSE_DOWN on the background inside a transparent group (vertex
+  with children, `getCellAt`) gets the group's state, so it is selected/moved; MOUSE_MOVE/MOUSE_UP too when the group is
+  connectable (its points show, an edge end dropped in a gap connects). `installRailwaySplitRules`: no edge split when a
+  railway object is dropped on an edge or an edge is a railway object (a balise on a track split the track into two
+  edges connected to it) or with Alt/Shift (draw.io); a group with `rdKind` is never a drop target. Moving: draw.io's
+  grid (gridSize 10, `gridEnabled` = View > Grid; `snapDelta` aligns an off-grid cell only on moves of half a grid step or
+  more), Alt held during the drag = no grid and no track snap (Alt pressed before the press = rubber band, like
+  draw.io), no guides, drag start tolerance 4 px. Context menu
   (`contextSelectionFor`): a right-click inside the selection (cell or ancestor selected) keeps it, else the topmost
   selectable ancestor is selected; edges get the cell menu; maxGraph's PopupMenuHandler selection is off
   (`selectOnPopup`/`clearSelectionOnBackground` = false: it changed/cleared the selection on mouse-up after Lock).
@@ -464,7 +486,7 @@ The embedded draw.io editor was removed on the user's decision, so nothing runs 
   `<UserObject>` with link/tags, core shapes (hexagon, cylinder3, rhombus, ellipse), JS shape `mxgraph.arrows2.arrow`,
   stencil `mxgraph.flowchart.collate`; `compat-library.xml` (`<mxlibrary>`: escaped, compressed and image entries).
   Plus the older `src/__tests__/fixtures/drawio/*.drawio` and the real ERTMS library (`public/libraries/ertms.xml`,
-  identical to `ERTMSDrawioTemplate/ERTMS.xml`, 40 entries).
+  the app's copy of the user's `ERTMSDrawioTemplate/ERTMS.xml` (never edit that original), 37 entries: see Templates).
 - Path under test = File > Open / Save: `SaveLoadController.loadProjectXml` -> `getProjectXml`. Required: valid draw.io
   XML (`<mxfile>`, one `<diagram>` per page, `mxGraphModel/root`, cells 0 and 1, no namespaces); same pages, order,
   names, ids and `<diagram>` attributes; same cells in draw.io's depth-first order, kinds, parents, terminals, values,
@@ -516,7 +538,7 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   closeable, state in localStorage `railway-drawer-ertms-tab`): a second palette view with only the ERTMS
   library (`userLibraries: false`, `showMoreMenu: false`, own flags via `storageKeySuffix`, no dropTarget —
   the Shapes-tab view handles its drops since palette/entry ids are the same). Order: draw.io palettes, then ERTMS (`public/libraries/ertms.xml`,
-  the default ERTMS palette, showing only its 18 simple elements — the 22 scenario diagrams are ERTMS templates,
+  the default ERTMS palette, showing only its 18 simple elements — the 19 scenario diagrams are ERTMS templates,
   see Templates below; the `src/shapes/ertms` placeholders are renderers only, for old files), then
   user libraries ("Import library…", stored in localStorage `rd.drawioLibraries`). Thumbnails come from one
   hidden graph (draw.io defaults, table support). Click inserts at the view centre, drag drops at the pointer
@@ -547,14 +569,40 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
 
 - Built-in **ERTMS templates**: `splitErtmsLibrary` (`ertms-templates.ts`) classifies `public/libraries/ertms.xml`
   by content: more than `TEMPLATE_CELL_THRESHOLD` (80) drawable cells (`mxCell` vertex/edge, nested included)
-  = template (scenarios have 102..265, the simple elements 1..44). 40 entries -> 18 elements / 22 templates
+  = template (scenarios have 102..265, the simple elements 1..44). 37 entries -> 18 elements / 19 templates
   (tested against the real file). Display names from the labels (`templateDisplayName`: first matching ERTMS topic in
   `TOPICS`, e.g. "Level transition L0 → L1", "Section timer (L1)" + the ETCS level label; repeats numbered "… 2"),
   `originalName` "ERTMS scenario <n>" (library order) in the tooltip and search; subtitle = the 3 rarest
   labels across scenarios (phrases before ids); every label is a search tag. Ids `ertms-tpl-<library index>`.
   `ertmsPaletteSource` (Shapes and ERTMS tabs) filters to the elements, entry ids keep the library index
   (`ertms-<index>-<slug>`); `loadErtmsTemplates` shares the one download. `drawio-compat.test.ts` parses the
-  whole library (all 40 entries) as the draw.io compatibility guard.
+  whole library (all 37 entries) as the draw.io compatibility guard.
+- App library vs the user's export: scenarios 14, 15 and 18 of `ERTMSDrawioTemplate/ERTMS.xml` ("On-sight
+  acknowledgement area (L2)", "On-sight movement authority (L1)", "PCA window and berth (L2)") were removed on the
+  user's request; `REMOVED_ERTMS_SCENARIOS` keeps the original numbers in `originalName` (scenario 16 stays
+  "ERTMS scenario 16"). Template ids `ertms-tpl-<library index>` follow the app file.
+- Signal labels in the app library are `S<n>` (the user's `KBS<n>` labels were renamed in the app copy only); drawings
+  opened from files keep whatever labels they have (no migration of user files).
+- **The app library is generated**: `python3 -I scripts/ertms-library/build_app_library.py ../ERTMSDrawioTemplate/ERTMS.xml
+  public/libraries/ertms.xml` (deterministic; untouched entries keep their bytes; see the script's docstring for every
+  rule). Never hand-edit `public/libraries/ertms.xml`; change the script and rebuild. It removes scenarios 14/15/18,
+  renames KBS -> S, and stores railway data as draw.io `<object>`/`<UserObject>` attributes (railML needs):
+  palette elements = the title presets (`kindForLibraryTitle`, no ID: generated on insert); templates: signals
+  (group with heads 229/231: type main / shunting for `SS<n>`, direction nominal when the mast is left of the lamps,
+  aspects = lamps, ID from the label), balises (12x12 triangles within 40 of a track; direction west = reverse;
+  group/position from a `BG<n>` label within 40, which becomes the `baliseGroup` with NID_BG n and count), trains,
+  tracks (all `vsdxID=17` stroke >= 4 horizontal edges on one y merged into one `track` T<n> edge; extra grey edges
+  removed; coloured MA/route highlight edges stay decoration on top), points (diagonal track edges, hand down-right =
+  left; short legs extended onto the track) and TVD sections: `trackSection` TC<n> edges with the track's style on
+  top of the track (below the highlights), split at the TC joint markers on it (fallback: points legs, then
+  signals, else one section), `rdTrackId`, `rdSectionType=tc`. TC markers, labels, arrows, highlights: no kind.
+  Sections drawn ON the track = topology.ts "sections on tracks" (names the pieces, not separate links), so routes,
+  snap and the railML export (tracks + `tvdSection`s) work; recolouring a section = its own edge's strokeColor.
+  The library stores no `rdState`/`rdAspect` (state feature: defaults free/stop/normal). `insertTemplate` renumbers
+  taken IDs keeping the prefix (`renumberInsertedObjects`, `src/railway/insert-ids.ts`; references follow) and
+  suspends snap to track. Tests: `src/railway/__tests__/ertms-library-data.test.ts` (typed symbols, sections cover
+  every track end to end, unique IDs, double insert, routes found, railML export of every template: structure
+  checks clean, no unplaced object, `tvdSection` count = sections, re-import keeps kinds/IDs).
 - **User templates**: `TemplateStore` (`template-store.ts`), localStorage `railway-drawer-templates`,
   `{ version: 1, templates: [{ id, name, description?, xml, width, height, created, updated }] }`; `xml` is a
   native draw.io `<mxGraphModel>`. Bare arrays read as v1; a newer version makes the store read-only (writes
@@ -593,7 +641,7 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   unit/min/max (NID_C 0–1023, NID_BG/NID_RBC 0–16383, balises in group 1–8, aspects 1–6); route fields see
   "Railway engineering tools" below. Every kind has `id`
   (required, generated `S1`, `BG1`, ... from `idPrefix`, case-insensitive unique per kind).
-- **Pre-assigned kinds**: ERTMS library entries by title (`kindForLibraryTitle`: Signal Left/Right n -> signal with
+- **Pre-assigned kinds**: the ERTMS library entries store them (generated, see Templates); on insert also by title (`kindForLibraryTitle`: Signal Left/Right n -> signal with
   direction reverse/nominal and n aspects, (Single) Balise Left/Right -> balise, TC -> trackSection tc, Track ->
   track, Point Left/Right -> points with hand, Train/Train Connected -> train; MA/Distance/Line/Gradient/SSP: none)
   through the palette option `prepareInsert` -> `insertEntry(..., prepare)` (same undo step, only single-cell
@@ -659,13 +707,18 @@ upstream `file:line` references; `third_party/drawio/` has the license and the u
   of another kind; the generic missing-reference skips such IDs), `route-path` (no path in the signal direction, or
   sections not a continuous path), `route-points` (syntax, unknown/contradictory points, missing or wrong required
   position; warning: listed points not on the path). Conflicts are not issues (interlocking table).
-- **Snap to track** (`snap.ts`): signals, balises, axle counters, LEUs inserted or moved within `SNAP_DISTANCE` 40 of a
-  track/section line are put on it (balise/axle counter centred; signal on the right-hand side of its travel direction:
+- **Snap to track** (`snap.ts`): signals, balises, axle counters, LEUs inserted or moved so that the gap between the
+  shape and a track/section line (centre distance minus the half extent across the line) is at most `SNAP_RADIUS_PX`
+  15 screen px (`snapGapAtScale`: 15 / zoom graph units) and the nearest line point is not beyond a track end (the snap
+  only moves perpendicular to the track) are put on it (balise/axle counter centred; signal on the right-hand side of its travel direction:
   nominal = below a left-to-right track, reverse above; LEU nominal side; gap `SNAP_GAP` 4), get `rdTrackId` (track
   preferred over a section drawn on it) and, when the track has km start/end, `rdKm`. Runs in the model's
   `BEFORE_UNDO` (like maxGraph's LayoutManager), so it is part of the same undo step; ignores edits with a RootChange
-  (loads, snapshots). Railway > Snap to Track, localStorage `rd.railway.snapToTrack` (default on). Installed on every tab
-  graph (`installRailwayRoutes` sweeps on start/`tab-changed`).
+  (loads, snapshots). Off while Alt is held (window capture listeners track `altKey`), data-only for arrow-key nudges
+  (`withSnapDataOnly`). While dragging (SelectionHandler), the track a drop would snap onto is outlined (`CellHighlight`
+  `#00a8ff`, class `rd-track-snap-highlight`, graph div `data-rd-track-snap=<track id>`; `previewSnap`). Railway > Snap
+  to Track, localStorage `rd.railway.snapToTrack` (default on). Installed on every tab graph (`installRailwayRoutes`
+  sweeps on start/`tab-changed`). `SNAP_DISTANCE` 40 is only the "belongs to the track" distance (Railway Script sync).
 - **km** (`km.ts`): linear from km start (first point of the centre line) to km end; Railway > Recalculate km sets `rdKm`
   of objects naming a track with km start/end (within 60, rounded to metres, one undo step). Railway > km Ruler (toolbar `#btn-km-ruler`)
   (localStorage `rd.railway.kmRuler`): ticks/labels (`12+345`) along the selected track(s) in an overlay; round step so

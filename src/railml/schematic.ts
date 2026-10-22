@@ -286,6 +286,8 @@ export class ModelBuilder {
           node.removeAttribute('id');
           node = this.wrap(node, idMap.get(id)!, { label, ...attrs });
         } else {
+          // the library entry's own railway presets (rdKind, rdAspects, ...) give way to the object's data
+          for (const name of node.getAttributeNames()) if (/^rd[A-Z]/.test(name)) node.removeAttribute(name);
           for (const [k, v] of Object.entries(attrs)) node.setAttribute(k, v);
           node.setAttribute('id', idMap.get(id)!);
         }

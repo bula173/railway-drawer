@@ -4,7 +4,7 @@
  */
 export type { DiagramTemplate } from './template-types';
 export { templateMatches, templateToPaletteEntry } from './template-types';
-export { countDrawableCells, isTemplateLibraryEntry, modelLabels, splitErtmsLibrary, TEMPLATE_CELL_THRESHOLD } from './ertms-templates';
+export { countDrawableCells, isTemplateLibraryEntry, modelLabels, originalScenarioNumber, REMOVED_ERTMS_SCENARIOS, splitErtmsLibrary, TEMPLATE_CELL_THRESHOLD } from './ertms-templates';
 export type { ErtmsLibrarySplit } from './ertms-templates';
 export {
   normalizeTemplateName,

@@ -201,7 +201,7 @@ test('ERTMS routes: route tool, route/interlocking tables, snap to track, km', a
   // Snap to track: an ERTMS signal dropped next to T1 sits beside it, with track and km
   const section = page.locator('#drawio-palette-container section[data-palette-id="ertms"]');
   if ((await section.locator('.rd-dp-header').getAttribute('aria-expanded')) !== 'true') await section.locator('.rd-dp-header').click();
-  const drop = await clientPoint(page, 300, 125);
+  const drop = await clientPoint(page, 300, 118);
   const box = (await page.locator('#graph-container').boundingBox())!;
   await section.locator('.rd-dp-item[title="Signal Right 3"]').first().dragTo(page.locator('#graph-container'), {
     targetPosition: { x: drop.x - box.x, y: drop.y - box.y },
@@ -215,14 +215,14 @@ test('ERTMS routes: route tool, route/interlocking tables, snap to track, km', a
   expect(Number((await attrsOf(page, 'S4'))!.rdKm)).toBeCloseTo(10 + snapped.x / 1000, 3);
 
   // Dragging it by its middle (real mouse: the signal group moves, no connection starts) far
-  // away: no snap; next to T2: snaps onto T2
+  // away: no snap; next to T2 (within 15 px of its line): snaps onto T2
   const cellsBefore = await inGraph<number>(page, 'return Object.keys(graph.getDataModel().cells).length;');
   await dragObject(page, 'S4', 0, 250);
   const away = await cellCenter(page, 'S4');
   // (a mouse move snaps the cell to the grid, gridSize 10)
   expect(Math.abs(away.y - (snapped.y + 250))).toBeLessThanOrEqual(5);
   expect((await attrsOf(page, 'S4'))?.rdTrackId).toBe('T1');
-  await dragObject(page, 'S4', 50, -150);
+  await dragObject(page, 'S4', 50, -170);
   expect(await inGraph<number>(page, 'return Object.keys(graph.getDataModel().cells).length;')).toBe(cellsBefore);
   await expect.poll(async () => (await attrsOf(page, 'S4'))?.rdTrackId).toBe('T2');
   expect((await cellCenter(page, 'S4')).y).toBeCloseTo(180 + height / 2 + 4, 1);

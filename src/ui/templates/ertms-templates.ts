@@ -15,12 +15,32 @@
  * The subtitle is made of the scenario's most distinctive labels: the labels that occur in the
  * fewest scenarios (phrases before ids among equally rare ones), in document order (e.g. "S2_Exit,
  * S4_Entry, Entrance Route"). All labels become search tags.
+ *
+ * The app's copy of the library is the user's ERTMS.xml export without scenarios 14, 15 and 18
+ * (removed on the user's request, REMOVED_ERTMS_SCENARIOS); the remaining scenarios keep their
+ * original numbers ("ERTMS scenario 16" stays 16), so the tooltips still match the user's file.
  */
 import type { LibraryEntry } from '../drawio-palette/contracts';
 import type { DiagramTemplate } from './template-types';
 
 /** More drawable cells than this makes a library entry a template. */
 export const TEMPLATE_CELL_THRESHOLD = 80;
+/**
+ * Scenario numbers (1-based, order of the user's original ERTMSDrawioTemplate/ERTMS.xml) removed
+ * from the app's public/libraries/ertms.xml; skipped when numbering "ERTMS scenario <n>".
+ */
+export const REMOVED_ERTMS_SCENARIOS: readonly number[] = [14, 15, 18];
+
+/** Original scenario number of the n-th (0-based) template of the app library. */
+export function originalScenarioNumber(n: number): number {
+  let number = 0;
+  for (let left = n + 1; left > 0;) {
+    number++;
+    if (!REMOVED_ERTMS_SCENARIOS.includes(number)) left--;
+  }
+  return number;
+}
+
 /** Labels in the subtitle. */
 const SUBTITLE_LABELS = 3;
 /** Labels longer than this are sentences, not names (still searchable). */
@@ -154,7 +174,7 @@ export function splitErtmsLibrary(entries: LibraryEntry[]): ErtmsLibrarySplit {
       .map((x) => x.label)
       .join(', ');
     const title = c.entry.title?.trim();
-    const originalName = title || `ERTMS scenario ${n + 1}`;
+    const originalName = title || `ERTMS scenario ${originalScenarioNumber(n)}`;
     let name = title || templateDisplayName(c.labels, candidates.slice(0, 2).map((x) => x.label).join(', ')) || originalName;
     // same concept drawn more than once: "Section timer (L1) 2"
     const seen = (usedNames.get(name) ?? 0) + 1;

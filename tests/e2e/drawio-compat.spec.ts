@@ -6,7 +6,7 @@
  * - File > Open of draw.io files (compressed multi-page fixture, a draw.io desktop file) renders the cells;
  *   File > Export As… writes a valid <mxfile> with the same pages, page ids, cells, wrapper attributes,
  *   styles, and the pages that are not shown byte-for-byte.
- * - Templates > Import… reads the real ERTMS draw.io library (<mxlibrary>, 40 entries) and Export… writes
+ * - Templates > Import… reads the real ERTMS draw.io library (<mxlibrary>, 37 entries) and Export… writes
  *   a draw.io library again.
  * Runs on any port, offline.
  */
@@ -153,7 +153,7 @@ test.describe('draw.io files in the Railway Drawer editor', () => {
     const chooser = page.waitForEvent('filechooser');
     await page.locator('.rd-tpl-import').click();
     await (await chooser).setFiles({ name: 'ERTMS.xml', mimeType: 'application/xml', buffer: Buffer.from(library) });
-    await expect(page.locator('.notification', { hasText: 'Imported 40 templates from "ERTMS.xml"' })).toBeVisible();
+    await expect(page.locator('.notification', { hasText: 'Imported 37 templates from "ERTMS.xml"' })).toBeVisible();
 
     const [download] = await Promise.all([page.waitForEvent('download'), page.locator('.rd-tpl-export').click()]);
     const exported = await downloadText(download);
@@ -163,7 +163,7 @@ test.describe('draw.io files in the Railway Drawer editor', () => {
       const list = JSON.parse(doc.documentElement.textContent ?? '') as Array<{ xml?: string; title?: string }>;
       return list.map((e) => ({ title: e.title ?? '', model: !!e.xml && /^\s*(<|&lt;)mxGraphModel/.test(e.xml) }));
     }, exported);
-    expect(entries).toHaveLength(40);
+    expect(entries).toHaveLength(37);
     expect(entries.every((e) => e.model)).toBe(true);
   });
 });

@@ -297,7 +297,7 @@ describe('with the app (TabManager)', () => {
     await panel.ready;
     const builtin = () => container.querySelectorAll('[data-section="builtin"] .rd-tpl-tile');
     const user = () => container.querySelectorAll<HTMLElement>('[data-section="user"] .rd-tpl-tile');
-    expect(builtin()).toHaveLength(22);
+    expect(builtin()).toHaveLength(19);
     expect(user()).toHaveLength(1);
     expect(thumbnails.thumbnail).toHaveBeenCalledWith(expect.objectContaining({ kind: 'cells' }), 200, 120);
 
