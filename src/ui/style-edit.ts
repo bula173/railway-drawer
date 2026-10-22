@@ -12,7 +12,7 @@
  * of the ERTMS templates lost their dark-mode colors.
  */
 import type { Cell, CellStyle, Graph } from '@maxgraph/core';
-import { parseStyleString } from '../services/drawio-xml';
+import { copyRawDrawioStyle, parseStyleString } from '../services/drawio-xml';
 
 export type StyleRecord = Record<string, unknown>;
 
@@ -67,6 +67,8 @@ export function applyStyleToCells(graph: Graph, cells: Cell[], mutate: StyleMuta
     for (const cell of cells) {
       const before = ownStyleCopy(cell);
       const next = ownStyleCopy(cell);
+      // keeps the draw.io string the style was read from: written back once the keys are back to it
+      copyRawDrawioStyle(cell.getStyle(), next);
       mutate(next, resolvedStyle(graph, cell), cell);
       for (const key of Object.keys(next)) {
         if (next[key] === undefined || next[key] === null) delete next[key];

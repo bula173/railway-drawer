@@ -189,7 +189,10 @@ export const KINDS: readonly KindDef[] = [
     fields: [
       idField('Points ID'),
       field('hand', 'Hand', 'enum', { options: opts(['left', 'Left'], ['right', 'Right']) }),
-      field('position', 'Position', 'enum', { options: opts(['normal', 'Normal'], ['reverse', 'Reverse']) }),
+      // also the runtime position (states.ts: moving / out of control; Position ▸ in the context menu)
+      field('position', 'Position', 'enum', {
+        options: opts(['normal', 'Normal'], ['reverse', 'Reverse'], ['moving', 'Moving'], ['outOfControl', 'Out of control']),
+      }),
       kmField(),
       trackField(),
       notesField(),
