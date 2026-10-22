@@ -224,6 +224,27 @@ describe('TabManager tab lifecycle', () => {
       expect(document.querySelector('#tabs-container input')).toBeNull();
     });
 
+    it('a label equal to the project name renames the project too; another label leaves it', () => {
+      tabManager = new TabManager('tabs-container', 'graph-container');
+      const tab = tabManager.createTab('Station A');
+      tabManager.switchTab(tab.id);
+      // tabs opened from a file / link / File > New are named after their project
+      tab.saveLoadController.setProjectName('Station A');
+      const rename = (from: string, to: string): void => {
+        doubleClick(tabElement(from).querySelector<HTMLElement>('.tab-label')!);
+        const input = tabElement(from).querySelector('input')!;
+        input.value = to;
+        input.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true, cancelable: true }));
+      };
+      rename('Station A', 'Station B');
+      expect(tab.name).toBe('Station B');
+      expect(tab.saveLoadController.getProjectName()).toBe('Station B');
+      tab.saveLoadController.setProjectName('Project X');
+      rename('Station B', 'My label');
+      expect(tab.name).toBe('My label');
+      expect(tab.saveLoadController.getProjectName()).toBe('Project X');
+    });
+
     it('Escape cancels the rename even though removing the field blurs it', () => {
       tabManager = new TabManager('tabs-container', 'graph-container');
       const tab = tabManager.createTab('Keep');

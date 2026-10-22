@@ -265,4 +265,56 @@ test.describe('UI backlog', () => {
     expect(plain.x).toBeGreaterThan(src0.x + src0.width);
     expect(Math.abs(plain.y - s.y)).toBeLessThan(1);
   });
+  test('tab label rename renames the project when they match; Save As relabels such a tab', async ({ page }) => {
+    await fresh(page);
+    const title = page.locator('.document-title');
+    const label = page.locator('#tabs-container .tab-button.active .tab-label');
+    await expect(label).toHaveText('Diagram 1');
+    await expect(title).toHaveText('Diagram 1');
+    const renameLabel = async (from: string, to: string): Promise<void> => {
+      await page.locator('#tabs-container .tab-label', { hasText: from }).dblclick();
+      const input = page.locator('#tabs-container input');
+      await input.fill(to);
+      await input.press('Enter');
+      await expect(label).toHaveText(to);
+    };
+    const exportName = async (): Promise<string> => {
+      const [file] = await Promise.all([page.waitForEvent('download'), clickMenuItem(page, 'file', 'export')]);
+      return file.suggestedFilename();
+    };
+    const saveAs = async (name: string): Promise<string> => {
+      await clickMenuItem(page, 'file', 'saveAs');
+      const dialog = page.getByTestId('save-as-dialog');
+      await dialog.locator('input').fill(name);
+      const [file] = await Promise.all([page.waitForEvent('download'), dialog.locator('input').press('Enter')]);
+      return file.suggestedFilename();
+    };
+    // label = project name: renaming the label renames the project (title, export name)
+    await renameLabel('Diagram 1', 'Station North');
+    await expect(title).toHaveText('Station North');
+    expect(await exportName()).toBe('Station North.drawio');
+    // Save As: the label equal to the old project name follows
+    expect(await saveAs('Station South')).toBe('Station South.drawio');
+    await expect(title).toHaveText('Station South');
+    await expect(label).toHaveText('Station South');
+    // a label of its own: neither rule touches the other name
+    await page.evaluate(async () => {
+      const registry = await import('/src/services/service-registry.ts' as string);
+      registry.ServiceRegistry.getTabManager().getActiveTab().saveLoadController.setProjectName('Interlocking');
+    });
+    await renameLabel('Station South', 'My view');
+    expect(await exportName()).toBe('Interlocking.drawio');
+    expect(await saveAs('Interlocking 2')).toBe('Interlocking 2.drawio');
+    await expect(title).toHaveText('Interlocking 2');
+    await expect(label).toHaveText('My view');
+    // kept over a reload
+    await page.evaluate(async () => {
+      const registry = await import('/src/services/service-registry.ts' as string);
+      registry.ServiceRegistry.getTabManager().flushCache();
+    });
+    await page.reload();
+    await expect(page.locator('#tabs-container .tab-button.active')).toHaveCount(1, { timeout: 60_000 });
+    await expect(label).toHaveText('My view');
+    await expect(title).toHaveText('Interlocking 2');
+  });
 });

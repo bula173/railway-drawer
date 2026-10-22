@@ -608,9 +608,11 @@ export class TabManager {
   }
 
   /**
-   * Renames the active tab's project (top-bar title): file name of Save/Export and `<diagram
-   * name>`. A tab labelled with the old project name (tabs opened from a file or link are named
-   * after it) is relabelled too; other labels are the user's own and stay. Cached at once.
+   * Renames the active tab's project (top-bar title, also File > Save As…): file name of Save/Export
+   * and `<diagram name>`. A tab labelled with the old project name (tabs opened from a file or link
+   * are named after it) is relabelled too; other labels are the user's own and stay. Cached at once.
+   * The mirror rule: renaming a tab label (double-click) that equals its project's name renames the
+   * project too (editTabName).
    */
   renameActiveProject(newName: string): void {
     const tab = this.getActiveTab();
@@ -925,6 +927,12 @@ export class TabManager {
       finished = true;
       const newName = input.value.trim();
       if (save && newName && newName !== tab.name && this.tabs.get(tab.id) === tab) {
+        // Mirror of renameActiveProject: a label that is the project's name renames the project too
+        // (top-bar title, Save/Export file name, <diagram name>); other projects keep their name
+        if (tab.saveLoadController.getProjectName() === tab.name) {
+          tab.saveLoadController.setProjectName(newName);
+          if (tab.id === this.activeTabId) this.showProjectName(tab);
+        }
         tab.name = newName;
         console.log('[TabManager] Tab name changed to:', newName);
         // Save the current session (re-saving the stored copy with only the name patched would
