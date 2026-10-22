@@ -26,6 +26,7 @@ export const KIND_MAPPINGS: readonly KindMapping[] = [
   { kind: 'balise', element: 'balise', container: 'infrastructure/functionalInfrastructure/balises', prefix: 'bal_', mapped: ['id', 'groupId', 'position', 'direction', 'km'], note: 'belongsToBaliseGroup, isEurobalise@positionInGroup = position - 1' },
   { kind: 'baliseGroup', element: 'baliseGroup', container: 'infrastructure/functionalInfrastructure/baliseGroups', prefix: 'bg_', mapped: ['id', 'nidC', 'nidBg', 'count', 'direction', 'km'], note: 'applicationType value="ETCS", isEurobaliseGroup countryID (NID_C) / groupID (NID_BG), numberOfBalisesInGroup' },
   { kind: 'axleCounter', element: 'trainDetectionElement', container: 'infrastructure/functionalInfrastructure/trainDetectionElements', prefix: 'tde_', mapped: ['id', 'km', 'sections'], note: 'type="axleCounter" detectedObject="axle"; sections = tvdSection/hasDemarcatingTraindetector' },
+  { kind: 'insulatedJoint', element: 'trainDetectionElement', container: 'infrastructure/functionalInfrastructure/trainDetectionElements', prefix: 'ij_', mapped: ['id', 'km', 'sections'], note: 'type="insulatedRailJoint" (ERTMS "TC" marker); sections = tvdSection/hasDemarcatingTraindetector' },
   { kind: 'trackSection', element: 'tvdSection', container: 'interlocking/assetsForInterlockings/assetsForInterlocking/tvdSections', prefix: 'tvd_', mapped: ['id', 'sectionType'], note: 'technology trackCircuit/axleCounter; geometry only as a visualization projection' },
   { kind: 'bufferStop', element: 'bufferStop', container: 'infrastructure/functionalInfrastructure/bufferStops', prefix: 'bus_', mapped: ['id', 'km'], note: 'spotLocation at the track end' },
   { kind: 'levelCrossing', element: 'levelCrossingIS', container: 'infrastructure/functionalInfrastructure/levelCrossingsIS', prefix: 'lc_', mapped: ['id', 'protection', 'km'], note: 'protection@barriers/@lights/@hasActiveProtection' },
@@ -45,7 +46,7 @@ export function mappingOf(kind: KindId): KindMapping {
 export const UNMAPPED_KINDS: readonly KindId[] = KIND_MAPPINGS.filter((m) => m.element === null).map((m) => m.kind);
 
 /** Kinds with a spotLocation on a netElement. */
-export const SPOT_KINDS: ReadonlySet<KindId> = new Set<KindId>(['signal', 'balise', 'baliseGroup', 'axleCounter', 'bufferStop', 'levelCrossing', 'points', 'leu']);
+export const SPOT_KINDS: ReadonlySet<KindId> = new Set<KindId>(['signal', 'balise', 'baliseGroup', 'axleCounter', 'insulatedJoint', 'bufferStop', 'levelCrossing', 'points', 'leu']);
 
 // ---------------------------------------------------------------------------------------------
 // Enumerations

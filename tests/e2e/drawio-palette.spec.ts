@@ -48,6 +48,9 @@ test.describe('draw.io palettes in the maxGraph editor', () => {
   test('render, insert with draw.io styles and save real draw.io shape names', async ({ page }) => {
     const pageErrors: string[] = [];
     page.on('pageerror', (err) => pageErrors.push(err.message));
+    // The dev server loads several hundred modules; the default buffer (250 entries) would drop the
+    // stencil request checked below
+    await page.addInitScript(() => performance.setResourceTimingBufferSize(10000));
     await page.goto('/');
     await expect(page.locator('#tabs-container .tab-button.active')).toHaveCount(1);
 

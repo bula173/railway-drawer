@@ -6,7 +6,7 @@
  * Edit Data), the colours they stand for are written into the cells' own styles by state-apply.ts:
  * - `rdState`: track sections, tracks, points, routes (`free` | `occupied` | `reserved` (route
  *   set) | `overlap` | `locked` | `disturbed`), level crossings (`open` | `closed` | `disturbed`),
- *   balises / LEUs / axle counters (`free` = working | `disturbed` = failed);
+ *   balises / LEUs / axle counters / insulated joints (`free` = working | `disturbed` = failed);
  * - `rdAspect`: signals (`stop` | `proceed` | `caution` | `shunt` | `dark`);
  * - `rdPosition`: points (`normal` | `reverse` | `moving` | `outOfControl`; the catalogue field).
  * A missing attribute is the default (free / open / stop / normal) and draws the object as drawn.
@@ -55,6 +55,11 @@ export interface StateVisual {
   dashPattern?: string;
   /** Opacity 0..100 of the object (an inactive points leg). */
   opacity?: number;
+  /**
+   * Thicker line: the drawn `strokeWidth` (1 when absent) times this factor, at least
+   * `+ OCCUPIED_WIDTH_MIN_ADD` (occupied: tells the state apart from a track drawn red).
+   */
+  widthScale?: number;
 }
 
 export interface StateOption {
@@ -94,6 +99,19 @@ export const STATE_DASHES = { overlap: '8 4', disturbed: '2 2', moving: '4 4' } 
 export const INACTIVE_LEG_OPACITY = 30;
 /** Opacity of a set / occupied route edge (drawn routes are 60). */
 export const ROUTE_STATE_OPACITY = 80;
+/**
+ * Occupied lines are drawn thicker than drawn: tracks drawn red in the ERTMS library (and by users)
+ * would otherwise look the same as an occupied (red) one. Width x 1.5, at least + 2.
+ */
+export const OCCUPIED_WIDTH_SCALE = 1.5;
+export const OCCUPIED_WIDTH_MIN_ADD = 2;
+
+/** The stroke width of a line drawn `drawn` wide (style value or absent) under `scale`. */
+export function scaledStrokeWidth(drawn: unknown, scale: number): number {
+  const n = typeof drawn === 'number' ? drawn : Number.parseFloat(String(drawn ?? ''));
+  const base = Number.isFinite(n) && n > 0 ? n : 1;
+  return Math.round(Math.max(base * scale, base + OCCUPIED_WIDTH_MIN_ADD) * 100) / 100;
+}
 
 const opt = (value: string, label: string, visual: StateVisual, word = label.replace(/\s*\(.*\)$/, '').toLowerCase()): StateOption => ({
   value,
@@ -104,7 +122,7 @@ const opt = (value: string, label: string, visual: StateVisual, word = label.rep
 
 const TRACK_STATES: readonly StateOption[] = [
   opt('free', 'Free', {}),
-  opt('occupied', 'Occupied', { stroke: STATE_COLORS.occupied }),
+  opt('occupied', 'Occupied', { stroke: STATE_COLORS.occupied, widthScale: OCCUPIED_WIDTH_SCALE }),
   opt('reserved', 'Reserved (route set)', { stroke: STATE_COLORS.reserved }),
   opt('overlap', 'Overlap', { stroke: STATE_COLORS.overlap, dashPattern: STATE_DASHES.overlap }),
   opt('locked', 'Locked', { stroke: STATE_COLORS.locked }),
@@ -180,6 +198,7 @@ const SCHEME_BY_KIND: Partial<Record<KindId, SchemeId>> = {
   balise: 'equipment',
   leu: 'equipment',
   axleCounter: 'equipment',
+  insulatedJoint: 'equipment',
 };
 
 /** Signal types without lamps (no aspects). */
@@ -323,4 +342,4 @@ export function describeStateChanges(before: Record<string, string>, after: Reco
 }
 
 /** Style keys a state may change (folded into the state phrase in change lists). */
-export const STATE_STYLE_KEYS: ReadonlySet<string> = new Set(['strokeColor', 'fillColor', 'gradientColor', 'dashed', 'dashPattern', 'opacity']);
+export const STATE_STYLE_KEYS: ReadonlySet<string> = new Set(['strokeColor', 'fillColor', 'gradientColor', 'dashed', 'dashPattern', 'opacity', 'strokeWidth']);
