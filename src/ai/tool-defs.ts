@@ -33,7 +33,7 @@ export type AiToolName =
   | 'undo';
 
 /** Railway object kinds of the catalogue (src/railway/catalogue.ts; a test keeps them equal). */
-export const AI_KIND_IDS = ['signal', 'balise', 'baliseGroup', 'track', 'trackSection', 'points', 'levelCrossing', 'bufferStop', 'rbc', 'leu', 'axleCounter', 'train', 'route'] as const;
+export const AI_KIND_IDS = ['signal', 'balise', 'baliseGroup', 'track', 'trackSection', 'points', 'levelCrossing', 'bufferStop', 'rbc', 'leu', 'axleCounter', 'insulatedJoint', 'train', 'route'] as const;
 
 /** Largest Railway Script a tool accepts (characters). */
 export const MAX_SCRIPT_CHARS = 200_000;
@@ -134,7 +134,7 @@ export const AI_TOOLS: readonly AiToolDef[] = [
     name: 'set_states',
     title: 'Set object states',
     description:
-      'Sets runtime states (not infrastructure) in ONE undo step. state: sections/tracks/points/routes free|occupied|reserved|overlap|locked|disturbed, level crossings open|closed|disturbed, balises/LEUs/axle counters free|disturbed. aspect: signals stop|proceed|caution|shunt|dark. position: points normal|reverse|moving|outOfControl. A value of "" resets that dimension; reset=true resets the listed objects; resetAll=true resets every object.',
+      'Sets runtime states (not infrastructure) in ONE undo step. state: sections/tracks/points/routes free|occupied|reserved|overlap|locked|disturbed, level crossings open|closed|disturbed, balises/LEUs/axle counters/joints free|disturbed. aspect: signals stop|proceed|caution|shunt|dark. position: points normal|reverse|moving|outOfControl. A value of "" resets that dimension; reset=true resets the listed objects; resetAll=true resets every object.',
     input_schema: obj({
       items: {
         type: 'array',
