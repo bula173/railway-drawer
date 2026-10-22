@@ -97,8 +97,14 @@ export class AiBridge extends DurableObject<Env> {
 
   /** RPC from the MCP endpoint: relays one validated tool call to the paired browser. */
   async relayCall(session: string, auth: string, tool: string, input: Record<string, unknown>): Promise<RelayCallResult> {
-    if (!isSessionId(session)) throw new Error('Unknown or expired pairing code.');
-    const relay = this.relay ?? this.ensureRelay(session);
-    return relay.call(auth, tool, input);
+    try {
+      if (!isSessionId(session)) throw new Error('Unknown or expired pairing code.');
+      const relay = this.relay ?? this.ensureRelay(session);
+      return await relay.call(auth, tool, input);
+    } catch (error) {
+      // an answer, not an exception: refused calls are expected (wrong code, tab closed, timeout)
+      const message = error instanceof Error ? error.message : String(error);
+      return { ok: false, summary: message, result: { error: message } };
+    }
   }
 }
