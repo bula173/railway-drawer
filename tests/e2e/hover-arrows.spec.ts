@@ -139,16 +139,18 @@ test.describe('connection arrows (real mouse)', () => {
     await hover(page, 'A');
     await page.keyboard.press('Escape');
     await expect(visibleArrows(page)).toHaveCount(0);
-    // a pressed button (rubber band) never shows them
+    // a pressed button (rubber band: Shift+drag on the background, a plain drag pans) never shows them
     await hover(page, 'B');
     const from = await pagePoint(page, 300, 250);
     await page.mouse.move(from.x, from.y);
+    await page.keyboard.down('Shift');
     await page.mouse.down();
     const c = await center(page, 'B');
     await page.mouse.move(c.x, c.y, { steps: 6 });
     await page.waitForTimeout(400);
     await expect(visibleArrows(page)).toHaveCount(0);
     await page.mouse.up();
+    await page.keyboard.up('Shift');
     // constant screen size at another zoom
     await emptyMove(page);
     await inTab(page, 'graph.zoomTo(2);');

@@ -8,8 +8,9 @@
  *        canvas scrolls beyond the content on every side; the grid covers a far scrolled area and
  *        follows the zoom; hover arrows and the km ruler stay on their shapes when scrolled and
  *        zoomed; the State Legend stays fixed in the view above the scrollbar; dragging near the
- *        edge autoscrolls; Space+drag and middle-drag pan; a tab keeps its scroll position across a
- *        tab switch.
+ *        edge autoscrolls; a drag on the empty background, Space+drag and middle-drag pan, Shift+drag
+ *        draws the rubber band, a click on the background clears the selection; a tab keeps its
+ *        scroll position across a tab switch.
  *
  * Reads the graph through the dev server's module graph (like hover-arrows.spec.ts). Any port.
  */
@@ -135,6 +136,46 @@ function luminance(hex: string): number {
 function contrast(a: string, b: string): number {
   const [l1, l2] = [luminance(a), luminance(b)].sort((p, q) => q - p);
   return (l1 + 0.05) / (l2 + 0.05);
+}
+
+/**
+ * Asserts grid lines in a 160 x 100 area near `corner` of the view: a line every grid cell
+ * (10 graph units, doubled while under 5 px, grid-background.ts) at the graph's grid positions,
+ * background half way between them.
+ */
+async function expectGrid(page: Page, theme: Theme, corner: 'tl' | 'tr' | 'bl' | 'br', what: string): Promise<void> {
+  const v = await view(page);
+  const w = 160;
+  const h = 100;
+  const m = 30;
+  const clip = {
+    x: Math.round(corner[1] === 'l' ? v.left + m : v.left + v.clientWidth - m - w),
+    y: Math.round(corner[0] === 't' ? v.top + m : v.top + v.clientHeight - m - h),
+    width: w, height: h,
+  };
+  let tile = 10 * v.scale;
+  while (tile < 5) tile *= 2;
+  const unit = tile / v.scale;
+  const png = await shot(page, clip);
+  const bg = theme === 'light' ? [255, 255, 255] : [0x12, 0x12, 0x12];
+  const isLine = (x: number, y: number) => x >= 0 && x < w && pixel(png, x, y).some((ch, i) => Math.abs(ch - bg[i]) > 3);
+  const g0 = toGraph(v, clip.x, clip.y);
+  const firstX = toPage(v, Math.ceil(g0.x / unit) * unit, 0).x - clip.x;
+  const firstY = toPage(v, 0, Math.ceil(g0.y / unit) * unit).y - clip.y;
+  // a row half way between two horizontal grid lines
+  let row = Math.round(firstY + tile / 2);
+  if (row >= h) row -= Math.round(tile);
+  let lines = 0;
+  let expected = 0;
+  for (let x = firstX; x < w - 2; x += tile) {
+    expected++;
+    const c = Math.round(x);
+    if (isLine(c, row) || isLine(c - 1, row) || isLine(c + 1, row)) lines++;
+    const gap = Math.round(x + tile / 2);
+    if (gap < w) expect(isLine(gap, row), `${what}: background between grid lines at ${gap}`).toBe(false);
+  }
+  expect(expected, what).toBeGreaterThanOrEqual(3);
+  expect(lines, `${what}: grid lines`).toBe(expected);
 }
 
 test.describe('scrolling canvas (real input)', () => {
@@ -273,29 +314,22 @@ test.describe('scrolling canvas (real input)', () => {
   });
 
   for (const theme of ['light', 'dark'] as const) {
-    test(`grid in a far scrolled area follows the zoom; scrollbars visible (${theme})`, async ({ page }) => {
+    test(`grid covers the whole scrollable area (400 % corners, resize, Fit); scrollbars visible (${theme})`, async ({ page }) => {
       await freshApp(page, theme);
       await loadModel(page, MODEL_XML);
+      // 400 %: all four far corners of the scrollable area
+      await inTab(page, 'graph.zoomTo(4, true);');
+      for (const [sx, sy, corner] of [[0, 0, 'tl'], [1, 0, 'tr'], [0, 1, 'bl'], [1, 1, 'br']] as const) {
+        await inTab(page, 'const c = graph.container; c.scrollLeft = arg.sx ? c.scrollWidth : 0; c.scrollTop = arg.sy ? c.scrollHeight : 0;', { sx, sy });
+        await expectGrid(page, theme, corner, `400 % ${corner}`);
+      }
+      // 200 %, far bottom-right; then the scrollbars
       await page.locator('#zoom-level').selectOption('200');
       await expect.poll(async () => (await view(page)).scale).toBe(2);
       await inTab(page, 'const c = graph.container; c.scrollLeft = c.scrollWidth; c.scrollTop = c.scrollHeight;');
       const v = await view(page);
       expect(v.scrollLeft).toBeGreaterThan(1000);
-      // An empty 200 x 120 area at the far bottom-right corner (beyond the content)
-      const clip = { x: Math.round(v.left + v.clientWidth - 230), y: Math.round(v.top + v.clientHeight - 150), width: 200, height: 120 };
-      const png = await shot(page, clip);
-      const bg = theme === 'light' ? [255, 255, 255] : [0x12, 0x12, 0x12];
-      const isLine = (x: number, y: number) => pixel(png, x, y).some((ch, i) => Math.abs(ch - bg[i]) > 3);
-      // grid cells of 10 graph units = 20 px at 200 %: lines in every 20 px column band, gaps between
-      const gx = toGraph(v, clip.x, clip.y);
-      const firstLine = Math.round(toPage(v, Math.ceil(gx.x / 10) * 10, 0).x - clip.x);
-      const row = 10;
-      let lineCols = 0;
-      for (let x = firstLine; x < png.width - 1; x += 20) {
-        if (isLine(x, row) || isLine(x + 1, row) || (x > 0 && isLine(x - 1, row))) lineCols++;
-        expect(isLine(x + 10, row)).toBe(false);
-      }
-      expect(lineCols).toBeGreaterThanOrEqual(8);
+      await expectGrid(page, theme, 'br', '200 % br');
 
       // Scrollbars: thumb >= 3:1 on the track, and painted
       const tokens = await page.evaluate(() => {
@@ -308,6 +342,23 @@ test.describe('scrolling canvas (real input)', () => {
       const hex = (p: number[]) => `#${p.map((ch) => ch.toString(16).padStart(2, '0')).join('')}`;
       expect(hex(pixel(bar, 6, 3))).toBe(tokens.track.trim());
       expect(hex(pixel(bar, 6, bar.height - 30))).toBe(tokens.thumb.trim());
+
+      // a larger window: the padding grows with it, the grid still reaches the far corner
+      const before = v.clientWidth;
+      await page.setViewportSize({ width: 1600, height: 1000 });
+      await expect.poll(async () => (await view(page)).clientWidth).toBeGreaterThan(before + 200);
+      await expect.poll(async () => {
+        const w = await view(page);
+        return w.scrollWidth >= 2 * (w.clientWidth - 34) + 400 * w.scale - 2;
+      }).toBe(true);
+      await inTab(page, 'const c = graph.container; c.scrollLeft = c.scrollWidth; c.scrollTop = c.scrollHeight;');
+      await expectGrid(page, theme, 'br', 'resized br');
+      await inTab(page, 'const c = graph.container; c.scrollLeft = 0; c.scrollTop = 0;');
+      await expectGrid(page, theme, 'tl', 'resized tl');
+
+      // after Fit: around the (fitted) drawing, in its empty bottom-left part
+      await clickMenuItem(page, 'view', 'fitWindow');
+      await expectGrid(page, theme, 'bl', 'fit bl');
     });
   }
 
@@ -406,15 +457,82 @@ test.describe('scrolling canvas (real input)', () => {
     const geo1 = await geometry(page, 'A');
     expect(geo1.x).toBeGreaterThan(geo0.x + v0.clientWidth - 300);
 
-    // rubber band from an empty spot towards the bottom edge
+    // rubber band (Shift+drag) from an empty spot towards the bottom edge
     const start = toPage(v1, toGraph(v1, v1.left + 200, 0).x, toGraph(v1, 0, v1.top + 300).y);
     await page.mouse.move(start.x, start.y);
+    await page.keyboard.down('Shift');
     await page.mouse.down();
     const edgeY = v1.top + v1.clientHeight - 6;
     await page.mouse.move(start.x + 60, edgeY - 60, { steps: 5 });
     for (let i = 0; i < 12; i++) await page.mouse.move(start.x + 60 + (i % 2), edgeY - (i % 2));
     await page.mouse.up();
+    await page.keyboard.up('Shift');
     expect(viewOrigin(await view(page)).y).toBeGreaterThan(viewOrigin(v1).y + 50);
+  });
+
+  test('a drag on the empty background pans; Shift+drag draws the rubber band; a click clears the selection', async ({ page }) => {
+    await freshApp(page);
+    await loadModel(page, MODEL_XML);
+    const cells = () => inTab<string>(page, 'return JSON.stringify(["A", "B", "C"].map((id) => graph.getDataModel().getCell(id).getGeometry()).map((g) => [g.x, g.y]));');
+    const selected = () => inTab<string[]>(page, 'return graph.getSelectionCells().map((c) => c.id).sort();');
+    const geos = await cells();
+    await inTab(page, "graph.setSelectionCell(graph.getDataModel().getCell('B'));");
+    const v0 = await view(page);
+    expect(await page.locator('#graph-container > .rd-graph-canvas:visible').evaluate((el) => getComputedStyle(el).cursor)).toBe('grab');
+
+    // plain drag on an empty spot (between A and B): the canvas follows the pointer
+    const p = toPage(v0, 500, 300);
+    await page.mouse.move(p.x, p.y);
+    await page.mouse.down();
+    await page.mouse.move(p.x - 90, p.y - 40, { steps: 4 });
+    expect(await page.locator('#graph-container > .rd-graph-canvas:visible').evaluate((el) => el.classList.contains('rd-panning'))).toBe(true);
+    await page.mouse.move(p.x - 180, p.y - 70, { steps: 4 });
+    await page.mouse.up();
+    const v1 = await view(page);
+    expect(Math.abs(v1.scrollLeft - (v0.scrollLeft + 180))).toBeLessThanOrEqual(2);
+    expect(Math.abs(v1.scrollTop - (v0.scrollTop + 70))).toBeLessThanOrEqual(2);
+    expect(await cells()).toBe(geos);
+    expect(await selected()).toEqual(['B']);
+    expect(await page.locator('.mxRubberband').count()).toBe(0);
+    // a purely horizontal pan does not end in a click either
+    const q = toPage(v1, 500, 300);
+    await page.mouse.move(q.x, q.y);
+    await page.mouse.down();
+    await page.mouse.move(q.x + 60, q.y, { steps: 4 });
+    await page.mouse.up();
+    expect(await selected()).toEqual(['B']);
+
+    // Shift+drag around A and B selects them (rubber band); nothing scrolls. At 50 % with the graph
+    // origin at the view's top-left corner, so that both corners of the band are inside the view
+    await inTab(page, 'graph.clearSelection(); graph.zoomTo(0.5);');
+    const vz = await view(page);
+    await setScroll(page, Math.round(vz.tx * vz.scale), Math.round(vz.ty * vz.scale));
+    const v2 = await view(page);
+    const from = toPage(v2, 40, 40);
+    const to = toPage(v2, 1060, 660);
+    await page.mouse.move(from.x, from.y);
+    await page.keyboard.down('Shift');
+    await page.mouse.down();
+    await page.mouse.move(to.x, to.y, { steps: 6 });
+    await page.mouse.up();
+    await page.keyboard.up('Shift');
+    expect(await selected()).toEqual(['A', 'B']);
+    const v3 = await view(page);
+    expect([v3.scrollLeft, v3.scrollTop]).toEqual([v2.scrollLeft, v2.scrollTop]);
+
+    // a click on the empty background clears the selection (Canvas properties)
+    const e = toPage(v3, 500, 300);
+    await page.mouse.click(e.x, e.y);
+    expect(await selected()).toEqual([]);
+    // pressing on a shape still moves it (not the canvas)
+    const a = await cellBox(page, 'A');
+    await page.mouse.move(a.x + a.width / 2, a.y + a.height / 2);
+    await page.mouse.down();
+    await page.mouse.move(a.x + a.width / 2 + 40, a.y + a.height / 2 + 30, { steps: 5 });
+    await page.mouse.up();
+    expect((await geometry(page, 'A')).x).toBeGreaterThan(100);
+    const v4 = await view(page);
+    expect([v4.scrollLeft, v4.scrollTop]).toEqual([v3.scrollLeft, v3.scrollTop]);
   });
 
   test('Space+drag and middle-button drag pan; the shape under the pointer stays put', async ({ page }) => {

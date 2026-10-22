@@ -1,12 +1,22 @@
 import { Graph, InternalEvent, PanningHandler, type InternalMouseEvent } from '@maxgraph/core';
 import { shouldIgnoreGraphShortcut } from './delete';
 
+/** Whether `evt` has no modifier key held. */
+function noModifiers(evt: MouseEvent): boolean {
+  return !evt.shiftKey && !evt.altKey && !evt.ctrlKey && !evt.metaKey;
+}
+
 /**
- * Panning like draw.io: Space+drag (also over shapes) and middle-button drag scroll the canvas.
- * The tab graph div is the scroll container (canvas-scroll.ts), so maxGraph's PanningHandler
- * pans with the scrollbars (`useScrollbarsForPanning`). The press starts panning at once (the
- * handler's "force panning" path) and is consumed, so it neither selects, moves nor starts a
- * rubber band. Right-drag keeps opening the context menu (no popup-trigger panning).
+ * Panning (the tab graph div is the scroll container, canvas-scroll.ts, so maxGraph's
+ * PanningHandler pans with the scrollbars, `useScrollbarsForPanning`):
+ * - a left-button drag on the EMPTY background pans, like a map (grab / grabbing cursor);
+ *   a press on a shape, an edge, a handle or a group's gap (canvas-interaction.ts gives it the
+ *   group) still selects / moves it; a click without a move still clears the selection;
+ * - Shift+drag (and Alt+drag, maxGraph's forced rubber band) on the background draws the rubber
+ *   band; Ctrl/Cmd+drag keeps it too;
+ * - Space+drag (also over shapes) and middle-button drag pan from the press on ("force panning":
+ *   the press is consumed, so it neither selects, moves nor starts a rubber band).
+ * Right-drag keeps opening the context menu (no popup-trigger panning).
  */
 export class PanController {
   private graph: Graph;
@@ -16,16 +26,32 @@ export class PanController {
   constructor(graph: Graph) {
     this.graph = graph;
     this.panningHandler = (graph.getPlugin('PanningHandler') as PanningHandler | undefined) ?? new PanningHandler(graph);
-    this.panningHandler.usePopupTrigger = false;
-    const origForce = this.panningHandler.isForcePanningEvent.bind(this.panningHandler);
-    this.panningHandler.isForcePanningEvent = (me: InternalMouseEvent): boolean => {
+    const handler = this.panningHandler;
+    handler.usePopupTrigger = false;
+    handler.useLeftButtonForPanning = true;
+    handler.panningEnabled = true;
+    // Plain left press on the background (no cell state, no modifier): pans once moved beyond the
+    // tolerance; the press is consumed, so no rubber band starts
+    handler.isPanningTrigger = (me: InternalMouseEvent): boolean => {
+      const evt = me.getEvent() as MouseEvent;
+      return evt.button === 0 && !me.getState() && noModifiers(evt);
+    };
+    const origForce = handler.isForcePanningEvent.bind(handler);
+    handler.isForcePanningEvent = (me: InternalMouseEvent): boolean => {
       const evt = me.getEvent() as MouseEvent;
       if (evt.button === 1) return true;
       if (this.isPanMode && evt.button === 0) return true;
       return origForce(me);
     };
-    this.panningHandler.addListener(InternalEvent.PAN_START, () => graph.container.classList.add('rd-panning'));
-    this.panningHandler.addListener(InternalEvent.PAN_END, () => graph.container.classList.remove('rd-panning'));
+    // A pan never ends in a click (which would clear the selection), whatever its direction
+    const origUp = handler.mouseUp.bind(handler);
+    handler.mouseUp = (sender: unknown, me: InternalMouseEvent): void => {
+      const panned = handler.active;
+      origUp(sender as never, me);
+      if (panned) me.consume();
+    };
+    handler.addListener(InternalEvent.PAN_START, () => graph.container.classList.add('rd-panning'));
+    handler.addListener(InternalEvent.PAN_END, () => graph.container.classList.remove('rd-panning'));
     // Some browsers start their own middle-button autoscroll on the press
     graph.container.addEventListener('mousedown', (e) => {
       if (e.button === 1) e.preventDefault();

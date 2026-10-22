@@ -13,7 +13,8 @@
  *   negative coordinates is reachable; translate changes are compensated by the scroll position,
  *   so nothing jumps on screen;
  * - zoom keeps the point in focus: buttons, menu, keys and the zoom select zoom around the view
- *   centre, Ctrl/Cmd+wheel and trackpad pinch around the pointer; Fit and Actual Size centre the
+ *   centre (a plain `graph.zoomTo(s)` keeps the top-left corner, maxGraph's default),
+ *   Ctrl/Cmd+wheel and trackpad pinch around the pointer; Fit and Actual Size centre the
  *   content; a plain wheel scrolls (native), Shift+wheel scrolls horizontally.
  * The grid (grid-background.ts) follows the zoom and the translate.
  * Nothing here runs when the container does not scroll (unit tests without the stylesheet).
@@ -239,12 +240,16 @@ export function installCanvasScroll(graph: Graph): void {
 
   // Zoom commands (menu, buttons, keys, zoom select, pinch gesture) keep the view centre
   const origZoom = graph.zoom.bind(graph);
+  // maxGraph's contract: zoomIn/zoomOut (center omitted = centerZoom) keep the view centre,
+  // zoomTo(scale) (center false) keeps the top-left corner of the view, zoomTo(scale, true) the centre
   graph.zoom = (factor: number, center?: boolean): void => {
     if (!isScrollableCanvas(graph)) {
       origZoom(factor, center);
       return;
     }
-    zoomCanvasAt(graph, Math.round(view.scale * factor * 100) / 100);
+    const scale = Math.round(view.scale * factor * 100) / 100;
+    if (center ?? graph.centerZoom) zoomCanvasAt(graph, scale);
+    else zoomCanvasAt(graph, scale, 0, 0);
   };
   const origZoomActual = graph.zoomActual.bind(graph);
   graph.zoomActual = (): void => {

@@ -1884,6 +1884,8 @@ svg.mxGraph .mxHandle {
      replace them with thin overlay bars) */
   scrollbar-color: auto;
 }
+/* The empty background pans on a drag (src/ui/pan.ts): grab cursor; shapes set their own */
+#graph-container > .rd-graph-canvas,
 #graph-container > .rd-graph-canvas.rd-pan-mode {
   cursor: grab;
 }

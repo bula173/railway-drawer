@@ -24,7 +24,8 @@ export class InteractiveUIController {
     // Zoom buttons: ZoomController (binding them here too zoomed twice per click)
     document.getElementById('zoom-level')?.addEventListener('change', (e: Event) => {
       const zoomLevel = parseInt((e.target as HTMLSelectElement).value);
-      this.graph.zoomTo(zoomLevel / 100);
+      // around the view centre, like the zoom buttons
+      this.graph.zoomTo(zoomLevel / 100, true);
     });
 
     // Delete button

@@ -12,12 +12,20 @@
  * the content (`background-attachment: local`), so the grid covers the whole scrollable area.
  * canvas-scroll.ts reports the view (setGridView): the cells follow the zoom (doubled while
  * smaller than MIN_GRID_TILE px, like draw.io) and start at the graph origin (the translate).
+ * One background tile holds several cells (at least TILE_MIN_PX wide) and its size is a whole
+ * number of 1/64 px (Chromium's layout unit): the browser tiles the background from the scroll
+ * origin, so the rounding error of one tile adds up over the tiles before the visible area; per
+ * cell tiles drifted visibly off the graph's grid (snapped shapes) far from the origin.
  */
 
 export const GRID_COLOR_LIGHT = '#e0e0e0';
 export const GRID_COLOR_DARK = '#424242';
 /** Smallest grid cell drawn on screen (px): smaller cells are doubled. */
 export const MIN_GRID_TILE = 5;
+/** Smallest background tile (px): it holds as many grid cells as needed to reach this size. */
+const TILE_MIN_PX = 256;
+/** Background sizes and positions are whole multiples of this (Chromium's layout unit). */
+const LAYOUT_UNIT = 64;
 
 interface GridSettings {
   size: number;
@@ -34,32 +42,47 @@ interface GridView {
 const SETTINGS = new WeakMap<HTMLElement, GridSettings>();
 const VIEWS = new WeakMap<HTMLElement, GridView>();
 
-/** `data:` URL of one grid cell (lines on the top and left edge, transparent elsewhere). */
-export function gridTileUrl(color: string, size: number): string {
-  const s = Math.max(1, Math.round(size * 100) / 100);
+/**
+ * `data:` URL of a grid tile of `size` px holding `cells` x `cells` grid cells (each with lines on
+ * its top and left edge, transparent elsewhere).
+ */
+export function gridTileUrl(color: string, size: number, cells: number = 1): string {
+  const s = Math.max(1, Math.round(size * 1000) / 1000);
+  const n = Math.max(1, Math.floor(cells));
+  let d = '';
+  for (let i = 0; i < n; i++) {
+    const at = Math.round((s * i / n) * 1000) / 1000;
+    d += `M ${at} 0 V ${s} M 0 ${at} H ${s} `;
+  }
   const svg =
     `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}">` +
-    `<path d="M ${s} 0 L 0 0 0 ${s}" fill="none" stroke="${color}" stroke-width="0.5"/></svg>`;
+    `<path d="${d.trim()}" fill="none" stroke="${color}" stroke-width="0.5"/></svg>`;
   return `data:image/svg+xml,${encodeURIComponent(svg)}`;
 }
 
 /** Screen size of one grid cell at `scale` (doubled up to MIN_GRID_TILE px). */
-export function gridTileSize(size: number, scale: number): number {
+export function gridCellSize(size: number, scale: number): number {
   let tile = size * (scale > 0 ? scale : 1);
   if (!(tile > 0)) return size;
   while (tile < MIN_GRID_TILE) tile *= 2;
-  return Math.round(tile * 100) / 100;
+  return tile;
+}
+
+function toLayoutUnit(value: number): number {
+  return Math.round(value * LAYOUT_UNIT) / LAYOUT_UNIT;
 }
 
 function mod(value: number, m: number): number {
-  return Math.round((((value % m) + m) % m) * 100) / 100;
+  return toLayoutUnit(((value % m) + m) % m);
 }
 
 function paint(container: HTMLElement, size: number): void {
   const view = VIEWS.get(container) ?? { scale: 1, originX: 0, originY: 0 };
-  const tile = gridTileSize(size, view.scale);
-  container.style.setProperty('--rd-grid-image-light', `url("${gridTileUrl(GRID_COLOR_LIGHT, tile)}")`);
-  container.style.setProperty('--rd-grid-image-dark', `url("${gridTileUrl(GRID_COLOR_DARK, tile)}")`);
+  const cell = gridCellSize(size, view.scale);
+  const cells = Math.max(1, Math.ceil(TILE_MIN_PX / cell));
+  const tile = toLayoutUnit(cell * cells);
+  container.style.setProperty('--rd-grid-image-light', `url("${gridTileUrl(GRID_COLOR_LIGHT, tile, cells)}")`);
+  container.style.setProperty('--rd-grid-image-dark', `url("${gridTileUrl(GRID_COLOR_DARK, tile, cells)}")`);
   container.style.backgroundSize = `${tile}px ${tile}px`;
   container.style.backgroundRepeat = 'repeat';
   container.style.backgroundPosition = `${mod(view.originX, tile)}px ${mod(view.originY, tile)}px`;

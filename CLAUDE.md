@@ -161,10 +161,12 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   Playwright's `--hide-scrollbars`): zoomed in, the tab graph div scrolls (not `#graph-container`) with 12 px scrollbars;
   wheel scrolls, Shift+wheel horizontally, Ctrl+wheel zooms keeping the point under the pointer (±3 px), zoom buttons /
   View menu / zoom select keep the view centre, Fit centres the content; content at negative coordinates is reachable and
-  clickable (also at 400 %); grid lines in a far scrolled corner at 200 % and scrollbar thumb/track pixels (light, dark);
-  hover arrows and the km ruler stay on their shapes after zoom + scroll; the State Legend stays fixed above the
-  scrollbar; dragging a shape / rubber band at the edge
-  autoscrolls; Space+drag and middle-drag pan; a tab keeps zoom and scroll across a tab switch.
+  clickable (also at 400 %); grid lines (pixel checks) in all four far corners at 400 %, at 200 %, after enlarging the
+  window and after Fit, scrollbar thumb/track pixels (light, dark); hover arrows and the km ruler stay on their shapes
+  after zoom + scroll; the State Legend stays fixed above the scrollbar; dragging a shape / Shift+drag rubber band at the
+  edge autoscrolls; a drag on the empty background pans (no selection change, nothing moves, also purely horizontal),
+  Shift+drag rubber-bands, a click on the background clears the selection, a press on a shape still moves it;
+  Space+drag and middle-drag pan; a tab keeps zoom and scroll across a tab switch.
 - `tests/e2e/object-states.spec.ts` (any port, real right-clicks; layout with sections TC1-TC3, points W1, lamp-group
   signal S1, route R1 via `saveLoadController.load`): TC2 State ▸ Occupied -> rendered stroke red, File > Save has
   `rdState="occupied"` + `rdBaseStyle` + `strokeColor=#ff0000`, radio check, Reset State restores, one Ctrl+Z step each;
@@ -274,7 +276,8 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   `src/ui/grid-background.ts` (`applyGridBackground`, used by `GridController` and `CanvasProperties`): both tiles
   (#e0e0e0 / draw.io dark #424242) are custom properties on the container and CSS picks one by `data-theme`, so a
   theme switch needs no listener and inactive tabs follow. The grid follows the zoom (cells doubled while < 5 px) and
-  starts at the graph origin (`setGridView`, fed by canvas-scroll.ts); `background-attachment: local` makes it cover the
+  starts at the graph origin (`setGridView`, fed by canvas-scroll.ts; one background tile holds several cells, >= 256 px,
+  sized in 1/64 px, so the browser's tiling from the scroll origin does not drift off the graph grid); `background-attachment: local` makes it cover the
   whole scrollable area. Canvas scrollbars: `--rd-canvas-scrollbar-thumb/-hover/-track` (thumb >= 3:1 on the track),
   12 px `::-webkit-scrollbar` on `.rd-graph-canvas` (`scrollbar-color: auto` there, else Chromium ignores them).
 - Scrolling canvas (`src/ui/canvas-scroll.ts`, draw.io's infinite canvas, page view off): each tab graph div
@@ -285,11 +288,15 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   `view.translate` being 0 or set it yourself (it is reset); convert with
   `(scrollLeft + px) / scale - translate.x`. `graph.zoom` / `zoomTo` / `zoomIn` / `zoomOut` keep the view centre
   (10-500 %), `zoomActual` and `fit` centre the content, Ctrl/Cmd+wheel and pinch zoom around the pointer
-  (`zoomCanvasAt`), Shift+wheel scrolls horizontally, a plain wheel scrolls natively. `resetCanvasScroll` after
+  (`zoomCanvasAt`); a plain `graph.zoomTo(s)` (center false, maxGraph's default) keeps the view's top-left corner, the
+  zoom select uses `zoomTo(s, true)`; Shift+wheel scrolls horizontally, a plain wheel scrolls natively. `resetCanvasScroll` after
   `SaveLoadController.load` (origin at the top-left, or the content's top-left when it reaches into negative
   coordinates); a hidden tab gets its scroll position back when shown (ResizeObserver). Arrow-key nudges scroll the
-  selection into view. Pan (`src/ui/pan.ts`): Space+drag (also over shapes) and middle-drag via the PanningHandler's
-  force-panning path; right-drag stays the context menu. Overlays positioned in view coordinates as absolute children of
+  selection into view. Pan (`src/ui/pan.ts`, PanningHandler plugin): a left drag on the EMPTY background pans like a map
+  (grab / grabbing cursor; `isPanningTrigger`: no cell state, no modifier; a press on a shape, edge, handle or a group's
+  gap still selects / moves; a click without a move still clears the selection; a pan never ends in a click);
+  Shift+drag (Alt+drag forced, Ctrl/Cmd+drag) on the background = rubber band; Space+drag (also over shapes) and
+  middle-drag pan via the force-panning path; right-drag stays the context menu. Overlays positioned in view coordinates as absolute children of
   the graph div (hover arrows, previews) or in the overlay pane (`GraphOverlay`: km ruler, route tool) scroll with it;
   fixed-position editors subtract `scrollLeft/Top`.
 
@@ -419,8 +426,8 @@ draw.io download is needed (`scripts/drawio-palettes` only runs locally, its out
   railway object is dropped on an edge or an edge is a railway object (a balise on a track split the track into two
   edges connected to it) or with Alt/Shift (draw.io); a group with `rdKind` is never a drop target. Moving: draw.io's
   grid (gridSize 10, `gridEnabled` = View > Grid; `snapDelta` aligns an off-grid cell only on moves of half a grid step or
-  more), Alt held during the drag = no grid and no track snap (Alt pressed before the press = rubber band, like
-  draw.io), no guides, drag start tolerance 4 px. Context menu
+  more), Alt held during the drag = no grid and no track snap (Alt or Shift pressed before a press on the empty
+  background = rubber band; a plain drag there pans, src/ui/pan.ts), no guides, drag start tolerance 4 px. Context menu
   (`contextSelectionFor`): a right-click inside the selection (cell or ancestor selected) keeps it, else the topmost
   selectable ancestor is selected; edges get the cell menu; maxGraph's PopupMenuHandler selection is off
   (`selectOnPopup`/`clearSelectionOnBackground` = false: it changed/cleared the selection on mouse-up after Lock).
